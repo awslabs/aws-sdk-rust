@@ -3,7 +3,7 @@
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVirtualInterfaceAttributesOutput {
+pub struct UpdateVirtualInterfaceAttributesOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     /// <p>The ID of the VLAN.</p>
     #[doc(hidden)]
     pub vlan: i32,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     #[doc(hidden)]
     pub asn: i32,
@@ -44,17 +44,17 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     /// <p>The address family for the BGP peer.</p>
     #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -97,34 +97,34 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
 }
 impl UpdateVirtualInterfaceAttributesOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_type(&self) -> std::option::Option<& str> {
         self.virtual_interface_type.as_deref()
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn asn(&self) -> i32 {
         self.asn
@@ -134,40 +134,38 @@ impl UpdateVirtualInterfaceAttributesOutput {
         self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> std::option::Option<&str> {
+    pub fn auth_key(&self) -> std::option::Option<& str> {
         self.auth_key.as_deref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> std::option::Option<&str> {
+    pub fn amazon_address(&self) -> std::option::Option<& str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> std::option::Option<&str> {
+    pub fn customer_address(&self) -> std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+    pub fn address_family(&self) -> std::option::Option<& crate::model::AddressFamily> {
         self.address_family.as_ref()
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
@@ -179,35 +177,35 @@ impl UpdateVirtualInterfaceAttributesOutput {
         self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+    pub fn route_filter_prefixes(&self) -> std::option::Option<& [crate::model::RouteFilterPrefix]> {
         self.route_filter_prefixes.as_deref()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn bgp_peers(&self) -> std::option::Option<&[crate::model::BgpPeer]> {
+    pub fn bgp_peers(&self) -> std::option::Option<& [crate::model::BgpPeer]> {
         self.bgp_peers.as_deref()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
@@ -217,7 +215,7 @@ impl UpdateVirtualInterfaceAttributesOutput {
 }
 /// See [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
 pub mod update_virtual_interface_attributes_output {
-
+    
     /// A builder for [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -234,15 +232,13 @@ pub mod update_virtual_interface_attributes_output {
         pub(crate) amazon_address: std::option::Option<std::string::String>,
         pub(crate) customer_address: std::option::Option<std::string::String>,
         pub(crate) address_family: std::option::Option<crate::model::AddressFamily>,
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
         pub(crate) mtu: std::option::Option<i32>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
-        pub(crate) route_filter_prefixes:
-            std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+        pub(crate) route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
@@ -257,12 +253,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the virtual interface.</p>
         pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -270,12 +262,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn set_virtual_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_id = input;
-            self
+        pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_id = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,8 +272,7 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -293,12 +280,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
         pub fn virtual_interface_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -306,12 +289,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-        pub fn set_virtual_interface_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_type = input;
-            self
+        pub fn set_virtual_interface_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_type = input; self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -319,12 +298,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-        pub fn set_virtual_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_name = input;
-            self
+        pub fn set_virtual_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_name = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -333,20 +308,18 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn asn(mut self, input: i32) -> Self {
             self.asn = Some(input);
             self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
-            self.asn = input;
-            self
+            self.asn = input; self
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -355,8 +328,7 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
-            self.amazon_side_asn = input;
-            self
+            self.amazon_side_asn = input; self
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn auth_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -365,8 +337,7 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_key = input;
-            self
+            self.auth_key = input; self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn amazon_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,12 +345,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
-        pub fn set_amazon_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amazon_address = input;
-            self
+        pub fn set_amazon_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amazon_address = input; self
         }
         /// <p>The IP address assigned to the customer interface.</p>
         pub fn customer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -387,12 +354,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The IP address assigned to the customer interface.</p>
-        pub fn set_customer_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_address = input;
-            self
+        pub fn set_customer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_address = input; self
         }
         /// <p>The address family for the BGP peer.</p>
         pub fn address_family(mut self, input: crate::model::AddressFamily) -> Self {
@@ -400,50 +363,39 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The address family for the BGP peer.</p>
-        pub fn set_address_family(
-            mut self,
-            input: std::option::Option<crate::model::AddressFamily>,
-        ) -> Self {
-            self.address_family = input;
-            self
+        pub fn set_address_family(mut self, input: std::option::Option<crate::model::AddressFamily>) -> Self {
+            self.address_family = input; self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// <p>The customer router configuration.</p>
         pub fn customer_router_config(mut self, input: impl Into<std::string::String>) -> Self {
@@ -451,12 +403,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The customer router configuration.</p>
-        pub fn set_customer_router_config(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_router_config = input;
-            self
+        pub fn set_customer_router_config(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_router_config = input; self
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn mtu(mut self, input: i32) -> Self {
@@ -465,8 +413,7 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
-            self.mtu = input;
-            self
+            self.mtu = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -475,8 +422,7 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
         pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -484,12 +430,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-        pub fn set_virtual_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_id = input;
-            self
+        pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_id = input; self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -497,12 +439,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_id = input;
-            self
+        pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.direct_connect_gateway_id = input; self
         }
         /// Appends an item to `route_filter_prefixes`.
         ///
@@ -511,17 +449,13 @@ pub mod update_virtual_interface_attributes_output {
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input);
-            self.route_filter_prefixes = Some(v);
-            self
+                            v.push(input);
+                            self.route_filter_prefixes = Some(v);
+                            self
         }
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn set_route_filter_prefixes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
-        ) -> Self {
-            self.route_filter_prefixes = input;
-            self
+        pub fn set_route_filter_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>) -> Self {
+            self.route_filter_prefixes = input; self
         }
         /// Appends an item to `bgp_peers`.
         ///
@@ -530,17 +464,13 @@ pub mod update_virtual_interface_attributes_output {
         /// <p>The BGP peers configured on this virtual interface.</p>
         pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input);
-            self.bgp_peers = Some(v);
-            self
+                            v.push(input);
+                            self.bgp_peers = Some(v);
+                            self
         }
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn set_bgp_peers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-        ) -> Self {
-            self.bgp_peers = input;
-            self
+        pub fn set_bgp_peers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>) -> Self {
+            self.bgp_peers = input; self
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -549,8 +479,7 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -558,12 +487,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -571,12 +496,8 @@ pub mod update_virtual_interface_attributes_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -585,17 +506,13 @@ pub mod update_virtual_interface_attributes_output {
         /// <p>The tags associated with the virtual interface.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn site_link_enabled(mut self, input: bool) -> Self {
@@ -604,41 +521,70 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.site_link_enabled = input;
-            self
+            self.site_link_enabled = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
         pub fn build(self) -> crate::output::UpdateVirtualInterfaceAttributesOutput {
             crate::output::UpdateVirtualInterfaceAttributesOutput {
-                owner_account: self.owner_account,
-                virtual_interface_id: self.virtual_interface_id,
-                location: self.location,
-                connection_id: self.connection_id,
-                virtual_interface_type: self.virtual_interface_type,
-                virtual_interface_name: self.virtual_interface_name,
-                vlan: self.vlan.unwrap_or_default(),
-                asn: self.asn.unwrap_or_default(),
-                amazon_side_asn: self.amazon_side_asn,
-                auth_key: self.auth_key,
-                amazon_address: self.amazon_address,
-                customer_address: self.customer_address,
-                address_family: self.address_family,
-                virtual_interface_state: self.virtual_interface_state,
-                customer_router_config: self.customer_router_config,
-                mtu: self.mtu,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                virtual_gateway_id: self.virtual_gateway_id,
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                route_filter_prefixes: self.route_filter_prefixes,
-                bgp_peers: self.bgp_peers,
-                region: self.region,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                tags: self.tags,
-                site_link_enabled: self.site_link_enabled,
+                owner_account: self.owner_account
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                location: self.location
+                ,
+                connection_id: self.connection_id
+                ,
+                virtual_interface_type: self.virtual_interface_type
+                ,
+                virtual_interface_name: self.virtual_interface_name
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                asn: self.asn
+                    .unwrap_or_default()
+                ,
+                amazon_side_asn: self.amazon_side_asn
+                ,
+                auth_key: self.auth_key
+                ,
+                amazon_address: self.amazon_address
+                ,
+                customer_address: self.customer_address
+                ,
+                address_family: self.address_family
+                ,
+                virtual_interface_state: self.virtual_interface_state
+                ,
+                customer_router_config: self.customer_router_config
+                ,
+                mtu: self.mtu
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                virtual_gateway_id: self.virtual_gateway_id
+                ,
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                route_filter_prefixes: self.route_filter_prefixes
+                ,
+                bgp_peers: self.bgp_peers
+                ,
+                region: self.region
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                tags: self.tags
+                ,
+                site_link_enabled: self.site_link_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVirtualInterfaceAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
@@ -650,7 +596,7 @@ impl UpdateVirtualInterfaceAttributesOutput {
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLagOutput {
+pub struct UpdateLagOutput  {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     #[doc(hidden)]
     pub connections_bandwidth: std::option::Option<std::string::String>,
@@ -666,15 +612,15 @@ pub struct UpdateLagOutput {
     /// <p>The name of the LAG.</p>
     #[doc(hidden)]
     pub lag_name: std::option::Option<std::string::String>,
-    /// <p>The state of the LAG. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+    /// <p>The state of the LAG. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub lag_state: std::option::Option<crate::model::LagState>,
@@ -717,7 +663,7 @@ pub struct UpdateLagOutput {
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -727,7 +673,7 @@ pub struct UpdateLagOutput {
 }
 impl UpdateLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
+    pub fn connections_bandwidth(&self) -> std::option::Option<& str> {
         self.connections_bandwidth.as_deref()
     }
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
@@ -735,36 +681,36 @@ impl UpdateLagOutput {
         self.number_of_connections
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The name of the LAG.</p>
-    pub fn lag_name(&self) -> std::option::Option<&str> {
+    pub fn lag_name(&self) -> std::option::Option<& str> {
         self.lag_name.as_deref()
     }
-    /// <p>The state of the LAG. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+    /// <p>The state of the LAG. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
     /// </ul>
-    pub fn lag_state(&self) -> std::option::Option<&crate::model::LagState> {
+    pub fn lag_state(&self) -> std::option::Option<& crate::model::LagState> {
         self.lag_state.as_ref()
     }
     /// <p>The location of the LAG.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
@@ -772,19 +718,19 @@ impl UpdateLagOutput {
         self.minimum_links
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The connections bundled by the LAG.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
@@ -796,36 +742,34 @@ impl UpdateLagOutput {
         self.jumbo_frame_capable
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the LAG.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`UpdateLagOutput`](crate::output::UpdateLagOutput).
 pub mod update_lag_output {
-
+    
     /// A builder for [`UpdateLagOutput`](crate::output::UpdateLagOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -858,12 +802,8 @@ pub mod update_lag_output {
             self
         }
         /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-        pub fn set_connections_bandwidth(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connections_bandwidth = input;
-            self
+        pub fn set_connections_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connections_bandwidth = input; self
         }
         /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
         pub fn number_of_connections(mut self, input: i32) -> Self {
@@ -872,8 +812,7 @@ pub mod update_lag_output {
         }
         /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
         pub fn set_number_of_connections(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_connections = input;
-            self
+            self.number_of_connections = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -882,8 +821,7 @@ pub mod update_lag_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -891,12 +829,8 @@ pub mod update_lag_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The name of the LAG.</p>
         pub fn lag_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -905,36 +839,34 @@ pub mod update_lag_output {
         }
         /// <p>The name of the LAG.</p>
         pub fn set_lag_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_name = input;
-            self
+            self.lag_name = input; self
         }
-        /// <p>The state of the LAG. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+        /// <p>The state of the LAG. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
         /// </ul>
         pub fn lag_state(mut self, input: crate::model::LagState) -> Self {
             self.lag_state = Some(input);
             self
         }
-        /// <p>The state of the LAG. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+        /// <p>The state of the LAG. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
         /// </ul>
         pub fn set_lag_state(mut self, input: std::option::Option<crate::model::LagState>) -> Self {
-            self.lag_state = input;
-            self
+            self.lag_state = input; self
         }
         /// <p>The location of the LAG.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -943,8 +875,7 @@ pub mod update_lag_output {
         }
         /// <p>The location of the LAG.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -953,8 +884,7 @@ pub mod update_lag_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
         pub fn minimum_links(mut self, input: i32) -> Self {
@@ -963,8 +893,7 @@ pub mod update_lag_output {
         }
         /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
         pub fn set_minimum_links(mut self, input: std::option::Option<i32>) -> Self {
-            self.minimum_links = input;
-            self
+            self.minimum_links = input; self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -973,8 +902,7 @@ pub mod update_lag_output {
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -982,12 +910,8 @@ pub mod update_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -995,12 +919,8 @@ pub mod update_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `connections`.
         ///
@@ -1009,17 +929,13 @@ pub mod update_lag_output {
         /// <p>The connections bundled by the LAG.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>The connections bundled by the LAG.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// <p>Indicates whether the LAG can host other connections.</p>
         pub fn allows_hosted_connections(mut self, input: bool) -> Self {
@@ -1028,8 +944,7 @@ pub mod update_lag_output {
         }
         /// <p>Indicates whether the LAG can host other connections.</p>
         pub fn set_allows_hosted_connections(mut self, input: std::option::Option<bool>) -> Self {
-            self.allows_hosted_connections = input;
-            self
+            self.allows_hosted_connections = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -1038,8 +953,7 @@ pub mod update_lag_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -1047,12 +961,8 @@ pub mod update_lag_output {
             self
         }
         /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1061,17 +971,13 @@ pub mod update_lag_output {
         /// <p>The tags associated with the LAG.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the LAG.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the LAG.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1079,12 +985,8 @@ pub mod update_lag_output {
             self
         }
         /// <p>The name of the service provider associated with the LAG.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -1093,23 +995,18 @@ pub mod update_lag_output {
         }
         /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+        /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+        /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -1118,45 +1015,67 @@ pub mod update_lag_output {
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLagOutput`](crate::output::UpdateLagOutput).
         pub fn build(self) -> crate::output::UpdateLagOutput {
             crate::output::UpdateLagOutput {
-                connections_bandwidth: self.connections_bandwidth,
-                number_of_connections: self.number_of_connections.unwrap_or_default(),
-                lag_id: self.lag_id,
-                owner_account: self.owner_account,
-                lag_name: self.lag_name,
-                lag_state: self.lag_state,
-                location: self.location,
-                region: self.region,
-                minimum_links: self.minimum_links.unwrap_or_default(),
-                aws_device: self.aws_device,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                connections: self.connections,
-                allows_hosted_connections: self.allows_hosted_connections.unwrap_or_default(),
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                connections_bandwidth: self.connections_bandwidth
+                ,
+                number_of_connections: self.number_of_connections
+                    .unwrap_or_default()
+                ,
+                lag_id: self.lag_id
+                ,
+                owner_account: self.owner_account
+                ,
+                lag_name: self.lag_name
+                ,
+                lag_state: self.lag_state
+                ,
+                location: self.location
+                ,
+                region: self.region
+                ,
+                minimum_links: self.minimum_links
+                    .unwrap_or_default()
+                ,
+                aws_device: self.aws_device
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                connections: self.connections
+                ,
+                allows_hosted_connections: self.allows_hosted_connections
+                    .unwrap_or_default()
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateLagOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLagOutput`](crate::output::UpdateLagOutput).
@@ -1168,53 +1087,45 @@ impl UpdateLagOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDirectConnectGatewayAssociationOutput {
+pub struct UpdateDirectConnectGatewayAssociationOutput  {
     /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association:
-        std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+    pub direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
 }
 impl UpdateDirectConnectGatewayAssociationOutput {
     /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
-    pub fn direct_connect_gateway_association(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociation> {
+    pub fn direct_connect_gateway_association(&self) -> std::option::Option<& crate::model::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
     }
 }
 /// See [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
 pub mod update_direct_connect_gateway_association_output {
-
+    
     /// A builder for [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_association:
-            std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+        pub(crate) direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
     }
     impl Builder {
         /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
-        pub fn direct_connect_gateway_association(
-            mut self,
-            input: crate::model::DirectConnectGatewayAssociation,
-        ) -> Self {
+        pub fn direct_connect_gateway_association(mut self, input: crate::model::DirectConnectGatewayAssociation) -> Self {
             self.direct_connect_gateway_association = Some(input);
             self
         }
         /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
-        pub fn set_direct_connect_gateway_association(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
-        ) -> Self {
-            self.direct_connect_gateway_association = input;
-            self
+        pub fn set_direct_connect_gateway_association(mut self, input: std::option::Option<crate::model::DirectConnectGatewayAssociation>) -> Self {
+            self.direct_connect_gateway_association = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::UpdateDirectConnectGatewayAssociationOutput {
             crate::output::UpdateDirectConnectGatewayAssociationOutput {
-                direct_connect_gateway_association: self.direct_connect_gateway_association,
+                direct_connect_gateway_association: self.direct_connect_gateway_association
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDirectConnectGatewayAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
@@ -1226,22 +1137,20 @@ impl UpdateDirectConnectGatewayAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDirectConnectGatewayOutput {
+pub struct UpdateDirectConnectGatewayOutput  {
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
     #[doc(hidden)]
     pub direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
 }
 impl UpdateDirectConnectGatewayOutput {
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
-    pub fn direct_connect_gateway(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGateway> {
+    pub fn direct_connect_gateway(&self) -> std::option::Option<& crate::model::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
     }
 }
 /// See [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
 pub mod update_direct_connect_gateway_output {
-
+    
     /// A builder for [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1254,20 +1163,19 @@ pub mod update_direct_connect_gateway_output {
             self
         }
         /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
-        pub fn set_direct_connect_gateway(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGateway>,
-        ) -> Self {
-            self.direct_connect_gateway = input;
-            self
+        pub fn set_direct_connect_gateway(mut self, input: std::option::Option<crate::model::DirectConnectGateway>) -> Self {
+            self.direct_connect_gateway = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::UpdateDirectConnectGatewayOutput {
             crate::output::UpdateDirectConnectGatewayOutput {
-                direct_connect_gateway: self.direct_connect_gateway,
+                direct_connect_gateway: self.direct_connect_gateway
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDirectConnectGatewayOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
@@ -1279,7 +1187,7 @@ impl UpdateDirectConnectGatewayOutput {
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectionOutput {
+pub struct UpdateConnectionOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -1289,17 +1197,17 @@ pub struct UpdateConnectionOutput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -1348,11 +1256,11 @@ pub struct UpdateConnectionOutput {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -1362,42 +1270,42 @@ pub struct UpdateConnectionOutput {
 }
 impl UpdateConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -1405,19 +1313,19 @@ impl UpdateConnectionOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -1425,49 +1333,47 @@ impl UpdateConnectionOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
 pub mod update_connection_output {
-
+    
     /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1501,12 +1407,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1514,12 +1416,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The name of the connection.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1527,47 +1425,39 @@ pub mod update_connection_output {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
+        pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_name = input; self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1576,8 +1466,7 @@ pub mod update_connection_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1586,8 +1475,7 @@ pub mod update_connection_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1596,8 +1484,7 @@ pub mod update_connection_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -1606,8 +1493,7 @@ pub mod update_connection_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1616,8 +1502,7 @@ pub mod update_connection_output {
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1625,12 +1510,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1639,8 +1520,7 @@ pub mod update_connection_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1649,8 +1529,7 @@ pub mod update_connection_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -1659,8 +1538,7 @@ pub mod update_connection_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1668,12 +1546,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1681,12 +1555,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -1694,12 +1564,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1708,17 +1574,13 @@ pub mod update_connection_output {
         /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the connection.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the connection.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1726,12 +1588,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>The name of the service provider associated with the connection.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -1740,38 +1598,29 @@ pub mod update_connection_output {
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.port_encryption_status = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-        pub fn set_port_encryption_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.port_encryption_status = input;
-            self
+        pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_encryption_status = input; self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -1780,46 +1629,67 @@ pub mod update_connection_output {
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
         pub fn build(self) -> crate::output::UpdateConnectionOutput {
             crate::output::UpdateConnectionOutput {
-                owner_account: self.owner_account,
-                connection_id: self.connection_id,
-                connection_name: self.connection_name,
-                connection_state: self.connection_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                vlan: self.vlan.unwrap_or_default(),
-                partner_name: self.partner_name,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                port_encryption_status: self.port_encryption_status,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                owner_account: self.owner_account
+                ,
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                connection_state: self.connection_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                partner_name: self.partner_name
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                port_encryption_status: self.port_encryption_status
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
@@ -1831,19 +1701,24 @@ impl UpdateConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1855,19 +1730,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1879,52 +1759,45 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopBgpFailoverTestOutput {
+pub struct StopBgpFailoverTestOutput  {
     /// <p>Information about the virtual interface failover test.</p>
     #[doc(hidden)]
     pub virtual_interface_test: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
 }
 impl StopBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
-    pub fn virtual_interface_test(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceTestHistory> {
+    pub fn virtual_interface_test(&self) -> std::option::Option<& crate::model::VirtualInterfaceTestHistory> {
         self.virtual_interface_test.as_ref()
     }
 }
 /// See [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
 pub mod stop_bgp_failover_test_output {
-
+    
     /// A builder for [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_interface_test:
-            std::option::Option<crate::model::VirtualInterfaceTestHistory>,
+        pub(crate) virtual_interface_test: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
     }
     impl Builder {
         /// <p>Information about the virtual interface failover test.</p>
-        pub fn virtual_interface_test(
-            mut self,
-            input: crate::model::VirtualInterfaceTestHistory,
-        ) -> Self {
+        pub fn virtual_interface_test(mut self, input: crate::model::VirtualInterfaceTestHistory) -> Self {
             self.virtual_interface_test = Some(input);
             self
         }
         /// <p>Information about the virtual interface failover test.</p>
-        pub fn set_virtual_interface_test(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
-        ) -> Self {
-            self.virtual_interface_test = input;
-            self
+        pub fn set_virtual_interface_test(mut self, input: std::option::Option<crate::model::VirtualInterfaceTestHistory>) -> Self {
+            self.virtual_interface_test = input; self
         }
         /// Consumes the builder and constructs a [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
         pub fn build(self) -> crate::output::StopBgpFailoverTestOutput {
             crate::output::StopBgpFailoverTestOutput {
-                virtual_interface_test: self.virtual_interface_test,
+                virtual_interface_test: self.virtual_interface_test
+                ,
             }
         }
     }
+    
+    
 }
 impl StopBgpFailoverTestOutput {
     /// Creates a new builder-style object to manufacture [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
@@ -1936,52 +1809,45 @@ impl StopBgpFailoverTestOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartBgpFailoverTestOutput {
+pub struct StartBgpFailoverTestOutput  {
     /// <p>Information about the virtual interface failover test.</p>
     #[doc(hidden)]
     pub virtual_interface_test: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
 }
 impl StartBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
-    pub fn virtual_interface_test(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceTestHistory> {
+    pub fn virtual_interface_test(&self) -> std::option::Option<& crate::model::VirtualInterfaceTestHistory> {
         self.virtual_interface_test.as_ref()
     }
 }
 /// See [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
 pub mod start_bgp_failover_test_output {
-
+    
     /// A builder for [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_interface_test:
-            std::option::Option<crate::model::VirtualInterfaceTestHistory>,
+        pub(crate) virtual_interface_test: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
     }
     impl Builder {
         /// <p>Information about the virtual interface failover test.</p>
-        pub fn virtual_interface_test(
-            mut self,
-            input: crate::model::VirtualInterfaceTestHistory,
-        ) -> Self {
+        pub fn virtual_interface_test(mut self, input: crate::model::VirtualInterfaceTestHistory) -> Self {
             self.virtual_interface_test = Some(input);
             self
         }
         /// <p>Information about the virtual interface failover test.</p>
-        pub fn set_virtual_interface_test(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
-        ) -> Self {
-            self.virtual_interface_test = input;
-            self
+        pub fn set_virtual_interface_test(mut self, input: std::option::Option<crate::model::VirtualInterfaceTestHistory>) -> Self {
+            self.virtual_interface_test = input; self
         }
         /// Consumes the builder and constructs a [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
         pub fn build(self) -> crate::output::StartBgpFailoverTestOutput {
             crate::output::StartBgpFailoverTestOutput {
-                virtual_interface_test: self.virtual_interface_test,
+                virtual_interface_test: self.virtual_interface_test
+                ,
             }
         }
     }
+    
+    
 }
 impl StartBgpFailoverTestOutput {
     /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
@@ -1993,35 +1859,31 @@ impl StartBgpFailoverTestOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualInterfaceTestHistoryOutput {
+pub struct ListVirtualInterfaceTestHistoryOutput  {
     /// <p>The ID of the tested virtual interface.</p>
     #[doc(hidden)]
-    pub virtual_interface_test_history:
-        std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>,
+    pub virtual_interface_test_history: std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualInterfaceTestHistoryOutput {
     /// <p>The ID of the tested virtual interface.</p>
-    pub fn virtual_interface_test_history(
-        &self,
-    ) -> std::option::Option<&[crate::model::VirtualInterfaceTestHistory]> {
+    pub fn virtual_interface_test_history(&self) -> std::option::Option<& [crate::model::VirtualInterfaceTestHistory]> {
         self.virtual_interface_test_history.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
 pub mod list_virtual_interface_test_history_output {
-
+    
     /// A builder for [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_interface_test_history:
-            std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>,
+        pub(crate) virtual_interface_test_history: std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2030,22 +1892,15 @@ pub mod list_virtual_interface_test_history_output {
         /// To override the contents of this collection use [`set_virtual_interface_test_history`](Self::set_virtual_interface_test_history).
         ///
         /// <p>The ID of the tested virtual interface.</p>
-        pub fn virtual_interface_test_history(
-            mut self,
-            input: crate::model::VirtualInterfaceTestHistory,
-        ) -> Self {
+        pub fn virtual_interface_test_history(mut self, input: crate::model::VirtualInterfaceTestHistory) -> Self {
             let mut v = self.virtual_interface_test_history.unwrap_or_default();
-            v.push(input);
-            self.virtual_interface_test_history = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_interface_test_history = Some(v);
+                            self
         }
         /// <p>The ID of the tested virtual interface.</p>
-        pub fn set_virtual_interface_test_history(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>,
-        ) -> Self {
-            self.virtual_interface_test_history = input;
-            self
+        pub fn set_virtual_interface_test_history(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>) -> Self {
+            self.virtual_interface_test_history = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2054,17 +1909,20 @@ pub mod list_virtual_interface_test_history_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
         pub fn build(self) -> crate::output::ListVirtualInterfaceTestHistoryOutput {
             crate::output::ListVirtualInterfaceTestHistoryOutput {
-                virtual_interface_test_history: self.virtual_interface_test_history,
-                next_token: self.next_token,
+                virtual_interface_test_history: self.virtual_interface_test_history
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVirtualInterfaceTestHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
@@ -2076,7 +1934,7 @@ impl ListVirtualInterfaceTestHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMacSecKeyOutput {
+pub struct DisassociateMacSecKeyOutput  {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -2086,17 +1944,17 @@ pub struct DisassociateMacSecKeyOutput {
 }
 impl DisassociateMacSecKeyOutput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
 pub mod disassociate_mac_sec_key_output {
-
+    
     /// A builder for [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2110,12 +1968,8 @@ pub mod disassociate_mac_sec_key_output {
             self
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -2124,26 +1978,26 @@ pub mod disassociate_mac_sec_key_output {
         /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
         pub fn build(self) -> crate::output::DisassociateMacSecKeyOutput {
             crate::output::DisassociateMacSecKeyOutput {
-                connection_id: self.connection_id,
-                mac_sec_keys: self.mac_sec_keys,
+                connection_id: self.connection_id
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateMacSecKeyOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
@@ -2155,7 +2009,7 @@ impl DisassociateMacSecKeyOutput {
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateConnectionFromLagOutput {
+pub struct DisassociateConnectionFromLagOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -2165,17 +2019,17 @@ pub struct DisassociateConnectionFromLagOutput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -2224,11 +2078,11 @@ pub struct DisassociateConnectionFromLagOutput {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -2238,42 +2092,42 @@ pub struct DisassociateConnectionFromLagOutput {
 }
 impl DisassociateConnectionFromLagOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -2281,19 +2135,19 @@ impl DisassociateConnectionFromLagOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -2301,49 +2155,47 @@ impl DisassociateConnectionFromLagOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
 pub mod disassociate_connection_from_lag_output {
-
+    
     /// A builder for [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2377,12 +2229,8 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2390,12 +2238,8 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The name of the connection.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2403,47 +2247,39 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
+        pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_name = input; self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2452,8 +2288,7 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2462,8 +2297,7 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2472,8 +2306,7 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -2482,8 +2315,7 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2492,8 +2324,7 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2501,12 +2332,8 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2515,8 +2342,7 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2525,8 +2351,7 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -2535,8 +2360,7 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2544,12 +2368,8 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2557,12 +2377,8 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -2570,12 +2386,8 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2584,17 +2396,13 @@ pub mod disassociate_connection_from_lag_output {
         /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the connection.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the connection.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2602,12 +2410,8 @@ pub mod disassociate_connection_from_lag_output {
             self
         }
         /// <p>The name of the service provider associated with the connection.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -2616,38 +2420,29 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.port_encryption_status = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-        pub fn set_port_encryption_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.port_encryption_status = input;
-            self
+        pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_encryption_status = input; self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -2656,46 +2451,67 @@ pub mod disassociate_connection_from_lag_output {
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
         pub fn build(self) -> crate::output::DisassociateConnectionFromLagOutput {
             crate::output::DisassociateConnectionFromLagOutput {
-                owner_account: self.owner_account,
-                connection_id: self.connection_id,
-                connection_name: self.connection_name,
-                connection_state: self.connection_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                vlan: self.vlan.unwrap_or_default(),
-                partner_name: self.partner_name,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                port_encryption_status: self.port_encryption_status,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                owner_account: self.owner_account
+                ,
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                connection_state: self.connection_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                partner_name: self.partner_name
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                port_encryption_status: self.port_encryption_status
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateConnectionFromLagOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
@@ -2707,25 +2523,24 @@ impl DisassociateConnectionFromLagOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualInterfacesOutput {
+pub struct DescribeVirtualInterfacesOutput  {
     /// <p>The virtual interfaces</p>
     #[doc(hidden)]
     pub virtual_interfaces: std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>,
 }
 impl DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
-    pub fn virtual_interfaces(&self) -> std::option::Option<&[crate::model::VirtualInterface]> {
+    pub fn virtual_interfaces(&self) -> std::option::Option<& [crate::model::VirtualInterface]> {
         self.virtual_interfaces.as_deref()
     }
 }
 /// See [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
 pub mod describe_virtual_interfaces_output {
-
+    
     /// A builder for [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_interfaces:
-            std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>,
+        pub(crate) virtual_interfaces: std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>,
     }
     impl Builder {
         /// Appends an item to `virtual_interfaces`.
@@ -2735,25 +2550,24 @@ pub mod describe_virtual_interfaces_output {
         /// <p>The virtual interfaces</p>
         pub fn virtual_interfaces(mut self, input: crate::model::VirtualInterface) -> Self {
             let mut v = self.virtual_interfaces.unwrap_or_default();
-            v.push(input);
-            self.virtual_interfaces = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_interfaces = Some(v);
+                            self
         }
         /// <p>The virtual interfaces</p>
-        pub fn set_virtual_interfaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>,
-        ) -> Self {
-            self.virtual_interfaces = input;
-            self
+        pub fn set_virtual_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>) -> Self {
+            self.virtual_interfaces = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
         pub fn build(self) -> crate::output::DescribeVirtualInterfacesOutput {
             crate::output::DescribeVirtualInterfacesOutput {
-                virtual_interfaces: self.virtual_interfaces,
+                virtual_interfaces: self.virtual_interfaces
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVirtualInterfacesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
@@ -2765,25 +2579,24 @@ impl DescribeVirtualInterfacesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualGatewaysOutput {
+pub struct DescribeVirtualGatewaysOutput  {
     /// <p>The virtual private gateways.</p>
     #[doc(hidden)]
     pub virtual_gateways: std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>,
 }
 impl DescribeVirtualGatewaysOutput {
     /// <p>The virtual private gateways.</p>
-    pub fn virtual_gateways(&self) -> std::option::Option<&[crate::model::VirtualGateway]> {
+    pub fn virtual_gateways(&self) -> std::option::Option<& [crate::model::VirtualGateway]> {
         self.virtual_gateways.as_deref()
     }
 }
 /// See [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
 pub mod describe_virtual_gateways_output {
-
+    
     /// A builder for [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_gateways:
-            std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>,
+        pub(crate) virtual_gateways: std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>,
     }
     impl Builder {
         /// Appends an item to `virtual_gateways`.
@@ -2793,25 +2606,24 @@ pub mod describe_virtual_gateways_output {
         /// <p>The virtual private gateways.</p>
         pub fn virtual_gateways(mut self, input: crate::model::VirtualGateway) -> Self {
             let mut v = self.virtual_gateways.unwrap_or_default();
-            v.push(input);
-            self.virtual_gateways = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_gateways = Some(v);
+                            self
         }
         /// <p>The virtual private gateways.</p>
-        pub fn set_virtual_gateways(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>,
-        ) -> Self {
-            self.virtual_gateways = input;
-            self
+        pub fn set_virtual_gateways(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>) -> Self {
+            self.virtual_gateways = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
         pub fn build(self) -> crate::output::DescribeVirtualGatewaysOutput {
             crate::output::DescribeVirtualGatewaysOutput {
-                virtual_gateways: self.virtual_gateways,
+                virtual_gateways: self.virtual_gateways
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVirtualGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
@@ -2823,20 +2635,20 @@ impl DescribeVirtualGatewaysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsOutput {
+pub struct DescribeTagsOutput  {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl DescribeTagsOutput {
     /// <p>Information about the tags.</p>
-    pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
+    pub fn resource_tags(&self) -> std::option::Option<& [crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
     }
 }
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
-
+    
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2850,25 +2662,24 @@ pub mod describe_tags_output {
         /// <p>Information about the tags.</p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input);
-            self.resource_tags = Some(v);
-            self
+                            v.push(input);
+                            self.resource_tags = Some(v);
+                            self
         }
         /// <p>Information about the tags.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>) -> Self {
+            self.resource_tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
         pub fn build(self) -> crate::output::DescribeTagsOutput {
             crate::output::DescribeTagsOutput {
-                resource_tags: self.resource_tags,
+                resource_tags: self.resource_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
@@ -2880,7 +2691,7 @@ impl DescribeTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRouterConfigurationOutput {
+pub struct DescribeRouterConfigurationOutput  {
     /// <p>The customer router configuration.</p>
     #[doc(hidden)]
     pub customer_router_config: std::option::Option<std::string::String>,
@@ -2896,25 +2707,25 @@ pub struct DescribeRouterConfigurationOutput {
 }
 impl DescribeRouterConfigurationOutput {
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The details about the router.</p>
-    pub fn router(&self) -> std::option::Option<&crate::model::RouterType> {
+    pub fn router(&self) -> std::option::Option<& crate::model::RouterType> {
         self.router.as_ref()
     }
     /// <p>The ID assigned to the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>Provides the details about a virtual interface's router.</p>
-    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
 }
 /// See [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
 pub mod describe_router_configuration_output {
-
+    
     /// A builder for [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2930,12 +2741,8 @@ pub mod describe_router_configuration_output {
             self
         }
         /// <p>The customer router configuration.</p>
-        pub fn set_customer_router_config(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_router_config = input;
-            self
+        pub fn set_customer_router_config(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_router_config = input; self
         }
         /// <p>The details about the router.</p>
         pub fn router(mut self, input: crate::model::RouterType) -> Self {
@@ -2944,8 +2751,7 @@ pub mod describe_router_configuration_output {
         }
         /// <p>The details about the router.</p>
         pub fn set_router(mut self, input: std::option::Option<crate::model::RouterType>) -> Self {
-            self.router = input;
-            self
+            self.router = input; self
         }
         /// <p>The ID assigned to the virtual interface.</p>
         pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2953,12 +2759,8 @@ pub mod describe_router_configuration_output {
             self
         }
         /// <p>The ID assigned to the virtual interface.</p>
-        pub fn set_virtual_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_id = input;
-            self
+        pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_id = input; self
         }
         /// <p>Provides the details about a virtual interface's router.</p>
         pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2966,23 +2768,25 @@ pub mod describe_router_configuration_output {
             self
         }
         /// <p>Provides the details about a virtual interface's router.</p>
-        pub fn set_virtual_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_name = input;
-            self
+        pub fn set_virtual_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeRouterConfigurationOutput {
             crate::output::DescribeRouterConfigurationOutput {
-                customer_router_config: self.customer_router_config,
-                router: self.router,
-                virtual_interface_id: self.virtual_interface_id,
-                virtual_interface_name: self.virtual_interface_name,
+                customer_router_config: self.customer_router_config
+                ,
+                router: self.router
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                virtual_interface_name: self.virtual_interface_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRouterConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
@@ -2994,20 +2798,20 @@ impl DescribeRouterConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationsOutput {
+pub struct DescribeLocationsOutput  {
     /// <p>The locations.</p>
     #[doc(hidden)]
     pub locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
 }
 impl DescribeLocationsOutput {
     /// <p>The locations.</p>
-    pub fn locations(&self) -> std::option::Option<&[crate::model::Location]> {
+    pub fn locations(&self) -> std::option::Option<& [crate::model::Location]> {
         self.locations.as_deref()
     }
 }
 /// See [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
 pub mod describe_locations_output {
-
+    
     /// A builder for [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3021,25 +2825,24 @@ pub mod describe_locations_output {
         /// <p>The locations.</p>
         pub fn locations(mut self, input: crate::model::Location) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input);
-            self.locations = Some(v);
-            self
+                            v.push(input);
+                            self.locations = Some(v);
+                            self
         }
         /// <p>The locations.</p>
-        pub fn set_locations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Location>>,
-        ) -> Self {
-            self.locations = input;
-            self
+        pub fn set_locations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Location>>) -> Self {
+            self.locations = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
         pub fn build(self) -> crate::output::DescribeLocationsOutput {
             crate::output::DescribeLocationsOutput {
-                locations: self.locations,
+                locations: self.locations
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
@@ -3051,7 +2854,7 @@ impl DescribeLocationsOutput {
 /// <p>Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoaOutput {
+pub struct DescribeLoaOutput  {
     /// <p>The binary contents of the LOA-CFA document.</p>
     #[doc(hidden)]
     pub loa_content: std::option::Option<aws_smithy_types::Blob>,
@@ -3061,17 +2864,17 @@ pub struct DescribeLoaOutput {
 }
 impl DescribeLoaOutput {
     /// <p>The binary contents of the LOA-CFA document.</p>
-    pub fn loa_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn loa_content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.loa_content.as_ref()
     }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-    pub fn loa_content_type(&self) -> std::option::Option<&crate::model::LoaContentType> {
+    pub fn loa_content_type(&self) -> std::option::Option<& crate::model::LoaContentType> {
         self.loa_content_type.as_ref()
     }
 }
 /// See [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
 pub mod describe_loa_output {
-
+    
     /// A builder for [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3085,12 +2888,8 @@ pub mod describe_loa_output {
             self
         }
         /// <p>The binary contents of the LOA-CFA document.</p>
-        pub fn set_loa_content(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.loa_content = input;
-            self
+        pub fn set_loa_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.loa_content = input; self
         }
         /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
         pub fn loa_content_type(mut self, input: crate::model::LoaContentType) -> Self {
@@ -3098,21 +2897,21 @@ pub mod describe_loa_output {
             self
         }
         /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-        pub fn set_loa_content_type(
-            mut self,
-            input: std::option::Option<crate::model::LoaContentType>,
-        ) -> Self {
-            self.loa_content_type = input;
-            self
+        pub fn set_loa_content_type(mut self, input: std::option::Option<crate::model::LoaContentType>) -> Self {
+            self.loa_content_type = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
         pub fn build(self) -> crate::output::DescribeLoaOutput {
             crate::output::DescribeLoaOutput {
-                loa_content: self.loa_content,
-                loa_content_type: self.loa_content_type,
+                loa_content: self.loa_content
+                ,
+                loa_content_type: self.loa_content_type
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLoaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
@@ -3124,20 +2923,20 @@ impl DescribeLoaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLagsOutput {
+pub struct DescribeLagsOutput  {
     /// <p>The LAGs.</p>
     #[doc(hidden)]
     pub lags: std::option::Option<std::vec::Vec<crate::model::Lag>>,
 }
 impl DescribeLagsOutput {
     /// <p>The LAGs.</p>
-    pub fn lags(&self) -> std::option::Option<&[crate::model::Lag]> {
+    pub fn lags(&self) -> std::option::Option<& [crate::model::Lag]> {
         self.lags.as_deref()
     }
 }
 /// See [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
 pub mod describe_lags_output {
-
+    
     /// A builder for [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3151,23 +2950,24 @@ pub mod describe_lags_output {
         /// <p>The LAGs.</p>
         pub fn lags(mut self, input: crate::model::Lag) -> Self {
             let mut v = self.lags.unwrap_or_default();
-            v.push(input);
-            self.lags = Some(v);
-            self
+                            v.push(input);
+                            self.lags = Some(v);
+                            self
         }
         /// <p>The LAGs.</p>
-        pub fn set_lags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Lag>>,
-        ) -> Self {
-            self.lags = input;
-            self
+        pub fn set_lags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Lag>>) -> Self {
+            self.lags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
         pub fn build(self) -> crate::output::DescribeLagsOutput {
-            crate::output::DescribeLagsOutput { lags: self.lags }
+            crate::output::DescribeLagsOutput {
+                lags: self.lags
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeLagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
@@ -3179,20 +2979,20 @@ impl DescribeLagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInterconnectsOutput {
+pub struct DescribeInterconnectsOutput  {
     /// <p>The interconnects.</p>
     #[doc(hidden)]
     pub interconnects: std::option::Option<std::vec::Vec<crate::model::Interconnect>>,
 }
 impl DescribeInterconnectsOutput {
     /// <p>The interconnects.</p>
-    pub fn interconnects(&self) -> std::option::Option<&[crate::model::Interconnect]> {
+    pub fn interconnects(&self) -> std::option::Option<& [crate::model::Interconnect]> {
         self.interconnects.as_deref()
     }
 }
 /// See [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
 pub mod describe_interconnects_output {
-
+    
     /// A builder for [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3206,25 +3006,24 @@ pub mod describe_interconnects_output {
         /// <p>The interconnects.</p>
         pub fn interconnects(mut self, input: crate::model::Interconnect) -> Self {
             let mut v = self.interconnects.unwrap_or_default();
-            v.push(input);
-            self.interconnects = Some(v);
-            self
+                            v.push(input);
+                            self.interconnects = Some(v);
+                            self
         }
         /// <p>The interconnects.</p>
-        pub fn set_interconnects(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Interconnect>>,
-        ) -> Self {
-            self.interconnects = input;
-            self
+        pub fn set_interconnects(mut self, input: std::option::Option<std::vec::Vec<crate::model::Interconnect>>) -> Self {
+            self.interconnects = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
         pub fn build(self) -> crate::output::DescribeInterconnectsOutput {
             crate::output::DescribeInterconnectsOutput {
-                interconnects: self.interconnects,
+                interconnects: self.interconnects
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInterconnectsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
@@ -3236,20 +3035,20 @@ impl DescribeInterconnectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInterconnectLoaOutput {
+pub struct DescribeInterconnectLoaOutput  {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     #[doc(hidden)]
     pub loa: std::option::Option<crate::model::Loa>,
 }
 impl DescribeInterconnectLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
-    pub fn loa(&self) -> std::option::Option<&crate::model::Loa> {
+    pub fn loa(&self) -> std::option::Option<& crate::model::Loa> {
         self.loa.as_ref()
     }
 }
 /// See [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
 pub mod describe_interconnect_loa_output {
-
+    
     /// A builder for [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3263,14 +3062,18 @@ pub mod describe_interconnect_loa_output {
         }
         /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
         pub fn set_loa(mut self, input: std::option::Option<crate::model::Loa>) -> Self {
-            self.loa = input;
-            self
+            self.loa = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
         pub fn build(self) -> crate::output::DescribeInterconnectLoaOutput {
-            crate::output::DescribeInterconnectLoaOutput { loa: self.loa }
+            crate::output::DescribeInterconnectLoaOutput {
+                loa: self.loa
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeInterconnectLoaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
@@ -3282,20 +3085,20 @@ impl DescribeInterconnectLoaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHostedConnectionsOutput {
+pub struct DescribeHostedConnectionsOutput  {
     /// <p>The connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
 }
 impl DescribeHostedConnectionsOutput {
     /// <p>The connections.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
 }
 /// See [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
 pub mod describe_hosted_connections_output {
-
+    
     /// A builder for [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3309,25 +3112,24 @@ pub mod describe_hosted_connections_output {
         /// <p>The connections.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>The connections.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// Consumes the builder and constructs a [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeHostedConnectionsOutput {
             crate::output::DescribeHostedConnectionsOutput {
-                connections: self.connections,
+                connections: self.connections
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeHostedConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
@@ -3339,35 +3141,31 @@ impl DescribeHostedConnectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewaysOutput {
+pub struct DescribeDirectConnectGatewaysOutput  {
     /// <p>The Direct Connect gateways.</p>
     #[doc(hidden)]
-    pub direct_connect_gateways:
-        std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
+    pub direct_connect_gateways: std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectConnectGatewaysOutput {
     /// <p>The Direct Connect gateways.</p>
-    pub fn direct_connect_gateways(
-        &self,
-    ) -> std::option::Option<&[crate::model::DirectConnectGateway]> {
+    pub fn direct_connect_gateways(&self) -> std::option::Option<& [crate::model::DirectConnectGateway]> {
         self.direct_connect_gateways.as_deref()
     }
     /// <p>The token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
 pub mod describe_direct_connect_gateways_output {
-
+    
     /// A builder for [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateways:
-            std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
+        pub(crate) direct_connect_gateways: std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3376,22 +3174,15 @@ pub mod describe_direct_connect_gateways_output {
         /// To override the contents of this collection use [`set_direct_connect_gateways`](Self::set_direct_connect_gateways).
         ///
         /// <p>The Direct Connect gateways.</p>
-        pub fn direct_connect_gateways(
-            mut self,
-            input: crate::model::DirectConnectGateway,
-        ) -> Self {
+        pub fn direct_connect_gateways(mut self, input: crate::model::DirectConnectGateway) -> Self {
             let mut v = self.direct_connect_gateways.unwrap_or_default();
-            v.push(input);
-            self.direct_connect_gateways = Some(v);
-            self
+                            v.push(input);
+                            self.direct_connect_gateways = Some(v);
+                            self
         }
         /// <p>The Direct Connect gateways.</p>
-        pub fn set_direct_connect_gateways(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
-        ) -> Self {
-            self.direct_connect_gateways = input;
-            self
+        pub fn set_direct_connect_gateways(mut self, input: std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>) -> Self {
+            self.direct_connect_gateways = input; self
         }
         /// <p>The token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3400,17 +3191,20 @@ pub mod describe_direct_connect_gateways_output {
         }
         /// <p>The token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewaysOutput {
             crate::output::DescribeDirectConnectGatewaysOutput {
-                direct_connect_gateways: self.direct_connect_gateways,
-                next_token: self.next_token,
+                direct_connect_gateways: self.direct_connect_gateways
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDirectConnectGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
@@ -3422,35 +3216,31 @@ impl DescribeDirectConnectGatewaysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAttachmentsOutput {
+pub struct DescribeDirectConnectGatewayAttachmentsOutput  {
     /// <p>The attachments.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_attachments:
-        std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
+    pub direct_connect_gateway_attachments: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectConnectGatewayAttachmentsOutput {
     /// <p>The attachments.</p>
-    pub fn direct_connect_gateway_attachments(
-        &self,
-    ) -> std::option::Option<&[crate::model::DirectConnectGatewayAttachment]> {
+    pub fn direct_connect_gateway_attachments(&self) -> std::option::Option<& [crate::model::DirectConnectGatewayAttachment]> {
         self.direct_connect_gateway_attachments.as_deref()
     }
     /// <p>The token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
 pub mod describe_direct_connect_gateway_attachments_output {
-
+    
     /// A builder for [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_attachments:
-            std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
+        pub(crate) direct_connect_gateway_attachments: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3459,22 +3249,15 @@ pub mod describe_direct_connect_gateway_attachments_output {
         /// To override the contents of this collection use [`set_direct_connect_gateway_attachments`](Self::set_direct_connect_gateway_attachments).
         ///
         /// <p>The attachments.</p>
-        pub fn direct_connect_gateway_attachments(
-            mut self,
-            input: crate::model::DirectConnectGatewayAttachment,
-        ) -> Self {
+        pub fn direct_connect_gateway_attachments(mut self, input: crate::model::DirectConnectGatewayAttachment) -> Self {
             let mut v = self.direct_connect_gateway_attachments.unwrap_or_default();
-            v.push(input);
-            self.direct_connect_gateway_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.direct_connect_gateway_attachments = Some(v);
+                            self
         }
         /// <p>The attachments.</p>
-        pub fn set_direct_connect_gateway_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
-        ) -> Self {
-            self.direct_connect_gateway_attachments = input;
-            self
+        pub fn set_direct_connect_gateway_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>) -> Self {
+            self.direct_connect_gateway_attachments = input; self
         }
         /// <p>The token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3483,17 +3266,20 @@ pub mod describe_direct_connect_gateway_attachments_output {
         }
         /// <p>The token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewayAttachmentsOutput {
             crate::output::DescribeDirectConnectGatewayAttachmentsOutput {
-                direct_connect_gateway_attachments: self.direct_connect_gateway_attachments,
-                next_token: self.next_token,
+                direct_connect_gateway_attachments: self.direct_connect_gateway_attachments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDirectConnectGatewayAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
@@ -3505,35 +3291,31 @@ impl DescribeDirectConnectGatewayAttachmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAssociationsOutput {
+pub struct DescribeDirectConnectGatewayAssociationsOutput  {
     /// <p>Information about the associations.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_associations:
-        std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociation>>,
+    pub direct_connect_gateway_associations: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociation>>,
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectConnectGatewayAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn direct_connect_gateway_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::DirectConnectGatewayAssociation]> {
+    pub fn direct_connect_gateway_associations(&self) -> std::option::Option<& [crate::model::DirectConnectGatewayAssociation]> {
         self.direct_connect_gateway_associations.as_deref()
     }
     /// <p>The token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
 pub mod describe_direct_connect_gateway_associations_output {
-
+    
     /// A builder for [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_associations:
-            std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociation>>,
+        pub(crate) direct_connect_gateway_associations: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3542,24 +3324,15 @@ pub mod describe_direct_connect_gateway_associations_output {
         /// To override the contents of this collection use [`set_direct_connect_gateway_associations`](Self::set_direct_connect_gateway_associations).
         ///
         /// <p>Information about the associations.</p>
-        pub fn direct_connect_gateway_associations(
-            mut self,
-            input: crate::model::DirectConnectGatewayAssociation,
-        ) -> Self {
+        pub fn direct_connect_gateway_associations(mut self, input: crate::model::DirectConnectGatewayAssociation) -> Self {
             let mut v = self.direct_connect_gateway_associations.unwrap_or_default();
-            v.push(input);
-            self.direct_connect_gateway_associations = Some(v);
-            self
+                            v.push(input);
+                            self.direct_connect_gateway_associations = Some(v);
+                            self
         }
         /// <p>Information about the associations.</p>
-        pub fn set_direct_connect_gateway_associations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DirectConnectGatewayAssociation>,
-            >,
-        ) -> Self {
-            self.direct_connect_gateway_associations = input;
-            self
+        pub fn set_direct_connect_gateway_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociation>>) -> Self {
+            self.direct_connect_gateway_associations = input; self
         }
         /// <p>The token to retrieve the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3568,22 +3341,24 @@ pub mod describe_direct_connect_gateway_associations_output {
         }
         /// <p>The token to retrieve the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewayAssociationsOutput {
             crate::output::DescribeDirectConnectGatewayAssociationsOutput {
-                direct_connect_gateway_associations: self.direct_connect_gateway_associations,
-                next_token: self.next_token,
+                direct_connect_gateway_associations: self.direct_connect_gateway_associations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDirectConnectGatewayAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
-    pub fn builder() -> crate::output::describe_direct_connect_gateway_associations_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_direct_connect_gateway_associations_output::Builder {
         crate::output::describe_direct_connect_gateway_associations_output::Builder::default()
     }
 }
@@ -3591,36 +3366,31 @@ impl DescribeDirectConnectGatewayAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAssociationProposalsOutput {
+pub struct DescribeDirectConnectGatewayAssociationProposalsOutput  {
     /// <p>Describes the Direct Connect gateway association proposals.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association_proposals:
-        std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>>,
+    pub direct_connect_gateway_association_proposals: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDirectConnectGatewayAssociationProposalsOutput {
     /// <p>Describes the Direct Connect gateway association proposals.</p>
-    pub fn direct_connect_gateway_association_proposals(
-        &self,
-    ) -> std::option::Option<&[crate::model::DirectConnectGatewayAssociationProposal]> {
+    pub fn direct_connect_gateway_association_proposals(&self) -> std::option::Option<& [crate::model::DirectConnectGatewayAssociationProposal]> {
         self.direct_connect_gateway_association_proposals.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
 pub mod describe_direct_connect_gateway_association_proposals_output {
-
+    
     /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_association_proposals: std::option::Option<
-            std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>,
-        >,
+        pub(crate) direct_connect_gateway_association_proposals: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3629,26 +3399,15 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
         /// To override the contents of this collection use [`set_direct_connect_gateway_association_proposals`](Self::set_direct_connect_gateway_association_proposals).
         ///
         /// <p>Describes the Direct Connect gateway association proposals.</p>
-        pub fn direct_connect_gateway_association_proposals(
-            mut self,
-            input: crate::model::DirectConnectGatewayAssociationProposal,
-        ) -> Self {
-            let mut v = self
-                .direct_connect_gateway_association_proposals
-                .unwrap_or_default();
-            v.push(input);
-            self.direct_connect_gateway_association_proposals = Some(v);
-            self
+        pub fn direct_connect_gateway_association_proposals(mut self, input: crate::model::DirectConnectGatewayAssociationProposal) -> Self {
+            let mut v = self.direct_connect_gateway_association_proposals.unwrap_or_default();
+                            v.push(input);
+                            self.direct_connect_gateway_association_proposals = Some(v);
+                            self
         }
         /// <p>Describes the Direct Connect gateway association proposals.</p>
-        pub fn set_direct_connect_gateway_association_proposals(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>,
-            >,
-        ) -> Self {
-            self.direct_connect_gateway_association_proposals = input;
-            self
+        pub fn set_direct_connect_gateway_association_proposals(mut self, input: std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>>) -> Self {
+            self.direct_connect_gateway_association_proposals = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3657,25 +3416,24 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput {
+        pub fn build(self) -> crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput {
             crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput {
-                direct_connect_gateway_association_proposals: self
-                    .direct_connect_gateway_association_proposals,
-                next_token: self.next_token,
+                direct_connect_gateway_association_proposals: self.direct_connect_gateway_association_proposals
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDirectConnectGatewayAssociationProposalsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
-    pub fn builder(
-    ) -> crate::output::describe_direct_connect_gateway_association_proposals_output::Builder {
+    pub fn builder() -> crate::output::describe_direct_connect_gateway_association_proposals_output::Builder {
         crate::output::describe_direct_connect_gateway_association_proposals_output::Builder::default()
     }
 }
@@ -3683,37 +3441,37 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomerMetadataOutput {
+pub struct DescribeCustomerMetadataOutput  {
     /// <p>The list of customer agreements.</p>
     #[doc(hidden)]
     pub agreements: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
-    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
-    /// <ul>
-    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
-    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
-    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
+    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li> 
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li> 
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub nni_partner_type: std::option::Option<crate::model::NniPartnerType>,
 }
 impl DescribeCustomerMetadataOutput {
     /// <p>The list of customer agreements.</p>
-    pub fn agreements(&self) -> std::option::Option<&[crate::model::CustomerAgreement]> {
+    pub fn agreements(&self) -> std::option::Option<& [crate::model::CustomerAgreement]> {
         self.agreements.as_deref()
     }
-    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
-    /// <ul>
-    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
-    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
-    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
+    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li> 
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li> 
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li> 
     /// </ul>
-    pub fn nni_partner_type(&self) -> std::option::Option<&crate::model::NniPartnerType> {
+    pub fn nni_partner_type(&self) -> std::option::Option<& crate::model::NniPartnerType> {
         self.nni_partner_type.as_ref()
     }
 }
 /// See [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
 pub mod describe_customer_metadata_output {
-
+    
     /// A builder for [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3728,49 +3486,45 @@ pub mod describe_customer_metadata_output {
         /// <p>The list of customer agreements.</p>
         pub fn agreements(mut self, input: crate::model::CustomerAgreement) -> Self {
             let mut v = self.agreements.unwrap_or_default();
-            v.push(input);
-            self.agreements = Some(v);
-            self
+                            v.push(input);
+                            self.agreements = Some(v);
+                            self
         }
         /// <p>The list of customer agreements.</p>
-        pub fn set_agreements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
-        ) -> Self {
-            self.agreements = input;
-            self
+        pub fn set_agreements(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>) -> Self {
+            self.agreements = input; self
         }
-        /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
-        /// <ul>
-        /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
-        /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
-        /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
+        /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li> 
+        /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li> 
+        /// <li> <p>nonPartner: The customer is not a partner.</p> </li> 
         /// </ul>
         pub fn nni_partner_type(mut self, input: crate::model::NniPartnerType) -> Self {
             self.nni_partner_type = Some(input);
             self
         }
-        /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
-        /// <ul>
-        /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
-        /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
-        /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
+        /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li> 
+        /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li> 
+        /// <li> <p>nonPartner: The customer is not a partner.</p> </li> 
         /// </ul>
-        pub fn set_nni_partner_type(
-            mut self,
-            input: std::option::Option<crate::model::NniPartnerType>,
-        ) -> Self {
-            self.nni_partner_type = input;
-            self
+        pub fn set_nni_partner_type(mut self, input: std::option::Option<crate::model::NniPartnerType>) -> Self {
+            self.nni_partner_type = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
         pub fn build(self) -> crate::output::DescribeCustomerMetadataOutput {
             crate::output::DescribeCustomerMetadataOutput {
-                agreements: self.agreements,
-                nni_partner_type: self.nni_partner_type,
+                agreements: self.agreements
+                ,
+                nni_partner_type: self.nni_partner_type
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCustomerMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
@@ -3782,20 +3536,20 @@ impl DescribeCustomerMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectionsOnInterconnectOutput {
+pub struct DescribeConnectionsOnInterconnectOutput  {
     /// <p>The connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
 }
 impl DescribeConnectionsOnInterconnectOutput {
     /// <p>The connections.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
 }
 /// See [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
 pub mod describe_connections_on_interconnect_output {
-
+    
     /// A builder for [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3809,25 +3563,24 @@ pub mod describe_connections_on_interconnect_output {
         /// <p>The connections.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>The connections.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
         pub fn build(self) -> crate::output::DescribeConnectionsOnInterconnectOutput {
             crate::output::DescribeConnectionsOnInterconnectOutput {
-                connections: self.connections,
+                connections: self.connections
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectionsOnInterconnectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
@@ -3839,20 +3592,20 @@ impl DescribeConnectionsOnInterconnectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectionsOutput {
+pub struct DescribeConnectionsOutput  {
     /// <p>The connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
 }
 impl DescribeConnectionsOutput {
     /// <p>The connections.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
 }
 /// See [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
 pub mod describe_connections_output {
-
+    
     /// A builder for [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3866,25 +3619,24 @@ pub mod describe_connections_output {
         /// <p>The connections.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>The connections.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeConnectionsOutput {
             crate::output::DescribeConnectionsOutput {
-                connections: self.connections,
+                connections: self.connections
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
@@ -3896,20 +3648,20 @@ impl DescribeConnectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectionLoaOutput {
+pub struct DescribeConnectionLoaOutput  {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     #[doc(hidden)]
     pub loa: std::option::Option<crate::model::Loa>,
 }
 impl DescribeConnectionLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
-    pub fn loa(&self) -> std::option::Option<&crate::model::Loa> {
+    pub fn loa(&self) -> std::option::Option<& crate::model::Loa> {
         self.loa.as_ref()
     }
 }
 /// See [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
 pub mod describe_connection_loa_output {
-
+    
     /// A builder for [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3923,14 +3675,18 @@ pub mod describe_connection_loa_output {
         }
         /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
         pub fn set_loa(mut self, input: std::option::Option<crate::model::Loa>) -> Self {
-            self.loa = input;
-            self
+            self.loa = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
         pub fn build(self) -> crate::output::DescribeConnectionLoaOutput {
-            crate::output::DescribeConnectionLoaOutput { loa: self.loa }
+            crate::output::DescribeConnectionLoaOutput {
+                loa: self.loa
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeConnectionLoaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
@@ -3942,96 +3698,89 @@ impl DescribeConnectionLoaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualInterfaceOutput {
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+pub struct DeleteVirtualInterfaceOutput  {
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
 }
 impl DeleteVirtualInterfaceOutput {
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
 }
 /// See [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
 pub mod delete_virtual_interface_output {
-
+    
     /// A builder for [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     }
     impl Builder {
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::DeleteVirtualInterfaceOutput {
             crate::output::DeleteVirtualInterfaceOutput {
-                virtual_interface_state: self.virtual_interface_state,
+                virtual_interface_state: self.virtual_interface_state
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
@@ -4043,7 +3792,7 @@ impl DeleteVirtualInterfaceOutput {
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLagOutput {
+pub struct DeleteLagOutput  {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     #[doc(hidden)]
     pub connections_bandwidth: std::option::Option<std::string::String>,
@@ -4059,15 +3808,15 @@ pub struct DeleteLagOutput {
     /// <p>The name of the LAG.</p>
     #[doc(hidden)]
     pub lag_name: std::option::Option<std::string::String>,
-    /// <p>The state of the LAG. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+    /// <p>The state of the LAG. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub lag_state: std::option::Option<crate::model::LagState>,
@@ -4110,7 +3859,7 @@ pub struct DeleteLagOutput {
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -4120,7 +3869,7 @@ pub struct DeleteLagOutput {
 }
 impl DeleteLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
+    pub fn connections_bandwidth(&self) -> std::option::Option<& str> {
         self.connections_bandwidth.as_deref()
     }
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
@@ -4128,36 +3877,36 @@ impl DeleteLagOutput {
         self.number_of_connections
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The name of the LAG.</p>
-    pub fn lag_name(&self) -> std::option::Option<&str> {
+    pub fn lag_name(&self) -> std::option::Option<& str> {
         self.lag_name.as_deref()
     }
-    /// <p>The state of the LAG. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+    /// <p>The state of the LAG. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
     /// </ul>
-    pub fn lag_state(&self) -> std::option::Option<&crate::model::LagState> {
+    pub fn lag_state(&self) -> std::option::Option<& crate::model::LagState> {
         self.lag_state.as_ref()
     }
     /// <p>The location of the LAG.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
@@ -4165,19 +3914,19 @@ impl DeleteLagOutput {
         self.minimum_links
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The connections bundled by the LAG.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
@@ -4189,36 +3938,34 @@ impl DeleteLagOutput {
         self.jumbo_frame_capable
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the LAG.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`DeleteLagOutput`](crate::output::DeleteLagOutput).
 pub mod delete_lag_output {
-
+    
     /// A builder for [`DeleteLagOutput`](crate::output::DeleteLagOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4251,12 +3998,8 @@ pub mod delete_lag_output {
             self
         }
         /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-        pub fn set_connections_bandwidth(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connections_bandwidth = input;
-            self
+        pub fn set_connections_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connections_bandwidth = input; self
         }
         /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
         pub fn number_of_connections(mut self, input: i32) -> Self {
@@ -4265,8 +4008,7 @@ pub mod delete_lag_output {
         }
         /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
         pub fn set_number_of_connections(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_connections = input;
-            self
+            self.number_of_connections = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4275,8 +4017,7 @@ pub mod delete_lag_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4284,12 +4025,8 @@ pub mod delete_lag_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The name of the LAG.</p>
         pub fn lag_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4298,36 +4035,34 @@ pub mod delete_lag_output {
         }
         /// <p>The name of the LAG.</p>
         pub fn set_lag_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_name = input;
-            self
+            self.lag_name = input; self
         }
-        /// <p>The state of the LAG. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+        /// <p>The state of the LAG. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
         /// </ul>
         pub fn lag_state(mut self, input: crate::model::LagState) -> Self {
             self.lag_state = Some(input);
             self
         }
-        /// <p>The state of the LAG. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+        /// <p>The state of the LAG. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
         /// </ul>
         pub fn set_lag_state(mut self, input: std::option::Option<crate::model::LagState>) -> Self {
-            self.lag_state = input;
-            self
+            self.lag_state = input; self
         }
         /// <p>The location of the LAG.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4336,8 +4071,7 @@ pub mod delete_lag_output {
         }
         /// <p>The location of the LAG.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4346,8 +4080,7 @@ pub mod delete_lag_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
         pub fn minimum_links(mut self, input: i32) -> Self {
@@ -4356,8 +4089,7 @@ pub mod delete_lag_output {
         }
         /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
         pub fn set_minimum_links(mut self, input: std::option::Option<i32>) -> Self {
-            self.minimum_links = input;
-            self
+            self.minimum_links = input; self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4366,8 +4098,7 @@ pub mod delete_lag_output {
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4375,12 +4106,8 @@ pub mod delete_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4388,12 +4115,8 @@ pub mod delete_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `connections`.
         ///
@@ -4402,17 +4125,13 @@ pub mod delete_lag_output {
         /// <p>The connections bundled by the LAG.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>The connections bundled by the LAG.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// <p>Indicates whether the LAG can host other connections.</p>
         pub fn allows_hosted_connections(mut self, input: bool) -> Self {
@@ -4421,8 +4140,7 @@ pub mod delete_lag_output {
         }
         /// <p>Indicates whether the LAG can host other connections.</p>
         pub fn set_allows_hosted_connections(mut self, input: std::option::Option<bool>) -> Self {
-            self.allows_hosted_connections = input;
-            self
+            self.allows_hosted_connections = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -4431,8 +4149,7 @@ pub mod delete_lag_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -4440,12 +4157,8 @@ pub mod delete_lag_output {
             self
         }
         /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4454,17 +4167,13 @@ pub mod delete_lag_output {
         /// <p>The tags associated with the LAG.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the LAG.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the LAG.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4472,12 +4181,8 @@ pub mod delete_lag_output {
             self
         }
         /// <p>The name of the service provider associated with the LAG.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -4486,23 +4191,18 @@ pub mod delete_lag_output {
         }
         /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+        /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+        /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -4511,45 +4211,67 @@ pub mod delete_lag_output {
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLagOutput`](crate::output::DeleteLagOutput).
         pub fn build(self) -> crate::output::DeleteLagOutput {
             crate::output::DeleteLagOutput {
-                connections_bandwidth: self.connections_bandwidth,
-                number_of_connections: self.number_of_connections.unwrap_or_default(),
-                lag_id: self.lag_id,
-                owner_account: self.owner_account,
-                lag_name: self.lag_name,
-                lag_state: self.lag_state,
-                location: self.location,
-                region: self.region,
-                minimum_links: self.minimum_links.unwrap_or_default(),
-                aws_device: self.aws_device,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                connections: self.connections,
-                allows_hosted_connections: self.allows_hosted_connections.unwrap_or_default(),
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                connections_bandwidth: self.connections_bandwidth
+                ,
+                number_of_connections: self.number_of_connections
+                    .unwrap_or_default()
+                ,
+                lag_id: self.lag_id
+                ,
+                owner_account: self.owner_account
+                ,
+                lag_name: self.lag_name
+                ,
+                lag_state: self.lag_state
+                ,
+                location: self.location
+                ,
+                region: self.region
+                ,
+                minimum_links: self.minimum_links
+                    .unwrap_or_default()
+                ,
+                aws_device: self.aws_device
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                connections: self.connections
+                ,
+                allows_hosted_connections: self.allows_hosted_connections
+                    .unwrap_or_default()
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteLagOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLagOutput`](crate::output::DeleteLagOutput).
@@ -4561,82 +4283,81 @@ impl DeleteLagOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInterconnectOutput {
-    /// <p>The state of the interconnect. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+pub struct DeleteInterconnectOutput  {
+    /// <p>The state of the interconnect. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
 }
 impl DeleteInterconnectOutput {
-    /// <p>The state of the interconnect. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+    /// <p>The state of the interconnect. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li> 
     /// </ul>
-    pub fn interconnect_state(&self) -> std::option::Option<&crate::model::InterconnectState> {
+    pub fn interconnect_state(&self) -> std::option::Option<& crate::model::InterconnectState> {
         self.interconnect_state.as_ref()
     }
 }
 /// See [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
 pub mod delete_interconnect_output {
-
+    
     /// A builder for [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_state: std::option::Option<crate::model::InterconnectState>,
     }
     impl Builder {
-        /// <p>The state of the interconnect. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+        /// <p>The state of the interconnect. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li> 
         /// </ul>
         pub fn interconnect_state(mut self, input: crate::model::InterconnectState) -> Self {
             self.interconnect_state = Some(input);
             self
         }
-        /// <p>The state of the interconnect. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+        /// <p>The state of the interconnect. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li> 
         /// </ul>
-        pub fn set_interconnect_state(
-            mut self,
-            input: std::option::Option<crate::model::InterconnectState>,
-        ) -> Self {
-            self.interconnect_state = input;
-            self
+        pub fn set_interconnect_state(mut self, input: std::option::Option<crate::model::InterconnectState>) -> Self {
+            self.interconnect_state = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
         pub fn build(self) -> crate::output::DeleteInterconnectOutput {
             crate::output::DeleteInterconnectOutput {
-                interconnect_state: self.interconnect_state,
+                interconnect_state: self.interconnect_state
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteInterconnectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
@@ -4648,59 +4369,49 @@ impl DeleteInterconnectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDirectConnectGatewayAssociationProposalOutput {
+pub struct DeleteDirectConnectGatewayAssociationProposalOutput  {
     /// <p>The ID of the associated gateway.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association_proposal:
-        std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
+    pub direct_connect_gateway_association_proposal: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
 }
 impl DeleteDirectConnectGatewayAssociationProposalOutput {
     /// <p>The ID of the associated gateway.</p>
-    pub fn direct_connect_gateway_association_proposal(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociationProposal> {
+    pub fn direct_connect_gateway_association_proposal(&self) -> std::option::Option<& crate::model::DirectConnectGatewayAssociationProposal> {
         self.direct_connect_gateway_association_proposal.as_ref()
     }
 }
 /// See [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
 pub mod delete_direct_connect_gateway_association_proposal_output {
-
+    
     /// A builder for [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_association_proposal:
-            std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
+        pub(crate) direct_connect_gateway_association_proposal: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
     }
     impl Builder {
         /// <p>The ID of the associated gateway.</p>
-        pub fn direct_connect_gateway_association_proposal(
-            mut self,
-            input: crate::model::DirectConnectGatewayAssociationProposal,
-        ) -> Self {
+        pub fn direct_connect_gateway_association_proposal(mut self, input: crate::model::DirectConnectGatewayAssociationProposal) -> Self {
             self.direct_connect_gateway_association_proposal = Some(input);
             self
         }
         /// <p>The ID of the associated gateway.</p>
-        pub fn set_direct_connect_gateway_association_proposal(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
-        ) -> Self {
-            self.direct_connect_gateway_association_proposal = input;
-            self
+        pub fn set_direct_connect_gateway_association_proposal(mut self, input: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>) -> Self {
+            self.direct_connect_gateway_association_proposal = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayAssociationProposalOutput {
             crate::output::DeleteDirectConnectGatewayAssociationProposalOutput {
-                direct_connect_gateway_association_proposal: self
-                    .direct_connect_gateway_association_proposal,
+                direct_connect_gateway_association_proposal: self.direct_connect_gateway_association_proposal
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDirectConnectGatewayAssociationProposalOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
-    pub fn builder(
-    ) -> crate::output::delete_direct_connect_gateway_association_proposal_output::Builder {
+    pub fn builder() -> crate::output::delete_direct_connect_gateway_association_proposal_output::Builder {
         crate::output::delete_direct_connect_gateway_association_proposal_output::Builder::default()
     }
 }
@@ -4708,53 +4419,45 @@ impl DeleteDirectConnectGatewayAssociationProposalOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDirectConnectGatewayAssociationOutput {
+pub struct DeleteDirectConnectGatewayAssociationOutput  {
     /// <p>Information about the deleted association.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association:
-        std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+    pub direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
 }
 impl DeleteDirectConnectGatewayAssociationOutput {
     /// <p>Information about the deleted association.</p>
-    pub fn direct_connect_gateway_association(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociation> {
+    pub fn direct_connect_gateway_association(&self) -> std::option::Option<& crate::model::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
     }
 }
 /// See [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
 pub mod delete_direct_connect_gateway_association_output {
-
+    
     /// A builder for [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_association:
-            std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+        pub(crate) direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
     }
     impl Builder {
         /// <p>Information about the deleted association.</p>
-        pub fn direct_connect_gateway_association(
-            mut self,
-            input: crate::model::DirectConnectGatewayAssociation,
-        ) -> Self {
+        pub fn direct_connect_gateway_association(mut self, input: crate::model::DirectConnectGatewayAssociation) -> Self {
             self.direct_connect_gateway_association = Some(input);
             self
         }
         /// <p>Information about the deleted association.</p>
-        pub fn set_direct_connect_gateway_association(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
-        ) -> Self {
-            self.direct_connect_gateway_association = input;
-            self
+        pub fn set_direct_connect_gateway_association(mut self, input: std::option::Option<crate::model::DirectConnectGatewayAssociation>) -> Self {
+            self.direct_connect_gateway_association = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayAssociationOutput {
             crate::output::DeleteDirectConnectGatewayAssociationOutput {
-                direct_connect_gateway_association: self.direct_connect_gateway_association,
+                direct_connect_gateway_association: self.direct_connect_gateway_association
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDirectConnectGatewayAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
@@ -4766,22 +4469,20 @@ impl DeleteDirectConnectGatewayAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDirectConnectGatewayOutput {
+pub struct DeleteDirectConnectGatewayOutput  {
     /// <p>The Direct Connect gateway.</p>
     #[doc(hidden)]
     pub direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
 }
 impl DeleteDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
-    pub fn direct_connect_gateway(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGateway> {
+    pub fn direct_connect_gateway(&self) -> std::option::Option<& crate::model::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
     }
 }
 /// See [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
 pub mod delete_direct_connect_gateway_output {
-
+    
     /// A builder for [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4794,20 +4495,19 @@ pub mod delete_direct_connect_gateway_output {
             self
         }
         /// <p>The Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGateway>,
-        ) -> Self {
-            self.direct_connect_gateway = input;
-            self
+        pub fn set_direct_connect_gateway(mut self, input: std::option::Option<crate::model::DirectConnectGateway>) -> Self {
+            self.direct_connect_gateway = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayOutput {
             crate::output::DeleteDirectConnectGatewayOutput {
-                direct_connect_gateway: self.direct_connect_gateway,
+                direct_connect_gateway: self.direct_connect_gateway
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDirectConnectGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
@@ -4819,7 +4519,7 @@ impl DeleteDirectConnectGatewayOutput {
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectionOutput {
+pub struct DeleteConnectionOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -4829,17 +4529,17 @@ pub struct DeleteConnectionOutput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -4888,11 +4588,11 @@ pub struct DeleteConnectionOutput {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -4902,42 +4602,42 @@ pub struct DeleteConnectionOutput {
 }
 impl DeleteConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -4945,19 +4645,19 @@ impl DeleteConnectionOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -4965,49 +4665,47 @@ impl DeleteConnectionOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
-
+    
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5041,12 +4739,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5054,12 +4748,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The name of the connection.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5067,47 +4757,39 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
+        pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_name = input; self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5116,8 +4798,7 @@ pub mod delete_connection_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5126,8 +4807,7 @@ pub mod delete_connection_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5136,8 +4816,7 @@ pub mod delete_connection_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -5146,8 +4825,7 @@ pub mod delete_connection_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5156,8 +4834,7 @@ pub mod delete_connection_output {
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5165,12 +4842,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5179,8 +4852,7 @@ pub mod delete_connection_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5189,8 +4861,7 @@ pub mod delete_connection_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -5199,8 +4870,7 @@ pub mod delete_connection_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5208,12 +4878,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5221,12 +4887,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -5234,12 +4896,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5248,17 +4906,13 @@ pub mod delete_connection_output {
         /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the connection.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the connection.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5266,12 +4920,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The name of the service provider associated with the connection.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -5280,38 +4930,29 @@ pub mod delete_connection_output {
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.port_encryption_status = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-        pub fn set_port_encryption_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.port_encryption_status = input;
-            self
+        pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_encryption_status = input; self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -5320,46 +4961,67 @@ pub mod delete_connection_output {
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
             crate::output::DeleteConnectionOutput {
-                owner_account: self.owner_account,
-                connection_id: self.connection_id,
-                connection_name: self.connection_name,
-                connection_state: self.connection_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                vlan: self.vlan.unwrap_or_default(),
-                partner_name: self.partner_name,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                port_encryption_status: self.port_encryption_status,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                owner_account: self.owner_account
+                ,
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                connection_state: self.connection_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                partner_name: self.partner_name
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                port_encryption_status: self.port_encryption_status
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
@@ -5371,20 +5033,20 @@ impl DeleteConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBgpPeerOutput {
+pub struct DeleteBgpPeerOutput  {
     /// <p>The virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::model::VirtualInterface>,
 }
 impl DeleteBgpPeerOutput {
     /// <p>The virtual interface.</p>
-    pub fn virtual_interface(&self) -> std::option::Option<&crate::model::VirtualInterface> {
+    pub fn virtual_interface(&self) -> std::option::Option<& crate::model::VirtualInterface> {
         self.virtual_interface.as_ref()
     }
 }
 /// See [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
 pub mod delete_bgp_peer_output {
-
+    
     /// A builder for [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5397,20 +5059,19 @@ pub mod delete_bgp_peer_output {
             self
         }
         /// <p>The virtual interface.</p>
-        pub fn set_virtual_interface(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterface>,
-        ) -> Self {
-            self.virtual_interface = input;
-            self
+        pub fn set_virtual_interface(mut self, input: std::option::Option<crate::model::VirtualInterface>) -> Self {
+            self.virtual_interface = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
         pub fn build(self) -> crate::output::DeleteBgpPeerOutput {
             crate::output::DeleteBgpPeerOutput {
-                virtual_interface: self.virtual_interface,
+                virtual_interface: self.virtual_interface
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBgpPeerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
@@ -5422,20 +5083,20 @@ impl DeleteBgpPeerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTransitVirtualInterfaceOutput {
+pub struct CreateTransitVirtualInterfaceOutput  {
     /// <p>Information about a virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::model::VirtualInterface>,
 }
 impl CreateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
-    pub fn virtual_interface(&self) -> std::option::Option<&crate::model::VirtualInterface> {
+    pub fn virtual_interface(&self) -> std::option::Option<& crate::model::VirtualInterface> {
         self.virtual_interface.as_ref()
     }
 }
 /// See [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
 pub mod create_transit_virtual_interface_output {
-
+    
     /// A builder for [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5448,20 +5109,19 @@ pub mod create_transit_virtual_interface_output {
             self
         }
         /// <p>Information about a virtual interface.</p>
-        pub fn set_virtual_interface(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterface>,
-        ) -> Self {
-            self.virtual_interface = input;
-            self
+        pub fn set_virtual_interface(mut self, input: std::option::Option<crate::model::VirtualInterface>) -> Self {
+            self.virtual_interface = input; self
         }
         /// Consumes the builder and constructs a [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreateTransitVirtualInterfaceOutput {
             crate::output::CreateTransitVirtualInterfaceOutput {
-                virtual_interface: self.virtual_interface,
+                virtual_interface: self.virtual_interface
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTransitVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
@@ -5473,7 +5133,7 @@ impl CreateTransitVirtualInterfaceOutput {
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePublicVirtualInterfaceOutput {
+pub struct CreatePublicVirtualInterfaceOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -5495,7 +5155,7 @@ pub struct CreatePublicVirtualInterfaceOutput {
     /// <p>The ID of the VLAN.</p>
     #[doc(hidden)]
     pub vlan: i32,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     #[doc(hidden)]
     pub asn: i32,
@@ -5514,17 +5174,17 @@ pub struct CreatePublicVirtualInterfaceOutput {
     /// <p>The address family for the BGP peer.</p>
     #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -5567,34 +5227,34 @@ pub struct CreatePublicVirtualInterfaceOutput {
 }
 impl CreatePublicVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_type(&self) -> std::option::Option<& str> {
         self.virtual_interface_type.as_deref()
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn asn(&self) -> i32 {
         self.asn
@@ -5604,40 +5264,38 @@ impl CreatePublicVirtualInterfaceOutput {
         self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> std::option::Option<&str> {
+    pub fn auth_key(&self) -> std::option::Option<& str> {
         self.auth_key.as_deref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> std::option::Option<&str> {
+    pub fn amazon_address(&self) -> std::option::Option<& str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> std::option::Option<&str> {
+    pub fn customer_address(&self) -> std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+    pub fn address_family(&self) -> std::option::Option<& crate::model::AddressFamily> {
         self.address_family.as_ref()
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
@@ -5649,35 +5307,35 @@ impl CreatePublicVirtualInterfaceOutput {
         self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+    pub fn route_filter_prefixes(&self) -> std::option::Option<& [crate::model::RouteFilterPrefix]> {
         self.route_filter_prefixes.as_deref()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn bgp_peers(&self) -> std::option::Option<&[crate::model::BgpPeer]> {
+    pub fn bgp_peers(&self) -> std::option::Option<& [crate::model::BgpPeer]> {
         self.bgp_peers.as_deref()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
@@ -5687,7 +5345,7 @@ impl CreatePublicVirtualInterfaceOutput {
 }
 /// See [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
 pub mod create_public_virtual_interface_output {
-
+    
     /// A builder for [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5704,15 +5362,13 @@ pub mod create_public_virtual_interface_output {
         pub(crate) amazon_address: std::option::Option<std::string::String>,
         pub(crate) customer_address: std::option::Option<std::string::String>,
         pub(crate) address_family: std::option::Option<crate::model::AddressFamily>,
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
         pub(crate) mtu: std::option::Option<i32>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
-        pub(crate) route_filter_prefixes:
-            std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+        pub(crate) route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
@@ -5727,12 +5383,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the virtual interface.</p>
         pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5740,12 +5392,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn set_virtual_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_id = input;
-            self
+        pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_id = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5754,8 +5402,7 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5763,12 +5410,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
         pub fn virtual_interface_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5776,12 +5419,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-        pub fn set_virtual_interface_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_type = input;
-            self
+        pub fn set_virtual_interface_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_type = input; self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5789,12 +5428,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-        pub fn set_virtual_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_name = input;
-            self
+        pub fn set_virtual_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_name = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -5803,20 +5438,18 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn asn(mut self, input: i32) -> Self {
             self.asn = Some(input);
             self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
-            self.asn = input;
-            self
+            self.asn = input; self
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -5825,8 +5458,7 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
-            self.amazon_side_asn = input;
-            self
+            self.amazon_side_asn = input; self
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn auth_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5835,8 +5467,7 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_key = input;
-            self
+            self.auth_key = input; self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn amazon_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5844,12 +5475,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
-        pub fn set_amazon_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amazon_address = input;
-            self
+        pub fn set_amazon_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amazon_address = input; self
         }
         /// <p>The IP address assigned to the customer interface.</p>
         pub fn customer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5857,12 +5484,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the customer interface.</p>
-        pub fn set_customer_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_address = input;
-            self
+        pub fn set_customer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_address = input; self
         }
         /// <p>The address family for the BGP peer.</p>
         pub fn address_family(mut self, input: crate::model::AddressFamily) -> Self {
@@ -5870,50 +5493,39 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The address family for the BGP peer.</p>
-        pub fn set_address_family(
-            mut self,
-            input: std::option::Option<crate::model::AddressFamily>,
-        ) -> Self {
-            self.address_family = input;
-            self
+        pub fn set_address_family(mut self, input: std::option::Option<crate::model::AddressFamily>) -> Self {
+            self.address_family = input; self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// <p>The customer router configuration.</p>
         pub fn customer_router_config(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5921,12 +5533,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The customer router configuration.</p>
-        pub fn set_customer_router_config(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_router_config = input;
-            self
+        pub fn set_customer_router_config(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_router_config = input; self
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn mtu(mut self, input: i32) -> Self {
@@ -5935,8 +5543,7 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
-            self.mtu = input;
-            self
+            self.mtu = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -5945,8 +5552,7 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
         pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5954,12 +5560,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-        pub fn set_virtual_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_id = input;
-            self
+        pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_id = input; self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5967,12 +5569,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_id = input;
-            self
+        pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.direct_connect_gateway_id = input; self
         }
         /// Appends an item to `route_filter_prefixes`.
         ///
@@ -5981,17 +5579,13 @@ pub mod create_public_virtual_interface_output {
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input);
-            self.route_filter_prefixes = Some(v);
-            self
+                            v.push(input);
+                            self.route_filter_prefixes = Some(v);
+                            self
         }
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn set_route_filter_prefixes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
-        ) -> Self {
-            self.route_filter_prefixes = input;
-            self
+        pub fn set_route_filter_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>) -> Self {
+            self.route_filter_prefixes = input; self
         }
         /// Appends an item to `bgp_peers`.
         ///
@@ -6000,17 +5594,13 @@ pub mod create_public_virtual_interface_output {
         /// <p>The BGP peers configured on this virtual interface.</p>
         pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input);
-            self.bgp_peers = Some(v);
-            self
+                            v.push(input);
+                            self.bgp_peers = Some(v);
+                            self
         }
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn set_bgp_peers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-        ) -> Self {
-            self.bgp_peers = input;
-            self
+        pub fn set_bgp_peers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>) -> Self {
+            self.bgp_peers = input; self
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6019,8 +5609,7 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6028,12 +5617,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6041,12 +5626,8 @@ pub mod create_public_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6055,17 +5636,13 @@ pub mod create_public_virtual_interface_output {
         /// <p>The tags associated with the virtual interface.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn site_link_enabled(mut self, input: bool) -> Self {
@@ -6074,41 +5651,70 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.site_link_enabled = input;
-            self
+            self.site_link_enabled = input; self
         }
         /// Consumes the builder and constructs a [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreatePublicVirtualInterfaceOutput {
             crate::output::CreatePublicVirtualInterfaceOutput {
-                owner_account: self.owner_account,
-                virtual_interface_id: self.virtual_interface_id,
-                location: self.location,
-                connection_id: self.connection_id,
-                virtual_interface_type: self.virtual_interface_type,
-                virtual_interface_name: self.virtual_interface_name,
-                vlan: self.vlan.unwrap_or_default(),
-                asn: self.asn.unwrap_or_default(),
-                amazon_side_asn: self.amazon_side_asn,
-                auth_key: self.auth_key,
-                amazon_address: self.amazon_address,
-                customer_address: self.customer_address,
-                address_family: self.address_family,
-                virtual_interface_state: self.virtual_interface_state,
-                customer_router_config: self.customer_router_config,
-                mtu: self.mtu,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                virtual_gateway_id: self.virtual_gateway_id,
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                route_filter_prefixes: self.route_filter_prefixes,
-                bgp_peers: self.bgp_peers,
-                region: self.region,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                tags: self.tags,
-                site_link_enabled: self.site_link_enabled,
+                owner_account: self.owner_account
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                location: self.location
+                ,
+                connection_id: self.connection_id
+                ,
+                virtual_interface_type: self.virtual_interface_type
+                ,
+                virtual_interface_name: self.virtual_interface_name
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                asn: self.asn
+                    .unwrap_or_default()
+                ,
+                amazon_side_asn: self.amazon_side_asn
+                ,
+                auth_key: self.auth_key
+                ,
+                amazon_address: self.amazon_address
+                ,
+                customer_address: self.customer_address
+                ,
+                address_family: self.address_family
+                ,
+                virtual_interface_state: self.virtual_interface_state
+                ,
+                customer_router_config: self.customer_router_config
+                ,
+                mtu: self.mtu
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                virtual_gateway_id: self.virtual_gateway_id
+                ,
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                route_filter_prefixes: self.route_filter_prefixes
+                ,
+                bgp_peers: self.bgp_peers
+                ,
+                region: self.region
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                tags: self.tags
+                ,
+                site_link_enabled: self.site_link_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePublicVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
@@ -6120,7 +5726,7 @@ impl CreatePublicVirtualInterfaceOutput {
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePrivateVirtualInterfaceOutput {
+pub struct CreatePrivateVirtualInterfaceOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -6142,7 +5748,7 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the VLAN.</p>
     #[doc(hidden)]
     pub vlan: i32,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     #[doc(hidden)]
     pub asn: i32,
@@ -6161,17 +5767,17 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     /// <p>The address family for the BGP peer.</p>
     #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -6214,34 +5820,34 @@ pub struct CreatePrivateVirtualInterfaceOutput {
 }
 impl CreatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_type(&self) -> std::option::Option<& str> {
         self.virtual_interface_type.as_deref()
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn asn(&self) -> i32 {
         self.asn
@@ -6251,40 +5857,38 @@ impl CreatePrivateVirtualInterfaceOutput {
         self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> std::option::Option<&str> {
+    pub fn auth_key(&self) -> std::option::Option<& str> {
         self.auth_key.as_deref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> std::option::Option<&str> {
+    pub fn amazon_address(&self) -> std::option::Option<& str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> std::option::Option<&str> {
+    pub fn customer_address(&self) -> std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+    pub fn address_family(&self) -> std::option::Option<& crate::model::AddressFamily> {
         self.address_family.as_ref()
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
@@ -6296,35 +5900,35 @@ impl CreatePrivateVirtualInterfaceOutput {
         self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+    pub fn route_filter_prefixes(&self) -> std::option::Option<& [crate::model::RouteFilterPrefix]> {
         self.route_filter_prefixes.as_deref()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn bgp_peers(&self) -> std::option::Option<&[crate::model::BgpPeer]> {
+    pub fn bgp_peers(&self) -> std::option::Option<& [crate::model::BgpPeer]> {
         self.bgp_peers.as_deref()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
@@ -6334,7 +5938,7 @@ impl CreatePrivateVirtualInterfaceOutput {
 }
 /// See [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
 pub mod create_private_virtual_interface_output {
-
+    
     /// A builder for [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6351,15 +5955,13 @@ pub mod create_private_virtual_interface_output {
         pub(crate) amazon_address: std::option::Option<std::string::String>,
         pub(crate) customer_address: std::option::Option<std::string::String>,
         pub(crate) address_family: std::option::Option<crate::model::AddressFamily>,
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
         pub(crate) mtu: std::option::Option<i32>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
-        pub(crate) route_filter_prefixes:
-            std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+        pub(crate) route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
@@ -6374,12 +5976,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the virtual interface.</p>
         pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6387,12 +5985,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn set_virtual_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_id = input;
-            self
+        pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_id = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6401,8 +5995,7 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6410,12 +6003,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
         pub fn virtual_interface_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6423,12 +6012,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-        pub fn set_virtual_interface_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_type = input;
-            self
+        pub fn set_virtual_interface_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_type = input; self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6436,12 +6021,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-        pub fn set_virtual_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_name = input;
-            self
+        pub fn set_virtual_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_name = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -6450,20 +6031,18 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn asn(mut self, input: i32) -> Self {
             self.asn = Some(input);
             self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
-            self.asn = input;
-            self
+            self.asn = input; self
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -6472,8 +6051,7 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
-            self.amazon_side_asn = input;
-            self
+            self.amazon_side_asn = input; self
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn auth_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6482,8 +6060,7 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_key = input;
-            self
+            self.auth_key = input; self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn amazon_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6491,12 +6068,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
-        pub fn set_amazon_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amazon_address = input;
-            self
+        pub fn set_amazon_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amazon_address = input; self
         }
         /// <p>The IP address assigned to the customer interface.</p>
         pub fn customer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6504,12 +6077,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the customer interface.</p>
-        pub fn set_customer_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_address = input;
-            self
+        pub fn set_customer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_address = input; self
         }
         /// <p>The address family for the BGP peer.</p>
         pub fn address_family(mut self, input: crate::model::AddressFamily) -> Self {
@@ -6517,50 +6086,39 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The address family for the BGP peer.</p>
-        pub fn set_address_family(
-            mut self,
-            input: std::option::Option<crate::model::AddressFamily>,
-        ) -> Self {
-            self.address_family = input;
-            self
+        pub fn set_address_family(mut self, input: std::option::Option<crate::model::AddressFamily>) -> Self {
+            self.address_family = input; self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// <p>The customer router configuration.</p>
         pub fn customer_router_config(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6568,12 +6126,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The customer router configuration.</p>
-        pub fn set_customer_router_config(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_router_config = input;
-            self
+        pub fn set_customer_router_config(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_router_config = input; self
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn mtu(mut self, input: i32) -> Self {
@@ -6582,8 +6136,7 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
-            self.mtu = input;
-            self
+            self.mtu = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -6592,8 +6145,7 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
         pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6601,12 +6153,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-        pub fn set_virtual_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_id = input;
-            self
+        pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_id = input; self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6614,12 +6162,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_id = input;
-            self
+        pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.direct_connect_gateway_id = input; self
         }
         /// Appends an item to `route_filter_prefixes`.
         ///
@@ -6628,17 +6172,13 @@ pub mod create_private_virtual_interface_output {
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input);
-            self.route_filter_prefixes = Some(v);
-            self
+                            v.push(input);
+                            self.route_filter_prefixes = Some(v);
+                            self
         }
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn set_route_filter_prefixes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
-        ) -> Self {
-            self.route_filter_prefixes = input;
-            self
+        pub fn set_route_filter_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>) -> Self {
+            self.route_filter_prefixes = input; self
         }
         /// Appends an item to `bgp_peers`.
         ///
@@ -6647,17 +6187,13 @@ pub mod create_private_virtual_interface_output {
         /// <p>The BGP peers configured on this virtual interface.</p>
         pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input);
-            self.bgp_peers = Some(v);
-            self
+                            v.push(input);
+                            self.bgp_peers = Some(v);
+                            self
         }
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn set_bgp_peers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-        ) -> Self {
-            self.bgp_peers = input;
-            self
+        pub fn set_bgp_peers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>) -> Self {
+            self.bgp_peers = input; self
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6666,8 +6202,7 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6675,12 +6210,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6688,12 +6219,8 @@ pub mod create_private_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6702,17 +6229,13 @@ pub mod create_private_virtual_interface_output {
         /// <p>The tags associated with the virtual interface.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn site_link_enabled(mut self, input: bool) -> Self {
@@ -6721,41 +6244,70 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.site_link_enabled = input;
-            self
+            self.site_link_enabled = input; self
         }
         /// Consumes the builder and constructs a [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreatePrivateVirtualInterfaceOutput {
             crate::output::CreatePrivateVirtualInterfaceOutput {
-                owner_account: self.owner_account,
-                virtual_interface_id: self.virtual_interface_id,
-                location: self.location,
-                connection_id: self.connection_id,
-                virtual_interface_type: self.virtual_interface_type,
-                virtual_interface_name: self.virtual_interface_name,
-                vlan: self.vlan.unwrap_or_default(),
-                asn: self.asn.unwrap_or_default(),
-                amazon_side_asn: self.amazon_side_asn,
-                auth_key: self.auth_key,
-                amazon_address: self.amazon_address,
-                customer_address: self.customer_address,
-                address_family: self.address_family,
-                virtual_interface_state: self.virtual_interface_state,
-                customer_router_config: self.customer_router_config,
-                mtu: self.mtu,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                virtual_gateway_id: self.virtual_gateway_id,
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                route_filter_prefixes: self.route_filter_prefixes,
-                bgp_peers: self.bgp_peers,
-                region: self.region,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                tags: self.tags,
-                site_link_enabled: self.site_link_enabled,
+                owner_account: self.owner_account
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                location: self.location
+                ,
+                connection_id: self.connection_id
+                ,
+                virtual_interface_type: self.virtual_interface_type
+                ,
+                virtual_interface_name: self.virtual_interface_name
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                asn: self.asn
+                    .unwrap_or_default()
+                ,
+                amazon_side_asn: self.amazon_side_asn
+                ,
+                auth_key: self.auth_key
+                ,
+                amazon_address: self.amazon_address
+                ,
+                customer_address: self.customer_address
+                ,
+                address_family: self.address_family
+                ,
+                virtual_interface_state: self.virtual_interface_state
+                ,
+                customer_router_config: self.customer_router_config
+                ,
+                mtu: self.mtu
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                virtual_gateway_id: self.virtual_gateway_id
+                ,
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                route_filter_prefixes: self.route_filter_prefixes
+                ,
+                bgp_peers: self.bgp_peers
+                ,
+                region: self.region
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                tags: self.tags
+                ,
+                site_link_enabled: self.site_link_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePrivateVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
@@ -6767,7 +6319,7 @@ impl CreatePrivateVirtualInterfaceOutput {
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLagOutput {
+pub struct CreateLagOutput  {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     #[doc(hidden)]
     pub connections_bandwidth: std::option::Option<std::string::String>,
@@ -6783,15 +6335,15 @@ pub struct CreateLagOutput {
     /// <p>The name of the LAG.</p>
     #[doc(hidden)]
     pub lag_name: std::option::Option<std::string::String>,
-    /// <p>The state of the LAG. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+    /// <p>The state of the LAG. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub lag_state: std::option::Option<crate::model::LagState>,
@@ -6834,7 +6386,7 @@ pub struct CreateLagOutput {
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -6844,7 +6396,7 @@ pub struct CreateLagOutput {
 }
 impl CreateLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
+    pub fn connections_bandwidth(&self) -> std::option::Option<& str> {
         self.connections_bandwidth.as_deref()
     }
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
@@ -6852,36 +6404,36 @@ impl CreateLagOutput {
         self.number_of_connections
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The name of the LAG.</p>
-    pub fn lag_name(&self) -> std::option::Option<&str> {
+    pub fn lag_name(&self) -> std::option::Option<& str> {
         self.lag_name.as_deref()
     }
-    /// <p>The state of the LAG. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+    /// <p>The state of the LAG. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
     /// </ul>
-    pub fn lag_state(&self) -> std::option::Option<&crate::model::LagState> {
+    pub fn lag_state(&self) -> std::option::Option<& crate::model::LagState> {
         self.lag_state.as_ref()
     }
     /// <p>The location of the LAG.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
@@ -6889,19 +6441,19 @@ impl CreateLagOutput {
         self.minimum_links
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The connections bundled by the LAG.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
@@ -6913,36 +6465,34 @@ impl CreateLagOutput {
         self.jumbo_frame_capable
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the LAG.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`CreateLagOutput`](crate::output::CreateLagOutput).
 pub mod create_lag_output {
-
+    
     /// A builder for [`CreateLagOutput`](crate::output::CreateLagOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6975,12 +6525,8 @@ pub mod create_lag_output {
             self
         }
         /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-        pub fn set_connections_bandwidth(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connections_bandwidth = input;
-            self
+        pub fn set_connections_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connections_bandwidth = input; self
         }
         /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
         pub fn number_of_connections(mut self, input: i32) -> Self {
@@ -6989,8 +6535,7 @@ pub mod create_lag_output {
         }
         /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
         pub fn set_number_of_connections(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_connections = input;
-            self
+            self.number_of_connections = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6999,8 +6544,7 @@ pub mod create_lag_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7008,12 +6552,8 @@ pub mod create_lag_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The name of the LAG.</p>
         pub fn lag_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7022,36 +6562,34 @@ pub mod create_lag_output {
         }
         /// <p>The name of the LAG.</p>
         pub fn set_lag_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_name = input;
-            self
+            self.lag_name = input; self
         }
-        /// <p>The state of the LAG. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+        /// <p>The state of the LAG. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
         /// </ul>
         pub fn lag_state(mut self, input: crate::model::LagState) -> Self {
             self.lag_state = Some(input);
             self
         }
-        /// <p>The state of the LAG. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
-        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
+        /// <p>The state of the LAG. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li> 
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li> 
         /// </ul>
         pub fn set_lag_state(mut self, input: std::option::Option<crate::model::LagState>) -> Self {
-            self.lag_state = input;
-            self
+            self.lag_state = input; self
         }
         /// <p>The location of the LAG.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7060,8 +6598,7 @@ pub mod create_lag_output {
         }
         /// <p>The location of the LAG.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7070,8 +6607,7 @@ pub mod create_lag_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
         pub fn minimum_links(mut self, input: i32) -> Self {
@@ -7080,8 +6616,7 @@ pub mod create_lag_output {
         }
         /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
         pub fn set_minimum_links(mut self, input: std::option::Option<i32>) -> Self {
-            self.minimum_links = input;
-            self
+            self.minimum_links = input; self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7090,8 +6625,7 @@ pub mod create_lag_output {
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7099,12 +6633,8 @@ pub mod create_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7112,12 +6642,8 @@ pub mod create_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `connections`.
         ///
@@ -7126,17 +6652,13 @@ pub mod create_lag_output {
         /// <p>The connections bundled by the LAG.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>The connections bundled by the LAG.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// <p>Indicates whether the LAG can host other connections.</p>
         pub fn allows_hosted_connections(mut self, input: bool) -> Self {
@@ -7145,8 +6667,7 @@ pub mod create_lag_output {
         }
         /// <p>Indicates whether the LAG can host other connections.</p>
         pub fn set_allows_hosted_connections(mut self, input: std::option::Option<bool>) -> Self {
-            self.allows_hosted_connections = input;
-            self
+            self.allows_hosted_connections = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -7155,8 +6676,7 @@ pub mod create_lag_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -7164,12 +6684,8 @@ pub mod create_lag_output {
             self
         }
         /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -7178,17 +6694,13 @@ pub mod create_lag_output {
         /// <p>The tags associated with the LAG.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the LAG.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the LAG.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7196,12 +6708,8 @@ pub mod create_lag_output {
             self
         }
         /// <p>The name of the service provider associated with the LAG.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -7210,23 +6718,18 @@ pub mod create_lag_output {
         }
         /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+        /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+        /// <p>The LAG MAC Security (MACsec) encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -7235,45 +6738,67 @@ pub mod create_lag_output {
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`CreateLagOutput`](crate::output::CreateLagOutput).
         pub fn build(self) -> crate::output::CreateLagOutput {
             crate::output::CreateLagOutput {
-                connections_bandwidth: self.connections_bandwidth,
-                number_of_connections: self.number_of_connections.unwrap_or_default(),
-                lag_id: self.lag_id,
-                owner_account: self.owner_account,
-                lag_name: self.lag_name,
-                lag_state: self.lag_state,
-                location: self.location,
-                region: self.region,
-                minimum_links: self.minimum_links.unwrap_or_default(),
-                aws_device: self.aws_device,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                connections: self.connections,
-                allows_hosted_connections: self.allows_hosted_connections.unwrap_or_default(),
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                connections_bandwidth: self.connections_bandwidth
+                ,
+                number_of_connections: self.number_of_connections
+                    .unwrap_or_default()
+                ,
+                lag_id: self.lag_id
+                ,
+                owner_account: self.owner_account
+                ,
+                lag_name: self.lag_name
+                ,
+                lag_state: self.lag_state
+                ,
+                location: self.location
+                ,
+                region: self.region
+                ,
+                minimum_links: self.minimum_links
+                    .unwrap_or_default()
+                ,
+                aws_device: self.aws_device
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                connections: self.connections
+                ,
+                allows_hosted_connections: self.allows_hosted_connections
+                    .unwrap_or_default()
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLagOutput {
     /// Creates a new builder-style object to manufacture [`CreateLagOutput`](crate::output::CreateLagOutput).
@@ -7285,22 +6810,22 @@ impl CreateLagOutput {
 /// <p>Information about an interconnect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInterconnectOutput {
+pub struct CreateInterconnectOutput  {
     /// <p>The ID of the interconnect.</p>
     #[doc(hidden)]
     pub interconnect_id: std::option::Option<std::string::String>,
     /// <p>The name of the interconnect.</p>
     #[doc(hidden)]
     pub interconnect_name: std::option::Option<std::string::String>,
-    /// <p>The state of the interconnect. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+    /// <p>The state of the interconnect. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
@@ -7343,48 +6868,48 @@ pub struct CreateInterconnectOutput {
 }
 impl CreateInterconnectOutput {
     /// <p>The ID of the interconnect.</p>
-    pub fn interconnect_id(&self) -> std::option::Option<&str> {
+    pub fn interconnect_id(&self) -> std::option::Option<& str> {
         self.interconnect_id.as_deref()
     }
     /// <p>The name of the interconnect.</p>
-    pub fn interconnect_name(&self) -> std::option::Option<&str> {
+    pub fn interconnect_name(&self) -> std::option::Option<& str> {
         self.interconnect_name.as_deref()
     }
-    /// <p>The state of the interconnect. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+    /// <p>The state of the interconnect. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li> 
     /// </ul>
-    pub fn interconnect_state(&self) -> std::option::Option<&crate::model::InterconnectState> {
+    pub fn interconnect_state(&self) -> std::option::Option<& crate::model::InterconnectState> {
         self.interconnect_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -7392,31 +6917,29 @@ impl CreateInterconnectOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the interconnect.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
 }
 /// See [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
 pub mod create_interconnect_output {
-
+    
     /// A builder for [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7443,12 +6966,8 @@ pub mod create_interconnect_output {
             self
         }
         /// <p>The ID of the interconnect.</p>
-        pub fn set_interconnect_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.interconnect_id = input;
-            self
+        pub fn set_interconnect_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.interconnect_id = input; self
         }
         /// <p>The name of the interconnect.</p>
         pub fn interconnect_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7456,43 +6975,35 @@ pub mod create_interconnect_output {
             self
         }
         /// <p>The name of the interconnect.</p>
-        pub fn set_interconnect_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.interconnect_name = input;
-            self
+        pub fn set_interconnect_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.interconnect_name = input; self
         }
-        /// <p>The state of the interconnect. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+        /// <p>The state of the interconnect. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li> 
         /// </ul>
         pub fn interconnect_state(mut self, input: crate::model::InterconnectState) -> Self {
             self.interconnect_state = Some(input);
             self
         }
-        /// <p>The state of the interconnect. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+        /// <p>The state of the interconnect. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li> 
         /// </ul>
-        pub fn set_interconnect_state(
-            mut self,
-            input: std::option::Option<crate::model::InterconnectState>,
-        ) -> Self {
-            self.interconnect_state = input;
-            self
+        pub fn set_interconnect_state(mut self, input: std::option::Option<crate::model::InterconnectState>) -> Self {
+            self.interconnect_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7501,8 +7012,7 @@ pub mod create_interconnect_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7511,8 +7021,7 @@ pub mod create_interconnect_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7521,8 +7030,7 @@ pub mod create_interconnect_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7530,12 +7038,8 @@ pub mod create_interconnect_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7544,8 +7048,7 @@ pub mod create_interconnect_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7554,8 +7057,7 @@ pub mod create_interconnect_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -7564,8 +7066,7 @@ pub mod create_interconnect_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7573,12 +7074,8 @@ pub mod create_interconnect_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7586,12 +7083,8 @@ pub mod create_interconnect_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -7599,12 +7092,8 @@ pub mod create_interconnect_output {
             self
         }
         /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -7613,17 +7102,13 @@ pub mod create_interconnect_output {
         /// <p>The tags associated with the interconnect.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the interconnect.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the interconnect.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7631,34 +7116,47 @@ pub mod create_interconnect_output {
             self
         }
         /// <p>The name of the service provider associated with the interconnect.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// Consumes the builder and constructs a [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
         pub fn build(self) -> crate::output::CreateInterconnectOutput {
             crate::output::CreateInterconnectOutput {
-                interconnect_id: self.interconnect_id,
-                interconnect_name: self.interconnect_name,
-                interconnect_state: self.interconnect_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
+                interconnect_id: self.interconnect_id
+                ,
+                interconnect_name: self.interconnect_name
+                ,
+                interconnect_state: self.interconnect_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInterconnectOutput {
     /// Creates a new builder-style object to manufacture [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
@@ -7670,59 +7168,49 @@ impl CreateInterconnectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDirectConnectGatewayAssociationProposalOutput {
+pub struct CreateDirectConnectGatewayAssociationProposalOutput  {
     /// <p>Information about the Direct Connect gateway proposal.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association_proposal:
-        std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
+    pub direct_connect_gateway_association_proposal: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
 }
 impl CreateDirectConnectGatewayAssociationProposalOutput {
     /// <p>Information about the Direct Connect gateway proposal.</p>
-    pub fn direct_connect_gateway_association_proposal(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociationProposal> {
+    pub fn direct_connect_gateway_association_proposal(&self) -> std::option::Option<& crate::model::DirectConnectGatewayAssociationProposal> {
         self.direct_connect_gateway_association_proposal.as_ref()
     }
 }
 /// See [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
 pub mod create_direct_connect_gateway_association_proposal_output {
-
+    
     /// A builder for [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_association_proposal:
-            std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
+        pub(crate) direct_connect_gateway_association_proposal: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
     }
     impl Builder {
         /// <p>Information about the Direct Connect gateway proposal.</p>
-        pub fn direct_connect_gateway_association_proposal(
-            mut self,
-            input: crate::model::DirectConnectGatewayAssociationProposal,
-        ) -> Self {
+        pub fn direct_connect_gateway_association_proposal(mut self, input: crate::model::DirectConnectGatewayAssociationProposal) -> Self {
             self.direct_connect_gateway_association_proposal = Some(input);
             self
         }
         /// <p>Information about the Direct Connect gateway proposal.</p>
-        pub fn set_direct_connect_gateway_association_proposal(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
-        ) -> Self {
-            self.direct_connect_gateway_association_proposal = input;
-            self
+        pub fn set_direct_connect_gateway_association_proposal(mut self, input: std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>) -> Self {
+            self.direct_connect_gateway_association_proposal = input; self
         }
         /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayAssociationProposalOutput {
             crate::output::CreateDirectConnectGatewayAssociationProposalOutput {
-                direct_connect_gateway_association_proposal: self
-                    .direct_connect_gateway_association_proposal,
+                direct_connect_gateway_association_proposal: self.direct_connect_gateway_association_proposal
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDirectConnectGatewayAssociationProposalOutput {
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
-    pub fn builder(
-    ) -> crate::output::create_direct_connect_gateway_association_proposal_output::Builder {
+    pub fn builder() -> crate::output::create_direct_connect_gateway_association_proposal_output::Builder {
         crate::output::create_direct_connect_gateway_association_proposal_output::Builder::default()
     }
 }
@@ -7730,53 +7218,45 @@ impl CreateDirectConnectGatewayAssociationProposalOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDirectConnectGatewayAssociationOutput {
+pub struct CreateDirectConnectGatewayAssociationOutput  {
     /// <p>The association to be created.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association:
-        std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+    pub direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
 }
 impl CreateDirectConnectGatewayAssociationOutput {
     /// <p>The association to be created.</p>
-    pub fn direct_connect_gateway_association(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociation> {
+    pub fn direct_connect_gateway_association(&self) -> std::option::Option<& crate::model::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
     }
 }
 /// See [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
 pub mod create_direct_connect_gateway_association_output {
-
+    
     /// A builder for [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_association:
-            std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+        pub(crate) direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
     }
     impl Builder {
         /// <p>The association to be created.</p>
-        pub fn direct_connect_gateway_association(
-            mut self,
-            input: crate::model::DirectConnectGatewayAssociation,
-        ) -> Self {
+        pub fn direct_connect_gateway_association(mut self, input: crate::model::DirectConnectGatewayAssociation) -> Self {
             self.direct_connect_gateway_association = Some(input);
             self
         }
         /// <p>The association to be created.</p>
-        pub fn set_direct_connect_gateway_association(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
-        ) -> Self {
-            self.direct_connect_gateway_association = input;
-            self
+        pub fn set_direct_connect_gateway_association(mut self, input: std::option::Option<crate::model::DirectConnectGatewayAssociation>) -> Self {
+            self.direct_connect_gateway_association = input; self
         }
         /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayAssociationOutput {
             crate::output::CreateDirectConnectGatewayAssociationOutput {
-                direct_connect_gateway_association: self.direct_connect_gateway_association,
+                direct_connect_gateway_association: self.direct_connect_gateway_association
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDirectConnectGatewayAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
@@ -7788,22 +7268,20 @@ impl CreateDirectConnectGatewayAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDirectConnectGatewayOutput {
+pub struct CreateDirectConnectGatewayOutput  {
     /// <p>The Direct Connect gateway.</p>
     #[doc(hidden)]
     pub direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
 }
 impl CreateDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
-    pub fn direct_connect_gateway(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGateway> {
+    pub fn direct_connect_gateway(&self) -> std::option::Option<& crate::model::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
     }
 }
 /// See [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
 pub mod create_direct_connect_gateway_output {
-
+    
     /// A builder for [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7816,20 +7294,19 @@ pub mod create_direct_connect_gateway_output {
             self
         }
         /// <p>The Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGateway>,
-        ) -> Self {
-            self.direct_connect_gateway = input;
-            self
+        pub fn set_direct_connect_gateway(mut self, input: std::option::Option<crate::model::DirectConnectGateway>) -> Self {
+            self.direct_connect_gateway = input; self
         }
         /// Consumes the builder and constructs a [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayOutput {
             crate::output::CreateDirectConnectGatewayOutput {
-                direct_connect_gateway: self.direct_connect_gateway,
+                direct_connect_gateway: self.direct_connect_gateway
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDirectConnectGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
@@ -7841,7 +7318,7 @@ impl CreateDirectConnectGatewayOutput {
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectionOutput {
+pub struct CreateConnectionOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -7851,17 +7328,17 @@ pub struct CreateConnectionOutput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -7910,11 +7387,11 @@ pub struct CreateConnectionOutput {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -7924,42 +7401,42 @@ pub struct CreateConnectionOutput {
 }
 impl CreateConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -7967,19 +7444,19 @@ impl CreateConnectionOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -7987,49 +7464,47 @@ impl CreateConnectionOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
-
+    
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8063,12 +7538,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8076,12 +7547,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The name of the connection.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8089,47 +7556,39 @@ pub mod create_connection_output {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
+        pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_name = input; self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8138,8 +7597,7 @@ pub mod create_connection_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8148,8 +7606,7 @@ pub mod create_connection_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8158,8 +7615,7 @@ pub mod create_connection_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -8168,8 +7624,7 @@ pub mod create_connection_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8178,8 +7633,7 @@ pub mod create_connection_output {
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8187,12 +7641,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8201,8 +7651,7 @@ pub mod create_connection_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8211,8 +7660,7 @@ pub mod create_connection_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -8221,8 +7669,7 @@ pub mod create_connection_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8230,12 +7677,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8243,12 +7686,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -8256,12 +7695,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -8270,17 +7705,13 @@ pub mod create_connection_output {
         /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the connection.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the connection.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8288,12 +7719,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>The name of the service provider associated with the connection.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -8302,38 +7729,29 @@ pub mod create_connection_output {
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.port_encryption_status = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-        pub fn set_port_encryption_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.port_encryption_status = input;
-            self
+        pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_encryption_status = input; self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -8342,46 +7760,67 @@ pub mod create_connection_output {
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
         pub fn build(self) -> crate::output::CreateConnectionOutput {
             crate::output::CreateConnectionOutput {
-                owner_account: self.owner_account,
-                connection_id: self.connection_id,
-                connection_name: self.connection_name,
-                connection_state: self.connection_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                vlan: self.vlan.unwrap_or_default(),
-                partner_name: self.partner_name,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                port_encryption_status: self.port_encryption_status,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                owner_account: self.owner_account
+                ,
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                connection_state: self.connection_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                partner_name: self.partner_name
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                port_encryption_status: self.port_encryption_status
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
@@ -8393,20 +7832,20 @@ impl CreateConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBgpPeerOutput {
+pub struct CreateBgpPeerOutput  {
     /// <p>The virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::model::VirtualInterface>,
 }
 impl CreateBgpPeerOutput {
     /// <p>The virtual interface.</p>
-    pub fn virtual_interface(&self) -> std::option::Option<&crate::model::VirtualInterface> {
+    pub fn virtual_interface(&self) -> std::option::Option<& crate::model::VirtualInterface> {
         self.virtual_interface.as_ref()
     }
 }
 /// See [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
 pub mod create_bgp_peer_output {
-
+    
     /// A builder for [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8419,20 +7858,19 @@ pub mod create_bgp_peer_output {
             self
         }
         /// <p>The virtual interface.</p>
-        pub fn set_virtual_interface(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterface>,
-        ) -> Self {
-            self.virtual_interface = input;
-            self
+        pub fn set_virtual_interface(mut self, input: std::option::Option<crate::model::VirtualInterface>) -> Self {
+            self.virtual_interface = input; self
         }
         /// Consumes the builder and constructs a [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
         pub fn build(self) -> crate::output::CreateBgpPeerOutput {
             crate::output::CreateBgpPeerOutput {
-                virtual_interface: self.virtual_interface,
+                virtual_interface: self.virtual_interface
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBgpPeerOutput {
     /// Creates a new builder-style object to manufacture [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
@@ -8444,96 +7882,89 @@ impl CreateBgpPeerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmTransitVirtualInterfaceOutput {
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+pub struct ConfirmTransitVirtualInterfaceOutput  {
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
 }
 impl ConfirmTransitVirtualInterfaceOutput {
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
 }
 /// See [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
 pub mod confirm_transit_virtual_interface_output {
-
+    
     /// A builder for [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     }
     impl Builder {
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// Consumes the builder and constructs a [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmTransitVirtualInterfaceOutput {
             crate::output::ConfirmTransitVirtualInterfaceOutput {
-                virtual_interface_state: self.virtual_interface_state,
+                virtual_interface_state: self.virtual_interface_state
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfirmTransitVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
@@ -8545,96 +7976,89 @@ impl ConfirmTransitVirtualInterfaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmPublicVirtualInterfaceOutput {
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+pub struct ConfirmPublicVirtualInterfaceOutput  {
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
 }
 impl ConfirmPublicVirtualInterfaceOutput {
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
 }
 /// See [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
 pub mod confirm_public_virtual_interface_output {
-
+    
     /// A builder for [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     }
     impl Builder {
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// Consumes the builder and constructs a [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmPublicVirtualInterfaceOutput {
             crate::output::ConfirmPublicVirtualInterfaceOutput {
-                virtual_interface_state: self.virtual_interface_state,
+                virtual_interface_state: self.virtual_interface_state
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfirmPublicVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
@@ -8646,96 +8070,89 @@ impl ConfirmPublicVirtualInterfaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmPrivateVirtualInterfaceOutput {
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+pub struct ConfirmPrivateVirtualInterfaceOutput  {
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
 }
 impl ConfirmPrivateVirtualInterfaceOutput {
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
 }
 /// See [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
 pub mod confirm_private_virtual_interface_output {
-
+    
     /// A builder for [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     }
     impl Builder {
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// Consumes the builder and constructs a [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmPrivateVirtualInterfaceOutput {
             crate::output::ConfirmPrivateVirtualInterfaceOutput {
-                virtual_interface_state: self.virtual_interface_state,
+                virtual_interface_state: self.virtual_interface_state
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfirmPrivateVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
@@ -8747,20 +8164,20 @@ impl ConfirmPrivateVirtualInterfaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmCustomerAgreementOutput {
+pub struct ConfirmCustomerAgreementOutput  {
     /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl ConfirmCustomerAgreementOutput {
     /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
 pub mod confirm_customer_agreement_output {
-
+    
     /// A builder for [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8774,16 +8191,18 @@ pub mod confirm_customer_agreement_output {
         }
         /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
         pub fn build(self) -> crate::output::ConfirmCustomerAgreementOutput {
             crate::output::ConfirmCustomerAgreementOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfirmCustomerAgreementOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
@@ -8795,90 +8214,89 @@ impl ConfirmCustomerAgreementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmConnectionOutput {
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+pub struct ConfirmConnectionOutput  {
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
 }
 impl ConfirmConnectionOutput {
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
 }
 /// See [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
 pub mod confirm_connection_output {
-
+    
     /// A builder for [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
     }
     impl Builder {
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// Consumes the builder and constructs a [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
         pub fn build(self) -> crate::output::ConfirmConnectionOutput {
             crate::output::ConfirmConnectionOutput {
-                connection_state: self.connection_state,
+                connection_state: self.connection_state
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfirmConnectionOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
@@ -8890,7 +8308,7 @@ impl ConfirmConnectionOutput {
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateVirtualInterfaceOutput {
+pub struct AssociateVirtualInterfaceOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -8912,7 +8330,7 @@ pub struct AssociateVirtualInterfaceOutput {
     /// <p>The ID of the VLAN.</p>
     #[doc(hidden)]
     pub vlan: i32,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     #[doc(hidden)]
     pub asn: i32,
@@ -8931,17 +8349,17 @@ pub struct AssociateVirtualInterfaceOutput {
     /// <p>The address family for the BGP peer.</p>
     #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -8984,34 +8402,34 @@ pub struct AssociateVirtualInterfaceOutput {
 }
 impl AssociateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_type(&self) -> std::option::Option<& str> {
         self.virtual_interface_type.as_deref()
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn asn(&self) -> i32 {
         self.asn
@@ -9021,40 +8439,38 @@ impl AssociateVirtualInterfaceOutput {
         self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> std::option::Option<&str> {
+    pub fn auth_key(&self) -> std::option::Option<& str> {
         self.auth_key.as_deref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> std::option::Option<&str> {
+    pub fn amazon_address(&self) -> std::option::Option<& str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> std::option::Option<&str> {
+    pub fn customer_address(&self) -> std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+    pub fn address_family(&self) -> std::option::Option<& crate::model::AddressFamily> {
         self.address_family.as_ref()
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
@@ -9066,35 +8482,35 @@ impl AssociateVirtualInterfaceOutput {
         self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+    pub fn route_filter_prefixes(&self) -> std::option::Option<& [crate::model::RouteFilterPrefix]> {
         self.route_filter_prefixes.as_deref()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn bgp_peers(&self) -> std::option::Option<&[crate::model::BgpPeer]> {
+    pub fn bgp_peers(&self) -> std::option::Option<& [crate::model::BgpPeer]> {
         self.bgp_peers.as_deref()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
@@ -9104,7 +8520,7 @@ impl AssociateVirtualInterfaceOutput {
 }
 /// See [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
 pub mod associate_virtual_interface_output {
-
+    
     /// A builder for [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9121,15 +8537,13 @@ pub mod associate_virtual_interface_output {
         pub(crate) amazon_address: std::option::Option<std::string::String>,
         pub(crate) customer_address: std::option::Option<std::string::String>,
         pub(crate) address_family: std::option::Option<crate::model::AddressFamily>,
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
         pub(crate) mtu: std::option::Option<i32>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
-        pub(crate) route_filter_prefixes:
-            std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+        pub(crate) route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
@@ -9144,12 +8558,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the virtual interface.</p>
         pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9157,12 +8567,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn set_virtual_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_id = input;
-            self
+        pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_id = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9171,8 +8577,7 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9180,12 +8585,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
         pub fn virtual_interface_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9193,12 +8594,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-        pub fn set_virtual_interface_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_type = input;
-            self
+        pub fn set_virtual_interface_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_type = input; self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9206,12 +8603,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-        pub fn set_virtual_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_name = input;
-            self
+        pub fn set_virtual_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_name = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -9220,20 +8613,18 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn asn(mut self, input: i32) -> Self {
             self.asn = Some(input);
             self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
-            self.asn = input;
-            self
+            self.asn = input; self
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -9242,8 +8633,7 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
-            self.amazon_side_asn = input;
-            self
+            self.amazon_side_asn = input; self
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn auth_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9252,8 +8642,7 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_key = input;
-            self
+            self.auth_key = input; self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn amazon_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9261,12 +8650,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
-        pub fn set_amazon_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amazon_address = input;
-            self
+        pub fn set_amazon_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amazon_address = input; self
         }
         /// <p>The IP address assigned to the customer interface.</p>
         pub fn customer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9274,12 +8659,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the customer interface.</p>
-        pub fn set_customer_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_address = input;
-            self
+        pub fn set_customer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_address = input; self
         }
         /// <p>The address family for the BGP peer.</p>
         pub fn address_family(mut self, input: crate::model::AddressFamily) -> Self {
@@ -9287,50 +8668,39 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The address family for the BGP peer.</p>
-        pub fn set_address_family(
-            mut self,
-            input: std::option::Option<crate::model::AddressFamily>,
-        ) -> Self {
-            self.address_family = input;
-            self
+        pub fn set_address_family(mut self, input: std::option::Option<crate::model::AddressFamily>) -> Self {
+            self.address_family = input; self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// <p>The customer router configuration.</p>
         pub fn customer_router_config(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9338,12 +8708,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The customer router configuration.</p>
-        pub fn set_customer_router_config(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_router_config = input;
-            self
+        pub fn set_customer_router_config(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_router_config = input; self
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn mtu(mut self, input: i32) -> Self {
@@ -9352,8 +8718,7 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
-            self.mtu = input;
-            self
+            self.mtu = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -9362,8 +8727,7 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
         pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9371,12 +8735,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-        pub fn set_virtual_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_id = input;
-            self
+        pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_id = input; self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9384,12 +8744,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_id = input;
-            self
+        pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.direct_connect_gateway_id = input; self
         }
         /// Appends an item to `route_filter_prefixes`.
         ///
@@ -9398,17 +8754,13 @@ pub mod associate_virtual_interface_output {
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input);
-            self.route_filter_prefixes = Some(v);
-            self
+                            v.push(input);
+                            self.route_filter_prefixes = Some(v);
+                            self
         }
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn set_route_filter_prefixes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
-        ) -> Self {
-            self.route_filter_prefixes = input;
-            self
+        pub fn set_route_filter_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>) -> Self {
+            self.route_filter_prefixes = input; self
         }
         /// Appends an item to `bgp_peers`.
         ///
@@ -9417,17 +8769,13 @@ pub mod associate_virtual_interface_output {
         /// <p>The BGP peers configured on this virtual interface.</p>
         pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input);
-            self.bgp_peers = Some(v);
-            self
+                            v.push(input);
+                            self.bgp_peers = Some(v);
+                            self
         }
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn set_bgp_peers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-        ) -> Self {
-            self.bgp_peers = input;
-            self
+        pub fn set_bgp_peers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>) -> Self {
+            self.bgp_peers = input; self
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9436,8 +8784,7 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9445,12 +8792,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9458,12 +8801,8 @@ pub mod associate_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -9472,17 +8811,13 @@ pub mod associate_virtual_interface_output {
         /// <p>The tags associated with the virtual interface.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn site_link_enabled(mut self, input: bool) -> Self {
@@ -9491,41 +8826,70 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.site_link_enabled = input;
-            self
+            self.site_link_enabled = input; self
         }
         /// Consumes the builder and constructs a [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AssociateVirtualInterfaceOutput {
             crate::output::AssociateVirtualInterfaceOutput {
-                owner_account: self.owner_account,
-                virtual_interface_id: self.virtual_interface_id,
-                location: self.location,
-                connection_id: self.connection_id,
-                virtual_interface_type: self.virtual_interface_type,
-                virtual_interface_name: self.virtual_interface_name,
-                vlan: self.vlan.unwrap_or_default(),
-                asn: self.asn.unwrap_or_default(),
-                amazon_side_asn: self.amazon_side_asn,
-                auth_key: self.auth_key,
-                amazon_address: self.amazon_address,
-                customer_address: self.customer_address,
-                address_family: self.address_family,
-                virtual_interface_state: self.virtual_interface_state,
-                customer_router_config: self.customer_router_config,
-                mtu: self.mtu,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                virtual_gateway_id: self.virtual_gateway_id,
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                route_filter_prefixes: self.route_filter_prefixes,
-                bgp_peers: self.bgp_peers,
-                region: self.region,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                tags: self.tags,
-                site_link_enabled: self.site_link_enabled,
+                owner_account: self.owner_account
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                location: self.location
+                ,
+                connection_id: self.connection_id
+                ,
+                virtual_interface_type: self.virtual_interface_type
+                ,
+                virtual_interface_name: self.virtual_interface_name
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                asn: self.asn
+                    .unwrap_or_default()
+                ,
+                amazon_side_asn: self.amazon_side_asn
+                ,
+                auth_key: self.auth_key
+                ,
+                amazon_address: self.amazon_address
+                ,
+                customer_address: self.customer_address
+                ,
+                address_family: self.address_family
+                ,
+                virtual_interface_state: self.virtual_interface_state
+                ,
+                customer_router_config: self.customer_router_config
+                ,
+                mtu: self.mtu
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                virtual_gateway_id: self.virtual_gateway_id
+                ,
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                route_filter_prefixes: self.route_filter_prefixes
+                ,
+                bgp_peers: self.bgp_peers
+                ,
+                region: self.region
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                tags: self.tags
+                ,
+                site_link_enabled: self.site_link_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
@@ -9537,7 +8901,7 @@ impl AssociateVirtualInterfaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateMacSecKeyOutput {
+pub struct AssociateMacSecKeyOutput  {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -9547,17 +8911,17 @@ pub struct AssociateMacSecKeyOutput {
 }
 impl AssociateMacSecKeyOutput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
 pub mod associate_mac_sec_key_output {
-
+    
     /// A builder for [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9571,12 +8935,8 @@ pub mod associate_mac_sec_key_output {
             self
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -9585,26 +8945,26 @@ pub mod associate_mac_sec_key_output {
         /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
         pub fn build(self) -> crate::output::AssociateMacSecKeyOutput {
             crate::output::AssociateMacSecKeyOutput {
-                connection_id: self.connection_id,
-                mac_sec_keys: self.mac_sec_keys,
+                connection_id: self.connection_id
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateMacSecKeyOutput {
     /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
@@ -9616,7 +8976,7 @@ impl AssociateMacSecKeyOutput {
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateHostedConnectionOutput {
+pub struct AssociateHostedConnectionOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -9626,17 +8986,17 @@ pub struct AssociateHostedConnectionOutput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -9685,11 +9045,11 @@ pub struct AssociateHostedConnectionOutput {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -9699,42 +9059,42 @@ pub struct AssociateHostedConnectionOutput {
 }
 impl AssociateHostedConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -9742,19 +9102,19 @@ impl AssociateHostedConnectionOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -9762,49 +9122,47 @@ impl AssociateHostedConnectionOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
 pub mod associate_hosted_connection_output {
-
+    
     /// A builder for [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9838,12 +9196,8 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9851,12 +9205,8 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The name of the connection.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9864,47 +9214,39 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
+        pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_name = input; self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9913,8 +9255,7 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9923,8 +9264,7 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9933,8 +9273,7 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -9943,8 +9282,7 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9953,8 +9291,7 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9962,12 +9299,8 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9976,8 +9309,7 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9986,8 +9318,7 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -9996,8 +9327,7 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10005,12 +9335,8 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10018,12 +9344,8 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -10031,12 +9353,8 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -10045,17 +9363,13 @@ pub mod associate_hosted_connection_output {
         /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the connection.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the connection.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10063,12 +9377,8 @@ pub mod associate_hosted_connection_output {
             self
         }
         /// <p>The name of the service provider associated with the connection.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -10077,38 +9387,29 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.port_encryption_status = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-        pub fn set_port_encryption_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.port_encryption_status = input;
-            self
+        pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_encryption_status = input; self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -10117,46 +9418,67 @@ pub mod associate_hosted_connection_output {
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
         pub fn build(self) -> crate::output::AssociateHostedConnectionOutput {
             crate::output::AssociateHostedConnectionOutput {
-                owner_account: self.owner_account,
-                connection_id: self.connection_id,
-                connection_name: self.connection_name,
-                connection_state: self.connection_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                vlan: self.vlan.unwrap_or_default(),
-                partner_name: self.partner_name,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                port_encryption_status: self.port_encryption_status,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                owner_account: self.owner_account
+                ,
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                connection_state: self.connection_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                partner_name: self.partner_name
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                port_encryption_status: self.port_encryption_status
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateHostedConnectionOutput {
     /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
@@ -10168,7 +9490,7 @@ impl AssociateHostedConnectionOutput {
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateConnectionWithLagOutput {
+pub struct AssociateConnectionWithLagOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -10178,17 +9500,17 @@ pub struct AssociateConnectionWithLagOutput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -10237,11 +9559,11 @@ pub struct AssociateConnectionWithLagOutput {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -10251,42 +9573,42 @@ pub struct AssociateConnectionWithLagOutput {
 }
 impl AssociateConnectionWithLagOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -10294,19 +9616,19 @@ impl AssociateConnectionWithLagOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -10314,49 +9636,47 @@ impl AssociateConnectionWithLagOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
 pub mod associate_connection_with_lag_output {
-
+    
     /// A builder for [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10390,12 +9710,8 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10403,12 +9719,8 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The name of the connection.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10416,47 +9728,39 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
+        pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_name = input; self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10465,8 +9769,7 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10475,8 +9778,7 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10485,8 +9787,7 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -10495,8 +9796,7 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10505,8 +9805,7 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10514,12 +9813,8 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10528,8 +9823,7 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10538,8 +9832,7 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -10548,8 +9841,7 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10557,12 +9849,8 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10570,12 +9858,8 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -10583,12 +9867,8 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -10597,17 +9877,13 @@ pub mod associate_connection_with_lag_output {
         /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the connection.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the connection.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10615,12 +9891,8 @@ pub mod associate_connection_with_lag_output {
             self
         }
         /// <p>The name of the service provider associated with the connection.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -10629,38 +9901,29 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.port_encryption_status = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-        pub fn set_port_encryption_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.port_encryption_status = input;
-            self
+        pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_encryption_status = input; self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -10669,46 +9932,67 @@ pub mod associate_connection_with_lag_output {
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
         pub fn build(self) -> crate::output::AssociateConnectionWithLagOutput {
             crate::output::AssociateConnectionWithLagOutput {
-                owner_account: self.owner_account,
-                connection_id: self.connection_id,
-                connection_name: self.connection_name,
-                connection_state: self.connection_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                vlan: self.vlan.unwrap_or_default(),
-                partner_name: self.partner_name,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                port_encryption_status: self.port_encryption_status,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                owner_account: self.owner_account
+                ,
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                connection_state: self.connection_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                partner_name: self.partner_name
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                port_encryption_status: self.port_encryption_status
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateConnectionWithLagOutput {
     /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
@@ -10720,20 +10004,20 @@ impl AssociateConnectionWithLagOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocateTransitVirtualInterfaceOutput {
+pub struct AllocateTransitVirtualInterfaceOutput  {
     /// <p>Information about a virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::model::VirtualInterface>,
 }
 impl AllocateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
-    pub fn virtual_interface(&self) -> std::option::Option<&crate::model::VirtualInterface> {
+    pub fn virtual_interface(&self) -> std::option::Option<& crate::model::VirtualInterface> {
         self.virtual_interface.as_ref()
     }
 }
 /// See [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
 pub mod allocate_transit_virtual_interface_output {
-
+    
     /// A builder for [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10746,20 +10030,19 @@ pub mod allocate_transit_virtual_interface_output {
             self
         }
         /// <p>Information about a virtual interface.</p>
-        pub fn set_virtual_interface(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterface>,
-        ) -> Self {
-            self.virtual_interface = input;
-            self
+        pub fn set_virtual_interface(mut self, input: std::option::Option<crate::model::VirtualInterface>) -> Self {
+            self.virtual_interface = input; self
         }
         /// Consumes the builder and constructs a [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocateTransitVirtualInterfaceOutput {
             crate::output::AllocateTransitVirtualInterfaceOutput {
-                virtual_interface: self.virtual_interface,
+                virtual_interface: self.virtual_interface
+                ,
             }
         }
     }
+    
+    
 }
 impl AllocateTransitVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
@@ -10771,7 +10054,7 @@ impl AllocateTransitVirtualInterfaceOutput {
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocatePublicVirtualInterfaceOutput {
+pub struct AllocatePublicVirtualInterfaceOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -10793,7 +10076,7 @@ pub struct AllocatePublicVirtualInterfaceOutput {
     /// <p>The ID of the VLAN.</p>
     #[doc(hidden)]
     pub vlan: i32,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     #[doc(hidden)]
     pub asn: i32,
@@ -10812,17 +10095,17 @@ pub struct AllocatePublicVirtualInterfaceOutput {
     /// <p>The address family for the BGP peer.</p>
     #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -10865,34 +10148,34 @@ pub struct AllocatePublicVirtualInterfaceOutput {
 }
 impl AllocatePublicVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_type(&self) -> std::option::Option<& str> {
         self.virtual_interface_type.as_deref()
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn asn(&self) -> i32 {
         self.asn
@@ -10902,40 +10185,38 @@ impl AllocatePublicVirtualInterfaceOutput {
         self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> std::option::Option<&str> {
+    pub fn auth_key(&self) -> std::option::Option<& str> {
         self.auth_key.as_deref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> std::option::Option<&str> {
+    pub fn amazon_address(&self) -> std::option::Option<& str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> std::option::Option<&str> {
+    pub fn customer_address(&self) -> std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+    pub fn address_family(&self) -> std::option::Option<& crate::model::AddressFamily> {
         self.address_family.as_ref()
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
@@ -10947,35 +10228,35 @@ impl AllocatePublicVirtualInterfaceOutput {
         self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+    pub fn route_filter_prefixes(&self) -> std::option::Option<& [crate::model::RouteFilterPrefix]> {
         self.route_filter_prefixes.as_deref()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn bgp_peers(&self) -> std::option::Option<&[crate::model::BgpPeer]> {
+    pub fn bgp_peers(&self) -> std::option::Option<& [crate::model::BgpPeer]> {
         self.bgp_peers.as_deref()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
@@ -10985,7 +10266,7 @@ impl AllocatePublicVirtualInterfaceOutput {
 }
 /// See [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
 pub mod allocate_public_virtual_interface_output {
-
+    
     /// A builder for [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11002,15 +10283,13 @@ pub mod allocate_public_virtual_interface_output {
         pub(crate) amazon_address: std::option::Option<std::string::String>,
         pub(crate) customer_address: std::option::Option<std::string::String>,
         pub(crate) address_family: std::option::Option<crate::model::AddressFamily>,
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
         pub(crate) mtu: std::option::Option<i32>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
-        pub(crate) route_filter_prefixes:
-            std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+        pub(crate) route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
@@ -11025,12 +10304,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the virtual interface.</p>
         pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11038,12 +10313,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn set_virtual_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_id = input;
-            self
+        pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_id = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11052,8 +10323,7 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11061,12 +10331,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
         pub fn virtual_interface_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11074,12 +10340,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-        pub fn set_virtual_interface_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_type = input;
-            self
+        pub fn set_virtual_interface_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_type = input; self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11087,12 +10349,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-        pub fn set_virtual_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_name = input;
-            self
+        pub fn set_virtual_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_name = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -11101,20 +10359,18 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn asn(mut self, input: i32) -> Self {
             self.asn = Some(input);
             self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
-            self.asn = input;
-            self
+            self.asn = input; self
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -11123,8 +10379,7 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
-            self.amazon_side_asn = input;
-            self
+            self.amazon_side_asn = input; self
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn auth_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11133,8 +10388,7 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_key = input;
-            self
+            self.auth_key = input; self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn amazon_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11142,12 +10396,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
-        pub fn set_amazon_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amazon_address = input;
-            self
+        pub fn set_amazon_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amazon_address = input; self
         }
         /// <p>The IP address assigned to the customer interface.</p>
         pub fn customer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11155,12 +10405,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the customer interface.</p>
-        pub fn set_customer_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_address = input;
-            self
+        pub fn set_customer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_address = input; self
         }
         /// <p>The address family for the BGP peer.</p>
         pub fn address_family(mut self, input: crate::model::AddressFamily) -> Self {
@@ -11168,50 +10414,39 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The address family for the BGP peer.</p>
-        pub fn set_address_family(
-            mut self,
-            input: std::option::Option<crate::model::AddressFamily>,
-        ) -> Self {
-            self.address_family = input;
-            self
+        pub fn set_address_family(mut self, input: std::option::Option<crate::model::AddressFamily>) -> Self {
+            self.address_family = input; self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// <p>The customer router configuration.</p>
         pub fn customer_router_config(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11219,12 +10454,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The customer router configuration.</p>
-        pub fn set_customer_router_config(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_router_config = input;
-            self
+        pub fn set_customer_router_config(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_router_config = input; self
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn mtu(mut self, input: i32) -> Self {
@@ -11233,8 +10464,7 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
-            self.mtu = input;
-            self
+            self.mtu = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -11243,8 +10473,7 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
         pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11252,12 +10481,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-        pub fn set_virtual_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_id = input;
-            self
+        pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_id = input; self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11265,12 +10490,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_id = input;
-            self
+        pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.direct_connect_gateway_id = input; self
         }
         /// Appends an item to `route_filter_prefixes`.
         ///
@@ -11279,17 +10500,13 @@ pub mod allocate_public_virtual_interface_output {
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input);
-            self.route_filter_prefixes = Some(v);
-            self
+                            v.push(input);
+                            self.route_filter_prefixes = Some(v);
+                            self
         }
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn set_route_filter_prefixes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
-        ) -> Self {
-            self.route_filter_prefixes = input;
-            self
+        pub fn set_route_filter_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>) -> Self {
+            self.route_filter_prefixes = input; self
         }
         /// Appends an item to `bgp_peers`.
         ///
@@ -11298,17 +10515,13 @@ pub mod allocate_public_virtual_interface_output {
         /// <p>The BGP peers configured on this virtual interface.</p>
         pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input);
-            self.bgp_peers = Some(v);
-            self
+                            v.push(input);
+                            self.bgp_peers = Some(v);
+                            self
         }
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn set_bgp_peers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-        ) -> Self {
-            self.bgp_peers = input;
-            self
+        pub fn set_bgp_peers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>) -> Self {
+            self.bgp_peers = input; self
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11317,8 +10530,7 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11326,12 +10538,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11339,12 +10547,8 @@ pub mod allocate_public_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -11353,17 +10557,13 @@ pub mod allocate_public_virtual_interface_output {
         /// <p>The tags associated with the virtual interface.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn site_link_enabled(mut self, input: bool) -> Self {
@@ -11372,41 +10572,70 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.site_link_enabled = input;
-            self
+            self.site_link_enabled = input; self
         }
         /// Consumes the builder and constructs a [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocatePublicVirtualInterfaceOutput {
             crate::output::AllocatePublicVirtualInterfaceOutput {
-                owner_account: self.owner_account,
-                virtual_interface_id: self.virtual_interface_id,
-                location: self.location,
-                connection_id: self.connection_id,
-                virtual_interface_type: self.virtual_interface_type,
-                virtual_interface_name: self.virtual_interface_name,
-                vlan: self.vlan.unwrap_or_default(),
-                asn: self.asn.unwrap_or_default(),
-                amazon_side_asn: self.amazon_side_asn,
-                auth_key: self.auth_key,
-                amazon_address: self.amazon_address,
-                customer_address: self.customer_address,
-                address_family: self.address_family,
-                virtual_interface_state: self.virtual_interface_state,
-                customer_router_config: self.customer_router_config,
-                mtu: self.mtu,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                virtual_gateway_id: self.virtual_gateway_id,
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                route_filter_prefixes: self.route_filter_prefixes,
-                bgp_peers: self.bgp_peers,
-                region: self.region,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                tags: self.tags,
-                site_link_enabled: self.site_link_enabled,
+                owner_account: self.owner_account
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                location: self.location
+                ,
+                connection_id: self.connection_id
+                ,
+                virtual_interface_type: self.virtual_interface_type
+                ,
+                virtual_interface_name: self.virtual_interface_name
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                asn: self.asn
+                    .unwrap_or_default()
+                ,
+                amazon_side_asn: self.amazon_side_asn
+                ,
+                auth_key: self.auth_key
+                ,
+                amazon_address: self.amazon_address
+                ,
+                customer_address: self.customer_address
+                ,
+                address_family: self.address_family
+                ,
+                virtual_interface_state: self.virtual_interface_state
+                ,
+                customer_router_config: self.customer_router_config
+                ,
+                mtu: self.mtu
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                virtual_gateway_id: self.virtual_gateway_id
+                ,
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                route_filter_prefixes: self.route_filter_prefixes
+                ,
+                bgp_peers: self.bgp_peers
+                ,
+                region: self.region
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                tags: self.tags
+                ,
+                site_link_enabled: self.site_link_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl AllocatePublicVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
@@ -11418,7 +10647,7 @@ impl AllocatePublicVirtualInterfaceOutput {
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocatePrivateVirtualInterfaceOutput {
+pub struct AllocatePrivateVirtualInterfaceOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -11440,7 +10669,7 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the VLAN.</p>
     #[doc(hidden)]
     pub vlan: i32,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     #[doc(hidden)]
     pub asn: i32,
@@ -11459,17 +10688,17 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     /// <p>The address family for the BGP peer.</p>
     #[doc(hidden)]
     pub address_family: std::option::Option<crate::model::AddressFamily>,
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -11512,34 +10741,34 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
 }
 impl AllocatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_type(&self) -> std::option::Option<& str> {
         self.virtual_interface_type.as_deref()
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
     /// <p>The valid values are 1-2147483647.</p>
     pub fn asn(&self) -> i32 {
         self.asn
@@ -11549,40 +10778,38 @@ impl AllocatePrivateVirtualInterfaceOutput {
         self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> std::option::Option<&str> {
+    pub fn auth_key(&self) -> std::option::Option<& str> {
         self.auth_key.as_deref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> std::option::Option<&str> {
+    pub fn amazon_address(&self) -> std::option::Option<& str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> std::option::Option<&str> {
+    pub fn customer_address(&self) -> std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> std::option::Option<&crate::model::AddressFamily> {
+    pub fn address_family(&self) -> std::option::Option<& crate::model::AddressFamily> {
         self.address_family.as_ref()
     }
-    /// <p>The state of the virtual interface. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+    /// <p>The state of the virtual interface. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
     /// </ul>
-    pub fn virtual_interface_state(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> std::option::Option<& crate::model::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
@@ -11594,35 +10821,35 @@ impl AllocatePrivateVirtualInterfaceOutput {
         self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(&self) -> std::option::Option<&[crate::model::RouteFilterPrefix]> {
+    pub fn route_filter_prefixes(&self) -> std::option::Option<& [crate::model::RouteFilterPrefix]> {
         self.route_filter_prefixes.as_deref()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn bgp_peers(&self) -> std::option::Option<&[crate::model::BgpPeer]> {
+    pub fn bgp_peers(&self) -> std::option::Option<& [crate::model::BgpPeer]> {
         self.bgp_peers.as_deref()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
@@ -11632,7 +10859,7 @@ impl AllocatePrivateVirtualInterfaceOutput {
 }
 /// See [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
 pub mod allocate_private_virtual_interface_output {
-
+    
     /// A builder for [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11649,15 +10876,13 @@ pub mod allocate_private_virtual_interface_output {
         pub(crate) amazon_address: std::option::Option<std::string::String>,
         pub(crate) customer_address: std::option::Option<std::string::String>,
         pub(crate) address_family: std::option::Option<crate::model::AddressFamily>,
-        pub(crate) virtual_interface_state:
-            std::option::Option<crate::model::VirtualInterfaceState>,
+        pub(crate) virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
         pub(crate) mtu: std::option::Option<i32>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
-        pub(crate) route_filter_prefixes:
-            std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
+        pub(crate) route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
         pub(crate) bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
@@ -11672,12 +10897,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the virtual interface.</p>
         pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11685,12 +10906,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn set_virtual_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_id = input;
-            self
+        pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_id = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11699,8 +10916,7 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11708,12 +10924,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
         pub fn virtual_interface_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11721,12 +10933,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-        pub fn set_virtual_interface_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_type = input;
-            self
+        pub fn set_virtual_interface_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_type = input; self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11734,12 +10942,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-        pub fn set_virtual_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_interface_name = input;
-            self
+        pub fn set_virtual_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_interface_name = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -11748,20 +10952,18 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn asn(mut self, input: i32) -> Self {
             self.asn = Some(input);
             self
         }
-        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> 
         /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
-            self.asn = input;
-            self
+            self.asn = input; self
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -11770,8 +10972,7 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
-            self.amazon_side_asn = input;
-            self
+            self.amazon_side_asn = input; self
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn auth_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11780,8 +10981,7 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_key = input;
-            self
+            self.auth_key = input; self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn amazon_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11789,12 +10989,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the Amazon interface.</p>
-        pub fn set_amazon_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.amazon_address = input;
-            self
+        pub fn set_amazon_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amazon_address = input; self
         }
         /// <p>The IP address assigned to the customer interface.</p>
         pub fn customer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11802,12 +10998,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The IP address assigned to the customer interface.</p>
-        pub fn set_customer_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_address = input;
-            self
+        pub fn set_customer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_address = input; self
         }
         /// <p>The address family for the BGP peer.</p>
         pub fn address_family(mut self, input: crate::model::AddressFamily) -> Self {
@@ -11815,50 +11007,39 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The address family for the BGP peer.</p>
-        pub fn set_address_family(
-            mut self,
-            input: std::option::Option<crate::model::AddressFamily>,
-        ) -> Self {
-            self.address_family = input;
-            self
+        pub fn set_address_family(mut self, input: std::option::Option<crate::model::AddressFamily>) -> Self {
+            self.address_family = input; self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn virtual_interface_state(
-            mut self,
-            input: crate::model::VirtualInterfaceState,
-        ) -> Self {
+        pub fn virtual_interface_state(mut self, input: crate::model::VirtualInterfaceState) -> Self {
             self.virtual_interface_state = Some(input);
             self
         }
-        /// <p>The state of the virtual interface. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
-        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
-        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
-        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
-        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
-        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
-        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
-        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
+        /// <p>The state of the virtual interface. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li> 
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li> 
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li> 
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li> 
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li> 
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li> 
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li> 
         /// </ul>
-        pub fn set_virtual_interface_state(
-            mut self,
-            input: std::option::Option<crate::model::VirtualInterfaceState>,
-        ) -> Self {
-            self.virtual_interface_state = input;
-            self
+        pub fn set_virtual_interface_state(mut self, input: std::option::Option<crate::model::VirtualInterfaceState>) -> Self {
+            self.virtual_interface_state = input; self
         }
         /// <p>The customer router configuration.</p>
         pub fn customer_router_config(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11866,12 +11047,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The customer router configuration.</p>
-        pub fn set_customer_router_config(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_router_config = input;
-            self
+        pub fn set_customer_router_config(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_router_config = input; self
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn mtu(mut self, input: i32) -> Self {
@@ -11880,8 +11057,7 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
-            self.mtu = input;
-            self
+            self.mtu = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -11890,8 +11066,7 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
         pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11899,12 +11074,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-        pub fn set_virtual_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_id = input;
-            self
+        pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_id = input; self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11912,12 +11083,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn set_direct_connect_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.direct_connect_gateway_id = input;
-            self
+        pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.direct_connect_gateway_id = input; self
         }
         /// Appends an item to `route_filter_prefixes`.
         ///
@@ -11926,17 +11093,13 @@ pub mod allocate_private_virtual_interface_output {
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(mut self, input: crate::model::RouteFilterPrefix) -> Self {
             let mut v = self.route_filter_prefixes.unwrap_or_default();
-            v.push(input);
-            self.route_filter_prefixes = Some(v);
-            self
+                            v.push(input);
+                            self.route_filter_prefixes = Some(v);
+                            self
         }
         /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-        pub fn set_route_filter_prefixes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
-        ) -> Self {
-            self.route_filter_prefixes = input;
-            self
+        pub fn set_route_filter_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>) -> Self {
+            self.route_filter_prefixes = input; self
         }
         /// Appends an item to `bgp_peers`.
         ///
@@ -11945,17 +11108,13 @@ pub mod allocate_private_virtual_interface_output {
         /// <p>The BGP peers configured on this virtual interface.</p>
         pub fn bgp_peers(mut self, input: crate::model::BgpPeer) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
-            v.push(input);
-            self.bgp_peers = Some(v);
-            self
+                            v.push(input);
+                            self.bgp_peers = Some(v);
+                            self
         }
         /// <p>The BGP peers configured on this virtual interface.</p>
-        pub fn set_bgp_peers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-        ) -> Self {
-            self.bgp_peers = input;
-            self
+        pub fn set_bgp_peers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>) -> Self {
+            self.bgp_peers = input; self
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11964,8 +11123,7 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11973,12 +11131,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11986,12 +11140,8 @@ pub mod allocate_private_virtual_interface_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -12000,17 +11150,13 @@ pub mod allocate_private_virtual_interface_output {
         /// <p>The tags associated with the virtual interface.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the virtual interface.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn site_link_enabled(mut self, input: bool) -> Self {
@@ -12019,41 +11165,70 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>Indicates whether SiteLink is enabled.</p>
         pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.site_link_enabled = input;
-            self
+            self.site_link_enabled = input; self
         }
         /// Consumes the builder and constructs a [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocatePrivateVirtualInterfaceOutput {
             crate::output::AllocatePrivateVirtualInterfaceOutput {
-                owner_account: self.owner_account,
-                virtual_interface_id: self.virtual_interface_id,
-                location: self.location,
-                connection_id: self.connection_id,
-                virtual_interface_type: self.virtual_interface_type,
-                virtual_interface_name: self.virtual_interface_name,
-                vlan: self.vlan.unwrap_or_default(),
-                asn: self.asn.unwrap_or_default(),
-                amazon_side_asn: self.amazon_side_asn,
-                auth_key: self.auth_key,
-                amazon_address: self.amazon_address,
-                customer_address: self.customer_address,
-                address_family: self.address_family,
-                virtual_interface_state: self.virtual_interface_state,
-                customer_router_config: self.customer_router_config,
-                mtu: self.mtu,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                virtual_gateway_id: self.virtual_gateway_id,
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                route_filter_prefixes: self.route_filter_prefixes,
-                bgp_peers: self.bgp_peers,
-                region: self.region,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                tags: self.tags,
-                site_link_enabled: self.site_link_enabled,
+                owner_account: self.owner_account
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                location: self.location
+                ,
+                connection_id: self.connection_id
+                ,
+                virtual_interface_type: self.virtual_interface_type
+                ,
+                virtual_interface_name: self.virtual_interface_name
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                asn: self.asn
+                    .unwrap_or_default()
+                ,
+                amazon_side_asn: self.amazon_side_asn
+                ,
+                auth_key: self.auth_key
+                ,
+                amazon_address: self.amazon_address
+                ,
+                customer_address: self.customer_address
+                ,
+                address_family: self.address_family
+                ,
+                virtual_interface_state: self.virtual_interface_state
+                ,
+                customer_router_config: self.customer_router_config
+                ,
+                mtu: self.mtu
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                virtual_gateway_id: self.virtual_gateway_id
+                ,
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                route_filter_prefixes: self.route_filter_prefixes
+                ,
+                bgp_peers: self.bgp_peers
+                ,
+                region: self.region
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                tags: self.tags
+                ,
+                site_link_enabled: self.site_link_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl AllocatePrivateVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
@@ -12065,7 +11240,7 @@ impl AllocatePrivateVirtualInterfaceOutput {
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocateHostedConnectionOutput {
+pub struct AllocateHostedConnectionOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -12075,17 +11250,17 @@ pub struct AllocateHostedConnectionOutput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -12134,11 +11309,11 @@ pub struct AllocateHostedConnectionOutput {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -12148,42 +11323,42 @@ pub struct AllocateHostedConnectionOutput {
 }
 impl AllocateHostedConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -12191,19 +11366,19 @@ impl AllocateHostedConnectionOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -12211,49 +11386,47 @@ impl AllocateHostedConnectionOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
 pub mod allocate_hosted_connection_output {
-
+    
     /// A builder for [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12287,12 +11460,8 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12300,12 +11469,8 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The name of the connection.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12313,47 +11478,39 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
+        pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_name = input; self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12362,8 +11519,7 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12372,8 +11528,7 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12382,8 +11537,7 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -12392,8 +11546,7 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12402,8 +11555,7 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12411,12 +11563,8 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12425,8 +11573,7 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12435,8 +11582,7 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -12445,8 +11591,7 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12454,12 +11599,8 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12467,12 +11608,8 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -12480,12 +11617,8 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -12494,17 +11627,13 @@ pub mod allocate_hosted_connection_output {
         /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the connection.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the connection.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12512,12 +11641,8 @@ pub mod allocate_hosted_connection_output {
             self
         }
         /// <p>The name of the service provider associated with the connection.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -12526,38 +11651,29 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.port_encryption_status = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-        pub fn set_port_encryption_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.port_encryption_status = input;
-            self
+        pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_encryption_status = input; self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -12566,46 +11682,67 @@ pub mod allocate_hosted_connection_output {
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
         pub fn build(self) -> crate::output::AllocateHostedConnectionOutput {
             crate::output::AllocateHostedConnectionOutput {
-                owner_account: self.owner_account,
-                connection_id: self.connection_id,
-                connection_name: self.connection_name,
-                connection_state: self.connection_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                vlan: self.vlan.unwrap_or_default(),
-                partner_name: self.partner_name,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                port_encryption_status: self.port_encryption_status,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                owner_account: self.owner_account
+                ,
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                connection_state: self.connection_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                partner_name: self.partner_name
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                port_encryption_status: self.port_encryption_status
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl AllocateHostedConnectionOutput {
     /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
@@ -12617,7 +11754,7 @@ impl AllocateHostedConnectionOutput {
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocateConnectionOnInterconnectOutput {
+pub struct AllocateConnectionOnInterconnectOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -12627,17 +11764,17 @@ pub struct AllocateConnectionOnInterconnectOutput {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -12686,11 +11823,11 @@ pub struct AllocateConnectionOnInterconnectOutput {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -12700,42 +11837,42 @@ pub struct AllocateConnectionOnInterconnectOutput {
 }
 impl AllocateConnectionOnInterconnectOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+    /// <p>The state of the connection. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -12743,19 +11880,19 @@ impl AllocateConnectionOnInterconnectOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -12763,49 +11900,47 @@ impl AllocateConnectionOnInterconnectOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> std::option::Option<&crate::model::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::model::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::model::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::model::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 /// See [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
 pub mod allocate_connection_on_interconnect_output {
-
+    
     /// A builder for [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12839,12 +11974,8 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The ID of the connection.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12852,12 +11983,8 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn set_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_id = input;
-            self
+        pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_id = input; self
         }
         /// <p>The name of the connection.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12865,47 +11992,39 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn set_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_name = input;
-            self
+        pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_name = input; self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The state of the connection. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
-        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
-        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
-        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
-        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
-        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
-        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
-        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
-        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
+        /// <p>The state of the connection. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
         /// </ul>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12914,8 +12033,7 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The location of the connection.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12924,8 +12042,7 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12934,8 +12051,7 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bandwidth = input;
-            self
+            self.bandwidth = input; self
         }
         /// <p>The ID of the VLAN.</p>
         pub fn vlan(mut self, input: i32) -> Self {
@@ -12944,8 +12060,7 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-            self.vlan = input;
-            self
+            self.vlan = input; self
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12954,8 +12069,7 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12963,12 +12077,8 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-        pub fn set_loa_issue_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.loa_issue_time = input;
-            self
+        pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.loa_issue_time = input; self
         }
         /// <p>The ID of the LAG.</p>
         pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12977,8 +12087,7 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_id = input;
-            self
+            self.lag_id = input; self
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12987,8 +12096,7 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_device = input;
-            self
+            self.aws_device = input; self
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -12997,8 +12105,7 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.jumbo_frame_capable = input;
-            self
+            self.jumbo_frame_capable = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13006,12 +12113,8 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-        pub fn set_aws_device_v2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_device_v2 = input;
-            self
+        pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_device_v2 = input; self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13019,12 +12122,8 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-        pub fn set_aws_logical_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_logical_device_id = input;
-            self
+        pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_logical_device_id = input; self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn has_logical_redundancy(mut self, input: crate::model::HasLogicalRedundancy) -> Self {
@@ -13032,12 +12131,8 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-        pub fn set_has_logical_redundancy(
-            mut self,
-            input: std::option::Option<crate::model::HasLogicalRedundancy>,
-        ) -> Self {
-            self.has_logical_redundancy = input;
-            self
+        pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::model::HasLogicalRedundancy>) -> Self {
+            self.has_logical_redundancy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -13046,17 +12141,13 @@ pub mod allocate_connection_on_interconnect_output {
         /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the connection.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the service provider associated with the connection.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13064,12 +12155,8 @@ pub mod allocate_connection_on_interconnect_output {
             self
         }
         /// <p>The name of the service provider associated with the connection.</p>
-        pub fn set_provider_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_name = input;
-            self
+        pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_name = input; self
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -13078,38 +12165,29 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-            self.mac_sec_capable = input;
-            self
+            self.mac_sec_capable = input; self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.port_encryption_status = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
         /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-        pub fn set_port_encryption_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.port_encryption_status = input;
-            self
+        pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.port_encryption_status = input; self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_mode = Some(input.into());
             self
         }
-        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_mode = input; self
         }
         /// Appends an item to `mac_sec_keys`.
         ///
@@ -13118,46 +12196,67 @@ pub mod allocate_connection_on_interconnect_output {
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: crate::model::MacSecKey) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
-            v.push(input);
-            self.mac_sec_keys = Some(v);
-            self
+                            v.push(input);
+                            self.mac_sec_keys = Some(v);
+                            self
         }
         /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-        pub fn set_mac_sec_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
-        ) -> Self {
-            self.mac_sec_keys = input;
-            self
+        pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>) -> Self {
+            self.mac_sec_keys = input; self
         }
         /// Consumes the builder and constructs a [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
         pub fn build(self) -> crate::output::AllocateConnectionOnInterconnectOutput {
             crate::output::AllocateConnectionOnInterconnectOutput {
-                owner_account: self.owner_account,
-                connection_id: self.connection_id,
-                connection_name: self.connection_name,
-                connection_state: self.connection_state,
-                region: self.region,
-                location: self.location,
-                bandwidth: self.bandwidth,
-                vlan: self.vlan.unwrap_or_default(),
-                partner_name: self.partner_name,
-                loa_issue_time: self.loa_issue_time,
-                lag_id: self.lag_id,
-                aws_device: self.aws_device,
-                jumbo_frame_capable: self.jumbo_frame_capable,
-                aws_device_v2: self.aws_device_v2,
-                aws_logical_device_id: self.aws_logical_device_id,
-                has_logical_redundancy: self.has_logical_redundancy,
-                tags: self.tags,
-                provider_name: self.provider_name,
-                mac_sec_capable: self.mac_sec_capable,
-                port_encryption_status: self.port_encryption_status,
-                encryption_mode: self.encryption_mode,
-                mac_sec_keys: self.mac_sec_keys,
+                owner_account: self.owner_account
+                ,
+                connection_id: self.connection_id
+                ,
+                connection_name: self.connection_name
+                ,
+                connection_state: self.connection_state
+                ,
+                region: self.region
+                ,
+                location: self.location
+                ,
+                bandwidth: self.bandwidth
+                ,
+                vlan: self.vlan
+                    .unwrap_or_default()
+                ,
+                partner_name: self.partner_name
+                ,
+                loa_issue_time: self.loa_issue_time
+                ,
+                lag_id: self.lag_id
+                ,
+                aws_device: self.aws_device
+                ,
+                jumbo_frame_capable: self.jumbo_frame_capable
+                ,
+                aws_device_v2: self.aws_device_v2
+                ,
+                aws_logical_device_id: self.aws_logical_device_id
+                ,
+                has_logical_redundancy: self.has_logical_redundancy
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+                mac_sec_capable: self.mac_sec_capable
+                ,
+                port_encryption_status: self.port_encryption_status
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                mac_sec_keys: self.mac_sec_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl AllocateConnectionOnInterconnectOutput {
     /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
@@ -13169,58 +12268,50 @@ impl AllocateConnectionOnInterconnectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptDirectConnectGatewayAssociationProposalOutput {
+pub struct AcceptDirectConnectGatewayAssociationProposalOutput  {
     /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association:
-        std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+    pub direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
 }
 impl AcceptDirectConnectGatewayAssociationProposalOutput {
     /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
-    pub fn direct_connect_gateway_association(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociation> {
+    pub fn direct_connect_gateway_association(&self) -> std::option::Option<& crate::model::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
     }
 }
 /// See [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
 pub mod accept_direct_connect_gateway_association_proposal_output {
-
+    
     /// A builder for [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) direct_connect_gateway_association:
-            std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+        pub(crate) direct_connect_gateway_association: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
     }
     impl Builder {
         /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
-        pub fn direct_connect_gateway_association(
-            mut self,
-            input: crate::model::DirectConnectGatewayAssociation,
-        ) -> Self {
+        pub fn direct_connect_gateway_association(mut self, input: crate::model::DirectConnectGatewayAssociation) -> Self {
             self.direct_connect_gateway_association = Some(input);
             self
         }
         /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
-        pub fn set_direct_connect_gateway_association(
-            mut self,
-            input: std::option::Option<crate::model::DirectConnectGatewayAssociation>,
-        ) -> Self {
-            self.direct_connect_gateway_association = input;
-            self
+        pub fn set_direct_connect_gateway_association(mut self, input: std::option::Option<crate::model::DirectConnectGatewayAssociation>) -> Self {
+            self.direct_connect_gateway_association = input; self
         }
         /// Consumes the builder and constructs a [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::AcceptDirectConnectGatewayAssociationProposalOutput {
             crate::output::AcceptDirectConnectGatewayAssociationProposalOutput {
-                direct_connect_gateway_association: self.direct_connect_gateway_association,
+                direct_connect_gateway_association: self.direct_connect_gateway_association
+                ,
             }
         }
     }
+    
+    
 }
 impl AcceptDirectConnectGatewayAssociationProposalOutput {
     /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
-    pub fn builder(
-    ) -> crate::output::accept_direct_connect_gateway_association_proposal_output::Builder {
+    pub fn builder() -> crate::output::accept_direct_connect_gateway_association_proposal_output::Builder {
         crate::output::accept_direct_connect_gateway_association_proposal_output::Builder::default()
     }
 }
+

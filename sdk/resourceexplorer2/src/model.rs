@@ -3,7 +3,7 @@
 /// <p>A structure that describes a request field with a validation error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the request field that had a validation error.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the request field that had a validation error.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The validation error caused by the request field.</p>
-    pub fn validation_issue(&self) -> std::option::Option<&str> {
+    pub fn validation_issue(&self) -> std::option::Option<& str> {
         self.validation_issue.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the request field that had a validation error.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The validation error caused by the request field.</p>
         pub fn validation_issue(mut self, input: impl Into<std::string::String>) -> Self {
@@ -47,21 +46,21 @@ pub mod validation_exception_field {
             self
         }
         /// <p>The validation error caused by the request field.</p>
-        pub fn set_validation_issue(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.validation_issue = input;
-            self
+        pub fn set_validation_issue(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.validation_issue = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                validation_issue: self.validation_issue,
+                name: self.name
+                ,
+                validation_issue: self.validation_issue
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,7 +72,7 @@ impl ValidationExceptionField {
 /// <p>A view is a structure that defines a set of filters that provide a view into the information in the Amazon Web Services Resource Explorer index. The filters specify which information from the index is visible to the users of the view. For example, you can specify filters that include only resources that are tagged with the key "ENV" and the value "DEVELOPMENT" in the results returned by this view. You could also create a second view that includes only resources that are tagged with "ENV" and "PRODUCTION".</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct View {
+pub struct View  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
@@ -83,7 +82,7 @@ pub struct View {
     /// <p>The date and time when this view was last modified.</p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p> 
     /// <p>If not specified, the value defaults to the Amazon Web Services account used to call this operation.</p>
     #[doc(hidden)]
     pub scope: std::option::Option<std::string::String>,
@@ -96,32 +95,32 @@ pub struct View {
 }
 impl View {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view.</p>
-    pub fn view_arn(&self) -> std::option::Option<&str> {
+    pub fn view_arn(&self) -> std::option::Option<& str> {
         self.view_arn.as_deref()
     }
     /// <p>The Amazon Web Services account that owns this view.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The date and time when this view was last modified.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p> 
     /// <p>If not specified, the value defaults to the Amazon Web Services account used to call this operation.</p>
-    pub fn scope(&self) -> std::option::Option<&str> {
+    pub fn scope(&self) -> std::option::Option<& str> {
         self.scope.as_deref()
     }
     /// <p>A structure that contains additional information about the view.</p>
-    pub fn included_properties(&self) -> std::option::Option<&[crate::model::IncludedProperty]> {
+    pub fn included_properties(&self) -> std::option::Option<& [crate::model::IncludedProperty]> {
         self.included_properties.as_deref()
     }
     /// <p>An array of <code>SearchFilter</code> objects that specify which resources can be included in the results of queries made using this view.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::model::SearchFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::SearchFilter> {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for View {
+impl  std::fmt::Debug for View  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("View");
         formatter.field("view_arn", &self.view_arn);
@@ -135,7 +134,7 @@ impl std::fmt::Debug for View {
 }
 /// See [`View`](crate::model::View).
 pub mod view {
-
+    
     /// A builder for [`View`](crate::model::View).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -143,8 +142,7 @@ pub mod view {
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) scope: std::option::Option<std::string::String>,
-        pub(crate) included_properties:
-            std::option::Option<std::vec::Vec<crate::model::IncludedProperty>>,
+        pub(crate) included_properties: std::option::Option<std::vec::Vec<crate::model::IncludedProperty>>,
         pub(crate) filters: std::option::Option<crate::model::SearchFilter>,
     }
     impl Builder {
@@ -155,8 +153,7 @@ pub mod view {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view.</p>
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.view_arn = input;
-            self
+            self.view_arn = input; self
         }
         /// <p>The Amazon Web Services account that owns this view.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,8 +162,7 @@ pub mod view {
         }
         /// <p>The Amazon Web Services account that owns this view.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The date and time when this view was last modified.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -174,24 +170,19 @@ pub mod view {
             self
         }
         /// <p>The date and time when this view was last modified.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
-        /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p>
+        /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p> 
         /// <p>If not specified, the value defaults to the Amazon Web Services account used to call this operation.</p>
         pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
             self.scope = Some(input.into());
             self
         }
-        /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p>
+        /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p> 
         /// <p>If not specified, the value defaults to the Amazon Web Services account used to call this operation.</p>
         pub fn set_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.scope = input;
-            self
+            self.scope = input; self
         }
         /// Appends an item to `included_properties`.
         ///
@@ -200,17 +191,13 @@ pub mod view {
         /// <p>A structure that contains additional information about the view.</p>
         pub fn included_properties(mut self, input: crate::model::IncludedProperty) -> Self {
             let mut v = self.included_properties.unwrap_or_default();
-            v.push(input);
-            self.included_properties = Some(v);
-            self
+                            v.push(input);
+                            self.included_properties = Some(v);
+                            self
         }
         /// <p>A structure that contains additional information about the view.</p>
-        pub fn set_included_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IncludedProperty>>,
-        ) -> Self {
-            self.included_properties = input;
-            self
+        pub fn set_included_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::IncludedProperty>>) -> Self {
+            self.included_properties = input; self
         }
         /// <p>An array of <code>SearchFilter</code> objects that specify which resources can be included in the results of queries made using this view.</p>
         pub fn filters(mut self, input: crate::model::SearchFilter) -> Self {
@@ -218,22 +205,24 @@ pub mod view {
             self
         }
         /// <p>An array of <code>SearchFilter</code> objects that specify which resources can be included in the results of queries made using this view.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::SearchFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::SearchFilter>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`View`](crate::model::View).
         pub fn build(self) -> crate::model::View {
             crate::model::View {
-                view_arn: self.view_arn,
-                owner: self.owner,
-                last_updated_at: self.last_updated_at,
-                scope: self.scope,
-                included_properties: self.included_properties,
-                filters: self.filters,
+                view_arn: self.view_arn
+                ,
+                owner: self.owner
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                scope: self.scope
+                ,
+                included_properties: self.included_properties
+                ,
+                filters: self.filters
+                ,
             }
         }
     }
@@ -249,6 +238,8 @@ pub mod view {
             formatter.finish()
         }
     }
+    
+    
 }
 impl View {
     /// Creates a new builder-style object to manufacture [`View`](crate::model::View).
@@ -260,18 +251,18 @@ impl View {
 /// <p>A search filter defines which resources can be part of a search query result set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchFilter {
+pub struct SearchFilter  {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
     #[doc(hidden)]
     pub filter_string: std::option::Option<std::string::String>,
 }
 impl SearchFilter {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-    pub fn filter_string(&self) -> std::option::Option<&str> {
+    pub fn filter_string(&self) -> std::option::Option<& str> {
         self.filter_string.as_deref()
     }
 }
-impl std::fmt::Debug for SearchFilter {
+impl  std::fmt::Debug for SearchFilter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchFilter");
         formatter.field("filter_string", &"*** Sensitive Data Redacted ***");
@@ -280,7 +271,7 @@ impl std::fmt::Debug for SearchFilter {
 }
 /// See [`SearchFilter`](crate::model::SearchFilter).
 pub mod search_filter {
-
+    
     /// A builder for [`SearchFilter`](crate::model::SearchFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -293,17 +284,14 @@ pub mod search_filter {
             self
         }
         /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-        pub fn set_filter_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.filter_string = input;
-            self
+        pub fn set_filter_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_string = input; self
         }
         /// Consumes the builder and constructs a [`SearchFilter`](crate::model::SearchFilter).
         pub fn build(self) -> crate::model::SearchFilter {
             crate::model::SearchFilter {
-                filter_string: self.filter_string,
+                filter_string: self.filter_string
+                ,
             }
         }
     }
@@ -314,6 +302,8 @@ pub mod search_filter {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SearchFilter {
     /// Creates a new builder-style object to manufacture [`SearchFilter`](crate::model::SearchFilter).
@@ -325,57 +315,61 @@ impl SearchFilter {
 /// <p>Information about an additional property that describes a resource, that you can optionally include in the view. This lets you view that property in search results, and filter your search results based on the value of the property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncludedProperty {
-    /// <p>The name of the property that is included in this view.</p>
-    /// <p>You can specify the following property names for this field:</p>
-    /// <ul>
-    /// <li> <p> <code>Tags</code> </p> </li>
+pub struct IncludedProperty  {
+    /// <p>The name of the property that is included in this view.</p> 
+    /// <p>You can specify the following property names for this field:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Tags</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl IncludedProperty {
-    /// <p>The name of the property that is included in this view.</p>
-    /// <p>You can specify the following property names for this field:</p>
-    /// <ul>
-    /// <li> <p> <code>Tags</code> </p> </li>
+    /// <p>The name of the property that is included in this view.</p> 
+    /// <p>You can specify the following property names for this field:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Tags</code> </p> </li> 
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`IncludedProperty`](crate::model::IncludedProperty).
 pub mod included_property {
-
+    
     /// A builder for [`IncludedProperty`](crate::model::IncludedProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the property that is included in this view.</p>
-        /// <p>You can specify the following property names for this field:</p>
-        /// <ul>
-        /// <li> <p> <code>Tags</code> </p> </li>
+        /// <p>The name of the property that is included in this view.</p> 
+        /// <p>You can specify the following property names for this field:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Tags</code> </p> </li> 
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the property that is included in this view.</p>
-        /// <p>You can specify the following property names for this field:</p>
-        /// <ul>
-        /// <li> <p> <code>Tags</code> </p> </li>
+        /// <p>The name of the property that is included in this view.</p> 
+        /// <p>You can specify the following property names for this field:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Tags</code> </p> </li> 
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`IncludedProperty`](crate::model::IncludedProperty).
         pub fn build(self) -> crate::model::IncludedProperty {
-            crate::model::IncludedProperty { name: self.name }
+            crate::model::IncludedProperty {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl IncludedProperty {
     /// Creates a new builder-style object to manufacture [`IncludedProperty`](crate::model::IncludedProperty).
@@ -384,46 +378,46 @@ impl IncludedProperty {
     }
 }
 
-/// <p>An index is the data store used by Amazon Web Services Resource Explorer to hold information about your Amazon Web Services resources that the service discovers. Creating an index in an Amazon Web Services Region turns on Resource Explorer and lets it discover your resources.</p>
+/// <p>An index is the data store used by Amazon Web Services Resource Explorer to hold information about your Amazon Web Services resources that the service discovers. Creating an index in an Amazon Web Services Region turns on Resource Explorer and lets it discover your resources.</p> 
 /// <p>By default, an index is <i>local</i>, meaning that it contains information about resources in only the same Region as the index. However, you can promote the index of one Region in the account by calling <code>UpdateIndexType</code> to convert it into an aggregator index. The aggregator index receives a replicated copy of the index information from all other Regions where Resource Explorer is turned on. This allows search operations in that Region to return results from all Regions in the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Index {
+pub struct Index  {
     /// <p>The Amazon Web Services Region in which the index exists.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The type of index. It can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li>
-    /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li>
+    /// <p>The type of index. It can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li> 
+    /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::IndexType>,
 }
 impl Index {
     /// <p>The Amazon Web Services Region in which the index exists.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The type of index. It can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li>
-    /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li>
+    /// <p>The type of index. It can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li> 
+    /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::IndexType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::IndexType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Index`](crate::model::Index).
 pub mod index {
-
+    
     /// A builder for [`Index`](crate::model::Index).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -439,8 +433,7 @@ pub mod index {
         }
         /// <p>The Amazon Web Services Region in which the index exists.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -449,36 +442,39 @@ pub mod index {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The type of index. It can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li>
-        /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li>
+        /// <p>The type of index. It can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li> 
+        /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::IndexType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of index. It can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li>
-        /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li>
+        /// <p>The type of index. It can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li> 
+        /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::IndexType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Index`](crate::model::Index).
         pub fn build(self) -> crate::model::Index {
             crate::model::Index {
-                region: self.region,
-                arn: self.arn,
-                r#type: self.r#type,
+                region: self.region
+                ,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Index {
     /// Creates a new builder-style object to manufacture [`Index`](crate::model::Index).
@@ -493,9 +489,9 @@ impl Index {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let indextype = unimplemented!();
 /// match indextype {
@@ -517,58 +513,52 @@ impl Index {
 /// Specifically, when `indextype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IndexType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IndexType {
     /// aggregator index
     Aggregator,
     /// local index
     Local,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IndexType {
     fn from(s: &str) -> Self {
         match s {
             "AGGREGATOR" => IndexType::Aggregator,
             "LOCAL" => IndexType::Local,
-            other => IndexType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IndexType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IndexType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IndexType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IndexType::from(s))
+                }
+            }
 impl IndexType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IndexType::Aggregator => "AGGREGATOR",
             IndexType::Local => "LOCAL",
-            IndexType::Unknown(value) => value.as_str(),
+            IndexType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGGREGATOR", "LOCAL"]
+        &[
+            "AGGREGATOR", "LOCAL"
+        ]
     }
 }
 impl AsRef<str> for IndexType {
@@ -583,9 +573,9 @@ impl AsRef<str> for IndexType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let indexstate = unimplemented!();
 /// match indexstate {
@@ -610,22 +600,14 @@ impl AsRef<str> for IndexType {
 /// Specifically, when `indexstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IndexState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IndexState {
     /// Index is active.
     Active,
@@ -638,7 +620,7 @@ pub enum IndexState {
     /// Resource Explorer is switching the index type between local and aggregator.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IndexState {
     fn from(s: &str) -> Self {
@@ -648,17 +630,17 @@ impl std::convert::From<&str> for IndexState {
             "DELETED" => IndexState::Deleted,
             "DELETING" => IndexState::Deleting,
             "UPDATING" => IndexState::Updating,
-            other => IndexState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IndexState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IndexState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IndexState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IndexState::from(s))
+                }
+            }
 impl IndexState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -668,12 +650,14 @@ impl IndexState {
             IndexState::Deleted => "DELETED",
             IndexState::Deleting => "DELETING",
             IndexState::Updating => "UPDATING",
-            IndexState::Unknown(value) => value.as_str(),
+            IndexState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETED", "DELETING", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETED", "DELETING", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for IndexState {
@@ -682,18 +666,18 @@ impl AsRef<str> for IndexState {
     }
 }
 
-/// <p>Information about the number of results that match the query. At this time, Amazon Web Services Resource Explorer doesn't count more than 1,000 matches for any query. This structure provides information about whether the query exceeded this limit.</p>
+/// <p>Information about the number of results that match the query. At this time, Amazon Web Services Resource Explorer doesn't count more than 1,000 matches for any query. This structure provides information about whether the query exceeded this limit.</p> 
 /// <p>This field is included in every page when you paginate the results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceCount {
+pub struct ResourceCount  {
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
     #[doc(hidden)]
     pub total_resources: std::option::Option<i64>,
-    /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
-    /// <ul>
-    /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
-    /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
+    /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p> 
+    /// <ul> 
+    /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li> 
+    /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub complete: std::option::Option<bool>,
@@ -703,10 +687,10 @@ impl ResourceCount {
     pub fn total_resources(&self) -> std::option::Option<i64> {
         self.total_resources
     }
-    /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
-    /// <ul>
-    /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
-    /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
+    /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p> 
+    /// <ul> 
+    /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li> 
+    /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li> 
     /// </ul>
     pub fn complete(&self) -> std::option::Option<bool> {
         self.complete
@@ -714,7 +698,7 @@ impl ResourceCount {
 }
 /// See [`ResourceCount`](crate::model::ResourceCount).
 pub mod resource_count {
-
+    
     /// A builder for [`ResourceCount`](crate::model::ResourceCount).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -729,35 +713,37 @@ pub mod resource_count {
         }
         /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
         pub fn set_total_resources(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_resources = input;
-            self
+            self.total_resources = input; self
         }
-        /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
-        /// <ul>
-        /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
-        /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
+        /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p> 
+        /// <ul> 
+        /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li> 
+        /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li> 
         /// </ul>
         pub fn complete(mut self, input: bool) -> Self {
             self.complete = Some(input);
             self
         }
-        /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
-        /// <ul>
-        /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
-        /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
+        /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p> 
+        /// <ul> 
+        /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li> 
+        /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li> 
         /// </ul>
         pub fn set_complete(mut self, input: std::option::Option<bool>) -> Self {
-            self.complete = input;
-            self
+            self.complete = input; self
         }
         /// Consumes the builder and constructs a [`ResourceCount`](crate::model::ResourceCount).
         pub fn build(self) -> crate::model::ResourceCount {
             crate::model::ResourceCount {
-                total_resources: self.total_resources,
-                complete: self.complete,
+                total_resources: self.total_resources
+                ,
+                complete: self.complete
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceCount {
     /// Creates a new builder-style object to manufacture [`ResourceCount`](crate::model::ResourceCount).
@@ -769,7 +755,7 @@ impl ResourceCount {
 /// <p>A resource in Amazon Web Services that Amazon Web Services Resource Explorer has discovered, and for which it has stored information in the index of the Amazon Web Services Region that contains the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -794,37 +780,37 @@ pub struct Resource {
 }
 impl Resource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the resource.</p>
-    pub fn owning_account_id(&self) -> std::option::Option<&str> {
+    pub fn owning_account_id(&self) -> std::option::Option<& str> {
         self.owning_account_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the resource was created and exists.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Web Service that owns the resource and is responsible for creating and updating it.</p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
-    pub fn last_reported_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_reported_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_reported_at.as_ref()
     }
     /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::model::ResourceProperty]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::ResourceProperty]> {
         self.properties.as_deref()
     }
 }
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
-
+    
     /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -844,8 +830,7 @@ pub mod resource {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account that owns the resource.</p>
         pub fn owning_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -853,12 +838,8 @@ pub mod resource {
             self
         }
         /// <p>The Amazon Web Services account that owns the resource.</p>
-        pub fn set_owning_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owning_account_id = input;
-            self
+        pub fn set_owning_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owning_account_id = input; self
         }
         /// <p>The Amazon Web Services Region in which the resource was created and exists.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -867,8 +848,7 @@ pub mod resource {
         }
         /// <p>The Amazon Web Services Region in which the resource was created and exists.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The type of the resource.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -876,12 +856,8 @@ pub mod resource {
             self
         }
         /// <p>The type of the resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The Amazon Web Service that owns the resource and is responsible for creating and updating it.</p>
         pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -890,8 +866,7 @@ pub mod resource {
         }
         /// <p>The Amazon Web Service that owns the resource and is responsible for creating and updating it.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
         pub fn last_reported_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -899,12 +874,8 @@ pub mod resource {
             self
         }
         /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
-        pub fn set_last_reported_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_reported_at = input;
-            self
+        pub fn set_last_reported_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_reported_at = input; self
         }
         /// Appends an item to `properties`.
         ///
@@ -913,31 +884,36 @@ pub mod resource {
         /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
         pub fn properties(mut self, input: crate::model::ResourceProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceProperty>>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceProperty>>) -> Self {
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
-                arn: self.arn,
-                owning_account_id: self.owning_account_id,
-                region: self.region,
-                resource_type: self.resource_type,
-                service: self.service,
-                last_reported_at: self.last_reported_at,
-                properties: self.properties,
+                arn: self.arn
+                ,
+                owning_account_id: self.owning_account_id
+                ,
+                region: self.region
+                ,
+                resource_type: self.resource_type
+                ,
+                service: self.service
+                ,
+                last_reported_at: self.last_reported_at
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
+    
+    
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
@@ -949,7 +925,7 @@ impl Resource {
 /// <p>A structure that describes a property of a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceProperty {
+pub struct ResourceProperty  {
     /// <p>The name of this property of the resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -962,21 +938,21 @@ pub struct ResourceProperty {
 }
 impl ResourceProperty {
     /// <p>The name of this property of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time that the information about this resource property was last updated.</p>
-    pub fn last_reported_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_reported_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_reported_at.as_ref()
     }
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.data.as_ref()
     }
 }
 /// See [`ResourceProperty`](crate::model::ResourceProperty).
 pub mod resource_property {
-
+    
     /// A builder for [`ResourceProperty`](crate::model::ResourceProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -992,8 +968,7 @@ pub mod resource_property {
         }
         /// <p>The name of this property of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date and time that the information about this resource property was last updated.</p>
         pub fn last_reported_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1001,12 +976,8 @@ pub mod resource_property {
             self
         }
         /// <p>The date and time that the information about this resource property was last updated.</p>
-        pub fn set_last_reported_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_reported_at = input;
-            self
+        pub fn set_last_reported_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_reported_at = input; self
         }
         /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
         pub fn data(mut self, input: aws_smithy_types::Document) -> Self {
@@ -1015,18 +986,22 @@ pub mod resource_property {
         }
         /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// Consumes the builder and constructs a [`ResourceProperty`](crate::model::ResourceProperty).
         pub fn build(self) -> crate::model::ResourceProperty {
             crate::model::ResourceProperty {
-                name: self.name,
-                last_reported_at: self.last_reported_at,
-                data: self.data,
+                name: self.name
+                ,
+                last_reported_at: self.last_reported_at
+                ,
+                data: self.data
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceProperty {
     /// Creates a new builder-style object to manufacture [`ResourceProperty`](crate::model::ResourceProperty).
@@ -1038,7 +1013,7 @@ impl ResourceProperty {
 /// <p>A structure that describes a resource type supported by Amazon Web Services Resource Explorer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SupportedResourceType {
+pub struct SupportedResourceType  {
     /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
@@ -1048,17 +1023,17 @@ pub struct SupportedResourceType {
 }
 impl SupportedResourceType {
     /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The unique identifier of the resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 /// See [`SupportedResourceType`](crate::model::SupportedResourceType).
 pub mod supported_resource_type {
-
+    
     /// A builder for [`SupportedResourceType`](crate::model::SupportedResourceType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1073,8 +1048,7 @@ pub mod supported_resource_type {
         }
         /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p>The unique identifier of the resource type.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1082,21 +1056,21 @@ pub mod supported_resource_type {
             self
         }
         /// <p>The unique identifier of the resource type.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`SupportedResourceType`](crate::model::SupportedResourceType).
         pub fn build(self) -> crate::model::SupportedResourceType {
             crate::model::SupportedResourceType {
-                service: self.service,
-                resource_type: self.resource_type,
+                service: self.service
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl SupportedResourceType {
     /// Creates a new builder-style object to manufacture [`SupportedResourceType`](crate::model::SupportedResourceType).
@@ -1108,7 +1082,7 @@ impl SupportedResourceType {
 /// <p>A collection of error messages for any views that Amazon Web Services Resource Explorer couldn't retrieve details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetViewError {
+pub struct BatchGetViewError  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
@@ -1118,17 +1092,17 @@ pub struct BatchGetViewError {
 }
 impl BatchGetViewError {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
-    pub fn view_arn(&self) -> std::option::Option<&str> {
+    pub fn view_arn(&self) -> std::option::Option<& str> {
         self.view_arn.as_deref()
     }
     /// <p>The description of the error for the specified view.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`BatchGetViewError`](crate::model::BatchGetViewError).
 pub mod batch_get_view_error {
-
+    
     /// A builder for [`BatchGetViewError`](crate::model::BatchGetViewError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1143,8 +1117,7 @@ pub mod batch_get_view_error {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.view_arn = input;
-            self
+            self.view_arn = input; self
         }
         /// <p>The description of the error for the specified view.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1152,21 +1125,21 @@ pub mod batch_get_view_error {
             self
         }
         /// <p>The description of the error for the specified view.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetViewError`](crate::model::BatchGetViewError).
         pub fn build(self) -> crate::model::BatchGetViewError {
             crate::model::BatchGetViewError {
-                view_arn: self.view_arn,
-                error_message: self.error_message,
+                view_arn: self.view_arn
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetViewError {
     /// Creates a new builder-style object to manufacture [`BatchGetViewError`](crate::model::BatchGetViewError).
@@ -1174,3 +1147,4 @@ impl BatchGetViewError {
         crate::model::batch_get_view_error::Builder::default()
     }
 }
+

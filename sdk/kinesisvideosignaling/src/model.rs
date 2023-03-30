@@ -3,7 +3,7 @@
 /// <p>A structure for the ICE server connection data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IceServer {
+pub struct IceServer  {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
     #[doc(hidden)]
     pub uris: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19,15 +19,15 @@ pub struct IceServer {
 }
 impl IceServer {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    pub fn uris(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn uris(&self) -> std::option::Option<& [std::string::String]> {
         self.uris.as_deref()
     }
     /// <p>A username to login to the ICE server.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>A password to login to the ICE server.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
@@ -37,7 +37,7 @@ impl IceServer {
 }
 /// See [`IceServer`](crate::model::IceServer).
 pub mod ice_server {
-
+    
     /// A builder for [`IceServer`](crate::model::IceServer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -54,17 +54,13 @@ pub mod ice_server {
         /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
         pub fn uris(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.uris.unwrap_or_default();
-            v.push(input.into());
-            self.uris = Some(v);
-            self
+                            v.push(input.into());
+                            self.uris = Some(v);
+                            self
         }
         /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-        pub fn set_uris(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.uris = input;
-            self
+        pub fn set_uris(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.uris = input; self
         }
         /// <p>A username to login to the ICE server.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,8 +69,7 @@ pub mod ice_server {
         }
         /// <p>A username to login to the ICE server.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// <p>A password to login to the ICE server.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +78,7 @@ pub mod ice_server {
         }
         /// <p>A password to login to the ICE server.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
         /// <p>The period of time, in seconds, during which the username and password are valid.</p>
         pub fn ttl(mut self, input: i32) -> Self {
@@ -93,19 +87,25 @@ pub mod ice_server {
         }
         /// <p>The period of time, in seconds, during which the username and password are valid.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i32>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
         /// Consumes the builder and constructs a [`IceServer`](crate::model::IceServer).
         pub fn build(self) -> crate::model::IceServer {
             crate::model::IceServer {
-                uris: self.uris,
-                username: self.username,
-                password: self.password,
-                ttl: self.ttl.unwrap_or_default(),
+                uris: self.uris
+                ,
+                username: self.username
+                ,
+                password: self.password
+                ,
+                ttl: self.ttl
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl IceServer {
     /// Creates a new builder-style object to manufacture [`IceServer`](crate::model::IceServer).
@@ -120,9 +120,9 @@ impl IceServer {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let service = unimplemented!();
 /// match service {
@@ -143,54 +143,48 @@ impl IceServer {
 /// Specifically, when `service` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Service::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Service {
     #[allow(missing_docs)] // documentation missing in model
     Turn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Service {
     fn from(s: &str) -> Self {
         match s {
             "TURN" => Service::Turn,
-            other => Service::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Service::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Service {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Service::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Service::from(s))
+                }
+            }
 impl Service {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Service::Turn => "TURN",
-            Service::Unknown(value) => value.as_str(),
+            Service::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TURN"]
+        &[
+            "TURN"
+        ]
     }
 }
 impl AsRef<str> for Service {
@@ -198,3 +192,4 @@ impl AsRef<str> for Service {
         self.as_str()
     }
 }
+

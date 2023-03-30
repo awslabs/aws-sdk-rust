@@ -3,7 +3,7 @@
 /// <p>A virtual machine that is on a hypervisor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualMachine {
+pub struct VirtualMachine  {
     /// <p>The host name of the virtual machine.</p>
     #[doc(hidden)]
     pub host_name: std::option::Option<std::string::String>,
@@ -25,33 +25,33 @@ pub struct VirtualMachine {
 }
 impl VirtualMachine {
     /// <p>The host name of the virtual machine.</p>
-    pub fn host_name(&self) -> std::option::Option<&str> {
+    pub fn host_name(&self) -> std::option::Option<& str> {
         self.host_name.as_deref()
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    pub fn hypervisor_id(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_id(&self) -> std::option::Option<& str> {
         self.hypervisor_id.as_deref()
     }
     /// <p>The name of the virtual machine.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path of the virtual machine.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-    pub fn last_backup_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_backup_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_backup_date.as_ref()
     }
 }
 /// See [`VirtualMachine`](crate::model::VirtualMachine).
 pub mod virtual_machine {
-
+    
     /// A builder for [`VirtualMachine`](crate::model::VirtualMachine).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -70,8 +70,7 @@ pub mod virtual_machine {
         }
         /// <p>The host name of the virtual machine.</p>
         pub fn set_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host_name = input;
-            self
+            self.host_name = input; self
         }
         /// <p>The ID of the virtual machine's hypervisor.</p>
         pub fn hypervisor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,12 +78,8 @@ pub mod virtual_machine {
             self
         }
         /// <p>The ID of the virtual machine's hypervisor.</p>
-        pub fn set_hypervisor_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_id = input;
-            self
+        pub fn set_hypervisor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_id = input; self
         }
         /// <p>The name of the virtual machine.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +88,7 @@ pub mod virtual_machine {
         }
         /// <p>The name of the virtual machine.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The path of the virtual machine.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +97,7 @@ pub mod virtual_machine {
         }
         /// <p>The path of the virtual machine.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +106,7 @@ pub mod virtual_machine {
         }
         /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
         pub fn last_backup_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,25 +114,29 @@ pub mod virtual_machine {
             self
         }
         /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-        pub fn set_last_backup_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_backup_date = input;
-            self
+        pub fn set_last_backup_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_backup_date = input; self
         }
         /// Consumes the builder and constructs a [`VirtualMachine`](crate::model::VirtualMachine).
         pub fn build(self) -> crate::model::VirtualMachine {
             crate::model::VirtualMachine {
-                host_name: self.host_name,
-                hypervisor_id: self.hypervisor_id,
-                name: self.name,
-                path: self.path,
-                resource_arn: self.resource_arn,
-                last_backup_date: self.last_backup_date,
+                host_name: self.host_name
+                ,
+                hypervisor_id: self.hypervisor_id
+                ,
+                name: self.name
+                ,
+                path: self.path
+                ,
+                resource_arn: self.resource_arn
+                ,
+                last_backup_date: self.last_backup_date
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualMachine {
     /// Creates a new builder-style object to manufacture [`VirtualMachine`](crate::model::VirtualMachine).
@@ -152,7 +148,7 @@ impl VirtualMachine {
 /// <p>Your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualMachineDetails {
+pub struct VirtualMachineDetails  {
     /// <p>The host name of the virtual machine.</p>
     #[doc(hidden)]
     pub host_name: std::option::Option<std::string::String>,
@@ -177,37 +173,37 @@ pub struct VirtualMachineDetails {
 }
 impl VirtualMachineDetails {
     /// <p>The host name of the virtual machine.</p>
-    pub fn host_name(&self) -> std::option::Option<&str> {
+    pub fn host_name(&self) -> std::option::Option<& str> {
         self.host_name.as_deref()
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    pub fn hypervisor_id(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_id(&self) -> std::option::Option<& str> {
         self.hypervisor_id.as_deref()
     }
     /// <p>The name of the virtual machine.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path of the virtual machine.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-    pub fn last_backup_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_backup_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_backup_date.as_ref()
     }
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    pub fn vmware_tags(&self) -> std::option::Option<&[crate::model::VmwareTag]> {
+    pub fn vmware_tags(&self) -> std::option::Option<& [crate::model::VmwareTag]> {
         self.vmware_tags.as_deref()
     }
 }
 /// See [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
 pub mod virtual_machine_details {
-
+    
     /// A builder for [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -227,8 +223,7 @@ pub mod virtual_machine_details {
         }
         /// <p>The host name of the virtual machine.</p>
         pub fn set_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host_name = input;
-            self
+            self.host_name = input; self
         }
         /// <p>The ID of the virtual machine's hypervisor.</p>
         pub fn hypervisor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -236,12 +231,8 @@ pub mod virtual_machine_details {
             self
         }
         /// <p>The ID of the virtual machine's hypervisor.</p>
-        pub fn set_hypervisor_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_id = input;
-            self
+        pub fn set_hypervisor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_id = input; self
         }
         /// <p>The name of the virtual machine.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -250,8 +241,7 @@ pub mod virtual_machine_details {
         }
         /// <p>The name of the virtual machine.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The path of the virtual machine.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -260,8 +250,7 @@ pub mod virtual_machine_details {
         }
         /// <p>The path of the virtual machine.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -270,8 +259,7 @@ pub mod virtual_machine_details {
         }
         /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
         pub fn last_backup_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -279,12 +267,8 @@ pub mod virtual_machine_details {
             self
         }
         /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-        pub fn set_last_backup_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_backup_date = input;
-            self
+        pub fn set_last_backup_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_backup_date = input; self
         }
         /// Appends an item to `vmware_tags`.
         ///
@@ -293,31 +277,36 @@ pub mod virtual_machine_details {
         /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
         pub fn vmware_tags(mut self, input: crate::model::VmwareTag) -> Self {
             let mut v = self.vmware_tags.unwrap_or_default();
-            v.push(input);
-            self.vmware_tags = Some(v);
-            self
+                            v.push(input);
+                            self.vmware_tags = Some(v);
+                            self
         }
         /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-        pub fn set_vmware_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VmwareTag>>,
-        ) -> Self {
-            self.vmware_tags = input;
-            self
+        pub fn set_vmware_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::VmwareTag>>) -> Self {
+            self.vmware_tags = input; self
         }
         /// Consumes the builder and constructs a [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
         pub fn build(self) -> crate::model::VirtualMachineDetails {
             crate::model::VirtualMachineDetails {
-                host_name: self.host_name,
-                hypervisor_id: self.hypervisor_id,
-                name: self.name,
-                path: self.path,
-                resource_arn: self.resource_arn,
-                last_backup_date: self.last_backup_date,
-                vmware_tags: self.vmware_tags,
+                host_name: self.host_name
+                ,
+                hypervisor_id: self.hypervisor_id
+                ,
+                name: self.name
+                ,
+                path: self.path
+                ,
+                resource_arn: self.resource_arn
+                ,
+                last_backup_date: self.last_backup_date
+                ,
+                vmware_tags: self.vmware_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualMachineDetails {
     /// Creates a new builder-style object to manufacture [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
@@ -326,11 +315,11 @@ impl VirtualMachineDetails {
     }
 }
 
-/// <p>A VMware tag is a tag attached to a specific virtual machine. A <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_Tag.html">tag</a> is a key-value pair you can use to manage, filter, and search for your resources.</p>
+/// <p>A VMware tag is a tag attached to a specific virtual machine. A <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_Tag.html">tag</a> is a key-value pair you can use to manage, filter, and search for your resources.</p> 
 /// <p>The content of VMware tags can be matched to Amazon Web Services tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VmwareTag {
+pub struct VmwareTag  {
     /// <p>The is the category of VMware.</p>
     #[doc(hidden)]
     pub vmware_category: std::option::Option<std::string::String>,
@@ -343,21 +332,21 @@ pub struct VmwareTag {
 }
 impl VmwareTag {
     /// <p>The is the category of VMware.</p>
-    pub fn vmware_category(&self) -> std::option::Option<&str> {
+    pub fn vmware_category(&self) -> std::option::Option<& str> {
         self.vmware_category.as_deref()
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn vmware_tag_name(&self) -> std::option::Option<&str> {
+    pub fn vmware_tag_name(&self) -> std::option::Option<& str> {
         self.vmware_tag_name.as_deref()
     }
     /// <p>This is a user-defined description of a VMware tag.</p>
-    pub fn vmware_tag_description(&self) -> std::option::Option<&str> {
+    pub fn vmware_tag_description(&self) -> std::option::Option<& str> {
         self.vmware_tag_description.as_deref()
     }
 }
 /// See [`VmwareTag`](crate::model::VmwareTag).
 pub mod vmware_tag {
-
+    
     /// A builder for [`VmwareTag`](crate::model::VmwareTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -372,12 +361,8 @@ pub mod vmware_tag {
             self
         }
         /// <p>The is the category of VMware.</p>
-        pub fn set_vmware_category(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vmware_category = input;
-            self
+        pub fn set_vmware_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vmware_category = input; self
         }
         /// <p>This is the user-defined name of a VMware tag.</p>
         pub fn vmware_tag_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -385,12 +370,8 @@ pub mod vmware_tag {
             self
         }
         /// <p>This is the user-defined name of a VMware tag.</p>
-        pub fn set_vmware_tag_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vmware_tag_name = input;
-            self
+        pub fn set_vmware_tag_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vmware_tag_name = input; self
         }
         /// <p>This is a user-defined description of a VMware tag.</p>
         pub fn vmware_tag_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -398,22 +379,23 @@ pub mod vmware_tag {
             self
         }
         /// <p>This is a user-defined description of a VMware tag.</p>
-        pub fn set_vmware_tag_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vmware_tag_description = input;
-            self
+        pub fn set_vmware_tag_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vmware_tag_description = input; self
         }
         /// Consumes the builder and constructs a [`VmwareTag`](crate::model::VmwareTag).
         pub fn build(self) -> crate::model::VmwareTag {
             crate::model::VmwareTag {
-                vmware_category: self.vmware_category,
-                vmware_tag_name: self.vmware_tag_name,
-                vmware_tag_description: self.vmware_tag_description,
+                vmware_category: self.vmware_category
+                ,
+                vmware_tag_name: self.vmware_tag_name
+                ,
+                vmware_tag_description: self.vmware_tag_description
+                ,
             }
         }
     }
+    
+    
 }
 impl VmwareTag {
     /// Creates a new builder-style object to manufacture [`VmwareTag`](crate::model::VmwareTag).
@@ -422,11 +404,11 @@ impl VmwareTag {
     }
 }
 
-/// <p>Represents the hypervisor's permissions to which the gateway will connect.</p>
+/// <p>Represents the hypervisor's permissions to which the gateway will connect.</p> 
 /// <p>A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Hypervisor {
+pub struct Hypervisor  {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -445,29 +427,29 @@ pub struct Hypervisor {
 }
 impl Hypervisor {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The name of the hypervisor.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the hypervisor.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::HypervisorState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::HypervisorState> {
         self.state.as_ref()
     }
 }
 /// See [`Hypervisor`](crate::model::Hypervisor).
 pub mod hypervisor {
-
+    
     /// A builder for [`Hypervisor`](crate::model::Hypervisor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -485,8 +467,7 @@ pub mod hypervisor {
         }
         /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host = input;
-            self
+            self.host = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
         pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -494,12 +475,8 @@ pub mod hypervisor {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-        pub fn set_hypervisor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_arn = input;
-            self
+        pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -508,8 +485,7 @@ pub mod hypervisor {
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The name of the hypervisor.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -518,8 +494,7 @@ pub mod hypervisor {
         }
         /// <p>The name of the hypervisor.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state of the hypervisor.</p>
         pub fn state(mut self, input: crate::model::HypervisorState) -> Self {
@@ -527,24 +502,27 @@ pub mod hypervisor {
             self
         }
         /// <p>The state of the hypervisor.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::HypervisorState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::HypervisorState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`Hypervisor`](crate::model::Hypervisor).
         pub fn build(self) -> crate::model::Hypervisor {
             crate::model::Hypervisor {
-                host: self.host,
-                hypervisor_arn: self.hypervisor_arn,
-                kms_key_arn: self.kms_key_arn,
-                name: self.name,
-                state: self.state,
+                host: self.host
+                ,
+                hypervisor_arn: self.hypervisor_arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                name: self.name
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl Hypervisor {
     /// Creates a new builder-style object to manufacture [`Hypervisor`](crate::model::Hypervisor).
@@ -559,9 +537,9 @@ impl Hypervisor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hypervisorstate = unimplemented!();
 /// match hypervisorstate {
@@ -585,22 +563,14 @@ impl Hypervisor {
 /// Specifically, when `hypervisorstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HypervisorState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HypervisorState {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -611,7 +581,7 @@ pub enum HypervisorState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HypervisorState {
     fn from(s: &str) -> Self {
@@ -620,17 +590,17 @@ impl std::convert::From<&str> for HypervisorState {
             "OFFLINE" => HypervisorState::Offline,
             "ONLINE" => HypervisorState::Online,
             "PENDING" => HypervisorState::Pending,
-            other => HypervisorState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HypervisorState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HypervisorState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HypervisorState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HypervisorState::from(s))
+                }
+            }
 impl HypervisorState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -639,12 +609,14 @@ impl HypervisorState {
             HypervisorState::Offline => "OFFLINE",
             HypervisorState::Online => "ONLINE",
             HypervisorState::Pending => "PENDING",
-            HypervisorState::Unknown(value) => value.as_str(),
+            HypervisorState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "OFFLINE", "ONLINE", "PENDING"]
+        &[
+            "ERROR", "OFFLINE", "ONLINE", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for HypervisorState {
@@ -656,7 +628,7 @@ impl AsRef<str> for HypervisorState {
 /// <p>A key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key part of a tag's key-value pair. The key can't start with <code>aws:</code>.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -666,17 +638,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key part of a tag's key-value pair. The key can't start with <code>aws:</code>.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value part of a tag's key-value pair.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -691,8 +663,7 @@ pub mod tag {
         }
         /// <p>The key part of a tag's key-value pair. The key can't start with <code>aws:</code>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value part of a tag's key-value pair.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -701,17 +672,20 @@ pub mod tag {
         }
         /// <p>The value part of a tag's key-value pair.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -723,7 +697,7 @@ impl Tag {
 /// <p>These are the details of the specified hypervisor. A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HypervisorDetails {
+pub struct HypervisorDetails  {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -739,7 +713,7 @@ pub struct HypervisorDetails {
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
     #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
-    /// <p>This is the current state of the specified hypervisor.</p>
+    /// <p>This is the current state of the specified hypervisor.</p> 
     /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::HypervisorState>,
@@ -755,50 +729,46 @@ pub struct HypervisorDetails {
 }
 impl HypervisorDetails {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>This is the name of the specified hypervisor.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
-    /// <p>This is the current state of the specified hypervisor.</p>
+    /// <p>This is the current state of the specified hypervisor.</p> 
     /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::HypervisorState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::HypervisorState> {
         self.state.as_ref()
     }
     /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
-    pub fn last_successful_metadata_sync_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_successful_metadata_sync_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_successful_metadata_sync_time.as_ref()
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    pub fn latest_metadata_sync_status_message(&self) -> std::option::Option<&str> {
+    pub fn latest_metadata_sync_status_message(&self) -> std::option::Option<& str> {
         self.latest_metadata_sync_status_message.as_deref()
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
-    pub fn latest_metadata_sync_status(
-        &self,
-    ) -> std::option::Option<&crate::model::SyncMetadataStatus> {
+    pub fn latest_metadata_sync_status(&self) -> std::option::Option<& crate::model::SyncMetadataStatus> {
         self.latest_metadata_sync_status.as_ref()
     }
 }
 /// See [`HypervisorDetails`](crate::model::HypervisorDetails).
 pub mod hypervisor_details {
-
+    
     /// A builder for [`HypervisorDetails`](crate::model::HypervisorDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -808,11 +778,9 @@ pub mod hypervisor_details {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::HypervisorState>,
-        pub(crate) last_successful_metadata_sync_time:
-            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_successful_metadata_sync_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_metadata_sync_status_message: std::option::Option<std::string::String>,
-        pub(crate) latest_metadata_sync_status:
-            std::option::Option<crate::model::SyncMetadataStatus>,
+        pub(crate) latest_metadata_sync_status: std::option::Option<crate::model::SyncMetadataStatus>,
     }
     impl Builder {
         /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
@@ -822,8 +790,7 @@ pub mod hypervisor_details {
         }
         /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host = input;
-            self
+            self.host = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
         pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -831,12 +798,8 @@ pub mod hypervisor_details {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-        pub fn set_hypervisor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_arn = input;
-            self
+        pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -845,8 +808,7 @@ pub mod hypervisor_details {
         }
         /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>This is the name of the specified hypervisor.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -855,8 +817,7 @@ pub mod hypervisor_details {
         }
         /// <p>This is the name of the specified hypervisor.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
         pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -864,91 +825,73 @@ pub mod hypervisor_details {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_arn = input;
-            self
+        pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_arn = input; self
         }
-        /// <p>This is the current state of the specified hypervisor.</p>
+        /// <p>This is the current state of the specified hypervisor.</p> 
         /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
         pub fn state(mut self, input: crate::model::HypervisorState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>This is the current state of the specified hypervisor.</p>
+        /// <p>This is the current state of the specified hypervisor.</p> 
         /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::HypervisorState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::HypervisorState>) -> Self {
+            self.state = input; self
         }
         /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
-        pub fn last_successful_metadata_sync_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn last_successful_metadata_sync_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_successful_metadata_sync_time = Some(input);
             self
         }
         /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
-        pub fn set_last_successful_metadata_sync_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_successful_metadata_sync_time = input;
-            self
+        pub fn set_last_successful_metadata_sync_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_successful_metadata_sync_time = input; self
         }
         /// <p>This is the most recent status for the indicated metadata sync.</p>
-        pub fn latest_metadata_sync_status_message(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn latest_metadata_sync_status_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.latest_metadata_sync_status_message = Some(input.into());
             self
         }
         /// <p>This is the most recent status for the indicated metadata sync.</p>
-        pub fn set_latest_metadata_sync_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_metadata_sync_status_message = input;
-            self
+        pub fn set_latest_metadata_sync_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_metadata_sync_status_message = input; self
         }
         /// <p>This is the most recent status for the indicated metadata sync.</p>
-        pub fn latest_metadata_sync_status(
-            mut self,
-            input: crate::model::SyncMetadataStatus,
-        ) -> Self {
+        pub fn latest_metadata_sync_status(mut self, input: crate::model::SyncMetadataStatus) -> Self {
             self.latest_metadata_sync_status = Some(input);
             self
         }
         /// <p>This is the most recent status for the indicated metadata sync.</p>
-        pub fn set_latest_metadata_sync_status(
-            mut self,
-            input: std::option::Option<crate::model::SyncMetadataStatus>,
-        ) -> Self {
-            self.latest_metadata_sync_status = input;
-            self
+        pub fn set_latest_metadata_sync_status(mut self, input: std::option::Option<crate::model::SyncMetadataStatus>) -> Self {
+            self.latest_metadata_sync_status = input; self
         }
         /// Consumes the builder and constructs a [`HypervisorDetails`](crate::model::HypervisorDetails).
         pub fn build(self) -> crate::model::HypervisorDetails {
             crate::model::HypervisorDetails {
-                host: self.host,
-                hypervisor_arn: self.hypervisor_arn,
-                kms_key_arn: self.kms_key_arn,
-                name: self.name,
-                log_group_arn: self.log_group_arn,
-                state: self.state,
-                last_successful_metadata_sync_time: self.last_successful_metadata_sync_time,
-                latest_metadata_sync_status_message: self.latest_metadata_sync_status_message,
-                latest_metadata_sync_status: self.latest_metadata_sync_status,
+                host: self.host
+                ,
+                hypervisor_arn: self.hypervisor_arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                name: self.name
+                ,
+                log_group_arn: self.log_group_arn
+                ,
+                state: self.state
+                ,
+                last_successful_metadata_sync_time: self.last_successful_metadata_sync_time
+                ,
+                latest_metadata_sync_status_message: self.latest_metadata_sync_status_message
+                ,
+                latest_metadata_sync_status: self.latest_metadata_sync_status
+                ,
             }
         }
     }
+    
+    
 }
 impl HypervisorDetails {
     /// Creates a new builder-style object to manufacture [`HypervisorDetails`](crate::model::HypervisorDetails).
@@ -963,9 +906,9 @@ impl HypervisorDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let syncmetadatastatus = unimplemented!();
 /// match syncmetadatastatus {
@@ -990,22 +933,14 @@ impl HypervisorDetails {
 /// Specifically, when `syncmetadatastatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SyncMetadataStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SyncMetadataStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -1018,7 +953,7 @@ pub enum SyncMetadataStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SyncMetadataStatus {
     fn from(s: &str) -> Self {
@@ -1028,19 +963,17 @@ impl std::convert::From<&str> for SyncMetadataStatus {
             "PARTIALLY_FAILED" => SyncMetadataStatus::PartiallyFailed,
             "RUNNING" => SyncMetadataStatus::Running,
             "SUCCEEDED" => SyncMetadataStatus::Succeeded,
-            other => {
-                SyncMetadataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SyncMetadataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SyncMetadataStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SyncMetadataStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SyncMetadataStatus::from(s))
+                }
+            }
 impl SyncMetadataStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1050,17 +983,13 @@ impl SyncMetadataStatus {
             SyncMetadataStatus::PartiallyFailed => "PARTIALLY_FAILED",
             SyncMetadataStatus::Running => "RUNNING",
             SyncMetadataStatus::Succeeded => "SUCCEEDED",
-            SyncMetadataStatus::Unknown(value) => value.as_str(),
+            SyncMetadataStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATED",
-            "FAILED",
-            "PARTIALLY_FAILED",
-            "RUNNING",
-            "SUCCEEDED",
+            "CREATED", "FAILED", "PARTIALLY_FAILED", "RUNNING", "SUCCEEDED"
         ]
     }
 }
@@ -1073,7 +1002,7 @@ impl AsRef<str> for SyncMetadataStatus {
 /// <p>This displays the mapping of on-premises VMware tags to the corresponding Amazon Web Services tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VmwareToAwsTagMapping {
+pub struct VmwareToAwsTagMapping  {
     /// <p>The is the category of VMware.</p>
     #[doc(hidden)]
     pub vmware_category: std::option::Option<std::string::String>,
@@ -1089,25 +1018,25 @@ pub struct VmwareToAwsTagMapping {
 }
 impl VmwareToAwsTagMapping {
     /// <p>The is the category of VMware.</p>
-    pub fn vmware_category(&self) -> std::option::Option<&str> {
+    pub fn vmware_category(&self) -> std::option::Option<& str> {
         self.vmware_category.as_deref()
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn vmware_tag_name(&self) -> std::option::Option<&str> {
+    pub fn vmware_tag_name(&self) -> std::option::Option<& str> {
         self.vmware_tag_name.as_deref()
     }
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
-    pub fn aws_tag_key(&self) -> std::option::Option<&str> {
+    pub fn aws_tag_key(&self) -> std::option::Option<& str> {
         self.aws_tag_key.as_deref()
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-    pub fn aws_tag_value(&self) -> std::option::Option<&str> {
+    pub fn aws_tag_value(&self) -> std::option::Option<& str> {
         self.aws_tag_value.as_deref()
     }
 }
 /// See [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
 pub mod vmware_to_aws_tag_mapping {
-
+    
     /// A builder for [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1123,12 +1052,8 @@ pub mod vmware_to_aws_tag_mapping {
             self
         }
         /// <p>The is the category of VMware.</p>
-        pub fn set_vmware_category(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vmware_category = input;
-            self
+        pub fn set_vmware_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vmware_category = input; self
         }
         /// <p>This is the user-defined name of a VMware tag.</p>
         pub fn vmware_tag_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1136,12 +1061,8 @@ pub mod vmware_to_aws_tag_mapping {
             self
         }
         /// <p>This is the user-defined name of a VMware tag.</p>
-        pub fn set_vmware_tag_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vmware_tag_name = input;
-            self
+        pub fn set_vmware_tag_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vmware_tag_name = input; self
         }
         /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
         pub fn aws_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1150,8 +1071,7 @@ pub mod vmware_to_aws_tag_mapping {
         }
         /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
         pub fn set_aws_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_tag_key = input;
-            self
+            self.aws_tag_key = input; self
         }
         /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
         pub fn aws_tag_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1159,23 +1079,25 @@ pub mod vmware_to_aws_tag_mapping {
             self
         }
         /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-        pub fn set_aws_tag_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_tag_value = input;
-            self
+        pub fn set_aws_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_tag_value = input; self
         }
         /// Consumes the builder and constructs a [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
         pub fn build(self) -> crate::model::VmwareToAwsTagMapping {
             crate::model::VmwareToAwsTagMapping {
-                vmware_category: self.vmware_category,
-                vmware_tag_name: self.vmware_tag_name,
-                aws_tag_key: self.aws_tag_key,
-                aws_tag_value: self.aws_tag_value,
+                vmware_category: self.vmware_category
+                ,
+                vmware_tag_name: self.vmware_tag_name
+                ,
+                aws_tag_key: self.aws_tag_key
+                ,
+                aws_tag_value: self.aws_tag_value
+                ,
             }
         }
     }
+    
+    
 }
 impl VmwareToAwsTagMapping {
     /// Creates a new builder-style object to manufacture [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
@@ -1187,7 +1109,7 @@ impl VmwareToAwsTagMapping {
 /// <p>A gateway is an Backup Gateway appliance that runs on the customer's network to provide seamless connectivity to backup storage in the Amazon Web Services Cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Gateway {
+pub struct Gateway  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -1206,29 +1128,29 @@ pub struct Gateway {
 }
 impl Gateway {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The display name of the gateway.</p>
-    pub fn gateway_display_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_display_name(&self) -> std::option::Option<& str> {
         self.gateway_display_name.as_deref()
     }
     /// <p>The type of the gateway.</p>
-    pub fn gateway_type(&self) -> std::option::Option<&crate::model::GatewayType> {
+    pub fn gateway_type(&self) -> std::option::Option<& crate::model::GatewayType> {
         self.gateway_type.as_ref()
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn hypervisor_id(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_id(&self) -> std::option::Option<& str> {
         self.hypervisor_id.as_deref()
     }
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
-    pub fn last_seen_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_seen_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_seen_time.as_ref()
     }
 }
 /// See [`Gateway`](crate::model::Gateway).
 pub mod gateway {
-
+    
     /// A builder for [`Gateway`](crate::model::Gateway).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1246,8 +1168,7 @@ pub mod gateway {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// <p>The display name of the gateway.</p>
         pub fn gateway_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1255,12 +1176,8 @@ pub mod gateway {
             self
         }
         /// <p>The display name of the gateway.</p>
-        pub fn set_gateway_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.gateway_display_name = input;
-            self
+        pub fn set_gateway_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_display_name = input; self
         }
         /// <p>The type of the gateway.</p>
         pub fn gateway_type(mut self, input: crate::model::GatewayType) -> Self {
@@ -1268,12 +1185,8 @@ pub mod gateway {
             self
         }
         /// <p>The type of the gateway.</p>
-        pub fn set_gateway_type(
-            mut self,
-            input: std::option::Option<crate::model::GatewayType>,
-        ) -> Self {
-            self.gateway_type = input;
-            self
+        pub fn set_gateway_type(mut self, input: std::option::Option<crate::model::GatewayType>) -> Self {
+            self.gateway_type = input; self
         }
         /// <p>The hypervisor ID of the gateway.</p>
         pub fn hypervisor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1281,12 +1194,8 @@ pub mod gateway {
             self
         }
         /// <p>The hypervisor ID of the gateway.</p>
-        pub fn set_hypervisor_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_id = input;
-            self
+        pub fn set_hypervisor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_id = input; self
         }
         /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
         pub fn last_seen_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1294,24 +1203,27 @@ pub mod gateway {
             self
         }
         /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
-        pub fn set_last_seen_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_seen_time = input;
-            self
+        pub fn set_last_seen_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_seen_time = input; self
         }
         /// Consumes the builder and constructs a [`Gateway`](crate::model::Gateway).
         pub fn build(self) -> crate::model::Gateway {
             crate::model::Gateway {
-                gateway_arn: self.gateway_arn,
-                gateway_display_name: self.gateway_display_name,
-                gateway_type: self.gateway_type,
-                hypervisor_id: self.hypervisor_id,
-                last_seen_time: self.last_seen_time,
+                gateway_arn: self.gateway_arn
+                ,
+                gateway_display_name: self.gateway_display_name
+                ,
+                gateway_type: self.gateway_type
+                ,
+                hypervisor_id: self.hypervisor_id
+                ,
+                last_seen_time: self.last_seen_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Gateway {
     /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway).
@@ -1326,9 +1238,9 @@ impl Gateway {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let gatewaytype = unimplemented!();
 /// match gatewaytype {
@@ -1349,54 +1261,48 @@ impl Gateway {
 /// Specifically, when `gatewaytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GatewayType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GatewayType {
     #[allow(missing_docs)] // documentation missing in model
     BackupVm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GatewayType {
     fn from(s: &str) -> Self {
         match s {
             "BACKUP_VM" => GatewayType::BackupVm,
-            other => GatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GatewayType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GatewayType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GatewayType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GatewayType::from(s))
+                }
+            }
 impl GatewayType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GatewayType::BackupVm => "BACKUP_VM",
-            GatewayType::Unknown(value) => value.as_str(),
+            GatewayType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BACKUP_VM"]
+        &[
+            "BACKUP_VM"
+        ]
     }
 }
 impl AsRef<str> for GatewayType {
@@ -1408,7 +1314,7 @@ impl AsRef<str> for GatewayType {
 /// <p>The details of gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayDetails {
+pub struct GatewayDetails  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -1436,45 +1342,41 @@ pub struct GatewayDetails {
 }
 impl GatewayDetails {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The display name of the gateway.</p>
-    pub fn gateway_display_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_display_name(&self) -> std::option::Option<& str> {
         self.gateway_display_name.as_deref()
     }
     /// <p>The type of the gateway type.</p>
-    pub fn gateway_type(&self) -> std::option::Option<&crate::model::GatewayType> {
+    pub fn gateway_type(&self) -> std::option::Option<& crate::model::GatewayType> {
         self.gateway_type.as_ref()
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn hypervisor_id(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_id(&self) -> std::option::Option<& str> {
         self.hypervisor_id.as_deref()
     }
     /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
-    pub fn last_seen_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_seen_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_seen_time.as_ref()
     }
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
-    pub fn maintenance_start_time(
-        &self,
-    ) -> std::option::Option<&crate::model::MaintenanceStartTime> {
+    pub fn maintenance_start_time(&self) -> std::option::Option<& crate::model::MaintenanceStartTime> {
         self.maintenance_start_time.as_ref()
     }
     /// <p>Details showing the next update availability time of the gateway.</p>
-    pub fn next_update_availability_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn next_update_availability_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.next_update_availability_time.as_ref()
     }
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint(&self) -> std::option::Option<& str> {
         self.vpc_endpoint.as_deref()
     }
 }
 /// See [`GatewayDetails`](crate::model::GatewayDetails).
 pub mod gateway_details {
-
+    
     /// A builder for [`GatewayDetails`](crate::model::GatewayDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1495,8 +1397,7 @@ pub mod gateway_details {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// <p>The display name of the gateway.</p>
         pub fn gateway_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1504,12 +1405,8 @@ pub mod gateway_details {
             self
         }
         /// <p>The display name of the gateway.</p>
-        pub fn set_gateway_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.gateway_display_name = input;
-            self
+        pub fn set_gateway_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_display_name = input; self
         }
         /// <p>The type of the gateway type.</p>
         pub fn gateway_type(mut self, input: crate::model::GatewayType) -> Self {
@@ -1517,12 +1414,8 @@ pub mod gateway_details {
             self
         }
         /// <p>The type of the gateway type.</p>
-        pub fn set_gateway_type(
-            mut self,
-            input: std::option::Option<crate::model::GatewayType>,
-        ) -> Self {
-            self.gateway_type = input;
-            self
+        pub fn set_gateway_type(mut self, input: std::option::Option<crate::model::GatewayType>) -> Self {
+            self.gateway_type = input; self
         }
         /// <p>The hypervisor ID of the gateway.</p>
         pub fn hypervisor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1530,12 +1423,8 @@ pub mod gateway_details {
             self
         }
         /// <p>The hypervisor ID of the gateway.</p>
-        pub fn set_hypervisor_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_id = input;
-            self
+        pub fn set_hypervisor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_id = input; self
         }
         /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
         pub fn last_seen_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1543,12 +1432,8 @@ pub mod gateway_details {
             self
         }
         /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
-        pub fn set_last_seen_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_seen_time = input;
-            self
+        pub fn set_last_seen_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_seen_time = input; self
         }
         /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
         pub fn maintenance_start_time(mut self, input: crate::model::MaintenanceStartTime) -> Self {
@@ -1556,12 +1441,8 @@ pub mod gateway_details {
             self
         }
         /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
-        pub fn set_maintenance_start_time(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceStartTime>,
-        ) -> Self {
-            self.maintenance_start_time = input;
-            self
+        pub fn set_maintenance_start_time(mut self, input: std::option::Option<crate::model::MaintenanceStartTime>) -> Self {
+            self.maintenance_start_time = input; self
         }
         /// <p>Details showing the next update availability time of the gateway.</p>
         pub fn next_update_availability_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1569,12 +1450,8 @@ pub mod gateway_details {
             self
         }
         /// <p>Details showing the next update availability time of the gateway.</p>
-        pub fn set_next_update_availability_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.next_update_availability_time = input;
-            self
+        pub fn set_next_update_availability_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.next_update_availability_time = input; self
         }
         /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
         pub fn vpc_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1583,23 +1460,32 @@ pub mod gateway_details {
         }
         /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
         pub fn set_vpc_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_endpoint = input;
-            self
+            self.vpc_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`GatewayDetails`](crate::model::GatewayDetails).
         pub fn build(self) -> crate::model::GatewayDetails {
             crate::model::GatewayDetails {
-                gateway_arn: self.gateway_arn,
-                gateway_display_name: self.gateway_display_name,
-                gateway_type: self.gateway_type,
-                hypervisor_id: self.hypervisor_id,
-                last_seen_time: self.last_seen_time,
-                maintenance_start_time: self.maintenance_start_time,
-                next_update_availability_time: self.next_update_availability_time,
-                vpc_endpoint: self.vpc_endpoint,
+                gateway_arn: self.gateway_arn
+                ,
+                gateway_display_name: self.gateway_display_name
+                ,
+                gateway_type: self.gateway_type
+                ,
+                hypervisor_id: self.hypervisor_id
+                ,
+                last_seen_time: self.last_seen_time
+                ,
+                maintenance_start_time: self.maintenance_start_time
+                ,
+                next_update_availability_time: self.next_update_availability_time
+                ,
+                vpc_endpoint: self.vpc_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayDetails {
     /// Creates a new builder-style object to manufacture [`GatewayDetails`](crate::model::GatewayDetails).
@@ -1611,7 +1497,7 @@ impl GatewayDetails {
 /// <p>This is your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaintenanceStartTime {
+pub struct MaintenanceStartTime  {
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     #[doc(hidden)]
     pub day_of_month: std::option::Option<i32>,
@@ -1645,7 +1531,7 @@ impl MaintenanceStartTime {
 }
 /// See [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
 pub mod maintenance_start_time {
-
+    
     /// A builder for [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1662,8 +1548,7 @@ pub mod maintenance_start_time {
         }
         /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
-            self.day_of_month = input;
-            self
+            self.day_of_month = input; self
         }
         /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
         pub fn day_of_week(mut self, input: i32) -> Self {
@@ -1672,8 +1557,7 @@ pub mod maintenance_start_time {
         }
         /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
         pub fn set_day_of_week(mut self, input: std::option::Option<i32>) -> Self {
-            self.day_of_week = input;
-            self
+            self.day_of_week = input; self
         }
         /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
         pub fn hour_of_day(mut self, input: i32) -> Self {
@@ -1682,8 +1566,7 @@ pub mod maintenance_start_time {
         }
         /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
         pub fn set_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
-            self.hour_of_day = input;
-            self
+            self.hour_of_day = input; self
         }
         /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
         pub fn minute_of_hour(mut self, input: i32) -> Self {
@@ -1692,19 +1575,24 @@ pub mod maintenance_start_time {
         }
         /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
         pub fn set_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
-            self.minute_of_hour = input;
-            self
+            self.minute_of_hour = input; self
         }
         /// Consumes the builder and constructs a [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
         pub fn build(self) -> crate::model::MaintenanceStartTime {
             crate::model::MaintenanceStartTime {
-                day_of_month: self.day_of_month,
-                day_of_week: self.day_of_week,
-                hour_of_day: self.hour_of_day,
-                minute_of_hour: self.minute_of_hour,
+                day_of_month: self.day_of_month
+                ,
+                day_of_week: self.day_of_week
+                ,
+                hour_of_day: self.hour_of_day
+                ,
+                minute_of_hour: self.minute_of_hour
+                ,
             }
         }
     }
+    
+    
 }
 impl MaintenanceStartTime {
     /// Creates a new builder-style object to manufacture [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
@@ -1716,9 +1604,9 @@ impl MaintenanceStartTime {
 /// <p>Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BandwidthRateLimitInterval {
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
-    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
+pub struct BandwidthRateLimitInterval  {
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note> 
+    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,
@@ -1731,8 +1619,8 @@ pub struct BandwidthRateLimitInterval {
     /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
     #[doc(hidden)]
     pub start_minute_of_hour: std::option::Option<i32>,
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
-    /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important> 
+    /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p> 
     /// </important>
     #[doc(hidden)]
     pub end_minute_of_hour: std::option::Option<i32>,
@@ -1741,8 +1629,8 @@ pub struct BandwidthRateLimitInterval {
     pub days_of_week: std::option::Option<std::vec::Vec<i32>>,
 }
 impl BandwidthRateLimitInterval {
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
-    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note> 
+    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p> 
     /// </note>
     pub fn average_upload_rate_limit_in_bits_per_sec(&self) -> std::option::Option<i64> {
         self.average_upload_rate_limit_in_bits_per_sec
@@ -1759,20 +1647,20 @@ impl BandwidthRateLimitInterval {
     pub fn start_minute_of_hour(&self) -> std::option::Option<i32> {
         self.start_minute_of_hour
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
-    /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important> 
+    /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p> 
     /// </important>
     pub fn end_minute_of_hour(&self) -> std::option::Option<i32> {
         self.end_minute_of_hour
     }
     /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
-    pub fn days_of_week(&self) -> std::option::Option<&[i32]> {
+    pub fn days_of_week(&self) -> std::option::Option<& [i32]> {
         self.days_of_week.as_deref()
     }
 }
 /// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
 pub mod bandwidth_rate_limit_interval {
-
+    
     /// A builder for [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1784,22 +1672,18 @@ pub mod bandwidth_rate_limit_interval {
         pub(crate) days_of_week: std::option::Option<std::vec::Vec<i32>>,
     }
     impl Builder {
-        /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
-        /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
+        /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note> 
+        /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p> 
         /// </note>
         pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
             self.average_upload_rate_limit_in_bits_per_sec = Some(input);
             self
         }
-        /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
-        /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
+        /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note> 
+        /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p> 
         /// </note>
-        pub fn set_average_upload_rate_limit_in_bits_per_sec(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.average_upload_rate_limit_in_bits_per_sec = input;
-            self
+        pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: std::option::Option<i64>) -> Self {
+            self.average_upload_rate_limit_in_bits_per_sec = input; self
         }
         /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
         pub fn start_hour_of_day(mut self, input: i32) -> Self {
@@ -1808,8 +1692,7 @@ pub mod bandwidth_rate_limit_interval {
         }
         /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
         pub fn set_start_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_hour_of_day = input;
-            self
+            self.start_hour_of_day = input; self
         }
         /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
         pub fn end_hour_of_day(mut self, input: i32) -> Self {
@@ -1818,8 +1701,7 @@ pub mod bandwidth_rate_limit_interval {
         }
         /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
         pub fn set_end_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_hour_of_day = input;
-            self
+            self.end_hour_of_day = input; self
         }
         /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
         pub fn start_minute_of_hour(mut self, input: i32) -> Self {
@@ -1828,22 +1710,20 @@ pub mod bandwidth_rate_limit_interval {
         }
         /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
         pub fn set_start_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_minute_of_hour = input;
-            self
+            self.start_minute_of_hour = input; self
         }
-        /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
-        /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
+        /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important> 
+        /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p> 
         /// </important>
         pub fn end_minute_of_hour(mut self, input: i32) -> Self {
             self.end_minute_of_hour = Some(input);
             self
         }
-        /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
-        /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
+        /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important> 
+        /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p> 
         /// </important>
         pub fn set_end_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_minute_of_hour = input;
-            self
+            self.end_minute_of_hour = input; self
         }
         /// Appends an item to `days_of_week`.
         ///
@@ -1852,28 +1732,34 @@ pub mod bandwidth_rate_limit_interval {
         /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
         pub fn days_of_week(mut self, input: i32) -> Self {
             let mut v = self.days_of_week.unwrap_or_default();
-            v.push(input);
-            self.days_of_week = Some(v);
-            self
+                            v.push(input);
+                            self.days_of_week = Some(v);
+                            self
         }
         /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
         pub fn set_days_of_week(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.days_of_week = input;
-            self
+            self.days_of_week = input; self
         }
         /// Consumes the builder and constructs a [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
         pub fn build(self) -> crate::model::BandwidthRateLimitInterval {
             crate::model::BandwidthRateLimitInterval {
-                average_upload_rate_limit_in_bits_per_sec: self
-                    .average_upload_rate_limit_in_bits_per_sec,
-                start_hour_of_day: self.start_hour_of_day,
-                end_hour_of_day: self.end_hour_of_day,
-                start_minute_of_hour: self.start_minute_of_hour,
-                end_minute_of_hour: self.end_minute_of_hour,
-                days_of_week: self.days_of_week,
+                average_upload_rate_limit_in_bits_per_sec: self.average_upload_rate_limit_in_bits_per_sec
+                ,
+                start_hour_of_day: self.start_hour_of_day
+                ,
+                end_hour_of_day: self.end_hour_of_day
+                ,
+                start_minute_of_hour: self.start_minute_of_hour
+                ,
+                end_minute_of_hour: self.end_minute_of_hour
+                ,
+                days_of_week: self.days_of_week
+                ,
             }
         }
     }
+    
+    
 }
 impl BandwidthRateLimitInterval {
     /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
@@ -1881,3 +1767,4 @@ impl BandwidthRateLimitInterval {
         crate::model::bandwidth_rate_limit_interval::Builder::default()
     }
 }
+

@@ -4,17 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateCertificateOptionsError {
     /// Kind of error that occurred.
-    pub kind: UpdateCertificateOptionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateCertificateOptionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateCertificateOptionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateCertificateOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateCertificateOptionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -30,24 +28,34 @@ pub enum UpdateCertificateOptionsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCertificateOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCertificateOptionsErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            UpdateCertificateOptionsErrorKind::InvalidStateException(_inner) => _inner.fmt(f),
-            UpdateCertificateOptionsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateCertificateOptionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateCertificateOptionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateCertificateOptionsErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCertificateOptionsErrorKind::InvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCertificateOptionsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCertificateOptionsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCertificateOptionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -61,87 +69,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateCertificateOptionsError
 }
 impl UpdateCertificateOptionsError {
     /// Creates a new `UpdateCertificateOptionsError`.
-    pub fn new(kind: UpdateCertificateOptionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateCertificateOptionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateCertificateOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateCertificateOptionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateCertificateOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateCertificateOptionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateCertificateOptionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateCertificateOptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateCertificateOptionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateCertificateOptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateCertificateOptionsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCertificateOptionsErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, UpdateCertificateOptionsErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `UpdateCertificateOptionsErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCertificateOptionsErrorKind::InvalidStateException(_)
-        )
+        matches!(&self.kind, UpdateCertificateOptionsErrorKind::InvalidStateException(_))
     }
     /// Returns `true` if the error kind is `UpdateCertificateOptionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCertificateOptionsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateCertificateOptionsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateCertificateOptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCertificateOptionsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateCertificateOptionsErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateCertificateOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCertificateOptionsErrorKind::InvalidArnException(_inner) => Some(_inner),
-            UpdateCertificateOptionsErrorKind::InvalidStateException(_inner) => Some(_inner),
-            UpdateCertificateOptionsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateCertificateOptionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateCertificateOptionsErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateCertificateOptionsErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCertificateOptionsErrorKind::InvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCertificateOptionsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCertificateOptionsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCertificateOptionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -149,22 +151,20 @@ impl std::error::Error for UpdateCertificateOptionsError {
 /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -174,7 +174,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -188,16 +188,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -209,22 +211,20 @@ impl ResourceNotFoundException {
 /// <p>An ACM quota has been exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -234,7 +234,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -248,16 +248,18 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -269,22 +271,20 @@ impl LimitExceededException {
 /// <p>Processing has reached an invalid state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidStateException {
+pub struct InvalidStateException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidStateException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidStateException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -294,7 +294,7 @@ impl std::fmt::Display for InvalidStateException {
 impl std::error::Error for InvalidStateException {}
 /// See [`InvalidStateException`](crate::error::InvalidStateException).
 pub mod invalid_state_exception {
-
+    
     /// A builder for [`InvalidStateException`](crate::error::InvalidStateException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -308,16 +308,18 @@ pub mod invalid_state_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidStateException`](crate::error::InvalidStateException).
         pub fn build(self) -> crate::error::InvalidStateException {
             crate::error::InvalidStateException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidStateException {
     /// Creates a new builder-style object to manufacture [`InvalidStateException`](crate::error::InvalidStateException).
@@ -329,22 +331,20 @@ impl InvalidStateException {
 /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArnException {
+pub struct InvalidArnException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArnException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArnException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -354,7 +354,7 @@ impl std::fmt::Display for InvalidArnException {
 impl std::error::Error for InvalidArnException {}
 /// See [`InvalidArnException`](crate::error::InvalidArnException).
 pub mod invalid_arn_exception {
-
+    
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -368,16 +368,18 @@ pub mod invalid_arn_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArnException`](crate::error::InvalidArnException).
         pub fn build(self) -> crate::error::InvalidArnException {
             crate::error::InvalidArnException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArnException {
     /// Creates a new builder-style object to manufacture [`InvalidArnException`](crate::error::InvalidArnException).
@@ -391,15 +393,15 @@ impl InvalidArnException {
 #[derive(std::fmt::Debug)]
 pub struct ResendValidationEmailError {
     /// Kind of error that occurred.
-    pub kind: ResendValidationEmailErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ResendValidationEmailErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ResendValidationEmailError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ResendValidationEmailErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -415,26 +417,34 @@ pub enum ResendValidationEmailErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResendValidationEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResendValidationEmailErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException(_inner) => {
+            ResendValidationEmailErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResendValidationEmailErrorKind::InvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResendValidationEmailErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResendValidationEmailErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ResendValidationEmailErrorKind::InvalidStateException(_inner) => _inner.fmt(f),
-            ResendValidationEmailErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ResendValidationEmailErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -448,89 +458,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ResendValidationEmailError {
 }
 impl ResendValidationEmailError {
     /// Creates a new `ResendValidationEmailError`.
-    pub fn new(kind: ResendValidationEmailErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ResendValidationEmailError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ResendValidationEmailErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ResendValidationEmailError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ResendValidationEmailErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ResendValidationEmailErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ResendValidationEmailError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ResendValidationEmailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ResendValidationEmailError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ResendValidationEmailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ResendValidationEmailErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResendValidationEmailErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ResendValidationEmailErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException`.
     pub fn is_invalid_domain_validation_options_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException(_)
-        )
+        matches!(&self.kind, ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException(_))
     }
     /// Returns `true` if the error kind is `ResendValidationEmailErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResendValidationEmailErrorKind::InvalidStateException(_)
-        )
+        matches!(&self.kind, ResendValidationEmailErrorKind::InvalidStateException(_))
     }
     /// Returns `true` if the error kind is `ResendValidationEmailErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResendValidationEmailErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ResendValidationEmailErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for ResendValidationEmailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResendValidationEmailErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException(_inner) => {
+            ResendValidationEmailErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException(_inner) =>
+            Some(_inner)
+            ,
+            ResendValidationEmailErrorKind::InvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            ResendValidationEmailErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ResendValidationEmailErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ResendValidationEmailErrorKind::InvalidStateException(_inner) => Some(_inner),
-            ResendValidationEmailErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ResendValidationEmailErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -538,22 +540,20 @@ impl std::error::Error for ResendValidationEmailError {
 /// <p>One or more values in the <code>DomainValidationOption</code> structure is incorrect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDomainValidationOptionsException {
+pub struct InvalidDomainValidationOptionsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDomainValidationOptionsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDomainValidationOptionsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDomainValidationOptionsException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -563,7 +563,7 @@ impl std::fmt::Display for InvalidDomainValidationOptionsException {
 impl std::error::Error for InvalidDomainValidationOptionsException {}
 /// See [`InvalidDomainValidationOptionsException`](crate::error::InvalidDomainValidationOptionsException).
 pub mod invalid_domain_validation_options_exception {
-
+    
     /// A builder for [`InvalidDomainValidationOptionsException`](crate::error::InvalidDomainValidationOptionsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -577,16 +577,18 @@ pub mod invalid_domain_validation_options_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDomainValidationOptionsException`](crate::error::InvalidDomainValidationOptionsException).
         pub fn build(self) -> crate::error::InvalidDomainValidationOptionsException {
             crate::error::InvalidDomainValidationOptionsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDomainValidationOptionsException {
     /// Creates a new builder-style object to manufacture [`InvalidDomainValidationOptionsException`](crate::error::InvalidDomainValidationOptionsException).
@@ -600,15 +602,15 @@ impl InvalidDomainValidationOptionsException {
 #[derive(std::fmt::Debug)]
 pub struct RequestCertificateError {
     /// Kind of error that occurred.
-    pub kind: RequestCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RequestCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RequestCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RequestCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -630,29 +632,43 @@ pub enum RequestCertificateErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RequestCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RequestCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            RequestCertificateErrorKind::InvalidDomainValidationOptionsException(_inner) => {
+            RequestCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RequestCertificateErrorKind::InvalidDomainValidationOptionsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RequestCertificateErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RequestCertificateErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RequestCertificateErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RequestCertificateErrorKind::TagPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RequestCertificateErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RequestCertificateErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RequestCertificateErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            RequestCertificateErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            RequestCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            RequestCertificateErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
-            RequestCertificateErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            RequestCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -666,109 +682,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for RequestCertificateError {
 }
 impl RequestCertificateError {
     /// Creates a new `RequestCertificateError`.
-    pub fn new(kind: RequestCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RequestCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RequestCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RequestCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RequestCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RequestCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RequestCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RequestCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RequestCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RequestCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RequestCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RequestCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, RequestCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `RequestCertificateErrorKind::InvalidDomainValidationOptionsException`.
     pub fn is_invalid_domain_validation_options_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RequestCertificateErrorKind::InvalidDomainValidationOptionsException(_)
-        )
+        matches!(&self.kind, RequestCertificateErrorKind::InvalidDomainValidationOptionsException(_))
     }
     /// Returns `true` if the error kind is `RequestCertificateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RequestCertificateErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, RequestCertificateErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `RequestCertificateErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RequestCertificateErrorKind::InvalidTagException(_)
-        )
+        matches!(&self.kind, RequestCertificateErrorKind::InvalidTagException(_))
     }
     /// Returns `true` if the error kind is `RequestCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RequestCertificateErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, RequestCertificateErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RequestCertificateErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RequestCertificateErrorKind::TagPolicyException(_)
-        )
+        matches!(&self.kind, RequestCertificateErrorKind::TagPolicyException(_))
     }
     /// Returns `true` if the error kind is `RequestCertificateErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RequestCertificateErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, RequestCertificateErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for RequestCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RequestCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            RequestCertificateErrorKind::InvalidDomainValidationOptionsException(_inner) => {
+            RequestCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            RequestCertificateErrorKind::InvalidDomainValidationOptionsException(_inner) =>
+            Some(_inner)
+            ,
+            RequestCertificateErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            RequestCertificateErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            RequestCertificateErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RequestCertificateErrorKind::TagPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            RequestCertificateErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            RequestCertificateErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RequestCertificateErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            RequestCertificateErrorKind::InvalidTagException(_inner) => Some(_inner),
-            RequestCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
-            RequestCertificateErrorKind::TagPolicyException(_inner) => Some(_inner),
-            RequestCertificateErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            RequestCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -776,22 +785,20 @@ impl std::error::Error for RequestCertificateError {
 /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyTagsException {
+pub struct TooManyTagsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -801,7 +808,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException).
 pub mod too_many_tags_exception {
-
+    
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -815,16 +822,18 @@ pub mod too_many_tags_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
         pub fn build(self) -> crate::error::TooManyTagsException {
             crate::error::TooManyTagsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyTagsException {
     /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
@@ -836,22 +845,20 @@ impl TooManyTagsException {
 /// <p>A specified tag did not comply with an existing tag policy and was rejected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagPolicyException {
+pub struct TagPolicyException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TagPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TagPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagPolicyException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -861,7 +868,7 @@ impl std::fmt::Display for TagPolicyException {
 impl std::error::Error for TagPolicyException {}
 /// See [`TagPolicyException`](crate::error::TagPolicyException).
 pub mod tag_policy_exception {
-
+    
     /// A builder for [`TagPolicyException`](crate::error::TagPolicyException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -875,16 +882,18 @@ pub mod tag_policy_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TagPolicyException`](crate::error::TagPolicyException).
         pub fn build(self) -> crate::error::TagPolicyException {
             crate::error::TagPolicyException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TagPolicyException {
     /// Creates a new builder-style object to manufacture [`TagPolicyException`](crate::error::TagPolicyException).
@@ -896,22 +905,20 @@ impl TagPolicyException {
 /// <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTagException {
+pub struct InvalidTagException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTagException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -921,7 +928,7 @@ impl std::fmt::Display for InvalidTagException {
 impl std::error::Error for InvalidTagException {}
 /// See [`InvalidTagException`](crate::error::InvalidTagException).
 pub mod invalid_tag_exception {
-
+    
     /// A builder for [`InvalidTagException`](crate::error::InvalidTagException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -935,16 +942,18 @@ pub mod invalid_tag_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTagException`](crate::error::InvalidTagException).
         pub fn build(self) -> crate::error::InvalidTagException {
             crate::error::InvalidTagException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTagException {
     /// Creates a new builder-style object to manufacture [`InvalidTagException`](crate::error::InvalidTagException).
@@ -956,22 +965,20 @@ impl InvalidTagException {
 /// <p>An input parameter was invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterException {
+pub struct InvalidParameterException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -981,7 +988,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException).
 pub mod invalid_parameter_exception {
-
+    
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -995,16 +1002,18 @@ pub mod invalid_parameter_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
         pub fn build(self) -> crate::error::InvalidParameterException {
             crate::error::InvalidParameterException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
@@ -1018,15 +1027,15 @@ impl InvalidParameterException {
 #[derive(std::fmt::Debug)]
 pub struct RenewCertificateError {
     /// Kind of error that occurred.
-    pub kind: RenewCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RenewCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RenewCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RenewCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1038,22 +1047,28 @@ pub enum RenewCertificateErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RenewCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RenewCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            RenewCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            RenewCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RenewCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RenewCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RenewCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1067,67 +1082,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for RenewCertificateError {
 }
 impl RenewCertificateError {
     /// Creates a new `RenewCertificateError`.
-    pub fn new(kind: RenewCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RenewCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RenewCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RenewCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RenewCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RenewCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RenewCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RenewCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RenewCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RenewCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RenewCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RenewCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, RenewCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `RenewCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RenewCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, RenewCertificateErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for RenewCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RenewCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            RenewCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RenewCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            RenewCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            RenewCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RenewCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1137,17 +1152,15 @@ impl std::error::Error for RenewCertificateError {
 #[derive(std::fmt::Debug)]
 pub struct RemoveTagsFromCertificateError {
     /// Kind of error that occurred.
-    pub kind: RemoveTagsFromCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RemoveTagsFromCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RemoveTagsFromCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: RemoveTagsFromCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1167,26 +1180,40 @@ pub enum RemoveTagsFromCertificateErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsFromCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveTagsFromCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            RemoveTagsFromCertificateErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            RemoveTagsFromCertificateErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            RemoveTagsFromCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            RemoveTagsFromCertificateErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
-            RemoveTagsFromCertificateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            RemoveTagsFromCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RemoveTagsFromCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromCertificateErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromCertificateErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromCertificateErrorKind::TagPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromCertificateErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1200,103 +1227,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for RemoveTagsFromCertificateErro
 }
 impl RemoveTagsFromCertificateError {
     /// Creates a new `RemoveTagsFromCertificateError`.
-    pub fn new(kind: RemoveTagsFromCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RemoveTagsFromCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RemoveTagsFromCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RemoveTagsFromCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RemoveTagsFromCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RemoveTagsFromCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RemoveTagsFromCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RemoveTagsFromCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RemoveTagsFromCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RemoveTagsFromCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RemoveTagsFromCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromCertificateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromCertificateErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromCertificateErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromCertificateErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromCertificateErrorKind::InvalidTagException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromCertificateErrorKind::InvalidTagException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromCertificateErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromCertificateErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromCertificateErrorKind::TagPolicyException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromCertificateErrorKind::TagPolicyException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromCertificateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromCertificateErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromCertificateErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for RemoveTagsFromCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveTagsFromCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            RemoveTagsFromCertificateErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            RemoveTagsFromCertificateErrorKind::InvalidTagException(_inner) => Some(_inner),
-            RemoveTagsFromCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RemoveTagsFromCertificateErrorKind::TagPolicyException(_inner) => Some(_inner),
-            RemoveTagsFromCertificateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RemoveTagsFromCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            RemoveTagsFromCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromCertificateErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromCertificateErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromCertificateErrorKind::TagPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromCertificateErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1304,22 +1323,20 @@ impl std::error::Error for RemoveTagsFromCertificateError {
 /// <p>The request was denied because it exceeded a quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1329,7 +1346,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1343,16 +1360,18 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -1366,15 +1385,15 @@ impl ThrottlingException {
 #[derive(std::fmt::Debug)]
 pub struct PutAccountConfigurationError {
     /// Kind of error that occurred.
-    pub kind: PutAccountConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutAccountConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutAccountConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1390,24 +1409,34 @@ pub enum PutAccountConfigurationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            PutAccountConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            PutAccountConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            PutAccountConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            PutAccountConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutAccountConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountConfigurationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountConfigurationErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountConfigurationErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountConfigurationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1421,87 +1450,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutAccountConfigurationError 
 }
 impl PutAccountConfigurationError {
     /// Creates a new `PutAccountConfigurationError`.
-    pub fn new(kind: PutAccountConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutAccountConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutAccountConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutAccountConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutAccountConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutAccountConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutAccountConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, PutAccountConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `PutAccountConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountConfigurationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, PutAccountConfigurationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `PutAccountConfigurationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountConfigurationErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, PutAccountConfigurationErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `PutAccountConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountConfigurationErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, PutAccountConfigurationErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for PutAccountConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            PutAccountConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
-            PutAccountConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutAccountConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            PutAccountConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+            PutAccountConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountConfigurationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountConfigurationErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountConfigurationErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountConfigurationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1509,22 +1532,20 @@ impl std::error::Error for PutAccountConfigurationError {
 /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1534,7 +1555,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1548,16 +1569,18 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -1569,22 +1592,20 @@ impl ValidationException {
 /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1594,7 +1615,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1608,16 +1629,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -1629,22 +1652,20 @@ impl ConflictException {
 /// <p>You do not have access required to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1654,7 +1675,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1668,16 +1689,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -1691,15 +1714,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForCertificateError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1711,22 +1734,28 @@ pub enum ListTagsForCertificateErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ListTagsForCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1740,71 +1769,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForCertificateError {
 }
 impl ListTagsForCertificateError {
     /// Creates a new `ListTagsForCertificateError`.
-    pub fn new(kind: ListTagsForCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ListTagsForCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForCertificateErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for ListTagsForCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ListTagsForCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1814,15 +1839,15 @@ impl std::error::Error for ListTagsForCertificateError {
 #[derive(std::fmt::Debug)]
 pub struct ListCertificatesError {
     /// Kind of error that occurred.
-    pub kind: ListCertificatesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListCertificatesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListCertificatesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1834,22 +1859,28 @@ pub enum ListCertificatesErrorKind {
     InvalidArgsException(crate::error::InvalidArgsException),
     /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListCertificatesErrorKind::InvalidArgsException(_inner) => _inner.fmt(f),
-            ListCertificatesErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListCertificatesErrorKind::InvalidArgsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCertificatesErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCertificatesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1863,67 +1894,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListCertificatesError {
 }
 impl ListCertificatesError {
     /// Creates a new `ListCertificatesError`.
-    pub fn new(kind: ListCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListCertificatesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListCertificatesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListCertificatesErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCertificatesErrorKind::InvalidArgsException(_)
-        )
+        matches!(&self.kind, ListCertificatesErrorKind::InvalidArgsException(_))
     }
     /// Returns `true` if the error kind is `ListCertificatesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCertificatesErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListCertificatesErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListCertificatesErrorKind::InvalidArgsException(_inner) => Some(_inner),
-            ListCertificatesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListCertificatesErrorKind::InvalidArgsException(_inner) =>
+            Some(_inner)
+            ,
+            ListCertificatesErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListCertificatesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1931,22 +1962,20 @@ impl std::error::Error for ListCertificatesError {
 /// <p>One or more of of request parameters specified is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArgsException {
+pub struct InvalidArgsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArgsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArgsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgsException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1956,7 +1985,7 @@ impl std::fmt::Display for InvalidArgsException {
 impl std::error::Error for InvalidArgsException {}
 /// See [`InvalidArgsException`](crate::error::InvalidArgsException).
 pub mod invalid_args_exception {
-
+    
     /// A builder for [`InvalidArgsException`](crate::error::InvalidArgsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1970,16 +1999,18 @@ pub mod invalid_args_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArgsException`](crate::error::InvalidArgsException).
         pub fn build(self) -> crate::error::InvalidArgsException {
             crate::error::InvalidArgsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArgsException {
     /// Creates a new builder-style object to manufacture [`InvalidArgsException`](crate::error::InvalidArgsException).
@@ -1993,15 +2024,15 @@ impl InvalidArgsException {
 #[derive(std::fmt::Debug)]
 pub struct ImportCertificateError {
     /// Kind of error that occurred.
-    pub kind: ImportCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ImportCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ImportCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2023,27 +2054,43 @@ pub enum ImportCertificateErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ImportCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ImportCertificateErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ImportCertificateErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            ImportCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            ImportCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ImportCertificateErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
-            ImportCertificateErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            ImportCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ImportCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportCertificateErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportCertificateErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportCertificateErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportCertificateErrorKind::TagPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportCertificateErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2057,107 +2104,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ImportCertificateError {
 }
 impl ImportCertificateError {
     /// Creates a new `ImportCertificateError`.
-    pub fn new(kind: ImportCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ImportCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ImportCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ImportCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ImportCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ImportCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ImportCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ImportCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ImportCertificateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportCertificateErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ImportCertificateErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ImportCertificateErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportCertificateErrorKind::InvalidTagException(_)
-        )
+        matches!(&self.kind, ImportCertificateErrorKind::InvalidTagException(_))
     }
     /// Returns `true` if the error kind is `ImportCertificateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportCertificateErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ImportCertificateErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ImportCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ImportCertificateErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ImportCertificateErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportCertificateErrorKind::TagPolicyException(_)
-        )
+        matches!(&self.kind, ImportCertificateErrorKind::TagPolicyException(_))
     }
     /// Returns `true` if the error kind is `ImportCertificateErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportCertificateErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, ImportCertificateErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for ImportCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ImportCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::InvalidTagException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::TagPolicyException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            ImportCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ImportCertificateErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ImportCertificateErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            ImportCertificateErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ImportCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ImportCertificateErrorKind::TagPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            ImportCertificateErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            ImportCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2167,15 +2209,15 @@ impl std::error::Error for ImportCertificateError {
 #[derive(std::fmt::Debug)]
 pub struct GetCertificateError {
     /// Kind of error that occurred.
-    pub kind: GetCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2189,23 +2231,31 @@ pub enum GetCertificateErrorKind {
     RequestInProgressException(crate::error::RequestInProgressException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            GetCertificateErrorKind::RequestInProgressException(_inner) => _inner.fmt(f),
-            GetCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetCertificateErrorKind::RequestInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2219,72 +2269,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetCertificateError {
 }
 impl GetCertificateError {
     /// Creates a new `GetCertificateError`.
-    pub fn new(kind: GetCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, GetCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `GetCertificateErrorKind::RequestInProgressException`.
     pub fn is_request_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetCertificateErrorKind::RequestInProgressException(_)
-        )
+        matches!(&self.kind, GetCertificateErrorKind::RequestInProgressException(_))
     }
     /// Returns `true` if the error kind is `GetCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetCertificateErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for GetCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            GetCertificateErrorKind::RequestInProgressException(_inner) => Some(_inner),
-            GetCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            GetCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            GetCertificateErrorKind::RequestInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            GetCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2292,22 +2344,20 @@ impl std::error::Error for GetCertificateError {
 /// <p>The certificate request is in process and the certificate in your account has not yet been issued.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestInProgressException {
+pub struct RequestInProgressException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RequestInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RequestInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RequestInProgressException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -2317,7 +2367,7 @@ impl std::fmt::Display for RequestInProgressException {
 impl std::error::Error for RequestInProgressException {}
 /// See [`RequestInProgressException`](crate::error::RequestInProgressException).
 pub mod request_in_progress_exception {
-
+    
     /// A builder for [`RequestInProgressException`](crate::error::RequestInProgressException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2331,16 +2381,18 @@ pub mod request_in_progress_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RequestInProgressException`](crate::error::RequestInProgressException).
         pub fn build(self) -> crate::error::RequestInProgressException {
             crate::error::RequestInProgressException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestInProgressException {
     /// Creates a new builder-style object to manufacture [`RequestInProgressException`](crate::error::RequestInProgressException).
@@ -2354,15 +2406,15 @@ impl RequestInProgressException {
 #[derive(std::fmt::Debug)]
 pub struct GetAccountConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetAccountConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetAccountConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetAccountConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2374,22 +2426,28 @@ pub enum GetAccountConfigurationErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccountConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetAccountConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetAccountConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetAccountConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAccountConfigurationErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAccountConfigurationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2403,71 +2461,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetAccountConfigurationError 
 }
 impl GetAccountConfigurationError {
     /// Creates a new `GetAccountConfigurationError`.
-    pub fn new(kind: GetAccountConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetAccountConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetAccountConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetAccountConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetAccountConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetAccountConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetAccountConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAccountConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetAccountConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetAccountConfigurationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAccountConfigurationErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetAccountConfigurationErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetAccountConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccountConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetAccountConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetAccountConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+            GetAccountConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetAccountConfigurationErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetAccountConfigurationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2477,15 +2531,15 @@ impl std::error::Error for GetAccountConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct ExportCertificateError {
     /// Kind of error that occurred.
-    pub kind: ExportCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ExportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2499,23 +2553,31 @@ pub enum ExportCertificateErrorKind {
     RequestInProgressException(crate::error::RequestInProgressException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ExportCertificateErrorKind::RequestInProgressException(_inner) => _inner.fmt(f),
-            ExportCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ExportCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ExportCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportCertificateErrorKind::RequestInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2529,75 +2591,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportCertificateError {
 }
 impl ExportCertificateError {
     /// Creates a new `ExportCertificateError`.
-    pub fn new(kind: ExportCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ExportCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ExportCertificateErrorKind::RequestInProgressException`.
     pub fn is_request_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportCertificateErrorKind::RequestInProgressException(_)
-        )
+        matches!(&self.kind, ExportCertificateErrorKind::RequestInProgressException(_))
     }
     /// Returns `true` if the error kind is `ExportCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ExportCertificateErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for ExportCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ExportCertificateErrorKind::RequestInProgressException(_inner) => Some(_inner),
-            ExportCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ExportCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            ExportCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ExportCertificateErrorKind::RequestInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            ExportCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExportCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2607,15 +2668,15 @@ impl std::error::Error for ExportCertificateError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCertificateError {
     /// Kind of error that occurred.
-    pub kind: DescribeCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2627,22 +2688,28 @@ pub enum DescribeCertificateErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            DescribeCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2656,67 +2723,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCertificateError {
 }
 impl DescribeCertificateError {
     /// Creates a new `DescribeCertificateError`.
-    pub fn new(kind: DescribeCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, DescribeCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `DescribeCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeCertificateErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            DescribeCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2726,15 +2793,15 @@ impl std::error::Error for DescribeCertificateError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCertificateError {
     /// Kind of error that occurred.
-    pub kind: DeleteCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2754,26 +2821,40 @@ pub enum DeleteCertificateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCertificateErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteCertificateErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            DeleteCertificateErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteCertificateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteCertificateErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCertificateErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCertificateErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCertificateErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2787,52 +2868,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCertificateError {
 }
 impl DeleteCertificateError {
     /// Creates a new `DeleteCertificateError`.
-    pub fn new(kind: DeleteCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCertificateErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteCertificateErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -2840,43 +2918,45 @@ impl DeleteCertificateError {
     }
     /// Returns `true` if the error kind is `DeleteCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, DeleteCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCertificateErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteCertificateErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteCertificateErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCertificateErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DeleteCertificateErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DeleteCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCertificateErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteCertificateErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCertificateErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCertificateErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCertificateErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2884,22 +2964,20 @@ impl std::error::Error for DeleteCertificateError {
 /// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the association and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInUseException {
+pub struct ResourceInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -2909,7 +2987,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException).
 pub mod resource_in_use_exception {
-
+    
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2923,16 +3001,18 @@ pub mod resource_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException).
         pub fn build(self) -> crate::error::ResourceInUseException {
             crate::error::ResourceInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceInUseException {
     /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException).
@@ -2946,15 +3026,15 @@ impl ResourceInUseException {
 #[derive(std::fmt::Debug)]
 pub struct AddTagsToCertificateError {
     /// Kind of error that occurred.
-    pub kind: AddTagsToCertificateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AddTagsToCertificateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AddTagsToCertificateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AddTagsToCertificateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2976,27 +3056,43 @@ pub enum AddTagsToCertificateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsToCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddTagsToCertificateErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            AddTagsToCertificateErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            AddTagsToCertificateErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            AddTagsToCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            AddTagsToCertificateErrorKind::TagPolicyException(_inner) => _inner.fmt(f),
-            AddTagsToCertificateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            AddTagsToCertificateErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            AddTagsToCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AddTagsToCertificateErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToCertificateErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToCertificateErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToCertificateErrorKind::TagPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToCertificateErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToCertificateErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToCertificateErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3010,140 +3106,132 @@ impl aws_smithy_types::retry::ProvideErrorKind for AddTagsToCertificateError {
 }
 impl AddTagsToCertificateError {
     /// Creates a new `AddTagsToCertificateError`.
-    pub fn new(kind: AddTagsToCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AddTagsToCertificateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AddTagsToCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AddTagsToCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AddTagsToCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AddTagsToCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AddTagsToCertificateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AddTagsToCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AddTagsToCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AddTagsToCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AddTagsToCertificateErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToCertificateErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, AddTagsToCertificateErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToCertificateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToCertificateErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, AddTagsToCertificateErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToCertificateErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToCertificateErrorKind::InvalidTagException(_)
-        )
+        matches!(&self.kind, AddTagsToCertificateErrorKind::InvalidTagException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToCertificateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, AddTagsToCertificateErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToCertificateErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToCertificateErrorKind::TagPolicyException(_)
-        )
+        matches!(&self.kind, AddTagsToCertificateErrorKind::TagPolicyException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToCertificateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToCertificateErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, AddTagsToCertificateErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToCertificateErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToCertificateErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, AddTagsToCertificateErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for AddTagsToCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddTagsToCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
-            AddTagsToCertificateErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            AddTagsToCertificateErrorKind::InvalidTagException(_inner) => Some(_inner),
-            AddTagsToCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            AddTagsToCertificateErrorKind::TagPolicyException(_inner) => Some(_inner),
-            AddTagsToCertificateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            AddTagsToCertificateErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AddTagsToCertificateErrorKind::Unhandled(_inner) => Some(_inner),
+            AddTagsToCertificateErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToCertificateErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToCertificateErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToCertificateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToCertificateErrorKind::TagPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToCertificateErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToCertificateErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToCertificateErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

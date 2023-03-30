@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct SetSubnetsError {
     /// Kind of error that occurred.
-    pub kind: SetSubnetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SetSubnetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SetSubnetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SetSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -32,26 +32,40 @@ pub enum SetSubnetsErrorKind {
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// <p>The specified subnet does not exist.</p>
     SubnetNotFoundException(crate::error::SubnetNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSubnetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetSubnetsErrorKind::AllocationIdNotFoundException(_inner) => _inner.fmt(f),
-            SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(_inner) => _inner.fmt(f),
-            SetSubnetsErrorKind::InvalidConfigurationRequestException(_inner) => _inner.fmt(f),
-            SetSubnetsErrorKind::InvalidSubnetException(_inner) => _inner.fmt(f),
-            SetSubnetsErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            SetSubnetsErrorKind::SubnetNotFoundException(_inner) => _inner.fmt(f),
-            SetSubnetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SetSubnetsErrorKind::AllocationIdNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSubnetsErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSubnetsErrorKind::InvalidSubnetException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSubnetsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSubnetsErrorKind::SubnetNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSubnetsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -65,66 +79,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for SetSubnetsError {
 }
 impl SetSubnetsError {
     /// Creates a new `SetSubnetsError`.
-    pub fn new(kind: SetSubnetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SetSubnetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SetSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SetSubnetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SetSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SetSubnetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SetSubnetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SetSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SetSubnetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SetSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SetSubnetsErrorKind::AllocationIdNotFoundException`.
     pub fn is_allocation_id_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetSubnetsErrorKind::AllocationIdNotFoundException(_)
-        )
+        matches!(&self.kind, SetSubnetsErrorKind::AllocationIdNotFoundException(_))
     }
     /// Returns `true` if the error kind is `SetSubnetsErrorKind::AvailabilityZoneNotSupportedException`.
     pub fn is_availability_zone_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(_)
-        )
+        matches!(&self.kind, SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `SetSubnetsErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetSubnetsErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, SetSubnetsErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `SetSubnetsErrorKind::InvalidSubnetException`.
     pub fn is_invalid_subnet_exception(&self) -> bool {
@@ -132,10 +137,7 @@ impl SetSubnetsError {
     }
     /// Returns `true` if the error kind is `SetSubnetsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetSubnetsErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, SetSubnetsErrorKind::LoadBalancerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `SetSubnetsErrorKind::SubnetNotFoundException`.
     pub fn is_subnet_not_found_exception(&self) -> bool {
@@ -145,13 +147,27 @@ impl SetSubnetsError {
 impl std::error::Error for SetSubnetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetSubnetsErrorKind::AllocationIdNotFoundException(_inner) => Some(_inner),
-            SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(_inner) => Some(_inner),
-            SetSubnetsErrorKind::InvalidConfigurationRequestException(_inner) => Some(_inner),
-            SetSubnetsErrorKind::InvalidSubnetException(_inner) => Some(_inner),
-            SetSubnetsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            SetSubnetsErrorKind::SubnetNotFoundException(_inner) => Some(_inner),
-            SetSubnetsErrorKind::Unhandled(_inner) => Some(_inner),
+            SetSubnetsErrorKind::AllocationIdNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            SetSubnetsErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            SetSubnetsErrorKind::InvalidSubnetException(_inner) =>
+            Some(_inner)
+            ,
+            SetSubnetsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SetSubnetsErrorKind::SubnetNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SetSubnetsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -159,22 +175,20 @@ impl std::error::Error for SetSubnetsError {
 /// <p>The specified subnet does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubnetNotFoundException {
+pub struct SubnetNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SubnetNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SubnetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -184,7 +198,7 @@ impl std::fmt::Display for SubnetNotFoundException {
 impl std::error::Error for SubnetNotFoundException {}
 /// See [`SubnetNotFoundException`](crate::error::SubnetNotFoundException).
 pub mod subnet_not_found_exception {
-
+    
     /// A builder for [`SubnetNotFoundException`](crate::error::SubnetNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -198,16 +212,18 @@ pub mod subnet_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SubnetNotFoundException`](crate::error::SubnetNotFoundException).
         pub fn build(self) -> crate::error::SubnetNotFoundException {
             crate::error::SubnetNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SubnetNotFoundException {
     /// Creates a new builder-style object to manufacture [`SubnetNotFoundException`](crate::error::SubnetNotFoundException).
@@ -219,22 +235,20 @@ impl SubnetNotFoundException {
 /// <p>The specified load balancer does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoadBalancerNotFoundException {
+pub struct LoadBalancerNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LoadBalancerNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LoadBalancerNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LoadBalancerNotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -244,7 +258,7 @@ impl std::fmt::Display for LoadBalancerNotFoundException {
 impl std::error::Error for LoadBalancerNotFoundException {}
 /// See [`LoadBalancerNotFoundException`](crate::error::LoadBalancerNotFoundException).
 pub mod load_balancer_not_found_exception {
-
+    
     /// A builder for [`LoadBalancerNotFoundException`](crate::error::LoadBalancerNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -258,16 +272,18 @@ pub mod load_balancer_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LoadBalancerNotFoundException`](crate::error::LoadBalancerNotFoundException).
         pub fn build(self) -> crate::error::LoadBalancerNotFoundException {
             crate::error::LoadBalancerNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LoadBalancerNotFoundException {
     /// Creates a new builder-style object to manufacture [`LoadBalancerNotFoundException`](crate::error::LoadBalancerNotFoundException).
@@ -279,22 +295,20 @@ impl LoadBalancerNotFoundException {
 /// <p>The specified subnet is out of available addresses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSubnetException {
+pub struct InvalidSubnetException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSubnetException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSubnetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubnetException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -304,7 +318,7 @@ impl std::fmt::Display for InvalidSubnetException {
 impl std::error::Error for InvalidSubnetException {}
 /// See [`InvalidSubnetException`](crate::error::InvalidSubnetException).
 pub mod invalid_subnet_exception {
-
+    
     /// A builder for [`InvalidSubnetException`](crate::error::InvalidSubnetException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -318,16 +332,18 @@ pub mod invalid_subnet_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSubnetException`](crate::error::InvalidSubnetException).
         pub fn build(self) -> crate::error::InvalidSubnetException {
             crate::error::InvalidSubnetException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSubnetException {
     /// Creates a new builder-style object to manufacture [`InvalidSubnetException`](crate::error::InvalidSubnetException).
@@ -339,22 +355,20 @@ impl InvalidSubnetException {
 /// <p>The requested configuration is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidConfigurationRequestException {
+pub struct InvalidConfigurationRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidConfigurationRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidConfigurationRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidConfigurationRequestException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -364,7 +378,7 @@ impl std::fmt::Display for InvalidConfigurationRequestException {
 impl std::error::Error for InvalidConfigurationRequestException {}
 /// See [`InvalidConfigurationRequestException`](crate::error::InvalidConfigurationRequestException).
 pub mod invalid_configuration_request_exception {
-
+    
     /// A builder for [`InvalidConfigurationRequestException`](crate::error::InvalidConfigurationRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -378,16 +392,18 @@ pub mod invalid_configuration_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidConfigurationRequestException`](crate::error::InvalidConfigurationRequestException).
         pub fn build(self) -> crate::error::InvalidConfigurationRequestException {
             crate::error::InvalidConfigurationRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidConfigurationRequestException {
     /// Creates a new builder-style object to manufacture [`InvalidConfigurationRequestException`](crate::error::InvalidConfigurationRequestException).
@@ -399,22 +415,20 @@ impl InvalidConfigurationRequestException {
 /// <p>The specified Availability Zone is not supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityZoneNotSupportedException {
+pub struct AvailabilityZoneNotSupportedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AvailabilityZoneNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AvailabilityZoneNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AvailabilityZoneNotSupportedException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -424,7 +438,7 @@ impl std::fmt::Display for AvailabilityZoneNotSupportedException {
 impl std::error::Error for AvailabilityZoneNotSupportedException {}
 /// See [`AvailabilityZoneNotSupportedException`](crate::error::AvailabilityZoneNotSupportedException).
 pub mod availability_zone_not_supported_exception {
-
+    
     /// A builder for [`AvailabilityZoneNotSupportedException`](crate::error::AvailabilityZoneNotSupportedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -438,16 +452,18 @@ pub mod availability_zone_not_supported_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AvailabilityZoneNotSupportedException`](crate::error::AvailabilityZoneNotSupportedException).
         pub fn build(self) -> crate::error::AvailabilityZoneNotSupportedException {
             crate::error::AvailabilityZoneNotSupportedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AvailabilityZoneNotSupportedException {
     /// Creates a new builder-style object to manufacture [`AvailabilityZoneNotSupportedException`](crate::error::AvailabilityZoneNotSupportedException).
@@ -459,22 +475,20 @@ impl AvailabilityZoneNotSupportedException {
 /// <p>The specified allocation ID does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocationIdNotFoundException {
+pub struct AllocationIdNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AllocationIdNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AllocationIdNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AllocationIdNotFoundException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -484,7 +498,7 @@ impl std::fmt::Display for AllocationIdNotFoundException {
 impl std::error::Error for AllocationIdNotFoundException {}
 /// See [`AllocationIdNotFoundException`](crate::error::AllocationIdNotFoundException).
 pub mod allocation_id_not_found_exception {
-
+    
     /// A builder for [`AllocationIdNotFoundException`](crate::error::AllocationIdNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -498,16 +512,18 @@ pub mod allocation_id_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AllocationIdNotFoundException`](crate::error::AllocationIdNotFoundException).
         pub fn build(self) -> crate::error::AllocationIdNotFoundException {
             crate::error::AllocationIdNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AllocationIdNotFoundException {
     /// Creates a new builder-style object to manufacture [`AllocationIdNotFoundException`](crate::error::AllocationIdNotFoundException).
@@ -521,15 +537,15 @@ impl AllocationIdNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct SetSecurityGroupsError {
     /// Kind of error that occurred.
-    pub kind: SetSecurityGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SetSecurityGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SetSecurityGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SetSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -543,25 +559,31 @@ pub enum SetSecurityGroupsErrorKind {
     InvalidSecurityGroupException(crate::error::InvalidSecurityGroupException),
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSecurityGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(_inner) => {
+            SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSecurityGroupsErrorKind::InvalidSecurityGroupException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetSecurityGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            SetSecurityGroupsErrorKind::InvalidSecurityGroupException(_inner) => _inner.fmt(f),
-            SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            SetSecurityGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -575,77 +597,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for SetSecurityGroupsError {
 }
 impl SetSecurityGroupsError {
     /// Creates a new `SetSecurityGroupsError`.
-    pub fn new(kind: SetSecurityGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SetSecurityGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SetSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SetSecurityGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SetSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SetSecurityGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SetSecurityGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SetSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SetSecurityGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SetSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SetSecurityGroupsErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `SetSecurityGroupsErrorKind::InvalidSecurityGroupException`.
     pub fn is_invalid_security_group_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetSecurityGroupsErrorKind::InvalidSecurityGroupException(_)
-        )
+        matches!(&self.kind, SetSecurityGroupsErrorKind::InvalidSecurityGroupException(_))
     }
     /// Returns `true` if the error kind is `SetSecurityGroupsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(_))
     }
 }
 impl std::error::Error for SetSecurityGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(_inner) => {
+            SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            SetSecurityGroupsErrorKind::InvalidSecurityGroupException(_inner) =>
+            Some(_inner)
+            ,
+            SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SetSecurityGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            SetSecurityGroupsErrorKind::InvalidSecurityGroupException(_inner) => Some(_inner),
-            SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            SetSecurityGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -653,22 +672,20 @@ impl std::error::Error for SetSecurityGroupsError {
 /// <p>The specified security group does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSecurityGroupException {
+pub struct InvalidSecurityGroupException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSecurityGroupException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSecurityGroupException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSecurityGroupException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -678,7 +695,7 @@ impl std::fmt::Display for InvalidSecurityGroupException {
 impl std::error::Error for InvalidSecurityGroupException {}
 /// See [`InvalidSecurityGroupException`](crate::error::InvalidSecurityGroupException).
 pub mod invalid_security_group_exception {
-
+    
     /// A builder for [`InvalidSecurityGroupException`](crate::error::InvalidSecurityGroupException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -692,16 +709,18 @@ pub mod invalid_security_group_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSecurityGroupException`](crate::error::InvalidSecurityGroupException).
         pub fn build(self) -> crate::error::InvalidSecurityGroupException {
             crate::error::InvalidSecurityGroupException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSecurityGroupException {
     /// Creates a new builder-style object to manufacture [`InvalidSecurityGroupException`](crate::error::InvalidSecurityGroupException).
@@ -715,15 +734,15 @@ impl InvalidSecurityGroupException {
 #[derive(std::fmt::Debug)]
 pub struct SetRulePrioritiesError {
     /// Kind of error that occurred.
-    pub kind: SetRulePrioritiesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SetRulePrioritiesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SetRulePrioritiesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SetRulePrioritiesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -737,23 +756,31 @@ pub enum SetRulePrioritiesErrorKind {
     PriorityInUseException(crate::error::PriorityInUseException),
     /// <p>The specified rule does not exist.</p>
     RuleNotFoundException(crate::error::RuleNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetRulePrioritiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetRulePrioritiesErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
-            SetRulePrioritiesErrorKind::PriorityInUseException(_inner) => _inner.fmt(f),
-            SetRulePrioritiesErrorKind::RuleNotFoundException(_inner) => _inner.fmt(f),
-            SetRulePrioritiesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SetRulePrioritiesErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetRulePrioritiesErrorKind::PriorityInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetRulePrioritiesErrorKind::RuleNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetRulePrioritiesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -767,75 +794,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for SetRulePrioritiesError {
 }
 impl SetRulePrioritiesError {
     /// Creates a new `SetRulePrioritiesError`.
-    pub fn new(kind: SetRulePrioritiesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SetRulePrioritiesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SetRulePrioritiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SetRulePrioritiesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SetRulePrioritiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SetRulePrioritiesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SetRulePrioritiesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SetRulePrioritiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SetRulePrioritiesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SetRulePrioritiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SetRulePrioritiesErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetRulePrioritiesErrorKind::OperationNotPermittedException(_)
-        )
+        matches!(&self.kind, SetRulePrioritiesErrorKind::OperationNotPermittedException(_))
     }
     /// Returns `true` if the error kind is `SetRulePrioritiesErrorKind::PriorityInUseException`.
     pub fn is_priority_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetRulePrioritiesErrorKind::PriorityInUseException(_)
-        )
+        matches!(&self.kind, SetRulePrioritiesErrorKind::PriorityInUseException(_))
     }
     /// Returns `true` if the error kind is `SetRulePrioritiesErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetRulePrioritiesErrorKind::RuleNotFoundException(_)
-        )
+        matches!(&self.kind, SetRulePrioritiesErrorKind::RuleNotFoundException(_))
     }
 }
 impl std::error::Error for SetRulePrioritiesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetRulePrioritiesErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
-            SetRulePrioritiesErrorKind::PriorityInUseException(_inner) => Some(_inner),
-            SetRulePrioritiesErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            SetRulePrioritiesErrorKind::Unhandled(_inner) => Some(_inner),
+            SetRulePrioritiesErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            SetRulePrioritiesErrorKind::PriorityInUseException(_inner) =>
+            Some(_inner)
+            ,
+            SetRulePrioritiesErrorKind::RuleNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SetRulePrioritiesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -843,22 +869,20 @@ impl std::error::Error for SetRulePrioritiesError {
 /// <p>The specified rule does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleNotFoundException {
+pub struct RuleNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RuleNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RuleNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RuleNotFoundException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -868,7 +892,7 @@ impl std::fmt::Display for RuleNotFoundException {
 impl std::error::Error for RuleNotFoundException {}
 /// See [`RuleNotFoundException`](crate::error::RuleNotFoundException).
 pub mod rule_not_found_exception {
-
+    
     /// A builder for [`RuleNotFoundException`](crate::error::RuleNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -882,16 +906,18 @@ pub mod rule_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RuleNotFoundException`](crate::error::RuleNotFoundException).
         pub fn build(self) -> crate::error::RuleNotFoundException {
             crate::error::RuleNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleNotFoundException {
     /// Creates a new builder-style object to manufacture [`RuleNotFoundException`](crate::error::RuleNotFoundException).
@@ -903,22 +929,20 @@ impl RuleNotFoundException {
 /// <p>The specified priority is in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PriorityInUseException {
+pub struct PriorityInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PriorityInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for PriorityInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PriorityInUseException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -928,7 +952,7 @@ impl std::fmt::Display for PriorityInUseException {
 impl std::error::Error for PriorityInUseException {}
 /// See [`PriorityInUseException`](crate::error::PriorityInUseException).
 pub mod priority_in_use_exception {
-
+    
     /// A builder for [`PriorityInUseException`](crate::error::PriorityInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -942,16 +966,18 @@ pub mod priority_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`PriorityInUseException`](crate::error::PriorityInUseException).
         pub fn build(self) -> crate::error::PriorityInUseException {
             crate::error::PriorityInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl PriorityInUseException {
     /// Creates a new builder-style object to manufacture [`PriorityInUseException`](crate::error::PriorityInUseException).
@@ -963,22 +989,20 @@ impl PriorityInUseException {
 /// <p>This operation is not allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperationNotPermittedException {
+pub struct OperationNotPermittedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl OperationNotPermittedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for OperationNotPermittedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OperationNotPermittedException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -988,7 +1012,7 @@ impl std::fmt::Display for OperationNotPermittedException {
 impl std::error::Error for OperationNotPermittedException {}
 /// See [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
 pub mod operation_not_permitted_exception {
-
+    
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1002,16 +1026,18 @@ pub mod operation_not_permitted_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
         pub fn build(self) -> crate::error::OperationNotPermittedException {
             crate::error::OperationNotPermittedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl OperationNotPermittedException {
     /// Creates a new builder-style object to manufacture [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
@@ -1025,15 +1051,15 @@ impl OperationNotPermittedException {
 #[derive(std::fmt::Debug)]
 pub struct SetIpAddressTypeError {
     /// Kind of error that occurred.
-    pub kind: SetIpAddressTypeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SetIpAddressTypeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SetIpAddressTypeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1047,25 +1073,31 @@ pub enum SetIpAddressTypeErrorKind {
     InvalidSubnetException(crate::error::InvalidSubnetException),
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetIpAddressTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(_inner) => {
+            SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetIpAddressTypeErrorKind::InvalidSubnetException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SetIpAddressTypeErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            SetIpAddressTypeErrorKind::InvalidSubnetException(_inner) => _inner.fmt(f),
-            SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            SetIpAddressTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1079,75 +1111,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for SetIpAddressTypeError {
 }
 impl SetIpAddressTypeError {
     /// Creates a new `SetIpAddressTypeError`.
-    pub fn new(kind: SetIpAddressTypeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SetIpAddressTypeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SetIpAddressTypeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SetIpAddressTypeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SetIpAddressTypeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SetIpAddressTypeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::InvalidSubnetException`.
     pub fn is_invalid_subnet_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetIpAddressTypeErrorKind::InvalidSubnetException(_)
-        )
+        matches!(&self.kind, SetIpAddressTypeErrorKind::InvalidSubnetException(_))
     }
     /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(_))
     }
 }
 impl std::error::Error for SetIpAddressTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(_inner) => Some(_inner),
-            SetIpAddressTypeErrorKind::InvalidSubnetException(_inner) => Some(_inner),
-            SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            SetIpAddressTypeErrorKind::Unhandled(_inner) => Some(_inner),
+            SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            SetIpAddressTypeErrorKind::InvalidSubnetException(_inner) =>
+            Some(_inner)
+            ,
+            SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SetIpAddressTypeErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1157,15 +1188,15 @@ impl std::error::Error for SetIpAddressTypeError {
 #[derive(std::fmt::Debug)]
 pub struct RemoveTagsError {
     /// Kind of error that occurred.
-    pub kind: RemoveTagsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RemoveTagsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1183,25 +1214,37 @@ pub enum RemoveTagsErrorKind {
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveTagsErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            RemoveTagsErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            RemoveTagsErrorKind::RuleNotFoundException(_inner) => _inner.fmt(f),
-            RemoveTagsErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            RemoveTagsErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            RemoveTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RemoveTagsErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsErrorKind::RuleNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1215,59 +1258,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for RemoveTagsError {
 }
 impl RemoveTagsError {
     /// Creates a new `RemoveTagsError`.
-    pub fn new(kind: RemoveTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RemoveTagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RemoveTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RemoveTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RemoveTagsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RemoveTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RemoveTagsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveTagsErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveTagsErrorKind::LoadBalancerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
@@ -1275,10 +1312,7 @@ impl RemoveTagsError {
     }
     /// Returns `true` if the error kind is `RemoveTagsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveTagsErrorKind::TargetGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
@@ -1288,12 +1322,24 @@ impl RemoveTagsError {
 impl std::error::Error for RemoveTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveTagsErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            RemoveTagsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            RemoveTagsErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            RemoveTagsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            RemoveTagsErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner),
+            RemoveTagsErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsErrorKind::RuleNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1301,22 +1347,20 @@ impl std::error::Error for RemoveTagsError {
 /// <p>You've reached the limit on the number of tags per load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyTagsException {
+pub struct TooManyTagsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1326,7 +1370,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException).
 pub mod too_many_tags_exception {
-
+    
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1340,16 +1384,18 @@ pub mod too_many_tags_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
         pub fn build(self) -> crate::error::TooManyTagsException {
             crate::error::TooManyTagsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyTagsException {
     /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
@@ -1361,22 +1407,20 @@ impl TooManyTagsException {
 /// <p>The specified target group does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetGroupNotFoundException {
+pub struct TargetGroupNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TargetGroupNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TargetGroupNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetGroupNotFoundException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1386,7 +1430,7 @@ impl std::fmt::Display for TargetGroupNotFoundException {
 impl std::error::Error for TargetGroupNotFoundException {}
 /// See [`TargetGroupNotFoundException`](crate::error::TargetGroupNotFoundException).
 pub mod target_group_not_found_exception {
-
+    
     /// A builder for [`TargetGroupNotFoundException`](crate::error::TargetGroupNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1400,16 +1444,18 @@ pub mod target_group_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TargetGroupNotFoundException`](crate::error::TargetGroupNotFoundException).
         pub fn build(self) -> crate::error::TargetGroupNotFoundException {
             crate::error::TargetGroupNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetGroupNotFoundException {
     /// Creates a new builder-style object to manufacture [`TargetGroupNotFoundException`](crate::error::TargetGroupNotFoundException).
@@ -1421,22 +1467,20 @@ impl TargetGroupNotFoundException {
 /// <p>The specified listener does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListenerNotFoundException {
+pub struct ListenerNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ListenerNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ListenerNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ListenerNotFoundException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1446,7 +1490,7 @@ impl std::fmt::Display for ListenerNotFoundException {
 impl std::error::Error for ListenerNotFoundException {}
 /// See [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
 pub mod listener_not_found_exception {
-
+    
     /// A builder for [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1460,16 +1504,18 @@ pub mod listener_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
         pub fn build(self) -> crate::error::ListenerNotFoundException {
             crate::error::ListenerNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ListenerNotFoundException {
     /// Creates a new builder-style object to manufacture [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
@@ -1483,17 +1529,15 @@ impl ListenerNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct RemoveListenerCertificatesError {
     /// Kind of error that occurred.
-    pub kind: RemoveListenerCertificatesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RemoveListenerCertificatesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RemoveListenerCertificatesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RemoveListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: RemoveListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1505,24 +1549,28 @@ pub enum RemoveListenerCertificatesErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveListenerCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveListenerCertificatesErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            RemoveListenerCertificatesErrorKind::OperationNotPermittedException(_inner) => {
+            RemoveListenerCertificatesErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveListenerCertificatesErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveListenerCertificatesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveListenerCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1536,73 +1584,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for RemoveListenerCertificatesErr
 }
 impl RemoveListenerCertificatesError {
     /// Creates a new `RemoveListenerCertificatesError`.
-    pub fn new(kind: RemoveListenerCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RemoveListenerCertificatesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RemoveListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RemoveListenerCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RemoveListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RemoveListenerCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RemoveListenerCertificatesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RemoveListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RemoveListenerCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RemoveListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RemoveListenerCertificatesErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveListenerCertificatesErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveListenerCertificatesErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveListenerCertificatesErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveListenerCertificatesErrorKind::OperationNotPermittedException(_)
-        )
+        matches!(&self.kind, RemoveListenerCertificatesErrorKind::OperationNotPermittedException(_))
     }
 }
 impl std::error::Error for RemoveListenerCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveListenerCertificatesErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            RemoveListenerCertificatesErrorKind::OperationNotPermittedException(_inner) => {
+            RemoveListenerCertificatesErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveListenerCertificatesErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveListenerCertificatesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RemoveListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1612,15 +1654,15 @@ impl std::error::Error for RemoveListenerCertificatesError {
 #[derive(std::fmt::Debug)]
 pub struct RegisterTargetsError {
     /// Kind of error that occurred.
-    pub kind: RegisterTargetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterTargetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterTargetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RegisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1633,31 +1675,37 @@ pub enum RegisterTargetsErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
-    TooManyRegistrationsForTargetIdException(
-        crate::error::TooManyRegistrationsForTargetIdException,
-    ),
+    TooManyRegistrationsForTargetIdException(crate::error::TooManyRegistrationsForTargetIdException),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterTargetsErrorKind::InvalidTargetException(_inner) => _inner.fmt(f),
-            RegisterTargetsErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(_inner) => {
+            RegisterTargetsErrorKind::InvalidTargetException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterTargetsErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterTargetsErrorKind::TooManyTargetsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterTargetsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RegisterTargetsErrorKind::TooManyTargetsException(_inner) => _inner.fmt(f),
-            RegisterTargetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1671,85 +1719,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterTargetsError {
 }
 impl RegisterTargetsError {
     /// Creates a new `RegisterTargetsError`.
-    pub fn new(kind: RegisterTargetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterTargetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterTargetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterTargetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterTargetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterTargetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterTargetsErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterTargetsErrorKind::InvalidTargetException(_)
-        )
+        matches!(&self.kind, RegisterTargetsErrorKind::InvalidTargetException(_))
     }
     /// Returns `true` if the error kind is `RegisterTargetsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterTargetsErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, RegisterTargetsErrorKind::TargetGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(_)
-        )
+        matches!(&self.kind, RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(_))
     }
     /// Returns `true` if the error kind is `RegisterTargetsErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterTargetsErrorKind::TooManyTargetsException(_)
-        )
+        matches!(&self.kind, RegisterTargetsErrorKind::TooManyTargetsException(_))
     }
 }
 impl std::error::Error for RegisterTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterTargetsErrorKind::InvalidTargetException(_inner) => Some(_inner),
-            RegisterTargetsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(_inner) => {
+            RegisterTargetsErrorKind::InvalidTargetException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterTargetsErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterTargetsErrorKind::TooManyTargetsException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterTargetsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RegisterTargetsErrorKind::TooManyTargetsException(_inner) => Some(_inner),
-            RegisterTargetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1757,22 +1801,20 @@ impl std::error::Error for RegisterTargetsError {
 /// <p>You've reached the limit on the number of targets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyTargetsException {
+pub struct TooManyTargetsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyTargetsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyTargetsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTargetsException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1782,7 +1824,7 @@ impl std::fmt::Display for TooManyTargetsException {
 impl std::error::Error for TooManyTargetsException {}
 /// See [`TooManyTargetsException`](crate::error::TooManyTargetsException).
 pub mod too_many_targets_exception {
-
+    
     /// A builder for [`TooManyTargetsException`](crate::error::TooManyTargetsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1796,16 +1838,18 @@ pub mod too_many_targets_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyTargetsException`](crate::error::TooManyTargetsException).
         pub fn build(self) -> crate::error::TooManyTargetsException {
             crate::error::TooManyTargetsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyTargetsException {
     /// Creates a new builder-style object to manufacture [`TooManyTargetsException`](crate::error::TooManyTargetsException).
@@ -1817,22 +1861,20 @@ impl TooManyTargetsException {
 /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyRegistrationsForTargetIdException {
+pub struct TooManyRegistrationsForTargetIdException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyRegistrationsForTargetIdException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyRegistrationsForTargetIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRegistrationsForTargetIdException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1842,7 +1884,7 @@ impl std::fmt::Display for TooManyRegistrationsForTargetIdException {
 impl std::error::Error for TooManyRegistrationsForTargetIdException {}
 /// See [`TooManyRegistrationsForTargetIdException`](crate::error::TooManyRegistrationsForTargetIdException).
 pub mod too_many_registrations_for_target_id_exception {
-
+    
     /// A builder for [`TooManyRegistrationsForTargetIdException`](crate::error::TooManyRegistrationsForTargetIdException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1856,16 +1898,18 @@ pub mod too_many_registrations_for_target_id_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyRegistrationsForTargetIdException`](crate::error::TooManyRegistrationsForTargetIdException).
         pub fn build(self) -> crate::error::TooManyRegistrationsForTargetIdException {
             crate::error::TooManyRegistrationsForTargetIdException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyRegistrationsForTargetIdException {
     /// Creates a new builder-style object to manufacture [`TooManyRegistrationsForTargetIdException`](crate::error::TooManyRegistrationsForTargetIdException).
@@ -1877,22 +1921,20 @@ impl TooManyRegistrationsForTargetIdException {
 /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an unsupported instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTargetException {
+pub struct InvalidTargetException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTargetException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTargetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -1902,7 +1944,7 @@ impl std::fmt::Display for InvalidTargetException {
 impl std::error::Error for InvalidTargetException {}
 /// See [`InvalidTargetException`](crate::error::InvalidTargetException).
 pub mod invalid_target_exception {
-
+    
     /// A builder for [`InvalidTargetException`](crate::error::InvalidTargetException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1916,16 +1958,18 @@ pub mod invalid_target_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTargetException`](crate::error::InvalidTargetException).
         pub fn build(self) -> crate::error::InvalidTargetException {
             crate::error::InvalidTargetException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTargetException {
     /// Creates a new builder-style object to manufacture [`InvalidTargetException`](crate::error::InvalidTargetException).
@@ -1939,17 +1983,15 @@ impl InvalidTargetException {
 #[derive(std::fmt::Debug)]
 pub struct ModifyTargetGroupAttributesError {
     /// Kind of error that occurred.
-    pub kind: ModifyTargetGroupAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyTargetGroupAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyTargetGroupAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1961,26 +2003,28 @@ pub enum ModifyTargetGroupAttributesErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyTargetGroupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(_inner) => {
+            ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyTargetGroupAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyTargetGroupAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1994,75 +2038,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyTargetGroupAttributesEr
 }
 impl ModifyTargetGroupAttributesError {
     /// Creates a new `ModifyTargetGroupAttributesError`.
-    pub fn new(kind: ModifyTargetGroupAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyTargetGroupAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyTargetGroupAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyTargetGroupAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyTargetGroupAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyTargetGroupAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_))
     }
 }
 impl std::error::Error for ModifyTargetGroupAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(_inner) => {
+            ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyTargetGroupAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            ModifyTargetGroupAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2072,15 +2108,15 @@ impl std::error::Error for ModifyTargetGroupAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct ModifyTargetGroupError {
     /// Kind of error that occurred.
-    pub kind: ModifyTargetGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyTargetGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyTargetGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2092,24 +2128,28 @@ pub enum ModifyTargetGroupErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyTargetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(_inner) => {
+            ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyTargetGroupErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyTargetGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyTargetGroupErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            ModifyTargetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2123,69 +2163,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyTargetGroupError {
 }
 impl ModifyTargetGroupError {
     /// Creates a new `ModifyTargetGroupError`.
-    pub fn new(kind: ModifyTargetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyTargetGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyTargetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyTargetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyTargetGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyTargetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyTargetGroupErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `ModifyTargetGroupErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyTargetGroupErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyTargetGroupErrorKind::TargetGroupNotFoundException(_))
     }
 }
 impl std::error::Error for ModifyTargetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(_inner) => {
+            ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyTargetGroupErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyTargetGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyTargetGroupErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            ModifyTargetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2195,15 +2233,15 @@ impl std::error::Error for ModifyTargetGroupError {
 #[derive(std::fmt::Debug)]
 pub struct ModifyRuleError {
     /// Kind of error that occurred.
-    pub kind: ModifyRuleErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyRuleErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyRuleError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2226,44 +2264,62 @@ pub enum ModifyRuleErrorKind {
     /// <p>You've reached the limit on the number of actions per rule.</p>
     TooManyActionsException(crate::error::TooManyActionsException),
     /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
-    TooManyRegistrationsForTargetIdException(
-        crate::error::TooManyRegistrationsForTargetIdException,
-    ),
+    TooManyRegistrationsForTargetIdException(crate::error::TooManyRegistrationsForTargetIdException),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
     /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
-    TooManyUniqueTargetGroupsPerLoadBalancerException(
-        crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
-    ),
+    TooManyUniqueTargetGroupsPerLoadBalancerException(crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyRuleErrorKind::IncompatibleProtocolsException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::InvalidLoadBalancerActionException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::RuleNotFoundException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::TargetGroupAssociationLimitException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::TooManyActionsException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::TooManyTargetsException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
+            ModifyRuleErrorKind::IncompatibleProtocolsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::InvalidLoadBalancerActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::RuleNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::TargetGroupAssociationLimitException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::TooManyActionsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::TooManyTargetsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::UnsupportedProtocolException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyRuleErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyRuleErrorKind::UnsupportedProtocolException(_inner) => _inner.fmt(f),
-            ModifyRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2277,66 +2333,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyRuleError {
 }
 impl ModifyRuleError {
     /// Creates a new `ModifyRuleError`.
-    pub fn new(kind: ModifyRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyRuleError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyRuleError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::IncompatibleProtocolsException`.
     pub fn is_incompatible_protocols_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyRuleErrorKind::IncompatibleProtocolsException(_)
-        )
+        matches!(&self.kind, ModifyRuleErrorKind::IncompatibleProtocolsException(_))
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::InvalidLoadBalancerActionException`.
     pub fn is_invalid_load_balancer_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyRuleErrorKind::InvalidLoadBalancerActionException(_)
-        )
+        matches!(&self.kind, ModifyRuleErrorKind::InvalidLoadBalancerActionException(_))
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyRuleErrorKind::OperationNotPermittedException(_)
-        )
+        matches!(&self.kind, ModifyRuleErrorKind::OperationNotPermittedException(_))
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
@@ -2344,17 +2391,11 @@ impl ModifyRuleError {
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::TargetGroupAssociationLimitException`.
     pub fn is_target_group_association_limit_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyRuleErrorKind::TargetGroupAssociationLimitException(_)
-        )
+        matches!(&self.kind, ModifyRuleErrorKind::TargetGroupAssociationLimitException(_))
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyRuleErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyRuleErrorKind::TargetGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::TooManyActionsException`.
     pub fn is_too_many_actions_exception(&self) -> bool {
@@ -2362,10 +2403,7 @@ impl ModifyRuleError {
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(_)
-        )
+        matches!(&self.kind, ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(_))
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
@@ -2373,36 +2411,52 @@ impl ModifyRuleError {
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_)
-        )
+        matches!(&self.kind, ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_))
     }
     /// Returns `true` if the error kind is `ModifyRuleErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyRuleErrorKind::UnsupportedProtocolException(_)
-        )
+        matches!(&self.kind, ModifyRuleErrorKind::UnsupportedProtocolException(_))
     }
 }
 impl std::error::Error for ModifyRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyRuleErrorKind::IncompatibleProtocolsException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::InvalidLoadBalancerActionException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::TargetGroupAssociationLimitException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::TooManyActionsException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::TooManyTargetsException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
+            ModifyRuleErrorKind::IncompatibleProtocolsException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::InvalidLoadBalancerActionException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::RuleNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::TargetGroupAssociationLimitException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::TooManyActionsException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::TooManyTargetsException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::UnsupportedProtocolException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyRuleErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyRuleErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2410,22 +2464,20 @@ impl std::error::Error for ModifyRuleError {
 /// <p>The specified protocol is not supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedProtocolException {
+pub struct UnsupportedProtocolException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedProtocolException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedProtocolException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedProtocolException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -2435,7 +2487,7 @@ impl std::fmt::Display for UnsupportedProtocolException {
 impl std::error::Error for UnsupportedProtocolException {}
 /// See [`UnsupportedProtocolException`](crate::error::UnsupportedProtocolException).
 pub mod unsupported_protocol_exception {
-
+    
     /// A builder for [`UnsupportedProtocolException`](crate::error::UnsupportedProtocolException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2449,16 +2501,18 @@ pub mod unsupported_protocol_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedProtocolException`](crate::error::UnsupportedProtocolException).
         pub fn build(self) -> crate::error::UnsupportedProtocolException {
             crate::error::UnsupportedProtocolException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedProtocolException {
     /// Creates a new builder-style object to manufacture [`UnsupportedProtocolException`](crate::error::UnsupportedProtocolException).
@@ -2470,22 +2524,20 @@ impl UnsupportedProtocolException {
 /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyUniqueTargetGroupsPerLoadBalancerException {
+pub struct TooManyUniqueTargetGroupsPerLoadBalancerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyUniqueTargetGroupsPerLoadBalancerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyUniqueTargetGroupsPerLoadBalancerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyUniqueTargetGroupsPerLoadBalancerException")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -2495,7 +2547,7 @@ impl std::fmt::Display for TooManyUniqueTargetGroupsPerLoadBalancerException {
 impl std::error::Error for TooManyUniqueTargetGroupsPerLoadBalancerException {}
 /// See [`TooManyUniqueTargetGroupsPerLoadBalancerException`](crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException).
 pub mod too_many_unique_target_groups_per_load_balancer_exception {
-
+    
     /// A builder for [`TooManyUniqueTargetGroupsPerLoadBalancerException`](crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2509,21 +2561,22 @@ pub mod too_many_unique_target_groups_per_load_balancer_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyUniqueTargetGroupsPerLoadBalancerException`](crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException).
         pub fn build(self) -> crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException {
             crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyUniqueTargetGroupsPerLoadBalancerException {
     /// Creates a new builder-style object to manufacture [`TooManyUniqueTargetGroupsPerLoadBalancerException`](crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException).
-    pub fn builder(
-    ) -> crate::error::too_many_unique_target_groups_per_load_balancer_exception::Builder {
+    pub fn builder() -> crate::error::too_many_unique_target_groups_per_load_balancer_exception::Builder {
         crate::error::too_many_unique_target_groups_per_load_balancer_exception::Builder::default()
     }
 }
@@ -2531,22 +2584,20 @@ impl TooManyUniqueTargetGroupsPerLoadBalancerException {
 /// <p>You've reached the limit on the number of actions per rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyActionsException {
+pub struct TooManyActionsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyActionsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyActionsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyActionsException")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -2556,7 +2607,7 @@ impl std::fmt::Display for TooManyActionsException {
 impl std::error::Error for TooManyActionsException {}
 /// See [`TooManyActionsException`](crate::error::TooManyActionsException).
 pub mod too_many_actions_exception {
-
+    
     /// A builder for [`TooManyActionsException`](crate::error::TooManyActionsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2570,16 +2621,18 @@ pub mod too_many_actions_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyActionsException`](crate::error::TooManyActionsException).
         pub fn build(self) -> crate::error::TooManyActionsException {
             crate::error::TooManyActionsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyActionsException {
     /// Creates a new builder-style object to manufacture [`TooManyActionsException`](crate::error::TooManyActionsException).
@@ -2591,22 +2644,20 @@ impl TooManyActionsException {
 /// <p>You've reached the limit on the number of load balancers per target group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetGroupAssociationLimitException {
+pub struct TargetGroupAssociationLimitException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TargetGroupAssociationLimitException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TargetGroupAssociationLimitException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetGroupAssociationLimitException")?;
         if let Some(inner_20) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_20)?;
             }
         }
@@ -2616,7 +2667,7 @@ impl std::fmt::Display for TargetGroupAssociationLimitException {
 impl std::error::Error for TargetGroupAssociationLimitException {}
 /// See [`TargetGroupAssociationLimitException`](crate::error::TargetGroupAssociationLimitException).
 pub mod target_group_association_limit_exception {
-
+    
     /// A builder for [`TargetGroupAssociationLimitException`](crate::error::TargetGroupAssociationLimitException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2630,16 +2681,18 @@ pub mod target_group_association_limit_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TargetGroupAssociationLimitException`](crate::error::TargetGroupAssociationLimitException).
         pub fn build(self) -> crate::error::TargetGroupAssociationLimitException {
             crate::error::TargetGroupAssociationLimitException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetGroupAssociationLimitException {
     /// Creates a new builder-style object to manufacture [`TargetGroupAssociationLimitException`](crate::error::TargetGroupAssociationLimitException).
@@ -2651,22 +2704,20 @@ impl TargetGroupAssociationLimitException {
 /// <p>The requested action is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidLoadBalancerActionException {
+pub struct InvalidLoadBalancerActionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidLoadBalancerActionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidLoadBalancerActionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLoadBalancerActionException")?;
         if let Some(inner_21) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_21)?;
             }
         }
@@ -2676,7 +2727,7 @@ impl std::fmt::Display for InvalidLoadBalancerActionException {
 impl std::error::Error for InvalidLoadBalancerActionException {}
 /// See [`InvalidLoadBalancerActionException`](crate::error::InvalidLoadBalancerActionException).
 pub mod invalid_load_balancer_action_exception {
-
+    
     /// A builder for [`InvalidLoadBalancerActionException`](crate::error::InvalidLoadBalancerActionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2690,16 +2741,18 @@ pub mod invalid_load_balancer_action_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidLoadBalancerActionException`](crate::error::InvalidLoadBalancerActionException).
         pub fn build(self) -> crate::error::InvalidLoadBalancerActionException {
             crate::error::InvalidLoadBalancerActionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidLoadBalancerActionException {
     /// Creates a new builder-style object to manufacture [`InvalidLoadBalancerActionException`](crate::error::InvalidLoadBalancerActionException).
@@ -2711,22 +2764,20 @@ impl InvalidLoadBalancerActionException {
 /// <p>The specified configuration is not valid with this protocol.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncompatibleProtocolsException {
+pub struct IncompatibleProtocolsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IncompatibleProtocolsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IncompatibleProtocolsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncompatibleProtocolsException")?;
         if let Some(inner_22) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_22)?;
             }
         }
@@ -2736,7 +2787,7 @@ impl std::fmt::Display for IncompatibleProtocolsException {
 impl std::error::Error for IncompatibleProtocolsException {}
 /// See [`IncompatibleProtocolsException`](crate::error::IncompatibleProtocolsException).
 pub mod incompatible_protocols_exception {
-
+    
     /// A builder for [`IncompatibleProtocolsException`](crate::error::IncompatibleProtocolsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2750,16 +2801,18 @@ pub mod incompatible_protocols_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IncompatibleProtocolsException`](crate::error::IncompatibleProtocolsException).
         pub fn build(self) -> crate::error::IncompatibleProtocolsException {
             crate::error::IncompatibleProtocolsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IncompatibleProtocolsException {
     /// Creates a new builder-style object to manufacture [`IncompatibleProtocolsException`](crate::error::IncompatibleProtocolsException).
@@ -2773,17 +2826,15 @@ impl IncompatibleProtocolsException {
 #[derive(std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesError {
     /// Kind of error that occurred.
-    pub kind: ModifyLoadBalancerAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyLoadBalancerAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyLoadBalancerAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2795,26 +2846,28 @@ pub enum ModifyLoadBalancerAttributesErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyLoadBalancerAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(_inner) => {
+            ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyLoadBalancerAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyLoadBalancerAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2828,75 +2881,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyLoadBalancerAttributesE
 }
 impl ModifyLoadBalancerAttributesError {
     /// Creates a new `ModifyLoadBalancerAttributesError`.
-    pub fn new(kind: ModifyLoadBalancerAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyLoadBalancerAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyLoadBalancerAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyLoadBalancerAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyLoadBalancerAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyLoadBalancerAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_))
     }
 }
 impl std::error::Error for ModifyLoadBalancerAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(_inner) => {
+            ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyLoadBalancerAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            ModifyLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2906,15 +2951,15 @@ impl std::error::Error for ModifyLoadBalancerAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct ModifyListenerError {
     /// Kind of error that occurred.
-    pub kind: ModifyListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2949,52 +2994,80 @@ pub enum ModifyListenerErrorKind {
     /// <p>You've reached the limit on the number of listeners per load balancer.</p>
     TooManyListenersException(crate::error::TooManyListenersException),
     /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
-    TooManyRegistrationsForTargetIdException(
-        crate::error::TooManyRegistrationsForTargetIdException,
-    ),
+    TooManyRegistrationsForTargetIdException(crate::error::TooManyRegistrationsForTargetIdException),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
     /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
-    TooManyUniqueTargetGroupsPerLoadBalancerException(
-        crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
-    ),
+    TooManyUniqueTargetGroupsPerLoadBalancerException(crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyListenerErrorKind::AlpnPolicyNotSupportedException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::CertificateNotFoundException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::DuplicateListenerException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::IncompatibleProtocolsException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::InvalidConfigurationRequestException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::InvalidLoadBalancerActionException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::SslPolicyNotFoundException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::TargetGroupAssociationLimitException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::TooManyActionsException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::TooManyCertificatesException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::TooManyListenersException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(_inner) => {
+            ModifyListenerErrorKind::AlpnPolicyNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::CertificateNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::DuplicateListenerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::IncompatibleProtocolsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::InvalidLoadBalancerActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::SslPolicyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::TargetGroupAssociationLimitException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::TooManyActionsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::TooManyCertificatesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::TooManyListenersException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::TooManyTargetsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::UnsupportedProtocolException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyListenerErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyListenerErrorKind::TooManyTargetsException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyListenerErrorKind::UnsupportedProtocolException(_inner) => _inner.fmt(f),
-            ModifyListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3008,191 +3081,172 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyListenerError {
 }
 impl ModifyListenerError {
     /// Creates a new `ModifyListenerError`.
-    pub fn new(kind: ModifyListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::AlpnPolicyNotSupportedException`.
     pub fn is_alpn_policy_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::AlpnPolicyNotSupportedException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::AlpnPolicyNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::CertificateNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::CertificateNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::DuplicateListenerException`.
     pub fn is_duplicate_listener_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::DuplicateListenerException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::DuplicateListenerException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::IncompatibleProtocolsException`.
     pub fn is_incompatible_protocols_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::IncompatibleProtocolsException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::IncompatibleProtocolsException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::InvalidLoadBalancerActionException`.
     pub fn is_invalid_load_balancer_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::InvalidLoadBalancerActionException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::InvalidLoadBalancerActionException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::SslPolicyNotFoundException`.
     pub fn is_ssl_policy_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::SslPolicyNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::SslPolicyNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::TargetGroupAssociationLimitException`.
     pub fn is_target_group_association_limit_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::TargetGroupAssociationLimitException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::TargetGroupAssociationLimitException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::TargetGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyActionsException`.
     pub fn is_too_many_actions_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::TooManyActionsException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::TooManyActionsException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyCertificatesException`.
     pub fn is_too_many_certificates_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::TooManyCertificatesException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::TooManyCertificatesException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyListenersException`.
     pub fn is_too_many_listeners_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::TooManyListenersException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::TooManyListenersException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::TooManyTargetsException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::TooManyTargetsException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_))
     }
     /// Returns `true` if the error kind is `ModifyListenerErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyListenerErrorKind::UnsupportedProtocolException(_)
-        )
+        matches!(&self.kind, ModifyListenerErrorKind::UnsupportedProtocolException(_))
     }
 }
 impl std::error::Error for ModifyListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyListenerErrorKind::AlpnPolicyNotSupportedException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::CertificateNotFoundException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::DuplicateListenerException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::IncompatibleProtocolsException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::InvalidConfigurationRequestException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::InvalidLoadBalancerActionException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::SslPolicyNotFoundException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::TargetGroupAssociationLimitException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::TooManyActionsException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::TooManyCertificatesException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::TooManyListenersException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(_inner) => {
+            ModifyListenerErrorKind::AlpnPolicyNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::CertificateNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::DuplicateListenerException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::IncompatibleProtocolsException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::InvalidLoadBalancerActionException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::SslPolicyNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::TargetGroupAssociationLimitException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::TooManyActionsException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::TooManyCertificatesException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::TooManyListenersException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::TooManyTargetsException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::UnsupportedProtocolException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyListenerErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyListenerErrorKind::TooManyTargetsException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
-                Some(_inner)
-            }
-            ModifyListenerErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3200,22 +3254,20 @@ impl std::error::Error for ModifyListenerError {
 /// <p>You've reached the limit on the number of listeners per load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyListenersException {
+pub struct TooManyListenersException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyListenersException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyListenersException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyListenersException")?;
         if let Some(inner_23) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_23)?;
             }
         }
@@ -3225,7 +3277,7 @@ impl std::fmt::Display for TooManyListenersException {
 impl std::error::Error for TooManyListenersException {}
 /// See [`TooManyListenersException`](crate::error::TooManyListenersException).
 pub mod too_many_listeners_exception {
-
+    
     /// A builder for [`TooManyListenersException`](crate::error::TooManyListenersException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3239,16 +3291,18 @@ pub mod too_many_listeners_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyListenersException`](crate::error::TooManyListenersException).
         pub fn build(self) -> crate::error::TooManyListenersException {
             crate::error::TooManyListenersException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyListenersException {
     /// Creates a new builder-style object to manufacture [`TooManyListenersException`](crate::error::TooManyListenersException).
@@ -3260,22 +3314,20 @@ impl TooManyListenersException {
 /// <p>You've reached the limit on the number of certificates per load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyCertificatesException {
+pub struct TooManyCertificatesException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyCertificatesException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyCertificatesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCertificatesException")?;
         if let Some(inner_24) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_24)?;
             }
         }
@@ -3285,7 +3337,7 @@ impl std::fmt::Display for TooManyCertificatesException {
 impl std::error::Error for TooManyCertificatesException {}
 /// See [`TooManyCertificatesException`](crate::error::TooManyCertificatesException).
 pub mod too_many_certificates_exception {
-
+    
     /// A builder for [`TooManyCertificatesException`](crate::error::TooManyCertificatesException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3299,16 +3351,18 @@ pub mod too_many_certificates_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyCertificatesException`](crate::error::TooManyCertificatesException).
         pub fn build(self) -> crate::error::TooManyCertificatesException {
             crate::error::TooManyCertificatesException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyCertificatesException {
     /// Creates a new builder-style object to manufacture [`TooManyCertificatesException`](crate::error::TooManyCertificatesException).
@@ -3320,22 +3374,20 @@ impl TooManyCertificatesException {
 /// <p>The specified SSL policy does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SslPolicyNotFoundException {
+pub struct SslPolicyNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SslPolicyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SslPolicyNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SslPolicyNotFoundException [SSLPolicyNotFoundException]")?;
         if let Some(inner_25) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_25)?;
             }
         }
@@ -3345,7 +3397,7 @@ impl std::fmt::Display for SslPolicyNotFoundException {
 impl std::error::Error for SslPolicyNotFoundException {}
 /// See [`SslPolicyNotFoundException`](crate::error::SslPolicyNotFoundException).
 pub mod ssl_policy_not_found_exception {
-
+    
     /// A builder for [`SslPolicyNotFoundException`](crate::error::SslPolicyNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3359,16 +3411,18 @@ pub mod ssl_policy_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SslPolicyNotFoundException`](crate::error::SslPolicyNotFoundException).
         pub fn build(self) -> crate::error::SslPolicyNotFoundException {
             crate::error::SslPolicyNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SslPolicyNotFoundException {
     /// Creates a new builder-style object to manufacture [`SslPolicyNotFoundException`](crate::error::SslPolicyNotFoundException).
@@ -3380,22 +3434,20 @@ impl SslPolicyNotFoundException {
 /// <p>A listener with the specified port already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateListenerException {
+pub struct DuplicateListenerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateListenerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateListenerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateListenerException")?;
         if let Some(inner_26) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_26)?;
             }
         }
@@ -3405,7 +3457,7 @@ impl std::fmt::Display for DuplicateListenerException {
 impl std::error::Error for DuplicateListenerException {}
 /// See [`DuplicateListenerException`](crate::error::DuplicateListenerException).
 pub mod duplicate_listener_exception {
-
+    
     /// A builder for [`DuplicateListenerException`](crate::error::DuplicateListenerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3419,16 +3471,18 @@ pub mod duplicate_listener_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateListenerException`](crate::error::DuplicateListenerException).
         pub fn build(self) -> crate::error::DuplicateListenerException {
             crate::error::DuplicateListenerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateListenerException {
     /// Creates a new builder-style object to manufacture [`DuplicateListenerException`](crate::error::DuplicateListenerException).
@@ -3440,22 +3494,20 @@ impl DuplicateListenerException {
 /// <p>The specified certificate does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CertificateNotFoundException {
+pub struct CertificateNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CertificateNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CertificateNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateNotFoundException")?;
         if let Some(inner_27) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_27)?;
             }
         }
@@ -3465,7 +3517,7 @@ impl std::fmt::Display for CertificateNotFoundException {
 impl std::error::Error for CertificateNotFoundException {}
 /// See [`CertificateNotFoundException`](crate::error::CertificateNotFoundException).
 pub mod certificate_not_found_exception {
-
+    
     /// A builder for [`CertificateNotFoundException`](crate::error::CertificateNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3479,16 +3531,18 @@ pub mod certificate_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CertificateNotFoundException`](crate::error::CertificateNotFoundException).
         pub fn build(self) -> crate::error::CertificateNotFoundException {
             crate::error::CertificateNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CertificateNotFoundException {
     /// Creates a new builder-style object to manufacture [`CertificateNotFoundException`](crate::error::CertificateNotFoundException).
@@ -3500,25 +3554,20 @@ impl CertificateNotFoundException {
 /// <p>The specified ALPN policy is not supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlpnPolicyNotSupportedException {
+pub struct AlpnPolicyNotSupportedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AlpnPolicyNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AlpnPolicyNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "AlpnPolicyNotSupportedException [ALPNPolicyNotSupportedException]"
-        )?;
+        write!(f, "AlpnPolicyNotSupportedException [ALPNPolicyNotSupportedException]")?;
         if let Some(inner_28) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_28)?;
             }
         }
@@ -3528,7 +3577,7 @@ impl std::fmt::Display for AlpnPolicyNotSupportedException {
 impl std::error::Error for AlpnPolicyNotSupportedException {}
 /// See [`AlpnPolicyNotSupportedException`](crate::error::AlpnPolicyNotSupportedException).
 pub mod alpn_policy_not_supported_exception {
-
+    
     /// A builder for [`AlpnPolicyNotSupportedException`](crate::error::AlpnPolicyNotSupportedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3542,16 +3591,18 @@ pub mod alpn_policy_not_supported_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AlpnPolicyNotSupportedException`](crate::error::AlpnPolicyNotSupportedException).
         pub fn build(self) -> crate::error::AlpnPolicyNotSupportedException {
             crate::error::AlpnPolicyNotSupportedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AlpnPolicyNotSupportedException {
     /// Creates a new builder-style object to manufacture [`AlpnPolicyNotSupportedException`](crate::error::AlpnPolicyNotSupportedException).
@@ -3565,15 +3616,15 @@ impl AlpnPolicyNotSupportedException {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTargetHealthError {
     /// Kind of error that occurred.
-    pub kind: DescribeTargetHealthErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTargetHealthErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTargetHealthError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTargetHealthErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3587,23 +3638,31 @@ pub enum DescribeTargetHealthErrorKind {
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTargetHealthError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTargetHealthErrorKind::HealthUnavailableException(_inner) => _inner.fmt(f),
-            DescribeTargetHealthErrorKind::InvalidTargetException(_inner) => _inner.fmt(f),
-            DescribeTargetHealthErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTargetHealthErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTargetHealthErrorKind::HealthUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTargetHealthErrorKind::InvalidTargetException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTargetHealthErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTargetHealthErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3617,79 +3676,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTargetHealthError {
 }
 impl DescribeTargetHealthError {
     /// Creates a new `DescribeTargetHealthError`.
-    pub fn new(kind: DescribeTargetHealthErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTargetHealthError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTargetHealthErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTargetHealthError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTargetHealthErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTargetHealthErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTargetHealthError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTargetHealthErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTargetHealthError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTargetHealthErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTargetHealthErrorKind::HealthUnavailableException`.
     pub fn is_health_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTargetHealthErrorKind::HealthUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeTargetHealthErrorKind::HealthUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeTargetHealthErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTargetHealthErrorKind::InvalidTargetException(_)
-        )
+        matches!(&self.kind, DescribeTargetHealthErrorKind::InvalidTargetException(_))
     }
     /// Returns `true` if the error kind is `DescribeTargetHealthErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTargetHealthErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTargetHealthErrorKind::TargetGroupNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeTargetHealthError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTargetHealthErrorKind::HealthUnavailableException(_inner) => Some(_inner),
-            DescribeTargetHealthErrorKind::InvalidTargetException(_inner) => Some(_inner),
-            DescribeTargetHealthErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            DescribeTargetHealthErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTargetHealthErrorKind::HealthUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTargetHealthErrorKind::InvalidTargetException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTargetHealthErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTargetHealthErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3697,22 +3751,20 @@ impl std::error::Error for DescribeTargetHealthError {
 /// <p>The health of the specified targets could not be retrieved due to an internal error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HealthUnavailableException {
+pub struct HealthUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl HealthUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for HealthUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HealthUnavailableException")?;
         if let Some(inner_29) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_29)?;
             }
         }
@@ -3722,7 +3774,7 @@ impl std::fmt::Display for HealthUnavailableException {
 impl std::error::Error for HealthUnavailableException {}
 /// See [`HealthUnavailableException`](crate::error::HealthUnavailableException).
 pub mod health_unavailable_exception {
-
+    
     /// A builder for [`HealthUnavailableException`](crate::error::HealthUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3736,16 +3788,18 @@ pub mod health_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`HealthUnavailableException`](crate::error::HealthUnavailableException).
         pub fn build(self) -> crate::error::HealthUnavailableException {
             crate::error::HealthUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl HealthUnavailableException {
     /// Creates a new builder-style object to manufacture [`HealthUnavailableException`](crate::error::HealthUnavailableException).
@@ -3759,15 +3813,15 @@ impl HealthUnavailableException {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTargetGroupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeTargetGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTargetGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTargetGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3779,22 +3833,28 @@ pub enum DescribeTargetGroupsErrorKind {
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTargetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTargetGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTargetGroupsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3808,71 +3868,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTargetGroupsError {
 }
 impl DescribeTargetGroupsError {
     /// Creates a new `DescribeTargetGroupsError`.
-    pub fn new(kind: DescribeTargetGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTargetGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTargetGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTargetGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTargetGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTargetGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeTargetGroupsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeTargetGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            DescribeTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTargetGroupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3882,17 +3938,15 @@ impl std::error::Error for DescribeTargetGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTargetGroupAttributesError {
     /// Kind of error that occurred.
-    pub kind: DescribeTargetGroupAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTargetGroupAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTargetGroupAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3902,23 +3956,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeTargetGroupAttrib
 pub enum DescribeTargetGroupAttributesErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTargetGroupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) => {
+            DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTargetGroupAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeTargetGroupAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3932,68 +3988,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTargetGroupAttributes
 }
 impl DescribeTargetGroupAttributesError {
     /// Creates a new `DescribeTargetGroupAttributesError`.
-    pub fn new(
-        kind: DescribeTargetGroupAttributesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTargetGroupAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTargetGroupAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTargetGroupAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTargetGroupAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTargetGroupAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeTargetGroupAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) => {
+            DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTargetGroupAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeTargetGroupAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4003,15 +4051,15 @@ impl std::error::Error for DescribeTargetGroupAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTagsError {
     /// Kind of error that occurred.
-    pub kind: DescribeTagsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTagsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTagsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4027,24 +4075,34 @@ pub enum DescribeTagsErrorKind {
     RuleNotFoundException(crate::error::RuleNotFoundException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTagsErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTagsErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTagsErrorKind::RuleNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTagsErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTagsErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTagsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTagsErrorKind::RuleNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTagsErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTagsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4058,59 +4116,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTagsError {
 }
 impl DescribeTagsError {
     /// Creates a new `DescribeTagsError`.
-    pub fn new(kind: DescribeTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTagsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTagsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTagsErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTagsErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeTagsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTagsErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTagsErrorKind::LoadBalancerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeTagsErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
@@ -4118,20 +4170,27 @@ impl DescribeTagsError {
     }
     /// Returns `true` if the error kind is `DescribeTagsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTagsErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTagsErrorKind::TargetGroupNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTagsErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTagsErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTagsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTagsErrorKind::RuleNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTagsErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTagsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4141,15 +4200,15 @@ impl std::error::Error for DescribeTagsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeSSLPoliciesError {
     /// Kind of error that occurred.
-    pub kind: DescribeSSLPoliciesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeSSLPoliciesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeSSLPoliciesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeSSLPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4159,21 +4218,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeSSLPoliciesError 
 pub enum DescribeSSLPoliciesErrorKind {
     /// <p>The specified SSL policy does not exist.</p>
     SslPolicyNotFoundException(crate::error::SslPolicyNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSSLPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(_inner) => _inner.fmt(f),
-            DescribeSSLPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSSLPoliciesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4187,59 +4250,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeSSLPoliciesError {
 }
 impl DescribeSSLPoliciesError {
     /// Creates a new `DescribeSSLPoliciesError`.
-    pub fn new(kind: DescribeSSLPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeSSLPoliciesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeSSLPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeSSLPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeSSLPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeSSLPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeSSLPoliciesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeSSLPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeSSLPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeSSLPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException`.
     pub fn is_ssl_policy_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeSSLPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(_inner) => Some(_inner),
-            DescribeSSLPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSSLPoliciesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4249,15 +4313,15 @@ impl std::error::Error for DescribeSSLPoliciesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeRulesError {
     /// Kind of error that occurred.
-    pub kind: DescribeRulesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeRulesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeRulesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeRulesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4271,23 +4335,31 @@ pub enum DescribeRulesErrorKind {
     RuleNotFoundException(crate::error::RuleNotFoundException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeRulesErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            DescribeRulesErrorKind::RuleNotFoundException(_inner) => _inner.fmt(f),
-            DescribeRulesErrorKind::UnsupportedProtocolException(_inner) => _inner.fmt(f),
-            DescribeRulesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeRulesErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRulesErrorKind::RuleNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRulesErrorKind::UnsupportedProtocolException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRulesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4301,52 +4373,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeRulesError {
 }
 impl DescribeRulesError {
     /// Creates a new `DescribeRulesError`.
-    pub fn new(kind: DescribeRulesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeRulesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeRulesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeRulesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeRulesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeRulesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeRulesErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRulesErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeRulesErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeRulesErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
@@ -4354,19 +4423,24 @@ impl DescribeRulesError {
     }
     /// Returns `true` if the error kind is `DescribeRulesErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRulesErrorKind::UnsupportedProtocolException(_)
-        )
+        matches!(&self.kind, DescribeRulesErrorKind::UnsupportedProtocolException(_))
     }
 }
 impl std::error::Error for DescribeRulesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeRulesErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DescribeRulesErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            DescribeRulesErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            DescribeRulesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeRulesErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRulesErrorKind::RuleNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRulesErrorKind::UnsupportedProtocolException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRulesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4376,15 +4450,15 @@ impl std::error::Error for DescribeRulesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeLoadBalancersError {
     /// Kind of error that occurred.
-    pub kind: DescribeLoadBalancersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeLoadBalancersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeLoadBalancersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4394,21 +4468,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeLoadBalancersErro
 pub enum DescribeLoadBalancersErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            DescribeLoadBalancersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLoadBalancersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4422,63 +4500,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeLoadBalancersError {
 }
 impl DescribeLoadBalancersError {
     /// Creates a new `DescribeLoadBalancersError`.
-    pub fn new(kind: DescribeLoadBalancersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeLoadBalancersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeLoadBalancersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeLoadBalancersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeLoadBalancersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeLoadBalancersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeLoadBalancersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            DescribeLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLoadBalancersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4488,17 +4563,15 @@ impl std::error::Error for DescribeLoadBalancersError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeLoadBalancerAttributesError {
     /// Kind of error that occurred.
-    pub kind: DescribeLoadBalancerAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeLoadBalancerAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeLoadBalancerAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4508,23 +4581,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeLoadBalancerAttri
 pub enum DescribeLoadBalancerAttributesErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancerAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) => {
+            DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLoadBalancerAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeLoadBalancerAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4538,68 +4613,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeLoadBalancerAttribute
 }
 impl DescribeLoadBalancerAttributesError {
     /// Creates a new `DescribeLoadBalancerAttributesError`.
-    pub fn new(
-        kind: DescribeLoadBalancerAttributesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeLoadBalancerAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeLoadBalancerAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeLoadBalancerAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeLoadBalancerAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeLoadBalancerAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeLoadBalancerAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) => {
+            DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLoadBalancerAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4609,15 +4676,15 @@ impl std::error::Error for DescribeLoadBalancerAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeListenersError {
     /// Kind of error that occurred.
-    pub kind: DescribeListenersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeListenersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeListenersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeListenersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4631,23 +4698,31 @@ pub enum DescribeListenersErrorKind {
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeListenersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeListenersErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            DescribeListenersErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            DescribeListenersErrorKind::UnsupportedProtocolException(_inner) => _inner.fmt(f),
-            DescribeListenersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeListenersErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeListenersErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeListenersErrorKind::UnsupportedProtocolException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeListenersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4661,75 +4736,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeListenersError {
 }
 impl DescribeListenersError {
     /// Creates a new `DescribeListenersError`.
-    pub fn new(kind: DescribeListenersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeListenersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeListenersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeListenersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeListenersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeListenersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeListenersErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeListenersErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeListenersErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeListenersErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeListenersErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeListenersErrorKind::LoadBalancerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeListenersErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeListenersErrorKind::UnsupportedProtocolException(_)
-        )
+        matches!(&self.kind, DescribeListenersErrorKind::UnsupportedProtocolException(_))
     }
 }
 impl std::error::Error for DescribeListenersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeListenersErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DescribeListenersErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            DescribeListenersErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            DescribeListenersErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeListenersErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeListenersErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeListenersErrorKind::UnsupportedProtocolException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeListenersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4739,17 +4813,15 @@ impl std::error::Error for DescribeListenersError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeListenerCertificatesError {
     /// Kind of error that occurred.
-    pub kind: DescribeListenerCertificatesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeListenerCertificatesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeListenerCertificatesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4759,23 +4831,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeListenerCertifica
 pub enum DescribeListenerCertificatesErrorKind {
     /// <p>The specified listener does not exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeListenerCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeListenerCertificatesErrorKind::ListenerNotFoundException(_inner) => {
+            DescribeListenerCertificatesErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeListenerCertificatesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeListenerCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4789,65 +4863,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeListenerCertificatesE
 }
 impl DescribeListenerCertificatesError {
     /// Creates a new `DescribeListenerCertificatesError`.
-    pub fn new(kind: DescribeListenerCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeListenerCertificatesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeListenerCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeListenerCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeListenerCertificatesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeListenerCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeListenerCertificatesErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeListenerCertificatesErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeListenerCertificatesErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeListenerCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeListenerCertificatesErrorKind::ListenerNotFoundException(_inner) => {
+            DescribeListenerCertificatesErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeListenerCertificatesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4857,15 +4926,15 @@ impl std::error::Error for DescribeListenerCertificatesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAccountLimitsError {
     /// Kind of error that occurred.
-    pub kind: DescribeAccountLimitsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAccountLimitsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeAccountLimitsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4873,20 +4942,22 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeAccountLimitsErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountLimitsErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountLimitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAccountLimitsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeAccountLimitsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4900,55 +4971,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAccountLimitsError {
 }
 impl DescribeAccountLimitsError {
     /// Creates a new `DescribeAccountLimitsError`.
-    pub fn new(kind: DescribeAccountLimitsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAccountLimitsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAccountLimitsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAccountLimitsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAccountLimitsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAccountLimitsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for DescribeAccountLimitsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAccountLimitsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeAccountLimitsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4958,15 +5027,15 @@ impl std::error::Error for DescribeAccountLimitsError {
 #[derive(std::fmt::Debug)]
 pub struct DeregisterTargetsError {
     /// Kind of error that occurred.
-    pub kind: DeregisterTargetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeregisterTargetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeregisterTargetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeregisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4978,22 +5047,28 @@ pub enum DeregisterTargetsErrorKind {
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterTargetsErrorKind::InvalidTargetException(_inner) => _inner.fmt(f),
-            DeregisterTargetsErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            DeregisterTargetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeregisterTargetsErrorKind::InvalidTargetException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterTargetsErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterTargetsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5007,67 +5082,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeregisterTargetsError {
 }
 impl DeregisterTargetsError {
     /// Creates a new `DeregisterTargetsError`.
-    pub fn new(kind: DeregisterTargetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeregisterTargetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeregisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeregisterTargetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeregisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeregisterTargetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeregisterTargetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeregisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeregisterTargetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeregisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeregisterTargetsErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterTargetsErrorKind::InvalidTargetException(_)
-        )
+        matches!(&self.kind, DeregisterTargetsErrorKind::InvalidTargetException(_))
     }
     /// Returns `true` if the error kind is `DeregisterTargetsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterTargetsErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DeregisterTargetsErrorKind::TargetGroupNotFoundException(_))
     }
 }
 impl std::error::Error for DeregisterTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterTargetsErrorKind::InvalidTargetException(_inner) => Some(_inner),
-            DeregisterTargetsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            DeregisterTargetsErrorKind::Unhandled(_inner) => Some(_inner),
+            DeregisterTargetsErrorKind::InvalidTargetException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterTargetsErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterTargetsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5077,15 +5152,15 @@ impl std::error::Error for DeregisterTargetsError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteTargetGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteTargetGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteTargetGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteTargetGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5095,21 +5170,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteTargetGroupError {
 pub enum DeleteTargetGroupErrorKind {
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTargetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteTargetGroupErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteTargetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteTargetGroupErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTargetGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5123,59 +5202,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteTargetGroupError {
 }
 impl DeleteTargetGroupError {
     /// Creates a new `DeleteTargetGroupError`.
-    pub fn new(kind: DeleteTargetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteTargetGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteTargetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteTargetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteTargetGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteTargetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteTargetGroupErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTargetGroupErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteTargetGroupErrorKind::ResourceInUseException(_))
     }
 }
 impl std::error::Error for DeleteTargetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteTargetGroupErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteTargetGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteTargetGroupErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTargetGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5183,22 +5263,20 @@ impl std::error::Error for DeleteTargetGroupError {
 /// <p>A specified resource is in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInUseException {
+pub struct ResourceInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseException")?;
         if let Some(inner_30) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_30)?;
             }
         }
@@ -5208,7 +5286,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException).
 pub mod resource_in_use_exception {
-
+    
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5222,16 +5300,18 @@ pub mod resource_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException).
         pub fn build(self) -> crate::error::ResourceInUseException {
             crate::error::ResourceInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceInUseException {
     /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException).
@@ -5245,15 +5325,15 @@ impl ResourceInUseException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteRuleError {
     /// Kind of error that occurred.
-    pub kind: DeleteRuleErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteRuleErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteRuleError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5265,22 +5345,28 @@ pub enum DeleteRuleErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified rule does not exist.</p>
     RuleNotFoundException(crate::error::RuleNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRuleErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
-            DeleteRuleErrorKind::RuleNotFoundException(_inner) => _inner.fmt(f),
-            DeleteRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteRuleErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleErrorKind::RuleNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRuleErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5294,52 +5380,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteRuleError {
 }
 impl DeleteRuleError {
     /// Creates a new `DeleteRuleError`.
-    pub fn new(kind: DeleteRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteRuleError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteRuleError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteRuleErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRuleErrorKind::OperationNotPermittedException(_)
-        )
+        matches!(&self.kind, DeleteRuleErrorKind::OperationNotPermittedException(_))
     }
     /// Returns `true` if the error kind is `DeleteRuleErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
@@ -5349,9 +5432,15 @@ impl DeleteRuleError {
 impl std::error::Error for DeleteRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRuleErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
-            DeleteRuleErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            DeleteRuleErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteRuleErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleErrorKind::RuleNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRuleErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5361,15 +5450,15 @@ impl std::error::Error for DeleteRuleError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteLoadBalancerError {
     /// Kind of error that occurred.
-    pub kind: DeleteLoadBalancerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteLoadBalancerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteLoadBalancerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5383,23 +5472,31 @@ pub enum DeleteLoadBalancerErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            DeleteLoadBalancerErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
-            DeleteLoadBalancerErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteLoadBalancerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLoadBalancerErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLoadBalancerErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLoadBalancerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5413,75 +5510,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLoadBalancerError {
 }
 impl DeleteLoadBalancerError {
     /// Creates a new `DeleteLoadBalancerError`.
-    pub fn new(kind: DeleteLoadBalancerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteLoadBalancerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteLoadBalancerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteLoadBalancerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteLoadBalancerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteLoadBalancerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLoadBalancerErrorKind::OperationNotPermittedException(_)
-        )
+        matches!(&self.kind, DeleteLoadBalancerErrorKind::OperationNotPermittedException(_))
     }
     /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLoadBalancerErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteLoadBalancerErrorKind::ResourceInUseException(_))
     }
 }
 impl std::error::Error for DeleteLoadBalancerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            DeleteLoadBalancerErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
-            DeleteLoadBalancerErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLoadBalancerErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLoadBalancerErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLoadBalancerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5491,15 +5587,15 @@ impl std::error::Error for DeleteLoadBalancerError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteListenerError {
     /// Kind of error that occurred.
-    pub kind: DeleteListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5511,22 +5607,28 @@ pub enum DeleteListenerErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteListenerErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            DeleteListenerErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteListenerErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteListenerErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteListenerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5540,67 +5642,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteListenerError {
 }
 impl DeleteListenerError {
     /// Creates a new `DeleteListenerError`.
-    pub fn new(kind: DeleteListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteListenerErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteListenerErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteListenerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteListenerErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DeleteListenerErrorKind::ResourceInUseException(_))
     }
 }
 impl std::error::Error for DeleteListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DeleteListenerErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteListenerErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteListenerErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteListenerErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteListenerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5610,15 +5712,15 @@ impl std::error::Error for DeleteListenerError {
 #[derive(std::fmt::Debug)]
 pub struct CreateTargetGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateTargetGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateTargetGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateTargetGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5634,26 +5736,34 @@ pub enum CreateTargetGroupErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
     TooManyTargetGroupsException(crate::error::TooManyTargetGroupsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTargetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(_inner) => _inner.fmt(f),
-            CreateTargetGroupErrorKind::InvalidConfigurationRequestException(_inner) => {
+            CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTargetGroupErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTargetGroupErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTargetGroupErrorKind::TooManyTargetGroupsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTargetGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateTargetGroupErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreateTargetGroupErrorKind::TooManyTargetGroupsException(_inner) => _inner.fmt(f),
-            CreateTargetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5667,85 +5777,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateTargetGroupError {
 }
 impl CreateTargetGroupError {
     /// Creates a new `CreateTargetGroupError`.
-    pub fn new(kind: CreateTargetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateTargetGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateTargetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateTargetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateTargetGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateTargetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateTargetGroupErrorKind::DuplicateTargetGroupNameException`.
     pub fn is_duplicate_target_group_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(_)
-        )
+        matches!(&self.kind, CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(_))
     }
     /// Returns `true` if the error kind is `CreateTargetGroupErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTargetGroupErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, CreateTargetGroupErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateTargetGroupErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTargetGroupErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, CreateTargetGroupErrorKind::TooManyTagsException(_))
     }
     /// Returns `true` if the error kind is `CreateTargetGroupErrorKind::TooManyTargetGroupsException`.
     pub fn is_too_many_target_groups_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTargetGroupErrorKind::TooManyTargetGroupsException(_)
-        )
+        matches!(&self.kind, CreateTargetGroupErrorKind::TooManyTargetGroupsException(_))
     }
 }
 impl std::error::Error for CreateTargetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(_inner) => Some(_inner),
-            CreateTargetGroupErrorKind::InvalidConfigurationRequestException(_inner) => {
+            CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTargetGroupErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTargetGroupErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTargetGroupErrorKind::TooManyTargetGroupsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTargetGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateTargetGroupErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateTargetGroupErrorKind::TooManyTargetGroupsException(_inner) => Some(_inner),
-            CreateTargetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5753,22 +5859,20 @@ impl std::error::Error for CreateTargetGroupError {
 /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyTargetGroupsException {
+pub struct TooManyTargetGroupsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyTargetGroupsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyTargetGroupsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTargetGroupsException")?;
         if let Some(inner_31) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_31)?;
             }
         }
@@ -5778,7 +5882,7 @@ impl std::fmt::Display for TooManyTargetGroupsException {
 impl std::error::Error for TooManyTargetGroupsException {}
 /// See [`TooManyTargetGroupsException`](crate::error::TooManyTargetGroupsException).
 pub mod too_many_target_groups_exception {
-
+    
     /// A builder for [`TooManyTargetGroupsException`](crate::error::TooManyTargetGroupsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5792,16 +5896,18 @@ pub mod too_many_target_groups_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyTargetGroupsException`](crate::error::TooManyTargetGroupsException).
         pub fn build(self) -> crate::error::TooManyTargetGroupsException {
             crate::error::TooManyTargetGroupsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyTargetGroupsException {
     /// Creates a new builder-style object to manufacture [`TooManyTargetGroupsException`](crate::error::TooManyTargetGroupsException).
@@ -5813,22 +5919,20 @@ impl TooManyTargetGroupsException {
 /// <p>A target group with the specified name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateTargetGroupNameException {
+pub struct DuplicateTargetGroupNameException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateTargetGroupNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateTargetGroupNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateTargetGroupNameException")?;
         if let Some(inner_32) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_32)?;
             }
         }
@@ -5838,7 +5942,7 @@ impl std::fmt::Display for DuplicateTargetGroupNameException {
 impl std::error::Error for DuplicateTargetGroupNameException {}
 /// See [`DuplicateTargetGroupNameException`](crate::error::DuplicateTargetGroupNameException).
 pub mod duplicate_target_group_name_exception {
-
+    
     /// A builder for [`DuplicateTargetGroupNameException`](crate::error::DuplicateTargetGroupNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5852,16 +5956,18 @@ pub mod duplicate_target_group_name_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateTargetGroupNameException`](crate::error::DuplicateTargetGroupNameException).
         pub fn build(self) -> crate::error::DuplicateTargetGroupNameException {
             crate::error::DuplicateTargetGroupNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateTargetGroupNameException {
     /// Creates a new builder-style object to manufacture [`DuplicateTargetGroupNameException`](crate::error::DuplicateTargetGroupNameException).
@@ -5875,15 +5981,15 @@ impl DuplicateTargetGroupNameException {
 #[derive(std::fmt::Debug)]
 pub struct CreateRuleError {
     /// Kind of error that occurred.
-    pub kind: CreateRuleErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateRuleErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateRuleError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5908,9 +6014,7 @@ pub enum CreateRuleErrorKind {
     /// <p>You've reached the limit on the number of actions per rule.</p>
     TooManyActionsException(crate::error::TooManyActionsException),
     /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
-    TooManyRegistrationsForTargetIdException(
-        crate::error::TooManyRegistrationsForTargetIdException,
-    ),
+    TooManyRegistrationsForTargetIdException(crate::error::TooManyRegistrationsForTargetIdException),
     /// <p>You've reached the limit on the number of rules per load balancer.</p>
     TooManyRulesException(crate::error::TooManyRulesException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
@@ -5920,42 +6024,70 @@ pub enum CreateRuleErrorKind {
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
     /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
-    TooManyUniqueTargetGroupsPerLoadBalancerException(
-        crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
-    ),
+    TooManyUniqueTargetGroupsPerLoadBalancerException(crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateRuleErrorKind::IncompatibleProtocolsException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::InvalidConfigurationRequestException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::InvalidLoadBalancerActionException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::PriorityInUseException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TargetGroupAssociationLimitException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TooManyActionsException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TooManyRulesException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TooManyTargetGroupsException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TooManyTargetsException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
+            CreateRuleErrorKind::IncompatibleProtocolsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::InvalidLoadBalancerActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::PriorityInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TargetGroupAssociationLimitException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TooManyActionsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TooManyRulesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TooManyTargetGroupsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TooManyTargetsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::UnsupportedProtocolException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateRuleErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateRuleErrorKind::UnsupportedProtocolException(_inner) => _inner.fmt(f),
-            CreateRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5969,73 +6101,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateRuleError {
 }
 impl CreateRuleError {
     /// Creates a new `CreateRuleError`.
-    pub fn new(kind: CreateRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateRuleError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateRuleError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::IncompatibleProtocolsException`.
     pub fn is_incompatible_protocols_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::IncompatibleProtocolsException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::IncompatibleProtocolsException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::InvalidLoadBalancerActionException`.
     pub fn is_invalid_load_balancer_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::InvalidLoadBalancerActionException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::InvalidLoadBalancerActionException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::PriorityInUseException`.
     pub fn is_priority_in_use_exception(&self) -> bool {
@@ -6043,17 +6163,11 @@ impl CreateRuleError {
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::TargetGroupAssociationLimitException`.
     pub fn is_target_group_association_limit_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::TargetGroupAssociationLimitException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::TargetGroupAssociationLimitException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::TargetGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyActionsException`.
     pub fn is_too_many_actions_exception(&self) -> bool {
@@ -6061,10 +6175,7 @@ impl CreateRuleError {
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyRulesException`.
     pub fn is_too_many_rules_exception(&self) -> bool {
@@ -6076,10 +6187,7 @@ impl CreateRuleError {
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyTargetGroupsException`.
     pub fn is_too_many_target_groups_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::TooManyTargetGroupsException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::TooManyTargetGroupsException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
@@ -6087,40 +6195,64 @@ impl CreateRuleError {
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_))
     }
     /// Returns `true` if the error kind is `CreateRuleErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateRuleErrorKind::UnsupportedProtocolException(_)
-        )
+        matches!(&self.kind, CreateRuleErrorKind::UnsupportedProtocolException(_))
     }
 }
 impl std::error::Error for CreateRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateRuleErrorKind::IncompatibleProtocolsException(_inner) => Some(_inner),
-            CreateRuleErrorKind::InvalidConfigurationRequestException(_inner) => Some(_inner),
-            CreateRuleErrorKind::InvalidLoadBalancerActionException(_inner) => Some(_inner),
-            CreateRuleErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            CreateRuleErrorKind::PriorityInUseException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TargetGroupAssociationLimitException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TooManyActionsException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TooManyRulesException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TooManyTargetGroupsException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TooManyTargetsException(_inner) => Some(_inner),
-            CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
+            CreateRuleErrorKind::IncompatibleProtocolsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::InvalidLoadBalancerActionException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::PriorityInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TargetGroupAssociationLimitException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TooManyActionsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TooManyRulesException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TooManyTargetGroupsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TooManyTargetsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::UnsupportedProtocolException(_inner) =>
+            Some(_inner)
+            ,
+            CreateRuleErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateRuleErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            CreateRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6128,22 +6260,20 @@ impl std::error::Error for CreateRuleError {
 /// <p>You've reached the limit on the number of rules per load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyRulesException {
+pub struct TooManyRulesException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyRulesException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyRulesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRulesException")?;
         if let Some(inner_33) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_33)?;
             }
         }
@@ -6153,7 +6283,7 @@ impl std::fmt::Display for TooManyRulesException {
 impl std::error::Error for TooManyRulesException {}
 /// See [`TooManyRulesException`](crate::error::TooManyRulesException).
 pub mod too_many_rules_exception {
-
+    
     /// A builder for [`TooManyRulesException`](crate::error::TooManyRulesException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6167,16 +6297,18 @@ pub mod too_many_rules_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyRulesException`](crate::error::TooManyRulesException).
         pub fn build(self) -> crate::error::TooManyRulesException {
             crate::error::TooManyRulesException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyRulesException {
     /// Creates a new builder-style object to manufacture [`TooManyRulesException`](crate::error::TooManyRulesException).
@@ -6190,15 +6322,15 @@ impl TooManyRulesException {
 #[derive(std::fmt::Debug)]
 pub struct CreateLoadBalancerError {
     /// Kind of error that occurred.
-    pub kind: CreateLoadBalancerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateLoadBalancerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateLoadBalancerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6232,39 +6364,61 @@ pub enum CreateLoadBalancerErrorKind {
     TooManyLoadBalancersException(crate::error::TooManyLoadBalancersException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLoadBalancerErrorKind::AllocationIdNotFoundException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(_inner) => {
+            CreateLoadBalancerErrorKind::AllocationIdNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::InvalidSchemeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::InvalidSecurityGroupException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::InvalidSubnetException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::SubnetNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::TooManyLoadBalancersException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLoadBalancerErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLoadBalancerErrorKind::DuplicateTagKeysException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLoadBalancerErrorKind::InvalidSchemeException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::InvalidSecurityGroupException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::InvalidSubnetException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::SubnetNotFoundException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::TooManyLoadBalancersException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreateLoadBalancerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6278,159 +6432,144 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateLoadBalancerError {
 }
 impl CreateLoadBalancerError {
     /// Creates a new `CreateLoadBalancerError`.
-    pub fn new(kind: CreateLoadBalancerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateLoadBalancerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateLoadBalancerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateLoadBalancerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateLoadBalancerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateLoadBalancerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::AllocationIdNotFoundException`.
     pub fn is_allocation_id_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::AllocationIdNotFoundException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::AllocationIdNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException`.
     pub fn is_availability_zone_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException`.
     pub fn is_duplicate_load_balancer_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSchemeException`.
     pub fn is_invalid_scheme_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::InvalidSchemeException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::InvalidSchemeException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSecurityGroupException`.
     pub fn is_invalid_security_group_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::InvalidSecurityGroupException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::InvalidSecurityGroupException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSubnetException`.
     pub fn is_invalid_subnet_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::InvalidSubnetException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::InvalidSubnetException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::OperationNotPermittedException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::OperationNotPermittedException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::SubnetNotFoundException`.
     pub fn is_subnet_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::SubnetNotFoundException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::SubnetNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::TooManyLoadBalancersException`.
     pub fn is_too_many_load_balancers_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::TooManyLoadBalancersException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::TooManyLoadBalancersException(_))
     }
     /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLoadBalancerErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, CreateLoadBalancerErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for CreateLoadBalancerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLoadBalancerErrorKind::AllocationIdNotFoundException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(_inner) => {
+            CreateLoadBalancerErrorKind::AllocationIdNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::InvalidSchemeException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::InvalidSecurityGroupException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::InvalidSubnetException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::SubnetNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::TooManyLoadBalancersException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLoadBalancerErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(_inner) => {
-                Some(_inner)
-            }
-            CreateLoadBalancerErrorKind::InvalidSchemeException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::InvalidSecurityGroupException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::InvalidSubnetException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::SubnetNotFoundException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::TooManyLoadBalancersException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6438,22 +6577,20 @@ impl std::error::Error for CreateLoadBalancerError {
 /// <p>You've reached the limit on the number of load balancers for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyLoadBalancersException {
+pub struct TooManyLoadBalancersException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyLoadBalancersException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyLoadBalancersException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyLoadBalancersException")?;
         if let Some(inner_34) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_34)?;
             }
         }
@@ -6463,7 +6600,7 @@ impl std::fmt::Display for TooManyLoadBalancersException {
 impl std::error::Error for TooManyLoadBalancersException {}
 /// See [`TooManyLoadBalancersException`](crate::error::TooManyLoadBalancersException).
 pub mod too_many_load_balancers_exception {
-
+    
     /// A builder for [`TooManyLoadBalancersException`](crate::error::TooManyLoadBalancersException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6477,16 +6614,18 @@ pub mod too_many_load_balancers_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyLoadBalancersException`](crate::error::TooManyLoadBalancersException).
         pub fn build(self) -> crate::error::TooManyLoadBalancersException {
             crate::error::TooManyLoadBalancersException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyLoadBalancersException {
     /// Creates a new builder-style object to manufacture [`TooManyLoadBalancersException`](crate::error::TooManyLoadBalancersException).
@@ -6498,22 +6637,20 @@ impl TooManyLoadBalancersException {
 /// <p>The requested scheme is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSchemeException {
+pub struct InvalidSchemeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSchemeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSchemeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSchemeException")?;
         if let Some(inner_35) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_35)?;
             }
         }
@@ -6523,7 +6660,7 @@ impl std::fmt::Display for InvalidSchemeException {
 impl std::error::Error for InvalidSchemeException {}
 /// See [`InvalidSchemeException`](crate::error::InvalidSchemeException).
 pub mod invalid_scheme_exception {
-
+    
     /// A builder for [`InvalidSchemeException`](crate::error::InvalidSchemeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6537,16 +6674,18 @@ pub mod invalid_scheme_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSchemeException`](crate::error::InvalidSchemeException).
         pub fn build(self) -> crate::error::InvalidSchemeException {
             crate::error::InvalidSchemeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSchemeException {
     /// Creates a new builder-style object to manufacture [`InvalidSchemeException`](crate::error::InvalidSchemeException).
@@ -6558,22 +6697,20 @@ impl InvalidSchemeException {
 /// <p>A tag key was specified more than once.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateTagKeysException {
+pub struct DuplicateTagKeysException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateTagKeysException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateTagKeysException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateTagKeysException")?;
         if let Some(inner_36) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_36)?;
             }
         }
@@ -6583,7 +6720,7 @@ impl std::fmt::Display for DuplicateTagKeysException {
 impl std::error::Error for DuplicateTagKeysException {}
 /// See [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
 pub mod duplicate_tag_keys_exception {
-
+    
     /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6597,16 +6734,18 @@ pub mod duplicate_tag_keys_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
         pub fn build(self) -> crate::error::DuplicateTagKeysException {
             crate::error::DuplicateTagKeysException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateTagKeysException {
     /// Creates a new builder-style object to manufacture [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
@@ -6618,22 +6757,20 @@ impl DuplicateTagKeysException {
 /// <p>A load balancer with the specified name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateLoadBalancerNameException {
+pub struct DuplicateLoadBalancerNameException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateLoadBalancerNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateLoadBalancerNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateLoadBalancerNameException")?;
         if let Some(inner_37) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_37)?;
             }
         }
@@ -6643,7 +6780,7 @@ impl std::fmt::Display for DuplicateLoadBalancerNameException {
 impl std::error::Error for DuplicateLoadBalancerNameException {}
 /// See [`DuplicateLoadBalancerNameException`](crate::error::DuplicateLoadBalancerNameException).
 pub mod duplicate_load_balancer_name_exception {
-
+    
     /// A builder for [`DuplicateLoadBalancerNameException`](crate::error::DuplicateLoadBalancerNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6657,16 +6794,18 @@ pub mod duplicate_load_balancer_name_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateLoadBalancerNameException`](crate::error::DuplicateLoadBalancerNameException).
         pub fn build(self) -> crate::error::DuplicateLoadBalancerNameException {
             crate::error::DuplicateLoadBalancerNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateLoadBalancerNameException {
     /// Creates a new builder-style object to manufacture [`DuplicateLoadBalancerNameException`](crate::error::DuplicateLoadBalancerNameException).
@@ -6680,15 +6819,15 @@ impl DuplicateLoadBalancerNameException {
 #[derive(std::fmt::Debug)]
 pub struct CreateListenerError {
     /// Kind of error that occurred.
-    pub kind: CreateListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6723,55 +6862,85 @@ pub enum CreateListenerErrorKind {
     /// <p>You've reached the limit on the number of listeners per load balancer.</p>
     TooManyListenersException(crate::error::TooManyListenersException),
     /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
-    TooManyRegistrationsForTargetIdException(
-        crate::error::TooManyRegistrationsForTargetIdException,
-    ),
+    TooManyRegistrationsForTargetIdException(crate::error::TooManyRegistrationsForTargetIdException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
     /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
-    TooManyUniqueTargetGroupsPerLoadBalancerException(
-        crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
-    ),
+    TooManyUniqueTargetGroupsPerLoadBalancerException(crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateListenerErrorKind::AlpnPolicyNotSupportedException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::CertificateNotFoundException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::DuplicateListenerException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::IncompatibleProtocolsException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::InvalidConfigurationRequestException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::InvalidLoadBalancerActionException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::SslPolicyNotFoundException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::TargetGroupAssociationLimitException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::TooManyActionsException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::TooManyCertificatesException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::TooManyListenersException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(_inner) => {
+            CreateListenerErrorKind::AlpnPolicyNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::CertificateNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::DuplicateListenerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::IncompatibleProtocolsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::InvalidConfigurationRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::InvalidLoadBalancerActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::SslPolicyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TargetGroupAssociationLimitException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TooManyActionsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TooManyCertificatesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TooManyListenersException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TooManyTargetsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::UnsupportedProtocolException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateListenerErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::TooManyTargetsException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateListenerErrorKind::UnsupportedProtocolException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6785,143 +6954,101 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateListenerError {
 }
 impl CreateListenerError {
     /// Creates a new `CreateListenerError`.
-    pub fn new(kind: CreateListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::AlpnPolicyNotSupportedException`.
     pub fn is_alpn_policy_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::AlpnPolicyNotSupportedException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::AlpnPolicyNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::CertificateNotFoundException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::CertificateNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::DuplicateListenerException`.
     pub fn is_duplicate_listener_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::DuplicateListenerException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::DuplicateListenerException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::IncompatibleProtocolsException`.
     pub fn is_incompatible_protocols_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::IncompatibleProtocolsException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::IncompatibleProtocolsException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::InvalidConfigurationRequestException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::InvalidConfigurationRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::InvalidLoadBalancerActionException`.
     pub fn is_invalid_load_balancer_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::InvalidLoadBalancerActionException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::InvalidLoadBalancerActionException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::LoadBalancerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::SslPolicyNotFoundException`.
     pub fn is_ssl_policy_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::SslPolicyNotFoundException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::SslPolicyNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TargetGroupAssociationLimitException`.
     pub fn is_target_group_association_limit_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::TargetGroupAssociationLimitException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::TargetGroupAssociationLimitException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::TargetGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyActionsException`.
     pub fn is_too_many_actions_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::TooManyActionsException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::TooManyActionsException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyCertificatesException`.
     pub fn is_too_many_certificates_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::TooManyCertificatesException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::TooManyCertificatesException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyListenersException`.
     pub fn is_too_many_listeners_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::TooManyListenersException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::TooManyListenersException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
@@ -6929,52 +7056,77 @@ impl CreateListenerError {
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::TooManyTargetsException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::TooManyTargetsException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::UnsupportedProtocolException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::UnsupportedProtocolException(_))
     }
 }
 impl std::error::Error for CreateListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateListenerErrorKind::AlpnPolicyNotSupportedException(_inner) => Some(_inner),
-            CreateListenerErrorKind::CertificateNotFoundException(_inner) => Some(_inner),
-            CreateListenerErrorKind::DuplicateListenerException(_inner) => Some(_inner),
-            CreateListenerErrorKind::IncompatibleProtocolsException(_inner) => Some(_inner),
-            CreateListenerErrorKind::InvalidConfigurationRequestException(_inner) => Some(_inner),
-            CreateListenerErrorKind::InvalidLoadBalancerActionException(_inner) => Some(_inner),
-            CreateListenerErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            CreateListenerErrorKind::SslPolicyNotFoundException(_inner) => Some(_inner),
-            CreateListenerErrorKind::TargetGroupAssociationLimitException(_inner) => Some(_inner),
-            CreateListenerErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            CreateListenerErrorKind::TooManyActionsException(_inner) => Some(_inner),
-            CreateListenerErrorKind::TooManyCertificatesException(_inner) => Some(_inner),
-            CreateListenerErrorKind::TooManyListenersException(_inner) => Some(_inner),
-            CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(_inner) => {
+            CreateListenerErrorKind::AlpnPolicyNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::CertificateNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::DuplicateListenerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::IncompatibleProtocolsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::InvalidConfigurationRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::InvalidLoadBalancerActionException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::SslPolicyNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TargetGroupAssociationLimitException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TooManyActionsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TooManyCertificatesException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TooManyListenersException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TooManyTargetsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::UnsupportedProtocolException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateListenerErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateListenerErrorKind::TooManyTargetsException(_inner) => Some(_inner),
-            CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
-                Some(_inner)
-            }
-            CreateListenerErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            CreateListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6984,15 +7136,15 @@ impl std::error::Error for CreateListenerError {
 #[derive(std::fmt::Debug)]
 pub struct AddTagsError {
     /// Kind of error that occurred.
-    pub kind: AddTagsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AddTagsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AddTagsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7012,26 +7164,40 @@ pub enum AddTagsErrorKind {
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddTagsErrorKind::DuplicateTagKeysException(_inner) => _inner.fmt(f),
-            AddTagsErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            AddTagsErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
-            AddTagsErrorKind::RuleNotFoundException(_inner) => _inner.fmt(f),
-            AddTagsErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
-            AddTagsErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            AddTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AddTagsErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsErrorKind::RuleNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsErrorKind::TargetGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7045,46 +7211,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for AddTagsError {
 }
 impl AddTagsError {
     /// Creates a new `AddTagsError`.
-    pub fn new(kind: AddTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AddTagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AddTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AddTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AddTagsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AddTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AddTagsErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::DuplicateTagKeysException(_))
@@ -7095,10 +7261,7 @@ impl AddTagsError {
     }
     /// Returns `true` if the error kind is `AddTagsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsErrorKind::LoadBalancerNotFoundException(_)
-        )
+        matches!(&self.kind, AddTagsErrorKind::LoadBalancerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AddTagsErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
@@ -7106,10 +7269,7 @@ impl AddTagsError {
     }
     /// Returns `true` if the error kind is `AddTagsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsErrorKind::TargetGroupNotFoundException(_)
-        )
+        matches!(&self.kind, AddTagsErrorKind::TargetGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AddTagsErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
@@ -7119,13 +7279,27 @@ impl AddTagsError {
 impl std::error::Error for AddTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddTagsErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
-            AddTagsErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            AddTagsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            AddTagsErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            AddTagsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            AddTagsErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AddTagsErrorKind::Unhandled(_inner) => Some(_inner),
+            AddTagsErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsErrorKind::LoadBalancerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsErrorKind::RuleNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsErrorKind::TargetGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7135,15 +7309,15 @@ impl std::error::Error for AddTagsError {
 #[derive(std::fmt::Debug)]
 pub struct AddListenerCertificatesError {
     /// Kind of error that occurred.
-    pub kind: AddListenerCertificatesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AddListenerCertificatesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AddListenerCertificatesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AddListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7157,23 +7331,31 @@ pub enum AddListenerCertificatesErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>You've reached the limit on the number of certificates per load balancer.</p>
     TooManyCertificatesException(crate::error::TooManyCertificatesException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddListenerCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddListenerCertificatesErrorKind::CertificateNotFoundException(_inner) => _inner.fmt(f),
-            AddListenerCertificatesErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            AddListenerCertificatesErrorKind::TooManyCertificatesException(_inner) => _inner.fmt(f),
-            AddListenerCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AddListenerCertificatesErrorKind::CertificateNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddListenerCertificatesErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddListenerCertificatesErrorKind::TooManyCertificatesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddListenerCertificatesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7187,108 +7369,104 @@ impl aws_smithy_types::retry::ProvideErrorKind for AddListenerCertificatesError 
 }
 impl AddListenerCertificatesError {
     /// Creates a new `AddListenerCertificatesError`.
-    pub fn new(kind: AddListenerCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AddListenerCertificatesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AddListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AddListenerCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AddListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AddListenerCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AddListenerCertificatesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AddListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AddListenerCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AddListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AddListenerCertificatesErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddListenerCertificatesErrorKind::CertificateNotFoundException(_)
-        )
+        matches!(&self.kind, AddListenerCertificatesErrorKind::CertificateNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AddListenerCertificatesErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddListenerCertificatesErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, AddListenerCertificatesErrorKind::ListenerNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AddListenerCertificatesErrorKind::TooManyCertificatesException`.
     pub fn is_too_many_certificates_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddListenerCertificatesErrorKind::TooManyCertificatesException(_)
-        )
+        matches!(&self.kind, AddListenerCertificatesErrorKind::TooManyCertificatesException(_))
     }
 }
 impl std::error::Error for AddListenerCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddListenerCertificatesErrorKind::CertificateNotFoundException(_inner) => Some(_inner),
-            AddListenerCertificatesErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            AddListenerCertificatesErrorKind::TooManyCertificatesException(_inner) => Some(_inner),
-            AddListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
+            AddListenerCertificatesErrorKind::CertificateNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddListenerCertificatesErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddListenerCertificatesErrorKind::TooManyCertificatesException(_inner) =>
+            Some(_inner)
+            ,
+            AddListenerCertificatesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct ListFragmentsError {
     /// Kind of error that occurred.
-    pub kind: ListFragmentsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListFragmentsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListFragmentsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListFragmentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -26,27 +26,37 @@ pub enum ListFragmentsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p> 
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFragmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListFragmentsErrorKind::ClientLimitExceededException(_inner) => _inner.fmt(f),
-            ListFragmentsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            ListFragmentsErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
-            ListFragmentsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListFragmentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListFragmentsErrorKind::ClientLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFragmentsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFragmentsErrorKind::NotAuthorizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFragmentsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFragmentsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -60,107 +70,103 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListFragmentsError {
 }
 impl ListFragmentsError {
     /// Creates a new `ListFragmentsError`.
-    pub fn new(kind: ListFragmentsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListFragmentsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListFragmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListFragmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListFragmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListFragmentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListFragmentsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListFragmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListFragmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListFragmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListFragmentsErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFragmentsErrorKind::ClientLimitExceededException(_)
-        )
+        matches!(&self.kind, ListFragmentsErrorKind::ClientLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListFragmentsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFragmentsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListFragmentsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListFragmentsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFragmentsErrorKind::NotAuthorizedException(_)
-        )
+        matches!(&self.kind, ListFragmentsErrorKind::NotAuthorizedException(_))
     }
     /// Returns `true` if the error kind is `ListFragmentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFragmentsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListFragmentsErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for ListFragmentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListFragmentsErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
-            ListFragmentsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListFragmentsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            ListFragmentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListFragmentsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListFragmentsErrorKind::ClientLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListFragmentsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListFragmentsErrorKind::NotAuthorizedException(_inner) =>
+            Some(_inner)
+            ,
+            ListFragmentsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListFragmentsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-/// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+/// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p> 
 /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -170,7 +176,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -184,16 +190,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -205,22 +213,20 @@ impl ResourceNotFoundException {
 /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotAuthorizedException {
+pub struct NotAuthorizedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotAuthorizedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotAuthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotAuthorizedException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -230,7 +236,7 @@ impl std::fmt::Display for NotAuthorizedException {
 impl std::error::Error for NotAuthorizedException {}
 /// See [`NotAuthorizedException`](crate::error::NotAuthorizedException).
 pub mod not_authorized_exception {
-
+    
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -244,16 +250,18 @@ pub mod not_authorized_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotAuthorizedException`](crate::error::NotAuthorizedException).
         pub fn build(self) -> crate::error::NotAuthorizedException {
             crate::error::NotAuthorizedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotAuthorizedException {
     /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException).
@@ -265,22 +273,20 @@ impl NotAuthorizedException {
 /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArgumentException {
+pub struct InvalidArgumentException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArgumentException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArgumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgumentException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -290,7 +296,7 @@ impl std::fmt::Display for InvalidArgumentException {
 impl std::error::Error for InvalidArgumentException {}
 /// See [`InvalidArgumentException`](crate::error::InvalidArgumentException).
 pub mod invalid_argument_exception {
-
+    
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -304,16 +310,18 @@ pub mod invalid_argument_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException).
         pub fn build(self) -> crate::error::InvalidArgumentException {
             crate::error::InvalidArgumentException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArgumentException {
     /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException).
@@ -325,22 +333,20 @@ impl InvalidArgumentException {
 /// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientLimitExceededException {
+pub struct ClientLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClientLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClientLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClientLimitExceededException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -350,7 +356,7 @@ impl std::fmt::Display for ClientLimitExceededException {
 impl std::error::Error for ClientLimitExceededException {}
 /// See [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
 pub mod client_limit_exceeded_exception {
-
+    
     /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -364,16 +370,18 @@ pub mod client_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
         pub fn build(self) -> crate::error::ClientLimitExceededException {
             crate::error::ClientLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClientLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
@@ -387,15 +395,15 @@ impl ClientLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct GetMediaForFragmentListError {
     /// Kind of error that occurred.
-    pub kind: GetMediaForFragmentListErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetMediaForFragmentListErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetMediaForFragmentListError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetMediaForFragmentListErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -409,27 +417,37 @@ pub enum GetMediaForFragmentListErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p> 
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMediaForFragmentListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetMediaForFragmentListErrorKind::ClientLimitExceededException(_inner) => _inner.fmt(f),
-            GetMediaForFragmentListErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            GetMediaForFragmentListErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
-            GetMediaForFragmentListErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetMediaForFragmentListErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetMediaForFragmentListErrorKind::ClientLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaForFragmentListErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaForFragmentListErrorKind::NotAuthorizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaForFragmentListErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaForFragmentListErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -443,87 +461,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetMediaForFragmentListError 
 }
 impl GetMediaForFragmentListError {
     /// Creates a new `GetMediaForFragmentListError`.
-    pub fn new(kind: GetMediaForFragmentListErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetMediaForFragmentListError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetMediaForFragmentListErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetMediaForFragmentListError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetMediaForFragmentListErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetMediaForFragmentListErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetMediaForFragmentListError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetMediaForFragmentListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetMediaForFragmentListError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetMediaForFragmentListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetMediaForFragmentListErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaForFragmentListErrorKind::ClientLimitExceededException(_)
-        )
+        matches!(&self.kind, GetMediaForFragmentListErrorKind::ClientLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetMediaForFragmentListErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaForFragmentListErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, GetMediaForFragmentListErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `GetMediaForFragmentListErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaForFragmentListErrorKind::NotAuthorizedException(_)
-        )
+        matches!(&self.kind, GetMediaForFragmentListErrorKind::NotAuthorizedException(_))
     }
     /// Returns `true` if the error kind is `GetMediaForFragmentListErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaForFragmentListErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetMediaForFragmentListErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for GetMediaForFragmentListError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetMediaForFragmentListErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
-            GetMediaForFragmentListErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            GetMediaForFragmentListErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetMediaForFragmentListErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetMediaForFragmentListErrorKind::Unhandled(_inner) => Some(_inner),
+            GetMediaForFragmentListErrorKind::ClientLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaForFragmentListErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaForFragmentListErrorKind::NotAuthorizedException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaForFragmentListErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaForFragmentListErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -533,15 +545,15 @@ impl std::error::Error for GetMediaForFragmentListError {
 #[derive(std::fmt::Debug)]
 pub struct GetImagesError {
     /// Kind of error that occurred.
-    pub kind: GetImagesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetImagesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetImagesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetImagesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -555,27 +567,37 @@ pub enum GetImagesErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p> 
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetImagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetImagesErrorKind::ClientLimitExceededException(_inner) => _inner.fmt(f),
-            GetImagesErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            GetImagesErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
-            GetImagesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetImagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetImagesErrorKind::ClientLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetImagesErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetImagesErrorKind::NotAuthorizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetImagesErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetImagesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -589,52 +611,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetImagesError {
 }
 impl GetImagesError {
     /// Creates a new `GetImagesError`.
-    pub fn new(kind: GetImagesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetImagesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetImagesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetImagesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetImagesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetImagesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetImagesErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetImagesErrorKind::ClientLimitExceededException(_)
-        )
+        matches!(&self.kind, GetImagesErrorKind::ClientLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetImagesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
@@ -652,11 +671,21 @@ impl GetImagesError {
 impl std::error::Error for GetImagesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetImagesErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
-            GetImagesErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            GetImagesErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetImagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetImagesErrorKind::Unhandled(_inner) => Some(_inner),
+            GetImagesErrorKind::ClientLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetImagesErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            GetImagesErrorKind::NotAuthorizedException(_inner) =>
+            Some(_inner)
+            ,
+            GetImagesErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetImagesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -666,17 +695,15 @@ impl std::error::Error for GetImagesError {
 #[derive(std::fmt::Debug)]
 pub struct GetHLSStreamingSessionURLError {
     /// Kind of error that occurred.
-    pub kind: GetHLSStreamingSessionURLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetHLSStreamingSessionURLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetHLSStreamingSessionURLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -696,41 +723,51 @@ pub enum GetHLSStreamingSessionURLErrorKind {
     NoDataRetentionException(crate::error::NoDataRetentionException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p> 
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetHLSStreamingSessionURLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException(_inner) => {
+            GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHLSStreamingSessionURLErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHLSStreamingSessionURLErrorKind::NoDataRetentionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHLSStreamingSessionURLErrorKind::NotAuthorizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetHLSStreamingSessionURLErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetHLSStreamingSessionURLErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetHLSStreamingSessionURLErrorKind::NoDataRetentionException(_inner) => _inner.fmt(f),
-            GetHLSStreamingSessionURLErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
-            GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetHLSStreamingSessionURLErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -744,127 +781,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetHLSStreamingSessionURLErro
 }
 impl GetHLSStreamingSessionURLError {
     /// Creates a new `GetHLSStreamingSessionURLError`.
-    pub fn new(kind: GetHLSStreamingSessionURLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetHLSStreamingSessionURLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetHLSStreamingSessionURLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetHLSStreamingSessionURLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetHLSStreamingSessionURLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetHLSStreamingSessionURLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException(_)
-        )
+        matches!(&self.kind, GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHLSStreamingSessionURLErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, GetHLSStreamingSessionURLErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException`.
     pub fn is_invalid_codec_private_data_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_)
-        )
+        matches!(&self.kind, GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_))
     }
     /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException`.
     pub fn is_missing_codec_private_data_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_)
-        )
+        matches!(&self.kind, GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_))
     }
     /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::NoDataRetentionException`.
     pub fn is_no_data_retention_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHLSStreamingSessionURLErrorKind::NoDataRetentionException(_)
-        )
+        matches!(&self.kind, GetHLSStreamingSessionURLErrorKind::NoDataRetentionException(_))
     }
     /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHLSStreamingSessionURLErrorKind::NotAuthorizedException(_)
-        )
+        matches!(&self.kind, GetHLSStreamingSessionURLErrorKind::NotAuthorizedException(_))
     }
     /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException`.
     pub fn is_unsupported_stream_media_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_)
-        )
+        matches!(&self.kind, GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_))
     }
 }
 impl std::error::Error for GetHLSStreamingSessionURLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException(_inner) => {
+            GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetHLSStreamingSessionURLErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_inner) =>
+            Some(_inner)
+            ,
+            GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_inner) =>
+            Some(_inner)
+            ,
+            GetHLSStreamingSessionURLErrorKind::NoDataRetentionException(_inner) =>
+            Some(_inner)
+            ,
+            GetHLSStreamingSessionURLErrorKind::NotAuthorizedException(_inner) =>
+            Some(_inner)
+            ,
+            GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) =>
+            Some(_inner)
+            ,
+            GetHLSStreamingSessionURLErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetHLSStreamingSessionURLErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_inner) => {
-                Some(_inner)
-            }
-            GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_inner) => {
-                Some(_inner)
-            }
-            GetHLSStreamingSessionURLErrorKind::NoDataRetentionException(_inner) => Some(_inner),
-            GetHLSStreamingSessionURLErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) => {
-                Some(_inner)
-            }
-            GetHLSStreamingSessionURLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -872,22 +891,20 @@ impl std::error::Error for GetHLSStreamingSessionURLError {
 /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedStreamMediaTypeException {
+pub struct UnsupportedStreamMediaTypeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedStreamMediaTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedStreamMediaTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedStreamMediaTypeException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -897,7 +914,7 @@ impl std::fmt::Display for UnsupportedStreamMediaTypeException {
 impl std::error::Error for UnsupportedStreamMediaTypeException {}
 /// See [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
 pub mod unsupported_stream_media_type_exception {
-
+    
     /// A builder for [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -911,16 +928,18 @@ pub mod unsupported_stream_media_type_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
         pub fn build(self) -> crate::error::UnsupportedStreamMediaTypeException {
             crate::error::UnsupportedStreamMediaTypeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedStreamMediaTypeException {
     /// Creates a new builder-style object to manufacture [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
@@ -932,22 +951,20 @@ impl UnsupportedStreamMediaTypeException {
 /// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoDataRetentionException {
+pub struct NoDataRetentionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NoDataRetentionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NoDataRetentionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoDataRetentionException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -957,7 +974,7 @@ impl std::fmt::Display for NoDataRetentionException {
 impl std::error::Error for NoDataRetentionException {}
 /// See [`NoDataRetentionException`](crate::error::NoDataRetentionException).
 pub mod no_data_retention_exception {
-
+    
     /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -971,16 +988,18 @@ pub mod no_data_retention_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NoDataRetentionException`](crate::error::NoDataRetentionException).
         pub fn build(self) -> crate::error::NoDataRetentionException {
             crate::error::NoDataRetentionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NoDataRetentionException {
     /// Creates a new builder-style object to manufacture [`NoDataRetentionException`](crate::error::NoDataRetentionException).
@@ -992,22 +1011,20 @@ impl NoDataRetentionException {
 /// <p>No codec private data was found in at least one of tracks of the video stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MissingCodecPrivateDataException {
+pub struct MissingCodecPrivateDataException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MissingCodecPrivateDataException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MissingCodecPrivateDataException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingCodecPrivateDataException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -1017,7 +1034,7 @@ impl std::fmt::Display for MissingCodecPrivateDataException {
 impl std::error::Error for MissingCodecPrivateDataException {}
 /// See [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
 pub mod missing_codec_private_data_exception {
-
+    
     /// A builder for [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1031,16 +1048,18 @@ pub mod missing_codec_private_data_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
         pub fn build(self) -> crate::error::MissingCodecPrivateDataException {
             crate::error::MissingCodecPrivateDataException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MissingCodecPrivateDataException {
     /// Creates a new builder-style object to manufacture [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
@@ -1052,22 +1071,20 @@ impl MissingCodecPrivateDataException {
 /// <p>The codec private data in at least one of the tracks of the video stream is not valid for this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCodecPrivateDataException {
+pub struct InvalidCodecPrivateDataException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCodecPrivateDataException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidCodecPrivateDataException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCodecPrivateDataException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -1077,7 +1094,7 @@ impl std::fmt::Display for InvalidCodecPrivateDataException {
 impl std::error::Error for InvalidCodecPrivateDataException {}
 /// See [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
 pub mod invalid_codec_private_data_exception {
-
+    
     /// A builder for [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1091,16 +1108,18 @@ pub mod invalid_codec_private_data_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
         pub fn build(self) -> crate::error::InvalidCodecPrivateDataException {
             crate::error::InvalidCodecPrivateDataException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidCodecPrivateDataException {
     /// Creates a new builder-style object to manufacture [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
@@ -1114,17 +1133,15 @@ impl InvalidCodecPrivateDataException {
 #[derive(std::fmt::Debug)]
 pub struct GetDASHStreamingSessionURLError {
     /// Kind of error that occurred.
-    pub kind: GetDASHStreamingSessionURLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDASHStreamingSessionURLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDASHStreamingSessionURLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1144,41 +1161,51 @@ pub enum GetDASHStreamingSessionURLErrorKind {
     NoDataRetentionException(crate::error::NoDataRetentionException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p> 
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDASHStreamingSessionURLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException(_inner) => {
+            GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDASHStreamingSessionURLErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDASHStreamingSessionURLErrorKind::NoDataRetentionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDASHStreamingSessionURLErrorKind::NotAuthorizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDASHStreamingSessionURLErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetDASHStreamingSessionURLErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDASHStreamingSessionURLErrorKind::NoDataRetentionException(_inner) => _inner.fmt(f),
-            GetDASHStreamingSessionURLErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
-            GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDASHStreamingSessionURLErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1192,127 +1219,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDASHStreamingSessionURLErr
 }
 impl GetDASHStreamingSessionURLError {
     /// Creates a new `GetDASHStreamingSessionURLError`.
-    pub fn new(kind: GetDASHStreamingSessionURLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDASHStreamingSessionURLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDASHStreamingSessionURLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDASHStreamingSessionURLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDASHStreamingSessionURLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDASHStreamingSessionURLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException(_)
-        )
+        matches!(&self.kind, GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDASHStreamingSessionURLErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, GetDASHStreamingSessionURLErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException`.
     pub fn is_invalid_codec_private_data_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_)
-        )
+        matches!(&self.kind, GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_))
     }
     /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException`.
     pub fn is_missing_codec_private_data_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_)
-        )
+        matches!(&self.kind, GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_))
     }
     /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::NoDataRetentionException`.
     pub fn is_no_data_retention_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDASHStreamingSessionURLErrorKind::NoDataRetentionException(_)
-        )
+        matches!(&self.kind, GetDASHStreamingSessionURLErrorKind::NoDataRetentionException(_))
     }
     /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDASHStreamingSessionURLErrorKind::NotAuthorizedException(_)
-        )
+        matches!(&self.kind, GetDASHStreamingSessionURLErrorKind::NotAuthorizedException(_))
     }
     /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException`.
     pub fn is_unsupported_stream_media_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_)
-        )
+        matches!(&self.kind, GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_))
     }
 }
 impl std::error::Error for GetDASHStreamingSessionURLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException(_inner) => {
+            GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetDASHStreamingSessionURLErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_inner) =>
+            Some(_inner)
+            ,
+            GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_inner) =>
+            Some(_inner)
+            ,
+            GetDASHStreamingSessionURLErrorKind::NoDataRetentionException(_inner) =>
+            Some(_inner)
+            ,
+            GetDASHStreamingSessionURLErrorKind::NotAuthorizedException(_inner) =>
+            Some(_inner)
+            ,
+            GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) =>
+            Some(_inner)
+            ,
+            GetDASHStreamingSessionURLErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetDASHStreamingSessionURLErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_inner) => {
-                Some(_inner)
-            }
-            GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_inner) => {
-                Some(_inner)
-            }
-            GetDASHStreamingSessionURLErrorKind::NoDataRetentionException(_inner) => Some(_inner),
-            GetDASHStreamingSessionURLErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) => {
-                Some(_inner)
-            }
-            GetDASHStreamingSessionURLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1322,15 +1331,15 @@ impl std::error::Error for GetDASHStreamingSessionURLError {
 #[derive(std::fmt::Debug)]
 pub struct GetClipError {
     /// Kind of error that occurred.
-    pub kind: GetClipErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetClipErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetClipError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetClipErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1352,34 +1361,54 @@ pub enum GetClipErrorKind {
     NoDataRetentionException(crate::error::NoDataRetentionException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p> 
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetClipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetClipErrorKind::ClientLimitExceededException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::InvalidCodecPrivateDataException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::InvalidMediaFrameException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::MissingCodecPrivateDataException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::NoDataRetentionException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::UnsupportedStreamMediaTypeException(_inner) => _inner.fmt(f),
-            GetClipErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetClipErrorKind::ClientLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::InvalidCodecPrivateDataException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::InvalidMediaFrameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::MissingCodecPrivateDataException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::NoDataRetentionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::NotAuthorizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::UnsupportedStreamMediaTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetClipErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1393,52 +1422,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetClipError {
 }
 impl GetClipError {
     /// Creates a new `GetClipError`.
-    pub fn new(kind: GetClipErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetClipError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetClipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetClipError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetClipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetClipErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetClipError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetClipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetClipError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetClipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetClipErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetClipErrorKind::ClientLimitExceededException(_)
-        )
+        matches!(&self.kind, GetClipErrorKind::ClientLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetClipErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
@@ -1446,10 +1472,7 @@ impl GetClipError {
     }
     /// Returns `true` if the error kind is `GetClipErrorKind::InvalidCodecPrivateDataException`.
     pub fn is_invalid_codec_private_data_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetClipErrorKind::InvalidCodecPrivateDataException(_)
-        )
+        matches!(&self.kind, GetClipErrorKind::InvalidCodecPrivateDataException(_))
     }
     /// Returns `true` if the error kind is `GetClipErrorKind::InvalidMediaFrameException`.
     pub fn is_invalid_media_frame_exception(&self) -> bool {
@@ -1457,10 +1480,7 @@ impl GetClipError {
     }
     /// Returns `true` if the error kind is `GetClipErrorKind::MissingCodecPrivateDataException`.
     pub fn is_missing_codec_private_data_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetClipErrorKind::MissingCodecPrivateDataException(_)
-        )
+        matches!(&self.kind, GetClipErrorKind::MissingCodecPrivateDataException(_))
     }
     /// Returns `true` if the error kind is `GetClipErrorKind::NoDataRetentionException`.
     pub fn is_no_data_retention_exception(&self) -> bool {
@@ -1476,25 +1496,42 @@ impl GetClipError {
     }
     /// Returns `true` if the error kind is `GetClipErrorKind::UnsupportedStreamMediaTypeException`.
     pub fn is_unsupported_stream_media_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetClipErrorKind::UnsupportedStreamMediaTypeException(_)
-        )
+        matches!(&self.kind, GetClipErrorKind::UnsupportedStreamMediaTypeException(_))
     }
 }
 impl std::error::Error for GetClipError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetClipErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
-            GetClipErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            GetClipErrorKind::InvalidCodecPrivateDataException(_inner) => Some(_inner),
-            GetClipErrorKind::InvalidMediaFrameException(_inner) => Some(_inner),
-            GetClipErrorKind::MissingCodecPrivateDataException(_inner) => Some(_inner),
-            GetClipErrorKind::NoDataRetentionException(_inner) => Some(_inner),
-            GetClipErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetClipErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetClipErrorKind::UnsupportedStreamMediaTypeException(_inner) => Some(_inner),
-            GetClipErrorKind::Unhandled(_inner) => Some(_inner),
+            GetClipErrorKind::ClientLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::InvalidCodecPrivateDataException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::InvalidMediaFrameException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::MissingCodecPrivateDataException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::NoDataRetentionException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::NotAuthorizedException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::UnsupportedStreamMediaTypeException(_inner) =>
+            Some(_inner)
+            ,
+            GetClipErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1502,22 +1539,20 @@ impl std::error::Error for GetClipError {
 /// <p>One or more frames in the requested clip could not be parsed based on the specified codec.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidMediaFrameException {
+pub struct InvalidMediaFrameException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidMediaFrameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidMediaFrameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMediaFrameException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1527,7 +1562,7 @@ impl std::fmt::Display for InvalidMediaFrameException {
 impl std::error::Error for InvalidMediaFrameException {}
 /// See [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
 pub mod invalid_media_frame_exception {
-
+    
     /// A builder for [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1541,16 +1576,18 @@ pub mod invalid_media_frame_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
         pub fn build(self) -> crate::error::InvalidMediaFrameException {
             crate::error::InvalidMediaFrameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidMediaFrameException {
     /// Creates a new builder-style object to manufacture [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
@@ -1559,31 +1596,32 @@ impl InvalidMediaFrameException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

@@ -3,7 +3,7 @@
 /// The settings for the source of the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
@@ -24,8 +24,7 @@ pub struct Source {
     pub ingest_port: i32,
     /// The media streams that are associated with the source, and the parameters for those associations.
     #[doc(hidden)]
-    pub media_stream_source_configurations:
-        std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
+    pub media_stream_source_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
     /// The name of the source.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -54,19 +53,19 @@ impl Source {
         self.data_transfer_subscriber_fee_percent
     }
     /// The type of encryption that is used on the content ingested from this source.
-    pub fn decryption(&self) -> std::option::Option<&crate::model::Encryption> {
+    pub fn decryption(&self) -> std::option::Option<& crate::model::Encryption> {
         self.decryption.as_ref()
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// The IP address that the flow will be listening on for incoming content.
-    pub fn ingest_ip(&self) -> std::option::Option<&str> {
+    pub fn ingest_ip(&self) -> std::option::Option<& str> {
         self.ingest_ip.as_deref()
     }
     /// The port that the flow will be listening on for incoming content.
@@ -74,13 +73,11 @@ impl Source {
         self.ingest_port
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::MediaStreamSourceConfiguration]> {
+    pub fn media_stream_source_configurations(&self) -> std::option::Option<& [crate::model::MediaStreamSourceConfiguration]> {
         self.media_stream_source_configurations.as_deref()
     }
     /// The name of the source.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -88,29 +85,29 @@ impl Source {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+    pub fn sender_ip_address(&self) -> std::option::Option<& str> {
         self.sender_ip_address.as_deref()
     }
     /// The ARN of the source.
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// Attributes related to the transport stream that are used in the source.
-    pub fn transport(&self) -> std::option::Option<&crate::model::Transport> {
+    pub fn transport(&self) -> std::option::Option<& crate::model::Transport> {
         self.transport.as_ref()
     }
     /// The name of the VPC interface that is used for this source.
-    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_interface_name(&self) -> std::option::Option<& str> {
         self.vpc_interface_name.as_deref()
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
+    pub fn whitelist_cidr(&self) -> std::option::Option<& str> {
         self.whitelist_cidr.as_deref()
     }
 }
 /// See [`Source`](crate::model::Source).
 pub mod source {
-
+    
     /// A builder for [`Source`](crate::model::Source).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -120,8 +117,7 @@ pub mod source {
         pub(crate) entitlement_arn: std::option::Option<std::string::String>,
         pub(crate) ingest_ip: std::option::Option<std::string::String>,
         pub(crate) ingest_port: std::option::Option<i32>,
-        pub(crate) media_stream_source_configurations:
-            std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
+        pub(crate) media_stream_source_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sender_control_port: std::option::Option<i32>,
         pub(crate) sender_ip_address: std::option::Option<std::string::String>,
@@ -137,12 +133,8 @@ pub mod source {
             self
         }
         /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-        pub fn set_data_transfer_subscriber_fee_percent(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.data_transfer_subscriber_fee_percent = input;
-            self
+        pub fn set_data_transfer_subscriber_fee_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.data_transfer_subscriber_fee_percent = input; self
         }
         /// The type of encryption that is used on the content ingested from this source.
         pub fn decryption(mut self, input: crate::model::Encryption) -> Self {
@@ -150,12 +142,8 @@ pub mod source {
             self
         }
         /// The type of encryption that is used on the content ingested from this source.
-        pub fn set_decryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.decryption = input;
-            self
+        pub fn set_decryption(mut self, input: std::option::Option<crate::model::Encryption>) -> Self {
+            self.decryption = input; self
         }
         /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,8 +152,7 @@ pub mod source {
         }
         /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
         pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,12 +160,8 @@ pub mod source {
             self
         }
         /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
-        pub fn set_entitlement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_arn = input;
-            self
+        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entitlement_arn = input; self
         }
         /// The IP address that the flow will be listening on for incoming content.
         pub fn ingest_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,8 +170,7 @@ pub mod source {
         }
         /// The IP address that the flow will be listening on for incoming content.
         pub fn set_ingest_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ingest_ip = input;
-            self
+            self.ingest_ip = input; self
         }
         /// The port that the flow will be listening on for incoming content.
         pub fn ingest_port(mut self, input: i32) -> Self {
@@ -197,30 +179,22 @@ pub mod source {
         }
         /// The port that the flow will be listening on for incoming content.
         pub fn set_ingest_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.ingest_port = input;
-            self
+            self.ingest_port = input; self
         }
         /// Appends an item to `media_stream_source_configurations`.
         ///
         /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
         ///
         /// The media streams that are associated with the source, and the parameters for those associations.
-        pub fn media_stream_source_configurations(
-            mut self,
-            input: crate::model::MediaStreamSourceConfiguration,
-        ) -> Self {
+        pub fn media_stream_source_configurations(mut self, input: crate::model::MediaStreamSourceConfiguration) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-            v.push(input);
-            self.media_stream_source_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.media_stream_source_configurations = Some(v);
+                            self
         }
         /// The media streams that are associated with the source, and the parameters for those associations.
-        pub fn set_media_stream_source_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
-        ) -> Self {
-            self.media_stream_source_configurations = input;
-            self
+        pub fn set_media_stream_source_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>) -> Self {
+            self.media_stream_source_configurations = input; self
         }
         /// The name of the source.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -229,8 +203,7 @@ pub mod source {
         }
         /// The name of the source.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn sender_control_port(mut self, input: i32) -> Self {
@@ -239,8 +212,7 @@ pub mod source {
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.sender_control_port = input;
-            self
+            self.sender_control_port = input; self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
         pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -248,12 +220,8 @@ pub mod source {
             self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
-        pub fn set_sender_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sender_ip_address = input;
-            self
+        pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sender_ip_address = input; self
         }
         /// The ARN of the source.
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -262,8 +230,7 @@ pub mod source {
         }
         /// The ARN of the source.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// Attributes related to the transport stream that are used in the source.
         pub fn transport(mut self, input: crate::model::Transport) -> Self {
@@ -271,12 +238,8 @@ pub mod source {
             self
         }
         /// Attributes related to the transport stream that are used in the source.
-        pub fn set_transport(
-            mut self,
-            input: std::option::Option<crate::model::Transport>,
-        ) -> Self {
-            self.transport = input;
-            self
+        pub fn set_transport(mut self, input: std::option::Option<crate::model::Transport>) -> Self {
+            self.transport = input; self
         }
         /// The name of the VPC interface that is used for this source.
         pub fn vpc_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,12 +247,8 @@ pub mod source {
             self
         }
         /// The name of the VPC interface that is used for this source.
-        pub fn set_vpc_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_interface_name = input;
-            self
+        pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_interface_name = input; self
         }
         /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn whitelist_cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -297,35 +256,48 @@ pub mod source {
             self
         }
         /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        pub fn set_whitelist_cidr(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.whitelist_cidr = input;
-            self
+        pub fn set_whitelist_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.whitelist_cidr = input; self
         }
         /// Consumes the builder and constructs a [`Source`](crate::model::Source).
         pub fn build(self) -> crate::model::Source {
             crate::model::Source {
-                data_transfer_subscriber_fee_percent: self
-                    .data_transfer_subscriber_fee_percent
-                    .unwrap_or_default(),
-                decryption: self.decryption,
-                description: self.description,
-                entitlement_arn: self.entitlement_arn,
-                ingest_ip: self.ingest_ip,
-                ingest_port: self.ingest_port.unwrap_or_default(),
-                media_stream_source_configurations: self.media_stream_source_configurations,
-                name: self.name,
-                sender_control_port: self.sender_control_port.unwrap_or_default(),
-                sender_ip_address: self.sender_ip_address,
-                source_arn: self.source_arn,
-                transport: self.transport,
-                vpc_interface_name: self.vpc_interface_name,
-                whitelist_cidr: self.whitelist_cidr,
+                data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent
+                    .unwrap_or_default()
+                ,
+                decryption: self.decryption
+                ,
+                description: self.description
+                ,
+                entitlement_arn: self.entitlement_arn
+                ,
+                ingest_ip: self.ingest_ip
+                ,
+                ingest_port: self.ingest_port
+                    .unwrap_or_default()
+                ,
+                media_stream_source_configurations: self.media_stream_source_configurations
+                ,
+                name: self.name
+                ,
+                sender_control_port: self.sender_control_port
+                    .unwrap_or_default()
+                ,
+                sender_ip_address: self.sender_ip_address
+                ,
+                source_arn: self.source_arn
+                ,
+                transport: self.transport
+                ,
+                vpc_interface_name: self.vpc_interface_name
+                ,
+                whitelist_cidr: self.whitelist_cidr
+                ,
             }
         }
     }
+    
+    
 }
 impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
@@ -337,7 +309,7 @@ impl Source {
 /// Attributes related to the transport stream that are used in a source or output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Transport {
+pub struct Transport  {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     #[doc(hidden)]
     pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -380,7 +352,7 @@ pub struct Transport {
 }
 impl Transport {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_allow_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidr_allow_list(&self) -> std::option::Option<& [std::string::String]> {
         self.cidr_allow_list.as_deref()
     }
     /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
@@ -400,11 +372,11 @@ impl Transport {
         self.min_latency
     }
     /// The protocol that is used by the source or output.
-    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::Protocol> {
         self.protocol.as_ref()
     }
     /// The remote ID for the Zixi-pull stream.
-    pub fn remote_id(&self) -> std::option::Option<&str> {
+    pub fn remote_id(&self) -> std::option::Option<& str> {
         self.remote_id.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -412,7 +384,7 @@ impl Transport {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+    pub fn sender_ip_address(&self) -> std::option::Option<& str> {
         self.sender_ip_address.as_deref()
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
@@ -420,7 +392,7 @@ impl Transport {
         self.smoothing_latency
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn source_listener_address(&self) -> std::option::Option<&str> {
+    pub fn source_listener_address(&self) -> std::option::Option<& str> {
         self.source_listener_address.as_deref()
     }
     /// Source port for SRT-caller protocol.
@@ -428,13 +400,13 @@ impl Transport {
         self.source_listener_port
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
 }
 /// See [`Transport`](crate::model::Transport).
 pub mod transport {
-
+    
     /// A builder for [`Transport`](crate::model::Transport).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -460,17 +432,13 @@ pub mod transport {
         /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_allow_list.unwrap_or_default();
-            v.push(input.into());
-            self.cidr_allow_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.cidr_allow_list = Some(v);
+                            self
         }
         /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        pub fn set_cidr_allow_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cidr_allow_list = input;
-            self
+        pub fn set_cidr_allow_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cidr_allow_list = input; self
         }
         /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn max_bitrate(mut self, input: i32) -> Self {
@@ -479,8 +447,7 @@ pub mod transport {
         }
         /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_bitrate = input;
-            self
+            self.max_bitrate = input; self
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
@@ -489,8 +456,7 @@ pub mod transport {
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_latency = input;
-            self
+            self.max_latency = input; self
         }
         /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn max_sync_buffer(mut self, input: i32) -> Self {
@@ -499,8 +465,7 @@ pub mod transport {
         }
         /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn set_max_sync_buffer(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_sync_buffer = input;
-            self
+            self.max_sync_buffer = input; self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn min_latency(mut self, input: i32) -> Self {
@@ -509,8 +474,7 @@ pub mod transport {
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_latency = input;
-            self
+            self.min_latency = input; self
         }
         /// The protocol that is used by the source or output.
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
@@ -519,8 +483,7 @@ pub mod transport {
         }
         /// The protocol that is used by the source or output.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = input;
-            self
+            self.protocol = input; self
         }
         /// The remote ID for the Zixi-pull stream.
         pub fn remote_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -529,8 +492,7 @@ pub mod transport {
         }
         /// The remote ID for the Zixi-pull stream.
         pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.remote_id = input;
-            self
+            self.remote_id = input; self
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn sender_control_port(mut self, input: i32) -> Self {
@@ -539,8 +501,7 @@ pub mod transport {
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.sender_control_port = input;
-            self
+            self.sender_control_port = input; self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
         pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -548,12 +509,8 @@ pub mod transport {
             self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
-        pub fn set_sender_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sender_ip_address = input;
-            self
+        pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sender_ip_address = input; self
         }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn smoothing_latency(mut self, input: i32) -> Self {
@@ -562,8 +519,7 @@ pub mod transport {
         }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.smoothing_latency = input;
-            self
+            self.smoothing_latency = input; self
         }
         /// Source IP or domain name for SRT-caller protocol.
         pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -571,12 +527,8 @@ pub mod transport {
             self
         }
         /// Source IP or domain name for SRT-caller protocol.
-        pub fn set_source_listener_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_listener_address = input;
-            self
+        pub fn set_source_listener_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_listener_address = input; self
         }
         /// Source port for SRT-caller protocol.
         pub fn source_listener_port(mut self, input: i32) -> Self {
@@ -585,8 +537,7 @@ pub mod transport {
         }
         /// Source port for SRT-caller protocol.
         pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.source_listener_port = input;
-            self
+            self.source_listener_port = input; self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -595,28 +546,49 @@ pub mod transport {
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
+            self.stream_id = input; self
         }
         /// Consumes the builder and constructs a [`Transport`](crate::model::Transport).
         pub fn build(self) -> crate::model::Transport {
             crate::model::Transport {
-                cidr_allow_list: self.cidr_allow_list,
-                max_bitrate: self.max_bitrate.unwrap_or_default(),
-                max_latency: self.max_latency.unwrap_or_default(),
-                max_sync_buffer: self.max_sync_buffer.unwrap_or_default(),
-                min_latency: self.min_latency.unwrap_or_default(),
-                protocol: self.protocol,
-                remote_id: self.remote_id,
-                sender_control_port: self.sender_control_port.unwrap_or_default(),
-                sender_ip_address: self.sender_ip_address,
-                smoothing_latency: self.smoothing_latency.unwrap_or_default(),
-                source_listener_address: self.source_listener_address,
-                source_listener_port: self.source_listener_port.unwrap_or_default(),
-                stream_id: self.stream_id,
+                cidr_allow_list: self.cidr_allow_list
+                ,
+                max_bitrate: self.max_bitrate
+                    .unwrap_or_default()
+                ,
+                max_latency: self.max_latency
+                    .unwrap_or_default()
+                ,
+                max_sync_buffer: self.max_sync_buffer
+                    .unwrap_or_default()
+                ,
+                min_latency: self.min_latency
+                    .unwrap_or_default()
+                ,
+                protocol: self.protocol
+                ,
+                remote_id: self.remote_id
+                ,
+                sender_control_port: self.sender_control_port
+                    .unwrap_or_default()
+                ,
+                sender_ip_address: self.sender_ip_address
+                ,
+                smoothing_latency: self.smoothing_latency
+                    .unwrap_or_default()
+                ,
+                source_listener_address: self.source_listener_address
+                ,
+                source_listener_port: self.source_listener_port
+                    .unwrap_or_default()
+                ,
+                stream_id: self.stream_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Transport {
     /// Creates a new builder-style object to manufacture [`Transport`](crate::model::Transport).
@@ -631,9 +603,9 @@ impl Transport {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protocol = unimplemented!();
 /// match protocol {
@@ -663,22 +635,14 @@ impl Transport {
 /// Specifically, when `protocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Protocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     Cdi,
@@ -701,7 +665,7 @@ pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     ZixiPush,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Protocol {
     fn from(s: &str) -> Self {
@@ -716,17 +680,17 @@ impl std::convert::From<&str> for Protocol {
             "st2110-jpegxs" => Protocol::St2110Jpegxs,
             "zixi-pull" => Protocol::ZixiPull,
             "zixi-push" => Protocol::ZixiPush,
-            other => Protocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Protocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Protocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Protocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Protocol::from(s))
+                }
+            }
 impl Protocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -741,22 +705,13 @@ impl Protocol {
             Protocol::St2110Jpegxs => "st2110-jpegxs",
             Protocol::ZixiPull => "zixi-pull",
             Protocol::ZixiPush => "zixi-push",
-            Protocol::Unknown(value) => value.as_str(),
+            Protocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cdi",
-            "fujitsu-qos",
-            "rist",
-            "rtp",
-            "rtp-fec",
-            "srt-caller",
-            "srt-listener",
-            "st2110-jpegxs",
-            "zixi-pull",
-            "zixi-push",
+            "cdi", "fujitsu-qos", "rist", "rtp", "rtp-fec", "srt-caller", "srt-listener", "st2110-jpegxs", "zixi-pull", "zixi-push"
         ]
     }
 }
@@ -769,7 +724,7 @@ impl AsRef<str> for Protocol {
 /// The media stream that is associated with the source, and the parameters for that association.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStreamSourceConfiguration {
+pub struct MediaStreamSourceConfiguration  {
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
     #[doc(hidden)]
     pub encoding_name: std::option::Option<crate::model::EncodingName>,
@@ -782,27 +737,26 @@ pub struct MediaStreamSourceConfiguration {
 }
 impl MediaStreamSourceConfiguration {
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    pub fn encoding_name(&self) -> std::option::Option<&crate::model::EncodingName> {
+    pub fn encoding_name(&self) -> std::option::Option<& crate::model::EncodingName> {
         self.encoding_name.as_ref()
     }
     /// The transport parameters that are associated with an incoming media stream.
-    pub fn input_configurations(&self) -> std::option::Option<&[crate::model::InputConfiguration]> {
+    pub fn input_configurations(&self) -> std::option::Option<& [crate::model::InputConfiguration]> {
         self.input_configurations.as_deref()
     }
     /// The name of the media stream.
-    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
 }
 /// See [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
 pub mod media_stream_source_configuration {
-
+    
     /// A builder for [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
-        pub(crate) input_configurations:
-            std::option::Option<std::vec::Vec<crate::model::InputConfiguration>>,
+        pub(crate) input_configurations: std::option::Option<std::vec::Vec<crate::model::InputConfiguration>>,
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -812,12 +766,8 @@ pub mod media_stream_source_configuration {
             self
         }
         /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-        pub fn set_encoding_name(
-            mut self,
-            input: std::option::Option<crate::model::EncodingName>,
-        ) -> Self {
-            self.encoding_name = input;
-            self
+        pub fn set_encoding_name(mut self, input: std::option::Option<crate::model::EncodingName>) -> Self {
+            self.encoding_name = input; self
         }
         /// Appends an item to `input_configurations`.
         ///
@@ -826,17 +776,13 @@ pub mod media_stream_source_configuration {
         /// The transport parameters that are associated with an incoming media stream.
         pub fn input_configurations(mut self, input: crate::model::InputConfiguration) -> Self {
             let mut v = self.input_configurations.unwrap_or_default();
-            v.push(input);
-            self.input_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.input_configurations = Some(v);
+                            self
         }
         /// The transport parameters that are associated with an incoming media stream.
-        pub fn set_input_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputConfiguration>>,
-        ) -> Self {
-            self.input_configurations = input;
-            self
+        pub fn set_input_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputConfiguration>>) -> Self {
+            self.input_configurations = input; self
         }
         /// The name of the media stream.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -844,22 +790,23 @@ pub mod media_stream_source_configuration {
             self
         }
         /// The name of the media stream.
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
+        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_stream_name = input; self
         }
         /// Consumes the builder and constructs a [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
         pub fn build(self) -> crate::model::MediaStreamSourceConfiguration {
             crate::model::MediaStreamSourceConfiguration {
-                encoding_name: self.encoding_name,
-                input_configurations: self.input_configurations,
-                media_stream_name: self.media_stream_name,
+                encoding_name: self.encoding_name
+                ,
+                input_configurations: self.input_configurations
+                ,
+                media_stream_name: self.media_stream_name
+                ,
             }
         }
     }
+    
+    
 }
 impl MediaStreamSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
@@ -871,7 +818,7 @@ impl MediaStreamSourceConfiguration {
 /// The transport parameters that are associated with an incoming media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputConfiguration {
+pub struct InputConfiguration  {
     /// The IP address that the flow listens on for incoming content for a media stream.
     #[doc(hidden)]
     pub input_ip: std::option::Option<std::string::String>,
@@ -884,7 +831,7 @@ pub struct InputConfiguration {
 }
 impl InputConfiguration {
     /// The IP address that the flow listens on for incoming content for a media stream.
-    pub fn input_ip(&self) -> std::option::Option<&str> {
+    pub fn input_ip(&self) -> std::option::Option<& str> {
         self.input_ip.as_deref()
     }
     /// The port that the flow listens on for an incoming media stream.
@@ -892,13 +839,13 @@ impl InputConfiguration {
         self.input_port
     }
     /// The VPC interface where the media stream comes in from.
-    pub fn interface(&self) -> std::option::Option<&crate::model::Interface> {
+    pub fn interface(&self) -> std::option::Option<& crate::model::Interface> {
         self.interface.as_ref()
     }
 }
 /// See [`InputConfiguration`](crate::model::InputConfiguration).
 pub mod input_configuration {
-
+    
     /// A builder for [`InputConfiguration`](crate::model::InputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -914,8 +861,7 @@ pub mod input_configuration {
         }
         /// The IP address that the flow listens on for incoming content for a media stream.
         pub fn set_input_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input_ip = input;
-            self
+            self.input_ip = input; self
         }
         /// The port that the flow listens on for an incoming media stream.
         pub fn input_port(mut self, input: i32) -> Self {
@@ -924,8 +870,7 @@ pub mod input_configuration {
         }
         /// The port that the flow listens on for an incoming media stream.
         pub fn set_input_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.input_port = input;
-            self
+            self.input_port = input; self
         }
         /// The VPC interface where the media stream comes in from.
         pub fn interface(mut self, input: crate::model::Interface) -> Self {
@@ -933,22 +878,24 @@ pub mod input_configuration {
             self
         }
         /// The VPC interface where the media stream comes in from.
-        pub fn set_interface(
-            mut self,
-            input: std::option::Option<crate::model::Interface>,
-        ) -> Self {
-            self.interface = input;
-            self
+        pub fn set_interface(mut self, input: std::option::Option<crate::model::Interface>) -> Self {
+            self.interface = input; self
         }
         /// Consumes the builder and constructs a [`InputConfiguration`](crate::model::InputConfiguration).
         pub fn build(self) -> crate::model::InputConfiguration {
             crate::model::InputConfiguration {
-                input_ip: self.input_ip,
-                input_port: self.input_port.unwrap_or_default(),
-                interface: self.interface,
+                input_ip: self.input_ip
+                ,
+                input_port: self.input_port
+                    .unwrap_or_default()
+                ,
+                interface: self.interface
+                ,
             }
         }
     }
+    
+    
 }
 impl InputConfiguration {
     /// Creates a new builder-style object to manufacture [`InputConfiguration`](crate::model::InputConfiguration).
@@ -960,20 +907,20 @@ impl InputConfiguration {
 /// The VPC interface that is used for the media stream associated with the source or output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Interface {
+pub struct Interface  {
     /// The name of the VPC interface.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Interface {
     /// The name of the VPC interface.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`Interface`](crate::model::Interface).
 pub mod interface {
-
+    
     /// A builder for [`Interface`](crate::model::Interface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -987,14 +934,18 @@ pub mod interface {
         }
         /// The name of the VPC interface.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`Interface`](crate::model::Interface).
         pub fn build(self) -> crate::model::Interface {
-            crate::model::Interface { name: self.name }
+            crate::model::Interface {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl Interface {
     /// Creates a new builder-style object to manufacture [`Interface`](crate::model::Interface).
@@ -1009,9 +960,9 @@ impl Interface {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encodingname = unimplemented!();
 /// match encodingname {
@@ -1035,22 +986,14 @@ impl Interface {
 /// Specifically, when `encodingname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncodingName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncodingName {
     #[allow(missing_docs)] // documentation missing in model
     Jxsv,
@@ -1061,7 +1004,7 @@ pub enum EncodingName {
     #[allow(missing_docs)] // documentation missing in model
     Smpte291,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncodingName {
     fn from(s: &str) -> Self {
@@ -1070,17 +1013,17 @@ impl std::convert::From<&str> for EncodingName {
             "pcm" => EncodingName::Pcm,
             "raw" => EncodingName::Raw,
             "smpte291" => EncodingName::Smpte291,
-            other => EncodingName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncodingName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncodingName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncodingName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncodingName::from(s))
+                }
+            }
 impl EncodingName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1089,12 +1032,14 @@ impl EncodingName {
             EncodingName::Pcm => "pcm",
             EncodingName::Raw => "raw",
             EncodingName::Smpte291 => "smpte291",
-            EncodingName::Unknown(value) => value.as_str(),
+            EncodingName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["jxsv", "pcm", "raw", "smpte291"]
+        &[
+            "jxsv", "pcm", "raw", "smpte291"
+        ]
     }
 }
 impl AsRef<str> for EncodingName {
@@ -1106,7 +1051,7 @@ impl AsRef<str> for EncodingName {
 /// Information about the encryption of the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Encryption {
+pub struct Encryption  {
     /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
     #[doc(hidden)]
     pub algorithm: std::option::Option<crate::model::Algorithm>,
@@ -1137,45 +1082,45 @@ pub struct Encryption {
 }
 impl Encryption {
     /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
-    pub fn algorithm(&self) -> std::option::Option<&crate::model::Algorithm> {
+    pub fn algorithm(&self) -> std::option::Option<& crate::model::Algorithm> {
         self.algorithm.as_ref()
     }
     /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+    pub fn constant_initialization_vector(&self) -> std::option::Option<& str> {
         self.constant_initialization_vector.as_deref()
     }
     /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
+    pub fn key_type(&self) -> std::option::Option<& crate::model::KeyType> {
         self.key_type.as_ref()
     }
     /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`Encryption`](crate::model::Encryption).
 pub mod encryption {
-
+    
     /// A builder for [`Encryption`](crate::model::Encryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1196,28 +1141,17 @@ pub mod encryption {
             self
         }
         /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
-        pub fn set_algorithm(
-            mut self,
-            input: std::option::Option<crate::model::Algorithm>,
-        ) -> Self {
-            self.algorithm = input;
-            self
+        pub fn set_algorithm(mut self, input: std::option::Option<crate::model::Algorithm>) -> Self {
+            self.algorithm = input; self
         }
         /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-        pub fn constant_initialization_vector(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn constant_initialization_vector(mut self, input: impl Into<std::string::String>) -> Self {
             self.constant_initialization_vector = Some(input.into());
             self
         }
         /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-        pub fn set_constant_initialization_vector(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.constant_initialization_vector = input;
-            self
+        pub fn set_constant_initialization_vector(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constant_initialization_vector = input; self
         }
         /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1226,8 +1160,7 @@ pub mod encryption {
         }
         /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn key_type(mut self, input: crate::model::KeyType) -> Self {
@@ -1236,8 +1169,7 @@ pub mod encryption {
         }
         /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn set_key_type(mut self, input: std::option::Option<crate::model::KeyType>) -> Self {
-            self.key_type = input;
-            self
+            self.key_type = input; self
         }
         /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1246,8 +1178,7 @@ pub mod encryption {
         }
         /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1256,8 +1187,7 @@ pub mod encryption {
         }
         /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1266,8 +1196,7 @@ pub mod encryption {
         }
         /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1276,8 +1205,7 @@ pub mod encryption {
         }
         /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input;
-            self
+            self.secret_arn = input; self
         }
         /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1286,24 +1214,34 @@ pub mod encryption {
         }
         /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`Encryption`](crate::model::Encryption).
         pub fn build(self) -> crate::model::Encryption {
             crate::model::Encryption {
-                algorithm: self.algorithm,
-                constant_initialization_vector: self.constant_initialization_vector,
-                device_id: self.device_id,
-                key_type: self.key_type,
-                region: self.region,
-                resource_id: self.resource_id,
-                role_arn: self.role_arn,
-                secret_arn: self.secret_arn,
-                url: self.url,
+                algorithm: self.algorithm
+                ,
+                constant_initialization_vector: self.constant_initialization_vector
+                ,
+                device_id: self.device_id
+                ,
+                key_type: self.key_type
+                ,
+                region: self.region
+                ,
+                resource_id: self.resource_id
+                ,
+                role_arn: self.role_arn
+                ,
+                secret_arn: self.secret_arn
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl Encryption {
     /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
@@ -1318,9 +1256,9 @@ impl Encryption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keytype = unimplemented!();
 /// match keytype {
@@ -1343,22 +1281,14 @@ impl Encryption {
 /// Specifically, when `keytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeyType {
     #[allow(missing_docs)] // documentation missing in model
     Speke,
@@ -1367,7 +1297,7 @@ pub enum KeyType {
     #[allow(missing_docs)] // documentation missing in model
     StaticKey,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyType {
     fn from(s: &str) -> Self {
@@ -1375,17 +1305,17 @@ impl std::convert::From<&str> for KeyType {
             "speke" => KeyType::Speke,
             "srt-password" => KeyType::SrtPassword,
             "static-key" => KeyType::StaticKey,
-            other => KeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => KeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KeyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeyType::from(s))
+                }
+            }
 impl KeyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1393,12 +1323,14 @@ impl KeyType {
             KeyType::Speke => "speke",
             KeyType::SrtPassword => "srt-password",
             KeyType::StaticKey => "static-key",
-            KeyType::Unknown(value) => value.as_str(),
+            KeyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["speke", "srt-password", "static-key"]
+        &[
+            "speke", "srt-password", "static-key"
+        ]
     }
 }
 impl AsRef<str> for KeyType {
@@ -1413,9 +1345,9 @@ impl AsRef<str> for KeyType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let algorithm = unimplemented!();
 /// match algorithm {
@@ -1438,22 +1370,14 @@ impl AsRef<str> for KeyType {
 /// Specifically, when `algorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Algorithm::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Algorithm {
     #[allow(missing_docs)] // documentation missing in model
     Aes128,
@@ -1462,7 +1386,7 @@ pub enum Algorithm {
     #[allow(missing_docs)] // documentation missing in model
     Aes256,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Algorithm {
     fn from(s: &str) -> Self {
@@ -1470,17 +1394,17 @@ impl std::convert::From<&str> for Algorithm {
             "aes128" => Algorithm::Aes128,
             "aes192" => Algorithm::Aes192,
             "aes256" => Algorithm::Aes256,
-            other => Algorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Algorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Algorithm {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Algorithm::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Algorithm::from(s))
+                }
+            }
 impl Algorithm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1488,12 +1412,14 @@ impl Algorithm {
             Algorithm::Aes128 => "aes128",
             Algorithm::Aes192 => "aes192",
             Algorithm::Aes256 => "aes256",
-            Algorithm::Unknown(value) => value.as_str(),
+            Algorithm::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["aes128", "aes192", "aes256"]
+        &[
+            "aes128", "aes192", "aes256"
+        ]
     }
 }
 impl AsRef<str> for Algorithm {
@@ -1505,43 +1431,39 @@ impl AsRef<str> for Algorithm {
 /// The definition of a media stream that you want to associate with the source.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStreamSourceConfigurationRequest {
+pub struct MediaStreamSourceConfigurationRequest  {
     /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
     #[doc(hidden)]
     pub encoding_name: std::option::Option<crate::model::EncodingName>,
     /// The transport parameters that you want to associate with the media stream.
     #[doc(hidden)]
-    pub input_configurations:
-        std::option::Option<std::vec::Vec<crate::model::InputConfigurationRequest>>,
+    pub input_configurations: std::option::Option<std::vec::Vec<crate::model::InputConfigurationRequest>>,
     /// The name of the media stream.
     #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
 }
 impl MediaStreamSourceConfigurationRequest {
     /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    pub fn encoding_name(&self) -> std::option::Option<&crate::model::EncodingName> {
+    pub fn encoding_name(&self) -> std::option::Option<& crate::model::EncodingName> {
         self.encoding_name.as_ref()
     }
     /// The transport parameters that you want to associate with the media stream.
-    pub fn input_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::InputConfigurationRequest]> {
+    pub fn input_configurations(&self) -> std::option::Option<& [crate::model::InputConfigurationRequest]> {
         self.input_configurations.as_deref()
     }
     /// The name of the media stream.
-    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
 }
 /// See [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
 pub mod media_stream_source_configuration_request {
-
+    
     /// A builder for [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
-        pub(crate) input_configurations:
-            std::option::Option<std::vec::Vec<crate::model::InputConfigurationRequest>>,
+        pub(crate) input_configurations: std::option::Option<std::vec::Vec<crate::model::InputConfigurationRequest>>,
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1551,34 +1473,23 @@ pub mod media_stream_source_configuration_request {
             self
         }
         /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-        pub fn set_encoding_name(
-            mut self,
-            input: std::option::Option<crate::model::EncodingName>,
-        ) -> Self {
-            self.encoding_name = input;
-            self
+        pub fn set_encoding_name(mut self, input: std::option::Option<crate::model::EncodingName>) -> Self {
+            self.encoding_name = input; self
         }
         /// Appends an item to `input_configurations`.
         ///
         /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
         ///
         /// The transport parameters that you want to associate with the media stream.
-        pub fn input_configurations(
-            mut self,
-            input: crate::model::InputConfigurationRequest,
-        ) -> Self {
+        pub fn input_configurations(mut self, input: crate::model::InputConfigurationRequest) -> Self {
             let mut v = self.input_configurations.unwrap_or_default();
-            v.push(input);
-            self.input_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.input_configurations = Some(v);
+                            self
         }
         /// The transport parameters that you want to associate with the media stream.
-        pub fn set_input_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputConfigurationRequest>>,
-        ) -> Self {
-            self.input_configurations = input;
-            self
+        pub fn set_input_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputConfigurationRequest>>) -> Self {
+            self.input_configurations = input; self
         }
         /// The name of the media stream.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1586,22 +1497,23 @@ pub mod media_stream_source_configuration_request {
             self
         }
         /// The name of the media stream.
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
+        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_stream_name = input; self
         }
         /// Consumes the builder and constructs a [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
         pub fn build(self) -> crate::model::MediaStreamSourceConfigurationRequest {
             crate::model::MediaStreamSourceConfigurationRequest {
-                encoding_name: self.encoding_name,
-                input_configurations: self.input_configurations,
-                media_stream_name: self.media_stream_name,
+                encoding_name: self.encoding_name
+                ,
+                input_configurations: self.input_configurations
+                ,
+                media_stream_name: self.media_stream_name
+                ,
             }
         }
     }
+    
+    
 }
 impl MediaStreamSourceConfigurationRequest {
     /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
@@ -1613,7 +1525,7 @@ impl MediaStreamSourceConfigurationRequest {
 /// The transport parameters that you want to associate with an incoming media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputConfigurationRequest {
+pub struct InputConfigurationRequest  {
     /// The port that you want the flow to listen on for an incoming media stream.
     #[doc(hidden)]
     pub input_port: i32,
@@ -1627,13 +1539,13 @@ impl InputConfigurationRequest {
         self.input_port
     }
     /// The VPC interface that you want to use for the incoming media stream.
-    pub fn interface(&self) -> std::option::Option<&crate::model::InterfaceRequest> {
+    pub fn interface(&self) -> std::option::Option<& crate::model::InterfaceRequest> {
         self.interface.as_ref()
     }
 }
 /// See [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
 pub mod input_configuration_request {
-
+    
     /// A builder for [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1648,8 +1560,7 @@ pub mod input_configuration_request {
         }
         /// The port that you want the flow to listen on for an incoming media stream.
         pub fn set_input_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.input_port = input;
-            self
+            self.input_port = input; self
         }
         /// The VPC interface that you want to use for the incoming media stream.
         pub fn interface(mut self, input: crate::model::InterfaceRequest) -> Self {
@@ -1657,21 +1568,22 @@ pub mod input_configuration_request {
             self
         }
         /// The VPC interface that you want to use for the incoming media stream.
-        pub fn set_interface(
-            mut self,
-            input: std::option::Option<crate::model::InterfaceRequest>,
-        ) -> Self {
-            self.interface = input;
-            self
+        pub fn set_interface(mut self, input: std::option::Option<crate::model::InterfaceRequest>) -> Self {
+            self.interface = input; self
         }
         /// Consumes the builder and constructs a [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
         pub fn build(self) -> crate::model::InputConfigurationRequest {
             crate::model::InputConfigurationRequest {
-                input_port: self.input_port.unwrap_or_default(),
-                interface: self.interface,
+                input_port: self.input_port
+                    .unwrap_or_default()
+                ,
+                interface: self.interface
+                ,
             }
         }
     }
+    
+    
 }
 impl InputConfigurationRequest {
     /// Creates a new builder-style object to manufacture [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
@@ -1683,20 +1595,20 @@ impl InputConfigurationRequest {
 /// The VPC interface that you want to designate where the media stream is coming from or going to.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InterfaceRequest {
+pub struct InterfaceRequest  {
     /// The name of the VPC interface.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InterfaceRequest {
     /// The name of the VPC interface.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`InterfaceRequest`](crate::model::InterfaceRequest).
 pub mod interface_request {
-
+    
     /// A builder for [`InterfaceRequest`](crate::model::InterfaceRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1710,14 +1622,18 @@ pub mod interface_request {
         }
         /// The name of the VPC interface.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`InterfaceRequest`](crate::model::InterfaceRequest).
         pub fn build(self) -> crate::model::InterfaceRequest {
-            crate::model::InterfaceRequest { name: self.name }
+            crate::model::InterfaceRequest {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl InterfaceRequest {
     /// Creates a new builder-style object to manufacture [`InterfaceRequest`](crate::model::InterfaceRequest).
@@ -1729,7 +1645,7 @@ impl InterfaceRequest {
 /// Information about the encryption of the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEncryption {
+pub struct UpdateEncryption  {
     /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
     #[doc(hidden)]
     pub algorithm: std::option::Option<crate::model::Algorithm>,
@@ -1760,45 +1676,45 @@ pub struct UpdateEncryption {
 }
 impl UpdateEncryption {
     /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
-    pub fn algorithm(&self) -> std::option::Option<&crate::model::Algorithm> {
+    pub fn algorithm(&self) -> std::option::Option<& crate::model::Algorithm> {
         self.algorithm.as_ref()
     }
     /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+    pub fn constant_initialization_vector(&self) -> std::option::Option<& str> {
         self.constant_initialization_vector.as_deref()
     }
     /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
+    pub fn key_type(&self) -> std::option::Option<& crate::model::KeyType> {
         self.key_type.as_ref()
     }
     /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`UpdateEncryption`](crate::model::UpdateEncryption).
 pub mod update_encryption {
-
+    
     /// A builder for [`UpdateEncryption`](crate::model::UpdateEncryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1819,28 +1735,17 @@ pub mod update_encryption {
             self
         }
         /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
-        pub fn set_algorithm(
-            mut self,
-            input: std::option::Option<crate::model::Algorithm>,
-        ) -> Self {
-            self.algorithm = input;
-            self
+        pub fn set_algorithm(mut self, input: std::option::Option<crate::model::Algorithm>) -> Self {
+            self.algorithm = input; self
         }
         /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-        pub fn constant_initialization_vector(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn constant_initialization_vector(mut self, input: impl Into<std::string::String>) -> Self {
             self.constant_initialization_vector = Some(input.into());
             self
         }
         /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-        pub fn set_constant_initialization_vector(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.constant_initialization_vector = input;
-            self
+        pub fn set_constant_initialization_vector(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constant_initialization_vector = input; self
         }
         /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1849,8 +1754,7 @@ pub mod update_encryption {
         }
         /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn key_type(mut self, input: crate::model::KeyType) -> Self {
@@ -1859,8 +1763,7 @@ pub mod update_encryption {
         }
         /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn set_key_type(mut self, input: std::option::Option<crate::model::KeyType>) -> Self {
-            self.key_type = input;
-            self
+            self.key_type = input; self
         }
         /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1869,8 +1772,7 @@ pub mod update_encryption {
         }
         /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1879,8 +1781,7 @@ pub mod update_encryption {
         }
         /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1889,8 +1790,7 @@ pub mod update_encryption {
         }
         /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1899,8 +1799,7 @@ pub mod update_encryption {
         }
         /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input;
-            self
+            self.secret_arn = input; self
         }
         /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1909,24 +1808,34 @@ pub mod update_encryption {
         }
         /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEncryption`](crate::model::UpdateEncryption).
         pub fn build(self) -> crate::model::UpdateEncryption {
             crate::model::UpdateEncryption {
-                algorithm: self.algorithm,
-                constant_initialization_vector: self.constant_initialization_vector,
-                device_id: self.device_id,
-                key_type: self.key_type,
-                region: self.region,
-                resource_id: self.resource_id,
-                role_arn: self.role_arn,
-                secret_arn: self.secret_arn,
-                url: self.url,
+                algorithm: self.algorithm
+                ,
+                constant_initialization_vector: self.constant_initialization_vector
+                ,
+                device_id: self.device_id
+                ,
+                key_type: self.key_type
+                ,
+                region: self.region
+                ,
+                resource_id: self.resource_id
+                ,
+                role_arn: self.role_arn
+                ,
+                secret_arn: self.secret_arn
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEncryption {
     /// Creates a new builder-style object to manufacture [`UpdateEncryption`](crate::model::UpdateEncryption).
@@ -1938,7 +1847,7 @@ impl UpdateEncryption {
 /// The settings for an output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Output {
+pub struct Output  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
@@ -1962,8 +1871,7 @@ pub struct Output {
     pub media_live_input_arn: std::option::Option<std::string::String>,
     /// The configuration for each media stream that is associated with the output.
     #[doc(hidden)]
-    pub media_stream_output_configurations:
-        std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
+    pub media_stream_output_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
     /// The name of the output. This value must be unique within the current flow.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1986,41 +1894,39 @@ impl Output {
         self.data_transfer_subscriber_fee_percent
     }
     /// A description of the output.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The address where you want to send the output.
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::Encryption> {
         self.encryption.as_ref()
     }
     /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
-    pub fn listener_address(&self) -> std::option::Option<&str> {
+    pub fn listener_address(&self) -> std::option::Option<& str> {
         self.listener_address.as_deref()
     }
     /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
-    pub fn media_live_input_arn(&self) -> std::option::Option<&str> {
+    pub fn media_live_input_arn(&self) -> std::option::Option<& str> {
         self.media_live_input_arn.as_deref()
     }
     /// The configuration for each media stream that is associated with the output.
-    pub fn media_stream_output_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::MediaStreamOutputConfiguration]> {
+    pub fn media_stream_output_configurations(&self) -> std::option::Option<& [crate::model::MediaStreamOutputConfiguration]> {
         self.media_stream_output_configurations.as_deref()
     }
     /// The name of the output. This value must be unique within the current flow.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The ARN of the output.
-    pub fn output_arn(&self) -> std::option::Option<&str> {
+    pub fn output_arn(&self) -> std::option::Option<& str> {
         self.output_arn.as_deref()
     }
     /// The port to use when content is distributed to this output.
@@ -2028,19 +1934,17 @@ impl Output {
         self.port
     }
     /// Attributes related to the transport stream that are used in the output.
-    pub fn transport(&self) -> std::option::Option<&crate::model::Transport> {
+    pub fn transport(&self) -> std::option::Option<& crate::model::Transport> {
         self.transport.as_ref()
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn vpc_interface_attachment(
-        &self,
-    ) -> std::option::Option<&crate::model::VpcInterfaceAttachment> {
+    pub fn vpc_interface_attachment(&self) -> std::option::Option<& crate::model::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
     }
 }
 /// See [`Output`](crate::model::Output).
 pub mod output {
-
+    
     /// A builder for [`Output`](crate::model::Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2051,14 +1955,12 @@ pub mod output {
         pub(crate) entitlement_arn: std::option::Option<std::string::String>,
         pub(crate) listener_address: std::option::Option<std::string::String>,
         pub(crate) media_live_input_arn: std::option::Option<std::string::String>,
-        pub(crate) media_stream_output_configurations:
-            std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
+        pub(crate) media_stream_output_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) output_arn: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) transport: std::option::Option<crate::model::Transport>,
-        pub(crate) vpc_interface_attachment:
-            std::option::Option<crate::model::VpcInterfaceAttachment>,
+        pub(crate) vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
     }
     impl Builder {
         /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
@@ -2067,12 +1969,8 @@ pub mod output {
             self
         }
         /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-        pub fn set_data_transfer_subscriber_fee_percent(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.data_transfer_subscriber_fee_percent = input;
-            self
+        pub fn set_data_transfer_subscriber_fee_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.data_transfer_subscriber_fee_percent = input; self
         }
         /// A description of the output.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2081,8 +1979,7 @@ pub mod output {
         }
         /// A description of the output.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The address where you want to send the output.
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2091,8 +1988,7 @@ pub mod output {
         }
         /// The address where you want to send the output.
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
@@ -2100,12 +1996,8 @@ pub mod output {
             self
         }
         /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::Encryption>) -> Self {
+            self.encryption = input; self
         }
         /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
         pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2113,12 +2005,8 @@ pub mod output {
             self
         }
         /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
-        pub fn set_entitlement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_arn = input;
-            self
+        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entitlement_arn = input; self
         }
         /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
         pub fn listener_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2126,12 +2014,8 @@ pub mod output {
             self
         }
         /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
-        pub fn set_listener_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.listener_address = input;
-            self
+        pub fn set_listener_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.listener_address = input; self
         }
         /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
         pub fn media_live_input_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2139,34 +2023,23 @@ pub mod output {
             self
         }
         /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
-        pub fn set_media_live_input_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_live_input_arn = input;
-            self
+        pub fn set_media_live_input_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_live_input_arn = input; self
         }
         /// Appends an item to `media_stream_output_configurations`.
         ///
         /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
         ///
         /// The configuration for each media stream that is associated with the output.
-        pub fn media_stream_output_configurations(
-            mut self,
-            input: crate::model::MediaStreamOutputConfiguration,
-        ) -> Self {
+        pub fn media_stream_output_configurations(mut self, input: crate::model::MediaStreamOutputConfiguration) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input);
-            self.media_stream_output_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.media_stream_output_configurations = Some(v);
+                            self
         }
         /// The configuration for each media stream that is associated with the output.
-        pub fn set_media_stream_output_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
-        ) -> Self {
-            self.media_stream_output_configurations = input;
-            self
+        pub fn set_media_stream_output_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>) -> Self {
+            self.media_stream_output_configurations = input; self
         }
         /// The name of the output. This value must be unique within the current flow.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2175,8 +2048,7 @@ pub mod output {
         }
         /// The name of the output. This value must be unique within the current flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The ARN of the output.
         pub fn output_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2185,8 +2057,7 @@ pub mod output {
         }
         /// The ARN of the output.
         pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output_arn = input;
-            self
+            self.output_arn = input; self
         }
         /// The port to use when content is distributed to this output.
         pub fn port(mut self, input: i32) -> Self {
@@ -2195,8 +2066,7 @@ pub mod output {
         }
         /// The port to use when content is distributed to this output.
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Attributes related to the transport stream that are used in the output.
         pub fn transport(mut self, input: crate::model::Transport) -> Self {
@@ -2204,50 +2074,54 @@ pub mod output {
             self
         }
         /// Attributes related to the transport stream that are used in the output.
-        pub fn set_transport(
-            mut self,
-            input: std::option::Option<crate::model::Transport>,
-        ) -> Self {
-            self.transport = input;
-            self
+        pub fn set_transport(mut self, input: std::option::Option<crate::model::Transport>) -> Self {
+            self.transport = input; self
         }
         /// The name of the VPC interface attachment to use for this output.
-        pub fn vpc_interface_attachment(
-            mut self,
-            input: crate::model::VpcInterfaceAttachment,
-        ) -> Self {
+        pub fn vpc_interface_attachment(mut self, input: crate::model::VpcInterfaceAttachment) -> Self {
             self.vpc_interface_attachment = Some(input);
             self
         }
         /// The name of the VPC interface attachment to use for this output.
-        pub fn set_vpc_interface_attachment(
-            mut self,
-            input: std::option::Option<crate::model::VpcInterfaceAttachment>,
-        ) -> Self {
-            self.vpc_interface_attachment = input;
-            self
+        pub fn set_vpc_interface_attachment(mut self, input: std::option::Option<crate::model::VpcInterfaceAttachment>) -> Self {
+            self.vpc_interface_attachment = input; self
         }
         /// Consumes the builder and constructs a [`Output`](crate::model::Output).
         pub fn build(self) -> crate::model::Output {
             crate::model::Output {
-                data_transfer_subscriber_fee_percent: self
-                    .data_transfer_subscriber_fee_percent
-                    .unwrap_or_default(),
-                description: self.description,
-                destination: self.destination,
-                encryption: self.encryption,
-                entitlement_arn: self.entitlement_arn,
-                listener_address: self.listener_address,
-                media_live_input_arn: self.media_live_input_arn,
-                media_stream_output_configurations: self.media_stream_output_configurations,
-                name: self.name,
-                output_arn: self.output_arn,
-                port: self.port.unwrap_or_default(),
-                transport: self.transport,
-                vpc_interface_attachment: self.vpc_interface_attachment,
+                data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                destination: self.destination
+                ,
+                encryption: self.encryption
+                ,
+                entitlement_arn: self.entitlement_arn
+                ,
+                listener_address: self.listener_address
+                ,
+                media_live_input_arn: self.media_live_input_arn
+                ,
+                media_stream_output_configurations: self.media_stream_output_configurations
+                ,
+                name: self.name
+                ,
+                output_arn: self.output_arn
+                ,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                transport: self.transport
+                ,
+                vpc_interface_attachment: self.vpc_interface_attachment
+                ,
             }
         }
     }
+    
+    
 }
 impl Output {
     /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
@@ -2259,20 +2133,20 @@ impl Output {
 /// The settings for attaching a VPC interface to an output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcInterfaceAttachment {
+pub struct VpcInterfaceAttachment  {
     /// The name of the VPC interface to use for this output.
     #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
 }
 impl VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this output.
-    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_interface_name(&self) -> std::option::Option<& str> {
         self.vpc_interface_name.as_deref()
     }
 }
 /// See [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
 pub mod vpc_interface_attachment {
-
+    
     /// A builder for [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2285,20 +2159,19 @@ pub mod vpc_interface_attachment {
             self
         }
         /// The name of the VPC interface to use for this output.
-        pub fn set_vpc_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_interface_name = input;
-            self
+        pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_interface_name = input; self
         }
         /// Consumes the builder and constructs a [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
         pub fn build(self) -> crate::model::VpcInterfaceAttachment {
             crate::model::VpcInterfaceAttachment {
-                vpc_interface_name: self.vpc_interface_name,
+                vpc_interface_name: self.vpc_interface_name
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcInterfaceAttachment {
     /// Creates a new builder-style object to manufacture [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
@@ -2310,11 +2183,10 @@ impl VpcInterfaceAttachment {
 /// The media stream that is associated with the output, and the parameters for that association.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStreamOutputConfiguration {
+pub struct MediaStreamOutputConfiguration  {
     /// The transport parameters that are associated with each outbound media stream.
     #[doc(hidden)]
-    pub destination_configurations:
-        std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
+    pub destination_configurations: std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
     #[doc(hidden)]
     pub encoding_name: std::option::Option<crate::model::EncodingName>,
@@ -2327,32 +2199,29 @@ pub struct MediaStreamOutputConfiguration {
 }
 impl MediaStreamOutputConfiguration {
     /// The transport parameters that are associated with each outbound media stream.
-    pub fn destination_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::DestinationConfiguration]> {
+    pub fn destination_configurations(&self) -> std::option::Option<& [crate::model::DestinationConfiguration]> {
         self.destination_configurations.as_deref()
     }
     /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    pub fn encoding_name(&self) -> std::option::Option<&crate::model::EncodingName> {
+    pub fn encoding_name(&self) -> std::option::Option<& crate::model::EncodingName> {
         self.encoding_name.as_ref()
     }
     /// Encoding parameters
-    pub fn encoding_parameters(&self) -> std::option::Option<&crate::model::EncodingParameters> {
+    pub fn encoding_parameters(&self) -> std::option::Option<& crate::model::EncodingParameters> {
         self.encoding_parameters.as_ref()
     }
     /// The name of the media stream.
-    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
 }
 /// See [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
 pub mod media_stream_output_configuration {
-
+    
     /// A builder for [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) destination_configurations:
-            std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
+        pub(crate) destination_configurations: std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
         pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
         pub(crate) encoding_parameters: std::option::Option<crate::model::EncodingParameters>,
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
@@ -2363,22 +2232,15 @@ pub mod media_stream_output_configuration {
         /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
         ///
         /// The transport parameters that are associated with each outbound media stream.
-        pub fn destination_configurations(
-            mut self,
-            input: crate::model::DestinationConfiguration,
-        ) -> Self {
+        pub fn destination_configurations(mut self, input: crate::model::DestinationConfiguration) -> Self {
             let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input);
-            self.destination_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.destination_configurations = Some(v);
+                            self
         }
         /// The transport parameters that are associated with each outbound media stream.
-        pub fn set_destination_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
-        ) -> Self {
-            self.destination_configurations = input;
-            self
+        pub fn set_destination_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>) -> Self {
+            self.destination_configurations = input; self
         }
         /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
         pub fn encoding_name(mut self, input: crate::model::EncodingName) -> Self {
@@ -2386,12 +2248,8 @@ pub mod media_stream_output_configuration {
             self
         }
         /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-        pub fn set_encoding_name(
-            mut self,
-            input: std::option::Option<crate::model::EncodingName>,
-        ) -> Self {
-            self.encoding_name = input;
-            self
+        pub fn set_encoding_name(mut self, input: std::option::Option<crate::model::EncodingName>) -> Self {
+            self.encoding_name = input; self
         }
         /// Encoding parameters
         pub fn encoding_parameters(mut self, input: crate::model::EncodingParameters) -> Self {
@@ -2399,12 +2257,8 @@ pub mod media_stream_output_configuration {
             self
         }
         /// Encoding parameters
-        pub fn set_encoding_parameters(
-            mut self,
-            input: std::option::Option<crate::model::EncodingParameters>,
-        ) -> Self {
-            self.encoding_parameters = input;
-            self
+        pub fn set_encoding_parameters(mut self, input: std::option::Option<crate::model::EncodingParameters>) -> Self {
+            self.encoding_parameters = input; self
         }
         /// The name of the media stream.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2412,23 +2266,25 @@ pub mod media_stream_output_configuration {
             self
         }
         /// The name of the media stream.
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
+        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_stream_name = input; self
         }
         /// Consumes the builder and constructs a [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
         pub fn build(self) -> crate::model::MediaStreamOutputConfiguration {
             crate::model::MediaStreamOutputConfiguration {
-                destination_configurations: self.destination_configurations,
-                encoding_name: self.encoding_name,
-                encoding_parameters: self.encoding_parameters,
-                media_stream_name: self.media_stream_name,
+                destination_configurations: self.destination_configurations
+                ,
+                encoding_name: self.encoding_name
+                ,
+                encoding_parameters: self.encoding_parameters
+                ,
+                media_stream_name: self.media_stream_name
+                ,
             }
         }
     }
+    
+    
 }
 impl MediaStreamOutputConfiguration {
     /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
@@ -2440,7 +2296,7 @@ impl MediaStreamOutputConfiguration {
 /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncodingParameters {
+pub struct EncodingParameters  {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
     #[doc(hidden)]
     pub compression_factor: f64,
@@ -2454,13 +2310,13 @@ impl EncodingParameters {
         self.compression_factor
     }
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
-    pub fn encoder_profile(&self) -> std::option::Option<&crate::model::EncoderProfile> {
+    pub fn encoder_profile(&self) -> std::option::Option<& crate::model::EncoderProfile> {
         self.encoder_profile.as_ref()
     }
 }
 /// See [`EncodingParameters`](crate::model::EncodingParameters).
 pub mod encoding_parameters {
-
+    
     /// A builder for [`EncodingParameters`](crate::model::EncodingParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2475,8 +2331,7 @@ pub mod encoding_parameters {
         }
         /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
         pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
-            self.compression_factor = input;
-            self
+            self.compression_factor = input; self
         }
         /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
         pub fn encoder_profile(mut self, input: crate::model::EncoderProfile) -> Self {
@@ -2484,21 +2339,22 @@ pub mod encoding_parameters {
             self
         }
         /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
-        pub fn set_encoder_profile(
-            mut self,
-            input: std::option::Option<crate::model::EncoderProfile>,
-        ) -> Self {
-            self.encoder_profile = input;
-            self
+        pub fn set_encoder_profile(mut self, input: std::option::Option<crate::model::EncoderProfile>) -> Self {
+            self.encoder_profile = input; self
         }
         /// Consumes the builder and constructs a [`EncodingParameters`](crate::model::EncodingParameters).
         pub fn build(self) -> crate::model::EncodingParameters {
             crate::model::EncodingParameters {
-                compression_factor: self.compression_factor.unwrap_or_default(),
-                encoder_profile: self.encoder_profile,
+                compression_factor: self.compression_factor
+                    .unwrap_or_default()
+                ,
+                encoder_profile: self.encoder_profile
+                ,
             }
         }
     }
+    
+    
 }
 impl EncodingParameters {
     /// Creates a new builder-style object to manufacture [`EncodingParameters`](crate::model::EncodingParameters).
@@ -2513,9 +2369,9 @@ impl EncodingParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encoderprofile = unimplemented!();
 /// match encoderprofile {
@@ -2537,58 +2393,52 @@ impl EncodingParameters {
 /// Specifically, when `encoderprofile` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncoderProfile::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncoderProfile {
     #[allow(missing_docs)] // documentation missing in model
     High,
     #[allow(missing_docs)] // documentation missing in model
     Main,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncoderProfile {
     fn from(s: &str) -> Self {
         match s {
             "high" => EncoderProfile::High,
             "main" => EncoderProfile::Main,
-            other => EncoderProfile::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncoderProfile::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncoderProfile {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncoderProfile::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncoderProfile::from(s))
+                }
+            }
 impl EncoderProfile {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncoderProfile::High => "high",
             EncoderProfile::Main => "main",
-            EncoderProfile::Unknown(value) => value.as_str(),
+            EncoderProfile::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["high", "main"]
+        &[
+            "high", "main"
+        ]
     }
 }
 impl AsRef<str> for EncoderProfile {
@@ -2600,7 +2450,7 @@ impl AsRef<str> for EncoderProfile {
 /// The transport parameters that are associated with an outbound media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationConfiguration {
+pub struct DestinationConfiguration  {
     /// The IP address where contents of the media stream will be sent.
     #[doc(hidden)]
     pub destination_ip: std::option::Option<std::string::String>,
@@ -2616,7 +2466,7 @@ pub struct DestinationConfiguration {
 }
 impl DestinationConfiguration {
     /// The IP address where contents of the media stream will be sent.
-    pub fn destination_ip(&self) -> std::option::Option<&str> {
+    pub fn destination_ip(&self) -> std::option::Option<& str> {
         self.destination_ip.as_deref()
     }
     /// The port to use when the content of the media stream is distributed to the output.
@@ -2624,17 +2474,17 @@ impl DestinationConfiguration {
         self.destination_port
     }
     /// The VPC interface that is used for the media stream associated with the output.
-    pub fn interface(&self) -> std::option::Option<&crate::model::Interface> {
+    pub fn interface(&self) -> std::option::Option<& crate::model::Interface> {
         self.interface.as_ref()
     }
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
-    pub fn outbound_ip(&self) -> std::option::Option<&str> {
+    pub fn outbound_ip(&self) -> std::option::Option<& str> {
         self.outbound_ip.as_deref()
     }
 }
 /// See [`DestinationConfiguration`](crate::model::DestinationConfiguration).
 pub mod destination_configuration {
-
+    
     /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2650,12 +2500,8 @@ pub mod destination_configuration {
             self
         }
         /// The IP address where contents of the media stream will be sent.
-        pub fn set_destination_ip(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_ip = input;
-            self
+        pub fn set_destination_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_ip = input; self
         }
         /// The port to use when the content of the media stream is distributed to the output.
         pub fn destination_port(mut self, input: i32) -> Self {
@@ -2664,8 +2510,7 @@ pub mod destination_configuration {
         }
         /// The port to use when the content of the media stream is distributed to the output.
         pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.destination_port = input;
-            self
+            self.destination_port = input; self
         }
         /// The VPC interface that is used for the media stream associated with the output.
         pub fn interface(mut self, input: crate::model::Interface) -> Self {
@@ -2673,12 +2518,8 @@ pub mod destination_configuration {
             self
         }
         /// The VPC interface that is used for the media stream associated with the output.
-        pub fn set_interface(
-            mut self,
-            input: std::option::Option<crate::model::Interface>,
-        ) -> Self {
-            self.interface = input;
-            self
+        pub fn set_interface(mut self, input: std::option::Option<crate::model::Interface>) -> Self {
+            self.interface = input; self
         }
         /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
         pub fn outbound_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2687,19 +2528,25 @@ pub mod destination_configuration {
         }
         /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
         pub fn set_outbound_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outbound_ip = input;
-            self
+            self.outbound_ip = input; self
         }
         /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::model::DestinationConfiguration).
         pub fn build(self) -> crate::model::DestinationConfiguration {
             crate::model::DestinationConfiguration {
-                destination_ip: self.destination_ip,
-                destination_port: self.destination_port.unwrap_or_default(),
-                interface: self.interface,
-                outbound_ip: self.outbound_ip,
+                destination_ip: self.destination_ip
+                ,
+                destination_port: self.destination_port
+                    .unwrap_or_default()
+                ,
+                interface: self.interface
+                ,
+                outbound_ip: self.outbound_ip
+                ,
             }
         }
     }
+    
+    
 }
 impl DestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration).
@@ -2711,11 +2558,10 @@ impl DestinationConfiguration {
 /// The media stream that you want to associate with the output, and the parameters for that association.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStreamOutputConfigurationRequest {
+pub struct MediaStreamOutputConfigurationRequest  {
     /// The transport parameters that you want to associate with the media stream.
     #[doc(hidden)]
-    pub destination_configurations:
-        std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
+    pub destination_configurations: std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
     /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
     #[doc(hidden)]
     pub encoding_name: std::option::Option<crate::model::EncodingName>,
@@ -2728,37 +2574,31 @@ pub struct MediaStreamOutputConfigurationRequest {
 }
 impl MediaStreamOutputConfigurationRequest {
     /// The transport parameters that you want to associate with the media stream.
-    pub fn destination_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::DestinationConfigurationRequest]> {
+    pub fn destination_configurations(&self) -> std::option::Option<& [crate::model::DestinationConfigurationRequest]> {
         self.destination_configurations.as_deref()
     }
     /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-    pub fn encoding_name(&self) -> std::option::Option<&crate::model::EncodingName> {
+    pub fn encoding_name(&self) -> std::option::Option<& crate::model::EncodingName> {
         self.encoding_name.as_ref()
     }
     /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
-    pub fn encoding_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::EncodingParametersRequest> {
+    pub fn encoding_parameters(&self) -> std::option::Option<& crate::model::EncodingParametersRequest> {
         self.encoding_parameters.as_ref()
     }
     /// The name of the media stream that is associated with the output.
-    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
 }
 /// See [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
 pub mod media_stream_output_configuration_request {
-
+    
     /// A builder for [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) destination_configurations:
-            std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
+        pub(crate) destination_configurations: std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>,
         pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
-        pub(crate) encoding_parameters:
-            std::option::Option<crate::model::EncodingParametersRequest>,
+        pub(crate) encoding_parameters: std::option::Option<crate::model::EncodingParametersRequest>,
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2767,24 +2607,15 @@ pub mod media_stream_output_configuration_request {
         /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
         ///
         /// The transport parameters that you want to associate with the media stream.
-        pub fn destination_configurations(
-            mut self,
-            input: crate::model::DestinationConfigurationRequest,
-        ) -> Self {
+        pub fn destination_configurations(mut self, input: crate::model::DestinationConfigurationRequest) -> Self {
             let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input);
-            self.destination_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.destination_configurations = Some(v);
+                            self
         }
         /// The transport parameters that you want to associate with the media stream.
-        pub fn set_destination_configurations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DestinationConfigurationRequest>,
-            >,
-        ) -> Self {
-            self.destination_configurations = input;
-            self
+        pub fn set_destination_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::DestinationConfigurationRequest>>) -> Self {
+            self.destination_configurations = input; self
         }
         /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
         pub fn encoding_name(mut self, input: crate::model::EncodingName) -> Self {
@@ -2792,28 +2623,17 @@ pub mod media_stream_output_configuration_request {
             self
         }
         /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
-        pub fn set_encoding_name(
-            mut self,
-            input: std::option::Option<crate::model::EncodingName>,
-        ) -> Self {
-            self.encoding_name = input;
-            self
+        pub fn set_encoding_name(mut self, input: std::option::Option<crate::model::EncodingName>) -> Self {
+            self.encoding_name = input; self
         }
         /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
-        pub fn encoding_parameters(
-            mut self,
-            input: crate::model::EncodingParametersRequest,
-        ) -> Self {
+        pub fn encoding_parameters(mut self, input: crate::model::EncodingParametersRequest) -> Self {
             self.encoding_parameters = Some(input);
             self
         }
         /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
-        pub fn set_encoding_parameters(
-            mut self,
-            input: std::option::Option<crate::model::EncodingParametersRequest>,
-        ) -> Self {
-            self.encoding_parameters = input;
-            self
+        pub fn set_encoding_parameters(mut self, input: std::option::Option<crate::model::EncodingParametersRequest>) -> Self {
+            self.encoding_parameters = input; self
         }
         /// The name of the media stream that is associated with the output.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2821,23 +2641,25 @@ pub mod media_stream_output_configuration_request {
             self
         }
         /// The name of the media stream that is associated with the output.
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
+        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_stream_name = input; self
         }
         /// Consumes the builder and constructs a [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
         pub fn build(self) -> crate::model::MediaStreamOutputConfigurationRequest {
             crate::model::MediaStreamOutputConfigurationRequest {
-                destination_configurations: self.destination_configurations,
-                encoding_name: self.encoding_name,
-                encoding_parameters: self.encoding_parameters,
-                media_stream_name: self.media_stream_name,
+                destination_configurations: self.destination_configurations
+                ,
+                encoding_name: self.encoding_name
+                ,
+                encoding_parameters: self.encoding_parameters
+                ,
+                media_stream_name: self.media_stream_name
+                ,
             }
         }
     }
+    
+    
 }
 impl MediaStreamOutputConfigurationRequest {
     /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
@@ -2849,7 +2671,7 @@ impl MediaStreamOutputConfigurationRequest {
 /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncodingParametersRequest {
+pub struct EncodingParametersRequest  {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
     #[doc(hidden)]
     pub compression_factor: f64,
@@ -2863,13 +2685,13 @@ impl EncodingParametersRequest {
         self.compression_factor
     }
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
-    pub fn encoder_profile(&self) -> std::option::Option<&crate::model::EncoderProfile> {
+    pub fn encoder_profile(&self) -> std::option::Option<& crate::model::EncoderProfile> {
         self.encoder_profile.as_ref()
     }
 }
 /// See [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
 pub mod encoding_parameters_request {
-
+    
     /// A builder for [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2884,8 +2706,7 @@ pub mod encoding_parameters_request {
         }
         /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
         pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
-            self.compression_factor = input;
-            self
+            self.compression_factor = input; self
         }
         /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
         pub fn encoder_profile(mut self, input: crate::model::EncoderProfile) -> Self {
@@ -2893,21 +2714,22 @@ pub mod encoding_parameters_request {
             self
         }
         /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
-        pub fn set_encoder_profile(
-            mut self,
-            input: std::option::Option<crate::model::EncoderProfile>,
-        ) -> Self {
-            self.encoder_profile = input;
-            self
+        pub fn set_encoder_profile(mut self, input: std::option::Option<crate::model::EncoderProfile>) -> Self {
+            self.encoder_profile = input; self
         }
         /// Consumes the builder and constructs a [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
         pub fn build(self) -> crate::model::EncodingParametersRequest {
             crate::model::EncodingParametersRequest {
-                compression_factor: self.compression_factor.unwrap_or_default(),
-                encoder_profile: self.encoder_profile,
+                compression_factor: self.compression_factor
+                    .unwrap_or_default()
+                ,
+                encoder_profile: self.encoder_profile
+                ,
             }
         }
     }
+    
+    
 }
 impl EncodingParametersRequest {
     /// Creates a new builder-style object to manufacture [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
@@ -2919,7 +2741,7 @@ impl EncodingParametersRequest {
 /// The transport parameters that you want to associate with an outbound media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationConfigurationRequest {
+pub struct DestinationConfigurationRequest  {
     /// The IP address where you want MediaConnect to send contents of the media stream.
     #[doc(hidden)]
     pub destination_ip: std::option::Option<std::string::String>,
@@ -2932,7 +2754,7 @@ pub struct DestinationConfigurationRequest {
 }
 impl DestinationConfigurationRequest {
     /// The IP address where you want MediaConnect to send contents of the media stream.
-    pub fn destination_ip(&self) -> std::option::Option<&str> {
+    pub fn destination_ip(&self) -> std::option::Option<& str> {
         self.destination_ip.as_deref()
     }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
@@ -2940,13 +2762,13 @@ impl DestinationConfigurationRequest {
         self.destination_port
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
-    pub fn interface(&self) -> std::option::Option<&crate::model::InterfaceRequest> {
+    pub fn interface(&self) -> std::option::Option<& crate::model::InterfaceRequest> {
         self.interface.as_ref()
     }
 }
 /// See [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
 pub mod destination_configuration_request {
-
+    
     /// A builder for [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2961,12 +2783,8 @@ pub mod destination_configuration_request {
             self
         }
         /// The IP address where you want MediaConnect to send contents of the media stream.
-        pub fn set_destination_ip(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_ip = input;
-            self
+        pub fn set_destination_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_ip = input; self
         }
         /// The port that you want MediaConnect to use when it distributes the media stream to the output.
         pub fn destination_port(mut self, input: i32) -> Self {
@@ -2975,8 +2793,7 @@ pub mod destination_configuration_request {
         }
         /// The port that you want MediaConnect to use when it distributes the media stream to the output.
         pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.destination_port = input;
-            self
+            self.destination_port = input; self
         }
         /// The VPC interface that you want to use for the media stream associated with the output.
         pub fn interface(mut self, input: crate::model::InterfaceRequest) -> Self {
@@ -2984,22 +2801,24 @@ pub mod destination_configuration_request {
             self
         }
         /// The VPC interface that you want to use for the media stream associated with the output.
-        pub fn set_interface(
-            mut self,
-            input: std::option::Option<crate::model::InterfaceRequest>,
-        ) -> Self {
-            self.interface = input;
-            self
+        pub fn set_interface(mut self, input: std::option::Option<crate::model::InterfaceRequest>) -> Self {
+            self.interface = input; self
         }
         /// Consumes the builder and constructs a [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
         pub fn build(self) -> crate::model::DestinationConfigurationRequest {
             crate::model::DestinationConfigurationRequest {
-                destination_ip: self.destination_ip,
-                destination_port: self.destination_port.unwrap_or_default(),
-                interface: self.interface,
+                destination_ip: self.destination_ip
+                ,
+                destination_port: self.destination_port
+                    .unwrap_or_default()
+                ,
+                interface: self.interface
+                ,
             }
         }
     }
+    
+    
 }
 impl DestinationConfigurationRequest {
     /// Creates a new builder-style object to manufacture [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
@@ -3011,7 +2830,7 @@ impl DestinationConfigurationRequest {
 /// A single track or stream of media that contains video, audio, or ancillary data. After you add a media stream to a flow, you can associate it with sources and outputs on that flow, as long as they use the CDI protocol or the ST 2110 JPEG XS protocol. Each source or output can consist of one or many media streams.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStream {
+pub struct MediaStream  {
     /// Attributes that are related to the media stream.
     #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::MediaStreamAttributes>,
@@ -3039,7 +2858,7 @@ pub struct MediaStream {
 }
 impl MediaStream {
     /// Attributes that are related to the media stream.
-    pub fn attributes(&self) -> std::option::Option<&crate::model::MediaStreamAttributes> {
+    pub fn attributes(&self) -> std::option::Option<& crate::model::MediaStreamAttributes> {
         self.attributes.as_ref()
     }
     /// The sample rate for the stream. This value is measured in Hz.
@@ -3047,7 +2866,7 @@ impl MediaStream {
         self.clock_rate
     }
     /// A description that can help you quickly identify what your media stream is used for.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
@@ -3059,21 +2878,21 @@ impl MediaStream {
         self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
-    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
     /// The type of media stream.
-    pub fn media_stream_type(&self) -> std::option::Option<&crate::model::MediaStreamType> {
+    pub fn media_stream_type(&self) -> std::option::Option<& crate::model::MediaStreamType> {
         self.media_stream_type.as_ref()
     }
     /// The resolution of the video.
-    pub fn video_format(&self) -> std::option::Option<&str> {
+    pub fn video_format(&self) -> std::option::Option<& str> {
         self.video_format.as_deref()
     }
 }
 /// See [`MediaStream`](crate::model::MediaStream).
 pub mod media_stream {
-
+    
     /// A builder for [`MediaStream`](crate::model::MediaStream).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3093,12 +2912,8 @@ pub mod media_stream {
             self
         }
         /// Attributes that are related to the media stream.
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<crate::model::MediaStreamAttributes>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<crate::model::MediaStreamAttributes>) -> Self {
+            self.attributes = input; self
         }
         /// The sample rate for the stream. This value is measured in Hz.
         pub fn clock_rate(mut self, input: i32) -> Self {
@@ -3107,8 +2922,7 @@ pub mod media_stream {
         }
         /// The sample rate for the stream. This value is measured in Hz.
         pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
-            self.clock_rate = input;
-            self
+            self.clock_rate = input; self
         }
         /// A description that can help you quickly identify what your media stream is used for.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3117,8 +2931,7 @@ pub mod media_stream {
         }
         /// A description that can help you quickly identify what your media stream is used for.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
         pub fn fmt(mut self, input: i32) -> Self {
@@ -3127,8 +2940,7 @@ pub mod media_stream {
         }
         /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
         pub fn set_fmt(mut self, input: std::option::Option<i32>) -> Self {
-            self.fmt = input;
-            self
+            self.fmt = input; self
         }
         /// A unique identifier for the media stream.
         pub fn media_stream_id(mut self, input: i32) -> Self {
@@ -3137,8 +2949,7 @@ pub mod media_stream {
         }
         /// A unique identifier for the media stream.
         pub fn set_media_stream_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.media_stream_id = input;
-            self
+            self.media_stream_id = input; self
         }
         /// A name that helps you distinguish one media stream from another.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3146,12 +2957,8 @@ pub mod media_stream {
             self
         }
         /// A name that helps you distinguish one media stream from another.
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
+        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_stream_name = input; self
         }
         /// The type of media stream.
         pub fn media_stream_type(mut self, input: crate::model::MediaStreamType) -> Self {
@@ -3159,12 +2966,8 @@ pub mod media_stream {
             self
         }
         /// The type of media stream.
-        pub fn set_media_stream_type(
-            mut self,
-            input: std::option::Option<crate::model::MediaStreamType>,
-        ) -> Self {
-            self.media_stream_type = input;
-            self
+        pub fn set_media_stream_type(mut self, input: std::option::Option<crate::model::MediaStreamType>) -> Self {
+            self.media_stream_type = input; self
         }
         /// The resolution of the video.
         pub fn video_format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3173,23 +2976,35 @@ pub mod media_stream {
         }
         /// The resolution of the video.
         pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.video_format = input;
-            self
+            self.video_format = input; self
         }
         /// Consumes the builder and constructs a [`MediaStream`](crate::model::MediaStream).
         pub fn build(self) -> crate::model::MediaStream {
             crate::model::MediaStream {
-                attributes: self.attributes,
-                clock_rate: self.clock_rate.unwrap_or_default(),
-                description: self.description,
-                fmt: self.fmt.unwrap_or_default(),
-                media_stream_id: self.media_stream_id.unwrap_or_default(),
-                media_stream_name: self.media_stream_name,
-                media_stream_type: self.media_stream_type,
-                video_format: self.video_format,
+                attributes: self.attributes
+                ,
+                clock_rate: self.clock_rate
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                fmt: self.fmt
+                    .unwrap_or_default()
+                ,
+                media_stream_id: self.media_stream_id
+                    .unwrap_or_default()
+                ,
+                media_stream_name: self.media_stream_name
+                ,
+                media_stream_type: self.media_stream_type
+                ,
+                video_format: self.video_format
+                ,
             }
         }
     }
+    
+    
 }
 impl MediaStream {
     /// Creates a new builder-style object to manufacture [`MediaStream`](crate::model::MediaStream).
@@ -3204,9 +3019,9 @@ impl MediaStream {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mediastreamtype = unimplemented!();
 /// match mediastreamtype {
@@ -3229,22 +3044,14 @@ impl MediaStream {
 /// Specifically, when `mediastreamtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MediaStreamType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MediaStreamType {
     #[allow(missing_docs)] // documentation missing in model
     AncillaryData,
@@ -3253,7 +3060,7 @@ pub enum MediaStreamType {
     #[allow(missing_docs)] // documentation missing in model
     Video,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MediaStreamType {
     fn from(s: &str) -> Self {
@@ -3261,17 +3068,17 @@ impl std::convert::From<&str> for MediaStreamType {
             "ancillary-data" => MediaStreamType::AncillaryData,
             "audio" => MediaStreamType::Audio,
             "video" => MediaStreamType::Video,
-            other => MediaStreamType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MediaStreamType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MediaStreamType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MediaStreamType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MediaStreamType::from(s))
+                }
+            }
 impl MediaStreamType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3279,12 +3086,14 @@ impl MediaStreamType {
             MediaStreamType::AncillaryData => "ancillary-data",
             MediaStreamType::Audio => "audio",
             MediaStreamType::Video => "video",
-            MediaStreamType::Unknown(value) => value.as_str(),
+            MediaStreamType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ancillary-data", "audio", "video"]
+        &[
+            "ancillary-data", "audio", "video"
+        ]
     }
 }
 impl AsRef<str> for MediaStreamType {
@@ -3296,7 +3105,7 @@ impl AsRef<str> for MediaStreamType {
 /// Attributes that are related to the media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStreamAttributes {
+pub struct MediaStreamAttributes  {
     /// A set of parameters that define the media stream.
     #[doc(hidden)]
     pub fmtp: std::option::Option<crate::model::Fmtp>,
@@ -3306,17 +3115,17 @@ pub struct MediaStreamAttributes {
 }
 impl MediaStreamAttributes {
     /// A set of parameters that define the media stream.
-    pub fn fmtp(&self) -> std::option::Option<&crate::model::Fmtp> {
+    pub fn fmtp(&self) -> std::option::Option<& crate::model::Fmtp> {
         self.fmtp.as_ref()
     }
     /// The audio language, in a format that is recognized by the receiver.
-    pub fn lang(&self) -> std::option::Option<&str> {
+    pub fn lang(&self) -> std::option::Option<& str> {
         self.lang.as_deref()
     }
 }
 /// See [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
 pub mod media_stream_attributes {
-
+    
     /// A builder for [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3331,8 +3140,7 @@ pub mod media_stream_attributes {
         }
         /// A set of parameters that define the media stream.
         pub fn set_fmtp(mut self, input: std::option::Option<crate::model::Fmtp>) -> Self {
-            self.fmtp = input;
-            self
+            self.fmtp = input; self
         }
         /// The audio language, in a format that is recognized by the receiver.
         pub fn lang(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3341,17 +3149,20 @@ pub mod media_stream_attributes {
         }
         /// The audio language, in a format that is recognized by the receiver.
         pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lang = input;
-            self
+            self.lang = input; self
         }
         /// Consumes the builder and constructs a [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
         pub fn build(self) -> crate::model::MediaStreamAttributes {
             crate::model::MediaStreamAttributes {
-                fmtp: self.fmtp,
-                lang: self.lang,
+                fmtp: self.fmtp
+                ,
+                lang: self.lang
+                ,
             }
         }
     }
+    
+    
 }
 impl MediaStreamAttributes {
     /// Creates a new builder-style object to manufacture [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
@@ -3363,7 +3174,7 @@ impl MediaStreamAttributes {
 /// FMTP
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Fmtp {
+pub struct Fmtp  {
     /// The format of the audio channel.
     #[doc(hidden)]
     pub channel_order: std::option::Option<std::string::String>,
@@ -3388,37 +3199,37 @@ pub struct Fmtp {
 }
 impl Fmtp {
     /// The format of the audio channel.
-    pub fn channel_order(&self) -> std::option::Option<&str> {
+    pub fn channel_order(&self) -> std::option::Option<& str> {
         self.channel_order.as_deref()
     }
     /// The format that is used for the representation of color.
-    pub fn colorimetry(&self) -> std::option::Option<&crate::model::Colorimetry> {
+    pub fn colorimetry(&self) -> std::option::Option<& crate::model::Colorimetry> {
         self.colorimetry.as_ref()
     }
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-    pub fn exact_framerate(&self) -> std::option::Option<&str> {
+    pub fn exact_framerate(&self) -> std::option::Option<& str> {
         self.exact_framerate.as_deref()
     }
     /// The pixel aspect ratio (PAR) of the video.
-    pub fn par(&self) -> std::option::Option<&str> {
+    pub fn par(&self) -> std::option::Option<& str> {
         self.par.as_deref()
     }
     /// The encoding range of the video.
-    pub fn range(&self) -> std::option::Option<&crate::model::Range> {
+    pub fn range(&self) -> std::option::Option<& crate::model::Range> {
         self.range.as_ref()
     }
     /// The type of compression that was used to smooth the video’s appearance
-    pub fn scan_mode(&self) -> std::option::Option<&crate::model::ScanMode> {
+    pub fn scan_mode(&self) -> std::option::Option<& crate::model::ScanMode> {
         self.scan_mode.as_ref()
     }
     /// The transfer characteristic system (TCS) that is used in the video.
-    pub fn tcs(&self) -> std::option::Option<&crate::model::Tcs> {
+    pub fn tcs(&self) -> std::option::Option<& crate::model::Tcs> {
         self.tcs.as_ref()
     }
 }
 /// See [`Fmtp`](crate::model::Fmtp).
 pub mod fmtp {
-
+    
     /// A builder for [`Fmtp`](crate::model::Fmtp).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3437,12 +3248,8 @@ pub mod fmtp {
             self
         }
         /// The format of the audio channel.
-        pub fn set_channel_order(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.channel_order = input;
-            self
+        pub fn set_channel_order(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_order = input; self
         }
         /// The format that is used for the representation of color.
         pub fn colorimetry(mut self, input: crate::model::Colorimetry) -> Self {
@@ -3450,12 +3257,8 @@ pub mod fmtp {
             self
         }
         /// The format that is used for the representation of color.
-        pub fn set_colorimetry(
-            mut self,
-            input: std::option::Option<crate::model::Colorimetry>,
-        ) -> Self {
-            self.colorimetry = input;
-            self
+        pub fn set_colorimetry(mut self, input: std::option::Option<crate::model::Colorimetry>) -> Self {
+            self.colorimetry = input; self
         }
         /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
         pub fn exact_framerate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3463,12 +3266,8 @@ pub mod fmtp {
             self
         }
         /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-        pub fn set_exact_framerate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exact_framerate = input;
-            self
+        pub fn set_exact_framerate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.exact_framerate = input; self
         }
         /// The pixel aspect ratio (PAR) of the video.
         pub fn par(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3477,8 +3276,7 @@ pub mod fmtp {
         }
         /// The pixel aspect ratio (PAR) of the video.
         pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.par = input;
-            self
+            self.par = input; self
         }
         /// The encoding range of the video.
         pub fn range(mut self, input: crate::model::Range) -> Self {
@@ -3487,8 +3285,7 @@ pub mod fmtp {
         }
         /// The encoding range of the video.
         pub fn set_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
-            self.range = input;
-            self
+            self.range = input; self
         }
         /// The type of compression that was used to smooth the video’s appearance
         pub fn scan_mode(mut self, input: crate::model::ScanMode) -> Self {
@@ -3497,8 +3294,7 @@ pub mod fmtp {
         }
         /// The type of compression that was used to smooth the video’s appearance
         pub fn set_scan_mode(mut self, input: std::option::Option<crate::model::ScanMode>) -> Self {
-            self.scan_mode = input;
-            self
+            self.scan_mode = input; self
         }
         /// The transfer characteristic system (TCS) that is used in the video.
         pub fn tcs(mut self, input: crate::model::Tcs) -> Self {
@@ -3507,22 +3303,30 @@ pub mod fmtp {
         }
         /// The transfer characteristic system (TCS) that is used in the video.
         pub fn set_tcs(mut self, input: std::option::Option<crate::model::Tcs>) -> Self {
-            self.tcs = input;
-            self
+            self.tcs = input; self
         }
         /// Consumes the builder and constructs a [`Fmtp`](crate::model::Fmtp).
         pub fn build(self) -> crate::model::Fmtp {
             crate::model::Fmtp {
-                channel_order: self.channel_order,
-                colorimetry: self.colorimetry,
-                exact_framerate: self.exact_framerate,
-                par: self.par,
-                range: self.range,
-                scan_mode: self.scan_mode,
-                tcs: self.tcs,
+                channel_order: self.channel_order
+                ,
+                colorimetry: self.colorimetry
+                ,
+                exact_framerate: self.exact_framerate
+                ,
+                par: self.par
+                ,
+                range: self.range
+                ,
+                scan_mode: self.scan_mode
+                ,
+                tcs: self.tcs
+                ,
             }
         }
     }
+    
+    
 }
 impl Fmtp {
     /// Creates a new builder-style object to manufacture [`Fmtp`](crate::model::Fmtp).
@@ -3537,9 +3341,9 @@ impl Fmtp {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tcs = unimplemented!();
 /// match tcs {
@@ -3568,22 +3372,14 @@ impl Fmtp {
 /// Specifically, when `tcs` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Tcs::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Tcs {
     #[allow(missing_docs)] // documentation missing in model
     Bt2100Linhlg,
@@ -3604,7 +3400,7 @@ pub enum Tcs {
     #[allow(missing_docs)] // documentation missing in model
     St4281,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Tcs {
     fn from(s: &str) -> Self {
@@ -3618,17 +3414,17 @@ impl std::convert::From<&str> for Tcs {
             "SDR" => Tcs::Sdr,
             "ST2065-1" => Tcs::St20651,
             "ST428-1" => Tcs::St4281,
-            other => Tcs::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Tcs::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Tcs {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Tcs::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Tcs::from(s))
+                }
+            }
 impl Tcs {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3642,21 +3438,13 @@ impl Tcs {
             Tcs::Sdr => "SDR",
             Tcs::St20651 => "ST2065-1",
             Tcs::St4281 => "ST428-1",
-            Tcs::Unknown(value) => value.as_str(),
+            Tcs::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BT2100LINHLG",
-            "BT2100LINPQ",
-            "DENSITY",
-            "HLG",
-            "LINEAR",
-            "PQ",
-            "SDR",
-            "ST2065-1",
-            "ST428-1",
+            "BT2100LINHLG", "BT2100LINPQ", "DENSITY", "HLG", "LINEAR", "PQ", "SDR", "ST2065-1", "ST428-1"
         ]
     }
 }
@@ -3672,9 +3460,9 @@ impl AsRef<str> for Tcs {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scanmode = unimplemented!();
 /// match scanmode {
@@ -3697,22 +3485,14 @@ impl AsRef<str> for Tcs {
 /// Specifically, when `scanmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScanMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScanMode {
     #[allow(missing_docs)] // documentation missing in model
     Interlace,
@@ -3721,7 +3501,7 @@ pub enum ScanMode {
     #[allow(missing_docs)] // documentation missing in model
     ProgressiveSegmentedFrame,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScanMode {
     fn from(s: &str) -> Self {
@@ -3729,17 +3509,17 @@ impl std::convert::From<&str> for ScanMode {
             "interlace" => ScanMode::Interlace,
             "progressive" => ScanMode::Progressive,
             "progressive-segmented-frame" => ScanMode::ProgressiveSegmentedFrame,
-            other => ScanMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ScanMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScanMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScanMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScanMode::from(s))
+                }
+            }
 impl ScanMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3747,12 +3527,14 @@ impl ScanMode {
             ScanMode::Interlace => "interlace",
             ScanMode::Progressive => "progressive",
             ScanMode::ProgressiveSegmentedFrame => "progressive-segmented-frame",
-            ScanMode::Unknown(value) => value.as_str(),
+            ScanMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["interlace", "progressive", "progressive-segmented-frame"]
+        &[
+            "interlace", "progressive", "progressive-segmented-frame"
+        ]
     }
 }
 impl AsRef<str> for ScanMode {
@@ -3767,9 +3549,9 @@ impl AsRef<str> for ScanMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let range = unimplemented!();
 /// match range {
@@ -3792,22 +3574,14 @@ impl AsRef<str> for ScanMode {
 /// Specifically, when `range` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Range::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Range {
     #[allow(missing_docs)] // documentation missing in model
     Full,
@@ -3816,7 +3590,7 @@ pub enum Range {
     #[allow(missing_docs)] // documentation missing in model
     Narrow,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Range {
     fn from(s: &str) -> Self {
@@ -3824,17 +3598,17 @@ impl std::convert::From<&str> for Range {
             "FULL" => Range::Full,
             "FULLPROTECT" => Range::Fullprotect,
             "NARROW" => Range::Narrow,
-            other => Range::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Range::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Range {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Range::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Range::from(s))
+                }
+            }
 impl Range {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3842,12 +3616,14 @@ impl Range {
             Range::Full => "FULL",
             Range::Fullprotect => "FULLPROTECT",
             Range::Narrow => "NARROW",
-            Range::Unknown(value) => value.as_str(),
+            Range::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL", "FULLPROTECT", "NARROW"]
+        &[
+            "FULL", "FULLPROTECT", "NARROW"
+        ]
     }
 }
 impl AsRef<str> for Range {
@@ -3862,9 +3638,9 @@ impl AsRef<str> for Range {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let colorimetry = unimplemented!();
 /// match colorimetry {
@@ -3891,22 +3667,14 @@ impl AsRef<str> for Range {
 /// Specifically, when `colorimetry` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Colorimetry::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Colorimetry {
     #[allow(missing_docs)] // documentation missing in model
     Bt2020,
@@ -3923,7 +3691,7 @@ pub enum Colorimetry {
     #[allow(missing_docs)] // documentation missing in model
     Xyz,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Colorimetry {
     fn from(s: &str) -> Self {
@@ -3935,17 +3703,17 @@ impl std::convert::From<&str> for Colorimetry {
             "ST2065-1" => Colorimetry::St20651,
             "ST2065-3" => Colorimetry::St20653,
             "XYZ" => Colorimetry::Xyz,
-            other => Colorimetry::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Colorimetry::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Colorimetry {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Colorimetry::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Colorimetry::from(s))
+                }
+            }
 impl Colorimetry {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3957,13 +3725,13 @@ impl Colorimetry {
             Colorimetry::St20651 => "ST2065-1",
             Colorimetry::St20653 => "ST2065-3",
             Colorimetry::Xyz => "XYZ",
-            Colorimetry::Unknown(value) => value.as_str(),
+            Colorimetry::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BT2020", "BT2100", "BT601", "BT709", "ST2065-1", "ST2065-3", "XYZ",
+            "BT2020", "BT2100", "BT601", "BT709", "ST2065-1", "ST2065-3", "XYZ"
         ]
     }
 }
@@ -3976,7 +3744,7 @@ impl AsRef<str> for Colorimetry {
 /// Attributes that are related to the media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStreamAttributesRequest {
+pub struct MediaStreamAttributesRequest  {
     /// The settings that you want to use to define the media stream.
     #[doc(hidden)]
     pub fmtp: std::option::Option<crate::model::FmtpRequest>,
@@ -3986,17 +3754,17 @@ pub struct MediaStreamAttributesRequest {
 }
 impl MediaStreamAttributesRequest {
     /// The settings that you want to use to define the media stream.
-    pub fn fmtp(&self) -> std::option::Option<&crate::model::FmtpRequest> {
+    pub fn fmtp(&self) -> std::option::Option<& crate::model::FmtpRequest> {
         self.fmtp.as_ref()
     }
     /// The audio language, in a format that is recognized by the receiver.
-    pub fn lang(&self) -> std::option::Option<&str> {
+    pub fn lang(&self) -> std::option::Option<& str> {
         self.lang.as_deref()
     }
 }
 /// See [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
 pub mod media_stream_attributes_request {
-
+    
     /// A builder for [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4011,8 +3779,7 @@ pub mod media_stream_attributes_request {
         }
         /// The settings that you want to use to define the media stream.
         pub fn set_fmtp(mut self, input: std::option::Option<crate::model::FmtpRequest>) -> Self {
-            self.fmtp = input;
-            self
+            self.fmtp = input; self
         }
         /// The audio language, in a format that is recognized by the receiver.
         pub fn lang(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4021,17 +3788,20 @@ pub mod media_stream_attributes_request {
         }
         /// The audio language, in a format that is recognized by the receiver.
         pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lang = input;
-            self
+            self.lang = input; self
         }
         /// Consumes the builder and constructs a [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
         pub fn build(self) -> crate::model::MediaStreamAttributesRequest {
             crate::model::MediaStreamAttributesRequest {
-                fmtp: self.fmtp,
-                lang: self.lang,
+                fmtp: self.fmtp
+                ,
+                lang: self.lang
+                ,
             }
         }
     }
+    
+    
 }
 impl MediaStreamAttributesRequest {
     /// Creates a new builder-style object to manufacture [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
@@ -4043,7 +3813,7 @@ impl MediaStreamAttributesRequest {
 /// The settings that you want to use to define the media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FmtpRequest {
+pub struct FmtpRequest  {
     /// The format of the audio channel.
     #[doc(hidden)]
     pub channel_order: std::option::Option<std::string::String>,
@@ -4068,37 +3838,37 @@ pub struct FmtpRequest {
 }
 impl FmtpRequest {
     /// The format of the audio channel.
-    pub fn channel_order(&self) -> std::option::Option<&str> {
+    pub fn channel_order(&self) -> std::option::Option<& str> {
         self.channel_order.as_deref()
     }
     /// The format that is used for the representation of color.
-    pub fn colorimetry(&self) -> std::option::Option<&crate::model::Colorimetry> {
+    pub fn colorimetry(&self) -> std::option::Option<& crate::model::Colorimetry> {
         self.colorimetry.as_ref()
     }
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-    pub fn exact_framerate(&self) -> std::option::Option<&str> {
+    pub fn exact_framerate(&self) -> std::option::Option<& str> {
         self.exact_framerate.as_deref()
     }
     /// The pixel aspect ratio (PAR) of the video.
-    pub fn par(&self) -> std::option::Option<&str> {
+    pub fn par(&self) -> std::option::Option<& str> {
         self.par.as_deref()
     }
     /// The encoding range of the video.
-    pub fn range(&self) -> std::option::Option<&crate::model::Range> {
+    pub fn range(&self) -> std::option::Option<& crate::model::Range> {
         self.range.as_ref()
     }
     /// The type of compression that was used to smooth the video’s appearance.
-    pub fn scan_mode(&self) -> std::option::Option<&crate::model::ScanMode> {
+    pub fn scan_mode(&self) -> std::option::Option<& crate::model::ScanMode> {
         self.scan_mode.as_ref()
     }
     /// The transfer characteristic system (TCS) that is used in the video.
-    pub fn tcs(&self) -> std::option::Option<&crate::model::Tcs> {
+    pub fn tcs(&self) -> std::option::Option<& crate::model::Tcs> {
         self.tcs.as_ref()
     }
 }
 /// See [`FmtpRequest`](crate::model::FmtpRequest).
 pub mod fmtp_request {
-
+    
     /// A builder for [`FmtpRequest`](crate::model::FmtpRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4117,12 +3887,8 @@ pub mod fmtp_request {
             self
         }
         /// The format of the audio channel.
-        pub fn set_channel_order(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.channel_order = input;
-            self
+        pub fn set_channel_order(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_order = input; self
         }
         /// The format that is used for the representation of color.
         pub fn colorimetry(mut self, input: crate::model::Colorimetry) -> Self {
@@ -4130,12 +3896,8 @@ pub mod fmtp_request {
             self
         }
         /// The format that is used for the representation of color.
-        pub fn set_colorimetry(
-            mut self,
-            input: std::option::Option<crate::model::Colorimetry>,
-        ) -> Self {
-            self.colorimetry = input;
-            self
+        pub fn set_colorimetry(mut self, input: std::option::Option<crate::model::Colorimetry>) -> Self {
+            self.colorimetry = input; self
         }
         /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
         pub fn exact_framerate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4143,12 +3905,8 @@ pub mod fmtp_request {
             self
         }
         /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-        pub fn set_exact_framerate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.exact_framerate = input;
-            self
+        pub fn set_exact_framerate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.exact_framerate = input; self
         }
         /// The pixel aspect ratio (PAR) of the video.
         pub fn par(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4157,8 +3915,7 @@ pub mod fmtp_request {
         }
         /// The pixel aspect ratio (PAR) of the video.
         pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.par = input;
-            self
+            self.par = input; self
         }
         /// The encoding range of the video.
         pub fn range(mut self, input: crate::model::Range) -> Self {
@@ -4167,8 +3924,7 @@ pub mod fmtp_request {
         }
         /// The encoding range of the video.
         pub fn set_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
-            self.range = input;
-            self
+            self.range = input; self
         }
         /// The type of compression that was used to smooth the video’s appearance.
         pub fn scan_mode(mut self, input: crate::model::ScanMode) -> Self {
@@ -4177,8 +3933,7 @@ pub mod fmtp_request {
         }
         /// The type of compression that was used to smooth the video’s appearance.
         pub fn set_scan_mode(mut self, input: std::option::Option<crate::model::ScanMode>) -> Self {
-            self.scan_mode = input;
-            self
+            self.scan_mode = input; self
         }
         /// The transfer characteristic system (TCS) that is used in the video.
         pub fn tcs(mut self, input: crate::model::Tcs) -> Self {
@@ -4187,22 +3942,30 @@ pub mod fmtp_request {
         }
         /// The transfer characteristic system (TCS) that is used in the video.
         pub fn set_tcs(mut self, input: std::option::Option<crate::model::Tcs>) -> Self {
-            self.tcs = input;
-            self
+            self.tcs = input; self
         }
         /// Consumes the builder and constructs a [`FmtpRequest`](crate::model::FmtpRequest).
         pub fn build(self) -> crate::model::FmtpRequest {
             crate::model::FmtpRequest {
-                channel_order: self.channel_order,
-                colorimetry: self.colorimetry,
-                exact_framerate: self.exact_framerate,
-                par: self.par,
-                range: self.range,
-                scan_mode: self.scan_mode,
-                tcs: self.tcs,
+                channel_order: self.channel_order
+                ,
+                colorimetry: self.colorimetry
+                ,
+                exact_framerate: self.exact_framerate
+                ,
+                par: self.par
+                ,
+                range: self.range
+                ,
+                scan_mode: self.scan_mode
+                ,
+                tcs: self.tcs
+                ,
             }
         }
     }
+    
+    
 }
 impl FmtpRequest {
     /// Creates a new builder-style object to manufacture [`FmtpRequest`](crate::model::FmtpRequest).
@@ -4214,7 +3977,7 @@ impl FmtpRequest {
 /// The settings for a flow entitlement.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Entitlement {
+pub struct Entitlement  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
@@ -4243,33 +4006,33 @@ impl Entitlement {
         self.data_transfer_subscriber_fee_percent
     }
     /// A description of the entitlement.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The type of encryption that will be used on the output that is associated with this entitlement.
-    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::Encryption> {
         self.encryption.as_ref()
     }
     /// The ARN of the entitlement.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// An indication of whether the entitlement is enabled.
-    pub fn entitlement_status(&self) -> std::option::Option<&crate::model::EntitlementStatus> {
+    pub fn entitlement_status(&self) -> std::option::Option<& crate::model::EntitlementStatus> {
         self.entitlement_status.as_ref()
     }
     /// The name of the entitlement.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subscribers(&self) -> std::option::Option<& [std::string::String]> {
         self.subscribers.as_deref()
     }
 }
 /// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
-
+    
     /// A builder for [`Entitlement`](crate::model::Entitlement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4288,12 +4051,8 @@ pub mod entitlement {
             self
         }
         /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-        pub fn set_data_transfer_subscriber_fee_percent(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.data_transfer_subscriber_fee_percent = input;
-            self
+        pub fn set_data_transfer_subscriber_fee_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.data_transfer_subscriber_fee_percent = input; self
         }
         /// A description of the entitlement.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4302,8 +4061,7 @@ pub mod entitlement {
         }
         /// A description of the entitlement.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The type of encryption that will be used on the output that is associated with this entitlement.
         pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
@@ -4311,12 +4069,8 @@ pub mod entitlement {
             self
         }
         /// The type of encryption that will be used on the output that is associated with this entitlement.
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::Encryption>) -> Self {
+            self.encryption = input; self
         }
         /// The ARN of the entitlement.
         pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4324,12 +4078,8 @@ pub mod entitlement {
             self
         }
         /// The ARN of the entitlement.
-        pub fn set_entitlement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_arn = input;
-            self
+        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entitlement_arn = input; self
         }
         /// An indication of whether the entitlement is enabled.
         pub fn entitlement_status(mut self, input: crate::model::EntitlementStatus) -> Self {
@@ -4337,12 +4087,8 @@ pub mod entitlement {
             self
         }
         /// An indication of whether the entitlement is enabled.
-        pub fn set_entitlement_status(
-            mut self,
-            input: std::option::Option<crate::model::EntitlementStatus>,
-        ) -> Self {
-            self.entitlement_status = input;
-            self
+        pub fn set_entitlement_status(mut self, input: std::option::Option<crate::model::EntitlementStatus>) -> Self {
+            self.entitlement_status = input; self
         }
         /// The name of the entitlement.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4351,8 +4097,7 @@ pub mod entitlement {
         }
         /// The name of the entitlement.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `subscribers`.
         ///
@@ -4361,33 +4106,37 @@ pub mod entitlement {
         /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
         pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
-            self.subscribers = Some(v);
-            self
+                            v.push(input.into());
+                            self.subscribers = Some(v);
+                            self
         }
         /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
+        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subscribers = input; self
         }
         /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement).
         pub fn build(self) -> crate::model::Entitlement {
             crate::model::Entitlement {
-                data_transfer_subscriber_fee_percent: self
-                    .data_transfer_subscriber_fee_percent
-                    .unwrap_or_default(),
-                description: self.description,
-                encryption: self.encryption,
-                entitlement_arn: self.entitlement_arn,
-                entitlement_status: self.entitlement_status,
-                name: self.name,
-                subscribers: self.subscribers,
+                data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                encryption: self.encryption
+                ,
+                entitlement_arn: self.entitlement_arn
+                ,
+                entitlement_status: self.entitlement_status
+                ,
+                name: self.name
+                ,
+                subscribers: self.subscribers
+                ,
             }
         }
     }
+    
+    
 }
 impl Entitlement {
     /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
@@ -4402,9 +4151,9 @@ impl Entitlement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let entitlementstatus = unimplemented!();
 /// match entitlementstatus {
@@ -4426,60 +4175,52 @@ impl Entitlement {
 /// Specifically, when `entitlementstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntitlementStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EntitlementStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntitlementStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => EntitlementStatus::Disabled,
             "ENABLED" => EntitlementStatus::Enabled,
-            other => {
-                EntitlementStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EntitlementStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EntitlementStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntitlementStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EntitlementStatus::from(s))
+                }
+            }
 impl EntitlementStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntitlementStatus::Disabled => "DISABLED",
             EntitlementStatus::Enabled => "ENABLED",
-            EntitlementStatus::Unknown(value) => value.as_str(),
+            EntitlementStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for EntitlementStatus {
@@ -4491,7 +4232,7 @@ impl AsRef<str> for EntitlementStatus {
 /// The settings for a flow, including its source, outputs, and entitlements.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Flow {
+pub struct Flow  {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -4537,65 +4278,65 @@ pub struct Flow {
 }
 impl Flow {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The IP address from which video will be sent to output destinations.
-    pub fn egress_ip(&self) -> std::option::Option<&str> {
+    pub fn egress_ip(&self) -> std::option::Option<& str> {
         self.egress_ip.as_deref()
     }
     /// The entitlements in this flow.
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::Entitlement]> {
         self.entitlements.as_deref()
     }
     /// The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-    pub fn media_streams(&self) -> std::option::Option<&[crate::model::MediaStream]> {
+    pub fn media_streams(&self) -> std::option::Option<& [crate::model::MediaStream]> {
         self.media_streams.as_deref()
     }
     /// The name of the flow.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The outputs in this flow.
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::model::Output]> {
         self.outputs.as_deref()
     }
     /// The settings for the source of the flow.
-    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::model::Source> {
         self.source.as_ref()
     }
     /// The settings for source failover.
-    pub fn source_failover_config(&self) -> std::option::Option<&crate::model::FailoverConfig> {
+    pub fn source_failover_config(&self) -> std::option::Option<& crate::model::FailoverConfig> {
         self.source_failover_config.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sources(&self) -> std::option::Option<&[crate::model::Source]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::Source]> {
         self.sources.as_deref()
     }
     /// The current status of the flow.
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// The VPC Interfaces for this flow.
-    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterface]> {
+    pub fn vpc_interfaces(&self) -> std::option::Option<& [crate::model::VpcInterface]> {
         self.vpc_interfaces.as_deref()
     }
     /// The maintenance setting of a flow
-    pub fn maintenance(&self) -> std::option::Option<&crate::model::Maintenance> {
+    pub fn maintenance(&self) -> std::option::Option<& crate::model::Maintenance> {
         self.maintenance.as_ref()
     }
 }
 /// See [`Flow`](crate::model::Flow).
 pub mod flow {
-
+    
     /// A builder for [`Flow`](crate::model::Flow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4621,12 +4362,8 @@ pub mod flow {
             self
         }
         /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4635,8 +4372,7 @@ pub mod flow {
         }
         /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The IP address from which video will be sent to output destinations.
         pub fn egress_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4645,8 +4381,7 @@ pub mod flow {
         }
         /// The IP address from which video will be sent to output destinations.
         pub fn set_egress_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.egress_ip = input;
-            self
+            self.egress_ip = input; self
         }
         /// Appends an item to `entitlements`.
         ///
@@ -4655,17 +4390,13 @@ pub mod flow {
         /// The entitlements in this flow.
         pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// The entitlements in this flow.
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>) -> Self {
+            self.entitlements = input; self
         }
         /// The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4674,8 +4405,7 @@ pub mod flow {
         }
         /// The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Appends an item to `media_streams`.
         ///
@@ -4684,17 +4414,13 @@ pub mod flow {
         /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
         pub fn media_streams(mut self, input: crate::model::MediaStream) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input);
-            self.media_streams = Some(v);
-            self
+                            v.push(input);
+                            self.media_streams = Some(v);
+                            self
         }
         /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-        pub fn set_media_streams(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,
-        ) -> Self {
-            self.media_streams = input;
-            self
+        pub fn set_media_streams(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaStream>>) -> Self {
+            self.media_streams = input; self
         }
         /// The name of the flow.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4703,8 +4429,7 @@ pub mod flow {
         }
         /// The name of the flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `outputs`.
         ///
@@ -4713,17 +4438,13 @@ pub mod flow {
         /// The outputs in this flow.
         pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
+                            v.push(input);
+                            self.outputs = Some(v);
+                            self
         }
         /// The outputs in this flow.
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Output>>,
-        ) -> Self {
-            self.outputs = input;
-            self
+        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Output>>) -> Self {
+            self.outputs = input; self
         }
         /// The settings for the source of the flow.
         pub fn source(mut self, input: crate::model::Source) -> Self {
@@ -4732,8 +4453,7 @@ pub mod flow {
         }
         /// The settings for the source of the flow.
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// The settings for source failover.
         pub fn source_failover_config(mut self, input: crate::model::FailoverConfig) -> Self {
@@ -4741,12 +4461,8 @@ pub mod flow {
             self
         }
         /// The settings for source failover.
-        pub fn set_source_failover_config(
-            mut self,
-            input: std::option::Option<crate::model::FailoverConfig>,
-        ) -> Self {
-            self.source_failover_config = input;
-            self
+        pub fn set_source_failover_config(mut self, input: std::option::Option<crate::model::FailoverConfig>) -> Self {
+            self.source_failover_config = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -4754,17 +4470,13 @@ pub mod flow {
         ///
         pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Source>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Source>>) -> Self {
+            self.sources = input; self
         }
         /// The current status of the flow.
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -4773,8 +4485,7 @@ pub mod flow {
         }
         /// The current status of the flow.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `vpc_interfaces`.
         ///
@@ -4783,17 +4494,13 @@ pub mod flow {
         /// The VPC Interfaces for this flow.
         pub fn vpc_interfaces(mut self, input: crate::model::VpcInterface) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input);
-            self.vpc_interfaces = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_interfaces = Some(v);
+                            self
         }
         /// The VPC Interfaces for this flow.
-        pub fn set_vpc_interfaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
-        ) -> Self {
-            self.vpc_interfaces = input;
-            self
+        pub fn set_vpc_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>) -> Self {
+            self.vpc_interfaces = input; self
         }
         /// The maintenance setting of a flow
         pub fn maintenance(mut self, input: crate::model::Maintenance) -> Self {
@@ -4801,33 +4508,45 @@ pub mod flow {
             self
         }
         /// The maintenance setting of a flow
-        pub fn set_maintenance(
-            mut self,
-            input: std::option::Option<crate::model::Maintenance>,
-        ) -> Self {
-            self.maintenance = input;
-            self
+        pub fn set_maintenance(mut self, input: std::option::Option<crate::model::Maintenance>) -> Self {
+            self.maintenance = input; self
         }
         /// Consumes the builder and constructs a [`Flow`](crate::model::Flow).
         pub fn build(self) -> crate::model::Flow {
             crate::model::Flow {
-                availability_zone: self.availability_zone,
-                description: self.description,
-                egress_ip: self.egress_ip,
-                entitlements: self.entitlements,
-                flow_arn: self.flow_arn,
-                media_streams: self.media_streams,
-                name: self.name,
-                outputs: self.outputs,
-                source: self.source,
-                source_failover_config: self.source_failover_config,
-                sources: self.sources,
-                status: self.status,
-                vpc_interfaces: self.vpc_interfaces,
-                maintenance: self.maintenance,
+                availability_zone: self.availability_zone
+                ,
+                description: self.description
+                ,
+                egress_ip: self.egress_ip
+                ,
+                entitlements: self.entitlements
+                ,
+                flow_arn: self.flow_arn
+                ,
+                media_streams: self.media_streams
+                ,
+                name: self.name
+                ,
+                outputs: self.outputs
+                ,
+                source: self.source
+                ,
+                source_failover_config: self.source_failover_config
+                ,
+                sources: self.sources
+                ,
+                status: self.status
+                ,
+                vpc_interfaces: self.vpc_interfaces
+                ,
+                maintenance: self.maintenance
+                ,
             }
         }
     }
+    
+    
 }
 impl Flow {
     /// Creates a new builder-style object to manufacture [`Flow`](crate::model::Flow).
@@ -4839,7 +4558,7 @@ impl Flow {
 /// The maintenance setting of a flow
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Maintenance {
+pub struct Maintenance  {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
     #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -4855,25 +4574,25 @@ pub struct Maintenance {
 }
 impl Maintenance {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn maintenance_day(&self) -> std::option::Option<&crate::model::MaintenanceDay> {
+    pub fn maintenance_day(&self) -> std::option::Option<& crate::model::MaintenanceDay> {
         self.maintenance_day.as_ref()
     }
     /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
-    pub fn maintenance_deadline(&self) -> std::option::Option<&str> {
+    pub fn maintenance_deadline(&self) -> std::option::Option<& str> {
         self.maintenance_deadline.as_deref()
     }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
-    pub fn maintenance_scheduled_date(&self) -> std::option::Option<&str> {
+    pub fn maintenance_scheduled_date(&self) -> std::option::Option<& str> {
         self.maintenance_scheduled_date.as_deref()
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
+    pub fn maintenance_start_hour(&self) -> std::option::Option<& str> {
         self.maintenance_start_hour.as_deref()
     }
 }
 /// See [`Maintenance`](crate::model::Maintenance).
 pub mod maintenance {
-
+    
     /// A builder for [`Maintenance`](crate::model::Maintenance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4889,12 +4608,8 @@ pub mod maintenance {
             self
         }
         /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-        pub fn set_maintenance_day(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceDay>,
-        ) -> Self {
-            self.maintenance_day = input;
-            self
+        pub fn set_maintenance_day(mut self, input: std::option::Option<crate::model::MaintenanceDay>) -> Self {
+            self.maintenance_day = input; self
         }
         /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
         pub fn maintenance_deadline(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4902,12 +4617,8 @@ pub mod maintenance {
             self
         }
         /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
-        pub fn set_maintenance_deadline(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_deadline = input;
-            self
+        pub fn set_maintenance_deadline(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_deadline = input; self
         }
         /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
         pub fn maintenance_scheduled_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4915,12 +4626,8 @@ pub mod maintenance {
             self
         }
         /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
-        pub fn set_maintenance_scheduled_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_scheduled_date = input;
-            self
+        pub fn set_maintenance_scheduled_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_scheduled_date = input; self
         }
         /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
         pub fn maintenance_start_hour(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4928,23 +4635,25 @@ pub mod maintenance {
             self
         }
         /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-        pub fn set_maintenance_start_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_start_hour = input;
-            self
+        pub fn set_maintenance_start_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_start_hour = input; self
         }
         /// Consumes the builder and constructs a [`Maintenance`](crate::model::Maintenance).
         pub fn build(self) -> crate::model::Maintenance {
             crate::model::Maintenance {
-                maintenance_day: self.maintenance_day,
-                maintenance_deadline: self.maintenance_deadline,
-                maintenance_scheduled_date: self.maintenance_scheduled_date,
-                maintenance_start_hour: self.maintenance_start_hour,
+                maintenance_day: self.maintenance_day
+                ,
+                maintenance_deadline: self.maintenance_deadline
+                ,
+                maintenance_scheduled_date: self.maintenance_scheduled_date
+                ,
+                maintenance_start_hour: self.maintenance_start_hour
+                ,
             }
         }
     }
+    
+    
 }
 impl Maintenance {
     /// Creates a new builder-style object to manufacture [`Maintenance`](crate::model::Maintenance).
@@ -4959,9 +4668,9 @@ impl Maintenance {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let maintenanceday = unimplemented!();
 /// match maintenanceday {
@@ -4988,22 +4697,14 @@ impl Maintenance {
 /// Specifically, when `maintenanceday` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MaintenanceDay::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MaintenanceDay {
     #[allow(missing_docs)] // documentation missing in model
     Friday,
@@ -5020,7 +4721,7 @@ pub enum MaintenanceDay {
     #[allow(missing_docs)] // documentation missing in model
     Wednesday,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MaintenanceDay {
     fn from(s: &str) -> Self {
@@ -5032,17 +4733,17 @@ impl std::convert::From<&str> for MaintenanceDay {
             "Thursday" => MaintenanceDay::Thursday,
             "Tuesday" => MaintenanceDay::Tuesday,
             "Wednesday" => MaintenanceDay::Wednesday,
-            other => MaintenanceDay::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MaintenanceDay::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MaintenanceDay {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MaintenanceDay::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MaintenanceDay::from(s))
+                }
+            }
 impl MaintenanceDay {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5054,19 +4755,13 @@ impl MaintenanceDay {
             MaintenanceDay::Thursday => "Thursday",
             MaintenanceDay::Tuesday => "Tuesday",
             MaintenanceDay::Wednesday => "Wednesday",
-            MaintenanceDay::Unknown(value) => value.as_str(),
+            MaintenanceDay::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Friday",
-            "Monday",
-            "Saturday",
-            "Sunday",
-            "Thursday",
-            "Tuesday",
-            "Wednesday",
+            "Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"
         ]
     }
 }
@@ -5079,7 +4774,7 @@ impl AsRef<str> for MaintenanceDay {
 /// The settings for a VPC Source.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcInterface {
+pub struct VpcInterface  {
     /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5101,35 +4796,33 @@ pub struct VpcInterface {
 }
 impl VpcInterface {
     /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// IDs of the network interfaces created in customer's account by MediaConnect.
-    pub fn network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn network_interface_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.network_interface_ids.as_deref()
     }
     /// The type of network interface.
-    pub fn network_interface_type(
-        &self,
-    ) -> std::option::Option<&crate::model::NetworkInterfaceType> {
+    pub fn network_interface_type(&self) -> std::option::Option<& crate::model::NetworkInterfaceType> {
         self.network_interface_type.as_ref()
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Security Group IDs to be used on ENI.
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// Subnet must be in the AZ of the Flow
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
 }
 /// See [`VpcInterface`](crate::model::VpcInterface).
 pub mod vpc_interface {
-
+    
     /// A builder for [`VpcInterface`](crate::model::VpcInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5148,8 +4841,7 @@ pub mod vpc_interface {
         }
         /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `network_interface_ids`.
         ///
@@ -5158,17 +4850,13 @@ pub mod vpc_interface {
         /// IDs of the network interfaces created in customer's account by MediaConnect.
         pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.network_interface_ids.unwrap_or_default();
-            v.push(input.into());
-            self.network_interface_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.network_interface_ids = Some(v);
+                            self
         }
         /// IDs of the network interfaces created in customer's account by MediaConnect.
-        pub fn set_network_interface_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.network_interface_ids = input;
-            self
+        pub fn set_network_interface_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.network_interface_ids = input; self
         }
         /// The type of network interface.
         pub fn network_interface_type(mut self, input: crate::model::NetworkInterfaceType) -> Self {
@@ -5176,12 +4864,8 @@ pub mod vpc_interface {
             self
         }
         /// The type of network interface.
-        pub fn set_network_interface_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkInterfaceType>,
-        ) -> Self {
-            self.network_interface_type = input;
-            self
+        pub fn set_network_interface_type(mut self, input: std::option::Option<crate::model::NetworkInterfaceType>) -> Self {
+            self.network_interface_type = input; self
         }
         /// Role Arn MediaConnect can assumes to create ENIs in customer's account
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5190,8 +4874,7 @@ pub mod vpc_interface {
         }
         /// Role Arn MediaConnect can assumes to create ENIs in customer's account
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -5200,17 +4883,13 @@ pub mod vpc_interface {
         /// Security Group IDs to be used on ENI.
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// Security Group IDs to be used on ENI.
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Subnet must be in the AZ of the Flow
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5219,21 +4898,28 @@ pub mod vpc_interface {
         }
         /// Subnet must be in the AZ of the Flow
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// Consumes the builder and constructs a [`VpcInterface`](crate::model::VpcInterface).
         pub fn build(self) -> crate::model::VpcInterface {
             crate::model::VpcInterface {
-                name: self.name,
-                network_interface_ids: self.network_interface_ids,
-                network_interface_type: self.network_interface_type,
-                role_arn: self.role_arn,
-                security_group_ids: self.security_group_ids,
-                subnet_id: self.subnet_id,
+                name: self.name
+                ,
+                network_interface_ids: self.network_interface_ids
+                ,
+                network_interface_type: self.network_interface_type
+                ,
+                role_arn: self.role_arn
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                subnet_id: self.subnet_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcInterface {
     /// Creates a new builder-style object to manufacture [`VpcInterface`](crate::model::VpcInterface).
@@ -5248,9 +4934,9 @@ impl VpcInterface {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkinterfacetype = unimplemented!();
 /// match networkinterfacetype {
@@ -5272,60 +4958,52 @@ impl VpcInterface {
 /// Specifically, when `networkinterfacetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkInterfaceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkInterfaceType {
     #[allow(missing_docs)] // documentation missing in model
     Efa,
     #[allow(missing_docs)] // documentation missing in model
     Ena,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkInterfaceType {
     fn from(s: &str) -> Self {
         match s {
             "efa" => NetworkInterfaceType::Efa,
             "ena" => NetworkInterfaceType::Ena,
-            other => {
-                NetworkInterfaceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkInterfaceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkInterfaceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkInterfaceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkInterfaceType::from(s))
+                }
+            }
 impl NetworkInterfaceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkInterfaceType::Efa => "efa",
             NetworkInterfaceType::Ena => "ena",
-            NetworkInterfaceType::Unknown(value) => value.as_str(),
+            NetworkInterfaceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["efa", "ena"]
+        &[
+            "efa", "ena"
+        ]
     }
 }
 impl AsRef<str> for NetworkInterfaceType {
@@ -5340,9 +5018,9 @@ impl AsRef<str> for NetworkInterfaceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -5369,22 +5047,14 @@ impl AsRef<str> for NetworkInterfaceType {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -5401,7 +5071,7 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -5413,17 +5083,17 @@ impl std::convert::From<&str> for Status {
             "STARTING" => Status::Starting,
             "STOPPING" => Status::Stopping,
             "UPDATING" => Status::Updating,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5435,13 +5105,13 @@ impl Status {
             Status::Starting => "STARTING",
             Status::Stopping => "STOPPING",
             Status::Updating => "UPDATING",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE", "DELETING", "ERROR", "STANDBY", "STARTING", "STOPPING", "UPDATING",
+            "ACTIVE", "DELETING", "ERROR", "STANDBY", "STARTING", "STOPPING", "UPDATING"
         ]
     }
 }
@@ -5454,7 +5124,7 @@ impl AsRef<str> for Status {
 /// The settings for source failover.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailoverConfig {
+pub struct FailoverConfig  {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
     #[doc(hidden)]
     pub failover_mode: std::option::Option<crate::model::FailoverMode>,
@@ -5470,7 +5140,7 @@ pub struct FailoverConfig {
 }
 impl FailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-    pub fn failover_mode(&self) -> std::option::Option<&crate::model::FailoverMode> {
+    pub fn failover_mode(&self) -> std::option::Option<& crate::model::FailoverMode> {
         self.failover_mode.as_ref()
     }
     /// Search window time to look for dash-7 packets
@@ -5478,17 +5148,17 @@ impl FailoverConfig {
         self.recovery_window
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-    pub fn source_priority(&self) -> std::option::Option<&crate::model::SourcePriority> {
+    pub fn source_priority(&self) -> std::option::Option<& crate::model::SourcePriority> {
         self.source_priority.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
 }
 /// See [`FailoverConfig`](crate::model::FailoverConfig).
 pub mod failover_config {
-
+    
     /// A builder for [`FailoverConfig`](crate::model::FailoverConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5504,12 +5174,8 @@ pub mod failover_config {
             self
         }
         /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-        pub fn set_failover_mode(
-            mut self,
-            input: std::option::Option<crate::model::FailoverMode>,
-        ) -> Self {
-            self.failover_mode = input;
-            self
+        pub fn set_failover_mode(mut self, input: std::option::Option<crate::model::FailoverMode>) -> Self {
+            self.failover_mode = input; self
         }
         /// Search window time to look for dash-7 packets
         pub fn recovery_window(mut self, input: i32) -> Self {
@@ -5518,8 +5184,7 @@ pub mod failover_config {
         }
         /// Search window time to look for dash-7 packets
         pub fn set_recovery_window(mut self, input: std::option::Option<i32>) -> Self {
-            self.recovery_window = input;
-            self
+            self.recovery_window = input; self
         }
         /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
         pub fn source_priority(mut self, input: crate::model::SourcePriority) -> Self {
@@ -5527,12 +5192,8 @@ pub mod failover_config {
             self
         }
         /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-        pub fn set_source_priority(
-            mut self,
-            input: std::option::Option<crate::model::SourcePriority>,
-        ) -> Self {
-            self.source_priority = input;
-            self
+        pub fn set_source_priority(mut self, input: std::option::Option<crate::model::SourcePriority>) -> Self {
+            self.source_priority = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -5541,19 +5202,25 @@ pub mod failover_config {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`FailoverConfig`](crate::model::FailoverConfig).
         pub fn build(self) -> crate::model::FailoverConfig {
             crate::model::FailoverConfig {
-                failover_mode: self.failover_mode,
-                recovery_window: self.recovery_window.unwrap_or_default(),
-                source_priority: self.source_priority,
-                state: self.state,
+                failover_mode: self.failover_mode
+                ,
+                recovery_window: self.recovery_window
+                    .unwrap_or_default()
+                ,
+                source_priority: self.source_priority
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl FailoverConfig {
     /// Creates a new builder-style object to manufacture [`FailoverConfig`](crate::model::FailoverConfig).
@@ -5568,9 +5235,9 @@ impl FailoverConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let state = unimplemented!();
 /// match state {
@@ -5592,58 +5259,52 @@ impl FailoverConfig {
 /// Specifically, when `state` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `State::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum State {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for State {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => State::Disabled,
             "ENABLED" => State::Enabled,
-            other => State::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => State::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for State {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(State::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(State::from(s))
+                }
+            }
 impl State {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             State::Disabled => "DISABLED",
             State::Enabled => "ENABLED",
-            State::Unknown(value) => value.as_str(),
+            State::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for State {
@@ -5655,20 +5316,20 @@ impl AsRef<str> for State {
 /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourcePriority {
+pub struct SourcePriority  {
     /// The name of the source you choose as the primary source for this flow.
     #[doc(hidden)]
     pub primary_source: std::option::Option<std::string::String>,
 }
 impl SourcePriority {
     /// The name of the source you choose as the primary source for this flow.
-    pub fn primary_source(&self) -> std::option::Option<&str> {
+    pub fn primary_source(&self) -> std::option::Option<& str> {
         self.primary_source.as_deref()
     }
 }
 /// See [`SourcePriority`](crate::model::SourcePriority).
 pub mod source_priority {
-
+    
     /// A builder for [`SourcePriority`](crate::model::SourcePriority).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5681,20 +5342,19 @@ pub mod source_priority {
             self
         }
         /// The name of the source you choose as the primary source for this flow.
-        pub fn set_primary_source(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_source = input;
-            self
+        pub fn set_primary_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_source = input; self
         }
         /// Consumes the builder and constructs a [`SourcePriority`](crate::model::SourcePriority).
         pub fn build(self) -> crate::model::SourcePriority {
             crate::model::SourcePriority {
-                primary_source: self.primary_source,
+                primary_source: self.primary_source
+                ,
             }
         }
     }
+    
+    
 }
 impl SourcePriority {
     /// Creates a new builder-style object to manufacture [`SourcePriority`](crate::model::SourcePriority).
@@ -5709,9 +5369,9 @@ impl SourcePriority {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failovermode = unimplemented!();
 /// match failovermode {
@@ -5733,58 +5393,52 @@ impl SourcePriority {
 /// Specifically, when `failovermode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailoverMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailoverMode {
     #[allow(missing_docs)] // documentation missing in model
     Failover,
     #[allow(missing_docs)] // documentation missing in model
     Merge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailoverMode {
     fn from(s: &str) -> Self {
         match s {
             "FAILOVER" => FailoverMode::Failover,
             "MERGE" => FailoverMode::Merge,
-            other => FailoverMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FailoverMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FailoverMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailoverMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailoverMode::from(s))
+                }
+            }
 impl FailoverMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailoverMode::Failover => "FAILOVER",
             FailoverMode::Merge => "MERGE",
-            FailoverMode::Unknown(value) => value.as_str(),
+            FailoverMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILOVER", "MERGE"]
+        &[
+            "FAILOVER", "MERGE"
+        ]
     }
 }
 impl AsRef<str> for FailoverMode {
@@ -5796,7 +5450,7 @@ impl AsRef<str> for FailoverMode {
 /// Update maintenance setting for a flow
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMaintenance {
+pub struct UpdateMaintenance  {
     /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
     #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -5809,21 +5463,21 @@ pub struct UpdateMaintenance {
 }
 impl UpdateMaintenance {
     /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn maintenance_day(&self) -> std::option::Option<&crate::model::MaintenanceDay> {
+    pub fn maintenance_day(&self) -> std::option::Option<& crate::model::MaintenanceDay> {
         self.maintenance_day.as_ref()
     }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
-    pub fn maintenance_scheduled_date(&self) -> std::option::Option<&str> {
+    pub fn maintenance_scheduled_date(&self) -> std::option::Option<& str> {
         self.maintenance_scheduled_date.as_deref()
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
+    pub fn maintenance_start_hour(&self) -> std::option::Option<& str> {
         self.maintenance_start_hour.as_deref()
     }
 }
 /// See [`UpdateMaintenance`](crate::model::UpdateMaintenance).
 pub mod update_maintenance {
-
+    
     /// A builder for [`UpdateMaintenance`](crate::model::UpdateMaintenance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5838,12 +5492,8 @@ pub mod update_maintenance {
             self
         }
         /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-        pub fn set_maintenance_day(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceDay>,
-        ) -> Self {
-            self.maintenance_day = input;
-            self
+        pub fn set_maintenance_day(mut self, input: std::option::Option<crate::model::MaintenanceDay>) -> Self {
+            self.maintenance_day = input; self
         }
         /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
         pub fn maintenance_scheduled_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5851,12 +5501,8 @@ pub mod update_maintenance {
             self
         }
         /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
-        pub fn set_maintenance_scheduled_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_scheduled_date = input;
-            self
+        pub fn set_maintenance_scheduled_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_scheduled_date = input; self
         }
         /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
         pub fn maintenance_start_hour(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5864,22 +5510,23 @@ pub mod update_maintenance {
             self
         }
         /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-        pub fn set_maintenance_start_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_start_hour = input;
-            self
+        pub fn set_maintenance_start_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_start_hour = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMaintenance`](crate::model::UpdateMaintenance).
         pub fn build(self) -> crate::model::UpdateMaintenance {
             crate::model::UpdateMaintenance {
-                maintenance_day: self.maintenance_day,
-                maintenance_scheduled_date: self.maintenance_scheduled_date,
-                maintenance_start_hour: self.maintenance_start_hour,
+                maintenance_day: self.maintenance_day
+                ,
+                maintenance_scheduled_date: self.maintenance_scheduled_date
+                ,
+                maintenance_start_hour: self.maintenance_start_hour
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMaintenance {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenance`](crate::model::UpdateMaintenance).
@@ -5891,7 +5538,7 @@ impl UpdateMaintenance {
 /// The settings for source failover.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFailoverConfig {
+pub struct UpdateFailoverConfig  {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
     #[doc(hidden)]
     pub failover_mode: std::option::Option<crate::model::FailoverMode>,
@@ -5907,7 +5554,7 @@ pub struct UpdateFailoverConfig {
 }
 impl UpdateFailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-    pub fn failover_mode(&self) -> std::option::Option<&crate::model::FailoverMode> {
+    pub fn failover_mode(&self) -> std::option::Option<& crate::model::FailoverMode> {
         self.failover_mode.as_ref()
     }
     /// Recovery window time to look for dash-7 packets
@@ -5915,17 +5562,17 @@ impl UpdateFailoverConfig {
         self.recovery_window
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-    pub fn source_priority(&self) -> std::option::Option<&crate::model::SourcePriority> {
+    pub fn source_priority(&self) -> std::option::Option<& crate::model::SourcePriority> {
         self.source_priority.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
 }
 /// See [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
 pub mod update_failover_config {
-
+    
     /// A builder for [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5941,12 +5588,8 @@ pub mod update_failover_config {
             self
         }
         /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-        pub fn set_failover_mode(
-            mut self,
-            input: std::option::Option<crate::model::FailoverMode>,
-        ) -> Self {
-            self.failover_mode = input;
-            self
+        pub fn set_failover_mode(mut self, input: std::option::Option<crate::model::FailoverMode>) -> Self {
+            self.failover_mode = input; self
         }
         /// Recovery window time to look for dash-7 packets
         pub fn recovery_window(mut self, input: i32) -> Self {
@@ -5955,8 +5598,7 @@ pub mod update_failover_config {
         }
         /// Recovery window time to look for dash-7 packets
         pub fn set_recovery_window(mut self, input: std::option::Option<i32>) -> Self {
-            self.recovery_window = input;
-            self
+            self.recovery_window = input; self
         }
         /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
         pub fn source_priority(mut self, input: crate::model::SourcePriority) -> Self {
@@ -5964,12 +5606,8 @@ pub mod update_failover_config {
             self
         }
         /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-        pub fn set_source_priority(
-            mut self,
-            input: std::option::Option<crate::model::SourcePriority>,
-        ) -> Self {
-            self.source_priority = input;
-            self
+        pub fn set_source_priority(mut self, input: std::option::Option<crate::model::SourcePriority>) -> Self {
+            self.source_priority = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -5978,19 +5616,25 @@ pub mod update_failover_config {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
         pub fn build(self) -> crate::model::UpdateFailoverConfig {
             crate::model::UpdateFailoverConfig {
-                failover_mode: self.failover_mode,
-                recovery_window: self.recovery_window.unwrap_or_default(),
-                source_priority: self.source_priority,
-                state: self.state,
+                failover_mode: self.failover_mode
+                ,
+                recovery_window: self.recovery_window
+                    .unwrap_or_default()
+                ,
+                source_priority: self.source_priority
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFailoverConfig {
     /// Creates a new builder-style object to manufacture [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
@@ -6002,7 +5646,7 @@ impl UpdateFailoverConfig {
 /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Reservation {
+pub struct Reservation  {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
     #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
@@ -6045,7 +5689,7 @@ pub struct Reservation {
 }
 impl Reservation {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
@@ -6053,55 +5697,53 @@ impl Reservation {
         self.duration
     }
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
-    pub fn duration_units(&self) -> std::option::Option<&crate::model::DurationUnits> {
+    pub fn duration_units(&self) -> std::option::Option<& crate::model::DurationUnits> {
         self.duration_units.as_ref()
     }
     /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
-    pub fn offering_arn(&self) -> std::option::Option<&str> {
+    pub fn offering_arn(&self) -> std::option::Option<& str> {
         self.offering_arn.as_deref()
     }
     /// A description of the offering. MediaConnect defines this value in the offering.
-    pub fn offering_description(&self) -> std::option::Option<&str> {
+    pub fn offering_description(&self) -> std::option::Option<& str> {
         self.offering_description.as_deref()
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
-    pub fn price_per_unit(&self) -> std::option::Option<&str> {
+    pub fn price_per_unit(&self) -> std::option::Option<& str> {
         self.price_per_unit.as_deref()
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
-    pub fn price_units(&self) -> std::option::Option<&crate::model::PriceUnits> {
+    pub fn price_units(&self) -> std::option::Option<& crate::model::PriceUnits> {
         self.price_units.as_ref()
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
-    pub fn reservation_arn(&self) -> std::option::Option<&str> {
+    pub fn reservation_arn(&self) -> std::option::Option<& str> {
         self.reservation_arn.as_deref()
     }
     /// The name that you assigned to the reservation when you purchased the offering.
-    pub fn reservation_name(&self) -> std::option::Option<&str> {
+    pub fn reservation_name(&self) -> std::option::Option<& str> {
         self.reservation_name.as_deref()
     }
     /// The status of your reservation.
-    pub fn reservation_state(&self) -> std::option::Option<&crate::model::ReservationState> {
+    pub fn reservation_state(&self) -> std::option::Option<& crate::model::ReservationState> {
         self.reservation_state.as_ref()
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> std::option::Option<& str> {
         self.start.as_deref()
     }
 }
 /// See [`Reservation`](crate::model::Reservation).
 pub mod reservation {
-
+    
     /// A builder for [`Reservation`](crate::model::Reservation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6126,12 +5768,8 @@ pub mod reservation {
             self
         }
         /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
         pub fn duration(mut self, input: i32) -> Self {
@@ -6140,8 +5778,7 @@ pub mod reservation {
         }
         /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
         pub fn duration_units(mut self, input: crate::model::DurationUnits) -> Self {
@@ -6149,12 +5786,8 @@ pub mod reservation {
             self
         }
         /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
-        pub fn set_duration_units(
-            mut self,
-            input: std::option::Option<crate::model::DurationUnits>,
-        ) -> Self {
-            self.duration_units = input;
-            self
+        pub fn set_duration_units(mut self, input: std::option::Option<crate::model::DurationUnits>) -> Self {
+            self.duration_units = input; self
         }
         /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
         pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6163,8 +5796,7 @@ pub mod reservation {
         }
         /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
         pub fn offering_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6173,8 +5805,7 @@ pub mod reservation {
         }
         /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
         pub fn set_offering_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_arn = input;
-            self
+            self.offering_arn = input; self
         }
         /// A description of the offering. MediaConnect defines this value in the offering.
         pub fn offering_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6182,12 +5813,8 @@ pub mod reservation {
             self
         }
         /// A description of the offering. MediaConnect defines this value in the offering.
-        pub fn set_offering_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.offering_description = input;
-            self
+        pub fn set_offering_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_description = input; self
         }
         /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
         pub fn price_per_unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6195,12 +5822,8 @@ pub mod reservation {
             self
         }
         /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
-        pub fn set_price_per_unit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.price_per_unit = input;
-            self
+        pub fn set_price_per_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.price_per_unit = input; self
         }
         /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
         pub fn price_units(mut self, input: crate::model::PriceUnits) -> Self {
@@ -6208,12 +5831,8 @@ pub mod reservation {
             self
         }
         /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
-        pub fn set_price_units(
-            mut self,
-            input: std::option::Option<crate::model::PriceUnits>,
-        ) -> Self {
-            self.price_units = input;
-            self
+        pub fn set_price_units(mut self, input: std::option::Option<crate::model::PriceUnits>) -> Self {
+            self.price_units = input; self
         }
         /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
         pub fn reservation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6221,12 +5840,8 @@ pub mod reservation {
             self
         }
         /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
-        pub fn set_reservation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reservation_arn = input;
-            self
+        pub fn set_reservation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reservation_arn = input; self
         }
         /// The name that you assigned to the reservation when you purchased the offering.
         pub fn reservation_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6234,12 +5849,8 @@ pub mod reservation {
             self
         }
         /// The name that you assigned to the reservation when you purchased the offering.
-        pub fn set_reservation_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reservation_name = input;
-            self
+        pub fn set_reservation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reservation_name = input; self
         }
         /// The status of your reservation.
         pub fn reservation_state(mut self, input: crate::model::ReservationState) -> Self {
@@ -6247,28 +5858,17 @@ pub mod reservation {
             self
         }
         /// The status of your reservation.
-        pub fn set_reservation_state(
-            mut self,
-            input: std::option::Option<crate::model::ReservationState>,
-        ) -> Self {
-            self.reservation_state = input;
-            self
+        pub fn set_reservation_state(mut self, input: std::option::Option<crate::model::ReservationState>) -> Self {
+            self.reservation_state = input; self
         }
         /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
         pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6277,28 +5877,43 @@ pub mod reservation {
         }
         /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// Consumes the builder and constructs a [`Reservation`](crate::model::Reservation).
         pub fn build(self) -> crate::model::Reservation {
             crate::model::Reservation {
-                currency_code: self.currency_code,
-                duration: self.duration.unwrap_or_default(),
-                duration_units: self.duration_units,
-                end: self.end,
-                offering_arn: self.offering_arn,
-                offering_description: self.offering_description,
-                price_per_unit: self.price_per_unit,
-                price_units: self.price_units,
-                reservation_arn: self.reservation_arn,
-                reservation_name: self.reservation_name,
-                reservation_state: self.reservation_state,
-                resource_specification: self.resource_specification,
-                start: self.start,
+                currency_code: self.currency_code
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                duration_units: self.duration_units
+                ,
+                end: self.end
+                ,
+                offering_arn: self.offering_arn
+                ,
+                offering_description: self.offering_description
+                ,
+                price_per_unit: self.price_per_unit
+                ,
+                price_units: self.price_units
+                ,
+                reservation_arn: self.reservation_arn
+                ,
+                reservation_name: self.reservation_name
+                ,
+                reservation_state: self.reservation_state
+                ,
+                resource_specification: self.resource_specification
+                ,
+                start: self.start
+                ,
             }
         }
     }
+    
+    
 }
 impl Reservation {
     /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation).
@@ -6310,7 +5925,7 @@ impl Reservation {
 /// A definition of what is being billed for, including the type and amount.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSpecification {
+pub struct ResourceSpecification  {
     /// The amount of outbound bandwidth that is discounted in the offering.
     #[doc(hidden)]
     pub reserved_bitrate: i32,
@@ -6324,13 +5939,13 @@ impl ResourceSpecification {
         self.reserved_bitrate
     }
     /// The type of resource and the unit that is being billed for.
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
 }
 /// See [`ResourceSpecification`](crate::model::ResourceSpecification).
 pub mod resource_specification {
-
+    
     /// A builder for [`ResourceSpecification`](crate::model::ResourceSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6345,8 +5960,7 @@ pub mod resource_specification {
         }
         /// The amount of outbound bandwidth that is discounted in the offering.
         pub fn set_reserved_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-            self.reserved_bitrate = input;
-            self
+            self.reserved_bitrate = input; self
         }
         /// The type of resource and the unit that is being billed for.
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -6354,21 +5968,22 @@ pub mod resource_specification {
             self
         }
         /// The type of resource and the unit that is being billed for.
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`ResourceSpecification`](crate::model::ResourceSpecification).
         pub fn build(self) -> crate::model::ResourceSpecification {
             crate::model::ResourceSpecification {
-                reserved_bitrate: self.reserved_bitrate.unwrap_or_default(),
-                resource_type: self.resource_type,
+                reserved_bitrate: self.reserved_bitrate
+                    .unwrap_or_default()
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceSpecification {
     /// Creates a new builder-style object to manufacture [`ResourceSpecification`](crate::model::ResourceSpecification).
@@ -6383,9 +5998,9 @@ impl ResourceSpecification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -6406,54 +6021,48 @@ impl ResourceSpecification {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     MbpsOutboundBandwidth,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "Mbps_Outbound_Bandwidth" => ResourceType::MbpsOutboundBandwidth,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::MbpsOutboundBandwidth => "Mbps_Outbound_Bandwidth",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Mbps_Outbound_Bandwidth"]
+        &[
+            "Mbps_Outbound_Bandwidth"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -6468,9 +6077,9 @@ impl AsRef<str> for ResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reservationstate = unimplemented!();
 /// match reservationstate {
@@ -6494,22 +6103,14 @@ impl AsRef<str> for ResourceType {
 /// Specifically, when `reservationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReservationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReservationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -6520,7 +6121,7 @@ pub enum ReservationState {
     #[allow(missing_docs)] // documentation missing in model
     Processing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReservationState {
     fn from(s: &str) -> Self {
@@ -6529,17 +6130,17 @@ impl std::convert::From<&str> for ReservationState {
             "CANCELED" => ReservationState::Canceled,
             "EXPIRED" => ReservationState::Expired,
             "PROCESSING" => ReservationState::Processing,
-            other => ReservationState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReservationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReservationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReservationState::from(s))
+                }
+            }
 impl ReservationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6548,12 +6149,14 @@ impl ReservationState {
             ReservationState::Canceled => "CANCELED",
             ReservationState::Expired => "EXPIRED",
             ReservationState::Processing => "PROCESSING",
-            ReservationState::Unknown(value) => value.as_str(),
+            ReservationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CANCELED", "EXPIRED", "PROCESSING"]
+        &[
+            "ACTIVE", "CANCELED", "EXPIRED", "PROCESSING"
+        ]
     }
 }
 impl AsRef<str> for ReservationState {
@@ -6568,9 +6171,9 @@ impl AsRef<str> for ReservationState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let priceunits = unimplemented!();
 /// match priceunits {
@@ -6591,54 +6194,48 @@ impl AsRef<str> for ReservationState {
 /// Specifically, when `priceunits` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PriceUnits::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PriceUnits {
     #[allow(missing_docs)] // documentation missing in model
     Hourly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PriceUnits {
     fn from(s: &str) -> Self {
         match s {
             "HOURLY" => PriceUnits::Hourly,
-            other => PriceUnits::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PriceUnits::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PriceUnits {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PriceUnits::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PriceUnits::from(s))
+                }
+            }
 impl PriceUnits {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PriceUnits::Hourly => "HOURLY",
-            PriceUnits::Unknown(value) => value.as_str(),
+            PriceUnits::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HOURLY"]
+        &[
+            "HOURLY"
+        ]
     }
 }
 impl AsRef<str> for PriceUnits {
@@ -6653,9 +6250,9 @@ impl AsRef<str> for PriceUnits {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let durationunits = unimplemented!();
 /// match durationunits {
@@ -6676,54 +6273,48 @@ impl AsRef<str> for PriceUnits {
 /// Specifically, when `durationunits` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DurationUnits::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DurationUnits {
     #[allow(missing_docs)] // documentation missing in model
     Months,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DurationUnits {
     fn from(s: &str) -> Self {
         match s {
             "MONTHS" => DurationUnits::Months,
-            other => DurationUnits::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DurationUnits::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DurationUnits {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DurationUnits::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DurationUnits::from(s))
+                }
+            }
 impl DurationUnits {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DurationUnits::Months => "MONTHS",
-            DurationUnits::Unknown(value) => value.as_str(),
+            DurationUnits::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MONTHS"]
+        &[
+            "MONTHS"
+        ]
     }
 }
 impl AsRef<str> for DurationUnits {
@@ -6735,7 +6326,7 @@ impl AsRef<str> for DurationUnits {
 /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Offering {
+pub struct Offering  {
     /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
     #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
@@ -6763,7 +6354,7 @@ pub struct Offering {
 }
 impl Offering {
     /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// The length of time that your reservation would be active.
@@ -6771,35 +6362,33 @@ impl Offering {
         self.duration
     }
     /// The unit of measurement for the duration of the offering.
-    pub fn duration_units(&self) -> std::option::Option<&crate::model::DurationUnits> {
+    pub fn duration_units(&self) -> std::option::Option<& crate::model::DurationUnits> {
         self.duration_units.as_ref()
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
-    pub fn offering_arn(&self) -> std::option::Option<&str> {
+    pub fn offering_arn(&self) -> std::option::Option<& str> {
         self.offering_arn.as_deref()
     }
     /// A description of the offering.
-    pub fn offering_description(&self) -> std::option::Option<&str> {
+    pub fn offering_description(&self) -> std::option::Option<& str> {
         self.offering_description.as_deref()
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
-    pub fn price_per_unit(&self) -> std::option::Option<&str> {
+    pub fn price_per_unit(&self) -> std::option::Option<& str> {
         self.price_per_unit.as_deref()
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
-    pub fn price_units(&self) -> std::option::Option<&crate::model::PriceUnits> {
+    pub fn price_units(&self) -> std::option::Option<& crate::model::PriceUnits> {
         self.price_units.as_ref()
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ResourceSpecification> {
         self.resource_specification.as_ref()
     }
 }
 /// See [`Offering`](crate::model::Offering).
 pub mod offering {
-
+    
     /// A builder for [`Offering`](crate::model::Offering).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6819,12 +6408,8 @@ pub mod offering {
             self
         }
         /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// The length of time that your reservation would be active.
         pub fn duration(mut self, input: i32) -> Self {
@@ -6833,8 +6418,7 @@ pub mod offering {
         }
         /// The length of time that your reservation would be active.
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// The unit of measurement for the duration of the offering.
         pub fn duration_units(mut self, input: crate::model::DurationUnits) -> Self {
@@ -6842,12 +6426,8 @@ pub mod offering {
             self
         }
         /// The unit of measurement for the duration of the offering.
-        pub fn set_duration_units(
-            mut self,
-            input: std::option::Option<crate::model::DurationUnits>,
-        ) -> Self {
-            self.duration_units = input;
-            self
+        pub fn set_duration_units(mut self, input: std::option::Option<crate::model::DurationUnits>) -> Self {
+            self.duration_units = input; self
         }
         /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
         pub fn offering_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6856,8 +6436,7 @@ pub mod offering {
         }
         /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
         pub fn set_offering_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_arn = input;
-            self
+            self.offering_arn = input; self
         }
         /// A description of the offering.
         pub fn offering_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6865,12 +6444,8 @@ pub mod offering {
             self
         }
         /// A description of the offering.
-        pub fn set_offering_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.offering_description = input;
-            self
+        pub fn set_offering_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_description = input; self
         }
         /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
         pub fn price_per_unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6878,12 +6453,8 @@ pub mod offering {
             self
         }
         /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
-        pub fn set_price_per_unit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.price_per_unit = input;
-            self
+        pub fn set_price_per_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.price_per_unit = input; self
         }
         /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
         pub fn price_units(mut self, input: crate::model::PriceUnits) -> Self {
@@ -6891,43 +6462,43 @@ pub mod offering {
             self
         }
         /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
-        pub fn set_price_units(
-            mut self,
-            input: std::option::Option<crate::model::PriceUnits>,
-        ) -> Self {
-            self.price_units = input;
-            self
+        pub fn set_price_units(mut self, input: std::option::Option<crate::model::PriceUnits>) -> Self {
+            self.price_units = input; self
         }
         /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// Consumes the builder and constructs a [`Offering`](crate::model::Offering).
         pub fn build(self) -> crate::model::Offering {
             crate::model::Offering {
-                currency_code: self.currency_code,
-                duration: self.duration.unwrap_or_default(),
-                duration_units: self.duration_units,
-                offering_arn: self.offering_arn,
-                offering_description: self.offering_description,
-                price_per_unit: self.price_per_unit,
-                price_units: self.price_units,
-                resource_specification: self.resource_specification,
+                currency_code: self.currency_code
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                duration_units: self.duration_units
+                ,
+                offering_arn: self.offering_arn
+                ,
+                offering_description: self.offering_description
+                ,
+                price_per_unit: self.price_per_unit
+                ,
+                price_units: self.price_units
+                ,
+                resource_specification: self.resource_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl Offering {
     /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
@@ -6939,7 +6510,7 @@ impl Offering {
 /// Provides a summary of a flow, including its ARN, Availability Zone, and source type.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListedFlow {
+pub struct ListedFlow  {
     /// The Availability Zone that the flow was created in.
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -6964,37 +6535,37 @@ pub struct ListedFlow {
 }
 impl ListedFlow {
     /// The Availability Zone that the flow was created in.
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// A description of the flow.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The ARN of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The name of the flow.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
-    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+    pub fn source_type(&self) -> std::option::Option<& crate::model::SourceType> {
         self.source_type.as_ref()
     }
     /// The current status of the flow.
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// The maintenance setting of a flow
-    pub fn maintenance(&self) -> std::option::Option<&crate::model::Maintenance> {
+    pub fn maintenance(&self) -> std::option::Option<& crate::model::Maintenance> {
         self.maintenance.as_ref()
     }
 }
 /// See [`ListedFlow`](crate::model::ListedFlow).
 pub mod listed_flow {
-
+    
     /// A builder for [`ListedFlow`](crate::model::ListedFlow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7013,12 +6584,8 @@ pub mod listed_flow {
             self
         }
         /// The Availability Zone that the flow was created in.
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// A description of the flow.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7027,8 +6594,7 @@ pub mod listed_flow {
         }
         /// A description of the flow.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The ARN of the flow.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7037,8 +6603,7 @@ pub mod listed_flow {
         }
         /// The ARN of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The name of the flow.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7047,8 +6612,7 @@ pub mod listed_flow {
         }
         /// The name of the flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
         pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
@@ -7056,12 +6620,8 @@ pub mod listed_flow {
             self
         }
         /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
-        pub fn set_source_type(
-            mut self,
-            input: std::option::Option<crate::model::SourceType>,
-        ) -> Self {
-            self.source_type = input;
-            self
+        pub fn set_source_type(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
+            self.source_type = input; self
         }
         /// The current status of the flow.
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -7070,8 +6630,7 @@ pub mod listed_flow {
         }
         /// The current status of the flow.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// The maintenance setting of a flow
         pub fn maintenance(mut self, input: crate::model::Maintenance) -> Self {
@@ -7079,26 +6638,31 @@ pub mod listed_flow {
             self
         }
         /// The maintenance setting of a flow
-        pub fn set_maintenance(
-            mut self,
-            input: std::option::Option<crate::model::Maintenance>,
-        ) -> Self {
-            self.maintenance = input;
-            self
+        pub fn set_maintenance(mut self, input: std::option::Option<crate::model::Maintenance>) -> Self {
+            self.maintenance = input; self
         }
         /// Consumes the builder and constructs a [`ListedFlow`](crate::model::ListedFlow).
         pub fn build(self) -> crate::model::ListedFlow {
             crate::model::ListedFlow {
-                availability_zone: self.availability_zone,
-                description: self.description,
-                flow_arn: self.flow_arn,
-                name: self.name,
-                source_type: self.source_type,
-                status: self.status,
-                maintenance: self.maintenance,
+                availability_zone: self.availability_zone
+                ,
+                description: self.description
+                ,
+                flow_arn: self.flow_arn
+                ,
+                name: self.name
+                ,
+                source_type: self.source_type
+                ,
+                status: self.status
+                ,
+                maintenance: self.maintenance
+                ,
             }
         }
     }
+    
+    
 }
 impl ListedFlow {
     /// Creates a new builder-style object to manufacture [`ListedFlow`](crate::model::ListedFlow).
@@ -7113,9 +6677,9 @@ impl ListedFlow {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourcetype = unimplemented!();
 /// match sourcetype {
@@ -7137,58 +6701,52 @@ impl ListedFlow {
 /// Specifically, when `sourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     Entitled,
     #[allow(missing_docs)] // documentation missing in model
     Owned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
         match s {
             "ENTITLED" => SourceType::Entitled,
             "OWNED" => SourceType::Owned,
-            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SourceType::from(s))
+                }
+            }
 impl SourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::Entitled => "ENTITLED",
             SourceType::Owned => "OWNED",
-            SourceType::Unknown(value) => value.as_str(),
+            SourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENTITLED", "OWNED"]
+        &[
+            "ENTITLED", "OWNED"
+        ]
     }
 }
 impl AsRef<str> for SourceType {
@@ -7200,7 +6758,7 @@ impl AsRef<str> for SourceType {
 /// An entitlement that has been granted to you from other AWS accounts.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListedEntitlement {
+pub struct ListedEntitlement  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
@@ -7217,17 +6775,17 @@ impl ListedEntitlement {
         self.data_transfer_subscriber_fee_percent
     }
     /// The ARN of the entitlement.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// The name of the entitlement.
-    pub fn entitlement_name(&self) -> std::option::Option<&str> {
+    pub fn entitlement_name(&self) -> std::option::Option<& str> {
         self.entitlement_name.as_deref()
     }
 }
 /// See [`ListedEntitlement`](crate::model::ListedEntitlement).
 pub mod listed_entitlement {
-
+    
     /// A builder for [`ListedEntitlement`](crate::model::ListedEntitlement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7242,12 +6800,8 @@ pub mod listed_entitlement {
             self
         }
         /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-        pub fn set_data_transfer_subscriber_fee_percent(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.data_transfer_subscriber_fee_percent = input;
-            self
+        pub fn set_data_transfer_subscriber_fee_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.data_transfer_subscriber_fee_percent = input; self
         }
         /// The ARN of the entitlement.
         pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7255,12 +6809,8 @@ pub mod listed_entitlement {
             self
         }
         /// The ARN of the entitlement.
-        pub fn set_entitlement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_arn = input;
-            self
+        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entitlement_arn = input; self
         }
         /// The name of the entitlement.
         pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7268,24 +6818,24 @@ pub mod listed_entitlement {
             self
         }
         /// The name of the entitlement.
-        pub fn set_entitlement_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_name = input;
-            self
+        pub fn set_entitlement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entitlement_name = input; self
         }
         /// Consumes the builder and constructs a [`ListedEntitlement`](crate::model::ListedEntitlement).
         pub fn build(self) -> crate::model::ListedEntitlement {
             crate::model::ListedEntitlement {
-                data_transfer_subscriber_fee_percent: self
-                    .data_transfer_subscriber_fee_percent
-                    .unwrap_or_default(),
-                entitlement_arn: self.entitlement_arn,
-                entitlement_name: self.entitlement_name,
+                data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent
+                    .unwrap_or_default()
+                ,
+                entitlement_arn: self.entitlement_arn
+                ,
+                entitlement_name: self.entitlement_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ListedEntitlement {
     /// Creates a new builder-style object to manufacture [`ListedEntitlement`](crate::model::ListedEntitlement).
@@ -7297,7 +6847,7 @@ impl ListedEntitlement {
 /// The entitlements that you want to grant on a flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantEntitlementRequest {
+pub struct GrantEntitlementRequest  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
@@ -7323,29 +6873,29 @@ impl GrantEntitlementRequest {
         self.data_transfer_subscriber_fee_percent
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The type of encryption that will be used on the output that is associated with this entitlement.
-    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::Encryption> {
         self.encryption.as_ref()
     }
     /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
-    pub fn entitlement_status(&self) -> std::option::Option<&crate::model::EntitlementStatus> {
+    pub fn entitlement_status(&self) -> std::option::Option<& crate::model::EntitlementStatus> {
         self.entitlement_status.as_ref()
     }
     /// The name of the entitlement. This value must be unique within the current flow.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
-    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subscribers(&self) -> std::option::Option<& [std::string::String]> {
         self.subscribers.as_deref()
     }
 }
 /// See [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
 pub mod grant_entitlement_request {
-
+    
     /// A builder for [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7363,12 +6913,8 @@ pub mod grant_entitlement_request {
             self
         }
         /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-        pub fn set_data_transfer_subscriber_fee_percent(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.data_transfer_subscriber_fee_percent = input;
-            self
+        pub fn set_data_transfer_subscriber_fee_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.data_transfer_subscriber_fee_percent = input; self
         }
         /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7377,8 +6923,7 @@ pub mod grant_entitlement_request {
         }
         /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The type of encryption that will be used on the output that is associated with this entitlement.
         pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
@@ -7386,12 +6931,8 @@ pub mod grant_entitlement_request {
             self
         }
         /// The type of encryption that will be used on the output that is associated with this entitlement.
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::Encryption>) -> Self {
+            self.encryption = input; self
         }
         /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
         pub fn entitlement_status(mut self, input: crate::model::EntitlementStatus) -> Self {
@@ -7399,12 +6940,8 @@ pub mod grant_entitlement_request {
             self
         }
         /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
-        pub fn set_entitlement_status(
-            mut self,
-            input: std::option::Option<crate::model::EntitlementStatus>,
-        ) -> Self {
-            self.entitlement_status = input;
-            self
+        pub fn set_entitlement_status(mut self, input: std::option::Option<crate::model::EntitlementStatus>) -> Self {
+            self.entitlement_status = input; self
         }
         /// The name of the entitlement. This value must be unique within the current flow.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7413,8 +6950,7 @@ pub mod grant_entitlement_request {
         }
         /// The name of the entitlement. This value must be unique within the current flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `subscribers`.
         ///
@@ -7423,32 +6959,35 @@ pub mod grant_entitlement_request {
         /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
         pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
-            self.subscribers = Some(v);
-            self
+                            v.push(input.into());
+                            self.subscribers = Some(v);
+                            self
         }
         /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
-        pub fn set_subscribers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subscribers = input;
-            self
+        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subscribers = input; self
         }
         /// Consumes the builder and constructs a [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
         pub fn build(self) -> crate::model::GrantEntitlementRequest {
             crate::model::GrantEntitlementRequest {
-                data_transfer_subscriber_fee_percent: self
-                    .data_transfer_subscriber_fee_percent
-                    .unwrap_or_default(),
-                description: self.description,
-                encryption: self.encryption,
-                entitlement_status: self.entitlement_status,
-                name: self.name,
-                subscribers: self.subscribers,
+                data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                encryption: self.encryption
+                ,
+                entitlement_status: self.entitlement_status
+                ,
+                name: self.name
+                ,
+                subscribers: self.subscribers
+                ,
             }
         }
     }
+    
+    
 }
 impl GrantEntitlementRequest {
     /// Creates a new builder-style object to manufacture [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
@@ -7460,20 +6999,20 @@ impl GrantEntitlementRequest {
 /// Messages that provide the state of the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Messages {
+pub struct Messages  {
     /// A list of errors that might have been generated from processes on this flow.
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Messages {
     /// A list of errors that might have been generated from processes on this flow.
-    pub fn errors(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn errors(&self) -> std::option::Option<& [std::string::String]> {
         self.errors.as_deref()
     }
 }
 /// See [`Messages`](crate::model::Messages).
 pub mod messages {
-
+    
     /// A builder for [`Messages`](crate::model::Messages).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7487,25 +7026,24 @@ pub mod messages {
         /// A list of errors that might have been generated from processes on this flow.
         pub fn errors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
-            self.errors = Some(v);
-            self
+                            v.push(input.into());
+                            self.errors = Some(v);
+                            self
         }
         /// A list of errors that might have been generated from processes on this flow.
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`Messages`](crate::model::Messages).
         pub fn build(self) -> crate::model::Messages {
             crate::model::Messages {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl Messages {
     /// Creates a new builder-style object to manufacture [`Messages`](crate::model::Messages).
@@ -7517,7 +7055,7 @@ impl Messages {
 /// Create maintenance setting for a flow
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddMaintenance {
+pub struct AddMaintenance  {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
     #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -7527,17 +7065,17 @@ pub struct AddMaintenance {
 }
 impl AddMaintenance {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn maintenance_day(&self) -> std::option::Option<&crate::model::MaintenanceDay> {
+    pub fn maintenance_day(&self) -> std::option::Option<& crate::model::MaintenanceDay> {
         self.maintenance_day.as_ref()
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
+    pub fn maintenance_start_hour(&self) -> std::option::Option<& str> {
         self.maintenance_start_hour.as_deref()
     }
 }
 /// See [`AddMaintenance`](crate::model::AddMaintenance).
 pub mod add_maintenance {
-
+    
     /// A builder for [`AddMaintenance`](crate::model::AddMaintenance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7551,12 +7089,8 @@ pub mod add_maintenance {
             self
         }
         /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-        pub fn set_maintenance_day(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceDay>,
-        ) -> Self {
-            self.maintenance_day = input;
-            self
+        pub fn set_maintenance_day(mut self, input: std::option::Option<crate::model::MaintenanceDay>) -> Self {
+            self.maintenance_day = input; self
         }
         /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
         pub fn maintenance_start_hour(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7564,21 +7098,21 @@ pub mod add_maintenance {
             self
         }
         /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-        pub fn set_maintenance_start_hour(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_start_hour = input;
-            self
+        pub fn set_maintenance_start_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_start_hour = input; self
         }
         /// Consumes the builder and constructs a [`AddMaintenance`](crate::model::AddMaintenance).
         pub fn build(self) -> crate::model::AddMaintenance {
             crate::model::AddMaintenance {
-                maintenance_day: self.maintenance_day,
-                maintenance_start_hour: self.maintenance_start_hour,
+                maintenance_day: self.maintenance_day
+                ,
+                maintenance_start_hour: self.maintenance_start_hour
+                ,
             }
         }
     }
+    
+    
 }
 impl AddMaintenance {
     /// Creates a new builder-style object to manufacture [`AddMaintenance`](crate::model::AddMaintenance).
@@ -7590,7 +7124,7 @@ impl AddMaintenance {
 /// Desired VPC Interface for a Flow
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcInterfaceRequest {
+pub struct VpcInterfaceRequest  {
     /// The name of the VPC Interface. This value must be unique within the current flow.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7609,31 +7143,29 @@ pub struct VpcInterfaceRequest {
 }
 impl VpcInterfaceRequest {
     /// The name of the VPC Interface. This value must be unique within the current flow.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
-    pub fn network_interface_type(
-        &self,
-    ) -> std::option::Option<&crate::model::NetworkInterfaceType> {
+    pub fn network_interface_type(&self) -> std::option::Option<& crate::model::NetworkInterfaceType> {
         self.network_interface_type.as_ref()
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Security Group IDs to be used on ENI.
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// Subnet must be in the AZ of the Flow
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
 }
 /// See [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
 pub mod vpc_interface_request {
-
+    
     /// A builder for [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7651,8 +7183,7 @@ pub mod vpc_interface_request {
         }
         /// The name of the VPC Interface. This value must be unique within the current flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
         pub fn network_interface_type(mut self, input: crate::model::NetworkInterfaceType) -> Self {
@@ -7660,12 +7191,8 @@ pub mod vpc_interface_request {
             self
         }
         /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
-        pub fn set_network_interface_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkInterfaceType>,
-        ) -> Self {
-            self.network_interface_type = input;
-            self
+        pub fn set_network_interface_type(mut self, input: std::option::Option<crate::model::NetworkInterfaceType>) -> Self {
+            self.network_interface_type = input; self
         }
         /// Role Arn MediaConnect can assumes to create ENIs in customer's account
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7674,8 +7201,7 @@ pub mod vpc_interface_request {
         }
         /// Role Arn MediaConnect can assumes to create ENIs in customer's account
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -7684,17 +7210,13 @@ pub mod vpc_interface_request {
         /// Security Group IDs to be used on ENI.
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// Security Group IDs to be used on ENI.
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Subnet must be in the AZ of the Flow
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7703,20 +7225,26 @@ pub mod vpc_interface_request {
         }
         /// Subnet must be in the AZ of the Flow
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// Consumes the builder and constructs a [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
         pub fn build(self) -> crate::model::VpcInterfaceRequest {
             crate::model::VpcInterfaceRequest {
-                name: self.name,
-                network_interface_type: self.network_interface_type,
-                role_arn: self.role_arn,
-                security_group_ids: self.security_group_ids,
-                subnet_id: self.subnet_id,
+                name: self.name
+                ,
+                network_interface_type: self.network_interface_type
+                ,
+                role_arn: self.role_arn
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                subnet_id: self.subnet_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcInterfaceRequest {
     /// Creates a new builder-style object to manufacture [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
@@ -7728,7 +7256,7 @@ impl VpcInterfaceRequest {
 /// The settings for the source of the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetSourceRequest {
+pub struct SetSourceRequest  {
     /// The type of encryption that is used on the content ingested from this source.
     #[doc(hidden)]
     pub decryption: std::option::Option<crate::model::Encryption>,
@@ -7752,8 +7280,7 @@ pub struct SetSourceRequest {
     pub max_sync_buffer: i32,
     /// The media streams that are associated with the source, and the parameters for those associations.
     #[doc(hidden)]
-    pub media_stream_source_configurations:
-        std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
+    pub media_stream_source_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     #[doc(hidden)]
     pub min_latency: i32,
@@ -7787,15 +7314,15 @@ pub struct SetSourceRequest {
 }
 impl SetSourceRequest {
     /// The type of encryption that is used on the content ingested from this source.
-    pub fn decryption(&self) -> std::option::Option<&crate::model::Encryption> {
+    pub fn decryption(&self) -> std::option::Option<& crate::model::Encryption> {
         self.decryption.as_ref()
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// The port that the flow will be listening on for incoming content.
@@ -7815,9 +7342,7 @@ impl SetSourceRequest {
         self.max_sync_buffer
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::MediaStreamSourceConfigurationRequest]> {
+    pub fn media_stream_source_configurations(&self) -> std::option::Option<& [crate::model::MediaStreamSourceConfigurationRequest]> {
         self.media_stream_source_configurations.as_deref()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -7825,11 +7350,11 @@ impl SetSourceRequest {
         self.min_latency
     }
     /// The name of the source.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The protocol that is used by the source.
-    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::Protocol> {
         self.protocol.as_ref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -7837,11 +7362,11 @@ impl SetSourceRequest {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+    pub fn sender_ip_address(&self) -> std::option::Option<& str> {
         self.sender_ip_address.as_deref()
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn source_listener_address(&self) -> std::option::Option<&str> {
+    pub fn source_listener_address(&self) -> std::option::Option<& str> {
         self.source_listener_address.as_deref()
     }
     /// Source port for SRT-caller protocol.
@@ -7849,21 +7374,21 @@ impl SetSourceRequest {
         self.source_listener_port
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// The name of the VPC interface to use for this source.
-    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_interface_name(&self) -> std::option::Option<& str> {
         self.vpc_interface_name.as_deref()
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
+    pub fn whitelist_cidr(&self) -> std::option::Option<& str> {
         self.whitelist_cidr.as_deref()
     }
 }
 /// See [`SetSourceRequest`](crate::model::SetSourceRequest).
 pub mod set_source_request {
-
+    
     /// A builder for [`SetSourceRequest`](crate::model::SetSourceRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7874,8 +7399,7 @@ pub mod set_source_request {
         pub(crate) max_bitrate: std::option::Option<i32>,
         pub(crate) max_latency: std::option::Option<i32>,
         pub(crate) max_sync_buffer: std::option::Option<i32>,
-        pub(crate) media_stream_source_configurations:
-            std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
+        pub(crate) media_stream_source_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
         pub(crate) min_latency: std::option::Option<i32>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
@@ -7894,12 +7418,8 @@ pub mod set_source_request {
             self
         }
         /// The type of encryption that is used on the content ingested from this source.
-        pub fn set_decryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.decryption = input;
-            self
+        pub fn set_decryption(mut self, input: std::option::Option<crate::model::Encryption>) -> Self {
+            self.decryption = input; self
         }
         /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7908,8 +7428,7 @@ pub mod set_source_request {
         }
         /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
         pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7917,12 +7436,8 @@ pub mod set_source_request {
             self
         }
         /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-        pub fn set_entitlement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_arn = input;
-            self
+        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entitlement_arn = input; self
         }
         /// The port that the flow will be listening on for incoming content.
         pub fn ingest_port(mut self, input: i32) -> Self {
@@ -7931,8 +7446,7 @@ pub mod set_source_request {
         }
         /// The port that the flow will be listening on for incoming content.
         pub fn set_ingest_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.ingest_port = input;
-            self
+            self.ingest_port = input; self
         }
         /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn max_bitrate(mut self, input: i32) -> Self {
@@ -7941,8 +7455,7 @@ pub mod set_source_request {
         }
         /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_bitrate = input;
-            self
+            self.max_bitrate = input; self
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
@@ -7951,8 +7464,7 @@ pub mod set_source_request {
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_latency = input;
-            self
+            self.max_latency = input; self
         }
         /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn max_sync_buffer(mut self, input: i32) -> Self {
@@ -7961,32 +7473,22 @@ pub mod set_source_request {
         }
         /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn set_max_sync_buffer(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_sync_buffer = input;
-            self
+            self.max_sync_buffer = input; self
         }
         /// Appends an item to `media_stream_source_configurations`.
         ///
         /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
         ///
         /// The media streams that are associated with the source, and the parameters for those associations.
-        pub fn media_stream_source_configurations(
-            mut self,
-            input: crate::model::MediaStreamSourceConfigurationRequest,
-        ) -> Self {
+        pub fn media_stream_source_configurations(mut self, input: crate::model::MediaStreamSourceConfigurationRequest) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-            v.push(input);
-            self.media_stream_source_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.media_stream_source_configurations = Some(v);
+                            self
         }
         /// The media streams that are associated with the source, and the parameters for those associations.
-        pub fn set_media_stream_source_configurations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>,
-            >,
-        ) -> Self {
-            self.media_stream_source_configurations = input;
-            self
+        pub fn set_media_stream_source_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>) -> Self {
+            self.media_stream_source_configurations = input; self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn min_latency(mut self, input: i32) -> Self {
@@ -7995,8 +7497,7 @@ pub mod set_source_request {
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_latency = input;
-            self
+            self.min_latency = input; self
         }
         /// The name of the source.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8005,8 +7506,7 @@ pub mod set_source_request {
         }
         /// The name of the source.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The protocol that is used by the source.
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
@@ -8015,8 +7515,7 @@ pub mod set_source_request {
         }
         /// The protocol that is used by the source.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = input;
-            self
+            self.protocol = input; self
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn sender_control_port(mut self, input: i32) -> Self {
@@ -8025,8 +7524,7 @@ pub mod set_source_request {
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.sender_control_port = input;
-            self
+            self.sender_control_port = input; self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
         pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8034,12 +7532,8 @@ pub mod set_source_request {
             self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
-        pub fn set_sender_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sender_ip_address = input;
-            self
+        pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sender_ip_address = input; self
         }
         /// Source IP or domain name for SRT-caller protocol.
         pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8047,12 +7541,8 @@ pub mod set_source_request {
             self
         }
         /// Source IP or domain name for SRT-caller protocol.
-        pub fn set_source_listener_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_listener_address = input;
-            self
+        pub fn set_source_listener_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_listener_address = input; self
         }
         /// Source port for SRT-caller protocol.
         pub fn source_listener_port(mut self, input: i32) -> Self {
@@ -8061,8 +7551,7 @@ pub mod set_source_request {
         }
         /// Source port for SRT-caller protocol.
         pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.source_listener_port = input;
-            self
+            self.source_listener_port = input; self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8071,8 +7560,7 @@ pub mod set_source_request {
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
+            self.stream_id = input; self
         }
         /// The name of the VPC interface to use for this source.
         pub fn vpc_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8080,12 +7568,8 @@ pub mod set_source_request {
             self
         }
         /// The name of the VPC interface to use for this source.
-        pub fn set_vpc_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_interface_name = input;
-            self
+        pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_interface_name = input; self
         }
         /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn whitelist_cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8093,37 +7577,60 @@ pub mod set_source_request {
             self
         }
         /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        pub fn set_whitelist_cidr(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.whitelist_cidr = input;
-            self
+        pub fn set_whitelist_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.whitelist_cidr = input; self
         }
         /// Consumes the builder and constructs a [`SetSourceRequest`](crate::model::SetSourceRequest).
         pub fn build(self) -> crate::model::SetSourceRequest {
             crate::model::SetSourceRequest {
-                decryption: self.decryption,
-                description: self.description,
-                entitlement_arn: self.entitlement_arn,
-                ingest_port: self.ingest_port.unwrap_or_default(),
-                max_bitrate: self.max_bitrate.unwrap_or_default(),
-                max_latency: self.max_latency.unwrap_or_default(),
-                max_sync_buffer: self.max_sync_buffer.unwrap_or_default(),
-                media_stream_source_configurations: self.media_stream_source_configurations,
-                min_latency: self.min_latency.unwrap_or_default(),
-                name: self.name,
-                protocol: self.protocol,
-                sender_control_port: self.sender_control_port.unwrap_or_default(),
-                sender_ip_address: self.sender_ip_address,
-                source_listener_address: self.source_listener_address,
-                source_listener_port: self.source_listener_port.unwrap_or_default(),
-                stream_id: self.stream_id,
-                vpc_interface_name: self.vpc_interface_name,
-                whitelist_cidr: self.whitelist_cidr,
+                decryption: self.decryption
+                ,
+                description: self.description
+                ,
+                entitlement_arn: self.entitlement_arn
+                ,
+                ingest_port: self.ingest_port
+                    .unwrap_or_default()
+                ,
+                max_bitrate: self.max_bitrate
+                    .unwrap_or_default()
+                ,
+                max_latency: self.max_latency
+                    .unwrap_or_default()
+                ,
+                max_sync_buffer: self.max_sync_buffer
+                    .unwrap_or_default()
+                ,
+                media_stream_source_configurations: self.media_stream_source_configurations
+                ,
+                min_latency: self.min_latency
+                    .unwrap_or_default()
+                ,
+                name: self.name
+                ,
+                protocol: self.protocol
+                ,
+                sender_control_port: self.sender_control_port
+                    .unwrap_or_default()
+                ,
+                sender_ip_address: self.sender_ip_address
+                ,
+                source_listener_address: self.source_listener_address
+                ,
+                source_listener_port: self.source_listener_port
+                    .unwrap_or_default()
+                ,
+                stream_id: self.stream_id
+                ,
+                vpc_interface_name: self.vpc_interface_name
+                ,
+                whitelist_cidr: self.whitelist_cidr
+                ,
             }
         }
     }
+    
+    
 }
 impl SetSourceRequest {
     /// Creates a new builder-style object to manufacture [`SetSourceRequest`](crate::model::SetSourceRequest).
@@ -8135,7 +7642,7 @@ impl SetSourceRequest {
 /// The output that you want to add to this flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddOutputRequest {
+pub struct AddOutputRequest  {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     #[doc(hidden)]
     pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8153,8 +7660,7 @@ pub struct AddOutputRequest {
     pub max_latency: i32,
     /// The media streams that are associated with the output, and the parameters for those associations.
     #[doc(hidden)]
-    pub media_stream_output_configurations:
-        std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
+    pub media_stream_output_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     #[doc(hidden)]
     pub min_latency: i32,
@@ -8185,19 +7691,19 @@ pub struct AddOutputRequest {
 }
 impl AddOutputRequest {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_allow_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidr_allow_list(&self) -> std::option::Option<& [std::string::String]> {
         self.cidr_allow_list.as_deref()
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The IP address from which video will be sent to output destinations.
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::Encryption> {
         self.encryption.as_ref()
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
@@ -8205,9 +7711,7 @@ impl AddOutputRequest {
         self.max_latency
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn media_stream_output_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::MediaStreamOutputConfigurationRequest]> {
+    pub fn media_stream_output_configurations(&self) -> std::option::Option<& [crate::model::MediaStreamOutputConfigurationRequest]> {
         self.media_stream_output_configurations.as_deref()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -8215,7 +7719,7 @@ impl AddOutputRequest {
         self.min_latency
     }
     /// The name of the output. This value must be unique within the current flow.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The port to use when content is distributed to this output.
@@ -8223,11 +7727,11 @@ impl AddOutputRequest {
         self.port
     }
     /// The protocol to use for the output.
-    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::Protocol> {
         self.protocol.as_ref()
     }
     /// The remote ID for the Zixi-pull output stream.
-    pub fn remote_id(&self) -> std::option::Option<&str> {
+    pub fn remote_id(&self) -> std::option::Option<& str> {
         self.remote_id.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -8239,19 +7743,17 @@ impl AddOutputRequest {
         self.smoothing_latency
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn vpc_interface_attachment(
-        &self,
-    ) -> std::option::Option<&crate::model::VpcInterfaceAttachment> {
+    pub fn vpc_interface_attachment(&self) -> std::option::Option<& crate::model::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
     }
 }
 /// See [`AddOutputRequest`](crate::model::AddOutputRequest).
 pub mod add_output_request {
-
+    
     /// A builder for [`AddOutputRequest`](crate::model::AddOutputRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8260,8 +7762,7 @@ pub mod add_output_request {
         pub(crate) destination: std::option::Option<std::string::String>,
         pub(crate) encryption: std::option::Option<crate::model::Encryption>,
         pub(crate) max_latency: std::option::Option<i32>,
-        pub(crate) media_stream_output_configurations:
-            std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
+        pub(crate) media_stream_output_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
         pub(crate) min_latency: std::option::Option<i32>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -8270,8 +7771,7 @@ pub mod add_output_request {
         pub(crate) sender_control_port: std::option::Option<i32>,
         pub(crate) smoothing_latency: std::option::Option<i32>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
-        pub(crate) vpc_interface_attachment:
-            std::option::Option<crate::model::VpcInterfaceAttachment>,
+        pub(crate) vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
     }
     impl Builder {
         /// Appends an item to `cidr_allow_list`.
@@ -8281,17 +7781,13 @@ pub mod add_output_request {
         /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_allow_list.unwrap_or_default();
-            v.push(input.into());
-            self.cidr_allow_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.cidr_allow_list = Some(v);
+                            self
         }
         /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        pub fn set_cidr_allow_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cidr_allow_list = input;
-            self
+        pub fn set_cidr_allow_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cidr_allow_list = input; self
         }
         /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8300,8 +7796,7 @@ pub mod add_output_request {
         }
         /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// The IP address from which video will be sent to output destinations.
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8310,8 +7805,7 @@ pub mod add_output_request {
         }
         /// The IP address from which video will be sent to output destinations.
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
@@ -8319,12 +7813,8 @@ pub mod add_output_request {
             self
         }
         /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::Encryption>) -> Self {
+            self.encryption = input; self
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
@@ -8333,32 +7823,22 @@ pub mod add_output_request {
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_latency = input;
-            self
+            self.max_latency = input; self
         }
         /// Appends an item to `media_stream_output_configurations`.
         ///
         /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
         ///
         /// The media streams that are associated with the output, and the parameters for those associations.
-        pub fn media_stream_output_configurations(
-            mut self,
-            input: crate::model::MediaStreamOutputConfigurationRequest,
-        ) -> Self {
+        pub fn media_stream_output_configurations(mut self, input: crate::model::MediaStreamOutputConfigurationRequest) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input);
-            self.media_stream_output_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.media_stream_output_configurations = Some(v);
+                            self
         }
         /// The media streams that are associated with the output, and the parameters for those associations.
-        pub fn set_media_stream_output_configurations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>,
-            >,
-        ) -> Self {
-            self.media_stream_output_configurations = input;
-            self
+        pub fn set_media_stream_output_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>) -> Self {
+            self.media_stream_output_configurations = input; self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn min_latency(mut self, input: i32) -> Self {
@@ -8367,8 +7847,7 @@ pub mod add_output_request {
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_latency = input;
-            self
+            self.min_latency = input; self
         }
         /// The name of the output. This value must be unique within the current flow.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8377,8 +7856,7 @@ pub mod add_output_request {
         }
         /// The name of the output. This value must be unique within the current flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The port to use when content is distributed to this output.
         pub fn port(mut self, input: i32) -> Self {
@@ -8387,8 +7865,7 @@ pub mod add_output_request {
         }
         /// The port to use when content is distributed to this output.
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// The protocol to use for the output.
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
@@ -8397,8 +7874,7 @@ pub mod add_output_request {
         }
         /// The protocol to use for the output.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = input;
-            self
+            self.protocol = input; self
         }
         /// The remote ID for the Zixi-pull output stream.
         pub fn remote_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8407,8 +7883,7 @@ pub mod add_output_request {
         }
         /// The remote ID for the Zixi-pull output stream.
         pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.remote_id = input;
-            self
+            self.remote_id = input; self
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn sender_control_port(mut self, input: i32) -> Self {
@@ -8417,8 +7892,7 @@ pub mod add_output_request {
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.sender_control_port = input;
-            self
+            self.sender_control_port = input; self
         }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn smoothing_latency(mut self, input: i32) -> Self {
@@ -8427,8 +7901,7 @@ pub mod add_output_request {
         }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.smoothing_latency = input;
-            self
+            self.smoothing_latency = input; self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8437,46 +7910,60 @@ pub mod add_output_request {
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
+            self.stream_id = input; self
         }
         /// The name of the VPC interface attachment to use for this output.
-        pub fn vpc_interface_attachment(
-            mut self,
-            input: crate::model::VpcInterfaceAttachment,
-        ) -> Self {
+        pub fn vpc_interface_attachment(mut self, input: crate::model::VpcInterfaceAttachment) -> Self {
             self.vpc_interface_attachment = Some(input);
             self
         }
         /// The name of the VPC interface attachment to use for this output.
-        pub fn set_vpc_interface_attachment(
-            mut self,
-            input: std::option::Option<crate::model::VpcInterfaceAttachment>,
-        ) -> Self {
-            self.vpc_interface_attachment = input;
-            self
+        pub fn set_vpc_interface_attachment(mut self, input: std::option::Option<crate::model::VpcInterfaceAttachment>) -> Self {
+            self.vpc_interface_attachment = input; self
         }
         /// Consumes the builder and constructs a [`AddOutputRequest`](crate::model::AddOutputRequest).
         pub fn build(self) -> crate::model::AddOutputRequest {
             crate::model::AddOutputRequest {
-                cidr_allow_list: self.cidr_allow_list,
-                description: self.description,
-                destination: self.destination,
-                encryption: self.encryption,
-                max_latency: self.max_latency.unwrap_or_default(),
-                media_stream_output_configurations: self.media_stream_output_configurations,
-                min_latency: self.min_latency.unwrap_or_default(),
-                name: self.name,
-                port: self.port.unwrap_or_default(),
-                protocol: self.protocol,
-                remote_id: self.remote_id,
-                sender_control_port: self.sender_control_port.unwrap_or_default(),
-                smoothing_latency: self.smoothing_latency.unwrap_or_default(),
-                stream_id: self.stream_id,
-                vpc_interface_attachment: self.vpc_interface_attachment,
+                cidr_allow_list: self.cidr_allow_list
+                ,
+                description: self.description
+                ,
+                destination: self.destination
+                ,
+                encryption: self.encryption
+                ,
+                max_latency: self.max_latency
+                    .unwrap_or_default()
+                ,
+                media_stream_output_configurations: self.media_stream_output_configurations
+                ,
+                min_latency: self.min_latency
+                    .unwrap_or_default()
+                ,
+                name: self.name
+                ,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                protocol: self.protocol
+                ,
+                remote_id: self.remote_id
+                ,
+                sender_control_port: self.sender_control_port
+                    .unwrap_or_default()
+                ,
+                smoothing_latency: self.smoothing_latency
+                    .unwrap_or_default()
+                ,
+                stream_id: self.stream_id
+                ,
+                vpc_interface_attachment: self.vpc_interface_attachment
+                ,
             }
         }
     }
+    
+    
 }
 impl AddOutputRequest {
     /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::model::AddOutputRequest).
@@ -8488,7 +7975,7 @@ impl AddOutputRequest {
 /// The media stream that you want to add to the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddMediaStreamRequest {
+pub struct AddMediaStreamRequest  {
     /// The attributes that you want to assign to the new media stream.
     #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::MediaStreamAttributesRequest>,
@@ -8513,7 +8000,7 @@ pub struct AddMediaStreamRequest {
 }
 impl AddMediaStreamRequest {
     /// The attributes that you want to assign to the new media stream.
-    pub fn attributes(&self) -> std::option::Option<&crate::model::MediaStreamAttributesRequest> {
+    pub fn attributes(&self) -> std::option::Option<& crate::model::MediaStreamAttributesRequest> {
         self.attributes.as_ref()
     }
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
@@ -8521,7 +8008,7 @@ impl AddMediaStreamRequest {
         self.clock_rate
     }
     /// A description that can help you quickly identify what your media stream is used for.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// A unique identifier for the media stream.
@@ -8529,21 +8016,21 @@ impl AddMediaStreamRequest {
         self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
-    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
     /// The type of media stream.
-    pub fn media_stream_type(&self) -> std::option::Option<&crate::model::MediaStreamType> {
+    pub fn media_stream_type(&self) -> std::option::Option<& crate::model::MediaStreamType> {
         self.media_stream_type.as_ref()
     }
     /// The resolution of the video.
-    pub fn video_format(&self) -> std::option::Option<&str> {
+    pub fn video_format(&self) -> std::option::Option<& str> {
         self.video_format.as_deref()
     }
 }
 /// See [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
 pub mod add_media_stream_request {
-
+    
     /// A builder for [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8562,12 +8049,8 @@ pub mod add_media_stream_request {
             self
         }
         /// The attributes that you want to assign to the new media stream.
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<crate::model::MediaStreamAttributesRequest>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<crate::model::MediaStreamAttributesRequest>) -> Self {
+            self.attributes = input; self
         }
         /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
         pub fn clock_rate(mut self, input: i32) -> Self {
@@ -8576,8 +8059,7 @@ pub mod add_media_stream_request {
         }
         /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
         pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
-            self.clock_rate = input;
-            self
+            self.clock_rate = input; self
         }
         /// A description that can help you quickly identify what your media stream is used for.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8586,8 +8068,7 @@ pub mod add_media_stream_request {
         }
         /// A description that can help you quickly identify what your media stream is used for.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// A unique identifier for the media stream.
         pub fn media_stream_id(mut self, input: i32) -> Self {
@@ -8596,8 +8077,7 @@ pub mod add_media_stream_request {
         }
         /// A unique identifier for the media stream.
         pub fn set_media_stream_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.media_stream_id = input;
-            self
+            self.media_stream_id = input; self
         }
         /// A name that helps you distinguish one media stream from another.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8605,12 +8085,8 @@ pub mod add_media_stream_request {
             self
         }
         /// A name that helps you distinguish one media stream from another.
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
+        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_stream_name = input; self
         }
         /// The type of media stream.
         pub fn media_stream_type(mut self, input: crate::model::MediaStreamType) -> Self {
@@ -8618,12 +8094,8 @@ pub mod add_media_stream_request {
             self
         }
         /// The type of media stream.
-        pub fn set_media_stream_type(
-            mut self,
-            input: std::option::Option<crate::model::MediaStreamType>,
-        ) -> Self {
-            self.media_stream_type = input;
-            self
+        pub fn set_media_stream_type(mut self, input: std::option::Option<crate::model::MediaStreamType>) -> Self {
+            self.media_stream_type = input; self
         }
         /// The resolution of the video.
         pub fn video_format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8632,22 +8104,32 @@ pub mod add_media_stream_request {
         }
         /// The resolution of the video.
         pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.video_format = input;
-            self
+            self.video_format = input; self
         }
         /// Consumes the builder and constructs a [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
         pub fn build(self) -> crate::model::AddMediaStreamRequest {
             crate::model::AddMediaStreamRequest {
-                attributes: self.attributes,
-                clock_rate: self.clock_rate.unwrap_or_default(),
-                description: self.description,
-                media_stream_id: self.media_stream_id.unwrap_or_default(),
-                media_stream_name: self.media_stream_name,
-                media_stream_type: self.media_stream_type,
-                video_format: self.video_format,
+                attributes: self.attributes
+                ,
+                clock_rate: self.clock_rate
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                media_stream_id: self.media_stream_id
+                    .unwrap_or_default()
+                ,
+                media_stream_name: self.media_stream_name
+                ,
+                media_stream_type: self.media_stream_type
+                ,
+                video_format: self.video_format
+                ,
             }
         }
     }
+    
+    
 }
 impl AddMediaStreamRequest {
     /// Creates a new builder-style object to manufacture [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
@@ -8655,3 +8137,4 @@ impl AddMediaStreamRequest {
         crate::model::add_media_stream_request::Builder::default()
     }
 }
+

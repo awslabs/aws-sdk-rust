@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateTaskSetError {
     /// Kind of error that occurred.
-    pub kind: UpdateTaskSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateTaskSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateTaskSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -38,29 +38,49 @@ pub enum UpdateTaskSetErrorKind {
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTaskSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTaskSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::TaskSetNotFoundException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
-            UpdateTaskSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateTaskSetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::ServiceNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::ServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::TaskSetNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -74,46 +94,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateTaskSetError {
 }
 impl UpdateTaskSetError {
     /// Creates a new `UpdateTaskSetError`.
-    pub fn new(kind: UpdateTaskSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateTaskSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateTaskSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateTaskSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateTaskSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateTaskSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateTaskSetErrorKind::AccessDeniedException(_))
@@ -124,17 +144,11 @@ impl UpdateTaskSetError {
     }
     /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskSetErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateTaskSetErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskSetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateTaskSetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -142,46 +156,54 @@ impl UpdateTaskSetError {
     }
     /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskSetErrorKind::ServiceNotActiveException(_)
-        )
+        matches!(&self.kind, UpdateTaskSetErrorKind::ServiceNotActiveException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskSetErrorKind::ServiceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateTaskSetErrorKind::ServiceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::TaskSetNotFoundException`.
     pub fn is_task_set_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskSetErrorKind::TaskSetNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateTaskSetErrorKind::TaskSetNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskSetErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskSetErrorKind::UnsupportedFeatureException(_)
-        )
+        matches!(&self.kind, UpdateTaskSetErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for UpdateTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTaskSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::TaskSetNotFoundException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
-            UpdateTaskSetErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateTaskSetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::ServiceNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::ServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::TaskSetNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -189,22 +211,20 @@ impl std::error::Error for UpdateTaskSetError {
 /// <p>The specified task isn't supported in this Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedFeatureException {
+pub struct UnsupportedFeatureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedFeatureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedFeatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedFeatureException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -214,7 +234,7 @@ impl std::fmt::Display for UnsupportedFeatureException {
 impl std::error::Error for UnsupportedFeatureException {}
 /// See [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
 pub mod unsupported_feature_exception {
-
+    
     /// A builder for [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -228,16 +248,18 @@ pub mod unsupported_feature_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
         pub fn build(self) -> crate::error::UnsupportedFeatureException {
             crate::error::UnsupportedFeatureException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedFeatureException {
     /// Creates a new builder-style object to manufacture [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
@@ -249,22 +271,20 @@ impl UnsupportedFeatureException {
 /// <p>The specified task set wasn't found. You can view your available task sets with <code>DescribeTaskSets</code>. Task sets are specific to each cluster, service and Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskSetNotFoundException {
+pub struct TaskSetNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TaskSetNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TaskSetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TaskSetNotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -274,7 +294,7 @@ impl std::fmt::Display for TaskSetNotFoundException {
 impl std::error::Error for TaskSetNotFoundException {}
 /// See [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException).
 pub mod task_set_not_found_exception {
-
+    
     /// A builder for [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -288,16 +308,18 @@ pub mod task_set_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException).
         pub fn build(self) -> crate::error::TaskSetNotFoundException {
             crate::error::TaskSetNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TaskSetNotFoundException {
     /// Creates a new builder-style object to manufacture [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException).
@@ -309,22 +331,20 @@ impl TaskSetNotFoundException {
 /// <p>The specified service wasn't found. You can view your available services with <code>ListServices</code>. Amazon ECS services are cluster specific and Region specific.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceNotFoundException {
+pub struct ServiceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -334,7 +354,7 @@ impl std::fmt::Display for ServiceNotFoundException {
 impl std::error::Error for ServiceNotFoundException {}
 /// See [`ServiceNotFoundException`](crate::error::ServiceNotFoundException).
 pub mod service_not_found_exception {
-
+    
     /// A builder for [`ServiceNotFoundException`](crate::error::ServiceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -348,16 +368,18 @@ pub mod service_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceNotFoundException`](crate::error::ServiceNotFoundException).
         pub fn build(self) -> crate::error::ServiceNotFoundException {
             crate::error::ServiceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ServiceNotFoundException`](crate::error::ServiceNotFoundException).
@@ -369,22 +391,20 @@ impl ServiceNotFoundException {
 /// <p>The specified service isn't active. You can't update a service that's inactive. If you have previously deleted a service, you can re-create it with <code>CreateService</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceNotActiveException {
+pub struct ServiceNotActiveException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceNotActiveException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceNotActiveException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceNotActiveException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -394,7 +414,7 @@ impl std::fmt::Display for ServiceNotActiveException {
 impl std::error::Error for ServiceNotActiveException {}
 /// See [`ServiceNotActiveException`](crate::error::ServiceNotActiveException).
 pub mod service_not_active_exception {
-
+    
     /// A builder for [`ServiceNotActiveException`](crate::error::ServiceNotActiveException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -408,16 +428,18 @@ pub mod service_not_active_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceNotActiveException`](crate::error::ServiceNotActiveException).
         pub fn build(self) -> crate::error::ServiceNotActiveException {
             crate::error::ServiceNotActiveException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceNotActiveException {
     /// Creates a new builder-style object to manufacture [`ServiceNotActiveException`](crate::error::ServiceNotActiveException).
@@ -429,22 +451,20 @@ impl ServiceNotActiveException {
 /// <p>These errors are usually caused by a server issue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerException {
+pub struct ServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServerException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -454,7 +474,7 @@ impl std::fmt::Display for ServerException {
 impl std::error::Error for ServerException {}
 /// See [`ServerException`](crate::error::ServerException).
 pub mod server_exception {
-
+    
     /// A builder for [`ServerException`](crate::error::ServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -468,16 +488,18 @@ pub mod server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServerException`](crate::error::ServerException).
         pub fn build(self) -> crate::error::ServerException {
             crate::error::ServerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerException {
     /// Creates a new builder-style object to manufacture [`ServerException`](crate::error::ServerException).
@@ -489,22 +511,20 @@ impl ServerException {
 /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterException {
+pub struct InvalidParameterException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -514,7 +534,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException).
 pub mod invalid_parameter_exception {
-
+    
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -528,16 +548,18 @@ pub mod invalid_parameter_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
         pub fn build(self) -> crate::error::InvalidParameterException {
             crate::error::InvalidParameterException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
@@ -549,22 +571,20 @@ impl InvalidParameterException {
 /// <p>The specified cluster wasn't found. You can view your available clusters with <code>ListClusters</code>. Amazon ECS clusters are Region specific.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterNotFoundException {
+pub struct ClusterNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClusterNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClusterNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterNotFoundException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -574,7 +594,7 @@ impl std::fmt::Display for ClusterNotFoundException {
 impl std::error::Error for ClusterNotFoundException {}
 /// See [`ClusterNotFoundException`](crate::error::ClusterNotFoundException).
 pub mod cluster_not_found_exception {
-
+    
     /// A builder for [`ClusterNotFoundException`](crate::error::ClusterNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -588,16 +608,18 @@ pub mod cluster_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClusterNotFoundException`](crate::error::ClusterNotFoundException).
         pub fn build(self) -> crate::error::ClusterNotFoundException {
             crate::error::ClusterNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterNotFoundException {
     /// Creates a new builder-style object to manufacture [`ClusterNotFoundException`](crate::error::ClusterNotFoundException).
@@ -609,22 +631,20 @@ impl ClusterNotFoundException {
 /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientException {
+pub struct ClientException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClientException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClientException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -634,7 +654,7 @@ impl std::fmt::Display for ClientException {
 impl std::error::Error for ClientException {}
 /// See [`ClientException`](crate::error::ClientException).
 pub mod client_exception {
-
+    
     /// A builder for [`ClientException`](crate::error::ClientException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -648,16 +668,18 @@ pub mod client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClientException`](crate::error::ClientException).
         pub fn build(self) -> crate::error::ClientException {
             crate::error::ClientException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClientException {
     /// Creates a new builder-style object to manufacture [`ClientException`](crate::error::ClientException).
@@ -669,22 +691,20 @@ impl ClientException {
 /// <p>You don't have authorization to perform the requested action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -694,7 +714,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -708,16 +728,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -731,15 +753,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateTaskProtectionError {
     /// Kind of error that occurred.
-    pub kind: UpdateTaskProtectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateTaskProtectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateTaskProtectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -761,27 +783,43 @@ pub enum UpdateTaskProtectionErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTaskProtectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTaskProtectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateTaskProtectionErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateTaskProtectionErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            UpdateTaskProtectionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateTaskProtectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateTaskProtectionErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
-            UpdateTaskProtectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateTaskProtectionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskProtectionErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskProtectionErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskProtectionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskProtectionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskProtectionErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTaskProtectionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -795,111 +833,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateTaskProtectionError {
 }
 impl UpdateTaskProtectionError {
     /// Creates a new `UpdateTaskProtectionError`.
-    pub fn new(kind: UpdateTaskProtectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateTaskProtectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateTaskProtectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateTaskProtectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateTaskProtectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateTaskProtectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskProtectionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateTaskProtectionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskProtectionErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, UpdateTaskProtectionErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskProtectionErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateTaskProtectionErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskProtectionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateTaskProtectionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskProtectionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateTaskProtectionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskProtectionErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, UpdateTaskProtectionErrorKind::ServerException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskProtectionErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_)
-        )
+        matches!(&self.kind, UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for UpdateTaskProtectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTaskProtectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateTaskProtectionErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateTaskProtectionErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            UpdateTaskProtectionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateTaskProtectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateTaskProtectionErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
-            UpdateTaskProtectionErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateTaskProtectionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskProtectionErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskProtectionErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskProtectionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskProtectionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskProtectionErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskProtectionErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTaskProtectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -907,22 +936,20 @@ impl std::error::Error for UpdateTaskProtectionError {
 /// <p>The specified resource wasn't found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -932,7 +959,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -946,16 +973,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -969,17 +998,15 @@ impl ResourceNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateServicePrimaryTaskSetError {
     /// Kind of error that occurred.
-    pub kind: UpdateServicePrimaryTaskSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateServicePrimaryTaskSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateServicePrimaryTaskSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateServicePrimaryTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateServicePrimaryTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1005,35 +1032,49 @@ pub enum UpdateServicePrimaryTaskSetErrorKind {
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateServicePrimaryTaskSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_inner) => {
+            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateServicePrimaryTaskSetErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_inner) => _inner.fmt(f),
-            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateServicePrimaryTaskSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1047,129 +1088,116 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateServicePrimaryTaskSetEr
 }
 impl UpdateServicePrimaryTaskSetError {
     /// Creates a new `UpdateServicePrimaryTaskSetError`.
-    pub fn new(kind: UpdateServicePrimaryTaskSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateServicePrimaryTaskSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateServicePrimaryTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateServicePrimaryTaskSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateServicePrimaryTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateServicePrimaryTaskSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateServicePrimaryTaskSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateServicePrimaryTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateServicePrimaryTaskSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateServicePrimaryTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::ServerException(_))
     }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_))
     }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException`.
     pub fn is_task_set_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_)
-        )
+        matches!(&self.kind, UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for UpdateServicePrimaryTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_inner) => Some(_inner),
-            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_inner) => {
+            UpdateServicePrimaryTaskSetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::ServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::TaskSetNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServicePrimaryTaskSetErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateServicePrimaryTaskSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1179,15 +1207,15 @@ impl std::error::Error for UpdateServicePrimaryTaskSetError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateServiceError {
     /// Kind of error that occurred.
-    pub kind: UpdateServiceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateServiceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateServiceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1206,9 +1234,7 @@ pub enum UpdateServiceErrorKind {
     /// <p>The specified namespace wasn't found.</p>
     NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
-    PlatformTaskDefinitionIncompatibilityException(
-        crate::error::PlatformTaskDefinitionIncompatibilityException,
-    ),
+    PlatformTaskDefinitionIncompatibilityException(crate::error::PlatformTaskDefinitionIncompatibilityException),
     /// <p>The specified platform version doesn't exist.</p>
     PlatformUnknownException(crate::error::PlatformUnknownException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -1217,32 +1243,52 @@ pub enum UpdateServiceErrorKind {
     ServiceNotActiveException(crate::error::ServiceNotActiveException),
     /// <p>The specified service wasn't found. You can view your available services with <code>ListServices</code>. Amazon ECS services are cluster specific and Region specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateServiceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::NamespaceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+            UpdateServiceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::NamespaceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::PlatformUnknownException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::ServiceNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::ServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateServiceErrorKind::PlatformUnknownException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1256,46 +1302,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateServiceError {
 }
 impl UpdateServiceError {
     /// Creates a new `UpdateServiceError`.
-    pub fn new(kind: UpdateServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateServiceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateServiceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateServiceErrorKind::AccessDeniedException(_))
@@ -1306,38 +1352,23 @@ impl UpdateServiceError {
     }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateServiceErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateServiceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::NamespaceNotFoundException`.
     pub fn is_namespace_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceErrorKind::NamespaceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateServiceErrorKind::NamespaceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
-        )
+        matches!(&self.kind, UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::PlatformUnknownException`.
     pub fn is_platform_unknown_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceErrorKind::PlatformUnknownException(_)
-        )
+        matches!(&self.kind, UpdateServiceErrorKind::PlatformUnknownException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -1345,35 +1376,49 @@ impl UpdateServiceError {
     }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceErrorKind::ServiceNotActiveException(_)
-        )
+        matches!(&self.kind, UpdateServiceErrorKind::ServiceNotActiveException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceErrorKind::ServiceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateServiceErrorKind::ServiceNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateServiceErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::NamespaceNotFoundException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+            UpdateServiceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::NamespaceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::PlatformUnknownException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::ServiceNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::ServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateServiceErrorKind::PlatformUnknownException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
-            UpdateServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1381,22 +1426,20 @@ impl std::error::Error for UpdateServiceError {
 /// <p>The specified platform version doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformUnknownException {
+pub struct PlatformUnknownException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PlatformUnknownException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for PlatformUnknownException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PlatformUnknownException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1406,7 +1449,7 @@ impl std::fmt::Display for PlatformUnknownException {
 impl std::error::Error for PlatformUnknownException {}
 /// See [`PlatformUnknownException`](crate::error::PlatformUnknownException).
 pub mod platform_unknown_exception {
-
+    
     /// A builder for [`PlatformUnknownException`](crate::error::PlatformUnknownException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1420,16 +1463,18 @@ pub mod platform_unknown_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`PlatformUnknownException`](crate::error::PlatformUnknownException).
         pub fn build(self) -> crate::error::PlatformUnknownException {
             crate::error::PlatformUnknownException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformUnknownException {
     /// Creates a new builder-style object to manufacture [`PlatformUnknownException`](crate::error::PlatformUnknownException).
@@ -1441,22 +1486,20 @@ impl PlatformUnknownException {
 /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformTaskDefinitionIncompatibilityException {
+pub struct PlatformTaskDefinitionIncompatibilityException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PlatformTaskDefinitionIncompatibilityException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for PlatformTaskDefinitionIncompatibilityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PlatformTaskDefinitionIncompatibilityException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1466,7 +1509,7 @@ impl std::fmt::Display for PlatformTaskDefinitionIncompatibilityException {
 impl std::error::Error for PlatformTaskDefinitionIncompatibilityException {}
 /// See [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException).
 pub mod platform_task_definition_incompatibility_exception {
-
+    
     /// A builder for [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1480,16 +1523,18 @@ pub mod platform_task_definition_incompatibility_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException).
         pub fn build(self) -> crate::error::PlatformTaskDefinitionIncompatibilityException {
             crate::error::PlatformTaskDefinitionIncompatibilityException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformTaskDefinitionIncompatibilityException {
     /// Creates a new builder-style object to manufacture [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException).
@@ -1501,22 +1546,20 @@ impl PlatformTaskDefinitionIncompatibilityException {
 /// <p>The specified namespace wasn't found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NamespaceNotFoundException {
+pub struct NamespaceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NamespaceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NamespaceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NamespaceNotFoundException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1526,7 +1569,7 @@ impl std::fmt::Display for NamespaceNotFoundException {
 impl std::error::Error for NamespaceNotFoundException {}
 /// See [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
 pub mod namespace_not_found_exception {
-
+    
     /// A builder for [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1540,16 +1583,18 @@ pub mod namespace_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
         pub fn build(self) -> crate::error::NamespaceNotFoundException {
             crate::error::NamespaceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NamespaceNotFoundException {
     /// Creates a new builder-style object to manufacture [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
@@ -1563,17 +1608,15 @@ impl NamespaceNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateContainerInstancesStateError {
     /// Kind of error that occurred.
-    pub kind: UpdateContainerInstancesStateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateContainerInstancesStateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateContainerInstancesStateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateContainerInstancesStateErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateContainerInstancesStateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1589,28 +1632,34 @@ pub enum UpdateContainerInstancesStateErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContainerInstancesStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContainerInstancesStateErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_inner) => {
+            UpdateContainerInstancesStateErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerInstancesStateErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerInstancesStateErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerInstancesStateErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateContainerInstancesStateErrorKind::InvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateContainerInstancesStateErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateContainerInstancesStateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1624,94 +1673,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateContainerInstancesState
 }
 impl UpdateContainerInstancesStateError {
     /// Creates a new `UpdateContainerInstancesStateError`.
-    pub fn new(
-        kind: UpdateContainerInstancesStateErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateContainerInstancesStateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateContainerInstancesStateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateContainerInstancesStateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateContainerInstancesStateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateContainerInstancesStateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateContainerInstancesStateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateContainerInstancesStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateContainerInstancesStateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateContainerInstancesStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateContainerInstancesStateErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerInstancesStateErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, UpdateContainerInstancesStateErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerInstancesStateErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerInstancesStateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerInstancesStateErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateContainerInstancesStateErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerInstancesStateErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerInstancesStateErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, UpdateContainerInstancesStateErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for UpdateContainerInstancesStateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContainerInstancesStateErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_inner) => {
+            UpdateContainerInstancesStateErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerInstancesStateErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerInstancesStateErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerInstancesStateErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerInstancesStateErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateContainerInstancesStateErrorKind::InvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            UpdateContainerInstancesStateErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateContainerInstancesStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1721,15 +1757,15 @@ impl std::error::Error for UpdateContainerInstancesStateError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateContainerAgentError {
     /// Kind of error that occurred.
-    pub kind: UpdateContainerAgentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateContainerAgentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateContainerAgentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateContainerAgentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1751,27 +1787,43 @@ pub enum UpdateContainerAgentErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There's already a current Amazon ECS container agent update in progress on the container instance that's specified. If the container agent becomes disconnected while it's in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it resumes where it stopped previously.</p>
     UpdateInProgressException(crate::error::UpdateInProgressException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContainerAgentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContainerAgentErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::MissingVersionException(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::NoUpdateAvailableException(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::UpdateInProgressException(_inner) => _inner.fmt(f),
-            UpdateContainerAgentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateContainerAgentErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerAgentErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerAgentErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerAgentErrorKind::MissingVersionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerAgentErrorKind::NoUpdateAvailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerAgentErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerAgentErrorKind::UpdateInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContainerAgentErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1785,111 +1837,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateContainerAgentError {
 }
 impl UpdateContainerAgentError {
     /// Creates a new `UpdateContainerAgentError`.
-    pub fn new(kind: UpdateContainerAgentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateContainerAgentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateContainerAgentErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateContainerAgentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateContainerAgentErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateContainerAgentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateContainerAgentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateContainerAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateContainerAgentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateContainerAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerAgentErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, UpdateContainerAgentErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerAgentErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateContainerAgentErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerAgentErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateContainerAgentErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::MissingVersionException`.
     pub fn is_missing_version_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerAgentErrorKind::MissingVersionException(_)
-        )
+        matches!(&self.kind, UpdateContainerAgentErrorKind::MissingVersionException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::NoUpdateAvailableException`.
     pub fn is_no_update_available_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerAgentErrorKind::NoUpdateAvailableException(_)
-        )
+        matches!(&self.kind, UpdateContainerAgentErrorKind::NoUpdateAvailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerAgentErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, UpdateContainerAgentErrorKind::ServerException(_))
     }
     /// Returns `true` if the error kind is `UpdateContainerAgentErrorKind::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContainerAgentErrorKind::UpdateInProgressException(_)
-        )
+        matches!(&self.kind, UpdateContainerAgentErrorKind::UpdateInProgressException(_))
     }
 }
 impl std::error::Error for UpdateContainerAgentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContainerAgentErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::MissingVersionException(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::NoUpdateAvailableException(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::UpdateInProgressException(_inner) => Some(_inner),
-            UpdateContainerAgentErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateContainerAgentErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerAgentErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerAgentErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerAgentErrorKind::MissingVersionException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerAgentErrorKind::NoUpdateAvailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerAgentErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerAgentErrorKind::UpdateInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContainerAgentErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1897,22 +1940,20 @@ impl std::error::Error for UpdateContainerAgentError {
 /// <p>There's already a current Amazon ECS container agent update in progress on the container instance that's specified. If the container agent becomes disconnected while it's in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it resumes where it stopped previously.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInProgressException {
+pub struct UpdateInProgressException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UpdateInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UpdateInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UpdateInProgressException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1922,7 +1963,7 @@ impl std::fmt::Display for UpdateInProgressException {
 impl std::error::Error for UpdateInProgressException {}
 /// See [`UpdateInProgressException`](crate::error::UpdateInProgressException).
 pub mod update_in_progress_exception {
-
+    
     /// A builder for [`UpdateInProgressException`](crate::error::UpdateInProgressException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1936,16 +1977,18 @@ pub mod update_in_progress_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInProgressException`](crate::error::UpdateInProgressException).
         pub fn build(self) -> crate::error::UpdateInProgressException {
             crate::error::UpdateInProgressException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInProgressException {
     /// Creates a new builder-style object to manufacture [`UpdateInProgressException`](crate::error::UpdateInProgressException).
@@ -1957,22 +2000,20 @@ impl UpdateInProgressException {
 /// <p>There's no update available for this Amazon ECS container agent. This might be because the agent is already running the latest version or because it's so old that there's no update path to the current version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoUpdateAvailableException {
+pub struct NoUpdateAvailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NoUpdateAvailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NoUpdateAvailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoUpdateAvailableException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1982,7 +2023,7 @@ impl std::fmt::Display for NoUpdateAvailableException {
 impl std::error::Error for NoUpdateAvailableException {}
 /// See [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException).
 pub mod no_update_available_exception {
-
+    
     /// A builder for [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1996,16 +2037,18 @@ pub mod no_update_available_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException).
         pub fn build(self) -> crate::error::NoUpdateAvailableException {
             crate::error::NoUpdateAvailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NoUpdateAvailableException {
     /// Creates a new builder-style object to manufacture [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException).
@@ -2017,22 +2060,20 @@ impl NoUpdateAvailableException {
 /// <p>Amazon ECS can't determine the current version of the Amazon ECS container agent on the container instance and doesn't have enough information to proceed with an update. This could be because the agent running on the container instance is a previous or custom version that doesn't use our version information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MissingVersionException {
+pub struct MissingVersionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MissingVersionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MissingVersionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingVersionException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -2042,7 +2083,7 @@ impl std::fmt::Display for MissingVersionException {
 impl std::error::Error for MissingVersionException {}
 /// See [`MissingVersionException`](crate::error::MissingVersionException).
 pub mod missing_version_exception {
-
+    
     /// A builder for [`MissingVersionException`](crate::error::MissingVersionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2056,16 +2097,18 @@ pub mod missing_version_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MissingVersionException`](crate::error::MissingVersionException).
         pub fn build(self) -> crate::error::MissingVersionException {
             crate::error::MissingVersionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MissingVersionException {
     /// Creates a new builder-style object to manufacture [`MissingVersionException`](crate::error::MissingVersionException).
@@ -2079,15 +2122,15 @@ impl MissingVersionException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateClusterSettingsError {
     /// Kind of error that occurred.
-    pub kind: UpdateClusterSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateClusterSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateClusterSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateClusterSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2103,24 +2146,34 @@ pub enum UpdateClusterSettingsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateClusterSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateClusterSettingsErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateClusterSettingsErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            UpdateClusterSettingsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateClusterSettingsErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateClusterSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateClusterSettingsErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateClusterSettingsErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateClusterSettingsErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateClusterSettingsErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateClusterSettingsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2134,87 +2187,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateClusterSettingsError {
 }
 impl UpdateClusterSettingsError {
     /// Creates a new `UpdateClusterSettingsError`.
-    pub fn new(kind: UpdateClusterSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateClusterSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateClusterSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateClusterSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateClusterSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateClusterSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateClusterSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateClusterSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateClusterSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateClusterSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateClusterSettingsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateClusterSettingsErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, UpdateClusterSettingsErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateClusterSettingsErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateClusterSettingsErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateClusterSettingsErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateClusterSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateClusterSettingsErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateClusterSettingsErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateClusterSettingsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateClusterSettingsErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, UpdateClusterSettingsErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for UpdateClusterSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateClusterSettingsErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateClusterSettingsErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            UpdateClusterSettingsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateClusterSettingsErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateClusterSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateClusterSettingsErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateClusterSettingsErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateClusterSettingsErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateClusterSettingsErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateClusterSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2224,15 +2271,15 @@ impl std::error::Error for UpdateClusterSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateClusterError {
     /// Kind of error that occurred.
-    pub kind: UpdateClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2248,24 +2295,34 @@ pub enum UpdateClusterErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateClusterErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            UpdateClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateClusterErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateClusterErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateClusterErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateClusterErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateClusterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2279,63 +2336,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateClusterError {
 }
 impl UpdateClusterError {
     /// Creates a new `UpdateClusterError`.
-    pub fn new(kind: UpdateClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateClusterErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateClusterErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateClusterErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateClusterErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateClusterErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -2345,11 +2396,21 @@ impl UpdateClusterError {
 impl std::error::Error for UpdateClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateClusterErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateClusterErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            UpdateClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateClusterErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateClusterErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateClusterErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateClusterErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateClusterErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateClusterErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateClusterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2359,15 +2420,15 @@ impl std::error::Error for UpdateClusterError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateCapacityProviderError {
     /// Kind of error that occurred.
-    pub kind: UpdateCapacityProviderErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateCapacityProviderErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateCapacityProviderError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2381,23 +2442,31 @@ pub enum UpdateCapacityProviderErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCapacityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCapacityProviderErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UpdateCapacityProviderErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateCapacityProviderErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UpdateCapacityProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateCapacityProviderErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCapacityProviderErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCapacityProviderErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCapacityProviderErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2411,79 +2480,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateCapacityProviderError {
 }
 impl UpdateCapacityProviderError {
     /// Creates a new `UpdateCapacityProviderError`.
-    pub fn new(kind: UpdateCapacityProviderErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateCapacityProviderError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateCapacityProviderError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateCapacityProviderErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateCapacityProviderError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateCapacityProviderError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateCapacityProviderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCapacityProviderErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, UpdateCapacityProviderErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateCapacityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCapacityProviderErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateCapacityProviderErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateCapacityProviderErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCapacityProviderErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, UpdateCapacityProviderErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for UpdateCapacityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCapacityProviderErrorKind::ClientException(_inner) => Some(_inner),
-            UpdateCapacityProviderErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateCapacityProviderErrorKind::ServerException(_inner) => Some(_inner),
-            UpdateCapacityProviderErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateCapacityProviderErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCapacityProviderErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCapacityProviderErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCapacityProviderErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2493,15 +2557,15 @@ impl std::error::Error for UpdateCapacityProviderError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2519,25 +2583,37 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2551,70 +2627,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -2624,12 +2691,24 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::ClientException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServerException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2639,15 +2718,15 @@ impl std::error::Error for UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2665,25 +2744,37 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2697,70 +2788,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -2770,12 +2852,24 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::ClientException(_inner) => Some(_inner),
-            TagResourceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::ServerException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2785,15 +2879,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct SubmitTaskStateChangeError {
     /// Kind of error that occurred.
-    pub kind: SubmitTaskStateChangeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SubmitTaskStateChangeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SubmitTaskStateChangeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SubmitTaskStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2809,24 +2903,34 @@ pub enum SubmitTaskStateChangeErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SubmitTaskStateChangeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SubmitTaskStateChangeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            SubmitTaskStateChangeErrorKind::ClientException(_inner) => _inner.fmt(f),
-            SubmitTaskStateChangeErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            SubmitTaskStateChangeErrorKind::ServerException(_inner) => _inner.fmt(f),
-            SubmitTaskStateChangeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SubmitTaskStateChangeErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitTaskStateChangeErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitTaskStateChangeErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitTaskStateChangeErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitTaskStateChangeErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2840,87 +2944,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for SubmitTaskStateChangeError {
 }
 impl SubmitTaskStateChangeError {
     /// Creates a new `SubmitTaskStateChangeError`.
-    pub fn new(kind: SubmitTaskStateChangeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SubmitTaskStateChangeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SubmitTaskStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SubmitTaskStateChangeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SubmitTaskStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SubmitTaskStateChangeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SubmitTaskStateChangeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SubmitTaskStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SubmitTaskStateChangeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SubmitTaskStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SubmitTaskStateChangeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitTaskStateChangeErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, SubmitTaskStateChangeErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `SubmitTaskStateChangeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitTaskStateChangeErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, SubmitTaskStateChangeErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `SubmitTaskStateChangeErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitTaskStateChangeErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, SubmitTaskStateChangeErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `SubmitTaskStateChangeErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitTaskStateChangeErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, SubmitTaskStateChangeErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for SubmitTaskStateChangeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SubmitTaskStateChangeErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            SubmitTaskStateChangeErrorKind::ClientException(_inner) => Some(_inner),
-            SubmitTaskStateChangeErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            SubmitTaskStateChangeErrorKind::ServerException(_inner) => Some(_inner),
-            SubmitTaskStateChangeErrorKind::Unhandled(_inner) => Some(_inner),
+            SubmitTaskStateChangeErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitTaskStateChangeErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitTaskStateChangeErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitTaskStateChangeErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitTaskStateChangeErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2930,17 +3028,15 @@ impl std::error::Error for SubmitTaskStateChangeError {
 #[derive(std::fmt::Debug)]
 pub struct SubmitContainerStateChangeError {
     /// Kind of error that occurred.
-    pub kind: SubmitContainerStateChangeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SubmitContainerStateChangeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SubmitContainerStateChangeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: SubmitContainerStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: SubmitContainerStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2954,23 +3050,31 @@ pub enum SubmitContainerStateChangeErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SubmitContainerStateChangeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SubmitContainerStateChangeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            SubmitContainerStateChangeErrorKind::ClientException(_inner) => _inner.fmt(f),
-            SubmitContainerStateChangeErrorKind::ServerException(_inner) => _inner.fmt(f),
-            SubmitContainerStateChangeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SubmitContainerStateChangeErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitContainerStateChangeErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitContainerStateChangeErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitContainerStateChangeErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2984,79 +3088,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for SubmitContainerStateChangeErr
 }
 impl SubmitContainerStateChangeError {
     /// Creates a new `SubmitContainerStateChangeError`.
-    pub fn new(kind: SubmitContainerStateChangeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SubmitContainerStateChangeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SubmitContainerStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SubmitContainerStateChangeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SubmitContainerStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SubmitContainerStateChangeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SubmitContainerStateChangeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SubmitContainerStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SubmitContainerStateChangeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SubmitContainerStateChangeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SubmitContainerStateChangeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitContainerStateChangeErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, SubmitContainerStateChangeErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `SubmitContainerStateChangeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitContainerStateChangeErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, SubmitContainerStateChangeErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `SubmitContainerStateChangeErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitContainerStateChangeErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, SubmitContainerStateChangeErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for SubmitContainerStateChangeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SubmitContainerStateChangeErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            SubmitContainerStateChangeErrorKind::ClientException(_inner) => Some(_inner),
-            SubmitContainerStateChangeErrorKind::ServerException(_inner) => Some(_inner),
-            SubmitContainerStateChangeErrorKind::Unhandled(_inner) => Some(_inner),
+            SubmitContainerStateChangeErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitContainerStateChangeErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitContainerStateChangeErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitContainerStateChangeErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3066,17 +3165,15 @@ impl std::error::Error for SubmitContainerStateChangeError {
 #[derive(std::fmt::Debug)]
 pub struct SubmitAttachmentStateChangesError {
     /// Kind of error that occurred.
-    pub kind: SubmitAttachmentStateChangesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SubmitAttachmentStateChangesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SubmitAttachmentStateChangesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: SubmitAttachmentStateChangesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: SubmitAttachmentStateChangesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3092,26 +3189,34 @@ pub enum SubmitAttachmentStateChangesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SubmitAttachmentStateChangesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            SubmitAttachmentStateChangesErrorKind::ClientException(_inner) => _inner.fmt(f),
-            SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_inner) => {
+            SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitAttachmentStateChangesErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitAttachmentStateChangesErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SubmitAttachmentStateChangesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            SubmitAttachmentStateChangesErrorKind::ServerException(_inner) => _inner.fmt(f),
-            SubmitAttachmentStateChangesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3125,89 +3230,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for SubmitAttachmentStateChangesE
 }
 impl SubmitAttachmentStateChangesError {
     /// Creates a new `SubmitAttachmentStateChangesError`.
-    pub fn new(kind: SubmitAttachmentStateChangesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SubmitAttachmentStateChangesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SubmitAttachmentStateChangesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SubmitAttachmentStateChangesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SubmitAttachmentStateChangesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SubmitAttachmentStateChangesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SubmitAttachmentStateChangesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SubmitAttachmentStateChangesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SubmitAttachmentStateChangesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SubmitAttachmentStateChangesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SubmitAttachmentStateChangesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `SubmitAttachmentStateChangesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitAttachmentStateChangesErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, SubmitAttachmentStateChangesErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `SubmitAttachmentStateChangesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `SubmitAttachmentStateChangesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SubmitAttachmentStateChangesErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, SubmitAttachmentStateChangesErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for SubmitAttachmentStateChangesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            SubmitAttachmentStateChangesErrorKind::ClientException(_inner) => Some(_inner),
-            SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_inner) => {
+            SubmitAttachmentStateChangesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitAttachmentStateChangesErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitAttachmentStateChangesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitAttachmentStateChangesErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            SubmitAttachmentStateChangesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            SubmitAttachmentStateChangesErrorKind::ServerException(_inner) => Some(_inner),
-            SubmitAttachmentStateChangesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3217,15 +3314,15 @@ impl std::error::Error for SubmitAttachmentStateChangesError {
 #[derive(std::fmt::Debug)]
 pub struct StopTaskError {
     /// Kind of error that occurred.
-    pub kind: StopTaskErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StopTaskErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StopTaskError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StopTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3241,24 +3338,34 @@ pub enum StopTaskErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopTaskErrorKind::ClientException(_inner) => _inner.fmt(f),
-            StopTaskErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            StopTaskErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            StopTaskErrorKind::ServerException(_inner) => _inner.fmt(f),
-            StopTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StopTaskErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopTaskErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopTaskErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopTaskErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopTaskErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3272,46 +3379,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for StopTaskError {
 }
 impl StopTaskError {
     /// Creates a new `StopTaskError`.
-    pub fn new(kind: StopTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StopTaskError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StopTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StopTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StopTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StopTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StopTaskError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StopTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StopTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StopTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StopTaskErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, StopTaskErrorKind::ClientException(_))
@@ -3332,11 +3439,21 @@ impl StopTaskError {
 impl std::error::Error for StopTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopTaskErrorKind::ClientException(_inner) => Some(_inner),
-            StopTaskErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            StopTaskErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            StopTaskErrorKind::ServerException(_inner) => Some(_inner),
-            StopTaskErrorKind::Unhandled(_inner) => Some(_inner),
+            StopTaskErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            StopTaskErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StopTaskErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            StopTaskErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            StopTaskErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3346,15 +3463,15 @@ impl std::error::Error for StopTaskError {
 #[derive(std::fmt::Debug)]
 pub struct StartTaskError {
     /// Kind of error that occurred.
-    pub kind: StartTaskErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartTaskErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartTaskError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3370,24 +3487,34 @@ pub enum StartTaskErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartTaskErrorKind::ClientException(_inner) => _inner.fmt(f),
-            StartTaskErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            StartTaskErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            StartTaskErrorKind::ServerException(_inner) => _inner.fmt(f),
-            StartTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StartTaskErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartTaskErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartTaskErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartTaskErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartTaskErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3401,46 +3528,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartTaskError {
 }
 impl StartTaskError {
     /// Creates a new `StartTaskError`.
-    pub fn new(kind: StartTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartTaskError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartTaskError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartTaskErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, StartTaskErrorKind::ClientException(_))
@@ -3461,11 +3588,21 @@ impl StartTaskError {
 impl std::error::Error for StartTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartTaskErrorKind::ClientException(_inner) => Some(_inner),
-            StartTaskErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            StartTaskErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            StartTaskErrorKind::ServerException(_inner) => Some(_inner),
-            StartTaskErrorKind::Unhandled(_inner) => Some(_inner),
+            StartTaskErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            StartTaskErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartTaskErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            StartTaskErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartTaskErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3475,15 +3612,15 @@ impl std::error::Error for StartTaskError {
 #[derive(std::fmt::Debug)]
 pub struct RunTaskError {
     /// Kind of error that occurred.
-    pub kind: RunTaskErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RunTaskErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RunTaskError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RunTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3502,40 +3639,56 @@ pub enum RunTaskErrorKind {
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
-    PlatformTaskDefinitionIncompatibilityException(
-        crate::error::PlatformTaskDefinitionIncompatibilityException,
-    ),
+    PlatformTaskDefinitionIncompatibilityException(crate::error::PlatformTaskDefinitionIncompatibilityException),
     /// <p>The specified platform version doesn't exist.</p>
     PlatformUnknownException(crate::error::PlatformUnknownException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RunTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RunTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::BlockedException(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::ClientException(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+            RunTaskErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::BlockedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::PlatformUnknownException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RunTaskErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RunTaskErrorKind::PlatformUnknownException(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::ServerException(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
-            RunTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3549,46 +3702,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for RunTaskError {
 }
 impl RunTaskError {
     /// Creates a new `RunTaskError`.
-    pub fn new(kind: RunTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RunTaskError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RunTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RunTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RunTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RunTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RunTaskError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RunTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RunTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RunTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RunTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, RunTaskErrorKind::AccessDeniedException(_))
@@ -3611,10 +3764,7 @@ impl RunTaskError {
     }
     /// Returns `true` if the error kind is `RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
-        )
+        matches!(&self.kind, RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_))
     }
     /// Returns `true` if the error kind is `RunTaskErrorKind::PlatformUnknownException`.
     pub fn is_platform_unknown_exception(&self) -> bool {
@@ -3632,18 +3782,36 @@ impl RunTaskError {
 impl std::error::Error for RunTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RunTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            RunTaskErrorKind::BlockedException(_inner) => Some(_inner),
-            RunTaskErrorKind::ClientException(_inner) => Some(_inner),
-            RunTaskErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            RunTaskErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+            RunTaskErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::BlockedException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::PlatformUnknownException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            RunTaskErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RunTaskErrorKind::PlatformUnknownException(_inner) => Some(_inner),
-            RunTaskErrorKind::ServerException(_inner) => Some(_inner),
-            RunTaskErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
-            RunTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3651,22 +3819,20 @@ impl std::error::Error for RunTaskError {
 /// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlockedException {
+pub struct BlockedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BlockedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BlockedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BlockedException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -3676,7 +3842,7 @@ impl std::fmt::Display for BlockedException {
 impl std::error::Error for BlockedException {}
 /// See [`BlockedException`](crate::error::BlockedException).
 pub mod blocked_exception {
-
+    
     /// A builder for [`BlockedException`](crate::error::BlockedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3690,16 +3856,18 @@ pub mod blocked_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BlockedException`](crate::error::BlockedException).
         pub fn build(self) -> crate::error::BlockedException {
             crate::error::BlockedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BlockedException {
     /// Creates a new builder-style object to manufacture [`BlockedException`](crate::error::BlockedException).
@@ -3713,15 +3881,15 @@ impl BlockedException {
 #[derive(std::fmt::Debug)]
 pub struct RegisterTaskDefinitionError {
     /// Kind of error that occurred.
-    pub kind: RegisterTaskDefinitionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterTaskDefinitionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterTaskDefinitionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RegisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3735,23 +3903,31 @@ pub enum RegisterTaskDefinitionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterTaskDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterTaskDefinitionErrorKind::ClientException(_inner) => _inner.fmt(f),
-            RegisterTaskDefinitionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            RegisterTaskDefinitionErrorKind::ServerException(_inner) => _inner.fmt(f),
-            RegisterTaskDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RegisterTaskDefinitionErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterTaskDefinitionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterTaskDefinitionErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterTaskDefinitionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3765,79 +3941,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterTaskDefinitionError {
 }
 impl RegisterTaskDefinitionError {
     /// Creates a new `RegisterTaskDefinitionError`.
-    pub fn new(kind: RegisterTaskDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterTaskDefinitionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterTaskDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterTaskDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterTaskDefinitionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterTaskDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterTaskDefinitionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterTaskDefinitionErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, RegisterTaskDefinitionErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `RegisterTaskDefinitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterTaskDefinitionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, RegisterTaskDefinitionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `RegisterTaskDefinitionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterTaskDefinitionErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, RegisterTaskDefinitionErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for RegisterTaskDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterTaskDefinitionErrorKind::ClientException(_inner) => Some(_inner),
-            RegisterTaskDefinitionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            RegisterTaskDefinitionErrorKind::ServerException(_inner) => Some(_inner),
-            RegisterTaskDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
+            RegisterTaskDefinitionErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterTaskDefinitionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterTaskDefinitionErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterTaskDefinitionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3847,17 +4018,15 @@ impl std::error::Error for RegisterTaskDefinitionError {
 #[derive(std::fmt::Debug)]
 pub struct RegisterContainerInstanceError {
     /// Kind of error that occurred.
-    pub kind: RegisterContainerInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterContainerInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterContainerInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RegisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: RegisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3871,23 +4040,31 @@ pub enum RegisterContainerInstanceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterContainerInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterContainerInstanceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            RegisterContainerInstanceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            RegisterContainerInstanceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            RegisterContainerInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RegisterContainerInstanceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterContainerInstanceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterContainerInstanceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterContainerInstanceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3901,79 +4078,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterContainerInstanceErro
 }
 impl RegisterContainerInstanceError {
     /// Creates a new `RegisterContainerInstanceError`.
-    pub fn new(kind: RegisterContainerInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterContainerInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterContainerInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterContainerInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterContainerInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterContainerInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterContainerInstanceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterContainerInstanceErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, RegisterContainerInstanceErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `RegisterContainerInstanceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterContainerInstanceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, RegisterContainerInstanceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `RegisterContainerInstanceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterContainerInstanceErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, RegisterContainerInstanceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for RegisterContainerInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterContainerInstanceErrorKind::ClientException(_inner) => Some(_inner),
-            RegisterContainerInstanceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            RegisterContainerInstanceErrorKind::ServerException(_inner) => Some(_inner),
-            RegisterContainerInstanceErrorKind::Unhandled(_inner) => Some(_inner),
+            RegisterContainerInstanceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterContainerInstanceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterContainerInstanceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterContainerInstanceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3983,17 +4155,15 @@ impl std::error::Error for RegisterContainerInstanceError {
 #[derive(std::fmt::Debug)]
 pub struct PutClusterCapacityProvidersError {
     /// Kind of error that occurred.
-    pub kind: PutClusterCapacityProvidersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutClusterCapacityProvidersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutClusterCapacityProvidersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutClusterCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: PutClusterCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4013,30 +4183,40 @@ pub enum PutClusterCapacityProvidersErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There's already a current Amazon ECS container agent update in progress on the container instance that's specified. If the container agent becomes disconnected while it's in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it resumes where it stopped previously.</p>
     UpdateInProgressException(crate::error::UpdateInProgressException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutClusterCapacityProvidersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutClusterCapacityProvidersErrorKind::ClientException(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::InvalidParameterException(_inner) => {
+            PutClusterCapacityProvidersErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutClusterCapacityProvidersErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutClusterCapacityProvidersErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutClusterCapacityProvidersErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutClusterCapacityProvidersErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutClusterCapacityProvidersErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::ServerException(_inner) => _inner.fmt(f),
-            PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutClusterCapacityProvidersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4050,103 +4230,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutClusterCapacityProvidersEr
 }
 impl PutClusterCapacityProvidersError {
     /// Creates a new `PutClusterCapacityProvidersError`.
-    pub fn new(kind: PutClusterCapacityProvidersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutClusterCapacityProvidersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutClusterCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutClusterCapacityProvidersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutClusterCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutClusterCapacityProvidersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutClusterCapacityProvidersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutClusterCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutClusterCapacityProvidersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutClusterCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutClusterCapacityProvidersErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, PutClusterCapacityProvidersErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutClusterCapacityProvidersErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, PutClusterCapacityProvidersErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutClusterCapacityProvidersErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, PutClusterCapacityProvidersErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutClusterCapacityProvidersErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, PutClusterCapacityProvidersErrorKind::ServerException(_))
     }
     /// Returns `true` if the error kind is `PutClusterCapacityProvidersErrorKind::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_)
-        )
+        matches!(&self.kind, PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_))
     }
 }
 impl std::error::Error for PutClusterCapacityProvidersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutClusterCapacityProvidersErrorKind::ClientException(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::ServerException(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_inner) => Some(_inner),
-            PutClusterCapacityProvidersErrorKind::Unhandled(_inner) => Some(_inner),
+            PutClusterCapacityProvidersErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutClusterCapacityProvidersErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutClusterCapacityProvidersErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            PutClusterCapacityProvidersErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            PutClusterCapacityProvidersErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            PutClusterCapacityProvidersErrorKind::UpdateInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            PutClusterCapacityProvidersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4154,22 +4326,20 @@ impl std::error::Error for PutClusterCapacityProvidersError {
 /// <p>The specified resource is in-use and can't be removed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInUseException {
+pub struct ResourceInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseException")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -4179,7 +4349,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException).
 pub mod resource_in_use_exception {
-
+    
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4193,16 +4363,18 @@ pub mod resource_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException).
         pub fn build(self) -> crate::error::ResourceInUseException {
             crate::error::ResourceInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceInUseException {
     /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException).
@@ -4216,15 +4388,15 @@ impl ResourceInUseException {
 #[derive(std::fmt::Debug)]
 pub struct PutAttributesError {
     /// Kind of error that occurred.
-    pub kind: PutAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4240,24 +4412,34 @@ pub enum PutAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified target wasn't found. You can view your available container instances with <code>ListContainerInstances</code>. Amazon ECS container instances are cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAttributesErrorKind::AttributeLimitExceededException(_inner) => _inner.fmt(f),
-            PutAttributesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            PutAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            PutAttributesErrorKind::TargetNotFoundException(_inner) => _inner.fmt(f),
-            PutAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutAttributesErrorKind::AttributeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAttributesErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAttributesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAttributesErrorKind::TargetNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAttributesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4271,83 +4453,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutAttributesError {
 }
 impl PutAttributesError {
     /// Creates a new `PutAttributesError`.
-    pub fn new(kind: PutAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutAttributesErrorKind::AttributeLimitExceededException`.
     pub fn is_attribute_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAttributesErrorKind::AttributeLimitExceededException(_)
-        )
+        matches!(&self.kind, PutAttributesErrorKind::AttributeLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `PutAttributesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAttributesErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, PutAttributesErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAttributesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, PutAttributesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `PutAttributesErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAttributesErrorKind::TargetNotFoundException(_)
-        )
+        matches!(&self.kind, PutAttributesErrorKind::TargetNotFoundException(_))
     }
 }
 impl std::error::Error for PutAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAttributesErrorKind::AttributeLimitExceededException(_inner) => Some(_inner),
-            PutAttributesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            PutAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            PutAttributesErrorKind::TargetNotFoundException(_inner) => Some(_inner),
-            PutAttributesErrorKind::Unhandled(_inner) => Some(_inner),
+            PutAttributesErrorKind::AttributeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutAttributesErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutAttributesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            PutAttributesErrorKind::TargetNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutAttributesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4355,22 +4535,20 @@ impl std::error::Error for PutAttributesError {
 /// <p>The specified target wasn't found. You can view your available container instances with <code>ListContainerInstances</code>. Amazon ECS container instances are cluster-specific and Region-specific.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetNotFoundException {
+pub struct TargetNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TargetNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TargetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetNotFoundException")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -4380,7 +4558,7 @@ impl std::fmt::Display for TargetNotFoundException {
 impl std::error::Error for TargetNotFoundException {}
 /// See [`TargetNotFoundException`](crate::error::TargetNotFoundException).
 pub mod target_not_found_exception {
-
+    
     /// A builder for [`TargetNotFoundException`](crate::error::TargetNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4394,16 +4572,18 @@ pub mod target_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TargetNotFoundException`](crate::error::TargetNotFoundException).
         pub fn build(self) -> crate::error::TargetNotFoundException {
             crate::error::TargetNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetNotFoundException {
     /// Creates a new builder-style object to manufacture [`TargetNotFoundException`](crate::error::TargetNotFoundException).
@@ -4415,22 +4595,20 @@ impl TargetNotFoundException {
 /// <p>You can apply up to 10 custom attributes for each resource. You can view the attributes of a resource with <code>ListAttributes</code>. You can remove existing attributes on a resource with <code>DeleteAttributes</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeLimitExceededException {
+pub struct AttributeLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AttributeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AttributeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AttributeLimitExceededException")?;
         if let Some(inner_20) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_20)?;
             }
         }
@@ -4440,7 +4618,7 @@ impl std::fmt::Display for AttributeLimitExceededException {
 impl std::error::Error for AttributeLimitExceededException {}
 /// See [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException).
 pub mod attribute_limit_exceeded_exception {
-
+    
     /// A builder for [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4454,16 +4632,18 @@ pub mod attribute_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException).
         pub fn build(self) -> crate::error::AttributeLimitExceededException {
             crate::error::AttributeLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeLimitExceededException {
     /// Creates a new builder-style object to manufacture [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException).
@@ -4477,17 +4657,15 @@ impl AttributeLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct PutAccountSettingDefaultError {
     /// Kind of error that occurred.
-    pub kind: PutAccountSettingDefaultErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutAccountSettingDefaultErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutAccountSettingDefaultError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutAccountSettingDefaultErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: PutAccountSettingDefaultErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4501,23 +4679,31 @@ pub enum PutAccountSettingDefaultErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountSettingDefaultError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountSettingDefaultErrorKind::ClientException(_inner) => _inner.fmt(f),
-            PutAccountSettingDefaultErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            PutAccountSettingDefaultErrorKind::ServerException(_inner) => _inner.fmt(f),
-            PutAccountSettingDefaultErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutAccountSettingDefaultErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountSettingDefaultErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountSettingDefaultErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountSettingDefaultErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4531,79 +4717,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutAccountSettingDefaultError
 }
 impl PutAccountSettingDefaultError {
     /// Creates a new `PutAccountSettingDefaultError`.
-    pub fn new(kind: PutAccountSettingDefaultErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutAccountSettingDefaultError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutAccountSettingDefaultErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutAccountSettingDefaultError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutAccountSettingDefaultErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutAccountSettingDefaultErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutAccountSettingDefaultError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutAccountSettingDefaultErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutAccountSettingDefaultError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutAccountSettingDefaultErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutAccountSettingDefaultErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountSettingDefaultErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, PutAccountSettingDefaultErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `PutAccountSettingDefaultErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountSettingDefaultErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, PutAccountSettingDefaultErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `PutAccountSettingDefaultErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountSettingDefaultErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, PutAccountSettingDefaultErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for PutAccountSettingDefaultError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountSettingDefaultErrorKind::ClientException(_inner) => Some(_inner),
-            PutAccountSettingDefaultErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            PutAccountSettingDefaultErrorKind::ServerException(_inner) => Some(_inner),
-            PutAccountSettingDefaultErrorKind::Unhandled(_inner) => Some(_inner),
+            PutAccountSettingDefaultErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountSettingDefaultErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountSettingDefaultErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountSettingDefaultErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4613,15 +4794,15 @@ impl std::error::Error for PutAccountSettingDefaultError {
 #[derive(std::fmt::Debug)]
 pub struct PutAccountSettingError {
     /// Kind of error that occurred.
-    pub kind: PutAccountSettingErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutAccountSettingErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutAccountSettingError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4635,23 +4816,31 @@ pub enum PutAccountSettingErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountSettingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountSettingErrorKind::ClientException(_inner) => _inner.fmt(f),
-            PutAccountSettingErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            PutAccountSettingErrorKind::ServerException(_inner) => _inner.fmt(f),
-            PutAccountSettingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutAccountSettingErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountSettingErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountSettingErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountSettingErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4665,56 +4854,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutAccountSettingError {
 }
 impl PutAccountSettingError {
     /// Creates a new `PutAccountSettingError`.
-    pub fn new(kind: PutAccountSettingErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutAccountSettingError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutAccountSettingError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutAccountSettingErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutAccountSettingError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutAccountSettingError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutAccountSettingErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, PutAccountSettingErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `PutAccountSettingErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountSettingErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, PutAccountSettingErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `PutAccountSettingErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -4724,10 +4910,18 @@ impl PutAccountSettingError {
 impl std::error::Error for PutAccountSettingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountSettingErrorKind::ClientException(_inner) => Some(_inner),
-            PutAccountSettingErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            PutAccountSettingErrorKind::ServerException(_inner) => Some(_inner),
-            PutAccountSettingErrorKind::Unhandled(_inner) => Some(_inner),
+            PutAccountSettingErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountSettingErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountSettingErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountSettingErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4737,15 +4931,15 @@ impl std::error::Error for PutAccountSettingError {
 #[derive(std::fmt::Debug)]
 pub struct ListTasksError {
     /// Kind of error that occurred.
-    pub kind: ListTasksErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTasksErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTasksError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTasksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4763,25 +4957,37 @@ pub enum ListTasksErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The specified service wasn't found. You can view your available services with <code>ListServices</code>. Amazon ECS services are cluster specific and Region specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTasksErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
-            ListTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTasksErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTasksErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTasksErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTasksErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTasksErrorKind::ServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTasksErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4795,46 +5001,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTasksError {
 }
 impl ListTasksError {
     /// Creates a new `ListTasksError`.
-    pub fn new(kind: ListTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTasksError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTasksError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTasksErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListTasksErrorKind::ClientException(_))
@@ -4859,12 +5065,24 @@ impl ListTasksError {
 impl std::error::Error for ListTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTasksErrorKind::ClientException(_inner) => Some(_inner),
-            ListTasksErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            ListTasksErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListTasksErrorKind::ServerException(_inner) => Some(_inner),
-            ListTasksErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
-            ListTasksErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTasksErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListTasksErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTasksErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListTasksErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListTasksErrorKind::ServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTasksErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4874,15 +5092,15 @@ impl std::error::Error for ListTasksError {
 #[derive(std::fmt::Debug)]
 pub struct ListTaskDefinitionsError {
     /// Kind of error that occurred.
-    pub kind: ListTaskDefinitionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTaskDefinitionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTaskDefinitionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTaskDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4896,23 +5114,31 @@ pub enum ListTaskDefinitionsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTaskDefinitionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTaskDefinitionsErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListTaskDefinitionsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListTaskDefinitionsErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListTaskDefinitionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTaskDefinitionsErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTaskDefinitionsErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTaskDefinitionsErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTaskDefinitionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4926,56 +5152,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTaskDefinitionsError {
 }
 impl ListTaskDefinitionsError {
     /// Creates a new `ListTaskDefinitionsError`.
-    pub fn new(kind: ListTaskDefinitionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTaskDefinitionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTaskDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTaskDefinitionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTaskDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTaskDefinitionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTaskDefinitionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTaskDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTaskDefinitionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTaskDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTaskDefinitionsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListTaskDefinitionsErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `ListTaskDefinitionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTaskDefinitionsErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListTaskDefinitionsErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListTaskDefinitionsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -4985,10 +5208,18 @@ impl ListTaskDefinitionsError {
 impl std::error::Error for ListTaskDefinitionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTaskDefinitionsErrorKind::ClientException(_inner) => Some(_inner),
-            ListTaskDefinitionsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListTaskDefinitionsErrorKind::ServerException(_inner) => Some(_inner),
-            ListTaskDefinitionsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTaskDefinitionsErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListTaskDefinitionsErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListTaskDefinitionsErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListTaskDefinitionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4998,17 +5229,15 @@ impl std::error::Error for ListTaskDefinitionsError {
 #[derive(std::fmt::Debug)]
 pub struct ListTaskDefinitionFamiliesError {
     /// Kind of error that occurred.
-    pub kind: ListTaskDefinitionFamiliesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTaskDefinitionFamiliesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTaskDefinitionFamiliesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListTaskDefinitionFamiliesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListTaskDefinitionFamiliesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5022,23 +5251,31 @@ pub enum ListTaskDefinitionFamiliesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTaskDefinitionFamiliesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTaskDefinitionFamiliesErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListTaskDefinitionFamiliesErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListTaskDefinitionFamiliesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTaskDefinitionFamiliesErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTaskDefinitionFamiliesErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTaskDefinitionFamiliesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5052,79 +5289,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTaskDefinitionFamiliesErr
 }
 impl ListTaskDefinitionFamiliesError {
     /// Creates a new `ListTaskDefinitionFamiliesError`.
-    pub fn new(kind: ListTaskDefinitionFamiliesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTaskDefinitionFamiliesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTaskDefinitionFamiliesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTaskDefinitionFamiliesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTaskDefinitionFamiliesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTaskDefinitionFamiliesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTaskDefinitionFamiliesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTaskDefinitionFamiliesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTaskDefinitionFamiliesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTaskDefinitionFamiliesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTaskDefinitionFamiliesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTaskDefinitionFamiliesErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, ListTaskDefinitionFamiliesErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `ListTaskDefinitionFamiliesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListTaskDefinitionFamiliesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTaskDefinitionFamiliesErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, ListTaskDefinitionFamiliesErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListTaskDefinitionFamiliesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTaskDefinitionFamiliesErrorKind::ClientException(_inner) => Some(_inner),
-            ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListTaskDefinitionFamiliesErrorKind::ServerException(_inner) => Some(_inner),
-            ListTaskDefinitionFamiliesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTaskDefinitionFamiliesErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListTaskDefinitionFamiliesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListTaskDefinitionFamiliesErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListTaskDefinitionFamiliesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5134,15 +5366,15 @@ impl std::error::Error for ListTaskDefinitionFamiliesError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5158,24 +5390,34 @@ pub enum ListTagsForResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5189,63 +5431,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -5255,11 +5491,21 @@ impl ListTagsForResourceError {
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::ClientException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServerException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5269,15 +5515,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListServicesByNamespaceError {
     /// Kind of error that occurred.
-    pub kind: ListServicesByNamespaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListServicesByNamespaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListServicesByNamespaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListServicesByNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5293,24 +5539,34 @@ pub enum ListServicesByNamespaceErrorKind {
     NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListServicesByNamespaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListServicesByNamespaceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListServicesByNamespaceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_inner) => _inner.fmt(f),
-            ListServicesByNamespaceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListServicesByNamespaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListServicesByNamespaceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListServicesByNamespaceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListServicesByNamespaceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListServicesByNamespaceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5324,87 +5580,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListServicesByNamespaceError 
 }
 impl ListServicesByNamespaceError {
     /// Creates a new `ListServicesByNamespaceError`.
-    pub fn new(kind: ListServicesByNamespaceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListServicesByNamespaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListServicesByNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListServicesByNamespaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListServicesByNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListServicesByNamespaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListServicesByNamespaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListServicesByNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListServicesByNamespaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListServicesByNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListServicesByNamespaceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListServicesByNamespaceErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, ListServicesByNamespaceErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `ListServicesByNamespaceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListServicesByNamespaceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListServicesByNamespaceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListServicesByNamespaceErrorKind::NamespaceNotFoundException`.
     pub fn is_namespace_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_)
-        )
+        matches!(&self.kind, ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListServicesByNamespaceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListServicesByNamespaceErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, ListServicesByNamespaceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListServicesByNamespaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListServicesByNamespaceErrorKind::ClientException(_inner) => Some(_inner),
-            ListServicesByNamespaceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_inner) => Some(_inner),
-            ListServicesByNamespaceErrorKind::ServerException(_inner) => Some(_inner),
-            ListServicesByNamespaceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListServicesByNamespaceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListServicesByNamespaceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListServicesByNamespaceErrorKind::NamespaceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListServicesByNamespaceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListServicesByNamespaceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5414,15 +5664,15 @@ impl std::error::Error for ListServicesByNamespaceError {
 #[derive(std::fmt::Debug)]
 pub struct ListServicesError {
     /// Kind of error that occurred.
-    pub kind: ListServicesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListServicesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListServicesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListServicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5438,24 +5688,34 @@ pub enum ListServicesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListServicesErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListServicesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            ListServicesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListServicesErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListServicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListServicesErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListServicesErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListServicesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListServicesErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListServicesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5469,63 +5729,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListServicesError {
 }
 impl ListServicesError {
     /// Creates a new `ListServicesError`.
-    pub fn new(kind: ListServicesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListServicesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListServicesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListServicesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListServicesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListServicesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListServicesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListServicesErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `ListServicesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListServicesErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, ListServicesErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListServicesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListServicesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListServicesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListServicesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -5535,11 +5789,21 @@ impl ListServicesError {
 impl std::error::Error for ListServicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListServicesErrorKind::ClientException(_inner) => Some(_inner),
-            ListServicesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            ListServicesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListServicesErrorKind::ServerException(_inner) => Some(_inner),
-            ListServicesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListServicesErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListServicesErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListServicesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListServicesErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListServicesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5549,15 +5813,15 @@ impl std::error::Error for ListServicesError {
 #[derive(std::fmt::Debug)]
 pub struct ListContainerInstancesError {
     /// Kind of error that occurred.
-    pub kind: ListContainerInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListContainerInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListContainerInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5573,24 +5837,34 @@ pub enum ListContainerInstancesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListContainerInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListContainerInstancesErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListContainerInstancesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            ListContainerInstancesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListContainerInstancesErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListContainerInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListContainerInstancesErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListContainerInstancesErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListContainerInstancesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListContainerInstancesErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListContainerInstancesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5604,87 +5878,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListContainerInstancesError {
 }
 impl ListContainerInstancesError {
     /// Creates a new `ListContainerInstancesError`.
-    pub fn new(kind: ListContainerInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListContainerInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListContainerInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListContainerInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListContainerInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListContainerInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListContainerInstancesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListContainerInstancesErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, ListContainerInstancesErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `ListContainerInstancesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListContainerInstancesErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, ListContainerInstancesErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListContainerInstancesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListContainerInstancesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListContainerInstancesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListContainerInstancesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListContainerInstancesErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, ListContainerInstancesErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListContainerInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListContainerInstancesErrorKind::ClientException(_inner) => Some(_inner),
-            ListContainerInstancesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            ListContainerInstancesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListContainerInstancesErrorKind::ServerException(_inner) => Some(_inner),
-            ListContainerInstancesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListContainerInstancesErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListContainerInstancesErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListContainerInstancesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListContainerInstancesErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListContainerInstancesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5694,15 +5962,15 @@ impl std::error::Error for ListContainerInstancesError {
 #[derive(std::fmt::Debug)]
 pub struct ListClustersError {
     /// Kind of error that occurred.
-    pub kind: ListClustersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListClustersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListClustersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListClustersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5716,23 +5984,31 @@ pub enum ListClustersErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListClustersErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListClustersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListClustersErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListClustersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListClustersErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListClustersErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListClustersErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListClustersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5746,56 +6022,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListClustersError {
 }
 impl ListClustersError {
     /// Creates a new `ListClustersError`.
-    pub fn new(kind: ListClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListClustersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListClustersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListClustersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListClustersErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `ListClustersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListClustersErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListClustersErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListClustersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -5805,10 +6078,18 @@ impl ListClustersError {
 impl std::error::Error for ListClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListClustersErrorKind::ClientException(_inner) => Some(_inner),
-            ListClustersErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListClustersErrorKind::ServerException(_inner) => Some(_inner),
-            ListClustersErrorKind::Unhandled(_inner) => Some(_inner),
+            ListClustersErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListClustersErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListClustersErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListClustersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5818,15 +6099,15 @@ impl std::error::Error for ListClustersError {
 #[derive(std::fmt::Debug)]
 pub struct ListAttributesError {
     /// Kind of error that occurred.
-    pub kind: ListAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5838,22 +6119,28 @@ pub enum ListAttributesErrorKind {
     ClusterNotFoundException(crate::error::ClusterNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAttributesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            ListAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListAttributesErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAttributesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAttributesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5867,67 +6154,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAttributesError {
 }
 impl ListAttributesError {
     /// Creates a new `ListAttributesError`.
-    pub fn new(kind: ListAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAttributesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAttributesErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, ListAttributesErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAttributesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListAttributesErrorKind::InvalidParameterException(_))
     }
 }
 impl std::error::Error for ListAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAttributesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            ListAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListAttributesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListAttributesErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListAttributesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListAttributesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5937,15 +6224,15 @@ impl std::error::Error for ListAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct ListAccountSettingsError {
     /// Kind of error that occurred.
-    pub kind: ListAccountSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAccountSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAccountSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5959,23 +6246,31 @@ pub enum ListAccountSettingsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAccountSettingsErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ListAccountSettingsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ListAccountSettingsErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ListAccountSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListAccountSettingsErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAccountSettingsErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAccountSettingsErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAccountSettingsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5989,56 +6284,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAccountSettingsError {
 }
 impl ListAccountSettingsError {
     /// Creates a new `ListAccountSettingsError`.
-    pub fn new(kind: ListAccountSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAccountSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAccountSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAccountSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAccountSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAccountSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAccountSettingsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListAccountSettingsErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `ListAccountSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAccountSettingsErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ListAccountSettingsErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ListAccountSettingsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -6048,10 +6340,18 @@ impl ListAccountSettingsError {
 impl std::error::Error for ListAccountSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAccountSettingsErrorKind::ClientException(_inner) => Some(_inner),
-            ListAccountSettingsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListAccountSettingsErrorKind::ServerException(_inner) => Some(_inner),
-            ListAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListAccountSettingsErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAccountSettingsErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ListAccountSettingsErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListAccountSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6061,15 +6361,15 @@ impl std::error::Error for ListAccountSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct GetTaskProtectionError {
     /// Kind of error that occurred.
-    pub kind: GetTaskProtectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetTaskProtectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetTaskProtectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6091,27 +6391,43 @@ pub enum GetTaskProtectionErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTaskProtectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetTaskProtectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetTaskProtectionErrorKind::ClientException(_inner) => _inner.fmt(f),
-            GetTaskProtectionErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            GetTaskProtectionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            GetTaskProtectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetTaskProtectionErrorKind::ServerException(_inner) => _inner.fmt(f),
-            GetTaskProtectionErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
-            GetTaskProtectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetTaskProtectionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTaskProtectionErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTaskProtectionErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTaskProtectionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTaskProtectionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTaskProtectionErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTaskProtectionErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTaskProtectionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6125,52 +6441,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetTaskProtectionError {
 }
 impl GetTaskProtectionError {
     /// Creates a new `GetTaskProtectionError`.
-    pub fn new(kind: GetTaskProtectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetTaskProtectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetTaskProtectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetTaskProtectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetTaskProtectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetTaskProtectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetTaskProtectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetTaskProtectionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetTaskProtectionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
@@ -6178,24 +6491,15 @@ impl GetTaskProtectionError {
     }
     /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetTaskProtectionErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, GetTaskProtectionErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetTaskProtectionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, GetTaskProtectionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetTaskProtectionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetTaskProtectionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -6203,23 +6507,36 @@ impl GetTaskProtectionError {
     }
     /// Returns `true` if the error kind is `GetTaskProtectionErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetTaskProtectionErrorKind::UnsupportedFeatureException(_)
-        )
+        matches!(&self.kind, GetTaskProtectionErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for GetTaskProtectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetTaskProtectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetTaskProtectionErrorKind::ClientException(_inner) => Some(_inner),
-            GetTaskProtectionErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            GetTaskProtectionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            GetTaskProtectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetTaskProtectionErrorKind::ServerException(_inner) => Some(_inner),
-            GetTaskProtectionErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
-            GetTaskProtectionErrorKind::Unhandled(_inner) => Some(_inner),
+            GetTaskProtectionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetTaskProtectionErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetTaskProtectionErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetTaskProtectionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetTaskProtectionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetTaskProtectionErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetTaskProtectionErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            GetTaskProtectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6229,15 +6546,15 @@ impl std::error::Error for GetTaskProtectionError {
 #[derive(std::fmt::Debug)]
 pub struct ExecuteCommandError {
     /// Kind of error that occurred.
-    pub kind: ExecuteCommandErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExecuteCommandErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExecuteCommandError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ExecuteCommandErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6255,34 +6572,48 @@ pub enum ExecuteCommandErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p>
-    /// <ul>
-    /// <li> <p>Incorrect IAM permissions</p> </li>
-    /// <li> <p>The SSM agent is not installed or is not running</p> </li>
-    /// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager Session Manager</p> </li>
-    /// </ul>
+    /// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p> 
+    /// <ul> 
+    /// <li> <p>Incorrect IAM permissions</p> </li> 
+    /// <li> <p>The SSM agent is not installed or is not running</p> </li> 
+    /// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager Session Manager</p> </li> 
+    /// </ul> 
     /// <p>For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     TargetNotConnectedException(crate::error::TargetNotConnectedException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteCommandError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteCommandErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::ClientException(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::ServerException(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::TargetNotConnectedException(_inner) => _inner.fmt(f),
-            ExecuteCommandErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ExecuteCommandErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteCommandErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteCommandErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteCommandErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteCommandErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteCommandErrorKind::TargetNotConnectedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteCommandErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6296,52 +6627,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExecuteCommandError {
 }
 impl ExecuteCommandError {
     /// Creates a new `ExecuteCommandError`.
-    pub fn new(kind: ExecuteCommandErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExecuteCommandError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExecuteCommandErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExecuteCommandError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExecuteCommandErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExecuteCommandErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExecuteCommandError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExecuteCommandErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExecuteCommandError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExecuteCommandErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExecuteCommandErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteCommandErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExecuteCommandErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExecuteCommandErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
@@ -6349,17 +6677,11 @@ impl ExecuteCommandError {
     }
     /// Returns `true` if the error kind is `ExecuteCommandErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteCommandErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, ExecuteCommandErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ExecuteCommandErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteCommandErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ExecuteCommandErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ExecuteCommandErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -6367,51 +6689,60 @@ impl ExecuteCommandError {
     }
     /// Returns `true` if the error kind is `ExecuteCommandErrorKind::TargetNotConnectedException`.
     pub fn is_target_not_connected_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteCommandErrorKind::TargetNotConnectedException(_)
-        )
+        matches!(&self.kind, ExecuteCommandErrorKind::TargetNotConnectedException(_))
     }
 }
 impl std::error::Error for ExecuteCommandError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteCommandErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::ClientException(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::ServerException(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::TargetNotConnectedException(_inner) => Some(_inner),
-            ExecuteCommandErrorKind::Unhandled(_inner) => Some(_inner),
+            ExecuteCommandErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteCommandErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteCommandErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteCommandErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteCommandErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteCommandErrorKind::TargetNotConnectedException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteCommandErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-/// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p>
-/// <ul>
-/// <li> <p>Incorrect IAM permissions</p> </li>
-/// <li> <p>The SSM agent is not installed or is not running</p> </li>
-/// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager Session Manager</p> </li>
-/// </ul>
+/// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p> 
+/// <ul> 
+/// <li> <p>Incorrect IAM permissions</p> </li> 
+/// <li> <p>The SSM agent is not installed or is not running</p> </li> 
+/// <li> <p> There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager Session Manager</p> </li> 
+/// </ul> 
 /// <p>For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetNotConnectedException {
+pub struct TargetNotConnectedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TargetNotConnectedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TargetNotConnectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetNotConnectedException")?;
         if let Some(inner_21) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_21)?;
             }
         }
@@ -6421,7 +6752,7 @@ impl std::fmt::Display for TargetNotConnectedException {
 impl std::error::Error for TargetNotConnectedException {}
 /// See [`TargetNotConnectedException`](crate::error::TargetNotConnectedException).
 pub mod target_not_connected_exception {
-
+    
     /// A builder for [`TargetNotConnectedException`](crate::error::TargetNotConnectedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6435,16 +6766,18 @@ pub mod target_not_connected_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TargetNotConnectedException`](crate::error::TargetNotConnectedException).
         pub fn build(self) -> crate::error::TargetNotConnectedException {
             crate::error::TargetNotConnectedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetNotConnectedException {
     /// Creates a new builder-style object to manufacture [`TargetNotConnectedException`](crate::error::TargetNotConnectedException).
@@ -6458,15 +6791,15 @@ impl TargetNotConnectedException {
 #[derive(std::fmt::Debug)]
 pub struct DiscoverPollEndpointError {
     /// Kind of error that occurred.
-    pub kind: DiscoverPollEndpointErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DiscoverPollEndpointErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DiscoverPollEndpointError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DiscoverPollEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6478,22 +6811,28 @@ pub enum DiscoverPollEndpointErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DiscoverPollEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DiscoverPollEndpointErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DiscoverPollEndpointErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DiscoverPollEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DiscoverPollEndpointErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DiscoverPollEndpointErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DiscoverPollEndpointErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6507,71 +6846,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DiscoverPollEndpointError {
 }
 impl DiscoverPollEndpointError {
     /// Creates a new `DiscoverPollEndpointError`.
-    pub fn new(kind: DiscoverPollEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DiscoverPollEndpointError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DiscoverPollEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DiscoverPollEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DiscoverPollEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DiscoverPollEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DiscoverPollEndpointError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DiscoverPollEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DiscoverPollEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DiscoverPollEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DiscoverPollEndpointErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DiscoverPollEndpointErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, DiscoverPollEndpointErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DiscoverPollEndpointErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DiscoverPollEndpointErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, DiscoverPollEndpointErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DiscoverPollEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DiscoverPollEndpointErrorKind::ClientException(_inner) => Some(_inner),
-            DiscoverPollEndpointErrorKind::ServerException(_inner) => Some(_inner),
-            DiscoverPollEndpointErrorKind::Unhandled(_inner) => Some(_inner),
+            DiscoverPollEndpointErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DiscoverPollEndpointErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DiscoverPollEndpointErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6581,15 +6916,15 @@ impl std::error::Error for DiscoverPollEndpointError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTaskSetsError {
     /// Kind of error that occurred.
-    pub kind: DescribeTaskSetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTaskSetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTaskSetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTaskSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6613,28 +6948,46 @@ pub enum DescribeTaskSetsErrorKind {
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTaskSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTaskSetsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
-            DescribeTaskSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTaskSetsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskSetsErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskSetsErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskSetsErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskSetsErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskSetsErrorKind::ServiceNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskSetsErrorKind::ServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskSetsErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskSetsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6648,52 +7001,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTaskSetsError {
 }
 impl DescribeTaskSetsError {
     /// Creates a new `DescribeTaskSetsError`.
-    pub fn new(kind: DescribeTaskSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTaskSetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTaskSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTaskSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTaskSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTaskSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTaskSetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTaskSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTaskSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTaskSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskSetsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeTaskSetsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
@@ -6701,17 +7051,11 @@ impl DescribeTaskSetsError {
     }
     /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskSetsErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTaskSetsErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskSetsErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeTaskSetsErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -6719,38 +7063,47 @@ impl DescribeTaskSetsError {
     }
     /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskSetsErrorKind::ServiceNotActiveException(_)
-        )
+        matches!(&self.kind, DescribeTaskSetsErrorKind::ServiceNotActiveException(_))
     }
     /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskSetsErrorKind::ServiceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTaskSetsErrorKind::ServiceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeTaskSetsErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskSetsErrorKind::UnsupportedFeatureException(_)
-        )
+        matches!(&self.kind, DescribeTaskSetsErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for DescribeTaskSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTaskSetsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ClientException(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ServerException(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
-            DescribeTaskSetsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTaskSetsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskSetsErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskSetsErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskSetsErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskSetsErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskSetsErrorKind::ServiceNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskSetsErrorKind::ServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskSetsErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskSetsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6760,15 +7113,15 @@ impl std::error::Error for DescribeTaskSetsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTasksError {
     /// Kind of error that occurred.
-    pub kind: DescribeTasksErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTasksErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTasksError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTasksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6784,24 +7137,34 @@ pub enum DescribeTasksErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTasksErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DescribeTasksErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTasksErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeTasksErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DescribeTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTasksErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTasksErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTasksErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTasksErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTasksErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6815,63 +7178,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTasksError {
 }
 impl DescribeTasksError {
     /// Creates a new `DescribeTasksError`.
-    pub fn new(kind: DescribeTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTasksError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTasksError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTasksErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeTasksErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeTasksErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTasksErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTasksErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeTasksErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTasksErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeTasksErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeTasksErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -6881,11 +7238,21 @@ impl DescribeTasksError {
 impl std::error::Error for DescribeTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTasksErrorKind::ClientException(_inner) => Some(_inner),
-            DescribeTasksErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DescribeTasksErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeTasksErrorKind::ServerException(_inner) => Some(_inner),
-            DescribeTasksErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTasksErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTasksErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTasksErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTasksErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTasksErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6895,15 +7262,15 @@ impl std::error::Error for DescribeTasksError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTaskDefinitionError {
     /// Kind of error that occurred.
-    pub kind: DescribeTaskDefinitionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTaskDefinitionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTaskDefinitionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6917,23 +7284,31 @@ pub enum DescribeTaskDefinitionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTaskDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTaskDefinitionErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DescribeTaskDefinitionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeTaskDefinitionErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DescribeTaskDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTaskDefinitionErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskDefinitionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskDefinitionErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTaskDefinitionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6947,79 +7322,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTaskDefinitionError {
 }
 impl DescribeTaskDefinitionError {
     /// Creates a new `DescribeTaskDefinitionError`.
-    pub fn new(kind: DescribeTaskDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTaskDefinitionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTaskDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTaskDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTaskDefinitionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTaskDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTaskDefinitionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskDefinitionErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, DescribeTaskDefinitionErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeTaskDefinitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskDefinitionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeTaskDefinitionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeTaskDefinitionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTaskDefinitionErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, DescribeTaskDefinitionErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DescribeTaskDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTaskDefinitionErrorKind::ClientException(_inner) => Some(_inner),
-            DescribeTaskDefinitionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeTaskDefinitionErrorKind::ServerException(_inner) => Some(_inner),
-            DescribeTaskDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTaskDefinitionErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskDefinitionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskDefinitionErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTaskDefinitionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7029,15 +7399,15 @@ impl std::error::Error for DescribeTaskDefinitionError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeServicesError {
     /// Kind of error that occurred.
-    pub kind: DescribeServicesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeServicesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeServicesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7053,24 +7423,34 @@ pub enum DescribeServicesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeServicesErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DescribeServicesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DescribeServicesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeServicesErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DescribeServicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeServicesErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeServicesErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeServicesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeServicesErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeServicesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7084,63 +7464,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeServicesError {
 }
 impl DescribeServicesError {
     /// Creates a new `DescribeServicesError`.
-    pub fn new(kind: DescribeServicesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeServicesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeServicesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeServicesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeServicesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeServicesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeServicesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeServicesErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeServicesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeServicesErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeServicesErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeServicesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeServicesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeServicesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeServicesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -7150,11 +7524,21 @@ impl DescribeServicesError {
 impl std::error::Error for DescribeServicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeServicesErrorKind::ClientException(_inner) => Some(_inner),
-            DescribeServicesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DescribeServicesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeServicesErrorKind::ServerException(_inner) => Some(_inner),
-            DescribeServicesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeServicesErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeServicesErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeServicesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeServicesErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeServicesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7164,17 +7548,15 @@ impl std::error::Error for DescribeServicesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeContainerInstancesError {
     /// Kind of error that occurred.
-    pub kind: DescribeContainerInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeContainerInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeContainerInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7190,24 +7572,34 @@ pub enum DescribeContainerInstancesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeContainerInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeContainerInstancesErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DescribeContainerInstancesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DescribeContainerInstancesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeContainerInstancesErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DescribeContainerInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeContainerInstancesErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContainerInstancesErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContainerInstancesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContainerInstancesErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContainerInstancesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7221,87 +7613,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeContainerInstancesErr
 }
 impl DescribeContainerInstancesError {
     /// Creates a new `DescribeContainerInstancesError`.
-    pub fn new(kind: DescribeContainerInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeContainerInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeContainerInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeContainerInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeContainerInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeContainerInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeContainerInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeContainerInstancesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContainerInstancesErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, DescribeContainerInstancesErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeContainerInstancesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContainerInstancesErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeContainerInstancesErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeContainerInstancesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContainerInstancesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeContainerInstancesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeContainerInstancesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContainerInstancesErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, DescribeContainerInstancesErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DescribeContainerInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeContainerInstancesErrorKind::ClientException(_inner) => Some(_inner),
-            DescribeContainerInstancesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DescribeContainerInstancesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeContainerInstancesErrorKind::ServerException(_inner) => Some(_inner),
-            DescribeContainerInstancesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeContainerInstancesErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContainerInstancesErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContainerInstancesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContainerInstancesErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContainerInstancesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7311,15 +7697,15 @@ impl std::error::Error for DescribeContainerInstancesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeClustersError {
     /// Kind of error that occurred.
-    pub kind: DescribeClustersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeClustersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeClustersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7333,23 +7719,31 @@ pub enum DescribeClustersErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeClustersErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeClustersErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeClustersErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeClustersErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeClustersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7363,56 +7757,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeClustersError {
 }
 impl DescribeClustersError {
     /// Creates a new `DescribeClustersError`.
-    pub fn new(kind: DescribeClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeClustersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeClustersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeClustersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeClustersErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeClustersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeClustersErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeClustersErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeClustersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -7422,10 +7813,18 @@ impl DescribeClustersError {
 impl std::error::Error for DescribeClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeClustersErrorKind::ClientException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::ServerException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeClustersErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeClustersErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeClustersErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeClustersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7435,17 +7834,15 @@ impl std::error::Error for DescribeClustersError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCapacityProvidersError {
     /// Kind of error that occurred.
-    pub kind: DescribeCapacityProvidersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCapacityProvidersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCapacityProvidersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7459,23 +7856,31 @@ pub enum DescribeCapacityProvidersErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCapacityProvidersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCapacityProvidersErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DescribeCapacityProvidersErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeCapacityProvidersErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DescribeCapacityProvidersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeCapacityProvidersErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCapacityProvidersErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCapacityProvidersErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCapacityProvidersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7489,79 +7894,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCapacityProvidersErro
 }
 impl DescribeCapacityProvidersError {
     /// Creates a new `DescribeCapacityProvidersError`.
-    pub fn new(kind: DescribeCapacityProvidersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCapacityProvidersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCapacityProvidersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCapacityProvidersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCapacityProvidersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCapacityProvidersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCapacityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCapacityProvidersErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCapacityProvidersErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, DescribeCapacityProvidersErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeCapacityProvidersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCapacityProvidersErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeCapacityProvidersErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeCapacityProvidersErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCapacityProvidersErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, DescribeCapacityProvidersErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DescribeCapacityProvidersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCapacityProvidersErrorKind::ClientException(_inner) => Some(_inner),
-            DescribeCapacityProvidersErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeCapacityProvidersErrorKind::ServerException(_inner) => Some(_inner),
-            DescribeCapacityProvidersErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeCapacityProvidersErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCapacityProvidersErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCapacityProvidersErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCapacityProvidersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7571,17 +7971,15 @@ impl std::error::Error for DescribeCapacityProvidersError {
 #[derive(std::fmt::Debug)]
 pub struct DeregisterTaskDefinitionError {
     /// Kind of error that occurred.
-    pub kind: DeregisterTaskDefinitionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeregisterTaskDefinitionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeregisterTaskDefinitionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeregisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeregisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7595,23 +7993,31 @@ pub enum DeregisterTaskDefinitionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterTaskDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterTaskDefinitionErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DeregisterTaskDefinitionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeregisterTaskDefinitionErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DeregisterTaskDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeregisterTaskDefinitionErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterTaskDefinitionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterTaskDefinitionErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterTaskDefinitionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7625,79 +8031,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeregisterTaskDefinitionError
 }
 impl DeregisterTaskDefinitionError {
     /// Creates a new `DeregisterTaskDefinitionError`.
-    pub fn new(kind: DeregisterTaskDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeregisterTaskDefinitionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeregisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeregisterTaskDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeregisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeregisterTaskDefinitionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeregisterTaskDefinitionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeregisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeregisterTaskDefinitionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeregisterTaskDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeregisterTaskDefinitionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterTaskDefinitionErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, DeregisterTaskDefinitionErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DeregisterTaskDefinitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterTaskDefinitionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeregisterTaskDefinitionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeregisterTaskDefinitionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterTaskDefinitionErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, DeregisterTaskDefinitionErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DeregisterTaskDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterTaskDefinitionErrorKind::ClientException(_inner) => Some(_inner),
-            DeregisterTaskDefinitionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeregisterTaskDefinitionErrorKind::ServerException(_inner) => Some(_inner),
-            DeregisterTaskDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
+            DeregisterTaskDefinitionErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterTaskDefinitionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterTaskDefinitionErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterTaskDefinitionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7707,17 +8108,15 @@ impl std::error::Error for DeregisterTaskDefinitionError {
 #[derive(std::fmt::Debug)]
 pub struct DeregisterContainerInstanceError {
     /// Kind of error that occurred.
-    pub kind: DeregisterContainerInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeregisterContainerInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeregisterContainerInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeregisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeregisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7733,26 +8132,34 @@ pub enum DeregisterContainerInstanceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterContainerInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterContainerInstanceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DeregisterContainerInstanceErrorKind::InvalidParameterException(_inner) => {
+            DeregisterContainerInstanceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterContainerInstanceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterContainerInstanceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterContainerInstanceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeregisterContainerInstanceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DeregisterContainerInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7766,87 +8173,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeregisterContainerInstanceEr
 }
 impl DeregisterContainerInstanceError {
     /// Creates a new `DeregisterContainerInstanceError`.
-    pub fn new(kind: DeregisterContainerInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeregisterContainerInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeregisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeregisterContainerInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeregisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeregisterContainerInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeregisterContainerInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeregisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeregisterContainerInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeregisterContainerInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeregisterContainerInstanceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterContainerInstanceErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, DeregisterContainerInstanceErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DeregisterContainerInstanceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeregisterContainerInstanceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterContainerInstanceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeregisterContainerInstanceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeregisterContainerInstanceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterContainerInstanceErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, DeregisterContainerInstanceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DeregisterContainerInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterContainerInstanceErrorKind::ClientException(_inner) => Some(_inner),
-            DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DeregisterContainerInstanceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeregisterContainerInstanceErrorKind::ServerException(_inner) => Some(_inner),
-            DeregisterContainerInstanceErrorKind::Unhandled(_inner) => Some(_inner),
+            DeregisterContainerInstanceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterContainerInstanceErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterContainerInstanceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterContainerInstanceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterContainerInstanceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7856,15 +8257,15 @@ impl std::error::Error for DeregisterContainerInstanceError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteTaskSetError {
     /// Kind of error that occurred.
-    pub kind: DeleteTaskSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteTaskSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteTaskSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7890,29 +8291,49 @@ pub enum DeleteTaskSetErrorKind {
     TaskSetNotFoundException(crate::error::TaskSetNotFoundException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTaskSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteTaskSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::TaskSetNotFoundException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
-            DeleteTaskSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteTaskSetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::ServiceNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::ServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::TaskSetNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTaskSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7926,46 +8347,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteTaskSetError {
 }
 impl DeleteTaskSetError {
     /// Creates a new `DeleteTaskSetError`.
-    pub fn new(kind: DeleteTaskSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteTaskSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteTaskSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteTaskSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteTaskSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteTaskSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteTaskSetErrorKind::AccessDeniedException(_))
@@ -7976,17 +8397,11 @@ impl DeleteTaskSetError {
     }
     /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTaskSetErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteTaskSetErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTaskSetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteTaskSetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -7994,46 +8409,54 @@ impl DeleteTaskSetError {
     }
     /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTaskSetErrorKind::ServiceNotActiveException(_)
-        )
+        matches!(&self.kind, DeleteTaskSetErrorKind::ServiceNotActiveException(_))
     }
     /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTaskSetErrorKind::ServiceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteTaskSetErrorKind::ServiceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::TaskSetNotFoundException`.
     pub fn is_task_set_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTaskSetErrorKind::TaskSetNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteTaskSetErrorKind::TaskSetNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteTaskSetErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTaskSetErrorKind::UnsupportedFeatureException(_)
-        )
+        matches!(&self.kind, DeleteTaskSetErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for DeleteTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteTaskSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ClientException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ServerException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::TaskSetNotFoundException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
-            DeleteTaskSetErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteTaskSetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::ServiceNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::ServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::TaskSetNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTaskSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8043,15 +8466,15 @@ impl std::error::Error for DeleteTaskSetError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteServiceError {
     /// Kind of error that occurred.
-    pub kind: DeleteServiceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteServiceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteServiceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8069,25 +8492,37 @@ pub enum DeleteServiceErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The specified service wasn't found. You can view your available services with <code>ListServices</code>. Amazon ECS services are cluster specific and Region specific.</p>
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteServiceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteServiceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteServiceErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteServiceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteServiceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteServiceErrorKind::ServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteServiceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8101,63 +8536,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteServiceError {
 }
 impl DeleteServiceError {
     /// Creates a new `DeleteServiceError`.
-    pub fn new(kind: DeleteServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteServiceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteServiceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteServiceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteServiceErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteServiceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteServiceErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteServiceErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteServiceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteServiceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteServiceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteServiceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -8165,21 +8594,30 @@ impl DeleteServiceError {
     }
     /// Returns `true` if the error kind is `DeleteServiceErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteServiceErrorKind::ServiceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteServiceErrorKind::ServiceNotFoundException(_))
     }
 }
 impl std::error::Error for DeleteServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteServiceErrorKind::ClientException(_inner) => Some(_inner),
-            DeleteServiceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DeleteServiceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteServiceErrorKind::ServerException(_inner) => Some(_inner),
-            DeleteServiceErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
-            DeleteServiceErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteServiceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteServiceErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteServiceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteServiceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteServiceErrorKind::ServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteServiceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8189,15 +8627,15 @@ impl std::error::Error for DeleteServiceError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteClusterError {
     /// Kind of error that occurred.
-    pub kind: DeleteClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8208,9 +8646,7 @@ pub enum DeleteClusterErrorKind {
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>You can't delete a cluster that has registered container instances. First, deregister the container instances before you can delete the cluster. For more information, see <code>DeregisterContainerInstance</code>.</p>
-    ClusterContainsContainerInstancesException(
-        crate::error::ClusterContainsContainerInstancesException,
-    ),
+    ClusterContainsContainerInstancesException(crate::error::ClusterContainsContainerInstancesException),
     /// <p>You can't delete a cluster that contains services. First, update the service to reduce its desired task count to 0, and then delete the service. For more information, see <code>UpdateService</code> and <code>DeleteService</code>.</p>
     ClusterContainsServicesException(crate::error::ClusterContainsServicesException),
     /// <p>You can't delete a cluster that has active tasks.</p>
@@ -8223,30 +8659,46 @@ pub enum DeleteClusterErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There's already a current Amazon ECS container agent update in progress on the container instance that's specified. If the container agent becomes disconnected while it's in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it resumes where it stopped previously.</p>
     UpdateInProgressException(crate::error::UpdateInProgressException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_inner) => {
+            DeleteClusterErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::ClusterContainsServicesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::ClusterContainsTasksException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::UpdateInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteClusterErrorKind::ClusterContainsServicesException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ClusterContainsTasksException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::UpdateInProgressException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8260,84 +8712,69 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteClusterError {
 }
 impl DeleteClusterError {
     /// Creates a new `DeleteClusterError`.
-    pub fn new(kind: DeleteClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterContainsContainerInstancesException`.
     pub fn is_cluster_contains_container_instances_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterContainsServicesException`.
     pub fn is_cluster_contains_services_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::ClusterContainsServicesException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::ClusterContainsServicesException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterContainsTasksException`.
     pub fn is_cluster_contains_tasks_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::ClusterContainsTasksException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::ClusterContainsTasksException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -8345,26 +8782,39 @@ impl DeleteClusterError {
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::UpdateInProgressException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::UpdateInProgressException(_))
     }
 }
 impl std::error::Error for DeleteClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteClusterErrorKind::ClientException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_inner) => {
+            DeleteClusterErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::ClusterContainsContainerInstancesException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::ClusterContainsServicesException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::ClusterContainsTasksException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::UpdateInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteClusterErrorKind::ClusterContainsServicesException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ClusterContainsTasksException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::ServerException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::UpdateInProgressException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8372,22 +8822,20 @@ impl std::error::Error for DeleteClusterError {
 /// <p>You can't delete a cluster that has active tasks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterContainsTasksException {
+pub struct ClusterContainsTasksException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClusterContainsTasksException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClusterContainsTasksException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterContainsTasksException")?;
         if let Some(inner_22) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_22)?;
             }
         }
@@ -8397,7 +8845,7 @@ impl std::fmt::Display for ClusterContainsTasksException {
 impl std::error::Error for ClusterContainsTasksException {}
 /// See [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException).
 pub mod cluster_contains_tasks_exception {
-
+    
     /// A builder for [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8411,16 +8859,18 @@ pub mod cluster_contains_tasks_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException).
         pub fn build(self) -> crate::error::ClusterContainsTasksException {
             crate::error::ClusterContainsTasksException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterContainsTasksException {
     /// Creates a new builder-style object to manufacture [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException).
@@ -8432,22 +8882,20 @@ impl ClusterContainsTasksException {
 /// <p>You can't delete a cluster that contains services. First, update the service to reduce its desired task count to 0, and then delete the service. For more information, see <code>UpdateService</code> and <code>DeleteService</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterContainsServicesException {
+pub struct ClusterContainsServicesException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClusterContainsServicesException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClusterContainsServicesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterContainsServicesException")?;
         if let Some(inner_23) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_23)?;
             }
         }
@@ -8457,7 +8905,7 @@ impl std::fmt::Display for ClusterContainsServicesException {
 impl std::error::Error for ClusterContainsServicesException {}
 /// See [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException).
 pub mod cluster_contains_services_exception {
-
+    
     /// A builder for [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8471,16 +8919,18 @@ pub mod cluster_contains_services_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException).
         pub fn build(self) -> crate::error::ClusterContainsServicesException {
             crate::error::ClusterContainsServicesException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterContainsServicesException {
     /// Creates a new builder-style object to manufacture [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException).
@@ -8492,22 +8942,20 @@ impl ClusterContainsServicesException {
 /// <p>You can't delete a cluster that has registered container instances. First, deregister the container instances before you can delete the cluster. For more information, see <code>DeregisterContainerInstance</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterContainsContainerInstancesException {
+pub struct ClusterContainsContainerInstancesException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClusterContainsContainerInstancesException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClusterContainsContainerInstancesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterContainsContainerInstancesException")?;
         if let Some(inner_24) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_24)?;
             }
         }
@@ -8517,7 +8965,7 @@ impl std::fmt::Display for ClusterContainsContainerInstancesException {
 impl std::error::Error for ClusterContainsContainerInstancesException {}
 /// See [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException).
 pub mod cluster_contains_container_instances_exception {
-
+    
     /// A builder for [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8531,16 +8979,18 @@ pub mod cluster_contains_container_instances_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException).
         pub fn build(self) -> crate::error::ClusterContainsContainerInstancesException {
             crate::error::ClusterContainsContainerInstancesException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterContainsContainerInstancesException {
     /// Creates a new builder-style object to manufacture [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException).
@@ -8554,15 +9004,15 @@ impl ClusterContainsContainerInstancesException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCapacityProviderError {
     /// Kind of error that occurred.
-    pub kind: DeleteCapacityProviderErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCapacityProviderErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCapacityProviderError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8576,23 +9026,31 @@ pub enum DeleteCapacityProviderErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCapacityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCapacityProviderErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DeleteCapacityProviderErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteCapacityProviderErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DeleteCapacityProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteCapacityProviderErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCapacityProviderErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCapacityProviderErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCapacityProviderErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8606,79 +9064,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCapacityProviderError {
 }
 impl DeleteCapacityProviderError {
     /// Creates a new `DeleteCapacityProviderError`.
-    pub fn new(kind: DeleteCapacityProviderErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCapacityProviderError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCapacityProviderError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCapacityProviderErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCapacityProviderError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCapacityProviderError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCapacityProviderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCapacityProviderErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, DeleteCapacityProviderErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteCapacityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCapacityProviderErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteCapacityProviderErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteCapacityProviderErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCapacityProviderErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, DeleteCapacityProviderErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DeleteCapacityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCapacityProviderErrorKind::ClientException(_inner) => Some(_inner),
-            DeleteCapacityProviderErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteCapacityProviderErrorKind::ServerException(_inner) => Some(_inner),
-            DeleteCapacityProviderErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteCapacityProviderErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCapacityProviderErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCapacityProviderErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCapacityProviderErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8688,15 +9141,15 @@ impl std::error::Error for DeleteCapacityProviderError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteAttributesError {
     /// Kind of error that occurred.
-    pub kind: DeleteAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8710,23 +9163,31 @@ pub enum DeleteAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified target wasn't found. You can view your available container instances with <code>ListContainerInstances</code>. Amazon ECS container instances are cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::error::TargetNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAttributesErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            DeleteAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteAttributesErrorKind::TargetNotFoundException(_inner) => _inner.fmt(f),
-            DeleteAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteAttributesErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAttributesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAttributesErrorKind::TargetNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAttributesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8740,75 +9201,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteAttributesError {
 }
 impl DeleteAttributesError {
     /// Creates a new `DeleteAttributesError`.
-    pub fn new(kind: DeleteAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteAttributesErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAttributesErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteAttributesErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteAttributesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAttributesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteAttributesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteAttributesErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAttributesErrorKind::TargetNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteAttributesErrorKind::TargetNotFoundException(_))
     }
 }
 impl std::error::Error for DeleteAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAttributesErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            DeleteAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteAttributesErrorKind::TargetNotFoundException(_inner) => Some(_inner),
-            DeleteAttributesErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteAttributesErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAttributesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAttributesErrorKind::TargetNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAttributesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8818,15 +9278,15 @@ impl std::error::Error for DeleteAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteAccountSettingError {
     /// Kind of error that occurred.
-    pub kind: DeleteAccountSettingErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteAccountSettingErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteAccountSettingError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8840,23 +9300,31 @@ pub enum DeleteAccountSettingErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAccountSettingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAccountSettingErrorKind::ClientException(_inner) => _inner.fmt(f),
-            DeleteAccountSettingErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteAccountSettingErrorKind::ServerException(_inner) => _inner.fmt(f),
-            DeleteAccountSettingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteAccountSettingErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAccountSettingErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAccountSettingErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAccountSettingErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8870,79 +9338,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteAccountSettingError {
 }
 impl DeleteAccountSettingError {
     /// Creates a new `DeleteAccountSettingError`.
-    pub fn new(kind: DeleteAccountSettingErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteAccountSettingError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteAccountSettingError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteAccountSettingErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteAccountSettingError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteAccountSettingError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteAccountSettingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteAccountSettingErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAccountSettingErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, DeleteAccountSettingErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteAccountSettingErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAccountSettingErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteAccountSettingErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteAccountSettingErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAccountSettingErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, DeleteAccountSettingErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DeleteAccountSettingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAccountSettingErrorKind::ClientException(_inner) => Some(_inner),
-            DeleteAccountSettingErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteAccountSettingErrorKind::ServerException(_inner) => Some(_inner),
-            DeleteAccountSettingErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteAccountSettingErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAccountSettingErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAccountSettingErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAccountSettingErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8952,15 +9415,15 @@ impl std::error::Error for DeleteAccountSettingError {
 #[derive(std::fmt::Debug)]
 pub struct CreateTaskSetError {
     /// Kind of error that occurred.
-    pub kind: CreateTaskSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateTaskSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateTaskSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8979,9 +9442,7 @@ pub enum CreateTaskSetErrorKind {
     /// <p>The specified namespace wasn't found.</p>
     NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
-    PlatformTaskDefinitionIncompatibilityException(
-        crate::error::PlatformTaskDefinitionIncompatibilityException,
-    ),
+    PlatformTaskDefinitionIncompatibilityException(crate::error::PlatformTaskDefinitionIncompatibilityException),
     /// <p>The specified platform version doesn't exist.</p>
     PlatformUnknownException(crate::error::PlatformUnknownException),
     /// <p>These errors are usually caused by a server issue.</p>
@@ -8992,33 +9453,55 @@ pub enum CreateTaskSetErrorKind {
     ServiceNotFoundException(crate::error::ServiceNotFoundException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTaskSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateTaskSetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ClientException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::NamespaceNotFoundException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+            CreateTaskSetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::NamespaceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::PlatformUnknownException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::ServiceNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::ServiceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTaskSetErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateTaskSetErrorKind::PlatformUnknownException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ServerException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ServiceNotActiveException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::ServiceNotFoundException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
-            CreateTaskSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9032,46 +9515,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateTaskSetError {
 }
 impl CreateTaskSetError {
     /// Creates a new `CreateTaskSetError`.
-    pub fn new(kind: CreateTaskSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateTaskSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateTaskSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateTaskSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateTaskSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateTaskSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateTaskSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateTaskSetErrorKind::AccessDeniedException(_))
@@ -9082,38 +9565,23 @@ impl CreateTaskSetError {
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTaskSetErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, CreateTaskSetErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTaskSetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateTaskSetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::NamespaceNotFoundException`.
     pub fn is_namespace_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTaskSetErrorKind::NamespaceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateTaskSetErrorKind::NamespaceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
-        )
+        matches!(&self.kind, CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_))
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::PlatformUnknownException`.
     pub fn is_platform_unknown_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTaskSetErrorKind::PlatformUnknownException(_)
-        )
+        matches!(&self.kind, CreateTaskSetErrorKind::PlatformUnknownException(_))
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -9121,43 +9589,56 @@ impl CreateTaskSetError {
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ServiceNotActiveException`.
     pub fn is_service_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTaskSetErrorKind::ServiceNotActiveException(_)
-        )
+        matches!(&self.kind, CreateTaskSetErrorKind::ServiceNotActiveException(_))
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::ServiceNotFoundException`.
     pub fn is_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTaskSetErrorKind::ServiceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateTaskSetErrorKind::ServiceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateTaskSetErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTaskSetErrorKind::UnsupportedFeatureException(_)
-        )
+        matches!(&self.kind, CreateTaskSetErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for CreateTaskSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateTaskSetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ClientException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::NamespaceNotFoundException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+            CreateTaskSetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::NamespaceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::PlatformUnknownException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::ServiceNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::ServiceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTaskSetErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateTaskSetErrorKind::PlatformUnknownException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ServerException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ServiceNotActiveException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::ServiceNotFoundException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
-            CreateTaskSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9167,15 +9648,15 @@ impl std::error::Error for CreateTaskSetError {
 #[derive(std::fmt::Debug)]
 pub struct CreateServiceError {
     /// Kind of error that occurred.
-    pub kind: CreateServiceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateServiceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateServiceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateServiceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9194,40 +9675,56 @@ pub enum CreateServiceErrorKind {
     /// <p>The specified namespace wasn't found.</p>
     NamespaceNotFoundException(crate::error::NamespaceNotFoundException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
-    PlatformTaskDefinitionIncompatibilityException(
-        crate::error::PlatformTaskDefinitionIncompatibilityException,
-    ),
+    PlatformTaskDefinitionIncompatibilityException(crate::error::PlatformTaskDefinitionIncompatibilityException),
     /// <p>The specified platform version doesn't exist.</p>
     PlatformUnknownException(crate::error::PlatformUnknownException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateServiceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::ClientException(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::ClusterNotFoundException(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::NamespaceNotFoundException(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+            CreateServiceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::ClusterNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::NamespaceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::PlatformUnknownException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::UnsupportedFeatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateServiceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateServiceErrorKind::PlatformUnknownException(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::ServerException(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::UnsupportedFeatureException(_inner) => _inner.fmt(f),
-            CreateServiceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9241,46 +9738,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateServiceError {
 }
 impl CreateServiceError {
     /// Creates a new `CreateServiceError`.
-    pub fn new(kind: CreateServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateServiceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateServiceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateServiceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateServiceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateServiceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::AccessDeniedException(_))
@@ -9291,38 +9788,23 @@ impl CreateServiceError {
     }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::ClusterNotFoundException`.
     pub fn is_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateServiceErrorKind::ClusterNotFoundException(_)
-        )
+        matches!(&self.kind, CreateServiceErrorKind::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateServiceErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateServiceErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::NamespaceNotFoundException`.
     pub fn is_namespace_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateServiceErrorKind::NamespaceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateServiceErrorKind::NamespaceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException`.
     pub fn is_platform_task_definition_incompatibility_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_)
-        )
+        matches!(&self.kind, CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_))
     }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::PlatformUnknownException`.
     pub fn is_platform_unknown_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateServiceErrorKind::PlatformUnknownException(_)
-        )
+        matches!(&self.kind, CreateServiceErrorKind::PlatformUnknownException(_))
     }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -9330,27 +9812,42 @@ impl CreateServiceError {
     }
     /// Returns `true` if the error kind is `CreateServiceErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateServiceErrorKind::UnsupportedFeatureException(_)
-        )
+        matches!(&self.kind, CreateServiceErrorKind::UnsupportedFeatureException(_))
     }
 }
 impl std::error::Error for CreateServiceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateServiceErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateServiceErrorKind::ClientException(_inner) => Some(_inner),
-            CreateServiceErrorKind::ClusterNotFoundException(_inner) => Some(_inner),
-            CreateServiceErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreateServiceErrorKind::NamespaceNotFoundException(_inner) => Some(_inner),
-            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) => {
+            CreateServiceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::ClusterNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::NamespaceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::PlatformTaskDefinitionIncompatibilityException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::PlatformUnknownException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::UnsupportedFeatureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateServiceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateServiceErrorKind::PlatformUnknownException(_inner) => Some(_inner),
-            CreateServiceErrorKind::ServerException(_inner) => Some(_inner),
-            CreateServiceErrorKind::UnsupportedFeatureException(_inner) => Some(_inner),
-            CreateServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9360,15 +9857,15 @@ impl std::error::Error for CreateServiceError {
 #[derive(std::fmt::Debug)]
 pub struct CreateClusterError {
     /// Kind of error that occurred.
-    pub kind: CreateClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9382,23 +9879,31 @@ pub enum CreateClusterErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateClusterErrorKind::ClientException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::ServerException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateClusterErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9412,56 +9917,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateClusterError {
 }
 impl CreateClusterError {
     /// Creates a new `CreateClusterError`.
-    pub fn new(kind: CreateClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateClusterErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateClusterErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -9471,10 +9973,18 @@ impl CreateClusterError {
 impl std::error::Error for CreateClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateClusterErrorKind::ClientException(_inner) => Some(_inner),
-            CreateClusterErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreateClusterErrorKind::ServerException(_inner) => Some(_inner),
-            CreateClusterErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateClusterErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9484,15 +9994,15 @@ impl std::error::Error for CreateClusterError {
 #[derive(std::fmt::Debug)]
 pub struct CreateCapacityProviderError {
     /// Kind of error that occurred.
-    pub kind: CreateCapacityProviderErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCapacityProviderErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCapacityProviderError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9510,25 +10020,37 @@ pub enum CreateCapacityProviderErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>There's already a current Amazon ECS container agent update in progress on the container instance that's specified. If the container agent becomes disconnected while it's in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it resumes where it stopped previously.</p>
     UpdateInProgressException(crate::error::UpdateInProgressException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCapacityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCapacityProviderErrorKind::ClientException(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::ServerException(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::UpdateInProgressException(_inner) => _inner.fmt(f),
-            CreateCapacityProviderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateCapacityProviderErrorKind::ClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCapacityProviderErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCapacityProviderErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCapacityProviderErrorKind::ServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCapacityProviderErrorKind::UpdateInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCapacityProviderErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9542,95 +10064,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCapacityProviderError {
 }
 impl CreateCapacityProviderError {
     /// Creates a new `CreateCapacityProviderError`.
-    pub fn new(kind: CreateCapacityProviderErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCapacityProviderError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCapacityProviderError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCapacityProviderErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCapacityProviderError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCapacityProviderError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCapacityProviderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCapacityProviderErrorKind::ClientException(_)
-        )
+        matches!(&self.kind, CreateCapacityProviderErrorKind::ClientException(_))
     }
     /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCapacityProviderErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateCapacityProviderErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCapacityProviderErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateCapacityProviderErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCapacityProviderErrorKind::ServerException(_)
-        )
+        matches!(&self.kind, CreateCapacityProviderErrorKind::ServerException(_))
     }
     /// Returns `true` if the error kind is `CreateCapacityProviderErrorKind::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCapacityProviderErrorKind::UpdateInProgressException(_)
-        )
+        matches!(&self.kind, CreateCapacityProviderErrorKind::UpdateInProgressException(_))
     }
 }
 impl std::error::Error for CreateCapacityProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCapacityProviderErrorKind::ClientException(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::ServerException(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::UpdateInProgressException(_inner) => Some(_inner),
-            CreateCapacityProviderErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateCapacityProviderErrorKind::ClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCapacityProviderErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCapacityProviderErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCapacityProviderErrorKind::ServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCapacityProviderErrorKind::UpdateInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCapacityProviderErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9638,22 +10153,20 @@ impl std::error::Error for CreateCapacityProviderError {
 /// <p>The limit for the resource was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_25) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_25)?;
             }
         }
@@ -9663,7 +10176,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9677,16 +10190,18 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -9695,31 +10210,32 @@ impl LimitExceededException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

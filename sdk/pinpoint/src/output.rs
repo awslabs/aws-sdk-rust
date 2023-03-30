@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifyOtpMessageOutput {
+pub struct VerifyOtpMessageOutput  {
     /// <p>Verify OTP Message Response.</p>
     #[doc(hidden)]
     pub verification_response: std::option::Option<crate::model::VerificationResponse>,
 }
 impl VerifyOtpMessageOutput {
     /// <p>Verify OTP Message Response.</p>
-    pub fn verification_response(
-        &self,
-    ) -> std::option::Option<&crate::model::VerificationResponse> {
+    pub fn verification_response(&self) -> std::option::Option<& crate::model::VerificationResponse> {
         self.verification_response.as_ref()
     }
 }
 /// See [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput).
 pub mod verify_otp_message_output {
-
+    
     /// A builder for [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,20 +28,19 @@ pub mod verify_otp_message_output {
             self
         }
         /// <p>Verify OTP Message Response.</p>
-        pub fn set_verification_response(
-            mut self,
-            input: std::option::Option<crate::model::VerificationResponse>,
-        ) -> Self {
-            self.verification_response = input;
-            self
+        pub fn set_verification_response(mut self, input: std::option::Option<crate::model::VerificationResponse>) -> Self {
+            self.verification_response = input; self
         }
         /// Consumes the builder and constructs a [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput).
         pub fn build(self) -> crate::output::VerifyOtpMessageOutput {
             crate::output::VerifyOtpMessageOutput {
-                verification_response: self.verification_response,
+                verification_response: self.verification_response
+                ,
             }
         }
     }
+    
+    
 }
 impl VerifyOtpMessageOutput {
     /// Creates a new builder-style object to manufacture [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput).
@@ -55,20 +52,20 @@ impl VerifyOtpMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVoiceTemplateOutput {
+pub struct UpdateVoiceTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`UpdateVoiceTemplateOutput`](crate::output::UpdateVoiceTemplateOutput).
 pub mod update_voice_template_output {
-
+    
     /// A builder for [`UpdateVoiceTemplateOutput`](crate::output::UpdateVoiceTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -81,20 +78,19 @@ pub mod update_voice_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVoiceTemplateOutput`](crate::output::UpdateVoiceTemplateOutput).
         pub fn build(self) -> crate::output::UpdateVoiceTemplateOutput {
             crate::output::UpdateVoiceTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceTemplateOutput`](crate::output::UpdateVoiceTemplateOutput).
@@ -106,22 +102,20 @@ impl UpdateVoiceTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVoiceChannelOutput {
+pub struct UpdateVoiceChannelOutput  {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
 }
 impl UpdateVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-    pub fn voice_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::VoiceChannelResponse> {
+    pub fn voice_channel_response(&self) -> std::option::Option<& crate::model::VoiceChannelResponse> {
         self.voice_channel_response.as_ref()
     }
 }
 /// See [`UpdateVoiceChannelOutput`](crate::output::UpdateVoiceChannelOutput).
 pub mod update_voice_channel_output {
-
+    
     /// A builder for [`UpdateVoiceChannelOutput`](crate::output::UpdateVoiceChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -134,20 +128,19 @@ pub mod update_voice_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-        pub fn set_voice_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::VoiceChannelResponse>,
-        ) -> Self {
-            self.voice_channel_response = input;
-            self
+        pub fn set_voice_channel_response(mut self, input: std::option::Option<crate::model::VoiceChannelResponse>) -> Self {
+            self.voice_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVoiceChannelOutput`](crate::output::UpdateVoiceChannelOutput).
         pub fn build(self) -> crate::output::UpdateVoiceChannelOutput {
             crate::output::UpdateVoiceChannelOutput {
-                voice_channel_response: self.voice_channel_response,
+                voice_channel_response: self.voice_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVoiceChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceChannelOutput`](crate::output::UpdateVoiceChannelOutput).
@@ -159,20 +152,20 @@ impl UpdateVoiceChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTemplateActiveVersionOutput {
+pub struct UpdateTemplateActiveVersionOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateTemplateActiveVersionOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`UpdateTemplateActiveVersionOutput`](crate::output::UpdateTemplateActiveVersionOutput).
 pub mod update_template_active_version_output {
-
+    
     /// A builder for [`UpdateTemplateActiveVersionOutput`](crate::output::UpdateTemplateActiveVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -185,20 +178,19 @@ pub mod update_template_active_version_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTemplateActiveVersionOutput`](crate::output::UpdateTemplateActiveVersionOutput).
         pub fn build(self) -> crate::output::UpdateTemplateActiveVersionOutput {
             crate::output::UpdateTemplateActiveVersionOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTemplateActiveVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateActiveVersionOutput`](crate::output::UpdateTemplateActiveVersionOutput).
@@ -210,20 +202,20 @@ impl UpdateTemplateActiveVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSmsTemplateOutput {
+pub struct UpdateSmsTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`UpdateSmsTemplateOutput`](crate::output::UpdateSmsTemplateOutput).
 pub mod update_sms_template_output {
-
+    
     /// A builder for [`UpdateSmsTemplateOutput`](crate::output::UpdateSmsTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -236,20 +228,19 @@ pub mod update_sms_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSmsTemplateOutput`](crate::output::UpdateSmsTemplateOutput).
         pub fn build(self) -> crate::output::UpdateSmsTemplateOutput {
             crate::output::UpdateSmsTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSmsTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSmsTemplateOutput`](crate::output::UpdateSmsTemplateOutput).
@@ -261,20 +252,20 @@ impl UpdateSmsTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSmsChannelOutput {
+pub struct UpdateSmsChannelOutput  {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
 }
 impl UpdateSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-    pub fn sms_channel_response(&self) -> std::option::Option<&crate::model::SmsChannelResponse> {
+    pub fn sms_channel_response(&self) -> std::option::Option<& crate::model::SmsChannelResponse> {
         self.sms_channel_response.as_ref()
     }
 }
 /// See [`UpdateSmsChannelOutput`](crate::output::UpdateSmsChannelOutput).
 pub mod update_sms_channel_output {
-
+    
     /// A builder for [`UpdateSmsChannelOutput`](crate::output::UpdateSmsChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -287,20 +278,19 @@ pub mod update_sms_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-        pub fn set_sms_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::SmsChannelResponse>,
-        ) -> Self {
-            self.sms_channel_response = input;
-            self
+        pub fn set_sms_channel_response(mut self, input: std::option::Option<crate::model::SmsChannelResponse>) -> Self {
+            self.sms_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSmsChannelOutput`](crate::output::UpdateSmsChannelOutput).
         pub fn build(self) -> crate::output::UpdateSmsChannelOutput {
             crate::output::UpdateSmsChannelOutput {
-                sms_channel_response: self.sms_channel_response,
+                sms_channel_response: self.sms_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSmsChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSmsChannelOutput`](crate::output::UpdateSmsChannelOutput).
@@ -312,20 +302,20 @@ impl UpdateSmsChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSegmentOutput {
+pub struct UpdateSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl UpdateSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+    pub fn segment_response(&self) -> std::option::Option<& crate::model::SegmentResponse> {
         self.segment_response.as_ref()
     }
 }
 /// See [`UpdateSegmentOutput`](crate::output::UpdateSegmentOutput).
 pub mod update_segment_output {
-
+    
     /// A builder for [`UpdateSegmentOutput`](crate::output::UpdateSegmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -338,20 +328,19 @@ pub mod update_segment_output {
             self
         }
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-        pub fn set_segment_response(
-            mut self,
-            input: std::option::Option<crate::model::SegmentResponse>,
-        ) -> Self {
-            self.segment_response = input;
-            self
+        pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
+            self.segment_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSegmentOutput`](crate::output::UpdateSegmentOutput).
         pub fn build(self) -> crate::output::UpdateSegmentOutput {
             crate::output::UpdateSegmentOutput {
-                segment_response: self.segment_response,
+                segment_response: self.segment_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSegmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSegmentOutput`](crate::output::UpdateSegmentOutput).
@@ -363,53 +352,45 @@ impl UpdateSegmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRecommenderConfigurationOutput {
+pub struct UpdateRecommenderConfigurationOutput  {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
-    pub recommender_configuration_response:
-        std::option::Option<crate::model::RecommenderConfigurationResponse>,
+    pub recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
 impl UpdateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-    pub fn recommender_configuration_response(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommenderConfigurationResponse> {
+    pub fn recommender_configuration_response(&self) -> std::option::Option<& crate::model::RecommenderConfigurationResponse> {
         self.recommender_configuration_response.as_ref()
     }
 }
 /// See [`UpdateRecommenderConfigurationOutput`](crate::output::UpdateRecommenderConfigurationOutput).
 pub mod update_recommender_configuration_output {
-
+    
     /// A builder for [`UpdateRecommenderConfigurationOutput`](crate::output::UpdateRecommenderConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommender_configuration_response:
-            std::option::Option<crate::model::RecommenderConfigurationResponse>,
+        pub(crate) recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
     }
     impl Builder {
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-        pub fn recommender_configuration_response(
-            mut self,
-            input: crate::model::RecommenderConfigurationResponse,
-        ) -> Self {
+        pub fn recommender_configuration_response(mut self, input: crate::model::RecommenderConfigurationResponse) -> Self {
             self.recommender_configuration_response = Some(input);
             self
         }
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-        pub fn set_recommender_configuration_response(
-            mut self,
-            input: std::option::Option<crate::model::RecommenderConfigurationResponse>,
-        ) -> Self {
-            self.recommender_configuration_response = input;
-            self
+        pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::model::RecommenderConfigurationResponse>) -> Self {
+            self.recommender_configuration_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRecommenderConfigurationOutput`](crate::output::UpdateRecommenderConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateRecommenderConfigurationOutput {
             crate::output::UpdateRecommenderConfigurationOutput {
-                recommender_configuration_response: self.recommender_configuration_response,
+                recommender_configuration_response: self.recommender_configuration_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRecommenderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRecommenderConfigurationOutput`](crate::output::UpdateRecommenderConfigurationOutput).
@@ -421,20 +402,20 @@ impl UpdateRecommenderConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePushTemplateOutput {
+pub struct UpdatePushTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdatePushTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`UpdatePushTemplateOutput`](crate::output::UpdatePushTemplateOutput).
 pub mod update_push_template_output {
-
+    
     /// A builder for [`UpdatePushTemplateOutput`](crate::output::UpdatePushTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -447,20 +428,19 @@ pub mod update_push_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePushTemplateOutput`](crate::output::UpdatePushTemplateOutput).
         pub fn build(self) -> crate::output::UpdatePushTemplateOutput {
             crate::output::UpdatePushTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePushTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePushTemplateOutput`](crate::output::UpdatePushTemplateOutput).
@@ -472,20 +452,20 @@ impl UpdatePushTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJourneyStateOutput {
+pub struct UpdateJourneyStateOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl UpdateJourneyStateOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+    pub fn journey_response(&self) -> std::option::Option<& crate::model::JourneyResponse> {
         self.journey_response.as_ref()
     }
 }
 /// See [`UpdateJourneyStateOutput`](crate::output::UpdateJourneyStateOutput).
 pub mod update_journey_state_output {
-
+    
     /// A builder for [`UpdateJourneyStateOutput`](crate::output::UpdateJourneyStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -498,20 +478,19 @@ pub mod update_journey_state_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-        pub fn set_journey_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneyResponse>,
-        ) -> Self {
-            self.journey_response = input;
-            self
+        pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
+            self.journey_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateJourneyStateOutput`](crate::output::UpdateJourneyStateOutput).
         pub fn build(self) -> crate::output::UpdateJourneyStateOutput {
             crate::output::UpdateJourneyStateOutput {
-                journey_response: self.journey_response,
+                journey_response: self.journey_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateJourneyStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJourneyStateOutput`](crate::output::UpdateJourneyStateOutput).
@@ -523,20 +502,20 @@ impl UpdateJourneyStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJourneyOutput {
+pub struct UpdateJourneyOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl UpdateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+    pub fn journey_response(&self) -> std::option::Option<& crate::model::JourneyResponse> {
         self.journey_response.as_ref()
     }
 }
 /// See [`UpdateJourneyOutput`](crate::output::UpdateJourneyOutput).
 pub mod update_journey_output {
-
+    
     /// A builder for [`UpdateJourneyOutput`](crate::output::UpdateJourneyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -549,20 +528,19 @@ pub mod update_journey_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-        pub fn set_journey_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneyResponse>,
-        ) -> Self {
-            self.journey_response = input;
-            self
+        pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
+            self.journey_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateJourneyOutput`](crate::output::UpdateJourneyOutput).
         pub fn build(self) -> crate::output::UpdateJourneyOutput {
             crate::output::UpdateJourneyOutput {
-                journey_response: self.journey_response,
+                journey_response: self.journey_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateJourneyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJourneyOutput`](crate::output::UpdateJourneyOutput).
@@ -574,20 +552,20 @@ impl UpdateJourneyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInAppTemplateOutput {
+pub struct UpdateInAppTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput).
 pub mod update_in_app_template_output {
-
+    
     /// A builder for [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -600,20 +578,19 @@ pub mod update_in_app_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput).
         pub fn build(self) -> crate::output::UpdateInAppTemplateOutput {
             crate::output::UpdateInAppTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInAppTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput).
@@ -625,20 +602,20 @@ impl UpdateInAppTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGcmChannelOutput {
+pub struct UpdateGcmChannelOutput  {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
 }
 impl UpdateGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    pub fn gcm_channel_response(&self) -> std::option::Option<&crate::model::GcmChannelResponse> {
+    pub fn gcm_channel_response(&self) -> std::option::Option<& crate::model::GcmChannelResponse> {
         self.gcm_channel_response.as_ref()
     }
 }
 /// See [`UpdateGcmChannelOutput`](crate::output::UpdateGcmChannelOutput).
 pub mod update_gcm_channel_output {
-
+    
     /// A builder for [`UpdateGcmChannelOutput`](crate::output::UpdateGcmChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -651,20 +628,19 @@ pub mod update_gcm_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-        pub fn set_gcm_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::GcmChannelResponse>,
-        ) -> Self {
-            self.gcm_channel_response = input;
-            self
+        pub fn set_gcm_channel_response(mut self, input: std::option::Option<crate::model::GcmChannelResponse>) -> Self {
+            self.gcm_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGcmChannelOutput`](crate::output::UpdateGcmChannelOutput).
         pub fn build(self) -> crate::output::UpdateGcmChannelOutput {
             crate::output::UpdateGcmChannelOutput {
-                gcm_channel_response: self.gcm_channel_response,
+                gcm_channel_response: self.gcm_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGcmChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGcmChannelOutput`](crate::output::UpdateGcmChannelOutput).
@@ -676,20 +652,20 @@ impl UpdateGcmChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEndpointsBatchOutput {
+pub struct UpdateEndpointsBatchOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateEndpointsBatchOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`UpdateEndpointsBatchOutput`](crate::output::UpdateEndpointsBatchOutput).
 pub mod update_endpoints_batch_output {
-
+    
     /// A builder for [`UpdateEndpointsBatchOutput`](crate::output::UpdateEndpointsBatchOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -702,20 +678,19 @@ pub mod update_endpoints_batch_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEndpointsBatchOutput`](crate::output::UpdateEndpointsBatchOutput).
         pub fn build(self) -> crate::output::UpdateEndpointsBatchOutput {
             crate::output::UpdateEndpointsBatchOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEndpointsBatchOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointsBatchOutput`](crate::output::UpdateEndpointsBatchOutput).
@@ -727,20 +702,20 @@ impl UpdateEndpointsBatchOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEndpointOutput {
+pub struct UpdateEndpointOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateEndpointOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
 pub mod update_endpoint_output {
-
+    
     /// A builder for [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -753,20 +728,19 @@ pub mod update_endpoint_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
         pub fn build(self) -> crate::output::UpdateEndpointOutput {
             crate::output::UpdateEndpointOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
@@ -778,20 +752,20 @@ impl UpdateEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEmailTemplateOutput {
+pub struct UpdateEmailTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl UpdateEmailTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
 pub mod update_email_template_output {
-
+    
     /// A builder for [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -804,20 +778,19 @@ pub mod update_email_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
         pub fn build(self) -> crate::output::UpdateEmailTemplateOutput {
             crate::output::UpdateEmailTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
@@ -829,22 +802,20 @@ impl UpdateEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEmailChannelOutput {
+pub struct UpdateEmailChannelOutput  {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
 }
 impl UpdateEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    pub fn email_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::EmailChannelResponse> {
+    pub fn email_channel_response(&self) -> std::option::Option<& crate::model::EmailChannelResponse> {
         self.email_channel_response.as_ref()
     }
 }
 /// See [`UpdateEmailChannelOutput`](crate::output::UpdateEmailChannelOutput).
 pub mod update_email_channel_output {
-
+    
     /// A builder for [`UpdateEmailChannelOutput`](crate::output::UpdateEmailChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -857,20 +828,19 @@ pub mod update_email_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the email channel for an application.</p>
-        pub fn set_email_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::EmailChannelResponse>,
-        ) -> Self {
-            self.email_channel_response = input;
-            self
+        pub fn set_email_channel_response(mut self, input: std::option::Option<crate::model::EmailChannelResponse>) -> Self {
+            self.email_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEmailChannelOutput`](crate::output::UpdateEmailChannelOutput).
         pub fn build(self) -> crate::output::UpdateEmailChannelOutput {
             crate::output::UpdateEmailChannelOutput {
-                email_channel_response: self.email_channel_response,
+                email_channel_response: self.email_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEmailChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEmailChannelOutput`](crate::output::UpdateEmailChannelOutput).
@@ -882,20 +852,20 @@ impl UpdateEmailChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCampaignOutput {
+pub struct UpdateCampaignOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl UpdateCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+    pub fn campaign_response(&self) -> std::option::Option<& crate::model::CampaignResponse> {
         self.campaign_response.as_ref()
     }
 }
 /// See [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput).
 pub mod update_campaign_output {
-
+    
     /// A builder for [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -908,20 +878,19 @@ pub mod update_campaign_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-        pub fn set_campaign_response(
-            mut self,
-            input: std::option::Option<crate::model::CampaignResponse>,
-        ) -> Self {
-            self.campaign_response = input;
-            self
+        pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
+            self.campaign_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput).
         pub fn build(self) -> crate::output::UpdateCampaignOutput {
             crate::output::UpdateCampaignOutput {
-                campaign_response: self.campaign_response,
+                campaign_response: self.campaign_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCampaignOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput).
@@ -933,22 +902,20 @@ impl UpdateCampaignOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBaiduChannelOutput {
+pub struct UpdateBaiduChannelOutput  {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
 }
 impl UpdateBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn baidu_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::BaiduChannelResponse> {
+    pub fn baidu_channel_response(&self) -> std::option::Option<& crate::model::BaiduChannelResponse> {
         self.baidu_channel_response.as_ref()
     }
 }
 /// See [`UpdateBaiduChannelOutput`](crate::output::UpdateBaiduChannelOutput).
 pub mod update_baidu_channel_output {
-
+    
     /// A builder for [`UpdateBaiduChannelOutput`](crate::output::UpdateBaiduChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -961,20 +928,19 @@ pub mod update_baidu_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-        pub fn set_baidu_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::BaiduChannelResponse>,
-        ) -> Self {
-            self.baidu_channel_response = input;
-            self
+        pub fn set_baidu_channel_response(mut self, input: std::option::Option<crate::model::BaiduChannelResponse>) -> Self {
+            self.baidu_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBaiduChannelOutput`](crate::output::UpdateBaiduChannelOutput).
         pub fn build(self) -> crate::output::UpdateBaiduChannelOutput {
             crate::output::UpdateBaiduChannelOutput {
-                baidu_channel_response: self.baidu_channel_response,
+                baidu_channel_response: self.baidu_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBaiduChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBaiduChannelOutput`](crate::output::UpdateBaiduChannelOutput).
@@ -986,53 +952,45 @@ impl UpdateBaiduChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationSettingsOutput {
+pub struct UpdateApplicationSettingsOutput  {
     /// <p>Provides information about an application, including the default settings for an application.</p>
     #[doc(hidden)]
-    pub application_settings_resource:
-        std::option::Option<crate::model::ApplicationSettingsResource>,
+    pub application_settings_resource: std::option::Option<crate::model::ApplicationSettingsResource>,
 }
 impl UpdateApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn application_settings_resource(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationSettingsResource> {
+    pub fn application_settings_resource(&self) -> std::option::Option<& crate::model::ApplicationSettingsResource> {
         self.application_settings_resource.as_ref()
     }
 }
 /// See [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
 pub mod update_application_settings_output {
-
+    
     /// A builder for [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_settings_resource:
-            std::option::Option<crate::model::ApplicationSettingsResource>,
+        pub(crate) application_settings_resource: std::option::Option<crate::model::ApplicationSettingsResource>,
     }
     impl Builder {
         /// <p>Provides information about an application, including the default settings for an application.</p>
-        pub fn application_settings_resource(
-            mut self,
-            input: crate::model::ApplicationSettingsResource,
-        ) -> Self {
+        pub fn application_settings_resource(mut self, input: crate::model::ApplicationSettingsResource) -> Self {
             self.application_settings_resource = Some(input);
             self
         }
         /// <p>Provides information about an application, including the default settings for an application.</p>
-        pub fn set_application_settings_resource(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationSettingsResource>,
-        ) -> Self {
-            self.application_settings_resource = input;
-            self
+        pub fn set_application_settings_resource(mut self, input: std::option::Option<crate::model::ApplicationSettingsResource>) -> Self {
+            self.application_settings_resource = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
         pub fn build(self) -> crate::output::UpdateApplicationSettingsOutput {
             crate::output::UpdateApplicationSettingsOutput {
-                application_settings_resource: self.application_settings_resource,
+                application_settings_resource: self.application_settings_resource
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApplicationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
@@ -1044,53 +1002,45 @@ impl UpdateApplicationSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApnsVoipSandboxChannelOutput {
+pub struct UpdateApnsVoipSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     #[doc(hidden)]
-    pub apns_voip_sandbox_channel_response:
-        std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+    pub apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
 }
 impl UpdateApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn apns_voip_sandbox_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsVoipSandboxChannelResponse> {
+    pub fn apns_voip_sandbox_channel_response(&self) -> std::option::Option<& crate::model::ApnsVoipSandboxChannelResponse> {
         self.apns_voip_sandbox_channel_response.as_ref()
     }
 }
 /// See [`UpdateApnsVoipSandboxChannelOutput`](crate::output::UpdateApnsVoipSandboxChannelOutput).
 pub mod update_apns_voip_sandbox_channel_output {
-
+    
     /// A builder for [`UpdateApnsVoipSandboxChannelOutput`](crate::output::UpdateApnsVoipSandboxChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_voip_sandbox_channel_response:
-            std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+        pub(crate) apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-        pub fn apns_voip_sandbox_channel_response(
-            mut self,
-            input: crate::model::ApnsVoipSandboxChannelResponse,
-        ) -> Self {
+        pub fn apns_voip_sandbox_channel_response(mut self, input: crate::model::ApnsVoipSandboxChannelResponse) -> Self {
             self.apns_voip_sandbox_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-        pub fn set_apns_voip_sandbox_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
-        ) -> Self {
-            self.apns_voip_sandbox_channel_response = input;
-            self
+        pub fn set_apns_voip_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>) -> Self {
+            self.apns_voip_sandbox_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApnsVoipSandboxChannelOutput`](crate::output::UpdateApnsVoipSandboxChannelOutput).
         pub fn build(self) -> crate::output::UpdateApnsVoipSandboxChannelOutput {
             crate::output::UpdateApnsVoipSandboxChannelOutput {
-                apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response,
+                apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApnsVoipSandboxChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApnsVoipSandboxChannelOutput`](crate::output::UpdateApnsVoipSandboxChannelOutput).
@@ -1102,52 +1052,45 @@ impl UpdateApnsVoipSandboxChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApnsVoipChannelOutput {
+pub struct UpdateApnsVoipChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
 }
 impl UpdateApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsVoipChannelResponse> {
+    pub fn apns_voip_channel_response(&self) -> std::option::Option<& crate::model::ApnsVoipChannelResponse> {
         self.apns_voip_channel_response.as_ref()
     }
 }
 /// See [`UpdateApnsVoipChannelOutput`](crate::output::UpdateApnsVoipChannelOutput).
 pub mod update_apns_voip_channel_output {
-
+    
     /// A builder for [`UpdateApnsVoipChannelOutput`](crate::output::UpdateApnsVoipChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_voip_channel_response:
-            std::option::Option<crate::model::ApnsVoipChannelResponse>,
+        pub(crate) apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-        pub fn apns_voip_channel_response(
-            mut self,
-            input: crate::model::ApnsVoipChannelResponse,
-        ) -> Self {
+        pub fn apns_voip_channel_response(mut self, input: crate::model::ApnsVoipChannelResponse) -> Self {
             self.apns_voip_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-        pub fn set_apns_voip_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsVoipChannelResponse>,
-        ) -> Self {
-            self.apns_voip_channel_response = input;
-            self
+        pub fn set_apns_voip_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipChannelResponse>) -> Self {
+            self.apns_voip_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApnsVoipChannelOutput`](crate::output::UpdateApnsVoipChannelOutput).
         pub fn build(self) -> crate::output::UpdateApnsVoipChannelOutput {
             crate::output::UpdateApnsVoipChannelOutput {
-                apns_voip_channel_response: self.apns_voip_channel_response,
+                apns_voip_channel_response: self.apns_voip_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApnsVoipChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApnsVoipChannelOutput`](crate::output::UpdateApnsVoipChannelOutput).
@@ -1159,53 +1102,45 @@ impl UpdateApnsVoipChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApnsSandboxChannelOutput {
+pub struct UpdateApnsSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     #[doc(hidden)]
-    pub apns_sandbox_channel_response:
-        std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+    pub apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
 impl UpdateApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn apns_sandbox_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsSandboxChannelResponse> {
+    pub fn apns_sandbox_channel_response(&self) -> std::option::Option<& crate::model::ApnsSandboxChannelResponse> {
         self.apns_sandbox_channel_response.as_ref()
     }
 }
 /// See [`UpdateApnsSandboxChannelOutput`](crate::output::UpdateApnsSandboxChannelOutput).
 pub mod update_apns_sandbox_channel_output {
-
+    
     /// A builder for [`UpdateApnsSandboxChannelOutput`](crate::output::UpdateApnsSandboxChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_sandbox_channel_response:
-            std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+        pub(crate) apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-        pub fn apns_sandbox_channel_response(
-            mut self,
-            input: crate::model::ApnsSandboxChannelResponse,
-        ) -> Self {
+        pub fn apns_sandbox_channel_response(mut self, input: crate::model::ApnsSandboxChannelResponse) -> Self {
             self.apns_sandbox_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-        pub fn set_apns_sandbox_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
-        ) -> Self {
-            self.apns_sandbox_channel_response = input;
-            self
+        pub fn set_apns_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsSandboxChannelResponse>) -> Self {
+            self.apns_sandbox_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApnsSandboxChannelOutput`](crate::output::UpdateApnsSandboxChannelOutput).
         pub fn build(self) -> crate::output::UpdateApnsSandboxChannelOutput {
             crate::output::UpdateApnsSandboxChannelOutput {
-                apns_sandbox_channel_response: self.apns_sandbox_channel_response,
+                apns_sandbox_channel_response: self.apns_sandbox_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApnsSandboxChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApnsSandboxChannelOutput`](crate::output::UpdateApnsSandboxChannelOutput).
@@ -1217,20 +1152,20 @@ impl UpdateApnsSandboxChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApnsChannelOutput {
+pub struct UpdateApnsChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
 impl UpdateApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn apns_channel_response(&self) -> std::option::Option<&crate::model::ApnsChannelResponse> {
+    pub fn apns_channel_response(&self) -> std::option::Option<& crate::model::ApnsChannelResponse> {
         self.apns_channel_response.as_ref()
     }
 }
 /// See [`UpdateApnsChannelOutput`](crate::output::UpdateApnsChannelOutput).
 pub mod update_apns_channel_output {
-
+    
     /// A builder for [`UpdateApnsChannelOutput`](crate::output::UpdateApnsChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1243,20 +1178,19 @@ pub mod update_apns_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-        pub fn set_apns_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsChannelResponse>,
-        ) -> Self {
-            self.apns_channel_response = input;
-            self
+        pub fn set_apns_channel_response(mut self, input: std::option::Option<crate::model::ApnsChannelResponse>) -> Self {
+            self.apns_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApnsChannelOutput`](crate::output::UpdateApnsChannelOutput).
         pub fn build(self) -> crate::output::UpdateApnsChannelOutput {
             crate::output::UpdateApnsChannelOutput {
-                apns_channel_response: self.apns_channel_response,
+                apns_channel_response: self.apns_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApnsChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApnsChannelOutput`](crate::output::UpdateApnsChannelOutput).
@@ -1268,20 +1202,20 @@ impl UpdateApnsChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAdmChannelOutput {
+pub struct UpdateAdmChannelOutput  {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
 }
 impl UpdateAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn adm_channel_response(&self) -> std::option::Option<&crate::model::AdmChannelResponse> {
+    pub fn adm_channel_response(&self) -> std::option::Option<& crate::model::AdmChannelResponse> {
         self.adm_channel_response.as_ref()
     }
 }
 /// See [`UpdateAdmChannelOutput`](crate::output::UpdateAdmChannelOutput).
 pub mod update_adm_channel_output {
-
+    
     /// A builder for [`UpdateAdmChannelOutput`](crate::output::UpdateAdmChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1294,20 +1228,19 @@ pub mod update_adm_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-        pub fn set_adm_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::AdmChannelResponse>,
-        ) -> Self {
-            self.adm_channel_response = input;
-            self
+        pub fn set_adm_channel_response(mut self, input: std::option::Option<crate::model::AdmChannelResponse>) -> Self {
+            self.adm_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAdmChannelOutput`](crate::output::UpdateAdmChannelOutput).
         pub fn build(self) -> crate::output::UpdateAdmChannelOutput {
             crate::output::UpdateAdmChannelOutput {
-                adm_channel_response: self.adm_channel_response,
+                adm_channel_response: self.adm_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAdmChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAdmChannelOutput`](crate::output::UpdateAdmChannelOutput).
@@ -1319,19 +1252,24 @@ impl UpdateAdmChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1343,19 +1281,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1367,52 +1310,45 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendUsersMessagesOutput {
+pub struct SendUsersMessagesOutput  {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
     #[doc(hidden)]
     pub send_users_message_response: std::option::Option<crate::model::SendUsersMessageResponse>,
 }
 impl SendUsersMessagesOutput {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
-    pub fn send_users_message_response(
-        &self,
-    ) -> std::option::Option<&crate::model::SendUsersMessageResponse> {
+    pub fn send_users_message_response(&self) -> std::option::Option<& crate::model::SendUsersMessageResponse> {
         self.send_users_message_response.as_ref()
     }
 }
 /// See [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput).
 pub mod send_users_messages_output {
-
+    
     /// A builder for [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) send_users_message_response:
-            std::option::Option<crate::model::SendUsersMessageResponse>,
+        pub(crate) send_users_message_response: std::option::Option<crate::model::SendUsersMessageResponse>,
     }
     impl Builder {
         /// <p>Provides information about which users and endpoints a message was sent to.</p>
-        pub fn send_users_message_response(
-            mut self,
-            input: crate::model::SendUsersMessageResponse,
-        ) -> Self {
+        pub fn send_users_message_response(mut self, input: crate::model::SendUsersMessageResponse) -> Self {
             self.send_users_message_response = Some(input);
             self
         }
         /// <p>Provides information about which users and endpoints a message was sent to.</p>
-        pub fn set_send_users_message_response(
-            mut self,
-            input: std::option::Option<crate::model::SendUsersMessageResponse>,
-        ) -> Self {
-            self.send_users_message_response = input;
-            self
+        pub fn set_send_users_message_response(mut self, input: std::option::Option<crate::model::SendUsersMessageResponse>) -> Self {
+            self.send_users_message_response = input; self
         }
         /// Consumes the builder and constructs a [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput).
         pub fn build(self) -> crate::output::SendUsersMessagesOutput {
             crate::output::SendUsersMessagesOutput {
-                send_users_message_response: self.send_users_message_response,
+                send_users_message_response: self.send_users_message_response
+                ,
             }
         }
     }
+    
+    
 }
 impl SendUsersMessagesOutput {
     /// Creates a new builder-style object to manufacture [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput).
@@ -1424,20 +1360,20 @@ impl SendUsersMessagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendOtpMessageOutput {
+pub struct SendOtpMessageOutput  {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     #[doc(hidden)]
     pub message_response: std::option::Option<crate::model::MessageResponse>,
 }
 impl SendOtpMessageOutput {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
-    pub fn message_response(&self) -> std::option::Option<&crate::model::MessageResponse> {
+    pub fn message_response(&self) -> std::option::Option<& crate::model::MessageResponse> {
         self.message_response.as_ref()
     }
 }
 /// See [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput).
 pub mod send_otp_message_output {
-
+    
     /// A builder for [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1450,20 +1386,19 @@ pub mod send_otp_message_output {
             self
         }
         /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
-        pub fn set_message_response(
-            mut self,
-            input: std::option::Option<crate::model::MessageResponse>,
-        ) -> Self {
-            self.message_response = input;
-            self
+        pub fn set_message_response(mut self, input: std::option::Option<crate::model::MessageResponse>) -> Self {
+            self.message_response = input; self
         }
         /// Consumes the builder and constructs a [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput).
         pub fn build(self) -> crate::output::SendOtpMessageOutput {
             crate::output::SendOtpMessageOutput {
-                message_response: self.message_response,
+                message_response: self.message_response
+                ,
             }
         }
     }
+    
+    
 }
 impl SendOtpMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput).
@@ -1475,20 +1410,20 @@ impl SendOtpMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendMessagesOutput {
+pub struct SendMessagesOutput  {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     #[doc(hidden)]
     pub message_response: std::option::Option<crate::model::MessageResponse>,
 }
 impl SendMessagesOutput {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
-    pub fn message_response(&self) -> std::option::Option<&crate::model::MessageResponse> {
+    pub fn message_response(&self) -> std::option::Option<& crate::model::MessageResponse> {
         self.message_response.as_ref()
     }
 }
 /// See [`SendMessagesOutput`](crate::output::SendMessagesOutput).
 pub mod send_messages_output {
-
+    
     /// A builder for [`SendMessagesOutput`](crate::output::SendMessagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1501,20 +1436,19 @@ pub mod send_messages_output {
             self
         }
         /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
-        pub fn set_message_response(
-            mut self,
-            input: std::option::Option<crate::model::MessageResponse>,
-        ) -> Self {
-            self.message_response = input;
-            self
+        pub fn set_message_response(mut self, input: std::option::Option<crate::model::MessageResponse>) -> Self {
+            self.message_response = input; self
         }
         /// Consumes the builder and constructs a [`SendMessagesOutput`](crate::output::SendMessagesOutput).
         pub fn build(self) -> crate::output::SendMessagesOutput {
             crate::output::SendMessagesOutput {
-                message_response: self.message_response,
+                message_response: self.message_response
+                ,
             }
         }
     }
+    
+    
 }
 impl SendMessagesOutput {
     /// Creates a new builder-style object to manufacture [`SendMessagesOutput`](crate::output::SendMessagesOutput).
@@ -1526,20 +1460,20 @@ impl SendMessagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAttributesOutput {
+pub struct RemoveAttributesOutput  {
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
     #[doc(hidden)]
     pub attributes_resource: std::option::Option<crate::model::AttributesResource>,
 }
 impl RemoveAttributesOutput {
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
-    pub fn attributes_resource(&self) -> std::option::Option<&crate::model::AttributesResource> {
+    pub fn attributes_resource(&self) -> std::option::Option<& crate::model::AttributesResource> {
         self.attributes_resource.as_ref()
     }
 }
 /// See [`RemoveAttributesOutput`](crate::output::RemoveAttributesOutput).
 pub mod remove_attributes_output {
-
+    
     /// A builder for [`RemoveAttributesOutput`](crate::output::RemoveAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1552,20 +1486,19 @@ pub mod remove_attributes_output {
             self
         }
         /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
-        pub fn set_attributes_resource(
-            mut self,
-            input: std::option::Option<crate::model::AttributesResource>,
-        ) -> Self {
-            self.attributes_resource = input;
-            self
+        pub fn set_attributes_resource(mut self, input: std::option::Option<crate::model::AttributesResource>) -> Self {
+            self.attributes_resource = input; self
         }
         /// Consumes the builder and constructs a [`RemoveAttributesOutput`](crate::output::RemoveAttributesOutput).
         pub fn build(self) -> crate::output::RemoveAttributesOutput {
             crate::output::RemoveAttributesOutput {
-                attributes_resource: self.attributes_resource,
+                attributes_resource: self.attributes_resource
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveAttributesOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAttributesOutput`](crate::output::RemoveAttributesOutput).
@@ -1577,20 +1510,20 @@ impl RemoveAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventStreamOutput {
+pub struct PutEventStreamOutput  {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
 }
 impl PutEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn event_stream(&self) -> std::option::Option<&crate::model::EventStream> {
+    pub fn event_stream(&self) -> std::option::Option<& crate::model::EventStream> {
         self.event_stream.as_ref()
     }
 }
 /// See [`PutEventStreamOutput`](crate::output::PutEventStreamOutput).
 pub mod put_event_stream_output {
-
+    
     /// A builder for [`PutEventStreamOutput`](crate::output::PutEventStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1603,20 +1536,19 @@ pub mod put_event_stream_output {
             self
         }
         /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-        pub fn set_event_stream(
-            mut self,
-            input: std::option::Option<crate::model::EventStream>,
-        ) -> Self {
-            self.event_stream = input;
-            self
+        pub fn set_event_stream(mut self, input: std::option::Option<crate::model::EventStream>) -> Self {
+            self.event_stream = input; self
         }
         /// Consumes the builder and constructs a [`PutEventStreamOutput`](crate::output::PutEventStreamOutput).
         pub fn build(self) -> crate::output::PutEventStreamOutput {
             crate::output::PutEventStreamOutput {
-                event_stream: self.event_stream,
+                event_stream: self.event_stream
+                ,
             }
         }
     }
+    
+    
 }
 impl PutEventStreamOutput {
     /// Creates a new builder-style object to manufacture [`PutEventStreamOutput`](crate::output::PutEventStreamOutput).
@@ -1628,20 +1560,20 @@ impl PutEventStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventsOutput {
+pub struct PutEventsOutput  {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
     #[doc(hidden)]
     pub events_response: std::option::Option<crate::model::EventsResponse>,
 }
 impl PutEventsOutput {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
-    pub fn events_response(&self) -> std::option::Option<&crate::model::EventsResponse> {
+    pub fn events_response(&self) -> std::option::Option<& crate::model::EventsResponse> {
         self.events_response.as_ref()
     }
 }
 /// See [`PutEventsOutput`](crate::output::PutEventsOutput).
 pub mod put_events_output {
-
+    
     /// A builder for [`PutEventsOutput`](crate::output::PutEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1654,20 +1586,19 @@ pub mod put_events_output {
             self
         }
         /// <p>Provides information about endpoints and the events that they're associated with.</p>
-        pub fn set_events_response(
-            mut self,
-            input: std::option::Option<crate::model::EventsResponse>,
-        ) -> Self {
-            self.events_response = input;
-            self
+        pub fn set_events_response(mut self, input: std::option::Option<crate::model::EventsResponse>) -> Self {
+            self.events_response = input; self
         }
         /// Consumes the builder and constructs a [`PutEventsOutput`](crate::output::PutEventsOutput).
         pub fn build(self) -> crate::output::PutEventsOutput {
             crate::output::PutEventsOutput {
-                events_response: self.events_response,
+                events_response: self.events_response
+                ,
             }
         }
     }
+    
+    
 }
 impl PutEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutEventsOutput`](crate::output::PutEventsOutput).
@@ -1679,52 +1610,45 @@ impl PutEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberValidateOutput {
+pub struct PhoneNumberValidateOutput  {
     /// <p>Provides information about a phone number.</p>
     #[doc(hidden)]
     pub number_validate_response: std::option::Option<crate::model::NumberValidateResponse>,
 }
 impl PhoneNumberValidateOutput {
     /// <p>Provides information about a phone number.</p>
-    pub fn number_validate_response(
-        &self,
-    ) -> std::option::Option<&crate::model::NumberValidateResponse> {
+    pub fn number_validate_response(&self) -> std::option::Option<& crate::model::NumberValidateResponse> {
         self.number_validate_response.as_ref()
     }
 }
 /// See [`PhoneNumberValidateOutput`](crate::output::PhoneNumberValidateOutput).
 pub mod phone_number_validate_output {
-
+    
     /// A builder for [`PhoneNumberValidateOutput`](crate::output::PhoneNumberValidateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) number_validate_response:
-            std::option::Option<crate::model::NumberValidateResponse>,
+        pub(crate) number_validate_response: std::option::Option<crate::model::NumberValidateResponse>,
     }
     impl Builder {
         /// <p>Provides information about a phone number.</p>
-        pub fn number_validate_response(
-            mut self,
-            input: crate::model::NumberValidateResponse,
-        ) -> Self {
+        pub fn number_validate_response(mut self, input: crate::model::NumberValidateResponse) -> Self {
             self.number_validate_response = Some(input);
             self
         }
         /// <p>Provides information about a phone number.</p>
-        pub fn set_number_validate_response(
-            mut self,
-            input: std::option::Option<crate::model::NumberValidateResponse>,
-        ) -> Self {
-            self.number_validate_response = input;
-            self
+        pub fn set_number_validate_response(mut self, input: std::option::Option<crate::model::NumberValidateResponse>) -> Self {
+            self.number_validate_response = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumberValidateOutput`](crate::output::PhoneNumberValidateOutput).
         pub fn build(self) -> crate::output::PhoneNumberValidateOutput {
             crate::output::PhoneNumberValidateOutput {
-                number_validate_response: self.number_validate_response,
+                number_validate_response: self.number_validate_response
+                ,
             }
         }
     }
+    
+    
 }
 impl PhoneNumberValidateOutput {
     /// Creates a new builder-style object to manufacture [`PhoneNumberValidateOutput`](crate::output::PhoneNumberValidateOutput).
@@ -1736,52 +1660,45 @@ impl PhoneNumberValidateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplateVersionsOutput {
+pub struct ListTemplateVersionsOutput  {
     /// <p>Provides information about all the versions of a specific message template.</p>
     #[doc(hidden)]
     pub template_versions_response: std::option::Option<crate::model::TemplateVersionsResponse>,
 }
 impl ListTemplateVersionsOutput {
     /// <p>Provides information about all the versions of a specific message template.</p>
-    pub fn template_versions_response(
-        &self,
-    ) -> std::option::Option<&crate::model::TemplateVersionsResponse> {
+    pub fn template_versions_response(&self) -> std::option::Option<& crate::model::TemplateVersionsResponse> {
         self.template_versions_response.as_ref()
     }
 }
 /// See [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
 pub mod list_template_versions_output {
-
+    
     /// A builder for [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) template_versions_response:
-            std::option::Option<crate::model::TemplateVersionsResponse>,
+        pub(crate) template_versions_response: std::option::Option<crate::model::TemplateVersionsResponse>,
     }
     impl Builder {
         /// <p>Provides information about all the versions of a specific message template.</p>
-        pub fn template_versions_response(
-            mut self,
-            input: crate::model::TemplateVersionsResponse,
-        ) -> Self {
+        pub fn template_versions_response(mut self, input: crate::model::TemplateVersionsResponse) -> Self {
             self.template_versions_response = Some(input);
             self
         }
         /// <p>Provides information about all the versions of a specific message template.</p>
-        pub fn set_template_versions_response(
-            mut self,
-            input: std::option::Option<crate::model::TemplateVersionsResponse>,
-        ) -> Self {
-            self.template_versions_response = input;
-            self
+        pub fn set_template_versions_response(mut self, input: std::option::Option<crate::model::TemplateVersionsResponse>) -> Self {
+            self.template_versions_response = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
         pub fn build(self) -> crate::output::ListTemplateVersionsOutput {
             crate::output::ListTemplateVersionsOutput {
-                template_versions_response: self.template_versions_response,
+                template_versions_response: self.template_versions_response
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
@@ -1793,20 +1710,20 @@ impl ListTemplateVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplatesOutput {
+pub struct ListTemplatesOutput  {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
     pub templates_response: std::option::Option<crate::model::TemplatesResponse>,
 }
 impl ListTemplatesOutput {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
-    pub fn templates_response(&self) -> std::option::Option<&crate::model::TemplatesResponse> {
+    pub fn templates_response(&self) -> std::option::Option<& crate::model::TemplatesResponse> {
         self.templates_response.as_ref()
     }
 }
 /// See [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
 pub mod list_templates_output {
-
+    
     /// A builder for [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1819,20 +1736,19 @@ pub mod list_templates_output {
             self
         }
         /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
-        pub fn set_templates_response(
-            mut self,
-            input: std::option::Option<crate::model::TemplatesResponse>,
-        ) -> Self {
-            self.templates_response = input;
-            self
+        pub fn set_templates_response(mut self, input: std::option::Option<crate::model::TemplatesResponse>) -> Self {
+            self.templates_response = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
         pub fn build(self) -> crate::output::ListTemplatesOutput {
             crate::output::ListTemplatesOutput {
-                templates_response: self.templates_response,
+                templates_response: self.templates_response
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
@@ -1844,20 +1760,20 @@ impl ListTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     #[doc(hidden)]
     pub tags_model: std::option::Option<crate::model::TagsModel>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
-    pub fn tags_model(&self) -> std::option::Option<&crate::model::TagsModel> {
+    pub fn tags_model(&self) -> std::option::Option<& crate::model::TagsModel> {
         self.tags_model.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1870,20 +1786,19 @@ pub mod list_tags_for_resource_output {
             self
         }
         /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
-        pub fn set_tags_model(
-            mut self,
-            input: std::option::Option<crate::model::TagsModel>,
-        ) -> Self {
-            self.tags_model = input;
-            self
+        pub fn set_tags_model(mut self, input: std::option::Option<crate::model::TagsModel>) -> Self {
+            self.tags_model = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags_model: self.tags_model,
+                tags_model: self.tags_model
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1895,20 +1810,20 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJourneysOutput {
+pub struct ListJourneysOutput  {
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
     #[doc(hidden)]
     pub journeys_response: std::option::Option<crate::model::JourneysResponse>,
 }
 impl ListJourneysOutput {
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
-    pub fn journeys_response(&self) -> std::option::Option<&crate::model::JourneysResponse> {
+    pub fn journeys_response(&self) -> std::option::Option<& crate::model::JourneysResponse> {
         self.journeys_response.as_ref()
     }
 }
 /// See [`ListJourneysOutput`](crate::output::ListJourneysOutput).
 pub mod list_journeys_output {
-
+    
     /// A builder for [`ListJourneysOutput`](crate::output::ListJourneysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1921,20 +1836,19 @@ pub mod list_journeys_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
-        pub fn set_journeys_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneysResponse>,
-        ) -> Self {
-            self.journeys_response = input;
-            self
+        pub fn set_journeys_response(mut self, input: std::option::Option<crate::model::JourneysResponse>) -> Self {
+            self.journeys_response = input; self
         }
         /// Consumes the builder and constructs a [`ListJourneysOutput`](crate::output::ListJourneysOutput).
         pub fn build(self) -> crate::output::ListJourneysOutput {
             crate::output::ListJourneysOutput {
-                journeys_response: self.journeys_response,
+                journeys_response: self.journeys_response
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJourneysOutput {
     /// Creates a new builder-style object to manufacture [`ListJourneysOutput`](crate::output::ListJourneysOutput).
@@ -1946,52 +1860,45 @@ impl ListJourneysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceTemplateOutput {
+pub struct GetVoiceTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     #[doc(hidden)]
     pub voice_template_response: std::option::Option<crate::model::VoiceTemplateResponse>,
 }
 impl GetVoiceTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    pub fn voice_template_response(
-        &self,
-    ) -> std::option::Option<&crate::model::VoiceTemplateResponse> {
+    pub fn voice_template_response(&self) -> std::option::Option<& crate::model::VoiceTemplateResponse> {
         self.voice_template_response.as_ref()
     }
 }
 /// See [`GetVoiceTemplateOutput`](crate::output::GetVoiceTemplateOutput).
 pub mod get_voice_template_output {
-
+    
     /// A builder for [`GetVoiceTemplateOutput`](crate::output::GetVoiceTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) voice_template_response:
-            std::option::Option<crate::model::VoiceTemplateResponse>,
+        pub(crate) voice_template_response: std::option::Option<crate::model::VoiceTemplateResponse>,
     }
     impl Builder {
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-        pub fn voice_template_response(
-            mut self,
-            input: crate::model::VoiceTemplateResponse,
-        ) -> Self {
+        pub fn voice_template_response(mut self, input: crate::model::VoiceTemplateResponse) -> Self {
             self.voice_template_response = Some(input);
             self
         }
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-        pub fn set_voice_template_response(
-            mut self,
-            input: std::option::Option<crate::model::VoiceTemplateResponse>,
-        ) -> Self {
-            self.voice_template_response = input;
-            self
+        pub fn set_voice_template_response(mut self, input: std::option::Option<crate::model::VoiceTemplateResponse>) -> Self {
+            self.voice_template_response = input; self
         }
         /// Consumes the builder and constructs a [`GetVoiceTemplateOutput`](crate::output::GetVoiceTemplateOutput).
         pub fn build(self) -> crate::output::GetVoiceTemplateOutput {
             crate::output::GetVoiceTemplateOutput {
-                voice_template_response: self.voice_template_response,
+                voice_template_response: self.voice_template_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceTemplateOutput`](crate::output::GetVoiceTemplateOutput).
@@ -2003,22 +1910,20 @@ impl GetVoiceTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceChannelOutput {
+pub struct GetVoiceChannelOutput  {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
 }
 impl GetVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-    pub fn voice_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::VoiceChannelResponse> {
+    pub fn voice_channel_response(&self) -> std::option::Option<& crate::model::VoiceChannelResponse> {
         self.voice_channel_response.as_ref()
     }
 }
 /// See [`GetVoiceChannelOutput`](crate::output::GetVoiceChannelOutput).
 pub mod get_voice_channel_output {
-
+    
     /// A builder for [`GetVoiceChannelOutput`](crate::output::GetVoiceChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2031,20 +1936,19 @@ pub mod get_voice_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-        pub fn set_voice_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::VoiceChannelResponse>,
-        ) -> Self {
-            self.voice_channel_response = input;
-            self
+        pub fn set_voice_channel_response(mut self, input: std::option::Option<crate::model::VoiceChannelResponse>) -> Self {
+            self.voice_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetVoiceChannelOutput`](crate::output::GetVoiceChannelOutput).
         pub fn build(self) -> crate::output::GetVoiceChannelOutput {
             crate::output::GetVoiceChannelOutput {
-                voice_channel_response: self.voice_channel_response,
+                voice_channel_response: self.voice_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVoiceChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceChannelOutput`](crate::output::GetVoiceChannelOutput).
@@ -2056,20 +1960,20 @@ impl GetVoiceChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserEndpointsOutput {
+pub struct GetUserEndpointsOutput  {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     #[doc(hidden)]
     pub endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
 }
 impl GetUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-    pub fn endpoints_response(&self) -> std::option::Option<&crate::model::EndpointsResponse> {
+    pub fn endpoints_response(&self) -> std::option::Option<& crate::model::EndpointsResponse> {
         self.endpoints_response.as_ref()
     }
 }
 /// See [`GetUserEndpointsOutput`](crate::output::GetUserEndpointsOutput).
 pub mod get_user_endpoints_output {
-
+    
     /// A builder for [`GetUserEndpointsOutput`](crate::output::GetUserEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2082,20 +1986,19 @@ pub mod get_user_endpoints_output {
             self
         }
         /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-        pub fn set_endpoints_response(
-            mut self,
-            input: std::option::Option<crate::model::EndpointsResponse>,
-        ) -> Self {
-            self.endpoints_response = input;
-            self
+        pub fn set_endpoints_response(mut self, input: std::option::Option<crate::model::EndpointsResponse>) -> Self {
+            self.endpoints_response = input; self
         }
         /// Consumes the builder and constructs a [`GetUserEndpointsOutput`](crate::output::GetUserEndpointsOutput).
         pub fn build(self) -> crate::output::GetUserEndpointsOutput {
             crate::output::GetUserEndpointsOutput {
-                endpoints_response: self.endpoints_response,
+                endpoints_response: self.endpoints_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUserEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`GetUserEndpointsOutput`](crate::output::GetUserEndpointsOutput).
@@ -2107,20 +2010,20 @@ impl GetUserEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSmsTemplateOutput {
+pub struct GetSmsTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     #[doc(hidden)]
     pub sms_template_response: std::option::Option<crate::model::SmsTemplateResponse>,
 }
 impl GetSmsTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn sms_template_response(&self) -> std::option::Option<&crate::model::SmsTemplateResponse> {
+    pub fn sms_template_response(&self) -> std::option::Option<& crate::model::SmsTemplateResponse> {
         self.sms_template_response.as_ref()
     }
 }
 /// See [`GetSmsTemplateOutput`](crate::output::GetSmsTemplateOutput).
 pub mod get_sms_template_output {
-
+    
     /// A builder for [`GetSmsTemplateOutput`](crate::output::GetSmsTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2133,20 +2036,19 @@ pub mod get_sms_template_output {
             self
         }
         /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-        pub fn set_sms_template_response(
-            mut self,
-            input: std::option::Option<crate::model::SmsTemplateResponse>,
-        ) -> Self {
-            self.sms_template_response = input;
-            self
+        pub fn set_sms_template_response(mut self, input: std::option::Option<crate::model::SmsTemplateResponse>) -> Self {
+            self.sms_template_response = input; self
         }
         /// Consumes the builder and constructs a [`GetSmsTemplateOutput`](crate::output::GetSmsTemplateOutput).
         pub fn build(self) -> crate::output::GetSmsTemplateOutput {
             crate::output::GetSmsTemplateOutput {
-                sms_template_response: self.sms_template_response,
+                sms_template_response: self.sms_template_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSmsTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetSmsTemplateOutput`](crate::output::GetSmsTemplateOutput).
@@ -2158,20 +2060,20 @@ impl GetSmsTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSmsChannelOutput {
+pub struct GetSmsChannelOutput  {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
 }
 impl GetSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-    pub fn sms_channel_response(&self) -> std::option::Option<&crate::model::SmsChannelResponse> {
+    pub fn sms_channel_response(&self) -> std::option::Option<& crate::model::SmsChannelResponse> {
         self.sms_channel_response.as_ref()
     }
 }
 /// See [`GetSmsChannelOutput`](crate::output::GetSmsChannelOutput).
 pub mod get_sms_channel_output {
-
+    
     /// A builder for [`GetSmsChannelOutput`](crate::output::GetSmsChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2184,20 +2086,19 @@ pub mod get_sms_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-        pub fn set_sms_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::SmsChannelResponse>,
-        ) -> Self {
-            self.sms_channel_response = input;
-            self
+        pub fn set_sms_channel_response(mut self, input: std::option::Option<crate::model::SmsChannelResponse>) -> Self {
+            self.sms_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetSmsChannelOutput`](crate::output::GetSmsChannelOutput).
         pub fn build(self) -> crate::output::GetSmsChannelOutput {
             crate::output::GetSmsChannelOutput {
-                sms_channel_response: self.sms_channel_response,
+                sms_channel_response: self.sms_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSmsChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetSmsChannelOutput`](crate::output::GetSmsChannelOutput).
@@ -2209,20 +2110,20 @@ impl GetSmsChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSegmentVersionsOutput {
+pub struct GetSegmentVersionsOutput  {
     /// <p>Provides information about all the segments that are associated with an application.</p>
     #[doc(hidden)]
     pub segments_response: std::option::Option<crate::model::SegmentsResponse>,
 }
 impl GetSegmentVersionsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
-    pub fn segments_response(&self) -> std::option::Option<&crate::model::SegmentsResponse> {
+    pub fn segments_response(&self) -> std::option::Option<& crate::model::SegmentsResponse> {
         self.segments_response.as_ref()
     }
 }
 /// See [`GetSegmentVersionsOutput`](crate::output::GetSegmentVersionsOutput).
 pub mod get_segment_versions_output {
-
+    
     /// A builder for [`GetSegmentVersionsOutput`](crate::output::GetSegmentVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2235,20 +2136,19 @@ pub mod get_segment_versions_output {
             self
         }
         /// <p>Provides information about all the segments that are associated with an application.</p>
-        pub fn set_segments_response(
-            mut self,
-            input: std::option::Option<crate::model::SegmentsResponse>,
-        ) -> Self {
-            self.segments_response = input;
-            self
+        pub fn set_segments_response(mut self, input: std::option::Option<crate::model::SegmentsResponse>) -> Self {
+            self.segments_response = input; self
         }
         /// Consumes the builder and constructs a [`GetSegmentVersionsOutput`](crate::output::GetSegmentVersionsOutput).
         pub fn build(self) -> crate::output::GetSegmentVersionsOutput {
             crate::output::GetSegmentVersionsOutput {
-                segments_response: self.segments_response,
+                segments_response: self.segments_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSegmentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentVersionsOutput`](crate::output::GetSegmentVersionsOutput).
@@ -2260,20 +2160,20 @@ impl GetSegmentVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSegmentVersionOutput {
+pub struct GetSegmentVersionOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl GetSegmentVersionOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+    pub fn segment_response(&self) -> std::option::Option<& crate::model::SegmentResponse> {
         self.segment_response.as_ref()
     }
 }
 /// See [`GetSegmentVersionOutput`](crate::output::GetSegmentVersionOutput).
 pub mod get_segment_version_output {
-
+    
     /// A builder for [`GetSegmentVersionOutput`](crate::output::GetSegmentVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2286,20 +2186,19 @@ pub mod get_segment_version_output {
             self
         }
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-        pub fn set_segment_response(
-            mut self,
-            input: std::option::Option<crate::model::SegmentResponse>,
-        ) -> Self {
-            self.segment_response = input;
-            self
+        pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
+            self.segment_response = input; self
         }
         /// Consumes the builder and constructs a [`GetSegmentVersionOutput`](crate::output::GetSegmentVersionOutput).
         pub fn build(self) -> crate::output::GetSegmentVersionOutput {
             crate::output::GetSegmentVersionOutput {
-                segment_response: self.segment_response,
+                segment_response: self.segment_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSegmentVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentVersionOutput`](crate::output::GetSegmentVersionOutput).
@@ -2311,20 +2210,20 @@ impl GetSegmentVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSegmentsOutput {
+pub struct GetSegmentsOutput  {
     /// <p>Provides information about all the segments that are associated with an application.</p>
     #[doc(hidden)]
     pub segments_response: std::option::Option<crate::model::SegmentsResponse>,
 }
 impl GetSegmentsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
-    pub fn segments_response(&self) -> std::option::Option<&crate::model::SegmentsResponse> {
+    pub fn segments_response(&self) -> std::option::Option<& crate::model::SegmentsResponse> {
         self.segments_response.as_ref()
     }
 }
 /// See [`GetSegmentsOutput`](crate::output::GetSegmentsOutput).
 pub mod get_segments_output {
-
+    
     /// A builder for [`GetSegmentsOutput`](crate::output::GetSegmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2337,20 +2236,19 @@ pub mod get_segments_output {
             self
         }
         /// <p>Provides information about all the segments that are associated with an application.</p>
-        pub fn set_segments_response(
-            mut self,
-            input: std::option::Option<crate::model::SegmentsResponse>,
-        ) -> Self {
-            self.segments_response = input;
-            self
+        pub fn set_segments_response(mut self, input: std::option::Option<crate::model::SegmentsResponse>) -> Self {
+            self.segments_response = input; self
         }
         /// Consumes the builder and constructs a [`GetSegmentsOutput`](crate::output::GetSegmentsOutput).
         pub fn build(self) -> crate::output::GetSegmentsOutput {
             crate::output::GetSegmentsOutput {
-                segments_response: self.segments_response,
+                segments_response: self.segments_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSegmentsOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentsOutput`](crate::output::GetSegmentsOutput).
@@ -2362,20 +2260,20 @@ impl GetSegmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSegmentImportJobsOutput {
+pub struct GetSegmentImportJobsOutput  {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     #[doc(hidden)]
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
 }
 impl GetSegmentImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
-    pub fn import_jobs_response(&self) -> std::option::Option<&crate::model::ImportJobsResponse> {
+    pub fn import_jobs_response(&self) -> std::option::Option<& crate::model::ImportJobsResponse> {
         self.import_jobs_response.as_ref()
     }
 }
 /// See [`GetSegmentImportJobsOutput`](crate::output::GetSegmentImportJobsOutput).
 pub mod get_segment_import_jobs_output {
-
+    
     /// A builder for [`GetSegmentImportJobsOutput`](crate::output::GetSegmentImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2388,20 +2286,19 @@ pub mod get_segment_import_jobs_output {
             self
         }
         /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
-        pub fn set_import_jobs_response(
-            mut self,
-            input: std::option::Option<crate::model::ImportJobsResponse>,
-        ) -> Self {
-            self.import_jobs_response = input;
-            self
+        pub fn set_import_jobs_response(mut self, input: std::option::Option<crate::model::ImportJobsResponse>) -> Self {
+            self.import_jobs_response = input; self
         }
         /// Consumes the builder and constructs a [`GetSegmentImportJobsOutput`](crate::output::GetSegmentImportJobsOutput).
         pub fn build(self) -> crate::output::GetSegmentImportJobsOutput {
             crate::output::GetSegmentImportJobsOutput {
-                import_jobs_response: self.import_jobs_response,
+                import_jobs_response: self.import_jobs_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSegmentImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentImportJobsOutput`](crate::output::GetSegmentImportJobsOutput).
@@ -2413,20 +2310,20 @@ impl GetSegmentImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSegmentExportJobsOutput {
+pub struct GetSegmentExportJobsOutput  {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     #[doc(hidden)]
     pub export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
 }
 impl GetSegmentExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
-    pub fn export_jobs_response(&self) -> std::option::Option<&crate::model::ExportJobsResponse> {
+    pub fn export_jobs_response(&self) -> std::option::Option<& crate::model::ExportJobsResponse> {
         self.export_jobs_response.as_ref()
     }
 }
 /// See [`GetSegmentExportJobsOutput`](crate::output::GetSegmentExportJobsOutput).
 pub mod get_segment_export_jobs_output {
-
+    
     /// A builder for [`GetSegmentExportJobsOutput`](crate::output::GetSegmentExportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2439,20 +2336,19 @@ pub mod get_segment_export_jobs_output {
             self
         }
         /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
-        pub fn set_export_jobs_response(
-            mut self,
-            input: std::option::Option<crate::model::ExportJobsResponse>,
-        ) -> Self {
-            self.export_jobs_response = input;
-            self
+        pub fn set_export_jobs_response(mut self, input: std::option::Option<crate::model::ExportJobsResponse>) -> Self {
+            self.export_jobs_response = input; self
         }
         /// Consumes the builder and constructs a [`GetSegmentExportJobsOutput`](crate::output::GetSegmentExportJobsOutput).
         pub fn build(self) -> crate::output::GetSegmentExportJobsOutput {
             crate::output::GetSegmentExportJobsOutput {
-                export_jobs_response: self.export_jobs_response,
+                export_jobs_response: self.export_jobs_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSegmentExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentExportJobsOutput`](crate::output::GetSegmentExportJobsOutput).
@@ -2464,20 +2360,20 @@ impl GetSegmentExportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSegmentOutput {
+pub struct GetSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl GetSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+    pub fn segment_response(&self) -> std::option::Option<& crate::model::SegmentResponse> {
         self.segment_response.as_ref()
     }
 }
 /// See [`GetSegmentOutput`](crate::output::GetSegmentOutput).
 pub mod get_segment_output {
-
+    
     /// A builder for [`GetSegmentOutput`](crate::output::GetSegmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2490,20 +2386,19 @@ pub mod get_segment_output {
             self
         }
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-        pub fn set_segment_response(
-            mut self,
-            input: std::option::Option<crate::model::SegmentResponse>,
-        ) -> Self {
-            self.segment_response = input;
-            self
+        pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
+            self.segment_response = input; self
         }
         /// Consumes the builder and constructs a [`GetSegmentOutput`](crate::output::GetSegmentOutput).
         pub fn build(self) -> crate::output::GetSegmentOutput {
             crate::output::GetSegmentOutput {
-                segment_response: self.segment_response,
+                segment_response: self.segment_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSegmentOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentOutput`](crate::output::GetSegmentOutput).
@@ -2515,54 +2410,45 @@ impl GetSegmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommenderConfigurationsOutput {
+pub struct GetRecommenderConfigurationsOutput  {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
-    pub list_recommender_configurations_response:
-        std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
+    pub list_recommender_configurations_response: std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
 }
 impl GetRecommenderConfigurationsOutput {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
-    pub fn list_recommender_configurations_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ListRecommenderConfigurationsResponse> {
+    pub fn list_recommender_configurations_response(&self) -> std::option::Option<& crate::model::ListRecommenderConfigurationsResponse> {
         self.list_recommender_configurations_response.as_ref()
     }
 }
 /// See [`GetRecommenderConfigurationsOutput`](crate::output::GetRecommenderConfigurationsOutput).
 pub mod get_recommender_configurations_output {
-
+    
     /// A builder for [`GetRecommenderConfigurationsOutput`](crate::output::GetRecommenderConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) list_recommender_configurations_response:
-            std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
+        pub(crate) list_recommender_configurations_response: std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
     }
     impl Builder {
         /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
-        pub fn list_recommender_configurations_response(
-            mut self,
-            input: crate::model::ListRecommenderConfigurationsResponse,
-        ) -> Self {
+        pub fn list_recommender_configurations_response(mut self, input: crate::model::ListRecommenderConfigurationsResponse) -> Self {
             self.list_recommender_configurations_response = Some(input);
             self
         }
         /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
-        pub fn set_list_recommender_configurations_response(
-            mut self,
-            input: std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
-        ) -> Self {
-            self.list_recommender_configurations_response = input;
-            self
+        pub fn set_list_recommender_configurations_response(mut self, input: std::option::Option<crate::model::ListRecommenderConfigurationsResponse>) -> Self {
+            self.list_recommender_configurations_response = input; self
         }
         /// Consumes the builder and constructs a [`GetRecommenderConfigurationsOutput`](crate::output::GetRecommenderConfigurationsOutput).
         pub fn build(self) -> crate::output::GetRecommenderConfigurationsOutput {
             crate::output::GetRecommenderConfigurationsOutput {
-                list_recommender_configurations_response: self
-                    .list_recommender_configurations_response,
+                list_recommender_configurations_response: self.list_recommender_configurations_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRecommenderConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommenderConfigurationsOutput`](crate::output::GetRecommenderConfigurationsOutput).
@@ -2574,53 +2460,45 @@ impl GetRecommenderConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommenderConfigurationOutput {
+pub struct GetRecommenderConfigurationOutput  {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
-    pub recommender_configuration_response:
-        std::option::Option<crate::model::RecommenderConfigurationResponse>,
+    pub recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
 impl GetRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-    pub fn recommender_configuration_response(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommenderConfigurationResponse> {
+    pub fn recommender_configuration_response(&self) -> std::option::Option<& crate::model::RecommenderConfigurationResponse> {
         self.recommender_configuration_response.as_ref()
     }
 }
 /// See [`GetRecommenderConfigurationOutput`](crate::output::GetRecommenderConfigurationOutput).
 pub mod get_recommender_configuration_output {
-
+    
     /// A builder for [`GetRecommenderConfigurationOutput`](crate::output::GetRecommenderConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommender_configuration_response:
-            std::option::Option<crate::model::RecommenderConfigurationResponse>,
+        pub(crate) recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
     }
     impl Builder {
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-        pub fn recommender_configuration_response(
-            mut self,
-            input: crate::model::RecommenderConfigurationResponse,
-        ) -> Self {
+        pub fn recommender_configuration_response(mut self, input: crate::model::RecommenderConfigurationResponse) -> Self {
             self.recommender_configuration_response = Some(input);
             self
         }
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-        pub fn set_recommender_configuration_response(
-            mut self,
-            input: std::option::Option<crate::model::RecommenderConfigurationResponse>,
-        ) -> Self {
-            self.recommender_configuration_response = input;
-            self
+        pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::model::RecommenderConfigurationResponse>) -> Self {
+            self.recommender_configuration_response = input; self
         }
         /// Consumes the builder and constructs a [`GetRecommenderConfigurationOutput`](crate::output::GetRecommenderConfigurationOutput).
         pub fn build(self) -> crate::output::GetRecommenderConfigurationOutput {
             crate::output::GetRecommenderConfigurationOutput {
-                recommender_configuration_response: self.recommender_configuration_response,
+                recommender_configuration_response: self.recommender_configuration_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRecommenderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommenderConfigurationOutput`](crate::output::GetRecommenderConfigurationOutput).
@@ -2632,53 +2510,45 @@ impl GetRecommenderConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPushTemplateOutput {
+pub struct GetPushTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     #[doc(hidden)]
-    pub push_notification_template_response:
-        std::option::Option<crate::model::PushNotificationTemplateResponse>,
+    pub push_notification_template_response: std::option::Option<crate::model::PushNotificationTemplateResponse>,
 }
 impl GetPushTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn push_notification_template_response(
-        &self,
-    ) -> std::option::Option<&crate::model::PushNotificationTemplateResponse> {
+    pub fn push_notification_template_response(&self) -> std::option::Option<& crate::model::PushNotificationTemplateResponse> {
         self.push_notification_template_response.as_ref()
     }
 }
 /// See [`GetPushTemplateOutput`](crate::output::GetPushTemplateOutput).
 pub mod get_push_template_output {
-
+    
     /// A builder for [`GetPushTemplateOutput`](crate::output::GetPushTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) push_notification_template_response:
-            std::option::Option<crate::model::PushNotificationTemplateResponse>,
+        pub(crate) push_notification_template_response: std::option::Option<crate::model::PushNotificationTemplateResponse>,
     }
     impl Builder {
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-        pub fn push_notification_template_response(
-            mut self,
-            input: crate::model::PushNotificationTemplateResponse,
-        ) -> Self {
+        pub fn push_notification_template_response(mut self, input: crate::model::PushNotificationTemplateResponse) -> Self {
             self.push_notification_template_response = Some(input);
             self
         }
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-        pub fn set_push_notification_template_response(
-            mut self,
-            input: std::option::Option<crate::model::PushNotificationTemplateResponse>,
-        ) -> Self {
-            self.push_notification_template_response = input;
-            self
+        pub fn set_push_notification_template_response(mut self, input: std::option::Option<crate::model::PushNotificationTemplateResponse>) -> Self {
+            self.push_notification_template_response = input; self
         }
         /// Consumes the builder and constructs a [`GetPushTemplateOutput`](crate::output::GetPushTemplateOutput).
         pub fn build(self) -> crate::output::GetPushTemplateOutput {
             crate::output::GetPushTemplateOutput {
-                push_notification_template_response: self.push_notification_template_response,
+                push_notification_template_response: self.push_notification_template_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPushTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetPushTemplateOutput`](crate::output::GetPushTemplateOutput).
@@ -2690,53 +2560,45 @@ impl GetPushTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJourneyExecutionMetricsOutput {
+pub struct GetJourneyExecutionMetricsOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
     #[doc(hidden)]
-    pub journey_execution_metrics_response:
-        std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
+    pub journey_execution_metrics_response: std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
 }
 impl GetJourneyExecutionMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
-    pub fn journey_execution_metrics_response(
-        &self,
-    ) -> std::option::Option<&crate::model::JourneyExecutionMetricsResponse> {
+    pub fn journey_execution_metrics_response(&self) -> std::option::Option<& crate::model::JourneyExecutionMetricsResponse> {
         self.journey_execution_metrics_response.as_ref()
     }
 }
 /// See [`GetJourneyExecutionMetricsOutput`](crate::output::GetJourneyExecutionMetricsOutput).
 pub mod get_journey_execution_metrics_output {
-
+    
     /// A builder for [`GetJourneyExecutionMetricsOutput`](crate::output::GetJourneyExecutionMetricsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) journey_execution_metrics_response:
-            std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
+        pub(crate) journey_execution_metrics_response: std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
-        pub fn journey_execution_metrics_response(
-            mut self,
-            input: crate::model::JourneyExecutionMetricsResponse,
-        ) -> Self {
+        pub fn journey_execution_metrics_response(mut self, input: crate::model::JourneyExecutionMetricsResponse) -> Self {
             self.journey_execution_metrics_response = Some(input);
             self
         }
         /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
-        pub fn set_journey_execution_metrics_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
-        ) -> Self {
-            self.journey_execution_metrics_response = input;
-            self
+        pub fn set_journey_execution_metrics_response(mut self, input: std::option::Option<crate::model::JourneyExecutionMetricsResponse>) -> Self {
+            self.journey_execution_metrics_response = input; self
         }
         /// Consumes the builder and constructs a [`GetJourneyExecutionMetricsOutput`](crate::output::GetJourneyExecutionMetricsOutput).
         pub fn build(self) -> crate::output::GetJourneyExecutionMetricsOutput {
             crate::output::GetJourneyExecutionMetricsOutput {
-                journey_execution_metrics_response: self.journey_execution_metrics_response,
+                journey_execution_metrics_response: self.journey_execution_metrics_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetJourneyExecutionMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetJourneyExecutionMetricsOutput`](crate::output::GetJourneyExecutionMetricsOutput).
@@ -2748,54 +2610,45 @@ impl GetJourneyExecutionMetricsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJourneyExecutionActivityMetricsOutput {
+pub struct GetJourneyExecutionActivityMetricsOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
     #[doc(hidden)]
-    pub journey_execution_activity_metrics_response:
-        std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
+    pub journey_execution_activity_metrics_response: std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
 }
 impl GetJourneyExecutionActivityMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
-    pub fn journey_execution_activity_metrics_response(
-        &self,
-    ) -> std::option::Option<&crate::model::JourneyExecutionActivityMetricsResponse> {
+    pub fn journey_execution_activity_metrics_response(&self) -> std::option::Option<& crate::model::JourneyExecutionActivityMetricsResponse> {
         self.journey_execution_activity_metrics_response.as_ref()
     }
 }
 /// See [`GetJourneyExecutionActivityMetricsOutput`](crate::output::GetJourneyExecutionActivityMetricsOutput).
 pub mod get_journey_execution_activity_metrics_output {
-
+    
     /// A builder for [`GetJourneyExecutionActivityMetricsOutput`](crate::output::GetJourneyExecutionActivityMetricsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) journey_execution_activity_metrics_response:
-            std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
+        pub(crate) journey_execution_activity_metrics_response: std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
-        pub fn journey_execution_activity_metrics_response(
-            mut self,
-            input: crate::model::JourneyExecutionActivityMetricsResponse,
-        ) -> Self {
+        pub fn journey_execution_activity_metrics_response(mut self, input: crate::model::JourneyExecutionActivityMetricsResponse) -> Self {
             self.journey_execution_activity_metrics_response = Some(input);
             self
         }
         /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
-        pub fn set_journey_execution_activity_metrics_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
-        ) -> Self {
-            self.journey_execution_activity_metrics_response = input;
-            self
+        pub fn set_journey_execution_activity_metrics_response(mut self, input: std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>) -> Self {
+            self.journey_execution_activity_metrics_response = input; self
         }
         /// Consumes the builder and constructs a [`GetJourneyExecutionActivityMetricsOutput`](crate::output::GetJourneyExecutionActivityMetricsOutput).
         pub fn build(self) -> crate::output::GetJourneyExecutionActivityMetricsOutput {
             crate::output::GetJourneyExecutionActivityMetricsOutput {
-                journey_execution_activity_metrics_response: self
-                    .journey_execution_activity_metrics_response,
+                journey_execution_activity_metrics_response: self.journey_execution_activity_metrics_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetJourneyExecutionActivityMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetJourneyExecutionActivityMetricsOutput`](crate::output::GetJourneyExecutionActivityMetricsOutput).
@@ -2807,53 +2660,45 @@ impl GetJourneyExecutionActivityMetricsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJourneyDateRangeKpiOutput {
+pub struct GetJourneyDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
     #[doc(hidden)]
-    pub journey_date_range_kpi_response:
-        std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
+    pub journey_date_range_kpi_response: std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
 }
 impl GetJourneyDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
-    pub fn journey_date_range_kpi_response(
-        &self,
-    ) -> std::option::Option<&crate::model::JourneyDateRangeKpiResponse> {
+    pub fn journey_date_range_kpi_response(&self) -> std::option::Option<& crate::model::JourneyDateRangeKpiResponse> {
         self.journey_date_range_kpi_response.as_ref()
     }
 }
 /// See [`GetJourneyDateRangeKpiOutput`](crate::output::GetJourneyDateRangeKpiOutput).
 pub mod get_journey_date_range_kpi_output {
-
+    
     /// A builder for [`GetJourneyDateRangeKpiOutput`](crate::output::GetJourneyDateRangeKpiOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) journey_date_range_kpi_response:
-            std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
+        pub(crate) journey_date_range_kpi_response: std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
-        pub fn journey_date_range_kpi_response(
-            mut self,
-            input: crate::model::JourneyDateRangeKpiResponse,
-        ) -> Self {
+        pub fn journey_date_range_kpi_response(mut self, input: crate::model::JourneyDateRangeKpiResponse) -> Self {
             self.journey_date_range_kpi_response = Some(input);
             self
         }
         /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
-        pub fn set_journey_date_range_kpi_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
-        ) -> Self {
-            self.journey_date_range_kpi_response = input;
-            self
+        pub fn set_journey_date_range_kpi_response(mut self, input: std::option::Option<crate::model::JourneyDateRangeKpiResponse>) -> Self {
+            self.journey_date_range_kpi_response = input; self
         }
         /// Consumes the builder and constructs a [`GetJourneyDateRangeKpiOutput`](crate::output::GetJourneyDateRangeKpiOutput).
         pub fn build(self) -> crate::output::GetJourneyDateRangeKpiOutput {
             crate::output::GetJourneyDateRangeKpiOutput {
-                journey_date_range_kpi_response: self.journey_date_range_kpi_response,
+                journey_date_range_kpi_response: self.journey_date_range_kpi_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetJourneyDateRangeKpiOutput {
     /// Creates a new builder-style object to manufacture [`GetJourneyDateRangeKpiOutput`](crate::output::GetJourneyDateRangeKpiOutput).
@@ -2865,20 +2710,20 @@ impl GetJourneyDateRangeKpiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJourneyOutput {
+pub struct GetJourneyOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl GetJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+    pub fn journey_response(&self) -> std::option::Option<& crate::model::JourneyResponse> {
         self.journey_response.as_ref()
     }
 }
 /// See [`GetJourneyOutput`](crate::output::GetJourneyOutput).
 pub mod get_journey_output {
-
+    
     /// A builder for [`GetJourneyOutput`](crate::output::GetJourneyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2891,20 +2736,19 @@ pub mod get_journey_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-        pub fn set_journey_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneyResponse>,
-        ) -> Self {
-            self.journey_response = input;
-            self
+        pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
+            self.journey_response = input; self
         }
         /// Consumes the builder and constructs a [`GetJourneyOutput`](crate::output::GetJourneyOutput).
         pub fn build(self) -> crate::output::GetJourneyOutput {
             crate::output::GetJourneyOutput {
-                journey_response: self.journey_response,
+                journey_response: self.journey_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetJourneyOutput {
     /// Creates a new builder-style object to manufacture [`GetJourneyOutput`](crate::output::GetJourneyOutput).
@@ -2916,52 +2760,45 @@ impl GetJourneyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInAppTemplateOutput {
+pub struct GetInAppTemplateOutput  {
     /// <p>In-App Template Response.</p>
     #[doc(hidden)]
     pub in_app_template_response: std::option::Option<crate::model::InAppTemplateResponse>,
 }
 impl GetInAppTemplateOutput {
     /// <p>In-App Template Response.</p>
-    pub fn in_app_template_response(
-        &self,
-    ) -> std::option::Option<&crate::model::InAppTemplateResponse> {
+    pub fn in_app_template_response(&self) -> std::option::Option<& crate::model::InAppTemplateResponse> {
         self.in_app_template_response.as_ref()
     }
 }
 /// See [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput).
 pub mod get_in_app_template_output {
-
+    
     /// A builder for [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) in_app_template_response:
-            std::option::Option<crate::model::InAppTemplateResponse>,
+        pub(crate) in_app_template_response: std::option::Option<crate::model::InAppTemplateResponse>,
     }
     impl Builder {
         /// <p>In-App Template Response.</p>
-        pub fn in_app_template_response(
-            mut self,
-            input: crate::model::InAppTemplateResponse,
-        ) -> Self {
+        pub fn in_app_template_response(mut self, input: crate::model::InAppTemplateResponse) -> Self {
             self.in_app_template_response = Some(input);
             self
         }
         /// <p>In-App Template Response.</p>
-        pub fn set_in_app_template_response(
-            mut self,
-            input: std::option::Option<crate::model::InAppTemplateResponse>,
-        ) -> Self {
-            self.in_app_template_response = input;
-            self
+        pub fn set_in_app_template_response(mut self, input: std::option::Option<crate::model::InAppTemplateResponse>) -> Self {
+            self.in_app_template_response = input; self
         }
         /// Consumes the builder and constructs a [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput).
         pub fn build(self) -> crate::output::GetInAppTemplateOutput {
             crate::output::GetInAppTemplateOutput {
-                in_app_template_response: self.in_app_template_response,
+                in_app_template_response: self.in_app_template_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInAppTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput).
@@ -2973,52 +2810,45 @@ impl GetInAppTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInAppMessagesOutput {
+pub struct GetInAppMessagesOutput  {
     /// <p>Get in-app messages response object.</p>
     #[doc(hidden)]
     pub in_app_messages_response: std::option::Option<crate::model::InAppMessagesResponse>,
 }
 impl GetInAppMessagesOutput {
     /// <p>Get in-app messages response object.</p>
-    pub fn in_app_messages_response(
-        &self,
-    ) -> std::option::Option<&crate::model::InAppMessagesResponse> {
+    pub fn in_app_messages_response(&self) -> std::option::Option<& crate::model::InAppMessagesResponse> {
         self.in_app_messages_response.as_ref()
     }
 }
 /// See [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput).
 pub mod get_in_app_messages_output {
-
+    
     /// A builder for [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) in_app_messages_response:
-            std::option::Option<crate::model::InAppMessagesResponse>,
+        pub(crate) in_app_messages_response: std::option::Option<crate::model::InAppMessagesResponse>,
     }
     impl Builder {
         /// <p>Get in-app messages response object.</p>
-        pub fn in_app_messages_response(
-            mut self,
-            input: crate::model::InAppMessagesResponse,
-        ) -> Self {
+        pub fn in_app_messages_response(mut self, input: crate::model::InAppMessagesResponse) -> Self {
             self.in_app_messages_response = Some(input);
             self
         }
         /// <p>Get in-app messages response object.</p>
-        pub fn set_in_app_messages_response(
-            mut self,
-            input: std::option::Option<crate::model::InAppMessagesResponse>,
-        ) -> Self {
-            self.in_app_messages_response = input;
-            self
+        pub fn set_in_app_messages_response(mut self, input: std::option::Option<crate::model::InAppMessagesResponse>) -> Self {
+            self.in_app_messages_response = input; self
         }
         /// Consumes the builder and constructs a [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput).
         pub fn build(self) -> crate::output::GetInAppMessagesOutput {
             crate::output::GetInAppMessagesOutput {
-                in_app_messages_response: self.in_app_messages_response,
+                in_app_messages_response: self.in_app_messages_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInAppMessagesOutput {
     /// Creates a new builder-style object to manufacture [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput).
@@ -3030,20 +2860,20 @@ impl GetInAppMessagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImportJobsOutput {
+pub struct GetImportJobsOutput  {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     #[doc(hidden)]
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
 }
 impl GetImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
-    pub fn import_jobs_response(&self) -> std::option::Option<&crate::model::ImportJobsResponse> {
+    pub fn import_jobs_response(&self) -> std::option::Option<& crate::model::ImportJobsResponse> {
         self.import_jobs_response.as_ref()
     }
 }
 /// See [`GetImportJobsOutput`](crate::output::GetImportJobsOutput).
 pub mod get_import_jobs_output {
-
+    
     /// A builder for [`GetImportJobsOutput`](crate::output::GetImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3056,20 +2886,19 @@ pub mod get_import_jobs_output {
             self
         }
         /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
-        pub fn set_import_jobs_response(
-            mut self,
-            input: std::option::Option<crate::model::ImportJobsResponse>,
-        ) -> Self {
-            self.import_jobs_response = input;
-            self
+        pub fn set_import_jobs_response(mut self, input: std::option::Option<crate::model::ImportJobsResponse>) -> Self {
+            self.import_jobs_response = input; self
         }
         /// Consumes the builder and constructs a [`GetImportJobsOutput`](crate::output::GetImportJobsOutput).
         pub fn build(self) -> crate::output::GetImportJobsOutput {
             crate::output::GetImportJobsOutput {
-                import_jobs_response: self.import_jobs_response,
+                import_jobs_response: self.import_jobs_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetImportJobsOutput`](crate::output::GetImportJobsOutput).
@@ -3081,20 +2910,20 @@ impl GetImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImportJobOutput {
+pub struct GetImportJobOutput  {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub import_job_response: std::option::Option<crate::model::ImportJobResponse>,
 }
 impl GetImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
-    pub fn import_job_response(&self) -> std::option::Option<&crate::model::ImportJobResponse> {
+    pub fn import_job_response(&self) -> std::option::Option<& crate::model::ImportJobResponse> {
         self.import_job_response.as_ref()
     }
 }
 /// See [`GetImportJobOutput`](crate::output::GetImportJobOutput).
 pub mod get_import_job_output {
-
+    
     /// A builder for [`GetImportJobOutput`](crate::output::GetImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3107,20 +2936,19 @@ pub mod get_import_job_output {
             self
         }
         /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
-        pub fn set_import_job_response(
-            mut self,
-            input: std::option::Option<crate::model::ImportJobResponse>,
-        ) -> Self {
-            self.import_job_response = input;
-            self
+        pub fn set_import_job_response(mut self, input: std::option::Option<crate::model::ImportJobResponse>) -> Self {
+            self.import_job_response = input; self
         }
         /// Consumes the builder and constructs a [`GetImportJobOutput`](crate::output::GetImportJobOutput).
         pub fn build(self) -> crate::output::GetImportJobOutput {
             crate::output::GetImportJobOutput {
-                import_job_response: self.import_job_response,
+                import_job_response: self.import_job_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetImportJobOutput`](crate::output::GetImportJobOutput).
@@ -3132,20 +2960,20 @@ impl GetImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGcmChannelOutput {
+pub struct GetGcmChannelOutput  {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
 }
 impl GetGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    pub fn gcm_channel_response(&self) -> std::option::Option<&crate::model::GcmChannelResponse> {
+    pub fn gcm_channel_response(&self) -> std::option::Option<& crate::model::GcmChannelResponse> {
         self.gcm_channel_response.as_ref()
     }
 }
 /// See [`GetGcmChannelOutput`](crate::output::GetGcmChannelOutput).
 pub mod get_gcm_channel_output {
-
+    
     /// A builder for [`GetGcmChannelOutput`](crate::output::GetGcmChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3158,20 +2986,19 @@ pub mod get_gcm_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-        pub fn set_gcm_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::GcmChannelResponse>,
-        ) -> Self {
-            self.gcm_channel_response = input;
-            self
+        pub fn set_gcm_channel_response(mut self, input: std::option::Option<crate::model::GcmChannelResponse>) -> Self {
+            self.gcm_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetGcmChannelOutput`](crate::output::GetGcmChannelOutput).
         pub fn build(self) -> crate::output::GetGcmChannelOutput {
             crate::output::GetGcmChannelOutput {
-                gcm_channel_response: self.gcm_channel_response,
+                gcm_channel_response: self.gcm_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGcmChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetGcmChannelOutput`](crate::output::GetGcmChannelOutput).
@@ -3183,20 +3010,20 @@ impl GetGcmChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExportJobsOutput {
+pub struct GetExportJobsOutput  {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     #[doc(hidden)]
     pub export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
 }
 impl GetExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
-    pub fn export_jobs_response(&self) -> std::option::Option<&crate::model::ExportJobsResponse> {
+    pub fn export_jobs_response(&self) -> std::option::Option<& crate::model::ExportJobsResponse> {
         self.export_jobs_response.as_ref()
     }
 }
 /// See [`GetExportJobsOutput`](crate::output::GetExportJobsOutput).
 pub mod get_export_jobs_output {
-
+    
     /// A builder for [`GetExportJobsOutput`](crate::output::GetExportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3209,20 +3036,19 @@ pub mod get_export_jobs_output {
             self
         }
         /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
-        pub fn set_export_jobs_response(
-            mut self,
-            input: std::option::Option<crate::model::ExportJobsResponse>,
-        ) -> Self {
-            self.export_jobs_response = input;
-            self
+        pub fn set_export_jobs_response(mut self, input: std::option::Option<crate::model::ExportJobsResponse>) -> Self {
+            self.export_jobs_response = input; self
         }
         /// Consumes the builder and constructs a [`GetExportJobsOutput`](crate::output::GetExportJobsOutput).
         pub fn build(self) -> crate::output::GetExportJobsOutput {
             crate::output::GetExportJobsOutput {
-                export_jobs_response: self.export_jobs_response,
+                export_jobs_response: self.export_jobs_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetExportJobsOutput`](crate::output::GetExportJobsOutput).
@@ -3234,20 +3060,20 @@ impl GetExportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExportJobOutput {
+pub struct GetExportJobOutput  {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub export_job_response: std::option::Option<crate::model::ExportJobResponse>,
 }
 impl GetExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
-    pub fn export_job_response(&self) -> std::option::Option<&crate::model::ExportJobResponse> {
+    pub fn export_job_response(&self) -> std::option::Option<& crate::model::ExportJobResponse> {
         self.export_job_response.as_ref()
     }
 }
 /// See [`GetExportJobOutput`](crate::output::GetExportJobOutput).
 pub mod get_export_job_output {
-
+    
     /// A builder for [`GetExportJobOutput`](crate::output::GetExportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3260,20 +3086,19 @@ pub mod get_export_job_output {
             self
         }
         /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
-        pub fn set_export_job_response(
-            mut self,
-            input: std::option::Option<crate::model::ExportJobResponse>,
-        ) -> Self {
-            self.export_job_response = input;
-            self
+        pub fn set_export_job_response(mut self, input: std::option::Option<crate::model::ExportJobResponse>) -> Self {
+            self.export_job_response = input; self
         }
         /// Consumes the builder and constructs a [`GetExportJobOutput`](crate::output::GetExportJobOutput).
         pub fn build(self) -> crate::output::GetExportJobOutput {
             crate::output::GetExportJobOutput {
-                export_job_response: self.export_job_response,
+                export_job_response: self.export_job_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetExportJobOutput`](crate::output::GetExportJobOutput).
@@ -3285,20 +3110,20 @@ impl GetExportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventStreamOutput {
+pub struct GetEventStreamOutput  {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
 }
 impl GetEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn event_stream(&self) -> std::option::Option<&crate::model::EventStream> {
+    pub fn event_stream(&self) -> std::option::Option<& crate::model::EventStream> {
         self.event_stream.as_ref()
     }
 }
 /// See [`GetEventStreamOutput`](crate::output::GetEventStreamOutput).
 pub mod get_event_stream_output {
-
+    
     /// A builder for [`GetEventStreamOutput`](crate::output::GetEventStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3311,20 +3136,19 @@ pub mod get_event_stream_output {
             self
         }
         /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-        pub fn set_event_stream(
-            mut self,
-            input: std::option::Option<crate::model::EventStream>,
-        ) -> Self {
-            self.event_stream = input;
-            self
+        pub fn set_event_stream(mut self, input: std::option::Option<crate::model::EventStream>) -> Self {
+            self.event_stream = input; self
         }
         /// Consumes the builder and constructs a [`GetEventStreamOutput`](crate::output::GetEventStreamOutput).
         pub fn build(self) -> crate::output::GetEventStreamOutput {
             crate::output::GetEventStreamOutput {
-                event_stream: self.event_stream,
+                event_stream: self.event_stream
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEventStreamOutput {
     /// Creates a new builder-style object to manufacture [`GetEventStreamOutput`](crate::output::GetEventStreamOutput).
@@ -3336,20 +3160,20 @@ impl GetEventStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEndpointOutput {
+pub struct GetEndpointOutput  {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     #[doc(hidden)]
     pub endpoint_response: std::option::Option<crate::model::EndpointResponse>,
 }
 impl GetEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
-    pub fn endpoint_response(&self) -> std::option::Option<&crate::model::EndpointResponse> {
+    pub fn endpoint_response(&self) -> std::option::Option<& crate::model::EndpointResponse> {
         self.endpoint_response.as_ref()
     }
 }
 /// See [`GetEndpointOutput`](crate::output::GetEndpointOutput).
 pub mod get_endpoint_output {
-
+    
     /// A builder for [`GetEndpointOutput`](crate::output::GetEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3362,20 +3186,19 @@ pub mod get_endpoint_output {
             self
         }
         /// <p>Provides information about the channel type and other settings for an endpoint.</p>
-        pub fn set_endpoint_response(
-            mut self,
-            input: std::option::Option<crate::model::EndpointResponse>,
-        ) -> Self {
-            self.endpoint_response = input;
-            self
+        pub fn set_endpoint_response(mut self, input: std::option::Option<crate::model::EndpointResponse>) -> Self {
+            self.endpoint_response = input; self
         }
         /// Consumes the builder and constructs a [`GetEndpointOutput`](crate::output::GetEndpointOutput).
         pub fn build(self) -> crate::output::GetEndpointOutput {
             crate::output::GetEndpointOutput {
-                endpoint_response: self.endpoint_response,
+                endpoint_response: self.endpoint_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetEndpointOutput`](crate::output::GetEndpointOutput).
@@ -3387,52 +3210,45 @@ impl GetEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEmailTemplateOutput {
+pub struct GetEmailTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
     #[doc(hidden)]
     pub email_template_response: std::option::Option<crate::model::EmailTemplateResponse>,
 }
 impl GetEmailTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn email_template_response(
-        &self,
-    ) -> std::option::Option<&crate::model::EmailTemplateResponse> {
+    pub fn email_template_response(&self) -> std::option::Option<& crate::model::EmailTemplateResponse> {
         self.email_template_response.as_ref()
     }
 }
 /// See [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
 pub mod get_email_template_output {
-
+    
     /// A builder for [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) email_template_response:
-            std::option::Option<crate::model::EmailTemplateResponse>,
+        pub(crate) email_template_response: std::option::Option<crate::model::EmailTemplateResponse>,
     }
     impl Builder {
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-        pub fn email_template_response(
-            mut self,
-            input: crate::model::EmailTemplateResponse,
-        ) -> Self {
+        pub fn email_template_response(mut self, input: crate::model::EmailTemplateResponse) -> Self {
             self.email_template_response = Some(input);
             self
         }
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-        pub fn set_email_template_response(
-            mut self,
-            input: std::option::Option<crate::model::EmailTemplateResponse>,
-        ) -> Self {
-            self.email_template_response = input;
-            self
+        pub fn set_email_template_response(mut self, input: std::option::Option<crate::model::EmailTemplateResponse>) -> Self {
+            self.email_template_response = input; self
         }
         /// Consumes the builder and constructs a [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
         pub fn build(self) -> crate::output::GetEmailTemplateOutput {
             crate::output::GetEmailTemplateOutput {
-                email_template_response: self.email_template_response,
+                email_template_response: self.email_template_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
@@ -3444,22 +3260,20 @@ impl GetEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEmailChannelOutput {
+pub struct GetEmailChannelOutput  {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
 }
 impl GetEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    pub fn email_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::EmailChannelResponse> {
+    pub fn email_channel_response(&self) -> std::option::Option<& crate::model::EmailChannelResponse> {
         self.email_channel_response.as_ref()
     }
 }
 /// See [`GetEmailChannelOutput`](crate::output::GetEmailChannelOutput).
 pub mod get_email_channel_output {
-
+    
     /// A builder for [`GetEmailChannelOutput`](crate::output::GetEmailChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3472,20 +3286,19 @@ pub mod get_email_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the email channel for an application.</p>
-        pub fn set_email_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::EmailChannelResponse>,
-        ) -> Self {
-            self.email_channel_response = input;
-            self
+        pub fn set_email_channel_response(mut self, input: std::option::Option<crate::model::EmailChannelResponse>) -> Self {
+            self.email_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetEmailChannelOutput`](crate::output::GetEmailChannelOutput).
         pub fn build(self) -> crate::output::GetEmailChannelOutput {
             crate::output::GetEmailChannelOutput {
-                email_channel_response: self.email_channel_response,
+                email_channel_response: self.email_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEmailChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailChannelOutput`](crate::output::GetEmailChannelOutput).
@@ -3497,20 +3310,20 @@ impl GetEmailChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelsOutput {
+pub struct GetChannelsOutput  {
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
     #[doc(hidden)]
     pub channels_response: std::option::Option<crate::model::ChannelsResponse>,
 }
 impl GetChannelsOutput {
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
-    pub fn channels_response(&self) -> std::option::Option<&crate::model::ChannelsResponse> {
+    pub fn channels_response(&self) -> std::option::Option<& crate::model::ChannelsResponse> {
         self.channels_response.as_ref()
     }
 }
 /// See [`GetChannelsOutput`](crate::output::GetChannelsOutput).
 pub mod get_channels_output {
-
+    
     /// A builder for [`GetChannelsOutput`](crate::output::GetChannelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3523,20 +3336,19 @@ pub mod get_channels_output {
             self
         }
         /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
-        pub fn set_channels_response(
-            mut self,
-            input: std::option::Option<crate::model::ChannelsResponse>,
-        ) -> Self {
-            self.channels_response = input;
-            self
+        pub fn set_channels_response(mut self, input: std::option::Option<crate::model::ChannelsResponse>) -> Self {
+            self.channels_response = input; self
         }
         /// Consumes the builder and constructs a [`GetChannelsOutput`](crate::output::GetChannelsOutput).
         pub fn build(self) -> crate::output::GetChannelsOutput {
             crate::output::GetChannelsOutput {
-                channels_response: self.channels_response,
+                channels_response: self.channels_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetChannelsOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelsOutput`](crate::output::GetChannelsOutput).
@@ -3548,20 +3360,20 @@ impl GetChannelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignVersionsOutput {
+pub struct GetCampaignVersionsOutput  {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     #[doc(hidden)]
     pub campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
 }
 impl GetCampaignVersionsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-    pub fn campaigns_response(&self) -> std::option::Option<&crate::model::CampaignsResponse> {
+    pub fn campaigns_response(&self) -> std::option::Option<& crate::model::CampaignsResponse> {
         self.campaigns_response.as_ref()
     }
 }
 /// See [`GetCampaignVersionsOutput`](crate::output::GetCampaignVersionsOutput).
 pub mod get_campaign_versions_output {
-
+    
     /// A builder for [`GetCampaignVersionsOutput`](crate::output::GetCampaignVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3574,20 +3386,19 @@ pub mod get_campaign_versions_output {
             self
         }
         /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-        pub fn set_campaigns_response(
-            mut self,
-            input: std::option::Option<crate::model::CampaignsResponse>,
-        ) -> Self {
-            self.campaigns_response = input;
-            self
+        pub fn set_campaigns_response(mut self, input: std::option::Option<crate::model::CampaignsResponse>) -> Self {
+            self.campaigns_response = input; self
         }
         /// Consumes the builder and constructs a [`GetCampaignVersionsOutput`](crate::output::GetCampaignVersionsOutput).
         pub fn build(self) -> crate::output::GetCampaignVersionsOutput {
             crate::output::GetCampaignVersionsOutput {
-                campaigns_response: self.campaigns_response,
+                campaigns_response: self.campaigns_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCampaignVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionsOutput`](crate::output::GetCampaignVersionsOutput).
@@ -3599,20 +3410,20 @@ impl GetCampaignVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignVersionOutput {
+pub struct GetCampaignVersionOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl GetCampaignVersionOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+    pub fn campaign_response(&self) -> std::option::Option<& crate::model::CampaignResponse> {
         self.campaign_response.as_ref()
     }
 }
 /// See [`GetCampaignVersionOutput`](crate::output::GetCampaignVersionOutput).
 pub mod get_campaign_version_output {
-
+    
     /// A builder for [`GetCampaignVersionOutput`](crate::output::GetCampaignVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3625,20 +3436,19 @@ pub mod get_campaign_version_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-        pub fn set_campaign_response(
-            mut self,
-            input: std::option::Option<crate::model::CampaignResponse>,
-        ) -> Self {
-            self.campaign_response = input;
-            self
+        pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
+            self.campaign_response = input; self
         }
         /// Consumes the builder and constructs a [`GetCampaignVersionOutput`](crate::output::GetCampaignVersionOutput).
         pub fn build(self) -> crate::output::GetCampaignVersionOutput {
             crate::output::GetCampaignVersionOutput {
-                campaign_response: self.campaign_response,
+                campaign_response: self.campaign_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCampaignVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionOutput`](crate::output::GetCampaignVersionOutput).
@@ -3650,20 +3460,20 @@ impl GetCampaignVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignsOutput {
+pub struct GetCampaignsOutput  {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     #[doc(hidden)]
     pub campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
 }
 impl GetCampaignsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-    pub fn campaigns_response(&self) -> std::option::Option<&crate::model::CampaignsResponse> {
+    pub fn campaigns_response(&self) -> std::option::Option<& crate::model::CampaignsResponse> {
         self.campaigns_response.as_ref()
     }
 }
 /// See [`GetCampaignsOutput`](crate::output::GetCampaignsOutput).
 pub mod get_campaigns_output {
-
+    
     /// A builder for [`GetCampaignsOutput`](crate::output::GetCampaignsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3676,20 +3486,19 @@ pub mod get_campaigns_output {
             self
         }
         /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-        pub fn set_campaigns_response(
-            mut self,
-            input: std::option::Option<crate::model::CampaignsResponse>,
-        ) -> Self {
-            self.campaigns_response = input;
-            self
+        pub fn set_campaigns_response(mut self, input: std::option::Option<crate::model::CampaignsResponse>) -> Self {
+            self.campaigns_response = input; self
         }
         /// Consumes the builder and constructs a [`GetCampaignsOutput`](crate::output::GetCampaignsOutput).
         pub fn build(self) -> crate::output::GetCampaignsOutput {
             crate::output::GetCampaignsOutput {
-                campaigns_response: self.campaigns_response,
+                campaigns_response: self.campaigns_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCampaignsOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignsOutput`](crate::output::GetCampaignsOutput).
@@ -3701,53 +3510,45 @@ impl GetCampaignsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignDateRangeKpiOutput {
+pub struct GetCampaignDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
     #[doc(hidden)]
-    pub campaign_date_range_kpi_response:
-        std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
+    pub campaign_date_range_kpi_response: std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
 }
 impl GetCampaignDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
-    pub fn campaign_date_range_kpi_response(
-        &self,
-    ) -> std::option::Option<&crate::model::CampaignDateRangeKpiResponse> {
+    pub fn campaign_date_range_kpi_response(&self) -> std::option::Option<& crate::model::CampaignDateRangeKpiResponse> {
         self.campaign_date_range_kpi_response.as_ref()
     }
 }
 /// See [`GetCampaignDateRangeKpiOutput`](crate::output::GetCampaignDateRangeKpiOutput).
 pub mod get_campaign_date_range_kpi_output {
-
+    
     /// A builder for [`GetCampaignDateRangeKpiOutput`](crate::output::GetCampaignDateRangeKpiOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) campaign_date_range_kpi_response:
-            std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
+        pub(crate) campaign_date_range_kpi_response: std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
-        pub fn campaign_date_range_kpi_response(
-            mut self,
-            input: crate::model::CampaignDateRangeKpiResponse,
-        ) -> Self {
+        pub fn campaign_date_range_kpi_response(mut self, input: crate::model::CampaignDateRangeKpiResponse) -> Self {
             self.campaign_date_range_kpi_response = Some(input);
             self
         }
         /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
-        pub fn set_campaign_date_range_kpi_response(
-            mut self,
-            input: std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
-        ) -> Self {
-            self.campaign_date_range_kpi_response = input;
-            self
+        pub fn set_campaign_date_range_kpi_response(mut self, input: std::option::Option<crate::model::CampaignDateRangeKpiResponse>) -> Self {
+            self.campaign_date_range_kpi_response = input; self
         }
         /// Consumes the builder and constructs a [`GetCampaignDateRangeKpiOutput`](crate::output::GetCampaignDateRangeKpiOutput).
         pub fn build(self) -> crate::output::GetCampaignDateRangeKpiOutput {
             crate::output::GetCampaignDateRangeKpiOutput {
-                campaign_date_range_kpi_response: self.campaign_date_range_kpi_response,
+                campaign_date_range_kpi_response: self.campaign_date_range_kpi_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCampaignDateRangeKpiOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignDateRangeKpiOutput`](crate::output::GetCampaignDateRangeKpiOutput).
@@ -3759,20 +3560,20 @@ impl GetCampaignDateRangeKpiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignActivitiesOutput {
+pub struct GetCampaignActivitiesOutput  {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
     #[doc(hidden)]
     pub activities_response: std::option::Option<crate::model::ActivitiesResponse>,
 }
 impl GetCampaignActivitiesOutput {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
-    pub fn activities_response(&self) -> std::option::Option<&crate::model::ActivitiesResponse> {
+    pub fn activities_response(&self) -> std::option::Option<& crate::model::ActivitiesResponse> {
         self.activities_response.as_ref()
     }
 }
 /// See [`GetCampaignActivitiesOutput`](crate::output::GetCampaignActivitiesOutput).
 pub mod get_campaign_activities_output {
-
+    
     /// A builder for [`GetCampaignActivitiesOutput`](crate::output::GetCampaignActivitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3785,20 +3586,19 @@ pub mod get_campaign_activities_output {
             self
         }
         /// <p>Provides information about the activities that were performed by a campaign.</p>
-        pub fn set_activities_response(
-            mut self,
-            input: std::option::Option<crate::model::ActivitiesResponse>,
-        ) -> Self {
-            self.activities_response = input;
-            self
+        pub fn set_activities_response(mut self, input: std::option::Option<crate::model::ActivitiesResponse>) -> Self {
+            self.activities_response = input; self
         }
         /// Consumes the builder and constructs a [`GetCampaignActivitiesOutput`](crate::output::GetCampaignActivitiesOutput).
         pub fn build(self) -> crate::output::GetCampaignActivitiesOutput {
             crate::output::GetCampaignActivitiesOutput {
-                activities_response: self.activities_response,
+                activities_response: self.activities_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCampaignActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignActivitiesOutput`](crate::output::GetCampaignActivitiesOutput).
@@ -3810,20 +3610,20 @@ impl GetCampaignActivitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignOutput {
+pub struct GetCampaignOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl GetCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+    pub fn campaign_response(&self) -> std::option::Option<& crate::model::CampaignResponse> {
         self.campaign_response.as_ref()
     }
 }
 /// See [`GetCampaignOutput`](crate::output::GetCampaignOutput).
 pub mod get_campaign_output {
-
+    
     /// A builder for [`GetCampaignOutput`](crate::output::GetCampaignOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3836,20 +3636,19 @@ pub mod get_campaign_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-        pub fn set_campaign_response(
-            mut self,
-            input: std::option::Option<crate::model::CampaignResponse>,
-        ) -> Self {
-            self.campaign_response = input;
-            self
+        pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
+            self.campaign_response = input; self
         }
         /// Consumes the builder and constructs a [`GetCampaignOutput`](crate::output::GetCampaignOutput).
         pub fn build(self) -> crate::output::GetCampaignOutput {
             crate::output::GetCampaignOutput {
-                campaign_response: self.campaign_response,
+                campaign_response: self.campaign_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCampaignOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignOutput`](crate::output::GetCampaignOutput).
@@ -3861,22 +3660,20 @@ impl GetCampaignOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBaiduChannelOutput {
+pub struct GetBaiduChannelOutput  {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
 }
 impl GetBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn baidu_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::BaiduChannelResponse> {
+    pub fn baidu_channel_response(&self) -> std::option::Option<& crate::model::BaiduChannelResponse> {
         self.baidu_channel_response.as_ref()
     }
 }
 /// See [`GetBaiduChannelOutput`](crate::output::GetBaiduChannelOutput).
 pub mod get_baidu_channel_output {
-
+    
     /// A builder for [`GetBaiduChannelOutput`](crate::output::GetBaiduChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3889,20 +3686,19 @@ pub mod get_baidu_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-        pub fn set_baidu_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::BaiduChannelResponse>,
-        ) -> Self {
-            self.baidu_channel_response = input;
-            self
+        pub fn set_baidu_channel_response(mut self, input: std::option::Option<crate::model::BaiduChannelResponse>) -> Self {
+            self.baidu_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetBaiduChannelOutput`](crate::output::GetBaiduChannelOutput).
         pub fn build(self) -> crate::output::GetBaiduChannelOutput {
             crate::output::GetBaiduChannelOutput {
-                baidu_channel_response: self.baidu_channel_response,
+                baidu_channel_response: self.baidu_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBaiduChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetBaiduChannelOutput`](crate::output::GetBaiduChannelOutput).
@@ -3914,22 +3710,20 @@ impl GetBaiduChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppsOutput {
+pub struct GetAppsOutput  {
     /// <p>Provides information about all of your applications.</p>
     #[doc(hidden)]
     pub applications_response: std::option::Option<crate::model::ApplicationsResponse>,
 }
 impl GetAppsOutput {
     /// <p>Provides information about all of your applications.</p>
-    pub fn applications_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationsResponse> {
+    pub fn applications_response(&self) -> std::option::Option<& crate::model::ApplicationsResponse> {
         self.applications_response.as_ref()
     }
 }
 /// See [`GetAppsOutput`](crate::output::GetAppsOutput).
 pub mod get_apps_output {
-
+    
     /// A builder for [`GetAppsOutput`](crate::output::GetAppsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3942,20 +3736,19 @@ pub mod get_apps_output {
             self
         }
         /// <p>Provides information about all of your applications.</p>
-        pub fn set_applications_response(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationsResponse>,
-        ) -> Self {
-            self.applications_response = input;
-            self
+        pub fn set_applications_response(mut self, input: std::option::Option<crate::model::ApplicationsResponse>) -> Self {
+            self.applications_response = input; self
         }
         /// Consumes the builder and constructs a [`GetAppsOutput`](crate::output::GetAppsOutput).
         pub fn build(self) -> crate::output::GetAppsOutput {
             crate::output::GetAppsOutput {
-                applications_response: self.applications_response,
+                applications_response: self.applications_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAppsOutput {
     /// Creates a new builder-style object to manufacture [`GetAppsOutput`](crate::output::GetAppsOutput).
@@ -3967,53 +3760,45 @@ impl GetAppsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationSettingsOutput {
+pub struct GetApplicationSettingsOutput  {
     /// <p>Provides information about an application, including the default settings for an application.</p>
     #[doc(hidden)]
-    pub application_settings_resource:
-        std::option::Option<crate::model::ApplicationSettingsResource>,
+    pub application_settings_resource: std::option::Option<crate::model::ApplicationSettingsResource>,
 }
 impl GetApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn application_settings_resource(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationSettingsResource> {
+    pub fn application_settings_resource(&self) -> std::option::Option<& crate::model::ApplicationSettingsResource> {
         self.application_settings_resource.as_ref()
     }
 }
 /// See [`GetApplicationSettingsOutput`](crate::output::GetApplicationSettingsOutput).
 pub mod get_application_settings_output {
-
+    
     /// A builder for [`GetApplicationSettingsOutput`](crate::output::GetApplicationSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_settings_resource:
-            std::option::Option<crate::model::ApplicationSettingsResource>,
+        pub(crate) application_settings_resource: std::option::Option<crate::model::ApplicationSettingsResource>,
     }
     impl Builder {
         /// <p>Provides information about an application, including the default settings for an application.</p>
-        pub fn application_settings_resource(
-            mut self,
-            input: crate::model::ApplicationSettingsResource,
-        ) -> Self {
+        pub fn application_settings_resource(mut self, input: crate::model::ApplicationSettingsResource) -> Self {
             self.application_settings_resource = Some(input);
             self
         }
         /// <p>Provides information about an application, including the default settings for an application.</p>
-        pub fn set_application_settings_resource(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationSettingsResource>,
-        ) -> Self {
-            self.application_settings_resource = input;
-            self
+        pub fn set_application_settings_resource(mut self, input: std::option::Option<crate::model::ApplicationSettingsResource>) -> Self {
+            self.application_settings_resource = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationSettingsOutput`](crate::output::GetApplicationSettingsOutput).
         pub fn build(self) -> crate::output::GetApplicationSettingsOutput {
             crate::output::GetApplicationSettingsOutput {
-                application_settings_resource: self.application_settings_resource,
+                application_settings_resource: self.application_settings_resource
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationSettingsOutput`](crate::output::GetApplicationSettingsOutput).
@@ -4025,53 +3810,45 @@ impl GetApplicationSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationDateRangeKpiOutput {
+pub struct GetApplicationDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
     #[doc(hidden)]
-    pub application_date_range_kpi_response:
-        std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
+    pub application_date_range_kpi_response: std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
 }
 impl GetApplicationDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-    pub fn application_date_range_kpi_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationDateRangeKpiResponse> {
+    pub fn application_date_range_kpi_response(&self) -> std::option::Option<& crate::model::ApplicationDateRangeKpiResponse> {
         self.application_date_range_kpi_response.as_ref()
     }
 }
 /// See [`GetApplicationDateRangeKpiOutput`](crate::output::GetApplicationDateRangeKpiOutput).
 pub mod get_application_date_range_kpi_output {
-
+    
     /// A builder for [`GetApplicationDateRangeKpiOutput`](crate::output::GetApplicationDateRangeKpiOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_date_range_kpi_response:
-            std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
+        pub(crate) application_date_range_kpi_response: std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-        pub fn application_date_range_kpi_response(
-            mut self,
-            input: crate::model::ApplicationDateRangeKpiResponse,
-        ) -> Self {
+        pub fn application_date_range_kpi_response(mut self, input: crate::model::ApplicationDateRangeKpiResponse) -> Self {
             self.application_date_range_kpi_response = Some(input);
             self
         }
         /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-        pub fn set_application_date_range_kpi_response(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
-        ) -> Self {
-            self.application_date_range_kpi_response = input;
-            self
+        pub fn set_application_date_range_kpi_response(mut self, input: std::option::Option<crate::model::ApplicationDateRangeKpiResponse>) -> Self {
+            self.application_date_range_kpi_response = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationDateRangeKpiOutput`](crate::output::GetApplicationDateRangeKpiOutput).
         pub fn build(self) -> crate::output::GetApplicationDateRangeKpiOutput {
             crate::output::GetApplicationDateRangeKpiOutput {
-                application_date_range_kpi_response: self.application_date_range_kpi_response,
+                application_date_range_kpi_response: self.application_date_range_kpi_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationDateRangeKpiOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationDateRangeKpiOutput`](crate::output::GetApplicationDateRangeKpiOutput).
@@ -4083,20 +3860,20 @@ impl GetApplicationDateRangeKpiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppOutput {
+pub struct GetAppOutput  {
     /// <p>Provides information about an application.</p>
     #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
 }
 impl GetAppOutput {
     /// <p>Provides information about an application.</p>
-    pub fn application_response(&self) -> std::option::Option<&crate::model::ApplicationResponse> {
+    pub fn application_response(&self) -> std::option::Option<& crate::model::ApplicationResponse> {
         self.application_response.as_ref()
     }
 }
 /// See [`GetAppOutput`](crate::output::GetAppOutput).
 pub mod get_app_output {
-
+    
     /// A builder for [`GetAppOutput`](crate::output::GetAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4109,20 +3886,19 @@ pub mod get_app_output {
             self
         }
         /// <p>Provides information about an application.</p>
-        pub fn set_application_response(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationResponse>,
-        ) -> Self {
-            self.application_response = input;
-            self
+        pub fn set_application_response(mut self, input: std::option::Option<crate::model::ApplicationResponse>) -> Self {
+            self.application_response = input; self
         }
         /// Consumes the builder and constructs a [`GetAppOutput`](crate::output::GetAppOutput).
         pub fn build(self) -> crate::output::GetAppOutput {
             crate::output::GetAppOutput {
-                application_response: self.application_response,
+                application_response: self.application_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAppOutput {
     /// Creates a new builder-style object to manufacture [`GetAppOutput`](crate::output::GetAppOutput).
@@ -4134,53 +3910,45 @@ impl GetAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApnsVoipSandboxChannelOutput {
+pub struct GetApnsVoipSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     #[doc(hidden)]
-    pub apns_voip_sandbox_channel_response:
-        std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+    pub apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
 }
 impl GetApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn apns_voip_sandbox_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsVoipSandboxChannelResponse> {
+    pub fn apns_voip_sandbox_channel_response(&self) -> std::option::Option<& crate::model::ApnsVoipSandboxChannelResponse> {
         self.apns_voip_sandbox_channel_response.as_ref()
     }
 }
 /// See [`GetApnsVoipSandboxChannelOutput`](crate::output::GetApnsVoipSandboxChannelOutput).
 pub mod get_apns_voip_sandbox_channel_output {
-
+    
     /// A builder for [`GetApnsVoipSandboxChannelOutput`](crate::output::GetApnsVoipSandboxChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_voip_sandbox_channel_response:
-            std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+        pub(crate) apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-        pub fn apns_voip_sandbox_channel_response(
-            mut self,
-            input: crate::model::ApnsVoipSandboxChannelResponse,
-        ) -> Self {
+        pub fn apns_voip_sandbox_channel_response(mut self, input: crate::model::ApnsVoipSandboxChannelResponse) -> Self {
             self.apns_voip_sandbox_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-        pub fn set_apns_voip_sandbox_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
-        ) -> Self {
-            self.apns_voip_sandbox_channel_response = input;
-            self
+        pub fn set_apns_voip_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>) -> Self {
+            self.apns_voip_sandbox_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetApnsVoipSandboxChannelOutput`](crate::output::GetApnsVoipSandboxChannelOutput).
         pub fn build(self) -> crate::output::GetApnsVoipSandboxChannelOutput {
             crate::output::GetApnsVoipSandboxChannelOutput {
-                apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response,
+                apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApnsVoipSandboxChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetApnsVoipSandboxChannelOutput`](crate::output::GetApnsVoipSandboxChannelOutput).
@@ -4192,52 +3960,45 @@ impl GetApnsVoipSandboxChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApnsVoipChannelOutput {
+pub struct GetApnsVoipChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
 }
 impl GetApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsVoipChannelResponse> {
+    pub fn apns_voip_channel_response(&self) -> std::option::Option<& crate::model::ApnsVoipChannelResponse> {
         self.apns_voip_channel_response.as_ref()
     }
 }
 /// See [`GetApnsVoipChannelOutput`](crate::output::GetApnsVoipChannelOutput).
 pub mod get_apns_voip_channel_output {
-
+    
     /// A builder for [`GetApnsVoipChannelOutput`](crate::output::GetApnsVoipChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_voip_channel_response:
-            std::option::Option<crate::model::ApnsVoipChannelResponse>,
+        pub(crate) apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-        pub fn apns_voip_channel_response(
-            mut self,
-            input: crate::model::ApnsVoipChannelResponse,
-        ) -> Self {
+        pub fn apns_voip_channel_response(mut self, input: crate::model::ApnsVoipChannelResponse) -> Self {
             self.apns_voip_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-        pub fn set_apns_voip_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsVoipChannelResponse>,
-        ) -> Self {
-            self.apns_voip_channel_response = input;
-            self
+        pub fn set_apns_voip_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipChannelResponse>) -> Self {
+            self.apns_voip_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetApnsVoipChannelOutput`](crate::output::GetApnsVoipChannelOutput).
         pub fn build(self) -> crate::output::GetApnsVoipChannelOutput {
             crate::output::GetApnsVoipChannelOutput {
-                apns_voip_channel_response: self.apns_voip_channel_response,
+                apns_voip_channel_response: self.apns_voip_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApnsVoipChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetApnsVoipChannelOutput`](crate::output::GetApnsVoipChannelOutput).
@@ -4249,53 +4010,45 @@ impl GetApnsVoipChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApnsSandboxChannelOutput {
+pub struct GetApnsSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     #[doc(hidden)]
-    pub apns_sandbox_channel_response:
-        std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+    pub apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
 impl GetApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn apns_sandbox_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsSandboxChannelResponse> {
+    pub fn apns_sandbox_channel_response(&self) -> std::option::Option<& crate::model::ApnsSandboxChannelResponse> {
         self.apns_sandbox_channel_response.as_ref()
     }
 }
 /// See [`GetApnsSandboxChannelOutput`](crate::output::GetApnsSandboxChannelOutput).
 pub mod get_apns_sandbox_channel_output {
-
+    
     /// A builder for [`GetApnsSandboxChannelOutput`](crate::output::GetApnsSandboxChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_sandbox_channel_response:
-            std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+        pub(crate) apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-        pub fn apns_sandbox_channel_response(
-            mut self,
-            input: crate::model::ApnsSandboxChannelResponse,
-        ) -> Self {
+        pub fn apns_sandbox_channel_response(mut self, input: crate::model::ApnsSandboxChannelResponse) -> Self {
             self.apns_sandbox_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-        pub fn set_apns_sandbox_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
-        ) -> Self {
-            self.apns_sandbox_channel_response = input;
-            self
+        pub fn set_apns_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsSandboxChannelResponse>) -> Self {
+            self.apns_sandbox_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetApnsSandboxChannelOutput`](crate::output::GetApnsSandboxChannelOutput).
         pub fn build(self) -> crate::output::GetApnsSandboxChannelOutput {
             crate::output::GetApnsSandboxChannelOutput {
-                apns_sandbox_channel_response: self.apns_sandbox_channel_response,
+                apns_sandbox_channel_response: self.apns_sandbox_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApnsSandboxChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetApnsSandboxChannelOutput`](crate::output::GetApnsSandboxChannelOutput).
@@ -4307,20 +4060,20 @@ impl GetApnsSandboxChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApnsChannelOutput {
+pub struct GetApnsChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
 impl GetApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn apns_channel_response(&self) -> std::option::Option<&crate::model::ApnsChannelResponse> {
+    pub fn apns_channel_response(&self) -> std::option::Option<& crate::model::ApnsChannelResponse> {
         self.apns_channel_response.as_ref()
     }
 }
 /// See [`GetApnsChannelOutput`](crate::output::GetApnsChannelOutput).
 pub mod get_apns_channel_output {
-
+    
     /// A builder for [`GetApnsChannelOutput`](crate::output::GetApnsChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4333,20 +4086,19 @@ pub mod get_apns_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-        pub fn set_apns_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsChannelResponse>,
-        ) -> Self {
-            self.apns_channel_response = input;
-            self
+        pub fn set_apns_channel_response(mut self, input: std::option::Option<crate::model::ApnsChannelResponse>) -> Self {
+            self.apns_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetApnsChannelOutput`](crate::output::GetApnsChannelOutput).
         pub fn build(self) -> crate::output::GetApnsChannelOutput {
             crate::output::GetApnsChannelOutput {
-                apns_channel_response: self.apns_channel_response,
+                apns_channel_response: self.apns_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApnsChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetApnsChannelOutput`](crate::output::GetApnsChannelOutput).
@@ -4358,20 +4110,20 @@ impl GetApnsChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAdmChannelOutput {
+pub struct GetAdmChannelOutput  {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
 }
 impl GetAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn adm_channel_response(&self) -> std::option::Option<&crate::model::AdmChannelResponse> {
+    pub fn adm_channel_response(&self) -> std::option::Option<& crate::model::AdmChannelResponse> {
         self.adm_channel_response.as_ref()
     }
 }
 /// See [`GetAdmChannelOutput`](crate::output::GetAdmChannelOutput).
 pub mod get_adm_channel_output {
-
+    
     /// A builder for [`GetAdmChannelOutput`](crate::output::GetAdmChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4384,20 +4136,19 @@ pub mod get_adm_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-        pub fn set_adm_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::AdmChannelResponse>,
-        ) -> Self {
-            self.adm_channel_response = input;
-            self
+        pub fn set_adm_channel_response(mut self, input: std::option::Option<crate::model::AdmChannelResponse>) -> Self {
+            self.adm_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`GetAdmChannelOutput`](crate::output::GetAdmChannelOutput).
         pub fn build(self) -> crate::output::GetAdmChannelOutput {
             crate::output::GetAdmChannelOutput {
-                adm_channel_response: self.adm_channel_response,
+                adm_channel_response: self.adm_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAdmChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetAdmChannelOutput`](crate::output::GetAdmChannelOutput).
@@ -4409,20 +4160,20 @@ impl GetAdmChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceTemplateOutput {
+pub struct DeleteVoiceTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeleteVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`DeleteVoiceTemplateOutput`](crate::output::DeleteVoiceTemplateOutput).
 pub mod delete_voice_template_output {
-
+    
     /// A builder for [`DeleteVoiceTemplateOutput`](crate::output::DeleteVoiceTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4435,20 +4186,19 @@ pub mod delete_voice_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVoiceTemplateOutput`](crate::output::DeleteVoiceTemplateOutput).
         pub fn build(self) -> crate::output::DeleteVoiceTemplateOutput {
             crate::output::DeleteVoiceTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceTemplateOutput`](crate::output::DeleteVoiceTemplateOutput).
@@ -4460,22 +4210,20 @@ impl DeleteVoiceTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceChannelOutput {
+pub struct DeleteVoiceChannelOutput  {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
 }
 impl DeleteVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-    pub fn voice_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::VoiceChannelResponse> {
+    pub fn voice_channel_response(&self) -> std::option::Option<& crate::model::VoiceChannelResponse> {
         self.voice_channel_response.as_ref()
     }
 }
 /// See [`DeleteVoiceChannelOutput`](crate::output::DeleteVoiceChannelOutput).
 pub mod delete_voice_channel_output {
-
+    
     /// A builder for [`DeleteVoiceChannelOutput`](crate::output::DeleteVoiceChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4488,20 +4236,19 @@ pub mod delete_voice_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-        pub fn set_voice_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::VoiceChannelResponse>,
-        ) -> Self {
-            self.voice_channel_response = input;
-            self
+        pub fn set_voice_channel_response(mut self, input: std::option::Option<crate::model::VoiceChannelResponse>) -> Self {
+            self.voice_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVoiceChannelOutput`](crate::output::DeleteVoiceChannelOutput).
         pub fn build(self) -> crate::output::DeleteVoiceChannelOutput {
             crate::output::DeleteVoiceChannelOutput {
-                voice_channel_response: self.voice_channel_response,
+                voice_channel_response: self.voice_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVoiceChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceChannelOutput`](crate::output::DeleteVoiceChannelOutput).
@@ -4513,20 +4260,20 @@ impl DeleteVoiceChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserEndpointsOutput {
+pub struct DeleteUserEndpointsOutput  {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     #[doc(hidden)]
     pub endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
 }
 impl DeleteUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-    pub fn endpoints_response(&self) -> std::option::Option<&crate::model::EndpointsResponse> {
+    pub fn endpoints_response(&self) -> std::option::Option<& crate::model::EndpointsResponse> {
         self.endpoints_response.as_ref()
     }
 }
 /// See [`DeleteUserEndpointsOutput`](crate::output::DeleteUserEndpointsOutput).
 pub mod delete_user_endpoints_output {
-
+    
     /// A builder for [`DeleteUserEndpointsOutput`](crate::output::DeleteUserEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4539,20 +4286,19 @@ pub mod delete_user_endpoints_output {
             self
         }
         /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-        pub fn set_endpoints_response(
-            mut self,
-            input: std::option::Option<crate::model::EndpointsResponse>,
-        ) -> Self {
-            self.endpoints_response = input;
-            self
+        pub fn set_endpoints_response(mut self, input: std::option::Option<crate::model::EndpointsResponse>) -> Self {
+            self.endpoints_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteUserEndpointsOutput`](crate::output::DeleteUserEndpointsOutput).
         pub fn build(self) -> crate::output::DeleteUserEndpointsOutput {
             crate::output::DeleteUserEndpointsOutput {
-                endpoints_response: self.endpoints_response,
+                endpoints_response: self.endpoints_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteUserEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserEndpointsOutput`](crate::output::DeleteUserEndpointsOutput).
@@ -4564,20 +4310,20 @@ impl DeleteUserEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSmsTemplateOutput {
+pub struct DeleteSmsTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeleteSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`DeleteSmsTemplateOutput`](crate::output::DeleteSmsTemplateOutput).
 pub mod delete_sms_template_output {
-
+    
     /// A builder for [`DeleteSmsTemplateOutput`](crate::output::DeleteSmsTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4590,20 +4336,19 @@ pub mod delete_sms_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSmsTemplateOutput`](crate::output::DeleteSmsTemplateOutput).
         pub fn build(self) -> crate::output::DeleteSmsTemplateOutput {
             crate::output::DeleteSmsTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSmsTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSmsTemplateOutput`](crate::output::DeleteSmsTemplateOutput).
@@ -4615,20 +4360,20 @@ impl DeleteSmsTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSmsChannelOutput {
+pub struct DeleteSmsChannelOutput  {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
 }
 impl DeleteSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-    pub fn sms_channel_response(&self) -> std::option::Option<&crate::model::SmsChannelResponse> {
+    pub fn sms_channel_response(&self) -> std::option::Option<& crate::model::SmsChannelResponse> {
         self.sms_channel_response.as_ref()
     }
 }
 /// See [`DeleteSmsChannelOutput`](crate::output::DeleteSmsChannelOutput).
 pub mod delete_sms_channel_output {
-
+    
     /// A builder for [`DeleteSmsChannelOutput`](crate::output::DeleteSmsChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4641,20 +4386,19 @@ pub mod delete_sms_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-        pub fn set_sms_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::SmsChannelResponse>,
-        ) -> Self {
-            self.sms_channel_response = input;
-            self
+        pub fn set_sms_channel_response(mut self, input: std::option::Option<crate::model::SmsChannelResponse>) -> Self {
+            self.sms_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSmsChannelOutput`](crate::output::DeleteSmsChannelOutput).
         pub fn build(self) -> crate::output::DeleteSmsChannelOutput {
             crate::output::DeleteSmsChannelOutput {
-                sms_channel_response: self.sms_channel_response,
+                sms_channel_response: self.sms_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSmsChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSmsChannelOutput`](crate::output::DeleteSmsChannelOutput).
@@ -4666,20 +4410,20 @@ impl DeleteSmsChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSegmentOutput {
+pub struct DeleteSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl DeleteSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+    pub fn segment_response(&self) -> std::option::Option<& crate::model::SegmentResponse> {
         self.segment_response.as_ref()
     }
 }
 /// See [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
 pub mod delete_segment_output {
-
+    
     /// A builder for [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4692,20 +4436,19 @@ pub mod delete_segment_output {
             self
         }
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-        pub fn set_segment_response(
-            mut self,
-            input: std::option::Option<crate::model::SegmentResponse>,
-        ) -> Self {
-            self.segment_response = input;
-            self
+        pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
+            self.segment_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
         pub fn build(self) -> crate::output::DeleteSegmentOutput {
             crate::output::DeleteSegmentOutput {
-                segment_response: self.segment_response,
+                segment_response: self.segment_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSegmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
@@ -4717,53 +4460,45 @@ impl DeleteSegmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecommenderConfigurationOutput {
+pub struct DeleteRecommenderConfigurationOutput  {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
-    pub recommender_configuration_response:
-        std::option::Option<crate::model::RecommenderConfigurationResponse>,
+    pub recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
 impl DeleteRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-    pub fn recommender_configuration_response(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommenderConfigurationResponse> {
+    pub fn recommender_configuration_response(&self) -> std::option::Option<& crate::model::RecommenderConfigurationResponse> {
         self.recommender_configuration_response.as_ref()
     }
 }
 /// See [`DeleteRecommenderConfigurationOutput`](crate::output::DeleteRecommenderConfigurationOutput).
 pub mod delete_recommender_configuration_output {
-
+    
     /// A builder for [`DeleteRecommenderConfigurationOutput`](crate::output::DeleteRecommenderConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommender_configuration_response:
-            std::option::Option<crate::model::RecommenderConfigurationResponse>,
+        pub(crate) recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
     }
     impl Builder {
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-        pub fn recommender_configuration_response(
-            mut self,
-            input: crate::model::RecommenderConfigurationResponse,
-        ) -> Self {
+        pub fn recommender_configuration_response(mut self, input: crate::model::RecommenderConfigurationResponse) -> Self {
             self.recommender_configuration_response = Some(input);
             self
         }
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-        pub fn set_recommender_configuration_response(
-            mut self,
-            input: std::option::Option<crate::model::RecommenderConfigurationResponse>,
-        ) -> Self {
-            self.recommender_configuration_response = input;
-            self
+        pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::model::RecommenderConfigurationResponse>) -> Self {
+            self.recommender_configuration_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRecommenderConfigurationOutput`](crate::output::DeleteRecommenderConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteRecommenderConfigurationOutput {
             crate::output::DeleteRecommenderConfigurationOutput {
-                recommender_configuration_response: self.recommender_configuration_response,
+                recommender_configuration_response: self.recommender_configuration_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRecommenderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommenderConfigurationOutput`](crate::output::DeleteRecommenderConfigurationOutput).
@@ -4775,20 +4510,20 @@ impl DeleteRecommenderConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePushTemplateOutput {
+pub struct DeletePushTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeletePushTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`DeletePushTemplateOutput`](crate::output::DeletePushTemplateOutput).
 pub mod delete_push_template_output {
-
+    
     /// A builder for [`DeletePushTemplateOutput`](crate::output::DeletePushTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4801,20 +4536,19 @@ pub mod delete_push_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`DeletePushTemplateOutput`](crate::output::DeletePushTemplateOutput).
         pub fn build(self) -> crate::output::DeletePushTemplateOutput {
             crate::output::DeletePushTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletePushTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeletePushTemplateOutput`](crate::output::DeletePushTemplateOutput).
@@ -4826,20 +4560,20 @@ impl DeletePushTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJourneyOutput {
+pub struct DeleteJourneyOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl DeleteJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+    pub fn journey_response(&self) -> std::option::Option<& crate::model::JourneyResponse> {
         self.journey_response.as_ref()
     }
 }
 /// See [`DeleteJourneyOutput`](crate::output::DeleteJourneyOutput).
 pub mod delete_journey_output {
-
+    
     /// A builder for [`DeleteJourneyOutput`](crate::output::DeleteJourneyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4852,20 +4586,19 @@ pub mod delete_journey_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-        pub fn set_journey_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneyResponse>,
-        ) -> Self {
-            self.journey_response = input;
-            self
+        pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
+            self.journey_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteJourneyOutput`](crate::output::DeleteJourneyOutput).
         pub fn build(self) -> crate::output::DeleteJourneyOutput {
             crate::output::DeleteJourneyOutput {
-                journey_response: self.journey_response,
+                journey_response: self.journey_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteJourneyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteJourneyOutput`](crate::output::DeleteJourneyOutput).
@@ -4877,20 +4610,20 @@ impl DeleteJourneyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInAppTemplateOutput {
+pub struct DeleteInAppTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeleteInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput).
 pub mod delete_in_app_template_output {
-
+    
     /// A builder for [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4903,20 +4636,19 @@ pub mod delete_in_app_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput).
         pub fn build(self) -> crate::output::DeleteInAppTemplateOutput {
             crate::output::DeleteInAppTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteInAppTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput).
@@ -4928,20 +4660,20 @@ impl DeleteInAppTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGcmChannelOutput {
+pub struct DeleteGcmChannelOutput  {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
 }
 impl DeleteGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    pub fn gcm_channel_response(&self) -> std::option::Option<&crate::model::GcmChannelResponse> {
+    pub fn gcm_channel_response(&self) -> std::option::Option<& crate::model::GcmChannelResponse> {
         self.gcm_channel_response.as_ref()
     }
 }
 /// See [`DeleteGcmChannelOutput`](crate::output::DeleteGcmChannelOutput).
 pub mod delete_gcm_channel_output {
-
+    
     /// A builder for [`DeleteGcmChannelOutput`](crate::output::DeleteGcmChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4954,20 +4686,19 @@ pub mod delete_gcm_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-        pub fn set_gcm_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::GcmChannelResponse>,
-        ) -> Self {
-            self.gcm_channel_response = input;
-            self
+        pub fn set_gcm_channel_response(mut self, input: std::option::Option<crate::model::GcmChannelResponse>) -> Self {
+            self.gcm_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGcmChannelOutput`](crate::output::DeleteGcmChannelOutput).
         pub fn build(self) -> crate::output::DeleteGcmChannelOutput {
             crate::output::DeleteGcmChannelOutput {
-                gcm_channel_response: self.gcm_channel_response,
+                gcm_channel_response: self.gcm_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGcmChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGcmChannelOutput`](crate::output::DeleteGcmChannelOutput).
@@ -4979,20 +4710,20 @@ impl DeleteGcmChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventStreamOutput {
+pub struct DeleteEventStreamOutput  {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
 }
 impl DeleteEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn event_stream(&self) -> std::option::Option<&crate::model::EventStream> {
+    pub fn event_stream(&self) -> std::option::Option<& crate::model::EventStream> {
         self.event_stream.as_ref()
     }
 }
 /// See [`DeleteEventStreamOutput`](crate::output::DeleteEventStreamOutput).
 pub mod delete_event_stream_output {
-
+    
     /// A builder for [`DeleteEventStreamOutput`](crate::output::DeleteEventStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5005,20 +4736,19 @@ pub mod delete_event_stream_output {
             self
         }
         /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-        pub fn set_event_stream(
-            mut self,
-            input: std::option::Option<crate::model::EventStream>,
-        ) -> Self {
-            self.event_stream = input;
-            self
+        pub fn set_event_stream(mut self, input: std::option::Option<crate::model::EventStream>) -> Self {
+            self.event_stream = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEventStreamOutput`](crate::output::DeleteEventStreamOutput).
         pub fn build(self) -> crate::output::DeleteEventStreamOutput {
             crate::output::DeleteEventStreamOutput {
-                event_stream: self.event_stream,
+                event_stream: self.event_stream
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEventStreamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventStreamOutput`](crate::output::DeleteEventStreamOutput).
@@ -5030,20 +4760,20 @@ impl DeleteEventStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEndpointOutput {
+pub struct DeleteEndpointOutput  {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     #[doc(hidden)]
     pub endpoint_response: std::option::Option<crate::model::EndpointResponse>,
 }
 impl DeleteEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
-    pub fn endpoint_response(&self) -> std::option::Option<&crate::model::EndpointResponse> {
+    pub fn endpoint_response(&self) -> std::option::Option<& crate::model::EndpointResponse> {
         self.endpoint_response.as_ref()
     }
 }
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
-
+    
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5056,20 +4786,19 @@ pub mod delete_endpoint_output {
             self
         }
         /// <p>Provides information about the channel type and other settings for an endpoint.</p>
-        pub fn set_endpoint_response(
-            mut self,
-            input: std::option::Option<crate::model::EndpointResponse>,
-        ) -> Self {
-            self.endpoint_response = input;
-            self
+        pub fn set_endpoint_response(mut self, input: std::option::Option<crate::model::EndpointResponse>) -> Self {
+            self.endpoint_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
         pub fn build(self) -> crate::output::DeleteEndpointOutput {
             crate::output::DeleteEndpointOutput {
-                endpoint_response: self.endpoint_response,
+                endpoint_response: self.endpoint_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
@@ -5081,20 +4810,20 @@ impl DeleteEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEmailTemplateOutput {
+pub struct DeleteEmailTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
 }
 impl DeleteEmailTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
-    pub fn message_body(&self) -> std::option::Option<&crate::model::MessageBody> {
+    pub fn message_body(&self) -> std::option::Option<& crate::model::MessageBody> {
         self.message_body.as_ref()
     }
 }
 /// See [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
 pub mod delete_email_template_output {
-
+    
     /// A builder for [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5107,20 +4836,19 @@ pub mod delete_email_template_output {
             self
         }
         /// <p>Provides information about an API request or response.</p>
-        pub fn set_message_body(
-            mut self,
-            input: std::option::Option<crate::model::MessageBody>,
-        ) -> Self {
-            self.message_body = input;
-            self
+        pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
+            self.message_body = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
         pub fn build(self) -> crate::output::DeleteEmailTemplateOutput {
             crate::output::DeleteEmailTemplateOutput {
-                message_body: self.message_body,
+                message_body: self.message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
@@ -5132,22 +4860,20 @@ impl DeleteEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEmailChannelOutput {
+pub struct DeleteEmailChannelOutput  {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
 }
 impl DeleteEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    pub fn email_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::EmailChannelResponse> {
+    pub fn email_channel_response(&self) -> std::option::Option<& crate::model::EmailChannelResponse> {
         self.email_channel_response.as_ref()
     }
 }
 /// See [`DeleteEmailChannelOutput`](crate::output::DeleteEmailChannelOutput).
 pub mod delete_email_channel_output {
-
+    
     /// A builder for [`DeleteEmailChannelOutput`](crate::output::DeleteEmailChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5160,20 +4886,19 @@ pub mod delete_email_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the email channel for an application.</p>
-        pub fn set_email_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::EmailChannelResponse>,
-        ) -> Self {
-            self.email_channel_response = input;
-            self
+        pub fn set_email_channel_response(mut self, input: std::option::Option<crate::model::EmailChannelResponse>) -> Self {
+            self.email_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEmailChannelOutput`](crate::output::DeleteEmailChannelOutput).
         pub fn build(self) -> crate::output::DeleteEmailChannelOutput {
             crate::output::DeleteEmailChannelOutput {
-                email_channel_response: self.email_channel_response,
+                email_channel_response: self.email_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEmailChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailChannelOutput`](crate::output::DeleteEmailChannelOutput).
@@ -5185,20 +4910,20 @@ impl DeleteEmailChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCampaignOutput {
+pub struct DeleteCampaignOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl DeleteCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+    pub fn campaign_response(&self) -> std::option::Option<& crate::model::CampaignResponse> {
         self.campaign_response.as_ref()
     }
 }
 /// See [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
 pub mod delete_campaign_output {
-
+    
     /// A builder for [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5211,20 +4936,19 @@ pub mod delete_campaign_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-        pub fn set_campaign_response(
-            mut self,
-            input: std::option::Option<crate::model::CampaignResponse>,
-        ) -> Self {
-            self.campaign_response = input;
-            self
+        pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
+            self.campaign_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
         pub fn build(self) -> crate::output::DeleteCampaignOutput {
             crate::output::DeleteCampaignOutput {
-                campaign_response: self.campaign_response,
+                campaign_response: self.campaign_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCampaignOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
@@ -5236,22 +4960,20 @@ impl DeleteCampaignOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBaiduChannelOutput {
+pub struct DeleteBaiduChannelOutput  {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
 }
 impl DeleteBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn baidu_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::BaiduChannelResponse> {
+    pub fn baidu_channel_response(&self) -> std::option::Option<& crate::model::BaiduChannelResponse> {
         self.baidu_channel_response.as_ref()
     }
 }
 /// See [`DeleteBaiduChannelOutput`](crate::output::DeleteBaiduChannelOutput).
 pub mod delete_baidu_channel_output {
-
+    
     /// A builder for [`DeleteBaiduChannelOutput`](crate::output::DeleteBaiduChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5264,20 +4986,19 @@ pub mod delete_baidu_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-        pub fn set_baidu_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::BaiduChannelResponse>,
-        ) -> Self {
-            self.baidu_channel_response = input;
-            self
+        pub fn set_baidu_channel_response(mut self, input: std::option::Option<crate::model::BaiduChannelResponse>) -> Self {
+            self.baidu_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBaiduChannelOutput`](crate::output::DeleteBaiduChannelOutput).
         pub fn build(self) -> crate::output::DeleteBaiduChannelOutput {
             crate::output::DeleteBaiduChannelOutput {
-                baidu_channel_response: self.baidu_channel_response,
+                baidu_channel_response: self.baidu_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBaiduChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBaiduChannelOutput`](crate::output::DeleteBaiduChannelOutput).
@@ -5289,20 +5010,20 @@ impl DeleteBaiduChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppOutput {
+pub struct DeleteAppOutput  {
     /// <p>Provides information about an application.</p>
     #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
 }
 impl DeleteAppOutput {
     /// <p>Provides information about an application.</p>
-    pub fn application_response(&self) -> std::option::Option<&crate::model::ApplicationResponse> {
+    pub fn application_response(&self) -> std::option::Option<& crate::model::ApplicationResponse> {
         self.application_response.as_ref()
     }
 }
 /// See [`DeleteAppOutput`](crate::output::DeleteAppOutput).
 pub mod delete_app_output {
-
+    
     /// A builder for [`DeleteAppOutput`](crate::output::DeleteAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5315,20 +5036,19 @@ pub mod delete_app_output {
             self
         }
         /// <p>Provides information about an application.</p>
-        pub fn set_application_response(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationResponse>,
-        ) -> Self {
-            self.application_response = input;
-            self
+        pub fn set_application_response(mut self, input: std::option::Option<crate::model::ApplicationResponse>) -> Self {
+            self.application_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAppOutput`](crate::output::DeleteAppOutput).
         pub fn build(self) -> crate::output::DeleteAppOutput {
             crate::output::DeleteAppOutput {
-                application_response: self.application_response,
+                application_response: self.application_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAppOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppOutput`](crate::output::DeleteAppOutput).
@@ -5340,53 +5060,45 @@ impl DeleteAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApnsVoipSandboxChannelOutput {
+pub struct DeleteApnsVoipSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     #[doc(hidden)]
-    pub apns_voip_sandbox_channel_response:
-        std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+    pub apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
 }
 impl DeleteApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn apns_voip_sandbox_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsVoipSandboxChannelResponse> {
+    pub fn apns_voip_sandbox_channel_response(&self) -> std::option::Option<& crate::model::ApnsVoipSandboxChannelResponse> {
         self.apns_voip_sandbox_channel_response.as_ref()
     }
 }
 /// See [`DeleteApnsVoipSandboxChannelOutput`](crate::output::DeleteApnsVoipSandboxChannelOutput).
 pub mod delete_apns_voip_sandbox_channel_output {
-
+    
     /// A builder for [`DeleteApnsVoipSandboxChannelOutput`](crate::output::DeleteApnsVoipSandboxChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_voip_sandbox_channel_response:
-            std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+        pub(crate) apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-        pub fn apns_voip_sandbox_channel_response(
-            mut self,
-            input: crate::model::ApnsVoipSandboxChannelResponse,
-        ) -> Self {
+        pub fn apns_voip_sandbox_channel_response(mut self, input: crate::model::ApnsVoipSandboxChannelResponse) -> Self {
             self.apns_voip_sandbox_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-        pub fn set_apns_voip_sandbox_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
-        ) -> Self {
-            self.apns_voip_sandbox_channel_response = input;
-            self
+        pub fn set_apns_voip_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>) -> Self {
+            self.apns_voip_sandbox_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApnsVoipSandboxChannelOutput`](crate::output::DeleteApnsVoipSandboxChannelOutput).
         pub fn build(self) -> crate::output::DeleteApnsVoipSandboxChannelOutput {
             crate::output::DeleteApnsVoipSandboxChannelOutput {
-                apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response,
+                apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApnsVoipSandboxChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApnsVoipSandboxChannelOutput`](crate::output::DeleteApnsVoipSandboxChannelOutput).
@@ -5398,52 +5110,45 @@ impl DeleteApnsVoipSandboxChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApnsVoipChannelOutput {
+pub struct DeleteApnsVoipChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
 }
 impl DeleteApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-    pub fn apns_voip_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsVoipChannelResponse> {
+    pub fn apns_voip_channel_response(&self) -> std::option::Option<& crate::model::ApnsVoipChannelResponse> {
         self.apns_voip_channel_response.as_ref()
     }
 }
 /// See [`DeleteApnsVoipChannelOutput`](crate::output::DeleteApnsVoipChannelOutput).
 pub mod delete_apns_voip_channel_output {
-
+    
     /// A builder for [`DeleteApnsVoipChannelOutput`](crate::output::DeleteApnsVoipChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_voip_channel_response:
-            std::option::Option<crate::model::ApnsVoipChannelResponse>,
+        pub(crate) apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-        pub fn apns_voip_channel_response(
-            mut self,
-            input: crate::model::ApnsVoipChannelResponse,
-        ) -> Self {
+        pub fn apns_voip_channel_response(mut self, input: crate::model::ApnsVoipChannelResponse) -> Self {
             self.apns_voip_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
-        pub fn set_apns_voip_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsVoipChannelResponse>,
-        ) -> Self {
-            self.apns_voip_channel_response = input;
-            self
+        pub fn set_apns_voip_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipChannelResponse>) -> Self {
+            self.apns_voip_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApnsVoipChannelOutput`](crate::output::DeleteApnsVoipChannelOutput).
         pub fn build(self) -> crate::output::DeleteApnsVoipChannelOutput {
             crate::output::DeleteApnsVoipChannelOutput {
-                apns_voip_channel_response: self.apns_voip_channel_response,
+                apns_voip_channel_response: self.apns_voip_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApnsVoipChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApnsVoipChannelOutput`](crate::output::DeleteApnsVoipChannelOutput).
@@ -5455,53 +5160,45 @@ impl DeleteApnsVoipChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApnsSandboxChannelOutput {
+pub struct DeleteApnsSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     #[doc(hidden)]
-    pub apns_sandbox_channel_response:
-        std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+    pub apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
 }
 impl DeleteApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn apns_sandbox_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ApnsSandboxChannelResponse> {
+    pub fn apns_sandbox_channel_response(&self) -> std::option::Option<& crate::model::ApnsSandboxChannelResponse> {
         self.apns_sandbox_channel_response.as_ref()
     }
 }
 /// See [`DeleteApnsSandboxChannelOutput`](crate::output::DeleteApnsSandboxChannelOutput).
 pub mod delete_apns_sandbox_channel_output {
-
+    
     /// A builder for [`DeleteApnsSandboxChannelOutput`](crate::output::DeleteApnsSandboxChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apns_sandbox_channel_response:
-            std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+        pub(crate) apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-        pub fn apns_sandbox_channel_response(
-            mut self,
-            input: crate::model::ApnsSandboxChannelResponse,
-        ) -> Self {
+        pub fn apns_sandbox_channel_response(mut self, input: crate::model::ApnsSandboxChannelResponse) -> Self {
             self.apns_sandbox_channel_response = Some(input);
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-        pub fn set_apns_sandbox_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
-        ) -> Self {
-            self.apns_sandbox_channel_response = input;
-            self
+        pub fn set_apns_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsSandboxChannelResponse>) -> Self {
+            self.apns_sandbox_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApnsSandboxChannelOutput`](crate::output::DeleteApnsSandboxChannelOutput).
         pub fn build(self) -> crate::output::DeleteApnsSandboxChannelOutput {
             crate::output::DeleteApnsSandboxChannelOutput {
-                apns_sandbox_channel_response: self.apns_sandbox_channel_response,
+                apns_sandbox_channel_response: self.apns_sandbox_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApnsSandboxChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApnsSandboxChannelOutput`](crate::output::DeleteApnsSandboxChannelOutput).
@@ -5513,20 +5210,20 @@ impl DeleteApnsSandboxChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApnsChannelOutput {
+pub struct DeleteApnsChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
 }
 impl DeleteApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn apns_channel_response(&self) -> std::option::Option<&crate::model::ApnsChannelResponse> {
+    pub fn apns_channel_response(&self) -> std::option::Option<& crate::model::ApnsChannelResponse> {
         self.apns_channel_response.as_ref()
     }
 }
 /// See [`DeleteApnsChannelOutput`](crate::output::DeleteApnsChannelOutput).
 pub mod delete_apns_channel_output {
-
+    
     /// A builder for [`DeleteApnsChannelOutput`](crate::output::DeleteApnsChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5539,20 +5236,19 @@ pub mod delete_apns_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-        pub fn set_apns_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::ApnsChannelResponse>,
-        ) -> Self {
-            self.apns_channel_response = input;
-            self
+        pub fn set_apns_channel_response(mut self, input: std::option::Option<crate::model::ApnsChannelResponse>) -> Self {
+            self.apns_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApnsChannelOutput`](crate::output::DeleteApnsChannelOutput).
         pub fn build(self) -> crate::output::DeleteApnsChannelOutput {
             crate::output::DeleteApnsChannelOutput {
-                apns_channel_response: self.apns_channel_response,
+                apns_channel_response: self.apns_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApnsChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApnsChannelOutput`](crate::output::DeleteApnsChannelOutput).
@@ -5564,20 +5260,20 @@ impl DeleteApnsChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAdmChannelOutput {
+pub struct DeleteAdmChannelOutput  {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
 }
 impl DeleteAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn adm_channel_response(&self) -> std::option::Option<&crate::model::AdmChannelResponse> {
+    pub fn adm_channel_response(&self) -> std::option::Option<& crate::model::AdmChannelResponse> {
         self.adm_channel_response.as_ref()
     }
 }
 /// See [`DeleteAdmChannelOutput`](crate::output::DeleteAdmChannelOutput).
 pub mod delete_adm_channel_output {
-
+    
     /// A builder for [`DeleteAdmChannelOutput`](crate::output::DeleteAdmChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5590,20 +5286,19 @@ pub mod delete_adm_channel_output {
             self
         }
         /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-        pub fn set_adm_channel_response(
-            mut self,
-            input: std::option::Option<crate::model::AdmChannelResponse>,
-        ) -> Self {
-            self.adm_channel_response = input;
-            self
+        pub fn set_adm_channel_response(mut self, input: std::option::Option<crate::model::AdmChannelResponse>) -> Self {
+            self.adm_channel_response = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAdmChannelOutput`](crate::output::DeleteAdmChannelOutput).
         pub fn build(self) -> crate::output::DeleteAdmChannelOutput {
             crate::output::DeleteAdmChannelOutput {
-                adm_channel_response: self.adm_channel_response,
+                adm_channel_response: self.adm_channel_response
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAdmChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAdmChannelOutput`](crate::output::DeleteAdmChannelOutput).
@@ -5615,52 +5310,45 @@ impl DeleteAdmChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVoiceTemplateOutput {
+pub struct CreateVoiceTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
 impl CreateVoiceTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateTemplateMessageBody> {
+    pub fn create_template_message_body(&self) -> std::option::Option<& crate::model::CreateTemplateMessageBody> {
         self.create_template_message_body.as_ref()
     }
 }
 /// See [`CreateVoiceTemplateOutput`](crate::output::CreateVoiceTemplateOutput).
 pub mod create_voice_template_output {
-
+    
     /// A builder for [`CreateVoiceTemplateOutput`](crate::output::CreateVoiceTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_template_message_body:
-            std::option::Option<crate::model::CreateTemplateMessageBody>,
+        pub(crate) create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn create_template_message_body(
-            mut self,
-            input: crate::model::CreateTemplateMessageBody,
-        ) -> Self {
+        pub fn create_template_message_body(mut self, input: crate::model::CreateTemplateMessageBody) -> Self {
             self.create_template_message_body = Some(input);
             self
         }
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn set_create_template_message_body(
-            mut self,
-            input: std::option::Option<crate::model::CreateTemplateMessageBody>,
-        ) -> Self {
-            self.create_template_message_body = input;
-            self
+        pub fn set_create_template_message_body(mut self, input: std::option::Option<crate::model::CreateTemplateMessageBody>) -> Self {
+            self.create_template_message_body = input; self
         }
         /// Consumes the builder and constructs a [`CreateVoiceTemplateOutput`](crate::output::CreateVoiceTemplateOutput).
         pub fn build(self) -> crate::output::CreateVoiceTemplateOutput {
             crate::output::CreateVoiceTemplateOutput {
-                create_template_message_body: self.create_template_message_body,
+                create_template_message_body: self.create_template_message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceTemplateOutput`](crate::output::CreateVoiceTemplateOutput).
@@ -5672,52 +5360,45 @@ impl CreateVoiceTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSmsTemplateOutput {
+pub struct CreateSmsTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
 impl CreateSmsTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateTemplateMessageBody> {
+    pub fn create_template_message_body(&self) -> std::option::Option<& crate::model::CreateTemplateMessageBody> {
         self.create_template_message_body.as_ref()
     }
 }
 /// See [`CreateSmsTemplateOutput`](crate::output::CreateSmsTemplateOutput).
 pub mod create_sms_template_output {
-
+    
     /// A builder for [`CreateSmsTemplateOutput`](crate::output::CreateSmsTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_template_message_body:
-            std::option::Option<crate::model::CreateTemplateMessageBody>,
+        pub(crate) create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn create_template_message_body(
-            mut self,
-            input: crate::model::CreateTemplateMessageBody,
-        ) -> Self {
+        pub fn create_template_message_body(mut self, input: crate::model::CreateTemplateMessageBody) -> Self {
             self.create_template_message_body = Some(input);
             self
         }
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn set_create_template_message_body(
-            mut self,
-            input: std::option::Option<crate::model::CreateTemplateMessageBody>,
-        ) -> Self {
-            self.create_template_message_body = input;
-            self
+        pub fn set_create_template_message_body(mut self, input: std::option::Option<crate::model::CreateTemplateMessageBody>) -> Self {
+            self.create_template_message_body = input; self
         }
         /// Consumes the builder and constructs a [`CreateSmsTemplateOutput`](crate::output::CreateSmsTemplateOutput).
         pub fn build(self) -> crate::output::CreateSmsTemplateOutput {
             crate::output::CreateSmsTemplateOutput {
-                create_template_message_body: self.create_template_message_body,
+                create_template_message_body: self.create_template_message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSmsTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateSmsTemplateOutput`](crate::output::CreateSmsTemplateOutput).
@@ -5729,20 +5410,20 @@ impl CreateSmsTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSegmentOutput {
+pub struct CreateSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
 }
 impl CreateSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    pub fn segment_response(&self) -> std::option::Option<&crate::model::SegmentResponse> {
+    pub fn segment_response(&self) -> std::option::Option<& crate::model::SegmentResponse> {
         self.segment_response.as_ref()
     }
 }
 /// See [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
 pub mod create_segment_output {
-
+    
     /// A builder for [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5755,20 +5436,19 @@ pub mod create_segment_output {
             self
         }
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-        pub fn set_segment_response(
-            mut self,
-            input: std::option::Option<crate::model::SegmentResponse>,
-        ) -> Self {
-            self.segment_response = input;
-            self
+        pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
+            self.segment_response = input; self
         }
         /// Consumes the builder and constructs a [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
         pub fn build(self) -> crate::output::CreateSegmentOutput {
             crate::output::CreateSegmentOutput {
-                segment_response: self.segment_response,
+                segment_response: self.segment_response
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSegmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
@@ -5780,53 +5460,45 @@ impl CreateSegmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRecommenderConfigurationOutput {
+pub struct CreateRecommenderConfigurationOutput  {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
-    pub recommender_configuration_response:
-        std::option::Option<crate::model::RecommenderConfigurationResponse>,
+    pub recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
 }
 impl CreateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-    pub fn recommender_configuration_response(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommenderConfigurationResponse> {
+    pub fn recommender_configuration_response(&self) -> std::option::Option<& crate::model::RecommenderConfigurationResponse> {
         self.recommender_configuration_response.as_ref()
     }
 }
 /// See [`CreateRecommenderConfigurationOutput`](crate::output::CreateRecommenderConfigurationOutput).
 pub mod create_recommender_configuration_output {
-
+    
     /// A builder for [`CreateRecommenderConfigurationOutput`](crate::output::CreateRecommenderConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommender_configuration_response:
-            std::option::Option<crate::model::RecommenderConfigurationResponse>,
+        pub(crate) recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
     }
     impl Builder {
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-        pub fn recommender_configuration_response(
-            mut self,
-            input: crate::model::RecommenderConfigurationResponse,
-        ) -> Self {
+        pub fn recommender_configuration_response(mut self, input: crate::model::RecommenderConfigurationResponse) -> Self {
             self.recommender_configuration_response = Some(input);
             self
         }
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-        pub fn set_recommender_configuration_response(
-            mut self,
-            input: std::option::Option<crate::model::RecommenderConfigurationResponse>,
-        ) -> Self {
-            self.recommender_configuration_response = input;
-            self
+        pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::model::RecommenderConfigurationResponse>) -> Self {
+            self.recommender_configuration_response = input; self
         }
         /// Consumes the builder and constructs a [`CreateRecommenderConfigurationOutput`](crate::output::CreateRecommenderConfigurationOutput).
         pub fn build(self) -> crate::output::CreateRecommenderConfigurationOutput {
             crate::output::CreateRecommenderConfigurationOutput {
-                recommender_configuration_response: self.recommender_configuration_response,
+                recommender_configuration_response: self.recommender_configuration_response
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRecommenderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateRecommenderConfigurationOutput`](crate::output::CreateRecommenderConfigurationOutput).
@@ -5838,52 +5510,45 @@ impl CreateRecommenderConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePushTemplateOutput {
+pub struct CreatePushTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
 impl CreatePushTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateTemplateMessageBody> {
+    pub fn create_template_message_body(&self) -> std::option::Option<& crate::model::CreateTemplateMessageBody> {
         self.create_template_message_body.as_ref()
     }
 }
 /// See [`CreatePushTemplateOutput`](crate::output::CreatePushTemplateOutput).
 pub mod create_push_template_output {
-
+    
     /// A builder for [`CreatePushTemplateOutput`](crate::output::CreatePushTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_template_message_body:
-            std::option::Option<crate::model::CreateTemplateMessageBody>,
+        pub(crate) create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn create_template_message_body(
-            mut self,
-            input: crate::model::CreateTemplateMessageBody,
-        ) -> Self {
+        pub fn create_template_message_body(mut self, input: crate::model::CreateTemplateMessageBody) -> Self {
             self.create_template_message_body = Some(input);
             self
         }
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn set_create_template_message_body(
-            mut self,
-            input: std::option::Option<crate::model::CreateTemplateMessageBody>,
-        ) -> Self {
-            self.create_template_message_body = input;
-            self
+        pub fn set_create_template_message_body(mut self, input: std::option::Option<crate::model::CreateTemplateMessageBody>) -> Self {
+            self.create_template_message_body = input; self
         }
         /// Consumes the builder and constructs a [`CreatePushTemplateOutput`](crate::output::CreatePushTemplateOutput).
         pub fn build(self) -> crate::output::CreatePushTemplateOutput {
             crate::output::CreatePushTemplateOutput {
-                create_template_message_body: self.create_template_message_body,
+                create_template_message_body: self.create_template_message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePushTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreatePushTemplateOutput`](crate::output::CreatePushTemplateOutput).
@@ -5895,20 +5560,20 @@ impl CreatePushTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJourneyOutput {
+pub struct CreateJourneyOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
 }
 impl CreateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    pub fn journey_response(&self) -> std::option::Option<&crate::model::JourneyResponse> {
+    pub fn journey_response(&self) -> std::option::Option<& crate::model::JourneyResponse> {
         self.journey_response.as_ref()
     }
 }
 /// See [`CreateJourneyOutput`](crate::output::CreateJourneyOutput).
 pub mod create_journey_output {
-
+    
     /// A builder for [`CreateJourneyOutput`](crate::output::CreateJourneyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5921,20 +5586,19 @@ pub mod create_journey_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-        pub fn set_journey_response(
-            mut self,
-            input: std::option::Option<crate::model::JourneyResponse>,
-        ) -> Self {
-            self.journey_response = input;
-            self
+        pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
+            self.journey_response = input; self
         }
         /// Consumes the builder and constructs a [`CreateJourneyOutput`](crate::output::CreateJourneyOutput).
         pub fn build(self) -> crate::output::CreateJourneyOutput {
             crate::output::CreateJourneyOutput {
-                journey_response: self.journey_response,
+                journey_response: self.journey_response
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateJourneyOutput {
     /// Creates a new builder-style object to manufacture [`CreateJourneyOutput`](crate::output::CreateJourneyOutput).
@@ -5946,52 +5610,45 @@ impl CreateJourneyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInAppTemplateOutput {
+pub struct CreateInAppTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub template_create_message_body: std::option::Option<crate::model::TemplateCreateMessageBody>,
 }
 impl CreateInAppTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn template_create_message_body(
-        &self,
-    ) -> std::option::Option<&crate::model::TemplateCreateMessageBody> {
+    pub fn template_create_message_body(&self) -> std::option::Option<& crate::model::TemplateCreateMessageBody> {
         self.template_create_message_body.as_ref()
     }
 }
 /// See [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput).
 pub mod create_in_app_template_output {
-
+    
     /// A builder for [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) template_create_message_body:
-            std::option::Option<crate::model::TemplateCreateMessageBody>,
+        pub(crate) template_create_message_body: std::option::Option<crate::model::TemplateCreateMessageBody>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn template_create_message_body(
-            mut self,
-            input: crate::model::TemplateCreateMessageBody,
-        ) -> Self {
+        pub fn template_create_message_body(mut self, input: crate::model::TemplateCreateMessageBody) -> Self {
             self.template_create_message_body = Some(input);
             self
         }
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn set_template_create_message_body(
-            mut self,
-            input: std::option::Option<crate::model::TemplateCreateMessageBody>,
-        ) -> Self {
-            self.template_create_message_body = input;
-            self
+        pub fn set_template_create_message_body(mut self, input: std::option::Option<crate::model::TemplateCreateMessageBody>) -> Self {
+            self.template_create_message_body = input; self
         }
         /// Consumes the builder and constructs a [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput).
         pub fn build(self) -> crate::output::CreateInAppTemplateOutput {
             crate::output::CreateInAppTemplateOutput {
-                template_create_message_body: self.template_create_message_body,
+                template_create_message_body: self.template_create_message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInAppTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput).
@@ -6003,20 +5660,20 @@ impl CreateInAppTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateImportJobOutput {
+pub struct CreateImportJobOutput  {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub import_job_response: std::option::Option<crate::model::ImportJobResponse>,
 }
 impl CreateImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
-    pub fn import_job_response(&self) -> std::option::Option<&crate::model::ImportJobResponse> {
+    pub fn import_job_response(&self) -> std::option::Option<& crate::model::ImportJobResponse> {
         self.import_job_response.as_ref()
     }
 }
 /// See [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
 pub mod create_import_job_output {
-
+    
     /// A builder for [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6029,20 +5686,19 @@ pub mod create_import_job_output {
             self
         }
         /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
-        pub fn set_import_job_response(
-            mut self,
-            input: std::option::Option<crate::model::ImportJobResponse>,
-        ) -> Self {
-            self.import_job_response = input;
-            self
+        pub fn set_import_job_response(mut self, input: std::option::Option<crate::model::ImportJobResponse>) -> Self {
+            self.import_job_response = input; self
         }
         /// Consumes the builder and constructs a [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
         pub fn build(self) -> crate::output::CreateImportJobOutput {
             crate::output::CreateImportJobOutput {
-                import_job_response: self.import_job_response,
+                import_job_response: self.import_job_response
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
@@ -6054,20 +5710,20 @@ impl CreateImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExportJobOutput {
+pub struct CreateExportJobOutput  {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub export_job_response: std::option::Option<crate::model::ExportJobResponse>,
 }
 impl CreateExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
-    pub fn export_job_response(&self) -> std::option::Option<&crate::model::ExportJobResponse> {
+    pub fn export_job_response(&self) -> std::option::Option<& crate::model::ExportJobResponse> {
         self.export_job_response.as_ref()
     }
 }
 /// See [`CreateExportJobOutput`](crate::output::CreateExportJobOutput).
 pub mod create_export_job_output {
-
+    
     /// A builder for [`CreateExportJobOutput`](crate::output::CreateExportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6080,20 +5736,19 @@ pub mod create_export_job_output {
             self
         }
         /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
-        pub fn set_export_job_response(
-            mut self,
-            input: std::option::Option<crate::model::ExportJobResponse>,
-        ) -> Self {
-            self.export_job_response = input;
-            self
+        pub fn set_export_job_response(mut self, input: std::option::Option<crate::model::ExportJobResponse>) -> Self {
+            self.export_job_response = input; self
         }
         /// Consumes the builder and constructs a [`CreateExportJobOutput`](crate::output::CreateExportJobOutput).
         pub fn build(self) -> crate::output::CreateExportJobOutput {
             crate::output::CreateExportJobOutput {
-                export_job_response: self.export_job_response,
+                export_job_response: self.export_job_response
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateExportJobOutput`](crate::output::CreateExportJobOutput).
@@ -6105,52 +5760,45 @@ impl CreateExportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEmailTemplateOutput {
+pub struct CreateEmailTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
 }
 impl CreateEmailTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateTemplateMessageBody> {
+    pub fn create_template_message_body(&self) -> std::option::Option<& crate::model::CreateTemplateMessageBody> {
         self.create_template_message_body.as_ref()
     }
 }
 /// See [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
 pub mod create_email_template_output {
-
+    
     /// A builder for [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_template_message_body:
-            std::option::Option<crate::model::CreateTemplateMessageBody>,
+        pub(crate) create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn create_template_message_body(
-            mut self,
-            input: crate::model::CreateTemplateMessageBody,
-        ) -> Self {
+        pub fn create_template_message_body(mut self, input: crate::model::CreateTemplateMessageBody) -> Self {
             self.create_template_message_body = Some(input);
             self
         }
         /// <p>Provides information about a request to create a message template.</p>
-        pub fn set_create_template_message_body(
-            mut self,
-            input: std::option::Option<crate::model::CreateTemplateMessageBody>,
-        ) -> Self {
-            self.create_template_message_body = input;
-            self
+        pub fn set_create_template_message_body(mut self, input: std::option::Option<crate::model::CreateTemplateMessageBody>) -> Self {
+            self.create_template_message_body = input; self
         }
         /// Consumes the builder and constructs a [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
         pub fn build(self) -> crate::output::CreateEmailTemplateOutput {
             crate::output::CreateEmailTemplateOutput {
-                create_template_message_body: self.create_template_message_body,
+                create_template_message_body: self.create_template_message_body
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
@@ -6162,20 +5810,20 @@ impl CreateEmailTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCampaignOutput {
+pub struct CreateCampaignOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
 }
 impl CreateCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-    pub fn campaign_response(&self) -> std::option::Option<&crate::model::CampaignResponse> {
+    pub fn campaign_response(&self) -> std::option::Option<& crate::model::CampaignResponse> {
         self.campaign_response.as_ref()
     }
 }
 /// See [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
 pub mod create_campaign_output {
-
+    
     /// A builder for [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6188,20 +5836,19 @@ pub mod create_campaign_output {
             self
         }
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-        pub fn set_campaign_response(
-            mut self,
-            input: std::option::Option<crate::model::CampaignResponse>,
-        ) -> Self {
-            self.campaign_response = input;
-            self
+        pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
+            self.campaign_response = input; self
         }
         /// Consumes the builder and constructs a [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
         pub fn build(self) -> crate::output::CreateCampaignOutput {
             crate::output::CreateCampaignOutput {
-                campaign_response: self.campaign_response,
+                campaign_response: self.campaign_response
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCampaignOutput {
     /// Creates a new builder-style object to manufacture [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
@@ -6213,20 +5860,20 @@ impl CreateCampaignOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppOutput {
+pub struct CreateAppOutput  {
     /// <p>Provides information about an application.</p>
     #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
 }
 impl CreateAppOutput {
     /// <p>Provides information about an application.</p>
-    pub fn application_response(&self) -> std::option::Option<&crate::model::ApplicationResponse> {
+    pub fn application_response(&self) -> std::option::Option<& crate::model::ApplicationResponse> {
         self.application_response.as_ref()
     }
 }
 /// See [`CreateAppOutput`](crate::output::CreateAppOutput).
 pub mod create_app_output {
-
+    
     /// A builder for [`CreateAppOutput`](crate::output::CreateAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6239,20 +5886,19 @@ pub mod create_app_output {
             self
         }
         /// <p>Provides information about an application.</p>
-        pub fn set_application_response(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationResponse>,
-        ) -> Self {
-            self.application_response = input;
-            self
+        pub fn set_application_response(mut self, input: std::option::Option<crate::model::ApplicationResponse>) -> Self {
+            self.application_response = input; self
         }
         /// Consumes the builder and constructs a [`CreateAppOutput`](crate::output::CreateAppOutput).
         pub fn build(self) -> crate::output::CreateAppOutput {
             crate::output::CreateAppOutput {
-                application_response: self.application_response,
+                application_response: self.application_response
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAppOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppOutput`](crate::output::CreateAppOutput).
@@ -6260,3 +5906,4 @@ impl CreateAppOutput {
         crate::output::create_app_output::Builder::default()
     }
 }
+

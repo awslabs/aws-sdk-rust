@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSlotTypeOutput {
+pub struct UpdateSlotTypeOutput  {
     /// <p>The unique identifier of the updated slot type.</p>
     #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
@@ -45,87 +45,77 @@ pub struct UpdateSlotTypeOutput {
 }
 impl UpdateSlotTypeOutput {
     /// <p>The unique identifier of the updated slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The updated name of the slot type.</p>
-    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+    pub fn slot_type_name(&self) -> std::option::Option<& str> {
         self.slot_type_name.as_deref()
     }
     /// <p>The updated description of the slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated values that the slot type provides.</p>
-    pub fn slot_type_values(&self) -> std::option::Option<&[crate::model::SlotTypeValue]> {
+    pub fn slot_type_values(&self) -> std::option::Option<& [crate::model::SlotTypeValue]> {
         self.slot_type_values.as_deref()
     }
     /// <p>The updated strategy that Amazon Lex uses to determine which value to select from the slot type.</p>
-    pub fn value_selection_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueSelectionSetting> {
+    pub fn value_selection_setting(&self) -> std::option::Option<& crate::model::SlotValueSelectionSetting> {
         self.value_selection_setting.as_ref()
     }
     /// <p>The updated signature of the built-in slot type that is the parent of this slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>The identifier of the bot that contains the slot type.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the slot type. This is always <code>DRAFT</code>.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale of the updated slot type.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The timestamp of the date and time that the slot type was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    pub fn external_source_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
+    pub fn external_source_setting(&self) -> std::option::Option<& crate::model::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn composite_slot_type_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::CompositeSlotTypeSetting> {
+    pub fn composite_slot_type_setting(&self) -> std::option::Option<& crate::model::CompositeSlotTypeSetting> {
         self.composite_slot_type_setting.as_ref()
     }
 }
 /// See [`UpdateSlotTypeOutput`](crate::output::UpdateSlotTypeOutput).
 pub mod update_slot_type_output {
-
+    
     /// A builder for [`UpdateSlotTypeOutput`](crate::output::UpdateSlotTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
         pub(crate) slot_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) slot_type_values:
-            std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
-        pub(crate) value_selection_setting:
-            std::option::Option<crate::model::SlotValueSelectionSetting>,
+        pub(crate) slot_type_values: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
+        pub(crate) value_selection_setting: std::option::Option<crate::model::SlotValueSelectionSetting>,
         pub(crate) parent_slot_type_signature: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) external_source_setting:
-            std::option::Option<crate::model::ExternalSourceSetting>,
-        pub(crate) composite_slot_type_setting:
-            std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        pub(crate) external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
+        pub(crate) composite_slot_type_setting: std::option::Option<crate::model::CompositeSlotTypeSetting>,
     }
     impl Builder {
         /// <p>The unique identifier of the updated slot type.</p>
@@ -135,8 +125,7 @@ pub mod update_slot_type_output {
         }
         /// <p>The unique identifier of the updated slot type.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>The updated name of the slot type.</p>
         pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,12 +133,8 @@ pub mod update_slot_type_output {
             self
         }
         /// <p>The updated name of the slot type.</p>
-        pub fn set_slot_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slot_type_name = input;
-            self
+        pub fn set_slot_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slot_type_name = input; self
         }
         /// <p>The updated description of the slot type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +143,7 @@ pub mod update_slot_type_output {
         }
         /// <p>The updated description of the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `slot_type_values`.
         ///
@@ -168,33 +152,22 @@ pub mod update_slot_type_output {
         /// <p>The updated values that the slot type provides.</p>
         pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input);
-            self.slot_type_values = Some(v);
-            self
+                            v.push(input);
+                            self.slot_type_values = Some(v);
+                            self
         }
         /// <p>The updated values that the slot type provides.</p>
-        pub fn set_slot_type_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
-        ) -> Self {
-            self.slot_type_values = input;
-            self
+        pub fn set_slot_type_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>) -> Self {
+            self.slot_type_values = input; self
         }
         /// <p>The updated strategy that Amazon Lex uses to determine which value to select from the slot type.</p>
-        pub fn value_selection_setting(
-            mut self,
-            input: crate::model::SlotValueSelectionSetting,
-        ) -> Self {
+        pub fn value_selection_setting(mut self, input: crate::model::SlotValueSelectionSetting) -> Self {
             self.value_selection_setting = Some(input);
             self
         }
         /// <p>The updated strategy that Amazon Lex uses to determine which value to select from the slot type.</p>
-        pub fn set_value_selection_setting(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueSelectionSetting>,
-        ) -> Self {
-            self.value_selection_setting = input;
-            self
+        pub fn set_value_selection_setting(mut self, input: std::option::Option<crate::model::SlotValueSelectionSetting>) -> Self {
+            self.value_selection_setting = input; self
         }
         /// <p>The updated signature of the built-in slot type that is the parent of this slot type.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,12 +175,8 @@ pub mod update_slot_type_output {
             self
         }
         /// <p>The updated signature of the built-in slot type that is the parent of this slot type.</p>
-        pub fn set_parent_slot_type_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_slot_type_signature = input;
-            self
+        pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_slot_type_signature = input; self
         }
         /// <p>The identifier of the bot that contains the slot type.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,8 +185,7 @@ pub mod update_slot_type_output {
         }
         /// <p>The identifier of the bot that contains the slot type.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the slot type. This is always <code>DRAFT</code>.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -226,8 +194,7 @@ pub mod update_slot_type_output {
         }
         /// <p>The version of the bot that contains the slot type. This is always <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale of the updated slot type.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -236,8 +203,7 @@ pub mod update_slot_type_output {
         }
         /// <p>The language and locale of the updated slot type.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The timestamp of the date and time that the slot type was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -245,12 +211,8 @@ pub mod update_slot_type_output {
             self
         }
         /// <p>The timestamp of the date and time that the slot type was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the slot type was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -258,64 +220,61 @@ pub mod update_slot_type_output {
             self
         }
         /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>Provides information about the external source of the slot type's definition.</p>
-        pub fn external_source_setting(
-            mut self,
-            input: crate::model::ExternalSourceSetting,
-        ) -> Self {
+        pub fn external_source_setting(mut self, input: crate::model::ExternalSourceSetting) -> Self {
             self.external_source_setting = Some(input);
             self
         }
         /// <p>Provides information about the external source of the slot type's definition.</p>
-        pub fn set_external_source_setting(
-            mut self,
-            input: std::option::Option<crate::model::ExternalSourceSetting>,
-        ) -> Self {
-            self.external_source_setting = input;
-            self
+        pub fn set_external_source_setting(mut self, input: std::option::Option<crate::model::ExternalSourceSetting>) -> Self {
+            self.external_source_setting = input; self
         }
         /// <p>Specifications for a composite slot type.</p>
-        pub fn composite_slot_type_setting(
-            mut self,
-            input: crate::model::CompositeSlotTypeSetting,
-        ) -> Self {
+        pub fn composite_slot_type_setting(mut self, input: crate::model::CompositeSlotTypeSetting) -> Self {
             self.composite_slot_type_setting = Some(input);
             self
         }
         /// <p>Specifications for a composite slot type.</p>
-        pub fn set_composite_slot_type_setting(
-            mut self,
-            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
-        ) -> Self {
-            self.composite_slot_type_setting = input;
-            self
+        pub fn set_composite_slot_type_setting(mut self, input: std::option::Option<crate::model::CompositeSlotTypeSetting>) -> Self {
+            self.composite_slot_type_setting = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSlotTypeOutput`](crate::output::UpdateSlotTypeOutput).
         pub fn build(self) -> crate::output::UpdateSlotTypeOutput {
             crate::output::UpdateSlotTypeOutput {
-                slot_type_id: self.slot_type_id,
-                slot_type_name: self.slot_type_name,
-                description: self.description,
-                slot_type_values: self.slot_type_values,
-                value_selection_setting: self.value_selection_setting,
-                parent_slot_type_signature: self.parent_slot_type_signature,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                external_source_setting: self.external_source_setting,
-                composite_slot_type_setting: self.composite_slot_type_setting,
+                slot_type_id: self.slot_type_id
+                ,
+                slot_type_name: self.slot_type_name
+                ,
+                description: self.description
+                ,
+                slot_type_values: self.slot_type_values
+                ,
+                value_selection_setting: self.value_selection_setting
+                ,
+                parent_slot_type_signature: self.parent_slot_type_signature
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                external_source_setting: self.external_source_setting
+                ,
+                composite_slot_type_setting: self.composite_slot_type_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSlotTypeOutput`](crate::output::UpdateSlotTypeOutput).
@@ -327,7 +286,7 @@ impl UpdateSlotTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSlotOutput {
+pub struct UpdateSlotOutput  {
     /// <p>The unique identifier of the slot that was updated.</p>
     #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
@@ -373,69 +332,65 @@ pub struct UpdateSlotOutput {
 }
 impl UpdateSlotOutput {
     /// <p>The unique identifier of the slot that was updated.</p>
-    pub fn slot_id(&self) -> std::option::Option<&str> {
+    pub fn slot_id(&self) -> std::option::Option<& str> {
         self.slot_id.as_deref()
     }
     /// <p>The updated name of the slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<&str> {
+    pub fn slot_name(&self) -> std::option::Option<& str> {
         self.slot_name.as_deref()
     }
     /// <p>The updated description of the bot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated identifier of the slot type that provides values for the slot.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The updated prompts that Amazon Lex sends to the user to elicit a response that provides a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> std::option::Option<& crate::model::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
     /// <p>The updated setting that determines whether the slot value is obfuscated in the Amazon CloudWatch logs.</p>
-    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
+    pub fn obfuscation_setting(&self) -> std::option::Option<& crate::model::ObfuscationSetting> {
         self.obfuscation_setting.as_ref()
     }
     /// <p>The identifier of the bot that contains the slot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale that contains the slot.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The intent that contains the slot.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The timestamp of the date and time that the slot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The timestamp of the date and time that the slot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Indicates whether the slot accepts multiple values in one response.</p>
-    pub fn multiple_values_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
+    pub fn multiple_values_setting(&self) -> std::option::Option<& crate::model::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::model::SubSlotSetting> {
+    pub fn sub_slot_setting(&self) -> std::option::Option<& crate::model::SubSlotSetting> {
         self.sub_slot_setting.as_ref()
     }
 }
 /// See [`UpdateSlotOutput`](crate::output::UpdateSlotOutput).
 pub mod update_slot_output {
-
+    
     /// A builder for [`UpdateSlotOutput`](crate::output::UpdateSlotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -443,8 +398,7 @@ pub mod update_slot_output {
         pub(crate) slot_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
-        pub(crate) value_elicitation_setting:
-            std::option::Option<crate::model::SlotValueElicitationSetting>,
+        pub(crate) value_elicitation_setting: std::option::Option<crate::model::SlotValueElicitationSetting>,
         pub(crate) obfuscation_setting: std::option::Option<crate::model::ObfuscationSetting>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
@@ -452,8 +406,7 @@ pub mod update_slot_output {
         pub(crate) intent_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) multiple_values_setting:
-            std::option::Option<crate::model::MultipleValuesSetting>,
+        pub(crate) multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
         pub(crate) sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
     }
     impl Builder {
@@ -464,8 +417,7 @@ pub mod update_slot_output {
         }
         /// <p>The unique identifier of the slot that was updated.</p>
         pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_id = input;
-            self
+            self.slot_id = input; self
         }
         /// <p>The updated name of the slot.</p>
         pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -474,8 +426,7 @@ pub mod update_slot_output {
         }
         /// <p>The updated name of the slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_name = input;
-            self
+            self.slot_name = input; self
         }
         /// <p>The updated description of the bot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -484,8 +435,7 @@ pub mod update_slot_output {
         }
         /// <p>The updated description of the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The updated identifier of the slot type that provides values for the slot.</p>
         pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -494,24 +444,16 @@ pub mod update_slot_output {
         }
         /// <p>The updated identifier of the slot type that provides values for the slot.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>The updated prompts that Amazon Lex sends to the user to elicit a response that provides a value for the slot.</p>
-        pub fn value_elicitation_setting(
-            mut self,
-            input: crate::model::SlotValueElicitationSetting,
-        ) -> Self {
+        pub fn value_elicitation_setting(mut self, input: crate::model::SlotValueElicitationSetting) -> Self {
             self.value_elicitation_setting = Some(input);
             self
         }
         /// <p>The updated prompts that Amazon Lex sends to the user to elicit a response that provides a value for the slot.</p>
-        pub fn set_value_elicitation_setting(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueElicitationSetting>,
-        ) -> Self {
-            self.value_elicitation_setting = input;
-            self
+        pub fn set_value_elicitation_setting(mut self, input: std::option::Option<crate::model::SlotValueElicitationSetting>) -> Self {
+            self.value_elicitation_setting = input; self
         }
         /// <p>The updated setting that determines whether the slot value is obfuscated in the Amazon CloudWatch logs.</p>
         pub fn obfuscation_setting(mut self, input: crate::model::ObfuscationSetting) -> Self {
@@ -519,12 +461,8 @@ pub mod update_slot_output {
             self
         }
         /// <p>The updated setting that determines whether the slot value is obfuscated in the Amazon CloudWatch logs.</p>
-        pub fn set_obfuscation_setting(
-            mut self,
-            input: std::option::Option<crate::model::ObfuscationSetting>,
-        ) -> Self {
-            self.obfuscation_setting = input;
-            self
+        pub fn set_obfuscation_setting(mut self, input: std::option::Option<crate::model::ObfuscationSetting>) -> Self {
+            self.obfuscation_setting = input; self
         }
         /// <p>The identifier of the bot that contains the slot.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -533,8 +471,7 @@ pub mod update_slot_output {
         }
         /// <p>The identifier of the bot that contains the slot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -543,8 +480,7 @@ pub mod update_slot_output {
         }
         /// <p>The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The locale that contains the slot.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -553,8 +489,7 @@ pub mod update_slot_output {
         }
         /// <p>The locale that contains the slot.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The intent that contains the slot.</p>
         pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -563,8 +498,7 @@ pub mod update_slot_output {
         }
         /// <p>The intent that contains the slot.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// <p>The timestamp of the date and time that the slot was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -572,12 +506,8 @@ pub mod update_slot_output {
             self
         }
         /// <p>The timestamp of the date and time that the slot was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The timestamp of the date and time that the slot was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -585,28 +515,17 @@ pub mod update_slot_output {
             self
         }
         /// <p>The timestamp of the date and time that the slot was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>Indicates whether the slot accepts multiple values in one response.</p>
-        pub fn multiple_values_setting(
-            mut self,
-            input: crate::model::MultipleValuesSetting,
-        ) -> Self {
+        pub fn multiple_values_setting(mut self, input: crate::model::MultipleValuesSetting) -> Self {
             self.multiple_values_setting = Some(input);
             self
         }
         /// <p>Indicates whether the slot accepts multiple values in one response.</p>
-        pub fn set_multiple_values_setting(
-            mut self,
-            input: std::option::Option<crate::model::MultipleValuesSetting>,
-        ) -> Self {
-            self.multiple_values_setting = input;
-            self
+        pub fn set_multiple_values_setting(mut self, input: std::option::Option<crate::model::MultipleValuesSetting>) -> Self {
+            self.multiple_values_setting = input; self
         }
         /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
         pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
@@ -614,33 +533,45 @@ pub mod update_slot_output {
             self
         }
         /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-        pub fn set_sub_slot_setting(
-            mut self,
-            input: std::option::Option<crate::model::SubSlotSetting>,
-        ) -> Self {
-            self.sub_slot_setting = input;
-            self
+        pub fn set_sub_slot_setting(mut self, input: std::option::Option<crate::model::SubSlotSetting>) -> Self {
+            self.sub_slot_setting = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSlotOutput`](crate::output::UpdateSlotOutput).
         pub fn build(self) -> crate::output::UpdateSlotOutput {
             crate::output::UpdateSlotOutput {
-                slot_id: self.slot_id,
-                slot_name: self.slot_name,
-                description: self.description,
-                slot_type_id: self.slot_type_id,
-                value_elicitation_setting: self.value_elicitation_setting,
-                obfuscation_setting: self.obfuscation_setting,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                intent_id: self.intent_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                multiple_values_setting: self.multiple_values_setting,
-                sub_slot_setting: self.sub_slot_setting,
+                slot_id: self.slot_id
+                ,
+                slot_name: self.slot_name
+                ,
+                description: self.description
+                ,
+                slot_type_id: self.slot_type_id
+                ,
+                value_elicitation_setting: self.value_elicitation_setting
+                ,
+                obfuscation_setting: self.obfuscation_setting
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                intent_id: self.intent_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                multiple_values_setting: self.multiple_values_setting
+                ,
+                sub_slot_setting: self.sub_slot_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSlotOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSlotOutput`](crate::output::UpdateSlotOutput).
@@ -652,7 +583,7 @@ impl UpdateSlotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourcePolicyOutput {
+pub struct UpdateResourcePolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -662,17 +593,17 @@ pub struct UpdateResourcePolicyOutput {
 }
 impl UpdateResourcePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`UpdateResourcePolicyOutput`](crate::output::UpdateResourcePolicyOutput).
 pub mod update_resource_policy_output {
-
+    
     /// A builder for [`UpdateResourcePolicyOutput`](crate::output::UpdateResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -687,8 +618,7 @@ pub mod update_resource_policy_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -697,17 +627,20 @@ pub mod update_resource_policy_output {
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateResourcePolicyOutput`](crate::output::UpdateResourcePolicyOutput).
         pub fn build(self) -> crate::output::UpdateResourcePolicyOutput {
             crate::output::UpdateResourcePolicyOutput {
-                resource_arn: self.resource_arn,
-                revision_id: self.revision_id,
+                resource_arn: self.resource_arn
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourcePolicyOutput`](crate::output::UpdateResourcePolicyOutput).
@@ -719,7 +652,7 @@ impl UpdateResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIntentOutput {
+pub struct UpdateIntentOutput  {
     /// <p>The identifier of the intent that was updated.</p>
     #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
@@ -780,93 +713,85 @@ pub struct UpdateIntentOutput {
 }
 impl UpdateIntentOutput {
     /// <p>The identifier of the intent that was updated.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The updated name of the intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<&str> {
+    pub fn intent_name(&self) -> std::option::Option<& str> {
         self.intent_name.as_deref()
     }
     /// <p>The updated description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated built-in intent that is the parent of this intent.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The updated list of sample utterances for the intent.</p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [crate::model::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
     /// <p>The updated Lambda function called during each turn of the conversation with the user.</p>
-    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookSettings> {
+    pub fn dialog_code_hook(&self) -> std::option::Option<& crate::model::DialogCodeHookSettings> {
         self.dialog_code_hook.as_ref()
     }
     /// <p>The updated Lambda function called when the intent is ready for fulfillment.</p>
-    pub fn fulfillment_code_hook(
-        &self,
-    ) -> std::option::Option<&crate::model::FulfillmentCodeHookSettings> {
+    pub fn fulfillment_code_hook(&self) -> std::option::Option<& crate::model::FulfillmentCodeHookSettings> {
         self.fulfillment_code_hook.as_ref()
     }
     /// <p>The updated list of slots and their priorities that are elicited from the user for the intent.</p>
-    pub fn slot_priorities(&self) -> std::option::Option<&[crate::model::SlotPriority]> {
+    pub fn slot_priorities(&self) -> std::option::Option<& [crate::model::SlotPriority]> {
         self.slot_priorities.as_deref()
     }
     /// <p>The updated prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-    pub fn intent_confirmation_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::IntentConfirmationSetting> {
+    pub fn intent_confirmation_setting(&self) -> std::option::Option<& crate::model::IntentConfirmationSetting> {
         self.intent_confirmation_setting.as_ref()
     }
     /// <p>The updated response that Amazon Lex sends the user when the intent is closed.</p>
-    pub fn intent_closing_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::IntentClosingSetting> {
+    pub fn intent_closing_setting(&self) -> std::option::Option<& crate::model::IntentClosingSetting> {
         self.intent_closing_setting.as_ref()
     }
     /// <p>The updated list of contexts that must be active for the intent to be considered by Amazon Lex.</p>
-    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<& [crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
     /// <p>The updated list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<& [crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
     /// <p>The updated configuration for connecting to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> std::option::Option<& crate::model::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>The identifier of the bot that contains the intent.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the intent. Will always be <code>DRAFT</code>.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The updated language and locale of the intent.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A timestamp of when the intent was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the last time that the intent was modified.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p></p>
-    pub fn initial_response_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::InitialResponseSetting> {
+    pub fn initial_response_setting(&self) -> std::option::Option<& crate::model::InitialResponseSetting> {
         self.initial_response_setting.as_ref()
     }
 }
 /// See [`UpdateIntentOutput`](crate::output::UpdateIntentOutput).
 pub mod update_intent_output {
-
+    
     /// A builder for [`UpdateIntentOutput`](crate::output::UpdateIntentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -874,14 +799,11 @@ pub mod update_intent_output {
         pub(crate) intent_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) parent_intent_signature: std::option::Option<std::string::String>,
-        pub(crate) sample_utterances:
-            std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
+        pub(crate) sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
         pub(crate) dialog_code_hook: std::option::Option<crate::model::DialogCodeHookSettings>,
-        pub(crate) fulfillment_code_hook:
-            std::option::Option<crate::model::FulfillmentCodeHookSettings>,
+        pub(crate) fulfillment_code_hook: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
         pub(crate) slot_priorities: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>,
-        pub(crate) intent_confirmation_setting:
-            std::option::Option<crate::model::IntentConfirmationSetting>,
+        pub(crate) intent_confirmation_setting: std::option::Option<crate::model::IntentConfirmationSetting>,
         pub(crate) intent_closing_setting: std::option::Option<crate::model::IntentClosingSetting>,
         pub(crate) input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
         pub(crate) output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -891,8 +813,7 @@ pub mod update_intent_output {
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) initial_response_setting:
-            std::option::Option<crate::model::InitialResponseSetting>,
+        pub(crate) initial_response_setting: std::option::Option<crate::model::InitialResponseSetting>,
     }
     impl Builder {
         /// <p>The identifier of the intent that was updated.</p>
@@ -902,8 +823,7 @@ pub mod update_intent_output {
         }
         /// <p>The identifier of the intent that was updated.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// <p>The updated name of the intent.</p>
         pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -912,8 +832,7 @@ pub mod update_intent_output {
         }
         /// <p>The updated name of the intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_name = input;
-            self
+            self.intent_name = input; self
         }
         /// <p>The updated description of the intent.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -922,8 +841,7 @@ pub mod update_intent_output {
         }
         /// <p>The updated description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The updated built-in intent that is the parent of this intent.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -931,12 +849,8 @@ pub mod update_intent_output {
             self
         }
         /// <p>The updated built-in intent that is the parent of this intent.</p>
-        pub fn set_parent_intent_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_intent_signature = input;
-            self
+        pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_intent_signature = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -945,17 +859,13 @@ pub mod update_intent_output {
         /// <p>The updated list of sample utterances for the intent.</p>
         pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input);
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input);
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p>The updated list of sample utterances for the intent.</p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>The updated Lambda function called during each turn of the conversation with the user.</p>
         pub fn dialog_code_hook(mut self, input: crate::model::DialogCodeHookSettings) -> Self {
@@ -963,28 +873,17 @@ pub mod update_intent_output {
             self
         }
         /// <p>The updated Lambda function called during each turn of the conversation with the user.</p>
-        pub fn set_dialog_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::DialogCodeHookSettings>,
-        ) -> Self {
-            self.dialog_code_hook = input;
-            self
+        pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::model::DialogCodeHookSettings>) -> Self {
+            self.dialog_code_hook = input; self
         }
         /// <p>The updated Lambda function called when the intent is ready for fulfillment.</p>
-        pub fn fulfillment_code_hook(
-            mut self,
-            input: crate::model::FulfillmentCodeHookSettings,
-        ) -> Self {
+        pub fn fulfillment_code_hook(mut self, input: crate::model::FulfillmentCodeHookSettings) -> Self {
             self.fulfillment_code_hook = Some(input);
             self
         }
         /// <p>The updated Lambda function called when the intent is ready for fulfillment.</p>
-        pub fn set_fulfillment_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
-        ) -> Self {
-            self.fulfillment_code_hook = input;
-            self
+        pub fn set_fulfillment_code_hook(mut self, input: std::option::Option<crate::model::FulfillmentCodeHookSettings>) -> Self {
+            self.fulfillment_code_hook = input; self
         }
         /// Appends an item to `slot_priorities`.
         ///
@@ -993,33 +892,22 @@ pub mod update_intent_output {
         /// <p>The updated list of slots and their priorities that are elicited from the user for the intent.</p>
         pub fn slot_priorities(mut self, input: crate::model::SlotPriority) -> Self {
             let mut v = self.slot_priorities.unwrap_or_default();
-            v.push(input);
-            self.slot_priorities = Some(v);
-            self
+                            v.push(input);
+                            self.slot_priorities = Some(v);
+                            self
         }
         /// <p>The updated list of slots and their priorities that are elicited from the user for the intent.</p>
-        pub fn set_slot_priorities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>,
-        ) -> Self {
-            self.slot_priorities = input;
-            self
+        pub fn set_slot_priorities(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>) -> Self {
+            self.slot_priorities = input; self
         }
         /// <p>The updated prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-        pub fn intent_confirmation_setting(
-            mut self,
-            input: crate::model::IntentConfirmationSetting,
-        ) -> Self {
+        pub fn intent_confirmation_setting(mut self, input: crate::model::IntentConfirmationSetting) -> Self {
             self.intent_confirmation_setting = Some(input);
             self
         }
         /// <p>The updated prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-        pub fn set_intent_confirmation_setting(
-            mut self,
-            input: std::option::Option<crate::model::IntentConfirmationSetting>,
-        ) -> Self {
-            self.intent_confirmation_setting = input;
-            self
+        pub fn set_intent_confirmation_setting(mut self, input: std::option::Option<crate::model::IntentConfirmationSetting>) -> Self {
+            self.intent_confirmation_setting = input; self
         }
         /// <p>The updated response that Amazon Lex sends the user when the intent is closed.</p>
         pub fn intent_closing_setting(mut self, input: crate::model::IntentClosingSetting) -> Self {
@@ -1027,12 +915,8 @@ pub mod update_intent_output {
             self
         }
         /// <p>The updated response that Amazon Lex sends the user when the intent is closed.</p>
-        pub fn set_intent_closing_setting(
-            mut self,
-            input: std::option::Option<crate::model::IntentClosingSetting>,
-        ) -> Self {
-            self.intent_closing_setting = input;
-            self
+        pub fn set_intent_closing_setting(mut self, input: std::option::Option<crate::model::IntentClosingSetting>) -> Self {
+            self.intent_closing_setting = input; self
         }
         /// Appends an item to `input_contexts`.
         ///
@@ -1041,17 +925,13 @@ pub mod update_intent_output {
         /// <p>The updated list of contexts that must be active for the intent to be considered by Amazon Lex.</p>
         pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input);
-            self.input_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.input_contexts = Some(v);
+                            self
         }
         /// <p>The updated list of contexts that must be active for the intent to be considered by Amazon Lex.</p>
-        pub fn set_input_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-        ) -> Self {
-            self.input_contexts = input;
-            self
+        pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputContext>>) -> Self {
+            self.input_contexts = input; self
         }
         /// Appends an item to `output_contexts`.
         ///
@@ -1060,17 +940,13 @@ pub mod update_intent_output {
         /// <p>The updated list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
         pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input);
-            self.output_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.output_contexts = Some(v);
+                            self
         }
         /// <p>The updated list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-        pub fn set_output_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-        ) -> Self {
-            self.output_contexts = input;
-            self
+        pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>) -> Self {
+            self.output_contexts = input; self
         }
         /// <p>The updated configuration for connecting to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
         pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
@@ -1078,12 +954,8 @@ pub mod update_intent_output {
             self
         }
         /// <p>The updated configuration for connecting to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-        pub fn set_kendra_configuration(
-            mut self,
-            input: std::option::Option<crate::model::KendraConfiguration>,
-        ) -> Self {
-            self.kendra_configuration = input;
-            self
+        pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::model::KendraConfiguration>) -> Self {
+            self.kendra_configuration = input; self
         }
         /// <p>The identifier of the bot that contains the intent.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1092,8 +964,7 @@ pub mod update_intent_output {
         }
         /// <p>The identifier of the bot that contains the intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the intent. Will always be <code>DRAFT</code>.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1102,8 +973,7 @@ pub mod update_intent_output {
         }
         /// <p>The version of the bot that contains the intent. Will always be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The updated language and locale of the intent.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1112,8 +982,7 @@ pub mod update_intent_output {
         }
         /// <p>The updated language and locale of the intent.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>A timestamp of when the intent was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1121,12 +990,8 @@ pub mod update_intent_output {
             self
         }
         /// <p>A timestamp of when the intent was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the last time that the intent was modified.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1134,54 +999,64 @@ pub mod update_intent_output {
             self
         }
         /// <p>A timestamp of the last time that the intent was modified.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p></p>
-        pub fn initial_response_setting(
-            mut self,
-            input: crate::model::InitialResponseSetting,
-        ) -> Self {
+        pub fn initial_response_setting(mut self, input: crate::model::InitialResponseSetting) -> Self {
             self.initial_response_setting = Some(input);
             self
         }
         /// <p></p>
-        pub fn set_initial_response_setting(
-            mut self,
-            input: std::option::Option<crate::model::InitialResponseSetting>,
-        ) -> Self {
-            self.initial_response_setting = input;
-            self
+        pub fn set_initial_response_setting(mut self, input: std::option::Option<crate::model::InitialResponseSetting>) -> Self {
+            self.initial_response_setting = input; self
         }
         /// Consumes the builder and constructs a [`UpdateIntentOutput`](crate::output::UpdateIntentOutput).
         pub fn build(self) -> crate::output::UpdateIntentOutput {
             crate::output::UpdateIntentOutput {
-                intent_id: self.intent_id,
-                intent_name: self.intent_name,
-                description: self.description,
-                parent_intent_signature: self.parent_intent_signature,
-                sample_utterances: self.sample_utterances,
-                dialog_code_hook: self.dialog_code_hook,
-                fulfillment_code_hook: self.fulfillment_code_hook,
-                slot_priorities: self.slot_priorities,
-                intent_confirmation_setting: self.intent_confirmation_setting,
-                intent_closing_setting: self.intent_closing_setting,
-                input_contexts: self.input_contexts,
-                output_contexts: self.output_contexts,
-                kendra_configuration: self.kendra_configuration,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                initial_response_setting: self.initial_response_setting,
+                intent_id: self.intent_id
+                ,
+                intent_name: self.intent_name
+                ,
+                description: self.description
+                ,
+                parent_intent_signature: self.parent_intent_signature
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                dialog_code_hook: self.dialog_code_hook
+                ,
+                fulfillment_code_hook: self.fulfillment_code_hook
+                ,
+                slot_priorities: self.slot_priorities
+                ,
+                intent_confirmation_setting: self.intent_confirmation_setting
+                ,
+                intent_closing_setting: self.intent_closing_setting
+                ,
+                input_contexts: self.input_contexts
+                ,
+                output_contexts: self.output_contexts
+                ,
+                kendra_configuration: self.kendra_configuration
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                initial_response_setting: self.initial_response_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateIntentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIntentOutput`](crate::output::UpdateIntentOutput).
@@ -1193,7 +1068,7 @@ impl UpdateIntentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExportOutput {
+pub struct UpdateExportOutput  {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
@@ -1215,41 +1090,38 @@ pub struct UpdateExportOutput {
 }
 impl UpdateExportOutput {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
-    pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
+    pub fn file_format(&self) -> std::option::Option<& crate::model::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export archive is available for download.</p>
-    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the export was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`UpdateExportOutput`](crate::output::UpdateExportOutput).
 pub mod update_export_output {
-
+    
     /// A builder for [`UpdateExportOutput`](crate::output::UpdateExportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ExportResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ExportResourceSpecification>,
         pub(crate) file_format: std::option::Option<crate::model::ImportExportFileFormat>,
         pub(crate) export_status: std::option::Option<crate::model::ExportStatus>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1263,24 +1135,16 @@ pub mod update_export_output {
         }
         /// <p>The unique identifier Amazon Lex assigned to the export.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.export_id = input;
-            self
+            self.export_id = input; self
         }
         /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ExportResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ExportResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ExportResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ExportResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
         pub fn file_format(mut self, input: crate::model::ImportExportFileFormat) -> Self {
@@ -1288,12 +1152,8 @@ pub mod update_export_output {
             self
         }
         /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
-        pub fn set_file_format(
-            mut self,
-            input: std::option::Option<crate::model::ImportExportFileFormat>,
-        ) -> Self {
-            self.file_format = input;
-            self
+        pub fn set_file_format(mut self, input: std::option::Option<crate::model::ImportExportFileFormat>) -> Self {
+            self.file_format = input; self
         }
         /// <p>The status of the export. When the status is <code>Completed</code> the export archive is available for download.</p>
         pub fn export_status(mut self, input: crate::model::ExportStatus) -> Self {
@@ -1301,12 +1161,8 @@ pub mod update_export_output {
             self
         }
         /// <p>The status of the export. When the status is <code>Completed</code> the export archive is available for download.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::ExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::ExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// <p>The date and time that the export was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1314,12 +1170,8 @@ pub mod update_export_output {
             self
         }
         /// <p>The date and time that the export was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time that the export was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1327,25 +1179,29 @@ pub mod update_export_output {
             self
         }
         /// <p>The date and time that the export was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateExportOutput`](crate::output::UpdateExportOutput).
         pub fn build(self) -> crate::output::UpdateExportOutput {
             crate::output::UpdateExportOutput {
-                export_id: self.export_id,
-                resource_specification: self.resource_specification,
-                file_format: self.file_format,
-                export_status: self.export_status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                export_id: self.export_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                file_format: self.file_format
+                ,
+                export_status: self.export_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateExportOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExportOutput`](crate::output::UpdateExportOutput).
@@ -1357,7 +1213,7 @@ impl UpdateExportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBotRecommendationOutput {
+pub struct UpdateBotRecommendationOutput  {
     /// <p>The unique identifier of the bot containing the bot recommendation that has been updated.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -1367,7 +1223,7 @@ pub struct UpdateBotRecommendationOutput {
     /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
     #[doc(hidden)]
     pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
@@ -1389,63 +1245,57 @@ pub struct UpdateBotRecommendationOutput {
 }
 impl UpdateBotRecommendationOutput {
     /// <p>The unique identifier of the bot containing the bot recommendation that has been updated.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the bot recommendation that has been updated.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(&self) -> std::option::Option<& crate::model::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::TranscriptSourceSetting> {
+    pub fn transcript_source_setting(&self) -> std::option::Option<& crate::model::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
+    pub fn encryption_setting(&self) -> std::option::Option<& crate::model::EncryptionSetting> {
         self.encryption_setting.as_ref()
     }
 }
 /// See [`UpdateBotRecommendationOutput`](crate::output::UpdateBotRecommendationOutput).
 pub mod update_bot_recommendation_output {
-
+    
     /// A builder for [`UpdateBotRecommendationOutput`](crate::output::UpdateBotRecommendationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) bot_recommendation_status:
-            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
         pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) transcript_source_setting:
-            std::option::Option<crate::model::TranscriptSourceSetting>,
+        pub(crate) transcript_source_setting: std::option::Option<crate::model::TranscriptSourceSetting>,
         pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
     }
     impl Builder {
@@ -1456,8 +1306,7 @@ pub mod update_bot_recommendation_output {
         }
         /// <p>The unique identifier of the bot containing the bot recommendation that has been updated.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot containing the bot recommendation that has been updated.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1466,8 +1315,7 @@ pub mod update_bot_recommendation_output {
         }
         /// <p>The version of the bot containing the bot recommendation that has been updated.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1476,26 +1324,18 @@ pub mod update_bot_recommendation_output {
         }
         /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
-        /// <p>The status of the bot recommendation.</p>
+        /// <p>The status of the bot recommendation.</p> 
         /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-        pub fn bot_recommendation_status(
-            mut self,
-            input: crate::model::BotRecommendationStatus,
-        ) -> Self {
+        pub fn bot_recommendation_status(mut self, input: crate::model::BotRecommendationStatus) -> Self {
             self.bot_recommendation_status = Some(input);
             self
         }
-        /// <p>The status of the bot recommendation.</p>
+        /// <p>The status of the bot recommendation.</p> 
         /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-        pub fn set_bot_recommendation_status(
-            mut self,
-            input: std::option::Option<crate::model::BotRecommendationStatus>,
-        ) -> Self {
-            self.bot_recommendation_status = input;
-            self
+        pub fn set_bot_recommendation_status(mut self, input: std::option::Option<crate::model::BotRecommendationStatus>) -> Self {
+            self.bot_recommendation_status = input; self
         }
         /// <p>The unique identifier of the bot recommendation to be updated.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1503,12 +1343,8 @@ pub mod update_bot_recommendation_output {
             self
         }
         /// <p>The unique identifier of the bot recommendation to be updated.</p>
-        pub fn set_bot_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_recommendation_id = input;
-            self
+        pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_recommendation_id = input; self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1516,12 +1352,8 @@ pub mod update_bot_recommendation_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1529,28 +1361,17 @@ pub mod update_bot_recommendation_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-        pub fn transcript_source_setting(
-            mut self,
-            input: crate::model::TranscriptSourceSetting,
-        ) -> Self {
+        pub fn transcript_source_setting(mut self, input: crate::model::TranscriptSourceSetting) -> Self {
             self.transcript_source_setting = Some(input);
             self
         }
         /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-        pub fn set_transcript_source_setting(
-            mut self,
-            input: std::option::Option<crate::model::TranscriptSourceSetting>,
-        ) -> Self {
-            self.transcript_source_setting = input;
-            self
+        pub fn set_transcript_source_setting(mut self, input: std::option::Option<crate::model::TranscriptSourceSetting>) -> Self {
+            self.transcript_source_setting = input; self
         }
         /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
@@ -1558,28 +1379,35 @@ pub mod update_bot_recommendation_output {
             self
         }
         /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-        pub fn set_encryption_setting(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionSetting>,
-        ) -> Self {
-            self.encryption_setting = input;
-            self
+        pub fn set_encryption_setting(mut self, input: std::option::Option<crate::model::EncryptionSetting>) -> Self {
+            self.encryption_setting = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBotRecommendationOutput`](crate::output::UpdateBotRecommendationOutput).
         pub fn build(self) -> crate::output::UpdateBotRecommendationOutput {
             crate::output::UpdateBotRecommendationOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_status: self.bot_recommendation_status,
-                bot_recommendation_id: self.bot_recommendation_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                transcript_source_setting: self.transcript_source_setting,
-                encryption_setting: self.encryption_setting,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_status: self.bot_recommendation_status
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                transcript_source_setting: self.transcript_source_setting
+                ,
+                encryption_setting: self.encryption_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBotRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBotRecommendationOutput`](crate::output::UpdateBotRecommendationOutput).
@@ -1591,7 +1419,7 @@ impl UpdateBotRecommendationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBotLocaleOutput {
+pub struct UpdateBotLocaleOutput  {
     /// <p>The identifier of the bot that contains the updated locale.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -1631,23 +1459,23 @@ pub struct UpdateBotLocaleOutput {
 }
 impl UpdateBotLocaleOutput {
     /// <p>The identifier of the bot that contains the updated locale.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the updated locale.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale of the updated bot locale.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The updated locale name for the locale.</p>
-    pub fn locale_name(&self) -> std::option::Option<&str> {
+    pub fn locale_name(&self) -> std::option::Option<& str> {
         self.locale_name.as_deref()
     }
     /// <p>The updated description of the locale.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
@@ -1655,33 +1483,33 @@ impl UpdateBotLocaleOutput {
         self.nlu_intent_confidence_threshold
     }
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
-    pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
+    pub fn voice_settings(&self) -> std::option::Option<& crate::model::VoiceSettings> {
         self.voice_settings.as_ref()
     }
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<& crate::model::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failure_reasons(&self) -> std::option::Option<& [std::string::String]> {
         self.failure_reasons.as_deref()
     }
     /// <p>A timestamp of the date and time that the locale was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the locale was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn recommended_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recommended_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.recommended_actions.as_deref()
     }
 }
 /// See [`UpdateBotLocaleOutput`](crate::output::UpdateBotLocaleOutput).
 pub mod update_bot_locale_output {
-
+    
     /// A builder for [`UpdateBotLocaleOutput`](crate::output::UpdateBotLocaleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1706,8 +1534,7 @@ pub mod update_bot_locale_output {
         }
         /// <p>The identifier of the bot that contains the updated locale.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the updated locale.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1716,8 +1543,7 @@ pub mod update_bot_locale_output {
         }
         /// <p>The version of the bot that contains the updated locale.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale of the updated bot locale.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1726,8 +1552,7 @@ pub mod update_bot_locale_output {
         }
         /// <p>The language and locale of the updated bot locale.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The updated locale name for the locale.</p>
         pub fn locale_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1736,8 +1561,7 @@ pub mod update_bot_locale_output {
         }
         /// <p>The updated locale name for the locale.</p>
         pub fn set_locale_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_name = input;
-            self
+            self.locale_name = input; self
         }
         /// <p>The updated description of the locale.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1746,8 +1570,7 @@ pub mod update_bot_locale_output {
         }
         /// <p>The updated description of the locale.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -1755,12 +1578,8 @@ pub mod update_bot_locale_output {
             self
         }
         /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
-        pub fn set_nlu_intent_confidence_threshold(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.nlu_intent_confidence_threshold = input;
-            self
+        pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.nlu_intent_confidence_threshold = input; self
         }
         /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
         pub fn voice_settings(mut self, input: crate::model::VoiceSettings) -> Self {
@@ -1768,12 +1587,8 @@ pub mod update_bot_locale_output {
             self
         }
         /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
-        pub fn set_voice_settings(
-            mut self,
-            input: std::option::Option<crate::model::VoiceSettings>,
-        ) -> Self {
-            self.voice_settings = input;
-            self
+        pub fn set_voice_settings(mut self, input: std::option::Option<crate::model::VoiceSettings>) -> Self {
+            self.voice_settings = input; self
         }
         /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
         pub fn bot_locale_status(mut self, input: crate::model::BotLocaleStatus) -> Self {
@@ -1781,12 +1596,8 @@ pub mod update_bot_locale_output {
             self
         }
         /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
-        pub fn set_bot_locale_status(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleStatus>,
-        ) -> Self {
-            self.bot_locale_status = input;
-            self
+        pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::model::BotLocaleStatus>) -> Self {
+            self.bot_locale_status = input; self
         }
         /// Appends an item to `failure_reasons`.
         ///
@@ -1795,17 +1606,13 @@ pub mod update_bot_locale_output {
         /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
         pub fn failure_reasons(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failure_reasons.unwrap_or_default();
-            v.push(input.into());
-            self.failure_reasons = Some(v);
-            self
+                            v.push(input.into());
+                            self.failure_reasons = Some(v);
+                            self
         }
         /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-        pub fn set_failure_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failure_reasons = input;
-            self
+        pub fn set_failure_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failure_reasons = input; self
         }
         /// <p>A timestamp of the date and time that the locale was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1813,12 +1620,8 @@ pub mod update_bot_locale_output {
             self
         }
         /// <p>A timestamp of the date and time that the locale was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the locale was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1826,12 +1629,8 @@ pub mod update_bot_locale_output {
             self
         }
         /// <p>A timestamp of the date and time that the locale was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Appends an item to `recommended_actions`.
         ///
@@ -1840,36 +1639,46 @@ pub mod update_bot_locale_output {
         /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
         pub fn recommended_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.recommended_actions.unwrap_or_default();
-            v.push(input.into());
-            self.recommended_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.recommended_actions = Some(v);
+                            self
         }
         /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-        pub fn set_recommended_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.recommended_actions = input;
-            self
+        pub fn set_recommended_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.recommended_actions = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBotLocaleOutput`](crate::output::UpdateBotLocaleOutput).
         pub fn build(self) -> crate::output::UpdateBotLocaleOutput {
             crate::output::UpdateBotLocaleOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                locale_name: self.locale_name,
-                description: self.description,
-                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-                voice_settings: self.voice_settings,
-                bot_locale_status: self.bot_locale_status,
-                failure_reasons: self.failure_reasons,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                recommended_actions: self.recommended_actions,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                locale_name: self.locale_name
+                ,
+                description: self.description
+                ,
+                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+                ,
+                voice_settings: self.voice_settings
+                ,
+                bot_locale_status: self.bot_locale_status
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                recommended_actions: self.recommended_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBotLocaleOutput`](crate::output::UpdateBotLocaleOutput).
@@ -1881,7 +1690,7 @@ impl UpdateBotLocaleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBotAliasOutput {
+pub struct UpdateBotAliasOutput  {
     /// <p>The identifier of the updated bot alias.</p>
     #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
@@ -1896,9 +1705,7 @@ pub struct UpdateBotAliasOutput {
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The updated Lambda functions to use in each locale for the bot alias.</p>
     #[doc(hidden)]
-    pub bot_alias_locale_settings: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-    >,
+    pub bot_alias_locale_settings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>,
     /// <p>The updated settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
     #[doc(hidden)]
     pub conversation_log_settings: std::option::Option<crate::model::ConversationLogSettings>,
@@ -1920,61 +1727,53 @@ pub struct UpdateBotAliasOutput {
 }
 impl UpdateBotAliasOutput {
     /// <p>The identifier of the updated bot alias.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The updated name of the bot alias.</p>
-    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_name(&self) -> std::option::Option<& str> {
         self.bot_alias_name.as_deref()
     }
     /// <p>The updated description of the bot alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated version of the bot that the alias points to.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The updated Lambda functions to use in each locale for the bot alias.</p>
-    pub fn bot_alias_locale_settings(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-    > {
+    pub fn bot_alias_locale_settings(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>> {
         self.bot_alias_locale_settings.as_ref()
     }
     /// <p>The updated settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    pub fn conversation_log_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::ConversationLogSettings> {
+    pub fn conversation_log_settings(&self) -> std::option::Option<& crate::model::ConversationLogSettings> {
         self.conversation_log_settings.as_ref()
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::SentimentAnalysisSettings> {
+    pub fn sentiment_analysis_settings(&self) -> std::option::Option<& crate::model::SentimentAnalysisSettings> {
         self.sentiment_analysis_settings.as_ref()
     }
     /// <p>The current status of the bot alias. When the status is <code>Available</code> the alias is ready for use.</p>
-    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+    pub fn bot_alias_status(&self) -> std::option::Option<& crate::model::BotAliasStatus> {
         self.bot_alias_status.as_ref()
     }
     /// <p>The identifier of the bot with the updated alias.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the bot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`UpdateBotAliasOutput`](crate::output::UpdateBotAliasOutput).
 pub mod update_bot_alias_output {
-
+    
     /// A builder for [`UpdateBotAliasOutput`](crate::output::UpdateBotAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1982,13 +1781,9 @@ pub mod update_bot_alias_output {
         pub(crate) bot_alias_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
-        pub(crate) bot_alias_locale_settings: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-        >,
-        pub(crate) conversation_log_settings:
-            std::option::Option<crate::model::ConversationLogSettings>,
-        pub(crate) sentiment_analysis_settings:
-            std::option::Option<crate::model::SentimentAnalysisSettings>,
+        pub(crate) bot_alias_locale_settings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>,
+        pub(crate) conversation_log_settings: std::option::Option<crate::model::ConversationLogSettings>,
+        pub(crate) sentiment_analysis_settings: std::option::Option<crate::model::SentimentAnalysisSettings>,
         pub(crate) bot_alias_status: std::option::Option<crate::model::BotAliasStatus>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2002,8 +1797,7 @@ pub mod update_bot_alias_output {
         }
         /// <p>The identifier of the updated bot alias.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_alias_id = input;
-            self
+            self.bot_alias_id = input; self
         }
         /// <p>The updated name of the bot alias.</p>
         pub fn bot_alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2011,12 +1805,8 @@ pub mod update_bot_alias_output {
             self
         }
         /// <p>The updated name of the bot alias.</p>
-        pub fn set_bot_alias_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_alias_name = input;
-            self
+        pub fn set_bot_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_alias_name = input; self
         }
         /// <p>The updated description of the bot alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2025,8 +1815,7 @@ pub mod update_bot_alias_output {
         }
         /// <p>The updated description of the bot alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The updated version of the bot that the alias points to.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2035,68 +1824,40 @@ pub mod update_bot_alias_output {
         }
         /// <p>The updated version of the bot that the alias points to.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// Adds a key-value pair to `bot_alias_locale_settings`.
         ///
         /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
         ///
         /// <p>The updated Lambda functions to use in each locale for the bot alias.</p>
-        pub fn bot_alias_locale_settings(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::BotAliasLocaleSettings,
-        ) -> Self {
+        pub fn bot_alias_locale_settings(mut self, k: impl Into<std::string::String>, v: crate::model::BotAliasLocaleSettings) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.bot_alias_locale_settings = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.bot_alias_locale_settings = Some(hash_map);
+                            self
         }
         /// <p>The updated Lambda functions to use in each locale for the bot alias.</p>
-        pub fn set_bot_alias_locale_settings(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::BotAliasLocaleSettings,
-                >,
-            >,
-        ) -> Self {
-            self.bot_alias_locale_settings = input;
-            self
+        pub fn set_bot_alias_locale_settings(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>) -> Self {
+            self.bot_alias_locale_settings = input; self
         }
         /// <p>The updated settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-        pub fn conversation_log_settings(
-            mut self,
-            input: crate::model::ConversationLogSettings,
-        ) -> Self {
+        pub fn conversation_log_settings(mut self, input: crate::model::ConversationLogSettings) -> Self {
             self.conversation_log_settings = Some(input);
             self
         }
         /// <p>The updated settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-        pub fn set_conversation_log_settings(
-            mut self,
-            input: std::option::Option<crate::model::ConversationLogSettings>,
-        ) -> Self {
-            self.conversation_log_settings = input;
-            self
+        pub fn set_conversation_log_settings(mut self, input: std::option::Option<crate::model::ConversationLogSettings>) -> Self {
+            self.conversation_log_settings = input; self
         }
         /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-        pub fn sentiment_analysis_settings(
-            mut self,
-            input: crate::model::SentimentAnalysisSettings,
-        ) -> Self {
+        pub fn sentiment_analysis_settings(mut self, input: crate::model::SentimentAnalysisSettings) -> Self {
             self.sentiment_analysis_settings = Some(input);
             self
         }
         /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-        pub fn set_sentiment_analysis_settings(
-            mut self,
-            input: std::option::Option<crate::model::SentimentAnalysisSettings>,
-        ) -> Self {
-            self.sentiment_analysis_settings = input;
-            self
+        pub fn set_sentiment_analysis_settings(mut self, input: std::option::Option<crate::model::SentimentAnalysisSettings>) -> Self {
+            self.sentiment_analysis_settings = input; self
         }
         /// <p>The current status of the bot alias. When the status is <code>Available</code> the alias is ready for use.</p>
         pub fn bot_alias_status(mut self, input: crate::model::BotAliasStatus) -> Self {
@@ -2104,12 +1865,8 @@ pub mod update_bot_alias_output {
             self
         }
         /// <p>The current status of the bot alias. When the status is <code>Available</code> the alias is ready for use.</p>
-        pub fn set_bot_alias_status(
-            mut self,
-            input: std::option::Option<crate::model::BotAliasStatus>,
-        ) -> Self {
-            self.bot_alias_status = input;
-            self
+        pub fn set_bot_alias_status(mut self, input: std::option::Option<crate::model::BotAliasStatus>) -> Self {
+            self.bot_alias_status = input; self
         }
         /// <p>The identifier of the bot with the updated alias.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2118,8 +1875,7 @@ pub mod update_bot_alias_output {
         }
         /// <p>The identifier of the bot with the updated alias.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>A timestamp of the date and time that the bot was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2127,12 +1883,8 @@ pub mod update_bot_alias_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the bot was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2140,30 +1892,39 @@ pub mod update_bot_alias_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBotAliasOutput`](crate::output::UpdateBotAliasOutput).
         pub fn build(self) -> crate::output::UpdateBotAliasOutput {
             crate::output::UpdateBotAliasOutput {
-                bot_alias_id: self.bot_alias_id,
-                bot_alias_name: self.bot_alias_name,
-                description: self.description,
-                bot_version: self.bot_version,
-                bot_alias_locale_settings: self.bot_alias_locale_settings,
-                conversation_log_settings: self.conversation_log_settings,
-                sentiment_analysis_settings: self.sentiment_analysis_settings,
-                bot_alias_status: self.bot_alias_status,
-                bot_id: self.bot_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_alias_name: self.bot_alias_name
+                ,
+                description: self.description
+                ,
+                bot_version: self.bot_version
+                ,
+                bot_alias_locale_settings: self.bot_alias_locale_settings
+                ,
+                conversation_log_settings: self.conversation_log_settings
+                ,
+                sentiment_analysis_settings: self.sentiment_analysis_settings
+                ,
+                bot_alias_status: self.bot_alias_status
+                ,
+                bot_id: self.bot_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBotAliasOutput`](crate::output::UpdateBotAliasOutput).
@@ -2175,7 +1936,7 @@ impl UpdateBotAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBotOutput {
+pub struct UpdateBotOutput  {
     /// <p>The unique identifier of the bot that was updated.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -2206,23 +1967,23 @@ pub struct UpdateBotOutput {
 }
 impl UpdateBotOutput {
     /// <p>The unique identifier of the bot that was updated.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The name of the bot after the update.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The description of the bot after the update.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the bot after the update.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The data privacy settings for the bot after the update.</p>
-    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+    pub fn data_privacy(&self) -> std::option::Option<& crate::model::DataPrivacy> {
         self.data_privacy.as_ref()
     }
     /// <p>The session timeout, in seconds, for the bot after the update.</p>
@@ -2230,21 +1991,21 @@ impl UpdateBotOutput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`UpdateBotOutput`](crate::output::UpdateBotOutput).
 pub mod update_bot_output {
-
+    
     /// A builder for [`UpdateBotOutput`](crate::output::UpdateBotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2266,8 +2027,7 @@ pub mod update_bot_output {
         }
         /// <p>The unique identifier of the bot that was updated.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The name of the bot after the update.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2276,8 +2036,7 @@ pub mod update_bot_output {
         }
         /// <p>The name of the bot after the update.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The description of the bot after the update.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2286,8 +2045,7 @@ pub mod update_bot_output {
         }
         /// <p>The description of the bot after the update.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used by the bot after the update.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2296,8 +2054,7 @@ pub mod update_bot_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used by the bot after the update.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The data privacy settings for the bot after the update.</p>
         pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
@@ -2305,12 +2062,8 @@ pub mod update_bot_output {
             self
         }
         /// <p>The data privacy settings for the bot after the update.</p>
-        pub fn set_data_privacy(
-            mut self,
-            input: std::option::Option<crate::model::DataPrivacy>,
-        ) -> Self {
-            self.data_privacy = input;
-            self
+        pub fn set_data_privacy(mut self, input: std::option::Option<crate::model::DataPrivacy>) -> Self {
+            self.data_privacy = input; self
         }
         /// <p>The session timeout, in seconds, for the bot after the update.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
@@ -2319,8 +2072,7 @@ pub mod update_bot_output {
         }
         /// <p>The session timeout, in seconds, for the bot after the update.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_session_ttl_in_seconds = input;
-            self
+            self.idle_session_ttl_in_seconds = input; self
         }
         /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -2328,12 +2080,8 @@ pub mod update_bot_output {
             self
         }
         /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// <p>A timestamp of the date and time that the bot was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2341,12 +2089,8 @@ pub mod update_bot_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the bot was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2354,28 +2098,35 @@ pub mod update_bot_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBotOutput`](crate::output::UpdateBotOutput).
         pub fn build(self) -> crate::output::UpdateBotOutput {
             crate::output::UpdateBotOutput {
-                bot_id: self.bot_id,
-                bot_name: self.bot_name,
-                description: self.description,
-                role_arn: self.role_arn,
-                data_privacy: self.data_privacy,
-                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-                bot_status: self.bot_status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                bot_id: self.bot_id
+                ,
+                bot_name: self.bot_name
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                data_privacy: self.data_privacy
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                bot_status: self.bot_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBotOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBotOutput`](crate::output::UpdateBotOutput).
@@ -2387,19 +2138,24 @@ impl UpdateBotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2411,19 +2167,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2435,7 +2196,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopBotRecommendationOutput {
+pub struct StopBotRecommendationOutput  {
     /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -2454,39 +2215,36 @@ pub struct StopBotRecommendationOutput {
 }
 impl StopBotRecommendationOutput {
     /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the recommendation that is being stopped.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
-    pub fn bot_recommendation_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(&self) -> std::option::Option<& crate::model::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
 }
 /// See [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput).
 pub mod stop_bot_recommendation_output {
-
+    
     /// A builder for [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) bot_recommendation_status:
-            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
         pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2497,8 +2255,7 @@ pub mod stop_bot_recommendation_output {
         }
         /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot containing the recommendation that is being stopped.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2507,8 +2264,7 @@ pub mod stop_bot_recommendation_output {
         }
         /// <p>The version of the bot containing the recommendation that is being stopped.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2517,24 +2273,16 @@ pub mod stop_bot_recommendation_output {
         }
         /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
-        pub fn bot_recommendation_status(
-            mut self,
-            input: crate::model::BotRecommendationStatus,
-        ) -> Self {
+        pub fn bot_recommendation_status(mut self, input: crate::model::BotRecommendationStatus) -> Self {
             self.bot_recommendation_status = Some(input);
             self
         }
         /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
-        pub fn set_bot_recommendation_status(
-            mut self,
-            input: std::option::Option<crate::model::BotRecommendationStatus>,
-        ) -> Self {
-            self.bot_recommendation_status = input;
-            self
+        pub fn set_bot_recommendation_status(mut self, input: std::option::Option<crate::model::BotRecommendationStatus>) -> Self {
+            self.bot_recommendation_status = input; self
         }
         /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2542,24 +2290,27 @@ pub mod stop_bot_recommendation_output {
             self
         }
         /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
-        pub fn set_bot_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_recommendation_id = input;
-            self
+        pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_recommendation_id = input; self
         }
         /// Consumes the builder and constructs a [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput).
         pub fn build(self) -> crate::output::StopBotRecommendationOutput {
             crate::output::StopBotRecommendationOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_status: self.bot_recommendation_status,
-                bot_recommendation_id: self.bot_recommendation_id,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_status: self.bot_recommendation_status
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StopBotRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`StopBotRecommendationOutput`](crate::output::StopBotRecommendationOutput).
@@ -2571,7 +2322,7 @@ impl StopBotRecommendationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportOutput {
+pub struct StartImportOutput  {
     /// <p>A unique identifier for the import.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -2590,37 +2341,34 @@ pub struct StartImportOutput {
 }
 impl StartImportOutput {
     /// <p>A unique identifier for the import.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>The parameters used when importing the resource.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ImportResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ImportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<& crate::model::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
-    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<& crate::model::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>The date and time that the import request was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`StartImportOutput`](crate::output::StartImportOutput).
 pub mod start_import_output {
-
+    
     /// A builder for [`StartImportOutput`](crate::output::StartImportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ImportResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ImportResourceSpecification>,
         pub(crate) merge_strategy: std::option::Option<crate::model::MergeStrategy>,
         pub(crate) import_status: std::option::Option<crate::model::ImportStatus>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2633,24 +2381,16 @@ pub mod start_import_output {
         }
         /// <p>A unique identifier for the import.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.import_id = input;
-            self
+            self.import_id = input; self
         }
         /// <p>The parameters used when importing the resource.</p>
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ImportResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ImportResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// <p>The parameters used when importing the resource.</p>
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ImportResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ImportResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
@@ -2658,12 +2398,8 @@ pub mod start_import_output {
             self
         }
         /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-        pub fn set_merge_strategy(
-            mut self,
-            input: std::option::Option<crate::model::MergeStrategy>,
-        ) -> Self {
-            self.merge_strategy = input;
-            self
+        pub fn set_merge_strategy(mut self, input: std::option::Option<crate::model::MergeStrategy>) -> Self {
+            self.merge_strategy = input; self
         }
         /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
         pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
@@ -2671,12 +2407,8 @@ pub mod start_import_output {
             self
         }
         /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
-        pub fn set_import_status(
-            mut self,
-            input: std::option::Option<crate::model::ImportStatus>,
-        ) -> Self {
-            self.import_status = input;
-            self
+        pub fn set_import_status(mut self, input: std::option::Option<crate::model::ImportStatus>) -> Self {
+            self.import_status = input; self
         }
         /// <p>The date and time that the import request was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2684,24 +2416,27 @@ pub mod start_import_output {
             self
         }
         /// <p>The date and time that the import request was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`StartImportOutput`](crate::output::StartImportOutput).
         pub fn build(self) -> crate::output::StartImportOutput {
             crate::output::StartImportOutput {
-                import_id: self.import_id,
-                resource_specification: self.resource_specification,
-                merge_strategy: self.merge_strategy,
-                import_status: self.import_status,
-                creation_date_time: self.creation_date_time,
+                import_id: self.import_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                merge_strategy: self.merge_strategy
+                ,
+                import_status: self.import_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartImportOutput {
     /// Creates a new builder-style object to manufacture [`StartImportOutput`](crate::output::StartImportOutput).
@@ -2713,7 +2448,7 @@ impl StartImportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartBotRecommendationOutput {
+pub struct StartBotRecommendationOutput  {
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -2723,7 +2458,7 @@ pub struct StartBotRecommendationOutput {
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
     #[doc(hidden)]
     pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
@@ -2742,58 +2477,52 @@ pub struct StartBotRecommendationOutput {
 }
 impl StartBotRecommendationOutput {
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the bot recommendation.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(&self) -> std::option::Option<& crate::model::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The identifier of the bot recommendation that you have created.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::TranscriptSourceSetting> {
+    pub fn transcript_source_setting(&self) -> std::option::Option<& crate::model::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
+    pub fn encryption_setting(&self) -> std::option::Option<& crate::model::EncryptionSetting> {
         self.encryption_setting.as_ref()
     }
 }
 /// See [`StartBotRecommendationOutput`](crate::output::StartBotRecommendationOutput).
 pub mod start_bot_recommendation_output {
-
+    
     /// A builder for [`StartBotRecommendationOutput`](crate::output::StartBotRecommendationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) bot_recommendation_status:
-            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
         pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) transcript_source_setting:
-            std::option::Option<crate::model::TranscriptSourceSetting>,
+        pub(crate) transcript_source_setting: std::option::Option<crate::model::TranscriptSourceSetting>,
         pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
     }
     impl Builder {
@@ -2804,8 +2533,7 @@ pub mod start_bot_recommendation_output {
         }
         /// <p>The unique identifier of the bot containing the bot recommendation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot containing the bot recommendation.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2814,8 +2542,7 @@ pub mod start_bot_recommendation_output {
         }
         /// <p>The version of the bot containing the bot recommendation.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2824,26 +2551,18 @@ pub mod start_bot_recommendation_output {
         }
         /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
-        /// <p>The status of the bot recommendation.</p>
+        /// <p>The status of the bot recommendation.</p> 
         /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-        pub fn bot_recommendation_status(
-            mut self,
-            input: crate::model::BotRecommendationStatus,
-        ) -> Self {
+        pub fn bot_recommendation_status(mut self, input: crate::model::BotRecommendationStatus) -> Self {
             self.bot_recommendation_status = Some(input);
             self
         }
-        /// <p>The status of the bot recommendation.</p>
+        /// <p>The status of the bot recommendation.</p> 
         /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-        pub fn set_bot_recommendation_status(
-            mut self,
-            input: std::option::Option<crate::model::BotRecommendationStatus>,
-        ) -> Self {
-            self.bot_recommendation_status = input;
-            self
+        pub fn set_bot_recommendation_status(mut self, input: std::option::Option<crate::model::BotRecommendationStatus>) -> Self {
+            self.bot_recommendation_status = input; self
         }
         /// <p>The identifier of the bot recommendation that you have created.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2851,12 +2570,8 @@ pub mod start_bot_recommendation_output {
             self
         }
         /// <p>The identifier of the bot recommendation that you have created.</p>
-        pub fn set_bot_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_recommendation_id = input;
-            self
+        pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_recommendation_id = input; self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2864,28 +2579,17 @@ pub mod start_bot_recommendation_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-        pub fn transcript_source_setting(
-            mut self,
-            input: crate::model::TranscriptSourceSetting,
-        ) -> Self {
+        pub fn transcript_source_setting(mut self, input: crate::model::TranscriptSourceSetting) -> Self {
             self.transcript_source_setting = Some(input);
             self
         }
         /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-        pub fn set_transcript_source_setting(
-            mut self,
-            input: std::option::Option<crate::model::TranscriptSourceSetting>,
-        ) -> Self {
-            self.transcript_source_setting = input;
-            self
+        pub fn set_transcript_source_setting(mut self, input: std::option::Option<crate::model::TranscriptSourceSetting>) -> Self {
+            self.transcript_source_setting = input; self
         }
         /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
@@ -2893,27 +2597,33 @@ pub mod start_bot_recommendation_output {
             self
         }
         /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-        pub fn set_encryption_setting(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionSetting>,
-        ) -> Self {
-            self.encryption_setting = input;
-            self
+        pub fn set_encryption_setting(mut self, input: std::option::Option<crate::model::EncryptionSetting>) -> Self {
+            self.encryption_setting = input; self
         }
         /// Consumes the builder and constructs a [`StartBotRecommendationOutput`](crate::output::StartBotRecommendationOutput).
         pub fn build(self) -> crate::output::StartBotRecommendationOutput {
             crate::output::StartBotRecommendationOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_status: self.bot_recommendation_status,
-                bot_recommendation_id: self.bot_recommendation_id,
-                creation_date_time: self.creation_date_time,
-                transcript_source_setting: self.transcript_source_setting,
-                encryption_setting: self.encryption_setting,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_status: self.bot_recommendation_status
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                transcript_source_setting: self.transcript_source_setting
+                ,
+                encryption_setting: self.encryption_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl StartBotRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`StartBotRecommendationOutput`](crate::output::StartBotRecommendationOutput).
@@ -2925,7 +2635,7 @@ impl StartBotRecommendationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchAssociatedTranscriptsOutput {
+pub struct SearchAssociatedTranscriptsOutput  {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -2943,27 +2653,26 @@ pub struct SearchAssociatedTranscriptsOutput {
     pub next_index: std::option::Option<i32>,
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
     #[doc(hidden)]
-    pub associated_transcripts:
-        std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
+    pub associated_transcripts: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
     /// <p>The total number of transcripts returned by the search.</p>
     #[doc(hidden)]
     pub total_results: std::option::Option<i32>,
 }
 impl SearchAssociatedTranscriptsOutput {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>A index that indicates whether there are more results to return in a response to the SearchAssociatedTranscripts operation. If the nextIndex field is present, you send the contents as the nextIndex parameter of a SearchAssociatedTranscriptsRequest operation to get the next page of results.</p>
@@ -2971,9 +2680,7 @@ impl SearchAssociatedTranscriptsOutput {
         self.next_index
     }
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-    pub fn associated_transcripts(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssociatedTranscript]> {
+    pub fn associated_transcripts(&self) -> std::option::Option<& [crate::model::AssociatedTranscript]> {
         self.associated_transcripts.as_deref()
     }
     /// <p>The total number of transcripts returned by the search.</p>
@@ -2983,7 +2690,7 @@ impl SearchAssociatedTranscriptsOutput {
 }
 /// See [`SearchAssociatedTranscriptsOutput`](crate::output::SearchAssociatedTranscriptsOutput).
 pub mod search_associated_transcripts_output {
-
+    
     /// A builder for [`SearchAssociatedTranscriptsOutput`](crate::output::SearchAssociatedTranscriptsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2992,8 +2699,7 @@ pub mod search_associated_transcripts_output {
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
         pub(crate) next_index: std::option::Option<i32>,
-        pub(crate) associated_transcripts:
-            std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
+        pub(crate) associated_transcripts: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
         pub(crate) total_results: std::option::Option<i32>,
     }
     impl Builder {
@@ -3004,8 +2710,7 @@ pub mod search_associated_transcripts_output {
         }
         /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot containing the transcripts that you are searching.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3014,8 +2719,7 @@ pub mod search_associated_transcripts_output {
         }
         /// <p>The version of the bot containing the transcripts that you are searching.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3024,8 +2728,7 @@ pub mod search_associated_transcripts_output {
         }
         /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3033,12 +2736,8 @@ pub mod search_associated_transcripts_output {
             self
         }
         /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-        pub fn set_bot_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_recommendation_id = input;
-            self
+        pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_recommendation_id = input; self
         }
         /// <p>A index that indicates whether there are more results to return in a response to the SearchAssociatedTranscripts operation. If the nextIndex field is present, you send the contents as the nextIndex parameter of a SearchAssociatedTranscriptsRequest operation to get the next page of results.</p>
         pub fn next_index(mut self, input: i32) -> Self {
@@ -3047,8 +2746,7 @@ pub mod search_associated_transcripts_output {
         }
         /// <p>A index that indicates whether there are more results to return in a response to the SearchAssociatedTranscripts operation. If the nextIndex field is present, you send the contents as the nextIndex parameter of a SearchAssociatedTranscriptsRequest operation to get the next page of results.</p>
         pub fn set_next_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.next_index = input;
-            self
+            self.next_index = input; self
         }
         /// Appends an item to `associated_transcripts`.
         ///
@@ -3057,17 +2755,13 @@ pub mod search_associated_transcripts_output {
         /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
         pub fn associated_transcripts(mut self, input: crate::model::AssociatedTranscript) -> Self {
             let mut v = self.associated_transcripts.unwrap_or_default();
-            v.push(input);
-            self.associated_transcripts = Some(v);
-            self
+                            v.push(input);
+                            self.associated_transcripts = Some(v);
+                            self
         }
         /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-        pub fn set_associated_transcripts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
-        ) -> Self {
-            self.associated_transcripts = input;
-            self
+        pub fn set_associated_transcripts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>) -> Self {
+            self.associated_transcripts = input; self
         }
         /// <p>The total number of transcripts returned by the search.</p>
         pub fn total_results(mut self, input: i32) -> Self {
@@ -3076,22 +2770,30 @@ pub mod search_associated_transcripts_output {
         }
         /// <p>The total number of transcripts returned by the search.</p>
         pub fn set_total_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_results = input;
-            self
+            self.total_results = input; self
         }
         /// Consumes the builder and constructs a [`SearchAssociatedTranscriptsOutput`](crate::output::SearchAssociatedTranscriptsOutput).
         pub fn build(self) -> crate::output::SearchAssociatedTranscriptsOutput {
             crate::output::SearchAssociatedTranscriptsOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_id: self.bot_recommendation_id,
-                next_index: self.next_index,
-                associated_transcripts: self.associated_transcripts,
-                total_results: self.total_results,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+                next_index: self.next_index
+                ,
+                associated_transcripts: self.associated_transcripts
+                ,
+                total_results: self.total_results
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchAssociatedTranscriptsOutput {
     /// Creates a new builder-style object to manufacture [`SearchAssociatedTranscriptsOutput`](crate::output::SearchAssociatedTranscriptsOutput).
@@ -3103,30 +2805,24 @@ impl SearchAssociatedTranscriptsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -3134,31 +2830,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -3170,7 +2861,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSlotTypesOutput {
+pub struct ListSlotTypesOutput  {
     /// <p>The identifier of the bot that contains the slot types.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -3189,37 +2880,36 @@ pub struct ListSlotTypesOutput {
 }
 impl ListSlotTypesOutput {
     /// <p>The identifier of the bot that contains the slot types.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the slot types.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and local of the slot types in the list.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>Summary information for the slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn slot_type_summaries(&self) -> std::option::Option<&[crate::model::SlotTypeSummary]> {
+    pub fn slot_type_summaries(&self) -> std::option::Option<& [crate::model::SlotTypeSummary]> {
         self.slot_type_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlotTypes</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSlotTypesOutput`](crate::output::ListSlotTypesOutput).
 pub mod list_slot_types_output {
-
+    
     /// A builder for [`ListSlotTypesOutput`](crate::output::ListSlotTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) slot_type_summaries:
-            std::option::Option<std::vec::Vec<crate::model::SlotTypeSummary>>,
+        pub(crate) slot_type_summaries: std::option::Option<std::vec::Vec<crate::model::SlotTypeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3230,8 +2920,7 @@ pub mod list_slot_types_output {
         }
         /// <p>The identifier of the bot that contains the slot types.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the slot types.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3240,8 +2929,7 @@ pub mod list_slot_types_output {
         }
         /// <p>The version of the bot that contains the slot types.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and local of the slot types in the list.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3250,8 +2938,7 @@ pub mod list_slot_types_output {
         }
         /// <p>The language and local of the slot types in the list.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Appends an item to `slot_type_summaries`.
         ///
@@ -3260,17 +2947,13 @@ pub mod list_slot_types_output {
         /// <p>Summary information for the slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
         pub fn slot_type_summaries(mut self, input: crate::model::SlotTypeSummary) -> Self {
             let mut v = self.slot_type_summaries.unwrap_or_default();
-            v.push(input);
-            self.slot_type_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.slot_type_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_slot_type_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeSummary>>,
-        ) -> Self {
-            self.slot_type_summaries = input;
-            self
+        pub fn set_slot_type_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeSummary>>) -> Self {
+            self.slot_type_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlotTypes</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3279,20 +2962,26 @@ pub mod list_slot_types_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlotTypes</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSlotTypesOutput`](crate::output::ListSlotTypesOutput).
         pub fn build(self) -> crate::output::ListSlotTypesOutput {
             crate::output::ListSlotTypesOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                slot_type_summaries: self.slot_type_summaries,
-                next_token: self.next_token,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                slot_type_summaries: self.slot_type_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSlotTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListSlotTypesOutput`](crate::output::ListSlotTypesOutput).
@@ -3304,7 +2993,7 @@ impl ListSlotTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSlotsOutput {
+pub struct ListSlotsOutput  {
     /// <p>The identifier of the bot that contains the slots.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -3326,33 +3015,33 @@ pub struct ListSlotsOutput {
 }
 impl ListSlotsOutput {
     /// <p>The identifier of the bot that contains the slots.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the slots.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale of the slots in the list.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the intent that contains the slots.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>Summary information for the slots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slots available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn slot_summaries(&self) -> std::option::Option<&[crate::model::SlotSummary]> {
+    pub fn slot_summaries(&self) -> std::option::Option<& [crate::model::SlotSummary]> {
         self.slot_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlots</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSlotsOutput`](crate::output::ListSlotsOutput).
 pub mod list_slots_output {
-
+    
     /// A builder for [`ListSlotsOutput`](crate::output::ListSlotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3371,8 +3060,7 @@ pub mod list_slots_output {
         }
         /// <p>The identifier of the bot that contains the slots.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the slots.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3381,8 +3069,7 @@ pub mod list_slots_output {
         }
         /// <p>The version of the bot that contains the slots.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale of the slots in the list.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3391,8 +3078,7 @@ pub mod list_slots_output {
         }
         /// <p>The language and locale of the slots in the list.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The identifier of the intent that contains the slots.</p>
         pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3401,8 +3087,7 @@ pub mod list_slots_output {
         }
         /// <p>The identifier of the intent that contains the slots.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// Appends an item to `slot_summaries`.
         ///
@@ -3411,17 +3096,13 @@ pub mod list_slots_output {
         /// <p>Summary information for the slots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slots available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
         pub fn slot_summaries(mut self, input: crate::model::SlotSummary) -> Self {
             let mut v = self.slot_summaries.unwrap_or_default();
-            v.push(input);
-            self.slot_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.slot_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the slots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slots available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_slot_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotSummary>>,
-        ) -> Self {
-            self.slot_summaries = input;
-            self
+        pub fn set_slot_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotSummary>>) -> Self {
+            self.slot_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlots</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3430,21 +3111,28 @@ pub mod list_slots_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlots</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSlotsOutput`](crate::output::ListSlotsOutput).
         pub fn build(self) -> crate::output::ListSlotsOutput {
             crate::output::ListSlotsOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                intent_id: self.intent_id,
-                slot_summaries: self.slot_summaries,
-                next_token: self.next_token,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                intent_id: self.intent_id
+                ,
+                slot_summaries: self.slot_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSlotsOutput {
     /// Creates a new builder-style object to manufacture [`ListSlotsOutput`](crate::output::ListSlotsOutput).
@@ -3456,7 +3144,7 @@ impl ListSlotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecommendedIntentsOutput {
+pub struct ListRecommendedIntentsOutput  {
     /// <p>The unique identifier of the bot associated with the recommended intent.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -3478,33 +3166,33 @@ pub struct ListRecommendedIntentsOutput {
 }
 impl ListRecommendedIntentsOutput {
     /// <p>The unique identifier of the bot associated with the recommended intent.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the intent.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn summary_list(&self) -> std::option::Option<&[crate::model::RecommendedIntentSummary]> {
+    pub fn summary_list(&self) -> std::option::Option<& [crate::model::RecommendedIntentSummary]> {
         self.summary_list.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRecommendedIntentsOutput`](crate::output::ListRecommendedIntentsOutput).
 pub mod list_recommended_intents_output {
-
+    
     /// A builder for [`ListRecommendedIntentsOutput`](crate::output::ListRecommendedIntentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3512,8 +3200,7 @@ pub mod list_recommended_intents_output {
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
-        pub(crate) summary_list:
-            std::option::Option<std::vec::Vec<crate::model::RecommendedIntentSummary>>,
+        pub(crate) summary_list: std::option::Option<std::vec::Vec<crate::model::RecommendedIntentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3524,8 +3211,7 @@ pub mod list_recommended_intents_output {
         }
         /// <p>The unique identifier of the bot associated with the recommended intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the intent.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3534,8 +3220,7 @@ pub mod list_recommended_intents_output {
         }
         /// <p>The version of the bot that contains the intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3544,8 +3229,7 @@ pub mod list_recommended_intents_output {
         }
         /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3553,12 +3237,8 @@ pub mod list_recommended_intents_output {
             self
         }
         /// <p>The identifier of the bot recommendation that contains the recommended intent.</p>
-        pub fn set_bot_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_recommendation_id = input;
-            self
+        pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_recommendation_id = input; self
         }
         /// Appends an item to `summary_list`.
         ///
@@ -3567,17 +3247,13 @@ pub mod list_recommended_intents_output {
         /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
         pub fn summary_list(mut self, input: crate::model::RecommendedIntentSummary) -> Self {
             let mut v = self.summary_list.unwrap_or_default();
-            v.push(input);
-            self.summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.summary_list = Some(v);
+                            self
         }
         /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the maxResults parameter of the request. If there are more intents available, the nextToken field contains a token to get the next page of results.</p>
-        pub fn set_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecommendedIntentSummary>>,
-        ) -> Self {
-            self.summary_list = input;
-            self
+        pub fn set_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendedIntentSummary>>) -> Self {
+            self.summary_list = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3586,21 +3262,28 @@ pub mod list_recommended_intents_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the ListRecommendedIntents operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListRecommendedIntents operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRecommendedIntentsOutput`](crate::output::ListRecommendedIntentsOutput).
         pub fn build(self) -> crate::output::ListRecommendedIntentsOutput {
             crate::output::ListRecommendedIntentsOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_id: self.bot_recommendation_id,
-                summary_list: self.summary_list,
-                next_token: self.next_token,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+                summary_list: self.summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRecommendedIntentsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendedIntentsOutput`](crate::output::ListRecommendedIntentsOutput).
@@ -3612,7 +3295,7 @@ impl ListRecommendedIntentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIntentsOutput {
+pub struct ListIntentsOutput  {
     /// <p>The identifier of the bot that contains the intent.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -3631,37 +3314,36 @@ pub struct ListIntentsOutput {
 }
 impl ListIntentsOutput {
     /// <p>The identifier of the bot that contains the intent.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the intent.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale of the intents in the list.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn intent_summaries(&self) -> std::option::Option<&[crate::model::IntentSummary]> {
+    pub fn intent_summaries(&self) -> std::option::Option<& [crate::model::IntentSummary]> {
         self.intent_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListIntents</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListIntentsOutput`](crate::output::ListIntentsOutput).
 pub mod list_intents_output {
-
+    
     /// A builder for [`ListIntentsOutput`](crate::output::ListIntentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) intent_summaries:
-            std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
+        pub(crate) intent_summaries: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3672,8 +3354,7 @@ pub mod list_intents_output {
         }
         /// <p>The identifier of the bot that contains the intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the intent.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3682,8 +3363,7 @@ pub mod list_intents_output {
         }
         /// <p>The version of the bot that contains the intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale of the intents in the list.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3692,8 +3372,7 @@ pub mod list_intents_output {
         }
         /// <p>The language and locale of the intents in the list.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Appends an item to `intent_summaries`.
         ///
@@ -3702,17 +3381,13 @@ pub mod list_intents_output {
         /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
         pub fn intent_summaries(mut self, input: crate::model::IntentSummary) -> Self {
             let mut v = self.intent_summaries.unwrap_or_default();
-            v.push(input);
-            self.intent_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.intent_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_intent_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
-        ) -> Self {
-            self.intent_summaries = input;
-            self
+        pub fn set_intent_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>) -> Self {
+            self.intent_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListIntents</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3721,20 +3396,26 @@ pub mod list_intents_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListIntents</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListIntentsOutput`](crate::output::ListIntentsOutput).
         pub fn build(self) -> crate::output::ListIntentsOutput {
             crate::output::ListIntentsOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                intent_summaries: self.intent_summaries,
-                next_token: self.next_token,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                intent_summaries: self.intent_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIntentsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntentsOutput`](crate::output::ListIntentsOutput).
@@ -3746,7 +3427,7 @@ impl ListIntentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportsOutput {
+pub struct ListImportsOutput  {
     /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -3765,36 +3446,35 @@ pub struct ListImportsOutput {
 }
 impl ListImportsOutput {
     /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn import_summaries(&self) -> std::option::Option<&[crate::model::ImportSummary]> {
+    pub fn import_summaries(&self) -> std::option::Option<& [crate::model::ImportSummary]> {
         self.import_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The locale specified in the request.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 /// See [`ListImportsOutput`](crate::output::ListImportsOutput).
 pub mod list_imports_output {
-
+    
     /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
-        pub(crate) import_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
+        pub(crate) import_summaries: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
     }
@@ -3806,8 +3486,7 @@ pub mod list_imports_output {
         }
         /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3816,8 +3495,7 @@ pub mod list_imports_output {
         }
         /// <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// Appends an item to `import_summaries`.
         ///
@@ -3826,17 +3504,13 @@ pub mod list_imports_output {
         /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
         pub fn import_summaries(mut self, input: crate::model::ImportSummary) -> Self {
             let mut v = self.import_summaries.unwrap_or_default();
-            v.push(input);
-            self.import_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.import_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_import_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
-        ) -> Self {
-            self.import_summaries = input;
-            self
+        pub fn set_import_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>) -> Self {
+            self.import_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3845,8 +3519,7 @@ pub mod list_imports_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The locale specified in the request.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3855,20 +3528,26 @@ pub mod list_imports_output {
         }
         /// <p>The locale specified in the request.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Consumes the builder and constructs a [`ListImportsOutput`](crate::output::ListImportsOutput).
         pub fn build(self) -> crate::output::ListImportsOutput {
             crate::output::ListImportsOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                import_summaries: self.import_summaries,
-                next_token: self.next_token,
-                locale_id: self.locale_id,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                import_summaries: self.import_summaries
+                ,
+                next_token: self.next_token
+                ,
+                locale_id: self.locale_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListImportsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportsOutput`](crate::output::ListImportsOutput).
@@ -3880,7 +3559,7 @@ impl ListImportsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExportsOutput {
+pub struct ListExportsOutput  {
     /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -3899,36 +3578,35 @@ pub struct ListExportsOutput {
 }
 impl ListExportsOutput {
     /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that was exported.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn export_summaries(&self) -> std::option::Option<&[crate::model::ExportSummary]> {
+    pub fn export_summaries(&self) -> std::option::Option<& [crate::model::ExportSummary]> {
         self.export_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The locale specified in the request.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 /// See [`ListExportsOutput`](crate::output::ListExportsOutput).
 pub mod list_exports_output {
-
+    
     /// A builder for [`ListExportsOutput`](crate::output::ListExportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
-        pub(crate) export_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
+        pub(crate) export_summaries: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
     }
@@ -3940,8 +3618,7 @@ pub mod list_exports_output {
         }
         /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that was exported.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3950,8 +3627,7 @@ pub mod list_exports_output {
         }
         /// <p>The version of the bot that was exported.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// Appends an item to `export_summaries`.
         ///
@@ -3960,17 +3636,13 @@ pub mod list_exports_output {
         /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
         pub fn export_summaries(mut self, input: crate::model::ExportSummary) -> Self {
             let mut v = self.export_summaries.unwrap_or_default();
-            v.push(input);
-            self.export_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.export_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_export_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
-        ) -> Self {
-            self.export_summaries = input;
-            self
+        pub fn set_export_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>) -> Self {
+            self.export_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3979,8 +3651,7 @@ pub mod list_exports_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The locale specified in the request.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3989,20 +3660,26 @@ pub mod list_exports_output {
         }
         /// <p>The locale specified in the request.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Consumes the builder and constructs a [`ListExportsOutput`](crate::output::ListExportsOutput).
         pub fn build(self) -> crate::output::ListExportsOutput {
             crate::output::ListExportsOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                export_summaries: self.export_summaries,
-                next_token: self.next_token,
-                locale_id: self.locale_id,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                export_summaries: self.export_summaries
+                ,
+                next_token: self.next_token
+                ,
+                locale_id: self.locale_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListExportsOutput {
     /// Creates a new builder-style object to manufacture [`ListExportsOutput`](crate::output::ListExportsOutput).
@@ -4014,7 +3691,7 @@ impl ListExportsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomVocabularyItemsOutput {
+pub struct ListCustomVocabularyItemsOutput  {
     /// <p>The unique identifier of the bot to the list custom vocabulary response.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -4026,47 +3703,43 @@ pub struct ListCustomVocabularyItemsOutput {
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
     #[doc(hidden)]
-    pub custom_vocabulary_items:
-        std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+    pub custom_vocabulary_items: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomVocabularyItemsOutput {
     /// <p>The unique identifier of the bot to the list custom vocabulary response.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The bot version of the bot to the list custom vocabulary response.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale identifier of the bot to the list custom vocabulary response.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-    pub fn custom_vocabulary_items(
-        &self,
-    ) -> std::option::Option<&[crate::model::CustomVocabularyItem]> {
+    pub fn custom_vocabulary_items(&self) -> std::option::Option<& [crate::model::CustomVocabularyItem]> {
         self.custom_vocabulary_items.as_deref()
     }
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput).
 pub mod list_custom_vocabulary_items_output {
-
+    
     /// A builder for [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) custom_vocabulary_items:
-            std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        pub(crate) custom_vocabulary_items: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4077,8 +3750,7 @@ pub mod list_custom_vocabulary_items_output {
         }
         /// <p>The unique identifier of the bot to the list custom vocabulary response.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The bot version of the bot to the list custom vocabulary response.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4087,8 +3759,7 @@ pub mod list_custom_vocabulary_items_output {
         }
         /// <p>The bot version of the bot to the list custom vocabulary response.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The locale identifier of the bot to the list custom vocabulary response.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4097,30 +3768,22 @@ pub mod list_custom_vocabulary_items_output {
         }
         /// <p>The locale identifier of the bot to the list custom vocabulary response.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Appends an item to `custom_vocabulary_items`.
         ///
         /// To override the contents of this collection use [`set_custom_vocabulary_items`](Self::set_custom_vocabulary_items).
         ///
         /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-        pub fn custom_vocabulary_items(
-            mut self,
-            input: crate::model::CustomVocabularyItem,
-        ) -> Self {
+        pub fn custom_vocabulary_items(mut self, input: crate::model::CustomVocabularyItem) -> Self {
             let mut v = self.custom_vocabulary_items.unwrap_or_default();
-            v.push(input);
-            self.custom_vocabulary_items = Some(v);
-            self
+                            v.push(input);
+                            self.custom_vocabulary_items = Some(v);
+                            self
         }
         /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-        pub fn set_custom_vocabulary_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
-        ) -> Self {
-            self.custom_vocabulary_items = input;
-            self
+        pub fn set_custom_vocabulary_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>) -> Self {
+            self.custom_vocabulary_items = input; self
         }
         /// <p>The nextToken identifier to the list custom vocabulary response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4129,20 +3792,26 @@ pub mod list_custom_vocabulary_items_output {
         }
         /// <p>The nextToken identifier to the list custom vocabulary response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput).
         pub fn build(self) -> crate::output::ListCustomVocabularyItemsOutput {
             crate::output::ListCustomVocabularyItemsOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                custom_vocabulary_items: self.custom_vocabulary_items,
-                next_token: self.next_token,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                custom_vocabulary_items: self.custom_vocabulary_items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomVocabularyItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomVocabularyItemsOutput`](crate::output::ListCustomVocabularyItemsOutput).
@@ -4154,11 +3823,10 @@ impl ListCustomVocabularyItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBuiltInSlotTypesOutput {
+pub struct ListBuiltInSlotTypesOutput  {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub built_in_slot_type_summaries:
-        std::option::Option<std::vec::Vec<crate::model::BuiltInSlotTypeSummary>>,
+    pub built_in_slot_type_summaries: std::option::Option<std::vec::Vec<crate::model::BuiltInSlotTypeSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -4168,28 +3836,25 @@ pub struct ListBuiltInSlotTypesOutput {
 }
 impl ListBuiltInSlotTypesOutput {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn built_in_slot_type_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BuiltInSlotTypeSummary]> {
+    pub fn built_in_slot_type_summaries(&self) -> std::option::Option<& [crate::model::BuiltInSlotTypeSummary]> {
         self.built_in_slot_type_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The language and locale of the slot types in the list.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 /// See [`ListBuiltInSlotTypesOutput`](crate::output::ListBuiltInSlotTypesOutput).
 pub mod list_built_in_slot_types_output {
-
+    
     /// A builder for [`ListBuiltInSlotTypesOutput`](crate::output::ListBuiltInSlotTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) built_in_slot_type_summaries:
-            std::option::Option<std::vec::Vec<crate::model::BuiltInSlotTypeSummary>>,
+        pub(crate) built_in_slot_type_summaries: std::option::Option<std::vec::Vec<crate::model::BuiltInSlotTypeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
     }
@@ -4199,22 +3864,15 @@ pub mod list_built_in_slot_types_output {
         /// To override the contents of this collection use [`set_built_in_slot_type_summaries`](Self::set_built_in_slot_type_summaries).
         ///
         /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn built_in_slot_type_summaries(
-            mut self,
-            input: crate::model::BuiltInSlotTypeSummary,
-        ) -> Self {
+        pub fn built_in_slot_type_summaries(mut self, input: crate::model::BuiltInSlotTypeSummary) -> Self {
             let mut v = self.built_in_slot_type_summaries.unwrap_or_default();
-            v.push(input);
-            self.built_in_slot_type_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.built_in_slot_type_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_built_in_slot_type_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BuiltInSlotTypeSummary>>,
-        ) -> Self {
-            self.built_in_slot_type_summaries = input;
-            self
+        pub fn set_built_in_slot_type_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BuiltInSlotTypeSummary>>) -> Self {
+            self.built_in_slot_type_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4223,8 +3881,7 @@ pub mod list_built_in_slot_types_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The language and locale of the slot types in the list.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4233,18 +3890,22 @@ pub mod list_built_in_slot_types_output {
         }
         /// <p>The language and locale of the slot types in the list.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Consumes the builder and constructs a [`ListBuiltInSlotTypesOutput`](crate::output::ListBuiltInSlotTypesOutput).
         pub fn build(self) -> crate::output::ListBuiltInSlotTypesOutput {
             crate::output::ListBuiltInSlotTypesOutput {
-                built_in_slot_type_summaries: self.built_in_slot_type_summaries,
-                next_token: self.next_token,
-                locale_id: self.locale_id,
+                built_in_slot_type_summaries: self.built_in_slot_type_summaries
+                ,
+                next_token: self.next_token
+                ,
+                locale_id: self.locale_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBuiltInSlotTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListBuiltInSlotTypesOutput`](crate::output::ListBuiltInSlotTypesOutput).
@@ -4256,11 +3917,10 @@ impl ListBuiltInSlotTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBuiltInIntentsOutput {
+pub struct ListBuiltInIntentsOutput  {
     /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub built_in_intent_summaries:
-        std::option::Option<std::vec::Vec<crate::model::BuiltInIntentSummary>>,
+    pub built_in_intent_summaries: std::option::Option<std::vec::Vec<crate::model::BuiltInIntentSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -4270,28 +3930,25 @@ pub struct ListBuiltInIntentsOutput {
 }
 impl ListBuiltInIntentsOutput {
     /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn built_in_intent_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BuiltInIntentSummary]> {
+    pub fn built_in_intent_summaries(&self) -> std::option::Option<& [crate::model::BuiltInIntentSummary]> {
         self.built_in_intent_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The language and locale of the intents in the list.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 /// See [`ListBuiltInIntentsOutput`](crate::output::ListBuiltInIntentsOutput).
 pub mod list_built_in_intents_output {
-
+    
     /// A builder for [`ListBuiltInIntentsOutput`](crate::output::ListBuiltInIntentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) built_in_intent_summaries:
-            std::option::Option<std::vec::Vec<crate::model::BuiltInIntentSummary>>,
+        pub(crate) built_in_intent_summaries: std::option::Option<std::vec::Vec<crate::model::BuiltInIntentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
     }
@@ -4301,22 +3958,15 @@ pub mod list_built_in_intents_output {
         /// To override the contents of this collection use [`set_built_in_intent_summaries`](Self::set_built_in_intent_summaries).
         ///
         /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn built_in_intent_summaries(
-            mut self,
-            input: crate::model::BuiltInIntentSummary,
-        ) -> Self {
+        pub fn built_in_intent_summaries(mut self, input: crate::model::BuiltInIntentSummary) -> Self {
             let mut v = self.built_in_intent_summaries.unwrap_or_default();
-            v.push(input);
-            self.built_in_intent_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.built_in_intent_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_built_in_intent_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BuiltInIntentSummary>>,
-        ) -> Self {
-            self.built_in_intent_summaries = input;
-            self
+        pub fn set_built_in_intent_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BuiltInIntentSummary>>) -> Self {
+            self.built_in_intent_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4325,8 +3975,7 @@ pub mod list_built_in_intents_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The language and locale of the intents in the list.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4335,18 +3984,22 @@ pub mod list_built_in_intents_output {
         }
         /// <p>The language and locale of the intents in the list.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Consumes the builder and constructs a [`ListBuiltInIntentsOutput`](crate::output::ListBuiltInIntentsOutput).
         pub fn build(self) -> crate::output::ListBuiltInIntentsOutput {
             crate::output::ListBuiltInIntentsOutput {
-                built_in_intent_summaries: self.built_in_intent_summaries,
-                next_token: self.next_token,
-                locale_id: self.locale_id,
+                built_in_intent_summaries: self.built_in_intent_summaries
+                ,
+                next_token: self.next_token
+                ,
+                locale_id: self.locale_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBuiltInIntentsOutput {
     /// Creates a new builder-style object to manufacture [`ListBuiltInIntentsOutput`](crate::output::ListBuiltInIntentsOutput).
@@ -4358,7 +4011,7 @@ impl ListBuiltInIntentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBotVersionsOutput {
+pub struct ListBotVersionsOutput  {
     /// <p>The identifier of the bot to list versions for.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -4371,27 +4024,26 @@ pub struct ListBotVersionsOutput {
 }
 impl ListBotVersionsOutput {
     /// <p>The identifier of the bot to list versions for.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn bot_version_summaries(&self) -> std::option::Option<&[crate::model::BotVersionSummary]> {
+    pub fn bot_version_summaries(&self) -> std::option::Option<& [crate::model::BotVersionSummary]> {
         self.bot_version_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBotVersionsOutput`](crate::output::ListBotVersionsOutput).
 pub mod list_bot_versions_output {
-
+    
     /// A builder for [`ListBotVersionsOutput`](crate::output::ListBotVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
-        pub(crate) bot_version_summaries:
-            std::option::Option<std::vec::Vec<crate::model::BotVersionSummary>>,
+        pub(crate) bot_version_summaries: std::option::Option<std::vec::Vec<crate::model::BotVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4402,8 +4054,7 @@ pub mod list_bot_versions_output {
         }
         /// <p>The identifier of the bot to list versions for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// Appends an item to `bot_version_summaries`.
         ///
@@ -4412,17 +4063,13 @@ pub mod list_bot_versions_output {
         /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
         pub fn bot_version_summaries(mut self, input: crate::model::BotVersionSummary) -> Self {
             let mut v = self.bot_version_summaries.unwrap_or_default();
-            v.push(input);
-            self.bot_version_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.bot_version_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_bot_version_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotVersionSummary>>,
-        ) -> Self {
-            self.bot_version_summaries = input;
-            self
+        pub fn set_bot_version_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotVersionSummary>>) -> Self {
+            self.bot_version_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4431,18 +4078,22 @@ pub mod list_bot_versions_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBotVersionsOutput`](crate::output::ListBotVersionsOutput).
         pub fn build(self) -> crate::output::ListBotVersionsOutput {
             crate::output::ListBotVersionsOutput {
-                bot_id: self.bot_id,
-                bot_version_summaries: self.bot_version_summaries,
-                next_token: self.next_token,
+                bot_id: self.bot_id
+                ,
+                bot_version_summaries: self.bot_version_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBotVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListBotVersionsOutput`](crate::output::ListBotVersionsOutput).
@@ -4454,7 +4105,7 @@ impl ListBotVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBotsOutput {
+pub struct ListBotsOutput  {
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
     #[doc(hidden)]
     pub bot_summaries: std::option::Option<std::vec::Vec<crate::model::BotSummary>>,
@@ -4464,17 +4115,17 @@ pub struct ListBotsOutput {
 }
 impl ListBotsOutput {
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
-    pub fn bot_summaries(&self) -> std::option::Option<&[crate::model::BotSummary]> {
+    pub fn bot_summaries(&self) -> std::option::Option<& [crate::model::BotSummary]> {
         self.bot_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBotsOutput`](crate::output::ListBotsOutput).
 pub mod list_bots_output {
-
+    
     /// A builder for [`ListBotsOutput`](crate::output::ListBotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4489,17 +4140,13 @@ pub mod list_bots_output {
         /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
         pub fn bot_summaries(mut self, input: crate::model::BotSummary) -> Self {
             let mut v = self.bot_summaries.unwrap_or_default();
-            v.push(input);
-            self.bot_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.bot_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
-        pub fn set_bot_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotSummary>>,
-        ) -> Self {
-            self.bot_summaries = input;
-            self
+        pub fn set_bot_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotSummary>>) -> Self {
+            self.bot_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4508,17 +4155,20 @@ pub mod list_bots_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBotsOutput`](crate::output::ListBotsOutput).
         pub fn build(self) -> crate::output::ListBotsOutput {
             crate::output::ListBotsOutput {
-                bot_summaries: self.bot_summaries,
-                next_token: self.next_token,
+                bot_summaries: self.bot_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBotsOutput {
     /// Creates a new builder-style object to manufacture [`ListBotsOutput`](crate::output::ListBotsOutput).
@@ -4530,7 +4180,7 @@ impl ListBotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBotRecommendationsOutput {
+pub struct ListBotRecommendationsOutput  {
     /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -4542,47 +4192,43 @@ pub struct ListBotRecommendationsOutput {
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub bot_recommendation_summaries:
-        std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>,
+    pub bot_recommendation_summaries: std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotRecommendationsOutput {
     /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the bot recommendation list.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot recommendation list.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn bot_recommendation_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BotRecommendationSummary]> {
+    pub fn bot_recommendation_summaries(&self) -> std::option::Option<& [crate::model::BotRecommendationSummary]> {
         self.bot_recommendation_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBotRecommendationsOutput`](crate::output::ListBotRecommendationsOutput).
 pub mod list_bot_recommendations_output {
-
+    
     /// A builder for [`ListBotRecommendationsOutput`](crate::output::ListBotRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) bot_recommendation_summaries:
-            std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>,
+        pub(crate) bot_recommendation_summaries: std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4593,8 +4239,7 @@ pub mod list_bot_recommendations_output {
         }
         /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the bot recommendation list.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4603,8 +4248,7 @@ pub mod list_bot_recommendations_output {
         }
         /// <p>The version of the bot that contains the bot recommendation list.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale of the bot recommendation list.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4613,30 +4257,22 @@ pub mod list_bot_recommendations_output {
         }
         /// <p>The identifier of the language and locale of the bot recommendation list.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Appends an item to `bot_recommendation_summaries`.
         ///
         /// To override the contents of this collection use [`set_bot_recommendation_summaries`](Self::set_bot_recommendation_summaries).
         ///
         /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
-        pub fn bot_recommendation_summaries(
-            mut self,
-            input: crate::model::BotRecommendationSummary,
-        ) -> Self {
+        pub fn bot_recommendation_summaries(mut self, input: crate::model::BotRecommendationSummary) -> Self {
             let mut v = self.bot_recommendation_summaries.unwrap_or_default();
-            v.push(input);
-            self.bot_recommendation_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.bot_recommendation_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
-        pub fn set_bot_recommendation_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>,
-        ) -> Self {
-            self.bot_recommendation_summaries = input;
-            self
+        pub fn set_bot_recommendation_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>) -> Self {
+            self.bot_recommendation_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4645,20 +4281,26 @@ pub mod list_bot_recommendations_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBotRecommendationsOutput`](crate::output::ListBotRecommendationsOutput).
         pub fn build(self) -> crate::output::ListBotRecommendationsOutput {
             crate::output::ListBotRecommendationsOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_summaries: self.bot_recommendation_summaries,
-                next_token: self.next_token,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_summaries: self.bot_recommendation_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBotRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListBotRecommendationsOutput`](crate::output::ListBotRecommendationsOutput).
@@ -4670,7 +4312,7 @@ impl ListBotRecommendationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBotLocalesOutput {
+pub struct ListBotLocalesOutput  {
     /// <p>The identifier of the bot to list locales for.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -4686,33 +4328,32 @@ pub struct ListBotLocalesOutput {
 }
 impl ListBotLocalesOutput {
     /// <p>The identifier of the bot to list locales for.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotLocales</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotLocales</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Summary information for the locales that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more locales available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn bot_locale_summaries(&self) -> std::option::Option<&[crate::model::BotLocaleSummary]> {
+    pub fn bot_locale_summaries(&self) -> std::option::Option<& [crate::model::BotLocaleSummary]> {
         self.bot_locale_summaries.as_deref()
     }
 }
 /// See [`ListBotLocalesOutput`](crate::output::ListBotLocalesOutput).
 pub mod list_bot_locales_output {
-
+    
     /// A builder for [`ListBotLocalesOutput`](crate::output::ListBotLocalesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) bot_locale_summaries:
-            std::option::Option<std::vec::Vec<crate::model::BotLocaleSummary>>,
+        pub(crate) bot_locale_summaries: std::option::Option<std::vec::Vec<crate::model::BotLocaleSummary>>,
     }
     impl Builder {
         /// <p>The identifier of the bot to list locales for.</p>
@@ -4722,8 +4363,7 @@ pub mod list_bot_locales_output {
         }
         /// <p>The identifier of the bot to list locales for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4732,8 +4372,7 @@ pub mod list_bot_locales_output {
         }
         /// <p>The version of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotLocales</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotLocales</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4742,8 +4381,7 @@ pub mod list_bot_locales_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotLocales</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotLocales</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `bot_locale_summaries`.
         ///
@@ -4752,28 +4390,30 @@ pub mod list_bot_locales_output {
         /// <p>Summary information for the locales that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more locales available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
         pub fn bot_locale_summaries(mut self, input: crate::model::BotLocaleSummary) -> Self {
             let mut v = self.bot_locale_summaries.unwrap_or_default();
-            v.push(input);
-            self.bot_locale_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.bot_locale_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the locales that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more locales available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_bot_locale_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotLocaleSummary>>,
-        ) -> Self {
-            self.bot_locale_summaries = input;
-            self
+        pub fn set_bot_locale_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotLocaleSummary>>) -> Self {
+            self.bot_locale_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListBotLocalesOutput`](crate::output::ListBotLocalesOutput).
         pub fn build(self) -> crate::output::ListBotLocalesOutput {
             crate::output::ListBotLocalesOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                next_token: self.next_token,
-                bot_locale_summaries: self.bot_locale_summaries,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                next_token: self.next_token
+                ,
+                bot_locale_summaries: self.bot_locale_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBotLocalesOutput {
     /// Creates a new builder-style object to manufacture [`ListBotLocalesOutput`](crate::output::ListBotLocalesOutput).
@@ -4785,7 +4425,7 @@ impl ListBotLocalesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBotAliasesOutput {
+pub struct ListBotAliasesOutput  {
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     #[doc(hidden)]
     pub bot_alias_summaries: std::option::Option<std::vec::Vec<crate::model::BotAliasSummary>>,
@@ -4798,26 +4438,25 @@ pub struct ListBotAliasesOutput {
 }
 impl ListBotAliasesOutput {
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn bot_alias_summaries(&self) -> std::option::Option<&[crate::model::BotAliasSummary]> {
+    pub fn bot_alias_summaries(&self) -> std::option::Option<& [crate::model::BotAliasSummary]> {
         self.bot_alias_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The identifier of the bot associated with the aliases.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
 }
 /// See [`ListBotAliasesOutput`](crate::output::ListBotAliasesOutput).
 pub mod list_bot_aliases_output {
-
+    
     /// A builder for [`ListBotAliasesOutput`](crate::output::ListBotAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bot_alias_summaries:
-            std::option::Option<std::vec::Vec<crate::model::BotAliasSummary>>,
+        pub(crate) bot_alias_summaries: std::option::Option<std::vec::Vec<crate::model::BotAliasSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
     }
@@ -4829,17 +4468,13 @@ pub mod list_bot_aliases_output {
         /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
         pub fn bot_alias_summaries(mut self, input: crate::model::BotAliasSummary) -> Self {
             let mut v = self.bot_alias_summaries.unwrap_or_default();
-            v.push(input);
-            self.bot_alias_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.bot_alias_summaries = Some(v);
+                            self
         }
         /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-        pub fn set_bot_alias_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotAliasSummary>>,
-        ) -> Self {
-            self.bot_alias_summaries = input;
-            self
+        pub fn set_bot_alias_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotAliasSummary>>) -> Self {
+            self.bot_alias_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4848,8 +4483,7 @@ pub mod list_bot_aliases_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The identifier of the bot associated with the aliases.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4858,18 +4492,22 @@ pub mod list_bot_aliases_output {
         }
         /// <p>The identifier of the bot associated with the aliases.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// Consumes the builder and constructs a [`ListBotAliasesOutput`](crate::output::ListBotAliasesOutput).
         pub fn build(self) -> crate::output::ListBotAliasesOutput {
             crate::output::ListBotAliasesOutput {
-                bot_alias_summaries: self.bot_alias_summaries,
-                next_token: self.next_token,
-                bot_id: self.bot_id,
+                bot_alias_summaries: self.bot_alias_summaries
+                ,
+                next_token: self.next_token
+                ,
+                bot_id: self.bot_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBotAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListBotAliasesOutput`](crate::output::ListBotAliasesOutput).
@@ -4881,7 +4519,7 @@ impl ListBotAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAggregatedUtterancesOutput {
+pub struct ListAggregatedUtterancesOutput  {
     /// <p>The identifier of the bot that contains the utterances.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -4903,80 +4541,71 @@ pub struct ListAggregatedUtterancesOutput {
     /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
     #[doc(hidden)]
     pub aggregation_window_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
-    /// <ul>
-    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-    /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+    /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p> 
+    /// <ul> 
+    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li> 
+    /// <li> <p> <b>Days</b> - every 6 hours</p> </li> 
+    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub aggregation_last_refreshed_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
     #[doc(hidden)]
-    pub aggregated_utterances_summaries:
-        std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
+    pub aggregated_utterances_summaries: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAggregatedUtterancesOutput {
     /// <p>The identifier of the bot that contains the utterances.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the bot alias that contains the utterances. If you specified the bot version, the bot alias ID isn't returned.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The identifier of the bot version that contains the utterances. If you specified the bot alias, the bot version isn't returned.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale that the utterances are in.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The time period used to aggregate the utterance data.</p>
-    pub fn aggregation_duration(
-        &self,
-    ) -> std::option::Option<&crate::model::UtteranceAggregationDuration> {
+    pub fn aggregation_duration(&self) -> std::option::Option<& crate::model::UtteranceAggregationDuration> {
         self.aggregation_duration.as_ref()
     }
     /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
-    pub fn aggregation_window_start_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn aggregation_window_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.aggregation_window_start_time.as_ref()
     }
     /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
-    pub fn aggregation_window_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn aggregation_window_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.aggregation_window_end_time.as_ref()
     }
-    /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
-    /// <ul>
-    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-    /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+    /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p> 
+    /// <ul> 
+    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li> 
+    /// <li> <p> <b>Days</b> - every 6 hours</p> </li> 
+    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li> 
     /// </ul>
-    pub fn aggregation_last_refreshed_date_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn aggregation_last_refreshed_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.aggregation_last_refreshed_date_time.as_ref()
     }
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
-    pub fn aggregated_utterances_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::AggregatedUtterancesSummary]> {
+    pub fn aggregated_utterances_summaries(&self) -> std::option::Option<& [crate::model::AggregatedUtterancesSummary]> {
         self.aggregated_utterances_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAggregatedUtterancesOutput`](crate::output::ListAggregatedUtterancesOutput).
 pub mod list_aggregated_utterances_output {
-
+    
     /// A builder for [`ListAggregatedUtterancesOutput`](crate::output::ListAggregatedUtterancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4984,14 +4613,11 @@ pub mod list_aggregated_utterances_output {
         pub(crate) bot_alias_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) aggregation_duration:
-            std::option::Option<crate::model::UtteranceAggregationDuration>,
+        pub(crate) aggregation_duration: std::option::Option<crate::model::UtteranceAggregationDuration>,
         pub(crate) aggregation_window_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) aggregation_window_end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) aggregation_last_refreshed_date_time:
-            std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) aggregated_utterances_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
+        pub(crate) aggregation_last_refreshed_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) aggregated_utterances_summaries: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5002,8 +4628,7 @@ pub mod list_aggregated_utterances_output {
         }
         /// <p>The identifier of the bot that contains the utterances.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The identifier of the bot alias that contains the utterances. If you specified the bot version, the bot alias ID isn't returned.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5012,8 +4637,7 @@ pub mod list_aggregated_utterances_output {
         }
         /// <p>The identifier of the bot alias that contains the utterances. If you specified the bot version, the bot alias ID isn't returned.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_alias_id = input;
-            self
+            self.bot_alias_id = input; self
         }
         /// <p>The identifier of the bot version that contains the utterances. If you specified the bot alias, the bot version isn't returned.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5022,8 +4646,7 @@ pub mod list_aggregated_utterances_output {
         }
         /// <p>The identifier of the bot version that contains the utterances. If you specified the bot alias, the bot version isn't returned.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale that the utterances are in.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5032,24 +4655,16 @@ pub mod list_aggregated_utterances_output {
         }
         /// <p>The identifier of the language and locale that the utterances are in.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The time period used to aggregate the utterance data.</p>
-        pub fn aggregation_duration(
-            mut self,
-            input: crate::model::UtteranceAggregationDuration,
-        ) -> Self {
+        pub fn aggregation_duration(mut self, input: crate::model::UtteranceAggregationDuration) -> Self {
             self.aggregation_duration = Some(input);
             self
         }
         /// <p>The time period used to aggregate the utterance data.</p>
-        pub fn set_aggregation_duration(
-            mut self,
-            input: std::option::Option<crate::model::UtteranceAggregationDuration>,
-        ) -> Self {
-            self.aggregation_duration = input;
-            self
+        pub fn set_aggregation_duration(mut self, input: std::option::Option<crate::model::UtteranceAggregationDuration>) -> Self {
+            self.aggregation_duration = input; self
         }
         /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
         pub fn aggregation_window_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5057,12 +4672,8 @@ pub mod list_aggregated_utterances_output {
             self
         }
         /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
-        pub fn set_aggregation_window_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.aggregation_window_start_time = input;
-            self
+        pub fn set_aggregation_window_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.aggregation_window_start_time = input; self
         }
         /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
         pub fn aggregation_window_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5070,60 +4681,42 @@ pub mod list_aggregated_utterances_output {
             self
         }
         /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
-        pub fn set_aggregation_window_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.aggregation_window_end_time = input;
-            self
+        pub fn set_aggregation_window_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.aggregation_window_end_time = input; self
         }
-        /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
-        /// <ul>
-        /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-        /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-        /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+        /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p> 
+        /// <ul> 
+        /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li> 
+        /// <li> <p> <b>Days</b> - every 6 hours</p> </li> 
+        /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li> 
         /// </ul>
-        pub fn aggregation_last_refreshed_date_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn aggregation_last_refreshed_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aggregation_last_refreshed_date_time = Some(input);
             self
         }
-        /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
-        /// <ul>
-        /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
-        /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
-        /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+        /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p> 
+        /// <ul> 
+        /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li> 
+        /// <li> <p> <b>Days</b> - every 6 hours</p> </li> 
+        /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li> 
         /// </ul>
-        pub fn set_aggregation_last_refreshed_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.aggregation_last_refreshed_date_time = input;
-            self
+        pub fn set_aggregation_last_refreshed_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.aggregation_last_refreshed_date_time = input; self
         }
         /// Appends an item to `aggregated_utterances_summaries`.
         ///
         /// To override the contents of this collection use [`set_aggregated_utterances_summaries`](Self::set_aggregated_utterances_summaries).
         ///
         /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
-        pub fn aggregated_utterances_summaries(
-            mut self,
-            input: crate::model::AggregatedUtterancesSummary,
-        ) -> Self {
+        pub fn aggregated_utterances_summaries(mut self, input: crate::model::AggregatedUtterancesSummary) -> Self {
             let mut v = self.aggregated_utterances_summaries.unwrap_or_default();
-            v.push(input);
-            self.aggregated_utterances_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.aggregated_utterances_summaries = Some(v);
+                            self
         }
         /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
-        pub fn set_aggregated_utterances_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
-        ) -> Self {
-            self.aggregated_utterances_summaries = input;
-            self
+        pub fn set_aggregated_utterances_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>) -> Self {
+            self.aggregated_utterances_summaries = input; self
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5132,25 +4725,36 @@ pub mod list_aggregated_utterances_output {
         }
         /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAggregatedUtterancesOutput`](crate::output::ListAggregatedUtterancesOutput).
         pub fn build(self) -> crate::output::ListAggregatedUtterancesOutput {
             crate::output::ListAggregatedUtterancesOutput {
-                bot_id: self.bot_id,
-                bot_alias_id: self.bot_alias_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                aggregation_duration: self.aggregation_duration,
-                aggregation_window_start_time: self.aggregation_window_start_time,
-                aggregation_window_end_time: self.aggregation_window_end_time,
-                aggregation_last_refreshed_date_time: self.aggregation_last_refreshed_date_time,
-                aggregated_utterances_summaries: self.aggregated_utterances_summaries,
-                next_token: self.next_token,
+                bot_id: self.bot_id
+                ,
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                aggregation_duration: self.aggregation_duration
+                ,
+                aggregation_window_start_time: self.aggregation_window_start_time
+                ,
+                aggregation_window_end_time: self.aggregation_window_end_time
+                ,
+                aggregation_last_refreshed_date_time: self.aggregation_last_refreshed_date_time
+                ,
+                aggregated_utterances_summaries: self.aggregated_utterances_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAggregatedUtterancesOutput {
     /// Creates a new builder-style object to manufacture [`ListAggregatedUtterancesOutput`](crate::output::ListAggregatedUtterancesOutput).
@@ -5162,7 +4766,7 @@ impl ListAggregatedUtterancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSlotTypeOutput {
+pub struct DescribeSlotTypeOutput  {
     /// <p>The unique identifier for the slot type.</p>
     #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
@@ -5205,87 +4809,77 @@ pub struct DescribeSlotTypeOutput {
 }
 impl DescribeSlotTypeOutput {
     /// <p>The unique identifier for the slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The name specified for the slot type.</p>
-    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+    pub fn slot_type_name(&self) -> std::option::Option<& str> {
         self.slot_type_name.as_deref()
     }
     /// <p>The description specified for the slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
-    pub fn slot_type_values(&self) -> std::option::Option<&[crate::model::SlotTypeValue]> {
+    pub fn slot_type_values(&self) -> std::option::Option<& [crate::model::SlotTypeValue]> {
         self.slot_type_values.as_deref()
     }
     /// <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
-    pub fn value_selection_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueSelectionSetting> {
+    pub fn value_selection_setting(&self) -> std::option::Option<& crate::model::SlotValueSelectionSetting> {
         self.value_selection_setting.as_ref()
     }
     /// <p>The built in slot type used as a parent to this slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot type.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale specified for the slot type.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the slot type was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    pub fn external_source_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
+    pub fn external_source_setting(&self) -> std::option::Option<& crate::model::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn composite_slot_type_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::CompositeSlotTypeSetting> {
+    pub fn composite_slot_type_setting(&self) -> std::option::Option<& crate::model::CompositeSlotTypeSetting> {
         self.composite_slot_type_setting.as_ref()
     }
 }
 /// See [`DescribeSlotTypeOutput`](crate::output::DescribeSlotTypeOutput).
 pub mod describe_slot_type_output {
-
+    
     /// A builder for [`DescribeSlotTypeOutput`](crate::output::DescribeSlotTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
         pub(crate) slot_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) slot_type_values:
-            std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
-        pub(crate) value_selection_setting:
-            std::option::Option<crate::model::SlotValueSelectionSetting>,
+        pub(crate) slot_type_values: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
+        pub(crate) value_selection_setting: std::option::Option<crate::model::SlotValueSelectionSetting>,
         pub(crate) parent_slot_type_signature: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) external_source_setting:
-            std::option::Option<crate::model::ExternalSourceSetting>,
-        pub(crate) composite_slot_type_setting:
-            std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        pub(crate) external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
+        pub(crate) composite_slot_type_setting: std::option::Option<crate::model::CompositeSlotTypeSetting>,
     }
     impl Builder {
         /// <p>The unique identifier for the slot type.</p>
@@ -5295,8 +4889,7 @@ pub mod describe_slot_type_output {
         }
         /// <p>The unique identifier for the slot type.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>The name specified for the slot type.</p>
         pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5304,12 +4897,8 @@ pub mod describe_slot_type_output {
             self
         }
         /// <p>The name specified for the slot type.</p>
-        pub fn set_slot_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slot_type_name = input;
-            self
+        pub fn set_slot_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slot_type_name = input; self
         }
         /// <p>The description specified for the slot type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5318,8 +4907,7 @@ pub mod describe_slot_type_output {
         }
         /// <p>The description specified for the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `slot_type_values`.
         ///
@@ -5328,33 +4916,22 @@ pub mod describe_slot_type_output {
         /// <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
         pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input);
-            self.slot_type_values = Some(v);
-            self
+                            v.push(input);
+                            self.slot_type_values = Some(v);
+                            self
         }
         /// <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
-        pub fn set_slot_type_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
-        ) -> Self {
-            self.slot_type_values = input;
-            self
+        pub fn set_slot_type_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>) -> Self {
+            self.slot_type_values = input; self
         }
         /// <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
-        pub fn value_selection_setting(
-            mut self,
-            input: crate::model::SlotValueSelectionSetting,
-        ) -> Self {
+        pub fn value_selection_setting(mut self, input: crate::model::SlotValueSelectionSetting) -> Self {
             self.value_selection_setting = Some(input);
             self
         }
         /// <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
-        pub fn set_value_selection_setting(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueSelectionSetting>,
-        ) -> Self {
-            self.value_selection_setting = input;
-            self
+        pub fn set_value_selection_setting(mut self, input: std::option::Option<crate::model::SlotValueSelectionSetting>) -> Self {
+            self.value_selection_setting = input; self
         }
         /// <p>The built in slot type used as a parent to this slot type.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5362,12 +4939,8 @@ pub mod describe_slot_type_output {
             self
         }
         /// <p>The built in slot type used as a parent to this slot type.</p>
-        pub fn set_parent_slot_type_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_slot_type_signature = input;
-            self
+        pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_slot_type_signature = input; self
         }
         /// <p>The identifier of the bot associated with the slot type.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5376,8 +4949,7 @@ pub mod describe_slot_type_output {
         }
         /// <p>The identifier of the bot associated with the slot type.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot associated with the slot type.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5386,8 +4958,7 @@ pub mod describe_slot_type_output {
         }
         /// <p>The version of the bot associated with the slot type.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale specified for the slot type.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5396,8 +4967,7 @@ pub mod describe_slot_type_output {
         }
         /// <p>The language and locale specified for the slot type.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>A timestamp of the date and time that the slot type was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5405,12 +4975,8 @@ pub mod describe_slot_type_output {
             self
         }
         /// <p>A timestamp of the date and time that the slot type was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the slot type was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5418,64 +4984,61 @@ pub mod describe_slot_type_output {
             self
         }
         /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>Provides information about the external source of the slot type's definition.</p>
-        pub fn external_source_setting(
-            mut self,
-            input: crate::model::ExternalSourceSetting,
-        ) -> Self {
+        pub fn external_source_setting(mut self, input: crate::model::ExternalSourceSetting) -> Self {
             self.external_source_setting = Some(input);
             self
         }
         /// <p>Provides information about the external source of the slot type's definition.</p>
-        pub fn set_external_source_setting(
-            mut self,
-            input: std::option::Option<crate::model::ExternalSourceSetting>,
-        ) -> Self {
-            self.external_source_setting = input;
-            self
+        pub fn set_external_source_setting(mut self, input: std::option::Option<crate::model::ExternalSourceSetting>) -> Self {
+            self.external_source_setting = input; self
         }
         /// <p>Specifications for a composite slot type.</p>
-        pub fn composite_slot_type_setting(
-            mut self,
-            input: crate::model::CompositeSlotTypeSetting,
-        ) -> Self {
+        pub fn composite_slot_type_setting(mut self, input: crate::model::CompositeSlotTypeSetting) -> Self {
             self.composite_slot_type_setting = Some(input);
             self
         }
         /// <p>Specifications for a composite slot type.</p>
-        pub fn set_composite_slot_type_setting(
-            mut self,
-            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
-        ) -> Self {
-            self.composite_slot_type_setting = input;
-            self
+        pub fn set_composite_slot_type_setting(mut self, input: std::option::Option<crate::model::CompositeSlotTypeSetting>) -> Self {
+            self.composite_slot_type_setting = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSlotTypeOutput`](crate::output::DescribeSlotTypeOutput).
         pub fn build(self) -> crate::output::DescribeSlotTypeOutput {
             crate::output::DescribeSlotTypeOutput {
-                slot_type_id: self.slot_type_id,
-                slot_type_name: self.slot_type_name,
-                description: self.description,
-                slot_type_values: self.slot_type_values,
-                value_selection_setting: self.value_selection_setting,
-                parent_slot_type_signature: self.parent_slot_type_signature,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                external_source_setting: self.external_source_setting,
-                composite_slot_type_setting: self.composite_slot_type_setting,
+                slot_type_id: self.slot_type_id
+                ,
+                slot_type_name: self.slot_type_name
+                ,
+                description: self.description
+                ,
+                slot_type_values: self.slot_type_values
+                ,
+                value_selection_setting: self.value_selection_setting
+                ,
+                parent_slot_type_signature: self.parent_slot_type_signature
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                external_source_setting: self.external_source_setting
+                ,
+                composite_slot_type_setting: self.composite_slot_type_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSlotTypeOutput`](crate::output::DescribeSlotTypeOutput).
@@ -5487,7 +5050,7 @@ impl DescribeSlotTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSlotOutput {
+pub struct DescribeSlotOutput  {
     /// <p>The unique identifier generated for the slot.</p>
     #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
@@ -5524,7 +5087,7 @@ pub struct DescribeSlotOutput {
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
+    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
@@ -5534,70 +5097,66 @@ pub struct DescribeSlotOutput {
 }
 impl DescribeSlotOutput {
     /// <p>The unique identifier generated for the slot.</p>
-    pub fn slot_id(&self) -> std::option::Option<&str> {
+    pub fn slot_id(&self) -> std::option::Option<& str> {
         self.slot_id.as_deref()
     }
     /// <p>The name specified for the slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<&str> {
+    pub fn slot_name(&self) -> std::option::Option<& str> {
         self.slot_name.as_deref()
     }
     /// <p>The description specified for the slot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the slot type that determines the values entered into the slot.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> std::option::Option<& crate::model::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
-    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
+    pub fn obfuscation_setting(&self) -> std::option::Option<& crate::model::ObfuscationSetting> {
         self.obfuscation_setting.as_ref()
     }
     /// <p>The identifier of the bot associated with the slot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale specified for the slot.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the intent associated with the slot.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the slot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
-    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
+    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn multiple_values_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
+    pub fn multiple_values_setting(&self) -> std::option::Option<& crate::model::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::model::SubSlotSetting> {
+    pub fn sub_slot_setting(&self) -> std::option::Option<& crate::model::SubSlotSetting> {
         self.sub_slot_setting.as_ref()
     }
 }
 /// See [`DescribeSlotOutput`](crate::output::DescribeSlotOutput).
 pub mod describe_slot_output {
-
+    
     /// A builder for [`DescribeSlotOutput`](crate::output::DescribeSlotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5605,8 +5164,7 @@ pub mod describe_slot_output {
         pub(crate) slot_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
-        pub(crate) value_elicitation_setting:
-            std::option::Option<crate::model::SlotValueElicitationSetting>,
+        pub(crate) value_elicitation_setting: std::option::Option<crate::model::SlotValueElicitationSetting>,
         pub(crate) obfuscation_setting: std::option::Option<crate::model::ObfuscationSetting>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
@@ -5614,8 +5172,7 @@ pub mod describe_slot_output {
         pub(crate) intent_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) multiple_values_setting:
-            std::option::Option<crate::model::MultipleValuesSetting>,
+        pub(crate) multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
         pub(crate) sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
     }
     impl Builder {
@@ -5626,8 +5183,7 @@ pub mod describe_slot_output {
         }
         /// <p>The unique identifier generated for the slot.</p>
         pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_id = input;
-            self
+            self.slot_id = input; self
         }
         /// <p>The name specified for the slot.</p>
         pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5636,8 +5192,7 @@ pub mod describe_slot_output {
         }
         /// <p>The name specified for the slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_name = input;
-            self
+            self.slot_name = input; self
         }
         /// <p>The description specified for the slot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5646,8 +5201,7 @@ pub mod describe_slot_output {
         }
         /// <p>The description specified for the slot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The identifier of the slot type that determines the values entered into the slot.</p>
         pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5656,24 +5210,16 @@ pub mod describe_slot_output {
         }
         /// <p>The identifier of the slot type that determines the values entered into the slot.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-        pub fn value_elicitation_setting(
-            mut self,
-            input: crate::model::SlotValueElicitationSetting,
-        ) -> Self {
+        pub fn value_elicitation_setting(mut self, input: crate::model::SlotValueElicitationSetting) -> Self {
             self.value_elicitation_setting = Some(input);
             self
         }
         /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-        pub fn set_value_elicitation_setting(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueElicitationSetting>,
-        ) -> Self {
-            self.value_elicitation_setting = input;
-            self
+        pub fn set_value_elicitation_setting(mut self, input: std::option::Option<crate::model::SlotValueElicitationSetting>) -> Self {
+            self.value_elicitation_setting = input; self
         }
         /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
         pub fn obfuscation_setting(mut self, input: crate::model::ObfuscationSetting) -> Self {
@@ -5681,12 +5227,8 @@ pub mod describe_slot_output {
             self
         }
         /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
-        pub fn set_obfuscation_setting(
-            mut self,
-            input: std::option::Option<crate::model::ObfuscationSetting>,
-        ) -> Self {
-            self.obfuscation_setting = input;
-            self
+        pub fn set_obfuscation_setting(mut self, input: std::option::Option<crate::model::ObfuscationSetting>) -> Self {
+            self.obfuscation_setting = input; self
         }
         /// <p>The identifier of the bot associated with the slot.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5695,8 +5237,7 @@ pub mod describe_slot_output {
         }
         /// <p>The identifier of the bot associated with the slot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot associated with the slot.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5705,8 +5246,7 @@ pub mod describe_slot_output {
         }
         /// <p>The version of the bot associated with the slot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale specified for the slot.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5715,8 +5255,7 @@ pub mod describe_slot_output {
         }
         /// <p>The language and locale specified for the slot.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The identifier of the intent associated with the slot.</p>
         pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5725,8 +5264,7 @@ pub mod describe_slot_output {
         }
         /// <p>The identifier of the intent associated with the slot.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// <p>A timestamp of the date and time that the slot was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5734,12 +5272,8 @@ pub mod describe_slot_output {
             self
         }
         /// <p>A timestamp of the date and time that the slot was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the slot was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5747,30 +5281,19 @@ pub mod describe_slot_output {
             self
         }
         /// <p>A timestamp of the date and time that the slot was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
-        /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
+        /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p> 
         /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-        pub fn multiple_values_setting(
-            mut self,
-            input: crate::model::MultipleValuesSetting,
-        ) -> Self {
+        pub fn multiple_values_setting(mut self, input: crate::model::MultipleValuesSetting) -> Self {
             self.multiple_values_setting = Some(input);
             self
         }
-        /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
+        /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p> 
         /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-        pub fn set_multiple_values_setting(
-            mut self,
-            input: std::option::Option<crate::model::MultipleValuesSetting>,
-        ) -> Self {
-            self.multiple_values_setting = input;
-            self
+        pub fn set_multiple_values_setting(mut self, input: std::option::Option<crate::model::MultipleValuesSetting>) -> Self {
+            self.multiple_values_setting = input; self
         }
         /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
         pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
@@ -5778,33 +5301,45 @@ pub mod describe_slot_output {
             self
         }
         /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-        pub fn set_sub_slot_setting(
-            mut self,
-            input: std::option::Option<crate::model::SubSlotSetting>,
-        ) -> Self {
-            self.sub_slot_setting = input;
-            self
+        pub fn set_sub_slot_setting(mut self, input: std::option::Option<crate::model::SubSlotSetting>) -> Self {
+            self.sub_slot_setting = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSlotOutput`](crate::output::DescribeSlotOutput).
         pub fn build(self) -> crate::output::DescribeSlotOutput {
             crate::output::DescribeSlotOutput {
-                slot_id: self.slot_id,
-                slot_name: self.slot_name,
-                description: self.description,
-                slot_type_id: self.slot_type_id,
-                value_elicitation_setting: self.value_elicitation_setting,
-                obfuscation_setting: self.obfuscation_setting,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                intent_id: self.intent_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                multiple_values_setting: self.multiple_values_setting,
-                sub_slot_setting: self.sub_slot_setting,
+                slot_id: self.slot_id
+                ,
+                slot_name: self.slot_name
+                ,
+                description: self.description
+                ,
+                slot_type_id: self.slot_type_id
+                ,
+                value_elicitation_setting: self.value_elicitation_setting
+                ,
+                obfuscation_setting: self.obfuscation_setting
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                intent_id: self.intent_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                multiple_values_setting: self.multiple_values_setting
+                ,
+                sub_slot_setting: self.sub_slot_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSlotOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSlotOutput`](crate::output::DescribeSlotOutput).
@@ -5816,7 +5351,7 @@ impl DescribeSlotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResourcePolicyOutput {
+pub struct DescribeResourcePolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -5829,21 +5364,21 @@ pub struct DescribeResourcePolicyOutput {
 }
 impl DescribeResourcePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The JSON structure that contains the resource policy. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
 pub mod describe_resource_policy_output {
-
+    
     /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5859,8 +5394,7 @@ pub mod describe_resource_policy_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The JSON structure that contains the resource policy. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5869,8 +5403,7 @@ pub mod describe_resource_policy_output {
         }
         /// <p>The JSON structure that contains the resource policy. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5879,18 +5412,22 @@ pub mod describe_resource_policy_output {
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
         pub fn build(self) -> crate::output::DescribeResourcePolicyOutput {
             crate::output::DescribeResourcePolicyOutput {
-                resource_arn: self.resource_arn,
-                policy: self.policy,
-                revision_id: self.revision_id,
+                resource_arn: self.resource_arn
+                ,
+                policy: self.policy
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
@@ -5902,7 +5439,7 @@ impl DescribeResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIntentOutput {
+pub struct DescribeIntentOutput  {
     /// <p>The unique identifier assigned to the intent when it was created.</p>
     #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
@@ -5963,93 +5500,85 @@ pub struct DescribeIntentOutput {
 }
 impl DescribeIntentOutput {
     /// <p>The unique identifier assigned to the intent when it was created.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The name specified for the intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<&str> {
+    pub fn intent_name(&self) -> std::option::Option<& str> {
         self.intent_name.as_deref()
     }
     /// <p>The description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the built-in intent that this intent is derived from, if any.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>User utterances that trigger this intent.</p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [crate::model::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
     /// <p>The Lambda function called during each turn of a conversation with the intent.</p>
-    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookSettings> {
+    pub fn dialog_code_hook(&self) -> std::option::Option<& crate::model::DialogCodeHookSettings> {
         self.dialog_code_hook.as_ref()
     }
     /// <p>The Lambda function called when the intent is complete and ready for fulfillment.</p>
-    pub fn fulfillment_code_hook(
-        &self,
-    ) -> std::option::Option<&crate::model::FulfillmentCodeHookSettings> {
+    pub fn fulfillment_code_hook(&self) -> std::option::Option<& crate::model::FulfillmentCodeHookSettings> {
         self.fulfillment_code_hook.as_ref()
     }
     /// <p>The list that determines the priority that slots should be elicited from the user.</p>
-    pub fn slot_priorities(&self) -> std::option::Option<&[crate::model::SlotPriority]> {
+    pub fn slot_priorities(&self) -> std::option::Option<& [crate::model::SlotPriority]> {
         self.slot_priorities.as_deref()
     }
     /// <p>Prompts that Amazon Lex sends to the user to confirm completion of an intent.</p>
-    pub fn intent_confirmation_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::IntentConfirmationSetting> {
+    pub fn intent_confirmation_setting(&self) -> std::option::Option<& crate::model::IntentConfirmationSetting> {
         self.intent_confirmation_setting.as_ref()
     }
     /// <p>The response that Amazon Lex sends to when the intent is closed.</p>
-    pub fn intent_closing_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::IntentClosingSetting> {
+    pub fn intent_closing_setting(&self) -> std::option::Option<& crate::model::IntentClosingSetting> {
         self.intent_closing_setting.as_ref()
     }
     /// <p>A list of contexts that must be active for the intent to be considered for sending to the user.</p>
-    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<& [crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
     /// <p>A list of contexts that are activated when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<& [crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> std::option::Option<& crate::model::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>The identifier of the bot associated with the intent.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the intent.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale specified for the intent.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the intent was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the intent was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p></p>
-    pub fn initial_response_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::InitialResponseSetting> {
+    pub fn initial_response_setting(&self) -> std::option::Option<& crate::model::InitialResponseSetting> {
         self.initial_response_setting.as_ref()
     }
 }
 /// See [`DescribeIntentOutput`](crate::output::DescribeIntentOutput).
 pub mod describe_intent_output {
-
+    
     /// A builder for [`DescribeIntentOutput`](crate::output::DescribeIntentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6057,14 +5586,11 @@ pub mod describe_intent_output {
         pub(crate) intent_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) parent_intent_signature: std::option::Option<std::string::String>,
-        pub(crate) sample_utterances:
-            std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
+        pub(crate) sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
         pub(crate) dialog_code_hook: std::option::Option<crate::model::DialogCodeHookSettings>,
-        pub(crate) fulfillment_code_hook:
-            std::option::Option<crate::model::FulfillmentCodeHookSettings>,
+        pub(crate) fulfillment_code_hook: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
         pub(crate) slot_priorities: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>,
-        pub(crate) intent_confirmation_setting:
-            std::option::Option<crate::model::IntentConfirmationSetting>,
+        pub(crate) intent_confirmation_setting: std::option::Option<crate::model::IntentConfirmationSetting>,
         pub(crate) intent_closing_setting: std::option::Option<crate::model::IntentClosingSetting>,
         pub(crate) input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
         pub(crate) output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -6074,8 +5600,7 @@ pub mod describe_intent_output {
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) initial_response_setting:
-            std::option::Option<crate::model::InitialResponseSetting>,
+        pub(crate) initial_response_setting: std::option::Option<crate::model::InitialResponseSetting>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the intent when it was created.</p>
@@ -6085,8 +5610,7 @@ pub mod describe_intent_output {
         }
         /// <p>The unique identifier assigned to the intent when it was created.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// <p>The name specified for the intent.</p>
         pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6095,8 +5619,7 @@ pub mod describe_intent_output {
         }
         /// <p>The name specified for the intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_name = input;
-            self
+            self.intent_name = input; self
         }
         /// <p>The description of the intent.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6105,8 +5628,7 @@ pub mod describe_intent_output {
         }
         /// <p>The description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The identifier of the built-in intent that this intent is derived from, if any.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6114,12 +5636,8 @@ pub mod describe_intent_output {
             self
         }
         /// <p>The identifier of the built-in intent that this intent is derived from, if any.</p>
-        pub fn set_parent_intent_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_intent_signature = input;
-            self
+        pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_intent_signature = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -6128,17 +5646,13 @@ pub mod describe_intent_output {
         /// <p>User utterances that trigger this intent.</p>
         pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input);
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input);
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p>User utterances that trigger this intent.</p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>The Lambda function called during each turn of a conversation with the intent.</p>
         pub fn dialog_code_hook(mut self, input: crate::model::DialogCodeHookSettings) -> Self {
@@ -6146,28 +5660,17 @@ pub mod describe_intent_output {
             self
         }
         /// <p>The Lambda function called during each turn of a conversation with the intent.</p>
-        pub fn set_dialog_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::DialogCodeHookSettings>,
-        ) -> Self {
-            self.dialog_code_hook = input;
-            self
+        pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::model::DialogCodeHookSettings>) -> Self {
+            self.dialog_code_hook = input; self
         }
         /// <p>The Lambda function called when the intent is complete and ready for fulfillment.</p>
-        pub fn fulfillment_code_hook(
-            mut self,
-            input: crate::model::FulfillmentCodeHookSettings,
-        ) -> Self {
+        pub fn fulfillment_code_hook(mut self, input: crate::model::FulfillmentCodeHookSettings) -> Self {
             self.fulfillment_code_hook = Some(input);
             self
         }
         /// <p>The Lambda function called when the intent is complete and ready for fulfillment.</p>
-        pub fn set_fulfillment_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
-        ) -> Self {
-            self.fulfillment_code_hook = input;
-            self
+        pub fn set_fulfillment_code_hook(mut self, input: std::option::Option<crate::model::FulfillmentCodeHookSettings>) -> Self {
+            self.fulfillment_code_hook = input; self
         }
         /// Appends an item to `slot_priorities`.
         ///
@@ -6176,33 +5679,22 @@ pub mod describe_intent_output {
         /// <p>The list that determines the priority that slots should be elicited from the user.</p>
         pub fn slot_priorities(mut self, input: crate::model::SlotPriority) -> Self {
             let mut v = self.slot_priorities.unwrap_or_default();
-            v.push(input);
-            self.slot_priorities = Some(v);
-            self
+                            v.push(input);
+                            self.slot_priorities = Some(v);
+                            self
         }
         /// <p>The list that determines the priority that slots should be elicited from the user.</p>
-        pub fn set_slot_priorities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>,
-        ) -> Self {
-            self.slot_priorities = input;
-            self
+        pub fn set_slot_priorities(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>) -> Self {
+            self.slot_priorities = input; self
         }
         /// <p>Prompts that Amazon Lex sends to the user to confirm completion of an intent.</p>
-        pub fn intent_confirmation_setting(
-            mut self,
-            input: crate::model::IntentConfirmationSetting,
-        ) -> Self {
+        pub fn intent_confirmation_setting(mut self, input: crate::model::IntentConfirmationSetting) -> Self {
             self.intent_confirmation_setting = Some(input);
             self
         }
         /// <p>Prompts that Amazon Lex sends to the user to confirm completion of an intent.</p>
-        pub fn set_intent_confirmation_setting(
-            mut self,
-            input: std::option::Option<crate::model::IntentConfirmationSetting>,
-        ) -> Self {
-            self.intent_confirmation_setting = input;
-            self
+        pub fn set_intent_confirmation_setting(mut self, input: std::option::Option<crate::model::IntentConfirmationSetting>) -> Self {
+            self.intent_confirmation_setting = input; self
         }
         /// <p>The response that Amazon Lex sends to when the intent is closed.</p>
         pub fn intent_closing_setting(mut self, input: crate::model::IntentClosingSetting) -> Self {
@@ -6210,12 +5702,8 @@ pub mod describe_intent_output {
             self
         }
         /// <p>The response that Amazon Lex sends to when the intent is closed.</p>
-        pub fn set_intent_closing_setting(
-            mut self,
-            input: std::option::Option<crate::model::IntentClosingSetting>,
-        ) -> Self {
-            self.intent_closing_setting = input;
-            self
+        pub fn set_intent_closing_setting(mut self, input: std::option::Option<crate::model::IntentClosingSetting>) -> Self {
+            self.intent_closing_setting = input; self
         }
         /// Appends an item to `input_contexts`.
         ///
@@ -6224,17 +5712,13 @@ pub mod describe_intent_output {
         /// <p>A list of contexts that must be active for the intent to be considered for sending to the user.</p>
         pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input);
-            self.input_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.input_contexts = Some(v);
+                            self
         }
         /// <p>A list of contexts that must be active for the intent to be considered for sending to the user.</p>
-        pub fn set_input_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-        ) -> Self {
-            self.input_contexts = input;
-            self
+        pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputContext>>) -> Self {
+            self.input_contexts = input; self
         }
         /// Appends an item to `output_contexts`.
         ///
@@ -6243,17 +5727,13 @@ pub mod describe_intent_output {
         /// <p>A list of contexts that are activated when the intent is fulfilled.</p>
         pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input);
-            self.output_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.output_contexts = Some(v);
+                            self
         }
         /// <p>A list of contexts that are activated when the intent is fulfilled.</p>
-        pub fn set_output_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-        ) -> Self {
-            self.output_contexts = input;
-            self
+        pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>) -> Self {
+            self.output_contexts = input; self
         }
         /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
         pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
@@ -6261,12 +5741,8 @@ pub mod describe_intent_output {
             self
         }
         /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-        pub fn set_kendra_configuration(
-            mut self,
-            input: std::option::Option<crate::model::KendraConfiguration>,
-        ) -> Self {
-            self.kendra_configuration = input;
-            self
+        pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::model::KendraConfiguration>) -> Self {
+            self.kendra_configuration = input; self
         }
         /// <p>The identifier of the bot associated with the intent.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6275,8 +5751,7 @@ pub mod describe_intent_output {
         }
         /// <p>The identifier of the bot associated with the intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot associated with the intent.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6285,8 +5760,7 @@ pub mod describe_intent_output {
         }
         /// <p>The version of the bot associated with the intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale specified for the intent.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6295,8 +5769,7 @@ pub mod describe_intent_output {
         }
         /// <p>The language and locale specified for the intent.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>A timestamp of the date and time that the intent was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6304,12 +5777,8 @@ pub mod describe_intent_output {
             self
         }
         /// <p>A timestamp of the date and time that the intent was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the intent was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6317,54 +5786,64 @@ pub mod describe_intent_output {
             self
         }
         /// <p>A timestamp of the date and time that the intent was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p></p>
-        pub fn initial_response_setting(
-            mut self,
-            input: crate::model::InitialResponseSetting,
-        ) -> Self {
+        pub fn initial_response_setting(mut self, input: crate::model::InitialResponseSetting) -> Self {
             self.initial_response_setting = Some(input);
             self
         }
         /// <p></p>
-        pub fn set_initial_response_setting(
-            mut self,
-            input: std::option::Option<crate::model::InitialResponseSetting>,
-        ) -> Self {
-            self.initial_response_setting = input;
-            self
+        pub fn set_initial_response_setting(mut self, input: std::option::Option<crate::model::InitialResponseSetting>) -> Self {
+            self.initial_response_setting = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIntentOutput`](crate::output::DescribeIntentOutput).
         pub fn build(self) -> crate::output::DescribeIntentOutput {
             crate::output::DescribeIntentOutput {
-                intent_id: self.intent_id,
-                intent_name: self.intent_name,
-                description: self.description,
-                parent_intent_signature: self.parent_intent_signature,
-                sample_utterances: self.sample_utterances,
-                dialog_code_hook: self.dialog_code_hook,
-                fulfillment_code_hook: self.fulfillment_code_hook,
-                slot_priorities: self.slot_priorities,
-                intent_confirmation_setting: self.intent_confirmation_setting,
-                intent_closing_setting: self.intent_closing_setting,
-                input_contexts: self.input_contexts,
-                output_contexts: self.output_contexts,
-                kendra_configuration: self.kendra_configuration,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                initial_response_setting: self.initial_response_setting,
+                intent_id: self.intent_id
+                ,
+                intent_name: self.intent_name
+                ,
+                description: self.description
+                ,
+                parent_intent_signature: self.parent_intent_signature
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                dialog_code_hook: self.dialog_code_hook
+                ,
+                fulfillment_code_hook: self.fulfillment_code_hook
+                ,
+                slot_priorities: self.slot_priorities
+                ,
+                intent_confirmation_setting: self.intent_confirmation_setting
+                ,
+                intent_closing_setting: self.intent_closing_setting
+                ,
+                input_contexts: self.input_contexts
+                ,
+                output_contexts: self.output_contexts
+                ,
+                kendra_configuration: self.kendra_configuration
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                initial_response_setting: self.initial_response_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeIntentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIntentOutput`](crate::output::DescribeIntentOutput).
@@ -6376,7 +5855,7 @@ impl DescribeIntentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImportOutput {
+pub struct DescribeImportOutput  {
     /// <p>The unique identifier of the described import.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -6407,53 +5886,50 @@ pub struct DescribeImportOutput {
 }
 impl DescribeImportOutput {
     /// <p>The unique identifier of the described import.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ImportResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ImportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
-    pub fn imported_resource_id(&self) -> std::option::Option<&str> {
+    pub fn imported_resource_id(&self) -> std::option::Option<& str> {
         self.imported_resource_id.as_deref()
     }
     /// <p>The name of the imported resource.</p>
-    pub fn imported_resource_name(&self) -> std::option::Option<&str> {
+    pub fn imported_resource_name(&self) -> std::option::Option<& str> {
         self.imported_resource_name.as_deref()
     }
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<& crate::model::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The status of the import process. When the status is <code>Completed</code> the resource is imported and ready for use.</p>
-    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<& crate::model::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
-    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failure_reasons(&self) -> std::option::Option<& [std::string::String]> {
         self.failure_reasons.as_deref()
     }
     /// <p>The date and time that the import was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the import was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`DescribeImportOutput`](crate::output::DescribeImportOutput).
 pub mod describe_import_output {
-
+    
     /// A builder for [`DescribeImportOutput`](crate::output::DescribeImportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ImportResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ImportResourceSpecification>,
         pub(crate) imported_resource_id: std::option::Option<std::string::String>,
         pub(crate) imported_resource_name: std::option::Option<std::string::String>,
         pub(crate) merge_strategy: std::option::Option<crate::model::MergeStrategy>,
@@ -6470,24 +5946,16 @@ pub mod describe_import_output {
         }
         /// <p>The unique identifier of the described import.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.import_id = input;
-            self
+            self.import_id = input; self
         }
         /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ImportResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ImportResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ImportResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ImportResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
         pub fn imported_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6495,12 +5963,8 @@ pub mod describe_import_output {
             self
         }
         /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
-        pub fn set_imported_resource_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.imported_resource_id = input;
-            self
+        pub fn set_imported_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.imported_resource_id = input; self
         }
         /// <p>The name of the imported resource.</p>
         pub fn imported_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6508,12 +5972,8 @@ pub mod describe_import_output {
             self
         }
         /// <p>The name of the imported resource.</p>
-        pub fn set_imported_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.imported_resource_name = input;
-            self
+        pub fn set_imported_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.imported_resource_name = input; self
         }
         /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
@@ -6521,12 +5981,8 @@ pub mod describe_import_output {
             self
         }
         /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-        pub fn set_merge_strategy(
-            mut self,
-            input: std::option::Option<crate::model::MergeStrategy>,
-        ) -> Self {
-            self.merge_strategy = input;
-            self
+        pub fn set_merge_strategy(mut self, input: std::option::Option<crate::model::MergeStrategy>) -> Self {
+            self.merge_strategy = input; self
         }
         /// <p>The status of the import process. When the status is <code>Completed</code> the resource is imported and ready for use.</p>
         pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
@@ -6534,12 +5990,8 @@ pub mod describe_import_output {
             self
         }
         /// <p>The status of the import process. When the status is <code>Completed</code> the resource is imported and ready for use.</p>
-        pub fn set_import_status(
-            mut self,
-            input: std::option::Option<crate::model::ImportStatus>,
-        ) -> Self {
-            self.import_status = input;
-            self
+        pub fn set_import_status(mut self, input: std::option::Option<crate::model::ImportStatus>) -> Self {
+            self.import_status = input; self
         }
         /// Appends an item to `failure_reasons`.
         ///
@@ -6548,17 +6000,13 @@ pub mod describe_import_output {
         /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
         pub fn failure_reasons(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failure_reasons.unwrap_or_default();
-            v.push(input.into());
-            self.failure_reasons = Some(v);
-            self
+                            v.push(input.into());
+                            self.failure_reasons = Some(v);
+                            self
         }
         /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
-        pub fn set_failure_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failure_reasons = input;
-            self
+        pub fn set_failure_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failure_reasons = input; self
         }
         /// <p>The date and time that the import was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6566,12 +6014,8 @@ pub mod describe_import_output {
             self
         }
         /// <p>The date and time that the import was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time that the import was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6579,28 +6023,35 @@ pub mod describe_import_output {
             self
         }
         /// <p>The date and time that the import was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeImportOutput`](crate::output::DescribeImportOutput).
         pub fn build(self) -> crate::output::DescribeImportOutput {
             crate::output::DescribeImportOutput {
-                import_id: self.import_id,
-                resource_specification: self.resource_specification,
-                imported_resource_id: self.imported_resource_id,
-                imported_resource_name: self.imported_resource_name,
-                merge_strategy: self.merge_strategy,
-                import_status: self.import_status,
-                failure_reasons: self.failure_reasons,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                import_id: self.import_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                imported_resource_id: self.imported_resource_id
+                ,
+                imported_resource_name: self.imported_resource_name
+                ,
+                merge_strategy: self.merge_strategy
+                ,
+                import_status: self.import_status
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeImportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImportOutput`](crate::output::DescribeImportOutput).
@@ -6612,7 +6063,7 @@ impl DescribeImportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExportOutput {
+pub struct DescribeExportOutput  {
     /// <p>The unique identifier of the described export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
@@ -6640,49 +6091,46 @@ pub struct DescribeExportOutput {
 }
 impl DescribeExportOutput {
     /// <p>The unique identifier of the described export.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format used in the files that describe the resource. </p>
-    pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
+    pub fn file_format(&self) -> std::option::Option<& crate::model::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
-    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
-    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failure_reasons(&self) -> std::option::Option<& [std::string::String]> {
         self.failure_reasons.as_deref()
     }
     /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
-    pub fn download_url(&self) -> std::option::Option<&str> {
+    pub fn download_url(&self) -> std::option::Option<& str> {
         self.download_url.as_deref()
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last date and time that the export was updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`DescribeExportOutput`](crate::output::DescribeExportOutput).
 pub mod describe_export_output {
-
+    
     /// A builder for [`DescribeExportOutput`](crate::output::DescribeExportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ExportResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ExportResourceSpecification>,
         pub(crate) file_format: std::option::Option<crate::model::ImportExportFileFormat>,
         pub(crate) export_status: std::option::Option<crate::model::ExportStatus>,
         pub(crate) failure_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6698,24 +6146,16 @@ pub mod describe_export_output {
         }
         /// <p>The unique identifier of the described export.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.export_id = input;
-            self
+            self.export_id = input; self
         }
         /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ExportResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ExportResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ExportResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ExportResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// <p>The file format used in the files that describe the resource. </p>
         pub fn file_format(mut self, input: crate::model::ImportExportFileFormat) -> Self {
@@ -6723,12 +6163,8 @@ pub mod describe_export_output {
             self
         }
         /// <p>The file format used in the files that describe the resource. </p>
-        pub fn set_file_format(
-            mut self,
-            input: std::option::Option<crate::model::ImportExportFileFormat>,
-        ) -> Self {
-            self.file_format = input;
-            self
+        pub fn set_file_format(mut self, input: std::option::Option<crate::model::ImportExportFileFormat>) -> Self {
+            self.file_format = input; self
         }
         /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
         pub fn export_status(mut self, input: crate::model::ExportStatus) -> Self {
@@ -6736,12 +6172,8 @@ pub mod describe_export_output {
             self
         }
         /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::ExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::ExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// Appends an item to `failure_reasons`.
         ///
@@ -6750,17 +6182,13 @@ pub mod describe_export_output {
         /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
         pub fn failure_reasons(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failure_reasons.unwrap_or_default();
-            v.push(input.into());
-            self.failure_reasons = Some(v);
-            self
+                            v.push(input.into());
+                            self.failure_reasons = Some(v);
+                            self
         }
         /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
-        pub fn set_failure_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failure_reasons = input;
-            self
+        pub fn set_failure_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failure_reasons = input; self
         }
         /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
         pub fn download_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6769,8 +6197,7 @@ pub mod describe_export_output {
         }
         /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
         pub fn set_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.download_url = input;
-            self
+            self.download_url = input; self
         }
         /// <p>The date and time that the export was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6778,12 +6205,8 @@ pub mod describe_export_output {
             self
         }
         /// <p>The date and time that the export was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The last date and time that the export was updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6791,27 +6214,33 @@ pub mod describe_export_output {
             self
         }
         /// <p>The last date and time that the export was updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeExportOutput`](crate::output::DescribeExportOutput).
         pub fn build(self) -> crate::output::DescribeExportOutput {
             crate::output::DescribeExportOutput {
-                export_id: self.export_id,
-                resource_specification: self.resource_specification,
-                file_format: self.file_format,
-                export_status: self.export_status,
-                failure_reasons: self.failure_reasons,
-                download_url: self.download_url,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                export_id: self.export_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                file_format: self.file_format
+                ,
+                export_status: self.export_status
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+                download_url: self.download_url
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeExportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportOutput`](crate::output::DescribeExportOutput).
@@ -6823,7 +6252,7 @@ impl DescribeExportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomVocabularyMetadataOutput {
+pub struct DescribeCustomVocabularyMetadataOutput  {
     /// <p>The identifier of the bot that contains the custom vocabulary.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -6845,43 +6274,40 @@ pub struct DescribeCustomVocabularyMetadataOutput {
 }
 impl DescribeCustomVocabularyMetadataOutput {
     /// <p>The identifier of the bot that contains the custom vocabulary.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale that contains the custom vocabulary to describe.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
-    pub fn custom_vocabulary_status(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomVocabularyStatus> {
+    pub fn custom_vocabulary_status(&self) -> std::option::Option<& crate::model::CustomVocabularyStatus> {
         self.custom_vocabulary_status.as_ref()
     }
     /// <p>The date and time that the custom vocabulary was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the custom vocabulary was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput).
 pub mod describe_custom_vocabulary_metadata_output {
-
+    
     /// A builder for [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) custom_vocabulary_status:
-            std::option::Option<crate::model::CustomVocabularyStatus>,
+        pub(crate) custom_vocabulary_status: std::option::Option<crate::model::CustomVocabularyStatus>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -6893,8 +6319,7 @@ pub mod describe_custom_vocabulary_metadata_output {
         }
         /// <p>The identifier of the bot that contains the custom vocabulary.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6903,8 +6328,7 @@ pub mod describe_custom_vocabulary_metadata_output {
         }
         /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The locale that contains the custom vocabulary to describe.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6913,24 +6337,16 @@ pub mod describe_custom_vocabulary_metadata_output {
         }
         /// <p>The locale that contains the custom vocabulary to describe.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
-        pub fn custom_vocabulary_status(
-            mut self,
-            input: crate::model::CustomVocabularyStatus,
-        ) -> Self {
+        pub fn custom_vocabulary_status(mut self, input: crate::model::CustomVocabularyStatus) -> Self {
             self.custom_vocabulary_status = Some(input);
             self
         }
         /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
-        pub fn set_custom_vocabulary_status(
-            mut self,
-            input: std::option::Option<crate::model::CustomVocabularyStatus>,
-        ) -> Self {
-            self.custom_vocabulary_status = input;
-            self
+        pub fn set_custom_vocabulary_status(mut self, input: std::option::Option<crate::model::CustomVocabularyStatus>) -> Self {
+            self.custom_vocabulary_status = input; self
         }
         /// <p>The date and time that the custom vocabulary was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6938,12 +6354,8 @@ pub mod describe_custom_vocabulary_metadata_output {
             self
         }
         /// <p>The date and time that the custom vocabulary was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time that the custom vocabulary was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6951,25 +6363,29 @@ pub mod describe_custom_vocabulary_metadata_output {
             self
         }
         /// <p>The date and time that the custom vocabulary was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput).
         pub fn build(self) -> crate::output::DescribeCustomVocabularyMetadataOutput {
             crate::output::DescribeCustomVocabularyMetadataOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                custom_vocabulary_status: self.custom_vocabulary_status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                custom_vocabulary_status: self.custom_vocabulary_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCustomVocabularyMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput).
@@ -6981,7 +6397,7 @@ impl DescribeCustomVocabularyMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBotVersionOutput {
+pub struct DescribeBotVersionOutput  {
     /// <p>The identifier of the bot that contains the version.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -7015,27 +6431,27 @@ pub struct DescribeBotVersionOutput {
 }
 impl DescribeBotVersionOutput {
     /// <p>The identifier of the bot that contains the version.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The name of the bot that contains the version.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The version of the bot to describe.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The description specified for the bot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot version.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Data privacy settings for the bot version.</p>
-    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+    pub fn data_privacy(&self) -> std::option::Option<& crate::model::DataPrivacy> {
         self.data_privacy.as_ref()
     }
     /// <p>The number of seconds that a session with the bot remains active before it is discarded by Amazon Lex.</p>
@@ -7043,21 +6459,21 @@ impl DescribeBotVersionOutput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>The current status of the bot. When the status is <code>Available</code>, the bot version is ready for use.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
-    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failure_reasons(&self) -> std::option::Option<& [std::string::String]> {
         self.failure_reasons.as_deref()
     }
     /// <p>A timestamp of the date and time that the bot version was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`DescribeBotVersionOutput`](crate::output::DescribeBotVersionOutput).
 pub mod describe_bot_version_output {
-
+    
     /// A builder for [`DescribeBotVersionOutput`](crate::output::DescribeBotVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7080,8 +6496,7 @@ pub mod describe_bot_version_output {
         }
         /// <p>The identifier of the bot that contains the version.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The name of the bot that contains the version.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7090,8 +6505,7 @@ pub mod describe_bot_version_output {
         }
         /// <p>The name of the bot that contains the version.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The version of the bot to describe.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7100,8 +6514,7 @@ pub mod describe_bot_version_output {
         }
         /// <p>The version of the bot to describe.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The description specified for the bot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7110,8 +6523,7 @@ pub mod describe_bot_version_output {
         }
         /// <p>The description specified for the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot version.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7120,8 +6532,7 @@ pub mod describe_bot_version_output {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot version.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>Data privacy settings for the bot version.</p>
         pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
@@ -7129,12 +6540,8 @@ pub mod describe_bot_version_output {
             self
         }
         /// <p>Data privacy settings for the bot version.</p>
-        pub fn set_data_privacy(
-            mut self,
-            input: std::option::Option<crate::model::DataPrivacy>,
-        ) -> Self {
-            self.data_privacy = input;
-            self
+        pub fn set_data_privacy(mut self, input: std::option::Option<crate::model::DataPrivacy>) -> Self {
+            self.data_privacy = input; self
         }
         /// <p>The number of seconds that a session with the bot remains active before it is discarded by Amazon Lex.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
@@ -7143,8 +6550,7 @@ pub mod describe_bot_version_output {
         }
         /// <p>The number of seconds that a session with the bot remains active before it is discarded by Amazon Lex.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_session_ttl_in_seconds = input;
-            self
+            self.idle_session_ttl_in_seconds = input; self
         }
         /// <p>The current status of the bot. When the status is <code>Available</code>, the bot version is ready for use.</p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -7152,12 +6558,8 @@ pub mod describe_bot_version_output {
             self
         }
         /// <p>The current status of the bot. When the status is <code>Available</code>, the bot version is ready for use.</p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// Appends an item to `failure_reasons`.
         ///
@@ -7166,17 +6568,13 @@ pub mod describe_bot_version_output {
         /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
         pub fn failure_reasons(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failure_reasons.unwrap_or_default();
-            v.push(input.into());
-            self.failure_reasons = Some(v);
-            self
+                            v.push(input.into());
+                            self.failure_reasons = Some(v);
+                            self
         }
         /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
-        pub fn set_failure_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failure_reasons = input;
-            self
+        pub fn set_failure_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failure_reasons = input; self
         }
         /// <p>A timestamp of the date and time that the bot version was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7184,29 +6582,37 @@ pub mod describe_bot_version_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot version was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBotVersionOutput`](crate::output::DescribeBotVersionOutput).
         pub fn build(self) -> crate::output::DescribeBotVersionOutput {
             crate::output::DescribeBotVersionOutput {
-                bot_id: self.bot_id,
-                bot_name: self.bot_name,
-                bot_version: self.bot_version,
-                description: self.description,
-                role_arn: self.role_arn,
-                data_privacy: self.data_privacy,
-                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-                bot_status: self.bot_status,
-                failure_reasons: self.failure_reasons,
-                creation_date_time: self.creation_date_time,
+                bot_id: self.bot_id
+                ,
+                bot_name: self.bot_name
+                ,
+                bot_version: self.bot_version
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                data_privacy: self.data_privacy
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                bot_status: self.bot_status
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotVersionOutput`](crate::output::DescribeBotVersionOutput).
@@ -7218,7 +6624,7 @@ impl DescribeBotVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBotRecommendationOutput {
+pub struct DescribeBotRecommendationOutput  {
     /// <p>The identifier of the bot associated with the bot recommendation.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -7255,76 +6661,67 @@ pub struct DescribeBotRecommendationOutput {
 }
 impl DescribeBotRecommendationOutput {
     /// <p>The identifier of the bot associated with the bot recommendation.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the bot recommendation.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot recommendation to describe.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(&self) -> std::option::Option<& crate::model::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The identifier of the bot recommendation being described.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
-    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failure_reasons(&self) -> std::option::Option<& [std::string::String]> {
         self.failure_reasons.as_deref()
     }
     /// <p>The date and time that the bot recommendation was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the bot recommendation was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::TranscriptSourceSetting> {
+    pub fn transcript_source_setting(&self) -> std::option::Option<& crate::model::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
+    pub fn encryption_setting(&self) -> std::option::Option<& crate::model::EncryptionSetting> {
         self.encryption_setting.as_ref()
     }
     /// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
-    pub fn bot_recommendation_results(
-        &self,
-    ) -> std::option::Option<&crate::model::BotRecommendationResults> {
+    pub fn bot_recommendation_results(&self) -> std::option::Option<& crate::model::BotRecommendationResults> {
         self.bot_recommendation_results.as_ref()
     }
 }
 /// See [`DescribeBotRecommendationOutput`](crate::output::DescribeBotRecommendationOutput).
 pub mod describe_bot_recommendation_output {
-
+    
     /// A builder for [`DescribeBotRecommendationOutput`](crate::output::DescribeBotRecommendationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) bot_recommendation_status:
-            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
         pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
         pub(crate) failure_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) transcript_source_setting:
-            std::option::Option<crate::model::TranscriptSourceSetting>,
+        pub(crate) transcript_source_setting: std::option::Option<crate::model::TranscriptSourceSetting>,
         pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
-        pub(crate) bot_recommendation_results:
-            std::option::Option<crate::model::BotRecommendationResults>,
+        pub(crate) bot_recommendation_results: std::option::Option<crate::model::BotRecommendationResults>,
     }
     impl Builder {
         /// <p>The identifier of the bot associated with the bot recommendation.</p>
@@ -7334,8 +6731,7 @@ pub mod describe_bot_recommendation_output {
         }
         /// <p>The identifier of the bot associated with the bot recommendation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot associated with the bot recommendation.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7344,8 +6740,7 @@ pub mod describe_bot_recommendation_output {
         }
         /// <p>The version of the bot associated with the bot recommendation.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale of the bot recommendation to describe.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7354,24 +6749,16 @@ pub mod describe_bot_recommendation_output {
         }
         /// <p>The identifier of the language and locale of the bot recommendation to describe.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-        pub fn bot_recommendation_status(
-            mut self,
-            input: crate::model::BotRecommendationStatus,
-        ) -> Self {
+        pub fn bot_recommendation_status(mut self, input: crate::model::BotRecommendationStatus) -> Self {
             self.bot_recommendation_status = Some(input);
             self
         }
         /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-        pub fn set_bot_recommendation_status(
-            mut self,
-            input: std::option::Option<crate::model::BotRecommendationStatus>,
-        ) -> Self {
-            self.bot_recommendation_status = input;
-            self
+        pub fn set_bot_recommendation_status(mut self, input: std::option::Option<crate::model::BotRecommendationStatus>) -> Self {
+            self.bot_recommendation_status = input; self
         }
         /// <p>The identifier of the bot recommendation being described.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7379,12 +6766,8 @@ pub mod describe_bot_recommendation_output {
             self
         }
         /// <p>The identifier of the bot recommendation being described.</p>
-        pub fn set_bot_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_recommendation_id = input;
-            self
+        pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_recommendation_id = input; self
         }
         /// Appends an item to `failure_reasons`.
         ///
@@ -7393,17 +6776,13 @@ pub mod describe_bot_recommendation_output {
         /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
         pub fn failure_reasons(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failure_reasons.unwrap_or_default();
-            v.push(input.into());
-            self.failure_reasons = Some(v);
-            self
+                            v.push(input.into());
+                            self.failure_reasons = Some(v);
+                            self
         }
         /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
-        pub fn set_failure_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failure_reasons = input;
-            self
+        pub fn set_failure_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failure_reasons = input; self
         }
         /// <p>The date and time that the bot recommendation was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7411,12 +6790,8 @@ pub mod describe_bot_recommendation_output {
             self
         }
         /// <p>The date and time that the bot recommendation was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time that the bot recommendation was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7424,28 +6799,17 @@ pub mod describe_bot_recommendation_output {
             self
         }
         /// <p>The date and time that the bot recommendation was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-        pub fn transcript_source_setting(
-            mut self,
-            input: crate::model::TranscriptSourceSetting,
-        ) -> Self {
+        pub fn transcript_source_setting(mut self, input: crate::model::TranscriptSourceSetting) -> Self {
             self.transcript_source_setting = Some(input);
             self
         }
         /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-        pub fn set_transcript_source_setting(
-            mut self,
-            input: std::option::Option<crate::model::TranscriptSourceSetting>,
-        ) -> Self {
-            self.transcript_source_setting = input;
-            self
+        pub fn set_transcript_source_setting(mut self, input: std::option::Option<crate::model::TranscriptSourceSetting>) -> Self {
+            self.transcript_source_setting = input; self
         }
         /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
@@ -7453,46 +6817,48 @@ pub mod describe_bot_recommendation_output {
             self
         }
         /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-        pub fn set_encryption_setting(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionSetting>,
-        ) -> Self {
-            self.encryption_setting = input;
-            self
+        pub fn set_encryption_setting(mut self, input: std::option::Option<crate::model::EncryptionSetting>) -> Self {
+            self.encryption_setting = input; self
         }
         /// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
-        pub fn bot_recommendation_results(
-            mut self,
-            input: crate::model::BotRecommendationResults,
-        ) -> Self {
+        pub fn bot_recommendation_results(mut self, input: crate::model::BotRecommendationResults) -> Self {
             self.bot_recommendation_results = Some(input);
             self
         }
         /// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
-        pub fn set_bot_recommendation_results(
-            mut self,
-            input: std::option::Option<crate::model::BotRecommendationResults>,
-        ) -> Self {
-            self.bot_recommendation_results = input;
-            self
+        pub fn set_bot_recommendation_results(mut self, input: std::option::Option<crate::model::BotRecommendationResults>) -> Self {
+            self.bot_recommendation_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBotRecommendationOutput`](crate::output::DescribeBotRecommendationOutput).
         pub fn build(self) -> crate::output::DescribeBotRecommendationOutput {
             crate::output::DescribeBotRecommendationOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_status: self.bot_recommendation_status,
-                bot_recommendation_id: self.bot_recommendation_id,
-                failure_reasons: self.failure_reasons,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                transcript_source_setting: self.transcript_source_setting,
-                encryption_setting: self.encryption_setting,
-                bot_recommendation_results: self.bot_recommendation_results,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_status: self.bot_recommendation_status
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                transcript_source_setting: self.transcript_source_setting
+                ,
+                encryption_setting: self.encryption_setting
+                ,
+                bot_recommendation_results: self.bot_recommendation_results
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBotRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotRecommendationOutput`](crate::output::DescribeBotRecommendationOutput).
@@ -7504,7 +6870,7 @@ impl DescribeBotRecommendationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBotLocaleOutput {
+pub struct DescribeBotLocaleOutput  {
     /// <p>The identifier of the bot associated with the locale.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -7549,31 +6915,30 @@ pub struct DescribeBotLocaleOutput {
     pub last_build_submitted_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
     #[doc(hidden)]
-    pub bot_locale_history_events:
-        std::option::Option<std::vec::Vec<crate::model::BotLocaleHistoryEvent>>,
+    pub bot_locale_history_events: std::option::Option<std::vec::Vec<crate::model::BotLocaleHistoryEvent>>,
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
     #[doc(hidden)]
     pub recommended_actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeBotLocaleOutput {
     /// <p>The identifier of the bot associated with the locale.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the version of the bot associated with the locale.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The unique identifier of the described locale.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The name of the locale.</p>
-    pub fn locale_name(&self) -> std::option::Option<&str> {
+    pub fn locale_name(&self) -> std::option::Option<& str> {
         self.locale_name.as_deref()
     }
     /// <p>The description of the locale.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
@@ -7581,7 +6946,7 @@ impl DescribeBotLocaleOutput {
         self.nlu_intent_confidence_threshold
     }
     /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the user.</p>
-    pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
+    pub fn voice_settings(&self) -> std::option::Option<& crate::model::VoiceSettings> {
         self.voice_settings.as_ref()
     }
     /// <p>The number of intents defined for the locale.</p>
@@ -7593,41 +6958,37 @@ impl DescribeBotLocaleOutput {
         self.slot_types_count
     }
     /// <p>The status of the bot. If the status is <code>Failed</code>, the reasons for the failure are listed in the <code>failureReasons</code> field.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<& crate::model::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
     /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it failed to build the bot.</p>
-    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failure_reasons(&self) -> std::option::Option<& [std::string::String]> {
         self.failure_reasons.as_deref()
     }
     /// <p>The date and time that the locale was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the locale was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the locale was last submitted for building.</p>
-    pub fn last_build_submitted_date_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_build_submitted_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_build_submitted_date_time.as_ref()
     }
     /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
-    pub fn bot_locale_history_events(
-        &self,
-    ) -> std::option::Option<&[crate::model::BotLocaleHistoryEvent]> {
+    pub fn bot_locale_history_events(&self) -> std::option::Option<& [crate::model::BotLocaleHistoryEvent]> {
         self.bot_locale_history_events.as_deref()
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn recommended_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recommended_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.recommended_actions.as_deref()
     }
 }
 /// See [`DescribeBotLocaleOutput`](crate::output::DescribeBotLocaleOutput).
 pub mod describe_bot_locale_output {
-
+    
     /// A builder for [`DescribeBotLocaleOutput`](crate::output::DescribeBotLocaleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7645,8 +7006,7 @@ pub mod describe_bot_locale_output {
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_build_submitted_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) bot_locale_history_events:
-            std::option::Option<std::vec::Vec<crate::model::BotLocaleHistoryEvent>>,
+        pub(crate) bot_locale_history_events: std::option::Option<std::vec::Vec<crate::model::BotLocaleHistoryEvent>>,
         pub(crate) recommended_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -7657,8 +7017,7 @@ pub mod describe_bot_locale_output {
         }
         /// <p>The identifier of the bot associated with the locale.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The identifier of the version of the bot associated with the locale.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7667,8 +7026,7 @@ pub mod describe_bot_locale_output {
         }
         /// <p>The identifier of the version of the bot associated with the locale.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The unique identifier of the described locale.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7677,8 +7035,7 @@ pub mod describe_bot_locale_output {
         }
         /// <p>The unique identifier of the described locale.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The name of the locale.</p>
         pub fn locale_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7687,8 +7044,7 @@ pub mod describe_bot_locale_output {
         }
         /// <p>The name of the locale.</p>
         pub fn set_locale_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_name = input;
-            self
+            self.locale_name = input; self
         }
         /// <p>The description of the locale.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7697,8 +7053,7 @@ pub mod describe_bot_locale_output {
         }
         /// <p>The description of the locale.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -7706,12 +7061,8 @@ pub mod describe_bot_locale_output {
             self
         }
         /// <p>The confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
-        pub fn set_nlu_intent_confidence_threshold(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.nlu_intent_confidence_threshold = input;
-            self
+        pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.nlu_intent_confidence_threshold = input; self
         }
         /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the user.</p>
         pub fn voice_settings(mut self, input: crate::model::VoiceSettings) -> Self {
@@ -7719,12 +7070,8 @@ pub mod describe_bot_locale_output {
             self
         }
         /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the user.</p>
-        pub fn set_voice_settings(
-            mut self,
-            input: std::option::Option<crate::model::VoiceSettings>,
-        ) -> Self {
-            self.voice_settings = input;
-            self
+        pub fn set_voice_settings(mut self, input: std::option::Option<crate::model::VoiceSettings>) -> Self {
+            self.voice_settings = input; self
         }
         /// <p>The number of intents defined for the locale.</p>
         pub fn intents_count(mut self, input: i32) -> Self {
@@ -7733,8 +7080,7 @@ pub mod describe_bot_locale_output {
         }
         /// <p>The number of intents defined for the locale.</p>
         pub fn set_intents_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.intents_count = input;
-            self
+            self.intents_count = input; self
         }
         /// <p>The number of slot types defined for the locale.</p>
         pub fn slot_types_count(mut self, input: i32) -> Self {
@@ -7743,8 +7089,7 @@ pub mod describe_bot_locale_output {
         }
         /// <p>The number of slot types defined for the locale.</p>
         pub fn set_slot_types_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.slot_types_count = input;
-            self
+            self.slot_types_count = input; self
         }
         /// <p>The status of the bot. If the status is <code>Failed</code>, the reasons for the failure are listed in the <code>failureReasons</code> field.</p>
         pub fn bot_locale_status(mut self, input: crate::model::BotLocaleStatus) -> Self {
@@ -7752,12 +7097,8 @@ pub mod describe_bot_locale_output {
             self
         }
         /// <p>The status of the bot. If the status is <code>Failed</code>, the reasons for the failure are listed in the <code>failureReasons</code> field.</p>
-        pub fn set_bot_locale_status(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleStatus>,
-        ) -> Self {
-            self.bot_locale_status = input;
-            self
+        pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::model::BotLocaleStatus>) -> Self {
+            self.bot_locale_status = input; self
         }
         /// Appends an item to `failure_reasons`.
         ///
@@ -7766,17 +7107,13 @@ pub mod describe_bot_locale_output {
         /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it failed to build the bot.</p>
         pub fn failure_reasons(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failure_reasons.unwrap_or_default();
-            v.push(input.into());
-            self.failure_reasons = Some(v);
-            self
+                            v.push(input.into());
+                            self.failure_reasons = Some(v);
+                            self
         }
         /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it failed to build the bot.</p>
-        pub fn set_failure_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failure_reasons = input;
-            self
+        pub fn set_failure_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failure_reasons = input; self
         }
         /// <p>The date and time that the locale was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7784,12 +7121,8 @@ pub mod describe_bot_locale_output {
             self
         }
         /// <p>The date and time that the locale was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time that the locale was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7797,12 +7130,8 @@ pub mod describe_bot_locale_output {
             self
         }
         /// <p>The date and time that the locale was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The date and time that the locale was last submitted for building.</p>
         pub fn last_build_submitted_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7810,34 +7139,23 @@ pub mod describe_bot_locale_output {
             self
         }
         /// <p>The date and time that the locale was last submitted for building.</p>
-        pub fn set_last_build_submitted_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_build_submitted_date_time = input;
-            self
+        pub fn set_last_build_submitted_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_build_submitted_date_time = input; self
         }
         /// Appends an item to `bot_locale_history_events`.
         ///
         /// To override the contents of this collection use [`set_bot_locale_history_events`](Self::set_bot_locale_history_events).
         ///
         /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
-        pub fn bot_locale_history_events(
-            mut self,
-            input: crate::model::BotLocaleHistoryEvent,
-        ) -> Self {
+        pub fn bot_locale_history_events(mut self, input: crate::model::BotLocaleHistoryEvent) -> Self {
             let mut v = self.bot_locale_history_events.unwrap_or_default();
-            v.push(input);
-            self.bot_locale_history_events = Some(v);
-            self
+                            v.push(input);
+                            self.bot_locale_history_events = Some(v);
+                            self
         }
         /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
-        pub fn set_bot_locale_history_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotLocaleHistoryEvent>>,
-        ) -> Self {
-            self.bot_locale_history_events = input;
-            self
+        pub fn set_bot_locale_history_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotLocaleHistoryEvent>>) -> Self {
+            self.bot_locale_history_events = input; self
         }
         /// Appends an item to `recommended_actions`.
         ///
@@ -7846,40 +7164,54 @@ pub mod describe_bot_locale_output {
         /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
         pub fn recommended_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.recommended_actions.unwrap_or_default();
-            v.push(input.into());
-            self.recommended_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.recommended_actions = Some(v);
+                            self
         }
         /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-        pub fn set_recommended_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.recommended_actions = input;
-            self
+        pub fn set_recommended_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.recommended_actions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBotLocaleOutput`](crate::output::DescribeBotLocaleOutput).
         pub fn build(self) -> crate::output::DescribeBotLocaleOutput {
             crate::output::DescribeBotLocaleOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                locale_name: self.locale_name,
-                description: self.description,
-                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-                voice_settings: self.voice_settings,
-                intents_count: self.intents_count,
-                slot_types_count: self.slot_types_count,
-                bot_locale_status: self.bot_locale_status,
-                failure_reasons: self.failure_reasons,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                last_build_submitted_date_time: self.last_build_submitted_date_time,
-                bot_locale_history_events: self.bot_locale_history_events,
-                recommended_actions: self.recommended_actions,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                locale_name: self.locale_name
+                ,
+                description: self.description
+                ,
+                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+                ,
+                voice_settings: self.voice_settings
+                ,
+                intents_count: self.intents_count
+                ,
+                slot_types_count: self.slot_types_count
+                ,
+                bot_locale_status: self.bot_locale_status
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                last_build_submitted_date_time: self.last_build_submitted_date_time
+                ,
+                bot_locale_history_events: self.bot_locale_history_events
+                ,
+                recommended_actions: self.recommended_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotLocaleOutput`](crate::output::DescribeBotLocaleOutput).
@@ -7891,7 +7223,7 @@ impl DescribeBotLocaleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBotAliasOutput {
+pub struct DescribeBotAliasOutput  {
     /// <p>The identifier of the bot alias.</p>
     #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
@@ -7906,9 +7238,7 @@ pub struct DescribeBotAliasOutput {
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The locale settings that are unique to the alias.</p>
     #[doc(hidden)]
-    pub bot_alias_locale_settings: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-    >,
+    pub bot_alias_locale_settings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>,
     /// <p>Specifics of how Amazon Lex logs text and audio conversations with the bot associated with the alias.</p>
     #[doc(hidden)]
     pub conversation_log_settings: std::option::Option<crate::model::ConversationLogSettings>,
@@ -7917,8 +7247,7 @@ pub struct DescribeBotAliasOutput {
     pub sentiment_analysis_settings: std::option::Option<crate::model::SentimentAnalysisSettings>,
     /// <p>A list of events that affect a bot alias. For example, an event is recorded when the version that the alias points to changes.</p>
     #[doc(hidden)]
-    pub bot_alias_history_events:
-        std::option::Option<std::vec::Vec<crate::model::BotAliasHistoryEvent>>,
+    pub bot_alias_history_events: std::option::Option<std::vec::Vec<crate::model::BotAliasHistoryEvent>>,
     /// <p>The current status of the alias. When the alias is <code>Available</code>, the alias is ready for use with your bot.</p>
     #[doc(hidden)]
     pub bot_alias_status: std::option::Option<crate::model::BotAliasStatus>,
@@ -7934,67 +7263,57 @@ pub struct DescribeBotAliasOutput {
 }
 impl DescribeBotAliasOutput {
     /// <p>The identifier of the bot alias.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The name of the bot alias.</p>
-    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_name(&self) -> std::option::Option<& str> {
         self.bot_alias_name.as_deref()
     }
     /// <p>The description of the bot alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the bot associated with the bot alias.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale settings that are unique to the alias.</p>
-    pub fn bot_alias_locale_settings(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-    > {
+    pub fn bot_alias_locale_settings(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>> {
         self.bot_alias_locale_settings.as_ref()
     }
     /// <p>Specifics of how Amazon Lex logs text and audio conversations with the bot associated with the alias.</p>
-    pub fn conversation_log_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::ConversationLogSettings> {
+    pub fn conversation_log_settings(&self) -> std::option::Option<& crate::model::ConversationLogSettings> {
         self.conversation_log_settings.as_ref()
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::SentimentAnalysisSettings> {
+    pub fn sentiment_analysis_settings(&self) -> std::option::Option<& crate::model::SentimentAnalysisSettings> {
         self.sentiment_analysis_settings.as_ref()
     }
     /// <p>A list of events that affect a bot alias. For example, an event is recorded when the version that the alias points to changes.</p>
-    pub fn bot_alias_history_events(
-        &self,
-    ) -> std::option::Option<&[crate::model::BotAliasHistoryEvent]> {
+    pub fn bot_alias_history_events(&self) -> std::option::Option<& [crate::model::BotAliasHistoryEvent]> {
         self.bot_alias_history_events.as_deref()
     }
     /// <p>The current status of the alias. When the alias is <code>Available</code>, the alias is ready for use with your bot.</p>
-    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+    pub fn bot_alias_status(&self) -> std::option::Option<& crate::model::BotAliasStatus> {
         self.bot_alias_status.as_ref()
     }
     /// <p>The identifier of the bot associated with the bot alias.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the alias was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the alias was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`DescribeBotAliasOutput`](crate::output::DescribeBotAliasOutput).
 pub mod describe_bot_alias_output {
-
+    
     /// A builder for [`DescribeBotAliasOutput`](crate::output::DescribeBotAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8002,15 +7321,10 @@ pub mod describe_bot_alias_output {
         pub(crate) bot_alias_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
-        pub(crate) bot_alias_locale_settings: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-        >,
-        pub(crate) conversation_log_settings:
-            std::option::Option<crate::model::ConversationLogSettings>,
-        pub(crate) sentiment_analysis_settings:
-            std::option::Option<crate::model::SentimentAnalysisSettings>,
-        pub(crate) bot_alias_history_events:
-            std::option::Option<std::vec::Vec<crate::model::BotAliasHistoryEvent>>,
+        pub(crate) bot_alias_locale_settings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>,
+        pub(crate) conversation_log_settings: std::option::Option<crate::model::ConversationLogSettings>,
+        pub(crate) sentiment_analysis_settings: std::option::Option<crate::model::SentimentAnalysisSettings>,
+        pub(crate) bot_alias_history_events: std::option::Option<std::vec::Vec<crate::model::BotAliasHistoryEvent>>,
         pub(crate) bot_alias_status: std::option::Option<crate::model::BotAliasStatus>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -8024,8 +7338,7 @@ pub mod describe_bot_alias_output {
         }
         /// <p>The identifier of the bot alias.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_alias_id = input;
-            self
+            self.bot_alias_id = input; self
         }
         /// <p>The name of the bot alias.</p>
         pub fn bot_alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8033,12 +7346,8 @@ pub mod describe_bot_alias_output {
             self
         }
         /// <p>The name of the bot alias.</p>
-        pub fn set_bot_alias_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_alias_name = input;
-            self
+        pub fn set_bot_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_alias_name = input; self
         }
         /// <p>The description of the bot alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8047,8 +7356,7 @@ pub mod describe_bot_alias_output {
         }
         /// <p>The description of the bot alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The version of the bot associated with the bot alias.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8057,90 +7365,55 @@ pub mod describe_bot_alias_output {
         }
         /// <p>The version of the bot associated with the bot alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// Adds a key-value pair to `bot_alias_locale_settings`.
         ///
         /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
         ///
         /// <p>The locale settings that are unique to the alias.</p>
-        pub fn bot_alias_locale_settings(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::BotAliasLocaleSettings,
-        ) -> Self {
+        pub fn bot_alias_locale_settings(mut self, k: impl Into<std::string::String>, v: crate::model::BotAliasLocaleSettings) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.bot_alias_locale_settings = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.bot_alias_locale_settings = Some(hash_map);
+                            self
         }
         /// <p>The locale settings that are unique to the alias.</p>
-        pub fn set_bot_alias_locale_settings(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::BotAliasLocaleSettings,
-                >,
-            >,
-        ) -> Self {
-            self.bot_alias_locale_settings = input;
-            self
+        pub fn set_bot_alias_locale_settings(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>) -> Self {
+            self.bot_alias_locale_settings = input; self
         }
         /// <p>Specifics of how Amazon Lex logs text and audio conversations with the bot associated with the alias.</p>
-        pub fn conversation_log_settings(
-            mut self,
-            input: crate::model::ConversationLogSettings,
-        ) -> Self {
+        pub fn conversation_log_settings(mut self, input: crate::model::ConversationLogSettings) -> Self {
             self.conversation_log_settings = Some(input);
             self
         }
         /// <p>Specifics of how Amazon Lex logs text and audio conversations with the bot associated with the alias.</p>
-        pub fn set_conversation_log_settings(
-            mut self,
-            input: std::option::Option<crate::model::ConversationLogSettings>,
-        ) -> Self {
-            self.conversation_log_settings = input;
-            self
+        pub fn set_conversation_log_settings(mut self, input: std::option::Option<crate::model::ConversationLogSettings>) -> Self {
+            self.conversation_log_settings = input; self
         }
         /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-        pub fn sentiment_analysis_settings(
-            mut self,
-            input: crate::model::SentimentAnalysisSettings,
-        ) -> Self {
+        pub fn sentiment_analysis_settings(mut self, input: crate::model::SentimentAnalysisSettings) -> Self {
             self.sentiment_analysis_settings = Some(input);
             self
         }
         /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-        pub fn set_sentiment_analysis_settings(
-            mut self,
-            input: std::option::Option<crate::model::SentimentAnalysisSettings>,
-        ) -> Self {
-            self.sentiment_analysis_settings = input;
-            self
+        pub fn set_sentiment_analysis_settings(mut self, input: std::option::Option<crate::model::SentimentAnalysisSettings>) -> Self {
+            self.sentiment_analysis_settings = input; self
         }
         /// Appends an item to `bot_alias_history_events`.
         ///
         /// To override the contents of this collection use [`set_bot_alias_history_events`](Self::set_bot_alias_history_events).
         ///
         /// <p>A list of events that affect a bot alias. For example, an event is recorded when the version that the alias points to changes.</p>
-        pub fn bot_alias_history_events(
-            mut self,
-            input: crate::model::BotAliasHistoryEvent,
-        ) -> Self {
+        pub fn bot_alias_history_events(mut self, input: crate::model::BotAliasHistoryEvent) -> Self {
             let mut v = self.bot_alias_history_events.unwrap_or_default();
-            v.push(input);
-            self.bot_alias_history_events = Some(v);
-            self
+                            v.push(input);
+                            self.bot_alias_history_events = Some(v);
+                            self
         }
         /// <p>A list of events that affect a bot alias. For example, an event is recorded when the version that the alias points to changes.</p>
-        pub fn set_bot_alias_history_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotAliasHistoryEvent>>,
-        ) -> Self {
-            self.bot_alias_history_events = input;
-            self
+        pub fn set_bot_alias_history_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotAliasHistoryEvent>>) -> Self {
+            self.bot_alias_history_events = input; self
         }
         /// <p>The current status of the alias. When the alias is <code>Available</code>, the alias is ready for use with your bot.</p>
         pub fn bot_alias_status(mut self, input: crate::model::BotAliasStatus) -> Self {
@@ -8148,12 +7421,8 @@ pub mod describe_bot_alias_output {
             self
         }
         /// <p>The current status of the alias. When the alias is <code>Available</code>, the alias is ready for use with your bot.</p>
-        pub fn set_bot_alias_status(
-            mut self,
-            input: std::option::Option<crate::model::BotAliasStatus>,
-        ) -> Self {
-            self.bot_alias_status = input;
-            self
+        pub fn set_bot_alias_status(mut self, input: std::option::Option<crate::model::BotAliasStatus>) -> Self {
+            self.bot_alias_status = input; self
         }
         /// <p>The identifier of the bot associated with the bot alias.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8162,8 +7431,7 @@ pub mod describe_bot_alias_output {
         }
         /// <p>The identifier of the bot associated with the bot alias.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>A timestamp of the date and time that the alias was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8171,12 +7439,8 @@ pub mod describe_bot_alias_output {
             self
         }
         /// <p>A timestamp of the date and time that the alias was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the alias was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8184,31 +7448,41 @@ pub mod describe_bot_alias_output {
             self
         }
         /// <p>A timestamp of the date and time that the alias was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBotAliasOutput`](crate::output::DescribeBotAliasOutput).
         pub fn build(self) -> crate::output::DescribeBotAliasOutput {
             crate::output::DescribeBotAliasOutput {
-                bot_alias_id: self.bot_alias_id,
-                bot_alias_name: self.bot_alias_name,
-                description: self.description,
-                bot_version: self.bot_version,
-                bot_alias_locale_settings: self.bot_alias_locale_settings,
-                conversation_log_settings: self.conversation_log_settings,
-                sentiment_analysis_settings: self.sentiment_analysis_settings,
-                bot_alias_history_events: self.bot_alias_history_events,
-                bot_alias_status: self.bot_alias_status,
-                bot_id: self.bot_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_alias_name: self.bot_alias_name
+                ,
+                description: self.description
+                ,
+                bot_version: self.bot_version
+                ,
+                bot_alias_locale_settings: self.bot_alias_locale_settings
+                ,
+                conversation_log_settings: self.conversation_log_settings
+                ,
+                sentiment_analysis_settings: self.sentiment_analysis_settings
+                ,
+                bot_alias_history_events: self.bot_alias_history_events
+                ,
+                bot_alias_status: self.bot_alias_status
+                ,
+                bot_id: self.bot_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotAliasOutput`](crate::output::DescribeBotAliasOutput).
@@ -8220,7 +7494,7 @@ impl DescribeBotAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBotOutput {
+pub struct DescribeBotOutput  {
     /// <p>The unique identifier of the bot.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -8251,23 +7525,23 @@ pub struct DescribeBotOutput {
 }
 impl DescribeBotOutput {
     /// <p>The unique identifier of the bot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The name of the bot.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The description of the bot. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Settings for managing data privacy of the bot and its conversations with users.</p>
-    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+    pub fn data_privacy(&self) -> std::option::Option<& crate::model::DataPrivacy> {
         self.data_privacy.as_ref()
     }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
@@ -8275,21 +7549,21 @@ impl DescribeBotOutput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready to be used in conversations with users.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`DescribeBotOutput`](crate::output::DescribeBotOutput).
 pub mod describe_bot_output {
-
+    
     /// A builder for [`DescribeBotOutput`](crate::output::DescribeBotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8311,8 +7585,7 @@ pub mod describe_bot_output {
         }
         /// <p>The unique identifier of the bot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The name of the bot.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8321,8 +7594,7 @@ pub mod describe_bot_output {
         }
         /// <p>The name of the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The description of the bot. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8331,8 +7603,7 @@ pub mod describe_bot_output {
         }
         /// <p>The description of the bot. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8341,8 +7612,7 @@ pub mod describe_bot_output {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>Settings for managing data privacy of the bot and its conversations with users.</p>
         pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
@@ -8350,12 +7620,8 @@ pub mod describe_bot_output {
             self
         }
         /// <p>Settings for managing data privacy of the bot and its conversations with users.</p>
-        pub fn set_data_privacy(
-            mut self,
-            input: std::option::Option<crate::model::DataPrivacy>,
-        ) -> Self {
-            self.data_privacy = input;
-            self
+        pub fn set_data_privacy(mut self, input: std::option::Option<crate::model::DataPrivacy>) -> Self {
+            self.data_privacy = input; self
         }
         /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
@@ -8364,8 +7630,7 @@ pub mod describe_bot_output {
         }
         /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_session_ttl_in_seconds = input;
-            self
+            self.idle_session_ttl_in_seconds = input; self
         }
         /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready to be used in conversations with users.</p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -8373,12 +7638,8 @@ pub mod describe_bot_output {
             self
         }
         /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready to be used in conversations with users.</p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// <p>A timestamp of the date and time that the bot was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8386,12 +7647,8 @@ pub mod describe_bot_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the bot was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8399,28 +7656,35 @@ pub mod describe_bot_output {
             self
         }
         /// <p>A timestamp of the date and time that the bot was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBotOutput`](crate::output::DescribeBotOutput).
         pub fn build(self) -> crate::output::DescribeBotOutput {
             crate::output::DescribeBotOutput {
-                bot_id: self.bot_id,
-                bot_name: self.bot_name,
-                description: self.description,
-                role_arn: self.role_arn,
-                data_privacy: self.data_privacy,
-                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-                bot_status: self.bot_status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                bot_id: self.bot_id
+                ,
+                bot_name: self.bot_name
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                data_privacy: self.data_privacy
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                bot_status: self.bot_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBotOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotOutput`](crate::output::DescribeBotOutput).
@@ -8432,19 +7696,24 @@ impl DescribeBotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUtterancesOutput {}
+pub struct DeleteUtterancesOutput  {
+}
 /// See [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
 pub mod delete_utterances_output {
-
+    
     /// A builder for [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
         pub fn build(self) -> crate::output::DeleteUtterancesOutput {
-            crate::output::DeleteUtterancesOutput {}
+            crate::output::DeleteUtterancesOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteUtterancesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
@@ -8456,19 +7725,24 @@ impl DeleteUtterancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlotTypeOutput {}
+pub struct DeleteSlotTypeOutput  {
+}
 /// See [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
 pub mod delete_slot_type_output {
-
+    
     /// A builder for [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
         pub fn build(self) -> crate::output::DeleteSlotTypeOutput {
-            crate::output::DeleteSlotTypeOutput {}
+            crate::output::DeleteSlotTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
@@ -8480,19 +7754,24 @@ impl DeleteSlotTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlotOutput {}
+pub struct DeleteSlotOutput  {
+}
 /// See [`DeleteSlotOutput`](crate::output::DeleteSlotOutput).
 pub mod delete_slot_output {
-
+    
     /// A builder for [`DeleteSlotOutput`](crate::output::DeleteSlotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSlotOutput`](crate::output::DeleteSlotOutput).
         pub fn build(self) -> crate::output::DeleteSlotOutput {
-            crate::output::DeleteSlotOutput {}
+            crate::output::DeleteSlotOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSlotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotOutput`](crate::output::DeleteSlotOutput).
@@ -8504,7 +7783,7 @@ impl DeleteSlotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyStatementOutput {
+pub struct DeleteResourcePolicyStatementOutput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy statement was removed from.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -8514,17 +7793,17 @@ pub struct DeleteResourcePolicyStatementOutput {
 }
 impl DeleteResourcePolicyStatementOutput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy statement was removed from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`DeleteResourcePolicyStatementOutput`](crate::output::DeleteResourcePolicyStatementOutput).
 pub mod delete_resource_policy_statement_output {
-
+    
     /// A builder for [`DeleteResourcePolicyStatementOutput`](crate::output::DeleteResourcePolicyStatementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8539,8 +7818,7 @@ pub mod delete_resource_policy_statement_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy statement was removed from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8549,17 +7827,20 @@ pub mod delete_resource_policy_statement_output {
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyStatementOutput`](crate::output::DeleteResourcePolicyStatementOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyStatementOutput {
             crate::output::DeleteResourcePolicyStatementOutput {
-                resource_arn: self.resource_arn,
-                revision_id: self.revision_id,
+                resource_arn: self.resource_arn
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyStatementOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyStatementOutput`](crate::output::DeleteResourcePolicyStatementOutput).
@@ -8571,7 +7852,7 @@ impl DeleteResourcePolicyStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {
+pub struct DeleteResourcePolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was deleted from.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -8581,17 +7862,17 @@ pub struct DeleteResourcePolicyOutput {
 }
 impl DeleteResourcePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was deleted from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
-
+    
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8606,8 +7887,7 @@ pub mod delete_resource_policy_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was deleted from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8616,17 +7896,20 @@ pub mod delete_resource_policy_output {
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
             crate::output::DeleteResourcePolicyOutput {
-                resource_arn: self.resource_arn,
-                revision_id: self.revision_id,
+                resource_arn: self.resource_arn
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -8638,19 +7921,24 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIntentOutput {}
+pub struct DeleteIntentOutput  {
+}
 /// See [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
 pub mod delete_intent_output {
-
+    
     /// A builder for [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
         pub fn build(self) -> crate::output::DeleteIntentOutput {
-            crate::output::DeleteIntentOutput {}
+            crate::output::DeleteIntentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteIntentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
@@ -8662,7 +7950,7 @@ impl DeleteIntentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImportOutput {
+pub struct DeleteImportOutput  {
     /// <p>The unique identifier of the deleted import.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -8672,17 +7960,17 @@ pub struct DeleteImportOutput {
 }
 impl DeleteImportOutput {
     /// <p>The unique identifier of the deleted import.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>The current status of the deletion. When the deletion is complete, the import will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html">DescribeImport</a> operation with the import identifier will fail.</p>
-    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<& crate::model::ImportStatus> {
         self.import_status.as_ref()
     }
 }
 /// See [`DeleteImportOutput`](crate::output::DeleteImportOutput).
 pub mod delete_import_output {
-
+    
     /// A builder for [`DeleteImportOutput`](crate::output::DeleteImportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8697,8 +7985,7 @@ pub mod delete_import_output {
         }
         /// <p>The unique identifier of the deleted import.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.import_id = input;
-            self
+            self.import_id = input; self
         }
         /// <p>The current status of the deletion. When the deletion is complete, the import will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html">DescribeImport</a> operation with the import identifier will fail.</p>
         pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
@@ -8706,21 +7993,21 @@ pub mod delete_import_output {
             self
         }
         /// <p>The current status of the deletion. When the deletion is complete, the import will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html">DescribeImport</a> operation with the import identifier will fail.</p>
-        pub fn set_import_status(
-            mut self,
-            input: std::option::Option<crate::model::ImportStatus>,
-        ) -> Self {
-            self.import_status = input;
-            self
+        pub fn set_import_status(mut self, input: std::option::Option<crate::model::ImportStatus>) -> Self {
+            self.import_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteImportOutput`](crate::output::DeleteImportOutput).
         pub fn build(self) -> crate::output::DeleteImportOutput {
             crate::output::DeleteImportOutput {
-                import_id: self.import_id,
-                import_status: self.import_status,
+                import_id: self.import_id
+                ,
+                import_status: self.import_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteImportOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImportOutput`](crate::output::DeleteImportOutput).
@@ -8732,7 +8019,7 @@ impl DeleteImportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExportOutput {
+pub struct DeleteExportOutput  {
     /// <p>The unique identifier of the deleted export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
@@ -8742,17 +8029,17 @@ pub struct DeleteExportOutput {
 }
 impl DeleteExportOutput {
     /// <p>The unique identifier of the deleted export.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
-    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::ExportStatus> {
         self.export_status.as_ref()
     }
 }
 /// See [`DeleteExportOutput`](crate::output::DeleteExportOutput).
 pub mod delete_export_output {
-
+    
     /// A builder for [`DeleteExportOutput`](crate::output::DeleteExportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8767,8 +8054,7 @@ pub mod delete_export_output {
         }
         /// <p>The unique identifier of the deleted export.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.export_id = input;
-            self
+            self.export_id = input; self
         }
         /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
         pub fn export_status(mut self, input: crate::model::ExportStatus) -> Self {
@@ -8776,21 +8062,21 @@ pub mod delete_export_output {
             self
         }
         /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::ExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::ExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteExportOutput`](crate::output::DeleteExportOutput).
         pub fn build(self) -> crate::output::DeleteExportOutput {
             crate::output::DeleteExportOutput {
-                export_id: self.export_id,
-                export_status: self.export_status,
+                export_id: self.export_id
+                ,
+                export_status: self.export_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteExportOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExportOutput`](crate::output::DeleteExportOutput).
@@ -8802,7 +8088,7 @@ impl DeleteExportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomVocabularyOutput {
+pub struct DeleteCustomVocabularyOutput  {
     /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -8818,35 +8104,32 @@ pub struct DeleteCustomVocabularyOutput {
 }
 impl DeleteCustomVocabularyOutput {
     /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that the custom vocabulary was removed from.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The status of removing the custom vocabulary.</p>
-    pub fn custom_vocabulary_status(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomVocabularyStatus> {
+    pub fn custom_vocabulary_status(&self) -> std::option::Option<& crate::model::CustomVocabularyStatus> {
         self.custom_vocabulary_status.as_ref()
     }
 }
 /// See [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput).
 pub mod delete_custom_vocabulary_output {
-
+    
     /// A builder for [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) custom_vocabulary_status:
-            std::option::Option<crate::model::CustomVocabularyStatus>,
+        pub(crate) custom_vocabulary_status: std::option::Option<crate::model::CustomVocabularyStatus>,
     }
     impl Builder {
         /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
@@ -8856,8 +8139,7 @@ pub mod delete_custom_vocabulary_output {
         }
         /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that the custom vocabulary was removed from.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8866,8 +8148,7 @@ pub mod delete_custom_vocabulary_output {
         }
         /// <p>The version of the bot that the custom vocabulary was removed from.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8876,35 +8157,33 @@ pub mod delete_custom_vocabulary_output {
         }
         /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The status of removing the custom vocabulary.</p>
-        pub fn custom_vocabulary_status(
-            mut self,
-            input: crate::model::CustomVocabularyStatus,
-        ) -> Self {
+        pub fn custom_vocabulary_status(mut self, input: crate::model::CustomVocabularyStatus) -> Self {
             self.custom_vocabulary_status = Some(input);
             self
         }
         /// <p>The status of removing the custom vocabulary.</p>
-        pub fn set_custom_vocabulary_status(
-            mut self,
-            input: std::option::Option<crate::model::CustomVocabularyStatus>,
-        ) -> Self {
-            self.custom_vocabulary_status = input;
-            self
+        pub fn set_custom_vocabulary_status(mut self, input: std::option::Option<crate::model::CustomVocabularyStatus>) -> Self {
+            self.custom_vocabulary_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput).
         pub fn build(self) -> crate::output::DeleteCustomVocabularyOutput {
             crate::output::DeleteCustomVocabularyOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                custom_vocabulary_status: self.custom_vocabulary_status,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                custom_vocabulary_status: self.custom_vocabulary_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCustomVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput).
@@ -8916,7 +8195,7 @@ impl DeleteCustomVocabularyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotVersionOutput {
+pub struct DeleteBotVersionOutput  {
     /// <p>The identifier of the bot that is being deleted.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -8929,21 +8208,21 @@ pub struct DeleteBotVersionOutput {
 }
 impl DeleteBotVersionOutput {
     /// <p>The identifier of the bot that is being deleted.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that is being deleted.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The current status of the bot. </p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
 }
 /// See [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
 pub mod delete_bot_version_output {
-
+    
     /// A builder for [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8959,8 +8238,7 @@ pub mod delete_bot_version_output {
         }
         /// <p>The identifier of the bot that is being deleted.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that is being deleted.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8969,8 +8247,7 @@ pub mod delete_bot_version_output {
         }
         /// <p>The version of the bot that is being deleted.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The current status of the bot. </p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -8978,22 +8255,23 @@ pub mod delete_bot_version_output {
             self
         }
         /// <p>The current status of the bot. </p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
         pub fn build(self) -> crate::output::DeleteBotVersionOutput {
             crate::output::DeleteBotVersionOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                bot_status: self.bot_status,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                bot_status: self.bot_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
@@ -9005,7 +8283,7 @@ impl DeleteBotVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotLocaleOutput {
+pub struct DeleteBotLocaleOutput  {
     /// <p>The identifier of the bot that contained the deleted locale.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -9021,25 +8299,25 @@ pub struct DeleteBotLocaleOutput {
 }
 impl DeleteBotLocaleOutput {
     /// <p>The identifier of the bot that contained the deleted locale.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contained the deleted locale.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale of the deleted locale.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<& crate::model::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
 }
 /// See [`DeleteBotLocaleOutput`](crate::output::DeleteBotLocaleOutput).
 pub mod delete_bot_locale_output {
-
+    
     /// A builder for [`DeleteBotLocaleOutput`](crate::output::DeleteBotLocaleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9056,8 +8334,7 @@ pub mod delete_bot_locale_output {
         }
         /// <p>The identifier of the bot that contained the deleted locale.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contained the deleted locale.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9066,8 +8343,7 @@ pub mod delete_bot_locale_output {
         }
         /// <p>The version of the bot that contained the deleted locale.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale of the deleted locale.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9076,8 +8352,7 @@ pub mod delete_bot_locale_output {
         }
         /// <p>The language and locale of the deleted locale.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
         pub fn bot_locale_status(mut self, input: crate::model::BotLocaleStatus) -> Self {
@@ -9085,23 +8360,25 @@ pub mod delete_bot_locale_output {
             self
         }
         /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
-        pub fn set_bot_locale_status(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleStatus>,
-        ) -> Self {
-            self.bot_locale_status = input;
-            self
+        pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::model::BotLocaleStatus>) -> Self {
+            self.bot_locale_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBotLocaleOutput`](crate::output::DeleteBotLocaleOutput).
         pub fn build(self) -> crate::output::DeleteBotLocaleOutput {
             crate::output::DeleteBotLocaleOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_locale_status: self.bot_locale_status,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_locale_status: self.bot_locale_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotLocaleOutput`](crate::output::DeleteBotLocaleOutput).
@@ -9113,7 +8390,7 @@ impl DeleteBotLocaleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotAliasOutput {
+pub struct DeleteBotAliasOutput  {
     /// <p>The unique identifier of the bot alias to delete.</p>
     #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
@@ -9126,21 +8403,21 @@ pub struct DeleteBotAliasOutput {
 }
 impl DeleteBotAliasOutput {
     /// <p>The unique identifier of the bot alias to delete.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The unique identifier of the bot that contains the alias to delete.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
-    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+    pub fn bot_alias_status(&self) -> std::option::Option<& crate::model::BotAliasStatus> {
         self.bot_alias_status.as_ref()
     }
 }
 /// See [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
 pub mod delete_bot_alias_output {
-
+    
     /// A builder for [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9156,8 +8433,7 @@ pub mod delete_bot_alias_output {
         }
         /// <p>The unique identifier of the bot alias to delete.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_alias_id = input;
-            self
+            self.bot_alias_id = input; self
         }
         /// <p>The unique identifier of the bot that contains the alias to delete.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9166,8 +8442,7 @@ pub mod delete_bot_alias_output {
         }
         /// <p>The unique identifier of the bot that contains the alias to delete.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
         pub fn bot_alias_status(mut self, input: crate::model::BotAliasStatus) -> Self {
@@ -9175,22 +8450,23 @@ pub mod delete_bot_alias_output {
             self
         }
         /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
-        pub fn set_bot_alias_status(
-            mut self,
-            input: std::option::Option<crate::model::BotAliasStatus>,
-        ) -> Self {
-            self.bot_alias_status = input;
-            self
+        pub fn set_bot_alias_status(mut self, input: std::option::Option<crate::model::BotAliasStatus>) -> Self {
+            self.bot_alias_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
         pub fn build(self) -> crate::output::DeleteBotAliasOutput {
             crate::output::DeleteBotAliasOutput {
-                bot_alias_id: self.bot_alias_id,
-                bot_id: self.bot_id,
-                bot_alias_status: self.bot_alias_status,
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_alias_status: self.bot_alias_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
@@ -9202,7 +8478,7 @@ impl DeleteBotAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotOutput {
+pub struct DeleteBotOutput  {
     /// <p>The unique identifier of the bot that Amazon Lex is deleting.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -9212,17 +8488,17 @@ pub struct DeleteBotOutput {
 }
 impl DeleteBotOutput {
     /// <p>The unique identifier of the bot that Amazon Lex is deleting.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The current status of the bot. The status is <code>Deleting</code> while the bot and its associated resources are being deleted.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
 }
 /// See [`DeleteBotOutput`](crate::output::DeleteBotOutput).
 pub mod delete_bot_output {
-
+    
     /// A builder for [`DeleteBotOutput`](crate::output::DeleteBotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9237,8 +8513,7 @@ pub mod delete_bot_output {
         }
         /// <p>The unique identifier of the bot that Amazon Lex is deleting.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The current status of the bot. The status is <code>Deleting</code> while the bot and its associated resources are being deleted.</p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -9246,21 +8521,21 @@ pub mod delete_bot_output {
             self
         }
         /// <p>The current status of the bot. The status is <code>Deleting</code> while the bot and its associated resources are being deleted.</p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBotOutput`](crate::output::DeleteBotOutput).
         pub fn build(self) -> crate::output::DeleteBotOutput {
             crate::output::DeleteBotOutput {
-                bot_id: self.bot_id,
-                bot_status: self.bot_status,
+                bot_id: self.bot_id
+                ,
+                bot_status: self.bot_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotOutput`](crate::output::DeleteBotOutput).
@@ -9272,7 +8547,7 @@ impl DeleteBotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUploadUrlOutput {
+pub struct CreateUploadUrlOutput  {
     /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a> operation.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -9282,17 +8557,17 @@ pub struct CreateUploadUrlOutput {
 }
 impl CreateUploadUrlOutput {
     /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a> operation.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>A pre-signed S3 write URL. Upload the zip archive file that contains the definition of your bot or bot locale.</p>
-    pub fn upload_url(&self) -> std::option::Option<&str> {
+    pub fn upload_url(&self) -> std::option::Option<& str> {
         self.upload_url.as_deref()
     }
 }
 /// See [`CreateUploadUrlOutput`](crate::output::CreateUploadUrlOutput).
 pub mod create_upload_url_output {
-
+    
     /// A builder for [`CreateUploadUrlOutput`](crate::output::CreateUploadUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9307,8 +8582,7 @@ pub mod create_upload_url_output {
         }
         /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a> operation.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.import_id = input;
-            self
+            self.import_id = input; self
         }
         /// <p>A pre-signed S3 write URL. Upload the zip archive file that contains the definition of your bot or bot locale.</p>
         pub fn upload_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9317,17 +8591,20 @@ pub mod create_upload_url_output {
         }
         /// <p>A pre-signed S3 write URL. Upload the zip archive file that contains the definition of your bot or bot locale.</p>
         pub fn set_upload_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_url = input;
-            self
+            self.upload_url = input; self
         }
         /// Consumes the builder and constructs a [`CreateUploadUrlOutput`](crate::output::CreateUploadUrlOutput).
         pub fn build(self) -> crate::output::CreateUploadUrlOutput {
             crate::output::CreateUploadUrlOutput {
-                import_id: self.import_id,
-                upload_url: self.upload_url,
+                import_id: self.import_id
+                ,
+                upload_url: self.upload_url
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateUploadUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateUploadUrlOutput`](crate::output::CreateUploadUrlOutput).
@@ -9339,7 +8616,7 @@ impl CreateUploadUrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSlotTypeOutput {
+pub struct CreateSlotTypeOutput  {
     /// <p>The unique identifier assigned to the slot type. Use this to identify the slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.</p>
     #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
@@ -9379,82 +8656,72 @@ pub struct CreateSlotTypeOutput {
 }
 impl CreateSlotTypeOutput {
     /// <p>The unique identifier assigned to the slot type. Use this to identify the slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The name specified for the slot type.</p>
-    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+    pub fn slot_type_name(&self) -> std::option::Option<& str> {
         self.slot_type_name.as_deref()
     }
     /// <p>The description specified for the slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The list of values that the slot type can assume.</p>
-    pub fn slot_type_values(&self) -> std::option::Option<&[crate::model::SlotTypeValue]> {
+    pub fn slot_type_values(&self) -> std::option::Option<& [crate::model::SlotTypeValue]> {
         self.slot_type_values.as_deref()
     }
     /// <p>The strategy that Amazon Lex uses to select a value from the list of possible values.</p>
-    pub fn value_selection_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueSelectionSetting> {
+    pub fn value_selection_setting(&self) -> std::option::Option<& crate::model::SlotValueSelectionSetting> {
         self.value_selection_setting.as_ref()
     }
     /// <p>The signature of the base slot type specified for the slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>The identifier for the bot associated with the slot type.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot type.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The specified language and local specified for the slot type.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the slot type was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The type of external information used to create the slot type.</p>
-    pub fn external_source_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
+    pub fn external_source_setting(&self) -> std::option::Option<& crate::model::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn composite_slot_type_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::CompositeSlotTypeSetting> {
+    pub fn composite_slot_type_setting(&self) -> std::option::Option<& crate::model::CompositeSlotTypeSetting> {
         self.composite_slot_type_setting.as_ref()
     }
 }
 /// See [`CreateSlotTypeOutput`](crate::output::CreateSlotTypeOutput).
 pub mod create_slot_type_output {
-
+    
     /// A builder for [`CreateSlotTypeOutput`](crate::output::CreateSlotTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
         pub(crate) slot_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) slot_type_values:
-            std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
-        pub(crate) value_selection_setting:
-            std::option::Option<crate::model::SlotValueSelectionSetting>,
+        pub(crate) slot_type_values: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
+        pub(crate) value_selection_setting: std::option::Option<crate::model::SlotValueSelectionSetting>,
         pub(crate) parent_slot_type_signature: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) external_source_setting:
-            std::option::Option<crate::model::ExternalSourceSetting>,
-        pub(crate) composite_slot_type_setting:
-            std::option::Option<crate::model::CompositeSlotTypeSetting>,
+        pub(crate) external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
+        pub(crate) composite_slot_type_setting: std::option::Option<crate::model::CompositeSlotTypeSetting>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the slot type. Use this to identify the slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.</p>
@@ -9464,8 +8731,7 @@ pub mod create_slot_type_output {
         }
         /// <p>The unique identifier assigned to the slot type. Use this to identify the slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>The name specified for the slot type.</p>
         pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9473,12 +8739,8 @@ pub mod create_slot_type_output {
             self
         }
         /// <p>The name specified for the slot type.</p>
-        pub fn set_slot_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slot_type_name = input;
-            self
+        pub fn set_slot_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slot_type_name = input; self
         }
         /// <p>The description specified for the slot type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9487,8 +8749,7 @@ pub mod create_slot_type_output {
         }
         /// <p>The description specified for the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `slot_type_values`.
         ///
@@ -9497,33 +8758,22 @@ pub mod create_slot_type_output {
         /// <p>The list of values that the slot type can assume.</p>
         pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input);
-            self.slot_type_values = Some(v);
-            self
+                            v.push(input);
+                            self.slot_type_values = Some(v);
+                            self
         }
         /// <p>The list of values that the slot type can assume.</p>
-        pub fn set_slot_type_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
-        ) -> Self {
-            self.slot_type_values = input;
-            self
+        pub fn set_slot_type_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>) -> Self {
+            self.slot_type_values = input; self
         }
         /// <p>The strategy that Amazon Lex uses to select a value from the list of possible values.</p>
-        pub fn value_selection_setting(
-            mut self,
-            input: crate::model::SlotValueSelectionSetting,
-        ) -> Self {
+        pub fn value_selection_setting(mut self, input: crate::model::SlotValueSelectionSetting) -> Self {
             self.value_selection_setting = Some(input);
             self
         }
         /// <p>The strategy that Amazon Lex uses to select a value from the list of possible values.</p>
-        pub fn set_value_selection_setting(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueSelectionSetting>,
-        ) -> Self {
-            self.value_selection_setting = input;
-            self
+        pub fn set_value_selection_setting(mut self, input: std::option::Option<crate::model::SlotValueSelectionSetting>) -> Self {
+            self.value_selection_setting = input; self
         }
         /// <p>The signature of the base slot type specified for the slot type.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9531,12 +8781,8 @@ pub mod create_slot_type_output {
             self
         }
         /// <p>The signature of the base slot type specified for the slot type.</p>
-        pub fn set_parent_slot_type_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_slot_type_signature = input;
-            self
+        pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_slot_type_signature = input; self
         }
         /// <p>The identifier for the bot associated with the slot type.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9545,8 +8791,7 @@ pub mod create_slot_type_output {
         }
         /// <p>The identifier for the bot associated with the slot type.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot associated with the slot type.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9555,8 +8800,7 @@ pub mod create_slot_type_output {
         }
         /// <p>The version of the bot associated with the slot type.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The specified language and local specified for the slot type.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9565,8 +8809,7 @@ pub mod create_slot_type_output {
         }
         /// <p>The specified language and local specified for the slot type.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>A timestamp of the date and time that the slot type was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9574,63 +8817,59 @@ pub mod create_slot_type_output {
             self
         }
         /// <p>A timestamp of the date and time that the slot type was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The type of external information used to create the slot type.</p>
-        pub fn external_source_setting(
-            mut self,
-            input: crate::model::ExternalSourceSetting,
-        ) -> Self {
+        pub fn external_source_setting(mut self, input: crate::model::ExternalSourceSetting) -> Self {
             self.external_source_setting = Some(input);
             self
         }
         /// <p>The type of external information used to create the slot type.</p>
-        pub fn set_external_source_setting(
-            mut self,
-            input: std::option::Option<crate::model::ExternalSourceSetting>,
-        ) -> Self {
-            self.external_source_setting = input;
-            self
+        pub fn set_external_source_setting(mut self, input: std::option::Option<crate::model::ExternalSourceSetting>) -> Self {
+            self.external_source_setting = input; self
         }
         /// <p>Specifications for a composite slot type.</p>
-        pub fn composite_slot_type_setting(
-            mut self,
-            input: crate::model::CompositeSlotTypeSetting,
-        ) -> Self {
+        pub fn composite_slot_type_setting(mut self, input: crate::model::CompositeSlotTypeSetting) -> Self {
             self.composite_slot_type_setting = Some(input);
             self
         }
         /// <p>Specifications for a composite slot type.</p>
-        pub fn set_composite_slot_type_setting(
-            mut self,
-            input: std::option::Option<crate::model::CompositeSlotTypeSetting>,
-        ) -> Self {
-            self.composite_slot_type_setting = input;
-            self
+        pub fn set_composite_slot_type_setting(mut self, input: std::option::Option<crate::model::CompositeSlotTypeSetting>) -> Self {
+            self.composite_slot_type_setting = input; self
         }
         /// Consumes the builder and constructs a [`CreateSlotTypeOutput`](crate::output::CreateSlotTypeOutput).
         pub fn build(self) -> crate::output::CreateSlotTypeOutput {
             crate::output::CreateSlotTypeOutput {
-                slot_type_id: self.slot_type_id,
-                slot_type_name: self.slot_type_name,
-                description: self.description,
-                slot_type_values: self.slot_type_values,
-                value_selection_setting: self.value_selection_setting,
-                parent_slot_type_signature: self.parent_slot_type_signature,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                creation_date_time: self.creation_date_time,
-                external_source_setting: self.external_source_setting,
-                composite_slot_type_setting: self.composite_slot_type_setting,
+                slot_type_id: self.slot_type_id
+                ,
+                slot_type_name: self.slot_type_name
+                ,
+                description: self.description
+                ,
+                slot_type_values: self.slot_type_values
+                ,
+                value_selection_setting: self.value_selection_setting
+                ,
+                parent_slot_type_signature: self.parent_slot_type_signature
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                external_source_setting: self.external_source_setting
+                ,
+                composite_slot_type_setting: self.composite_slot_type_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateSlotTypeOutput`](crate::output::CreateSlotTypeOutput).
@@ -9642,7 +8881,7 @@ impl CreateSlotTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSlotOutput {
+pub struct CreateSlotOutput  {
     /// <p>The unique identifier associated with the slot. Use this to identify the slot when you update or delete it.</p>
     #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
@@ -9685,65 +8924,61 @@ pub struct CreateSlotOutput {
 }
 impl CreateSlotOutput {
     /// <p>The unique identifier associated with the slot. Use this to identify the slot when you update or delete it.</p>
-    pub fn slot_id(&self) -> std::option::Option<&str> {
+    pub fn slot_id(&self) -> std::option::Option<& str> {
         self.slot_id.as_deref()
     }
     /// <p>The name specified for the slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<&str> {
+    pub fn slot_name(&self) -> std::option::Option<& str> {
         self.slot_name.as_deref()
     }
     /// <p>The description associated with the slot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the slot type associated with this slot.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The value elicitation settings specified for the slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> std::option::Option<& crate::model::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
     /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch logs.</p>
-    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
+    pub fn obfuscation_setting(&self) -> std::option::Option<& crate::model::ObfuscationSetting> {
         self.obfuscation_setting.as_ref()
     }
     /// <p>The unique identifier of the bot associated with the slot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and local specified for the slot.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The unique identifier of the intent associated with the slot.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The timestamp of the date and time that the slot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>Indicates whether the slot returns multiple values in one response.</p>
-    pub fn multiple_values_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
+    pub fn multiple_values_setting(&self) -> std::option::Option<& crate::model::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::model::SubSlotSetting> {
+    pub fn sub_slot_setting(&self) -> std::option::Option<& crate::model::SubSlotSetting> {
         self.sub_slot_setting.as_ref()
     }
 }
 /// See [`CreateSlotOutput`](crate::output::CreateSlotOutput).
 pub mod create_slot_output {
-
+    
     /// A builder for [`CreateSlotOutput`](crate::output::CreateSlotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9751,16 +8986,14 @@ pub mod create_slot_output {
         pub(crate) slot_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
-        pub(crate) value_elicitation_setting:
-            std::option::Option<crate::model::SlotValueElicitationSetting>,
+        pub(crate) value_elicitation_setting: std::option::Option<crate::model::SlotValueElicitationSetting>,
         pub(crate) obfuscation_setting: std::option::Option<crate::model::ObfuscationSetting>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) intent_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) multiple_values_setting:
-            std::option::Option<crate::model::MultipleValuesSetting>,
+        pub(crate) multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
         pub(crate) sub_slot_setting: std::option::Option<crate::model::SubSlotSetting>,
     }
     impl Builder {
@@ -9771,8 +9004,7 @@ pub mod create_slot_output {
         }
         /// <p>The unique identifier associated with the slot. Use this to identify the slot when you update or delete it.</p>
         pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_id = input;
-            self
+            self.slot_id = input; self
         }
         /// <p>The name specified for the slot.</p>
         pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9781,8 +9013,7 @@ pub mod create_slot_output {
         }
         /// <p>The name specified for the slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_name = input;
-            self
+            self.slot_name = input; self
         }
         /// <p>The description associated with the slot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9791,8 +9022,7 @@ pub mod create_slot_output {
         }
         /// <p>The description associated with the slot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier of the slot type associated with this slot.</p>
         pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9801,24 +9031,16 @@ pub mod create_slot_output {
         }
         /// <p>The unique identifier of the slot type associated with this slot.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>The value elicitation settings specified for the slot.</p>
-        pub fn value_elicitation_setting(
-            mut self,
-            input: crate::model::SlotValueElicitationSetting,
-        ) -> Self {
+        pub fn value_elicitation_setting(mut self, input: crate::model::SlotValueElicitationSetting) -> Self {
             self.value_elicitation_setting = Some(input);
             self
         }
         /// <p>The value elicitation settings specified for the slot.</p>
-        pub fn set_value_elicitation_setting(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueElicitationSetting>,
-        ) -> Self {
-            self.value_elicitation_setting = input;
-            self
+        pub fn set_value_elicitation_setting(mut self, input: std::option::Option<crate::model::SlotValueElicitationSetting>) -> Self {
+            self.value_elicitation_setting = input; self
         }
         /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch logs.</p>
         pub fn obfuscation_setting(mut self, input: crate::model::ObfuscationSetting) -> Self {
@@ -9826,12 +9048,8 @@ pub mod create_slot_output {
             self
         }
         /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch logs.</p>
-        pub fn set_obfuscation_setting(
-            mut self,
-            input: std::option::Option<crate::model::ObfuscationSetting>,
-        ) -> Self {
-            self.obfuscation_setting = input;
-            self
+        pub fn set_obfuscation_setting(mut self, input: std::option::Option<crate::model::ObfuscationSetting>) -> Self {
+            self.obfuscation_setting = input; self
         }
         /// <p>The unique identifier of the bot associated with the slot.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9840,8 +9058,7 @@ pub mod create_slot_output {
         }
         /// <p>The unique identifier of the bot associated with the slot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot associated with the slot.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9850,8 +9067,7 @@ pub mod create_slot_output {
         }
         /// <p>The version of the bot associated with the slot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and local specified for the slot.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9860,8 +9076,7 @@ pub mod create_slot_output {
         }
         /// <p>The language and local specified for the slot.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The unique identifier of the intent associated with the slot.</p>
         pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9870,8 +9085,7 @@ pub mod create_slot_output {
         }
         /// <p>The unique identifier of the intent associated with the slot.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// <p>The timestamp of the date and time that the slot was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9879,28 +9093,17 @@ pub mod create_slot_output {
             self
         }
         /// <p>The timestamp of the date and time that the slot was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Indicates whether the slot returns multiple values in one response.</p>
-        pub fn multiple_values_setting(
-            mut self,
-            input: crate::model::MultipleValuesSetting,
-        ) -> Self {
+        pub fn multiple_values_setting(mut self, input: crate::model::MultipleValuesSetting) -> Self {
             self.multiple_values_setting = Some(input);
             self
         }
         /// <p>Indicates whether the slot returns multiple values in one response.</p>
-        pub fn set_multiple_values_setting(
-            mut self,
-            input: std::option::Option<crate::model::MultipleValuesSetting>,
-        ) -> Self {
-            self.multiple_values_setting = input;
-            self
+        pub fn set_multiple_values_setting(mut self, input: std::option::Option<crate::model::MultipleValuesSetting>) -> Self {
+            self.multiple_values_setting = input; self
         }
         /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
         pub fn sub_slot_setting(mut self, input: crate::model::SubSlotSetting) -> Self {
@@ -9908,32 +9111,43 @@ pub mod create_slot_output {
             self
         }
         /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-        pub fn set_sub_slot_setting(
-            mut self,
-            input: std::option::Option<crate::model::SubSlotSetting>,
-        ) -> Self {
-            self.sub_slot_setting = input;
-            self
+        pub fn set_sub_slot_setting(mut self, input: std::option::Option<crate::model::SubSlotSetting>) -> Self {
+            self.sub_slot_setting = input; self
         }
         /// Consumes the builder and constructs a [`CreateSlotOutput`](crate::output::CreateSlotOutput).
         pub fn build(self) -> crate::output::CreateSlotOutput {
             crate::output::CreateSlotOutput {
-                slot_id: self.slot_id,
-                slot_name: self.slot_name,
-                description: self.description,
-                slot_type_id: self.slot_type_id,
-                value_elicitation_setting: self.value_elicitation_setting,
-                obfuscation_setting: self.obfuscation_setting,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                intent_id: self.intent_id,
-                creation_date_time: self.creation_date_time,
-                multiple_values_setting: self.multiple_values_setting,
-                sub_slot_setting: self.sub_slot_setting,
+                slot_id: self.slot_id
+                ,
+                slot_name: self.slot_name
+                ,
+                description: self.description
+                ,
+                slot_type_id: self.slot_type_id
+                ,
+                value_elicitation_setting: self.value_elicitation_setting
+                ,
+                obfuscation_setting: self.obfuscation_setting
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                intent_id: self.intent_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                multiple_values_setting: self.multiple_values_setting
+                ,
+                sub_slot_setting: self.sub_slot_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSlotOutput {
     /// Creates a new builder-style object to manufacture [`CreateSlotOutput`](crate::output::CreateSlotOutput).
@@ -9945,7 +9159,7 @@ impl CreateSlotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourcePolicyStatementOutput {
+pub struct CreateResourcePolicyStatementOutput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -9955,17 +9169,17 @@ pub struct CreateResourcePolicyStatementOutput {
 }
 impl CreateResourcePolicyStatementOutput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`CreateResourcePolicyStatementOutput`](crate::output::CreateResourcePolicyStatementOutput).
 pub mod create_resource_policy_statement_output {
-
+    
     /// A builder for [`CreateResourcePolicyStatementOutput`](crate::output::CreateResourcePolicyStatementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9980,8 +9194,7 @@ pub mod create_resource_policy_statement_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9990,17 +9203,20 @@ pub mod create_resource_policy_statement_output {
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateResourcePolicyStatementOutput`](crate::output::CreateResourcePolicyStatementOutput).
         pub fn build(self) -> crate::output::CreateResourcePolicyStatementOutput {
             crate::output::CreateResourcePolicyStatementOutput {
-                resource_arn: self.resource_arn,
-                revision_id: self.revision_id,
+                resource_arn: self.resource_arn
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResourcePolicyStatementOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourcePolicyStatementOutput`](crate::output::CreateResourcePolicyStatementOutput).
@@ -10012,7 +9228,7 @@ impl CreateResourcePolicyStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourcePolicyOutput {
+pub struct CreateResourcePolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -10022,17 +9238,17 @@ pub struct CreateResourcePolicyOutput {
 }
 impl CreateResourcePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`CreateResourcePolicyOutput`](crate::output::CreateResourcePolicyOutput).
 pub mod create_resource_policy_output {
-
+    
     /// A builder for [`CreateResourcePolicyOutput`](crate::output::CreateResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10047,8 +9263,7 @@ pub mod create_resource_policy_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10057,17 +9272,20 @@ pub mod create_resource_policy_output {
         }
         /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateResourcePolicyOutput`](crate::output::CreateResourcePolicyOutput).
         pub fn build(self) -> crate::output::CreateResourcePolicyOutput {
             crate::output::CreateResourcePolicyOutput {
-                resource_arn: self.resource_arn,
-                revision_id: self.revision_id,
+                resource_arn: self.resource_arn
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourcePolicyOutput`](crate::output::CreateResourcePolicyOutput).
@@ -10079,7 +9297,7 @@ impl CreateResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIntentOutput {
+pub struct CreateIntentOutput  {
     /// <p>A unique identifier for the intent.</p>
     #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
@@ -10134,85 +9352,77 @@ pub struct CreateIntentOutput {
 }
 impl CreateIntentOutput {
     /// <p>A unique identifier for the intent.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The name specified for the intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<&str> {
+    pub fn intent_name(&self) -> std::option::Option<& str> {
         self.intent_name.as_deref()
     }
     /// <p>The description specified for the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The signature of the parent intent specified for the intent.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The sample utterances specified for the intent.</p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [crate::model::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
     /// <p>The dialog Lambda function specified for the intent.</p>
-    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookSettings> {
+    pub fn dialog_code_hook(&self) -> std::option::Option<& crate::model::DialogCodeHookSettings> {
         self.dialog_code_hook.as_ref()
     }
     /// <p>The fulfillment Lambda function specified for the intent.</p>
-    pub fn fulfillment_code_hook(
-        &self,
-    ) -> std::option::Option<&crate::model::FulfillmentCodeHookSettings> {
+    pub fn fulfillment_code_hook(&self) -> std::option::Option<& crate::model::FulfillmentCodeHookSettings> {
         self.fulfillment_code_hook.as_ref()
     }
     /// <p>The confirmation setting specified for the intent.</p>
-    pub fn intent_confirmation_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::IntentConfirmationSetting> {
+    pub fn intent_confirmation_setting(&self) -> std::option::Option<& crate::model::IntentConfirmationSetting> {
         self.intent_confirmation_setting.as_ref()
     }
     /// <p>The closing setting specified for the intent.</p>
-    pub fn intent_closing_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::IntentClosingSetting> {
+    pub fn intent_closing_setting(&self) -> std::option::Option<& crate::model::IntentClosingSetting> {
         self.intent_closing_setting.as_ref()
     }
     /// <p>The list of input contexts specified for the intent.</p>
-    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<& [crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
     /// <p>The list of output contexts specified for the intent.</p>
-    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<& [crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
     /// <p>Configuration for searching a Amazon Kendra index specified for the intent.</p>
-    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> std::option::Option<& crate::model::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>The identifier of the bot associated with the intent.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the version of the bot associated with the intent.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale that the intent is specified to use.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the intent was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
-    pub fn initial_response_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::InitialResponseSetting> {
+    pub fn initial_response_setting(&self) -> std::option::Option<& crate::model::InitialResponseSetting> {
         self.initial_response_setting.as_ref()
     }
 }
 /// See [`CreateIntentOutput`](crate::output::CreateIntentOutput).
 pub mod create_intent_output {
-
+    
     /// A builder for [`CreateIntentOutput`](crate::output::CreateIntentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10220,13 +9430,10 @@ pub mod create_intent_output {
         pub(crate) intent_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) parent_intent_signature: std::option::Option<std::string::String>,
-        pub(crate) sample_utterances:
-            std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
+        pub(crate) sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
         pub(crate) dialog_code_hook: std::option::Option<crate::model::DialogCodeHookSettings>,
-        pub(crate) fulfillment_code_hook:
-            std::option::Option<crate::model::FulfillmentCodeHookSettings>,
-        pub(crate) intent_confirmation_setting:
-            std::option::Option<crate::model::IntentConfirmationSetting>,
+        pub(crate) fulfillment_code_hook: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
+        pub(crate) intent_confirmation_setting: std::option::Option<crate::model::IntentConfirmationSetting>,
         pub(crate) intent_closing_setting: std::option::Option<crate::model::IntentClosingSetting>,
         pub(crate) input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
         pub(crate) output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -10235,8 +9442,7 @@ pub mod create_intent_output {
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) initial_response_setting:
-            std::option::Option<crate::model::InitialResponseSetting>,
+        pub(crate) initial_response_setting: std::option::Option<crate::model::InitialResponseSetting>,
     }
     impl Builder {
         /// <p>A unique identifier for the intent.</p>
@@ -10246,8 +9452,7 @@ pub mod create_intent_output {
         }
         /// <p>A unique identifier for the intent.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// <p>The name specified for the intent.</p>
         pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10256,8 +9461,7 @@ pub mod create_intent_output {
         }
         /// <p>The name specified for the intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_name = input;
-            self
+            self.intent_name = input; self
         }
         /// <p>The description specified for the intent.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10266,8 +9470,7 @@ pub mod create_intent_output {
         }
         /// <p>The description specified for the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The signature of the parent intent specified for the intent.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10275,12 +9478,8 @@ pub mod create_intent_output {
             self
         }
         /// <p>The signature of the parent intent specified for the intent.</p>
-        pub fn set_parent_intent_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_intent_signature = input;
-            self
+        pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_intent_signature = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -10289,17 +9488,13 @@ pub mod create_intent_output {
         /// <p>The sample utterances specified for the intent.</p>
         pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input);
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input);
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p>The sample utterances specified for the intent.</p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>The dialog Lambda function specified for the intent.</p>
         pub fn dialog_code_hook(mut self, input: crate::model::DialogCodeHookSettings) -> Self {
@@ -10307,44 +9502,26 @@ pub mod create_intent_output {
             self
         }
         /// <p>The dialog Lambda function specified for the intent.</p>
-        pub fn set_dialog_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::DialogCodeHookSettings>,
-        ) -> Self {
-            self.dialog_code_hook = input;
-            self
+        pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::model::DialogCodeHookSettings>) -> Self {
+            self.dialog_code_hook = input; self
         }
         /// <p>The fulfillment Lambda function specified for the intent.</p>
-        pub fn fulfillment_code_hook(
-            mut self,
-            input: crate::model::FulfillmentCodeHookSettings,
-        ) -> Self {
+        pub fn fulfillment_code_hook(mut self, input: crate::model::FulfillmentCodeHookSettings) -> Self {
             self.fulfillment_code_hook = Some(input);
             self
         }
         /// <p>The fulfillment Lambda function specified for the intent.</p>
-        pub fn set_fulfillment_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
-        ) -> Self {
-            self.fulfillment_code_hook = input;
-            self
+        pub fn set_fulfillment_code_hook(mut self, input: std::option::Option<crate::model::FulfillmentCodeHookSettings>) -> Self {
+            self.fulfillment_code_hook = input; self
         }
         /// <p>The confirmation setting specified for the intent.</p>
-        pub fn intent_confirmation_setting(
-            mut self,
-            input: crate::model::IntentConfirmationSetting,
-        ) -> Self {
+        pub fn intent_confirmation_setting(mut self, input: crate::model::IntentConfirmationSetting) -> Self {
             self.intent_confirmation_setting = Some(input);
             self
         }
         /// <p>The confirmation setting specified for the intent.</p>
-        pub fn set_intent_confirmation_setting(
-            mut self,
-            input: std::option::Option<crate::model::IntentConfirmationSetting>,
-        ) -> Self {
-            self.intent_confirmation_setting = input;
-            self
+        pub fn set_intent_confirmation_setting(mut self, input: std::option::Option<crate::model::IntentConfirmationSetting>) -> Self {
+            self.intent_confirmation_setting = input; self
         }
         /// <p>The closing setting specified for the intent.</p>
         pub fn intent_closing_setting(mut self, input: crate::model::IntentClosingSetting) -> Self {
@@ -10352,12 +9529,8 @@ pub mod create_intent_output {
             self
         }
         /// <p>The closing setting specified for the intent.</p>
-        pub fn set_intent_closing_setting(
-            mut self,
-            input: std::option::Option<crate::model::IntentClosingSetting>,
-        ) -> Self {
-            self.intent_closing_setting = input;
-            self
+        pub fn set_intent_closing_setting(mut self, input: std::option::Option<crate::model::IntentClosingSetting>) -> Self {
+            self.intent_closing_setting = input; self
         }
         /// Appends an item to `input_contexts`.
         ///
@@ -10366,17 +9539,13 @@ pub mod create_intent_output {
         /// <p>The list of input contexts specified for the intent.</p>
         pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input);
-            self.input_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.input_contexts = Some(v);
+                            self
         }
         /// <p>The list of input contexts specified for the intent.</p>
-        pub fn set_input_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-        ) -> Self {
-            self.input_contexts = input;
-            self
+        pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputContext>>) -> Self {
+            self.input_contexts = input; self
         }
         /// Appends an item to `output_contexts`.
         ///
@@ -10385,17 +9554,13 @@ pub mod create_intent_output {
         /// <p>The list of output contexts specified for the intent.</p>
         pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input);
-            self.output_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.output_contexts = Some(v);
+                            self
         }
         /// <p>The list of output contexts specified for the intent.</p>
-        pub fn set_output_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-        ) -> Self {
-            self.output_contexts = input;
-            self
+        pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>) -> Self {
+            self.output_contexts = input; self
         }
         /// <p>Configuration for searching a Amazon Kendra index specified for the intent.</p>
         pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
@@ -10403,12 +9568,8 @@ pub mod create_intent_output {
             self
         }
         /// <p>Configuration for searching a Amazon Kendra index specified for the intent.</p>
-        pub fn set_kendra_configuration(
-            mut self,
-            input: std::option::Option<crate::model::KendraConfiguration>,
-        ) -> Self {
-            self.kendra_configuration = input;
-            self
+        pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::model::KendraConfiguration>) -> Self {
+            self.kendra_configuration = input; self
         }
         /// <p>The identifier of the bot associated with the intent.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10417,8 +9578,7 @@ pub mod create_intent_output {
         }
         /// <p>The identifier of the bot associated with the intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The identifier of the version of the bot associated with the intent.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10427,8 +9587,7 @@ pub mod create_intent_output {
         }
         /// <p>The identifier of the version of the bot associated with the intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The locale that the intent is specified to use.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10437,8 +9596,7 @@ pub mod create_intent_output {
         }
         /// <p>The locale that the intent is specified to use.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>A timestamp of the date and time that the intent was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10446,52 +9604,60 @@ pub mod create_intent_output {
             self
         }
         /// <p>A timestamp of the date and time that the intent was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
-        pub fn initial_response_setting(
-            mut self,
-            input: crate::model::InitialResponseSetting,
-        ) -> Self {
+        pub fn initial_response_setting(mut self, input: crate::model::InitialResponseSetting) -> Self {
             self.initial_response_setting = Some(input);
             self
         }
         /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
-        pub fn set_initial_response_setting(
-            mut self,
-            input: std::option::Option<crate::model::InitialResponseSetting>,
-        ) -> Self {
-            self.initial_response_setting = input;
-            self
+        pub fn set_initial_response_setting(mut self, input: std::option::Option<crate::model::InitialResponseSetting>) -> Self {
+            self.initial_response_setting = input; self
         }
         /// Consumes the builder and constructs a [`CreateIntentOutput`](crate::output::CreateIntentOutput).
         pub fn build(self) -> crate::output::CreateIntentOutput {
             crate::output::CreateIntentOutput {
-                intent_id: self.intent_id,
-                intent_name: self.intent_name,
-                description: self.description,
-                parent_intent_signature: self.parent_intent_signature,
-                sample_utterances: self.sample_utterances,
-                dialog_code_hook: self.dialog_code_hook,
-                fulfillment_code_hook: self.fulfillment_code_hook,
-                intent_confirmation_setting: self.intent_confirmation_setting,
-                intent_closing_setting: self.intent_closing_setting,
-                input_contexts: self.input_contexts,
-                output_contexts: self.output_contexts,
-                kendra_configuration: self.kendra_configuration,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                creation_date_time: self.creation_date_time,
-                initial_response_setting: self.initial_response_setting,
+                intent_id: self.intent_id
+                ,
+                intent_name: self.intent_name
+                ,
+                description: self.description
+                ,
+                parent_intent_signature: self.parent_intent_signature
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                dialog_code_hook: self.dialog_code_hook
+                ,
+                fulfillment_code_hook: self.fulfillment_code_hook
+                ,
+                intent_confirmation_setting: self.intent_confirmation_setting
+                ,
+                intent_closing_setting: self.intent_closing_setting
+                ,
+                input_contexts: self.input_contexts
+                ,
+                output_contexts: self.output_contexts
+                ,
+                kendra_configuration: self.kendra_configuration
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                initial_response_setting: self.initial_response_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIntentOutput {
     /// Creates a new builder-style object to manufacture [`CreateIntentOutput`](crate::output::CreateIntentOutput).
@@ -10503,7 +9669,7 @@ impl CreateIntentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExportOutput {
+pub struct CreateExportOutput  {
     /// <p>An identifier for a specific request to create an export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
@@ -10522,37 +9688,34 @@ pub struct CreateExportOutput {
 }
 impl CreateExportOutput {
     /// <p>An identifier for a specific request to create an export.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format used for the bot or bot locale definition files.</p>
-    pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
+    pub fn file_format(&self) -> std::option::Option<& crate::model::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
-    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>The date and time that the request to export a bot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`CreateExportOutput`](crate::output::CreateExportOutput).
 pub mod create_export_output {
-
+    
     /// A builder for [`CreateExportOutput`](crate::output::CreateExportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ExportResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ExportResourceSpecification>,
         pub(crate) file_format: std::option::Option<crate::model::ImportExportFileFormat>,
         pub(crate) export_status: std::option::Option<crate::model::ExportStatus>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -10565,24 +9728,16 @@ pub mod create_export_output {
         }
         /// <p>An identifier for a specific request to create an export.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.export_id = input;
-            self
+            self.export_id = input; self
         }
         /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ExportResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ExportResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ExportResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ExportResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// <p>The file format used for the bot or bot locale definition files.</p>
         pub fn file_format(mut self, input: crate::model::ImportExportFileFormat) -> Self {
@@ -10590,12 +9745,8 @@ pub mod create_export_output {
             self
         }
         /// <p>The file format used for the bot or bot locale definition files.</p>
-        pub fn set_file_format(
-            mut self,
-            input: std::option::Option<crate::model::ImportExportFileFormat>,
-        ) -> Self {
-            self.file_format = input;
-            self
+        pub fn set_file_format(mut self, input: std::option::Option<crate::model::ImportExportFileFormat>) -> Self {
+            self.file_format = input; self
         }
         /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
         pub fn export_status(mut self, input: crate::model::ExportStatus) -> Self {
@@ -10603,12 +9754,8 @@ pub mod create_export_output {
             self
         }
         /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::ExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::ExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// <p>The date and time that the request to export a bot was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10616,24 +9763,27 @@ pub mod create_export_output {
             self
         }
         /// <p>The date and time that the request to export a bot was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateExportOutput`](crate::output::CreateExportOutput).
         pub fn build(self) -> crate::output::CreateExportOutput {
             crate::output::CreateExportOutput {
-                export_id: self.export_id,
-                resource_specification: self.resource_specification,
-                file_format: self.file_format,
-                export_status: self.export_status,
-                creation_date_time: self.creation_date_time,
+                export_id: self.export_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                file_format: self.file_format
+                ,
+                export_status: self.export_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateExportOutput {
     /// Creates a new builder-style object to manufacture [`CreateExportOutput`](crate::output::CreateExportOutput).
@@ -10645,7 +9795,7 @@ impl CreateExportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBotVersionOutput {
+pub struct CreateBotVersionOutput  {
     /// <p>The bot identifier specified in the request.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -10657,9 +9807,7 @@ pub struct CreateBotVersionOutput {
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The source versions used for each locale in the new version.</p>
     #[doc(hidden)]
-    pub bot_version_locale_specification: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>,
-    >,
+    pub bot_version_locale_specification: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>>,
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
     #[doc(hidden)]
     pub bot_status: std::option::Option<crate::model::BotStatus>,
@@ -10669,46 +9817,40 @@ pub struct CreateBotVersionOutput {
 }
 impl CreateBotVersionOutput {
     /// <p>The bot identifier specified in the request.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The description of the version specified in the request.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version number assigned to the version.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The source versions used for each locale in the new version.</p>
-    pub fn bot_version_locale_specification(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>,
-    > {
+    pub fn bot_version_locale_specification(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>> {
         self.bot_version_locale_specification.as_ref()
     }
     /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
 pub mod create_bot_version_output {
-
+    
     /// A builder for [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
-        pub(crate) bot_version_locale_specification: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>,
-        >,
+        pub(crate) bot_version_locale_specification: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>>,
         pub(crate) bot_status: std::option::Option<crate::model::BotStatus>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -10720,8 +9862,7 @@ pub mod create_bot_version_output {
         }
         /// <p>The bot identifier specified in the request.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The description of the version specified in the request.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10730,8 +9871,7 @@ pub mod create_bot_version_output {
         }
         /// <p>The description of the version specified in the request.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The version number assigned to the version.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10740,36 +9880,22 @@ pub mod create_bot_version_output {
         }
         /// <p>The version number assigned to the version.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// Adds a key-value pair to `bot_version_locale_specification`.
         ///
         /// To override the contents of this collection use [`set_bot_version_locale_specification`](Self::set_bot_version_locale_specification).
         ///
         /// <p>The source versions used for each locale in the new version.</p>
-        pub fn bot_version_locale_specification(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::BotVersionLocaleDetails,
-        ) -> Self {
+        pub fn bot_version_locale_specification(mut self, k: impl Into<std::string::String>, v: crate::model::BotVersionLocaleDetails) -> Self {
             let mut hash_map = self.bot_version_locale_specification.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.bot_version_locale_specification = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.bot_version_locale_specification = Some(hash_map);
+                            self
         }
         /// <p>The source versions used for each locale in the new version.</p>
-        pub fn set_bot_version_locale_specification(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::BotVersionLocaleDetails,
-                >,
-            >,
-        ) -> Self {
-            self.bot_version_locale_specification = input;
-            self
+        pub fn set_bot_version_locale_specification(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>>) -> Self {
+            self.bot_version_locale_specification = input; self
         }
         /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -10777,12 +9903,8 @@ pub mod create_bot_version_output {
             self
         }
         /// <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// <p>A timestamp of the date and time that the version was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10790,25 +9912,29 @@ pub mod create_bot_version_output {
             self
         }
         /// <p>A timestamp of the date and time that the version was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
         pub fn build(self) -> crate::output::CreateBotVersionOutput {
             crate::output::CreateBotVersionOutput {
-                bot_id: self.bot_id,
-                description: self.description,
-                bot_version: self.bot_version,
-                bot_version_locale_specification: self.bot_version_locale_specification,
-                bot_status: self.bot_status,
-                creation_date_time: self.creation_date_time,
+                bot_id: self.bot_id
+                ,
+                description: self.description
+                ,
+                bot_version: self.bot_version
+                ,
+                bot_version_locale_specification: self.bot_version_locale_specification
+                ,
+                bot_status: self.bot_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
@@ -10820,7 +9946,7 @@ impl CreateBotVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBotLocaleOutput {
+pub struct CreateBotLocaleOutput  {
     /// <p>The specified bot identifier.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -10842,9 +9968,9 @@ pub struct CreateBotLocaleOutput {
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     #[doc(hidden)]
     pub voice_settings: std::option::Option<crate::model::VoiceSettings>,
-    /// <p>The status of the bot.</p>
-    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
-    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
+    /// <p>The status of the bot.</p> 
+    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p> 
+    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p> 
     /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
     #[doc(hidden)]
     pub bot_locale_status: std::option::Option<crate::model::BotLocaleStatus>,
@@ -10854,23 +9980,23 @@ pub struct CreateBotLocaleOutput {
 }
 impl CreateBotLocaleOutput {
     /// <p>The specified bot identifier.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The specified bot version.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The specified locale name.</p>
-    pub fn locale_name(&self) -> std::option::Option<&str> {
+    pub fn locale_name(&self) -> std::option::Option<& str> {
         self.locale_name.as_deref()
     }
     /// <p>The specified locale identifier.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The specified description of the bot locale.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The specified confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents.</p>
@@ -10878,24 +10004,24 @@ impl CreateBotLocaleOutput {
         self.nlu_intent_confidence_threshold
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
-    pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
+    pub fn voice_settings(&self) -> std::option::Option<& crate::model::VoiceSettings> {
         self.voice_settings.as_ref()
     }
-    /// <p>The status of the bot.</p>
-    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
-    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
+    /// <p>The status of the bot.</p> 
+    /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p> 
+    /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p> 
     /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<& crate::model::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
     /// <p>A timestamp specifying the date and time that the bot locale was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`CreateBotLocaleOutput`](crate::output::CreateBotLocaleOutput).
 pub mod create_bot_locale_output {
-
+    
     /// A builder for [`CreateBotLocaleOutput`](crate::output::CreateBotLocaleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10917,8 +10043,7 @@ pub mod create_bot_locale_output {
         }
         /// <p>The specified bot identifier.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The specified bot version.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10927,8 +10052,7 @@ pub mod create_bot_locale_output {
         }
         /// <p>The specified bot version.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The specified locale name.</p>
         pub fn locale_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10937,8 +10061,7 @@ pub mod create_bot_locale_output {
         }
         /// <p>The specified locale name.</p>
         pub fn set_locale_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_name = input;
-            self
+            self.locale_name = input; self
         }
         /// <p>The specified locale identifier.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10947,8 +10070,7 @@ pub mod create_bot_locale_output {
         }
         /// <p>The specified locale identifier.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The specified description of the bot locale.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10957,8 +10079,7 @@ pub mod create_bot_locale_output {
         }
         /// <p>The specified description of the bot locale.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The specified confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents.</p>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -10966,12 +10087,8 @@ pub mod create_bot_locale_output {
             self
         }
         /// <p>The specified confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents.</p>
-        pub fn set_nlu_intent_confidence_threshold(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.nlu_intent_confidence_threshold = input;
-            self
+        pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.nlu_intent_confidence_threshold = input; self
         }
         /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
         pub fn voice_settings(mut self, input: crate::model::VoiceSettings) -> Self {
@@ -10979,31 +10096,23 @@ pub mod create_bot_locale_output {
             self
         }
         /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
-        pub fn set_voice_settings(
-            mut self,
-            input: std::option::Option<crate::model::VoiceSettings>,
-        ) -> Self {
-            self.voice_settings = input;
-            self
+        pub fn set_voice_settings(mut self, input: std::option::Option<crate::model::VoiceSettings>) -> Self {
+            self.voice_settings = input; self
         }
-        /// <p>The status of the bot.</p>
-        /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
-        /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
+        /// <p>The status of the bot.</p> 
+        /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p> 
+        /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p> 
         /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
         pub fn bot_locale_status(mut self, input: crate::model::BotLocaleStatus) -> Self {
             self.bot_locale_status = Some(input);
             self
         }
-        /// <p>The status of the bot.</p>
-        /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
-        /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
+        /// <p>The status of the bot.</p> 
+        /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p> 
+        /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p> 
         /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
-        pub fn set_bot_locale_status(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleStatus>,
-        ) -> Self {
-            self.bot_locale_status = input;
-            self
+        pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::model::BotLocaleStatus>) -> Self {
+            self.bot_locale_status = input; self
         }
         /// <p>A timestamp specifying the date and time that the bot locale was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11011,28 +10120,35 @@ pub mod create_bot_locale_output {
             self
         }
         /// <p>A timestamp specifying the date and time that the bot locale was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateBotLocaleOutput`](crate::output::CreateBotLocaleOutput).
         pub fn build(self) -> crate::output::CreateBotLocaleOutput {
             crate::output::CreateBotLocaleOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_name: self.locale_name,
-                locale_id: self.locale_id,
-                description: self.description,
-                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-                voice_settings: self.voice_settings,
-                bot_locale_status: self.bot_locale_status,
-                creation_date_time: self.creation_date_time,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_name: self.locale_name
+                ,
+                locale_id: self.locale_id
+                ,
+                description: self.description
+                ,
+                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+                ,
+                voice_settings: self.voice_settings
+                ,
+                bot_locale_status: self.bot_locale_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotLocaleOutput`](crate::output::CreateBotLocaleOutput).
@@ -11044,7 +10160,7 @@ impl CreateBotLocaleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBotAliasOutput {
+pub struct CreateBotAliasOutput  {
     /// <p>The unique identifier of the bot alias.</p>
     #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
@@ -11059,9 +10175,7 @@ pub struct CreateBotAliasOutput {
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>Configuration information for a specific locale.</p>
     #[doc(hidden)]
-    pub bot_alias_locale_settings: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-    >,
+    pub bot_alias_locale_settings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>,
     /// <p>The conversation log settings specified for the alias.</p>
     #[doc(hidden)]
     pub conversation_log_settings: std::option::Option<crate::model::ConversationLogSettings>,
@@ -11079,69 +10193,57 @@ pub struct CreateBotAliasOutput {
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the bot alias.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateBotAliasOutput {
     /// <p>The unique identifier of the bot alias.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The name specified for the bot alias.</p>
-    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_name(&self) -> std::option::Option<& str> {
         self.bot_alias_name.as_deref()
     }
     /// <p>The description specified for the bot alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the bot associated with this alias.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>Configuration information for a specific locale.</p>
-    pub fn bot_alias_locale_settings(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-    > {
+    pub fn bot_alias_locale_settings(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>> {
         self.bot_alias_locale_settings.as_ref()
     }
     /// <p>The conversation log settings specified for the alias.</p>
-    pub fn conversation_log_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::ConversationLogSettings> {
+    pub fn conversation_log_settings(&self) -> std::option::Option<& crate::model::ConversationLogSettings> {
         self.conversation_log_settings.as_ref()
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::SentimentAnalysisSettings> {
+    pub fn sentiment_analysis_settings(&self) -> std::option::Option<& crate::model::SentimentAnalysisSettings> {
         self.sentiment_analysis_settings.as_ref()
     }
     /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
-    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+    pub fn bot_alias_status(&self) -> std::option::Option<& crate::model::BotAliasStatus> {
         self.bot_alias_status.as_ref()
     }
     /// <p>The unique identifier of the bot that this alias applies to.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A list of tags associated with the bot alias.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateBotAliasOutput`](crate::output::CreateBotAliasOutput).
 pub mod create_bot_alias_output {
-
+    
     /// A builder for [`CreateBotAliasOutput`](crate::output::CreateBotAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11149,19 +10251,13 @@ pub mod create_bot_alias_output {
         pub(crate) bot_alias_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
-        pub(crate) bot_alias_locale_settings: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
-        >,
-        pub(crate) conversation_log_settings:
-            std::option::Option<crate::model::ConversationLogSettings>,
-        pub(crate) sentiment_analysis_settings:
-            std::option::Option<crate::model::SentimentAnalysisSettings>,
+        pub(crate) bot_alias_locale_settings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>,
+        pub(crate) conversation_log_settings: std::option::Option<crate::model::ConversationLogSettings>,
+        pub(crate) sentiment_analysis_settings: std::option::Option<crate::model::SentimentAnalysisSettings>,
         pub(crate) bot_alias_status: std::option::Option<crate::model::BotAliasStatus>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The unique identifier of the bot alias.</p>
@@ -11171,8 +10267,7 @@ pub mod create_bot_alias_output {
         }
         /// <p>The unique identifier of the bot alias.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_alias_id = input;
-            self
+            self.bot_alias_id = input; self
         }
         /// <p>The name specified for the bot alias.</p>
         pub fn bot_alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11180,12 +10275,8 @@ pub mod create_bot_alias_output {
             self
         }
         /// <p>The name specified for the bot alias.</p>
-        pub fn set_bot_alias_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_alias_name = input;
-            self
+        pub fn set_bot_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_alias_name = input; self
         }
         /// <p>The description specified for the bot alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11194,8 +10285,7 @@ pub mod create_bot_alias_output {
         }
         /// <p>The description specified for the bot alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The version of the bot associated with this alias.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11204,68 +10294,40 @@ pub mod create_bot_alias_output {
         }
         /// <p>The version of the bot associated with this alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// Adds a key-value pair to `bot_alias_locale_settings`.
         ///
         /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
         ///
         /// <p>Configuration information for a specific locale.</p>
-        pub fn bot_alias_locale_settings(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::BotAliasLocaleSettings,
-        ) -> Self {
+        pub fn bot_alias_locale_settings(mut self, k: impl Into<std::string::String>, v: crate::model::BotAliasLocaleSettings) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.bot_alias_locale_settings = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.bot_alias_locale_settings = Some(hash_map);
+                            self
         }
         /// <p>Configuration information for a specific locale.</p>
-        pub fn set_bot_alias_locale_settings(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::BotAliasLocaleSettings,
-                >,
-            >,
-        ) -> Self {
-            self.bot_alias_locale_settings = input;
-            self
+        pub fn set_bot_alias_locale_settings(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>) -> Self {
+            self.bot_alias_locale_settings = input; self
         }
         /// <p>The conversation log settings specified for the alias.</p>
-        pub fn conversation_log_settings(
-            mut self,
-            input: crate::model::ConversationLogSettings,
-        ) -> Self {
+        pub fn conversation_log_settings(mut self, input: crate::model::ConversationLogSettings) -> Self {
             self.conversation_log_settings = Some(input);
             self
         }
         /// <p>The conversation log settings specified for the alias.</p>
-        pub fn set_conversation_log_settings(
-            mut self,
-            input: std::option::Option<crate::model::ConversationLogSettings>,
-        ) -> Self {
-            self.conversation_log_settings = input;
-            self
+        pub fn set_conversation_log_settings(mut self, input: std::option::Option<crate::model::ConversationLogSettings>) -> Self {
+            self.conversation_log_settings = input; self
         }
         /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-        pub fn sentiment_analysis_settings(
-            mut self,
-            input: crate::model::SentimentAnalysisSettings,
-        ) -> Self {
+        pub fn sentiment_analysis_settings(mut self, input: crate::model::SentimentAnalysisSettings) -> Self {
             self.sentiment_analysis_settings = Some(input);
             self
         }
         /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-        pub fn set_sentiment_analysis_settings(
-            mut self,
-            input: std::option::Option<crate::model::SentimentAnalysisSettings>,
-        ) -> Self {
-            self.sentiment_analysis_settings = input;
-            self
+        pub fn set_sentiment_analysis_settings(mut self, input: std::option::Option<crate::model::SentimentAnalysisSettings>) -> Self {
+            self.sentiment_analysis_settings = input; self
         }
         /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
         pub fn bot_alias_status(mut self, input: crate::model::BotAliasStatus) -> Self {
@@ -11273,12 +10335,8 @@ pub mod create_bot_alias_output {
             self
         }
         /// <p>The current status of the alias. The alias is first put into the <code>Creating</code> state. When the alias is ready to be used, it is put into the <code>Available</code> state. You can use the <code>DescribeBotAlias</code> operation to get the current state of an alias.</p>
-        pub fn set_bot_alias_status(
-            mut self,
-            input: std::option::Option<crate::model::BotAliasStatus>,
-        ) -> Self {
-            self.bot_alias_status = input;
-            self
+        pub fn set_bot_alias_status(mut self, input: std::option::Option<crate::model::BotAliasStatus>) -> Self {
+            self.bot_alias_status = input; self
         }
         /// <p>The unique identifier of the bot that this alias applies to.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11287,8 +10345,7 @@ pub mod create_bot_alias_output {
         }
         /// <p>The unique identifier of the bot that this alias applies to.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11296,55 +10353,54 @@ pub mod create_bot_alias_output {
             self
         }
         /// <p>A Unix timestamp indicating the date and time that the bot alias was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the bot alias.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A list of tags associated with the bot alias.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateBotAliasOutput`](crate::output::CreateBotAliasOutput).
         pub fn build(self) -> crate::output::CreateBotAliasOutput {
             crate::output::CreateBotAliasOutput {
-                bot_alias_id: self.bot_alias_id,
-                bot_alias_name: self.bot_alias_name,
-                description: self.description,
-                bot_version: self.bot_version,
-                bot_alias_locale_settings: self.bot_alias_locale_settings,
-                conversation_log_settings: self.conversation_log_settings,
-                sentiment_analysis_settings: self.sentiment_analysis_settings,
-                bot_alias_status: self.bot_alias_status,
-                bot_id: self.bot_id,
-                creation_date_time: self.creation_date_time,
-                tags: self.tags,
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_alias_name: self.bot_alias_name
+                ,
+                description: self.description
+                ,
+                bot_version: self.bot_version
+                ,
+                bot_alias_locale_settings: self.bot_alias_locale_settings
+                ,
+                conversation_log_settings: self.conversation_log_settings
+                ,
+                sentiment_analysis_settings: self.sentiment_analysis_settings
+                ,
+                bot_alias_status: self.bot_alias_status
+                ,
+                bot_id: self.bot_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotAliasOutput`](crate::output::CreateBotAliasOutput).
@@ -11356,7 +10412,7 @@ impl CreateBotAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBotOutput {
+pub struct CreateBotOutput  {
     /// <p>A unique identifier for a particular bot. You use this to identify the bot when you call other Amazon Lex API operations.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -11383,32 +10439,30 @@ pub struct CreateBotOutput {
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the bot.</p>
     #[doc(hidden)]
-    pub bot_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub bot_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of tags associated with the test alias for the bot.</p>
     #[doc(hidden)]
-    pub test_bot_alias_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub test_bot_alias_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateBotOutput {
     /// <p>A unique identifier for a particular bot. You use this to identify the bot when you call other Amazon Lex API operations.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The name specified for the bot.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The description specified for the bot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The IAM role specified for the bot.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The data privacy settings specified for the bot.</p>
-    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+    pub fn data_privacy(&self) -> std::option::Option<& crate::model::DataPrivacy> {
         self.data_privacy.as_ref()
     }
     /// <p>The session idle time specified for the bot.</p>
@@ -11416,31 +10470,25 @@ impl CreateBotOutput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>Draft</code> version of the bot.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>A timestamp indicating the date and time that the bot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A list of tags associated with the bot.</p>
-    pub fn bot_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn bot_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.bot_tags.as_ref()
     }
     /// <p>A list of tags associated with the test alias for the bot.</p>
-    pub fn test_bot_alias_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn test_bot_alias_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.test_bot_alias_tags.as_ref()
     }
 }
 /// See [`CreateBotOutput`](crate::output::CreateBotOutput).
 pub mod create_bot_output {
-
+    
     /// A builder for [`CreateBotOutput`](crate::output::CreateBotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11452,12 +10500,8 @@ pub mod create_bot_output {
         pub(crate) idle_session_ttl_in_seconds: std::option::Option<i32>,
         pub(crate) bot_status: std::option::Option<crate::model::BotStatus>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) bot_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) test_bot_alias_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) bot_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) test_bot_alias_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>A unique identifier for a particular bot. You use this to identify the bot when you call other Amazon Lex API operations.</p>
@@ -11467,8 +10511,7 @@ pub mod create_bot_output {
         }
         /// <p>A unique identifier for a particular bot. You use this to identify the bot when you call other Amazon Lex API operations.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The name specified for the bot.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11477,8 +10520,7 @@ pub mod create_bot_output {
         }
         /// <p>The name specified for the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The description specified for the bot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11487,8 +10529,7 @@ pub mod create_bot_output {
         }
         /// <p>The description specified for the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The IAM role specified for the bot.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11497,8 +10538,7 @@ pub mod create_bot_output {
         }
         /// <p>The IAM role specified for the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The data privacy settings specified for the bot.</p>
         pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
@@ -11506,12 +10546,8 @@ pub mod create_bot_output {
             self
         }
         /// <p>The data privacy settings specified for the bot.</p>
-        pub fn set_data_privacy(
-            mut self,
-            input: std::option::Option<crate::model::DataPrivacy>,
-        ) -> Self {
-            self.data_privacy = input;
-            self
+        pub fn set_data_privacy(mut self, input: std::option::Option<crate::model::DataPrivacy>) -> Self {
+            self.data_privacy = input; self
         }
         /// <p>The session idle time specified for the bot.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
@@ -11520,8 +10556,7 @@ pub mod create_bot_output {
         }
         /// <p>The session idle time specified for the bot.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_session_ttl_in_seconds = input;
-            self
+            self.idle_session_ttl_in_seconds = input; self
         }
         /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>Draft</code> version of the bot.</p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -11529,12 +10564,8 @@ pub mod create_bot_output {
             self
         }
         /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>Draft</code> version of the bot.</p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// <p>A timestamp indicating the date and time that the bot was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11542,79 +10573,67 @@ pub mod create_bot_output {
             self
         }
         /// <p>A timestamp indicating the date and time that the bot was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Adds a key-value pair to `bot_tags`.
         ///
         /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
         ///
         /// <p>A list of tags associated with the bot.</p>
-        pub fn bot_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bot_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.bot_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.bot_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.bot_tags = Some(hash_map);
+                            self
         }
         /// <p>A list of tags associated with the bot.</p>
-        pub fn set_bot_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.bot_tags = input;
-            self
+        pub fn set_bot_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.bot_tags = input; self
         }
         /// Adds a key-value pair to `test_bot_alias_tags`.
         ///
         /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
         ///
         /// <p>A list of tags associated with the test alias for the bot.</p>
-        pub fn test_bot_alias_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn test_bot_alias_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.test_bot_alias_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.test_bot_alias_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.test_bot_alias_tags = Some(hash_map);
+                            self
         }
         /// <p>A list of tags associated with the test alias for the bot.</p>
-        pub fn set_test_bot_alias_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.test_bot_alias_tags = input;
-            self
+        pub fn set_test_bot_alias_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.test_bot_alias_tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateBotOutput`](crate::output::CreateBotOutput).
         pub fn build(self) -> crate::output::CreateBotOutput {
             crate::output::CreateBotOutput {
-                bot_id: self.bot_id,
-                bot_name: self.bot_name,
-                description: self.description,
-                role_arn: self.role_arn,
-                data_privacy: self.data_privacy,
-                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-                bot_status: self.bot_status,
-                creation_date_time: self.creation_date_time,
-                bot_tags: self.bot_tags,
-                test_bot_alias_tags: self.test_bot_alias_tags,
+                bot_id: self.bot_id
+                ,
+                bot_name: self.bot_name
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                data_privacy: self.data_privacy
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                bot_status: self.bot_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                bot_tags: self.bot_tags
+                ,
+                test_bot_alias_tags: self.test_bot_alias_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBotOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotOutput`](crate::output::CreateBotOutput).
@@ -11626,7 +10645,7 @@ impl CreateBotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuildBotLocaleOutput {
+pub struct BuildBotLocaleOutput  {
     /// <p>The identifier of the specified bot.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -11645,31 +10664,29 @@ pub struct BuildBotLocaleOutput {
 }
 impl BuildBotLocaleOutput {
     /// <p>The identifier of the specified bot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that was built. This is only the draft version of the bot.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale specified of where the bot can be used.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The bot's build status. When the status is <code>ReadyExpressTesting</code> you can test the bot using the utterances defined for the intents and slot types. When the status is <code>Built</code>, the bot is ready for use and can be tested using any utterance.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<& crate::model::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
     /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
-    pub fn last_build_submitted_date_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_build_submitted_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_build_submitted_date_time.as_ref()
     }
 }
 /// See [`BuildBotLocaleOutput`](crate::output::BuildBotLocaleOutput).
 pub mod build_bot_locale_output {
-
+    
     /// A builder for [`BuildBotLocaleOutput`](crate::output::BuildBotLocaleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11687,8 +10704,7 @@ pub mod build_bot_locale_output {
         }
         /// <p>The identifier of the specified bot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that was built. This is only the draft version of the bot.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11697,8 +10713,7 @@ pub mod build_bot_locale_output {
         }
         /// <p>The version of the bot that was built. This is only the draft version of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The language and locale specified of where the bot can be used.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11707,8 +10722,7 @@ pub mod build_bot_locale_output {
         }
         /// <p>The language and locale specified of where the bot can be used.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The bot's build status. When the status is <code>ReadyExpressTesting</code> you can test the bot using the utterances defined for the intents and slot types. When the status is <code>Built</code>, the bot is ready for use and can be tested using any utterance.</p>
         pub fn bot_locale_status(mut self, input: crate::model::BotLocaleStatus) -> Self {
@@ -11716,12 +10730,8 @@ pub mod build_bot_locale_output {
             self
         }
         /// <p>The bot's build status. When the status is <code>ReadyExpressTesting</code> you can test the bot using the utterances defined for the intents and slot types. When the status is <code>Built</code>, the bot is ready for use and can be tested using any utterance.</p>
-        pub fn set_bot_locale_status(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleStatus>,
-        ) -> Self {
-            self.bot_locale_status = input;
-            self
+        pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::model::BotLocaleStatus>) -> Self {
+            self.bot_locale_status = input; self
         }
         /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
         pub fn last_build_submitted_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11729,24 +10739,27 @@ pub mod build_bot_locale_output {
             self
         }
         /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
-        pub fn set_last_build_submitted_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_build_submitted_date_time = input;
-            self
+        pub fn set_last_build_submitted_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_build_submitted_date_time = input; self
         }
         /// Consumes the builder and constructs a [`BuildBotLocaleOutput`](crate::output::BuildBotLocaleOutput).
         pub fn build(self) -> crate::output::BuildBotLocaleOutput {
             crate::output::BuildBotLocaleOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_locale_status: self.bot_locale_status,
-                last_build_submitted_date_time: self.last_build_submitted_date_time,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_locale_status: self.bot_locale_status
+                ,
+                last_build_submitted_date_time: self.last_build_submitted_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BuildBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`BuildBotLocaleOutput`](crate::output::BuildBotLocaleOutput).
@@ -11758,7 +10771,7 @@ impl BuildBotLocaleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateCustomVocabularyItemOutput {
+pub struct BatchUpdateCustomVocabularyItemOutput  {
     /// <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -11777,39 +10790,37 @@ pub struct BatchUpdateCustomVocabularyItemOutput {
 }
 impl BatchUpdateCustomVocabularyItemOutput {
     /// <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The bot version of the bot to the batch update response for the custom vocabulary item.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale identifier of the bot to the batch update response for the custom vocabulary item.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The errors of the action to batch update response for the custom vocabulary item.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::FailedCustomVocabularyItem]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::FailedCustomVocabularyItem]> {
         self.errors.as_deref()
     }
     /// <p>The resources of the action to batch update response for the custom vocabulary item.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::CustomVocabularyItem]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::CustomVocabularyItem]> {
         self.resources.as_deref()
     }
 }
 /// See [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput).
 pub mod batch_update_custom_vocabulary_item_output {
-
+    
     /// A builder for [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
-        pub(crate) resources:
-            std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
     }
     impl Builder {
         /// <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
@@ -11819,8 +10830,7 @@ pub mod batch_update_custom_vocabulary_item_output {
         }
         /// <p>The unique identifier of the bot to the batch update response for the custom vocabulary item.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The bot version of the bot to the batch update response for the custom vocabulary item.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11829,8 +10839,7 @@ pub mod batch_update_custom_vocabulary_item_output {
         }
         /// <p>The bot version of the bot to the batch update response for the custom vocabulary item.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The locale identifier of the bot to the batch update response for the custom vocabulary item.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11839,8 +10848,7 @@ pub mod batch_update_custom_vocabulary_item_output {
         }
         /// <p>The locale identifier of the bot to the batch update response for the custom vocabulary item.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -11849,17 +10857,13 @@ pub mod batch_update_custom_vocabulary_item_output {
         /// <p>The errors of the action to batch update response for the custom vocabulary item.</p>
         pub fn errors(mut self, input: crate::model::FailedCustomVocabularyItem) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>The errors of the action to batch update response for the custom vocabulary item.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>) -> Self {
+            self.errors = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -11868,29 +10872,32 @@ pub mod batch_update_custom_vocabulary_item_output {
         /// <p>The resources of the action to batch update response for the custom vocabulary item.</p>
         pub fn resources(mut self, input: crate::model::CustomVocabularyItem) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>The resources of the action to batch update response for the custom vocabulary item.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>) -> Self {
+            self.resources = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput).
         pub fn build(self) -> crate::output::BatchUpdateCustomVocabularyItemOutput {
             crate::output::BatchUpdateCustomVocabularyItemOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                errors: self.errors,
-                resources: self.resources,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                errors: self.errors
+                ,
+                resources: self.resources
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateCustomVocabularyItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateCustomVocabularyItemOutput`](crate::output::BatchUpdateCustomVocabularyItemOutput).
@@ -11902,7 +10909,7 @@ impl BatchUpdateCustomVocabularyItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteCustomVocabularyItemOutput {
+pub struct BatchDeleteCustomVocabularyItemOutput  {
     /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -11921,39 +10928,37 @@ pub struct BatchDeleteCustomVocabularyItemOutput {
 }
 impl BatchDeleteCustomVocabularyItemOutput {
     /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::FailedCustomVocabularyItem]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::FailedCustomVocabularyItem]> {
         self.errors.as_deref()
     }
     /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::CustomVocabularyItem]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::CustomVocabularyItem]> {
         self.resources.as_deref()
     }
 }
 /// See [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput).
 pub mod batch_delete_custom_vocabulary_item_output {
-
+    
     /// A builder for [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
-        pub(crate) resources:
-            std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
     }
     impl Builder {
         /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
@@ -11963,8 +10968,7 @@ pub mod batch_delete_custom_vocabulary_item_output {
         }
         /// <p>The unique identifier of the bot to batch delete response for the custom vocabulary item.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11973,8 +10977,7 @@ pub mod batch_delete_custom_vocabulary_item_output {
         }
         /// <p>The version of the bot to batch delete response for the custom vocabulary item.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11983,8 +10986,7 @@ pub mod batch_delete_custom_vocabulary_item_output {
         }
         /// <p>The locale identifier of the bot to batch delete response for the custom vocabulary item.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -11993,17 +10995,13 @@ pub mod batch_delete_custom_vocabulary_item_output {
         /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
         pub fn errors(mut self, input: crate::model::FailedCustomVocabularyItem) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>The errors of the action to batch delete response for the custom vocabulary item.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>) -> Self {
+            self.errors = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -12012,29 +11010,32 @@ pub mod batch_delete_custom_vocabulary_item_output {
         /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
         pub fn resources(mut self, input: crate::model::CustomVocabularyItem) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>The resources of the action to batch delete response for the custom vocabulary item.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>) -> Self {
+            self.resources = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput).
         pub fn build(self) -> crate::output::BatchDeleteCustomVocabularyItemOutput {
             crate::output::BatchDeleteCustomVocabularyItemOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                errors: self.errors,
-                resources: self.resources,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                errors: self.errors
+                ,
+                resources: self.resources
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteCustomVocabularyItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteCustomVocabularyItemOutput`](crate::output::BatchDeleteCustomVocabularyItemOutput).
@@ -12046,7 +11047,7 @@ impl BatchDeleteCustomVocabularyItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateCustomVocabularyItemOutput {
+pub struct BatchCreateCustomVocabularyItemOutput  {
     /// <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -12065,39 +11066,37 @@ pub struct BatchCreateCustomVocabularyItemOutput {
 }
 impl BatchCreateCustomVocabularyItemOutput {
     /// <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The bot version of the bot to batch create the custom vocabulary item response for.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item response for.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The errors of the action to batch create the custom vocabulary item response for a bot.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::FailedCustomVocabularyItem]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::FailedCustomVocabularyItem]> {
         self.errors.as_deref()
     }
     /// <p>The resources of the action to batch create the custom vocabulary item response for a bot.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::CustomVocabularyItem]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::CustomVocabularyItem]> {
         self.resources.as_deref()
     }
 }
 /// See [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput).
 pub mod batch_create_custom_vocabulary_item_output {
-
+    
     /// A builder for [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
-        pub(crate) resources:
-            std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
+        pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
     }
     impl Builder {
         /// <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
@@ -12107,8 +11106,7 @@ pub mod batch_create_custom_vocabulary_item_output {
         }
         /// <p>The unique identifier of the bot to batch create response for the custom vocabulary item.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The bot version of the bot to batch create the custom vocabulary item response for.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12117,8 +11115,7 @@ pub mod batch_create_custom_vocabulary_item_output {
         }
         /// <p>The bot version of the bot to batch create the custom vocabulary item response for.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item response for.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12127,8 +11124,7 @@ pub mod batch_create_custom_vocabulary_item_output {
         }
         /// <p>The unique locale identifier of the bot to batch create the custom vocabulary item response for.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -12137,17 +11133,13 @@ pub mod batch_create_custom_vocabulary_item_output {
         /// <p>The errors of the action to batch create the custom vocabulary item response for a bot.</p>
         pub fn errors(mut self, input: crate::model::FailedCustomVocabularyItem) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>The errors of the action to batch create the custom vocabulary item response for a bot.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedCustomVocabularyItem>>) -> Self {
+            self.errors = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -12156,29 +11148,32 @@ pub mod batch_create_custom_vocabulary_item_output {
         /// <p>The resources of the action to batch create the custom vocabulary item response for a bot.</p>
         pub fn resources(mut self, input: crate::model::CustomVocabularyItem) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>The resources of the action to batch create the custom vocabulary item response for a bot.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomVocabularyItem>>) -> Self {
+            self.resources = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput).
         pub fn build(self) -> crate::output::BatchCreateCustomVocabularyItemOutput {
             crate::output::BatchCreateCustomVocabularyItemOutput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                errors: self.errors,
-                resources: self.resources,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                errors: self.errors
+                ,
+                resources: self.resources
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCreateCustomVocabularyItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateCustomVocabularyItemOutput`](crate::output::BatchCreateCustomVocabularyItemOutput).
@@ -12186,3 +11181,4 @@ impl BatchCreateCustomVocabularyItemOutput {
         crate::output::batch_create_custom_vocabulary_item_output::Builder::default()
     }
 }
+

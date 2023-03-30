@@ -3,7 +3,7 @@
 /// <p> A tag is a label consisting of a user-defined key and value. The form for tags is {"Key", "Value"} </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p> The value portion of tag. Tag values are case sensitive. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod tag {
         }
         /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p> The value portion of tag. Tag values are case sensitive. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod tag {
         }
         /// <p> The value portion of tag. Tag values are case sensitive. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -73,9 +75,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
@@ -100,22 +102,14 @@ impl Tag {
 /// Specifically, when `jobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -128,7 +122,7 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -138,17 +132,17 @@ impl std::convert::From<&str> for JobStatus {
             "FAILED" => JobStatus::Failed,
             "IN_PROGRESS" => JobStatus::InProgress,
             "SUBMITTED" => JobStatus::Submitted,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobStatus::from(s))
+                }
+            }
 impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -158,17 +152,13 @@ impl JobStatus {
             JobStatus::Failed => "FAILED",
             JobStatus::InProgress => "IN_PROGRESS",
             JobStatus::Submitted => "SUBMITTED",
-            JobStatus::Unknown(value) => value.as_str(),
+            JobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COMPLETED",
-            "COMPLETED_WITH_ERRORS",
-            "FAILED",
-            "IN_PROGRESS",
-            "SUBMITTED",
+            "COMPLETED", "COMPLETED_WITH_ERRORS", "FAILED", "IN_PROGRESS", "SUBMITTED"
         ]
     }
 }
@@ -198,14 +188,8 @@ impl OutputDataConfig {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`S3Configuration`](crate::model::OutputDataConfig::S3Configuration), extracting the inner [`S3Configuration`](crate::model::S3Configuration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_configuration(
-        &self,
-    ) -> std::result::Result<&crate::model::S3Configuration, &Self> {
-        if let OutputDataConfig::S3Configuration(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_s3_configuration(&self) -> std::result::Result<&crate::model::S3Configuration, &Self> {
+        if let OutputDataConfig::S3Configuration(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3Configuration`](crate::model::OutputDataConfig::S3Configuration).
     pub fn is_s3_configuration(&self) -> bool {
@@ -220,7 +204,7 @@ impl OutputDataConfig {
 /// <p> The configuration of the S3 bucket for either an import or export job. This includes assigning permissions for access. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Configuration {
+pub struct S3Configuration  {
     /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -230,17 +214,17 @@ pub struct S3Configuration {
 }
 impl S3Configuration {
     /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p> The KMS key ID used to access the S3 bucket. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`S3Configuration`](crate::model::S3Configuration).
 pub mod s3_configuration {
-
+    
     /// A builder for [`S3Configuration`](crate::model::S3Configuration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -255,8 +239,7 @@ pub mod s3_configuration {
         }
         /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
+            self.s3_uri = input; self
         }
         /// <p> The KMS key ID used to access the S3 bucket. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,17 +248,20 @@ pub mod s3_configuration {
         }
         /// <p> The KMS key ID used to access the S3 bucket. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`S3Configuration`](crate::model::S3Configuration).
         pub fn build(self) -> crate::model::S3Configuration {
             crate::model::S3Configuration {
-                s3_uri: self.s3_uri,
-                kms_key_id: self.kms_key_id,
+                s3_uri: self.s3_uri
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Configuration {
     /// Creates a new builder-style object to manufacture [`S3Configuration`](crate::model::S3Configuration).
@@ -305,11 +291,7 @@ impl InputDataConfig {
     /// Tries to convert the enum instance into [`S3Uri`](crate::model::InputDataConfig::S3Uri), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_uri(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let InputDataConfig::S3Uri(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let InputDataConfig::S3Uri(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3Uri`](crate::model::InputDataConfig::S3Uri).
     pub fn is_s3_uri(&self) -> bool {
@@ -324,7 +306,7 @@ impl InputDataConfig {
 /// <p>Displays the properties of the import job, including the ID, Arn, Name, and the status of the Data Store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportJobProperties {
+pub struct ImportJobProperties  {
     /// <p>The AWS-generated id number for the Import job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -358,49 +340,49 @@ pub struct ImportJobProperties {
 }
 impl ImportJobProperties {
     /// <p>The AWS-generated id number for the Import job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The user-generated name for an Import job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the Import job was completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The datastore id used when the Import job was created. </p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
-    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<& crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn job_output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+    pub fn job_output_data_config(&self) -> std::option::Option<& crate::model::OutputDataConfig> {
         self.job_output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ImportJobProperties`](crate::model::ImportJobProperties).
 pub mod import_job_properties {
-
+    
     /// A builder for [`ImportJobProperties`](crate::model::ImportJobProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -423,8 +405,7 @@ pub mod import_job_properties {
         }
         /// <p>The AWS-generated id number for the Import job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The user-generated name for an Import job.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -433,8 +414,7 @@ pub mod import_job_properties {
         }
         /// <p>The user-generated name for an Import job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -442,12 +422,8 @@ pub mod import_job_properties {
             self
         }
         /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The time that the Import job was submitted for processing.</p>
         pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -455,12 +431,8 @@ pub mod import_job_properties {
             self
         }
         /// <p>The time that the Import job was submitted for processing.</p>
-        pub fn set_submit_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.submit_time = input;
-            self
+        pub fn set_submit_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.submit_time = input; self
         }
         /// <p>The time that the Import job was completed.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -468,12 +440,8 @@ pub mod import_job_properties {
             self
         }
         /// <p>The time that the Import job was completed.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The datastore id used when the Import job was created. </p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -482,8 +450,7 @@ pub mod import_job_properties {
         }
         /// <p>The datastore id used when the Import job was created. </p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.datastore_id = input;
-            self
+            self.datastore_id = input; self
         }
         /// <p>The input data configuration that was supplied when the Import job was created.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
@@ -491,12 +458,8 @@ pub mod import_job_properties {
             self
         }
         /// <p>The input data configuration that was supplied when the Import job was created.</p>
-        pub fn set_input_data_config(
-            mut self,
-            input: std::option::Option<crate::model::InputDataConfig>,
-        ) -> Self {
-            self.input_data_config = input;
-            self
+        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
+            self.input_data_config = input; self
         }
         /// <p>The output data configuration that was supplied when the export job was created.</p>
         pub fn job_output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
@@ -504,12 +467,8 @@ pub mod import_job_properties {
             self
         }
         /// <p>The output data configuration that was supplied when the export job was created.</p>
-        pub fn set_job_output_data_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputDataConfig>,
-        ) -> Self {
-            self.job_output_data_config = input;
-            self
+        pub fn set_job_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
+            self.job_output_data_config = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -517,12 +476,8 @@ pub mod import_job_properties {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
-        pub fn set_data_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_access_role_arn = input;
-            self
+        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_access_role_arn = input; self
         }
         /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -531,25 +486,36 @@ pub mod import_job_properties {
         }
         /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ImportJobProperties`](crate::model::ImportJobProperties).
         pub fn build(self) -> crate::model::ImportJobProperties {
             crate::model::ImportJobProperties {
-                job_id: self.job_id,
-                job_name: self.job_name,
-                job_status: self.job_status,
-                submit_time: self.submit_time,
-                end_time: self.end_time,
-                datastore_id: self.datastore_id,
-                input_data_config: self.input_data_config,
-                job_output_data_config: self.job_output_data_config,
-                data_access_role_arn: self.data_access_role_arn,
-                message: self.message,
+                job_id: self.job_id
+                ,
+                job_name: self.job_name
+                ,
+                job_status: self.job_status
+                ,
+                submit_time: self.submit_time
+                ,
+                end_time: self.end_time
+                ,
+                datastore_id: self.datastore_id
+                ,
+                input_data_config: self.input_data_config
+                ,
+                job_output_data_config: self.job_output_data_config
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportJobProperties {
     /// Creates a new builder-style object to manufacture [`ImportJobProperties`](crate::model::ImportJobProperties).
@@ -561,7 +527,7 @@ impl ImportJobProperties {
 /// <p>The properties of a FHIR export job, including the ID, ARN, name, and the status of the job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportJobProperties {
+pub struct ExportJobProperties  {
     /// <p>The AWS generated ID for an export job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -592,45 +558,45 @@ pub struct ExportJobProperties {
 }
 impl ExportJobProperties {
     /// <p>The AWS generated ID for an export job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The user generated name for an export job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The time an export job was initiated.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time an export job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<& crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>An explanation of any errors that may have occurred during the export job.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ExportJobProperties`](crate::model::ExportJobProperties).
 pub mod export_job_properties {
-
+    
     /// A builder for [`ExportJobProperties`](crate::model::ExportJobProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -652,8 +618,7 @@ pub mod export_job_properties {
         }
         /// <p>The AWS generated ID for an export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The user generated name for an export job.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -662,8 +627,7 @@ pub mod export_job_properties {
         }
         /// <p>The user generated name for an export job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -671,12 +635,8 @@ pub mod export_job_properties {
             self
         }
         /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The time an export job was initiated.</p>
         pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -684,12 +644,8 @@ pub mod export_job_properties {
             self
         }
         /// <p>The time an export job was initiated.</p>
-        pub fn set_submit_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.submit_time = input;
-            self
+        pub fn set_submit_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.submit_time = input; self
         }
         /// <p>The time an export job completed.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -697,12 +653,8 @@ pub mod export_job_properties {
             self
         }
         /// <p>The time an export job completed.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -711,8 +663,7 @@ pub mod export_job_properties {
         }
         /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.datastore_id = input;
-            self
+            self.datastore_id = input; self
         }
         /// <p>The output data configuration that was supplied when the export job was created.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
@@ -720,12 +671,8 @@ pub mod export_job_properties {
             self
         }
         /// <p>The output data configuration that was supplied when the export job was created.</p>
-        pub fn set_output_data_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputDataConfig>,
-        ) -> Self {
-            self.output_data_config = input;
-            self
+        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
+            self.output_data_config = input; self
         }
         /// <p>The Amazon Resource Name used during the initiation of the job.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -733,12 +680,8 @@ pub mod export_job_properties {
             self
         }
         /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-        pub fn set_data_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_access_role_arn = input;
-            self
+        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_access_role_arn = input; self
         }
         /// <p>An explanation of any errors that may have occurred during the export job.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -747,24 +690,34 @@ pub mod export_job_properties {
         }
         /// <p>An explanation of any errors that may have occurred during the export job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExportJobProperties`](crate::model::ExportJobProperties).
         pub fn build(self) -> crate::model::ExportJobProperties {
             crate::model::ExportJobProperties {
-                job_id: self.job_id,
-                job_name: self.job_name,
-                job_status: self.job_status,
-                submit_time: self.submit_time,
-                end_time: self.end_time,
-                datastore_id: self.datastore_id,
-                output_data_config: self.output_data_config,
-                data_access_role_arn: self.data_access_role_arn,
-                message: self.message,
+                job_id: self.job_id
+                ,
+                job_name: self.job_name
+                ,
+                job_status: self.job_status
+                ,
+                submit_time: self.submit_time
+                ,
+                end_time: self.end_time
+                ,
+                datastore_id: self.datastore_id
+                ,
+                output_data_config: self.output_data_config
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportJobProperties {
     /// Creates a new builder-style object to manufacture [`ExportJobProperties`](crate::model::ExportJobProperties).
@@ -776,7 +729,7 @@ impl ExportJobProperties {
 /// <p>Displays the properties of the Data Store, including the ID, Arn, name, and the status of the Data Store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatastoreProperties {
+pub struct DatastoreProperties  {
     /// <p>The AWS-generated ID number for the Data Store.</p>
     #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
@@ -807,45 +760,45 @@ pub struct DatastoreProperties {
 }
 impl DatastoreProperties {
     /// <p>The AWS-generated ID number for the Data Store.</p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The Amazon Resource Name used in the creation of the Data Store.</p>
-    pub fn datastore_arn(&self) -> std::option::Option<&str> {
+    pub fn datastore_arn(&self) -> std::option::Option<& str> {
         self.datastore_arn.as_deref()
     }
     /// <p>The user-generated name for the Data Store.</p>
-    pub fn datastore_name(&self) -> std::option::Option<&str> {
+    pub fn datastore_name(&self) -> std::option::Option<& str> {
         self.datastore_name.as_deref()
     }
     /// <p>The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.</p>
-    pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+    pub fn datastore_status(&self) -> std::option::Option<& crate::model::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
     /// <p>The time that a Data Store was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The FHIR version. Only R4 version data is supported.</p>
-    pub fn datastore_type_version(&self) -> std::option::Option<&crate::model::FhirVersion> {
+    pub fn datastore_type_version(&self) -> std::option::Option<& crate::model::FhirVersion> {
         self.datastore_type_version.as_ref()
     }
     /// <p>The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the endpoint URL.</p>
-    pub fn datastore_endpoint(&self) -> std::option::Option<&str> {
+    pub fn datastore_endpoint(&self) -> std::option::Option<& str> {
         self.datastore_endpoint.as_deref()
     }
     /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
-    pub fn sse_configuration(&self) -> std::option::Option<&crate::model::SseConfiguration> {
+    pub fn sse_configuration(&self) -> std::option::Option<& crate::model::SseConfiguration> {
         self.sse_configuration.as_ref()
     }
     /// <p>The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.</p>
-    pub fn preload_data_config(&self) -> std::option::Option<&crate::model::PreloadDataConfig> {
+    pub fn preload_data_config(&self) -> std::option::Option<& crate::model::PreloadDataConfig> {
         self.preload_data_config.as_ref()
     }
 }
 /// See [`DatastoreProperties`](crate::model::DatastoreProperties).
 pub mod datastore_properties {
-
+    
     /// A builder for [`DatastoreProperties`](crate::model::DatastoreProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -867,8 +820,7 @@ pub mod datastore_properties {
         }
         /// <p>The AWS-generated ID number for the Data Store.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.datastore_id = input;
-            self
+            self.datastore_id = input; self
         }
         /// <p>The Amazon Resource Name used in the creation of the Data Store.</p>
         pub fn datastore_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -876,12 +828,8 @@ pub mod datastore_properties {
             self
         }
         /// <p>The Amazon Resource Name used in the creation of the Data Store.</p>
-        pub fn set_datastore_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datastore_arn = input;
-            self
+        pub fn set_datastore_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_arn = input; self
         }
         /// <p>The user-generated name for the Data Store.</p>
         pub fn datastore_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -889,12 +837,8 @@ pub mod datastore_properties {
             self
         }
         /// <p>The user-generated name for the Data Store.</p>
-        pub fn set_datastore_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datastore_name = input;
-            self
+        pub fn set_datastore_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_name = input; self
         }
         /// <p>The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.</p>
         pub fn datastore_status(mut self, input: crate::model::DatastoreStatus) -> Self {
@@ -902,12 +846,8 @@ pub mod datastore_properties {
             self
         }
         /// <p>The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.</p>
-        pub fn set_datastore_status(
-            mut self,
-            input: std::option::Option<crate::model::DatastoreStatus>,
-        ) -> Self {
-            self.datastore_status = input;
-            self
+        pub fn set_datastore_status(mut self, input: std::option::Option<crate::model::DatastoreStatus>) -> Self {
+            self.datastore_status = input; self
         }
         /// <p>The time that a Data Store was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -915,12 +855,8 @@ pub mod datastore_properties {
             self
         }
         /// <p>The time that a Data Store was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The FHIR version. Only R4 version data is supported.</p>
         pub fn datastore_type_version(mut self, input: crate::model::FhirVersion) -> Self {
@@ -928,12 +864,8 @@ pub mod datastore_properties {
             self
         }
         /// <p>The FHIR version. Only R4 version data is supported.</p>
-        pub fn set_datastore_type_version(
-            mut self,
-            input: std::option::Option<crate::model::FhirVersion>,
-        ) -> Self {
-            self.datastore_type_version = input;
-            self
+        pub fn set_datastore_type_version(mut self, input: std::option::Option<crate::model::FhirVersion>) -> Self {
+            self.datastore_type_version = input; self
         }
         /// <p>The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the endpoint URL.</p>
         pub fn datastore_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -941,12 +873,8 @@ pub mod datastore_properties {
             self
         }
         /// <p>The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the endpoint URL.</p>
-        pub fn set_datastore_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datastore_endpoint = input;
-            self
+        pub fn set_datastore_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_endpoint = input; self
         }
         /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
         pub fn sse_configuration(mut self, input: crate::model::SseConfiguration) -> Self {
@@ -954,12 +882,8 @@ pub mod datastore_properties {
             self
         }
         /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
-        pub fn set_sse_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SseConfiguration>,
-        ) -> Self {
-            self.sse_configuration = input;
-            self
+        pub fn set_sse_configuration(mut self, input: std::option::Option<crate::model::SseConfiguration>) -> Self {
+            self.sse_configuration = input; self
         }
         /// <p>The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.</p>
         pub fn preload_data_config(mut self, input: crate::model::PreloadDataConfig) -> Self {
@@ -967,28 +891,35 @@ pub mod datastore_properties {
             self
         }
         /// <p>The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.</p>
-        pub fn set_preload_data_config(
-            mut self,
-            input: std::option::Option<crate::model::PreloadDataConfig>,
-        ) -> Self {
-            self.preload_data_config = input;
-            self
+        pub fn set_preload_data_config(mut self, input: std::option::Option<crate::model::PreloadDataConfig>) -> Self {
+            self.preload_data_config = input; self
         }
         /// Consumes the builder and constructs a [`DatastoreProperties`](crate::model::DatastoreProperties).
         pub fn build(self) -> crate::model::DatastoreProperties {
             crate::model::DatastoreProperties {
-                datastore_id: self.datastore_id,
-                datastore_arn: self.datastore_arn,
-                datastore_name: self.datastore_name,
-                datastore_status: self.datastore_status,
-                created_at: self.created_at,
-                datastore_type_version: self.datastore_type_version,
-                datastore_endpoint: self.datastore_endpoint,
-                sse_configuration: self.sse_configuration,
-                preload_data_config: self.preload_data_config,
+                datastore_id: self.datastore_id
+                ,
+                datastore_arn: self.datastore_arn
+                ,
+                datastore_name: self.datastore_name
+                ,
+                datastore_status: self.datastore_status
+                ,
+                created_at: self.created_at
+                ,
+                datastore_type_version: self.datastore_type_version
+                ,
+                datastore_endpoint: self.datastore_endpoint
+                ,
+                sse_configuration: self.sse_configuration
+                ,
+                preload_data_config: self.preload_data_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DatastoreProperties {
     /// Creates a new builder-style object to manufacture [`DatastoreProperties`](crate::model::DatastoreProperties).
@@ -1000,20 +931,20 @@ impl DatastoreProperties {
 /// <p> The input properties for the preloaded Data Store. Only data preloaded from Synthea is supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PreloadDataConfig {
+pub struct PreloadDataConfig  {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     #[doc(hidden)]
     pub preload_data_type: std::option::Option<crate::model::PreloadDataType>,
 }
 impl PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-    pub fn preload_data_type(&self) -> std::option::Option<&crate::model::PreloadDataType> {
+    pub fn preload_data_type(&self) -> std::option::Option<& crate::model::PreloadDataType> {
         self.preload_data_type.as_ref()
     }
 }
 /// See [`PreloadDataConfig`](crate::model::PreloadDataConfig).
 pub mod preload_data_config {
-
+    
     /// A builder for [`PreloadDataConfig`](crate::model::PreloadDataConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1026,20 +957,19 @@ pub mod preload_data_config {
             self
         }
         /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-        pub fn set_preload_data_type(
-            mut self,
-            input: std::option::Option<crate::model::PreloadDataType>,
-        ) -> Self {
-            self.preload_data_type = input;
-            self
+        pub fn set_preload_data_type(mut self, input: std::option::Option<crate::model::PreloadDataType>) -> Self {
+            self.preload_data_type = input; self
         }
         /// Consumes the builder and constructs a [`PreloadDataConfig`](crate::model::PreloadDataConfig).
         pub fn build(self) -> crate::model::PreloadDataConfig {
             crate::model::PreloadDataConfig {
-                preload_data_type: self.preload_data_type,
+                preload_data_type: self.preload_data_type
+                ,
             }
         }
     }
+    
+    
 }
 impl PreloadDataConfig {
     /// Creates a new builder-style object to manufacture [`PreloadDataConfig`](crate::model::PreloadDataConfig).
@@ -1054,9 +984,9 @@ impl PreloadDataConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let preloaddatatype = unimplemented!();
 /// match preloaddatatype {
@@ -1077,54 +1007,48 @@ impl PreloadDataConfig {
 /// Specifically, when `preloaddatatype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PreloadDataType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PreloadDataType {
     #[allow(missing_docs)] // documentation missing in model
     Synthea,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PreloadDataType {
     fn from(s: &str) -> Self {
         match s {
             "SYNTHEA" => PreloadDataType::Synthea,
-            other => PreloadDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PreloadDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PreloadDataType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PreloadDataType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PreloadDataType::from(s))
+                }
+            }
 impl PreloadDataType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PreloadDataType::Synthea => "SYNTHEA",
-            PreloadDataType::Unknown(value) => value.as_str(),
+            PreloadDataType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SYNTHEA"]
+        &[
+            "SYNTHEA"
+        ]
     }
 }
 impl AsRef<str> for PreloadDataType {
@@ -1136,20 +1060,20 @@ impl AsRef<str> for PreloadDataType {
 /// <p> The server-side encryption key configuration for a customer provided encryption key. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SseConfiguration {
+pub struct SseConfiguration  {
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
     #[doc(hidden)]
     pub kms_encryption_config: std::option::Option<crate::model::KmsEncryptionConfig>,
 }
 impl SseConfiguration {
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
-    pub fn kms_encryption_config(&self) -> std::option::Option<&crate::model::KmsEncryptionConfig> {
+    pub fn kms_encryption_config(&self) -> std::option::Option<& crate::model::KmsEncryptionConfig> {
         self.kms_encryption_config.as_ref()
     }
 }
 /// See [`SseConfiguration`](crate::model::SseConfiguration).
 pub mod sse_configuration {
-
+    
     /// A builder for [`SseConfiguration`](crate::model::SseConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1162,20 +1086,19 @@ pub mod sse_configuration {
             self
         }
         /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
-        pub fn set_kms_encryption_config(
-            mut self,
-            input: std::option::Option<crate::model::KmsEncryptionConfig>,
-        ) -> Self {
-            self.kms_encryption_config = input;
-            self
+        pub fn set_kms_encryption_config(mut self, input: std::option::Option<crate::model::KmsEncryptionConfig>) -> Self {
+            self.kms_encryption_config = input; self
         }
         /// Consumes the builder and constructs a [`SseConfiguration`](crate::model::SseConfiguration).
         pub fn build(self) -> crate::model::SseConfiguration {
             crate::model::SseConfiguration {
-                kms_encryption_config: self.kms_encryption_config,
+                kms_encryption_config: self.kms_encryption_config
+                ,
             }
         }
     }
+    
+    
 }
 impl SseConfiguration {
     /// Creates a new builder-style object to manufacture [`SseConfiguration`](crate::model::SseConfiguration).
@@ -1187,7 +1110,7 @@ impl SseConfiguration {
 /// <p> The customer-managed-key(CMK) used when creating a Data Store. If a customer owned key is not specified, an AWS owned key will be used for encryption. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsEncryptionConfig {
+pub struct KmsEncryptionConfig  {
     /// <p> The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs. </p>
     #[doc(hidden)]
     pub cmk_type: std::option::Option<crate::model::CmkType>,
@@ -1197,17 +1120,17 @@ pub struct KmsEncryptionConfig {
 }
 impl KmsEncryptionConfig {
     /// <p> The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs. </p>
-    pub fn cmk_type(&self) -> std::option::Option<&crate::model::CmkType> {
+    pub fn cmk_type(&self) -> std::option::Option<& crate::model::CmkType> {
         self.cmk_type.as_ref()
     }
     /// <p> The KMS encryption key id/alias used to encrypt the Data Store contents at rest. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
 pub mod kms_encryption_config {
-
+    
     /// A builder for [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1222,8 +1145,7 @@ pub mod kms_encryption_config {
         }
         /// <p> The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs. </p>
         pub fn set_cmk_type(mut self, input: std::option::Option<crate::model::CmkType>) -> Self {
-            self.cmk_type = input;
-            self
+            self.cmk_type = input; self
         }
         /// <p> The KMS encryption key id/alias used to encrypt the Data Store contents at rest. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1232,17 +1154,20 @@ pub mod kms_encryption_config {
         }
         /// <p> The KMS encryption key id/alias used to encrypt the Data Store contents at rest. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
         pub fn build(self) -> crate::model::KmsEncryptionConfig {
             crate::model::KmsEncryptionConfig {
-                cmk_type: self.cmk_type,
-                kms_key_id: self.kms_key_id,
+                cmk_type: self.cmk_type
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsEncryptionConfig {
     /// Creates a new builder-style object to manufacture [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
@@ -1257,9 +1182,9 @@ impl KmsEncryptionConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cmktype = unimplemented!();
 /// match cmktype {
@@ -1281,58 +1206,52 @@ impl KmsEncryptionConfig {
 /// Specifically, when `cmktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CmkType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CmkType {
     #[allow(missing_docs)] // documentation missing in model
     AoCmk,
     #[allow(missing_docs)] // documentation missing in model
     CmCmk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CmkType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_OWNED_KMS_KEY" => CmkType::AoCmk,
             "CUSTOMER_MANAGED_KMS_KEY" => CmkType::CmCmk,
-            other => CmkType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CmkType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CmkType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmkType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CmkType::from(s))
+                }
+            }
 impl CmkType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CmkType::AoCmk => "AWS_OWNED_KMS_KEY",
             CmkType::CmCmk => "CUSTOMER_MANAGED_KMS_KEY",
-            CmkType::Unknown(value) => value.as_str(),
+            CmkType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_OWNED_KMS_KEY", "CUSTOMER_MANAGED_KMS_KEY"]
+        &[
+            "AWS_OWNED_KMS_KEY", "CUSTOMER_MANAGED_KMS_KEY"
+        ]
     }
 }
 impl AsRef<str> for CmkType {
@@ -1347,9 +1266,9 @@ impl AsRef<str> for CmkType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fhirversion = unimplemented!();
 /// match fhirversion {
@@ -1370,54 +1289,48 @@ impl AsRef<str> for CmkType {
 /// Specifically, when `fhirversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FhirVersion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FhirVersion {
     #[allow(missing_docs)] // documentation missing in model
     R4,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FhirVersion {
     fn from(s: &str) -> Self {
         match s {
             "R4" => FhirVersion::R4,
-            other => FhirVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FhirVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FhirVersion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FhirVersion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FhirVersion::from(s))
+                }
+            }
 impl FhirVersion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FhirVersion::R4 => "R4",
-            FhirVersion::Unknown(value) => value.as_str(),
+            FhirVersion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["R4"]
+        &[
+            "R4"
+        ]
     }
 }
 impl AsRef<str> for FhirVersion {
@@ -1432,9 +1345,9 @@ impl AsRef<str> for FhirVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datastorestatus = unimplemented!();
 /// match datastorestatus {
@@ -1458,22 +1371,14 @@ impl AsRef<str> for FhirVersion {
 /// Specifically, when `datastorestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatastoreStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatastoreStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1484,7 +1389,7 @@ pub enum DatastoreStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatastoreStatus {
     fn from(s: &str) -> Self {
@@ -1493,17 +1398,17 @@ impl std::convert::From<&str> for DatastoreStatus {
             "CREATING" => DatastoreStatus::Creating,
             "DELETED" => DatastoreStatus::Deleted,
             "DELETING" => DatastoreStatus::Deleting,
-            other => DatastoreStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DatastoreStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DatastoreStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatastoreStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatastoreStatus::from(s))
+                }
+            }
 impl DatastoreStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1512,12 +1417,14 @@ impl DatastoreStatus {
             DatastoreStatus::Creating => "CREATING",
             DatastoreStatus::Deleted => "DELETED",
             DatastoreStatus::Deleting => "DELETING",
-            DatastoreStatus::Unknown(value) => value.as_str(),
+            DatastoreStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETED", "DELETING"]
+        &[
+            "ACTIVE", "CREATING", "DELETED", "DELETING"
+        ]
     }
 }
 impl AsRef<str> for DatastoreStatus {
@@ -1529,7 +1436,7 @@ impl AsRef<str> for DatastoreStatus {
 /// <p>The filters applied to Data Store query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatastoreFilter {
+pub struct DatastoreFilter  {
     /// <p>Allows the user to filter Data Store results by name.</p>
     #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
@@ -1545,25 +1452,25 @@ pub struct DatastoreFilter {
 }
 impl DatastoreFilter {
     /// <p>Allows the user to filter Data Store results by name.</p>
-    pub fn datastore_name(&self) -> std::option::Option<&str> {
+    pub fn datastore_name(&self) -> std::option::Option<& str> {
         self.datastore_name.as_deref()
     }
     /// <p>Allows the user to filter Data Store results by status.</p>
-    pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+    pub fn datastore_status(&self) -> std::option::Option<& crate::model::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created before the specified date will be included in the results. </p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified date will be included in the results.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
 }
 /// See [`DatastoreFilter`](crate::model::DatastoreFilter).
 pub mod datastore_filter {
-
+    
     /// A builder for [`DatastoreFilter`](crate::model::DatastoreFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1579,12 +1486,8 @@ pub mod datastore_filter {
             self
         }
         /// <p>Allows the user to filter Data Store results by name.</p>
-        pub fn set_datastore_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datastore_name = input;
-            self
+        pub fn set_datastore_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_name = input; self
         }
         /// <p>Allows the user to filter Data Store results by status.</p>
         pub fn datastore_status(mut self, input: crate::model::DatastoreStatus) -> Self {
@@ -1592,12 +1495,8 @@ pub mod datastore_filter {
             self
         }
         /// <p>Allows the user to filter Data Store results by status.</p>
-        pub fn set_datastore_status(
-            mut self,
-            input: std::option::Option<crate::model::DatastoreStatus>,
-        ) -> Self {
-            self.datastore_status = input;
-            self
+        pub fn set_datastore_status(mut self, input: std::option::Option<crate::model::DatastoreStatus>) -> Self {
+            self.datastore_status = input; self
         }
         /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created before the specified date will be included in the results. </p>
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1605,12 +1504,8 @@ pub mod datastore_filter {
             self
         }
         /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created before the specified date will be included in the results. </p>
-        pub fn set_created_before(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_before = input;
-            self
+        pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_before = input; self
         }
         /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified date will be included in the results.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1618,23 +1513,25 @@ pub mod datastore_filter {
             self
         }
         /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified date will be included in the results.</p>
-        pub fn set_created_after(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_after = input;
-            self
+        pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_after = input; self
         }
         /// Consumes the builder and constructs a [`DatastoreFilter`](crate::model::DatastoreFilter).
         pub fn build(self) -> crate::model::DatastoreFilter {
             crate::model::DatastoreFilter {
-                datastore_name: self.datastore_name,
-                datastore_status: self.datastore_status,
-                created_before: self.created_before,
-                created_after: self.created_after,
+                datastore_name: self.datastore_name
+                ,
+                datastore_status: self.datastore_status
+                ,
+                created_before: self.created_before
+                ,
+                created_after: self.created_after
+                ,
             }
         }
     }
+    
+    
 }
 impl DatastoreFilter {
     /// Creates a new builder-style object to manufacture [`DatastoreFilter`](crate::model::DatastoreFilter).
@@ -1642,3 +1539,4 @@ impl DatastoreFilter {
         crate::model::datastore_filter::Builder::default()
     }
 }
+

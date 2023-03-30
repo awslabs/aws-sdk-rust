@@ -3,20 +3,20 @@
 /// <p>The response to an <code>UpdateXssMatchSets</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateXssMatchSetOutput {
+pub struct UpdateXssMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateXssMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
 pub mod update_xss_match_set_output {
-
+    
     /// A builder for [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,16 +30,18 @@ pub mod update_xss_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateXssMatchSetOutput {
             crate::output::UpdateXssMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
@@ -51,20 +53,20 @@ impl UpdateXssMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWebAclOutput {
+pub struct UpdateWebAclOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateWebAclOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
 pub mod update_web_acl_output {
-
+    
     /// A builder for [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -78,16 +80,18 @@ pub mod update_web_acl_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
         pub fn build(self) -> crate::output::UpdateWebAclOutput {
             crate::output::UpdateWebAclOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
@@ -99,20 +103,20 @@ impl UpdateWebAclOutput {
 /// <p>The response to an <code>UpdateSqlInjectionMatchSets</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSqlInjectionMatchSetOutput {
+pub struct UpdateSqlInjectionMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
 pub mod update_sql_injection_match_set_output {
-
+    
     /// A builder for [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -126,16 +130,18 @@ pub mod update_sql_injection_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateSqlInjectionMatchSetOutput {
             crate::output::UpdateSqlInjectionMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSqlInjectionMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
@@ -147,20 +153,20 @@ impl UpdateSqlInjectionMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSizeConstraintSetOutput {
+pub struct UpdateSizeConstraintSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateSizeConstraintSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
 pub mod update_size_constraint_set_output {
-
+    
     /// A builder for [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -174,16 +180,18 @@ pub mod update_size_constraint_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
         pub fn build(self) -> crate::output::UpdateSizeConstraintSetOutput {
             crate::output::UpdateSizeConstraintSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSizeConstraintSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
@@ -195,20 +203,20 @@ impl UpdateSizeConstraintSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRuleGroupOutput {
+pub struct UpdateRuleGroupOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRuleGroupOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
 pub mod update_rule_group_output {
-
+    
     /// A builder for [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -222,16 +230,18 @@ pub mod update_rule_group_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
         pub fn build(self) -> crate::output::UpdateRuleGroupOutput {
             crate::output::UpdateRuleGroupOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
@@ -243,20 +253,20 @@ impl UpdateRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRuleOutput {
+pub struct UpdateRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
 pub mod update_rule_output {
-
+    
     /// A builder for [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -270,16 +280,18 @@ pub mod update_rule_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
         pub fn build(self) -> crate::output::UpdateRuleOutput {
             crate::output::UpdateRuleOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
@@ -291,20 +303,20 @@ impl UpdateRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRegexPatternSetOutput {
+pub struct UpdateRegexPatternSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexPatternSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
 pub mod update_regex_pattern_set_output {
-
+    
     /// A builder for [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -318,16 +330,18 @@ pub mod update_regex_pattern_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
         pub fn build(self) -> crate::output::UpdateRegexPatternSetOutput {
             crate::output::UpdateRegexPatternSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
@@ -339,20 +353,20 @@ impl UpdateRegexPatternSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRegexMatchSetOutput {
+pub struct UpdateRegexMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
 pub mod update_regex_match_set_output {
-
+    
     /// A builder for [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -366,16 +380,18 @@ pub mod update_regex_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateRegexMatchSetOutput {
             crate::output::UpdateRegexMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRegexMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
@@ -387,20 +403,20 @@ impl UpdateRegexMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRateBasedRuleOutput {
+pub struct UpdateRateBasedRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRateBasedRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
 pub mod update_rate_based_rule_output {
-
+    
     /// A builder for [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -414,16 +430,18 @@ pub mod update_rate_based_rule_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
         pub fn build(self) -> crate::output::UpdateRateBasedRuleOutput {
             crate::output::UpdateRateBasedRuleOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRateBasedRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
@@ -435,20 +453,20 @@ impl UpdateRateBasedRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIpSetOutput {
+pub struct UpdateIpSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateIpSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
 pub mod update_ip_set_output {
-
+    
     /// A builder for [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -462,16 +480,18 @@ pub mod update_ip_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
         pub fn build(self) -> crate::output::UpdateIpSetOutput {
             crate::output::UpdateIpSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateIpSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
@@ -483,20 +503,20 @@ impl UpdateIpSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGeoMatchSetOutput {
+pub struct UpdateGeoMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateGeoMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
 pub mod update_geo_match_set_output {
-
+    
     /// A builder for [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -510,16 +530,18 @@ pub mod update_geo_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateGeoMatchSetOutput {
             crate::output::UpdateGeoMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGeoMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
@@ -531,20 +553,20 @@ impl UpdateGeoMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateByteMatchSetOutput {
+pub struct UpdateByteMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateByteMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
 pub mod update_byte_match_set_output {
-
+    
     /// A builder for [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -558,16 +580,18 @@ pub mod update_byte_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateByteMatchSetOutput {
             crate::output::UpdateByteMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
@@ -579,19 +603,24 @@ impl UpdateByteMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -603,19 +632,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -627,19 +661,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionPolicyOutput {}
+pub struct PutPermissionPolicyOutput  {
+}
 /// See [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
 pub mod put_permission_policy_output {
-
+    
     /// A builder for [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
         pub fn build(self) -> crate::output::PutPermissionPolicyOutput {
-            crate::output::PutPermissionPolicyOutput {}
+            crate::output::PutPermissionPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutPermissionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
@@ -651,22 +690,20 @@ impl PutPermissionPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLoggingConfigurationOutput {
+pub struct PutLoggingConfigurationOutput  {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl PutLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
 /// See [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
 pub mod put_logging_configuration_output {
-
+    
     /// A builder for [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -679,20 +716,19 @@ pub mod put_logging_configuration_output {
             self
         }
         /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
-        pub fn set_logging_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfiguration>,
-        ) -> Self {
-            self.logging_configuration = input;
-            self
+        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
+            self.logging_configuration = input; self
         }
         /// Consumes the builder and constructs a [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::PutLoggingConfigurationOutput {
             crate::output::PutLoggingConfigurationOutput {
-                logging_configuration: self.logging_configuration,
+                logging_configuration: self.logging_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl PutLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
@@ -704,7 +740,7 @@ impl PutLoggingConfigurationOutput {
 /// <p>The response to a <code>ListXssMatchSets</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListXssMatchSetsOutput {
+pub struct ListXssMatchSetsOutput  {
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -714,23 +750,22 @@ pub struct ListXssMatchSetsOutput {
 }
 impl ListXssMatchSetsOutput {
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
-    pub fn xss_match_sets(&self) -> std::option::Option<&[crate::model::XssMatchSetSummary]> {
+    pub fn xss_match_sets(&self) -> std::option::Option<& [crate::model::XssMatchSetSummary]> {
         self.xss_match_sets.as_deref()
     }
 }
 /// See [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
 pub mod list_xss_match_sets_output {
-
+    
     /// A builder for [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) xss_match_sets:
-            std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>,
+        pub(crate) xss_match_sets: std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>,
     }
     impl Builder {
         /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -740,8 +775,7 @@ pub mod list_xss_match_sets_output {
         }
         /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `xss_match_sets`.
         ///
@@ -750,26 +784,26 @@ pub mod list_xss_match_sets_output {
         /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
         pub fn xss_match_sets(mut self, input: crate::model::XssMatchSetSummary) -> Self {
             let mut v = self.xss_match_sets.unwrap_or_default();
-            v.push(input);
-            self.xss_match_sets = Some(v);
-            self
+                            v.push(input);
+                            self.xss_match_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
-        pub fn set_xss_match_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>,
-        ) -> Self {
-            self.xss_match_sets = input;
-            self
+        pub fn set_xss_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>) -> Self {
+            self.xss_match_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
         pub fn build(self) -> crate::output::ListXssMatchSetsOutput {
             crate::output::ListXssMatchSetsOutput {
-                next_marker: self.next_marker,
-                xss_match_sets: self.xss_match_sets,
+                next_marker: self.next_marker
+                ,
+                xss_match_sets: self.xss_match_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListXssMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
@@ -781,7 +815,7 @@ impl ListXssMatchSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebAcLsOutput {
+pub struct ListWebAcLsOutput  {
     /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -791,17 +825,17 @@ pub struct ListWebAcLsOutput {
 }
 impl ListWebAcLsOutput {
     /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>WebACLSummary</code> objects.</p>
-    pub fn web_ac_ls(&self) -> std::option::Option<&[crate::model::WebAclSummary]> {
+    pub fn web_ac_ls(&self) -> std::option::Option<& [crate::model::WebAclSummary]> {
         self.web_ac_ls.as_deref()
     }
 }
 /// See [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
 pub mod list_web_ac_ls_output {
-
+    
     /// A builder for [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -816,8 +850,7 @@ pub mod list_web_ac_ls_output {
         }
         /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `web_ac_ls`.
         ///
@@ -826,26 +859,26 @@ pub mod list_web_ac_ls_output {
         /// <p>An array of <code>WebACLSummary</code> objects.</p>
         pub fn web_ac_ls(mut self, input: crate::model::WebAclSummary) -> Self {
             let mut v = self.web_ac_ls.unwrap_or_default();
-            v.push(input);
-            self.web_ac_ls = Some(v);
-            self
+                            v.push(input);
+                            self.web_ac_ls = Some(v);
+                            self
         }
         /// <p>An array of <code>WebACLSummary</code> objects.</p>
-        pub fn set_web_ac_ls(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
-        ) -> Self {
-            self.web_ac_ls = input;
-            self
+        pub fn set_web_ac_ls(mut self, input: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>) -> Self {
+            self.web_ac_ls = input; self
         }
         /// Consumes the builder and constructs a [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
         pub fn build(self) -> crate::output::ListWebAcLsOutput {
             crate::output::ListWebAcLsOutput {
-                next_marker: self.next_marker,
-                web_ac_ls: self.web_ac_ls,
+                next_marker: self.next_marker
+                ,
+                web_ac_ls: self.web_ac_ls
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWebAcLsOutput {
     /// Creates a new builder-style object to manufacture [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
@@ -857,7 +890,7 @@ impl ListWebAcLsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -867,17 +900,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p></p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p></p>
-    pub fn tag_info_for_resource(&self) -> std::option::Option<&crate::model::TagInfoForResource> {
+    pub fn tag_info_for_resource(&self) -> std::option::Option<& crate::model::TagInfoForResource> {
         self.tag_info_for_resource.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -892,8 +925,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p></p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// <p></p>
         pub fn tag_info_for_resource(mut self, input: crate::model::TagInfoForResource) -> Self {
@@ -901,21 +933,21 @@ pub mod list_tags_for_resource_output {
             self
         }
         /// <p></p>
-        pub fn set_tag_info_for_resource(
-            mut self,
-            input: std::option::Option<crate::model::TagInfoForResource>,
-        ) -> Self {
-            self.tag_info_for_resource = input;
-            self
+        pub fn set_tag_info_for_resource(mut self, input: std::option::Option<crate::model::TagInfoForResource>) -> Self {
+            self.tag_info_for_resource = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                next_marker: self.next_marker,
-                tag_info_for_resource: self.tag_info_for_resource,
+                next_marker: self.next_marker
+                ,
+                tag_info_for_resource: self.tag_info_for_resource
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -927,7 +959,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscribedRuleGroupsOutput {
+pub struct ListSubscribedRuleGroupsOutput  {
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -937,23 +969,22 @@ pub struct ListSubscribedRuleGroupsOutput {
 }
 impl ListSubscribedRuleGroupsOutput {
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn rule_groups(&self) -> std::option::Option<&[crate::model::SubscribedRuleGroupSummary]> {
+    pub fn rule_groups(&self) -> std::option::Option<& [crate::model::SubscribedRuleGroupSummary]> {
         self.rule_groups.as_deref()
     }
 }
 /// See [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
 pub mod list_subscribed_rule_groups_output {
-
+    
     /// A builder for [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) rule_groups:
-            std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>,
+        pub(crate) rule_groups: std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>,
     }
     impl Builder {
         /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -963,8 +994,7 @@ pub mod list_subscribed_rule_groups_output {
         }
         /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `rule_groups`.
         ///
@@ -973,26 +1003,26 @@ pub mod list_subscribed_rule_groups_output {
         /// <p>An array of <code>RuleGroup</code> objects.</p>
         pub fn rule_groups(mut self, input: crate::model::SubscribedRuleGroupSummary) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
-            v.push(input);
-            self.rule_groups = Some(v);
-            self
+                            v.push(input);
+                            self.rule_groups = Some(v);
+                            self
         }
         /// <p>An array of <code>RuleGroup</code> objects.</p>
-        pub fn set_rule_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>,
-        ) -> Self {
-            self.rule_groups = input;
-            self
+        pub fn set_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>) -> Self {
+            self.rule_groups = input; self
         }
         /// Consumes the builder and constructs a [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListSubscribedRuleGroupsOutput {
             crate::output::ListSubscribedRuleGroupsOutput {
-                next_marker: self.next_marker,
-                rule_groups: self.rule_groups,
+                next_marker: self.next_marker
+                ,
+                rule_groups: self.rule_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSubscribedRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
@@ -1004,36 +1034,32 @@ impl ListSubscribedRuleGroupsOutput {
 /// <p>The response to a <code>ListSqlInjectionMatchSets</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSqlInjectionMatchSetsOutput {
+pub struct ListSqlInjectionMatchSetsOutput  {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
-    pub sql_injection_match_sets:
-        std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
+    pub sql_injection_match_sets: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
 }
 impl ListSqlInjectionMatchSetsOutput {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-    pub fn sql_injection_match_sets(
-        &self,
-    ) -> std::option::Option<&[crate::model::SqlInjectionMatchSetSummary]> {
+    pub fn sql_injection_match_sets(&self) -> std::option::Option<& [crate::model::SqlInjectionMatchSetSummary]> {
         self.sql_injection_match_sets.as_deref()
     }
 }
 /// See [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
 pub mod list_sql_injection_match_sets_output {
-
+    
     /// A builder for [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) sql_injection_match_sets:
-            std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
+        pub(crate) sql_injection_match_sets: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
     }
     impl Builder {
         /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1043,39 +1069,35 @@ pub mod list_sql_injection_match_sets_output {
         }
         /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `sql_injection_match_sets`.
         ///
         /// To override the contents of this collection use [`set_sql_injection_match_sets`](Self::set_sql_injection_match_sets).
         ///
         /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-        pub fn sql_injection_match_sets(
-            mut self,
-            input: crate::model::SqlInjectionMatchSetSummary,
-        ) -> Self {
+        pub fn sql_injection_match_sets(mut self, input: crate::model::SqlInjectionMatchSetSummary) -> Self {
             let mut v = self.sql_injection_match_sets.unwrap_or_default();
-            v.push(input);
-            self.sql_injection_match_sets = Some(v);
-            self
+                            v.push(input);
+                            self.sql_injection_match_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
-        pub fn set_sql_injection_match_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
-        ) -> Self {
-            self.sql_injection_match_sets = input;
-            self
+        pub fn set_sql_injection_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>) -> Self {
+            self.sql_injection_match_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
         pub fn build(self) -> crate::output::ListSqlInjectionMatchSetsOutput {
             crate::output::ListSqlInjectionMatchSetsOutput {
-                next_marker: self.next_marker,
-                sql_injection_match_sets: self.sql_injection_match_sets,
+                next_marker: self.next_marker
+                ,
+                sql_injection_match_sets: self.sql_injection_match_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSqlInjectionMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
@@ -1087,36 +1109,32 @@ impl ListSqlInjectionMatchSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSizeConstraintSetsOutput {
+pub struct ListSizeConstraintSetsOutput  {
     /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
     #[doc(hidden)]
-    pub size_constraint_sets:
-        std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
+    pub size_constraint_sets: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
 }
 impl ListSizeConstraintSetsOutput {
     /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
-    pub fn size_constraint_sets(
-        &self,
-    ) -> std::option::Option<&[crate::model::SizeConstraintSetSummary]> {
+    pub fn size_constraint_sets(&self) -> std::option::Option<& [crate::model::SizeConstraintSetSummary]> {
         self.size_constraint_sets.as_deref()
     }
 }
 /// See [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
 pub mod list_size_constraint_sets_output {
-
+    
     /// A builder for [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) size_constraint_sets:
-            std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
+        pub(crate) size_constraint_sets: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
     }
     impl Builder {
         /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1126,39 +1144,35 @@ pub mod list_size_constraint_sets_output {
         }
         /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `size_constraint_sets`.
         ///
         /// To override the contents of this collection use [`set_size_constraint_sets`](Self::set_size_constraint_sets).
         ///
         /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
-        pub fn size_constraint_sets(
-            mut self,
-            input: crate::model::SizeConstraintSetSummary,
-        ) -> Self {
+        pub fn size_constraint_sets(mut self, input: crate::model::SizeConstraintSetSummary) -> Self {
             let mut v = self.size_constraint_sets.unwrap_or_default();
-            v.push(input);
-            self.size_constraint_sets = Some(v);
-            self
+                            v.push(input);
+                            self.size_constraint_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
-        pub fn set_size_constraint_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
-        ) -> Self {
-            self.size_constraint_sets = input;
-            self
+        pub fn set_size_constraint_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>) -> Self {
+            self.size_constraint_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
         pub fn build(self) -> crate::output::ListSizeConstraintSetsOutput {
             crate::output::ListSizeConstraintSetsOutput {
-                next_marker: self.next_marker,
-                size_constraint_sets: self.size_constraint_sets,
+                next_marker: self.next_marker
+                ,
+                size_constraint_sets: self.size_constraint_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSizeConstraintSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
@@ -1170,7 +1184,7 @@ impl ListSizeConstraintSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRulesOutput {
+pub struct ListRulesOutput  {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1180,17 +1194,17 @@ pub struct ListRulesOutput {
 }
 impl ListRulesOutput {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RuleSummary</code> objects.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::RuleSummary]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::RuleSummary]> {
         self.rules.as_deref()
     }
 }
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
-
+    
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1205,8 +1219,7 @@ pub mod list_rules_output {
         }
         /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -1215,26 +1228,26 @@ pub mod list_rules_output {
         /// <p>An array of <code>RuleSummary</code> objects.</p>
         pub fn rules(mut self, input: crate::model::RuleSummary) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>An array of <code>RuleSummary</code> objects.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput).
         pub fn build(self) -> crate::output::ListRulesOutput {
             crate::output::ListRulesOutput {
-                next_marker: self.next_marker,
-                rules: self.rules,
+                next_marker: self.next_marker
+                ,
+                rules: self.rules
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
@@ -1246,7 +1259,7 @@ impl ListRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRuleGroupsOutput {
+pub struct ListRuleGroupsOutput  {
     /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1256,17 +1269,17 @@ pub struct ListRuleGroupsOutput {
 }
 impl ListRuleGroupsOutput {
     /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn rule_groups(&self) -> std::option::Option<&[crate::model::RuleGroupSummary]> {
+    pub fn rule_groups(&self) -> std::option::Option<& [crate::model::RuleGroupSummary]> {
         self.rule_groups.as_deref()
     }
 }
 /// See [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
 pub mod list_rule_groups_output {
-
+    
     /// A builder for [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1281,8 +1294,7 @@ pub mod list_rule_groups_output {
         }
         /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `rule_groups`.
         ///
@@ -1291,26 +1303,26 @@ pub mod list_rule_groups_output {
         /// <p>An array of <code>RuleGroup</code> objects.</p>
         pub fn rule_groups(mut self, input: crate::model::RuleGroupSummary) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
-            v.push(input);
-            self.rule_groups = Some(v);
-            self
+                            v.push(input);
+                            self.rule_groups = Some(v);
+                            self
         }
         /// <p>An array of <code>RuleGroup</code> objects.</p>
-        pub fn set_rule_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
-        ) -> Self {
-            self.rule_groups = input;
-            self
+        pub fn set_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>) -> Self {
+            self.rule_groups = input; self
         }
         /// Consumes the builder and constructs a [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListRuleGroupsOutput {
             crate::output::ListRuleGroupsOutput {
-                next_marker: self.next_marker,
-                rule_groups: self.rule_groups,
+                next_marker: self.next_marker
+                ,
+                rule_groups: self.rule_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
@@ -1322,20 +1334,20 @@ impl ListRuleGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesForWebAclOutput {
+pub struct ListResourcesForWebAclOutput  {
     /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListResourcesForWebAclOutput {
     /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
 }
 /// See [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
 pub mod list_resources_for_web_acl_output {
-
+    
     /// A builder for [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1349,25 +1361,24 @@ pub mod list_resources_for_web_acl_output {
         /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Consumes the builder and constructs a [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
         pub fn build(self) -> crate::output::ListResourcesForWebAclOutput {
             crate::output::ListResourcesForWebAclOutput {
-                resource_arns: self.resource_arns,
+                resource_arns: self.resource_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourcesForWebAclOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
@@ -1379,36 +1390,32 @@ impl ListResourcesForWebAclOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRegexPatternSetsOutput {
+pub struct ListRegexPatternSetsOutput  {
     /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
     #[doc(hidden)]
-    pub regex_pattern_sets:
-        std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
+    pub regex_pattern_sets: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
 }
 impl ListRegexPatternSetsOutput {
     /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
-    pub fn regex_pattern_sets(
-        &self,
-    ) -> std::option::Option<&[crate::model::RegexPatternSetSummary]> {
+    pub fn regex_pattern_sets(&self) -> std::option::Option<& [crate::model::RegexPatternSetSummary]> {
         self.regex_pattern_sets.as_deref()
     }
 }
 /// See [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
 pub mod list_regex_pattern_sets_output {
-
+    
     /// A builder for [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) regex_pattern_sets:
-            std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
+        pub(crate) regex_pattern_sets: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
     }
     impl Builder {
         /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1418,8 +1425,7 @@ pub mod list_regex_pattern_sets_output {
         }
         /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `regex_pattern_sets`.
         ///
@@ -1428,26 +1434,26 @@ pub mod list_regex_pattern_sets_output {
         /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
         pub fn regex_pattern_sets(mut self, input: crate::model::RegexPatternSetSummary) -> Self {
             let mut v = self.regex_pattern_sets.unwrap_or_default();
-            v.push(input);
-            self.regex_pattern_sets = Some(v);
-            self
+                            v.push(input);
+                            self.regex_pattern_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
-        pub fn set_regex_pattern_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
-        ) -> Self {
-            self.regex_pattern_sets = input;
-            self
+        pub fn set_regex_pattern_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>) -> Self {
+            self.regex_pattern_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
         pub fn build(self) -> crate::output::ListRegexPatternSetsOutput {
             crate::output::ListRegexPatternSetsOutput {
-                next_marker: self.next_marker,
-                regex_pattern_sets: self.regex_pattern_sets,
+                next_marker: self.next_marker
+                ,
+                regex_pattern_sets: self.regex_pattern_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRegexPatternSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
@@ -1459,7 +1465,7 @@ impl ListRegexPatternSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRegexMatchSetsOutput {
+pub struct ListRegexMatchSetsOutput  {
     /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1469,23 +1475,22 @@ pub struct ListRegexMatchSetsOutput {
 }
 impl ListRegexMatchSetsOutput {
     /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
-    pub fn regex_match_sets(&self) -> std::option::Option<&[crate::model::RegexMatchSetSummary]> {
+    pub fn regex_match_sets(&self) -> std::option::Option<& [crate::model::RegexMatchSetSummary]> {
         self.regex_match_sets.as_deref()
     }
 }
 /// See [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
 pub mod list_regex_match_sets_output {
-
+    
     /// A builder for [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) regex_match_sets:
-            std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>,
+        pub(crate) regex_match_sets: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>,
     }
     impl Builder {
         /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1495,8 +1500,7 @@ pub mod list_regex_match_sets_output {
         }
         /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `regex_match_sets`.
         ///
@@ -1505,26 +1509,26 @@ pub mod list_regex_match_sets_output {
         /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
         pub fn regex_match_sets(mut self, input: crate::model::RegexMatchSetSummary) -> Self {
             let mut v = self.regex_match_sets.unwrap_or_default();
-            v.push(input);
-            self.regex_match_sets = Some(v);
-            self
+                            v.push(input);
+                            self.regex_match_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
-        pub fn set_regex_match_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>,
-        ) -> Self {
-            self.regex_match_sets = input;
-            self
+        pub fn set_regex_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>) -> Self {
+            self.regex_match_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
         pub fn build(self) -> crate::output::ListRegexMatchSetsOutput {
             crate::output::ListRegexMatchSetsOutput {
-                next_marker: self.next_marker,
-                regex_match_sets: self.regex_match_sets,
+                next_marker: self.next_marker
+                ,
+                regex_match_sets: self.regex_match_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRegexMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
@@ -1536,7 +1540,7 @@ impl ListRegexMatchSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRateBasedRulesOutput {
+pub struct ListRateBasedRulesOutput  {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1546,17 +1550,17 @@ pub struct ListRateBasedRulesOutput {
 }
 impl ListRateBasedRulesOutput {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RuleSummary</code> objects.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::RuleSummary]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::RuleSummary]> {
         self.rules.as_deref()
     }
 }
 /// See [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
 pub mod list_rate_based_rules_output {
-
+    
     /// A builder for [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1571,8 +1575,7 @@ pub mod list_rate_based_rules_output {
         }
         /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -1581,26 +1584,26 @@ pub mod list_rate_based_rules_output {
         /// <p>An array of <code>RuleSummary</code> objects.</p>
         pub fn rules(mut self, input: crate::model::RuleSummary) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>An array of <code>RuleSummary</code> objects.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
         pub fn build(self) -> crate::output::ListRateBasedRulesOutput {
             crate::output::ListRateBasedRulesOutput {
-                next_marker: self.next_marker,
-                rules: self.rules,
+                next_marker: self.next_marker
+                ,
+                rules: self.rules
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRateBasedRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
@@ -1612,35 +1615,31 @@ impl ListRateBasedRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLoggingConfigurationsOutput {
+pub struct ListLoggingConfigurationsOutput  {
     /// <p>An array of <code>LoggingConfiguration</code> objects.</p>
     #[doc(hidden)]
-    pub logging_configurations:
-        std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
+    pub logging_configurations: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
     /// <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListLoggingConfigurationsOutput {
     /// <p>An array of <code>LoggingConfiguration</code> objects.</p>
-    pub fn logging_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::LoggingConfiguration]> {
+    pub fn logging_configurations(&self) -> std::option::Option<& [crate::model::LoggingConfiguration]> {
         self.logging_configurations.as_deref()
     }
     /// <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
 pub mod list_logging_configurations_output {
-
+    
     /// A builder for [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) logging_configurations:
-            std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
+        pub(crate) logging_configurations: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1651,17 +1650,13 @@ pub mod list_logging_configurations_output {
         /// <p>An array of <code>LoggingConfiguration</code> objects.</p>
         pub fn logging_configurations(mut self, input: crate::model::LoggingConfiguration) -> Self {
             let mut v = self.logging_configurations.unwrap_or_default();
-            v.push(input);
-            self.logging_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.logging_configurations = Some(v);
+                            self
         }
         /// <p>An array of <code>LoggingConfiguration</code> objects.</p>
-        pub fn set_logging_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
-        ) -> Self {
-            self.logging_configurations = input;
-            self
+        pub fn set_logging_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>) -> Self {
+            self.logging_configurations = input; self
         }
         /// <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1670,17 +1665,20 @@ pub mod list_logging_configurations_output {
         }
         /// <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
         pub fn build(self) -> crate::output::ListLoggingConfigurationsOutput {
             crate::output::ListLoggingConfigurationsOutput {
-                logging_configurations: self.logging_configurations,
-                next_marker: self.next_marker,
+                logging_configurations: self.logging_configurations
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLoggingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
@@ -1692,7 +1690,7 @@ impl ListLoggingConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIpSetsOutput {
+pub struct ListIpSetsOutput  {
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1702,17 +1700,17 @@ pub struct ListIpSetsOutput {
 }
 impl ListIpSetsOutput {
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
-    pub fn ip_sets(&self) -> std::option::Option<&[crate::model::IpSetSummary]> {
+    pub fn ip_sets(&self) -> std::option::Option<& [crate::model::IpSetSummary]> {
         self.ip_sets.as_deref()
     }
 }
 /// See [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
 pub mod list_ip_sets_output {
-
+    
     /// A builder for [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1727,8 +1725,7 @@ pub mod list_ip_sets_output {
         }
         /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `ip_sets`.
         ///
@@ -1737,26 +1734,26 @@ pub mod list_ip_sets_output {
         /// <p>An array of <code>IPSetSummary</code> objects.</p>
         pub fn ip_sets(mut self, input: crate::model::IpSetSummary) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
-            v.push(input);
-            self.ip_sets = Some(v);
-            self
+                            v.push(input);
+                            self.ip_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>IPSetSummary</code> objects.</p>
-        pub fn set_ip_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
-        ) -> Self {
-            self.ip_sets = input;
-            self
+        pub fn set_ip_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>) -> Self {
+            self.ip_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
         pub fn build(self) -> crate::output::ListIpSetsOutput {
             crate::output::ListIpSetsOutput {
-                next_marker: self.next_marker,
-                ip_sets: self.ip_sets,
+                next_marker: self.next_marker
+                ,
+                ip_sets: self.ip_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIpSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
@@ -1768,7 +1765,7 @@ impl ListIpSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGeoMatchSetsOutput {
+pub struct ListGeoMatchSetsOutput  {
     /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1778,23 +1775,22 @@ pub struct ListGeoMatchSetsOutput {
 }
 impl ListGeoMatchSetsOutput {
     /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>GeoMatchSetSummary</code> objects.</p>
-    pub fn geo_match_sets(&self) -> std::option::Option<&[crate::model::GeoMatchSetSummary]> {
+    pub fn geo_match_sets(&self) -> std::option::Option<& [crate::model::GeoMatchSetSummary]> {
         self.geo_match_sets.as_deref()
     }
 }
 /// See [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
 pub mod list_geo_match_sets_output {
-
+    
     /// A builder for [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) geo_match_sets:
-            std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>,
+        pub(crate) geo_match_sets: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>,
     }
     impl Builder {
         /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1804,8 +1800,7 @@ pub mod list_geo_match_sets_output {
         }
         /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `geo_match_sets`.
         ///
@@ -1814,26 +1809,26 @@ pub mod list_geo_match_sets_output {
         /// <p>An array of <code>GeoMatchSetSummary</code> objects.</p>
         pub fn geo_match_sets(mut self, input: crate::model::GeoMatchSetSummary) -> Self {
             let mut v = self.geo_match_sets.unwrap_or_default();
-            v.push(input);
-            self.geo_match_sets = Some(v);
-            self
+                            v.push(input);
+                            self.geo_match_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>GeoMatchSetSummary</code> objects.</p>
-        pub fn set_geo_match_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>,
-        ) -> Self {
-            self.geo_match_sets = input;
-            self
+        pub fn set_geo_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>) -> Self {
+            self.geo_match_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
         pub fn build(self) -> crate::output::ListGeoMatchSetsOutput {
             crate::output::ListGeoMatchSetsOutput {
-                next_marker: self.next_marker,
-                geo_match_sets: self.geo_match_sets,
+                next_marker: self.next_marker
+                ,
+                geo_match_sets: self.geo_match_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGeoMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
@@ -1845,7 +1840,7 @@ impl ListGeoMatchSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListByteMatchSetsOutput {
+pub struct ListByteMatchSetsOutput  {
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1855,23 +1850,22 @@ pub struct ListByteMatchSetsOutput {
 }
 impl ListByteMatchSetsOutput {
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-    pub fn byte_match_sets(&self) -> std::option::Option<&[crate::model::ByteMatchSetSummary]> {
+    pub fn byte_match_sets(&self) -> std::option::Option<& [crate::model::ByteMatchSetSummary]> {
         self.byte_match_sets.as_deref()
     }
 }
 /// See [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
 pub mod list_byte_match_sets_output {
-
+    
     /// A builder for [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) byte_match_sets:
-            std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>,
+        pub(crate) byte_match_sets: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>,
     }
     impl Builder {
         /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1881,8 +1875,7 @@ pub mod list_byte_match_sets_output {
         }
         /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `byte_match_sets`.
         ///
@@ -1891,26 +1884,26 @@ pub mod list_byte_match_sets_output {
         /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
         pub fn byte_match_sets(mut self, input: crate::model::ByteMatchSetSummary) -> Self {
             let mut v = self.byte_match_sets.unwrap_or_default();
-            v.push(input);
-            self.byte_match_sets = Some(v);
-            self
+                            v.push(input);
+                            self.byte_match_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-        pub fn set_byte_match_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>,
-        ) -> Self {
-            self.byte_match_sets = input;
-            self
+        pub fn set_byte_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>) -> Self {
+            self.byte_match_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
         pub fn build(self) -> crate::output::ListByteMatchSetsOutput {
             crate::output::ListByteMatchSetsOutput {
-                next_marker: self.next_marker,
-                byte_match_sets: self.byte_match_sets,
+                next_marker: self.next_marker
+                ,
+                byte_match_sets: self.byte_match_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListByteMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
@@ -1922,7 +1915,7 @@ impl ListByteMatchSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListActivatedRulesInRuleGroupOutput {
+pub struct ListActivatedRulesInRuleGroupOutput  {
     /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1932,17 +1925,17 @@ pub struct ListActivatedRulesInRuleGroupOutput {
 }
 impl ListActivatedRulesInRuleGroupOutput {
     /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>ActivatedRules</code> objects.</p>
-    pub fn activated_rules(&self) -> std::option::Option<&[crate::model::ActivatedRule]> {
+    pub fn activated_rules(&self) -> std::option::Option<& [crate::model::ActivatedRule]> {
         self.activated_rules.as_deref()
     }
 }
 /// See [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
 pub mod list_activated_rules_in_rule_group_output {
-
+    
     /// A builder for [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1957,8 +1950,7 @@ pub mod list_activated_rules_in_rule_group_output {
         }
         /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `activated_rules`.
         ///
@@ -1967,26 +1959,26 @@ pub mod list_activated_rules_in_rule_group_output {
         /// <p>An array of <code>ActivatedRules</code> objects.</p>
         pub fn activated_rules(mut self, input: crate::model::ActivatedRule) -> Self {
             let mut v = self.activated_rules.unwrap_or_default();
-            v.push(input);
-            self.activated_rules = Some(v);
-            self
+                            v.push(input);
+                            self.activated_rules = Some(v);
+                            self
         }
         /// <p>An array of <code>ActivatedRules</code> objects.</p>
-        pub fn set_activated_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>,
-        ) -> Self {
-            self.activated_rules = input;
-            self
+        pub fn set_activated_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>) -> Self {
+            self.activated_rules = input; self
         }
         /// Consumes the builder and constructs a [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
         pub fn build(self) -> crate::output::ListActivatedRulesInRuleGroupOutput {
             crate::output::ListActivatedRulesInRuleGroupOutput {
-                next_marker: self.next_marker,
-                activated_rules: self.activated_rules,
+                next_marker: self.next_marker
+                ,
+                activated_rules: self.activated_rules
+                ,
             }
         }
     }
+    
+    
 }
 impl ListActivatedRulesInRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
@@ -1998,66 +1990,65 @@ impl ListActivatedRulesInRuleGroupOutput {
 /// <p>The response to a <code>GetXssMatchSet</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetXssMatchSetOutput {
-    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>
-    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+pub struct GetXssMatchSetOutput  {
+    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li> 
+    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub xss_match_set: std::option::Option<crate::model::XssMatchSet>,
 }
 impl GetXssMatchSetOutput {
-    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>
-    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li> 
+    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
-    pub fn xss_match_set(&self) -> std::option::Option<&crate::model::XssMatchSet> {
+    pub fn xss_match_set(&self) -> std::option::Option<& crate::model::XssMatchSet> {
         self.xss_match_set.as_ref()
     }
 }
 /// See [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
 pub mod get_xss_match_set_output {
-
+    
     /// A builder for [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set: std::option::Option<crate::model::XssMatchSet>,
     }
     impl Builder {
-        /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>
-        /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li> 
+        /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
         /// </ul>
         pub fn xss_match_set(mut self, input: crate::model::XssMatchSet) -> Self {
             self.xss_match_set = Some(input);
             self
         }
-        /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>
-        /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li> 
+        /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
         /// </ul>
-        pub fn set_xss_match_set(
-            mut self,
-            input: std::option::Option<crate::model::XssMatchSet>,
-        ) -> Self {
-            self.xss_match_set = input;
-            self
+        pub fn set_xss_match_set(mut self, input: std::option::Option<crate::model::XssMatchSet>) -> Self {
+            self.xss_match_set = input; self
         }
         /// Consumes the builder and constructs a [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
         pub fn build(self) -> crate::output::GetXssMatchSetOutput {
             crate::output::GetXssMatchSetOutput {
-                xss_match_set: self.xss_match_set,
+                xss_match_set: self.xss_match_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
@@ -2069,20 +2060,20 @@ impl GetXssMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWebAclForResourceOutput {
+pub struct GetWebAclForResourceOutput  {
     /// <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
     #[doc(hidden)]
     pub web_acl_summary: std::option::Option<crate::model::WebAclSummary>,
 }
 impl GetWebAclForResourceOutput {
     /// <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
-    pub fn web_acl_summary(&self) -> std::option::Option<&crate::model::WebAclSummary> {
+    pub fn web_acl_summary(&self) -> std::option::Option<& crate::model::WebAclSummary> {
         self.web_acl_summary.as_ref()
     }
 }
 /// See [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
 pub mod get_web_acl_for_resource_output {
-
+    
     /// A builder for [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2095,20 +2086,19 @@ pub mod get_web_acl_for_resource_output {
             self
         }
         /// <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
-        pub fn set_web_acl_summary(
-            mut self,
-            input: std::option::Option<crate::model::WebAclSummary>,
-        ) -> Self {
-            self.web_acl_summary = input;
-            self
+        pub fn set_web_acl_summary(mut self, input: std::option::Option<crate::model::WebAclSummary>) -> Self {
+            self.web_acl_summary = input; self
         }
         /// Consumes the builder and constructs a [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
         pub fn build(self) -> crate::output::GetWebAclForResourceOutput {
             crate::output::GetWebAclForResourceOutput {
-                web_acl_summary: self.web_acl_summary,
+                web_acl_summary: self.web_acl_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWebAclForResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
@@ -2120,67 +2110,69 @@ impl GetWebAclForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWebAclOutput {
-    /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
-    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
-    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
+pub struct GetWebAclOutput  {
+    /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li> 
+    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li> 
+    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li> 
+    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
 }
 impl GetWebAclOutput {
-    /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
-    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
-    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
+    /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li> 
+    /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li> 
+    /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li> 
+    /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li> 
     /// </ul>
-    pub fn web_acl(&self) -> std::option::Option<&crate::model::WebAcl> {
+    pub fn web_acl(&self) -> std::option::Option<& crate::model::WebAcl> {
         self.web_acl.as_ref()
     }
 }
 /// See [`GetWebAclOutput`](crate::output::GetWebAclOutput).
 pub mod get_web_acl_output {
-
+    
     /// A builder for [`GetWebAclOutput`](crate::output::GetWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
     }
     impl Builder {
-        /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
-        /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
-        /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-        /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
+        /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li> 
+        /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li> 
+        /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li> 
+        /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li> 
         /// </ul>
         pub fn web_acl(mut self, input: crate::model::WebAcl) -> Self {
             self.web_acl = Some(input);
             self
         }
-        /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li>
-        /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li>
-        /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
-        /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
+        /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>WebACL</code>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code> </p> </li> 
+        /// <li> <p> <code>DefaultAction</code> (Data type is <code>WafAction</code>): Contains <code>Type</code> </p> </li> 
+        /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li> 
+        /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li> 
         /// </ul>
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
-            self.web_acl = input;
-            self
+            self.web_acl = input; self
         }
         /// Consumes the builder and constructs a [`GetWebAclOutput`](crate::output::GetWebAclOutput).
         pub fn build(self) -> crate::output::GetWebAclOutput {
             crate::output::GetWebAclOutput {
-                web_acl: self.web_acl,
+                web_acl: self.web_acl
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWebAclOutput {
     /// Creates a new builder-style object to manufacture [`GetWebAclOutput`](crate::output::GetWebAclOutput).
@@ -2192,71 +2184,65 @@ impl GetWebAclOutput {
 /// <p>The response to a <code>GetSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSqlInjectionMatchSetOutput {
-    /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
-    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+pub struct GetSqlInjectionMatchSetOutput  {
+    /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li> 
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
 }
 impl GetSqlInjectionMatchSetOutput {
-    /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
-    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li> 
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
-    pub fn sql_injection_match_set(
-        &self,
-    ) -> std::option::Option<&crate::model::SqlInjectionMatchSet> {
+    pub fn sql_injection_match_set(&self) -> std::option::Option<& crate::model::SqlInjectionMatchSet> {
         self.sql_injection_match_set.as_ref()
     }
 }
 /// See [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
 pub mod get_sql_injection_match_set_output {
-
+    
     /// A builder for [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
     }
     impl Builder {
-        /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
-        /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li> 
+        /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
         /// </ul>
-        pub fn sql_injection_match_set(
-            mut self,
-            input: crate::model::SqlInjectionMatchSet,
-        ) -> Self {
+        pub fn sql_injection_match_set(mut self, input: crate::model::SqlInjectionMatchSet) -> Self {
             self.sql_injection_match_set = Some(input);
             self
         }
-        /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>
-        /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li> 
+        /// <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
         /// </ul>
-        pub fn set_sql_injection_match_set(
-            mut self,
-            input: std::option::Option<crate::model::SqlInjectionMatchSet>,
-        ) -> Self {
-            self.sql_injection_match_set = input;
-            self
+        pub fn set_sql_injection_match_set(mut self, input: std::option::Option<crate::model::SqlInjectionMatchSet>) -> Self {
+            self.sql_injection_match_set = input; self
         }
         /// Consumes the builder and constructs a [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
         pub fn build(self) -> crate::output::GetSqlInjectionMatchSetOutput {
             crate::output::GetSqlInjectionMatchSetOutput {
-                sql_injection_match_set: self.sql_injection_match_set,
+                sql_injection_match_set: self.sql_injection_match_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSqlInjectionMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
@@ -2268,66 +2254,65 @@ impl GetSqlInjectionMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSizeConstraintSetOutput {
-    /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li>
-    /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+pub struct GetSizeConstraintSetOutput  {
+    /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li> 
+    /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
 }
 impl GetSizeConstraintSetOutput {
-    /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li>
-    /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li> 
+    /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
-    pub fn size_constraint_set(&self) -> std::option::Option<&crate::model::SizeConstraintSet> {
+    pub fn size_constraint_set(&self) -> std::option::Option<& crate::model::SizeConstraintSet> {
         self.size_constraint_set.as_ref()
     }
 }
 /// See [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
 pub mod get_size_constraint_set_output {
-
+    
     /// A builder for [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
     }
     impl Builder {
-        /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li>
-        /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li> 
+        /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li> 
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
         /// </ul>
         pub fn size_constraint_set(mut self, input: crate::model::SizeConstraintSet) -> Self {
             self.size_constraint_set = Some(input);
             self
         }
-        /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li>
-        /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
-        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li> 
+        /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li> 
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
         /// </ul>
-        pub fn set_size_constraint_set(
-            mut self,
-            input: std::option::Option<crate::model::SizeConstraintSet>,
-        ) -> Self {
-            self.size_constraint_set = input;
-            self
+        pub fn set_size_constraint_set(mut self, input: std::option::Option<crate::model::SizeConstraintSet>) -> Self {
+            self.size_constraint_set = input; self
         }
         /// Consumes the builder and constructs a [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
         pub fn build(self) -> crate::output::GetSizeConstraintSetOutput {
             crate::output::GetSizeConstraintSetOutput {
-                size_constraint_set: self.size_constraint_set,
+                size_constraint_set: self.size_constraint_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSizeConstraintSetOutput {
     /// Creates a new builder-style object to manufacture [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
@@ -2339,7 +2324,7 @@ impl GetSizeConstraintSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSampledRequestsOutput {
+pub struct GetSampledRequestsOutput  {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
     #[doc(hidden)]
     pub sampled_requests: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
@@ -2352,7 +2337,7 @@ pub struct GetSampledRequestsOutput {
 }
 impl GetSampledRequestsOutput {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
-    pub fn sampled_requests(&self) -> std::option::Option<&[crate::model::SampledHttpRequest]> {
+    pub fn sampled_requests(&self) -> std::option::Option<& [crate::model::SampledHttpRequest]> {
         self.sampled_requests.as_deref()
     }
     /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
@@ -2360,18 +2345,17 @@ impl GetSampledRequestsOutput {
         self.population_size
     }
     /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
-    pub fn time_window(&self) -> std::option::Option<&crate::model::TimeWindow> {
+    pub fn time_window(&self) -> std::option::Option<& crate::model::TimeWindow> {
         self.time_window.as_ref()
     }
 }
 /// See [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
 pub mod get_sampled_requests_output {
-
+    
     /// A builder for [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sampled_requests:
-            std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
+        pub(crate) sampled_requests: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
         pub(crate) population_size: std::option::Option<i64>,
         pub(crate) time_window: std::option::Option<crate::model::TimeWindow>,
     }
@@ -2383,17 +2367,13 @@ pub mod get_sampled_requests_output {
         /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
         pub fn sampled_requests(mut self, input: crate::model::SampledHttpRequest) -> Self {
             let mut v = self.sampled_requests.unwrap_or_default();
-            v.push(input);
-            self.sampled_requests = Some(v);
-            self
+                            v.push(input);
+                            self.sampled_requests = Some(v);
+                            self
         }
         /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
-        pub fn set_sampled_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
-        ) -> Self {
-            self.sampled_requests = input;
-            self
+        pub fn set_sampled_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>) -> Self {
+            self.sampled_requests = input; self
         }
         /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
         pub fn population_size(mut self, input: i64) -> Self {
@@ -2402,8 +2382,7 @@ pub mod get_sampled_requests_output {
         }
         /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
         pub fn set_population_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.population_size = input;
-            self
+            self.population_size = input; self
         }
         /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
         pub fn time_window(mut self, input: crate::model::TimeWindow) -> Self {
@@ -2411,22 +2390,24 @@ pub mod get_sampled_requests_output {
             self
         }
         /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
-        pub fn set_time_window(
-            mut self,
-            input: std::option::Option<crate::model::TimeWindow>,
-        ) -> Self {
-            self.time_window = input;
-            self
+        pub fn set_time_window(mut self, input: std::option::Option<crate::model::TimeWindow>) -> Self {
+            self.time_window = input; self
         }
         /// Consumes the builder and constructs a [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
         pub fn build(self) -> crate::output::GetSampledRequestsOutput {
             crate::output::GetSampledRequestsOutput {
-                sampled_requests: self.sampled_requests,
-                population_size: self.population_size.unwrap_or_default(),
-                time_window: self.time_window,
+                sampled_requests: self.sampled_requests
+                ,
+                population_size: self.population_size
+                    .unwrap_or_default()
+                ,
+                time_window: self.time_window
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSampledRequestsOutput {
     /// Creates a new builder-style object to manufacture [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
@@ -2438,20 +2419,20 @@ impl GetSampledRequestsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRuleGroupOutput {
+pub struct GetRuleGroupOutput  {
     /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     #[doc(hidden)]
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
 }
 impl GetRuleGroupOutput {
     /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
-    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
+    pub fn rule_group(&self) -> std::option::Option<& crate::model::RuleGroup> {
         self.rule_group.as_ref()
     }
 }
 /// See [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
 pub mod get_rule_group_output {
-
+    
     /// A builder for [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2464,20 +2445,19 @@ pub mod get_rule_group_output {
             self
         }
         /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
-        pub fn set_rule_group(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroup>,
-        ) -> Self {
-            self.rule_group = input;
-            self
+        pub fn set_rule_group(mut self, input: std::option::Option<crate::model::RuleGroup>) -> Self {
+            self.rule_group = input; self
         }
         /// Consumes the builder and constructs a [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
         pub fn build(self) -> crate::output::GetRuleGroupOutput {
             crate::output::GetRuleGroupOutput {
-                rule_group: self.rule_group,
+                rule_group: self.rule_group
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
@@ -2489,57 +2469,61 @@ impl GetRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRuleOutput {
-    /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
-    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+pub struct GetRuleOutput  {
+    /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li> 
+    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
 }
 impl GetRuleOutput {
-    /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
-    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+    /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li> 
+    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> 
     /// </ul>
-    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+    pub fn rule(&self) -> std::option::Option<& crate::model::Rule> {
         self.rule.as_ref()
     }
 }
 /// See [`GetRuleOutput`](crate::output::GetRuleOutput).
 pub mod get_rule_output {
-
+    
     /// A builder for [`GetRuleOutput`](crate::output::GetRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
     }
     impl Builder {
-        /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
-        /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li> 
+        /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> 
         /// </ul>
         pub fn rule(mut self, input: crate::model::Rule) -> Self {
             self.rule = Some(input);
             self
         }
-        /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
-        /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li> 
+        /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> 
         /// </ul>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Rule>) -> Self {
-            self.rule = input;
-            self
+            self.rule = input; self
         }
         /// Consumes the builder and constructs a [`GetRuleOutput`](crate::output::GetRuleOutput).
         pub fn build(self) -> crate::output::GetRuleOutput {
-            crate::output::GetRuleOutput { rule: self.rule }
+            crate::output::GetRuleOutput {
+                rule: self.rule
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::output::GetRuleOutput).
@@ -2551,20 +2535,20 @@ impl GetRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegexPatternSetOutput {
+pub struct GetRegexPatternSetOutput  {
     /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
     #[doc(hidden)]
     pub regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
 }
 impl GetRegexPatternSetOutput {
     /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
-    pub fn regex_pattern_set(&self) -> std::option::Option<&crate::model::RegexPatternSet> {
+    pub fn regex_pattern_set(&self) -> std::option::Option<& crate::model::RegexPatternSet> {
         self.regex_pattern_set.as_ref()
     }
 }
 /// See [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
 pub mod get_regex_pattern_set_output {
-
+    
     /// A builder for [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2577,20 +2561,19 @@ pub mod get_regex_pattern_set_output {
             self
         }
         /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
-        pub fn set_regex_pattern_set(
-            mut self,
-            input: std::option::Option<crate::model::RegexPatternSet>,
-        ) -> Self {
-            self.regex_pattern_set = input;
-            self
+        pub fn set_regex_pattern_set(mut self, input: std::option::Option<crate::model::RegexPatternSet>) -> Self {
+            self.regex_pattern_set = input; self
         }
         /// Consumes the builder and constructs a [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
         pub fn build(self) -> crate::output::GetRegexPatternSetOutput {
             crate::output::GetRegexPatternSetOutput {
-                regex_pattern_set: self.regex_pattern_set,
+                regex_pattern_set: self.regex_pattern_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
@@ -2602,20 +2585,20 @@ impl GetRegexPatternSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegexMatchSetOutput {
+pub struct GetRegexMatchSetOutput  {
     /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
     #[doc(hidden)]
     pub regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
 }
 impl GetRegexMatchSetOutput {
     /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
-    pub fn regex_match_set(&self) -> std::option::Option<&crate::model::RegexMatchSet> {
+    pub fn regex_match_set(&self) -> std::option::Option<& crate::model::RegexMatchSet> {
         self.regex_match_set.as_ref()
     }
 }
 /// See [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
 pub mod get_regex_match_set_output {
-
+    
     /// A builder for [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2628,20 +2611,19 @@ pub mod get_regex_match_set_output {
             self
         }
         /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
-        pub fn set_regex_match_set(
-            mut self,
-            input: std::option::Option<crate::model::RegexMatchSet>,
-        ) -> Self {
-            self.regex_match_set = input;
-            self
+        pub fn set_regex_match_set(mut self, input: std::option::Option<crate::model::RegexMatchSet>) -> Self {
+            self.regex_match_set = input; self
         }
         /// Consumes the builder and constructs a [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
         pub fn build(self) -> crate::output::GetRegexMatchSetOutput {
             crate::output::GetRegexMatchSetOutput {
-                regex_match_set: self.regex_match_set,
+                regex_match_set: self.regex_match_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRegexMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
@@ -2653,7 +2635,7 @@ impl GetRegexMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRateBasedRuleManagedKeysOutput {
+pub struct GetRateBasedRuleManagedKeysOutput  {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
     #[doc(hidden)]
     pub managed_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2663,17 +2645,17 @@ pub struct GetRateBasedRuleManagedKeysOutput {
 }
 impl GetRateBasedRuleManagedKeysOutput {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
-    pub fn managed_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn managed_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.managed_keys.as_deref()
     }
     /// <p>A null value and not currently used.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
 pub mod get_rate_based_rule_managed_keys_output {
-
+    
     /// A builder for [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2688,17 +2670,13 @@ pub mod get_rate_based_rule_managed_keys_output {
         /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
         pub fn managed_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.managed_keys.unwrap_or_default();
-            v.push(input.into());
-            self.managed_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.managed_keys = Some(v);
+                            self
         }
         /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
-        pub fn set_managed_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.managed_keys = input;
-            self
+        pub fn set_managed_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.managed_keys = input; self
         }
         /// <p>A null value and not currently used.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2707,17 +2685,20 @@ pub mod get_rate_based_rule_managed_keys_output {
         }
         /// <p>A null value and not currently used.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
         pub fn build(self) -> crate::output::GetRateBasedRuleManagedKeysOutput {
             crate::output::GetRateBasedRuleManagedKeysOutput {
-                managed_keys: self.managed_keys,
-                next_marker: self.next_marker,
+                managed_keys: self.managed_keys
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRateBasedRuleManagedKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
@@ -2729,20 +2710,20 @@ impl GetRateBasedRuleManagedKeysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRateBasedRuleOutput {
+pub struct GetRateBasedRuleOutput  {
     /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::RateBasedRule>,
 }
 impl GetRateBasedRuleOutput {
     /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
-    pub fn rule(&self) -> std::option::Option<&crate::model::RateBasedRule> {
+    pub fn rule(&self) -> std::option::Option<& crate::model::RateBasedRule> {
         self.rule.as_ref()
     }
 }
 /// See [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
 pub mod get_rate_based_rule_output {
-
+    
     /// A builder for [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2756,14 +2737,18 @@ pub mod get_rate_based_rule_output {
         }
         /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::RateBasedRule>) -> Self {
-            self.rule = input;
-            self
+            self.rule = input; self
         }
         /// Consumes the builder and constructs a [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
         pub fn build(self) -> crate::output::GetRateBasedRuleOutput {
-            crate::output::GetRateBasedRuleOutput { rule: self.rule }
+            crate::output::GetRateBasedRuleOutput {
+                rule: self.rule
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetRateBasedRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
@@ -2775,20 +2760,20 @@ impl GetRateBasedRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPermissionPolicyOutput {
+pub struct GetPermissionPolicyOutput  {
     /// <p>The IAM policy attached to the specified RuleGroup.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetPermissionPolicyOutput {
     /// <p>The IAM policy attached to the specified RuleGroup.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
 pub mod get_permission_policy_output {
-
+    
     /// A builder for [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2802,16 +2787,18 @@ pub mod get_permission_policy_output {
         }
         /// <p>The IAM policy attached to the specified RuleGroup.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
         pub fn build(self) -> crate::output::GetPermissionPolicyOutput {
             crate::output::GetPermissionPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPermissionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
@@ -2823,22 +2810,20 @@ impl GetPermissionPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoggingConfigurationOutput {
+pub struct GetLoggingConfigurationOutput  {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl GetLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
 /// See [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
 pub mod get_logging_configuration_output {
-
+    
     /// A builder for [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2851,20 +2836,19 @@ pub mod get_logging_configuration_output {
             self
         }
         /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
-        pub fn set_logging_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfiguration>,
-        ) -> Self {
-            self.logging_configuration = input;
-            self
+        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
+            self.logging_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::GetLoggingConfigurationOutput {
             crate::output::GetLoggingConfigurationOutput {
-                logging_configuration: self.logging_configuration,
+                logging_configuration: self.logging_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
@@ -2876,59 +2860,61 @@ impl GetLoggingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpSetOutput {
-    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
+pub struct GetIpSetOutput  {
+    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li> 
+    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub ip_set: std::option::Option<crate::model::IpSet>,
 }
 impl GetIpSetOutput {
-    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
+    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li> 
+    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li> 
     /// </ul>
-    pub fn ip_set(&self) -> std::option::Option<&crate::model::IpSet> {
+    pub fn ip_set(&self) -> std::option::Option<& crate::model::IpSet> {
         self.ip_set.as_ref()
     }
 }
 /// See [`GetIpSetOutput`](crate::output::GetIpSetOutput).
 pub mod get_ip_set_output {
-
+    
     /// A builder for [`GetIpSetOutput`](crate::output::GetIpSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set: std::option::Option<crate::model::IpSet>,
     }
     impl Builder {
-        /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
-        /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
+        /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li> 
+        /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li> 
         /// </ul>
         pub fn ip_set(mut self, input: crate::model::IpSet) -> Self {
             self.ip_set = Some(input);
             self
         }
-        /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
-        /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
+        /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li> 
+        /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li> 
         /// </ul>
         pub fn set_ip_set(mut self, input: std::option::Option<crate::model::IpSet>) -> Self {
-            self.ip_set = input;
-            self
+            self.ip_set = input; self
         }
         /// Consumes the builder and constructs a [`GetIpSetOutput`](crate::output::GetIpSetOutput).
         pub fn build(self) -> crate::output::GetIpSetOutput {
             crate::output::GetIpSetOutput {
-                ip_set: self.ip_set,
+                ip_set: self.ip_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetIpSetOutput {
     /// Creates a new builder-style object to manufacture [`GetIpSetOutput`](crate::output::GetIpSetOutput).
@@ -2940,20 +2926,20 @@ impl GetIpSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGeoMatchSetOutput {
+pub struct GetGeoMatchSetOutput  {
     /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
     #[doc(hidden)]
     pub geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
 }
 impl GetGeoMatchSetOutput {
     /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
-    pub fn geo_match_set(&self) -> std::option::Option<&crate::model::GeoMatchSet> {
+    pub fn geo_match_set(&self) -> std::option::Option<& crate::model::GeoMatchSet> {
         self.geo_match_set.as_ref()
     }
 }
 /// See [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
 pub mod get_geo_match_set_output {
-
+    
     /// A builder for [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2966,20 +2952,19 @@ pub mod get_geo_match_set_output {
             self
         }
         /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
-        pub fn set_geo_match_set(
-            mut self,
-            input: std::option::Option<crate::model::GeoMatchSet>,
-        ) -> Self {
-            self.geo_match_set = input;
-            self
+        pub fn set_geo_match_set(mut self, input: std::option::Option<crate::model::GeoMatchSet>) -> Self {
+            self.geo_match_set = input; self
         }
         /// Consumes the builder and constructs a [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
         pub fn build(self) -> crate::output::GetGeoMatchSetOutput {
             crate::output::GetGeoMatchSetOutput {
-                geo_match_set: self.geo_match_set,
+                geo_match_set: self.geo_match_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGeoMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
@@ -2991,20 +2976,20 @@ impl GetGeoMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChangeTokenStatusOutput {
+pub struct GetChangeTokenStatusOutput  {
     /// <p>The status of the change token.</p>
     #[doc(hidden)]
     pub change_token_status: std::option::Option<crate::model::ChangeTokenStatus>,
 }
 impl GetChangeTokenStatusOutput {
     /// <p>The status of the change token.</p>
-    pub fn change_token_status(&self) -> std::option::Option<&crate::model::ChangeTokenStatus> {
+    pub fn change_token_status(&self) -> std::option::Option<& crate::model::ChangeTokenStatus> {
         self.change_token_status.as_ref()
     }
 }
 /// See [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
 pub mod get_change_token_status_output {
-
+    
     /// A builder for [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3017,20 +3002,19 @@ pub mod get_change_token_status_output {
             self
         }
         /// <p>The status of the change token.</p>
-        pub fn set_change_token_status(
-            mut self,
-            input: std::option::Option<crate::model::ChangeTokenStatus>,
-        ) -> Self {
-            self.change_token_status = input;
-            self
+        pub fn set_change_token_status(mut self, input: std::option::Option<crate::model::ChangeTokenStatus>) -> Self {
+            self.change_token_status = input; self
         }
         /// Consumes the builder and constructs a [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
         pub fn build(self) -> crate::output::GetChangeTokenStatusOutput {
             crate::output::GetChangeTokenStatusOutput {
-                change_token_status: self.change_token_status,
+                change_token_status: self.change_token_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetChangeTokenStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
@@ -3042,20 +3026,20 @@ impl GetChangeTokenStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChangeTokenOutput {
+pub struct GetChangeTokenOutput  {
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl GetChangeTokenOutput {
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
 pub mod get_change_token_output {
-
+    
     /// A builder for [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3069,16 +3053,18 @@ pub mod get_change_token_output {
         }
         /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
         pub fn build(self) -> crate::output::GetChangeTokenOutput {
             crate::output::GetChangeTokenOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetChangeTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
@@ -3090,66 +3076,65 @@ impl GetChangeTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetByteMatchSetOutput {
-    /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li>
-    /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+pub struct GetByteMatchSetOutput  {
+    /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li> 
+    /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
 }
 impl GetByteMatchSetOutput {
-    /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li>
-    /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li> 
+    /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
-    pub fn byte_match_set(&self) -> std::option::Option<&crate::model::ByteMatchSet> {
+    pub fn byte_match_set(&self) -> std::option::Option<& crate::model::ByteMatchSet> {
         self.byte_match_set.as_ref()
     }
 }
 /// See [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
 pub mod get_byte_match_set_output {
-
+    
     /// A builder for [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
     }
     impl Builder {
-        /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li>
-        /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
-        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li> 
+        /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li> 
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
         /// </ul>
         pub fn byte_match_set(mut self, input: crate::model::ByteMatchSet) -> Self {
             self.byte_match_set = Some(input);
             self
         }
-        /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
-        /// <ul>
-        /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li>
-        /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
-        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+        /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li> 
+        /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li> 
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
         /// </ul>
-        pub fn set_byte_match_set(
-            mut self,
-            input: std::option::Option<crate::model::ByteMatchSet>,
-        ) -> Self {
-            self.byte_match_set = input;
-            self
+        pub fn set_byte_match_set(mut self, input: std::option::Option<crate::model::ByteMatchSet>) -> Self {
+            self.byte_match_set = input; self
         }
         /// Consumes the builder and constructs a [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
         pub fn build(self) -> crate::output::GetByteMatchSetOutput {
             crate::output::GetByteMatchSetOutput {
-                byte_match_set: self.byte_match_set,
+                byte_match_set: self.byte_match_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
@@ -3161,19 +3146,24 @@ impl GetByteMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWebAclOutput {}
+pub struct DisassociateWebAclOutput  {
+}
 /// See [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
 pub mod disassociate_web_acl_output {
-
+    
     /// A builder for [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
         pub fn build(self) -> crate::output::DisassociateWebAclOutput {
-            crate::output::DisassociateWebAclOutput {}
+            crate::output::DisassociateWebAclOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
@@ -3185,20 +3175,20 @@ impl DisassociateWebAclOutput {
 /// <p>The response to a request to delete an <code>XssMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteXssMatchSetOutput {
+pub struct DeleteXssMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteXssMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
 pub mod delete_xss_match_set_output {
-
+    
     /// A builder for [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3212,16 +3202,18 @@ pub mod delete_xss_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteXssMatchSetOutput {
             crate::output::DeleteXssMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
@@ -3233,20 +3225,20 @@ impl DeleteXssMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWebAclOutput {
+pub struct DeleteWebAclOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteWebAclOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
 pub mod delete_web_acl_output {
-
+    
     /// A builder for [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3260,16 +3252,18 @@ pub mod delete_web_acl_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
         pub fn build(self) -> crate::output::DeleteWebAclOutput {
             crate::output::DeleteWebAclOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteWebAclOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
@@ -3281,20 +3275,20 @@ impl DeleteWebAclOutput {
 /// <p>The response to a request to delete a <code>SqlInjectionMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSqlInjectionMatchSetOutput {
+pub struct DeleteSqlInjectionMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
 pub mod delete_sql_injection_match_set_output {
-
+    
     /// A builder for [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3308,16 +3302,18 @@ pub mod delete_sql_injection_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteSqlInjectionMatchSetOutput {
             crate::output::DeleteSqlInjectionMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSqlInjectionMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
@@ -3329,20 +3325,20 @@ impl DeleteSqlInjectionMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSizeConstraintSetOutput {
+pub struct DeleteSizeConstraintSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteSizeConstraintSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
 pub mod delete_size_constraint_set_output {
-
+    
     /// A builder for [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3356,16 +3352,18 @@ pub mod delete_size_constraint_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
         pub fn build(self) -> crate::output::DeleteSizeConstraintSetOutput {
             crate::output::DeleteSizeConstraintSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSizeConstraintSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
@@ -3377,20 +3375,20 @@ impl DeleteSizeConstraintSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleGroupOutput {
+pub struct DeleteRuleGroupOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleGroupOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
 pub mod delete_rule_group_output {
-
+    
     /// A builder for [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3404,16 +3402,18 @@ pub mod delete_rule_group_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
         pub fn build(self) -> crate::output::DeleteRuleGroupOutput {
             crate::output::DeleteRuleGroupOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
@@ -3425,20 +3425,20 @@ impl DeleteRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleOutput {
+pub struct DeleteRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
-
+    
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3452,16 +3452,18 @@ pub mod delete_rule_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
         pub fn build(self) -> crate::output::DeleteRuleOutput {
             crate::output::DeleteRuleOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
@@ -3473,20 +3475,20 @@ impl DeleteRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegexPatternSetOutput {
+pub struct DeleteRegexPatternSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRegexPatternSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
 pub mod delete_regex_pattern_set_output {
-
+    
     /// A builder for [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3500,16 +3502,18 @@ pub mod delete_regex_pattern_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
         pub fn build(self) -> crate::output::DeleteRegexPatternSetOutput {
             crate::output::DeleteRegexPatternSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
@@ -3521,20 +3525,20 @@ impl DeleteRegexPatternSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegexMatchSetOutput {
+pub struct DeleteRegexMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRegexMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
 pub mod delete_regex_match_set_output {
-
+    
     /// A builder for [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3548,16 +3552,18 @@ pub mod delete_regex_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteRegexMatchSetOutput {
             crate::output::DeleteRegexMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRegexMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
@@ -3569,20 +3575,20 @@ impl DeleteRegexMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRateBasedRuleOutput {
+pub struct DeleteRateBasedRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRateBasedRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
 pub mod delete_rate_based_rule_output {
-
+    
     /// A builder for [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3596,16 +3602,18 @@ pub mod delete_rate_based_rule_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
         pub fn build(self) -> crate::output::DeleteRateBasedRuleOutput {
             crate::output::DeleteRateBasedRuleOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRateBasedRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
@@ -3617,19 +3625,24 @@ impl DeleteRateBasedRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionPolicyOutput {}
+pub struct DeletePermissionPolicyOutput  {
+}
 /// See [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
 pub mod delete_permission_policy_output {
-
+    
     /// A builder for [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
         pub fn build(self) -> crate::output::DeletePermissionPolicyOutput {
-            crate::output::DeletePermissionPolicyOutput {}
+            crate::output::DeletePermissionPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePermissionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
@@ -3641,19 +3654,24 @@ impl DeletePermissionPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoggingConfigurationOutput {}
+pub struct DeleteLoggingConfigurationOutput  {
+}
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
-
+    
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteLoggingConfigurationOutput {
-            crate::output::DeleteLoggingConfigurationOutput {}
+            crate::output::DeleteLoggingConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
@@ -3665,20 +3683,20 @@ impl DeleteLoggingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIpSetOutput {
+pub struct DeleteIpSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteIpSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
 pub mod delete_ip_set_output {
-
+    
     /// A builder for [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3692,16 +3710,18 @@ pub mod delete_ip_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
         pub fn build(self) -> crate::output::DeleteIpSetOutput {
             crate::output::DeleteIpSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteIpSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
@@ -3713,20 +3733,20 @@ impl DeleteIpSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGeoMatchSetOutput {
+pub struct DeleteGeoMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteGeoMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
 pub mod delete_geo_match_set_output {
-
+    
     /// A builder for [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3740,16 +3760,18 @@ pub mod delete_geo_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteGeoMatchSetOutput {
             crate::output::DeleteGeoMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGeoMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
@@ -3761,20 +3783,20 @@ impl DeleteGeoMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteByteMatchSetOutput {
+pub struct DeleteByteMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteByteMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
 pub mod delete_byte_match_set_output {
-
+    
     /// A builder for [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3788,16 +3810,18 @@ pub mod delete_byte_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteByteMatchSetOutput {
             crate::output::DeleteByteMatchSetOutput {
-                change_token: self.change_token,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
@@ -3809,7 +3833,7 @@ impl DeleteByteMatchSetOutput {
 /// <p>The response to a <code>CreateXssMatchSet</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateXssMatchSetOutput {
+pub struct CreateXssMatchSetOutput  {
     /// <p>An <code>XssMatchSet</code>.</p>
     #[doc(hidden)]
     pub xss_match_set: std::option::Option<crate::model::XssMatchSet>,
@@ -3819,17 +3843,17 @@ pub struct CreateXssMatchSetOutput {
 }
 impl CreateXssMatchSetOutput {
     /// <p>An <code>XssMatchSet</code>.</p>
-    pub fn xss_match_set(&self) -> std::option::Option<&crate::model::XssMatchSet> {
+    pub fn xss_match_set(&self) -> std::option::Option<& crate::model::XssMatchSet> {
         self.xss_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
 pub mod create_xss_match_set_output {
-
+    
     /// A builder for [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3843,12 +3867,8 @@ pub mod create_xss_match_set_output {
             self
         }
         /// <p>An <code>XssMatchSet</code>.</p>
-        pub fn set_xss_match_set(
-            mut self,
-            input: std::option::Option<crate::model::XssMatchSet>,
-        ) -> Self {
-            self.xss_match_set = input;
-            self
+        pub fn set_xss_match_set(mut self, input: std::option::Option<crate::model::XssMatchSet>) -> Self {
+            self.xss_match_set = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3857,17 +3877,20 @@ pub mod create_xss_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
         pub fn build(self) -> crate::output::CreateXssMatchSetOutput {
             crate::output::CreateXssMatchSetOutput {
-                xss_match_set: self.xss_match_set,
-                change_token: self.change_token,
+                xss_match_set: self.xss_match_set
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
@@ -3879,20 +3902,20 @@ impl CreateXssMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWebAclMigrationStackOutput {
+pub struct CreateWebAclMigrationStackOutput  {
     /// <p>The URL of the template created in Amazon S3. </p>
     #[doc(hidden)]
     pub s3_object_url: std::option::Option<std::string::String>,
 }
 impl CreateWebAclMigrationStackOutput {
     /// <p>The URL of the template created in Amazon S3. </p>
-    pub fn s3_object_url(&self) -> std::option::Option<&str> {
+    pub fn s3_object_url(&self) -> std::option::Option<& str> {
         self.s3_object_url.as_deref()
     }
 }
 /// See [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
 pub mod create_web_acl_migration_stack_output {
-
+    
     /// A builder for [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3905,20 +3928,19 @@ pub mod create_web_acl_migration_stack_output {
             self
         }
         /// <p>The URL of the template created in Amazon S3. </p>
-        pub fn set_s3_object_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_object_url = input;
-            self
+        pub fn set_s3_object_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_object_url = input; self
         }
         /// Consumes the builder and constructs a [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
         pub fn build(self) -> crate::output::CreateWebAclMigrationStackOutput {
             crate::output::CreateWebAclMigrationStackOutput {
-                s3_object_url: self.s3_object_url,
+                s3_object_url: self.s3_object_url
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWebAclMigrationStackOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
@@ -3930,7 +3952,7 @@ impl CreateWebAclMigrationStackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWebAclOutput {
+pub struct CreateWebAclOutput  {
     /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
     #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
@@ -3940,17 +3962,17 @@ pub struct CreateWebAclOutput {
 }
 impl CreateWebAclOutput {
     /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
-    pub fn web_acl(&self) -> std::option::Option<&crate::model::WebAcl> {
+    pub fn web_acl(&self) -> std::option::Option<& crate::model::WebAcl> {
         self.web_acl.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
 pub mod create_web_acl_output {
-
+    
     /// A builder for [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3965,8 +3987,7 @@ pub mod create_web_acl_output {
         }
         /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
-            self.web_acl = input;
-            self
+            self.web_acl = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3975,17 +3996,20 @@ pub mod create_web_acl_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
         pub fn build(self) -> crate::output::CreateWebAclOutput {
             crate::output::CreateWebAclOutput {
-                web_acl: self.web_acl,
-                change_token: self.change_token,
+                web_acl: self.web_acl
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
@@ -3997,7 +4021,7 @@ impl CreateWebAclOutput {
 /// <p>The response to a <code>CreateSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSqlInjectionMatchSetOutput {
+pub struct CreateSqlInjectionMatchSetOutput  {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
     #[doc(hidden)]
     pub sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
@@ -4007,19 +4031,17 @@ pub struct CreateSqlInjectionMatchSetOutput {
 }
 impl CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-    pub fn sql_injection_match_set(
-        &self,
-    ) -> std::option::Option<&crate::model::SqlInjectionMatchSet> {
+    pub fn sql_injection_match_set(&self) -> std::option::Option<& crate::model::SqlInjectionMatchSet> {
         self.sql_injection_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
 pub mod create_sql_injection_match_set_output {
-
+    
     /// A builder for [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4028,20 +4050,13 @@ pub mod create_sql_injection_match_set_output {
     }
     impl Builder {
         /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-        pub fn sql_injection_match_set(
-            mut self,
-            input: crate::model::SqlInjectionMatchSet,
-        ) -> Self {
+        pub fn sql_injection_match_set(mut self, input: crate::model::SqlInjectionMatchSet) -> Self {
             self.sql_injection_match_set = Some(input);
             self
         }
         /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-        pub fn set_sql_injection_match_set(
-            mut self,
-            input: std::option::Option<crate::model::SqlInjectionMatchSet>,
-        ) -> Self {
-            self.sql_injection_match_set = input;
-            self
+        pub fn set_sql_injection_match_set(mut self, input: std::option::Option<crate::model::SqlInjectionMatchSet>) -> Self {
+            self.sql_injection_match_set = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4050,17 +4065,20 @@ pub mod create_sql_injection_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
         pub fn build(self) -> crate::output::CreateSqlInjectionMatchSetOutput {
             crate::output::CreateSqlInjectionMatchSetOutput {
-                sql_injection_match_set: self.sql_injection_match_set,
-                change_token: self.change_token,
+                sql_injection_match_set: self.sql_injection_match_set
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSqlInjectionMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
@@ -4072,7 +4090,7 @@ impl CreateSqlInjectionMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSizeConstraintSetOutput {
+pub struct CreateSizeConstraintSetOutput  {
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
     #[doc(hidden)]
     pub size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
@@ -4082,17 +4100,17 @@ pub struct CreateSizeConstraintSetOutput {
 }
 impl CreateSizeConstraintSetOutput {
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
-    pub fn size_constraint_set(&self) -> std::option::Option<&crate::model::SizeConstraintSet> {
+    pub fn size_constraint_set(&self) -> std::option::Option<& crate::model::SizeConstraintSet> {
         self.size_constraint_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
 pub mod create_size_constraint_set_output {
-
+    
     /// A builder for [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4106,12 +4124,8 @@ pub mod create_size_constraint_set_output {
             self
         }
         /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
-        pub fn set_size_constraint_set(
-            mut self,
-            input: std::option::Option<crate::model::SizeConstraintSet>,
-        ) -> Self {
-            self.size_constraint_set = input;
-            self
+        pub fn set_size_constraint_set(mut self, input: std::option::Option<crate::model::SizeConstraintSet>) -> Self {
+            self.size_constraint_set = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4120,17 +4134,20 @@ pub mod create_size_constraint_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
         pub fn build(self) -> crate::output::CreateSizeConstraintSetOutput {
             crate::output::CreateSizeConstraintSetOutput {
-                size_constraint_set: self.size_constraint_set,
-                change_token: self.change_token,
+                size_constraint_set: self.size_constraint_set
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSizeConstraintSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
@@ -4142,7 +4159,7 @@ impl CreateSizeConstraintSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleGroupOutput {
+pub struct CreateRuleGroupOutput  {
     /// <p>An empty <code>RuleGroup</code>.</p>
     #[doc(hidden)]
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
@@ -4152,17 +4169,17 @@ pub struct CreateRuleGroupOutput {
 }
 impl CreateRuleGroupOutput {
     /// <p>An empty <code>RuleGroup</code>.</p>
-    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
+    pub fn rule_group(&self) -> std::option::Option<& crate::model::RuleGroup> {
         self.rule_group.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
 pub mod create_rule_group_output {
-
+    
     /// A builder for [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4176,12 +4193,8 @@ pub mod create_rule_group_output {
             self
         }
         /// <p>An empty <code>RuleGroup</code>.</p>
-        pub fn set_rule_group(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroup>,
-        ) -> Self {
-            self.rule_group = input;
-            self
+        pub fn set_rule_group(mut self, input: std::option::Option<crate::model::RuleGroup>) -> Self {
+            self.rule_group = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4190,17 +4203,20 @@ pub mod create_rule_group_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
         pub fn build(self) -> crate::output::CreateRuleGroupOutput {
             crate::output::CreateRuleGroupOutput {
-                rule_group: self.rule_group,
-                change_token: self.change_token,
+                rule_group: self.rule_group
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
@@ -4212,7 +4228,7 @@ impl CreateRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleOutput {
+pub struct CreateRuleOutput  {
     /// <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
@@ -4222,17 +4238,17 @@ pub struct CreateRuleOutput {
 }
 impl CreateRuleOutput {
     /// <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
-    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+    pub fn rule(&self) -> std::option::Option<& crate::model::Rule> {
         self.rule.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
 pub mod create_rule_output {
-
+    
     /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4247,8 +4263,7 @@ pub mod create_rule_output {
         }
         /// <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Rule>) -> Self {
-            self.rule = input;
-            self
+            self.rule = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4257,17 +4272,20 @@ pub mod create_rule_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::output::CreateRuleOutput).
         pub fn build(self) -> crate::output::CreateRuleOutput {
             crate::output::CreateRuleOutput {
-                rule: self.rule,
-                change_token: self.change_token,
+                rule: self.rule
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput).
@@ -4279,7 +4297,7 @@ impl CreateRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRegexPatternSetOutput {
+pub struct CreateRegexPatternSetOutput  {
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
     #[doc(hidden)]
     pub regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
@@ -4289,17 +4307,17 @@ pub struct CreateRegexPatternSetOutput {
 }
 impl CreateRegexPatternSetOutput {
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
-    pub fn regex_pattern_set(&self) -> std::option::Option<&crate::model::RegexPatternSet> {
+    pub fn regex_pattern_set(&self) -> std::option::Option<& crate::model::RegexPatternSet> {
         self.regex_pattern_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
 pub mod create_regex_pattern_set_output {
-
+    
     /// A builder for [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4313,12 +4331,8 @@ pub mod create_regex_pattern_set_output {
             self
         }
         /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
-        pub fn set_regex_pattern_set(
-            mut self,
-            input: std::option::Option<crate::model::RegexPatternSet>,
-        ) -> Self {
-            self.regex_pattern_set = input;
-            self
+        pub fn set_regex_pattern_set(mut self, input: std::option::Option<crate::model::RegexPatternSet>) -> Self {
+            self.regex_pattern_set = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4327,17 +4341,20 @@ pub mod create_regex_pattern_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
         pub fn build(self) -> crate::output::CreateRegexPatternSetOutput {
             crate::output::CreateRegexPatternSetOutput {
-                regex_pattern_set: self.regex_pattern_set,
-                change_token: self.change_token,
+                regex_pattern_set: self.regex_pattern_set
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
@@ -4349,7 +4366,7 @@ impl CreateRegexPatternSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRegexMatchSetOutput {
+pub struct CreateRegexMatchSetOutput  {
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
     #[doc(hidden)]
     pub regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
@@ -4359,17 +4376,17 @@ pub struct CreateRegexMatchSetOutput {
 }
 impl CreateRegexMatchSetOutput {
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
-    pub fn regex_match_set(&self) -> std::option::Option<&crate::model::RegexMatchSet> {
+    pub fn regex_match_set(&self) -> std::option::Option<& crate::model::RegexMatchSet> {
         self.regex_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
 pub mod create_regex_match_set_output {
-
+    
     /// A builder for [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4383,12 +4400,8 @@ pub mod create_regex_match_set_output {
             self
         }
         /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
-        pub fn set_regex_match_set(
-            mut self,
-            input: std::option::Option<crate::model::RegexMatchSet>,
-        ) -> Self {
-            self.regex_match_set = input;
-            self
+        pub fn set_regex_match_set(mut self, input: std::option::Option<crate::model::RegexMatchSet>) -> Self {
+            self.regex_match_set = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4397,17 +4410,20 @@ pub mod create_regex_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
         pub fn build(self) -> crate::output::CreateRegexMatchSetOutput {
             crate::output::CreateRegexMatchSetOutput {
-                regex_match_set: self.regex_match_set,
-                change_token: self.change_token,
+                regex_match_set: self.regex_match_set
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRegexMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
@@ -4419,7 +4435,7 @@ impl CreateRegexMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRateBasedRuleOutput {
+pub struct CreateRateBasedRuleOutput  {
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::RateBasedRule>,
@@ -4429,17 +4445,17 @@ pub struct CreateRateBasedRuleOutput {
 }
 impl CreateRateBasedRuleOutput {
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
-    pub fn rule(&self) -> std::option::Option<&crate::model::RateBasedRule> {
+    pub fn rule(&self) -> std::option::Option<& crate::model::RateBasedRule> {
         self.rule.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
 pub mod create_rate_based_rule_output {
-
+    
     /// A builder for [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4454,8 +4470,7 @@ pub mod create_rate_based_rule_output {
         }
         /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::RateBasedRule>) -> Self {
-            self.rule = input;
-            self
+            self.rule = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4464,17 +4479,20 @@ pub mod create_rate_based_rule_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
         pub fn build(self) -> crate::output::CreateRateBasedRuleOutput {
             crate::output::CreateRateBasedRuleOutput {
-                rule: self.rule,
-                change_token: self.change_token,
+                rule: self.rule
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRateBasedRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
@@ -4486,7 +4504,7 @@ impl CreateRateBasedRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIpSetOutput {
+pub struct CreateIpSetOutput  {
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
     #[doc(hidden)]
     pub ip_set: std::option::Option<crate::model::IpSet>,
@@ -4496,17 +4514,17 @@ pub struct CreateIpSetOutput {
 }
 impl CreateIpSetOutput {
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
-    pub fn ip_set(&self) -> std::option::Option<&crate::model::IpSet> {
+    pub fn ip_set(&self) -> std::option::Option<& crate::model::IpSet> {
         self.ip_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
 pub mod create_ip_set_output {
-
+    
     /// A builder for [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4521,8 +4539,7 @@ pub mod create_ip_set_output {
         }
         /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
         pub fn set_ip_set(mut self, input: std::option::Option<crate::model::IpSet>) -> Self {
-            self.ip_set = input;
-            self
+            self.ip_set = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4531,17 +4548,20 @@ pub mod create_ip_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
         pub fn build(self) -> crate::output::CreateIpSetOutput {
             crate::output::CreateIpSetOutput {
-                ip_set: self.ip_set,
-                change_token: self.change_token,
+                ip_set: self.ip_set
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIpSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
@@ -4553,7 +4573,7 @@ impl CreateIpSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGeoMatchSetOutput {
+pub struct CreateGeoMatchSetOutput  {
     /// <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
     #[doc(hidden)]
     pub geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
@@ -4563,17 +4583,17 @@ pub struct CreateGeoMatchSetOutput {
 }
 impl CreateGeoMatchSetOutput {
     /// <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
-    pub fn geo_match_set(&self) -> std::option::Option<&crate::model::GeoMatchSet> {
+    pub fn geo_match_set(&self) -> std::option::Option<& crate::model::GeoMatchSet> {
         self.geo_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
 pub mod create_geo_match_set_output {
-
+    
     /// A builder for [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4587,12 +4607,8 @@ pub mod create_geo_match_set_output {
             self
         }
         /// <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
-        pub fn set_geo_match_set(
-            mut self,
-            input: std::option::Option<crate::model::GeoMatchSet>,
-        ) -> Self {
-            self.geo_match_set = input;
-            self
+        pub fn set_geo_match_set(mut self, input: std::option::Option<crate::model::GeoMatchSet>) -> Self {
+            self.geo_match_set = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4601,17 +4617,20 @@ pub mod create_geo_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
         pub fn build(self) -> crate::output::CreateGeoMatchSetOutput {
             crate::output::CreateGeoMatchSetOutput {
-                geo_match_set: self.geo_match_set,
-                change_token: self.change_token,
+                geo_match_set: self.geo_match_set
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGeoMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
@@ -4623,7 +4642,7 @@ impl CreateGeoMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateByteMatchSetOutput {
+pub struct CreateByteMatchSetOutput  {
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
     #[doc(hidden)]
     pub byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
@@ -4633,17 +4652,17 @@ pub struct CreateByteMatchSetOutput {
 }
 impl CreateByteMatchSetOutput {
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
-    pub fn byte_match_set(&self) -> std::option::Option<&crate::model::ByteMatchSet> {
+    pub fn byte_match_set(&self) -> std::option::Option<& crate::model::ByteMatchSet> {
         self.byte_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 /// See [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
 pub mod create_byte_match_set_output {
-
+    
     /// A builder for [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4657,12 +4676,8 @@ pub mod create_byte_match_set_output {
             self
         }
         /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
-        pub fn set_byte_match_set(
-            mut self,
-            input: std::option::Option<crate::model::ByteMatchSet>,
-        ) -> Self {
-            self.byte_match_set = input;
-            self
+        pub fn set_byte_match_set(mut self, input: std::option::Option<crate::model::ByteMatchSet>) -> Self {
+            self.byte_match_set = input; self
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4671,17 +4686,20 @@ pub mod create_byte_match_set_output {
         }
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_token = input;
-            self
+            self.change_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
         pub fn build(self) -> crate::output::CreateByteMatchSetOutput {
             crate::output::CreateByteMatchSetOutput {
-                byte_match_set: self.byte_match_set,
-                change_token: self.change_token,
+                byte_match_set: self.byte_match_set
+                ,
+                change_token: self.change_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
@@ -4693,19 +4711,24 @@ impl CreateByteMatchSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWebAclOutput {}
+pub struct AssociateWebAclOutput  {
+}
 /// See [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
 pub mod associate_web_acl_output {
-
+    
     /// A builder for [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
         pub fn build(self) -> crate::output::AssociateWebAclOutput {
-            crate::output::AssociateWebAclOutput {}
+            crate::output::AssociateWebAclOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
@@ -4713,3 +4736,4 @@ impl AssociateWebAclOutput {
         crate::output::associate_web_acl_output::Builder::default()
     }
 }
+

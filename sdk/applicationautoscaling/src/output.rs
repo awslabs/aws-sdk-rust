@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterScalableTargetOutput {}
+pub struct RegisterScalableTargetOutput  {
+}
 /// See [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
 pub mod register_scalable_target_output {
-
+    
     /// A builder for [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
         pub fn build(self) -> crate::output::RegisterScalableTargetOutput {
-            crate::output::RegisterScalableTargetOutput {}
+            crate::output::RegisterScalableTargetOutput {
+            }
         }
     }
+    
+    
 }
 impl RegisterScalableTargetOutput {
     /// Creates a new builder-style object to manufacture [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
@@ -26,19 +31,24 @@ impl RegisterScalableTargetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutScheduledActionOutput {}
+pub struct PutScheduledActionOutput  {
+}
 /// See [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
 pub mod put_scheduled_action_output {
-
+    
     /// A builder for [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
         pub fn build(self) -> crate::output::PutScheduledActionOutput {
-            crate::output::PutScheduledActionOutput {}
+            crate::output::PutScheduledActionOutput {
+            }
         }
     }
+    
+    
 }
 impl PutScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
@@ -50,7 +60,7 @@ impl PutScheduledActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutScalingPolicyOutput {
+pub struct PutScalingPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
@@ -60,17 +70,17 @@ pub struct PutScalingPolicyOutput {
 }
 impl PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
+    pub fn alarms(&self) -> std::option::Option<& [crate::model::Alarm]> {
         self.alarms.as_deref()
     }
 }
 /// See [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
 pub mod put_scaling_policy_output {
-
+    
     /// A builder for [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -85,8 +95,7 @@ pub mod put_scaling_policy_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = input;
-            self
+            self.policy_arn = input; self
         }
         /// Appends an item to `alarms`.
         ///
@@ -95,26 +104,26 @@ pub mod put_scaling_policy_output {
         /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
         pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input);
-            self.alarms = Some(v);
-            self
+                            v.push(input);
+                            self.alarms = Some(v);
+                            self
         }
         /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-        pub fn set_alarms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
-        ) -> Self {
-            self.alarms = input;
-            self
+        pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alarm>>) -> Self {
+            self.alarms = input; self
         }
         /// Consumes the builder and constructs a [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
         pub fn build(self) -> crate::output::PutScalingPolicyOutput {
             crate::output::PutScalingPolicyOutput {
-                policy_arn: self.policy_arn,
-                alarms: self.alarms,
+                policy_arn: self.policy_arn
+                ,
+                alarms: self.alarms
+                ,
             }
         }
     }
+    
+    
 }
 impl PutScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
@@ -126,7 +135,7 @@ impl PutScalingPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScheduledActionsOutput {
+pub struct DescribeScheduledActionsOutput  {
     /// <p>Information about the scheduled actions.</p>
     #[doc(hidden)]
     pub scheduled_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
@@ -136,22 +145,21 @@ pub struct DescribeScheduledActionsOutput {
 }
 impl DescribeScheduledActionsOutput {
     /// <p>Information about the scheduled actions.</p>
-    pub fn scheduled_actions(&self) -> std::option::Option<&[crate::model::ScheduledAction]> {
+    pub fn scheduled_actions(&self) -> std::option::Option<& [crate::model::ScheduledAction]> {
         self.scheduled_actions.as_deref()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
 pub mod describe_scheduled_actions_output {
-
+    
     /// A builder for [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) scheduled_actions:
-            std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
+        pub(crate) scheduled_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -162,17 +170,13 @@ pub mod describe_scheduled_actions_output {
         /// <p>Information about the scheduled actions.</p>
         pub fn scheduled_actions(mut self, input: crate::model::ScheduledAction) -> Self {
             let mut v = self.scheduled_actions.unwrap_or_default();
-            v.push(input);
-            self.scheduled_actions = Some(v);
-            self
+                            v.push(input);
+                            self.scheduled_actions = Some(v);
+                            self
         }
         /// <p>Information about the scheduled actions.</p>
-        pub fn set_scheduled_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
-        ) -> Self {
-            self.scheduled_actions = input;
-            self
+        pub fn set_scheduled_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>) -> Self {
+            self.scheduled_actions = input; self
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,17 +185,20 @@ pub mod describe_scheduled_actions_output {
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
         pub fn build(self) -> crate::output::DescribeScheduledActionsOutput {
             crate::output::DescribeScheduledActionsOutput {
-                scheduled_actions: self.scheduled_actions,
-                next_token: self.next_token,
+                scheduled_actions: self.scheduled_actions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScheduledActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
@@ -203,7 +210,7 @@ impl DescribeScheduledActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScalingPoliciesOutput {
+pub struct DescribeScalingPoliciesOutput  {
     /// <p>Information about the scaling policies.</p>
     #[doc(hidden)]
     pub scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
@@ -213,22 +220,21 @@ pub struct DescribeScalingPoliciesOutput {
 }
 impl DescribeScalingPoliciesOutput {
     /// <p>Information about the scaling policies.</p>
-    pub fn scaling_policies(&self) -> std::option::Option<&[crate::model::ScalingPolicy]> {
+    pub fn scaling_policies(&self) -> std::option::Option<& [crate::model::ScalingPolicy]> {
         self.scaling_policies.as_deref()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
 pub mod describe_scaling_policies_output {
-
+    
     /// A builder for [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) scaling_policies:
-            std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
+        pub(crate) scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -239,17 +245,13 @@ pub mod describe_scaling_policies_output {
         /// <p>Information about the scaling policies.</p>
         pub fn scaling_policies(mut self, input: crate::model::ScalingPolicy) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
-            v.push(input);
-            self.scaling_policies = Some(v);
-            self
+                            v.push(input);
+                            self.scaling_policies = Some(v);
+                            self
         }
         /// <p>Information about the scaling policies.</p>
-        pub fn set_scaling_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
-        ) -> Self {
-            self.scaling_policies = input;
-            self
+        pub fn set_scaling_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>) -> Self {
+            self.scaling_policies = input; self
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -258,17 +260,20 @@ pub mod describe_scaling_policies_output {
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
         pub fn build(self) -> crate::output::DescribeScalingPoliciesOutput {
             crate::output::DescribeScalingPoliciesOutput {
-                scaling_policies: self.scaling_policies,
-                next_token: self.next_token,
+                scaling_policies: self.scaling_policies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScalingPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
@@ -280,7 +285,7 @@ impl DescribeScalingPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScalingActivitiesOutput {
+pub struct DescribeScalingActivitiesOutput  {
     /// <p>A list of scaling activity objects.</p>
     #[doc(hidden)]
     pub scaling_activities: std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>,
@@ -290,22 +295,21 @@ pub struct DescribeScalingActivitiesOutput {
 }
 impl DescribeScalingActivitiesOutput {
     /// <p>A list of scaling activity objects.</p>
-    pub fn scaling_activities(&self) -> std::option::Option<&[crate::model::ScalingActivity]> {
+    pub fn scaling_activities(&self) -> std::option::Option<& [crate::model::ScalingActivity]> {
         self.scaling_activities.as_deref()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
 pub mod describe_scaling_activities_output {
-
+    
     /// A builder for [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) scaling_activities:
-            std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>,
+        pub(crate) scaling_activities: std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -316,17 +320,13 @@ pub mod describe_scaling_activities_output {
         /// <p>A list of scaling activity objects.</p>
         pub fn scaling_activities(mut self, input: crate::model::ScalingActivity) -> Self {
             let mut v = self.scaling_activities.unwrap_or_default();
-            v.push(input);
-            self.scaling_activities = Some(v);
-            self
+                            v.push(input);
+                            self.scaling_activities = Some(v);
+                            self
         }
         /// <p>A list of scaling activity objects.</p>
-        pub fn set_scaling_activities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>,
-        ) -> Self {
-            self.scaling_activities = input;
-            self
+        pub fn set_scaling_activities(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>) -> Self {
+            self.scaling_activities = input; self
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -335,17 +335,20 @@ pub mod describe_scaling_activities_output {
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
         pub fn build(self) -> crate::output::DescribeScalingActivitiesOutput {
             crate::output::DescribeScalingActivitiesOutput {
-                scaling_activities: self.scaling_activities,
-                next_token: self.next_token,
+                scaling_activities: self.scaling_activities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScalingActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
@@ -357,7 +360,7 @@ impl DescribeScalingActivitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScalableTargetsOutput {
+pub struct DescribeScalableTargetsOutput  {
     /// <p>The scalable targets that match the request parameters.</p>
     #[doc(hidden)]
     pub scalable_targets: std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>,
@@ -367,22 +370,21 @@ pub struct DescribeScalableTargetsOutput {
 }
 impl DescribeScalableTargetsOutput {
     /// <p>The scalable targets that match the request parameters.</p>
-    pub fn scalable_targets(&self) -> std::option::Option<&[crate::model::ScalableTarget]> {
+    pub fn scalable_targets(&self) -> std::option::Option<& [crate::model::ScalableTarget]> {
         self.scalable_targets.as_deref()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
 pub mod describe_scalable_targets_output {
-
+    
     /// A builder for [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) scalable_targets:
-            std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>,
+        pub(crate) scalable_targets: std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -393,17 +395,13 @@ pub mod describe_scalable_targets_output {
         /// <p>The scalable targets that match the request parameters.</p>
         pub fn scalable_targets(mut self, input: crate::model::ScalableTarget) -> Self {
             let mut v = self.scalable_targets.unwrap_or_default();
-            v.push(input);
-            self.scalable_targets = Some(v);
-            self
+                            v.push(input);
+                            self.scalable_targets = Some(v);
+                            self
         }
         /// <p>The scalable targets that match the request parameters.</p>
-        pub fn set_scalable_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>,
-        ) -> Self {
-            self.scalable_targets = input;
-            self
+        pub fn set_scalable_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>) -> Self {
+            self.scalable_targets = input; self
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -412,17 +410,20 @@ pub mod describe_scalable_targets_output {
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
         pub fn build(self) -> crate::output::DescribeScalableTargetsOutput {
             crate::output::DescribeScalableTargetsOutput {
-                scalable_targets: self.scalable_targets,
-                next_token: self.next_token,
+                scalable_targets: self.scalable_targets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScalableTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
@@ -434,19 +435,24 @@ impl DescribeScalableTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterScalableTargetOutput {}
+pub struct DeregisterScalableTargetOutput  {
+}
 /// See [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
 pub mod deregister_scalable_target_output {
-
+    
     /// A builder for [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
         pub fn build(self) -> crate::output::DeregisterScalableTargetOutput {
-            crate::output::DeregisterScalableTargetOutput {}
+            crate::output::DeregisterScalableTargetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterScalableTargetOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
@@ -458,19 +464,24 @@ impl DeregisterScalableTargetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScheduledActionOutput {}
+pub struct DeleteScheduledActionOutput  {
+}
 /// See [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
 pub mod delete_scheduled_action_output {
-
+    
     /// A builder for [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
         pub fn build(self) -> crate::output::DeleteScheduledActionOutput {
-            crate::output::DeleteScheduledActionOutput {}
+            crate::output::DeleteScheduledActionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
@@ -482,19 +493,24 @@ impl DeleteScheduledActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScalingPolicyOutput {}
+pub struct DeleteScalingPolicyOutput  {
+}
 /// See [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
 pub mod delete_scaling_policy_output {
-
+    
     /// A builder for [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
         pub fn build(self) -> crate::output::DeleteScalingPolicyOutput {
-            crate::output::DeleteScalingPolicyOutput {}
+            crate::output::DeleteScalingPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
@@ -502,3 +518,4 @@ impl DeleteScalingPolicyOutput {
         crate::output::delete_scaling_policy_output::Builder::default()
     }
 }
+

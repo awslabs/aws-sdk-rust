@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let identityprovidertype = unimplemented!();
 /// match identityprovidertype {
@@ -29,56 +29,48 @@
 /// Specifically, when `identityprovidertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IdentityProviderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IdentityProviderType {
     #[allow(missing_docs)] // documentation missing in model
     Saml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IdentityProviderType {
     fn from(s: &str) -> Self {
         match s {
             "SAML" => IdentityProviderType::Saml,
-            other => {
-                IdentityProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => IdentityProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IdentityProviderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IdentityProviderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IdentityProviderType::from(s))
+                }
+            }
 impl IdentityProviderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IdentityProviderType::Saml => "SAML",
-            IdentityProviderType::Unknown(value) => value.as_str(),
+            IdentityProviderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SAML"]
+        &[
+            "SAML"
+        ]
     }
 }
 impl AsRef<str> for IdentityProviderType {
@@ -90,7 +82,7 @@ impl AsRef<str> for IdentityProviderType {
 /// <p>The summary of the certificate authority (CA).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebsiteCaSummary {
+pub struct WebsiteCaSummary  {
     /// <p>A unique identifier for the CA.</p>
     #[doc(hidden)]
     pub website_ca_id: std::option::Option<std::string::String>,
@@ -103,21 +95,21 @@ pub struct WebsiteCaSummary {
 }
 impl WebsiteCaSummary {
     /// <p>A unique identifier for the CA.</p>
-    pub fn website_ca_id(&self) -> std::option::Option<&str> {
+    pub fn website_ca_id(&self) -> std::option::Option<& str> {
         self.website_ca_id.as_deref()
     }
     /// <p>The time when the CA was added.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 /// See [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
 pub mod website_ca_summary {
-
+    
     /// A builder for [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -132,12 +124,8 @@ pub mod website_ca_summary {
             self
         }
         /// <p>A unique identifier for the CA.</p>
-        pub fn set_website_ca_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.website_ca_id = input;
-            self
+        pub fn set_website_ca_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.website_ca_id = input; self
         }
         /// <p>The time when the CA was added.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -145,12 +133,8 @@ pub mod website_ca_summary {
             self
         }
         /// <p>The time when the CA was added.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,18 +143,22 @@ pub mod website_ca_summary {
         }
         /// <p>The name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// Consumes the builder and constructs a [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
         pub fn build(self) -> crate::model::WebsiteCaSummary {
             crate::model::WebsiteCaSummary {
-                website_ca_id: self.website_ca_id,
-                created_time: self.created_time,
-                display_name: self.display_name,
+                website_ca_id: self.website_ca_id
+                ,
+                created_time: self.created_time
+                ,
+                display_name: self.display_name
+                ,
             }
         }
     }
+    
+    
 }
 impl WebsiteCaSummary {
     /// Creates a new builder-style object to manufacture [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
@@ -182,7 +170,7 @@ impl WebsiteCaSummary {
 /// <p>The summary of the website authorization provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebsiteAuthorizationProviderSummary {
+pub struct WebsiteAuthorizationProviderSummary  {
     /// <p>A unique identifier for the authorization provider.</p>
     #[doc(hidden)]
     pub authorization_provider_id: std::option::Option<std::string::String>,
@@ -198,33 +186,30 @@ pub struct WebsiteAuthorizationProviderSummary {
 }
 impl WebsiteAuthorizationProviderSummary {
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn authorization_provider_id(&self) -> std::option::Option<&str> {
+    pub fn authorization_provider_id(&self) -> std::option::Option<& str> {
         self.authorization_provider_id.as_deref()
     }
     /// <p>The authorization provider type.</p>
-    pub fn authorization_provider_type(
-        &self,
-    ) -> std::option::Option<&crate::model::AuthorizationProviderType> {
+    pub fn authorization_provider_type(&self) -> std::option::Option<& crate::model::AuthorizationProviderType> {
         self.authorization_provider_type.as_ref()
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The time of creation.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
 /// See [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
 pub mod website_authorization_provider_summary {
-
+    
     /// A builder for [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_provider_id: std::option::Option<std::string::String>,
-        pub(crate) authorization_provider_type:
-            std::option::Option<crate::model::AuthorizationProviderType>,
+        pub(crate) authorization_provider_type: std::option::Option<crate::model::AuthorizationProviderType>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -235,28 +220,17 @@ pub mod website_authorization_provider_summary {
             self
         }
         /// <p>A unique identifier for the authorization provider.</p>
-        pub fn set_authorization_provider_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authorization_provider_id = input;
-            self
+        pub fn set_authorization_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authorization_provider_id = input; self
         }
         /// <p>The authorization provider type.</p>
-        pub fn authorization_provider_type(
-            mut self,
-            input: crate::model::AuthorizationProviderType,
-        ) -> Self {
+        pub fn authorization_provider_type(mut self, input: crate::model::AuthorizationProviderType) -> Self {
             self.authorization_provider_type = Some(input);
             self
         }
         /// <p>The authorization provider type.</p>
-        pub fn set_authorization_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::AuthorizationProviderType>,
-        ) -> Self {
-            self.authorization_provider_type = input;
-            self
+        pub fn set_authorization_provider_type(mut self, input: std::option::Option<crate::model::AuthorizationProviderType>) -> Self {
+            self.authorization_provider_type = input; self
         }
         /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,8 +239,7 @@ pub mod website_authorization_provider_summary {
         }
         /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The time of creation.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -274,23 +247,25 @@ pub mod website_authorization_provider_summary {
             self
         }
         /// <p>The time of creation.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
         pub fn build(self) -> crate::model::WebsiteAuthorizationProviderSummary {
             crate::model::WebsiteAuthorizationProviderSummary {
-                authorization_provider_id: self.authorization_provider_id,
-                authorization_provider_type: self.authorization_provider_type,
-                domain_name: self.domain_name,
-                created_time: self.created_time,
+                authorization_provider_id: self.authorization_provider_id
+                ,
+                authorization_provider_type: self.authorization_provider_type
+                ,
+                domain_name: self.domain_name
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
+    
+    
 }
 impl WebsiteAuthorizationProviderSummary {
     /// Creates a new builder-style object to manufacture [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
@@ -305,9 +280,9 @@ impl WebsiteAuthorizationProviderSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authorizationprovidertype = unimplemented!();
 /// match authorizationprovidertype {
@@ -328,56 +303,48 @@ impl WebsiteAuthorizationProviderSummary {
 /// Specifically, when `authorizationprovidertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthorizationProviderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthorizationProviderType {
     #[allow(missing_docs)] // documentation missing in model
     Saml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthorizationProviderType {
     fn from(s: &str) -> Self {
         match s {
             "SAML" => AuthorizationProviderType::Saml,
-            other => AuthorizationProviderType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AuthorizationProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthorizationProviderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthorizationProviderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthorizationProviderType::from(s))
+                }
+            }
 impl AuthorizationProviderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthorizationProviderType::Saml => "SAML",
-            AuthorizationProviderType::Unknown(value) => value.as_str(),
+            AuthorizationProviderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SAML"]
+        &[
+            "SAML"
+        ]
     }
 }
 impl AsRef<str> for AuthorizationProviderType {
@@ -389,7 +356,7 @@ impl AsRef<str> for AuthorizationProviderType {
 /// <p>The summary of the fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FleetSummary {
+pub struct FleetSummary  {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -413,49 +380,45 @@ pub struct FleetSummary {
     pub fleet_status: std::option::Option<crate::model::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl FleetSummary {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The time when the fleet was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time when the fleet was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> std::option::Option<&str> {
+    pub fn fleet_name(&self) -> std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The name of the fleet to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
-    pub fn company_code(&self) -> std::option::Option<&str> {
+    pub fn company_code(&self) -> std::option::Option<& str> {
         self.company_code.as_deref()
     }
     /// <p>The status of the fleet.</p>
-    pub fn fleet_status(&self) -> std::option::Option<&crate::model::FleetStatus> {
+    pub fn fleet_status(&self) -> std::option::Option<& crate::model::FleetStatus> {
         self.fleet_status.as_ref()
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`FleetSummary`](crate::model::FleetSummary).
 pub mod fleet_summary {
-
+    
     /// A builder for [`FleetSummary`](crate::model::FleetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -466,9 +429,7 @@ pub mod fleet_summary {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) company_code: std::option::Option<std::string::String>,
         pub(crate) fleet_status: std::option::Option<crate::model::FleetStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -478,8 +439,7 @@ pub mod fleet_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// <p>The time when the fleet was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -487,12 +447,8 @@ pub mod fleet_summary {
             self
         }
         /// <p>The time when the fleet was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The time when the fleet was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -500,12 +456,8 @@ pub mod fleet_summary {
             self
         }
         /// <p>The time when the fleet was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The name of the fleet.</p>
         pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -514,8 +466,7 @@ pub mod fleet_summary {
         }
         /// <p>The name of the fleet.</p>
         pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_name = input;
-            self
+            self.fleet_name = input; self
         }
         /// <p>The name of the fleet to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -524,8 +475,7 @@ pub mod fleet_summary {
         }
         /// <p>The name of the fleet to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
         pub fn company_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -534,8 +484,7 @@ pub mod fleet_summary {
         }
         /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
         pub fn set_company_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.company_code = input;
-            self
+            self.company_code = input; self
         }
         /// <p>The status of the fleet.</p>
         pub fn fleet_status(mut self, input: crate::model::FleetStatus) -> Self {
@@ -543,52 +492,48 @@ pub mod fleet_summary {
             self
         }
         /// <p>The status of the fleet.</p>
-        pub fn set_fleet_status(
-            mut self,
-            input: std::option::Option<crate::model::FleetStatus>,
-        ) -> Self {
-            self.fleet_status = input;
-            self
+        pub fn set_fleet_status(mut self, input: std::option::Option<crate::model::FleetStatus>) -> Self {
+            self.fleet_status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`FleetSummary`](crate::model::FleetSummary).
         pub fn build(self) -> crate::model::FleetSummary {
             crate::model::FleetSummary {
-                fleet_arn: self.fleet_arn,
-                created_time: self.created_time,
-                last_updated_time: self.last_updated_time,
-                fleet_name: self.fleet_name,
-                display_name: self.display_name,
-                company_code: self.company_code,
-                fleet_status: self.fleet_status,
-                tags: self.tags,
+                fleet_arn: self.fleet_arn
+                ,
+                created_time: self.created_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                fleet_name: self.fleet_name
+                ,
+                display_name: self.display_name
+                ,
+                company_code: self.company_code
+                ,
+                fleet_status: self.fleet_status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl FleetSummary {
     /// Creates a new builder-style object to manufacture [`FleetSummary`](crate::model::FleetSummary).
@@ -603,9 +548,9 @@ impl FleetSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fleetstatus = unimplemented!();
 /// match fleetstatus {
@@ -631,22 +576,14 @@ impl FleetSummary {
 /// Specifically, when `fleetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FleetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FleetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -661,7 +598,7 @@ pub enum FleetStatus {
     #[allow(missing_docs)] // documentation missing in model
     FailedToDelete,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetStatus {
     fn from(s: &str) -> Self {
@@ -672,17 +609,17 @@ impl std::convert::From<&str> for FleetStatus {
             "DELETING" => FleetStatus::Deleting,
             "FAILED_TO_CREATE" => FleetStatus::FailedToCreate,
             "FAILED_TO_DELETE" => FleetStatus::FailedToDelete,
-            other => FleetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FleetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FleetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FleetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FleetStatus::from(s))
+                }
+            }
 impl FleetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -693,18 +630,13 @@ impl FleetStatus {
             FleetStatus::Deleting => "DELETING",
             FleetStatus::FailedToCreate => "FAILED_TO_CREATE",
             FleetStatus::FailedToDelete => "FAILED_TO_DELETE",
-            FleetStatus::Unknown(value) => value.as_str(),
+            FleetStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "DELETED",
-            "DELETING",
-            "FAILED_TO_CREATE",
-            "FAILED_TO_DELETE",
+            "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED_TO_CREATE", "FAILED_TO_DELETE"
         ]
     }
 }
@@ -717,7 +649,7 @@ impl AsRef<str> for FleetStatus {
 /// <p>The summary of the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainSummary {
+pub struct DomainSummary  {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -733,25 +665,25 @@ pub struct DomainSummary {
 }
 impl DomainSummary {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The time that the domain was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The status of the domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
-
+    
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -768,8 +700,7 @@ pub mod domain_summary {
         }
         /// <p>The name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -778,8 +709,7 @@ pub mod domain_summary {
         }
         /// <p>The name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The time that the domain was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -787,12 +717,8 @@ pub mod domain_summary {
             self
         }
         /// <p>The time that the domain was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The status of the domain.</p>
         pub fn domain_status(mut self, input: crate::model::DomainStatus) -> Self {
@@ -800,23 +726,25 @@ pub mod domain_summary {
             self
         }
         /// <p>The status of the domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary).
         pub fn build(self) -> crate::model::DomainSummary {
             crate::model::DomainSummary {
-                domain_name: self.domain_name,
-                display_name: self.display_name,
-                created_time: self.created_time,
-                domain_status: self.domain_status,
+                domain_name: self.domain_name
+                ,
+                display_name: self.display_name
+                ,
+                created_time: self.created_time
+                ,
+                domain_status: self.domain_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainSummary {
     /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
@@ -831,9 +759,9 @@ impl DomainSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let domainstatus = unimplemented!();
 /// match domainstatus {
@@ -861,22 +789,14 @@ impl DomainSummary {
 /// Specifically, when `domainstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -895,7 +815,7 @@ pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainStatus {
     fn from(s: &str) -> Self {
@@ -908,17 +828,17 @@ impl std::convert::From<&str> for DomainStatus {
             "FAILED_TO_DISASSOCIATE" => DomainStatus::FailedToDisassociate,
             "INACTIVE" => DomainStatus::Inactive,
             "PENDING_VALIDATION" => DomainStatus::PendingValidation,
-            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DomainStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DomainStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DomainStatus::from(s))
+                }
+            }
 impl DomainStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -931,20 +851,13 @@ impl DomainStatus {
             DomainStatus::FailedToDisassociate => "FAILED_TO_DISASSOCIATE",
             DomainStatus::Inactive => "INACTIVE",
             DomainStatus::PendingValidation => "PENDING_VALIDATION",
-            DomainStatus::Unknown(value) => value.as_str(),
+            DomainStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "ASSOCIATING",
-            "DISASSOCIATED",
-            "DISASSOCIATING",
-            "FAILED_TO_ASSOCIATE",
-            "FAILED_TO_DISASSOCIATE",
-            "INACTIVE",
-            "PENDING_VALIDATION",
+            "ACTIVE", "ASSOCIATING", "DISASSOCIATED", "DISASSOCIATING", "FAILED_TO_ASSOCIATE", "FAILED_TO_DISASSOCIATE", "INACTIVE", "PENDING_VALIDATION"
         ]
     }
 }
@@ -957,7 +870,7 @@ impl AsRef<str> for DomainStatus {
 /// <p>The summary of devices.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceSummary {
+pub struct DeviceSummary  {
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -967,17 +880,17 @@ pub struct DeviceSummary {
 }
 impl DeviceSummary {
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The status of the device.</p>
-    pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+    pub fn device_status(&self) -> std::option::Option<& crate::model::DeviceStatus> {
         self.device_status.as_ref()
     }
 }
 /// See [`DeviceSummary`](crate::model::DeviceSummary).
 pub mod device_summary {
-
+    
     /// A builder for [`DeviceSummary`](crate::model::DeviceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -992,8 +905,7 @@ pub mod device_summary {
         }
         /// <p>The ID of the device.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>The status of the device.</p>
         pub fn device_status(mut self, input: crate::model::DeviceStatus) -> Self {
@@ -1001,21 +913,21 @@ pub mod device_summary {
             self
         }
         /// <p>The status of the device.</p>
-        pub fn set_device_status(
-            mut self,
-            input: std::option::Option<crate::model::DeviceStatus>,
-        ) -> Self {
-            self.device_status = input;
-            self
+        pub fn set_device_status(mut self, input: std::option::Option<crate::model::DeviceStatus>) -> Self {
+            self.device_status = input; self
         }
         /// Consumes the builder and constructs a [`DeviceSummary`](crate::model::DeviceSummary).
         pub fn build(self) -> crate::model::DeviceSummary {
             crate::model::DeviceSummary {
-                device_id: self.device_id,
-                device_status: self.device_status,
+                device_id: self.device_id
+                ,
+                device_status: self.device_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceSummary {
     /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
@@ -1030,9 +942,9 @@ impl DeviceSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let devicestatus = unimplemented!();
 /// match devicestatus {
@@ -1054,58 +966,52 @@ impl DeviceSummary {
 /// Specifically, when `devicestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     SignedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => DeviceStatus::Active,
             "SIGNED_OUT" => DeviceStatus::SignedOut,
-            other => DeviceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeviceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceStatus::from(s))
+                }
+            }
 impl DeviceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceStatus::Active => "ACTIVE",
             DeviceStatus::SignedOut => "SIGNED_OUT",
-            DeviceStatus::Unknown(value) => value.as_str(),
+            DeviceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "SIGNED_OUT"]
+        &[
+            "ACTIVE", "SIGNED_OUT"
+        ]
     }
 }
 impl AsRef<str> for DeviceStatus {
@@ -1113,3 +1019,4 @@ impl AsRef<str> for DeviceStatus {
         self.as_str()
     }
 }
+

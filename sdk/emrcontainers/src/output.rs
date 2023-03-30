@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,7 +60,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartJobRunOutput {
+pub struct StartJobRunOutput  {
     /// <p>This output displays the started job run ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -66,25 +76,25 @@ pub struct StartJobRunOutput {
 }
 impl StartJobRunOutput {
     /// <p>This output displays the started job run ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>This output displays the name of the started job run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>This output lists the ARN of job run.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
 /// See [`StartJobRunOutput`](crate::output::StartJobRunOutput).
 pub mod start_job_run_output {
-
+    
     /// A builder for [`StartJobRunOutput`](crate::output::StartJobRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -101,8 +111,7 @@ pub mod start_job_run_output {
         }
         /// <p>This output displays the started job run ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>This output displays the name of the started job run.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +120,7 @@ pub mod start_job_run_output {
         }
         /// <p>This output displays the name of the started job run.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>This output lists the ARN of job run.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +129,7 @@ pub mod start_job_run_output {
         }
         /// <p>This output lists the ARN of job run.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,23 +137,25 @@ pub mod start_job_run_output {
             self
         }
         /// <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`StartJobRunOutput`](crate::output::StartJobRunOutput).
         pub fn build(self) -> crate::output::StartJobRunOutput {
             crate::output::StartJobRunOutput {
-                id: self.id,
-                name: self.name,
-                arn: self.arn,
-                virtual_cluster_id: self.virtual_cluster_id,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartJobRunOutput {
     /// Creates a new builder-style object to manufacture [`StartJobRunOutput`](crate::output::StartJobRunOutput).
@@ -158,7 +167,7 @@ impl StartJobRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualClustersOutput {
+pub struct ListVirtualClustersOutput  {
     /// <p>This output lists the specified virtual clusters.</p>
     #[doc(hidden)]
     pub virtual_clusters: std::option::Option<std::vec::Vec<crate::model::VirtualCluster>>,
@@ -168,22 +177,21 @@ pub struct ListVirtualClustersOutput {
 }
 impl ListVirtualClustersOutput {
     /// <p>This output lists the specified virtual clusters.</p>
-    pub fn virtual_clusters(&self) -> std::option::Option<&[crate::model::VirtualCluster]> {
+    pub fn virtual_clusters(&self) -> std::option::Option<& [crate::model::VirtualCluster]> {
         self.virtual_clusters.as_deref()
     }
     /// <p>This output displays the token for the next set of virtual clusters.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput).
 pub mod list_virtual_clusters_output {
-
+    
     /// A builder for [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_clusters:
-            std::option::Option<std::vec::Vec<crate::model::VirtualCluster>>,
+        pub(crate) virtual_clusters: std::option::Option<std::vec::Vec<crate::model::VirtualCluster>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -194,17 +202,13 @@ pub mod list_virtual_clusters_output {
         /// <p>This output lists the specified virtual clusters.</p>
         pub fn virtual_clusters(mut self, input: crate::model::VirtualCluster) -> Self {
             let mut v = self.virtual_clusters.unwrap_or_default();
-            v.push(input);
-            self.virtual_clusters = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_clusters = Some(v);
+                            self
         }
         /// <p>This output lists the specified virtual clusters.</p>
-        pub fn set_virtual_clusters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualCluster>>,
-        ) -> Self {
-            self.virtual_clusters = input;
-            self
+        pub fn set_virtual_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualCluster>>) -> Self {
+            self.virtual_clusters = input; self
         }
         /// <p>This output displays the token for the next set of virtual clusters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -213,17 +217,20 @@ pub mod list_virtual_clusters_output {
         }
         /// <p>This output displays the token for the next set of virtual clusters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput).
         pub fn build(self) -> crate::output::ListVirtualClustersOutput {
             crate::output::ListVirtualClustersOutput {
-                virtual_clusters: self.virtual_clusters,
-                next_token: self.next_token,
+                virtual_clusters: self.virtual_clusters
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVirtualClustersOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput).
@@ -235,30 +242,24 @@ impl ListVirtualClustersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags assigned to resources.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags assigned to resources.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -266,31 +267,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to resources.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -302,7 +298,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedEndpointsOutput {
+pub struct ListManagedEndpointsOutput  {
     /// <p>The managed endpoints to be listed.</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -312,17 +308,17 @@ pub struct ListManagedEndpointsOutput {
 }
 impl ListManagedEndpointsOutput {
     /// <p>The managed endpoints to be listed.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::model::Endpoint]> {
         self.endpoints.as_deref()
     }
     /// <p> The token for the next set of endpoints to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput).
 pub mod list_managed_endpoints_output {
-
+    
     /// A builder for [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -337,17 +333,13 @@ pub mod list_managed_endpoints_output {
         /// <p>The managed endpoints to be listed.</p>
         pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input);
-            self.endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.endpoints = Some(v);
+                            self
         }
         /// <p>The managed endpoints to be listed.</p>
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>) -> Self {
+            self.endpoints = input; self
         }
         /// <p> The token for the next set of endpoints to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -356,17 +348,20 @@ pub mod list_managed_endpoints_output {
         }
         /// <p> The token for the next set of endpoints to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput).
         pub fn build(self) -> crate::output::ListManagedEndpointsOutput {
             crate::output::ListManagedEndpointsOutput {
-                endpoints: self.endpoints,
-                next_token: self.next_token,
+                endpoints: self.endpoints
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListManagedEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput).
@@ -378,7 +373,7 @@ impl ListManagedEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobTemplatesOutput {
+pub struct ListJobTemplatesOutput  {
     /// <p>This output lists information about the specified job templates.</p>
     #[doc(hidden)]
     pub templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
@@ -388,17 +383,17 @@ pub struct ListJobTemplatesOutput {
 }
 impl ListJobTemplatesOutput {
     /// <p>This output lists information about the specified job templates.</p>
-    pub fn templates(&self) -> std::option::Option<&[crate::model::JobTemplate]> {
+    pub fn templates(&self) -> std::option::Option<& [crate::model::JobTemplate]> {
         self.templates.as_deref()
     }
     /// <p> This output displays the token for the next set of job templates.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
 pub mod list_job_templates_output {
-
+    
     /// A builder for [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -413,17 +408,13 @@ pub mod list_job_templates_output {
         /// <p>This output lists information about the specified job templates.</p>
         pub fn templates(mut self, input: crate::model::JobTemplate) -> Self {
             let mut v = self.templates.unwrap_or_default();
-            v.push(input);
-            self.templates = Some(v);
-            self
+                            v.push(input);
+                            self.templates = Some(v);
+                            self
         }
         /// <p>This output lists information about the specified job templates.</p>
-        pub fn set_templates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
-        ) -> Self {
-            self.templates = input;
-            self
+        pub fn set_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>) -> Self {
+            self.templates = input; self
         }
         /// <p> This output displays the token for the next set of job templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -432,17 +423,20 @@ pub mod list_job_templates_output {
         }
         /// <p> This output displays the token for the next set of job templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
         pub fn build(self) -> crate::output::ListJobTemplatesOutput {
             crate::output::ListJobTemplatesOutput {
-                templates: self.templates,
-                next_token: self.next_token,
+                templates: self.templates
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
@@ -454,7 +448,7 @@ impl ListJobTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobRunsOutput {
+pub struct ListJobRunsOutput  {
     /// <p>This output lists information about the specified job runs.</p>
     #[doc(hidden)]
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
@@ -464,17 +458,17 @@ pub struct ListJobRunsOutput {
 }
 impl ListJobRunsOutput {
     /// <p>This output lists information about the specified job runs.</p>
-    pub fn job_runs(&self) -> std::option::Option<&[crate::model::JobRun]> {
+    pub fn job_runs(&self) -> std::option::Option<& [crate::model::JobRun]> {
         self.job_runs.as_deref()
     }
     /// <p>This output displays the token for the next set of job runs.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
 pub mod list_job_runs_output {
-
+    
     /// A builder for [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -489,17 +483,13 @@ pub mod list_job_runs_output {
         /// <p>This output lists information about the specified job runs.</p>
         pub fn job_runs(mut self, input: crate::model::JobRun) -> Self {
             let mut v = self.job_runs.unwrap_or_default();
-            v.push(input);
-            self.job_runs = Some(v);
-            self
+                            v.push(input);
+                            self.job_runs = Some(v);
+                            self
         }
         /// <p>This output lists information about the specified job runs.</p>
-        pub fn set_job_runs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
-        ) -> Self {
-            self.job_runs = input;
-            self
+        pub fn set_job_runs(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobRun>>) -> Self {
+            self.job_runs = input; self
         }
         /// <p>This output displays the token for the next set of job runs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -508,17 +498,20 @@ pub mod list_job_runs_output {
         }
         /// <p>This output displays the token for the next set of job runs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
         pub fn build(self) -> crate::output::ListJobRunsOutput {
             crate::output::ListJobRunsOutput {
-                job_runs: self.job_runs,
-                next_token: self.next_token,
+                job_runs: self.job_runs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
@@ -530,20 +523,20 @@ impl ListJobRunsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualClusterOutput {
+pub struct DescribeVirtualClusterOutput  {
     /// <p>This output displays information about the specified virtual cluster.</p>
     #[doc(hidden)]
     pub virtual_cluster: std::option::Option<crate::model::VirtualCluster>,
 }
 impl DescribeVirtualClusterOutput {
     /// <p>This output displays information about the specified virtual cluster.</p>
-    pub fn virtual_cluster(&self) -> std::option::Option<&crate::model::VirtualCluster> {
+    pub fn virtual_cluster(&self) -> std::option::Option<& crate::model::VirtualCluster> {
         self.virtual_cluster.as_ref()
     }
 }
 /// See [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput).
 pub mod describe_virtual_cluster_output {
-
+    
     /// A builder for [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -556,20 +549,19 @@ pub mod describe_virtual_cluster_output {
             self
         }
         /// <p>This output displays information about the specified virtual cluster.</p>
-        pub fn set_virtual_cluster(
-            mut self,
-            input: std::option::Option<crate::model::VirtualCluster>,
-        ) -> Self {
-            self.virtual_cluster = input;
-            self
+        pub fn set_virtual_cluster(mut self, input: std::option::Option<crate::model::VirtualCluster>) -> Self {
+            self.virtual_cluster = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput).
         pub fn build(self) -> crate::output::DescribeVirtualClusterOutput {
             crate::output::DescribeVirtualClusterOutput {
-                virtual_cluster: self.virtual_cluster,
+                virtual_cluster: self.virtual_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVirtualClusterOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput).
@@ -581,20 +573,20 @@ impl DescribeVirtualClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeManagedEndpointOutput {
+pub struct DescribeManagedEndpointOutput  {
     /// <p>This output displays information about a managed endpoint.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
 impl DescribeManagedEndpointOutput {
     /// <p>This output displays information about a managed endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+    pub fn endpoint(&self) -> std::option::Option<& crate::model::Endpoint> {
         self.endpoint.as_ref()
     }
 }
 /// See [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput).
 pub mod describe_managed_endpoint_output {
-
+    
     /// A builder for [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -608,16 +600,18 @@ pub mod describe_managed_endpoint_output {
         }
         /// <p>This output displays information about a managed endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// Consumes the builder and constructs a [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput).
         pub fn build(self) -> crate::output::DescribeManagedEndpointOutput {
             crate::output::DescribeManagedEndpointOutput {
-                endpoint: self.endpoint,
+                endpoint: self.endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput).
@@ -629,20 +623,20 @@ impl DescribeManagedEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobTemplateOutput {
+pub struct DescribeJobTemplateOutput  {
     /// <p>This output displays information about the specified job template.</p>
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
 }
 impl DescribeJobTemplateOutput {
     /// <p>This output displays information about the specified job template.</p>
-    pub fn job_template(&self) -> std::option::Option<&crate::model::JobTemplate> {
+    pub fn job_template(&self) -> std::option::Option<& crate::model::JobTemplate> {
         self.job_template.as_ref()
     }
 }
 /// See [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
 pub mod describe_job_template_output {
-
+    
     /// A builder for [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -655,20 +649,19 @@ pub mod describe_job_template_output {
             self
         }
         /// <p>This output displays information about the specified job template.</p>
-        pub fn set_job_template(
-            mut self,
-            input: std::option::Option<crate::model::JobTemplate>,
-        ) -> Self {
-            self.job_template = input;
-            self
+        pub fn set_job_template(mut self, input: std::option::Option<crate::model::JobTemplate>) -> Self {
+            self.job_template = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
         pub fn build(self) -> crate::output::DescribeJobTemplateOutput {
             crate::output::DescribeJobTemplateOutput {
-                job_template: self.job_template,
+                job_template: self.job_template
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
@@ -680,20 +673,20 @@ impl DescribeJobTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobRunOutput {
+pub struct DescribeJobRunOutput  {
     /// <p>The output displays information about a job run.</p>
     #[doc(hidden)]
     pub job_run: std::option::Option<crate::model::JobRun>,
 }
 impl DescribeJobRunOutput {
     /// <p>The output displays information about a job run.</p>
-    pub fn job_run(&self) -> std::option::Option<&crate::model::JobRun> {
+    pub fn job_run(&self) -> std::option::Option<& crate::model::JobRun> {
         self.job_run.as_ref()
     }
 }
 /// See [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput).
 pub mod describe_job_run_output {
-
+    
     /// A builder for [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -707,16 +700,18 @@ pub mod describe_job_run_output {
         }
         /// <p>The output displays information about a job run.</p>
         pub fn set_job_run(mut self, input: std::option::Option<crate::model::JobRun>) -> Self {
-            self.job_run = input;
-            self
+            self.job_run = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput).
         pub fn build(self) -> crate::output::DescribeJobRunOutput {
             crate::output::DescribeJobRunOutput {
-                job_run: self.job_run,
+                job_run: self.job_run
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeJobRunOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput).
@@ -728,20 +723,20 @@ impl DescribeJobRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualClusterOutput {
+pub struct DeleteVirtualClusterOutput  {
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualClusterOutput {
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput).
 pub mod delete_virtual_cluster_output {
-
+    
     /// A builder for [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -755,14 +750,18 @@ pub mod delete_virtual_cluster_output {
         }
         /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput).
         pub fn build(self) -> crate::output::DeleteVirtualClusterOutput {
-            crate::output::DeleteVirtualClusterOutput { id: self.id }
+            crate::output::DeleteVirtualClusterOutput {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteVirtualClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput).
@@ -774,7 +773,7 @@ impl DeleteVirtualClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteManagedEndpointOutput {
+pub struct DeleteManagedEndpointOutput  {
     /// <p>The output displays the ID of the managed endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -784,17 +783,17 @@ pub struct DeleteManagedEndpointOutput {
 }
 impl DeleteManagedEndpointOutput {
     /// <p>The output displays the ID of the managed endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
 /// See [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput).
 pub mod delete_managed_endpoint_output {
-
+    
     /// A builder for [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -809,8 +808,7 @@ pub mod delete_managed_endpoint_output {
         }
         /// <p>The output displays the ID of the managed endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -818,21 +816,21 @@ pub mod delete_managed_endpoint_output {
             self
         }
         /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput).
         pub fn build(self) -> crate::output::DeleteManagedEndpointOutput {
             crate::output::DeleteManagedEndpointOutput {
-                id: self.id,
-                virtual_cluster_id: self.virtual_cluster_id,
+                id: self.id
+                ,
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput).
@@ -844,20 +842,20 @@ impl DeleteManagedEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobTemplateOutput {
+pub struct DeleteJobTemplateOutput  {
     /// <p>This output contains the ID of the job template that was deleted.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteJobTemplateOutput {
     /// <p>This output contains the ID of the job template that was deleted.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
 pub mod delete_job_template_output {
-
+    
     /// A builder for [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -871,14 +869,18 @@ pub mod delete_job_template_output {
         }
         /// <p>This output contains the ID of the job template that was deleted.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
         pub fn build(self) -> crate::output::DeleteJobTemplateOutput {
-            crate::output::DeleteJobTemplateOutput { id: self.id }
+            crate::output::DeleteJobTemplateOutput {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
@@ -890,7 +892,7 @@ impl DeleteJobTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualClusterOutput {
+pub struct CreateVirtualClusterOutput  {
     /// <p>This output contains the virtual cluster ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -903,21 +905,21 @@ pub struct CreateVirtualClusterOutput {
 }
 impl CreateVirtualClusterOutput {
     /// <p>This output contains the virtual cluster ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>This output contains the name of the virtual cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>This output contains the ARN of virtual cluster.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput).
 pub mod create_virtual_cluster_output {
-
+    
     /// A builder for [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -933,8 +935,7 @@ pub mod create_virtual_cluster_output {
         }
         /// <p>This output contains the virtual cluster ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>This output contains the name of the virtual cluster.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -943,8 +944,7 @@ pub mod create_virtual_cluster_output {
         }
         /// <p>This output contains the name of the virtual cluster.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>This output contains the ARN of virtual cluster.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -953,18 +953,22 @@ pub mod create_virtual_cluster_output {
         }
         /// <p>This output contains the ARN of virtual cluster.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput).
         pub fn build(self) -> crate::output::CreateVirtualClusterOutput {
             crate::output::CreateVirtualClusterOutput {
-                id: self.id,
-                name: self.name,
-                arn: self.arn,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVirtualClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput).
@@ -976,7 +980,7 @@ impl CreateVirtualClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateManagedEndpointOutput {
+pub struct CreateManagedEndpointOutput  {
     /// <p>The output contains the ID of the managed endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -992,25 +996,25 @@ pub struct CreateManagedEndpointOutput {
 }
 impl CreateManagedEndpointOutput {
     /// <p>The output contains the ID of the managed endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The output contains the name of the managed endpoint.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The output contains the ARN of the managed endpoint.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The output contains the ID of the virtual cluster.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
 /// See [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput).
 pub mod create_managed_endpoint_output {
-
+    
     /// A builder for [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1027,8 +1031,7 @@ pub mod create_managed_endpoint_output {
         }
         /// <p>The output contains the ID of the managed endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The output contains the name of the managed endpoint.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1037,8 +1040,7 @@ pub mod create_managed_endpoint_output {
         }
         /// <p>The output contains the name of the managed endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The output contains the ARN of the managed endpoint.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1047,8 +1049,7 @@ pub mod create_managed_endpoint_output {
         }
         /// <p>The output contains the ARN of the managed endpoint.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The output contains the ID of the virtual cluster.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1056,23 +1057,25 @@ pub mod create_managed_endpoint_output {
             self
         }
         /// <p>The output contains the ID of the virtual cluster.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput).
         pub fn build(self) -> crate::output::CreateManagedEndpointOutput {
             crate::output::CreateManagedEndpointOutput {
-                id: self.id,
-                name: self.name,
-                arn: self.arn,
-                virtual_cluster_id: self.virtual_cluster_id,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput).
@@ -1084,7 +1087,7 @@ impl CreateManagedEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobTemplateOutput {
+pub struct CreateJobTemplateOutput  {
     /// <p>This output display the created job template ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1100,25 +1103,25 @@ pub struct CreateJobTemplateOutput {
 }
 impl CreateJobTemplateOutput {
     /// <p>This output display the created job template ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>This output displays the name of the created job template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>This output display the ARN of the created job template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>This output displays the date and time when the job template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
 pub mod create_job_template_output {
-
+    
     /// A builder for [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1135,8 +1138,7 @@ pub mod create_job_template_output {
         }
         /// <p>This output display the created job template ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>This output displays the name of the created job template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1145,8 +1147,7 @@ pub mod create_job_template_output {
         }
         /// <p>This output displays the name of the created job template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>This output display the ARN of the created job template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1155,8 +1156,7 @@ pub mod create_job_template_output {
         }
         /// <p>This output display the ARN of the created job template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>This output displays the date and time when the job template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1164,23 +1164,25 @@ pub mod create_job_template_output {
             self
         }
         /// <p>This output displays the date and time when the job template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
         pub fn build(self) -> crate::output::CreateJobTemplateOutput {
             crate::output::CreateJobTemplateOutput {
-                id: self.id,
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
@@ -1192,7 +1194,7 @@ impl CreateJobTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobRunOutput {
+pub struct CancelJobRunOutput  {
     /// <p>The output contains the ID of the cancelled job run.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1202,17 +1204,17 @@ pub struct CancelJobRunOutput {
 }
 impl CancelJobRunOutput {
     /// <p>The output contains the ID of the cancelled job run.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
 /// See [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
 pub mod cancel_job_run_output {
-
+    
     /// A builder for [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1227,8 +1229,7 @@ pub mod cancel_job_run_output {
         }
         /// <p>The output contains the ID of the cancelled job run.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1236,21 +1237,21 @@ pub mod cancel_job_run_output {
             self
         }
         /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
         pub fn build(self) -> crate::output::CancelJobRunOutput {
             crate::output::CancelJobRunOutput {
-                id: self.id,
-                virtual_cluster_id: self.virtual_cluster_id,
+                id: self.id
+                ,
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelJobRunOutput {
     /// Creates a new builder-style object to manufacture [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
@@ -1258,3 +1259,4 @@ impl CancelJobRunOutput {
         crate::output::cancel_job_run_output::Builder::default()
     }
 }
+

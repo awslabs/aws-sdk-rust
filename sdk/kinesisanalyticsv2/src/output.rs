@@ -2,37 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationMaintenanceConfigurationOutput {
+pub struct UpdateApplicationMaintenanceConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The application maintenance configuration description after the update.</p>
     #[doc(hidden)]
-    pub application_maintenance_configuration_description:
-        std::option::Option<crate::model::ApplicationMaintenanceConfigurationDescription>,
+    pub application_maintenance_configuration_description: std::option::Option<crate::model::ApplicationMaintenanceConfigurationDescription>,
 }
 impl UpdateApplicationMaintenanceConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The application maintenance configuration description after the update.</p>
-    pub fn application_maintenance_configuration_description(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationMaintenanceConfigurationDescription> {
-        self.application_maintenance_configuration_description
-            .as_ref()
+    pub fn application_maintenance_configuration_description(&self) -> std::option::Option<& crate::model::ApplicationMaintenanceConfigurationDescription> {
+        self.application_maintenance_configuration_description.as_ref()
     }
 }
 /// See [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
 pub mod update_application_maintenance_configuration_output {
-
+    
     /// A builder for [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
-        pub(crate) application_maintenance_configuration_description:
-            std::option::Option<crate::model::ApplicationMaintenanceConfigurationDescription>,
+        pub(crate) application_maintenance_configuration_description: std::option::Option<crate::model::ApplicationMaintenanceConfigurationDescription>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -41,45 +36,34 @@ pub mod update_application_maintenance_configuration_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The application maintenance configuration description after the update.</p>
-        pub fn application_maintenance_configuration_description(
-            mut self,
-            input: crate::model::ApplicationMaintenanceConfigurationDescription,
-        ) -> Self {
+        pub fn application_maintenance_configuration_description(mut self, input: crate::model::ApplicationMaintenanceConfigurationDescription) -> Self {
             self.application_maintenance_configuration_description = Some(input);
             self
         }
         /// <p>The application maintenance configuration description after the update.</p>
-        pub fn set_application_maintenance_configuration_description(
-            mut self,
-            input: std::option::Option<
-                crate::model::ApplicationMaintenanceConfigurationDescription,
-            >,
-        ) -> Self {
-            self.application_maintenance_configuration_description = input;
-            self
+        pub fn set_application_maintenance_configuration_description(mut self, input: std::option::Option<crate::model::ApplicationMaintenanceConfigurationDescription>) -> Self {
+            self.application_maintenance_configuration_description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationMaintenanceConfigurationOutput {
             crate::output::UpdateApplicationMaintenanceConfigurationOutput {
-                application_arn: self.application_arn,
-                application_maintenance_configuration_description: self
-                    .application_maintenance_configuration_description,
+                application_arn: self.application_arn
+                ,
+                application_maintenance_configuration_description: self.application_maintenance_configuration_description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApplicationMaintenanceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
-    pub fn builder() -> crate::output::update_application_maintenance_configuration_output::Builder
-    {
+    pub fn builder() -> crate::output::update_application_maintenance_configuration_output::Builder {
         crate::output::update_application_maintenance_configuration_output::Builder::default()
     }
 }
@@ -87,20 +71,20 @@ impl UpdateApplicationMaintenanceConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationOutput {
+pub struct UpdateApplicationOutput  {
     /// <p>Describes application updates.</p>
     #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl UpdateApplicationOutput {
     /// <p>Describes application updates.</p>
-    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+    pub fn application_detail(&self) -> std::option::Option<& crate::model::ApplicationDetail> {
         self.application_detail.as_ref()
     }
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -113,20 +97,19 @@ pub mod update_application_output {
             self
         }
         /// <p>Describes application updates.</p>
-        pub fn set_application_detail(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationDetail>,
-        ) -> Self {
-            self.application_detail = input;
-            self
+        pub fn set_application_detail(mut self, input: std::option::Option<crate::model::ApplicationDetail>) -> Self {
+            self.application_detail = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
             crate::output::UpdateApplicationOutput {
-                application_detail: self.application_detail,
+                application_detail: self.application_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -138,19 +121,24 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -162,19 +150,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -186,19 +179,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopApplicationOutput {}
+pub struct StopApplicationOutput  {
+}
 /// See [`StopApplicationOutput`](crate::output::StopApplicationOutput).
 pub mod stop_application_output {
-
+    
     /// A builder for [`StopApplicationOutput`](crate::output::StopApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopApplicationOutput`](crate::output::StopApplicationOutput).
         pub fn build(self) -> crate::output::StopApplicationOutput {
-            crate::output::StopApplicationOutput {}
+            crate::output::StopApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl StopApplicationOutput {
     /// Creates a new builder-style object to manufacture [`StopApplicationOutput`](crate::output::StopApplicationOutput).
@@ -210,19 +208,24 @@ impl StopApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartApplicationOutput {}
+pub struct StartApplicationOutput  {
+}
 /// See [`StartApplicationOutput`](crate::output::StartApplicationOutput).
 pub mod start_application_output {
-
+    
     /// A builder for [`StartApplicationOutput`](crate::output::StartApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartApplicationOutput`](crate::output::StartApplicationOutput).
         pub fn build(self) -> crate::output::StartApplicationOutput {
-            crate::output::StartApplicationOutput {}
+            crate::output::StartApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl StartApplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartApplicationOutput`](crate::output::StartApplicationOutput).
@@ -234,20 +237,20 @@ impl StartApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RollbackApplicationOutput {
+pub struct RollbackApplicationOutput  {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl RollbackApplicationOutput {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+    pub fn application_detail(&self) -> std::option::Option<& crate::model::ApplicationDetail> {
         self.application_detail.as_ref()
     }
 }
 /// See [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
 pub mod rollback_application_output {
-
+    
     /// A builder for [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -260,20 +263,19 @@ pub mod rollback_application_output {
             self
         }
         /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-        pub fn set_application_detail(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationDetail>,
-        ) -> Self {
-            self.application_detail = input;
-            self
+        pub fn set_application_detail(mut self, input: std::option::Option<crate::model::ApplicationDetail>) -> Self {
+            self.application_detail = input; self
         }
         /// Consumes the builder and constructs a [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
         pub fn build(self) -> crate::output::RollbackApplicationOutput {
             crate::output::RollbackApplicationOutput {
-                application_detail: self.application_detail,
+                application_detail: self.application_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl RollbackApplicationOutput {
     /// Creates a new builder-style object to manufacture [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
@@ -285,20 +287,20 @@ impl RollbackApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The key-value tags assigned to the application.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The key-value tags assigned to the application.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -312,23 +314,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The key-value tags assigned to the application.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value tags assigned to the application.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -340,37 +343,33 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationVersionsOutput {
-    /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
+pub struct ListApplicationVersionsOutput  {
+    /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p> 
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
     #[doc(hidden)]
-    pub application_version_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
+    pub application_version_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationVersionsOutput {
-    /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
+    /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p> 
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    pub fn application_version_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ApplicationVersionSummary]> {
+    pub fn application_version_summaries(&self) -> std::option::Option<& [crate::model::ApplicationVersionSummary]> {
         self.application_version_summaries.as_deref()
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
 pub mod list_application_versions_output {
-
+    
     /// A builder for [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_version_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
+        pub(crate) application_version_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -378,25 +377,18 @@ pub mod list_application_versions_output {
         ///
         /// To override the contents of this collection use [`set_application_version_summaries`](Self::set_application_version_summaries).
         ///
-        /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
+        /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p> 
         /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-        pub fn application_version_summaries(
-            mut self,
-            input: crate::model::ApplicationVersionSummary,
-        ) -> Self {
+        pub fn application_version_summaries(mut self, input: crate::model::ApplicationVersionSummary) -> Self {
             let mut v = self.application_version_summaries.unwrap_or_default();
-            v.push(input);
-            self.application_version_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.application_version_summaries = Some(v);
+                            self
         }
-        /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
+        /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p> 
         /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-        pub fn set_application_version_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
-        ) -> Self {
-            self.application_version_summaries = input;
-            self
+        pub fn set_application_version_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>) -> Self {
+            self.application_version_summaries = input; self
         }
         /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -405,17 +397,20 @@ pub mod list_application_versions_output {
         }
         /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
         pub fn build(self) -> crate::output::ListApplicationVersionsOutput {
             crate::output::ListApplicationVersionsOutput {
-                application_version_summaries: self.application_version_summaries,
-                next_token: self.next_token,
+                application_version_summaries: self.application_version_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
@@ -427,7 +422,7 @@ impl ListApplicationVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationSnapshotsOutput {
+pub struct ListApplicationSnapshotsOutput  {
     /// <p>A collection of objects containing information about the application snapshots.</p>
     #[doc(hidden)]
     pub snapshot_summaries: std::option::Option<std::vec::Vec<crate::model::SnapshotDetails>>,
@@ -437,22 +432,21 @@ pub struct ListApplicationSnapshotsOutput {
 }
 impl ListApplicationSnapshotsOutput {
     /// <p>A collection of objects containing information about the application snapshots.</p>
-    pub fn snapshot_summaries(&self) -> std::option::Option<&[crate::model::SnapshotDetails]> {
+    pub fn snapshot_summaries(&self) -> std::option::Option<& [crate::model::SnapshotDetails]> {
         self.snapshot_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
 pub mod list_application_snapshots_output {
-
+    
     /// A builder for [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) snapshot_summaries:
-            std::option::Option<std::vec::Vec<crate::model::SnapshotDetails>>,
+        pub(crate) snapshot_summaries: std::option::Option<std::vec::Vec<crate::model::SnapshotDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -463,17 +457,13 @@ pub mod list_application_snapshots_output {
         /// <p>A collection of objects containing information about the application snapshots.</p>
         pub fn snapshot_summaries(mut self, input: crate::model::SnapshotDetails) -> Self {
             let mut v = self.snapshot_summaries.unwrap_or_default();
-            v.push(input);
-            self.snapshot_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.snapshot_summaries = Some(v);
+                            self
         }
         /// <p>A collection of objects containing information about the application snapshots.</p>
-        pub fn set_snapshot_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SnapshotDetails>>,
-        ) -> Self {
-            self.snapshot_summaries = input;
-            self
+        pub fn set_snapshot_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SnapshotDetails>>) -> Self {
+            self.snapshot_summaries = input; self
         }
         /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -482,17 +472,20 @@ pub mod list_application_snapshots_output {
         }
         /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
         pub fn build(self) -> crate::output::ListApplicationSnapshotsOutput {
             crate::output::ListApplicationSnapshotsOutput {
-                snapshot_summaries: self.snapshot_summaries,
-                next_token: self.next_token,
+                snapshot_summaries: self.snapshot_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
@@ -504,7 +497,7 @@ impl ListApplicationSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
     #[doc(hidden)]
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -514,24 +507,21 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-    pub fn application_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+    pub fn application_summaries(&self) -> std::option::Option<& [crate::model::ApplicationSummary]> {
         self.application_summaries.as_deref()
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+        pub(crate) application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -542,17 +532,13 @@ pub mod list_applications_output {
         /// <p>A list of <code>ApplicationSummary</code> objects.</p>
         pub fn application_summaries(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summaries.unwrap_or_default();
-            v.push(input);
-            self.application_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.application_summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-        pub fn set_application_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-        ) -> Self {
-            self.application_summaries = input;
-            self
+        pub fn set_application_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>) -> Self {
+            self.application_summaries = input; self
         }
         /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -561,17 +547,20 @@ pub mod list_applications_output {
         }
         /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                application_summaries: self.application_summaries,
-                next_token: self.next_token,
+                application_summaries: self.application_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -583,14 +572,13 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoverInputSchemaOutput {
+pub struct DiscoverInputSchemaOutput  {
     /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
     #[doc(hidden)]
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
     #[doc(hidden)]
-    pub parsed_input_records:
-        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub parsed_input_records: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
     #[doc(hidden)]
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -600,33 +588,30 @@ pub struct DiscoverInputSchemaOutput {
 }
 impl DiscoverInputSchemaOutput {
     /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
-    pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+    pub fn input_schema(&self) -> std::option::Option<& crate::model::SourceSchema> {
         self.input_schema.as_ref()
     }
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    pub fn parsed_input_records(
-        &self,
-    ) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn parsed_input_records(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
         self.parsed_input_records.as_deref()
     }
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-    pub fn processed_input_records(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn processed_input_records(&self) -> std::option::Option<& [std::string::String]> {
         self.processed_input_records.as_deref()
     }
     /// <p>The raw stream data that was sampled to infer the schema.</p>
-    pub fn raw_input_records(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn raw_input_records(&self) -> std::option::Option<& [std::string::String]> {
         self.raw_input_records.as_deref()
     }
 }
 /// See [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
 pub mod discover_input_schema_output {
-
+    
     /// A builder for [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_schema: std::option::Option<crate::model::SourceSchema>,
-        pub(crate) parsed_input_records:
-            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) parsed_input_records: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
         pub(crate) processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -637,12 +622,8 @@ pub mod discover_input_schema_output {
             self
         }
         /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
-        pub fn set_input_schema(
-            mut self,
-            input: std::option::Option<crate::model::SourceSchema>,
-        ) -> Self {
-            self.input_schema = input;
-            self
+        pub fn set_input_schema(mut self, input: std::option::Option<crate::model::SourceSchema>) -> Self {
+            self.input_schema = input; self
         }
         /// Appends an item to `parsed_input_records`.
         ///
@@ -651,17 +632,13 @@ pub mod discover_input_schema_output {
         /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
         pub fn parsed_input_records(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.parsed_input_records.unwrap_or_default();
-            v.push(input);
-            self.parsed_input_records = Some(v);
-            self
+                            v.push(input);
+                            self.parsed_input_records = Some(v);
+                            self
         }
         /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-        pub fn set_parsed_input_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-        ) -> Self {
-            self.parsed_input_records = input;
-            self
+        pub fn set_parsed_input_records(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
+            self.parsed_input_records = input; self
         }
         /// Appends an item to `processed_input_records`.
         ///
@@ -670,17 +647,13 @@ pub mod discover_input_schema_output {
         /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
         pub fn processed_input_records(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.processed_input_records.unwrap_or_default();
-            v.push(input.into());
-            self.processed_input_records = Some(v);
-            self
+                            v.push(input.into());
+                            self.processed_input_records = Some(v);
+                            self
         }
         /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-        pub fn set_processed_input_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.processed_input_records = input;
-            self
+        pub fn set_processed_input_records(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.processed_input_records = input; self
         }
         /// Appends an item to `raw_input_records`.
         ///
@@ -689,28 +662,30 @@ pub mod discover_input_schema_output {
         /// <p>The raw stream data that was sampled to infer the schema.</p>
         pub fn raw_input_records(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.raw_input_records.unwrap_or_default();
-            v.push(input.into());
-            self.raw_input_records = Some(v);
-            self
+                            v.push(input.into());
+                            self.raw_input_records = Some(v);
+                            self
         }
         /// <p>The raw stream data that was sampled to infer the schema.</p>
-        pub fn set_raw_input_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.raw_input_records = input;
-            self
+        pub fn set_raw_input_records(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.raw_input_records = input; self
         }
         /// Consumes the builder and constructs a [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
         pub fn build(self) -> crate::output::DiscoverInputSchemaOutput {
             crate::output::DiscoverInputSchemaOutput {
-                input_schema: self.input_schema,
-                parsed_input_records: self.parsed_input_records,
-                processed_input_records: self.processed_input_records,
-                raw_input_records: self.raw_input_records,
+                input_schema: self.input_schema
+                ,
+                parsed_input_records: self.parsed_input_records
+                ,
+                processed_input_records: self.processed_input_records
+                ,
+                raw_input_records: self.raw_input_records
+                ,
             }
         }
     }
+    
+    
 }
 impl DiscoverInputSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
@@ -722,22 +697,20 @@ impl DiscoverInputSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationVersionOutput {
+pub struct DescribeApplicationVersionOutput  {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     #[doc(hidden)]
     pub application_version_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl DescribeApplicationVersionOutput {
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-    pub fn application_version_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationDetail> {
+    pub fn application_version_detail(&self) -> std::option::Option<& crate::model::ApplicationDetail> {
         self.application_version_detail.as_ref()
     }
 }
 /// See [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
 pub mod describe_application_version_output {
-
+    
     /// A builder for [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -745,28 +718,24 @@ pub mod describe_application_version_output {
     }
     impl Builder {
         /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-        pub fn application_version_detail(
-            mut self,
-            input: crate::model::ApplicationDetail,
-        ) -> Self {
+        pub fn application_version_detail(mut self, input: crate::model::ApplicationDetail) -> Self {
             self.application_version_detail = Some(input);
             self
         }
         /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-        pub fn set_application_version_detail(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationDetail>,
-        ) -> Self {
-            self.application_version_detail = input;
-            self
+        pub fn set_application_version_detail(mut self, input: std::option::Option<crate::model::ApplicationDetail>) -> Self {
+            self.application_version_detail = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
         pub fn build(self) -> crate::output::DescribeApplicationVersionOutput {
             crate::output::DescribeApplicationVersionOutput {
-                application_version_detail: self.application_version_detail,
+                application_version_detail: self.application_version_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
@@ -778,20 +747,20 @@ impl DescribeApplicationVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationSnapshotOutput {
+pub struct DescribeApplicationSnapshotOutput  {
     /// <p>An object containing information about the application snapshot.</p>
     #[doc(hidden)]
     pub snapshot_details: std::option::Option<crate::model::SnapshotDetails>,
 }
 impl DescribeApplicationSnapshotOutput {
     /// <p>An object containing information about the application snapshot.</p>
-    pub fn snapshot_details(&self) -> std::option::Option<&crate::model::SnapshotDetails> {
+    pub fn snapshot_details(&self) -> std::option::Option<& crate::model::SnapshotDetails> {
         self.snapshot_details.as_ref()
     }
 }
 /// See [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
 pub mod describe_application_snapshot_output {
-
+    
     /// A builder for [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -804,20 +773,19 @@ pub mod describe_application_snapshot_output {
             self
         }
         /// <p>An object containing information about the application snapshot.</p>
-        pub fn set_snapshot_details(
-            mut self,
-            input: std::option::Option<crate::model::SnapshotDetails>,
-        ) -> Self {
-            self.snapshot_details = input;
-            self
+        pub fn set_snapshot_details(mut self, input: std::option::Option<crate::model::SnapshotDetails>) -> Self {
+            self.snapshot_details = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
         pub fn build(self) -> crate::output::DescribeApplicationSnapshotOutput {
             crate::output::DescribeApplicationSnapshotOutput {
-                snapshot_details: self.snapshot_details,
+                snapshot_details: self.snapshot_details
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeApplicationSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
@@ -829,20 +797,20 @@ impl DescribeApplicationSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationOutput {
+pub struct DescribeApplicationOutput  {
     /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
     #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
-    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+    pub fn application_detail(&self) -> std::option::Option<& crate::model::ApplicationDetail> {
         self.application_detail.as_ref()
     }
 }
 /// See [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
 pub mod describe_application_output {
-
+    
     /// A builder for [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -855,20 +823,19 @@ pub mod describe_application_output {
             self
         }
         /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
-        pub fn set_application_detail(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationDetail>,
-        ) -> Self {
-            self.application_detail = input;
-            self
+        pub fn set_application_detail(mut self, input: std::option::Option<crate::model::ApplicationDetail>) -> Self {
+            self.application_detail = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
         pub fn build(self) -> crate::output::DescribeApplicationOutput {
             crate::output::DescribeApplicationOutput {
-                application_detail: self.application_detail,
+                application_detail: self.application_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
@@ -880,7 +847,7 @@ impl DescribeApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationVpcConfigurationOutput {
+pub struct DeleteApplicationVpcConfigurationOutput  {
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -890,7 +857,7 @@ pub struct DeleteApplicationVpcConfigurationOutput {
 }
 impl DeleteApplicationVpcConfigurationOutput {
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The updated version ID of the application.</p>
@@ -900,7 +867,7 @@ impl DeleteApplicationVpcConfigurationOutput {
 }
 /// See [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
 pub mod delete_application_vpc_configuration_output {
-
+    
     /// A builder for [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -914,12 +881,8 @@ pub mod delete_application_vpc_configuration_output {
             self
         }
         /// <p>The ARN of the Kinesis Data Analytics application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The updated version ID of the application.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -928,17 +891,20 @@ pub mod delete_application_vpc_configuration_output {
         }
         /// <p>The updated version ID of the application.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationVpcConfigurationOutput {
             crate::output::DeleteApplicationVpcConfigurationOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApplicationVpcConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
@@ -950,19 +916,24 @@ impl DeleteApplicationVpcConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationSnapshotOutput {}
+pub struct DeleteApplicationSnapshotOutput  {
+}
 /// See [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
 pub mod delete_application_snapshot_output {
-
+    
     /// A builder for [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteApplicationSnapshotOutput {
-            crate::output::DeleteApplicationSnapshotOutput {}
+            crate::output::DeleteApplicationSnapshotOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
@@ -974,7 +945,7 @@ impl DeleteApplicationSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationReferenceDataSourceOutput {
+pub struct DeleteApplicationReferenceDataSourceOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -984,7 +955,7 @@ pub struct DeleteApplicationReferenceDataSourceOutput {
 }
 impl DeleteApplicationReferenceDataSourceOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The updated version ID of the application.</p>
@@ -994,7 +965,7 @@ impl DeleteApplicationReferenceDataSourceOutput {
 }
 /// See [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
 pub mod delete_application_reference_data_source_output {
-
+    
     /// A builder for [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1008,12 +979,8 @@ pub mod delete_application_reference_data_source_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The updated version ID of the application.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1022,17 +989,20 @@ pub mod delete_application_reference_data_source_output {
         }
         /// <p>The updated version ID of the application.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
         pub fn build(self) -> crate::output::DeleteApplicationReferenceDataSourceOutput {
             crate::output::DeleteApplicationReferenceDataSourceOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApplicationReferenceDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
@@ -1044,7 +1014,7 @@ impl DeleteApplicationReferenceDataSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutputOutput {
+pub struct DeleteApplicationOutputOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1054,7 +1024,7 @@ pub struct DeleteApplicationOutputOutput {
 }
 impl DeleteApplicationOutputOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The current application version ID.</p>
@@ -1064,7 +1034,7 @@ impl DeleteApplicationOutputOutput {
 }
 /// See [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
 pub mod delete_application_output_output {
-
+    
     /// A builder for [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1078,12 +1048,8 @@ pub mod delete_application_output_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The current application version ID.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1092,17 +1058,20 @@ pub mod delete_application_output_output {
         }
         /// <p>The current application version ID.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutputOutput {
             crate::output::DeleteApplicationOutputOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutputOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
@@ -1114,7 +1083,7 @@ impl DeleteApplicationOutputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationInputProcessingConfigurationOutput {
+pub struct DeleteApplicationInputProcessingConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1124,7 +1093,7 @@ pub struct DeleteApplicationInputProcessingConfigurationOutput {
 }
 impl DeleteApplicationInputProcessingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The current application version ID.</p>
@@ -1134,7 +1103,7 @@ impl DeleteApplicationInputProcessingConfigurationOutput {
 }
 /// See [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
 pub mod delete_application_input_processing_configuration_output {
-
+    
     /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1148,12 +1117,8 @@ pub mod delete_application_input_processing_configuration_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The current application version ID.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1162,22 +1127,24 @@ pub mod delete_application_input_processing_configuration_output {
         }
         /// <p>The current application version ID.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationInputProcessingConfigurationOutput {
             crate::output::DeleteApplicationInputProcessingConfigurationOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn builder(
-    ) -> crate::output::delete_application_input_processing_configuration_output::Builder {
+    pub fn builder() -> crate::output::delete_application_input_processing_configuration_output::Builder {
         crate::output::delete_application_input_processing_configuration_output::Builder::default()
     }
 }
@@ -1185,7 +1152,7 @@ impl DeleteApplicationInputProcessingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationCloudWatchLoggingOptionOutput {
+pub struct DeleteApplicationCloudWatchLoggingOptionOutput  {
     /// <p>The application's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1194,12 +1161,11 @@ pub struct DeleteApplicationCloudWatchLoggingOptionOutput {
     pub application_version_id: std::option::Option<i64>,
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
+    pub cloud_watch_logging_option_descriptions: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's Amazon Resource Name (ARN).</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
@@ -1207,22 +1173,19 @@ impl DeleteApplicationCloudWatchLoggingOptionOutput {
         self.application_version_id
     }
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
-    pub fn cloud_watch_logging_option_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionDescription]> {
+    pub fn cloud_watch_logging_option_descriptions(&self) -> std::option::Option<& [crate::model::CloudWatchLoggingOptionDescription]> {
         self.cloud_watch_logging_option_descriptions.as_deref()
     }
 }
 /// See [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
 pub mod delete_application_cloud_watch_logging_option_output {
-
+    
     /// A builder for [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) cloud_watch_logging_option_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
+        pub(crate) cloud_watch_logging_option_descriptions: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
     }
     impl Builder {
         /// <p>The application's Amazon Resource Name (ARN).</p>
@@ -1231,12 +1194,8 @@ pub mod delete_application_cloud_watch_logging_option_output {
             self
         }
         /// <p>The application's Amazon Resource Name (ARN).</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1245,50 +1204,41 @@ pub mod delete_application_cloud_watch_logging_option_output {
         }
         /// <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Appends an item to `cloud_watch_logging_option_descriptions`.
         ///
         /// To override the contents of this collection use [`set_cloud_watch_logging_option_descriptions`](Self::set_cloud_watch_logging_option_descriptions).
         ///
         /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
-        pub fn cloud_watch_logging_option_descriptions(
-            mut self,
-            input: crate::model::CloudWatchLoggingOptionDescription,
-        ) -> Self {
-            let mut v = self
-                .cloud_watch_logging_option_descriptions
-                .unwrap_or_default();
-            v.push(input);
-            self.cloud_watch_logging_option_descriptions = Some(v);
-            self
+        pub fn cloud_watch_logging_option_descriptions(mut self, input: crate::model::CloudWatchLoggingOptionDescription) -> Self {
+            let mut v = self.cloud_watch_logging_option_descriptions.unwrap_or_default();
+                            v.push(input);
+                            self.cloud_watch_logging_option_descriptions = Some(v);
+                            self
         }
         /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
-        pub fn set_cloud_watch_logging_option_descriptions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>,
-            >,
-        ) -> Self {
-            self.cloud_watch_logging_option_descriptions = input;
-            self
+        pub fn set_cloud_watch_logging_option_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>) -> Self {
+            self.cloud_watch_logging_option_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
         pub fn build(self) -> crate::output::DeleteApplicationCloudWatchLoggingOptionOutput {
             crate::output::DeleteApplicationCloudWatchLoggingOptionOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
-                cloud_watch_logging_option_descriptions: self
-                    .cloud_watch_logging_option_descriptions,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
+                cloud_watch_logging_option_descriptions: self.cloud_watch_logging_option_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApplicationCloudWatchLoggingOptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
-    pub fn builder() -> crate::output::delete_application_cloud_watch_logging_option_output::Builder
-    {
+    pub fn builder() -> crate::output::delete_application_cloud_watch_logging_option_output::Builder {
         crate::output::delete_application_cloud_watch_logging_option_output::Builder::default()
     }
 }
@@ -1296,19 +1246,24 @@ impl DeleteApplicationCloudWatchLoggingOptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {}
+pub struct DeleteApplicationOutput  {
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
-            crate::output::DeleteApplicationOutput {}
+            crate::output::DeleteApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -1320,19 +1275,24 @@ impl DeleteApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationSnapshotOutput {}
+pub struct CreateApplicationSnapshotOutput  {
+}
 /// See [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
 pub mod create_application_snapshot_output {
-
+    
     /// A builder for [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
         pub fn build(self) -> crate::output::CreateApplicationSnapshotOutput {
-            crate::output::CreateApplicationSnapshotOutput {}
+            crate::output::CreateApplicationSnapshotOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateApplicationSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
@@ -1344,20 +1304,20 @@ impl CreateApplicationSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationPresignedUrlOutput {
+pub struct CreateApplicationPresignedUrlOutput  {
     /// <p>The URL of the extension.</p>
     #[doc(hidden)]
     pub authorized_url: std::option::Option<std::string::String>,
 }
 impl CreateApplicationPresignedUrlOutput {
     /// <p>The URL of the extension.</p>
-    pub fn authorized_url(&self) -> std::option::Option<&str> {
+    pub fn authorized_url(&self) -> std::option::Option<& str> {
         self.authorized_url.as_deref()
     }
 }
 /// See [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
 pub mod create_application_presigned_url_output {
-
+    
     /// A builder for [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1370,20 +1330,19 @@ pub mod create_application_presigned_url_output {
             self
         }
         /// <p>The URL of the extension.</p>
-        pub fn set_authorized_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authorized_url = input;
-            self
+        pub fn set_authorized_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authorized_url = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
         pub fn build(self) -> crate::output::CreateApplicationPresignedUrlOutput {
             crate::output::CreateApplicationPresignedUrlOutput {
-                authorized_url: self.authorized_url,
+                authorized_url: self.authorized_url
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationPresignedUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
@@ -1395,20 +1354,20 @@ impl CreateApplicationPresignedUrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
     #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl CreateApplicationOutput {
     /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
-    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+    pub fn application_detail(&self) -> std::option::Option<& crate::model::ApplicationDetail> {
         self.application_detail.as_ref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1421,20 +1380,19 @@ pub mod create_application_output {
             self
         }
         /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
-        pub fn set_application_detail(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationDetail>,
-        ) -> Self {
-            self.application_detail = input;
-            self
+        pub fn set_application_detail(mut self, input: std::option::Option<crate::model::ApplicationDetail>) -> Self {
+            self.application_detail = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                application_detail: self.application_detail,
+                application_detail: self.application_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -1446,7 +1404,7 @@ impl CreateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationVpcConfigurationOutput {
+pub struct AddApplicationVpcConfigurationOutput  {
     /// <p>The ARN of the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1455,12 +1413,11 @@ pub struct AddApplicationVpcConfigurationOutput {
     pub application_version_id: std::option::Option<i64>,
     /// <p>The parameters of the new VPC configuration.</p>
     #[doc(hidden)]
-    pub vpc_configuration_description:
-        std::option::Option<crate::model::VpcConfigurationDescription>,
+    pub vpc_configuration_description: std::option::Option<crate::model::VpcConfigurationDescription>,
 }
 impl AddApplicationVpcConfigurationOutput {
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
@@ -1468,22 +1425,19 @@ impl AddApplicationVpcConfigurationOutput {
         self.application_version_id
     }
     /// <p>The parameters of the new VPC configuration.</p>
-    pub fn vpc_configuration_description(
-        &self,
-    ) -> std::option::Option<&crate::model::VpcConfigurationDescription> {
+    pub fn vpc_configuration_description(&self) -> std::option::Option<& crate::model::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
     }
 }
 /// See [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
 pub mod add_application_vpc_configuration_output {
-
+    
     /// A builder for [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) vpc_configuration_description:
-            std::option::Option<crate::model::VpcConfigurationDescription>,
+        pub(crate) vpc_configuration_description: std::option::Option<crate::model::VpcConfigurationDescription>,
     }
     impl Builder {
         /// <p>The ARN of the application.</p>
@@ -1492,12 +1446,8 @@ pub mod add_application_vpc_configuration_output {
             self
         }
         /// <p>The ARN of the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1506,34 +1456,31 @@ pub mod add_application_vpc_configuration_output {
         }
         /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// <p>The parameters of the new VPC configuration.</p>
-        pub fn vpc_configuration_description(
-            mut self,
-            input: crate::model::VpcConfigurationDescription,
-        ) -> Self {
+        pub fn vpc_configuration_description(mut self, input: crate::model::VpcConfigurationDescription) -> Self {
             self.vpc_configuration_description = Some(input);
             self
         }
         /// <p>The parameters of the new VPC configuration.</p>
-        pub fn set_vpc_configuration_description(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigurationDescription>,
-        ) -> Self {
-            self.vpc_configuration_description = input;
-            self
+        pub fn set_vpc_configuration_description(mut self, input: std::option::Option<crate::model::VpcConfigurationDescription>) -> Self {
+            self.vpc_configuration_description = input; self
         }
         /// Consumes the builder and constructs a [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
         pub fn build(self) -> crate::output::AddApplicationVpcConfigurationOutput {
             crate::output::AddApplicationVpcConfigurationOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
-                vpc_configuration_description: self.vpc_configuration_description,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
+                vpc_configuration_description: self.vpc_configuration_description
+                ,
             }
         }
     }
+    
+    
 }
 impl AddApplicationVpcConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
@@ -1545,7 +1492,7 @@ impl AddApplicationVpcConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationReferenceDataSourceOutput {
+pub struct AddApplicationReferenceDataSourceOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1554,12 +1501,11 @@ pub struct AddApplicationReferenceDataSourceOutput {
     pub application_version_id: std::option::Option<i64>,
     /// <p>Describes reference data sources configured for the application. </p>
     #[doc(hidden)]
-    pub reference_data_source_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
+    pub reference_data_source_descriptions: std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
 }
 impl AddApplicationReferenceDataSourceOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
@@ -1567,22 +1513,19 @@ impl AddApplicationReferenceDataSourceOutput {
         self.application_version_id
     }
     /// <p>Describes reference data sources configured for the application. </p>
-    pub fn reference_data_source_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReferenceDataSourceDescription]> {
+    pub fn reference_data_source_descriptions(&self) -> std::option::Option<& [crate::model::ReferenceDataSourceDescription]> {
         self.reference_data_source_descriptions.as_deref()
     }
 }
 /// See [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
 pub mod add_application_reference_data_source_output {
-
+    
     /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) reference_data_source_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
+        pub(crate) reference_data_source_descriptions: std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
     }
     impl Builder {
         /// <p>The application Amazon Resource Name (ARN).</p>
@@ -1591,12 +1534,8 @@ pub mod add_application_reference_data_source_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1605,40 +1544,37 @@ pub mod add_application_reference_data_source_output {
         }
         /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Appends an item to `reference_data_source_descriptions`.
         ///
         /// To override the contents of this collection use [`set_reference_data_source_descriptions`](Self::set_reference_data_source_descriptions).
         ///
         /// <p>Describes reference data sources configured for the application. </p>
-        pub fn reference_data_source_descriptions(
-            mut self,
-            input: crate::model::ReferenceDataSourceDescription,
-        ) -> Self {
+        pub fn reference_data_source_descriptions(mut self, input: crate::model::ReferenceDataSourceDescription) -> Self {
             let mut v = self.reference_data_source_descriptions.unwrap_or_default();
-            v.push(input);
-            self.reference_data_source_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.reference_data_source_descriptions = Some(v);
+                            self
         }
         /// <p>Describes reference data sources configured for the application. </p>
-        pub fn set_reference_data_source_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
-        ) -> Self {
-            self.reference_data_source_descriptions = input;
-            self
+        pub fn set_reference_data_source_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>) -> Self {
+            self.reference_data_source_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
         pub fn build(self) -> crate::output::AddApplicationReferenceDataSourceOutput {
             crate::output::AddApplicationReferenceDataSourceOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
-                reference_data_source_descriptions: self.reference_data_source_descriptions,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
+                reference_data_source_descriptions: self.reference_data_source_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl AddApplicationReferenceDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
@@ -1650,7 +1586,7 @@ impl AddApplicationReferenceDataSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationOutputOutput {
+pub struct AddApplicationOutputOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1663,7 +1599,7 @@ pub struct AddApplicationOutputOutput {
 }
 impl AddApplicationOutputOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
@@ -1671,20 +1607,19 @@ impl AddApplicationOutputOutput {
         self.application_version_id
     }
     /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-    pub fn output_descriptions(&self) -> std::option::Option<&[crate::model::OutputDescription]> {
+    pub fn output_descriptions(&self) -> std::option::Option<& [crate::model::OutputDescription]> {
         self.output_descriptions.as_deref()
     }
 }
 /// See [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
 pub mod add_application_output_output {
-
+    
     /// A builder for [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) output_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
+        pub(crate) output_descriptions: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
     }
     impl Builder {
         /// <p>The application Amazon Resource Name (ARN).</p>
@@ -1693,12 +1628,8 @@ pub mod add_application_output_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1707,8 +1638,7 @@ pub mod add_application_output_output {
         }
         /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Appends an item to `output_descriptions`.
         ///
@@ -1717,27 +1647,28 @@ pub mod add_application_output_output {
         /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
         pub fn output_descriptions(mut self, input: crate::model::OutputDescription) -> Self {
             let mut v = self.output_descriptions.unwrap_or_default();
-            v.push(input);
-            self.output_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.output_descriptions = Some(v);
+                            self
         }
         /// <p>Describes the application output configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. </p>
-        pub fn set_output_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
-        ) -> Self {
-            self.output_descriptions = input;
-            self
+        pub fn set_output_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>) -> Self {
+            self.output_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
         pub fn build(self) -> crate::output::AddApplicationOutputOutput {
             crate::output::AddApplicationOutputOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
-                output_descriptions: self.output_descriptions,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
+                output_descriptions: self.output_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl AddApplicationOutputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
@@ -1749,7 +1680,7 @@ impl AddApplicationOutputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationInputProcessingConfigurationOutput {
+pub struct AddApplicationInputProcessingConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1761,12 +1692,11 @@ pub struct AddApplicationInputProcessingConfigurationOutput {
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
     #[doc(hidden)]
-    pub input_processing_configuration_description:
-        std::option::Option<crate::model::InputProcessingConfigurationDescription>,
+    pub input_processing_configuration_description: std::option::Option<crate::model::InputProcessingConfigurationDescription>,
 }
 impl AddApplicationInputProcessingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Provides the current application version. </p>
@@ -1774,27 +1704,24 @@ impl AddApplicationInputProcessingConfigurationOutput {
         self.application_version_id
     }
     /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
-    pub fn input_id(&self) -> std::option::Option<&str> {
+    pub fn input_id(&self) -> std::option::Option<& str> {
         self.input_id.as_deref()
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-    pub fn input_processing_configuration_description(
-        &self,
-    ) -> std::option::Option<&crate::model::InputProcessingConfigurationDescription> {
+    pub fn input_processing_configuration_description(&self) -> std::option::Option<& crate::model::InputProcessingConfigurationDescription> {
         self.input_processing_configuration_description.as_ref()
     }
 }
 /// See [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
 pub mod add_application_input_processing_configuration_output {
-
+    
     /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
         pub(crate) application_version_id: std::option::Option<i64>,
         pub(crate) input_id: std::option::Option<std::string::String>,
-        pub(crate) input_processing_configuration_description:
-            std::option::Option<crate::model::InputProcessingConfigurationDescription>,
+        pub(crate) input_processing_configuration_description: std::option::Option<crate::model::InputProcessingConfigurationDescription>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1803,12 +1730,8 @@ pub mod add_application_input_processing_configuration_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>Provides the current application version. </p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1817,8 +1740,7 @@ pub mod add_application_input_processing_configuration_output {
         }
         /// <p>Provides the current application version. </p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
         pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1827,41 +1749,37 @@ pub mod add_application_input_processing_configuration_output {
         }
         /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input_id = input;
-            self
+            self.input_id = input; self
         }
         /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-        pub fn input_processing_configuration_description(
-            mut self,
-            input: crate::model::InputProcessingConfigurationDescription,
-        ) -> Self {
+        pub fn input_processing_configuration_description(mut self, input: crate::model::InputProcessingConfigurationDescription) -> Self {
             self.input_processing_configuration_description = Some(input);
             self
         }
         /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
-        pub fn set_input_processing_configuration_description(
-            mut self,
-            input: std::option::Option<crate::model::InputProcessingConfigurationDescription>,
-        ) -> Self {
-            self.input_processing_configuration_description = input;
-            self
+        pub fn set_input_processing_configuration_description(mut self, input: std::option::Option<crate::model::InputProcessingConfigurationDescription>) -> Self {
+            self.input_processing_configuration_description = input; self
         }
         /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
         pub fn build(self) -> crate::output::AddApplicationInputProcessingConfigurationOutput {
             crate::output::AddApplicationInputProcessingConfigurationOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
-                input_id: self.input_id,
-                input_processing_configuration_description: self
-                    .input_processing_configuration_description,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
+                input_id: self.input_id
+                ,
+                input_processing_configuration_description: self.input_processing_configuration_description
+                ,
             }
         }
     }
+    
+    
 }
 impl AddApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
-    pub fn builder() -> crate::output::add_application_input_processing_configuration_output::Builder
-    {
+    pub fn builder() -> crate::output::add_application_input_processing_configuration_output::Builder {
         crate::output::add_application_input_processing_configuration_output::Builder::default()
     }
 }
@@ -1869,7 +1787,7 @@ impl AddApplicationInputProcessingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationInputOutput {
+pub struct AddApplicationInputOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1882,7 +1800,7 @@ pub struct AddApplicationInputOutput {
 }
 impl AddApplicationInputOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Provides the current application version.</p>
@@ -1890,20 +1808,19 @@ impl AddApplicationInputOutput {
         self.application_version_id
     }
     /// <p>Describes the application input configuration. </p>
-    pub fn input_descriptions(&self) -> std::option::Option<&[crate::model::InputDescription]> {
+    pub fn input_descriptions(&self) -> std::option::Option<& [crate::model::InputDescription]> {
         self.input_descriptions.as_deref()
     }
 }
 /// See [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
 pub mod add_application_input_output {
-
+    
     /// A builder for [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) input_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
+        pub(crate) input_descriptions: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1912,12 +1829,8 @@ pub mod add_application_input_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>Provides the current application version.</p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -1926,8 +1839,7 @@ pub mod add_application_input_output {
         }
         /// <p>Provides the current application version.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Appends an item to `input_descriptions`.
         ///
@@ -1936,27 +1848,28 @@ pub mod add_application_input_output {
         /// <p>Describes the application input configuration. </p>
         pub fn input_descriptions(mut self, input: crate::model::InputDescription) -> Self {
             let mut v = self.input_descriptions.unwrap_or_default();
-            v.push(input);
-            self.input_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.input_descriptions = Some(v);
+                            self
         }
         /// <p>Describes the application input configuration. </p>
-        pub fn set_input_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
-        ) -> Self {
-            self.input_descriptions = input;
-            self
+        pub fn set_input_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputDescription>>) -> Self {
+            self.input_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
         pub fn build(self) -> crate::output::AddApplicationInputOutput {
             crate::output::AddApplicationInputOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
-                input_descriptions: self.input_descriptions,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
+                input_descriptions: self.input_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl AddApplicationInputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
@@ -1968,7 +1881,7 @@ impl AddApplicationInputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationCloudWatchLoggingOptionOutput {
+pub struct AddApplicationCloudWatchLoggingOptionOutput  {
     /// <p>The application's ARN.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1977,12 +1890,11 @@ pub struct AddApplicationCloudWatchLoggingOptionOutput {
     pub application_version_id: std::option::Option<i64>,
     /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
+    pub cloud_watch_logging_option_descriptions: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
 }
 impl AddApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's ARN.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
@@ -1990,22 +1902,19 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
         self.application_version_id
     }
     /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
-    pub fn cloud_watch_logging_option_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionDescription]> {
+    pub fn cloud_watch_logging_option_descriptions(&self) -> std::option::Option<& [crate::model::CloudWatchLoggingOptionDescription]> {
         self.cloud_watch_logging_option_descriptions.as_deref()
     }
 }
 /// See [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
 pub mod add_application_cloud_watch_logging_option_output {
-
+    
     /// A builder for [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) cloud_watch_logging_option_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
+        pub(crate) cloud_watch_logging_option_descriptions: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
     }
     impl Builder {
         /// <p>The application's ARN.</p>
@@ -2014,12 +1923,8 @@ pub mod add_application_cloud_watch_logging_option_output {
             self
         }
         /// <p>The application's ARN.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
         pub fn application_version_id(mut self, input: i64) -> Self {
@@ -2028,45 +1933,37 @@ pub mod add_application_cloud_watch_logging_option_output {
         }
         /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_version_id = input;
-            self
+            self.application_version_id = input; self
         }
         /// Appends an item to `cloud_watch_logging_option_descriptions`.
         ///
         /// To override the contents of this collection use [`set_cloud_watch_logging_option_descriptions`](Self::set_cloud_watch_logging_option_descriptions).
         ///
         /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
-        pub fn cloud_watch_logging_option_descriptions(
-            mut self,
-            input: crate::model::CloudWatchLoggingOptionDescription,
-        ) -> Self {
-            let mut v = self
-                .cloud_watch_logging_option_descriptions
-                .unwrap_or_default();
-            v.push(input);
-            self.cloud_watch_logging_option_descriptions = Some(v);
-            self
+        pub fn cloud_watch_logging_option_descriptions(mut self, input: crate::model::CloudWatchLoggingOptionDescription) -> Self {
+            let mut v = self.cloud_watch_logging_option_descriptions.unwrap_or_default();
+                            v.push(input);
+                            self.cloud_watch_logging_option_descriptions = Some(v);
+                            self
         }
         /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
-        pub fn set_cloud_watch_logging_option_descriptions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>,
-            >,
-        ) -> Self {
-            self.cloud_watch_logging_option_descriptions = input;
-            self
+        pub fn set_cloud_watch_logging_option_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>) -> Self {
+            self.cloud_watch_logging_option_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
         pub fn build(self) -> crate::output::AddApplicationCloudWatchLoggingOptionOutput {
             crate::output::AddApplicationCloudWatchLoggingOptionOutput {
-                application_arn: self.application_arn,
-                application_version_id: self.application_version_id,
-                cloud_watch_logging_option_descriptions: self
-                    .cloud_watch_logging_option_descriptions,
+                application_arn: self.application_arn
+                ,
+                application_version_id: self.application_version_id
+                ,
+                cloud_watch_logging_option_descriptions: self.cloud_watch_logging_option_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl AddApplicationCloudWatchLoggingOptionOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
@@ -2074,3 +1971,4 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
         crate::output::add_application_cloud_watch_logging_option_output::Builder::default()
     }
 }
+

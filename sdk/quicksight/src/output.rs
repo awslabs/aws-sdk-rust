@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserOutput {
+pub struct UpdateUserOutput  {
     /// <p>The Amazon QuickSight user.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
@@ -15,11 +15,11 @@ pub struct UpdateUserOutput {
 }
 impl UpdateUserOutput {
     /// <p>The Amazon QuickSight user.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -29,7 +29,7 @@ impl UpdateUserOutput {
 }
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
-
+    
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -45,8 +45,7 @@ pub mod update_user_output {
         }
         /// <p>The Amazon QuickSight user.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,8 +54,7 @@ pub mod update_user_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -65,18 +63,23 @@ pub mod update_user_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::output::UpdateUserOutput).
         pub fn build(self) -> crate::output::UpdateUserOutput {
             crate::output::UpdateUserOutput {
-                user: self.user,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                user: self.user
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateUserOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
@@ -88,7 +91,7 @@ impl UpdateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThemePermissionsOutput {
+pub struct UpdateThemePermissionsOutput  {
     /// <p>The ID for the theme.</p>
     #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
@@ -107,19 +110,19 @@ pub struct UpdateThemePermissionsOutput {
 }
 impl UpdateThemePermissionsOutput {
     /// <p>The ID for the theme.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
     /// <p>The resulting list of resource permissions for the theme.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -129,14 +132,13 @@ impl UpdateThemePermissionsOutput {
 }
 /// See [`UpdateThemePermissionsOutput`](crate::output::UpdateThemePermissionsOutput).
 pub mod update_theme_permissions_output {
-
+    
     /// A builder for [`UpdateThemePermissionsOutput`](crate::output::UpdateThemePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) theme_id: std::option::Option<std::string::String>,
         pub(crate) theme_arn: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
     }
@@ -148,8 +150,7 @@ pub mod update_theme_permissions_output {
         }
         /// <p>The ID for the theme.</p>
         pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_id = input;
-            self
+            self.theme_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the theme.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +159,7 @@ pub mod update_theme_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_arn = input;
-            self
+            self.theme_arn = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -168,17 +168,13 @@ pub mod update_theme_permissions_output {
         /// <p>The resulting list of resource permissions for the theme.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>The resulting list of resource permissions for the theme.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,8 +183,7 @@ pub mod update_theme_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -197,20 +192,27 @@ pub mod update_theme_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateThemePermissionsOutput`](crate::output::UpdateThemePermissionsOutput).
         pub fn build(self) -> crate::output::UpdateThemePermissionsOutput {
             crate::output::UpdateThemePermissionsOutput {
-                theme_id: self.theme_id,
-                theme_arn: self.theme_arn,
-                permissions: self.permissions,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                theme_id: self.theme_id
+                ,
+                theme_arn: self.theme_arn
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateThemePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThemePermissionsOutput`](crate::output::UpdateThemePermissionsOutput).
@@ -222,7 +224,7 @@ impl UpdateThemePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThemeAliasOutput {
+pub struct UpdateThemeAliasOutput  {
     /// <p>Information about the theme alias.</p>
     #[doc(hidden)]
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
@@ -235,7 +237,7 @@ pub struct UpdateThemeAliasOutput {
 }
 impl UpdateThemeAliasOutput {
     /// <p>Information about the theme alias.</p>
-    pub fn theme_alias(&self) -> std::option::Option<&crate::model::ThemeAlias> {
+    pub fn theme_alias(&self) -> std::option::Option<& crate::model::ThemeAlias> {
         self.theme_alias.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -243,13 +245,13 @@ impl UpdateThemeAliasOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateThemeAliasOutput`](crate::output::UpdateThemeAliasOutput).
 pub mod update_theme_alias_output {
-
+    
     /// A builder for [`UpdateThemeAliasOutput`](crate::output::UpdateThemeAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -264,12 +266,8 @@ pub mod update_theme_alias_output {
             self
         }
         /// <p>Information about the theme alias.</p>
-        pub fn set_theme_alias(
-            mut self,
-            input: std::option::Option<crate::model::ThemeAlias>,
-        ) -> Self {
-            self.theme_alias = input;
-            self
+        pub fn set_theme_alias(mut self, input: std::option::Option<crate::model::ThemeAlias>) -> Self {
+            self.theme_alias = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -278,8 +276,7 @@ pub mod update_theme_alias_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -288,18 +285,23 @@ pub mod update_theme_alias_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateThemeAliasOutput`](crate::output::UpdateThemeAliasOutput).
         pub fn build(self) -> crate::output::UpdateThemeAliasOutput {
             crate::output::UpdateThemeAliasOutput {
-                theme_alias: self.theme_alias,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                theme_alias: self.theme_alias
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateThemeAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThemeAliasOutput`](crate::output::UpdateThemeAliasOutput).
@@ -311,7 +313,7 @@ impl UpdateThemeAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThemeOutput {
+pub struct UpdateThemeOutput  {
     /// <p>The ID for the theme.</p>
     #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
@@ -333,19 +335,19 @@ pub struct UpdateThemeOutput {
 }
 impl UpdateThemeOutput {
     /// <p>The ID for the theme.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the new version of the theme.</p>
-    pub fn version_arn(&self) -> std::option::Option<&str> {
+    pub fn version_arn(&self) -> std::option::Option<& str> {
         self.version_arn.as_deref()
     }
     /// <p>The creation status of the theme.</p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -353,13 +355,13 @@ impl UpdateThemeOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
 pub mod update_theme_output {
-
+    
     /// A builder for [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -378,8 +380,7 @@ pub mod update_theme_output {
         }
         /// <p>The ID for the theme.</p>
         pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_id = input;
-            self
+            self.theme_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the theme.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -388,8 +389,7 @@ pub mod update_theme_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the theme.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the new version of the theme.</p>
         pub fn version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -398,8 +398,7 @@ pub mod update_theme_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the new version of the theme.</p>
         pub fn set_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_arn = input;
-            self
+            self.version_arn = input; self
         }
         /// <p>The creation status of the theme.</p>
         pub fn creation_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -407,12 +406,8 @@ pub mod update_theme_output {
             self
         }
         /// <p>The creation status of the theme.</p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -421,8 +416,7 @@ pub mod update_theme_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -431,21 +425,29 @@ pub mod update_theme_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
         pub fn build(self) -> crate::output::UpdateThemeOutput {
             crate::output::UpdateThemeOutput {
-                theme_id: self.theme_id,
-                arn: self.arn,
-                version_arn: self.version_arn,
-                creation_status: self.creation_status,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                theme_id: self.theme_id
+                ,
+                arn: self.arn
+                ,
+                version_arn: self.version_arn
+                ,
+                creation_status: self.creation_status
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateThemeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
@@ -457,7 +459,7 @@ impl UpdateThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTemplatePermissionsOutput {
+pub struct UpdateTemplatePermissionsOutput  {
     /// <p>The ID for the template.</p>
     #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
@@ -476,19 +478,19 @@ pub struct UpdateTemplatePermissionsOutput {
 }
 impl UpdateTemplatePermissionsOutput {
     /// <p>The ID for the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> std::option::Option<&str> {
+    pub fn template_arn(&self) -> std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>A list of resource permissions to be set on the template.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -498,14 +500,13 @@ impl UpdateTemplatePermissionsOutput {
 }
 /// See [`UpdateTemplatePermissionsOutput`](crate::output::UpdateTemplatePermissionsOutput).
 pub mod update_template_permissions_output {
-
+    
     /// A builder for [`UpdateTemplatePermissionsOutput`](crate::output::UpdateTemplatePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) template_arn: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
     }
@@ -517,8 +518,7 @@ pub mod update_template_permissions_output {
         }
         /// <p>The ID for the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -527,8 +527,7 @@ pub mod update_template_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_arn = input;
-            self
+            self.template_arn = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -537,17 +536,13 @@ pub mod update_template_permissions_output {
         /// <p>A list of resource permissions to be set on the template.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>A list of resource permissions to be set on the template.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -556,8 +551,7 @@ pub mod update_template_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -566,20 +560,27 @@ pub mod update_template_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTemplatePermissionsOutput`](crate::output::UpdateTemplatePermissionsOutput).
         pub fn build(self) -> crate::output::UpdateTemplatePermissionsOutput {
             crate::output::UpdateTemplatePermissionsOutput {
-                template_id: self.template_id,
-                template_arn: self.template_arn,
-                permissions: self.permissions,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                template_id: self.template_id
+                ,
+                template_arn: self.template_arn
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTemplatePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplatePermissionsOutput`](crate::output::UpdateTemplatePermissionsOutput).
@@ -591,7 +592,7 @@ impl UpdateTemplatePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTemplateAliasOutput {
+pub struct UpdateTemplateAliasOutput  {
     /// <p>The template alias.</p>
     #[doc(hidden)]
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
@@ -604,7 +605,7 @@ pub struct UpdateTemplateAliasOutput {
 }
 impl UpdateTemplateAliasOutput {
     /// <p>The template alias.</p>
-    pub fn template_alias(&self) -> std::option::Option<&crate::model::TemplateAlias> {
+    pub fn template_alias(&self) -> std::option::Option<& crate::model::TemplateAlias> {
         self.template_alias.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -612,13 +613,13 @@ impl UpdateTemplateAliasOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateTemplateAliasOutput`](crate::output::UpdateTemplateAliasOutput).
 pub mod update_template_alias_output {
-
+    
     /// A builder for [`UpdateTemplateAliasOutput`](crate::output::UpdateTemplateAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -633,12 +634,8 @@ pub mod update_template_alias_output {
             self
         }
         /// <p>The template alias.</p>
-        pub fn set_template_alias(
-            mut self,
-            input: std::option::Option<crate::model::TemplateAlias>,
-        ) -> Self {
-            self.template_alias = input;
-            self
+        pub fn set_template_alias(mut self, input: std::option::Option<crate::model::TemplateAlias>) -> Self {
+            self.template_alias = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -647,8 +644,7 @@ pub mod update_template_alias_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -657,18 +653,23 @@ pub mod update_template_alias_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTemplateAliasOutput`](crate::output::UpdateTemplateAliasOutput).
         pub fn build(self) -> crate::output::UpdateTemplateAliasOutput {
             crate::output::UpdateTemplateAliasOutput {
-                template_alias: self.template_alias,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                template_alias: self.template_alias
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTemplateAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateAliasOutput`](crate::output::UpdateTemplateAliasOutput).
@@ -680,7 +681,7 @@ impl UpdateTemplateAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTemplateOutput {
+pub struct UpdateTemplateOutput  {
     /// <p>The ID for the template.</p>
     #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
@@ -702,19 +703,19 @@ pub struct UpdateTemplateOutput {
 }
 impl UpdateTemplateOutput {
     /// <p>The ID for the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN for the template, including the version information of the first version.</p>
-    pub fn version_arn(&self) -> std::option::Option<&str> {
+    pub fn version_arn(&self) -> std::option::Option<& str> {
         self.version_arn.as_deref()
     }
     /// <p>The creation status of the template.</p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -722,13 +723,13 @@ impl UpdateTemplateOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
 pub mod update_template_output {
-
+    
     /// A builder for [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -747,8 +748,7 @@ pub mod update_template_output {
         }
         /// <p>The ID for the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -757,8 +757,7 @@ pub mod update_template_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN for the template, including the version information of the first version.</p>
         pub fn version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -767,8 +766,7 @@ pub mod update_template_output {
         }
         /// <p>The ARN for the template, including the version information of the first version.</p>
         pub fn set_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_arn = input;
-            self
+            self.version_arn = input; self
         }
         /// <p>The creation status of the template.</p>
         pub fn creation_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -776,12 +774,8 @@ pub mod update_template_output {
             self
         }
         /// <p>The creation status of the template.</p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -790,8 +784,7 @@ pub mod update_template_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -800,21 +793,29 @@ pub mod update_template_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
         pub fn build(self) -> crate::output::UpdateTemplateOutput {
             crate::output::UpdateTemplateOutput {
-                template_id: self.template_id,
-                arn: self.arn,
-                version_arn: self.version_arn,
-                creation_status: self.creation_status,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                template_id: self.template_id
+                ,
+                arn: self.arn
+                ,
+                version_arn: self.version_arn
+                ,
+                creation_status: self.creation_status
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
@@ -826,7 +827,7 @@ impl UpdateTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePublicSharingSettingsOutput {
+pub struct UpdatePublicSharingSettingsOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -836,7 +837,7 @@ pub struct UpdatePublicSharingSettingsOutput {
 }
 impl UpdatePublicSharingSettingsOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -846,7 +847,7 @@ impl UpdatePublicSharingSettingsOutput {
 }
 /// See [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput).
 pub mod update_public_sharing_settings_output {
-
+    
     /// A builder for [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -861,8 +862,7 @@ pub mod update_public_sharing_settings_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -871,17 +871,21 @@ pub mod update_public_sharing_settings_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput).
         pub fn build(self) -> crate::output::UpdatePublicSharingSettingsOutput {
             crate::output::UpdatePublicSharingSettingsOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePublicSharingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePublicSharingSettingsOutput`](crate::output::UpdatePublicSharingSettingsOutput).
@@ -893,7 +897,7 @@ impl UpdatePublicSharingSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIpRestrictionOutput {
+pub struct UpdateIpRestrictionOutput  {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -906,11 +910,11 @@ pub struct UpdateIpRestrictionOutput {
 }
 impl UpdateIpRestrictionOutput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request. </p>
@@ -920,7 +924,7 @@ impl UpdateIpRestrictionOutput {
 }
 /// See [`UpdateIpRestrictionOutput`](crate::output::UpdateIpRestrictionOutput).
 pub mod update_ip_restriction_output {
-
+    
     /// A builder for [`UpdateIpRestrictionOutput`](crate::output::UpdateIpRestrictionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -935,12 +939,8 @@ pub mod update_ip_restriction_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
+        pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -949,8 +949,7 @@ pub mod update_ip_restriction_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request. </p>
         pub fn status(mut self, input: i32) -> Self {
@@ -959,18 +958,23 @@ pub mod update_ip_restriction_output {
         }
         /// <p>The HTTP status of the request. </p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateIpRestrictionOutput`](crate::output::UpdateIpRestrictionOutput).
         pub fn build(self) -> crate::output::UpdateIpRestrictionOutput {
             crate::output::UpdateIpRestrictionOutput {
-                aws_account_id: self.aws_account_id,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                aws_account_id: self.aws_account_id
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateIpRestrictionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIpRestrictionOutput`](crate::output::UpdateIpRestrictionOutput).
@@ -982,7 +986,7 @@ impl UpdateIpRestrictionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIamPolicyAssignmentOutput {
+pub struct UpdateIamPolicyAssignmentOutput  {
     /// <p>The name of the assignment or rule.</p>
     #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
@@ -994,14 +998,12 @@ pub struct UpdateIamPolicyAssignmentOutput {
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     #[doc(hidden)]
-    pub identities: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
-    /// <p>The status of the assignment. Possible values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+    pub identities: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    /// <p>The status of the assignment. Possible values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
@@ -1014,36 +1016,32 @@ pub struct UpdateIamPolicyAssignmentOutput {
 }
 impl UpdateIamPolicyAssignmentOutput {
     /// <p>The name of the assignment or rule.</p>
-    pub fn assignment_name(&self) -> std::option::Option<&str> {
+    pub fn assignment_name(&self) -> std::option::Option<& str> {
         self.assignment_name.as_deref()
     }
     /// <p>The ID of the assignment.</p>
-    pub fn assignment_id(&self) -> std::option::Option<&str> {
+    pub fn assignment_id(&self) -> std::option::Option<& str> {
         self.assignment_id.as_deref()
     }
     /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this assignment.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-    pub fn identities(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn identities(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.identities.as_ref()
     }
-    /// <p>The status of the assignment. Possible values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+    /// <p>The status of the assignment. Possible values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
     /// </ul>
-    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+    pub fn assignment_status(&self) -> std::option::Option<& crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -1053,16 +1051,14 @@ impl UpdateIamPolicyAssignmentOutput {
 }
 /// See [`UpdateIamPolicyAssignmentOutput`](crate::output::UpdateIamPolicyAssignmentOutput).
 pub mod update_iam_policy_assignment_output {
-
+    
     /// A builder for [`UpdateIamPolicyAssignmentOutput`](crate::output::UpdateIamPolicyAssignmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_name: std::option::Option<std::string::String>,
         pub(crate) assignment_id: std::option::Option<std::string::String>,
         pub(crate) policy_arn: std::option::Option<std::string::String>,
-        pub(crate) identities: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
+        pub(crate) identities: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
         pub(crate) assignment_status: std::option::Option<crate::model::AssignmentStatus>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
@@ -1074,12 +1070,8 @@ pub mod update_iam_policy_assignment_output {
             self
         }
         /// <p>The name of the assignment or rule.</p>
-        pub fn set_assignment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assignment_name = input;
-            self
+        pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assignment_name = input; self
         }
         /// <p>The ID of the assignment.</p>
         pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1087,12 +1079,8 @@ pub mod update_iam_policy_assignment_output {
             self
         }
         /// <p>The ID of the assignment.</p>
-        pub fn set_assignment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assignment_id = input;
-            self
+        pub fn set_assignment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assignment_id = input; self
         }
         /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1101,56 +1089,41 @@ pub mod update_iam_policy_assignment_output {
         }
         /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = input;
-            self
+            self.policy_arn = input; self
         }
         /// Adds a key-value pair to `identities`.
         ///
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
         /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-        pub fn identities(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<std::string::String>,
-        ) -> Self {
+        pub fn identities(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.identities = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.identities = Some(hash_map);
+                            self
         }
         /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-        pub fn set_identities(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        ) -> Self {
-            self.identities = input;
-            self
+        pub fn set_identities(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+            self.identities = input; self
         }
-        /// <p>The status of the assignment. Possible values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+        /// <p>The status of the assignment. Possible values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
         /// </ul>
         pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
             self.assignment_status = Some(input);
             self
         }
-        /// <p>The status of the assignment. Possible values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+        /// <p>The status of the assignment. Possible values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
         /// </ul>
-        pub fn set_assignment_status(
-            mut self,
-            input: std::option::Option<crate::model::AssignmentStatus>,
-        ) -> Self {
-            self.assignment_status = input;
-            self
+        pub fn set_assignment_status(mut self, input: std::option::Option<crate::model::AssignmentStatus>) -> Self {
+            self.assignment_status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1159,8 +1132,7 @@ pub mod update_iam_policy_assignment_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -1169,22 +1141,31 @@ pub mod update_iam_policy_assignment_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateIamPolicyAssignmentOutput`](crate::output::UpdateIamPolicyAssignmentOutput).
         pub fn build(self) -> crate::output::UpdateIamPolicyAssignmentOutput {
             crate::output::UpdateIamPolicyAssignmentOutput {
-                assignment_name: self.assignment_name,
-                assignment_id: self.assignment_id,
-                policy_arn: self.policy_arn,
-                identities: self.identities,
-                assignment_status: self.assignment_status,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                assignment_name: self.assignment_name
+                ,
+                assignment_id: self.assignment_id
+                ,
+                policy_arn: self.policy_arn
+                ,
+                identities: self.identities
+                ,
+                assignment_status: self.assignment_status
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIamPolicyAssignmentOutput`](crate::output::UpdateIamPolicyAssignmentOutput).
@@ -1196,7 +1177,7 @@ impl UpdateIamPolicyAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupOutput {
+pub struct UpdateGroupOutput  {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
@@ -1209,11 +1190,11 @@ pub struct UpdateGroupOutput {
 }
 impl UpdateGroupOutput {
     /// <p>The name of the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -1223,7 +1204,7 @@ impl UpdateGroupOutput {
 }
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
 pub mod update_group_output {
-
+    
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1239,8 +1220,7 @@ pub mod update_group_output {
         }
         /// <p>The name of the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1249,8 +1229,7 @@ pub mod update_group_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -1259,18 +1238,23 @@ pub mod update_group_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
         pub fn build(self) -> crate::output::UpdateGroupOutput {
             crate::output::UpdateGroupOutput {
-                group: self.group,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group: self.group
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
@@ -1282,7 +1266,7 @@ impl UpdateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFolderPermissionsOutput {
+pub struct UpdateFolderPermissionsOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -1305,33 +1289,32 @@ impl UpdateFolderPermissionsOutput {
         self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>Information about the permissions for the folder.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateFolderPermissionsOutput`](crate::output::UpdateFolderPermissionsOutput).
 pub mod update_folder_permissions_output {
-
+    
     /// A builder for [`UpdateFolderPermissionsOutput`](crate::output::UpdateFolderPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<i32>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1342,8 +1325,7 @@ pub mod update_folder_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1352,8 +1334,7 @@ pub mod update_folder_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1362,8 +1343,7 @@ pub mod update_folder_permissions_output {
         }
         /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.folder_id = input;
-            self
+            self.folder_id = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -1372,17 +1352,13 @@ pub mod update_folder_permissions_output {
         /// <p>Information about the permissions for the folder.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>Information about the permissions for the folder.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1391,20 +1367,27 @@ pub mod update_folder_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFolderPermissionsOutput`](crate::output::UpdateFolderPermissionsOutput).
         pub fn build(self) -> crate::output::UpdateFolderPermissionsOutput {
             crate::output::UpdateFolderPermissionsOutput {
-                status: self.status.unwrap_or_default(),
-                arn: self.arn,
-                folder_id: self.folder_id,
-                permissions: self.permissions,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                folder_id: self.folder_id
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFolderPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFolderPermissionsOutput`](crate::output::UpdateFolderPermissionsOutput).
@@ -1416,7 +1399,7 @@ impl UpdateFolderPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFolderOutput {
+pub struct UpdateFolderOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -1436,21 +1419,21 @@ impl UpdateFolderOutput {
         self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
 pub mod update_folder_output {
-
+    
     /// A builder for [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1467,8 +1450,7 @@ pub mod update_folder_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1477,8 +1459,7 @@ pub mod update_folder_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1487,8 +1468,7 @@ pub mod update_folder_output {
         }
         /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.folder_id = input;
-            self
+            self.folder_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1497,19 +1477,25 @@ pub mod update_folder_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
         pub fn build(self) -> crate::output::UpdateFolderOutput {
             crate::output::UpdateFolderOutput {
-                status: self.status.unwrap_or_default(),
-                arn: self.arn,
-                folder_id: self.folder_id,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                folder_id: self.folder_id
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFolderOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
@@ -1521,7 +1507,7 @@ impl UpdateFolderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataSourcePermissionsOutput {
+pub struct UpdateDataSourcePermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
@@ -1537,15 +1523,15 @@ pub struct UpdateDataSourcePermissionsOutput {
 }
 impl UpdateDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+    pub fn data_source_arn(&self) -> std::option::Option<& str> {
         self.data_source_arn.as_deref()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -1555,7 +1541,7 @@ impl UpdateDataSourcePermissionsOutput {
 }
 /// See [`UpdateDataSourcePermissionsOutput`](crate::output::UpdateDataSourcePermissionsOutput).
 pub mod update_data_source_permissions_output {
-
+    
     /// A builder for [`UpdateDataSourcePermissionsOutput`](crate::output::UpdateDataSourcePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1571,12 +1557,8 @@ pub mod update_data_source_permissions_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-        pub fn set_data_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_arn = input;
-            self
+        pub fn set_data_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_arn = input; self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1584,12 +1566,8 @@ pub mod update_data_source_permissions_output {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1598,8 +1576,7 @@ pub mod update_data_source_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -1608,19 +1585,25 @@ pub mod update_data_source_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDataSourcePermissionsOutput`](crate::output::UpdateDataSourcePermissionsOutput).
         pub fn build(self) -> crate::output::UpdateDataSourcePermissionsOutput {
             crate::output::UpdateDataSourcePermissionsOutput {
-                data_source_arn: self.data_source_arn,
-                data_source_id: self.data_source_id,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                data_source_arn: self.data_source_arn
+                ,
+                data_source_id: self.data_source_id
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDataSourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourcePermissionsOutput`](crate::output::UpdateDataSourcePermissionsOutput).
@@ -1632,7 +1615,7 @@ impl UpdateDataSourcePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataSourceOutput {
+pub struct UpdateDataSourceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1651,19 +1634,19 @@ pub struct UpdateDataSourceOutput {
 }
 impl UpdateDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The update status of the data source's last update.</p>
-    pub fn update_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn update_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.update_status.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -1673,7 +1656,7 @@ impl UpdateDataSourceOutput {
 }
 /// See [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
 pub mod update_data_source_output {
-
+    
     /// A builder for [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1691,8 +1674,7 @@ pub mod update_data_source_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the data source.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1700,12 +1682,8 @@ pub mod update_data_source_output {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// <p>The update status of the data source's last update.</p>
         pub fn update_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -1713,12 +1691,8 @@ pub mod update_data_source_output {
             self
         }
         /// <p>The update status of the data source's last update.</p>
-        pub fn set_update_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.update_status = input;
-            self
+        pub fn set_update_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.update_status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1727,8 +1701,7 @@ pub mod update_data_source_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -1737,20 +1710,27 @@ pub mod update_data_source_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
         pub fn build(self) -> crate::output::UpdateDataSourceOutput {
             crate::output::UpdateDataSourceOutput {
-                arn: self.arn,
-                data_source_id: self.data_source_id,
-                update_status: self.update_status,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                data_source_id: self.data_source_id
+                ,
+                update_status: self.update_status
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
@@ -1762,7 +1742,7 @@ impl UpdateDataSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataSetPermissionsOutput {
+pub struct UpdateDataSetPermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
     pub data_set_arn: std::option::Option<std::string::String>,
@@ -1778,15 +1758,15 @@ pub struct UpdateDataSetPermissionsOutput {
 }
 impl UpdateDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn data_set_arn(&self) -> std::option::Option<&str> {
+    pub fn data_set_arn(&self) -> std::option::Option<& str> {
         self.data_set_arn.as_deref()
     }
     /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -1796,7 +1776,7 @@ impl UpdateDataSetPermissionsOutput {
 }
 /// See [`UpdateDataSetPermissionsOutput`](crate::output::UpdateDataSetPermissionsOutput).
 pub mod update_data_set_permissions_output {
-
+    
     /// A builder for [`UpdateDataSetPermissionsOutput`](crate::output::UpdateDataSetPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1813,8 +1793,7 @@ pub mod update_data_set_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
         pub fn set_data_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_arn = input;
-            self
+            self.data_set_arn = input; self
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1823,8 +1802,7 @@ pub mod update_data_set_permissions_output {
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1833,8 +1811,7 @@ pub mod update_data_set_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -1843,19 +1820,25 @@ pub mod update_data_set_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDataSetPermissionsOutput`](crate::output::UpdateDataSetPermissionsOutput).
         pub fn build(self) -> crate::output::UpdateDataSetPermissionsOutput {
             crate::output::UpdateDataSetPermissionsOutput {
-                data_set_arn: self.data_set_arn,
-                data_set_id: self.data_set_id,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                data_set_arn: self.data_set_arn
+                ,
+                data_set_id: self.data_set_id
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDataSetPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSetPermissionsOutput`](crate::output::UpdateDataSetPermissionsOutput).
@@ -1867,7 +1850,7 @@ impl UpdateDataSetPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataSetOutput {
+pub struct UpdateDataSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1889,23 +1872,23 @@ pub struct UpdateDataSetOutput {
 }
 impl UpdateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-    pub fn ingestion_arn(&self) -> std::option::Option<&str> {
+    pub fn ingestion_arn(&self) -> std::option::Option<& str> {
         self.ingestion_arn.as_deref()
     }
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> std::option::Option<& str> {
         self.ingestion_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -1915,7 +1898,7 @@ impl UpdateDataSetOutput {
 }
 /// See [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
 pub mod update_data_set_output {
-
+    
     /// A builder for [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1934,8 +1917,7 @@ pub mod update_data_set_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1944,8 +1926,7 @@ pub mod update_data_set_output {
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn ingestion_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1953,12 +1934,8 @@ pub mod update_data_set_output {
             self
         }
         /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-        pub fn set_ingestion_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ingestion_arn = input;
-            self
+        pub fn set_ingestion_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ingestion_arn = input; self
         }
         /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1967,8 +1944,7 @@ pub mod update_data_set_output {
         }
         /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ingestion_id = input;
-            self
+            self.ingestion_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1977,8 +1953,7 @@ pub mod update_data_set_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -1987,21 +1962,29 @@ pub mod update_data_set_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
         pub fn build(self) -> crate::output::UpdateDataSetOutput {
             crate::output::UpdateDataSetOutput {
-                arn: self.arn,
-                data_set_id: self.data_set_id,
-                ingestion_arn: self.ingestion_arn,
-                ingestion_id: self.ingestion_id,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                data_set_id: self.data_set_id
+                ,
+                ingestion_arn: self.ingestion_arn
+                ,
+                ingestion_id: self.ingestion_id
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDataSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
@@ -2013,7 +1996,7 @@ impl UpdateDataSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDashboardPublishedVersionOutput {
+pub struct UpdateDashboardPublishedVersionOutput  {
     /// <p>The ID for the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -2029,11 +2012,11 @@ pub struct UpdateDashboardPublishedVersionOutput {
 }
 impl UpdateDashboardPublishedVersionOutput {
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2041,13 +2024,13 @@ impl UpdateDashboardPublishedVersionOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateDashboardPublishedVersionOutput`](crate::output::UpdateDashboardPublishedVersionOutput).
 pub mod update_dashboard_published_version_output {
-
+    
     /// A builder for [`UpdateDashboardPublishedVersionOutput`](crate::output::UpdateDashboardPublishedVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2064,8 +2047,7 @@ pub mod update_dashboard_published_version_output {
         }
         /// <p>The ID for the dashboard.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
         pub fn dashboard_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2073,12 +2055,8 @@ pub mod update_dashboard_published_version_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-        pub fn set_dashboard_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_arn = input;
-            self
+        pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_arn = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -2087,8 +2065,7 @@ pub mod update_dashboard_published_version_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2097,19 +2074,25 @@ pub mod update_dashboard_published_version_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDashboardPublishedVersionOutput`](crate::output::UpdateDashboardPublishedVersionOutput).
         pub fn build(self) -> crate::output::UpdateDashboardPublishedVersionOutput {
             crate::output::UpdateDashboardPublishedVersionOutput {
-                dashboard_id: self.dashboard_id,
-                dashboard_arn: self.dashboard_arn,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                dashboard_id: self.dashboard_id
+                ,
+                dashboard_arn: self.dashboard_arn
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDashboardPublishedVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDashboardPublishedVersionOutput`](crate::output::UpdateDashboardPublishedVersionOutput).
@@ -2121,7 +2104,7 @@ impl UpdateDashboardPublishedVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDashboardPermissionsOutput {
+pub struct UpdateDashboardPermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
@@ -2143,19 +2126,19 @@ pub struct UpdateDashboardPermissionsOutput {
 }
 impl UpdateDashboardPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>Information about the permissions on the dashboard.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2163,26 +2146,22 @@ impl UpdateDashboardPermissionsOutput {
         self.status
     }
     /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
-    pub fn link_sharing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LinkSharingConfiguration> {
+    pub fn link_sharing_configuration(&self) -> std::option::Option<& crate::model::LinkSharingConfiguration> {
         self.link_sharing_configuration.as_ref()
     }
 }
 /// See [`UpdateDashboardPermissionsOutput`](crate::output::UpdateDashboardPermissionsOutput).
 pub mod update_dashboard_permissions_output {
-
+    
     /// A builder for [`UpdateDashboardPermissionsOutput`](crate::output::UpdateDashboardPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_arn: std::option::Option<std::string::String>,
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
-        pub(crate) link_sharing_configuration:
-            std::option::Option<crate::model::LinkSharingConfiguration>,
+        pub(crate) link_sharing_configuration: std::option::Option<crate::model::LinkSharingConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
@@ -2191,12 +2170,8 @@ pub mod update_dashboard_permissions_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-        pub fn set_dashboard_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_arn = input;
-            self
+        pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_arn = input; self
         }
         /// <p>The ID for the dashboard.</p>
         pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2205,8 +2180,7 @@ pub mod update_dashboard_permissions_output {
         }
         /// <p>The ID for the dashboard.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -2215,17 +2189,13 @@ pub mod update_dashboard_permissions_output {
         /// <p>Information about the permissions on the dashboard.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>Information about the permissions on the dashboard.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2234,8 +2204,7 @@ pub mod update_dashboard_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -2244,37 +2213,38 @@ pub mod update_dashboard_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
-        pub fn link_sharing_configuration(
-            mut self,
-            input: crate::model::LinkSharingConfiguration,
-        ) -> Self {
+        pub fn link_sharing_configuration(mut self, input: crate::model::LinkSharingConfiguration) -> Self {
             self.link_sharing_configuration = Some(input);
             self
         }
         /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
-        pub fn set_link_sharing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LinkSharingConfiguration>,
-        ) -> Self {
-            self.link_sharing_configuration = input;
-            self
+        pub fn set_link_sharing_configuration(mut self, input: std::option::Option<crate::model::LinkSharingConfiguration>) -> Self {
+            self.link_sharing_configuration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDashboardPermissionsOutput`](crate::output::UpdateDashboardPermissionsOutput).
         pub fn build(self) -> crate::output::UpdateDashboardPermissionsOutput {
             crate::output::UpdateDashboardPermissionsOutput {
-                dashboard_arn: self.dashboard_arn,
-                dashboard_id: self.dashboard_id,
-                permissions: self.permissions,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
-                link_sharing_configuration: self.link_sharing_configuration,
+                dashboard_arn: self.dashboard_arn
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                link_sharing_configuration: self.link_sharing_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDashboardPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDashboardPermissionsOutput`](crate::output::UpdateDashboardPermissionsOutput).
@@ -2286,7 +2256,7 @@ impl UpdateDashboardPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDashboardOutput {
+pub struct UpdateDashboardOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2308,19 +2278,19 @@ pub struct UpdateDashboardOutput {
 }
 impl UpdateDashboardOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the dashboard, including the version number.</p>
-    pub fn version_arn(&self) -> std::option::Option<&str> {
+    pub fn version_arn(&self) -> std::option::Option<& str> {
         self.version_arn.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The creation status of the request.</p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2328,13 +2298,13 @@ impl UpdateDashboardOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput).
 pub mod update_dashboard_output {
-
+    
     /// A builder for [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2353,8 +2323,7 @@ pub mod update_dashboard_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of the dashboard, including the version number.</p>
         pub fn version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2363,8 +2332,7 @@ pub mod update_dashboard_output {
         }
         /// <p>The ARN of the dashboard, including the version number.</p>
         pub fn set_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_arn = input;
-            self
+            self.version_arn = input; self
         }
         /// <p>The ID for the dashboard.</p>
         pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2373,8 +2341,7 @@ pub mod update_dashboard_output {
         }
         /// <p>The ID for the dashboard.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
         /// <p>The creation status of the request.</p>
         pub fn creation_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -2382,12 +2349,8 @@ pub mod update_dashboard_output {
             self
         }
         /// <p>The creation status of the request.</p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -2396,8 +2359,7 @@ pub mod update_dashboard_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2406,21 +2368,29 @@ pub mod update_dashboard_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput).
         pub fn build(self) -> crate::output::UpdateDashboardOutput {
             crate::output::UpdateDashboardOutput {
-                arn: self.arn,
-                version_arn: self.version_arn,
-                dashboard_id: self.dashboard_id,
-                creation_status: self.creation_status,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                arn: self.arn
+                ,
+                version_arn: self.version_arn
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+                creation_status: self.creation_status
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDashboardOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput).
@@ -2432,7 +2402,7 @@ impl UpdateDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnalysisPermissionsOutput {
+pub struct UpdateAnalysisPermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
     #[doc(hidden)]
     pub analysis_arn: std::option::Option<std::string::String>,
@@ -2451,19 +2421,19 @@ pub struct UpdateAnalysisPermissionsOutput {
 }
 impl UpdateAnalysisPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
-    pub fn analysis_arn(&self) -> std::option::Option<&str> {
+    pub fn analysis_arn(&self) -> std::option::Option<& str> {
         self.analysis_arn.as_deref()
     }
     /// <p>The ID of the analysis that you updated permissions for.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2473,14 +2443,13 @@ impl UpdateAnalysisPermissionsOutput {
 }
 /// See [`UpdateAnalysisPermissionsOutput`](crate::output::UpdateAnalysisPermissionsOutput).
 pub mod update_analysis_permissions_output {
-
+    
     /// A builder for [`UpdateAnalysisPermissionsOutput`](crate::output::UpdateAnalysisPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_arn: std::option::Option<std::string::String>,
         pub(crate) analysis_id: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
     }
@@ -2492,8 +2461,7 @@ pub mod update_analysis_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
         pub fn set_analysis_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_arn = input;
-            self
+            self.analysis_arn = input; self
         }
         /// <p>The ID of the analysis that you updated permissions for.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2502,8 +2470,7 @@ pub mod update_analysis_permissions_output {
         }
         /// <p>The ID of the analysis that you updated permissions for.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_id = input;
-            self
+            self.analysis_id = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -2512,17 +2479,13 @@ pub mod update_analysis_permissions_output {
         /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2531,8 +2494,7 @@ pub mod update_analysis_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -2541,20 +2503,27 @@ pub mod update_analysis_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAnalysisPermissionsOutput`](crate::output::UpdateAnalysisPermissionsOutput).
         pub fn build(self) -> crate::output::UpdateAnalysisPermissionsOutput {
             crate::output::UpdateAnalysisPermissionsOutput {
-                analysis_arn: self.analysis_arn,
-                analysis_id: self.analysis_id,
-                permissions: self.permissions,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                analysis_arn: self.analysis_arn
+                ,
+                analysis_id: self.analysis_id
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAnalysisPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnalysisPermissionsOutput`](crate::output::UpdateAnalysisPermissionsOutput).
@@ -2566,7 +2535,7 @@ impl UpdateAnalysisPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnalysisOutput {
+pub struct UpdateAnalysisOutput  {
     /// <p>The ARN of the analysis that you're updating.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2585,15 +2554,15 @@ pub struct UpdateAnalysisOutput {
 }
 impl UpdateAnalysisOutput {
     /// <p>The ARN of the analysis that you're updating.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the analysis.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>The update status of the last update that was made to the analysis.</p>
-    pub fn update_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn update_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.update_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2601,13 +2570,13 @@ impl UpdateAnalysisOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`UpdateAnalysisOutput`](crate::output::UpdateAnalysisOutput).
 pub mod update_analysis_output {
-
+    
     /// A builder for [`UpdateAnalysisOutput`](crate::output::UpdateAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2625,8 +2594,7 @@ pub mod update_analysis_output {
         }
         /// <p>The ARN of the analysis that you're updating.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the analysis.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2635,8 +2603,7 @@ pub mod update_analysis_output {
         }
         /// <p>The ID of the analysis.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_id = input;
-            self
+            self.analysis_id = input; self
         }
         /// <p>The update status of the last update that was made to the analysis.</p>
         pub fn update_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -2644,12 +2611,8 @@ pub mod update_analysis_output {
             self
         }
         /// <p>The update status of the last update that was made to the analysis.</p>
-        pub fn set_update_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.update_status = input;
-            self
+        pub fn set_update_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.update_status = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -2658,8 +2621,7 @@ pub mod update_analysis_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2668,20 +2630,27 @@ pub mod update_analysis_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAnalysisOutput`](crate::output::UpdateAnalysisOutput).
         pub fn build(self) -> crate::output::UpdateAnalysisOutput {
             crate::output::UpdateAnalysisOutput {
-                arn: self.arn,
-                analysis_id: self.analysis_id,
-                update_status: self.update_status,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                arn: self.arn
+                ,
+                analysis_id: self.analysis_id
+                ,
+                update_status: self.update_status
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnalysisOutput`](crate::output::UpdateAnalysisOutput).
@@ -2693,7 +2662,7 @@ impl UpdateAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccountSettingsOutput {
+pub struct UpdateAccountSettingsOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -2703,7 +2672,7 @@ pub struct UpdateAccountSettingsOutput {
 }
 impl UpdateAccountSettingsOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2713,7 +2682,7 @@ impl UpdateAccountSettingsOutput {
 }
 /// See [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
 pub mod update_account_settings_output {
-
+    
     /// A builder for [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2728,8 +2697,7 @@ pub mod update_account_settings_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -2738,17 +2706,21 @@ pub mod update_account_settings_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
         pub fn build(self) -> crate::output::UpdateAccountSettingsOutput {
             crate::output::UpdateAccountSettingsOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
@@ -2760,7 +2732,7 @@ impl UpdateAccountSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccountCustomizationOutput {
+pub struct UpdateAccountCustomizationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2782,25 +2754,23 @@ pub struct UpdateAccountCustomizationOutput {
 }
 impl UpdateAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace associated with the customization that you're updating.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-    pub fn account_customization(
-        &self,
-    ) -> std::option::Option<&crate::model::AccountCustomization> {
+    pub fn account_customization(&self) -> std::option::Option<& crate::model::AccountCustomization> {
         self.account_customization.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2810,7 +2780,7 @@ impl UpdateAccountCustomizationOutput {
 }
 /// See [`UpdateAccountCustomizationOutput`](crate::output::UpdateAccountCustomizationOutput).
 pub mod update_account_customization_output {
-
+    
     /// A builder for [`UpdateAccountCustomizationOutput`](crate::output::UpdateAccountCustomizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2829,8 +2799,7 @@ pub mod update_account_customization_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2838,12 +2807,8 @@ pub mod update_account_customization_output {
             self
         }
         /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
+        pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_id = input; self
         }
         /// <p>The namespace associated with the customization that you're updating.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2852,8 +2817,7 @@ pub mod update_account_customization_output {
         }
         /// <p>The namespace associated with the customization that you're updating.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
@@ -2861,12 +2825,8 @@ pub mod update_account_customization_output {
             self
         }
         /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-        pub fn set_account_customization(
-            mut self,
-            input: std::option::Option<crate::model::AccountCustomization>,
-        ) -> Self {
-            self.account_customization = input;
-            self
+        pub fn set_account_customization(mut self, input: std::option::Option<crate::model::AccountCustomization>) -> Self {
+            self.account_customization = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2875,8 +2835,7 @@ pub mod update_account_customization_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -2885,21 +2844,29 @@ pub mod update_account_customization_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAccountCustomizationOutput`](crate::output::UpdateAccountCustomizationOutput).
         pub fn build(self) -> crate::output::UpdateAccountCustomizationOutput {
             crate::output::UpdateAccountCustomizationOutput {
-                arn: self.arn,
-                aws_account_id: self.aws_account_id,
-                namespace: self.namespace,
-                account_customization: self.account_customization,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+                account_customization: self.account_customization
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAccountCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountCustomizationOutput`](crate::output::UpdateAccountCustomizationOutput).
@@ -2911,7 +2878,7 @@ impl UpdateAccountCustomizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {
+pub struct UntagResourceOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -2921,7 +2888,7 @@ pub struct UntagResourceOutput {
 }
 impl UntagResourceOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2931,7 +2898,7 @@ impl UntagResourceOutput {
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2946,8 +2913,7 @@ pub mod untag_resource_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -2956,17 +2922,21 @@ pub mod untag_resource_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2978,7 +2948,7 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {
+pub struct TagResourceOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -2988,7 +2958,7 @@ pub struct TagResourceOutput {
 }
 impl TagResourceOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -2998,7 +2968,7 @@ impl TagResourceOutput {
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3013,8 +2983,7 @@ pub mod tag_resource_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -3023,17 +2992,21 @@ pub mod tag_resource_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -3045,7 +3018,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchGroupsOutput {
+pub struct SearchGroupsOutput  {
     /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
     #[doc(hidden)]
     pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -3061,15 +3034,15 @@ pub struct SearchGroupsOutput {
 }
 impl SearchGroupsOutput {
     /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
-    pub fn group_list(&self) -> std::option::Option<&[crate::model::Group]> {
+    pub fn group_list(&self) -> std::option::Option<& [crate::model::Group]> {
         self.group_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -3079,7 +3052,7 @@ impl SearchGroupsOutput {
 }
 /// See [`SearchGroupsOutput`](crate::output::SearchGroupsOutput).
 pub mod search_groups_output {
-
+    
     /// A builder for [`SearchGroupsOutput`](crate::output::SearchGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3096,17 +3069,13 @@ pub mod search_groups_output {
         /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
         pub fn group_list(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_list.unwrap_or_default();
-            v.push(input);
-            self.group_list = Some(v);
-            self
+                            v.push(input);
+                            self.group_list = Some(v);
+                            self
         }
         /// <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
-        pub fn set_group_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
-        ) -> Self {
-            self.group_list = input;
-            self
+        pub fn set_group_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Group>>) -> Self {
+            self.group_list = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3115,8 +3084,7 @@ pub mod search_groups_output {
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3125,8 +3093,7 @@ pub mod search_groups_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -3135,19 +3102,25 @@ pub mod search_groups_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`SearchGroupsOutput`](crate::output::SearchGroupsOutput).
         pub fn build(self) -> crate::output::SearchGroupsOutput {
             crate::output::SearchGroupsOutput {
-                group_list: self.group_list,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group_list: self.group_list
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchGroupsOutput {
     /// Creates a new builder-style object to manufacture [`SearchGroupsOutput`](crate::output::SearchGroupsOutput).
@@ -3159,7 +3132,7 @@ impl SearchGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchFoldersOutput {
+pub struct SearchFoldersOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -3179,27 +3152,26 @@ impl SearchFoldersOutput {
         self.status
     }
     /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-    pub fn folder_summary_list(&self) -> std::option::Option<&[crate::model::FolderSummary]> {
+    pub fn folder_summary_list(&self) -> std::option::Option<& [crate::model::FolderSummary]> {
         self.folder_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`SearchFoldersOutput`](crate::output::SearchFoldersOutput).
 pub mod search_folders_output {
-
+    
     /// A builder for [`SearchFoldersOutput`](crate::output::SearchFoldersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<i32>,
-        pub(crate) folder_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
+        pub(crate) folder_summary_list: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
@@ -3211,8 +3183,7 @@ pub mod search_folders_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `folder_summary_list`.
         ///
@@ -3221,17 +3192,13 @@ pub mod search_folders_output {
         /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
         pub fn folder_summary_list(mut self, input: crate::model::FolderSummary) -> Self {
             let mut v = self.folder_summary_list.unwrap_or_default();
-            v.push(input);
-            self.folder_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.folder_summary_list = Some(v);
+                            self
         }
         /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-        pub fn set_folder_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
-        ) -> Self {
-            self.folder_summary_list = input;
-            self
+        pub fn set_folder_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>) -> Self {
+            self.folder_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3240,8 +3207,7 @@ pub mod search_folders_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3250,19 +3216,25 @@ pub mod search_folders_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`SearchFoldersOutput`](crate::output::SearchFoldersOutput).
         pub fn build(self) -> crate::output::SearchFoldersOutput {
             crate::output::SearchFoldersOutput {
-                status: self.status.unwrap_or_default(),
-                folder_summary_list: self.folder_summary_list,
-                next_token: self.next_token,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                folder_summary_list: self.folder_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchFoldersOutput {
     /// Creates a new builder-style object to manufacture [`SearchFoldersOutput`](crate::output::SearchFoldersOutput).
@@ -3274,7 +3246,7 @@ impl SearchFoldersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchDataSourcesOutput {
+pub struct SearchDataSourcesOutput  {
     /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
     #[doc(hidden)]
     pub data_source_summaries: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
@@ -3290,11 +3262,11 @@ pub struct SearchDataSourcesOutput {
 }
 impl SearchDataSourcesOutput {
     /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
-    pub fn data_source_summaries(&self) -> std::option::Option<&[crate::model::DataSourceSummary]> {
+    pub fn data_source_summaries(&self) -> std::option::Option<& [crate::model::DataSourceSummary]> {
         self.data_source_summaries.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -3302,18 +3274,17 @@ impl SearchDataSourcesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput).
 pub mod search_data_sources_output {
-
+    
     /// A builder for [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data_source_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
+        pub(crate) data_source_summaries: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -3326,17 +3297,13 @@ pub mod search_data_sources_output {
         /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
         pub fn data_source_summaries(mut self, input: crate::model::DataSourceSummary) -> Self {
             let mut v = self.data_source_summaries.unwrap_or_default();
-            v.push(input);
-            self.data_source_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.data_source_summaries = Some(v);
+                            self
         }
         /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
-        pub fn set_data_source_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>,
-        ) -> Self {
-            self.data_source_summaries = input;
-            self
+        pub fn set_data_source_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSourceSummary>>) -> Self {
+            self.data_source_summaries = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3345,8 +3312,7 @@ pub mod search_data_sources_output {
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -3355,8 +3321,7 @@ pub mod search_data_sources_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3365,19 +3330,25 @@ pub mod search_data_sources_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput).
         pub fn build(self) -> crate::output::SearchDataSourcesOutput {
             crate::output::SearchDataSourcesOutput {
-                data_source_summaries: self.data_source_summaries,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                data_source_summaries: self.data_source_summaries
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`SearchDataSourcesOutput`](crate::output::SearchDataSourcesOutput).
@@ -3389,7 +3360,7 @@ impl SearchDataSourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchDataSetsOutput {
+pub struct SearchDataSetsOutput  {
     /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
     #[doc(hidden)]
     pub data_set_summaries: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
@@ -3405,11 +3376,11 @@ pub struct SearchDataSetsOutput {
 }
 impl SearchDataSetsOutput {
     /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
-    pub fn data_set_summaries(&self) -> std::option::Option<&[crate::model::DataSetSummary]> {
+    pub fn data_set_summaries(&self) -> std::option::Option<& [crate::model::DataSetSummary]> {
         self.data_set_summaries.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -3417,18 +3388,17 @@ impl SearchDataSetsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput).
 pub mod search_data_sets_output {
-
+    
     /// A builder for [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data_set_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
+        pub(crate) data_set_summaries: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -3441,17 +3411,13 @@ pub mod search_data_sets_output {
         /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
         pub fn data_set_summaries(mut self, input: crate::model::DataSetSummary) -> Self {
             let mut v = self.data_set_summaries.unwrap_or_default();
-            v.push(input);
-            self.data_set_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.data_set_summaries = Some(v);
+                            self
         }
         /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
-        pub fn set_data_set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
-        ) -> Self {
-            self.data_set_summaries = input;
-            self
+        pub fn set_data_set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>) -> Self {
+            self.data_set_summaries = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3460,8 +3426,7 @@ pub mod search_data_sets_output {
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -3470,8 +3435,7 @@ pub mod search_data_sets_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3480,19 +3444,25 @@ pub mod search_data_sets_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput).
         pub fn build(self) -> crate::output::SearchDataSetsOutput {
             crate::output::SearchDataSetsOutput {
-                data_set_summaries: self.data_set_summaries,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                data_set_summaries: self.data_set_summaries
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchDataSetsOutput {
     /// Creates a new builder-style object to manufacture [`SearchDataSetsOutput`](crate::output::SearchDataSetsOutput).
@@ -3504,7 +3474,7 @@ impl SearchDataSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchDashboardsOutput {
+pub struct SearchDashboardsOutput  {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
     #[doc(hidden)]
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
@@ -3520,11 +3490,11 @@ pub struct SearchDashboardsOutput {
 }
 impl SearchDashboardsOutput {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
-    pub fn dashboard_summary_list(&self) -> std::option::Option<&[crate::model::DashboardSummary]> {
+    pub fn dashboard_summary_list(&self) -> std::option::Option<& [crate::model::DashboardSummary]> {
         self.dashboard_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -3532,18 +3502,17 @@ impl SearchDashboardsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`SearchDashboardsOutput`](crate::output::SearchDashboardsOutput).
 pub mod search_dashboards_output {
-
+    
     /// A builder for [`SearchDashboardsOutput`](crate::output::SearchDashboardsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dashboard_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
+        pub(crate) dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -3556,17 +3525,13 @@ pub mod search_dashboards_output {
         /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
         pub fn dashboard_summary_list(mut self, input: crate::model::DashboardSummary) -> Self {
             let mut v = self.dashboard_summary_list.unwrap_or_default();
-            v.push(input);
-            self.dashboard_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.dashboard_summary_list = Some(v);
+                            self
         }
         /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
-        pub fn set_dashboard_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
-        ) -> Self {
-            self.dashboard_summary_list = input;
-            self
+        pub fn set_dashboard_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>) -> Self {
+            self.dashboard_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3575,8 +3540,7 @@ pub mod search_dashboards_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -3585,8 +3549,7 @@ pub mod search_dashboards_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3595,19 +3558,25 @@ pub mod search_dashboards_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`SearchDashboardsOutput`](crate::output::SearchDashboardsOutput).
         pub fn build(self) -> crate::output::SearchDashboardsOutput {
             crate::output::SearchDashboardsOutput {
-                dashboard_summary_list: self.dashboard_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                dashboard_summary_list: self.dashboard_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`SearchDashboardsOutput`](crate::output::SearchDashboardsOutput).
@@ -3619,7 +3588,7 @@ impl SearchDashboardsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchAnalysesOutput {
+pub struct SearchAnalysesOutput  {
     /// <p>Metadata describing the analyses that you searched for.</p>
     #[doc(hidden)]
     pub analysis_summary_list: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
@@ -3635,11 +3604,11 @@ pub struct SearchAnalysesOutput {
 }
 impl SearchAnalysesOutput {
     /// <p>Metadata describing the analyses that you searched for.</p>
-    pub fn analysis_summary_list(&self) -> std::option::Option<&[crate::model::AnalysisSummary]> {
+    pub fn analysis_summary_list(&self) -> std::option::Option<& [crate::model::AnalysisSummary]> {
         self.analysis_summary_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -3647,18 +3616,17 @@ impl SearchAnalysesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`SearchAnalysesOutput`](crate::output::SearchAnalysesOutput).
 pub mod search_analyses_output {
-
+    
     /// A builder for [`SearchAnalysesOutput`](crate::output::SearchAnalysesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) analysis_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
+        pub(crate) analysis_summary_list: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -3671,17 +3639,13 @@ pub mod search_analyses_output {
         /// <p>Metadata describing the analyses that you searched for.</p>
         pub fn analysis_summary_list(mut self, input: crate::model::AnalysisSummary) -> Self {
             let mut v = self.analysis_summary_list.unwrap_or_default();
-            v.push(input);
-            self.analysis_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_summary_list = Some(v);
+                            self
         }
         /// <p>Metadata describing the analyses that you searched for.</p>
-        pub fn set_analysis_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
-        ) -> Self {
-            self.analysis_summary_list = input;
-            self
+        pub fn set_analysis_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>) -> Self {
+            self.analysis_summary_list = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3690,8 +3654,7 @@ pub mod search_analyses_output {
         }
         /// <p>A pagination token that can be used in a subsequent request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -3700,8 +3663,7 @@ pub mod search_analyses_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3710,19 +3672,25 @@ pub mod search_analyses_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`SearchAnalysesOutput`](crate::output::SearchAnalysesOutput).
         pub fn build(self) -> crate::output::SearchAnalysesOutput {
             crate::output::SearchAnalysesOutput {
-                analysis_summary_list: self.analysis_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                analysis_summary_list: self.analysis_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchAnalysesOutput {
     /// Creates a new builder-style object to manufacture [`SearchAnalysesOutput`](crate::output::SearchAnalysesOutput).
@@ -3734,7 +3702,7 @@ impl SearchAnalysesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreAnalysisOutput {
+pub struct RestoreAnalysisOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -3754,21 +3722,21 @@ impl RestoreAnalysisOutput {
         self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the analysis that you're restoring. </p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`RestoreAnalysisOutput`](crate::output::RestoreAnalysisOutput).
 pub mod restore_analysis_output {
-
+    
     /// A builder for [`RestoreAnalysisOutput`](crate::output::RestoreAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3785,8 +3753,7 @@ pub mod restore_analysis_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3795,8 +3762,7 @@ pub mod restore_analysis_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the analysis that you're restoring. </p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3805,8 +3771,7 @@ pub mod restore_analysis_output {
         }
         /// <p>The ID of the analysis that you're restoring. </p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_id = input;
-            self
+            self.analysis_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3815,19 +3780,25 @@ pub mod restore_analysis_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`RestoreAnalysisOutput`](crate::output::RestoreAnalysisOutput).
         pub fn build(self) -> crate::output::RestoreAnalysisOutput {
             crate::output::RestoreAnalysisOutput {
-                status: self.status.unwrap_or_default(),
-                arn: self.arn,
-                analysis_id: self.analysis_id,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                analysis_id: self.analysis_id
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`RestoreAnalysisOutput`](crate::output::RestoreAnalysisOutput).
@@ -3839,7 +3810,7 @@ impl RestoreAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterUserOutput {
+pub struct RegisterUserOutput  {
     /// <p>The user's user name.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
@@ -3855,15 +3826,15 @@ pub struct RegisterUserOutput {
 }
 impl RegisterUserOutput {
     /// <p>The user's user name.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
     /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn user_invitation_url(&self) -> std::option::Option<&str> {
+    pub fn user_invitation_url(&self) -> std::option::Option<& str> {
         self.user_invitation_url.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -3873,7 +3844,7 @@ impl RegisterUserOutput {
 }
 /// See [`RegisterUserOutput`](crate::output::RegisterUserOutput).
 pub mod register_user_output {
-
+    
     /// A builder for [`RegisterUserOutput`](crate::output::RegisterUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3890,8 +3861,7 @@ pub mod register_user_output {
         }
         /// <p>The user's user name.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
         pub fn user_invitation_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3899,12 +3869,8 @@ pub mod register_user_output {
             self
         }
         /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
-        pub fn set_user_invitation_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_invitation_url = input;
-            self
+        pub fn set_user_invitation_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_invitation_url = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3913,8 +3879,7 @@ pub mod register_user_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -3923,19 +3888,25 @@ pub mod register_user_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RegisterUserOutput`](crate::output::RegisterUserOutput).
         pub fn build(self) -> crate::output::RegisterUserOutput {
             crate::output::RegisterUserOutput {
-                user: self.user,
-                user_invitation_url: self.user_invitation_url,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                user: self.user
+                ,
+                user_invitation_url: self.user_invitation_url
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterUserOutput {
     /// Creates a new builder-style object to manufacture [`RegisterUserOutput`](crate::output::RegisterUserOutput).
@@ -3947,7 +3918,7 @@ impl RegisterUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsersOutput {
+pub struct ListUsersOutput  {
     /// <p>The list of users.</p>
     #[doc(hidden)]
     pub user_list: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -3963,15 +3934,15 @@ pub struct ListUsersOutput {
 }
 impl ListUsersOutput {
     /// <p>The list of users.</p>
-    pub fn user_list(&self) -> std::option::Option<&[crate::model::User]> {
+    pub fn user_list(&self) -> std::option::Option<& [crate::model::User]> {
         self.user_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -3981,7 +3952,7 @@ impl ListUsersOutput {
 }
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
 pub mod list_users_output {
-
+    
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3998,17 +3969,13 @@ pub mod list_users_output {
         /// <p>The list of users.</p>
         pub fn user_list(mut self, input: crate::model::User) -> Self {
             let mut v = self.user_list.unwrap_or_default();
-            v.push(input);
-            self.user_list = Some(v);
-            self
+                            v.push(input);
+                            self.user_list = Some(v);
+                            self
         }
         /// <p>The list of users.</p>
-        pub fn set_user_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::User>>,
-        ) -> Self {
-            self.user_list = input;
-            self
+        pub fn set_user_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::User>>) -> Self {
+            self.user_list = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4017,8 +3984,7 @@ pub mod list_users_output {
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4027,8 +3993,7 @@ pub mod list_users_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4037,19 +4002,25 @@ pub mod list_users_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListUsersOutput`](crate::output::ListUsersOutput).
         pub fn build(self) -> crate::output::ListUsersOutput {
             crate::output::ListUsersOutput {
-                user_list: self.user_list,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                user_list: self.user_list
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::output::ListUsersOutput).
@@ -4061,7 +4032,7 @@ impl ListUsersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserGroupsOutput {
+pub struct ListUserGroupsOutput  {
     /// <p>The list of groups the user is a member of.</p>
     #[doc(hidden)]
     pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -4077,15 +4048,15 @@ pub struct ListUserGroupsOutput {
 }
 impl ListUserGroupsOutput {
     /// <p>The list of groups the user is a member of.</p>
-    pub fn group_list(&self) -> std::option::Option<&[crate::model::Group]> {
+    pub fn group_list(&self) -> std::option::Option<& [crate::model::Group]> {
         self.group_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -4095,7 +4066,7 @@ impl ListUserGroupsOutput {
 }
 /// See [`ListUserGroupsOutput`](crate::output::ListUserGroupsOutput).
 pub mod list_user_groups_output {
-
+    
     /// A builder for [`ListUserGroupsOutput`](crate::output::ListUserGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4112,17 +4083,13 @@ pub mod list_user_groups_output {
         /// <p>The list of groups the user is a member of.</p>
         pub fn group_list(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_list.unwrap_or_default();
-            v.push(input);
-            self.group_list = Some(v);
-            self
+                            v.push(input);
+                            self.group_list = Some(v);
+                            self
         }
         /// <p>The list of groups the user is a member of.</p>
-        pub fn set_group_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
-        ) -> Self {
-            self.group_list = input;
-            self
+        pub fn set_group_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Group>>) -> Self {
+            self.group_list = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4131,8 +4098,7 @@ pub mod list_user_groups_output {
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4141,8 +4107,7 @@ pub mod list_user_groups_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4151,19 +4116,25 @@ pub mod list_user_groups_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListUserGroupsOutput`](crate::output::ListUserGroupsOutput).
         pub fn build(self) -> crate::output::ListUserGroupsOutput {
             crate::output::ListUserGroupsOutput {
-                group_list: self.group_list,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group_list: self.group_list
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUserGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserGroupsOutput`](crate::output::ListUserGroupsOutput).
@@ -4175,11 +4146,10 @@ impl ListUserGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThemeVersionsOutput {
+pub struct ListThemeVersionsOutput  {
     /// <p>A structure containing a list of all the versions of the specified theme.</p>
     #[doc(hidden)]
-    pub theme_version_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::ThemeVersionSummary>>,
+    pub theme_version_summary_list: std::option::Option<std::vec::Vec<crate::model::ThemeVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -4192,13 +4162,11 @@ pub struct ListThemeVersionsOutput {
 }
 impl ListThemeVersionsOutput {
     /// <p>A structure containing a list of all the versions of the specified theme.</p>
-    pub fn theme_version_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ThemeVersionSummary]> {
+    pub fn theme_version_summary_list(&self) -> std::option::Option<& [crate::model::ThemeVersionSummary]> {
         self.theme_version_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -4206,18 +4174,17 @@ impl ListThemeVersionsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListThemeVersionsOutput`](crate::output::ListThemeVersionsOutput).
 pub mod list_theme_versions_output {
-
+    
     /// A builder for [`ListThemeVersionsOutput`](crate::output::ListThemeVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) theme_version_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ThemeVersionSummary>>,
+        pub(crate) theme_version_summary_list: std::option::Option<std::vec::Vec<crate::model::ThemeVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -4228,22 +4195,15 @@ pub mod list_theme_versions_output {
         /// To override the contents of this collection use [`set_theme_version_summary_list`](Self::set_theme_version_summary_list).
         ///
         /// <p>A structure containing a list of all the versions of the specified theme.</p>
-        pub fn theme_version_summary_list(
-            mut self,
-            input: crate::model::ThemeVersionSummary,
-        ) -> Self {
+        pub fn theme_version_summary_list(mut self, input: crate::model::ThemeVersionSummary) -> Self {
             let mut v = self.theme_version_summary_list.unwrap_or_default();
-            v.push(input);
-            self.theme_version_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.theme_version_summary_list = Some(v);
+                            self
         }
         /// <p>A structure containing a list of all the versions of the specified theme.</p>
-        pub fn set_theme_version_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeVersionSummary>>,
-        ) -> Self {
-            self.theme_version_summary_list = input;
-            self
+        pub fn set_theme_version_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeVersionSummary>>) -> Self {
+            self.theme_version_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4252,8 +4212,7 @@ pub mod list_theme_versions_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4262,8 +4221,7 @@ pub mod list_theme_versions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4272,19 +4230,25 @@ pub mod list_theme_versions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListThemeVersionsOutput`](crate::output::ListThemeVersionsOutput).
         pub fn build(self) -> crate::output::ListThemeVersionsOutput {
             crate::output::ListThemeVersionsOutput {
-                theme_version_summary_list: self.theme_version_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                theme_version_summary_list: self.theme_version_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListThemeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListThemeVersionsOutput`](crate::output::ListThemeVersionsOutput).
@@ -4296,7 +4260,7 @@ impl ListThemeVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThemesOutput {
+pub struct ListThemesOutput  {
     /// <p>Information about the themes in the list.</p>
     #[doc(hidden)]
     pub theme_summary_list: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
@@ -4312,11 +4276,11 @@ pub struct ListThemesOutput {
 }
 impl ListThemesOutput {
     /// <p>Information about the themes in the list.</p>
-    pub fn theme_summary_list(&self) -> std::option::Option<&[crate::model::ThemeSummary]> {
+    pub fn theme_summary_list(&self) -> std::option::Option<& [crate::model::ThemeSummary]> {
         self.theme_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -4324,18 +4288,17 @@ impl ListThemesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListThemesOutput`](crate::output::ListThemesOutput).
 pub mod list_themes_output {
-
+    
     /// A builder for [`ListThemesOutput`](crate::output::ListThemesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) theme_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
+        pub(crate) theme_summary_list: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -4348,17 +4311,13 @@ pub mod list_themes_output {
         /// <p>Information about the themes in the list.</p>
         pub fn theme_summary_list(mut self, input: crate::model::ThemeSummary) -> Self {
             let mut v = self.theme_summary_list.unwrap_or_default();
-            v.push(input);
-            self.theme_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.theme_summary_list = Some(v);
+                            self
         }
         /// <p>Information about the themes in the list.</p>
-        pub fn set_theme_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
-        ) -> Self {
-            self.theme_summary_list = input;
-            self
+        pub fn set_theme_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>) -> Self {
+            self.theme_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4367,8 +4326,7 @@ pub mod list_themes_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4377,8 +4335,7 @@ pub mod list_themes_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4387,19 +4344,25 @@ pub mod list_themes_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListThemesOutput`](crate::output::ListThemesOutput).
         pub fn build(self) -> crate::output::ListThemesOutput {
             crate::output::ListThemesOutput {
-                theme_summary_list: self.theme_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                theme_summary_list: self.theme_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListThemesOutput {
     /// Creates a new builder-style object to manufacture [`ListThemesOutput`](crate::output::ListThemesOutput).
@@ -4411,7 +4374,7 @@ impl ListThemesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThemeAliasesOutput {
+pub struct ListThemeAliasesOutput  {
     /// <p>A structure containing the list of the theme's aliases.</p>
     #[doc(hidden)]
     pub theme_alias_list: std::option::Option<std::vec::Vec<crate::model::ThemeAlias>>,
@@ -4427,7 +4390,7 @@ pub struct ListThemeAliasesOutput {
 }
 impl ListThemeAliasesOutput {
     /// <p>A structure containing the list of the theme's aliases.</p>
-    pub fn theme_alias_list(&self) -> std::option::Option<&[crate::model::ThemeAlias]> {
+    pub fn theme_alias_list(&self) -> std::option::Option<& [crate::model::ThemeAlias]> {
         self.theme_alias_list.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -4435,17 +4398,17 @@ impl ListThemeAliasesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListThemeAliasesOutput`](crate::output::ListThemeAliasesOutput).
 pub mod list_theme_aliases_output {
-
+    
     /// A builder for [`ListThemeAliasesOutput`](crate::output::ListThemeAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4462,17 +4425,13 @@ pub mod list_theme_aliases_output {
         /// <p>A structure containing the list of the theme's aliases.</p>
         pub fn theme_alias_list(mut self, input: crate::model::ThemeAlias) -> Self {
             let mut v = self.theme_alias_list.unwrap_or_default();
-            v.push(input);
-            self.theme_alias_list = Some(v);
-            self
+                            v.push(input);
+                            self.theme_alias_list = Some(v);
+                            self
         }
         /// <p>A structure containing the list of the theme's aliases.</p>
-        pub fn set_theme_alias_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeAlias>>,
-        ) -> Self {
-            self.theme_alias_list = input;
-            self
+        pub fn set_theme_alias_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeAlias>>) -> Self {
+            self.theme_alias_list = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4481,8 +4440,7 @@ pub mod list_theme_aliases_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4491,8 +4449,7 @@ pub mod list_theme_aliases_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4501,19 +4458,25 @@ pub mod list_theme_aliases_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListThemeAliasesOutput`](crate::output::ListThemeAliasesOutput).
         pub fn build(self) -> crate::output::ListThemeAliasesOutput {
             crate::output::ListThemeAliasesOutput {
-                theme_alias_list: self.theme_alias_list,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
-                next_token: self.next_token,
+                theme_alias_list: self.theme_alias_list
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListThemeAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListThemeAliasesOutput`](crate::output::ListThemeAliasesOutput).
@@ -4525,11 +4488,10 @@ impl ListThemeAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplateVersionsOutput {
+pub struct ListTemplateVersionsOutput  {
     /// <p>A structure containing a list of all the versions of the specified template.</p>
     #[doc(hidden)]
-    pub template_version_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::TemplateVersionSummary>>,
+    pub template_version_summary_list: std::option::Option<std::vec::Vec<crate::model::TemplateVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -4542,13 +4504,11 @@ pub struct ListTemplateVersionsOutput {
 }
 impl ListTemplateVersionsOutput {
     /// <p>A structure containing a list of all the versions of the specified template.</p>
-    pub fn template_version_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::TemplateVersionSummary]> {
+    pub fn template_version_summary_list(&self) -> std::option::Option<& [crate::model::TemplateVersionSummary]> {
         self.template_version_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -4556,18 +4516,17 @@ impl ListTemplateVersionsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
 pub mod list_template_versions_output {
-
+    
     /// A builder for [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) template_version_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::TemplateVersionSummary>>,
+        pub(crate) template_version_summary_list: std::option::Option<std::vec::Vec<crate::model::TemplateVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -4578,22 +4537,15 @@ pub mod list_template_versions_output {
         /// To override the contents of this collection use [`set_template_version_summary_list`](Self::set_template_version_summary_list).
         ///
         /// <p>A structure containing a list of all the versions of the specified template.</p>
-        pub fn template_version_summary_list(
-            mut self,
-            input: crate::model::TemplateVersionSummary,
-        ) -> Self {
+        pub fn template_version_summary_list(mut self, input: crate::model::TemplateVersionSummary) -> Self {
             let mut v = self.template_version_summary_list.unwrap_or_default();
-            v.push(input);
-            self.template_version_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.template_version_summary_list = Some(v);
+                            self
         }
         /// <p>A structure containing a list of all the versions of the specified template.</p>
-        pub fn set_template_version_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TemplateVersionSummary>>,
-        ) -> Self {
-            self.template_version_summary_list = input;
-            self
+        pub fn set_template_version_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::TemplateVersionSummary>>) -> Self {
+            self.template_version_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4602,8 +4554,7 @@ pub mod list_template_versions_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4612,8 +4563,7 @@ pub mod list_template_versions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4622,19 +4572,25 @@ pub mod list_template_versions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
         pub fn build(self) -> crate::output::ListTemplateVersionsOutput {
             crate::output::ListTemplateVersionsOutput {
-                template_version_summary_list: self.template_version_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                template_version_summary_list: self.template_version_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
@@ -4646,7 +4602,7 @@ impl ListTemplateVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplatesOutput {
+pub struct ListTemplatesOutput  {
     /// <p>A structure containing information about the templates in the list.</p>
     #[doc(hidden)]
     pub template_summary_list: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
@@ -4662,11 +4618,11 @@ pub struct ListTemplatesOutput {
 }
 impl ListTemplatesOutput {
     /// <p>A structure containing information about the templates in the list.</p>
-    pub fn template_summary_list(&self) -> std::option::Option<&[crate::model::TemplateSummary]> {
+    pub fn template_summary_list(&self) -> std::option::Option<& [crate::model::TemplateSummary]> {
         self.template_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -4674,18 +4630,17 @@ impl ListTemplatesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
 pub mod list_templates_output {
-
+    
     /// A builder for [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) template_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
+        pub(crate) template_summary_list: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -4698,17 +4653,13 @@ pub mod list_templates_output {
         /// <p>A structure containing information about the templates in the list.</p>
         pub fn template_summary_list(mut self, input: crate::model::TemplateSummary) -> Self {
             let mut v = self.template_summary_list.unwrap_or_default();
-            v.push(input);
-            self.template_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.template_summary_list = Some(v);
+                            self
         }
         /// <p>A structure containing information about the templates in the list.</p>
-        pub fn set_template_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
-        ) -> Self {
-            self.template_summary_list = input;
-            self
+        pub fn set_template_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>) -> Self {
+            self.template_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4717,8 +4668,7 @@ pub mod list_templates_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4727,8 +4677,7 @@ pub mod list_templates_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4737,19 +4686,25 @@ pub mod list_templates_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
         pub fn build(self) -> crate::output::ListTemplatesOutput {
             crate::output::ListTemplatesOutput {
-                template_summary_list: self.template_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                template_summary_list: self.template_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
@@ -4761,7 +4716,7 @@ impl ListTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplateAliasesOutput {
+pub struct ListTemplateAliasesOutput  {
     /// <p>A structure containing the list of the template's aliases.</p>
     #[doc(hidden)]
     pub template_alias_list: std::option::Option<std::vec::Vec<crate::model::TemplateAlias>>,
@@ -4777,7 +4732,7 @@ pub struct ListTemplateAliasesOutput {
 }
 impl ListTemplateAliasesOutput {
     /// <p>A structure containing the list of the template's aliases.</p>
-    pub fn template_alias_list(&self) -> std::option::Option<&[crate::model::TemplateAlias]> {
+    pub fn template_alias_list(&self) -> std::option::Option<& [crate::model::TemplateAlias]> {
         self.template_alias_list.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -4785,22 +4740,21 @@ impl ListTemplateAliasesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTemplateAliasesOutput`](crate::output::ListTemplateAliasesOutput).
 pub mod list_template_aliases_output {
-
+    
     /// A builder for [`ListTemplateAliasesOutput`](crate::output::ListTemplateAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) template_alias_list:
-            std::option::Option<std::vec::Vec<crate::model::TemplateAlias>>,
+        pub(crate) template_alias_list: std::option::Option<std::vec::Vec<crate::model::TemplateAlias>>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4813,17 +4767,13 @@ pub mod list_template_aliases_output {
         /// <p>A structure containing the list of the template's aliases.</p>
         pub fn template_alias_list(mut self, input: crate::model::TemplateAlias) -> Self {
             let mut v = self.template_alias_list.unwrap_or_default();
-            v.push(input);
-            self.template_alias_list = Some(v);
-            self
+                            v.push(input);
+                            self.template_alias_list = Some(v);
+                            self
         }
         /// <p>A structure containing the list of the template's aliases.</p>
-        pub fn set_template_alias_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TemplateAlias>>,
-        ) -> Self {
-            self.template_alias_list = input;
-            self
+        pub fn set_template_alias_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::TemplateAlias>>) -> Self {
+            self.template_alias_list = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4832,8 +4782,7 @@ pub mod list_template_aliases_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4842,8 +4791,7 @@ pub mod list_template_aliases_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4852,19 +4800,25 @@ pub mod list_template_aliases_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTemplateAliasesOutput`](crate::output::ListTemplateAliasesOutput).
         pub fn build(self) -> crate::output::ListTemplateAliasesOutput {
             crate::output::ListTemplateAliasesOutput {
-                template_alias_list: self.template_alias_list,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
-                next_token: self.next_token,
+                template_alias_list: self.template_alias_list
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTemplateAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateAliasesOutput`](crate::output::ListTemplateAliasesOutput).
@@ -4876,7 +4830,7 @@ impl ListTemplateAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4889,11 +4843,11 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -4903,7 +4857,7 @@ impl ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4919,17 +4873,13 @@ pub mod list_tags_for_resource_output {
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4938,8 +4888,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -4948,18 +4897,23 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                tags: self.tags
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -4971,7 +4925,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNamespacesOutput {
+pub struct ListNamespacesOutput  {
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
     #[doc(hidden)]
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
@@ -4987,15 +4941,15 @@ pub struct ListNamespacesOutput {
 }
 impl ListNamespacesOutput {
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
-    pub fn namespaces(&self) -> std::option::Option<&[crate::model::NamespaceInfoV2]> {
+    pub fn namespaces(&self) -> std::option::Option<& [crate::model::NamespaceInfoV2]> {
         self.namespaces.as_deref()
     }
     /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -5005,7 +4959,7 @@ impl ListNamespacesOutput {
 }
 /// See [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
 pub mod list_namespaces_output {
-
+    
     /// A builder for [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5022,17 +4976,13 @@ pub mod list_namespaces_output {
         /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
         pub fn namespaces(mut self, input: crate::model::NamespaceInfoV2) -> Self {
             let mut v = self.namespaces.unwrap_or_default();
-            v.push(input);
-            self.namespaces = Some(v);
-            self
+                            v.push(input);
+                            self.namespaces = Some(v);
+                            self
         }
         /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
-        pub fn set_namespaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
-        ) -> Self {
-            self.namespaces = input;
-            self
+        pub fn set_namespaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>) -> Self {
+            self.namespaces = input; self
         }
         /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5041,8 +4991,7 @@ pub mod list_namespaces_output {
         }
         /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5051,8 +5000,7 @@ pub mod list_namespaces_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -5061,19 +5009,25 @@ pub mod list_namespaces_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
         pub fn build(self) -> crate::output::ListNamespacesOutput {
             crate::output::ListNamespacesOutput {
-                namespaces: self.namespaces,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                namespaces: self.namespaces
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNamespacesOutput {
     /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
@@ -5085,7 +5039,7 @@ impl ListNamespacesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIngestionsOutput {
+pub struct ListIngestionsOutput  {
     /// <p>A list of the ingestions.</p>
     #[doc(hidden)]
     pub ingestions: std::option::Option<std::vec::Vec<crate::model::Ingestion>>,
@@ -5101,15 +5055,15 @@ pub struct ListIngestionsOutput {
 }
 impl ListIngestionsOutput {
     /// <p>A list of the ingestions.</p>
-    pub fn ingestions(&self) -> std::option::Option<&[crate::model::Ingestion]> {
+    pub fn ingestions(&self) -> std::option::Option<& [crate::model::Ingestion]> {
         self.ingestions.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -5119,7 +5073,7 @@ impl ListIngestionsOutput {
 }
 /// See [`ListIngestionsOutput`](crate::output::ListIngestionsOutput).
 pub mod list_ingestions_output {
-
+    
     /// A builder for [`ListIngestionsOutput`](crate::output::ListIngestionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5136,17 +5090,13 @@ pub mod list_ingestions_output {
         /// <p>A list of the ingestions.</p>
         pub fn ingestions(mut self, input: crate::model::Ingestion) -> Self {
             let mut v = self.ingestions.unwrap_or_default();
-            v.push(input);
-            self.ingestions = Some(v);
-            self
+                            v.push(input);
+                            self.ingestions = Some(v);
+                            self
         }
         /// <p>A list of the ingestions.</p>
-        pub fn set_ingestions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ingestion>>,
-        ) -> Self {
-            self.ingestions = input;
-            self
+        pub fn set_ingestions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ingestion>>) -> Self {
+            self.ingestions = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5155,8 +5105,7 @@ pub mod list_ingestions_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5165,8 +5114,7 @@ pub mod list_ingestions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -5175,19 +5123,25 @@ pub mod list_ingestions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListIngestionsOutput`](crate::output::ListIngestionsOutput).
         pub fn build(self) -> crate::output::ListIngestionsOutput {
             crate::output::ListIngestionsOutput {
-                ingestions: self.ingestions,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                ingestions: self.ingestions
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIngestionsOutput {
     /// Creates a new builder-style object to manufacture [`ListIngestionsOutput`](crate::output::ListIngestionsOutput).
@@ -5199,11 +5153,10 @@ impl ListIngestionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIamPolicyAssignmentsForUserOutput {
+pub struct ListIamPolicyAssignmentsForUserOutput  {
     /// <p>The active assignments for this user.</p>
     #[doc(hidden)]
-    pub active_assignments:
-        std::option::Option<std::vec::Vec<crate::model::ActiveIamPolicyAssignment>>,
+    pub active_assignments: std::option::Option<std::vec::Vec<crate::model::ActiveIamPolicyAssignment>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -5216,17 +5169,15 @@ pub struct ListIamPolicyAssignmentsForUserOutput {
 }
 impl ListIamPolicyAssignmentsForUserOutput {
     /// <p>The active assignments for this user.</p>
-    pub fn active_assignments(
-        &self,
-    ) -> std::option::Option<&[crate::model::ActiveIamPolicyAssignment]> {
+    pub fn active_assignments(&self) -> std::option::Option<& [crate::model::ActiveIamPolicyAssignment]> {
         self.active_assignments.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -5236,12 +5187,11 @@ impl ListIamPolicyAssignmentsForUserOutput {
 }
 /// See [`ListIamPolicyAssignmentsForUserOutput`](crate::output::ListIamPolicyAssignmentsForUserOutput).
 pub mod list_iam_policy_assignments_for_user_output {
-
+    
     /// A builder for [`ListIamPolicyAssignmentsForUserOutput`](crate::output::ListIamPolicyAssignmentsForUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) active_assignments:
-            std::option::Option<std::vec::Vec<crate::model::ActiveIamPolicyAssignment>>,
+        pub(crate) active_assignments: std::option::Option<std::vec::Vec<crate::model::ActiveIamPolicyAssignment>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
@@ -5252,22 +5202,15 @@ pub mod list_iam_policy_assignments_for_user_output {
         /// To override the contents of this collection use [`set_active_assignments`](Self::set_active_assignments).
         ///
         /// <p>The active assignments for this user.</p>
-        pub fn active_assignments(
-            mut self,
-            input: crate::model::ActiveIamPolicyAssignment,
-        ) -> Self {
+        pub fn active_assignments(mut self, input: crate::model::ActiveIamPolicyAssignment) -> Self {
             let mut v = self.active_assignments.unwrap_or_default();
-            v.push(input);
-            self.active_assignments = Some(v);
-            self
+                            v.push(input);
+                            self.active_assignments = Some(v);
+                            self
         }
         /// <p>The active assignments for this user.</p>
-        pub fn set_active_assignments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActiveIamPolicyAssignment>>,
-        ) -> Self {
-            self.active_assignments = input;
-            self
+        pub fn set_active_assignments(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActiveIamPolicyAssignment>>) -> Self {
+            self.active_assignments = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5276,8 +5219,7 @@ pub mod list_iam_policy_assignments_for_user_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5286,8 +5228,7 @@ pub mod list_iam_policy_assignments_for_user_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -5296,19 +5237,25 @@ pub mod list_iam_policy_assignments_for_user_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListIamPolicyAssignmentsForUserOutput`](crate::output::ListIamPolicyAssignmentsForUserOutput).
         pub fn build(self) -> crate::output::ListIamPolicyAssignmentsForUserOutput {
             crate::output::ListIamPolicyAssignmentsForUserOutput {
-                active_assignments: self.active_assignments,
-                request_id: self.request_id,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
+                active_assignments: self.active_assignments
+                ,
+                request_id: self.request_id
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIamPolicyAssignmentsForUserOutput {
     /// Creates a new builder-style object to manufacture [`ListIamPolicyAssignmentsForUserOutput`](crate::output::ListIamPolicyAssignmentsForUserOutput).
@@ -5320,11 +5267,10 @@ impl ListIamPolicyAssignmentsForUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIamPolicyAssignmentsOutput {
+pub struct ListIamPolicyAssignmentsOutput  {
     /// <p>Information describing the IAM policy assignments.</p>
     #[doc(hidden)]
-    pub iam_policy_assignments:
-        std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
+    pub iam_policy_assignments: std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -5337,17 +5283,15 @@ pub struct ListIamPolicyAssignmentsOutput {
 }
 impl ListIamPolicyAssignmentsOutput {
     /// <p>Information describing the IAM policy assignments.</p>
-    pub fn iam_policy_assignments(
-        &self,
-    ) -> std::option::Option<&[crate::model::IamPolicyAssignmentSummary]> {
+    pub fn iam_policy_assignments(&self) -> std::option::Option<& [crate::model::IamPolicyAssignmentSummary]> {
         self.iam_policy_assignments.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -5357,12 +5301,11 @@ impl ListIamPolicyAssignmentsOutput {
 }
 /// See [`ListIamPolicyAssignmentsOutput`](crate::output::ListIamPolicyAssignmentsOutput).
 pub mod list_iam_policy_assignments_output {
-
+    
     /// A builder for [`ListIamPolicyAssignmentsOutput`](crate::output::ListIamPolicyAssignmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) iam_policy_assignments:
-            std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
+        pub(crate) iam_policy_assignments: std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
@@ -5373,22 +5316,15 @@ pub mod list_iam_policy_assignments_output {
         /// To override the contents of this collection use [`set_iam_policy_assignments`](Self::set_iam_policy_assignments).
         ///
         /// <p>Information describing the IAM policy assignments.</p>
-        pub fn iam_policy_assignments(
-            mut self,
-            input: crate::model::IamPolicyAssignmentSummary,
-        ) -> Self {
+        pub fn iam_policy_assignments(mut self, input: crate::model::IamPolicyAssignmentSummary) -> Self {
             let mut v = self.iam_policy_assignments.unwrap_or_default();
-            v.push(input);
-            self.iam_policy_assignments = Some(v);
-            self
+                            v.push(input);
+                            self.iam_policy_assignments = Some(v);
+                            self
         }
         /// <p>Information describing the IAM policy assignments.</p>
-        pub fn set_iam_policy_assignments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
-        ) -> Self {
-            self.iam_policy_assignments = input;
-            self
+        pub fn set_iam_policy_assignments(mut self, input: std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>) -> Self {
+            self.iam_policy_assignments = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5397,8 +5333,7 @@ pub mod list_iam_policy_assignments_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5407,8 +5342,7 @@ pub mod list_iam_policy_assignments_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -5417,19 +5351,25 @@ pub mod list_iam_policy_assignments_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListIamPolicyAssignmentsOutput`](crate::output::ListIamPolicyAssignmentsOutput).
         pub fn build(self) -> crate::output::ListIamPolicyAssignmentsOutput {
             crate::output::ListIamPolicyAssignmentsOutput {
-                iam_policy_assignments: self.iam_policy_assignments,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                iam_policy_assignments: self.iam_policy_assignments
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIamPolicyAssignmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListIamPolicyAssignmentsOutput`](crate::output::ListIamPolicyAssignmentsOutput).
@@ -5441,7 +5381,7 @@ impl ListIamPolicyAssignmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupsOutput {
+pub struct ListGroupsOutput  {
     /// <p>The list of the groups.</p>
     #[doc(hidden)]
     pub group_list: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -5457,15 +5397,15 @@ pub struct ListGroupsOutput {
 }
 impl ListGroupsOutput {
     /// <p>The list of the groups.</p>
-    pub fn group_list(&self) -> std::option::Option<&[crate::model::Group]> {
+    pub fn group_list(&self) -> std::option::Option<& [crate::model::Group]> {
         self.group_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -5475,7 +5415,7 @@ impl ListGroupsOutput {
 }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
 pub mod list_groups_output {
-
+    
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5492,17 +5432,13 @@ pub mod list_groups_output {
         /// <p>The list of the groups.</p>
         pub fn group_list(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_list.unwrap_or_default();
-            v.push(input);
-            self.group_list = Some(v);
-            self
+                            v.push(input);
+                            self.group_list = Some(v);
+                            self
         }
         /// <p>The list of the groups.</p>
-        pub fn set_group_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
-        ) -> Self {
-            self.group_list = input;
-            self
+        pub fn set_group_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Group>>) -> Self {
+            self.group_list = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5511,8 +5447,7 @@ pub mod list_groups_output {
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5521,8 +5456,7 @@ pub mod list_groups_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -5531,19 +5465,25 @@ pub mod list_groups_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::output::ListGroupsOutput).
         pub fn build(self) -> crate::output::ListGroupsOutput {
             crate::output::ListGroupsOutput {
-                group_list: self.group_list,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group_list: self.group_list
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOutput`](crate::output::ListGroupsOutput).
@@ -5555,7 +5495,7 @@ impl ListGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupMembershipsOutput {
+pub struct ListGroupMembershipsOutput  {
     /// <p>The list of the members of the group.</p>
     #[doc(hidden)]
     pub group_member_list: std::option::Option<std::vec::Vec<crate::model::GroupMember>>,
@@ -5571,15 +5511,15 @@ pub struct ListGroupMembershipsOutput {
 }
 impl ListGroupMembershipsOutput {
     /// <p>The list of the members of the group.</p>
-    pub fn group_member_list(&self) -> std::option::Option<&[crate::model::GroupMember]> {
+    pub fn group_member_list(&self) -> std::option::Option<& [crate::model::GroupMember]> {
         self.group_member_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -5589,7 +5529,7 @@ impl ListGroupMembershipsOutput {
 }
 /// See [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput).
 pub mod list_group_memberships_output {
-
+    
     /// A builder for [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5606,17 +5546,13 @@ pub mod list_group_memberships_output {
         /// <p>The list of the members of the group.</p>
         pub fn group_member_list(mut self, input: crate::model::GroupMember) -> Self {
             let mut v = self.group_member_list.unwrap_or_default();
-            v.push(input);
-            self.group_member_list = Some(v);
-            self
+                            v.push(input);
+                            self.group_member_list = Some(v);
+                            self
         }
         /// <p>The list of the members of the group.</p>
-        pub fn set_group_member_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupMember>>,
-        ) -> Self {
-            self.group_member_list = input;
-            self
+        pub fn set_group_member_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupMember>>) -> Self {
+            self.group_member_list = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5625,8 +5561,7 @@ pub mod list_group_memberships_output {
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5635,8 +5570,7 @@ pub mod list_group_memberships_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -5645,19 +5579,25 @@ pub mod list_group_memberships_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput).
         pub fn build(self) -> crate::output::ListGroupMembershipsOutput {
             crate::output::ListGroupMembershipsOutput {
-                group_member_list: self.group_member_list,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group_member_list: self.group_member_list
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput).
@@ -5669,7 +5609,7 @@ impl ListGroupMembershipsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFoldersOutput {
+pub struct ListFoldersOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -5689,27 +5629,26 @@ impl ListFoldersOutput {
         self.status
     }
     /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-    pub fn folder_summary_list(&self) -> std::option::Option<&[crate::model::FolderSummary]> {
+    pub fn folder_summary_list(&self) -> std::option::Option<& [crate::model::FolderSummary]> {
         self.folder_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListFoldersOutput`](crate::output::ListFoldersOutput).
 pub mod list_folders_output {
-
+    
     /// A builder for [`ListFoldersOutput`](crate::output::ListFoldersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<i32>,
-        pub(crate) folder_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
+        pub(crate) folder_summary_list: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
@@ -5721,8 +5660,7 @@ pub mod list_folders_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `folder_summary_list`.
         ///
@@ -5731,17 +5669,13 @@ pub mod list_folders_output {
         /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
         pub fn folder_summary_list(mut self, input: crate::model::FolderSummary) -> Self {
             let mut v = self.folder_summary_list.unwrap_or_default();
-            v.push(input);
-            self.folder_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.folder_summary_list = Some(v);
+                            self
         }
         /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-        pub fn set_folder_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
-        ) -> Self {
-            self.folder_summary_list = input;
-            self
+        pub fn set_folder_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>) -> Self {
+            self.folder_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5750,8 +5684,7 @@ pub mod list_folders_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5760,19 +5693,25 @@ pub mod list_folders_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListFoldersOutput`](crate::output::ListFoldersOutput).
         pub fn build(self) -> crate::output::ListFoldersOutput {
             crate::output::ListFoldersOutput {
-                status: self.status.unwrap_or_default(),
-                folder_summary_list: self.folder_summary_list,
-                next_token: self.next_token,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                folder_summary_list: self.folder_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFoldersOutput {
     /// Creates a new builder-style object to manufacture [`ListFoldersOutput`](crate::output::ListFoldersOutput).
@@ -5784,7 +5723,7 @@ impl ListFoldersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFolderMembersOutput {
+pub struct ListFolderMembersOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -5804,27 +5743,26 @@ impl ListFolderMembersOutput {
         self.status
     }
     /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
-    pub fn folder_member_list(&self) -> std::option::Option<&[crate::model::MemberIdArnPair]> {
+    pub fn folder_member_list(&self) -> std::option::Option<& [crate::model::MemberIdArnPair]> {
         self.folder_member_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListFolderMembersOutput`](crate::output::ListFolderMembersOutput).
 pub mod list_folder_members_output {
-
+    
     /// A builder for [`ListFolderMembersOutput`](crate::output::ListFolderMembersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<i32>,
-        pub(crate) folder_member_list:
-            std::option::Option<std::vec::Vec<crate::model::MemberIdArnPair>>,
+        pub(crate) folder_member_list: std::option::Option<std::vec::Vec<crate::model::MemberIdArnPair>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
@@ -5836,8 +5774,7 @@ pub mod list_folder_members_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `folder_member_list`.
         ///
@@ -5846,17 +5783,13 @@ pub mod list_folder_members_output {
         /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
         pub fn folder_member_list(mut self, input: crate::model::MemberIdArnPair) -> Self {
             let mut v = self.folder_member_list.unwrap_or_default();
-            v.push(input);
-            self.folder_member_list = Some(v);
-            self
+                            v.push(input);
+                            self.folder_member_list = Some(v);
+                            self
         }
         /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
-        pub fn set_folder_member_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MemberIdArnPair>>,
-        ) -> Self {
-            self.folder_member_list = input;
-            self
+        pub fn set_folder_member_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MemberIdArnPair>>) -> Self {
+            self.folder_member_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5865,8 +5798,7 @@ pub mod list_folder_members_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5875,19 +5807,25 @@ pub mod list_folder_members_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListFolderMembersOutput`](crate::output::ListFolderMembersOutput).
         pub fn build(self) -> crate::output::ListFolderMembersOutput {
             crate::output::ListFolderMembersOutput {
-                status: self.status.unwrap_or_default(),
-                folder_member_list: self.folder_member_list,
-                next_token: self.next_token,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                folder_member_list: self.folder_member_list
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFolderMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListFolderMembersOutput`](crate::output::ListFolderMembersOutput).
@@ -5899,7 +5837,7 @@ impl ListFolderMembersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataSourcesOutput {
+pub struct ListDataSourcesOutput  {
     /// <p>A list of data sources.</p>
     #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
@@ -5915,15 +5853,15 @@ pub struct ListDataSourcesOutput {
 }
 impl ListDataSourcesOutput {
     /// <p>A list of data sources.</p>
-    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+    pub fn data_sources(&self) -> std::option::Option<& [crate::model::DataSource]> {
         self.data_sources.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -5933,7 +5871,7 @@ impl ListDataSourcesOutput {
 }
 /// See [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput).
 pub mod list_data_sources_output {
-
+    
     /// A builder for [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5950,17 +5888,13 @@ pub mod list_data_sources_output {
         /// <p>A list of data sources.</p>
         pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input);
-            self.data_sources = Some(v);
-            self
+                            v.push(input);
+                            self.data_sources = Some(v);
+                            self
         }
         /// <p>A list of data sources.</p>
-        pub fn set_data_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
-        ) -> Self {
-            self.data_sources = input;
-            self
+        pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSource>>) -> Self {
+            self.data_sources = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5969,8 +5903,7 @@ pub mod list_data_sources_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5979,8 +5912,7 @@ pub mod list_data_sources_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -5989,19 +5921,25 @@ pub mod list_data_sources_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput).
         pub fn build(self) -> crate::output::ListDataSourcesOutput {
             crate::output::ListDataSourcesOutput {
-                data_sources: self.data_sources,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                data_sources: self.data_sources
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput).
@@ -6013,7 +5951,7 @@ impl ListDataSourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataSetsOutput {
+pub struct ListDataSetsOutput  {
     /// <p>The list of dataset summaries.</p>
     #[doc(hidden)]
     pub data_set_summaries: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
@@ -6029,15 +5967,15 @@ pub struct ListDataSetsOutput {
 }
 impl ListDataSetsOutput {
     /// <p>The list of dataset summaries.</p>
-    pub fn data_set_summaries(&self) -> std::option::Option<&[crate::model::DataSetSummary]> {
+    pub fn data_set_summaries(&self) -> std::option::Option<& [crate::model::DataSetSummary]> {
         self.data_set_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6047,12 +5985,11 @@ impl ListDataSetsOutput {
 }
 /// See [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
 pub mod list_data_sets_output {
-
+    
     /// A builder for [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data_set_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
+        pub(crate) data_set_summaries: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
@@ -6065,17 +6002,13 @@ pub mod list_data_sets_output {
         /// <p>The list of dataset summaries.</p>
         pub fn data_set_summaries(mut self, input: crate::model::DataSetSummary) -> Self {
             let mut v = self.data_set_summaries.unwrap_or_default();
-            v.push(input);
-            self.data_set_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.data_set_summaries = Some(v);
+                            self
         }
         /// <p>The list of dataset summaries.</p>
-        pub fn set_data_set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>,
-        ) -> Self {
-            self.data_set_summaries = input;
-            self
+        pub fn set_data_set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSetSummary>>) -> Self {
+            self.data_set_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6084,8 +6017,7 @@ pub mod list_data_sets_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6094,8 +6026,7 @@ pub mod list_data_sets_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6104,19 +6035,25 @@ pub mod list_data_sets_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
         pub fn build(self) -> crate::output::ListDataSetsOutput {
             crate::output::ListDataSetsOutput {
-                data_set_summaries: self.data_set_summaries,
-                next_token: self.next_token,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                data_set_summaries: self.data_set_summaries
+                ,
+                next_token: self.next_token
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
@@ -6128,11 +6065,10 @@ impl ListDataSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDashboardVersionsOutput {
+pub struct ListDashboardVersionsOutput  {
     /// <p>A structure that contains information about each version of the dashboard.</p>
     #[doc(hidden)]
-    pub dashboard_version_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::DashboardVersionSummary>>,
+    pub dashboard_version_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -6145,13 +6081,11 @@ pub struct ListDashboardVersionsOutput {
 }
 impl ListDashboardVersionsOutput {
     /// <p>A structure that contains information about each version of the dashboard.</p>
-    pub fn dashboard_version_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DashboardVersionSummary]> {
+    pub fn dashboard_version_summary_list(&self) -> std::option::Option<& [crate::model::DashboardVersionSummary]> {
         self.dashboard_version_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6159,18 +6093,17 @@ impl ListDashboardVersionsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListDashboardVersionsOutput`](crate::output::ListDashboardVersionsOutput).
 pub mod list_dashboard_versions_output {
-
+    
     /// A builder for [`ListDashboardVersionsOutput`](crate::output::ListDashboardVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dashboard_version_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::DashboardVersionSummary>>,
+        pub(crate) dashboard_version_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -6181,22 +6114,15 @@ pub mod list_dashboard_versions_output {
         /// To override the contents of this collection use [`set_dashboard_version_summary_list`](Self::set_dashboard_version_summary_list).
         ///
         /// <p>A structure that contains information about each version of the dashboard.</p>
-        pub fn dashboard_version_summary_list(
-            mut self,
-            input: crate::model::DashboardVersionSummary,
-        ) -> Self {
+        pub fn dashboard_version_summary_list(mut self, input: crate::model::DashboardVersionSummary) -> Self {
             let mut v = self.dashboard_version_summary_list.unwrap_or_default();
-            v.push(input);
-            self.dashboard_version_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.dashboard_version_summary_list = Some(v);
+                            self
         }
         /// <p>A structure that contains information about each version of the dashboard.</p>
-        pub fn set_dashboard_version_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DashboardVersionSummary>>,
-        ) -> Self {
-            self.dashboard_version_summary_list = input;
-            self
+        pub fn set_dashboard_version_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DashboardVersionSummary>>) -> Self {
+            self.dashboard_version_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6205,8 +6131,7 @@ pub mod list_dashboard_versions_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6215,8 +6140,7 @@ pub mod list_dashboard_versions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6225,19 +6149,25 @@ pub mod list_dashboard_versions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListDashboardVersionsOutput`](crate::output::ListDashboardVersionsOutput).
         pub fn build(self) -> crate::output::ListDashboardVersionsOutput {
             crate::output::ListDashboardVersionsOutput {
-                dashboard_version_summary_list: self.dashboard_version_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                dashboard_version_summary_list: self.dashboard_version_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDashboardVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDashboardVersionsOutput`](crate::output::ListDashboardVersionsOutput).
@@ -6249,7 +6179,7 @@ impl ListDashboardVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDashboardsOutput {
+pub struct ListDashboardsOutput  {
     /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
     #[doc(hidden)]
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
@@ -6265,11 +6195,11 @@ pub struct ListDashboardsOutput {
 }
 impl ListDashboardsOutput {
     /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
-    pub fn dashboard_summary_list(&self) -> std::option::Option<&[crate::model::DashboardSummary]> {
+    pub fn dashboard_summary_list(&self) -> std::option::Option<& [crate::model::DashboardSummary]> {
         self.dashboard_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6277,18 +6207,17 @@ impl ListDashboardsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
 pub mod list_dashboards_output {
-
+    
     /// A builder for [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dashboard_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
+        pub(crate) dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -6301,17 +6230,13 @@ pub mod list_dashboards_output {
         /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
         pub fn dashboard_summary_list(mut self, input: crate::model::DashboardSummary) -> Self {
             let mut v = self.dashboard_summary_list.unwrap_or_default();
-            v.push(input);
-            self.dashboard_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.dashboard_summary_list = Some(v);
+                            self
         }
         /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
-        pub fn set_dashboard_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
-        ) -> Self {
-            self.dashboard_summary_list = input;
-            self
+        pub fn set_dashboard_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>) -> Self {
+            self.dashboard_summary_list = input; self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6320,8 +6245,7 @@ pub mod list_dashboards_output {
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6330,8 +6254,7 @@ pub mod list_dashboards_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6340,19 +6263,25 @@ pub mod list_dashboards_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
         pub fn build(self) -> crate::output::ListDashboardsOutput {
             crate::output::ListDashboardsOutput {
-                dashboard_summary_list: self.dashboard_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                dashboard_summary_list: self.dashboard_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
@@ -6364,7 +6293,7 @@ impl ListDashboardsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnalysesOutput {
+pub struct ListAnalysesOutput  {
     /// <p>Metadata describing each of the analyses that are listed.</p>
     #[doc(hidden)]
     pub analysis_summary_list: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
@@ -6380,11 +6309,11 @@ pub struct ListAnalysesOutput {
 }
 impl ListAnalysesOutput {
     /// <p>Metadata describing each of the analyses that are listed.</p>
-    pub fn analysis_summary_list(&self) -> std::option::Option<&[crate::model::AnalysisSummary]> {
+    pub fn analysis_summary_list(&self) -> std::option::Option<& [crate::model::AnalysisSummary]> {
         self.analysis_summary_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6392,18 +6321,17 @@ impl ListAnalysesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`ListAnalysesOutput`](crate::output::ListAnalysesOutput).
 pub mod list_analyses_output {
-
+    
     /// A builder for [`ListAnalysesOutput`](crate::output::ListAnalysesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) analysis_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
+        pub(crate) analysis_summary_list: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -6416,17 +6344,13 @@ pub mod list_analyses_output {
         /// <p>Metadata describing each of the analyses that are listed.</p>
         pub fn analysis_summary_list(mut self, input: crate::model::AnalysisSummary) -> Self {
             let mut v = self.analysis_summary_list.unwrap_or_default();
-            v.push(input);
-            self.analysis_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_summary_list = Some(v);
+                            self
         }
         /// <p>Metadata describing each of the analyses that are listed.</p>
-        pub fn set_analysis_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
-        ) -> Self {
-            self.analysis_summary_list = input;
-            self
+        pub fn set_analysis_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>) -> Self {
+            self.analysis_summary_list = input; self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6435,8 +6359,7 @@ pub mod list_analyses_output {
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6445,8 +6368,7 @@ pub mod list_analyses_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6455,19 +6377,25 @@ pub mod list_analyses_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ListAnalysesOutput`](crate::output::ListAnalysesOutput).
         pub fn build(self) -> crate::output::ListAnalysesOutput {
             crate::output::ListAnalysesOutput {
-                analysis_summary_list: self.analysis_summary_list,
-                next_token: self.next_token,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                analysis_summary_list: self.analysis_summary_list
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAnalysesOutput {
     /// Creates a new builder-style object to manufacture [`ListAnalysesOutput`](crate::output::ListAnalysesOutput).
@@ -6479,7 +6407,7 @@ impl ListAnalysesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSessionEmbedUrlOutput {
+pub struct GetSessionEmbedUrlOutput  {
     /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
@@ -6492,7 +6420,7 @@ pub struct GetSessionEmbedUrlOutput {
 }
 impl GetSessionEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
-    pub fn embed_url(&self) -> std::option::Option<&str> {
+    pub fn embed_url(&self) -> std::option::Option<& str> {
         self.embed_url.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6500,11 +6428,11 @@ impl GetSessionEmbedUrlOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionEmbedUrlOutput {
+impl  std::fmt::Debug for GetSessionEmbedUrlOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionEmbedUrlOutput");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
@@ -6515,7 +6443,7 @@ impl std::fmt::Debug for GetSessionEmbedUrlOutput {
 }
 /// See [`GetSessionEmbedUrlOutput`](crate::output::GetSessionEmbedUrlOutput).
 pub mod get_session_embed_url_output {
-
+    
     /// A builder for [`GetSessionEmbedUrlOutput`](crate::output::GetSessionEmbedUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6531,8 +6459,7 @@ pub mod get_session_embed_url_output {
         }
         /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
         pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.embed_url = input;
-            self
+            self.embed_url = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6541,8 +6468,7 @@ pub mod get_session_embed_url_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6551,15 +6477,18 @@ pub mod get_session_embed_url_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`GetSessionEmbedUrlOutput`](crate::output::GetSessionEmbedUrlOutput).
         pub fn build(self) -> crate::output::GetSessionEmbedUrlOutput {
             crate::output::GetSessionEmbedUrlOutput {
-                embed_url: self.embed_url,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                embed_url: self.embed_url
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
@@ -6572,6 +6501,8 @@ pub mod get_session_embed_url_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetSessionEmbedUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionEmbedUrlOutput`](crate::output::GetSessionEmbedUrlOutput).
@@ -6583,7 +6514,7 @@ impl GetSessionEmbedUrlOutput {
 /// <p>Output returned from the <code>GetDashboardEmbedUrl</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDashboardEmbedUrlOutput {
+pub struct GetDashboardEmbedUrlOutput  {
     /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
@@ -6596,7 +6527,7 @@ pub struct GetDashboardEmbedUrlOutput {
 }
 impl GetDashboardEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
-    pub fn embed_url(&self) -> std::option::Option<&str> {
+    pub fn embed_url(&self) -> std::option::Option<& str> {
         self.embed_url.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6604,11 +6535,11 @@ impl GetDashboardEmbedUrlOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDashboardEmbedUrlOutput {
+impl  std::fmt::Debug for GetDashboardEmbedUrlOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDashboardEmbedUrlOutput");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
@@ -6619,7 +6550,7 @@ impl std::fmt::Debug for GetDashboardEmbedUrlOutput {
 }
 /// See [`GetDashboardEmbedUrlOutput`](crate::output::GetDashboardEmbedUrlOutput).
 pub mod get_dashboard_embed_url_output {
-
+    
     /// A builder for [`GetDashboardEmbedUrlOutput`](crate::output::GetDashboardEmbedUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6635,8 +6566,7 @@ pub mod get_dashboard_embed_url_output {
         }
         /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
         pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.embed_url = input;
-            self
+            self.embed_url = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6645,8 +6575,7 @@ pub mod get_dashboard_embed_url_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6655,15 +6584,18 @@ pub mod get_dashboard_embed_url_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`GetDashboardEmbedUrlOutput`](crate::output::GetDashboardEmbedUrlOutput).
         pub fn build(self) -> crate::output::GetDashboardEmbedUrlOutput {
             crate::output::GetDashboardEmbedUrlOutput {
-                embed_url: self.embed_url,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                embed_url: self.embed_url
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
@@ -6676,6 +6608,8 @@ pub mod get_dashboard_embed_url_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetDashboardEmbedUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetDashboardEmbedUrlOutput`](crate::output::GetDashboardEmbedUrlOutput).
@@ -6687,7 +6621,7 @@ impl GetDashboardEmbedUrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GenerateEmbedUrlForRegisteredUserOutput {
+pub struct GenerateEmbedUrlForRegisteredUserOutput  {
     /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.</p>
     #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
@@ -6700,7 +6634,7 @@ pub struct GenerateEmbedUrlForRegisteredUserOutput {
 }
 impl GenerateEmbedUrlForRegisteredUserOutput {
     /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.</p>
-    pub fn embed_url(&self) -> std::option::Option<&str> {
+    pub fn embed_url(&self) -> std::option::Option<& str> {
         self.embed_url.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6708,11 +6642,11 @@ impl GenerateEmbedUrlForRegisteredUserOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutput {
+impl  std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateEmbedUrlForRegisteredUserOutput");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
@@ -6723,7 +6657,7 @@ impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutput {
 }
 /// See [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput).
 pub mod generate_embed_url_for_registered_user_output {
-
+    
     /// A builder for [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6739,8 +6673,7 @@ pub mod generate_embed_url_for_registered_user_output {
         }
         /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.</p>
         pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.embed_url = input;
-            self
+            self.embed_url = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6749,8 +6682,7 @@ pub mod generate_embed_url_for_registered_user_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6759,15 +6691,18 @@ pub mod generate_embed_url_for_registered_user_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput).
         pub fn build(self) -> crate::output::GenerateEmbedUrlForRegisteredUserOutput {
             crate::output::GenerateEmbedUrlForRegisteredUserOutput {
-                embed_url: self.embed_url,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                embed_url: self.embed_url
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
@@ -6780,6 +6715,8 @@ pub mod generate_embed_url_for_registered_user_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GenerateEmbedUrlForRegisteredUserOutput {
     /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput).
@@ -6791,7 +6728,7 @@ impl GenerateEmbedUrlForRegisteredUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GenerateEmbedUrlForAnonymousUserOutput {
+pub struct GenerateEmbedUrlForAnonymousUserOutput  {
     /// <p>The embed URL for the dashboard.</p>
     #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
@@ -6807,7 +6744,7 @@ pub struct GenerateEmbedUrlForAnonymousUserOutput {
 }
 impl GenerateEmbedUrlForAnonymousUserOutput {
     /// <p>The embed URL for the dashboard.</p>
-    pub fn embed_url(&self) -> std::option::Option<&str> {
+    pub fn embed_url(&self) -> std::option::Option<& str> {
         self.embed_url.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6815,15 +6752,15 @@ impl GenerateEmbedUrlForAnonymousUserOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
-    pub fn anonymous_user_arn(&self) -> std::option::Option<&str> {
+    pub fn anonymous_user_arn(&self) -> std::option::Option<& str> {
         self.anonymous_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
+impl  std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateEmbedUrlForAnonymousUserOutput");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
@@ -6835,7 +6772,7 @@ impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
 }
 /// See [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput).
 pub mod generate_embed_url_for_anonymous_user_output {
-
+    
     /// A builder for [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6852,8 +6789,7 @@ pub mod generate_embed_url_for_anonymous_user_output {
         }
         /// <p>The embed URL for the dashboard.</p>
         pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.embed_url = input;
-            self
+            self.embed_url = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6862,8 +6798,7 @@ pub mod generate_embed_url_for_anonymous_user_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6872,8 +6807,7 @@ pub mod generate_embed_url_for_anonymous_user_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
         pub fn anonymous_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6881,20 +6815,21 @@ pub mod generate_embed_url_for_anonymous_user_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
-        pub fn set_anonymous_user_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anonymous_user_arn = input;
-            self
+        pub fn set_anonymous_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anonymous_user_arn = input; self
         }
         /// Consumes the builder and constructs a [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput).
         pub fn build(self) -> crate::output::GenerateEmbedUrlForAnonymousUserOutput {
             crate::output::GenerateEmbedUrlForAnonymousUserOutput {
-                embed_url: self.embed_url,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
-                anonymous_user_arn: self.anonymous_user_arn,
+                embed_url: self.embed_url
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
+                anonymous_user_arn: self.anonymous_user_arn
+                ,
             }
         }
     }
@@ -6908,6 +6843,8 @@ pub mod generate_embed_url_for_anonymous_user_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GenerateEmbedUrlForAnonymousUserOutput {
     /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput).
@@ -6919,7 +6856,7 @@ impl GenerateEmbedUrlForAnonymousUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserOutput {
+pub struct DescribeUserOutput  {
     /// <p>The user name.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
@@ -6932,11 +6869,11 @@ pub struct DescribeUserOutput {
 }
 impl DescribeUserOutput {
     /// <p>The user name.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -6946,7 +6883,7 @@ impl DescribeUserOutput {
 }
 /// See [`DescribeUserOutput`](crate::output::DescribeUserOutput).
 pub mod describe_user_output {
-
+    
     /// A builder for [`DescribeUserOutput`](crate::output::DescribeUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6962,8 +6899,7 @@ pub mod describe_user_output {
         }
         /// <p>The user name.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6972,8 +6908,7 @@ pub mod describe_user_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -6982,18 +6917,23 @@ pub mod describe_user_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::output::DescribeUserOutput).
         pub fn build(self) -> crate::output::DescribeUserOutput {
             crate::output::DescribeUserOutput {
-                user: self.user,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                user: self.user
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::output::DescribeUserOutput).
@@ -7005,7 +6945,7 @@ impl DescribeUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeThemePermissionsOutput {
+pub struct DescribeThemePermissionsOutput  {
     /// <p>The ID for the theme.</p>
     #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
@@ -7024,19 +6964,19 @@ pub struct DescribeThemePermissionsOutput {
 }
 impl DescribeThemePermissionsOutput {
     /// <p>The ID for the theme.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
     /// <p>A list of resource permissions set on the theme. </p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -7046,14 +6986,13 @@ impl DescribeThemePermissionsOutput {
 }
 /// See [`DescribeThemePermissionsOutput`](crate::output::DescribeThemePermissionsOutput).
 pub mod describe_theme_permissions_output {
-
+    
     /// A builder for [`DescribeThemePermissionsOutput`](crate::output::DescribeThemePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) theme_id: std::option::Option<std::string::String>,
         pub(crate) theme_arn: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
     }
@@ -7065,8 +7004,7 @@ pub mod describe_theme_permissions_output {
         }
         /// <p>The ID for the theme.</p>
         pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_id = input;
-            self
+            self.theme_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the theme.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7075,8 +7013,7 @@ pub mod describe_theme_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_arn = input;
-            self
+            self.theme_arn = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -7085,17 +7022,13 @@ pub mod describe_theme_permissions_output {
         /// <p>A list of resource permissions set on the theme. </p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>A list of resource permissions set on the theme. </p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7104,8 +7037,7 @@ pub mod describe_theme_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -7114,20 +7046,27 @@ pub mod describe_theme_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeThemePermissionsOutput`](crate::output::DescribeThemePermissionsOutput).
         pub fn build(self) -> crate::output::DescribeThemePermissionsOutput {
             crate::output::DescribeThemePermissionsOutput {
-                theme_id: self.theme_id,
-                theme_arn: self.theme_arn,
-                permissions: self.permissions,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                theme_id: self.theme_id
+                ,
+                theme_arn: self.theme_arn
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeThemePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThemePermissionsOutput`](crate::output::DescribeThemePermissionsOutput).
@@ -7139,7 +7078,7 @@ impl DescribeThemePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeThemeAliasOutput {
+pub struct DescribeThemeAliasOutput  {
     /// <p>Information about the theme alias.</p>
     #[doc(hidden)]
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
@@ -7152,7 +7091,7 @@ pub struct DescribeThemeAliasOutput {
 }
 impl DescribeThemeAliasOutput {
     /// <p>Information about the theme alias.</p>
-    pub fn theme_alias(&self) -> std::option::Option<&crate::model::ThemeAlias> {
+    pub fn theme_alias(&self) -> std::option::Option<& crate::model::ThemeAlias> {
         self.theme_alias.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -7160,13 +7099,13 @@ impl DescribeThemeAliasOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeThemeAliasOutput`](crate::output::DescribeThemeAliasOutput).
 pub mod describe_theme_alias_output {
-
+    
     /// A builder for [`DescribeThemeAliasOutput`](crate::output::DescribeThemeAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7181,12 +7120,8 @@ pub mod describe_theme_alias_output {
             self
         }
         /// <p>Information about the theme alias.</p>
-        pub fn set_theme_alias(
-            mut self,
-            input: std::option::Option<crate::model::ThemeAlias>,
-        ) -> Self {
-            self.theme_alias = input;
-            self
+        pub fn set_theme_alias(mut self, input: std::option::Option<crate::model::ThemeAlias>) -> Self {
+            self.theme_alias = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -7195,8 +7130,7 @@ pub mod describe_theme_alias_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7205,18 +7139,23 @@ pub mod describe_theme_alias_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeThemeAliasOutput`](crate::output::DescribeThemeAliasOutput).
         pub fn build(self) -> crate::output::DescribeThemeAliasOutput {
             crate::output::DescribeThemeAliasOutput {
-                theme_alias: self.theme_alias,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                theme_alias: self.theme_alias
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeThemeAliasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThemeAliasOutput`](crate::output::DescribeThemeAliasOutput).
@@ -7228,7 +7167,7 @@ impl DescribeThemeAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeThemeOutput {
+pub struct DescribeThemeOutput  {
     /// <p>The information about the theme that you are describing.</p>
     #[doc(hidden)]
     pub theme: std::option::Option<crate::model::Theme>,
@@ -7241,7 +7180,7 @@ pub struct DescribeThemeOutput {
 }
 impl DescribeThemeOutput {
     /// <p>The information about the theme that you are describing.</p>
-    pub fn theme(&self) -> std::option::Option<&crate::model::Theme> {
+    pub fn theme(&self) -> std::option::Option<& crate::model::Theme> {
         self.theme.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -7249,13 +7188,13 @@ impl DescribeThemeOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeThemeOutput`](crate::output::DescribeThemeOutput).
 pub mod describe_theme_output {
-
+    
     /// A builder for [`DescribeThemeOutput`](crate::output::DescribeThemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7271,8 +7210,7 @@ pub mod describe_theme_output {
         }
         /// <p>The information about the theme that you are describing.</p>
         pub fn set_theme(mut self, input: std::option::Option<crate::model::Theme>) -> Self {
-            self.theme = input;
-            self
+            self.theme = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -7281,8 +7219,7 @@ pub mod describe_theme_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7291,18 +7228,23 @@ pub mod describe_theme_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeThemeOutput`](crate::output::DescribeThemeOutput).
         pub fn build(self) -> crate::output::DescribeThemeOutput {
             crate::output::DescribeThemeOutput {
-                theme: self.theme,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                theme: self.theme
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeThemeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThemeOutput`](crate::output::DescribeThemeOutput).
@@ -7314,7 +7256,7 @@ impl DescribeThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTemplatePermissionsOutput {
+pub struct DescribeTemplatePermissionsOutput  {
     /// <p>The ID for the template.</p>
     #[doc(hidden)]
     pub template_id: std::option::Option<std::string::String>,
@@ -7333,19 +7275,19 @@ pub struct DescribeTemplatePermissionsOutput {
 }
 impl DescribeTemplatePermissionsOutput {
     /// <p>The ID for the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> std::option::Option<&str> {
+    pub fn template_arn(&self) -> std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>A list of resource permissions to be set on the template. </p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -7355,14 +7297,13 @@ impl DescribeTemplatePermissionsOutput {
 }
 /// See [`DescribeTemplatePermissionsOutput`](crate::output::DescribeTemplatePermissionsOutput).
 pub mod describe_template_permissions_output {
-
+    
     /// A builder for [`DescribeTemplatePermissionsOutput`](crate::output::DescribeTemplatePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) template_arn: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
     }
@@ -7374,8 +7315,7 @@ pub mod describe_template_permissions_output {
         }
         /// <p>The ID for the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7384,8 +7324,7 @@ pub mod describe_template_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_arn = input;
-            self
+            self.template_arn = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -7394,17 +7333,13 @@ pub mod describe_template_permissions_output {
         /// <p>A list of resource permissions to be set on the template. </p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>A list of resource permissions to be set on the template. </p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7413,8 +7348,7 @@ pub mod describe_template_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -7423,20 +7357,27 @@ pub mod describe_template_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTemplatePermissionsOutput`](crate::output::DescribeTemplatePermissionsOutput).
         pub fn build(self) -> crate::output::DescribeTemplatePermissionsOutput {
             crate::output::DescribeTemplatePermissionsOutput {
-                template_id: self.template_id,
-                template_arn: self.template_arn,
-                permissions: self.permissions,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                template_id: self.template_id
+                ,
+                template_arn: self.template_arn
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTemplatePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplatePermissionsOutput`](crate::output::DescribeTemplatePermissionsOutput).
@@ -7448,7 +7389,7 @@ impl DescribeTemplatePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTemplateDefinitionOutput {
+pub struct DescribeTemplateDefinitionOutput  {
     /// <p>The descriptive name of the template.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7458,22 +7399,22 @@ pub struct DescribeTemplateDefinitionOutput {
     /// <p>Errors associated with the template version.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::TemplateError>>,
-    /// <p>Status associated with the template.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the template.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The ARN of the theme of the template.</p>
     #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
-    /// <p>The definition of the template.</p>
+    /// <p>The definition of the template.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::model::TemplateVersionDefinition>,
@@ -7486,37 +7427,37 @@ pub struct DescribeTemplateDefinitionOutput {
 }
 impl DescribeTemplateDefinitionOutput {
     /// <p>The descriptive name of the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the template described.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>Errors associated with the template version.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::TemplateError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::TemplateError]> {
         self.errors.as_deref()
     }
-    /// <p>Status associated with the template.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the template.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
-    pub fn resource_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn resource_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>The ARN of the theme of the template.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
-    /// <p>The definition of the template.</p>
+    /// <p>The definition of the template.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::TemplateVersionDefinition> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::TemplateVersionDefinition> {
         self.definition.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -7524,13 +7465,13 @@ impl DescribeTemplateDefinitionOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput).
 pub mod describe_template_definition_output {
-
+    
     /// A builder for [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7551,8 +7492,7 @@ pub mod describe_template_definition_output {
         }
         /// <p>The descriptive name of the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the template described.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7561,8 +7501,7 @@ pub mod describe_template_definition_output {
         }
         /// <p>The ID of the template described.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -7571,48 +7510,40 @@ pub mod describe_template_definition_output {
         /// <p>Errors associated with the template version.</p>
         pub fn errors(mut self, input: crate::model::TemplateError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Errors associated with the template version.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TemplateError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::TemplateError>>) -> Self {
+            self.errors = input; self
         }
-        /// <p>Status associated with the template.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// <p>Status associated with the template.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+        /// <li> <p> <code>DELETED</code> </p> </li> 
         /// </ul>
         pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
             self.resource_status = Some(input);
             self
         }
-        /// <p>Status associated with the template.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// <p>Status associated with the template.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+        /// <li> <p> <code>DELETED</code> </p> </li> 
         /// </ul>
-        pub fn set_resource_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.resource_status = input;
-            self
+        pub fn set_resource_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.resource_status = input; self
         }
         /// <p>The ARN of the theme of the template.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7621,23 +7552,18 @@ pub mod describe_template_definition_output {
         }
         /// <p>The ARN of the theme of the template.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_arn = input;
-            self
+            self.theme_arn = input; self
         }
-        /// <p>The definition of the template.</p>
+        /// <p>The definition of the template.</p> 
         /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
         pub fn definition(mut self, input: crate::model::TemplateVersionDefinition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p>The definition of the template.</p>
+        /// <p>The definition of the template.</p> 
         /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::TemplateVersionDefinition>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::TemplateVersionDefinition>) -> Self {
+            self.definition = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -7646,8 +7572,7 @@ pub mod describe_template_definition_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7656,23 +7581,33 @@ pub mod describe_template_definition_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput).
         pub fn build(self) -> crate::output::DescribeTemplateDefinitionOutput {
             crate::output::DescribeTemplateDefinitionOutput {
-                name: self.name,
-                template_id: self.template_id,
-                errors: self.errors,
-                resource_status: self.resource_status,
-                theme_arn: self.theme_arn,
-                definition: self.definition,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                name: self.name
+                ,
+                template_id: self.template_id
+                ,
+                errors: self.errors
+                ,
+                resource_status: self.resource_status
+                ,
+                theme_arn: self.theme_arn
+                ,
+                definition: self.definition
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTemplateDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateDefinitionOutput`](crate::output::DescribeTemplateDefinitionOutput).
@@ -7684,7 +7619,7 @@ impl DescribeTemplateDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTemplateAliasOutput {
+pub struct DescribeTemplateAliasOutput  {
     /// <p>Information about the template alias.</p>
     #[doc(hidden)]
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
@@ -7697,7 +7632,7 @@ pub struct DescribeTemplateAliasOutput {
 }
 impl DescribeTemplateAliasOutput {
     /// <p>Information about the template alias.</p>
-    pub fn template_alias(&self) -> std::option::Option<&crate::model::TemplateAlias> {
+    pub fn template_alias(&self) -> std::option::Option<& crate::model::TemplateAlias> {
         self.template_alias.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -7705,13 +7640,13 @@ impl DescribeTemplateAliasOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeTemplateAliasOutput`](crate::output::DescribeTemplateAliasOutput).
 pub mod describe_template_alias_output {
-
+    
     /// A builder for [`DescribeTemplateAliasOutput`](crate::output::DescribeTemplateAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7726,12 +7661,8 @@ pub mod describe_template_alias_output {
             self
         }
         /// <p>Information about the template alias.</p>
-        pub fn set_template_alias(
-            mut self,
-            input: std::option::Option<crate::model::TemplateAlias>,
-        ) -> Self {
-            self.template_alias = input;
-            self
+        pub fn set_template_alias(mut self, input: std::option::Option<crate::model::TemplateAlias>) -> Self {
+            self.template_alias = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -7740,8 +7671,7 @@ pub mod describe_template_alias_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7750,18 +7680,23 @@ pub mod describe_template_alias_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTemplateAliasOutput`](crate::output::DescribeTemplateAliasOutput).
         pub fn build(self) -> crate::output::DescribeTemplateAliasOutput {
             crate::output::DescribeTemplateAliasOutput {
-                template_alias: self.template_alias,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                template_alias: self.template_alias
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTemplateAliasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateAliasOutput`](crate::output::DescribeTemplateAliasOutput).
@@ -7773,7 +7708,7 @@ impl DescribeTemplateAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTemplateOutput {
+pub struct DescribeTemplateOutput  {
     /// <p>The template structure for the object you want to describe.</p>
     #[doc(hidden)]
     pub template: std::option::Option<crate::model::Template>,
@@ -7786,7 +7721,7 @@ pub struct DescribeTemplateOutput {
 }
 impl DescribeTemplateOutput {
     /// <p>The template structure for the object you want to describe.</p>
-    pub fn template(&self) -> std::option::Option<&crate::model::Template> {
+    pub fn template(&self) -> std::option::Option<& crate::model::Template> {
         self.template.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -7794,13 +7729,13 @@ impl DescribeTemplateOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeTemplateOutput`](crate::output::DescribeTemplateOutput).
 pub mod describe_template_output {
-
+    
     /// A builder for [`DescribeTemplateOutput`](crate::output::DescribeTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7816,8 +7751,7 @@ pub mod describe_template_output {
         }
         /// <p>The template structure for the object you want to describe.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
-            self.template = input;
-            self
+            self.template = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -7826,8 +7760,7 @@ pub mod describe_template_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7836,18 +7769,23 @@ pub mod describe_template_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTemplateOutput`](crate::output::DescribeTemplateOutput).
         pub fn build(self) -> crate::output::DescribeTemplateOutput {
             crate::output::DescribeTemplateOutput {
-                template: self.template,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                template: self.template
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateOutput`](crate::output::DescribeTemplateOutput).
@@ -7859,7 +7797,7 @@ impl DescribeTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNamespaceOutput {
+pub struct DescribeNamespaceOutput  {
     /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<crate::model::NamespaceInfoV2>,
@@ -7872,11 +7810,11 @@ pub struct DescribeNamespaceOutput {
 }
 impl DescribeNamespaceOutput {
     /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
-    pub fn namespace(&self) -> std::option::Option<&crate::model::NamespaceInfoV2> {
+    pub fn namespace(&self) -> std::option::Option<& crate::model::NamespaceInfoV2> {
         self.namespace.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -7886,7 +7824,7 @@ impl DescribeNamespaceOutput {
 }
 /// See [`DescribeNamespaceOutput`](crate::output::DescribeNamespaceOutput).
 pub mod describe_namespace_output {
-
+    
     /// A builder for [`DescribeNamespaceOutput`](crate::output::DescribeNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7901,12 +7839,8 @@ pub mod describe_namespace_output {
             self
         }
         /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
-        pub fn set_namespace(
-            mut self,
-            input: std::option::Option<crate::model::NamespaceInfoV2>,
-        ) -> Self {
-            self.namespace = input;
-            self
+        pub fn set_namespace(mut self, input: std::option::Option<crate::model::NamespaceInfoV2>) -> Self {
+            self.namespace = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7915,8 +7849,7 @@ pub mod describe_namespace_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -7925,18 +7858,23 @@ pub mod describe_namespace_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNamespaceOutput`](crate::output::DescribeNamespaceOutput).
         pub fn build(self) -> crate::output::DescribeNamespaceOutput {
             crate::output::DescribeNamespaceOutput {
-                namespace: self.namespace,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                namespace: self.namespace
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNamespaceOutput`](crate::output::DescribeNamespaceOutput).
@@ -7948,14 +7886,13 @@ impl DescribeNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIpRestrictionOutput {
+pub struct DescribeIpRestrictionOutput  {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
     #[doc(hidden)]
-    pub ip_restriction_rule_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub ip_restriction_rule_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A value that specifies whether IP rules are turned on.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -7968,14 +7905,11 @@ pub struct DescribeIpRestrictionOutput {
 }
 impl DescribeIpRestrictionOutput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
-    pub fn ip_restriction_rule_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn ip_restriction_rule_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.ip_restriction_rule_map.as_ref()
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>
@@ -7983,7 +7917,7 @@ impl DescribeIpRestrictionOutput {
         self.enabled
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request. </p>
@@ -7993,14 +7927,12 @@ impl DescribeIpRestrictionOutput {
 }
 /// See [`DescribeIpRestrictionOutput`](crate::output::DescribeIpRestrictionOutput).
 pub mod describe_ip_restriction_output {
-
+    
     /// A builder for [`DescribeIpRestrictionOutput`](crate::output::DescribeIpRestrictionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
-        pub(crate) ip_restriction_rule_map: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) ip_restriction_rule_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
@@ -8012,37 +7944,23 @@ pub mod describe_ip_restriction_output {
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
+        pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_id = input; self
         }
         /// Adds a key-value pair to `ip_restriction_rule_map`.
         ///
         /// To override the contents of this collection use [`set_ip_restriction_rule_map`](Self::set_ip_restriction_rule_map).
         ///
         /// <p>A map that describes the IP rules with CIDR range and description.</p>
-        pub fn ip_restriction_rule_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ip_restriction_rule_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.ip_restriction_rule_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.ip_restriction_rule_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.ip_restriction_rule_map = Some(hash_map);
+                            self
         }
         /// <p>A map that describes the IP rules with CIDR range and description.</p>
-        pub fn set_ip_restriction_rule_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.ip_restriction_rule_map = input;
-            self
+        pub fn set_ip_restriction_rule_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.ip_restriction_rule_map = input; self
         }
         /// <p>A value that specifies whether IP rules are turned on.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -8051,8 +7969,7 @@ pub mod describe_ip_restriction_output {
         }
         /// <p>A value that specifies whether IP rules are turned on.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8061,8 +7978,7 @@ pub mod describe_ip_restriction_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request. </p>
         pub fn status(mut self, input: i32) -> Self {
@@ -8071,20 +7987,27 @@ pub mod describe_ip_restriction_output {
         }
         /// <p>The HTTP status of the request. </p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIpRestrictionOutput`](crate::output::DescribeIpRestrictionOutput).
         pub fn build(self) -> crate::output::DescribeIpRestrictionOutput {
             crate::output::DescribeIpRestrictionOutput {
-                aws_account_id: self.aws_account_id,
-                ip_restriction_rule_map: self.ip_restriction_rule_map,
-                enabled: self.enabled,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                aws_account_id: self.aws_account_id
+                ,
+                ip_restriction_rule_map: self.ip_restriction_rule_map
+                ,
+                enabled: self.enabled
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeIpRestrictionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpRestrictionOutput`](crate::output::DescribeIpRestrictionOutput).
@@ -8096,7 +8019,7 @@ impl DescribeIpRestrictionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIngestionOutput {
+pub struct DescribeIngestionOutput  {
     /// <p>Information about the ingestion.</p>
     #[doc(hidden)]
     pub ingestion: std::option::Option<crate::model::Ingestion>,
@@ -8109,11 +8032,11 @@ pub struct DescribeIngestionOutput {
 }
 impl DescribeIngestionOutput {
     /// <p>Information about the ingestion.</p>
-    pub fn ingestion(&self) -> std::option::Option<&crate::model::Ingestion> {
+    pub fn ingestion(&self) -> std::option::Option<& crate::model::Ingestion> {
         self.ingestion.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -8123,7 +8046,7 @@ impl DescribeIngestionOutput {
 }
 /// See [`DescribeIngestionOutput`](crate::output::DescribeIngestionOutput).
 pub mod describe_ingestion_output {
-
+    
     /// A builder for [`DescribeIngestionOutput`](crate::output::DescribeIngestionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8138,12 +8061,8 @@ pub mod describe_ingestion_output {
             self
         }
         /// <p>Information about the ingestion.</p>
-        pub fn set_ingestion(
-            mut self,
-            input: std::option::Option<crate::model::Ingestion>,
-        ) -> Self {
-            self.ingestion = input;
-            self
+        pub fn set_ingestion(mut self, input: std::option::Option<crate::model::Ingestion>) -> Self {
+            self.ingestion = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8152,8 +8071,7 @@ pub mod describe_ingestion_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -8162,18 +8080,23 @@ pub mod describe_ingestion_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIngestionOutput`](crate::output::DescribeIngestionOutput).
         pub fn build(self) -> crate::output::DescribeIngestionOutput {
             crate::output::DescribeIngestionOutput {
-                ingestion: self.ingestion,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                ingestion: self.ingestion
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeIngestionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIngestionOutput`](crate::output::DescribeIngestionOutput).
@@ -8185,7 +8108,7 @@ impl DescribeIngestionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIamPolicyAssignmentOutput {
+pub struct DescribeIamPolicyAssignmentOutput  {
     /// <p>Information describing the IAM policy assignment.</p>
     #[doc(hidden)]
     pub iam_policy_assignment: std::option::Option<crate::model::IamPolicyAssignment>,
@@ -8198,11 +8121,11 @@ pub struct DescribeIamPolicyAssignmentOutput {
 }
 impl DescribeIamPolicyAssignmentOutput {
     /// <p>Information describing the IAM policy assignment.</p>
-    pub fn iam_policy_assignment(&self) -> std::option::Option<&crate::model::IamPolicyAssignment> {
+    pub fn iam_policy_assignment(&self) -> std::option::Option<& crate::model::IamPolicyAssignment> {
         self.iam_policy_assignment.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -8212,7 +8135,7 @@ impl DescribeIamPolicyAssignmentOutput {
 }
 /// See [`DescribeIamPolicyAssignmentOutput`](crate::output::DescribeIamPolicyAssignmentOutput).
 pub mod describe_iam_policy_assignment_output {
-
+    
     /// A builder for [`DescribeIamPolicyAssignmentOutput`](crate::output::DescribeIamPolicyAssignmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8227,12 +8150,8 @@ pub mod describe_iam_policy_assignment_output {
             self
         }
         /// <p>Information describing the IAM policy assignment.</p>
-        pub fn set_iam_policy_assignment(
-            mut self,
-            input: std::option::Option<crate::model::IamPolicyAssignment>,
-        ) -> Self {
-            self.iam_policy_assignment = input;
-            self
+        pub fn set_iam_policy_assignment(mut self, input: std::option::Option<crate::model::IamPolicyAssignment>) -> Self {
+            self.iam_policy_assignment = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8241,8 +8160,7 @@ pub mod describe_iam_policy_assignment_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -8251,18 +8169,23 @@ pub mod describe_iam_policy_assignment_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIamPolicyAssignmentOutput`](crate::output::DescribeIamPolicyAssignmentOutput).
         pub fn build(self) -> crate::output::DescribeIamPolicyAssignmentOutput {
             crate::output::DescribeIamPolicyAssignmentOutput {
-                iam_policy_assignment: self.iam_policy_assignment,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                iam_policy_assignment: self.iam_policy_assignment
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIamPolicyAssignmentOutput`](crate::output::DescribeIamPolicyAssignmentOutput).
@@ -8274,7 +8197,7 @@ impl DescribeIamPolicyAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGroupMembershipOutput {
+pub struct DescribeGroupMembershipOutput  {
     /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
     #[doc(hidden)]
     pub group_member: std::option::Option<crate::model::GroupMember>,
@@ -8287,11 +8210,11 @@ pub struct DescribeGroupMembershipOutput {
 }
 impl DescribeGroupMembershipOutput {
     /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
-    pub fn group_member(&self) -> std::option::Option<&crate::model::GroupMember> {
+    pub fn group_member(&self) -> std::option::Option<& crate::model::GroupMember> {
         self.group_member.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -8301,7 +8224,7 @@ impl DescribeGroupMembershipOutput {
 }
 /// See [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput).
 pub mod describe_group_membership_output {
-
+    
     /// A builder for [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8316,12 +8239,8 @@ pub mod describe_group_membership_output {
             self
         }
         /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
-        pub fn set_group_member(
-            mut self,
-            input: std::option::Option<crate::model::GroupMember>,
-        ) -> Self {
-            self.group_member = input;
-            self
+        pub fn set_group_member(mut self, input: std::option::Option<crate::model::GroupMember>) -> Self {
+            self.group_member = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8330,8 +8249,7 @@ pub mod describe_group_membership_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -8340,18 +8258,23 @@ pub mod describe_group_membership_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput).
         pub fn build(self) -> crate::output::DescribeGroupMembershipOutput {
             crate::output::DescribeGroupMembershipOutput {
-                group_member: self.group_member,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group_member: self.group_member
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGroupMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput).
@@ -8363,7 +8286,7 @@ impl DescribeGroupMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGroupOutput {
+pub struct DescribeGroupOutput  {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
@@ -8376,11 +8299,11 @@ pub struct DescribeGroupOutput {
 }
 impl DescribeGroupOutput {
     /// <p>The name of the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -8390,7 +8313,7 @@ impl DescribeGroupOutput {
 }
 /// See [`DescribeGroupOutput`](crate::output::DescribeGroupOutput).
 pub mod describe_group_output {
-
+    
     /// A builder for [`DescribeGroupOutput`](crate::output::DescribeGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8406,8 +8329,7 @@ pub mod describe_group_output {
         }
         /// <p>The name of the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8416,8 +8338,7 @@ pub mod describe_group_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -8426,18 +8347,23 @@ pub mod describe_group_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGroupOutput`](crate::output::DescribeGroupOutput).
         pub fn build(self) -> crate::output::DescribeGroupOutput {
             crate::output::DescribeGroupOutput {
-                group: self.group,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group: self.group
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupOutput`](crate::output::DescribeGroupOutput).
@@ -8449,7 +8375,7 @@ impl DescribeGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFolderResolvedPermissionsOutput {
+pub struct DescribeFolderResolvedPermissionsOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -8472,33 +8398,32 @@ impl DescribeFolderResolvedPermissionsOutput {
         self.status
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the permissions for the folder.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeFolderResolvedPermissionsOutput`](crate::output::DescribeFolderResolvedPermissionsOutput).
 pub mod describe_folder_resolved_permissions_output {
-
+    
     /// A builder for [`DescribeFolderResolvedPermissionsOutput`](crate::output::DescribeFolderResolvedPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<i32>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8509,8 +8434,7 @@ pub mod describe_folder_resolved_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8519,8 +8443,7 @@ pub mod describe_folder_resolved_permissions_output {
         }
         /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.folder_id = input;
-            self
+            self.folder_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8529,8 +8452,7 @@ pub mod describe_folder_resolved_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -8539,17 +8461,13 @@ pub mod describe_folder_resolved_permissions_output {
         /// <p>Information about the permissions for the folder.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>Information about the permissions for the folder.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8558,20 +8476,27 @@ pub mod describe_folder_resolved_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFolderResolvedPermissionsOutput`](crate::output::DescribeFolderResolvedPermissionsOutput).
         pub fn build(self) -> crate::output::DescribeFolderResolvedPermissionsOutput {
             crate::output::DescribeFolderResolvedPermissionsOutput {
-                status: self.status.unwrap_or_default(),
-                folder_id: self.folder_id,
-                arn: self.arn,
-                permissions: self.permissions,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                folder_id: self.folder_id
+                ,
+                arn: self.arn
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFolderResolvedPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderResolvedPermissionsOutput`](crate::output::DescribeFolderResolvedPermissionsOutput).
@@ -8583,7 +8508,7 @@ impl DescribeFolderResolvedPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFolderPermissionsOutput {
+pub struct DescribeFolderPermissionsOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -8606,33 +8531,32 @@ impl DescribeFolderPermissionsOutput {
         self.status
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the permissions on the folder.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeFolderPermissionsOutput`](crate::output::DescribeFolderPermissionsOutput).
 pub mod describe_folder_permissions_output {
-
+    
     /// A builder for [`DescribeFolderPermissionsOutput`](crate::output::DescribeFolderPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<i32>,
         pub(crate) folder_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8643,8 +8567,7 @@ pub mod describe_folder_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8653,8 +8576,7 @@ pub mod describe_folder_permissions_output {
         }
         /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.folder_id = input;
-            self
+            self.folder_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8663,8 +8585,7 @@ pub mod describe_folder_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -8673,17 +8594,13 @@ pub mod describe_folder_permissions_output {
         /// <p>Information about the permissions on the folder.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>Information about the permissions on the folder.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8692,20 +8609,27 @@ pub mod describe_folder_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFolderPermissionsOutput`](crate::output::DescribeFolderPermissionsOutput).
         pub fn build(self) -> crate::output::DescribeFolderPermissionsOutput {
             crate::output::DescribeFolderPermissionsOutput {
-                status: self.status.unwrap_or_default(),
-                folder_id: self.folder_id,
-                arn: self.arn,
-                permissions: self.permissions,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                folder_id: self.folder_id
+                ,
+                arn: self.arn
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFolderPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderPermissionsOutput`](crate::output::DescribeFolderPermissionsOutput).
@@ -8717,7 +8641,7 @@ impl DescribeFolderPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFolderOutput {
+pub struct DescribeFolderOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -8734,17 +8658,17 @@ impl DescribeFolderOutput {
         self.status
     }
     /// <p>Information about the folder.</p>
-    pub fn folder(&self) -> std::option::Option<&crate::model::Folder> {
+    pub fn folder(&self) -> std::option::Option<& crate::model::Folder> {
         self.folder.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeFolderOutput`](crate::output::DescribeFolderOutput).
 pub mod describe_folder_output {
-
+    
     /// A builder for [`DescribeFolderOutput`](crate::output::DescribeFolderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8760,8 +8684,7 @@ pub mod describe_folder_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Information about the folder.</p>
         pub fn folder(mut self, input: crate::model::Folder) -> Self {
@@ -8770,8 +8693,7 @@ pub mod describe_folder_output {
         }
         /// <p>Information about the folder.</p>
         pub fn set_folder(mut self, input: std::option::Option<crate::model::Folder>) -> Self {
-            self.folder = input;
-            self
+            self.folder = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8780,18 +8702,23 @@ pub mod describe_folder_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFolderOutput`](crate::output::DescribeFolderOutput).
         pub fn build(self) -> crate::output::DescribeFolderOutput {
             crate::output::DescribeFolderOutput {
-                status: self.status.unwrap_or_default(),
-                folder: self.folder,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                folder: self.folder
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFolderOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderOutput`](crate::output::DescribeFolderOutput).
@@ -8803,7 +8730,7 @@ impl DescribeFolderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSourcePermissionsOutput {
+pub struct DescribeDataSourcePermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
@@ -8822,19 +8749,19 @@ pub struct DescribeDataSourcePermissionsOutput {
 }
 impl DescribeDataSourcePermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+    pub fn data_source_arn(&self) -> std::option::Option<& str> {
         self.data_source_arn.as_deref()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -8844,14 +8771,13 @@ impl DescribeDataSourcePermissionsOutput {
 }
 /// See [`DescribeDataSourcePermissionsOutput`](crate::output::DescribeDataSourcePermissionsOutput).
 pub mod describe_data_source_permissions_output {
-
+    
     /// A builder for [`DescribeDataSourcePermissionsOutput`](crate::output::DescribeDataSourcePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_arn: std::option::Option<std::string::String>,
         pub(crate) data_source_id: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
     }
@@ -8862,12 +8788,8 @@ pub mod describe_data_source_permissions_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-        pub fn set_data_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_arn = input;
-            self
+        pub fn set_data_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_arn = input; self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8875,12 +8797,8 @@ pub mod describe_data_source_permissions_output {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -8889,17 +8807,13 @@ pub mod describe_data_source_permissions_output {
         /// <p>A list of resource permissions on the data source.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>A list of resource permissions on the data source.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8908,8 +8822,7 @@ pub mod describe_data_source_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -8918,20 +8831,27 @@ pub mod describe_data_source_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDataSourcePermissionsOutput`](crate::output::DescribeDataSourcePermissionsOutput).
         pub fn build(self) -> crate::output::DescribeDataSourcePermissionsOutput {
             crate::output::DescribeDataSourcePermissionsOutput {
-                data_source_arn: self.data_source_arn,
-                data_source_id: self.data_source_id,
-                permissions: self.permissions,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                data_source_arn: self.data_source_arn
+                ,
+                data_source_id: self.data_source_id
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDataSourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourcePermissionsOutput`](crate::output::DescribeDataSourcePermissionsOutput).
@@ -8943,7 +8863,7 @@ impl DescribeDataSourcePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSourceOutput {
+pub struct DescribeDataSourceOutput  {
     /// <p>The information on the data source.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<crate::model::DataSource>,
@@ -8956,11 +8876,11 @@ pub struct DescribeDataSourceOutput {
 }
 impl DescribeDataSourceOutput {
     /// <p>The information on the data source.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+    pub fn data_source(&self) -> std::option::Option<& crate::model::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -8970,7 +8890,7 @@ impl DescribeDataSourceOutput {
 }
 /// See [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput).
 pub mod describe_data_source_output {
-
+    
     /// A builder for [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8985,12 +8905,8 @@ pub mod describe_data_source_output {
             self
         }
         /// <p>The information on the data source.</p>
-        pub fn set_data_source(
-            mut self,
-            input: std::option::Option<crate::model::DataSource>,
-        ) -> Self {
-            self.data_source = input;
-            self
+        pub fn set_data_source(mut self, input: std::option::Option<crate::model::DataSource>) -> Self {
+            self.data_source = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8999,8 +8915,7 @@ pub mod describe_data_source_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -9009,18 +8924,23 @@ pub mod describe_data_source_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput).
         pub fn build(self) -> crate::output::DescribeDataSourceOutput {
             crate::output::DescribeDataSourceOutput {
-                data_source: self.data_source,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                data_source: self.data_source
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput).
@@ -9032,7 +8952,7 @@ impl DescribeDataSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSetPermissionsOutput {
+pub struct DescribeDataSetPermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
     pub data_set_arn: std::option::Option<std::string::String>,
@@ -9051,19 +8971,19 @@ pub struct DescribeDataSetPermissionsOutput {
 }
 impl DescribeDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn data_set_arn(&self) -> std::option::Option<&str> {
+    pub fn data_set_arn(&self) -> std::option::Option<& str> {
         self.data_set_arn.as_deref()
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>A list of resource permissions on the dataset.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -9073,14 +8993,13 @@ impl DescribeDataSetPermissionsOutput {
 }
 /// See [`DescribeDataSetPermissionsOutput`](crate::output::DescribeDataSetPermissionsOutput).
 pub mod describe_data_set_permissions_output {
-
+    
     /// A builder for [`DescribeDataSetPermissionsOutput`](crate::output::DescribeDataSetPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_arn: std::option::Option<std::string::String>,
         pub(crate) data_set_id: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
     }
@@ -9092,8 +9011,7 @@ pub mod describe_data_set_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
         pub fn set_data_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_arn = input;
-            self
+            self.data_set_arn = input; self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9102,8 +9020,7 @@ pub mod describe_data_set_permissions_output {
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -9112,17 +9029,13 @@ pub mod describe_data_set_permissions_output {
         /// <p>A list of resource permissions on the dataset.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>A list of resource permissions on the dataset.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9131,8 +9044,7 @@ pub mod describe_data_set_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -9141,20 +9053,27 @@ pub mod describe_data_set_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDataSetPermissionsOutput`](crate::output::DescribeDataSetPermissionsOutput).
         pub fn build(self) -> crate::output::DescribeDataSetPermissionsOutput {
             crate::output::DescribeDataSetPermissionsOutput {
-                data_set_arn: self.data_set_arn,
-                data_set_id: self.data_set_id,
-                permissions: self.permissions,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                data_set_arn: self.data_set_arn
+                ,
+                data_set_id: self.data_set_id
+                ,
+                permissions: self.permissions
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDataSetPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSetPermissionsOutput`](crate::output::DescribeDataSetPermissionsOutput).
@@ -9166,7 +9085,7 @@ impl DescribeDataSetPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSetOutput {
+pub struct DescribeDataSetOutput  {
     /// <p>Information on the dataset.</p>
     #[doc(hidden)]
     pub data_set: std::option::Option<crate::model::DataSet>,
@@ -9179,11 +9098,11 @@ pub struct DescribeDataSetOutput {
 }
 impl DescribeDataSetOutput {
     /// <p>Information on the dataset.</p>
-    pub fn data_set(&self) -> std::option::Option<&crate::model::DataSet> {
+    pub fn data_set(&self) -> std::option::Option<& crate::model::DataSet> {
         self.data_set.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -9193,7 +9112,7 @@ impl DescribeDataSetOutput {
 }
 /// See [`DescribeDataSetOutput`](crate::output::DescribeDataSetOutput).
 pub mod describe_data_set_output {
-
+    
     /// A builder for [`DescribeDataSetOutput`](crate::output::DescribeDataSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9209,8 +9128,7 @@ pub mod describe_data_set_output {
         }
         /// <p>Information on the dataset.</p>
         pub fn set_data_set(mut self, input: std::option::Option<crate::model::DataSet>) -> Self {
-            self.data_set = input;
-            self
+            self.data_set = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9219,8 +9137,7 @@ pub mod describe_data_set_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -9229,18 +9146,23 @@ pub mod describe_data_set_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDataSetOutput`](crate::output::DescribeDataSetOutput).
         pub fn build(self) -> crate::output::DescribeDataSetOutput {
             crate::output::DescribeDataSetOutput {
-                data_set: self.data_set,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                data_set: self.data_set
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDataSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSetOutput`](crate::output::DescribeDataSetOutput).
@@ -9252,7 +9174,7 @@ impl DescribeDataSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDashboardPermissionsOutput {
+pub struct DescribeDashboardPermissionsOutput  {
     /// <p>The ID for the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -9274,15 +9196,15 @@ pub struct DescribeDashboardPermissionsOutput {
 }
 impl DescribeDashboardPermissionsOutput {
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>A structure that contains the permissions for the dashboard.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -9290,30 +9212,26 @@ impl DescribeDashboardPermissionsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-    pub fn link_sharing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LinkSharingConfiguration> {
+    pub fn link_sharing_configuration(&self) -> std::option::Option<& crate::model::LinkSharingConfiguration> {
         self.link_sharing_configuration.as_ref()
     }
 }
 /// See [`DescribeDashboardPermissionsOutput`](crate::output::DescribeDashboardPermissionsOutput).
 pub mod describe_dashboard_permissions_output {
-
+    
     /// A builder for [`DescribeDashboardPermissionsOutput`](crate::output::DescribeDashboardPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
         pub(crate) dashboard_arn: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
-        pub(crate) link_sharing_configuration:
-            std::option::Option<crate::model::LinkSharingConfiguration>,
+        pub(crate) link_sharing_configuration: std::option::Option<crate::model::LinkSharingConfiguration>,
     }
     impl Builder {
         /// <p>The ID for the dashboard.</p>
@@ -9323,8 +9241,7 @@ pub mod describe_dashboard_permissions_output {
         }
         /// <p>The ID for the dashboard.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
         pub fn dashboard_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9332,12 +9249,8 @@ pub mod describe_dashboard_permissions_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-        pub fn set_dashboard_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_arn = input;
-            self
+        pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_arn = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -9346,17 +9259,13 @@ pub mod describe_dashboard_permissions_output {
         /// <p>A structure that contains the permissions for the dashboard.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>A structure that contains the permissions for the dashboard.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -9365,8 +9274,7 @@ pub mod describe_dashboard_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9375,37 +9283,38 @@ pub mod describe_dashboard_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-        pub fn link_sharing_configuration(
-            mut self,
-            input: crate::model::LinkSharingConfiguration,
-        ) -> Self {
+        pub fn link_sharing_configuration(mut self, input: crate::model::LinkSharingConfiguration) -> Self {
             self.link_sharing_configuration = Some(input);
             self
         }
         /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-        pub fn set_link_sharing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LinkSharingConfiguration>,
-        ) -> Self {
-            self.link_sharing_configuration = input;
-            self
+        pub fn set_link_sharing_configuration(mut self, input: std::option::Option<crate::model::LinkSharingConfiguration>) -> Self {
+            self.link_sharing_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDashboardPermissionsOutput`](crate::output::DescribeDashboardPermissionsOutput).
         pub fn build(self) -> crate::output::DescribeDashboardPermissionsOutput {
             crate::output::DescribeDashboardPermissionsOutput {
-                dashboard_id: self.dashboard_id,
-                dashboard_arn: self.dashboard_arn,
-                permissions: self.permissions,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
-                link_sharing_configuration: self.link_sharing_configuration,
+                dashboard_id: self.dashboard_id
+                ,
+                dashboard_arn: self.dashboard_arn
+                ,
+                permissions: self.permissions
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
+                link_sharing_configuration: self.link_sharing_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDashboardPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardPermissionsOutput`](crate::output::DescribeDashboardPermissionsOutput).
@@ -9417,7 +9326,7 @@ impl DescribeDashboardPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDashboardDefinitionOutput {
+pub struct DescribeDashboardDefinitionOutput  {
     /// <p>The ID of the dashboard described.</p>
     #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -9427,22 +9336,22 @@ pub struct DescribeDashboardDefinitionOutput {
     /// <p>The display name of the dashboard.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Status associated with the dashboard version.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the dashboard version.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The ARN of the theme of the dashboard.</p>
     #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
-    /// <p>The definition of a dashboard.</p>
+    /// <p>The definition of a dashboard.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::model::DashboardVersionDefinition>,
@@ -9455,37 +9364,37 @@ pub struct DescribeDashboardDefinitionOutput {
 }
 impl DescribeDashboardDefinitionOutput {
     /// <p>The ID of the dashboard described.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>Errors associated with this dashboard version.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::DashboardError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::DashboardError]> {
         self.errors.as_deref()
     }
     /// <p>The display name of the dashboard.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>Status associated with the dashboard version.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the dashboard version.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
-    pub fn resource_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn resource_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>The ARN of the theme of the dashboard.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
-    /// <p>The definition of a dashboard.</p>
+    /// <p>The definition of a dashboard.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::DashboardVersionDefinition> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::DashboardVersionDefinition> {
         self.definition.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -9493,13 +9402,13 @@ impl DescribeDashboardDefinitionOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput).
 pub mod describe_dashboard_definition_output {
-
+    
     /// A builder for [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9520,8 +9429,7 @@ pub mod describe_dashboard_definition_output {
         }
         /// <p>The ID of the dashboard described.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -9530,17 +9438,13 @@ pub mod describe_dashboard_definition_output {
         /// <p>Errors associated with this dashboard version.</p>
         pub fn errors(mut self, input: crate::model::DashboardError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Errors associated with this dashboard version.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DashboardError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::DashboardError>>) -> Self {
+            self.errors = input; self
         }
         /// <p>The display name of the dashboard.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9549,39 +9453,34 @@ pub mod describe_dashboard_definition_output {
         }
         /// <p>The display name of the dashboard.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>Status associated with the dashboard version.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// <p>Status associated with the dashboard version.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+        /// <li> <p> <code>DELETED</code> </p> </li> 
         /// </ul>
         pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
             self.resource_status = Some(input);
             self
         }
-        /// <p>Status associated with the dashboard version.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// <p>Status associated with the dashboard version.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+        /// <li> <p> <code>DELETED</code> </p> </li> 
         /// </ul>
-        pub fn set_resource_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.resource_status = input;
-            self
+        pub fn set_resource_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.resource_status = input; self
         }
         /// <p>The ARN of the theme of the dashboard.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9590,23 +9489,18 @@ pub mod describe_dashboard_definition_output {
         }
         /// <p>The ARN of the theme of the dashboard.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_arn = input;
-            self
+            self.theme_arn = input; self
         }
-        /// <p>The definition of a dashboard.</p>
+        /// <p>The definition of a dashboard.</p> 
         /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
         pub fn definition(mut self, input: crate::model::DashboardVersionDefinition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p>The definition of a dashboard.</p>
+        /// <p>The definition of a dashboard.</p> 
         /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::DashboardVersionDefinition>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::DashboardVersionDefinition>) -> Self {
+            self.definition = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -9615,8 +9509,7 @@ pub mod describe_dashboard_definition_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9625,23 +9518,33 @@ pub mod describe_dashboard_definition_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput).
         pub fn build(self) -> crate::output::DescribeDashboardDefinitionOutput {
             crate::output::DescribeDashboardDefinitionOutput {
-                dashboard_id: self.dashboard_id,
-                errors: self.errors,
-                name: self.name,
-                resource_status: self.resource_status,
-                theme_arn: self.theme_arn,
-                definition: self.definition,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                dashboard_id: self.dashboard_id
+                ,
+                errors: self.errors
+                ,
+                name: self.name
+                ,
+                resource_status: self.resource_status
+                ,
+                theme_arn: self.theme_arn
+                ,
+                definition: self.definition
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDashboardDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardDefinitionOutput`](crate::output::DescribeDashboardDefinitionOutput).
@@ -9653,7 +9556,7 @@ impl DescribeDashboardDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDashboardOutput {
+pub struct DescribeDashboardOutput  {
     /// <p>Information about the dashboard.</p>
     #[doc(hidden)]
     pub dashboard: std::option::Option<crate::model::Dashboard>,
@@ -9666,7 +9569,7 @@ pub struct DescribeDashboardOutput {
 }
 impl DescribeDashboardOutput {
     /// <p>Information about the dashboard.</p>
-    pub fn dashboard(&self) -> std::option::Option<&crate::model::Dashboard> {
+    pub fn dashboard(&self) -> std::option::Option<& crate::model::Dashboard> {
         self.dashboard.as_ref()
     }
     /// <p>The HTTP status of this request.</p>
@@ -9674,13 +9577,13 @@ impl DescribeDashboardOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput).
 pub mod describe_dashboard_output {
-
+    
     /// A builder for [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9695,12 +9598,8 @@ pub mod describe_dashboard_output {
             self
         }
         /// <p>Information about the dashboard.</p>
-        pub fn set_dashboard(
-            mut self,
-            input: std::option::Option<crate::model::Dashboard>,
-        ) -> Self {
-            self.dashboard = input;
-            self
+        pub fn set_dashboard(mut self, input: std::option::Option<crate::model::Dashboard>) -> Self {
+            self.dashboard = input; self
         }
         /// <p>The HTTP status of this request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -9709,8 +9608,7 @@ pub mod describe_dashboard_output {
         }
         /// <p>The HTTP status of this request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9719,18 +9617,23 @@ pub mod describe_dashboard_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput).
         pub fn build(self) -> crate::output::DescribeDashboardOutput {
             crate::output::DescribeDashboardOutput {
-                dashboard: self.dashboard,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                dashboard: self.dashboard
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDashboardOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput).
@@ -9742,7 +9645,7 @@ impl DescribeDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnalysisPermissionsOutput {
+pub struct DescribeAnalysisPermissionsOutput  {
     /// <p>The ID of the analysis whose permissions you're describing.</p>
     #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
@@ -9761,15 +9664,15 @@ pub struct DescribeAnalysisPermissionsOutput {
 }
 impl DescribeAnalysisPermissionsOutput {
     /// <p>The ID of the analysis whose permissions you're describing.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
-    pub fn analysis_arn(&self) -> std::option::Option<&str> {
+    pub fn analysis_arn(&self) -> std::option::Option<& str> {
         self.analysis_arn.as_deref()
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -9777,20 +9680,19 @@ impl DescribeAnalysisPermissionsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeAnalysisPermissionsOutput`](crate::output::DescribeAnalysisPermissionsOutput).
 pub mod describe_analysis_permissions_output {
-
+    
     /// A builder for [`DescribeAnalysisPermissionsOutput`](crate::output::DescribeAnalysisPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
         pub(crate) analysis_arn: std::option::Option<std::string::String>,
-        pub(crate) permissions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
@@ -9802,8 +9704,7 @@ pub mod describe_analysis_permissions_output {
         }
         /// <p>The ID of the analysis whose permissions you're describing.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_id = input;
-            self
+            self.analysis_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
         pub fn analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9812,8 +9713,7 @@ pub mod describe_analysis_permissions_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
         pub fn set_analysis_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_arn = input;
-            self
+            self.analysis_arn = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -9822,17 +9722,13 @@ pub mod describe_analysis_permissions_output {
         /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
         pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -9841,8 +9737,7 @@ pub mod describe_analysis_permissions_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9851,20 +9746,27 @@ pub mod describe_analysis_permissions_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAnalysisPermissionsOutput`](crate::output::DescribeAnalysisPermissionsOutput).
         pub fn build(self) -> crate::output::DescribeAnalysisPermissionsOutput {
             crate::output::DescribeAnalysisPermissionsOutput {
-                analysis_id: self.analysis_id,
-                analysis_arn: self.analysis_arn,
-                permissions: self.permissions,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                analysis_id: self.analysis_id
+                ,
+                analysis_arn: self.analysis_arn
+                ,
+                permissions: self.permissions
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAnalysisPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisPermissionsOutput`](crate::output::DescribeAnalysisPermissionsOutput).
@@ -9876,7 +9778,7 @@ impl DescribeAnalysisPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnalysisDefinitionOutput {
+pub struct DescribeAnalysisDefinitionOutput  {
     /// <p>The ID of the analysis described.</p>
     #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
@@ -9886,22 +9788,22 @@ pub struct DescribeAnalysisDefinitionOutput {
     /// <p>Errors associated with the analysis.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::AnalysisError>>,
-    /// <p>Status associated with the analysis.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the analysis.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The ARN of the theme of the analysis.</p>
     #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
-    /// <p>The definition of an analysis.</p>
+    /// <p>The definition of an analysis.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::model::AnalysisDefinition>,
@@ -9914,37 +9816,37 @@ pub struct DescribeAnalysisDefinitionOutput {
 }
 impl DescribeAnalysisDefinitionOutput {
     /// <p>The ID of the analysis described.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>The descriptive name of the analysis.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Errors associated with the analysis.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::AnalysisError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::AnalysisError]> {
         self.errors.as_deref()
     }
-    /// <p>Status associated with the analysis.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the analysis.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
-    pub fn resource_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn resource_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>The ARN of the theme of the analysis.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
-    /// <p>The definition of an analysis.</p>
+    /// <p>The definition of an analysis.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::AnalysisDefinition> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::AnalysisDefinition> {
         self.definition.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -9952,13 +9854,13 @@ impl DescribeAnalysisDefinitionOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput).
 pub mod describe_analysis_definition_output {
-
+    
     /// A builder for [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9979,8 +9881,7 @@ pub mod describe_analysis_definition_output {
         }
         /// <p>The ID of the analysis described.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_id = input;
-            self
+            self.analysis_id = input; self
         }
         /// <p>The descriptive name of the analysis.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9989,8 +9890,7 @@ pub mod describe_analysis_definition_output {
         }
         /// <p>The descriptive name of the analysis.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -9999,48 +9899,40 @@ pub mod describe_analysis_definition_output {
         /// <p>Errors associated with the analysis.</p>
         pub fn errors(mut self, input: crate::model::AnalysisError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Errors associated with the analysis.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisError>>) -> Self {
+            self.errors = input; self
         }
-        /// <p>Status associated with the analysis.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// <p>Status associated with the analysis.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+        /// <li> <p> <code>DELETED</code> </p> </li> 
         /// </ul>
         pub fn resource_status(mut self, input: crate::model::ResourceStatus) -> Self {
             self.resource_status = Some(input);
             self
         }
-        /// <p>Status associated with the analysis.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-        /// <li> <p> <code>DELETED</code> </p> </li>
+        /// <p>Status associated with the analysis.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+        /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+        /// <li> <p> <code>DELETED</code> </p> </li> 
         /// </ul>
-        pub fn set_resource_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.resource_status = input;
-            self
+        pub fn set_resource_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.resource_status = input; self
         }
         /// <p>The ARN of the theme of the analysis.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10049,23 +9941,18 @@ pub mod describe_analysis_definition_output {
         }
         /// <p>The ARN of the theme of the analysis.</p>
         pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_arn = input;
-            self
+            self.theme_arn = input; self
         }
-        /// <p>The definition of an analysis.</p>
+        /// <p>The definition of an analysis.</p> 
         /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
         pub fn definition(mut self, input: crate::model::AnalysisDefinition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p>The definition of an analysis.</p>
+        /// <p>The definition of an analysis.</p> 
         /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisDefinition>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::AnalysisDefinition>) -> Self {
+            self.definition = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10074,8 +9961,7 @@ pub mod describe_analysis_definition_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10084,23 +9970,33 @@ pub mod describe_analysis_definition_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput).
         pub fn build(self) -> crate::output::DescribeAnalysisDefinitionOutput {
             crate::output::DescribeAnalysisDefinitionOutput {
-                analysis_id: self.analysis_id,
-                name: self.name,
-                errors: self.errors,
-                resource_status: self.resource_status,
-                theme_arn: self.theme_arn,
-                definition: self.definition,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                analysis_id: self.analysis_id
+                ,
+                name: self.name
+                ,
+                errors: self.errors
+                ,
+                resource_status: self.resource_status
+                ,
+                theme_arn: self.theme_arn
+                ,
+                definition: self.definition
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAnalysisDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisDefinitionOutput`](crate::output::DescribeAnalysisDefinitionOutput).
@@ -10112,7 +10008,7 @@ impl DescribeAnalysisDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnalysisOutput {
+pub struct DescribeAnalysisOutput  {
     /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
     #[doc(hidden)]
     pub analysis: std::option::Option<crate::model::Analysis>,
@@ -10125,7 +10021,7 @@ pub struct DescribeAnalysisOutput {
 }
 impl DescribeAnalysisOutput {
     /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
-    pub fn analysis(&self) -> std::option::Option<&crate::model::Analysis> {
+    pub fn analysis(&self) -> std::option::Option<& crate::model::Analysis> {
         self.analysis.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -10133,13 +10029,13 @@ impl DescribeAnalysisOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeAnalysisOutput`](crate::output::DescribeAnalysisOutput).
 pub mod describe_analysis_output {
-
+    
     /// A builder for [`DescribeAnalysisOutput`](crate::output::DescribeAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10155,8 +10051,7 @@ pub mod describe_analysis_output {
         }
         /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
         pub fn set_analysis(mut self, input: std::option::Option<crate::model::Analysis>) -> Self {
-            self.analysis = input;
-            self
+            self.analysis = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10165,8 +10060,7 @@ pub mod describe_analysis_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10175,18 +10069,23 @@ pub mod describe_analysis_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAnalysisOutput`](crate::output::DescribeAnalysisOutput).
         pub fn build(self) -> crate::output::DescribeAnalysisOutput {
             crate::output::DescribeAnalysisOutput {
-                analysis: self.analysis,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                analysis: self.analysis
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisOutput`](crate::output::DescribeAnalysisOutput).
@@ -10198,14 +10097,14 @@ impl DescribeAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountSubscriptionOutput {
-    /// <p>A structure that contains the following elements:</p>
-    /// <ul>
-    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
-    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
-    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
-    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
-    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+pub struct DescribeAccountSubscriptionOutput  {
+    /// <p>A structure that contains the following elements:</p> 
+    /// <ul> 
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li> 
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li> 
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li> 
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li> 
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub account_info: std::option::Option<crate::model::AccountInfo>,
@@ -10217,15 +10116,15 @@ pub struct DescribeAccountSubscriptionOutput {
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccountSubscriptionOutput {
-    /// <p>A structure that contains the following elements:</p>
-    /// <ul>
-    /// <li> <p>Your Amazon QuickSight account name.</p> </li>
-    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
-    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
-    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
-    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+    /// <p>A structure that contains the following elements:</p> 
+    /// <ul> 
+    /// <li> <p>Your Amazon QuickSight account name.</p> </li> 
+    /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li> 
+    /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li> 
+    /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li> 
+    /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li> 
     /// </ul>
-    pub fn account_info(&self) -> std::option::Option<&crate::model::AccountInfo> {
+    pub fn account_info(&self) -> std::option::Option<& crate::model::AccountInfo> {
         self.account_info.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -10233,13 +10132,13 @@ impl DescribeAccountSubscriptionOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput).
 pub mod describe_account_subscription_output {
-
+    
     /// A builder for [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10248,32 +10147,28 @@ pub mod describe_account_subscription_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A structure that contains the following elements:</p>
-        /// <ul>
-        /// <li> <p>Your Amazon QuickSight account name.</p> </li>
-        /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
-        /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
-        /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
-        /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+        /// <p>A structure that contains the following elements:</p> 
+        /// <ul> 
+        /// <li> <p>Your Amazon QuickSight account name.</p> </li> 
+        /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li> 
+        /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li> 
+        /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li> 
+        /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li> 
         /// </ul>
         pub fn account_info(mut self, input: crate::model::AccountInfo) -> Self {
             self.account_info = Some(input);
             self
         }
-        /// <p>A structure that contains the following elements:</p>
-        /// <ul>
-        /// <li> <p>Your Amazon QuickSight account name.</p> </li>
-        /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li>
-        /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li>
-        /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
-        /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
+        /// <p>A structure that contains the following elements:</p> 
+        /// <ul> 
+        /// <li> <p>Your Amazon QuickSight account name.</p> </li> 
+        /// <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li> 
+        /// <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li> 
+        /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li> 
+        /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li> 
         /// </ul>
-        pub fn set_account_info(
-            mut self,
-            input: std::option::Option<crate::model::AccountInfo>,
-        ) -> Self {
-            self.account_info = input;
-            self
+        pub fn set_account_info(mut self, input: std::option::Option<crate::model::AccountInfo>) -> Self {
+            self.account_info = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10282,8 +10177,7 @@ pub mod describe_account_subscription_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10292,18 +10186,23 @@ pub mod describe_account_subscription_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput).
         pub fn build(self) -> crate::output::DescribeAccountSubscriptionOutput {
             crate::output::DescribeAccountSubscriptionOutput {
-                account_info: self.account_info,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                account_info: self.account_info
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountSubscriptionOutput`](crate::output::DescribeAccountSubscriptionOutput).
@@ -10315,8 +10214,8 @@ impl DescribeAccountSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountSettingsOutput {
-    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
+pub struct DescribeAccountSettingsOutput  {
+    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p> 
     /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
@@ -10328,13 +10227,13 @@ pub struct DescribeAccountSettingsOutput {
     pub status: i32,
 }
 impl DescribeAccountSettingsOutput {
-    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
+    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p> 
     /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
-    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+    pub fn account_settings(&self) -> std::option::Option<& crate::model::AccountSettings> {
         self.account_settings.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -10344,7 +10243,7 @@ impl DescribeAccountSettingsOutput {
 }
 /// See [`DescribeAccountSettingsOutput`](crate::output::DescribeAccountSettingsOutput).
 pub mod describe_account_settings_output {
-
+    
     /// A builder for [`DescribeAccountSettingsOutput`](crate::output::DescribeAccountSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10353,20 +10252,16 @@ pub mod describe_account_settings_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
+        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p> 
         /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
         pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
             self.account_settings = Some(input);
             self
         }
-        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p>
+        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. </p> 
         /// <p>In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
-        pub fn set_account_settings(
-            mut self,
-            input: std::option::Option<crate::model::AccountSettings>,
-        ) -> Self {
-            self.account_settings = input;
-            self
+        pub fn set_account_settings(mut self, input: std::option::Option<crate::model::AccountSettings>) -> Self {
+            self.account_settings = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10375,8 +10270,7 @@ pub mod describe_account_settings_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10385,18 +10279,23 @@ pub mod describe_account_settings_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountSettingsOutput`](crate::output::DescribeAccountSettingsOutput).
         pub fn build(self) -> crate::output::DescribeAccountSettingsOutput {
             crate::output::DescribeAccountSettingsOutput {
-                account_settings: self.account_settings,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                account_settings: self.account_settings
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountSettingsOutput`](crate::output::DescribeAccountSettingsOutput).
@@ -10408,7 +10307,7 @@ impl DescribeAccountSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountCustomizationOutput {
+pub struct DescribeAccountCustomizationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -10430,25 +10329,23 @@ pub struct DescribeAccountCustomizationOutput {
 }
 impl DescribeAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that you're describing.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon QuickSight namespace that you're describing. </p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region. </p>
-    pub fn account_customization(
-        &self,
-    ) -> std::option::Option<&crate::model::AccountCustomization> {
+    pub fn account_customization(&self) -> std::option::Option<& crate::model::AccountCustomization> {
         self.account_customization.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -10458,7 +10355,7 @@ impl DescribeAccountCustomizationOutput {
 }
 /// See [`DescribeAccountCustomizationOutput`](crate::output::DescribeAccountCustomizationOutput).
 pub mod describe_account_customization_output {
-
+    
     /// A builder for [`DescribeAccountCustomizationOutput`](crate::output::DescribeAccountCustomizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10477,8 +10374,7 @@ pub mod describe_account_customization_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID for the Amazon Web Services account that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10486,12 +10382,8 @@ pub mod describe_account_customization_output {
             self
         }
         /// <p>The ID for the Amazon Web Services account that you're describing.</p>
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
+        pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_id = input; self
         }
         /// <p>The Amazon QuickSight namespace that you're describing. </p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10500,8 +10392,7 @@ pub mod describe_account_customization_output {
         }
         /// <p>The Amazon QuickSight namespace that you're describing. </p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
@@ -10509,12 +10400,8 @@ pub mod describe_account_customization_output {
             self
         }
         /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region. </p>
-        pub fn set_account_customization(
-            mut self,
-            input: std::option::Option<crate::model::AccountCustomization>,
-        ) -> Self {
-            self.account_customization = input;
-            self
+        pub fn set_account_customization(mut self, input: std::option::Option<crate::model::AccountCustomization>) -> Self {
+            self.account_customization = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10523,8 +10410,7 @@ pub mod describe_account_customization_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10533,21 +10419,29 @@ pub mod describe_account_customization_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountCustomizationOutput`](crate::output::DescribeAccountCustomizationOutput).
         pub fn build(self) -> crate::output::DescribeAccountCustomizationOutput {
             crate::output::DescribeAccountCustomizationOutput {
-                arn: self.arn,
-                aws_account_id: self.aws_account_id,
-                namespace: self.namespace,
-                account_customization: self.account_customization,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+                account_customization: self.account_customization
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountCustomizationOutput`](crate::output::DescribeAccountCustomizationOutput).
@@ -10559,7 +10453,7 @@ impl DescribeAccountCustomizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserByPrincipalIdOutput {
+pub struct DeleteUserByPrincipalIdOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -10569,7 +10463,7 @@ pub struct DeleteUserByPrincipalIdOutput {
 }
 impl DeleteUserByPrincipalIdOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -10579,7 +10473,7 @@ impl DeleteUserByPrincipalIdOutput {
 }
 /// See [`DeleteUserByPrincipalIdOutput`](crate::output::DeleteUserByPrincipalIdOutput).
 pub mod delete_user_by_principal_id_output {
-
+    
     /// A builder for [`DeleteUserByPrincipalIdOutput`](crate::output::DeleteUserByPrincipalIdOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10594,8 +10488,7 @@ pub mod delete_user_by_principal_id_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10604,17 +10497,21 @@ pub mod delete_user_by_principal_id_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteUserByPrincipalIdOutput`](crate::output::DeleteUserByPrincipalIdOutput).
         pub fn build(self) -> crate::output::DeleteUserByPrincipalIdOutput {
             crate::output::DeleteUserByPrincipalIdOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteUserByPrincipalIdOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserByPrincipalIdOutput`](crate::output::DeleteUserByPrincipalIdOutput).
@@ -10626,7 +10523,7 @@ impl DeleteUserByPrincipalIdOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserOutput {
+pub struct DeleteUserOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -10636,7 +10533,7 @@ pub struct DeleteUserOutput {
 }
 impl DeleteUserOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -10646,7 +10543,7 @@ impl DeleteUserOutput {
 }
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
-
+    
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10661,8 +10558,7 @@ pub mod delete_user_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10671,17 +10567,21 @@ pub mod delete_user_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
         pub fn build(self) -> crate::output::DeleteUserOutput {
             crate::output::DeleteUserOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteUserOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -10693,7 +10593,7 @@ impl DeleteUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThemeAliasOutput {
+pub struct DeleteThemeAliasOutput  {
     /// <p>The name for the theme alias.</p>
     #[doc(hidden)]
     pub alias_name: std::option::Option<std::string::String>,
@@ -10712,15 +10612,15 @@ pub struct DeleteThemeAliasOutput {
 }
 impl DeleteThemeAliasOutput {
     /// <p>The name for the theme alias.</p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the theme resource using the deleted alias.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -10728,13 +10628,13 @@ impl DeleteThemeAliasOutput {
         self.status
     }
     /// <p>An ID for the theme associated with the deletion.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
 }
 /// See [`DeleteThemeAliasOutput`](crate::output::DeleteThemeAliasOutput).
 pub mod delete_theme_alias_output {
-
+    
     /// A builder for [`DeleteThemeAliasOutput`](crate::output::DeleteThemeAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10752,8 +10652,7 @@ pub mod delete_theme_alias_output {
         }
         /// <p>The name for the theme alias.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias_name = input;
-            self
+            self.alias_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the theme resource using the deleted alias.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10762,8 +10661,7 @@ pub mod delete_theme_alias_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme resource using the deleted alias.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10772,8 +10670,7 @@ pub mod delete_theme_alias_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10782,8 +10679,7 @@ pub mod delete_theme_alias_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>An ID for the theme associated with the deletion.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10792,20 +10688,27 @@ pub mod delete_theme_alias_output {
         }
         /// <p>An ID for the theme associated with the deletion.</p>
         pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_id = input;
-            self
+            self.theme_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteThemeAliasOutput`](crate::output::DeleteThemeAliasOutput).
         pub fn build(self) -> crate::output::DeleteThemeAliasOutput {
             crate::output::DeleteThemeAliasOutput {
-                alias_name: self.alias_name,
-                arn: self.arn,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
-                theme_id: self.theme_id,
+                alias_name: self.alias_name
+                ,
+                arn: self.arn
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                theme_id: self.theme_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteThemeAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThemeAliasOutput`](crate::output::DeleteThemeAliasOutput).
@@ -10817,7 +10720,7 @@ impl DeleteThemeAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThemeOutput {
+pub struct DeleteThemeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -10833,11 +10736,11 @@ pub struct DeleteThemeOutput {
 }
 impl DeleteThemeOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -10845,13 +10748,13 @@ impl DeleteThemeOutput {
         self.status
     }
     /// <p>An ID for the theme.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
 }
 /// See [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
 pub mod delete_theme_output {
-
+    
     /// A builder for [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10868,8 +10771,7 @@ pub mod delete_theme_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10878,8 +10780,7 @@ pub mod delete_theme_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -10888,8 +10789,7 @@ pub mod delete_theme_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>An ID for the theme.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10898,19 +10798,25 @@ pub mod delete_theme_output {
         }
         /// <p>An ID for the theme.</p>
         pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_id = input;
-            self
+            self.theme_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
         pub fn build(self) -> crate::output::DeleteThemeOutput {
             crate::output::DeleteThemeOutput {
-                arn: self.arn,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
-                theme_id: self.theme_id,
+                arn: self.arn
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                theme_id: self.theme_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteThemeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
@@ -10922,7 +10828,7 @@ impl DeleteThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTemplateAliasOutput {
+pub struct DeleteTemplateAliasOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -10945,25 +10851,25 @@ impl DeleteTemplateAliasOutput {
         self.status
     }
     /// <p>An ID for the template associated with the deletion.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name for the template alias.</p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DeleteTemplateAliasOutput`](crate::output::DeleteTemplateAliasOutput).
 pub mod delete_template_alias_output {
-
+    
     /// A builder for [`DeleteTemplateAliasOutput`](crate::output::DeleteTemplateAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10981,8 +10887,7 @@ pub mod delete_template_alias_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>An ID for the template associated with the deletion.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10991,8 +10896,7 @@ pub mod delete_template_alias_output {
         }
         /// <p>An ID for the template associated with the deletion.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The name for the template alias.</p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11001,8 +10905,7 @@ pub mod delete_template_alias_output {
         }
         /// <p>The name for the template alias.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias_name = input;
-            self
+            self.alias_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11011,8 +10914,7 @@ pub mod delete_template_alias_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11021,20 +10923,27 @@ pub mod delete_template_alias_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTemplateAliasOutput`](crate::output::DeleteTemplateAliasOutput).
         pub fn build(self) -> crate::output::DeleteTemplateAliasOutput {
             crate::output::DeleteTemplateAliasOutput {
-                status: self.status.unwrap_or_default(),
-                template_id: self.template_id,
-                alias_name: self.alias_name,
-                arn: self.arn,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                template_id: self.template_id
+                ,
+                alias_name: self.alias_name
+                ,
+                arn: self.arn
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteTemplateAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateAliasOutput`](crate::output::DeleteTemplateAliasOutput).
@@ -11046,7 +10955,7 @@ impl DeleteTemplateAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTemplateOutput {
+pub struct DeleteTemplateOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -11062,15 +10971,15 @@ pub struct DeleteTemplateOutput {
 }
 impl DeleteTemplateOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An ID for the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -11080,7 +10989,7 @@ impl DeleteTemplateOutput {
 }
 /// See [`DeleteTemplateOutput`](crate::output::DeleteTemplateOutput).
 pub mod delete_template_output {
-
+    
     /// A builder for [`DeleteTemplateOutput`](crate::output::DeleteTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11097,8 +11006,7 @@ pub mod delete_template_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11107,8 +11015,7 @@ pub mod delete_template_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>An ID for the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11117,8 +11024,7 @@ pub mod delete_template_output {
         }
         /// <p>An ID for the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -11127,19 +11033,25 @@ pub mod delete_template_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTemplateOutput`](crate::output::DeleteTemplateOutput).
         pub fn build(self) -> crate::output::DeleteTemplateOutput {
             crate::output::DeleteTemplateOutput {
-                request_id: self.request_id,
-                arn: self.arn,
-                template_id: self.template_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                arn: self.arn
+                ,
+                template_id: self.template_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateOutput`](crate::output::DeleteTemplateOutput).
@@ -11151,7 +11063,7 @@ impl DeleteTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNamespaceOutput {
+pub struct DeleteNamespaceOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -11161,7 +11073,7 @@ pub struct DeleteNamespaceOutput {
 }
 impl DeleteNamespaceOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -11171,7 +11083,7 @@ impl DeleteNamespaceOutput {
 }
 /// See [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
 pub mod delete_namespace_output {
-
+    
     /// A builder for [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11186,8 +11098,7 @@ pub mod delete_namespace_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -11196,17 +11107,21 @@ pub mod delete_namespace_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
         pub fn build(self) -> crate::output::DeleteNamespaceOutput {
             crate::output::DeleteNamespaceOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
@@ -11218,7 +11133,7 @@ impl DeleteNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIamPolicyAssignmentOutput {
+pub struct DeleteIamPolicyAssignmentOutput  {
     /// <p>The name of the assignment. </p>
     #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
@@ -11231,11 +11146,11 @@ pub struct DeleteIamPolicyAssignmentOutput {
 }
 impl DeleteIamPolicyAssignmentOutput {
     /// <p>The name of the assignment. </p>
-    pub fn assignment_name(&self) -> std::option::Option<&str> {
+    pub fn assignment_name(&self) -> std::option::Option<& str> {
         self.assignment_name.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -11245,7 +11160,7 @@ impl DeleteIamPolicyAssignmentOutput {
 }
 /// See [`DeleteIamPolicyAssignmentOutput`](crate::output::DeleteIamPolicyAssignmentOutput).
 pub mod delete_iam_policy_assignment_output {
-
+    
     /// A builder for [`DeleteIamPolicyAssignmentOutput`](crate::output::DeleteIamPolicyAssignmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11260,12 +11175,8 @@ pub mod delete_iam_policy_assignment_output {
             self
         }
         /// <p>The name of the assignment. </p>
-        pub fn set_assignment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assignment_name = input;
-            self
+        pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assignment_name = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11274,8 +11185,7 @@ pub mod delete_iam_policy_assignment_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -11284,18 +11194,23 @@ pub mod delete_iam_policy_assignment_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteIamPolicyAssignmentOutput`](crate::output::DeleteIamPolicyAssignmentOutput).
         pub fn build(self) -> crate::output::DeleteIamPolicyAssignmentOutput {
             crate::output::DeleteIamPolicyAssignmentOutput {
-                assignment_name: self.assignment_name,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                assignment_name: self.assignment_name
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIamPolicyAssignmentOutput`](crate::output::DeleteIamPolicyAssignmentOutput).
@@ -11307,7 +11222,7 @@ impl DeleteIamPolicyAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupMembershipOutput {
+pub struct DeleteGroupMembershipOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -11317,7 +11232,7 @@ pub struct DeleteGroupMembershipOutput {
 }
 impl DeleteGroupMembershipOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -11327,7 +11242,7 @@ impl DeleteGroupMembershipOutput {
 }
 /// See [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput).
 pub mod delete_group_membership_output {
-
+    
     /// A builder for [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11342,8 +11257,7 @@ pub mod delete_group_membership_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -11352,17 +11266,21 @@ pub mod delete_group_membership_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput).
         pub fn build(self) -> crate::output::DeleteGroupMembershipOutput {
             crate::output::DeleteGroupMembershipOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGroupMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput).
@@ -11374,7 +11292,7 @@ impl DeleteGroupMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupOutput {
+pub struct DeleteGroupOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -11384,7 +11302,7 @@ pub struct DeleteGroupOutput {
 }
 impl DeleteGroupOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -11394,7 +11312,7 @@ impl DeleteGroupOutput {
 }
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
 pub mod delete_group_output {
-
+    
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11409,8 +11327,7 @@ pub mod delete_group_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -11419,17 +11336,21 @@ pub mod delete_group_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
         pub fn build(self) -> crate::output::DeleteGroupOutput {
             crate::output::DeleteGroupOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -11441,7 +11362,7 @@ impl DeleteGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFolderMembershipOutput {
+pub struct DeleteFolderMembershipOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -11455,13 +11376,13 @@ impl DeleteFolderMembershipOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DeleteFolderMembershipOutput`](crate::output::DeleteFolderMembershipOutput).
 pub mod delete_folder_membership_output {
-
+    
     /// A builder for [`DeleteFolderMembershipOutput`](crate::output::DeleteFolderMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11476,8 +11397,7 @@ pub mod delete_folder_membership_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11486,17 +11406,21 @@ pub mod delete_folder_membership_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFolderMembershipOutput`](crate::output::DeleteFolderMembershipOutput).
         pub fn build(self) -> crate::output::DeleteFolderMembershipOutput {
             crate::output::DeleteFolderMembershipOutput {
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFolderMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFolderMembershipOutput`](crate::output::DeleteFolderMembershipOutput).
@@ -11508,7 +11432,7 @@ impl DeleteFolderMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFolderOutput {
+pub struct DeleteFolderOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -11528,21 +11452,21 @@ impl DeleteFolderOutput {
         self.status
     }
     /// <p>The Amazon Resource Name of the deleted folder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
 pub mod delete_folder_output {
-
+    
     /// A builder for [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11559,8 +11483,7 @@ pub mod delete_folder_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Resource Name of the deleted folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11569,8 +11492,7 @@ pub mod delete_folder_output {
         }
         /// <p>The Amazon Resource Name of the deleted folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11579,8 +11501,7 @@ pub mod delete_folder_output {
         }
         /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.folder_id = input;
-            self
+            self.folder_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11589,19 +11510,25 @@ pub mod delete_folder_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
         pub fn build(self) -> crate::output::DeleteFolderOutput {
             crate::output::DeleteFolderOutput {
-                status: self.status.unwrap_or_default(),
-                arn: self.arn,
-                folder_id: self.folder_id,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                folder_id: self.folder_id
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFolderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
@@ -11613,7 +11540,7 @@ impl DeleteFolderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataSourceOutput {
+pub struct DeleteDataSourceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data source that you deleted.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -11629,15 +11556,15 @@ pub struct DeleteDataSourceOutput {
 }
 impl DeleteDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source that you deleted.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -11647,7 +11574,7 @@ impl DeleteDataSourceOutput {
 }
 /// See [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
 pub mod delete_data_source_output {
-
+    
     /// A builder for [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11664,8 +11591,7 @@ pub mod delete_data_source_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the data source that you deleted.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11673,12 +11599,8 @@ pub mod delete_data_source_output {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11687,8 +11609,7 @@ pub mod delete_data_source_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -11697,19 +11618,25 @@ pub mod delete_data_source_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
         pub fn build(self) -> crate::output::DeleteDataSourceOutput {
             crate::output::DeleteDataSourceOutput {
-                arn: self.arn,
-                data_source_id: self.data_source_id,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                data_source_id: self.data_source_id
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
@@ -11721,7 +11648,7 @@ impl DeleteDataSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataSetOutput {
+pub struct DeleteDataSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -11737,15 +11664,15 @@ pub struct DeleteDataSetOutput {
 }
 impl DeleteDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -11755,7 +11682,7 @@ impl DeleteDataSetOutput {
 }
 /// See [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
 pub mod delete_data_set_output {
-
+    
     /// A builder for [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11772,8 +11699,7 @@ pub mod delete_data_set_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11782,8 +11708,7 @@ pub mod delete_data_set_output {
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11792,8 +11717,7 @@ pub mod delete_data_set_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -11802,19 +11726,25 @@ pub mod delete_data_set_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
         pub fn build(self) -> crate::output::DeleteDataSetOutput {
             crate::output::DeleteDataSetOutput {
-                arn: self.arn,
-                data_set_id: self.data_set_id,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                data_set_id: self.data_set_id
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDataSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
@@ -11826,7 +11756,7 @@ impl DeleteDataSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDashboardOutput {
+pub struct DeleteDashboardOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -11846,21 +11776,21 @@ impl DeleteDashboardOutput {
         self.status
     }
     /// <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput).
 pub mod delete_dashboard_output {
-
+    
     /// A builder for [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11877,8 +11807,7 @@ pub mod delete_dashboard_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11887,8 +11816,7 @@ pub mod delete_dashboard_output {
         }
         /// <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the dashboard.</p>
         pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11897,8 +11825,7 @@ pub mod delete_dashboard_output {
         }
         /// <p>The ID of the dashboard.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11907,19 +11834,25 @@ pub mod delete_dashboard_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput).
         pub fn build(self) -> crate::output::DeleteDashboardOutput {
             crate::output::DeleteDashboardOutput {
-                status: self.status.unwrap_or_default(),
-                arn: self.arn,
-                dashboard_id: self.dashboard_id,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDashboardOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput).
@@ -11931,7 +11864,7 @@ impl DeleteDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnalysisOutput {
+pub struct DeleteAnalysisOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -11954,25 +11887,25 @@ impl DeleteAnalysisOutput {
         self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the deleted analysis.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
-    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deletion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deletion_time.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`DeleteAnalysisOutput`](crate::output::DeleteAnalysisOutput).
 pub mod delete_analysis_output {
-
+    
     /// A builder for [`DeleteAnalysisOutput`](crate::output::DeleteAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11990,8 +11923,7 @@ pub mod delete_analysis_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12000,8 +11932,7 @@ pub mod delete_analysis_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the deleted analysis.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12010,8 +11941,7 @@ pub mod delete_analysis_output {
         }
         /// <p>The ID of the deleted analysis.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_id = input;
-            self
+            self.analysis_id = input; self
         }
         /// <p>The date and time that the analysis is scheduled to be deleted.</p>
         pub fn deletion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12019,12 +11949,8 @@ pub mod delete_analysis_output {
             self
         }
         /// <p>The date and time that the analysis is scheduled to be deleted.</p>
-        pub fn set_deletion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deletion_time = input;
-            self
+        pub fn set_deletion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deletion_time = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12033,20 +11959,27 @@ pub mod delete_analysis_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAnalysisOutput`](crate::output::DeleteAnalysisOutput).
         pub fn build(self) -> crate::output::DeleteAnalysisOutput {
             crate::output::DeleteAnalysisOutput {
-                status: self.status.unwrap_or_default(),
-                arn: self.arn,
-                analysis_id: self.analysis_id,
-                deletion_time: self.deletion_time,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                analysis_id: self.analysis_id
+                ,
+                deletion_time: self.deletion_time
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnalysisOutput`](crate::output::DeleteAnalysisOutput).
@@ -12058,7 +11991,7 @@ impl DeleteAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountSubscriptionOutput {
+pub struct DeleteAccountSubscriptionOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -12068,7 +12001,7 @@ pub struct DeleteAccountSubscriptionOutput {
 }
 impl DeleteAccountSubscriptionOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -12078,7 +12011,7 @@ impl DeleteAccountSubscriptionOutput {
 }
 /// See [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput).
 pub mod delete_account_subscription_output {
-
+    
     /// A builder for [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12093,8 +12026,7 @@ pub mod delete_account_subscription_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -12103,17 +12035,21 @@ pub mod delete_account_subscription_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteAccountSubscriptionOutput {
             crate::output::DeleteAccountSubscriptionOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAccountSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountSubscriptionOutput`](crate::output::DeleteAccountSubscriptionOutput).
@@ -12125,7 +12061,7 @@ impl DeleteAccountSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountCustomizationOutput {
+pub struct DeleteAccountCustomizationOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -12135,7 +12071,7 @@ pub struct DeleteAccountCustomizationOutput {
 }
 impl DeleteAccountCustomizationOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -12145,7 +12081,7 @@ impl DeleteAccountCustomizationOutput {
 }
 /// See [`DeleteAccountCustomizationOutput`](crate::output::DeleteAccountCustomizationOutput).
 pub mod delete_account_customization_output {
-
+    
     /// A builder for [`DeleteAccountCustomizationOutput`](crate::output::DeleteAccountCustomizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12160,8 +12096,7 @@ pub mod delete_account_customization_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -12170,17 +12105,21 @@ pub mod delete_account_customization_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAccountCustomizationOutput`](crate::output::DeleteAccountCustomizationOutput).
         pub fn build(self) -> crate::output::DeleteAccountCustomizationOutput {
             crate::output::DeleteAccountCustomizationOutput {
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAccountCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountCustomizationOutput`](crate::output::DeleteAccountCustomizationOutput).
@@ -12192,7 +12131,7 @@ impl DeleteAccountCustomizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateThemeAliasOutput {
+pub struct CreateThemeAliasOutput  {
     /// <p>Information about the theme alias.</p>
     #[doc(hidden)]
     pub theme_alias: std::option::Option<crate::model::ThemeAlias>,
@@ -12205,7 +12144,7 @@ pub struct CreateThemeAliasOutput {
 }
 impl CreateThemeAliasOutput {
     /// <p>Information about the theme alias.</p>
-    pub fn theme_alias(&self) -> std::option::Option<&crate::model::ThemeAlias> {
+    pub fn theme_alias(&self) -> std::option::Option<& crate::model::ThemeAlias> {
         self.theme_alias.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -12213,13 +12152,13 @@ impl CreateThemeAliasOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateThemeAliasOutput`](crate::output::CreateThemeAliasOutput).
 pub mod create_theme_alias_output {
-
+    
     /// A builder for [`CreateThemeAliasOutput`](crate::output::CreateThemeAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12234,12 +12173,8 @@ pub mod create_theme_alias_output {
             self
         }
         /// <p>Information about the theme alias.</p>
-        pub fn set_theme_alias(
-            mut self,
-            input: std::option::Option<crate::model::ThemeAlias>,
-        ) -> Self {
-            self.theme_alias = input;
-            self
+        pub fn set_theme_alias(mut self, input: std::option::Option<crate::model::ThemeAlias>) -> Self {
+            self.theme_alias = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -12248,8 +12183,7 @@ pub mod create_theme_alias_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12258,18 +12192,23 @@ pub mod create_theme_alias_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateThemeAliasOutput`](crate::output::CreateThemeAliasOutput).
         pub fn build(self) -> crate::output::CreateThemeAliasOutput {
             crate::output::CreateThemeAliasOutput {
-                theme_alias: self.theme_alias,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                theme_alias: self.theme_alias
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateThemeAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateThemeAliasOutput`](crate::output::CreateThemeAliasOutput).
@@ -12281,7 +12220,7 @@ impl CreateThemeAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateThemeOutput {
+pub struct CreateThemeOutput  {
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12303,19 +12242,19 @@ pub struct CreateThemeOutput {
 }
 impl CreateThemeOutput {
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
-    pub fn version_arn(&self) -> std::option::Option<&str> {
+    pub fn version_arn(&self) -> std::option::Option<& str> {
         self.version_arn.as_deref()
     }
     /// <p>The ID of the theme.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The theme creation status.</p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -12323,13 +12262,13 @@ impl CreateThemeOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateThemeOutput`](crate::output::CreateThemeOutput).
 pub mod create_theme_output {
-
+    
     /// A builder for [`CreateThemeOutput`](crate::output::CreateThemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12348,8 +12287,7 @@ pub mod create_theme_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the theme.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
         pub fn version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12358,8 +12296,7 @@ pub mod create_theme_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
         pub fn set_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_arn = input;
-            self
+            self.version_arn = input; self
         }
         /// <p>The ID of the theme.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12368,8 +12305,7 @@ pub mod create_theme_output {
         }
         /// <p>The ID of the theme.</p>
         pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.theme_id = input;
-            self
+            self.theme_id = input; self
         }
         /// <p>The theme creation status.</p>
         pub fn creation_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -12377,12 +12313,8 @@ pub mod create_theme_output {
             self
         }
         /// <p>The theme creation status.</p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -12391,8 +12323,7 @@ pub mod create_theme_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12401,21 +12332,29 @@ pub mod create_theme_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateThemeOutput`](crate::output::CreateThemeOutput).
         pub fn build(self) -> crate::output::CreateThemeOutput {
             crate::output::CreateThemeOutput {
-                arn: self.arn,
-                version_arn: self.version_arn,
-                theme_id: self.theme_id,
-                creation_status: self.creation_status,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                arn: self.arn
+                ,
+                version_arn: self.version_arn
+                ,
+                theme_id: self.theme_id
+                ,
+                creation_status: self.creation_status
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateThemeOutput {
     /// Creates a new builder-style object to manufacture [`CreateThemeOutput`](crate::output::CreateThemeOutput).
@@ -12427,7 +12366,7 @@ impl CreateThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTemplateAliasOutput {
+pub struct CreateTemplateAliasOutput  {
     /// <p>Information about the template alias.</p>
     #[doc(hidden)]
     pub template_alias: std::option::Option<crate::model::TemplateAlias>,
@@ -12440,7 +12379,7 @@ pub struct CreateTemplateAliasOutput {
 }
 impl CreateTemplateAliasOutput {
     /// <p>Information about the template alias.</p>
-    pub fn template_alias(&self) -> std::option::Option<&crate::model::TemplateAlias> {
+    pub fn template_alias(&self) -> std::option::Option<& crate::model::TemplateAlias> {
         self.template_alias.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -12448,13 +12387,13 @@ impl CreateTemplateAliasOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateTemplateAliasOutput`](crate::output::CreateTemplateAliasOutput).
 pub mod create_template_alias_output {
-
+    
     /// A builder for [`CreateTemplateAliasOutput`](crate::output::CreateTemplateAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12469,12 +12408,8 @@ pub mod create_template_alias_output {
             self
         }
         /// <p>Information about the template alias.</p>
-        pub fn set_template_alias(
-            mut self,
-            input: std::option::Option<crate::model::TemplateAlias>,
-        ) -> Self {
-            self.template_alias = input;
-            self
+        pub fn set_template_alias(mut self, input: std::option::Option<crate::model::TemplateAlias>) -> Self {
+            self.template_alias = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -12483,8 +12418,7 @@ pub mod create_template_alias_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12493,18 +12427,23 @@ pub mod create_template_alias_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateTemplateAliasOutput`](crate::output::CreateTemplateAliasOutput).
         pub fn build(self) -> crate::output::CreateTemplateAliasOutput {
             crate::output::CreateTemplateAliasOutput {
-                template_alias: self.template_alias,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                template_alias: self.template_alias
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTemplateAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateAliasOutput`](crate::output::CreateTemplateAliasOutput).
@@ -12516,7 +12455,7 @@ impl CreateTemplateAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTemplateOutput {
+pub struct CreateTemplateOutput  {
     /// <p>The ARN for the template.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12538,19 +12477,19 @@ pub struct CreateTemplateOutput {
 }
 impl CreateTemplateOutput {
     /// <p>The ARN for the template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN for the template, including the version information of the first version.</p>
-    pub fn version_arn(&self) -> std::option::Option<&str> {
+    pub fn version_arn(&self) -> std::option::Option<& str> {
         self.version_arn.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The template creation status.</p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -12558,13 +12497,13 @@ impl CreateTemplateOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
 pub mod create_template_output {
-
+    
     /// A builder for [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12583,8 +12522,7 @@ pub mod create_template_output {
         }
         /// <p>The ARN for the template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN for the template, including the version information of the first version.</p>
         pub fn version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12593,8 +12531,7 @@ pub mod create_template_output {
         }
         /// <p>The ARN for the template, including the version information of the first version.</p>
         pub fn set_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_arn = input;
-            self
+            self.version_arn = input; self
         }
         /// <p>The ID of the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12603,8 +12540,7 @@ pub mod create_template_output {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The template creation status.</p>
         pub fn creation_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -12612,12 +12548,8 @@ pub mod create_template_output {
             self
         }
         /// <p>The template creation status.</p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -12626,8 +12558,7 @@ pub mod create_template_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12636,21 +12567,29 @@ pub mod create_template_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
         pub fn build(self) -> crate::output::CreateTemplateOutput {
             crate::output::CreateTemplateOutput {
-                arn: self.arn,
-                version_arn: self.version_arn,
-                template_id: self.template_id,
-                creation_status: self.creation_status,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                arn: self.arn
+                ,
+                version_arn: self.version_arn
+                ,
+                template_id: self.template_id
+                ,
+                creation_status: self.creation_status
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
@@ -12662,7 +12601,7 @@ impl CreateTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNamespaceOutput {
+pub struct CreateNamespaceOutput  {
     /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12687,27 +12626,27 @@ pub struct CreateNamespaceOutput {
 }
 impl CreateNamespaceOutput {
     /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the new namespace that you created.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
-    pub fn capacity_region(&self) -> std::option::Option<&str> {
+    pub fn capacity_region(&self) -> std::option::Option<& str> {
         self.capacity_region.as_deref()
     }
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::NamespaceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::NamespaceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn identity_store(&self) -> std::option::Option<&crate::model::IdentityStore> {
+    pub fn identity_store(&self) -> std::option::Option<& crate::model::IdentityStore> {
         self.identity_store.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -12717,7 +12656,7 @@ impl CreateNamespaceOutput {
 }
 /// See [`CreateNamespaceOutput`](crate::output::CreateNamespaceOutput).
 pub mod create_namespace_output {
-
+    
     /// A builder for [`CreateNamespaceOutput`](crate::output::CreateNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12737,8 +12676,7 @@ pub mod create_namespace_output {
         }
         /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the new namespace that you created.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12747,8 +12685,7 @@ pub mod create_namespace_output {
         }
         /// <p>The name of the new namespace that you created.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
         pub fn capacity_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12756,12 +12693,8 @@ pub mod create_namespace_output {
             self
         }
         /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
-        pub fn set_capacity_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capacity_region = input;
-            self
+        pub fn set_capacity_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capacity_region = input; self
         }
         /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
         pub fn creation_status(mut self, input: crate::model::NamespaceStatus) -> Self {
@@ -12769,12 +12702,8 @@ pub mod create_namespace_output {
             self
         }
         /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::NamespaceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::NamespaceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
         pub fn identity_store(mut self, input: crate::model::IdentityStore) -> Self {
@@ -12782,12 +12711,8 @@ pub mod create_namespace_output {
             self
         }
         /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-        pub fn set_identity_store(
-            mut self,
-            input: std::option::Option<crate::model::IdentityStore>,
-        ) -> Self {
-            self.identity_store = input;
-            self
+        pub fn set_identity_store(mut self, input: std::option::Option<crate::model::IdentityStore>) -> Self {
+            self.identity_store = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12796,8 +12721,7 @@ pub mod create_namespace_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -12806,22 +12730,31 @@ pub mod create_namespace_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateNamespaceOutput`](crate::output::CreateNamespaceOutput).
         pub fn build(self) -> crate::output::CreateNamespaceOutput {
             crate::output::CreateNamespaceOutput {
-                arn: self.arn,
-                name: self.name,
-                capacity_region: self.capacity_region,
-                creation_status: self.creation_status,
-                identity_store: self.identity_store,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                capacity_region: self.capacity_region
+                ,
+                creation_status: self.creation_status
+                ,
+                identity_store: self.identity_store
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateNamespaceOutput`](crate::output::CreateNamespaceOutput).
@@ -12833,7 +12766,7 @@ impl CreateNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIngestionOutput {
+pub struct CreateIngestionOutput  {
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12852,19 +12785,19 @@ pub struct CreateIngestionOutput {
 }
 impl CreateIngestionOutput {
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An ID for the ingestion.</p>
-    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> std::option::Option<& str> {
         self.ingestion_id.as_deref()
     }
     /// <p>The ingestion status.</p>
-    pub fn ingestion_status(&self) -> std::option::Option<&crate::model::IngestionStatus> {
+    pub fn ingestion_status(&self) -> std::option::Option<& crate::model::IngestionStatus> {
         self.ingestion_status.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -12874,7 +12807,7 @@ impl CreateIngestionOutput {
 }
 /// See [`CreateIngestionOutput`](crate::output::CreateIngestionOutput).
 pub mod create_ingestion_output {
-
+    
     /// A builder for [`CreateIngestionOutput`](crate::output::CreateIngestionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12892,8 +12825,7 @@ pub mod create_ingestion_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>An ID for the ingestion.</p>
         pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12902,8 +12834,7 @@ pub mod create_ingestion_output {
         }
         /// <p>An ID for the ingestion.</p>
         pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ingestion_id = input;
-            self
+            self.ingestion_id = input; self
         }
         /// <p>The ingestion status.</p>
         pub fn ingestion_status(mut self, input: crate::model::IngestionStatus) -> Self {
@@ -12911,12 +12842,8 @@ pub mod create_ingestion_output {
             self
         }
         /// <p>The ingestion status.</p>
-        pub fn set_ingestion_status(
-            mut self,
-            input: std::option::Option<crate::model::IngestionStatus>,
-        ) -> Self {
-            self.ingestion_status = input;
-            self
+        pub fn set_ingestion_status(mut self, input: std::option::Option<crate::model::IngestionStatus>) -> Self {
+            self.ingestion_status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12925,8 +12852,7 @@ pub mod create_ingestion_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -12935,20 +12861,27 @@ pub mod create_ingestion_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateIngestionOutput`](crate::output::CreateIngestionOutput).
         pub fn build(self) -> crate::output::CreateIngestionOutput {
             crate::output::CreateIngestionOutput {
-                arn: self.arn,
-                ingestion_id: self.ingestion_id,
-                ingestion_status: self.ingestion_status,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                ingestion_id: self.ingestion_id
+                ,
+                ingestion_status: self.ingestion_status
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIngestionOutput {
     /// Creates a new builder-style object to manufacture [`CreateIngestionOutput`](crate::output::CreateIngestionOutput).
@@ -12960,18 +12893,18 @@ impl CreateIngestionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIamPolicyAssignmentOutput {
+pub struct CreateIamPolicyAssignmentOutput  {
     /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the assignment.</p>
     #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
-    /// <p>The status of the assignment. Possible values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+    /// <p>The status of the assignment. Possible values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
@@ -12980,9 +12913,7 @@ pub struct CreateIamPolicyAssignmentOutput {
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     #[doc(hidden)]
-    pub identities: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub identities: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -12992,36 +12923,32 @@ pub struct CreateIamPolicyAssignmentOutput {
 }
 impl CreateIamPolicyAssignmentOutput {
     /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
-    pub fn assignment_name(&self) -> std::option::Option<&str> {
+    pub fn assignment_name(&self) -> std::option::Option<& str> {
         self.assignment_name.as_deref()
     }
     /// <p>The ID for the assignment.</p>
-    pub fn assignment_id(&self) -> std::option::Option<&str> {
+    pub fn assignment_id(&self) -> std::option::Option<& str> {
         self.assignment_id.as_deref()
     }
-    /// <p>The status of the assignment. Possible values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+    /// <p>The status of the assignment. Possible values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
     /// </ul>
-    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+    pub fn assignment_status(&self) -> std::option::Option<& crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
     /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-    pub fn identities(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn identities(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.identities.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -13031,7 +12958,7 @@ impl CreateIamPolicyAssignmentOutput {
 }
 /// See [`CreateIamPolicyAssignmentOutput`](crate::output::CreateIamPolicyAssignmentOutput).
 pub mod create_iam_policy_assignment_output {
-
+    
     /// A builder for [`CreateIamPolicyAssignmentOutput`](crate::output::CreateIamPolicyAssignmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13039,9 +12966,7 @@ pub mod create_iam_policy_assignment_output {
         pub(crate) assignment_id: std::option::Option<std::string::String>,
         pub(crate) assignment_status: std::option::Option<crate::model::AssignmentStatus>,
         pub(crate) policy_arn: std::option::Option<std::string::String>,
-        pub(crate) identities: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
+        pub(crate) identities: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
     }
@@ -13052,12 +12977,8 @@ pub mod create_iam_policy_assignment_output {
             self
         }
         /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
-        pub fn set_assignment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assignment_name = input;
-            self
+        pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assignment_name = input; self
         }
         /// <p>The ID for the assignment.</p>
         pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13065,35 +12986,27 @@ pub mod create_iam_policy_assignment_output {
             self
         }
         /// <p>The ID for the assignment.</p>
-        pub fn set_assignment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assignment_id = input;
-            self
+        pub fn set_assignment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assignment_id = input; self
         }
-        /// <p>The status of the assignment. Possible values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+        /// <p>The status of the assignment. Possible values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
         /// </ul>
         pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
             self.assignment_status = Some(input);
             self
         }
-        /// <p>The status of the assignment. Possible values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+        /// <p>The status of the assignment. Possible values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
         /// </ul>
-        pub fn set_assignment_status(
-            mut self,
-            input: std::option::Option<crate::model::AssignmentStatus>,
-        ) -> Self {
-            self.assignment_status = input;
-            self
+        pub fn set_assignment_status(mut self, input: std::option::Option<crate::model::AssignmentStatus>) -> Self {
+            self.assignment_status = input; self
         }
         /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13102,33 +13015,22 @@ pub mod create_iam_policy_assignment_output {
         }
         /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = input;
-            self
+            self.policy_arn = input; self
         }
         /// Adds a key-value pair to `identities`.
         ///
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
         /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-        pub fn identities(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<std::string::String>,
-        ) -> Self {
+        pub fn identities(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.identities = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.identities = Some(hash_map);
+                            self
         }
         /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-        pub fn set_identities(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        ) -> Self {
-            self.identities = input;
-            self
+        pub fn set_identities(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+            self.identities = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13137,8 +13039,7 @@ pub mod create_iam_policy_assignment_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -13147,22 +13048,31 @@ pub mod create_iam_policy_assignment_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateIamPolicyAssignmentOutput`](crate::output::CreateIamPolicyAssignmentOutput).
         pub fn build(self) -> crate::output::CreateIamPolicyAssignmentOutput {
             crate::output::CreateIamPolicyAssignmentOutput {
-                assignment_name: self.assignment_name,
-                assignment_id: self.assignment_id,
-                assignment_status: self.assignment_status,
-                policy_arn: self.policy_arn,
-                identities: self.identities,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                assignment_name: self.assignment_name
+                ,
+                assignment_id: self.assignment_id
+                ,
+                assignment_status: self.assignment_status
+                ,
+                policy_arn: self.policy_arn
+                ,
+                identities: self.identities
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateIamPolicyAssignmentOutput`](crate::output::CreateIamPolicyAssignmentOutput).
@@ -13174,7 +13084,7 @@ impl CreateIamPolicyAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupMembershipOutput {
+pub struct CreateGroupMembershipOutput  {
     /// <p>The group member.</p>
     #[doc(hidden)]
     pub group_member: std::option::Option<crate::model::GroupMember>,
@@ -13187,11 +13097,11 @@ pub struct CreateGroupMembershipOutput {
 }
 impl CreateGroupMembershipOutput {
     /// <p>The group member.</p>
-    pub fn group_member(&self) -> std::option::Option<&crate::model::GroupMember> {
+    pub fn group_member(&self) -> std::option::Option<& crate::model::GroupMember> {
         self.group_member.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -13201,7 +13111,7 @@ impl CreateGroupMembershipOutput {
 }
 /// See [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput).
 pub mod create_group_membership_output {
-
+    
     /// A builder for [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13216,12 +13126,8 @@ pub mod create_group_membership_output {
             self
         }
         /// <p>The group member.</p>
-        pub fn set_group_member(
-            mut self,
-            input: std::option::Option<crate::model::GroupMember>,
-        ) -> Self {
-            self.group_member = input;
-            self
+        pub fn set_group_member(mut self, input: std::option::Option<crate::model::GroupMember>) -> Self {
+            self.group_member = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13230,8 +13136,7 @@ pub mod create_group_membership_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -13240,18 +13145,23 @@ pub mod create_group_membership_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput).
         pub fn build(self) -> crate::output::CreateGroupMembershipOutput {
             crate::output::CreateGroupMembershipOutput {
-                group_member: self.group_member,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group_member: self.group_member
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGroupMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput).
@@ -13263,7 +13173,7 @@ impl CreateGroupMembershipOutput {
 /// <p>The response object for this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupOutput {
+pub struct CreateGroupOutput  {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
@@ -13276,11 +13186,11 @@ pub struct CreateGroupOutput {
 }
 impl CreateGroupOutput {
     /// <p>The name of the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -13290,7 +13200,7 @@ impl CreateGroupOutput {
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
 pub mod create_group_output {
-
+    
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13306,8 +13216,7 @@ pub mod create_group_output {
         }
         /// <p>The name of the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13316,8 +13225,7 @@ pub mod create_group_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -13326,18 +13234,23 @@ pub mod create_group_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput).
         pub fn build(self) -> crate::output::CreateGroupOutput {
             crate::output::CreateGroupOutput {
-                group: self.group,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                group: self.group
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupOutput`](crate::output::CreateGroupOutput).
@@ -13349,7 +13262,7 @@ impl CreateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFolderMembershipOutput {
+pub struct CreateFolderMembershipOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -13366,17 +13279,17 @@ impl CreateFolderMembershipOutput {
         self.status
     }
     /// <p>Information about the member in the folder.</p>
-    pub fn folder_member(&self) -> std::option::Option<&crate::model::FolderMember> {
+    pub fn folder_member(&self) -> std::option::Option<& crate::model::FolderMember> {
         self.folder_member.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateFolderMembershipOutput`](crate::output::CreateFolderMembershipOutput).
 pub mod create_folder_membership_output {
-
+    
     /// A builder for [`CreateFolderMembershipOutput`](crate::output::CreateFolderMembershipOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13392,8 +13305,7 @@ pub mod create_folder_membership_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Information about the member in the folder.</p>
         pub fn folder_member(mut self, input: crate::model::FolderMember) -> Self {
@@ -13401,12 +13313,8 @@ pub mod create_folder_membership_output {
             self
         }
         /// <p>Information about the member in the folder.</p>
-        pub fn set_folder_member(
-            mut self,
-            input: std::option::Option<crate::model::FolderMember>,
-        ) -> Self {
-            self.folder_member = input;
-            self
+        pub fn set_folder_member(mut self, input: std::option::Option<crate::model::FolderMember>) -> Self {
+            self.folder_member = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13415,18 +13323,23 @@ pub mod create_folder_membership_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateFolderMembershipOutput`](crate::output::CreateFolderMembershipOutput).
         pub fn build(self) -> crate::output::CreateFolderMembershipOutput {
             crate::output::CreateFolderMembershipOutput {
-                status: self.status.unwrap_or_default(),
-                folder_member: self.folder_member,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                folder_member: self.folder_member
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFolderMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateFolderMembershipOutput`](crate::output::CreateFolderMembershipOutput).
@@ -13438,7 +13351,7 @@ impl CreateFolderMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFolderOutput {
+pub struct CreateFolderOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -13458,21 +13371,21 @@ impl CreateFolderOutput {
         self.status
     }
     /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The folder ID for the newly created folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The request ID for the newly created folder.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateFolderOutput`](crate::output::CreateFolderOutput).
 pub mod create_folder_output {
-
+    
     /// A builder for [`CreateFolderOutput`](crate::output::CreateFolderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13489,8 +13402,7 @@ pub mod create_folder_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13499,8 +13411,7 @@ pub mod create_folder_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The folder ID for the newly created folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13509,8 +13420,7 @@ pub mod create_folder_output {
         }
         /// <p>The folder ID for the newly created folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.folder_id = input;
-            self
+            self.folder_id = input; self
         }
         /// <p>The request ID for the newly created folder.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13519,19 +13429,25 @@ pub mod create_folder_output {
         }
         /// <p>The request ID for the newly created folder.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateFolderOutput`](crate::output::CreateFolderOutput).
         pub fn build(self) -> crate::output::CreateFolderOutput {
             crate::output::CreateFolderOutput {
-                status: self.status.unwrap_or_default(),
-                arn: self.arn,
-                folder_id: self.folder_id,
-                request_id: self.request_id,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                folder_id: self.folder_id
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFolderOutput {
     /// Creates a new builder-style object to manufacture [`CreateFolderOutput`](crate::output::CreateFolderOutput).
@@ -13543,7 +13459,7 @@ impl CreateFolderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataSourceOutput {
+pub struct CreateDataSourceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13562,19 +13478,19 @@ pub struct CreateDataSourceOutput {
 }
 impl CreateDataSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The status of creating the data source.</p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -13584,7 +13500,7 @@ impl CreateDataSourceOutput {
 }
 /// See [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput).
 pub mod create_data_source_output {
-
+    
     /// A builder for [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13602,8 +13518,7 @@ pub mod create_data_source_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the data source.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13611,12 +13526,8 @@ pub mod create_data_source_output {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn set_data_source_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_id = input;
-            self
+        pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_id = input; self
         }
         /// <p>The status of creating the data source.</p>
         pub fn creation_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -13624,12 +13535,8 @@ pub mod create_data_source_output {
             self
         }
         /// <p>The status of creating the data source.</p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13638,8 +13545,7 @@ pub mod create_data_source_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -13648,20 +13554,27 @@ pub mod create_data_source_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput).
         pub fn build(self) -> crate::output::CreateDataSourceOutput {
             crate::output::CreateDataSourceOutput {
-                arn: self.arn,
-                data_source_id: self.data_source_id,
-                creation_status: self.creation_status,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                data_source_id: self.data_source_id
+                ,
+                creation_status: self.creation_status
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput).
@@ -13673,7 +13586,7 @@ impl CreateDataSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataSetOutput {
+pub struct CreateDataSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13695,23 +13608,23 @@ pub struct CreateDataSetOutput {
 }
 impl CreateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-    pub fn ingestion_arn(&self) -> std::option::Option<&str> {
+    pub fn ingestion_arn(&self) -> std::option::Option<& str> {
         self.ingestion_arn.as_deref()
     }
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> std::option::Option<& str> {
         self.ingestion_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -13721,7 +13634,7 @@ impl CreateDataSetOutput {
 }
 /// See [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
 pub mod create_data_set_output {
-
+    
     /// A builder for [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13740,8 +13653,7 @@ pub mod create_data_set_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13750,8 +13662,7 @@ pub mod create_data_set_output {
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn ingestion_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13759,12 +13670,8 @@ pub mod create_data_set_output {
             self
         }
         /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-        pub fn set_ingestion_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ingestion_arn = input;
-            self
+        pub fn set_ingestion_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ingestion_arn = input; self
         }
         /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13773,8 +13680,7 @@ pub mod create_data_set_output {
         }
         /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ingestion_id = input;
-            self
+            self.ingestion_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13783,8 +13689,7 @@ pub mod create_data_set_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -13793,21 +13698,29 @@ pub mod create_data_set_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
         pub fn build(self) -> crate::output::CreateDataSetOutput {
             crate::output::CreateDataSetOutput {
-                arn: self.arn,
-                data_set_id: self.data_set_id,
-                ingestion_arn: self.ingestion_arn,
-                ingestion_id: self.ingestion_id,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                data_set_id: self.data_set_id
+                ,
+                ingestion_arn: self.ingestion_arn
+                ,
+                ingestion_id: self.ingestion_id
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDataSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
@@ -13819,7 +13732,7 @@ impl CreateDataSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDashboardOutput {
+pub struct CreateDashboardOutput  {
     /// <p>The ARN of the dashboard.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13841,19 +13754,19 @@ pub struct CreateDashboardOutput {
 }
 impl CreateDashboardOutput {
     /// <p>The ARN of the dashboard.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
-    pub fn version_arn(&self) -> std::option::Option<&str> {
+    pub fn version_arn(&self) -> std::option::Option<& str> {
         self.version_arn.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The status of the dashboard creation request.</p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -13861,13 +13774,13 @@ impl CreateDashboardOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
 pub mod create_dashboard_output {
-
+    
     /// A builder for [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13886,8 +13799,7 @@ pub mod create_dashboard_output {
         }
         /// <p>The ARN of the dashboard.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
         pub fn version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13896,8 +13808,7 @@ pub mod create_dashboard_output {
         }
         /// <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
         pub fn set_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_arn = input;
-            self
+            self.version_arn = input; self
         }
         /// <p>The ID for the dashboard.</p>
         pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13906,8 +13817,7 @@ pub mod create_dashboard_output {
         }
         /// <p>The ID for the dashboard.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
         /// <p>The status of the dashboard creation request.</p>
         pub fn creation_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -13915,12 +13825,8 @@ pub mod create_dashboard_output {
             self
         }
         /// <p>The status of the dashboard creation request.</p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -13929,8 +13835,7 @@ pub mod create_dashboard_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13939,21 +13844,29 @@ pub mod create_dashboard_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
         pub fn build(self) -> crate::output::CreateDashboardOutput {
             crate::output::CreateDashboardOutput {
-                arn: self.arn,
-                version_arn: self.version_arn,
-                dashboard_id: self.dashboard_id,
-                creation_status: self.creation_status,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                arn: self.arn
+                ,
+                version_arn: self.version_arn
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+                creation_status: self.creation_status
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDashboardOutput {
     /// Creates a new builder-style object to manufacture [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
@@ -13965,7 +13878,7 @@ impl CreateDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAnalysisOutput {
+pub struct CreateAnalysisOutput  {
     /// <p>The ARN for the analysis.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13984,15 +13897,15 @@ pub struct CreateAnalysisOutput {
 }
 impl CreateAnalysisOutput {
     /// <p>The ARN for the analysis.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the analysis.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>The status of the creation of the analysis. </p>
-    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn creation_status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -14000,13 +13913,13 @@ impl CreateAnalysisOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateAnalysisOutput`](crate::output::CreateAnalysisOutput).
 pub mod create_analysis_output {
-
+    
     /// A builder for [`CreateAnalysisOutput`](crate::output::CreateAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14024,8 +13937,7 @@ pub mod create_analysis_output {
         }
         /// <p>The ARN for the analysis.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the analysis.</p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14034,8 +13946,7 @@ pub mod create_analysis_output {
         }
         /// <p>The ID of the analysis.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_id = input;
-            self
+            self.analysis_id = input; self
         }
         /// <p>The status of the creation of the analysis. </p>
         pub fn creation_status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -14043,12 +13954,8 @@ pub mod create_analysis_output {
             self
         }
         /// <p>The status of the creation of the analysis. </p>
-        pub fn set_creation_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.creation_status = input;
-            self
+        pub fn set_creation_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.creation_status = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -14057,8 +13964,7 @@ pub mod create_analysis_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14067,20 +13973,27 @@ pub mod create_analysis_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAnalysisOutput`](crate::output::CreateAnalysisOutput).
         pub fn build(self) -> crate::output::CreateAnalysisOutput {
             crate::output::CreateAnalysisOutput {
-                arn: self.arn,
-                analysis_id: self.analysis_id,
-                creation_status: self.creation_status,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                arn: self.arn
+                ,
+                analysis_id: self.analysis_id
+                ,
+                creation_status: self.creation_status
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnalysisOutput`](crate::output::CreateAnalysisOutput).
@@ -14092,7 +14005,7 @@ impl CreateAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccountSubscriptionOutput {
+pub struct CreateAccountSubscriptionOutput  {
     /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
     #[doc(hidden)]
     pub signup_response: std::option::Option<crate::model::SignupResponse>,
@@ -14105,7 +14018,7 @@ pub struct CreateAccountSubscriptionOutput {
 }
 impl CreateAccountSubscriptionOutput {
     /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
-    pub fn signup_response(&self) -> std::option::Option<&crate::model::SignupResponse> {
+    pub fn signup_response(&self) -> std::option::Option<& crate::model::SignupResponse> {
         self.signup_response.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -14113,13 +14026,13 @@ impl CreateAccountSubscriptionOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 /// See [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput).
 pub mod create_account_subscription_output {
-
+    
     /// A builder for [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14134,12 +14047,8 @@ pub mod create_account_subscription_output {
             self
         }
         /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
-        pub fn set_signup_response(
-            mut self,
-            input: std::option::Option<crate::model::SignupResponse>,
-        ) -> Self {
-            self.signup_response = input;
-            self
+        pub fn set_signup_response(mut self, input: std::option::Option<crate::model::SignupResponse>) -> Self {
+            self.signup_response = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -14148,8 +14057,7 @@ pub mod create_account_subscription_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14158,18 +14066,23 @@ pub mod create_account_subscription_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateAccountSubscriptionOutput {
             crate::output::CreateAccountSubscriptionOutput {
-                signup_response: self.signup_response,
-                status: self.status.unwrap_or_default(),
-                request_id: self.request_id,
+                signup_response: self.signup_response
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccountSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccountSubscriptionOutput`](crate::output::CreateAccountSubscriptionOutput).
@@ -14181,7 +14094,7 @@ impl CreateAccountSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccountCustomizationOutput {
+pub struct CreateAccountCustomizationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -14203,25 +14116,23 @@ pub struct CreateAccountCustomizationOutput {
 }
 impl CreateAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace associated with the customization you're creating. </p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
-    pub fn account_customization(
-        &self,
-    ) -> std::option::Option<&crate::model::AccountCustomization> {
+    pub fn account_customization(&self) -> std::option::Option<& crate::model::AccountCustomization> {
         self.account_customization.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -14231,7 +14142,7 @@ impl CreateAccountCustomizationOutput {
 }
 /// See [`CreateAccountCustomizationOutput`](crate::output::CreateAccountCustomizationOutput).
 pub mod create_account_customization_output {
-
+    
     /// A builder for [`CreateAccountCustomizationOutput`](crate::output::CreateAccountCustomizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14250,8 +14161,7 @@ pub mod create_account_customization_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14259,12 +14169,8 @@ pub mod create_account_customization_output {
             self
         }
         /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
+        pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_id = input; self
         }
         /// <p>The namespace associated with the customization you're creating. </p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14273,8 +14179,7 @@ pub mod create_account_customization_output {
         }
         /// <p>The namespace associated with the customization you're creating. </p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
@@ -14282,12 +14187,8 @@ pub mod create_account_customization_output {
             self
         }
         /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
-        pub fn set_account_customization(
-            mut self,
-            input: std::option::Option<crate::model::AccountCustomization>,
-        ) -> Self {
-            self.account_customization = input;
-            self
+        pub fn set_account_customization(mut self, input: std::option::Option<crate::model::AccountCustomization>) -> Self {
+            self.account_customization = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14296,8 +14197,7 @@ pub mod create_account_customization_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -14306,21 +14206,29 @@ pub mod create_account_customization_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccountCustomizationOutput`](crate::output::CreateAccountCustomizationOutput).
         pub fn build(self) -> crate::output::CreateAccountCustomizationOutput {
             crate::output::CreateAccountCustomizationOutput {
-                arn: self.arn,
-                aws_account_id: self.aws_account_id,
-                namespace: self.namespace,
-                account_customization: self.account_customization,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+                account_customization: self.account_customization
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccountCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccountCustomizationOutput`](crate::output::CreateAccountCustomizationOutput).
@@ -14332,7 +14240,7 @@ impl CreateAccountCustomizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelIngestionOutput {
+pub struct CancelIngestionOutput  {
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -14348,15 +14256,15 @@ pub struct CancelIngestionOutput {
 }
 impl CancelIngestionOutput {
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An ID for the ingestion.</p>
-    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> std::option::Option<& str> {
         self.ingestion_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -14366,7 +14274,7 @@ impl CancelIngestionOutput {
 }
 /// See [`CancelIngestionOutput`](crate::output::CancelIngestionOutput).
 pub mod cancel_ingestion_output {
-
+    
     /// A builder for [`CancelIngestionOutput`](crate::output::CancelIngestionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14383,8 +14291,7 @@ pub mod cancel_ingestion_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>An ID for the ingestion.</p>
         pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14393,8 +14300,7 @@ pub mod cancel_ingestion_output {
         }
         /// <p>An ID for the ingestion.</p>
         pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ingestion_id = input;
-            self
+            self.ingestion_id = input; self
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14403,8 +14309,7 @@ pub mod cancel_ingestion_output {
         }
         /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -14413,19 +14318,25 @@ pub mod cancel_ingestion_output {
         }
         /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CancelIngestionOutput`](crate::output::CancelIngestionOutput).
         pub fn build(self) -> crate::output::CancelIngestionOutput {
             crate::output::CancelIngestionOutput {
-                arn: self.arn,
-                ingestion_id: self.ingestion_id,
-                request_id: self.request_id,
-                status: self.status.unwrap_or_default(),
+                arn: self.arn
+                ,
+                ingestion_id: self.ingestion_id
+                ,
+                request_id: self.request_id
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelIngestionOutput {
     /// Creates a new builder-style object to manufacture [`CancelIngestionOutput`](crate::output::CancelIngestionOutput).
@@ -14433,3 +14344,4 @@ impl CancelIngestionOutput {
         crate::output::cancel_ingestion_output::Builder::default()
     }
 }
+

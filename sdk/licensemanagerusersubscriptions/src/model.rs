@@ -3,7 +3,7 @@
 /// <p>Describes an identity provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityProviderSummary {
+pub struct IdentityProviderSummary  {
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::model::IdentityProvider>,
@@ -22,29 +22,29 @@ pub struct IdentityProviderSummary {
 }
 impl IdentityProviderSummary {
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<& crate::model::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
+    pub fn settings(&self) -> std::option::Option<& crate::model::Settings> {
         self.settings.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> std::option::Option<& str> {
         self.product.as_deref()
     }
     /// <p>The status of an identity provider.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The failure message associated with an identity provider.</p>
-    pub fn failure_message(&self) -> std::option::Option<&str> {
+    pub fn failure_message(&self) -> std::option::Option<& str> {
         self.failure_message.as_deref()
     }
 }
 /// See [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
 pub mod identity_provider_summary {
-
+    
     /// A builder for [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -61,12 +61,8 @@ pub mod identity_provider_summary {
             self
         }
         /// <p>An object that specifies details for the identity provider.</p>
-        pub fn set_identity_provider(
-            mut self,
-            input: std::option::Option<crate::model::IdentityProvider>,
-        ) -> Self {
-            self.identity_provider = input;
-            self
+        pub fn set_identity_provider(mut self, input: std::option::Option<crate::model::IdentityProvider>) -> Self {
+            self.identity_provider = input; self
         }
         /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
         pub fn settings(mut self, input: crate::model::Settings) -> Self {
@@ -75,8 +71,7 @@ pub mod identity_provider_summary {
         }
         /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
         pub fn set_settings(mut self, input: std::option::Option<crate::model::Settings>) -> Self {
-            self.settings = input;
-            self
+            self.settings = input; self
         }
         /// <p>The name of the user-based subscription product.</p>
         pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +80,7 @@ pub mod identity_provider_summary {
         }
         /// <p>The name of the user-based subscription product.</p>
         pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product = input;
-            self
+            self.product = input; self
         }
         /// <p>The status of an identity provider.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +89,7 @@ pub mod identity_provider_summary {
         }
         /// <p>The status of an identity provider.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The failure message associated with an identity provider.</p>
         pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,24 +97,27 @@ pub mod identity_provider_summary {
             self
         }
         /// <p>The failure message associated with an identity provider.</p>
-        pub fn set_failure_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_message = input;
-            self
+        pub fn set_failure_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_message = input; self
         }
         /// Consumes the builder and constructs a [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
         pub fn build(self) -> crate::model::IdentityProviderSummary {
             crate::model::IdentityProviderSummary {
-                identity_provider: self.identity_provider,
-                settings: self.settings,
-                product: self.product,
-                status: self.status,
-                failure_message: self.failure_message,
+                identity_provider: self.identity_provider
+                ,
+                settings: self.settings
+                ,
+                product: self.product
+                ,
+                status: self.status
+                ,
+                failure_message: self.failure_message
+                ,
             }
         }
     }
+    
+    
 }
 impl IdentityProviderSummary {
     /// Creates a new builder-style object to manufacture [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
@@ -133,7 +129,7 @@ impl IdentityProviderSummary {
 /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints, and the security group ID that is associated with the VPC endpoints. The security group should permit inbound TCP port 1688 communication from resources in the VPC.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Settings {
+pub struct Settings  {
     /// <p>The subnets defined for the registered identity provider.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -143,17 +139,17 @@ pub struct Settings {
 }
 impl Settings {
     /// <p>The subnets defined for the registered identity provider.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
-    pub fn security_group_id(&self) -> std::option::Option<&str> {
+    pub fn security_group_id(&self) -> std::option::Option<& str> {
         self.security_group_id.as_deref()
     }
 }
 /// See [`Settings`](crate::model::Settings).
 pub mod settings {
-
+    
     /// A builder for [`Settings`](crate::model::Settings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -168,17 +164,13 @@ pub mod settings {
         /// <p>The subnets defined for the registered identity provider.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>The subnets defined for the registered identity provider.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
         pub fn security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,21 +178,21 @@ pub mod settings {
             self
         }
         /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
-        pub fn set_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.security_group_id = input;
-            self
+        pub fn set_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.security_group_id = input; self
         }
         /// Consumes the builder and constructs a [`Settings`](crate::model::Settings).
         pub fn build(self) -> crate::model::Settings {
             crate::model::Settings {
-                subnets: self.subnets,
-                security_group_id: self.security_group_id,
+                subnets: self.subnets
+                ,
+                security_group_id: self.security_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Settings {
     /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
@@ -229,14 +221,8 @@ impl IdentityProvider {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`ActiveDirectoryIdentityProvider`](crate::model::IdentityProvider::ActiveDirectoryIdentityProvider), extracting the inner [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_active_directory_identity_provider(
-        &self,
-    ) -> std::result::Result<&crate::model::ActiveDirectoryIdentityProvider, &Self> {
-        if let IdentityProvider::ActiveDirectoryIdentityProvider(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_active_directory_identity_provider(&self) -> std::result::Result<&crate::model::ActiveDirectoryIdentityProvider, &Self> {
+        if let IdentityProvider::ActiveDirectoryIdentityProvider(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ActiveDirectoryIdentityProvider`](crate::model::IdentityProvider::ActiveDirectoryIdentityProvider).
     pub fn is_active_directory_identity_provider(&self) -> bool {
@@ -251,20 +237,20 @@ impl IdentityProvider {
 /// <p>Details about an Active Directory identity provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActiveDirectoryIdentityProvider {
+pub struct ActiveDirectoryIdentityProvider  {
     /// <p>The directory ID for an Active Directory identity provider.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl ActiveDirectoryIdentityProvider {
     /// <p>The directory ID for an Active Directory identity provider.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
 /// See [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
 pub mod active_directory_identity_provider {
-
+    
     /// A builder for [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -278,16 +264,18 @@ pub mod active_directory_identity_provider {
         }
         /// <p>The directory ID for an Active Directory identity provider.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// Consumes the builder and constructs a [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
         pub fn build(self) -> crate::model::ActiveDirectoryIdentityProvider {
             crate::model::ActiveDirectoryIdentityProvider {
-                directory_id: self.directory_id,
+                directory_id: self.directory_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ActiveDirectoryIdentityProvider {
     /// Creates a new builder-style object to manufacture [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
@@ -299,7 +287,7 @@ impl ActiveDirectoryIdentityProvider {
 /// <p>Updates the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSettings {
+pub struct UpdateSettings  {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
     #[doc(hidden)]
     pub add_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -312,21 +300,21 @@ pub struct UpdateSettings {
 }
 impl UpdateSettings {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn add_subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn add_subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.add_subnets.as_deref()
     }
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn remove_subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn remove_subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.remove_subnets.as_deref()
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
-    pub fn security_group_id(&self) -> std::option::Option<&str> {
+    pub fn security_group_id(&self) -> std::option::Option<& str> {
         self.security_group_id.as_deref()
     }
 }
 /// See [`UpdateSettings`](crate::model::UpdateSettings).
 pub mod update_settings {
-
+    
     /// A builder for [`UpdateSettings`](crate::model::UpdateSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -342,17 +330,13 @@ pub mod update_settings {
         /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
         pub fn add_subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.add_subnets.unwrap_or_default();
-            v.push(input.into());
-            self.add_subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.add_subnets = Some(v);
+                            self
         }
         /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-        pub fn set_add_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.add_subnets = input;
-            self
+        pub fn set_add_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.add_subnets = input; self
         }
         /// Appends an item to `remove_subnets`.
         ///
@@ -361,17 +345,13 @@ pub mod update_settings {
         /// <p>The ID of one or more subnets to remove.</p>
         pub fn remove_subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_subnets.unwrap_or_default();
-            v.push(input.into());
-            self.remove_subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.remove_subnets = Some(v);
+                            self
         }
         /// <p>The ID of one or more subnets to remove.</p>
-        pub fn set_remove_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.remove_subnets = input;
-            self
+        pub fn set_remove_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.remove_subnets = input; self
         }
         /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
         pub fn security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -379,22 +359,23 @@ pub mod update_settings {
             self
         }
         /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
-        pub fn set_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.security_group_id = input;
-            self
+        pub fn set_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.security_group_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSettings`](crate::model::UpdateSettings).
         pub fn build(self) -> crate::model::UpdateSettings {
             crate::model::UpdateSettings {
-                add_subnets: self.add_subnets,
-                remove_subnets: self.remove_subnets,
-                security_group_id: self.security_group_id,
+                add_subnets: self.add_subnets
+                ,
+                remove_subnets: self.remove_subnets
+                ,
+                security_group_id: self.security_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSettings {
     /// Creates a new builder-style object to manufacture [`UpdateSettings`](crate::model::UpdateSettings).
@@ -406,7 +387,7 @@ impl UpdateSettings {
 /// <p>The summary of the user-based subscription products for a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProductUserSummary {
+pub struct ProductUserSummary  {
     /// <p>The user name from the identity provider of the user.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -434,41 +415,41 @@ pub struct ProductUserSummary {
 }
 impl ProductUserSummary {
     /// <p>The user name from the identity provider of the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> std::option::Option<& str> {
         self.product.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<& crate::model::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The status of a product for a user.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The status message for a product for a user.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The start date of a subscription.</p>
-    pub fn subscription_start_date(&self) -> std::option::Option<&str> {
+    pub fn subscription_start_date(&self) -> std::option::Option<& str> {
         self.subscription_start_date.as_deref()
     }
     /// <p>The end date of a subscription.</p>
-    pub fn subscription_end_date(&self) -> std::option::Option<&str> {
+    pub fn subscription_end_date(&self) -> std::option::Option<& str> {
         self.subscription_end_date.as_deref()
     }
 }
 /// See [`ProductUserSummary`](crate::model::ProductUserSummary).
 pub mod product_user_summary {
-
+    
     /// A builder for [`ProductUserSummary`](crate::model::ProductUserSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -489,8 +470,7 @@ pub mod product_user_summary {
         }
         /// <p>The user name from the identity provider of the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// <p>The name of the user-based subscription product.</p>
         pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
@@ -499,8 +479,7 @@ pub mod product_user_summary {
         }
         /// <p>The name of the user-based subscription product.</p>
         pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product = input;
-            self
+            self.product = input; self
         }
         /// <p>An object that specifies details for the identity provider.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProvider) -> Self {
@@ -508,12 +487,8 @@ pub mod product_user_summary {
             self
         }
         /// <p>An object that specifies details for the identity provider.</p>
-        pub fn set_identity_provider(
-            mut self,
-            input: std::option::Option<crate::model::IdentityProvider>,
-        ) -> Self {
-            self.identity_provider = input;
-            self
+        pub fn set_identity_provider(mut self, input: std::option::Option<crate::model::IdentityProvider>) -> Self {
+            self.identity_provider = input; self
         }
         /// <p>The status of a product for a user.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -522,8 +497,7 @@ pub mod product_user_summary {
         }
         /// <p>The status of a product for a user.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The status message for a product for a user.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -531,12 +505,8 @@ pub mod product_user_summary {
             self
         }
         /// <p>The status message for a product for a user.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The domain name of the user.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -545,8 +515,7 @@ pub mod product_user_summary {
         }
         /// <p>The domain name of the user.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The start date of a subscription.</p>
         pub fn subscription_start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -554,12 +523,8 @@ pub mod product_user_summary {
             self
         }
         /// <p>The start date of a subscription.</p>
-        pub fn set_subscription_start_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_start_date = input;
-            self
+        pub fn set_subscription_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_start_date = input; self
         }
         /// <p>The end date of a subscription.</p>
         pub fn subscription_end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -567,27 +532,33 @@ pub mod product_user_summary {
             self
         }
         /// <p>The end date of a subscription.</p>
-        pub fn set_subscription_end_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_end_date = input;
-            self
+        pub fn set_subscription_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_end_date = input; self
         }
         /// Consumes the builder and constructs a [`ProductUserSummary`](crate::model::ProductUserSummary).
         pub fn build(self) -> crate::model::ProductUserSummary {
             crate::model::ProductUserSummary {
-                username: self.username,
-                product: self.product,
-                identity_provider: self.identity_provider,
-                status: self.status,
-                status_message: self.status_message,
-                domain: self.domain,
-                subscription_start_date: self.subscription_start_date,
-                subscription_end_date: self.subscription_end_date,
+                username: self.username
+                ,
+                product: self.product
+                ,
+                identity_provider: self.identity_provider
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                domain: self.domain
+                ,
+                subscription_start_date: self.subscription_start_date
+                ,
+                subscription_end_date: self.subscription_end_date
+                ,
             }
         }
     }
+    
+    
 }
 impl ProductUserSummary {
     /// Creates a new builder-style object to manufacture [`ProductUserSummary`](crate::model::ProductUserSummary).
@@ -599,7 +570,7 @@ impl ProductUserSummary {
 /// <p>Describes users of an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceUserSummary {
+pub struct InstanceUserSummary  {
     /// <p>The user name from the identity provider for the user.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -627,41 +598,41 @@ pub struct InstanceUserSummary {
 }
 impl InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<& crate::model::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn association_date(&self) -> std::option::Option<&str> {
+    pub fn association_date(&self) -> std::option::Option<& str> {
         self.association_date.as_deref()
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
-    pub fn disassociation_date(&self) -> std::option::Option<&str> {
+    pub fn disassociation_date(&self) -> std::option::Option<& str> {
         self.disassociation_date.as_deref()
     }
 }
 /// See [`InstanceUserSummary`](crate::model::InstanceUserSummary).
 pub mod instance_user_summary {
-
+    
     /// A builder for [`InstanceUserSummary`](crate::model::InstanceUserSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -682,8 +653,7 @@ pub mod instance_user_summary {
         }
         /// <p>The user name from the identity provider for the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -692,8 +662,7 @@ pub mod instance_user_summary {
         }
         /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>An object that specifies details for the identity provider.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProvider) -> Self {
@@ -701,12 +670,8 @@ pub mod instance_user_summary {
             self
         }
         /// <p>An object that specifies details for the identity provider.</p>
-        pub fn set_identity_provider(
-            mut self,
-            input: std::option::Option<crate::model::IdentityProvider>,
-        ) -> Self {
-            self.identity_provider = input;
-            self
+        pub fn set_identity_provider(mut self, input: std::option::Option<crate::model::IdentityProvider>) -> Self {
+            self.identity_provider = input; self
         }
         /// <p>The status of a user associated with an EC2 instance.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -715,8 +680,7 @@ pub mod instance_user_summary {
         }
         /// <p>The status of a user associated with an EC2 instance.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The status message for users of an EC2 instance.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -724,12 +688,8 @@ pub mod instance_user_summary {
             self
         }
         /// <p>The status message for users of an EC2 instance.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The domain name of the user.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -738,8 +698,7 @@ pub mod instance_user_summary {
         }
         /// <p>The domain name of the user.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The date a user was associated with an EC2 instance.</p>
         pub fn association_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -747,12 +706,8 @@ pub mod instance_user_summary {
             self
         }
         /// <p>The date a user was associated with an EC2 instance.</p>
-        pub fn set_association_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.association_date = input;
-            self
+        pub fn set_association_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.association_date = input; self
         }
         /// <p>The date a user was disassociated from an EC2 instance.</p>
         pub fn disassociation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -760,27 +715,33 @@ pub mod instance_user_summary {
             self
         }
         /// <p>The date a user was disassociated from an EC2 instance.</p>
-        pub fn set_disassociation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disassociation_date = input;
-            self
+        pub fn set_disassociation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disassociation_date = input; self
         }
         /// Consumes the builder and constructs a [`InstanceUserSummary`](crate::model::InstanceUserSummary).
         pub fn build(self) -> crate::model::InstanceUserSummary {
             crate::model::InstanceUserSummary {
-                username: self.username,
-                instance_id: self.instance_id,
-                identity_provider: self.identity_provider,
-                status: self.status,
-                status_message: self.status_message,
-                domain: self.domain,
-                association_date: self.association_date,
-                disassociation_date: self.disassociation_date,
+                username: self.username
+                ,
+                instance_id: self.instance_id
+                ,
+                identity_provider: self.identity_provider
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                domain: self.domain
+                ,
+                association_date: self.association_date
+                ,
+                disassociation_date: self.disassociation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceUserSummary {
     /// Creates a new builder-style object to manufacture [`InstanceUserSummary`](crate::model::InstanceUserSummary).
@@ -792,7 +753,7 @@ impl InstanceUserSummary {
 /// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of an attribute to use as a filter.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
@@ -805,21 +766,21 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of an attribute to use as a filter.</p>
-    pub fn attribute(&self) -> std::option::Option<&str> {
+    pub fn attribute(&self) -> std::option::Option<& str> {
         self.attribute.as_deref()
     }
     /// <p>The type of search (For example, eq, geq, leq)</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>Value of the filter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -835,8 +796,7 @@ pub mod filter {
         }
         /// <p>The name of an attribute to use as a filter.</p>
         pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attribute = input;
-            self
+            self.attribute = input; self
         }
         /// <p>The type of search (For example, eq, geq, leq)</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -845,8 +805,7 @@ pub mod filter {
         }
         /// <p>The type of search (For example, eq, geq, leq)</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// <p>Value of the filter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -855,18 +814,22 @@ pub mod filter {
         }
         /// <p>Value of the filter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                attribute: self.attribute,
-                operation: self.operation,
-                value: self.value,
+                attribute: self.attribute
+                ,
+                operation: self.operation
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -878,7 +841,7 @@ impl Filter {
 /// <p>Describes an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceSummary {
+pub struct InstanceSummary  {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -897,29 +860,29 @@ pub struct InstanceSummary {
 }
 impl InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The status of an EC2 instance resource.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>A list of provided user-based subscription products.</p>
-    pub fn products(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn products(&self) -> std::option::Option<& [std::string::String]> {
         self.products.as_deref()
     }
     /// <p>The date of the last status check.</p>
-    pub fn last_status_check_date(&self) -> std::option::Option<&str> {
+    pub fn last_status_check_date(&self) -> std::option::Option<& str> {
         self.last_status_check_date.as_deref()
     }
     /// <p>The status message for an EC2 instance.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
 pub mod instance_summary {
-
+    
     /// A builder for [`InstanceSummary`](crate::model::InstanceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -937,8 +900,7 @@ pub mod instance_summary {
         }
         /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The status of an EC2 instance resource.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -947,8 +909,7 @@ pub mod instance_summary {
         }
         /// <p>The status of an EC2 instance resource.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `products`.
         ///
@@ -957,17 +918,13 @@ pub mod instance_summary {
         /// <p>A list of provided user-based subscription products.</p>
         pub fn products(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.products.unwrap_or_default();
-            v.push(input.into());
-            self.products = Some(v);
-            self
+                            v.push(input.into());
+                            self.products = Some(v);
+                            self
         }
         /// <p>A list of provided user-based subscription products.</p>
-        pub fn set_products(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.products = input;
-            self
+        pub fn set_products(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.products = input; self
         }
         /// <p>The date of the last status check.</p>
         pub fn last_status_check_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -975,12 +932,8 @@ pub mod instance_summary {
             self
         }
         /// <p>The date of the last status check.</p>
-        pub fn set_last_status_check_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_status_check_date = input;
-            self
+        pub fn set_last_status_check_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_status_check_date = input; self
         }
         /// <p>The status message for an EC2 instance.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -988,24 +941,27 @@ pub mod instance_summary {
             self
         }
         /// <p>The status message for an EC2 instance.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceSummary`](crate::model::InstanceSummary).
         pub fn build(self) -> crate::model::InstanceSummary {
             crate::model::InstanceSummary {
-                instance_id: self.instance_id,
-                status: self.status,
-                products: self.products,
-                last_status_check_date: self.last_status_check_date,
-                status_message: self.status_message,
+                instance_id: self.instance_id
+                ,
+                status: self.status
+                ,
+                products: self.products
+                ,
+                last_status_check_date: self.last_status_check_date
+                ,
+                status_message: self.status_message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceSummary {
     /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
@@ -1013,3 +969,4 @@ impl InstanceSummary {
         crate::model::instance_summary::Builder::default()
     }
 }
+

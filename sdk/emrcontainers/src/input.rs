@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`CancelJobRunInput`](crate::input::CancelJobRunInput).
 pub mod cancel_job_run_input {
-
+    
     /// A builder for [`CancelJobRunInput`](crate::input::CancelJobRunInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -18,8 +18,7 @@ pub mod cancel_job_run_input {
         }
         /// <p>The ID of the job run to cancel.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -27,119 +26,62 @@ pub mod cancel_job_run_input {
             self
         }
         /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelJobRunInput`](crate::input::CancelJobRunInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CancelJobRunInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CancelJobRunInput {
-                id: self.id,
-                virtual_cluster_id: self.virtual_cluster_id,
-            })
+        pub fn build(self) -> Result<crate::input::CancelJobRunInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CancelJobRunInput {
+                    id: self.id
+                    ,
+                    virtual_cluster_id: self.virtual_cluster_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CancelJobRunInput {
     /// Consumes the builder and constructs an Operation<[`CancelJobRun`](crate::operation::CancelJobRun)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CancelJobRun,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelJobRun, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CancelJobRunInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CancelJobRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.virtual_cluster_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "virtual_cluster_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "virtual_cluster_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))
+                            }
                 let input_2 = &_input.id;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let id = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/virtualclusters/{virtualClusterId}/jobruns/{id}",
-                    virtualClusterId = virtual_cluster_id,
-                    id = id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{virtualClusterId}/jobruns/{id}", virtualClusterId = virtual_cluster_id, id = id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CancelJobRunInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CancelJobRunInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -149,51 +91,34 @@ impl CancelJobRunInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CancelJobRun::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CancelJobRun",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelJobRun::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelJobRun", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -205,16 +130,14 @@ impl CancelJobRunInput {
 
 /// See [`CreateJobTemplateInput`](crate::input::CreateJobTemplateInput).
 pub mod create_job_template_input {
-
+    
     /// A builder for [`CreateJobTemplateInput`](crate::input::CreateJobTemplateInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) job_template_data: std::option::Option<crate::model::JobTemplateData>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -225,8 +148,7 @@ pub mod create_job_template_input {
         }
         /// <p>The specified name of the job template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The client token of the job template.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,8 +157,7 @@ pub mod create_job_template_input {
         }
         /// <p>The client token of the job template.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>The job template data which holds values of StartJobRun API request.</p>
         pub fn job_template_data(mut self, input: crate::model::JobTemplateData) -> Self {
@@ -244,37 +165,23 @@ pub mod create_job_template_input {
             self
         }
         /// <p>The job template data which holds values of StartJobRun API request.</p>
-        pub fn set_job_template_data(
-            mut self,
-            input: std::option::Option<crate::model::JobTemplateData>,
-        ) -> Self {
-            self.job_template_data = input;
-            self
+        pub fn set_job_template_data(mut self, input: std::option::Option<crate::model::JobTemplateData>) -> Self {
+            self.job_template_data = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are associated with the job template.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags that are associated with the job template.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The KMS key ARN used to encrypt the job template.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -283,147 +190,99 @@ pub mod create_job_template_input {
         }
         /// <p>The KMS key ARN used to encrypt the job template.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::input::CreateJobTemplateInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateJobTemplateInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateJobTemplateInput {
-                name: self.name,
-                client_token: self.client_token,
-                job_template_data: self.job_template_data,
-                tags: self.tags,
-                kms_key_arn: self.kms_key_arn,
-            })
+        pub fn build(self) -> Result<crate::input::CreateJobTemplateInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateJobTemplateInput {
+                    name: self.name
+                    ,
+                    client_token: self.client_token
+                    ,
+                    job_template_data: self.job_template_data
+                    ,
+                    tags: self.tags
+                    ,
+                    kms_key_arn: self.kms_key_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateJobTemplate`](crate::operation::CreateJobTemplate)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateJobTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateJobTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateJobTemplateInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateJobTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/jobtemplates").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateJobTemplateInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateJobTemplateInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_job_template(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_job_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateJobTemplate::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateJobTemplate",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateJobTemplate::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateJobTemplate", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -435,7 +294,7 @@ impl CreateJobTemplateInput {
 
 /// See [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput).
 pub mod create_managed_endpoint_input {
-
+    
     /// A builder for [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -445,12 +304,9 @@ pub mod create_managed_endpoint_input {
         pub(crate) release_label: std::option::Option<std::string::String>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) configuration_overrides:
-            std::option::Option<crate::model::ConfigurationOverrides>,
+        pub(crate) configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
         pub(crate) client_token: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the managed endpoint.</p>
@@ -460,8 +316,7 @@ pub mod create_managed_endpoint_input {
         }
         /// <p>The name of the managed endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -469,12 +324,8 @@ pub mod create_managed_endpoint_input {
             self
         }
         /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// <p>The type of the managed endpoint.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -483,8 +334,7 @@ pub mod create_managed_endpoint_input {
         }
         /// <p>The type of the managed endpoint.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The Amazon EMR release version.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -492,12 +342,8 @@ pub mod create_managed_endpoint_input {
             self
         }
         /// <p>The Amazon EMR release version.</p>
-        pub fn set_release_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.release_label = input;
-            self
+        pub fn set_release_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.release_label = input; self
         }
         /// <p>The ARN of the execution role.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -505,47 +351,28 @@ pub mod create_managed_endpoint_input {
             self
         }
         /// <p>The ARN of the execution role.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-        #[deprecated(
-            note = "Customer provided certificate-arn is deprecated and would be removed in future."
-        )]
+        #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-        #[deprecated(
-            note = "Customer provided certificate-arn is deprecated and would be removed in future."
-        )]
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// <p>The configuration settings that will be used to override existing configurations.</p>
-        pub fn configuration_overrides(
-            mut self,
-            input: crate::model::ConfigurationOverrides,
-        ) -> Self {
+        pub fn configuration_overrides(mut self, input: crate::model::ConfigurationOverrides) -> Self {
             self.configuration_overrides = Some(input);
             self
         }
         /// <p>The configuration settings that will be used to override existing configurations.</p>
-        pub fn set_configuration_overrides(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationOverrides>,
-        ) -> Self {
-            self.configuration_overrides = input;
-            self
+        pub fn set_configuration_overrides(mut self, input: std::option::Option<crate::model::ConfigurationOverrides>) -> Self {
+            self.configuration_overrides = input; self
         }
         /// <p>The client idempotency token for this create call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -554,202 +381,128 @@ pub mod create_managed_endpoint_input {
         }
         /// <p>The client idempotency token for this create call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the managed endpoint. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of the managed endpoint. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateManagedEndpointInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateManagedEndpointInput {
-                name: self.name,
-                virtual_cluster_id: self.virtual_cluster_id,
-                r#type: self.r#type,
-                release_label: self.release_label,
-                execution_role_arn: self.execution_role_arn,
-                certificate_arn: self.certificate_arn,
-                configuration_overrides: self.configuration_overrides,
-                client_token: self.client_token,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateManagedEndpointInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateManagedEndpointInput {
+                    name: self.name
+                    ,
+                    virtual_cluster_id: self.virtual_cluster_id
+                    ,
+                    r#type: self.r#type
+                    ,
+                    release_label: self.release_label
+                    ,
+                    execution_role_arn: self.execution_role_arn
+                    ,
+                    certificate_arn: self.certificate_arn
+                    ,
+                    configuration_overrides: self.configuration_overrides
+                    ,
+                    client_token: self.client_token
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateManagedEndpoint`](crate::operation::CreateManagedEndpoint)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateManagedEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateManagedEndpoint, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateManagedEndpointInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateManagedEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.virtual_cluster_id;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "virtual_cluster_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
-                    input_3,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_3 = input_3.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "virtual_cluster_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/virtualclusters/{virtualClusterId}/endpoints",
-                    virtualClusterId = virtual_cluster_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{virtualClusterId}/endpoints", virtualClusterId = virtual_cluster_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateManagedEndpointInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateManagedEndpointInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_managed_endpoint(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_managed_endpoint(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateManagedEndpoint::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateManagedEndpoint",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateManagedEndpoint::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateManagedEndpoint", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -761,16 +514,14 @@ impl CreateManagedEndpointInput {
 
 /// See [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput).
 pub mod create_virtual_cluster_input {
-
+    
     /// A builder for [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) container_provider: std::option::Option<crate::model::ContainerProvider>,
         pub(crate) client_token: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The specified name of the virtual cluster.</p>
@@ -780,8 +531,7 @@ pub mod create_virtual_cluster_input {
         }
         /// <p>The specified name of the virtual cluster.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The container provider of the virtual cluster.</p>
         pub fn container_provider(mut self, input: crate::model::ContainerProvider) -> Self {
@@ -789,12 +539,8 @@ pub mod create_virtual_cluster_input {
             self
         }
         /// <p>The container provider of the virtual cluster.</p>
-        pub fn set_container_provider(
-            mut self,
-            input: std::option::Option<crate::model::ContainerProvider>,
-        ) -> Self {
-            self.container_provider = input;
-            self
+        pub fn set_container_provider(mut self, input: std::option::Option<crate::model::ContainerProvider>) -> Self {
+            self.container_provider = input; self
         }
         /// <p>The client token of the virtual cluster.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -803,173 +549,112 @@ pub mod create_virtual_cluster_input {
         }
         /// <p>The client token of the virtual cluster.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the virtual cluster.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the virtual cluster.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateVirtualClusterInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateVirtualClusterInput {
-                name: self.name,
-                container_provider: self.container_provider,
-                client_token: self.client_token,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateVirtualClusterInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateVirtualClusterInput {
+                    name: self.name
+                    ,
+                    container_provider: self.container_provider
+                    ,
+                    client_token: self.client_token
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateVirtualCluster`](crate::operation::CreateVirtualCluster)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateVirtualCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateVirtualCluster, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateVirtualClusterInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateVirtualClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/virtualclusters").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateVirtualClusterInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateVirtualClusterInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_virtual_cluster(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_virtual_cluster(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateVirtualCluster::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateVirtualCluster",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateVirtualCluster::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateVirtualCluster", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -981,7 +666,7 @@ impl CreateVirtualClusterInput {
 
 /// See [`DeleteJobTemplateInput`](crate::input::DeleteJobTemplateInput).
 pub mod delete_job_template_input {
-
+    
     /// A builder for [`DeleteJobTemplateInput`](crate::input::DeleteJobTemplateInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -995,89 +680,53 @@ pub mod delete_job_template_input {
         }
         /// <p>The ID of the job template that will be deleted.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteJobTemplateInput`](crate::input::DeleteJobTemplateInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteJobTemplateInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteJobTemplateInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::DeleteJobTemplateInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteJobTemplateInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJobTemplate`](crate::operation::DeleteJobTemplate)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteJobTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteJobTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteJobTemplateInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteJobTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.id;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let id = aws_smithy_http::label::fmt_string(
-                    input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_4 = input_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
+                            }
                 write!(output, "/jobtemplates/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteJobTemplateInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteJobTemplateInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1087,51 +736,34 @@ impl DeleteJobTemplateInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteJobTemplate::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteJobTemplate",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteJobTemplate::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteJobTemplate", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1143,7 +775,7 @@ impl DeleteJobTemplateInput {
 
 /// See [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput).
 pub mod delete_managed_endpoint_input {
-
+    
     /// A builder for [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1158,8 +790,7 @@ pub mod delete_managed_endpoint_input {
         }
         /// <p>The ID of the managed endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1167,121 +798,62 @@ pub mod delete_managed_endpoint_input {
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteManagedEndpointInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteManagedEndpointInput {
-                id: self.id,
-                virtual_cluster_id: self.virtual_cluster_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteManagedEndpointInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteManagedEndpointInput {
+                    id: self.id
+                    ,
+                    virtual_cluster_id: self.virtual_cluster_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteManagedEndpoint`](crate::operation::DeleteManagedEndpoint)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteManagedEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteManagedEndpoint, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteManagedEndpointInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteManagedEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.virtual_cluster_id;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "virtual_cluster_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
-                    input_5,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_5 = input_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "virtual_cluster_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))
+                            }
                 let input_6 = &_input.id;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let id = aws_smithy_http::label::fmt_string(
-                    input_6,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_6 = input_6.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/virtualclusters/{virtualClusterId}/endpoints/{id}",
-                    virtualClusterId = virtual_cluster_id,
-                    id = id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{virtualClusterId}/endpoints/{id}", virtualClusterId = virtual_cluster_id, id = id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteManagedEndpointInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteManagedEndpointInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1291,51 +863,34 @@ impl DeleteManagedEndpointInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteManagedEndpoint::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteManagedEndpoint",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteManagedEndpoint::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteManagedEndpoint", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1347,7 +902,7 @@ impl DeleteManagedEndpointInput {
 
 /// See [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput).
 pub mod delete_virtual_cluster_input {
-
+    
     /// A builder for [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1361,90 +916,53 @@ pub mod delete_virtual_cluster_input {
         }
         /// <p>The ID of the virtual cluster that will be deleted.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteVirtualClusterInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteVirtualClusterInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::DeleteVirtualClusterInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteVirtualClusterInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualCluster`](crate::operation::DeleteVirtualCluster)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteVirtualCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteVirtualCluster, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteVirtualClusterInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteVirtualClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.id;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let id = aws_smithy_http::label::fmt_string(
-                    input_7,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_7 = input_7.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/virtualclusters/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteVirtualClusterInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteVirtualClusterInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1454,51 +972,34 @@ impl DeleteVirtualClusterInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteVirtualCluster::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteVirtualCluster",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteVirtualCluster::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteVirtualCluster", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1510,7 +1011,7 @@ impl DeleteVirtualClusterInput {
 
 /// See [`DescribeJobRunInput`](crate::input::DescribeJobRunInput).
 pub mod describe_job_run_input {
-
+    
     /// A builder for [`DescribeJobRunInput`](crate::input::DescribeJobRunInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1525,8 +1026,7 @@ pub mod describe_job_run_input {
         }
         /// <p>The ID of the job run request. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1534,119 +1034,62 @@ pub mod describe_job_run_input {
             self
         }
         /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::input::DescribeJobRunInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeJobRunInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeJobRunInput {
-                id: self.id,
-                virtual_cluster_id: self.virtual_cluster_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeJobRunInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeJobRunInput {
+                    id: self.id
+                    ,
+                    virtual_cluster_id: self.virtual_cluster_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeJobRunInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobRun`](crate::operation::DescribeJobRun)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeJobRun,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeJobRun, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeJobRunInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeJobRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.virtual_cluster_id;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "virtual_cluster_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
-                    input_8,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_8 = input_8.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "virtual_cluster_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))
+                            }
                 let input_9 = &_input.id;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let id = aws_smithy_http::label::fmt_string(
-                    input_9,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_9 = input_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/virtualclusters/{virtualClusterId}/jobruns/{id}",
-                    virtualClusterId = virtual_cluster_id,
-                    id = id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{virtualClusterId}/jobruns/{id}", virtualClusterId = virtual_cluster_id, id = id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeJobRunInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeJobRunInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1656,51 +1099,34 @@ impl DescribeJobRunInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeJobRun::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeJobRun",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeJobRun::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeJobRun", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1712,7 +1138,7 @@ impl DescribeJobRunInput {
 
 /// See [`DescribeJobTemplateInput`](crate::input::DescribeJobTemplateInput).
 pub mod describe_job_template_input {
-
+    
     /// A builder for [`DescribeJobTemplateInput`](crate::input::DescribeJobTemplateInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1726,89 +1152,53 @@ pub mod describe_job_template_input {
         }
         /// <p>The ID of the job template that will be described.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobTemplateInput`](crate::input::DescribeJobTemplateInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeJobTemplateInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeJobTemplateInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::DescribeJobTemplateInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeJobTemplateInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobTemplate`](crate::operation::DescribeJobTemplate)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeJobTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeJobTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeJobTemplateInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeJobTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.id;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let id = aws_smithy_http::label::fmt_string(
-                    input_10,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_10 = input_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
+                            }
                 write!(output, "/jobtemplates/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeJobTemplateInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeJobTemplateInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1818,51 +1208,34 @@ impl DescribeJobTemplateInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeJobTemplate::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeJobTemplate",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeJobTemplate::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeJobTemplate", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1874,7 +1247,7 @@ impl DescribeJobTemplateInput {
 
 /// See [`DescribeManagedEndpointInput`](crate::input::DescribeManagedEndpointInput).
 pub mod describe_managed_endpoint_input {
-
+    
     /// A builder for [`DescribeManagedEndpointInput`](crate::input::DescribeManagedEndpointInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1889,8 +1262,7 @@ pub mod describe_managed_endpoint_input {
         }
         /// <p>This output displays ID of the managed endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1898,121 +1270,62 @@ pub mod describe_managed_endpoint_input {
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeManagedEndpointInput`](crate::input::DescribeManagedEndpointInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeManagedEndpointInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeManagedEndpointInput {
-                id: self.id,
-                virtual_cluster_id: self.virtual_cluster_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeManagedEndpointInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeManagedEndpointInput {
+                    id: self.id
+                    ,
+                    virtual_cluster_id: self.virtual_cluster_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DescribeManagedEndpoint`](crate::operation::DescribeManagedEndpoint)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeManagedEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeManagedEndpoint, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeManagedEndpointInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeManagedEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.virtual_cluster_id;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "virtual_cluster_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
-                    input_11,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_11 = input_11.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "virtual_cluster_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))
+                            }
                 let input_12 = &_input.id;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let id = aws_smithy_http::label::fmt_string(
-                    input_12,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_12 = input_12.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/virtualclusters/{virtualClusterId}/endpoints/{id}",
-                    virtualClusterId = virtual_cluster_id,
-                    id = id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{virtualClusterId}/endpoints/{id}", virtualClusterId = virtual_cluster_id, id = id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeManagedEndpointInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeManagedEndpointInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2022,51 +1335,34 @@ impl DescribeManagedEndpointInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeManagedEndpoint::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeManagedEndpoint",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeManagedEndpoint::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeManagedEndpoint", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2078,7 +1374,7 @@ impl DescribeManagedEndpointInput {
 
 /// See [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput).
 pub mod describe_virtual_cluster_input {
-
+    
     /// A builder for [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2092,90 +1388,53 @@ pub mod describe_virtual_cluster_input {
         }
         /// <p>The ID of the virtual cluster that will be described.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeVirtualClusterInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeVirtualClusterInput { id: self.id })
+        pub fn build(self) -> Result<crate::input::DescribeVirtualClusterInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeVirtualClusterInput {
+                    id: self.id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualCluster`](crate::operation::DescribeVirtualCluster)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeVirtualCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeVirtualCluster, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeVirtualClusterInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeVirtualClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.id;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let id = aws_smithy_http::label::fmt_string(
-                    input_13,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_13 = input_13.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/virtualclusters/{id}", id = id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{id}", id = id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeVirtualClusterInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeVirtualClusterInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2185,51 +1444,34 @@ impl DescribeVirtualClusterInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeVirtualCluster::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeVirtualCluster",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeVirtualCluster::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeVirtualCluster", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2241,7 +1483,7 @@ impl DescribeVirtualClusterInput {
 
 /// See [`ListJobRunsInput`](crate::input::ListJobRunsInput).
 pub mod list_job_runs_input {
-
+    
     /// A builder for [`ListJobRunsInput`](crate::input::ListJobRunsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2260,12 +1502,8 @@ pub mod list_job_runs_input {
             self
         }
         /// <p>The ID of the virtual cluster for which to list the job run. </p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// <p>The date and time before which the job runs were submitted.</p>
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2273,12 +1511,8 @@ pub mod list_job_runs_input {
             self
         }
         /// <p>The date and time before which the job runs were submitted.</p>
-        pub fn set_created_before(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_before = input;
-            self
+        pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_before = input; self
         }
         /// <p>The date and time after which the job runs were submitted.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2286,12 +1520,8 @@ pub mod list_job_runs_input {
             self
         }
         /// <p>The date and time after which the job runs were submitted.</p>
-        pub fn set_created_after(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_after = input;
-            self
+        pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_after = input; self
         }
         /// <p>The name of the job run.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2300,8 +1530,7 @@ pub mod list_job_runs_input {
         }
         /// <p>The name of the job run.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `states`.
         ///
@@ -2310,17 +1539,13 @@ pub mod list_job_runs_input {
         /// <p>The states of the job run.</p>
         pub fn states(mut self, input: crate::model::JobRunState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input);
-            self.states = Some(v);
-            self
+                            v.push(input);
+                            self.states = Some(v);
+                            self
         }
         /// <p>The states of the job run.</p>
-        pub fn set_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobRunState>>,
-        ) -> Self {
-            self.states = input;
-            self
+        pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobRunState>>) -> Self {
+            self.states = input; self
         }
         /// <p>The maximum number of job runs that can be listed.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2329,8 +1554,7 @@ pub mod list_job_runs_input {
         }
         /// <p>The maximum number of job runs that can be listed.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The token for the next set of job runs to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2339,126 +1563,79 @@ pub mod list_job_runs_input {
         }
         /// <p>The token for the next set of job runs to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::input::ListJobRunsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListJobRunsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListJobRunsInput {
-                virtual_cluster_id: self.virtual_cluster_id,
-                created_before: self.created_before,
-                created_after: self.created_after,
-                name: self.name,
-                states: self.states,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListJobRunsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListJobRunsInput {
+                    virtual_cluster_id: self.virtual_cluster_id
+                    ,
+                    created_before: self.created_before
+                    ,
+                    created_after: self.created_after
+                    ,
+                    name: self.name
+                    ,
+                    states: self.states
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListJobRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobRuns`](crate::operation::ListJobRuns)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListJobRuns,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListJobRuns, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListJobRunsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListJobRunsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.virtual_cluster_id;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "virtual_cluster_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
-                    input_14,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_14 = input_14.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "virtual_cluster_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/virtualclusters/{virtualClusterId}/jobruns",
-                    virtualClusterId = virtual_cluster_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{virtualClusterId}/jobruns", virtualClusterId = virtual_cluster_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListJobRunsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListJobRunsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_15) = &_input.created_before {
-                    {
-                        query.push_kv(
-                            "createdBefore",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_15,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("createdBefore", &aws_smithy_http::query::fmt_timestamp(inner_15, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_16) = &_input.created_after {
-                    {
-                        query.push_kv(
-                            "createdAfter",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_16,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("createdAfter", &aws_smithy_http::query::fmt_timestamp(inner_16, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_17) = &_input.name {
-                    {
+                     {
                         query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_17));
                     }
                 }
                 if let Some(inner_18) = &_input.states {
-                    {
+                     {
                         for inner_19 in inner_18 {
                             query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_19));
                         }
@@ -2466,14 +1643,11 @@ impl ListJobRunsInput {
                 }
                 if let Some(inner_20) = &_input.max_results {
                     if *inner_20 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_20).encode());
                     }
                 }
                 if let Some(inner_21) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
                     }
                 }
@@ -2481,12 +1655,9 @@ impl ListJobRunsInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListJobRunsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListJobRunsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2497,51 +1668,34 @@ impl ListJobRunsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListJobRuns::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListJobRuns",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobRuns::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListJobRuns", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2553,7 +1707,7 @@ impl ListJobRunsInput {
 
 /// See [`ListJobTemplatesInput`](crate::input::ListJobTemplatesInput).
 pub mod list_job_templates_input {
-
+    
     /// A builder for [`ListJobTemplatesInput`](crate::input::ListJobTemplatesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2569,12 +1723,8 @@ pub mod list_job_templates_input {
             self
         }
         /// <p>The date and time after which the job templates were created.</p>
-        pub fn set_created_after(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_after = input;
-            self
+        pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_after = input; self
         }
         /// <p> The date and time before which the job templates were created.</p>
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2582,12 +1732,8 @@ pub mod list_job_templates_input {
             self
         }
         /// <p> The date and time before which the job templates were created.</p>
-        pub fn set_created_before(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_before = input;
-            self
+        pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_before = input; self
         }
         /// <p> The maximum number of job templates that can be listed.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2596,8 +1742,7 @@ pub mod list_job_templates_input {
         }
         /// <p> The maximum number of job templates that can be listed.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> The token for the next set of job templates to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2606,104 +1751,67 @@ pub mod list_job_templates_input {
         }
         /// <p> The token for the next set of job templates to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobTemplatesInput`](crate::input::ListJobTemplatesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListJobTemplatesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListJobTemplatesInput {
-                created_after: self.created_after,
-                created_before: self.created_before,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListJobTemplatesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListJobTemplatesInput {
+                    created_after: self.created_after
+                    ,
+                    created_before: self.created_before
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListJobTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListJobTemplates`](crate::operation::ListJobTemplates)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListJobTemplates,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListJobTemplates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListJobTemplatesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListJobTemplatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/jobtemplates").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListJobTemplatesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListJobTemplatesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_22) = &_input.created_after {
-                    {
-                        query.push_kv(
-                            "createdAfter",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_22,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("createdAfter", &aws_smithy_http::query::fmt_timestamp(inner_22, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_23) = &_input.created_before {
-                    {
-                        query.push_kv(
-                            "createdBefore",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_23,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("createdBefore", &aws_smithy_http::query::fmt_timestamp(inner_23, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_24) = &_input.max_results {
                     if *inner_24 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_24).encode());
                     }
                 }
                 if let Some(inner_25) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
                     }
                 }
@@ -2711,12 +1819,9 @@ impl ListJobTemplatesInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListJobTemplatesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListJobTemplatesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2727,51 +1832,34 @@ impl ListJobTemplatesInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListJobTemplates::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListJobTemplates",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobTemplates::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListJobTemplates", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2783,7 +1871,7 @@ impl ListJobTemplatesInput {
 
 /// See [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput).
 pub mod list_managed_endpoints_input {
-
+    
     /// A builder for [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2802,12 +1890,8 @@ pub mod list_managed_endpoints_input {
             self
         }
         /// <p>The ID of the virtual cluster.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// <p>The date and time before which the endpoints are created.</p>
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2815,12 +1899,8 @@ pub mod list_managed_endpoints_input {
             self
         }
         /// <p>The date and time before which the endpoints are created.</p>
-        pub fn set_created_before(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_before = input;
-            self
+        pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_before = input; self
         }
         /// <p> The date and time after which the endpoints are created.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2828,12 +1908,8 @@ pub mod list_managed_endpoints_input {
             self
         }
         /// <p> The date and time after which the endpoints are created.</p>
-        pub fn set_created_after(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_after = input;
-            self
+        pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_after = input; self
         }
         /// Appends an item to `types`.
         ///
@@ -2842,17 +1918,13 @@ pub mod list_managed_endpoints_input {
         /// <p>The types of the managed endpoints.</p>
         pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.types.unwrap_or_default();
-            v.push(input.into());
-            self.types = Some(v);
-            self
+                            v.push(input.into());
+                            self.types = Some(v);
+                            self
         }
         /// <p>The types of the managed endpoints.</p>
-        pub fn set_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.types = input;
-            self
+        pub fn set_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.types = input; self
         }
         /// Appends an item to `states`.
         ///
@@ -2861,17 +1933,13 @@ pub mod list_managed_endpoints_input {
         /// <p>The states of the managed endpoints.</p>
         pub fn states(mut self, input: crate::model::EndpointState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input);
-            self.states = Some(v);
-            self
+                            v.push(input);
+                            self.states = Some(v);
+                            self
         }
         /// <p>The states of the managed endpoints.</p>
-        pub fn set_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EndpointState>>,
-        ) -> Self {
-            self.states = input;
-            self
+        pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::EndpointState>>) -> Self {
+            self.states = input; self
         }
         /// <p>The maximum number of managed endpoints that can be listed.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2880,8 +1948,7 @@ pub mod list_managed_endpoints_input {
         }
         /// <p>The maximum number of managed endpoints that can be listed.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> The token for the next set of managed endpoints to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2890,130 +1957,81 @@ pub mod list_managed_endpoints_input {
         }
         /// <p> The token for the next set of managed endpoints to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListManagedEndpointsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListManagedEndpointsInput {
-                virtual_cluster_id: self.virtual_cluster_id,
-                created_before: self.created_before,
-                created_after: self.created_after,
-                types: self.types,
-                states: self.states,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListManagedEndpointsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListManagedEndpointsInput {
+                    virtual_cluster_id: self.virtual_cluster_id
+                    ,
+                    created_before: self.created_before
+                    ,
+                    created_after: self.created_after
+                    ,
+                    types: self.types
+                    ,
+                    states: self.states
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListManagedEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedEndpoints`](crate::operation::ListManagedEndpoints)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListManagedEndpoints,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListManagedEndpoints, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListManagedEndpointsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListManagedEndpointsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.virtual_cluster_id;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "virtual_cluster_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
-                    input_26,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_26 = input_26.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "virtual_cluster_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/virtualclusters/{virtualClusterId}/endpoints",
-                    virtualClusterId = virtual_cluster_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{virtualClusterId}/endpoints", virtualClusterId = virtual_cluster_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListManagedEndpointsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListManagedEndpointsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_27) = &_input.created_before {
-                    {
-                        query.push_kv(
-                            "createdBefore",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_27,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("createdBefore", &aws_smithy_http::query::fmt_timestamp(inner_27, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_28) = &_input.created_after {
-                    {
-                        query.push_kv(
-                            "createdAfter",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_28,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("createdAfter", &aws_smithy_http::query::fmt_timestamp(inner_28, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_29) = &_input.types {
-                    {
+                     {
                         for inner_30 in inner_29 {
                             query.push_kv("types", &aws_smithy_http::query::fmt_string(&inner_30));
                         }
                     }
                 }
                 if let Some(inner_31) = &_input.states {
-                    {
+                     {
                         for inner_32 in inner_31 {
                             query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_32));
                         }
@@ -3021,14 +2039,11 @@ impl ListManagedEndpointsInput {
                 }
                 if let Some(inner_33) = &_input.max_results {
                     if *inner_33 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_33).encode());
                     }
                 }
                 if let Some(inner_34) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
                     }
                 }
@@ -3036,12 +2051,9 @@ impl ListManagedEndpointsInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListManagedEndpointsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListManagedEndpointsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3052,51 +2064,34 @@ impl ListManagedEndpointsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListManagedEndpoints::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListManagedEndpoints",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListManagedEndpoints::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListManagedEndpoints", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3108,7 +2103,7 @@ impl ListManagedEndpointsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3122,92 +2117,53 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The ARN of tagged resources.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.resource_arn;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_35,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_35 = input_35.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3217,51 +2173,34 @@ impl ListTagsForResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3273,13 +2212,12 @@ impl ListTagsForResourceInput {
 
 /// See [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput).
 pub mod list_virtual_clusters_input {
-
+    
     /// A builder for [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_provider_id: std::option::Option<std::string::String>,
-        pub(crate) container_provider_type:
-            std::option::Option<crate::model::ContainerProviderType>,
+        pub(crate) container_provider_type: std::option::Option<crate::model::ContainerProviderType>,
         pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) states: std::option::Option<std::vec::Vec<crate::model::VirtualClusterState>>,
@@ -3293,28 +2231,17 @@ pub mod list_virtual_clusters_input {
             self
         }
         /// <p>The container provider ID of the virtual cluster.</p>
-        pub fn set_container_provider_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_provider_id = input;
-            self
+        pub fn set_container_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.container_provider_id = input; self
         }
         /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
-        pub fn container_provider_type(
-            mut self,
-            input: crate::model::ContainerProviderType,
-        ) -> Self {
+        pub fn container_provider_type(mut self, input: crate::model::ContainerProviderType) -> Self {
             self.container_provider_type = Some(input);
             self
         }
         /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
-        pub fn set_container_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::ContainerProviderType>,
-        ) -> Self {
-            self.container_provider_type = input;
-            self
+        pub fn set_container_provider_type(mut self, input: std::option::Option<crate::model::ContainerProviderType>) -> Self {
+            self.container_provider_type = input; self
         }
         /// <p>The date and time after which the virtual clusters are created.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3322,12 +2249,8 @@ pub mod list_virtual_clusters_input {
             self
         }
         /// <p>The date and time after which the virtual clusters are created.</p>
-        pub fn set_created_after(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_after = input;
-            self
+        pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_after = input; self
         }
         /// <p>The date and time before which the virtual clusters are created.</p>
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3335,12 +2258,8 @@ pub mod list_virtual_clusters_input {
             self
         }
         /// <p>The date and time before which the virtual clusters are created.</p>
-        pub fn set_created_before(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_before = input;
-            self
+        pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_before = input; self
         }
         /// Appends an item to `states`.
         ///
@@ -3349,17 +2268,13 @@ pub mod list_virtual_clusters_input {
         /// <p>The states of the requested virtual clusters.</p>
         pub fn states(mut self, input: crate::model::VirtualClusterState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input);
-            self.states = Some(v);
-            self
+                            v.push(input);
+                            self.states = Some(v);
+                            self
         }
         /// <p>The states of the requested virtual clusters.</p>
-        pub fn set_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualClusterState>>,
-        ) -> Self {
-            self.states = input;
-            self
+        pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualClusterState>>) -> Self {
+            self.states = input; self
         }
         /// <p>The maximum number of virtual clusters that can be listed.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3368,8 +2283,7 @@ pub mod list_virtual_clusters_input {
         }
         /// <p>The maximum number of virtual clusters that can be listed.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The token for the next set of virtual clusters to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3378,115 +2292,78 @@ pub mod list_virtual_clusters_input {
         }
         /// <p>The token for the next set of virtual clusters to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListVirtualClustersInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListVirtualClustersInput {
-                container_provider_id: self.container_provider_id,
-                container_provider_type: self.container_provider_type,
-                created_after: self.created_after,
-                created_before: self.created_before,
-                states: self.states,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListVirtualClustersInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListVirtualClustersInput {
+                    container_provider_id: self.container_provider_id
+                    ,
+                    container_provider_type: self.container_provider_type
+                    ,
+                    created_after: self.created_after
+                    ,
+                    created_before: self.created_before
+                    ,
+                    states: self.states
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListVirtualClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualClusters`](crate::operation::ListVirtualClusters)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListVirtualClusters,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListVirtualClusters, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListVirtualClustersInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListVirtualClustersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/virtualclusters").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListVirtualClustersInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListVirtualClustersInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.container_provider_id {
-                    {
-                        query.push_kv(
-                            "containerProviderId",
-                            &aws_smithy_http::query::fmt_string(&inner_36),
-                        );
+                     {
+                        query.push_kv("containerProviderId", &aws_smithy_http::query::fmt_string(&inner_36));
                     }
                 }
                 if let Some(inner_37) = &_input.container_provider_type {
-                    {
-                        query.push_kv(
-                            "containerProviderType",
-                            &aws_smithy_http::query::fmt_string(&inner_37),
-                        );
+                     {
+                        query.push_kv("containerProviderType", &aws_smithy_http::query::fmt_string(&inner_37));
                     }
                 }
                 if let Some(inner_38) = &_input.created_after {
-                    {
-                        query.push_kv(
-                            "createdAfter",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_38,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("createdAfter", &aws_smithy_http::query::fmt_timestamp(inner_38, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_39) = &_input.created_before {
-                    {
-                        query.push_kv(
-                            "createdBefore",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_39,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("createdBefore", &aws_smithy_http::query::fmt_timestamp(inner_39, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_40) = &_input.states {
-                    {
+                     {
                         for inner_41 in inner_40 {
                             query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_41));
                         }
@@ -3494,14 +2371,11 @@ impl ListVirtualClustersInput {
                 }
                 if let Some(inner_42) = &_input.max_results {
                     if *inner_42 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_42).encode());
                     }
                 }
                 if let Some(inner_43) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                     }
                 }
@@ -3509,12 +2383,9 @@ impl ListVirtualClustersInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListVirtualClustersInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListVirtualClustersInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3525,51 +2396,34 @@ impl ListVirtualClustersInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListVirtualClusters::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListVirtualClusters",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListVirtualClusters::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListVirtualClusters", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3581,7 +2435,7 @@ impl ListVirtualClustersInput {
 
 /// See [`StartJobRunInput`](crate::input::StartJobRunInput).
 pub mod start_job_run_input {
-
+    
     /// A builder for [`StartJobRunInput`](crate::input::StartJobRunInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3591,15 +2445,10 @@ pub mod start_job_run_input {
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) release_label: std::option::Option<std::string::String>,
         pub(crate) job_driver: std::option::Option<crate::model::JobDriver>,
-        pub(crate) configuration_overrides:
-            std::option::Option<crate::model::ConfigurationOverrides>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) job_template_id: std::option::Option<std::string::String>,
-        pub(crate) job_template_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) job_template_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the job run.</p>
@@ -3609,8 +2458,7 @@ pub mod start_job_run_input {
         }
         /// <p>The name of the job run.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The virtual cluster ID for which the job run request is submitted.</p>
         pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3618,12 +2466,8 @@ pub mod start_job_run_input {
             self
         }
         /// <p>The virtual cluster ID for which the job run request is submitted.</p>
-        pub fn set_virtual_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_cluster_id = input;
-            self
+        pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_cluster_id = input; self
         }
         /// <p>The client idempotency token of the job run request. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3632,8 +2476,7 @@ pub mod start_job_run_input {
         }
         /// <p>The client idempotency token of the job run request. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>The execution role ARN for the job run.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3641,12 +2484,8 @@ pub mod start_job_run_input {
             self
         }
         /// <p>The execution role ARN for the job run.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p>The Amazon EMR release version to use for the job run.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3654,12 +2493,8 @@ pub mod start_job_run_input {
             self
         }
         /// <p>The Amazon EMR release version to use for the job run.</p>
-        pub fn set_release_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.release_label = input;
-            self
+        pub fn set_release_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.release_label = input; self
         }
         /// <p>The job driver for the job run.</p>
         pub fn job_driver(mut self, input: crate::model::JobDriver) -> Self {
@@ -3667,53 +2502,32 @@ pub mod start_job_run_input {
             self
         }
         /// <p>The job driver for the job run.</p>
-        pub fn set_job_driver(
-            mut self,
-            input: std::option::Option<crate::model::JobDriver>,
-        ) -> Self {
-            self.job_driver = input;
-            self
+        pub fn set_job_driver(mut self, input: std::option::Option<crate::model::JobDriver>) -> Self {
+            self.job_driver = input; self
         }
         /// <p>The configuration overrides for the job run.</p>
-        pub fn configuration_overrides(
-            mut self,
-            input: crate::model::ConfigurationOverrides,
-        ) -> Self {
+        pub fn configuration_overrides(mut self, input: crate::model::ConfigurationOverrides) -> Self {
             self.configuration_overrides = Some(input);
             self
         }
         /// <p>The configuration overrides for the job run.</p>
-        pub fn set_configuration_overrides(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationOverrides>,
-        ) -> Self {
-            self.configuration_overrides = input;
-            self
+        pub fn set_configuration_overrides(mut self, input: std::option::Option<crate::model::ConfigurationOverrides>) -> Self {
+            self.configuration_overrides = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to job runs.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to job runs.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The job template ID to be used to start the job run.</p>
         pub fn job_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3721,203 +2535,131 @@ pub mod start_job_run_input {
             self
         }
         /// <p>The job template ID to be used to start the job run.</p>
-        pub fn set_job_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_template_id = input;
-            self
+        pub fn set_job_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_template_id = input; self
         }
         /// Adds a key-value pair to `job_template_parameters`.
         ///
         /// To override the contents of this collection use [`set_job_template_parameters`](Self::set_job_template_parameters).
         ///
         /// <p>The values of job template parameters to start a job run.</p>
-        pub fn job_template_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn job_template_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.job_template_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.job_template_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.job_template_parameters = Some(hash_map);
+                            self
         }
         /// <p>The values of job template parameters to start a job run.</p>
-        pub fn set_job_template_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.job_template_parameters = input;
-            self
+        pub fn set_job_template_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.job_template_parameters = input; self
         }
         /// Consumes the builder and constructs a [`StartJobRunInput`](crate::input::StartJobRunInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartJobRunInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::StartJobRunInput {
-                name: self.name,
-                virtual_cluster_id: self.virtual_cluster_id,
-                client_token: self.client_token,
-                execution_role_arn: self.execution_role_arn,
-                release_label: self.release_label,
-                job_driver: self.job_driver,
-                configuration_overrides: self.configuration_overrides,
-                tags: self.tags,
-                job_template_id: self.job_template_id,
-                job_template_parameters: self.job_template_parameters,
-            })
+        pub fn build(self) -> Result<crate::input::StartJobRunInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartJobRunInput {
+                    name: self.name
+                    ,
+                    virtual_cluster_id: self.virtual_cluster_id
+                    ,
+                    client_token: self.client_token
+                    ,
+                    execution_role_arn: self.execution_role_arn
+                    ,
+                    release_label: self.release_label
+                    ,
+                    job_driver: self.job_driver
+                    ,
+                    configuration_overrides: self.configuration_overrides
+                    ,
+                    tags: self.tags
+                    ,
+                    job_template_id: self.job_template_id
+                    ,
+                    job_template_parameters: self.job_template_parameters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StartJobRun`](crate::operation::StartJobRun)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartJobRun,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartJobRun, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartJobRunInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartJobRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.virtual_cluster_id;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "virtual_cluster_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(
-                    input_44,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_44 = input_44.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))?;
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "virtual_cluster_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/virtualclusters/{virtualClusterId}/jobruns",
-                    virtualClusterId = virtual_cluster_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("virtual_cluster_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/virtualclusters/{virtualClusterId}/jobruns", virtualClusterId = virtual_cluster_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartJobRunInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartJobRunInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_job_run(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_start_job_run(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartJobRun::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartJobRun",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartJobRun::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartJobRun", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3929,14 +2671,12 @@ impl StartJobRunInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of resources.</p>
@@ -3946,184 +2686,111 @@ pub mod tag_resource_input {
         }
         /// <p>The ARN of resources.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to resources.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to resources.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_45 = &_input.resource_arn;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_45,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_45 = input_45.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4135,7 +2802,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4150,8 +2817,7 @@ pub mod untag_resource_input {
         }
         /// <p>The ARN of resources.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -4160,104 +2826,60 @@ pub mod untag_resource_input {
         /// <p>The tag keys of the resources.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The tag keys of the resources.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.resource_arn;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_46,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_46 = input_46.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_47 = &_input.tag_keys;
-                let inner_47 = inner_47.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "tag_keys",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_47 = inner_47.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_48 in inner_47 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
                 }
@@ -4265,12 +2887,9 @@ impl UntagResourceInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4281,51 +2900,34 @@ impl UntagResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "emrcontainers",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "emrcontainers"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4338,7 +2940,7 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>The ARN of resources.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -4348,11 +2950,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>The ARN of resources.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tag keys of the resources.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -4360,25 +2962,21 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The ARN of resources.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags assigned to resources.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The ARN of resources.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags assigned to resources.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -4386,7 +2984,7 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartJobRunInput {
+pub struct StartJobRunInput  {
     /// <p>The name of the job run.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4410,63 +3008,53 @@ pub struct StartJobRunInput {
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>The tags assigned to job runs.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The job template ID to be used to start the job run.</p>
     #[doc(hidden)]
     pub job_template_id: std::option::Option<std::string::String>,
     /// <p>The values of job template parameters to start a job run.</p>
     #[doc(hidden)]
-    pub job_template_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub job_template_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartJobRunInput {
     /// <p>The name of the job run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The virtual cluster ID for which the job run request is submitted.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
     /// <p>The client idempotency token of the job run request. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The execution role ARN for the job run.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The Amazon EMR release version to use for the job run.</p>
-    pub fn release_label(&self) -> std::option::Option<&str> {
+    pub fn release_label(&self) -> std::option::Option<& str> {
         self.release_label.as_deref()
     }
     /// <p>The job driver for the job run.</p>
-    pub fn job_driver(&self) -> std::option::Option<&crate::model::JobDriver> {
+    pub fn job_driver(&self) -> std::option::Option<& crate::model::JobDriver> {
         self.job_driver.as_ref()
     }
     /// <p>The configuration overrides for the job run.</p>
-    pub fn configuration_overrides(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfigurationOverrides> {
+    pub fn configuration_overrides(&self) -> std::option::Option<& crate::model::ConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
     /// <p>The tags assigned to job runs.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The job template ID to be used to start the job run.</p>
-    pub fn job_template_id(&self) -> std::option::Option<&str> {
+    pub fn job_template_id(&self) -> std::option::Option<& str> {
         self.job_template_id.as_deref()
     }
     /// <p>The values of job template parameters to start a job run.</p>
-    pub fn job_template_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn job_template_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.job_template_parameters.as_ref()
     }
 }
@@ -4474,7 +3062,7 @@ impl StartJobRunInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualClustersInput {
+pub struct ListVirtualClustersInput  {
     /// <p>The container provider ID of the virtual cluster.</p>
     #[doc(hidden)]
     pub container_provider_id: std::option::Option<std::string::String>,
@@ -4499,25 +3087,23 @@ pub struct ListVirtualClustersInput {
 }
 impl ListVirtualClustersInput {
     /// <p>The container provider ID of the virtual cluster.</p>
-    pub fn container_provider_id(&self) -> std::option::Option<&str> {
+    pub fn container_provider_id(&self) -> std::option::Option<& str> {
         self.container_provider_id.as_deref()
     }
     /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
-    pub fn container_provider_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ContainerProviderType> {
+    pub fn container_provider_type(&self) -> std::option::Option<& crate::model::ContainerProviderType> {
         self.container_provider_type.as_ref()
     }
     /// <p>The date and time after which the virtual clusters are created.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The date and time before which the virtual clusters are created.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The states of the requested virtual clusters.</p>
-    pub fn states(&self) -> std::option::Option<&[crate::model::VirtualClusterState]> {
+    pub fn states(&self) -> std::option::Option<& [crate::model::VirtualClusterState]> {
         self.states.as_deref()
     }
     /// <p>The maximum number of virtual clusters that can be listed.</p>
@@ -4525,7 +3111,7 @@ impl ListVirtualClustersInput {
         self.max_results
     }
     /// <p>The token for the next set of virtual clusters to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -4533,14 +3119,14 @@ impl ListVirtualClustersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The ARN of tagged resources.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The ARN of tagged resources.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -4548,7 +3134,7 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedEndpointsInput {
+pub struct ListManagedEndpointsInput  {
     /// <p>The ID of the virtual cluster.</p>
     #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
@@ -4573,23 +3159,23 @@ pub struct ListManagedEndpointsInput {
 }
 impl ListManagedEndpointsInput {
     /// <p>The ID of the virtual cluster.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
     /// <p>The date and time before which the endpoints are created.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p> The date and time after which the endpoints are created.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The types of the managed endpoints.</p>
-    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn types(&self) -> std::option::Option<& [std::string::String]> {
         self.types.as_deref()
     }
     /// <p>The states of the managed endpoints.</p>
-    pub fn states(&self) -> std::option::Option<&[crate::model::EndpointState]> {
+    pub fn states(&self) -> std::option::Option<& [crate::model::EndpointState]> {
         self.states.as_deref()
     }
     /// <p>The maximum number of managed endpoints that can be listed.</p>
@@ -4597,7 +3183,7 @@ impl ListManagedEndpointsInput {
         self.max_results
     }
     /// <p> The token for the next set of managed endpoints to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -4605,7 +3191,7 @@ impl ListManagedEndpointsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobTemplatesInput {
+pub struct ListJobTemplatesInput  {
     /// <p>The date and time after which the job templates were created.</p>
     #[doc(hidden)]
     pub created_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -4621,11 +3207,11 @@ pub struct ListJobTemplatesInput {
 }
 impl ListJobTemplatesInput {
     /// <p>The date and time after which the job templates were created.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p> The date and time before which the job templates were created.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p> The maximum number of job templates that can be listed.</p>
@@ -4633,7 +3219,7 @@ impl ListJobTemplatesInput {
         self.max_results
     }
     /// <p> The token for the next set of job templates to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -4641,7 +3227,7 @@ impl ListJobTemplatesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobRunsInput {
+pub struct ListJobRunsInput  {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
     #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
@@ -4666,23 +3252,23 @@ pub struct ListJobRunsInput {
 }
 impl ListJobRunsInput {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
     /// <p>The date and time before which the job runs were submitted.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The date and time after which the job runs were submitted.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The name of the job run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The states of the job run.</p>
-    pub fn states(&self) -> std::option::Option<&[crate::model::JobRunState]> {
+    pub fn states(&self) -> std::option::Option<& [crate::model::JobRunState]> {
         self.states.as_deref()
     }
     /// <p>The maximum number of job runs that can be listed.</p>
@@ -4690,7 +3276,7 @@ impl ListJobRunsInput {
         self.max_results
     }
     /// <p>The token for the next set of job runs to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -4698,14 +3284,14 @@ impl ListJobRunsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualClusterInput {
+pub struct DescribeVirtualClusterInput  {
     /// <p>The ID of the virtual cluster that will be described.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be described.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -4713,7 +3299,7 @@ impl DescribeVirtualClusterInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeManagedEndpointInput {
+pub struct DescribeManagedEndpointInput  {
     /// <p>This output displays ID of the managed endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4723,11 +3309,11 @@ pub struct DescribeManagedEndpointInput {
 }
 impl DescribeManagedEndpointInput {
     /// <p>This output displays ID of the managed endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
@@ -4735,14 +3321,14 @@ impl DescribeManagedEndpointInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobTemplateInput {
+pub struct DescribeJobTemplateInput  {
     /// <p>The ID of the job template that will be described.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeJobTemplateInput {
     /// <p>The ID of the job template that will be described.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -4750,7 +3336,7 @@ impl DescribeJobTemplateInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobRunInput {
+pub struct DescribeJobRunInput  {
     /// <p>The ID of the job run request. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4760,11 +3346,11 @@ pub struct DescribeJobRunInput {
 }
 impl DescribeJobRunInput {
     /// <p>The ID of the job run request. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
@@ -4772,14 +3358,14 @@ impl DescribeJobRunInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualClusterInput {
+pub struct DeleteVirtualClusterInput  {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -4787,7 +3373,7 @@ impl DeleteVirtualClusterInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteManagedEndpointInput {
+pub struct DeleteManagedEndpointInput  {
     /// <p>The ID of the managed endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4797,11 +3383,11 @@ pub struct DeleteManagedEndpointInput {
 }
 impl DeleteManagedEndpointInput {
     /// <p>The ID of the managed endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
@@ -4809,14 +3395,14 @@ impl DeleteManagedEndpointInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobTemplateInput {
+pub struct DeleteJobTemplateInput  {
     /// <p>The ID of the job template that will be deleted.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteJobTemplateInput {
     /// <p>The ID of the job template that will be deleted.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -4824,7 +3410,7 @@ impl DeleteJobTemplateInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualClusterInput {
+pub struct CreateVirtualClusterInput  {
     /// <p>The specified name of the virtual cluster.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4836,27 +3422,23 @@ pub struct CreateVirtualClusterInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the virtual cluster.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateVirtualClusterInput {
     /// <p>The specified name of the virtual cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The container provider of the virtual cluster.</p>
-    pub fn container_provider(&self) -> std::option::Option<&crate::model::ContainerProvider> {
+    pub fn container_provider(&self) -> std::option::Option<& crate::model::ContainerProvider> {
         self.container_provider.as_ref()
     }
     /// <p>The client token of the virtual cluster.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags assigned to the virtual cluster.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -4864,7 +3446,7 @@ impl CreateVirtualClusterInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateManagedEndpointInput {
+pub struct CreateManagedEndpointInput  {
     /// <p>The name of the managed endpoint.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4881,9 +3463,7 @@ pub struct CreateManagedEndpointInput {
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The configuration settings that will be used to override existing configurations.</p>
@@ -4894,52 +3474,44 @@ pub struct CreateManagedEndpointInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags of the managed endpoint. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateManagedEndpointInput {
     /// <p>The name of the managed endpoint.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
     /// <p>The type of the managed endpoint.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The Amazon EMR release version.</p>
-    pub fn release_label(&self) -> std::option::Option<&str> {
+    pub fn release_label(&self) -> std::option::Option<& str> {
         self.release_label.as_deref()
     }
     /// <p>The ARN of the execution role.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The configuration settings that will be used to override existing configurations.</p>
-    pub fn configuration_overrides(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfigurationOverrides> {
+    pub fn configuration_overrides(&self) -> std::option::Option<& crate::model::ConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
     /// <p>The client idempotency token for this create call.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags of the managed endpoint. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -4947,7 +3519,7 @@ impl CreateManagedEndpointInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobTemplateInput {
+pub struct CreateJobTemplateInput  {
     /// <p>The specified name of the job template.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4959,34 +3531,30 @@ pub struct CreateJobTemplateInput {
     pub job_template_data: std::option::Option<crate::model::JobTemplateData>,
     /// <p>The tags that are associated with the job template.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key ARN used to encrypt the job template.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl CreateJobTemplateInput {
     /// <p>The specified name of the job template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The client token of the job template.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
-    pub fn job_template_data(&self) -> std::option::Option<&crate::model::JobTemplateData> {
+    pub fn job_template_data(&self) -> std::option::Option<& crate::model::JobTemplateData> {
         self.job_template_data.as_ref()
     }
     /// <p>The tags that are associated with the job template.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The KMS key ARN used to encrypt the job template.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -4994,7 +3562,7 @@ impl CreateJobTemplateInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobRunInput {
+pub struct CancelJobRunInput  {
     /// <p>The ID of the job run to cancel.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5004,11 +3572,12 @@ pub struct CancelJobRunInput {
 }
 impl CancelJobRunInput {
     /// <p>The ID of the job run to cancel.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
+

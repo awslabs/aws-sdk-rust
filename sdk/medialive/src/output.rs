@@ -3,20 +3,20 @@
 /// Placeholder documentation for UpdateReservationResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateReservationOutput {
+pub struct UpdateReservationOutput  {
     /// Reserved resources available to use
     #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
 impl UpdateReservationOutput {
     /// Reserved resources available to use
-    pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
+    pub fn reservation(&self) -> std::option::Option<& crate::model::Reservation> {
         self.reservation.as_ref()
     }
 }
 /// See [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
 pub mod update_reservation_output {
-
+    
     /// A builder for [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,20 +29,19 @@ pub mod update_reservation_output {
             self
         }
         /// Reserved resources available to use
-        pub fn set_reservation(
-            mut self,
-            input: std::option::Option<crate::model::Reservation>,
-        ) -> Self {
-            self.reservation = input;
-            self
+        pub fn set_reservation(mut self, input: std::option::Option<crate::model::Reservation>) -> Self {
+            self.reservation = input; self
         }
         /// Consumes the builder and constructs a [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
         pub fn build(self) -> crate::output::UpdateReservationOutput {
             crate::output::UpdateReservationOutput {
-                reservation: self.reservation,
+                reservation: self.reservation
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateReservationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
@@ -54,20 +53,20 @@ impl UpdateReservationOutput {
 /// Placeholder documentation for UpdateMultiplexProgramResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMultiplexProgramOutput {
+pub struct UpdateMultiplexProgramOutput  {
     /// The updated multiplex program.
     #[doc(hidden)]
     pub multiplex_program: std::option::Option<crate::model::MultiplexProgram>,
 }
 impl UpdateMultiplexProgramOutput {
     /// The updated multiplex program.
-    pub fn multiplex_program(&self) -> std::option::Option<&crate::model::MultiplexProgram> {
+    pub fn multiplex_program(&self) -> std::option::Option<& crate::model::MultiplexProgram> {
         self.multiplex_program.as_ref()
     }
 }
 /// See [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
 pub mod update_multiplex_program_output {
-
+    
     /// A builder for [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -80,20 +79,19 @@ pub mod update_multiplex_program_output {
             self
         }
         /// The updated multiplex program.
-        pub fn set_multiplex_program(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexProgram>,
-        ) -> Self {
-            self.multiplex_program = input;
-            self
+        pub fn set_multiplex_program(mut self, input: std::option::Option<crate::model::MultiplexProgram>) -> Self {
+            self.multiplex_program = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
         pub fn build(self) -> crate::output::UpdateMultiplexProgramOutput {
             crate::output::UpdateMultiplexProgramOutput {
-                multiplex_program: self.multiplex_program,
+                multiplex_program: self.multiplex_program
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMultiplexProgramOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
@@ -105,20 +103,20 @@ impl UpdateMultiplexProgramOutput {
 /// Placeholder documentation for UpdateMultiplexResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMultiplexOutput {
+pub struct UpdateMultiplexOutput  {
     /// The updated multiplex.
     #[doc(hidden)]
     pub multiplex: std::option::Option<crate::model::Multiplex>,
 }
 impl UpdateMultiplexOutput {
     /// The updated multiplex.
-    pub fn multiplex(&self) -> std::option::Option<&crate::model::Multiplex> {
+    pub fn multiplex(&self) -> std::option::Option<& crate::model::Multiplex> {
         self.multiplex.as_ref()
     }
 }
 /// See [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
 pub mod update_multiplex_output {
-
+    
     /// A builder for [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -131,20 +129,19 @@ pub mod update_multiplex_output {
             self
         }
         /// The updated multiplex.
-        pub fn set_multiplex(
-            mut self,
-            input: std::option::Option<crate::model::Multiplex>,
-        ) -> Self {
-            self.multiplex = input;
-            self
+        pub fn set_multiplex(mut self, input: std::option::Option<crate::model::Multiplex>) -> Self {
+            self.multiplex = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
         pub fn build(self) -> crate::output::UpdateMultiplexOutput {
             crate::output::UpdateMultiplexOutput {
-                multiplex: self.multiplex,
+                multiplex: self.multiplex
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMultiplexOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
@@ -156,20 +153,20 @@ impl UpdateMultiplexOutput {
 /// Placeholder documentation for UpdateInputSecurityGroupResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInputSecurityGroupOutput {
+pub struct UpdateInputSecurityGroupOutput  {
     /// An Input Security Group
     #[doc(hidden)]
     pub security_group: std::option::Option<crate::model::InputSecurityGroup>,
 }
 impl UpdateInputSecurityGroupOutput {
     /// An Input Security Group
-    pub fn security_group(&self) -> std::option::Option<&crate::model::InputSecurityGroup> {
+    pub fn security_group(&self) -> std::option::Option<& crate::model::InputSecurityGroup> {
         self.security_group.as_ref()
     }
 }
 /// See [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
 pub mod update_input_security_group_output {
-
+    
     /// A builder for [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -182,20 +179,19 @@ pub mod update_input_security_group_output {
             self
         }
         /// An Input Security Group
-        pub fn set_security_group(
-            mut self,
-            input: std::option::Option<crate::model::InputSecurityGroup>,
-        ) -> Self {
-            self.security_group = input;
-            self
+        pub fn set_security_group(mut self, input: std::option::Option<crate::model::InputSecurityGroup>) -> Self {
+            self.security_group = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
         pub fn build(self) -> crate::output::UpdateInputSecurityGroupOutput {
             crate::output::UpdateInputSecurityGroupOutput {
-                security_group: self.security_group,
+                security_group: self.security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInputSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
@@ -207,7 +203,7 @@ impl UpdateInputSecurityGroupOutput {
 /// Placeholder documentation for UpdateInputDeviceResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInputDeviceOutput {
+pub struct UpdateInputDeviceOutput  {
     /// The unique ARN of the input device.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -247,72 +243,63 @@ pub struct UpdateInputDeviceOutput {
 }
 impl UpdateInputDeviceOutput {
     /// The unique ARN of the input device.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The state of the connection between the input device and AWS.
-    pub fn connection_state(
-        &self,
-    ) -> std::option::Option<&crate::model::InputDeviceConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::InputDeviceConnectionState> {
         self.connection_state.as_ref()
     }
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-    pub fn device_settings_sync_state(
-        &self,
-    ) -> std::option::Option<&crate::model::DeviceSettingsSyncState> {
+    pub fn device_settings_sync_state(&self) -> std::option::Option<& crate::model::DeviceSettingsSyncState> {
         self.device_settings_sync_state.as_ref()
     }
     /// The status of software on the input device.
-    pub fn device_update_status(&self) -> std::option::Option<&crate::model::DeviceUpdateStatus> {
+    pub fn device_update_status(&self) -> std::option::Option<& crate::model::DeviceUpdateStatus> {
         self.device_update_status.as_ref()
     }
     /// Settings that describe an input device that is type HD.
-    pub fn hd_device_settings(&self) -> std::option::Option<&crate::model::InputDeviceHdSettings> {
+    pub fn hd_device_settings(&self) -> std::option::Option<& crate::model::InputDeviceHdSettings> {
         self.hd_device_settings.as_ref()
     }
     /// The unique ID of the input device.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The network MAC address of the input device.
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// A name that you specify for the input device.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The network settings for the input device.
-    pub fn network_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::InputDeviceNetworkSettings> {
+    pub fn network_settings(&self) -> std::option::Option<& crate::model::InputDeviceNetworkSettings> {
         self.network_settings.as_ref()
     }
     /// The unique serial number of the input device.
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// The type of the input device.
-    pub fn r#type(&self) -> std::option::Option<&crate::model::InputDeviceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::InputDeviceType> {
         self.r#type.as_ref()
     }
     /// Settings that describe an input device that is type UHD.
-    pub fn uhd_device_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::InputDeviceUhdSettings> {
+    pub fn uhd_device_settings(&self) -> std::option::Option<& crate::model::InputDeviceUhdSettings> {
         self.uhd_device_settings.as_ref()
     }
 }
 /// See [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
 pub mod update_input_device_output {
-
+    
     /// A builder for [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::InputDeviceConnectionState>,
-        pub(crate) device_settings_sync_state:
-            std::option::Option<crate::model::DeviceSettingsSyncState>,
+        pub(crate) device_settings_sync_state: std::option::Option<crate::model::DeviceSettingsSyncState>,
         pub(crate) device_update_status: std::option::Option<crate::model::DeviceUpdateStatus>,
         pub(crate) hd_device_settings: std::option::Option<crate::model::InputDeviceHdSettings>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -331,8 +318,7 @@ pub mod update_input_device_output {
         }
         /// The unique ARN of the input device.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The state of the connection between the input device and AWS.
         pub fn connection_state(mut self, input: crate::model::InputDeviceConnectionState) -> Self {
@@ -340,28 +326,17 @@ pub mod update_input_device_output {
             self
         }
         /// The state of the connection between the input device and AWS.
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::InputDeviceConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-        pub fn device_settings_sync_state(
-            mut self,
-            input: crate::model::DeviceSettingsSyncState,
-        ) -> Self {
+        pub fn device_settings_sync_state(mut self, input: crate::model::DeviceSettingsSyncState) -> Self {
             self.device_settings_sync_state = Some(input);
             self
         }
         /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-        pub fn set_device_settings_sync_state(
-            mut self,
-            input: std::option::Option<crate::model::DeviceSettingsSyncState>,
-        ) -> Self {
-            self.device_settings_sync_state = input;
-            self
+        pub fn set_device_settings_sync_state(mut self, input: std::option::Option<crate::model::DeviceSettingsSyncState>) -> Self {
+            self.device_settings_sync_state = input; self
         }
         /// The status of software on the input device.
         pub fn device_update_status(mut self, input: crate::model::DeviceUpdateStatus) -> Self {
@@ -369,12 +344,8 @@ pub mod update_input_device_output {
             self
         }
         /// The status of software on the input device.
-        pub fn set_device_update_status(
-            mut self,
-            input: std::option::Option<crate::model::DeviceUpdateStatus>,
-        ) -> Self {
-            self.device_update_status = input;
-            self
+        pub fn set_device_update_status(mut self, input: std::option::Option<crate::model::DeviceUpdateStatus>) -> Self {
+            self.device_update_status = input; self
         }
         /// Settings that describe an input device that is type HD.
         pub fn hd_device_settings(mut self, input: crate::model::InputDeviceHdSettings) -> Self {
@@ -382,12 +353,8 @@ pub mod update_input_device_output {
             self
         }
         /// Settings that describe an input device that is type HD.
-        pub fn set_hd_device_settings(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceHdSettings>,
-        ) -> Self {
-            self.hd_device_settings = input;
-            self
+        pub fn set_hd_device_settings(mut self, input: std::option::Option<crate::model::InputDeviceHdSettings>) -> Self {
+            self.hd_device_settings = input; self
         }
         /// The unique ID of the input device.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -396,8 +363,7 @@ pub mod update_input_device_output {
         }
         /// The unique ID of the input device.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The network MAC address of the input device.
         pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -406,8 +372,7 @@ pub mod update_input_device_output {
         }
         /// The network MAC address of the input device.
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// A name that you specify for the input device.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -416,8 +381,7 @@ pub mod update_input_device_output {
         }
         /// A name that you specify for the input device.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The network settings for the input device.
         pub fn network_settings(mut self, input: crate::model::InputDeviceNetworkSettings) -> Self {
@@ -425,12 +389,8 @@ pub mod update_input_device_output {
             self
         }
         /// The network settings for the input device.
-        pub fn set_network_settings(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceNetworkSettings>,
-        ) -> Self {
-            self.network_settings = input;
-            self
+        pub fn set_network_settings(mut self, input: std::option::Option<crate::model::InputDeviceNetworkSettings>) -> Self {
+            self.network_settings = input; self
         }
         /// The unique serial number of the input device.
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -438,12 +398,8 @@ pub mod update_input_device_output {
             self
         }
         /// The unique serial number of the input device.
-        pub fn set_serial_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.serial_number = input;
-            self
+        pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.serial_number = input; self
         }
         /// The type of the input device.
         pub fn r#type(mut self, input: crate::model::InputDeviceType) -> Self {
@@ -451,12 +407,8 @@ pub mod update_input_device_output {
             self
         }
         /// The type of the input device.
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::InputDeviceType>) -> Self {
+            self.r#type = input; self
         }
         /// Settings that describe an input device that is type UHD.
         pub fn uhd_device_settings(mut self, input: crate::model::InputDeviceUhdSettings) -> Self {
@@ -464,31 +416,41 @@ pub mod update_input_device_output {
             self
         }
         /// Settings that describe an input device that is type UHD.
-        pub fn set_uhd_device_settings(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceUhdSettings>,
-        ) -> Self {
-            self.uhd_device_settings = input;
-            self
+        pub fn set_uhd_device_settings(mut self, input: std::option::Option<crate::model::InputDeviceUhdSettings>) -> Self {
+            self.uhd_device_settings = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
         pub fn build(self) -> crate::output::UpdateInputDeviceOutput {
             crate::output::UpdateInputDeviceOutput {
-                arn: self.arn,
-                connection_state: self.connection_state,
-                device_settings_sync_state: self.device_settings_sync_state,
-                device_update_status: self.device_update_status,
-                hd_device_settings: self.hd_device_settings,
-                id: self.id,
-                mac_address: self.mac_address,
-                name: self.name,
-                network_settings: self.network_settings,
-                serial_number: self.serial_number,
-                r#type: self.r#type,
-                uhd_device_settings: self.uhd_device_settings,
+                arn: self.arn
+                ,
+                connection_state: self.connection_state
+                ,
+                device_settings_sync_state: self.device_settings_sync_state
+                ,
+                device_update_status: self.device_update_status
+                ,
+                hd_device_settings: self.hd_device_settings
+                ,
+                id: self.id
+                ,
+                mac_address: self.mac_address
+                ,
+                name: self.name
+                ,
+                network_settings: self.network_settings
+                ,
+                serial_number: self.serial_number
+                ,
+                r#type: self.r#type
+                ,
+                uhd_device_settings: self.uhd_device_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInputDeviceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
@@ -500,20 +462,20 @@ impl UpdateInputDeviceOutput {
 /// Placeholder documentation for UpdateInputResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInputOutput {
+pub struct UpdateInputOutput  {
     /// Placeholder documentation for Input
     #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl UpdateInputOutput {
     /// Placeholder documentation for Input
-    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+    pub fn input(&self) -> std::option::Option<& crate::model::Input> {
         self.input.as_ref()
     }
 }
 /// See [`UpdateInputOutput`](crate::output::UpdateInputOutput).
 pub mod update_input_output {
-
+    
     /// A builder for [`UpdateInputOutput`](crate::output::UpdateInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -527,14 +489,18 @@ pub mod update_input_output {
         }
         /// Placeholder documentation for Input
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInputOutput`](crate::output::UpdateInputOutput).
         pub fn build(self) -> crate::output::UpdateInputOutput {
-            crate::output::UpdateInputOutput { input: self.input }
+            crate::output::UpdateInputOutput {
+                input: self.input
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateInputOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInputOutput`](crate::output::UpdateInputOutput).
@@ -546,20 +512,20 @@ impl UpdateInputOutput {
 /// Placeholder documentation for UpdateChannelClassResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelClassOutput {
+pub struct UpdateChannelClassOutput  {
     /// Placeholder documentation for Channel
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl UpdateChannelClassOutput {
     /// Placeholder documentation for Channel
-    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::model::Channel> {
         self.channel.as_ref()
     }
 }
 /// See [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
 pub mod update_channel_class_output {
-
+    
     /// A builder for [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -573,16 +539,18 @@ pub mod update_channel_class_output {
         }
         /// Placeholder documentation for Channel
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
-            self.channel = input;
-            self
+            self.channel = input; self
         }
         /// Consumes the builder and constructs a [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
         pub fn build(self) -> crate::output::UpdateChannelClassOutput {
             crate::output::UpdateChannelClassOutput {
-                channel: self.channel,
+                channel: self.channel
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateChannelClassOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
@@ -594,20 +562,20 @@ impl UpdateChannelClassOutput {
 /// Placeholder documentation for UpdateChannelResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelOutput {
+pub struct UpdateChannelOutput  {
     /// Placeholder documentation for Channel
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl UpdateChannelOutput {
     /// Placeholder documentation for Channel
-    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::model::Channel> {
         self.channel.as_ref()
     }
 }
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
 pub mod update_channel_output {
-
+    
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -621,16 +589,18 @@ pub mod update_channel_output {
         }
         /// Placeholder documentation for Channel
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
-            self.channel = input;
-            self
+            self.channel = input; self
         }
         /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
         pub fn build(self) -> crate::output::UpdateChannelOutput {
             crate::output::UpdateChannelOutput {
-                channel: self.channel,
+                channel: self.channel
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
@@ -642,19 +612,24 @@ impl UpdateChannelOutput {
 /// Placeholder documentation for TransferInputDeviceResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransferInputDeviceOutput {}
+pub struct TransferInputDeviceOutput  {
+}
 /// See [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
 pub mod transfer_input_device_output {
-
+    
     /// A builder for [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
         pub fn build(self) -> crate::output::TransferInputDeviceOutput {
-            crate::output::TransferInputDeviceOutput {}
+            crate::output::TransferInputDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl TransferInputDeviceOutput {
     /// Creates a new builder-style object to manufacture [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
@@ -666,7 +641,7 @@ impl TransferInputDeviceOutput {
 /// Placeholder documentation for StopMultiplexResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopMultiplexOutput {
+pub struct StopMultiplexOutput  {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -696,32 +671,31 @@ pub struct StopMultiplexOutput {
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StopMultiplexOutput {
     /// The unique arn of the multiplex.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A list of availability zones for the multiplex.
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// A list of the multiplex output destinations.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::MultiplexOutputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::MultiplexOutputDestination]> {
         self.destinations.as_deref()
     }
     /// The unique id of the multiplex.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configuration for a multiplex event.
-    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+    pub fn multiplex_settings(&self) -> std::option::Option<& crate::model::MultiplexSettings> {
         self.multiplex_settings.as_ref()
     }
     /// The name of the multiplex.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The number of currently healthy pipelines.
@@ -733,36 +707,30 @@ impl StopMultiplexOutput {
         self.program_count
     }
     /// The current state of the multiplex.
-    pub fn state(&self) -> std::option::Option<&crate::model::MultiplexState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::MultiplexState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
 pub mod stop_multiplex_output {
-
+    
     /// A builder for [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pipelines_running_count: std::option::Option<i32>,
         pub(crate) program_count: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::MultiplexState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The unique arn of the multiplex.
@@ -772,8 +740,7 @@ pub mod stop_multiplex_output {
         }
         /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -782,17 +749,13 @@ pub mod stop_multiplex_output {
         /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// A list of availability zones for the multiplex.
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -801,17 +764,13 @@ pub mod stop_multiplex_output {
         /// A list of the multiplex output destinations.
         pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of the multiplex output destinations.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// The unique id of the multiplex.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -820,8 +779,7 @@ pub mod stop_multiplex_output {
         }
         /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configuration for a multiplex event.
         pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
@@ -829,12 +787,8 @@ pub mod stop_multiplex_output {
             self
         }
         /// Configuration for a multiplex event.
-        pub fn set_multiplex_settings(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexSettings>,
-        ) -> Self {
-            self.multiplex_settings = input;
-            self
+        pub fn set_multiplex_settings(mut self, input: std::option::Option<crate::model::MultiplexSettings>) -> Self {
+            self.multiplex_settings = input; self
         }
         /// The name of the multiplex.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -843,8 +797,7 @@ pub mod stop_multiplex_output {
         }
         /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The number of currently healthy pipelines.
         pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -853,8 +806,7 @@ pub mod stop_multiplex_output {
         }
         /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipelines_running_count = input;
-            self
+            self.pipelines_running_count = input; self
         }
         /// The number of programs in the multiplex.
         pub fn program_count(mut self, input: i32) -> Self {
@@ -863,8 +815,7 @@ pub mod stop_multiplex_output {
         }
         /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.program_count = input;
-            self
+            self.program_count = input; self
         }
         /// The current state of the multiplex.
         pub fn state(mut self, input: crate::model::MultiplexState) -> Self {
@@ -872,54 +823,54 @@ pub mod stop_multiplex_output {
             self
         }
         /// The current state of the multiplex.
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::MultiplexState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
         pub fn build(self) -> crate::output::StopMultiplexOutput {
             crate::output::StopMultiplexOutput {
-                arn: self.arn,
-                availability_zones: self.availability_zones,
-                destinations: self.destinations,
-                id: self.id,
-                multiplex_settings: self.multiplex_settings,
-                name: self.name,
-                pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-                program_count: self.program_count.unwrap_or_default(),
-                state: self.state,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                availability_zones: self.availability_zones
+                ,
+                destinations: self.destinations
+                ,
+                id: self.id
+                ,
+                multiplex_settings: self.multiplex_settings
+                ,
+                name: self.name
+                ,
+                pipelines_running_count: self.pipelines_running_count
+                    .unwrap_or_default()
+                ,
+                program_count: self.program_count
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl StopMultiplexOutput {
     /// Creates a new builder-style object to manufacture [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
@@ -931,7 +882,7 @@ impl StopMultiplexOutput {
 /// Placeholder documentation for StopChannelResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopChannelOutput {
+pub struct StopChannelOutput  {
     /// The unique arn of the channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -982,65 +933,62 @@ pub struct StopChannelOutput {
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
     #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl StopChannelOutput {
     /// The unique arn of the channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Specification of CDI inputs for this channel
-    pub fn cdi_input_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+    pub fn cdi_input_specification(&self) -> std::option::Option<& crate::model::CdiInputSpecification> {
         self.cdi_input_specification.as_ref()
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+    pub fn channel_class(&self) -> std::option::Option<& crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::ChannelEgressEndpoint]> {
+    pub fn egress_endpoints(&self) -> std::option::Option<& [crate::model::ChannelEgressEndpoint]> {
         self.egress_endpoints.as_deref()
     }
     /// Encoder Settings
-    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+    pub fn encoder_settings(&self) -> std::option::Option<& crate::model::EncoderSettings> {
         self.encoder_settings.as_ref()
     }
     /// The unique id of the channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// List of input attachments for channel.
-    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+    pub fn input_attachments(&self) -> std::option::Option<& [crate::model::InputAttachment]> {
         self.input_attachments.as_deref()
     }
     /// Specification of network and file inputs for this channel
-    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+    pub fn input_specification(&self) -> std::option::Option<& crate::model::InputSpecification> {
         self.input_specification.as_ref()
     }
     /// The log level being written to CloudWatch Logs.
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
     /// Maintenance settings for this channel.
-    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceStatus> {
+    pub fn maintenance(&self) -> std::option::Option<& crate::model::MaintenanceStatus> {
         self.maintenance.as_ref()
     }
     /// The name of the channel. (user-mutable)
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Runtime details for the pipelines of a running channel.
-    pub fn pipeline_details(&self) -> std::option::Option<&[crate::model::PipelineDetail]> {
+    pub fn pipeline_details(&self) -> std::option::Option<& [crate::model::PipelineDetail]> {
         self.pipeline_details.as_deref()
     }
     /// The number of currently healthy pipelines.
@@ -1048,55 +996,45 @@ impl StopChannelOutput {
         self.pipelines_running_count
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Placeholder documentation for ChannelState
-    pub fn state(&self) -> std::option::Option<&crate::model::ChannelState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ChannelState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Settings for VPC output
-    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
+    pub fn vpc(&self) -> std::option::Option<& crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
     }
 }
 /// See [`StopChannelOutput`](crate::output::StopChannelOutput).
 pub mod stop_channel_output {
-
+    
     /// A builder for [`StopChannelOutput`](crate::output::StopChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) cdi_input_specification:
-            std::option::Option<crate::model::CdiInputSpecification>,
+        pub(crate) cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
         pub(crate) channel_class: std::option::Option<crate::model::ChannelClass>,
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
-        pub(crate) egress_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+        pub(crate) egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
         pub(crate) encoder_settings: std::option::Option<crate::model::EncoderSettings>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) input_attachments:
-            std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+        pub(crate) input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
         pub(crate) maintenance: std::option::Option<crate::model::MaintenanceStatus>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) pipeline_details:
-            std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
+        pub(crate) pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
         pub(crate) pipelines_running_count: std::option::Option<i32>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
     }
     impl Builder {
@@ -1107,24 +1045,16 @@ pub mod stop_channel_output {
         }
         /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(
-            mut self,
-            input: crate::model::CdiInputSpecification,
-        ) -> Self {
+        pub fn cdi_input_specification(mut self, input: crate::model::CdiInputSpecification) -> Self {
             self.cdi_input_specification = Some(input);
             self
         }
         /// Specification of CDI inputs for this channel
-        pub fn set_cdi_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::CdiInputSpecification>,
-        ) -> Self {
-            self.cdi_input_specification = input;
-            self
+        pub fn set_cdi_input_specification(mut self, input: std::option::Option<crate::model::CdiInputSpecification>) -> Self {
+            self.cdi_input_specification = input; self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
@@ -1132,12 +1062,8 @@ pub mod stop_channel_output {
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn set_channel_class(
-            mut self,
-            input: std::option::Option<crate::model::ChannelClass>,
-        ) -> Self {
-            self.channel_class = input;
-            self
+        pub fn set_channel_class(mut self, input: std::option::Option<crate::model::ChannelClass>) -> Self {
+            self.channel_class = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -1146,17 +1072,13 @@ pub mod stop_channel_output {
         /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// Appends an item to `egress_endpoints`.
         ///
@@ -1165,17 +1087,13 @@ pub mod stop_channel_output {
         /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input);
-            self.egress_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.egress_endpoints = Some(v);
+                            self
         }
         /// The endpoints where outgoing connections initiate from
-        pub fn set_egress_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
-        ) -> Self {
-            self.egress_endpoints = input;
-            self
+        pub fn set_egress_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>) -> Self {
+            self.egress_endpoints = input; self
         }
         /// Encoder Settings
         pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
@@ -1183,12 +1101,8 @@ pub mod stop_channel_output {
             self
         }
         /// Encoder Settings
-        pub fn set_encoder_settings(
-            mut self,
-            input: std::option::Option<crate::model::EncoderSettings>,
-        ) -> Self {
-            self.encoder_settings = input;
-            self
+        pub fn set_encoder_settings(mut self, input: std::option::Option<crate::model::EncoderSettings>) -> Self {
+            self.encoder_settings = input; self
         }
         /// The unique id of the channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1197,8 +1111,7 @@ pub mod stop_channel_output {
         }
         /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `input_attachments`.
         ///
@@ -1207,17 +1120,13 @@ pub mod stop_channel_output {
         /// List of input attachments for channel.
         pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input);
-            self.input_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.input_attachments = Some(v);
+                            self
         }
         /// List of input attachments for channel.
-        pub fn set_input_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
-        ) -> Self {
-            self.input_attachments = input;
-            self
+        pub fn set_input_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>) -> Self {
+            self.input_attachments = input; self
         }
         /// Specification of network and file inputs for this channel
         pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
@@ -1225,12 +1134,8 @@ pub mod stop_channel_output {
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn set_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::InputSpecification>,
-        ) -> Self {
-            self.input_specification = input;
-            self
+        pub fn set_input_specification(mut self, input: std::option::Option<crate::model::InputSpecification>) -> Self {
+            self.input_specification = input; self
         }
         /// The log level being written to CloudWatch Logs.
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -1239,8 +1144,7 @@ pub mod stop_channel_output {
         }
         /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Maintenance settings for this channel.
         pub fn maintenance(mut self, input: crate::model::MaintenanceStatus) -> Self {
@@ -1248,12 +1152,8 @@ pub mod stop_channel_output {
             self
         }
         /// Maintenance settings for this channel.
-        pub fn set_maintenance(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceStatus>,
-        ) -> Self {
-            self.maintenance = input;
-            self
+        pub fn set_maintenance(mut self, input: std::option::Option<crate::model::MaintenanceStatus>) -> Self {
+            self.maintenance = input; self
         }
         /// The name of the channel. (user-mutable)
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1262,8 +1162,7 @@ pub mod stop_channel_output {
         }
         /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `pipeline_details`.
         ///
@@ -1272,17 +1171,13 @@ pub mod stop_channel_output {
         /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input);
-            self.pipeline_details = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_details = Some(v);
+                            self
         }
         /// Runtime details for the pipelines of a running channel.
-        pub fn set_pipeline_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
-        ) -> Self {
-            self.pipeline_details = input;
-            self
+        pub fn set_pipeline_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>) -> Self {
+            self.pipeline_details = input; self
         }
         /// The number of currently healthy pipelines.
         pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -1291,8 +1186,7 @@ pub mod stop_channel_output {
         }
         /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipelines_running_count = input;
-            self
+            self.pipelines_running_count = input; self
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1301,8 +1195,7 @@ pub mod stop_channel_output {
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Placeholder documentation for ChannelState
         pub fn state(mut self, input: crate::model::ChannelState) -> Self {
@@ -1311,33 +1204,22 @@ pub mod stop_channel_output {
         }
         /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Settings for VPC output
         pub fn vpc(mut self, input: crate::model::VpcOutputSettingsDescription) -> Self {
@@ -1345,37 +1227,54 @@ pub mod stop_channel_output {
             self
         }
         /// Settings for VPC output
-        pub fn set_vpc(
-            mut self,
-            input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
-        ) -> Self {
-            self.vpc = input;
-            self
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VpcOutputSettingsDescription>) -> Self {
+            self.vpc = input; self
         }
         /// Consumes the builder and constructs a [`StopChannelOutput`](crate::output::StopChannelOutput).
         pub fn build(self) -> crate::output::StopChannelOutput {
             crate::output::StopChannelOutput {
-                arn: self.arn,
-                cdi_input_specification: self.cdi_input_specification,
-                channel_class: self.channel_class,
-                destinations: self.destinations,
-                egress_endpoints: self.egress_endpoints,
-                encoder_settings: self.encoder_settings,
-                id: self.id,
-                input_attachments: self.input_attachments,
-                input_specification: self.input_specification,
-                log_level: self.log_level,
-                maintenance: self.maintenance,
-                name: self.name,
-                pipeline_details: self.pipeline_details,
-                pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-                role_arn: self.role_arn,
-                state: self.state,
-                tags: self.tags,
-                vpc: self.vpc,
+                arn: self.arn
+                ,
+                cdi_input_specification: self.cdi_input_specification
+                ,
+                channel_class: self.channel_class
+                ,
+                destinations: self.destinations
+                ,
+                egress_endpoints: self.egress_endpoints
+                ,
+                encoder_settings: self.encoder_settings
+                ,
+                id: self.id
+                ,
+                input_attachments: self.input_attachments
+                ,
+                input_specification: self.input_specification
+                ,
+                log_level: self.log_level
+                ,
+                maintenance: self.maintenance
+                ,
+                name: self.name
+                ,
+                pipeline_details: self.pipeline_details
+                ,
+                pipelines_running_count: self.pipelines_running_count
+                    .unwrap_or_default()
+                ,
+                role_arn: self.role_arn
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                vpc: self.vpc
+                ,
             }
         }
     }
+    
+    
 }
 impl StopChannelOutput {
     /// Creates a new builder-style object to manufacture [`StopChannelOutput`](crate::output::StopChannelOutput).
@@ -1387,7 +1286,7 @@ impl StopChannelOutput {
 /// Placeholder documentation for StartMultiplexResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMultiplexOutput {
+pub struct StartMultiplexOutput  {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1417,32 +1316,31 @@ pub struct StartMultiplexOutput {
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartMultiplexOutput {
     /// The unique arn of the multiplex.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A list of availability zones for the multiplex.
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// A list of the multiplex output destinations.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::MultiplexOutputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::MultiplexOutputDestination]> {
         self.destinations.as_deref()
     }
     /// The unique id of the multiplex.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configuration for a multiplex event.
-    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+    pub fn multiplex_settings(&self) -> std::option::Option<& crate::model::MultiplexSettings> {
         self.multiplex_settings.as_ref()
     }
     /// The name of the multiplex.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The number of currently healthy pipelines.
@@ -1454,36 +1352,30 @@ impl StartMultiplexOutput {
         self.program_count
     }
     /// The current state of the multiplex.
-    pub fn state(&self) -> std::option::Option<&crate::model::MultiplexState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::MultiplexState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
 pub mod start_multiplex_output {
-
+    
     /// A builder for [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pipelines_running_count: std::option::Option<i32>,
         pub(crate) program_count: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::MultiplexState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The unique arn of the multiplex.
@@ -1493,8 +1385,7 @@ pub mod start_multiplex_output {
         }
         /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -1503,17 +1394,13 @@ pub mod start_multiplex_output {
         /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// A list of availability zones for the multiplex.
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -1522,17 +1409,13 @@ pub mod start_multiplex_output {
         /// A list of the multiplex output destinations.
         pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of the multiplex output destinations.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// The unique id of the multiplex.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1541,8 +1424,7 @@ pub mod start_multiplex_output {
         }
         /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configuration for a multiplex event.
         pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
@@ -1550,12 +1432,8 @@ pub mod start_multiplex_output {
             self
         }
         /// Configuration for a multiplex event.
-        pub fn set_multiplex_settings(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexSettings>,
-        ) -> Self {
-            self.multiplex_settings = input;
-            self
+        pub fn set_multiplex_settings(mut self, input: std::option::Option<crate::model::MultiplexSettings>) -> Self {
+            self.multiplex_settings = input; self
         }
         /// The name of the multiplex.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1564,8 +1442,7 @@ pub mod start_multiplex_output {
         }
         /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The number of currently healthy pipelines.
         pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -1574,8 +1451,7 @@ pub mod start_multiplex_output {
         }
         /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipelines_running_count = input;
-            self
+            self.pipelines_running_count = input; self
         }
         /// The number of programs in the multiplex.
         pub fn program_count(mut self, input: i32) -> Self {
@@ -1584,8 +1460,7 @@ pub mod start_multiplex_output {
         }
         /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.program_count = input;
-            self
+            self.program_count = input; self
         }
         /// The current state of the multiplex.
         pub fn state(mut self, input: crate::model::MultiplexState) -> Self {
@@ -1593,54 +1468,54 @@ pub mod start_multiplex_output {
             self
         }
         /// The current state of the multiplex.
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::MultiplexState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
         pub fn build(self) -> crate::output::StartMultiplexOutput {
             crate::output::StartMultiplexOutput {
-                arn: self.arn,
-                availability_zones: self.availability_zones,
-                destinations: self.destinations,
-                id: self.id,
-                multiplex_settings: self.multiplex_settings,
-                name: self.name,
-                pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-                program_count: self.program_count.unwrap_or_default(),
-                state: self.state,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                availability_zones: self.availability_zones
+                ,
+                destinations: self.destinations
+                ,
+                id: self.id
+                ,
+                multiplex_settings: self.multiplex_settings
+                ,
+                name: self.name
+                ,
+                pipelines_running_count: self.pipelines_running_count
+                    .unwrap_or_default()
+                ,
+                program_count: self.program_count
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl StartMultiplexOutput {
     /// Creates a new builder-style object to manufacture [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
@@ -1652,19 +1527,24 @@ impl StartMultiplexOutput {
 /// Placeholder documentation for StartInputDeviceMaintenanceWindowResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartInputDeviceMaintenanceWindowOutput {}
+pub struct StartInputDeviceMaintenanceWindowOutput  {
+}
 /// See [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
 pub mod start_input_device_maintenance_window_output {
-
+    
     /// A builder for [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::StartInputDeviceMaintenanceWindowOutput {
-            crate::output::StartInputDeviceMaintenanceWindowOutput {}
+            crate::output::StartInputDeviceMaintenanceWindowOutput {
+            }
         }
     }
+    
+    
 }
 impl StartInputDeviceMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
@@ -1676,7 +1556,7 @@ impl StartInputDeviceMaintenanceWindowOutput {
 /// Placeholder documentation for StartChannelResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartChannelOutput {
+pub struct StartChannelOutput  {
     /// The unique arn of the channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1727,65 +1607,62 @@ pub struct StartChannelOutput {
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
     #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl StartChannelOutput {
     /// The unique arn of the channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Specification of CDI inputs for this channel
-    pub fn cdi_input_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+    pub fn cdi_input_specification(&self) -> std::option::Option<& crate::model::CdiInputSpecification> {
         self.cdi_input_specification.as_ref()
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+    pub fn channel_class(&self) -> std::option::Option<& crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::ChannelEgressEndpoint]> {
+    pub fn egress_endpoints(&self) -> std::option::Option<& [crate::model::ChannelEgressEndpoint]> {
         self.egress_endpoints.as_deref()
     }
     /// Encoder Settings
-    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+    pub fn encoder_settings(&self) -> std::option::Option<& crate::model::EncoderSettings> {
         self.encoder_settings.as_ref()
     }
     /// The unique id of the channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// List of input attachments for channel.
-    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+    pub fn input_attachments(&self) -> std::option::Option<& [crate::model::InputAttachment]> {
         self.input_attachments.as_deref()
     }
     /// Specification of network and file inputs for this channel
-    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+    pub fn input_specification(&self) -> std::option::Option<& crate::model::InputSpecification> {
         self.input_specification.as_ref()
     }
     /// The log level being written to CloudWatch Logs.
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
     /// Maintenance settings for this channel.
-    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceStatus> {
+    pub fn maintenance(&self) -> std::option::Option<& crate::model::MaintenanceStatus> {
         self.maintenance.as_ref()
     }
     /// The name of the channel. (user-mutable)
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Runtime details for the pipelines of a running channel.
-    pub fn pipeline_details(&self) -> std::option::Option<&[crate::model::PipelineDetail]> {
+    pub fn pipeline_details(&self) -> std::option::Option<& [crate::model::PipelineDetail]> {
         self.pipeline_details.as_deref()
     }
     /// The number of currently healthy pipelines.
@@ -1793,55 +1670,45 @@ impl StartChannelOutput {
         self.pipelines_running_count
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Placeholder documentation for ChannelState
-    pub fn state(&self) -> std::option::Option<&crate::model::ChannelState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ChannelState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Settings for VPC output
-    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
+    pub fn vpc(&self) -> std::option::Option<& crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
     }
 }
 /// See [`StartChannelOutput`](crate::output::StartChannelOutput).
 pub mod start_channel_output {
-
+    
     /// A builder for [`StartChannelOutput`](crate::output::StartChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) cdi_input_specification:
-            std::option::Option<crate::model::CdiInputSpecification>,
+        pub(crate) cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
         pub(crate) channel_class: std::option::Option<crate::model::ChannelClass>,
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
-        pub(crate) egress_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+        pub(crate) egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
         pub(crate) encoder_settings: std::option::Option<crate::model::EncoderSettings>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) input_attachments:
-            std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+        pub(crate) input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
         pub(crate) maintenance: std::option::Option<crate::model::MaintenanceStatus>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) pipeline_details:
-            std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
+        pub(crate) pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
         pub(crate) pipelines_running_count: std::option::Option<i32>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
     }
     impl Builder {
@@ -1852,24 +1719,16 @@ pub mod start_channel_output {
         }
         /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(
-            mut self,
-            input: crate::model::CdiInputSpecification,
-        ) -> Self {
+        pub fn cdi_input_specification(mut self, input: crate::model::CdiInputSpecification) -> Self {
             self.cdi_input_specification = Some(input);
             self
         }
         /// Specification of CDI inputs for this channel
-        pub fn set_cdi_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::CdiInputSpecification>,
-        ) -> Self {
-            self.cdi_input_specification = input;
-            self
+        pub fn set_cdi_input_specification(mut self, input: std::option::Option<crate::model::CdiInputSpecification>) -> Self {
+            self.cdi_input_specification = input; self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
@@ -1877,12 +1736,8 @@ pub mod start_channel_output {
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn set_channel_class(
-            mut self,
-            input: std::option::Option<crate::model::ChannelClass>,
-        ) -> Self {
-            self.channel_class = input;
-            self
+        pub fn set_channel_class(mut self, input: std::option::Option<crate::model::ChannelClass>) -> Self {
+            self.channel_class = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -1891,17 +1746,13 @@ pub mod start_channel_output {
         /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// Appends an item to `egress_endpoints`.
         ///
@@ -1910,17 +1761,13 @@ pub mod start_channel_output {
         /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input);
-            self.egress_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.egress_endpoints = Some(v);
+                            self
         }
         /// The endpoints where outgoing connections initiate from
-        pub fn set_egress_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
-        ) -> Self {
-            self.egress_endpoints = input;
-            self
+        pub fn set_egress_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>) -> Self {
+            self.egress_endpoints = input; self
         }
         /// Encoder Settings
         pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
@@ -1928,12 +1775,8 @@ pub mod start_channel_output {
             self
         }
         /// Encoder Settings
-        pub fn set_encoder_settings(
-            mut self,
-            input: std::option::Option<crate::model::EncoderSettings>,
-        ) -> Self {
-            self.encoder_settings = input;
-            self
+        pub fn set_encoder_settings(mut self, input: std::option::Option<crate::model::EncoderSettings>) -> Self {
+            self.encoder_settings = input; self
         }
         /// The unique id of the channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1942,8 +1785,7 @@ pub mod start_channel_output {
         }
         /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `input_attachments`.
         ///
@@ -1952,17 +1794,13 @@ pub mod start_channel_output {
         /// List of input attachments for channel.
         pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input);
-            self.input_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.input_attachments = Some(v);
+                            self
         }
         /// List of input attachments for channel.
-        pub fn set_input_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
-        ) -> Self {
-            self.input_attachments = input;
-            self
+        pub fn set_input_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>) -> Self {
+            self.input_attachments = input; self
         }
         /// Specification of network and file inputs for this channel
         pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
@@ -1970,12 +1808,8 @@ pub mod start_channel_output {
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn set_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::InputSpecification>,
-        ) -> Self {
-            self.input_specification = input;
-            self
+        pub fn set_input_specification(mut self, input: std::option::Option<crate::model::InputSpecification>) -> Self {
+            self.input_specification = input; self
         }
         /// The log level being written to CloudWatch Logs.
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -1984,8 +1818,7 @@ pub mod start_channel_output {
         }
         /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Maintenance settings for this channel.
         pub fn maintenance(mut self, input: crate::model::MaintenanceStatus) -> Self {
@@ -1993,12 +1826,8 @@ pub mod start_channel_output {
             self
         }
         /// Maintenance settings for this channel.
-        pub fn set_maintenance(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceStatus>,
-        ) -> Self {
-            self.maintenance = input;
-            self
+        pub fn set_maintenance(mut self, input: std::option::Option<crate::model::MaintenanceStatus>) -> Self {
+            self.maintenance = input; self
         }
         /// The name of the channel. (user-mutable)
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2007,8 +1836,7 @@ pub mod start_channel_output {
         }
         /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `pipeline_details`.
         ///
@@ -2017,17 +1845,13 @@ pub mod start_channel_output {
         /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input);
-            self.pipeline_details = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_details = Some(v);
+                            self
         }
         /// Runtime details for the pipelines of a running channel.
-        pub fn set_pipeline_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
-        ) -> Self {
-            self.pipeline_details = input;
-            self
+        pub fn set_pipeline_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>) -> Self {
+            self.pipeline_details = input; self
         }
         /// The number of currently healthy pipelines.
         pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -2036,8 +1860,7 @@ pub mod start_channel_output {
         }
         /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipelines_running_count = input;
-            self
+            self.pipelines_running_count = input; self
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2046,8 +1869,7 @@ pub mod start_channel_output {
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Placeholder documentation for ChannelState
         pub fn state(mut self, input: crate::model::ChannelState) -> Self {
@@ -2056,33 +1878,22 @@ pub mod start_channel_output {
         }
         /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Settings for VPC output
         pub fn vpc(mut self, input: crate::model::VpcOutputSettingsDescription) -> Self {
@@ -2090,37 +1901,54 @@ pub mod start_channel_output {
             self
         }
         /// Settings for VPC output
-        pub fn set_vpc(
-            mut self,
-            input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
-        ) -> Self {
-            self.vpc = input;
-            self
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VpcOutputSettingsDescription>) -> Self {
+            self.vpc = input; self
         }
         /// Consumes the builder and constructs a [`StartChannelOutput`](crate::output::StartChannelOutput).
         pub fn build(self) -> crate::output::StartChannelOutput {
             crate::output::StartChannelOutput {
-                arn: self.arn,
-                cdi_input_specification: self.cdi_input_specification,
-                channel_class: self.channel_class,
-                destinations: self.destinations,
-                egress_endpoints: self.egress_endpoints,
-                encoder_settings: self.encoder_settings,
-                id: self.id,
-                input_attachments: self.input_attachments,
-                input_specification: self.input_specification,
-                log_level: self.log_level,
-                maintenance: self.maintenance,
-                name: self.name,
-                pipeline_details: self.pipeline_details,
-                pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-                role_arn: self.role_arn,
-                state: self.state,
-                tags: self.tags,
-                vpc: self.vpc,
+                arn: self.arn
+                ,
+                cdi_input_specification: self.cdi_input_specification
+                ,
+                channel_class: self.channel_class
+                ,
+                destinations: self.destinations
+                ,
+                egress_endpoints: self.egress_endpoints
+                ,
+                encoder_settings: self.encoder_settings
+                ,
+                id: self.id
+                ,
+                input_attachments: self.input_attachments
+                ,
+                input_specification: self.input_specification
+                ,
+                log_level: self.log_level
+                ,
+                maintenance: self.maintenance
+                ,
+                name: self.name
+                ,
+                pipeline_details: self.pipeline_details
+                ,
+                pipelines_running_count: self.pipelines_running_count
+                    .unwrap_or_default()
+                ,
+                role_arn: self.role_arn
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                vpc: self.vpc
+                ,
             }
         }
     }
+    
+    
 }
 impl StartChannelOutput {
     /// Creates a new builder-style object to manufacture [`StartChannelOutput`](crate::output::StartChannelOutput).
@@ -2132,19 +1960,24 @@ impl StartChannelOutput {
 /// Placeholder documentation for RejectInputDeviceTransferResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectInputDeviceTransferOutput {}
+pub struct RejectInputDeviceTransferOutput  {
+}
 /// See [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
 pub mod reject_input_device_transfer_output {
-
+    
     /// A builder for [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
         pub fn build(self) -> crate::output::RejectInputDeviceTransferOutput {
-            crate::output::RejectInputDeviceTransferOutput {}
+            crate::output::RejectInputDeviceTransferOutput {
+            }
         }
     }
+    
+    
 }
 impl RejectInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
@@ -2156,19 +1989,24 @@ impl RejectInputDeviceTransferOutput {
 /// Placeholder documentation for RebootInputDeviceResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootInputDeviceOutput {}
+pub struct RebootInputDeviceOutput  {
+}
 /// See [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
 pub mod reboot_input_device_output {
-
+    
     /// A builder for [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
         pub fn build(self) -> crate::output::RebootInputDeviceOutput {
-            crate::output::RebootInputDeviceOutput {}
+            crate::output::RebootInputDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl RebootInputDeviceOutput {
     /// Creates a new builder-style object to manufacture [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
@@ -2180,20 +2018,20 @@ impl RebootInputDeviceOutput {
 /// Placeholder documentation for PurchaseOfferingResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseOfferingOutput {
+pub struct PurchaseOfferingOutput  {
     /// Reserved resources available to use
     #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
 impl PurchaseOfferingOutput {
     /// Reserved resources available to use
-    pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
+    pub fn reservation(&self) -> std::option::Option<& crate::model::Reservation> {
         self.reservation.as_ref()
     }
 }
 /// See [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
 pub mod purchase_offering_output {
-
+    
     /// A builder for [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2206,20 +2044,19 @@ pub mod purchase_offering_output {
             self
         }
         /// Reserved resources available to use
-        pub fn set_reservation(
-            mut self,
-            input: std::option::Option<crate::model::Reservation>,
-        ) -> Self {
-            self.reservation = input;
-            self
+        pub fn set_reservation(mut self, input: std::option::Option<crate::model::Reservation>) -> Self {
+            self.reservation = input; self
         }
         /// Consumes the builder and constructs a [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
         pub fn build(self) -> crate::output::PurchaseOfferingOutput {
             crate::output::PurchaseOfferingOutput {
-                reservation: self.reservation,
+                reservation: self.reservation
+                ,
             }
         }
     }
+    
+    
 }
 impl PurchaseOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
@@ -2231,30 +2068,24 @@ impl PurchaseOfferingOutput {
 /// Placeholder documentation for ListTagsForResourceResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// Placeholder documentation for Tags
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// Placeholder documentation for Tags
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -2262,31 +2093,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Placeholder documentation for Tags
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Placeholder documentation for Tags
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2298,7 +2124,7 @@ impl ListTagsForResourceOutput {
 /// Placeholder documentation for ListReservationsResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReservationsOutput {
+pub struct ListReservationsOutput  {
     /// Token to retrieve the next page of results
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2308,17 +2134,17 @@ pub struct ListReservationsOutput {
 }
 impl ListReservationsOutput {
     /// Token to retrieve the next page of results
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of reservations
-    pub fn reservations(&self) -> std::option::Option<&[crate::model::Reservation]> {
+    pub fn reservations(&self) -> std::option::Option<& [crate::model::Reservation]> {
         self.reservations.as_deref()
     }
 }
 /// See [`ListReservationsOutput`](crate::output::ListReservationsOutput).
 pub mod list_reservations_output {
-
+    
     /// A builder for [`ListReservationsOutput`](crate::output::ListReservationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2333,8 +2159,7 @@ pub mod list_reservations_output {
         }
         /// Token to retrieve the next page of results
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `reservations`.
         ///
@@ -2343,26 +2168,26 @@ pub mod list_reservations_output {
         /// List of reservations
         pub fn reservations(mut self, input: crate::model::Reservation) -> Self {
             let mut v = self.reservations.unwrap_or_default();
-            v.push(input);
-            self.reservations = Some(v);
-            self
+                            v.push(input);
+                            self.reservations = Some(v);
+                            self
         }
         /// List of reservations
-        pub fn set_reservations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
-        ) -> Self {
-            self.reservations = input;
-            self
+        pub fn set_reservations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Reservation>>) -> Self {
+            self.reservations = input; self
         }
         /// Consumes the builder and constructs a [`ListReservationsOutput`](crate::output::ListReservationsOutput).
         pub fn build(self) -> crate::output::ListReservationsOutput {
             crate::output::ListReservationsOutput {
-                next_token: self.next_token,
-                reservations: self.reservations,
+                next_token: self.next_token
+                ,
+                reservations: self.reservations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReservationsOutput {
     /// Creates a new builder-style object to manufacture [`ListReservationsOutput`](crate::output::ListReservationsOutput).
@@ -2374,7 +2199,7 @@ impl ListReservationsOutput {
 /// Placeholder documentation for ListOfferingsResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOfferingsOutput {
+pub struct ListOfferingsOutput  {
     /// Token to retrieve the next page of results
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2384,17 +2209,17 @@ pub struct ListOfferingsOutput {
 }
 impl ListOfferingsOutput {
     /// Token to retrieve the next page of results
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of offerings
-    pub fn offerings(&self) -> std::option::Option<&[crate::model::Offering]> {
+    pub fn offerings(&self) -> std::option::Option<& [crate::model::Offering]> {
         self.offerings.as_deref()
     }
 }
 /// See [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
 pub mod list_offerings_output {
-
+    
     /// A builder for [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2409,8 +2234,7 @@ pub mod list_offerings_output {
         }
         /// Token to retrieve the next page of results
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `offerings`.
         ///
@@ -2419,26 +2243,26 @@ pub mod list_offerings_output {
         /// List of offerings
         pub fn offerings(mut self, input: crate::model::Offering) -> Self {
             let mut v = self.offerings.unwrap_or_default();
-            v.push(input);
-            self.offerings = Some(v);
-            self
+                            v.push(input);
+                            self.offerings = Some(v);
+                            self
         }
         /// List of offerings
-        pub fn set_offerings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Offering>>,
-        ) -> Self {
-            self.offerings = input;
-            self
+        pub fn set_offerings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Offering>>) -> Self {
+            self.offerings = input; self
         }
         /// Consumes the builder and constructs a [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
         pub fn build(self) -> crate::output::ListOfferingsOutput {
             crate::output::ListOfferingsOutput {
-                next_token: self.next_token,
-                offerings: self.offerings,
+                next_token: self.next_token
+                ,
+                offerings: self.offerings
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
@@ -2450,35 +2274,31 @@ impl ListOfferingsOutput {
 /// Placeholder documentation for ListMultiplexProgramsResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMultiplexProgramsOutput {
+pub struct ListMultiplexProgramsOutput  {
     /// List of multiplex programs.
     #[doc(hidden)]
-    pub multiplex_programs:
-        std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>,
+    pub multiplex_programs: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>,
     /// Token for the next ListMultiplexProgram request.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiplexProgramsOutput {
     /// List of multiplex programs.
-    pub fn multiplex_programs(
-        &self,
-    ) -> std::option::Option<&[crate::model::MultiplexProgramSummary]> {
+    pub fn multiplex_programs(&self) -> std::option::Option<& [crate::model::MultiplexProgramSummary]> {
         self.multiplex_programs.as_deref()
     }
     /// Token for the next ListMultiplexProgram request.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
 pub mod list_multiplex_programs_output {
-
+    
     /// A builder for [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) multiplex_programs:
-            std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>,
+        pub(crate) multiplex_programs: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2489,17 +2309,13 @@ pub mod list_multiplex_programs_output {
         /// List of multiplex programs.
         pub fn multiplex_programs(mut self, input: crate::model::MultiplexProgramSummary) -> Self {
             let mut v = self.multiplex_programs.unwrap_or_default();
-            v.push(input);
-            self.multiplex_programs = Some(v);
-            self
+                            v.push(input);
+                            self.multiplex_programs = Some(v);
+                            self
         }
         /// List of multiplex programs.
-        pub fn set_multiplex_programs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>,
-        ) -> Self {
-            self.multiplex_programs = input;
-            self
+        pub fn set_multiplex_programs(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>) -> Self {
+            self.multiplex_programs = input; self
         }
         /// Token for the next ListMultiplexProgram request.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2508,17 +2324,20 @@ pub mod list_multiplex_programs_output {
         }
         /// Token for the next ListMultiplexProgram request.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
         pub fn build(self) -> crate::output::ListMultiplexProgramsOutput {
             crate::output::ListMultiplexProgramsOutput {
-                multiplex_programs: self.multiplex_programs,
-                next_token: self.next_token,
+                multiplex_programs: self.multiplex_programs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMultiplexProgramsOutput {
     /// Creates a new builder-style object to manufacture [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
@@ -2530,7 +2349,7 @@ impl ListMultiplexProgramsOutput {
 /// Placeholder documentation for ListMultiplexesResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMultiplexesOutput {
+pub struct ListMultiplexesOutput  {
     /// List of multiplexes.
     #[doc(hidden)]
     pub multiplexes: std::option::Option<std::vec::Vec<crate::model::MultiplexSummary>>,
@@ -2540,17 +2359,17 @@ pub struct ListMultiplexesOutput {
 }
 impl ListMultiplexesOutput {
     /// List of multiplexes.
-    pub fn multiplexes(&self) -> std::option::Option<&[crate::model::MultiplexSummary]> {
+    pub fn multiplexes(&self) -> std::option::Option<& [crate::model::MultiplexSummary]> {
         self.multiplexes.as_deref()
     }
     /// Token for the next ListMultiplexes request.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
 pub mod list_multiplexes_output {
-
+    
     /// A builder for [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2565,17 +2384,13 @@ pub mod list_multiplexes_output {
         /// List of multiplexes.
         pub fn multiplexes(mut self, input: crate::model::MultiplexSummary) -> Self {
             let mut v = self.multiplexes.unwrap_or_default();
-            v.push(input);
-            self.multiplexes = Some(v);
-            self
+                            v.push(input);
+                            self.multiplexes = Some(v);
+                            self
         }
         /// List of multiplexes.
-        pub fn set_multiplexes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiplexSummary>>,
-        ) -> Self {
-            self.multiplexes = input;
-            self
+        pub fn set_multiplexes(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiplexSummary>>) -> Self {
+            self.multiplexes = input; self
         }
         /// Token for the next ListMultiplexes request.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2584,17 +2399,20 @@ pub mod list_multiplexes_output {
         }
         /// Token for the next ListMultiplexes request.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
         pub fn build(self) -> crate::output::ListMultiplexesOutput {
             crate::output::ListMultiplexesOutput {
-                multiplexes: self.multiplexes,
-                next_token: self.next_token,
+                multiplexes: self.multiplexes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMultiplexesOutput {
     /// Creates a new builder-style object to manufacture [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
@@ -2606,7 +2424,7 @@ impl ListMultiplexesOutput {
 /// Placeholder documentation for ListInputSecurityGroupsResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputSecurityGroupsOutput {
+pub struct ListInputSecurityGroupsOutput  {
     /// List of input security groups
     #[doc(hidden)]
     pub input_security_groups: std::option::Option<std::vec::Vec<crate::model::InputSecurityGroup>>,
@@ -2616,24 +2434,21 @@ pub struct ListInputSecurityGroupsOutput {
 }
 impl ListInputSecurityGroupsOutput {
     /// List of input security groups
-    pub fn input_security_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::InputSecurityGroup]> {
+    pub fn input_security_groups(&self) -> std::option::Option<& [crate::model::InputSecurityGroup]> {
         self.input_security_groups.as_deref()
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
 pub mod list_input_security_groups_output {
-
+    
     /// A builder for [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) input_security_groups:
-            std::option::Option<std::vec::Vec<crate::model::InputSecurityGroup>>,
+        pub(crate) input_security_groups: std::option::Option<std::vec::Vec<crate::model::InputSecurityGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2644,17 +2459,13 @@ pub mod list_input_security_groups_output {
         /// List of input security groups
         pub fn input_security_groups(mut self, input: crate::model::InputSecurityGroup) -> Self {
             let mut v = self.input_security_groups.unwrap_or_default();
-            v.push(input);
-            self.input_security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.input_security_groups = Some(v);
+                            self
         }
         /// List of input security groups
-        pub fn set_input_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputSecurityGroup>>,
-        ) -> Self {
-            self.input_security_groups = input;
-            self
+        pub fn set_input_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputSecurityGroup>>) -> Self {
+            self.input_security_groups = input; self
         }
         /// Placeholder documentation for __string
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2663,17 +2474,20 @@ pub mod list_input_security_groups_output {
         }
         /// Placeholder documentation for __string
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
         pub fn build(self) -> crate::output::ListInputSecurityGroupsOutput {
             crate::output::ListInputSecurityGroupsOutput {
-                input_security_groups: self.input_security_groups,
-                next_token: self.next_token,
+                input_security_groups: self.input_security_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInputSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
@@ -2685,7 +2499,7 @@ impl ListInputSecurityGroupsOutput {
 /// Placeholder documentation for ListInputsResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputsOutput {
+pub struct ListInputsOutput  {
     /// Placeholder documentation for __listOfInput
     #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<crate::model::Input>>,
@@ -2695,17 +2509,17 @@ pub struct ListInputsOutput {
 }
 impl ListInputsOutput {
     /// Placeholder documentation for __listOfInput
-    pub fn inputs(&self) -> std::option::Option<&[crate::model::Input]> {
+    pub fn inputs(&self) -> std::option::Option<& [crate::model::Input]> {
         self.inputs.as_deref()
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInputsOutput`](crate::output::ListInputsOutput).
 pub mod list_inputs_output {
-
+    
     /// A builder for [`ListInputsOutput`](crate::output::ListInputsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2720,17 +2534,13 @@ pub mod list_inputs_output {
         /// Placeholder documentation for __listOfInput
         pub fn inputs(mut self, input: crate::model::Input) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input);
-            self.inputs = Some(v);
-            self
+                            v.push(input);
+                            self.inputs = Some(v);
+                            self
         }
         /// Placeholder documentation for __listOfInput
-        pub fn set_inputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Input>>,
-        ) -> Self {
-            self.inputs = input;
-            self
+        pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Input>>) -> Self {
+            self.inputs = input; self
         }
         /// Placeholder documentation for __string
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2739,17 +2549,20 @@ pub mod list_inputs_output {
         }
         /// Placeholder documentation for __string
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInputsOutput`](crate::output::ListInputsOutput).
         pub fn build(self) -> crate::output::ListInputsOutput {
             crate::output::ListInputsOutput {
-                inputs: self.inputs,
-                next_token: self.next_token,
+                inputs: self.inputs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInputsOutput {
     /// Creates a new builder-style object to manufacture [`ListInputsOutput`](crate::output::ListInputsOutput).
@@ -2761,35 +2574,31 @@ impl ListInputsOutput {
 /// Placeholder documentation for ListInputDeviceTransfersResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputDeviceTransfersOutput {
+pub struct ListInputDeviceTransfersOutput  {
     /// The list of devices that you are transferring or are being transferred to you.
     #[doc(hidden)]
-    pub input_device_transfers:
-        std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>,
+    pub input_device_transfers: std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>,
     /// A token to get additional list results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputDeviceTransfersOutput {
     /// The list of devices that you are transferring or are being transferred to you.
-    pub fn input_device_transfers(
-        &self,
-    ) -> std::option::Option<&[crate::model::TransferringInputDeviceSummary]> {
+    pub fn input_device_transfers(&self) -> std::option::Option<& [crate::model::TransferringInputDeviceSummary]> {
         self.input_device_transfers.as_deref()
     }
     /// A token to get additional list results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
 pub mod list_input_device_transfers_output {
-
+    
     /// A builder for [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) input_device_transfers:
-            std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>,
+        pub(crate) input_device_transfers: std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2798,22 +2607,15 @@ pub mod list_input_device_transfers_output {
         /// To override the contents of this collection use [`set_input_device_transfers`](Self::set_input_device_transfers).
         ///
         /// The list of devices that you are transferring or are being transferred to you.
-        pub fn input_device_transfers(
-            mut self,
-            input: crate::model::TransferringInputDeviceSummary,
-        ) -> Self {
+        pub fn input_device_transfers(mut self, input: crate::model::TransferringInputDeviceSummary) -> Self {
             let mut v = self.input_device_transfers.unwrap_or_default();
-            v.push(input);
-            self.input_device_transfers = Some(v);
-            self
+                            v.push(input);
+                            self.input_device_transfers = Some(v);
+                            self
         }
         /// The list of devices that you are transferring or are being transferred to you.
-        pub fn set_input_device_transfers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>,
-        ) -> Self {
-            self.input_device_transfers = input;
-            self
+        pub fn set_input_device_transfers(mut self, input: std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>) -> Self {
+            self.input_device_transfers = input; self
         }
         /// A token to get additional list results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2822,17 +2624,20 @@ pub mod list_input_device_transfers_output {
         }
         /// A token to get additional list results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
         pub fn build(self) -> crate::output::ListInputDeviceTransfersOutput {
             crate::output::ListInputDeviceTransfersOutput {
-                input_device_transfers: self.input_device_transfers,
-                next_token: self.next_token,
+                input_device_transfers: self.input_device_transfers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInputDeviceTransfersOutput {
     /// Creates a new builder-style object to manufacture [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
@@ -2844,7 +2649,7 @@ impl ListInputDeviceTransfersOutput {
 /// Placeholder documentation for ListInputDevicesResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputDevicesOutput {
+pub struct ListInputDevicesOutput  {
     /// The list of input devices.
     #[doc(hidden)]
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSummary>>,
@@ -2854,22 +2659,21 @@ pub struct ListInputDevicesOutput {
 }
 impl ListInputDevicesOutput {
     /// The list of input devices.
-    pub fn input_devices(&self) -> std::option::Option<&[crate::model::InputDeviceSummary]> {
+    pub fn input_devices(&self) -> std::option::Option<& [crate::model::InputDeviceSummary]> {
         self.input_devices.as_deref()
     }
     /// A token to get additional list results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
 pub mod list_input_devices_output {
-
+    
     /// A builder for [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) input_devices:
-            std::option::Option<std::vec::Vec<crate::model::InputDeviceSummary>>,
+        pub(crate) input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2880,17 +2684,13 @@ pub mod list_input_devices_output {
         /// The list of input devices.
         pub fn input_devices(mut self, input: crate::model::InputDeviceSummary) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input);
-            self.input_devices = Some(v);
-            self
+                            v.push(input);
+                            self.input_devices = Some(v);
+                            self
         }
         /// The list of input devices.
-        pub fn set_input_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSummary>>,
-        ) -> Self {
-            self.input_devices = input;
-            self
+        pub fn set_input_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSummary>>) -> Self {
+            self.input_devices = input; self
         }
         /// A token to get additional list results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2899,17 +2699,20 @@ pub mod list_input_devices_output {
         }
         /// A token to get additional list results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
         pub fn build(self) -> crate::output::ListInputDevicesOutput {
             crate::output::ListInputDevicesOutput {
-                input_devices: self.input_devices,
-                next_token: self.next_token,
+                input_devices: self.input_devices
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInputDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
@@ -2921,7 +2724,7 @@ impl ListInputDevicesOutput {
 /// Placeholder documentation for ListChannelsResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChannelsOutput {
+pub struct ListChannelsOutput  {
     /// Placeholder documentation for __listOfChannelSummary
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
@@ -2931,17 +2734,17 @@ pub struct ListChannelsOutput {
 }
 impl ListChannelsOutput {
     /// Placeholder documentation for __listOfChannelSummary
-    pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
+    pub fn channels(&self) -> std::option::Option<& [crate::model::ChannelSummary]> {
         self.channels.as_deref()
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
 pub mod list_channels_output {
-
+    
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2956,17 +2759,13 @@ pub mod list_channels_output {
         /// Placeholder documentation for __listOfChannelSummary
         pub fn channels(mut self, input: crate::model::ChannelSummary) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input);
-            self.channels = Some(v);
-            self
+                            v.push(input);
+                            self.channels = Some(v);
+                            self
         }
         /// Placeholder documentation for __listOfChannelSummary
-        pub fn set_channels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
-        ) -> Self {
-            self.channels = input;
-            self
+        pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>) -> Self {
+            self.channels = input; self
         }
         /// Placeholder documentation for __string
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2975,17 +2774,20 @@ pub mod list_channels_output {
         }
         /// Placeholder documentation for __string
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
         pub fn build(self) -> crate::output::ListChannelsOutput {
             crate::output::ListChannelsOutput {
-                channels: self.channels,
-                next_token: self.next_token,
+                channels: self.channels
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
@@ -2997,7 +2799,7 @@ impl ListChannelsOutput {
 /// Placeholder documentation for DescribeScheduleResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScheduleOutput {
+pub struct DescribeScheduleOutput  {
     /// The next token; for use in pagination.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -3007,23 +2809,22 @@ pub struct DescribeScheduleOutput {
 }
 impl DescribeScheduleOutput {
     /// The next token; for use in pagination.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The list of actions in the schedule.
-    pub fn schedule_actions(&self) -> std::option::Option<&[crate::model::ScheduleAction]> {
+    pub fn schedule_actions(&self) -> std::option::Option<& [crate::model::ScheduleAction]> {
         self.schedule_actions.as_deref()
     }
 }
 /// See [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
 pub mod describe_schedule_output {
-
+    
     /// A builder for [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) schedule_actions:
-            std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
+        pub(crate) schedule_actions: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
     }
     impl Builder {
         /// The next token; for use in pagination.
@@ -3033,8 +2834,7 @@ pub mod describe_schedule_output {
         }
         /// The next token; for use in pagination.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `schedule_actions`.
         ///
@@ -3043,26 +2843,26 @@ pub mod describe_schedule_output {
         /// The list of actions in the schedule.
         pub fn schedule_actions(mut self, input: crate::model::ScheduleAction) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
-            v.push(input);
-            self.schedule_actions = Some(v);
-            self
+                            v.push(input);
+                            self.schedule_actions = Some(v);
+                            self
         }
         /// The list of actions in the schedule.
-        pub fn set_schedule_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
-        ) -> Self {
-            self.schedule_actions = input;
-            self
+        pub fn set_schedule_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>) -> Self {
+            self.schedule_actions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
         pub fn build(self) -> crate::output::DescribeScheduleOutput {
             crate::output::DescribeScheduleOutput {
-                next_token: self.next_token,
-                schedule_actions: self.schedule_actions,
+                next_token: self.next_token
+                ,
+                schedule_actions: self.schedule_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
@@ -3074,7 +2874,7 @@ impl DescribeScheduleOutput {
 /// Placeholder documentation for DescribeReservationResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservationOutput {
+pub struct DescribeReservationOutput  {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3128,15 +2928,14 @@ pub struct DescribeReservationOutput {
     pub state: std::option::Option<crate::model::ReservationState>,
     /// A collection of key-value pairs
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     #[doc(hidden)]
     pub usage_price: f64,
 }
 impl DescribeReservationOutput {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Number of reserved resources
@@ -3144,7 +2943,7 @@ impl DescribeReservationOutput {
         self.count
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// Lease duration, e.g. '12'
@@ -3152,11 +2951,11 @@ impl DescribeReservationOutput {
         self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn duration_units(&self) -> std::option::Option<&crate::model::OfferingDurationUnits> {
+    pub fn duration_units(&self) -> std::option::Option<& crate::model::OfferingDurationUnits> {
         self.duration_units.as_ref()
     }
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
@@ -3164,52 +2963,47 @@ impl DescribeReservationOutput {
         self.fixed_price
     }
     /// User specified reservation name
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn offering_description(&self) -> std::option::Option<&str> {
+    pub fn offering_description(&self) -> std::option::Option<& str> {
         self.offering_description.as_deref()
     }
     /// Unique offering ID, e.g. '87654321'
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// Offering type, e.g. 'NO_UPFRONT'
-    pub fn offering_type(&self) -> std::option::Option<&crate::model::OfferingType> {
+    pub fn offering_type(&self) -> std::option::Option<& crate::model::OfferingType> {
         self.offering_type.as_ref()
     }
     /// AWS region, e.g. 'us-west-2'
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// Renewal settings for the reservation
-    pub fn renewal_settings(&self) -> std::option::Option<&crate::model::RenewalSettings> {
+    pub fn renewal_settings(&self) -> std::option::Option<& crate::model::RenewalSettings> {
         self.renewal_settings.as_ref()
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> std::option::Option<&str> {
+    pub fn reservation_id(&self) -> std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
     /// Resource configuration details
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservationResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ReservationResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> std::option::Option<& str> {
         self.start.as_deref()
     }
     /// Current state of reservation, e.g. 'ACTIVE'
-    pub fn state(&self) -> std::option::Option<&crate::model::ReservationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ReservationState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -3219,7 +3013,7 @@ impl DescribeReservationOutput {
 }
 /// See [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
 pub mod describe_reservation_output {
-
+    
     /// A builder for [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3237,13 +3031,10 @@ pub mod describe_reservation_output {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) renewal_settings: std::option::Option<crate::model::RenewalSettings>,
         pub(crate) reservation_id: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ReservationResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ReservationResourceSpecification>,
         pub(crate) start: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ReservationState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) usage_price: std::option::Option<f64>,
     }
     impl Builder {
@@ -3254,8 +3045,7 @@ pub mod describe_reservation_output {
         }
         /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Number of reserved resources
         pub fn count(mut self, input: i32) -> Self {
@@ -3264,8 +3054,7 @@ pub mod describe_reservation_output {
         }
         /// Number of reserved resources
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3273,12 +3062,8 @@ pub mod describe_reservation_output {
             self
         }
         /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// Lease duration, e.g. '12'
         pub fn duration(mut self, input: i32) -> Self {
@@ -3287,8 +3072,7 @@ pub mod describe_reservation_output {
         }
         /// Lease duration, e.g. '12'
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// Units for duration, e.g. 'MONTHS'
         pub fn duration_units(mut self, input: crate::model::OfferingDurationUnits) -> Self {
@@ -3296,12 +3080,8 @@ pub mod describe_reservation_output {
             self
         }
         /// Units for duration, e.g. 'MONTHS'
-        pub fn set_duration_units(
-            mut self,
-            input: std::option::Option<crate::model::OfferingDurationUnits>,
-        ) -> Self {
-            self.duration_units = input;
-            self
+        pub fn set_duration_units(mut self, input: std::option::Option<crate::model::OfferingDurationUnits>) -> Self {
+            self.duration_units = input; self
         }
         /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
         pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3310,8 +3090,7 @@ pub mod describe_reservation_output {
         }
         /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn fixed_price(mut self, input: f64) -> Self {
@@ -3320,8 +3099,7 @@ pub mod describe_reservation_output {
         }
         /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.fixed_price = input;
-            self
+            self.fixed_price = input; self
         }
         /// User specified reservation name
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3330,8 +3108,7 @@ pub mod describe_reservation_output {
         }
         /// User specified reservation name
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
         pub fn offering_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3339,12 +3116,8 @@ pub mod describe_reservation_output {
             self
         }
         /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-        pub fn set_offering_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.offering_description = input;
-            self
+        pub fn set_offering_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_description = input; self
         }
         /// Unique offering ID, e.g. '87654321'
         pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3353,8 +3126,7 @@ pub mod describe_reservation_output {
         }
         /// Unique offering ID, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = input;
-            self
+            self.offering_id = input; self
         }
         /// Offering type, e.g. 'NO_UPFRONT'
         pub fn offering_type(mut self, input: crate::model::OfferingType) -> Self {
@@ -3362,12 +3134,8 @@ pub mod describe_reservation_output {
             self
         }
         /// Offering type, e.g. 'NO_UPFRONT'
-        pub fn set_offering_type(
-            mut self,
-            input: std::option::Option<crate::model::OfferingType>,
-        ) -> Self {
-            self.offering_type = input;
-            self
+        pub fn set_offering_type(mut self, input: std::option::Option<crate::model::OfferingType>) -> Self {
+            self.offering_type = input; self
         }
         /// AWS region, e.g. 'us-west-2'
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3376,8 +3144,7 @@ pub mod describe_reservation_output {
         }
         /// AWS region, e.g. 'us-west-2'
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Renewal settings for the reservation
         pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
@@ -3385,12 +3152,8 @@ pub mod describe_reservation_output {
             self
         }
         /// Renewal settings for the reservation
-        pub fn set_renewal_settings(
-            mut self,
-            input: std::option::Option<crate::model::RenewalSettings>,
-        ) -> Self {
-            self.renewal_settings = input;
-            self
+        pub fn set_renewal_settings(mut self, input: std::option::Option<crate::model::RenewalSettings>) -> Self {
+            self.renewal_settings = input; self
         }
         /// Unique reservation ID, e.g. '1234567'
         pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3398,28 +3161,17 @@ pub mod describe_reservation_output {
             self
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn set_reservation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reservation_id = input;
-            self
+        pub fn set_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reservation_id = input; self
         }
         /// Resource configuration details
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ReservationResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ReservationResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// Resource configuration details
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ReservationResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ReservationResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
         pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3428,8 +3180,7 @@ pub mod describe_reservation_output {
         }
         /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// Current state of reservation, e.g. 'ACTIVE'
         pub fn state(mut self, input: crate::model::ReservationState) -> Self {
@@ -3437,37 +3188,23 @@ pub mod describe_reservation_output {
             self
         }
         /// Current state of reservation, e.g. 'ACTIVE'
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ReservationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ReservationState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn usage_price(mut self, input: f64) -> Self {
@@ -3476,34 +3213,58 @@ pub mod describe_reservation_output {
         }
         /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.usage_price = input;
-            self
+            self.usage_price = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
         pub fn build(self) -> crate::output::DescribeReservationOutput {
             crate::output::DescribeReservationOutput {
-                arn: self.arn,
-                count: self.count.unwrap_or_default(),
-                currency_code: self.currency_code,
-                duration: self.duration.unwrap_or_default(),
-                duration_units: self.duration_units,
-                end: self.end,
-                fixed_price: self.fixed_price.unwrap_or_default(),
-                name: self.name,
-                offering_description: self.offering_description,
-                offering_id: self.offering_id,
-                offering_type: self.offering_type,
-                region: self.region,
-                renewal_settings: self.renewal_settings,
-                reservation_id: self.reservation_id,
-                resource_specification: self.resource_specification,
-                start: self.start,
-                state: self.state,
-                tags: self.tags,
-                usage_price: self.usage_price.unwrap_or_default(),
+                arn: self.arn
+                ,
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                currency_code: self.currency_code
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                duration_units: self.duration_units
+                ,
+                end: self.end
+                ,
+                fixed_price: self.fixed_price
+                    .unwrap_or_default()
+                ,
+                name: self.name
+                ,
+                offering_description: self.offering_description
+                ,
+                offering_id: self.offering_id
+                ,
+                offering_type: self.offering_type
+                ,
+                region: self.region
+                ,
+                renewal_settings: self.renewal_settings
+                ,
+                reservation_id: self.reservation_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                start: self.start
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                usage_price: self.usage_price
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReservationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
@@ -3515,7 +3276,7 @@ impl DescribeReservationOutput {
 /// Placeholder documentation for DescribeOfferingResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOfferingOutput {
+pub struct DescribeOfferingOutput  {
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3552,11 +3313,11 @@ pub struct DescribeOfferingOutput {
 }
 impl DescribeOfferingOutput {
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// Lease duration, e.g. '12'
@@ -3564,7 +3325,7 @@ impl DescribeOfferingOutput {
         self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn duration_units(&self) -> std::option::Option<&crate::model::OfferingDurationUnits> {
+    pub fn duration_units(&self) -> std::option::Option<& crate::model::OfferingDurationUnits> {
         self.duration_units.as_ref()
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
@@ -3572,25 +3333,23 @@ impl DescribeOfferingOutput {
         self.fixed_price
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn offering_description(&self) -> std::option::Option<&str> {
+    pub fn offering_description(&self) -> std::option::Option<& str> {
         self.offering_description.as_deref()
     }
     /// Unique offering ID, e.g. '87654321'
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// Offering type, e.g. 'NO_UPFRONT'
-    pub fn offering_type(&self) -> std::option::Option<&crate::model::OfferingType> {
+    pub fn offering_type(&self) -> std::option::Option<& crate::model::OfferingType> {
         self.offering_type.as_ref()
     }
     /// AWS region, e.g. 'us-west-2'
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// Resource configuration details
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservationResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ReservationResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -3600,7 +3359,7 @@ impl DescribeOfferingOutput {
 }
 /// See [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
 pub mod describe_offering_output {
-
+    
     /// A builder for [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3613,8 +3372,7 @@ pub mod describe_offering_output {
         pub(crate) offering_id: std::option::Option<std::string::String>,
         pub(crate) offering_type: std::option::Option<crate::model::OfferingType>,
         pub(crate) region: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ReservationResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ReservationResourceSpecification>,
         pub(crate) usage_price: std::option::Option<f64>,
     }
     impl Builder {
@@ -3625,8 +3383,7 @@ pub mod describe_offering_output {
         }
         /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3634,12 +3391,8 @@ pub mod describe_offering_output {
             self
         }
         /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// Lease duration, e.g. '12'
         pub fn duration(mut self, input: i32) -> Self {
@@ -3648,8 +3401,7 @@ pub mod describe_offering_output {
         }
         /// Lease duration, e.g. '12'
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// Units for duration, e.g. 'MONTHS'
         pub fn duration_units(mut self, input: crate::model::OfferingDurationUnits) -> Self {
@@ -3657,12 +3409,8 @@ pub mod describe_offering_output {
             self
         }
         /// Units for duration, e.g. 'MONTHS'
-        pub fn set_duration_units(
-            mut self,
-            input: std::option::Option<crate::model::OfferingDurationUnits>,
-        ) -> Self {
-            self.duration_units = input;
-            self
+        pub fn set_duration_units(mut self, input: std::option::Option<crate::model::OfferingDurationUnits>) -> Self {
+            self.duration_units = input; self
         }
         /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn fixed_price(mut self, input: f64) -> Self {
@@ -3671,8 +3419,7 @@ pub mod describe_offering_output {
         }
         /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.fixed_price = input;
-            self
+            self.fixed_price = input; self
         }
         /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
         pub fn offering_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3680,12 +3427,8 @@ pub mod describe_offering_output {
             self
         }
         /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-        pub fn set_offering_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.offering_description = input;
-            self
+        pub fn set_offering_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_description = input; self
         }
         /// Unique offering ID, e.g. '87654321'
         pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3694,8 +3437,7 @@ pub mod describe_offering_output {
         }
         /// Unique offering ID, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = input;
-            self
+            self.offering_id = input; self
         }
         /// Offering type, e.g. 'NO_UPFRONT'
         pub fn offering_type(mut self, input: crate::model::OfferingType) -> Self {
@@ -3703,12 +3445,8 @@ pub mod describe_offering_output {
             self
         }
         /// Offering type, e.g. 'NO_UPFRONT'
-        pub fn set_offering_type(
-            mut self,
-            input: std::option::Option<crate::model::OfferingType>,
-        ) -> Self {
-            self.offering_type = input;
-            self
+        pub fn set_offering_type(mut self, input: std::option::Option<crate::model::OfferingType>) -> Self {
+            self.offering_type = input; self
         }
         /// AWS region, e.g. 'us-west-2'
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3717,24 +3455,16 @@ pub mod describe_offering_output {
         }
         /// AWS region, e.g. 'us-west-2'
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Resource configuration details
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ReservationResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ReservationResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// Resource configuration details
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ReservationResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ReservationResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn usage_price(mut self, input: f64) -> Self {
@@ -3743,26 +3473,41 @@ pub mod describe_offering_output {
         }
         /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.usage_price = input;
-            self
+            self.usage_price = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
         pub fn build(self) -> crate::output::DescribeOfferingOutput {
             crate::output::DescribeOfferingOutput {
-                arn: self.arn,
-                currency_code: self.currency_code,
-                duration: self.duration.unwrap_or_default(),
-                duration_units: self.duration_units,
-                fixed_price: self.fixed_price.unwrap_or_default(),
-                offering_description: self.offering_description,
-                offering_id: self.offering_id,
-                offering_type: self.offering_type,
-                region: self.region,
-                resource_specification: self.resource_specification,
-                usage_price: self.usage_price.unwrap_or_default(),
+                arn: self.arn
+                ,
+                currency_code: self.currency_code
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                duration_units: self.duration_units
+                ,
+                fixed_price: self.fixed_price
+                    .unwrap_or_default()
+                ,
+                offering_description: self.offering_description
+                ,
+                offering_id: self.offering_id
+                ,
+                offering_type: self.offering_type
+                ,
+                region: self.region
+                ,
+                resource_specification: self.resource_specification
+                ,
+                usage_price: self.usage_price
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOfferingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
@@ -3774,7 +3519,7 @@ impl DescribeOfferingOutput {
 /// Placeholder documentation for DescribeMultiplexProgramResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMultiplexProgramOutput {
+pub struct DescribeMultiplexProgramOutput  {
     /// The MediaLive channel associated with the program.
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
@@ -3783,57 +3528,46 @@ pub struct DescribeMultiplexProgramOutput {
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// The packet identifier map for this multiplex program.
     #[doc(hidden)]
-    pub packet_identifiers_map:
-        std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
+    pub packet_identifiers_map: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
     #[doc(hidden)]
-    pub pipeline_details:
-        std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
+    pub pipeline_details: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
     /// The name of the multiplex program.
     #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl DescribeMultiplexProgramOutput {
     /// The MediaLive channel associated with the program.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::MultiplexProgramSettings> {
+    pub fn multiplex_program_settings(&self) -> std::option::Option<& crate::model::MultiplexProgramSettings> {
         self.multiplex_program_settings.as_ref()
     }
     /// The packet identifier map for this multiplex program.
-    pub fn packet_identifiers_map(
-        &self,
-    ) -> std::option::Option<&crate::model::MultiplexProgramPacketIdentifiersMap> {
+    pub fn packet_identifiers_map(&self) -> std::option::Option<& crate::model::MultiplexProgramPacketIdentifiersMap> {
         self.packet_identifiers_map.as_ref()
     }
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-    pub fn pipeline_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::MultiplexProgramPipelineDetail]> {
+    pub fn pipeline_details(&self) -> std::option::Option<& [crate::model::MultiplexProgramPipelineDetail]> {
         self.pipeline_details.as_deref()
     }
     /// The name of the multiplex program.
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> std::option::Option<& str> {
         self.program_name.as_deref()
     }
 }
 /// See [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
 pub mod describe_multiplex_program_output {
-
+    
     /// A builder for [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
-        pub(crate) multiplex_program_settings:
-            std::option::Option<crate::model::MultiplexProgramSettings>,
-        pub(crate) packet_identifiers_map:
-            std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
-        pub(crate) pipeline_details:
-            std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
+        pub(crate) multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
+        pub(crate) packet_identifiers_map: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
+        pub(crate) pipeline_details: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
         pub(crate) program_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3844,62 +3578,40 @@ pub mod describe_multiplex_program_output {
         }
         /// The MediaLive channel associated with the program.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// The settings for this multiplex program.
-        pub fn multiplex_program_settings(
-            mut self,
-            input: crate::model::MultiplexProgramSettings,
-        ) -> Self {
+        pub fn multiplex_program_settings(mut self, input: crate::model::MultiplexProgramSettings) -> Self {
             self.multiplex_program_settings = Some(input);
             self
         }
         /// The settings for this multiplex program.
-        pub fn set_multiplex_program_settings(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexProgramSettings>,
-        ) -> Self {
-            self.multiplex_program_settings = input;
-            self
+        pub fn set_multiplex_program_settings(mut self, input: std::option::Option<crate::model::MultiplexProgramSettings>) -> Self {
+            self.multiplex_program_settings = input; self
         }
         /// The packet identifier map for this multiplex program.
-        pub fn packet_identifiers_map(
-            mut self,
-            input: crate::model::MultiplexProgramPacketIdentifiersMap,
-        ) -> Self {
+        pub fn packet_identifiers_map(mut self, input: crate::model::MultiplexProgramPacketIdentifiersMap) -> Self {
             self.packet_identifiers_map = Some(input);
             self
         }
         /// The packet identifier map for this multiplex program.
-        pub fn set_packet_identifiers_map(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
-        ) -> Self {
-            self.packet_identifiers_map = input;
-            self
+        pub fn set_packet_identifiers_map(mut self, input: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>) -> Self {
+            self.packet_identifiers_map = input; self
         }
         /// Appends an item to `pipeline_details`.
         ///
         /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
         ///
         /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-        pub fn pipeline_details(
-            mut self,
-            input: crate::model::MultiplexProgramPipelineDetail,
-        ) -> Self {
+        pub fn pipeline_details(mut self, input: crate::model::MultiplexProgramPipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input);
-            self.pipeline_details = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_details = Some(v);
+                            self
         }
         /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-        pub fn set_pipeline_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
-        ) -> Self {
-            self.pipeline_details = input;
-            self
+        pub fn set_pipeline_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>) -> Self {
+            self.pipeline_details = input; self
         }
         /// The name of the multiplex program.
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3908,20 +3620,26 @@ pub mod describe_multiplex_program_output {
         }
         /// The name of the multiplex program.
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.program_name = input;
-            self
+            self.program_name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
         pub fn build(self) -> crate::output::DescribeMultiplexProgramOutput {
             crate::output::DescribeMultiplexProgramOutput {
-                channel_id: self.channel_id,
-                multiplex_program_settings: self.multiplex_program_settings,
-                packet_identifiers_map: self.packet_identifiers_map,
-                pipeline_details: self.pipeline_details,
-                program_name: self.program_name,
+                channel_id: self.channel_id
+                ,
+                multiplex_program_settings: self.multiplex_program_settings
+                ,
+                packet_identifiers_map: self.packet_identifiers_map
+                ,
+                pipeline_details: self.pipeline_details
+                ,
+                program_name: self.program_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMultiplexProgramOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
@@ -3933,7 +3651,7 @@ impl DescribeMultiplexProgramOutput {
 /// Placeholder documentation for DescribeMultiplexResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMultiplexOutput {
+pub struct DescribeMultiplexOutput  {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3963,32 +3681,31 @@ pub struct DescribeMultiplexOutput {
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeMultiplexOutput {
     /// The unique arn of the multiplex.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A list of availability zones for the multiplex.
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// A list of the multiplex output destinations.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::MultiplexOutputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::MultiplexOutputDestination]> {
         self.destinations.as_deref()
     }
     /// The unique id of the multiplex.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configuration for a multiplex event.
-    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+    pub fn multiplex_settings(&self) -> std::option::Option<& crate::model::MultiplexSettings> {
         self.multiplex_settings.as_ref()
     }
     /// The name of the multiplex.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The number of currently healthy pipelines.
@@ -4000,36 +3717,30 @@ impl DescribeMultiplexOutput {
         self.program_count
     }
     /// The current state of the multiplex.
-    pub fn state(&self) -> std::option::Option<&crate::model::MultiplexState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::MultiplexState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
 pub mod describe_multiplex_output {
-
+    
     /// A builder for [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pipelines_running_count: std::option::Option<i32>,
         pub(crate) program_count: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::MultiplexState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The unique arn of the multiplex.
@@ -4039,8 +3750,7 @@ pub mod describe_multiplex_output {
         }
         /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -4049,17 +3759,13 @@ pub mod describe_multiplex_output {
         /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// A list of availability zones for the multiplex.
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -4068,17 +3774,13 @@ pub mod describe_multiplex_output {
         /// A list of the multiplex output destinations.
         pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of the multiplex output destinations.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// The unique id of the multiplex.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4087,8 +3789,7 @@ pub mod describe_multiplex_output {
         }
         /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configuration for a multiplex event.
         pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
@@ -4096,12 +3797,8 @@ pub mod describe_multiplex_output {
             self
         }
         /// Configuration for a multiplex event.
-        pub fn set_multiplex_settings(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexSettings>,
-        ) -> Self {
-            self.multiplex_settings = input;
-            self
+        pub fn set_multiplex_settings(mut self, input: std::option::Option<crate::model::MultiplexSettings>) -> Self {
+            self.multiplex_settings = input; self
         }
         /// The name of the multiplex.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4110,8 +3807,7 @@ pub mod describe_multiplex_output {
         }
         /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The number of currently healthy pipelines.
         pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -4120,8 +3816,7 @@ pub mod describe_multiplex_output {
         }
         /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipelines_running_count = input;
-            self
+            self.pipelines_running_count = input; self
         }
         /// The number of programs in the multiplex.
         pub fn program_count(mut self, input: i32) -> Self {
@@ -4130,8 +3825,7 @@ pub mod describe_multiplex_output {
         }
         /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.program_count = input;
-            self
+            self.program_count = input; self
         }
         /// The current state of the multiplex.
         pub fn state(mut self, input: crate::model::MultiplexState) -> Self {
@@ -4139,54 +3833,54 @@ pub mod describe_multiplex_output {
             self
         }
         /// The current state of the multiplex.
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::MultiplexState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
         pub fn build(self) -> crate::output::DescribeMultiplexOutput {
             crate::output::DescribeMultiplexOutput {
-                arn: self.arn,
-                availability_zones: self.availability_zones,
-                destinations: self.destinations,
-                id: self.id,
-                multiplex_settings: self.multiplex_settings,
-                name: self.name,
-                pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-                program_count: self.program_count.unwrap_or_default(),
-                state: self.state,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                availability_zones: self.availability_zones
+                ,
+                destinations: self.destinations
+                ,
+                id: self.id
+                ,
+                multiplex_settings: self.multiplex_settings
+                ,
+                name: self.name
+                ,
+                pipelines_running_count: self.pipelines_running_count
+                    .unwrap_or_default()
+                ,
+                program_count: self.program_count
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMultiplexOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
@@ -4198,7 +3892,7 @@ impl DescribeMultiplexOutput {
 /// Placeholder documentation for DescribeInputSecurityGroupResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInputSecurityGroupOutput {
+pub struct DescribeInputSecurityGroupOutput  {
     /// Unique ARN of Input Security Group
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4213,44 +3907,40 @@ pub struct DescribeInputSecurityGroupOutput {
     pub state: std::option::Option<crate::model::InputSecurityGroupState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Whitelist rules and their sync status
     #[doc(hidden)]
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
 }
 impl DescribeInputSecurityGroupOutput {
     /// Unique ARN of Input Security Group
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The Id of the Input Security Group
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The list of inputs currently using this Input Security Group.
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
         self.inputs.as_deref()
     }
     /// The current state of the Input Security Group.
-    pub fn state(&self) -> std::option::Option<&crate::model::InputSecurityGroupState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InputSecurityGroupState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Whitelist rules and their sync status
-    pub fn whitelist_rules(&self) -> std::option::Option<&[crate::model::InputWhitelistRule]> {
+    pub fn whitelist_rules(&self) -> std::option::Option<& [crate::model::InputWhitelistRule]> {
         self.whitelist_rules.as_deref()
     }
 }
 /// See [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
 pub mod describe_input_security_group_output {
-
+    
     /// A builder for [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4258,11 +3948,8 @@ pub mod describe_input_security_group_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state: std::option::Option<crate::model::InputSecurityGroupState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) whitelist_rules:
-            std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) whitelist_rules: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
     }
     impl Builder {
         /// Unique ARN of Input Security Group
@@ -4272,8 +3959,7 @@ pub mod describe_input_security_group_output {
         }
         /// Unique ARN of Input Security Group
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The Id of the Input Security Group
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4282,8 +3968,7 @@ pub mod describe_input_security_group_output {
         }
         /// The Id of the Input Security Group
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `inputs`.
         ///
@@ -4292,17 +3977,13 @@ pub mod describe_input_security_group_output {
         /// The list of inputs currently using this Input Security Group.
         pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
-            self.inputs = Some(v);
-            self
+                            v.push(input.into());
+                            self.inputs = Some(v);
+                            self
         }
         /// The list of inputs currently using this Input Security Group.
-        pub fn set_inputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inputs = input;
-            self
+        pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.inputs = input; self
         }
         /// The current state of the Input Security Group.
         pub fn state(mut self, input: crate::model::InputSecurityGroupState) -> Self {
@@ -4310,37 +3991,23 @@ pub mod describe_input_security_group_output {
             self
         }
         /// The current state of the Input Security Group.
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::InputSecurityGroupState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::InputSecurityGroupState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `whitelist_rules`.
         ///
@@ -4349,30 +4016,34 @@ pub mod describe_input_security_group_output {
         /// Whitelist rules and their sync status
         pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRule) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(input);
-            self.whitelist_rules = Some(v);
-            self
+                            v.push(input);
+                            self.whitelist_rules = Some(v);
+                            self
         }
         /// Whitelist rules and their sync status
-        pub fn set_whitelist_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
-        ) -> Self {
-            self.whitelist_rules = input;
-            self
+        pub fn set_whitelist_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>) -> Self {
+            self.whitelist_rules = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
         pub fn build(self) -> crate::output::DescribeInputSecurityGroupOutput {
             crate::output::DescribeInputSecurityGroupOutput {
-                arn: self.arn,
-                id: self.id,
-                inputs: self.inputs,
-                state: self.state,
-                tags: self.tags,
-                whitelist_rules: self.whitelist_rules,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                inputs: self.inputs
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                whitelist_rules: self.whitelist_rules
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInputSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
@@ -4384,7 +4055,7 @@ impl DescribeInputSecurityGroupOutput {
 /// Placeholder documentation for DescribeInputDeviceThumbnailResponse
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct DescribeInputDeviceThumbnailOutput {
+pub struct DescribeInputDeviceThumbnailOutput  {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     pub body: aws_smithy_http::byte_stream::ByteStream,
     /// Specifies the media type of the thumbnail.
@@ -4402,11 +4073,11 @@ pub struct DescribeInputDeviceThumbnailOutput {
 }
 impl DescribeInputDeviceThumbnailOutput {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
     /// Specifies the media type of the thumbnail.
-    pub fn content_type(&self) -> std::option::Option<&crate::model::ContentType> {
+    pub fn content_type(&self) -> std::option::Option<& crate::model::ContentType> {
         self.content_type.as_ref()
     }
     /// The length of the content.
@@ -4414,17 +4085,17 @@ impl DescribeInputDeviceThumbnailOutput {
         self.content_length
     }
     /// The unique, cacheable version of this thumbnail.
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// The date and time the thumbnail was last updated at the device.
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
 /// See [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
 pub mod describe_input_device_thumbnail_output {
-
+    
     /// A builder for [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4441,12 +4112,8 @@ pub mod describe_input_device_thumbnail_output {
             self
         }
         /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-        pub fn set_body(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.body = input;
-            self
+        pub fn set_body(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.body = input; self
         }
         /// Specifies the media type of the thumbnail.
         pub fn content_type(mut self, input: crate::model::ContentType) -> Self {
@@ -4454,12 +4121,8 @@ pub mod describe_input_device_thumbnail_output {
             self
         }
         /// Specifies the media type of the thumbnail.
-        pub fn set_content_type(
-            mut self,
-            input: std::option::Option<crate::model::ContentType>,
-        ) -> Self {
-            self.content_type = input;
-            self
+        pub fn set_content_type(mut self, input: std::option::Option<crate::model::ContentType>) -> Self {
+            self.content_type = input; self
         }
         /// The length of the content.
         pub fn content_length(mut self, input: i64) -> Self {
@@ -4468,8 +4131,7 @@ pub mod describe_input_device_thumbnail_output {
         }
         /// The length of the content.
         pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
-            self.content_length = input;
-            self
+            self.content_length = input; self
         }
         /// The unique, cacheable version of this thumbnail.
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4478,8 +4140,7 @@ pub mod describe_input_device_thumbnail_output {
         }
         /// The unique, cacheable version of this thumbnail.
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = input;
-            self
+            self.e_tag = input; self
         }
         /// The date and time the thumbnail was last updated at the device.
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4487,24 +4148,29 @@ pub mod describe_input_device_thumbnail_output {
             self
         }
         /// The date and time the thumbnail was last updated at the device.
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
         pub fn build(self) -> crate::output::DescribeInputDeviceThumbnailOutput {
             crate::output::DescribeInputDeviceThumbnailOutput {
-                body: self.body.unwrap_or_default(),
-                content_type: self.content_type,
-                content_length: self.content_length.unwrap_or_default(),
-                e_tag: self.e_tag,
-                last_modified: self.last_modified,
+                body: self.body
+                    .unwrap_or_default()
+                ,
+                content_type: self.content_type
+                ,
+                content_length: self.content_length
+                    .unwrap_or_default()
+                ,
+                e_tag: self.e_tag
+                ,
+                last_modified: self.last_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInputDeviceThumbnailOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
@@ -4516,7 +4182,7 @@ impl DescribeInputDeviceThumbnailOutput {
 /// Placeholder documentation for DescribeInputDeviceResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInputDeviceOutput {
+pub struct DescribeInputDeviceOutput  {
     /// The unique ARN of the input device.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4556,72 +4222,63 @@ pub struct DescribeInputDeviceOutput {
 }
 impl DescribeInputDeviceOutput {
     /// The unique ARN of the input device.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The state of the connection between the input device and AWS.
-    pub fn connection_state(
-        &self,
-    ) -> std::option::Option<&crate::model::InputDeviceConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::InputDeviceConnectionState> {
         self.connection_state.as_ref()
     }
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-    pub fn device_settings_sync_state(
-        &self,
-    ) -> std::option::Option<&crate::model::DeviceSettingsSyncState> {
+    pub fn device_settings_sync_state(&self) -> std::option::Option<& crate::model::DeviceSettingsSyncState> {
         self.device_settings_sync_state.as_ref()
     }
     /// The status of software on the input device.
-    pub fn device_update_status(&self) -> std::option::Option<&crate::model::DeviceUpdateStatus> {
+    pub fn device_update_status(&self) -> std::option::Option<& crate::model::DeviceUpdateStatus> {
         self.device_update_status.as_ref()
     }
     /// Settings that describe an input device that is type HD.
-    pub fn hd_device_settings(&self) -> std::option::Option<&crate::model::InputDeviceHdSettings> {
+    pub fn hd_device_settings(&self) -> std::option::Option<& crate::model::InputDeviceHdSettings> {
         self.hd_device_settings.as_ref()
     }
     /// The unique ID of the input device.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The network MAC address of the input device.
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// A name that you specify for the input device.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The network settings for the input device.
-    pub fn network_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::InputDeviceNetworkSettings> {
+    pub fn network_settings(&self) -> std::option::Option<& crate::model::InputDeviceNetworkSettings> {
         self.network_settings.as_ref()
     }
     /// The unique serial number of the input device.
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// The type of the input device.
-    pub fn r#type(&self) -> std::option::Option<&crate::model::InputDeviceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::InputDeviceType> {
         self.r#type.as_ref()
     }
     /// Settings that describe an input device that is type UHD.
-    pub fn uhd_device_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::InputDeviceUhdSettings> {
+    pub fn uhd_device_settings(&self) -> std::option::Option<& crate::model::InputDeviceUhdSettings> {
         self.uhd_device_settings.as_ref()
     }
 }
 /// See [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
 pub mod describe_input_device_output {
-
+    
     /// A builder for [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::InputDeviceConnectionState>,
-        pub(crate) device_settings_sync_state:
-            std::option::Option<crate::model::DeviceSettingsSyncState>,
+        pub(crate) device_settings_sync_state: std::option::Option<crate::model::DeviceSettingsSyncState>,
         pub(crate) device_update_status: std::option::Option<crate::model::DeviceUpdateStatus>,
         pub(crate) hd_device_settings: std::option::Option<crate::model::InputDeviceHdSettings>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4640,8 +4297,7 @@ pub mod describe_input_device_output {
         }
         /// The unique ARN of the input device.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The state of the connection between the input device and AWS.
         pub fn connection_state(mut self, input: crate::model::InputDeviceConnectionState) -> Self {
@@ -4649,28 +4305,17 @@ pub mod describe_input_device_output {
             self
         }
         /// The state of the connection between the input device and AWS.
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::InputDeviceConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-        pub fn device_settings_sync_state(
-            mut self,
-            input: crate::model::DeviceSettingsSyncState,
-        ) -> Self {
+        pub fn device_settings_sync_state(mut self, input: crate::model::DeviceSettingsSyncState) -> Self {
             self.device_settings_sync_state = Some(input);
             self
         }
         /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
-        pub fn set_device_settings_sync_state(
-            mut self,
-            input: std::option::Option<crate::model::DeviceSettingsSyncState>,
-        ) -> Self {
-            self.device_settings_sync_state = input;
-            self
+        pub fn set_device_settings_sync_state(mut self, input: std::option::Option<crate::model::DeviceSettingsSyncState>) -> Self {
+            self.device_settings_sync_state = input; self
         }
         /// The status of software on the input device.
         pub fn device_update_status(mut self, input: crate::model::DeviceUpdateStatus) -> Self {
@@ -4678,12 +4323,8 @@ pub mod describe_input_device_output {
             self
         }
         /// The status of software on the input device.
-        pub fn set_device_update_status(
-            mut self,
-            input: std::option::Option<crate::model::DeviceUpdateStatus>,
-        ) -> Self {
-            self.device_update_status = input;
-            self
+        pub fn set_device_update_status(mut self, input: std::option::Option<crate::model::DeviceUpdateStatus>) -> Self {
+            self.device_update_status = input; self
         }
         /// Settings that describe an input device that is type HD.
         pub fn hd_device_settings(mut self, input: crate::model::InputDeviceHdSettings) -> Self {
@@ -4691,12 +4332,8 @@ pub mod describe_input_device_output {
             self
         }
         /// Settings that describe an input device that is type HD.
-        pub fn set_hd_device_settings(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceHdSettings>,
-        ) -> Self {
-            self.hd_device_settings = input;
-            self
+        pub fn set_hd_device_settings(mut self, input: std::option::Option<crate::model::InputDeviceHdSettings>) -> Self {
+            self.hd_device_settings = input; self
         }
         /// The unique ID of the input device.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4705,8 +4342,7 @@ pub mod describe_input_device_output {
         }
         /// The unique ID of the input device.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The network MAC address of the input device.
         pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4715,8 +4351,7 @@ pub mod describe_input_device_output {
         }
         /// The network MAC address of the input device.
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// A name that you specify for the input device.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4725,8 +4360,7 @@ pub mod describe_input_device_output {
         }
         /// A name that you specify for the input device.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The network settings for the input device.
         pub fn network_settings(mut self, input: crate::model::InputDeviceNetworkSettings) -> Self {
@@ -4734,12 +4368,8 @@ pub mod describe_input_device_output {
             self
         }
         /// The network settings for the input device.
-        pub fn set_network_settings(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceNetworkSettings>,
-        ) -> Self {
-            self.network_settings = input;
-            self
+        pub fn set_network_settings(mut self, input: std::option::Option<crate::model::InputDeviceNetworkSettings>) -> Self {
+            self.network_settings = input; self
         }
         /// The unique serial number of the input device.
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4747,12 +4377,8 @@ pub mod describe_input_device_output {
             self
         }
         /// The unique serial number of the input device.
-        pub fn set_serial_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.serial_number = input;
-            self
+        pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.serial_number = input; self
         }
         /// The type of the input device.
         pub fn r#type(mut self, input: crate::model::InputDeviceType) -> Self {
@@ -4760,12 +4386,8 @@ pub mod describe_input_device_output {
             self
         }
         /// The type of the input device.
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::InputDeviceType>) -> Self {
+            self.r#type = input; self
         }
         /// Settings that describe an input device that is type UHD.
         pub fn uhd_device_settings(mut self, input: crate::model::InputDeviceUhdSettings) -> Self {
@@ -4773,31 +4395,41 @@ pub mod describe_input_device_output {
             self
         }
         /// Settings that describe an input device that is type UHD.
-        pub fn set_uhd_device_settings(
-            mut self,
-            input: std::option::Option<crate::model::InputDeviceUhdSettings>,
-        ) -> Self {
-            self.uhd_device_settings = input;
-            self
+        pub fn set_uhd_device_settings(mut self, input: std::option::Option<crate::model::InputDeviceUhdSettings>) -> Self {
+            self.uhd_device_settings = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
         pub fn build(self) -> crate::output::DescribeInputDeviceOutput {
             crate::output::DescribeInputDeviceOutput {
-                arn: self.arn,
-                connection_state: self.connection_state,
-                device_settings_sync_state: self.device_settings_sync_state,
-                device_update_status: self.device_update_status,
-                hd_device_settings: self.hd_device_settings,
-                id: self.id,
-                mac_address: self.mac_address,
-                name: self.name,
-                network_settings: self.network_settings,
-                serial_number: self.serial_number,
-                r#type: self.r#type,
-                uhd_device_settings: self.uhd_device_settings,
+                arn: self.arn
+                ,
+                connection_state: self.connection_state
+                ,
+                device_settings_sync_state: self.device_settings_sync_state
+                ,
+                device_update_status: self.device_update_status
+                ,
+                hd_device_settings: self.hd_device_settings
+                ,
+                id: self.id
+                ,
+                mac_address: self.mac_address
+                ,
+                name: self.name
+                ,
+                network_settings: self.network_settings
+                ,
+                serial_number: self.serial_number
+                ,
+                r#type: self.r#type
+                ,
+                uhd_device_settings: self.uhd_device_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInputDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
@@ -4809,7 +4441,7 @@ impl DescribeInputDeviceOutput {
 /// Placeholder documentation for DescribeInputResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInputOutput {
+pub struct DescribeInputOutput  {
     /// The Unique ARN of the input (generated, immutable).
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4854,84 +4486,80 @@ pub struct DescribeInputOutput {
     pub state: std::option::Option<crate::model::InputState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::InputType>,
 }
 impl DescribeInputOutput {
     /// The Unique ARN of the input (generated, immutable).
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
-    pub fn attached_channels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attached_channels(&self) -> std::option::Option<& [std::string::String]> {
         self.attached_channels.as_deref()
     }
     /// A list of the destinations of the input (PUSH-type).
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::InputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::InputDestination]> {
         self.destinations.as_deref()
     }
     /// The generated ID of the input (unique for user account, immutable).
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
-    pub fn input_class(&self) -> std::option::Option<&crate::model::InputClass> {
+    pub fn input_class(&self) -> std::option::Option<& crate::model::InputClass> {
         self.input_class.as_ref()
     }
     /// Settings for the input devices.
-    pub fn input_devices(&self) -> std::option::Option<&[crate::model::InputDeviceSettings]> {
+    pub fn input_devices(&self) -> std::option::Option<& [crate::model::InputDeviceSettings]> {
         self.input_devices.as_deref()
     }
     /// A list of IDs for all Inputs which are partners of this one.
-    pub fn input_partner_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn input_partner_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.input_partner_ids.as_deref()
     }
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
-    pub fn input_source_type(&self) -> std::option::Option<&crate::model::InputSourceType> {
+    pub fn input_source_type(&self) -> std::option::Option<& crate::model::InputSourceType> {
         self.input_source_type.as_ref()
     }
     /// A list of MediaConnect Flows for this input.
-    pub fn media_connect_flows(&self) -> std::option::Option<&[crate::model::MediaConnectFlow]> {
+    pub fn media_connect_flows(&self) -> std::option::Option<& [crate::model::MediaConnectFlow]> {
         self.media_connect_flows.as_deref()
     }
     /// The user-assigned name (This is a mutable value).
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// A list of IDs for all the Input Security Groups attached to the input.
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// A list of the sources of the input (PULL-type).
-    pub fn sources(&self) -> std::option::Option<&[crate::model::InputSource]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::InputSource]> {
         self.sources.as_deref()
     }
     /// Placeholder documentation for InputState
-    pub fn state(&self) -> std::option::Option<&crate::model::InputState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InputState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// The different types of inputs that AWS Elemental MediaLive supports.
-    pub fn r#type(&self) -> std::option::Option<&crate::model::InputType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::InputType> {
         self.r#type.as_ref()
     }
 }
 /// See [`DescribeInputOutput`](crate::output::DescribeInputOutput).
 pub mod describe_input_output {
-
+    
     /// A builder for [`DescribeInputOutput`](crate::output::DescribeInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4940,20 +4568,16 @@ pub mod describe_input_output {
         pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) input_class: std::option::Option<crate::model::InputClass>,
-        pub(crate) input_devices:
-            std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
+        pub(crate) input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
         pub(crate) input_partner_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) input_source_type: std::option::Option<crate::model::InputSourceType>,
-        pub(crate) media_connect_flows:
-            std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
+        pub(crate) media_connect_flows: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::InputSource>>,
         pub(crate) state: std::option::Option<crate::model::InputState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) r#type: std::option::Option<crate::model::InputType>,
     }
     impl Builder {
@@ -4964,8 +4588,7 @@ pub mod describe_input_output {
         }
         /// The Unique ARN of the input (generated, immutable).
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `attached_channels`.
         ///
@@ -4974,17 +4597,13 @@ pub mod describe_input_output {
         /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
         pub fn attached_channels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attached_channels.unwrap_or_default();
-            v.push(input.into());
-            self.attached_channels = Some(v);
-            self
+                            v.push(input.into());
+                            self.attached_channels = Some(v);
+                            self
         }
         /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
-        pub fn set_attached_channels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.attached_channels = input;
-            self
+        pub fn set_attached_channels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.attached_channels = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -4993,17 +4612,13 @@ pub mod describe_input_output {
         /// A list of the destinations of the input (PUSH-type).
         pub fn destinations(mut self, input: crate::model::InputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of the destinations of the input (PUSH-type).
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// The generated ID of the input (unique for user account, immutable).
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5012,8 +4627,7 @@ pub mod describe_input_output {
         }
         /// The generated ID of the input (unique for user account, immutable).
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
         pub fn input_class(mut self, input: crate::model::InputClass) -> Self {
@@ -5021,12 +4635,8 @@ pub mod describe_input_output {
             self
         }
         /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
-        pub fn set_input_class(
-            mut self,
-            input: std::option::Option<crate::model::InputClass>,
-        ) -> Self {
-            self.input_class = input;
-            self
+        pub fn set_input_class(mut self, input: std::option::Option<crate::model::InputClass>) -> Self {
+            self.input_class = input; self
         }
         /// Appends an item to `input_devices`.
         ///
@@ -5035,17 +4645,13 @@ pub mod describe_input_output {
         /// Settings for the input devices.
         pub fn input_devices(mut self, input: crate::model::InputDeviceSettings) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input);
-            self.input_devices = Some(v);
-            self
+                            v.push(input);
+                            self.input_devices = Some(v);
+                            self
         }
         /// Settings for the input devices.
-        pub fn set_input_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
-        ) -> Self {
-            self.input_devices = input;
-            self
+        pub fn set_input_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>) -> Self {
+            self.input_devices = input; self
         }
         /// Appends an item to `input_partner_ids`.
         ///
@@ -5054,17 +4660,13 @@ pub mod describe_input_output {
         /// A list of IDs for all Inputs which are partners of this one.
         pub fn input_partner_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_partner_ids.unwrap_or_default();
-            v.push(input.into());
-            self.input_partner_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.input_partner_ids = Some(v);
+                            self
         }
         /// A list of IDs for all Inputs which are partners of this one.
-        pub fn set_input_partner_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.input_partner_ids = input;
-            self
+        pub fn set_input_partner_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.input_partner_ids = input; self
         }
         /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn input_source_type(mut self, input: crate::model::InputSourceType) -> Self {
@@ -5072,12 +4674,8 @@ pub mod describe_input_output {
             self
         }
         /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
-        pub fn set_input_source_type(
-            mut self,
-            input: std::option::Option<crate::model::InputSourceType>,
-        ) -> Self {
-            self.input_source_type = input;
-            self
+        pub fn set_input_source_type(mut self, input: std::option::Option<crate::model::InputSourceType>) -> Self {
+            self.input_source_type = input; self
         }
         /// Appends an item to `media_connect_flows`.
         ///
@@ -5086,17 +4684,13 @@ pub mod describe_input_output {
         /// A list of MediaConnect Flows for this input.
         pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlow) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(input);
-            self.media_connect_flows = Some(v);
-            self
+                            v.push(input);
+                            self.media_connect_flows = Some(v);
+                            self
         }
         /// A list of MediaConnect Flows for this input.
-        pub fn set_media_connect_flows(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
-        ) -> Self {
-            self.media_connect_flows = input;
-            self
+        pub fn set_media_connect_flows(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>) -> Self {
+            self.media_connect_flows = input; self
         }
         /// The user-assigned name (This is a mutable value).
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5105,8 +4699,7 @@ pub mod describe_input_output {
         }
         /// The user-assigned name (This is a mutable value).
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5115,8 +4708,7 @@ pub mod describe_input_output {
         }
         /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -5125,17 +4717,13 @@ pub mod describe_input_output {
         /// A list of IDs for all the Input Security Groups attached to the input.
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// A list of IDs for all the Input Security Groups attached to the input.
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -5144,17 +4732,13 @@ pub mod describe_input_output {
         /// A list of the sources of the input (PULL-type).
         pub fn sources(mut self, input: crate::model::InputSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// A list of the sources of the input (PULL-type).
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputSource>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputSource>>) -> Self {
+            self.sources = input; self
         }
         /// Placeholder documentation for InputState
         pub fn state(mut self, input: crate::model::InputState) -> Self {
@@ -5163,33 +4747,22 @@ pub mod describe_input_output {
         }
         /// Placeholder documentation for InputState
         pub fn set_state(mut self, input: std::option::Option<crate::model::InputState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// The different types of inputs that AWS Elemental MediaLive supports.
         pub fn r#type(mut self, input: crate::model::InputType) -> Self {
@@ -5198,31 +4771,48 @@ pub mod describe_input_output {
         }
         /// The different types of inputs that AWS Elemental MediaLive supports.
         pub fn set_type(mut self, input: std::option::Option<crate::model::InputType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInputOutput`](crate::output::DescribeInputOutput).
         pub fn build(self) -> crate::output::DescribeInputOutput {
             crate::output::DescribeInputOutput {
-                arn: self.arn,
-                attached_channels: self.attached_channels,
-                destinations: self.destinations,
-                id: self.id,
-                input_class: self.input_class,
-                input_devices: self.input_devices,
-                input_partner_ids: self.input_partner_ids,
-                input_source_type: self.input_source_type,
-                media_connect_flows: self.media_connect_flows,
-                name: self.name,
-                role_arn: self.role_arn,
-                security_groups: self.security_groups,
-                sources: self.sources,
-                state: self.state,
-                tags: self.tags,
-                r#type: self.r#type,
+                arn: self.arn
+                ,
+                attached_channels: self.attached_channels
+                ,
+                destinations: self.destinations
+                ,
+                id: self.id
+                ,
+                input_class: self.input_class
+                ,
+                input_devices: self.input_devices
+                ,
+                input_partner_ids: self.input_partner_ids
+                ,
+                input_source_type: self.input_source_type
+                ,
+                media_connect_flows: self.media_connect_flows
+                ,
+                name: self.name
+                ,
+                role_arn: self.role_arn
+                ,
+                security_groups: self.security_groups
+                ,
+                sources: self.sources
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInputOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputOutput`](crate::output::DescribeInputOutput).
@@ -5234,7 +4824,7 @@ impl DescribeInputOutput {
 /// Placeholder documentation for DescribeChannelResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelOutput {
+pub struct DescribeChannelOutput  {
     /// The unique arn of the channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5285,65 +4875,62 @@ pub struct DescribeChannelOutput {
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
     #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl DescribeChannelOutput {
     /// The unique arn of the channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Specification of CDI inputs for this channel
-    pub fn cdi_input_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+    pub fn cdi_input_specification(&self) -> std::option::Option<& crate::model::CdiInputSpecification> {
         self.cdi_input_specification.as_ref()
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+    pub fn channel_class(&self) -> std::option::Option<& crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::ChannelEgressEndpoint]> {
+    pub fn egress_endpoints(&self) -> std::option::Option<& [crate::model::ChannelEgressEndpoint]> {
         self.egress_endpoints.as_deref()
     }
     /// Encoder Settings
-    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+    pub fn encoder_settings(&self) -> std::option::Option<& crate::model::EncoderSettings> {
         self.encoder_settings.as_ref()
     }
     /// The unique id of the channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// List of input attachments for channel.
-    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+    pub fn input_attachments(&self) -> std::option::Option<& [crate::model::InputAttachment]> {
         self.input_attachments.as_deref()
     }
     /// Specification of network and file inputs for this channel
-    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+    pub fn input_specification(&self) -> std::option::Option<& crate::model::InputSpecification> {
         self.input_specification.as_ref()
     }
     /// The log level being written to CloudWatch Logs.
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
     /// Maintenance settings for this channel.
-    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceStatus> {
+    pub fn maintenance(&self) -> std::option::Option<& crate::model::MaintenanceStatus> {
         self.maintenance.as_ref()
     }
     /// The name of the channel. (user-mutable)
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Runtime details for the pipelines of a running channel.
-    pub fn pipeline_details(&self) -> std::option::Option<&[crate::model::PipelineDetail]> {
+    pub fn pipeline_details(&self) -> std::option::Option<& [crate::model::PipelineDetail]> {
         self.pipeline_details.as_deref()
     }
     /// The number of currently healthy pipelines.
@@ -5351,55 +4938,45 @@ impl DescribeChannelOutput {
         self.pipelines_running_count
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Placeholder documentation for ChannelState
-    pub fn state(&self) -> std::option::Option<&crate::model::ChannelState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ChannelState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Settings for VPC output
-    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
+    pub fn vpc(&self) -> std::option::Option<& crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
     }
 }
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
 pub mod describe_channel_output {
-
+    
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) cdi_input_specification:
-            std::option::Option<crate::model::CdiInputSpecification>,
+        pub(crate) cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
         pub(crate) channel_class: std::option::Option<crate::model::ChannelClass>,
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
-        pub(crate) egress_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+        pub(crate) egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
         pub(crate) encoder_settings: std::option::Option<crate::model::EncoderSettings>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) input_attachments:
-            std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+        pub(crate) input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
         pub(crate) maintenance: std::option::Option<crate::model::MaintenanceStatus>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) pipeline_details:
-            std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
+        pub(crate) pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
         pub(crate) pipelines_running_count: std::option::Option<i32>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
     }
     impl Builder {
@@ -5410,24 +4987,16 @@ pub mod describe_channel_output {
         }
         /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(
-            mut self,
-            input: crate::model::CdiInputSpecification,
-        ) -> Self {
+        pub fn cdi_input_specification(mut self, input: crate::model::CdiInputSpecification) -> Self {
             self.cdi_input_specification = Some(input);
             self
         }
         /// Specification of CDI inputs for this channel
-        pub fn set_cdi_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::CdiInputSpecification>,
-        ) -> Self {
-            self.cdi_input_specification = input;
-            self
+        pub fn set_cdi_input_specification(mut self, input: std::option::Option<crate::model::CdiInputSpecification>) -> Self {
+            self.cdi_input_specification = input; self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
@@ -5435,12 +5004,8 @@ pub mod describe_channel_output {
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn set_channel_class(
-            mut self,
-            input: std::option::Option<crate::model::ChannelClass>,
-        ) -> Self {
-            self.channel_class = input;
-            self
+        pub fn set_channel_class(mut self, input: std::option::Option<crate::model::ChannelClass>) -> Self {
+            self.channel_class = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -5449,17 +5014,13 @@ pub mod describe_channel_output {
         /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// Appends an item to `egress_endpoints`.
         ///
@@ -5468,17 +5029,13 @@ pub mod describe_channel_output {
         /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input);
-            self.egress_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.egress_endpoints = Some(v);
+                            self
         }
         /// The endpoints where outgoing connections initiate from
-        pub fn set_egress_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
-        ) -> Self {
-            self.egress_endpoints = input;
-            self
+        pub fn set_egress_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>) -> Self {
+            self.egress_endpoints = input; self
         }
         /// Encoder Settings
         pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
@@ -5486,12 +5043,8 @@ pub mod describe_channel_output {
             self
         }
         /// Encoder Settings
-        pub fn set_encoder_settings(
-            mut self,
-            input: std::option::Option<crate::model::EncoderSettings>,
-        ) -> Self {
-            self.encoder_settings = input;
-            self
+        pub fn set_encoder_settings(mut self, input: std::option::Option<crate::model::EncoderSettings>) -> Self {
+            self.encoder_settings = input; self
         }
         /// The unique id of the channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5500,8 +5053,7 @@ pub mod describe_channel_output {
         }
         /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `input_attachments`.
         ///
@@ -5510,17 +5062,13 @@ pub mod describe_channel_output {
         /// List of input attachments for channel.
         pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input);
-            self.input_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.input_attachments = Some(v);
+                            self
         }
         /// List of input attachments for channel.
-        pub fn set_input_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
-        ) -> Self {
-            self.input_attachments = input;
-            self
+        pub fn set_input_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>) -> Self {
+            self.input_attachments = input; self
         }
         /// Specification of network and file inputs for this channel
         pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
@@ -5528,12 +5076,8 @@ pub mod describe_channel_output {
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn set_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::InputSpecification>,
-        ) -> Self {
-            self.input_specification = input;
-            self
+        pub fn set_input_specification(mut self, input: std::option::Option<crate::model::InputSpecification>) -> Self {
+            self.input_specification = input; self
         }
         /// The log level being written to CloudWatch Logs.
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -5542,8 +5086,7 @@ pub mod describe_channel_output {
         }
         /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Maintenance settings for this channel.
         pub fn maintenance(mut self, input: crate::model::MaintenanceStatus) -> Self {
@@ -5551,12 +5094,8 @@ pub mod describe_channel_output {
             self
         }
         /// Maintenance settings for this channel.
-        pub fn set_maintenance(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceStatus>,
-        ) -> Self {
-            self.maintenance = input;
-            self
+        pub fn set_maintenance(mut self, input: std::option::Option<crate::model::MaintenanceStatus>) -> Self {
+            self.maintenance = input; self
         }
         /// The name of the channel. (user-mutable)
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5565,8 +5104,7 @@ pub mod describe_channel_output {
         }
         /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `pipeline_details`.
         ///
@@ -5575,17 +5113,13 @@ pub mod describe_channel_output {
         /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input);
-            self.pipeline_details = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_details = Some(v);
+                            self
         }
         /// Runtime details for the pipelines of a running channel.
-        pub fn set_pipeline_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
-        ) -> Self {
-            self.pipeline_details = input;
-            self
+        pub fn set_pipeline_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>) -> Self {
+            self.pipeline_details = input; self
         }
         /// The number of currently healthy pipelines.
         pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -5594,8 +5128,7 @@ pub mod describe_channel_output {
         }
         /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipelines_running_count = input;
-            self
+            self.pipelines_running_count = input; self
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5604,8 +5137,7 @@ pub mod describe_channel_output {
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Placeholder documentation for ChannelState
         pub fn state(mut self, input: crate::model::ChannelState) -> Self {
@@ -5614,33 +5146,22 @@ pub mod describe_channel_output {
         }
         /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Settings for VPC output
         pub fn vpc(mut self, input: crate::model::VpcOutputSettingsDescription) -> Self {
@@ -5648,37 +5169,54 @@ pub mod describe_channel_output {
             self
         }
         /// Settings for VPC output
-        pub fn set_vpc(
-            mut self,
-            input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
-        ) -> Self {
-            self.vpc = input;
-            self
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VpcOutputSettingsDescription>) -> Self {
+            self.vpc = input; self
         }
         /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
         pub fn build(self) -> crate::output::DescribeChannelOutput {
             crate::output::DescribeChannelOutput {
-                arn: self.arn,
-                cdi_input_specification: self.cdi_input_specification,
-                channel_class: self.channel_class,
-                destinations: self.destinations,
-                egress_endpoints: self.egress_endpoints,
-                encoder_settings: self.encoder_settings,
-                id: self.id,
-                input_attachments: self.input_attachments,
-                input_specification: self.input_specification,
-                log_level: self.log_level,
-                maintenance: self.maintenance,
-                name: self.name,
-                pipeline_details: self.pipeline_details,
-                pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-                role_arn: self.role_arn,
-                state: self.state,
-                tags: self.tags,
-                vpc: self.vpc,
+                arn: self.arn
+                ,
+                cdi_input_specification: self.cdi_input_specification
+                ,
+                channel_class: self.channel_class
+                ,
+                destinations: self.destinations
+                ,
+                egress_endpoints: self.egress_endpoints
+                ,
+                encoder_settings: self.encoder_settings
+                ,
+                id: self.id
+                ,
+                input_attachments: self.input_attachments
+                ,
+                input_specification: self.input_specification
+                ,
+                log_level: self.log_level
+                ,
+                maintenance: self.maintenance
+                ,
+                name: self.name
+                ,
+                pipeline_details: self.pipeline_details
+                ,
+                pipelines_running_count: self.pipelines_running_count
+                    .unwrap_or_default()
+                ,
+                role_arn: self.role_arn
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                vpc: self.vpc
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
@@ -5690,19 +5228,24 @@ impl DescribeChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagsOutput {}
+pub struct DeleteTagsOutput  {
+}
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
 pub mod delete_tags_output {
-
+    
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
         pub fn build(self) -> crate::output::DeleteTagsOutput {
-            crate::output::DeleteTagsOutput {}
+            crate::output::DeleteTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTagsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
@@ -5714,19 +5257,24 @@ impl DeleteTagsOutput {
 /// Placeholder documentation for DeleteScheduleResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScheduleOutput {}
+pub struct DeleteScheduleOutput  {
+}
 /// See [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
 pub mod delete_schedule_output {
-
+    
     /// A builder for [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
         pub fn build(self) -> crate::output::DeleteScheduleOutput {
-            crate::output::DeleteScheduleOutput {}
+            crate::output::DeleteScheduleOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
@@ -5738,7 +5286,7 @@ impl DeleteScheduleOutput {
 /// Placeholder documentation for DeleteReservationResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReservationOutput {
+pub struct DeleteReservationOutput  {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5792,15 +5340,14 @@ pub struct DeleteReservationOutput {
     pub state: std::option::Option<crate::model::ReservationState>,
     /// A collection of key-value pairs
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     #[doc(hidden)]
     pub usage_price: f64,
 }
 impl DeleteReservationOutput {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Number of reserved resources
@@ -5808,7 +5355,7 @@ impl DeleteReservationOutput {
         self.count
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// Lease duration, e.g. '12'
@@ -5816,11 +5363,11 @@ impl DeleteReservationOutput {
         self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn duration_units(&self) -> std::option::Option<&crate::model::OfferingDurationUnits> {
+    pub fn duration_units(&self) -> std::option::Option<& crate::model::OfferingDurationUnits> {
         self.duration_units.as_ref()
     }
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
@@ -5828,52 +5375,47 @@ impl DeleteReservationOutput {
         self.fixed_price
     }
     /// User specified reservation name
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn offering_description(&self) -> std::option::Option<&str> {
+    pub fn offering_description(&self) -> std::option::Option<& str> {
         self.offering_description.as_deref()
     }
     /// Unique offering ID, e.g. '87654321'
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// Offering type, e.g. 'NO_UPFRONT'
-    pub fn offering_type(&self) -> std::option::Option<&crate::model::OfferingType> {
+    pub fn offering_type(&self) -> std::option::Option<& crate::model::OfferingType> {
         self.offering_type.as_ref()
     }
     /// AWS region, e.g. 'us-west-2'
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// Renewal settings for the reservation
-    pub fn renewal_settings(&self) -> std::option::Option<&crate::model::RenewalSettings> {
+    pub fn renewal_settings(&self) -> std::option::Option<& crate::model::RenewalSettings> {
         self.renewal_settings.as_ref()
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> std::option::Option<&str> {
+    pub fn reservation_id(&self) -> std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
     /// Resource configuration details
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservationResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ReservationResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> std::option::Option<& str> {
         self.start.as_deref()
     }
     /// Current state of reservation, e.g. 'ACTIVE'
-    pub fn state(&self) -> std::option::Option<&crate::model::ReservationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ReservationState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -5883,7 +5425,7 @@ impl DeleteReservationOutput {
 }
 /// See [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
 pub mod delete_reservation_output {
-
+    
     /// A builder for [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5901,13 +5443,10 @@ pub mod delete_reservation_output {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) renewal_settings: std::option::Option<crate::model::RenewalSettings>,
         pub(crate) reservation_id: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ReservationResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ReservationResourceSpecification>,
         pub(crate) start: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ReservationState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) usage_price: std::option::Option<f64>,
     }
     impl Builder {
@@ -5918,8 +5457,7 @@ pub mod delete_reservation_output {
         }
         /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Number of reserved resources
         pub fn count(mut self, input: i32) -> Self {
@@ -5928,8 +5466,7 @@ pub mod delete_reservation_output {
         }
         /// Number of reserved resources
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5937,12 +5474,8 @@ pub mod delete_reservation_output {
             self
         }
         /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// Lease duration, e.g. '12'
         pub fn duration(mut self, input: i32) -> Self {
@@ -5951,8 +5484,7 @@ pub mod delete_reservation_output {
         }
         /// Lease duration, e.g. '12'
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// Units for duration, e.g. 'MONTHS'
         pub fn duration_units(mut self, input: crate::model::OfferingDurationUnits) -> Self {
@@ -5960,12 +5492,8 @@ pub mod delete_reservation_output {
             self
         }
         /// Units for duration, e.g. 'MONTHS'
-        pub fn set_duration_units(
-            mut self,
-            input: std::option::Option<crate::model::OfferingDurationUnits>,
-        ) -> Self {
-            self.duration_units = input;
-            self
+        pub fn set_duration_units(mut self, input: std::option::Option<crate::model::OfferingDurationUnits>) -> Self {
+            self.duration_units = input; self
         }
         /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
         pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5974,8 +5502,7 @@ pub mod delete_reservation_output {
         }
         /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn fixed_price(mut self, input: f64) -> Self {
@@ -5984,8 +5511,7 @@ pub mod delete_reservation_output {
         }
         /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.fixed_price = input;
-            self
+            self.fixed_price = input; self
         }
         /// User specified reservation name
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5994,8 +5520,7 @@ pub mod delete_reservation_output {
         }
         /// User specified reservation name
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
         pub fn offering_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6003,12 +5528,8 @@ pub mod delete_reservation_output {
             self
         }
         /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-        pub fn set_offering_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.offering_description = input;
-            self
+        pub fn set_offering_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_description = input; self
         }
         /// Unique offering ID, e.g. '87654321'
         pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6017,8 +5538,7 @@ pub mod delete_reservation_output {
         }
         /// Unique offering ID, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = input;
-            self
+            self.offering_id = input; self
         }
         /// Offering type, e.g. 'NO_UPFRONT'
         pub fn offering_type(mut self, input: crate::model::OfferingType) -> Self {
@@ -6026,12 +5546,8 @@ pub mod delete_reservation_output {
             self
         }
         /// Offering type, e.g. 'NO_UPFRONT'
-        pub fn set_offering_type(
-            mut self,
-            input: std::option::Option<crate::model::OfferingType>,
-        ) -> Self {
-            self.offering_type = input;
-            self
+        pub fn set_offering_type(mut self, input: std::option::Option<crate::model::OfferingType>) -> Self {
+            self.offering_type = input; self
         }
         /// AWS region, e.g. 'us-west-2'
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6040,8 +5556,7 @@ pub mod delete_reservation_output {
         }
         /// AWS region, e.g. 'us-west-2'
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Renewal settings for the reservation
         pub fn renewal_settings(mut self, input: crate::model::RenewalSettings) -> Self {
@@ -6049,12 +5564,8 @@ pub mod delete_reservation_output {
             self
         }
         /// Renewal settings for the reservation
-        pub fn set_renewal_settings(
-            mut self,
-            input: std::option::Option<crate::model::RenewalSettings>,
-        ) -> Self {
-            self.renewal_settings = input;
-            self
+        pub fn set_renewal_settings(mut self, input: std::option::Option<crate::model::RenewalSettings>) -> Self {
+            self.renewal_settings = input; self
         }
         /// Unique reservation ID, e.g. '1234567'
         pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6062,28 +5573,17 @@ pub mod delete_reservation_output {
             self
         }
         /// Unique reservation ID, e.g. '1234567'
-        pub fn set_reservation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reservation_id = input;
-            self
+        pub fn set_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reservation_id = input; self
         }
         /// Resource configuration details
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ReservationResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ReservationResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// Resource configuration details
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ReservationResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ReservationResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
         pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6092,8 +5592,7 @@ pub mod delete_reservation_output {
         }
         /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// Current state of reservation, e.g. 'ACTIVE'
         pub fn state(mut self, input: crate::model::ReservationState) -> Self {
@@ -6101,37 +5600,23 @@ pub mod delete_reservation_output {
             self
         }
         /// Current state of reservation, e.g. 'ACTIVE'
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ReservationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ReservationState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn usage_price(mut self, input: f64) -> Self {
@@ -6140,34 +5625,58 @@ pub mod delete_reservation_output {
         }
         /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.usage_price = input;
-            self
+            self.usage_price = input; self
         }
         /// Consumes the builder and constructs a [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
         pub fn build(self) -> crate::output::DeleteReservationOutput {
             crate::output::DeleteReservationOutput {
-                arn: self.arn,
-                count: self.count.unwrap_or_default(),
-                currency_code: self.currency_code,
-                duration: self.duration.unwrap_or_default(),
-                duration_units: self.duration_units,
-                end: self.end,
-                fixed_price: self.fixed_price.unwrap_or_default(),
-                name: self.name,
-                offering_description: self.offering_description,
-                offering_id: self.offering_id,
-                offering_type: self.offering_type,
-                region: self.region,
-                renewal_settings: self.renewal_settings,
-                reservation_id: self.reservation_id,
-                resource_specification: self.resource_specification,
-                start: self.start,
-                state: self.state,
-                tags: self.tags,
-                usage_price: self.usage_price.unwrap_or_default(),
+                arn: self.arn
+                ,
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                currency_code: self.currency_code
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                duration_units: self.duration_units
+                ,
+                end: self.end
+                ,
+                fixed_price: self.fixed_price
+                    .unwrap_or_default()
+                ,
+                name: self.name
+                ,
+                offering_description: self.offering_description
+                ,
+                offering_id: self.offering_id
+                ,
+                offering_type: self.offering_type
+                ,
+                region: self.region
+                ,
+                renewal_settings: self.renewal_settings
+                ,
+                reservation_id: self.reservation_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                start: self.start
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                usage_price: self.usage_price
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteReservationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
@@ -6179,7 +5688,7 @@ impl DeleteReservationOutput {
 /// Placeholder documentation for DeleteMultiplexProgramResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMultiplexProgramOutput {
+pub struct DeleteMultiplexProgramOutput  {
     /// The MediaLive channel associated with the program.
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
@@ -6188,57 +5697,46 @@ pub struct DeleteMultiplexProgramOutput {
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// The packet identifier map for this multiplex program.
     #[doc(hidden)]
-    pub packet_identifiers_map:
-        std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
+    pub packet_identifiers_map: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
     #[doc(hidden)]
-    pub pipeline_details:
-        std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
+    pub pipeline_details: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
     /// The name of the multiplex program.
     #[doc(hidden)]
     pub program_name: std::option::Option<std::string::String>,
 }
 impl DeleteMultiplexProgramOutput {
     /// The MediaLive channel associated with the program.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::MultiplexProgramSettings> {
+    pub fn multiplex_program_settings(&self) -> std::option::Option<& crate::model::MultiplexProgramSettings> {
         self.multiplex_program_settings.as_ref()
     }
     /// The packet identifier map for this multiplex program.
-    pub fn packet_identifiers_map(
-        &self,
-    ) -> std::option::Option<&crate::model::MultiplexProgramPacketIdentifiersMap> {
+    pub fn packet_identifiers_map(&self) -> std::option::Option<& crate::model::MultiplexProgramPacketIdentifiersMap> {
         self.packet_identifiers_map.as_ref()
     }
     /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-    pub fn pipeline_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::MultiplexProgramPipelineDetail]> {
+    pub fn pipeline_details(&self) -> std::option::Option<& [crate::model::MultiplexProgramPipelineDetail]> {
         self.pipeline_details.as_deref()
     }
     /// The name of the multiplex program.
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> std::option::Option<& str> {
         self.program_name.as_deref()
     }
 }
 /// See [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
 pub mod delete_multiplex_program_output {
-
+    
     /// A builder for [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
-        pub(crate) multiplex_program_settings:
-            std::option::Option<crate::model::MultiplexProgramSettings>,
-        pub(crate) packet_identifiers_map:
-            std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
-        pub(crate) pipeline_details:
-            std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
+        pub(crate) multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
+        pub(crate) packet_identifiers_map: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
+        pub(crate) pipeline_details: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
         pub(crate) program_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6249,62 +5747,40 @@ pub mod delete_multiplex_program_output {
         }
         /// The MediaLive channel associated with the program.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// The settings for this multiplex program.
-        pub fn multiplex_program_settings(
-            mut self,
-            input: crate::model::MultiplexProgramSettings,
-        ) -> Self {
+        pub fn multiplex_program_settings(mut self, input: crate::model::MultiplexProgramSettings) -> Self {
             self.multiplex_program_settings = Some(input);
             self
         }
         /// The settings for this multiplex program.
-        pub fn set_multiplex_program_settings(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexProgramSettings>,
-        ) -> Self {
-            self.multiplex_program_settings = input;
-            self
+        pub fn set_multiplex_program_settings(mut self, input: std::option::Option<crate::model::MultiplexProgramSettings>) -> Self {
+            self.multiplex_program_settings = input; self
         }
         /// The packet identifier map for this multiplex program.
-        pub fn packet_identifiers_map(
-            mut self,
-            input: crate::model::MultiplexProgramPacketIdentifiersMap,
-        ) -> Self {
+        pub fn packet_identifiers_map(mut self, input: crate::model::MultiplexProgramPacketIdentifiersMap) -> Self {
             self.packet_identifiers_map = Some(input);
             self
         }
         /// The packet identifier map for this multiplex program.
-        pub fn set_packet_identifiers_map(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
-        ) -> Self {
-            self.packet_identifiers_map = input;
-            self
+        pub fn set_packet_identifiers_map(mut self, input: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>) -> Self {
+            self.packet_identifiers_map = input; self
         }
         /// Appends an item to `pipeline_details`.
         ///
         /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
         ///
         /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-        pub fn pipeline_details(
-            mut self,
-            input: crate::model::MultiplexProgramPipelineDetail,
-        ) -> Self {
+        pub fn pipeline_details(mut self, input: crate::model::MultiplexProgramPipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input);
-            self.pipeline_details = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_details = Some(v);
+                            self
         }
         /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
-        pub fn set_pipeline_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
-        ) -> Self {
-            self.pipeline_details = input;
-            self
+        pub fn set_pipeline_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>) -> Self {
+            self.pipeline_details = input; self
         }
         /// The name of the multiplex program.
         pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6313,20 +5789,26 @@ pub mod delete_multiplex_program_output {
         }
         /// The name of the multiplex program.
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.program_name = input;
-            self
+            self.program_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
         pub fn build(self) -> crate::output::DeleteMultiplexProgramOutput {
             crate::output::DeleteMultiplexProgramOutput {
-                channel_id: self.channel_id,
-                multiplex_program_settings: self.multiplex_program_settings,
-                packet_identifiers_map: self.packet_identifiers_map,
-                pipeline_details: self.pipeline_details,
-                program_name: self.program_name,
+                channel_id: self.channel_id
+                ,
+                multiplex_program_settings: self.multiplex_program_settings
+                ,
+                packet_identifiers_map: self.packet_identifiers_map
+                ,
+                pipeline_details: self.pipeline_details
+                ,
+                program_name: self.program_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteMultiplexProgramOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
@@ -6338,7 +5820,7 @@ impl DeleteMultiplexProgramOutput {
 /// Placeholder documentation for DeleteMultiplexResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMultiplexOutput {
+pub struct DeleteMultiplexOutput  {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6368,32 +5850,31 @@ pub struct DeleteMultiplexOutput {
     pub state: std::option::Option<crate::model::MultiplexState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DeleteMultiplexOutput {
     /// The unique arn of the multiplex.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A list of availability zones for the multiplex.
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// A list of the multiplex output destinations.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::MultiplexOutputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::MultiplexOutputDestination]> {
         self.destinations.as_deref()
     }
     /// The unique id of the multiplex.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configuration for a multiplex event.
-    pub fn multiplex_settings(&self) -> std::option::Option<&crate::model::MultiplexSettings> {
+    pub fn multiplex_settings(&self) -> std::option::Option<& crate::model::MultiplexSettings> {
         self.multiplex_settings.as_ref()
     }
     /// The name of the multiplex.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The number of currently healthy pipelines.
@@ -6405,36 +5886,30 @@ impl DeleteMultiplexOutput {
         self.program_count
     }
     /// The current state of the multiplex.
-    pub fn state(&self) -> std::option::Option<&crate::model::MultiplexState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::MultiplexState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
 pub mod delete_multiplex_output {
-
+    
     /// A builder for [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pipelines_running_count: std::option::Option<i32>,
         pub(crate) program_count: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::MultiplexState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The unique arn of the multiplex.
@@ -6444,8 +5919,7 @@ pub mod delete_multiplex_output {
         }
         /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -6454,17 +5928,13 @@ pub mod delete_multiplex_output {
         /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// A list of availability zones for the multiplex.
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -6473,17 +5943,13 @@ pub mod delete_multiplex_output {
         /// A list of the multiplex output destinations.
         pub fn destinations(mut self, input: crate::model::MultiplexOutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of the multiplex output destinations.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// The unique id of the multiplex.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6492,8 +5958,7 @@ pub mod delete_multiplex_output {
         }
         /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configuration for a multiplex event.
         pub fn multiplex_settings(mut self, input: crate::model::MultiplexSettings) -> Self {
@@ -6501,12 +5966,8 @@ pub mod delete_multiplex_output {
             self
         }
         /// Configuration for a multiplex event.
-        pub fn set_multiplex_settings(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexSettings>,
-        ) -> Self {
-            self.multiplex_settings = input;
-            self
+        pub fn set_multiplex_settings(mut self, input: std::option::Option<crate::model::MultiplexSettings>) -> Self {
+            self.multiplex_settings = input; self
         }
         /// The name of the multiplex.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6515,8 +5976,7 @@ pub mod delete_multiplex_output {
         }
         /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The number of currently healthy pipelines.
         pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -6525,8 +5985,7 @@ pub mod delete_multiplex_output {
         }
         /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipelines_running_count = input;
-            self
+            self.pipelines_running_count = input; self
         }
         /// The number of programs in the multiplex.
         pub fn program_count(mut self, input: i32) -> Self {
@@ -6535,8 +5994,7 @@ pub mod delete_multiplex_output {
         }
         /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.program_count = input;
-            self
+            self.program_count = input; self
         }
         /// The current state of the multiplex.
         pub fn state(mut self, input: crate::model::MultiplexState) -> Self {
@@ -6544,54 +6002,54 @@ pub mod delete_multiplex_output {
             self
         }
         /// The current state of the multiplex.
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::MultiplexState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
         pub fn build(self) -> crate::output::DeleteMultiplexOutput {
             crate::output::DeleteMultiplexOutput {
-                arn: self.arn,
-                availability_zones: self.availability_zones,
-                destinations: self.destinations,
-                id: self.id,
-                multiplex_settings: self.multiplex_settings,
-                name: self.name,
-                pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-                program_count: self.program_count.unwrap_or_default(),
-                state: self.state,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                availability_zones: self.availability_zones
+                ,
+                destinations: self.destinations
+                ,
+                id: self.id
+                ,
+                multiplex_settings: self.multiplex_settings
+                ,
+                name: self.name
+                ,
+                pipelines_running_count: self.pipelines_running_count
+                    .unwrap_or_default()
+                ,
+                program_count: self.program_count
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteMultiplexOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
@@ -6603,19 +6061,24 @@ impl DeleteMultiplexOutput {
 /// Placeholder documentation for DeleteInputSecurityGroupResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInputSecurityGroupOutput {}
+pub struct DeleteInputSecurityGroupOutput  {
+}
 /// See [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
 pub mod delete_input_security_group_output {
-
+    
     /// A builder for [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
         pub fn build(self) -> crate::output::DeleteInputSecurityGroupOutput {
-            crate::output::DeleteInputSecurityGroupOutput {}
+            crate::output::DeleteInputSecurityGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteInputSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
@@ -6627,19 +6090,24 @@ impl DeleteInputSecurityGroupOutput {
 /// Placeholder documentation for DeleteInputResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInputOutput {}
+pub struct DeleteInputOutput  {
+}
 /// See [`DeleteInputOutput`](crate::output::DeleteInputOutput).
 pub mod delete_input_output {
-
+    
     /// A builder for [`DeleteInputOutput`](crate::output::DeleteInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInputOutput`](crate::output::DeleteInputOutput).
         pub fn build(self) -> crate::output::DeleteInputOutput {
-            crate::output::DeleteInputOutput {}
+            crate::output::DeleteInputOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteInputOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInputOutput`](crate::output::DeleteInputOutput).
@@ -6651,7 +6119,7 @@ impl DeleteInputOutput {
 /// Placeholder documentation for DeleteChannelResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelOutput {
+pub struct DeleteChannelOutput  {
     /// The unique arn of the channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6702,65 +6170,62 @@ pub struct DeleteChannelOutput {
     pub state: std::option::Option<crate::model::ChannelState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Settings for VPC output
     #[doc(hidden)]
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl DeleteChannelOutput {
     /// The unique arn of the channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Specification of CDI inputs for this channel
-    pub fn cdi_input_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CdiInputSpecification> {
+    pub fn cdi_input_specification(&self) -> std::option::Option<& crate::model::CdiInputSpecification> {
         self.cdi_input_specification.as_ref()
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    pub fn channel_class(&self) -> std::option::Option<&crate::model::ChannelClass> {
+    pub fn channel_class(&self) -> std::option::Option<& crate::model::ChannelClass> {
         self.channel_class.as_ref()
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::OutputDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::OutputDestination]> {
         self.destinations.as_deref()
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn egress_endpoints(&self) -> std::option::Option<&[crate::model::ChannelEgressEndpoint]> {
+    pub fn egress_endpoints(&self) -> std::option::Option<& [crate::model::ChannelEgressEndpoint]> {
         self.egress_endpoints.as_deref()
     }
     /// Encoder Settings
-    pub fn encoder_settings(&self) -> std::option::Option<&crate::model::EncoderSettings> {
+    pub fn encoder_settings(&self) -> std::option::Option<& crate::model::EncoderSettings> {
         self.encoder_settings.as_ref()
     }
     /// The unique id of the channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// List of input attachments for channel.
-    pub fn input_attachments(&self) -> std::option::Option<&[crate::model::InputAttachment]> {
+    pub fn input_attachments(&self) -> std::option::Option<& [crate::model::InputAttachment]> {
         self.input_attachments.as_deref()
     }
     /// Specification of network and file inputs for this channel
-    pub fn input_specification(&self) -> std::option::Option<&crate::model::InputSpecification> {
+    pub fn input_specification(&self) -> std::option::Option<& crate::model::InputSpecification> {
         self.input_specification.as_ref()
     }
     /// The log level being written to CloudWatch Logs.
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
     /// Maintenance settings for this channel.
-    pub fn maintenance(&self) -> std::option::Option<&crate::model::MaintenanceStatus> {
+    pub fn maintenance(&self) -> std::option::Option<& crate::model::MaintenanceStatus> {
         self.maintenance.as_ref()
     }
     /// The name of the channel. (user-mutable)
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Runtime details for the pipelines of a running channel.
-    pub fn pipeline_details(&self) -> std::option::Option<&[crate::model::PipelineDetail]> {
+    pub fn pipeline_details(&self) -> std::option::Option<& [crate::model::PipelineDetail]> {
         self.pipeline_details.as_deref()
     }
     /// The number of currently healthy pipelines.
@@ -6768,55 +6233,45 @@ impl DeleteChannelOutput {
         self.pipelines_running_count
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Placeholder documentation for ChannelState
-    pub fn state(&self) -> std::option::Option<&crate::model::ChannelState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ChannelState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Settings for VPC output
-    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcOutputSettingsDescription> {
+    pub fn vpc(&self) -> std::option::Option<& crate::model::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
     }
 }
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
 pub mod delete_channel_output {
-
+    
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) cdi_input_specification:
-            std::option::Option<crate::model::CdiInputSpecification>,
+        pub(crate) cdi_input_specification: std::option::Option<crate::model::CdiInputSpecification>,
         pub(crate) channel_class: std::option::Option<crate::model::ChannelClass>,
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
-        pub(crate) egress_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
+        pub(crate) egress_endpoints: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
         pub(crate) encoder_settings: std::option::Option<crate::model::EncoderSettings>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) input_attachments:
-            std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
+        pub(crate) input_attachments: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
         pub(crate) input_specification: std::option::Option<crate::model::InputSpecification>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
         pub(crate) maintenance: std::option::Option<crate::model::MaintenanceStatus>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) pipeline_details:
-            std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
+        pub(crate) pipeline_details: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
         pub(crate) pipelines_running_count: std::option::Option<i32>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ChannelState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
     }
     impl Builder {
@@ -6827,24 +6282,16 @@ pub mod delete_channel_output {
         }
         /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Specification of CDI inputs for this channel
-        pub fn cdi_input_specification(
-            mut self,
-            input: crate::model::CdiInputSpecification,
-        ) -> Self {
+        pub fn cdi_input_specification(mut self, input: crate::model::CdiInputSpecification) -> Self {
             self.cdi_input_specification = Some(input);
             self
         }
         /// Specification of CDI inputs for this channel
-        pub fn set_cdi_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::CdiInputSpecification>,
-        ) -> Self {
-            self.cdi_input_specification = input;
-            self
+        pub fn set_cdi_input_specification(mut self, input: std::option::Option<crate::model::CdiInputSpecification>) -> Self {
+            self.cdi_input_specification = input; self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn channel_class(mut self, input: crate::model::ChannelClass) -> Self {
@@ -6852,12 +6299,8 @@ pub mod delete_channel_output {
             self
         }
         /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-        pub fn set_channel_class(
-            mut self,
-            input: std::option::Option<crate::model::ChannelClass>,
-        ) -> Self {
-            self.channel_class = input;
-            self
+        pub fn set_channel_class(mut self, input: std::option::Option<crate::model::ChannelClass>) -> Self {
+            self.channel_class = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -6866,17 +6309,13 @@ pub mod delete_channel_output {
         /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
         pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// Appends an item to `egress_endpoints`.
         ///
@@ -6885,17 +6324,13 @@ pub mod delete_channel_output {
         /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(mut self, input: crate::model::ChannelEgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input);
-            self.egress_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.egress_endpoints = Some(v);
+                            self
         }
         /// The endpoints where outgoing connections initiate from
-        pub fn set_egress_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
-        ) -> Self {
-            self.egress_endpoints = input;
-            self
+        pub fn set_egress_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>) -> Self {
+            self.egress_endpoints = input; self
         }
         /// Encoder Settings
         pub fn encoder_settings(mut self, input: crate::model::EncoderSettings) -> Self {
@@ -6903,12 +6338,8 @@ pub mod delete_channel_output {
             self
         }
         /// Encoder Settings
-        pub fn set_encoder_settings(
-            mut self,
-            input: std::option::Option<crate::model::EncoderSettings>,
-        ) -> Self {
-            self.encoder_settings = input;
-            self
+        pub fn set_encoder_settings(mut self, input: std::option::Option<crate::model::EncoderSettings>) -> Self {
+            self.encoder_settings = input; self
         }
         /// The unique id of the channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6917,8 +6348,7 @@ pub mod delete_channel_output {
         }
         /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `input_attachments`.
         ///
@@ -6927,17 +6357,13 @@ pub mod delete_channel_output {
         /// List of input attachments for channel.
         pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input);
-            self.input_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.input_attachments = Some(v);
+                            self
         }
         /// List of input attachments for channel.
-        pub fn set_input_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
-        ) -> Self {
-            self.input_attachments = input;
-            self
+        pub fn set_input_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>) -> Self {
+            self.input_attachments = input; self
         }
         /// Specification of network and file inputs for this channel
         pub fn input_specification(mut self, input: crate::model::InputSpecification) -> Self {
@@ -6945,12 +6371,8 @@ pub mod delete_channel_output {
             self
         }
         /// Specification of network and file inputs for this channel
-        pub fn set_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::InputSpecification>,
-        ) -> Self {
-            self.input_specification = input;
-            self
+        pub fn set_input_specification(mut self, input: std::option::Option<crate::model::InputSpecification>) -> Self {
+            self.input_specification = input; self
         }
         /// The log level being written to CloudWatch Logs.
         pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
@@ -6959,8 +6381,7 @@ pub mod delete_channel_output {
         }
         /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Maintenance settings for this channel.
         pub fn maintenance(mut self, input: crate::model::MaintenanceStatus) -> Self {
@@ -6968,12 +6389,8 @@ pub mod delete_channel_output {
             self
         }
         /// Maintenance settings for this channel.
-        pub fn set_maintenance(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceStatus>,
-        ) -> Self {
-            self.maintenance = input;
-            self
+        pub fn set_maintenance(mut self, input: std::option::Option<crate::model::MaintenanceStatus>) -> Self {
+            self.maintenance = input; self
         }
         /// The name of the channel. (user-mutable)
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6982,8 +6399,7 @@ pub mod delete_channel_output {
         }
         /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `pipeline_details`.
         ///
@@ -6992,17 +6408,13 @@ pub mod delete_channel_output {
         /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: crate::model::PipelineDetail) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
-            v.push(input);
-            self.pipeline_details = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_details = Some(v);
+                            self
         }
         /// Runtime details for the pipelines of a running channel.
-        pub fn set_pipeline_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
-        ) -> Self {
-            self.pipeline_details = input;
-            self
+        pub fn set_pipeline_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>) -> Self {
+            self.pipeline_details = input; self
         }
         /// The number of currently healthy pipelines.
         pub fn pipelines_running_count(mut self, input: i32) -> Self {
@@ -7011,8 +6423,7 @@ pub mod delete_channel_output {
         }
         /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipelines_running_count = input;
-            self
+            self.pipelines_running_count = input; self
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7021,8 +6432,7 @@ pub mod delete_channel_output {
         }
         /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Placeholder documentation for ChannelState
         pub fn state(mut self, input: crate::model::ChannelState) -> Self {
@@ -7031,33 +6441,22 @@ pub mod delete_channel_output {
         }
         /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of key-value pairs.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of key-value pairs.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Settings for VPC output
         pub fn vpc(mut self, input: crate::model::VpcOutputSettingsDescription) -> Self {
@@ -7065,37 +6464,54 @@ pub mod delete_channel_output {
             self
         }
         /// Settings for VPC output
-        pub fn set_vpc(
-            mut self,
-            input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
-        ) -> Self {
-            self.vpc = input;
-            self
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VpcOutputSettingsDescription>) -> Self {
+            self.vpc = input; self
         }
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
         pub fn build(self) -> crate::output::DeleteChannelOutput {
             crate::output::DeleteChannelOutput {
-                arn: self.arn,
-                cdi_input_specification: self.cdi_input_specification,
-                channel_class: self.channel_class,
-                destinations: self.destinations,
-                egress_endpoints: self.egress_endpoints,
-                encoder_settings: self.encoder_settings,
-                id: self.id,
-                input_attachments: self.input_attachments,
-                input_specification: self.input_specification,
-                log_level: self.log_level,
-                maintenance: self.maintenance,
-                name: self.name,
-                pipeline_details: self.pipeline_details,
-                pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-                role_arn: self.role_arn,
-                state: self.state,
-                tags: self.tags,
-                vpc: self.vpc,
+                arn: self.arn
+                ,
+                cdi_input_specification: self.cdi_input_specification
+                ,
+                channel_class: self.channel_class
+                ,
+                destinations: self.destinations
+                ,
+                egress_endpoints: self.egress_endpoints
+                ,
+                encoder_settings: self.encoder_settings
+                ,
+                id: self.id
+                ,
+                input_attachments: self.input_attachments
+                ,
+                input_specification: self.input_specification
+                ,
+                log_level: self.log_level
+                ,
+                maintenance: self.maintenance
+                ,
+                name: self.name
+                ,
+                pipeline_details: self.pipeline_details
+                ,
+                pipelines_running_count: self.pipelines_running_count
+                    .unwrap_or_default()
+                ,
+                role_arn: self.role_arn
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                vpc: self.vpc
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
@@ -7107,19 +6523,24 @@ impl DeleteChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTagsOutput {}
+pub struct CreateTagsOutput  {
+}
 /// See [`CreateTagsOutput`](crate::output::CreateTagsOutput).
 pub mod create_tags_output {
-
+    
     /// A builder for [`CreateTagsOutput`](crate::output::CreateTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateTagsOutput`](crate::output::CreateTagsOutput).
         pub fn build(self) -> crate::output::CreateTagsOutput {
-            crate::output::CreateTagsOutput {}
+            crate::output::CreateTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateTagsOutput {
     /// Creates a new builder-style object to manufacture [`CreateTagsOutput`](crate::output::CreateTagsOutput).
@@ -7131,20 +6552,20 @@ impl CreateTagsOutput {
 /// Placeholder documentation for CreatePartnerInputResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePartnerInputOutput {
+pub struct CreatePartnerInputOutput  {
     /// Placeholder documentation for Input
     #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl CreatePartnerInputOutput {
     /// Placeholder documentation for Input
-    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+    pub fn input(&self) -> std::option::Option<& crate::model::Input> {
         self.input.as_ref()
     }
 }
 /// See [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
 pub mod create_partner_input_output {
-
+    
     /// A builder for [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7158,14 +6579,18 @@ pub mod create_partner_input_output {
         }
         /// Placeholder documentation for Input
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// Consumes the builder and constructs a [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
         pub fn build(self) -> crate::output::CreatePartnerInputOutput {
-            crate::output::CreatePartnerInputOutput { input: self.input }
+            crate::output::CreatePartnerInputOutput {
+                input: self.input
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreatePartnerInputOutput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
@@ -7177,20 +6602,20 @@ impl CreatePartnerInputOutput {
 /// Placeholder documentation for CreateMultiplexProgramResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMultiplexProgramOutput {
+pub struct CreateMultiplexProgramOutput  {
     /// The newly created multiplex program.
     #[doc(hidden)]
     pub multiplex_program: std::option::Option<crate::model::MultiplexProgram>,
 }
 impl CreateMultiplexProgramOutput {
     /// The newly created multiplex program.
-    pub fn multiplex_program(&self) -> std::option::Option<&crate::model::MultiplexProgram> {
+    pub fn multiplex_program(&self) -> std::option::Option<& crate::model::MultiplexProgram> {
         self.multiplex_program.as_ref()
     }
 }
 /// See [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
 pub mod create_multiplex_program_output {
-
+    
     /// A builder for [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7203,20 +6628,19 @@ pub mod create_multiplex_program_output {
             self
         }
         /// The newly created multiplex program.
-        pub fn set_multiplex_program(
-            mut self,
-            input: std::option::Option<crate::model::MultiplexProgram>,
-        ) -> Self {
-            self.multiplex_program = input;
-            self
+        pub fn set_multiplex_program(mut self, input: std::option::Option<crate::model::MultiplexProgram>) -> Self {
+            self.multiplex_program = input; self
         }
         /// Consumes the builder and constructs a [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
         pub fn build(self) -> crate::output::CreateMultiplexProgramOutput {
             crate::output::CreateMultiplexProgramOutput {
-                multiplex_program: self.multiplex_program,
+                multiplex_program: self.multiplex_program
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMultiplexProgramOutput {
     /// Creates a new builder-style object to manufacture [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
@@ -7228,20 +6652,20 @@ impl CreateMultiplexProgramOutput {
 /// Placeholder documentation for CreateMultiplexResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMultiplexOutput {
+pub struct CreateMultiplexOutput  {
     /// The newly created multiplex.
     #[doc(hidden)]
     pub multiplex: std::option::Option<crate::model::Multiplex>,
 }
 impl CreateMultiplexOutput {
     /// The newly created multiplex.
-    pub fn multiplex(&self) -> std::option::Option<&crate::model::Multiplex> {
+    pub fn multiplex(&self) -> std::option::Option<& crate::model::Multiplex> {
         self.multiplex.as_ref()
     }
 }
 /// See [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
 pub mod create_multiplex_output {
-
+    
     /// A builder for [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7254,20 +6678,19 @@ pub mod create_multiplex_output {
             self
         }
         /// The newly created multiplex.
-        pub fn set_multiplex(
-            mut self,
-            input: std::option::Option<crate::model::Multiplex>,
-        ) -> Self {
-            self.multiplex = input;
-            self
+        pub fn set_multiplex(mut self, input: std::option::Option<crate::model::Multiplex>) -> Self {
+            self.multiplex = input; self
         }
         /// Consumes the builder and constructs a [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
         pub fn build(self) -> crate::output::CreateMultiplexOutput {
             crate::output::CreateMultiplexOutput {
-                multiplex: self.multiplex,
+                multiplex: self.multiplex
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMultiplexOutput {
     /// Creates a new builder-style object to manufacture [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
@@ -7279,20 +6702,20 @@ impl CreateMultiplexOutput {
 /// Placeholder documentation for CreateInputSecurityGroupResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInputSecurityGroupOutput {
+pub struct CreateInputSecurityGroupOutput  {
     /// An Input Security Group
     #[doc(hidden)]
     pub security_group: std::option::Option<crate::model::InputSecurityGroup>,
 }
 impl CreateInputSecurityGroupOutput {
     /// An Input Security Group
-    pub fn security_group(&self) -> std::option::Option<&crate::model::InputSecurityGroup> {
+    pub fn security_group(&self) -> std::option::Option<& crate::model::InputSecurityGroup> {
         self.security_group.as_ref()
     }
 }
 /// See [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
 pub mod create_input_security_group_output {
-
+    
     /// A builder for [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7305,20 +6728,19 @@ pub mod create_input_security_group_output {
             self
         }
         /// An Input Security Group
-        pub fn set_security_group(
-            mut self,
-            input: std::option::Option<crate::model::InputSecurityGroup>,
-        ) -> Self {
-            self.security_group = input;
-            self
+        pub fn set_security_group(mut self, input: std::option::Option<crate::model::InputSecurityGroup>) -> Self {
+            self.security_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
         pub fn build(self) -> crate::output::CreateInputSecurityGroupOutput {
             crate::output::CreateInputSecurityGroupOutput {
-                security_group: self.security_group,
+                security_group: self.security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInputSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
@@ -7330,20 +6752,20 @@ impl CreateInputSecurityGroupOutput {
 /// Placeholder documentation for CreateInputResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInputOutput {
+pub struct CreateInputOutput  {
     /// Placeholder documentation for Input
     #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl CreateInputOutput {
     /// Placeholder documentation for Input
-    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+    pub fn input(&self) -> std::option::Option<& crate::model::Input> {
         self.input.as_ref()
     }
 }
 /// See [`CreateInputOutput`](crate::output::CreateInputOutput).
 pub mod create_input_output {
-
+    
     /// A builder for [`CreateInputOutput`](crate::output::CreateInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7357,14 +6779,18 @@ pub mod create_input_output {
         }
         /// Placeholder documentation for Input
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// Consumes the builder and constructs a [`CreateInputOutput`](crate::output::CreateInputOutput).
         pub fn build(self) -> crate::output::CreateInputOutput {
-            crate::output::CreateInputOutput { input: self.input }
+            crate::output::CreateInputOutput {
+                input: self.input
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateInputOutput {
     /// Creates a new builder-style object to manufacture [`CreateInputOutput`](crate::output::CreateInputOutput).
@@ -7376,20 +6802,20 @@ impl CreateInputOutput {
 /// Placeholder documentation for CreateChannelResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelOutput {
+pub struct CreateChannelOutput  {
     /// Placeholder documentation for Channel
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl CreateChannelOutput {
     /// Placeholder documentation for Channel
-    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::model::Channel> {
         self.channel.as_ref()
     }
 }
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
 pub mod create_channel_output {
-
+    
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7403,16 +6829,18 @@ pub mod create_channel_output {
         }
         /// Placeholder documentation for Channel
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
-            self.channel = input;
-            self
+            self.channel = input; self
         }
         /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput).
         pub fn build(self) -> crate::output::CreateChannelOutput {
             crate::output::CreateChannelOutput {
-                channel: self.channel,
+                channel: self.channel
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
@@ -7424,19 +6852,24 @@ impl CreateChannelOutput {
 /// Placeholder documentation for ClaimDeviceResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClaimDeviceOutput {}
+pub struct ClaimDeviceOutput  {
+}
 /// See [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
 pub mod claim_device_output {
-
+    
     /// A builder for [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
         pub fn build(self) -> crate::output::ClaimDeviceOutput {
-            crate::output::ClaimDeviceOutput {}
+            crate::output::ClaimDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl ClaimDeviceOutput {
     /// Creates a new builder-style object to manufacture [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
@@ -7448,19 +6881,24 @@ impl ClaimDeviceOutput {
 /// Placeholder documentation for CancelInputDeviceTransferResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelInputDeviceTransferOutput {}
+pub struct CancelInputDeviceTransferOutput  {
+}
 /// See [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
 pub mod cancel_input_device_transfer_output {
-
+    
     /// A builder for [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
         pub fn build(self) -> crate::output::CancelInputDeviceTransferOutput {
-            crate::output::CancelInputDeviceTransferOutput {}
+            crate::output::CancelInputDeviceTransferOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
@@ -7472,7 +6910,7 @@ impl CancelInputDeviceTransferOutput {
 /// Placeholder documentation for BatchUpdateScheduleResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateScheduleOutput {
+pub struct BatchUpdateScheduleOutput  {
     /// Schedule actions created in the schedule.
     #[doc(hidden)]
     pub creates: std::option::Option<crate::model::BatchScheduleActionCreateResult>,
@@ -7482,17 +6920,17 @@ pub struct BatchUpdateScheduleOutput {
 }
 impl BatchUpdateScheduleOutput {
     /// Schedule actions created in the schedule.
-    pub fn creates(&self) -> std::option::Option<&crate::model::BatchScheduleActionCreateResult> {
+    pub fn creates(&self) -> std::option::Option<& crate::model::BatchScheduleActionCreateResult> {
         self.creates.as_ref()
     }
     /// Schedule actions deleted from the schedule.
-    pub fn deletes(&self) -> std::option::Option<&crate::model::BatchScheduleActionDeleteResult> {
+    pub fn deletes(&self) -> std::option::Option<& crate::model::BatchScheduleActionDeleteResult> {
         self.deletes.as_ref()
     }
 }
 /// See [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
 pub mod batch_update_schedule_output {
-
+    
     /// A builder for [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7506,12 +6944,8 @@ pub mod batch_update_schedule_output {
             self
         }
         /// Schedule actions created in the schedule.
-        pub fn set_creates(
-            mut self,
-            input: std::option::Option<crate::model::BatchScheduleActionCreateResult>,
-        ) -> Self {
-            self.creates = input;
-            self
+        pub fn set_creates(mut self, input: std::option::Option<crate::model::BatchScheduleActionCreateResult>) -> Self {
+            self.creates = input; self
         }
         /// Schedule actions deleted from the schedule.
         pub fn deletes(mut self, input: crate::model::BatchScheduleActionDeleteResult) -> Self {
@@ -7519,21 +6953,21 @@ pub mod batch_update_schedule_output {
             self
         }
         /// Schedule actions deleted from the schedule.
-        pub fn set_deletes(
-            mut self,
-            input: std::option::Option<crate::model::BatchScheduleActionDeleteResult>,
-        ) -> Self {
-            self.deletes = input;
-            self
+        pub fn set_deletes(mut self, input: std::option::Option<crate::model::BatchScheduleActionDeleteResult>) -> Self {
+            self.deletes = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
         pub fn build(self) -> crate::output::BatchUpdateScheduleOutput {
             crate::output::BatchUpdateScheduleOutput {
-                creates: self.creates,
-                deletes: self.deletes,
+                creates: self.creates
+                ,
+                deletes: self.deletes
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateScheduleOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
@@ -7545,7 +6979,7 @@ impl BatchUpdateScheduleOutput {
 /// Placeholder documentation for BatchStopResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchStopOutput {
+pub struct BatchStopOutput  {
     /// List of failed operations
     #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -7555,23 +6989,22 @@ pub struct BatchStopOutput {
 }
 impl BatchStopOutput {
     /// List of failed operations
-    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchFailedResultModel]> {
+    pub fn failed(&self) -> std::option::Option<& [crate::model::BatchFailedResultModel]> {
         self.failed.as_deref()
     }
     /// List of successful operations
-    pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
+    pub fn successful(&self) -> std::option::Option<& [crate::model::BatchSuccessfulResultModel]> {
         self.successful.as_deref()
     }
 }
 /// See [`BatchStopOutput`](crate::output::BatchStopOutput).
 pub mod batch_stop_output {
-
+    
     /// A builder for [`BatchStopOutput`](crate::output::BatchStopOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
-        pub(crate) successful:
-            std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
+        pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
     }
     impl Builder {
         /// Appends an item to `failed`.
@@ -7581,17 +7014,13 @@ pub mod batch_stop_output {
         /// List of failed operations
         pub fn failed(mut self, input: crate::model::BatchFailedResultModel) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input);
-            self.failed = Some(v);
-            self
+                            v.push(input);
+                            self.failed = Some(v);
+                            self
         }
         /// List of failed operations
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>) -> Self {
+            self.failed = input; self
         }
         /// Appends an item to `successful`.
         ///
@@ -7600,26 +7029,26 @@ pub mod batch_stop_output {
         /// List of successful operations
         pub fn successful(mut self, input: crate::model::BatchSuccessfulResultModel) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input);
-            self.successful = Some(v);
-            self
+                            v.push(input);
+                            self.successful = Some(v);
+                            self
         }
         /// List of successful operations
-        pub fn set_successful(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
-        ) -> Self {
-            self.successful = input;
-            self
+        pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>) -> Self {
+            self.successful = input; self
         }
         /// Consumes the builder and constructs a [`BatchStopOutput`](crate::output::BatchStopOutput).
         pub fn build(self) -> crate::output::BatchStopOutput {
             crate::output::BatchStopOutput {
-                failed: self.failed,
-                successful: self.successful,
+                failed: self.failed
+                ,
+                successful: self.successful
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchStopOutput {
     /// Creates a new builder-style object to manufacture [`BatchStopOutput`](crate::output::BatchStopOutput).
@@ -7631,7 +7060,7 @@ impl BatchStopOutput {
 /// Placeholder documentation for BatchStartResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchStartOutput {
+pub struct BatchStartOutput  {
     /// List of failed operations
     #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -7641,23 +7070,22 @@ pub struct BatchStartOutput {
 }
 impl BatchStartOutput {
     /// List of failed operations
-    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchFailedResultModel]> {
+    pub fn failed(&self) -> std::option::Option<& [crate::model::BatchFailedResultModel]> {
         self.failed.as_deref()
     }
     /// List of successful operations
-    pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
+    pub fn successful(&self) -> std::option::Option<& [crate::model::BatchSuccessfulResultModel]> {
         self.successful.as_deref()
     }
 }
 /// See [`BatchStartOutput`](crate::output::BatchStartOutput).
 pub mod batch_start_output {
-
+    
     /// A builder for [`BatchStartOutput`](crate::output::BatchStartOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
-        pub(crate) successful:
-            std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
+        pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
     }
     impl Builder {
         /// Appends an item to `failed`.
@@ -7667,17 +7095,13 @@ pub mod batch_start_output {
         /// List of failed operations
         pub fn failed(mut self, input: crate::model::BatchFailedResultModel) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input);
-            self.failed = Some(v);
-            self
+                            v.push(input);
+                            self.failed = Some(v);
+                            self
         }
         /// List of failed operations
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>) -> Self {
+            self.failed = input; self
         }
         /// Appends an item to `successful`.
         ///
@@ -7686,26 +7110,26 @@ pub mod batch_start_output {
         /// List of successful operations
         pub fn successful(mut self, input: crate::model::BatchSuccessfulResultModel) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input);
-            self.successful = Some(v);
-            self
+                            v.push(input);
+                            self.successful = Some(v);
+                            self
         }
         /// List of successful operations
-        pub fn set_successful(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
-        ) -> Self {
-            self.successful = input;
-            self
+        pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>) -> Self {
+            self.successful = input; self
         }
         /// Consumes the builder and constructs a [`BatchStartOutput`](crate::output::BatchStartOutput).
         pub fn build(self) -> crate::output::BatchStartOutput {
             crate::output::BatchStartOutput {
-                failed: self.failed,
-                successful: self.successful,
+                failed: self.failed
+                ,
+                successful: self.successful
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchStartOutput {
     /// Creates a new builder-style object to manufacture [`BatchStartOutput`](crate::output::BatchStartOutput).
@@ -7717,7 +7141,7 @@ impl BatchStartOutput {
 /// Placeholder documentation for BatchDeleteResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteOutput {
+pub struct BatchDeleteOutput  {
     /// List of failed operations
     #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -7727,23 +7151,22 @@ pub struct BatchDeleteOutput {
 }
 impl BatchDeleteOutput {
     /// List of failed operations
-    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchFailedResultModel]> {
+    pub fn failed(&self) -> std::option::Option<& [crate::model::BatchFailedResultModel]> {
         self.failed.as_deref()
     }
     /// List of successful operations
-    pub fn successful(&self) -> std::option::Option<&[crate::model::BatchSuccessfulResultModel]> {
+    pub fn successful(&self) -> std::option::Option<& [crate::model::BatchSuccessfulResultModel]> {
         self.successful.as_deref()
     }
 }
 /// See [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
 pub mod batch_delete_output {
-
+    
     /// A builder for [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
-        pub(crate) successful:
-            std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
+        pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
     }
     impl Builder {
         /// Appends an item to `failed`.
@@ -7753,17 +7176,13 @@ pub mod batch_delete_output {
         /// List of failed operations
         pub fn failed(mut self, input: crate::model::BatchFailedResultModel) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input);
-            self.failed = Some(v);
-            self
+                            v.push(input);
+                            self.failed = Some(v);
+                            self
         }
         /// List of failed operations
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>) -> Self {
+            self.failed = input; self
         }
         /// Appends an item to `successful`.
         ///
@@ -7772,26 +7191,26 @@ pub mod batch_delete_output {
         /// List of successful operations
         pub fn successful(mut self, input: crate::model::BatchSuccessfulResultModel) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input);
-            self.successful = Some(v);
-            self
+                            v.push(input);
+                            self.successful = Some(v);
+                            self
         }
         /// List of successful operations
-        pub fn set_successful(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
-        ) -> Self {
-            self.successful = input;
-            self
+        pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>) -> Self {
+            self.successful = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
         pub fn build(self) -> crate::output::BatchDeleteOutput {
             crate::output::BatchDeleteOutput {
-                failed: self.failed,
-                successful: self.successful,
+                failed: self.failed
+                ,
+                successful: self.successful
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
@@ -7803,19 +7222,24 @@ impl BatchDeleteOutput {
 /// Placeholder documentation for AcceptInputDeviceTransferResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptInputDeviceTransferOutput {}
+pub struct AcceptInputDeviceTransferOutput  {
+}
 /// See [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
 pub mod accept_input_device_transfer_output {
-
+    
     /// A builder for [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
         pub fn build(self) -> crate::output::AcceptInputDeviceTransferOutput {
-            crate::output::AcceptInputDeviceTransferOutput {}
+            crate::output::AcceptInputDeviceTransferOutput {
+            }
         }
     }
+    
+    
 }
 impl AcceptInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
@@ -7823,3 +7247,4 @@ impl AcceptInputDeviceTransferOutput {
         crate::output::accept_input_device_transfer_output::Builder::default()
     }
 }
+

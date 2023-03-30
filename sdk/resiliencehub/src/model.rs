@@ -3,7 +3,7 @@
 /// <p>Defines a resiliency policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResiliencyPolicy {
+pub struct ResiliencyPolicy  {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
@@ -24,65 +24,53 @@ pub struct ResiliencyPolicy {
     pub estimated_cost_tier: std::option::Option<crate::model::EstimatedCostTier>,
     /// <p>The resiliency policy.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<
-        std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>,
-    >,
+    pub policy: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>>,
     /// <p>The timestamp for when the resiliency policy was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ResiliencyPolicy {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The name of the policy</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The description for the policy.</p>
-    pub fn policy_description(&self) -> std::option::Option<&str> {
+    pub fn policy_description(&self) -> std::option::Option<& str> {
         self.policy_description.as_deref()
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn data_location_constraint(
-        &self,
-    ) -> std::option::Option<&crate::model::DataLocationConstraint> {
+    pub fn data_location_constraint(&self) -> std::option::Option<& crate::model::DataLocationConstraint> {
         self.data_location_constraint.as_ref()
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    pub fn tier(&self) -> std::option::Option<&crate::model::ResiliencyPolicyTier> {
+    pub fn tier(&self) -> std::option::Option<& crate::model::ResiliencyPolicyTier> {
         self.tier.as_ref()
     }
     /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
-    pub fn estimated_cost_tier(&self) -> std::option::Option<&crate::model::EstimatedCostTier> {
+    pub fn estimated_cost_tier(&self) -> std::option::Option<& crate::model::EstimatedCostTier> {
         self.estimated_cost_tier.as_ref()
     }
     /// <p>The resiliency policy.</p>
-    pub fn policy(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>,
-    > {
+    pub fn policy(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>> {
         self.policy.as_ref()
     }
     /// <p>The timestamp for when the resiliency policy was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ResiliencyPolicy {
+impl  std::fmt::Debug for ResiliencyPolicy  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResiliencyPolicy");
         formatter.field("policy_arn", &self.policy_arn);
@@ -99,24 +87,19 @@ impl std::fmt::Debug for ResiliencyPolicy {
 }
 /// See [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
 pub mod resiliency_policy {
-
+    
     /// A builder for [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) policy_description: std::option::Option<std::string::String>,
-        pub(crate) data_location_constraint:
-            std::option::Option<crate::model::DataLocationConstraint>,
+        pub(crate) data_location_constraint: std::option::Option<crate::model::DataLocationConstraint>,
         pub(crate) tier: std::option::Option<crate::model::ResiliencyPolicyTier>,
         pub(crate) estimated_cost_tier: std::option::Option<crate::model::EstimatedCostTier>,
-        pub(crate) policy: std::option::Option<
-            std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>,
-        >,
+        pub(crate) policy: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -126,8 +109,7 @@ pub mod resiliency_policy {
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = input;
-            self
+            self.policy_arn = input; self
         }
         /// <p>The name of the policy</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +118,7 @@ pub mod resiliency_policy {
         }
         /// <p>The name of the policy</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
         /// <p>The description for the policy.</p>
         pub fn policy_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,28 +126,17 @@ pub mod resiliency_policy {
             self
         }
         /// <p>The description for the policy.</p>
-        pub fn set_policy_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_description = input;
-            self
+        pub fn set_policy_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_description = input; self
         }
         /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-        pub fn data_location_constraint(
-            mut self,
-            input: crate::model::DataLocationConstraint,
-        ) -> Self {
+        pub fn data_location_constraint(mut self, input: crate::model::DataLocationConstraint) -> Self {
             self.data_location_constraint = Some(input);
             self
         }
         /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-        pub fn set_data_location_constraint(
-            mut self,
-            input: std::option::Option<crate::model::DataLocationConstraint>,
-        ) -> Self {
-            self.data_location_constraint = input;
-            self
+        pub fn set_data_location_constraint(mut self, input: std::option::Option<crate::model::DataLocationConstraint>) -> Self {
+            self.data_location_constraint = input; self
         }
         /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn tier(mut self, input: crate::model::ResiliencyPolicyTier) -> Self {
@@ -174,12 +144,8 @@ pub mod resiliency_policy {
             self
         }
         /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-        pub fn set_tier(
-            mut self,
-            input: std::option::Option<crate::model::ResiliencyPolicyTier>,
-        ) -> Self {
-            self.tier = input;
-            self
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::ResiliencyPolicyTier>) -> Self {
+            self.tier = input; self
         }
         /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
         pub fn estimated_cost_tier(mut self, input: crate::model::EstimatedCostTier) -> Self {
@@ -187,40 +153,23 @@ pub mod resiliency_policy {
             self
         }
         /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
-        pub fn set_estimated_cost_tier(
-            mut self,
-            input: std::option::Option<crate::model::EstimatedCostTier>,
-        ) -> Self {
-            self.estimated_cost_tier = input;
-            self
+        pub fn set_estimated_cost_tier(mut self, input: std::option::Option<crate::model::EstimatedCostTier>) -> Self {
+            self.estimated_cost_tier = input; self
         }
         /// Adds a key-value pair to `policy`.
         ///
         /// To override the contents of this collection use [`set_policy`](Self::set_policy).
         ///
         /// <p>The resiliency policy.</p>
-        pub fn policy(
-            mut self,
-            k: crate::model::DisruptionType,
-            v: crate::model::FailurePolicy,
-        ) -> Self {
+        pub fn policy(mut self, k: crate::model::DisruptionType, v: crate::model::FailurePolicy) -> Self {
             let mut hash_map = self.policy.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.policy = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.policy = Some(hash_map);
+                            self
         }
         /// <p>The resiliency policy.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DisruptionType,
-                    crate::model::FailurePolicy,
-                >,
-            >,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>>) -> Self {
+            self.policy = input; self
         }
         /// <p>The timestamp for when the resiliency policy was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -228,50 +177,45 @@ pub mod resiliency_policy {
             self
         }
         /// <p>The timestamp for when the resiliency policy was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
         pub fn build(self) -> crate::model::ResiliencyPolicy {
             crate::model::ResiliencyPolicy {
-                policy_arn: self.policy_arn,
-                policy_name: self.policy_name,
-                policy_description: self.policy_description,
-                data_location_constraint: self.data_location_constraint,
-                tier: self.tier,
-                estimated_cost_tier: self.estimated_cost_tier,
-                policy: self.policy,
-                creation_time: self.creation_time,
-                tags: self.tags,
+                policy_arn: self.policy_arn
+                ,
+                policy_name: self.policy_name
+                ,
+                policy_description: self.policy_description
+                ,
+                data_location_constraint: self.data_location_constraint
+                ,
+                tier: self.tier
+                ,
+                estimated_cost_tier: self.estimated_cost_tier
+                ,
+                policy: self.policy
+                ,
+                creation_time: self.creation_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -290,6 +234,8 @@ pub mod resiliency_policy {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ResiliencyPolicy {
     /// Creates a new builder-style object to manufacture [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
@@ -301,7 +247,7 @@ impl ResiliencyPolicy {
 /// <p>Defines a failure policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailurePolicy {
+pub struct FailurePolicy  {
     /// <p>The Recovery Time Objective (RTO), in seconds.</p>
     #[doc(hidden)]
     pub rto_in_secs: i32,
@@ -321,7 +267,7 @@ impl FailurePolicy {
 }
 /// See [`FailurePolicy`](crate::model::FailurePolicy).
 pub mod failure_policy {
-
+    
     /// A builder for [`FailurePolicy`](crate::model::FailurePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -336,8 +282,7 @@ pub mod failure_policy {
         }
         /// <p>The Recovery Time Objective (RTO), in seconds.</p>
         pub fn set_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.rto_in_secs = input;
-            self
+            self.rto_in_secs = input; self
         }
         /// <p>The Recovery Point Objective (RPO), in seconds.</p>
         pub fn rpo_in_secs(mut self, input: i32) -> Self {
@@ -346,17 +291,22 @@ pub mod failure_policy {
         }
         /// <p>The Recovery Point Objective (RPO), in seconds.</p>
         pub fn set_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.rpo_in_secs = input;
-            self
+            self.rpo_in_secs = input; self
         }
         /// Consumes the builder and constructs a [`FailurePolicy`](crate::model::FailurePolicy).
         pub fn build(self) -> crate::model::FailurePolicy {
             crate::model::FailurePolicy {
-                rto_in_secs: self.rto_in_secs.unwrap_or_default(),
-                rpo_in_secs: self.rpo_in_secs.unwrap_or_default(),
+                rto_in_secs: self.rto_in_secs
+                    .unwrap_or_default()
+                ,
+                rpo_in_secs: self.rpo_in_secs
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl FailurePolicy {
     /// Creates a new builder-style object to manufacture [`FailurePolicy`](crate::model::FailurePolicy).
@@ -371,9 +321,9 @@ impl FailurePolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let disruptiontype = unimplemented!();
 /// match disruptiontype {
@@ -397,22 +347,14 @@ impl FailurePolicy {
 /// Specifically, when `disruptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DisruptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DisruptionType {
     #[allow(missing_docs)] // documentation missing in model
     Az,
@@ -423,7 +365,7 @@ pub enum DisruptionType {
     #[allow(missing_docs)] // documentation missing in model
     Software,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DisruptionType {
     fn from(s: &str) -> Self {
@@ -432,17 +374,17 @@ impl std::convert::From<&str> for DisruptionType {
             "Hardware" => DisruptionType::Hardware,
             "Region" => DisruptionType::Region,
             "Software" => DisruptionType::Software,
-            other => DisruptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DisruptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DisruptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DisruptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DisruptionType::from(s))
+                }
+            }
 impl DisruptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -451,12 +393,14 @@ impl DisruptionType {
             DisruptionType::Hardware => "Hardware",
             DisruptionType::Region => "Region",
             DisruptionType::Software => "Software",
-            DisruptionType::Unknown(value) => value.as_str(),
+            DisruptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AZ", "Hardware", "Region", "Software"]
+        &[
+            "AZ", "Hardware", "Region", "Software"
+        ]
     }
 }
 impl AsRef<str> for DisruptionType {
@@ -471,9 +415,9 @@ impl AsRef<str> for DisruptionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let estimatedcosttier = unimplemented!();
 /// match estimatedcosttier {
@@ -497,22 +441,14 @@ impl AsRef<str> for DisruptionType {
 /// Specifically, when `estimatedcosttier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EstimatedCostTier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EstimatedCostTier {
     #[allow(missing_docs)] // documentation missing in model
     L1,
@@ -523,7 +459,7 @@ pub enum EstimatedCostTier {
     #[allow(missing_docs)] // documentation missing in model
     L4,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EstimatedCostTier {
     fn from(s: &str) -> Self {
@@ -532,19 +468,17 @@ impl std::convert::From<&str> for EstimatedCostTier {
             "L2" => EstimatedCostTier::L2,
             "L3" => EstimatedCostTier::L3,
             "L4" => EstimatedCostTier::L4,
-            other => {
-                EstimatedCostTier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EstimatedCostTier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EstimatedCostTier {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EstimatedCostTier::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EstimatedCostTier::from(s))
+                }
+            }
 impl EstimatedCostTier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -553,12 +487,14 @@ impl EstimatedCostTier {
             EstimatedCostTier::L2 => "L2",
             EstimatedCostTier::L3 => "L3",
             EstimatedCostTier::L4 => "L4",
-            EstimatedCostTier::Unknown(value) => value.as_str(),
+            EstimatedCostTier::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["L1", "L2", "L3", "L4"]
+        &[
+            "L1", "L2", "L3", "L4"
+        ]
     }
 }
 impl AsRef<str> for EstimatedCostTier {
@@ -573,9 +509,9 @@ impl AsRef<str> for EstimatedCostTier {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resiliencypolicytier = unimplemented!();
 /// match resiliencypolicytier {
@@ -600,22 +536,14 @@ impl AsRef<str> for EstimatedCostTier {
 /// Specifically, when `resiliencypolicytier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResiliencyPolicyTier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResiliencyPolicyTier {
     #[allow(missing_docs)] // documentation missing in model
     CoreServices,
@@ -628,7 +556,7 @@ pub enum ResiliencyPolicyTier {
     #[allow(missing_docs)] // documentation missing in model
     NonCritical,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResiliencyPolicyTier {
     fn from(s: &str) -> Self {
@@ -638,19 +566,17 @@ impl std::convert::From<&str> for ResiliencyPolicyTier {
             "Important" => ResiliencyPolicyTier::Important,
             "MissionCritical" => ResiliencyPolicyTier::MissionCritical,
             "NonCritical" => ResiliencyPolicyTier::NonCritical,
-            other => {
-                ResiliencyPolicyTier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResiliencyPolicyTier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResiliencyPolicyTier {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResiliencyPolicyTier::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResiliencyPolicyTier::from(s))
+                }
+            }
 impl ResiliencyPolicyTier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -660,17 +586,13 @@ impl ResiliencyPolicyTier {
             ResiliencyPolicyTier::Important => "Important",
             ResiliencyPolicyTier::MissionCritical => "MissionCritical",
             ResiliencyPolicyTier::NonCritical => "NonCritical",
-            ResiliencyPolicyTier::Unknown(value) => value.as_str(),
+            ResiliencyPolicyTier::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CoreServices",
-            "Critical",
-            "Important",
-            "MissionCritical",
-            "NonCritical",
+            "CoreServices", "Critical", "Important", "MissionCritical", "NonCritical"
         ]
     }
 }
@@ -686,9 +608,9 @@ impl AsRef<str> for ResiliencyPolicyTier {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datalocationconstraint = unimplemented!();
 /// match datalocationconstraint {
@@ -711,22 +633,14 @@ impl AsRef<str> for ResiliencyPolicyTier {
 /// Specifically, when `datalocationconstraint` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataLocationConstraint::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     AnyLocation,
@@ -735,7 +649,7 @@ pub enum DataLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     SameCountry,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataLocationConstraint {
     fn from(s: &str) -> Self {
@@ -743,19 +657,17 @@ impl std::convert::From<&str> for DataLocationConstraint {
             "AnyLocation" => DataLocationConstraint::AnyLocation,
             "SameContinent" => DataLocationConstraint::SameContinent,
             "SameCountry" => DataLocationConstraint::SameCountry,
-            other => {
-                DataLocationConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DataLocationConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataLocationConstraint {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataLocationConstraint::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataLocationConstraint::from(s))
+                }
+            }
 impl DataLocationConstraint {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -763,12 +675,14 @@ impl DataLocationConstraint {
             DataLocationConstraint::AnyLocation => "AnyLocation",
             DataLocationConstraint::SameContinent => "SameContinent",
             DataLocationConstraint::SameCountry => "SameCountry",
-            DataLocationConstraint::Unknown(value) => value.as_str(),
+            DataLocationConstraint::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AnyLocation", "SameContinent", "SameCountry"]
+        &[
+            "AnyLocation", "SameContinent", "SameCountry"
+        ]
     }
 }
 impl AsRef<str> for DataLocationConstraint {
@@ -780,7 +694,7 @@ impl AsRef<str> for DataLocationConstraint {
 /// <p>Defines a Resilience Hub application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct App {
+pub struct App  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -813,45 +727,42 @@ pub struct App {
     pub last_resiliency_score_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     #[doc(hidden)]
     pub assessment_schedule: std::option::Option<crate::model::AppAssessmentScheduleType>,
 }
 impl App {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The name for the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The optional description for an app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The timestamp for when the app was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AppStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AppStatusType> {
         self.status.as_ref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::model::AppComplianceStatusType> {
+    pub fn compliance_status(&self) -> std::option::Option<& crate::model::AppComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The timestamp for the most recent compliance evaluation.</p>
-    pub fn last_app_compliance_evaluation_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_app_compliance_evaluation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_app_compliance_evaluation_time.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
@@ -859,26 +770,19 @@ impl App {
         self.resiliency_score
     }
     /// <p>The timestamp for the most recent resiliency score evaluation.</p>
-    pub fn last_resiliency_score_evaluation_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_resiliency_score_evaluation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_resiliency_score_evaluation_time.as_ref()
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn assessment_schedule(
-        &self,
-    ) -> std::option::Option<&crate::model::AppAssessmentScheduleType> {
+    pub fn assessment_schedule(&self) -> std::option::Option<& crate::model::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
 }
-impl std::fmt::Debug for App {
+impl  std::fmt::Debug for App  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("App");
         formatter.field("app_arn", &self.app_arn);
@@ -888,15 +792,9 @@ impl std::fmt::Debug for App {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("status", &self.status);
         formatter.field("compliance_status", &self.compliance_status);
-        formatter.field(
-            "last_app_compliance_evaluation_time",
-            &self.last_app_compliance_evaluation_time,
-        );
+        formatter.field("last_app_compliance_evaluation_time", &self.last_app_compliance_evaluation_time);
         formatter.field("resiliency_score", &self.resiliency_score);
-        formatter.field(
-            "last_resiliency_score_evaluation_time",
-            &self.last_resiliency_score_evaluation_time,
-        );
+        formatter.field("last_resiliency_score_evaluation_time", &self.last_resiliency_score_evaluation_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("assessment_schedule", &self.assessment_schedule);
         formatter.finish()
@@ -904,7 +802,7 @@ impl std::fmt::Debug for App {
 }
 /// See [`App`](crate::model::App).
 pub mod app {
-
+    
     /// A builder for [`App`](crate::model::App).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -915,16 +813,11 @@ pub mod app {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AppStatusType>,
         pub(crate) compliance_status: std::option::Option<crate::model::AppComplianceStatusType>,
-        pub(crate) last_app_compliance_evaluation_time:
-            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_app_compliance_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resiliency_score: std::option::Option<f64>,
-        pub(crate) last_resiliency_score_evaluation_time:
-            std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) assessment_schedule:
-            std::option::Option<crate::model::AppAssessmentScheduleType>,
+        pub(crate) last_resiliency_score_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) assessment_schedule: std::option::Option<crate::model::AppAssessmentScheduleType>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -934,8 +827,7 @@ pub mod app {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The name for the application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -944,8 +836,7 @@ pub mod app {
         }
         /// <p>The name for the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The optional description for an app.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -954,8 +845,7 @@ pub mod app {
         }
         /// <p>The optional description for an app.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -964,8 +854,7 @@ pub mod app {
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = input;
-            self
+            self.policy_arn = input; self
         }
         /// <p>The timestamp for when the app was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -973,12 +862,8 @@ pub mod app {
             self
         }
         /// <p>The timestamp for when the app was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The status of the application.</p>
         pub fn status(mut self, input: crate::model::AppStatusType) -> Self {
@@ -986,12 +871,8 @@ pub mod app {
             self
         }
         /// <p>The status of the application.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AppStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AppStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
         pub fn compliance_status(mut self, input: crate::model::AppComplianceStatusType) -> Self {
@@ -999,28 +880,17 @@ pub mod app {
             self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
-        pub fn set_compliance_status(
-            mut self,
-            input: std::option::Option<crate::model::AppComplianceStatusType>,
-        ) -> Self {
-            self.compliance_status = input;
-            self
+        pub fn set_compliance_status(mut self, input: std::option::Option<crate::model::AppComplianceStatusType>) -> Self {
+            self.compliance_status = input; self
         }
         /// <p>The timestamp for the most recent compliance evaluation.</p>
-        pub fn last_app_compliance_evaluation_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn last_app_compliance_evaluation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_app_compliance_evaluation_time = Some(input);
             self
         }
         /// <p>The timestamp for the most recent compliance evaluation.</p>
-        pub fn set_last_app_compliance_evaluation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_app_compliance_evaluation_time = input;
-            self
+        pub fn set_last_app_compliance_evaluation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_app_compliance_evaluation_time = input; self
         }
         /// <p>The current resiliency score for the application.</p>
         pub fn resiliency_score(mut self, input: f64) -> Self {
@@ -1029,81 +899,69 @@ pub mod app {
         }
         /// <p>The current resiliency score for the application.</p>
         pub fn set_resiliency_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.resiliency_score = input;
-            self
+            self.resiliency_score = input; self
         }
         /// <p>The timestamp for the most recent resiliency score evaluation.</p>
-        pub fn last_resiliency_score_evaluation_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn last_resiliency_score_evaluation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_resiliency_score_evaluation_time = Some(input);
             self
         }
         /// <p>The timestamp for the most recent resiliency score evaluation.</p>
-        pub fn set_last_resiliency_score_evaluation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_resiliency_score_evaluation_time = input;
-            self
+        pub fn set_last_resiliency_score_evaluation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_resiliency_score_evaluation_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-        pub fn assessment_schedule(
-            mut self,
-            input: crate::model::AppAssessmentScheduleType,
-        ) -> Self {
+        pub fn assessment_schedule(mut self, input: crate::model::AppAssessmentScheduleType) -> Self {
             self.assessment_schedule = Some(input);
             self
         }
         /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-        pub fn set_assessment_schedule(
-            mut self,
-            input: std::option::Option<crate::model::AppAssessmentScheduleType>,
-        ) -> Self {
-            self.assessment_schedule = input;
-            self
+        pub fn set_assessment_schedule(mut self, input: std::option::Option<crate::model::AppAssessmentScheduleType>) -> Self {
+            self.assessment_schedule = input; self
         }
         /// Consumes the builder and constructs a [`App`](crate::model::App).
         pub fn build(self) -> crate::model::App {
             crate::model::App {
-                app_arn: self.app_arn,
-                name: self.name,
-                description: self.description,
-                policy_arn: self.policy_arn,
-                creation_time: self.creation_time,
-                status: self.status,
-                compliance_status: self.compliance_status,
-                last_app_compliance_evaluation_time: self.last_app_compliance_evaluation_time,
-                resiliency_score: self.resiliency_score.unwrap_or_default(),
-                last_resiliency_score_evaluation_time: self.last_resiliency_score_evaluation_time,
-                tags: self.tags,
-                assessment_schedule: self.assessment_schedule,
+                app_arn: self.app_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                policy_arn: self.policy_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                status: self.status
+                ,
+                compliance_status: self.compliance_status
+                ,
+                last_app_compliance_evaluation_time: self.last_app_compliance_evaluation_time
+                ,
+                resiliency_score: self.resiliency_score
+                    .unwrap_or_default()
+                ,
+                last_resiliency_score_evaluation_time: self.last_resiliency_score_evaluation_time
+                ,
+                tags: self.tags
+                ,
+                assessment_schedule: self.assessment_schedule
+                ,
             }
         }
     }
@@ -1117,20 +975,16 @@ pub mod app {
             formatter.field("creation_time", &self.creation_time);
             formatter.field("status", &self.status);
             formatter.field("compliance_status", &self.compliance_status);
-            formatter.field(
-                "last_app_compliance_evaluation_time",
-                &self.last_app_compliance_evaluation_time,
-            );
+            formatter.field("last_app_compliance_evaluation_time", &self.last_app_compliance_evaluation_time);
             formatter.field("resiliency_score", &self.resiliency_score);
-            formatter.field(
-                "last_resiliency_score_evaluation_time",
-                &self.last_resiliency_score_evaluation_time,
-            );
+            formatter.field("last_resiliency_score_evaluation_time", &self.last_resiliency_score_evaluation_time);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
             formatter.field("assessment_schedule", &self.assessment_schedule);
             formatter.finish()
         }
     }
+    
+    
 }
 impl App {
     /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
@@ -1145,9 +999,9 @@ impl App {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appassessmentscheduletype = unimplemented!();
 /// match appassessmentscheduletype {
@@ -1169,60 +1023,52 @@ impl App {
 /// Specifically, when `appassessmentscheduletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppAssessmentScheduleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppAssessmentScheduleType {
     #[allow(missing_docs)] // documentation missing in model
     Daily,
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppAssessmentScheduleType {
     fn from(s: &str) -> Self {
         match s {
             "Daily" => AppAssessmentScheduleType::Daily,
             "Disabled" => AppAssessmentScheduleType::Disabled,
-            other => AppAssessmentScheduleType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AppAssessmentScheduleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppAssessmentScheduleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppAssessmentScheduleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppAssessmentScheduleType::from(s))
+                }
+            }
 impl AppAssessmentScheduleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AppAssessmentScheduleType::Daily => "Daily",
             AppAssessmentScheduleType::Disabled => "Disabled",
-            AppAssessmentScheduleType::Unknown(value) => value.as_str(),
+            AppAssessmentScheduleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Daily", "Disabled"]
+        &[
+            "Daily", "Disabled"
+        ]
     }
 }
 impl AsRef<str> for AppAssessmentScheduleType {
@@ -1237,9 +1083,9 @@ impl AsRef<str> for AppAssessmentScheduleType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appcompliancestatustype = unimplemented!();
 /// match appcompliancestatustype {
@@ -1263,22 +1109,14 @@ impl AsRef<str> for AppAssessmentScheduleType {
 /// Specifically, when `appcompliancestatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppComplianceStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppComplianceStatusType {
     #[allow(missing_docs)] // documentation missing in model
     ChangesDetected,
@@ -1289,7 +1127,7 @@ pub enum AppComplianceStatusType {
     #[allow(missing_docs)] // documentation missing in model
     PolicyMet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppComplianceStatusType {
     fn from(s: &str) -> Self {
@@ -1298,19 +1136,17 @@ impl std::convert::From<&str> for AppComplianceStatusType {
             "NotAssessed" => AppComplianceStatusType::NotAssessed,
             "PolicyBreached" => AppComplianceStatusType::PolicyBreached,
             "PolicyMet" => AppComplianceStatusType::PolicyMet,
-            other => AppComplianceStatusType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AppComplianceStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppComplianceStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppComplianceStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppComplianceStatusType::from(s))
+                }
+            }
 impl AppComplianceStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1319,16 +1155,13 @@ impl AppComplianceStatusType {
             AppComplianceStatusType::NotAssessed => "NotAssessed",
             AppComplianceStatusType::PolicyBreached => "PolicyBreached",
             AppComplianceStatusType::PolicyMet => "PolicyMet",
-            AppComplianceStatusType::Unknown(value) => value.as_str(),
+            AppComplianceStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ChangesDetected",
-            "NotAssessed",
-            "PolicyBreached",
-            "PolicyMet",
+            "ChangesDetected", "NotAssessed", "PolicyBreached", "PolicyMet"
         ]
     }
 }
@@ -1344,9 +1177,9 @@ impl AsRef<str> for AppComplianceStatusType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appstatustype = unimplemented!();
 /// match appstatustype {
@@ -1368,58 +1201,52 @@ impl AsRef<str> for AppComplianceStatusType {
 /// Specifically, when `appstatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppStatusType {
     fn from(s: &str) -> Self {
         match s {
             "Active" => AppStatusType::Active,
             "Deleting" => AppStatusType::Deleting,
-            other => AppStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AppStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppStatusType::from(s))
+                }
+            }
 impl AppStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AppStatusType::Active => "Active",
             AppStatusType::Deleting => "Deleting",
-            AppStatusType::Unknown(value) => value.as_str(),
+            AppStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "Deleting"]
+        &[
+            "Active", "Deleting"
+        ]
     }
 }
 impl AsRef<str> for AppStatusType {
@@ -1431,7 +1258,7 @@ impl AsRef<str> for AppStatusType {
 /// <p>Defines an application assessment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppAssessment {
+pub struct AppAssessment  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -1449,9 +1276,7 @@ pub struct AppAssessment {
     pub resiliency_score: std::option::Option<crate::model::ResiliencyScore>,
     /// <p>The application compliance against the resiliency policy.</p>
     #[doc(hidden)]
-    pub compliance: std::option::Option<
-        std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>,
-    >,
+    pub compliance: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>,
     /// <p>The current status of the compliance for the resiliency policy.</p>
     #[doc(hidden)]
     pub compliance_status: std::option::Option<crate::model::ComplianceStatus>,
@@ -1478,91 +1303,78 @@ pub struct AppAssessment {
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
     #[doc(hidden)]
     pub resource_errors_details: std::option::Option<crate::model::ResourceErrorsDetails>,
 }
 impl AppAssessment {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The entity that invoked the assessment.</p>
-    pub fn invoker(&self) -> std::option::Option<&crate::model::AssessmentInvoker> {
+    pub fn invoker(&self) -> std::option::Option<& crate::model::AssessmentInvoker> {
         self.invoker.as_ref()
     }
     /// <p>The cost for the application.</p>
-    pub fn cost(&self) -> std::option::Option<&crate::model::Cost> {
+    pub fn cost(&self) -> std::option::Option<& crate::model::Cost> {
         self.cost.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
-    pub fn resiliency_score(&self) -> std::option::Option<&crate::model::ResiliencyScore> {
+    pub fn resiliency_score(&self) -> std::option::Option<& crate::model::ResiliencyScore> {
         self.resiliency_score.as_ref()
     }
     /// <p>The application compliance against the resiliency policy.</p>
-    pub fn compliance(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DisruptionType,
-            crate::model::DisruptionCompliance,
-        >,
-    > {
+    pub fn compliance(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>> {
         self.compliance.as_ref()
     }
     /// <p>The current status of the compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::model::ComplianceStatus> {
+    pub fn compliance_status(&self) -> std::option::Option<& crate::model::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn assessment_status(&self) -> std::option::Option<&crate::model::AssessmentStatus> {
+    pub fn assessment_status(&self) -> std::option::Option<& crate::model::AssessmentStatus> {
         self.assessment_status.as_ref()
     }
     /// <p>The starting time for the action.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time for the action.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Error or warning message from the assessment execution</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The name of the assessment.</p>
-    pub fn assessment_name(&self) -> std::option::Option<&str> {
+    pub fn assessment_name(&self) -> std::option::Option<& str> {
         self.assessment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn assessment_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_arn(&self) -> std::option::Option<& str> {
         self.assessment_arn.as_deref()
     }
     /// <p>The resiliency policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::ResiliencyPolicy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::ResiliencyPolicy> {
         self.policy.as_ref()
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
-    pub fn resource_errors_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceErrorsDetails> {
+    pub fn resource_errors_details(&self) -> std::option::Option<& crate::model::ResourceErrorsDetails> {
         self.resource_errors_details.as_ref()
     }
 }
-impl std::fmt::Debug for AppAssessment {
+impl  std::fmt::Debug for AppAssessment  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppAssessment");
         formatter.field("app_arn", &self.app_arn);
@@ -1586,7 +1398,7 @@ impl std::fmt::Debug for AppAssessment {
 }
 /// See [`AppAssessment`](crate::model::AppAssessment).
 pub mod app_assessment {
-
+    
     /// A builder for [`AppAssessment`](crate::model::AppAssessment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1595,12 +1407,7 @@ pub mod app_assessment {
         pub(crate) invoker: std::option::Option<crate::model::AssessmentInvoker>,
         pub(crate) cost: std::option::Option<crate::model::Cost>,
         pub(crate) resiliency_score: std::option::Option<crate::model::ResiliencyScore>,
-        pub(crate) compliance: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DisruptionType,
-                crate::model::DisruptionCompliance,
-            >,
-        >,
+        pub(crate) compliance: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>,
         pub(crate) compliance_status: std::option::Option<crate::model::ComplianceStatus>,
         pub(crate) assessment_status: std::option::Option<crate::model::AssessmentStatus>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1609,11 +1416,8 @@ pub mod app_assessment {
         pub(crate) assessment_name: std::option::Option<std::string::String>,
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<crate::model::ResiliencyPolicy>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) resource_errors_details:
-            std::option::Option<crate::model::ResourceErrorsDetails>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) resource_errors_details: std::option::Option<crate::model::ResourceErrorsDetails>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1623,8 +1427,7 @@ pub mod app_assessment {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1633,8 +1436,7 @@ pub mod app_assessment {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// <p>The entity that invoked the assessment.</p>
         pub fn invoker(mut self, input: crate::model::AssessmentInvoker) -> Self {
@@ -1642,12 +1444,8 @@ pub mod app_assessment {
             self
         }
         /// <p>The entity that invoked the assessment.</p>
-        pub fn set_invoker(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentInvoker>,
-        ) -> Self {
-            self.invoker = input;
-            self
+        pub fn set_invoker(mut self, input: std::option::Option<crate::model::AssessmentInvoker>) -> Self {
+            self.invoker = input; self
         }
         /// <p>The cost for the application.</p>
         pub fn cost(mut self, input: crate::model::Cost) -> Self {
@@ -1656,8 +1454,7 @@ pub mod app_assessment {
         }
         /// <p>The cost for the application.</p>
         pub fn set_cost(mut self, input: std::option::Option<crate::model::Cost>) -> Self {
-            self.cost = input;
-            self
+            self.cost = input; self
         }
         /// <p>The current resiliency score for the application.</p>
         pub fn resiliency_score(mut self, input: crate::model::ResiliencyScore) -> Self {
@@ -1665,40 +1462,23 @@ pub mod app_assessment {
             self
         }
         /// <p>The current resiliency score for the application.</p>
-        pub fn set_resiliency_score(
-            mut self,
-            input: std::option::Option<crate::model::ResiliencyScore>,
-        ) -> Self {
-            self.resiliency_score = input;
-            self
+        pub fn set_resiliency_score(mut self, input: std::option::Option<crate::model::ResiliencyScore>) -> Self {
+            self.resiliency_score = input; self
         }
         /// Adds a key-value pair to `compliance`.
         ///
         /// To override the contents of this collection use [`set_compliance`](Self::set_compliance).
         ///
         /// <p>The application compliance against the resiliency policy.</p>
-        pub fn compliance(
-            mut self,
-            k: crate::model::DisruptionType,
-            v: crate::model::DisruptionCompliance,
-        ) -> Self {
+        pub fn compliance(mut self, k: crate::model::DisruptionType, v: crate::model::DisruptionCompliance) -> Self {
             let mut hash_map = self.compliance.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.compliance = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.compliance = Some(hash_map);
+                            self
         }
         /// <p>The application compliance against the resiliency policy.</p>
-        pub fn set_compliance(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DisruptionType,
-                    crate::model::DisruptionCompliance,
-                >,
-            >,
-        ) -> Self {
-            self.compliance = input;
-            self
+        pub fn set_compliance(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>) -> Self {
+            self.compliance = input; self
         }
         /// <p>The current status of the compliance for the resiliency policy.</p>
         pub fn compliance_status(mut self, input: crate::model::ComplianceStatus) -> Self {
@@ -1706,12 +1486,8 @@ pub mod app_assessment {
             self
         }
         /// <p>The current status of the compliance for the resiliency policy.</p>
-        pub fn set_compliance_status(
-            mut self,
-            input: std::option::Option<crate::model::ComplianceStatus>,
-        ) -> Self {
-            self.compliance_status = input;
-            self
+        pub fn set_compliance_status(mut self, input: std::option::Option<crate::model::ComplianceStatus>) -> Self {
+            self.compliance_status = input; self
         }
         /// <p>The current status of the assessment for the resiliency policy.</p>
         pub fn assessment_status(mut self, input: crate::model::AssessmentStatus) -> Self {
@@ -1719,12 +1495,8 @@ pub mod app_assessment {
             self
         }
         /// <p>The current status of the assessment for the resiliency policy.</p>
-        pub fn set_assessment_status(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentStatus>,
-        ) -> Self {
-            self.assessment_status = input;
-            self
+        pub fn set_assessment_status(mut self, input: std::option::Option<crate::model::AssessmentStatus>) -> Self {
+            self.assessment_status = input; self
         }
         /// <p>The starting time for the action.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1732,12 +1504,8 @@ pub mod app_assessment {
             self
         }
         /// <p>The starting time for the action.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time for the action.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1745,12 +1513,8 @@ pub mod app_assessment {
             self
         }
         /// <p>The end time for the action.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>Error or warning message from the assessment execution</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1759,8 +1523,7 @@ pub mod app_assessment {
         }
         /// <p>Error or warning message from the assessment execution</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The name of the assessment.</p>
         pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1768,12 +1531,8 @@ pub mod app_assessment {
             self
         }
         /// <p>The name of the assessment.</p>
-        pub fn set_assessment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_name = input;
-            self
+        pub fn set_assessment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1781,12 +1540,8 @@ pub mod app_assessment {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_assessment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_arn = input;
-            self
+        pub fn set_assessment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_arn = input; self
         }
         /// <p>The resiliency policy.</p>
         pub fn policy(mut self, input: crate::model::ResiliencyPolicy) -> Self {
@@ -1794,73 +1549,68 @@ pub mod app_assessment {
             self
         }
         /// <p>The resiliency policy.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::ResiliencyPolicy>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::ResiliencyPolicy>) -> Self {
+            self.policy = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
-        pub fn resource_errors_details(
-            mut self,
-            input: crate::model::ResourceErrorsDetails,
-        ) -> Self {
+        pub fn resource_errors_details(mut self, input: crate::model::ResourceErrorsDetails) -> Self {
             self.resource_errors_details = Some(input);
             self
         }
         /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
-        pub fn set_resource_errors_details(
-            mut self,
-            input: std::option::Option<crate::model::ResourceErrorsDetails>,
-        ) -> Self {
-            self.resource_errors_details = input;
-            self
+        pub fn set_resource_errors_details(mut self, input: std::option::Option<crate::model::ResourceErrorsDetails>) -> Self {
+            self.resource_errors_details = input; self
         }
         /// Consumes the builder and constructs a [`AppAssessment`](crate::model::AppAssessment).
         pub fn build(self) -> crate::model::AppAssessment {
             crate::model::AppAssessment {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                invoker: self.invoker,
-                cost: self.cost,
-                resiliency_score: self.resiliency_score,
-                compliance: self.compliance,
-                compliance_status: self.compliance_status,
-                assessment_status: self.assessment_status,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                message: self.message,
-                assessment_name: self.assessment_name,
-                assessment_arn: self.assessment_arn,
-                policy: self.policy,
-                tags: self.tags,
-                resource_errors_details: self.resource_errors_details,
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                invoker: self.invoker
+                ,
+                cost: self.cost
+                ,
+                resiliency_score: self.resiliency_score
+                ,
+                compliance: self.compliance
+                ,
+                compliance_status: self.compliance_status
+                ,
+                assessment_status: self.assessment_status
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                message: self.message
+                ,
+                assessment_name: self.assessment_name
+                ,
+                assessment_arn: self.assessment_arn
+                ,
+                policy: self.policy
+                ,
+                tags: self.tags
+                ,
+                resource_errors_details: self.resource_errors_details
+                ,
             }
         }
     }
@@ -1886,6 +1636,8 @@ pub mod app_assessment {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AppAssessment {
     /// Creates a new builder-style object to manufacture [`AppAssessment`](crate::model::AppAssessment).
@@ -1897,7 +1649,7 @@ impl AppAssessment {
 /// <p> A list of errors retrieving an application's resources. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceErrorsDetails {
+pub struct ResourceErrorsDetails  {
     /// <p> A list of errors retrieving an application's resources. </p>
     #[doc(hidden)]
     pub resource_errors: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
@@ -1907,7 +1659,7 @@ pub struct ResourceErrorsDetails {
 }
 impl ResourceErrorsDetails {
     /// <p> A list of errors retrieving an application's resources. </p>
-    pub fn resource_errors(&self) -> std::option::Option<&[crate::model::ResourceError]> {
+    pub fn resource_errors(&self) -> std::option::Option<& [crate::model::ResourceError]> {
         self.resource_errors.as_deref()
     }
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
@@ -1917,7 +1669,7 @@ impl ResourceErrorsDetails {
 }
 /// See [`ResourceErrorsDetails`](crate::model::ResourceErrorsDetails).
 pub mod resource_errors_details {
-
+    
     /// A builder for [`ResourceErrorsDetails`](crate::model::ResourceErrorsDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1932,17 +1684,13 @@ pub mod resource_errors_details {
         /// <p> A list of errors retrieving an application's resources. </p>
         pub fn resource_errors(mut self, input: crate::model::ResourceError) -> Self {
             let mut v = self.resource_errors.unwrap_or_default();
-            v.push(input);
-            self.resource_errors = Some(v);
-            self
+                            v.push(input);
+                            self.resource_errors = Some(v);
+                            self
         }
         /// <p> A list of errors retrieving an application's resources. </p>
-        pub fn set_resource_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
-        ) -> Self {
-            self.resource_errors = input;
-            self
+        pub fn set_resource_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceError>>) -> Self {
+            self.resource_errors = input; self
         }
         /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
         pub fn has_more_errors(mut self, input: bool) -> Self {
@@ -1951,17 +1699,20 @@ pub mod resource_errors_details {
         }
         /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
         pub fn set_has_more_errors(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_more_errors = input;
-            self
+            self.has_more_errors = input; self
         }
         /// Consumes the builder and constructs a [`ResourceErrorsDetails`](crate::model::ResourceErrorsDetails).
         pub fn build(self) -> crate::model::ResourceErrorsDetails {
             crate::model::ResourceErrorsDetails {
-                resource_errors: self.resource_errors,
-                has_more_errors: self.has_more_errors,
+                resource_errors: self.resource_errors
+                ,
+                has_more_errors: self.has_more_errors
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceErrorsDetails {
     /// Creates a new builder-style object to manufacture [`ResourceErrorsDetails`](crate::model::ResourceErrorsDetails).
@@ -1973,7 +1724,7 @@ impl ResourceErrorsDetails {
 /// <p> Defines application resource errors. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceError {
+pub struct ResourceError  {
     /// <p> This is the identifier of the resource. </p>
     #[doc(hidden)]
     pub logical_resource_id: std::option::Option<std::string::String>,
@@ -1986,21 +1737,21 @@ pub struct ResourceError {
 }
 impl ResourceError {
     /// <p> This is the identifier of the resource. </p>
-    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> std::option::Option<& str> {
         self.logical_resource_id.as_deref()
     }
     /// <p> This is the identifier of the physical resource. </p>
-    pub fn physical_resource_id(&self) -> std::option::Option<&str> {
+    pub fn physical_resource_id(&self) -> std::option::Option<& str> {
         self.physical_resource_id.as_deref()
     }
     /// <p> This is the error message. </p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`ResourceError`](crate::model::ResourceError).
 pub mod resource_error {
-
+    
     /// A builder for [`ResourceError`](crate::model::ResourceError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2015,12 +1766,8 @@ pub mod resource_error {
             self
         }
         /// <p> This is the identifier of the resource. </p>
-        pub fn set_logical_resource_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.logical_resource_id = input;
-            self
+        pub fn set_logical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logical_resource_id = input; self
         }
         /// <p> This is the identifier of the physical resource. </p>
         pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2028,12 +1775,8 @@ pub mod resource_error {
             self
         }
         /// <p> This is the identifier of the physical resource. </p>
-        pub fn set_physical_resource_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.physical_resource_id = input;
-            self
+        pub fn set_physical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.physical_resource_id = input; self
         }
         /// <p> This is the error message. </p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2042,18 +1785,22 @@ pub mod resource_error {
         }
         /// <p> This is the error message. </p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`ResourceError`](crate::model::ResourceError).
         pub fn build(self) -> crate::model::ResourceError {
             crate::model::ResourceError {
-                logical_resource_id: self.logical_resource_id,
-                physical_resource_id: self.physical_resource_id,
-                reason: self.reason,
+                logical_resource_id: self.logical_resource_id
+                ,
+                physical_resource_id: self.physical_resource_id
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceError {
     /// Creates a new builder-style object to manufacture [`ResourceError`](crate::model::ResourceError).
@@ -2068,9 +1815,9 @@ impl ResourceError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assessmentstatus = unimplemented!();
 /// match assessmentstatus {
@@ -2094,22 +1841,14 @@ impl ResourceError {
 /// Specifically, when `assessmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssessmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssessmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -2120,7 +1859,7 @@ pub enum AssessmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssessmentStatus {
     fn from(s: &str) -> Self {
@@ -2129,17 +1868,17 @@ impl std::convert::From<&str> for AssessmentStatus {
             "InProgress" => AssessmentStatus::Inprogress,
             "Pending" => AssessmentStatus::Pending,
             "Success" => AssessmentStatus::Success,
-            other => AssessmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssessmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssessmentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssessmentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssessmentStatus::from(s))
+                }
+            }
 impl AssessmentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2148,12 +1887,14 @@ impl AssessmentStatus {
             AssessmentStatus::Inprogress => "InProgress",
             AssessmentStatus::Pending => "Pending",
             AssessmentStatus::Success => "Success",
-            AssessmentStatus::Unknown(value) => value.as_str(),
+            AssessmentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Pending", "Success"]
+        &[
+            "Failed", "InProgress", "Pending", "Success"
+        ]
     }
 }
 impl AsRef<str> for AssessmentStatus {
@@ -2168,9 +1909,9 @@ impl AsRef<str> for AssessmentStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let compliancestatus = unimplemented!();
 /// match compliancestatus {
@@ -2192,58 +1933,52 @@ impl AsRef<str> for AssessmentStatus {
 /// Specifically, when `compliancestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComplianceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComplianceStatus {
     #[allow(missing_docs)] // documentation missing in model
     PolicyBreached,
     #[allow(missing_docs)] // documentation missing in model
     PolicyMet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComplianceStatus {
     fn from(s: &str) -> Self {
         match s {
             "PolicyBreached" => ComplianceStatus::PolicyBreached,
             "PolicyMet" => ComplianceStatus::PolicyMet,
-            other => ComplianceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ComplianceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComplianceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComplianceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComplianceStatus::from(s))
+                }
+            }
 impl ComplianceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComplianceStatus::PolicyBreached => "PolicyBreached",
             ComplianceStatus::PolicyMet => "PolicyMet",
-            ComplianceStatus::Unknown(value) => value.as_str(),
+            ComplianceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PolicyBreached", "PolicyMet"]
+        &[
+            "PolicyBreached", "PolicyMet"
+        ]
     }
 }
 impl AsRef<str> for ComplianceStatus {
@@ -2255,7 +1990,7 @@ impl AsRef<str> for ComplianceStatus {
 /// <p>Defines the compliance against the resiliency policy for a disruption.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisruptionCompliance {
+pub struct DisruptionCompliance  {
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
     #[doc(hidden)]
     pub achievable_rto_in_secs: i32,
@@ -2297,11 +2032,11 @@ impl DisruptionCompliance {
         self.current_rto_in_secs
     }
     /// <p>The RTO reference identifier.</p>
-    pub fn rto_reference_id(&self) -> std::option::Option<&str> {
+    pub fn rto_reference_id(&self) -> std::option::Option<& str> {
         self.rto_reference_id.as_deref()
     }
     /// <p>The RTO description.</p>
-    pub fn rto_description(&self) -> std::option::Option<&str> {
+    pub fn rto_description(&self) -> std::option::Option<& str> {
         self.rto_description.as_deref()
     }
     /// <p>The current RPO, in seconds.</p>
@@ -2309,15 +2044,15 @@ impl DisruptionCompliance {
         self.current_rpo_in_secs
     }
     /// <p>The RPO reference identifier.</p>
-    pub fn rpo_reference_id(&self) -> std::option::Option<&str> {
+    pub fn rpo_reference_id(&self) -> std::option::Option<& str> {
         self.rpo_reference_id.as_deref()
     }
     /// <p>The RPO description.</p>
-    pub fn rpo_description(&self) -> std::option::Option<&str> {
+    pub fn rpo_description(&self) -> std::option::Option<& str> {
         self.rpo_description.as_deref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::model::ComplianceStatus> {
+    pub fn compliance_status(&self) -> std::option::Option<& crate::model::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
@@ -2325,13 +2060,13 @@ impl DisruptionCompliance {
         self.achievable_rpo_in_secs
     }
     /// <p>The disruption compliance message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DisruptionCompliance`](crate::model::DisruptionCompliance).
 pub mod disruption_compliance {
-
+    
     /// A builder for [`DisruptionCompliance`](crate::model::DisruptionCompliance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2354,8 +2089,7 @@ pub mod disruption_compliance {
         }
         /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
         pub fn set_achievable_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.achievable_rto_in_secs = input;
-            self
+            self.achievable_rto_in_secs = input; self
         }
         /// <p>The current RTO, in seconds.</p>
         pub fn current_rto_in_secs(mut self, input: i32) -> Self {
@@ -2364,8 +2098,7 @@ pub mod disruption_compliance {
         }
         /// <p>The current RTO, in seconds.</p>
         pub fn set_current_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.current_rto_in_secs = input;
-            self
+            self.current_rto_in_secs = input; self
         }
         /// <p>The RTO reference identifier.</p>
         pub fn rto_reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2373,12 +2106,8 @@ pub mod disruption_compliance {
             self
         }
         /// <p>The RTO reference identifier.</p>
-        pub fn set_rto_reference_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rto_reference_id = input;
-            self
+        pub fn set_rto_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rto_reference_id = input; self
         }
         /// <p>The RTO description.</p>
         pub fn rto_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2386,12 +2115,8 @@ pub mod disruption_compliance {
             self
         }
         /// <p>The RTO description.</p>
-        pub fn set_rto_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rto_description = input;
-            self
+        pub fn set_rto_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rto_description = input; self
         }
         /// <p>The current RPO, in seconds.</p>
         pub fn current_rpo_in_secs(mut self, input: i32) -> Self {
@@ -2400,8 +2125,7 @@ pub mod disruption_compliance {
         }
         /// <p>The current RPO, in seconds.</p>
         pub fn set_current_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.current_rpo_in_secs = input;
-            self
+            self.current_rpo_in_secs = input; self
         }
         /// <p>The RPO reference identifier.</p>
         pub fn rpo_reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2409,12 +2133,8 @@ pub mod disruption_compliance {
             self
         }
         /// <p>The RPO reference identifier.</p>
-        pub fn set_rpo_reference_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rpo_reference_id = input;
-            self
+        pub fn set_rpo_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rpo_reference_id = input; self
         }
         /// <p>The RPO description.</p>
         pub fn rpo_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2422,12 +2142,8 @@ pub mod disruption_compliance {
             self
         }
         /// <p>The RPO description.</p>
-        pub fn set_rpo_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rpo_description = input;
-            self
+        pub fn set_rpo_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rpo_description = input; self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
         pub fn compliance_status(mut self, input: crate::model::ComplianceStatus) -> Self {
@@ -2435,12 +2151,8 @@ pub mod disruption_compliance {
             self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
-        pub fn set_compliance_status(
-            mut self,
-            input: std::option::Option<crate::model::ComplianceStatus>,
-        ) -> Self {
-            self.compliance_status = input;
-            self
+        pub fn set_compliance_status(mut self, input: std::option::Option<crate::model::ComplianceStatus>) -> Self {
+            self.compliance_status = input; self
         }
         /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
         pub fn achievable_rpo_in_secs(mut self, input: i32) -> Self {
@@ -2449,8 +2161,7 @@ pub mod disruption_compliance {
         }
         /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
         pub fn set_achievable_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.achievable_rpo_in_secs = input;
-            self
+            self.achievable_rpo_in_secs = input; self
         }
         /// <p>The disruption compliance message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2459,25 +2170,40 @@ pub mod disruption_compliance {
         }
         /// <p>The disruption compliance message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DisruptionCompliance`](crate::model::DisruptionCompliance).
         pub fn build(self) -> crate::model::DisruptionCompliance {
             crate::model::DisruptionCompliance {
-                achievable_rto_in_secs: self.achievable_rto_in_secs.unwrap_or_default(),
-                current_rto_in_secs: self.current_rto_in_secs.unwrap_or_default(),
-                rto_reference_id: self.rto_reference_id,
-                rto_description: self.rto_description,
-                current_rpo_in_secs: self.current_rpo_in_secs.unwrap_or_default(),
-                rpo_reference_id: self.rpo_reference_id,
-                rpo_description: self.rpo_description,
-                compliance_status: self.compliance_status,
-                achievable_rpo_in_secs: self.achievable_rpo_in_secs.unwrap_or_default(),
-                message: self.message,
+                achievable_rto_in_secs: self.achievable_rto_in_secs
+                    .unwrap_or_default()
+                ,
+                current_rto_in_secs: self.current_rto_in_secs
+                    .unwrap_or_default()
+                ,
+                rto_reference_id: self.rto_reference_id
+                ,
+                rto_description: self.rto_description
+                ,
+                current_rpo_in_secs: self.current_rpo_in_secs
+                    .unwrap_or_default()
+                ,
+                rpo_reference_id: self.rpo_reference_id
+                ,
+                rpo_description: self.rpo_description
+                ,
+                compliance_status: self.compliance_status
+                ,
+                achievable_rpo_in_secs: self.achievable_rpo_in_secs
+                    .unwrap_or_default()
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DisruptionCompliance {
     /// Creates a new builder-style object to manufacture [`DisruptionCompliance`](crate::model::DisruptionCompliance).
@@ -2489,14 +2215,13 @@ impl DisruptionCompliance {
 /// <p>The overall resiliency score, returned as an object that includes the disruption score and outage score.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResiliencyScore {
+pub struct ResiliencyScore  {
     /// <p>The outage score for a valid key.</p>
     #[doc(hidden)]
     pub score: f64,
     /// <p>The disruption score for a valid key.</p>
     #[doc(hidden)]
-    pub disruption_score:
-        std::option::Option<std::collections::HashMap<crate::model::DisruptionType, f64>>,
+    pub disruption_score: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, f64>>,
 }
 impl ResiliencyScore {
     /// <p>The outage score for a valid key.</p>
@@ -2504,21 +2229,18 @@ impl ResiliencyScore {
         self.score
     }
     /// <p>The disruption score for a valid key.</p>
-    pub fn disruption_score(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::model::DisruptionType, f64>> {
+    pub fn disruption_score(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DisruptionType, f64>> {
         self.disruption_score.as_ref()
     }
 }
 /// See [`ResiliencyScore`](crate::model::ResiliencyScore).
 pub mod resiliency_score {
-
+    
     /// A builder for [`ResiliencyScore`](crate::model::ResiliencyScore).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f64>,
-        pub(crate) disruption_score:
-            std::option::Option<std::collections::HashMap<crate::model::DisruptionType, f64>>,
+        pub(crate) disruption_score: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, f64>>,
     }
     impl Builder {
         /// <p>The outage score for a valid key.</p>
@@ -2528,8 +2250,7 @@ pub mod resiliency_score {
         }
         /// <p>The outage score for a valid key.</p>
         pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.score = input;
-            self
+            self.score = input; self
         }
         /// Adds a key-value pair to `disruption_score`.
         ///
@@ -2538,28 +2259,27 @@ pub mod resiliency_score {
         /// <p>The disruption score for a valid key.</p>
         pub fn disruption_score(mut self, k: crate::model::DisruptionType, v: f64) -> Self {
             let mut hash_map = self.disruption_score.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.disruption_score = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.disruption_score = Some(hash_map);
+                            self
         }
         /// <p>The disruption score for a valid key.</p>
-        pub fn set_disruption_score(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::DisruptionType, f64>,
-            >,
-        ) -> Self {
-            self.disruption_score = input;
-            self
+        pub fn set_disruption_score(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, f64>>) -> Self {
+            self.disruption_score = input; self
         }
         /// Consumes the builder and constructs a [`ResiliencyScore`](crate::model::ResiliencyScore).
         pub fn build(self) -> crate::model::ResiliencyScore {
             crate::model::ResiliencyScore {
-                score: self.score.unwrap_or_default(),
-                disruption_score: self.disruption_score,
+                score: self.score
+                    .unwrap_or_default()
+                ,
+                disruption_score: self.disruption_score
+                ,
             }
         }
     }
+    
+    
 }
 impl ResiliencyScore {
     /// Creates a new builder-style object to manufacture [`ResiliencyScore`](crate::model::ResiliencyScore).
@@ -2571,7 +2291,7 @@ impl ResiliencyScore {
 /// <p>Defines a cost object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cost {
+pub struct Cost  {
     /// <p>The cost amount.</p>
     #[doc(hidden)]
     pub amount: f64,
@@ -2588,17 +2308,17 @@ impl Cost {
         self.amount
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    pub fn currency(&self) -> std::option::Option<&str> {
+    pub fn currency(&self) -> std::option::Option<& str> {
         self.currency.as_deref()
     }
     /// <p>The cost frequency.</p>
-    pub fn frequency(&self) -> std::option::Option<&crate::model::CostFrequency> {
+    pub fn frequency(&self) -> std::option::Option<& crate::model::CostFrequency> {
         self.frequency.as_ref()
     }
 }
 /// See [`Cost`](crate::model::Cost).
 pub mod cost {
-
+    
     /// A builder for [`Cost`](crate::model::Cost).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2614,8 +2334,7 @@ pub mod cost {
         }
         /// <p>The cost amount.</p>
         pub fn set_amount(mut self, input: std::option::Option<f64>) -> Self {
-            self.amount = input;
-            self
+            self.amount = input; self
         }
         /// <p>The cost currency, for example <code>USD</code>.</p>
         pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2624,8 +2343,7 @@ pub mod cost {
         }
         /// <p>The cost currency, for example <code>USD</code>.</p>
         pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.currency = input;
-            self
+            self.currency = input; self
         }
         /// <p>The cost frequency.</p>
         pub fn frequency(mut self, input: crate::model::CostFrequency) -> Self {
@@ -2633,22 +2351,24 @@ pub mod cost {
             self
         }
         /// <p>The cost frequency.</p>
-        pub fn set_frequency(
-            mut self,
-            input: std::option::Option<crate::model::CostFrequency>,
-        ) -> Self {
-            self.frequency = input;
-            self
+        pub fn set_frequency(mut self, input: std::option::Option<crate::model::CostFrequency>) -> Self {
+            self.frequency = input; self
         }
         /// Consumes the builder and constructs a [`Cost`](crate::model::Cost).
         pub fn build(self) -> crate::model::Cost {
             crate::model::Cost {
-                amount: self.amount.unwrap_or_default(),
-                currency: self.currency,
-                frequency: self.frequency,
+                amount: self.amount
+                    .unwrap_or_default()
+                ,
+                currency: self.currency
+                ,
+                frequency: self.frequency
+                ,
             }
         }
     }
+    
+    
 }
 impl Cost {
     /// Creates a new builder-style object to manufacture [`Cost`](crate::model::Cost).
@@ -2663,9 +2383,9 @@ impl Cost {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let costfrequency = unimplemented!();
 /// match costfrequency {
@@ -2689,22 +2409,14 @@ impl Cost {
 /// Specifically, when `costfrequency` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CostFrequency::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CostFrequency {
     #[allow(missing_docs)] // documentation missing in model
     Daily,
@@ -2715,7 +2427,7 @@ pub enum CostFrequency {
     #[allow(missing_docs)] // documentation missing in model
     Yearly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CostFrequency {
     fn from(s: &str) -> Self {
@@ -2724,17 +2436,17 @@ impl std::convert::From<&str> for CostFrequency {
             "Hourly" => CostFrequency::Hourly,
             "Monthly" => CostFrequency::Monthly,
             "Yearly" => CostFrequency::Yearly,
-            other => CostFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CostFrequency::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CostFrequency {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostFrequency::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CostFrequency::from(s))
+                }
+            }
 impl CostFrequency {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2743,12 +2455,14 @@ impl CostFrequency {
             CostFrequency::Hourly => "Hourly",
             CostFrequency::Monthly => "Monthly",
             CostFrequency::Yearly => "Yearly",
-            CostFrequency::Unknown(value) => value.as_str(),
+            CostFrequency::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Daily", "Hourly", "Monthly", "Yearly"]
+        &[
+            "Daily", "Hourly", "Monthly", "Yearly"
+        ]
     }
 }
 impl AsRef<str> for CostFrequency {
@@ -2763,9 +2477,9 @@ impl AsRef<str> for CostFrequency {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assessmentinvoker = unimplemented!();
 /// match assessmentinvoker {
@@ -2787,60 +2501,52 @@ impl AsRef<str> for CostFrequency {
 /// Specifically, when `assessmentinvoker` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssessmentInvoker::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssessmentInvoker {
     #[allow(missing_docs)] // documentation missing in model
     System,
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssessmentInvoker {
     fn from(s: &str) -> Self {
         match s {
             "System" => AssessmentInvoker::System,
             "User" => AssessmentInvoker::User,
-            other => {
-                AssessmentInvoker::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AssessmentInvoker::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssessmentInvoker {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssessmentInvoker::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssessmentInvoker::from(s))
+                }
+            }
 impl AssessmentInvoker {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssessmentInvoker::System => "System",
             AssessmentInvoker::User => "User",
-            AssessmentInvoker::Unknown(value) => value.as_str(),
+            AssessmentInvoker::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["System", "User"]
+        &[
+            "System", "User"
+        ]
     }
 }
 impl AsRef<str> for AssessmentInvoker {
@@ -2855,9 +2561,9 @@ impl AsRef<str> for AssessmentInvoker {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceresolutionstatustype = unimplemented!();
 /// match resourceresolutionstatustype {
@@ -2881,22 +2587,14 @@ impl AsRef<str> for AssessmentInvoker {
 /// Specifically, when `resourceresolutionstatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceResolutionStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceResolutionStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -2907,7 +2605,7 @@ pub enum ResourceResolutionStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceResolutionStatusType {
     fn from(s: &str) -> Self {
@@ -2916,19 +2614,17 @@ impl std::convert::From<&str> for ResourceResolutionStatusType {
             "InProgress" => ResourceResolutionStatusType::InProgress,
             "Pending" => ResourceResolutionStatusType::Pending,
             "Success" => ResourceResolutionStatusType::Success,
-            other => ResourceResolutionStatusType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceResolutionStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceResolutionStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceResolutionStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceResolutionStatusType::from(s))
+                }
+            }
 impl ResourceResolutionStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2937,12 +2633,14 @@ impl ResourceResolutionStatusType {
             ResourceResolutionStatusType::InProgress => "InProgress",
             ResourceResolutionStatusType::Pending => "Pending",
             ResourceResolutionStatusType::Success => "Success",
-            ResourceResolutionStatusType::Unknown(value) => value.as_str(),
+            ResourceResolutionStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Pending", "Success"]
+        &[
+            "Failed", "InProgress", "Pending", "Success"
+        ]
     }
 }
 impl AsRef<str> for ResourceResolutionStatusType {
@@ -2954,7 +2652,7 @@ impl AsRef<str> for ResourceResolutionStatusType {
 /// <p>Defines a resource that is not supported by Resilience Hub.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedResource {
+pub struct UnsupportedResource  {
     /// <p>The logical resource identifier for the unsupported resource.</p>
     #[doc(hidden)]
     pub logical_resource_id: std::option::Option<crate::model::LogicalResourceId>,
@@ -2967,21 +2665,21 @@ pub struct UnsupportedResource {
 }
 impl UnsupportedResource {
     /// <p>The logical resource identifier for the unsupported resource.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<&crate::model::LogicalResourceId> {
+    pub fn logical_resource_id(&self) -> std::option::Option<& crate::model::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
     /// <p>The physical resource identifier for the unsupported resource.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<&crate::model::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> std::option::Option<& crate::model::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 /// See [`UnsupportedResource`](crate::model::UnsupportedResource).
 pub mod unsupported_resource {
-
+    
     /// A builder for [`UnsupportedResource`](crate::model::UnsupportedResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2996,12 +2694,8 @@ pub mod unsupported_resource {
             self
         }
         /// <p>The logical resource identifier for the unsupported resource.</p>
-        pub fn set_logical_resource_id(
-            mut self,
-            input: std::option::Option<crate::model::LogicalResourceId>,
-        ) -> Self {
-            self.logical_resource_id = input;
-            self
+        pub fn set_logical_resource_id(mut self, input: std::option::Option<crate::model::LogicalResourceId>) -> Self {
+            self.logical_resource_id = input; self
         }
         /// <p>The physical resource identifier for the unsupported resource.</p>
         pub fn physical_resource_id(mut self, input: crate::model::PhysicalResourceId) -> Self {
@@ -3009,12 +2703,8 @@ pub mod unsupported_resource {
             self
         }
         /// <p>The physical resource identifier for the unsupported resource.</p>
-        pub fn set_physical_resource_id(
-            mut self,
-            input: std::option::Option<crate::model::PhysicalResourceId>,
-        ) -> Self {
-            self.physical_resource_id = input;
-            self
+        pub fn set_physical_resource_id(mut self, input: std::option::Option<crate::model::PhysicalResourceId>) -> Self {
+            self.physical_resource_id = input; self
         }
         /// <p>The type of resource.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3022,22 +2712,23 @@ pub mod unsupported_resource {
             self
         }
         /// <p>The type of resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedResource`](crate::model::UnsupportedResource).
         pub fn build(self) -> crate::model::UnsupportedResource {
             crate::model::UnsupportedResource {
-                logical_resource_id: self.logical_resource_id,
-                physical_resource_id: self.physical_resource_id,
-                resource_type: self.resource_type,
+                logical_resource_id: self.logical_resource_id
+                ,
+                physical_resource_id: self.physical_resource_id
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedResource {
     /// Creates a new builder-style object to manufacture [`UnsupportedResource`](crate::model::UnsupportedResource).
@@ -3049,24 +2740,24 @@ impl UnsupportedResource {
 /// <p>Defines a physical resource identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhysicalResourceId {
+pub struct PhysicalResourceId  {
     /// <p>The identifier of the physical resource.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of physical resource identifier.</p>
-    /// <dl>
+    /// <p>Specifies the type of physical resource identifier.</p> 
+    /// <dl> 
     /// <dt>
     /// Arn
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p> 
+    /// </dd> 
     /// <dt>
     /// Native
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is a Resilience Hub-native identifier.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PhysicalIdentifierType>,
@@ -3079,39 +2770,39 @@ pub struct PhysicalResourceId {
 }
 impl PhysicalResourceId {
     /// <p>The identifier of the physical resource.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
-    /// <p>Specifies the type of physical resource identifier.</p>
-    /// <dl>
+    /// <p>Specifies the type of physical resource identifier.</p> 
+    /// <dl> 
     /// <dt>
     /// Arn
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p> 
+    /// </dd> 
     /// <dt>
     /// Native
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is a Resilience Hub-native identifier.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PhysicalIdentifierType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PhysicalIdentifierType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
 }
 /// See [`PhysicalResourceId`](crate::model::PhysicalResourceId).
 pub mod physical_resource_id {
-
+    
     /// A builder for [`PhysicalResourceId`](crate::model::PhysicalResourceId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3128,49 +2819,44 @@ pub mod physical_resource_id {
         }
         /// <p>The identifier of the physical resource.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identifier = input;
-            self
+            self.identifier = input; self
         }
-        /// <p>Specifies the type of physical resource identifier.</p>
-        /// <dl>
+        /// <p>Specifies the type of physical resource identifier.</p> 
+        /// <dl> 
         /// <dt>
         /// Arn
-        /// </dt>
-        /// <dd>
-        /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p> 
+        /// </dd> 
         /// <dt>
         /// Native
-        /// </dt>
-        /// <dd>
-        /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource identifier is a Resilience Hub-native identifier.</p> 
+        /// </dd> 
         /// </dl>
         pub fn r#type(mut self, input: crate::model::PhysicalIdentifierType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies the type of physical resource identifier.</p>
-        /// <dl>
+        /// <p>Specifies the type of physical resource identifier.</p> 
+        /// <dl> 
         /// <dt>
         /// Arn
-        /// </dt>
-        /// <dd>
-        /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p> 
+        /// </dd> 
         /// <dt>
         /// Native
-        /// </dt>
-        /// <dd>
-        /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource identifier is a Resilience Hub-native identifier.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PhysicalIdentifierType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PhysicalIdentifierType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3179,8 +2865,7 @@ pub mod physical_resource_id {
         }
         /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         /// <p>The Amazon Web Services account that owns the physical resource.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3188,23 +2873,25 @@ pub mod physical_resource_id {
             self
         }
         /// <p>The Amazon Web Services account that owns the physical resource.</p>
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
+        pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_id = input; self
         }
         /// Consumes the builder and constructs a [`PhysicalResourceId`](crate::model::PhysicalResourceId).
         pub fn build(self) -> crate::model::PhysicalResourceId {
             crate::model::PhysicalResourceId {
-                identifier: self.identifier,
-                r#type: self.r#type,
-                aws_region: self.aws_region,
-                aws_account_id: self.aws_account_id,
+                identifier: self.identifier
+                ,
+                r#type: self.r#type
+                ,
+                aws_region: self.aws_region
+                ,
+                aws_account_id: self.aws_account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PhysicalResourceId {
     /// Creates a new builder-style object to manufacture [`PhysicalResourceId`](crate::model::PhysicalResourceId).
@@ -3219,9 +2906,9 @@ impl PhysicalResourceId {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let physicalidentifiertype = unimplemented!();
 /// match physicalidentifiertype {
@@ -3243,60 +2930,52 @@ impl PhysicalResourceId {
 /// Specifically, when `physicalidentifiertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhysicalIdentifierType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhysicalIdentifierType {
     #[allow(missing_docs)] // documentation missing in model
     Arn,
     #[allow(missing_docs)] // documentation missing in model
     Native,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhysicalIdentifierType {
     fn from(s: &str) -> Self {
         match s {
             "Arn" => PhysicalIdentifierType::Arn,
             "Native" => PhysicalIdentifierType::Native,
-            other => {
-                PhysicalIdentifierType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PhysicalIdentifierType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhysicalIdentifierType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhysicalIdentifierType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhysicalIdentifierType::from(s))
+                }
+            }
 impl PhysicalIdentifierType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhysicalIdentifierType::Arn => "Arn",
             PhysicalIdentifierType::Native => "Native",
-            PhysicalIdentifierType::Unknown(value) => value.as_str(),
+            PhysicalIdentifierType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Arn", "Native"]
+        &[
+            "Arn", "Native"
+        ]
     }
 }
 impl AsRef<str> for PhysicalIdentifierType {
@@ -3308,7 +2987,7 @@ impl AsRef<str> for PhysicalIdentifierType {
 /// <p>Defines a logical resource identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogicalResourceId {
+pub struct LogicalResourceId  {
     /// <p>The identifier of the resource.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
@@ -3324,25 +3003,25 @@ pub struct LogicalResourceId {
 }
 impl LogicalResourceId {
     /// <p>The identifier of the resource.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
-    pub fn logical_stack_name(&self) -> std::option::Option<&str> {
+    pub fn logical_stack_name(&self) -> std::option::Option<& str> {
         self.logical_stack_name.as_deref()
     }
     /// <p>The name of the resource group that this resource belongs to.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
-    pub fn terraform_source_name(&self) -> std::option::Option<&str> {
+    pub fn terraform_source_name(&self) -> std::option::Option<& str> {
         self.terraform_source_name.as_deref()
     }
 }
 /// See [`LogicalResourceId`](crate::model::LogicalResourceId).
 pub mod logical_resource_id {
-
+    
     /// A builder for [`LogicalResourceId`](crate::model::LogicalResourceId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3359,8 +3038,7 @@ pub mod logical_resource_id {
         }
         /// <p>The identifier of the resource.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identifier = input;
-            self
+            self.identifier = input; self
         }
         /// <p>The name of the CloudFormation stack this resource belongs to.</p>
         pub fn logical_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3368,12 +3046,8 @@ pub mod logical_resource_id {
             self
         }
         /// <p>The name of the CloudFormation stack this resource belongs to.</p>
-        pub fn set_logical_stack_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.logical_stack_name = input;
-            self
+        pub fn set_logical_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logical_stack_name = input; self
         }
         /// <p>The name of the resource group that this resource belongs to.</p>
         pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3381,12 +3055,8 @@ pub mod logical_resource_id {
             self
         }
         /// <p>The name of the resource group that this resource belongs to.</p>
-        pub fn set_resource_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_group_name = input;
-            self
+        pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_group_name = input; self
         }
         /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
         pub fn terraform_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3394,23 +3064,25 @@ pub mod logical_resource_id {
             self
         }
         /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
-        pub fn set_terraform_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.terraform_source_name = input;
-            self
+        pub fn set_terraform_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.terraform_source_name = input; self
         }
         /// Consumes the builder and constructs a [`LogicalResourceId`](crate::model::LogicalResourceId).
         pub fn build(self) -> crate::model::LogicalResourceId {
             crate::model::LogicalResourceId {
-                identifier: self.identifier,
-                logical_stack_name: self.logical_stack_name,
-                resource_group_name: self.resource_group_name,
-                terraform_source_name: self.terraform_source_name,
+                identifier: self.identifier
+                ,
+                logical_stack_name: self.logical_stack_name
+                ,
+                resource_group_name: self.resource_group_name
+                ,
+                terraform_source_name: self.terraform_source_name
+                ,
             }
         }
     }
+    
+    
 }
 impl LogicalResourceId {
     /// Creates a new builder-style object to manufacture [`LogicalResourceId`](crate::model::LogicalResourceId).
@@ -3422,7 +3094,7 @@ impl LogicalResourceId {
 /// <p>Defines a test recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestRecommendation {
+pub struct TestRecommendation  {
     /// <p>Identifier for the test recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -3459,53 +3131,53 @@ pub struct TestRecommendation {
 }
 impl TestRecommendation {
     /// <p>Identifier for the test recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The reference identifier for the test recommendation.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>The name of the application component.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The name of the test recommendation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The intent of the test recommendation.</p>
-    pub fn intent(&self) -> std::option::Option<&str> {
+    pub fn intent(&self) -> std::option::Option<& str> {
         self.intent.as_deref()
     }
     /// <p>The level of risk for this test recommendation.</p>
-    pub fn risk(&self) -> std::option::Option<&crate::model::TestRisk> {
+    pub fn risk(&self) -> std::option::Option<& crate::model::TestRisk> {
         self.risk.as_ref()
     }
     /// <p>The type of test recommendation.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::TestType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::TestType> {
         self.r#type.as_ref()
     }
     /// <p>The description for the test recommendation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The test recommendation items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::RecommendationItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::RecommendationItem]> {
         self.items.as_deref()
     }
     /// <p>The prerequisite of the test recommendation.</p>
-    pub fn prerequisite(&self) -> std::option::Option<&str> {
+    pub fn prerequisite(&self) -> std::option::Option<& str> {
         self.prerequisite.as_deref()
     }
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-    pub fn depends_on_alarms(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn depends_on_alarms(&self) -> std::option::Option<& [std::string::String]> {
         self.depends_on_alarms.as_deref()
     }
 }
 /// See [`TestRecommendation`](crate::model::TestRecommendation).
 pub mod test_recommendation {
-
+    
     /// A builder for [`TestRecommendation`](crate::model::TestRecommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3528,12 +3200,8 @@ pub mod test_recommendation {
             self
         }
         /// <p>Identifier for the test recommendation.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>The reference identifier for the test recommendation.</p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3542,8 +3210,7 @@ pub mod test_recommendation {
         }
         /// <p>The reference identifier for the test recommendation.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// <p>The name of the application component.</p>
         pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3551,12 +3218,8 @@ pub mod test_recommendation {
             self
         }
         /// <p>The name of the application component.</p>
-        pub fn set_app_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_component_name = input;
-            self
+        pub fn set_app_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_component_name = input; self
         }
         /// <p>The name of the test recommendation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3565,8 +3228,7 @@ pub mod test_recommendation {
         }
         /// <p>The name of the test recommendation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The intent of the test recommendation.</p>
         pub fn intent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3575,8 +3237,7 @@ pub mod test_recommendation {
         }
         /// <p>The intent of the test recommendation.</p>
         pub fn set_intent(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent = input;
-            self
+            self.intent = input; self
         }
         /// <p>The level of risk for this test recommendation.</p>
         pub fn risk(mut self, input: crate::model::TestRisk) -> Self {
@@ -3585,8 +3246,7 @@ pub mod test_recommendation {
         }
         /// <p>The level of risk for this test recommendation.</p>
         pub fn set_risk(mut self, input: std::option::Option<crate::model::TestRisk>) -> Self {
-            self.risk = input;
-            self
+            self.risk = input; self
         }
         /// <p>The type of test recommendation.</p>
         pub fn r#type(mut self, input: crate::model::TestType) -> Self {
@@ -3595,8 +3255,7 @@ pub mod test_recommendation {
         }
         /// <p>The type of test recommendation.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The description for the test recommendation.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3605,8 +3264,7 @@ pub mod test_recommendation {
         }
         /// <p>The description for the test recommendation.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -3615,17 +3273,13 @@ pub mod test_recommendation {
         /// <p>The test recommendation items.</p>
         pub fn items(mut self, input: crate::model::RecommendationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The test recommendation items.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The prerequisite of the test recommendation.</p>
         pub fn prerequisite(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3634,8 +3288,7 @@ pub mod test_recommendation {
         }
         /// <p>The prerequisite of the test recommendation.</p>
         pub fn set_prerequisite(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prerequisite = input;
-            self
+            self.prerequisite = input; self
         }
         /// Appends an item to `depends_on_alarms`.
         ///
@@ -3644,35 +3297,44 @@ pub mod test_recommendation {
         /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
         pub fn depends_on_alarms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.depends_on_alarms.unwrap_or_default();
-            v.push(input.into());
-            self.depends_on_alarms = Some(v);
-            self
+                            v.push(input.into());
+                            self.depends_on_alarms = Some(v);
+                            self
         }
         /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-        pub fn set_depends_on_alarms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.depends_on_alarms = input;
-            self
+        pub fn set_depends_on_alarms(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.depends_on_alarms = input; self
         }
         /// Consumes the builder and constructs a [`TestRecommendation`](crate::model::TestRecommendation).
         pub fn build(self) -> crate::model::TestRecommendation {
             crate::model::TestRecommendation {
-                recommendation_id: self.recommendation_id,
-                reference_id: self.reference_id,
-                app_component_name: self.app_component_name,
-                name: self.name,
-                intent: self.intent,
-                risk: self.risk,
-                r#type: self.r#type,
-                description: self.description,
-                items: self.items,
-                prerequisite: self.prerequisite,
-                depends_on_alarms: self.depends_on_alarms,
+                recommendation_id: self.recommendation_id
+                ,
+                reference_id: self.reference_id
+                ,
+                app_component_name: self.app_component_name
+                ,
+                name: self.name
+                ,
+                intent: self.intent
+                ,
+                risk: self.risk
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                items: self.items
+                ,
+                prerequisite: self.prerequisite
+                ,
+                depends_on_alarms: self.depends_on_alarms
+                ,
             }
         }
     }
+    
+    
 }
 impl TestRecommendation {
     /// Creates a new builder-style object to manufacture [`TestRecommendation`](crate::model::TestRecommendation).
@@ -3684,7 +3346,7 @@ impl TestRecommendation {
 /// <p>Defines a recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationItem {
+pub struct RecommendationItem  {
     /// <p>The resource identifier.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -3700,15 +3362,15 @@ pub struct RecommendationItem {
 }
 impl RecommendationItem {
     /// <p>The resource identifier.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The target account identifier.</p>
-    pub fn target_account_id(&self) -> std::option::Option<&str> {
+    pub fn target_account_id(&self) -> std::option::Option<& str> {
         self.target_account_id.as_deref()
     }
     /// <p>The target region.</p>
-    pub fn target_region(&self) -> std::option::Option<&str> {
+    pub fn target_region(&self) -> std::option::Option<& str> {
         self.target_region.as_deref()
     }
     /// <p>Specifies if the recommendation has already been implemented.</p>
@@ -3718,7 +3380,7 @@ impl RecommendationItem {
 }
 /// See [`RecommendationItem`](crate::model::RecommendationItem).
 pub mod recommendation_item {
-
+    
     /// A builder for [`RecommendationItem`](crate::model::RecommendationItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3735,8 +3397,7 @@ pub mod recommendation_item {
         }
         /// <p>The resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// <p>The target account identifier.</p>
         pub fn target_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3744,12 +3405,8 @@ pub mod recommendation_item {
             self
         }
         /// <p>The target account identifier.</p>
-        pub fn set_target_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_account_id = input;
-            self
+        pub fn set_target_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_account_id = input; self
         }
         /// <p>The target region.</p>
         pub fn target_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3757,12 +3414,8 @@ pub mod recommendation_item {
             self
         }
         /// <p>The target region.</p>
-        pub fn set_target_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_region = input;
-            self
+        pub fn set_target_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_region = input; self
         }
         /// <p>Specifies if the recommendation has already been implemented.</p>
         pub fn already_implemented(mut self, input: bool) -> Self {
@@ -3771,19 +3424,24 @@ pub mod recommendation_item {
         }
         /// <p>Specifies if the recommendation has already been implemented.</p>
         pub fn set_already_implemented(mut self, input: std::option::Option<bool>) -> Self {
-            self.already_implemented = input;
-            self
+            self.already_implemented = input; self
         }
         /// Consumes the builder and constructs a [`RecommendationItem`](crate::model::RecommendationItem).
         pub fn build(self) -> crate::model::RecommendationItem {
             crate::model::RecommendationItem {
-                resource_id: self.resource_id,
-                target_account_id: self.target_account_id,
-                target_region: self.target_region,
-                already_implemented: self.already_implemented,
+                resource_id: self.resource_id
+                ,
+                target_account_id: self.target_account_id
+                ,
+                target_region: self.target_region
+                ,
+                already_implemented: self.already_implemented
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommendationItem {
     /// Creates a new builder-style object to manufacture [`RecommendationItem`](crate::model::RecommendationItem).
@@ -3798,9 +3456,9 @@ impl RecommendationItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let testtype = unimplemented!();
 /// match testtype {
@@ -3824,22 +3482,14 @@ impl RecommendationItem {
 /// Specifically, when `testtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TestType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TestType {
     #[allow(missing_docs)] // documentation missing in model
     Az,
@@ -3850,7 +3500,7 @@ pub enum TestType {
     #[allow(missing_docs)] // documentation missing in model
     Software,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestType {
     fn from(s: &str) -> Self {
@@ -3859,17 +3509,17 @@ impl std::convert::From<&str> for TestType {
             "Hardware" => TestType::Hardware,
             "Region" => TestType::Region,
             "Software" => TestType::Software,
-            other => TestType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TestType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TestType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TestType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TestType::from(s))
+                }
+            }
 impl TestType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3878,12 +3528,14 @@ impl TestType {
             TestType::Hardware => "Hardware",
             TestType::Region => "Region",
             TestType::Software => "Software",
-            TestType::Unknown(value) => value.as_str(),
+            TestType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AZ", "Hardware", "Region", "Software"]
+        &[
+            "AZ", "Hardware", "Region", "Software"
+        ]
     }
 }
 impl AsRef<str> for TestType {
@@ -3898,9 +3550,9 @@ impl AsRef<str> for TestType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let testrisk = unimplemented!();
 /// match testrisk {
@@ -3923,22 +3575,14 @@ impl AsRef<str> for TestType {
 /// Specifically, when `testrisk` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TestRisk::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TestRisk {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -3947,7 +3591,7 @@ pub enum TestRisk {
     #[allow(missing_docs)] // documentation missing in model
     Small,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestRisk {
     fn from(s: &str) -> Self {
@@ -3955,17 +3599,17 @@ impl std::convert::From<&str> for TestRisk {
             "High" => TestRisk::High,
             "Medium" => TestRisk::Medium,
             "Small" => TestRisk::Small,
-            other => TestRisk::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TestRisk::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TestRisk {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TestRisk::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TestRisk::from(s))
+                }
+            }
 impl TestRisk {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3973,12 +3617,14 @@ impl TestRisk {
             TestRisk::High => "High",
             TestRisk::Medium => "Medium",
             TestRisk::Small => "Small",
-            TestRisk::Unknown(value) => value.as_str(),
+            TestRisk::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["High", "Medium", "Small"]
+        &[
+            "High", "Medium", "Small"
+        ]
     }
 }
 impl AsRef<str> for TestRisk {
@@ -3990,7 +3636,7 @@ impl AsRef<str> for TestRisk {
 /// <p>Defines a standard operating procedure (SOP) recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SopRecommendation {
+pub struct SopRecommendation  {
     /// <p>The service type.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::SopServiceType>,
@@ -4018,41 +3664,41 @@ pub struct SopRecommendation {
 }
 impl SopRecommendation {
     /// <p>The service type.</p>
-    pub fn service_type(&self) -> std::option::Option<&crate::model::SopServiceType> {
+    pub fn service_type(&self) -> std::option::Option<& crate::model::SopServiceType> {
         self.service_type.as_ref()
     }
     /// <p>The application component name.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The description of the SOP recommendation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Identifier for the SOP recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The name of the SOP recommendation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The recommendation items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::RecommendationItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::RecommendationItem]> {
         self.items.as_deref()
     }
     /// <p>The reference identifier for the SOP recommendation.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>The prerequisite for the SOP recommendation.</p>
-    pub fn prerequisite(&self) -> std::option::Option<&str> {
+    pub fn prerequisite(&self) -> std::option::Option<& str> {
         self.prerequisite.as_deref()
     }
 }
 /// See [`SopRecommendation`](crate::model::SopRecommendation).
 pub mod sop_recommendation {
-
+    
     /// A builder for [`SopRecommendation`](crate::model::SopRecommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4072,12 +3718,8 @@ pub mod sop_recommendation {
             self
         }
         /// <p>The service type.</p>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::SopServiceType>,
-        ) -> Self {
-            self.service_type = input;
-            self
+        pub fn set_service_type(mut self, input: std::option::Option<crate::model::SopServiceType>) -> Self {
+            self.service_type = input; self
         }
         /// <p>The application component name.</p>
         pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4085,12 +3727,8 @@ pub mod sop_recommendation {
             self
         }
         /// <p>The application component name.</p>
-        pub fn set_app_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_component_name = input;
-            self
+        pub fn set_app_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_component_name = input; self
         }
         /// <p>The description of the SOP recommendation.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4099,8 +3737,7 @@ pub mod sop_recommendation {
         }
         /// <p>The description of the SOP recommendation.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Identifier for the SOP recommendation.</p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4108,12 +3745,8 @@ pub mod sop_recommendation {
             self
         }
         /// <p>Identifier for the SOP recommendation.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>The name of the SOP recommendation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4122,8 +3755,7 @@ pub mod sop_recommendation {
         }
         /// <p>The name of the SOP recommendation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -4132,17 +3764,13 @@ pub mod sop_recommendation {
         /// <p>The recommendation items.</p>
         pub fn items(mut self, input: crate::model::RecommendationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The recommendation items.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The reference identifier for the SOP recommendation.</p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4151,8 +3779,7 @@ pub mod sop_recommendation {
         }
         /// <p>The reference identifier for the SOP recommendation.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// <p>The prerequisite for the SOP recommendation.</p>
         pub fn prerequisite(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4161,23 +3788,32 @@ pub mod sop_recommendation {
         }
         /// <p>The prerequisite for the SOP recommendation.</p>
         pub fn set_prerequisite(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prerequisite = input;
-            self
+            self.prerequisite = input; self
         }
         /// Consumes the builder and constructs a [`SopRecommendation`](crate::model::SopRecommendation).
         pub fn build(self) -> crate::model::SopRecommendation {
             crate::model::SopRecommendation {
-                service_type: self.service_type,
-                app_component_name: self.app_component_name,
-                description: self.description,
-                recommendation_id: self.recommendation_id,
-                name: self.name,
-                items: self.items,
-                reference_id: self.reference_id,
-                prerequisite: self.prerequisite,
+                service_type: self.service_type
+                ,
+                app_component_name: self.app_component_name
+                ,
+                description: self.description
+                ,
+                recommendation_id: self.recommendation_id
+                ,
+                name: self.name
+                ,
+                items: self.items
+                ,
+                reference_id: self.reference_id
+                ,
+                prerequisite: self.prerequisite
+                ,
             }
         }
     }
+    
+    
 }
 impl SopRecommendation {
     /// Creates a new builder-style object to manufacture [`SopRecommendation`](crate::model::SopRecommendation).
@@ -4192,9 +3828,9 @@ impl SopRecommendation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sopservicetype = unimplemented!();
 /// match sopservicetype {
@@ -4215,54 +3851,48 @@ impl SopRecommendation {
 /// Specifically, when `sopservicetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SopServiceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SopServiceType {
     #[allow(missing_docs)] // documentation missing in model
     Ssm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SopServiceType {
     fn from(s: &str) -> Self {
         match s {
             "SSM" => SopServiceType::Ssm,
-            other => SopServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SopServiceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SopServiceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SopServiceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SopServiceType::from(s))
+                }
+            }
 impl SopServiceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SopServiceType::Ssm => "SSM",
-            SopServiceType::Unknown(value) => value.as_str(),
+            SopServiceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SSM"]
+        &[
+            "SSM"
+        ]
     }
 }
 impl AsRef<str> for SopServiceType {
@@ -4274,7 +3904,7 @@ impl AsRef<str> for SopServiceType {
 /// <p>Defines a recommendation template created with the <code>CreateRecommendationTemplate</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RecommendationTemplate {
+pub struct RecommendationTemplate  {
     /// <p>The file location of the template.</p>
     #[doc(hidden)]
     pub templates_location: std::option::Option<crate::model::S3Location>,
@@ -4287,44 +3917,43 @@ pub struct RecommendationTemplate {
     /// <p>Identifiers for the recommendations used in the recommendation template.</p>
     #[doc(hidden)]
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of strings that specify the recommendation template type or types.</p>
-    /// <dl>
+    /// <p>An array of strings that specify the recommendation template type or types.</p> 
+    /// <dl> 
     /// <dt>
     /// Alarm
-    /// </dt>
-    /// <dd>
-    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
+    /// </dd> 
     /// <dt>
     /// Sop
-    /// </dt>
-    /// <dd>
-    /// <p>The template is a <code>SopRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>SopRecommendation</code> template.</p> 
+    /// </dd> 
     /// <dt>
     /// Test
-    /// </dt>
-    /// <dd>
-    /// <p>The template is a <code>TestRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>TestRecommendation</code> template.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
-    pub recommendation_types:
-        std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
-    /// <p>The format of the recommendation template.</p>
-    /// <dl>
+    pub recommendation_types: std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
+    /// <p>The format of the recommendation template.</p> 
+    /// <dl> 
     /// <dt>
     /// CfnJson
-    /// </dt>
-    /// <dd>
-    /// <p>The template is CloudFormation JSON.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation JSON.</p> 
+    /// </dd> 
     /// <dt>
     /// CfnYaml
-    /// </dt>
-    /// <dd>
-    /// <p>The template is CloudFormation YAML.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation YAML.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::TemplateFormat>,
@@ -4348,102 +3977,96 @@ pub struct RecommendationTemplate {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates if replacements are needed.</p>
     #[doc(hidden)]
     pub needs_replacements: std::option::Option<bool>,
 }
 impl RecommendationTemplate {
     /// <p>The file location of the template.</p>
-    pub fn templates_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn templates_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.templates_location.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn assessment_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_arn(&self) -> std::option::Option<& str> {
         self.assessment_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>Identifiers for the recommendations used in the recommendation template.</p>
-    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recommendation_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.recommendation_ids.as_deref()
     }
-    /// <p>An array of strings that specify the recommendation template type or types.</p>
-    /// <dl>
+    /// <p>An array of strings that specify the recommendation template type or types.</p> 
+    /// <dl> 
     /// <dt>
     /// Alarm
-    /// </dt>
-    /// <dd>
-    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
+    /// </dd> 
     /// <dt>
     /// Sop
-    /// </dt>
-    /// <dd>
-    /// <p>The template is a <code>SopRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>SopRecommendation</code> template.</p> 
+    /// </dd> 
     /// <dt>
     /// Test
-    /// </dt>
-    /// <dd>
-    /// <p>The template is a <code>TestRecommendation</code> template.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is a <code>TestRecommendation</code> template.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn recommendation_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::RenderRecommendationType]> {
+    pub fn recommendation_types(&self) -> std::option::Option<& [crate::model::RenderRecommendationType]> {
         self.recommendation_types.as_deref()
     }
-    /// <p>The format of the recommendation template.</p>
-    /// <dl>
+    /// <p>The format of the recommendation template.</p> 
+    /// <dl> 
     /// <dt>
     /// CfnJson
-    /// </dt>
-    /// <dd>
-    /// <p>The template is CloudFormation JSON.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation JSON.</p> 
+    /// </dd> 
     /// <dt>
     /// CfnYaml
-    /// </dt>
-    /// <dd>
-    /// <p>The template is CloudFormation YAML.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The template is CloudFormation YAML.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn format(&self) -> std::option::Option<&crate::model::TemplateFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::TemplateFormat> {
         self.format.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
-    pub fn recommendation_template_arn(&self) -> std::option::Option<&str> {
+    pub fn recommendation_template_arn(&self) -> std::option::Option<& str> {
         self.recommendation_template_arn.as_deref()
     }
     /// <p>The message for the recommendation template.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RecommendationTemplateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RecommendationTemplateStatus> {
         self.status.as_ref()
     }
     /// <p>The name for the recommendation template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The start time for the action.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time for the action.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Indicates if replacements are needed.</p>
@@ -4451,7 +4074,7 @@ impl RecommendationTemplate {
         self.needs_replacements
     }
 }
-impl std::fmt::Debug for RecommendationTemplate {
+impl  std::fmt::Debug for RecommendationTemplate  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendationTemplate");
         formatter.field("templates_location", &self.templates_location);
@@ -4460,10 +4083,7 @@ impl std::fmt::Debug for RecommendationTemplate {
         formatter.field("recommendation_ids", &self.recommendation_ids);
         formatter.field("recommendation_types", &self.recommendation_types);
         formatter.field("format", &self.format);
-        formatter.field(
-            "recommendation_template_arn",
-            &self.recommendation_template_arn,
-        );
+        formatter.field("recommendation_template_arn", &self.recommendation_template_arn);
         formatter.field("message", &self.message);
         formatter.field("status", &self.status);
         formatter.field("name", &self.name);
@@ -4476,7 +4096,7 @@ impl std::fmt::Debug for RecommendationTemplate {
 }
 /// See [`RecommendationTemplate`](crate::model::RecommendationTemplate).
 pub mod recommendation_template {
-
+    
     /// A builder for [`RecommendationTemplate`](crate::model::RecommendationTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4484,8 +4104,7 @@ pub mod recommendation_template {
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) recommendation_types:
-            std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
+        pub(crate) recommendation_types: std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
         pub(crate) format: std::option::Option<crate::model::TemplateFormat>,
         pub(crate) recommendation_template_arn: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4493,9 +4112,7 @@ pub mod recommendation_template {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) needs_replacements: std::option::Option<bool>,
     }
     impl Builder {
@@ -4505,12 +4122,8 @@ pub mod recommendation_template {
             self
         }
         /// <p>The file location of the template.</p>
-        pub fn set_templates_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.templates_location = input;
-            self
+        pub fn set_templates_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.templates_location = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4518,12 +4131,8 @@ pub mod recommendation_template {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_assessment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_arn = input;
-            self
+        pub fn set_assessment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4532,8 +4141,7 @@ pub mod recommendation_template {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// Appends an item to `recommendation_ids`.
         ///
@@ -4542,136 +4150,114 @@ pub mod recommendation_template {
         /// <p>Identifiers for the recommendations used in the recommendation template.</p>
         pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.recommendation_ids.unwrap_or_default();
-            v.push(input.into());
-            self.recommendation_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.recommendation_ids = Some(v);
+                            self
         }
         /// <p>Identifiers for the recommendations used in the recommendation template.</p>
-        pub fn set_recommendation_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.recommendation_ids = input;
-            self
+        pub fn set_recommendation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.recommendation_ids = input; self
         }
         /// Appends an item to `recommendation_types`.
         ///
         /// To override the contents of this collection use [`set_recommendation_types`](Self::set_recommendation_types).
         ///
-        /// <p>An array of strings that specify the recommendation template type or types.</p>
-        /// <dl>
+        /// <p>An array of strings that specify the recommendation template type or types.</p> 
+        /// <dl> 
         /// <dt>
         /// Alarm
-        /// </dt>
-        /// <dd>
-        /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
+        /// </dd> 
         /// <dt>
         /// Sop
-        /// </dt>
-        /// <dd>
-        /// <p>The template is a <code>SopRecommendation</code> template.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is a <code>SopRecommendation</code> template.</p> 
+        /// </dd> 
         /// <dt>
         /// Test
-        /// </dt>
-        /// <dd>
-        /// <p>The template is a <code>TestRecommendation</code> template.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is a <code>TestRecommendation</code> template.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn recommendation_types(
-            mut self,
-            input: crate::model::RenderRecommendationType,
-        ) -> Self {
+        pub fn recommendation_types(mut self, input: crate::model::RenderRecommendationType) -> Self {
             let mut v = self.recommendation_types.unwrap_or_default();
-            v.push(input);
-            self.recommendation_types = Some(v);
-            self
+                            v.push(input);
+                            self.recommendation_types = Some(v);
+                            self
         }
-        /// <p>An array of strings that specify the recommendation template type or types.</p>
-        /// <dl>
+        /// <p>An array of strings that specify the recommendation template type or types.</p> 
+        /// <dl> 
         /// <dt>
         /// Alarm
-        /// </dt>
-        /// <dd>
-        /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is an <code>AlarmRecommendation</code> template.</p> 
+        /// </dd> 
         /// <dt>
         /// Sop
-        /// </dt>
-        /// <dd>
-        /// <p>The template is a <code>SopRecommendation</code> template.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is a <code>SopRecommendation</code> template.</p> 
+        /// </dd> 
         /// <dt>
         /// Test
-        /// </dt>
-        /// <dd>
-        /// <p>The template is a <code>TestRecommendation</code> template.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is a <code>TestRecommendation</code> template.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_recommendation_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
-        ) -> Self {
-            self.recommendation_types = input;
-            self
+        pub fn set_recommendation_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>) -> Self {
+            self.recommendation_types = input; self
         }
-        /// <p>The format of the recommendation template.</p>
-        /// <dl>
+        /// <p>The format of the recommendation template.</p> 
+        /// <dl> 
         /// <dt>
         /// CfnJson
-        /// </dt>
-        /// <dd>
-        /// <p>The template is CloudFormation JSON.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is CloudFormation JSON.</p> 
+        /// </dd> 
         /// <dt>
         /// CfnYaml
-        /// </dt>
-        /// <dd>
-        /// <p>The template is CloudFormation YAML.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is CloudFormation YAML.</p> 
+        /// </dd> 
         /// </dl>
         pub fn format(mut self, input: crate::model::TemplateFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The format of the recommendation template.</p>
-        /// <dl>
+        /// <p>The format of the recommendation template.</p> 
+        /// <dl> 
         /// <dt>
         /// CfnJson
-        /// </dt>
-        /// <dd>
-        /// <p>The template is CloudFormation JSON.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is CloudFormation JSON.</p> 
+        /// </dd> 
         /// <dt>
         /// CfnYaml
-        /// </dt>
-        /// <dd>
-        /// <p>The template is CloudFormation YAML.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The template is CloudFormation YAML.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::TemplateFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::TemplateFormat>) -> Self {
+            self.format = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
-        pub fn recommendation_template_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn recommendation_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommendation_template_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
-        pub fn set_recommendation_template_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_template_arn = input;
-            self
+        pub fn set_recommendation_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_template_arn = input; self
         }
         /// <p>The message for the recommendation template.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4680,8 +4266,7 @@ pub mod recommendation_template {
         }
         /// <p>The message for the recommendation template.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The status of the action.</p>
         pub fn status(mut self, input: crate::model::RecommendationTemplateStatus) -> Self {
@@ -4689,12 +4274,8 @@ pub mod recommendation_template {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationTemplateStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RecommendationTemplateStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The name for the recommendation template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4703,8 +4284,7 @@ pub mod recommendation_template {
         }
         /// <p>The name for the recommendation template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The start time for the action.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4712,12 +4292,8 @@ pub mod recommendation_template {
             self
         }
         /// <p>The start time for the action.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time for the action.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4725,37 +4301,23 @@ pub mod recommendation_template {
             self
         }
         /// <p>The end time for the action.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Indicates if replacements are needed.</p>
         pub fn needs_replacements(mut self, input: bool) -> Self {
@@ -4764,26 +4326,39 @@ pub mod recommendation_template {
         }
         /// <p>Indicates if replacements are needed.</p>
         pub fn set_needs_replacements(mut self, input: std::option::Option<bool>) -> Self {
-            self.needs_replacements = input;
-            self
+            self.needs_replacements = input; self
         }
         /// Consumes the builder and constructs a [`RecommendationTemplate`](crate::model::RecommendationTemplate).
         pub fn build(self) -> crate::model::RecommendationTemplate {
             crate::model::RecommendationTemplate {
-                templates_location: self.templates_location,
-                assessment_arn: self.assessment_arn,
-                app_arn: self.app_arn,
-                recommendation_ids: self.recommendation_ids,
-                recommendation_types: self.recommendation_types,
-                format: self.format,
-                recommendation_template_arn: self.recommendation_template_arn,
-                message: self.message,
-                status: self.status,
-                name: self.name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                tags: self.tags,
-                needs_replacements: self.needs_replacements,
+                templates_location: self.templates_location
+                ,
+                assessment_arn: self.assessment_arn
+                ,
+                app_arn: self.app_arn
+                ,
+                recommendation_ids: self.recommendation_ids
+                ,
+                recommendation_types: self.recommendation_types
+                ,
+                format: self.format
+                ,
+                recommendation_template_arn: self.recommendation_template_arn
+                ,
+                message: self.message
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                tags: self.tags
+                ,
+                needs_replacements: self.needs_replacements
+                ,
             }
         }
     }
@@ -4796,10 +4371,7 @@ pub mod recommendation_template {
             formatter.field("recommendation_ids", &self.recommendation_ids);
             formatter.field("recommendation_types", &self.recommendation_types);
             formatter.field("format", &self.format);
-            formatter.field(
-                "recommendation_template_arn",
-                &self.recommendation_template_arn,
-            );
+            formatter.field("recommendation_template_arn", &self.recommendation_template_arn);
             formatter.field("message", &self.message);
             formatter.field("status", &self.status);
             formatter.field("name", &self.name);
@@ -4810,6 +4382,8 @@ pub mod recommendation_template {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RecommendationTemplate {
     /// Creates a new builder-style object to manufacture [`RecommendationTemplate`](crate::model::RecommendationTemplate).
@@ -4824,9 +4398,9 @@ impl RecommendationTemplate {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationtemplatestatus = unimplemented!();
 /// match recommendationtemplatestatus {
@@ -4850,22 +4424,14 @@ impl RecommendationTemplate {
 /// Specifically, when `recommendationtemplatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationTemplateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecommendationTemplateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -4876,7 +4442,7 @@ pub enum RecommendationTemplateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationTemplateStatus {
     fn from(s: &str) -> Self {
@@ -4885,19 +4451,17 @@ impl std::convert::From<&str> for RecommendationTemplateStatus {
             "InProgress" => RecommendationTemplateStatus::InProgress,
             "Pending" => RecommendationTemplateStatus::Pending,
             "Success" => RecommendationTemplateStatus::Success,
-            other => RecommendationTemplateStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RecommendationTemplateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecommendationTemplateStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationTemplateStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecommendationTemplateStatus::from(s))
+                }
+            }
 impl RecommendationTemplateStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4906,12 +4470,14 @@ impl RecommendationTemplateStatus {
             RecommendationTemplateStatus::InProgress => "InProgress",
             RecommendationTemplateStatus::Pending => "Pending",
             RecommendationTemplateStatus::Success => "Success",
-            RecommendationTemplateStatus::Unknown(value) => value.as_str(),
+            RecommendationTemplateStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Pending", "Success"]
+        &[
+            "Failed", "InProgress", "Pending", "Success"
+        ]
     }
 }
 impl AsRef<str> for RecommendationTemplateStatus {
@@ -4926,9 +4492,9 @@ impl AsRef<str> for RecommendationTemplateStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let templateformat = unimplemented!();
 /// match templateformat {
@@ -4950,58 +4516,52 @@ impl AsRef<str> for RecommendationTemplateStatus {
 /// Specifically, when `templateformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TemplateFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TemplateFormat {
     #[allow(missing_docs)] // documentation missing in model
     CfnJson,
     #[allow(missing_docs)] // documentation missing in model
     CfnYaml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateFormat {
     fn from(s: &str) -> Self {
         match s {
             "CfnJson" => TemplateFormat::CfnJson,
             "CfnYaml" => TemplateFormat::CfnYaml,
-            other => TemplateFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TemplateFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TemplateFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TemplateFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TemplateFormat::from(s))
+                }
+            }
 impl TemplateFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemplateFormat::CfnJson => "CfnJson",
             TemplateFormat::CfnYaml => "CfnYaml",
-            TemplateFormat::Unknown(value) => value.as_str(),
+            TemplateFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CfnJson", "CfnYaml"]
+        &[
+            "CfnJson", "CfnYaml"
+        ]
     }
 }
 impl AsRef<str> for TemplateFormat {
@@ -5016,9 +4576,9 @@ impl AsRef<str> for TemplateFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let renderrecommendationtype = unimplemented!();
 /// match renderrecommendationtype {
@@ -5041,22 +4601,14 @@ impl AsRef<str> for TemplateFormat {
 /// Specifically, when `renderrecommendationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RenderRecommendationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RenderRecommendationType {
     #[allow(missing_docs)] // documentation missing in model
     Alarm,
@@ -5065,7 +4617,7 @@ pub enum RenderRecommendationType {
     #[allow(missing_docs)] // documentation missing in model
     Test,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RenderRecommendationType {
     fn from(s: &str) -> Self {
@@ -5073,19 +4625,17 @@ impl std::convert::From<&str> for RenderRecommendationType {
             "Alarm" => RenderRecommendationType::Alarm,
             "Sop" => RenderRecommendationType::Sop,
             "Test" => RenderRecommendationType::Test,
-            other => RenderRecommendationType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RenderRecommendationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RenderRecommendationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RenderRecommendationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RenderRecommendationType::from(s))
+                }
+            }
 impl RenderRecommendationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5093,12 +4643,14 @@ impl RenderRecommendationType {
             RenderRecommendationType::Alarm => "Alarm",
             RenderRecommendationType::Sop => "Sop",
             RenderRecommendationType::Test => "Test",
-            RenderRecommendationType::Unknown(value) => value.as_str(),
+            RenderRecommendationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Alarm", "Sop", "Test"]
+        &[
+            "Alarm", "Sop", "Test"
+        ]
     }
 }
 impl AsRef<str> for RenderRecommendationType {
@@ -5110,7 +4662,7 @@ impl AsRef<str> for RenderRecommendationType {
 /// <p>The location of the Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The name of the Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -5120,17 +4672,17 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The name of the Amazon S3 bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The prefix for the Amazon S3 bucket.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5145,8 +4697,7 @@ pub mod s3_location {
         }
         /// <p>The name of the Amazon S3 bucket.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The prefix for the Amazon S3 bucket.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5155,17 +4706,20 @@ pub mod s3_location {
         }
         /// <p>The prefix for the Amazon S3 bucket.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                bucket: self.bucket,
-                prefix: self.prefix,
+                bucket: self.bucket
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -5177,20 +4731,20 @@ impl S3Location {
 /// <p>The version of the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppVersionSummary {
+pub struct AppVersionSummary  {
     /// <p>The version of the application.</p>
     #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
 }
 impl AppVersionSummary {
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
 }
 /// See [`AppVersionSummary`](crate::model::AppVersionSummary).
 pub mod app_version_summary {
-
+    
     /// A builder for [`AppVersionSummary`](crate::model::AppVersionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5204,16 +4758,18 @@ pub mod app_version_summary {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// Consumes the builder and constructs a [`AppVersionSummary`](crate::model::AppVersionSummary).
         pub fn build(self) -> crate::model::AppVersionSummary {
             crate::model::AppVersionSummary {
-                app_version: self.app_version,
+                app_version: self.app_version
+                ,
             }
         }
     }
+    
+    
 }
 impl AppVersionSummary {
     /// Creates a new builder-style object to manufacture [`AppVersionSummary`](crate::model::AppVersionSummary).
@@ -5225,7 +4781,7 @@ impl AppVersionSummary {
 /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhysicalResource {
+pub struct PhysicalResource  {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
@@ -5244,29 +4800,29 @@ pub struct PhysicalResource {
 }
 impl PhysicalResource {
     /// <p>The name of the resource.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<&crate::model::LogicalResourceId> {
+    pub fn logical_resource_id(&self) -> std::option::Option<& crate::model::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<&crate::model::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> std::option::Option<& crate::model::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The application components that belong to this resource.</p>
-    pub fn app_components(&self) -> std::option::Option<&[crate::model::AppComponent]> {
+    pub fn app_components(&self) -> std::option::Option<& [crate::model::AppComponent]> {
         self.app_components.as_deref()
     }
 }
 /// See [`PhysicalResource`](crate::model::PhysicalResource).
 pub mod physical_resource {
-
+    
     /// A builder for [`PhysicalResource`](crate::model::PhysicalResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5283,12 +4839,8 @@ pub mod physical_resource {
             self
         }
         /// <p>The name of the resource.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
         /// <p>The logical identifier of the resource.</p>
         pub fn logical_resource_id(mut self, input: crate::model::LogicalResourceId) -> Self {
@@ -5296,12 +4848,8 @@ pub mod physical_resource {
             self
         }
         /// <p>The logical identifier of the resource.</p>
-        pub fn set_logical_resource_id(
-            mut self,
-            input: std::option::Option<crate::model::LogicalResourceId>,
-        ) -> Self {
-            self.logical_resource_id = input;
-            self
+        pub fn set_logical_resource_id(mut self, input: std::option::Option<crate::model::LogicalResourceId>) -> Self {
+            self.logical_resource_id = input; self
         }
         /// <p>The physical identifier of the resource.</p>
         pub fn physical_resource_id(mut self, input: crate::model::PhysicalResourceId) -> Self {
@@ -5309,12 +4857,8 @@ pub mod physical_resource {
             self
         }
         /// <p>The physical identifier of the resource.</p>
-        pub fn set_physical_resource_id(
-            mut self,
-            input: std::option::Option<crate::model::PhysicalResourceId>,
-        ) -> Self {
-            self.physical_resource_id = input;
-            self
+        pub fn set_physical_resource_id(mut self, input: std::option::Option<crate::model::PhysicalResourceId>) -> Self {
+            self.physical_resource_id = input; self
         }
         /// <p>The type of resource.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5322,12 +4866,8 @@ pub mod physical_resource {
             self
         }
         /// <p>The type of resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `app_components`.
         ///
@@ -5336,29 +4876,32 @@ pub mod physical_resource {
         /// <p>The application components that belong to this resource.</p>
         pub fn app_components(mut self, input: crate::model::AppComponent) -> Self {
             let mut v = self.app_components.unwrap_or_default();
-            v.push(input);
-            self.app_components = Some(v);
-            self
+                            v.push(input);
+                            self.app_components = Some(v);
+                            self
         }
         /// <p>The application components that belong to this resource.</p>
-        pub fn set_app_components(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppComponent>>,
-        ) -> Self {
-            self.app_components = input;
-            self
+        pub fn set_app_components(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppComponent>>) -> Self {
+            self.app_components = input; self
         }
         /// Consumes the builder and constructs a [`PhysicalResource`](crate::model::PhysicalResource).
         pub fn build(self) -> crate::model::PhysicalResource {
             crate::model::PhysicalResource {
-                resource_name: self.resource_name,
-                logical_resource_id: self.logical_resource_id,
-                physical_resource_id: self.physical_resource_id,
-                resource_type: self.resource_type,
-                app_components: self.app_components,
+                resource_name: self.resource_name
+                ,
+                logical_resource_id: self.logical_resource_id
+                ,
+                physical_resource_id: self.physical_resource_id
+                ,
+                resource_type: self.resource_type
+                ,
+                app_components: self.app_components
+                ,
             }
         }
     }
+    
+    
 }
 impl PhysicalResource {
     /// Creates a new builder-style object to manufacture [`PhysicalResource`](crate::model::PhysicalResource).
@@ -5370,7 +4913,7 @@ impl PhysicalResource {
 /// <p>Defines an application component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppComponent {
+pub struct AppComponent  {
     /// <p>The name of the application component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5380,17 +4923,17 @@ pub struct AppComponent {
 }
 impl AppComponent {
     /// <p>The name of the application component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of application component.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`AppComponent`](crate::model::AppComponent).
 pub mod app_component {
-
+    
     /// A builder for [`AppComponent`](crate::model::AppComponent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5405,8 +4948,7 @@ pub mod app_component {
         }
         /// <p>The name of the application component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of application component.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5415,17 +4957,20 @@ pub mod app_component {
         }
         /// <p>The type of application component.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`AppComponent`](crate::model::AppComponent).
         pub fn build(self) -> crate::model::AppComponent {
             crate::model::AppComponent {
-                name: self.name,
-                r#type: self.r#type,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl AppComponent {
     /// Creates a new builder-style object to manufacture [`AppComponent`](crate::model::AppComponent).
@@ -5437,7 +4982,7 @@ impl AppComponent {
 /// <p>Defines a resource mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceMapping {
+pub struct ResourceMapping  {
     /// <p>The name of the resource this resource is mapped to.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
@@ -5450,32 +4995,32 @@ pub struct ResourceMapping {
     /// <p>The name of the resource group this resource is mapped to.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of resource mapping.</p>
-    /// <dl>
+    /// <p>Specifies the type of resource mapping.</p> 
+    /// <dl> 
     /// <dt>
     /// AppRegistryApp
-    /// </dt>
-    /// <dd>
-    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// CfnStack
-    /// </dt>
-    /// <dd>
-    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// Resource
-    /// </dt>
-    /// <dd>
-    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// ResourceGroup
-    /// </dt>
-    /// <dd>
-    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub mapping_type: std::option::Option<crate::model::ResourceMappingType>,
@@ -5488,63 +5033,63 @@ pub struct ResourceMapping {
 }
 impl ResourceMapping {
     /// <p>The name of the resource this resource is mapped to.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
-    pub fn logical_stack_name(&self) -> std::option::Option<&str> {
+    pub fn logical_stack_name(&self) -> std::option::Option<& str> {
         self.logical_stack_name.as_deref()
     }
     /// <p>The name of the application this resource is mapped to.</p>
-    pub fn app_registry_app_name(&self) -> std::option::Option<&str> {
+    pub fn app_registry_app_name(&self) -> std::option::Option<& str> {
         self.app_registry_app_name.as_deref()
     }
     /// <p>The name of the resource group this resource is mapped to.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>Specifies the type of resource mapping.</p>
-    /// <dl>
+    /// <p>Specifies the type of resource mapping.</p> 
+    /// <dl> 
     /// <dt>
     /// AppRegistryApp
-    /// </dt>
-    /// <dd>
-    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// CfnStack
-    /// </dt>
-    /// <dd>
-    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// Resource
-    /// </dt>
-    /// <dd>
-    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// ResourceGroup
-    /// </dt>
-    /// <dd>
-    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn mapping_type(&self) -> std::option::Option<&crate::model::ResourceMappingType> {
+    pub fn mapping_type(&self) -> std::option::Option<& crate::model::ResourceMappingType> {
         self.mapping_type.as_ref()
     }
     /// <p>The identifier of this resource.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<&crate::model::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> std::option::Option<& crate::model::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p> The short name of the Terraform source. </p>
-    pub fn terraform_source_name(&self) -> std::option::Option<&str> {
+    pub fn terraform_source_name(&self) -> std::option::Option<& str> {
         self.terraform_source_name.as_deref()
     }
 }
 /// See [`ResourceMapping`](crate::model::ResourceMapping).
 pub mod resource_mapping {
-
+    
     /// A builder for [`ResourceMapping`](crate::model::ResourceMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5563,12 +5108,8 @@ pub mod resource_mapping {
             self
         }
         /// <p>The name of the resource this resource is mapped to.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
         /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
         pub fn logical_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5576,12 +5117,8 @@ pub mod resource_mapping {
             self
         }
         /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
-        pub fn set_logical_stack_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.logical_stack_name = input;
-            self
+        pub fn set_logical_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logical_stack_name = input; self
         }
         /// <p>The name of the application this resource is mapped to.</p>
         pub fn app_registry_app_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5589,12 +5126,8 @@ pub mod resource_mapping {
             self
         }
         /// <p>The name of the application this resource is mapped to.</p>
-        pub fn set_app_registry_app_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_registry_app_name = input;
-            self
+        pub fn set_app_registry_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_registry_app_name = input; self
         }
         /// <p>The name of the resource group this resource is mapped to.</p>
         pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5602,77 +5135,69 @@ pub mod resource_mapping {
             self
         }
         /// <p>The name of the resource group this resource is mapped to.</p>
-        pub fn set_resource_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_group_name = input;
-            self
+        pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_group_name = input; self
         }
-        /// <p>Specifies the type of resource mapping.</p>
-        /// <dl>
+        /// <p>Specifies the type of resource mapping.</p> 
+        /// <dl> 
         /// <dt>
         /// AppRegistryApp
-        /// </dt>
-        /// <dd>
-        /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p> 
+        /// </dd> 
         /// <dt>
         /// CfnStack
-        /// </dt>
-        /// <dd>
-        /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p> 
+        /// </dd> 
         /// <dt>
         /// Resource
-        /// </dt>
-        /// <dd>
-        /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p> 
+        /// </dd> 
         /// <dt>
         /// ResourceGroup
-        /// </dt>
-        /// <dd>
-        /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p> 
+        /// </dd> 
         /// </dl>
         pub fn mapping_type(mut self, input: crate::model::ResourceMappingType) -> Self {
             self.mapping_type = Some(input);
             self
         }
-        /// <p>Specifies the type of resource mapping.</p>
-        /// <dl>
+        /// <p>Specifies the type of resource mapping.</p> 
+        /// <dl> 
         /// <dt>
         /// AppRegistryApp
-        /// </dt>
-        /// <dd>
-        /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p> 
+        /// </dd> 
         /// <dt>
         /// CfnStack
-        /// </dt>
-        /// <dd>
-        /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p> 
+        /// </dd> 
         /// <dt>
         /// Resource
-        /// </dt>
-        /// <dd>
-        /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p> 
+        /// </dd> 
         /// <dt>
         /// ResourceGroup
-        /// </dt>
-        /// <dd>
-        /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_mapping_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMappingType>,
-        ) -> Self {
-            self.mapping_type = input;
-            self
+        pub fn set_mapping_type(mut self, input: std::option::Option<crate::model::ResourceMappingType>) -> Self {
+            self.mapping_type = input; self
         }
         /// <p>The identifier of this resource.</p>
         pub fn physical_resource_id(mut self, input: crate::model::PhysicalResourceId) -> Self {
@@ -5680,12 +5205,8 @@ pub mod resource_mapping {
             self
         }
         /// <p>The identifier of this resource.</p>
-        pub fn set_physical_resource_id(
-            mut self,
-            input: std::option::Option<crate::model::PhysicalResourceId>,
-        ) -> Self {
-            self.physical_resource_id = input;
-            self
+        pub fn set_physical_resource_id(mut self, input: std::option::Option<crate::model::PhysicalResourceId>) -> Self {
+            self.physical_resource_id = input; self
         }
         /// <p> The short name of the Terraform source. </p>
         pub fn terraform_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5693,26 +5214,31 @@ pub mod resource_mapping {
             self
         }
         /// <p> The short name of the Terraform source. </p>
-        pub fn set_terraform_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.terraform_source_name = input;
-            self
+        pub fn set_terraform_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.terraform_source_name = input; self
         }
         /// Consumes the builder and constructs a [`ResourceMapping`](crate::model::ResourceMapping).
         pub fn build(self) -> crate::model::ResourceMapping {
             crate::model::ResourceMapping {
-                resource_name: self.resource_name,
-                logical_stack_name: self.logical_stack_name,
-                app_registry_app_name: self.app_registry_app_name,
-                resource_group_name: self.resource_group_name,
-                mapping_type: self.mapping_type,
-                physical_resource_id: self.physical_resource_id,
-                terraform_source_name: self.terraform_source_name,
+                resource_name: self.resource_name
+                ,
+                logical_stack_name: self.logical_stack_name
+                ,
+                app_registry_app_name: self.app_registry_app_name
+                ,
+                resource_group_name: self.resource_group_name
+                ,
+                mapping_type: self.mapping_type
+                ,
+                physical_resource_id: self.physical_resource_id
+                ,
+                terraform_source_name: self.terraform_source_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceMapping {
     /// Creates a new builder-style object to manufacture [`ResourceMapping`](crate::model::ResourceMapping).
@@ -5727,9 +5253,9 @@ impl ResourceMapping {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcemappingtype = unimplemented!();
 /// match resourcemappingtype {
@@ -5754,22 +5280,14 @@ impl ResourceMapping {
 /// Specifically, when `resourcemappingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceMappingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceMappingType {
     #[allow(missing_docs)] // documentation missing in model
     AppRegistryApp,
@@ -5782,7 +5300,7 @@ pub enum ResourceMappingType {
     #[allow(missing_docs)] // documentation missing in model
     Terraform,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceMappingType {
     fn from(s: &str) -> Self {
@@ -5792,19 +5310,17 @@ impl std::convert::From<&str> for ResourceMappingType {
             "Resource" => ResourceMappingType::Resource,
             "ResourceGroup" => ResourceMappingType::ResourceGroup,
             "Terraform" => ResourceMappingType::Terraform,
-            other => {
-                ResourceMappingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceMappingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceMappingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceMappingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceMappingType::from(s))
+                }
+            }
 impl ResourceMappingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5814,17 +5330,13 @@ impl ResourceMappingType {
             ResourceMappingType::Resource => "Resource",
             ResourceMappingType::ResourceGroup => "ResourceGroup",
             ResourceMappingType::Terraform => "Terraform",
-            ResourceMappingType::Unknown(value) => value.as_str(),
+            ResourceMappingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AppRegistryApp",
-            "CfnStack",
-            "Resource",
-            "ResourceGroup",
-            "Terraform",
+            "AppRegistryApp", "CfnStack", "Resource", "ResourceGroup", "Terraform"
         ]
     }
 }
@@ -5837,7 +5349,7 @@ impl AsRef<str> for ResourceMappingType {
 /// <p>Defines an application summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppSummary {
+pub struct AppSummary  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -5865,23 +5377,23 @@ pub struct AppSummary {
 }
 impl AppSummary {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The optional description for an app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp for when the app was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::model::AppComplianceStatusType> {
+    pub fn compliance_status(&self) -> std::option::Option<& crate::model::AppComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
@@ -5889,19 +5401,17 @@ impl AppSummary {
         self.resiliency_score
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn assessment_schedule(
-        &self,
-    ) -> std::option::Option<&crate::model::AppAssessmentScheduleType> {
+    pub fn assessment_schedule(&self) -> std::option::Option<& crate::model::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AppStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AppStatusType> {
         self.status.as_ref()
     }
 }
 /// See [`AppSummary`](crate::model::AppSummary).
 pub mod app_summary {
-
+    
     /// A builder for [`AppSummary`](crate::model::AppSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5911,8 +5421,7 @@ pub mod app_summary {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) compliance_status: std::option::Option<crate::model::AppComplianceStatusType>,
         pub(crate) resiliency_score: std::option::Option<f64>,
-        pub(crate) assessment_schedule:
-            std::option::Option<crate::model::AppAssessmentScheduleType>,
+        pub(crate) assessment_schedule: std::option::Option<crate::model::AppAssessmentScheduleType>,
         pub(crate) status: std::option::Option<crate::model::AppStatusType>,
     }
     impl Builder {
@@ -5923,8 +5432,7 @@ pub mod app_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The name of the application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5933,8 +5441,7 @@ pub mod app_summary {
         }
         /// <p>The name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The optional description for an app.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5943,8 +5450,7 @@ pub mod app_summary {
         }
         /// <p>The optional description for an app.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The timestamp for when the app was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5952,12 +5458,8 @@ pub mod app_summary {
             self
         }
         /// <p>The timestamp for when the app was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
         pub fn compliance_status(mut self, input: crate::model::AppComplianceStatusType) -> Self {
@@ -5965,12 +5467,8 @@ pub mod app_summary {
             self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
-        pub fn set_compliance_status(
-            mut self,
-            input: std::option::Option<crate::model::AppComplianceStatusType>,
-        ) -> Self {
-            self.compliance_status = input;
-            self
+        pub fn set_compliance_status(mut self, input: std::option::Option<crate::model::AppComplianceStatusType>) -> Self {
+            self.compliance_status = input; self
         }
         /// <p>The current resiliency score for the application.</p>
         pub fn resiliency_score(mut self, input: f64) -> Self {
@@ -5979,24 +5477,16 @@ pub mod app_summary {
         }
         /// <p>The current resiliency score for the application.</p>
         pub fn set_resiliency_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.resiliency_score = input;
-            self
+            self.resiliency_score = input; self
         }
         /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-        pub fn assessment_schedule(
-            mut self,
-            input: crate::model::AppAssessmentScheduleType,
-        ) -> Self {
+        pub fn assessment_schedule(mut self, input: crate::model::AppAssessmentScheduleType) -> Self {
             self.assessment_schedule = Some(input);
             self
         }
         /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-        pub fn set_assessment_schedule(
-            mut self,
-            input: std::option::Option<crate::model::AppAssessmentScheduleType>,
-        ) -> Self {
-            self.assessment_schedule = input;
-            self
+        pub fn set_assessment_schedule(mut self, input: std::option::Option<crate::model::AppAssessmentScheduleType>) -> Self {
+            self.assessment_schedule = input; self
         }
         /// <p>The status of the application.</p>
         pub fn status(mut self, input: crate::model::AppStatusType) -> Self {
@@ -6004,27 +5494,34 @@ pub mod app_summary {
             self
         }
         /// <p>The status of the application.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AppStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AppStatusType>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`AppSummary`](crate::model::AppSummary).
         pub fn build(self) -> crate::model::AppSummary {
             crate::model::AppSummary {
-                app_arn: self.app_arn,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                compliance_status: self.compliance_status,
-                resiliency_score: self.resiliency_score.unwrap_or_default(),
-                assessment_schedule: self.assessment_schedule,
-                status: self.status,
+                app_arn: self.app_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                compliance_status: self.compliance_status
+                ,
+                resiliency_score: self.resiliency_score
+                    .unwrap_or_default()
+                ,
+                assessment_schedule: self.assessment_schedule
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl AppSummary {
     /// Creates a new builder-style object to manufacture [`AppSummary`](crate::model::AppSummary).
@@ -6036,7 +5533,7 @@ impl AppSummary {
 /// <p>Defines recommendations for a Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentRecommendation {
+pub struct ComponentRecommendation  {
     /// <p>The name of the application component.</p>
     #[doc(hidden)]
     pub app_component_name: std::option::Option<std::string::String>,
@@ -6045,38 +5542,31 @@ pub struct ComponentRecommendation {
     pub recommendation_status: std::option::Option<crate::model::RecommendationComplianceStatus>,
     /// <p>The list of recommendations.</p>
     #[doc(hidden)]
-    pub config_recommendations:
-        std::option::Option<std::vec::Vec<crate::model::ConfigRecommendation>>,
+    pub config_recommendations: std::option::Option<std::vec::Vec<crate::model::ConfigRecommendation>>,
 }
 impl ComponentRecommendation {
     /// <p>The name of the application component.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The recommendation status.</p>
-    pub fn recommendation_status(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommendationComplianceStatus> {
+    pub fn recommendation_status(&self) -> std::option::Option<& crate::model::RecommendationComplianceStatus> {
         self.recommendation_status.as_ref()
     }
     /// <p>The list of recommendations.</p>
-    pub fn config_recommendations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConfigRecommendation]> {
+    pub fn config_recommendations(&self) -> std::option::Option<& [crate::model::ConfigRecommendation]> {
         self.config_recommendations.as_deref()
     }
 }
 /// See [`ComponentRecommendation`](crate::model::ComponentRecommendation).
 pub mod component_recommendation {
-
+    
     /// A builder for [`ComponentRecommendation`](crate::model::ComponentRecommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_component_name: std::option::Option<std::string::String>,
-        pub(crate) recommendation_status:
-            std::option::Option<crate::model::RecommendationComplianceStatus>,
-        pub(crate) config_recommendations:
-            std::option::Option<std::vec::Vec<crate::model::ConfigRecommendation>>,
+        pub(crate) recommendation_status: std::option::Option<crate::model::RecommendationComplianceStatus>,
+        pub(crate) config_recommendations: std::option::Option<std::vec::Vec<crate::model::ConfigRecommendation>>,
     }
     impl Builder {
         /// <p>The name of the application component.</p>
@@ -6085,28 +5575,17 @@ pub mod component_recommendation {
             self
         }
         /// <p>The name of the application component.</p>
-        pub fn set_app_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_component_name = input;
-            self
+        pub fn set_app_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_component_name = input; self
         }
         /// <p>The recommendation status.</p>
-        pub fn recommendation_status(
-            mut self,
-            input: crate::model::RecommendationComplianceStatus,
-        ) -> Self {
+        pub fn recommendation_status(mut self, input: crate::model::RecommendationComplianceStatus) -> Self {
             self.recommendation_status = Some(input);
             self
         }
         /// <p>The recommendation status.</p>
-        pub fn set_recommendation_status(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationComplianceStatus>,
-        ) -> Self {
-            self.recommendation_status = input;
-            self
+        pub fn set_recommendation_status(mut self, input: std::option::Option<crate::model::RecommendationComplianceStatus>) -> Self {
+            self.recommendation_status = input; self
         }
         /// Appends an item to `config_recommendations`.
         ///
@@ -6115,27 +5594,28 @@ pub mod component_recommendation {
         /// <p>The list of recommendations.</p>
         pub fn config_recommendations(mut self, input: crate::model::ConfigRecommendation) -> Self {
             let mut v = self.config_recommendations.unwrap_or_default();
-            v.push(input);
-            self.config_recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.config_recommendations = Some(v);
+                            self
         }
         /// <p>The list of recommendations.</p>
-        pub fn set_config_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigRecommendation>>,
-        ) -> Self {
-            self.config_recommendations = input;
-            self
+        pub fn set_config_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigRecommendation>>) -> Self {
+            self.config_recommendations = input; self
         }
         /// Consumes the builder and constructs a [`ComponentRecommendation`](crate::model::ComponentRecommendation).
         pub fn build(self) -> crate::model::ComponentRecommendation {
             crate::model::ComponentRecommendation {
-                app_component_name: self.app_component_name,
-                recommendation_status: self.recommendation_status,
-                config_recommendations: self.config_recommendations,
+                app_component_name: self.app_component_name
+                ,
+                recommendation_status: self.recommendation_status
+                ,
+                config_recommendations: self.config_recommendations
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentRecommendation {
     /// Creates a new builder-style object to manufacture [`ComponentRecommendation`](crate::model::ComponentRecommendation).
@@ -6147,7 +5627,7 @@ impl ComponentRecommendation {
 /// <p>Defines a configuration recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigRecommendation {
+pub struct ConfigRecommendation  {
     /// <p>The cost for the application.</p>
     #[doc(hidden)]
     pub cost: std::option::Option<crate::model::Cost>,
@@ -6156,17 +5636,10 @@ pub struct ConfigRecommendation {
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
     #[doc(hidden)]
-    pub compliance: std::option::Option<
-        std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>,
-    >,
+    pub compliance: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>,
     /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
     #[doc(hidden)]
-    pub recommendation_compliance: std::option::Option<
-        std::collections::HashMap<
-            crate::model::DisruptionType,
-            crate::model::RecommendationDisruptionCompliance,
-        >,
-    >,
+    pub recommendation_compliance: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::RecommendationDisruptionCompliance>>,
     /// <p>The type of optimization.</p>
     #[doc(hidden)]
     pub optimization_type: std::option::Option<crate::model::ConfigRecommendationOptimizationType>,
@@ -6188,84 +5661,57 @@ pub struct ConfigRecommendation {
 }
 impl ConfigRecommendation {
     /// <p>The cost for the application.</p>
-    pub fn cost(&self) -> std::option::Option<&crate::model::Cost> {
+    pub fn cost(&self) -> std::option::Option<& crate::model::Cost> {
         self.cost.as_ref()
     }
     /// <p>The application component name.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
-    pub fn compliance(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DisruptionType,
-            crate::model::DisruptionCompliance,
-        >,
-    > {
+    pub fn compliance(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>> {
         self.compliance.as_ref()
     }
     /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
-    pub fn recommendation_compliance(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DisruptionType,
-            crate::model::RecommendationDisruptionCompliance,
-        >,
-    > {
+    pub fn recommendation_compliance(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DisruptionType, crate::model::RecommendationDisruptionCompliance>> {
         self.recommendation_compliance.as_ref()
     }
     /// <p>The type of optimization.</p>
-    pub fn optimization_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfigRecommendationOptimizationType> {
+    pub fn optimization_type(&self) -> std::option::Option<& crate::model::ConfigRecommendationOptimizationType> {
         self.optimization_type.as_ref()
     }
     /// <p>The name of the recommendation configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The optional description for an app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>List of the suggested configuration changes.</p>
-    pub fn suggested_changes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn suggested_changes(&self) -> std::option::Option<& [std::string::String]> {
         self.suggested_changes.as_deref()
     }
     /// <p>The architecture type.</p>
-    pub fn ha_architecture(&self) -> std::option::Option<&crate::model::HaArchitecture> {
+    pub fn ha_architecture(&self) -> std::option::Option<& crate::model::HaArchitecture> {
         self.ha_architecture.as_ref()
     }
     /// <p>The reference identifier for the recommendation configuration.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> std::option::Option<& str> {
         self.reference_id.as_deref()
     }
 }
 /// See [`ConfigRecommendation`](crate::model::ConfigRecommendation).
 pub mod config_recommendation {
-
+    
     /// A builder for [`ConfigRecommendation`](crate::model::ConfigRecommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost: std::option::Option<crate::model::Cost>,
         pub(crate) app_component_name: std::option::Option<std::string::String>,
-        pub(crate) compliance: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DisruptionType,
-                crate::model::DisruptionCompliance,
-            >,
-        >,
-        pub(crate) recommendation_compliance: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DisruptionType,
-                crate::model::RecommendationDisruptionCompliance,
-            >,
-        >,
-        pub(crate) optimization_type:
-            std::option::Option<crate::model::ConfigRecommendationOptimizationType>,
+        pub(crate) compliance: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>,
+        pub(crate) recommendation_compliance: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::RecommendationDisruptionCompliance>>,
+        pub(crate) optimization_type: std::option::Option<crate::model::ConfigRecommendationOptimizationType>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) suggested_changes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6280,8 +5726,7 @@ pub mod config_recommendation {
         }
         /// <p>The cost for the application.</p>
         pub fn set_cost(mut self, input: std::option::Option<crate::model::Cost>) -> Self {
-            self.cost = input;
-            self
+            self.cost = input; self
         }
         /// <p>The application component name.</p>
         pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6289,84 +5734,47 @@ pub mod config_recommendation {
             self
         }
         /// <p>The application component name.</p>
-        pub fn set_app_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_component_name = input;
-            self
+        pub fn set_app_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_component_name = input; self
         }
         /// Adds a key-value pair to `compliance`.
         ///
         /// To override the contents of this collection use [`set_compliance`](Self::set_compliance).
         ///
         /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
-        pub fn compliance(
-            mut self,
-            k: crate::model::DisruptionType,
-            v: crate::model::DisruptionCompliance,
-        ) -> Self {
+        pub fn compliance(mut self, k: crate::model::DisruptionType, v: crate::model::DisruptionCompliance) -> Self {
             let mut hash_map = self.compliance.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.compliance = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.compliance = Some(hash_map);
+                            self
         }
         /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
-        pub fn set_compliance(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DisruptionType,
-                    crate::model::DisruptionCompliance,
-                >,
-            >,
-        ) -> Self {
-            self.compliance = input;
-            self
+        pub fn set_compliance(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>) -> Self {
+            self.compliance = input; self
         }
         /// Adds a key-value pair to `recommendation_compliance`.
         ///
         /// To override the contents of this collection use [`set_recommendation_compliance`](Self::set_recommendation_compliance).
         ///
         /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
-        pub fn recommendation_compliance(
-            mut self,
-            k: crate::model::DisruptionType,
-            v: crate::model::RecommendationDisruptionCompliance,
-        ) -> Self {
+        pub fn recommendation_compliance(mut self, k: crate::model::DisruptionType, v: crate::model::RecommendationDisruptionCompliance) -> Self {
             let mut hash_map = self.recommendation_compliance.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.recommendation_compliance = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.recommendation_compliance = Some(hash_map);
+                            self
         }
         /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
-        pub fn set_recommendation_compliance(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DisruptionType,
-                    crate::model::RecommendationDisruptionCompliance,
-                >,
-            >,
-        ) -> Self {
-            self.recommendation_compliance = input;
-            self
+        pub fn set_recommendation_compliance(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::RecommendationDisruptionCompliance>>) -> Self {
+            self.recommendation_compliance = input; self
         }
         /// <p>The type of optimization.</p>
-        pub fn optimization_type(
-            mut self,
-            input: crate::model::ConfigRecommendationOptimizationType,
-        ) -> Self {
+        pub fn optimization_type(mut self, input: crate::model::ConfigRecommendationOptimizationType) -> Self {
             self.optimization_type = Some(input);
             self
         }
         /// <p>The type of optimization.</p>
-        pub fn set_optimization_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfigRecommendationOptimizationType>,
-        ) -> Self {
-            self.optimization_type = input;
-            self
+        pub fn set_optimization_type(mut self, input: std::option::Option<crate::model::ConfigRecommendationOptimizationType>) -> Self {
+            self.optimization_type = input; self
         }
         /// <p>The name of the recommendation configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6375,8 +5783,7 @@ pub mod config_recommendation {
         }
         /// <p>The name of the recommendation configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The optional description for an app.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6385,8 +5792,7 @@ pub mod config_recommendation {
         }
         /// <p>The optional description for an app.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `suggested_changes`.
         ///
@@ -6395,17 +5801,13 @@ pub mod config_recommendation {
         /// <p>List of the suggested configuration changes.</p>
         pub fn suggested_changes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.suggested_changes.unwrap_or_default();
-            v.push(input.into());
-            self.suggested_changes = Some(v);
-            self
+                            v.push(input.into());
+                            self.suggested_changes = Some(v);
+                            self
         }
         /// <p>List of the suggested configuration changes.</p>
-        pub fn set_suggested_changes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.suggested_changes = input;
-            self
+        pub fn set_suggested_changes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.suggested_changes = input; self
         }
         /// <p>The architecture type.</p>
         pub fn ha_architecture(mut self, input: crate::model::HaArchitecture) -> Self {
@@ -6413,12 +5815,8 @@ pub mod config_recommendation {
             self
         }
         /// <p>The architecture type.</p>
-        pub fn set_ha_architecture(
-            mut self,
-            input: std::option::Option<crate::model::HaArchitecture>,
-        ) -> Self {
-            self.ha_architecture = input;
-            self
+        pub fn set_ha_architecture(mut self, input: std::option::Option<crate::model::HaArchitecture>) -> Self {
+            self.ha_architecture = input; self
         }
         /// <p>The reference identifier for the recommendation configuration.</p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6427,25 +5825,36 @@ pub mod config_recommendation {
         }
         /// <p>The reference identifier for the recommendation configuration.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// Consumes the builder and constructs a [`ConfigRecommendation`](crate::model::ConfigRecommendation).
         pub fn build(self) -> crate::model::ConfigRecommendation {
             crate::model::ConfigRecommendation {
-                cost: self.cost,
-                app_component_name: self.app_component_name,
-                compliance: self.compliance,
-                recommendation_compliance: self.recommendation_compliance,
-                optimization_type: self.optimization_type,
-                name: self.name,
-                description: self.description,
-                suggested_changes: self.suggested_changes,
-                ha_architecture: self.ha_architecture,
-                reference_id: self.reference_id,
+                cost: self.cost
+                ,
+                app_component_name: self.app_component_name
+                ,
+                compliance: self.compliance
+                ,
+                recommendation_compliance: self.recommendation_compliance
+                ,
+                optimization_type: self.optimization_type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                suggested_changes: self.suggested_changes
+                ,
+                ha_architecture: self.ha_architecture
+                ,
+                reference_id: self.reference_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigRecommendation {
     /// Creates a new builder-style object to manufacture [`ConfigRecommendation`](crate::model::ConfigRecommendation).
@@ -6460,9 +5869,9 @@ impl ConfigRecommendation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let haarchitecture = unimplemented!();
 /// match haarchitecture {
@@ -6487,22 +5896,14 @@ impl ConfigRecommendation {
 /// Specifically, when `haarchitecture` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HaArchitecture::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HaArchitecture {
     #[allow(missing_docs)] // documentation missing in model
     BackupAndRestore,
@@ -6515,7 +5916,7 @@ pub enum HaArchitecture {
     #[allow(missing_docs)] // documentation missing in model
     WarmStandby,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HaArchitecture {
     fn from(s: &str) -> Self {
@@ -6525,17 +5926,17 @@ impl std::convert::From<&str> for HaArchitecture {
             "NoRecoveryPlan" => HaArchitecture::NoRecoveryPlan,
             "PilotLight" => HaArchitecture::PilotLight,
             "WarmStandby" => HaArchitecture::WarmStandby,
-            other => HaArchitecture::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HaArchitecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HaArchitecture {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HaArchitecture::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HaArchitecture::from(s))
+                }
+            }
 impl HaArchitecture {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6545,17 +5946,13 @@ impl HaArchitecture {
             HaArchitecture::NoRecoveryPlan => "NoRecoveryPlan",
             HaArchitecture::PilotLight => "PilotLight",
             HaArchitecture::WarmStandby => "WarmStandby",
-            HaArchitecture::Unknown(value) => value.as_str(),
+            HaArchitecture::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BackupAndRestore",
-            "MultiSite",
-            "NoRecoveryPlan",
-            "PilotLight",
-            "WarmStandby",
+            "BackupAndRestore", "MultiSite", "NoRecoveryPlan", "PilotLight", "WarmStandby"
         ]
     }
 }
@@ -6571,9 +5968,9 @@ impl AsRef<str> for HaArchitecture {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configrecommendationoptimizationtype = unimplemented!();
 /// match configrecommendationoptimizationtype {
@@ -6599,22 +5996,14 @@ impl AsRef<str> for HaArchitecture {
 /// Specifically, when `configrecommendationoptimizationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigRecommendationOptimizationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigRecommendationOptimizationType {
     #[allow(missing_docs)] // documentation missing in model
     BestAzRecovery,
@@ -6629,7 +6018,7 @@ pub enum ConfigRecommendationOptimizationType {
     #[allow(missing_docs)] // documentation missing in model
     LeastErrors,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigRecommendationOptimizationType {
     fn from(s: &str) -> Self {
@@ -6640,19 +6029,17 @@ impl std::convert::From<&str> for ConfigRecommendationOptimizationType {
             "LeastChange" => ConfigRecommendationOptimizationType::LeastChange,
             "LeastCost" => ConfigRecommendationOptimizationType::LeastCost,
             "LeastErrors" => ConfigRecommendationOptimizationType::LeastErrors,
-            other => ConfigRecommendationOptimizationType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ConfigRecommendationOptimizationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigRecommendationOptimizationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigRecommendationOptimizationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigRecommendationOptimizationType::from(s))
+                }
+            }
 impl ConfigRecommendationOptimizationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6663,18 +6050,13 @@ impl ConfigRecommendationOptimizationType {
             ConfigRecommendationOptimizationType::LeastChange => "LeastChange",
             ConfigRecommendationOptimizationType::LeastCost => "LeastCost",
             ConfigRecommendationOptimizationType::LeastErrors => "LeastErrors",
-            ConfigRecommendationOptimizationType::Unknown(value) => value.as_str(),
+            ConfigRecommendationOptimizationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BestAZRecovery",
-            "BestAttainable",
-            "BestRegionRecovery",
-            "LeastChange",
-            "LeastCost",
-            "LeastErrors",
+            "BestAZRecovery", "BestAttainable", "BestRegionRecovery", "LeastChange", "LeastCost", "LeastErrors"
         ]
     }
 }
@@ -6687,7 +6069,7 @@ impl AsRef<str> for ConfigRecommendationOptimizationType {
 /// <p>Defines a disruption compliance recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationDisruptionCompliance {
+pub struct RecommendationDisruptionCompliance  {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
     #[doc(hidden)]
     pub expected_compliance_status: std::option::Option<crate::model::ComplianceStatus>,
@@ -6706,9 +6088,7 @@ pub struct RecommendationDisruptionCompliance {
 }
 impl RecommendationDisruptionCompliance {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
-    pub fn expected_compliance_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ComplianceStatus> {
+    pub fn expected_compliance_status(&self) -> std::option::Option<& crate::model::ComplianceStatus> {
         self.expected_compliance_status.as_ref()
     }
     /// <p>The expected RTO after applying the recommended configuration change.</p>
@@ -6716,7 +6096,7 @@ impl RecommendationDisruptionCompliance {
         self.expected_rto_in_secs
     }
     /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
-    pub fn expected_rto_description(&self) -> std::option::Option<&str> {
+    pub fn expected_rto_description(&self) -> std::option::Option<& str> {
         self.expected_rto_description.as_deref()
     }
     /// <p>The expected RPO after applying the recommended configuration change.</p>
@@ -6724,13 +6104,13 @@ impl RecommendationDisruptionCompliance {
         self.expected_rpo_in_secs
     }
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
-    pub fn expected_rpo_description(&self) -> std::option::Option<&str> {
+    pub fn expected_rpo_description(&self) -> std::option::Option<& str> {
         self.expected_rpo_description.as_deref()
     }
 }
 /// See [`RecommendationDisruptionCompliance`](crate::model::RecommendationDisruptionCompliance).
 pub mod recommendation_disruption_compliance {
-
+    
     /// A builder for [`RecommendationDisruptionCompliance`](crate::model::RecommendationDisruptionCompliance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6747,12 +6127,8 @@ pub mod recommendation_disruption_compliance {
             self
         }
         /// <p>The expected compliance status after applying the recommended configuration change.</p>
-        pub fn set_expected_compliance_status(
-            mut self,
-            input: std::option::Option<crate::model::ComplianceStatus>,
-        ) -> Self {
-            self.expected_compliance_status = input;
-            self
+        pub fn set_expected_compliance_status(mut self, input: std::option::Option<crate::model::ComplianceStatus>) -> Self {
+            self.expected_compliance_status = input; self
         }
         /// <p>The expected RTO after applying the recommended configuration change.</p>
         pub fn expected_rto_in_secs(mut self, input: i32) -> Self {
@@ -6761,8 +6137,7 @@ pub mod recommendation_disruption_compliance {
         }
         /// <p>The expected RTO after applying the recommended configuration change.</p>
         pub fn set_expected_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.expected_rto_in_secs = input;
-            self
+            self.expected_rto_in_secs = input; self
         }
         /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
         pub fn expected_rto_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6770,12 +6145,8 @@ pub mod recommendation_disruption_compliance {
             self
         }
         /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
-        pub fn set_expected_rto_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expected_rto_description = input;
-            self
+        pub fn set_expected_rto_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expected_rto_description = input; self
         }
         /// <p>The expected RPO after applying the recommended configuration change.</p>
         pub fn expected_rpo_in_secs(mut self, input: i32) -> Self {
@@ -6784,8 +6155,7 @@ pub mod recommendation_disruption_compliance {
         }
         /// <p>The expected RPO after applying the recommended configuration change.</p>
         pub fn set_expected_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-            self.expected_rpo_in_secs = input;
-            self
+            self.expected_rpo_in_secs = input; self
         }
         /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
         pub fn expected_rpo_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6793,24 +6163,29 @@ pub mod recommendation_disruption_compliance {
             self
         }
         /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
-        pub fn set_expected_rpo_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expected_rpo_description = input;
-            self
+        pub fn set_expected_rpo_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expected_rpo_description = input; self
         }
         /// Consumes the builder and constructs a [`RecommendationDisruptionCompliance`](crate::model::RecommendationDisruptionCompliance).
         pub fn build(self) -> crate::model::RecommendationDisruptionCompliance {
             crate::model::RecommendationDisruptionCompliance {
-                expected_compliance_status: self.expected_compliance_status,
-                expected_rto_in_secs: self.expected_rto_in_secs.unwrap_or_default(),
-                expected_rto_description: self.expected_rto_description,
-                expected_rpo_in_secs: self.expected_rpo_in_secs.unwrap_or_default(),
-                expected_rpo_description: self.expected_rpo_description,
+                expected_compliance_status: self.expected_compliance_status
+                ,
+                expected_rto_in_secs: self.expected_rto_in_secs
+                    .unwrap_or_default()
+                ,
+                expected_rto_description: self.expected_rto_description
+                ,
+                expected_rpo_in_secs: self.expected_rpo_in_secs
+                    .unwrap_or_default()
+                ,
+                expected_rpo_description: self.expected_rpo_description
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommendationDisruptionCompliance {
     /// Creates a new builder-style object to manufacture [`RecommendationDisruptionCompliance`](crate::model::RecommendationDisruptionCompliance).
@@ -6825,9 +6200,9 @@ impl RecommendationDisruptionCompliance {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationcompliancestatus = unimplemented!();
 /// match recommendationcompliancestatus {
@@ -6850,22 +6225,14 @@ impl RecommendationDisruptionCompliance {
 /// Specifically, when `recommendationcompliancestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationComplianceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecommendationComplianceStatus {
     #[allow(missing_docs)] // documentation missing in model
     BreachedCanMeet,
@@ -6874,7 +6241,7 @@ pub enum RecommendationComplianceStatus {
     #[allow(missing_docs)] // documentation missing in model
     MetCanImprove,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecommendationComplianceStatus {
     fn from(s: &str) -> Self {
@@ -6882,19 +6249,17 @@ impl std::convert::From<&str> for RecommendationComplianceStatus {
             "BreachedCanMeet" => RecommendationComplianceStatus::BreachedCanMeet,
             "BreachedUnattainable" => RecommendationComplianceStatus::BreachedUnattainable,
             "MetCanImprove" => RecommendationComplianceStatus::MetCanImprove,
-            other => RecommendationComplianceStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RecommendationComplianceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecommendationComplianceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationComplianceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecommendationComplianceStatus::from(s))
+                }
+            }
 impl RecommendationComplianceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6902,12 +6267,14 @@ impl RecommendationComplianceStatus {
             RecommendationComplianceStatus::BreachedCanMeet => "BreachedCanMeet",
             RecommendationComplianceStatus::BreachedUnattainable => "BreachedUnattainable",
             RecommendationComplianceStatus::MetCanImprove => "MetCanImprove",
-            RecommendationComplianceStatus::Unknown(value) => value.as_str(),
+            RecommendationComplianceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BreachedCanMeet", "BreachedUnattainable", "MetCanImprove"]
+        &[
+            "BreachedCanMeet", "BreachedUnattainable", "MetCanImprove"
+        ]
     }
 }
 impl AsRef<str> for RecommendationComplianceStatus {
@@ -6919,7 +6286,7 @@ impl AsRef<str> for RecommendationComplianceStatus {
 /// <p>Defines the compliance of an application component against the resiliency policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppComponentCompliance {
+pub struct AppComponentCompliance  {
     /// <p>The cost for the application.</p>
     #[doc(hidden)]
     pub cost: std::option::Option<crate::model::Cost>,
@@ -6928,9 +6295,7 @@ pub struct AppComponentCompliance {
     pub app_component_name: std::option::Option<std::string::String>,
     /// <p>The compliance of the application component against the resiliency policy.</p>
     #[doc(hidden)]
-    pub compliance: std::option::Option<
-        std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>,
-    >,
+    pub compliance: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>,
     /// <p>The compliance message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -6943,51 +6308,39 @@ pub struct AppComponentCompliance {
 }
 impl AppComponentCompliance {
     /// <p>The cost for the application.</p>
-    pub fn cost(&self) -> std::option::Option<&crate::model::Cost> {
+    pub fn cost(&self) -> std::option::Option<& crate::model::Cost> {
         self.cost.as_ref()
     }
     /// <p>The name of the application component.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The compliance of the application component against the resiliency policy.</p>
-    pub fn compliance(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DisruptionType,
-            crate::model::DisruptionCompliance,
-        >,
-    > {
+    pub fn compliance(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>> {
         self.compliance.as_ref()
     }
     /// <p>The compliance message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ComplianceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ComplianceStatus> {
         self.status.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
-    pub fn resiliency_score(&self) -> std::option::Option<&crate::model::ResiliencyScore> {
+    pub fn resiliency_score(&self) -> std::option::Option<& crate::model::ResiliencyScore> {
         self.resiliency_score.as_ref()
     }
 }
 /// See [`AppComponentCompliance`](crate::model::AppComponentCompliance).
 pub mod app_component_compliance {
-
+    
     /// A builder for [`AppComponentCompliance`](crate::model::AppComponentCompliance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost: std::option::Option<crate::model::Cost>,
         pub(crate) app_component_name: std::option::Option<std::string::String>,
-        pub(crate) compliance: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DisruptionType,
-                crate::model::DisruptionCompliance,
-            >,
-        >,
+        pub(crate) compliance: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ComplianceStatus>,
         pub(crate) resiliency_score: std::option::Option<crate::model::ResiliencyScore>,
@@ -7000,8 +6353,7 @@ pub mod app_component_compliance {
         }
         /// <p>The cost for the application.</p>
         pub fn set_cost(mut self, input: std::option::Option<crate::model::Cost>) -> Self {
-            self.cost = input;
-            self
+            self.cost = input; self
         }
         /// <p>The name of the application component.</p>
         pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7009,40 +6361,23 @@ pub mod app_component_compliance {
             self
         }
         /// <p>The name of the application component.</p>
-        pub fn set_app_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_component_name = input;
-            self
+        pub fn set_app_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_component_name = input; self
         }
         /// Adds a key-value pair to `compliance`.
         ///
         /// To override the contents of this collection use [`set_compliance`](Self::set_compliance).
         ///
         /// <p>The compliance of the application component against the resiliency policy.</p>
-        pub fn compliance(
-            mut self,
-            k: crate::model::DisruptionType,
-            v: crate::model::DisruptionCompliance,
-        ) -> Self {
+        pub fn compliance(mut self, k: crate::model::DisruptionType, v: crate::model::DisruptionCompliance) -> Self {
             let mut hash_map = self.compliance.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.compliance = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.compliance = Some(hash_map);
+                            self
         }
         /// <p>The compliance of the application component against the resiliency policy.</p>
-        pub fn set_compliance(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DisruptionType,
-                    crate::model::DisruptionCompliance,
-                >,
-            >,
-        ) -> Self {
-            self.compliance = input;
-            self
+        pub fn set_compliance(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>>) -> Self {
+            self.compliance = input; self
         }
         /// <p>The compliance message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7051,8 +6386,7 @@ pub mod app_component_compliance {
         }
         /// <p>The compliance message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The status of the action.</p>
         pub fn status(mut self, input: crate::model::ComplianceStatus) -> Self {
@@ -7060,12 +6394,8 @@ pub mod app_component_compliance {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ComplianceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ComplianceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The current resiliency score for the application.</p>
         pub fn resiliency_score(mut self, input: crate::model::ResiliencyScore) -> Self {
@@ -7073,25 +6403,29 @@ pub mod app_component_compliance {
             self
         }
         /// <p>The current resiliency score for the application.</p>
-        pub fn set_resiliency_score(
-            mut self,
-            input: std::option::Option<crate::model::ResiliencyScore>,
-        ) -> Self {
-            self.resiliency_score = input;
-            self
+        pub fn set_resiliency_score(mut self, input: std::option::Option<crate::model::ResiliencyScore>) -> Self {
+            self.resiliency_score = input; self
         }
         /// Consumes the builder and constructs a [`AppComponentCompliance`](crate::model::AppComponentCompliance).
         pub fn build(self) -> crate::model::AppComponentCompliance {
             crate::model::AppComponentCompliance {
-                cost: self.cost,
-                app_component_name: self.app_component_name,
-                compliance: self.compliance,
-                message: self.message,
-                status: self.status,
-                resiliency_score: self.resiliency_score,
+                cost: self.cost
+                ,
+                app_component_name: self.app_component_name
+                ,
+                compliance: self.compliance
+                ,
+                message: self.message
+                ,
+                status: self.status
+                ,
+                resiliency_score: self.resiliency_score
+                ,
             }
         }
     }
+    
+    
 }
 impl AppComponentCompliance {
     /// Creates a new builder-style object to manufacture [`AppComponentCompliance`](crate::model::AppComponentCompliance).
@@ -7103,7 +6437,7 @@ impl AppComponentCompliance {
 /// <p>Defines an application assessment summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppAssessmentSummary {
+pub struct AppAssessmentSummary  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -7143,47 +6477,47 @@ pub struct AppAssessmentSummary {
 }
 impl AppAssessmentSummary {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn assessment_status(&self) -> std::option::Option<&crate::model::AssessmentStatus> {
+    pub fn assessment_status(&self) -> std::option::Option<& crate::model::AssessmentStatus> {
         self.assessment_status.as_ref()
     }
     /// <p>The entity that invoked the assessment.</p>
-    pub fn invoker(&self) -> std::option::Option<&crate::model::AssessmentInvoker> {
+    pub fn invoker(&self) -> std::option::Option<& crate::model::AssessmentInvoker> {
         self.invoker.as_ref()
     }
     /// <p>The starting time for the action.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time for the action.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The message from the assessment run.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The name of the assessment.</p>
-    pub fn assessment_name(&self) -> std::option::Option<&str> {
+    pub fn assessment_name(&self) -> std::option::Option<& str> {
         self.assessment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn assessment_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_arn(&self) -> std::option::Option<& str> {
         self.assessment_arn.as_deref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::model::ComplianceStatus> {
+    pub fn compliance_status(&self) -> std::option::Option<& crate::model::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>The cost for the application.</p>
-    pub fn cost(&self) -> std::option::Option<&crate::model::Cost> {
+    pub fn cost(&self) -> std::option::Option<& crate::model::Cost> {
         self.cost.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
@@ -7193,7 +6527,7 @@ impl AppAssessmentSummary {
 }
 /// See [`AppAssessmentSummary`](crate::model::AppAssessmentSummary).
 pub mod app_assessment_summary {
-
+    
     /// A builder for [`AppAssessmentSummary`](crate::model::AppAssessmentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7218,8 +6552,7 @@ pub mod app_assessment_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_arn = input;
-            self
+            self.app_arn = input; self
         }
         /// <p>The version of the application.</p>
         pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7228,8 +6561,7 @@ pub mod app_assessment_summary {
         }
         /// <p>The version of the application.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_version = input;
-            self
+            self.app_version = input; self
         }
         /// <p>The current status of the assessment for the resiliency policy.</p>
         pub fn assessment_status(mut self, input: crate::model::AssessmentStatus) -> Self {
@@ -7237,12 +6569,8 @@ pub mod app_assessment_summary {
             self
         }
         /// <p>The current status of the assessment for the resiliency policy.</p>
-        pub fn set_assessment_status(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentStatus>,
-        ) -> Self {
-            self.assessment_status = input;
-            self
+        pub fn set_assessment_status(mut self, input: std::option::Option<crate::model::AssessmentStatus>) -> Self {
+            self.assessment_status = input; self
         }
         /// <p>The entity that invoked the assessment.</p>
         pub fn invoker(mut self, input: crate::model::AssessmentInvoker) -> Self {
@@ -7250,12 +6578,8 @@ pub mod app_assessment_summary {
             self
         }
         /// <p>The entity that invoked the assessment.</p>
-        pub fn set_invoker(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentInvoker>,
-        ) -> Self {
-            self.invoker = input;
-            self
+        pub fn set_invoker(mut self, input: std::option::Option<crate::model::AssessmentInvoker>) -> Self {
+            self.invoker = input; self
         }
         /// <p>The starting time for the action.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7263,12 +6587,8 @@ pub mod app_assessment_summary {
             self
         }
         /// <p>The starting time for the action.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time for the action.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7276,12 +6596,8 @@ pub mod app_assessment_summary {
             self
         }
         /// <p>The end time for the action.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The message from the assessment run.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7290,8 +6606,7 @@ pub mod app_assessment_summary {
         }
         /// <p>The message from the assessment run.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The name of the assessment.</p>
         pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7299,12 +6614,8 @@ pub mod app_assessment_summary {
             self
         }
         /// <p>The name of the assessment.</p>
-        pub fn set_assessment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_name = input;
-            self
+        pub fn set_assessment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7312,12 +6623,8 @@ pub mod app_assessment_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_assessment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_arn = input;
-            self
+        pub fn set_assessment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_arn = input; self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
         pub fn compliance_status(mut self, input: crate::model::ComplianceStatus) -> Self {
@@ -7325,12 +6632,8 @@ pub mod app_assessment_summary {
             self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
-        pub fn set_compliance_status(
-            mut self,
-            input: std::option::Option<crate::model::ComplianceStatus>,
-        ) -> Self {
-            self.compliance_status = input;
-            self
+        pub fn set_compliance_status(mut self, input: std::option::Option<crate::model::ComplianceStatus>) -> Self {
+            self.compliance_status = input; self
         }
         /// <p>The cost for the application.</p>
         pub fn cost(mut self, input: crate::model::Cost) -> Self {
@@ -7339,8 +6642,7 @@ pub mod app_assessment_summary {
         }
         /// <p>The cost for the application.</p>
         pub fn set_cost(mut self, input: std::option::Option<crate::model::Cost>) -> Self {
-            self.cost = input;
-            self
+            self.cost = input; self
         }
         /// <p>The current resiliency score for the application.</p>
         pub fn resiliency_score(mut self, input: f64) -> Self {
@@ -7349,27 +6651,41 @@ pub mod app_assessment_summary {
         }
         /// <p>The current resiliency score for the application.</p>
         pub fn set_resiliency_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.resiliency_score = input;
-            self
+            self.resiliency_score = input; self
         }
         /// Consumes the builder and constructs a [`AppAssessmentSummary`](crate::model::AppAssessmentSummary).
         pub fn build(self) -> crate::model::AppAssessmentSummary {
             crate::model::AppAssessmentSummary {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                assessment_status: self.assessment_status,
-                invoker: self.invoker,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                message: self.message,
-                assessment_name: self.assessment_name,
-                assessment_arn: self.assessment_arn,
-                compliance_status: self.compliance_status,
-                cost: self.cost,
-                resiliency_score: self.resiliency_score.unwrap_or_default(),
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                assessment_status: self.assessment_status
+                ,
+                invoker: self.invoker
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                message: self.message
+                ,
+                assessment_name: self.assessment_name
+                ,
+                assessment_arn: self.assessment_arn
+                ,
+                compliance_status: self.compliance_status
+                ,
+                cost: self.cost
+                ,
+                resiliency_score: self.resiliency_score
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AppAssessmentSummary {
     /// Creates a new builder-style object to manufacture [`AppAssessmentSummary`](crate::model::AppAssessmentSummary).
@@ -7381,7 +6697,7 @@ impl AppAssessmentSummary {
 /// <p>Defines a recommendation for a CloudWatch alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmRecommendation {
+pub struct AlarmRecommendation  {
     /// <p>The identifier of the alarm recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -7409,41 +6725,41 @@ pub struct AlarmRecommendation {
 }
 impl AlarmRecommendation {
     /// <p>The identifier of the alarm recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The reference identifier of the alarm recommendation.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>The name of the alarm recommendation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the recommendation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of alarm recommendation.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AlarmType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AlarmType> {
         self.r#type.as_ref()
     }
     /// <p>The application component for the CloudWatch alarm recommendation.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The list of CloudWatch alarm recommendations.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::RecommendationItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::RecommendationItem]> {
         self.items.as_deref()
     }
     /// <p>The prerequisite for the alarm recommendation.</p>
-    pub fn prerequisite(&self) -> std::option::Option<&str> {
+    pub fn prerequisite(&self) -> std::option::Option<& str> {
         self.prerequisite.as_deref()
     }
 }
 /// See [`AlarmRecommendation`](crate::model::AlarmRecommendation).
 pub mod alarm_recommendation {
-
+    
     /// A builder for [`AlarmRecommendation`](crate::model::AlarmRecommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7463,12 +6779,8 @@ pub mod alarm_recommendation {
             self
         }
         /// <p>The identifier of the alarm recommendation.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>The reference identifier of the alarm recommendation.</p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7477,8 +6789,7 @@ pub mod alarm_recommendation {
         }
         /// <p>The reference identifier of the alarm recommendation.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// <p>The name of the alarm recommendation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7487,8 +6798,7 @@ pub mod alarm_recommendation {
         }
         /// <p>The name of the alarm recommendation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the recommendation.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7497,8 +6807,7 @@ pub mod alarm_recommendation {
         }
         /// <p>The description of the recommendation.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type of alarm recommendation.</p>
         pub fn r#type(mut self, input: crate::model::AlarmType) -> Self {
@@ -7507,8 +6816,7 @@ pub mod alarm_recommendation {
         }
         /// <p>The type of alarm recommendation.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AlarmType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The application component for the CloudWatch alarm recommendation.</p>
         pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7516,12 +6824,8 @@ pub mod alarm_recommendation {
             self
         }
         /// <p>The application component for the CloudWatch alarm recommendation.</p>
-        pub fn set_app_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_component_name = input;
-            self
+        pub fn set_app_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_component_name = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -7530,17 +6834,13 @@ pub mod alarm_recommendation {
         /// <p>The list of CloudWatch alarm recommendations.</p>
         pub fn items(mut self, input: crate::model::RecommendationItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of CloudWatch alarm recommendations.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The prerequisite for the alarm recommendation.</p>
         pub fn prerequisite(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7549,23 +6849,32 @@ pub mod alarm_recommendation {
         }
         /// <p>The prerequisite for the alarm recommendation.</p>
         pub fn set_prerequisite(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prerequisite = input;
-            self
+            self.prerequisite = input; self
         }
         /// Consumes the builder and constructs a [`AlarmRecommendation`](crate::model::AlarmRecommendation).
         pub fn build(self) -> crate::model::AlarmRecommendation {
             crate::model::AlarmRecommendation {
-                recommendation_id: self.recommendation_id,
-                reference_id: self.reference_id,
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                app_component_name: self.app_component_name,
-                items: self.items,
-                prerequisite: self.prerequisite,
+                recommendation_id: self.recommendation_id
+                ,
+                reference_id: self.reference_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                app_component_name: self.app_component_name
+                ,
+                items: self.items
+                ,
+                prerequisite: self.prerequisite
+                ,
             }
         }
     }
+    
+    
 }
 impl AlarmRecommendation {
     /// Creates a new builder-style object to manufacture [`AlarmRecommendation`](crate::model::AlarmRecommendation).
@@ -7580,9 +6889,9 @@ impl AlarmRecommendation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let alarmtype = unimplemented!();
 /// match alarmtype {
@@ -7607,22 +6916,14 @@ impl AlarmRecommendation {
 /// Specifically, when `alarmtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlarmType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlarmType {
     #[allow(missing_docs)] // documentation missing in model
     Canary,
@@ -7635,7 +6936,7 @@ pub enum AlarmType {
     #[allow(missing_docs)] // documentation missing in model
     Metric,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlarmType {
     fn from(s: &str) -> Self {
@@ -7645,17 +6946,17 @@ impl std::convert::From<&str> for AlarmType {
             "Event" => AlarmType::Event,
             "Logs" => AlarmType::Logs,
             "Metric" => AlarmType::Metric,
-            other => AlarmType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AlarmType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AlarmType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlarmType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlarmType::from(s))
+                }
+            }
 impl AlarmType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7665,12 +6966,14 @@ impl AlarmType {
             AlarmType::Event => "Event",
             AlarmType::Logs => "Logs",
             AlarmType::Metric => "Metric",
-            AlarmType::Unknown(value) => value.as_str(),
+            AlarmType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Canary", "Composite", "Event", "Logs", "Metric"]
+        &[
+            "Canary", "Composite", "Event", "Logs", "Metric"
+        ]
     }
 }
 impl AsRef<str> for AlarmType {
@@ -7682,20 +6985,20 @@ impl AsRef<str> for AlarmType {
 /// <p> The Terraform s3 state file you need to import. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerraformSource {
+pub struct TerraformSource  {
     /// <p> The Terraform s3 state file you need to import. </p>
     #[doc(hidden)]
     pub s3_state_file_url: std::option::Option<std::string::String>,
 }
 impl TerraformSource {
     /// <p> The Terraform s3 state file you need to import. </p>
-    pub fn s3_state_file_url(&self) -> std::option::Option<&str> {
+    pub fn s3_state_file_url(&self) -> std::option::Option<& str> {
         self.s3_state_file_url.as_deref()
     }
 }
 /// See [`TerraformSource`](crate::model::TerraformSource).
 pub mod terraform_source {
-
+    
     /// A builder for [`TerraformSource`](crate::model::TerraformSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7708,20 +7011,19 @@ pub mod terraform_source {
             self
         }
         /// <p> The Terraform s3 state file you need to import. </p>
-        pub fn set_s3_state_file_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_state_file_url = input;
-            self
+        pub fn set_s3_state_file_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_state_file_url = input; self
         }
         /// Consumes the builder and constructs a [`TerraformSource`](crate::model::TerraformSource).
         pub fn build(self) -> crate::model::TerraformSource {
             crate::model::TerraformSource {
-                s3_state_file_url: self.s3_state_file_url,
+                s3_state_file_url: self.s3_state_file_url
+                ,
             }
         }
     }
+    
+    
 }
 impl TerraformSource {
     /// Creates a new builder-style object to manufacture [`TerraformSource`](crate::model::TerraformSource).
@@ -7736,9 +7038,9 @@ impl TerraformSource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceimportstatustype = unimplemented!();
 /// match resourceimportstatustype {
@@ -7762,22 +7064,14 @@ impl TerraformSource {
 /// Specifically, when `resourceimportstatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceImportStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceImportStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -7788,7 +7082,7 @@ pub enum ResourceImportStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceImportStatusType {
     fn from(s: &str) -> Self {
@@ -7797,19 +7091,17 @@ impl std::convert::From<&str> for ResourceImportStatusType {
             "InProgress" => ResourceImportStatusType::InProgress,
             "Pending" => ResourceImportStatusType::Pending,
             "Success" => ResourceImportStatusType::Success,
-            other => ResourceImportStatusType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceImportStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceImportStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceImportStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceImportStatusType::from(s))
+                }
+            }
 impl ResourceImportStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7818,12 +7110,14 @@ impl ResourceImportStatusType {
             ResourceImportStatusType::InProgress => "InProgress",
             ResourceImportStatusType::Pending => "Pending",
             ResourceImportStatusType::Success => "Success",
-            ResourceImportStatusType::Unknown(value) => value.as_str(),
+            ResourceImportStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Pending", "Success"]
+        &[
+            "Failed", "InProgress", "Pending", "Success"
+        ]
     }
 }
 impl AsRef<str> for ResourceImportStatusType {
@@ -7831,3 +7125,4 @@ impl AsRef<str> for ResourceImportStatusType {
         self.as_str()
     }
 }
+

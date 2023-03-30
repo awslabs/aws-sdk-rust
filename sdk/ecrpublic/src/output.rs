@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadLayerPartOutput {
+pub struct UploadLayerPartOutput  {
     /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct UploadLayerPartOutput {
 }
 impl UploadLayerPartOutput {
     /// <p>The registry ID that's associated with the request.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The upload ID that's associated with the request.</p>
-    pub fn upload_id(&self) -> std::option::Option<&str> {
+    pub fn upload_id(&self) -> std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The integer value of the last byte that's received in the request.</p>
@@ -36,7 +36,7 @@ impl UploadLayerPartOutput {
 }
 /// See [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput).
 pub mod upload_layer_part_output {
-
+    
     /// A builder for [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -53,8 +53,7 @@ pub mod upload_layer_part_output {
         }
         /// <p>The registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.registry_id = input;
-            self
+            self.registry_id = input; self
         }
         /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,12 +61,8 @@ pub mod upload_layer_part_output {
             self
         }
         /// <p>The repository name that's associated with the request.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The upload ID that's associated with the request.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +71,7 @@ pub mod upload_layer_part_output {
         }
         /// <p>The upload ID that's associated with the request.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input;
-            self
+            self.upload_id = input; self
         }
         /// <p>The integer value of the last byte that's received in the request.</p>
         pub fn last_byte_received(mut self, input: i64) -> Self {
@@ -86,19 +80,24 @@ pub mod upload_layer_part_output {
         }
         /// <p>The integer value of the last byte that's received in the request.</p>
         pub fn set_last_byte_received(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_byte_received = input;
-            self
+            self.last_byte_received = input; self
         }
         /// Consumes the builder and constructs a [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput).
         pub fn build(self) -> crate::output::UploadLayerPartOutput {
             crate::output::UploadLayerPartOutput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                upload_id: self.upload_id,
-                last_byte_received: self.last_byte_received,
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                upload_id: self.upload_id
+                ,
+                last_byte_received: self.last_byte_received
+                ,
             }
         }
     }
+    
+    
 }
 impl UploadLayerPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput).
@@ -110,19 +109,24 @@ impl UploadLayerPartOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -134,19 +138,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -158,7 +167,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetRepositoryPolicyOutput {
+pub struct SetRepositoryPolicyOutput  {
     /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -171,21 +180,21 @@ pub struct SetRepositoryPolicyOutput {
 }
 impl SetRepositoryPolicyOutput {
     /// <p>The registry ID that's associated with the request.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The JSON repository policy text that's applied to the repository.</p>
-    pub fn policy_text(&self) -> std::option::Option<&str> {
+    pub fn policy_text(&self) -> std::option::Option<& str> {
         self.policy_text.as_deref()
     }
 }
 /// See [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput).
 pub mod set_repository_policy_output {
-
+    
     /// A builder for [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -201,8 +210,7 @@ pub mod set_repository_policy_output {
         }
         /// <p>The registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.registry_id = input;
-            self
+            self.registry_id = input; self
         }
         /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,12 +218,8 @@ pub mod set_repository_policy_output {
             self
         }
         /// <p>The repository name that's associated with the request.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The JSON repository policy text that's applied to the repository.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,18 +228,22 @@ pub mod set_repository_policy_output {
         }
         /// <p>The JSON repository policy text that's applied to the repository.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_text = input;
-            self
+            self.policy_text = input; self
         }
         /// Consumes the builder and constructs a [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput).
         pub fn build(self) -> crate::output::SetRepositoryPolicyOutput {
             crate::output::SetRepositoryPolicyOutput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                policy_text: self.policy_text,
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                policy_text: self.policy_text
+                ,
             }
         }
     }
+    
+    
 }
 impl SetRepositoryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput).
@@ -247,20 +255,20 @@ impl SetRepositoryPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRepositoryCatalogDataOutput {
+pub struct PutRepositoryCatalogDataOutput  {
     /// <p>The catalog data for the repository.</p>
     #[doc(hidden)]
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogData>,
 }
 impl PutRepositoryCatalogDataOutput {
     /// <p>The catalog data for the repository.</p>
-    pub fn catalog_data(&self) -> std::option::Option<&crate::model::RepositoryCatalogData> {
+    pub fn catalog_data(&self) -> std::option::Option<& crate::model::RepositoryCatalogData> {
         self.catalog_data.as_ref()
     }
 }
 /// See [`PutRepositoryCatalogDataOutput`](crate::output::PutRepositoryCatalogDataOutput).
 pub mod put_repository_catalog_data_output {
-
+    
     /// A builder for [`PutRepositoryCatalogDataOutput`](crate::output::PutRepositoryCatalogDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -273,20 +281,19 @@ pub mod put_repository_catalog_data_output {
             self
         }
         /// <p>The catalog data for the repository.</p>
-        pub fn set_catalog_data(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryCatalogData>,
-        ) -> Self {
-            self.catalog_data = input;
-            self
+        pub fn set_catalog_data(mut self, input: std::option::Option<crate::model::RepositoryCatalogData>) -> Self {
+            self.catalog_data = input; self
         }
         /// Consumes the builder and constructs a [`PutRepositoryCatalogDataOutput`](crate::output::PutRepositoryCatalogDataOutput).
         pub fn build(self) -> crate::output::PutRepositoryCatalogDataOutput {
             crate::output::PutRepositoryCatalogDataOutput {
-                catalog_data: self.catalog_data,
+                catalog_data: self.catalog_data
+                ,
             }
         }
     }
+    
+    
 }
 impl PutRepositoryCatalogDataOutput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryCatalogDataOutput`](crate::output::PutRepositoryCatalogDataOutput).
@@ -298,20 +305,20 @@ impl PutRepositoryCatalogDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRegistryCatalogDataOutput {
+pub struct PutRegistryCatalogDataOutput  {
     /// <p>The catalog data for the public registry.</p>
     #[doc(hidden)]
     pub registry_catalog_data: std::option::Option<crate::model::RegistryCatalogData>,
 }
 impl PutRegistryCatalogDataOutput {
     /// <p>The catalog data for the public registry.</p>
-    pub fn registry_catalog_data(&self) -> std::option::Option<&crate::model::RegistryCatalogData> {
+    pub fn registry_catalog_data(&self) -> std::option::Option<& crate::model::RegistryCatalogData> {
         self.registry_catalog_data.as_ref()
     }
 }
 /// See [`PutRegistryCatalogDataOutput`](crate::output::PutRegistryCatalogDataOutput).
 pub mod put_registry_catalog_data_output {
-
+    
     /// A builder for [`PutRegistryCatalogDataOutput`](crate::output::PutRegistryCatalogDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -324,20 +331,19 @@ pub mod put_registry_catalog_data_output {
             self
         }
         /// <p>The catalog data for the public registry.</p>
-        pub fn set_registry_catalog_data(
-            mut self,
-            input: std::option::Option<crate::model::RegistryCatalogData>,
-        ) -> Self {
-            self.registry_catalog_data = input;
-            self
+        pub fn set_registry_catalog_data(mut self, input: std::option::Option<crate::model::RegistryCatalogData>) -> Self {
+            self.registry_catalog_data = input; self
         }
         /// Consumes the builder and constructs a [`PutRegistryCatalogDataOutput`](crate::output::PutRegistryCatalogDataOutput).
         pub fn build(self) -> crate::output::PutRegistryCatalogDataOutput {
             crate::output::PutRegistryCatalogDataOutput {
-                registry_catalog_data: self.registry_catalog_data,
+                registry_catalog_data: self.registry_catalog_data
+                ,
             }
         }
     }
+    
+    
 }
 impl PutRegistryCatalogDataOutput {
     /// Creates a new builder-style object to manufacture [`PutRegistryCatalogDataOutput`](crate::output::PutRegistryCatalogDataOutput).
@@ -349,20 +355,20 @@ impl PutRegistryCatalogDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutImageOutput {
+pub struct PutImageOutput  {
     /// <p>Details of the image uploaded.</p>
     #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
 }
 impl PutImageOutput {
     /// <p>Details of the image uploaded.</p>
-    pub fn image(&self) -> std::option::Option<&crate::model::Image> {
+    pub fn image(&self) -> std::option::Option<& crate::model::Image> {
         self.image.as_ref()
     }
 }
 /// See [`PutImageOutput`](crate::output::PutImageOutput).
 pub mod put_image_output {
-
+    
     /// A builder for [`PutImageOutput`](crate::output::PutImageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -376,14 +382,18 @@ pub mod put_image_output {
         }
         /// <p>Details of the image uploaded.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
-            self.image = input;
-            self
+            self.image = input; self
         }
         /// Consumes the builder and constructs a [`PutImageOutput`](crate::output::PutImageOutput).
         pub fn build(self) -> crate::output::PutImageOutput {
-            crate::output::PutImageOutput { image: self.image }
+            crate::output::PutImageOutput {
+                image: self.image
+                ,
+            }
         }
     }
+    
+    
 }
 impl PutImageOutput {
     /// Creates a new builder-style object to manufacture [`PutImageOutput`](crate::output::PutImageOutput).
@@ -395,20 +405,20 @@ impl PutImageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags for the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -422,23 +432,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags for the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags for the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -450,7 +461,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitiateLayerUploadOutput {
+pub struct InitiateLayerUploadOutput  {
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
     #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
@@ -460,7 +471,7 @@ pub struct InitiateLayerUploadOutput {
 }
 impl InitiateLayerUploadOutput {
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
-    pub fn upload_id(&self) -> std::option::Option<&str> {
+    pub fn upload_id(&self) -> std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
@@ -470,7 +481,7 @@ impl InitiateLayerUploadOutput {
 }
 /// See [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput).
 pub mod initiate_layer_upload_output {
-
+    
     /// A builder for [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -485,8 +496,7 @@ pub mod initiate_layer_upload_output {
         }
         /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input;
-            self
+            self.upload_id = input; self
         }
         /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
         pub fn part_size(mut self, input: i64) -> Self {
@@ -495,17 +505,20 @@ pub mod initiate_layer_upload_output {
         }
         /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
         pub fn set_part_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.part_size = input;
-            self
+            self.part_size = input; self
         }
         /// Consumes the builder and constructs a [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput).
         pub fn build(self) -> crate::output::InitiateLayerUploadOutput {
             crate::output::InitiateLayerUploadOutput {
-                upload_id: self.upload_id,
-                part_size: self.part_size,
+                upload_id: self.upload_id
+                ,
+                part_size: self.part_size
+                ,
             }
         }
     }
+    
+    
 }
 impl InitiateLayerUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput).
@@ -517,7 +530,7 @@ impl InitiateLayerUploadOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRepositoryPolicyOutput {
+pub struct GetRepositoryPolicyOutput  {
     /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -530,21 +543,21 @@ pub struct GetRepositoryPolicyOutput {
 }
 impl GetRepositoryPolicyOutput {
     /// <p>The registry ID that's associated with the request.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
-    pub fn policy_text(&self) -> std::option::Option<&str> {
+    pub fn policy_text(&self) -> std::option::Option<& str> {
         self.policy_text.as_deref()
     }
 }
 /// See [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput).
 pub mod get_repository_policy_output {
-
+    
     /// A builder for [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -560,8 +573,7 @@ pub mod get_repository_policy_output {
         }
         /// <p>The registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.registry_id = input;
-            self
+            self.registry_id = input; self
         }
         /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -569,12 +581,8 @@ pub mod get_repository_policy_output {
             self
         }
         /// <p>The repository name that's associated with the request.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -583,18 +591,22 @@ pub mod get_repository_policy_output {
         }
         /// <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_text = input;
-            self
+            self.policy_text = input; self
         }
         /// Consumes the builder and constructs a [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput).
         pub fn build(self) -> crate::output::GetRepositoryPolicyOutput {
             crate::output::GetRepositoryPolicyOutput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                policy_text: self.policy_text,
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                policy_text: self.policy_text
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRepositoryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput).
@@ -606,20 +618,20 @@ impl GetRepositoryPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRepositoryCatalogDataOutput {
+pub struct GetRepositoryCatalogDataOutput  {
     /// <p>The catalog metadata for the repository.</p>
     #[doc(hidden)]
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogData>,
 }
 impl GetRepositoryCatalogDataOutput {
     /// <p>The catalog metadata for the repository.</p>
-    pub fn catalog_data(&self) -> std::option::Option<&crate::model::RepositoryCatalogData> {
+    pub fn catalog_data(&self) -> std::option::Option<& crate::model::RepositoryCatalogData> {
         self.catalog_data.as_ref()
     }
 }
 /// See [`GetRepositoryCatalogDataOutput`](crate::output::GetRepositoryCatalogDataOutput).
 pub mod get_repository_catalog_data_output {
-
+    
     /// A builder for [`GetRepositoryCatalogDataOutput`](crate::output::GetRepositoryCatalogDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -632,20 +644,19 @@ pub mod get_repository_catalog_data_output {
             self
         }
         /// <p>The catalog metadata for the repository.</p>
-        pub fn set_catalog_data(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryCatalogData>,
-        ) -> Self {
-            self.catalog_data = input;
-            self
+        pub fn set_catalog_data(mut self, input: std::option::Option<crate::model::RepositoryCatalogData>) -> Self {
+            self.catalog_data = input; self
         }
         /// Consumes the builder and constructs a [`GetRepositoryCatalogDataOutput`](crate::output::GetRepositoryCatalogDataOutput).
         pub fn build(self) -> crate::output::GetRepositoryCatalogDataOutput {
             crate::output::GetRepositoryCatalogDataOutput {
-                catalog_data: self.catalog_data,
+                catalog_data: self.catalog_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRepositoryCatalogDataOutput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryCatalogDataOutput`](crate::output::GetRepositoryCatalogDataOutput).
@@ -657,20 +668,20 @@ impl GetRepositoryCatalogDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegistryCatalogDataOutput {
+pub struct GetRegistryCatalogDataOutput  {
     /// <p>The catalog metadata for the public registry.</p>
     #[doc(hidden)]
     pub registry_catalog_data: std::option::Option<crate::model::RegistryCatalogData>,
 }
 impl GetRegistryCatalogDataOutput {
     /// <p>The catalog metadata for the public registry.</p>
-    pub fn registry_catalog_data(&self) -> std::option::Option<&crate::model::RegistryCatalogData> {
+    pub fn registry_catalog_data(&self) -> std::option::Option<& crate::model::RegistryCatalogData> {
         self.registry_catalog_data.as_ref()
     }
 }
 /// See [`GetRegistryCatalogDataOutput`](crate::output::GetRegistryCatalogDataOutput).
 pub mod get_registry_catalog_data_output {
-
+    
     /// A builder for [`GetRegistryCatalogDataOutput`](crate::output::GetRegistryCatalogDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -683,20 +694,19 @@ pub mod get_registry_catalog_data_output {
             self
         }
         /// <p>The catalog metadata for the public registry.</p>
-        pub fn set_registry_catalog_data(
-            mut self,
-            input: std::option::Option<crate::model::RegistryCatalogData>,
-        ) -> Self {
-            self.registry_catalog_data = input;
-            self
+        pub fn set_registry_catalog_data(mut self, input: std::option::Option<crate::model::RegistryCatalogData>) -> Self {
+            self.registry_catalog_data = input; self
         }
         /// Consumes the builder and constructs a [`GetRegistryCatalogDataOutput`](crate::output::GetRegistryCatalogDataOutput).
         pub fn build(self) -> crate::output::GetRegistryCatalogDataOutput {
             crate::output::GetRegistryCatalogDataOutput {
-                registry_catalog_data: self.registry_catalog_data,
+                registry_catalog_data: self.registry_catalog_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRegistryCatalogDataOutput {
     /// Creates a new builder-style object to manufacture [`GetRegistryCatalogDataOutput`](crate::output::GetRegistryCatalogDataOutput).
@@ -708,20 +718,20 @@ impl GetRegistryCatalogDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAuthorizationTokenOutput {
+pub struct GetAuthorizationTokenOutput  {
     /// <p>An authorization token data object that corresponds to a public registry.</p>
     #[doc(hidden)]
     pub authorization_data: std::option::Option<crate::model::AuthorizationData>,
 }
 impl GetAuthorizationTokenOutput {
     /// <p>An authorization token data object that corresponds to a public registry.</p>
-    pub fn authorization_data(&self) -> std::option::Option<&crate::model::AuthorizationData> {
+    pub fn authorization_data(&self) -> std::option::Option<& crate::model::AuthorizationData> {
         self.authorization_data.as_ref()
     }
 }
 /// See [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
 pub mod get_authorization_token_output {
-
+    
     /// A builder for [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -734,20 +744,19 @@ pub mod get_authorization_token_output {
             self
         }
         /// <p>An authorization token data object that corresponds to a public registry.</p>
-        pub fn set_authorization_data(
-            mut self,
-            input: std::option::Option<crate::model::AuthorizationData>,
-        ) -> Self {
-            self.authorization_data = input;
-            self
+        pub fn set_authorization_data(mut self, input: std::option::Option<crate::model::AuthorizationData>) -> Self {
+            self.authorization_data = input; self
         }
         /// Consumes the builder and constructs a [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
         pub fn build(self) -> crate::output::GetAuthorizationTokenOutput {
             crate::output::GetAuthorizationTokenOutput {
-                authorization_data: self.authorization_data,
+                authorization_data: self.authorization_data
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAuthorizationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
@@ -759,7 +768,7 @@ impl GetAuthorizationTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRepositoriesOutput {
+pub struct DescribeRepositoriesOutput  {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
     #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::model::Repository>>,
@@ -769,17 +778,17 @@ pub struct DescribeRepositoriesOutput {
 }
 impl DescribeRepositoriesOutput {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
-    pub fn repositories(&self) -> std::option::Option<&[crate::model::Repository]> {
+    pub fn repositories(&self) -> std::option::Option<& [crate::model::Repository]> {
         self.repositories.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput).
 pub mod describe_repositories_output {
-
+    
     /// A builder for [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -794,17 +803,13 @@ pub mod describe_repositories_output {
         /// <p>A list of repository objects corresponding to valid repositories.</p>
         pub fn repositories(mut self, input: crate::model::Repository) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input);
-            self.repositories = Some(v);
-            self
+                            v.push(input);
+                            self.repositories = Some(v);
+                            self
         }
         /// <p>A list of repository objects corresponding to valid repositories.</p>
-        pub fn set_repositories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Repository>>,
-        ) -> Self {
-            self.repositories = input;
-            self
+        pub fn set_repositories(mut self, input: std::option::Option<std::vec::Vec<crate::model::Repository>>) -> Self {
+            self.repositories = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -813,17 +818,20 @@ pub mod describe_repositories_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput).
         pub fn build(self) -> crate::output::DescribeRepositoriesOutput {
             crate::output::DescribeRepositoriesOutput {
-                repositories: self.repositories,
-                next_token: self.next_token,
+                repositories: self.repositories
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput).
@@ -835,7 +843,7 @@ impl DescribeRepositoriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRegistriesOutput {
+pub struct DescribeRegistriesOutput  {
     /// <p>An object that contains the details for a public registry.</p>
     #[doc(hidden)]
     pub registries: std::option::Option<std::vec::Vec<crate::model::Registry>>,
@@ -845,17 +853,17 @@ pub struct DescribeRegistriesOutput {
 }
 impl DescribeRegistriesOutput {
     /// <p>An object that contains the details for a public registry.</p>
-    pub fn registries(&self) -> std::option::Option<&[crate::model::Registry]> {
+    pub fn registries(&self) -> std::option::Option<& [crate::model::Registry]> {
         self.registries.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeRegistriesOutput`](crate::output::DescribeRegistriesOutput).
 pub mod describe_registries_output {
-
+    
     /// A builder for [`DescribeRegistriesOutput`](crate::output::DescribeRegistriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -870,17 +878,13 @@ pub mod describe_registries_output {
         /// <p>An object that contains the details for a public registry.</p>
         pub fn registries(mut self, input: crate::model::Registry) -> Self {
             let mut v = self.registries.unwrap_or_default();
-            v.push(input);
-            self.registries = Some(v);
-            self
+                            v.push(input);
+                            self.registries = Some(v);
+                            self
         }
         /// <p>An object that contains the details for a public registry.</p>
-        pub fn set_registries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Registry>>,
-        ) -> Self {
-            self.registries = input;
-            self
+        pub fn set_registries(mut self, input: std::option::Option<std::vec::Vec<crate::model::Registry>>) -> Self {
+            self.registries = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -889,17 +893,20 @@ pub mod describe_registries_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRegistriesOutput`](crate::output::DescribeRegistriesOutput).
         pub fn build(self) -> crate::output::DescribeRegistriesOutput {
             crate::output::DescribeRegistriesOutput {
-                registries: self.registries,
-                next_token: self.next_token,
+                registries: self.registries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRegistriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistriesOutput`](crate::output::DescribeRegistriesOutput).
@@ -911,7 +918,7 @@ impl DescribeRegistriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImageTagsOutput {
+pub struct DescribeImageTagsOutput  {
     /// <p>The image tag details for the images in the requested repository.</p>
     #[doc(hidden)]
     pub image_tag_details: std::option::Option<std::vec::Vec<crate::model::ImageTagDetail>>,
@@ -921,22 +928,21 @@ pub struct DescribeImageTagsOutput {
 }
 impl DescribeImageTagsOutput {
     /// <p>The image tag details for the images in the requested repository.</p>
-    pub fn image_tag_details(&self) -> std::option::Option<&[crate::model::ImageTagDetail]> {
+    pub fn image_tag_details(&self) -> std::option::Option<& [crate::model::ImageTagDetail]> {
         self.image_tag_details.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeImageTagsOutput`](crate::output::DescribeImageTagsOutput).
 pub mod describe_image_tags_output {
-
+    
     /// A builder for [`DescribeImageTagsOutput`](crate::output::DescribeImageTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) image_tag_details:
-            std::option::Option<std::vec::Vec<crate::model::ImageTagDetail>>,
+        pub(crate) image_tag_details: std::option::Option<std::vec::Vec<crate::model::ImageTagDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -947,17 +953,13 @@ pub mod describe_image_tags_output {
         /// <p>The image tag details for the images in the requested repository.</p>
         pub fn image_tag_details(mut self, input: crate::model::ImageTagDetail) -> Self {
             let mut v = self.image_tag_details.unwrap_or_default();
-            v.push(input);
-            self.image_tag_details = Some(v);
-            self
+                            v.push(input);
+                            self.image_tag_details = Some(v);
+                            self
         }
         /// <p>The image tag details for the images in the requested repository.</p>
-        pub fn set_image_tag_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImageTagDetail>>,
-        ) -> Self {
-            self.image_tag_details = input;
-            self
+        pub fn set_image_tag_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImageTagDetail>>) -> Self {
+            self.image_tag_details = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -966,17 +968,20 @@ pub mod describe_image_tags_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeImageTagsOutput`](crate::output::DescribeImageTagsOutput).
         pub fn build(self) -> crate::output::DescribeImageTagsOutput {
             crate::output::DescribeImageTagsOutput {
-                image_tag_details: self.image_tag_details,
-                next_token: self.next_token,
+                image_tag_details: self.image_tag_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeImageTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageTagsOutput`](crate::output::DescribeImageTagsOutput).
@@ -988,7 +993,7 @@ impl DescribeImageTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImagesOutput {
+pub struct DescribeImagesOutput  {
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
     #[doc(hidden)]
     pub image_details: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>,
@@ -998,17 +1003,17 @@ pub struct DescribeImagesOutput {
 }
 impl DescribeImagesOutput {
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
-    pub fn image_details(&self) -> std::option::Option<&[crate::model::ImageDetail]> {
+    pub fn image_details(&self) -> std::option::Option<& [crate::model::ImageDetail]> {
         self.image_details.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
 pub mod describe_images_output {
-
+    
     /// A builder for [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1023,17 +1028,13 @@ pub mod describe_images_output {
         /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
         pub fn image_details(mut self, input: crate::model::ImageDetail) -> Self {
             let mut v = self.image_details.unwrap_or_default();
-            v.push(input);
-            self.image_details = Some(v);
-            self
+                            v.push(input);
+                            self.image_details = Some(v);
+                            self
         }
         /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
-        pub fn set_image_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>,
-        ) -> Self {
-            self.image_details = input;
-            self
+        pub fn set_image_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>) -> Self {
+            self.image_details = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1042,17 +1043,20 @@ pub mod describe_images_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
         pub fn build(self) -> crate::output::DescribeImagesOutput {
             crate::output::DescribeImagesOutput {
-                image_details: self.image_details,
-                next_token: self.next_token,
+                image_details: self.image_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeImagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
@@ -1064,7 +1068,7 @@ impl DescribeImagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRepositoryPolicyOutput {
+pub struct DeleteRepositoryPolicyOutput  {
     /// <p>The registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -1077,21 +1081,21 @@ pub struct DeleteRepositoryPolicyOutput {
 }
 impl DeleteRepositoryPolicyOutput {
     /// <p>The registry ID that's associated with the request.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The JSON repository policy that was deleted from the repository.</p>
-    pub fn policy_text(&self) -> std::option::Option<&str> {
+    pub fn policy_text(&self) -> std::option::Option<& str> {
         self.policy_text.as_deref()
     }
 }
 /// See [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput).
 pub mod delete_repository_policy_output {
-
+    
     /// A builder for [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1107,8 +1111,7 @@ pub mod delete_repository_policy_output {
         }
         /// <p>The registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.registry_id = input;
-            self
+            self.registry_id = input; self
         }
         /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1116,12 +1119,8 @@ pub mod delete_repository_policy_output {
             self
         }
         /// <p>The repository name that's associated with the request.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The JSON repository policy that was deleted from the repository.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1130,18 +1129,22 @@ pub mod delete_repository_policy_output {
         }
         /// <p>The JSON repository policy that was deleted from the repository.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_text = input;
-            self
+            self.policy_text = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput).
         pub fn build(self) -> crate::output::DeleteRepositoryPolicyOutput {
             crate::output::DeleteRepositoryPolicyOutput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                policy_text: self.policy_text,
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                policy_text: self.policy_text
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRepositoryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput).
@@ -1153,20 +1156,20 @@ impl DeleteRepositoryPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRepositoryOutput {
+pub struct DeleteRepositoryOutput  {
     /// <p>The repository that was deleted.</p>
     #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
 }
 impl DeleteRepositoryOutput {
     /// <p>The repository that was deleted.</p>
-    pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
+    pub fn repository(&self) -> std::option::Option<& crate::model::Repository> {
         self.repository.as_ref()
     }
 }
 /// See [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
 pub mod delete_repository_output {
-
+    
     /// A builder for [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1179,20 +1182,19 @@ pub mod delete_repository_output {
             self
         }
         /// <p>The repository that was deleted.</p>
-        pub fn set_repository(
-            mut self,
-            input: std::option::Option<crate::model::Repository>,
-        ) -> Self {
-            self.repository = input;
-            self
+        pub fn set_repository(mut self, input: std::option::Option<crate::model::Repository>) -> Self {
+            self.repository = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
         pub fn build(self) -> crate::output::DeleteRepositoryOutput {
             crate::output::DeleteRepositoryOutput {
-                repository: self.repository,
+                repository: self.repository
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
@@ -1204,7 +1206,7 @@ impl DeleteRepositoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRepositoryOutput {
+pub struct CreateRepositoryOutput  {
     /// <p>The repository that was created.</p>
     #[doc(hidden)]
     pub repository: std::option::Option<crate::model::Repository>,
@@ -1214,17 +1216,17 @@ pub struct CreateRepositoryOutput {
 }
 impl CreateRepositoryOutput {
     /// <p>The repository that was created.</p>
-    pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
+    pub fn repository(&self) -> std::option::Option<& crate::model::Repository> {
         self.repository.as_ref()
     }
     /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn catalog_data(&self) -> std::option::Option<&crate::model::RepositoryCatalogData> {
+    pub fn catalog_data(&self) -> std::option::Option<& crate::model::RepositoryCatalogData> {
         self.catalog_data.as_ref()
     }
 }
 /// See [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
 pub mod create_repository_output {
-
+    
     /// A builder for [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1238,12 +1240,8 @@ pub mod create_repository_output {
             self
         }
         /// <p>The repository that was created.</p>
-        pub fn set_repository(
-            mut self,
-            input: std::option::Option<crate::model::Repository>,
-        ) -> Self {
-            self.repository = input;
-            self
+        pub fn set_repository(mut self, input: std::option::Option<crate::model::Repository>) -> Self {
+            self.repository = input; self
         }
         /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
         pub fn catalog_data(mut self, input: crate::model::RepositoryCatalogData) -> Self {
@@ -1251,21 +1249,21 @@ pub mod create_repository_output {
             self
         }
         /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-        pub fn set_catalog_data(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryCatalogData>,
-        ) -> Self {
-            self.catalog_data = input;
-            self
+        pub fn set_catalog_data(mut self, input: std::option::Option<crate::model::RepositoryCatalogData>) -> Self {
+            self.catalog_data = input; self
         }
         /// Consumes the builder and constructs a [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
         pub fn build(self) -> crate::output::CreateRepositoryOutput {
             crate::output::CreateRepositoryOutput {
-                repository: self.repository,
-                catalog_data: self.catalog_data,
+                repository: self.repository
+                ,
+                catalog_data: self.catalog_data
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
@@ -1277,7 +1275,7 @@ impl CreateRepositoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompleteLayerUploadOutput {
+pub struct CompleteLayerUploadOutput  {
     /// <p>The public registry ID that's associated with the request.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -1293,25 +1291,25 @@ pub struct CompleteLayerUploadOutput {
 }
 impl CompleteLayerUploadOutput {
     /// <p>The public registry ID that's associated with the request.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The upload ID that's associated with the layer.</p>
-    pub fn upload_id(&self) -> std::option::Option<&str> {
+    pub fn upload_id(&self) -> std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn layer_digest(&self) -> std::option::Option<&str> {
+    pub fn layer_digest(&self) -> std::option::Option<& str> {
         self.layer_digest.as_deref()
     }
 }
 /// See [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput).
 pub mod complete_layer_upload_output {
-
+    
     /// A builder for [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1328,8 +1326,7 @@ pub mod complete_layer_upload_output {
         }
         /// <p>The public registry ID that's associated with the request.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.registry_id = input;
-            self
+            self.registry_id = input; self
         }
         /// <p>The repository name that's associated with the request.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1337,12 +1334,8 @@ pub mod complete_layer_upload_output {
             self
         }
         /// <p>The repository name that's associated with the request.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The upload ID that's associated with the layer.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1351,8 +1344,7 @@ pub mod complete_layer_upload_output {
         }
         /// <p>The upload ID that's associated with the layer.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input;
-            self
+            self.upload_id = input; self
         }
         /// <p>The <code>sha256</code> digest of the image layer.</p>
         pub fn layer_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1361,19 +1353,24 @@ pub mod complete_layer_upload_output {
         }
         /// <p>The <code>sha256</code> digest of the image layer.</p>
         pub fn set_layer_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_digest = input;
-            self
+            self.layer_digest = input; self
         }
         /// Consumes the builder and constructs a [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput).
         pub fn build(self) -> crate::output::CompleteLayerUploadOutput {
             crate::output::CompleteLayerUploadOutput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                upload_id: self.upload_id,
-                layer_digest: self.layer_digest,
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                upload_id: self.upload_id
+                ,
+                layer_digest: self.layer_digest
+                ,
             }
         }
     }
+    
+    
 }
 impl CompleteLayerUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput).
@@ -1385,7 +1382,7 @@ impl CompleteLayerUploadOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteImageOutput {
+pub struct BatchDeleteImageOutput  {
     /// <p>The image IDs of the deleted images.</p>
     #[doc(hidden)]
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
@@ -1395,17 +1392,17 @@ pub struct BatchDeleteImageOutput {
 }
 impl BatchDeleteImageOutput {
     /// <p>The image IDs of the deleted images.</p>
-    pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
+    pub fn image_ids(&self) -> std::option::Option<& [crate::model::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::model::ImageFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::model::ImageFailure]> {
         self.failures.as_deref()
     }
 }
 /// See [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput).
 pub mod batch_delete_image_output {
-
+    
     /// A builder for [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1420,17 +1417,13 @@ pub mod batch_delete_image_output {
         /// <p>The image IDs of the deleted images.</p>
         pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
-            v.push(input);
-            self.image_ids = Some(v);
-            self
+                            v.push(input);
+                            self.image_ids = Some(v);
+                            self
         }
         /// <p>The image IDs of the deleted images.</p>
-        pub fn set_image_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
-        ) -> Self {
-            self.image_ids = input;
-            self
+        pub fn set_image_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>) -> Self {
+            self.image_ids = input; self
         }
         /// Appends an item to `failures`.
         ///
@@ -1439,26 +1432,26 @@ pub mod batch_delete_image_output {
         /// <p>Any failures associated with the call.</p>
         pub fn failures(mut self, input: crate::model::ImageFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input);
-            self.failures = Some(v);
-            self
+                            v.push(input);
+                            self.failures = Some(v);
+                            self
         }
         /// <p>Any failures associated with the call.</p>
-        pub fn set_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImageFailure>>,
-        ) -> Self {
-            self.failures = input;
-            self
+        pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImageFailure>>) -> Self {
+            self.failures = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput).
         pub fn build(self) -> crate::output::BatchDeleteImageOutput {
             crate::output::BatchDeleteImageOutput {
-                image_ids: self.image_ids,
-                failures: self.failures,
+                image_ids: self.image_ids
+                ,
+                failures: self.failures
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteImageOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput).
@@ -1470,7 +1463,7 @@ impl BatchDeleteImageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCheckLayerAvailabilityOutput {
+pub struct BatchCheckLayerAvailabilityOutput  {
     /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
     #[doc(hidden)]
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -1480,17 +1473,17 @@ pub struct BatchCheckLayerAvailabilityOutput {
 }
 impl BatchCheckLayerAvailabilityOutput {
     /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
-    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+    pub fn layers(&self) -> std::option::Option<& [crate::model::Layer]> {
         self.layers.as_deref()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::model::LayerFailure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::model::LayerFailure]> {
         self.failures.as_deref()
     }
 }
 /// See [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput).
 pub mod batch_check_layer_availability_output {
-
+    
     /// A builder for [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1505,17 +1498,13 @@ pub mod batch_check_layer_availability_output {
         /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input);
-            self.layers = Some(v);
-            self
+                            v.push(input);
+                            self.layers = Some(v);
+                            self
         }
         /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
-        pub fn set_layers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-        ) -> Self {
-            self.layers = input;
-            self
+        pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Layer>>) -> Self {
+            self.layers = input; self
         }
         /// Appends an item to `failures`.
         ///
@@ -1524,26 +1513,26 @@ pub mod batch_check_layer_availability_output {
         /// <p>Any failures associated with the call.</p>
         pub fn failures(mut self, input: crate::model::LayerFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input);
-            self.failures = Some(v);
-            self
+                            v.push(input);
+                            self.failures = Some(v);
+                            self
         }
         /// <p>Any failures associated with the call.</p>
-        pub fn set_failures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LayerFailure>>,
-        ) -> Self {
-            self.failures = input;
-            self
+        pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::model::LayerFailure>>) -> Self {
+            self.failures = input; self
         }
         /// Consumes the builder and constructs a [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput).
         pub fn build(self) -> crate::output::BatchCheckLayerAvailabilityOutput {
             crate::output::BatchCheckLayerAvailabilityOutput {
-                layers: self.layers,
-                failures: self.failures,
+                layers: self.layers
+                ,
+                failures: self.failures
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCheckLayerAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput).
@@ -1551,3 +1540,4 @@ impl BatchCheckLayerAvailabilityOutput {
         crate::output::batch_check_layer_availability_output::Builder::default()
     }
 }
+

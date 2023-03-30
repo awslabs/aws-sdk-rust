@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationRuleOutput {}
+pub struct UpdateNotificationRuleOutput  {
+}
 /// See [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
 pub mod update_notification_rule_output {
-
+    
     /// A builder for [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
         pub fn build(self) -> crate::output::UpdateNotificationRuleOutput {
-            crate::output::UpdateNotificationRuleOutput {}
+            crate::output::UpdateNotificationRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateNotificationRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
@@ -26,19 +31,24 @@ impl UpdateNotificationRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -50,20 +60,20 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsubscribeOutput {
+pub struct UnsubscribeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl UnsubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
 pub mod unsubscribe_output {
-
+    
     /// A builder for [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,14 +87,18 @@ pub mod unsubscribe_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
         pub fn build(self) -> crate::output::UnsubscribeOutput {
-            crate::output::UnsubscribeOutput { arn: self.arn }
+            crate::output::UnsubscribeOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl UnsubscribeOutput {
     /// Creates a new builder-style object to manufacture [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
@@ -96,30 +110,24 @@ impl UnsubscribeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {
+pub struct TagResourceOutput  {
     /// <p>The list of tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceOutput {
     /// <p>The list of tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -127,31 +135,26 @@ pub mod tag_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput { tags: self.tags }
+            crate::output::TagResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -163,20 +166,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscribeOutput {
+pub struct SubscribeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl SubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`SubscribeOutput`](crate::output::SubscribeOutput).
 pub mod subscribe_output {
-
+    
     /// A builder for [`SubscribeOutput`](crate::output::SubscribeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -190,14 +193,18 @@ pub mod subscribe_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`SubscribeOutput`](crate::output::SubscribeOutput).
         pub fn build(self) -> crate::output::SubscribeOutput {
-            crate::output::SubscribeOutput { arn: self.arn }
+            crate::output::SubscribeOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl SubscribeOutput {
     /// Creates a new builder-style object to manufacture [`SubscribeOutput`](crate::output::SubscribeOutput).
@@ -209,7 +216,7 @@ impl SubscribeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsOutput {
+pub struct ListTargetsOutput  {
     /// <p>The list of notification rule targets. </p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
@@ -219,17 +226,17 @@ pub struct ListTargetsOutput {
 }
 impl ListTargetsOutput {
     /// <p>The list of notification rule targets. </p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::TargetSummary]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::TargetSummary]> {
         self.targets.as_deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTargetsOutput`](crate::output::ListTargetsOutput).
 pub mod list_targets_output {
-
+    
     /// A builder for [`ListTargetsOutput`](crate::output::ListTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -244,17 +251,13 @@ pub mod list_targets_output {
         /// <p>The list of notification rule targets. </p>
         pub fn targets(mut self, input: crate::model::TargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The list of notification rule targets. </p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>) -> Self {
+            self.targets = input; self
         }
         /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -263,17 +266,20 @@ pub mod list_targets_output {
         }
         /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTargetsOutput`](crate::output::ListTargetsOutput).
         pub fn build(self) -> crate::output::ListTargetsOutput {
             crate::output::ListTargetsOutput {
-                targets: self.targets,
-                next_token: self.next_token,
+                targets: self.targets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTargetsOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsOutput`](crate::output::ListTargetsOutput).
@@ -285,30 +291,24 @@ impl ListTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags associated with the notification rule.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags associated with the notification rule.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -316,31 +316,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the notification rule.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the notification rule.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -352,36 +347,32 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNotificationRulesOutput {
+pub struct ListNotificationRulesOutput  {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     #[doc(hidden)]
-    pub notification_rules:
-        std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
+    pub notification_rules: std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
 }
 impl ListNotificationRulesOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-    pub fn notification_rules(
-        &self,
-    ) -> std::option::Option<&[crate::model::NotificationRuleSummary]> {
+    pub fn notification_rules(&self) -> std::option::Option<& [crate::model::NotificationRuleSummary]> {
         self.notification_rules.as_deref()
     }
 }
 /// See [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
 pub mod list_notification_rules_output {
-
+    
     /// A builder for [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) notification_rules:
-            std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
+        pub(crate) notification_rules: std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
     }
     impl Builder {
         /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -391,8 +382,7 @@ pub mod list_notification_rules_output {
         }
         /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `notification_rules`.
         ///
@@ -401,26 +391,26 @@ pub mod list_notification_rules_output {
         /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
         pub fn notification_rules(mut self, input: crate::model::NotificationRuleSummary) -> Self {
             let mut v = self.notification_rules.unwrap_or_default();
-            v.push(input);
-            self.notification_rules = Some(v);
-            self
+                            v.push(input);
+                            self.notification_rules = Some(v);
+                            self
         }
         /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-        pub fn set_notification_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
-        ) -> Self {
-            self.notification_rules = input;
-            self
+        pub fn set_notification_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>) -> Self {
+            self.notification_rules = input; self
         }
         /// Consumes the builder and constructs a [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
         pub fn build(self) -> crate::output::ListNotificationRulesOutput {
             crate::output::ListNotificationRulesOutput {
-                next_token: self.next_token,
-                notification_rules: self.notification_rules,
+                next_token: self.next_token
+                ,
+                notification_rules: self.notification_rules
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNotificationRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
@@ -432,7 +422,7 @@ impl ListNotificationRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventTypesOutput {
+pub struct ListEventTypesOutput  {
     /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
     #[doc(hidden)]
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
@@ -442,17 +432,17 @@ pub struct ListEventTypesOutput {
 }
 impl ListEventTypesOutput {
     /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
-    pub fn event_types(&self) -> std::option::Option<&[crate::model::EventTypeSummary]> {
+    pub fn event_types(&self) -> std::option::Option<& [crate::model::EventTypeSummary]> {
         self.event_types.as_deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
 pub mod list_event_types_output {
-
+    
     /// A builder for [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -467,17 +457,13 @@ pub mod list_event_types_output {
         /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
         pub fn event_types(mut self, input: crate::model::EventTypeSummary) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input);
-            self.event_types = Some(v);
-            self
+                            v.push(input);
+                            self.event_types = Some(v);
+                            self
         }
         /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
-        pub fn set_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
-        ) -> Self {
-            self.event_types = input;
-            self
+        pub fn set_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>) -> Self {
+            self.event_types = input; self
         }
         /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -486,17 +472,20 @@ pub mod list_event_types_output {
         }
         /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
         pub fn build(self) -> crate::output::ListEventTypesOutput {
             crate::output::ListEventTypesOutput {
-                event_types: self.event_types,
-                next_token: self.next_token,
+                event_types: self.event_types
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
@@ -508,7 +497,7 @@ impl ListEventTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeNotificationRuleOutput {
+pub struct DescribeNotificationRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -541,59 +530,55 @@ pub struct DescribeNotificationRuleOutput {
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags associated with the notification rule.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the notification rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of the event types associated with the notification rule.</p>
-    pub fn event_types(&self) -> std::option::Option<&[crate::model::EventTypeSummary]> {
+    pub fn event_types(&self) -> std::option::Option<& [crate::model::EventTypeSummary]> {
         self.event_types.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::TargetSummary]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::TargetSummary]> {
         self.targets.as_deref()
     }
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-    pub fn detail_type(&self) -> std::option::Option<&crate::model::DetailType> {
+    pub fn detail_type(&self) -> std::option::Option<& crate::model::DetailType> {
         self.detail_type.as_ref()
     }
     /// <p>The name or email alias of the person who created the notification rule.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NotificationRuleStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NotificationRuleStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
-    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
     /// <p>The tags associated with the notification rule.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeNotificationRuleOutput {
+impl  std::fmt::Debug for DescribeNotificationRuleOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNotificationRuleOutput");
         formatter.field("arn", &self.arn);
@@ -612,7 +597,7 @@ impl std::fmt::Debug for DescribeNotificationRuleOutput {
 }
 /// See [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
 pub mod describe_notification_rule_output {
-
+    
     /// A builder for [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -626,9 +611,7 @@ pub mod describe_notification_rule_output {
         pub(crate) status: std::option::Option<crate::model::NotificationRuleStatus>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
@@ -638,8 +621,7 @@ pub mod describe_notification_rule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the notification rule.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -648,8 +630,7 @@ pub mod describe_notification_rule_output {
         }
         /// <p>The name of the notification rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `event_types`.
         ///
@@ -658,17 +639,13 @@ pub mod describe_notification_rule_output {
         /// <p>A list of the event types associated with the notification rule.</p>
         pub fn event_types(mut self, input: crate::model::EventTypeSummary) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input);
-            self.event_types = Some(v);
-            self
+                            v.push(input);
+                            self.event_types = Some(v);
+                            self
         }
         /// <p>A list of the event types associated with the notification rule.</p>
-        pub fn set_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
-        ) -> Self {
-            self.event_types = input;
-            self
+        pub fn set_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>) -> Self {
+            self.event_types = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -677,8 +654,7 @@ pub mod describe_notification_rule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -687,17 +663,13 @@ pub mod describe_notification_rule_output {
         /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
         pub fn targets(mut self, input: crate::model::TargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>) -> Self {
+            self.targets = input; self
         }
         /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
@@ -705,12 +677,8 @@ pub mod describe_notification_rule_output {
             self
         }
         /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-        pub fn set_detail_type(
-            mut self,
-            input: std::option::Option<crate::model::DetailType>,
-        ) -> Self {
-            self.detail_type = input;
-            self
+        pub fn set_detail_type(mut self, input: std::option::Option<crate::model::DetailType>) -> Self {
+            self.detail_type = input; self
         }
         /// <p>The name or email alias of the person who created the notification rule.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -719,8 +687,7 @@ pub mod describe_notification_rule_output {
         }
         /// <p>The name or email alias of the person who created the notification rule.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
         pub fn status(mut self, input: crate::model::NotificationRuleStatus) -> Self {
@@ -728,12 +695,8 @@ pub mod describe_notification_rule_output {
             self
         }
         /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NotificationRuleStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NotificationRuleStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time the notification rule was created, in timestamp format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -741,12 +704,8 @@ pub mod describe_notification_rule_output {
             self
         }
         /// <p>The date and time the notification rule was created, in timestamp format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
         pub fn last_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -754,52 +713,49 @@ pub mod describe_notification_rule_output {
             self
         }
         /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
-        pub fn set_last_modified_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_timestamp = input;
-            self
+        pub fn set_last_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_timestamp = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the notification rule.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the notification rule.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
         pub fn build(self) -> crate::output::DescribeNotificationRuleOutput {
             crate::output::DescribeNotificationRuleOutput {
-                arn: self.arn,
-                name: self.name,
-                event_types: self.event_types,
-                resource: self.resource,
-                targets: self.targets,
-                detail_type: self.detail_type,
-                created_by: self.created_by,
-                status: self.status,
-                created_timestamp: self.created_timestamp,
-                last_modified_timestamp: self.last_modified_timestamp,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                event_types: self.event_types
+                ,
+                resource: self.resource
+                ,
+                targets: self.targets
+                ,
+                detail_type: self.detail_type
+                ,
+                created_by: self.created_by
+                ,
+                status: self.status
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                last_modified_timestamp: self.last_modified_timestamp
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -820,6 +776,8 @@ pub mod describe_notification_rule_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DescribeNotificationRuleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
@@ -831,19 +789,24 @@ impl DescribeNotificationRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTargetOutput {}
+pub struct DeleteTargetOutput  {
+}
 /// See [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
 pub mod delete_target_output {
-
+    
     /// A builder for [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
         pub fn build(self) -> crate::output::DeleteTargetOutput {
-            crate::output::DeleteTargetOutput {}
+            crate::output::DeleteTargetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTargetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
@@ -855,20 +818,20 @@ impl DeleteTargetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotificationRuleOutput {
+pub struct DeleteNotificationRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
 pub mod delete_notification_rule_output {
-
+    
     /// A builder for [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -882,14 +845,18 @@ pub mod delete_notification_rule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
         pub fn build(self) -> crate::output::DeleteNotificationRuleOutput {
-            crate::output::DeleteNotificationRuleOutput { arn: self.arn }
+            crate::output::DeleteNotificationRuleOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteNotificationRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
@@ -901,20 +868,20 @@ impl DeleteNotificationRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNotificationRuleOutput {
+pub struct CreateNotificationRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
 pub mod create_notification_rule_output {
-
+    
     /// A builder for [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -928,14 +895,18 @@ pub mod create_notification_rule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
         pub fn build(self) -> crate::output::CreateNotificationRuleOutput {
-            crate::output::CreateNotificationRuleOutput { arn: self.arn }
+            crate::output::CreateNotificationRuleOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateNotificationRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
@@ -943,3 +914,4 @@ impl CreateNotificationRuleOutput {
         crate::output::create_notification_rule_output::Builder::default()
     }
 }
+

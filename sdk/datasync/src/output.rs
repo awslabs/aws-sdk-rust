@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTaskExecutionOutput {}
+pub struct UpdateTaskExecutionOutput  {
+}
 /// See [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
 pub mod update_task_execution_output {
-
+    
     /// A builder for [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
         pub fn build(self) -> crate::output::UpdateTaskExecutionOutput {
-            crate::output::UpdateTaskExecutionOutput {}
+            crate::output::UpdateTaskExecutionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
@@ -26,19 +31,24 @@ impl UpdateTaskExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTaskOutput {}
+pub struct UpdateTaskOutput  {
+}
 /// See [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
 pub mod update_task_output {
-
+    
     /// A builder for [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
         pub fn build(self) -> crate::output::UpdateTaskOutput {
-            crate::output::UpdateTaskOutput {}
+            crate::output::UpdateTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateTaskOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
@@ -50,19 +60,24 @@ impl UpdateTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLocationSmbOutput {}
+pub struct UpdateLocationSmbOutput  {
+}
 /// See [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
 pub mod update_location_smb_output {
-
+    
     /// A builder for [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
         pub fn build(self) -> crate::output::UpdateLocationSmbOutput {
-            crate::output::UpdateLocationSmbOutput {}
+            crate::output::UpdateLocationSmbOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLocationSmbOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
@@ -74,19 +89,24 @@ impl UpdateLocationSmbOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLocationObjectStorageOutput {}
+pub struct UpdateLocationObjectStorageOutput  {
+}
 /// See [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
 pub mod update_location_object_storage_output {
-
+    
     /// A builder for [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
         pub fn build(self) -> crate::output::UpdateLocationObjectStorageOutput {
-            crate::output::UpdateLocationObjectStorageOutput {}
+            crate::output::UpdateLocationObjectStorageOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLocationObjectStorageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
@@ -98,19 +118,24 @@ impl UpdateLocationObjectStorageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLocationNfsOutput {}
+pub struct UpdateLocationNfsOutput  {
+}
 /// See [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
 pub mod update_location_nfs_output {
-
+    
     /// A builder for [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
         pub fn build(self) -> crate::output::UpdateLocationNfsOutput {
-            crate::output::UpdateLocationNfsOutput {}
+            crate::output::UpdateLocationNfsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLocationNfsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
@@ -122,19 +147,24 @@ impl UpdateLocationNfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLocationHdfsOutput {}
+pub struct UpdateLocationHdfsOutput  {
+}
 /// See [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
 pub mod update_location_hdfs_output {
-
+    
     /// A builder for [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
         pub fn build(self) -> crate::output::UpdateLocationHdfsOutput {
-            crate::output::UpdateLocationHdfsOutput {}
+            crate::output::UpdateLocationHdfsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLocationHdfsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
@@ -146,19 +176,24 @@ impl UpdateLocationHdfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAgentOutput {}
+pub struct UpdateAgentOutput  {
+}
 /// See [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
 pub mod update_agent_output {
-
+    
     /// A builder for [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
         pub fn build(self) -> crate::output::UpdateAgentOutput {
-            crate::output::UpdateAgentOutput {}
+            crate::output::UpdateAgentOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAgentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
@@ -170,19 +205,24 @@ impl UpdateAgentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -194,19 +234,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -218,20 +263,20 @@ impl TagResourceOutput {
 /// <p>StartTaskExecutionResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTaskExecutionOutput {
+pub struct StartTaskExecutionOutput  {
     /// <p>The ARN of the running task execution.</p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
 impl StartTaskExecutionOutput {
     /// <p>The ARN of the running task execution.</p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
 }
 /// See [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
 pub mod start_task_execution_output {
-
+    
     /// A builder for [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -244,20 +289,19 @@ pub mod start_task_execution_output {
             self
         }
         /// <p>The ARN of the running task execution.</p>
-        pub fn set_task_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_execution_arn = input;
-            self
+        pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_execution_arn = input; self
         }
         /// Consumes the builder and constructs a [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
         pub fn build(self) -> crate::output::StartTaskExecutionOutput {
             crate::output::StartTaskExecutionOutput {
-                task_execution_arn: self.task_execution_arn,
+                task_execution_arn: self.task_execution_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StartTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
@@ -269,7 +313,7 @@ impl StartTaskExecutionOutput {
 /// <p>ListTasksResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTasksOutput {
+pub struct ListTasksOutput  {
     /// <p>A list of all the tasks that are returned.</p>
     #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::TaskListEntry>>,
@@ -279,17 +323,17 @@ pub struct ListTasksOutput {
 }
 impl ListTasksOutput {
     /// <p>A list of all the tasks that are returned.</p>
-    pub fn tasks(&self) -> std::option::Option<&[crate::model::TaskListEntry]> {
+    pub fn tasks(&self) -> std::option::Option<& [crate::model::TaskListEntry]> {
         self.tasks.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTasksOutput`](crate::output::ListTasksOutput).
 pub mod list_tasks_output {
-
+    
     /// A builder for [`ListTasksOutput`](crate::output::ListTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -304,17 +348,13 @@ pub mod list_tasks_output {
         /// <p>A list of all the tasks that are returned.</p>
         pub fn tasks(mut self, input: crate::model::TaskListEntry) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input);
-            self.tasks = Some(v);
-            self
+                            v.push(input);
+                            self.tasks = Some(v);
+                            self
         }
         /// <p>A list of all the tasks that are returned.</p>
-        pub fn set_tasks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TaskListEntry>>,
-        ) -> Self {
-            self.tasks = input;
-            self
+        pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::TaskListEntry>>) -> Self {
+            self.tasks = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -323,17 +363,20 @@ pub mod list_tasks_output {
         }
         /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTasksOutput`](crate::output::ListTasksOutput).
         pub fn build(self) -> crate::output::ListTasksOutput {
             crate::output::ListTasksOutput {
-                tasks: self.tasks,
-                next_token: self.next_token,
+                tasks: self.tasks
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListTasksOutput`](crate::output::ListTasksOutput).
@@ -345,7 +388,7 @@ impl ListTasksOutput {
 /// <p>ListTaskExecutionsResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTaskExecutionsOutput {
+pub struct ListTaskExecutionsOutput  {
     /// <p>A list of executed tasks.</p>
     #[doc(hidden)]
     pub task_executions: std::option::Option<std::vec::Vec<crate::model::TaskExecutionListEntry>>,
@@ -355,22 +398,21 @@ pub struct ListTaskExecutionsOutput {
 }
 impl ListTaskExecutionsOutput {
     /// <p>A list of executed tasks.</p>
-    pub fn task_executions(&self) -> std::option::Option<&[crate::model::TaskExecutionListEntry]> {
+    pub fn task_executions(&self) -> std::option::Option<& [crate::model::TaskExecutionListEntry]> {
         self.task_executions.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
 pub mod list_task_executions_output {
-
+    
     /// A builder for [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) task_executions:
-            std::option::Option<std::vec::Vec<crate::model::TaskExecutionListEntry>>,
+        pub(crate) task_executions: std::option::Option<std::vec::Vec<crate::model::TaskExecutionListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -381,17 +423,13 @@ pub mod list_task_executions_output {
         /// <p>A list of executed tasks.</p>
         pub fn task_executions(mut self, input: crate::model::TaskExecutionListEntry) -> Self {
             let mut v = self.task_executions.unwrap_or_default();
-            v.push(input);
-            self.task_executions = Some(v);
-            self
+                            v.push(input);
+                            self.task_executions = Some(v);
+                            self
         }
         /// <p>A list of executed tasks.</p>
-        pub fn set_task_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TaskExecutionListEntry>>,
-        ) -> Self {
-            self.task_executions = input;
-            self
+        pub fn set_task_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::TaskExecutionListEntry>>) -> Self {
+            self.task_executions = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -400,17 +438,20 @@ pub mod list_task_executions_output {
         }
         /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
         pub fn build(self) -> crate::output::ListTaskExecutionsOutput {
             crate::output::ListTaskExecutionsOutput {
-                task_executions: self.task_executions,
-                next_token: self.next_token,
+                task_executions: self.task_executions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTaskExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
@@ -422,7 +463,7 @@ impl ListTaskExecutionsOutput {
 /// <p>ListTagsForResourceResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>An array of tags applied to the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -432,17 +473,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>An array of tags applied to the specified resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagListEntry]> {
         self.tags.as_deref()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -457,17 +498,13 @@ pub mod list_tags_for_resource_output {
         /// <p>An array of tags applied to the specified resource.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of tags applied to the specified resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -476,17 +513,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -498,7 +538,7 @@ impl ListTagsForResourceOutput {
 /// <p>ListLocationsResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLocationsOutput {
+pub struct ListLocationsOutput  {
     /// <p>An array that contains a list of locations.</p>
     #[doc(hidden)]
     pub locations: std::option::Option<std::vec::Vec<crate::model::LocationListEntry>>,
@@ -508,17 +548,17 @@ pub struct ListLocationsOutput {
 }
 impl ListLocationsOutput {
     /// <p>An array that contains a list of locations.</p>
-    pub fn locations(&self) -> std::option::Option<&[crate::model::LocationListEntry]> {
+    pub fn locations(&self) -> std::option::Option<& [crate::model::LocationListEntry]> {
         self.locations.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLocationsOutput`](crate::output::ListLocationsOutput).
 pub mod list_locations_output {
-
+    
     /// A builder for [`ListLocationsOutput`](crate::output::ListLocationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -533,17 +573,13 @@ pub mod list_locations_output {
         /// <p>An array that contains a list of locations.</p>
         pub fn locations(mut self, input: crate::model::LocationListEntry) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input);
-            self.locations = Some(v);
-            self
+                            v.push(input);
+                            self.locations = Some(v);
+                            self
         }
         /// <p>An array that contains a list of locations.</p>
-        pub fn set_locations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LocationListEntry>>,
-        ) -> Self {
-            self.locations = input;
-            self
+        pub fn set_locations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LocationListEntry>>) -> Self {
+            self.locations = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -552,17 +588,20 @@ pub mod list_locations_output {
         }
         /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLocationsOutput`](crate::output::ListLocationsOutput).
         pub fn build(self) -> crate::output::ListLocationsOutput {
             crate::output::ListLocationsOutput {
-                locations: self.locations,
-                next_token: self.next_token,
+                locations: self.locations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLocationsOutput {
     /// Creates a new builder-style object to manufacture [`ListLocationsOutput`](crate::output::ListLocationsOutput).
@@ -574,7 +613,7 @@ impl ListLocationsOutput {
 /// <p>ListAgentsResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAgentsOutput {
+pub struct ListAgentsOutput  {
     /// <p>A list of agents in your account.</p>
     #[doc(hidden)]
     pub agents: std::option::Option<std::vec::Vec<crate::model::AgentListEntry>>,
@@ -584,17 +623,17 @@ pub struct ListAgentsOutput {
 }
 impl ListAgentsOutput {
     /// <p>A list of agents in your account.</p>
-    pub fn agents(&self) -> std::option::Option<&[crate::model::AgentListEntry]> {
+    pub fn agents(&self) -> std::option::Option<& [crate::model::AgentListEntry]> {
         self.agents.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAgentsOutput`](crate::output::ListAgentsOutput).
 pub mod list_agents_output {
-
+    
     /// A builder for [`ListAgentsOutput`](crate::output::ListAgentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -609,17 +648,13 @@ pub mod list_agents_output {
         /// <p>A list of agents in your account.</p>
         pub fn agents(mut self, input: crate::model::AgentListEntry) -> Self {
             let mut v = self.agents.unwrap_or_default();
-            v.push(input);
-            self.agents = Some(v);
-            self
+                            v.push(input);
+                            self.agents = Some(v);
+                            self
         }
         /// <p>A list of agents in your account.</p>
-        pub fn set_agents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AgentListEntry>>,
-        ) -> Self {
-            self.agents = input;
-            self
+        pub fn set_agents(mut self, input: std::option::Option<std::vec::Vec<crate::model::AgentListEntry>>) -> Self {
+            self.agents = input; self
         }
         /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -628,17 +663,20 @@ pub mod list_agents_output {
         }
         /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAgentsOutput`](crate::output::ListAgentsOutput).
         pub fn build(self) -> crate::output::ListAgentsOutput {
             crate::output::ListAgentsOutput {
-                agents: self.agents,
-                next_token: self.next_token,
+                agents: self.agents
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAgentsOutput {
     /// Creates a new builder-style object to manufacture [`ListAgentsOutput`](crate::output::ListAgentsOutput).
@@ -650,16 +688,16 @@ impl ListAgentsOutput {
 /// <p>DescribeTaskExecutionResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTaskExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
+pub struct DescribeTaskExecutionOutput  {
+    /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p> 
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the task execution. </p>
+    /// <p>The status of the task execution. </p> 
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskExecutionStatus>,
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p> 
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
@@ -678,7 +716,7 @@ pub struct DescribeTaskExecutionOutput {
     /// <p>The estimated physical number of bytes that is to be transferred over the network.</p>
     #[doc(hidden)]
     pub estimated_bytes_to_transfer: i64,
-    /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
+    /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p> 
     /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
     #[doc(hidden)]
     pub files_transferred: i64,
@@ -696,31 +734,31 @@ pub struct DescribeTaskExecutionOutput {
     pub bytes_compressed: i64,
 }
 impl DescribeTaskExecutionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
+    /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p> 
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
-    /// <p>The status of the task execution. </p>
+    /// <p>The status of the task execution. </p> 
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TaskExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TaskExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p> 
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+    pub fn options(&self) -> std::option::Option<& crate::model::Options> {
         self.options.as_ref()
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn excludes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn includes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.includes.as_deref()
     }
     /// <p>The time that the task execution was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
@@ -731,7 +769,7 @@ impl DescribeTaskExecutionOutput {
     pub fn estimated_bytes_to_transfer(&self) -> i64 {
         self.estimated_bytes_to_transfer
     }
-    /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
+    /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p> 
     /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
     pub fn files_transferred(&self) -> i64 {
         self.files_transferred
@@ -745,7 +783,7 @@ impl DescribeTaskExecutionOutput {
         self.bytes_transferred
     }
     /// <p>The result of the task execution.</p>
-    pub fn result(&self) -> std::option::Option<&crate::model::TaskExecutionResultDetail> {
+    pub fn result(&self) -> std::option::Option<& crate::model::TaskExecutionResultDetail> {
         self.result.as_ref()
     }
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
@@ -755,7 +793,7 @@ impl DescribeTaskExecutionOutput {
 }
 /// See [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
 pub mod describe_task_execution_output {
-
+    
     /// A builder for [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -774,47 +812,38 @@ pub mod describe_task_execution_output {
         pub(crate) bytes_compressed: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p> 
         /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
         pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_execution_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p> 
         /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
-        pub fn set_task_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_execution_arn = input;
-            self
+        pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_execution_arn = input; self
         }
-        /// <p>The status of the task execution. </p>
+        /// <p>The status of the task execution. </p> 
         /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
         pub fn status(mut self, input: crate::model::TaskExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the task execution. </p>
+        /// <p>The status of the task execution. </p> 
         /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TaskExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TaskExecutionStatus>) -> Self {
+            self.status = input; self
         }
-        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p> 
         /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
+        /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p> 
         /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// Appends an item to `excludes`.
         ///
@@ -823,17 +852,13 @@ pub mod describe_task_execution_output {
         /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input);
-            self.excludes = Some(v);
-            self
+                            v.push(input);
+                            self.excludes = Some(v);
+                            self
         }
         /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-        pub fn set_excludes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.excludes = input;
-            self
+        pub fn set_excludes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.excludes = input; self
         }
         /// Appends an item to `includes`.
         ///
@@ -842,17 +867,13 @@ pub mod describe_task_execution_output {
         /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input);
-            self.includes = Some(v);
-            self
+                            v.push(input);
+                            self.includes = Some(v);
+                            self
         }
         /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-        pub fn set_includes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.includes = input;
-            self
+        pub fn set_includes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.includes = input; self
         }
         /// <p>The time that the task execution was started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -860,12 +881,8 @@ pub mod describe_task_execution_output {
             self
         }
         /// <p>The time that the task execution was started.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
         pub fn estimated_files_to_transfer(mut self, input: i64) -> Self {
@@ -874,8 +891,7 @@ pub mod describe_task_execution_output {
         }
         /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
         pub fn set_estimated_files_to_transfer(mut self, input: std::option::Option<i64>) -> Self {
-            self.estimated_files_to_transfer = input;
-            self
+            self.estimated_files_to_transfer = input; self
         }
         /// <p>The estimated physical number of bytes that is to be transferred over the network.</p>
         pub fn estimated_bytes_to_transfer(mut self, input: i64) -> Self {
@@ -884,20 +900,18 @@ pub mod describe_task_execution_output {
         }
         /// <p>The estimated physical number of bytes that is to be transferred over the network.</p>
         pub fn set_estimated_bytes_to_transfer(mut self, input: std::option::Option<i64>) -> Self {
-            self.estimated_bytes_to_transfer = input;
-            self
+            self.estimated_bytes_to_transfer = input; self
         }
-        /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
+        /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p> 
         /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
         pub fn files_transferred(mut self, input: i64) -> Self {
             self.files_transferred = Some(input);
             self
         }
-        /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
+        /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p> 
         /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
         pub fn set_files_transferred(mut self, input: std::option::Option<i64>) -> Self {
-            self.files_transferred = input;
-            self
+            self.files_transferred = input; self
         }
         /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
         pub fn bytes_written(mut self, input: i64) -> Self {
@@ -906,8 +920,7 @@ pub mod describe_task_execution_output {
         }
         /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
         pub fn set_bytes_written(mut self, input: std::option::Option<i64>) -> Self {
-            self.bytes_written = input;
-            self
+            self.bytes_written = input; self
         }
         /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
         pub fn bytes_transferred(mut self, input: i64) -> Self {
@@ -916,8 +929,7 @@ pub mod describe_task_execution_output {
         }
         /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
         pub fn set_bytes_transferred(mut self, input: std::option::Option<i64>) -> Self {
-            self.bytes_transferred = input;
-            self
+            self.bytes_transferred = input; self
         }
         /// <p>The result of the task execution.</p>
         pub fn result(mut self, input: crate::model::TaskExecutionResultDetail) -> Self {
@@ -925,12 +937,8 @@ pub mod describe_task_execution_output {
             self
         }
         /// <p>The result of the task execution.</p>
-        pub fn set_result(
-            mut self,
-            input: std::option::Option<crate::model::TaskExecutionResultDetail>,
-        ) -> Self {
-            self.result = input;
-            self
+        pub fn set_result(mut self, input: std::option::Option<crate::model::TaskExecutionResultDetail>) -> Self {
+            self.result = input; self
         }
         /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
         pub fn bytes_compressed(mut self, input: i64) -> Self {
@@ -939,28 +947,48 @@ pub mod describe_task_execution_output {
         }
         /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
         pub fn set_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
-            self.bytes_compressed = input;
-            self
+            self.bytes_compressed = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
         pub fn build(self) -> crate::output::DescribeTaskExecutionOutput {
             crate::output::DescribeTaskExecutionOutput {
-                task_execution_arn: self.task_execution_arn,
-                status: self.status,
-                options: self.options,
-                excludes: self.excludes,
-                includes: self.includes,
-                start_time: self.start_time,
-                estimated_files_to_transfer: self.estimated_files_to_transfer.unwrap_or_default(),
-                estimated_bytes_to_transfer: self.estimated_bytes_to_transfer.unwrap_or_default(),
-                files_transferred: self.files_transferred.unwrap_or_default(),
-                bytes_written: self.bytes_written.unwrap_or_default(),
-                bytes_transferred: self.bytes_transferred.unwrap_or_default(),
-                result: self.result,
-                bytes_compressed: self.bytes_compressed.unwrap_or_default(),
+                task_execution_arn: self.task_execution_arn
+                ,
+                status: self.status
+                ,
+                options: self.options
+                ,
+                excludes: self.excludes
+                ,
+                includes: self.includes
+                ,
+                start_time: self.start_time
+                ,
+                estimated_files_to_transfer: self.estimated_files_to_transfer
+                    .unwrap_or_default()
+                ,
+                estimated_bytes_to_transfer: self.estimated_bytes_to_transfer
+                    .unwrap_or_default()
+                ,
+                files_transferred: self.files_transferred
+                    .unwrap_or_default()
+                ,
+                bytes_written: self.bytes_written
+                    .unwrap_or_default()
+                ,
+                bytes_transferred: self.bytes_transferred
+                    .unwrap_or_default()
+                ,
+                result: self.result
+                ,
+                bytes_compressed: self.bytes_compressed
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
@@ -972,11 +1000,11 @@ impl DescribeTaskExecutionOutput {
 /// <p>DescribeTaskResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTaskOutput {
+pub struct DescribeTaskOutput  {
     /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the task that was described.</p>
+    /// <p>The status of the task that was described.</p> 
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TaskStatus>,
@@ -992,7 +1020,7 @@ pub struct DescribeTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
     #[doc(hidden)]
     pub destination_location_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p> 
     /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
     #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
@@ -1002,7 +1030,7 @@ pub struct DescribeTaskOutput {
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
     #[doc(hidden)]
     pub destination_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p> 
     /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Options>,
@@ -1027,78 +1055,76 @@ pub struct DescribeTaskOutput {
 }
 impl DescribeTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
-    /// <p>The status of the task that was described.</p>
+    /// <p>The status of the task that was described.</p> 
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TaskStatus> {
         self.status.as_ref()
     }
     /// <p>The name of the task that was described.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
-    pub fn current_task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn current_task_execution_arn(&self) -> std::option::Option<& str> {
         self.current_task_execution_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
-    pub fn source_location_arn(&self) -> std::option::Option<&str> {
+    pub fn source_location_arn(&self) -> std::option::Option<& str> {
         self.source_location_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
-    pub fn destination_location_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_location_arn(&self) -> std::option::Option<& str> {
         self.destination_location_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p> 
     /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn source_network_interface_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn source_network_interface_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.source_network_interface_arns.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    pub fn destination_network_interface_arns(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn destination_network_interface_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.destination_network_interface_arns.as_deref()
     }
-    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p> 
     /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+    pub fn options(&self) -> std::option::Option<& crate::model::Options> {
         self.options.as_ref()
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn excludes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.excludes.as_deref()
     }
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::model::TaskSchedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::model::TaskSchedule> {
         self.schedule.as_ref()
     }
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
-    pub fn error_detail(&self) -> std::option::Option<&str> {
+    pub fn error_detail(&self) -> std::option::Option<& str> {
         self.error_detail.as_deref()
     }
     /// <p>The time that the task was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+    pub fn includes(&self) -> std::option::Option<& [crate::model::FilterRule]> {
         self.includes.as_deref()
     }
 }
 /// See [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
 pub mod describe_task_output {
-
+    
     /// A builder for [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1109,10 +1135,8 @@ pub mod describe_task_output {
         pub(crate) source_location_arn: std::option::Option<std::string::String>,
         pub(crate) destination_location_arn: std::option::Option<std::string::String>,
         pub(crate) cloud_watch_log_group_arn: std::option::Option<std::string::String>,
-        pub(crate) source_network_interface_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) destination_network_interface_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) source_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) destination_network_interface_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) options: std::option::Option<crate::model::Options>,
         pub(crate) excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
         pub(crate) schedule: std::option::Option<crate::model::TaskSchedule>,
@@ -1129,20 +1153,18 @@ pub mod describe_task_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
-        /// <p>The status of the task that was described.</p>
+        /// <p>The status of the task that was described.</p> 
         /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
         pub fn status(mut self, input: crate::model::TaskStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the task that was described.</p>
+        /// <p>The status of the task that was described.</p> 
         /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::TaskStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The name of the task that was described.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1151,8 +1173,7 @@ pub mod describe_task_output {
         }
         /// <p>The name of the task that was described.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
         pub fn current_task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1160,12 +1181,8 @@ pub mod describe_task_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
-        pub fn set_current_task_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_task_execution_arn = input;
-            self
+        pub fn set_current_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_task_execution_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
         pub fn source_location_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1173,12 +1190,8 @@ pub mod describe_task_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
-        pub fn set_source_location_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_arn = input;
-            self
+        pub fn set_source_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_location_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
         pub fn destination_location_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1186,83 +1199,60 @@ pub mod describe_task_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
-        pub fn set_destination_location_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_location_arn = input;
-            self
+        pub fn set_destination_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_location_arn = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p> 
         /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_log_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p> 
         /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn set_cloud_watch_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_log_group_arn = input;
-            self
+        pub fn set_cloud_watch_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_log_group_arn = input; self
         }
         /// Appends an item to `source_network_interface_arns`.
         ///
         /// To override the contents of this collection use [`set_source_network_interface_arns`](Self::set_source_network_interface_arns).
         ///
         /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-        pub fn source_network_interface_arns(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn source_network_interface_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_network_interface_arns.unwrap_or_default();
-            v.push(input.into());
-            self.source_network_interface_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.source_network_interface_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-        pub fn set_source_network_interface_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.source_network_interface_arns = input;
-            self
+        pub fn set_source_network_interface_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.source_network_interface_arns = input; self
         }
         /// Appends an item to `destination_network_interface_arns`.
         ///
         /// To override the contents of this collection use [`set_destination_network_interface_arns`](Self::set_destination_network_interface_arns).
         ///
         /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-        pub fn destination_network_interface_arns(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn destination_network_interface_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destination_network_interface_arns.unwrap_or_default();
-            v.push(input.into());
-            self.destination_network_interface_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.destination_network_interface_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-        pub fn set_destination_network_interface_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.destination_network_interface_arns = input;
-            self
+        pub fn set_destination_network_interface_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.destination_network_interface_arns = input; self
         }
-        /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+        /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p> 
         /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.options = Some(input);
             self
         }
-        /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
+        /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p> 
         /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// Appends an item to `excludes`.
         ///
@@ -1271,17 +1261,13 @@ pub mod describe_task_output {
         /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.excludes.unwrap_or_default();
-            v.push(input);
-            self.excludes = Some(v);
-            self
+                            v.push(input);
+                            self.excludes = Some(v);
+                            self
         }
         /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-        pub fn set_excludes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.excludes = input;
-            self
+        pub fn set_excludes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.excludes = input; self
         }
         /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
         pub fn schedule(mut self, input: crate::model::TaskSchedule) -> Self {
@@ -1289,12 +1275,8 @@ pub mod describe_task_output {
             self
         }
         /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
-        pub fn set_schedule(
-            mut self,
-            input: std::option::Option<crate::model::TaskSchedule>,
-        ) -> Self {
-            self.schedule = input;
-            self
+        pub fn set_schedule(mut self, input: std::option::Option<crate::model::TaskSchedule>) -> Self {
+            self.schedule = input; self
         }
         /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1303,8 +1285,7 @@ pub mod describe_task_output {
         }
         /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
         pub fn error_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1313,8 +1294,7 @@ pub mod describe_task_output {
         }
         /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
         pub fn set_error_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_detail = input;
-            self
+            self.error_detail = input; self
         }
         /// <p>The time that the task was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1322,12 +1302,8 @@ pub mod describe_task_output {
             self
         }
         /// <p>The time that the task was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Appends an item to `includes`.
         ///
@@ -1336,40 +1312,54 @@ pub mod describe_task_output {
         /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.includes.unwrap_or_default();
-            v.push(input);
-            self.includes = Some(v);
-            self
+                            v.push(input);
+                            self.includes = Some(v);
+                            self
         }
         /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-        pub fn set_includes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
-        ) -> Self {
-            self.includes = input;
-            self
+        pub fn set_includes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
+            self.includes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
         pub fn build(self) -> crate::output::DescribeTaskOutput {
             crate::output::DescribeTaskOutput {
-                task_arn: self.task_arn,
-                status: self.status,
-                name: self.name,
-                current_task_execution_arn: self.current_task_execution_arn,
-                source_location_arn: self.source_location_arn,
-                destination_location_arn: self.destination_location_arn,
-                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-                source_network_interface_arns: self.source_network_interface_arns,
-                destination_network_interface_arns: self.destination_network_interface_arns,
-                options: self.options,
-                excludes: self.excludes,
-                schedule: self.schedule,
-                error_code: self.error_code,
-                error_detail: self.error_detail,
-                creation_time: self.creation_time,
-                includes: self.includes,
+                task_arn: self.task_arn
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                current_task_execution_arn: self.current_task_execution_arn
+                ,
+                source_location_arn: self.source_location_arn
+                ,
+                destination_location_arn: self.destination_location_arn
+                ,
+                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+                ,
+                source_network_interface_arns: self.source_network_interface_arns
+                ,
+                destination_network_interface_arns: self.destination_network_interface_arns
+                ,
+                options: self.options
+                ,
+                excludes: self.excludes
+                ,
+                schedule: self.schedule
+                ,
+                error_code: self.error_code
+                ,
+                error_detail: self.error_detail
+                ,
+                creation_time: self.creation_time
+                ,
+                includes: self.includes
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
@@ -1381,7 +1371,7 @@ impl DescribeTaskOutput {
 /// <p>DescribeLocationSmbResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationSmbOutput {
+pub struct DescribeLocationSmbOutput  {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -1406,37 +1396,37 @@ pub struct DescribeLocationSmbOutput {
 }
 impl DescribeLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the source SMB location that was described.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    pub fn user(&self) -> std::option::Option<&str> {
+    pub fn user(&self) -> std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
-    pub fn mount_options(&self) -> std::option::Option<&crate::model::SmbMountOptions> {
+    pub fn mount_options(&self) -> std::option::Option<& crate::model::SmbMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>The time that the SMB location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
 pub mod describe_location_smb_output {
-
+    
     /// A builder for [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1456,8 +1446,7 @@ pub mod describe_location_smb_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The URL of the source SMB location that was described.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1466,8 +1455,7 @@ pub mod describe_location_smb_output {
         }
         /// <p>The URL of the source SMB location that was described.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -1476,17 +1464,13 @@ pub mod describe_location_smb_output {
         /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1495,8 +1479,7 @@ pub mod describe_location_smb_output {
         }
         /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1505,8 +1488,7 @@ pub mod describe_location_smb_output {
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
         pub fn mount_options(mut self, input: crate::model::SmbMountOptions) -> Self {
@@ -1514,12 +1496,8 @@ pub mod describe_location_smb_output {
             self
         }
         /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
-        pub fn set_mount_options(
-            mut self,
-            input: std::option::Option<crate::model::SmbMountOptions>,
-        ) -> Self {
-            self.mount_options = input;
-            self
+        pub fn set_mount_options(mut self, input: std::option::Option<crate::model::SmbMountOptions>) -> Self {
+            self.mount_options = input; self
         }
         /// <p>The time that the SMB location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1527,26 +1505,31 @@ pub mod describe_location_smb_output {
             self
         }
         /// <p>The time that the SMB location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
         pub fn build(self) -> crate::output::DescribeLocationSmbOutput {
             crate::output::DescribeLocationSmbOutput {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                agent_arns: self.agent_arns,
-                user: self.user,
-                domain: self.domain,
-                mount_options: self.mount_options,
-                creation_time: self.creation_time,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                agent_arns: self.agent_arns
+                ,
+                user: self.user
+                ,
+                domain: self.domain
+                ,
+                mount_options: self.mount_options
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationSmbOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
@@ -1558,7 +1541,7 @@ impl DescribeLocationSmbOutput {
 /// <p>DescribeLocationS3Response</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationS3Output {
+pub struct DescribeLocationS3Output  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -1568,7 +1551,7 @@ pub struct DescribeLocationS3Output {
     /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
     #[doc(hidden)]
     pub s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> 
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
     #[doc(hidden)]
     pub s3_config: std::option::Option<crate::model::S3Config>,
@@ -1581,34 +1564,34 @@ pub struct DescribeLocationS3Output {
 }
 impl DescribeLocationS3Output {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the Amazon S3 location that was described.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    pub fn s3_storage_class(&self) -> std::option::Option<&crate::model::S3StorageClass> {
+    pub fn s3_storage_class(&self) -> std::option::Option<& crate::model::S3StorageClass> {
         self.s3_storage_class.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> 
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
-    pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
+    pub fn s3_config(&self) -> std::option::Option<& crate::model::S3Config> {
         self.s3_config.as_ref()
     }
     /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The time that the Amazon S3 bucket location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
 pub mod describe_location_s3_output {
-
+    
     /// A builder for [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1627,8 +1610,7 @@ pub mod describe_location_s3_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The URL of the Amazon S3 location that was described.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1637,8 +1619,7 @@ pub mod describe_location_s3_output {
         }
         /// <p>The URL of the Amazon S3 location that was described.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
         pub fn s3_storage_class(mut self, input: crate::model::S3StorageClass) -> Self {
@@ -1646,24 +1627,19 @@ pub mod describe_location_s3_output {
             self
         }
         /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-        pub fn set_s3_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::S3StorageClass>,
-        ) -> Self {
-            self.s3_storage_class = input;
-            self
+        pub fn set_s3_storage_class(mut self, input: std::option::Option<crate::model::S3StorageClass>) -> Self {
+            self.s3_storage_class = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> 
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.s3_config = Some(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p> 
         /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
-            self.s3_config = input;
-            self
+            self.s3_config = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -1672,17 +1648,13 @@ pub mod describe_location_s3_output {
         /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// <p>The time that the Amazon S3 bucket location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1690,25 +1662,29 @@ pub mod describe_location_s3_output {
             self
         }
         /// <p>The time that the Amazon S3 bucket location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
         pub fn build(self) -> crate::output::DescribeLocationS3Output {
             crate::output::DescribeLocationS3Output {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                s3_storage_class: self.s3_storage_class,
-                s3_config: self.s3_config,
-                agent_arns: self.agent_arns,
-                creation_time: self.creation_time,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                s3_storage_class: self.s3_storage_class
+                ,
+                s3_config: self.s3_config
+                ,
+                agent_arns: self.agent_arns
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationS3Output {
     /// Creates a new builder-style object to manufacture [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
@@ -1720,7 +1696,7 @@ impl DescribeLocationS3Output {
 /// <p>DescribeLocationObjectStorageResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationObjectStorageOutput {
+pub struct DescribeLocationObjectStorageOutput  {
     /// <p>The ARN of the object storage system location.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -1748,15 +1724,15 @@ pub struct DescribeLocationObjectStorageOutput {
 }
 impl DescribeLocationObjectStorageOutput {
     /// <p>The ARN of the object storage system location.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the object storage system location.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
-    pub fn access_key(&self) -> std::option::Option<&str> {
+    pub fn access_key(&self) -> std::option::Option<& str> {
         self.access_key.as_deref()
     }
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
@@ -1764,27 +1740,25 @@ impl DescribeLocationObjectStorageOutput {
         self.server_port
     }
     /// <p>The protocol that your object storage system uses to communicate.</p>
-    pub fn server_protocol(
-        &self,
-    ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
+    pub fn server_protocol(&self) -> std::option::Option<& crate::model::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
     /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The time that the location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
-    pub fn server_certificate(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn server_certificate(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.server_certificate.as_ref()
     }
 }
 /// See [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
 pub mod describe_location_object_storage_output {
-
+    
     /// A builder for [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1805,8 +1779,7 @@ pub mod describe_location_object_storage_output {
         }
         /// <p>The ARN of the object storage system location.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The URL of the object storage system location.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1815,8 +1788,7 @@ pub mod describe_location_object_storage_output {
         }
         /// <p>The URL of the object storage system location.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1825,8 +1797,7 @@ pub mod describe_location_object_storage_output {
         }
         /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_key = input;
-            self
+            self.access_key = input; self
         }
         /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn server_port(mut self, input: i32) -> Self {
@@ -1835,8 +1806,7 @@ pub mod describe_location_object_storage_output {
         }
         /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
         pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.server_port = input;
-            self
+            self.server_port = input; self
         }
         /// <p>The protocol that your object storage system uses to communicate.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
@@ -1844,12 +1814,8 @@ pub mod describe_location_object_storage_output {
             self
         }
         /// <p>The protocol that your object storage system uses to communicate.</p>
-        pub fn set_server_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
-        ) -> Self {
-            self.server_protocol = input;
-            self
+        pub fn set_server_protocol(mut self, input: std::option::Option<crate::model::ObjectStorageServerProtocol>) -> Self {
+            self.server_protocol = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -1858,17 +1824,13 @@ pub mod describe_location_object_storage_output {
         /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// <p>The time that the location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1876,12 +1838,8 @@ pub mod describe_location_object_storage_output {
             self
         }
         /// <p>The time that the location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
         pub fn server_certificate(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -1889,27 +1847,33 @@ pub mod describe_location_object_storage_output {
             self
         }
         /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
-        pub fn set_server_certificate(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.server_certificate = input;
-            self
+        pub fn set_server_certificate(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.server_certificate = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
         pub fn build(self) -> crate::output::DescribeLocationObjectStorageOutput {
             crate::output::DescribeLocationObjectStorageOutput {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                access_key: self.access_key,
-                server_port: self.server_port,
-                server_protocol: self.server_protocol,
-                agent_arns: self.agent_arns,
-                creation_time: self.creation_time,
-                server_certificate: self.server_certificate,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                access_key: self.access_key
+                ,
+                server_port: self.server_port
+                ,
+                server_protocol: self.server_protocol
+                ,
+                agent_arns: self.agent_arns
+                ,
+                creation_time: self.creation_time
+                ,
+                server_certificate: self.server_certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationObjectStorageOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
@@ -1921,7 +1885,7 @@ impl DescribeLocationObjectStorageOutput {
 /// <p>DescribeLocationNfsResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationNfsOutput {
+pub struct DescribeLocationNfsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -1940,29 +1904,29 @@ pub struct DescribeLocationNfsOutput {
 }
 impl DescribeLocationNfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the source NFS location that was described.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    pub fn on_prem_config(&self) -> std::option::Option<&crate::model::OnPremConfig> {
+    pub fn on_prem_config(&self) -> std::option::Option<& crate::model::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
     /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
-    pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
+    pub fn mount_options(&self) -> std::option::Option<& crate::model::NfsMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>The time that the NFS location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
 pub mod describe_location_nfs_output {
-
+    
     /// A builder for [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1980,8 +1944,7 @@ pub mod describe_location_nfs_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The URL of the source NFS location that was described.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1990,8 +1953,7 @@ pub mod describe_location_nfs_output {
         }
         /// <p>The URL of the source NFS location that was described.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
         pub fn on_prem_config(mut self, input: crate::model::OnPremConfig) -> Self {
@@ -1999,12 +1961,8 @@ pub mod describe_location_nfs_output {
             self
         }
         /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-        pub fn set_on_prem_config(
-            mut self,
-            input: std::option::Option<crate::model::OnPremConfig>,
-        ) -> Self {
-            self.on_prem_config = input;
-            self
+        pub fn set_on_prem_config(mut self, input: std::option::Option<crate::model::OnPremConfig>) -> Self {
+            self.on_prem_config = input; self
         }
         /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
         pub fn mount_options(mut self, input: crate::model::NfsMountOptions) -> Self {
@@ -2012,12 +1970,8 @@ pub mod describe_location_nfs_output {
             self
         }
         /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
-        pub fn set_mount_options(
-            mut self,
-            input: std::option::Option<crate::model::NfsMountOptions>,
-        ) -> Self {
-            self.mount_options = input;
-            self
+        pub fn set_mount_options(mut self, input: std::option::Option<crate::model::NfsMountOptions>) -> Self {
+            self.mount_options = input; self
         }
         /// <p>The time that the NFS location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2025,24 +1979,27 @@ pub mod describe_location_nfs_output {
             self
         }
         /// <p>The time that the NFS location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
         pub fn build(self) -> crate::output::DescribeLocationNfsOutput {
             crate::output::DescribeLocationNfsOutput {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                on_prem_config: self.on_prem_config,
-                mount_options: self.mount_options,
-                creation_time: self.creation_time,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                on_prem_config: self.on_prem_config
+                ,
+                mount_options: self.mount_options
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationNfsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
@@ -2054,7 +2011,7 @@ impl DescribeLocationNfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationHdfsOutput {
+pub struct DescribeLocationHdfsOutput  {
     /// <p>The ARN of the HDFS cluster location.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -2094,15 +2051,15 @@ pub struct DescribeLocationHdfsOutput {
 }
 impl DescribeLocationHdfsOutput {
     /// <p>The ARN of the HDFS cluster location.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URI of the HDFS cluster location.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The NameNode that manage the HDFS namespace. </p>
-    pub fn name_nodes(&self) -> std::option::Option<&[crate::model::HdfsNameNode]> {
+    pub fn name_nodes(&self) -> std::option::Option<& [crate::model::HdfsNameNode]> {
         self.name_nodes.as_deref()
     }
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
@@ -2114,39 +2071,37 @@ impl DescribeLocationHdfsOutput {
         self.replication_factor
     }
     /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    pub fn kms_key_provider_uri(&self) -> std::option::Option<&str> {
+    pub fn kms_key_provider_uri(&self) -> std::option::Option<& str> {
         self.kms_key_provider_uri.as_deref()
     }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
-    pub fn qop_configuration(&self) -> std::option::Option<&crate::model::QopConfiguration> {
+    pub fn qop_configuration(&self) -> std::option::Option<& crate::model::QopConfiguration> {
         self.qop_configuration.as_ref()
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    pub fn authentication_type(
-        &self,
-    ) -> std::option::Option<&crate::model::HdfsAuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::HdfsAuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
-    pub fn simple_user(&self) -> std::option::Option<&str> {
+    pub fn simple_user(&self) -> std::option::Option<& str> {
         self.simple_user.as_deref()
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
-    pub fn kerberos_principal(&self) -> std::option::Option<&str> {
+    pub fn kerberos_principal(&self) -> std::option::Option<& str> {
         self.kerberos_principal.as_deref()
     }
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The time that the HDFS location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
 pub mod describe_location_hdfs_output {
-
+    
     /// A builder for [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2171,8 +2126,7 @@ pub mod describe_location_hdfs_output {
         }
         /// <p>The ARN of the HDFS cluster location.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The URI of the HDFS cluster location.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2181,8 +2135,7 @@ pub mod describe_location_hdfs_output {
         }
         /// <p>The URI of the HDFS cluster location.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// Appends an item to `name_nodes`.
         ///
@@ -2191,17 +2144,13 @@ pub mod describe_location_hdfs_output {
         /// <p>The NameNode that manage the HDFS namespace. </p>
         pub fn name_nodes(mut self, input: crate::model::HdfsNameNode) -> Self {
             let mut v = self.name_nodes.unwrap_or_default();
-            v.push(input);
-            self.name_nodes = Some(v);
-            self
+                            v.push(input);
+                            self.name_nodes = Some(v);
+                            self
         }
         /// <p>The NameNode that manage the HDFS namespace. </p>
-        pub fn set_name_nodes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
-        ) -> Self {
-            self.name_nodes = input;
-            self
+        pub fn set_name_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>) -> Self {
+            self.name_nodes = input; self
         }
         /// <p>The size of the data blocks to write into the HDFS cluster. </p>
         pub fn block_size(mut self, input: i32) -> Self {
@@ -2210,8 +2159,7 @@ pub mod describe_location_hdfs_output {
         }
         /// <p>The size of the data blocks to write into the HDFS cluster. </p>
         pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_size = input;
-            self
+            self.block_size = input; self
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
         pub fn replication_factor(mut self, input: i32) -> Self {
@@ -2220,8 +2168,7 @@ pub mod describe_location_hdfs_output {
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
         pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.replication_factor = input;
-            self
+            self.replication_factor = input; self
         }
         /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
         pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2229,12 +2176,8 @@ pub mod describe_location_hdfs_output {
             self
         }
         /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
-        pub fn set_kms_key_provider_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kms_key_provider_uri = input;
-            self
+        pub fn set_kms_key_provider_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_provider_uri = input; self
         }
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
         pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
@@ -2242,12 +2185,8 @@ pub mod describe_location_hdfs_output {
             self
         }
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
-        pub fn set_qop_configuration(
-            mut self,
-            input: std::option::Option<crate::model::QopConfiguration>,
-        ) -> Self {
-            self.qop_configuration = input;
-            self
+        pub fn set_qop_configuration(mut self, input: std::option::Option<crate::model::QopConfiguration>) -> Self {
+            self.qop_configuration = input; self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
         pub fn authentication_type(mut self, input: crate::model::HdfsAuthenticationType) -> Self {
@@ -2255,12 +2194,8 @@ pub mod describe_location_hdfs_output {
             self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::HdfsAuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::HdfsAuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
         pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2269,8 +2204,7 @@ pub mod describe_location_hdfs_output {
         }
         /// <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
         pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.simple_user = input;
-            self
+            self.simple_user = input; self
         }
         /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
         pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2278,12 +2212,8 @@ pub mod describe_location_hdfs_output {
             self
         }
         /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
-        pub fn set_kerberos_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kerberos_principal = input;
-            self
+        pub fn set_kerberos_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kerberos_principal = input; self
         }
         /// Appends an item to `agent_arns`.
         ///
@@ -2292,17 +2222,13 @@ pub mod describe_location_hdfs_output {
         /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
-            v.push(input.into());
-            self.agent_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-        pub fn set_agent_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_arns = input;
-            self
+        pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_arns = input; self
         }
         /// <p>The time that the HDFS location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2310,31 +2236,41 @@ pub mod describe_location_hdfs_output {
             self
         }
         /// <p>The time that the HDFS location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
         pub fn build(self) -> crate::output::DescribeLocationHdfsOutput {
             crate::output::DescribeLocationHdfsOutput {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                name_nodes: self.name_nodes,
-                block_size: self.block_size,
-                replication_factor: self.replication_factor,
-                kms_key_provider_uri: self.kms_key_provider_uri,
-                qop_configuration: self.qop_configuration,
-                authentication_type: self.authentication_type,
-                simple_user: self.simple_user,
-                kerberos_principal: self.kerberos_principal,
-                agent_arns: self.agent_arns,
-                creation_time: self.creation_time,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                name_nodes: self.name_nodes
+                ,
+                block_size: self.block_size
+                ,
+                replication_factor: self.replication_factor
+                ,
+                kms_key_provider_uri: self.kms_key_provider_uri
+                ,
+                qop_configuration: self.qop_configuration
+                ,
+                authentication_type: self.authentication_type
+                ,
+                simple_user: self.simple_user
+                ,
+                kerberos_principal: self.kerberos_principal
+                ,
+                agent_arns: self.agent_arns
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationHdfsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
@@ -2346,7 +2282,7 @@ impl DescribeLocationHdfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationFsxWindowsOutput {
+pub struct DescribeLocationFsxWindowsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -2368,33 +2304,33 @@ pub struct DescribeLocationFsxWindowsOutput {
 }
 impl DescribeLocationFsxWindowsOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the FSx for Windows File Server location that was described.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>The time that the FSx for Windows File Server location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
-    pub fn user(&self) -> std::option::Option<&str> {
+    pub fn user(&self) -> std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
 /// See [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
 pub mod describe_location_fsx_windows_output {
-
+    
     /// A builder for [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2413,8 +2349,7 @@ pub mod describe_location_fsx_windows_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The URL of the FSx for Windows File Server location that was described.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2423,8 +2358,7 @@ pub mod describe_location_fsx_windows_output {
         }
         /// <p>The URL of the FSx for Windows File Server location that was described.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
@@ -2433,17 +2367,13 @@ pub mod describe_location_fsx_windows_output {
         /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// <p>The time that the FSx for Windows File Server location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2451,12 +2381,8 @@ pub mod describe_location_fsx_windows_output {
             self
         }
         /// <p>The time that the FSx for Windows File Server location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2465,8 +2391,7 @@ pub mod describe_location_fsx_windows_output {
         }
         /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2475,21 +2400,28 @@ pub mod describe_location_fsx_windows_output {
         }
         /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
         pub fn build(self) -> crate::output::DescribeLocationFsxWindowsOutput {
             crate::output::DescribeLocationFsxWindowsOutput {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                security_group_arns: self.security_group_arns,
-                creation_time: self.creation_time,
-                user: self.user,
-                domain: self.domain,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                security_group_arns: self.security_group_arns
+                ,
+                creation_time: self.creation_time
+                ,
+                user: self.user
+                ,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationFsxWindowsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
@@ -2501,11 +2433,11 @@ impl DescribeLocationFsxWindowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationFsxOpenZfsOutput {
+pub struct DescribeLocationFsxOpenZfsOutput  {
     /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+    /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p> 
     /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
     #[doc(hidden)]
     pub location_uri: std::option::Option<std::string::String>,
@@ -2521,30 +2453,30 @@ pub struct DescribeLocationFsxOpenZfsOutput {
 }
 impl DescribeLocationFsxOpenZfsOutput {
     /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
-    /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+    /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p> 
     /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::FsxProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::FsxProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The time that the FSx for OpenZFS location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
 pub mod describe_location_fsx_open_zfs_output {
-
+    
     /// A builder for [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2562,20 +2494,18 @@ pub mod describe_location_fsx_open_zfs_output {
         }
         /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
-        /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+        /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p> 
         /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_uri = Some(input.into());
             self
         }
-        /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+        /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p> 
         /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
@@ -2584,17 +2514,13 @@ pub mod describe_location_fsx_open_zfs_output {
         /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// <p>The type of protocol that DataSync uses to access your file system.</p>
         pub fn protocol(mut self, input: crate::model::FsxProtocol) -> Self {
@@ -2602,12 +2528,8 @@ pub mod describe_location_fsx_open_zfs_output {
             self
         }
         /// <p>The type of protocol that DataSync uses to access your file system.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::FsxProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::FsxProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// <p>The time that the FSx for OpenZFS location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2615,24 +2537,27 @@ pub mod describe_location_fsx_open_zfs_output {
             self
         }
         /// <p>The time that the FSx for OpenZFS location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
         pub fn build(self) -> crate::output::DescribeLocationFsxOpenZfsOutput {
             crate::output::DescribeLocationFsxOpenZfsOutput {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                security_group_arns: self.security_group_arns,
-                protocol: self.protocol,
-                creation_time: self.creation_time,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                security_group_arns: self.security_group_arns
+                ,
+                protocol: self.protocol
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationFsxOpenZfsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
@@ -2644,7 +2569,7 @@ impl DescribeLocationFsxOpenZfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationFsxOntapOutput {
+pub struct DescribeLocationFsxOntapOutput  {
     /// <p>The time that the location was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2669,37 +2594,37 @@ pub struct DescribeLocationFsxOntapOutput {
 }
 impl DescribeLocationFsxOntapOutput {
     /// <p>The time that the location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the FSx for ONTAP file system location.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::FsxProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::FsxProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
-    pub fn storage_virtual_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn storage_virtual_machine_arn(&self) -> std::option::Option<& str> {
         self.storage_virtual_machine_arn.as_deref()
     }
     /// <p>The ARN of the FSx for ONTAP file system.</p>
-    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<& str> {
         self.fsx_filesystem_arn.as_deref()
     }
 }
 /// See [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
 pub mod describe_location_fsx_ontap_output {
-
+    
     /// A builder for [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2718,12 +2643,8 @@ pub mod describe_location_fsx_ontap_output {
             self
         }
         /// <p>The time that the location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ARN of the FSx for ONTAP file system location.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2732,8 +2653,7 @@ pub mod describe_location_fsx_ontap_output {
         }
         /// <p>The ARN of the FSx for ONTAP file system location.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2742,8 +2662,7 @@ pub mod describe_location_fsx_ontap_output {
         }
         /// <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
         pub fn protocol(mut self, input: crate::model::FsxProtocol) -> Self {
@@ -2751,12 +2670,8 @@ pub mod describe_location_fsx_ontap_output {
             self
         }
         /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::FsxProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::FsxProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
@@ -2765,33 +2680,22 @@ pub mod describe_location_fsx_ontap_output {
         /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
         /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
-        pub fn storage_virtual_machine_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn storage_virtual_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_virtual_machine_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
-        pub fn set_storage_virtual_machine_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.storage_virtual_machine_arn = input;
-            self
+        pub fn set_storage_virtual_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_virtual_machine_arn = input; self
         }
         /// <p>The ARN of the FSx for ONTAP file system.</p>
         pub fn fsx_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2799,26 +2703,31 @@ pub mod describe_location_fsx_ontap_output {
             self
         }
         /// <p>The ARN of the FSx for ONTAP file system.</p>
-        pub fn set_fsx_filesystem_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fsx_filesystem_arn = input;
-            self
+        pub fn set_fsx_filesystem_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fsx_filesystem_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
         pub fn build(self) -> crate::output::DescribeLocationFsxOntapOutput {
             crate::output::DescribeLocationFsxOntapOutput {
-                creation_time: self.creation_time,
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                protocol: self.protocol,
-                security_group_arns: self.security_group_arns,
-                storage_virtual_machine_arn: self.storage_virtual_machine_arn,
-                fsx_filesystem_arn: self.fsx_filesystem_arn,
+                creation_time: self.creation_time
+                ,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                protocol: self.protocol
+                ,
+                security_group_arns: self.security_group_arns
+                ,
+                storage_virtual_machine_arn: self.storage_virtual_machine_arn
+                ,
+                fsx_filesystem_arn: self.fsx_filesystem_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationFsxOntapOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
@@ -2830,7 +2739,7 @@ impl DescribeLocationFsxOntapOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationFsxLustreOutput {
+pub struct DescribeLocationFsxLustreOutput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -2846,25 +2755,25 @@ pub struct DescribeLocationFsxLustreOutput {
 }
 impl DescribeLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URI of the FSx for Lustre location that was described.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Lustre file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>The time that the FSx for Lustre location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
 pub mod describe_location_fsx_lustre_output {
-
+    
     /// A builder for [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2881,8 +2790,7 @@ pub mod describe_location_fsx_lustre_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The URI of the FSx for Lustre location that was described.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2891,8 +2799,7 @@ pub mod describe_location_fsx_lustre_output {
         }
         /// <p>The URI of the FSx for Lustre location that was described.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// Appends an item to `security_group_arns`.
         ///
@@ -2901,17 +2808,13 @@ pub mod describe_location_fsx_lustre_output {
         /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Lustre file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Lustre file system.</p>
-        pub fn set_security_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_arns = input;
-            self
+        pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_arns = input; self
         }
         /// <p>The time that the FSx for Lustre location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2919,23 +2822,25 @@ pub mod describe_location_fsx_lustre_output {
             self
         }
         /// <p>The time that the FSx for Lustre location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
         pub fn build(self) -> crate::output::DescribeLocationFsxLustreOutput {
             crate::output::DescribeLocationFsxLustreOutput {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                security_group_arns: self.security_group_arns,
-                creation_time: self.creation_time,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                security_group_arns: self.security_group_arns
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationFsxLustreOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
@@ -2947,7 +2852,7 @@ impl DescribeLocationFsxLustreOutput {
 /// <p>DescribeLocationEfsResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationEfsOutput {
+pub struct DescribeLocationEfsOutput  {
     /// <p>The ARN of the Amazon EFS file system location.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -2972,39 +2877,37 @@ pub struct DescribeLocationEfsOutput {
 }
 impl DescribeLocationEfsOutput {
     /// <p>The ARN of the Amazon EFS file system location.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the Amazon EFS file system location.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
-    pub fn ec2_config(&self) -> std::option::Option<&crate::model::Ec2Config> {
+    pub fn ec2_config(&self) -> std::option::Option<& crate::model::Ec2Config> {
         self.ec2_config.as_ref()
     }
     /// <p>The time that the location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    pub fn file_system_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_access_role_arn(&self) -> std::option::Option<& str> {
         self.file_system_access_role_arn.as_deref()
     }
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
-    pub fn in_transit_encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::EfsInTransitEncryption> {
+    pub fn in_transit_encryption(&self) -> std::option::Option<& crate::model::EfsInTransitEncryption> {
         self.in_transit_encryption.as_ref()
     }
 }
 /// See [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
 pub mod describe_location_efs_output {
-
+    
     /// A builder for [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3024,8 +2927,7 @@ pub mod describe_location_efs_output {
         }
         /// <p>The ARN of the Amazon EFS file system location.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The URL of the Amazon EFS file system location.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3034,8 +2936,7 @@ pub mod describe_location_efs_output {
         }
         /// <p>The URL of the Amazon EFS file system location.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
         pub fn ec2_config(mut self, input: crate::model::Ec2Config) -> Self {
@@ -3043,12 +2944,8 @@ pub mod describe_location_efs_output {
             self
         }
         /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
-        pub fn set_ec2_config(
-            mut self,
-            input: std::option::Option<crate::model::Ec2Config>,
-        ) -> Self {
-            self.ec2_config = input;
-            self
+        pub fn set_ec2_config(mut self, input: std::option::Option<crate::model::Ec2Config>) -> Self {
+            self.ec2_config = input; self
         }
         /// <p>The time that the location was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3056,12 +2953,8 @@ pub mod describe_location_efs_output {
             self
         }
         /// <p>The time that the location was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3069,58 +2962,49 @@ pub mod describe_location_efs_output {
             self
         }
         /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
-        pub fn set_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_arn = input;
-            self
+        pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_arn = input; self
         }
         /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-        pub fn file_system_access_role_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn file_system_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_access_role_arn = Some(input.into());
             self
         }
         /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-        pub fn set_file_system_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_access_role_arn = input;
-            self
+        pub fn set_file_system_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_access_role_arn = input; self
         }
         /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
-        pub fn in_transit_encryption(
-            mut self,
-            input: crate::model::EfsInTransitEncryption,
-        ) -> Self {
+        pub fn in_transit_encryption(mut self, input: crate::model::EfsInTransitEncryption) -> Self {
             self.in_transit_encryption = Some(input);
             self
         }
         /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
-        pub fn set_in_transit_encryption(
-            mut self,
-            input: std::option::Option<crate::model::EfsInTransitEncryption>,
-        ) -> Self {
-            self.in_transit_encryption = input;
-            self
+        pub fn set_in_transit_encryption(mut self, input: std::option::Option<crate::model::EfsInTransitEncryption>) -> Self {
+            self.in_transit_encryption = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
         pub fn build(self) -> crate::output::DescribeLocationEfsOutput {
             crate::output::DescribeLocationEfsOutput {
-                location_arn: self.location_arn,
-                location_uri: self.location_uri,
-                ec2_config: self.ec2_config,
-                creation_time: self.creation_time,
-                access_point_arn: self.access_point_arn,
-                file_system_access_role_arn: self.file_system_access_role_arn,
-                in_transit_encryption: self.in_transit_encryption,
+                location_arn: self.location_arn
+                ,
+                location_uri: self.location_uri
+                ,
+                ec2_config: self.ec2_config
+                ,
+                creation_time: self.creation_time
+                ,
+                access_point_arn: self.access_point_arn
+                ,
+                file_system_access_role_arn: self.file_system_access_role_arn
+                ,
+                in_transit_encryption: self.in_transit_encryption
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLocationEfsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
@@ -3132,7 +3016,7 @@ impl DescribeLocationEfsOutput {
 /// <p>DescribeAgentResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAgentOutput {
+pub struct DescribeAgentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
     #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
@@ -3157,37 +3041,37 @@ pub struct DescribeAgentOutput {
 }
 impl DescribeAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
-    pub fn agent_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_arn(&self) -> std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
     /// <p>The name of the agent.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AgentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AgentStatus> {
         self.status.as_ref()
     }
     /// <p>The time that the agent last connected to DataSync.</p>
-    pub fn last_connection_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_connection_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_connection_time.as_ref()
     }
     /// <p>The time that the agent was activated (that is, created in your account).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::model::EndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
-    pub fn private_link_config(&self) -> std::option::Option<&crate::model::PrivateLinkConfig> {
+    pub fn private_link_config(&self) -> std::option::Option<& crate::model::PrivateLinkConfig> {
         self.private_link_config.as_ref()
     }
 }
 /// See [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
 pub mod describe_agent_output {
-
+    
     /// A builder for [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3207,8 +3091,7 @@ pub mod describe_agent_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the agent.</p>
         pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_arn = input;
-            self
+            self.agent_arn = input; self
         }
         /// <p>The name of the agent.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3217,8 +3100,7 @@ pub mod describe_agent_output {
         }
         /// <p>The name of the agent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
         pub fn status(mut self, input: crate::model::AgentStatus) -> Self {
@@ -3227,8 +3109,7 @@ pub mod describe_agent_output {
         }
         /// <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::AgentStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time that the agent last connected to DataSync.</p>
         pub fn last_connection_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3236,12 +3117,8 @@ pub mod describe_agent_output {
             self
         }
         /// <p>The time that the agent last connected to DataSync.</p>
-        pub fn set_last_connection_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_connection_time = input;
-            self
+        pub fn set_last_connection_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_connection_time = input; self
         }
         /// <p>The time that the agent was activated (that is, created in your account).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3249,12 +3126,8 @@ pub mod describe_agent_output {
             self
         }
         /// <p>The time that the agent was activated (that is, created in your account).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
         pub fn endpoint_type(mut self, input: crate::model::EndpointType) -> Self {
@@ -3262,12 +3135,8 @@ pub mod describe_agent_output {
             self
         }
         /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<crate::model::EndpointType>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<crate::model::EndpointType>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
         pub fn private_link_config(mut self, input: crate::model::PrivateLinkConfig) -> Self {
@@ -3275,26 +3144,31 @@ pub mod describe_agent_output {
             self
         }
         /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
-        pub fn set_private_link_config(
-            mut self,
-            input: std::option::Option<crate::model::PrivateLinkConfig>,
-        ) -> Self {
-            self.private_link_config = input;
-            self
+        pub fn set_private_link_config(mut self, input: std::option::Option<crate::model::PrivateLinkConfig>) -> Self {
+            self.private_link_config = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
         pub fn build(self) -> crate::output::DescribeAgentOutput {
             crate::output::DescribeAgentOutput {
-                agent_arn: self.agent_arn,
-                name: self.name,
-                status: self.status,
-                last_connection_time: self.last_connection_time,
-                creation_time: self.creation_time,
-                endpoint_type: self.endpoint_type,
-                private_link_config: self.private_link_config,
+                agent_arn: self.agent_arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                last_connection_time: self.last_connection_time
+                ,
+                creation_time: self.creation_time
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                private_link_config: self.private_link_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAgentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
@@ -3306,19 +3180,24 @@ impl DescribeAgentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTaskOutput {}
+pub struct DeleteTaskOutput  {
+}
 /// See [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
 pub mod delete_task_output {
-
+    
     /// A builder for [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
         pub fn build(self) -> crate::output::DeleteTaskOutput {
-            crate::output::DeleteTaskOutput {}
+            crate::output::DeleteTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTaskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
@@ -3330,19 +3209,24 @@ impl DeleteTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLocationOutput {}
+pub struct DeleteLocationOutput  {
+}
 /// See [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
 pub mod delete_location_output {
-
+    
     /// A builder for [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
         pub fn build(self) -> crate::output::DeleteLocationOutput {
-            crate::output::DeleteLocationOutput {}
+            crate::output::DeleteLocationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLocationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
@@ -3354,19 +3238,24 @@ impl DeleteLocationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAgentOutput {}
+pub struct DeleteAgentOutput  {
+}
 /// See [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
 pub mod delete_agent_output {
-
+    
     /// A builder for [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
         pub fn build(self) -> crate::output::DeleteAgentOutput {
-            crate::output::DeleteAgentOutput {}
+            crate::output::DeleteAgentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAgentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
@@ -3378,20 +3267,20 @@ impl DeleteAgentOutput {
 /// <p>CreateTaskResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTaskOutput {
+pub struct CreateTaskOutput  {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
 }
 impl CreateTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
 }
 /// See [`CreateTaskOutput`](crate::output::CreateTaskOutput).
 pub mod create_task_output {
-
+    
     /// A builder for [`CreateTaskOutput`](crate::output::CreateTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3405,16 +3294,18 @@ pub mod create_task_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the task.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateTaskOutput`](crate::output::CreateTaskOutput).
         pub fn build(self) -> crate::output::CreateTaskOutput {
             crate::output::CreateTaskOutput {
-                task_arn: self.task_arn,
+                task_arn: self.task_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateTaskOutput`](crate::output::CreateTaskOutput).
@@ -3426,20 +3317,20 @@ impl CreateTaskOutput {
 /// <p>CreateLocationSmbResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationSmbOutput {
+pub struct CreateLocationSmbOutput  {
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
 pub mod create_location_smb_output {
-
+    
     /// A builder for [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3453,16 +3344,18 @@ pub mod create_location_smb_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
         pub fn build(self) -> crate::output::CreateLocationSmbOutput {
             crate::output::CreateLocationSmbOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationSmbOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
@@ -3474,20 +3367,20 @@ impl CreateLocationSmbOutput {
 /// <p>CreateLocationS3Response</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationS3Output {
+pub struct CreateLocationS3Output  {
     /// <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationS3Output {
     /// <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
 pub mod create_location_s3_output {
-
+    
     /// A builder for [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3501,16 +3394,18 @@ pub mod create_location_s3_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
         pub fn build(self) -> crate::output::CreateLocationS3Output {
             crate::output::CreateLocationS3Output {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationS3Output {
     /// Creates a new builder-style object to manufacture [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
@@ -3522,20 +3417,20 @@ impl CreateLocationS3Output {
 /// <p>CreateLocationObjectStorageResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationObjectStorageOutput {
+pub struct CreateLocationObjectStorageOutput  {
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationObjectStorageOutput {
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
 pub mod create_location_object_storage_output {
-
+    
     /// A builder for [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3549,16 +3444,18 @@ pub mod create_location_object_storage_output {
         }
         /// <p>Specifies the ARN of the object storage system location that you create.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
         pub fn build(self) -> crate::output::CreateLocationObjectStorageOutput {
             crate::output::CreateLocationObjectStorageOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationObjectStorageOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
@@ -3570,20 +3467,20 @@ impl CreateLocationObjectStorageOutput {
 /// <p>CreateLocationNfsResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationNfsOutput {
+pub struct CreateLocationNfsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationNfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
 pub mod create_location_nfs_output {
-
+    
     /// A builder for [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3597,16 +3494,18 @@ pub mod create_location_nfs_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
         pub fn build(self) -> crate::output::CreateLocationNfsOutput {
             crate::output::CreateLocationNfsOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationNfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
@@ -3618,20 +3517,20 @@ impl CreateLocationNfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationHdfsOutput {
+pub struct CreateLocationHdfsOutput  {
     /// <p>The ARN of the source HDFS cluster location that's created. </p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationHdfsOutput {
     /// <p>The ARN of the source HDFS cluster location that's created. </p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
 pub mod create_location_hdfs_output {
-
+    
     /// A builder for [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3645,16 +3544,18 @@ pub mod create_location_hdfs_output {
         }
         /// <p>The ARN of the source HDFS cluster location that's created. </p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
         pub fn build(self) -> crate::output::CreateLocationHdfsOutput {
             crate::output::CreateLocationHdfsOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationHdfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
@@ -3666,20 +3567,20 @@ impl CreateLocationHdfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationFsxWindowsOutput {
+pub struct CreateLocationFsxWindowsOutput  {
     /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxWindowsOutput {
     /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
 pub mod create_location_fsx_windows_output {
-
+    
     /// A builder for [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3693,16 +3594,18 @@ pub mod create_location_fsx_windows_output {
         }
         /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
         pub fn build(self) -> crate::output::CreateLocationFsxWindowsOutput {
             crate::output::CreateLocationFsxWindowsOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationFsxWindowsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
@@ -3714,20 +3617,20 @@ impl CreateLocationFsxWindowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationFsxOpenZfsOutput {
+pub struct CreateLocationFsxOpenZfsOutput  {
     /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxOpenZfsOutput {
     /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
 pub mod create_location_fsx_open_zfs_output {
-
+    
     /// A builder for [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3741,16 +3644,18 @@ pub mod create_location_fsx_open_zfs_output {
         }
         /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
         pub fn build(self) -> crate::output::CreateLocationFsxOpenZfsOutput {
             crate::output::CreateLocationFsxOpenZfsOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationFsxOpenZfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
@@ -3762,20 +3667,20 @@ impl CreateLocationFsxOpenZfsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationFsxOntapOutput {
+pub struct CreateLocationFsxOntapOutput  {
     /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxOntapOutput {
     /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
 pub mod create_location_fsx_ontap_output {
-
+    
     /// A builder for [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3789,16 +3694,18 @@ pub mod create_location_fsx_ontap_output {
         }
         /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
         pub fn build(self) -> crate::output::CreateLocationFsxOntapOutput {
             crate::output::CreateLocationFsxOntapOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationFsxOntapOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
@@ -3810,20 +3717,20 @@ impl CreateLocationFsxOntapOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationFsxLustreOutput {
+pub struct CreateLocationFsxLustreOutput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
 pub mod create_location_fsx_lustre_output {
-
+    
     /// A builder for [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3837,16 +3744,18 @@ pub mod create_location_fsx_lustre_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
         pub fn build(self) -> crate::output::CreateLocationFsxLustreOutput {
             crate::output::CreateLocationFsxLustreOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationFsxLustreOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
@@ -3858,20 +3767,20 @@ impl CreateLocationFsxLustreOutput {
 /// <p>CreateLocationEfs</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationEfsOutput {
+pub struct CreateLocationEfsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl CreateLocationEfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 /// See [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
 pub mod create_location_efs_output {
-
+    
     /// A builder for [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3885,16 +3794,18 @@ pub mod create_location_efs_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
         pub fn build(self) -> crate::output::CreateLocationEfsOutput {
             crate::output::CreateLocationEfsOutput {
-                location_arn: self.location_arn,
+                location_arn: self.location_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationEfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
@@ -3906,20 +3817,20 @@ impl CreateLocationEfsOutput {
 /// <p>CreateAgentResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAgentOutput {
+pub struct CreateAgentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
 }
 impl CreateAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
-    pub fn agent_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_arn(&self) -> std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
 }
 /// See [`CreateAgentOutput`](crate::output::CreateAgentOutput).
 pub mod create_agent_output {
-
+    
     /// A builder for [`CreateAgentOutput`](crate::output::CreateAgentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3933,16 +3844,18 @@ pub mod create_agent_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
         pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_arn = input;
-            self
+            self.agent_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateAgentOutput`](crate::output::CreateAgentOutput).
         pub fn build(self) -> crate::output::CreateAgentOutput {
             crate::output::CreateAgentOutput {
-                agent_arn: self.agent_arn,
+                agent_arn: self.agent_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAgentOutput {
     /// Creates a new builder-style object to manufacture [`CreateAgentOutput`](crate::output::CreateAgentOutput).
@@ -3954,19 +3867,24 @@ impl CreateAgentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelTaskExecutionOutput {}
+pub struct CancelTaskExecutionOutput  {
+}
 /// See [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
 pub mod cancel_task_execution_output {
-
+    
     /// A builder for [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
         pub fn build(self) -> crate::output::CancelTaskExecutionOutput {
-            crate::output::CancelTaskExecutionOutput {}
+            crate::output::CancelTaskExecutionOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
@@ -3974,3 +3892,4 @@ impl CancelTaskExecutionOutput {
         crate::output::cancel_task_execution_output::Builder::default()
     }
 }
+

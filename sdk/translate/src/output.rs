@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateParallelDataOutput {
+pub struct UpdateParallelDataOutput  {
     /// <p>The name of the parallel data resource being updated.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,34 +18,31 @@ pub struct UpdateParallelDataOutput {
 }
 impl UpdateParallelDataOutput {
     /// <p>The name of the parallel data resource being updated.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ParallelDataStatus> {
         self.status.as_ref()
     }
     /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn latest_update_attempt_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ParallelDataStatus> {
+    pub fn latest_update_attempt_status(&self) -> std::option::Option<& crate::model::ParallelDataStatus> {
         self.latest_update_attempt_status.as_ref()
     }
     /// <p>The time that the most recent update was attempted.</p>
-    pub fn latest_update_attempt_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_update_attempt_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_update_attempt_at.as_ref()
     }
 }
 /// See [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
 pub mod update_parallel_data_output {
-
+    
     /// A builder for [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ParallelDataStatus>,
-        pub(crate) latest_update_attempt_status:
-            std::option::Option<crate::model::ParallelDataStatus>,
+        pub(crate) latest_update_attempt_status: std::option::Option<crate::model::ParallelDataStatus>,
         pub(crate) latest_update_attempt_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -56,8 +53,7 @@ pub mod update_parallel_data_output {
         }
         /// <p>The name of the parallel data resource being updated.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
         pub fn status(mut self, input: crate::model::ParallelDataStatus) -> Self {
@@ -65,28 +61,17 @@ pub mod update_parallel_data_output {
             self
         }
         /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ParallelDataStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-        pub fn latest_update_attempt_status(
-            mut self,
-            input: crate::model::ParallelDataStatus,
-        ) -> Self {
+        pub fn latest_update_attempt_status(mut self, input: crate::model::ParallelDataStatus) -> Self {
             self.latest_update_attempt_status = Some(input);
             self
         }
         /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-        pub fn set_latest_update_attempt_status(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataStatus>,
-        ) -> Self {
-            self.latest_update_attempt_status = input;
-            self
+        pub fn set_latest_update_attempt_status(mut self, input: std::option::Option<crate::model::ParallelDataStatus>) -> Self {
+            self.latest_update_attempt_status = input; self
         }
         /// <p>The time that the most recent update was attempted.</p>
         pub fn latest_update_attempt_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,23 +79,25 @@ pub mod update_parallel_data_output {
             self
         }
         /// <p>The time that the most recent update was attempted.</p>
-        pub fn set_latest_update_attempt_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_update_attempt_at = input;
-            self
+        pub fn set_latest_update_attempt_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_update_attempt_at = input; self
         }
         /// Consumes the builder and constructs a [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
         pub fn build(self) -> crate::output::UpdateParallelDataOutput {
             crate::output::UpdateParallelDataOutput {
-                name: self.name,
-                status: self.status,
-                latest_update_attempt_status: self.latest_update_attempt_status,
-                latest_update_attempt_at: self.latest_update_attempt_at,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                latest_update_attempt_status: self.latest_update_attempt_status
+                ,
+                latest_update_attempt_at: self.latest_update_attempt_at
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
@@ -122,19 +109,24 @@ impl UpdateParallelDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -146,7 +138,7 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TranslateTextOutput {
+pub struct TranslateTextOutput  {
     /// <p>The translated text.</p>
     #[doc(hidden)]
     pub translated_text: std::option::Option<std::string::String>,
@@ -165,39 +157,36 @@ pub struct TranslateTextOutput {
 }
 impl TranslateTextOutput {
     /// <p>The translated text.</p>
-    pub fn translated_text(&self) -> std::option::Option<&str> {
+    pub fn translated_text(&self) -> std::option::Option<& str> {
         self.translated_text.as_deref()
     }
     /// <p>The language code for the language of the source text.</p>
-    pub fn source_language_code(&self) -> std::option::Option<&str> {
+    pub fn source_language_code(&self) -> std::option::Option<& str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language code for the language of the target text. </p>
-    pub fn target_language_code(&self) -> std::option::Option<&str> {
+    pub fn target_language_code(&self) -> std::option::Option<& str> {
         self.target_language_code.as_deref()
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
-    pub fn applied_terminologies(
-        &self,
-    ) -> std::option::Option<&[crate::model::AppliedTerminology]> {
+    pub fn applied_terminologies(&self) -> std::option::Option<& [crate::model::AppliedTerminology]> {
         self.applied_terminologies.as_deref()
     }
     /// <p>Settings that configure the translation output.</p>
-    pub fn applied_settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
+    pub fn applied_settings(&self) -> std::option::Option<& crate::model::TranslationSettings> {
         self.applied_settings.as_ref()
     }
 }
 /// See [`TranslateTextOutput`](crate::output::TranslateTextOutput).
 pub mod translate_text_output {
-
+    
     /// A builder for [`TranslateTextOutput`](crate::output::TranslateTextOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) translated_text: std::option::Option<std::string::String>,
         pub(crate) source_language_code: std::option::Option<std::string::String>,
         pub(crate) target_language_code: std::option::Option<std::string::String>,
-        pub(crate) applied_terminologies:
-            std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>,
+        pub(crate) applied_terminologies: std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>,
         pub(crate) applied_settings: std::option::Option<crate::model::TranslationSettings>,
     }
     impl Builder {
@@ -207,12 +196,8 @@ pub mod translate_text_output {
             self
         }
         /// <p>The translated text.</p>
-        pub fn set_translated_text(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.translated_text = input;
-            self
+        pub fn set_translated_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.translated_text = input; self
         }
         /// <p>The language code for the language of the source text.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -220,12 +205,8 @@ pub mod translate_text_output {
             self
         }
         /// <p>The language code for the language of the source text.</p>
-        pub fn set_source_language_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_language_code = input;
-            self
+        pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_language_code = input; self
         }
         /// <p>The language code for the language of the target text. </p>
         pub fn target_language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -233,12 +214,8 @@ pub mod translate_text_output {
             self
         }
         /// <p>The language code for the language of the target text. </p>
-        pub fn set_target_language_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_language_code = input;
-            self
+        pub fn set_target_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_language_code = input; self
         }
         /// Appends an item to `applied_terminologies`.
         ///
@@ -247,17 +224,13 @@ pub mod translate_text_output {
         /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
         pub fn applied_terminologies(mut self, input: crate::model::AppliedTerminology) -> Self {
             let mut v = self.applied_terminologies.unwrap_or_default();
-            v.push(input);
-            self.applied_terminologies = Some(v);
-            self
+                            v.push(input);
+                            self.applied_terminologies = Some(v);
+                            self
         }
         /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
-        pub fn set_applied_terminologies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>,
-        ) -> Self {
-            self.applied_terminologies = input;
-            self
+        pub fn set_applied_terminologies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>) -> Self {
+            self.applied_terminologies = input; self
         }
         /// <p>Settings that configure the translation output.</p>
         pub fn applied_settings(mut self, input: crate::model::TranslationSettings) -> Self {
@@ -265,24 +238,27 @@ pub mod translate_text_output {
             self
         }
         /// <p>Settings that configure the translation output.</p>
-        pub fn set_applied_settings(
-            mut self,
-            input: std::option::Option<crate::model::TranslationSettings>,
-        ) -> Self {
-            self.applied_settings = input;
-            self
+        pub fn set_applied_settings(mut self, input: std::option::Option<crate::model::TranslationSettings>) -> Self {
+            self.applied_settings = input; self
         }
         /// Consumes the builder and constructs a [`TranslateTextOutput`](crate::output::TranslateTextOutput).
         pub fn build(self) -> crate::output::TranslateTextOutput {
             crate::output::TranslateTextOutput {
-                translated_text: self.translated_text,
-                source_language_code: self.source_language_code,
-                target_language_code: self.target_language_code,
-                applied_terminologies: self.applied_terminologies,
-                applied_settings: self.applied_settings,
+                translated_text: self.translated_text
+                ,
+                source_language_code: self.source_language_code
+                ,
+                target_language_code: self.target_language_code
+                ,
+                applied_terminologies: self.applied_terminologies
+                ,
+                applied_settings: self.applied_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl TranslateTextOutput {
     /// Creates a new builder-style object to manufacture [`TranslateTextOutput`](crate::output::TranslateTextOutput).
@@ -294,19 +270,24 @@ impl TranslateTextOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -318,7 +299,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTextTranslationJobOutput {
+pub struct StopTextTranslationJobOutput  {
     /// <p>The job ID of the stopped batch translation job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -328,17 +309,17 @@ pub struct StopTextTranslationJobOutput {
 }
 impl StopTextTranslationJobOutput {
     /// <p>The job ID of the stopped batch translation job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
 pub mod stop_text_translation_job_output {
-
+    
     /// A builder for [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -353,8 +334,7 @@ pub mod stop_text_translation_job_output {
         }
         /// <p>The job ID of the stopped batch translation job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -362,21 +342,21 @@ pub mod stop_text_translation_job_output {
             self
         }
         /// <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
         pub fn build(self) -> crate::output::StopTextTranslationJobOutput {
             crate::output::StopTextTranslationJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopTextTranslationJobOutput {
     /// Creates a new builder-style object to manufacture [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
@@ -388,45 +368,45 @@ impl StopTextTranslationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTextTranslationJobOutput {
+pub struct StartTextTranslationJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The status of the job. Possible values include:</p>
-    /// <ul>
-    /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>
-    /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>
-    /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>
+    /// <p>The status of the job. Possible values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li> 
+    /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartTextTranslationJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The status of the job. Possible values include:</p>
-    /// <ul>
-    /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>
-    /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>
-    /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>
+    /// <p>The status of the job. Possible values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li> 
+    /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
 pub mod start_text_translation_job_output {
-
+    
     /// A builder for [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -441,48 +421,47 @@ pub mod start_text_translation_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The status of the job. Possible values include:</p>
-        /// <ul>
-        /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>
-        /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>
-        /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>
-        /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>
+        /// <p>The status of the job. Possible values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li> 
+        /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the job. Possible values include:</p>
-        /// <ul>
-        /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li>
-        /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li>
-        /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li>
-        /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li>
+        /// <p>The status of the job. Possible values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SUBMITTED</code> - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p> <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can be analyzed in the job's output.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - The job did not complete. To get details, use the <code>DescribeTextTranslationJob</code> operation.</p> </li> 
+        /// <li> <p> <code>STOP_REQUESTED</code> - The user who started the job has requested that it be stopped.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> - The job has been stopped.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
         pub fn build(self) -> crate::output::StartTextTranslationJobOutput {
             crate::output::StartTextTranslationJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartTextTranslationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
@@ -494,35 +473,31 @@ impl StartTextTranslationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTextTranslationJobsOutput {
+pub struct ListTextTranslationJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub text_translation_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
+    pub text_translation_job_properties_list: std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTextTranslationJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn text_translation_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::TextTranslationJobProperties]> {
+    pub fn text_translation_job_properties_list(&self) -> std::option::Option<& [crate::model::TextTranslationJobProperties]> {
         self.text_translation_job_properties_list.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
 pub mod list_text_translation_jobs_output {
-
+    
     /// A builder for [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) text_translation_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
+        pub(crate) text_translation_job_properties_list: std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -531,24 +506,15 @@ pub mod list_text_translation_jobs_output {
         /// To override the contents of this collection use [`set_text_translation_job_properties_list`](Self::set_text_translation_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn text_translation_job_properties_list(
-            mut self,
-            input: crate::model::TextTranslationJobProperties,
-        ) -> Self {
-            let mut v = self
-                .text_translation_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.text_translation_job_properties_list = Some(v);
-            self
+        pub fn text_translation_job_properties_list(mut self, input: crate::model::TextTranslationJobProperties) -> Self {
+            let mut v = self.text_translation_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.text_translation_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_text_translation_job_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
-        ) -> Self {
-            self.text_translation_job_properties_list = input;
-            self
+        pub fn set_text_translation_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>) -> Self {
+            self.text_translation_job_properties_list = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -557,17 +523,20 @@ pub mod list_text_translation_jobs_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
         pub fn build(self) -> crate::output::ListTextTranslationJobsOutput {
             crate::output::ListTextTranslationJobsOutput {
-                text_translation_job_properties_list: self.text_translation_job_properties_list,
-                next_token: self.next_token,
+                text_translation_job_properties_list: self.text_translation_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTextTranslationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
@@ -579,35 +548,31 @@ impl ListTextTranslationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTerminologiesOutput {
+pub struct ListTerminologiesOutput  {
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
     #[doc(hidden)]
-    pub terminology_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>,
+    pub terminology_properties_list: std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>,
     /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTerminologiesOutput {
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
-    pub fn terminology_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::TerminologyProperties]> {
+    pub fn terminology_properties_list(&self) -> std::option::Option<& [crate::model::TerminologyProperties]> {
         self.terminology_properties_list.as_deref()
     }
     /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
 pub mod list_terminologies_output {
-
+    
     /// A builder for [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) terminology_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>,
+        pub(crate) terminology_properties_list: std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -616,22 +581,15 @@ pub mod list_terminologies_output {
         /// To override the contents of this collection use [`set_terminology_properties_list`](Self::set_terminology_properties_list).
         ///
         /// <p>The properties list of the custom terminologies returned on the list request.</p>
-        pub fn terminology_properties_list(
-            mut self,
-            input: crate::model::TerminologyProperties,
-        ) -> Self {
+        pub fn terminology_properties_list(mut self, input: crate::model::TerminologyProperties) -> Self {
             let mut v = self.terminology_properties_list.unwrap_or_default();
-            v.push(input);
-            self.terminology_properties_list = Some(v);
-            self
+                            v.push(input);
+                            self.terminology_properties_list = Some(v);
+                            self
         }
         /// <p>The properties list of the custom terminologies returned on the list request.</p>
-        pub fn set_terminology_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>,
-        ) -> Self {
-            self.terminology_properties_list = input;
-            self
+        pub fn set_terminology_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>) -> Self {
+            self.terminology_properties_list = input; self
         }
         /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -640,17 +598,20 @@ pub mod list_terminologies_output {
         }
         /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
         pub fn build(self) -> crate::output::ListTerminologiesOutput {
             crate::output::ListTerminologiesOutput {
-                terminology_properties_list: self.terminology_properties_list,
-                next_token: self.next_token,
+                terminology_properties_list: self.terminology_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTerminologiesOutput {
     /// Creates a new builder-style object to manufacture [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
@@ -662,20 +623,20 @@ impl ListTerminologiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -689,23 +650,24 @@ pub mod list_tags_for_resource_output {
         /// <p>Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -717,35 +679,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListParallelDataOutput {
+pub struct ListParallelDataOutput  {
     /// <p>The properties of the parallel data resources returned by this request.</p>
     #[doc(hidden)]
-    pub parallel_data_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
+    pub parallel_data_properties_list: std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListParallelDataOutput {
     /// <p>The properties of the parallel data resources returned by this request.</p>
-    pub fn parallel_data_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ParallelDataProperties]> {
+    pub fn parallel_data_properties_list(&self) -> std::option::Option<& [crate::model::ParallelDataProperties]> {
         self.parallel_data_properties_list.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
 pub mod list_parallel_data_output {
-
+    
     /// A builder for [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) parallel_data_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
+        pub(crate) parallel_data_properties_list: std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -754,22 +712,15 @@ pub mod list_parallel_data_output {
         /// To override the contents of this collection use [`set_parallel_data_properties_list`](Self::set_parallel_data_properties_list).
         ///
         /// <p>The properties of the parallel data resources returned by this request.</p>
-        pub fn parallel_data_properties_list(
-            mut self,
-            input: crate::model::ParallelDataProperties,
-        ) -> Self {
+        pub fn parallel_data_properties_list(mut self, input: crate::model::ParallelDataProperties) -> Self {
             let mut v = self.parallel_data_properties_list.unwrap_or_default();
-            v.push(input);
-            self.parallel_data_properties_list = Some(v);
-            self
+                            v.push(input);
+                            self.parallel_data_properties_list = Some(v);
+                            self
         }
         /// <p>The properties of the parallel data resources returned by this request.</p>
-        pub fn set_parallel_data_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
-        ) -> Self {
-            self.parallel_data_properties_list = input;
-            self
+        pub fn set_parallel_data_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>) -> Self {
+            self.parallel_data_properties_list = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -778,17 +729,20 @@ pub mod list_parallel_data_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
         pub fn build(self) -> crate::output::ListParallelDataOutput {
             crate::output::ListParallelDataOutput {
-                parallel_data_properties_list: self.parallel_data_properties_list,
-                next_token: self.next_token,
+                parallel_data_properties_list: self.parallel_data_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
@@ -800,7 +754,7 @@ impl ListParallelDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLanguagesOutput {
+pub struct ListLanguagesOutput  {
     /// <p>The list of supported languages.</p>
     #[doc(hidden)]
     pub languages: std::option::Option<std::vec::Vec<crate::model::Language>>,
@@ -813,21 +767,21 @@ pub struct ListLanguagesOutput {
 }
 impl ListLanguagesOutput {
     /// <p>The list of supported languages.</p>
-    pub fn languages(&self) -> std::option::Option<&[crate::model::Language]> {
+    pub fn languages(&self) -> std::option::Option<& [crate::model::Language]> {
         self.languages.as_deref()
     }
     /// <p>The language code passed in with the request.</p>
-    pub fn display_language_code(&self) -> std::option::Option<&crate::model::DisplayLanguageCode> {
+    pub fn display_language_code(&self) -> std::option::Option<& crate::model::DisplayLanguageCode> {
         self.display_language_code.as_ref()
     }
     /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
 pub mod list_languages_output {
-
+    
     /// A builder for [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -843,17 +797,13 @@ pub mod list_languages_output {
         /// <p>The list of supported languages.</p>
         pub fn languages(mut self, input: crate::model::Language) -> Self {
             let mut v = self.languages.unwrap_or_default();
-            v.push(input);
-            self.languages = Some(v);
-            self
+                            v.push(input);
+                            self.languages = Some(v);
+                            self
         }
         /// <p>The list of supported languages.</p>
-        pub fn set_languages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Language>>,
-        ) -> Self {
-            self.languages = input;
-            self
+        pub fn set_languages(mut self, input: std::option::Option<std::vec::Vec<crate::model::Language>>) -> Self {
+            self.languages = input; self
         }
         /// <p>The language code passed in with the request.</p>
         pub fn display_language_code(mut self, input: crate::model::DisplayLanguageCode) -> Self {
@@ -861,12 +811,8 @@ pub mod list_languages_output {
             self
         }
         /// <p>The language code passed in with the request.</p>
-        pub fn set_display_language_code(
-            mut self,
-            input: std::option::Option<crate::model::DisplayLanguageCode>,
-        ) -> Self {
-            self.display_language_code = input;
-            self
+        pub fn set_display_language_code(mut self, input: std::option::Option<crate::model::DisplayLanguageCode>) -> Self {
+            self.display_language_code = input; self
         }
         /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -875,18 +821,22 @@ pub mod list_languages_output {
         }
         /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
         pub fn build(self) -> crate::output::ListLanguagesOutput {
             crate::output::ListLanguagesOutput {
-                languages: self.languages,
-                display_language_code: self.display_language_code,
-                next_token: self.next_token,
+                languages: self.languages
+                ,
+                display_language_code: self.display_language_code
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLanguagesOutput {
     /// Creates a new builder-style object to manufacture [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
@@ -898,7 +848,7 @@ impl ListLanguagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportTerminologyOutput {
+pub struct ImportTerminologyOutput  {
     /// <p>The properties of the custom terminology being imported.</p>
     #[doc(hidden)]
     pub terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
@@ -908,69 +858,54 @@ pub struct ImportTerminologyOutput {
 }
 impl ImportTerminologyOutput {
     /// <p>The properties of the custom terminology being imported.</p>
-    pub fn terminology_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::TerminologyProperties> {
+    pub fn terminology_properties(&self) -> std::option::Option<& crate::model::TerminologyProperties> {
         self.terminology_properties.as_ref()
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-    pub fn auxiliary_data_location(
-        &self,
-    ) -> std::option::Option<&crate::model::TerminologyDataLocation> {
+    pub fn auxiliary_data_location(&self) -> std::option::Option<& crate::model::TerminologyDataLocation> {
         self.auxiliary_data_location.as_ref()
     }
 }
 /// See [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
 pub mod import_terminology_output {
-
+    
     /// A builder for [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
-        pub(crate) auxiliary_data_location:
-            std::option::Option<crate::model::TerminologyDataLocation>,
+        pub(crate) auxiliary_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
     }
     impl Builder {
         /// <p>The properties of the custom terminology being imported.</p>
-        pub fn terminology_properties(
-            mut self,
-            input: crate::model::TerminologyProperties,
-        ) -> Self {
+        pub fn terminology_properties(mut self, input: crate::model::TerminologyProperties) -> Self {
             self.terminology_properties = Some(input);
             self
         }
         /// <p>The properties of the custom terminology being imported.</p>
-        pub fn set_terminology_properties(
-            mut self,
-            input: std::option::Option<crate::model::TerminologyProperties>,
-        ) -> Self {
-            self.terminology_properties = input;
-            self
+        pub fn set_terminology_properties(mut self, input: std::option::Option<crate::model::TerminologyProperties>) -> Self {
+            self.terminology_properties = input; self
         }
         /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-        pub fn auxiliary_data_location(
-            mut self,
-            input: crate::model::TerminologyDataLocation,
-        ) -> Self {
+        pub fn auxiliary_data_location(mut self, input: crate::model::TerminologyDataLocation) -> Self {
             self.auxiliary_data_location = Some(input);
             self
         }
         /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-        pub fn set_auxiliary_data_location(
-            mut self,
-            input: std::option::Option<crate::model::TerminologyDataLocation>,
-        ) -> Self {
-            self.auxiliary_data_location = input;
-            self
+        pub fn set_auxiliary_data_location(mut self, input: std::option::Option<crate::model::TerminologyDataLocation>) -> Self {
+            self.auxiliary_data_location = input; self
         }
         /// Consumes the builder and constructs a [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
         pub fn build(self) -> crate::output::ImportTerminologyOutput {
             crate::output::ImportTerminologyOutput {
-                terminology_properties: self.terminology_properties,
-                auxiliary_data_location: self.auxiliary_data_location,
+                terminology_properties: self.terminology_properties
+                ,
+                auxiliary_data_location: self.auxiliary_data_location
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportTerminologyOutput {
     /// Creates a new builder-style object to manufacture [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
@@ -982,14 +917,14 @@ impl ImportTerminologyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTerminologyOutput {
+pub struct GetTerminologyOutput  {
     /// <p>The properties of the custom terminology being retrieved.</p>
     #[doc(hidden)]
     pub terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important> 
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
     /// </important>
     #[doc(hidden)]
     pub terminology_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
@@ -999,106 +934,82 @@ pub struct GetTerminologyOutput {
 }
 impl GetTerminologyOutput {
     /// <p>The properties of the custom terminology being retrieved.</p>
-    pub fn terminology_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::TerminologyProperties> {
+    pub fn terminology_properties(&self) -> std::option::Option<& crate::model::TerminologyProperties> {
         self.terminology_properties.as_ref()
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important> 
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
     /// </important>
-    pub fn terminology_data_location(
-        &self,
-    ) -> std::option::Option<&crate::model::TerminologyDataLocation> {
+    pub fn terminology_data_location(&self) -> std::option::Option<& crate::model::TerminologyDataLocation> {
         self.terminology_data_location.as_ref()
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-    pub fn auxiliary_data_location(
-        &self,
-    ) -> std::option::Option<&crate::model::TerminologyDataLocation> {
+    pub fn auxiliary_data_location(&self) -> std::option::Option<& crate::model::TerminologyDataLocation> {
         self.auxiliary_data_location.as_ref()
     }
 }
 /// See [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
 pub mod get_terminology_output {
-
+    
     /// A builder for [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
-        pub(crate) terminology_data_location:
-            std::option::Option<crate::model::TerminologyDataLocation>,
-        pub(crate) auxiliary_data_location:
-            std::option::Option<crate::model::TerminologyDataLocation>,
+        pub(crate) terminology_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
+        pub(crate) auxiliary_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
     }
     impl Builder {
         /// <p>The properties of the custom terminology being retrieved.</p>
-        pub fn terminology_properties(
-            mut self,
-            input: crate::model::TerminologyProperties,
-        ) -> Self {
+        pub fn terminology_properties(mut self, input: crate::model::TerminologyProperties) -> Self {
             self.terminology_properties = Some(input);
             self
         }
         /// <p>The properties of the custom terminology being retrieved.</p>
-        pub fn set_terminology_properties(
-            mut self,
-            input: std::option::Option<crate::model::TerminologyProperties>,
-        ) -> Self {
-            self.terminology_properties = input;
-            self
+        pub fn set_terminology_properties(mut self, input: std::option::Option<crate::model::TerminologyProperties>) -> Self {
+            self.terminology_properties = input; self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important> 
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
         /// </important>
-        pub fn terminology_data_location(
-            mut self,
-            input: crate::model::TerminologyDataLocation,
-        ) -> Self {
+        pub fn terminology_data_location(mut self, input: crate::model::TerminologyDataLocation) -> Self {
             self.terminology_data_location = Some(input);
             self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important> 
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
         /// </important>
-        pub fn set_terminology_data_location(
-            mut self,
-            input: std::option::Option<crate::model::TerminologyDataLocation>,
-        ) -> Self {
-            self.terminology_data_location = input;
-            self
+        pub fn set_terminology_data_location(mut self, input: std::option::Option<crate::model::TerminologyDataLocation>) -> Self {
+            self.terminology_data_location = input; self
         }
         /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-        pub fn auxiliary_data_location(
-            mut self,
-            input: crate::model::TerminologyDataLocation,
-        ) -> Self {
+        pub fn auxiliary_data_location(mut self, input: crate::model::TerminologyDataLocation) -> Self {
             self.auxiliary_data_location = Some(input);
             self
         }
         /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-        pub fn set_auxiliary_data_location(
-            mut self,
-            input: std::option::Option<crate::model::TerminologyDataLocation>,
-        ) -> Self {
-            self.auxiliary_data_location = input;
-            self
+        pub fn set_auxiliary_data_location(mut self, input: std::option::Option<crate::model::TerminologyDataLocation>) -> Self {
+            self.auxiliary_data_location = input; self
         }
         /// Consumes the builder and constructs a [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
         pub fn build(self) -> crate::output::GetTerminologyOutput {
             crate::output::GetTerminologyOutput {
-                terminology_properties: self.terminology_properties,
-                terminology_data_location: self.terminology_data_location,
-                auxiliary_data_location: self.auxiliary_data_location,
+                terminology_properties: self.terminology_properties
+                ,
+                terminology_data_location: self.terminology_data_location
+                ,
+                auxiliary_data_location: self.auxiliary_data_location
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTerminologyOutput {
     /// Creates a new builder-style object to manufacture [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
@@ -1110,14 +1021,14 @@ impl GetTerminologyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetParallelDataOutput {
+pub struct GetParallelDataOutput  {
     /// <p>The properties of the parallel data resource that is being retrieved.</p>
     #[doc(hidden)]
     pub parallel_data_properties: std::option::Option<crate::model::ParallelDataProperties>,
-    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important> 
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
     /// </important>
     #[doc(hidden)]
     pub data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
@@ -1126,132 +1037,102 @@ pub struct GetParallelDataOutput {
     pub auxiliary_data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     #[doc(hidden)]
-    pub latest_update_attempt_auxiliary_data_location:
-        std::option::Option<crate::model::ParallelDataDataLocation>,
+    pub latest_update_attempt_auxiliary_data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
 }
 impl GetParallelDataOutput {
     /// <p>The properties of the parallel data resource that is being retrieved.</p>
-    pub fn parallel_data_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ParallelDataProperties> {
+    pub fn parallel_data_properties(&self) -> std::option::Option<& crate::model::ParallelDataProperties> {
         self.parallel_data_properties.as_ref()
     }
-    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important> 
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
     /// </important>
-    pub fn data_location(&self) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
+    pub fn data_location(&self) -> std::option::Option<& crate::model::ParallelDataDataLocation> {
         self.data_location.as_ref()
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-    pub fn auxiliary_data_location(
-        &self,
-    ) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
+    pub fn auxiliary_data_location(&self) -> std::option::Option<& crate::model::ParallelDataDataLocation> {
         self.auxiliary_data_location.as_ref()
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-    pub fn latest_update_attempt_auxiliary_data_location(
-        &self,
-    ) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
+    pub fn latest_update_attempt_auxiliary_data_location(&self) -> std::option::Option<& crate::model::ParallelDataDataLocation> {
         self.latest_update_attempt_auxiliary_data_location.as_ref()
     }
 }
 /// See [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
 pub mod get_parallel_data_output {
-
+    
     /// A builder for [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) parallel_data_properties:
-            std::option::Option<crate::model::ParallelDataProperties>,
+        pub(crate) parallel_data_properties: std::option::Option<crate::model::ParallelDataProperties>,
         pub(crate) data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
-        pub(crate) auxiliary_data_location:
-            std::option::Option<crate::model::ParallelDataDataLocation>,
-        pub(crate) latest_update_attempt_auxiliary_data_location:
-            std::option::Option<crate::model::ParallelDataDataLocation>,
+        pub(crate) auxiliary_data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
+        pub(crate) latest_update_attempt_auxiliary_data_location: std::option::Option<crate::model::ParallelDataDataLocation>,
     }
     impl Builder {
         /// <p>The properties of the parallel data resource that is being retrieved.</p>
-        pub fn parallel_data_properties(
-            mut self,
-            input: crate::model::ParallelDataProperties,
-        ) -> Self {
+        pub fn parallel_data_properties(mut self, input: crate::model::ParallelDataProperties) -> Self {
             self.parallel_data_properties = Some(input);
             self
         }
         /// <p>The properties of the parallel data resource that is being retrieved.</p>
-        pub fn set_parallel_data_properties(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataProperties>,
-        ) -> Self {
-            self.parallel_data_properties = input;
-            self
+        pub fn set_parallel_data_properties(mut self, input: std::option::Option<crate::model::ParallelDataProperties>) -> Self {
+            self.parallel_data_properties = input; self
         }
-        /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important> 
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
         /// </important>
         pub fn data_location(mut self, input: crate::model::ParallelDataDataLocation) -> Self {
             self.data_location = Some(input);
             self
         }
-        /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important> 
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
         /// </important>
-        pub fn set_data_location(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataDataLocation>,
-        ) -> Self {
-            self.data_location = input;
-            self
+        pub fn set_data_location(mut self, input: std::option::Option<crate::model::ParallelDataDataLocation>) -> Self {
+            self.data_location = input; self
         }
         /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-        pub fn auxiliary_data_location(
-            mut self,
-            input: crate::model::ParallelDataDataLocation,
-        ) -> Self {
+        pub fn auxiliary_data_location(mut self, input: crate::model::ParallelDataDataLocation) -> Self {
             self.auxiliary_data_location = Some(input);
             self
         }
         /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-        pub fn set_auxiliary_data_location(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataDataLocation>,
-        ) -> Self {
-            self.auxiliary_data_location = input;
-            self
+        pub fn set_auxiliary_data_location(mut self, input: std::option::Option<crate::model::ParallelDataDataLocation>) -> Self {
+            self.auxiliary_data_location = input; self
         }
         /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-        pub fn latest_update_attempt_auxiliary_data_location(
-            mut self,
-            input: crate::model::ParallelDataDataLocation,
-        ) -> Self {
+        pub fn latest_update_attempt_auxiliary_data_location(mut self, input: crate::model::ParallelDataDataLocation) -> Self {
             self.latest_update_attempt_auxiliary_data_location = Some(input);
             self
         }
         /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
-        pub fn set_latest_update_attempt_auxiliary_data_location(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataDataLocation>,
-        ) -> Self {
-            self.latest_update_attempt_auxiliary_data_location = input;
-            self
+        pub fn set_latest_update_attempt_auxiliary_data_location(mut self, input: std::option::Option<crate::model::ParallelDataDataLocation>) -> Self {
+            self.latest_update_attempt_auxiliary_data_location = input; self
         }
         /// Consumes the builder and constructs a [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
         pub fn build(self) -> crate::output::GetParallelDataOutput {
             crate::output::GetParallelDataOutput {
-                parallel_data_properties: self.parallel_data_properties,
-                data_location: self.data_location,
-                auxiliary_data_location: self.auxiliary_data_location,
-                latest_update_attempt_auxiliary_data_location: self
-                    .latest_update_attempt_auxiliary_data_location,
+                parallel_data_properties: self.parallel_data_properties
+                ,
+                data_location: self.data_location
+                ,
+                auxiliary_data_location: self.auxiliary_data_location
+                ,
+                latest_update_attempt_auxiliary_data_location: self.latest_update_attempt_auxiliary_data_location
+                ,
             }
         }
     }
+    
+    
 }
 impl GetParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
@@ -1263,53 +1144,45 @@ impl GetParallelDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTextTranslationJobOutput {
+pub struct DescribeTextTranslationJobOutput  {
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
     #[doc(hidden)]
-    pub text_translation_job_properties:
-        std::option::Option<crate::model::TextTranslationJobProperties>,
+    pub text_translation_job_properties: std::option::Option<crate::model::TextTranslationJobProperties>,
 }
 impl DescribeTextTranslationJobOutput {
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
-    pub fn text_translation_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::TextTranslationJobProperties> {
+    pub fn text_translation_job_properties(&self) -> std::option::Option<& crate::model::TextTranslationJobProperties> {
         self.text_translation_job_properties.as_ref()
     }
 }
 /// See [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
 pub mod describe_text_translation_job_output {
-
+    
     /// A builder for [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) text_translation_job_properties:
-            std::option::Option<crate::model::TextTranslationJobProperties>,
+        pub(crate) text_translation_job_properties: std::option::Option<crate::model::TextTranslationJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
-        pub fn text_translation_job_properties(
-            mut self,
-            input: crate::model::TextTranslationJobProperties,
-        ) -> Self {
+        pub fn text_translation_job_properties(mut self, input: crate::model::TextTranslationJobProperties) -> Self {
             self.text_translation_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
-        pub fn set_text_translation_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::TextTranslationJobProperties>,
-        ) -> Self {
-            self.text_translation_job_properties = input;
-            self
+        pub fn set_text_translation_job_properties(mut self, input: std::option::Option<crate::model::TextTranslationJobProperties>) -> Self {
+            self.text_translation_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
         pub fn build(self) -> crate::output::DescribeTextTranslationJobOutput {
             crate::output::DescribeTextTranslationJobOutput {
-                text_translation_job_properties: self.text_translation_job_properties,
+                text_translation_job_properties: self.text_translation_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTextTranslationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
@@ -1321,19 +1194,24 @@ impl DescribeTextTranslationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTerminologyOutput {}
+pub struct DeleteTerminologyOutput  {
+}
 /// See [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
 pub mod delete_terminology_output {
-
+    
     /// A builder for [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
         pub fn build(self) -> crate::output::DeleteTerminologyOutput {
-            crate::output::DeleteTerminologyOutput {}
+            crate::output::DeleteTerminologyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTerminologyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
@@ -1345,7 +1223,7 @@ impl DeleteTerminologyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteParallelDataOutput {
+pub struct DeleteParallelDataOutput  {
     /// <p>The name of the parallel data resource that is being deleted.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1355,17 +1233,17 @@ pub struct DeleteParallelDataOutput {
 }
 impl DeleteParallelDataOutput {
     /// <p>The name of the parallel data resource that is being deleted.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the parallel data deletion.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ParallelDataStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
 pub mod delete_parallel_data_output {
-
+    
     /// A builder for [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1380,8 +1258,7 @@ pub mod delete_parallel_data_output {
         }
         /// <p>The name of the parallel data resource that is being deleted.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the parallel data deletion.</p>
         pub fn status(mut self, input: crate::model::ParallelDataStatus) -> Self {
@@ -1389,21 +1266,21 @@ pub mod delete_parallel_data_output {
             self
         }
         /// <p>The status of the parallel data deletion.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ParallelDataStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
         pub fn build(self) -> crate::output::DeleteParallelDataOutput {
             crate::output::DeleteParallelDataOutput {
-                name: self.name,
-                status: self.status,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
@@ -1415,7 +1292,7 @@ impl DeleteParallelDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateParallelDataOutput {
+pub struct CreateParallelDataOutput  {
     /// <p>The custom name that you assigned to the parallel data resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1425,17 +1302,17 @@ pub struct CreateParallelDataOutput {
 }
 impl CreateParallelDataOutput {
     /// <p>The custom name that you assigned to the parallel data resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ParallelDataStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
 pub mod create_parallel_data_output {
-
+    
     /// A builder for [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1450,8 +1327,7 @@ pub mod create_parallel_data_output {
         }
         /// <p>The custom name that you assigned to the parallel data resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
         pub fn status(mut self, input: crate::model::ParallelDataStatus) -> Self {
@@ -1459,21 +1335,21 @@ pub mod create_parallel_data_output {
             self
         }
         /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ParallelDataStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
         pub fn build(self) -> crate::output::CreateParallelDataOutput {
             crate::output::CreateParallelDataOutput {
-                name: self.name,
-                status: self.status,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
@@ -1481,3 +1357,4 @@ impl CreateParallelDataOutput {
         crate::output::create_parallel_data_output::Builder::default()
     }
 }
+

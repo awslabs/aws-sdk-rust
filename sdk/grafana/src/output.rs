@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkspacesOutput {
+pub struct ListWorkspacesOutput  {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
     #[doc(hidden)]
     pub workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
@@ -12,17 +12,17 @@ pub struct ListWorkspacesOutput {
 }
 impl ListWorkspacesOutput {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn workspaces(&self) -> std::option::Option<&[crate::model::WorkspaceSummary]> {
+    pub fn workspaces(&self) -> std::option::Option<& [crate::model::WorkspaceSummary]> {
         self.workspaces.as_deref()
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
 pub mod list_workspaces_output {
-
+    
     /// A builder for [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod list_workspaces_output {
         /// <p>An array of structures that contain some information about the workspaces in the account.</p>
         pub fn workspaces(mut self, input: crate::model::WorkspaceSummary) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
-            v.push(input);
-            self.workspaces = Some(v);
-            self
+                            v.push(input);
+                            self.workspaces = Some(v);
+                            self
         }
         /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-        pub fn set_workspaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
-        ) -> Self {
-            self.workspaces = input;
-            self
+        pub fn set_workspaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>) -> Self {
+            self.workspaces = input; self
         }
         /// <p>The token to use when requesting the next set of workspaces.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod list_workspaces_output {
         }
         /// <p>The token to use when requesting the next set of workspaces.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
         pub fn build(self) -> crate::output::ListWorkspacesOutput {
             crate::output::ListWorkspacesOutput {
-                workspaces: self.workspaces,
-                next_token: self.next_token,
+                workspaces: self.workspaces
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
@@ -78,20 +77,20 @@ impl ListWorkspacesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkspaceOutput {
+pub struct CreateWorkspaceOutput  {
     /// <p>A structure containing data about the workspace that was created.</p>
     #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl CreateWorkspaceOutput {
     /// <p>A structure containing data about the workspace that was created.</p>
-    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+    pub fn workspace(&self) -> std::option::Option<& crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
 /// See [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
 pub mod create_workspace_output {
-
+    
     /// A builder for [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -104,20 +103,19 @@ pub mod create_workspace_output {
             self
         }
         /// <p>A structure containing data about the workspace that was created.</p>
-        pub fn set_workspace(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceDescription>,
-        ) -> Self {
-            self.workspace = input;
-            self
+        pub fn set_workspace(mut self, input: std::option::Option<crate::model::WorkspaceDescription>) -> Self {
+            self.workspace = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
         pub fn build(self) -> crate::output::CreateWorkspaceOutput {
             crate::output::CreateWorkspaceOutput {
-                workspace: self.workspace,
+                workspace: self.workspace
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
@@ -129,20 +127,20 @@ impl CreateWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkspaceOutput {
+pub struct DeleteWorkspaceOutput  {
     /// <p>A structure containing information about the workspace that was deleted.</p>
     #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl DeleteWorkspaceOutput {
     /// <p>A structure containing information about the workspace that was deleted.</p>
-    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+    pub fn workspace(&self) -> std::option::Option<& crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
 /// See [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
 pub mod delete_workspace_output {
-
+    
     /// A builder for [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -155,20 +153,19 @@ pub mod delete_workspace_output {
             self
         }
         /// <p>A structure containing information about the workspace that was deleted.</p>
-        pub fn set_workspace(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceDescription>,
-        ) -> Self {
-            self.workspace = input;
-            self
+        pub fn set_workspace(mut self, input: std::option::Option<crate::model::WorkspaceDescription>) -> Self {
+            self.workspace = input; self
         }
         /// Consumes the builder and constructs a [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
         pub fn build(self) -> crate::output::DeleteWorkspaceOutput {
             crate::output::DeleteWorkspaceOutput {
-                workspace: self.workspace,
+                workspace: self.workspace
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
@@ -180,20 +177,20 @@ impl DeleteWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkspaceOutput {
+pub struct UpdateWorkspaceOutput  {
     /// <p>A structure containing data about the workspace that was created.</p>
     #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl UpdateWorkspaceOutput {
     /// <p>A structure containing data about the workspace that was created.</p>
-    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+    pub fn workspace(&self) -> std::option::Option<& crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
 /// See [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput).
 pub mod update_workspace_output {
-
+    
     /// A builder for [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -206,20 +203,19 @@ pub mod update_workspace_output {
             self
         }
         /// <p>A structure containing data about the workspace that was created.</p>
-        pub fn set_workspace(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceDescription>,
-        ) -> Self {
-            self.workspace = input;
-            self
+        pub fn set_workspace(mut self, input: std::option::Option<crate::model::WorkspaceDescription>) -> Self {
+            self.workspace = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput).
         pub fn build(self) -> crate::output::UpdateWorkspaceOutput {
             crate::output::UpdateWorkspaceOutput {
-                workspace: self.workspace,
+                workspace: self.workspace
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput).
@@ -231,20 +227,20 @@ impl UpdateWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceOutput {
+pub struct DescribeWorkspaceOutput  {
     /// <p>A structure containing information about the workspace.</p>
     #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl DescribeWorkspaceOutput {
     /// <p>A structure containing information about the workspace.</p>
-    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+    pub fn workspace(&self) -> std::option::Option<& crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
 /// See [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
 pub mod describe_workspace_output {
-
+    
     /// A builder for [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -257,20 +253,19 @@ pub mod describe_workspace_output {
             self
         }
         /// <p>A structure containing information about the workspace.</p>
-        pub fn set_workspace(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceDescription>,
-        ) -> Self {
-            self.workspace = input;
-            self
+        pub fn set_workspace(mut self, input: std::option::Option<crate::model::WorkspaceDescription>) -> Self {
+            self.workspace = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
         pub fn build(self) -> crate::output::DescribeWorkspaceOutput {
             crate::output::DescribeWorkspaceOutput {
-                workspace: self.workspace,
+                workspace: self.workspace
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
@@ -282,20 +277,20 @@ impl DescribeWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePermissionsOutput {
+pub struct UpdatePermissionsOutput  {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::UpdateError>>,
 }
 impl UpdatePermissionsOutput {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::UpdateError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::UpdateError]> {
         self.errors.as_deref()
     }
 }
 /// See [`UpdatePermissionsOutput`](crate::output::UpdatePermissionsOutput).
 pub mod update_permissions_output {
-
+    
     /// A builder for [`UpdatePermissionsOutput`](crate::output::UpdatePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -309,25 +304,24 @@ pub mod update_permissions_output {
         /// <p>An array of structures that contain the errors from the operation, if any.</p>
         pub fn errors(mut self, input: crate::model::UpdateError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>An array of structures that contain the errors from the operation, if any.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpdateError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePermissionsOutput`](crate::output::UpdatePermissionsOutput).
         pub fn build(self) -> crate::output::UpdatePermissionsOutput {
             crate::output::UpdatePermissionsOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePermissionsOutput`](crate::output::UpdatePermissionsOutput).
@@ -339,7 +333,7 @@ impl UpdatePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionsOutput {
+pub struct ListPermissionsOutput  {
     /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -349,17 +343,17 @@ pub struct ListPermissionsOutput {
 }
 impl ListPermissionsOutput {
     /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The permissions returned by the operation.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::PermissionEntry]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::PermissionEntry]> {
         self.permissions.as_deref()
     }
 }
 /// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
 pub mod list_permissions_output {
-
+    
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -374,8 +368,7 @@ pub mod list_permissions_output {
         }
         /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -384,26 +377,26 @@ pub mod list_permissions_output {
         /// <p>The permissions returned by the operation.</p>
         pub fn permissions(mut self, input: crate::model::PermissionEntry) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>The permissions returned by the operation.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PermissionEntry>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PermissionEntry>>) -> Self {
+            self.permissions = input; self
         }
         /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
         pub fn build(self) -> crate::output::ListPermissionsOutput {
             crate::output::ListPermissionsOutput {
-                next_token: self.next_token,
-                permissions: self.permissions,
+                next_token: self.next_token
+                ,
+                permissions: self.permissions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
@@ -415,20 +408,20 @@ impl ListPermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateLicenseOutput {
+pub struct DisassociateLicenseOutput  {
     /// <p>A structure containing information about the workspace.</p>
     #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl DisassociateLicenseOutput {
     /// <p>A structure containing information about the workspace.</p>
-    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+    pub fn workspace(&self) -> std::option::Option<& crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
 /// See [`DisassociateLicenseOutput`](crate::output::DisassociateLicenseOutput).
 pub mod disassociate_license_output {
-
+    
     /// A builder for [`DisassociateLicenseOutput`](crate::output::DisassociateLicenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -441,20 +434,19 @@ pub mod disassociate_license_output {
             self
         }
         /// <p>A structure containing information about the workspace.</p>
-        pub fn set_workspace(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceDescription>,
-        ) -> Self {
-            self.workspace = input;
-            self
+        pub fn set_workspace(mut self, input: std::option::Option<crate::model::WorkspaceDescription>) -> Self {
+            self.workspace = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateLicenseOutput`](crate::output::DisassociateLicenseOutput).
         pub fn build(self) -> crate::output::DisassociateLicenseOutput {
             crate::output::DisassociateLicenseOutput {
-                workspace: self.workspace,
+                workspace: self.workspace
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateLicenseOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLicenseOutput`](crate::output::DisassociateLicenseOutput).
@@ -466,20 +458,20 @@ impl DisassociateLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateLicenseOutput {
+pub struct AssociateLicenseOutput  {
     /// <p>A structure containing data about the workspace.</p>
     #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl AssociateLicenseOutput {
     /// <p>A structure containing data about the workspace.</p>
-    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+    pub fn workspace(&self) -> std::option::Option<& crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
 /// See [`AssociateLicenseOutput`](crate::output::AssociateLicenseOutput).
 pub mod associate_license_output {
-
+    
     /// A builder for [`AssociateLicenseOutput`](crate::output::AssociateLicenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -492,20 +484,19 @@ pub mod associate_license_output {
             self
         }
         /// <p>A structure containing data about the workspace.</p>
-        pub fn set_workspace(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceDescription>,
-        ) -> Self {
-            self.workspace = input;
-            self
+        pub fn set_workspace(mut self, input: std::option::Option<crate::model::WorkspaceDescription>) -> Self {
+            self.workspace = input; self
         }
         /// Consumes the builder and constructs a [`AssociateLicenseOutput`](crate::output::AssociateLicenseOutput).
         pub fn build(self) -> crate::output::AssociateLicenseOutput {
             crate::output::AssociateLicenseOutput {
-                workspace: self.workspace,
+                workspace: self.workspace
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateLicenseOutput {
     /// Creates a new builder-style object to manufacture [`AssociateLicenseOutput`](crate::output::AssociateLicenseOutput).
@@ -517,19 +508,24 @@ impl AssociateLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkspaceConfigurationOutput {}
+pub struct UpdateWorkspaceConfigurationOutput  {
+}
 /// See [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
 pub mod update_workspace_configuration_output {
-
+    
     /// A builder for [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateWorkspaceConfigurationOutput {
-            crate::output::UpdateWorkspaceConfigurationOutput {}
+            crate::output::UpdateWorkspaceConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateWorkspaceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput).
@@ -541,20 +537,20 @@ impl UpdateWorkspaceConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceConfigurationOutput {
+pub struct DescribeWorkspaceConfigurationOutput  {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceConfigurationOutput {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(&self) -> std::option::Option<&str> {
+    pub fn configuration(&self) -> std::option::Option<& str> {
         self.configuration.as_deref()
     }
 }
 /// See [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
 pub mod describe_workspace_configuration_output {
-
+    
     /// A builder for [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -567,20 +563,19 @@ pub mod describe_workspace_configuration_output {
             self
         }
         /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeWorkspaceConfigurationOutput {
             crate::output::DescribeWorkspaceConfigurationOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeWorkspaceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput).
@@ -592,20 +587,20 @@ impl DescribeWorkspaceConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkspaceAuthenticationOutput {
+pub struct UpdateWorkspaceAuthenticationOutput  {
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
     #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::AuthenticationDescription>,
 }
 impl UpdateWorkspaceAuthenticationOutput {
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
-    pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationDescription> {
+    pub fn authentication(&self) -> std::option::Option<& crate::model::AuthenticationDescription> {
         self.authentication.as_ref()
     }
 }
 /// See [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput).
 pub mod update_workspace_authentication_output {
-
+    
     /// A builder for [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -618,20 +613,19 @@ pub mod update_workspace_authentication_output {
             self
         }
         /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationDescription>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<crate::model::AuthenticationDescription>) -> Self {
+            self.authentication = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput).
         pub fn build(self) -> crate::output::UpdateWorkspaceAuthenticationOutput {
             crate::output::UpdateWorkspaceAuthenticationOutput {
-                authentication: self.authentication,
+                authentication: self.authentication
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWorkspaceAuthenticationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput).
@@ -643,20 +637,20 @@ impl UpdateWorkspaceAuthenticationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceAuthenticationOutput {
+pub struct DescribeWorkspaceAuthenticationOutput  {
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::AuthenticationDescription>,
 }
 impl DescribeWorkspaceAuthenticationOutput {
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationDescription> {
+    pub fn authentication(&self) -> std::option::Option<& crate::model::AuthenticationDescription> {
         self.authentication.as_ref()
     }
 }
 /// See [`DescribeWorkspaceAuthenticationOutput`](crate::output::DescribeWorkspaceAuthenticationOutput).
 pub mod describe_workspace_authentication_output {
-
+    
     /// A builder for [`DescribeWorkspaceAuthenticationOutput`](crate::output::DescribeWorkspaceAuthenticationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -669,20 +663,19 @@ pub mod describe_workspace_authentication_output {
             self
         }
         /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationDescription>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<crate::model::AuthenticationDescription>) -> Self {
+            self.authentication = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkspaceAuthenticationOutput`](crate::output::DescribeWorkspaceAuthenticationOutput).
         pub fn build(self) -> crate::output::DescribeWorkspaceAuthenticationOutput {
             crate::output::DescribeWorkspaceAuthenticationOutput {
-                authentication: self.authentication,
+                authentication: self.authentication
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeWorkspaceAuthenticationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceAuthenticationOutput`](crate::output::DescribeWorkspaceAuthenticationOutput).
@@ -694,7 +687,7 @@ impl DescribeWorkspaceAuthenticationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkspaceApiKeyOutput {
+pub struct DeleteWorkspaceApiKeyOutput  {
     /// <p>The name of the key that was deleted.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
@@ -704,17 +697,17 @@ pub struct DeleteWorkspaceApiKeyOutput {
 }
 impl DeleteWorkspaceApiKeyOutput {
     /// <p>The name of the key that was deleted.</p>
-    pub fn key_name(&self) -> std::option::Option<&str> {
+    pub fn key_name(&self) -> std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The ID of the workspace where the key was deleted.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
 /// See [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput).
 pub mod delete_workspace_api_key_output {
-
+    
     /// A builder for [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -729,8 +722,7 @@ pub mod delete_workspace_api_key_output {
         }
         /// <p>The name of the key that was deleted.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_name = input;
-            self
+            self.key_name = input; self
         }
         /// <p>The ID of the workspace where the key was deleted.</p>
         pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -739,17 +731,20 @@ pub mod delete_workspace_api_key_output {
         }
         /// <p>The ID of the workspace where the key was deleted.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workspace_id = input;
-            self
+            self.workspace_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput).
         pub fn build(self) -> crate::output::DeleteWorkspaceApiKeyOutput {
             crate::output::DeleteWorkspaceApiKeyOutput {
-                key_name: self.key_name,
-                workspace_id: self.workspace_id,
+                key_name: self.key_name
+                ,
+                workspace_id: self.workspace_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteWorkspaceApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput).
@@ -761,7 +756,7 @@ impl DeleteWorkspaceApiKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateWorkspaceApiKeyOutput {
+pub struct CreateWorkspaceApiKeyOutput  {
     /// <p>The name of the key that was created.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
@@ -774,19 +769,19 @@ pub struct CreateWorkspaceApiKeyOutput {
 }
 impl CreateWorkspaceApiKeyOutput {
     /// <p>The name of the key that was created.</p>
-    pub fn key_name(&self) -> std::option::Option<&str> {
+    pub fn key_name(&self) -> std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The ID of the workspace that the key is valid for.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkspaceApiKeyOutput {
+impl  std::fmt::Debug for CreateWorkspaceApiKeyOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceApiKeyOutput");
         formatter.field("key_name", &self.key_name);
@@ -797,7 +792,7 @@ impl std::fmt::Debug for CreateWorkspaceApiKeyOutput {
 }
 /// See [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput).
 pub mod create_workspace_api_key_output {
-
+    
     /// A builder for [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -813,8 +808,7 @@ pub mod create_workspace_api_key_output {
         }
         /// <p>The name of the key that was created.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_name = input;
-            self
+            self.key_name = input; self
         }
         /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -823,8 +817,7 @@ pub mod create_workspace_api_key_output {
         }
         /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The ID of the workspace that the key is valid for.</p>
         pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -833,15 +826,17 @@ pub mod create_workspace_api_key_output {
         }
         /// <p>The ID of the workspace that the key is valid for.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workspace_id = input;
-            self
+            self.workspace_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput).
         pub fn build(self) -> crate::output::CreateWorkspaceApiKeyOutput {
             crate::output::CreateWorkspaceApiKeyOutput {
-                key_name: self.key_name,
-                key: self.key,
-                workspace_id: self.workspace_id,
+                key_name: self.key_name
+                ,
+                key: self.key
+                ,
+                workspace_id: self.workspace_id
+                ,
             }
         }
     }
@@ -854,6 +849,8 @@ pub mod create_workspace_api_key_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateWorkspaceApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput).
@@ -865,19 +862,24 @@ impl CreateWorkspaceApiKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -889,19 +891,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -913,30 +920,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags that are associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags that are associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -944,31 +945,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are associated with the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags that are associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -976,3 +972,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

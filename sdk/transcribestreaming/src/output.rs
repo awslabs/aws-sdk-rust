@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct StartStreamTranscriptionOutput {
+pub struct StartStreamTranscriptionOutput  {
     /// <p>Provides the identifier for your streaming request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -22,10 +22,7 @@ pub struct StartStreamTranscriptionOutput {
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Provides detailed information about your streaming session.</p>
-    pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<
-        crate::model::TranscriptResultStream,
-        crate::error::TranscriptResultStreamError,
-    >,
+    pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<crate::model::TranscriptResultStream, crate::error::TranscriptResultStreamError>,
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
     #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -77,11 +74,11 @@ pub struct StartStreamTranscriptionOutput {
 }
 impl StartStreamTranscriptionOutput {
     /// <p>Provides the identifier for your streaming request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Provides the language code that you specified in your request.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Provides the sample rate that you specified in your request.</p>
@@ -89,34 +86,27 @@ impl StartStreamTranscriptionOutput {
         self.media_sample_rate_hertz
     }
     /// <p>Provides the media encoding you specified in your request.</p>
-    pub fn media_encoding(&self) -> std::option::Option<&crate::model::MediaEncoding> {
+    pub fn media_encoding(&self) -> std::option::Option<& crate::model::MediaEncoding> {
         self.media_encoding.as_ref()
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>Provides the identifier for your transcription session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Provides detailed information about your streaming session.</p>
-    pub fn transcript_result_stream(
-        &self,
-    ) -> &aws_smithy_http::event_stream::Receiver<
-        crate::model::TranscriptResultStream,
-        crate::error::TranscriptResultStreamError,
-    > {
+    pub fn transcript_result_stream(&self) -> & aws_smithy_http::event_stream::Receiver<crate::model::TranscriptResultStream, crate::error::TranscriptResultStreamError> {
         &self.transcript_result_stream
     }
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
-    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>Provides the vocabulary filtering method used in your transcription.</p>
-    pub fn vocabulary_filter_method(
-        &self,
-    ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> std::option::Option<& crate::model::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
@@ -136,29 +126,23 @@ impl StartStreamTranscriptionOutput {
         self.enable_partial_results_stabilization
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn partial_results_stability(
-        &self,
-    ) -> std::option::Option<&crate::model::PartialResultsStability> {
+    pub fn partial_results_stability(&self) -> std::option::Option<& crate::model::PartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ContentIdentificationType> {
+    pub fn content_identification_type(&self) -> std::option::Option<& crate::model::ContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Shows whether content redaction was enabled for your transcription.</p>
-    pub fn content_redaction_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ContentRedactionType> {
+    pub fn content_redaction_type(&self) -> std::option::Option<& crate::model::ContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
     /// <p>Lists the PII entity types you specified in your request.</p>
-    pub fn pii_entity_types(&self) -> std::option::Option<&str> {
+    pub fn pii_entity_types(&self) -> std::option::Option<& str> {
         self.pii_entity_types.as_deref()
     }
     /// <p>Provides the name of the custom language model that you specified in your request.</p>
-    pub fn language_model_name(&self) -> std::option::Option<&str> {
+    pub fn language_model_name(&self) -> std::option::Option<& str> {
         self.language_model_name.as_deref()
     }
     /// <p>Shows whether automatic language identification was enabled for your transcription.</p>
@@ -166,25 +150,25 @@ impl StartStreamTranscriptionOutput {
         self.identify_language
     }
     /// <p>Provides the language codes that you specified in your request.</p>
-    pub fn language_options(&self) -> std::option::Option<&str> {
+    pub fn language_options(&self) -> std::option::Option<& str> {
         self.language_options.as_deref()
     }
     /// <p>Provides the preferred language that you specified in your request.</p>
-    pub fn preferred_language(&self) -> std::option::Option<&crate::model::LanguageCode> {
+    pub fn preferred_language(&self) -> std::option::Option<& crate::model::LanguageCode> {
         self.preferred_language.as_ref()
     }
     /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
-    pub fn vocabulary_names(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_names(&self) -> std::option::Option<& str> {
         self.vocabulary_names.as_deref()
     }
     /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
-    pub fn vocabulary_filter_names(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_filter_names(&self) -> std::option::Option<& str> {
         self.vocabulary_filter_names.as_deref()
     }
 }
 /// See [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
 pub mod start_stream_transcription_output {
-
+    
     /// A builder for [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -194,23 +178,15 @@ pub mod start_stream_transcription_output {
         pub(crate) media_encoding: std::option::Option<crate::model::MediaEncoding>,
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
-        pub(crate) transcript_result_stream: std::option::Option<
-            aws_smithy_http::event_stream::Receiver<
-                crate::model::TranscriptResultStream,
-                crate::error::TranscriptResultStreamError,
-            >,
-        >,
+        pub(crate) transcript_result_stream: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::model::TranscriptResultStream, crate::error::TranscriptResultStreamError>>,
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
-        pub(crate) vocabulary_filter_method:
-            std::option::Option<crate::model::VocabularyFilterMethod>,
+        pub(crate) vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
         pub(crate) show_speaker_label: std::option::Option<bool>,
         pub(crate) enable_channel_identification: std::option::Option<bool>,
         pub(crate) number_of_channels: std::option::Option<i32>,
         pub(crate) enable_partial_results_stabilization: std::option::Option<bool>,
-        pub(crate) partial_results_stability:
-            std::option::Option<crate::model::PartialResultsStability>,
-        pub(crate) content_identification_type:
-            std::option::Option<crate::model::ContentIdentificationType>,
+        pub(crate) partial_results_stability: std::option::Option<crate::model::PartialResultsStability>,
+        pub(crate) content_identification_type: std::option::Option<crate::model::ContentIdentificationType>,
         pub(crate) content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
         pub(crate) pii_entity_types: std::option::Option<std::string::String>,
         pub(crate) language_model_name: std::option::Option<std::string::String>,
@@ -228,8 +204,7 @@ pub mod start_stream_transcription_output {
         }
         /// <p>Provides the identifier for your streaming request.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>Provides the language code that you specified in your request.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
@@ -237,12 +212,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the language code that you specified in your request.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<crate::model::LanguageCode>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
+            self.language_code = input; self
         }
         /// <p>Provides the sample rate that you specified in your request.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
@@ -251,8 +222,7 @@ pub mod start_stream_transcription_output {
         }
         /// <p>Provides the sample rate that you specified in your request.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
-            self.media_sample_rate_hertz = input;
-            self
+            self.media_sample_rate_hertz = input; self
         }
         /// <p>Provides the media encoding you specified in your request.</p>
         pub fn media_encoding(mut self, input: crate::model::MediaEncoding) -> Self {
@@ -260,12 +230,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the media encoding you specified in your request.</p>
-        pub fn set_media_encoding(
-            mut self,
-            input: std::option::Option<crate::model::MediaEncoding>,
-        ) -> Self {
-            self.media_encoding = input;
-            self
+        pub fn set_media_encoding(mut self, input: std::option::Option<crate::model::MediaEncoding>) -> Self {
+            self.media_encoding = input; self
         }
         /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -273,12 +239,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-        pub fn set_vocabulary_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vocabulary_name = input;
-            self
+        pub fn set_vocabulary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vocabulary_name = input; self
         }
         /// <p>Provides the identifier for your transcription session.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -287,32 +249,16 @@ pub mod start_stream_transcription_output {
         }
         /// <p>Provides the identifier for your transcription session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>Provides detailed information about your streaming session.</p>
-        pub fn transcript_result_stream(
-            mut self,
-            input: aws_smithy_http::event_stream::Receiver<
-                crate::model::TranscriptResultStream,
-                crate::error::TranscriptResultStreamError,
-            >,
-        ) -> Self {
+        pub fn transcript_result_stream(mut self, input: aws_smithy_http::event_stream::Receiver<crate::model::TranscriptResultStream, crate::error::TranscriptResultStreamError>) -> Self {
             self.transcript_result_stream = Some(input);
             self
         }
         /// <p>Provides detailed information about your streaming session.</p>
-        pub fn set_transcript_result_stream(
-            mut self,
-            input: std::option::Option<
-                aws_smithy_http::event_stream::Receiver<
-                    crate::model::TranscriptResultStream,
-                    crate::error::TranscriptResultStreamError,
-                >,
-            >,
-        ) -> Self {
-            self.transcript_result_stream = input;
-            self
+        pub fn set_transcript_result_stream(mut self, input: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::model::TranscriptResultStream, crate::error::TranscriptResultStreamError>>) -> Self {
+            self.transcript_result_stream = input; self
         }
         /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -320,28 +266,17 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
-        pub fn set_vocabulary_filter_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vocabulary_filter_name = input;
-            self
+        pub fn set_vocabulary_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vocabulary_filter_name = input; self
         }
         /// <p>Provides the vocabulary filtering method used in your transcription.</p>
-        pub fn vocabulary_filter_method(
-            mut self,
-            input: crate::model::VocabularyFilterMethod,
-        ) -> Self {
+        pub fn vocabulary_filter_method(mut self, input: crate::model::VocabularyFilterMethod) -> Self {
             self.vocabulary_filter_method = Some(input);
             self
         }
         /// <p>Provides the vocabulary filtering method used in your transcription.</p>
-        pub fn set_vocabulary_filter_method(
-            mut self,
-            input: std::option::Option<crate::model::VocabularyFilterMethod>,
-        ) -> Self {
-            self.vocabulary_filter_method = input;
-            self
+        pub fn set_vocabulary_filter_method(mut self, input: std::option::Option<crate::model::VocabularyFilterMethod>) -> Self {
+            self.vocabulary_filter_method = input; self
         }
         /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
         pub fn show_speaker_label(mut self, input: bool) -> Self {
@@ -350,8 +285,7 @@ pub mod start_stream_transcription_output {
         }
         /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
         pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
-            self.show_speaker_label = input;
-            self
+            self.show_speaker_label = input; self
         }
         /// <p>Shows whether channel identification was enabled for your transcription.</p>
         pub fn enable_channel_identification(mut self, input: bool) -> Self {
@@ -359,12 +293,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Shows whether channel identification was enabled for your transcription.</p>
-        pub fn set_enable_channel_identification(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_channel_identification = input;
-            self
+        pub fn set_enable_channel_identification(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_channel_identification = input; self
         }
         /// <p>Provides the number of channels that you specified in your request.</p>
         pub fn number_of_channels(mut self, input: i32) -> Self {
@@ -373,8 +303,7 @@ pub mod start_stream_transcription_output {
         }
         /// <p>Provides the number of channels that you specified in your request.</p>
         pub fn set_number_of_channels(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_channels = input;
-            self
+            self.number_of_channels = input; self
         }
         /// <p>Shows whether partial results stabilization was enabled for your transcription.</p>
         pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {
@@ -382,44 +311,26 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Shows whether partial results stabilization was enabled for your transcription.</p>
-        pub fn set_enable_partial_results_stabilization(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_partial_results_stabilization = input;
-            self
+        pub fn set_enable_partial_results_stabilization(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_partial_results_stabilization = input; self
         }
         /// <p>Provides the stabilization level used for your transcription.</p>
-        pub fn partial_results_stability(
-            mut self,
-            input: crate::model::PartialResultsStability,
-        ) -> Self {
+        pub fn partial_results_stability(mut self, input: crate::model::PartialResultsStability) -> Self {
             self.partial_results_stability = Some(input);
             self
         }
         /// <p>Provides the stabilization level used for your transcription.</p>
-        pub fn set_partial_results_stability(
-            mut self,
-            input: std::option::Option<crate::model::PartialResultsStability>,
-        ) -> Self {
-            self.partial_results_stability = input;
-            self
+        pub fn set_partial_results_stability(mut self, input: std::option::Option<crate::model::PartialResultsStability>) -> Self {
+            self.partial_results_stability = input; self
         }
         /// <p>Shows whether content identification was enabled for your transcription.</p>
-        pub fn content_identification_type(
-            mut self,
-            input: crate::model::ContentIdentificationType,
-        ) -> Self {
+        pub fn content_identification_type(mut self, input: crate::model::ContentIdentificationType) -> Self {
             self.content_identification_type = Some(input);
             self
         }
         /// <p>Shows whether content identification was enabled for your transcription.</p>
-        pub fn set_content_identification_type(
-            mut self,
-            input: std::option::Option<crate::model::ContentIdentificationType>,
-        ) -> Self {
-            self.content_identification_type = input;
-            self
+        pub fn set_content_identification_type(mut self, input: std::option::Option<crate::model::ContentIdentificationType>) -> Self {
+            self.content_identification_type = input; self
         }
         /// <p>Shows whether content redaction was enabled for your transcription.</p>
         pub fn content_redaction_type(mut self, input: crate::model::ContentRedactionType) -> Self {
@@ -427,12 +338,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Shows whether content redaction was enabled for your transcription.</p>
-        pub fn set_content_redaction_type(
-            mut self,
-            input: std::option::Option<crate::model::ContentRedactionType>,
-        ) -> Self {
-            self.content_redaction_type = input;
-            self
+        pub fn set_content_redaction_type(mut self, input: std::option::Option<crate::model::ContentRedactionType>) -> Self {
+            self.content_redaction_type = input; self
         }
         /// <p>Lists the PII entity types you specified in your request.</p>
         pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
@@ -440,12 +347,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Lists the PII entity types you specified in your request.</p>
-        pub fn set_pii_entity_types(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pii_entity_types = input;
-            self
+        pub fn set_pii_entity_types(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pii_entity_types = input; self
         }
         /// <p>Provides the name of the custom language model that you specified in your request.</p>
         pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -453,12 +356,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the name of the custom language model that you specified in your request.</p>
-        pub fn set_language_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.language_model_name = input;
-            self
+        pub fn set_language_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language_model_name = input; self
         }
         /// <p>Shows whether automatic language identification was enabled for your transcription.</p>
         pub fn identify_language(mut self, input: bool) -> Self {
@@ -467,8 +366,7 @@ pub mod start_stream_transcription_output {
         }
         /// <p>Shows whether automatic language identification was enabled for your transcription.</p>
         pub fn set_identify_language(mut self, input: std::option::Option<bool>) -> Self {
-            self.identify_language = input;
-            self
+            self.identify_language = input; self
         }
         /// <p>Provides the language codes that you specified in your request.</p>
         pub fn language_options(mut self, input: impl Into<std::string::String>) -> Self {
@@ -476,12 +374,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the language codes that you specified in your request.</p>
-        pub fn set_language_options(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.language_options = input;
-            self
+        pub fn set_language_options(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language_options = input; self
         }
         /// <p>Provides the preferred language that you specified in your request.</p>
         pub fn preferred_language(mut self, input: crate::model::LanguageCode) -> Self {
@@ -489,12 +383,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the preferred language that you specified in your request.</p>
-        pub fn set_preferred_language(
-            mut self,
-            input: std::option::Option<crate::model::LanguageCode>,
-        ) -> Self {
-            self.preferred_language = input;
-            self
+        pub fn set_preferred_language(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
+            self.preferred_language = input; self
         }
         /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
         pub fn vocabulary_names(mut self, input: impl Into<std::string::String>) -> Self {
@@ -502,12 +392,8 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
-        pub fn set_vocabulary_names(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vocabulary_names = input;
-            self
+        pub fn set_vocabulary_names(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vocabulary_names = input; self
         }
         /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
         pub fn vocabulary_filter_names(mut self, input: impl Into<std::string::String>) -> Self {
@@ -515,20 +401,11 @@ pub mod start_stream_transcription_output {
             self
         }
         /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
-        pub fn set_vocabulary_filter_names(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vocabulary_filter_names = input;
-            self
+        pub fn set_vocabulary_filter_names(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vocabulary_filter_names = input; self
         }
         /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::output::StartStreamTranscriptionOutput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::output::StartStreamTranscriptionOutput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::output::StartStreamTranscriptionOutput {
                     request_id: self.request_id
@@ -588,6 +465,8 @@ pub mod start_stream_transcription_output {
             )
         }
     }
+    
+    
 }
 impl StartStreamTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
@@ -599,7 +478,7 @@ impl StartStreamTranscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct StartMedicalStreamTranscriptionOutput {
+pub struct StartMedicalStreamTranscriptionOutput  {
     /// <p>Provides the identifier for your streaming request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -628,10 +507,7 @@ pub struct StartMedicalStreamTranscriptionOutput {
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Provides detailed information about your streaming session.</p>
-    pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<
-        crate::model::MedicalTranscriptResultStream,
-        crate::error::MedicalTranscriptResultStreamError,
-    >,
+    pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<crate::model::MedicalTranscriptResultStream, crate::error::MedicalTranscriptResultStreamError>,
     /// <p>Shows whether channel identification was enabled for your transcription.</p>
     #[doc(hidden)]
     pub enable_channel_identification: bool,
@@ -640,16 +516,15 @@ pub struct StartMedicalStreamTranscriptionOutput {
     pub number_of_channels: std::option::Option<i32>,
     /// <p>Shows whether content identification was enabled for your transcription.</p>
     #[doc(hidden)]
-    pub content_identification_type:
-        std::option::Option<crate::model::MedicalContentIdentificationType>,
+    pub content_identification_type: std::option::Option<crate::model::MedicalContentIdentificationType>,
 }
 impl StartMedicalStreamTranscriptionOutput {
     /// <p>Provides the identifier for your streaming request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Provides the language code that you specified in your request. This must be <code>en-US</code>.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Provides the sample rate that you specified in your request.</p>
@@ -657,19 +532,19 @@ impl StartMedicalStreamTranscriptionOutput {
         self.media_sample_rate_hertz
     }
     /// <p>Provides the media encoding you specified in your request.</p>
-    pub fn media_encoding(&self) -> std::option::Option<&crate::model::MediaEncoding> {
+    pub fn media_encoding(&self) -> std::option::Option<& crate::model::MediaEncoding> {
         self.media_encoding.as_ref()
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>Provides the medical specialty that you specified in your request.</p>
-    pub fn specialty(&self) -> std::option::Option<&crate::model::Specialty> {
+    pub fn specialty(&self) -> std::option::Option<& crate::model::Specialty> {
         self.specialty.as_ref()
     }
     /// <p>Provides the type of audio you specified in your request.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::Type> {
         self.r#type.as_ref()
     }
     /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
@@ -677,16 +552,11 @@ impl StartMedicalStreamTranscriptionOutput {
         self.show_speaker_label
     }
     /// <p>Provides the identifier for your transcription session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Provides detailed information about your streaming session.</p>
-    pub fn transcript_result_stream(
-        &self,
-    ) -> &aws_smithy_http::event_stream::Receiver<
-        crate::model::MedicalTranscriptResultStream,
-        crate::error::MedicalTranscriptResultStreamError,
-    > {
+    pub fn transcript_result_stream(&self) -> & aws_smithy_http::event_stream::Receiver<crate::model::MedicalTranscriptResultStream, crate::error::MedicalTranscriptResultStreamError> {
         &self.transcript_result_stream
     }
     /// <p>Shows whether channel identification was enabled for your transcription.</p>
@@ -698,15 +568,13 @@ impl StartMedicalStreamTranscriptionOutput {
         self.number_of_channels
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> std::option::Option<&crate::model::MedicalContentIdentificationType> {
+    pub fn content_identification_type(&self) -> std::option::Option<& crate::model::MedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
 }
 /// See [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
 pub mod start_medical_stream_transcription_output {
-
+    
     /// A builder for [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -719,16 +587,10 @@ pub mod start_medical_stream_transcription_output {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
         pub(crate) show_speaker_label: std::option::Option<bool>,
         pub(crate) session_id: std::option::Option<std::string::String>,
-        pub(crate) transcript_result_stream: std::option::Option<
-            aws_smithy_http::event_stream::Receiver<
-                crate::model::MedicalTranscriptResultStream,
-                crate::error::MedicalTranscriptResultStreamError,
-            >,
-        >,
+        pub(crate) transcript_result_stream: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::model::MedicalTranscriptResultStream, crate::error::MedicalTranscriptResultStreamError>>,
         pub(crate) enable_channel_identification: std::option::Option<bool>,
         pub(crate) number_of_channels: std::option::Option<i32>,
-        pub(crate) content_identification_type:
-            std::option::Option<crate::model::MedicalContentIdentificationType>,
+        pub(crate) content_identification_type: std::option::Option<crate::model::MedicalContentIdentificationType>,
     }
     impl Builder {
         /// <p>Provides the identifier for your streaming request.</p>
@@ -738,8 +600,7 @@ pub mod start_medical_stream_transcription_output {
         }
         /// <p>Provides the identifier for your streaming request.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>Provides the language code that you specified in your request. This must be <code>en-US</code>.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
@@ -747,12 +608,8 @@ pub mod start_medical_stream_transcription_output {
             self
         }
         /// <p>Provides the language code that you specified in your request. This must be <code>en-US</code>.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<crate::model::LanguageCode>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
+            self.language_code = input; self
         }
         /// <p>Provides the sample rate that you specified in your request.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
@@ -761,8 +618,7 @@ pub mod start_medical_stream_transcription_output {
         }
         /// <p>Provides the sample rate that you specified in your request.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
-            self.media_sample_rate_hertz = input;
-            self
+            self.media_sample_rate_hertz = input; self
         }
         /// <p>Provides the media encoding you specified in your request.</p>
         pub fn media_encoding(mut self, input: crate::model::MediaEncoding) -> Self {
@@ -770,12 +626,8 @@ pub mod start_medical_stream_transcription_output {
             self
         }
         /// <p>Provides the media encoding you specified in your request.</p>
-        pub fn set_media_encoding(
-            mut self,
-            input: std::option::Option<crate::model::MediaEncoding>,
-        ) -> Self {
-            self.media_encoding = input;
-            self
+        pub fn set_media_encoding(mut self, input: std::option::Option<crate::model::MediaEncoding>) -> Self {
+            self.media_encoding = input; self
         }
         /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -783,12 +635,8 @@ pub mod start_medical_stream_transcription_output {
             self
         }
         /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-        pub fn set_vocabulary_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vocabulary_name = input;
-            self
+        pub fn set_vocabulary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vocabulary_name = input; self
         }
         /// <p>Provides the medical specialty that you specified in your request.</p>
         pub fn specialty(mut self, input: crate::model::Specialty) -> Self {
@@ -796,12 +644,8 @@ pub mod start_medical_stream_transcription_output {
             self
         }
         /// <p>Provides the medical specialty that you specified in your request.</p>
-        pub fn set_specialty(
-            mut self,
-            input: std::option::Option<crate::model::Specialty>,
-        ) -> Self {
-            self.specialty = input;
-            self
+        pub fn set_specialty(mut self, input: std::option::Option<crate::model::Specialty>) -> Self {
+            self.specialty = input; self
         }
         /// <p>Provides the type of audio you specified in your request.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
@@ -810,8 +654,7 @@ pub mod start_medical_stream_transcription_output {
         }
         /// <p>Provides the type of audio you specified in your request.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
         pub fn show_speaker_label(mut self, input: bool) -> Self {
@@ -820,8 +663,7 @@ pub mod start_medical_stream_transcription_output {
         }
         /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
         pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
-            self.show_speaker_label = input;
-            self
+            self.show_speaker_label = input; self
         }
         /// <p>Provides the identifier for your transcription session.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -830,32 +672,16 @@ pub mod start_medical_stream_transcription_output {
         }
         /// <p>Provides the identifier for your transcription session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>Provides detailed information about your streaming session.</p>
-        pub fn transcript_result_stream(
-            mut self,
-            input: aws_smithy_http::event_stream::Receiver<
-                crate::model::MedicalTranscriptResultStream,
-                crate::error::MedicalTranscriptResultStreamError,
-            >,
-        ) -> Self {
+        pub fn transcript_result_stream(mut self, input: aws_smithy_http::event_stream::Receiver<crate::model::MedicalTranscriptResultStream, crate::error::MedicalTranscriptResultStreamError>) -> Self {
             self.transcript_result_stream = Some(input);
             self
         }
         /// <p>Provides detailed information about your streaming session.</p>
-        pub fn set_transcript_result_stream(
-            mut self,
-            input: std::option::Option<
-                aws_smithy_http::event_stream::Receiver<
-                    crate::model::MedicalTranscriptResultStream,
-                    crate::error::MedicalTranscriptResultStreamError,
-                >,
-            >,
-        ) -> Self {
-            self.transcript_result_stream = input;
-            self
+        pub fn set_transcript_result_stream(mut self, input: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::model::MedicalTranscriptResultStream, crate::error::MedicalTranscriptResultStreamError>>) -> Self {
+            self.transcript_result_stream = input; self
         }
         /// <p>Shows whether channel identification was enabled for your transcription.</p>
         pub fn enable_channel_identification(mut self, input: bool) -> Self {
@@ -863,12 +689,8 @@ pub mod start_medical_stream_transcription_output {
             self
         }
         /// <p>Shows whether channel identification was enabled for your transcription.</p>
-        pub fn set_enable_channel_identification(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_channel_identification = input;
-            self
+        pub fn set_enable_channel_identification(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_channel_identification = input; self
         }
         /// <p>Provides the number of channels that you specified in your request.</p>
         pub fn number_of_channels(mut self, input: i32) -> Self {
@@ -877,32 +699,19 @@ pub mod start_medical_stream_transcription_output {
         }
         /// <p>Provides the number of channels that you specified in your request.</p>
         pub fn set_number_of_channels(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_channels = input;
-            self
+            self.number_of_channels = input; self
         }
         /// <p>Shows whether content identification was enabled for your transcription.</p>
-        pub fn content_identification_type(
-            mut self,
-            input: crate::model::MedicalContentIdentificationType,
-        ) -> Self {
+        pub fn content_identification_type(mut self, input: crate::model::MedicalContentIdentificationType) -> Self {
             self.content_identification_type = Some(input);
             self
         }
         /// <p>Shows whether content identification was enabled for your transcription.</p>
-        pub fn set_content_identification_type(
-            mut self,
-            input: std::option::Option<crate::model::MedicalContentIdentificationType>,
-        ) -> Self {
-            self.content_identification_type = input;
-            self
+        pub fn set_content_identification_type(mut self, input: std::option::Option<crate::model::MedicalContentIdentificationType>) -> Self {
+            self.content_identification_type = input; self
         }
         /// Consumes the builder and constructs a [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::output::StartMedicalStreamTranscriptionOutput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::output::StartMedicalStreamTranscriptionOutput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::output::StartMedicalStreamTranscriptionOutput {
                     request_id: self.request_id
@@ -940,6 +749,8 @@ pub mod start_medical_stream_transcription_output {
             )
         }
     }
+    
+    
 }
 impl StartMedicalStreamTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
@@ -951,7 +762,7 @@ impl StartMedicalStreamTranscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct StartCallAnalyticsStreamTranscriptionOutput {
+pub struct StartCallAnalyticsStreamTranscriptionOutput  {
     /// <p>Provides the identifier for your Call Analytics streaming request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -971,10 +782,7 @@ pub struct StartCallAnalyticsStreamTranscriptionOutput {
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Provides detailed information about your Call Analytics streaming session.</p>
-    pub call_analytics_transcript_result_stream: aws_smithy_http::event_stream::Receiver<
-        crate::model::CallAnalyticsTranscriptResultStream,
-        crate::error::CallAnalyticsTranscriptResultStreamError,
-    >,
+    pub call_analytics_transcript_result_stream: aws_smithy_http::event_stream::Receiver<crate::model::CallAnalyticsTranscriptResultStream, crate::error::CallAnalyticsTranscriptResultStreamError>,
     /// <p>Provides the name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
     #[doc(hidden)]
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -1002,11 +810,11 @@ pub struct StartCallAnalyticsStreamTranscriptionOutput {
 }
 impl StartCallAnalyticsStreamTranscriptionOutput {
     /// <p>Provides the identifier for your Call Analytics streaming request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Provides the language code that you specified in your Call Analytics request.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::model::CallAnalyticsLanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::model::CallAnalyticsLanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Provides the sample rate that you specified in your Call Analytics request.</p>
@@ -1014,38 +822,31 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
         self.media_sample_rate_hertz
     }
     /// <p>Provides the media encoding you specified in your Call Analytics request.</p>
-    pub fn media_encoding(&self) -> std::option::Option<&crate::model::MediaEncoding> {
+    pub fn media_encoding(&self) -> std::option::Option<& crate::model::MediaEncoding> {
         self.media_encoding.as_ref()
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your Call Analytics request.</p>
-    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>Provides the identifier for your Call Analytics transcription session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Provides detailed information about your Call Analytics streaming session.</p>
-    pub fn call_analytics_transcript_result_stream(
-        &self,
-    ) -> &aws_smithy_http::event_stream::Receiver<
-        crate::model::CallAnalyticsTranscriptResultStream,
-        crate::error::CallAnalyticsTranscriptResultStreamError,
-    > {
+    pub fn call_analytics_transcript_result_stream(&self) -> & aws_smithy_http::event_stream::Receiver<crate::model::CallAnalyticsTranscriptResultStream, crate::error::CallAnalyticsTranscriptResultStreamError> {
         &self.call_analytics_transcript_result_stream
     }
     /// <p>Provides the name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
-    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>Provides the vocabulary filtering method used in your Call Analytics transcription.</p>
-    pub fn vocabulary_filter_method(
-        &self,
-    ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> std::option::Option<& crate::model::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>
-    pub fn language_model_name(&self) -> std::option::Option<&str> {
+    pub fn language_model_name(&self) -> std::option::Option<& str> {
         self.language_model_name.as_deref()
     }
     /// <p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>
@@ -1053,31 +854,25 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
         self.enable_partial_results_stabilization
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn partial_results_stability(
-        &self,
-    ) -> std::option::Option<&crate::model::PartialResultsStability> {
+    pub fn partial_results_stability(&self) -> std::option::Option<& crate::model::PartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
     /// <p>Shows whether content identification was enabled for your Call Analytics transcription.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ContentIdentificationType> {
+    pub fn content_identification_type(&self) -> std::option::Option<& crate::model::ContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
-    pub fn content_redaction_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ContentRedactionType> {
+    pub fn content_redaction_type(&self) -> std::option::Option<& crate::model::ContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
     /// <p>Lists the PII entity types you specified in your Call Analytics request.</p>
-    pub fn pii_entity_types(&self) -> std::option::Option<&str> {
+    pub fn pii_entity_types(&self) -> std::option::Option<& str> {
         self.pii_entity_types.as_deref()
     }
 }
 /// See [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
 pub mod start_call_analytics_stream_transcription_output {
-
+    
     /// A builder for [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1087,21 +882,13 @@ pub mod start_call_analytics_stream_transcription_output {
         pub(crate) media_encoding: std::option::Option<crate::model::MediaEncoding>,
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
-        pub(crate) call_analytics_transcript_result_stream: std::option::Option<
-            aws_smithy_http::event_stream::Receiver<
-                crate::model::CallAnalyticsTranscriptResultStream,
-                crate::error::CallAnalyticsTranscriptResultStreamError,
-            >,
-        >,
+        pub(crate) call_analytics_transcript_result_stream: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::model::CallAnalyticsTranscriptResultStream, crate::error::CallAnalyticsTranscriptResultStreamError>>,
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
-        pub(crate) vocabulary_filter_method:
-            std::option::Option<crate::model::VocabularyFilterMethod>,
+        pub(crate) vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
         pub(crate) language_model_name: std::option::Option<std::string::String>,
         pub(crate) enable_partial_results_stabilization: std::option::Option<bool>,
-        pub(crate) partial_results_stability:
-            std::option::Option<crate::model::PartialResultsStability>,
-        pub(crate) content_identification_type:
-            std::option::Option<crate::model::ContentIdentificationType>,
+        pub(crate) partial_results_stability: std::option::Option<crate::model::PartialResultsStability>,
+        pub(crate) content_identification_type: std::option::Option<crate::model::ContentIdentificationType>,
         pub(crate) content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
         pub(crate) pii_entity_types: std::option::Option<std::string::String>,
     }
@@ -1113,8 +900,7 @@ pub mod start_call_analytics_stream_transcription_output {
         }
         /// <p>Provides the identifier for your Call Analytics streaming request.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>Provides the language code that you specified in your Call Analytics request.</p>
         pub fn language_code(mut self, input: crate::model::CallAnalyticsLanguageCode) -> Self {
@@ -1122,12 +908,8 @@ pub mod start_call_analytics_stream_transcription_output {
             self
         }
         /// <p>Provides the language code that you specified in your Call Analytics request.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<crate::model::CallAnalyticsLanguageCode>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<crate::model::CallAnalyticsLanguageCode>) -> Self {
+            self.language_code = input; self
         }
         /// <p>Provides the sample rate that you specified in your Call Analytics request.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
@@ -1136,8 +918,7 @@ pub mod start_call_analytics_stream_transcription_output {
         }
         /// <p>Provides the sample rate that you specified in your Call Analytics request.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
-            self.media_sample_rate_hertz = input;
-            self
+            self.media_sample_rate_hertz = input; self
         }
         /// <p>Provides the media encoding you specified in your Call Analytics request.</p>
         pub fn media_encoding(mut self, input: crate::model::MediaEncoding) -> Self {
@@ -1145,12 +926,8 @@ pub mod start_call_analytics_stream_transcription_output {
             self
         }
         /// <p>Provides the media encoding you specified in your Call Analytics request.</p>
-        pub fn set_media_encoding(
-            mut self,
-            input: std::option::Option<crate::model::MediaEncoding>,
-        ) -> Self {
-            self.media_encoding = input;
-            self
+        pub fn set_media_encoding(mut self, input: std::option::Option<crate::model::MediaEncoding>) -> Self {
+            self.media_encoding = input; self
         }
         /// <p>Provides the name of the custom vocabulary that you specified in your Call Analytics request.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1158,12 +935,8 @@ pub mod start_call_analytics_stream_transcription_output {
             self
         }
         /// <p>Provides the name of the custom vocabulary that you specified in your Call Analytics request.</p>
-        pub fn set_vocabulary_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vocabulary_name = input;
-            self
+        pub fn set_vocabulary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vocabulary_name = input; self
         }
         /// <p>Provides the identifier for your Call Analytics transcription session.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1172,32 +945,16 @@ pub mod start_call_analytics_stream_transcription_output {
         }
         /// <p>Provides the identifier for your Call Analytics transcription session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>Provides detailed information about your Call Analytics streaming session.</p>
-        pub fn call_analytics_transcript_result_stream(
-            mut self,
-            input: aws_smithy_http::event_stream::Receiver<
-                crate::model::CallAnalyticsTranscriptResultStream,
-                crate::error::CallAnalyticsTranscriptResultStreamError,
-            >,
-        ) -> Self {
+        pub fn call_analytics_transcript_result_stream(mut self, input: aws_smithy_http::event_stream::Receiver<crate::model::CallAnalyticsTranscriptResultStream, crate::error::CallAnalyticsTranscriptResultStreamError>) -> Self {
             self.call_analytics_transcript_result_stream = Some(input);
             self
         }
         /// <p>Provides detailed information about your Call Analytics streaming session.</p>
-        pub fn set_call_analytics_transcript_result_stream(
-            mut self,
-            input: std::option::Option<
-                aws_smithy_http::event_stream::Receiver<
-                    crate::model::CallAnalyticsTranscriptResultStream,
-                    crate::error::CallAnalyticsTranscriptResultStreamError,
-                >,
-            >,
-        ) -> Self {
-            self.call_analytics_transcript_result_stream = input;
-            self
+        pub fn set_call_analytics_transcript_result_stream(mut self, input: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::model::CallAnalyticsTranscriptResultStream, crate::error::CallAnalyticsTranscriptResultStreamError>>) -> Self {
+            self.call_analytics_transcript_result_stream = input; self
         }
         /// <p>Provides the name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1205,28 +962,17 @@ pub mod start_call_analytics_stream_transcription_output {
             self
         }
         /// <p>Provides the name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
-        pub fn set_vocabulary_filter_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vocabulary_filter_name = input;
-            self
+        pub fn set_vocabulary_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vocabulary_filter_name = input; self
         }
         /// <p>Provides the vocabulary filtering method used in your Call Analytics transcription.</p>
-        pub fn vocabulary_filter_method(
-            mut self,
-            input: crate::model::VocabularyFilterMethod,
-        ) -> Self {
+        pub fn vocabulary_filter_method(mut self, input: crate::model::VocabularyFilterMethod) -> Self {
             self.vocabulary_filter_method = Some(input);
             self
         }
         /// <p>Provides the vocabulary filtering method used in your Call Analytics transcription.</p>
-        pub fn set_vocabulary_filter_method(
-            mut self,
-            input: std::option::Option<crate::model::VocabularyFilterMethod>,
-        ) -> Self {
-            self.vocabulary_filter_method = input;
-            self
+        pub fn set_vocabulary_filter_method(mut self, input: std::option::Option<crate::model::VocabularyFilterMethod>) -> Self {
+            self.vocabulary_filter_method = input; self
         }
         /// <p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>
         pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1234,12 +980,8 @@ pub mod start_call_analytics_stream_transcription_output {
             self
         }
         /// <p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>
-        pub fn set_language_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.language_model_name = input;
-            self
+        pub fn set_language_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language_model_name = input; self
         }
         /// <p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>
         pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {
@@ -1247,44 +989,26 @@ pub mod start_call_analytics_stream_transcription_output {
             self
         }
         /// <p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>
-        pub fn set_enable_partial_results_stabilization(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_partial_results_stabilization = input;
-            self
+        pub fn set_enable_partial_results_stabilization(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_partial_results_stabilization = input; self
         }
         /// <p>Provides the stabilization level used for your transcription.</p>
-        pub fn partial_results_stability(
-            mut self,
-            input: crate::model::PartialResultsStability,
-        ) -> Self {
+        pub fn partial_results_stability(mut self, input: crate::model::PartialResultsStability) -> Self {
             self.partial_results_stability = Some(input);
             self
         }
         /// <p>Provides the stabilization level used for your transcription.</p>
-        pub fn set_partial_results_stability(
-            mut self,
-            input: std::option::Option<crate::model::PartialResultsStability>,
-        ) -> Self {
-            self.partial_results_stability = input;
-            self
+        pub fn set_partial_results_stability(mut self, input: std::option::Option<crate::model::PartialResultsStability>) -> Self {
+            self.partial_results_stability = input; self
         }
         /// <p>Shows whether content identification was enabled for your Call Analytics transcription.</p>
-        pub fn content_identification_type(
-            mut self,
-            input: crate::model::ContentIdentificationType,
-        ) -> Self {
+        pub fn content_identification_type(mut self, input: crate::model::ContentIdentificationType) -> Self {
             self.content_identification_type = Some(input);
             self
         }
         /// <p>Shows whether content identification was enabled for your Call Analytics transcription.</p>
-        pub fn set_content_identification_type(
-            mut self,
-            input: std::option::Option<crate::model::ContentIdentificationType>,
-        ) -> Self {
-            self.content_identification_type = input;
-            self
+        pub fn set_content_identification_type(mut self, input: std::option::Option<crate::model::ContentIdentificationType>) -> Self {
+            self.content_identification_type = input; self
         }
         /// <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
         pub fn content_redaction_type(mut self, input: crate::model::ContentRedactionType) -> Self {
@@ -1292,12 +1016,8 @@ pub mod start_call_analytics_stream_transcription_output {
             self
         }
         /// <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
-        pub fn set_content_redaction_type(
-            mut self,
-            input: std::option::Option<crate::model::ContentRedactionType>,
-        ) -> Self {
-            self.content_redaction_type = input;
-            self
+        pub fn set_content_redaction_type(mut self, input: std::option::Option<crate::model::ContentRedactionType>) -> Self {
+            self.content_redaction_type = input; self
         }
         /// <p>Lists the PII entity types you specified in your Call Analytics request.</p>
         pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1305,20 +1025,11 @@ pub mod start_call_analytics_stream_transcription_output {
             self
         }
         /// <p>Lists the PII entity types you specified in your Call Analytics request.</p>
-        pub fn set_pii_entity_types(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pii_entity_types = input;
-            self
+        pub fn set_pii_entity_types(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pii_entity_types = input; self
         }
         /// Consumes the builder and constructs a [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::output::StartCallAnalyticsStreamTranscriptionOutput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::output::StartCallAnalyticsStreamTranscriptionOutput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::output::StartCallAnalyticsStreamTranscriptionOutput {
                     request_id: self.request_id
@@ -1359,6 +1070,8 @@ pub mod start_call_analytics_stream_transcription_output {
             )
         }
     }
+    
+    
 }
 impl StartCallAnalyticsStreamTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
@@ -1366,3 +1079,4 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
         crate::output::start_call_analytics_stream_transcription_output::Builder::default()
     }
 }
+

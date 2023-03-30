@@ -3,7 +3,7 @@
 /// <p>Object specifying a channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Channel {
+pub struct Channel  {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,10 +13,10 @@ pub struct Channel {
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     #[doc(hidden)]
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li> 
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChannelType>,
@@ -34,40 +34,39 @@ pub struct Channel {
     pub authorized: bool,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Channel {
     /// <p>Channel ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Channel name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
-    pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
+    pub fn latency_mode(&self) -> std::option::Option<& crate::model::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li> 
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
-    pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn recording_configuration_arn(&self) -> std::option::Option<& str> {
         self.recording_configuration_arn.as_deref()
     }
     /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.</p>
-    pub fn ingest_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ingest_endpoint(&self) -> std::option::Option<& str> {
         self.ingest_endpoint.as_deref()
     }
     /// <p>Channel playback URL.</p>
-    pub fn playback_url(&self) -> std::option::Option<&str> {
+    pub fn playback_url(&self) -> std::option::Option<& str> {
         self.playback_url.as_deref()
     }
     /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
@@ -75,16 +74,13 @@ impl Channel {
         self.authorized
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
-
+    
     /// A builder for [`Channel`](crate::model::Channel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -96,9 +92,7 @@ pub mod channel {
         pub(crate) ingest_endpoint: std::option::Option<std::string::String>,
         pub(crate) playback_url: std::option::Option<std::string::String>,
         pub(crate) authorized: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Channel ARN.</p>
@@ -108,8 +102,7 @@ pub mod channel {
         }
         /// <p>Channel ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Channel name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +111,7 @@ pub mod channel {
         }
         /// <p>Channel name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
@@ -127,46 +119,34 @@ pub mod channel {
             self
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
-        pub fn set_latency_mode(
-            mut self,
-            input: std::option::Option<crate::model::ChannelLatencyMode>,
-        ) -> Self {
-            self.latency_mode = input;
-            self
+        pub fn set_latency_mode(mut self, input: std::option::Option<crate::model::ChannelLatencyMode>) -> Self {
+            self.latency_mode = input; self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-        /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li> 
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
-        /// <ul>
-        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
-        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li> 
+        /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
-        pub fn recording_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn recording_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recording_configuration_arn = Some(input.into());
             self
         }
         /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
-        pub fn set_recording_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recording_configuration_arn = input;
-            self
+        pub fn set_recording_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recording_configuration_arn = input; self
         }
         /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.</p>
         pub fn ingest_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,12 +154,8 @@ pub mod channel {
             self
         }
         /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.</p>
-        pub fn set_ingest_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ingest_endpoint = input;
-            self
+        pub fn set_ingest_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ingest_endpoint = input; self
         }
         /// <p>Channel playback URL.</p>
         pub fn playback_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,8 +164,7 @@ pub mod channel {
         }
         /// <p>Channel playback URL.</p>
         pub fn set_playback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.playback_url = input;
-            self
+            self.playback_url = input; self
         }
         /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn authorized(mut self, input: bool) -> Self {
@@ -198,49 +173,50 @@ pub mod channel {
         }
         /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
-            self.authorized = input;
-            self
+            self.authorized = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
         pub fn build(self) -> crate::model::Channel {
             crate::model::Channel {
-                arn: self.arn,
-                name: self.name,
-                latency_mode: self.latency_mode,
-                r#type: self.r#type,
-                recording_configuration_arn: self.recording_configuration_arn,
-                ingest_endpoint: self.ingest_endpoint,
-                playback_url: self.playback_url,
-                authorized: self.authorized.unwrap_or_default(),
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                latency_mode: self.latency_mode
+                ,
+                r#type: self.r#type
+                ,
+                recording_configuration_arn: self.recording_configuration_arn
+                ,
+                ingest_endpoint: self.ingest_endpoint
+                ,
+                playback_url: self.playback_url
+                ,
+                authorized: self.authorized
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
@@ -255,9 +231,9 @@ impl Channel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let channeltype = unimplemented!();
 /// match channeltype {
@@ -279,58 +255,52 @@ impl Channel {
 /// Specifically, when `channeltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChannelType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChannelType {
     #[allow(missing_docs)] // documentation missing in model
     BasicChannelType,
     #[allow(missing_docs)] // documentation missing in model
     StandardChannelType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChannelType {
     fn from(s: &str) -> Self {
         match s {
             "BASIC" => ChannelType::BasicChannelType,
             "STANDARD" => ChannelType::StandardChannelType,
-            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChannelType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChannelType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChannelType::from(s))
+                }
+            }
 impl ChannelType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelType::BasicChannelType => "BASIC",
             ChannelType::StandardChannelType => "STANDARD",
-            ChannelType::Unknown(value) => value.as_str(),
+            ChannelType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC", "STANDARD"]
+        &[
+            "BASIC", "STANDARD"
+        ]
     }
 }
 impl AsRef<str> for ChannelType {
@@ -345,9 +315,9 @@ impl AsRef<str> for ChannelType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let channellatencymode = unimplemented!();
 /// match channellatencymode {
@@ -369,60 +339,52 @@ impl AsRef<str> for ChannelType {
 /// Specifically, when `channellatencymode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChannelLatencyMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChannelLatencyMode {
     #[allow(missing_docs)] // documentation missing in model
     LowLatency,
     #[allow(missing_docs)] // documentation missing in model
     NormalLatency,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChannelLatencyMode {
     fn from(s: &str) -> Self {
         match s {
             "LOW" => ChannelLatencyMode::LowLatency,
             "NORMAL" => ChannelLatencyMode::NormalLatency,
-            other => {
-                ChannelLatencyMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ChannelLatencyMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChannelLatencyMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChannelLatencyMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChannelLatencyMode::from(s))
+                }
+            }
 impl ChannelLatencyMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelLatencyMode::LowLatency => "LOW",
             ChannelLatencyMode::NormalLatency => "NORMAL",
-            ChannelLatencyMode::Unknown(value) => value.as_str(),
+            ChannelLatencyMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LOW", "NORMAL"]
+        &[
+            "LOW", "NORMAL"
+        ]
     }
 }
 impl AsRef<str> for ChannelLatencyMode {
@@ -434,7 +396,7 @@ impl AsRef<str> for ChannelLatencyMode {
 /// <p>Summary information about a stream session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSessionSummary {
+pub struct StreamSessionSummary  {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -450,15 +412,15 @@ pub struct StreamSessionSummary {
 }
 impl StreamSessionSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
@@ -468,7 +430,7 @@ impl StreamSessionSummary {
 }
 /// See [`StreamSessionSummary`](crate::model::StreamSessionSummary).
 pub mod stream_session_summary {
-
+    
     /// A builder for [`StreamSessionSummary`](crate::model::StreamSessionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -485,8 +447,7 @@ pub mod stream_session_summary {
         }
         /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
+            self.stream_id = input; self
         }
         /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -494,12 +455,8 @@ pub mod stream_session_summary {
             self
         }
         /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -507,12 +464,8 @@ pub mod stream_session_summary {
             self
         }
         /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
         pub fn has_error_event(mut self, input: bool) -> Self {
@@ -521,19 +474,25 @@ pub mod stream_session_summary {
         }
         /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
         pub fn set_has_error_event(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_error_event = input;
-            self
+            self.has_error_event = input; self
         }
         /// Consumes the builder and constructs a [`StreamSessionSummary`](crate::model::StreamSessionSummary).
         pub fn build(self) -> crate::model::StreamSessionSummary {
             crate::model::StreamSessionSummary {
-                stream_id: self.stream_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                has_error_event: self.has_error_event.unwrap_or_default(),
+                stream_id: self.stream_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                has_error_event: self.has_error_event
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamSessionSummary {
     /// Creates a new builder-style object to manufacture [`StreamSessionSummary`](crate::model::StreamSessionSummary).
@@ -545,7 +504,7 @@ impl StreamSessionSummary {
 /// <p>Summary information about a stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSummary {
+pub struct StreamSummary  {
     /// <p>Channel ARN for the stream.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -567,19 +526,19 @@ pub struct StreamSummary {
 }
 impl StreamSummary {
     /// <p>Channel ARN for the stream.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>The stream’s state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::StreamState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::StreamState> {
         self.state.as_ref()
     }
     /// <p>The stream’s health.</p>
-    pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
+    pub fn health(&self) -> std::option::Option<& crate::model::StreamHealth> {
         self.health.as_ref()
     }
     /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
@@ -587,13 +546,13 @@ impl StreamSummary {
         self.viewer_count
     }
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
 /// See [`StreamSummary`](crate::model::StreamSummary).
 pub mod stream_summary {
-
+    
     /// A builder for [`StreamSummary`](crate::model::StreamSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -612,8 +571,7 @@ pub mod stream_summary {
         }
         /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_arn = input;
-            self
+            self.channel_arn = input; self
         }
         /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -622,8 +580,7 @@ pub mod stream_summary {
         }
         /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
+            self.stream_id = input; self
         }
         /// <p>The stream’s state.</p>
         pub fn state(mut self, input: crate::model::StreamState) -> Self {
@@ -632,8 +589,7 @@ pub mod stream_summary {
         }
         /// <p>The stream’s state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::StreamState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The stream’s health.</p>
         pub fn health(mut self, input: crate::model::StreamHealth) -> Self {
@@ -641,12 +597,8 @@ pub mod stream_summary {
             self
         }
         /// <p>The stream’s health.</p>
-        pub fn set_health(
-            mut self,
-            input: std::option::Option<crate::model::StreamHealth>,
-        ) -> Self {
-            self.health = input;
-            self
+        pub fn set_health(mut self, input: std::option::Option<crate::model::StreamHealth>) -> Self {
+            self.health = input; self
         }
         /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
         pub fn viewer_count(mut self, input: i64) -> Self {
@@ -655,8 +607,7 @@ pub mod stream_summary {
         }
         /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
         pub fn set_viewer_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.viewer_count = input;
-            self
+            self.viewer_count = input; self
         }
         /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -664,25 +615,30 @@ pub mod stream_summary {
             self
         }
         /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// Consumes the builder and constructs a [`StreamSummary`](crate::model::StreamSummary).
         pub fn build(self) -> crate::model::StreamSummary {
             crate::model::StreamSummary {
-                channel_arn: self.channel_arn,
-                stream_id: self.stream_id,
-                state: self.state,
-                health: self.health,
-                viewer_count: self.viewer_count.unwrap_or_default(),
-                start_time: self.start_time,
+                channel_arn: self.channel_arn
+                ,
+                stream_id: self.stream_id
+                ,
+                state: self.state
+                ,
+                health: self.health
+                ,
+                viewer_count: self.viewer_count
+                    .unwrap_or_default()
+                ,
+                start_time: self.start_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamSummary {
     /// Creates a new builder-style object to manufacture [`StreamSummary`](crate::model::StreamSummary).
@@ -697,9 +653,9 @@ impl StreamSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamhealth = unimplemented!();
 /// match streamhealth {
@@ -722,22 +678,14 @@ impl StreamSummary {
 /// Specifically, when `streamhealth` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamHealth::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `StreamHealth::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamHealth {
     #[allow(missing_docs)] // documentation missing in model
     StreamHealthy,
@@ -746,7 +694,7 @@ pub enum StreamHealth {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamHealth {
     fn from(s: &str) -> Self {
@@ -754,17 +702,17 @@ impl std::convert::From<&str> for StreamHealth {
             "HEALTHY" => StreamHealth::StreamHealthy,
             "STARVING" => StreamHealth::Starving,
             "UNKNOWN" => StreamHealth::UnknownValue,
-            other => StreamHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamHealth {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamHealth::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamHealth::from(s))
+                }
+            }
 impl StreamHealth {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -772,12 +720,14 @@ impl StreamHealth {
             StreamHealth::StreamHealthy => "HEALTHY",
             StreamHealth::Starving => "STARVING",
             StreamHealth::UnknownValue => "UNKNOWN",
-            StreamHealth::Unknown(value) => value.as_str(),
+            StreamHealth::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HEALTHY", "STARVING", "UNKNOWN"]
+        &[
+            "HEALTHY", "STARVING", "UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for StreamHealth {
@@ -792,9 +742,9 @@ impl AsRef<str> for StreamHealth {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamstate = unimplemented!();
 /// match streamstate {
@@ -816,58 +766,52 @@ impl AsRef<str> for StreamHealth {
 /// Specifically, when `streamstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamState {
     #[allow(missing_docs)] // documentation missing in model
     StreamLive,
     #[allow(missing_docs)] // documentation missing in model
     StreamOffline,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamState {
     fn from(s: &str) -> Self {
         match s {
             "LIVE" => StreamState::StreamLive,
             "OFFLINE" => StreamState::StreamOffline,
-            other => StreamState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamState::from(s))
+                }
+            }
 impl StreamState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamState::StreamLive => "LIVE",
             StreamState::StreamOffline => "OFFLINE",
-            StreamState::Unknown(value) => value.as_str(),
+            StreamState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LIVE", "OFFLINE"]
+        &[
+            "LIVE", "OFFLINE"
+        ]
     }
 }
 impl AsRef<str> for StreamState {
@@ -879,20 +823,20 @@ impl AsRef<str> for StreamState {
 /// <p>Object specifying the stream attribute on which to filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamFilters {
+pub struct StreamFilters  {
     /// <p>The stream’s health.</p>
     #[doc(hidden)]
     pub health: std::option::Option<crate::model::StreamHealth>,
 }
 impl StreamFilters {
     /// <p>The stream’s health.</p>
-    pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
+    pub fn health(&self) -> std::option::Option<& crate::model::StreamHealth> {
         self.health.as_ref()
     }
 }
 /// See [`StreamFilters`](crate::model::StreamFilters).
 pub mod stream_filters {
-
+    
     /// A builder for [`StreamFilters`](crate::model::StreamFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -905,20 +849,19 @@ pub mod stream_filters {
             self
         }
         /// <p>The stream’s health.</p>
-        pub fn set_health(
-            mut self,
-            input: std::option::Option<crate::model::StreamHealth>,
-        ) -> Self {
-            self.health = input;
-            self
+        pub fn set_health(mut self, input: std::option::Option<crate::model::StreamHealth>) -> Self {
+            self.health = input; self
         }
         /// Consumes the builder and constructs a [`StreamFilters`](crate::model::StreamFilters).
         pub fn build(self) -> crate::model::StreamFilters {
             crate::model::StreamFilters {
-                health: self.health,
+                health: self.health
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamFilters {
     /// Creates a new builder-style object to manufacture [`StreamFilters`](crate::model::StreamFilters).
@@ -930,7 +873,7 @@ impl StreamFilters {
 /// <p>Summary information about a stream key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamKeySummary {
+pub struct StreamKeySummary  {
     /// <p>Stream-key ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -939,37 +882,31 @@ pub struct StreamKeySummary {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StreamKeySummary {
     /// <p>Stream-key ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Channel ARN for the stream.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`StreamKeySummary`](crate::model::StreamKeySummary).
 pub mod stream_key_summary {
-
+    
     /// A builder for [`StreamKeySummary`](crate::model::StreamKeySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Stream-key ARN.</p>
@@ -979,8 +916,7 @@ pub mod stream_key_summary {
         }
         /// <p>Stream-key ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Channel ARN for the stream.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -989,43 +925,37 @@ pub mod stream_key_summary {
         }
         /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_arn = input;
-            self
+            self.channel_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`StreamKeySummary`](crate::model::StreamKeySummary).
         pub fn build(self) -> crate::model::StreamKeySummary {
             crate::model::StreamKeySummary {
-                arn: self.arn,
-                channel_arn: self.channel_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                channel_arn: self.channel_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamKeySummary {
     /// Creates a new builder-style object to manufacture [`StreamKeySummary`](crate::model::StreamKeySummary).
@@ -1037,7 +967,7 @@ impl StreamKeySummary {
 /// <p>Summary information about a RecordingConfiguration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordingConfigurationSummary {
+pub struct RecordingConfigurationSummary  {
     /// <p>Recording-configuration ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1052,50 +982,41 @@ pub struct RecordingConfigurationSummary {
     pub state: std::option::Option<crate::model::RecordingConfigurationState>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RecordingConfigurationSummary {
     /// <p>Recording-configuration ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> std::option::Option<& crate::model::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::RecordingConfigurationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RecordingConfigurationState> {
         self.state.as_ref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
 pub mod recording_configuration_summary {
-
+    
     /// A builder for [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) destination_configuration:
-            std::option::Option<crate::model::DestinationConfiguration>,
+        pub(crate) destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
         pub(crate) state: std::option::Option<crate::model::RecordingConfigurationState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Recording-configuration ARN.</p>
@@ -1105,8 +1026,7 @@ pub mod recording_configuration_summary {
         }
         /// <p>Recording-configuration ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1115,24 +1035,16 @@ pub mod recording_configuration_summary {
         }
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A complex type that contains information about where recorded video will be stored.</p>
-        pub fn destination_configuration(
-            mut self,
-            input: crate::model::DestinationConfiguration,
-        ) -> Self {
+        pub fn destination_configuration(mut self, input: crate::model::DestinationConfiguration) -> Self {
             self.destination_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains information about where recorded video will be stored.</p>
-        pub fn set_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfiguration>,
-        ) -> Self {
-            self.destination_configuration = input;
-            self
+        pub fn set_destination_configuration(mut self, input: std::option::Option<crate::model::DestinationConfiguration>) -> Self {
+            self.destination_configuration = input; self
         }
         /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
         pub fn state(mut self, input: crate::model::RecordingConfigurationState) -> Self {
@@ -1140,49 +1052,42 @@ pub mod recording_configuration_summary {
             self
         }
         /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::RecordingConfigurationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::RecordingConfigurationState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
         pub fn build(self) -> crate::model::RecordingConfigurationSummary {
             crate::model::RecordingConfigurationSummary {
-                arn: self.arn,
-                name: self.name,
-                destination_configuration: self.destination_configuration,
-                state: self.state,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                destination_configuration: self.destination_configuration
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl RecordingConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
@@ -1197,9 +1102,9 @@ impl RecordingConfigurationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recordingconfigurationstate = unimplemented!();
 /// match recordingconfigurationstate {
@@ -1222,22 +1127,14 @@ impl RecordingConfigurationSummary {
 /// Specifically, when `recordingconfigurationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecordingConfigurationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecordingConfigurationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1246,7 +1143,7 @@ pub enum RecordingConfigurationState {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecordingConfigurationState {
     fn from(s: &str) -> Self {
@@ -1254,19 +1151,17 @@ impl std::convert::From<&str> for RecordingConfigurationState {
             "ACTIVE" => RecordingConfigurationState::Active,
             "CREATE_FAILED" => RecordingConfigurationState::CreateFailed,
             "CREATING" => RecordingConfigurationState::Creating,
-            other => RecordingConfigurationState::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RecordingConfigurationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecordingConfigurationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecordingConfigurationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecordingConfigurationState::from(s))
+                }
+            }
 impl RecordingConfigurationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1274,12 +1169,14 @@ impl RecordingConfigurationState {
             RecordingConfigurationState::Active => "ACTIVE",
             RecordingConfigurationState::CreateFailed => "CREATE_FAILED",
             RecordingConfigurationState::Creating => "CREATING",
-            RecordingConfigurationState::Unknown(value) => value.as_str(),
+            RecordingConfigurationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATE_FAILED", "CREATING"]
+        &[
+            "ACTIVE", "CREATE_FAILED", "CREATING"
+        ]
     }
 }
 impl AsRef<str> for RecordingConfigurationState {
@@ -1291,20 +1188,20 @@ impl AsRef<str> for RecordingConfigurationState {
 /// <p>A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationConfiguration {
+pub struct DestinationConfiguration  {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
     #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3DestinationConfiguration>,
 }
 impl DestinationConfiguration {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::model::S3DestinationConfiguration> {
+    pub fn s3(&self) -> std::option::Option<& crate::model::S3DestinationConfiguration> {
         self.s3.as_ref()
     }
 }
 /// See [`DestinationConfiguration`](crate::model::DestinationConfiguration).
 pub mod destination_configuration {
-
+    
     /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1317,18 +1214,19 @@ pub mod destination_configuration {
             self
         }
         /// <p>An S3 destination configuration where recorded videos will be stored.</p>
-        pub fn set_s3(
-            mut self,
-            input: std::option::Option<crate::model::S3DestinationConfiguration>,
-        ) -> Self {
-            self.s3 = input;
-            self
+        pub fn set_s3(mut self, input: std::option::Option<crate::model::S3DestinationConfiguration>) -> Self {
+            self.s3 = input; self
         }
         /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::model::DestinationConfiguration).
         pub fn build(self) -> crate::model::DestinationConfiguration {
-            crate::model::DestinationConfiguration { s3: self.s3 }
+            crate::model::DestinationConfiguration {
+                s3: self.s3
+                ,
+            }
         }
     }
+    
+    
 }
 impl DestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration).
@@ -1340,20 +1238,20 @@ impl DestinationConfiguration {
 /// <p>A complex type that describes an S3 location where recorded videos will be stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DestinationConfiguration {
+pub struct S3DestinationConfiguration  {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl S3DestinationConfiguration {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
 }
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
-
+    
     /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1367,16 +1265,18 @@ pub mod s3_destination_configuration {
         }
         /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
         pub fn build(self) -> crate::model::S3DestinationConfiguration {
             crate::model::S3DestinationConfiguration {
-                bucket_name: self.bucket_name,
+                bucket_name: self.bucket_name
+                ,
             }
         }
     }
+    
+    
 }
 impl S3DestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
@@ -1388,7 +1288,7 @@ impl S3DestinationConfiguration {
 /// <p>Summary information about a playback key pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlaybackKeyPairSummary {
+pub struct PlaybackKeyPairSummary  {
     /// <p>Key-pair ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1397,37 +1297,31 @@ pub struct PlaybackKeyPairSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PlaybackKeyPairSummary {
     /// <p>Key-pair ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
 pub mod playback_key_pair_summary {
-
+    
     /// A builder for [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Key-pair ARN.</p>
@@ -1437,8 +1331,7 @@ pub mod playback_key_pair_summary {
         }
         /// <p>Key-pair ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Playback-key-pair name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1447,43 +1340,37 @@ pub mod playback_key_pair_summary {
         }
         /// <p>Playback-key-pair name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
         pub fn build(self) -> crate::model::PlaybackKeyPairSummary {
             crate::model::PlaybackKeyPairSummary {
-                arn: self.arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PlaybackKeyPairSummary {
     /// Creates a new builder-style object to manufacture [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
@@ -1495,7 +1382,7 @@ impl PlaybackKeyPairSummary {
 /// <p>Summary information about a channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelSummary {
+pub struct ChannelSummary  {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1513,20 +1400,19 @@ pub struct ChannelSummary {
     pub recording_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ChannelSummary {
     /// <p>Channel ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Channel name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
-    pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
+    pub fn latency_mode(&self) -> std::option::Option<& crate::model::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
     /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
@@ -1534,20 +1420,17 @@ impl ChannelSummary {
         self.authorized
     }
     /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
-    pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn recording_configuration_arn(&self) -> std::option::Option<& str> {
         self.recording_configuration_arn.as_deref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
-
+    
     /// A builder for [`ChannelSummary`](crate::model::ChannelSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1556,9 +1439,7 @@ pub mod channel_summary {
         pub(crate) latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
         pub(crate) authorized: std::option::Option<bool>,
         pub(crate) recording_configuration_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Channel ARN.</p>
@@ -1568,8 +1449,7 @@ pub mod channel_summary {
         }
         /// <p>Channel ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Channel name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1578,8 +1458,7 @@ pub mod channel_summary {
         }
         /// <p>Channel name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
@@ -1587,12 +1466,8 @@ pub mod channel_summary {
             self
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
-        pub fn set_latency_mode(
-            mut self,
-            input: std::option::Option<crate::model::ChannelLatencyMode>,
-        ) -> Self {
-            self.latency_mode = input;
-            self
+        pub fn set_latency_mode(mut self, input: std::option::Option<crate::model::ChannelLatencyMode>) -> Self {
+            self.latency_mode = input; self
         }
         /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn authorized(mut self, input: bool) -> Self {
@@ -1601,62 +1476,53 @@ pub mod channel_summary {
         }
         /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
-            self.authorized = input;
-            self
+            self.authorized = input; self
         }
         /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
-        pub fn recording_configuration_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn recording_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recording_configuration_arn = Some(input.into());
             self
         }
         /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
-        pub fn set_recording_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recording_configuration_arn = input;
-            self
+        pub fn set_recording_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recording_configuration_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ChannelSummary`](crate::model::ChannelSummary).
         pub fn build(self) -> crate::model::ChannelSummary {
             crate::model::ChannelSummary {
-                arn: self.arn,
-                name: self.name,
-                latency_mode: self.latency_mode,
-                authorized: self.authorized.unwrap_or_default(),
-                recording_configuration_arn: self.recording_configuration_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                latency_mode: self.latency_mode
+                ,
+                authorized: self.authorized
+                    .unwrap_or_default()
+                ,
+                recording_configuration_arn: self.recording_configuration_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
@@ -1668,7 +1534,7 @@ impl ChannelSummary {
 /// <p>A key pair used to sign and validate a playback authorization token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlaybackKeyPair {
+pub struct PlaybackKeyPair  {
     /// <p>Key-pair ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1680,42 +1546,36 @@ pub struct PlaybackKeyPair {
     pub fingerprint: std::option::Option<std::string::String>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PlaybackKeyPair {
     /// <p>Key-pair ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Key-pair identifier.</p>
-    pub fn fingerprint(&self) -> std::option::Option<&str> {
+    pub fn fingerprint(&self) -> std::option::Option<& str> {
         self.fingerprint.as_deref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
 pub mod playback_key_pair {
-
+    
     /// A builder for [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) fingerprint: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Key-pair ARN.</p>
@@ -1725,8 +1585,7 @@ pub mod playback_key_pair {
         }
         /// <p>Key-pair ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Playback-key-pair name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1735,8 +1594,7 @@ pub mod playback_key_pair {
         }
         /// <p>Playback-key-pair name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Key-pair identifier.</p>
         pub fn fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1745,44 +1603,39 @@ pub mod playback_key_pair {
         }
         /// <p>Key-pair identifier.</p>
         pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fingerprint = input;
-            self
+            self.fingerprint = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
         pub fn build(self) -> crate::model::PlaybackKeyPair {
             crate::model::PlaybackKeyPair {
-                arn: self.arn,
-                name: self.name,
-                fingerprint: self.fingerprint,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                fingerprint: self.fingerprint
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PlaybackKeyPair {
     /// Creates a new builder-style object to manufacture [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
@@ -1794,7 +1647,7 @@ impl PlaybackKeyPair {
 /// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSession {
+pub struct StreamSession  {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -1819,39 +1672,37 @@ pub struct StreamSession {
 }
 impl StreamSession {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The properties of the channel at the time of going live.</p>
-    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::model::Channel> {
         self.channel.as_ref()
     }
     /// <p>The properties of the incoming RTMP stream for the stream.</p>
-    pub fn ingest_configuration(&self) -> std::option::Option<&crate::model::IngestConfiguration> {
+    pub fn ingest_configuration(&self) -> std::option::Option<& crate::model::IngestConfiguration> {
         self.ingest_configuration.as_ref()
     }
     /// <p>The properties of recording the live stream.</p>
-    pub fn recording_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RecordingConfiguration> {
+    pub fn recording_configuration(&self) -> std::option::Option<& crate::model::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
-    pub fn truncated_events(&self) -> std::option::Option<&[crate::model::StreamEvent]> {
+    pub fn truncated_events(&self) -> std::option::Option<& [crate::model::StreamEvent]> {
         self.truncated_events.as_deref()
     }
 }
 /// See [`StreamSession`](crate::model::StreamSession).
 pub mod stream_session {
-
+    
     /// A builder for [`StreamSession`](crate::model::StreamSession).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1860,8 +1711,7 @@ pub mod stream_session {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) channel: std::option::Option<crate::model::Channel>,
         pub(crate) ingest_configuration: std::option::Option<crate::model::IngestConfiguration>,
-        pub(crate) recording_configuration:
-            std::option::Option<crate::model::RecordingConfiguration>,
+        pub(crate) recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
         pub(crate) truncated_events: std::option::Option<std::vec::Vec<crate::model::StreamEvent>>,
     }
     impl Builder {
@@ -1872,8 +1722,7 @@ pub mod stream_session {
         }
         /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
+            self.stream_id = input; self
         }
         /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1881,12 +1730,8 @@ pub mod stream_session {
             self
         }
         /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1894,12 +1739,8 @@ pub mod stream_session {
             self
         }
         /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The properties of the channel at the time of going live.</p>
         pub fn channel(mut self, input: crate::model::Channel) -> Self {
@@ -1908,8 +1749,7 @@ pub mod stream_session {
         }
         /// <p>The properties of the channel at the time of going live.</p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
-            self.channel = input;
-            self
+            self.channel = input; self
         }
         /// <p>The properties of the incoming RTMP stream for the stream.</p>
         pub fn ingest_configuration(mut self, input: crate::model::IngestConfiguration) -> Self {
@@ -1917,28 +1757,17 @@ pub mod stream_session {
             self
         }
         /// <p>The properties of the incoming RTMP stream for the stream.</p>
-        pub fn set_ingest_configuration(
-            mut self,
-            input: std::option::Option<crate::model::IngestConfiguration>,
-        ) -> Self {
-            self.ingest_configuration = input;
-            self
+        pub fn set_ingest_configuration(mut self, input: std::option::Option<crate::model::IngestConfiguration>) -> Self {
+            self.ingest_configuration = input; self
         }
         /// <p>The properties of recording the live stream.</p>
-        pub fn recording_configuration(
-            mut self,
-            input: crate::model::RecordingConfiguration,
-        ) -> Self {
+        pub fn recording_configuration(mut self, input: crate::model::RecordingConfiguration) -> Self {
             self.recording_configuration = Some(input);
             self
         }
         /// <p>The properties of recording the live stream.</p>
-        pub fn set_recording_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RecordingConfiguration>,
-        ) -> Self {
-            self.recording_configuration = input;
-            self
+        pub fn set_recording_configuration(mut self, input: std::option::Option<crate::model::RecordingConfiguration>) -> Self {
+            self.recording_configuration = input; self
         }
         /// Appends an item to `truncated_events`.
         ///
@@ -1947,31 +1776,36 @@ pub mod stream_session {
         /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
         pub fn truncated_events(mut self, input: crate::model::StreamEvent) -> Self {
             let mut v = self.truncated_events.unwrap_or_default();
-            v.push(input);
-            self.truncated_events = Some(v);
-            self
+                            v.push(input);
+                            self.truncated_events = Some(v);
+                            self
         }
         /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
-        pub fn set_truncated_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StreamEvent>>,
-        ) -> Self {
-            self.truncated_events = input;
-            self
+        pub fn set_truncated_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::StreamEvent>>) -> Self {
+            self.truncated_events = input; self
         }
         /// Consumes the builder and constructs a [`StreamSession`](crate::model::StreamSession).
         pub fn build(self) -> crate::model::StreamSession {
             crate::model::StreamSession {
-                stream_id: self.stream_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                channel: self.channel,
-                ingest_configuration: self.ingest_configuration,
-                recording_configuration: self.recording_configuration,
-                truncated_events: self.truncated_events,
+                stream_id: self.stream_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                channel: self.channel
+                ,
+                ingest_configuration: self.ingest_configuration
+                ,
+                recording_configuration: self.recording_configuration
+                ,
+                truncated_events: self.truncated_events
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamSession {
     /// Creates a new builder-style object to manufacture [`StreamSession`](crate::model::StreamSession).
@@ -1983,7 +1817,7 @@ impl StreamSession {
 /// <p>Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamEvent {
+pub struct StreamEvent  {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1996,21 +1830,21 @@ pub struct StreamEvent {
 }
 impl StreamEvent {
     /// <p>Name that identifies the stream event within a <code>type</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Logical group for certain events.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
 }
 /// See [`StreamEvent`](crate::model::StreamEvent).
 pub mod stream_event {
-
+    
     /// A builder for [`StreamEvent`](crate::model::StreamEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2026,8 +1860,7 @@ pub mod stream_event {
         }
         /// <p>Name that identifies the stream event within a <code>type</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Logical group for certain events.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2036,8 +1869,7 @@ pub mod stream_event {
         }
         /// <p>Logical group for certain events.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2045,22 +1877,23 @@ pub mod stream_event {
             self
         }
         /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-        pub fn set_event_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_time = input;
-            self
+        pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_time = input; self
         }
         /// Consumes the builder and constructs a [`StreamEvent`](crate::model::StreamEvent).
         pub fn build(self) -> crate::model::StreamEvent {
             crate::model::StreamEvent {
-                name: self.name,
-                r#type: self.r#type,
-                event_time: self.event_time,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                event_time: self.event_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamEvent {
     /// Creates a new builder-style object to manufacture [`StreamEvent`](crate::model::StreamEvent).
@@ -2072,7 +1905,7 @@ impl StreamEvent {
 /// <p>An object representing a configuration to record a channel stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordingConfiguration {
+pub struct RecordingConfiguration  {
     /// <p>Recording-configuration ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2087,8 +1920,7 @@ pub struct RecordingConfiguration {
     pub state: std::option::Option<crate::model::RecordingConfigurationState>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
     #[doc(hidden)]
     pub thumbnail_configuration: std::option::Option<crate::model::ThumbnailConfiguration>,
@@ -2098,34 +1930,27 @@ pub struct RecordingConfiguration {
 }
 impl RecordingConfiguration {
     /// <p>Recording-configuration ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> std::option::Option<& crate::model::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::RecordingConfigurationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RecordingConfigurationState> {
         self.state.as_ref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-    pub fn thumbnail_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ThumbnailConfiguration> {
+    pub fn thumbnail_configuration(&self) -> std::option::Option<& crate::model::ThumbnailConfiguration> {
         self.thumbnail_configuration.as_ref()
     }
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
@@ -2135,20 +1960,16 @@ impl RecordingConfiguration {
 }
 /// See [`RecordingConfiguration`](crate::model::RecordingConfiguration).
 pub mod recording_configuration {
-
+    
     /// A builder for [`RecordingConfiguration`](crate::model::RecordingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) destination_configuration:
-            std::option::Option<crate::model::DestinationConfiguration>,
+        pub(crate) destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
         pub(crate) state: std::option::Option<crate::model::RecordingConfigurationState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) thumbnail_configuration:
-            std::option::Option<crate::model::ThumbnailConfiguration>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) thumbnail_configuration: std::option::Option<crate::model::ThumbnailConfiguration>,
         pub(crate) recording_reconnect_window_seconds: std::option::Option<i32>,
     }
     impl Builder {
@@ -2159,8 +1980,7 @@ pub mod recording_configuration {
         }
         /// <p>Recording-configuration ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2169,24 +1989,16 @@ pub mod recording_configuration {
         }
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A complex type that contains information about where recorded video will be stored.</p>
-        pub fn destination_configuration(
-            mut self,
-            input: crate::model::DestinationConfiguration,
-        ) -> Self {
+        pub fn destination_configuration(mut self, input: crate::model::DestinationConfiguration) -> Self {
             self.destination_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains information about where recorded video will be stored.</p>
-        pub fn set_destination_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfiguration>,
-        ) -> Self {
-            self.destination_configuration = input;
-            self
+        pub fn set_destination_configuration(mut self, input: std::option::Option<crate::model::DestinationConfiguration>) -> Self {
+            self.destination_configuration = input; self
         }
         /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
         pub fn state(mut self, input: crate::model::RecordingConfigurationState) -> Self {
@@ -2194,53 +2006,32 @@ pub mod recording_configuration {
             self
         }
         /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::RecordingConfigurationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::RecordingConfigurationState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-        pub fn thumbnail_configuration(
-            mut self,
-            input: crate::model::ThumbnailConfiguration,
-        ) -> Self {
+        pub fn thumbnail_configuration(mut self, input: crate::model::ThumbnailConfiguration) -> Self {
             self.thumbnail_configuration = Some(input);
             self
         }
         /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-        pub fn set_thumbnail_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ThumbnailConfiguration>,
-        ) -> Self {
-            self.thumbnail_configuration = input;
-            self
+        pub fn set_thumbnail_configuration(mut self, input: std::option::Option<crate::model::ThumbnailConfiguration>) -> Self {
+            self.thumbnail_configuration = input; self
         }
         /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
         pub fn recording_reconnect_window_seconds(mut self, input: i32) -> Self {
@@ -2248,28 +2039,32 @@ pub mod recording_configuration {
             self
         }
         /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
-        pub fn set_recording_reconnect_window_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.recording_reconnect_window_seconds = input;
-            self
+        pub fn set_recording_reconnect_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.recording_reconnect_window_seconds = input; self
         }
         /// Consumes the builder and constructs a [`RecordingConfiguration`](crate::model::RecordingConfiguration).
         pub fn build(self) -> crate::model::RecordingConfiguration {
             crate::model::RecordingConfiguration {
-                arn: self.arn,
-                name: self.name,
-                destination_configuration: self.destination_configuration,
-                state: self.state,
-                tags: self.tags,
-                thumbnail_configuration: self.thumbnail_configuration,
-                recording_reconnect_window_seconds: self
-                    .recording_reconnect_window_seconds
-                    .unwrap_or_default(),
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                destination_configuration: self.destination_configuration
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                thumbnail_configuration: self.thumbnail_configuration
+                ,
+                recording_reconnect_window_seconds: self.recording_reconnect_window_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RecordingConfiguration {
     /// Creates a new builder-style object to manufacture [`RecordingConfiguration`](crate::model::RecordingConfiguration).
@@ -2281,21 +2076,21 @@ impl RecordingConfiguration {
 /// <p>An object representing a configuration of thumbnails for recorded video.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThumbnailConfiguration {
+pub struct ThumbnailConfiguration  {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     #[doc(hidden)]
     pub recording_mode: std::option::Option<crate::model::RecordingMode>,
-    /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
+    /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p> 
     /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
     #[doc(hidden)]
     pub target_interval_seconds: i64,
 }
 impl ThumbnailConfiguration {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
-    pub fn recording_mode(&self) -> std::option::Option<&crate::model::RecordingMode> {
+    pub fn recording_mode(&self) -> std::option::Option<& crate::model::RecordingMode> {
         self.recording_mode.as_ref()
     }
-    /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
+    /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p> 
     /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
     pub fn target_interval_seconds(&self) -> i64 {
         self.target_interval_seconds
@@ -2303,7 +2098,7 @@ impl ThumbnailConfiguration {
 }
 /// See [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
 pub mod thumbnail_configuration {
-
+    
     /// A builder for [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2317,33 +2112,33 @@ pub mod thumbnail_configuration {
             self
         }
         /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
-        pub fn set_recording_mode(
-            mut self,
-            input: std::option::Option<crate::model::RecordingMode>,
-        ) -> Self {
-            self.recording_mode = input;
-            self
+        pub fn set_recording_mode(mut self, input: std::option::Option<crate::model::RecordingMode>) -> Self {
+            self.recording_mode = input; self
         }
-        /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
+        /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p> 
         /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
         pub fn target_interval_seconds(mut self, input: i64) -> Self {
             self.target_interval_seconds = Some(input);
             self
         }
-        /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
+        /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p> 
         /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
         pub fn set_target_interval_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.target_interval_seconds = input;
-            self
+            self.target_interval_seconds = input; self
         }
         /// Consumes the builder and constructs a [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
         pub fn build(self) -> crate::model::ThumbnailConfiguration {
             crate::model::ThumbnailConfiguration {
-                recording_mode: self.recording_mode,
-                target_interval_seconds: self.target_interval_seconds.unwrap_or_default(),
+                recording_mode: self.recording_mode
+                ,
+                target_interval_seconds: self.target_interval_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ThumbnailConfiguration {
     /// Creates a new builder-style object to manufacture [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
@@ -2358,9 +2153,9 @@ impl ThumbnailConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recordingmode = unimplemented!();
 /// match recordingmode {
@@ -2382,58 +2177,52 @@ impl ThumbnailConfiguration {
 /// Specifically, when `recordingmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecordingMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecordingMode {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Interval,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecordingMode {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => RecordingMode::Disabled,
             "INTERVAL" => RecordingMode::Interval,
-            other => RecordingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RecordingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecordingMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecordingMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecordingMode::from(s))
+                }
+            }
 impl RecordingMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordingMode::Disabled => "DISABLED",
             RecordingMode::Interval => "INTERVAL",
-            RecordingMode::Unknown(value) => value.as_str(),
+            RecordingMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "INTERVAL"]
+        &[
+            "DISABLED", "INTERVAL"
+        ]
     }
 }
 impl AsRef<str> for RecordingMode {
@@ -2445,7 +2234,7 @@ impl AsRef<str> for RecordingMode {
 /// <p>Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IngestConfiguration {
+pub struct IngestConfiguration  {
     /// <p>Encoder settings for video.</p>
     #[doc(hidden)]
     pub video: std::option::Option<crate::model::VideoConfiguration>,
@@ -2455,17 +2244,17 @@ pub struct IngestConfiguration {
 }
 impl IngestConfiguration {
     /// <p>Encoder settings for video.</p>
-    pub fn video(&self) -> std::option::Option<&crate::model::VideoConfiguration> {
+    pub fn video(&self) -> std::option::Option<& crate::model::VideoConfiguration> {
         self.video.as_ref()
     }
     /// <p>Encoder settings for audio.</p>
-    pub fn audio(&self) -> std::option::Option<&crate::model::AudioConfiguration> {
+    pub fn audio(&self) -> std::option::Option<& crate::model::AudioConfiguration> {
         self.audio.as_ref()
     }
 }
 /// See [`IngestConfiguration`](crate::model::IngestConfiguration).
 pub mod ingest_configuration {
-
+    
     /// A builder for [`IngestConfiguration`](crate::model::IngestConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2479,12 +2268,8 @@ pub mod ingest_configuration {
             self
         }
         /// <p>Encoder settings for video.</p>
-        pub fn set_video(
-            mut self,
-            input: std::option::Option<crate::model::VideoConfiguration>,
-        ) -> Self {
-            self.video = input;
-            self
+        pub fn set_video(mut self, input: std::option::Option<crate::model::VideoConfiguration>) -> Self {
+            self.video = input; self
         }
         /// <p>Encoder settings for audio.</p>
         pub fn audio(mut self, input: crate::model::AudioConfiguration) -> Self {
@@ -2492,21 +2277,21 @@ pub mod ingest_configuration {
             self
         }
         /// <p>Encoder settings for audio.</p>
-        pub fn set_audio(
-            mut self,
-            input: std::option::Option<crate::model::AudioConfiguration>,
-        ) -> Self {
-            self.audio = input;
-            self
+        pub fn set_audio(mut self, input: std::option::Option<crate::model::AudioConfiguration>) -> Self {
+            self.audio = input; self
         }
         /// Consumes the builder and constructs a [`IngestConfiguration`](crate::model::IngestConfiguration).
         pub fn build(self) -> crate::model::IngestConfiguration {
             crate::model::IngestConfiguration {
-                video: self.video,
-                audio: self.audio,
+                video: self.video
+                ,
+                audio: self.audio
+                ,
             }
         }
     }
+    
+    
 }
 impl IngestConfiguration {
     /// Creates a new builder-style object to manufacture [`IngestConfiguration`](crate::model::IngestConfiguration).
@@ -2518,7 +2303,7 @@ impl IngestConfiguration {
 /// <p>Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioConfiguration {
+pub struct AudioConfiguration  {
     /// <p>Codec used for the audio encoding.</p>
     #[doc(hidden)]
     pub codec: std::option::Option<std::string::String>,
@@ -2534,7 +2319,7 @@ pub struct AudioConfiguration {
 }
 impl AudioConfiguration {
     /// <p>Codec used for the audio encoding.</p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
@@ -2552,7 +2337,7 @@ impl AudioConfiguration {
 }
 /// See [`AudioConfiguration`](crate::model::AudioConfiguration).
 pub mod audio_configuration {
-
+    
     /// A builder for [`AudioConfiguration`](crate::model::AudioConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2569,8 +2354,7 @@ pub mod audio_configuration {
         }
         /// <p>Codec used for the audio encoding.</p>
         pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.codec = input;
-            self
+            self.codec = input; self
         }
         /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
         pub fn target_bitrate(mut self, input: i64) -> Self {
@@ -2579,8 +2363,7 @@ pub mod audio_configuration {
         }
         /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
         pub fn set_target_bitrate(mut self, input: std::option::Option<i64>) -> Self {
-            self.target_bitrate = input;
-            self
+            self.target_bitrate = input; self
         }
         /// <p>Number of audio samples recorded per second.</p>
         pub fn sample_rate(mut self, input: i64) -> Self {
@@ -2589,8 +2372,7 @@ pub mod audio_configuration {
         }
         /// <p>Number of audio samples recorded per second.</p>
         pub fn set_sample_rate(mut self, input: std::option::Option<i64>) -> Self {
-            self.sample_rate = input;
-            self
+            self.sample_rate = input; self
         }
         /// <p>Number of audio channels.</p>
         pub fn channels(mut self, input: i64) -> Self {
@@ -2599,19 +2381,27 @@ pub mod audio_configuration {
         }
         /// <p>Number of audio channels.</p>
         pub fn set_channels(mut self, input: std::option::Option<i64>) -> Self {
-            self.channels = input;
-            self
+            self.channels = input; self
         }
         /// Consumes the builder and constructs a [`AudioConfiguration`](crate::model::AudioConfiguration).
         pub fn build(self) -> crate::model::AudioConfiguration {
             crate::model::AudioConfiguration {
-                codec: self.codec,
-                target_bitrate: self.target_bitrate.unwrap_or_default(),
-                sample_rate: self.sample_rate.unwrap_or_default(),
-                channels: self.channels.unwrap_or_default(),
+                codec: self.codec
+                ,
+                target_bitrate: self.target_bitrate
+                    .unwrap_or_default()
+                ,
+                sample_rate: self.sample_rate
+                    .unwrap_or_default()
+                ,
+                channels: self.channels
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AudioConfiguration {
     /// Creates a new builder-style object to manufacture [`AudioConfiguration`](crate::model::AudioConfiguration).
@@ -2623,7 +2413,7 @@ impl AudioConfiguration {
 /// <p>Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VideoConfiguration {
+pub struct VideoConfiguration  {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
     #[doc(hidden)]
     pub avc_profile: std::option::Option<std::string::String>,
@@ -2651,19 +2441,19 @@ pub struct VideoConfiguration {
 }
 impl VideoConfiguration {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
-    pub fn avc_profile(&self) -> std::option::Option<&str> {
+    pub fn avc_profile(&self) -> std::option::Option<& str> {
         self.avc_profile.as_deref()
     }
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
-    pub fn avc_level(&self) -> std::option::Option<&str> {
+    pub fn avc_level(&self) -> std::option::Option<& str> {
         self.avc_level.as_deref()
     }
     /// <p>Codec used for the video encoding.</p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// <p>Software or hardware used to encode the video.</p>
-    pub fn encoder(&self) -> std::option::Option<&str> {
+    pub fn encoder(&self) -> std::option::Option<& str> {
         self.encoder.as_deref()
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
@@ -2685,7 +2475,7 @@ impl VideoConfiguration {
 }
 /// See [`VideoConfiguration`](crate::model::VideoConfiguration).
 pub mod video_configuration {
-
+    
     /// A builder for [`VideoConfiguration`](crate::model::VideoConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2706,8 +2496,7 @@ pub mod video_configuration {
         }
         /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
         pub fn set_avc_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.avc_profile = input;
-            self
+            self.avc_profile = input; self
         }
         /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
         pub fn avc_level(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2716,8 +2505,7 @@ pub mod video_configuration {
         }
         /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
         pub fn set_avc_level(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.avc_level = input;
-            self
+            self.avc_level = input; self
         }
         /// <p>Codec used for the video encoding.</p>
         pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2726,8 +2514,7 @@ pub mod video_configuration {
         }
         /// <p>Codec used for the video encoding.</p>
         pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.codec = input;
-            self
+            self.codec = input; self
         }
         /// <p>Software or hardware used to encode the video.</p>
         pub fn encoder(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2736,8 +2523,7 @@ pub mod video_configuration {
         }
         /// <p>Software or hardware used to encode the video.</p>
         pub fn set_encoder(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.encoder = input;
-            self
+            self.encoder = input; self
         }
         /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
         pub fn target_bitrate(mut self, input: i64) -> Self {
@@ -2746,8 +2532,7 @@ pub mod video_configuration {
         }
         /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
         pub fn set_target_bitrate(mut self, input: std::option::Option<i64>) -> Self {
-            self.target_bitrate = input;
-            self
+            self.target_bitrate = input; self
         }
         /// <p>The expected ingest framerate. This is configured in the encoder.</p>
         pub fn target_framerate(mut self, input: i64) -> Self {
@@ -2756,8 +2541,7 @@ pub mod video_configuration {
         }
         /// <p>The expected ingest framerate. This is configured in the encoder.</p>
         pub fn set_target_framerate(mut self, input: std::option::Option<i64>) -> Self {
-            self.target_framerate = input;
-            self
+            self.target_framerate = input; self
         }
         /// <p>Video-resolution height in pixels.</p>
         pub fn video_height(mut self, input: i64) -> Self {
@@ -2766,8 +2550,7 @@ pub mod video_configuration {
         }
         /// <p>Video-resolution height in pixels.</p>
         pub fn set_video_height(mut self, input: std::option::Option<i64>) -> Self {
-            self.video_height = input;
-            self
+            self.video_height = input; self
         }
         /// <p>Video-resolution width in pixels.</p>
         pub fn video_width(mut self, input: i64) -> Self {
@@ -2776,23 +2559,36 @@ pub mod video_configuration {
         }
         /// <p>Video-resolution width in pixels.</p>
         pub fn set_video_width(mut self, input: std::option::Option<i64>) -> Self {
-            self.video_width = input;
-            self
+            self.video_width = input; self
         }
         /// Consumes the builder and constructs a [`VideoConfiguration`](crate::model::VideoConfiguration).
         pub fn build(self) -> crate::model::VideoConfiguration {
             crate::model::VideoConfiguration {
-                avc_profile: self.avc_profile,
-                avc_level: self.avc_level,
-                codec: self.codec,
-                encoder: self.encoder,
-                target_bitrate: self.target_bitrate.unwrap_or_default(),
-                target_framerate: self.target_framerate.unwrap_or_default(),
-                video_height: self.video_height.unwrap_or_default(),
-                video_width: self.video_width.unwrap_or_default(),
+                avc_profile: self.avc_profile
+                ,
+                avc_level: self.avc_level
+                ,
+                codec: self.codec
+                ,
+                encoder: self.encoder
+                ,
+                target_bitrate: self.target_bitrate
+                    .unwrap_or_default()
+                ,
+                target_framerate: self.target_framerate
+                    .unwrap_or_default()
+                ,
+                video_height: self.video_height
+                    .unwrap_or_default()
+                ,
+                video_width: self.video_width
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VideoConfiguration {
     /// Creates a new builder-style object to manufacture [`VideoConfiguration`](crate::model::VideoConfiguration).
@@ -2804,7 +2600,7 @@ impl VideoConfiguration {
 /// <p>Object specifying a stream key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StreamKey {
+pub struct StreamKey  {
     /// <p>Stream-key ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2816,31 +2612,27 @@ pub struct StreamKey {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StreamKey {
     /// <p>Stream-key ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Stream-key value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Channel ARN for the stream.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StreamKey {
+impl  std::fmt::Debug for StreamKey  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamKey");
         formatter.field("arn", &self.arn);
@@ -2852,16 +2644,14 @@ impl std::fmt::Debug for StreamKey {
 }
 /// See [`StreamKey`](crate::model::StreamKey).
 pub mod stream_key {
-
+    
     /// A builder for [`StreamKey`](crate::model::StreamKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Stream-key ARN.</p>
@@ -2871,8 +2661,7 @@ pub mod stream_key {
         }
         /// <p>Stream-key ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Stream-key value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2881,8 +2670,7 @@ pub mod stream_key {
         }
         /// <p>Stream-key value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Channel ARN for the stream.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2891,41 +2679,34 @@ pub mod stream_key {
         }
         /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_arn = input;
-            self
+            self.channel_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`StreamKey`](crate::model::StreamKey).
         pub fn build(self) -> crate::model::StreamKey {
             crate::model::StreamKey {
-                arn: self.arn,
-                value: self.value,
-                channel_arn: self.channel_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                value: self.value
+                ,
+                channel_arn: self.channel_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -2939,6 +2720,8 @@ pub mod stream_key {
             formatter.finish()
         }
     }
+    
+    
 }
 impl StreamKey {
     /// Creates a new builder-style object to manufacture [`StreamKey`](crate::model::StreamKey).
@@ -2950,7 +2733,7 @@ impl StreamKey {
 /// <p>Specifies a live video stream that has been ingested and distributed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Stream {
+pub struct Stream  {
     /// <p>Channel ARN for the stream.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -2975,27 +2758,27 @@ pub struct Stream {
 }
 impl Stream {
     /// <p>Channel ARN for the stream.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
-    pub fn playback_url(&self) -> std::option::Option<&str> {
+    pub fn playback_url(&self) -> std::option::Option<& str> {
         self.playback_url.as_deref()
     }
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The stream’s state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::StreamState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::StreamState> {
         self.state.as_ref()
     }
     /// <p>The stream’s health.</p>
-    pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
+    pub fn health(&self) -> std::option::Option<& crate::model::StreamHealth> {
         self.health.as_ref()
     }
     /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
@@ -3005,7 +2788,7 @@ impl Stream {
 }
 /// See [`Stream`](crate::model::Stream).
 pub mod stream {
-
+    
     /// A builder for [`Stream`](crate::model::Stream).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3025,8 +2808,7 @@ pub mod stream {
         }
         /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_arn = input;
-            self
+            self.channel_arn = input; self
         }
         /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3035,8 +2817,7 @@ pub mod stream {
         }
         /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input;
-            self
+            self.stream_id = input; self
         }
         /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
         pub fn playback_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3045,8 +2826,7 @@ pub mod stream {
         }
         /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
         pub fn set_playback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.playback_url = input;
-            self
+            self.playback_url = input; self
         }
         /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3054,12 +2834,8 @@ pub mod stream {
             self
         }
         /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The stream’s state.</p>
         pub fn state(mut self, input: crate::model::StreamState) -> Self {
@@ -3068,8 +2844,7 @@ pub mod stream {
         }
         /// <p>The stream’s state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::StreamState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The stream’s health.</p>
         pub fn health(mut self, input: crate::model::StreamHealth) -> Self {
@@ -3077,12 +2852,8 @@ pub mod stream {
             self
         }
         /// <p>The stream’s health.</p>
-        pub fn set_health(
-            mut self,
-            input: std::option::Option<crate::model::StreamHealth>,
-        ) -> Self {
-            self.health = input;
-            self
+        pub fn set_health(mut self, input: std::option::Option<crate::model::StreamHealth>) -> Self {
+            self.health = input; self
         }
         /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
         pub fn viewer_count(mut self, input: i64) -> Self {
@@ -3091,22 +2862,31 @@ pub mod stream {
         }
         /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
         pub fn set_viewer_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.viewer_count = input;
-            self
+            self.viewer_count = input; self
         }
         /// Consumes the builder and constructs a [`Stream`](crate::model::Stream).
         pub fn build(self) -> crate::model::Stream {
             crate::model::Stream {
-                channel_arn: self.channel_arn,
-                stream_id: self.stream_id,
-                playback_url: self.playback_url,
-                start_time: self.start_time,
-                state: self.state,
-                health: self.health,
-                viewer_count: self.viewer_count.unwrap_or_default(),
+                channel_arn: self.channel_arn
+                ,
+                stream_id: self.stream_id
+                ,
+                playback_url: self.playback_url
+                ,
+                start_time: self.start_time
+                ,
+                state: self.state
+                ,
+                health: self.health
+                ,
+                viewer_count: self.viewer_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Stream {
     /// Creates a new builder-style object to manufacture [`Stream`](crate::model::Stream).
@@ -3118,7 +2898,7 @@ impl Stream {
 /// <p>Error related to a specific channel, specified by its ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchError {
+pub struct BatchError  {
     /// <p>Channel ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3131,21 +2911,21 @@ pub struct BatchError {
 }
 impl BatchError {
     /// <p>Channel ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Error code.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>Error message, determined by the application.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`BatchError`](crate::model::BatchError).
 pub mod batch_error {
-
+    
     /// A builder for [`BatchError`](crate::model::BatchError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3161,8 +2941,7 @@ pub mod batch_error {
         }
         /// <p>Channel ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Error code.</p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3171,8 +2950,7 @@ pub mod batch_error {
         }
         /// <p>Error code.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>Error message, determined by the application.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3181,18 +2959,22 @@ pub mod batch_error {
         }
         /// <p>Error message, determined by the application.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BatchError`](crate::model::BatchError).
         pub fn build(self) -> crate::model::BatchError {
             crate::model::BatchError {
-                arn: self.arn,
-                code: self.code,
-                message: self.message,
+                arn: self.arn
+                ,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchError {
     /// Creates a new builder-style object to manufacture [`BatchError`](crate::model::BatchError).
@@ -3200,3 +2982,4 @@ impl BatchError {
         crate::model::batch_error::Builder::default()
     }
 }
+

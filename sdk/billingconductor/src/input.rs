@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`AssociateAccountsInput`](crate::input::AssociateAccountsInput).
 pub mod associate_accounts_input {
-
+    
     /// A builder for [`AssociateAccountsInput`](crate::input::AssociateAccountsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -18,8 +18,7 @@ pub mod associate_accounts_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `account_ids`.
         ///
@@ -28,150 +27,96 @@ pub mod associate_accounts_input {
         /// <p> The associating array of account IDs. </p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
-            v.push(input.into());
-            self.account_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.account_ids = Some(v);
+                            self
         }
         /// <p> The associating array of account IDs. </p>
-        pub fn set_account_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.account_ids = input;
-            self
+        pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.account_ids = input; self
         }
         /// Consumes the builder and constructs a [`AssociateAccountsInput`](crate::input::AssociateAccountsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AssociateAccountsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::AssociateAccountsInput {
-                arn: self.arn,
-                account_ids: self.account_ids,
-            })
+        pub fn build(self) -> Result<crate::input::AssociateAccountsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AssociateAccountsInput {
+                    arn: self.arn
+                    ,
+                    account_ids: self.account_ids
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AssociateAccountsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAccounts`](crate::operation::AssociateAccounts)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AssociateAccounts,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AssociateAccounts, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AssociateAccountsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AssociateAccountsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associate-accounts").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AssociateAccountsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AssociateAccountsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_accounts(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_associate_accounts(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AssociateAccounts::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AssociateAccounts",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AssociateAccounts::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AssociateAccounts", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -183,7 +128,7 @@ impl AssociateAccountsInput {
 
 /// See [`AssociatePricingRulesInput`](crate::input::AssociatePricingRulesInput).
 pub mod associate_pricing_rules_input {
-
+    
     /// A builder for [`AssociatePricingRulesInput`](crate::input::AssociatePricingRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -198,8 +143,7 @@ pub mod associate_pricing_rules_input {
         }
         /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `pricing_rule_arns`.
         ///
@@ -208,152 +152,96 @@ pub mod associate_pricing_rules_input {
         /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
         pub fn pricing_rule_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pricing_rule_arns.unwrap_or_default();
-            v.push(input.into());
-            self.pricing_rule_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.pricing_rule_arns = Some(v);
+                            self
         }
         /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
-        pub fn set_pricing_rule_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.pricing_rule_arns = input;
-            self
+        pub fn set_pricing_rule_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.pricing_rule_arns = input; self
         }
         /// Consumes the builder and constructs a [`AssociatePricingRulesInput`](crate::input::AssociatePricingRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AssociatePricingRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::AssociatePricingRulesInput {
-                arn: self.arn,
-                pricing_rule_arns: self.pricing_rule_arns,
-            })
+        pub fn build(self) -> Result<crate::input::AssociatePricingRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AssociatePricingRulesInput {
+                    arn: self.arn
+                    ,
+                    pricing_rule_arns: self.pricing_rule_arns
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AssociatePricingRulesInput {
     /// Consumes the builder and constructs an Operation<[`AssociatePricingRules`](crate::operation::AssociatePricingRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AssociatePricingRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AssociatePricingRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AssociatePricingRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AssociatePricingRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associate-pricing-rules").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AssociatePricingRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AssociatePricingRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_pricing_rules(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_associate_pricing_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AssociatePricingRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AssociatePricingRules",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AssociatePricingRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AssociatePricingRules", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -365,14 +253,13 @@ impl AssociatePricingRulesInput {
 
 /// See [`BatchAssociateResourcesToCustomLineItemInput`](crate::input::BatchAssociateResourcesToCustomLineItemInput).
 pub mod batch_associate_resources_to_custom_line_item_input {
-
+    
     /// A builder for [`BatchAssociateResourcesToCustomLineItemInput`](crate::input::BatchAssociateResourcesToCustomLineItemInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) billing_period_range:
-            std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
+        pub(crate) billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
     }
     impl Builder {
         /// <p> A percentage custom line item ARN to associate the resources to. </p>
@@ -382,8 +269,7 @@ pub mod batch_associate_resources_to_custom_line_item_input {
         }
         /// <p> A percentage custom line item ARN to associate the resources to. </p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
         /// Appends an item to `resource_arns`.
         ///
@@ -392,110 +278,72 @@ pub mod batch_associate_resources_to_custom_line_item_input {
         /// <p> A list containing the ARNs of the resources to be associated. </p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p> A list containing the ARNs of the resources to be associated. </p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// <p> The billing period range in which the custom line item request will be applied. </p>
-        pub fn billing_period_range(
-            mut self,
-            input: crate::model::CustomLineItemBillingPeriodRange,
-        ) -> Self {
+        pub fn billing_period_range(mut self, input: crate::model::CustomLineItemBillingPeriodRange) -> Self {
             self.billing_period_range = Some(input);
             self
         }
         /// <p> The billing period range in which the custom line item request will be applied. </p>
-        pub fn set_billing_period_range(
-            mut self,
-            input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
-        ) -> Self {
-            self.billing_period_range = input;
-            self
+        pub fn set_billing_period_range(mut self, input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>) -> Self {
+            self.billing_period_range = input; self
         }
         /// Consumes the builder and constructs a [`BatchAssociateResourcesToCustomLineItemInput`](crate::input::BatchAssociateResourcesToCustomLineItemInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::BatchAssociateResourcesToCustomLineItemInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::BatchAssociateResourcesToCustomLineItemInput {
-                target_arn: self.target_arn,
-                resource_arns: self.resource_arns,
-                billing_period_range: self.billing_period_range,
-            })
+        pub fn build(self) -> Result<crate::input::BatchAssociateResourcesToCustomLineItemInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::BatchAssociateResourcesToCustomLineItemInput {
+                    target_arn: self.target_arn
+                    ,
+                    resource_arns: self.resource_arns
+                    ,
+                    billing_period_range: self.billing_period_range
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchAssociateResourcesToCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchAssociateResourcesToCustomLineItem`](crate::operation::BatchAssociateResourcesToCustomLineItem)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchAssociateResourcesToCustomLineItem,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchAssociateResourcesToCustomLineItem, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchAssociateResourcesToCustomLineItemInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/batch-associate-resources-to-custom-line-item")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::BatchAssociateResourcesToCustomLineItemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/batch-associate-resources-to-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::BatchAssociateResourcesToCustomLineItemInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::BatchAssociateResourcesToCustomLineItemInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -504,56 +352,33 @@ impl BatchAssociateResourcesToCustomLineItemInput {
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_resources_to_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchAssociateResourcesToCustomLineItem::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchAssociateResourcesToCustomLineItem",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchAssociateResourcesToCustomLineItem::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchAssociateResourcesToCustomLineItem", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -565,14 +390,13 @@ impl BatchAssociateResourcesToCustomLineItemInput {
 
 /// See [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::input::BatchDisassociateResourcesFromCustomLineItemInput).
 pub mod batch_disassociate_resources_from_custom_line_item_input {
-
+    
     /// A builder for [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::input::BatchDisassociateResourcesFromCustomLineItemInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) billing_period_range:
-            std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
+        pub(crate) billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
     }
     impl Builder {
         /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
@@ -582,8 +406,7 @@ pub mod batch_disassociate_resources_from_custom_line_item_input {
         }
         /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
         /// Appends an item to `resource_arns`.
         ///
@@ -592,115 +415,72 @@ pub mod batch_disassociate_resources_from_custom_line_item_input {
         /// <p> A list containing the ARNs of resources to be disassociated. </p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p> A list containing the ARNs of resources to be disassociated. </p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// <p> The billing period range in which the custom line item request will be applied. </p>
-        pub fn billing_period_range(
-            mut self,
-            input: crate::model::CustomLineItemBillingPeriodRange,
-        ) -> Self {
+        pub fn billing_period_range(mut self, input: crate::model::CustomLineItemBillingPeriodRange) -> Self {
             self.billing_period_range = Some(input);
             self
         }
         /// <p> The billing period range in which the custom line item request will be applied. </p>
-        pub fn set_billing_period_range(
-            mut self,
-            input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
-        ) -> Self {
-            self.billing_period_range = input;
-            self
+        pub fn set_billing_period_range(mut self, input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>) -> Self {
+            self.billing_period_range = input; self
         }
         /// Consumes the builder and constructs a [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::input::BatchDisassociateResourcesFromCustomLineItemInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::BatchDisassociateResourcesFromCustomLineItemInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::BatchDisassociateResourcesFromCustomLineItemInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::BatchDisassociateResourcesFromCustomLineItemInput {
-                    target_arn: self.target_arn,
-                    resource_arns: self.resource_arns,
-                    billing_period_range: self.billing_period_range,
-                },
+                    target_arn: self.target_arn
+                    ,
+                    resource_arns: self.resource_arns
+                    ,
+                    billing_period_range: self.billing_period_range
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl BatchDisassociateResourcesFromCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisassociateResourcesFromCustomLineItem`](crate::operation::BatchDisassociateResourcesFromCustomLineItem)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchDisassociateResourcesFromCustomLineItem,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchDisassociateResourcesFromCustomLineItem, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchDisassociateResourcesFromCustomLineItemInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(
-                    output,
-                    "/batch-disassociate-resources-from-custom-line-item"
-                )
-                .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::BatchDisassociateResourcesFromCustomLineItemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/batch-disassociate-resources-from-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::BatchDisassociateResourcesFromCustomLineItemInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::BatchDisassociateResourcesFromCustomLineItemInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -709,69 +489,45 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
             crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_resources_from_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchDisassociateResourcesFromCustomLineItem::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchDisassociateResourcesFromCustomLineItem",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchDisassociateResourcesFromCustomLineItem::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchDisassociateResourcesFromCustomLineItem", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::input::BatchDisassociateResourcesFromCustomLineItemInput).
-    pub fn builder(
-    ) -> crate::input::batch_disassociate_resources_from_custom_line_item_input::Builder {
+    pub fn builder() -> crate::input::batch_disassociate_resources_from_custom_line_item_input::Builder {
         crate::input::batch_disassociate_resources_from_custom_line_item_input::Builder::default()
     }
 }
 
 /// See [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput).
 pub mod create_billing_group_input {
-
+    
     /// A builder for [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -781,9 +537,7 @@ pub mod create_billing_group_input {
         pub(crate) computation_preference: std::option::Option<crate::model::ComputationPreference>,
         pub(crate) primary_account_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
@@ -793,8 +547,7 @@ pub mod create_billing_group_input {
         }
         /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p> The billing group name. The names must be unique. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -803,8 +556,7 @@ pub mod create_billing_group_input {
         }
         /// <p> The billing group name. The names must be unique. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
         pub fn account_grouping(mut self, input: crate::model::AccountGrouping) -> Self {
@@ -812,28 +564,17 @@ pub mod create_billing_group_input {
             self
         }
         /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
-        pub fn set_account_grouping(
-            mut self,
-            input: std::option::Option<crate::model::AccountGrouping>,
-        ) -> Self {
-            self.account_grouping = input;
-            self
+        pub fn set_account_grouping(mut self, input: std::option::Option<crate::model::AccountGrouping>) -> Self {
+            self.account_grouping = input; self
         }
         /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-        pub fn computation_preference(
-            mut self,
-            input: crate::model::ComputationPreference,
-        ) -> Self {
+        pub fn computation_preference(mut self, input: crate::model::ComputationPreference) -> Self {
             self.computation_preference = Some(input);
             self
         }
         /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-        pub fn set_computation_preference(
-            mut self,
-            input: std::option::Option<crate::model::ComputationPreference>,
-        ) -> Self {
-            self.computation_preference = input;
-            self
+        pub fn set_computation_preference(mut self, input: std::option::Option<crate::model::ComputationPreference>) -> Self {
+            self.computation_preference = input; self
         }
         /// <p> The account ID that serves as the main account in a billing group. </p>
         pub fn primary_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -841,12 +582,8 @@ pub mod create_billing_group_input {
             self
         }
         /// <p> The account ID that serves as the main account in a billing group. </p>
-        pub fn set_primary_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_account_id = input;
-            self
+        pub fn set_primary_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_account_id = input; self
         }
         /// <p>The description of the billing group. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -855,50 +592,43 @@ pub mod create_billing_group_input {
         }
         /// <p>The description of the billing group. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateBillingGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateBillingGroupInput {
-                client_token: self.client_token,
-                name: self.name,
-                account_grouping: self.account_grouping,
-                computation_preference: self.computation_preference,
-                primary_account_id: self.primary_account_id,
-                description: self.description,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateBillingGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateBillingGroupInput {
+                    client_token: self.client_token
+                    ,
+                    name: self.name
+                    ,
+                    account_grouping: self.account_grouping
+                    ,
+                    computation_preference: self.computation_preference
+                    ,
+                    primary_account_id: self.primary_account_id
+                    ,
+                    description: self.description
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -914,129 +644,80 @@ pub mod create_billing_group_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBillingGroup`](crate::operation::CreateBillingGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateBillingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateBillingGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateBillingGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateBillingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/create-billing-group").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateBillingGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateBillingGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_billing_group(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_billing_group(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_billing_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateBillingGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateBillingGroup",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateBillingGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateBillingGroup", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1048,7 +729,7 @@ impl CreateBillingGroupInput {
 
 /// See [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput).
 pub mod create_custom_line_item_input {
-
+    
     /// A builder for [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1056,11 +737,8 @@ pub mod create_custom_line_item_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) billing_group_arn: std::option::Option<std::string::String>,
-        pub(crate) billing_period_range:
-            std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) charge_details: std::option::Option<crate::model::CustomLineItemChargeDetails>,
     }
     impl Builder {
@@ -1071,8 +749,7 @@ pub mod create_custom_line_item_input {
         }
         /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p> The name of the custom line item. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1081,8 +758,7 @@ pub mod create_custom_line_item_input {
         }
         /// <p> The name of the custom line item. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1091,8 +767,7 @@ pub mod create_custom_line_item_input {
         }
         /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
         pub fn billing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1100,53 +775,32 @@ pub mod create_custom_line_item_input {
             self
         }
         /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-        pub fn set_billing_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_group_arn = input;
-            self
+        pub fn set_billing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_group_arn = input; self
         }
         /// <p> A time range for which the custom line item is effective. </p>
-        pub fn billing_period_range(
-            mut self,
-            input: crate::model::CustomLineItemBillingPeriodRange,
-        ) -> Self {
+        pub fn billing_period_range(mut self, input: crate::model::CustomLineItemBillingPeriodRange) -> Self {
             self.billing_period_range = Some(input);
             self
         }
         /// <p> A time range for which the custom line item is effective. </p>
-        pub fn set_billing_period_range(
-            mut self,
-            input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
-        ) -> Self {
-            self.billing_period_range = input;
-            self
+        pub fn set_billing_period_range(mut self, input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>) -> Self {
+            self.billing_period_range = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
         pub fn charge_details(mut self, input: crate::model::CustomLineItemChargeDetails) -> Self {
@@ -1154,29 +808,29 @@ pub mod create_custom_line_item_input {
             self
         }
         /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
-        pub fn set_charge_details(
-            mut self,
-            input: std::option::Option<crate::model::CustomLineItemChargeDetails>,
-        ) -> Self {
-            self.charge_details = input;
-            self
+        pub fn set_charge_details(mut self, input: std::option::Option<crate::model::CustomLineItemChargeDetails>) -> Self {
+            self.charge_details = input; self
         }
         /// Consumes the builder and constructs a [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateCustomLineItemInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateCustomLineItemInput {
-                client_token: self.client_token,
-                name: self.name,
-                description: self.description,
-                billing_group_arn: self.billing_group_arn,
-                billing_period_range: self.billing_period_range,
-                tags: self.tags,
-                charge_details: self.charge_details,
-            })
+        pub fn build(self) -> Result<crate::input::CreateCustomLineItemInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateCustomLineItemInput {
+                    client_token: self.client_token
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    billing_group_arn: self.billing_group_arn
+                    ,
+                    billing_period_range: self.billing_period_range
+                    ,
+                    tags: self.tags
+                    ,
+                    charge_details: self.charge_details
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -1192,132 +846,80 @@ pub mod create_custom_line_item_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomLineItem`](crate::operation::CreateCustomLineItem)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateCustomLineItem,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateCustomLineItem, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateCustomLineItemInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateCustomLineItemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/create-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateCustomLineItemInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateCustomLineItemInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_custom_line_item(input, builder)?;
+                let builder = crate::http_serde::add_headers_create_custom_line_item(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_line_item(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateCustomLineItem::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateCustomLineItem",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateCustomLineItem::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateCustomLineItem", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1329,7 +931,7 @@ impl CreateCustomLineItemInput {
 
 /// See [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput).
 pub mod create_pricing_plan_input {
-
+    
     /// A builder for [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1337,9 +939,7 @@ pub mod create_pricing_plan_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
@@ -1349,8 +949,7 @@ pub mod create_pricing_plan_input {
         }
         /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1359,8 +958,7 @@ pub mod create_pricing_plan_input {
         }
         /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the pricing plan. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1369,8 +967,7 @@ pub mod create_pricing_plan_input {
         }
         /// <p>The description of the pricing plan. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `pricing_rule_arns`.
         ///
@@ -1379,57 +976,45 @@ pub mod create_pricing_plan_input {
         /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
         pub fn pricing_rule_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pricing_rule_arns.unwrap_or_default();
-            v.push(input.into());
-            self.pricing_rule_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.pricing_rule_arns = Some(v);
+                            self
         }
         /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-        pub fn set_pricing_rule_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.pricing_rule_arns = input;
-            self
+        pub fn set_pricing_rule_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.pricing_rule_arns = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreatePricingPlanInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreatePricingPlanInput {
-                client_token: self.client_token,
-                name: self.name,
-                description: self.description,
-                pricing_rule_arns: self.pricing_rule_arns,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreatePricingPlanInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreatePricingPlanInput {
+                    client_token: self.client_token
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    pricing_rule_arns: self.pricing_rule_arns
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -1443,129 +1028,80 @@ pub mod create_pricing_plan_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreatePricingPlanInput {
     /// Consumes the builder and constructs an Operation<[`CreatePricingPlan`](crate::operation::CreatePricingPlan)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreatePricingPlan,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreatePricingPlan, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreatePricingPlanInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreatePricingPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/create-pricing-plan").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreatePricingPlanInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreatePricingPlanInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_pricing_plan(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_pricing_plan(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_pricing_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreatePricingPlan::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreatePricingPlan",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreatePricingPlan::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreatePricingPlan", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1577,7 +1113,7 @@ impl CreatePricingPlanInput {
 
 /// See [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
 pub mod create_pricing_rule_input {
-
+    
     /// A builder for [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1588,9 +1124,7 @@ pub mod create_pricing_rule_input {
         pub(crate) r#type: std::option::Option<crate::model::PricingRuleType>,
         pub(crate) modifier_percentage: std::option::Option<f64>,
         pub(crate) service: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) billing_entity: std::option::Option<std::string::String>,
         pub(crate) tiering: std::option::Option<crate::model::CreateTieringInput>,
         pub(crate) usage_type: std::option::Option<std::string::String>,
@@ -1604,8 +1138,7 @@ pub mod create_pricing_rule_input {
         }
         /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1614,8 +1147,7 @@ pub mod create_pricing_rule_input {
         }
         /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The pricing rule description. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1624,8 +1156,7 @@ pub mod create_pricing_rule_input {
         }
         /// <p> The pricing rule description. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
         pub fn scope(mut self, input: crate::model::PricingRuleScope) -> Self {
@@ -1633,12 +1164,8 @@ pub mod create_pricing_rule_input {
             self
         }
         /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-        pub fn set_scope(
-            mut self,
-            input: std::option::Option<crate::model::PricingRuleScope>,
-        ) -> Self {
-            self.scope = input;
-            self
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::PricingRuleScope>) -> Self {
+            self.scope = input; self
         }
         /// <p> The type of pricing rule. </p>
         pub fn r#type(mut self, input: crate::model::PricingRuleType) -> Self {
@@ -1646,12 +1173,8 @@ pub mod create_pricing_rule_input {
             self
         }
         /// <p> The type of pricing rule. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PricingRuleType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PricingRuleType>) -> Self {
+            self.r#type = input; self
         }
         /// <p> A percentage modifier that's applied on the public pricing rates. </p>
         pub fn modifier_percentage(mut self, input: f64) -> Self {
@@ -1660,8 +1183,7 @@ pub mod create_pricing_rule_input {
         }
         /// <p> A percentage modifier that's applied on the public pricing rates. </p>
         pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.modifier_percentage = input;
-            self
+            self.modifier_percentage = input; self
         }
         /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
         pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1670,33 +1192,22 @@ pub mod create_pricing_rule_input {
         }
         /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
         pub fn billing_entity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1704,12 +1215,8 @@ pub mod create_pricing_rule_input {
             self
         }
         /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-        pub fn set_billing_entity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_entity = input;
-            self
+        pub fn set_billing_entity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_entity = input; self
         }
         /// <p> The set of tiering configurations for the pricing rule. </p>
         pub fn tiering(mut self, input: crate::model::CreateTieringInput) -> Self {
@@ -1717,58 +1224,61 @@ pub mod create_pricing_rule_input {
             self
         }
         /// <p> The set of tiering configurations for the pricing rule. </p>
-        pub fn set_tiering(
-            mut self,
-            input: std::option::Option<crate::model::CreateTieringInput>,
-        ) -> Self {
-            self.tiering = input;
-            self
+        pub fn set_tiering(mut self, input: std::option::Option<crate::model::CreateTieringInput>) -> Self {
+            self.tiering = input; self
         }
-        /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+        /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
         /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
         pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_type = Some(input.into());
             self
         }
-        /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+        /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
         /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.usage_type = input;
-            self
+            self.usage_type = input; self
         }
-        /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+        /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
         /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation = Some(input.into());
             self
         }
-        /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+        /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
         /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreatePricingRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreatePricingRuleInput {
-                client_token: self.client_token,
-                name: self.name,
-                description: self.description,
-                scope: self.scope,
-                r#type: self.r#type,
-                modifier_percentage: self.modifier_percentage,
-                service: self.service,
-                tags: self.tags,
-                billing_entity: self.billing_entity,
-                tiering: self.tiering,
-                usage_type: self.usage_type,
-                operation: self.operation,
-            })
+        pub fn build(self) -> Result<crate::input::CreatePricingRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreatePricingRuleInput {
+                    client_token: self.client_token
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    scope: self.scope
+                    ,
+                    r#type: self.r#type
+                    ,
+                    modifier_percentage: self.modifier_percentage
+                    ,
+                    service: self.service
+                    ,
+                    tags: self.tags
+                    ,
+                    billing_entity: self.billing_entity
+                    ,
+                    tiering: self.tiering
+                    ,
+                    usage_type: self.usage_type
+                    ,
+                    operation: self.operation
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -1789,129 +1299,80 @@ pub mod create_pricing_rule_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreatePricingRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreatePricingRule`](crate::operation::CreatePricingRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreatePricingRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreatePricingRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreatePricingRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreatePricingRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/create-pricing-rule").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreatePricingRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreatePricingRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_pricing_rule(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_pricing_rule(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_pricing_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreatePricingRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreatePricingRule",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreatePricingRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreatePricingRule", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1923,7 +1384,7 @@ impl CreatePricingRuleInput {
 
 /// See [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput).
 pub mod delete_billing_group_input {
-
+    
     /// A builder for [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1937,138 +1398,88 @@ pub mod delete_billing_group_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteBillingGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteBillingGroupInput { arn: self.arn })
+        pub fn build(self) -> Result<crate::input::DeleteBillingGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteBillingGroupInput {
+                    arn: self.arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBillingGroup`](crate::operation::DeleteBillingGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteBillingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteBillingGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteBillingGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteBillingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/delete-billing-group").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteBillingGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteBillingGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_billing_group(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_billing_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteBillingGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteBillingGroup",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteBillingGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteBillingGroup", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2080,13 +1491,12 @@ impl DeleteBillingGroupInput {
 
 /// See [`DeleteCustomLineItemInput`](crate::input::DeleteCustomLineItemInput).
 pub mod delete_custom_line_item_input {
-
+    
     /// A builder for [`DeleteCustomLineItemInput`](crate::input::DeleteCustomLineItemInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) billing_period_range:
-            std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
+        pub(crate) billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
     }
     impl Builder {
         /// <p> The ARN of the custom line item to be deleted. </p>
@@ -2096,159 +1506,99 @@ pub mod delete_custom_line_item_input {
         }
         /// <p> The ARN of the custom line item to be deleted. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The billing period range in which the custom line item request will be applied. </p>
-        pub fn billing_period_range(
-            mut self,
-            input: crate::model::CustomLineItemBillingPeriodRange,
-        ) -> Self {
+        pub fn billing_period_range(mut self, input: crate::model::CustomLineItemBillingPeriodRange) -> Self {
             self.billing_period_range = Some(input);
             self
         }
         /// <p> The billing period range in which the custom line item request will be applied. </p>
-        pub fn set_billing_period_range(
-            mut self,
-            input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
-        ) -> Self {
-            self.billing_period_range = input;
-            self
+        pub fn set_billing_period_range(mut self, input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>) -> Self {
+            self.billing_period_range = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCustomLineItemInput`](crate::input::DeleteCustomLineItemInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteCustomLineItemInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteCustomLineItemInput {
-                arn: self.arn,
-                billing_period_range: self.billing_period_range,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteCustomLineItemInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteCustomLineItemInput {
+                    arn: self.arn
+                    ,
+                    billing_period_range: self.billing_period_range
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomLineItem`](crate::operation::DeleteCustomLineItem)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteCustomLineItem,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteCustomLineItem, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteCustomLineItemInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteCustomLineItemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/delete-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteCustomLineItemInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteCustomLineItemInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_line_item(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteCustomLineItem::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteCustomLineItem",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteCustomLineItem::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteCustomLineItem", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2260,7 +1610,7 @@ impl DeleteCustomLineItemInput {
 
 /// See [`DeletePricingPlanInput`](crate::input::DeletePricingPlanInput).
 pub mod delete_pricing_plan_input {
-
+    
     /// A builder for [`DeletePricingPlanInput`](crate::input::DeletePricingPlanInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2274,138 +1624,88 @@ pub mod delete_pricing_plan_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeletePricingPlanInput`](crate::input::DeletePricingPlanInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeletePricingPlanInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeletePricingPlanInput { arn: self.arn })
+        pub fn build(self) -> Result<crate::input::DeletePricingPlanInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeletePricingPlanInput {
+                    arn: self.arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeletePricingPlanInput {
     /// Consumes the builder and constructs an Operation<[`DeletePricingPlan`](crate::operation::DeletePricingPlan)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeletePricingPlan,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeletePricingPlan, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeletePricingPlanInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeletePricingPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/delete-pricing-plan").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeletePricingPlanInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeletePricingPlanInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_pricing_plan(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_pricing_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeletePricingPlan::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeletePricingPlan",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeletePricingPlan::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeletePricingPlan", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2417,7 +1717,7 @@ impl DeletePricingPlanInput {
 
 /// See [`DeletePricingRuleInput`](crate::input::DeletePricingRuleInput).
 pub mod delete_pricing_rule_input {
-
+    
     /// A builder for [`DeletePricingRuleInput`](crate::input::DeletePricingRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2431,138 +1731,88 @@ pub mod delete_pricing_rule_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeletePricingRuleInput`](crate::input::DeletePricingRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeletePricingRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeletePricingRuleInput { arn: self.arn })
+        pub fn build(self) -> Result<crate::input::DeletePricingRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeletePricingRuleInput {
+                    arn: self.arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeletePricingRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeletePricingRule`](crate::operation::DeletePricingRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeletePricingRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeletePricingRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeletePricingRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeletePricingRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/delete-pricing-rule").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeletePricingRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeletePricingRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_pricing_rule(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_pricing_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeletePricingRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeletePricingRule",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeletePricingRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeletePricingRule", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2574,7 +1824,7 @@ impl DeletePricingRuleInput {
 
 /// See [`DisassociateAccountsInput`](crate::input::DisassociateAccountsInput).
 pub mod disassociate_accounts_input {
-
+    
     /// A builder for [`DisassociateAccountsInput`](crate::input::DisassociateAccountsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2589,8 +1839,7 @@ pub mod disassociate_accounts_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `account_ids`.
         ///
@@ -2599,150 +1848,96 @@ pub mod disassociate_accounts_input {
         /// <p>The array of account IDs to disassociate. </p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
-            v.push(input.into());
-            self.account_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.account_ids = Some(v);
+                            self
         }
         /// <p>The array of account IDs to disassociate. </p>
-        pub fn set_account_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.account_ids = input;
-            self
+        pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.account_ids = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateAccountsInput`](crate::input::DisassociateAccountsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DisassociateAccountsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DisassociateAccountsInput {
-                arn: self.arn,
-                account_ids: self.account_ids,
-            })
+        pub fn build(self) -> Result<crate::input::DisassociateAccountsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DisassociateAccountsInput {
+                    arn: self.arn
+                    ,
+                    account_ids: self.account_ids
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DisassociateAccountsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAccounts`](crate::operation::DisassociateAccounts)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DisassociateAccounts,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisassociateAccounts, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DisassociateAccountsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DisassociateAccountsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disassociate-accounts").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DisassociateAccountsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DisassociateAccountsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_accounts(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_accounts(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DisassociateAccounts::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DisassociateAccounts",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisassociateAccounts::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisassociateAccounts", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2754,7 +1949,7 @@ impl DisassociateAccountsInput {
 
 /// See [`DisassociatePricingRulesInput`](crate::input::DisassociatePricingRulesInput).
 pub mod disassociate_pricing_rules_input {
-
+    
     /// A builder for [`DisassociatePricingRulesInput`](crate::input::DisassociatePricingRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2769,8 +1964,7 @@ pub mod disassociate_pricing_rules_input {
         }
         /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `pricing_rule_arns`.
         ///
@@ -2779,152 +1973,96 @@ pub mod disassociate_pricing_rules_input {
         /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
         pub fn pricing_rule_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pricing_rule_arns.unwrap_or_default();
-            v.push(input.into());
-            self.pricing_rule_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.pricing_rule_arns = Some(v);
+                            self
         }
         /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-        pub fn set_pricing_rule_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.pricing_rule_arns = input;
-            self
+        pub fn set_pricing_rule_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.pricing_rule_arns = input; self
         }
         /// Consumes the builder and constructs a [`DisassociatePricingRulesInput`](crate::input::DisassociatePricingRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DisassociatePricingRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DisassociatePricingRulesInput {
-                arn: self.arn,
-                pricing_rule_arns: self.pricing_rule_arns,
-            })
+        pub fn build(self) -> Result<crate::input::DisassociatePricingRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DisassociatePricingRulesInput {
+                    arn: self.arn
+                    ,
+                    pricing_rule_arns: self.pricing_rule_arns
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DisassociatePricingRulesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociatePricingRules`](crate::operation::DisassociatePricingRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DisassociatePricingRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisassociatePricingRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DisassociatePricingRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DisassociatePricingRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disassociate-pricing-rules").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DisassociatePricingRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DisassociatePricingRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_pricing_rules(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_pricing_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DisassociatePricingRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DisassociatePricingRules",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisassociatePricingRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisassociatePricingRules", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2936,7 +2074,7 @@ impl DisassociatePricingRulesInput {
 
 /// See [`ListAccountAssociationsInput`](crate::input::ListAccountAssociationsInput).
 pub mod list_account_associations_input {
-
+    
     /// A builder for [`ListAccountAssociationsInput`](crate::input::ListAccountAssociationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2951,31 +2089,23 @@ pub mod list_account_associations_input {
             self
         }
         /// <p> The preferred billing period to get account associations. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
-        /// <p>The filter on the account ID of the linked account, or any of the following:</p>
-        /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-        /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+        /// <p>The filter on the account ID of the linked account, or any of the following:</p> 
+        /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p> 
+        /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p> 
         /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
         pub fn filters(mut self, input: crate::model::ListAccountAssociationsFilter) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>The filter on the account ID of the linked account, or any of the following:</p>
-        /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-        /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+        /// <p>The filter on the account ID of the linked account, or any of the following:</p> 
+        /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p> 
+        /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p> 
         /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::ListAccountAssociationsFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::ListAccountAssociationsFilter>) -> Self {
+            self.filters = input; self
         }
         /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2984,144 +2114,92 @@ pub mod list_account_associations_input {
         }
         /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountAssociationsInput`](crate::input::ListAccountAssociationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListAccountAssociationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListAccountAssociationsInput {
-                billing_period: self.billing_period,
-                filters: self.filters,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListAccountAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListAccountAssociationsInput {
+                    billing_period: self.billing_period
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAccountAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountAssociations`](crate::operation::ListAccountAssociations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAccountAssociations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAccountAssociations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAccountAssociationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListAccountAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-account-associations").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListAccountAssociationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListAccountAssociationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_account_associations(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_account_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAccountAssociations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAccountAssociations",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAccountAssociations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAccountAssociations", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3133,7 +2211,7 @@ impl ListAccountAssociationsInput {
 
 /// See [`ListBillingGroupCostReportsInput`](crate::input::ListBillingGroupCostReportsInput).
 pub mod list_billing_group_cost_reports_input {
-
+    
     /// A builder for [`ListBillingGroupCostReportsInput`](crate::input::ListBillingGroupCostReportsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3149,12 +2227,8 @@ pub mod list_billing_group_cost_reports_input {
             self
         }
         /// <p>The preferred billing period for your report. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p>The maximum number of reports to retrieve. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3163,8 +2237,7 @@ pub mod list_billing_group_cost_reports_input {
         }
         /// <p>The maximum number of reports to retrieve. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3173,8 +2246,7 @@ pub mod list_billing_group_cost_reports_input {
         }
         /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
         pub fn filters(mut self, input: crate::model::ListBillingGroupCostReportsFilter) -> Self {
@@ -3182,90 +2254,60 @@ pub mod list_billing_group_cost_reports_input {
             self
         }
         /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::ListBillingGroupCostReportsFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::ListBillingGroupCostReportsFilter>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListBillingGroupCostReportsInput`](crate::input::ListBillingGroupCostReportsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListBillingGroupCostReportsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListBillingGroupCostReportsInput {
-                billing_period: self.billing_period,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListBillingGroupCostReportsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListBillingGroupCostReportsInput {
+                    billing_period: self.billing_period
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListBillingGroupCostReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListBillingGroupCostReports`](crate::operation::ListBillingGroupCostReports)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListBillingGroupCostReports,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListBillingGroupCostReports, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListBillingGroupCostReportsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/list-billing-group-cost-reports")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListBillingGroupCostReportsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/list-billing-group-cost-reports").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListBillingGroupCostReportsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListBillingGroupCostReportsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3274,56 +2316,33 @@ impl ListBillingGroupCostReportsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_billing_group_cost_reports(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListBillingGroupCostReports::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListBillingGroupCostReports",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListBillingGroupCostReports::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListBillingGroupCostReports", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3335,7 +2354,7 @@ impl ListBillingGroupCostReportsInput {
 
 /// See [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput).
 pub mod list_billing_groups_input {
-
+    
     /// A builder for [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3351,12 +2370,8 @@ pub mod list_billing_groups_input {
             self
         }
         /// <p>The preferred billing period to get billing groups. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p>The maximum number of billing groups to retrieve. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3365,8 +2380,7 @@ pub mod list_billing_groups_input {
         }
         /// <p>The maximum number of billing groups to retrieve. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3375,8 +2389,7 @@ pub mod list_billing_groups_input {
         }
         /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
         pub fn filters(mut self, input: crate::model::ListBillingGroupsFilter) -> Self {
@@ -3384,147 +2397,95 @@ pub mod list_billing_groups_input {
             self
         }
         /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::ListBillingGroupsFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::ListBillingGroupsFilter>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListBillingGroupsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListBillingGroupsInput {
-                billing_period: self.billing_period,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListBillingGroupsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListBillingGroupsInput {
+                    billing_period: self.billing_period
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListBillingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListBillingGroups`](crate::operation::ListBillingGroups)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListBillingGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListBillingGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListBillingGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListBillingGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-billing-groups").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListBillingGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListBillingGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_billing_groups(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_billing_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListBillingGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListBillingGroups",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListBillingGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListBillingGroups", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3536,7 +2497,7 @@ impl ListBillingGroupsInput {
 
 /// See [`ListCustomLineItemsInput`](crate::input::ListCustomLineItemsInput).
 pub mod list_custom_line_items_input {
-
+    
     /// A builder for [`ListCustomLineItemsInput`](crate::input::ListCustomLineItemsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3552,12 +2513,8 @@ pub mod list_custom_line_items_input {
             self
         }
         /// <p> The preferred billing period to get custom line items (FFLIs). </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p> The maximum number of billing groups to retrieve. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3566,8 +2523,7 @@ pub mod list_custom_line_items_input {
         }
         /// <p> The maximum number of billing groups to retrieve. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3576,8 +2532,7 @@ pub mod list_custom_line_items_input {
         }
         /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
         pub fn filters(mut self, input: crate::model::ListCustomLineItemsFilter) -> Self {
@@ -3585,149 +2540,95 @@ pub mod list_custom_line_items_input {
             self
         }
         /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::ListCustomLineItemsFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::ListCustomLineItemsFilter>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomLineItemsInput`](crate::input::ListCustomLineItemsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListCustomLineItemsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListCustomLineItemsInput {
-                billing_period: self.billing_period,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListCustomLineItemsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListCustomLineItemsInput {
+                    billing_period: self.billing_period
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListCustomLineItemsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomLineItems`](crate::operation::ListCustomLineItems)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListCustomLineItems,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListCustomLineItems, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListCustomLineItemsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListCustomLineItemsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-custom-line-items").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListCustomLineItemsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListCustomLineItemsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_line_items(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_line_items(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListCustomLineItems::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListCustomLineItems",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListCustomLineItems::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListCustomLineItems", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3739,7 +2640,7 @@ impl ListCustomLineItemsInput {
 
 /// See [`ListCustomLineItemVersionsInput`](crate::input::ListCustomLineItemVersionsInput).
 pub mod list_custom_line_item_versions_input {
-
+    
     /// A builder for [`ListCustomLineItemVersionsInput`](crate::input::ListCustomLineItemVersionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3756,8 +2657,7 @@ pub mod list_custom_line_item_versions_input {
         }
         /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The maximum number of custom line item versions to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3766,8 +2666,7 @@ pub mod list_custom_line_item_versions_input {
         }
         /// <p>The maximum number of custom line item versions to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3776,8 +2675,7 @@ pub mod list_custom_line_item_versions_input {
         }
         /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
         pub fn filters(mut self, input: crate::model::ListCustomLineItemVersionsFilter) -> Self {
@@ -3785,90 +2683,60 @@ pub mod list_custom_line_item_versions_input {
             self
         }
         /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::ListCustomLineItemVersionsFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::ListCustomLineItemVersionsFilter>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomLineItemVersionsInput`](crate::input::ListCustomLineItemVersionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListCustomLineItemVersionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListCustomLineItemVersionsInput {
-                arn: self.arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListCustomLineItemVersionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListCustomLineItemVersionsInput {
+                    arn: self.arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListCustomLineItemVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomLineItemVersions`](crate::operation::ListCustomLineItemVersions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListCustomLineItemVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListCustomLineItemVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListCustomLineItemVersionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/list-custom-line-item-versions")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListCustomLineItemVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/list-custom-line-item-versions").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListCustomLineItemVersionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListCustomLineItemVersionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3877,56 +2745,33 @@ impl ListCustomLineItemVersionsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_custom_line_item_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListCustomLineItemVersions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListCustomLineItemVersions",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListCustomLineItemVersions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListCustomLineItemVersions", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3938,7 +2783,7 @@ impl ListCustomLineItemVersionsInput {
 
 /// See [`ListPricingPlansInput`](crate::input::ListPricingPlansInput).
 pub mod list_pricing_plans_input {
-
+    
     /// A builder for [`ListPricingPlansInput`](crate::input::ListPricingPlansInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3954,12 +2799,8 @@ pub mod list_pricing_plans_input {
             self
         }
         /// <p>The preferred billing period to get pricing plan. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
         pub fn filters(mut self, input: crate::model::ListPricingPlansFilter) -> Self {
@@ -3967,12 +2808,8 @@ pub mod list_pricing_plans_input {
             self
         }
         /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::ListPricingPlansFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::ListPricingPlansFilter>) -> Self {
+            self.filters = input; self
         }
         /// <p>The maximum number of pricing plans to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3981,8 +2818,7 @@ pub mod list_pricing_plans_input {
         }
         /// <p>The maximum number of pricing plans to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3991,143 +2827,94 @@ pub mod list_pricing_plans_input {
         }
         /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPricingPlansInput`](crate::input::ListPricingPlansInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListPricingPlansInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListPricingPlansInput {
-                billing_period: self.billing_period,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListPricingPlansInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListPricingPlansInput {
+                    billing_period: self.billing_period
+                    ,
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPricingPlansInput {
     /// Consumes the builder and constructs an Operation<[`ListPricingPlans`](crate::operation::ListPricingPlans)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPricingPlans,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPricingPlans, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPricingPlansInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListPricingPlansInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-pricing-plans").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListPricingPlansInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListPricingPlansInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_pricing_plans(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_pricing_plans(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPricingPlans::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPricingPlans",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPricingPlans::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPricingPlans", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4139,7 +2926,7 @@ impl ListPricingPlansInput {
 
 /// See [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::input::ListPricingPlansAssociatedWithPricingRuleInput).
 pub mod list_pricing_plans_associated_with_pricing_rule_input {
-
+    
     /// A builder for [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::input::ListPricingPlansAssociatedWithPricingRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4155,12 +2942,8 @@ pub mod list_pricing_plans_associated_with_pricing_rule_input {
             self
         }
         /// <p> The pricing plan billing period for which associations will be listed. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
         pub fn pricing_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4168,12 +2951,8 @@ pub mod list_pricing_plans_associated_with_pricing_rule_input {
             self
         }
         /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-        pub fn set_pricing_rule_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_rule_arn = input;
-            self
+        pub fn set_pricing_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_rule_arn = input; self
         }
         /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4182,8 +2961,7 @@ pub mod list_pricing_plans_associated_with_pricing_rule_input {
         }
         /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> The optional pagination token returned by a previous call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4192,88 +2970,59 @@ pub mod list_pricing_plans_associated_with_pricing_rule_input {
         }
         /// <p> The optional pagination token returned by a previous call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::input::ListPricingPlansAssociatedWithPricingRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListPricingPlansAssociatedWithPricingRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::ListPricingPlansAssociatedWithPricingRuleInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::ListPricingPlansAssociatedWithPricingRuleInput {
-                    billing_period: self.billing_period,
-                    pricing_rule_arn: self.pricing_rule_arn,
-                    max_results: self.max_results,
-                    next_token: self.next_token,
-                },
+                    billing_period: self.billing_period
+                    ,
+                    pricing_rule_arn: self.pricing_rule_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl ListPricingPlansAssociatedWithPricingRuleInput {
     /// Consumes the builder and constructs an Operation<[`ListPricingPlansAssociatedWithPricingRule`](crate::operation::ListPricingPlansAssociatedWithPricingRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPricingPlansAssociatedWithPricingRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPricingPlansAssociatedWithPricingRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPricingPlansAssociatedWithPricingRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/list-pricing-plans-associated-with-pricing-rule")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListPricingPlansAssociatedWithPricingRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/list-pricing-plans-associated-with-pricing-rule").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListPricingPlansAssociatedWithPricingRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListPricingPlansAssociatedWithPricingRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4282,69 +3031,45 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
             crate::operation_ser::serialize_operation_crate_operation_list_pricing_plans_associated_with_pricing_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPricingPlansAssociatedWithPricingRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPricingPlansAssociatedWithPricingRule",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPricingPlansAssociatedWithPricingRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPricingPlansAssociatedWithPricingRule", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::input::ListPricingPlansAssociatedWithPricingRuleInput).
-    pub fn builder() -> crate::input::list_pricing_plans_associated_with_pricing_rule_input::Builder
-    {
+    pub fn builder() -> crate::input::list_pricing_plans_associated_with_pricing_rule_input::Builder {
         crate::input::list_pricing_plans_associated_with_pricing_rule_input::Builder::default()
     }
 }
 
 /// See [`ListPricingRulesInput`](crate::input::ListPricingRulesInput).
 pub mod list_pricing_rules_input {
-
+    
     /// A builder for [`ListPricingRulesInput`](crate::input::ListPricingRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4360,12 +3085,8 @@ pub mod list_pricing_rules_input {
             self
         }
         /// <p> The preferred billing period to get the pricing plan. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
         pub fn filters(mut self, input: crate::model::ListPricingRulesFilter) -> Self {
@@ -4373,12 +3094,8 @@ pub mod list_pricing_rules_input {
             self
         }
         /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::ListPricingRulesFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::ListPricingRulesFilter>) -> Self {
+            self.filters = input; self
         }
         /// <p> The maximum number of pricing rules to retrieve. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4387,8 +3104,7 @@ pub mod list_pricing_rules_input {
         }
         /// <p> The maximum number of pricing rules to retrieve. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4397,143 +3113,94 @@ pub mod list_pricing_rules_input {
         }
         /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPricingRulesInput`](crate::input::ListPricingRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListPricingRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListPricingRulesInput {
-                billing_period: self.billing_period,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListPricingRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListPricingRulesInput {
+                    billing_period: self.billing_period
+                    ,
+                    filters: self.filters
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPricingRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListPricingRules`](crate::operation::ListPricingRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPricingRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPricingRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPricingRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListPricingRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-pricing-rules").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListPricingRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListPricingRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_pricing_rules(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_pricing_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPricingRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPricingRules",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPricingRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPricingRules", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4545,7 +3212,7 @@ impl ListPricingRulesInput {
 
 /// See [`ListPricingRulesAssociatedToPricingPlanInput`](crate::input::ListPricingRulesAssociatedToPricingPlanInput).
 pub mod list_pricing_rules_associated_to_pricing_plan_input {
-
+    
     /// A builder for [`ListPricingRulesAssociatedToPricingPlanInput`](crate::input::ListPricingRulesAssociatedToPricingPlanInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4561,12 +3228,8 @@ pub mod list_pricing_rules_associated_to_pricing_plan_input {
             self
         }
         /// <p> The billing period for which the pricing rule associations are to be listed. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
         pub fn pricing_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4574,12 +3237,8 @@ pub mod list_pricing_rules_associated_to_pricing_plan_input {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
-        pub fn set_pricing_plan_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_plan_arn = input;
-            self
+        pub fn set_pricing_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_plan_arn = input; self
         }
         /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4588,8 +3247,7 @@ pub mod list_pricing_rules_associated_to_pricing_plan_input {
         }
         /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> The optional pagination token returned by a previous call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4598,86 +3256,59 @@ pub mod list_pricing_rules_associated_to_pricing_plan_input {
         }
         /// <p> The optional pagination token returned by a previous call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPricingRulesAssociatedToPricingPlanInput`](crate::input::ListPricingRulesAssociatedToPricingPlanInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListPricingRulesAssociatedToPricingPlanInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListPricingRulesAssociatedToPricingPlanInput {
-                billing_period: self.billing_period,
-                pricing_plan_arn: self.pricing_plan_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListPricingRulesAssociatedToPricingPlanInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListPricingRulesAssociatedToPricingPlanInput {
+                    billing_period: self.billing_period
+                    ,
+                    pricing_plan_arn: self.pricing_plan_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPricingRulesAssociatedToPricingPlanInput {
     /// Consumes the builder and constructs an Operation<[`ListPricingRulesAssociatedToPricingPlan`](crate::operation::ListPricingRulesAssociatedToPricingPlan)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPricingRulesAssociatedToPricingPlan,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPricingRulesAssociatedToPricingPlan, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPricingRulesAssociatedToPricingPlanInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/list-pricing-rules-associated-to-pricing-plan")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListPricingRulesAssociatedToPricingPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/list-pricing-rules-associated-to-pricing-plan").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListPricingRulesAssociatedToPricingPlanInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListPricingRulesAssociatedToPricingPlanInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4686,56 +3317,33 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
             crate::operation_ser::serialize_operation_crate_operation_list_pricing_rules_associated_to_pricing_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPricingRulesAssociatedToPricingPlan::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPricingRulesAssociatedToPricingPlan",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPricingRulesAssociatedToPricingPlan::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPricingRulesAssociatedToPricingPlan", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4747,7 +3355,7 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
 
 /// See [`ListResourcesAssociatedToCustomLineItemInput`](crate::input::ListResourcesAssociatedToCustomLineItemInput).
 pub mod list_resources_associated_to_custom_line_item_input {
-
+    
     /// A builder for [`ListResourcesAssociatedToCustomLineItemInput`](crate::input::ListResourcesAssociatedToCustomLineItemInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4755,8 +3363,7 @@ pub mod list_resources_associated_to_custom_line_item_input {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) filters:
-            std::option::Option<crate::model::ListResourcesAssociatedToCustomLineItemFilter>,
+        pub(crate) filters: std::option::Option<crate::model::ListResourcesAssociatedToCustomLineItemFilter>,
     }
     impl Builder {
         /// <p> The billing period for which the resource associations will be listed. </p>
@@ -4765,12 +3372,8 @@ pub mod list_resources_associated_to_custom_line_item_input {
             self
         }
         /// <p> The billing period for which the resource associations will be listed. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4779,8 +3382,7 @@ pub mod list_resources_associated_to_custom_line_item_input {
         }
         /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4789,8 +3391,7 @@ pub mod list_resources_associated_to_custom_line_item_input {
         }
         /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p> (Optional) The pagination token that's returned by a previous request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4799,103 +3400,70 @@ pub mod list_resources_associated_to_custom_line_item_input {
         }
         /// <p> (Optional) The pagination token that's returned by a previous request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-        pub fn filters(
-            mut self,
-            input: crate::model::ListResourcesAssociatedToCustomLineItemFilter,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::ListResourcesAssociatedToCustomLineItemFilter) -> Self {
             self.filters = Some(input);
             self
         }
         /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<crate::model::ListResourcesAssociatedToCustomLineItemFilter>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<crate::model::ListResourcesAssociatedToCustomLineItemFilter>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemInput`](crate::input::ListResourcesAssociatedToCustomLineItemInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListResourcesAssociatedToCustomLineItemInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListResourcesAssociatedToCustomLineItemInput {
-                billing_period: self.billing_period,
-                arn: self.arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListResourcesAssociatedToCustomLineItemInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListResourcesAssociatedToCustomLineItemInput {
+                    billing_period: self.billing_period
+                    ,
+                    arn: self.arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListResourcesAssociatedToCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`ListResourcesAssociatedToCustomLineItem`](crate::operation::ListResourcesAssociatedToCustomLineItem)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListResourcesAssociatedToCustomLineItem,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListResourcesAssociatedToCustomLineItem, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListResourcesAssociatedToCustomLineItemInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                write!(output, "/list-resources-associated-to-custom-line-item")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::input::ListResourcesAssociatedToCustomLineItemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/list-resources-associated-to-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListResourcesAssociatedToCustomLineItemInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListResourcesAssociatedToCustomLineItemInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4904,56 +3472,33 @@ impl ListResourcesAssociatedToCustomLineItemInput {
             crate::operation_ser::serialize_operation_crate_operation_list_resources_associated_to_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListResourcesAssociatedToCustomLineItem::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListResourcesAssociatedToCustomLineItem",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListResourcesAssociatedToCustomLineItem::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListResourcesAssociatedToCustomLineItem", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4965,7 +3510,7 @@ impl ListResourcesAssociatedToCustomLineItemInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4979,92 +3524,53 @@ pub mod list_tags_for_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) that identifies the resource to list the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.resource_arn;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5074,51 +3580,34 @@ impl ListTagsForResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5130,14 +3619,12 @@ impl ListTagsForResourceInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
@@ -5147,184 +3634,111 @@ pub mod tag_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags to add to the resource as a list of key-value pairs. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags to add to the resource as a list of key-value pairs. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.resource_arn;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5336,7 +3750,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5351,8 +3765,7 @@ pub mod untag_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the resource to which to delete tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -5361,104 +3774,60 @@ pub mod untag_resource_input {
         /// <p> The tags to delete from the resource as a list of key-value pairs. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p> The tags to delete from the resource as a list of key-value pairs. </p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.resource_arn;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_3,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_3 = input_3.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_4 = &_input.tag_keys;
-                let inner_4 = inner_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "tag_keys",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_5 in inner_4 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_5));
                 }
@@ -5466,12 +3835,9 @@ impl UntagResourceInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5482,51 +3848,34 @@ impl UntagResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5538,7 +3887,7 @@ impl UntagResourceInput {
 
 /// See [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput).
 pub mod update_billing_group_input {
-
+    
     /// A builder for [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5556,8 +3905,7 @@ pub mod update_billing_group_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the billing group. The names must be unique to each billing group. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5566,8 +3914,7 @@ pub mod update_billing_group_input {
         }
         /// <p>The name of the billing group. The names must be unique to each billing group. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the billing group. Only one of the valid values can be used. </p>
         pub fn status(mut self, input: crate::model::BillingGroupStatus) -> Self {
@@ -5575,28 +3922,17 @@ pub mod update_billing_group_input {
             self
         }
         /// <p>The status of the billing group. Only one of the valid values can be used. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::BillingGroupStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::BillingGroupStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-        pub fn computation_preference(
-            mut self,
-            input: crate::model::ComputationPreference,
-        ) -> Self {
+        pub fn computation_preference(mut self, input: crate::model::ComputationPreference) -> Self {
             self.computation_preference = Some(input);
             self
         }
         /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-        pub fn set_computation_preference(
-            mut self,
-            input: std::option::Option<crate::model::ComputationPreference>,
-        ) -> Self {
-            self.computation_preference = input;
-            self
+        pub fn set_computation_preference(mut self, input: std::option::Option<crate::model::ComputationPreference>) -> Self {
+            self.computation_preference = input; self
         }
         /// <p>A description of the billing group. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5605,23 +3941,24 @@ pub mod update_billing_group_input {
         }
         /// <p>A description of the billing group. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateBillingGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateBillingGroupInput {
-                arn: self.arn,
-                name: self.name,
-                status: self.status,
-                computation_preference: self.computation_preference,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateBillingGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateBillingGroupInput {
+                    arn: self.arn
+                    ,
+                    name: self.name
+                    ,
+                    status: self.status
+                    ,
+                    computation_preference: self.computation_preference
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -5635,125 +3972,76 @@ pub mod update_billing_group_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBillingGroup`](crate::operation::UpdateBillingGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateBillingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateBillingGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateBillingGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateBillingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/update-billing-group").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateBillingGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateBillingGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_billing_group(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_billing_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateBillingGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateBillingGroup",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateBillingGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateBillingGroup", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5765,17 +4053,15 @@ impl UpdateBillingGroupInput {
 
 /// See [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput).
 pub mod update_custom_line_item_input {
-
+    
     /// A builder for [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) charge_details:
-            std::option::Option<crate::model::UpdateCustomLineItemChargeDetails>,
-        pub(crate) billing_period_range:
-            std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
+        pub(crate) charge_details: std::option::Option<crate::model::UpdateCustomLineItemChargeDetails>,
+        pub(crate) billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
     }
     impl Builder {
         /// <p> The ARN of the custom line item to be updated. </p>
@@ -5785,8 +4071,7 @@ pub mod update_custom_line_item_input {
         }
         /// <p> The ARN of the custom line item to be updated. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The new name for the custom line item. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5795,8 +4080,7 @@ pub mod update_custom_line_item_input {
         }
         /// <p> The new name for the custom line item. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The new line item description of the custom line item. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5805,55 +4089,42 @@ pub mod update_custom_line_item_input {
         }
         /// <p> The new line item description of the custom line item. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
-        pub fn charge_details(
-            mut self,
-            input: crate::model::UpdateCustomLineItemChargeDetails,
-        ) -> Self {
+        pub fn charge_details(mut self, input: crate::model::UpdateCustomLineItemChargeDetails) -> Self {
             self.charge_details = Some(input);
             self
         }
         /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
-        pub fn set_charge_details(
-            mut self,
-            input: std::option::Option<crate::model::UpdateCustomLineItemChargeDetails>,
-        ) -> Self {
-            self.charge_details = input;
-            self
+        pub fn set_charge_details(mut self, input: std::option::Option<crate::model::UpdateCustomLineItemChargeDetails>) -> Self {
+            self.charge_details = input; self
         }
         /// <p> The billing period range in which the custom line item request will be applied. </p>
-        pub fn billing_period_range(
-            mut self,
-            input: crate::model::CustomLineItemBillingPeriodRange,
-        ) -> Self {
+        pub fn billing_period_range(mut self, input: crate::model::CustomLineItemBillingPeriodRange) -> Self {
             self.billing_period_range = Some(input);
             self
         }
         /// <p> The billing period range in which the custom line item request will be applied. </p>
-        pub fn set_billing_period_range(
-            mut self,
-            input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
-        ) -> Self {
-            self.billing_period_range = input;
-            self
+        pub fn set_billing_period_range(mut self, input: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>) -> Self {
+            self.billing_period_range = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateCustomLineItemInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateCustomLineItemInput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                charge_details: self.charge_details,
-                billing_period_range: self.billing_period_range,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateCustomLineItemInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateCustomLineItemInput {
+                    arn: self.arn
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    charge_details: self.charge_details
+                    ,
+                    billing_period_range: self.billing_period_range
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -5867,127 +4138,76 @@ pub mod update_custom_line_item_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateCustomLineItemInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomLineItem`](crate::operation::UpdateCustomLineItem)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateCustomLineItem,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateCustomLineItem, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateCustomLineItemInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateCustomLineItemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/update-custom-line-item").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateCustomLineItemInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateCustomLineItemInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_line_item(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateCustomLineItem::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateCustomLineItem",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateCustomLineItem::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateCustomLineItem", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5999,7 +4219,7 @@ impl UpdateCustomLineItemInput {
 
 /// See [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
 pub mod update_pricing_plan_input {
-
+    
     /// A builder for [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6015,8 +4235,7 @@ pub mod update_pricing_plan_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6025,8 +4244,7 @@ pub mod update_pricing_plan_input {
         }
         /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the pricing plan. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6035,21 +4253,20 @@ pub mod update_pricing_plan_input {
         }
         /// <p>The description of the pricing plan. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdatePricingPlanInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdatePricingPlanInput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdatePricingPlanInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdatePricingPlanInput {
+                    arn: self.arn
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -6061,125 +4278,76 @@ pub mod update_pricing_plan_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdatePricingPlanInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePricingPlan`](crate::operation::UpdatePricingPlan)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdatePricingPlan,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdatePricingPlan, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdatePricingPlanInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdatePricingPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/update-pricing-plan").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdatePricingPlanInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdatePricingPlanInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_pricing_plan(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_pricing_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdatePricingPlan::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdatePricingPlan",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdatePricingPlan::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdatePricingPlan", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6191,7 +4359,7 @@ impl UpdatePricingPlanInput {
 
 /// See [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
 pub mod update_pricing_rule_input {
-
+    
     /// A builder for [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6210,8 +4378,7 @@ pub mod update_pricing_rule_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6220,8 +4387,7 @@ pub mod update_pricing_rule_input {
         }
         /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The new description for the pricing rule. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6230,8 +4396,7 @@ pub mod update_pricing_rule_input {
         }
         /// <p> The new description for the pricing rule. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The new pricing rule type. </p>
         pub fn r#type(mut self, input: crate::model::PricingRuleType) -> Self {
@@ -6239,12 +4404,8 @@ pub mod update_pricing_rule_input {
             self
         }
         /// <p> The new pricing rule type. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PricingRuleType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PricingRuleType>) -> Self {
+            self.r#type = input; self
         }
         /// <p> The new modifier to show pricing plan rates as a percentage. </p>
         pub fn modifier_percentage(mut self, input: f64) -> Self {
@@ -6253,8 +4414,7 @@ pub mod update_pricing_rule_input {
         }
         /// <p> The new modifier to show pricing plan rates as a percentage. </p>
         pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.modifier_percentage = input;
-            self
+            self.modifier_percentage = input; self
         }
         /// <p> The set of tiering configurations for the pricing rule. </p>
         pub fn tiering(mut self, input: crate::model::UpdateTieringInput) -> Self {
@@ -6262,28 +4422,27 @@ pub mod update_pricing_rule_input {
             self
         }
         /// <p> The set of tiering configurations for the pricing rule. </p>
-        pub fn set_tiering(
-            mut self,
-            input: std::option::Option<crate::model::UpdateTieringInput>,
-        ) -> Self {
-            self.tiering = input;
-            self
+        pub fn set_tiering(mut self, input: std::option::Option<crate::model::UpdateTieringInput>) -> Self {
+            self.tiering = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdatePricingRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdatePricingRuleInput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                modifier_percentage: self.modifier_percentage,
-                tiering: self.tiering,
-            })
+        pub fn build(self) -> Result<crate::input::UpdatePricingRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdatePricingRuleInput {
+                    arn: self.arn
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    r#type: self.r#type
+                    ,
+                    modifier_percentage: self.modifier_percentage
+                    ,
+                    tiering: self.tiering
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -6298,125 +4457,76 @@ pub mod update_pricing_rule_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdatePricingRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePricingRule`](crate::operation::UpdatePricingRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdatePricingRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdatePricingRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdatePricingRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdatePricingRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/update-pricing-rule").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdatePricingRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdatePricingRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_pricing_rule(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_pricing_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdatePricingRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdatePricingRule",
-            "billingconductor",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdatePricingRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdatePricingRule", "billingconductor"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6429,7 +4539,7 @@ impl UpdatePricingRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingRulesAssociatedToPricingPlanInput {
+pub struct ListPricingRulesAssociatedToPricingPlanInput  {
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -6445,11 +4555,11 @@ pub struct ListPricingRulesAssociatedToPricingPlanInput {
 }
 impl ListPricingRulesAssociatedToPricingPlanInput {
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
-    pub fn pricing_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_arn(&self) -> std::option::Option<& str> {
         self.pricing_plan_arn.as_deref()
     }
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
@@ -6457,7 +4567,7 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
         self.max_results
     }
     /// <p> The optional pagination token returned by a previous call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -6465,7 +4575,7 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingRulesInput {
+pub struct ListPricingRulesInput  {
     /// <p> The preferred billing period to get the pricing plan. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -6481,11 +4591,11 @@ pub struct ListPricingRulesInput {
 }
 impl ListPricingRulesInput {
     /// <p> The preferred billing period to get the pricing plan. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
-    pub fn filters(&self) -> std::option::Option<&crate::model::ListPricingRulesFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::ListPricingRulesFilter> {
         self.filters.as_ref()
     }
     /// <p> The maximum number of pricing rules to retrieve. </p>
@@ -6493,7 +4603,7 @@ impl ListPricingRulesInput {
         self.max_results
     }
     /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -6501,7 +4611,7 @@ impl ListPricingRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreatePricingRuleInput {
+pub struct CreatePricingRuleInput  {
     /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -6525,42 +4635,41 @@ pub struct CreatePricingRuleInput {
     pub service: std::option::Option<std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     #[doc(hidden)]
     pub billing_entity: std::option::Option<std::string::String>,
     /// <p> The set of tiering configurations for the pricing rule. </p>
     #[doc(hidden)]
     pub tiering: std::option::Option<crate::model::CreateTieringInput>,
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
 }
 impl CreatePricingRuleInput {
     /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The pricing rule description. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    pub fn scope(&self) -> std::option::Option<&crate::model::PricingRuleScope> {
+    pub fn scope(&self) -> std::option::Option<& crate::model::PricingRuleScope> {
         self.scope.as_ref()
     }
     /// <p> The type of pricing rule. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PricingRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PricingRuleType> {
         self.r#type.as_ref()
     }
     /// <p> A percentage modifier that's applied on the public pricing rates. </p>
@@ -6568,36 +4677,33 @@ impl CreatePricingRuleInput {
         self.modifier_percentage
     }
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn billing_entity(&self) -> std::option::Option<&str> {
+    pub fn billing_entity(&self) -> std::option::Option<& str> {
         self.billing_entity.as_deref()
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn tiering(&self) -> std::option::Option<&crate::model::CreateTieringInput> {
+    pub fn tiering(&self) -> std::option::Option<& crate::model::CreateTieringInput> {
         self.tiering.as_ref()
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
-    pub fn usage_type(&self) -> std::option::Option<&str> {
+    pub fn usage_type(&self) -> std::option::Option<& str> {
         self.usage_type.as_deref()
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
 }
-impl std::fmt::Debug for CreatePricingRuleInput {
+impl  std::fmt::Debug for CreatePricingRuleInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePricingRuleInput");
         formatter.field("client_token", &self.client_token);
@@ -6619,14 +4725,14 @@ impl std::fmt::Debug for CreatePricingRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePricingRuleInput {
+pub struct DeletePricingRuleInput  {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -6634,7 +4740,7 @@ impl DeletePricingRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePricingRuleInput {
+pub struct UpdatePricingRuleInput  {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6656,19 +4762,19 @@ pub struct UpdatePricingRuleInput {
 }
 impl UpdatePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The new description for the pricing rule. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The new pricing rule type. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PricingRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PricingRuleType> {
         self.r#type.as_ref()
     }
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
@@ -6676,11 +4782,11 @@ impl UpdatePricingRuleInput {
         self.modifier_percentage
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn tiering(&self) -> std::option::Option<&crate::model::UpdateTieringInput> {
+    pub fn tiering(&self) -> std::option::Option<& crate::model::UpdateTieringInput> {
         self.tiering.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePricingRuleInput {
+impl  std::fmt::Debug for UpdatePricingRuleInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePricingRuleInput");
         formatter.field("arn", &self.arn);
@@ -6696,7 +4802,7 @@ impl std::fmt::Debug for UpdatePricingRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociatePricingRulesInput {
+pub struct DisassociatePricingRulesInput  {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6706,11 +4812,11 @@ pub struct DisassociatePricingRulesInput {
 }
 impl DisassociatePricingRulesInput {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub fn pricing_rule_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pricing_rule_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.pricing_rule_arns.as_deref()
     }
 }
@@ -6718,7 +4824,7 @@ impl DisassociatePricingRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePricingRulesInput {
+pub struct AssociatePricingRulesInput  {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6728,11 +4834,11 @@ pub struct AssociatePricingRulesInput {
 }
 impl AssociatePricingRulesInput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
-    pub fn pricing_rule_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pricing_rule_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.pricing_rule_arns.as_deref()
     }
 }
@@ -6740,7 +4846,7 @@ impl AssociatePricingRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingPlansAssociatedWithPricingRuleInput {
+pub struct ListPricingPlansAssociatedWithPricingRuleInput  {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -6756,11 +4862,11 @@ pub struct ListPricingPlansAssociatedWithPricingRuleInput {
 }
 impl ListPricingPlansAssociatedWithPricingRuleInput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    pub fn pricing_rule_arn(&self) -> std::option::Option<&str> {
+    pub fn pricing_rule_arn(&self) -> std::option::Option<& str> {
         self.pricing_rule_arn.as_deref()
     }
     /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
@@ -6768,7 +4874,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
         self.max_results
     }
     /// <p> The optional pagination token returned by a previous call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -6776,7 +4882,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingPlansInput {
+pub struct ListPricingPlansInput  {
     /// <p>The preferred billing period to get pricing plan. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -6792,11 +4898,11 @@ pub struct ListPricingPlansInput {
 }
 impl ListPricingPlansInput {
     /// <p>The preferred billing period to get pricing plan. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::model::ListPricingPlansFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::ListPricingPlansFilter> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of pricing plans to retrieve.</p>
@@ -6804,7 +4910,7 @@ impl ListPricingPlansInput {
         self.max_results
     }
     /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -6812,7 +4918,7 @@ impl ListPricingPlansInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreatePricingPlanInput {
+pub struct CreatePricingPlanInput  {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -6827,35 +4933,31 @@ pub struct CreatePricingPlanInput {
     pub pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreatePricingPlanInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the pricing plan. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    pub fn pricing_rule_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pricing_rule_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.pricing_rule_arns.as_deref()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePricingPlanInput {
+impl  std::fmt::Debug for CreatePricingPlanInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePricingPlanInput");
         formatter.field("client_token", &self.client_token);
@@ -6870,14 +4972,14 @@ impl std::fmt::Debug for CreatePricingPlanInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePricingPlanInput {
+pub struct DeletePricingPlanInput  {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -6885,7 +4987,7 @@ impl DeletePricingPlanInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePricingPlanInput {
+pub struct UpdatePricingPlanInput  {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6898,19 +5000,19 @@ pub struct UpdatePricingPlanInput {
 }
 impl UpdatePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the pricing plan. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePricingPlanInput {
+impl  std::fmt::Debug for UpdatePricingPlanInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePricingPlanInput");
         formatter.field("arn", &self.arn);
@@ -6923,7 +5025,7 @@ impl std::fmt::Debug for UpdatePricingPlanInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesAssociatedToCustomLineItemInput {
+pub struct ListResourcesAssociatedToCustomLineItemInput  {
     /// <p> The billing period for which the resource associations will be listed. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -6942,11 +5044,11 @@ pub struct ListResourcesAssociatedToCustomLineItemInput {
 }
 impl ListResourcesAssociatedToCustomLineItemInput {
     /// <p> The billing period for which the resource associations will be listed. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
@@ -6954,13 +5056,11 @@ impl ListResourcesAssociatedToCustomLineItemInput {
         self.max_results
     }
     /// <p> (Optional) The pagination token that's returned by a previous request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can specify the types of resources that should be retrieved. </p>
-    pub fn filters(
-        &self,
-    ) -> std::option::Option<&crate::model::ListResourcesAssociatedToCustomLineItemFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::ListResourcesAssociatedToCustomLineItemFilter> {
         self.filters.as_ref()
     }
 }
@@ -6968,7 +5068,7 @@ impl ListResourcesAssociatedToCustomLineItemInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomLineItemVersionsInput {
+pub struct ListCustomLineItemVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6984,7 +5084,7 @@ pub struct ListCustomLineItemVersionsInput {
 }
 impl ListCustomLineItemVersionsInput {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The maximum number of custom line item versions to retrieve.</p>
@@ -6992,11 +5092,11 @@ impl ListCustomLineItemVersionsInput {
         self.max_results
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::model::ListCustomLineItemVersionsFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::ListCustomLineItemVersionsFilter> {
         self.filters.as_ref()
     }
 }
@@ -7004,7 +5104,7 @@ impl ListCustomLineItemVersionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateResourcesFromCustomLineItemInput {
+pub struct BatchDisassociateResourcesFromCustomLineItemInput  {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
@@ -7017,17 +5117,15 @@ pub struct BatchDisassociateResourcesFromCustomLineItemInput {
 }
 impl BatchDisassociateResourcesFromCustomLineItemInput {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p> A list containing the ARNs of resources to be disassociated. </p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p> The billing period range in which the custom line item request will be applied. </p>
-    pub fn billing_period_range(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> std::option::Option<& crate::model::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
 }
@@ -7035,7 +5133,7 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateResourcesToCustomLineItemInput {
+pub struct BatchAssociateResourcesToCustomLineItemInput  {
     /// <p> A percentage custom line item ARN to associate the resources to. </p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
@@ -7048,17 +5146,15 @@ pub struct BatchAssociateResourcesToCustomLineItemInput {
 }
 impl BatchAssociateResourcesToCustomLineItemInput {
     /// <p> A percentage custom line item ARN to associate the resources to. </p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p> A list containing the ARNs of the resources to be associated. </p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p> The billing period range in which the custom line item request will be applied. </p>
-    pub fn billing_period_range(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> std::option::Option<& crate::model::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
 }
@@ -7066,7 +5162,7 @@ impl BatchAssociateResourcesToCustomLineItemInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomLineItemsInput {
+pub struct ListCustomLineItemsInput  {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -7082,7 +5178,7 @@ pub struct ListCustomLineItemsInput {
 }
 impl ListCustomLineItemsInput {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The maximum number of billing groups to retrieve. </p>
@@ -7090,11 +5186,11 @@ impl ListCustomLineItemsInput {
         self.max_results
     }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::model::ListCustomLineItemsFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::ListCustomLineItemsFilter> {
         self.filters.as_ref()
     }
 }
@@ -7102,7 +5198,7 @@ impl ListCustomLineItemsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateCustomLineItemInput {
+pub struct CreateCustomLineItemInput  {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -7120,50 +5216,42 @@ pub struct CreateCustomLineItemInput {
     pub billing_period_range: std::option::Option<crate::model::CustomLineItemBillingPeriodRange>,
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
     #[doc(hidden)]
     pub charge_details: std::option::Option<crate::model::CustomLineItemChargeDetails>,
 }
 impl CreateCustomLineItemInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p> The name of the custom line item. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
+    pub fn billing_group_arn(&self) -> std::option::Option<& str> {
         self.billing_group_arn.as_deref()
     }
     /// <p> A time range for which the custom line item is effective. </p>
-    pub fn billing_period_range(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> std::option::Option<& crate::model::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
-    pub fn charge_details(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomLineItemChargeDetails> {
+    pub fn charge_details(&self) -> std::option::Option<& crate::model::CustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
 }
-impl std::fmt::Debug for CreateCustomLineItemInput {
+impl  std::fmt::Debug for CreateCustomLineItemInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomLineItemInput");
         formatter.field("client_token", &self.client_token);
@@ -7180,7 +5268,7 @@ impl std::fmt::Debug for CreateCustomLineItemInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomLineItemInput {
+pub struct DeleteCustomLineItemInput  {
     /// <p> The ARN of the custom line item to be deleted. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7190,13 +5278,11 @@ pub struct DeleteCustomLineItemInput {
 }
 impl DeleteCustomLineItemInput {
     /// <p> The ARN of the custom line item to be deleted. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The billing period range in which the custom line item request will be applied. </p>
-    pub fn billing_period_range(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> std::option::Option<& crate::model::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
 }
@@ -7204,7 +5290,7 @@ impl DeleteCustomLineItemInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateCustomLineItemInput {
+pub struct UpdateCustomLineItemInput  {
     /// <p> The ARN of the custom line item to be updated. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7223,31 +5309,27 @@ pub struct UpdateCustomLineItemInput {
 }
 impl UpdateCustomLineItemInput {
     /// <p> The ARN of the custom line item to be updated. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The new name for the custom line item. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The new line item description of the custom line item. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
-    pub fn charge_details(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdateCustomLineItemChargeDetails> {
+    pub fn charge_details(&self) -> std::option::Option<& crate::model::UpdateCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
     /// <p> The billing period range in which the custom line item request will be applied. </p>
-    pub fn billing_period_range(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> std::option::Option<& crate::model::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateCustomLineItemInput {
+impl  std::fmt::Debug for UpdateCustomLineItemInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomLineItemInput");
         formatter.field("arn", &self.arn);
@@ -7262,7 +5344,7 @@ impl std::fmt::Debug for UpdateCustomLineItemInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateAccountsInput {
+pub struct DisassociateAccountsInput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7272,11 +5354,11 @@ pub struct DisassociateAccountsInput {
 }
 impl DisassociateAccountsInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The array of account IDs to disassociate. </p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.account_ids.as_deref()
     }
 }
@@ -7284,7 +5366,7 @@ impl DisassociateAccountsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAccountsInput {
+pub struct AssociateAccountsInput  {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7294,11 +5376,11 @@ pub struct AssociateAccountsInput {
 }
 impl AssociateAccountsInput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The associating array of account IDs. </p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.account_ids.as_deref()
     }
 }
@@ -7306,7 +5388,7 @@ impl AssociateAccountsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBillingGroupsInput {
+pub struct ListBillingGroupsInput  {
     /// <p>The preferred billing period to get billing groups. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -7322,7 +5404,7 @@ pub struct ListBillingGroupsInput {
 }
 impl ListBillingGroupsInput {
     /// <p>The preferred billing period to get billing groups. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>The maximum number of billing groups to retrieve. </p>
@@ -7330,11 +5412,11 @@ impl ListBillingGroupsInput {
         self.max_results
     }
     /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
-    pub fn filters(&self) -> std::option::Option<&crate::model::ListBillingGroupsFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::ListBillingGroupsFilter> {
         self.filters.as_ref()
     }
 }
@@ -7342,7 +5424,7 @@ impl ListBillingGroupsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateBillingGroupInput {
+pub struct CreateBillingGroupInput  {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -7363,45 +5445,39 @@ pub struct CreateBillingGroupInput {
     pub description: std::option::Option<std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateBillingGroupInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p> The billing group name. The names must be unique. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
-    pub fn account_grouping(&self) -> std::option::Option<&crate::model::AccountGrouping> {
+    pub fn account_grouping(&self) -> std::option::Option<& crate::model::AccountGrouping> {
         self.account_grouping.as_ref()
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn computation_preference(
-        &self,
-    ) -> std::option::Option<&crate::model::ComputationPreference> {
+    pub fn computation_preference(&self) -> std::option::Option<& crate::model::ComputationPreference> {
         self.computation_preference.as_ref()
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn primary_account_id(&self) -> std::option::Option<&str> {
+    pub fn primary_account_id(&self) -> std::option::Option<& str> {
         self.primary_account_id.as_deref()
     }
     /// <p>The description of the billing group. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBillingGroupInput {
+impl  std::fmt::Debug for CreateBillingGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBillingGroupInput");
         formatter.field("client_token", &self.client_token);
@@ -7418,14 +5494,14 @@ impl std::fmt::Debug for CreateBillingGroupInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBillingGroupInput {
+pub struct DeleteBillingGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -7433,7 +5509,7 @@ impl DeleteBillingGroupInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateBillingGroupInput {
+pub struct UpdateBillingGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7452,29 +5528,27 @@ pub struct UpdateBillingGroupInput {
 }
 impl UpdateBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::BillingGroupStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::BillingGroupStatus> {
         self.status.as_ref()
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn computation_preference(
-        &self,
-    ) -> std::option::Option<&crate::model::ComputationPreference> {
+    pub fn computation_preference(&self) -> std::option::Option<& crate::model::ComputationPreference> {
         self.computation_preference.as_ref()
     }
     /// <p>A description of the billing group. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBillingGroupInput {
+impl  std::fmt::Debug for UpdateBillingGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBillingGroupInput");
         formatter.field("arn", &self.arn);
@@ -7489,7 +5563,7 @@ impl std::fmt::Debug for UpdateBillingGroupInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to delete tags. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -7499,11 +5573,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to delete tags. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p> The tags to delete from the resource as a list of key-value pairs. </p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -7511,25 +5585,21 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tags to add to the resource as a list of key-value pairs. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p> The tags to add to the resource as a list of key-value pairs. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -7537,14 +5607,14 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p> The Amazon Resource Name (ARN) that identifies the resource to list the tags. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) that identifies the resource to list the tags. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -7552,7 +5622,7 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBillingGroupCostReportsInput {
+pub struct ListBillingGroupCostReportsInput  {
     /// <p>The preferred billing period for your report. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -7568,7 +5638,7 @@ pub struct ListBillingGroupCostReportsInput {
 }
 impl ListBillingGroupCostReportsInput {
     /// <p>The preferred billing period for your report. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>The maximum number of reports to retrieve. </p>
@@ -7576,11 +5646,11 @@ impl ListBillingGroupCostReportsInput {
         self.max_results
     }
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
-    pub fn filters(&self) -> std::option::Option<&crate::model::ListBillingGroupCostReportsFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::ListBillingGroupCostReportsFilter> {
         self.filters.as_ref()
     }
 }
@@ -7588,13 +5658,13 @@ impl ListBillingGroupCostReportsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAssociationsInput {
+pub struct ListAccountAssociationsInput  {
     /// <p> The preferred billing period to get account associations. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
-    /// <p>The filter on the account ID of the linked account, or any of the following:</p>
-    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+    /// <p>The filter on the account ID of the linked account, or any of the following:</p> 
+    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p> 
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p> 
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::model::ListAccountAssociationsFilter>,
@@ -7604,18 +5674,19 @@ pub struct ListAccountAssociationsInput {
 }
 impl ListAccountAssociationsInput {
     /// <p> The preferred billing period to get account associations. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
-    /// <p>The filter on the account ID of the linked account, or any of the following:</p>
-    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
-    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+    /// <p>The filter on the account ID of the linked account, or any of the following:</p> 
+    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p> 
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p> 
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
-    pub fn filters(&self) -> std::option::Option<&crate::model::ListAccountAssociationsFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::model::ListAccountAssociationsFilter> {
         self.filters.as_ref()
     }
     /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
+

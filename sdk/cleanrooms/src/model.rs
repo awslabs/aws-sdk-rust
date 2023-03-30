@@ -3,7 +3,7 @@
 /// <p>Describes validation errors for specific input parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the input parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the input parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A message for the input validation error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the input parameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A message for the input validation error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>A message for the input validation error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -97,60 +99,52 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
     InvalidConfiguration,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "INVALID_CONFIGURATION" => ValidationExceptionReason::InvalidConfiguration,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::InvalidConfiguration => "INVALID_CONFIGURATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIELD_VALIDATION_FAILED", "INVALID_CONFIGURATION"]
+        &[
+            "FIELD_VALIDATION_FAILED", "INVALID_CONFIGURATION"
+        ]
     }
 }
 impl AsRef<str> for ValidationExceptionReason {
@@ -165,9 +159,9 @@ impl AsRef<str> for ValidationExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -191,22 +185,14 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Collaboration,
@@ -217,7 +203,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Membership,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -226,17 +212,17 @@ impl std::convert::From<&str> for ResourceType {
             "CONFIGURED_TABLE" => ResourceType::ConfiguredTable,
             "CONFIGURED_TABLE_ASSOCIATION" => ResourceType::ConfiguredTableAssociation,
             "MEMBERSHIP" => ResourceType::Membership,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -245,16 +231,13 @@ impl ResourceType {
             ResourceType::ConfiguredTable => "CONFIGURED_TABLE",
             ResourceType::ConfiguredTableAssociation => "CONFIGURED_TABLE_ASSOCIATION",
             ResourceType::Membership => "MEMBERSHIP",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COLLABORATION",
-            "CONFIGURED_TABLE",
-            "CONFIGURED_TABLE_ASSOCIATION",
-            "MEMBERSHIP",
+            "COLLABORATION", "CONFIGURED_TABLE", "CONFIGURED_TABLE_ASSOCIATION", "MEMBERSHIP"
         ]
     }
 }
@@ -270,9 +253,9 @@ impl AsRef<str> for ResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
@@ -295,22 +278,14 @@ impl AsRef<str> for ResourceType {
 /// Specifically, when `conflictexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AlreadyExists,
@@ -319,7 +294,7 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     SubresourcesExist,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
@@ -327,19 +302,17 @@ impl std::convert::From<&str> for ConflictExceptionReason {
             "ALREADY_EXISTS" => ConflictExceptionReason::AlreadyExists,
             "INVALID_STATE" => ConflictExceptionReason::InvalidState,
             "SUBRESOURCES_EXIST" => ConflictExceptionReason::SubresourcesExist,
-            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictExceptionReason::from(s))
+                }
+            }
 impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -347,12 +320,14 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::AlreadyExists => "ALREADY_EXISTS",
             ConflictExceptionReason::InvalidState => "INVALID_STATE",
             ConflictExceptionReason::SubresourcesExist => "SUBRESOURCES_EXIST",
-            ConflictExceptionReason::Unknown(value) => value.as_str(),
+            ConflictExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALREADY_EXISTS", "INVALID_STATE", "SUBRESOURCES_EXIST"]
+        &[
+            "ALREADY_EXISTS", "INVALID_STATE", "SUBRESOURCES_EXIST"
+        ]
     }
 }
 impl AsRef<str> for ConflictExceptionReason {
@@ -367,9 +342,9 @@ impl AsRef<str> for ConflictExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessdeniedexceptionreason = unimplemented!();
 /// match accessdeniedexceptionreason {
@@ -390,56 +365,48 @@ impl AsRef<str> for ConflictExceptionReason {
 /// Specifically, when `accessdeniedexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessDeniedExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessDeniedExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InsufficientPermissions,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessDeniedExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "INSUFFICIENT_PERMISSIONS" => AccessDeniedExceptionReason::InsufficientPermissions,
-            other => AccessDeniedExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AccessDeniedExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessDeniedExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessDeniedExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessDeniedExceptionReason::from(s))
+                }
+            }
 impl AccessDeniedExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessDeniedExceptionReason::InsufficientPermissions => "INSUFFICIENT_PERMISSIONS",
-            AccessDeniedExceptionReason::Unknown(value) => value.as_str(),
+            AccessDeniedExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSUFFICIENT_PERMISSIONS"]
+        &[
+            "INSUFFICIENT_PERMISSIONS"
+        ]
     }
 }
 impl AsRef<str> for AccessDeniedExceptionReason {
@@ -451,7 +418,7 @@ impl AsRef<str> for AccessDeniedExceptionReason {
 /// <p>The parameters for an AWS Clean Rooms protected query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProtectedQuery {
+pub struct ProtectedQuery  {
     /// <p>The identifier for a protected query instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -485,51 +452,47 @@ pub struct ProtectedQuery {
 }
 impl ProtectedQuery {
     /// <p>The identifier for a protected query instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier for the membership.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The ARN of the membership.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> std::option::Option<& str> {
         self.membership_arn.as_deref()
     }
     /// <p>The time at which the protected query was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The protected query SQL parameters.</p>
-    pub fn sql_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtectedQuerySqlParameters> {
+    pub fn sql_parameters(&self) -> std::option::Option<& crate::model::ProtectedQuerySqlParameters> {
         self.sql_parameters.as_ref()
     }
     /// <p>The status of the query.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProtectedQueryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProtectedQueryStatus> {
         self.status.as_ref()
     }
     /// <p>Contains any details needed to write the query results.</p>
-    pub fn result_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtectedQueryResultConfiguration> {
+    pub fn result_configuration(&self) -> std::option::Option<& crate::model::ProtectedQueryResultConfiguration> {
         self.result_configuration.as_ref()
     }
     /// <p>Statistics about protected query execution.</p>
-    pub fn statistics(&self) -> std::option::Option<&crate::model::ProtectedQueryStatistics> {
+    pub fn statistics(&self) -> std::option::Option<& crate::model::ProtectedQueryStatistics> {
         self.statistics.as_ref()
     }
     /// <p>The result of the protected query.</p>
-    pub fn result(&self) -> std::option::Option<&crate::model::ProtectedQueryResult> {
+    pub fn result(&self) -> std::option::Option<& crate::model::ProtectedQueryResult> {
         self.result.as_ref()
     }
     /// <p>An error thrown by the protected query.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ProtectedQueryError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ProtectedQueryError> {
         self.error.as_ref()
     }
 }
-impl std::fmt::Debug for ProtectedQuery {
+impl  std::fmt::Debug for ProtectedQuery  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectedQuery");
         formatter.field("id", &self.id);
@@ -547,7 +510,7 @@ impl std::fmt::Debug for ProtectedQuery {
 }
 /// See [`ProtectedQuery`](crate::model::ProtectedQuery).
 pub mod protected_query {
-
+    
     /// A builder for [`ProtectedQuery`](crate::model::ProtectedQuery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -557,8 +520,7 @@ pub mod protected_query {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) sql_parameters: std::option::Option<crate::model::ProtectedQuerySqlParameters>,
         pub(crate) status: std::option::Option<crate::model::ProtectedQueryStatus>,
-        pub(crate) result_configuration:
-            std::option::Option<crate::model::ProtectedQueryResultConfiguration>,
+        pub(crate) result_configuration: std::option::Option<crate::model::ProtectedQueryResultConfiguration>,
         pub(crate) statistics: std::option::Option<crate::model::ProtectedQueryStatistics>,
         pub(crate) result: std::option::Option<crate::model::ProtectedQueryResult>,
         pub(crate) error: std::option::Option<crate::model::ProtectedQueryError>,
@@ -571,8 +533,7 @@ pub mod protected_query {
         }
         /// <p>The identifier for a protected query instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The identifier for the membership.</p>
         pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -580,12 +541,8 @@ pub mod protected_query {
             self
         }
         /// <p>The identifier for the membership.</p>
-        pub fn set_membership_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_id = input;
-            self
+        pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_id = input; self
         }
         /// <p>The ARN of the membership.</p>
         pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -593,12 +550,8 @@ pub mod protected_query {
             self
         }
         /// <p>The ARN of the membership.</p>
-        pub fn set_membership_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_arn = input;
-            self
+        pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_arn = input; self
         }
         /// <p>The time at which the protected query was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -606,12 +559,8 @@ pub mod protected_query {
             self
         }
         /// <p>The time at which the protected query was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The protected query SQL parameters.</p>
         pub fn sql_parameters(mut self, input: crate::model::ProtectedQuerySqlParameters) -> Self {
@@ -619,12 +568,8 @@ pub mod protected_query {
             self
         }
         /// <p>The protected query SQL parameters.</p>
-        pub fn set_sql_parameters(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQuerySqlParameters>,
-        ) -> Self {
-            self.sql_parameters = input;
-            self
+        pub fn set_sql_parameters(mut self, input: std::option::Option<crate::model::ProtectedQuerySqlParameters>) -> Self {
+            self.sql_parameters = input; self
         }
         /// <p>The status of the query.</p>
         pub fn status(mut self, input: crate::model::ProtectedQueryStatus) -> Self {
@@ -632,28 +577,17 @@ pub mod protected_query {
             self
         }
         /// <p>The status of the query.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProtectedQueryStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Contains any details needed to write the query results.</p>
-        pub fn result_configuration(
-            mut self,
-            input: crate::model::ProtectedQueryResultConfiguration,
-        ) -> Self {
+        pub fn result_configuration(mut self, input: crate::model::ProtectedQueryResultConfiguration) -> Self {
             self.result_configuration = Some(input);
             self
         }
         /// <p>Contains any details needed to write the query results.</p>
-        pub fn set_result_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryResultConfiguration>,
-        ) -> Self {
-            self.result_configuration = input;
-            self
+        pub fn set_result_configuration(mut self, input: std::option::Option<crate::model::ProtectedQueryResultConfiguration>) -> Self {
+            self.result_configuration = input; self
         }
         /// <p>Statistics about protected query execution.</p>
         pub fn statistics(mut self, input: crate::model::ProtectedQueryStatistics) -> Self {
@@ -661,12 +595,8 @@ pub mod protected_query {
             self
         }
         /// <p>Statistics about protected query execution.</p>
-        pub fn set_statistics(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryStatistics>,
-        ) -> Self {
-            self.statistics = input;
-            self
+        pub fn set_statistics(mut self, input: std::option::Option<crate::model::ProtectedQueryStatistics>) -> Self {
+            self.statistics = input; self
         }
         /// <p>The result of the protected query.</p>
         pub fn result(mut self, input: crate::model::ProtectedQueryResult) -> Self {
@@ -674,12 +604,8 @@ pub mod protected_query {
             self
         }
         /// <p>The result of the protected query.</p>
-        pub fn set_result(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryResult>,
-        ) -> Self {
-            self.result = input;
-            self
+        pub fn set_result(mut self, input: std::option::Option<crate::model::ProtectedQueryResult>) -> Self {
+            self.result = input; self
         }
         /// <p>An error thrown by the protected query.</p>
         pub fn error(mut self, input: crate::model::ProtectedQueryError) -> Self {
@@ -687,26 +613,32 @@ pub mod protected_query {
             self
         }
         /// <p>An error thrown by the protected query.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ProtectedQueryError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQuery`](crate::model::ProtectedQuery).
         pub fn build(self) -> crate::model::ProtectedQuery {
             crate::model::ProtectedQuery {
-                id: self.id,
-                membership_id: self.membership_id,
-                membership_arn: self.membership_arn,
-                create_time: self.create_time,
-                sql_parameters: self.sql_parameters,
-                status: self.status,
-                result_configuration: self.result_configuration,
-                statistics: self.statistics,
-                result: self.result,
-                error: self.error,
+                id: self.id
+                ,
+                membership_id: self.membership_id
+                ,
+                membership_arn: self.membership_arn
+                ,
+                create_time: self.create_time
+                ,
+                sql_parameters: self.sql_parameters
+                ,
+                status: self.status
+                ,
+                result_configuration: self.result_configuration
+                ,
+                statistics: self.statistics
+                ,
+                result: self.result
+                ,
+                error: self.error
+                ,
             }
         }
     }
@@ -726,6 +658,8 @@ pub mod protected_query {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ProtectedQuery {
     /// Creates a new builder-style object to manufacture [`ProtectedQuery`](crate::model::ProtectedQuery).
@@ -737,7 +671,7 @@ impl ProtectedQuery {
 /// <p>Details of errors thrown by the protected query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectedQueryError {
+pub struct ProtectedQueryError  {
     /// <p>A description of why the query failed.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -747,17 +681,17 @@ pub struct ProtectedQueryError {
 }
 impl ProtectedQueryError {
     /// <p>A description of why the query failed.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>An error code for the error.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 /// See [`ProtectedQueryError`](crate::model::ProtectedQueryError).
 pub mod protected_query_error {
-
+    
     /// A builder for [`ProtectedQueryError`](crate::model::ProtectedQueryError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -772,8 +706,7 @@ pub mod protected_query_error {
         }
         /// <p>A description of why the query failed.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>An error code for the error.</p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -782,17 +715,20 @@ pub mod protected_query_error {
         }
         /// <p>An error code for the error.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQueryError`](crate::model::ProtectedQueryError).
         pub fn build(self) -> crate::model::ProtectedQueryError {
             crate::model::ProtectedQueryError {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectedQueryError {
     /// Creates a new builder-style object to manufacture [`ProtectedQueryError`](crate::model::ProtectedQueryError).
@@ -804,20 +740,20 @@ impl ProtectedQueryError {
 /// <p>Details about the query results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectedQueryResult {
+pub struct ProtectedQueryResult  {
     /// <p>The output of the protected query.</p>
     #[doc(hidden)]
     pub output: std::option::Option<crate::model::ProtectedQueryOutput>,
 }
 impl ProtectedQueryResult {
     /// <p>The output of the protected query.</p>
-    pub fn output(&self) -> std::option::Option<&crate::model::ProtectedQueryOutput> {
+    pub fn output(&self) -> std::option::Option<& crate::model::ProtectedQueryOutput> {
         self.output.as_ref()
     }
 }
 /// See [`ProtectedQueryResult`](crate::model::ProtectedQueryResult).
 pub mod protected_query_result {
-
+    
     /// A builder for [`ProtectedQueryResult`](crate::model::ProtectedQueryResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -830,20 +766,19 @@ pub mod protected_query_result {
             self
         }
         /// <p>The output of the protected query.</p>
-        pub fn set_output(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryOutput>,
-        ) -> Self {
-            self.output = input;
-            self
+        pub fn set_output(mut self, input: std::option::Option<crate::model::ProtectedQueryOutput>) -> Self {
+            self.output = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQueryResult`](crate::model::ProtectedQueryResult).
         pub fn build(self) -> crate::model::ProtectedQueryResult {
             crate::model::ProtectedQueryResult {
-                output: self.output,
+                output: self.output
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectedQueryResult {
     /// Creates a new builder-style object to manufacture [`ProtectedQueryResult`](crate::model::ProtectedQueryResult).
@@ -873,11 +808,7 @@ impl ProtectedQueryOutput {
     /// Tries to convert the enum instance into [`S3`](crate::model::ProtectedQueryOutput::S3), extracting the inner [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> std::result::Result<&crate::model::ProtectedQueryS3Output, &Self> {
-        if let ProtectedQueryOutput::S3(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ProtectedQueryOutput::S3(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::model::ProtectedQueryOutput::S3).
     pub fn is_s3(&self) -> bool {
@@ -892,20 +823,20 @@ impl ProtectedQueryOutput {
 /// <p>Contains output information for protected queries with an S3 output type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectedQueryS3Output {
+pub struct ProtectedQueryS3Output  {
     /// <p>The S3 location of the result.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl ProtectedQueryS3Output {
     /// <p>The S3 location of the result.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 /// See [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
 pub mod protected_query_s3_output {
-
+    
     /// A builder for [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -919,16 +850,18 @@ pub mod protected_query_s3_output {
         }
         /// <p>The S3 location of the result.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
         pub fn build(self) -> crate::model::ProtectedQueryS3Output {
             crate::model::ProtectedQueryS3Output {
-                location: self.location,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectedQueryS3Output {
     /// Creates a new builder-style object to manufacture [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
@@ -940,7 +873,7 @@ impl ProtectedQueryS3Output {
 /// <p>Contains statistics about the execution of the protected query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectedQueryStatistics {
+pub struct ProtectedQueryStatistics  {
     /// <p>The duration of the Protected Query, from creation until query completion.</p>
     #[doc(hidden)]
     pub total_duration_in_millis: std::option::Option<i64>,
@@ -953,7 +886,7 @@ impl ProtectedQueryStatistics {
 }
 /// See [`ProtectedQueryStatistics`](crate::model::ProtectedQueryStatistics).
 pub mod protected_query_statistics {
-
+    
     /// A builder for [`ProtectedQueryStatistics`](crate::model::ProtectedQueryStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -967,16 +900,18 @@ pub mod protected_query_statistics {
         }
         /// <p>The duration of the Protected Query, from creation until query completion.</p>
         pub fn set_total_duration_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_duration_in_millis = input;
-            self
+            self.total_duration_in_millis = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQueryStatistics`](crate::model::ProtectedQueryStatistics).
         pub fn build(self) -> crate::model::ProtectedQueryStatistics {
             crate::model::ProtectedQueryStatistics {
-                total_duration_in_millis: self.total_duration_in_millis,
+                total_duration_in_millis: self.total_duration_in_millis
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectedQueryStatistics {
     /// Creates a new builder-style object to manufacture [`ProtectedQueryStatistics`](crate::model::ProtectedQueryStatistics).
@@ -988,52 +923,45 @@ impl ProtectedQueryStatistics {
 /// <p>Contains configurations for protected query results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectedQueryResultConfiguration {
+pub struct ProtectedQueryResultConfiguration  {
     /// <p>Configuration for protected query results.</p>
     #[doc(hidden)]
     pub output_configuration: std::option::Option<crate::model::ProtectedQueryOutputConfiguration>,
 }
 impl ProtectedQueryResultConfiguration {
     /// <p>Configuration for protected query results.</p>
-    pub fn output_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtectedQueryOutputConfiguration> {
+    pub fn output_configuration(&self) -> std::option::Option<& crate::model::ProtectedQueryOutputConfiguration> {
         self.output_configuration.as_ref()
     }
 }
 /// See [`ProtectedQueryResultConfiguration`](crate::model::ProtectedQueryResultConfiguration).
 pub mod protected_query_result_configuration {
-
+    
     /// A builder for [`ProtectedQueryResultConfiguration`](crate::model::ProtectedQueryResultConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) output_configuration:
-            std::option::Option<crate::model::ProtectedQueryOutputConfiguration>,
+        pub(crate) output_configuration: std::option::Option<crate::model::ProtectedQueryOutputConfiguration>,
     }
     impl Builder {
         /// <p>Configuration for protected query results.</p>
-        pub fn output_configuration(
-            mut self,
-            input: crate::model::ProtectedQueryOutputConfiguration,
-        ) -> Self {
+        pub fn output_configuration(mut self, input: crate::model::ProtectedQueryOutputConfiguration) -> Self {
             self.output_configuration = Some(input);
             self
         }
         /// <p>Configuration for protected query results.</p>
-        pub fn set_output_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryOutputConfiguration>,
-        ) -> Self {
-            self.output_configuration = input;
-            self
+        pub fn set_output_configuration(mut self, input: std::option::Option<crate::model::ProtectedQueryOutputConfiguration>) -> Self {
+            self.output_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQueryResultConfiguration`](crate::model::ProtectedQueryResultConfiguration).
         pub fn build(self) -> crate::model::ProtectedQueryResultConfiguration {
             crate::model::ProtectedQueryResultConfiguration {
-                output_configuration: self.output_configuration,
+                output_configuration: self.output_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectedQueryResultConfiguration {
     /// Creates a new builder-style object to manufacture [`ProtectedQueryResultConfiguration`](crate::model::ProtectedQueryResultConfiguration).
@@ -1062,14 +990,8 @@ impl ProtectedQueryOutputConfiguration {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`S3`](crate::model::ProtectedQueryOutputConfiguration::S3), extracting the inner [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3(
-        &self,
-    ) -> std::result::Result<&crate::model::ProtectedQueryS3OutputConfiguration, &Self> {
-        if let ProtectedQueryOutputConfiguration::S3(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_s3(&self) -> std::result::Result<&crate::model::ProtectedQueryS3OutputConfiguration, &Self> {
+        if let ProtectedQueryOutputConfiguration::S3(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::model::ProtectedQueryOutputConfiguration::S3).
     pub fn is_s3(&self) -> bool {
@@ -1084,7 +1006,7 @@ impl ProtectedQueryOutputConfiguration {
 /// <p>Contains the configuration to write the query results to S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectedQueryS3OutputConfiguration {
+pub struct ProtectedQueryS3OutputConfiguration  {
     /// <p>Intended file format of the result.</p>
     #[doc(hidden)]
     pub result_format: std::option::Option<crate::model::ResultFormat>,
@@ -1097,21 +1019,21 @@ pub struct ProtectedQueryS3OutputConfiguration {
 }
 impl ProtectedQueryS3OutputConfiguration {
     /// <p>Intended file format of the result.</p>
-    pub fn result_format(&self) -> std::option::Option<&crate::model::ResultFormat> {
+    pub fn result_format(&self) -> std::option::Option<& crate::model::ResultFormat> {
         self.result_format.as_ref()
     }
     /// <p>The S3 bucket to unload the protected query results.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The S3 prefix to unload the protected query results.</p>
-    pub fn key_prefix(&self) -> std::option::Option<&str> {
+    pub fn key_prefix(&self) -> std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
 }
 /// See [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
 pub mod protected_query_s3_output_configuration {
-
+    
     /// A builder for [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1126,12 +1048,8 @@ pub mod protected_query_s3_output_configuration {
             self
         }
         /// <p>Intended file format of the result.</p>
-        pub fn set_result_format(
-            mut self,
-            input: std::option::Option<crate::model::ResultFormat>,
-        ) -> Self {
-            self.result_format = input;
-            self
+        pub fn set_result_format(mut self, input: std::option::Option<crate::model::ResultFormat>) -> Self {
+            self.result_format = input; self
         }
         /// <p>The S3 bucket to unload the protected query results.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1140,8 +1058,7 @@ pub mod protected_query_s3_output_configuration {
         }
         /// <p>The S3 bucket to unload the protected query results.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The S3 prefix to unload the protected query results.</p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1150,18 +1067,22 @@ pub mod protected_query_s3_output_configuration {
         }
         /// <p>The S3 prefix to unload the protected query results.</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_prefix = input;
-            self
+            self.key_prefix = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
         pub fn build(self) -> crate::model::ProtectedQueryS3OutputConfiguration {
             crate::model::ProtectedQueryS3OutputConfiguration {
-                result_format: self.result_format,
-                bucket: self.bucket,
-                key_prefix: self.key_prefix,
+                result_format: self.result_format
+                ,
+                bucket: self.bucket
+                ,
+                key_prefix: self.key_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectedQueryS3OutputConfiguration {
     /// Creates a new builder-style object to manufacture [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
@@ -1176,9 +1097,9 @@ impl ProtectedQueryS3OutputConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resultformat = unimplemented!();
 /// match resultformat {
@@ -1200,58 +1121,52 @@ impl ProtectedQueryS3OutputConfiguration {
 /// Specifically, when `resultformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResultFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResultFormat {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
     #[allow(missing_docs)] // documentation missing in model
     Parquet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResultFormat {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => ResultFormat::Csv,
             "PARQUET" => ResultFormat::Parquet,
-            other => ResultFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResultFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResultFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResultFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResultFormat::from(s))
+                }
+            }
 impl ResultFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResultFormat::Csv => "CSV",
             ResultFormat::Parquet => "PARQUET",
-            ResultFormat::Unknown(value) => value.as_str(),
+            ResultFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CSV", "PARQUET"]
+        &[
+            "CSV", "PARQUET"
+        ]
     }
 }
 impl AsRef<str> for ResultFormat {
@@ -1266,9 +1181,9 @@ impl AsRef<str> for ResultFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protectedquerystatus = unimplemented!();
 /// match protectedquerystatus {
@@ -1295,22 +1210,14 @@ impl AsRef<str> for ResultFormat {
 /// Specifically, when `protectedquerystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProtectedQueryStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProtectedQueryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -1327,7 +1234,7 @@ pub enum ProtectedQueryStatus {
     #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtectedQueryStatus {
     fn from(s: &str) -> Self {
@@ -1339,19 +1246,17 @@ impl std::convert::From<&str> for ProtectedQueryStatus {
             "SUBMITTED" => ProtectedQueryStatus::Submitted,
             "SUCCESS" => ProtectedQueryStatus::Success,
             "TIMED_OUT" => ProtectedQueryStatus::TimedOut,
-            other => {
-                ProtectedQueryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProtectedQueryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProtectedQueryStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProtectedQueryStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProtectedQueryStatus::from(s))
+                }
+            }
 impl ProtectedQueryStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1363,19 +1268,13 @@ impl ProtectedQueryStatus {
             ProtectedQueryStatus::Submitted => "SUBMITTED",
             ProtectedQueryStatus::Success => "SUCCESS",
             ProtectedQueryStatus::TimedOut => "TIMED_OUT",
-            ProtectedQueryStatus::Unknown(value) => value.as_str(),
+            ProtectedQueryStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELLED",
-            "CANCELLING",
-            "FAILED",
-            "STARTED",
-            "SUBMITTED",
-            "SUCCESS",
-            "TIMED_OUT",
+            "CANCELLED", "CANCELLING", "FAILED", "STARTED", "SUBMITTED", "SUCCESS", "TIMED_OUT"
         ]
     }
 }
@@ -1388,18 +1287,18 @@ impl AsRef<str> for ProtectedQueryStatus {
 /// <p>The parameters for the SQL type Protected Query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProtectedQuerySqlParameters {
+pub struct ProtectedQuerySqlParameters  {
     /// <p>The query string to be submitted.</p>
     #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
 }
 impl ProtectedQuerySqlParameters {
     /// <p>The query string to be submitted.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
 }
-impl std::fmt::Debug for ProtectedQuerySqlParameters {
+impl  std::fmt::Debug for ProtectedQuerySqlParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectedQuerySqlParameters");
         formatter.field("query_string", &"*** Sensitive Data Redacted ***");
@@ -1408,7 +1307,7 @@ impl std::fmt::Debug for ProtectedQuerySqlParameters {
 }
 /// See [`ProtectedQuerySqlParameters`](crate::model::ProtectedQuerySqlParameters).
 pub mod protected_query_sql_parameters {
-
+    
     /// A builder for [`ProtectedQuerySqlParameters`](crate::model::ProtectedQuerySqlParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1422,13 +1321,13 @@ pub mod protected_query_sql_parameters {
         }
         /// <p>The query string to be submitted.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.query_string = input;
-            self
+            self.query_string = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQuerySqlParameters`](crate::model::ProtectedQuerySqlParameters).
         pub fn build(self) -> crate::model::ProtectedQuerySqlParameters {
             crate::model::ProtectedQuerySqlParameters {
-                query_string: self.query_string,
+                query_string: self.query_string
+                ,
             }
         }
     }
@@ -1439,6 +1338,8 @@ pub mod protected_query_sql_parameters {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ProtectedQuerySqlParameters {
     /// Creates a new builder-style object to manufacture [`ProtectedQuerySqlParameters`](crate::model::ProtectedQuerySqlParameters).
@@ -1453,9 +1354,9 @@ impl ProtectedQuerySqlParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targetprotectedquerystatus = unimplemented!();
 /// match targetprotectedquerystatus {
@@ -1476,56 +1377,48 @@ impl ProtectedQuerySqlParameters {
 /// Specifically, when `targetprotectedquerystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetProtectedQueryStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TargetProtectedQueryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetProtectedQueryStatus {
     fn from(s: &str) -> Self {
         match s {
             "CANCELLED" => TargetProtectedQueryStatus::Cancelled,
-            other => TargetProtectedQueryStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TargetProtectedQueryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TargetProtectedQueryStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetProtectedQueryStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TargetProtectedQueryStatus::from(s))
+                }
+            }
 impl TargetProtectedQueryStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetProtectedQueryStatus::Cancelled => "CANCELLED",
-            TargetProtectedQueryStatus::Unknown(value) => value.as_str(),
+            TargetProtectedQueryStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELLED"]
+        &[
+            "CANCELLED"
+        ]
     }
 }
 impl AsRef<str> for TargetProtectedQueryStatus {
@@ -1540,9 +1433,9 @@ impl AsRef<str> for TargetProtectedQueryStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protectedquerytype = unimplemented!();
 /// match protectedquerytype {
@@ -1563,56 +1456,48 @@ impl AsRef<str> for TargetProtectedQueryStatus {
 /// Specifically, when `protectedquerytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProtectedQueryType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProtectedQueryType {
     #[allow(missing_docs)] // documentation missing in model
     Sql,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtectedQueryType {
     fn from(s: &str) -> Self {
         match s {
             "SQL" => ProtectedQueryType::Sql,
-            other => {
-                ProtectedQueryType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProtectedQueryType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProtectedQueryType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProtectedQueryType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProtectedQueryType::from(s))
+                }
+            }
 impl ProtectedQueryType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProtectedQueryType::Sql => "SQL",
-            ProtectedQueryType::Unknown(value) => value.as_str(),
+            ProtectedQueryType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SQL"]
+        &[
+            "SQL"
+        ]
     }
 }
 impl AsRef<str> for ProtectedQueryType {
@@ -1624,7 +1509,7 @@ impl AsRef<str> for ProtectedQueryType {
 /// <p>The protected query summary for the objects listed by the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectedQuerySummary {
+pub struct ProtectedQuerySummary  {
     /// <p>The unique ID of the protected query.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1643,29 +1528,29 @@ pub struct ProtectedQuerySummary {
 }
 impl ProtectedQuerySummary {
     /// <p>The unique ID of the protected query.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ID for the membership that initiated the protected query.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> std::option::Option<& str> {
         self.membership_arn.as_deref()
     }
     /// <p>The time the protected query was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProtectedQueryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProtectedQueryStatus> {
         self.status.as_ref()
     }
 }
 /// See [`ProtectedQuerySummary`](crate::model::ProtectedQuerySummary).
 pub mod protected_query_summary {
-
+    
     /// A builder for [`ProtectedQuerySummary`](crate::model::ProtectedQuerySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1683,8 +1568,7 @@ pub mod protected_query_summary {
         }
         /// <p>The unique ID of the protected query.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ID for the membership that initiated the protected query.</p>
         pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1692,12 +1576,8 @@ pub mod protected_query_summary {
             self
         }
         /// <p>The unique ID for the membership that initiated the protected query.</p>
-        pub fn set_membership_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_id = input;
-            self
+        pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_id = input; self
         }
         /// <p>The unique ARN for the membership that initiated the protected query.</p>
         pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1705,12 +1585,8 @@ pub mod protected_query_summary {
             self
         }
         /// <p>The unique ARN for the membership that initiated the protected query.</p>
-        pub fn set_membership_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_arn = input;
-            self
+        pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_arn = input; self
         }
         /// <p>The time the protected query was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1718,12 +1594,8 @@ pub mod protected_query_summary {
             self
         }
         /// <p>The time the protected query was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
         pub fn status(mut self, input: crate::model::ProtectedQueryStatus) -> Self {
@@ -1731,24 +1603,27 @@ pub mod protected_query_summary {
             self
         }
         /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProtectedQueryStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ProtectedQuerySummary`](crate::model::ProtectedQuerySummary).
         pub fn build(self) -> crate::model::ProtectedQuerySummary {
             crate::model::ProtectedQuerySummary {
-                id: self.id,
-                membership_id: self.membership_id,
-                membership_arn: self.membership_arn,
-                create_time: self.create_time,
-                status: self.status,
+                id: self.id
+                ,
+                membership_id: self.membership_id
+                ,
+                membership_arn: self.membership_arn
+                ,
+                create_time: self.create_time
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectedQuerySummary {
     /// Creates a new builder-style object to manufacture [`ProtectedQuerySummary`](crate::model::ProtectedQuerySummary).
@@ -1760,7 +1635,7 @@ impl ProtectedQuerySummary {
 /// <p>The membership object listed by the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MembershipSummary {
+pub struct MembershipSummary  {
     /// <p>The unique ID for the membership's collaboration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1797,53 +1672,53 @@ pub struct MembershipSummary {
 }
 impl MembershipSummary {
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ARN for the membership.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
-    pub fn collaboration_arn(&self) -> std::option::Option<&str> {
+    pub fn collaboration_arn(&self) -> std::option::Option<& str> {
         self.collaboration_arn.as_deref()
     }
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn collaboration_id(&self) -> std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
     /// <p>The identifier of the AWS principal that created the collaboration. Currently only supports AWS account ID.</p>
-    pub fn collaboration_creator_account_id(&self) -> std::option::Option<&str> {
+    pub fn collaboration_creator_account_id(&self) -> std::option::Option<& str> {
         self.collaboration_creator_account_id.as_deref()
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn collaboration_creator_display_name(&self) -> std::option::Option<&str> {
+    pub fn collaboration_creator_display_name(&self) -> std::option::Option<& str> {
         self.collaboration_creator_display_name.as_deref()
     }
     /// <p>The name for the membership's collaboration.</p>
-    pub fn collaboration_name(&self) -> std::option::Option<&str> {
+    pub fn collaboration_name(&self) -> std::option::Option<& str> {
         self.collaboration_name.as_deref()
     }
     /// <p>The time when the membership was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the membership metadata was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MembershipStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MembershipStatus> {
         self.status.as_ref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn member_abilities(&self) -> std::option::Option<&[crate::model::MemberAbility]> {
+    pub fn member_abilities(&self) -> std::option::Option<& [crate::model::MemberAbility]> {
         self.member_abilities.as_deref()
     }
 }
 /// See [`MembershipSummary`](crate::model::MembershipSummary).
 pub mod membership_summary {
-
+    
     /// A builder for [`MembershipSummary`](crate::model::MembershipSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1857,8 +1732,7 @@ pub mod membership_summary {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::MembershipStatus>,
-        pub(crate) member_abilities:
-            std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
+        pub(crate) member_abilities: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
     }
     impl Builder {
         /// <p>The unique ID for the membership's collaboration.</p>
@@ -1868,8 +1742,7 @@ pub mod membership_summary {
         }
         /// <p>The unique ID for the membership's collaboration.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ARN for the membership.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1878,8 +1751,7 @@ pub mod membership_summary {
         }
         /// <p>The unique ARN for the membership.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique ARN for the membership's associated collaboration.</p>
         pub fn collaboration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1887,12 +1759,8 @@ pub mod membership_summary {
             self
         }
         /// <p>The unique ARN for the membership's associated collaboration.</p>
-        pub fn set_collaboration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_arn = input;
-            self
+        pub fn set_collaboration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_arn = input; self
         }
         /// <p>The unique ID for the membership's collaboration.</p>
         pub fn collaboration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1900,44 +1768,26 @@ pub mod membership_summary {
             self
         }
         /// <p>The unique ID for the membership's collaboration.</p>
-        pub fn set_collaboration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_id = input;
-            self
+        pub fn set_collaboration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_id = input; self
         }
         /// <p>The identifier of the AWS principal that created the collaboration. Currently only supports AWS account ID.</p>
-        pub fn collaboration_creator_account_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn collaboration_creator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.collaboration_creator_account_id = Some(input.into());
             self
         }
         /// <p>The identifier of the AWS principal that created the collaboration. Currently only supports AWS account ID.</p>
-        pub fn set_collaboration_creator_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_creator_account_id = input;
-            self
+        pub fn set_collaboration_creator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_creator_account_id = input; self
         }
         /// <p>The display name of the collaboration creator.</p>
-        pub fn collaboration_creator_display_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn collaboration_creator_display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.collaboration_creator_display_name = Some(input.into());
             self
         }
         /// <p>The display name of the collaboration creator.</p>
-        pub fn set_collaboration_creator_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_creator_display_name = input;
-            self
+        pub fn set_collaboration_creator_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_creator_display_name = input; self
         }
         /// <p>The name for the membership's collaboration.</p>
         pub fn collaboration_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1945,12 +1795,8 @@ pub mod membership_summary {
             self
         }
         /// <p>The name for the membership's collaboration.</p>
-        pub fn set_collaboration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_name = input;
-            self
+        pub fn set_collaboration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_name = input; self
         }
         /// <p>The time when the membership was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1958,12 +1804,8 @@ pub mod membership_summary {
             self
         }
         /// <p>The time when the membership was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the membership metadata was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1971,12 +1813,8 @@ pub mod membership_summary {
             self
         }
         /// <p>The time the membership metadata was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
         pub fn status(mut self, input: crate::model::MembershipStatus) -> Self {
@@ -1984,12 +1822,8 @@ pub mod membership_summary {
             self
         }
         /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MembershipStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MembershipStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `member_abilities`.
         ///
@@ -1998,35 +1832,44 @@ pub mod membership_summary {
         /// <p>The abilities granted to the collaboration member.</p>
         pub fn member_abilities(mut self, input: crate::model::MemberAbility) -> Self {
             let mut v = self.member_abilities.unwrap_or_default();
-            v.push(input);
-            self.member_abilities = Some(v);
-            self
+                            v.push(input);
+                            self.member_abilities = Some(v);
+                            self
         }
         /// <p>The abilities granted to the collaboration member.</p>
-        pub fn set_member_abilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
-        ) -> Self {
-            self.member_abilities = input;
-            self
+        pub fn set_member_abilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>) -> Self {
+            self.member_abilities = input; self
         }
         /// Consumes the builder and constructs a [`MembershipSummary`](crate::model::MembershipSummary).
         pub fn build(self) -> crate::model::MembershipSummary {
             crate::model::MembershipSummary {
-                id: self.id,
-                arn: self.arn,
-                collaboration_arn: self.collaboration_arn,
-                collaboration_id: self.collaboration_id,
-                collaboration_creator_account_id: self.collaboration_creator_account_id,
-                collaboration_creator_display_name: self.collaboration_creator_display_name,
-                collaboration_name: self.collaboration_name,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                status: self.status,
-                member_abilities: self.member_abilities,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                collaboration_arn: self.collaboration_arn
+                ,
+                collaboration_id: self.collaboration_id
+                ,
+                collaboration_creator_account_id: self.collaboration_creator_account_id
+                ,
+                collaboration_creator_display_name: self.collaboration_creator_display_name
+                ,
+                collaboration_name: self.collaboration_name
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                status: self.status
+                ,
+                member_abilities: self.member_abilities
+                ,
             }
         }
     }
+    
+    
 }
 impl MembershipSummary {
     /// Creates a new builder-style object to manufacture [`MembershipSummary`](crate::model::MembershipSummary).
@@ -2041,9 +1884,9 @@ impl MembershipSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let memberability = unimplemented!();
 /// match memberability {
@@ -2065,58 +1908,52 @@ impl MembershipSummary {
 /// Specifically, when `memberability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MemberAbility::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MemberAbility {
     #[allow(missing_docs)] // documentation missing in model
     CanQuery,
     #[allow(missing_docs)] // documentation missing in model
     CanReceiveResults,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberAbility {
     fn from(s: &str) -> Self {
         match s {
             "CAN_QUERY" => MemberAbility::CanQuery,
             "CAN_RECEIVE_RESULTS" => MemberAbility::CanReceiveResults,
-            other => MemberAbility::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MemberAbility::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MemberAbility {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MemberAbility::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MemberAbility::from(s))
+                }
+            }
 impl MemberAbility {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberAbility::CanQuery => "CAN_QUERY",
             MemberAbility::CanReceiveResults => "CAN_RECEIVE_RESULTS",
-            MemberAbility::Unknown(value) => value.as_str(),
+            MemberAbility::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_QUERY", "CAN_RECEIVE_RESULTS"]
+        &[
+            "CAN_QUERY", "CAN_RECEIVE_RESULTS"
+        ]
     }
 }
 impl AsRef<str> for MemberAbility {
@@ -2131,9 +1968,9 @@ impl AsRef<str> for MemberAbility {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let membershipstatus = unimplemented!();
 /// match membershipstatus {
@@ -2156,22 +1993,14 @@ impl AsRef<str> for MemberAbility {
 /// Specifically, when `membershipstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MembershipStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MembershipStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2180,7 +2009,7 @@ pub enum MembershipStatus {
     #[allow(missing_docs)] // documentation missing in model
     Removed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MembershipStatus {
     fn from(s: &str) -> Self {
@@ -2188,17 +2017,17 @@ impl std::convert::From<&str> for MembershipStatus {
             "ACTIVE" => MembershipStatus::Active,
             "COLLABORATION_DELETED" => MembershipStatus::CollaborationDeleted,
             "REMOVED" => MembershipStatus::Removed,
-            other => MembershipStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MembershipStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MembershipStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MembershipStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MembershipStatus::from(s))
+                }
+            }
 impl MembershipStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2206,12 +2035,14 @@ impl MembershipStatus {
             MembershipStatus::Active => "ACTIVE",
             MembershipStatus::CollaborationDeleted => "COLLABORATION_DELETED",
             MembershipStatus::Removed => "REMOVED",
-            MembershipStatus::Unknown(value) => value.as_str(),
+            MembershipStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "COLLABORATION_DELETED", "REMOVED"]
+        &[
+            "ACTIVE", "COLLABORATION_DELETED", "REMOVED"
+        ]
     }
 }
 impl AsRef<str> for MembershipStatus {
@@ -2223,7 +2054,7 @@ impl AsRef<str> for MembershipStatus {
 /// <p>The membership object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Membership {
+pub struct Membership  {
     /// <p>The unique ID of the membership.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2263,57 +2094,57 @@ pub struct Membership {
 }
 impl Membership {
     /// <p>The unique ID of the membership.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ARN for the membership.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
-    pub fn collaboration_arn(&self) -> std::option::Option<&str> {
+    pub fn collaboration_arn(&self) -> std::option::Option<& str> {
         self.collaboration_arn.as_deref()
     }
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn collaboration_id(&self) -> std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
-    pub fn collaboration_creator_account_id(&self) -> std::option::Option<&str> {
+    pub fn collaboration_creator_account_id(&self) -> std::option::Option<& str> {
         self.collaboration_creator_account_id.as_deref()
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn collaboration_creator_display_name(&self) -> std::option::Option<&str> {
+    pub fn collaboration_creator_display_name(&self) -> std::option::Option<& str> {
         self.collaboration_creator_display_name.as_deref()
     }
     /// <p>The name of the membership's collaboration.</p>
-    pub fn collaboration_name(&self) -> std::option::Option<&str> {
+    pub fn collaboration_name(&self) -> std::option::Option<& str> {
         self.collaboration_name.as_deref()
     }
     /// <p>The time when the membership was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the membership metadata was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MembershipStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MembershipStatus> {
         self.status.as_ref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn member_abilities(&self) -> std::option::Option<&[crate::model::MemberAbility]> {
+    pub fn member_abilities(&self) -> std::option::Option<& [crate::model::MemberAbility]> {
         self.member_abilities.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(&self) -> std::option::Option<&crate::model::MembershipQueryLogStatus> {
+    pub fn query_log_status(&self) -> std::option::Option<& crate::model::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
 }
 /// See [`Membership`](crate::model::Membership).
 pub mod membership {
-
+    
     /// A builder for [`Membership`](crate::model::Membership).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2327,8 +2158,7 @@ pub mod membership {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::MembershipStatus>,
-        pub(crate) member_abilities:
-            std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
+        pub(crate) member_abilities: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
         pub(crate) query_log_status: std::option::Option<crate::model::MembershipQueryLogStatus>,
     }
     impl Builder {
@@ -2339,8 +2169,7 @@ pub mod membership {
         }
         /// <p>The unique ID of the membership.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ARN for the membership.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2349,8 +2178,7 @@ pub mod membership {
         }
         /// <p>The unique ARN for the membership.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique ARN for the membership's associated collaboration.</p>
         pub fn collaboration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2358,12 +2186,8 @@ pub mod membership {
             self
         }
         /// <p>The unique ARN for the membership's associated collaboration.</p>
-        pub fn set_collaboration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_arn = input;
-            self
+        pub fn set_collaboration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_arn = input; self
         }
         /// <p>The unique ID for the membership's collaboration.</p>
         pub fn collaboration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2371,44 +2195,26 @@ pub mod membership {
             self
         }
         /// <p>The unique ID for the membership's collaboration.</p>
-        pub fn set_collaboration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_id = input;
-            self
+        pub fn set_collaboration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_id = input; self
         }
         /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
-        pub fn collaboration_creator_account_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn collaboration_creator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.collaboration_creator_account_id = Some(input.into());
             self
         }
         /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
-        pub fn set_collaboration_creator_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_creator_account_id = input;
-            self
+        pub fn set_collaboration_creator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_creator_account_id = input; self
         }
         /// <p>The display name of the collaboration creator.</p>
-        pub fn collaboration_creator_display_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn collaboration_creator_display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.collaboration_creator_display_name = Some(input.into());
             self
         }
         /// <p>The display name of the collaboration creator.</p>
-        pub fn set_collaboration_creator_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_creator_display_name = input;
-            self
+        pub fn set_collaboration_creator_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_creator_display_name = input; self
         }
         /// <p>The name of the membership's collaboration.</p>
         pub fn collaboration_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2416,12 +2222,8 @@ pub mod membership {
             self
         }
         /// <p>The name of the membership's collaboration.</p>
-        pub fn set_collaboration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_name = input;
-            self
+        pub fn set_collaboration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_name = input; self
         }
         /// <p>The time when the membership was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2429,12 +2231,8 @@ pub mod membership {
             self
         }
         /// <p>The time when the membership was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the membership metadata was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2442,12 +2240,8 @@ pub mod membership {
             self
         }
         /// <p>The time the membership metadata was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
         pub fn status(mut self, input: crate::model::MembershipStatus) -> Self {
@@ -2455,12 +2249,8 @@ pub mod membership {
             self
         }
         /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MembershipStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MembershipStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `member_abilities`.
         ///
@@ -2469,17 +2259,13 @@ pub mod membership {
         /// <p>The abilities granted to the collaboration member.</p>
         pub fn member_abilities(mut self, input: crate::model::MemberAbility) -> Self {
             let mut v = self.member_abilities.unwrap_or_default();
-            v.push(input);
-            self.member_abilities = Some(v);
-            self
+                            v.push(input);
+                            self.member_abilities = Some(v);
+                            self
         }
         /// <p>The abilities granted to the collaboration member.</p>
-        pub fn set_member_abilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
-        ) -> Self {
-            self.member_abilities = input;
-            self
+        pub fn set_member_abilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>) -> Self {
+            self.member_abilities = input; self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
         pub fn query_log_status(mut self, input: crate::model::MembershipQueryLogStatus) -> Self {
@@ -2487,31 +2273,41 @@ pub mod membership {
             self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-        pub fn set_query_log_status(
-            mut self,
-            input: std::option::Option<crate::model::MembershipQueryLogStatus>,
-        ) -> Self {
-            self.query_log_status = input;
-            self
+        pub fn set_query_log_status(mut self, input: std::option::Option<crate::model::MembershipQueryLogStatus>) -> Self {
+            self.query_log_status = input; self
         }
         /// Consumes the builder and constructs a [`Membership`](crate::model::Membership).
         pub fn build(self) -> crate::model::Membership {
             crate::model::Membership {
-                id: self.id,
-                arn: self.arn,
-                collaboration_arn: self.collaboration_arn,
-                collaboration_id: self.collaboration_id,
-                collaboration_creator_account_id: self.collaboration_creator_account_id,
-                collaboration_creator_display_name: self.collaboration_creator_display_name,
-                collaboration_name: self.collaboration_name,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                status: self.status,
-                member_abilities: self.member_abilities,
-                query_log_status: self.query_log_status,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                collaboration_arn: self.collaboration_arn
+                ,
+                collaboration_id: self.collaboration_id
+                ,
+                collaboration_creator_account_id: self.collaboration_creator_account_id
+                ,
+                collaboration_creator_display_name: self.collaboration_creator_display_name
+                ,
+                collaboration_name: self.collaboration_name
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                status: self.status
+                ,
+                member_abilities: self.member_abilities
+                ,
+                query_log_status: self.query_log_status
+                ,
             }
         }
     }
+    
+    
 }
 impl Membership {
     /// Creates a new builder-style object to manufacture [`Membership`](crate::model::Membership).
@@ -2526,9 +2322,9 @@ impl Membership {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let membershipquerylogstatus = unimplemented!();
 /// match membershipquerylogstatus {
@@ -2550,60 +2346,52 @@ impl Membership {
 /// Specifically, when `membershipquerylogstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MembershipQueryLogStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MembershipQueryLogStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MembershipQueryLogStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => MembershipQueryLogStatus::Disabled,
             "ENABLED" => MembershipQueryLogStatus::Enabled,
-            other => MembershipQueryLogStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MembershipQueryLogStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MembershipQueryLogStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MembershipQueryLogStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MembershipQueryLogStatus::from(s))
+                }
+            }
 impl MembershipQueryLogStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MembershipQueryLogStatus::Disabled => "DISABLED",
             MembershipQueryLogStatus::Enabled => "ENABLED",
-            MembershipQueryLogStatus::Unknown(value) => value.as_str(),
+            MembershipQueryLogStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for MembershipQueryLogStatus {
@@ -2615,7 +2403,7 @@ impl AsRef<str> for MembershipQueryLogStatus {
 /// <p>A configured table analysis rule, which limits how data for this table can be used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfiguredTableAnalysisRule {
+pub struct ConfiguredTableAnalysisRule  {
     /// <p>The unique ID for the configured table.</p>
     #[doc(hidden)]
     pub configured_table_id: std::option::Option<std::string::String>,
@@ -2637,33 +2425,33 @@ pub struct ConfiguredTableAnalysisRule {
 }
 impl ConfiguredTableAnalysisRule {
     /// <p>The unique ID for the configured table.</p>
-    pub fn configured_table_id(&self) -> std::option::Option<&str> {
+    pub fn configured_table_id(&self) -> std::option::Option<& str> {
         self.configured_table_id.as_deref()
     }
     /// <p>The unique ARN for the configured table.</p>
-    pub fn configured_table_arn(&self) -> std::option::Option<&str> {
+    pub fn configured_table_arn(&self) -> std::option::Option<& str> {
         self.configured_table_arn.as_deref()
     }
     /// <p>The policy that controls SQL query rules.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRulePolicy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRulePolicy> {
         self.policy.as_ref()
     }
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRuleType> {
         self.r#type.as_ref()
     }
     /// <p>The time the configured table analysis rule was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the configured table analysis rule was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`ConfiguredTableAnalysisRule`](crate::model::ConfiguredTableAnalysisRule).
 pub mod configured_table_analysis_rule {
-
+    
     /// A builder for [`ConfiguredTableAnalysisRule`](crate::model::ConfiguredTableAnalysisRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2681,12 +2469,8 @@ pub mod configured_table_analysis_rule {
             self
         }
         /// <p>The unique ID for the configured table.</p>
-        pub fn set_configured_table_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_id = input;
-            self
+        pub fn set_configured_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_id = input; self
         }
         /// <p>The unique ARN for the configured table.</p>
         pub fn configured_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2694,12 +2478,8 @@ pub mod configured_table_analysis_rule {
             self
         }
         /// <p>The unique ARN for the configured table.</p>
-        pub fn set_configured_table_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_arn = input;
-            self
+        pub fn set_configured_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_arn = input; self
         }
         /// <p>The policy that controls SQL query rules.</p>
         pub fn policy(mut self, input: crate::model::ConfiguredTableAnalysisRulePolicy) -> Self {
@@ -2707,12 +2487,8 @@ pub mod configured_table_analysis_rule {
             self
         }
         /// <p>The policy that controls SQL query rules.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>) -> Self {
+            self.policy = input; self
         }
         /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
         pub fn r#type(mut self, input: crate::model::ConfiguredTableAnalysisRuleType) -> Self {
@@ -2720,12 +2496,8 @@ pub mod configured_table_analysis_rule {
             self
         }
         /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The time the configured table analysis rule was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2733,12 +2505,8 @@ pub mod configured_table_analysis_rule {
             self
         }
         /// <p>The time the configured table analysis rule was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the configured table analysis rule was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2746,25 +2514,29 @@ pub mod configured_table_analysis_rule {
             self
         }
         /// <p>The time the configured table analysis rule was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`ConfiguredTableAnalysisRule`](crate::model::ConfiguredTableAnalysisRule).
         pub fn build(self) -> crate::model::ConfiguredTableAnalysisRule {
             crate::model::ConfiguredTableAnalysisRule {
-                configured_table_id: self.configured_table_id,
-                configured_table_arn: self.configured_table_arn,
-                policy: self.policy,
-                r#type: self.r#type,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                configured_table_id: self.configured_table_id
+                ,
+                configured_table_arn: self.configured_table_arn
+                ,
+                policy: self.policy
+                ,
+                r#type: self.r#type
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfiguredTableAnalysisRule {
     /// Creates a new builder-style object to manufacture [`ConfiguredTableAnalysisRule`](crate::model::ConfiguredTableAnalysisRule).
@@ -2779,9 +2551,9 @@ impl ConfiguredTableAnalysisRule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configuredtableanalysisruletype = unimplemented!();
 /// match configuredtableanalysisruletype {
@@ -2803,60 +2575,52 @@ impl ConfiguredTableAnalysisRule {
 /// Specifically, when `configuredtableanalysisruletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfiguredTableAnalysisRuleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfiguredTableAnalysisRuleType {
     #[allow(missing_docs)] // documentation missing in model
     Aggregation,
     #[allow(missing_docs)] // documentation missing in model
     List,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfiguredTableAnalysisRuleType {
     fn from(s: &str) -> Self {
         match s {
             "AGGREGATION" => ConfiguredTableAnalysisRuleType::Aggregation,
             "LIST" => ConfiguredTableAnalysisRuleType::List,
-            other => ConfiguredTableAnalysisRuleType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConfiguredTableAnalysisRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfiguredTableAnalysisRuleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfiguredTableAnalysisRuleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfiguredTableAnalysisRuleType::from(s))
+                }
+            }
 impl ConfiguredTableAnalysisRuleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfiguredTableAnalysisRuleType::Aggregation => "AGGREGATION",
             ConfiguredTableAnalysisRuleType::List => "LIST",
-            ConfiguredTableAnalysisRuleType::Unknown(value) => value.as_str(),
+            ConfiguredTableAnalysisRuleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGGREGATION", "LIST"]
+        &[
+            "AGGREGATION", "LIST"
+        ]
     }
 }
 impl AsRef<str> for ConfiguredTableAnalysisRuleType {
@@ -2885,14 +2649,8 @@ impl ConfiguredTableAnalysisRulePolicy {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`V1`](crate::model::ConfiguredTableAnalysisRulePolicy::V1), extracting the inner [`ConfiguredTableAnalysisRulePolicyV1`](crate::model::ConfiguredTableAnalysisRulePolicyV1).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_v1(
-        &self,
-    ) -> std::result::Result<&crate::model::ConfiguredTableAnalysisRulePolicyV1, &Self> {
-        if let ConfiguredTableAnalysisRulePolicy::V1(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_v1(&self) -> std::result::Result<&crate::model::ConfiguredTableAnalysisRulePolicyV1, &Self> {
+        if let ConfiguredTableAnalysisRulePolicy::V1(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`V1`](crate::model::ConfiguredTableAnalysisRulePolicy::V1).
     pub fn is_v1(&self) -> bool {
@@ -2925,14 +2683,8 @@ pub enum ConfiguredTableAnalysisRulePolicyV1 {
 impl ConfiguredTableAnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`Aggregation`](crate::model::ConfiguredTableAnalysisRulePolicyV1::Aggregation), extracting the inner [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aggregation(
-        &self,
-    ) -> std::result::Result<&crate::model::AnalysisRuleAggregation, &Self> {
-        if let ConfiguredTableAnalysisRulePolicyV1::Aggregation(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_aggregation(&self) -> std::result::Result<&crate::model::AnalysisRuleAggregation, &Self> {
+        if let ConfiguredTableAnalysisRulePolicyV1::Aggregation(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Aggregation`](crate::model::ConfiguredTableAnalysisRulePolicyV1::Aggregation).
     pub fn is_aggregation(&self) -> bool {
@@ -2941,11 +2693,7 @@ impl ConfiguredTableAnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`List`](crate::model::ConfiguredTableAnalysisRulePolicyV1::List), extracting the inner [`AnalysisRuleList`](crate::model::AnalysisRuleList).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_list(&self) -> std::result::Result<&crate::model::AnalysisRuleList, &Self> {
-        if let ConfiguredTableAnalysisRulePolicyV1::List(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ConfiguredTableAnalysisRulePolicyV1::List(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`List`](crate::model::ConfiguredTableAnalysisRulePolicyV1::List).
     pub fn is_list(&self) -> bool {
@@ -2960,7 +2708,7 @@ impl ConfiguredTableAnalysisRulePolicyV1 {
 /// <p>Enables query structure and specified queries that product aggregate statistics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalysisRuleAggregation {
+pub struct AnalysisRuleAggregation  {
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
     #[doc(hidden)]
     pub aggregate_columns: std::option::Option<std::vec::Vec<crate::model::AggregateColumn>>,
@@ -2982,47 +2730,42 @@ pub struct AnalysisRuleAggregation {
 }
 impl AnalysisRuleAggregation {
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
-    pub fn aggregate_columns(&self) -> std::option::Option<&[crate::model::AggregateColumn]> {
+    pub fn aggregate_columns(&self) -> std::option::Option<& [crate::model::AggregateColumn]> {
         self.aggregate_columns.as_deref()
     }
     /// <p>Columns in configured table that can be used in join statements and/or as aggregate columns. They can never be outputted directly.</p>
-    pub fn join_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn join_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.join_columns.as_deref()
     }
     /// <p>Control that requires member who runs query to do a join with their configured table and/or other configured table in query</p>
-    pub fn join_required(&self) -> std::option::Option<&crate::model::JoinRequiredOption> {
+    pub fn join_required(&self) -> std::option::Option<& crate::model::JoinRequiredOption> {
         self.join_required.as_ref()
     }
     /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
-    pub fn dimension_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dimension_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.dimension_columns.as_deref()
     }
     /// <p>Set of scalar functions that are allowed to be used on dimension columns and the output of aggregation of metrics.</p>
-    pub fn scalar_functions(&self) -> std::option::Option<&[crate::model::ScalarFunctions]> {
+    pub fn scalar_functions(&self) -> std::option::Option<& [crate::model::ScalarFunctions]> {
         self.scalar_functions.as_deref()
     }
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
-    pub fn output_constraints(
-        &self,
-    ) -> std::option::Option<&[crate::model::AggregationConstraint]> {
+    pub fn output_constraints(&self) -> std::option::Option<& [crate::model::AggregationConstraint]> {
         self.output_constraints.as_deref()
     }
 }
 /// See [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
 pub mod analysis_rule_aggregation {
-
+    
     /// A builder for [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) aggregate_columns:
-            std::option::Option<std::vec::Vec<crate::model::AggregateColumn>>,
+        pub(crate) aggregate_columns: std::option::Option<std::vec::Vec<crate::model::AggregateColumn>>,
         pub(crate) join_columns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) join_required: std::option::Option<crate::model::JoinRequiredOption>,
         pub(crate) dimension_columns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) scalar_functions:
-            std::option::Option<std::vec::Vec<crate::model::ScalarFunctions>>,
-        pub(crate) output_constraints:
-            std::option::Option<std::vec::Vec<crate::model::AggregationConstraint>>,
+        pub(crate) scalar_functions: std::option::Option<std::vec::Vec<crate::model::ScalarFunctions>>,
+        pub(crate) output_constraints: std::option::Option<std::vec::Vec<crate::model::AggregationConstraint>>,
     }
     impl Builder {
         /// Appends an item to `aggregate_columns`.
@@ -3032,17 +2775,13 @@ pub mod analysis_rule_aggregation {
         /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
         pub fn aggregate_columns(mut self, input: crate::model::AggregateColumn) -> Self {
             let mut v = self.aggregate_columns.unwrap_or_default();
-            v.push(input);
-            self.aggregate_columns = Some(v);
-            self
+                            v.push(input);
+                            self.aggregate_columns = Some(v);
+                            self
         }
         /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
-        pub fn set_aggregate_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AggregateColumn>>,
-        ) -> Self {
-            self.aggregate_columns = input;
-            self
+        pub fn set_aggregate_columns(mut self, input: std::option::Option<std::vec::Vec<crate::model::AggregateColumn>>) -> Self {
+            self.aggregate_columns = input; self
         }
         /// Appends an item to `join_columns`.
         ///
@@ -3051,17 +2790,13 @@ pub mod analysis_rule_aggregation {
         /// <p>Columns in configured table that can be used in join statements and/or as aggregate columns. They can never be outputted directly.</p>
         pub fn join_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.join_columns.unwrap_or_default();
-            v.push(input.into());
-            self.join_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.join_columns = Some(v);
+                            self
         }
         /// <p>Columns in configured table that can be used in join statements and/or as aggregate columns. They can never be outputted directly.</p>
-        pub fn set_join_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.join_columns = input;
-            self
+        pub fn set_join_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.join_columns = input; self
         }
         /// <p>Control that requires member who runs query to do a join with their configured table and/or other configured table in query</p>
         pub fn join_required(mut self, input: crate::model::JoinRequiredOption) -> Self {
@@ -3069,12 +2804,8 @@ pub mod analysis_rule_aggregation {
             self
         }
         /// <p>Control that requires member who runs query to do a join with their configured table and/or other configured table in query</p>
-        pub fn set_join_required(
-            mut self,
-            input: std::option::Option<crate::model::JoinRequiredOption>,
-        ) -> Self {
-            self.join_required = input;
-            self
+        pub fn set_join_required(mut self, input: std::option::Option<crate::model::JoinRequiredOption>) -> Self {
+            self.join_required = input; self
         }
         /// Appends an item to `dimension_columns`.
         ///
@@ -3083,17 +2814,13 @@ pub mod analysis_rule_aggregation {
         /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
         pub fn dimension_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dimension_columns.unwrap_or_default();
-            v.push(input.into());
-            self.dimension_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.dimension_columns = Some(v);
+                            self
         }
         /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
-        pub fn set_dimension_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.dimension_columns = input;
-            self
+        pub fn set_dimension_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.dimension_columns = input; self
         }
         /// Appends an item to `scalar_functions`.
         ///
@@ -3102,17 +2829,13 @@ pub mod analysis_rule_aggregation {
         /// <p>Set of scalar functions that are allowed to be used on dimension columns and the output of aggregation of metrics.</p>
         pub fn scalar_functions(mut self, input: crate::model::ScalarFunctions) -> Self {
             let mut v = self.scalar_functions.unwrap_or_default();
-            v.push(input);
-            self.scalar_functions = Some(v);
-            self
+                            v.push(input);
+                            self.scalar_functions = Some(v);
+                            self
         }
         /// <p>Set of scalar functions that are allowed to be used on dimension columns and the output of aggregation of metrics.</p>
-        pub fn set_scalar_functions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalarFunctions>>,
-        ) -> Self {
-            self.scalar_functions = input;
-            self
+        pub fn set_scalar_functions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalarFunctions>>) -> Self {
+            self.scalar_functions = input; self
         }
         /// Appends an item to `output_constraints`.
         ///
@@ -3121,30 +2844,34 @@ pub mod analysis_rule_aggregation {
         /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
         pub fn output_constraints(mut self, input: crate::model::AggregationConstraint) -> Self {
             let mut v = self.output_constraints.unwrap_or_default();
-            v.push(input);
-            self.output_constraints = Some(v);
-            self
+                            v.push(input);
+                            self.output_constraints = Some(v);
+                            self
         }
         /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
-        pub fn set_output_constraints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AggregationConstraint>>,
-        ) -> Self {
-            self.output_constraints = input;
-            self
+        pub fn set_output_constraints(mut self, input: std::option::Option<std::vec::Vec<crate::model::AggregationConstraint>>) -> Self {
+            self.output_constraints = input; self
         }
         /// Consumes the builder and constructs a [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
         pub fn build(self) -> crate::model::AnalysisRuleAggregation {
             crate::model::AnalysisRuleAggregation {
-                aggregate_columns: self.aggregate_columns,
-                join_columns: self.join_columns,
-                join_required: self.join_required,
-                dimension_columns: self.dimension_columns,
-                scalar_functions: self.scalar_functions,
-                output_constraints: self.output_constraints,
+                aggregate_columns: self.aggregate_columns
+                ,
+                join_columns: self.join_columns
+                ,
+                join_required: self.join_required
+                ,
+                dimension_columns: self.dimension_columns
+                ,
+                scalar_functions: self.scalar_functions
+                ,
+                output_constraints: self.output_constraints
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalysisRuleAggregation {
     /// Creates a new builder-style object to manufacture [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
@@ -3156,7 +2883,7 @@ impl AnalysisRuleAggregation {
 /// <p>Constraint on query output removing output rows that do not meet a minimum number of distinct values of a specified column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregationConstraint {
+pub struct AggregationConstraint  {
     /// <p>Column in aggregation constraint for which there must be a minimum number of distinct values in an output row for it to be in the query output.</p>
     #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
@@ -3169,7 +2896,7 @@ pub struct AggregationConstraint {
 }
 impl AggregationConstraint {
     /// <p>Column in aggregation constraint for which there must be a minimum number of distinct values in an output row for it to be in the query output.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> std::option::Option<& str> {
         self.column_name.as_deref()
     }
     /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
@@ -3177,13 +2904,13 @@ impl AggregationConstraint {
         self.minimum
     }
     /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AggregationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AggregationType> {
         self.r#type.as_ref()
     }
 }
 /// See [`AggregationConstraint`](crate::model::AggregationConstraint).
 pub mod aggregation_constraint {
-
+    
     /// A builder for [`AggregationConstraint`](crate::model::AggregationConstraint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3199,8 +2926,7 @@ pub mod aggregation_constraint {
         }
         /// <p>Column in aggregation constraint for which there must be a minimum number of distinct values in an output row for it to be in the query output.</p>
         pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.column_name = input;
-            self
+            self.column_name = input; self
         }
         /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
         pub fn minimum(mut self, input: i32) -> Self {
@@ -3209,8 +2935,7 @@ pub mod aggregation_constraint {
         }
         /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
         pub fn set_minimum(mut self, input: std::option::Option<i32>) -> Self {
-            self.minimum = input;
-            self
+            self.minimum = input; self
         }
         /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
         pub fn r#type(mut self, input: crate::model::AggregationType) -> Self {
@@ -3218,22 +2943,23 @@ pub mod aggregation_constraint {
             self
         }
         /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::AggregationType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::AggregationType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`AggregationConstraint`](crate::model::AggregationConstraint).
         pub fn build(self) -> crate::model::AggregationConstraint {
             crate::model::AggregationConstraint {
-                column_name: self.column_name,
-                minimum: self.minimum,
-                r#type: self.r#type,
+                column_name: self.column_name
+                ,
+                minimum: self.minimum
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl AggregationConstraint {
     /// Creates a new builder-style object to manufacture [`AggregationConstraint`](crate::model::AggregationConstraint).
@@ -3248,9 +2974,9 @@ impl AggregationConstraint {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggregationtype = unimplemented!();
 /// match aggregationtype {
@@ -3271,54 +2997,48 @@ impl AggregationConstraint {
 /// Specifically, when `aggregationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AggregationType {
     #[allow(missing_docs)] // documentation missing in model
     CountDistinct,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregationType {
     fn from(s: &str) -> Self {
         match s {
             "COUNT_DISTINCT" => AggregationType::CountDistinct,
-            other => AggregationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AggregationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AggregationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AggregationType::from(s))
+                }
+            }
 impl AggregationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregationType::CountDistinct => "COUNT_DISTINCT",
-            AggregationType::Unknown(value) => value.as_str(),
+            AggregationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COUNT_DISTINCT"]
+        &[
+            "COUNT_DISTINCT"
+        ]
     }
 }
 impl AsRef<str> for AggregationType {
@@ -3333,9 +3053,9 @@ impl AsRef<str> for AggregationType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scalarfunctions = unimplemented!();
 /// match scalarfunctions {
@@ -3368,22 +3088,14 @@ impl AsRef<str> for AggregationType {
 /// Specifically, when `scalarfunctions` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScalarFunctions::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScalarFunctions {
     #[allow(missing_docs)] // documentation missing in model
     Abs,
@@ -3412,7 +3124,7 @@ pub enum ScalarFunctions {
     #[allow(missing_docs)] // documentation missing in model
     Upper,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalarFunctions {
     fn from(s: &str) -> Self {
@@ -3430,17 +3142,17 @@ impl std::convert::From<&str> for ScalarFunctions {
             "SQRT" => ScalarFunctions::Sqrt,
             "TRUNC" => ScalarFunctions::Trunc,
             "UPPER" => ScalarFunctions::Upper,
-            other => ScalarFunctions::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ScalarFunctions::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScalarFunctions {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScalarFunctions::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScalarFunctions::from(s))
+                }
+            }
 impl ScalarFunctions {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3458,14 +3170,13 @@ impl ScalarFunctions {
             ScalarFunctions::Sqrt => "SQRT",
             ScalarFunctions::Trunc => "TRUNC",
             ScalarFunctions::Upper => "UPPER",
-            ScalarFunctions::Unknown(value) => value.as_str(),
+            ScalarFunctions::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ABS", "CAST", "CEILING", "COALESCE", "FLOOR", "LN", "LOG", "LOWER", "ROUND", "RTRIM",
-            "SQRT", "TRUNC", "UPPER",
+            "ABS", "CAST", "CEILING", "COALESCE", "FLOOR", "LN", "LOG", "LOWER", "ROUND", "RTRIM", "SQRT", "TRUNC", "UPPER"
         ]
     }
 }
@@ -3481,9 +3192,9 @@ impl AsRef<str> for ScalarFunctions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let joinrequiredoption = unimplemented!();
 /// match joinrequiredoption {
@@ -3504,56 +3215,48 @@ impl AsRef<str> for ScalarFunctions {
 /// Specifically, when `joinrequiredoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JoinRequiredOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JoinRequiredOption {
     #[allow(missing_docs)] // documentation missing in model
     QueryRunner,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JoinRequiredOption {
     fn from(s: &str) -> Self {
         match s {
             "QUERY_RUNNER" => JoinRequiredOption::QueryRunner,
-            other => {
-                JoinRequiredOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => JoinRequiredOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JoinRequiredOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JoinRequiredOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JoinRequiredOption::from(s))
+                }
+            }
 impl JoinRequiredOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JoinRequiredOption::QueryRunner => "QUERY_RUNNER",
-            JoinRequiredOption::Unknown(value) => value.as_str(),
+            JoinRequiredOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["QUERY_RUNNER"]
+        &[
+            "QUERY_RUNNER"
+        ]
     }
 }
 impl AsRef<str> for JoinRequiredOption {
@@ -3565,7 +3268,7 @@ impl AsRef<str> for JoinRequiredOption {
 /// <p>Column in configured table that can be used in aggregate function in query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregateColumn {
+pub struct AggregateColumn  {
     /// <p>Column names in configured table of aggregate columns.</p>
     #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3575,17 +3278,17 @@ pub struct AggregateColumn {
 }
 impl AggregateColumn {
     /// <p>Column names in configured table of aggregate columns.</p>
-    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn column_names(&self) -> std::option::Option<& [std::string::String]> {
         self.column_names.as_deref()
     }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
-    pub fn function(&self) -> std::option::Option<&crate::model::AggregateFunctionName> {
+    pub fn function(&self) -> std::option::Option<& crate::model::AggregateFunctionName> {
         self.function.as_ref()
     }
 }
 /// See [`AggregateColumn`](crate::model::AggregateColumn).
 pub mod aggregate_column {
-
+    
     /// A builder for [`AggregateColumn`](crate::model::AggregateColumn).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3600,17 +3303,13 @@ pub mod aggregate_column {
         /// <p>Column names in configured table of aggregate columns.</p>
         pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.column_names.unwrap_or_default();
-            v.push(input.into());
-            self.column_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.column_names = Some(v);
+                            self
         }
         /// <p>Column names in configured table of aggregate columns.</p>
-        pub fn set_column_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.column_names = input;
-            self
+        pub fn set_column_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.column_names = input; self
         }
         /// <p>Aggregation function that can be applied to aggregate column in query.</p>
         pub fn function(mut self, input: crate::model::AggregateFunctionName) -> Self {
@@ -3618,21 +3317,21 @@ pub mod aggregate_column {
             self
         }
         /// <p>Aggregation function that can be applied to aggregate column in query.</p>
-        pub fn set_function(
-            mut self,
-            input: std::option::Option<crate::model::AggregateFunctionName>,
-        ) -> Self {
-            self.function = input;
-            self
+        pub fn set_function(mut self, input: std::option::Option<crate::model::AggregateFunctionName>) -> Self {
+            self.function = input; self
         }
         /// Consumes the builder and constructs a [`AggregateColumn`](crate::model::AggregateColumn).
         pub fn build(self) -> crate::model::AggregateColumn {
             crate::model::AggregateColumn {
-                column_names: self.column_names,
-                function: self.function,
+                column_names: self.column_names
+                ,
+                function: self.function
+                ,
             }
         }
     }
+    
+    
 }
 impl AggregateColumn {
     /// Creates a new builder-style object to manufacture [`AggregateColumn`](crate::model::AggregateColumn).
@@ -3647,9 +3346,9 @@ impl AggregateColumn {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggregatefunctionname = unimplemented!();
 /// match aggregatefunctionname {
@@ -3674,22 +3373,14 @@ impl AggregateColumn {
 /// Specifically, when `aggregatefunctionname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregateFunctionName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AggregateFunctionName {
     #[allow(missing_docs)] // documentation missing in model
     Avg,
@@ -3702,7 +3393,7 @@ pub enum AggregateFunctionName {
     #[allow(missing_docs)] // documentation missing in model
     SumDistinct,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregateFunctionName {
     fn from(s: &str) -> Self {
@@ -3712,19 +3403,17 @@ impl std::convert::From<&str> for AggregateFunctionName {
             "COUNT_DISTINCT" => AggregateFunctionName::CountDistinct,
             "SUM" => AggregateFunctionName::Sum,
             "SUM_DISTINCT" => AggregateFunctionName::SumDistinct,
-            other => {
-                AggregateFunctionName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AggregateFunctionName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AggregateFunctionName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregateFunctionName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AggregateFunctionName::from(s))
+                }
+            }
 impl AggregateFunctionName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3734,12 +3423,14 @@ impl AggregateFunctionName {
             AggregateFunctionName::CountDistinct => "COUNT_DISTINCT",
             AggregateFunctionName::Sum => "SUM",
             AggregateFunctionName::SumDistinct => "SUM_DISTINCT",
-            AggregateFunctionName::Unknown(value) => value.as_str(),
+            AggregateFunctionName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVG", "COUNT", "COUNT_DISTINCT", "SUM", "SUM_DISTINCT"]
+        &[
+            "AVG", "COUNT", "COUNT_DISTINCT", "SUM", "SUM_DISTINCT"
+        ]
     }
 }
 impl AsRef<str> for AggregateFunctionName {
@@ -3751,7 +3442,7 @@ impl AsRef<str> for AggregateFunctionName {
 /// <p>A type of analysis rule that enables row-level analysis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalysisRuleList {
+pub struct AnalysisRuleList  {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and another members' configured tables.</p>
     #[doc(hidden)]
     pub join_columns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3761,17 +3452,17 @@ pub struct AnalysisRuleList {
 }
 impl AnalysisRuleList {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and another members' configured tables.</p>
-    pub fn join_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn join_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.join_columns.as_deref()
     }
     /// <p>Columns that can be listed in the output.</p>
-    pub fn list_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn list_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.list_columns.as_deref()
     }
 }
 /// See [`AnalysisRuleList`](crate::model::AnalysisRuleList).
 pub mod analysis_rule_list {
-
+    
     /// A builder for [`AnalysisRuleList`](crate::model::AnalysisRuleList).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3786,17 +3477,13 @@ pub mod analysis_rule_list {
         /// <p>Columns that can be used to join a configured table with the table of the member who can query and another members' configured tables.</p>
         pub fn join_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.join_columns.unwrap_or_default();
-            v.push(input.into());
-            self.join_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.join_columns = Some(v);
+                            self
         }
         /// <p>Columns that can be used to join a configured table with the table of the member who can query and another members' configured tables.</p>
-        pub fn set_join_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.join_columns = input;
-            self
+        pub fn set_join_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.join_columns = input; self
         }
         /// Appends an item to `list_columns`.
         ///
@@ -3805,26 +3492,26 @@ pub mod analysis_rule_list {
         /// <p>Columns that can be listed in the output.</p>
         pub fn list_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.list_columns.unwrap_or_default();
-            v.push(input.into());
-            self.list_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.list_columns = Some(v);
+                            self
         }
         /// <p>Columns that can be listed in the output.</p>
-        pub fn set_list_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.list_columns = input;
-            self
+        pub fn set_list_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.list_columns = input; self
         }
         /// Consumes the builder and constructs a [`AnalysisRuleList`](crate::model::AnalysisRuleList).
         pub fn build(self) -> crate::model::AnalysisRuleList {
             crate::model::AnalysisRuleList {
-                join_columns: self.join_columns,
-                list_columns: self.list_columns,
+                join_columns: self.join_columns
+                ,
+                list_columns: self.list_columns
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalysisRuleList {
     /// Creates a new builder-style object to manufacture [`AnalysisRuleList`](crate::model::AnalysisRuleList).
@@ -3836,7 +3523,7 @@ impl AnalysisRuleList {
 /// <p>The configured table summary for the objects listed by the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfiguredTableSummary {
+pub struct ConfiguredTableSummary  {
     /// <p>The unique ID of the configured table.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3854,47 +3541,44 @@ pub struct ConfiguredTableSummary {
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The types of analysis rules associated with this configured table.</p>
     #[doc(hidden)]
-    pub analysis_rule_types:
-        std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
+    pub analysis_rule_types: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
     #[doc(hidden)]
     pub analysis_method: std::option::Option<crate::model::AnalysisMethod>,
 }
 impl ConfiguredTableSummary {
     /// <p>The unique ID of the configured table.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ARN of the configured table.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the configured table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the configured table was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the configured table was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The types of analysis rules associated with this configured table.</p>
-    pub fn analysis_rule_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConfiguredTableAnalysisRuleType]> {
+    pub fn analysis_rule_types(&self) -> std::option::Option<& [crate::model::ConfiguredTableAnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> std::option::Option<&crate::model::AnalysisMethod> {
+    pub fn analysis_method(&self) -> std::option::Option<& crate::model::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
 }
 /// See [`ConfiguredTableSummary`](crate::model::ConfiguredTableSummary).
 pub mod configured_table_summary {
-
+    
     /// A builder for [`ConfiguredTableSummary`](crate::model::ConfiguredTableSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3903,8 +3587,7 @@ pub mod configured_table_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) analysis_rule_types:
-            std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
+        pub(crate) analysis_rule_types: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
         pub(crate) analysis_method: std::option::Option<crate::model::AnalysisMethod>,
     }
     impl Builder {
@@ -3915,8 +3598,7 @@ pub mod configured_table_summary {
         }
         /// <p>The unique ID of the configured table.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ARN of the configured table.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3925,8 +3607,7 @@ pub mod configured_table_summary {
         }
         /// <p>The unique ARN of the configured table.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the configured table.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3935,8 +3616,7 @@ pub mod configured_table_summary {
         }
         /// <p>The name of the configured table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The time the configured table was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3944,12 +3624,8 @@ pub mod configured_table_summary {
             self
         }
         /// <p>The time the configured table was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the configured table was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3957,36 +3633,23 @@ pub mod configured_table_summary {
             self
         }
         /// <p>The time the configured table was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Appends an item to `analysis_rule_types`.
         ///
         /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
         ///
         /// <p>The types of analysis rules associated with this configured table.</p>
-        pub fn analysis_rule_types(
-            mut self,
-            input: crate::model::ConfiguredTableAnalysisRuleType,
-        ) -> Self {
+        pub fn analysis_rule_types(mut self, input: crate::model::ConfiguredTableAnalysisRuleType) -> Self {
             let mut v = self.analysis_rule_types.unwrap_or_default();
-            v.push(input);
-            self.analysis_rule_types = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_rule_types = Some(v);
+                            self
         }
         /// <p>The types of analysis rules associated with this configured table.</p>
-        pub fn set_analysis_rule_types(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>,
-            >,
-        ) -> Self {
-            self.analysis_rule_types = input;
-            self
+        pub fn set_analysis_rule_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>) -> Self {
+            self.analysis_rule_types = input; self
         }
         /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
         pub fn analysis_method(mut self, input: crate::model::AnalysisMethod) -> Self {
@@ -3994,26 +3657,31 @@ pub mod configured_table_summary {
             self
         }
         /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-        pub fn set_analysis_method(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisMethod>,
-        ) -> Self {
-            self.analysis_method = input;
-            self
+        pub fn set_analysis_method(mut self, input: std::option::Option<crate::model::AnalysisMethod>) -> Self {
+            self.analysis_method = input; self
         }
         /// Consumes the builder and constructs a [`ConfiguredTableSummary`](crate::model::ConfiguredTableSummary).
         pub fn build(self) -> crate::model::ConfiguredTableSummary {
             crate::model::ConfiguredTableSummary {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                analysis_rule_types: self.analysis_rule_types,
-                analysis_method: self.analysis_method,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                analysis_rule_types: self.analysis_rule_types
+                ,
+                analysis_method: self.analysis_method
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfiguredTableSummary {
     /// Creates a new builder-style object to manufacture [`ConfiguredTableSummary`](crate::model::ConfiguredTableSummary).
@@ -4028,9 +3696,9 @@ impl ConfiguredTableSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analysismethod = unimplemented!();
 /// match analysismethod {
@@ -4051,54 +3719,48 @@ impl ConfiguredTableSummary {
 /// Specifically, when `analysismethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalysisMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnalysisMethod {
     #[allow(missing_docs)] // documentation missing in model
     DirectQuery,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalysisMethod {
     fn from(s: &str) -> Self {
         match s {
             "DIRECT_QUERY" => AnalysisMethod::DirectQuery,
-            other => AnalysisMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AnalysisMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnalysisMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalysisMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnalysisMethod::from(s))
+                }
+            }
 impl AnalysisMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnalysisMethod::DirectQuery => "DIRECT_QUERY",
-            AnalysisMethod::Unknown(value) => value.as_str(),
+            AnalysisMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIRECT_QUERY"]
+        &[
+            "DIRECT_QUERY"
+        ]
     }
 }
 impl AsRef<str> for AnalysisMethod {
@@ -4110,7 +3772,7 @@ impl AsRef<str> for AnalysisMethod {
 /// <p>A table that has been configured for use in a collaboration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfiguredTable {
+pub struct ConfiguredTable  {
     /// <p>The unique ID for the configured table.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4134,8 +3796,7 @@ pub struct ConfiguredTable {
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
     #[doc(hidden)]
-    pub analysis_rule_types:
-        std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
+    pub analysis_rule_types: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
     #[doc(hidden)]
     pub analysis_method: std::option::Option<crate::model::AnalysisMethod>,
@@ -4145,51 +3806,49 @@ pub struct ConfiguredTable {
 }
 impl ConfiguredTable {
     /// <p>The unique ID for the configured table.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ARN for the configured table.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A name for the configured table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the configured table.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The AWS Glue table that this configured table represents.</p>
-    pub fn table_reference(&self) -> std::option::Option<&crate::model::TableReference> {
+    pub fn table_reference(&self) -> std::option::Option<& crate::model::TableReference> {
         self.table_reference.as_ref()
     }
     /// <p>The time the configured table was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the configured table was last updated</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
-    pub fn analysis_rule_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConfiguredTableAnalysisRuleType]> {
+    pub fn analysis_rule_types(&self) -> std::option::Option<& [crate::model::ConfiguredTableAnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> std::option::Option<&crate::model::AnalysisMethod> {
+    pub fn analysis_method(&self) -> std::option::Option<& crate::model::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
     /// <p>The columns within the underlying AWS Glue table that can be utilized within collaborations.</p>
-    pub fn allowed_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_columns.as_deref()
     }
 }
 /// See [`ConfiguredTable`](crate::model::ConfiguredTable).
 pub mod configured_table {
-
+    
     /// A builder for [`ConfiguredTable`](crate::model::ConfiguredTable).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4200,8 +3859,7 @@ pub mod configured_table {
         pub(crate) table_reference: std::option::Option<crate::model::TableReference>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) analysis_rule_types:
-            std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
+        pub(crate) analysis_rule_types: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
         pub(crate) analysis_method: std::option::Option<crate::model::AnalysisMethod>,
         pub(crate) allowed_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -4213,8 +3871,7 @@ pub mod configured_table {
         }
         /// <p>The unique ID for the configured table.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ARN for the configured table.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4223,8 +3880,7 @@ pub mod configured_table {
         }
         /// <p>The unique ARN for the configured table.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A name for the configured table.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4233,8 +3889,7 @@ pub mod configured_table {
         }
         /// <p>A name for the configured table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description for the configured table.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4243,8 +3898,7 @@ pub mod configured_table {
         }
         /// <p>A description for the configured table.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The AWS Glue table that this configured table represents.</p>
         pub fn table_reference(mut self, input: crate::model::TableReference) -> Self {
@@ -4252,12 +3906,8 @@ pub mod configured_table {
             self
         }
         /// <p>The AWS Glue table that this configured table represents.</p>
-        pub fn set_table_reference(
-            mut self,
-            input: std::option::Option<crate::model::TableReference>,
-        ) -> Self {
-            self.table_reference = input;
-            self
+        pub fn set_table_reference(mut self, input: std::option::Option<crate::model::TableReference>) -> Self {
+            self.table_reference = input; self
         }
         /// <p>The time the configured table was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4265,12 +3915,8 @@ pub mod configured_table {
             self
         }
         /// <p>The time the configured table was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the configured table was last updated</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4278,36 +3924,23 @@ pub mod configured_table {
             self
         }
         /// <p>The time the configured table was last updated</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Appends an item to `analysis_rule_types`.
         ///
         /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
         ///
         /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
-        pub fn analysis_rule_types(
-            mut self,
-            input: crate::model::ConfiguredTableAnalysisRuleType,
-        ) -> Self {
+        pub fn analysis_rule_types(mut self, input: crate::model::ConfiguredTableAnalysisRuleType) -> Self {
             let mut v = self.analysis_rule_types.unwrap_or_default();
-            v.push(input);
-            self.analysis_rule_types = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_rule_types = Some(v);
+                            self
         }
         /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
-        pub fn set_analysis_rule_types(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>,
-            >,
-        ) -> Self {
-            self.analysis_rule_types = input;
-            self
+        pub fn set_analysis_rule_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>) -> Self {
+            self.analysis_rule_types = input; self
         }
         /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
         pub fn analysis_method(mut self, input: crate::model::AnalysisMethod) -> Self {
@@ -4315,12 +3948,8 @@ pub mod configured_table {
             self
         }
         /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
-        pub fn set_analysis_method(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisMethod>,
-        ) -> Self {
-            self.analysis_method = input;
-            self
+        pub fn set_analysis_method(mut self, input: std::option::Option<crate::model::AnalysisMethod>) -> Self {
+            self.analysis_method = input; self
         }
         /// Appends an item to `allowed_columns`.
         ///
@@ -4329,34 +3958,42 @@ pub mod configured_table {
         /// <p>The columns within the underlying AWS Glue table that can be utilized within collaborations.</p>
         pub fn allowed_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_columns.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_columns = Some(v);
+                            self
         }
         /// <p>The columns within the underlying AWS Glue table that can be utilized within collaborations.</p>
-        pub fn set_allowed_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_columns = input;
-            self
+        pub fn set_allowed_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_columns = input; self
         }
         /// Consumes the builder and constructs a [`ConfiguredTable`](crate::model::ConfiguredTable).
         pub fn build(self) -> crate::model::ConfiguredTable {
             crate::model::ConfiguredTable {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                table_reference: self.table_reference,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                analysis_rule_types: self.analysis_rule_types,
-                analysis_method: self.analysis_method,
-                allowed_columns: self.allowed_columns,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                table_reference: self.table_reference
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                analysis_rule_types: self.analysis_rule_types
+                ,
+                analysis_method: self.analysis_method
+                ,
+                allowed_columns: self.allowed_columns
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfiguredTable {
     /// Creates a new builder-style object to manufacture [`ConfiguredTable`](crate::model::ConfiguredTable).
@@ -4386,11 +4023,7 @@ impl TableReference {
     /// Tries to convert the enum instance into [`Glue`](crate::model::TableReference::Glue), extracting the inner [`GlueTableReference`](crate::model::GlueTableReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_glue(&self) -> std::result::Result<&crate::model::GlueTableReference, &Self> {
-        if let TableReference::Glue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let TableReference::Glue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Glue`](crate::model::TableReference::Glue).
     pub fn is_glue(&self) -> bool {
@@ -4405,7 +4038,7 @@ impl TableReference {
 /// <p>A reference to a table within an AWS Glue data catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlueTableReference {
+pub struct GlueTableReference  {
     /// <p>The name of the AWS Glue table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -4415,17 +4048,17 @@ pub struct GlueTableReference {
 }
 impl GlueTableReference {
     /// <p>The name of the AWS Glue table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the database the AWS Glue table belongs to.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
 }
 /// See [`GlueTableReference`](crate::model::GlueTableReference).
 pub mod glue_table_reference {
-
+    
     /// A builder for [`GlueTableReference`](crate::model::GlueTableReference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4440,8 +4073,7 @@ pub mod glue_table_reference {
         }
         /// <p>The name of the AWS Glue table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The name of the database the AWS Glue table belongs to.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4449,21 +4081,21 @@ pub mod glue_table_reference {
             self
         }
         /// <p>The name of the database the AWS Glue table belongs to.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// Consumes the builder and constructs a [`GlueTableReference`](crate::model::GlueTableReference).
         pub fn build(self) -> crate::model::GlueTableReference {
             crate::model::GlueTableReference {
-                table_name: self.table_name,
-                database_name: self.database_name,
+                table_name: self.table_name
+                ,
+                database_name: self.database_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GlueTableReference {
     /// Creates a new builder-style object to manufacture [`GlueTableReference`](crate::model::GlueTableReference).
@@ -4475,7 +4107,7 @@ impl GlueTableReference {
 /// <p>The configured table association summary for the objects listed by the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfiguredTableAssociationSummary {
+pub struct ConfiguredTableAssociationSummary  {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
     #[doc(hidden)]
     pub configured_table_id: std::option::Option<std::string::String>,
@@ -4503,41 +4135,41 @@ pub struct ConfiguredTableAssociationSummary {
 }
 impl ConfiguredTableAssociationSummary {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
-    pub fn configured_table_id(&self) -> std::option::Option<&str> {
+    pub fn configured_table_id(&self) -> std::option::Option<& str> {
         self.configured_table_id.as_deref()
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> std::option::Option<& str> {
         self.membership_arn.as_deref()
     }
     /// <p>The name of the configured table association. The table is identified by this name when running Protected Queries against the underlying data.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the configured table association was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the configured table association was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The unique ID for the configured table association.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ARN for the configured table association.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`ConfiguredTableAssociationSummary`](crate::model::ConfiguredTableAssociationSummary).
 pub mod configured_table_association_summary {
-
+    
     /// A builder for [`ConfiguredTableAssociationSummary`](crate::model::ConfiguredTableAssociationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4557,12 +4189,8 @@ pub mod configured_table_association_summary {
             self
         }
         /// <p>The unique configured table ID that this configured table association refers to.</p>
-        pub fn set_configured_table_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_id = input;
-            self
+        pub fn set_configured_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_id = input; self
         }
         /// <p>The unique ID for the membership that the configured table association belongs to.</p>
         pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4570,12 +4198,8 @@ pub mod configured_table_association_summary {
             self
         }
         /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-        pub fn set_membership_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_id = input;
-            self
+        pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_id = input; self
         }
         /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
         pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4583,12 +4207,8 @@ pub mod configured_table_association_summary {
             self
         }
         /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
-        pub fn set_membership_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_arn = input;
-            self
+        pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_arn = input; self
         }
         /// <p>The name of the configured table association. The table is identified by this name when running Protected Queries against the underlying data.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4597,8 +4217,7 @@ pub mod configured_table_association_summary {
         }
         /// <p>The name of the configured table association. The table is identified by this name when running Protected Queries against the underlying data.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The time the configured table association was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4606,12 +4225,8 @@ pub mod configured_table_association_summary {
             self
         }
         /// <p>The time the configured table association was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the configured table association was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4619,12 +4234,8 @@ pub mod configured_table_association_summary {
             self
         }
         /// <p>The time the configured table association was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The unique ID for the configured table association.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4633,8 +4244,7 @@ pub mod configured_table_association_summary {
         }
         /// <p>The unique ID for the configured table association.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ARN for the configured table association.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4643,23 +4253,32 @@ pub mod configured_table_association_summary {
         }
         /// <p>The unique ARN for the configured table association.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`ConfiguredTableAssociationSummary`](crate::model::ConfiguredTableAssociationSummary).
         pub fn build(self) -> crate::model::ConfiguredTableAssociationSummary {
             crate::model::ConfiguredTableAssociationSummary {
-                configured_table_id: self.configured_table_id,
-                membership_id: self.membership_id,
-                membership_arn: self.membership_arn,
-                name: self.name,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                id: self.id,
-                arn: self.arn,
+                configured_table_id: self.configured_table_id
+                ,
+                membership_id: self.membership_id
+                ,
+                membership_arn: self.membership_arn
+                ,
+                name: self.name
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfiguredTableAssociationSummary {
     /// Creates a new builder-style object to manufacture [`ConfiguredTableAssociationSummary`](crate::model::ConfiguredTableAssociationSummary).
@@ -4671,7 +4290,7 @@ impl ConfiguredTableAssociationSummary {
 /// <p>A configured table association links a configured table to a collaboration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfiguredTableAssociation {
+pub struct ConfiguredTableAssociation  {
     /// <p>The unique ARN for the configured table association.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4708,53 +4327,53 @@ pub struct ConfiguredTableAssociation {
 }
 impl ConfiguredTableAssociation {
     /// <p>The unique ARN for the configured table association.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique ID for the configured table association.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ID for the configured table that the association refers to.</p>
-    pub fn configured_table_id(&self) -> std::option::Option<&str> {
+    pub fn configured_table_id(&self) -> std::option::Option<& str> {
         self.configured_table_id.as_deref()
     }
     /// <p>The unique ARN for the configured table that the association refers to.</p>
-    pub fn configured_table_arn(&self) -> std::option::Option<&str> {
+    pub fn configured_table_arn(&self) -> std::option::Option<& str> {
         self.configured_table_arn.as_deref()
     }
     /// <p>The unique ID for the membership this configured table association belongs to.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The unique ARN for the membership this configured table association belongs to.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> std::option::Option<& str> {
         self.membership_arn.as_deref()
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the configured table association, in lowercase. The table is identified by this name when running protected queries against the underlying data.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the configured table association.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time the configured table association was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the configured table association was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`ConfiguredTableAssociation`](crate::model::ConfiguredTableAssociation).
 pub mod configured_table_association {
-
+    
     /// A builder for [`ConfiguredTableAssociation`](crate::model::ConfiguredTableAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4778,8 +4397,7 @@ pub mod configured_table_association {
         }
         /// <p>The unique ARN for the configured table association.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique ID for the configured table association.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4788,8 +4406,7 @@ pub mod configured_table_association {
         }
         /// <p>The unique ID for the configured table association.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ID for the configured table that the association refers to.</p>
         pub fn configured_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4797,12 +4414,8 @@ pub mod configured_table_association {
             self
         }
         /// <p>The unique ID for the configured table that the association refers to.</p>
-        pub fn set_configured_table_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_id = input;
-            self
+        pub fn set_configured_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_id = input; self
         }
         /// <p>The unique ARN for the configured table that the association refers to.</p>
         pub fn configured_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4810,12 +4423,8 @@ pub mod configured_table_association {
             self
         }
         /// <p>The unique ARN for the configured table that the association refers to.</p>
-        pub fn set_configured_table_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_arn = input;
-            self
+        pub fn set_configured_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_arn = input; self
         }
         /// <p>The unique ID for the membership this configured table association belongs to.</p>
         pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4823,12 +4432,8 @@ pub mod configured_table_association {
             self
         }
         /// <p>The unique ID for the membership this configured table association belongs to.</p>
-        pub fn set_membership_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_id = input;
-            self
+        pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_id = input; self
         }
         /// <p>The unique ARN for the membership this configured table association belongs to.</p>
         pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4836,12 +4441,8 @@ pub mod configured_table_association {
             self
         }
         /// <p>The unique ARN for the membership this configured table association belongs to.</p>
-        pub fn set_membership_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_arn = input;
-            self
+        pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_arn = input; self
         }
         /// <p>The service will assume this role to access catalog metadata and query the table.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4850,8 +4451,7 @@ pub mod configured_table_association {
         }
         /// <p>The service will assume this role to access catalog metadata and query the table.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The name of the configured table association, in lowercase. The table is identified by this name when running protected queries against the underlying data.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4860,8 +4460,7 @@ pub mod configured_table_association {
         }
         /// <p>The name of the configured table association, in lowercase. The table is identified by this name when running protected queries against the underlying data.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the configured table association.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4870,8 +4469,7 @@ pub mod configured_table_association {
         }
         /// <p>A description of the configured table association.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The time the configured table association was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4879,12 +4477,8 @@ pub mod configured_table_association {
             self
         }
         /// <p>The time the configured table association was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the configured table association was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4892,30 +4486,39 @@ pub mod configured_table_association {
             self
         }
         /// <p>The time the configured table association was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`ConfiguredTableAssociation`](crate::model::ConfiguredTableAssociation).
         pub fn build(self) -> crate::model::ConfiguredTableAssociation {
             crate::model::ConfiguredTableAssociation {
-                arn: self.arn,
-                id: self.id,
-                configured_table_id: self.configured_table_id,
-                configured_table_arn: self.configured_table_arn,
-                membership_id: self.membership_id,
-                membership_arn: self.membership_arn,
-                role_arn: self.role_arn,
-                name: self.name,
-                description: self.description,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                configured_table_id: self.configured_table_id
+                ,
+                configured_table_arn: self.configured_table_arn
+                ,
+                membership_id: self.membership_id
+                ,
+                membership_arn: self.membership_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfiguredTableAssociation {
     /// Creates a new builder-style object to manufacture [`ConfiguredTableAssociation`](crate::model::ConfiguredTableAssociation).
@@ -4927,7 +4530,7 @@ impl ConfiguredTableAssociation {
 /// <p>The schema summary for the objects listed by the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaSummary {
+pub struct SchemaSummary  {
     /// <p>The name for the schema object.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4958,45 +4561,45 @@ pub struct SchemaSummary {
 }
 impl SchemaSummary {
     /// <p>The name for the schema object.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SchemaType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SchemaType> {
         self.r#type.as_ref()
     }
     /// <p>The unique account ID for the AWS account that owns the schema.</p>
-    pub fn creator_account_id(&self) -> std::option::Option<&str> {
+    pub fn creator_account_id(&self) -> std::option::Option<& str> {
         self.creator_account_id.as_deref()
     }
     /// <p>The time the schema object was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the schema object was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_id(&self) -> std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_arn(&self) -> std::option::Option<&str> {
+    pub fn collaboration_arn(&self) -> std::option::Option<& str> {
         self.collaboration_arn.as_deref()
     }
     /// <p>The types of analysis rules that are associated with this schema object.</p>
-    pub fn analysis_rule_types(&self) -> std::option::Option<&[crate::model::AnalysisRuleType]> {
+    pub fn analysis_rule_types(&self) -> std::option::Option<& [crate::model::AnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> std::option::Option<&crate::model::AnalysisMethod> {
+    pub fn analysis_method(&self) -> std::option::Option<& crate::model::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
 }
 /// See [`SchemaSummary`](crate::model::SchemaSummary).
 pub mod schema_summary {
-
+    
     /// A builder for [`SchemaSummary`](crate::model::SchemaSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5007,8 +4610,7 @@ pub mod schema_summary {
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) collaboration_id: std::option::Option<std::string::String>,
         pub(crate) collaboration_arn: std::option::Option<std::string::String>,
-        pub(crate) analysis_rule_types:
-            std::option::Option<std::vec::Vec<crate::model::AnalysisRuleType>>,
+        pub(crate) analysis_rule_types: std::option::Option<std::vec::Vec<crate::model::AnalysisRuleType>>,
         pub(crate) analysis_method: std::option::Option<crate::model::AnalysisMethod>,
     }
     impl Builder {
@@ -5019,8 +4621,7 @@ pub mod schema_summary {
         }
         /// <p>The name for the schema object.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
         pub fn r#type(mut self, input: crate::model::SchemaType) -> Self {
@@ -5029,8 +4630,7 @@ pub mod schema_summary {
         }
         /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SchemaType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The unique account ID for the AWS account that owns the schema.</p>
         pub fn creator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5038,12 +4638,8 @@ pub mod schema_summary {
             self
         }
         /// <p>The unique account ID for the AWS account that owns the schema.</p>
-        pub fn set_creator_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creator_account_id = input;
-            self
+        pub fn set_creator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creator_account_id = input; self
         }
         /// <p>The time the schema object was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5051,12 +4647,8 @@ pub mod schema_summary {
             self
         }
         /// <p>The time the schema object was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the schema object was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5064,12 +4656,8 @@ pub mod schema_summary {
             self
         }
         /// <p>The time the schema object was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The unique ID for the collaboration that the schema belongs to.</p>
         pub fn collaboration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5077,12 +4665,8 @@ pub mod schema_summary {
             self
         }
         /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-        pub fn set_collaboration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_id = input;
-            self
+        pub fn set_collaboration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_id = input; self
         }
         /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
         pub fn collaboration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5090,12 +4674,8 @@ pub mod schema_summary {
             self
         }
         /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-        pub fn set_collaboration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_arn = input;
-            self
+        pub fn set_collaboration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_arn = input; self
         }
         /// Appends an item to `analysis_rule_types`.
         ///
@@ -5104,17 +4684,13 @@ pub mod schema_summary {
         /// <p>The types of analysis rules that are associated with this schema object.</p>
         pub fn analysis_rule_types(mut self, input: crate::model::AnalysisRuleType) -> Self {
             let mut v = self.analysis_rule_types.unwrap_or_default();
-            v.push(input);
-            self.analysis_rule_types = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_rule_types = Some(v);
+                            self
         }
         /// <p>The types of analysis rules that are associated with this schema object.</p>
-        pub fn set_analysis_rule_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisRuleType>>,
-        ) -> Self {
-            self.analysis_rule_types = input;
-            self
+        pub fn set_analysis_rule_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisRuleType>>) -> Self {
+            self.analysis_rule_types = input; self
         }
         /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
         pub fn analysis_method(mut self, input: crate::model::AnalysisMethod) -> Self {
@@ -5122,28 +4698,35 @@ pub mod schema_summary {
             self
         }
         /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
-        pub fn set_analysis_method(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisMethod>,
-        ) -> Self {
-            self.analysis_method = input;
-            self
+        pub fn set_analysis_method(mut self, input: std::option::Option<crate::model::AnalysisMethod>) -> Self {
+            self.analysis_method = input; self
         }
         /// Consumes the builder and constructs a [`SchemaSummary`](crate::model::SchemaSummary).
         pub fn build(self) -> crate::model::SchemaSummary {
             crate::model::SchemaSummary {
-                name: self.name,
-                r#type: self.r#type,
-                creator_account_id: self.creator_account_id,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                collaboration_id: self.collaboration_id,
-                collaboration_arn: self.collaboration_arn,
-                analysis_rule_types: self.analysis_rule_types,
-                analysis_method: self.analysis_method,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                creator_account_id: self.creator_account_id
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                collaboration_id: self.collaboration_id
+                ,
+                collaboration_arn: self.collaboration_arn
+                ,
+                analysis_rule_types: self.analysis_rule_types
+                ,
+                analysis_method: self.analysis_method
+                ,
             }
         }
     }
+    
+    
 }
 impl SchemaSummary {
     /// Creates a new builder-style object to manufacture [`SchemaSummary`](crate::model::SchemaSummary).
@@ -5158,9 +4741,9 @@ impl SchemaSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analysisruletype = unimplemented!();
 /// match analysisruletype {
@@ -5182,58 +4765,52 @@ impl SchemaSummary {
 /// Specifically, when `analysisruletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalysisRuleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnalysisRuleType {
     #[allow(missing_docs)] // documentation missing in model
     Aggregation,
     #[allow(missing_docs)] // documentation missing in model
     List,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalysisRuleType {
     fn from(s: &str) -> Self {
         match s {
             "AGGREGATION" => AnalysisRuleType::Aggregation,
             "LIST" => AnalysisRuleType::List,
-            other => AnalysisRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AnalysisRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnalysisRuleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalysisRuleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnalysisRuleType::from(s))
+                }
+            }
 impl AnalysisRuleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnalysisRuleType::Aggregation => "AGGREGATION",
             AnalysisRuleType::List => "LIST",
-            AnalysisRuleType::Unknown(value) => value.as_str(),
+            AnalysisRuleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGGREGATION", "LIST"]
+        &[
+            "AGGREGATION", "LIST"
+        ]
     }
 }
 impl AsRef<str> for AnalysisRuleType {
@@ -5248,9 +4825,9 @@ impl AsRef<str> for AnalysisRuleType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let schematype = unimplemented!();
 /// match schematype {
@@ -5271,54 +4848,48 @@ impl AsRef<str> for AnalysisRuleType {
 /// Specifically, when `schematype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SchemaType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SchemaType {
     #[allow(missing_docs)] // documentation missing in model
     Table,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SchemaType {
     fn from(s: &str) -> Self {
         match s {
             "TABLE" => SchemaType::Table,
-            other => SchemaType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SchemaType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SchemaType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SchemaType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SchemaType::from(s))
+                }
+            }
 impl SchemaType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SchemaType::Table => "TABLE",
-            SchemaType::Unknown(value) => value.as_str(),
+            SchemaType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TABLE"]
+        &[
+            "TABLE"
+        ]
     }
 }
 impl AsRef<str> for SchemaType {
@@ -5330,7 +4901,7 @@ impl AsRef<str> for SchemaType {
 /// <p>The member object listed by the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberSummary {
+pub struct MemberSummary  {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5358,41 +4929,41 @@ pub struct MemberSummary {
 }
 impl MemberSummary {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MemberStatus> {
         self.status.as_ref()
     }
     /// <p>The member's display name.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn abilities(&self) -> std::option::Option<&[crate::model::MemberAbility]> {
+    pub fn abilities(&self) -> std::option::Option<& [crate::model::MemberAbility]> {
         self.abilities.as_deref()
     }
     /// <p>The time when the member was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the member metadata was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The unique ID for the member's associated membership, if present.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The unique ARN for the member's associated membership, if present.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> std::option::Option<& str> {
         self.membership_arn.as_deref()
     }
 }
 /// See [`MemberSummary`](crate::model::MemberSummary).
 pub mod member_summary {
-
+    
     /// A builder for [`MemberSummary`](crate::model::MemberSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5413,8 +4984,7 @@ pub mod member_summary {
         }
         /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
         pub fn status(mut self, input: crate::model::MemberStatus) -> Self {
@@ -5422,12 +4992,8 @@ pub mod member_summary {
             self
         }
         /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MemberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MemberStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The member's display name.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5436,8 +5002,7 @@ pub mod member_summary {
         }
         /// <p>The member's display name.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// Appends an item to `abilities`.
         ///
@@ -5446,17 +5011,13 @@ pub mod member_summary {
         /// <p>The abilities granted to the collaboration member.</p>
         pub fn abilities(mut self, input: crate::model::MemberAbility) -> Self {
             let mut v = self.abilities.unwrap_or_default();
-            v.push(input);
-            self.abilities = Some(v);
-            self
+                            v.push(input);
+                            self.abilities = Some(v);
+                            self
         }
         /// <p>The abilities granted to the collaboration member.</p>
-        pub fn set_abilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
-        ) -> Self {
-            self.abilities = input;
-            self
+        pub fn set_abilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>) -> Self {
+            self.abilities = input; self
         }
         /// <p>The time when the member was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5464,12 +5025,8 @@ pub mod member_summary {
             self
         }
         /// <p>The time when the member was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the member metadata was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5477,12 +5034,8 @@ pub mod member_summary {
             self
         }
         /// <p>The time the member metadata was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The unique ID for the member's associated membership, if present.</p>
         pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5490,12 +5043,8 @@ pub mod member_summary {
             self
         }
         /// <p>The unique ID for the member's associated membership, if present.</p>
-        pub fn set_membership_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_id = input;
-            self
+        pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_id = input; self
         }
         /// <p>The unique ARN for the member's associated membership, if present.</p>
         pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5503,27 +5052,33 @@ pub mod member_summary {
             self
         }
         /// <p>The unique ARN for the member's associated membership, if present.</p>
-        pub fn set_membership_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_arn = input;
-            self
+        pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_arn = input; self
         }
         /// Consumes the builder and constructs a [`MemberSummary`](crate::model::MemberSummary).
         pub fn build(self) -> crate::model::MemberSummary {
             crate::model::MemberSummary {
-                account_id: self.account_id,
-                status: self.status,
-                display_name: self.display_name,
-                abilities: self.abilities,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                membership_id: self.membership_id,
-                membership_arn: self.membership_arn,
+                account_id: self.account_id
+                ,
+                status: self.status
+                ,
+                display_name: self.display_name
+                ,
+                abilities: self.abilities
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                membership_id: self.membership_id
+                ,
+                membership_arn: self.membership_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberSummary {
     /// Creates a new builder-style object to manufacture [`MemberSummary`](crate::model::MemberSummary).
@@ -5538,9 +5093,9 @@ impl MemberSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let memberstatus = unimplemented!();
 /// match memberstatus {
@@ -5564,22 +5119,14 @@ impl MemberSummary {
 /// Specifically, when `memberstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MemberStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MemberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -5590,7 +5137,7 @@ pub enum MemberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Removed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberStatus {
     fn from(s: &str) -> Self {
@@ -5599,17 +5146,17 @@ impl std::convert::From<&str> for MemberStatus {
             "INVITED" => MemberStatus::Invited,
             "LEFT" => MemberStatus::Left,
             "REMOVED" => MemberStatus::Removed,
-            other => MemberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MemberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MemberStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MemberStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MemberStatus::from(s))
+                }
+            }
 impl MemberStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5618,12 +5165,14 @@ impl MemberStatus {
             MemberStatus::Invited => "INVITED",
             MemberStatus::Left => "LEFT",
             MemberStatus::Removed => "REMOVED",
-            MemberStatus::Unknown(value) => value.as_str(),
+            MemberStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INVITED", "LEFT", "REMOVED"]
+        &[
+            "ACTIVE", "INVITED", "LEFT", "REMOVED"
+        ]
     }
 }
 impl AsRef<str> for MemberStatus {
@@ -5635,7 +5184,7 @@ impl AsRef<str> for MemberStatus {
 /// <p>A specification about how data from the configured table can be used in a query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalysisRule {
+pub struct AnalysisRule  {
     /// <p>The unique ID for the associated collaboration.</p>
     #[doc(hidden)]
     pub collaboration_id: std::option::Option<std::string::String>,
@@ -5657,33 +5206,33 @@ pub struct AnalysisRule {
 }
 impl AnalysisRule {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_id(&self) -> std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
     /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AnalysisRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AnalysisRuleType> {
         self.r#type.as_ref()
     }
     /// <p>The name for the analysis rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the analysis rule was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the analysis rule was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>A policy that describes the associated data usage limitations.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::AnalysisRulePolicy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::AnalysisRulePolicy> {
         self.policy.as_ref()
     }
 }
 /// See [`AnalysisRule`](crate::model::AnalysisRule).
 pub mod analysis_rule {
-
+    
     /// A builder for [`AnalysisRule`](crate::model::AnalysisRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5701,12 +5250,8 @@ pub mod analysis_rule {
             self
         }
         /// <p>The unique ID for the associated collaboration.</p>
-        pub fn set_collaboration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_id = input;
-            self
+        pub fn set_collaboration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_id = input; self
         }
         /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
         pub fn r#type(mut self, input: crate::model::AnalysisRuleType) -> Self {
@@ -5714,12 +5259,8 @@ pub mod analysis_rule {
             self
         }
         /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisRuleType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::AnalysisRuleType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name for the analysis rule.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5728,8 +5269,7 @@ pub mod analysis_rule {
         }
         /// <p>The name for the analysis rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The time the analysis rule was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5737,12 +5277,8 @@ pub mod analysis_rule {
             self
         }
         /// <p>The time the analysis rule was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the analysis rule was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5750,12 +5286,8 @@ pub mod analysis_rule {
             self
         }
         /// <p>The time the analysis rule was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>A policy that describes the associated data usage limitations.</p>
         pub fn policy(mut self, input: crate::model::AnalysisRulePolicy) -> Self {
@@ -5763,25 +5295,29 @@ pub mod analysis_rule {
             self
         }
         /// <p>A policy that describes the associated data usage limitations.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisRulePolicy>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::AnalysisRulePolicy>) -> Self {
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`AnalysisRule`](crate::model::AnalysisRule).
         pub fn build(self) -> crate::model::AnalysisRule {
             crate::model::AnalysisRule {
-                collaboration_id: self.collaboration_id,
-                r#type: self.r#type,
-                name: self.name,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                policy: self.policy,
+                collaboration_id: self.collaboration_id
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalysisRule {
     /// Creates a new builder-style object to manufacture [`AnalysisRule`](crate::model::AnalysisRule).
@@ -5811,11 +5347,7 @@ impl AnalysisRulePolicy {
     /// Tries to convert the enum instance into [`V1`](crate::model::AnalysisRulePolicy::V1), extracting the inner [`AnalysisRulePolicyV1`](crate::model::AnalysisRulePolicyV1).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_v1(&self) -> std::result::Result<&crate::model::AnalysisRulePolicyV1, &Self> {
-        if let AnalysisRulePolicy::V1(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AnalysisRulePolicy::V1(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`V1`](crate::model::AnalysisRulePolicy::V1).
     pub fn is_v1(&self) -> bool {
@@ -5848,14 +5380,8 @@ pub enum AnalysisRulePolicyV1 {
 impl AnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`Aggregation`](crate::model::AnalysisRulePolicyV1::Aggregation), extracting the inner [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aggregation(
-        &self,
-    ) -> std::result::Result<&crate::model::AnalysisRuleAggregation, &Self> {
-        if let AnalysisRulePolicyV1::Aggregation(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_aggregation(&self) -> std::result::Result<&crate::model::AnalysisRuleAggregation, &Self> {
+        if let AnalysisRulePolicyV1::Aggregation(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Aggregation`](crate::model::AnalysisRulePolicyV1::Aggregation).
     pub fn is_aggregation(&self) -> bool {
@@ -5864,11 +5390,7 @@ impl AnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`List`](crate::model::AnalysisRulePolicyV1::List), extracting the inner [`AnalysisRuleList`](crate::model::AnalysisRuleList).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_list(&self) -> std::result::Result<&crate::model::AnalysisRuleList, &Self> {
-        if let AnalysisRulePolicyV1::List(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AnalysisRulePolicyV1::List(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`List`](crate::model::AnalysisRulePolicyV1::List).
     pub fn is_list(&self) -> bool {
@@ -5883,7 +5405,7 @@ impl AnalysisRulePolicyV1 {
 /// <p>A schema is a relation within a collaboration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Schema {
+pub struct Schema  {
     /// <p>The columns for the relation this schema represents.</p>
     #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -5923,64 +5445,63 @@ pub struct Schema {
 }
 impl Schema {
     /// <p>The columns for the relation this schema represents.</p>
-    pub fn columns(&self) -> std::option::Option<&[crate::model::Column]> {
+    pub fn columns(&self) -> std::option::Option<& [crate::model::Column]> {
         self.columns.as_deref()
     }
     /// <p>The partition keys for the data set underlying this schema.</p>
-    pub fn partition_keys(&self) -> std::option::Option<&[crate::model::Column]> {
+    pub fn partition_keys(&self) -> std::option::Option<& [crate::model::Column]> {
         self.partition_keys.as_deref()
     }
     /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
-    pub fn analysis_rule_types(&self) -> std::option::Option<&[crate::model::AnalysisRuleType]> {
+    pub fn analysis_rule_types(&self) -> std::option::Option<& [crate::model::AnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
     /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
-    pub fn analysis_method(&self) -> std::option::Option<&crate::model::AnalysisMethod> {
+    pub fn analysis_method(&self) -> std::option::Option<& crate::model::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
     /// <p>The unique account ID for the AWS account that owns the schema.</p>
-    pub fn creator_account_id(&self) -> std::option::Option<&str> {
+    pub fn creator_account_id(&self) -> std::option::Option<& str> {
         self.creator_account_id.as_deref()
     }
     /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_id(&self) -> std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_arn(&self) -> std::option::Option<&str> {
+    pub fn collaboration_arn(&self) -> std::option::Option<& str> {
         self.collaboration_arn.as_deref()
     }
     /// <p>A description for the schema.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time the schema was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the schema was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SchemaType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SchemaType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Schema`](crate::model::Schema).
 pub mod schema {
-
+    
     /// A builder for [`Schema`](crate::model::Schema).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
         pub(crate) partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
-        pub(crate) analysis_rule_types:
-            std::option::Option<std::vec::Vec<crate::model::AnalysisRuleType>>,
+        pub(crate) analysis_rule_types: std::option::Option<std::vec::Vec<crate::model::AnalysisRuleType>>,
         pub(crate) analysis_method: std::option::Option<crate::model::AnalysisMethod>,
         pub(crate) creator_account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5999,17 +5520,13 @@ pub mod schema {
         /// <p>The columns for the relation this schema represents.</p>
         pub fn columns(mut self, input: crate::model::Column) -> Self {
             let mut v = self.columns.unwrap_or_default();
-            v.push(input);
-            self.columns = Some(v);
-            self
+                            v.push(input);
+                            self.columns = Some(v);
+                            self
         }
         /// <p>The columns for the relation this schema represents.</p>
-        pub fn set_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Column>>,
-        ) -> Self {
-            self.columns = input;
-            self
+        pub fn set_columns(mut self, input: std::option::Option<std::vec::Vec<crate::model::Column>>) -> Self {
+            self.columns = input; self
         }
         /// Appends an item to `partition_keys`.
         ///
@@ -6018,17 +5535,13 @@ pub mod schema {
         /// <p>The partition keys for the data set underlying this schema.</p>
         pub fn partition_keys(mut self, input: crate::model::Column) -> Self {
             let mut v = self.partition_keys.unwrap_or_default();
-            v.push(input);
-            self.partition_keys = Some(v);
-            self
+                            v.push(input);
+                            self.partition_keys = Some(v);
+                            self
         }
         /// <p>The partition keys for the data set underlying this schema.</p>
-        pub fn set_partition_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Column>>,
-        ) -> Self {
-            self.partition_keys = input;
-            self
+        pub fn set_partition_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::Column>>) -> Self {
+            self.partition_keys = input; self
         }
         /// Appends an item to `analysis_rule_types`.
         ///
@@ -6037,17 +5550,13 @@ pub mod schema {
         /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
         pub fn analysis_rule_types(mut self, input: crate::model::AnalysisRuleType) -> Self {
             let mut v = self.analysis_rule_types.unwrap_or_default();
-            v.push(input);
-            self.analysis_rule_types = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_rule_types = Some(v);
+                            self
         }
         /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
-        pub fn set_analysis_rule_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisRuleType>>,
-        ) -> Self {
-            self.analysis_rule_types = input;
-            self
+        pub fn set_analysis_rule_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisRuleType>>) -> Self {
+            self.analysis_rule_types = input; self
         }
         /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
         pub fn analysis_method(mut self, input: crate::model::AnalysisMethod) -> Self {
@@ -6055,12 +5564,8 @@ pub mod schema {
             self
         }
         /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
-        pub fn set_analysis_method(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisMethod>,
-        ) -> Self {
-            self.analysis_method = input;
-            self
+        pub fn set_analysis_method(mut self, input: std::option::Option<crate::model::AnalysisMethod>) -> Self {
+            self.analysis_method = input; self
         }
         /// <p>The unique account ID for the AWS account that owns the schema.</p>
         pub fn creator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6068,12 +5573,8 @@ pub mod schema {
             self
         }
         /// <p>The unique account ID for the AWS account that owns the schema.</p>
-        pub fn set_creator_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creator_account_id = input;
-            self
+        pub fn set_creator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creator_account_id = input; self
         }
         /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6082,8 +5583,7 @@ pub mod schema {
         }
         /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique ID for the collaboration that the schema belongs to.</p>
         pub fn collaboration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6091,12 +5591,8 @@ pub mod schema {
             self
         }
         /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-        pub fn set_collaboration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_id = input;
-            self
+        pub fn set_collaboration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_id = input; self
         }
         /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
         pub fn collaboration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6104,12 +5600,8 @@ pub mod schema {
             self
         }
         /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-        pub fn set_collaboration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_arn = input;
-            self
+        pub fn set_collaboration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_arn = input; self
         }
         /// <p>A description for the schema.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6118,8 +5610,7 @@ pub mod schema {
         }
         /// <p>A description for the schema.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The time the schema was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6127,12 +5618,8 @@ pub mod schema {
             self
         }
         /// <p>The time the schema was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the schema was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6140,12 +5627,8 @@ pub mod schema {
             self
         }
         /// <p>The time the schema was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
         pub fn r#type(mut self, input: crate::model::SchemaType) -> Self {
@@ -6154,27 +5637,40 @@ pub mod schema {
         }
         /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SchemaType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Schema`](crate::model::Schema).
         pub fn build(self) -> crate::model::Schema {
             crate::model::Schema {
-                columns: self.columns,
-                partition_keys: self.partition_keys,
-                analysis_rule_types: self.analysis_rule_types,
-                analysis_method: self.analysis_method,
-                creator_account_id: self.creator_account_id,
-                name: self.name,
-                collaboration_id: self.collaboration_id,
-                collaboration_arn: self.collaboration_arn,
-                description: self.description,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                r#type: self.r#type,
+                columns: self.columns
+                ,
+                partition_keys: self.partition_keys
+                ,
+                analysis_rule_types: self.analysis_rule_types
+                ,
+                analysis_method: self.analysis_method
+                ,
+                creator_account_id: self.creator_account_id
+                ,
+                name: self.name
+                ,
+                collaboration_id: self.collaboration_id
+                ,
+                collaboration_arn: self.collaboration_arn
+                ,
+                description: self.description
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Schema {
     /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema).
@@ -6186,7 +5682,7 @@ impl Schema {
 /// <p>A column within a schema relation, derived from the underlying AWS Glue table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Column {
+pub struct Column  {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6196,17 +5692,17 @@ pub struct Column {
 }
 impl Column {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the column.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`Column`](crate::model::Column).
 pub mod column {
-
+    
     /// A builder for [`Column`](crate::model::Column).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6221,8 +5717,7 @@ pub mod column {
         }
         /// <p>The name of the column.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the column.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6231,17 +5726,20 @@ pub mod column {
         }
         /// <p>The type of the column.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Column`](crate::model::Column).
         pub fn build(self) -> crate::model::Column {
             crate::model::Column {
-                name: self.name,
-                r#type: self.r#type,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Column {
     /// Creates a new builder-style object to manufacture [`Column`](crate::model::Column).
@@ -6253,7 +5751,7 @@ impl Column {
 /// <p>An error describing why a schema could not be fetched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetSchemaError {
+pub struct BatchGetSchemaError  {
     /// <p>An error name for the error.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6266,21 +5764,21 @@ pub struct BatchGetSchemaError {
 }
 impl BatchGetSchemaError {
     /// <p>An error name for the error.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An error code for the error. </p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>An error message for the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`BatchGetSchemaError`](crate::model::BatchGetSchemaError).
 pub mod batch_get_schema_error {
-
+    
     /// A builder for [`BatchGetSchemaError`](crate::model::BatchGetSchemaError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6296,8 +5794,7 @@ pub mod batch_get_schema_error {
         }
         /// <p>An error name for the error.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>An error code for the error. </p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6306,8 +5803,7 @@ pub mod batch_get_schema_error {
         }
         /// <p>An error code for the error. </p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>An error message for the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6316,18 +5812,22 @@ pub mod batch_get_schema_error {
         }
         /// <p>An error message for the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetSchemaError`](crate::model::BatchGetSchemaError).
         pub fn build(self) -> crate::model::BatchGetSchemaError {
             crate::model::BatchGetSchemaError {
-                name: self.name,
-                code: self.code,
-                message: self.message,
+                name: self.name
+                ,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetSchemaError {
     /// Creates a new builder-style object to manufacture [`BatchGetSchemaError`](crate::model::BatchGetSchemaError).
@@ -6339,7 +5839,7 @@ impl BatchGetSchemaError {
 /// <p>The metadata of the collaboration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollaborationSummary {
+pub struct CollaborationSummary  {
     /// <p>The identifier for the collaboration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6373,49 +5873,49 @@ pub struct CollaborationSummary {
 }
 impl CollaborationSummary {
     /// <p>The identifier for the collaboration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the collaboration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
-    pub fn creator_account_id(&self) -> std::option::Option<&str> {
+    pub fn creator_account_id(&self) -> std::option::Option<& str> {
         self.creator_account_id.as_deref()
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn creator_display_name(&self) -> std::option::Option<&str> {
+    pub fn creator_display_name(&self) -> std::option::Option<& str> {
         self.creator_display_name.as_deref()
     }
     /// <p>The time when the collaboration was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the collaboration metadata was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The status of a member in a collaboration.</p>
-    pub fn member_status(&self) -> std::option::Option<&crate::model::MemberStatus> {
+    pub fn member_status(&self) -> std::option::Option<& crate::model::MemberStatus> {
         self.member_status.as_ref()
     }
     /// <p>The identifier of a member in a collaboration.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The ARN of a member in a collaboration.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> std::option::Option<& str> {
         self.membership_arn.as_deref()
     }
 }
 /// See [`CollaborationSummary`](crate::model::CollaborationSummary).
 pub mod collaboration_summary {
-
+    
     /// A builder for [`CollaborationSummary`](crate::model::CollaborationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6438,8 +5938,7 @@ pub mod collaboration_summary {
         }
         /// <p>The identifier for the collaboration.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the collaboration.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6448,8 +5947,7 @@ pub mod collaboration_summary {
         }
         /// <p>The ARN of the collaboration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6458,8 +5956,7 @@ pub mod collaboration_summary {
         }
         /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
         pub fn creator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6467,12 +5964,8 @@ pub mod collaboration_summary {
             self
         }
         /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
-        pub fn set_creator_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creator_account_id = input;
-            self
+        pub fn set_creator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creator_account_id = input; self
         }
         /// <p>The display name of the collaboration creator.</p>
         pub fn creator_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6480,12 +5973,8 @@ pub mod collaboration_summary {
             self
         }
         /// <p>The display name of the collaboration creator.</p>
-        pub fn set_creator_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creator_display_name = input;
-            self
+        pub fn set_creator_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creator_display_name = input; self
         }
         /// <p>The time when the collaboration was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6493,12 +5982,8 @@ pub mod collaboration_summary {
             self
         }
         /// <p>The time when the collaboration was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the collaboration metadata was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6506,12 +5991,8 @@ pub mod collaboration_summary {
             self
         }
         /// <p>The time the collaboration metadata was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The status of a member in a collaboration.</p>
         pub fn member_status(mut self, input: crate::model::MemberStatus) -> Self {
@@ -6519,12 +6000,8 @@ pub mod collaboration_summary {
             self
         }
         /// <p>The status of a member in a collaboration.</p>
-        pub fn set_member_status(
-            mut self,
-            input: std::option::Option<crate::model::MemberStatus>,
-        ) -> Self {
-            self.member_status = input;
-            self
+        pub fn set_member_status(mut self, input: std::option::Option<crate::model::MemberStatus>) -> Self {
+            self.member_status = input; self
         }
         /// <p>The identifier of a member in a collaboration.</p>
         pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6532,12 +6009,8 @@ pub mod collaboration_summary {
             self
         }
         /// <p>The identifier of a member in a collaboration.</p>
-        pub fn set_membership_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_id = input;
-            self
+        pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_id = input; self
         }
         /// <p>The ARN of a member in a collaboration.</p>
         pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6545,29 +6018,37 @@ pub mod collaboration_summary {
             self
         }
         /// <p>The ARN of a member in a collaboration.</p>
-        pub fn set_membership_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_arn = input;
-            self
+        pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_arn = input; self
         }
         /// Consumes the builder and constructs a [`CollaborationSummary`](crate::model::CollaborationSummary).
         pub fn build(self) -> crate::model::CollaborationSummary {
             crate::model::CollaborationSummary {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                creator_account_id: self.creator_account_id,
-                creator_display_name: self.creator_display_name,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                member_status: self.member_status,
-                membership_id: self.membership_id,
-                membership_arn: self.membership_arn,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                creator_account_id: self.creator_account_id
+                ,
+                creator_display_name: self.creator_display_name
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                member_status: self.member_status
+                ,
+                membership_id: self.membership_id
+                ,
+                membership_arn: self.membership_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CollaborationSummary {
     /// Creates a new builder-style object to manufacture [`CollaborationSummary`](crate::model::CollaborationSummary).
@@ -6582,9 +6063,9 @@ impl CollaborationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filterablememberstatus = unimplemented!();
 /// match filterablememberstatus {
@@ -6606,60 +6087,52 @@ impl CollaborationSummary {
 /// Specifically, when `filterablememberstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FilterableMemberStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FilterableMemberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Invited,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterableMemberStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => FilterableMemberStatus::Active,
             "INVITED" => FilterableMemberStatus::Invited,
-            other => {
-                FilterableMemberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FilterableMemberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FilterableMemberStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterableMemberStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FilterableMemberStatus::from(s))
+                }
+            }
 impl FilterableMemberStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterableMemberStatus::Active => "ACTIVE",
             FilterableMemberStatus::Invited => "INVITED",
-            FilterableMemberStatus::Unknown(value) => value.as_str(),
+            FilterableMemberStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INVITED"]
+        &[
+            "ACTIVE", "INVITED"
+        ]
     }
 }
 impl AsRef<str> for FilterableMemberStatus {
@@ -6671,7 +6144,7 @@ impl AsRef<str> for FilterableMemberStatus {
 /// <p>The multi-party data share environment. The collaboration contains metadata about its purpose and participants.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Collaboration {
+pub struct Collaboration  {
     /// <p>The unique ID for the collaboration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6714,65 +6187,61 @@ pub struct Collaboration {
 }
 impl Collaboration {
     /// <p>The unique ID for the collaboration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ARN for the collaboration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
-    pub fn creator_account_id(&self) -> std::option::Option<&str> {
+    pub fn creator_account_id(&self) -> std::option::Option<& str> {
         self.creator_account_id.as_deref()
     }
     /// <p>A display name of the collaboration creator.</p>
-    pub fn creator_display_name(&self) -> std::option::Option<&str> {
+    pub fn creator_display_name(&self) -> std::option::Option<& str> {
         self.creator_display_name.as_deref()
     }
     /// <p>The time when the collaboration was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the collaboration metadata was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The status of a member in a collaboration.</p>
-    pub fn member_status(&self) -> std::option::Option<&crate::model::MemberStatus> {
+    pub fn member_status(&self) -> std::option::Option<& crate::model::MemberStatus> {
         self.member_status.as_ref()
     }
     /// <p>The unique ID for your membership within the collaboration.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The unique ARN for your membership within the collaboration.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> std::option::Option<& str> {
         self.membership_arn.as_deref()
     }
     /// <p>The settings for client-side encryption for cryptographic computing.</p>
-    pub fn data_encryption_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::DataEncryptionMetadata> {
+    pub fn data_encryption_metadata(&self) -> std::option::Option<& crate::model::DataEncryptionMetadata> {
         self.data_encryption_metadata.as_ref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(
-        &self,
-    ) -> std::option::Option<&crate::model::CollaborationQueryLogStatus> {
+    pub fn query_log_status(&self) -> std::option::Option<& crate::model::CollaborationQueryLogStatus> {
         self.query_log_status.as_ref()
     }
 }
 /// See [`Collaboration`](crate::model::Collaboration).
 pub mod collaboration {
-
+    
     /// A builder for [`Collaboration`](crate::model::Collaboration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6787,8 +6256,7 @@ pub mod collaboration {
         pub(crate) member_status: std::option::Option<crate::model::MemberStatus>,
         pub(crate) membership_id: std::option::Option<std::string::String>,
         pub(crate) membership_arn: std::option::Option<std::string::String>,
-        pub(crate) data_encryption_metadata:
-            std::option::Option<crate::model::DataEncryptionMetadata>,
+        pub(crate) data_encryption_metadata: std::option::Option<crate::model::DataEncryptionMetadata>,
         pub(crate) query_log_status: std::option::Option<crate::model::CollaborationQueryLogStatus>,
     }
     impl Builder {
@@ -6799,8 +6267,7 @@ pub mod collaboration {
         }
         /// <p>The unique ID for the collaboration.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ARN for the collaboration.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6809,8 +6276,7 @@ pub mod collaboration {
         }
         /// <p>The unique ARN for the collaboration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6819,8 +6285,7 @@ pub mod collaboration {
         }
         /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the collaboration provided by the collaboration owner.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6829,8 +6294,7 @@ pub mod collaboration {
         }
         /// <p>A description of the collaboration provided by the collaboration owner.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
         pub fn creator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6838,12 +6302,8 @@ pub mod collaboration {
             self
         }
         /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
-        pub fn set_creator_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creator_account_id = input;
-            self
+        pub fn set_creator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creator_account_id = input; self
         }
         /// <p>A display name of the collaboration creator.</p>
         pub fn creator_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6851,12 +6311,8 @@ pub mod collaboration {
             self
         }
         /// <p>A display name of the collaboration creator.</p>
-        pub fn set_creator_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creator_display_name = input;
-            self
+        pub fn set_creator_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creator_display_name = input; self
         }
         /// <p>The time when the collaboration was created.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6864,12 +6320,8 @@ pub mod collaboration {
             self
         }
         /// <p>The time when the collaboration was created.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The time the collaboration metadata was last updated.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6877,12 +6329,8 @@ pub mod collaboration {
             self
         }
         /// <p>The time the collaboration metadata was last updated.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>The status of a member in a collaboration.</p>
         pub fn member_status(mut self, input: crate::model::MemberStatus) -> Self {
@@ -6890,12 +6338,8 @@ pub mod collaboration {
             self
         }
         /// <p>The status of a member in a collaboration.</p>
-        pub fn set_member_status(
-            mut self,
-            input: std::option::Option<crate::model::MemberStatus>,
-        ) -> Self {
-            self.member_status = input;
-            self
+        pub fn set_member_status(mut self, input: std::option::Option<crate::model::MemberStatus>) -> Self {
+            self.member_status = input; self
         }
         /// <p>The unique ID for your membership within the collaboration.</p>
         pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6903,12 +6347,8 @@ pub mod collaboration {
             self
         }
         /// <p>The unique ID for your membership within the collaboration.</p>
-        pub fn set_membership_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_id = input;
-            self
+        pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_id = input; self
         }
         /// <p>The unique ARN for your membership within the collaboration.</p>
         pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6916,64 +6356,61 @@ pub mod collaboration {
             self
         }
         /// <p>The unique ARN for your membership within the collaboration.</p>
-        pub fn set_membership_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_arn = input;
-            self
+        pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_arn = input; self
         }
         /// <p>The settings for client-side encryption for cryptographic computing.</p>
-        pub fn data_encryption_metadata(
-            mut self,
-            input: crate::model::DataEncryptionMetadata,
-        ) -> Self {
+        pub fn data_encryption_metadata(mut self, input: crate::model::DataEncryptionMetadata) -> Self {
             self.data_encryption_metadata = Some(input);
             self
         }
         /// <p>The settings for client-side encryption for cryptographic computing.</p>
-        pub fn set_data_encryption_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DataEncryptionMetadata>,
-        ) -> Self {
-            self.data_encryption_metadata = input;
-            self
+        pub fn set_data_encryption_metadata(mut self, input: std::option::Option<crate::model::DataEncryptionMetadata>) -> Self {
+            self.data_encryption_metadata = input; self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-        pub fn query_log_status(
-            mut self,
-            input: crate::model::CollaborationQueryLogStatus,
-        ) -> Self {
+        pub fn query_log_status(mut self, input: crate::model::CollaborationQueryLogStatus) -> Self {
             self.query_log_status = Some(input);
             self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-        pub fn set_query_log_status(
-            mut self,
-            input: std::option::Option<crate::model::CollaborationQueryLogStatus>,
-        ) -> Self {
-            self.query_log_status = input;
-            self
+        pub fn set_query_log_status(mut self, input: std::option::Option<crate::model::CollaborationQueryLogStatus>) -> Self {
+            self.query_log_status = input; self
         }
         /// Consumes the builder and constructs a [`Collaboration`](crate::model::Collaboration).
         pub fn build(self) -> crate::model::Collaboration {
             crate::model::Collaboration {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                creator_account_id: self.creator_account_id,
-                creator_display_name: self.creator_display_name,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                member_status: self.member_status,
-                membership_id: self.membership_id,
-                membership_arn: self.membership_arn,
-                data_encryption_metadata: self.data_encryption_metadata,
-                query_log_status: self.query_log_status,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creator_account_id: self.creator_account_id
+                ,
+                creator_display_name: self.creator_display_name
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                member_status: self.member_status
+                ,
+                membership_id: self.membership_id
+                ,
+                membership_arn: self.membership_arn
+                ,
+                data_encryption_metadata: self.data_encryption_metadata
+                ,
+                query_log_status: self.query_log_status
+                ,
             }
         }
     }
+    
+    
 }
 impl Collaboration {
     /// Creates a new builder-style object to manufacture [`Collaboration`](crate::model::Collaboration).
@@ -6988,9 +6425,9 @@ impl Collaboration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let collaborationquerylogstatus = unimplemented!();
 /// match collaborationquerylogstatus {
@@ -7012,60 +6449,52 @@ impl Collaboration {
 /// Specifically, when `collaborationquerylogstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CollaborationQueryLogStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CollaborationQueryLogStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CollaborationQueryLogStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => CollaborationQueryLogStatus::Disabled,
             "ENABLED" => CollaborationQueryLogStatus::Enabled,
-            other => CollaborationQueryLogStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CollaborationQueryLogStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CollaborationQueryLogStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CollaborationQueryLogStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CollaborationQueryLogStatus::from(s))
+                }
+            }
 impl CollaborationQueryLogStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CollaborationQueryLogStatus::Disabled => "DISABLED",
             CollaborationQueryLogStatus::Enabled => "ENABLED",
-            CollaborationQueryLogStatus::Unknown(value) => value.as_str(),
+            CollaborationQueryLogStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for CollaborationQueryLogStatus {
@@ -7077,7 +6506,7 @@ impl AsRef<str> for CollaborationQueryLogStatus {
 /// <p>The settings for client-side encryption for cryptographic computing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataEncryptionMetadata {
+pub struct DataEncryptionMetadata  {
     /// <p>Indicates whether encrypted tables can contain cleartext data (true) or are to cryptographically process every column (false).</p>
     #[doc(hidden)]
     pub allow_cleartext: std::option::Option<bool>,
@@ -7111,7 +6540,7 @@ impl DataEncryptionMetadata {
 }
 /// See [`DataEncryptionMetadata`](crate::model::DataEncryptionMetadata).
 pub mod data_encryption_metadata {
-
+    
     /// A builder for [`DataEncryptionMetadata`](crate::model::DataEncryptionMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7128,8 +6557,7 @@ pub mod data_encryption_metadata {
         }
         /// <p>Indicates whether encrypted tables can contain cleartext data (true) or are to cryptographically process every column (false).</p>
         pub fn set_allow_cleartext(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_cleartext = input;
-            self
+            self.allow_cleartext = input; self
         }
         /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
         pub fn allow_duplicates(mut self, input: bool) -> Self {
@@ -7138,8 +6566,7 @@ pub mod data_encryption_metadata {
         }
         /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
         pub fn set_allow_duplicates(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_duplicates = input;
-            self
+            self.allow_duplicates = input; self
         }
         /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
         pub fn allow_joins_on_columns_with_different_names(mut self, input: bool) -> Self {
@@ -7147,12 +6574,8 @@ pub mod data_encryption_metadata {
             self
         }
         /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
-        pub fn set_allow_joins_on_columns_with_different_names(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.allow_joins_on_columns_with_different_names = input;
-            self
+        pub fn set_allow_joins_on_columns_with_different_names(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_joins_on_columns_with_different_names = input; self
         }
         /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
         pub fn preserve_nulls(mut self, input: bool) -> Self {
@@ -7161,20 +6584,24 @@ pub mod data_encryption_metadata {
         }
         /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
         pub fn set_preserve_nulls(mut self, input: std::option::Option<bool>) -> Self {
-            self.preserve_nulls = input;
-            self
+            self.preserve_nulls = input; self
         }
         /// Consumes the builder and constructs a [`DataEncryptionMetadata`](crate::model::DataEncryptionMetadata).
         pub fn build(self) -> crate::model::DataEncryptionMetadata {
             crate::model::DataEncryptionMetadata {
-                allow_cleartext: self.allow_cleartext,
-                allow_duplicates: self.allow_duplicates,
-                allow_joins_on_columns_with_different_names: self
-                    .allow_joins_on_columns_with_different_names,
-                preserve_nulls: self.preserve_nulls,
+                allow_cleartext: self.allow_cleartext
+                ,
+                allow_duplicates: self.allow_duplicates
+                ,
+                allow_joins_on_columns_with_different_names: self.allow_joins_on_columns_with_different_names
+                ,
+                preserve_nulls: self.preserve_nulls
+                ,
             }
         }
     }
+    
+    
 }
 impl DataEncryptionMetadata {
     /// Creates a new builder-style object to manufacture [`DataEncryptionMetadata`](crate::model::DataEncryptionMetadata).
@@ -7186,7 +6613,7 @@ impl DataEncryptionMetadata {
 /// <p>Basic metadata used to construct a new member.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberSpecification {
+pub struct MemberSpecification  {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -7199,27 +6626,26 @@ pub struct MemberSpecification {
 }
 impl MemberSpecification {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn member_abilities(&self) -> std::option::Option<&[crate::model::MemberAbility]> {
+    pub fn member_abilities(&self) -> std::option::Option<& [crate::model::MemberAbility]> {
         self.member_abilities.as_deref()
     }
     /// <p>The member's display name.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 /// See [`MemberSpecification`](crate::model::MemberSpecification).
 pub mod member_specification {
-
+    
     /// A builder for [`MemberSpecification`](crate::model::MemberSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) member_abilities:
-            std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
+        pub(crate) member_abilities: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7230,8 +6656,7 @@ pub mod member_specification {
         }
         /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Appends an item to `member_abilities`.
         ///
@@ -7240,17 +6665,13 @@ pub mod member_specification {
         /// <p>The abilities granted to the collaboration member.</p>
         pub fn member_abilities(mut self, input: crate::model::MemberAbility) -> Self {
             let mut v = self.member_abilities.unwrap_or_default();
-            v.push(input);
-            self.member_abilities = Some(v);
-            self
+                            v.push(input);
+                            self.member_abilities = Some(v);
+                            self
         }
         /// <p>The abilities granted to the collaboration member.</p>
-        pub fn set_member_abilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
-        ) -> Self {
-            self.member_abilities = input;
-            self
+        pub fn set_member_abilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>) -> Self {
+            self.member_abilities = input; self
         }
         /// <p>The member's display name.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7259,18 +6680,22 @@ pub mod member_specification {
         }
         /// <p>The member's display name.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// Consumes the builder and constructs a [`MemberSpecification`](crate::model::MemberSpecification).
         pub fn build(self) -> crate::model::MemberSpecification {
             crate::model::MemberSpecification {
-                account_id: self.account_id,
-                member_abilities: self.member_abilities,
-                display_name: self.display_name,
+                account_id: self.account_id
+                ,
+                member_abilities: self.member_abilities
+                ,
+                display_name: self.display_name
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberSpecification {
     /// Creates a new builder-style object to manufacture [`MemberSpecification`](crate::model::MemberSpecification).
@@ -7278,3 +6703,4 @@ impl MemberSpecification {
         crate::model::member_specification::Builder::default()
     }
 }
+

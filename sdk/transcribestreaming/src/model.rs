@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let languagecode = unimplemented!();
 /// match languagecode {
@@ -42,22 +42,14 @@
 /// Specifically, when `languagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LanguageCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
@@ -88,7 +80,7 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ZhCn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LanguageCode {
     fn from(s: &str) -> Self {
@@ -107,17 +99,17 @@ impl std::convert::From<&str> for LanguageCode {
             "pt-BR" => LanguageCode::PtBr,
             "th-TH" => LanguageCode::ThTh,
             "zh-CN" => LanguageCode::ZhCn,
-            other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LanguageCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LanguageCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LanguageCode::from(s))
+                }
+            }
 impl LanguageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -136,14 +128,13 @@ impl LanguageCode {
             LanguageCode::PtBr => "pt-BR",
             LanguageCode::ThTh => "th-TH",
             LanguageCode::ZhCn => "zh-CN",
-            LanguageCode::Unknown(value) => value.as_str(),
+            LanguageCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT",
-            "ja-JP", "ko-KR", "pt-BR", "th-TH", "zh-CN",
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "pt-BR", "th-TH", "zh-CN"
         ]
     }
 }
@@ -159,9 +150,9 @@ impl AsRef<str> for LanguageCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contentredactiontype = unimplemented!();
 /// match contentredactiontype {
@@ -182,56 +173,48 @@ impl AsRef<str> for LanguageCode {
 /// Specifically, when `contentredactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContentRedactionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContentRedactionType {
     #[allow(missing_docs)] // documentation missing in model
     Pii,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentRedactionType {
     fn from(s: &str) -> Self {
         match s {
             "PII" => ContentRedactionType::Pii,
-            other => {
-                ContentRedactionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ContentRedactionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContentRedactionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContentRedactionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContentRedactionType::from(s))
+                }
+            }
 impl ContentRedactionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentRedactionType::Pii => "PII",
-            ContentRedactionType::Unknown(value) => value.as_str(),
+            ContentRedactionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PII"]
+        &[
+            "PII"
+        ]
     }
 }
 impl AsRef<str> for ContentRedactionType {
@@ -246,9 +229,9 @@ impl AsRef<str> for ContentRedactionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contentidentificationtype = unimplemented!();
 /// match contentidentificationtype {
@@ -269,56 +252,48 @@ impl AsRef<str> for ContentRedactionType {
 /// Specifically, when `contentidentificationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContentIdentificationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContentIdentificationType {
     #[allow(missing_docs)] // documentation missing in model
     Pii,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentIdentificationType {
     fn from(s: &str) -> Self {
         match s {
             "PII" => ContentIdentificationType::Pii,
-            other => ContentIdentificationType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ContentIdentificationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContentIdentificationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContentIdentificationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContentIdentificationType::from(s))
+                }
+            }
 impl ContentIdentificationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentIdentificationType::Pii => "PII",
-            ContentIdentificationType::Unknown(value) => value.as_str(),
+            ContentIdentificationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PII"]
+        &[
+            "PII"
+        ]
     }
 }
 impl AsRef<str> for ContentIdentificationType {
@@ -333,9 +308,9 @@ impl AsRef<str> for ContentIdentificationType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let partialresultsstability = unimplemented!();
 /// match partialresultsstability {
@@ -358,22 +333,14 @@ impl AsRef<str> for ContentIdentificationType {
 /// Specifically, when `partialresultsstability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PartialResultsStability::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PartialResultsStability {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -382,7 +349,7 @@ pub enum PartialResultsStability {
     #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PartialResultsStability {
     fn from(s: &str) -> Self {
@@ -390,19 +357,17 @@ impl std::convert::From<&str> for PartialResultsStability {
             "high" => PartialResultsStability::High,
             "low" => PartialResultsStability::Low,
             "medium" => PartialResultsStability::Medium,
-            other => PartialResultsStability::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PartialResultsStability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PartialResultsStability {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PartialResultsStability::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PartialResultsStability::from(s))
+                }
+            }
 impl PartialResultsStability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -410,12 +375,14 @@ impl PartialResultsStability {
             PartialResultsStability::High => "high",
             PartialResultsStability::Low => "low",
             PartialResultsStability::Medium => "medium",
-            PartialResultsStability::Unknown(value) => value.as_str(),
+            PartialResultsStability::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["high", "low", "medium"]
+        &[
+            "high", "low", "medium"
+        ]
     }
 }
 impl AsRef<str> for PartialResultsStability {
@@ -430,9 +397,9 @@ impl AsRef<str> for PartialResultsStability {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vocabularyfiltermethod = unimplemented!();
 /// match vocabularyfiltermethod {
@@ -455,22 +422,14 @@ impl AsRef<str> for PartialResultsStability {
 /// Specifically, when `vocabularyfiltermethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VocabularyFilterMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VocabularyFilterMethod {
     #[allow(missing_docs)] // documentation missing in model
     Mask,
@@ -479,7 +438,7 @@ pub enum VocabularyFilterMethod {
     #[allow(missing_docs)] // documentation missing in model
     Tag,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VocabularyFilterMethod {
     fn from(s: &str) -> Self {
@@ -487,19 +446,17 @@ impl std::convert::From<&str> for VocabularyFilterMethod {
             "mask" => VocabularyFilterMethod::Mask,
             "remove" => VocabularyFilterMethod::Remove,
             "tag" => VocabularyFilterMethod::Tag,
-            other => {
-                VocabularyFilterMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => VocabularyFilterMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VocabularyFilterMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VocabularyFilterMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VocabularyFilterMethod::from(s))
+                }
+            }
 impl VocabularyFilterMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -507,12 +464,14 @@ impl VocabularyFilterMethod {
             VocabularyFilterMethod::Mask => "mask",
             VocabularyFilterMethod::Remove => "remove",
             VocabularyFilterMethod::Tag => "tag",
-            VocabularyFilterMethod::Unknown(value) => value.as_str(),
+            VocabularyFilterMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["mask", "remove", "tag"]
+        &[
+            "mask", "remove", "tag"
+        ]
     }
 }
 impl AsRef<str> for VocabularyFilterMethod {
@@ -541,14 +500,8 @@ impl TranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`TranscriptEvent`](crate::model::TranscriptResultStream::TranscriptEvent), extracting the inner [`TranscriptEvent`](crate::model::TranscriptEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_transcript_event(
-        &self,
-    ) -> std::result::Result<&crate::model::TranscriptEvent, &Self> {
-        if let TranscriptResultStream::TranscriptEvent(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_transcript_event(&self) -> std::result::Result<&crate::model::TranscriptEvent, &Self> {
+        if let TranscriptResultStream::TranscriptEvent(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::model::TranscriptResultStream::TranscriptEvent).
     pub fn is_transcript_event(&self) -> bool {
@@ -560,24 +513,24 @@ impl TranscriptResultStream {
     }
 }
 
-/// <p>The <code>TranscriptEvent</code> associated with a <code>TranscriptResultStream</code>.</p>
+/// <p>The <code>TranscriptEvent</code> associated with a <code>TranscriptResultStream</code>.</p> 
 /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TranscriptEvent {
+pub struct TranscriptEvent  {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<crate::model::Transcript>,
 }
 impl TranscriptEvent {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
+    pub fn transcript(&self) -> std::option::Option<& crate::model::Transcript> {
         self.transcript.as_ref()
     }
 }
 /// See [`TranscriptEvent`](crate::model::TranscriptEvent).
 pub mod transcript_event {
-
+    
     /// A builder for [`TranscriptEvent`](crate::model::TranscriptEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -590,20 +543,19 @@ pub mod transcript_event {
             self
         }
         /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-        pub fn set_transcript(
-            mut self,
-            input: std::option::Option<crate::model::Transcript>,
-        ) -> Self {
-            self.transcript = input;
-            self
+        pub fn set_transcript(mut self, input: std::option::Option<crate::model::Transcript>) -> Self {
+            self.transcript = input; self
         }
         /// Consumes the builder and constructs a [`TranscriptEvent`](crate::model::TranscriptEvent).
         pub fn build(self) -> crate::model::TranscriptEvent {
             crate::model::TranscriptEvent {
-                transcript: self.transcript,
+                transcript: self.transcript
+                ,
             }
         }
     }
+    
+    
 }
 impl TranscriptEvent {
     /// Creates a new builder-style object to manufacture [`TranscriptEvent`](crate::model::TranscriptEvent).
@@ -612,24 +564,24 @@ impl TranscriptEvent {
     }
 }
 
-/// <p>The <code>Transcript</code> associated with a <code></code>.</p>
+/// <p>The <code>Transcript</code> associated with a <code></code>.</p> 
 /// <p> <code>Transcript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Transcript {
+pub struct Transcript  {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl Transcript {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::model::Result]> {
+    pub fn results(&self) -> std::option::Option<& [crate::model::Result]> {
         self.results.as_deref()
     }
 }
 /// See [`Transcript`](crate::model::Transcript).
 pub mod transcript {
-
+    
     /// A builder for [`Transcript`](crate::model::Transcript).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -643,25 +595,24 @@ pub mod transcript {
         /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn results(mut self, input: crate::model::Result) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input);
-            self.results = Some(v);
-            self
+                            v.push(input);
+                            self.results = Some(v);
+                            self
         }
         /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-        pub fn set_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Result>>,
-        ) -> Self {
-            self.results = input;
-            self
+        pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::Result>>) -> Self {
+            self.results = input; self
         }
         /// Consumes the builder and constructs a [`Transcript`](crate::model::Transcript).
         pub fn build(self) -> crate::model::Transcript {
             crate::model::Transcript {
-                results: self.results,
+                results: self.results
+                ,
             }
         }
     }
+    
+    
 }
 impl Transcript {
     /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
@@ -670,11 +621,11 @@ impl Transcript {
     }
 }
 
-/// <p>The <code>Result</code> associated with a <code></code>.</p>
+/// <p>The <code>Result</code> associated with a <code></code>.</p> 
 /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Result {
+pub struct Result  {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
@@ -684,7 +635,7 @@ pub struct Result {
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     #[doc(hidden)]
     pub end_time: f64,
-    /// <p>Indicates if the segment is complete.</p>
+    /// <p>Indicates if the segment is complete.</p> 
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     #[doc(hidden)]
     pub is_partial: bool,
@@ -697,15 +648,14 @@ pub struct Result {
     /// <p>The language code that represents the language spoken in your audio stream.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The language code of the dominant language identified in your stream.</p>
+    /// <p>The language code of the dominant language identified in your stream.</p> 
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
     #[doc(hidden)]
-    pub language_identification:
-        std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
+    pub language_identification: std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
 }
 impl Result {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> std::option::Option<& str> {
         self.result_id.as_deref()
     }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
@@ -716,34 +666,32 @@ impl Result {
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>Indicates if the segment is complete.</p>
+    /// <p>Indicates if the segment is complete.</p> 
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     pub fn is_partial(&self) -> bool {
         self.is_partial
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn alternatives(&self) -> std::option::Option<&[crate::model::Alternative]> {
+    pub fn alternatives(&self) -> std::option::Option<& [crate::model::Alternative]> {
         self.alternatives.as_deref()
     }
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// <p>The language code that represents the language spoken in your audio stream.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The language code of the dominant language identified in your stream.</p>
+    /// <p>The language code of the dominant language identified in your stream.</p> 
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    pub fn language_identification(
-        &self,
-    ) -> std::option::Option<&[crate::model::LanguageWithScore]> {
+    pub fn language_identification(&self) -> std::option::Option<& [crate::model::LanguageWithScore]> {
         self.language_identification.as_deref()
     }
 }
 /// See [`Result`](crate::model::Result).
 pub mod result {
-
+    
     /// A builder for [`Result`](crate::model::Result).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -754,8 +702,7 @@ pub mod result {
         pub(crate) alternatives: std::option::Option<std::vec::Vec<crate::model::Alternative>>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
-        pub(crate) language_identification:
-            std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
+        pub(crate) language_identification: std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
     }
     impl Builder {
         /// <p>Provides a unique identifier for the <code>Result</code>.</p>
@@ -765,8 +712,7 @@ pub mod result {
         }
         /// <p>Provides a unique identifier for the <code>Result</code>.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.result_id = input;
-            self
+            self.result_id = input; self
         }
         /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
         pub fn start_time(mut self, input: f64) -> Self {
@@ -775,8 +721,7 @@ pub mod result {
         }
         /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
         pub fn end_time(mut self, input: f64) -> Self {
@@ -785,20 +730,18 @@ pub mod result {
         }
         /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
-        /// <p>Indicates if the segment is complete.</p>
+        /// <p>Indicates if the segment is complete.</p> 
         /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
         pub fn is_partial(mut self, input: bool) -> Self {
             self.is_partial = Some(input);
             self
         }
-        /// <p>Indicates if the segment is complete.</p>
+        /// <p>Indicates if the segment is complete.</p> 
         /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
         pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_partial = input;
-            self
+            self.is_partial = input; self
         }
         /// Appends an item to `alternatives`.
         ///
@@ -807,17 +750,13 @@ pub mod result {
         /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
         pub fn alternatives(mut self, input: crate::model::Alternative) -> Self {
             let mut v = self.alternatives.unwrap_or_default();
-            v.push(input);
-            self.alternatives = Some(v);
-            self
+                            v.push(input);
+                            self.alternatives = Some(v);
+                            self
         }
         /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-        pub fn set_alternatives(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alternative>>,
-        ) -> Self {
-            self.alternatives = input;
-            self
+        pub fn set_alternatives(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alternative>>) -> Self {
+            self.alternatives = input; self
         }
         /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -826,8 +765,7 @@ pub mod result {
         }
         /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// <p>The language code that represents the language spoken in your audio stream.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
@@ -835,48 +773,53 @@ pub mod result {
             self
         }
         /// <p>The language code that represents the language spoken in your audio stream.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<crate::model::LanguageCode>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
+            self.language_code = input; self
         }
         /// Appends an item to `language_identification`.
         ///
         /// To override the contents of this collection use [`set_language_identification`](Self::set_language_identification).
         ///
-        /// <p>The language code of the dominant language identified in your stream.</p>
+        /// <p>The language code of the dominant language identified in your stream.</p> 
         /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
         pub fn language_identification(mut self, input: crate::model::LanguageWithScore) -> Self {
             let mut v = self.language_identification.unwrap_or_default();
-            v.push(input);
-            self.language_identification = Some(v);
-            self
+                            v.push(input);
+                            self.language_identification = Some(v);
+                            self
         }
-        /// <p>The language code of the dominant language identified in your stream.</p>
+        /// <p>The language code of the dominant language identified in your stream.</p> 
         /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-        pub fn set_language_identification(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
-        ) -> Self {
-            self.language_identification = input;
-            self
+        pub fn set_language_identification(mut self, input: std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>) -> Self {
+            self.language_identification = input; self
         }
         /// Consumes the builder and constructs a [`Result`](crate::model::Result).
         pub fn build(self) -> crate::model::Result {
             crate::model::Result {
-                result_id: self.result_id,
-                start_time: self.start_time.unwrap_or_default(),
-                end_time: self.end_time.unwrap_or_default(),
-                is_partial: self.is_partial.unwrap_or_default(),
-                alternatives: self.alternatives,
-                channel_id: self.channel_id,
-                language_code: self.language_code,
-                language_identification: self.language_identification,
+                result_id: self.result_id
+                ,
+                start_time: self.start_time
+                    .unwrap_or_default()
+                ,
+                end_time: self.end_time
+                    .unwrap_or_default()
+                ,
+                is_partial: self.is_partial
+                    .unwrap_or_default()
+                ,
+                alternatives: self.alternatives
+                ,
+                channel_id: self.channel_id
+                ,
+                language_code: self.language_code
+                ,
+                language_identification: self.language_identification
+                ,
             }
         }
     }
+    
+    
 }
 impl Result {
     /// Creates a new builder-style object to manufacture [`Result`](crate::model::Result).
@@ -888,7 +831,7 @@ impl Result {
 /// <p>The language code that represents the language identified in your audio, including the associated confidence score. If you enabled channel identification in your request and each channel contained a different language, you will have more than one <code>LanguageWithScore</code> result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LanguageWithScore {
+pub struct LanguageWithScore  {
     /// <p>The language code of the identified language.</p>
     #[doc(hidden)]
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -898,7 +841,7 @@ pub struct LanguageWithScore {
 }
 impl LanguageWithScore {
     /// <p>The language code of the identified language.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
@@ -908,7 +851,7 @@ impl LanguageWithScore {
 }
 /// See [`LanguageWithScore`](crate::model::LanguageWithScore).
 pub mod language_with_score {
-
+    
     /// A builder for [`LanguageWithScore`](crate::model::LanguageWithScore).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -922,12 +865,8 @@ pub mod language_with_score {
             self
         }
         /// <p>The language code of the identified language.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<crate::model::LanguageCode>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<crate::model::LanguageCode>) -> Self {
+            self.language_code = input; self
         }
         /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
         pub fn score(mut self, input: f64) -> Self {
@@ -936,17 +875,21 @@ pub mod language_with_score {
         }
         /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
         pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.score = input;
-            self
+            self.score = input; self
         }
         /// Consumes the builder and constructs a [`LanguageWithScore`](crate::model::LanguageWithScore).
         pub fn build(self) -> crate::model::LanguageWithScore {
             crate::model::LanguageWithScore {
-                language_code: self.language_code,
-                score: self.score.unwrap_or_default(),
+                language_code: self.language_code
+                ,
+                score: self.score
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LanguageWithScore {
     /// Creates a new builder-style object to manufacture [`LanguageWithScore`](crate::model::LanguageWithScore).
@@ -958,7 +901,7 @@ impl LanguageWithScore {
 /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Alternative {
+pub struct Alternative  {
     /// <p>Contains transcribed text.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
@@ -971,21 +914,21 @@ pub struct Alternative {
 }
 impl Alternative {
     /// <p>Contains transcribed text.</p>
-    pub fn transcript(&self) -> std::option::Option<&str> {
+    pub fn transcript(&self) -> std::option::Option<& str> {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Item]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::Item]> {
         self.items.as_deref()
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Entity]> {
         self.entities.as_deref()
     }
 }
 /// See [`Alternative`](crate::model::Alternative).
 pub mod alternative {
-
+    
     /// A builder for [`Alternative`](crate::model::Alternative).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1001,8 +944,7 @@ pub mod alternative {
         }
         /// <p>Contains transcribed text.</p>
         pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.transcript = input;
-            self
+            self.transcript = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -1011,17 +953,13 @@ pub mod alternative {
         /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
         pub fn items(mut self, input: crate::model::Item) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Item>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::Item>>) -> Self {
+            self.items = input; self
         }
         /// Appends an item to `entities`.
         ///
@@ -1030,27 +968,28 @@ pub mod alternative {
         /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
         pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entity>>) -> Self {
+            self.entities = input; self
         }
         /// Consumes the builder and constructs a [`Alternative`](crate::model::Alternative).
         pub fn build(self) -> crate::model::Alternative {
             crate::model::Alternative {
-                transcript: self.transcript,
-                items: self.items,
-                entities: self.entities,
+                transcript: self.transcript
+                ,
+                items: self.items
+                ,
+                entities: self.entities
+                ,
             }
         }
     }
+    
+    
 }
 impl Alternative {
     /// Creates a new builder-style object to manufacture [`Alternative`](crate::model::Alternative).
@@ -1062,7 +1001,7 @@ impl Alternative {
 /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Entity {
+pub struct Entity  {
     /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
     #[doc(hidden)]
     pub start_time: f64,
@@ -1078,7 +1017,7 @@ pub struct Entity {
     /// <p>The word or words identified as PII.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The confidence score associated with the identified PII entity in your audio.</p>
+    /// <p>The confidence score associated with the identified PII entity in your audio.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
@@ -1093,18 +1032,18 @@ impl Entity {
         self.end_time
     }
     /// <p>The category of information identified. The only category is <code>PII</code>.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The word or words identified as PII.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
-    /// <p>The confidence score associated with the identified PII entity in your audio.</p>
+    /// <p>The confidence score associated with the identified PII entity in your audio.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
@@ -1112,7 +1051,7 @@ impl Entity {
 }
 /// See [`Entity`](crate::model::Entity).
 pub mod entity {
-
+    
     /// A builder for [`Entity`](crate::model::Entity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1131,8 +1070,7 @@ pub mod entity {
         }
         /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
         pub fn end_time(mut self, input: f64) -> Self {
@@ -1141,8 +1079,7 @@ pub mod entity {
         }
         /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// <p>The category of information identified. The only category is <code>PII</code>.</p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1151,8 +1088,7 @@ pub mod entity {
         }
         /// <p>The category of information identified. The only category is <code>PII</code>.</p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.category = input;
-            self
+            self.category = input; self
         }
         /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1161,8 +1097,7 @@ pub mod entity {
         }
         /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The word or words identified as PII.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1171,33 +1106,41 @@ pub mod entity {
         }
         /// <p>The word or words identified as PII.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
-        /// <p>The confidence score associated with the identified PII entity in your audio.</p>
+        /// <p>The confidence score associated with the identified PII entity in your audio.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The confidence score associated with the identified PII entity in your audio.</p>
+        /// <p>The confidence score associated with the identified PII entity in your audio.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`Entity`](crate::model::Entity).
         pub fn build(self) -> crate::model::Entity {
             crate::model::Entity {
-                start_time: self.start_time.unwrap_or_default(),
-                end_time: self.end_time.unwrap_or_default(),
-                category: self.category,
-                r#type: self.r#type,
-                content: self.content,
-                confidence: self.confidence,
+                start_time: self.start_time
+                    .unwrap_or_default()
+                ,
+                end_time: self.end_time
+                    .unwrap_or_default()
+                ,
+                category: self.category
+                ,
+                r#type: self.r#type
+                ,
+                content: self.content
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl Entity {
     /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
@@ -1209,7 +1152,7 @@ impl Entity {
 /// <p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Item {
+pub struct Item  {
     /// <p>The start time, in milliseconds, of the transcribed item.</p>
     #[doc(hidden)]
     pub start_time: f64,
@@ -1228,7 +1171,7 @@ pub struct Item {
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
     #[doc(hidden)]
     pub speaker: std::option::Option<std::string::String>,
-    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
@@ -1246,11 +1189,11 @@ impl Item {
         self.end_time
     }
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ItemType> {
         self.r#type.as_ref()
     }
     /// <p>The word or punctuation that was transcribed.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
@@ -1258,10 +1201,10 @@ impl Item {
         self.vocabulary_filter_match
     }
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
-    pub fn speaker(&self) -> std::option::Option<&str> {
+    pub fn speaker(&self) -> std::option::Option<& str> {
         self.speaker.as_deref()
     }
-    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
@@ -1273,7 +1216,7 @@ impl Item {
 }
 /// See [`Item`](crate::model::Item).
 pub mod item {
-
+    
     /// A builder for [`Item`](crate::model::Item).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1294,8 +1237,7 @@ pub mod item {
         }
         /// <p>The start time, in milliseconds, of the transcribed item.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The end time, in milliseconds, of the transcribed item.</p>
         pub fn end_time(mut self, input: f64) -> Self {
@@ -1304,8 +1246,7 @@ pub mod item {
         }
         /// <p>The end time, in milliseconds, of the transcribed item.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
@@ -1314,8 +1255,7 @@ pub mod item {
         }
         /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The word or punctuation that was transcribed.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1324,8 +1264,7 @@ pub mod item {
         }
         /// <p>The word or punctuation that was transcribed.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
         pub fn vocabulary_filter_match(mut self, input: bool) -> Self {
@@ -1334,8 +1273,7 @@ pub mod item {
         }
         /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
         pub fn set_vocabulary_filter_match(mut self, input: std::option::Option<bool>) -> Self {
-            self.vocabulary_filter_match = input;
-            self
+            self.vocabulary_filter_match = input; self
         }
         /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
         pub fn speaker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1344,20 +1282,18 @@ pub mod item {
         }
         /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
         pub fn set_speaker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.speaker = input;
-            self
+            self.speaker = input; self
         }
-        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
         pub fn stable(mut self, input: bool) -> Self {
@@ -1366,23 +1302,35 @@ pub mod item {
         }
         /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
         pub fn set_stable(mut self, input: std::option::Option<bool>) -> Self {
-            self.stable = input;
-            self
+            self.stable = input; self
         }
         /// Consumes the builder and constructs a [`Item`](crate::model::Item).
         pub fn build(self) -> crate::model::Item {
             crate::model::Item {
-                start_time: self.start_time.unwrap_or_default(),
-                end_time: self.end_time.unwrap_or_default(),
-                r#type: self.r#type,
-                content: self.content,
-                vocabulary_filter_match: self.vocabulary_filter_match.unwrap_or_default(),
-                speaker: self.speaker,
-                confidence: self.confidence,
-                stable: self.stable,
+                start_time: self.start_time
+                    .unwrap_or_default()
+                ,
+                end_time: self.end_time
+                    .unwrap_or_default()
+                ,
+                r#type: self.r#type
+                ,
+                content: self.content
+                ,
+                vocabulary_filter_match: self.vocabulary_filter_match
+                    .unwrap_or_default()
+                ,
+                speaker: self.speaker
+                ,
+                confidence: self.confidence
+                ,
+                stable: self.stable
+                ,
             }
         }
     }
+    
+    
 }
 impl Item {
     /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
@@ -1397,9 +1345,9 @@ impl Item {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let itemtype = unimplemented!();
 /// match itemtype {
@@ -1421,58 +1369,52 @@ impl Item {
 /// Specifically, when `itemtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ItemType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ItemType {
     #[allow(missing_docs)] // documentation missing in model
     Pronunciation,
     #[allow(missing_docs)] // documentation missing in model
     Punctuation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ItemType {
     fn from(s: &str) -> Self {
         match s {
             "pronunciation" => ItemType::Pronunciation,
             "punctuation" => ItemType::Punctuation,
-            other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ItemType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ItemType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ItemType::from(s))
+                }
+            }
 impl ItemType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ItemType::Pronunciation => "pronunciation",
             ItemType::Punctuation => "punctuation",
-            ItemType::Unknown(value) => value.as_str(),
+            ItemType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["pronunciation", "punctuation"]
+        &[
+            "pronunciation", "punctuation"
+        ]
     }
 }
 impl AsRef<str> for ItemType {
@@ -1487,9 +1429,9 @@ impl AsRef<str> for ItemType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mediaencoding = unimplemented!();
 /// match mediaencoding {
@@ -1512,22 +1454,14 @@ impl AsRef<str> for ItemType {
 /// Specifically, when `mediaencoding` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MediaEncoding::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MediaEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Flac,
@@ -1536,7 +1470,7 @@ pub enum MediaEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Pcm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MediaEncoding {
     fn from(s: &str) -> Self {
@@ -1544,17 +1478,17 @@ impl std::convert::From<&str> for MediaEncoding {
             "flac" => MediaEncoding::Flac,
             "ogg-opus" => MediaEncoding::OggOpus,
             "pcm" => MediaEncoding::Pcm,
-            other => MediaEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MediaEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MediaEncoding {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MediaEncoding::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MediaEncoding::from(s))
+                }
+            }
 impl MediaEncoding {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1562,12 +1496,14 @@ impl MediaEncoding {
             MediaEncoding::Flac => "flac",
             MediaEncoding::OggOpus => "ogg-opus",
             MediaEncoding::Pcm => "pcm",
-            MediaEncoding::Unknown(value) => value.as_str(),
+            MediaEncoding::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["flac", "ogg-opus", "pcm"]
+        &[
+            "flac", "ogg-opus", "pcm"
+        ]
     }
 }
 impl AsRef<str> for MediaEncoding {
@@ -1576,12 +1512,12 @@ impl AsRef<str> for MediaEncoding {
     }
 }
 
-/// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
+/// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AudioStream {
-    /// <p>A blob of audio from your application. Your audio stream consists of one or more audio events.</p>
+    /// <p>A blob of audio from your application. Your audio stream consists of one or more audio events.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>.</p>
     AudioEvent(crate::model::AudioEvent),
     /// <p>Contains audio channel definitions and post-call analytics settings.</p>
@@ -1600,11 +1536,7 @@ impl AudioStream {
     /// Tries to convert the enum instance into [`AudioEvent`](crate::model::AudioStream::AudioEvent), extracting the inner [`AudioEvent`](crate::model::AudioEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_audio_event(&self) -> std::result::Result<&crate::model::AudioEvent, &Self> {
-        if let AudioStream::AudioEvent(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AudioStream::AudioEvent(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AudioEvent`](crate::model::AudioStream::AudioEvent).
     pub fn is_audio_event(&self) -> bool {
@@ -1612,14 +1544,8 @@ impl AudioStream {
     }
     /// Tries to convert the enum instance into [`ConfigurationEvent`](crate::model::AudioStream::ConfigurationEvent), extracting the inner [`ConfigurationEvent`](crate::model::ConfigurationEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_configuration_event(
-        &self,
-    ) -> std::result::Result<&crate::model::ConfigurationEvent, &Self> {
-        if let AudioStream::ConfigurationEvent(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_configuration_event(&self) -> std::result::Result<&crate::model::ConfigurationEvent, &Self> {
+        if let AudioStream::ConfigurationEvent(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ConfigurationEvent`](crate::model::AudioStream::ConfigurationEvent).
     pub fn is_configuration_event(&self) -> bool {
@@ -1634,7 +1560,7 @@ impl AudioStream {
 /// <p>Allows you to set audio channel definitions and post-call analytics settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationEvent {
+pub struct ConfigurationEvent  {
     /// <p>Indicates which speaker is on which audio channel.</p>
     #[doc(hidden)]
     pub channel_definitions: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
@@ -1644,26 +1570,22 @@ pub struct ConfigurationEvent {
 }
 impl ConfigurationEvent {
     /// <p>Indicates which speaker is on which audio channel.</p>
-    pub fn channel_definitions(&self) -> std::option::Option<&[crate::model::ChannelDefinition]> {
+    pub fn channel_definitions(&self) -> std::option::Option<& [crate::model::ChannelDefinition]> {
         self.channel_definitions.as_deref()
     }
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
-    pub fn post_call_analytics_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::PostCallAnalyticsSettings> {
+    pub fn post_call_analytics_settings(&self) -> std::option::Option<& crate::model::PostCallAnalyticsSettings> {
         self.post_call_analytics_settings.as_ref()
     }
 }
 /// See [`ConfigurationEvent`](crate::model::ConfigurationEvent).
 pub mod configuration_event {
-
+    
     /// A builder for [`ConfigurationEvent`](crate::model::ConfigurationEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) channel_definitions:
-            std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
-        pub(crate) post_call_analytics_settings:
-            std::option::Option<crate::model::PostCallAnalyticsSettings>,
+        pub(crate) channel_definitions: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+        pub(crate) post_call_analytics_settings: std::option::Option<crate::model::PostCallAnalyticsSettings>,
     }
     impl Builder {
         /// Appends an item to `channel_definitions`.
@@ -1673,42 +1595,35 @@ pub mod configuration_event {
         /// <p>Indicates which speaker is on which audio channel.</p>
         pub fn channel_definitions(mut self, input: crate::model::ChannelDefinition) -> Self {
             let mut v = self.channel_definitions.unwrap_or_default();
-            v.push(input);
-            self.channel_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.channel_definitions = Some(v);
+                            self
         }
         /// <p>Indicates which speaker is on which audio channel.</p>
-        pub fn set_channel_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
-        ) -> Self {
-            self.channel_definitions = input;
-            self
+        pub fn set_channel_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>) -> Self {
+            self.channel_definitions = input; self
         }
         /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
-        pub fn post_call_analytics_settings(
-            mut self,
-            input: crate::model::PostCallAnalyticsSettings,
-        ) -> Self {
+        pub fn post_call_analytics_settings(mut self, input: crate::model::PostCallAnalyticsSettings) -> Self {
             self.post_call_analytics_settings = Some(input);
             self
         }
         /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
-        pub fn set_post_call_analytics_settings(
-            mut self,
-            input: std::option::Option<crate::model::PostCallAnalyticsSettings>,
-        ) -> Self {
-            self.post_call_analytics_settings = input;
-            self
+        pub fn set_post_call_analytics_settings(mut self, input: std::option::Option<crate::model::PostCallAnalyticsSettings>) -> Self {
+            self.post_call_analytics_settings = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::model::ConfigurationEvent).
         pub fn build(self) -> crate::model::ConfigurationEvent {
             crate::model::ConfigurationEvent {
-                channel_definitions: self.channel_definitions,
-                post_call_analytics_settings: self.post_call_analytics_settings,
+                channel_definitions: self.channel_definitions
+                ,
+                post_call_analytics_settings: self.post_call_analytics_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationEvent {
     /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent).
@@ -1717,205 +1632,186 @@ impl ConfigurationEvent {
     }
 }
 
-/// <p>Allows you to specify additional settings for your streaming Call Analytics post-call request, including output locations for your redacted and unredacted transcript, which IAM role to use, and, optionally, which encryption key to use.</p>
+/// <p>Allows you to specify additional settings for your streaming Call Analytics post-call request, including output locations for your redacted and unredacted transcript, which IAM role to use, and, optionally, which encryption key to use.</p> 
 /// <p> <code>ContentRedactionOutput</code>, <code>DataAccessRoleArn</code>, and <code>OutputLocation</code> are required fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostCallAnalyticsSettings {
-    /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p>
-    /// <ol>
-    /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
-    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
-    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+pub struct PostCallAnalyticsSettings  {
+    /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p> 
+    /// <ol> 
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li> 
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li> 
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li> 
     /// </ol>
     #[doc(hidden)]
     pub output_location: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p> 
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     #[doc(hidden)]
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
+    /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p> 
     /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
     #[doc(hidden)]
     pub content_redaction_output: std::option::Option<crate::model::ContentRedactionOutput>,
-    /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
-    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
-    /// </ol>
+    /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p> 
+    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p> 
+    /// <ol> 
+    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li> 
+    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> 
+    /// </ol> 
+    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p> 
+    /// <ol> 
+    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> 
+    /// </ol> 
     /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
     #[doc(hidden)]
     pub output_encryption_kms_key_id: std::option::Option<std::string::String>,
 }
 impl PostCallAnalyticsSettings {
-    /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p>
-    /// <ol>
-    /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
-    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
-    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+    /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p> 
+    /// <ol> 
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li> 
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li> 
+    /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li> 
     /// </ol>
-    pub fn output_location(&self) -> std::option::Option<&str> {
+    pub fn output_location(&self) -> std::option::Option<& str> {
         self.output_location.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p> 
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
+    /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p> 
     /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
-    pub fn content_redaction_output(
-        &self,
-    ) -> std::option::Option<&crate::model::ContentRedactionOutput> {
+    pub fn content_redaction_output(&self) -> std::option::Option<& crate::model::ContentRedactionOutput> {
         self.content_redaction_output.as_ref()
     }
-    /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
-    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
-    /// </ol>
+    /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p> 
+    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p> 
+    /// <ol> 
+    /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li> 
+    /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> 
+    /// </ol> 
+    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p> 
+    /// <ol> 
+    /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> 
+    /// </ol> 
     /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
-    pub fn output_encryption_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn output_encryption_kms_key_id(&self) -> std::option::Option<& str> {
         self.output_encryption_kms_key_id.as_deref()
     }
 }
 /// See [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
 pub mod post_call_analytics_settings {
-
+    
     /// A builder for [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_location: std::option::Option<std::string::String>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
-        pub(crate) content_redaction_output:
-            std::option::Option<crate::model::ContentRedactionOutput>,
+        pub(crate) content_redaction_output: std::option::Option<crate::model::ContentRedactionOutput>,
         pub(crate) output_encryption_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p>
-        /// <ol>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+        /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p> 
+        /// <ol> 
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li> 
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li> 
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li> 
         /// </ol>
         pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_location = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p>
-        /// <ol>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
+        /// <p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p> 
+        /// <ol> 
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li> 
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li> 
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li> 
         /// </ol>
-        pub fn set_output_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.output_location = input;
-            self
+        pub fn set_output_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_location = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p> 
         /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p> 
         /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-        pub fn set_data_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_access_role_arn = input;
-            self
+        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_access_role_arn = input; self
         }
-        /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
+        /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p> 
         /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
-        pub fn content_redaction_output(
-            mut self,
-            input: crate::model::ContentRedactionOutput,
-        ) -> Self {
+        pub fn content_redaction_output(mut self, input: crate::model::ContentRedactionOutput) -> Self {
             self.content_redaction_output = Some(input);
             self
         }
-        /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
+        /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p> 
         /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
-        pub fn set_content_redaction_output(
-            mut self,
-            input: std::option::Option<crate::model::ContentRedactionOutput>,
-        ) -> Self {
-            self.content_redaction_output = input;
-            self
+        pub fn set_content_redaction_output(mut self, input: std::option::Option<crate::model::ContentRedactionOutput>) -> Self {
+            self.content_redaction_output = input; self
         }
-        /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
-        /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-        /// <ol>
-        /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
-        /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
-        /// </ol>
-        /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-        /// <ol>
-        /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
-        /// </ol>
+        /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p> 
+        /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p> 
+        /// <ol> 
+        /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li> 
+        /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> 
+        /// </ol> 
+        /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p> 
+        /// <ol> 
+        /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> 
+        /// </ol> 
         /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
-        pub fn output_encryption_kms_key_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn output_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_encryption_kms_key_id = Some(input.into());
             self
         }
-        /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
-        /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-        /// <ol>
-        /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li>
-        /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
-        /// </ol>
-        /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-        /// <ol>
-        /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
-        /// </ol>
+        /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p> 
+        /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p> 
+        /// <ol> 
+        /// <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li> 
+        /// <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> 
+        /// </ol> 
+        /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p> 
+        /// <ol> 
+        /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> 
+        /// </ol> 
         /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
-        pub fn set_output_encryption_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.output_encryption_kms_key_id = input;
-            self
+        pub fn set_output_encryption_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_encryption_kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
         pub fn build(self) -> crate::model::PostCallAnalyticsSettings {
             crate::model::PostCallAnalyticsSettings {
-                output_location: self.output_location,
-                data_access_role_arn: self.data_access_role_arn,
-                content_redaction_output: self.content_redaction_output,
-                output_encryption_kms_key_id: self.output_encryption_kms_key_id,
+                output_location: self.output_location
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                content_redaction_output: self.content_redaction_output
+                ,
+                output_encryption_kms_key_id: self.output_encryption_kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PostCallAnalyticsSettings {
     /// Creates a new builder-style object to manufacture [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
@@ -1930,9 +1826,9 @@ impl PostCallAnalyticsSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contentredactionoutput = unimplemented!();
 /// match contentredactionoutput {
@@ -1954,60 +1850,52 @@ impl PostCallAnalyticsSettings {
 /// Specifically, when `contentredactionoutput` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContentRedactionOutput::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContentRedactionOutput {
     #[allow(missing_docs)] // documentation missing in model
     Redacted,
     #[allow(missing_docs)] // documentation missing in model
     RedactedAndUnredacted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentRedactionOutput {
     fn from(s: &str) -> Self {
         match s {
             "redacted" => ContentRedactionOutput::Redacted,
             "redacted_and_unredacted" => ContentRedactionOutput::RedactedAndUnredacted,
-            other => {
-                ContentRedactionOutput::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ContentRedactionOutput::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContentRedactionOutput {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContentRedactionOutput::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContentRedactionOutput::from(s))
+                }
+            }
 impl ContentRedactionOutput {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentRedactionOutput::Redacted => "redacted",
             ContentRedactionOutput::RedactedAndUnredacted => "redacted_and_unredacted",
-            ContentRedactionOutput::Unknown(value) => value.as_str(),
+            ContentRedactionOutput::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["redacted", "redacted_and_unredacted"]
+        &[
+            "redacted", "redacted_and_unredacted"
+        ]
     }
 }
 impl AsRef<str> for ContentRedactionOutput {
@@ -2019,7 +1907,7 @@ impl AsRef<str> for ContentRedactionOutput {
 /// <p>Makes it possible to specify which speaker is on which audio channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelDefinition {
+pub struct ChannelDefinition  {
     /// <p>Specify the audio channel you want to define.</p>
     #[doc(hidden)]
     pub channel_id: i32,
@@ -2033,13 +1921,13 @@ impl ChannelDefinition {
         self.channel_id
     }
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+    pub fn participant_role(&self) -> std::option::Option<& crate::model::ParticipantRole> {
         self.participant_role.as_ref()
     }
 }
 /// See [`ChannelDefinition`](crate::model::ChannelDefinition).
 pub mod channel_definition {
-
+    
     /// A builder for [`ChannelDefinition`](crate::model::ChannelDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2054,8 +1942,7 @@ pub mod channel_definition {
         }
         /// <p>Specify the audio channel you want to define.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
         pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
@@ -2063,21 +1950,22 @@ pub mod channel_definition {
             self
         }
         /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
-        pub fn set_participant_role(
-            mut self,
-            input: std::option::Option<crate::model::ParticipantRole>,
-        ) -> Self {
-            self.participant_role = input;
-            self
+        pub fn set_participant_role(mut self, input: std::option::Option<crate::model::ParticipantRole>) -> Self {
+            self.participant_role = input; self
         }
         /// Consumes the builder and constructs a [`ChannelDefinition`](crate::model::ChannelDefinition).
         pub fn build(self) -> crate::model::ChannelDefinition {
             crate::model::ChannelDefinition {
-                channel_id: self.channel_id.unwrap_or_default(),
-                participant_role: self.participant_role,
+                channel_id: self.channel_id
+                    .unwrap_or_default()
+                ,
+                participant_role: self.participant_role
+                ,
             }
         }
     }
+    
+    
 }
 impl ChannelDefinition {
     /// Creates a new builder-style object to manufacture [`ChannelDefinition`](crate::model::ChannelDefinition).
@@ -2092,9 +1980,9 @@ impl ChannelDefinition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let participantrole = unimplemented!();
 /// match participantrole {
@@ -2116,58 +2004,52 @@ impl ChannelDefinition {
 /// Specifically, when `participantrole` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParticipantRole::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ParticipantRole {
     #[allow(missing_docs)] // documentation missing in model
     Agent,
     #[allow(missing_docs)] // documentation missing in model
     Customer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParticipantRole {
     fn from(s: &str) -> Self {
         match s {
             "AGENT" => ParticipantRole::Agent,
             "CUSTOMER" => ParticipantRole::Customer,
-            other => ParticipantRole::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ParticipantRole::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ParticipantRole {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParticipantRole::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ParticipantRole::from(s))
+                }
+            }
 impl ParticipantRole {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ParticipantRole::Agent => "AGENT",
             ParticipantRole::Customer => "CUSTOMER",
-            ParticipantRole::Unknown(value) => value.as_str(),
+            ParticipantRole::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT", "CUSTOMER"]
+        &[
+            "AGENT", "CUSTOMER"
+        ]
     }
 }
 impl AsRef<str> for ParticipantRole {
@@ -2176,24 +2058,24 @@ impl AsRef<str> for ParticipantRole {
     }
 }
 
-/// <p>A wrapper for your audio chunks. Your audio stream consists of one or more audio events, which consist of one or more audio chunks.</p>
+/// <p>A wrapper for your audio chunks. Your audio stream consists of one or more audio events, which consist of one or more audio chunks.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioEvent {
+pub struct AudioEvent  {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
     #[doc(hidden)]
     pub audio_chunk: std::option::Option<aws_smithy_types::Blob>,
 }
 impl AudioEvent {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
-    pub fn audio_chunk(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn audio_chunk(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.audio_chunk.as_ref()
     }
 }
 /// See [`AudioEvent`](crate::model::AudioEvent).
 pub mod audio_event {
-
+    
     /// A builder for [`AudioEvent`](crate::model::AudioEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2206,20 +2088,19 @@ pub mod audio_event {
             self
         }
         /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
-        pub fn set_audio_chunk(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.audio_chunk = input;
-            self
+        pub fn set_audio_chunk(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.audio_chunk = input; self
         }
         /// Consumes the builder and constructs a [`AudioEvent`](crate::model::AudioEvent).
         pub fn build(self) -> crate::model::AudioEvent {
             crate::model::AudioEvent {
-                audio_chunk: self.audio_chunk,
+                audio_chunk: self.audio_chunk
+                ,
             }
         }
     }
+    
+    
 }
 impl AudioEvent {
     /// Creates a new builder-style object to manufacture [`AudioEvent`](crate::model::AudioEvent).
@@ -2234,9 +2115,9 @@ impl AudioEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let medicalcontentidentificationtype = unimplemented!();
 /// match medicalcontentidentificationtype {
@@ -2257,56 +2138,48 @@ impl AudioEvent {
 /// Specifically, when `medicalcontentidentificationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MedicalContentIdentificationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MedicalContentIdentificationType {
     #[allow(missing_docs)] // documentation missing in model
     Phi,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MedicalContentIdentificationType {
     fn from(s: &str) -> Self {
         match s {
             "PHI" => MedicalContentIdentificationType::Phi,
-            other => MedicalContentIdentificationType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MedicalContentIdentificationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MedicalContentIdentificationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MedicalContentIdentificationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MedicalContentIdentificationType::from(s))
+                }
+            }
 impl MedicalContentIdentificationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MedicalContentIdentificationType::Phi => "PHI",
-            MedicalContentIdentificationType::Unknown(value) => value.as_str(),
+            MedicalContentIdentificationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PHI"]
+        &[
+            "PHI"
+        ]
     }
 }
 impl AsRef<str> for MedicalContentIdentificationType {
@@ -2319,7 +2192,7 @@ impl AsRef<str> for MedicalContentIdentificationType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum MedicalTranscriptResultStream {
-    /// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p>
+    /// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p> 
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     TranscriptEvent(crate::model::MedicalTranscriptEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -2336,14 +2209,8 @@ impl MedicalTranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`TranscriptEvent`](crate::model::MedicalTranscriptResultStream::TranscriptEvent), extracting the inner [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_transcript_event(
-        &self,
-    ) -> std::result::Result<&crate::model::MedicalTranscriptEvent, &Self> {
-        if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_transcript_event(&self) -> std::result::Result<&crate::model::MedicalTranscriptEvent, &Self> {
+        if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::model::MedicalTranscriptResultStream::TranscriptEvent).
     pub fn is_transcript_event(&self) -> bool {
@@ -2355,24 +2222,24 @@ impl MedicalTranscriptResultStream {
     }
 }
 
-/// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p>
+/// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p> 
 /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MedicalTranscriptEvent {
+pub struct MedicalTranscriptEvent  {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<crate::model::MedicalTranscript>,
 }
 impl MedicalTranscriptEvent {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn transcript(&self) -> std::option::Option<&crate::model::MedicalTranscript> {
+    pub fn transcript(&self) -> std::option::Option<& crate::model::MedicalTranscript> {
         self.transcript.as_ref()
     }
 }
 /// See [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
 pub mod medical_transcript_event {
-
+    
     /// A builder for [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2385,20 +2252,19 @@ pub mod medical_transcript_event {
             self
         }
         /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-        pub fn set_transcript(
-            mut self,
-            input: std::option::Option<crate::model::MedicalTranscript>,
-        ) -> Self {
-            self.transcript = input;
-            self
+        pub fn set_transcript(mut self, input: std::option::Option<crate::model::MedicalTranscript>) -> Self {
+            self.transcript = input; self
         }
         /// Consumes the builder and constructs a [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
         pub fn build(self) -> crate::model::MedicalTranscriptEvent {
             crate::model::MedicalTranscriptEvent {
-                transcript: self.transcript,
+                transcript: self.transcript
+                ,
             }
         }
     }
+    
+    
 }
 impl MedicalTranscriptEvent {
     /// Creates a new builder-style object to manufacture [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
@@ -2407,24 +2273,24 @@ impl MedicalTranscriptEvent {
     }
 }
 
-/// <p>The <code>MedicalTranscript</code> associated with a <code></code>.</p>
+/// <p>The <code>MedicalTranscript</code> associated with a <code></code>.</p> 
 /// <p> <code>MedicalTranscript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MedicalTranscript {
+pub struct MedicalTranscript  {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
 }
 impl MedicalTranscript {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::model::MedicalResult]> {
+    pub fn results(&self) -> std::option::Option<& [crate::model::MedicalResult]> {
         self.results.as_deref()
     }
 }
 /// See [`MedicalTranscript`](crate::model::MedicalTranscript).
 pub mod medical_transcript {
-
+    
     /// A builder for [`MedicalTranscript`](crate::model::MedicalTranscript).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2438,25 +2304,24 @@ pub mod medical_transcript {
         /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
         pub fn results(mut self, input: crate::model::MedicalResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input);
-            self.results = Some(v);
-            self
+                            v.push(input);
+                            self.results = Some(v);
+                            self
         }
         /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-        pub fn set_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
-        ) -> Self {
-            self.results = input;
-            self
+        pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>) -> Self {
+            self.results = input; self
         }
         /// Consumes the builder and constructs a [`MedicalTranscript`](crate::model::MedicalTranscript).
         pub fn build(self) -> crate::model::MedicalTranscript {
             crate::model::MedicalTranscript {
-                results: self.results,
+                results: self.results
+                ,
             }
         }
     }
+    
+    
 }
 impl MedicalTranscript {
     /// Creates a new builder-style object to manufacture [`MedicalTranscript`](crate::model::MedicalTranscript).
@@ -2465,11 +2330,11 @@ impl MedicalTranscript {
     }
 }
 
-/// <p>The <code>Result</code> associated with a <code></code>.</p>
+/// <p>The <code>Result</code> associated with a <code></code>.</p> 
 /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MedicalResult {
+pub struct MedicalResult  {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
@@ -2479,7 +2344,7 @@ pub struct MedicalResult {
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     #[doc(hidden)]
     pub end_time: f64,
-    /// <p>Indicates if the segment is complete.</p>
+    /// <p>Indicates if the segment is complete.</p> 
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     #[doc(hidden)]
     pub is_partial: bool,
@@ -2492,7 +2357,7 @@ pub struct MedicalResult {
 }
 impl MedicalResult {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> std::option::Option<& str> {
         self.result_id.as_deref()
     }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
@@ -2503,23 +2368,23 @@ impl MedicalResult {
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>Indicates if the segment is complete.</p>
+    /// <p>Indicates if the segment is complete.</p> 
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     pub fn is_partial(&self) -> bool {
         self.is_partial
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn alternatives(&self) -> std::option::Option<&[crate::model::MedicalAlternative]> {
+    pub fn alternatives(&self) -> std::option::Option<& [crate::model::MedicalAlternative]> {
         self.alternatives.as_deref()
     }
     /// <p>Indicates the channel identified for the <code>Result</code>.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
 /// See [`MedicalResult`](crate::model::MedicalResult).
 pub mod medical_result {
-
+    
     /// A builder for [`MedicalResult`](crate::model::MedicalResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2527,8 +2392,7 @@ pub mod medical_result {
         pub(crate) start_time: std::option::Option<f64>,
         pub(crate) end_time: std::option::Option<f64>,
         pub(crate) is_partial: std::option::Option<bool>,
-        pub(crate) alternatives:
-            std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>,
+        pub(crate) alternatives: std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2539,8 +2403,7 @@ pub mod medical_result {
         }
         /// <p>Provides a unique identifier for the <code>Result</code>.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.result_id = input;
-            self
+            self.result_id = input; self
         }
         /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
         pub fn start_time(mut self, input: f64) -> Self {
@@ -2549,8 +2412,7 @@ pub mod medical_result {
         }
         /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
         pub fn end_time(mut self, input: f64) -> Self {
@@ -2559,20 +2421,18 @@ pub mod medical_result {
         }
         /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
-        /// <p>Indicates if the segment is complete.</p>
+        /// <p>Indicates if the segment is complete.</p> 
         /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
         pub fn is_partial(mut self, input: bool) -> Self {
             self.is_partial = Some(input);
             self
         }
-        /// <p>Indicates if the segment is complete.</p>
+        /// <p>Indicates if the segment is complete.</p> 
         /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
         pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_partial = input;
-            self
+            self.is_partial = input; self
         }
         /// Appends an item to `alternatives`.
         ///
@@ -2581,17 +2441,13 @@ pub mod medical_result {
         /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
         pub fn alternatives(mut self, input: crate::model::MedicalAlternative) -> Self {
             let mut v = self.alternatives.unwrap_or_default();
-            v.push(input);
-            self.alternatives = Some(v);
-            self
+                            v.push(input);
+                            self.alternatives = Some(v);
+                            self
         }
         /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-        pub fn set_alternatives(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>,
-        ) -> Self {
-            self.alternatives = input;
-            self
+        pub fn set_alternatives(mut self, input: std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>) -> Self {
+            self.alternatives = input; self
         }
         /// <p>Indicates the channel identified for the <code>Result</code>.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2600,21 +2456,31 @@ pub mod medical_result {
         }
         /// <p>Indicates the channel identified for the <code>Result</code>.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// Consumes the builder and constructs a [`MedicalResult`](crate::model::MedicalResult).
         pub fn build(self) -> crate::model::MedicalResult {
             crate::model::MedicalResult {
-                result_id: self.result_id,
-                start_time: self.start_time.unwrap_or_default(),
-                end_time: self.end_time.unwrap_or_default(),
-                is_partial: self.is_partial.unwrap_or_default(),
-                alternatives: self.alternatives,
-                channel_id: self.channel_id,
+                result_id: self.result_id
+                ,
+                start_time: self.start_time
+                    .unwrap_or_default()
+                ,
+                end_time: self.end_time
+                    .unwrap_or_default()
+                ,
+                is_partial: self.is_partial
+                    .unwrap_or_default()
+                ,
+                alternatives: self.alternatives
+                ,
+                channel_id: self.channel_id
+                ,
             }
         }
     }
+    
+    
 }
 impl MedicalResult {
     /// Creates a new builder-style object to manufacture [`MedicalResult`](crate::model::MedicalResult).
@@ -2626,7 +2492,7 @@ impl MedicalResult {
 /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MedicalAlternative {
+pub struct MedicalAlternative  {
     /// <p>Contains transcribed text.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
@@ -2639,21 +2505,21 @@ pub struct MedicalAlternative {
 }
 impl MedicalAlternative {
     /// <p>Contains transcribed text.</p>
-    pub fn transcript(&self) -> std::option::Option<&str> {
+    pub fn transcript(&self) -> std::option::Option<& str> {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::MedicalItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::MedicalItem]> {
         self.items.as_deref()
     }
     /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::MedicalEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::MedicalEntity]> {
         self.entities.as_deref()
     }
 }
 /// See [`MedicalAlternative`](crate::model::MedicalAlternative).
 pub mod medical_alternative {
-
+    
     /// A builder for [`MedicalAlternative`](crate::model::MedicalAlternative).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2669,8 +2535,7 @@ pub mod medical_alternative {
         }
         /// <p>Contains transcribed text.</p>
         pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.transcript = input;
-            self
+            self.transcript = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -2679,17 +2544,13 @@ pub mod medical_alternative {
         /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
         pub fn items(mut self, input: crate::model::MedicalItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MedicalItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::MedicalItem>>) -> Self {
+            self.items = input; self
         }
         /// Appends an item to `entities`.
         ///
@@ -2698,27 +2559,28 @@ pub mod medical_alternative {
         /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
         pub fn entities(mut self, input: crate::model::MedicalEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MedicalEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MedicalEntity>>) -> Self {
+            self.entities = input; self
         }
         /// Consumes the builder and constructs a [`MedicalAlternative`](crate::model::MedicalAlternative).
         pub fn build(self) -> crate::model::MedicalAlternative {
             crate::model::MedicalAlternative {
-                transcript: self.transcript,
-                items: self.items,
-                entities: self.entities,
+                transcript: self.transcript
+                ,
+                items: self.items
+                ,
+                entities: self.entities
+                ,
             }
         }
     }
+    
+    
 }
 impl MedicalAlternative {
     /// Creates a new builder-style object to manufacture [`MedicalAlternative`](crate::model::MedicalAlternative).
@@ -2730,7 +2592,7 @@ impl MedicalAlternative {
 /// <p>Contains entities identified as personal health information (PHI) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MedicalEntity {
+pub struct MedicalEntity  {
     /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
     #[doc(hidden)]
     pub start_time: f64,
@@ -2743,7 +2605,7 @@ pub struct MedicalEntity {
     /// <p>The word or words identified as PHI.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
+    /// <p>The confidence score associated with the identified PHI entity in your audio.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
@@ -2758,14 +2620,14 @@ impl MedicalEntity {
         self.end_time
     }
     /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>The word or words identified as PHI.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
-    /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
+    /// <p>The confidence score associated with the identified PHI entity in your audio.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
@@ -2773,7 +2635,7 @@ impl MedicalEntity {
 }
 /// See [`MedicalEntity`](crate::model::MedicalEntity).
 pub mod medical_entity {
-
+    
     /// A builder for [`MedicalEntity`](crate::model::MedicalEntity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2791,8 +2653,7 @@ pub mod medical_entity {
         }
         /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
         pub fn end_time(mut self, input: f64) -> Self {
@@ -2801,8 +2662,7 @@ pub mod medical_entity {
         }
         /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2811,8 +2671,7 @@ pub mod medical_entity {
         }
         /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.category = input;
-            self
+            self.category = input; self
         }
         /// <p>The word or words identified as PHI.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2821,32 +2680,39 @@ pub mod medical_entity {
         }
         /// <p>The word or words identified as PHI.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
-        /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
+        /// <p>The confidence score associated with the identified PHI entity in your audio.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
+        /// <p>The confidence score associated with the identified PHI entity in your audio.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`MedicalEntity`](crate::model::MedicalEntity).
         pub fn build(self) -> crate::model::MedicalEntity {
             crate::model::MedicalEntity {
-                start_time: self.start_time.unwrap_or_default(),
-                end_time: self.end_time.unwrap_or_default(),
-                category: self.category,
-                content: self.content,
-                confidence: self.confidence,
+                start_time: self.start_time
+                    .unwrap_or_default()
+                ,
+                end_time: self.end_time
+                    .unwrap_or_default()
+                ,
+                category: self.category
+                ,
+                content: self.content
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl MedicalEntity {
     /// Creates a new builder-style object to manufacture [`MedicalEntity`](crate::model::MedicalEntity).
@@ -2858,7 +2724,7 @@ impl MedicalEntity {
 /// <p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MedicalItem {
+pub struct MedicalItem  {
     /// <p>The start time, in milliseconds, of the transcribed item.</p>
     #[doc(hidden)]
     pub start_time: f64,
@@ -2871,7 +2737,7 @@ pub struct MedicalItem {
     /// <p>The word or punctuation that was transcribed.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
@@ -2889,26 +2755,26 @@ impl MedicalItem {
         self.end_time
     }
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ItemType> {
         self.r#type.as_ref()
     }
     /// <p>The word or punctuation that was transcribed.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
-    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
     }
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
-    pub fn speaker(&self) -> std::option::Option<&str> {
+    pub fn speaker(&self) -> std::option::Option<& str> {
         self.speaker.as_deref()
     }
 }
 /// See [`MedicalItem`](crate::model::MedicalItem).
 pub mod medical_item {
-
+    
     /// A builder for [`MedicalItem`](crate::model::MedicalItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2927,8 +2793,7 @@ pub mod medical_item {
         }
         /// <p>The start time, in milliseconds, of the transcribed item.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The end time, in milliseconds, of the transcribed item.</p>
         pub fn end_time(mut self, input: f64) -> Self {
@@ -2937,8 +2802,7 @@ pub mod medical_item {
         }
         /// <p>The end time, in milliseconds, of the transcribed item.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
@@ -2947,8 +2811,7 @@ pub mod medical_item {
         }
         /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The word or punctuation that was transcribed.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2957,20 +2820,18 @@ pub mod medical_item {
         }
         /// <p>The word or punctuation that was transcribed.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
-        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
         pub fn speaker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2979,21 +2840,30 @@ pub mod medical_item {
         }
         /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
         pub fn set_speaker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.speaker = input;
-            self
+            self.speaker = input; self
         }
         /// Consumes the builder and constructs a [`MedicalItem`](crate::model::MedicalItem).
         pub fn build(self) -> crate::model::MedicalItem {
             crate::model::MedicalItem {
-                start_time: self.start_time.unwrap_or_default(),
-                end_time: self.end_time.unwrap_or_default(),
-                r#type: self.r#type,
-                content: self.content,
-                confidence: self.confidence,
-                speaker: self.speaker,
+                start_time: self.start_time
+                    .unwrap_or_default()
+                ,
+                end_time: self.end_time
+                    .unwrap_or_default()
+                ,
+                r#type: self.r#type
+                ,
+                content: self.content
+                ,
+                confidence: self.confidence
+                ,
+                speaker: self.speaker
+                ,
             }
         }
     }
+    
+    
 }
 impl MedicalItem {
     /// Creates a new builder-style object to manufacture [`MedicalItem`](crate::model::MedicalItem).
@@ -3008,9 +2878,9 @@ impl MedicalItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let type = unimplemented!();
 /// match type {
@@ -3032,58 +2902,52 @@ impl MedicalItem {
 /// Specifically, when `type` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Type::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     Conversation,
     #[allow(missing_docs)] // documentation missing in model
     Dictation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
         match s {
             "CONVERSATION" => Type::Conversation,
             "DICTATION" => Type::Dictation,
-            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Type {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Type::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Type::from(s))
+                }
+            }
 impl Type {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Type::Conversation => "CONVERSATION",
             Type::Dictation => "DICTATION",
-            Type::Unknown(value) => value.as_str(),
+            Type::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONVERSATION", "DICTATION"]
+        &[
+            "CONVERSATION", "DICTATION"
+        ]
     }
 }
 impl AsRef<str> for Type {
@@ -3098,9 +2962,9 @@ impl AsRef<str> for Type {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let specialty = unimplemented!();
 /// match specialty {
@@ -3126,22 +2990,14 @@ impl AsRef<str> for Type {
 /// Specifically, when `specialty` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Specialty::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Specialty {
     #[allow(missing_docs)] // documentation missing in model
     Cardiology,
@@ -3156,7 +3012,7 @@ pub enum Specialty {
     #[allow(missing_docs)] // documentation missing in model
     Urology,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Specialty {
     fn from(s: &str) -> Self {
@@ -3167,17 +3023,17 @@ impl std::convert::From<&str> for Specialty {
             "PRIMARYCARE" => Specialty::Primarycare,
             "RADIOLOGY" => Specialty::Radiology,
             "UROLOGY" => Specialty::Urology,
-            other => Specialty::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Specialty::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Specialty {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Specialty::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Specialty::from(s))
+                }
+            }
 impl Specialty {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3188,18 +3044,13 @@ impl Specialty {
             Specialty::Primarycare => "PRIMARYCARE",
             Specialty::Radiology => "RADIOLOGY",
             Specialty::Urology => "UROLOGY",
-            Specialty::Unknown(value) => value.as_str(),
+            Specialty::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CARDIOLOGY",
-            "NEUROLOGY",
-            "ONCOLOGY",
-            "PRIMARYCARE",
-            "RADIOLOGY",
-            "UROLOGY",
+            "CARDIOLOGY", "NEUROLOGY", "ONCOLOGY", "PRIMARYCARE", "RADIOLOGY", "UROLOGY"
         ]
     }
 }
@@ -3231,11 +3082,7 @@ impl CallAnalyticsTranscriptResultStream {
     /// Tries to convert the enum instance into [`CategoryEvent`](crate::model::CallAnalyticsTranscriptResultStream::CategoryEvent), extracting the inner [`CategoryEvent`](crate::model::CategoryEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_category_event(&self) -> std::result::Result<&crate::model::CategoryEvent, &Self> {
-        if let CallAnalyticsTranscriptResultStream::CategoryEvent(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let CallAnalyticsTranscriptResultStream::CategoryEvent(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`CategoryEvent`](crate::model::CallAnalyticsTranscriptResultStream::CategoryEvent).
     pub fn is_category_event(&self) -> bool {
@@ -3244,11 +3091,7 @@ impl CallAnalyticsTranscriptResultStream {
     /// Tries to convert the enum instance into [`UtteranceEvent`](crate::model::CallAnalyticsTranscriptResultStream::UtteranceEvent), extracting the inner [`UtteranceEvent`](crate::model::UtteranceEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_utterance_event(&self) -> std::result::Result<&crate::model::UtteranceEvent, &Self> {
-        if let CallAnalyticsTranscriptResultStream::UtteranceEvent(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let CallAnalyticsTranscriptResultStream::UtteranceEvent(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`UtteranceEvent`](crate::model::CallAnalyticsTranscriptResultStream::UtteranceEvent).
     pub fn is_utterance_event(&self) -> bool {
@@ -3263,40 +3106,32 @@ impl CallAnalyticsTranscriptResultStream {
 /// <p>Provides information on any <code>TranscriptFilterType</code> categories that matched your transcription output. Matches are identified for each segment upon completion of that segment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoryEvent {
+pub struct CategoryEvent  {
     /// <p>Lists the categories that were matched in your audio segment.</p>
     #[doc(hidden)]
     pub matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     #[doc(hidden)]
-    pub matched_details: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>,
-    >,
+    pub matched_details: std::option::Option<std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>>,
 }
 impl CategoryEvent {
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn matched_categories(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn matched_categories(&self) -> std::option::Option<& [std::string::String]> {
         self.matched_categories.as_deref()
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    pub fn matched_details(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>,
-    > {
+    pub fn matched_details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>> {
         self.matched_details.as_ref()
     }
 }
 /// See [`CategoryEvent`](crate::model::CategoryEvent).
 pub mod category_event {
-
+    
     /// A builder for [`CategoryEvent`](crate::model::CategoryEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) matched_details: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>,
-        >,
+        pub(crate) matched_details: std::option::Option<std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>>,
     }
     impl Builder {
         /// Appends an item to `matched_categories`.
@@ -3306,51 +3141,41 @@ pub mod category_event {
         /// <p>Lists the categories that were matched in your audio segment.</p>
         pub fn matched_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.matched_categories.unwrap_or_default();
-            v.push(input.into());
-            self.matched_categories = Some(v);
-            self
+                            v.push(input.into());
+                            self.matched_categories = Some(v);
+                            self
         }
         /// <p>Lists the categories that were matched in your audio segment.</p>
-        pub fn set_matched_categories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.matched_categories = input;
-            self
+        pub fn set_matched_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.matched_categories = input; self
         }
         /// Adds a key-value pair to `matched_details`.
         ///
         /// To override the contents of this collection use [`set_matched_details`](Self::set_matched_details).
         ///
         /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-        pub fn matched_details(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::PointsOfInterest,
-        ) -> Self {
+        pub fn matched_details(mut self, k: impl Into<std::string::String>, v: crate::model::PointsOfInterest) -> Self {
             let mut hash_map = self.matched_details.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.matched_details = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.matched_details = Some(hash_map);
+                            self
         }
         /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-        pub fn set_matched_details(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>,
-            >,
-        ) -> Self {
-            self.matched_details = input;
-            self
+        pub fn set_matched_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>>) -> Self {
+            self.matched_details = input; self
         }
         /// Consumes the builder and constructs a [`CategoryEvent`](crate::model::CategoryEvent).
         pub fn build(self) -> crate::model::CategoryEvent {
             crate::model::CategoryEvent {
-                matched_categories: self.matched_categories,
-                matched_details: self.matched_details,
+                matched_categories: self.matched_categories
+                ,
+                matched_details: self.matched_details
+                ,
             }
         }
     }
+    
+    
 }
 impl CategoryEvent {
     /// Creates a new builder-style object to manufacture [`CategoryEvent`](crate::model::CategoryEvent).
@@ -3362,25 +3187,24 @@ impl CategoryEvent {
 /// <p>Contains the timestamps of matched categories.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PointsOfInterest {
+pub struct PointsOfInterest  {
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
     #[doc(hidden)]
     pub timestamp_ranges: std::option::Option<std::vec::Vec<crate::model::TimestampRange>>,
 }
 impl PointsOfInterest {
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
-    pub fn timestamp_ranges(&self) -> std::option::Option<&[crate::model::TimestampRange]> {
+    pub fn timestamp_ranges(&self) -> std::option::Option<& [crate::model::TimestampRange]> {
         self.timestamp_ranges.as_deref()
     }
 }
 /// See [`PointsOfInterest`](crate::model::PointsOfInterest).
 pub mod points_of_interest {
-
+    
     /// A builder for [`PointsOfInterest`](crate::model::PointsOfInterest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp_ranges:
-            std::option::Option<std::vec::Vec<crate::model::TimestampRange>>,
+        pub(crate) timestamp_ranges: std::option::Option<std::vec::Vec<crate::model::TimestampRange>>,
     }
     impl Builder {
         /// Appends an item to `timestamp_ranges`.
@@ -3390,25 +3214,24 @@ pub mod points_of_interest {
         /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
         pub fn timestamp_ranges(mut self, input: crate::model::TimestampRange) -> Self {
             let mut v = self.timestamp_ranges.unwrap_or_default();
-            v.push(input);
-            self.timestamp_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.timestamp_ranges = Some(v);
+                            self
         }
         /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
-        pub fn set_timestamp_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TimestampRange>>,
-        ) -> Self {
-            self.timestamp_ranges = input;
-            self
+        pub fn set_timestamp_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::TimestampRange>>) -> Self {
+            self.timestamp_ranges = input; self
         }
         /// Consumes the builder and constructs a [`PointsOfInterest`](crate::model::PointsOfInterest).
         pub fn build(self) -> crate::model::PointsOfInterest {
             crate::model::PointsOfInterest {
-                timestamp_ranges: self.timestamp_ranges,
+                timestamp_ranges: self.timestamp_ranges
+                ,
             }
         }
     }
+    
+    
 }
 impl PointsOfInterest {
     /// Creates a new builder-style object to manufacture [`PointsOfInterest`](crate::model::PointsOfInterest).
@@ -3420,7 +3243,7 @@ impl PointsOfInterest {
 /// <p>Contains the timestamp range (start time through end time) of a matched category.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampRange {
+pub struct TimestampRange  {
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>
     #[doc(hidden)]
     pub begin_offset_millis: std::option::Option<i64>,
@@ -3440,7 +3263,7 @@ impl TimestampRange {
 }
 /// See [`TimestampRange`](crate::model::TimestampRange).
 pub mod timestamp_range {
-
+    
     /// A builder for [`TimestampRange`](crate::model::TimestampRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3455,8 +3278,7 @@ pub mod timestamp_range {
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>
         pub fn set_begin_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.begin_offset_millis = input;
-            self
+            self.begin_offset_millis = input; self
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
         pub fn end_offset_millis(mut self, input: i64) -> Self {
@@ -3465,17 +3287,20 @@ pub mod timestamp_range {
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
         pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.end_offset_millis = input;
-            self
+            self.end_offset_millis = input; self
         }
         /// Consumes the builder and constructs a [`TimestampRange`](crate::model::TimestampRange).
         pub fn build(self) -> crate::model::TimestampRange {
             crate::model::TimestampRange {
-                begin_offset_millis: self.begin_offset_millis,
-                end_offset_millis: self.end_offset_millis,
+                begin_offset_millis: self.begin_offset_millis
+                ,
+                end_offset_millis: self.end_offset_millis
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestampRange {
     /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
@@ -3487,7 +3312,7 @@ impl TimestampRange {
 /// <p>Contains set of transcription results from one or more audio segments, along with additional information about the parameters included in your request. For example, channel definitions, partial result stabilization, sentiment, and issue detection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UtteranceEvent {
+pub struct UtteranceEvent  {
     /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
     #[doc(hidden)]
     pub utterance_id: std::option::Option<std::string::String>,
@@ -3521,7 +3346,7 @@ pub struct UtteranceEvent {
 }
 impl UtteranceEvent {
     /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
-    pub fn utterance_id(&self) -> std::option::Option<&str> {
+    pub fn utterance_id(&self) -> std::option::Option<& str> {
         self.utterance_id.as_deref()
     }
     /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
@@ -3529,7 +3354,7 @@ impl UtteranceEvent {
         self.is_partial
     }
     /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
-    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+    pub fn participant_role(&self) -> std::option::Option<& crate::model::ParticipantRole> {
         self.participant_role.as_ref()
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
@@ -3541,29 +3366,29 @@ impl UtteranceEvent {
         self.end_offset_millis
     }
     /// <p>Contains transcribed text.</p>
-    pub fn transcript(&self) -> std::option::Option<&str> {
+    pub fn transcript(&self) -> std::option::Option<& str> {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::CallAnalyticsItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::CallAnalyticsItem]> {
         self.items.as_deref()
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::CallAnalyticsEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::CallAnalyticsEntity]> {
         self.entities.as_deref()
     }
     /// <p>Provides the sentiment that was detected in the specified segment.</p>
-    pub fn sentiment(&self) -> std::option::Option<&crate::model::Sentiment> {
+    pub fn sentiment(&self) -> std::option::Option<& crate::model::Sentiment> {
         self.sentiment.as_ref()
     }
     /// <p>Provides the issue that was detected in the specified segment.</p>
-    pub fn issues_detected(&self) -> std::option::Option<&[crate::model::IssueDetected]> {
+    pub fn issues_detected(&self) -> std::option::Option<& [crate::model::IssueDetected]> {
         self.issues_detected.as_deref()
     }
 }
 /// See [`UtteranceEvent`](crate::model::UtteranceEvent).
 pub mod utterance_event {
-
+    
     /// A builder for [`UtteranceEvent`](crate::model::UtteranceEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3586,8 +3411,7 @@ pub mod utterance_event {
         }
         /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
         pub fn set_utterance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.utterance_id = input;
-            self
+            self.utterance_id = input; self
         }
         /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
         pub fn is_partial(mut self, input: bool) -> Self {
@@ -3596,8 +3420,7 @@ pub mod utterance_event {
         }
         /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
         pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_partial = input;
-            self
+            self.is_partial = input; self
         }
         /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
         pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
@@ -3605,12 +3428,8 @@ pub mod utterance_event {
             self
         }
         /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
-        pub fn set_participant_role(
-            mut self,
-            input: std::option::Option<crate::model::ParticipantRole>,
-        ) -> Self {
-            self.participant_role = input;
-            self
+        pub fn set_participant_role(mut self, input: std::option::Option<crate::model::ParticipantRole>) -> Self {
+            self.participant_role = input; self
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
         pub fn begin_offset_millis(mut self, input: i64) -> Self {
@@ -3619,8 +3438,7 @@ pub mod utterance_event {
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
         pub fn set_begin_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.begin_offset_millis = input;
-            self
+            self.begin_offset_millis = input; self
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
         pub fn end_offset_millis(mut self, input: i64) -> Self {
@@ -3629,8 +3447,7 @@ pub mod utterance_event {
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
         pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.end_offset_millis = input;
-            self
+            self.end_offset_millis = input; self
         }
         /// <p>Contains transcribed text.</p>
         pub fn transcript(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3639,8 +3456,7 @@ pub mod utterance_event {
         }
         /// <p>Contains transcribed text.</p>
         pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.transcript = input;
-            self
+            self.transcript = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -3649,17 +3465,13 @@ pub mod utterance_event {
         /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
         pub fn items(mut self, input: crate::model::CallAnalyticsItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsItem>>) -> Self {
+            self.items = input; self
         }
         /// Appends an item to `entities`.
         ///
@@ -3668,17 +3480,13 @@ pub mod utterance_event {
         /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
         pub fn entities(mut self, input: crate::model::CallAnalyticsEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsEntity>>) -> Self {
+            self.entities = input; self
         }
         /// <p>Provides the sentiment that was detected in the specified segment.</p>
         pub fn sentiment(mut self, input: crate::model::Sentiment) -> Self {
@@ -3686,12 +3494,8 @@ pub mod utterance_event {
             self
         }
         /// <p>Provides the sentiment that was detected in the specified segment.</p>
-        pub fn set_sentiment(
-            mut self,
-            input: std::option::Option<crate::model::Sentiment>,
-        ) -> Self {
-            self.sentiment = input;
-            self
+        pub fn set_sentiment(mut self, input: std::option::Option<crate::model::Sentiment>) -> Self {
+            self.sentiment = input; self
         }
         /// Appends an item to `issues_detected`.
         ///
@@ -3700,34 +3504,43 @@ pub mod utterance_event {
         /// <p>Provides the issue that was detected in the specified segment.</p>
         pub fn issues_detected(mut self, input: crate::model::IssueDetected) -> Self {
             let mut v = self.issues_detected.unwrap_or_default();
-            v.push(input);
-            self.issues_detected = Some(v);
-            self
+                            v.push(input);
+                            self.issues_detected = Some(v);
+                            self
         }
         /// <p>Provides the issue that was detected in the specified segment.</p>
-        pub fn set_issues_detected(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>,
-        ) -> Self {
-            self.issues_detected = input;
-            self
+        pub fn set_issues_detected(mut self, input: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>) -> Self {
+            self.issues_detected = input; self
         }
         /// Consumes the builder and constructs a [`UtteranceEvent`](crate::model::UtteranceEvent).
         pub fn build(self) -> crate::model::UtteranceEvent {
             crate::model::UtteranceEvent {
-                utterance_id: self.utterance_id,
-                is_partial: self.is_partial.unwrap_or_default(),
-                participant_role: self.participant_role,
-                begin_offset_millis: self.begin_offset_millis,
-                end_offset_millis: self.end_offset_millis,
-                transcript: self.transcript,
-                items: self.items,
-                entities: self.entities,
-                sentiment: self.sentiment,
-                issues_detected: self.issues_detected,
+                utterance_id: self.utterance_id
+                ,
+                is_partial: self.is_partial
+                    .unwrap_or_default()
+                ,
+                participant_role: self.participant_role
+                ,
+                begin_offset_millis: self.begin_offset_millis
+                ,
+                end_offset_millis: self.end_offset_millis
+                ,
+                transcript: self.transcript
+                ,
+                items: self.items
+                ,
+                entities: self.entities
+                ,
+                sentiment: self.sentiment
+                ,
+                issues_detected: self.issues_detected
+                ,
             }
         }
     }
+    
+    
 }
 impl UtteranceEvent {
     /// Creates a new builder-style object to manufacture [`UtteranceEvent`](crate::model::UtteranceEvent).
@@ -3739,20 +3552,20 @@ impl UtteranceEvent {
 /// <p>Lists the issues that were identified in your audio segment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IssueDetected {
+pub struct IssueDetected  {
     /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
     #[doc(hidden)]
     pub character_offsets: std::option::Option<crate::model::CharacterOffsets>,
 }
 impl IssueDetected {
     /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
-    pub fn character_offsets(&self) -> std::option::Option<&crate::model::CharacterOffsets> {
+    pub fn character_offsets(&self) -> std::option::Option<& crate::model::CharacterOffsets> {
         self.character_offsets.as_ref()
     }
 }
 /// See [`IssueDetected`](crate::model::IssueDetected).
 pub mod issue_detected {
-
+    
     /// A builder for [`IssueDetected`](crate::model::IssueDetected).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3765,20 +3578,19 @@ pub mod issue_detected {
             self
         }
         /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
-        pub fn set_character_offsets(
-            mut self,
-            input: std::option::Option<crate::model::CharacterOffsets>,
-        ) -> Self {
-            self.character_offsets = input;
-            self
+        pub fn set_character_offsets(mut self, input: std::option::Option<crate::model::CharacterOffsets>) -> Self {
+            self.character_offsets = input; self
         }
         /// Consumes the builder and constructs a [`IssueDetected`](crate::model::IssueDetected).
         pub fn build(self) -> crate::model::IssueDetected {
             crate::model::IssueDetected {
-                character_offsets: self.character_offsets,
+                character_offsets: self.character_offsets
+                ,
             }
         }
     }
+    
+    
 }
 impl IssueDetected {
     /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected).
@@ -3790,7 +3602,7 @@ impl IssueDetected {
 /// <p>Provides the location, using character count, in your transcript where a match is identified. For example, the location of an issue or a category match within a segment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CharacterOffsets {
+pub struct CharacterOffsets  {
     /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
     #[doc(hidden)]
     pub begin: std::option::Option<i32>,
@@ -3810,7 +3622,7 @@ impl CharacterOffsets {
 }
 /// See [`CharacterOffsets`](crate::model::CharacterOffsets).
 pub mod character_offsets {
-
+    
     /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3825,8 +3637,7 @@ pub mod character_offsets {
         }
         /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
         pub fn set_begin(mut self, input: std::option::Option<i32>) -> Self {
-            self.begin = input;
-            self
+            self.begin = input; self
         }
         /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
         pub fn end(mut self, input: i32) -> Self {
@@ -3835,17 +3646,20 @@ pub mod character_offsets {
         }
         /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
         pub fn set_end(mut self, input: std::option::Option<i32>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// Consumes the builder and constructs a [`CharacterOffsets`](crate::model::CharacterOffsets).
         pub fn build(self) -> crate::model::CharacterOffsets {
             crate::model::CharacterOffsets {
-                begin: self.begin,
-                end: self.end,
+                begin: self.begin
+                ,
+                end: self.end
+                ,
             }
         }
     }
+    
+    
 }
 impl CharacterOffsets {
     /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets).
@@ -3860,9 +3674,9 @@ impl CharacterOffsets {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sentiment = unimplemented!();
 /// match sentiment {
@@ -3886,22 +3700,14 @@ impl CharacterOffsets {
 /// Specifically, when `sentiment` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Sentiment::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Sentiment {
     #[allow(missing_docs)] // documentation missing in model
     Mixed,
@@ -3912,7 +3718,7 @@ pub enum Sentiment {
     #[allow(missing_docs)] // documentation missing in model
     Positive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Sentiment {
     fn from(s: &str) -> Self {
@@ -3921,17 +3727,17 @@ impl std::convert::From<&str> for Sentiment {
             "NEGATIVE" => Sentiment::Negative,
             "NEUTRAL" => Sentiment::Neutral,
             "POSITIVE" => Sentiment::Positive,
-            other => Sentiment::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Sentiment::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Sentiment {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Sentiment::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Sentiment::from(s))
+                }
+            }
 impl Sentiment {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3940,12 +3746,14 @@ impl Sentiment {
             Sentiment::Negative => "NEGATIVE",
             Sentiment::Neutral => "NEUTRAL",
             Sentiment::Positive => "POSITIVE",
-            Sentiment::Unknown(value) => value.as_str(),
+            Sentiment::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
+        &[
+            "MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"
+        ]
     }
 }
 impl AsRef<str> for Sentiment {
@@ -3957,7 +3765,7 @@ impl AsRef<str> for Sentiment {
 /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, content, type, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CallAnalyticsEntity {
+pub struct CallAnalyticsEntity  {
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
     #[doc(hidden)]
     pub begin_offset_millis: std::option::Option<i64>,
@@ -3973,7 +3781,7 @@ pub struct CallAnalyticsEntity {
     /// <p>The word or words that represent the identified entity.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
+    /// <p>The confidence score associated with the identification of an entity in your transcript.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
@@ -3988,18 +3796,18 @@ impl CallAnalyticsEntity {
         self.end_offset_millis
     }
     /// <p>The category of information identified. For example, <code>PII</code>.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The word or words that represent the identified entity.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
-    /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
+    /// <p>The confidence score associated with the identification of an entity in your transcript.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
@@ -4007,7 +3815,7 @@ impl CallAnalyticsEntity {
 }
 /// See [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
 pub mod call_analytics_entity {
-
+    
     /// A builder for [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4026,8 +3834,7 @@ pub mod call_analytics_entity {
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
         pub fn set_begin_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.begin_offset_millis = input;
-            self
+            self.begin_offset_millis = input; self
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
         pub fn end_offset_millis(mut self, input: i64) -> Self {
@@ -4036,8 +3843,7 @@ pub mod call_analytics_entity {
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
         pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.end_offset_millis = input;
-            self
+            self.end_offset_millis = input; self
         }
         /// <p>The category of information identified. For example, <code>PII</code>.</p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4046,8 +3852,7 @@ pub mod call_analytics_entity {
         }
         /// <p>The category of information identified. For example, <code>PII</code>.</p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.category = input;
-            self
+            self.category = input; self
         }
         /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4056,8 +3861,7 @@ pub mod call_analytics_entity {
         }
         /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The word or words that represent the identified entity.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4066,33 +3870,39 @@ pub mod call_analytics_entity {
         }
         /// <p>The word or words that represent the identified entity.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
-        /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
+        /// <p>The confidence score associated with the identification of an entity in your transcript.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
+        /// <p>The confidence score associated with the identification of an entity in your transcript.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
         pub fn build(self) -> crate::model::CallAnalyticsEntity {
             crate::model::CallAnalyticsEntity {
-                begin_offset_millis: self.begin_offset_millis,
-                end_offset_millis: self.end_offset_millis,
-                category: self.category,
-                r#type: self.r#type,
-                content: self.content,
-                confidence: self.confidence,
+                begin_offset_millis: self.begin_offset_millis
+                ,
+                end_offset_millis: self.end_offset_millis
+                ,
+                category: self.category
+                ,
+                r#type: self.r#type
+                ,
+                content: self.content
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl CallAnalyticsEntity {
     /// Creates a new builder-style object to manufacture [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
@@ -4104,7 +3914,7 @@ impl CallAnalyticsEntity {
 /// <p>A word, phrase, or punctuation mark in your Call Analytics transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CallAnalyticsItem {
+pub struct CallAnalyticsItem  {
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified item.</p>
     #[doc(hidden)]
     pub begin_offset_millis: std::option::Option<i64>,
@@ -4117,7 +3927,7 @@ pub struct CallAnalyticsItem {
     /// <p>The word or punctuation that was transcribed.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
@@ -4138,14 +3948,14 @@ impl CallAnalyticsItem {
         self.end_offset_millis
     }
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ItemType> {
         self.r#type.as_ref()
     }
     /// <p>The word or punctuation that was transcribed.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
-    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
@@ -4161,7 +3971,7 @@ impl CallAnalyticsItem {
 }
 /// See [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
 pub mod call_analytics_item {
-
+    
     /// A builder for [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4181,8 +3991,7 @@ pub mod call_analytics_item {
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified item.</p>
         pub fn set_begin_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.begin_offset_millis = input;
-            self
+            self.begin_offset_millis = input; self
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified item.</p>
         pub fn end_offset_millis(mut self, input: i64) -> Self {
@@ -4191,8 +4000,7 @@ pub mod call_analytics_item {
         }
         /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified item.</p>
         pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.end_offset_millis = input;
-            self
+            self.end_offset_millis = input; self
         }
         /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
@@ -4201,8 +4009,7 @@ pub mod call_analytics_item {
         }
         /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The word or punctuation that was transcribed.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4211,20 +4018,18 @@ pub mod call_analytics_item {
         }
         /// <p>The word or punctuation that was transcribed.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
-        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+        /// <p>The confidence score associated with a word or phrase in your transcript.</p> 
         /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your Call Analytics request. If <code>true</code>, there is a vocabulary filter match.</p>
         pub fn vocabulary_filter_match(mut self, input: bool) -> Self {
@@ -4233,8 +4038,7 @@ pub mod call_analytics_item {
         }
         /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your Call Analytics request. If <code>true</code>, there is a vocabulary filter match.</p>
         pub fn set_vocabulary_filter_match(mut self, input: std::option::Option<bool>) -> Self {
-            self.vocabulary_filter_match = input;
-            self
+            self.vocabulary_filter_match = input; self
         }
         /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
         pub fn stable(mut self, input: bool) -> Self {
@@ -4243,22 +4047,31 @@ pub mod call_analytics_item {
         }
         /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
         pub fn set_stable(mut self, input: std::option::Option<bool>) -> Self {
-            self.stable = input;
-            self
+            self.stable = input; self
         }
         /// Consumes the builder and constructs a [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
         pub fn build(self) -> crate::model::CallAnalyticsItem {
             crate::model::CallAnalyticsItem {
-                begin_offset_millis: self.begin_offset_millis,
-                end_offset_millis: self.end_offset_millis,
-                r#type: self.r#type,
-                content: self.content,
-                confidence: self.confidence,
-                vocabulary_filter_match: self.vocabulary_filter_match.unwrap_or_default(),
-                stable: self.stable,
+                begin_offset_millis: self.begin_offset_millis
+                ,
+                end_offset_millis: self.end_offset_millis
+                ,
+                r#type: self.r#type
+                ,
+                content: self.content
+                ,
+                confidence: self.confidence
+                ,
+                vocabulary_filter_match: self.vocabulary_filter_match
+                    .unwrap_or_default()
+                ,
+                stable: self.stable
+                ,
             }
         }
     }
+    
+    
 }
 impl CallAnalyticsItem {
     /// Creates a new builder-style object to manufacture [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
@@ -4273,9 +4086,9 @@ impl CallAnalyticsItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let callanalyticslanguagecode = unimplemented!();
 /// match callanalyticslanguagecode {
@@ -4304,22 +4117,14 @@ impl CallAnalyticsItem {
 /// Specifically, when `callanalyticslanguagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CallAnalyticsLanguageCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CallAnalyticsLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
@@ -4340,7 +4145,7 @@ pub enum CallAnalyticsLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     PtBr,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CallAnalyticsLanguageCode {
     fn from(s: &str) -> Self {
@@ -4354,19 +4159,17 @@ impl std::convert::From<&str> for CallAnalyticsLanguageCode {
             "fr-FR" => CallAnalyticsLanguageCode::FrFr,
             "it-IT" => CallAnalyticsLanguageCode::ItIt,
             "pt-BR" => CallAnalyticsLanguageCode::PtBr,
-            other => CallAnalyticsLanguageCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CallAnalyticsLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CallAnalyticsLanguageCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CallAnalyticsLanguageCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CallAnalyticsLanguageCode::from(s))
+                }
+            }
 impl CallAnalyticsLanguageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4380,13 +4183,13 @@ impl CallAnalyticsLanguageCode {
             CallAnalyticsLanguageCode::FrFr => "fr-FR",
             CallAnalyticsLanguageCode::ItIt => "it-IT",
             CallAnalyticsLanguageCode::PtBr => "pt-BR",
-            CallAnalyticsLanguageCode::Unknown(value) => value.as_str(),
+            CallAnalyticsLanguageCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "pt-BR",
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "pt-BR"
         ]
     }
 }
@@ -4395,3 +4198,4 @@ impl AsRef<str> for CallAnalyticsLanguageCode {
         self.as_str()
     }
 }
+

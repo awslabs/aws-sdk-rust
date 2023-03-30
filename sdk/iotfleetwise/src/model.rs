@@ -3,7 +3,7 @@
 /// <p>A validation error due to mismatch between the expected data type, length, or pattern of the parameter and the input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the parameter field with the validation error.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the parameter field with the validation error.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A message about the validation error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the parameter field with the validation error.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A message about the validation error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>A message about the validation error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -99,22 +101,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -125,7 +119,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -134,19 +128,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "other" => ValidationExceptionReason::Other,
             "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -155,16 +147,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cannotParse",
-            "fieldValidationFailed",
-            "other",
-            "unknownOperation",
+            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
         ]
     }
 }
@@ -174,11 +163,11 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-/// <p>Information about a vehicle.</p>
+/// <p>Information about a vehicle.</p> 
 /// <p>To return this information about vehicles in your account, you can use the API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VehicleSummary {
+pub struct VehicleSummary  {
     /// <p>The unique ID of the vehicle.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -200,33 +189,33 @@ pub struct VehicleSummary {
 }
 impl VehicleSummary {
     /// <p>The unique ID of the vehicle.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn model_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn model_manifest_arn(&self) -> std::option::Option<& str> {
         self.model_manifest_arn.as_deref()
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
-    pub fn decoder_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn decoder_manifest_arn(&self) -> std::option::Option<& str> {
         self.decoder_manifest_arn.as_deref()
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 /// See [`VehicleSummary`](crate::model::VehicleSummary).
 pub mod vehicle_summary {
-
+    
     /// A builder for [`VehicleSummary`](crate::model::VehicleSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -245,8 +234,7 @@ pub mod vehicle_summary {
         }
         /// <p>The unique ID of the vehicle.</p>
         pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vehicle_name = input;
-            self
+            self.vehicle_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -255,8 +243,7 @@ pub mod vehicle_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
         pub fn model_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -264,12 +251,8 @@ pub mod vehicle_summary {
             self
         }
         /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-        pub fn set_model_manifest_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_manifest_arn = input;
-            self
+        pub fn set_model_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_manifest_arn = input; self
         }
         /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
         pub fn decoder_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -277,12 +260,8 @@ pub mod vehicle_summary {
             self
         }
         /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
-        pub fn set_decoder_manifest_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.decoder_manifest_arn = input;
-            self
+        pub fn set_decoder_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.decoder_manifest_arn = input; self
         }
         /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -290,12 +269,8 @@ pub mod vehicle_summary {
             self
         }
         /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -303,25 +278,29 @@ pub mod vehicle_summary {
             self
         }
         /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// Consumes the builder and constructs a [`VehicleSummary`](crate::model::VehicleSummary).
         pub fn build(self) -> crate::model::VehicleSummary {
             crate::model::VehicleSummary {
-                vehicle_name: self.vehicle_name,
-                arn: self.arn,
-                model_manifest_arn: self.model_manifest_arn,
-                decoder_manifest_arn: self.decoder_manifest_arn,
-                creation_time: self.creation_time,
-                last_modification_time: self.last_modification_time,
+                vehicle_name: self.vehicle_name
+                ,
+                arn: self.arn
+                ,
+                model_manifest_arn: self.model_manifest_arn
+                ,
+                decoder_manifest_arn: self.decoder_manifest_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modification_time: self.last_modification_time
+                ,
             }
         }
     }
+    
+    
 }
 impl VehicleSummary {
     /// Creates a new builder-style object to manufacture [`VehicleSummary`](crate::model::VehicleSummary).
@@ -333,7 +312,7 @@ impl VehicleSummary {
 /// <p>A set of key/value pairs that are used to manage the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -343,17 +322,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The tag's key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag's value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -368,8 +347,7 @@ pub mod tag {
         }
         /// <p>The tag's key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The tag's value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -378,17 +356,20 @@ pub mod tag {
         }
         /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -403,9 +384,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vehicleassociationbehavior = unimplemented!();
 /// match vehicleassociationbehavior {
@@ -427,60 +408,52 @@ impl Tag {
 /// Specifically, when `vehicleassociationbehavior` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VehicleAssociationBehavior::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VehicleAssociationBehavior {
     #[allow(missing_docs)] // documentation missing in model
     CreateIotThing,
     #[allow(missing_docs)] // documentation missing in model
     ValidateIotThingExists,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VehicleAssociationBehavior {
     fn from(s: &str) -> Self {
         match s {
             "CreateIotThing" => VehicleAssociationBehavior::CreateIotThing,
             "ValidateIotThingExists" => VehicleAssociationBehavior::ValidateIotThingExists,
-            other => VehicleAssociationBehavior::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VehicleAssociationBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VehicleAssociationBehavior {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VehicleAssociationBehavior::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VehicleAssociationBehavior::from(s))
+                }
+            }
 impl VehicleAssociationBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VehicleAssociationBehavior::CreateIotThing => "CreateIotThing",
             VehicleAssociationBehavior::ValidateIotThingExists => "ValidateIotThingExists",
-            VehicleAssociationBehavior::Unknown(value) => value.as_str(),
+            VehicleAssociationBehavior::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CreateIotThing", "ValidateIotThingExists"]
+        &[
+            "CreateIotThing", "ValidateIotThingExists"
+        ]
     }
 }
 impl AsRef<str> for VehicleAssociationBehavior {
@@ -495,9 +468,9 @@ impl AsRef<str> for VehicleAssociationBehavior {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatemode = unimplemented!();
 /// match updatemode {
@@ -519,58 +492,52 @@ impl AsRef<str> for VehicleAssociationBehavior {
 /// Specifically, when `updatemode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateMode {
     #[allow(missing_docs)] // documentation missing in model
     Merge,
     #[allow(missing_docs)] // documentation missing in model
     Overwrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateMode {
     fn from(s: &str) -> Self {
         match s {
             "Merge" => UpdateMode::Merge,
             "Overwrite" => UpdateMode::Overwrite,
-            other => UpdateMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UpdateMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateMode::from(s))
+                }
+            }
 impl UpdateMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateMode::Merge => "Merge",
             UpdateMode::Overwrite => "Overwrite",
-            UpdateMode::Unknown(value) => value.as_str(),
+            UpdateMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Merge", "Overwrite"]
+        &[
+            "Merge", "Overwrite"
+        ]
     }
 }
 impl AsRef<str> for UpdateMode {
@@ -583,20 +550,20 @@ impl AsRef<str> for UpdateMode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Node {
-    /// <p>Information about a node specified as an actuator.</p> <note>
-    /// <p>An actuator is a digital representation of a vehicle device.</p>
+    /// <p>Information about a node specified as an actuator.</p> <note> 
+    /// <p>An actuator is a digital representation of a vehicle device.</p> 
     /// </note>
     Actuator(crate::model::Actuator),
-    /// <p>Information about a node specified as an attribute.</p> <note>
-    /// <p>An attribute represents static information about a vehicle.</p>
+    /// <p>Information about a node specified as an attribute.</p> <note> 
+    /// <p>An attribute represents static information about a vehicle.</p> 
     /// </note>
     Attribute(crate::model::Attribute),
-    /// <p>Information about a node specified as a branch.</p> <note>
-    /// <p>A group of signals that are defined in a hierarchical structure.</p>
+    /// <p>Information about a node specified as a branch.</p> <note> 
+    /// <p>A group of signals that are defined in a hierarchical structure.</p> 
     /// </note>
     Branch(crate::model::Branch),
-    /// <p>An input component that reports the environmental condition of a vehicle.</p> <note>
-    /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p>
+    /// <p>An input component that reports the environmental condition of a vehicle.</p> <note> 
+    /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p> 
     /// </note>
     Sensor(crate::model::Sensor),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -613,11 +580,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Actuator`](crate::model::Node::Actuator), extracting the inner [`Actuator`](crate::model::Actuator).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_actuator(&self) -> std::result::Result<&crate::model::Actuator, &Self> {
-        if let Node::Actuator(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Node::Actuator(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Actuator`](crate::model::Node::Actuator).
     pub fn is_actuator(&self) -> bool {
@@ -626,11 +589,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Attribute`](crate::model::Node::Attribute), extracting the inner [`Attribute`](crate::model::Attribute).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attribute(&self) -> std::result::Result<&crate::model::Attribute, &Self> {
-        if let Node::Attribute(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Node::Attribute(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Attribute`](crate::model::Node::Attribute).
     pub fn is_attribute(&self) -> bool {
@@ -639,11 +598,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Branch`](crate::model::Node::Branch), extracting the inner [`Branch`](crate::model::Branch).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_branch(&self) -> std::result::Result<&crate::model::Branch, &Self> {
-        if let Node::Branch(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Node::Branch(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Branch`](crate::model::Node::Branch).
     pub fn is_branch(&self) -> bool {
@@ -652,11 +607,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Sensor`](crate::model::Node::Sensor), extracting the inner [`Sensor`](crate::model::Sensor).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sensor(&self) -> std::result::Result<&crate::model::Sensor, &Self> {
-        if let Node::Sensor(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Node::Sensor(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sensor`](crate::model::Node::Sensor).
     pub fn is_sensor(&self) -> bool {
@@ -671,7 +622,7 @@ impl Node {
 /// <p>A signal that represents static information about the vehicle, such as engine type or manufacturing date.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
     #[doc(hidden)]
     pub fully_qualified_name: std::option::Option<std::string::String>,
@@ -703,23 +654,23 @@ pub struct Attribute {
 }
 impl Attribute {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-    pub fn fully_qualified_name(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_name(&self) -> std::option::Option<& str> {
         self.fully_qualified_name.as_deref()
     }
     /// <p>The specified data type of the attribute. </p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::NodeDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::NodeDataType> {
         self.data_type.as_ref()
     }
     /// <p>A brief description of the attribute.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The scientific unit for the attribute.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_values(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_values.as_deref()
     }
     /// <p>The specified possible minimum value of the attribute.</p>
@@ -732,17 +683,17 @@ impl Attribute {
     }
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
-    pub fn assigned_value(&self) -> std::option::Option<&str> {
+    pub fn assigned_value(&self) -> std::option::Option<& str> {
         self.assigned_value.as_deref()
     }
     /// <p>The default value of the attribute.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
-
+    
     /// A builder for [`Attribute`](crate::model::Attribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -763,12 +714,8 @@ pub mod attribute {
             self
         }
         /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-        pub fn set_fully_qualified_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fully_qualified_name = input;
-            self
+        pub fn set_fully_qualified_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fully_qualified_name = input; self
         }
         /// <p>The specified data type of the attribute. </p>
         pub fn data_type(mut self, input: crate::model::NodeDataType) -> Self {
@@ -776,12 +723,8 @@ pub mod attribute {
             self
         }
         /// <p>The specified data type of the attribute. </p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::NodeDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::NodeDataType>) -> Self {
+            self.data_type = input; self
         }
         /// <p>A brief description of the attribute.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -790,8 +733,7 @@ pub mod attribute {
         }
         /// <p>A brief description of the attribute.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The scientific unit for the attribute.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -800,8 +742,7 @@ pub mod attribute {
         }
         /// <p>The scientific unit for the attribute.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Appends an item to `allowed_values`.
         ///
@@ -810,17 +751,13 @@ pub mod attribute {
         /// <p>A list of possible values an attribute can be assigned.</p>
         pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_values = Some(v);
+                            self
         }
         /// <p>A list of possible values an attribute can be assigned.</p>
-        pub fn set_allowed_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_values = input;
-            self
+        pub fn set_allowed_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_values = input; self
         }
         /// <p>The specified possible minimum value of the attribute.</p>
         pub fn min(mut self, input: f64) -> Self {
@@ -829,8 +766,7 @@ pub mod attribute {
         }
         /// <p>The specified possible minimum value of the attribute.</p>
         pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
-            self.min = input;
-            self
+            self.min = input; self
         }
         /// <p>The specified possible maximum value of the attribute.</p>
         pub fn max(mut self, input: f64) -> Self {
@@ -839,8 +775,7 @@ pub mod attribute {
         }
         /// <p>The specified possible maximum value of the attribute.</p>
         pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// <p>A specified value for the attribute.</p>
         #[deprecated(note = "assignedValue is no longer in use")]
@@ -850,12 +785,8 @@ pub mod attribute {
         }
         /// <p>A specified value for the attribute.</p>
         #[deprecated(note = "assignedValue is no longer in use")]
-        pub fn set_assigned_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assigned_value = input;
-            self
+        pub fn set_assigned_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assigned_value = input; self
         }
         /// <p>The default value of the attribute.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -863,28 +794,35 @@ pub mod attribute {
             self
         }
         /// <p>The default value of the attribute.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// Consumes the builder and constructs a [`Attribute`](crate::model::Attribute).
         pub fn build(self) -> crate::model::Attribute {
             crate::model::Attribute {
-                fully_qualified_name: self.fully_qualified_name,
-                data_type: self.data_type,
-                description: self.description,
-                unit: self.unit,
-                allowed_values: self.allowed_values,
-                min: self.min,
-                max: self.max,
-                assigned_value: self.assigned_value,
-                default_value: self.default_value,
+                fully_qualified_name: self.fully_qualified_name
+                ,
+                data_type: self.data_type
+                ,
+                description: self.description
+                ,
+                unit: self.unit
+                ,
+                allowed_values: self.allowed_values
+                ,
+                min: self.min
+                ,
+                max: self.max
+                ,
+                assigned_value: self.assigned_value
+                ,
+                default_value: self.default_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Attribute {
     /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
@@ -899,9 +837,9 @@ impl Attribute {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let nodedatatype = unimplemented!();
 /// match nodedatatype {
@@ -948,22 +886,14 @@ impl Attribute {
 /// Specifically, when `nodedatatype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NodeDataType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `NodeDataType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NodeDataType {
     #[allow(missing_docs)] // documentation missing in model
     Boolean,
@@ -1020,7 +950,7 @@ pub enum NodeDataType {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NodeDataType {
     fn from(s: &str) -> Self {
@@ -1052,17 +982,17 @@ impl std::convert::From<&str> for NodeDataType {
             "UNIX_TIMESTAMP" => NodeDataType::UnixTimestamp,
             "UNIX_TIMESTAMP_ARRAY" => NodeDataType::UnixTimestampArray,
             "UNKNOWN" => NodeDataType::UnknownValue,
-            other => NodeDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NodeDataType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NodeDataType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NodeDataType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NodeDataType::from(s))
+                }
+            }
 impl NodeDataType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1094,39 +1024,13 @@ impl NodeDataType {
             NodeDataType::UnixTimestamp => "UNIX_TIMESTAMP",
             NodeDataType::UnixTimestampArray => "UNIX_TIMESTAMP_ARRAY",
             NodeDataType::UnknownValue => "UNKNOWN",
-            NodeDataType::Unknown(value) => value.as_str(),
+            NodeDataType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BOOLEAN",
-            "BOOLEAN_ARRAY",
-            "DOUBLE",
-            "DOUBLE_ARRAY",
-            "FLOAT",
-            "FLOAT_ARRAY",
-            "INT16",
-            "INT16_ARRAY",
-            "INT32",
-            "INT32_ARRAY",
-            "INT64",
-            "INT64_ARRAY",
-            "INT8",
-            "INT8_ARRAY",
-            "STRING",
-            "STRING_ARRAY",
-            "UINT16",
-            "UINT16_ARRAY",
-            "UINT32",
-            "UINT32_ARRAY",
-            "UINT64",
-            "UINT64_ARRAY",
-            "UINT8",
-            "UINT8_ARRAY",
-            "UNIX_TIMESTAMP",
-            "UNIX_TIMESTAMP_ARRAY",
-            "UNKNOWN",
+            "BOOLEAN", "BOOLEAN_ARRAY", "DOUBLE", "DOUBLE_ARRAY", "FLOAT", "FLOAT_ARRAY", "INT16", "INT16_ARRAY", "INT32", "INT32_ARRAY", "INT64", "INT64_ARRAY", "INT8", "INT8_ARRAY", "STRING", "STRING_ARRAY", "UINT16", "UINT16_ARRAY", "UINT32", "UINT32_ARRAY", "UINT64", "UINT64_ARRAY", "UINT8", "UINT8_ARRAY", "UNIX_TIMESTAMP", "UNIX_TIMESTAMP_ARRAY", "UNKNOWN"
         ]
     }
 }
@@ -1136,12 +1040,12 @@ impl AsRef<str> for NodeDataType {
     }
 }
 
-/// <p>A signal that represents a vehicle device such as the engine, heater, and door locks. Data from an actuator reports the state of a certain vehicle device.</p> <note>
-/// <p> Updating actuator data can change the state of a device. For example, you can turn on or off the heater by updating its actuator data.</p>
+/// <p>A signal that represents a vehicle device such as the engine, heater, and door locks. Data from an actuator reports the state of a certain vehicle device.</p> <note> 
+/// <p> Updating actuator data can change the state of a device. For example, you can turn on or off the heater by updating its actuator data.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Actuator {
+pub struct Actuator  {
     /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
     #[doc(hidden)]
     pub fully_qualified_name: std::option::Option<std::string::String>,
@@ -1170,23 +1074,23 @@ pub struct Actuator {
 }
 impl Actuator {
     /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
-    pub fn fully_qualified_name(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_name(&self) -> std::option::Option<& str> {
         self.fully_qualified_name.as_deref()
     }
     /// <p>The specified data type of the actuator. </p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::NodeDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::NodeDataType> {
         self.data_type.as_ref()
     }
     /// <p>A brief description of the actuator.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The scientific unit for the actuator.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>A list of possible values an actuator can take.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_values(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_values.as_deref()
     }
     /// <p>The specified possible minimum value of an actuator.</p>
@@ -1199,13 +1103,13 @@ impl Actuator {
     }
     /// <p>A specified value for the actuator.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
-    pub fn assigned_value(&self) -> std::option::Option<&str> {
+    pub fn assigned_value(&self) -> std::option::Option<& str> {
         self.assigned_value.as_deref()
     }
 }
 /// See [`Actuator`](crate::model::Actuator).
 pub mod actuator {
-
+    
     /// A builder for [`Actuator`](crate::model::Actuator).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1225,12 +1129,8 @@ pub mod actuator {
             self
         }
         /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
-        pub fn set_fully_qualified_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fully_qualified_name = input;
-            self
+        pub fn set_fully_qualified_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fully_qualified_name = input; self
         }
         /// <p>The specified data type of the actuator. </p>
         pub fn data_type(mut self, input: crate::model::NodeDataType) -> Self {
@@ -1238,12 +1138,8 @@ pub mod actuator {
             self
         }
         /// <p>The specified data type of the actuator. </p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::NodeDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::NodeDataType>) -> Self {
+            self.data_type = input; self
         }
         /// <p>A brief description of the actuator.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1252,8 +1148,7 @@ pub mod actuator {
         }
         /// <p>A brief description of the actuator.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The scientific unit for the actuator.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1262,8 +1157,7 @@ pub mod actuator {
         }
         /// <p>The scientific unit for the actuator.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Appends an item to `allowed_values`.
         ///
@@ -1272,17 +1166,13 @@ pub mod actuator {
         /// <p>A list of possible values an actuator can take.</p>
         pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_values = Some(v);
+                            self
         }
         /// <p>A list of possible values an actuator can take.</p>
-        pub fn set_allowed_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_values = input;
-            self
+        pub fn set_allowed_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_values = input; self
         }
         /// <p>The specified possible minimum value of an actuator.</p>
         pub fn min(mut self, input: f64) -> Self {
@@ -1291,8 +1181,7 @@ pub mod actuator {
         }
         /// <p>The specified possible minimum value of an actuator.</p>
         pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
-            self.min = input;
-            self
+            self.min = input; self
         }
         /// <p>The specified possible maximum value of an actuator.</p>
         pub fn max(mut self, input: f64) -> Self {
@@ -1301,8 +1190,7 @@ pub mod actuator {
         }
         /// <p>The specified possible maximum value of an actuator.</p>
         pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// <p>A specified value for the actuator.</p>
         #[deprecated(note = "assignedValue is no longer in use")]
@@ -1312,27 +1200,33 @@ pub mod actuator {
         }
         /// <p>A specified value for the actuator.</p>
         #[deprecated(note = "assignedValue is no longer in use")]
-        pub fn set_assigned_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assigned_value = input;
-            self
+        pub fn set_assigned_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assigned_value = input; self
         }
         /// Consumes the builder and constructs a [`Actuator`](crate::model::Actuator).
         pub fn build(self) -> crate::model::Actuator {
             crate::model::Actuator {
-                fully_qualified_name: self.fully_qualified_name,
-                data_type: self.data_type,
-                description: self.description,
-                unit: self.unit,
-                allowed_values: self.allowed_values,
-                min: self.min,
-                max: self.max,
-                assigned_value: self.assigned_value,
+                fully_qualified_name: self.fully_qualified_name
+                ,
+                data_type: self.data_type
+                ,
+                description: self.description
+                ,
+                unit: self.unit
+                ,
+                allowed_values: self.allowed_values
+                ,
+                min: self.min
+                ,
+                max: self.max
+                ,
+                assigned_value: self.assigned_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Actuator {
     /// Creates a new builder-style object to manufacture [`Actuator`](crate::model::Actuator).
@@ -1341,12 +1235,12 @@ impl Actuator {
     }
 }
 
-/// <p>An input component that reports the environmental condition of a vehicle.</p> <note>
-/// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p>
+/// <p>An input component that reports the environmental condition of a vehicle.</p> <note> 
+/// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sensor {
+pub struct Sensor  {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
     #[doc(hidden)]
     pub fully_qualified_name: std::option::Option<std::string::String>,
@@ -1371,23 +1265,23 @@ pub struct Sensor {
 }
 impl Sensor {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
-    pub fn fully_qualified_name(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_name(&self) -> std::option::Option<& str> {
         self.fully_qualified_name.as_deref()
     }
     /// <p>The specified data type of the sensor. </p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::NodeDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::NodeDataType> {
         self.data_type.as_ref()
     }
     /// <p>A brief description of a sensor.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>A list of possible values a sensor can take.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_values(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_values.as_deref()
     }
     /// <p>The specified possible minimum value of the sensor.</p>
@@ -1401,7 +1295,7 @@ impl Sensor {
 }
 /// See [`Sensor`](crate::model::Sensor).
 pub mod sensor {
-
+    
     /// A builder for [`Sensor`](crate::model::Sensor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1420,12 +1314,8 @@ pub mod sensor {
             self
         }
         /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
-        pub fn set_fully_qualified_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fully_qualified_name = input;
-            self
+        pub fn set_fully_qualified_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fully_qualified_name = input; self
         }
         /// <p>The specified data type of the sensor. </p>
         pub fn data_type(mut self, input: crate::model::NodeDataType) -> Self {
@@ -1433,12 +1323,8 @@ pub mod sensor {
             self
         }
         /// <p>The specified data type of the sensor. </p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::NodeDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::NodeDataType>) -> Self {
+            self.data_type = input; self
         }
         /// <p>A brief description of a sensor.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1447,8 +1333,7 @@ pub mod sensor {
         }
         /// <p>A brief description of a sensor.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The scientific unit of measurement for data collected by the sensor.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1457,8 +1342,7 @@ pub mod sensor {
         }
         /// <p>The scientific unit of measurement for data collected by the sensor.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Appends an item to `allowed_values`.
         ///
@@ -1467,17 +1351,13 @@ pub mod sensor {
         /// <p>A list of possible values a sensor can take.</p>
         pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_values = Some(v);
+                            self
         }
         /// <p>A list of possible values a sensor can take.</p>
-        pub fn set_allowed_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_values = input;
-            self
+        pub fn set_allowed_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_values = input; self
         }
         /// <p>The specified possible minimum value of the sensor.</p>
         pub fn min(mut self, input: f64) -> Self {
@@ -1486,8 +1366,7 @@ pub mod sensor {
         }
         /// <p>The specified possible minimum value of the sensor.</p>
         pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
-            self.min = input;
-            self
+            self.min = input; self
         }
         /// <p>The specified possible maximum value of the sensor.</p>
         pub fn max(mut self, input: f64) -> Self {
@@ -1496,22 +1375,30 @@ pub mod sensor {
         }
         /// <p>The specified possible maximum value of the sensor.</p>
         pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// Consumes the builder and constructs a [`Sensor`](crate::model::Sensor).
         pub fn build(self) -> crate::model::Sensor {
             crate::model::Sensor {
-                fully_qualified_name: self.fully_qualified_name,
-                data_type: self.data_type,
-                description: self.description,
-                unit: self.unit,
-                allowed_values: self.allowed_values,
-                min: self.min,
-                max: self.max,
+                fully_qualified_name: self.fully_qualified_name
+                ,
+                data_type: self.data_type
+                ,
+                description: self.description
+                ,
+                unit: self.unit
+                ,
+                allowed_values: self.allowed_values
+                ,
+                min: self.min
+                ,
+                max: self.max
+                ,
             }
         }
     }
+    
+    
 }
 impl Sensor {
     /// Creates a new builder-style object to manufacture [`Sensor`](crate::model::Sensor).
@@ -1523,7 +1410,7 @@ impl Sensor {
 /// <p>A group of signals that are defined in a hierarchical structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Branch {
+pub struct Branch  {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
     #[doc(hidden)]
     pub fully_qualified_name: std::option::Option<std::string::String>,
@@ -1533,17 +1420,17 @@ pub struct Branch {
 }
 impl Branch {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    pub fn fully_qualified_name(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_name(&self) -> std::option::Option<& str> {
         self.fully_qualified_name.as_deref()
     }
     /// <p>A brief description of the branch.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`Branch`](crate::model::Branch).
 pub mod branch {
-
+    
     /// A builder for [`Branch`](crate::model::Branch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1557,12 +1444,8 @@ pub mod branch {
             self
         }
         /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-        pub fn set_fully_qualified_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fully_qualified_name = input;
-            self
+        pub fn set_fully_qualified_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fully_qualified_name = input; self
         }
         /// <p>A brief description of the branch.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1571,17 +1454,20 @@ pub mod branch {
         }
         /// <p>A brief description of the branch.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`Branch`](crate::model::Branch).
         pub fn build(self) -> crate::model::Branch {
             crate::model::Branch {
-                fully_qualified_name: self.fully_qualified_name,
-                description: self.description,
+                fully_qualified_name: self.fully_qualified_name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl Branch {
     /// Creates a new builder-style object to manufacture [`Branch`](crate::model::Branch).
@@ -1593,7 +1479,7 @@ impl Branch {
 /// <p>A reason that a signal isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSignal {
+pub struct InvalidSignal  {
     /// <p>The name of the signal that isn't valid.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1603,17 +1489,17 @@ pub struct InvalidSignal {
 }
 impl InvalidSignal {
     /// <p>The name of the signal that isn't valid.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A message about why the signal isn't valid.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`InvalidSignal`](crate::model::InvalidSignal).
 pub mod invalid_signal {
-
+    
     /// A builder for [`InvalidSignal`](crate::model::InvalidSignal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1628,8 +1514,7 @@ pub mod invalid_signal {
         }
         /// <p>The name of the signal that isn't valid.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A message about why the signal isn't valid.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1638,17 +1523,20 @@ pub mod invalid_signal {
         }
         /// <p>A message about why the signal isn't valid.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSignal`](crate::model::InvalidSignal).
         pub fn build(self) -> crate::model::InvalidSignal {
             crate::model::InvalidSignal {
-                name: self.name,
-                reason: self.reason,
+                name: self.name
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSignal {
     /// Creates a new builder-style object to manufacture [`InvalidSignal`](crate::model::InvalidSignal).
@@ -1678,11 +1566,7 @@ impl FormattedVss {
     /// Tries to convert the enum instance into [`VssJson`](crate::model::FormattedVss::VssJson), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vss_json(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FormattedVss::VssJson(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FormattedVss::VssJson(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`VssJson`](crate::model::FormattedVss::VssJson).
     pub fn is_vss_json(&self) -> bool {
@@ -1697,7 +1581,7 @@ impl FormattedVss {
 /// <p>Information about a collection of standardized signals, which can be attributes, branches, sensors, or actuators.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalCatalogSummary {
+pub struct SignalCatalogSummary  {
     /// <p>The name of the signal catalog.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1713,25 +1597,25 @@ pub struct SignalCatalogSummary {
 }
 impl SignalCatalogSummary {
     /// <p>The name of the signal catalog.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the signal catalog was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 /// See [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
 pub mod signal_catalog_summary {
-
+    
     /// A builder for [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1748,8 +1632,7 @@ pub mod signal_catalog_summary {
         }
         /// <p>The name of the signal catalog.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1758,8 +1641,7 @@ pub mod signal_catalog_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1767,12 +1649,8 @@ pub mod signal_catalog_summary {
             self
         }
         /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the signal catalog was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1780,23 +1658,25 @@ pub mod signal_catalog_summary {
             self
         }
         /// <p>The time the signal catalog was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// Consumes the builder and constructs a [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
         pub fn build(self) -> crate::model::SignalCatalogSummary {
             crate::model::SignalCatalogSummary {
-                name: self.name,
-                arn: self.arn,
-                creation_time: self.creation_time,
-                last_modification_time: self.last_modification_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modification_time: self.last_modification_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SignalCatalogSummary {
     /// Creates a new builder-style object to manufacture [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
@@ -1808,7 +1688,7 @@ impl SignalCatalogSummary {
 /// <p>Information about the number of nodes and node types in a vehicle network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeCounts {
+pub struct NodeCounts  {
     /// <p>The total number of nodes in a vehicle network.</p>
     #[doc(hidden)]
     pub total_nodes: i32,
@@ -1849,7 +1729,7 @@ impl NodeCounts {
 }
 /// See [`NodeCounts`](crate::model::NodeCounts).
 pub mod node_counts {
-
+    
     /// A builder for [`NodeCounts`](crate::model::NodeCounts).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1867,8 +1747,7 @@ pub mod node_counts {
         }
         /// <p>The total number of nodes in a vehicle network.</p>
         pub fn set_total_nodes(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_nodes = input;
-            self
+            self.total_nodes = input; self
         }
         /// <p>The total number of nodes in a vehicle network that represent branches.</p>
         pub fn total_branches(mut self, input: i32) -> Self {
@@ -1877,8 +1756,7 @@ pub mod node_counts {
         }
         /// <p>The total number of nodes in a vehicle network that represent branches.</p>
         pub fn set_total_branches(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_branches = input;
-            self
+            self.total_branches = input; self
         }
         /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
         pub fn total_sensors(mut self, input: i32) -> Self {
@@ -1887,8 +1765,7 @@ pub mod node_counts {
         }
         /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
         pub fn set_total_sensors(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_sensors = input;
-            self
+            self.total_sensors = input; self
         }
         /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
         pub fn total_attributes(mut self, input: i32) -> Self {
@@ -1897,8 +1774,7 @@ pub mod node_counts {
         }
         /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
         pub fn set_total_attributes(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_attributes = input;
-            self
+            self.total_attributes = input; self
         }
         /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
         pub fn total_actuators(mut self, input: i32) -> Self {
@@ -1907,20 +1783,31 @@ pub mod node_counts {
         }
         /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
         pub fn set_total_actuators(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_actuators = input;
-            self
+            self.total_actuators = input; self
         }
         /// Consumes the builder and constructs a [`NodeCounts`](crate::model::NodeCounts).
         pub fn build(self) -> crate::model::NodeCounts {
             crate::model::NodeCounts {
-                total_nodes: self.total_nodes.unwrap_or_default(),
-                total_branches: self.total_branches.unwrap_or_default(),
-                total_sensors: self.total_sensors.unwrap_or_default(),
-                total_attributes: self.total_attributes.unwrap_or_default(),
-                total_actuators: self.total_actuators.unwrap_or_default(),
+                total_nodes: self.total_nodes
+                    .unwrap_or_default()
+                ,
+                total_branches: self.total_branches
+                    .unwrap_or_default()
+                ,
+                total_sensors: self.total_sensors
+                    .unwrap_or_default()
+                ,
+                total_attributes: self.total_attributes
+                    .unwrap_or_default()
+                ,
+                total_actuators: self.total_actuators
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeCounts {
     /// Creates a new builder-style object to manufacture [`NodeCounts`](crate::model::NodeCounts).
@@ -1932,7 +1819,7 @@ impl NodeCounts {
 /// <p>Information about a vehicle model (model manifest). You can use the API operation to return this information about multiple vehicle models.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelManifestSummary {
+pub struct ModelManifestSummary  {
     /// <p>The name of the vehicle model.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1957,37 +1844,37 @@ pub struct ModelManifestSummary {
 }
 impl ModelManifestSummary {
     /// <p>The name of the vehicle model.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
-    pub fn signal_catalog_arn(&self) -> std::option::Option<&str> {
+    pub fn signal_catalog_arn(&self) -> std::option::Option<& str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>A brief description of the vehicle model.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ManifestStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ManifestStatus> {
         self.status.as_ref()
     }
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 /// See [`ModelManifestSummary`](crate::model::ModelManifestSummary).
 pub mod model_manifest_summary {
-
+    
     /// A builder for [`ModelManifestSummary`](crate::model::ModelManifestSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2007,8 +1894,7 @@ pub mod model_manifest_summary {
         }
         /// <p>The name of the vehicle model.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2017,8 +1903,7 @@ pub mod model_manifest_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
         pub fn signal_catalog_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2026,12 +1911,8 @@ pub mod model_manifest_summary {
             self
         }
         /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
-        pub fn set_signal_catalog_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signal_catalog_arn = input;
-            self
+        pub fn set_signal_catalog_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signal_catalog_arn = input; self
         }
         /// <p>A brief description of the vehicle model.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2040,8 +1921,7 @@ pub mod model_manifest_summary {
         }
         /// <p>A brief description of the vehicle model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
         pub fn status(mut self, input: crate::model::ManifestStatus) -> Self {
@@ -2049,12 +1929,8 @@ pub mod model_manifest_summary {
             self
         }
         /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ManifestStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ManifestStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2062,12 +1938,8 @@ pub mod model_manifest_summary {
             self
         }
         /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2075,26 +1947,31 @@ pub mod model_manifest_summary {
             self
         }
         /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// Consumes the builder and constructs a [`ModelManifestSummary`](crate::model::ModelManifestSummary).
         pub fn build(self) -> crate::model::ModelManifestSummary {
             crate::model::ModelManifestSummary {
-                name: self.name,
-                arn: self.arn,
-                signal_catalog_arn: self.signal_catalog_arn,
-                description: self.description,
-                status: self.status,
-                creation_time: self.creation_time,
-                last_modification_time: self.last_modification_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                signal_catalog_arn: self.signal_catalog_arn
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modification_time: self.last_modification_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ModelManifestSummary {
     /// Creates a new builder-style object to manufacture [`ModelManifestSummary`](crate::model::ModelManifestSummary).
@@ -2109,9 +1986,9 @@ impl ModelManifestSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let manifeststatus = unimplemented!();
 /// match manifeststatus {
@@ -2133,58 +2010,52 @@ impl ModelManifestSummary {
 /// Specifically, when `manifeststatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ManifestStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ManifestStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Draft,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ManifestStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ManifestStatus::Active,
             "DRAFT" => ManifestStatus::Draft,
-            other => ManifestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ManifestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ManifestStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ManifestStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ManifestStatus::from(s))
+                }
+            }
 impl ManifestStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManifestStatus::Active => "ACTIVE",
             ManifestStatus::Draft => "DRAFT",
-            ManifestStatus::Unknown(value) => value.as_str(),
+            ManifestStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DRAFT"]
+        &[
+            "ACTIVE", "DRAFT"
+        ]
     }
 }
 impl AsRef<str> for ManifestStatus {
@@ -2193,11 +2064,11 @@ impl AsRef<str> for ManifestStatus {
     }
 }
 
-/// <p>Information about a fleet.</p>
+/// <p>Information about a fleet.</p> 
 /// <p>You can use the API operation to return this information about multiple fleets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FleetSummary {
+pub struct FleetSummary  {
     /// <p>The unique ID of the fleet.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2219,33 +2090,33 @@ pub struct FleetSummary {
 }
 impl FleetSummary {
     /// <p>The unique ID of the fleet.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A brief description of the fleet.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the signal catalog associated with the fleet.</p>
-    pub fn signal_catalog_arn(&self) -> std::option::Option<&str> {
+    pub fn signal_catalog_arn(&self) -> std::option::Option<& str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>The time the fleet was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 /// See [`FleetSummary`](crate::model::FleetSummary).
 pub mod fleet_summary {
-
+    
     /// A builder for [`FleetSummary`](crate::model::FleetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2264,8 +2135,7 @@ pub mod fleet_summary {
         }
         /// <p>The unique ID of the fleet.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2274,8 +2144,7 @@ pub mod fleet_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A brief description of the fleet.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2284,8 +2153,7 @@ pub mod fleet_summary {
         }
         /// <p>A brief description of the fleet.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the signal catalog associated with the fleet.</p>
         pub fn signal_catalog_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2293,12 +2161,8 @@ pub mod fleet_summary {
             self
         }
         /// <p>The ARN of the signal catalog associated with the fleet.</p>
-        pub fn set_signal_catalog_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signal_catalog_arn = input;
-            self
+        pub fn set_signal_catalog_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signal_catalog_arn = input; self
         }
         /// <p>The time the fleet was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2306,12 +2170,8 @@ pub mod fleet_summary {
             self
         }
         /// <p>The time the fleet was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2319,25 +2179,29 @@ pub mod fleet_summary {
             self
         }
         /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// Consumes the builder and constructs a [`FleetSummary`](crate::model::FleetSummary).
         pub fn build(self) -> crate::model::FleetSummary {
             crate::model::FleetSummary {
-                id: self.id,
-                arn: self.arn,
-                description: self.description,
-                signal_catalog_arn: self.signal_catalog_arn,
-                creation_time: self.creation_time,
-                last_modification_time: self.last_modification_time,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                signal_catalog_arn: self.signal_catalog_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modification_time: self.last_modification_time
+                ,
             }
         }
     }
+    
+    
 }
 impl FleetSummary {
     /// Creates a new builder-style object to manufacture [`FleetSummary`](crate::model::FleetSummary).
@@ -2349,7 +2213,7 @@ impl FleetSummary {
 /// <p>Information about a signal decoder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalDecoder {
+pub struct SignalDecoder  {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
     #[doc(hidden)]
     pub fully_qualified_name: std::option::Option<std::string::String>,
@@ -2368,29 +2232,29 @@ pub struct SignalDecoder {
 }
 impl SignalDecoder {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
-    pub fn fully_qualified_name(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_name(&self) -> std::option::Option<& str> {
         self.fully_qualified_name.as_deref()
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SignalDecoderType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SignalDecoderType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of a network interface that specifies what network protocol a vehicle follows.</p>
-    pub fn interface_id(&self) -> std::option::Option<&str> {
+    pub fn interface_id(&self) -> std::option::Option<& str> {
         self.interface_id.as_deref()
     }
     /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
-    pub fn can_signal(&self) -> std::option::Option<&crate::model::CanSignal> {
+    pub fn can_signal(&self) -> std::option::Option<& crate::model::CanSignal> {
         self.can_signal.as_ref()
     }
     /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
-    pub fn obd_signal(&self) -> std::option::Option<&crate::model::ObdSignal> {
+    pub fn obd_signal(&self) -> std::option::Option<& crate::model::ObdSignal> {
         self.obd_signal.as_ref()
     }
 }
 /// See [`SignalDecoder`](crate::model::SignalDecoder).
 pub mod signal_decoder {
-
+    
     /// A builder for [`SignalDecoder`](crate::model::SignalDecoder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2407,12 +2271,8 @@ pub mod signal_decoder {
             self
         }
         /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
-        pub fn set_fully_qualified_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fully_qualified_name = input;
-            self
+        pub fn set_fully_qualified_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fully_qualified_name = input; self
         }
         /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
         pub fn r#type(mut self, input: crate::model::SignalDecoderType) -> Self {
@@ -2420,12 +2280,8 @@ pub mod signal_decoder {
             self
         }
         /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::SignalDecoderType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SignalDecoderType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The ID of a network interface that specifies what network protocol a vehicle follows.</p>
         pub fn interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2434,8 +2290,7 @@ pub mod signal_decoder {
         }
         /// <p>The ID of a network interface that specifies what network protocol a vehicle follows.</p>
         pub fn set_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.interface_id = input;
-            self
+            self.interface_id = input; self
         }
         /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
         pub fn can_signal(mut self, input: crate::model::CanSignal) -> Self {
@@ -2443,12 +2298,8 @@ pub mod signal_decoder {
             self
         }
         /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
-        pub fn set_can_signal(
-            mut self,
-            input: std::option::Option<crate::model::CanSignal>,
-        ) -> Self {
-            self.can_signal = input;
-            self
+        pub fn set_can_signal(mut self, input: std::option::Option<crate::model::CanSignal>) -> Self {
+            self.can_signal = input; self
         }
         /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
         pub fn obd_signal(mut self, input: crate::model::ObdSignal) -> Self {
@@ -2456,24 +2307,27 @@ pub mod signal_decoder {
             self
         }
         /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
-        pub fn set_obd_signal(
-            mut self,
-            input: std::option::Option<crate::model::ObdSignal>,
-        ) -> Self {
-            self.obd_signal = input;
-            self
+        pub fn set_obd_signal(mut self, input: std::option::Option<crate::model::ObdSignal>) -> Self {
+            self.obd_signal = input; self
         }
         /// Consumes the builder and constructs a [`SignalDecoder`](crate::model::SignalDecoder).
         pub fn build(self) -> crate::model::SignalDecoder {
             crate::model::SignalDecoder {
-                fully_qualified_name: self.fully_qualified_name,
-                r#type: self.r#type,
-                interface_id: self.interface_id,
-                can_signal: self.can_signal,
-                obd_signal: self.obd_signal,
+                fully_qualified_name: self.fully_qualified_name
+                ,
+                r#type: self.r#type
+                ,
+                interface_id: self.interface_id
+                ,
+                can_signal: self.can_signal
+                ,
+                obd_signal: self.obd_signal
+                ,
             }
         }
     }
+    
+    
 }
 impl SignalDecoder {
     /// Creates a new builder-style object to manufacture [`SignalDecoder`](crate::model::SignalDecoder).
@@ -2485,7 +2339,7 @@ impl SignalDecoder {
 /// <p>Information about signal messages using the on-board diagnostics (OBD) II protocol in a vehicle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObdSignal {
+pub struct ObdSignal  {
     /// <p>The length of the requested data.</p>
     #[doc(hidden)]
     pub pid_response_length: i32,
@@ -2554,7 +2408,7 @@ impl ObdSignal {
 }
 /// See [`ObdSignal`](crate::model::ObdSignal).
 pub mod obd_signal {
-
+    
     /// A builder for [`ObdSignal`](crate::model::ObdSignal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2576,8 +2430,7 @@ pub mod obd_signal {
         }
         /// <p>The length of the requested data.</p>
         pub fn set_pid_response_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.pid_response_length = input;
-            self
+            self.pid_response_length = input; self
         }
         /// <p>The mode of operation (diagnostic service) in a message.</p>
         pub fn service_mode(mut self, input: i32) -> Self {
@@ -2586,8 +2439,7 @@ pub mod obd_signal {
         }
         /// <p>The mode of operation (diagnostic service) in a message.</p>
         pub fn set_service_mode(mut self, input: std::option::Option<i32>) -> Self {
-            self.service_mode = input;
-            self
+            self.service_mode = input; self
         }
         /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
         pub fn pid(mut self, input: i32) -> Self {
@@ -2596,8 +2448,7 @@ pub mod obd_signal {
         }
         /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
         pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
-            self.pid = input;
-            self
+            self.pid = input; self
         }
         /// <p>A multiplier used to decode the message.</p>
         pub fn scaling(mut self, input: f64) -> Self {
@@ -2606,8 +2457,7 @@ pub mod obd_signal {
         }
         /// <p>A multiplier used to decode the message.</p>
         pub fn set_scaling(mut self, input: std::option::Option<f64>) -> Self {
-            self.scaling = input;
-            self
+            self.scaling = input; self
         }
         /// <p>Indicates where data appears in the message.</p>
         pub fn offset(mut self, input: f64) -> Self {
@@ -2616,8 +2466,7 @@ pub mod obd_signal {
         }
         /// <p>Indicates where data appears in the message.</p>
         pub fn set_offset(mut self, input: std::option::Option<f64>) -> Self {
-            self.offset = input;
-            self
+            self.offset = input; self
         }
         /// <p>Indicates the beginning of the message.</p>
         pub fn start_byte(mut self, input: i32) -> Self {
@@ -2626,8 +2475,7 @@ pub mod obd_signal {
         }
         /// <p>Indicates the beginning of the message.</p>
         pub fn set_start_byte(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_byte = input;
-            self
+            self.start_byte = input; self
         }
         /// <p>The length of a message.</p>
         pub fn byte_length(mut self, input: i32) -> Self {
@@ -2636,8 +2484,7 @@ pub mod obd_signal {
         }
         /// <p>The length of a message.</p>
         pub fn set_byte_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.byte_length = input;
-            self
+            self.byte_length = input; self
         }
         /// <p>The number of positions to shift bits in the message.</p>
         pub fn bit_right_shift(mut self, input: i32) -> Self {
@@ -2646,8 +2493,7 @@ pub mod obd_signal {
         }
         /// <p>The number of positions to shift bits in the message.</p>
         pub fn set_bit_right_shift(mut self, input: std::option::Option<i32>) -> Self {
-            self.bit_right_shift = input;
-            self
+            self.bit_right_shift = input; self
         }
         /// <p>The number of bits to mask in a message.</p>
         pub fn bit_mask_length(mut self, input: i32) -> Self {
@@ -2656,24 +2502,39 @@ pub mod obd_signal {
         }
         /// <p>The number of bits to mask in a message.</p>
         pub fn set_bit_mask_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.bit_mask_length = input;
-            self
+            self.bit_mask_length = input; self
         }
         /// Consumes the builder and constructs a [`ObdSignal`](crate::model::ObdSignal).
         pub fn build(self) -> crate::model::ObdSignal {
             crate::model::ObdSignal {
-                pid_response_length: self.pid_response_length.unwrap_or_default(),
-                service_mode: self.service_mode.unwrap_or_default(),
-                pid: self.pid.unwrap_or_default(),
-                scaling: self.scaling,
-                offset: self.offset,
-                start_byte: self.start_byte.unwrap_or_default(),
-                byte_length: self.byte_length,
-                bit_right_shift: self.bit_right_shift.unwrap_or_default(),
-                bit_mask_length: self.bit_mask_length,
+                pid_response_length: self.pid_response_length
+                    .unwrap_or_default()
+                ,
+                service_mode: self.service_mode
+                    .unwrap_or_default()
+                ,
+                pid: self.pid
+                    .unwrap_or_default()
+                ,
+                scaling: self.scaling
+                ,
+                offset: self.offset
+                ,
+                start_byte: self.start_byte
+                    .unwrap_or_default()
+                ,
+                byte_length: self.byte_length
+                ,
+                bit_right_shift: self.bit_right_shift
+                    .unwrap_or_default()
+                ,
+                bit_mask_length: self.bit_mask_length
+                ,
             }
         }
     }
+    
+    
 }
 impl ObdSignal {
     /// Creates a new builder-style object to manufacture [`ObdSignal`](crate::model::ObdSignal).
@@ -2685,7 +2546,7 @@ impl ObdSignal {
 /// <p>Information about a single controller area network (CAN) signal and the messages it receives and transmits.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanSignal {
+pub struct CanSignal  {
     /// <p>The ID of the message.</p>
     #[doc(hidden)]
     pub message_id: i32,
@@ -2741,13 +2602,13 @@ impl CanSignal {
         self.length
     }
     /// <p>The name of the signal.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CanSignal`](crate::model::CanSignal).
 pub mod can_signal {
-
+    
     /// A builder for [`CanSignal`](crate::model::CanSignal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2768,8 +2629,7 @@ pub mod can_signal {
         }
         /// <p>The ID of the message.</p>
         pub fn set_message_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
         pub fn is_big_endian(mut self, input: bool) -> Self {
@@ -2778,8 +2638,7 @@ pub mod can_signal {
         }
         /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
         pub fn set_is_big_endian(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_big_endian = input;
-            self
+            self.is_big_endian = input; self
         }
         /// <p>Whether the message data is specified as a signed value.</p>
         pub fn is_signed(mut self, input: bool) -> Self {
@@ -2788,8 +2647,7 @@ pub mod can_signal {
         }
         /// <p>Whether the message data is specified as a signed value.</p>
         pub fn set_is_signed(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_signed = input;
-            self
+            self.is_signed = input; self
         }
         /// <p>Indicates the beginning of the CAN message.</p>
         pub fn start_bit(mut self, input: i32) -> Self {
@@ -2798,8 +2656,7 @@ pub mod can_signal {
         }
         /// <p>Indicates the beginning of the CAN message.</p>
         pub fn set_start_bit(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_bit = input;
-            self
+            self.start_bit = input; self
         }
         /// <p>Indicates where data appears in the CAN message.</p>
         pub fn offset(mut self, input: f64) -> Self {
@@ -2808,8 +2665,7 @@ pub mod can_signal {
         }
         /// <p>Indicates where data appears in the CAN message.</p>
         pub fn set_offset(mut self, input: std::option::Option<f64>) -> Self {
-            self.offset = input;
-            self
+            self.offset = input; self
         }
         /// <p>A multiplier used to decode the CAN message.</p>
         pub fn factor(mut self, input: f64) -> Self {
@@ -2818,8 +2674,7 @@ pub mod can_signal {
         }
         /// <p>A multiplier used to decode the CAN message.</p>
         pub fn set_factor(mut self, input: std::option::Option<f64>) -> Self {
-            self.factor = input;
-            self
+            self.factor = input; self
         }
         /// <p>How many bytes of data are in the message.</p>
         pub fn length(mut self, input: i32) -> Self {
@@ -2828,8 +2683,7 @@ pub mod can_signal {
         }
         /// <p>How many bytes of data are in the message.</p>
         pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.length = input;
-            self
+            self.length = input; self
         }
         /// <p>The name of the signal.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2838,23 +2692,37 @@ pub mod can_signal {
         }
         /// <p>The name of the signal.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CanSignal`](crate::model::CanSignal).
         pub fn build(self) -> crate::model::CanSignal {
             crate::model::CanSignal {
-                message_id: self.message_id.unwrap_or_default(),
-                is_big_endian: self.is_big_endian.unwrap_or_default(),
-                is_signed: self.is_signed.unwrap_or_default(),
-                start_bit: self.start_bit.unwrap_or_default(),
-                offset: self.offset,
-                factor: self.factor,
-                length: self.length.unwrap_or_default(),
-                name: self.name,
+                message_id: self.message_id
+                    .unwrap_or_default()
+                ,
+                is_big_endian: self.is_big_endian
+                    .unwrap_or_default()
+                ,
+                is_signed: self.is_signed
+                    .unwrap_or_default()
+                ,
+                start_bit: self.start_bit
+                    .unwrap_or_default()
+                ,
+                offset: self.offset
+                ,
+                factor: self.factor
+                ,
+                length: self.length
+                    .unwrap_or_default()
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CanSignal {
     /// Creates a new builder-style object to manufacture [`CanSignal`](crate::model::CanSignal).
@@ -2869,9 +2737,9 @@ impl CanSignal {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let signaldecodertype = unimplemented!();
 /// match signaldecodertype {
@@ -2893,60 +2761,52 @@ impl CanSignal {
 /// Specifically, when `signaldecodertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SignalDecoderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SignalDecoderType {
     #[allow(missing_docs)] // documentation missing in model
     CanSignal,
     #[allow(missing_docs)] // documentation missing in model
     ObdSignal,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SignalDecoderType {
     fn from(s: &str) -> Self {
         match s {
             "CAN_SIGNAL" => SignalDecoderType::CanSignal,
             "OBD_SIGNAL" => SignalDecoderType::ObdSignal,
-            other => {
-                SignalDecoderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SignalDecoderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SignalDecoderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SignalDecoderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SignalDecoderType::from(s))
+                }
+            }
 impl SignalDecoderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SignalDecoderType::CanSignal => "CAN_SIGNAL",
             SignalDecoderType::ObdSignal => "OBD_SIGNAL",
-            SignalDecoderType::Unknown(value) => value.as_str(),
+            SignalDecoderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_SIGNAL", "OBD_SIGNAL"]
+        &[
+            "CAN_SIGNAL", "OBD_SIGNAL"
+        ]
     }
 }
 impl AsRef<str> for SignalDecoderType {
@@ -2955,11 +2815,11 @@ impl AsRef<str> for SignalDecoderType {
     }
 }
 
-/// <p>Represents a node and its specifications in an in-vehicle communication network. All signal decoders must be associated with a network node. </p>
+/// <p>Represents a node and its specifications in an in-vehicle communication network. All signal decoders must be associated with a network node. </p> 
 /// <p> To return this information about all the network interfaces specified in a decoder manifest, use the API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub interface_id: std::option::Option<std::string::String>,
@@ -2975,25 +2835,25 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    pub fn interface_id(&self) -> std::option::Option<&str> {
+    pub fn interface_id(&self) -> std::option::Option<& str> {
         self.interface_id.as_deref()
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkInterfaceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::NetworkInterfaceType> {
         self.r#type.as_ref()
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
-    pub fn can_interface(&self) -> std::option::Option<&crate::model::CanInterface> {
+    pub fn can_interface(&self) -> std::option::Option<& crate::model::CanInterface> {
         self.can_interface.as_ref()
     }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
-    pub fn obd_interface(&self) -> std::option::Option<&crate::model::ObdInterface> {
+    pub fn obd_interface(&self) -> std::option::Option<& crate::model::ObdInterface> {
         self.obd_interface.as_ref()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
-
+    
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3010,8 +2870,7 @@ pub mod network_interface {
         }
         /// <p>The ID of the network interface.</p>
         pub fn set_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.interface_id = input;
-            self
+            self.interface_id = input; self
         }
         /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
         pub fn r#type(mut self, input: crate::model::NetworkInterfaceType) -> Self {
@@ -3019,12 +2878,8 @@ pub mod network_interface {
             self
         }
         /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkInterfaceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::NetworkInterfaceType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
         pub fn can_interface(mut self, input: crate::model::CanInterface) -> Self {
@@ -3032,12 +2887,8 @@ pub mod network_interface {
             self
         }
         /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
-        pub fn set_can_interface(
-            mut self,
-            input: std::option::Option<crate::model::CanInterface>,
-        ) -> Self {
-            self.can_interface = input;
-            self
+        pub fn set_can_interface(mut self, input: std::option::Option<crate::model::CanInterface>) -> Self {
+            self.can_interface = input; self
         }
         /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
         pub fn obd_interface(mut self, input: crate::model::ObdInterface) -> Self {
@@ -3045,23 +2896,25 @@ pub mod network_interface {
             self
         }
         /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
-        pub fn set_obd_interface(
-            mut self,
-            input: std::option::Option<crate::model::ObdInterface>,
-        ) -> Self {
-            self.obd_interface = input;
-            self
+        pub fn set_obd_interface(mut self, input: std::option::Option<crate::model::ObdInterface>) -> Self {
+            self.obd_interface = input; self
         }
         /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface).
         pub fn build(self) -> crate::model::NetworkInterface {
             crate::model::NetworkInterface {
-                interface_id: self.interface_id,
-                r#type: self.r#type,
-                can_interface: self.can_interface,
-                obd_interface: self.obd_interface,
+                interface_id: self.interface_id
+                ,
+                r#type: self.r#type
+                ,
+                can_interface: self.can_interface
+                ,
+                obd_interface: self.obd_interface
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
@@ -3073,7 +2926,7 @@ impl NetworkInterface {
 /// <p>A network interface that specifies the On-board diagnostic (OBD) II network protocol.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObdInterface {
+pub struct ObdInterface  {
     /// <p>The name of the interface.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3098,7 +2951,7 @@ pub struct ObdInterface {
 }
 impl ObdInterface {
     /// <p>The name of the interface.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the message requesting vehicle data.</p>
@@ -3106,7 +2959,7 @@ impl ObdInterface {
         self.request_message_id
     }
     /// <p>The standard OBD II PID.</p>
-    pub fn obd_standard(&self) -> std::option::Option<&str> {
+    pub fn obd_standard(&self) -> std::option::Option<& str> {
         self.obd_standard.as_deref()
     }
     /// <p>The maximum number message requests per second.</p>
@@ -3128,7 +2981,7 @@ impl ObdInterface {
 }
 /// See [`ObdInterface`](crate::model::ObdInterface).
 pub mod obd_interface {
-
+    
     /// A builder for [`ObdInterface`](crate::model::ObdInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3148,8 +3001,7 @@ pub mod obd_interface {
         }
         /// <p>The name of the interface.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the message requesting vehicle data.</p>
         pub fn request_message_id(mut self, input: i32) -> Self {
@@ -3158,8 +3010,7 @@ pub mod obd_interface {
         }
         /// <p>The ID of the message requesting vehicle data.</p>
         pub fn set_request_message_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.request_message_id = input;
-            self
+            self.request_message_id = input; self
         }
         /// <p>The standard OBD II PID.</p>
         pub fn obd_standard(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3168,8 +3019,7 @@ pub mod obd_interface {
         }
         /// <p>The standard OBD II PID.</p>
         pub fn set_obd_standard(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.obd_standard = input;
-            self
+            self.obd_standard = input; self
         }
         /// <p>The maximum number message requests per second.</p>
         pub fn pid_request_interval_seconds(mut self, input: i32) -> Self {
@@ -3178,8 +3028,7 @@ pub mod obd_interface {
         }
         /// <p>The maximum number message requests per second.</p>
         pub fn set_pid_request_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.pid_request_interval_seconds = input;
-            self
+            self.pid_request_interval_seconds = input; self
         }
         /// <p>The maximum number message requests per diagnostic trouble code per second.</p>
         pub fn dtc_request_interval_seconds(mut self, input: i32) -> Self {
@@ -3188,8 +3037,7 @@ pub mod obd_interface {
         }
         /// <p>The maximum number message requests per diagnostic trouble code per second.</p>
         pub fn set_dtc_request_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.dtc_request_interval_seconds = input;
-            self
+            self.dtc_request_interval_seconds = input; self
         }
         /// <p>Whether to use extended IDs in the message.</p>
         pub fn use_extended_ids(mut self, input: bool) -> Self {
@@ -3198,8 +3046,7 @@ pub mod obd_interface {
         }
         /// <p>Whether to use extended IDs in the message.</p>
         pub fn set_use_extended_ids(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_extended_ids = input;
-            self
+            self.use_extended_ids = input; self
         }
         /// <p>Whether the vehicle has a transmission control module (TCM).</p>
         pub fn has_transmission_ecu(mut self, input: bool) -> Self {
@@ -3208,22 +3055,35 @@ pub mod obd_interface {
         }
         /// <p>Whether the vehicle has a transmission control module (TCM).</p>
         pub fn set_has_transmission_ecu(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_transmission_ecu = input;
-            self
+            self.has_transmission_ecu = input; self
         }
         /// Consumes the builder and constructs a [`ObdInterface`](crate::model::ObdInterface).
         pub fn build(self) -> crate::model::ObdInterface {
             crate::model::ObdInterface {
-                name: self.name,
-                request_message_id: self.request_message_id.unwrap_or_default(),
-                obd_standard: self.obd_standard,
-                pid_request_interval_seconds: self.pid_request_interval_seconds.unwrap_or_default(),
-                dtc_request_interval_seconds: self.dtc_request_interval_seconds.unwrap_or_default(),
-                use_extended_ids: self.use_extended_ids.unwrap_or_default(),
-                has_transmission_ecu: self.has_transmission_ecu.unwrap_or_default(),
+                name: self.name
+                ,
+                request_message_id: self.request_message_id
+                    .unwrap_or_default()
+                ,
+                obd_standard: self.obd_standard
+                ,
+                pid_request_interval_seconds: self.pid_request_interval_seconds
+                    .unwrap_or_default()
+                ,
+                dtc_request_interval_seconds: self.dtc_request_interval_seconds
+                    .unwrap_or_default()
+                ,
+                use_extended_ids: self.use_extended_ids
+                    .unwrap_or_default()
+                ,
+                has_transmission_ecu: self.has_transmission_ecu
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ObdInterface {
     /// Creates a new builder-style object to manufacture [`ObdInterface`](crate::model::ObdInterface).
@@ -3235,7 +3095,7 @@ impl ObdInterface {
 /// <p>A single controller area network (CAN) device interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanInterface {
+pub struct CanInterface  {
     /// <p>The unique name of the interface.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3248,21 +3108,21 @@ pub struct CanInterface {
 }
 impl CanInterface {
     /// <p>The unique name of the interface.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the communication protocol for the interface.</p>
-    pub fn protocol_name(&self) -> std::option::Option<&str> {
+    pub fn protocol_name(&self) -> std::option::Option<& str> {
         self.protocol_name.as_deref()
     }
     /// <p>The version of the communication protocol for the interface.</p>
-    pub fn protocol_version(&self) -> std::option::Option<&str> {
+    pub fn protocol_version(&self) -> std::option::Option<& str> {
         self.protocol_version.as_deref()
     }
 }
 /// See [`CanInterface`](crate::model::CanInterface).
 pub mod can_interface {
-
+    
     /// A builder for [`CanInterface`](crate::model::CanInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3278,8 +3138,7 @@ pub mod can_interface {
         }
         /// <p>The unique name of the interface.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the communication protocol for the interface.</p>
         pub fn protocol_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3287,12 +3146,8 @@ pub mod can_interface {
             self
         }
         /// <p>The name of the communication protocol for the interface.</p>
-        pub fn set_protocol_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protocol_name = input;
-            self
+        pub fn set_protocol_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol_name = input; self
         }
         /// <p>The version of the communication protocol for the interface.</p>
         pub fn protocol_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3300,22 +3155,23 @@ pub mod can_interface {
             self
         }
         /// <p>The version of the communication protocol for the interface.</p>
-        pub fn set_protocol_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protocol_version = input;
-            self
+        pub fn set_protocol_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol_version = input; self
         }
         /// Consumes the builder and constructs a [`CanInterface`](crate::model::CanInterface).
         pub fn build(self) -> crate::model::CanInterface {
             crate::model::CanInterface {
-                name: self.name,
-                protocol_name: self.protocol_name,
-                protocol_version: self.protocol_version,
+                name: self.name
+                ,
+                protocol_name: self.protocol_name
+                ,
+                protocol_version: self.protocol_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CanInterface {
     /// Creates a new builder-style object to manufacture [`CanInterface`](crate::model::CanInterface).
@@ -3330,9 +3186,9 @@ impl CanInterface {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkinterfacetype = unimplemented!();
 /// match networkinterfacetype {
@@ -3354,60 +3210,52 @@ impl CanInterface {
 /// Specifically, when `networkinterfacetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkInterfaceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkInterfaceType {
     #[allow(missing_docs)] // documentation missing in model
     CanInterface,
     #[allow(missing_docs)] // documentation missing in model
     ObdInterface,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkInterfaceType {
     fn from(s: &str) -> Self {
         match s {
             "CAN_INTERFACE" => NetworkInterfaceType::CanInterface,
             "OBD_INTERFACE" => NetworkInterfaceType::ObdInterface,
-            other => {
-                NetworkInterfaceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkInterfaceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkInterfaceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkInterfaceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkInterfaceType::from(s))
+                }
+            }
 impl NetworkInterfaceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkInterfaceType::CanInterface => "CAN_INTERFACE",
             NetworkInterfaceType::ObdInterface => "OBD_INTERFACE",
-            NetworkInterfaceType::Unknown(value) => value.as_str(),
+            NetworkInterfaceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_INTERFACE", "OBD_INTERFACE"]
+        &[
+            "CAN_INTERFACE", "OBD_INTERFACE"
+        ]
     }
 }
 impl AsRef<str> for NetworkInterfaceType {
@@ -3419,7 +3267,7 @@ impl AsRef<str> for NetworkInterfaceType {
 /// <p>A reason a vehicle network interface isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidNetworkInterface {
+pub struct InvalidNetworkInterface  {
     /// <p>The ID of the interface that isn't valid.</p>
     #[doc(hidden)]
     pub interface_id: std::option::Option<std::string::String>,
@@ -3429,17 +3277,17 @@ pub struct InvalidNetworkInterface {
 }
 impl InvalidNetworkInterface {
     /// <p>The ID of the interface that isn't valid.</p>
-    pub fn interface_id(&self) -> std::option::Option<&str> {
+    pub fn interface_id(&self) -> std::option::Option<& str> {
         self.interface_id.as_deref()
     }
     /// <p>A message about why the interface isn't valid. </p>
-    pub fn reason(&self) -> std::option::Option<&crate::model::NetworkInterfaceFailureReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::NetworkInterfaceFailureReason> {
         self.reason.as_ref()
     }
 }
 /// See [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
 pub mod invalid_network_interface {
-
+    
     /// A builder for [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3454,8 +3302,7 @@ pub mod invalid_network_interface {
         }
         /// <p>The ID of the interface that isn't valid.</p>
         pub fn set_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.interface_id = input;
-            self
+            self.interface_id = input; self
         }
         /// <p>A message about why the interface isn't valid. </p>
         pub fn reason(mut self, input: crate::model::NetworkInterfaceFailureReason) -> Self {
@@ -3463,21 +3310,21 @@ pub mod invalid_network_interface {
             self
         }
         /// <p>A message about why the interface isn't valid. </p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::NetworkInterfaceFailureReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::NetworkInterfaceFailureReason>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
         pub fn build(self) -> crate::model::InvalidNetworkInterface {
             crate::model::InvalidNetworkInterface {
-                interface_id: self.interface_id,
-                reason: self.reason,
+                interface_id: self.interface_id
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidNetworkInterface {
     /// Creates a new builder-style object to manufacture [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
@@ -3492,9 +3339,9 @@ impl InvalidNetworkInterface {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkinterfacefailurereason = unimplemented!();
 /// match networkinterfacefailurereason {
@@ -3520,22 +3367,14 @@ impl InvalidNetworkInterface {
 /// Specifically, when `networkinterfacefailurereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkInterfaceFailureReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkInterfaceFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     CanNetworkInterfaceInfoIsNull,
@@ -3550,72 +3389,45 @@ pub enum NetworkInterfaceFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     ObdNetworkInterfaceInfoIsNull,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkInterfaceFailureReason {
     fn from(s: &str) -> Self {
         match s {
-            "CAN_NETWORK_INTERFACE_INFO_IS_NULL" => {
-                NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull
-            }
-            "CONFLICTING_NETWORK_INTERFACE" => {
-                NetworkInterfaceFailureReason::ConflictingNetworkInterface
-            }
+            "CAN_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull,
+            "CONFLICTING_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::ConflictingNetworkInterface,
             "DUPLICATE_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::DuplicateInterface,
-            "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS" => {
-                NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists
-            }
-            "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS" => {
-                NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals
-            }
-            "OBD_NETWORK_INTERFACE_INFO_IS_NULL" => {
-                NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull
-            }
-            other => NetworkInterfaceFailureReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS" => NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists,
+            "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS" => NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals,
+            "OBD_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull,
+            other => NetworkInterfaceFailureReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkInterfaceFailureReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkInterfaceFailureReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkInterfaceFailureReason::from(s))
+                }
+            }
 impl NetworkInterfaceFailureReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => {
-                "CAN_NETWORK_INTERFACE_INFO_IS_NULL"
-            }
-            NetworkInterfaceFailureReason::ConflictingNetworkInterface => {
-                "CONFLICTING_NETWORK_INTERFACE"
-            }
+            NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
+            NetworkInterfaceFailureReason::ConflictingNetworkInterface => "CONFLICTING_NETWORK_INTERFACE",
             NetworkInterfaceFailureReason::DuplicateInterface => "DUPLICATE_NETWORK_INTERFACE",
-            NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => {
-                "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS"
-            }
-            NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => {
-                "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS"
-            }
-            NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull => {
-                "OBD_NETWORK_INTERFACE_INFO_IS_NULL"
-            }
-            NetworkInterfaceFailureReason::Unknown(value) => value.as_str(),
+            NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
+            NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",
+            NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull => "OBD_NETWORK_INTERFACE_INFO_IS_NULL",
+            NetworkInterfaceFailureReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
-            "CONFLICTING_NETWORK_INTERFACE",
-            "DUPLICATE_NETWORK_INTERFACE",
-            "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
-            "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",
-            "OBD_NETWORK_INTERFACE_INFO_IS_NULL",
+            "CAN_NETWORK_INTERFACE_INFO_IS_NULL", "CONFLICTING_NETWORK_INTERFACE", "DUPLICATE_NETWORK_INTERFACE", "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS", "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS", "OBD_NETWORK_INTERFACE_INFO_IS_NULL"
         ]
     }
 }
@@ -3628,7 +3440,7 @@ impl AsRef<str> for NetworkInterfaceFailureReason {
 /// <p>A reason that a signal decoder isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSignalDecoder {
+pub struct InvalidSignalDecoder  {
     /// <p>The name of a signal decoder that isn't valid.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3638,17 +3450,17 @@ pub struct InvalidSignalDecoder {
 }
 impl InvalidSignalDecoder {
     /// <p>The name of a signal decoder that isn't valid.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A message about why the signal decoder isn't valid.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::model::SignalDecoderFailureReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::SignalDecoderFailureReason> {
         self.reason.as_ref()
     }
 }
 /// See [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
 pub mod invalid_signal_decoder {
-
+    
     /// A builder for [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3663,8 +3475,7 @@ pub mod invalid_signal_decoder {
         }
         /// <p>The name of a signal decoder that isn't valid.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A message about why the signal decoder isn't valid.</p>
         pub fn reason(mut self, input: crate::model::SignalDecoderFailureReason) -> Self {
@@ -3672,21 +3483,21 @@ pub mod invalid_signal_decoder {
             self
         }
         /// <p>A message about why the signal decoder isn't valid.</p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::SignalDecoderFailureReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::SignalDecoderFailureReason>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
         pub fn build(self) -> crate::model::InvalidSignalDecoder {
             crate::model::InvalidSignalDecoder {
-                name: self.name,
-                reason: self.reason,
+                name: self.name
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSignalDecoder {
     /// Creates a new builder-style object to manufacture [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
@@ -3701,9 +3512,9 @@ impl InvalidSignalDecoder {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let signaldecoderfailurereason = unimplemented!();
 /// match signaldecoderfailurereason {
@@ -3732,22 +3543,14 @@ impl InvalidSignalDecoder {
 /// Specifically, when `signaldecoderfailurereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SignalDecoderFailureReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SignalDecoderFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     CanSignalInfoIsNull,
@@ -3768,7 +3571,7 @@ pub enum SignalDecoderFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     SignalToAddAlreadyExists,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SignalDecoderFailureReason {
     fn from(s: &str) -> Self {
@@ -3776,31 +3579,23 @@ impl std::convert::From<&str> for SignalDecoderFailureReason {
             "CAN_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CanSignalInfoIsNull,
             "CONFLICTING_SIGNAL" => SignalDecoderFailureReason::ConflictingSignal,
             "DUPLICATE_SIGNAL" => SignalDecoderFailureReason::DuplicateSignal,
-            "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE" => {
-                SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType
-            }
-            "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL" => {
-                SignalDecoderFailureReason::NoDecoderInfoForSignalInModel
-            }
+            "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE" => SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType,
+            "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL" => SignalDecoderFailureReason::NoDecoderInfoForSignalInModel,
             "OBD_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::ObdSignalInfoIsNull,
-            "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE" => {
-                SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface
-            }
+            "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE" => SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface,
             "SIGNAL_NOT_IN_MODEL" => SignalDecoderFailureReason::SignalNotInModel,
             "SIGNAL_TO_ADD_ALREADY_EXISTS" => SignalDecoderFailureReason::SignalToAddAlreadyExists,
-            other => SignalDecoderFailureReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SignalDecoderFailureReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SignalDecoderFailureReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SignalDecoderFailureReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SignalDecoderFailureReason::from(s))
+                }
+            }
 impl SignalDecoderFailureReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3808,33 +3603,19 @@ impl SignalDecoderFailureReason {
             SignalDecoderFailureReason::CanSignalInfoIsNull => "CAN_SIGNAL_INFO_IS_NULL",
             SignalDecoderFailureReason::ConflictingSignal => "CONFLICTING_SIGNAL",
             SignalDecoderFailureReason::DuplicateSignal => "DUPLICATE_SIGNAL",
-            SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => {
-                "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE"
-            }
-            SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => {
-                "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL"
-            }
+            SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE",
+            SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL",
             SignalDecoderFailureReason::ObdSignalInfoIsNull => "OBD_SIGNAL_INFO_IS_NULL",
-            SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => {
-                "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE"
-            }
+            SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE",
             SignalDecoderFailureReason::SignalNotInModel => "SIGNAL_NOT_IN_MODEL",
             SignalDecoderFailureReason::SignalToAddAlreadyExists => "SIGNAL_TO_ADD_ALREADY_EXISTS",
-            SignalDecoderFailureReason::Unknown(value) => value.as_str(),
+            SignalDecoderFailureReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CAN_SIGNAL_INFO_IS_NULL",
-            "CONFLICTING_SIGNAL",
-            "DUPLICATE_SIGNAL",
-            "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE",
-            "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL",
-            "OBD_SIGNAL_INFO_IS_NULL",
-            "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE",
-            "SIGNAL_NOT_IN_MODEL",
-            "SIGNAL_TO_ADD_ALREADY_EXISTS",
+            "CAN_SIGNAL_INFO_IS_NULL", "CONFLICTING_SIGNAL", "DUPLICATE_SIGNAL", "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE", "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL", "OBD_SIGNAL_INFO_IS_NULL", "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE", "SIGNAL_NOT_IN_MODEL", "SIGNAL_TO_ADD_ALREADY_EXISTS"
         ]
     }
 }
@@ -3865,11 +3646,7 @@ impl NetworkFileDefinition {
     /// Tries to convert the enum instance into [`CanDbc`](crate::model::NetworkFileDefinition::CanDbc), extracting the inner [`CanDbcDefinition`](crate::model::CanDbcDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_can_dbc(&self) -> std::result::Result<&crate::model::CanDbcDefinition, &Self> {
-        if let NetworkFileDefinition::CanDbc(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let NetworkFileDefinition::CanDbc(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`CanDbc`](crate::model::NetworkFileDefinition::CanDbc).
     pub fn is_can_dbc(&self) -> bool {
@@ -3884,7 +3661,7 @@ impl NetworkFileDefinition {
 /// <p>Configurations used to create a decoder manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanDbcDefinition {
+pub struct CanDbcDefinition  {
     /// <p>Contains information about a network interface.</p>
     #[doc(hidden)]
     pub network_interface: std::option::Option<std::string::String>,
@@ -3893,37 +3670,31 @@ pub struct CanDbcDefinition {
     pub can_dbc_files: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
     #[doc(hidden)]
-    pub signals_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub signals_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CanDbcDefinition {
     /// <p>Contains information about a network interface.</p>
-    pub fn network_interface(&self) -> std::option::Option<&str> {
+    pub fn network_interface(&self) -> std::option::Option<& str> {
         self.network_interface.as_deref()
     }
     /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
-    pub fn can_dbc_files(&self) -> std::option::Option<&[aws_smithy_types::Blob]> {
+    pub fn can_dbc_files(&self) -> std::option::Option<& [aws_smithy_types::Blob]> {
         self.can_dbc_files.as_deref()
     }
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
-    pub fn signals_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn signals_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.signals_map.as_ref()
     }
 }
 /// See [`CanDbcDefinition`](crate::model::CanDbcDefinition).
 pub mod can_dbc_definition {
-
+    
     /// A builder for [`CanDbcDefinition`](crate::model::CanDbcDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_interface: std::option::Option<std::string::String>,
         pub(crate) can_dbc_files: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
-        pub(crate) signals_map: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) signals_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Contains information about a network interface.</p>
@@ -3932,12 +3703,8 @@ pub mod can_dbc_definition {
             self
         }
         /// <p>Contains information about a network interface.</p>
-        pub fn set_network_interface(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface = input;
-            self
+        pub fn set_network_interface(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface = input; self
         }
         /// Appends an item to `can_dbc_files`.
         ///
@@ -3946,52 +3713,43 @@ pub mod can_dbc_definition {
         /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
         pub fn can_dbc_files(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.can_dbc_files.unwrap_or_default();
-            v.push(input);
-            self.can_dbc_files = Some(v);
-            self
+                            v.push(input);
+                            self.can_dbc_files = Some(v);
+                            self
         }
         /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
-        pub fn set_can_dbc_files(
-            mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
-        ) -> Self {
-            self.can_dbc_files = input;
-            self
+        pub fn set_can_dbc_files(mut self, input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>) -> Self {
+            self.can_dbc_files = input; self
         }
         /// Adds a key-value pair to `signals_map`.
         ///
         /// To override the contents of this collection use [`set_signals_map`](Self::set_signals_map).
         ///
         /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
-        pub fn signals_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signals_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.signals_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.signals_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.signals_map = Some(hash_map);
+                            self
         }
         /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
-        pub fn set_signals_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.signals_map = input;
-            self
+        pub fn set_signals_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.signals_map = input; self
         }
         /// Consumes the builder and constructs a [`CanDbcDefinition`](crate::model::CanDbcDefinition).
         pub fn build(self) -> crate::model::CanDbcDefinition {
             crate::model::CanDbcDefinition {
-                network_interface: self.network_interface,
-                can_dbc_files: self.can_dbc_files,
-                signals_map: self.signals_map,
+                network_interface: self.network_interface
+                ,
+                can_dbc_files: self.can_dbc_files
+                ,
+                signals_map: self.signals_map
+                ,
             }
         }
     }
+    
+    
 }
 impl CanDbcDefinition {
     /// Creates a new builder-style object to manufacture [`CanDbcDefinition`](crate::model::CanDbcDefinition).
@@ -4003,7 +3761,7 @@ impl CanDbcDefinition {
 /// <p>Information about a created decoder manifest. You can use the API operation to return this information about multiple decoder manifests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecoderManifestSummary {
+pub struct DecoderManifestSummary  {
     /// <p>The name of the decoder manifest.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4028,37 +3786,37 @@ pub struct DecoderManifestSummary {
 }
 impl DecoderManifestSummary {
     /// <p>The name of the decoder manifest.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
-    pub fn model_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn model_manifest_arn(&self) -> std::option::Option<& str> {
         self.model_manifest_arn.as_deref()
     }
     /// <p>A brief description of the decoder manifest.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ManifestStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ManifestStatus> {
         self.status.as_ref()
     }
     /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 /// See [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
 pub mod decoder_manifest_summary {
-
+    
     /// A builder for [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4078,8 +3836,7 @@ pub mod decoder_manifest_summary {
         }
         /// <p>The name of the decoder manifest.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4088,8 +3845,7 @@ pub mod decoder_manifest_summary {
         }
         /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
         pub fn model_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4097,12 +3853,8 @@ pub mod decoder_manifest_summary {
             self
         }
         /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
-        pub fn set_model_manifest_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_manifest_arn = input;
-            self
+        pub fn set_model_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_manifest_arn = input; self
         }
         /// <p>A brief description of the decoder manifest.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4111,8 +3863,7 @@ pub mod decoder_manifest_summary {
         }
         /// <p>A brief description of the decoder manifest.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
         pub fn status(mut self, input: crate::model::ManifestStatus) -> Self {
@@ -4120,12 +3871,8 @@ pub mod decoder_manifest_summary {
             self
         }
         /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ManifestStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ManifestStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4133,12 +3880,8 @@ pub mod decoder_manifest_summary {
             self
         }
         /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4146,26 +3889,31 @@ pub mod decoder_manifest_summary {
             self
         }
         /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// Consumes the builder and constructs a [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
         pub fn build(self) -> crate::model::DecoderManifestSummary {
             crate::model::DecoderManifestSummary {
-                name: self.name,
-                arn: self.arn,
-                model_manifest_arn: self.model_manifest_arn,
-                description: self.description,
-                status: self.status,
-                creation_time: self.creation_time,
-                last_modification_time: self.last_modification_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                model_manifest_arn: self.model_manifest_arn
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modification_time: self.last_modification_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DecoderManifestSummary {
     /// Creates a new builder-style object to manufacture [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
@@ -4174,11 +3922,11 @@ impl DecoderManifestSummary {
     }
 }
 
-/// <p>Information about a campaign. </p>
+/// <p>Information about a campaign. </p> 
 /// <p>You can use the API operation to return this information about multiple created campaigns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CampaignSummary {
+pub struct CampaignSummary  {
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4194,12 +3942,12 @@ pub struct CampaignSummary {
     /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
-    /// <p>The state of a campaign. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li>
-    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
-    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
-    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
+    /// <p>The state of a campaign. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li> 
+    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li> 
+    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li> 
+    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::CampaignStatus>,
@@ -4212,47 +3960,47 @@ pub struct CampaignSummary {
 }
 impl CampaignSummary {
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of a campaign.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the campaign.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the signal catalog associated with the campaign.</p>
-    pub fn signal_catalog_arn(&self) -> std::option::Option<&str> {
+    pub fn signal_catalog_arn(&self) -> std::option::Option<& str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
-    /// <p>The state of a campaign. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li>
-    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
-    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
-    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
+    /// <p>The state of a campaign. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li> 
+    /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li> 
+    /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li> 
+    /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::CampaignStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CampaignStatus> {
         self.status.as_ref()
     }
     /// <p>The time the campaign was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the campaign was modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
 pub mod campaign_summary {
-
+    
     /// A builder for [`CampaignSummary`](crate::model::CampaignSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4273,8 +4021,7 @@ pub mod campaign_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of a campaign.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4283,8 +4030,7 @@ pub mod campaign_summary {
         }
         /// <p>The name of a campaign.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the campaign.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4293,8 +4039,7 @@ pub mod campaign_summary {
         }
         /// <p>The description of the campaign.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the signal catalog associated with the campaign.</p>
         pub fn signal_catalog_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4302,12 +4047,8 @@ pub mod campaign_summary {
             self
         }
         /// <p>The ARN of the signal catalog associated with the campaign.</p>
-        pub fn set_signal_catalog_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signal_catalog_arn = input;
-            self
+        pub fn set_signal_catalog_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signal_catalog_arn = input; self
         }
         /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4316,33 +4057,28 @@ pub mod campaign_summary {
         }
         /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
-        /// <p>The state of a campaign. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li>
-        /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
-        /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
-        /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
+        /// <p>The state of a campaign. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li> 
+        /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li> 
+        /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li> 
+        /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::CampaignStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The state of a campaign. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li>
-        /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>
-        /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
-        /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
+        /// <p>The state of a campaign. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign.</p> </li> 
+        /// <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li> 
+        /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li> 
+        /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CampaignStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CampaignStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The time the campaign was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4350,12 +4086,8 @@ pub mod campaign_summary {
             self
         }
         /// <p>The time the campaign was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The last time the campaign was modified.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4363,27 +4095,33 @@ pub mod campaign_summary {
             self
         }
         /// <p>The last time the campaign was modified.</p>
-        pub fn set_last_modification_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_time = input;
-            self
+        pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_time = input; self
         }
         /// Consumes the builder and constructs a [`CampaignSummary`](crate::model::CampaignSummary).
         pub fn build(self) -> crate::model::CampaignSummary {
             crate::model::CampaignSummary {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                signal_catalog_arn: self.signal_catalog_arn,
-                target_arn: self.target_arn,
-                status: self.status,
-                creation_time: self.creation_time,
-                last_modification_time: self.last_modification_time,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                signal_catalog_arn: self.signal_catalog_arn
+                ,
+                target_arn: self.target_arn
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modification_time: self.last_modification_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CampaignSummary {
     /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
@@ -4398,9 +4136,9 @@ impl CampaignSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let campaignstatus = unimplemented!();
 /// match campaignstatus {
@@ -4424,22 +4162,14 @@ impl CampaignSummary {
 /// Specifically, when `campaignstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CampaignStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CampaignStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -4450,7 +4180,7 @@ pub enum CampaignStatus {
     #[allow(missing_docs)] // documentation missing in model
     WaitingForApproval,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CampaignStatus {
     fn from(s: &str) -> Self {
@@ -4459,17 +4189,17 @@ impl std::convert::From<&str> for CampaignStatus {
             "RUNNING" => CampaignStatus::Running,
             "SUSPENDED" => CampaignStatus::Suspended,
             "WAITING_FOR_APPROVAL" => CampaignStatus::WaitingForApproval,
-            other => CampaignStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CampaignStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CampaignStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CampaignStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CampaignStatus::from(s))
+                }
+            }
 impl CampaignStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4478,12 +4208,14 @@ impl CampaignStatus {
             CampaignStatus::Running => "RUNNING",
             CampaignStatus::Suspended => "SUSPENDED",
             CampaignStatus::WaitingForApproval => "WAITING_FOR_APPROVAL",
-            CampaignStatus::Unknown(value) => value.as_str(),
+            CampaignStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATING", "RUNNING", "SUSPENDED", "WAITING_FOR_APPROVAL"]
+        &[
+            "CREATING", "RUNNING", "SUSPENDED", "WAITING_FOR_APPROVAL"
+        ]
     }
 }
 impl AsRef<str> for CampaignStatus {
@@ -4513,14 +4245,8 @@ pub enum CollectionScheme {
 impl CollectionScheme {
     /// Tries to convert the enum instance into [`ConditionBasedCollectionScheme`](crate::model::CollectionScheme::ConditionBasedCollectionScheme), extracting the inner [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_condition_based_collection_scheme(
-        &self,
-    ) -> std::result::Result<&crate::model::ConditionBasedCollectionScheme, &Self> {
-        if let CollectionScheme::ConditionBasedCollectionScheme(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_condition_based_collection_scheme(&self) -> std::result::Result<&crate::model::ConditionBasedCollectionScheme, &Self> {
+        if let CollectionScheme::ConditionBasedCollectionScheme(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ConditionBasedCollectionScheme`](crate::model::CollectionScheme::ConditionBasedCollectionScheme).
     pub fn is_condition_based_collection_scheme(&self) -> bool {
@@ -4528,14 +4254,8 @@ impl CollectionScheme {
     }
     /// Tries to convert the enum instance into [`TimeBasedCollectionScheme`](crate::model::CollectionScheme::TimeBasedCollectionScheme), extracting the inner [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_time_based_collection_scheme(
-        &self,
-    ) -> std::result::Result<&crate::model::TimeBasedCollectionScheme, &Self> {
-        if let CollectionScheme::TimeBasedCollectionScheme(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_time_based_collection_scheme(&self) -> std::result::Result<&crate::model::TimeBasedCollectionScheme, &Self> {
+        if let CollectionScheme::TimeBasedCollectionScheme(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`TimeBasedCollectionScheme`](crate::model::CollectionScheme::TimeBasedCollectionScheme).
     pub fn is_time_based_collection_scheme(&self) -> bool {
@@ -4550,12 +4270,12 @@ impl CollectionScheme {
 /// <p>Information about a collection scheme that uses a simple logical expression to recognize what data to collect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionBasedCollectionScheme {
+pub struct ConditionBasedCollectionScheme  {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note> 
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
     /// </note>
     #[doc(hidden)]
     pub minimum_trigger_interval_ms: std::option::Option<i64>,
@@ -4568,17 +4288,17 @@ pub struct ConditionBasedCollectionScheme {
 }
 impl ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
-    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+    /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note> 
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
     /// </note>
     pub fn minimum_trigger_interval_ms(&self) -> std::option::Option<i64> {
         self.minimum_trigger_interval_ms
     }
     /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
-    pub fn trigger_mode(&self) -> std::option::Option<&crate::model::TriggerMode> {
+    pub fn trigger_mode(&self) -> std::option::Option<& crate::model::TriggerMode> {
         self.trigger_mode.as_ref()
     }
     /// <p>Specifies the version of the conditional expression language.</p>
@@ -4588,7 +4308,7 @@ impl ConditionBasedCollectionScheme {
 }
 /// See [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
 pub mod condition_based_collection_scheme {
-
+    
     /// A builder for [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4605,22 +4325,20 @@ pub mod condition_based_collection_scheme {
         }
         /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
-        /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
-        /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+        /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note> 
+        /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
         /// </note>
         pub fn minimum_trigger_interval_ms(mut self, input: i64) -> Self {
             self.minimum_trigger_interval_ms = Some(input);
             self
         }
-        /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
-        /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+        /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note> 
+        /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
         /// </note>
         pub fn set_minimum_trigger_interval_ms(mut self, input: std::option::Option<i64>) -> Self {
-            self.minimum_trigger_interval_ms = input;
-            self
+            self.minimum_trigger_interval_ms = input; self
         }
         /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
         pub fn trigger_mode(mut self, input: crate::model::TriggerMode) -> Self {
@@ -4628,12 +4346,8 @@ pub mod condition_based_collection_scheme {
             self
         }
         /// <p>Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>), or specify only when the condition first evaluates to false. For example, triggering on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already exploded; they only care about the change from not deployed =&gt; deployed.</p>
-        pub fn set_trigger_mode(
-            mut self,
-            input: std::option::Option<crate::model::TriggerMode>,
-        ) -> Self {
-            self.trigger_mode = input;
-            self
+        pub fn set_trigger_mode(mut self, input: std::option::Option<crate::model::TriggerMode>) -> Self {
+            self.trigger_mode = input; self
         }
         /// <p>Specifies the version of the conditional expression language.</p>
         pub fn condition_language_version(mut self, input: i32) -> Self {
@@ -4642,19 +4356,24 @@ pub mod condition_based_collection_scheme {
         }
         /// <p>Specifies the version of the conditional expression language.</p>
         pub fn set_condition_language_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.condition_language_version = input;
-            self
+            self.condition_language_version = input; self
         }
         /// Consumes the builder and constructs a [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
         pub fn build(self) -> crate::model::ConditionBasedCollectionScheme {
             crate::model::ConditionBasedCollectionScheme {
-                expression: self.expression,
-                minimum_trigger_interval_ms: self.minimum_trigger_interval_ms,
-                trigger_mode: self.trigger_mode,
-                condition_language_version: self.condition_language_version,
+                expression: self.expression
+                ,
+                minimum_trigger_interval_ms: self.minimum_trigger_interval_ms
+                ,
+                trigger_mode: self.trigger_mode
+                ,
+                condition_language_version: self.condition_language_version
+                ,
             }
         }
     }
+    
+    
 }
 impl ConditionBasedCollectionScheme {
     /// Creates a new builder-style object to manufacture [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
@@ -4669,9 +4388,9 @@ impl ConditionBasedCollectionScheme {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let triggermode = unimplemented!();
 /// match triggermode {
@@ -4693,58 +4412,52 @@ impl ConditionBasedCollectionScheme {
 /// Specifically, when `triggermode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TriggerMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TriggerMode {
     #[allow(missing_docs)] // documentation missing in model
     Always,
     #[allow(missing_docs)] // documentation missing in model
     RisingEdge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TriggerMode {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS" => TriggerMode::Always,
             "RISING_EDGE" => TriggerMode::RisingEdge,
-            other => TriggerMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TriggerMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TriggerMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TriggerMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TriggerMode::from(s))
+                }
+            }
 impl TriggerMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TriggerMode::Always => "ALWAYS",
             TriggerMode::RisingEdge => "RISING_EDGE",
-            TriggerMode::Unknown(value) => value.as_str(),
+            TriggerMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALWAYS", "RISING_EDGE"]
+        &[
+            "ALWAYS", "RISING_EDGE"
+        ]
     }
 }
 impl AsRef<str> for TriggerMode {
@@ -4756,7 +4469,7 @@ impl AsRef<str> for TriggerMode {
 /// <p>Information about a collection scheme that uses a time period to decide how often to collect data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeBasedCollectionScheme {
+pub struct TimeBasedCollectionScheme  {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     #[doc(hidden)]
     pub period_ms: std::option::Option<i64>,
@@ -4769,7 +4482,7 @@ impl TimeBasedCollectionScheme {
 }
 /// See [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
 pub mod time_based_collection_scheme {
-
+    
     /// A builder for [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4783,16 +4496,18 @@ pub mod time_based_collection_scheme {
         }
         /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
         pub fn set_period_ms(mut self, input: std::option::Option<i64>) -> Self {
-            self.period_ms = input;
-            self
+            self.period_ms = input; self
         }
         /// Consumes the builder and constructs a [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
         pub fn build(self) -> crate::model::TimeBasedCollectionScheme {
             crate::model::TimeBasedCollectionScheme {
-                period_ms: self.period_ms,
+                period_ms: self.period_ms
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeBasedCollectionScheme {
     /// Creates a new builder-style object to manufacture [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
@@ -4804,30 +4519,30 @@ impl TimeBasedCollectionScheme {
 /// <p>Information about a signal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalInformation {
+pub struct SignalInformation  {
     /// <p>The name of the signal.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum number of samples to collect.</p>
     #[doc(hidden)]
     pub max_sample_count: std::option::Option<i64>,
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note> 
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
     /// </note>
     #[doc(hidden)]
     pub minimum_sampling_interval_ms: std::option::Option<i64>,
 }
 impl SignalInformation {
     /// <p>The name of the signal.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum number of samples to collect.</p>
     pub fn max_sample_count(&self) -> std::option::Option<i64> {
         self.max_sample_count
     }
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note> 
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
     /// </note>
     pub fn minimum_sampling_interval_ms(&self) -> std::option::Option<i64> {
         self.minimum_sampling_interval_ms
@@ -4835,7 +4550,7 @@ impl SignalInformation {
 }
 /// See [`SignalInformation`](crate::model::SignalInformation).
 pub mod signal_information {
-
+    
     /// A builder for [`SignalInformation`](crate::model::SignalInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4851,8 +4566,7 @@ pub mod signal_information {
         }
         /// <p>The name of the signal.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The maximum number of samples to collect.</p>
         pub fn max_sample_count(mut self, input: i64) -> Self {
@@ -4861,32 +4575,35 @@ pub mod signal_information {
         }
         /// <p>The maximum number of samples to collect.</p>
         pub fn set_max_sample_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_sample_count = input;
-            self
+            self.max_sample_count = input; self
         }
-        /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
-        /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+        /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note> 
+        /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
         /// </note>
         pub fn minimum_sampling_interval_ms(mut self, input: i64) -> Self {
             self.minimum_sampling_interval_ms = Some(input);
             self
         }
-        /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
-        /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+        /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note> 
+        /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
         /// </note>
         pub fn set_minimum_sampling_interval_ms(mut self, input: std::option::Option<i64>) -> Self {
-            self.minimum_sampling_interval_ms = input;
-            self
+            self.minimum_sampling_interval_ms = input; self
         }
         /// Consumes the builder and constructs a [`SignalInformation`](crate::model::SignalInformation).
         pub fn build(self) -> crate::model::SignalInformation {
             crate::model::SignalInformation {
-                name: self.name,
-                max_sample_count: self.max_sample_count,
-                minimum_sampling_interval_ms: self.minimum_sampling_interval_ms,
+                name: self.name
+                ,
+                max_sample_count: self.max_sample_count
+                ,
+                minimum_sampling_interval_ms: self.minimum_sampling_interval_ms
+                ,
             }
         }
     }
+    
+    
 }
 impl SignalInformation {
     /// Creates a new builder-style object to manufacture [`SignalInformation`](crate::model::SignalInformation).
@@ -4901,9 +4618,9 @@ impl SignalInformation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let compression = unimplemented!();
 /// match compression {
@@ -4925,58 +4642,52 @@ impl SignalInformation {
 /// Specifically, when `compression` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Compression::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Compression {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     #[allow(missing_docs)] // documentation missing in model
     Snappy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Compression {
     fn from(s: &str) -> Self {
         match s {
             "OFF" => Compression::Off,
             "SNAPPY" => Compression::Snappy,
-            other => Compression::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Compression::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Compression {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Compression::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Compression::from(s))
+                }
+            }
 impl Compression {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Compression::Off => "OFF",
             Compression::Snappy => "SNAPPY",
-            Compression::Unknown(value) => value.as_str(),
+            Compression::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OFF", "SNAPPY"]
+        &[
+            "OFF", "SNAPPY"
+        ]
     }
 }
 impl AsRef<str> for Compression {
@@ -4991,9 +4702,9 @@ impl AsRef<str> for Compression {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let spoolingmode = unimplemented!();
 /// match spoolingmode {
@@ -5015,58 +4726,52 @@ impl AsRef<str> for Compression {
 /// Specifically, when `spoolingmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SpoolingMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SpoolingMode {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     #[allow(missing_docs)] // documentation missing in model
     ToDisk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SpoolingMode {
     fn from(s: &str) -> Self {
         match s {
             "OFF" => SpoolingMode::Off,
             "TO_DISK" => SpoolingMode::ToDisk,
-            other => SpoolingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SpoolingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SpoolingMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpoolingMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SpoolingMode::from(s))
+                }
+            }
 impl SpoolingMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SpoolingMode::Off => "OFF",
             SpoolingMode::ToDisk => "TO_DISK",
-            SpoolingMode::Unknown(value) => value.as_str(),
+            SpoolingMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OFF", "TO_DISK"]
+        &[
+            "OFF", "TO_DISK"
+        ]
     }
 }
 impl AsRef<str> for SpoolingMode {
@@ -5081,9 +4786,9 @@ impl AsRef<str> for SpoolingMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let diagnosticsmode = unimplemented!();
 /// match diagnosticsmode {
@@ -5105,58 +4810,52 @@ impl AsRef<str> for SpoolingMode {
 /// Specifically, when `diagnosticsmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DiagnosticsMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DiagnosticsMode {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     #[allow(missing_docs)] // documentation missing in model
     SendActiveDtcs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DiagnosticsMode {
     fn from(s: &str) -> Self {
         match s {
             "OFF" => DiagnosticsMode::Off,
             "SEND_ACTIVE_DTCS" => DiagnosticsMode::SendActiveDtcs,
-            other => DiagnosticsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DiagnosticsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DiagnosticsMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DiagnosticsMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DiagnosticsMode::from(s))
+                }
+            }
 impl DiagnosticsMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DiagnosticsMode::Off => "OFF",
             DiagnosticsMode::SendActiveDtcs => "SEND_ACTIVE_DTCS",
-            DiagnosticsMode::Unknown(value) => value.as_str(),
+            DiagnosticsMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OFF", "SEND_ACTIVE_DTCS"]
+        &[
+            "OFF", "SEND_ACTIVE_DTCS"
+        ]
     }
 }
 impl AsRef<str> for DiagnosticsMode {
@@ -5171,9 +4870,9 @@ impl AsRef<str> for DiagnosticsMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatecampaignaction = unimplemented!();
 /// match updatecampaignaction {
@@ -5197,22 +4896,14 @@ impl AsRef<str> for DiagnosticsMode {
 /// Specifically, when `updatecampaignaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateCampaignAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateCampaignAction {
     #[allow(missing_docs)] // documentation missing in model
     Approve,
@@ -5223,7 +4914,7 @@ pub enum UpdateCampaignAction {
     #[allow(missing_docs)] // documentation missing in model
     Update,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateCampaignAction {
     fn from(s: &str) -> Self {
@@ -5232,19 +4923,17 @@ impl std::convert::From<&str> for UpdateCampaignAction {
             "RESUME" => UpdateCampaignAction::Resume,
             "SUSPEND" => UpdateCampaignAction::Suspend,
             "UPDATE" => UpdateCampaignAction::Update,
-            other => {
-                UpdateCampaignAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UpdateCampaignAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateCampaignAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateCampaignAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateCampaignAction::from(s))
+                }
+            }
 impl UpdateCampaignAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5253,12 +4942,14 @@ impl UpdateCampaignAction {
             UpdateCampaignAction::Resume => "RESUME",
             UpdateCampaignAction::Suspend => "SUSPEND",
             UpdateCampaignAction::Update => "UPDATE",
-            UpdateCampaignAction::Unknown(value) => value.as_str(),
+            UpdateCampaignAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPROVE", "RESUME", "SUSPEND", "UPDATE"]
+        &[
+            "APPROVE", "RESUME", "SUSPEND", "UPDATE"
+        ]
     }
 }
 impl AsRef<str> for UpdateCampaignAction {
@@ -5267,24 +4958,24 @@ impl AsRef<str> for UpdateCampaignAction {
     }
 }
 
-/// <p>The IAM resource that enables Amazon Web Services IoT FleetWise edge agent software to send data to Amazon Timestream. </p>
+/// <p>The IAM resource that enables Amazon Web Services IoT FleetWise edge agent software to send data to Amazon Timestream. </p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamResources {
+pub struct IamResources  {
     /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IamResources {
     /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`IamResources`](crate::model::IamResources).
 pub mod iam_resources {
-
+    
     /// A builder for [`IamResources`](crate::model::IamResources).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5298,16 +4989,18 @@ pub mod iam_resources {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`IamResources`](crate::model::IamResources).
         pub fn build(self) -> crate::model::IamResources {
             crate::model::IamResources {
-                role_arn: self.role_arn,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl IamResources {
     /// Creates a new builder-style object to manufacture [`IamResources`](crate::model::IamResources).
@@ -5319,7 +5012,7 @@ impl IamResources {
 /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestreamResources {
+pub struct TimestreamResources  {
     /// <p>The name of the registered Amazon Timestream database.</p>
     #[doc(hidden)]
     pub timestream_database_name: std::option::Option<std::string::String>,
@@ -5329,17 +5022,17 @@ pub struct TimestreamResources {
 }
 impl TimestreamResources {
     /// <p>The name of the registered Amazon Timestream database.</p>
-    pub fn timestream_database_name(&self) -> std::option::Option<&str> {
+    pub fn timestream_database_name(&self) -> std::option::Option<& str> {
         self.timestream_database_name.as_deref()
     }
     /// <p>The name of the registered Amazon Timestream database table.</p>
-    pub fn timestream_table_name(&self) -> std::option::Option<&str> {
+    pub fn timestream_table_name(&self) -> std::option::Option<& str> {
         self.timestream_table_name.as_deref()
     }
 }
 /// See [`TimestreamResources`](crate::model::TimestreamResources).
 pub mod timestream_resources {
-
+    
     /// A builder for [`TimestreamResources`](crate::model::TimestreamResources).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5353,12 +5046,8 @@ pub mod timestream_resources {
             self
         }
         /// <p>The name of the registered Amazon Timestream database.</p>
-        pub fn set_timestream_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timestream_database_name = input;
-            self
+        pub fn set_timestream_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timestream_database_name = input; self
         }
         /// <p>The name of the registered Amazon Timestream database table.</p>
         pub fn timestream_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5366,21 +5055,21 @@ pub mod timestream_resources {
             self
         }
         /// <p>The name of the registered Amazon Timestream database table.</p>
-        pub fn set_timestream_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timestream_table_name = input;
-            self
+        pub fn set_timestream_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timestream_table_name = input; self
         }
         /// Consumes the builder and constructs a [`TimestreamResources`](crate::model::TimestreamResources).
         pub fn build(self) -> crate::model::TimestreamResources {
             crate::model::TimestreamResources {
-                timestream_database_name: self.timestream_database_name,
-                timestream_table_name: self.timestream_table_name,
+                timestream_database_name: self.timestream_database_name
+                ,
+                timestream_table_name: self.timestream_table_name
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestreamResources {
     /// Creates a new builder-style object to manufacture [`TimestreamResources`](crate::model::TimestreamResources).
@@ -5395,9 +5084,9 @@ impl TimestreamResources {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let registrationstatus = unimplemented!();
 /// match registrationstatus {
@@ -5420,22 +5109,14 @@ impl TimestreamResources {
 /// Specifically, when `registrationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RegistrationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RegistrationStatus {
     #[allow(missing_docs)] // documentation missing in model
     RegistrationFailure,
@@ -5444,7 +5125,7 @@ pub enum RegistrationStatus {
     #[allow(missing_docs)] // documentation missing in model
     RegistrationSuccess,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RegistrationStatus {
     fn from(s: &str) -> Self {
@@ -5452,19 +5133,17 @@ impl std::convert::From<&str> for RegistrationStatus {
             "REGISTRATION_FAILURE" => RegistrationStatus::RegistrationFailure,
             "REGISTRATION_PENDING" => RegistrationStatus::RegistrationPending,
             "REGISTRATION_SUCCESS" => RegistrationStatus::RegistrationSuccess,
-            other => {
-                RegistrationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RegistrationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RegistrationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RegistrationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RegistrationStatus::from(s))
+                }
+            }
 impl RegistrationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5472,15 +5151,13 @@ impl RegistrationStatus {
             RegistrationStatus::RegistrationFailure => "REGISTRATION_FAILURE",
             RegistrationStatus::RegistrationPending => "REGISTRATION_PENDING",
             RegistrationStatus::RegistrationSuccess => "REGISTRATION_SUCCESS",
-            RegistrationStatus::Unknown(value) => value.as_str(),
+            RegistrationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "REGISTRATION_FAILURE",
-            "REGISTRATION_PENDING",
-            "REGISTRATION_SUCCESS",
+            "REGISTRATION_FAILURE", "REGISTRATION_PENDING", "REGISTRATION_SUCCESS"
         ]
     }
 }
@@ -5493,7 +5170,7 @@ impl AsRef<str> for RegistrationStatus {
 /// <p>The log delivery option to send data to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogDeliveryOptions {
+pub struct CloudWatchLogDeliveryOptions  {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
     pub log_type: std::option::Option<crate::model::LogType>,
@@ -5503,17 +5180,17 @@ pub struct CloudWatchLogDeliveryOptions {
 }
 impl CloudWatchLogDeliveryOptions {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
-    pub fn log_type(&self) -> std::option::Option<&crate::model::LogType> {
+    pub fn log_type(&self) -> std::option::Option<& crate::model::LogType> {
         self.log_type.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
 /// See [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
 pub mod cloud_watch_log_delivery_options {
-
+    
     /// A builder for [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5528,8 +5205,7 @@ pub mod cloud_watch_log_delivery_options {
         }
         /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
         pub fn set_log_type(mut self, input: std::option::Option<crate::model::LogType>) -> Self {
-            self.log_type = input;
-            self
+            self.log_type = input; self
         }
         /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5537,21 +5213,21 @@ pub mod cloud_watch_log_delivery_options {
             self
         }
         /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
         pub fn build(self) -> crate::model::CloudWatchLogDeliveryOptions {
             crate::model::CloudWatchLogDeliveryOptions {
-                log_type: self.log_type,
-                log_group_name: self.log_group_name,
+                log_type: self.log_type
+                ,
+                log_group_name: self.log_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogDeliveryOptions {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
@@ -5566,9 +5242,9 @@ impl CloudWatchLogDeliveryOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let logtype = unimplemented!();
 /// match logtype {
@@ -5590,58 +5266,52 @@ impl CloudWatchLogDeliveryOptions {
 /// Specifically, when `logtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LogType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LogType {
     #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
     Off,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogType {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => LogType::Error,
             "OFF" => LogType::Off,
-            other => LogType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LogType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LogType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LogType::from(s))
+                }
+            }
 impl LogType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogType::Error => "ERROR",
             LogType::Off => "OFF",
-            LogType::Unknown(value) => value.as_str(),
+            LogType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "OFF"]
+        &[
+            "ERROR", "OFF"
+        ]
     }
 }
 impl AsRef<str> for LogType {
@@ -5653,48 +5323,48 @@ impl AsRef<str> for LogType {
 /// <p>Information about the state of a vehicle and how it relates to the status of a campaign.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VehicleStatus {
+pub struct VehicleStatus  {
     /// <p>The name of a campaign.</p>
     #[doc(hidden)]
     pub campaign_name: std::option::Option<std::string::String>,
     /// <p>The unique ID of the vehicle.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
-    /// <p>The state of a vehicle, which can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
-    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
-    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
-    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
-    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
+    /// <p>The state of a vehicle, which can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li> 
+    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li> 
+    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li> 
+    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li> 
+    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::VehicleState>,
 }
 impl VehicleStatus {
     /// <p>The name of a campaign.</p>
-    pub fn campaign_name(&self) -> std::option::Option<&str> {
+    pub fn campaign_name(&self) -> std::option::Option<& str> {
         self.campaign_name.as_deref()
     }
     /// <p>The unique ID of the vehicle.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
-    /// <p>The state of a vehicle, which can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
-    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
-    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
-    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
-    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
+    /// <p>The state of a vehicle, which can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li> 
+    /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li> 
+    /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li> 
+    /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li> 
+    /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::VehicleState> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VehicleState> {
         self.status.as_ref()
     }
 }
 /// See [`VehicleStatus`](crate::model::VehicleStatus).
 pub mod vehicle_status {
-
+    
     /// A builder for [`VehicleStatus`](crate::model::VehicleStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5709,12 +5379,8 @@ pub mod vehicle_status {
             self
         }
         /// <p>The name of a campaign.</p>
-        pub fn set_campaign_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.campaign_name = input;
-            self
+        pub fn set_campaign_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.campaign_name = input; self
         }
         /// <p>The unique ID of the vehicle.</p>
         pub fn vehicle_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5723,45 +5389,45 @@ pub mod vehicle_status {
         }
         /// <p>The unique ID of the vehicle.</p>
         pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vehicle_name = input;
-            self
+            self.vehicle_name = input; self
         }
-        /// <p>The state of a vehicle, which can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
-        /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
-        /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
-        /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
-        /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
+        /// <p>The state of a vehicle, which can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li> 
+        /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li> 
+        /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li> 
+        /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li> 
+        /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::VehicleState) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The state of a vehicle, which can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
-        /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li>
-        /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li>
-        /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
-        /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
+        /// <p>The state of a vehicle, which can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li> 
+        /// <li> <p> <code>READY</code> - The vehicle is ready to receive a campaign deployment. </p> </li> 
+        /// <li> <p> <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. </p> </li> 
+        /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li> 
+        /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VehicleState>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VehicleState>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VehicleStatus`](crate::model::VehicleStatus).
         pub fn build(self) -> crate::model::VehicleStatus {
             crate::model::VehicleStatus {
-                campaign_name: self.campaign_name,
-                vehicle_name: self.vehicle_name,
-                status: self.status,
+                campaign_name: self.campaign_name
+                ,
+                vehicle_name: self.vehicle_name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VehicleStatus {
     /// Creates a new builder-style object to manufacture [`VehicleStatus`](crate::model::VehicleStatus).
@@ -5776,9 +5442,9 @@ impl VehicleStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vehiclestate = unimplemented!();
 /// match vehiclestate {
@@ -5803,22 +5469,14 @@ impl VehicleStatus {
 /// Specifically, when `vehiclestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VehicleState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VehicleState {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -5831,7 +5489,7 @@ pub enum VehicleState {
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VehicleState {
     fn from(s: &str) -> Self {
@@ -5841,17 +5499,17 @@ impl std::convert::From<&str> for VehicleState {
             "HEALTHY" => VehicleState::Healthy,
             "READY" => VehicleState::Ready,
             "SUSPENDED" => VehicleState::Suspended,
-            other => VehicleState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VehicleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VehicleState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VehicleState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VehicleState::from(s))
+                }
+            }
 impl VehicleState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5861,12 +5519,14 @@ impl VehicleState {
             VehicleState::Healthy => "HEALTHY",
             VehicleState::Ready => "READY",
             VehicleState::Suspended => "SUSPENDED",
-            VehicleState::Unknown(value) => value.as_str(),
+            VehicleState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED", "DELETING", "HEALTHY", "READY", "SUSPENDED"]
+        &[
+            "CREATED", "DELETING", "HEALTHY", "READY", "SUSPENDED"
+        ]
     }
 }
 impl AsRef<str> for VehicleState {
@@ -5878,7 +5538,7 @@ impl AsRef<str> for VehicleState {
 /// <p>Information about registering an Identity and Access Management (IAM) resource so Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to Amazon Timestream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamRegistrationResponse {
+pub struct IamRegistrationResponse  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -5891,21 +5551,21 @@ pub struct IamRegistrationResponse {
 }
 impl IamRegistrationResponse {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+    pub fn registration_status(&self) -> std::option::Option<& crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
     /// <p>A message associated with a registration error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
 pub mod iam_registration_response {
-
+    
     /// A builder for [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5921,8 +5581,7 @@ pub mod iam_registration_response {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
         pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
@@ -5930,12 +5589,8 @@ pub mod iam_registration_response {
             self
         }
         /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-        pub fn set_registration_status(
-            mut self,
-            input: std::option::Option<crate::model::RegistrationStatus>,
-        ) -> Self {
-            self.registration_status = input;
-            self
+        pub fn set_registration_status(mut self, input: std::option::Option<crate::model::RegistrationStatus>) -> Self {
+            self.registration_status = input; self
         }
         /// <p>A message associated with a registration error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5943,22 +5598,23 @@ pub mod iam_registration_response {
             self
         }
         /// <p>A message associated with a registration error.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
         pub fn build(self) -> crate::model::IamRegistrationResponse {
             crate::model::IamRegistrationResponse {
-                role_arn: self.role_arn,
-                registration_status: self.registration_status,
-                error_message: self.error_message,
+                role_arn: self.role_arn
+                ,
+                registration_status: self.registration_status
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl IamRegistrationResponse {
     /// Creates a new builder-style object to manufacture [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
@@ -5970,7 +5626,7 @@ impl IamRegistrationResponse {
 /// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestreamRegistrationResponse {
+pub struct TimestreamRegistrationResponse  {
     /// <p>The name of the Timestream database.</p>
     #[doc(hidden)]
     pub timestream_database_name: std::option::Option<std::string::String>,
@@ -5992,33 +5648,33 @@ pub struct TimestreamRegistrationResponse {
 }
 impl TimestreamRegistrationResponse {
     /// <p>The name of the Timestream database.</p>
-    pub fn timestream_database_name(&self) -> std::option::Option<&str> {
+    pub fn timestream_database_name(&self) -> std::option::Option<& str> {
         self.timestream_database_name.as_deref()
     }
     /// <p>The name of the Timestream database table.</p>
-    pub fn timestream_table_name(&self) -> std::option::Option<&str> {
+    pub fn timestream_table_name(&self) -> std::option::Option<& str> {
         self.timestream_table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
-    pub fn timestream_database_arn(&self) -> std::option::Option<&str> {
+    pub fn timestream_database_arn(&self) -> std::option::Option<& str> {
         self.timestream_database_arn.as_deref()
     }
     /// <p>The ARN of the Timestream database table.</p>
-    pub fn timestream_table_arn(&self) -> std::option::Option<&str> {
+    pub fn timestream_table_arn(&self) -> std::option::Option<& str> {
         self.timestream_table_arn.as_deref()
     }
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+    pub fn registration_status(&self) -> std::option::Option<& crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
     /// <p>A message associated with a registration error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
 pub mod timestream_registration_response {
-
+    
     /// A builder for [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6036,12 +5692,8 @@ pub mod timestream_registration_response {
             self
         }
         /// <p>The name of the Timestream database.</p>
-        pub fn set_timestream_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timestream_database_name = input;
-            self
+        pub fn set_timestream_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timestream_database_name = input; self
         }
         /// <p>The name of the Timestream database table.</p>
         pub fn timestream_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6049,12 +5701,8 @@ pub mod timestream_registration_response {
             self
         }
         /// <p>The name of the Timestream database table.</p>
-        pub fn set_timestream_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timestream_table_name = input;
-            self
+        pub fn set_timestream_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timestream_table_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
         pub fn timestream_database_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6062,12 +5710,8 @@ pub mod timestream_registration_response {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
-        pub fn set_timestream_database_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timestream_database_arn = input;
-            self
+        pub fn set_timestream_database_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timestream_database_arn = input; self
         }
         /// <p>The ARN of the Timestream database table.</p>
         pub fn timestream_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6075,12 +5719,8 @@ pub mod timestream_registration_response {
             self
         }
         /// <p>The ARN of the Timestream database table.</p>
-        pub fn set_timestream_table_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timestream_table_arn = input;
-            self
+        pub fn set_timestream_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timestream_table_arn = input; self
         }
         /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
         pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
@@ -6088,12 +5728,8 @@ pub mod timestream_registration_response {
             self
         }
         /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-        pub fn set_registration_status(
-            mut self,
-            input: std::option::Option<crate::model::RegistrationStatus>,
-        ) -> Self {
-            self.registration_status = input;
-            self
+        pub fn set_registration_status(mut self, input: std::option::Option<crate::model::RegistrationStatus>) -> Self {
+            self.registration_status = input; self
         }
         /// <p>A message associated with a registration error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6101,25 +5737,29 @@ pub mod timestream_registration_response {
             self
         }
         /// <p>A message associated with a registration error.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
         pub fn build(self) -> crate::model::TimestreamRegistrationResponse {
             crate::model::TimestreamRegistrationResponse {
-                timestream_database_name: self.timestream_database_name,
-                timestream_table_name: self.timestream_table_name,
-                timestream_database_arn: self.timestream_database_arn,
-                timestream_table_arn: self.timestream_table_arn,
-                registration_status: self.registration_status,
-                error_message: self.error_message,
+                timestream_database_name: self.timestream_database_name
+                ,
+                timestream_table_name: self.timestream_table_name
+                ,
+                timestream_database_arn: self.timestream_database_arn
+                ,
+                timestream_table_arn: self.timestream_table_arn
+                ,
+                registration_status: self.registration_status
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestreamRegistrationResponse {
     /// Creates a new builder-style object to manufacture [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
@@ -6131,7 +5771,7 @@ impl TimestreamRegistrationResponse {
 /// <p>An HTTP error resulting from updating the description for a vehicle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVehicleError {
+pub struct UpdateVehicleError  {
     /// <p>The ID of the vehicle with the error.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -6144,7 +5784,7 @@ pub struct UpdateVehicleError {
 }
 impl UpdateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The relevant HTTP error code (400+).</p>
@@ -6152,13 +5792,13 @@ impl UpdateVehicleError {
         self.code
     }
     /// <p>A message associated with the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`UpdateVehicleError`](crate::model::UpdateVehicleError).
 pub mod update_vehicle_error {
-
+    
     /// A builder for [`UpdateVehicleError`](crate::model::UpdateVehicleError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6174,8 +5814,7 @@ pub mod update_vehicle_error {
         }
         /// <p>The ID of the vehicle with the error.</p>
         pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vehicle_name = input;
-            self
+            self.vehicle_name = input; self
         }
         /// <p>The relevant HTTP error code (400+).</p>
         pub fn code(mut self, input: i32) -> Self {
@@ -6184,8 +5823,7 @@ pub mod update_vehicle_error {
         }
         /// <p>The relevant HTTP error code (400+).</p>
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>A message associated with the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6194,18 +5832,23 @@ pub mod update_vehicle_error {
         }
         /// <p>A message associated with the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVehicleError`](crate::model::UpdateVehicleError).
         pub fn build(self) -> crate::model::UpdateVehicleError {
             crate::model::UpdateVehicleError {
-                vehicle_name: self.vehicle_name,
-                code: self.code.unwrap_or_default(),
-                message: self.message,
+                vehicle_name: self.vehicle_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVehicleError {
     /// Creates a new builder-style object to manufacture [`UpdateVehicleError`](crate::model::UpdateVehicleError).
@@ -6217,7 +5860,7 @@ impl UpdateVehicleError {
 /// <p>Information about the updated vehicle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVehicleResponseItem {
+pub struct UpdateVehicleResponseItem  {
     /// <p>The unique ID of the updated vehicle.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -6227,17 +5870,17 @@ pub struct UpdateVehicleResponseItem {
 }
 impl UpdateVehicleResponseItem {
     /// <p>The unique ID of the updated vehicle.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
 pub mod update_vehicle_response_item {
-
+    
     /// A builder for [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6252,8 +5895,7 @@ pub mod update_vehicle_response_item {
         }
         /// <p>The unique ID of the updated vehicle.</p>
         pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vehicle_name = input;
-            self
+            self.vehicle_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6262,17 +5904,20 @@ pub mod update_vehicle_response_item {
         }
         /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
         pub fn build(self) -> crate::model::UpdateVehicleResponseItem {
             crate::model::UpdateVehicleResponseItem {
-                vehicle_name: self.vehicle_name,
-                arn: self.arn,
+                vehicle_name: self.vehicle_name
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVehicleResponseItem {
     /// Creates a new builder-style object to manufacture [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
@@ -6284,7 +5929,7 @@ impl UpdateVehicleResponseItem {
 /// <p>Information about the vehicle to update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVehicleRequestItem {
+pub struct UpdateVehicleRequestItem  {
     /// <p>The unique ID of the vehicle to update.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -6294,55 +5939,49 @@ pub struct UpdateVehicleRequestItem {
     /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
     #[doc(hidden)]
     pub decoder_manifest_arn: std::option::Option<std::string::String>,
-    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p> 
     /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p> 
     /// <p>This is required if attributes are present in the input.</p>
     #[doc(hidden)]
     pub attribute_update_mode: std::option::Option<crate::model::UpdateMode>,
 }
 impl UpdateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to update.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The ARN of the vehicle model (model manifest) associated with the vehicle to update.</p>
-    pub fn model_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn model_manifest_arn(&self) -> std::option::Option<& str> {
         self.model_manifest_arn.as_deref()
     }
     /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
-    pub fn decoder_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn decoder_manifest_arn(&self) -> std::option::Option<& str> {
         self.decoder_manifest_arn.as_deref()
     }
-    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p> 
     /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
-    /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
+    /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p> 
     /// <p>This is required if attributes are present in the input.</p>
-    pub fn attribute_update_mode(&self) -> std::option::Option<&crate::model::UpdateMode> {
+    pub fn attribute_update_mode(&self) -> std::option::Option<& crate::model::UpdateMode> {
         self.attribute_update_mode.as_ref()
     }
 }
 /// See [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
 pub mod update_vehicle_request_item {
-
+    
     /// A builder for [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
         pub(crate) model_manifest_arn: std::option::Option<std::string::String>,
         pub(crate) decoder_manifest_arn: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) attribute_update_mode: std::option::Option<crate::model::UpdateMode>,
     }
     impl Builder {
@@ -6353,8 +5992,7 @@ pub mod update_vehicle_request_item {
         }
         /// <p>The unique ID of the vehicle to update.</p>
         pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vehicle_name = input;
-            self
+            self.vehicle_name = input; self
         }
         /// <p>The ARN of the vehicle model (model manifest) associated with the vehicle to update.</p>
         pub fn model_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6362,12 +6000,8 @@ pub mod update_vehicle_request_item {
             self
         }
         /// <p>The ARN of the vehicle model (model manifest) associated with the vehicle to update.</p>
-        pub fn set_model_manifest_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_manifest_arn = input;
-            self
+        pub fn set_model_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_manifest_arn = input; self
         }
         /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
         pub fn decoder_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6375,66 +6009,55 @@ pub mod update_vehicle_request_item {
             self
         }
         /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
-        pub fn set_decoder_manifest_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.decoder_manifest_arn = input;
-            self
+        pub fn set_decoder_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.decoder_manifest_arn = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+        /// <p>Static information about a vehicle in a key-value pair. For example:</p> 
         /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
-        /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+        /// <p>Static information about a vehicle in a key-value pair. For example:</p> 
         /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
-        /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
+        /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p> 
         /// <p>This is required if attributes are present in the input.</p>
         pub fn attribute_update_mode(mut self, input: crate::model::UpdateMode) -> Self {
             self.attribute_update_mode = Some(input);
             self
         }
-        /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
+        /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p> 
         /// <p>This is required if attributes are present in the input.</p>
-        pub fn set_attribute_update_mode(
-            mut self,
-            input: std::option::Option<crate::model::UpdateMode>,
-        ) -> Self {
-            self.attribute_update_mode = input;
-            self
+        pub fn set_attribute_update_mode(mut self, input: std::option::Option<crate::model::UpdateMode>) -> Self {
+            self.attribute_update_mode = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
         pub fn build(self) -> crate::model::UpdateVehicleRequestItem {
             crate::model::UpdateVehicleRequestItem {
-                vehicle_name: self.vehicle_name,
-                model_manifest_arn: self.model_manifest_arn,
-                decoder_manifest_arn: self.decoder_manifest_arn,
-                attributes: self.attributes,
-                attribute_update_mode: self.attribute_update_mode,
+                vehicle_name: self.vehicle_name
+                ,
+                model_manifest_arn: self.model_manifest_arn
+                ,
+                decoder_manifest_arn: self.decoder_manifest_arn
+                ,
+                attributes: self.attributes
+                ,
+                attribute_update_mode: self.attribute_update_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVehicleRequestItem {
     /// Creates a new builder-style object to manufacture [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
@@ -6446,7 +6069,7 @@ impl UpdateVehicleRequestItem {
 /// <p>An HTTP error resulting from creating a vehicle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVehicleError {
+pub struct CreateVehicleError  {
     /// <p>The ID of the vehicle with the error.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -6459,21 +6082,21 @@ pub struct CreateVehicleError {
 }
 impl CreateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>An HTTP error code.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A description of the HTTP error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`CreateVehicleError`](crate::model::CreateVehicleError).
 pub mod create_vehicle_error {
-
+    
     /// A builder for [`CreateVehicleError`](crate::model::CreateVehicleError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6489,8 +6112,7 @@ pub mod create_vehicle_error {
         }
         /// <p>The ID of the vehicle with the error.</p>
         pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vehicle_name = input;
-            self
+            self.vehicle_name = input; self
         }
         /// <p>An HTTP error code.</p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6499,8 +6121,7 @@ pub mod create_vehicle_error {
         }
         /// <p>An HTTP error code.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>A description of the HTTP error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6509,18 +6130,22 @@ pub mod create_vehicle_error {
         }
         /// <p>A description of the HTTP error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CreateVehicleError`](crate::model::CreateVehicleError).
         pub fn build(self) -> crate::model::CreateVehicleError {
             crate::model::CreateVehicleError {
-                vehicle_name: self.vehicle_name,
-                code: self.code,
-                message: self.message,
+                vehicle_name: self.vehicle_name
+                ,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVehicleError {
     /// Creates a new builder-style object to manufacture [`CreateVehicleError`](crate::model::CreateVehicleError).
@@ -6532,7 +6157,7 @@ impl CreateVehicleError {
 /// <p>Information about a created vehicle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVehicleResponseItem {
+pub struct CreateVehicleResponseItem  {
     /// <p>The unique ID of the vehicle to create.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -6545,21 +6170,21 @@ pub struct CreateVehicleResponseItem {
 }
 impl CreateVehicleResponseItem {
     /// <p>The unique ID of the vehicle to create.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The ARN of the created vehicle.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
 }
 /// See [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
 pub mod create_vehicle_response_item {
-
+    
     /// A builder for [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6575,8 +6200,7 @@ pub mod create_vehicle_response_item {
         }
         /// <p>The unique ID of the vehicle to create.</p>
         pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vehicle_name = input;
-            self
+            self.vehicle_name = input; self
         }
         /// <p>The ARN of the created vehicle.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6585,8 +6209,7 @@ pub mod create_vehicle_response_item {
         }
         /// <p>The ARN of the created vehicle.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
         pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6595,18 +6218,22 @@ pub mod create_vehicle_response_item {
         }
         /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_arn = input;
-            self
+            self.thing_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
         pub fn build(self) -> crate::model::CreateVehicleResponseItem {
             crate::model::CreateVehicleResponseItem {
-                vehicle_name: self.vehicle_name,
-                arn: self.arn,
-                thing_arn: self.thing_arn,
+                vehicle_name: self.vehicle_name
+                ,
+                arn: self.arn
+                ,
+                thing_arn: self.thing_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVehicleResponseItem {
     /// Creates a new builder-style object to manufacture [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
@@ -6618,7 +6245,7 @@ impl CreateVehicleResponseItem {
 /// <p>Information about the vehicle to create.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVehicleRequestItem {
+pub struct CreateVehicleRequestItem  {
     /// <p>The unique ID of the vehicle to create.</p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -6630,8 +6257,7 @@ pub struct CreateVehicleRequestItem {
     pub decoder_manifest_arn: std::option::Option<std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
     #[doc(hidden)]
     pub association_behavior: std::option::Option<crate::model::VehicleAssociationBehavior>,
@@ -6641,49 +6267,41 @@ pub struct CreateVehicleRequestItem {
 }
 impl CreateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to create.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
-    pub fn model_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn model_manifest_arn(&self) -> std::option::Option<& str> {
         self.model_manifest_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
-    pub fn decoder_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn decoder_manifest_arn(&self) -> std::option::Option<& str> {
         self.decoder_manifest_arn.as_deref()
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
-    pub fn association_behavior(
-        &self,
-    ) -> std::option::Option<&crate::model::VehicleAssociationBehavior> {
+    pub fn association_behavior(&self) -> std::option::Option<& crate::model::VehicleAssociationBehavior> {
         self.association_behavior.as_ref()
     }
     /// <p>Metadata which can be used to manage the vehicle.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).
 pub mod create_vehicle_request_item {
-
+    
     /// A builder for [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
         pub(crate) model_manifest_arn: std::option::Option<std::string::String>,
         pub(crate) decoder_manifest_arn: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) association_behavior:
-            std::option::Option<crate::model::VehicleAssociationBehavior>,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) association_behavior: std::option::Option<crate::model::VehicleAssociationBehavior>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -6694,8 +6312,7 @@ pub mod create_vehicle_request_item {
         }
         /// <p>The unique ID of the vehicle to create.</p>
         pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vehicle_name = input;
-            self
+            self.vehicle_name = input; self
         }
         /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
         pub fn model_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6703,12 +6320,8 @@ pub mod create_vehicle_request_item {
             self
         }
         /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
-        pub fn set_model_manifest_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_manifest_arn = input;
-            self
+        pub fn set_model_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_manifest_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
         pub fn decoder_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6716,53 +6329,32 @@ pub mod create_vehicle_request_item {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
-        pub fn set_decoder_manifest_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.decoder_manifest_arn = input;
-            self
+        pub fn set_decoder_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.decoder_manifest_arn = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
-        pub fn association_behavior(
-            mut self,
-            input: crate::model::VehicleAssociationBehavior,
-        ) -> Self {
+        pub fn association_behavior(mut self, input: crate::model::VehicleAssociationBehavior) -> Self {
             self.association_behavior = Some(input);
             self
         }
         /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
-        pub fn set_association_behavior(
-            mut self,
-            input: std::option::Option<crate::model::VehicleAssociationBehavior>,
-        ) -> Self {
-            self.association_behavior = input;
-            self
+        pub fn set_association_behavior(mut self, input: std::option::Option<crate::model::VehicleAssociationBehavior>) -> Self {
+            self.association_behavior = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6771,30 +6363,34 @@ pub mod create_vehicle_request_item {
         /// <p>Metadata which can be used to manage the vehicle.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Metadata which can be used to manage the vehicle.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).
         pub fn build(self) -> crate::model::CreateVehicleRequestItem {
             crate::model::CreateVehicleRequestItem {
-                vehicle_name: self.vehicle_name,
-                model_manifest_arn: self.model_manifest_arn,
-                decoder_manifest_arn: self.decoder_manifest_arn,
-                attributes: self.attributes,
-                association_behavior: self.association_behavior,
-                tags: self.tags,
+                vehicle_name: self.vehicle_name
+                ,
+                model_manifest_arn: self.model_manifest_arn
+                ,
+                decoder_manifest_arn: self.decoder_manifest_arn
+                ,
+                attributes: self.attributes
+                ,
+                association_behavior: self.association_behavior
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVehicleRequestItem {
     /// Creates a new builder-style object to manufacture [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).
@@ -6802,3 +6398,4 @@ impl CreateVehicleRequestItem {
         crate::model::create_vehicle_request_item::Builder::default()
     }
 }
+

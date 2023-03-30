@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`AddNotificationChannelsInput`](crate::input::AddNotificationChannelsInput).
 pub mod add_notification_channels_input {
-
+    
     /// A builder for [`AddNotificationChannelsInput`](crate::input::AddNotificationChannelsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,12 +17,8 @@ pub mod add_notification_channels_input {
             self
         }
         /// <p>The name of the profiling group that we are setting up notifications for.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// Appends an item to `channels`.
         ///
@@ -31,176 +27,102 @@ pub mod add_notification_channels_input {
         /// <p>One or 2 channels to report to when anomalies are detected.</p>
         pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input);
-            self.channels = Some(v);
-            self
+                            v.push(input);
+                            self.channels = Some(v);
+                            self
         }
         /// <p>One or 2 channels to report to when anomalies are detected.</p>
-        pub fn set_channels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-        ) -> Self {
-            self.channels = input;
-            self
+        pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::model::Channel>>) -> Self {
+            self.channels = input; self
         }
         /// Consumes the builder and constructs a [`AddNotificationChannelsInput`](crate::input::AddNotificationChannelsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AddNotificationChannelsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::AddNotificationChannelsInput {
-                profiling_group_name: self.profiling_group_name,
-                channels: self.channels,
-            })
+        pub fn build(self) -> Result<crate::input::AddNotificationChannelsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AddNotificationChannelsInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    channels: self.channels
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AddNotificationChannelsInput {
     /// Consumes the builder and constructs an Operation<[`AddNotificationChannels`](crate::operation::AddNotificationChannels)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AddNotificationChannels,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddNotificationChannels, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AddNotificationChannelsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AddNotificationChannelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.profiling_group_name;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/notificationConfiguration",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/notificationConfiguration", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AddNotificationChannelsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AddNotificationChannelsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_notification_channels(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_add_notification_channels(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AddNotificationChannels::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AddNotificationChannels",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddNotificationChannels::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddNotificationChannels", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -212,7 +134,7 @@ impl AddNotificationChannelsInput {
 
 /// See [`BatchGetFrameMetricDataInput`](crate::input::BatchGetFrameMetricDataInput).
 pub mod batch_get_frame_metric_data_input {
-
+    
     /// A builder for [`BatchGetFrameMetricDataInput`](crate::input::BatchGetFrameMetricDataInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -230,12 +152,8 @@ pub mod batch_get_frame_metric_data_input {
             self
         }
         /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -243,12 +161,8 @@ pub mod batch_get_frame_metric_data_input {
             self
         }
         /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -256,12 +170,8 @@ pub mod batch_get_frame_metric_data_input {
             self
         }
         /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
         pub fn period(mut self, input: impl Into<std::string::String>) -> Self {
@@ -270,31 +180,26 @@ pub mod batch_get_frame_metric_data_input {
         }
         /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
         pub fn set_period(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
-        /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
-        /// <ul>
-        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+        /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p> 
+        /// <ul> 
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
         /// </ul>
         pub fn target_resolution(mut self, input: crate::model::AggregationPeriod) -> Self {
             self.target_resolution = Some(input);
             self
         }
-        /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
-        /// <ul>
-        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+        /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p> 
+        /// <ul> 
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
         /// </ul>
-        pub fn set_target_resolution(
-            mut self,
-            input: std::option::Option<crate::model::AggregationPeriod>,
-        ) -> Self {
-            self.target_resolution = input;
-            self
+        pub fn set_target_resolution(mut self, input: std::option::Option<crate::model::AggregationPeriod>) -> Self {
+            self.target_resolution = input; self
         }
         /// Appends an item to `frame_metrics`.
         ///
@@ -303,223 +208,135 @@ pub mod batch_get_frame_metric_data_input {
         /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
         pub fn frame_metrics(mut self, input: crate::model::FrameMetric) -> Self {
             let mut v = self.frame_metrics.unwrap_or_default();
-            v.push(input);
-            self.frame_metrics = Some(v);
-            self
+                            v.push(input);
+                            self.frame_metrics = Some(v);
+                            self
         }
         /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-        pub fn set_frame_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
-        ) -> Self {
-            self.frame_metrics = input;
-            self
+        pub fn set_frame_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>) -> Self {
+            self.frame_metrics = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetFrameMetricDataInput`](crate::input::BatchGetFrameMetricDataInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::BatchGetFrameMetricDataInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::BatchGetFrameMetricDataInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period: self.period,
-                target_resolution: self.target_resolution,
-                frame_metrics: self.frame_metrics,
-            })
+        pub fn build(self) -> Result<crate::input::BatchGetFrameMetricDataInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::BatchGetFrameMetricDataInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    start_time: self.start_time
+                    ,
+                    end_time: self.end_time
+                    ,
+                    period: self.period
+                    ,
+                    target_resolution: self.target_resolution
+                    ,
+                    frame_metrics: self.frame_metrics
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchGetFrameMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetFrameMetricData`](crate::operation::BatchGetFrameMetricData)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchGetFrameMetricData,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchGetFrameMetricData, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchGetFrameMetricDataInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::BatchGetFrameMetricDataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.profiling_group_name;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/frames/-/metrics",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/frames/-/metrics", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::BatchGetFrameMetricDataInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::BatchGetFrameMetricDataInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.start_time {
-                    {
-                        query.push_kv(
-                            "startTime",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_3,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("startTime", &aws_smithy_http::query::fmt_timestamp(inner_3, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_4) = &_input.end_time {
-                    {
-                        query.push_kv(
-                            "endTime",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_4,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("endTime", &aws_smithy_http::query::fmt_timestamp(inner_4, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_5) = &_input.period {
-                    {
+                     {
                         query.push_kv("period", &aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
                 if let Some(inner_6) = &_input.target_resolution {
-                    {
-                        query.push_kv(
-                            "targetResolution",
-                            &aws_smithy_http::query::fmt_string(&inner_6),
-                        );
+                     {
+                        query.push_kv("targetResolution", &aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::BatchGetFrameMetricDataInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::BatchGetFrameMetricDataInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_frame_metric_data(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_frame_metric_data(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchGetFrameMetricData::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchGetFrameMetricData",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchGetFrameMetricData::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchGetFrameMetricData", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -531,15 +348,13 @@ impl BatchGetFrameMetricDataInput {
 
 /// See [`ConfigureAgentInput`](crate::input::ConfigureAgentInput).
 pub mod configure_agent_input {
-
+    
     /// A builder for [`ConfigureAgentInput`](crate::input::ConfigureAgentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
         pub(crate) fleet_instance_id: std::option::Option<std::string::String>,
-        pub(crate) metadata: std::option::Option<
-            std::collections::HashMap<crate::model::MetadataField, std::string::String>,
-        >,
+        pub(crate) metadata: std::option::Option<std::collections::HashMap<crate::model::MetadataField, std::string::String>>,
     }
     impl Builder {
         /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
@@ -548,12 +363,8 @@ pub mod configure_agent_input {
             self
         }
         /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
         pub fn fleet_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -561,215 +372,136 @@ pub mod configure_agent_input {
             self
         }
         /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
-        pub fn set_fleet_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fleet_instance_id = input;
-            self
+        pub fn set_fleet_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_instance_id = input; self
         }
         /// Adds a key-value pair to `metadata`.
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
-        /// <ul>
-        /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
-        /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
-        /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
-        /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
-        /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
-        /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
-        /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
-        /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
-        /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
+        /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li> 
+        /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li> 
+        /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li> 
+        /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li> 
+        /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li> 
+        /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li> 
+        /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li> 
+        /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li> 
+        /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li> 
         /// </ul>
-        pub fn metadata(
-            mut self,
-            k: crate::model::MetadataField,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn metadata(mut self, k: crate::model::MetadataField, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.metadata = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.metadata = Some(hash_map);
+                            self
         }
-        /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
-        /// <ul>
-        /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
-        /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
-        /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
-        /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
-        /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
-        /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
-        /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
-        /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
-        /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
+        /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li> 
+        /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li> 
+        /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li> 
+        /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li> 
+        /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li> 
+        /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li> 
+        /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li> 
+        /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li> 
+        /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li> 
         /// </ul>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::MetadataField, std::string::String>,
-            >,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<crate::model::MetadataField, std::string::String>>) -> Self {
+            self.metadata = input; self
         }
         /// Consumes the builder and constructs a [`ConfigureAgentInput`](crate::input::ConfigureAgentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ConfigureAgentInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ConfigureAgentInput {
-                profiling_group_name: self.profiling_group_name,
-                fleet_instance_id: self.fleet_instance_id,
-                metadata: self.metadata,
-            })
+        pub fn build(self) -> Result<crate::input::ConfigureAgentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ConfigureAgentInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    fleet_instance_id: self.fleet_instance_id
+                    ,
+                    metadata: self.metadata
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ConfigureAgentInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureAgent`](crate::operation::ConfigureAgent)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ConfigureAgent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ConfigureAgent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ConfigureAgentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ConfigureAgentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.profiling_group_name;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_7,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_7 = input_7.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/configureAgent",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/configureAgent", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ConfigureAgentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ConfigureAgentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_configure_agent(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_configure_agent(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ConfigureAgent::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ConfigureAgent",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ConfigureAgent::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ConfigureAgent", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -781,18 +513,15 @@ impl ConfigureAgentInput {
 
 /// See [`CreateProfilingGroupInput`](crate::input::CreateProfilingGroupInput).
 pub mod create_profiling_group_input {
-
+    
     /// A builder for [`CreateProfilingGroupInput`](crate::input::CreateProfilingGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
         pub(crate) compute_platform: std::option::Option<crate::model::ComputePlatform>,
         pub(crate) client_token: std::option::Option<std::string::String>,
-        pub(crate) agent_orchestration_config:
-            std::option::Option<crate::model::AgentOrchestrationConfig>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the profiling group to create.</p>
@@ -801,12 +530,8 @@ pub mod create_profiling_group_input {
             self
         }
         /// <p>The name of the profiling group to create.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
         pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
@@ -814,12 +539,8 @@ pub mod create_profiling_group_input {
             self
         }
         /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
-        pub fn set_compute_platform(
-            mut self,
-            input: std::option::Option<crate::model::ComputePlatform>,
-        ) -> Self {
-            self.compute_platform = input;
-            self
+        pub fn set_compute_platform(mut self, input: std::option::Option<crate::model::ComputePlatform>) -> Self {
+            self.compute_platform = input; self
         }
         /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -828,214 +549,134 @@ pub mod create_profiling_group_input {
         }
         /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
-        pub fn agent_orchestration_config(
-            mut self,
-            input: crate::model::AgentOrchestrationConfig,
-        ) -> Self {
+        pub fn agent_orchestration_config(mut self, input: crate::model::AgentOrchestrationConfig) -> Self {
             self.agent_orchestration_config = Some(input);
             self
         }
         /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
-        pub fn set_agent_orchestration_config(
-            mut self,
-            input: std::option::Option<crate::model::AgentOrchestrationConfig>,
-        ) -> Self {
-            self.agent_orchestration_config = input;
-            self
+        pub fn set_agent_orchestration_config(mut self, input: std::option::Option<crate::model::AgentOrchestrationConfig>) -> Self {
+            self.agent_orchestration_config = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> A list of tags to add to the created profiling group. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> A list of tags to add to the created profiling group. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateProfilingGroupInput`](crate::input::CreateProfilingGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateProfilingGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateProfilingGroupInput {
-                profiling_group_name: self.profiling_group_name,
-                compute_platform: self.compute_platform,
-                client_token: self.client_token,
-                agent_orchestration_config: self.agent_orchestration_config,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateProfilingGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateProfilingGroupInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    compute_platform: self.compute_platform
+                    ,
+                    client_token: self.client_token
+                    ,
+                    agent_orchestration_config: self.agent_orchestration_config
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfilingGroup`](crate::operation::CreateProfilingGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateProfilingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateProfilingGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.client_token.is_none() {
-            self.client_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.client_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateProfilingGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateProfilingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/profilingGroups").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::CreateProfilingGroupInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::CreateProfilingGroupInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_8 = &_input.client_token;
-                let inner_8 = inner_8.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "client_token",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("client_token", "cannot be empty or unset"))?;
                 if inner_8.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "client_token",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("client_token", "cannot be empty or unset"));
                 }
                 query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_8));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateProfilingGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateProfilingGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_profiling_group(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_profiling_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateProfilingGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateProfilingGroup",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateProfilingGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateProfilingGroup", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1047,7 +688,7 @@ impl CreateProfilingGroupInput {
 
 /// See [`DeleteProfilingGroupInput`](crate::input::DeleteProfilingGroupInput).
 pub mod delete_profiling_group_input {
-
+    
     /// A builder for [`DeleteProfilingGroupInput`](crate::input::DeleteProfilingGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1060,100 +701,54 @@ pub mod delete_profiling_group_input {
             self
         }
         /// <p>The name of the profiling group to delete.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteProfilingGroupInput`](crate::input::DeleteProfilingGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteProfilingGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteProfilingGroupInput {
-                profiling_group_name: self.profiling_group_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteProfilingGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteProfilingGroupInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfilingGroup`](crate::operation::DeleteProfilingGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteProfilingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteProfilingGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteProfilingGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteProfilingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.profiling_group_name;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_9,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_9 = input_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteProfilingGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteProfilingGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1163,51 +758,34 @@ impl DeleteProfilingGroupInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteProfilingGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteProfilingGroup",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteProfilingGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteProfilingGroup", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1219,7 +797,7 @@ impl DeleteProfilingGroupInput {
 
 /// See [`DescribeProfilingGroupInput`](crate::input::DescribeProfilingGroupInput).
 pub mod describe_profiling_group_input {
-
+    
     /// A builder for [`DescribeProfilingGroupInput`](crate::input::DescribeProfilingGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1232,100 +810,54 @@ pub mod describe_profiling_group_input {
             self
         }
         /// <p> The name of the profiling group to get information about. </p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProfilingGroupInput`](crate::input::DescribeProfilingGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeProfilingGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeProfilingGroupInput {
-                profiling_group_name: self.profiling_group_name,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeProfilingGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeProfilingGroupInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProfilingGroup`](crate::operation::DescribeProfilingGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeProfilingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeProfilingGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeProfilingGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeProfilingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.profiling_group_name;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_10,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_10 = input_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeProfilingGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeProfilingGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1335,51 +867,34 @@ impl DescribeProfilingGroupInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeProfilingGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeProfilingGroup",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeProfilingGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeProfilingGroup", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1391,7 +906,7 @@ impl DescribeProfilingGroupInput {
 
 /// See [`GetFindingsReportAccountSummaryInput`](crate::input::GetFindingsReportAccountSummaryInput).
 pub mod get_findings_report_account_summary_input {
-
+    
     /// A builder for [`GetFindingsReportAccountSummaryInput`](crate::input::GetFindingsReportAccountSummaryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1400,19 +915,18 @@ pub mod get_findings_report_account_summary_input {
         pub(crate) daily_reports_only: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1421,8 +935,7 @@ pub mod get_findings_report_account_summary_input {
         }
         /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn daily_reports_only(mut self, input: bool) -> Self {
@@ -1431,102 +944,70 @@ pub mod get_findings_report_account_summary_input {
         }
         /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn set_daily_reports_only(mut self, input: std::option::Option<bool>) -> Self {
-            self.daily_reports_only = input;
-            self
+            self.daily_reports_only = input; self
         }
         /// Consumes the builder and constructs a [`GetFindingsReportAccountSummaryInput`](crate::input::GetFindingsReportAccountSummaryInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetFindingsReportAccountSummaryInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetFindingsReportAccountSummaryInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                daily_reports_only: self.daily_reports_only,
-            })
+        pub fn build(self) -> Result<crate::input::GetFindingsReportAccountSummaryInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetFindingsReportAccountSummaryInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    daily_reports_only: self.daily_reports_only
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetFindingsReportAccountSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingsReportAccountSummary`](crate::operation::GetFindingsReportAccountSummary)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetFindingsReportAccountSummary,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetFindingsReportAccountSummary, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetFindingsReportAccountSummaryInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetFindingsReportAccountSummaryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/internal/findingsReports").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetFindingsReportAccountSummaryInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetFindingsReportAccountSummaryInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
                     }
                 }
                 if let Some(inner_12) = &_input.max_results {
                     if *inner_12 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_12).encode());
                     }
                 }
                 if let Some(inner_13) = &_input.daily_reports_only {
                     if *inner_13 {
-                        query.push_kv(
-                            "dailyReportsOnly",
-                            aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
-                        );
+                        query.push_kv("dailyReportsOnly", aws_smithy_types::primitive::Encoder::from(*inner_13).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetFindingsReportAccountSummaryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetFindingsReportAccountSummaryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1537,51 +1018,34 @@ impl GetFindingsReportAccountSummaryInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetFindingsReportAccountSummary::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetFindingsReportAccountSummary",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetFindingsReportAccountSummary::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetFindingsReportAccountSummary", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1593,7 +1057,7 @@ impl GetFindingsReportAccountSummaryInput {
 
 /// See [`GetNotificationConfigurationInput`](crate::input::GetNotificationConfigurationInput).
 pub mod get_notification_configuration_input {
-
+    
     /// A builder for [`GetNotificationConfigurationInput`](crate::input::GetNotificationConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1606,100 +1070,54 @@ pub mod get_notification_configuration_input {
             self
         }
         /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// Consumes the builder and constructs a [`GetNotificationConfigurationInput`](crate::input::GetNotificationConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetNotificationConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetNotificationConfigurationInput {
-                profiling_group_name: self.profiling_group_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetNotificationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetNotificationConfigurationInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetNotificationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetNotificationConfiguration`](crate::operation::GetNotificationConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetNotificationConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetNotificationConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetNotificationConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.profiling_group_name;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_14,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_14 = input_14.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/notificationConfiguration",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/notificationConfiguration", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetNotificationConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetNotificationConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1709,51 +1127,34 @@ impl GetNotificationConfigurationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetNotificationConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetNotificationConfiguration",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetNotificationConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetNotificationConfiguration", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1765,7 +1166,7 @@ impl GetNotificationConfigurationInput {
 
 /// See [`GetPolicyInput`](crate::input::GetPolicyInput).
 pub mod get_policy_input {
-
+    
     /// A builder for [`GetPolicyInput`](crate::input::GetPolicyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1778,98 +1179,54 @@ pub mod get_policy_input {
             self
         }
         /// <p>The name of the profiling group.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// Consumes the builder and constructs a [`GetPolicyInput`](crate::input::GetPolicyInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetPolicyInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetPolicyInput {
-                profiling_group_name: self.profiling_group_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetPolicyInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetPolicyInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetPolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetPolicyInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.profiling_group_name;
-                let input_15 = input_15.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_15,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_15 = input_15.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/policy",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/policy", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetPolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetPolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1879,49 +1236,34 @@ impl GetPolicyInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetPolicy::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetPolicy",
-                    "codeguruprofiler",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetPolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetPolicy", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1933,7 +1275,7 @@ impl GetPolicyInput {
 
 /// See [`GetProfileInput`](crate::input::GetProfileInput).
 pub mod get_profile_input {
-
+    
     /// A builder for [`GetProfileInput`](crate::input::GetProfileInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1951,54 +1293,41 @@ pub mod get_profile_input {
             self
         }
         /// <p>The name of the profiling group to get.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
-        /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+        /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p> 
         /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+        /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p> 
         /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
-        /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+        /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p> 
         /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
         pub fn period(mut self, input: impl Into<std::string::String>) -> Self {
             self.period = Some(input.into());
             self
         }
-        /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+        /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p> 
         /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
         pub fn set_period(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
-        /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p> 
         /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p> 
         /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
         pub fn max_depth(mut self, input: i32) -> Self {
@@ -2007,159 +1336,104 @@ pub mod get_profile_input {
         }
         /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
         pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_depth = input;
-            self
+            self.max_depth = input; self
         }
-        /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
-        /// <ul>
-        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
-        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+        /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p> 
+        /// <ul> 
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li> 
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> 
         /// </ul>
         pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept = Some(input.into());
             self
         }
-        /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
-        /// <ul>
-        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
-        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+        /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p> 
+        /// <ul> 
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li> 
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> 
         /// </ul>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.accept = input;
-            self
+            self.accept = input; self
         }
         /// Consumes the builder and constructs a [`GetProfileInput`](crate::input::GetProfileInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetProfileInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetProfileInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                period: self.period,
-                end_time: self.end_time,
-                max_depth: self.max_depth,
-                accept: self.accept,
-            })
+        pub fn build(self) -> Result<crate::input::GetProfileInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetProfileInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    start_time: self.start_time
+                    ,
+                    period: self.period
+                    ,
+                    end_time: self.end_time
+                    ,
+                    max_depth: self.max_depth
+                    ,
+                    accept: self.accept
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetProfile`](crate::operation::GetProfile)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetProfile,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetProfile, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetProfileInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.profiling_group_name;
-                let input_16 = input_16.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_16,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_16 = input_16.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/profile",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/profile", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetProfileInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetProfileInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_17) = &_input.start_time {
-                    {
-                        query.push_kv(
-                            "startTime",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_17,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("startTime", &aws_smithy_http::query::fmt_timestamp(inner_17, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_18) = &_input.period {
-                    {
+                     {
                         query.push_kv("period", &aws_smithy_http::query::fmt_string(&inner_18));
                     }
                 }
                 if let Some(inner_19) = &_input.end_time {
-                    {
-                        query.push_kv(
-                            "endTime",
-                            &aws_smithy_http::query::fmt_timestamp(
-                                inner_19,
-                                aws_smithy_types::date_time::Format::DateTime,
-                            )?,
-                        );
+                     {
+                        query.push_kv("endTime", &aws_smithy_http::query::fmt_timestamp(inner_19, aws_smithy_types::date_time::Format::DateTime)?);
                     }
                 }
                 if let Some(inner_20) = &_input.max_depth {
                     if *inner_20 != 0 {
-                        query.push_kv(
-                            "maxDepth",
-                            aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
-                        );
+                        query.push_kv("maxDepth", aws_smithy_types::primitive::Encoder::from(*inner_20).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetProfileInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetProfileInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2171,51 +1445,34 @@ impl GetProfileInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetProfile::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetProfile",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetProfile::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetProfile", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2227,7 +1484,7 @@ impl GetProfileInput {
 
 /// See [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
 pub mod get_recommendations_input {
-
+    
     /// A builder for [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2243,12 +1500,8 @@ pub mod get_recommendations_input {
             self
         }
         /// <p> The name of the profiling group to get analysis data about. </p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2256,12 +1509,8 @@ pub mod get_recommendations_input {
             self
         }
         /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2269,166 +1518,100 @@ pub mod get_recommendations_input {
             self
         }
         /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
-        /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
-        /// <ul>
-        /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
-        /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
-        /// <li> <p> <code>en-US</code> - English, United States </p> </li>
-        /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
-        /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
-        /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
-        /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
-        /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
-        /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
-        /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
-        /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
+        /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> 
+        /// <ul> 
+        /// <li> <p> <code>de-DE</code> - German, Germany </p> </li> 
+        /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> 
+        /// <li> <p> <code>en-US</code> - English, United States </p> </li> 
+        /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> 
+        /// <li> <p> <code>fr-FR</code> - French, France </p> </li> 
+        /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> 
+        /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> 
+        /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> 
+        /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> 
+        /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> 
+        /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> 
         /// </ul>
         pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale = Some(input.into());
             self
         }
-        /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
-        /// <ul>
-        /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
-        /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
-        /// <li> <p> <code>en-US</code> - English, United States </p> </li>
-        /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
-        /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
-        /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
-        /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
-        /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
-        /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
-        /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
-        /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
+        /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> 
+        /// <ul> 
+        /// <li> <p> <code>de-DE</code> - German, Germany </p> </li> 
+        /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> 
+        /// <li> <p> <code>en-US</code> - English, United States </p> </li> 
+        /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> 
+        /// <li> <p> <code>fr-FR</code> - French, France </p> </li> 
+        /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> 
+        /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> 
+        /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> 
+        /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> 
+        /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> 
+        /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> 
         /// </ul>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
         /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetRecommendationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetRecommendationsInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                locale: self.locale,
-            })
+        pub fn build(self) -> Result<crate::input::GetRecommendationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetRecommendationsInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    start_time: self.start_time
+                    ,
+                    end_time: self.end_time
+                    ,
+                    locale: self.locale
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendations`](crate::operation::GetRecommendations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetRecommendations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetRecommendations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetRecommendationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetRecommendationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.profiling_group_name;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_21,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_21 = input_21.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/internal/profilingGroups/{profilingGroupName}/recommendations",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/internal/profilingGroups/{profilingGroupName}/recommendations", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetRecommendationsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetRecommendationsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_22 = &_input.start_time;
-                let inner_22 = inner_22.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "start_time",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                query.push_kv(
-                    "startTime",
-                    &aws_smithy_http::query::fmt_timestamp(
-                        inner_22,
-                        aws_smithy_types::date_time::Format::DateTime,
-                    )?,
-                );
+                let inner_22 = inner_22.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("start_time", "cannot be empty or unset"))?;
+                query.push_kv("startTime", &aws_smithy_http::query::fmt_timestamp(inner_22, aws_smithy_types::date_time::Format::DateTime)?);
                 let inner_23 = &_input.end_time;
-                let inner_23 = inner_23.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "end_time",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                query.push_kv(
-                    "endTime",
-                    &aws_smithy_http::query::fmt_timestamp(
-                        inner_23,
-                        aws_smithy_types::date_time::Format::DateTime,
-                    )?,
-                );
+                let inner_23 = inner_23.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("end_time", "cannot be empty or unset"))?;
+                query.push_kv("endTime", &aws_smithy_http::query::fmt_timestamp(inner_23, aws_smithy_types::date_time::Format::DateTime)?);
                 if let Some(inner_24) = &_input.locale {
-                    {
+                     {
                         query.push_kv("locale", &aws_smithy_http::query::fmt_string(&inner_24));
                     }
                 }
@@ -2436,12 +1619,9 @@ impl GetRecommendationsInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetRecommendationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetRecommendationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2452,51 +1632,34 @@ impl GetRecommendationsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetRecommendations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetRecommendations",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetRecommendations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetRecommendations", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2508,7 +1671,7 @@ impl GetRecommendationsInput {
 
 /// See [`ListFindingsReportsInput`](crate::input::ListFindingsReportsInput).
 pub mod list_findings_reports_input {
-
+    
     /// A builder for [`ListFindingsReportsInput`](crate::input::ListFindingsReportsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2526,12 +1689,8 @@ pub mod list_findings_reports_input {
             self
         }
         /// <p>The name of the profiling group from which to search for analysis data.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2539,12 +1698,8 @@ pub mod list_findings_reports_input {
             self
         }
         /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2552,26 +1707,21 @@ pub mod list_findings_reports_input {
             self
         }
         /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2580,8 +1730,7 @@ pub mod list_findings_reports_input {
         }
         /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn daily_reports_only(mut self, input: bool) -> Self {
@@ -2590,157 +1739,88 @@ pub mod list_findings_reports_input {
         }
         /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn set_daily_reports_only(mut self, input: std::option::Option<bool>) -> Self {
-            self.daily_reports_only = input;
-            self
+            self.daily_reports_only = input; self
         }
         /// Consumes the builder and constructs a [`ListFindingsReportsInput`](crate::input::ListFindingsReportsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListFindingsReportsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListFindingsReportsInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                daily_reports_only: self.daily_reports_only,
-            })
+        pub fn build(self) -> Result<crate::input::ListFindingsReportsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListFindingsReportsInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    start_time: self.start_time
+                    ,
+                    end_time: self.end_time
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    daily_reports_only: self.daily_reports_only
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListFindingsReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindingsReports`](crate::operation::ListFindingsReports)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListFindingsReports,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListFindingsReports, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListFindingsReportsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListFindingsReportsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.profiling_group_name;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_25,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_25 = input_25.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/internal/profilingGroups/{profilingGroupName}/findingsReports",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/internal/profilingGroups/{profilingGroupName}/findingsReports", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListFindingsReportsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListFindingsReportsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_26 = &_input.start_time;
-                let inner_26 = inner_26.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "start_time",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                query.push_kv(
-                    "startTime",
-                    &aws_smithy_http::query::fmt_timestamp(
-                        inner_26,
-                        aws_smithy_types::date_time::Format::DateTime,
-                    )?,
-                );
+                let inner_26 = inner_26.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("start_time", "cannot be empty or unset"))?;
+                query.push_kv("startTime", &aws_smithy_http::query::fmt_timestamp(inner_26, aws_smithy_types::date_time::Format::DateTime)?);
                 let inner_27 = &_input.end_time;
-                let inner_27 = inner_27.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "end_time",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                query.push_kv(
-                    "endTime",
-                    &aws_smithy_http::query::fmt_timestamp(
-                        inner_27,
-                        aws_smithy_types::date_time::Format::DateTime,
-                    )?,
-                );
+                let inner_27 = inner_27.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("end_time", "cannot be empty or unset"))?;
+                query.push_kv("endTime", &aws_smithy_http::query::fmt_timestamp(inner_27, aws_smithy_types::date_time::Format::DateTime)?);
                 if let Some(inner_28) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
                     }
                 }
                 if let Some(inner_29) = &_input.max_results {
                     if *inner_29 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_29).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_29).encode());
                     }
                 }
                 if let Some(inner_30) = &_input.daily_reports_only {
                     if *inner_30 {
-                        query.push_kv(
-                            "dailyReportsOnly",
-                            aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
-                        );
+                        query.push_kv("dailyReportsOnly", aws_smithy_types::primitive::Encoder::from(*inner_30).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListFindingsReportsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListFindingsReportsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2751,51 +1831,34 @@ impl ListFindingsReportsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListFindingsReports::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListFindingsReports",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListFindingsReports::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListFindingsReports", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2807,7 +1870,7 @@ impl ListFindingsReportsInput {
 
 /// See [`ListProfileTimesInput`](crate::input::ListProfileTimesInput).
 pub mod list_profile_times_input {
-
+    
     /// A builder for [`ListProfileTimesInput`](crate::input::ListProfileTimesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2826,12 +1889,8 @@ pub mod list_profile_times_input {
             self
         }
         /// <p>The name of the profiling group.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2839,12 +1898,8 @@ pub mod list_profile_times_input {
             self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2852,35 +1907,27 @@ pub mod list_profile_times_input {
             self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
-        /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
-        /// <ul>
-        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+        /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p> 
+        /// <ul> 
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
         /// </ul>
         pub fn period(mut self, input: crate::model::AggregationPeriod) -> Self {
             self.period = Some(input);
             self
         }
-        /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
-        /// <ul>
-        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+        /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p> 
+        /// <ul> 
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
         /// </ul>
-        pub fn set_period(
-            mut self,
-            input: std::option::Option<crate::model::AggregationPeriod>,
-        ) -> Self {
-            self.period = input;
-            self
+        pub fn set_period(mut self, input: std::option::Option<crate::model::AggregationPeriod>) -> Self {
+            self.period = input; self
         }
         /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
         pub fn order_by(mut self, input: crate::model::OrderBy) -> Self {
@@ -2889,8 +1936,7 @@ pub mod list_profile_times_input {
         }
         /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
-            self.order_by = input;
-            self
+            self.order_by = input; self
         }
         /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2899,164 +1945,96 @@ pub mod list_profile_times_input {
         }
         /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProfileTimesInput`](crate::input::ListProfileTimesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListProfileTimesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListProfileTimesInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period: self.period,
-                order_by: self.order_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListProfileTimesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListProfileTimesInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    start_time: self.start_time
+                    ,
+                    end_time: self.end_time
+                    ,
+                    period: self.period
+                    ,
+                    order_by: self.order_by
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListProfileTimesInput {
     /// Consumes the builder and constructs an Operation<[`ListProfileTimes`](crate::operation::ListProfileTimes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListProfileTimes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListProfileTimes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListProfileTimesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListProfileTimesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.profiling_group_name;
-                let input_31 = input_31.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_31,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_31 = input_31.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/profileTimes",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/profileTimes", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListProfileTimesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListProfileTimesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_32 = &_input.start_time;
-                let inner_32 = inner_32.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "start_time",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                query.push_kv(
-                    "startTime",
-                    &aws_smithy_http::query::fmt_timestamp(
-                        inner_32,
-                        aws_smithy_types::date_time::Format::DateTime,
-                    )?,
-                );
+                let inner_32 = inner_32.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("start_time", "cannot be empty or unset"))?;
+                query.push_kv("startTime", &aws_smithy_http::query::fmt_timestamp(inner_32, aws_smithy_types::date_time::Format::DateTime)?);
                 let inner_33 = &_input.end_time;
-                let inner_33 = inner_33.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "end_time",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                query.push_kv(
-                    "endTime",
-                    &aws_smithy_http::query::fmt_timestamp(
-                        inner_33,
-                        aws_smithy_types::date_time::Format::DateTime,
-                    )?,
-                );
+                let inner_33 = inner_33.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("end_time", "cannot be empty or unset"))?;
+                query.push_kv("endTime", &aws_smithy_http::query::fmt_timestamp(inner_33, aws_smithy_types::date_time::Format::DateTime)?);
                 let inner_34 = &_input.period;
-                let inner_34 = inner_34.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "period",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_34 = inner_34.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("period", "cannot be empty or unset"))?;
                 query.push_kv("period", &aws_smithy_http::query::fmt_string(&inner_34));
                 if let Some(inner_35) = &_input.order_by {
-                    {
+                     {
                         query.push_kv("orderBy", &aws_smithy_http::query::fmt_string(&inner_35));
                     }
                 }
                 if let Some(inner_36) = &_input.max_results {
                     if *inner_36 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_36).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_36).encode());
                     }
                 }
                 if let Some(inner_37) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
                     }
                 }
@@ -3064,12 +2042,9 @@ impl ListProfileTimesInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListProfileTimesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListProfileTimesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3080,51 +2055,34 @@ impl ListProfileTimesInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListProfileTimes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListProfileTimes",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListProfileTimes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListProfileTimes", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3136,7 +2094,7 @@ impl ListProfileTimesInput {
 
 /// See [`ListProfilingGroupsInput`](crate::input::ListProfilingGroupsInput).
 pub mod list_profiling_groups_input {
-
+    
     /// A builder for [`ListProfilingGroupsInput`](crate::input::ListProfilingGroupsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3145,19 +2103,18 @@ pub mod list_profiling_groups_input {
         pub(crate) include_description: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3166,8 +2123,7 @@ pub mod list_profiling_groups_input {
         }
         /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
         pub fn include_description(mut self, input: bool) -> Self {
@@ -3176,102 +2132,70 @@ pub mod list_profiling_groups_input {
         }
         /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
         pub fn set_include_description(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_description = input;
-            self
+            self.include_description = input; self
         }
         /// Consumes the builder and constructs a [`ListProfilingGroupsInput`](crate::input::ListProfilingGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListProfilingGroupsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListProfilingGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                include_description: self.include_description,
-            })
+        pub fn build(self) -> Result<crate::input::ListProfilingGroupsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListProfilingGroupsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    include_description: self.include_description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListProfilingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListProfilingGroups`](crate::operation::ListProfilingGroups)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListProfilingGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListProfilingGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListProfilingGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListProfilingGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/profilingGroups").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListProfilingGroupsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListProfilingGroupsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_38) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
                 if let Some(inner_39) = &_input.max_results {
                     if *inner_39 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_39).encode());
                     }
                 }
                 if let Some(inner_40) = &_input.include_description {
                     if *inner_40 {
-                        query.push_kv(
-                            "includeDescription",
-                            aws_smithy_types::primitive::Encoder::from(*inner_40).encode(),
-                        );
+                        query.push_kv("includeDescription", aws_smithy_types::primitive::Encoder::from(*inner_40).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListProfilingGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListProfilingGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3282,51 +2206,34 @@ impl ListProfilingGroupsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListProfilingGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListProfilingGroups",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListProfilingGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListProfilingGroups", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3338,7 +2245,7 @@ impl ListProfilingGroupsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3352,92 +2259,53 @@ pub mod list_tags_for_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.resource_arn;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_41,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_41 = input_41.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3447,51 +2315,34 @@ impl ListTagsForResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3503,7 +2354,7 @@ impl ListTagsForResourceInput {
 
 /// See [`PostAgentProfileInput`](crate::input::PostAgentProfileInput).
 pub mod post_agent_profile_input {
-
+    
     /// A builder for [`PostAgentProfileInput`](crate::input::PostAgentProfileInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3519,12 +2370,8 @@ pub mod post_agent_profile_input {
             self
         }
         /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> The submitted profiling data. </p>
         pub fn agent_profile(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -3532,12 +2379,8 @@ pub mod post_agent_profile_input {
             self
         }
         /// <p> The submitted profiling data. </p>
-        pub fn set_agent_profile(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.agent_profile = input;
-            self
+        pub fn set_agent_profile(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.agent_profile = input; self
         }
         /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
         pub fn profile_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3545,139 +2388,89 @@ pub mod post_agent_profile_input {
             self
         }
         /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-        pub fn set_profile_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profile_token = input;
-            self
+        pub fn set_profile_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_token = input; self
         }
-        /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
-        /// <ul>
-        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
-        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+        /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p> 
+        /// <ul> 
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li> 
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> 
         /// </ul>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
-        /// <ul>
-        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
-        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+        /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p> 
+        /// <ul> 
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li> 
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> 
         /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`PostAgentProfileInput`](crate::input::PostAgentProfileInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PostAgentProfileInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PostAgentProfileInput {
-                profiling_group_name: self.profiling_group_name,
-                agent_profile: self.agent_profile,
-                profile_token: self.profile_token,
-                content_type: self.content_type,
-            })
+        pub fn build(self) -> Result<crate::input::PostAgentProfileInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PostAgentProfileInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    agent_profile: self.agent_profile
+                    ,
+                    profile_token: self.profile_token
+                    ,
+                    content_type: self.content_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PostAgentProfileInput {
     /// Consumes the builder and constructs an Operation<[`PostAgentProfile`](crate::operation::PostAgentProfile)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        mut self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PostAgentProfile,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PostAgentProfile, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         if self.profile_token.is_none() {
-            self.profile_token = Some(_config.make_token.make_idempotency_token());
-        }
+                                self.profile_token = Some(_config.make_token.make_idempotency_token());
+                            }
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PostAgentProfileInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PostAgentProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.profiling_group_name;
-                let input_42 = input_42.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_42,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_42 = input_42.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/agentProfile",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/agentProfile", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::PostAgentProfileInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::PostAgentProfileInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_43) = &_input.profile_token {
-                    {
-                        query.push_kv(
-                            "profileToken",
-                            &aws_smithy_http::query::fmt_string(&inner_43),
-                        );
+                     {
+                        query.push_kv("profileToken", &aws_smithy_http::query::fmt_string(&inner_43));
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PostAgentProfileInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PostAgentProfileInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3685,69 +2478,42 @@ impl PostAgentProfileInput {
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/octet-stream",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/octet-stream");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_post_agent_profile_input(self.agent_profile)?,
+            crate::operation_ser::serialize_payload_post_agent_profile_input( self.agent_profile)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PostAgentProfile::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PostAgentProfile",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PostAgentProfile::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PostAgentProfile", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3759,7 +2525,7 @@ impl PostAgentProfileInput {
 
 /// See [`PutPermissionInput`](crate::input::PutPermissionInput).
 pub mod put_permission_input {
-
+    
     /// A builder for [`PutPermissionInput`](crate::input::PutPermissionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3775,12 +2541,8 @@ pub mod put_permission_input {
             self
         }
         /// <p>The name of the profiling group to grant access to.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
         pub fn action_group(mut self, input: crate::model::ActionGroup) -> Self {
@@ -3788,12 +2550,8 @@ pub mod put_permission_input {
             self
         }
         /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-        pub fn set_action_group(
-            mut self,
-            input: std::option::Option<crate::model::ActionGroup>,
-        ) -> Self {
-            self.action_group = input;
-            self
+        pub fn set_action_group(mut self, input: std::option::Option<crate::model::ActionGroup>) -> Self {
+            self.action_group = input; self
         }
         /// Appends an item to `principals`.
         ///
@@ -3802,17 +2560,13 @@ pub mod put_permission_input {
         /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
-            self.principals = Some(v);
-            self
+                            v.push(input.into());
+                            self.principals = Some(v);
+                            self
         }
         /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-        pub fn set_principals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.principals = input;
-            self
+        pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.principals = input; self
         }
         /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3821,185 +2575,106 @@ pub mod put_permission_input {
         }
         /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`PutPermissionInput`](crate::input::PutPermissionInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutPermissionInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PutPermissionInput {
-                profiling_group_name: self.profiling_group_name,
-                action_group: self.action_group,
-                principals: self.principals,
-                revision_id: self.revision_id,
-            })
+        pub fn build(self) -> Result<crate::input::PutPermissionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutPermissionInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    action_group: self.action_group
+                    ,
+                    principals: self.principals
+                    ,
+                    revision_id: self.revision_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutPermissionInput {
     /// Consumes the builder and constructs an Operation<[`PutPermission`](crate::operation::PutPermission)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutPermission,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutPermission, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutPermissionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutPermissionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.profiling_group_name;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_44,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_44 = input_44.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
                 let input_45 = &_input.action_group;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "action_group",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let action_group = aws_smithy_http::label::fmt_string(
-                    input_45,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_45 = input_45.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("action_group", "cannot be empty or unset"))?;
+                let action_group = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if action_group.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "action_group",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/policy/{actionGroup}",
-                    profilingGroupName = profiling_group_name,
-                    actionGroup = action_group
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("action_group", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/policy/{actionGroup}", profilingGroupName = profiling_group_name, actionGroup = action_group).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutPermissionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutPermissionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_permission(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_permission(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutPermission::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutPermission",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutPermission::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutPermission", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4011,7 +2686,7 @@ impl PutPermissionInput {
 
 /// See [`RemoveNotificationChannelInput`](crate::input::RemoveNotificationChannelInput).
 pub mod remove_notification_channel_input {
-
+    
     /// A builder for [`RemoveNotificationChannelInput`](crate::input::RemoveNotificationChannelInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4025,12 +2700,8 @@ pub mod remove_notification_channel_input {
             self
         }
         /// <p>The name of the profiling group we want to change notification configuration for.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p>The id of the channel that we want to stop receiving notifications.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4039,117 +2710,61 @@ pub mod remove_notification_channel_input {
         }
         /// <p>The id of the channel that we want to stop receiving notifications.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// Consumes the builder and constructs a [`RemoveNotificationChannelInput`](crate::input::RemoveNotificationChannelInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RemoveNotificationChannelInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RemoveNotificationChannelInput {
-                profiling_group_name: self.profiling_group_name,
-                channel_id: self.channel_id,
-            })
+        pub fn build(self) -> Result<crate::input::RemoveNotificationChannelInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RemoveNotificationChannelInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    channel_id: self.channel_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RemoveNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`RemoveNotificationChannel`](crate::operation::RemoveNotificationChannel)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RemoveNotificationChannel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveNotificationChannel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RemoveNotificationChannelInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RemoveNotificationChannelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.profiling_group_name;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_46,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_46 = input_46.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
                 let input_47 = &_input.channel_id;
-                let input_47 = input_47.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "channel_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let channel_id = aws_smithy_http::label::fmt_string(
-                    input_47,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_47 = input_47.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("channel_id", "cannot be empty or unset"))?;
+                let channel_id = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "channel_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/notificationConfiguration/{channelId}",
-                    profilingGroupName = profiling_group_name,
-                    channelId = channel_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("channel_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/notificationConfiguration/{channelId}", profilingGroupName = profiling_group_name, channelId = channel_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RemoveNotificationChannelInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RemoveNotificationChannelInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -4159,51 +2774,34 @@ impl RemoveNotificationChannelInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RemoveNotificationChannel::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RemoveNotificationChannel",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveNotificationChannel::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveNotificationChannel", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4215,7 +2813,7 @@ impl RemoveNotificationChannelInput {
 
 /// See [`RemovePermissionInput`](crate::input::RemovePermissionInput).
 pub mod remove_permission_input {
-
+    
     /// A builder for [`RemovePermissionInput`](crate::input::RemovePermissionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4230,12 +2828,8 @@ pub mod remove_permission_input {
             self
         }
         /// <p>The name of the profiling group.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
         pub fn action_group(mut self, input: crate::model::ActionGroup) -> Self {
@@ -4243,12 +2837,8 @@ pub mod remove_permission_input {
             self
         }
         /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-        pub fn set_action_group(
-            mut self,
-            input: std::option::Option<crate::model::ActionGroup>,
-        ) -> Self {
-            self.action_group = input;
-            self
+        pub fn set_action_group(mut self, input: std::option::Option<crate::model::ActionGroup>) -> Self {
+            self.action_group = input; self
         }
         /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4257,141 +2847,73 @@ pub mod remove_permission_input {
         }
         /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::input::RemovePermissionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RemovePermissionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RemovePermissionInput {
-                profiling_group_name: self.profiling_group_name,
-                action_group: self.action_group,
-                revision_id: self.revision_id,
-            })
+        pub fn build(self) -> Result<crate::input::RemovePermissionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RemovePermissionInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    action_group: self.action_group
+                    ,
+                    revision_id: self.revision_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RemovePermission,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemovePermission, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RemovePermissionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RemovePermissionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.profiling_group_name;
-                let input_48 = input_48.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_48,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_48 = input_48.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_48, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
                 let input_49 = &_input.action_group;
-                let input_49 = input_49.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "action_group",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let action_group = aws_smithy_http::label::fmt_string(
-                    input_49,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_49 = input_49.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("action_group", "cannot be empty or unset"))?;
+                let action_group = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if action_group.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "action_group",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}/policy/{actionGroup}",
-                    profilingGroupName = profiling_group_name,
-                    actionGroup = action_group
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("action_group", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}/policy/{actionGroup}", profilingGroupName = profiling_group_name, actionGroup = action_group).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::RemovePermissionInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::RemovePermissionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_50 = &_input.revision_id;
-                let inner_50 = inner_50.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "revision_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_50 = inner_50.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("revision_id", "cannot be empty or unset"))?;
                 if inner_50.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "revision_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("revision_id", "cannot be empty or unset"));
                 }
                 query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_50));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RemovePermissionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RemovePermissionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4402,51 +2924,34 @@ impl RemovePermissionInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RemovePermission::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RemovePermission",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemovePermission::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemovePermission", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4458,7 +2963,7 @@ impl RemovePermissionInput {
 
 /// See [`SubmitFeedbackInput`](crate::input::SubmitFeedbackInput).
 pub mod submit_feedback_input {
-
+    
     /// A builder for [`SubmitFeedbackInput`](crate::input::SubmitFeedbackInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4474,12 +2979,8 @@ pub mod submit_feedback_input {
             self
         }
         /// <p>The name of the profiling group that is associated with the analysis data.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
         pub fn anomaly_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4487,12 +2988,8 @@ pub mod submit_feedback_input {
             self
         }
         /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-        pub fn set_anomaly_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.anomaly_instance_id = input;
-            self
+        pub fn set_anomaly_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.anomaly_instance_id = input; self
         }
         /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
         pub fn r#type(mut self, input: crate::model::FeedbackType) -> Self {
@@ -4501,8 +2998,7 @@ pub mod submit_feedback_input {
         }
         /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FeedbackType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Optional feedback about this anomaly.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4511,179 +3007,106 @@ pub mod submit_feedback_input {
         }
         /// <p>Optional feedback about this anomaly.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// Consumes the builder and constructs a [`SubmitFeedbackInput`](crate::input::SubmitFeedbackInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SubmitFeedbackInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::SubmitFeedbackInput {
-                profiling_group_name: self.profiling_group_name,
-                anomaly_instance_id: self.anomaly_instance_id,
-                r#type: self.r#type,
-                comment: self.comment,
-            })
+        pub fn build(self) -> Result<crate::input::SubmitFeedbackInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SubmitFeedbackInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    anomaly_instance_id: self.anomaly_instance_id
+                    ,
+                    r#type: self.r#type
+                    ,
+                    comment: self.comment
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SubmitFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`SubmitFeedback`](crate::operation::SubmitFeedback)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SubmitFeedback,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SubmitFeedback, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SubmitFeedbackInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SubmitFeedbackInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.profiling_group_name;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_51,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_51 = input_51.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
                 let input_52 = &_input.anomaly_instance_id;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "anomaly_instance_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let anomaly_instance_id = aws_smithy_http::label::fmt_string(
-                    input_52,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_52 = input_52.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("anomaly_instance_id", "cannot be empty or unset"))?;
+                let anomaly_instance_id = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if anomaly_instance_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "anomaly_instance_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("anomaly_instance_id", "cannot be empty or unset"))
+                            }
                 write!(output, "/internal/profilingGroups/{profilingGroupName}/anomalies/{anomalyInstanceId}/feedback", profilingGroupName = profiling_group_name, anomalyInstanceId = anomaly_instance_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SubmitFeedbackInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SubmitFeedbackInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_submit_feedback(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_submit_feedback(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SubmitFeedback::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SubmitFeedback",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SubmitFeedback::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SubmitFeedback", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4695,14 +3118,12 @@ impl SubmitFeedbackInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
@@ -4712,184 +3133,111 @@ pub mod tag_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The list of tags that are added to the specified resource. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The list of tags that are added to the specified resource. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_53 = &_input.resource_arn;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_53,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_53 = input_53.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4901,7 +3249,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4916,8 +3264,7 @@ pub mod untag_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -4926,104 +3273,60 @@ pub mod untag_resource_input {
         /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_54 = &_input.resource_arn;
-                let input_54 = input_54.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_54,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_54 = input_54.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_54, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_55 = &_input.tag_keys;
-                let inner_55 = inner_55.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "tag_keys",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_55 = inner_55.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_56 in inner_55 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_56));
                 }
@@ -5031,12 +3334,9 @@ impl UntagResourceInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5047,51 +3347,34 @@ impl UntagResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5103,13 +3386,12 @@ impl UntagResourceInput {
 
 /// See [`UpdateProfilingGroupInput`](crate::input::UpdateProfilingGroupInput).
 pub mod update_profiling_group_input {
-
+    
     /// A builder for [`UpdateProfilingGroupInput`](crate::input::UpdateProfilingGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) agent_orchestration_config:
-            std::option::Option<crate::model::AgentOrchestrationConfig>,
+        pub(crate) agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
     }
     impl Builder {
         /// <p>The name of the profiling group to update.</p>
@@ -5118,187 +3400,106 @@ pub mod update_profiling_group_input {
             self
         }
         /// <p>The name of the profiling group to update.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
-        pub fn agent_orchestration_config(
-            mut self,
-            input: crate::model::AgentOrchestrationConfig,
-        ) -> Self {
+        pub fn agent_orchestration_config(mut self, input: crate::model::AgentOrchestrationConfig) -> Self {
             self.agent_orchestration_config = Some(input);
             self
         }
         /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
-        pub fn set_agent_orchestration_config(
-            mut self,
-            input: std::option::Option<crate::model::AgentOrchestrationConfig>,
-        ) -> Self {
-            self.agent_orchestration_config = input;
-            self
+        pub fn set_agent_orchestration_config(mut self, input: std::option::Option<crate::model::AgentOrchestrationConfig>) -> Self {
+            self.agent_orchestration_config = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProfilingGroupInput`](crate::input::UpdateProfilingGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateProfilingGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateProfilingGroupInput {
-                profiling_group_name: self.profiling_group_name,
-                agent_orchestration_config: self.agent_orchestration_config,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateProfilingGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateProfilingGroupInput {
+                    profiling_group_name: self.profiling_group_name
+                    ,
+                    agent_orchestration_config: self.agent_orchestration_config
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfilingGroup`](crate::operation::UpdateProfilingGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateProfilingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateProfilingGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateProfilingGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateProfilingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_57 = &_input.profiling_group_name;
-                let input_57 = input_57.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "profiling_group_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(
-                    input_57,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_57 = input_57.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))?;
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "profiling_group_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/profilingGroups/{profilingGroupName}",
-                    profilingGroupName = profiling_group_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("profiling_group_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/profilingGroups/{profilingGroupName}", profilingGroupName = profiling_group_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateProfilingGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateProfilingGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_profiling_group(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_profiling_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateProfilingGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateProfilingGroup",
-            "codeguruprofiler",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateProfilingGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateProfilingGroup", "codeguruprofiler"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5311,7 +3512,7 @@ impl UpdateProfilingGroupInput {
 /// <p>The structure representing the SubmitFeedbackRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubmitFeedbackInput {
+pub struct SubmitFeedbackInput  {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5327,19 +3528,19 @@ pub struct SubmitFeedbackInput {
 }
 impl SubmitFeedbackInput {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    pub fn anomaly_instance_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_instance_id(&self) -> std::option::Option<& str> {
         self.anomaly_instance_id.as_deref()
     }
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FeedbackType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FeedbackType> {
         self.r#type.as_ref()
     }
     /// <p>Optional feedback about this anomaly.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -5347,7 +3548,7 @@ impl SubmitFeedbackInput {
 /// <p> The structure representing the <code>removePermissionRequest</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemovePermissionInput {
+pub struct RemovePermissionInput  {
     /// <p>The name of the profiling group.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5360,15 +3561,15 @@ pub struct RemovePermissionInput {
 }
 impl RemovePermissionInput {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn action_group(&self) -> std::option::Option<&crate::model::ActionGroup> {
+    pub fn action_group(&self) -> std::option::Option<& crate::model::ActionGroup> {
         self.action_group.as_ref()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -5376,7 +3577,7 @@ impl RemovePermissionInput {
 /// <p>The structure representing the RemoveNotificationChannelRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveNotificationChannelInput {
+pub struct RemoveNotificationChannelInput  {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5386,11 +3587,11 @@ pub struct RemoveNotificationChannelInput {
 }
 impl RemoveNotificationChannelInput {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
@@ -5398,7 +3599,7 @@ impl RemoveNotificationChannelInput {
 /// <p>The structure representing the <code>putPermissionRequest</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionInput {
+pub struct PutPermissionInput  {
     /// <p>The name of the profiling group to grant access to.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5414,19 +3615,19 @@ pub struct PutPermissionInput {
 }
 impl PutPermissionInput {
     /// <p>The name of the profiling group to grant access to.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn action_group(&self) -> std::option::Option<&crate::model::ActionGroup> {
+    pub fn action_group(&self) -> std::option::Option<& crate::model::ActionGroup> {
         self.action_group.as_ref()
     }
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn principals(&self) -> std::option::Option<& [std::string::String]> {
         self.principals.as_deref()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -5434,7 +3635,7 @@ impl PutPermissionInput {
 /// <p>The structure representing the postAgentProfileRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostAgentProfileInput {
+pub struct PostAgentProfileInput  {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5444,33 +3645,33 @@ pub struct PostAgentProfileInput {
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
     #[doc(hidden)]
     pub profile_token: std::option::Option<std::string::String>,
-    /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
-    /// <ul>
-    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
-    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+    /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p> 
+    /// <ul> 
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li> 
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl PostAgentProfileInput {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> The submitted profiling data. </p>
-    pub fn agent_profile(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn agent_profile(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.agent_profile.as_ref()
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-    pub fn profile_token(&self) -> std::option::Option<&str> {
+    pub fn profile_token(&self) -> std::option::Option<& str> {
         self.profile_token.as_deref()
     }
-    /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
-    /// <ul>
-    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
-    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+    /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p> 
+    /// <ul> 
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li> 
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> 
     /// </ul>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
@@ -5478,7 +3679,7 @@ impl PostAgentProfileInput {
 /// <p>The structure representing the listProfileTimesRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfileTimesInput {
+pub struct ListProfileTimesInput  {
     /// <p>The name of the profiling group.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5488,11 +3689,11 @@ pub struct ListProfileTimesInput {
     /// <p>The end time of the time range from which to list the profiles.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
-    /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p> 
+    /// <ul> 
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub period: std::option::Option<crate::model::AggregationPeriod>,
@@ -5502,46 +3703,46 @@ pub struct ListProfileTimesInput {
     /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProfileTimesInput {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
-    /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p> 
+    /// <ul> 
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
     /// </ul>
-    pub fn period(&self) -> std::option::Option<&crate::model::AggregationPeriod> {
+    pub fn period(&self) -> std::option::Option<& crate::model::AggregationPeriod> {
         self.period.as_ref()
     }
     /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
-    pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
+    pub fn order_by(&self) -> std::option::Option<& crate::model::OrderBy> {
         self.order_by.as_ref()
     }
     /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -5549,7 +3750,7 @@ impl ListProfileTimesInput {
 /// <p>The structure representing the ListFindingsReportsRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsReportsInput {
+pub struct ListFindingsReportsInput  {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5559,8 +3760,8 @@ pub struct ListFindingsReportsInput {
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -5573,21 +3774,21 @@ pub struct ListFindingsReportsInput {
 }
 impl ListFindingsReportsInput {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
@@ -5603,7 +3804,7 @@ impl ListFindingsReportsInput {
 /// <p>The structure representing the GetRecommendationsRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommendationsInput {
+pub struct GetRecommendationsInput  {
     /// <p> The name of the profiling group to get analysis data about. </p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5613,51 +3814,51 @@ pub struct GetRecommendationsInput {
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
-    /// <ul>
-    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
-    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
-    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
-    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
-    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
-    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
-    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
-    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
-    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
-    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
-    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> 
+    /// <ul> 
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li> 
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> 
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li> 
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> 
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li> 
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> 
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> 
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> 
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> 
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> 
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub locale: std::option::Option<std::string::String>,
 }
 impl GetRecommendationsInput {
     /// <p> The name of the profiling group to get analysis data about. </p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
-    /// <ul>
-    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
-    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
-    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
-    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
-    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
-    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
-    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
-    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
-    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
-    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
-    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> 
+    /// <ul> 
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li> 
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> 
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li> 
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> 
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li> 
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> 
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> 
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> 
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> 
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> 
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> 
     /// </ul>
-    pub fn locale(&self) -> std::option::Option<&str> {
+    pub fn locale(&self) -> std::option::Option<& str> {
         self.locale.as_deref()
     }
 }
@@ -5665,63 +3866,63 @@ impl GetRecommendationsInput {
 /// <p>The structure representing the getProfileRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProfileInput {
+pub struct GetProfileInput  {
     /// <p>The name of the profiling group to get.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p> 
     /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+    /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p> 
     /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
     #[doc(hidden)]
     pub period: std::option::Option<std::string::String>,
-    /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p> 
     /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
     #[doc(hidden)]
     pub max_depth: std::option::Option<i32>,
-    /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
-    /// <ul>
-    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
-    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+    /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p> 
+    /// <ul> 
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li> 
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub accept: std::option::Option<std::string::String>,
 }
 impl GetProfileInput {
     /// <p>The name of the profiling group to get.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p> 
     /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+    /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p> 
     /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
-    pub fn period(&self) -> std::option::Option<&str> {
+    pub fn period(&self) -> std::option::Option<& str> {
         self.period.as_deref()
     }
-    /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p> 
     /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
     pub fn max_depth(&self) -> std::option::Option<i32> {
         self.max_depth
     }
-    /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
-    /// <ul>
-    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
-    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+    /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p> 
+    /// <ul> 
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li> 
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> 
     /// </ul>
-    pub fn accept(&self) -> std::option::Option<&str> {
+    pub fn accept(&self) -> std::option::Option<& str> {
         self.accept.as_deref()
     }
 }
@@ -5729,14 +3930,14 @@ impl GetProfileInput {
 /// <p> The structure representing the <code>getPolicyRequest</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyInput {
+pub struct GetPolicyInput  {
     /// <p>The name of the profiling group.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl GetPolicyInput {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
 }
@@ -5744,14 +3945,14 @@ impl GetPolicyInput {
 /// <p>The structure representing the GetNotificationConfigurationRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNotificationConfigurationInput {
+pub struct GetNotificationConfigurationInput  {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl GetNotificationConfigurationInput {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
 }
@@ -5759,56 +3960,50 @@ impl GetNotificationConfigurationInput {
 /// <p>The structure representing the configureAgentRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureAgentInput {
+pub struct ConfigureAgentInput  {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
     #[doc(hidden)]
     pub fleet_instance_id: std::option::Option<std::string::String>,
-    /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
-    /// <ul>
-    /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
-    /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
-    /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
-    /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
-    /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
-    /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
-    /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
-    /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
-    /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
+    /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li> 
+    /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li> 
+    /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li> 
+    /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li> 
+    /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li> 
+    /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li> 
+    /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li> 
+    /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li> 
+    /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub metadata: std::option::Option<
-        std::collections::HashMap<crate::model::MetadataField, std::string::String>,
-    >,
+    pub metadata: std::option::Option<std::collections::HashMap<crate::model::MetadataField, std::string::String>>,
 }
 impl ConfigureAgentInput {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
-    pub fn fleet_instance_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_instance_id(&self) -> std::option::Option<& str> {
         self.fleet_instance_id.as_deref()
     }
-    /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
-    /// <ul>
-    /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
-    /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
-    /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
-    /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
-    /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
-    /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
-    /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
-    /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
-    /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
+    /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li> 
+    /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li> 
+    /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li> 
+    /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li> 
+    /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li> 
+    /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li> 
+    /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li> 
+    /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li> 
+    /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li> 
     /// </ul>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::MetadataField, std::string::String>,
-    > {
+    pub fn metadata(&self) -> std::option::Option<& std::collections::HashMap<crate::model::MetadataField, std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -5816,7 +4011,7 @@ impl ConfigureAgentInput {
 /// <p>The structure representing the BatchGetFrameMetricDataRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetFrameMetricDataInput {
+pub struct BatchGetFrameMetricDataInput  {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5829,11 +4024,11 @@ pub struct BatchGetFrameMetricDataInput {
     /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
     #[doc(hidden)]
     pub period: std::option::Option<std::string::String>,
-    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
-    /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p> 
+    /// <ul> 
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub target_resolution: std::option::Option<crate::model::AggregationPeriod>,
@@ -5843,32 +4038,32 @@ pub struct BatchGetFrameMetricDataInput {
 }
 impl BatchGetFrameMetricDataInput {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
-    pub fn period(&self) -> std::option::Option<&str> {
+    pub fn period(&self) -> std::option::Option<& str> {
         self.period.as_deref()
     }
-    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
-    /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p> 
+    /// <ul> 
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
     /// </ul>
-    pub fn target_resolution(&self) -> std::option::Option<&crate::model::AggregationPeriod> {
+    pub fn target_resolution(&self) -> std::option::Option<& crate::model::AggregationPeriod> {
         self.target_resolution.as_ref()
     }
     /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn frame_metrics(&self) -> std::option::Option<&[crate::model::FrameMetric]> {
+    pub fn frame_metrics(&self) -> std::option::Option<& [crate::model::FrameMetric]> {
         self.frame_metrics.as_deref()
     }
 }
@@ -5876,7 +4071,7 @@ impl BatchGetFrameMetricDataInput {
 /// <p>The structure representing the AddNotificationChannelsRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddNotificationChannelsInput {
+pub struct AddNotificationChannelsInput  {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5886,11 +4081,11 @@ pub struct AddNotificationChannelsInput {
 }
 impl AddNotificationChannelsInput {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>One or 2 channels to report to when anomalies are detected.</p>
-    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+    pub fn channels(&self) -> std::option::Option<& [crate::model::Channel]> {
         self.channels.as_deref()
     }
 }
@@ -5898,9 +4093,9 @@ impl AddNotificationChannelsInput {
 /// <p>The structure representing the listProfilingGroupsRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfilingGroupsInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+pub struct ListProfilingGroupsInput  {
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -5912,10 +4107,10 @@ pub struct ListProfilingGroupsInput {
     pub include_description: std::option::Option<bool>,
 }
 impl ListProfilingGroupsInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
@@ -5931,7 +4126,7 @@ impl ListProfilingGroupsInput {
 /// <p>The structure representing the createProfiliingGroupRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProfilingGroupInput {
+pub struct CreateProfilingGroupInput  {
     /// <p>The name of the profiling group to create.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -5946,33 +4141,27 @@ pub struct CreateProfilingGroupInput {
     pub agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
     /// <p> A list of tags to add to the created profiling group. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateProfilingGroupInput {
     /// <p>The name of the profiling group to create.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
-    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+    pub fn compute_platform(&self) -> std::option::Option<& crate::model::ComputePlatform> {
         self.compute_platform.as_ref()
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
-    pub fn agent_orchestration_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AgentOrchestrationConfig> {
+    pub fn agent_orchestration_config(&self) -> std::option::Option<& crate::model::AgentOrchestrationConfig> {
         self.agent_orchestration_config.as_ref()
     }
     /// <p> A list of tags to add to the created profiling group. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -5980,14 +4169,14 @@ impl CreateProfilingGroupInput {
 /// <p>The structure representing the deleteProfilingGroupRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProfilingGroupInput {
+pub struct DeleteProfilingGroupInput  {
     /// <p>The name of the profiling group to delete.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteProfilingGroupInput {
     /// <p>The name of the profiling group to delete.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
 }
@@ -5995,7 +4184,7 @@ impl DeleteProfilingGroupInput {
 /// <p>The structure representing the updateProfilingGroupRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProfilingGroupInput {
+pub struct UpdateProfilingGroupInput  {
     /// <p>The name of the profiling group to update.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -6005,13 +4194,11 @@ pub struct UpdateProfilingGroupInput {
 }
 impl UpdateProfilingGroupInput {
     /// <p>The name of the profiling group to update.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
-    pub fn agent_orchestration_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AgentOrchestrationConfig> {
+    pub fn agent_orchestration_config(&self) -> std::option::Option<& crate::model::AgentOrchestrationConfig> {
         self.agent_orchestration_config.as_ref()
     }
 }
@@ -6019,14 +4206,14 @@ impl UpdateProfilingGroupInput {
 /// <p>The structure representing the describeProfilingGroupRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProfilingGroupInput {
+pub struct DescribeProfilingGroupInput  {
     /// <p> The name of the profiling group to get information about. </p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeProfilingGroupInput {
     /// <p> The name of the profiling group to get information about. </p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
 }
@@ -6034,7 +4221,7 @@ impl DescribeProfilingGroupInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -6044,11 +4231,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -6056,25 +4243,21 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The list of tags that are added to the specified resource. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p> The list of tags that are added to the specified resource. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -6082,14 +4265,14 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -6097,9 +4280,9 @@ impl ListTagsForResourceInput {
 /// <p>The structure representing the GetFindingsReportAccountSummaryRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsReportAccountSummaryInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+pub struct GetFindingsReportAccountSummaryInput  {
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -6111,10 +4294,10 @@ pub struct GetFindingsReportAccountSummaryInput {
     pub daily_reports_only: std::option::Option<bool>,
 }
 impl GetFindingsReportAccountSummaryInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> 
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
@@ -6126,3 +4309,4 @@ impl GetFindingsReportAccountSummaryInput {
         self.daily_reports_only
     }
 }
+

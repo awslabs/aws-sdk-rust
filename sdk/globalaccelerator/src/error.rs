@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct WithdrawByoipCidrError {
     /// Kind of error that occurred.
-    pub kind: WithdrawByoipCidrErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: WithdrawByoipCidrErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for WithdrawByoipCidrError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: WithdrawByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -30,25 +30,37 @@ pub enum WithdrawByoipCidrErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for WithdrawByoipCidrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            WithdrawByoipCidrErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) => _inner.fmt(f),
-            WithdrawByoipCidrErrorKind::IncorrectCidrStateException(_inner) => _inner.fmt(f),
-            WithdrawByoipCidrErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            WithdrawByoipCidrErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            WithdrawByoipCidrErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            WithdrawByoipCidrErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            WithdrawByoipCidrErrorKind::IncorrectCidrStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            WithdrawByoipCidrErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            WithdrawByoipCidrErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            WithdrawByoipCidrErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -62,91 +74,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for WithdrawByoipCidrError {
 }
 impl WithdrawByoipCidrError {
     /// Creates a new `WithdrawByoipCidrError`.
-    pub fn new(kind: WithdrawByoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `WithdrawByoipCidrError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: WithdrawByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `WithdrawByoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: WithdrawByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: WithdrawByoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `WithdrawByoipCidrError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: WithdrawByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `WithdrawByoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: WithdrawByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            WithdrawByoipCidrErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, WithdrawByoipCidrErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException`.
     pub fn is_byoip_cidr_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException(_)
-        )
+        matches!(&self.kind, WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException(_))
     }
     /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::IncorrectCidrStateException`.
     pub fn is_incorrect_cidr_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            WithdrawByoipCidrErrorKind::IncorrectCidrStateException(_)
-        )
+        matches!(&self.kind, WithdrawByoipCidrErrorKind::IncorrectCidrStateException(_))
     }
     /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            WithdrawByoipCidrErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, WithdrawByoipCidrErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            WithdrawByoipCidrErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, WithdrawByoipCidrErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for WithdrawByoipCidrError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            WithdrawByoipCidrErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) => Some(_inner),
-            WithdrawByoipCidrErrorKind::IncorrectCidrStateException(_inner) => Some(_inner),
-            WithdrawByoipCidrErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            WithdrawByoipCidrErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            WithdrawByoipCidrErrorKind::Unhandled(_inner) => Some(_inner),
+            WithdrawByoipCidrErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            WithdrawByoipCidrErrorKind::IncorrectCidrStateException(_inner) =>
+            Some(_inner)
+            ,
+            WithdrawByoipCidrErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            WithdrawByoipCidrErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            WithdrawByoipCidrErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -154,22 +163,20 @@ impl std::error::Error for WithdrawByoipCidrError {
 /// <p>An argument that you specified is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArgumentException {
+pub struct InvalidArgumentException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArgumentException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArgumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgumentException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -179,7 +186,7 @@ impl std::fmt::Display for InvalidArgumentException {
 impl std::error::Error for InvalidArgumentException {}
 /// See [`InvalidArgumentException`](crate::error::InvalidArgumentException).
 pub mod invalid_argument_exception {
-
+    
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -193,16 +200,18 @@ pub mod invalid_argument_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException).
         pub fn build(self) -> crate::error::InvalidArgumentException {
             crate::error::InvalidArgumentException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArgumentException {
     /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException).
@@ -214,22 +223,20 @@ impl InvalidArgumentException {
 /// <p>There was an internal error for Global Accelerator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServiceErrorException {
+pub struct InternalServiceErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServiceErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServiceErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceErrorException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -239,7 +246,7 @@ impl std::fmt::Display for InternalServiceErrorException {
 impl std::error::Error for InternalServiceErrorException {}
 /// See [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
 pub mod internal_service_error_exception {
-
+    
     /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -253,16 +260,18 @@ pub mod internal_service_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
         pub fn build(self) -> crate::error::InternalServiceErrorException {
             crate::error::InternalServiceErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServiceErrorException {
     /// Creates a new builder-style object to manufacture [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
@@ -274,22 +283,20 @@ impl InternalServiceErrorException {
 /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncorrectCidrStateException {
+pub struct IncorrectCidrStateException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IncorrectCidrStateException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IncorrectCidrStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectCidrStateException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -299,7 +306,7 @@ impl std::fmt::Display for IncorrectCidrStateException {
 impl std::error::Error for IncorrectCidrStateException {}
 /// See [`IncorrectCidrStateException`](crate::error::IncorrectCidrStateException).
 pub mod incorrect_cidr_state_exception {
-
+    
     /// A builder for [`IncorrectCidrStateException`](crate::error::IncorrectCidrStateException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -313,16 +320,18 @@ pub mod incorrect_cidr_state_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IncorrectCidrStateException`](crate::error::IncorrectCidrStateException).
         pub fn build(self) -> crate::error::IncorrectCidrStateException {
             crate::error::IncorrectCidrStateException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IncorrectCidrStateException {
     /// Creates a new builder-style object to manufacture [`IncorrectCidrStateException`](crate::error::IncorrectCidrStateException).
@@ -334,22 +343,20 @@ impl IncorrectCidrStateException {
 /// <p>The CIDR that you specified was not found or is incorrect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ByoipCidrNotFoundException {
+pub struct ByoipCidrNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ByoipCidrNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ByoipCidrNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ByoipCidrNotFoundException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -359,7 +366,7 @@ impl std::fmt::Display for ByoipCidrNotFoundException {
 impl std::error::Error for ByoipCidrNotFoundException {}
 /// See [`ByoipCidrNotFoundException`](crate::error::ByoipCidrNotFoundException).
 pub mod byoip_cidr_not_found_exception {
-
+    
     /// A builder for [`ByoipCidrNotFoundException`](crate::error::ByoipCidrNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -373,16 +380,18 @@ pub mod byoip_cidr_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ByoipCidrNotFoundException`](crate::error::ByoipCidrNotFoundException).
         pub fn build(self) -> crate::error::ByoipCidrNotFoundException {
             crate::error::ByoipCidrNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ByoipCidrNotFoundException {
     /// Creates a new builder-style object to manufacture [`ByoipCidrNotFoundException`](crate::error::ByoipCidrNotFoundException).
@@ -394,22 +403,20 @@ impl ByoipCidrNotFoundException {
 /// <p>You don't have access permission.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -419,7 +426,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -433,16 +440,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -456,15 +465,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateListenerError {
     /// Kind of error that occurred.
-    pub kind: UpdateListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -482,25 +491,37 @@ pub enum UpdateListenerErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateListenerErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            UpdateListenerErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            UpdateListenerErrorKind::InvalidPortRangeException(_inner) => _inner.fmt(f),
-            UpdateListenerErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateListenerErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            UpdateListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateListenerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateListenerErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateListenerErrorKind::InvalidPortRangeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateListenerErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateListenerErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateListenerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -514,91 +535,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateListenerError {
 }
 impl UpdateListenerError {
     /// Creates a new `UpdateListenerError`.
-    pub fn new(kind: UpdateListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateListenerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UpdateListenerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateListenerErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, UpdateListenerErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `UpdateListenerErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateListenerErrorKind::InvalidPortRangeException(_)
-        )
+        matches!(&self.kind, UpdateListenerErrorKind::InvalidPortRangeException(_))
     }
     /// Returns `true` if the error kind is `UpdateListenerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateListenerErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateListenerErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateListenerErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateListenerErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateListenerErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            UpdateListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UpdateListenerErrorKind::InvalidPortRangeException(_inner) => Some(_inner),
-            UpdateListenerErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            UpdateListenerErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateListenerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateListenerErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateListenerErrorKind::InvalidPortRangeException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateListenerErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateListenerErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateListenerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -606,22 +624,20 @@ impl std::error::Error for UpdateListenerError {
 /// <p>The listener that you specified doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListenerNotFoundException {
+pub struct ListenerNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ListenerNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ListenerNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ListenerNotFoundException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -631,7 +647,7 @@ impl std::fmt::Display for ListenerNotFoundException {
 impl std::error::Error for ListenerNotFoundException {}
 /// See [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
 pub mod listener_not_found_exception {
-
+    
     /// A builder for [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -645,16 +661,18 @@ pub mod listener_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
         pub fn build(self) -> crate::error::ListenerNotFoundException {
             crate::error::ListenerNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ListenerNotFoundException {
     /// Creates a new builder-style object to manufacture [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
@@ -666,22 +684,20 @@ impl ListenerNotFoundException {
 /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -691,7 +707,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -705,16 +721,18 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -726,22 +744,20 @@ impl LimitExceededException {
 /// <p>The port numbers that you specified are not valid numbers or are not unique for this accelerator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidPortRangeException {
+pub struct InvalidPortRangeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidPortRangeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidPortRangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPortRangeException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -751,7 +767,7 @@ impl std::fmt::Display for InvalidPortRangeException {
 impl std::error::Error for InvalidPortRangeException {}
 /// See [`InvalidPortRangeException`](crate::error::InvalidPortRangeException).
 pub mod invalid_port_range_exception {
-
+    
     /// A builder for [`InvalidPortRangeException`](crate::error::InvalidPortRangeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -765,16 +781,18 @@ pub mod invalid_port_range_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidPortRangeException`](crate::error::InvalidPortRangeException).
         pub fn build(self) -> crate::error::InvalidPortRangeException {
             crate::error::InvalidPortRangeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidPortRangeException {
     /// Creates a new builder-style object to manufacture [`InvalidPortRangeException`](crate::error::InvalidPortRangeException).
@@ -788,15 +806,15 @@ impl InvalidPortRangeException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateEndpointGroupError {
     /// Kind of error that occurred.
-    pub kind: UpdateEndpointGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateEndpointGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateEndpointGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -814,25 +832,37 @@ pub enum UpdateEndpointGroupErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateEndpointGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => _inner.fmt(f),
-            UpdateEndpointGroupErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            UpdateEndpointGroupErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            UpdateEndpointGroupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateEndpointGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateEndpointGroupErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEndpointGroupErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEndpointGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -846,91 +876,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateEndpointGroupError {
 }
 impl UpdateEndpointGroupError {
     /// Creates a new `UpdateEndpointGroupError`.
-    pub fn new(kind: UpdateEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateEndpointGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateEndpointGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEndpointGroupErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateEndpointGroupErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEndpointGroupErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UpdateEndpointGroupErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEndpointGroupErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, UpdateEndpointGroupErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEndpointGroupErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateEndpointGroupErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for UpdateEndpointGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateEndpointGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
-            UpdateEndpointGroupErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            UpdateEndpointGroupErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UpdateEndpointGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateEndpointGroupErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEndpointGroupErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEndpointGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -938,22 +965,20 @@ impl std::error::Error for UpdateEndpointGroupError {
 /// <p>The endpoint group that you specified doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointGroupNotFoundException {
+pub struct EndpointGroupNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EndpointGroupNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for EndpointGroupNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointGroupNotFoundException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -963,7 +988,7 @@ impl std::fmt::Display for EndpointGroupNotFoundException {
 impl std::error::Error for EndpointGroupNotFoundException {}
 /// See [`EndpointGroupNotFoundException`](crate::error::EndpointGroupNotFoundException).
 pub mod endpoint_group_not_found_exception {
-
+    
     /// A builder for [`EndpointGroupNotFoundException`](crate::error::EndpointGroupNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -977,16 +1002,18 @@ pub mod endpoint_group_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EndpointGroupNotFoundException`](crate::error::EndpointGroupNotFoundException).
         pub fn build(self) -> crate::error::EndpointGroupNotFoundException {
             crate::error::EndpointGroupNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointGroupNotFoundException {
     /// Creates a new builder-style object to manufacture [`EndpointGroupNotFoundException`](crate::error::EndpointGroupNotFoundException).
@@ -1000,17 +1027,15 @@ impl EndpointGroupNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateCustomRoutingListenerError {
     /// Kind of error that occurred.
-    pub kind: UpdateCustomRoutingListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateCustomRoutingListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateCustomRoutingListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1028,31 +1053,37 @@ pub enum UpdateCustomRoutingListenerErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomRoutingListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) => {
+            UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingListenerErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingListenerErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomRoutingListenerErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomRoutingListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1066,97 +1097,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateCustomRoutingListenerEr
 }
 impl UpdateCustomRoutingListenerError {
     /// Creates a new `UpdateCustomRoutingListenerError`.
-    pub fn new(kind: UpdateCustomRoutingListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateCustomRoutingListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateCustomRoutingListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateCustomRoutingListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateCustomRoutingListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateCustomRoutingListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingListenerErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingListenerErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingListenerErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingListenerErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateCustomRoutingListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) => {
+            UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingListenerErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingListenerErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) => Some(_inner),
-            UpdateCustomRoutingListenerErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            UpdateCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1166,19 +1188,15 @@ impl std::error::Error for UpdateCustomRoutingListenerError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorAttributesError {
     /// Kind of error that occurred.
-    pub kind: UpdateCustomRoutingAcceleratorAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateCustomRoutingAcceleratorAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for UpdateCustomRoutingAcceleratorAttributesError
-{
+impl aws_smithy_http::result::CreateUnhandledError for UpdateCustomRoutingAcceleratorAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1194,32 +1212,34 @@ pub enum UpdateCustomRoutingAcceleratorAttributesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomRoutingAcceleratorAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(_inner) => {
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1233,98 +1253,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateCustomRoutingAccelerato
 }
 impl UpdateCustomRoutingAcceleratorAttributesError {
     /// Creates a new `UpdateCustomRoutingAcceleratorAttributesError`.
-    pub fn new(
-        kind: UpdateCustomRoutingAcceleratorAttributesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateCustomRoutingAcceleratorAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateCustomRoutingAcceleratorAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateCustomRoutingAcceleratorAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateCustomRoutingAcceleratorAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateCustomRoutingAcceleratorAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for UpdateCustomRoutingAcceleratorAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(
-                _inner,
-            ) => Some(_inner),
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(_inner) => {
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => Some(_inner),
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1332,22 +1335,20 @@ impl std::error::Error for UpdateCustomRoutingAcceleratorAttributesError {
 /// <p>The accelerator that you specified doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceleratorNotFoundException {
+pub struct AcceleratorNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AcceleratorNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AcceleratorNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AcceleratorNotFoundException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1357,7 +1358,7 @@ impl std::fmt::Display for AcceleratorNotFoundException {
 impl std::error::Error for AcceleratorNotFoundException {}
 /// See [`AcceleratorNotFoundException`](crate::error::AcceleratorNotFoundException).
 pub mod accelerator_not_found_exception {
-
+    
     /// A builder for [`AcceleratorNotFoundException`](crate::error::AcceleratorNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1371,16 +1372,18 @@ pub mod accelerator_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AcceleratorNotFoundException`](crate::error::AcceleratorNotFoundException).
         pub fn build(self) -> crate::error::AcceleratorNotFoundException {
             crate::error::AcceleratorNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AcceleratorNotFoundException {
     /// Creates a new builder-style object to manufacture [`AcceleratorNotFoundException`](crate::error::AcceleratorNotFoundException).
@@ -1394,17 +1397,15 @@ impl AcceleratorNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorError {
     /// Kind of error that occurred.
-    pub kind: UpdateCustomRoutingAcceleratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateCustomRoutingAcceleratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateCustomRoutingAcceleratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1418,29 +1419,31 @@ pub enum UpdateCustomRoutingAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => {
+            UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1454,88 +1457,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateCustomRoutingAccelerato
 }
 impl UpdateCustomRoutingAcceleratorError {
     /// Creates a new `UpdateCustomRoutingAcceleratorError`.
-    pub fn new(
-        kind: UpdateCustomRoutingAcceleratorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateCustomRoutingAcceleratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateCustomRoutingAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateCustomRoutingAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateCustomRoutingAcceleratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateCustomRoutingAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for UpdateCustomRoutingAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => {
+            UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            UpdateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1545,17 +1534,15 @@ impl std::error::Error for UpdateCustomRoutingAcceleratorError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateAcceleratorAttributesError {
     /// Kind of error that occurred.
-    pub kind: UpdateAcceleratorAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateAcceleratorAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateAcceleratorAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1571,28 +1558,34 @@ pub enum UpdateAcceleratorAttributesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAcceleratorAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) => {
+            UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAcceleratorAttributesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAcceleratorAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateAcceleratorAttributesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            UpdateAcceleratorAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1606,91 +1599,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateAcceleratorAttributesEr
 }
 impl UpdateAcceleratorAttributesError {
     /// Creates a new `UpdateAcceleratorAttributesError`.
-    pub fn new(kind: UpdateAcceleratorAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateAcceleratorAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateAcceleratorAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateAcceleratorAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateAcceleratorAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateAcceleratorAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateAcceleratorAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAcceleratorAttributesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateAcceleratorAttributesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateAcceleratorAttributesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for UpdateAcceleratorAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) => {
+            UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAcceleratorAttributesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAcceleratorAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateAcceleratorAttributesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UpdateAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1700,15 +1683,15 @@ impl std::error::Error for UpdateAcceleratorAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateAcceleratorError {
     /// Kind of error that occurred.
-    pub kind: UpdateAcceleratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateAcceleratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateAcceleratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1724,24 +1707,34 @@ pub enum UpdateAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            UpdateAcceleratorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateAcceleratorErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            UpdateAcceleratorErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            UpdateAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAcceleratorErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAcceleratorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1755,83 +1748,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateAcceleratorError {
 }
 impl UpdateAcceleratorError {
     /// Creates a new `UpdateAcceleratorError`.
-    pub fn new(kind: UpdateAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateAcceleratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateAcceleratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAcceleratorErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateAcceleratorErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAcceleratorErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UpdateAcceleratorErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAcceleratorErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, UpdateAcceleratorErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for UpdateAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            UpdateAcceleratorErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            UpdateAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UpdateAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAcceleratorErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAcceleratorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1841,15 +1832,15 @@ impl std::error::Error for UpdateAcceleratorError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1863,23 +1854,31 @@ pub enum UntagResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1893,75 +1892,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1971,15 +1969,15 @@ impl std::error::Error for UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1993,23 +1991,31 @@ pub enum TagResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2023,75 +2029,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2101,15 +2106,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct RemoveEndpointsError {
     /// Kind of error that occurred.
-    pub kind: RemoveEndpointsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RemoveEndpointsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RemoveEndpointsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RemoveEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2127,25 +2132,37 @@ pub enum RemoveEndpointsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveEndpointsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => _inner.fmt(f),
-            RemoveEndpointsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            RemoveEndpointsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            RemoveEndpointsErrorKind::TransactionInProgressException(_inner) => _inner.fmt(f),
-            RemoveEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RemoveEndpointsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveEndpointsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveEndpointsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveEndpointsErrorKind::TransactionInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveEndpointsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2159,91 +2176,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for RemoveEndpointsError {
 }
 impl RemoveEndpointsError {
     /// Creates a new `RemoveEndpointsError`.
-    pub fn new(kind: RemoveEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RemoveEndpointsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RemoveEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RemoveEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RemoveEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RemoveEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RemoveEndpointsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RemoveEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RemoveEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RemoveEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveEndpointsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, RemoveEndpointsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveEndpointsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, RemoveEndpointsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveEndpointsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, RemoveEndpointsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `RemoveEndpointsErrorKind::TransactionInProgressException`.
     pub fn is_transaction_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveEndpointsErrorKind::TransactionInProgressException(_)
-        )
+        matches!(&self.kind, RemoveEndpointsErrorKind::TransactionInProgressException(_))
     }
 }
 impl std::error::Error for RemoveEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveEndpointsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
-            RemoveEndpointsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            RemoveEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            RemoveEndpointsErrorKind::TransactionInProgressException(_inner) => Some(_inner),
-            RemoveEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
+            RemoveEndpointsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveEndpointsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveEndpointsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveEndpointsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveEndpointsErrorKind::TransactionInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveEndpointsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2251,22 +2265,20 @@ impl std::error::Error for RemoveEndpointsError {
 /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransactionInProgressException {
+pub struct TransactionInProgressException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TransactionInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TransactionInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TransactionInProgressException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -2276,7 +2288,7 @@ impl std::fmt::Display for TransactionInProgressException {
 impl std::error::Error for TransactionInProgressException {}
 /// See [`TransactionInProgressException`](crate::error::TransactionInProgressException).
 pub mod transaction_in_progress_exception {
-
+    
     /// A builder for [`TransactionInProgressException`](crate::error::TransactionInProgressException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2290,16 +2302,18 @@ pub mod transaction_in_progress_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TransactionInProgressException`](crate::error::TransactionInProgressException).
         pub fn build(self) -> crate::error::TransactionInProgressException {
             crate::error::TransactionInProgressException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TransactionInProgressException {
     /// Creates a new builder-style object to manufacture [`TransactionInProgressException`](crate::error::TransactionInProgressException).
@@ -2313,17 +2327,15 @@ impl TransactionInProgressException {
 #[derive(std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsError {
     /// Kind of error that occurred.
-    pub kind: RemoveCustomRoutingEndpointsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RemoveCustomRoutingEndpointsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RemoveCustomRoutingEndpointsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2343,34 +2355,40 @@ pub enum RemoveCustomRoutingEndpointsErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveCustomRoutingEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            RemoveCustomRoutingEndpointsErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => {
+            RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveCustomRoutingEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2384,109 +2402,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for RemoveCustomRoutingEndpointsE
 }
 impl RemoveCustomRoutingEndpointsError {
     /// Creates a new `RemoveCustomRoutingEndpointsError`.
-    pub fn new(kind: RemoveCustomRoutingEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RemoveCustomRoutingEndpointsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RemoveCustomRoutingEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RemoveCustomRoutingEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RemoveCustomRoutingEndpointsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RemoveCustomRoutingEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveCustomRoutingEndpointsErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, RemoveCustomRoutingEndpointsErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException`.
     pub fn is_endpoint_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for RemoveCustomRoutingEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            RemoveCustomRoutingEndpointsErrorKind::ConflictException(_inner) => Some(_inner),
-            RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => {
+            RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveCustomRoutingEndpointsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            RemoveCustomRoutingEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2494,22 +2498,20 @@ impl std::error::Error for RemoveCustomRoutingEndpointsError {
 /// <p>The endpoint that you specified doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointNotFoundException {
+pub struct EndpointNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EndpointNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for EndpointNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointNotFoundException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -2519,7 +2521,7 @@ impl std::fmt::Display for EndpointNotFoundException {
 impl std::error::Error for EndpointNotFoundException {}
 /// See [`EndpointNotFoundException`](crate::error::EndpointNotFoundException).
 pub mod endpoint_not_found_exception {
-
+    
     /// A builder for [`EndpointNotFoundException`](crate::error::EndpointNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2533,16 +2535,18 @@ pub mod endpoint_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EndpointNotFoundException`](crate::error::EndpointNotFoundException).
         pub fn build(self) -> crate::error::EndpointNotFoundException {
             crate::error::EndpointNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointNotFoundException {
     /// Creates a new builder-style object to manufacture [`EndpointNotFoundException`](crate::error::EndpointNotFoundException).
@@ -2554,22 +2558,20 @@ impl EndpointNotFoundException {
 /// <p>You can't use both of those options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -2579,7 +2581,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2593,16 +2595,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -2616,15 +2620,15 @@ impl ConflictException {
 #[derive(std::fmt::Debug)]
 pub struct ProvisionByoipCidrError {
     /// Kind of error that occurred.
-    pub kind: ProvisionByoipCidrErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ProvisionByoipCidrErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ProvisionByoipCidrError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ProvisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2642,25 +2646,37 @@ pub enum ProvisionByoipCidrErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ProvisionByoipCidrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ProvisionByoipCidrErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ProvisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) => _inner.fmt(f),
-            ProvisionByoipCidrErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ProvisionByoipCidrErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            ProvisionByoipCidrErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            ProvisionByoipCidrErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ProvisionByoipCidrErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ProvisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ProvisionByoipCidrErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ProvisionByoipCidrErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ProvisionByoipCidrErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ProvisionByoipCidrErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2674,91 +2690,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ProvisionByoipCidrError {
 }
 impl ProvisionByoipCidrError {
     /// Creates a new `ProvisionByoipCidrError`.
-    pub fn new(kind: ProvisionByoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ProvisionByoipCidrError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ProvisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ProvisionByoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ProvisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ProvisionByoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ProvisionByoipCidrError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ProvisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ProvisionByoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ProvisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ProvisionByoipCidrErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ProvisionByoipCidrErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::IncorrectCidrStateException`.
     pub fn is_incorrect_cidr_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ProvisionByoipCidrErrorKind::IncorrectCidrStateException(_)
-        )
+        matches!(&self.kind, ProvisionByoipCidrErrorKind::IncorrectCidrStateException(_))
     }
     /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ProvisionByoipCidrErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ProvisionByoipCidrErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ProvisionByoipCidrErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ProvisionByoipCidrErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ProvisionByoipCidrErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ProvisionByoipCidrErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for ProvisionByoipCidrError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ProvisionByoipCidrErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ProvisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) => Some(_inner),
-            ProvisionByoipCidrErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ProvisionByoipCidrErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ProvisionByoipCidrErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ProvisionByoipCidrErrorKind::Unhandled(_inner) => Some(_inner),
+            ProvisionByoipCidrErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ProvisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) =>
+            Some(_inner)
+            ,
+            ProvisionByoipCidrErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ProvisionByoipCidrErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ProvisionByoipCidrErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ProvisionByoipCidrErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2768,15 +2781,15 @@ impl std::error::Error for ProvisionByoipCidrError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2790,23 +2803,31 @@ pub enum ListTagsForResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2820,75 +2841,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2898,15 +2918,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListListenersError {
     /// Kind of error that occurred.
-    pub kind: ListListenersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListListenersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListListenersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListListenersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2922,24 +2942,34 @@ pub enum ListListenersErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListListenersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListListenersErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            ListListenersErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListListenersErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            ListListenersErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListListenersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListListenersErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListListenersErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListListenersErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListListenersErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListListenersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2953,83 +2983,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListListenersError {
 }
 impl ListListenersError {
     /// Creates a new `ListListenersError`.
-    pub fn new(kind: ListListenersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListListenersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListListenersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListListenersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListListenersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListListenersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListListenersErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListListenersErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, ListListenersErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListListenersErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListListenersErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListListenersErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListListenersErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListListenersErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListListenersErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListListenersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListListenersErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListListenersErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListListenersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListListenersErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            ListListenersErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListListenersErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListListenersErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListListenersErrorKind::Unhandled(_inner) => Some(_inner),
+            ListListenersErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListListenersErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListListenersErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListListenersErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListListenersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3037,22 +3065,20 @@ impl std::error::Error for ListListenersError {
 /// <p>There isn't another item to return.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidNextTokenException {
+pub struct InvalidNextTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -3062,7 +3088,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
 pub mod invalid_next_token_exception {
-
+    
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3076,16 +3102,18 @@ pub mod invalid_next_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
         pub fn build(self) -> crate::error::InvalidNextTokenException {
             crate::error::InvalidNextTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidNextTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
@@ -3099,15 +3127,15 @@ impl InvalidNextTokenException {
 #[derive(std::fmt::Debug)]
 pub struct ListEndpointGroupsError {
     /// Kind of error that occurred.
-    pub kind: ListEndpointGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListEndpointGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListEndpointGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3123,24 +3151,34 @@ pub enum ListEndpointGroupsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEndpointGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListEndpointGroupsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListEndpointGroupsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            ListEndpointGroupsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListEndpointGroupsErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            ListEndpointGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListEndpointGroupsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEndpointGroupsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEndpointGroupsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEndpointGroupsErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEndpointGroupsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3154,83 +3192,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListEndpointGroupsError {
 }
 impl ListEndpointGroupsError {
     /// Creates a new `ListEndpointGroupsError`.
-    pub fn new(kind: ListEndpointGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListEndpointGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListEndpointGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListEndpointGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListEndpointGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListEndpointGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListEndpointGroupsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEndpointGroupsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListEndpointGroupsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListEndpointGroupsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEndpointGroupsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListEndpointGroupsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListEndpointGroupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEndpointGroupsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListEndpointGroupsErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListEndpointGroupsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEndpointGroupsErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, ListEndpointGroupsErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for ListEndpointGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListEndpointGroupsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListEndpointGroupsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListEndpointGroupsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListEndpointGroupsErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            ListEndpointGroupsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListEndpointGroupsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListEndpointGroupsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListEndpointGroupsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListEndpointGroupsErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListEndpointGroupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3240,19 +3276,15 @@ impl std::error::Error for ListEndpointGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsByDestinationError {
     /// Kind of error that occurred.
-    pub kind: ListCustomRoutingPortMappingsByDestinationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListCustomRoutingPortMappingsByDestinationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for ListCustomRoutingPortMappingsByDestinationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for ListCustomRoutingPortMappingsByDestinationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3268,32 +3300,34 @@ pub enum ListCustomRoutingPortMappingsByDestinationErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingPortMappingsByDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3307,98 +3341,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListCustomRoutingPortMappings
 }
 impl ListCustomRoutingPortMappingsByDestinationError {
     /// Creates a new `ListCustomRoutingPortMappingsByDestinationError`.
-    pub fn new(
-        kind: ListCustomRoutingPortMappingsByDestinationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListCustomRoutingPortMappingsByDestinationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListCustomRoutingPortMappingsByDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListCustomRoutingPortMappingsByDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListCustomRoutingPortMappingsByDestinationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListCustomRoutingPortMappingsByDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException`.
     pub fn is_endpoint_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListCustomRoutingPortMappingsByDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException(
-                _inner,
-            ) => Some(_inner),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => Some(_inner),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(
-                _inner,
-            ) => Some(_inner),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(
-                _inner,
-            ) => Some(_inner),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(_inner) => Some(_inner),
+            ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3408,17 +3425,15 @@ impl std::error::Error for ListCustomRoutingPortMappingsByDestinationError {
 #[derive(std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsError {
     /// Kind of error that occurred.
-    pub kind: ListCustomRoutingPortMappingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListCustomRoutingPortMappingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListCustomRoutingPortMappingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3436,35 +3451,37 @@ pub enum ListCustomRoutingPortMappingsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingPortMappingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(_inner) => {
+            ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingPortMappingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3478,108 +3495,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListCustomRoutingPortMappings
 }
 impl ListCustomRoutingPortMappingsError {
     /// Creates a new `ListCustomRoutingPortMappingsError`.
-    pub fn new(
-        kind: ListCustomRoutingPortMappingsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListCustomRoutingPortMappingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListCustomRoutingPortMappingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListCustomRoutingPortMappingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListCustomRoutingPortMappingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListCustomRoutingPortMappingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListCustomRoutingPortMappingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(_inner) => {
+            ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingPortMappingsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingPortMappingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3589,17 +3586,15 @@ impl std::error::Error for ListCustomRoutingPortMappingsError {
 #[derive(std::fmt::Debug)]
 pub struct ListCustomRoutingListenersError {
     /// Kind of error that occurred.
-    pub kind: ListCustomRoutingListenersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListCustomRoutingListenersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListCustomRoutingListenersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListCustomRoutingListenersErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListCustomRoutingListenersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3615,28 +3610,34 @@ pub enum ListCustomRoutingListenersErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingListenersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(_inner) => {
+            ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingListenersErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingListenersErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingListenersErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingListenersErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListCustomRoutingListenersErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingListenersErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            ListCustomRoutingListenersErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListCustomRoutingListenersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3650,91 +3651,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListCustomRoutingListenersErr
 }
 impl ListCustomRoutingListenersError {
     /// Creates a new `ListCustomRoutingListenersError`.
-    pub fn new(kind: ListCustomRoutingListenersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListCustomRoutingListenersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListCustomRoutingListenersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListCustomRoutingListenersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListCustomRoutingListenersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListCustomRoutingListenersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListCustomRoutingListenersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListCustomRoutingListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListCustomRoutingListenersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListCustomRoutingListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingListenersErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingListenersErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingListenersErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingListenersErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingListenersErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingListenersErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingListenersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingListenersErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingListenersErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListCustomRoutingListenersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(_inner) => {
+            ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingListenersErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingListenersErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingListenersErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingListenersErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListCustomRoutingListenersErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingListenersErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListCustomRoutingListenersErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListCustomRoutingListenersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3744,17 +3735,15 @@ impl std::error::Error for ListCustomRoutingListenersError {
 #[derive(std::fmt::Debug)]
 pub struct ListCustomRoutingEndpointGroupsError {
     /// Kind of error that occurred.
-    pub kind: ListCustomRoutingEndpointGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListCustomRoutingEndpointGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListCustomRoutingEndpointGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3770,32 +3759,34 @@ pub enum ListCustomRoutingEndpointGroupsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingEndpointGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException(_inner) => {
+            ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingEndpointGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingEndpointGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3809,98 +3800,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListCustomRoutingEndpointGrou
 }
 impl ListCustomRoutingEndpointGroupsError {
     /// Creates a new `ListCustomRoutingEndpointGroupsError`.
-    pub fn new(
-        kind: ListCustomRoutingEndpointGroupsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListCustomRoutingEndpointGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListCustomRoutingEndpointGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListCustomRoutingEndpointGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListCustomRoutingEndpointGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListCustomRoutingEndpointGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for ListCustomRoutingEndpointGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException(_inner) => {
+            ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingEndpointGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingEndpointGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3910,17 +3884,15 @@ impl std::error::Error for ListCustomRoutingEndpointGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct ListCustomRoutingAcceleratorsError {
     /// Kind of error that occurred.
-    pub kind: ListCustomRoutingAcceleratorsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListCustomRoutingAcceleratorsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListCustomRoutingAcceleratorsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3934,29 +3906,31 @@ pub enum ListCustomRoutingAcceleratorsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingAcceleratorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(_inner) => {
+            ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListCustomRoutingAcceleratorsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListCustomRoutingAcceleratorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3970,88 +3944,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListCustomRoutingAccelerators
 }
 impl ListCustomRoutingAcceleratorsError {
     /// Creates a new `ListCustomRoutingAcceleratorsError`.
-    pub fn new(
-        kind: ListCustomRoutingAcceleratorsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListCustomRoutingAcceleratorsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListCustomRoutingAcceleratorsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListCustomRoutingAcceleratorsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListCustomRoutingAcceleratorsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListCustomRoutingAcceleratorsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListCustomRoutingAcceleratorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(_inner) => {
+            ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListCustomRoutingAcceleratorsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            ListCustomRoutingAcceleratorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4061,15 +4021,15 @@ impl std::error::Error for ListCustomRoutingAcceleratorsError {
 #[derive(std::fmt::Debug)]
 pub struct ListByoipCidrsError {
     /// Kind of error that occurred.
-    pub kind: ListByoipCidrsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListByoipCidrsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListByoipCidrsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListByoipCidrsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4085,24 +4045,34 @@ pub enum ListByoipCidrsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListByoipCidrsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListByoipCidrsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListByoipCidrsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListByoipCidrsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            ListByoipCidrsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListByoipCidrsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListByoipCidrsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListByoipCidrsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListByoipCidrsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListByoipCidrsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListByoipCidrsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4116,83 +4086,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListByoipCidrsError {
 }
 impl ListByoipCidrsError {
     /// Creates a new `ListByoipCidrsError`.
-    pub fn new(kind: ListByoipCidrsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListByoipCidrsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListByoipCidrsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListByoipCidrsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListByoipCidrsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListByoipCidrsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListByoipCidrsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListByoipCidrsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListByoipCidrsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListByoipCidrsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListByoipCidrsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListByoipCidrsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListByoipCidrsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListByoipCidrsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListByoipCidrsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListByoipCidrsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListByoipCidrsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListByoipCidrsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListByoipCidrsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListByoipCidrsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListByoipCidrsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListByoipCidrsErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListByoipCidrsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListByoipCidrsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListByoipCidrsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListByoipCidrsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListByoipCidrsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListByoipCidrsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListByoipCidrsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListByoipCidrsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListByoipCidrsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListByoipCidrsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListByoipCidrsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4202,15 +4170,15 @@ impl std::error::Error for ListByoipCidrsError {
 #[derive(std::fmt::Debug)]
 pub struct ListAcceleratorsError {
     /// Kind of error that occurred.
-    pub kind: ListAcceleratorsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAcceleratorsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAcceleratorsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4224,23 +4192,31 @@ pub enum ListAcceleratorsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAcceleratorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAcceleratorsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListAcceleratorsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            ListAcceleratorsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListAcceleratorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListAcceleratorsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAcceleratorsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAcceleratorsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAcceleratorsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4254,75 +4230,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAcceleratorsError {
 }
 impl ListAcceleratorsError {
     /// Creates a new `ListAcceleratorsError`.
-    pub fn new(kind: ListAcceleratorsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAcceleratorsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAcceleratorsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAcceleratorsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAcceleratorsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAcceleratorsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAcceleratorsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAcceleratorsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListAcceleratorsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListAcceleratorsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAcceleratorsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, ListAcceleratorsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `ListAcceleratorsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAcceleratorsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListAcceleratorsErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListAcceleratorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAcceleratorsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListAcceleratorsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListAcceleratorsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListAcceleratorsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListAcceleratorsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListAcceleratorsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            ListAcceleratorsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListAcceleratorsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4332,15 +4307,15 @@ impl std::error::Error for ListAcceleratorsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeListenerError {
     /// Kind of error that occurred.
-    pub kind: DescribeListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4354,23 +4329,31 @@ pub enum DescribeListenerErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeListenerErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DescribeListenerErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DescribeListenerErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            DescribeListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeListenerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeListenerErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeListenerErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeListenerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4384,75 +4367,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeListenerError {
 }
 impl DescribeListenerError {
     /// Creates a new `DescribeListenerError`.
-    pub fn new(kind: DescribeListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeListenerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeListenerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeListenerErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DescribeListenerErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `DescribeListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeListenerErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeListenerErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeListenerErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DescribeListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DescribeListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DescribeListenerErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeListenerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeListenerErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeListenerErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeListenerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4462,15 +4444,15 @@ impl std::error::Error for DescribeListenerError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEndpointGroupError {
     /// Kind of error that occurred.
-    pub kind: DescribeEndpointGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEndpointGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEndpointGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4484,23 +4466,31 @@ pub enum DescribeEndpointGroupErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => _inner.fmt(f),
-            DescribeEndpointGroupErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DescribeEndpointGroupErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DescribeEndpointGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEndpointGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4514,79 +4504,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEndpointGroupError {
 }
 impl DescribeEndpointGroupError {
     /// Creates a new `DescribeEndpointGroupError`.
-    pub fn new(kind: DescribeEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEndpointGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEndpointGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEndpointGroupErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeEndpointGroupErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEndpointGroupErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DescribeEndpointGroupErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DescribeEndpointGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
-            DescribeEndpointGroupErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DescribeEndpointGroupErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DescribeEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEndpointGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4596,17 +4581,15 @@ impl std::error::Error for DescribeEndpointGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCustomRoutingListenerError {
     /// Kind of error that occurred.
-    pub kind: DescribeCustomRoutingListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCustomRoutingListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCustomRoutingListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4620,29 +4603,31 @@ pub enum DescribeCustomRoutingListenerErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomRoutingListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) => {
+            DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingListenerErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCustomRoutingListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4656,88 +4641,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCustomRoutingListener
 }
 impl DescribeCustomRoutingListenerError {
     /// Creates a new `DescribeCustomRoutingListenerError`.
-    pub fn new(
-        kind: DescribeCustomRoutingListenerErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCustomRoutingListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCustomRoutingListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCustomRoutingListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCustomRoutingListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCustomRoutingListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomRoutingListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeCustomRoutingListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) => {
+            DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingListenerErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4747,17 +4718,15 @@ impl std::error::Error for DescribeCustomRoutingListenerError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCustomRoutingEndpointGroupError {
     /// Kind of error that occurred.
-    pub kind: DescribeCustomRoutingEndpointGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCustomRoutingEndpointGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCustomRoutingEndpointGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4771,29 +4740,31 @@ pub enum DescribeCustomRoutingEndpointGroupErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomRoutingEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => {
+            DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4807,88 +4778,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCustomRoutingEndpoint
 }
 impl DescribeCustomRoutingEndpointGroupError {
     /// Creates a new `DescribeCustomRoutingEndpointGroupError`.
-    pub fn new(
-        kind: DescribeCustomRoutingEndpointGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCustomRoutingEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCustomRoutingEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCustomRoutingEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DescribeCustomRoutingEndpointGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => {
+            DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4898,19 +4855,15 @@ impl std::error::Error for DescribeCustomRoutingEndpointGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCustomRoutingAcceleratorAttributesError {
     /// Kind of error that occurred.
-    pub kind: DescribeCustomRoutingAcceleratorAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCustomRoutingAcceleratorAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DescribeCustomRoutingAcceleratorAttributesError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DescribeCustomRoutingAcceleratorAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4924,29 +4877,31 @@ pub enum DescribeCustomRoutingAcceleratorAttributesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomRoutingAcceleratorAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4960,88 +4915,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCustomRoutingAccelera
 }
 impl DescribeCustomRoutingAcceleratorAttributesError {
     /// Creates a new `DescribeCustomRoutingAcceleratorAttributesError`.
-    pub fn new(
-        kind: DescribeCustomRoutingAcceleratorAttributesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCustomRoutingAcceleratorAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCustomRoutingAcceleratorAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCustomRoutingAcceleratorAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCustomRoutingAcceleratorAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCustomRoutingAcceleratorAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DescribeCustomRoutingAcceleratorAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(
-                _inner,
-            ) => Some(_inner),
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => Some(_inner),
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(
-                _inner,
-            ) => Some(_inner),
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5051,17 +4992,15 @@ impl std::error::Error for DescribeCustomRoutingAcceleratorAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCustomRoutingAcceleratorError {
     /// Kind of error that occurred.
-    pub kind: DescribeCustomRoutingAcceleratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCustomRoutingAcceleratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCustomRoutingAcceleratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5075,29 +5014,31 @@ pub enum DescribeCustomRoutingAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => {
+            DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5111,88 +5052,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCustomRoutingAccelera
 }
 impl DescribeCustomRoutingAcceleratorError {
     /// Creates a new `DescribeCustomRoutingAcceleratorError`.
-    pub fn new(
-        kind: DescribeCustomRoutingAcceleratorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCustomRoutingAcceleratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCustomRoutingAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCustomRoutingAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCustomRoutingAcceleratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCustomRoutingAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DescribeCustomRoutingAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => {
+            DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5202,17 +5129,15 @@ impl std::error::Error for DescribeCustomRoutingAcceleratorError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAcceleratorAttributesError {
     /// Kind of error that occurred.
-    pub kind: DescribeAcceleratorAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAcceleratorAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeAcceleratorAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5226,29 +5151,31 @@ pub enum DescribeAcceleratorAttributesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAcceleratorAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) => {
+            DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAcceleratorAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeAcceleratorAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5262,88 +5189,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAcceleratorAttributes
 }
 impl DescribeAcceleratorAttributesError {
     /// Creates a new `DescribeAcceleratorAttributesError`.
-    pub fn new(
-        kind: DescribeAcceleratorAttributesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAcceleratorAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAcceleratorAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAcceleratorAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAcceleratorAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAcceleratorAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeAcceleratorAttributesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DescribeAcceleratorAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) => {
+            DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAcceleratorAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            DescribeAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5353,15 +5266,15 @@ impl std::error::Error for DescribeAcceleratorAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAcceleratorError {
     /// Kind of error that occurred.
-    pub kind: DescribeAcceleratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAcceleratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeAcceleratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5375,23 +5288,31 @@ pub enum DescribeAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            DescribeAcceleratorErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DescribeAcceleratorErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DescribeAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAcceleratorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5405,75 +5326,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAcceleratorError {
 }
 impl DescribeAcceleratorError {
     /// Creates a new `DescribeAcceleratorError`.
-    pub fn new(kind: DescribeAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAcceleratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAcceleratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAcceleratorErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeAcceleratorErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAcceleratorErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeAcceleratorErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAcceleratorErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DescribeAcceleratorErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DescribeAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            DescribeAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DescribeAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DescribeAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAcceleratorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5483,15 +5403,15 @@ impl std::error::Error for DescribeAcceleratorError {
 #[derive(std::fmt::Debug)]
 pub struct DeprovisionByoipCidrError {
     /// Kind of error that occurred.
-    pub kind: DeprovisionByoipCidrErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeprovisionByoipCidrErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeprovisionByoipCidrError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeprovisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5509,25 +5429,37 @@ pub enum DeprovisionByoipCidrErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeprovisionByoipCidrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeprovisionByoipCidrErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) => _inner.fmt(f),
-            DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) => _inner.fmt(f),
-            DeprovisionByoipCidrErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DeprovisionByoipCidrErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DeprovisionByoipCidrErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeprovisionByoipCidrErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeprovisionByoipCidrErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeprovisionByoipCidrErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeprovisionByoipCidrErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5541,95 +5473,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeprovisionByoipCidrError {
 }
 impl DeprovisionByoipCidrError {
     /// Creates a new `DeprovisionByoipCidrError`.
-    pub fn new(kind: DeprovisionByoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeprovisionByoipCidrError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeprovisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeprovisionByoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeprovisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeprovisionByoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeprovisionByoipCidrError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeprovisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeprovisionByoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeprovisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeprovisionByoipCidrErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeprovisionByoipCidrErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException`.
     pub fn is_byoip_cidr_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException(_)
-        )
+        matches!(&self.kind, DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::IncorrectCidrStateException`.
     pub fn is_incorrect_cidr_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(_)
-        )
+        matches!(&self.kind, DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(_))
     }
     /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeprovisionByoipCidrErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeprovisionByoipCidrErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeprovisionByoipCidrErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DeprovisionByoipCidrErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DeprovisionByoipCidrError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeprovisionByoipCidrErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) => Some(_inner),
-            DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) => Some(_inner),
-            DeprovisionByoipCidrErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DeprovisionByoipCidrErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DeprovisionByoipCidrErrorKind::Unhandled(_inner) => Some(_inner),
+            DeprovisionByoipCidrErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) =>
+            Some(_inner)
+            ,
+            DeprovisionByoipCidrErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeprovisionByoipCidrErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DeprovisionByoipCidrErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5639,17 +5564,15 @@ impl std::error::Error for DeprovisionByoipCidrError {
 #[derive(std::fmt::Debug)]
 pub struct DenyCustomRoutingTrafficError {
     /// Kind of error that occurred.
-    pub kind: DenyCustomRoutingTrafficErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DenyCustomRoutingTrafficErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DenyCustomRoutingTrafficError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5663,27 +5586,31 @@ pub enum DenyCustomRoutingTrafficErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DenyCustomRoutingTrafficError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) => {
+            DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DenyCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DenyCustomRoutingTrafficErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DenyCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DenyCustomRoutingTrafficErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5697,83 +5624,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DenyCustomRoutingTrafficError
 }
 impl DenyCustomRoutingTrafficError {
     /// Creates a new `DenyCustomRoutingTrafficError`.
-    pub fn new(kind: DenyCustomRoutingTrafficErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DenyCustomRoutingTrafficError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DenyCustomRoutingTrafficError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DenyCustomRoutingTrafficErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DenyCustomRoutingTrafficError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DenyCustomRoutingTrafficError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DenyCustomRoutingTrafficErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DenyCustomRoutingTrafficErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DenyCustomRoutingTrafficErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DenyCustomRoutingTrafficError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) => {
+            DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DenyCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DenyCustomRoutingTrafficErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            DenyCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DenyCustomRoutingTrafficErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5783,15 +5701,15 @@ impl std::error::Error for DenyCustomRoutingTrafficError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteListenerError {
     /// Kind of error that occurred.
-    pub kind: DeleteListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5807,24 +5725,34 @@ pub enum DeleteListenerErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteListenerErrorKind::AssociatedEndpointGroupFoundException(_inner) => _inner.fmt(f),
-            DeleteListenerErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DeleteListenerErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DeleteListenerErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            DeleteListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteListenerErrorKind::AssociatedEndpointGroupFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteListenerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteListenerErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteListenerErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteListenerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5838,83 +5766,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteListenerError {
 }
 impl DeleteListenerError {
     /// Creates a new `DeleteListenerError`.
-    pub fn new(kind: DeleteListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteListenerErrorKind::AssociatedEndpointGroupFoundException`.
     pub fn is_associated_endpoint_group_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteListenerErrorKind::AssociatedEndpointGroupFoundException(_)
-        )
+        matches!(&self.kind, DeleteListenerErrorKind::AssociatedEndpointGroupFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteListenerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeleteListenerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteListenerErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DeleteListenerErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `DeleteListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteListenerErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteListenerErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for DeleteListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteListenerErrorKind::AssociatedEndpointGroupFoundException(_inner) => Some(_inner),
-            DeleteListenerErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DeleteListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DeleteListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DeleteListenerErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteListenerErrorKind::AssociatedEndpointGroupFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteListenerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteListenerErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteListenerErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteListenerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5922,22 +5848,20 @@ impl std::error::Error for DeleteListenerError {
 /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedEndpointGroupFoundException {
+pub struct AssociatedEndpointGroupFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AssociatedEndpointGroupFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AssociatedEndpointGroupFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociatedEndpointGroupFoundException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -5947,7 +5871,7 @@ impl std::fmt::Display for AssociatedEndpointGroupFoundException {
 impl std::error::Error for AssociatedEndpointGroupFoundException {}
 /// See [`AssociatedEndpointGroupFoundException`](crate::error::AssociatedEndpointGroupFoundException).
 pub mod associated_endpoint_group_found_exception {
-
+    
     /// A builder for [`AssociatedEndpointGroupFoundException`](crate::error::AssociatedEndpointGroupFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5961,16 +5885,18 @@ pub mod associated_endpoint_group_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AssociatedEndpointGroupFoundException`](crate::error::AssociatedEndpointGroupFoundException).
         pub fn build(self) -> crate::error::AssociatedEndpointGroupFoundException {
             crate::error::AssociatedEndpointGroupFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociatedEndpointGroupFoundException {
     /// Creates a new builder-style object to manufacture [`AssociatedEndpointGroupFoundException`](crate::error::AssociatedEndpointGroupFoundException).
@@ -5984,15 +5910,15 @@ impl AssociatedEndpointGroupFoundException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteEndpointGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteEndpointGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteEndpointGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteEndpointGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6006,23 +5932,31 @@ pub enum DeleteEndpointGroupErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => _inner.fmt(f),
-            DeleteEndpointGroupErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DeleteEndpointGroupErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DeleteEndpointGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEndpointGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6036,75 +5970,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteEndpointGroupError {
 }
 impl DeleteEndpointGroupError {
     /// Creates a new `DeleteEndpointGroupError`.
-    pub fn new(kind: DeleteEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteEndpointGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteEndpointGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEndpointGroupErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeleteEndpointGroupErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEndpointGroupErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DeleteEndpointGroupErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DeleteEndpointGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
-            DeleteEndpointGroupErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DeleteEndpointGroupErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DeleteEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEndpointGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6114,17 +6047,15 @@ impl std::error::Error for DeleteEndpointGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCustomRoutingListenerError {
     /// Kind of error that occurred.
-    pub kind: DeleteCustomRoutingListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCustomRoutingListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCustomRoutingListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6140,30 +6071,34 @@ pub enum DeleteCustomRoutingListenerErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomRoutingListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException(_inner) => {
+            DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingListenerErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCustomRoutingListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6177,91 +6112,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCustomRoutingListenerEr
 }
 impl DeleteCustomRoutingListenerError {
     /// Creates a new `DeleteCustomRoutingListenerError`.
-    pub fn new(kind: DeleteCustomRoutingListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCustomRoutingListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCustomRoutingListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCustomRoutingListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCustomRoutingListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCustomRoutingListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException`.
     pub fn is_associated_endpoint_group_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for DeleteCustomRoutingListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException(_inner) => {
+            DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingListenerErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DeleteCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6271,17 +6196,15 @@ impl std::error::Error for DeleteCustomRoutingListenerError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCustomRoutingEndpointGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteCustomRoutingEndpointGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCustomRoutingEndpointGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCustomRoutingEndpointGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6295,29 +6218,31 @@ pub enum DeleteCustomRoutingEndpointGroupErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomRoutingEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => {
+            DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6331,88 +6256,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCustomRoutingEndpointGr
 }
 impl DeleteCustomRoutingEndpointGroupError {
     /// Creates a new `DeleteCustomRoutingEndpointGroupError`.
-    pub fn new(
-        kind: DeleteCustomRoutingEndpointGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCustomRoutingEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCustomRoutingEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCustomRoutingEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DeleteCustomRoutingEndpointGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => {
+            DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6422,17 +6333,15 @@ impl std::error::Error for DeleteCustomRoutingEndpointGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCustomRoutingAcceleratorError {
     /// Kind of error that occurred.
-    pub kind: DeleteCustomRoutingAcceleratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCustomRoutingAcceleratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCustomRoutingAcceleratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6450,35 +6359,37 @@ pub enum DeleteCustomRoutingAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException(_inner) => {
+            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6492,108 +6403,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCustomRoutingAccelerato
 }
 impl DeleteCustomRoutingAcceleratorError {
     /// Creates a new `DeleteCustomRoutingAcceleratorError`.
-    pub fn new(
-        kind: DeleteCustomRoutingAcceleratorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCustomRoutingAcceleratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCustomRoutingAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCustomRoutingAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCustomRoutingAcceleratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCustomRoutingAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException`.
     pub fn is_accelerator_not_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException`.
     pub fn is_associated_listener_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DeleteCustomRoutingAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException(_inner) => {
+            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6601,22 +6492,20 @@ impl std::error::Error for DeleteCustomRoutingAcceleratorError {
 /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedListenerFoundException {
+pub struct AssociatedListenerFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AssociatedListenerFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AssociatedListenerFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AssociatedListenerFoundException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -6626,7 +6515,7 @@ impl std::fmt::Display for AssociatedListenerFoundException {
 impl std::error::Error for AssociatedListenerFoundException {}
 /// See [`AssociatedListenerFoundException`](crate::error::AssociatedListenerFoundException).
 pub mod associated_listener_found_exception {
-
+    
     /// A builder for [`AssociatedListenerFoundException`](crate::error::AssociatedListenerFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6640,16 +6529,18 @@ pub mod associated_listener_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AssociatedListenerFoundException`](crate::error::AssociatedListenerFoundException).
         pub fn build(self) -> crate::error::AssociatedListenerFoundException {
             crate::error::AssociatedListenerFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociatedListenerFoundException {
     /// Creates a new builder-style object to manufacture [`AssociatedListenerFoundException`](crate::error::AssociatedListenerFoundException).
@@ -6661,22 +6552,20 @@ impl AssociatedListenerFoundException {
 /// <p>The accelerator that you specified could not be disabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceleratorNotDisabledException {
+pub struct AcceleratorNotDisabledException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AcceleratorNotDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AcceleratorNotDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AcceleratorNotDisabledException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -6686,7 +6575,7 @@ impl std::fmt::Display for AcceleratorNotDisabledException {
 impl std::error::Error for AcceleratorNotDisabledException {}
 /// See [`AcceleratorNotDisabledException`](crate::error::AcceleratorNotDisabledException).
 pub mod accelerator_not_disabled_exception {
-
+    
     /// A builder for [`AcceleratorNotDisabledException`](crate::error::AcceleratorNotDisabledException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6700,16 +6589,18 @@ pub mod accelerator_not_disabled_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AcceleratorNotDisabledException`](crate::error::AcceleratorNotDisabledException).
         pub fn build(self) -> crate::error::AcceleratorNotDisabledException {
             crate::error::AcceleratorNotDisabledException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AcceleratorNotDisabledException {
     /// Creates a new builder-style object to manufacture [`AcceleratorNotDisabledException`](crate::error::AcceleratorNotDisabledException).
@@ -6723,15 +6614,15 @@ impl AcceleratorNotDisabledException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteAcceleratorError {
     /// Kind of error that occurred.
-    pub kind: DeleteAcceleratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteAcceleratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteAcceleratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6749,25 +6640,37 @@ pub enum DeleteAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAcceleratorErrorKind::AcceleratorNotDisabledException(_inner) => _inner.fmt(f),
-            DeleteAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            DeleteAcceleratorErrorKind::AssociatedListenerFoundException(_inner) => _inner.fmt(f),
-            DeleteAcceleratorErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DeleteAcceleratorErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            DeleteAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteAcceleratorErrorKind::AcceleratorNotDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAcceleratorErrorKind::AssociatedListenerFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAcceleratorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6781,91 +6684,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteAcceleratorError {
 }
 impl DeleteAcceleratorError {
     /// Creates a new `DeleteAcceleratorError`.
-    pub fn new(kind: DeleteAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteAcceleratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteAcceleratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::AcceleratorNotDisabledException`.
     pub fn is_accelerator_not_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAcceleratorErrorKind::AcceleratorNotDisabledException(_)
-        )
+        matches!(&self.kind, DeleteAcceleratorErrorKind::AcceleratorNotDisabledException(_))
     }
     /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAcceleratorErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteAcceleratorErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::AssociatedListenerFoundException`.
     pub fn is_associated_listener_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAcceleratorErrorKind::AssociatedListenerFoundException(_)
-        )
+        matches!(&self.kind, DeleteAcceleratorErrorKind::AssociatedListenerFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAcceleratorErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeleteAcceleratorErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAcceleratorErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, DeleteAcceleratorErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for DeleteAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAcceleratorErrorKind::AcceleratorNotDisabledException(_inner) => Some(_inner),
-            DeleteAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            DeleteAcceleratorErrorKind::AssociatedListenerFoundException(_inner) => Some(_inner),
-            DeleteAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DeleteAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DeleteAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteAcceleratorErrorKind::AcceleratorNotDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAcceleratorErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAcceleratorErrorKind::AssociatedListenerFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAcceleratorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6875,15 +6775,15 @@ impl std::error::Error for DeleteAcceleratorError {
 #[derive(std::fmt::Debug)]
 pub struct CreateListenerError {
     /// Kind of error that occurred.
-    pub kind: CreateListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6901,25 +6801,37 @@ pub enum CreateListenerErrorKind {
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateListenerErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::InvalidPortRangeException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateListenerErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::InvalidPortRangeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateListenerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6933,91 +6845,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateListenerError {
 }
 impl CreateListenerError {
     /// Creates a new `CreateListenerError`.
-    pub fn new(kind: CreateListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::InvalidPortRangeException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::InvalidPortRangeException(_))
     }
     /// Returns `true` if the error kind is `CreateListenerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateListenerErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateListenerErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for CreateListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateListenerErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            CreateListenerErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            CreateListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            CreateListenerErrorKind::InvalidPortRangeException(_inner) => Some(_inner),
-            CreateListenerErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateListenerErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateListenerErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::InvalidPortRangeException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateListenerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7027,15 +6936,15 @@ impl std::error::Error for CreateListenerError {
 #[derive(std::fmt::Debug)]
 pub struct CreateEndpointGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateEndpointGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateEndpointGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateEndpointGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7057,29 +6966,43 @@ pub enum CreateEndpointGroupErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateEndpointGroupErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
-            CreateEndpointGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_inner) => {
+            CreateEndpointGroupErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEndpointGroupErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEndpointGroupErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEndpointGroupErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEndpointGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateEndpointGroupErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            CreateEndpointGroupErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            CreateEndpointGroupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateEndpointGroupErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
-            CreateEndpointGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7093,109 +7016,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateEndpointGroupError {
 }
 impl CreateEndpointGroupError {
     /// Creates a new `CreateEndpointGroupError`.
-    pub fn new(kind: CreateEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateEndpointGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateEndpointGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEndpointGroupErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, CreateEndpointGroupErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEndpointGroupErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateEndpointGroupErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException`.
     pub fn is_endpoint_group_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEndpointGroupErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CreateEndpointGroupErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEndpointGroupErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, CreateEndpointGroupErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEndpointGroupErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateEndpointGroupErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEndpointGroupErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, CreateEndpointGroupErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for CreateEndpointGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateEndpointGroupErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
-            CreateEndpointGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_inner) => {
+            CreateEndpointGroupErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEndpointGroupErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEndpointGroupErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEndpointGroupErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEndpointGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateEndpointGroupErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            CreateEndpointGroupErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            CreateEndpointGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateEndpointGroupErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            CreateEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7203,22 +7119,20 @@ impl std::error::Error for CreateEndpointGroupError {
 /// <p>The endpoint group that you specified already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointGroupAlreadyExistsException {
+pub struct EndpointGroupAlreadyExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EndpointGroupAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for EndpointGroupAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointGroupAlreadyExistsException")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -7228,7 +7142,7 @@ impl std::fmt::Display for EndpointGroupAlreadyExistsException {
 impl std::error::Error for EndpointGroupAlreadyExistsException {}
 /// See [`EndpointGroupAlreadyExistsException`](crate::error::EndpointGroupAlreadyExistsException).
 pub mod endpoint_group_already_exists_exception {
-
+    
     /// A builder for [`EndpointGroupAlreadyExistsException`](crate::error::EndpointGroupAlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7242,16 +7156,18 @@ pub mod endpoint_group_already_exists_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EndpointGroupAlreadyExistsException`](crate::error::EndpointGroupAlreadyExistsException).
         pub fn build(self) -> crate::error::EndpointGroupAlreadyExistsException {
             crate::error::EndpointGroupAlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointGroupAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`EndpointGroupAlreadyExistsException`](crate::error::EndpointGroupAlreadyExistsException).
@@ -7265,17 +7181,15 @@ impl EndpointGroupAlreadyExistsException {
 #[derive(std::fmt::Debug)]
 pub struct CreateCustomRoutingListenerError {
     /// Kind of error that occurred.
-    pub kind: CreateCustomRoutingListenerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCustomRoutingListenerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCustomRoutingListenerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7293,31 +7207,37 @@ pub enum CreateCustomRoutingListenerErrorKind {
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomRoutingListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(_inner) => {
+            CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingListenerErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingListenerErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingListenerErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateCustomRoutingListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7331,99 +7251,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCustomRoutingListenerEr
 }
 impl CreateCustomRoutingListenerError {
     /// Creates a new `CreateCustomRoutingListenerError`.
-    pub fn new(kind: CreateCustomRoutingListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCustomRoutingListenerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCustomRoutingListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCustomRoutingListenerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCustomRoutingListenerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCustomRoutingListenerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingListenerErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingListenerErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingListenerErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingListenerErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for CreateCustomRoutingListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(_inner) => {
+            CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingListenerErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingListenerErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) => Some(_inner),
-            CreateCustomRoutingListenerErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7433,17 +7342,15 @@ impl std::error::Error for CreateCustomRoutingListenerError {
 #[derive(std::fmt::Debug)]
 pub struct CreateCustomRoutingEndpointGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateCustomRoutingEndpointGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCustomRoutingEndpointGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCustomRoutingEndpointGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7467,44 +7374,46 @@ pub enum CreateCustomRoutingEndpointGroupErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomRoutingEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException(_inner) => {
+            CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7518,138 +7427,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCustomRoutingEndpointGr
 }
 impl CreateCustomRoutingEndpointGroupError {
     /// Creates a new `CreateCustomRoutingEndpointGroupError`.
-    pub fn new(
-        kind: CreateCustomRoutingEndpointGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCustomRoutingEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCustomRoutingEndpointGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCustomRoutingEndpointGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException`.
     pub fn is_endpoint_group_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(_))
     }
 }
 impl std::error::Error for CreateCustomRoutingEndpointGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException(_inner) => {
+            CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(
-                _inner,
-            ) => Some(_inner),
-            CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7659,17 +7539,15 @@ impl std::error::Error for CreateCustomRoutingEndpointGroupError {
 #[derive(std::fmt::Debug)]
 pub struct CreateCustomRoutingAcceleratorError {
     /// Kind of error that occurred.
-    pub kind: CreateCustomRoutingAcceleratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCustomRoutingAcceleratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCustomRoutingAcceleratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7685,30 +7563,34 @@ pub enum CreateCustomRoutingAcceleratorErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) => {
+            CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7722,94 +7604,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCustomRoutingAccelerato
 }
 impl CreateCustomRoutingAcceleratorError {
     /// Creates a new `CreateCustomRoutingAcceleratorError`.
-    pub fn new(
-        kind: CreateCustomRoutingAcceleratorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCustomRoutingAcceleratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCustomRoutingAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCustomRoutingAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCustomRoutingAcceleratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCustomRoutingAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomRoutingAcceleratorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for CreateCustomRoutingAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) => {
+            CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
-                Some(_inner)
-            }
-            CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7819,15 +7688,15 @@ impl std::error::Error for CreateCustomRoutingAcceleratorError {
 #[derive(std::fmt::Debug)]
 pub struct CreateAcceleratorError {
     /// Kind of error that occurred.
-    pub kind: CreateAcceleratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateAcceleratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateAcceleratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7841,23 +7710,31 @@ pub enum CreateAcceleratorErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAcceleratorErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            CreateAcceleratorErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            CreateAcceleratorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAcceleratorErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAcceleratorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7871,75 +7748,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateAcceleratorError {
 }
 impl CreateAcceleratorError {
     /// Creates a new `CreateAcceleratorError`.
-    pub fn new(kind: CreateAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateAcceleratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateAcceleratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateAcceleratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateAcceleratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAcceleratorErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CreateAcceleratorErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAcceleratorErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, CreateAcceleratorErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `CreateAcceleratorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAcceleratorErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateAcceleratorErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for CreateAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            CreateAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            CreateAcceleratorErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateAcceleratorErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAcceleratorErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAcceleratorErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAcceleratorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7949,17 +7825,15 @@ impl std::error::Error for CreateAcceleratorError {
 #[derive(std::fmt::Debug)]
 pub struct AllowCustomRoutingTrafficError {
     /// Kind of error that occurred.
-    pub kind: AllowCustomRoutingTrafficErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AllowCustomRoutingTrafficErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AllowCustomRoutingTrafficError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7973,27 +7847,31 @@ pub enum AllowCustomRoutingTrafficErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllowCustomRoutingTrafficError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) => {
+            AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllowCustomRoutingTrafficErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            AllowCustomRoutingTrafficErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8007,83 +7885,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for AllowCustomRoutingTrafficErro
 }
 impl AllowCustomRoutingTrafficError {
     /// Creates a new `AllowCustomRoutingTrafficError`.
-    pub fn new(kind: AllowCustomRoutingTrafficErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AllowCustomRoutingTrafficError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AllowCustomRoutingTrafficError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AllowCustomRoutingTrafficErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AllowCustomRoutingTrafficError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AllowCustomRoutingTrafficError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `AllowCustomRoutingTrafficErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for AllowCustomRoutingTrafficError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) => {
+            AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            AllowCustomRoutingTrafficErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            AllowCustomRoutingTrafficErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8093,15 +7962,15 @@ impl std::error::Error for AllowCustomRoutingTrafficError {
 #[derive(std::fmt::Debug)]
 pub struct AdvertiseByoipCidrError {
     /// Kind of error that occurred.
-    pub kind: AdvertiseByoipCidrErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AdvertiseByoipCidrErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AdvertiseByoipCidrError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AdvertiseByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8119,25 +7988,37 @@ pub enum AdvertiseByoipCidrErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AdvertiseByoipCidrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AdvertiseByoipCidrErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) => _inner.fmt(f),
-            AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(_inner) => _inner.fmt(f),
-            AdvertiseByoipCidrErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            AdvertiseByoipCidrErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            AdvertiseByoipCidrErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AdvertiseByoipCidrErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AdvertiseByoipCidrErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AdvertiseByoipCidrErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AdvertiseByoipCidrErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8151,91 +8032,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for AdvertiseByoipCidrError {
 }
 impl AdvertiseByoipCidrError {
     /// Creates a new `AdvertiseByoipCidrError`.
-    pub fn new(kind: AdvertiseByoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AdvertiseByoipCidrError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AdvertiseByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AdvertiseByoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AdvertiseByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AdvertiseByoipCidrErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AdvertiseByoipCidrError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AdvertiseByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AdvertiseByoipCidrError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AdvertiseByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AdvertiseByoipCidrErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, AdvertiseByoipCidrErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException`.
     pub fn is_byoip_cidr_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException(_)
-        )
+        matches!(&self.kind, AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::IncorrectCidrStateException`.
     pub fn is_incorrect_cidr_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(_)
-        )
+        matches!(&self.kind, AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(_))
     }
     /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AdvertiseByoipCidrErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, AdvertiseByoipCidrErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AdvertiseByoipCidrErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, AdvertiseByoipCidrErrorKind::InvalidArgumentException(_))
     }
 }
 impl std::error::Error for AdvertiseByoipCidrError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AdvertiseByoipCidrErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) => Some(_inner),
-            AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(_inner) => Some(_inner),
-            AdvertiseByoipCidrErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            AdvertiseByoipCidrErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            AdvertiseByoipCidrErrorKind::Unhandled(_inner) => Some(_inner),
+            AdvertiseByoipCidrErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(_inner) =>
+            Some(_inner)
+            ,
+            AdvertiseByoipCidrErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            AdvertiseByoipCidrErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            AdvertiseByoipCidrErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8245,15 +8123,15 @@ impl std::error::Error for AdvertiseByoipCidrError {
 #[derive(std::fmt::Debug)]
 pub struct AddEndpointsError {
     /// Kind of error that occurred.
-    pub kind: AddEndpointsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AddEndpointsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AddEndpointsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AddEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8273,26 +8151,40 @@ pub enum AddEndpointsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddEndpointsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            AddEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => _inner.fmt(f),
-            AddEndpointsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            AddEndpointsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            AddEndpointsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            AddEndpointsErrorKind::TransactionInProgressException(_inner) => _inner.fmt(f),
-            AddEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AddEndpointsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddEndpointsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddEndpointsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddEndpointsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddEndpointsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddEndpointsErrorKind::TransactionInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddEndpointsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8306,70 +8198,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for AddEndpointsError {
 }
 impl AddEndpointsError {
     /// Creates a new `AddEndpointsError`.
-    pub fn new(kind: AddEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AddEndpointsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AddEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AddEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AddEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AddEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AddEndpointsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AddEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AddEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AddEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AddEndpointsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AddEndpointsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `AddEndpointsErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddEndpointsErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, AddEndpointsErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AddEndpointsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddEndpointsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, AddEndpointsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `AddEndpointsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddEndpointsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, AddEndpointsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `AddEndpointsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -8377,22 +8260,33 @@ impl AddEndpointsError {
     }
     /// Returns `true` if the error kind is `AddEndpointsErrorKind::TransactionInProgressException`.
     pub fn is_transaction_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddEndpointsErrorKind::TransactionInProgressException(_)
-        )
+        matches!(&self.kind, AddEndpointsErrorKind::TransactionInProgressException(_))
     }
 }
 impl std::error::Error for AddEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddEndpointsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            AddEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
-            AddEndpointsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            AddEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            AddEndpointsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            AddEndpointsErrorKind::TransactionInProgressException(_inner) => Some(_inner),
-            AddEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
+            AddEndpointsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AddEndpointsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddEndpointsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            AddEndpointsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            AddEndpointsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AddEndpointsErrorKind::TransactionInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            AddEndpointsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8402,17 +8296,15 @@ impl std::error::Error for AddEndpointsError {
 #[derive(std::fmt::Debug)]
 pub struct AddCustomRoutingEndpointsError {
     /// Kind of error that occurred.
-    pub kind: AddCustomRoutingEndpointsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AddCustomRoutingEndpointsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AddCustomRoutingEndpointsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8434,33 +8326,43 @@ pub enum AddCustomRoutingEndpointsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddCustomRoutingEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddCustomRoutingEndpointsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            AddCustomRoutingEndpointsErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(_inner) => {
+            AddCustomRoutingEndpointsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddCustomRoutingEndpointsErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddCustomRoutingEndpointsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddCustomRoutingEndpointsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            AddCustomRoutingEndpointsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            AddCustomRoutingEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8474,117 +8376,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for AddCustomRoutingEndpointsErro
 }
 impl AddCustomRoutingEndpointsError {
     /// Creates a new `AddCustomRoutingEndpointsError`.
-    pub fn new(kind: AddCustomRoutingEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AddCustomRoutingEndpointsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AddCustomRoutingEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AddCustomRoutingEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AddCustomRoutingEndpointsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AddCustomRoutingEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddCustomRoutingEndpointsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, AddCustomRoutingEndpointsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddCustomRoutingEndpointsErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, AddCustomRoutingEndpointsErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException`.
     pub fn is_endpoint_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(_)
-        )
+        matches!(&self.kind, AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_)
-        )
+        matches!(&self.kind, AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddCustomRoutingEndpointsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, AddCustomRoutingEndpointsErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for AddCustomRoutingEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddCustomRoutingEndpointsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            AddCustomRoutingEndpointsErrorKind::ConflictException(_inner) => Some(_inner),
-            AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(_inner) => {
+            AddCustomRoutingEndpointsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AddCustomRoutingEndpointsErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            AddCustomRoutingEndpointsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AddCustomRoutingEndpointsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_inner) => {
-                Some(_inner)
-            }
-            AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            AddCustomRoutingEndpointsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            AddCustomRoutingEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8592,22 +8479,20 @@ impl std::error::Error for AddCustomRoutingEndpointsError {
 /// <p>The endpoint that you specified doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointAlreadyExistsException {
+pub struct EndpointAlreadyExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EndpointAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for EndpointAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAlreadyExistsException")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -8617,7 +8502,7 @@ impl std::fmt::Display for EndpointAlreadyExistsException {
 impl std::error::Error for EndpointAlreadyExistsException {}
 /// See [`EndpointAlreadyExistsException`](crate::error::EndpointAlreadyExistsException).
 pub mod endpoint_already_exists_exception {
-
+    
     /// A builder for [`EndpointAlreadyExistsException`](crate::error::EndpointAlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8631,16 +8516,18 @@ pub mod endpoint_already_exists_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EndpointAlreadyExistsException`](crate::error::EndpointAlreadyExistsException).
         pub fn build(self) -> crate::error::EndpointAlreadyExistsException {
             crate::error::EndpointAlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`EndpointAlreadyExistsException`](crate::error::EndpointAlreadyExistsException).
@@ -8649,31 +8536,32 @@ impl EndpointAlreadyExistsException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

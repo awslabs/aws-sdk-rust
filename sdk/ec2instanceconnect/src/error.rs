@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct SendSSHPublicKeyError {
     /// Kind of error that occurred.
-    pub kind: SendSSHPublicKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SendSSHPublicKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SendSSHPublicKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SendSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -34,27 +34,43 @@ pub enum SendSSHPublicKeyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SendSSHPublicKeyErrorKind::AuthException(_inner) => _inner.fmt(f),
-            SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) => _inner.fmt(f),
-            SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) => _inner.fmt(f),
-            SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_inner) => _inner.fmt(f),
-            SendSSHPublicKeyErrorKind::InvalidArgsException(_inner) => _inner.fmt(f),
-            SendSSHPublicKeyErrorKind::ServiceException(_inner) => _inner.fmt(f),
-            SendSSHPublicKeyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            SendSSHPublicKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SendSSHPublicKeyErrorKind::AuthException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSSHPublicKeyErrorKind::InvalidArgsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSSHPublicKeyErrorKind::ServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSSHPublicKeyErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSSHPublicKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -68,77 +84,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for SendSSHPublicKeyError {
 }
 impl SendSSHPublicKeyError {
     /// Creates a new `SendSSHPublicKeyError`.
-    pub fn new(kind: SendSSHPublicKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SendSSHPublicKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SendSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SendSSHPublicKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SendSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SendSSHPublicKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SendSSHPublicKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SendSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SendSSHPublicKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SendSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::AuthException`.
     pub fn is_auth_exception(&self) -> bool {
         matches!(&self.kind, SendSSHPublicKeyErrorKind::AuthException(_))
     }
     /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException`.
     pub fn is_ec2_instance_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_)
-        )
+        matches!(&self.kind, SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException`.
     pub fn is_ec2_instance_state_invalid_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_)
-        )
+        matches!(&self.kind, SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_))
     }
     /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException`.
     pub fn is_ec2_instance_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_)
-        )
+        matches!(&self.kind, SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSSHPublicKeyErrorKind::InvalidArgsException(_)
-        )
+        matches!(&self.kind, SendSSHPublicKeyErrorKind::InvalidArgsException(_))
     }
     /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
@@ -146,23 +150,36 @@ impl SendSSHPublicKeyError {
     }
     /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSSHPublicKeyErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, SendSSHPublicKeyErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for SendSSHPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SendSSHPublicKeyErrorKind::AuthException(_inner) => Some(_inner),
-            SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) => Some(_inner),
-            SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) => Some(_inner),
-            SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_inner) => Some(_inner),
-            SendSSHPublicKeyErrorKind::InvalidArgsException(_inner) => Some(_inner),
-            SendSSHPublicKeyErrorKind::ServiceException(_inner) => Some(_inner),
-            SendSSHPublicKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SendSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            SendSSHPublicKeyErrorKind::AuthException(_inner) =>
+            Some(_inner)
+            ,
+            SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            SendSSHPublicKeyErrorKind::InvalidArgsException(_inner) =>
+            Some(_inner)
+            ,
+            SendSSHPublicKeyErrorKind::ServiceException(_inner) =>
+            Some(_inner)
+            ,
+            SendSSHPublicKeyErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            SendSSHPublicKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -170,22 +187,20 @@ impl std::error::Error for SendSSHPublicKeyError {
 /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -195,7 +210,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -209,16 +224,18 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -230,22 +247,20 @@ impl ThrottlingException {
 /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceException {
+pub struct ServiceException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -255,7 +270,7 @@ impl std::fmt::Display for ServiceException {
 impl std::error::Error for ServiceException {}
 /// See [`ServiceException`](crate::error::ServiceException).
 pub mod service_exception {
-
+    
     /// A builder for [`ServiceException`](crate::error::ServiceException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -269,16 +284,18 @@ pub mod service_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceException`](crate::error::ServiceException).
         pub fn build(self) -> crate::error::ServiceException {
             crate::error::ServiceException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceException {
     /// Creates a new builder-style object to manufacture [`ServiceException`](crate::error::ServiceException).
@@ -290,22 +307,20 @@ impl ServiceException {
 /// <p>One of the parameters is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArgsException {
+pub struct InvalidArgsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArgsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArgsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgsException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -315,7 +330,7 @@ impl std::fmt::Display for InvalidArgsException {
 impl std::error::Error for InvalidArgsException {}
 /// See [`InvalidArgsException`](crate::error::InvalidArgsException).
 pub mod invalid_args_exception {
-
+    
     /// A builder for [`InvalidArgsException`](crate::error::InvalidArgsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -329,16 +344,18 @@ pub mod invalid_args_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArgsException`](crate::error::InvalidArgsException).
         pub fn build(self) -> crate::error::InvalidArgsException {
             crate::error::InvalidArgsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArgsException {
     /// Creates a new builder-style object to manufacture [`InvalidArgsException`](crate::error::InvalidArgsException).
@@ -350,25 +367,20 @@ impl InvalidArgsException {
 /// <p>The instance is currently unavailable. Wait a few minutes and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceUnavailableException {
+pub struct Ec2InstanceUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Ec2InstanceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for Ec2InstanceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "Ec2InstanceUnavailableException [EC2InstanceUnavailableException]"
-        )?;
+        write!(f, "Ec2InstanceUnavailableException [EC2InstanceUnavailableException]")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -378,7 +390,7 @@ impl std::fmt::Display for Ec2InstanceUnavailableException {
 impl std::error::Error for Ec2InstanceUnavailableException {}
 /// See [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
 pub mod ec2_instance_unavailable_exception {
-
+    
     /// A builder for [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -392,16 +404,18 @@ pub mod ec2_instance_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
         pub fn build(self) -> crate::error::Ec2InstanceUnavailableException {
             crate::error::Ec2InstanceUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2InstanceUnavailableException {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
@@ -413,25 +427,20 @@ impl Ec2InstanceUnavailableException {
 /// <p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceStateInvalidException {
+pub struct Ec2InstanceStateInvalidException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Ec2InstanceStateInvalidException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for Ec2InstanceStateInvalidException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "Ec2InstanceStateInvalidException [EC2InstanceStateInvalidException]"
-        )?;
+        write!(f, "Ec2InstanceStateInvalidException [EC2InstanceStateInvalidException]")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -441,7 +450,7 @@ impl std::fmt::Display for Ec2InstanceStateInvalidException {
 impl std::error::Error for Ec2InstanceStateInvalidException {}
 /// See [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
 pub mod ec2_instance_state_invalid_exception {
-
+    
     /// A builder for [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -455,16 +464,18 @@ pub mod ec2_instance_state_invalid_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
         pub fn build(self) -> crate::error::Ec2InstanceStateInvalidException {
             crate::error::Ec2InstanceStateInvalidException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2InstanceStateInvalidException {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
@@ -476,25 +487,20 @@ impl Ec2InstanceStateInvalidException {
 /// <p>The specified instance was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceNotFoundException {
+pub struct Ec2InstanceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Ec2InstanceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for Ec2InstanceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "Ec2InstanceNotFoundException [EC2InstanceNotFoundException]"
-        )?;
+        write!(f, "Ec2InstanceNotFoundException [EC2InstanceNotFoundException]")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -504,7 +510,7 @@ impl std::fmt::Display for Ec2InstanceNotFoundException {
 impl std::error::Error for Ec2InstanceNotFoundException {}
 /// See [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
 pub mod ec2_instance_not_found_exception {
-
+    
     /// A builder for [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -518,16 +524,18 @@ pub mod ec2_instance_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
         pub fn build(self) -> crate::error::Ec2InstanceNotFoundException {
             crate::error::Ec2InstanceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2InstanceNotFoundException {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
@@ -539,22 +547,20 @@ impl Ec2InstanceNotFoundException {
 /// <p>Either your AWS credentials are not valid or you do not have access to the EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthException {
+pub struct AuthException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AuthException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AuthException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -564,7 +570,7 @@ impl std::fmt::Display for AuthException {
 impl std::error::Error for AuthException {}
 /// See [`AuthException`](crate::error::AuthException).
 pub mod auth_exception {
-
+    
     /// A builder for [`AuthException`](crate::error::AuthException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -578,16 +584,18 @@ pub mod auth_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AuthException`](crate::error::AuthException).
         pub fn build(self) -> crate::error::AuthException {
             crate::error::AuthException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthException {
     /// Creates a new builder-style object to manufacture [`AuthException`](crate::error::AuthException).
@@ -601,17 +609,15 @@ impl AuthException {
 #[derive(std::fmt::Debug)]
 pub struct SendSerialConsoleSSHPublicKeyError {
     /// Kind of error that occurred.
-    pub kind: SendSerialConsoleSSHPublicKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SendSerialConsoleSSHPublicKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SendSerialConsoleSSHPublicKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -634,56 +640,62 @@ pub enum SendSerialConsoleSSHPublicKeyErrorKind {
     /// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
     SerialConsoleAccessDisabledException(crate::error::SerialConsoleAccessDisabledException),
     /// <p>The instance currently has 1 active serial console session. Only 1 session is supported at a time.</p>
-    SerialConsoleSessionLimitExceededException(
-        crate::error::SerialConsoleSessionLimitExceededException,
-    ),
+    SerialConsoleSessionLimitExceededException(crate::error::SerialConsoleSessionLimitExceededException),
     /// <p>Unable to start a serial console session. Please try again.</p>
-    SerialConsoleSessionUnavailableException(
-        crate::error::SerialConsoleSessionUnavailableException,
-    ),
+    SerialConsoleSessionUnavailableException(crate::error::SerialConsoleSessionUnavailableException),
     /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
     ServiceException(crate::error::ServiceException),
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendSerialConsoleSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SendSerialConsoleSSHPublicKeyErrorKind::AuthException(_inner) => _inner.fmt(f),
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) => {
+            SendSerialConsoleSSHPublicKeyErrorKind::AuthException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) => {
-                _inner.fmt(f)
-            }
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_inner) => {
-                _inner.fmt(f)
-            }
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(_inner) => _inner.fmt(f),
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(
-                _inner,
-            ) => _inner.fmt(f),
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(
-                _inner,
-            ) => _inner.fmt(f),
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(_inner) => _inner.fmt(f),
-            SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -697,160 +709,130 @@ impl aws_smithy_types::retry::ProvideErrorKind for SendSerialConsoleSSHPublicKey
 }
 impl SendSerialConsoleSSHPublicKeyError {
     /// Creates a new `SendSerialConsoleSSHPublicKeyError`.
-    pub fn new(
-        kind: SendSerialConsoleSSHPublicKeyErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SendSerialConsoleSSHPublicKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SendSerialConsoleSSHPublicKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SendSerialConsoleSSHPublicKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SendSerialConsoleSSHPublicKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SendSerialConsoleSSHPublicKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::AuthException`.
     pub fn is_auth_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::AuthException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::AuthException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException`.
     pub fn is_ec2_instance_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException`.
     pub fn is_ec2_instance_state_invalid_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException`.
     pub fn is_ec2_instance_type_invalid_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException`.
     pub fn is_ec2_instance_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException`.
     pub fn is_serial_console_access_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException`.
     pub fn is_serial_console_session_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException`.
     pub fn is_serial_console_session_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(_))
     }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for SendSerialConsoleSSHPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SendSerialConsoleSSHPublicKeyErrorKind::AuthException(_inner) => Some(_inner),
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) => {
+            SendSerialConsoleSSHPublicKeyErrorKind::AuthException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) => {
-                Some(_inner)
-            }
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_inner) => {
-                Some(_inner)
-            }
-            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(_inner) => Some(_inner),
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(
-                _inner,
-            ) => Some(_inner),
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(
-                _inner,
-            ) => Some(_inner),
-            SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(_inner) => Some(_inner),
-            SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -858,22 +840,20 @@ impl std::error::Error for SendSerialConsoleSSHPublicKeyError {
 /// <p>Unable to start a serial console session. Please try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SerialConsoleSessionUnavailableException {
+pub struct SerialConsoleSessionUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SerialConsoleSessionUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SerialConsoleSessionUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SerialConsoleSessionUnavailableException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -883,7 +863,7 @@ impl std::fmt::Display for SerialConsoleSessionUnavailableException {
 impl std::error::Error for SerialConsoleSessionUnavailableException {}
 /// See [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
 pub mod serial_console_session_unavailable_exception {
-
+    
     /// A builder for [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -897,16 +877,18 @@ pub mod serial_console_session_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
         pub fn build(self) -> crate::error::SerialConsoleSessionUnavailableException {
             crate::error::SerialConsoleSessionUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SerialConsoleSessionUnavailableException {
     /// Creates a new builder-style object to manufacture [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
@@ -918,22 +900,20 @@ impl SerialConsoleSessionUnavailableException {
 /// <p>The instance currently has 1 active serial console session. Only 1 session is supported at a time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SerialConsoleSessionLimitExceededException {
+pub struct SerialConsoleSessionLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SerialConsoleSessionLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SerialConsoleSessionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SerialConsoleSessionLimitExceededException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -943,7 +923,7 @@ impl std::fmt::Display for SerialConsoleSessionLimitExceededException {
 impl std::error::Error for SerialConsoleSessionLimitExceededException {}
 /// See [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
 pub mod serial_console_session_limit_exceeded_exception {
-
+    
     /// A builder for [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -957,16 +937,18 @@ pub mod serial_console_session_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
         pub fn build(self) -> crate::error::SerialConsoleSessionLimitExceededException {
             crate::error::SerialConsoleSessionLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SerialConsoleSessionLimitExceededException {
     /// Creates a new builder-style object to manufacture [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
@@ -978,22 +960,20 @@ impl SerialConsoleSessionLimitExceededException {
 /// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SerialConsoleAccessDisabledException {
+pub struct SerialConsoleAccessDisabledException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SerialConsoleAccessDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SerialConsoleAccessDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SerialConsoleAccessDisabledException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1003,7 +983,7 @@ impl std::fmt::Display for SerialConsoleAccessDisabledException {
 impl std::error::Error for SerialConsoleAccessDisabledException {}
 /// See [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
 pub mod serial_console_access_disabled_exception {
-
+    
     /// A builder for [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1017,16 +997,18 @@ pub mod serial_console_access_disabled_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
         pub fn build(self) -> crate::error::SerialConsoleAccessDisabledException {
             crate::error::SerialConsoleAccessDisabledException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SerialConsoleAccessDisabledException {
     /// Creates a new builder-style object to manufacture [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
@@ -1038,25 +1020,20 @@ impl SerialConsoleAccessDisabledException {
 /// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceTypeInvalidException {
+pub struct Ec2InstanceTypeInvalidException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Ec2InstanceTypeInvalidException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for Ec2InstanceTypeInvalidException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "Ec2InstanceTypeInvalidException [EC2InstanceTypeInvalidException]"
-        )?;
+        write!(f, "Ec2InstanceTypeInvalidException [EC2InstanceTypeInvalidException]")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1066,7 +1043,7 @@ impl std::fmt::Display for Ec2InstanceTypeInvalidException {
 impl std::error::Error for Ec2InstanceTypeInvalidException {}
 /// See [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
 pub mod ec2_instance_type_invalid_exception {
-
+    
     /// A builder for [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1080,16 +1057,18 @@ pub mod ec2_instance_type_invalid_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
         pub fn build(self) -> crate::error::Ec2InstanceTypeInvalidException {
             crate::error::Ec2InstanceTypeInvalidException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2InstanceTypeInvalidException {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
@@ -1098,31 +1077,32 @@ impl Ec2InstanceTypeInvalidException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

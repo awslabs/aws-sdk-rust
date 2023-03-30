@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportThemesOutput {
+pub struct ExportThemesOutput  {
     /// <p>Represents the configuration of the exported themes.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Theme>>,
@@ -12,17 +12,17 @@ pub struct ExportThemesOutput {
 }
 impl ExportThemesOutput {
     /// <p>Represents the configuration of the exported themes.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Theme]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Theme]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ExportThemesOutput`](crate::output::ExportThemesOutput).
 pub mod export_themes_output {
-
+    
     /// A builder for [`ExportThemesOutput`](crate::output::ExportThemesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod export_themes_output {
         /// <p>Represents the configuration of the exported themes.</p>
         pub fn entities(mut self, input: crate::model::Theme) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>Represents the configuration of the exported themes.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Theme>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Theme>>) -> Self {
+            self.entities = input; self
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod export_themes_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ExportThemesOutput`](crate::output::ExportThemesOutput).
         pub fn build(self) -> crate::output::ExportThemesOutput {
             crate::output::ExportThemesOutput {
-                entities: self.entities,
-                next_token: self.next_token,
+                entities: self.entities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportThemesOutput {
     /// Creates a new builder-style object to manufacture [`ExportThemesOutput`](crate::output::ExportThemesOutput).
@@ -78,7 +77,7 @@ impl ExportThemesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThemesOutput {
+pub struct ListThemesOutput  {
     /// <p>The list of themes for the Amplify app.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
@@ -88,17 +87,17 @@ pub struct ListThemesOutput {
 }
 impl ListThemesOutput {
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::ThemeSummary]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::ThemeSummary]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's returned if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListThemesOutput`](crate::output::ListThemesOutput).
 pub mod list_themes_output {
-
+    
     /// A builder for [`ListThemesOutput`](crate::output::ListThemesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -113,17 +112,13 @@ pub mod list_themes_output {
         /// <p>The list of themes for the Amplify app.</p>
         pub fn entities(mut self, input: crate::model::ThemeSummary) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>The list of themes for the Amplify app.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>) -> Self {
+            self.entities = input; self
         }
         /// <p>The pagination token that's returned if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,17 +127,20 @@ pub mod list_themes_output {
         }
         /// <p>The pagination token that's returned if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListThemesOutput`](crate::output::ListThemesOutput).
         pub fn build(self) -> crate::output::ListThemesOutput {
             crate::output::ListThemesOutput {
-                entities: self.entities,
-                next_token: self.next_token,
+                entities: self.entities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListThemesOutput {
     /// Creates a new builder-style object to manufacture [`ListThemesOutput`](crate::output::ListThemesOutput).
@@ -154,20 +152,20 @@ impl ListThemesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateThemeOutput {
+pub struct CreateThemeOutput  {
     /// <p>Describes the configuration of the new theme.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Theme>,
 }
 impl CreateThemeOutput {
     /// <p>Describes the configuration of the new theme.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::model::Theme> {
+    pub fn entity(&self) -> std::option::Option<& crate::model::Theme> {
         self.entity.as_ref()
     }
 }
 /// See [`CreateThemeOutput`](crate::output::CreateThemeOutput).
 pub mod create_theme_output {
-
+    
     /// A builder for [`CreateThemeOutput`](crate::output::CreateThemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -181,16 +179,18 @@ pub mod create_theme_output {
         }
         /// <p>Describes the configuration of the new theme.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Theme>) -> Self {
-            self.entity = input;
-            self
+            self.entity = input; self
         }
         /// Consumes the builder and constructs a [`CreateThemeOutput`](crate::output::CreateThemeOutput).
         pub fn build(self) -> crate::output::CreateThemeOutput {
             crate::output::CreateThemeOutput {
-                entity: self.entity,
+                entity: self.entity
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateThemeOutput {
     /// Creates a new builder-style object to manufacture [`CreateThemeOutput`](crate::output::CreateThemeOutput).
@@ -202,19 +202,24 @@ impl CreateThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThemeOutput {}
+pub struct DeleteThemeOutput  {
+}
 /// See [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
 pub mod delete_theme_output {
-
+    
     /// A builder for [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
         pub fn build(self) -> crate::output::DeleteThemeOutput {
-            crate::output::DeleteThemeOutput {}
+            crate::output::DeleteThemeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteThemeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
@@ -226,20 +231,20 @@ impl DeleteThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThemeOutput {
+pub struct UpdateThemeOutput  {
     /// <p>Describes the configuration of the updated theme.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Theme>,
 }
 impl UpdateThemeOutput {
     /// <p>Describes the configuration of the updated theme.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::model::Theme> {
+    pub fn entity(&self) -> std::option::Option<& crate::model::Theme> {
         self.entity.as_ref()
     }
 }
 /// See [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
 pub mod update_theme_output {
-
+    
     /// A builder for [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -253,16 +258,18 @@ pub mod update_theme_output {
         }
         /// <p>Describes the configuration of the updated theme.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Theme>) -> Self {
-            self.entity = input;
-            self
+            self.entity = input; self
         }
         /// Consumes the builder and constructs a [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
         pub fn build(self) -> crate::output::UpdateThemeOutput {
             crate::output::UpdateThemeOutput {
-                entity: self.entity,
+                entity: self.entity
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateThemeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
@@ -274,20 +281,20 @@ impl UpdateThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetThemeOutput {
+pub struct GetThemeOutput  {
     /// <p>Represents the configuration settings for the theme.</p>
     #[doc(hidden)]
     pub theme: std::option::Option<crate::model::Theme>,
 }
 impl GetThemeOutput {
     /// <p>Represents the configuration settings for the theme.</p>
-    pub fn theme(&self) -> std::option::Option<&crate::model::Theme> {
+    pub fn theme(&self) -> std::option::Option<& crate::model::Theme> {
         self.theme.as_ref()
     }
 }
 /// See [`GetThemeOutput`](crate::output::GetThemeOutput).
 pub mod get_theme_output {
-
+    
     /// A builder for [`GetThemeOutput`](crate::output::GetThemeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -301,14 +308,18 @@ pub mod get_theme_output {
         }
         /// <p>Represents the configuration settings for the theme.</p>
         pub fn set_theme(mut self, input: std::option::Option<crate::model::Theme>) -> Self {
-            self.theme = input;
-            self
+            self.theme = input; self
         }
         /// Consumes the builder and constructs a [`GetThemeOutput`](crate::output::GetThemeOutput).
         pub fn build(self) -> crate::output::GetThemeOutput {
-            crate::output::GetThemeOutput { theme: self.theme }
+            crate::output::GetThemeOutput {
+                theme: self.theme
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetThemeOutput {
     /// Creates a new builder-style object to manufacture [`GetThemeOutput`](crate::output::GetThemeOutput).
@@ -320,7 +331,7 @@ impl GetThemeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportFormsOutput {
+pub struct ExportFormsOutput  {
     /// <p>Represents the configuration of the exported forms.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Form>>,
@@ -330,17 +341,17 @@ pub struct ExportFormsOutput {
 }
 impl ExportFormsOutput {
     /// <p>Represents the configuration of the exported forms.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Form]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Form]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ExportFormsOutput`](crate::output::ExportFormsOutput).
 pub mod export_forms_output {
-
+    
     /// A builder for [`ExportFormsOutput`](crate::output::ExportFormsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -355,17 +366,13 @@ pub mod export_forms_output {
         /// <p>Represents the configuration of the exported forms.</p>
         pub fn entities(mut self, input: crate::model::Form) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>Represents the configuration of the exported forms.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Form>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Form>>) -> Self {
+            self.entities = input; self
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,17 +381,20 @@ pub mod export_forms_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ExportFormsOutput`](crate::output::ExportFormsOutput).
         pub fn build(self) -> crate::output::ExportFormsOutput {
             crate::output::ExportFormsOutput {
-                entities: self.entities,
-                next_token: self.next_token,
+                entities: self.entities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportFormsOutput {
     /// Creates a new builder-style object to manufacture [`ExportFormsOutput`](crate::output::ExportFormsOutput).
@@ -396,7 +406,7 @@ impl ExportFormsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFormsOutput {
+pub struct ListFormsOutput  {
     /// <p>The list of forms for the Amplify app.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::FormSummary>>,
@@ -406,17 +416,17 @@ pub struct ListFormsOutput {
 }
 impl ListFormsOutput {
     /// <p>The list of forms for the Amplify app.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::FormSummary]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::FormSummary]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFormsOutput`](crate::output::ListFormsOutput).
 pub mod list_forms_output {
-
+    
     /// A builder for [`ListFormsOutput`](crate::output::ListFormsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -431,17 +441,13 @@ pub mod list_forms_output {
         /// <p>The list of forms for the Amplify app.</p>
         pub fn entities(mut self, input: crate::model::FormSummary) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>The list of forms for the Amplify app.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FormSummary>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::FormSummary>>) -> Self {
+            self.entities = input; self
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -450,17 +456,20 @@ pub mod list_forms_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFormsOutput`](crate::output::ListFormsOutput).
         pub fn build(self) -> crate::output::ListFormsOutput {
             crate::output::ListFormsOutput {
-                entities: self.entities,
-                next_token: self.next_token,
+                entities: self.entities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFormsOutput {
     /// Creates a new builder-style object to manufacture [`ListFormsOutput`](crate::output::ListFormsOutput).
@@ -472,20 +481,20 @@ impl ListFormsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFormOutput {
+pub struct CreateFormOutput  {
     /// <p>Describes the configuration of the new form.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Form>,
 }
 impl CreateFormOutput {
     /// <p>Describes the configuration of the new form.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::model::Form> {
+    pub fn entity(&self) -> std::option::Option<& crate::model::Form> {
         self.entity.as_ref()
     }
 }
 /// See [`CreateFormOutput`](crate::output::CreateFormOutput).
 pub mod create_form_output {
-
+    
     /// A builder for [`CreateFormOutput`](crate::output::CreateFormOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -499,16 +508,18 @@ pub mod create_form_output {
         }
         /// <p>Describes the configuration of the new form.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Form>) -> Self {
-            self.entity = input;
-            self
+            self.entity = input; self
         }
         /// Consumes the builder and constructs a [`CreateFormOutput`](crate::output::CreateFormOutput).
         pub fn build(self) -> crate::output::CreateFormOutput {
             crate::output::CreateFormOutput {
-                entity: self.entity,
+                entity: self.entity
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFormOutput {
     /// Creates a new builder-style object to manufacture [`CreateFormOutput`](crate::output::CreateFormOutput).
@@ -520,19 +531,24 @@ impl CreateFormOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFormOutput {}
+pub struct DeleteFormOutput  {
+}
 /// See [`DeleteFormOutput`](crate::output::DeleteFormOutput).
 pub mod delete_form_output {
-
+    
     /// A builder for [`DeleteFormOutput`](crate::output::DeleteFormOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFormOutput`](crate::output::DeleteFormOutput).
         pub fn build(self) -> crate::output::DeleteFormOutput {
-            crate::output::DeleteFormOutput {}
+            crate::output::DeleteFormOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFormOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFormOutput`](crate::output::DeleteFormOutput).
@@ -544,20 +560,20 @@ impl DeleteFormOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFormOutput {
+pub struct UpdateFormOutput  {
     /// <p>Describes the configuration of the updated form.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Form>,
 }
 impl UpdateFormOutput {
     /// <p>Describes the configuration of the updated form.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::model::Form> {
+    pub fn entity(&self) -> std::option::Option<& crate::model::Form> {
         self.entity.as_ref()
     }
 }
 /// See [`UpdateFormOutput`](crate::output::UpdateFormOutput).
 pub mod update_form_output {
-
+    
     /// A builder for [`UpdateFormOutput`](crate::output::UpdateFormOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -571,16 +587,18 @@ pub mod update_form_output {
         }
         /// <p>Describes the configuration of the updated form.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Form>) -> Self {
-            self.entity = input;
-            self
+            self.entity = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFormOutput`](crate::output::UpdateFormOutput).
         pub fn build(self) -> crate::output::UpdateFormOutput {
             crate::output::UpdateFormOutput {
-                entity: self.entity,
+                entity: self.entity
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFormOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFormOutput`](crate::output::UpdateFormOutput).
@@ -592,20 +610,20 @@ impl UpdateFormOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFormOutput {
+pub struct GetFormOutput  {
     /// <p>Represents the configuration settings for the form.</p>
     #[doc(hidden)]
     pub form: std::option::Option<crate::model::Form>,
 }
 impl GetFormOutput {
     /// <p>Represents the configuration settings for the form.</p>
-    pub fn form(&self) -> std::option::Option<&crate::model::Form> {
+    pub fn form(&self) -> std::option::Option<& crate::model::Form> {
         self.form.as_ref()
     }
 }
 /// See [`GetFormOutput`](crate::output::GetFormOutput).
 pub mod get_form_output {
-
+    
     /// A builder for [`GetFormOutput`](crate::output::GetFormOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -619,14 +637,18 @@ pub mod get_form_output {
         }
         /// <p>Represents the configuration settings for the form.</p>
         pub fn set_form(mut self, input: std::option::Option<crate::model::Form>) -> Self {
-            self.form = input;
-            self
+            self.form = input; self
         }
         /// Consumes the builder and constructs a [`GetFormOutput`](crate::output::GetFormOutput).
         pub fn build(self) -> crate::output::GetFormOutput {
-            crate::output::GetFormOutput { form: self.form }
+            crate::output::GetFormOutput {
+                form: self.form
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetFormOutput {
     /// Creates a new builder-style object to manufacture [`GetFormOutput`](crate::output::GetFormOutput).
@@ -638,7 +660,7 @@ impl GetFormOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportComponentsOutput {
+pub struct ExportComponentsOutput  {
     /// <p>Represents the configuration of the exported components.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Component>>,
@@ -648,17 +670,17 @@ pub struct ExportComponentsOutput {
 }
 impl ExportComponentsOutput {
     /// <p>Represents the configuration of the exported components.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Component]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Component]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
 pub mod export_components_output {
-
+    
     /// A builder for [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -673,17 +695,13 @@ pub mod export_components_output {
         /// <p>Represents the configuration of the exported components.</p>
         pub fn entities(mut self, input: crate::model::Component) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>Represents the configuration of the exported components.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Component>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Component>>) -> Self {
+            self.entities = input; self
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -692,17 +710,20 @@ pub mod export_components_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
         pub fn build(self) -> crate::output::ExportComponentsOutput {
             crate::output::ExportComponentsOutput {
-                entities: self.entities,
-                next_token: self.next_token,
+                entities: self.entities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
@@ -714,7 +735,7 @@ impl ExportComponentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentsOutput {
+pub struct ListComponentsOutput  {
     /// <p>The list of components for the Amplify app.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
@@ -724,17 +745,17 @@ pub struct ListComponentsOutput {
 }
 impl ListComponentsOutput {
     /// <p>The list of components for the Amplify app.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::ComponentSummary]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::ComponentSummary]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListComponentsOutput`](crate::output::ListComponentsOutput).
 pub mod list_components_output {
-
+    
     /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -749,17 +770,13 @@ pub mod list_components_output {
         /// <p>The list of components for the Amplify app.</p>
         pub fn entities(mut self, input: crate::model::ComponentSummary) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>The list of components for the Amplify app.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>) -> Self {
+            self.entities = input; self
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -768,17 +785,20 @@ pub mod list_components_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::output::ListComponentsOutput).
         pub fn build(self) -> crate::output::ListComponentsOutput {
             crate::output::ListComponentsOutput {
-                entities: self.entities,
-                next_token: self.next_token,
+                entities: self.entities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::output::ListComponentsOutput).
@@ -790,20 +810,20 @@ impl ListComponentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateComponentOutput {
+pub struct CreateComponentOutput  {
     /// <p>Describes the configuration of the new component.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Component>,
 }
 impl CreateComponentOutput {
     /// <p>Describes the configuration of the new component.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::model::Component> {
+    pub fn entity(&self) -> std::option::Option<& crate::model::Component> {
         self.entity.as_ref()
     }
 }
 /// See [`CreateComponentOutput`](crate::output::CreateComponentOutput).
 pub mod create_component_output {
-
+    
     /// A builder for [`CreateComponentOutput`](crate::output::CreateComponentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -817,16 +837,18 @@ pub mod create_component_output {
         }
         /// <p>Describes the configuration of the new component.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Component>) -> Self {
-            self.entity = input;
-            self
+            self.entity = input; self
         }
         /// Consumes the builder and constructs a [`CreateComponentOutput`](crate::output::CreateComponentOutput).
         pub fn build(self) -> crate::output::CreateComponentOutput {
             crate::output::CreateComponentOutput {
-                entity: self.entity,
+                entity: self.entity
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateComponentOutput {
     /// Creates a new builder-style object to manufacture [`CreateComponentOutput`](crate::output::CreateComponentOutput).
@@ -838,19 +860,24 @@ impl CreateComponentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteComponentOutput {}
+pub struct DeleteComponentOutput  {
+}
 /// See [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
 pub mod delete_component_output {
-
+    
     /// A builder for [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
         pub fn build(self) -> crate::output::DeleteComponentOutput {
-            crate::output::DeleteComponentOutput {}
+            crate::output::DeleteComponentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteComponentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
@@ -862,20 +889,20 @@ impl DeleteComponentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateComponentOutput {
+pub struct UpdateComponentOutput  {
     /// <p>Describes the configuration of the updated component.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Component>,
 }
 impl UpdateComponentOutput {
     /// <p>Describes the configuration of the updated component.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::model::Component> {
+    pub fn entity(&self) -> std::option::Option<& crate::model::Component> {
         self.entity.as_ref()
     }
 }
 /// See [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
 pub mod update_component_output {
-
+    
     /// A builder for [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -889,16 +916,18 @@ pub mod update_component_output {
         }
         /// <p>Describes the configuration of the updated component.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Component>) -> Self {
-            self.entity = input;
-            self
+            self.entity = input; self
         }
         /// Consumes the builder and constructs a [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
         pub fn build(self) -> crate::output::UpdateComponentOutput {
             crate::output::UpdateComponentOutput {
-                entity: self.entity,
+                entity: self.entity
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateComponentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
@@ -910,20 +939,20 @@ impl UpdateComponentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComponentOutput {
+pub struct GetComponentOutput  {
     /// <p>Represents the configuration settings for the component.</p>
     #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl GetComponentOutput {
     /// <p>Represents the configuration settings for the component.</p>
-    pub fn component(&self) -> std::option::Option<&crate::model::Component> {
+    pub fn component(&self) -> std::option::Option<& crate::model::Component> {
         self.component.as_ref()
     }
 }
 /// See [`GetComponentOutput`](crate::output::GetComponentOutput).
 pub mod get_component_output {
-
+    
     /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -936,20 +965,19 @@ pub mod get_component_output {
             self
         }
         /// <p>Represents the configuration settings for the component.</p>
-        pub fn set_component(
-            mut self,
-            input: std::option::Option<crate::model::Component>,
-        ) -> Self {
-            self.component = input;
-            self
+        pub fn set_component(mut self, input: std::option::Option<crate::model::Component>) -> Self {
+            self.component = input; self
         }
         /// Consumes the builder and constructs a [`GetComponentOutput`](crate::output::GetComponentOutput).
         pub fn build(self) -> crate::output::GetComponentOutput {
             crate::output::GetComponentOutput {
-                component: self.component,
+                component: self.component
+                ,
             }
         }
     }
+    
+    
 }
 impl GetComponentOutput {
     /// Creates a new builder-style object to manufacture [`GetComponentOutput`](crate::output::GetComponentOutput).
@@ -961,7 +989,7 @@ impl GetComponentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RefreshTokenOutput {
+pub struct RefreshTokenOutput  {
     /// <p>The access token.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -971,7 +999,7 @@ pub struct RefreshTokenOutput {
 }
 impl RefreshTokenOutput {
     /// <p>The access token.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The date and time when the new access token expires.</p>
@@ -979,7 +1007,7 @@ impl RefreshTokenOutput {
         self.expires_in
     }
 }
-impl std::fmt::Debug for RefreshTokenOutput {
+impl  std::fmt::Debug for RefreshTokenOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RefreshTokenOutput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -989,7 +1017,7 @@ impl std::fmt::Debug for RefreshTokenOutput {
 }
 /// See [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
 pub mod refresh_token_output {
-
+    
     /// A builder for [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1004,8 +1032,7 @@ pub mod refresh_token_output {
         }
         /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_token = input;
-            self
+            self.access_token = input; self
         }
         /// <p>The date and time when the new access token expires.</p>
         pub fn expires_in(mut self, input: i32) -> Self {
@@ -1014,14 +1041,15 @@ pub mod refresh_token_output {
         }
         /// <p>The date and time when the new access token expires.</p>
         pub fn set_expires_in(mut self, input: std::option::Option<i32>) -> Self {
-            self.expires_in = input;
-            self
+            self.expires_in = input; self
         }
         /// Consumes the builder and constructs a [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
         pub fn build(self) -> crate::output::RefreshTokenOutput {
             crate::output::RefreshTokenOutput {
-                access_token: self.access_token,
-                expires_in: self.expires_in,
+                access_token: self.access_token
+                ,
+                expires_in: self.expires_in
+                ,
             }
         }
     }
@@ -1033,6 +1061,8 @@ pub mod refresh_token_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RefreshTokenOutput {
     /// Creates a new builder-style object to manufacture [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
@@ -1044,19 +1074,24 @@ impl RefreshTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetadataFlagOutput {}
+pub struct PutMetadataFlagOutput  {
+}
 /// See [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
 pub mod put_metadata_flag_output {
-
+    
     /// A builder for [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
         pub fn build(self) -> crate::output::PutMetadataFlagOutput {
-            crate::output::PutMetadataFlagOutput {}
+            crate::output::PutMetadataFlagOutput {
+            }
         }
     }
+    
+    
 }
 impl PutMetadataFlagOutput {
     /// Creates a new builder-style object to manufacture [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
@@ -1068,30 +1103,24 @@ impl PutMetadataFlagOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetadataOutput {
+pub struct GetMetadataOutput  {
     /// <p>Represents the configuration settings for the features metadata.</p>
     #[doc(hidden)]
-    pub features:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub features: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetMetadataOutput {
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn features(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn features(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.features.as_ref()
     }
 }
 /// See [`GetMetadataOutput`](crate::output::GetMetadataOutput).
 pub mod get_metadata_output {
-
+    
     /// A builder for [`GetMetadataOutput`](crate::output::GetMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) features: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) features: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `features`.
@@ -1099,33 +1128,26 @@ pub mod get_metadata_output {
         /// To override the contents of this collection use [`set_features`](Self::set_features).
         ///
         /// <p>Represents the configuration settings for the features metadata.</p>
-        pub fn features(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn features(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.features.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.features = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.features = Some(hash_map);
+                            self
         }
         /// <p>Represents the configuration settings for the features metadata.</p>
-        pub fn set_features(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.features = input;
-            self
+        pub fn set_features(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.features = input; self
         }
         /// Consumes the builder and constructs a [`GetMetadataOutput`](crate::output::GetMetadataOutput).
         pub fn build(self) -> crate::output::GetMetadataOutput {
             crate::output::GetMetadataOutput {
-                features: self.features,
+                features: self.features
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetMetadataOutput`](crate::output::GetMetadataOutput).
@@ -1137,7 +1159,7 @@ impl GetMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExchangeCodeForTokenOutput {
+pub struct ExchangeCodeForTokenOutput  {
     /// <p>The access token.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -1150,7 +1172,7 @@ pub struct ExchangeCodeForTokenOutput {
 }
 impl ExchangeCodeForTokenOutput {
     /// <p>The access token.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The date and time when the new access token expires.</p>
@@ -1158,11 +1180,11 @@ impl ExchangeCodeForTokenOutput {
         self.expires_in
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn refresh_token(&self) -> std::option::Option<&str> {
+    pub fn refresh_token(&self) -> std::option::Option<& str> {
         self.refresh_token.as_deref()
     }
 }
-impl std::fmt::Debug for ExchangeCodeForTokenOutput {
+impl  std::fmt::Debug for ExchangeCodeForTokenOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExchangeCodeForTokenOutput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -1173,7 +1195,7 @@ impl std::fmt::Debug for ExchangeCodeForTokenOutput {
 }
 /// See [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
 pub mod exchange_code_for_token_output {
-
+    
     /// A builder for [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1189,8 +1211,7 @@ pub mod exchange_code_for_token_output {
         }
         /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_token = input;
-            self
+            self.access_token = input; self
         }
         /// <p>The date and time when the new access token expires.</p>
         pub fn expires_in(mut self, input: i32) -> Self {
@@ -1199,8 +1220,7 @@ pub mod exchange_code_for_token_output {
         }
         /// <p>The date and time when the new access token expires.</p>
         pub fn set_expires_in(mut self, input: std::option::Option<i32>) -> Self {
-            self.expires_in = input;
-            self
+            self.expires_in = input; self
         }
         /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
         pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1208,19 +1228,18 @@ pub mod exchange_code_for_token_output {
             self
         }
         /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-        pub fn set_refresh_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.refresh_token = input;
-            self
+        pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.refresh_token = input; self
         }
         /// Consumes the builder and constructs a [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
         pub fn build(self) -> crate::output::ExchangeCodeForTokenOutput {
             crate::output::ExchangeCodeForTokenOutput {
-                access_token: self.access_token,
-                expires_in: self.expires_in,
-                refresh_token: self.refresh_token,
+                access_token: self.access_token
+                ,
+                expires_in: self.expires_in
+                ,
+                refresh_token: self.refresh_token
+                ,
             }
         }
     }
@@ -1233,6 +1252,8 @@ pub mod exchange_code_for_token_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ExchangeCodeForTokenOutput {
     /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
@@ -1240,3 +1261,4 @@ impl ExchangeCodeForTokenOutput {
         crate::output::exchange_code_for_token_output::Builder::default()
     }
 }
+

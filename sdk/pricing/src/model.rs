@@ -3,13 +3,13 @@
 /// <p>The constraints that you want all returned products to match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
-    /// <p>The type of filter that you want to use.</p>
+pub struct Filter  {
+    /// <p>The type of filter that you want to use.</p> 
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FilterType>,
-    /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
-    /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
+    /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> 
+    /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> 
     /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
     #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct Filter {
     pub value: std::option::Option<std::string::String>,
 }
 impl Filter {
-    /// <p>The type of filter that you want to use.</p>
+    /// <p>The type of filter that you want to use.</p> 
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FilterType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FilterType> {
         self.r#type.as_ref()
     }
-    /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
-    /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
+    /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> 
+    /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> 
     /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -45,31 +45,29 @@ pub mod filter {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of filter that you want to use.</p>
+        /// <p>The type of filter that you want to use.</p> 
         /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
         pub fn r#type(mut self, input: crate::model::FilterType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of filter that you want to use.</p>
+        /// <p>The type of filter that you want to use.</p> 
         /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FilterType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
-        /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
+        /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> 
+        /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> 
         /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
             self.field = Some(input.into());
             self
         }
-        /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
-        /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
+        /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> 
+        /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> 
         /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// <p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,18 +76,22 @@ pub mod filter {
         }
         /// <p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                r#type: self.r#type,
-                field: self.field,
-                value: self.value,
+                r#type: self.r#type
+                ,
+                field: self.field
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -104,9 +106,9 @@ impl Filter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filtertype = unimplemented!();
 /// match filtertype {
@@ -127,54 +129,48 @@ impl Filter {
 /// Specifically, when `filtertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FilterType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FilterType {
     #[allow(missing_docs)] // documentation missing in model
     TermMatch,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterType {
     fn from(s: &str) -> Self {
         match s {
             "TERM_MATCH" => FilterType::TermMatch,
-            other => FilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FilterType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FilterType::from(s))
+                }
+            }
 impl FilterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterType::TermMatch => "TERM_MATCH",
-            FilterType::Unknown(value) => value.as_str(),
+            FilterType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TERM_MATCH"]
+        &[
+            "TERM_MATCH"
+        ]
     }
 }
 impl AsRef<str> for FilterType {
@@ -186,20 +182,20 @@ impl AsRef<str> for FilterType {
 /// <p>The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeValue {
+pub struct AttributeValue  {
     /// <p>The specific value of an <code>attributeName</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AttributeValue {
     /// <p>The specific value of an <code>attributeName</code>.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`AttributeValue`](crate::model::AttributeValue).
 pub mod attribute_value {
-
+    
     /// A builder for [`AttributeValue`](crate::model::AttributeValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -213,14 +209,18 @@ pub mod attribute_value {
         }
         /// <p>The specific value of an <code>attributeName</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AttributeValue`](crate::model::AttributeValue).
         pub fn build(self) -> crate::model::AttributeValue {
-            crate::model::AttributeValue { value: self.value }
+            crate::model::AttributeValue {
+                value: self.value
+                ,
+            }
         }
     }
+    
+    
 }
 impl AttributeValue {
     /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
@@ -232,7 +232,7 @@ impl AttributeValue {
 /// <p>The metadata for a service, such as the service code and available attribute names.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Service {
+pub struct Service  {
     /// <p>The code for the Amazon Web Services service.</p>
     #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
@@ -242,17 +242,17 @@ pub struct Service {
 }
 impl Service {
     /// <p>The code for the Amazon Web Services service.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The attributes that are available for this service.</p>
-    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attribute_names(&self) -> std::option::Option<& [std::string::String]> {
         self.attribute_names.as_deref()
     }
 }
 /// See [`Service`](crate::model::Service).
 pub mod service {
-
+    
     /// A builder for [`Service`](crate::model::Service).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -267,8 +267,7 @@ pub mod service {
         }
         /// <p>The code for the Amazon Web Services service.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_code = input;
-            self
+            self.service_code = input; self
         }
         /// Appends an item to `attribute_names`.
         ///
@@ -277,26 +276,26 @@ pub mod service {
         /// <p>The attributes that are available for this service.</p>
         pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(input.into());
-            self.attribute_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.attribute_names = Some(v);
+                            self
         }
         /// <p>The attributes that are available for this service.</p>
-        pub fn set_attribute_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.attribute_names = input;
-            self
+        pub fn set_attribute_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.attribute_names = input; self
         }
         /// Consumes the builder and constructs a [`Service`](crate::model::Service).
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
-                service_code: self.service_code,
-                attribute_names: self.attribute_names,
+                service_code: self.service_code
+                ,
+                attribute_names: self.attribute_names
+                ,
             }
         }
     }
+    
+    
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
@@ -304,3 +303,4 @@ impl Service {
         crate::model::service::Builder::default()
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rootdevicetype = unimplemented!();
 /// match rootdevicetype {
@@ -30,58 +30,52 @@
 /// Specifically, when `rootdevicetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RootDeviceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RootDeviceType {
     #[allow(missing_docs)] // documentation missing in model
     Ebs,
     #[allow(missing_docs)] // documentation missing in model
     InstanceStore,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RootDeviceType {
     fn from(s: &str) -> Self {
         match s {
             "ebs" => RootDeviceType::Ebs,
             "instance-store" => RootDeviceType::InstanceStore,
-            other => RootDeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RootDeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RootDeviceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RootDeviceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RootDeviceType::from(s))
+                }
+            }
 impl RootDeviceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RootDeviceType::Ebs => "ebs",
             RootDeviceType::InstanceStore => "instance-store",
-            RootDeviceType::Unknown(value) => value.as_str(),
+            RootDeviceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ebs", "instance-store"]
+        &[
+            "ebs", "instance-store"
+        ]
     }
 }
 impl AsRef<str> for RootDeviceType {
@@ -93,30 +87,30 @@ impl AsRef<str> for RootDeviceType {
 /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// <p>The repository type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SourceType>,
     /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
-    /// <p>This parameter depends on the repository type.</p>
-    /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+    /// <p>This parameter depends on the repository type.</p> 
+    /// <ul> 
+    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li> 
+    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
-    /// <p>When included in a request, the parameter depends on the repository type.</p>
-    /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
-    /// </ul>
-    /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
+    /// <p>When included in a request, the parameter depends on the repository type.</p> 
+    /// <ul> 
+    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li> 
+    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li> 
+    /// </ul> 
+    /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p> 
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
     #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
-    /// <p>In requests, the repository's SSH key.</p>
+    /// <p>In requests, the repository's SSH key.</p> 
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
     #[doc(hidden)]
     pub ssh_key: std::option::Option<std::string::String>,
@@ -126,44 +120,44 @@ pub struct Source {
 }
 impl Source {
     /// <p>The repository type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SourceType> {
         self.r#type.as_ref()
     }
     /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
-    /// <p>This parameter depends on the repository type.</p>
-    /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+    /// <p>This parameter depends on the repository type.</p> 
+    /// <ul> 
+    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li> 
+    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li> 
     /// </ul>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
-    /// <p>When included in a request, the parameter depends on the repository type.</p>
-    /// <ul>
-    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
-    /// </ul>
-    /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
+    /// <p>When included in a request, the parameter depends on the repository type.</p> 
+    /// <ul> 
+    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li> 
+    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li> 
+    /// </ul> 
+    /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p> 
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
-    /// <p>In requests, the repository's SSH key.</p>
+    /// <p>In requests, the repository's SSH key.</p> 
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    pub fn ssh_key(&self) -> std::option::Option<&str> {
+    pub fn ssh_key(&self) -> std::option::Option<& str> {
         self.ssh_key.as_deref()
     }
     /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
 }
 /// See [`Source`](crate::model::Source).
 pub mod source {
-
+    
     /// A builder for [`Source`](crate::model::Source).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -182,8 +176,7 @@ pub mod source {
         }
         /// <p>The repository type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -192,60 +185,56 @@ pub mod source {
         }
         /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
-        /// <p>This parameter depends on the repository type.</p>
-        /// <ul>
-        /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-        /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+        /// <p>This parameter depends on the repository type.</p> 
+        /// <ul> 
+        /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li> 
+        /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li> 
         /// </ul>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>This parameter depends on the repository type.</p>
-        /// <ul>
-        /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
-        /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
+        /// <p>This parameter depends on the repository type.</p> 
+        /// <ul> 
+        /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li> 
+        /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li> 
         /// </ul>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
-        /// <p>When included in a request, the parameter depends on the repository type.</p>
-        /// <ul>
-        /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-        /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
-        /// </ul>
-        /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
+        /// <p>When included in a request, the parameter depends on the repository type.</p> 
+        /// <ul> 
+        /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li> 
+        /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li> 
+        /// </ul> 
+        /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p> 
         /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
         }
-        /// <p>When included in a request, the parameter depends on the repository type.</p>
-        /// <ul>
-        /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
-        /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
-        /// </ul>
-        /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
+        /// <p>When included in a request, the parameter depends on the repository type.</p> 
+        /// <ul> 
+        /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li> 
+        /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li> 
+        /// </ul> 
+        /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p> 
         /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
-        /// <p>In requests, the repository's SSH key.</p>
+        /// <p>In requests, the repository's SSH key.</p> 
         /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
         pub fn ssh_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_key = Some(input.into());
             self
         }
-        /// <p>In requests, the repository's SSH key.</p>
+        /// <p>In requests, the repository's SSH key.</p> 
         /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
         pub fn set_ssh_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssh_key = input;
-            self
+            self.ssh_key = input; self
         }
         /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
         pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -254,21 +243,28 @@ pub mod source {
         }
         /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
         pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// Consumes the builder and constructs a [`Source`](crate::model::Source).
         pub fn build(self) -> crate::model::Source {
             crate::model::Source {
-                r#type: self.r#type,
-                url: self.url,
-                username: self.username,
-                password: self.password,
-                ssh_key: self.ssh_key,
-                revision: self.revision,
+                r#type: self.r#type
+                ,
+                url: self.url
+                ,
+                username: self.username
+                ,
+                password: self.password
+                ,
+                ssh_key: self.ssh_key
+                ,
+                revision: self.revision
+                ,
             }
         }
     }
+    
+    
 }
 impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
@@ -283,9 +279,9 @@ impl Source {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourcetype = unimplemented!();
 /// match sourcetype {
@@ -309,22 +305,14 @@ impl Source {
 /// Specifically, when `sourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     Archive,
@@ -335,7 +323,7 @@ pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     Svn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
@@ -344,17 +332,17 @@ impl std::convert::From<&str> for SourceType {
             "git" => SourceType::Git,
             "s3" => SourceType::S3,
             "svn" => SourceType::Svn,
-            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SourceType::from(s))
+                }
+            }
 impl SourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -363,12 +351,14 @@ impl SourceType {
             SourceType::Git => "git",
             SourceType::S3 => "s3",
             SourceType::Svn => "svn",
-            SourceType::Unknown(value) => value.as_str(),
+            SourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["archive", "git", "s3", "svn"]
+        &[
+            "archive", "git", "s3", "svn"
+        ]
     }
 }
 impl AsRef<str> for SourceType {
@@ -380,7 +370,7 @@ impl AsRef<str> for SourceType {
 /// <p>Describes the Chef configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChefConfiguration {
+pub struct ChefConfiguration  {
     /// <p>Whether to enable Berkshelf.</p>
     #[doc(hidden)]
     pub manage_berkshelf: std::option::Option<bool>,
@@ -394,13 +384,13 @@ impl ChefConfiguration {
         self.manage_berkshelf
     }
     /// <p>The Berkshelf version.</p>
-    pub fn berkshelf_version(&self) -> std::option::Option<&str> {
+    pub fn berkshelf_version(&self) -> std::option::Option<& str> {
         self.berkshelf_version.as_deref()
     }
 }
 /// See [`ChefConfiguration`](crate::model::ChefConfiguration).
 pub mod chef_configuration {
-
+    
     /// A builder for [`ChefConfiguration`](crate::model::ChefConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -415,8 +405,7 @@ pub mod chef_configuration {
         }
         /// <p>Whether to enable Berkshelf.</p>
         pub fn set_manage_berkshelf(mut self, input: std::option::Option<bool>) -> Self {
-            self.manage_berkshelf = input;
-            self
+            self.manage_berkshelf = input; self
         }
         /// <p>The Berkshelf version.</p>
         pub fn berkshelf_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -424,21 +413,21 @@ pub mod chef_configuration {
             self
         }
         /// <p>The Berkshelf version.</p>
-        pub fn set_berkshelf_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.berkshelf_version = input;
-            self
+        pub fn set_berkshelf_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.berkshelf_version = input; self
         }
         /// Consumes the builder and constructs a [`ChefConfiguration`](crate::model::ChefConfiguration).
         pub fn build(self) -> crate::model::ChefConfiguration {
             crate::model::ChefConfiguration {
-                manage_berkshelf: self.manage_berkshelf,
-                berkshelf_version: self.berkshelf_version,
+                manage_berkshelf: self.manage_berkshelf
+                ,
+                berkshelf_version: self.berkshelf_version
+                ,
             }
         }
     }
+    
+    
 }
 impl ChefConfiguration {
     /// Creates a new builder-style object to manufacture [`ChefConfiguration`](crate::model::ChefConfiguration).
@@ -450,7 +439,7 @@ impl ChefConfiguration {
 /// <p>Describes the configuration manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StackConfigurationManager {
+pub struct StackConfigurationManager  {
     /// <p>The name. This parameter must be set to "Chef".</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -460,17 +449,17 @@ pub struct StackConfigurationManager {
 }
 impl StackConfigurationManager {
     /// <p>The name. This parameter must be set to "Chef".</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`StackConfigurationManager`](crate::model::StackConfigurationManager).
 pub mod stack_configuration_manager {
-
+    
     /// A builder for [`StackConfigurationManager`](crate::model::StackConfigurationManager).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -485,8 +474,7 @@ pub mod stack_configuration_manager {
         }
         /// <p>The name. This parameter must be set to "Chef".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -495,17 +483,20 @@ pub mod stack_configuration_manager {
         }
         /// <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`StackConfigurationManager`](crate::model::StackConfigurationManager).
         pub fn build(self) -> crate::model::StackConfigurationManager {
             crate::model::StackConfigurationManager {
-                name: self.name,
-                version: self.version,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl StackConfigurationManager {
     /// Creates a new builder-style object to manufacture [`StackConfigurationManager`](crate::model::StackConfigurationManager).
@@ -520,9 +511,9 @@ impl StackConfigurationManager {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stackattributeskeys = unimplemented!();
 /// match stackattributeskeys {
@@ -543,56 +534,48 @@ impl StackConfigurationManager {
 /// Specifically, when `stackattributeskeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StackAttributesKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StackAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
     Color,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StackAttributesKeys {
     fn from(s: &str) -> Self {
         match s {
             "Color" => StackAttributesKeys::Color,
-            other => {
-                StackAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StackAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StackAttributesKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StackAttributesKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StackAttributesKeys::from(s))
+                }
+            }
 impl StackAttributesKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StackAttributesKeys::Color => "Color",
-            StackAttributesKeys::Unknown(value) => value.as_str(),
+            StackAttributesKeys::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Color"]
+        &[
+            "Color"
+        ]
     }
 }
 impl AsRef<str> for StackAttributesKeys {
@@ -604,20 +587,20 @@ impl AsRef<str> for StackAttributesKeys {
 /// <p>Specifies the lifecycle event configuration</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleEventConfiguration {
+pub struct LifecycleEventConfiguration  {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     #[doc(hidden)]
     pub shutdown: std::option::Option<crate::model::ShutdownEventConfiguration>,
 }
 impl LifecycleEventConfiguration {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    pub fn shutdown(&self) -> std::option::Option<&crate::model::ShutdownEventConfiguration> {
+    pub fn shutdown(&self) -> std::option::Option<& crate::model::ShutdownEventConfiguration> {
         self.shutdown.as_ref()
     }
 }
 /// See [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration).
 pub mod lifecycle_event_configuration {
-
+    
     /// A builder for [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -630,20 +613,19 @@ pub mod lifecycle_event_configuration {
             self
         }
         /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-        pub fn set_shutdown(
-            mut self,
-            input: std::option::Option<crate::model::ShutdownEventConfiguration>,
-        ) -> Self {
-            self.shutdown = input;
-            self
+        pub fn set_shutdown(mut self, input: std::option::Option<crate::model::ShutdownEventConfiguration>) -> Self {
+            self.shutdown = input; self
         }
         /// Consumes the builder and constructs a [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration).
         pub fn build(self) -> crate::model::LifecycleEventConfiguration {
             crate::model::LifecycleEventConfiguration {
-                shutdown: self.shutdown,
+                shutdown: self.shutdown
+                ,
             }
         }
     }
+    
+    
 }
 impl LifecycleEventConfiguration {
     /// Creates a new builder-style object to manufacture [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration).
@@ -655,7 +637,7 @@ impl LifecycleEventConfiguration {
 /// <p>The Shutdown event configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShutdownEventConfiguration {
+pub struct ShutdownEventConfiguration  {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     #[doc(hidden)]
     pub execution_timeout: std::option::Option<i32>,
@@ -675,7 +657,7 @@ impl ShutdownEventConfiguration {
 }
 /// See [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration).
 pub mod shutdown_event_configuration {
-
+    
     /// A builder for [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -690,8 +672,7 @@ pub mod shutdown_event_configuration {
         }
         /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
         pub fn set_execution_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.execution_timeout = input;
-            self
+            self.execution_timeout = input; self
         }
         /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
         pub fn delay_until_elb_connections_drained(mut self, input: bool) -> Self {
@@ -699,21 +680,21 @@ pub mod shutdown_event_configuration {
             self
         }
         /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
-        pub fn set_delay_until_elb_connections_drained(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.delay_until_elb_connections_drained = input;
-            self
+        pub fn set_delay_until_elb_connections_drained(mut self, input: std::option::Option<bool>) -> Self {
+            self.delay_until_elb_connections_drained = input; self
         }
         /// Consumes the builder and constructs a [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration).
         pub fn build(self) -> crate::model::ShutdownEventConfiguration {
             crate::model::ShutdownEventConfiguration {
-                execution_timeout: self.execution_timeout,
-                delay_until_elb_connections_drained: self.delay_until_elb_connections_drained,
+                execution_timeout: self.execution_timeout
+                ,
+                delay_until_elb_connections_drained: self.delay_until_elb_connections_drained
+                ,
             }
         }
     }
+    
+    
 }
 impl ShutdownEventConfiguration {
     /// Creates a new builder-style object to manufacture [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration).
@@ -722,11 +703,11 @@ impl ShutdownEventConfiguration {
     }
 }
 
-/// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p>
+/// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p> 
 /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recipes {
+pub struct Recipes  {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
     #[doc(hidden)]
     pub setup: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -745,29 +726,29 @@ pub struct Recipes {
 }
 impl Recipes {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-    pub fn setup(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn setup(&self) -> std::option::Option<& [std::string::String]> {
         self.setup.as_deref()
     }
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-    pub fn configure(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn configure(&self) -> std::option::Option<& [std::string::String]> {
         self.configure.as_deref()
     }
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-    pub fn deploy(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn deploy(&self) -> std::option::Option<& [std::string::String]> {
         self.deploy.as_deref()
     }
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-    pub fn undeploy(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn undeploy(&self) -> std::option::Option<& [std::string::String]> {
         self.undeploy.as_deref()
     }
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-    pub fn shutdown(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn shutdown(&self) -> std::option::Option<& [std::string::String]> {
         self.shutdown.as_deref()
     }
 }
 /// See [`Recipes`](crate::model::Recipes).
 pub mod recipes {
-
+    
     /// A builder for [`Recipes`](crate::model::Recipes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -785,17 +766,13 @@ pub mod recipes {
         /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
         pub fn setup(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.setup.unwrap_or_default();
-            v.push(input.into());
-            self.setup = Some(v);
-            self
+                            v.push(input.into());
+                            self.setup = Some(v);
+                            self
         }
         /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-        pub fn set_setup(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.setup = input;
-            self
+        pub fn set_setup(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.setup = input; self
         }
         /// Appends an item to `configure`.
         ///
@@ -804,17 +781,13 @@ pub mod recipes {
         /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
         pub fn configure(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.configure.unwrap_or_default();
-            v.push(input.into());
-            self.configure = Some(v);
-            self
+                            v.push(input.into());
+                            self.configure = Some(v);
+                            self
         }
         /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-        pub fn set_configure(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.configure = input;
-            self
+        pub fn set_configure(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.configure = input; self
         }
         /// Appends an item to `deploy`.
         ///
@@ -823,17 +796,13 @@ pub mod recipes {
         /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
         pub fn deploy(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deploy.unwrap_or_default();
-            v.push(input.into());
-            self.deploy = Some(v);
-            self
+                            v.push(input.into());
+                            self.deploy = Some(v);
+                            self
         }
         /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-        pub fn set_deploy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.deploy = input;
-            self
+        pub fn set_deploy(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.deploy = input; self
         }
         /// Appends an item to `undeploy`.
         ///
@@ -842,17 +811,13 @@ pub mod recipes {
         /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
         pub fn undeploy(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.undeploy.unwrap_or_default();
-            v.push(input.into());
-            self.undeploy = Some(v);
-            self
+                            v.push(input.into());
+                            self.undeploy = Some(v);
+                            self
         }
         /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-        pub fn set_undeploy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.undeploy = input;
-            self
+        pub fn set_undeploy(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.undeploy = input; self
         }
         /// Appends an item to `shutdown`.
         ///
@@ -861,29 +826,32 @@ pub mod recipes {
         /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
         pub fn shutdown(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.shutdown.unwrap_or_default();
-            v.push(input.into());
-            self.shutdown = Some(v);
-            self
+                            v.push(input.into());
+                            self.shutdown = Some(v);
+                            self
         }
         /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-        pub fn set_shutdown(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.shutdown = input;
-            self
+        pub fn set_shutdown(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.shutdown = input; self
         }
         /// Consumes the builder and constructs a [`Recipes`](crate::model::Recipes).
         pub fn build(self) -> crate::model::Recipes {
             crate::model::Recipes {
-                setup: self.setup,
-                configure: self.configure,
-                deploy: self.deploy,
-                undeploy: self.undeploy,
-                shutdown: self.shutdown,
+                setup: self.setup
+                ,
+                configure: self.configure
+                ,
+                deploy: self.deploy
+                ,
+                undeploy: self.undeploy
+                ,
+                shutdown: self.shutdown
+                ,
             }
         }
     }
+    
+    
 }
 impl Recipes {
     /// Creates a new builder-style object to manufacture [`Recipes`](crate::model::Recipes).
@@ -895,7 +863,7 @@ impl Recipes {
 /// <p>Describes an Amazon EBS volume configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeConfiguration {
+pub struct VolumeConfiguration  {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
     #[doc(hidden)]
     pub mount_point: std::option::Option<std::string::String>,
@@ -908,13 +876,13 @@ pub struct VolumeConfiguration {
     /// <p>The volume size.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i32>,
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
-    /// <ul>
-    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
-    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li> 
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
@@ -927,7 +895,7 @@ pub struct VolumeConfiguration {
 }
 impl VolumeConfiguration {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
-    pub fn mount_point(&self) -> std::option::Option<&str> {
+    pub fn mount_point(&self) -> std::option::Option<& str> {
         self.mount_point.as_deref()
     }
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
@@ -942,15 +910,15 @@ impl VolumeConfiguration {
     pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
-    /// <ul>
-    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
-    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li> 
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
     /// </ul>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
@@ -964,7 +932,7 @@ impl VolumeConfiguration {
 }
 /// See [`VolumeConfiguration`](crate::model::VolumeConfiguration).
 pub mod volume_configuration {
-
+    
     /// A builder for [`VolumeConfiguration`](crate::model::VolumeConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -984,8 +952,7 @@ pub mod volume_configuration {
         }
         /// <p>The volume mount point. For example "/dev/sdh".</p>
         pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mount_point = input;
-            self
+            self.mount_point = input; self
         }
         /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
         pub fn raid_level(mut self, input: i32) -> Self {
@@ -994,8 +961,7 @@ pub mod volume_configuration {
         }
         /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
         pub fn set_raid_level(mut self, input: std::option::Option<i32>) -> Self {
-            self.raid_level = input;
-            self
+            self.raid_level = input; self
         }
         /// <p>The number of disks in the volume.</p>
         pub fn number_of_disks(mut self, input: i32) -> Self {
@@ -1004,8 +970,7 @@ pub mod volume_configuration {
         }
         /// <p>The number of disks in the volume.</p>
         pub fn set_number_of_disks(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_disks = input;
-            self
+            self.number_of_disks = input; self
         }
         /// <p>The volume size.</p>
         pub fn size(mut self, input: i32) -> Self {
@@ -1014,32 +979,30 @@ pub mod volume_configuration {
         }
         /// <p>The volume size.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
-        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
-        /// <ul>
-        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
-        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li> 
+        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
         /// </ul>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_type = Some(input.into());
             self
         }
-        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
-        /// <ul>
-        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
-        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li> 
+        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
         /// </ul>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_type = input;
-            self
+            self.volume_type = input; self
         }
         /// <p>For PIOPS volumes, the IOPS per disk.</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -1048,8 +1011,7 @@ pub mod volume_configuration {
         }
         /// <p>For PIOPS volumes, the IOPS per disk.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-            self.iops = input;
-            self
+            self.iops = input; self
         }
         /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -1058,22 +1020,30 @@ pub mod volume_configuration {
         }
         /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::model::VolumeConfiguration).
         pub fn build(self) -> crate::model::VolumeConfiguration {
             crate::model::VolumeConfiguration {
-                mount_point: self.mount_point,
-                raid_level: self.raid_level,
-                number_of_disks: self.number_of_disks,
-                size: self.size,
-                volume_type: self.volume_type,
-                iops: self.iops,
-                encrypted: self.encrypted,
+                mount_point: self.mount_point
+                ,
+                raid_level: self.raid_level
+                ,
+                number_of_disks: self.number_of_disks
+                ,
+                size: self.size
+                ,
+                volume_type: self.volume_type
+                ,
+                iops: self.iops
+                ,
+                encrypted: self.encrypted
+                ,
             }
         }
     }
+    
+    
 }
 impl VolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::model::VolumeConfiguration).
@@ -1085,7 +1055,7 @@ impl VolumeConfiguration {
 /// <p>Describes the Amazon CloudWatch logs configuration for a layer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsConfiguration {
+pub struct CloudWatchLogsConfiguration  {
     /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -1099,19 +1069,18 @@ impl CloudWatchLogsConfiguration {
         self.enabled
     }
     /// <p>A list of configuration options for CloudWatch Logs.</p>
-    pub fn log_streams(&self) -> std::option::Option<&[crate::model::CloudWatchLogsLogStream]> {
+    pub fn log_streams(&self) -> std::option::Option<& [crate::model::CloudWatchLogsLogStream]> {
         self.log_streams.as_deref()
     }
 }
 /// See [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration).
 pub mod cloud_watch_logs_configuration {
-
+    
     /// A builder for [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) log_streams:
-            std::option::Option<std::vec::Vec<crate::model::CloudWatchLogsLogStream>>,
+        pub(crate) log_streams: std::option::Option<std::vec::Vec<crate::model::CloudWatchLogsLogStream>>,
     }
     impl Builder {
         /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
@@ -1121,8 +1090,7 @@ pub mod cloud_watch_logs_configuration {
         }
         /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Appends an item to `log_streams`.
         ///
@@ -1131,26 +1099,26 @@ pub mod cloud_watch_logs_configuration {
         /// <p>A list of configuration options for CloudWatch Logs.</p>
         pub fn log_streams(mut self, input: crate::model::CloudWatchLogsLogStream) -> Self {
             let mut v = self.log_streams.unwrap_or_default();
-            v.push(input);
-            self.log_streams = Some(v);
-            self
+                            v.push(input);
+                            self.log_streams = Some(v);
+                            self
         }
         /// <p>A list of configuration options for CloudWatch Logs.</p>
-        pub fn set_log_streams(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLogsLogStream>>,
-        ) -> Self {
-            self.log_streams = input;
-            self
+        pub fn set_log_streams(mut self, input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLogsLogStream>>) -> Self {
+            self.log_streams = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration).
         pub fn build(self) -> crate::model::CloudWatchLogsConfiguration {
             crate::model::CloudWatchLogsConfiguration {
-                enabled: self.enabled,
-                log_streams: self.log_streams,
+                enabled: self.enabled
+                ,
+                log_streams: self.log_streams
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogsConfiguration {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration).
@@ -1162,7 +1130,7 @@ impl CloudWatchLogsConfiguration {
 /// <p>Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsLogStream {
+pub struct CloudWatchLogsLogStream  {
     /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
@@ -1172,8 +1140,8 @@ pub struct CloudWatchLogsLogStream {
     /// <p>Specifies the time zone of log event time stamps.</p>
     #[doc(hidden)]
     pub time_zone: std::option::Option<crate::model::CloudWatchLogsTimeZone>,
-    /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
-    /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+    /// <p>Specifies log files that you want to push to CloudWatch Logs.</p> 
+    /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p> 
     /// <p>Zipped files are not supported.</p>
     #[doc(hidden)]
     pub file: std::option::Option<std::string::String>,
@@ -1201,39 +1169,37 @@ pub struct CloudWatchLogsLogStream {
 }
 impl CloudWatchLogsLogStream {
     /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
-    pub fn datetime_format(&self) -> std::option::Option<&str> {
+    pub fn datetime_format(&self) -> std::option::Option<& str> {
         self.datetime_format.as_deref()
     }
     /// <p>Specifies the time zone of log event time stamps.</p>
-    pub fn time_zone(&self) -> std::option::Option<&crate::model::CloudWatchLogsTimeZone> {
+    pub fn time_zone(&self) -> std::option::Option<& crate::model::CloudWatchLogsTimeZone> {
         self.time_zone.as_ref()
     }
-    /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
-    /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+    /// <p>Specifies log files that you want to push to CloudWatch Logs.</p> 
+    /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p> 
     /// <p>Zipped files are not supported.</p>
-    pub fn file(&self) -> std::option::Option<&str> {
+    pub fn file(&self) -> std::option::Option<& str> {
         self.file.as_deref()
     }
     /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
-    pub fn file_fingerprint_lines(&self) -> std::option::Option<&str> {
+    pub fn file_fingerprint_lines(&self) -> std::option::Option<& str> {
         self.file_fingerprint_lines.as_deref()
     }
     /// <p>Specifies the pattern for identifying the start of a log message.</p>
-    pub fn multi_line_start_pattern(&self) -> std::option::Option<&str> {
+    pub fn multi_line_start_pattern(&self) -> std::option::Option<& str> {
         self.multi_line_start_pattern.as_deref()
     }
     /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
-    pub fn initial_position(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsInitialPosition> {
+    pub fn initial_position(&self) -> std::option::Option<& crate::model::CloudWatchLogsInitialPosition> {
         self.initial_position.as_ref()
     }
     /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
-    pub fn encoding(&self) -> std::option::Option<&crate::model::CloudWatchLogsEncoding> {
+    pub fn encoding(&self) -> std::option::Option<& crate::model::CloudWatchLogsEncoding> {
         self.encoding.as_ref()
     }
     /// <p>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</p>
@@ -1251,7 +1217,7 @@ impl CloudWatchLogsLogStream {
 }
 /// See [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream).
 pub mod cloud_watch_logs_log_stream {
-
+    
     /// A builder for [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1261,8 +1227,7 @@ pub mod cloud_watch_logs_log_stream {
         pub(crate) file: std::option::Option<std::string::String>,
         pub(crate) file_fingerprint_lines: std::option::Option<std::string::String>,
         pub(crate) multi_line_start_pattern: std::option::Option<std::string::String>,
-        pub(crate) initial_position:
-            std::option::Option<crate::model::CloudWatchLogsInitialPosition>,
+        pub(crate) initial_position: std::option::Option<crate::model::CloudWatchLogsInitialPosition>,
         pub(crate) encoding: std::option::Option<crate::model::CloudWatchLogsEncoding>,
         pub(crate) buffer_duration: std::option::Option<i32>,
         pub(crate) batch_count: std::option::Option<i32>,
@@ -1275,12 +1240,8 @@ pub mod cloud_watch_logs_log_stream {
             self
         }
         /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
         pub fn datetime_format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1288,12 +1249,8 @@ pub mod cloud_watch_logs_log_stream {
             self
         }
         /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
-        pub fn set_datetime_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datetime_format = input;
-            self
+        pub fn set_datetime_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datetime_format = input; self
         }
         /// <p>Specifies the time zone of log event time stamps.</p>
         pub fn time_zone(mut self, input: crate::model::CloudWatchLogsTimeZone) -> Self {
@@ -1301,26 +1258,21 @@ pub mod cloud_watch_logs_log_stream {
             self
         }
         /// <p>Specifies the time zone of log event time stamps.</p>
-        pub fn set_time_zone(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsTimeZone>,
-        ) -> Self {
-            self.time_zone = input;
-            self
+        pub fn set_time_zone(mut self, input: std::option::Option<crate::model::CloudWatchLogsTimeZone>) -> Self {
+            self.time_zone = input; self
         }
-        /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
-        /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+        /// <p>Specifies log files that you want to push to CloudWatch Logs.</p> 
+        /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p> 
         /// <p>Zipped files are not supported.</p>
         pub fn file(mut self, input: impl Into<std::string::String>) -> Self {
             self.file = Some(input.into());
             self
         }
-        /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
-        /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+        /// <p>Specifies log files that you want to push to CloudWatch Logs.</p> 
+        /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p> 
         /// <p>Zipped files are not supported.</p>
         pub fn set_file(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file = input;
-            self
+            self.file = input; self
         }
         /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
         pub fn file_fingerprint_lines(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1328,12 +1280,8 @@ pub mod cloud_watch_logs_log_stream {
             self
         }
         /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
-        pub fn set_file_fingerprint_lines(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_fingerprint_lines = input;
-            self
+        pub fn set_file_fingerprint_lines(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_fingerprint_lines = input; self
         }
         /// <p>Specifies the pattern for identifying the start of a log message.</p>
         pub fn multi_line_start_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1341,28 +1289,17 @@ pub mod cloud_watch_logs_log_stream {
             self
         }
         /// <p>Specifies the pattern for identifying the start of a log message.</p>
-        pub fn set_multi_line_start_pattern(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.multi_line_start_pattern = input;
-            self
+        pub fn set_multi_line_start_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multi_line_start_pattern = input; self
         }
         /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
-        pub fn initial_position(
-            mut self,
-            input: crate::model::CloudWatchLogsInitialPosition,
-        ) -> Self {
+        pub fn initial_position(mut self, input: crate::model::CloudWatchLogsInitialPosition) -> Self {
             self.initial_position = Some(input);
             self
         }
         /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
-        pub fn set_initial_position(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsInitialPosition>,
-        ) -> Self {
-            self.initial_position = input;
-            self
+        pub fn set_initial_position(mut self, input: std::option::Option<crate::model::CloudWatchLogsInitialPosition>) -> Self {
+            self.initial_position = input; self
         }
         /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
         pub fn encoding(mut self, input: crate::model::CloudWatchLogsEncoding) -> Self {
@@ -1370,12 +1307,8 @@ pub mod cloud_watch_logs_log_stream {
             self
         }
         /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
-        pub fn set_encoding(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsEncoding>,
-        ) -> Self {
-            self.encoding = input;
-            self
+        pub fn set_encoding(mut self, input: std::option::Option<crate::model::CloudWatchLogsEncoding>) -> Self {
+            self.encoding = input; self
         }
         /// <p>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</p>
         pub fn buffer_duration(mut self, input: i32) -> Self {
@@ -1384,8 +1317,7 @@ pub mod cloud_watch_logs_log_stream {
         }
         /// <p>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</p>
         pub fn set_buffer_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.buffer_duration = input;
-            self
+            self.buffer_duration = input; self
         }
         /// <p>Specifies the max number of log events in a batch, up to 10000. The default value is 1000.</p>
         pub fn batch_count(mut self, input: i32) -> Self {
@@ -1394,8 +1326,7 @@ pub mod cloud_watch_logs_log_stream {
         }
         /// <p>Specifies the max number of log events in a batch, up to 10000. The default value is 1000.</p>
         pub fn set_batch_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_count = input;
-            self
+            self.batch_count = input; self
         }
         /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -1404,26 +1335,38 @@ pub mod cloud_watch_logs_log_stream {
         }
         /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream).
         pub fn build(self) -> crate::model::CloudWatchLogsLogStream {
             crate::model::CloudWatchLogsLogStream {
-                log_group_name: self.log_group_name,
-                datetime_format: self.datetime_format,
-                time_zone: self.time_zone,
-                file: self.file,
-                file_fingerprint_lines: self.file_fingerprint_lines,
-                multi_line_start_pattern: self.multi_line_start_pattern,
-                initial_position: self.initial_position,
-                encoding: self.encoding,
-                buffer_duration: self.buffer_duration,
-                batch_count: self.batch_count,
-                batch_size: self.batch_size,
+                log_group_name: self.log_group_name
+                ,
+                datetime_format: self.datetime_format
+                ,
+                time_zone: self.time_zone
+                ,
+                file: self.file
+                ,
+                file_fingerprint_lines: self.file_fingerprint_lines
+                ,
+                multi_line_start_pattern: self.multi_line_start_pattern
+                ,
+                initial_position: self.initial_position
+                ,
+                encoding: self.encoding
+                ,
+                buffer_duration: self.buffer_duration
+                ,
+                batch_count: self.batch_count
+                ,
+                batch_size: self.batch_size
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogsLogStream {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream).
@@ -1438,9 +1381,9 @@ impl CloudWatchLogsLogStream {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cloudwatchlogsencoding = unimplemented!();
 /// match cloudwatchlogsencoding {
@@ -1552,22 +1495,14 @@ impl CloudWatchLogsLogStream {
 /// Specifically, when `cloudwatchlogsencoding` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CloudWatchLogsEncoding::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CloudWatchLogsEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Ascii,
@@ -1754,7 +1689,7 @@ pub enum CloudWatchLogsEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Utf8Sig,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchLogsEncoding {
     fn from(s: &str) -> Self {
@@ -1851,19 +1786,17 @@ impl std::convert::From<&str> for CloudWatchLogsEncoding {
             "utf_7" => CloudWatchLogsEncoding::Utf7,
             "utf_8" => CloudWatchLogsEncoding::Utf8,
             "utf_8_sig" => CloudWatchLogsEncoding::Utf8Sig,
-            other => {
-                CloudWatchLogsEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CloudWatchLogsEncoding::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CloudWatchLogsEncoding {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchLogsEncoding::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CloudWatchLogsEncoding::from(s))
+                }
+            }
 impl CloudWatchLogsEncoding {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1960,104 +1893,13 @@ impl CloudWatchLogsEncoding {
             CloudWatchLogsEncoding::Utf7 => "utf_7",
             CloudWatchLogsEncoding::Utf8 => "utf_8",
             CloudWatchLogsEncoding::Utf8Sig => "utf_8_sig",
-            CloudWatchLogsEncoding::Unknown(value) => value.as_str(),
+            CloudWatchLogsEncoding::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ascii",
-            "big5",
-            "big5hkscs",
-            "cp037",
-            "cp1006",
-            "cp1026",
-            "cp1140",
-            "cp1250",
-            "cp1251",
-            "cp1252",
-            "cp1253",
-            "cp1254",
-            "cp1255",
-            "cp1256",
-            "cp1257",
-            "cp1258",
-            "cp424",
-            "cp437",
-            "cp500",
-            "cp720",
-            "cp737",
-            "cp775",
-            "cp850",
-            "cp852",
-            "cp855",
-            "cp856",
-            "cp857",
-            "cp858",
-            "cp860",
-            "cp861",
-            "cp862",
-            "cp863",
-            "cp864",
-            "cp865",
-            "cp866",
-            "cp869",
-            "cp874",
-            "cp875",
-            "cp932",
-            "cp949",
-            "cp950",
-            "euc_jis_2004",
-            "euc_jisx0213",
-            "euc_jp",
-            "euc_kr",
-            "gb18030",
-            "gb2312",
-            "gbk",
-            "hz",
-            "iso2022_jp",
-            "iso2022_jp_1",
-            "iso2022_jp_2",
-            "iso2022_jp_2004",
-            "iso2022_jp_3",
-            "iso2022_jp_ext",
-            "iso2022_kr",
-            "iso8859_10",
-            "iso8859_13",
-            "iso8859_14",
-            "iso8859_15",
-            "iso8859_16",
-            "iso8859_2",
-            "iso8859_3",
-            "iso8859_4",
-            "iso8859_5",
-            "iso8859_6",
-            "iso8859_7",
-            "iso8859_8",
-            "iso8859_9",
-            "johab",
-            "koi8_r",
-            "koi8_u",
-            "latin_1",
-            "mac_cyrillic",
-            "mac_greek",
-            "mac_iceland",
-            "mac_latin2",
-            "mac_roman",
-            "mac_turkish",
-            "ptcp154",
-            "shift_jis",
-            "shift_jis_2004",
-            "shift_jisx0213",
-            "utf_16",
-            "utf_16_be",
-            "utf_16_le",
-            "utf_32",
-            "utf_32_be",
-            "utf_32_le",
-            "utf_7",
-            "utf_8",
-            "utf_8_sig",
+            "ascii", "big5", "big5hkscs", "cp037", "cp1006", "cp1026", "cp1140", "cp1250", "cp1251", "cp1252", "cp1253", "cp1254", "cp1255", "cp1256", "cp1257", "cp1258", "cp424", "cp437", "cp500", "cp720", "cp737", "cp775", "cp850", "cp852", "cp855", "cp856", "cp857", "cp858", "cp860", "cp861", "cp862", "cp863", "cp864", "cp865", "cp866", "cp869", "cp874", "cp875", "cp932", "cp949", "cp950", "euc_jis_2004", "euc_jisx0213", "euc_jp", "euc_kr", "gb18030", "gb2312", "gbk", "hz", "iso2022_jp", "iso2022_jp_1", "iso2022_jp_2", "iso2022_jp_2004", "iso2022_jp_3", "iso2022_jp_ext", "iso2022_kr", "iso8859_10", "iso8859_13", "iso8859_14", "iso8859_15", "iso8859_16", "iso8859_2", "iso8859_3", "iso8859_4", "iso8859_5", "iso8859_6", "iso8859_7", "iso8859_8", "iso8859_9", "johab", "koi8_r", "koi8_u", "latin_1", "mac_cyrillic", "mac_greek", "mac_iceland", "mac_latin2", "mac_roman", "mac_turkish", "ptcp154", "shift_jis", "shift_jis_2004", "shift_jisx0213", "utf_16", "utf_16_be", "utf_16_le", "utf_32", "utf_32_be", "utf_32_le", "utf_7", "utf_8", "utf_8_sig"
         ]
     }
 }
@@ -2073,9 +1915,9 @@ impl AsRef<str> for CloudWatchLogsEncoding {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cloudwatchlogsinitialposition = unimplemented!();
 /// match cloudwatchlogsinitialposition {
@@ -2097,60 +1939,52 @@ impl AsRef<str> for CloudWatchLogsEncoding {
 /// Specifically, when `cloudwatchlogsinitialposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CloudWatchLogsInitialPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. It's only used if there is no state persisted for that log stream.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CloudWatchLogsInitialPosition {
     #[allow(missing_docs)] // documentation missing in model
     EndOfFile,
     #[allow(missing_docs)] // documentation missing in model
     StartOfFile,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchLogsInitialPosition {
     fn from(s: &str) -> Self {
         match s {
             "end_of_file" => CloudWatchLogsInitialPosition::EndOfFile,
             "start_of_file" => CloudWatchLogsInitialPosition::StartOfFile,
-            other => CloudWatchLogsInitialPosition::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CloudWatchLogsInitialPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CloudWatchLogsInitialPosition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchLogsInitialPosition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CloudWatchLogsInitialPosition::from(s))
+                }
+            }
 impl CloudWatchLogsInitialPosition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloudWatchLogsInitialPosition::EndOfFile => "end_of_file",
             CloudWatchLogsInitialPosition::StartOfFile => "start_of_file",
-            CloudWatchLogsInitialPosition::Unknown(value) => value.as_str(),
+            CloudWatchLogsInitialPosition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["end_of_file", "start_of_file"]
+        &[
+            "end_of_file", "start_of_file"
+        ]
     }
 }
 impl AsRef<str> for CloudWatchLogsInitialPosition {
@@ -2165,9 +1999,9 @@ impl AsRef<str> for CloudWatchLogsInitialPosition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cloudwatchlogstimezone = unimplemented!();
 /// match cloudwatchlogstimezone {
@@ -2189,60 +2023,52 @@ impl AsRef<str> for CloudWatchLogsInitialPosition {
 /// Specifically, when `cloudwatchlogstimezone` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CloudWatchLogsTimeZone::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The preferred time zone for logs streamed to CloudWatch Logs. Valid values are <code>LOCAL</code> and <code>UTC</code>, for Coordinated Universal Time.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CloudWatchLogsTimeZone {
     #[allow(missing_docs)] // documentation missing in model
     Local,
     #[allow(missing_docs)] // documentation missing in model
     Utc,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchLogsTimeZone {
     fn from(s: &str) -> Self {
         match s {
             "LOCAL" => CloudWatchLogsTimeZone::Local,
             "UTC" => CloudWatchLogsTimeZone::Utc,
-            other => {
-                CloudWatchLogsTimeZone::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CloudWatchLogsTimeZone::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CloudWatchLogsTimeZone {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchLogsTimeZone::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CloudWatchLogsTimeZone::from(s))
+                }
+            }
 impl CloudWatchLogsTimeZone {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloudWatchLogsTimeZone::Local => "LOCAL",
             CloudWatchLogsTimeZone::Utc => "UTC",
-            CloudWatchLogsTimeZone::Unknown(value) => value.as_str(),
+            CloudWatchLogsTimeZone::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LOCAL", "UTC"]
+        &[
+            "LOCAL", "UTC"
+        ]
     }
 }
 impl AsRef<str> for CloudWatchLogsTimeZone {
@@ -2257,9 +2083,9 @@ impl AsRef<str> for CloudWatchLogsTimeZone {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let layerattributeskeys = unimplemented!();
 /// match layerattributeskeys {
@@ -2304,22 +2130,14 @@ impl AsRef<str> for CloudWatchLogsTimeZone {
 /// Specifically, when `layerattributeskeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LayerAttributesKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LayerAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
     BundlerVersion,
@@ -2372,7 +2190,7 @@ pub enum LayerAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
     RubygemsVersion,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LayerAttributesKeys {
     fn from(s: &str) -> Self {
@@ -2402,19 +2220,17 @@ impl std::convert::From<&str> for LayerAttributesKeys {
             "RailsStack" => LayerAttributesKeys::RailsStack,
             "RubyVersion" => LayerAttributesKeys::RubyVersion,
             "RubygemsVersion" => LayerAttributesKeys::RubygemsVersion,
-            other => {
-                LayerAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LayerAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LayerAttributesKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LayerAttributesKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LayerAttributesKeys::from(s))
+                }
+            }
 impl LayerAttributesKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2444,37 +2260,13 @@ impl LayerAttributesKeys {
             LayerAttributesKeys::RailsStack => "RailsStack",
             LayerAttributesKeys::RubyVersion => "RubyVersion",
             LayerAttributesKeys::RubygemsVersion => "RubygemsVersion",
-            LayerAttributesKeys::Unknown(value) => value.as_str(),
+            LayerAttributesKeys::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BundlerVersion",
-            "EcsClusterArn",
-            "EnableHaproxyStats",
-            "GangliaPassword",
-            "GangliaUrl",
-            "GangliaUser",
-            "HaproxyHealthCheckMethod",
-            "HaproxyHealthCheckUrl",
-            "HaproxyStatsPassword",
-            "HaproxyStatsUrl",
-            "HaproxyStatsUser",
-            "JavaAppServer",
-            "JavaAppServerVersion",
-            "Jvm",
-            "JvmOptions",
-            "JvmVersion",
-            "ManageBundler",
-            "MemcachedMemory",
-            "MysqlRootPassword",
-            "MysqlRootPasswordUbiquitous",
-            "NodejsVersion",
-            "PassengerVersion",
-            "RailsStack",
-            "RubyVersion",
-            "RubygemsVersion",
+            "BundlerVersion", "EcsClusterArn", "EnableHaproxyStats", "GangliaPassword", "GangliaUrl", "GangliaUser", "HaproxyHealthCheckMethod", "HaproxyHealthCheckUrl", "HaproxyStatsPassword", "HaproxyStatsUrl", "HaproxyStatsUser", "JavaAppServer", "JavaAppServerVersion", "Jvm", "JvmOptions", "JvmVersion", "ManageBundler", "MemcachedMemory", "MysqlRootPassword", "MysqlRootPasswordUbiquitous", "NodejsVersion", "PassengerVersion", "RailsStack", "RubyVersion", "RubygemsVersion"
         ]
     }
 }
@@ -2490,9 +2282,9 @@ impl AsRef<str> for LayerAttributesKeys {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let architecture = unimplemented!();
 /// match architecture {
@@ -2514,58 +2306,52 @@ impl AsRef<str> for LayerAttributesKeys {
 /// Specifically, when `architecture` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Architecture::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Architecture {
     #[allow(missing_docs)] // documentation missing in model
     I386,
     #[allow(missing_docs)] // documentation missing in model
     X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Architecture {
     fn from(s: &str) -> Self {
         match s {
             "i386" => Architecture::I386,
             "x86_64" => Architecture::X8664,
-            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Architecture {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Architecture::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Architecture::from(s))
+                }
+            }
 impl Architecture {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Architecture::I386 => "i386",
             Architecture::X8664 => "x86_64",
-            Architecture::Unknown(value) => value.as_str(),
+            Architecture::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["i386", "x86_64"]
+        &[
+            "i386", "x86_64"
+        ]
     }
 }
 impl AsRef<str> for Architecture {
@@ -2580,9 +2366,9 @@ impl AsRef<str> for Architecture {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let autoscalingtype = unimplemented!();
 /// match autoscalingtype {
@@ -2604,58 +2390,52 @@ impl AsRef<str> for Architecture {
 /// Specifically, when `autoscalingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoScalingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AutoScalingType {
     #[allow(missing_docs)] // documentation missing in model
     Load,
     #[allow(missing_docs)] // documentation missing in model
     Timer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AutoScalingType {
     fn from(s: &str) -> Self {
         match s {
             "load" => AutoScalingType::Load,
             "timer" => AutoScalingType::Timer,
-            other => AutoScalingType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AutoScalingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AutoScalingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoScalingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AutoScalingType::from(s))
+                }
+            }
 impl AutoScalingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AutoScalingType::Load => "load",
             AutoScalingType::Timer => "timer",
-            AutoScalingType::Unknown(value) => value.as_str(),
+            AutoScalingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["load", "timer"]
+        &[
+            "load", "timer"
+        ]
     }
 }
 impl AsRef<str> for AutoScalingType {
@@ -2667,7 +2447,7 @@ impl AsRef<str> for AutoScalingType {
 /// <p>Represents an app's environment variable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentVariable {
+pub struct EnvironmentVariable  {
     /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2680,11 +2460,11 @@ pub struct EnvironmentVariable {
 }
 impl EnvironmentVariable {
     /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
@@ -2694,7 +2474,7 @@ impl EnvironmentVariable {
 }
 /// See [`EnvironmentVariable`](crate::model::EnvironmentVariable).
 pub mod environment_variable {
-
+    
     /// A builder for [`EnvironmentVariable`](crate::model::EnvironmentVariable).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2710,8 +2490,7 @@ pub mod environment_variable {
         }
         /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2720,8 +2499,7 @@ pub mod environment_variable {
         }
         /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
         pub fn secure(mut self, input: bool) -> Self {
@@ -2730,18 +2508,22 @@ pub mod environment_variable {
         }
         /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
         pub fn set_secure(mut self, input: std::option::Option<bool>) -> Self {
-            self.secure = input;
-            self
+            self.secure = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentVariable`](crate::model::EnvironmentVariable).
         pub fn build(self) -> crate::model::EnvironmentVariable {
             crate::model::EnvironmentVariable {
-                key: self.key,
-                value: self.value,
-                secure: self.secure,
+                key: self.key
+                ,
+                value: self.value
+                ,
+                secure: self.secure
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentVariable {
     /// Creates a new builder-style object to manufacture [`EnvironmentVariable`](crate::model::EnvironmentVariable).
@@ -2756,9 +2538,9 @@ impl EnvironmentVariable {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appattributeskeys = unimplemented!();
 /// match appattributeskeys {
@@ -2782,22 +2564,14 @@ impl EnvironmentVariable {
 /// Specifically, when `appattributeskeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppAttributesKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
     AutoBundleOnDeploy,
@@ -2808,7 +2582,7 @@ pub enum AppAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
     RailsEnv,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppAttributesKeys {
     fn from(s: &str) -> Self {
@@ -2817,19 +2591,17 @@ impl std::convert::From<&str> for AppAttributesKeys {
             "AwsFlowRubySettings" => AppAttributesKeys::AwsFlowRubySettings,
             "DocumentRoot" => AppAttributesKeys::DocumentRoot,
             "RailsEnv" => AppAttributesKeys::RailsEnv,
-            other => {
-                AppAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AppAttributesKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppAttributesKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppAttributesKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppAttributesKeys::from(s))
+                }
+            }
 impl AppAttributesKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2838,16 +2610,13 @@ impl AppAttributesKeys {
             AppAttributesKeys::AwsFlowRubySettings => "AwsFlowRubySettings",
             AppAttributesKeys::DocumentRoot => "DocumentRoot",
             AppAttributesKeys::RailsEnv => "RailsEnv",
-            AppAttributesKeys::Unknown(value) => value.as_str(),
+            AppAttributesKeys::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AutoBundleOnDeploy",
-            "AwsFlowRubySettings",
-            "DocumentRoot",
-            "RailsEnv",
+            "AutoBundleOnDeploy", "AwsFlowRubySettings", "DocumentRoot", "RailsEnv"
         ]
     }
 }
@@ -2860,7 +2629,7 @@ impl AsRef<str> for AppAttributesKeys {
 /// <p>Describes an app's SSL configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SslConfiguration {
+pub struct SslConfiguration  {
     /// <p>The contents of the certificate's domain.crt file.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -2873,21 +2642,21 @@ pub struct SslConfiguration {
 }
 impl SslConfiguration {
     /// <p>The contents of the certificate's domain.crt file.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> std::option::Option<& str> {
         self.private_key.as_deref()
     }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    pub fn chain(&self) -> std::option::Option<&str> {
+    pub fn chain(&self) -> std::option::Option<& str> {
         self.chain.as_deref()
     }
 }
 /// See [`SslConfiguration`](crate::model::SslConfiguration).
 pub mod ssl_configuration {
-
+    
     /// A builder for [`SslConfiguration`](crate::model::SslConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2903,8 +2672,7 @@ pub mod ssl_configuration {
         }
         /// <p>The contents of the certificate's domain.crt file.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.certificate = input;
-            self
+            self.certificate = input; self
         }
         /// <p>The private key; the contents of the certificate's domain.kex file.</p>
         pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2913,8 +2681,7 @@ pub mod ssl_configuration {
         }
         /// <p>The private key; the contents of the certificate's domain.kex file.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.private_key = input;
-            self
+            self.private_key = input; self
         }
         /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
         pub fn chain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2923,18 +2690,22 @@ pub mod ssl_configuration {
         }
         /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
         pub fn set_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.chain = input;
-            self
+            self.chain = input; self
         }
         /// Consumes the builder and constructs a [`SslConfiguration`](crate::model::SslConfiguration).
         pub fn build(self) -> crate::model::SslConfiguration {
             crate::model::SslConfiguration {
-                certificate: self.certificate,
-                private_key: self.private_key,
-                chain: self.chain,
+                certificate: self.certificate
+                ,
+                private_key: self.private_key
+                ,
+                chain: self.chain
+                ,
             }
         }
     }
+    
+    
 }
 impl SslConfiguration {
     /// Creates a new builder-style object to manufacture [`SslConfiguration`](crate::model::SslConfiguration).
@@ -2949,9 +2720,9 @@ impl SslConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let apptype = unimplemented!();
 /// match apptype {
@@ -2978,22 +2749,14 @@ impl SslConfiguration {
 /// Specifically, when `apptype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
     AwsFlowRuby,
@@ -3010,7 +2773,7 @@ pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
     Static,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppType {
     fn from(s: &str) -> Self {
@@ -3022,17 +2785,17 @@ impl std::convert::From<&str> for AppType {
             "php" => AppType::Php,
             "rails" => AppType::Rails,
             "static" => AppType::Static,
-            other => AppType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AppType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppType::from(s))
+                }
+            }
 impl AppType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3044,19 +2807,13 @@ impl AppType {
             AppType::Php => "php",
             AppType::Rails => "rails",
             AppType::Static => "static",
-            AppType::Unknown(value) => value.as_str(),
+            AppType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "aws-flow-ruby",
-            "java",
-            "nodejs",
-            "other",
-            "php",
-            "rails",
-            "static",
+            "aws-flow-ruby", "java", "nodejs", "other", "php", "rails", "static"
         ]
     }
 }
@@ -3069,7 +2826,7 @@ impl AsRef<str> for AppType {
 /// <p>Describes an app's data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -3082,21 +2839,21 @@ pub struct DataSource {
 }
 impl DataSource {
     /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The data source's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The database name.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
-
+    
     /// A builder for [`DataSource`](crate::model::DataSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3112,8 +2869,7 @@ pub mod data_source {
         }
         /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The data source's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3122,8 +2878,7 @@ pub mod data_source {
         }
         /// <p>The data source's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The database name.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3131,22 +2886,23 @@ pub mod data_source {
             self
         }
         /// <p>The database name.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
         pub fn build(self) -> crate::model::DataSource {
             crate::model::DataSource {
-                r#type: self.r#type,
-                arn: self.arn,
-                database_name: self.database_name,
+                r#type: self.r#type
+                ,
+                arn: self.arn
+                ,
+                database_name: self.database_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DataSource {
     /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
@@ -3155,124 +2911,82 @@ impl DataSource {
     }
 }
 
-/// <p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p>
-/// <ul>
-/// <li> <p>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</p> </li>
-/// <li> <p>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</p> </li>
-/// </ul>
-/// <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period.</p>
-/// <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p>
+/// <p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p> 
+/// <ul> 
+/// <li> <p>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</p> </li> 
+/// <li> <p>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</p> </li> 
+/// </ul> 
+/// <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period.</p> 
+/// <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p> 
 /// <p> <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WeeklyAutoScalingSchedule {
+pub struct WeeklyAutoScalingSchedule  {
     /// <p>The schedule for Monday.</p>
     #[doc(hidden)]
-    pub monday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub monday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Tuesday.</p>
     #[doc(hidden)]
-    pub tuesday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tuesday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Wednesday.</p>
     #[doc(hidden)]
-    pub wednesday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub wednesday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Thursday.</p>
     #[doc(hidden)]
-    pub thursday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub thursday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Friday.</p>
     #[doc(hidden)]
-    pub friday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub friday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Saturday.</p>
     #[doc(hidden)]
-    pub saturday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub saturday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The schedule for Sunday.</p>
     #[doc(hidden)]
-    pub sunday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub sunday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl WeeklyAutoScalingSchedule {
     /// <p>The schedule for Monday.</p>
-    pub fn monday(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn monday(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.monday.as_ref()
     }
     /// <p>The schedule for Tuesday.</p>
-    pub fn tuesday(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tuesday(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tuesday.as_ref()
     }
     /// <p>The schedule for Wednesday.</p>
-    pub fn wednesday(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn wednesday(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.wednesday.as_ref()
     }
     /// <p>The schedule for Thursday.</p>
-    pub fn thursday(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn thursday(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.thursday.as_ref()
     }
     /// <p>The schedule for Friday.</p>
-    pub fn friday(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn friday(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.friday.as_ref()
     }
     /// <p>The schedule for Saturday.</p>
-    pub fn saturday(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn saturday(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.saturday.as_ref()
     }
     /// <p>The schedule for Sunday.</p>
-    pub fn sunday(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn sunday(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.sunday.as_ref()
     }
 }
 /// See [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule).
 pub mod weekly_auto_scaling_schedule {
-
+    
     /// A builder for [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) monday: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tuesday: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) wednesday: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) thursday: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) friday: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) saturday: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) sunday: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) monday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tuesday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) wednesday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) thursday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) friday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) saturday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) sunday: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `monday`.
@@ -3280,189 +2994,128 @@ pub mod weekly_auto_scaling_schedule {
         /// To override the contents of this collection use [`set_monday`](Self::set_monday).
         ///
         /// <p>The schedule for Monday.</p>
-        pub fn monday(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn monday(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.monday.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.monday = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.monday = Some(hash_map);
+                            self
         }
         /// <p>The schedule for Monday.</p>
-        pub fn set_monday(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.monday = input;
-            self
+        pub fn set_monday(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.monday = input; self
         }
         /// Adds a key-value pair to `tuesday`.
         ///
         /// To override the contents of this collection use [`set_tuesday`](Self::set_tuesday).
         ///
         /// <p>The schedule for Tuesday.</p>
-        pub fn tuesday(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tuesday(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tuesday.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tuesday = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tuesday = Some(hash_map);
+                            self
         }
         /// <p>The schedule for Tuesday.</p>
-        pub fn set_tuesday(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tuesday = input;
-            self
+        pub fn set_tuesday(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tuesday = input; self
         }
         /// Adds a key-value pair to `wednesday`.
         ///
         /// To override the contents of this collection use [`set_wednesday`](Self::set_wednesday).
         ///
         /// <p>The schedule for Wednesday.</p>
-        pub fn wednesday(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn wednesday(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.wednesday.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.wednesday = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.wednesday = Some(hash_map);
+                            self
         }
         /// <p>The schedule for Wednesday.</p>
-        pub fn set_wednesday(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.wednesday = input;
-            self
+        pub fn set_wednesday(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.wednesday = input; self
         }
         /// Adds a key-value pair to `thursday`.
         ///
         /// To override the contents of this collection use [`set_thursday`](Self::set_thursday).
         ///
         /// <p>The schedule for Thursday.</p>
-        pub fn thursday(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn thursday(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.thursday.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.thursday = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.thursday = Some(hash_map);
+                            self
         }
         /// <p>The schedule for Thursday.</p>
-        pub fn set_thursday(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.thursday = input;
-            self
+        pub fn set_thursday(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.thursday = input; self
         }
         /// Adds a key-value pair to `friday`.
         ///
         /// To override the contents of this collection use [`set_friday`](Self::set_friday).
         ///
         /// <p>The schedule for Friday.</p>
-        pub fn friday(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn friday(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.friday.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.friday = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.friday = Some(hash_map);
+                            self
         }
         /// <p>The schedule for Friday.</p>
-        pub fn set_friday(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.friday = input;
-            self
+        pub fn set_friday(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.friday = input; self
         }
         /// Adds a key-value pair to `saturday`.
         ///
         /// To override the contents of this collection use [`set_saturday`](Self::set_saturday).
         ///
         /// <p>The schedule for Saturday.</p>
-        pub fn saturday(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn saturday(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.saturday.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.saturday = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.saturday = Some(hash_map);
+                            self
         }
         /// <p>The schedule for Saturday.</p>
-        pub fn set_saturday(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.saturday = input;
-            self
+        pub fn set_saturday(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.saturday = input; self
         }
         /// Adds a key-value pair to `sunday`.
         ///
         /// To override the contents of this collection use [`set_sunday`](Self::set_sunday).
         ///
         /// <p>The schedule for Sunday.</p>
-        pub fn sunday(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn sunday(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.sunday.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.sunday = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.sunday = Some(hash_map);
+                            self
         }
         /// <p>The schedule for Sunday.</p>
-        pub fn set_sunday(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.sunday = input;
-            self
+        pub fn set_sunday(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.sunday = input; self
         }
         /// Consumes the builder and constructs a [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule).
         pub fn build(self) -> crate::model::WeeklyAutoScalingSchedule {
             crate::model::WeeklyAutoScalingSchedule {
-                monday: self.monday,
-                tuesday: self.tuesday,
-                wednesday: self.wednesday,
-                thursday: self.thursday,
-                friday: self.friday,
-                saturday: self.saturday,
-                sunday: self.sunday,
+                monday: self.monday
+                ,
+                tuesday: self.tuesday
+                ,
+                wednesday: self.wednesday
+                ,
+                thursday: self.thursday
+                ,
+                friday: self.friday
+                ,
+                saturday: self.saturday
+                ,
+                sunday: self.sunday
+                ,
             }
         }
     }
+    
+    
 }
 impl WeeklyAutoScalingSchedule {
     /// Creates a new builder-style object to manufacture [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule).
@@ -3474,7 +3127,7 @@ impl WeeklyAutoScalingSchedule {
 /// <p>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingThresholds {
+pub struct AutoScalingThresholds  {
     /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
     #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
@@ -3493,8 +3146,8 @@ pub struct AutoScalingThresholds {
     /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
     #[doc(hidden)]
     pub load_threshold: std::option::Option<f64>,
-    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
-    /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note> 
+    /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
     /// </note>
     #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3524,16 +3177,16 @@ impl AutoScalingThresholds {
     pub fn load_threshold(&self) -> std::option::Option<f64> {
         self.load_threshold
     }
-    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
-    /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note> 
+    /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
     /// </note>
-    pub fn alarms(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarms(&self) -> std::option::Option<& [std::string::String]> {
         self.alarms.as_deref()
     }
 }
 /// See [`AutoScalingThresholds`](crate::model::AutoScalingThresholds).
 pub mod auto_scaling_thresholds {
-
+    
     /// A builder for [`AutoScalingThresholds`](crate::model::AutoScalingThresholds).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3553,8 +3206,7 @@ pub mod auto_scaling_thresholds {
         }
         /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
+            self.instance_count = input; self
         }
         /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
         pub fn thresholds_wait_time(mut self, input: i32) -> Self {
@@ -3563,8 +3215,7 @@ pub mod auto_scaling_thresholds {
         }
         /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
         pub fn set_thresholds_wait_time(mut self, input: std::option::Option<i32>) -> Self {
-            self.thresholds_wait_time = input;
-            self
+            self.thresholds_wait_time = input; self
         }
         /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
         pub fn ignore_metrics_time(mut self, input: i32) -> Self {
@@ -3573,8 +3224,7 @@ pub mod auto_scaling_thresholds {
         }
         /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
         pub fn set_ignore_metrics_time(mut self, input: std::option::Option<i32>) -> Self {
-            self.ignore_metrics_time = input;
-            self
+            self.ignore_metrics_time = input; self
         }
         /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
         pub fn cpu_threshold(mut self, input: f64) -> Self {
@@ -3583,8 +3233,7 @@ pub mod auto_scaling_thresholds {
         }
         /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
         pub fn set_cpu_threshold(mut self, input: std::option::Option<f64>) -> Self {
-            self.cpu_threshold = input;
-            self
+            self.cpu_threshold = input; self
         }
         /// <p>The memory utilization threshold, as a percent of the available memory. A value of -1 disables the threshold.</p>
         pub fn memory_threshold(mut self, input: f64) -> Self {
@@ -3593,8 +3242,7 @@ pub mod auto_scaling_thresholds {
         }
         /// <p>The memory utilization threshold, as a percent of the available memory. A value of -1 disables the threshold.</p>
         pub fn set_memory_threshold(mut self, input: std::option::Option<f64>) -> Self {
-            self.memory_threshold = input;
-            self
+            self.memory_threshold = input; self
         }
         /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
         pub fn load_threshold(mut self, input: f64) -> Self {
@@ -3603,45 +3251,49 @@ pub mod auto_scaling_thresholds {
         }
         /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
         pub fn set_load_threshold(mut self, input: std::option::Option<f64>) -> Self {
-            self.load_threshold = input;
-            self
+            self.load_threshold = input; self
         }
         /// Appends an item to `alarms`.
         ///
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
-        /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
-        /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+        /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note> 
+        /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
         /// </note>
         pub fn alarms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
-            self.alarms = Some(v);
-            self
+                            v.push(input.into());
+                            self.alarms = Some(v);
+                            self
         }
-        /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
-        /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+        /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note> 
+        /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
         /// </note>
-        pub fn set_alarms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alarms = input;
-            self
+        pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alarms = input; self
         }
         /// Consumes the builder and constructs a [`AutoScalingThresholds`](crate::model::AutoScalingThresholds).
         pub fn build(self) -> crate::model::AutoScalingThresholds {
             crate::model::AutoScalingThresholds {
-                instance_count: self.instance_count,
-                thresholds_wait_time: self.thresholds_wait_time,
-                ignore_metrics_time: self.ignore_metrics_time,
-                cpu_threshold: self.cpu_threshold,
-                memory_threshold: self.memory_threshold,
-                load_threshold: self.load_threshold,
-                alarms: self.alarms,
+                instance_count: self.instance_count
+                ,
+                thresholds_wait_time: self.thresholds_wait_time
+                ,
+                ignore_metrics_time: self.ignore_metrics_time
+                ,
+                cpu_threshold: self.cpu_threshold
+                ,
+                memory_threshold: self.memory_threshold
+                ,
+                load_threshold: self.load_threshold
+                ,
+                alarms: self.alarms
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoScalingThresholds {
     /// Creates a new builder-style object to manufacture [`AutoScalingThresholds`](crate::model::AutoScalingThresholds).
@@ -3653,7 +3305,7 @@ impl AutoScalingThresholds {
 /// <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceIdentity {
+pub struct InstanceIdentity  {
     /// <p>A JSON document that contains the metadata.</p>
     #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
@@ -3663,17 +3315,17 @@ pub struct InstanceIdentity {
 }
 impl InstanceIdentity {
     /// <p>A JSON document that contains the metadata.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
     /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> std::option::Option<& str> {
         self.signature.as_deref()
     }
 }
 /// See [`InstanceIdentity`](crate::model::InstanceIdentity).
 pub mod instance_identity {
-
+    
     /// A builder for [`InstanceIdentity`](crate::model::InstanceIdentity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3688,8 +3340,7 @@ pub mod instance_identity {
         }
         /// <p>A JSON document that contains the metadata.</p>
         pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
         pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3698,17 +3349,20 @@ pub mod instance_identity {
         }
         /// <p>A signature that can be used to verify the document's accuracy and authenticity.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.signature = input;
-            self
+            self.signature = input; self
         }
         /// Consumes the builder and constructs a [`InstanceIdentity`](crate::model::InstanceIdentity).
         pub fn build(self) -> crate::model::InstanceIdentity {
             crate::model::InstanceIdentity {
-                document: self.document,
-                signature: self.signature,
+                document: self.document
+                ,
+                signature: self.signature
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceIdentity {
     /// Creates a new builder-style object to manufacture [`InstanceIdentity`](crate::model::InstanceIdentity).
@@ -3720,7 +3374,7 @@ impl InstanceIdentity {
 /// <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemporaryCredential {
+pub struct TemporaryCredential  {
     /// <p>The user name.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -3736,11 +3390,11 @@ pub struct TemporaryCredential {
 }
 impl TemporaryCredential {
     /// <p>The user name.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
@@ -3748,13 +3402,13 @@ impl TemporaryCredential {
         self.valid_for_in_minutes
     }
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 /// See [`TemporaryCredential`](crate::model::TemporaryCredential).
 pub mod temporary_credential {
-
+    
     /// A builder for [`TemporaryCredential`](crate::model::TemporaryCredential).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3771,8 +3425,7 @@ pub mod temporary_credential {
         }
         /// <p>The user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// <p>The password.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3781,8 +3434,7 @@ pub mod temporary_credential {
         }
         /// <p>The password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
         /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
         pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
@@ -3791,8 +3443,7 @@ pub mod temporary_credential {
         }
         /// <p>The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be automatically logged out.</p>
         pub fn set_valid_for_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.valid_for_in_minutes = input;
-            self
+            self.valid_for_in_minutes = input; self
         }
         /// <p>The instance's AWS OpsWorks Stacks ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3801,19 +3452,24 @@ pub mod temporary_credential {
         }
         /// <p>The instance's AWS OpsWorks Stacks ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// Consumes the builder and constructs a [`TemporaryCredential`](crate::model::TemporaryCredential).
         pub fn build(self) -> crate::model::TemporaryCredential {
             crate::model::TemporaryCredential {
-                username: self.username,
-                password: self.password,
-                valid_for_in_minutes: self.valid_for_in_minutes,
-                instance_id: self.instance_id,
+                username: self.username
+                ,
+                password: self.password
+                ,
+                valid_for_in_minutes: self.valid_for_in_minutes
+                ,
+                instance_id: self.instance_id
+                ,
             }
         }
     }
+    
+    
 }
 impl TemporaryCredential {
     /// Creates a new builder-style object to manufacture [`TemporaryCredential`](crate::model::TemporaryCredential).
@@ -3825,7 +3481,7 @@ impl TemporaryCredential {
 /// <p>Describes an instance's Amazon EBS volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Volume {
+pub struct Volume  {
     /// <p>The volume ID.</p>
     #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
@@ -3859,13 +3515,13 @@ pub struct Volume {
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
-    /// <ul>
-    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
-    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li> 
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
@@ -3878,27 +3534,27 @@ pub struct Volume {
 }
 impl Volume {
     /// <p>The volume ID.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The Amazon EC2 volume ID.</p>
-    pub fn ec2_volume_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_volume_id(&self) -> std::option::Option<& str> {
         self.ec2_volume_id.as_deref()
     }
     /// <p>The volume name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The RAID array ID.</p>
-    pub fn raid_array_id(&self) -> std::option::Option<&str> {
+    pub fn raid_array_id(&self) -> std::option::Option<& str> {
         self.raid_array_id.as_deref()
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The volume size.</p>
@@ -3906,30 +3562,30 @@ impl Volume {
         self.size
     }
     /// <p>The device name.</p>
-    pub fn device(&self) -> std::option::Option<&str> {
+    pub fn device(&self) -> std::option::Option<& str> {
         self.device.as_deref()
     }
     /// <p>The volume mount point. For example, "/mnt/disk1".</p>
-    pub fn mount_point(&self) -> std::option::Option<&str> {
+    pub fn mount_point(&self) -> std::option::Option<& str> {
         self.mount_point.as_deref()
     }
     /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
-    /// <ul>
-    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
-    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
-    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li> 
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
     /// </ul>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
@@ -3943,7 +3599,7 @@ impl Volume {
 }
 /// See [`Volume`](crate::model::Volume).
 pub mod volume {
-
+    
     /// A builder for [`Volume`](crate::model::Volume).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3970,8 +3626,7 @@ pub mod volume {
         }
         /// <p>The volume ID.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = input;
-            self
+            self.volume_id = input; self
         }
         /// <p>The Amazon EC2 volume ID.</p>
         pub fn ec2_volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3979,12 +3634,8 @@ pub mod volume {
             self
         }
         /// <p>The Amazon EC2 volume ID.</p>
-        pub fn set_ec2_volume_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_volume_id = input;
-            self
+        pub fn set_ec2_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_volume_id = input; self
         }
         /// <p>The volume name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3993,8 +3644,7 @@ pub mod volume {
         }
         /// <p>The volume name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The RAID array ID.</p>
         pub fn raid_array_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4002,12 +3652,8 @@ pub mod volume {
             self
         }
         /// <p>The RAID array ID.</p>
-        pub fn set_raid_array_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.raid_array_id = input;
-            self
+        pub fn set_raid_array_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.raid_array_id = input; self
         }
         /// <p>The instance ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4016,8 +3662,7 @@ pub mod volume {
         }
         /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4026,8 +3671,7 @@ pub mod volume {
         }
         /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The volume size.</p>
         pub fn size(mut self, input: i32) -> Self {
@@ -4036,8 +3680,7 @@ pub mod volume {
         }
         /// <p>The volume size.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p>The device name.</p>
         pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4046,8 +3689,7 @@ pub mod volume {
         }
         /// <p>The device name.</p>
         pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device = input;
-            self
+            self.device = input; self
         }
         /// <p>The volume mount point. For example, "/mnt/disk1".</p>
         pub fn mount_point(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4056,8 +3698,7 @@ pub mod volume {
         }
         /// <p>The volume mount point. For example, "/mnt/disk1".</p>
         pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mount_point = input;
-            self
+            self.mount_point = input; self
         }
         /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4066,8 +3707,7 @@ pub mod volume {
         }
         /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4075,36 +3715,31 @@ pub mod volume {
             self
         }
         /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
-        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
-        /// <ul>
-        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
-        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li> 
+        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
         /// </ul>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_type = Some(input.into());
             self
         }
-        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
-        /// <ul>
-        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
-        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
-        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li> 
+        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
+        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> 
         /// </ul>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_type = input;
-            self
+            self.volume_type = input; self
         }
         /// <p>For PIOPS volumes, the IOPS per disk.</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -4113,8 +3748,7 @@ pub mod volume {
         }
         /// <p>For PIOPS volumes, the IOPS per disk.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-            self.iops = input;
-            self
+            self.iops = input; self
         }
         /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -4123,29 +3757,44 @@ pub mod volume {
         }
         /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// Consumes the builder and constructs a [`Volume`](crate::model::Volume).
         pub fn build(self) -> crate::model::Volume {
             crate::model::Volume {
-                volume_id: self.volume_id,
-                ec2_volume_id: self.ec2_volume_id,
-                name: self.name,
-                raid_array_id: self.raid_array_id,
-                instance_id: self.instance_id,
-                status: self.status,
-                size: self.size,
-                device: self.device,
-                mount_point: self.mount_point,
-                region: self.region,
-                availability_zone: self.availability_zone,
-                volume_type: self.volume_type,
-                iops: self.iops,
-                encrypted: self.encrypted,
+                volume_id: self.volume_id
+                ,
+                ec2_volume_id: self.ec2_volume_id
+                ,
+                name: self.name
+                ,
+                raid_array_id: self.raid_array_id
+                ,
+                instance_id: self.instance_id
+                ,
+                status: self.status
+                ,
+                size: self.size
+                ,
+                device: self.device
+                ,
+                mount_point: self.mount_point
+                ,
+                region: self.region
+                ,
+                availability_zone: self.availability_zone
+                ,
+                volume_type: self.volume_type
+                ,
+                iops: self.iops
+                ,
+                encrypted: self.encrypted
+                ,
             }
         }
     }
+    
+    
 }
 impl Volume {
     /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
@@ -4157,7 +3806,7 @@ impl Volume {
 /// <p>Describes a user's SSH information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserProfile {
+pub struct UserProfile  {
     /// <p>The user's IAM ARN.</p>
     #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
@@ -4176,19 +3825,19 @@ pub struct UserProfile {
 }
 impl UserProfile {
     /// <p>The user's IAM ARN.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>The user's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The user's SSH user name.</p>
-    pub fn ssh_username(&self) -> std::option::Option<&str> {
+    pub fn ssh_username(&self) -> std::option::Option<& str> {
         self.ssh_username.as_deref()
     }
     /// <p>The user's SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
@@ -4198,7 +3847,7 @@ impl UserProfile {
 }
 /// See [`UserProfile`](crate::model::UserProfile).
 pub mod user_profile {
-
+    
     /// A builder for [`UserProfile`](crate::model::UserProfile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4216,8 +3865,7 @@ pub mod user_profile {
         }
         /// <p>The user's IAM ARN.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_user_arn = input;
-            self
+            self.iam_user_arn = input; self
         }
         /// <p>The user's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4226,8 +3874,7 @@ pub mod user_profile {
         }
         /// <p>The user's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The user's SSH user name.</p>
         pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4236,8 +3883,7 @@ pub mod user_profile {
         }
         /// <p>The user's SSH user name.</p>
         pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssh_username = input;
-            self
+            self.ssh_username = input; self
         }
         /// <p>The user's SSH public key.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4245,12 +3891,8 @@ pub mod user_profile {
             self
         }
         /// <p>The user's SSH public key.</p>
-        pub fn set_ssh_public_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssh_public_key = input;
-            self
+        pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssh_public_key = input; self
         }
         /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
         pub fn allow_self_management(mut self, input: bool) -> Self {
@@ -4259,20 +3901,26 @@ pub mod user_profile {
         }
         /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
         pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_self_management = input;
-            self
+            self.allow_self_management = input; self
         }
         /// Consumes the builder and constructs a [`UserProfile`](crate::model::UserProfile).
         pub fn build(self) -> crate::model::UserProfile {
             crate::model::UserProfile {
-                iam_user_arn: self.iam_user_arn,
-                name: self.name,
-                ssh_username: self.ssh_username,
-                ssh_public_key: self.ssh_public_key,
-                allow_self_management: self.allow_self_management,
+                iam_user_arn: self.iam_user_arn
+                ,
+                name: self.name
+                ,
+                ssh_username: self.ssh_username
+                ,
+                ssh_public_key: self.ssh_public_key
+                ,
+                allow_self_management: self.allow_self_management
+                ,
             }
         }
     }
+    
+    
 }
 impl UserProfile {
     /// Creates a new builder-style object to manufacture [`UserProfile`](crate::model::UserProfile).
@@ -4284,7 +3932,7 @@ impl UserProfile {
 /// <p>Describes an instance's time-based auto scaling configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeBasedAutoScalingConfiguration {
+pub struct TimeBasedAutoScalingConfiguration  {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -4294,25 +3942,22 @@ pub struct TimeBasedAutoScalingConfiguration {
 }
 impl TimeBasedAutoScalingConfiguration {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
-    pub fn auto_scaling_schedule(
-        &self,
-    ) -> std::option::Option<&crate::model::WeeklyAutoScalingSchedule> {
+    pub fn auto_scaling_schedule(&self) -> std::option::Option<& crate::model::WeeklyAutoScalingSchedule> {
         self.auto_scaling_schedule.as_ref()
     }
 }
 /// See [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration).
 pub mod time_based_auto_scaling_configuration {
-
+    
     /// A builder for [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
-        pub(crate) auto_scaling_schedule:
-            std::option::Option<crate::model::WeeklyAutoScalingSchedule>,
+        pub(crate) auto_scaling_schedule: std::option::Option<crate::model::WeeklyAutoScalingSchedule>,
     }
     impl Builder {
         /// <p>The instance ID.</p>
@@ -4322,33 +3967,29 @@ pub mod time_based_auto_scaling_configuration {
         }
         /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
-        pub fn auto_scaling_schedule(
-            mut self,
-            input: crate::model::WeeklyAutoScalingSchedule,
-        ) -> Self {
+        pub fn auto_scaling_schedule(mut self, input: crate::model::WeeklyAutoScalingSchedule) -> Self {
             self.auto_scaling_schedule = Some(input);
             self
         }
         /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
-        pub fn set_auto_scaling_schedule(
-            mut self,
-            input: std::option::Option<crate::model::WeeklyAutoScalingSchedule>,
-        ) -> Self {
-            self.auto_scaling_schedule = input;
-            self
+        pub fn set_auto_scaling_schedule(mut self, input: std::option::Option<crate::model::WeeklyAutoScalingSchedule>) -> Self {
+            self.auto_scaling_schedule = input; self
         }
         /// Consumes the builder and constructs a [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration).
         pub fn build(self) -> crate::model::TimeBasedAutoScalingConfiguration {
             crate::model::TimeBasedAutoScalingConfiguration {
-                instance_id: self.instance_id,
-                auto_scaling_schedule: self.auto_scaling_schedule,
+                instance_id: self.instance_id
+                ,
+                auto_scaling_schedule: self.auto_scaling_schedule
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeBasedAutoScalingConfiguration {
     /// Creates a new builder-style object to manufacture [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration).
@@ -4360,7 +4001,7 @@ impl TimeBasedAutoScalingConfiguration {
 /// <p>Summarizes the number of layers, instances, and apps in a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StackSummary {
+pub struct StackSummary  {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -4382,15 +4023,15 @@ pub struct StackSummary {
 }
 impl StackSummary {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The stack name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The stack's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The number of layers.</p>
@@ -4402,13 +4043,13 @@ impl StackSummary {
         self.apps_count
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
-    pub fn instances_count(&self) -> std::option::Option<&crate::model::InstancesCount> {
+    pub fn instances_count(&self) -> std::option::Option<& crate::model::InstancesCount> {
         self.instances_count.as_ref()
     }
 }
 /// See [`StackSummary`](crate::model::StackSummary).
 pub mod stack_summary {
-
+    
     /// A builder for [`StackSummary`](crate::model::StackSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4427,8 +4068,7 @@ pub mod stack_summary {
         }
         /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The stack name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4437,8 +4077,7 @@ pub mod stack_summary {
         }
         /// <p>The stack name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The stack's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4447,8 +4086,7 @@ pub mod stack_summary {
         }
         /// <p>The stack's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The number of layers.</p>
         pub fn layers_count(mut self, input: i32) -> Self {
@@ -4457,8 +4095,7 @@ pub mod stack_summary {
         }
         /// <p>The number of layers.</p>
         pub fn set_layers_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.layers_count = input;
-            self
+            self.layers_count = input; self
         }
         /// <p>The number of apps.</p>
         pub fn apps_count(mut self, input: i32) -> Self {
@@ -4467,8 +4104,7 @@ pub mod stack_summary {
         }
         /// <p>The number of apps.</p>
         pub fn set_apps_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.apps_count = input;
-            self
+            self.apps_count = input; self
         }
         /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
         pub fn instances_count(mut self, input: crate::model::InstancesCount) -> Self {
@@ -4476,25 +4112,29 @@ pub mod stack_summary {
             self
         }
         /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
-        pub fn set_instances_count(
-            mut self,
-            input: std::option::Option<crate::model::InstancesCount>,
-        ) -> Self {
-            self.instances_count = input;
-            self
+        pub fn set_instances_count(mut self, input: std::option::Option<crate::model::InstancesCount>) -> Self {
+            self.instances_count = input; self
         }
         /// Consumes the builder and constructs a [`StackSummary`](crate::model::StackSummary).
         pub fn build(self) -> crate::model::StackSummary {
             crate::model::StackSummary {
-                stack_id: self.stack_id,
-                name: self.name,
-                arn: self.arn,
-                layers_count: self.layers_count,
-                apps_count: self.apps_count,
-                instances_count: self.instances_count,
+                stack_id: self.stack_id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                layers_count: self.layers_count
+                ,
+                apps_count: self.apps_count
+                ,
+                instances_count: self.instances_count
+                ,
             }
         }
     }
+    
+    
 }
 impl StackSummary {
     /// Creates a new builder-style object to manufacture [`StackSummary`](crate::model::StackSummary).
@@ -4506,7 +4146,7 @@ impl StackSummary {
 /// <p>Describes how many instances a stack has for each status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstancesCount {
+pub struct InstancesCount  {
     /// <p>The number of instances in the Assigning state.</p>
     #[doc(hidden)]
     pub assigning: std::option::Option<i32>,
@@ -4652,7 +4292,7 @@ impl InstancesCount {
 }
 /// See [`InstancesCount`](crate::model::InstancesCount).
 pub mod instances_count {
-
+    
     /// A builder for [`InstancesCount`](crate::model::InstancesCount).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4685,8 +4325,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances in the Assigning state.</p>
         pub fn set_assigning(mut self, input: std::option::Option<i32>) -> Self {
-            self.assigning = input;
-            self
+            self.assigning = input; self
         }
         /// <p>The number of instances with <code>booting</code> status.</p>
         pub fn booting(mut self, input: i32) -> Self {
@@ -4695,8 +4334,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>booting</code> status.</p>
         pub fn set_booting(mut self, input: std::option::Option<i32>) -> Self {
-            self.booting = input;
-            self
+            self.booting = input; self
         }
         /// <p>The number of instances with <code>connection_lost</code> status.</p>
         pub fn connection_lost(mut self, input: i32) -> Self {
@@ -4705,8 +4343,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>connection_lost</code> status.</p>
         pub fn set_connection_lost(mut self, input: std::option::Option<i32>) -> Self {
-            self.connection_lost = input;
-            self
+            self.connection_lost = input; self
         }
         /// <p>The number of instances in the Deregistering state.</p>
         pub fn deregistering(mut self, input: i32) -> Self {
@@ -4715,8 +4352,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances in the Deregistering state.</p>
         pub fn set_deregistering(mut self, input: std::option::Option<i32>) -> Self {
-            self.deregistering = input;
-            self
+            self.deregistering = input; self
         }
         /// <p>The number of instances with <code>online</code> status.</p>
         pub fn online(mut self, input: i32) -> Self {
@@ -4725,8 +4361,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>online</code> status.</p>
         pub fn set_online(mut self, input: std::option::Option<i32>) -> Self {
-            self.online = input;
-            self
+            self.online = input; self
         }
         /// <p>The number of instances with <code>pending</code> status.</p>
         pub fn pending(mut self, input: i32) -> Self {
@@ -4735,8 +4370,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>pending</code> status.</p>
         pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
-            self.pending = input;
-            self
+            self.pending = input; self
         }
         /// <p>The number of instances with <code>rebooting</code> status.</p>
         pub fn rebooting(mut self, input: i32) -> Self {
@@ -4745,8 +4379,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>rebooting</code> status.</p>
         pub fn set_rebooting(mut self, input: std::option::Option<i32>) -> Self {
-            self.rebooting = input;
-            self
+            self.rebooting = input; self
         }
         /// <p>The number of instances in the Registered state.</p>
         pub fn registered(mut self, input: i32) -> Self {
@@ -4755,8 +4388,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances in the Registered state.</p>
         pub fn set_registered(mut self, input: std::option::Option<i32>) -> Self {
-            self.registered = input;
-            self
+            self.registered = input; self
         }
         /// <p>The number of instances in the Registering state.</p>
         pub fn registering(mut self, input: i32) -> Self {
@@ -4765,8 +4397,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances in the Registering state.</p>
         pub fn set_registering(mut self, input: std::option::Option<i32>) -> Self {
-            self.registering = input;
-            self
+            self.registering = input; self
         }
         /// <p>The number of instances with <code>requested</code> status.</p>
         pub fn requested(mut self, input: i32) -> Self {
@@ -4775,8 +4406,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>requested</code> status.</p>
         pub fn set_requested(mut self, input: std::option::Option<i32>) -> Self {
-            self.requested = input;
-            self
+            self.requested = input; self
         }
         /// <p>The number of instances with <code>running_setup</code> status.</p>
         pub fn running_setup(mut self, input: i32) -> Self {
@@ -4785,8 +4415,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>running_setup</code> status.</p>
         pub fn set_running_setup(mut self, input: std::option::Option<i32>) -> Self {
-            self.running_setup = input;
-            self
+            self.running_setup = input; self
         }
         /// <p>The number of instances with <code>setup_failed</code> status.</p>
         pub fn setup_failed(mut self, input: i32) -> Self {
@@ -4795,8 +4424,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>setup_failed</code> status.</p>
         pub fn set_setup_failed(mut self, input: std::option::Option<i32>) -> Self {
-            self.setup_failed = input;
-            self
+            self.setup_failed = input; self
         }
         /// <p>The number of instances with <code>shutting_down</code> status.</p>
         pub fn shutting_down(mut self, input: i32) -> Self {
@@ -4805,8 +4433,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>shutting_down</code> status.</p>
         pub fn set_shutting_down(mut self, input: std::option::Option<i32>) -> Self {
-            self.shutting_down = input;
-            self
+            self.shutting_down = input; self
         }
         /// <p>The number of instances with <code>start_failed</code> status.</p>
         pub fn start_failed(mut self, input: i32) -> Self {
@@ -4815,8 +4442,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>start_failed</code> status.</p>
         pub fn set_start_failed(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_failed = input;
-            self
+            self.start_failed = input; self
         }
         /// <p>The number of instances with <code>stop_failed</code> status.</p>
         pub fn stop_failed(mut self, input: i32) -> Self {
@@ -4825,8 +4451,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>stop_failed</code> status.</p>
         pub fn set_stop_failed(mut self, input: std::option::Option<i32>) -> Self {
-            self.stop_failed = input;
-            self
+            self.stop_failed = input; self
         }
         /// <p>The number of instances with <code>stopped</code> status.</p>
         pub fn stopped(mut self, input: i32) -> Self {
@@ -4835,8 +4460,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>stopped</code> status.</p>
         pub fn set_stopped(mut self, input: std::option::Option<i32>) -> Self {
-            self.stopped = input;
-            self
+            self.stopped = input; self
         }
         /// <p>The number of instances with <code>stopping</code> status.</p>
         pub fn stopping(mut self, input: i32) -> Self {
@@ -4845,8 +4469,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>stopping</code> status.</p>
         pub fn set_stopping(mut self, input: std::option::Option<i32>) -> Self {
-            self.stopping = input;
-            self
+            self.stopping = input; self
         }
         /// <p>The number of instances with <code>terminated</code> status.</p>
         pub fn terminated(mut self, input: i32) -> Self {
@@ -4855,8 +4478,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>terminated</code> status.</p>
         pub fn set_terminated(mut self, input: std::option::Option<i32>) -> Self {
-            self.terminated = input;
-            self
+            self.terminated = input; self
         }
         /// <p>The number of instances with <code>terminating</code> status.</p>
         pub fn terminating(mut self, input: i32) -> Self {
@@ -4865,8 +4487,7 @@ pub mod instances_count {
         }
         /// <p>The number of instances with <code>terminating</code> status.</p>
         pub fn set_terminating(mut self, input: std::option::Option<i32>) -> Self {
-            self.terminating = input;
-            self
+            self.terminating = input; self
         }
         /// <p>The number of instances in the Unassigning state.</p>
         pub fn unassigning(mut self, input: i32) -> Self {
@@ -4875,35 +4496,56 @@ pub mod instances_count {
         }
         /// <p>The number of instances in the Unassigning state.</p>
         pub fn set_unassigning(mut self, input: std::option::Option<i32>) -> Self {
-            self.unassigning = input;
-            self
+            self.unassigning = input; self
         }
         /// Consumes the builder and constructs a [`InstancesCount`](crate::model::InstancesCount).
         pub fn build(self) -> crate::model::InstancesCount {
             crate::model::InstancesCount {
-                assigning: self.assigning,
-                booting: self.booting,
-                connection_lost: self.connection_lost,
-                deregistering: self.deregistering,
-                online: self.online,
-                pending: self.pending,
-                rebooting: self.rebooting,
-                registered: self.registered,
-                registering: self.registering,
-                requested: self.requested,
-                running_setup: self.running_setup,
-                setup_failed: self.setup_failed,
-                shutting_down: self.shutting_down,
-                start_failed: self.start_failed,
-                stop_failed: self.stop_failed,
-                stopped: self.stopped,
-                stopping: self.stopping,
-                terminated: self.terminated,
-                terminating: self.terminating,
-                unassigning: self.unassigning,
+                assigning: self.assigning
+                ,
+                booting: self.booting
+                ,
+                connection_lost: self.connection_lost
+                ,
+                deregistering: self.deregistering
+                ,
+                online: self.online
+                ,
+                pending: self.pending
+                ,
+                rebooting: self.rebooting
+                ,
+                registered: self.registered
+                ,
+                registering: self.registering
+                ,
+                requested: self.requested
+                ,
+                running_setup: self.running_setup
+                ,
+                setup_failed: self.setup_failed
+                ,
+                shutting_down: self.shutting_down
+                ,
+                start_failed: self.start_failed
+                ,
+                stop_failed: self.stop_failed
+                ,
+                stopped: self.stopped
+                ,
+                stopping: self.stopping
+                ,
+                terminated: self.terminated
+                ,
+                terminating: self.terminating
+                ,
+                unassigning: self.unassigning
+                ,
             }
         }
     }
+    
+    
 }
 impl InstancesCount {
     /// Creates a new builder-style object to manufacture [`InstancesCount`](crate::model::InstancesCount).
@@ -4915,7 +4557,7 @@ impl InstancesCount {
 /// <p>Describes a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Stack {
+pub struct Stack  {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -4933,9 +4575,7 @@ pub struct Stack {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The stack's attributes.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
-    >,
+    pub attributes: std::option::Option<std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>>,
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
     #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
@@ -4954,8 +4594,8 @@ pub struct Stack {
     /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     #[doc(hidden)]
     pub default_subnet_id: std::option::Option<std::string::String>,
-    /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p> 
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
@@ -4989,71 +4629,65 @@ pub struct Stack {
 }
 impl Stack {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The stack name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The stack's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The stack's attributes.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
-    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn default_instance_profile_arn(&self) -> std::option::Option<& str> {
         self.default_instance_profile_arn.as_deref()
     }
     /// <p>The stack's default operating system.</p>
-    pub fn default_os(&self) -> std::option::Option<&str> {
+    pub fn default_os(&self) -> std::option::Option<& str> {
         self.default_os.as_deref()
     }
     /// <p>The stack host name theme, with spaces replaced by underscores.</p>
-    pub fn hostname_theme(&self) -> std::option::Option<&str> {
+    pub fn hostname_theme(&self) -> std::option::Option<& str> {
         self.hostname_theme.as_deref()
     }
     /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn default_availability_zone(&self) -> std::option::Option<&str> {
+    pub fn default_availability_zone(&self) -> std::option::Option<& str> {
         self.default_availability_zone.as_deref()
     }
     /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
-    pub fn default_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn default_subnet_id(&self) -> std::option::Option<& str> {
         self.default_subnet_id.as_deref()
     }
-    /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p> 
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    pub fn custom_json(&self) -> std::option::Option<&str> {
+    pub fn custom_json(&self) -> std::option::Option<& str> {
         self.custom_json.as_deref()
     }
     /// <p>The configuration manager.</p>
-    pub fn configuration_manager(
-        &self,
-    ) -> std::option::Option<&crate::model::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> std::option::Option<& crate::model::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-    pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
+    pub fn chef_configuration(&self) -> std::option::Option<& crate::model::ChefConfiguration> {
         self.chef_configuration.as_ref()
     }
     /// <p>Whether the stack uses custom cookbooks.</p>
@@ -5065,29 +4699,29 @@ impl Stack {
         self.use_opsworks_security_groups
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-    pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn custom_cookbooks_source(&self) -> std::option::Option<& crate::model::Source> {
         self.custom_cookbooks_source.as_ref()
     }
     /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
-    pub fn default_ssh_key_name(&self) -> std::option::Option<&str> {
+    pub fn default_ssh_key_name(&self) -> std::option::Option<& str> {
         self.default_ssh_key_name.as_deref()
     }
     /// <p>The date when the stack was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
+    pub fn default_root_device_type(&self) -> std::option::Option<& crate::model::RootDeviceType> {
         self.default_root_device_type.as_ref()
     }
     /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> std::option::Option<& str> {
         self.agent_version.as_deref()
     }
 }
 /// See [`Stack`](crate::model::Stack).
 pub mod stack {
-
+    
     /// A builder for [`Stack`](crate::model::Stack).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5096,9 +4730,7 @@ pub mod stack {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>>,
         pub(crate) service_role_arn: std::option::Option<std::string::String>,
         pub(crate) default_instance_profile_arn: std::option::Option<std::string::String>,
         pub(crate) default_os: std::option::Option<std::string::String>,
@@ -5106,8 +4738,7 @@ pub mod stack {
         pub(crate) default_availability_zone: std::option::Option<std::string::String>,
         pub(crate) default_subnet_id: std::option::Option<std::string::String>,
         pub(crate) custom_json: std::option::Option<std::string::String>,
-        pub(crate) configuration_manager:
-            std::option::Option<crate::model::StackConfigurationManager>,
+        pub(crate) configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
         pub(crate) chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
         pub(crate) use_custom_cookbooks: std::option::Option<bool>,
         pub(crate) use_opsworks_security_groups: std::option::Option<bool>,
@@ -5125,8 +4756,7 @@ pub mod stack {
         }
         /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The stack name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5135,8 +4765,7 @@ pub mod stack {
         }
         /// <p>The stack name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The stack's ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5145,8 +4774,7 @@ pub mod stack {
         }
         /// <p>The stack's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5155,8 +4783,7 @@ pub mod stack {
         }
         /// <p>The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5165,33 +4792,22 @@ pub mod stack {
         }
         /// <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The stack's attributes.</p>
-        pub fn attributes(
-            mut self,
-            k: crate::model::StackAttributesKeys,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: crate::model::StackAttributesKeys, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The stack's attributes.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5199,28 +4815,17 @@ pub mod stack {
             self
         }
         /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
-        pub fn set_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_role_arn = input;
-            self
+        pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role_arn = input; self
         }
         /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-        pub fn default_instance_profile_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_instance_profile_arn = Some(input.into());
             self
         }
         /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-        pub fn set_default_instance_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_instance_profile_arn = input;
-            self
+        pub fn set_default_instance_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_instance_profile_arn = input; self
         }
         /// <p>The stack's default operating system.</p>
         pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5229,8 +4834,7 @@ pub mod stack {
         }
         /// <p>The stack's default operating system.</p>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.default_os = input;
-            self
+            self.default_os = input; self
         }
         /// <p>The stack host name theme, with spaces replaced by underscores.</p>
         pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5238,12 +4842,8 @@ pub mod stack {
             self
         }
         /// <p>The stack host name theme, with spaces replaced by underscores.</p>
-        pub fn set_hostname_theme(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hostname_theme = input;
-            self
+        pub fn set_hostname_theme(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname_theme = input; self
         }
         /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5251,12 +4851,8 @@ pub mod stack {
             self
         }
         /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        pub fn set_default_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_availability_zone = input;
-            self
+        pub fn set_default_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_availability_zone = input; self
         }
         /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
         pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5264,42 +4860,30 @@ pub mod stack {
             self
         }
         /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
-        pub fn set_default_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_subnet_id = input;
-            self
+        pub fn set_default_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_subnet_id = input; self
         }
-        /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p> 
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
         /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
-        /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p> 
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
         /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.custom_json = input;
-            self
+            self.custom_json = input; self
         }
         /// <p>The configuration manager.</p>
-        pub fn configuration_manager(
-            mut self,
-            input: crate::model::StackConfigurationManager,
-        ) -> Self {
+        pub fn configuration_manager(mut self, input: crate::model::StackConfigurationManager) -> Self {
             self.configuration_manager = Some(input);
             self
         }
         /// <p>The configuration manager.</p>
-        pub fn set_configuration_manager(
-            mut self,
-            input: std::option::Option<crate::model::StackConfigurationManager>,
-        ) -> Self {
-            self.configuration_manager = input;
-            self
+        pub fn set_configuration_manager(mut self, input: std::option::Option<crate::model::StackConfigurationManager>) -> Self {
+            self.configuration_manager = input; self
         }
         /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
@@ -5307,12 +4891,8 @@ pub mod stack {
             self
         }
         /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-        pub fn set_chef_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ChefConfiguration>,
-        ) -> Self {
-            self.chef_configuration = input;
-            self
+        pub fn set_chef_configuration(mut self, input: std::option::Option<crate::model::ChefConfiguration>) -> Self {
+            self.chef_configuration = input; self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
         pub fn use_custom_cookbooks(mut self, input: bool) -> Self {
@@ -5321,8 +4901,7 @@ pub mod stack {
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
         pub fn set_use_custom_cookbooks(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_custom_cookbooks = input;
-            self
+            self.use_custom_cookbooks = input; self
         }
         /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
         pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
@@ -5330,12 +4909,8 @@ pub mod stack {
             self
         }
         /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        pub fn set_use_opsworks_security_groups(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.use_opsworks_security_groups = input;
-            self
+        pub fn set_use_opsworks_security_groups(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_opsworks_security_groups = input; self
         }
         /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
@@ -5343,12 +4918,8 @@ pub mod stack {
             self
         }
         /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-        pub fn set_custom_cookbooks_source(
-            mut self,
-            input: std::option::Option<crate::model::Source>,
-        ) -> Self {
-            self.custom_cookbooks_source = input;
-            self
+        pub fn set_custom_cookbooks_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
+            self.custom_cookbooks_source = input; self
         }
         /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
         pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5356,12 +4927,8 @@ pub mod stack {
             self
         }
         /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
-        pub fn set_default_ssh_key_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_ssh_key_name = input;
-            self
+        pub fn set_default_ssh_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_ssh_key_name = input; self
         }
         /// <p>The date when the stack was created.</p>
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5370,8 +4937,7 @@ pub mod stack {
         }
         /// <p>The date when the stack was created.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
@@ -5379,12 +4945,8 @@ pub mod stack {
             self
         }
         /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn set_default_root_device_type(
-            mut self,
-            input: std::option::Option<crate::model::RootDeviceType>,
-        ) -> Self {
-            self.default_root_device_type = input;
-            self
+        pub fn set_default_root_device_type(mut self, input: std::option::Option<crate::model::RootDeviceType>) -> Self {
+            self.default_root_device_type = input; self
         }
         /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5392,41 +4954,61 @@ pub mod stack {
             self
         }
         /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
-        pub fn set_agent_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.agent_version = input;
-            self
+        pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agent_version = input; self
         }
         /// Consumes the builder and constructs a [`Stack`](crate::model::Stack).
         pub fn build(self) -> crate::model::Stack {
             crate::model::Stack {
-                stack_id: self.stack_id,
-                name: self.name,
-                arn: self.arn,
-                region: self.region,
-                vpc_id: self.vpc_id,
-                attributes: self.attributes,
-                service_role_arn: self.service_role_arn,
-                default_instance_profile_arn: self.default_instance_profile_arn,
-                default_os: self.default_os,
-                hostname_theme: self.hostname_theme,
-                default_availability_zone: self.default_availability_zone,
-                default_subnet_id: self.default_subnet_id,
-                custom_json: self.custom_json,
-                configuration_manager: self.configuration_manager,
-                chef_configuration: self.chef_configuration,
-                use_custom_cookbooks: self.use_custom_cookbooks,
-                use_opsworks_security_groups: self.use_opsworks_security_groups,
-                custom_cookbooks_source: self.custom_cookbooks_source,
-                default_ssh_key_name: self.default_ssh_key_name,
-                created_at: self.created_at,
-                default_root_device_type: self.default_root_device_type,
-                agent_version: self.agent_version,
+                stack_id: self.stack_id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                region: self.region
+                ,
+                vpc_id: self.vpc_id
+                ,
+                attributes: self.attributes
+                ,
+                service_role_arn: self.service_role_arn
+                ,
+                default_instance_profile_arn: self.default_instance_profile_arn
+                ,
+                default_os: self.default_os
+                ,
+                hostname_theme: self.hostname_theme
+                ,
+                default_availability_zone: self.default_availability_zone
+                ,
+                default_subnet_id: self.default_subnet_id
+                ,
+                custom_json: self.custom_json
+                ,
+                configuration_manager: self.configuration_manager
+                ,
+                chef_configuration: self.chef_configuration
+                ,
+                use_custom_cookbooks: self.use_custom_cookbooks
+                ,
+                use_opsworks_security_groups: self.use_opsworks_security_groups
+                ,
+                custom_cookbooks_source: self.custom_cookbooks_source
+                ,
+                default_ssh_key_name: self.default_ssh_key_name
+                ,
+                created_at: self.created_at
+                ,
+                default_root_device_type: self.default_root_device_type
+                ,
+                agent_version: self.agent_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Stack {
     /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
@@ -5438,7 +5020,7 @@ impl Stack {
 /// <p>Describes an AWS OpsWorks Stacks service error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceError {
+pub struct ServiceError  {
     /// <p>The error ID.</p>
     #[doc(hidden)]
     pub service_error_id: std::option::Option<std::string::String>,
@@ -5460,33 +5042,33 @@ pub struct ServiceError {
 }
 impl ServiceError {
     /// <p>The error ID.</p>
-    pub fn service_error_id(&self) -> std::option::Option<&str> {
+    pub fn service_error_id(&self) -> std::option::Option<& str> {
         self.service_error_id.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The error type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>When the error occurred.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
 }
 /// See [`ServiceError`](crate::model::ServiceError).
 pub mod service_error {
-
+    
     /// A builder for [`ServiceError`](crate::model::ServiceError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5504,12 +5086,8 @@ pub mod service_error {
             self
         }
         /// <p>The error ID.</p>
-        pub fn set_service_error_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_error_id = input;
-            self
+        pub fn set_service_error_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_error_id = input; self
         }
         /// <p>The stack ID.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5518,8 +5096,7 @@ pub mod service_error {
         }
         /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The instance ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5528,8 +5105,7 @@ pub mod service_error {
         }
         /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The error type.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5538,8 +5114,7 @@ pub mod service_error {
         }
         /// <p>The error type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A message that describes the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5548,8 +5123,7 @@ pub mod service_error {
         }
         /// <p>A message that describes the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>When the error occurred.</p>
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5558,21 +5132,28 @@ pub mod service_error {
         }
         /// <p>When the error occurred.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`ServiceError`](crate::model::ServiceError).
         pub fn build(self) -> crate::model::ServiceError {
             crate::model::ServiceError {
-                service_error_id: self.service_error_id,
-                stack_id: self.stack_id,
-                instance_id: self.instance_id,
-                r#type: self.r#type,
-                message: self.message,
-                created_at: self.created_at,
+                service_error_id: self.service_error_id
+                ,
+                stack_id: self.stack_id
+                ,
+                instance_id: self.instance_id
+                ,
+                r#type: self.r#type
+                ,
+                message: self.message
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceError {
     /// Creates a new builder-style object to manufacture [`ServiceError`](crate::model::ServiceError).
@@ -5584,7 +5165,7 @@ impl ServiceError {
 /// <p>Describes an Amazon RDS instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsDbInstance {
+pub struct RdsDbInstance  {
     /// <p>The instance's ARN.</p>
     #[doc(hidden)]
     pub rds_db_instance_arn: std::option::Option<std::string::String>,
@@ -5615,35 +5196,35 @@ pub struct RdsDbInstance {
 }
 impl RdsDbInstance {
     /// <p>The instance's ARN.</p>
-    pub fn rds_db_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn rds_db_instance_arn(&self) -> std::option::Option<& str> {
         self.rds_db_instance_arn.as_deref()
     }
     /// <p>The DB instance identifier.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The master user name.</p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    pub fn db_password(&self) -> std::option::Option<&str> {
+    pub fn db_password(&self) -> std::option::Option<& str> {
         self.db_password.as_deref()
     }
     /// <p>The instance's AWS region.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The instance's address.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The instance's database engine.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The ID of the stack with which the instance is registered.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
@@ -5653,7 +5234,7 @@ impl RdsDbInstance {
 }
 /// See [`RdsDbInstance`](crate::model::RdsDbInstance).
 pub mod rds_db_instance {
-
+    
     /// A builder for [`RdsDbInstance`](crate::model::RdsDbInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5674,12 +5255,8 @@ pub mod rds_db_instance {
             self
         }
         /// <p>The instance's ARN.</p>
-        pub fn set_rds_db_instance_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rds_db_instance_arn = input;
-            self
+        pub fn set_rds_db_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rds_db_instance_arn = input; self
         }
         /// <p>The DB instance identifier.</p>
         pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5687,12 +5264,8 @@ pub mod rds_db_instance {
             self
         }
         /// <p>The DB instance identifier.</p>
-        pub fn set_db_instance_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_instance_identifier = input;
-            self
+        pub fn set_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_instance_identifier = input; self
         }
         /// <p>The master user name.</p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5701,8 +5274,7 @@ pub mod rds_db_instance {
         }
         /// <p>The master user name.</p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input;
-            self
+            self.db_user = input; self
         }
         /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
         pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5711,8 +5283,7 @@ pub mod rds_db_instance {
         }
         /// <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
         pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_password = input;
-            self
+            self.db_password = input; self
         }
         /// <p>The instance's AWS region.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5721,8 +5292,7 @@ pub mod rds_db_instance {
         }
         /// <p>The instance's AWS region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The instance's address.</p>
         pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5731,8 +5301,7 @@ pub mod rds_db_instance {
         }
         /// <p>The instance's address.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// <p>The instance's database engine.</p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5741,8 +5310,7 @@ pub mod rds_db_instance {
         }
         /// <p>The instance's database engine.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// <p>The ID of the stack with which the instance is registered.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5751,8 +5319,7 @@ pub mod rds_db_instance {
         }
         /// <p>The ID of the stack with which the instance is registered.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
         pub fn missing_on_rds(mut self, input: bool) -> Self {
@@ -5761,24 +5328,34 @@ pub mod rds_db_instance {
         }
         /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
         pub fn set_missing_on_rds(mut self, input: std::option::Option<bool>) -> Self {
-            self.missing_on_rds = input;
-            self
+            self.missing_on_rds = input; self
         }
         /// Consumes the builder and constructs a [`RdsDbInstance`](crate::model::RdsDbInstance).
         pub fn build(self) -> crate::model::RdsDbInstance {
             crate::model::RdsDbInstance {
-                rds_db_instance_arn: self.rds_db_instance_arn,
-                db_instance_identifier: self.db_instance_identifier,
-                db_user: self.db_user,
-                db_password: self.db_password,
-                region: self.region,
-                address: self.address,
-                engine: self.engine,
-                stack_id: self.stack_id,
-                missing_on_rds: self.missing_on_rds,
+                rds_db_instance_arn: self.rds_db_instance_arn
+                ,
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                db_user: self.db_user
+                ,
+                db_password: self.db_password
+                ,
+                region: self.region
+                ,
+                address: self.address
+                ,
+                engine: self.engine
+                ,
+                stack_id: self.stack_id
+                ,
+                missing_on_rds: self.missing_on_rds
+                ,
             }
         }
     }
+    
+    
 }
 impl RdsDbInstance {
     /// Creates a new builder-style object to manufacture [`RdsDbInstance`](crate::model::RdsDbInstance).
@@ -5790,7 +5367,7 @@ impl RdsDbInstance {
 /// <p>Describes an instance's RAID array.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RaidArray {
+pub struct RaidArray  {
     /// <p>The array ID.</p>
     #[doc(hidden)]
     pub raid_array_id: std::option::Option<std::string::String>,
@@ -5833,15 +5410,15 @@ pub struct RaidArray {
 }
 impl RaidArray {
     /// <p>The array ID.</p>
-    pub fn raid_array_id(&self) -> std::option::Option<&str> {
+    pub fn raid_array_id(&self) -> std::option::Option<& str> {
         self.raid_array_id.as_deref()
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The array name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
@@ -5857,27 +5434,27 @@ impl RaidArray {
         self.size
     }
     /// <p>The array's Linux device. For example /dev/mdadm0.</p>
-    pub fn device(&self) -> std::option::Option<&str> {
+    pub fn device(&self) -> std::option::Option<& str> {
         self.device.as_deref()
     }
     /// <p>The array's mount point.</p>
-    pub fn mount_point(&self) -> std::option::Option<&str> {
+    pub fn mount_point(&self) -> std::option::Option<& str> {
         self.mount_point.as_deref()
     }
     /// <p>The array's Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>When the RAID array was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The volume type, standard or PIOPS.</p>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
@@ -5887,7 +5464,7 @@ impl RaidArray {
 }
 /// See [`RaidArray`](crate::model::RaidArray).
 pub mod raid_array {
-
+    
     /// A builder for [`RaidArray`](crate::model::RaidArray).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5912,12 +5489,8 @@ pub mod raid_array {
             self
         }
         /// <p>The array ID.</p>
-        pub fn set_raid_array_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.raid_array_id = input;
-            self
+        pub fn set_raid_array_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.raid_array_id = input; self
         }
         /// <p>The instance ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5926,8 +5499,7 @@ pub mod raid_array {
         }
         /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The array name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5936,8 +5508,7 @@ pub mod raid_array {
         }
         /// <p>The array name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
         pub fn raid_level(mut self, input: i32) -> Self {
@@ -5946,8 +5517,7 @@ pub mod raid_array {
         }
         /// <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
         pub fn set_raid_level(mut self, input: std::option::Option<i32>) -> Self {
-            self.raid_level = input;
-            self
+            self.raid_level = input; self
         }
         /// <p>The number of disks in the array.</p>
         pub fn number_of_disks(mut self, input: i32) -> Self {
@@ -5956,8 +5526,7 @@ pub mod raid_array {
         }
         /// <p>The number of disks in the array.</p>
         pub fn set_number_of_disks(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_disks = input;
-            self
+            self.number_of_disks = input; self
         }
         /// <p>The array's size.</p>
         pub fn size(mut self, input: i32) -> Self {
@@ -5966,8 +5535,7 @@ pub mod raid_array {
         }
         /// <p>The array's size.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p>The array's Linux device. For example /dev/mdadm0.</p>
         pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5976,8 +5544,7 @@ pub mod raid_array {
         }
         /// <p>The array's Linux device. For example /dev/mdadm0.</p>
         pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device = input;
-            self
+            self.device = input; self
         }
         /// <p>The array's mount point.</p>
         pub fn mount_point(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5986,8 +5553,7 @@ pub mod raid_array {
         }
         /// <p>The array's mount point.</p>
         pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mount_point = input;
-            self
+            self.mount_point = input; self
         }
         /// <p>The array's Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5995,12 +5561,8 @@ pub mod raid_array {
             self
         }
         /// <p>The array's Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>When the RAID array was created.</p>
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6009,8 +5571,7 @@ pub mod raid_array {
         }
         /// <p>When the RAID array was created.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// <p>The stack ID.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6019,8 +5580,7 @@ pub mod raid_array {
         }
         /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The volume type, standard or PIOPS.</p>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6029,8 +5589,7 @@ pub mod raid_array {
         }
         /// <p>The volume type, standard or PIOPS.</p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_type = input;
-            self
+            self.volume_type = input; self
         }
         /// <p>For PIOPS volumes, the IOPS per disk.</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -6039,28 +5598,42 @@ pub mod raid_array {
         }
         /// <p>For PIOPS volumes, the IOPS per disk.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-            self.iops = input;
-            self
+            self.iops = input; self
         }
         /// Consumes the builder and constructs a [`RaidArray`](crate::model::RaidArray).
         pub fn build(self) -> crate::model::RaidArray {
             crate::model::RaidArray {
-                raid_array_id: self.raid_array_id,
-                instance_id: self.instance_id,
-                name: self.name,
-                raid_level: self.raid_level,
-                number_of_disks: self.number_of_disks,
-                size: self.size,
-                device: self.device,
-                mount_point: self.mount_point,
-                availability_zone: self.availability_zone,
-                created_at: self.created_at,
-                stack_id: self.stack_id,
-                volume_type: self.volume_type,
-                iops: self.iops,
+                raid_array_id: self.raid_array_id
+                ,
+                instance_id: self.instance_id
+                ,
+                name: self.name
+                ,
+                raid_level: self.raid_level
+                ,
+                number_of_disks: self.number_of_disks
+                ,
+                size: self.size
+                ,
+                device: self.device
+                ,
+                mount_point: self.mount_point
+                ,
+                availability_zone: self.availability_zone
+                ,
+                created_at: self.created_at
+                ,
+                stack_id: self.stack_id
+                ,
+                volume_type: self.volume_type
+                ,
+                iops: self.iops
+                ,
             }
         }
     }
+    
+    
 }
 impl RaidArray {
     /// Creates a new builder-style object to manufacture [`RaidArray`](crate::model::RaidArray).
@@ -6072,7 +5645,7 @@ impl RaidArray {
 /// <p>Describes stack or user permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Permission {
+pub struct Permission  {
     /// <p>A stack ID.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -6085,25 +5658,25 @@ pub struct Permission {
     /// <p>Whether the user can use <b>sudo</b>.</p>
     #[doc(hidden)]
     pub allow_sudo: std::option::Option<bool>,
-    /// <p>The user's permission level, which must be the following:</p>
-    /// <ul>
-    /// <li> <p> <code>deny</code> </p> </li>
-    /// <li> <p> <code>show</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>manage</code> </p> </li>
-    /// <li> <p> <code>iam_only</code> </p> </li>
-    /// </ul>
+    /// <p>The user's permission level, which must be the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>deny</code> </p> </li> 
+    /// <li> <p> <code>show</code> </p> </li> 
+    /// <li> <p> <code>deploy</code> </p> </li> 
+    /// <li> <p> <code>manage</code> </p> </li> 
+    /// <li> <p> <code>iam_only</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     #[doc(hidden)]
     pub level: std::option::Option<std::string::String>,
 }
 impl Permission {
     /// <p>A stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>Whether the user can use SSH.</p>
@@ -6114,22 +5687,22 @@ impl Permission {
     pub fn allow_sudo(&self) -> std::option::Option<bool> {
         self.allow_sudo
     }
-    /// <p>The user's permission level, which must be the following:</p>
-    /// <ul>
-    /// <li> <p> <code>deny</code> </p> </li>
-    /// <li> <p> <code>show</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>manage</code> </p> </li>
-    /// <li> <p> <code>iam_only</code> </p> </li>
-    /// </ul>
+    /// <p>The user's permission level, which must be the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>deny</code> </p> </li> 
+    /// <li> <p> <code>show</code> </p> </li> 
+    /// <li> <p> <code>deploy</code> </p> </li> 
+    /// <li> <p> <code>manage</code> </p> </li> 
+    /// <li> <p> <code>iam_only</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
-    pub fn level(&self) -> std::option::Option<&str> {
+    pub fn level(&self) -> std::option::Option<& str> {
         self.level.as_deref()
     }
 }
 /// See [`Permission`](crate::model::Permission).
 pub mod permission {
-
+    
     /// A builder for [`Permission`](crate::model::Permission).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6147,8 +5720,7 @@ pub mod permission {
         }
         /// <p>A stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6157,8 +5729,7 @@ pub mod permission {
         }
         /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_user_arn = input;
-            self
+            self.iam_user_arn = input; self
         }
         /// <p>Whether the user can use SSH.</p>
         pub fn allow_ssh(mut self, input: bool) -> Self {
@@ -6167,8 +5738,7 @@ pub mod permission {
         }
         /// <p>Whether the user can use SSH.</p>
         pub fn set_allow_ssh(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_ssh = input;
-            self
+            self.allow_ssh = input; self
         }
         /// <p>Whether the user can use <b>sudo</b>.</p>
         pub fn allow_sudo(mut self, input: bool) -> Self {
@@ -6177,46 +5747,51 @@ pub mod permission {
         }
         /// <p>Whether the user can use <b>sudo</b>.</p>
         pub fn set_allow_sudo(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_sudo = input;
-            self
+            self.allow_sudo = input; self
         }
-        /// <p>The user's permission level, which must be the following:</p>
-        /// <ul>
-        /// <li> <p> <code>deny</code> </p> </li>
-        /// <li> <p> <code>show</code> </p> </li>
-        /// <li> <p> <code>deploy</code> </p> </li>
-        /// <li> <p> <code>manage</code> </p> </li>
-        /// <li> <p> <code>iam_only</code> </p> </li>
-        /// </ul>
+        /// <p>The user's permission level, which must be the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>deny</code> </p> </li> 
+        /// <li> <p> <code>show</code> </p> </li> 
+        /// <li> <p> <code>deploy</code> </p> </li> 
+        /// <li> <p> <code>manage</code> </p> </li> 
+        /// <li> <p> <code>iam_only</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
         pub fn level(mut self, input: impl Into<std::string::String>) -> Self {
             self.level = Some(input.into());
             self
         }
-        /// <p>The user's permission level, which must be the following:</p>
-        /// <ul>
-        /// <li> <p> <code>deny</code> </p> </li>
-        /// <li> <p> <code>show</code> </p> </li>
-        /// <li> <p> <code>deploy</code> </p> </li>
-        /// <li> <p> <code>manage</code> </p> </li>
-        /// <li> <p> <code>iam_only</code> </p> </li>
-        /// </ul>
+        /// <p>The user's permission level, which must be the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>deny</code> </p> </li> 
+        /// <li> <p> <code>show</code> </p> </li> 
+        /// <li> <p> <code>deploy</code> </p> </li> 
+        /// <li> <p> <code>manage</code> </p> </li> 
+        /// <li> <p> <code>iam_only</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
         pub fn set_level(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.level = input;
-            self
+            self.level = input; self
         }
         /// Consumes the builder and constructs a [`Permission`](crate::model::Permission).
         pub fn build(self) -> crate::model::Permission {
             crate::model::Permission {
-                stack_id: self.stack_id,
-                iam_user_arn: self.iam_user_arn,
-                allow_ssh: self.allow_ssh,
-                allow_sudo: self.allow_sudo,
-                level: self.level,
+                stack_id: self.stack_id
+                ,
+                iam_user_arn: self.iam_user_arn
+                ,
+                allow_ssh: self.allow_ssh
+                ,
+                allow_sudo: self.allow_sudo
+                ,
+                level: self.level
+                ,
             }
         }
     }
+    
+    
 }
 impl Permission {
     /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
@@ -6228,7 +5803,7 @@ impl Permission {
 /// <p>Describes supported operating systems in AWS OpsWorks Stacks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperatingSystem {
+pub struct OperatingSystem  {
     /// <p>The name of the operating system, such as <code>Amazon Linux 2018.03</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6240,8 +5815,7 @@ pub struct OperatingSystem {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
     #[doc(hidden)]
-    pub configuration_managers:
-        std::option::Option<std::vec::Vec<crate::model::OperatingSystemConfigurationManager>>,
+    pub configuration_managers: std::option::Option<std::vec::Vec<crate::model::OperatingSystemConfigurationManager>>,
     /// <p>A short name for the operating system manufacturer.</p>
     #[doc(hidden)]
     pub reported_name: std::option::Option<std::string::String>,
@@ -6254,29 +5828,27 @@ pub struct OperatingSystem {
 }
 impl OperatingSystem {
     /// <p>The name of the operating system, such as <code>Amazon Linux 2018.03</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
-    pub fn configuration_managers(
-        &self,
-    ) -> std::option::Option<&[crate::model::OperatingSystemConfigurationManager]> {
+    pub fn configuration_managers(&self) -> std::option::Option<& [crate::model::OperatingSystemConfigurationManager]> {
         self.configuration_managers.as_deref()
     }
     /// <p>A short name for the operating system manufacturer.</p>
-    pub fn reported_name(&self) -> std::option::Option<&str> {
+    pub fn reported_name(&self) -> std::option::Option<& str> {
         self.reported_name.as_deref()
     }
     /// <p>The version of the operating system, including the release and edition, if applicable.</p>
-    pub fn reported_version(&self) -> std::option::Option<&str> {
+    pub fn reported_version(&self) -> std::option::Option<& str> {
         self.reported_version.as_deref()
     }
     /// <p>Indicates that an operating system is not supported for new instances.</p>
@@ -6286,15 +5858,14 @@ impl OperatingSystem {
 }
 /// See [`OperatingSystem`](crate::model::OperatingSystem).
 pub mod operating_system {
-
+    
     /// A builder for [`OperatingSystem`](crate::model::OperatingSystem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) configuration_managers:
-            std::option::Option<std::vec::Vec<crate::model::OperatingSystemConfigurationManager>>,
+        pub(crate) configuration_managers: std::option::Option<std::vec::Vec<crate::model::OperatingSystemConfigurationManager>>,
         pub(crate) reported_name: std::option::Option<std::string::String>,
         pub(crate) reported_version: std::option::Option<std::string::String>,
         pub(crate) supported: std::option::Option<bool>,
@@ -6307,8 +5878,7 @@ pub mod operating_system {
         }
         /// <p>The name of the operating system, such as <code>Amazon Linux 2018.03</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6317,8 +5887,7 @@ pub mod operating_system {
         }
         /// <p>The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6327,32 +5896,22 @@ pub mod operating_system {
         }
         /// <p>The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `configuration_managers`.
         ///
         /// To override the contents of this collection use [`set_configuration_managers`](Self::set_configuration_managers).
         ///
         /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
-        pub fn configuration_managers(
-            mut self,
-            input: crate::model::OperatingSystemConfigurationManager,
-        ) -> Self {
+        pub fn configuration_managers(mut self, input: crate::model::OperatingSystemConfigurationManager) -> Self {
             let mut v = self.configuration_managers.unwrap_or_default();
-            v.push(input);
-            self.configuration_managers = Some(v);
-            self
+                            v.push(input);
+                            self.configuration_managers = Some(v);
+                            self
         }
         /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
-        pub fn set_configuration_managers(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::OperatingSystemConfigurationManager>,
-            >,
-        ) -> Self {
-            self.configuration_managers = input;
-            self
+        pub fn set_configuration_managers(mut self, input: std::option::Option<std::vec::Vec<crate::model::OperatingSystemConfigurationManager>>) -> Self {
+            self.configuration_managers = input; self
         }
         /// <p>A short name for the operating system manufacturer.</p>
         pub fn reported_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6360,12 +5919,8 @@ pub mod operating_system {
             self
         }
         /// <p>A short name for the operating system manufacturer.</p>
-        pub fn set_reported_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reported_name = input;
-            self
+        pub fn set_reported_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reported_name = input; self
         }
         /// <p>The version of the operating system, including the release and edition, if applicable.</p>
         pub fn reported_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6373,12 +5928,8 @@ pub mod operating_system {
             self
         }
         /// <p>The version of the operating system, including the release and edition, if applicable.</p>
-        pub fn set_reported_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reported_version = input;
-            self
+        pub fn set_reported_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reported_version = input; self
         }
         /// <p>Indicates that an operating system is not supported for new instances.</p>
         pub fn supported(mut self, input: bool) -> Self {
@@ -6387,22 +5938,30 @@ pub mod operating_system {
         }
         /// <p>Indicates that an operating system is not supported for new instances.</p>
         pub fn set_supported(mut self, input: std::option::Option<bool>) -> Self {
-            self.supported = input;
-            self
+            self.supported = input; self
         }
         /// Consumes the builder and constructs a [`OperatingSystem`](crate::model::OperatingSystem).
         pub fn build(self) -> crate::model::OperatingSystem {
             crate::model::OperatingSystem {
-                name: self.name,
-                id: self.id,
-                r#type: self.r#type,
-                configuration_managers: self.configuration_managers,
-                reported_name: self.reported_name,
-                reported_version: self.reported_version,
-                supported: self.supported,
+                name: self.name
+                ,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                configuration_managers: self.configuration_managers
+                ,
+                reported_name: self.reported_name
+                ,
+                reported_version: self.reported_version
+                ,
+                supported: self.supported
+                ,
             }
         }
     }
+    
+    
 }
 impl OperatingSystem {
     /// Creates a new builder-style object to manufacture [`OperatingSystem`](crate::model::OperatingSystem).
@@ -6414,7 +5973,7 @@ impl OperatingSystem {
 /// <p>A block that contains information about the configuration manager (Chef) and the versions of the configuration manager that are supported for an operating system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperatingSystemConfigurationManager {
+pub struct OperatingSystemConfigurationManager  {
     /// <p>The name of the configuration manager, which is Chef.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6424,17 +5983,17 @@ pub struct OperatingSystemConfigurationManager {
 }
 impl OperatingSystemConfigurationManager {
     /// <p>The name of the configuration manager, which is Chef.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager).
 pub mod operating_system_configuration_manager {
-
+    
     /// A builder for [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6449,8 +6008,7 @@ pub mod operating_system_configuration_manager {
         }
         /// <p>The name of the configuration manager, which is Chef.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The versions of the configuration manager that are supported by an operating system.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6459,17 +6017,20 @@ pub mod operating_system_configuration_manager {
         }
         /// <p>The versions of the configuration manager that are supported by an operating system.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager).
         pub fn build(self) -> crate::model::OperatingSystemConfigurationManager {
             crate::model::OperatingSystemConfigurationManager {
-                name: self.name,
-                version: self.version,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl OperatingSystemConfigurationManager {
     /// Creates a new builder-style object to manufacture [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager).
@@ -6481,7 +6042,7 @@ impl OperatingSystemConfigurationManager {
 /// <p>Describes a user's SSH information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelfUserProfile {
+pub struct SelfUserProfile  {
     /// <p>The user's IAM ARN.</p>
     #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
@@ -6497,25 +6058,25 @@ pub struct SelfUserProfile {
 }
 impl SelfUserProfile {
     /// <p>The user's IAM ARN.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>The user's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The user's SSH user name.</p>
-    pub fn ssh_username(&self) -> std::option::Option<&str> {
+    pub fn ssh_username(&self) -> std::option::Option<& str> {
         self.ssh_username.as_deref()
     }
     /// <p>The user's SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
 }
 /// See [`SelfUserProfile`](crate::model::SelfUserProfile).
 pub mod self_user_profile {
-
+    
     /// A builder for [`SelfUserProfile`](crate::model::SelfUserProfile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6532,8 +6093,7 @@ pub mod self_user_profile {
         }
         /// <p>The user's IAM ARN.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_user_arn = input;
-            self
+            self.iam_user_arn = input; self
         }
         /// <p>The user's name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6542,8 +6102,7 @@ pub mod self_user_profile {
         }
         /// <p>The user's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The user's SSH user name.</p>
         pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6552,8 +6111,7 @@ pub mod self_user_profile {
         }
         /// <p>The user's SSH user name.</p>
         pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssh_username = input;
-            self
+            self.ssh_username = input; self
         }
         /// <p>The user's SSH public key.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6561,23 +6119,25 @@ pub mod self_user_profile {
             self
         }
         /// <p>The user's SSH public key.</p>
-        pub fn set_ssh_public_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssh_public_key = input;
-            self
+        pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssh_public_key = input; self
         }
         /// Consumes the builder and constructs a [`SelfUserProfile`](crate::model::SelfUserProfile).
         pub fn build(self) -> crate::model::SelfUserProfile {
             crate::model::SelfUserProfile {
-                iam_user_arn: self.iam_user_arn,
-                name: self.name,
-                ssh_username: self.ssh_username,
-                ssh_public_key: self.ssh_public_key,
+                iam_user_arn: self.iam_user_arn
+                ,
+                name: self.name
+                ,
+                ssh_username: self.ssh_username
+                ,
+                ssh_public_key: self.ssh_public_key
+                ,
             }
         }
     }
+    
+    
 }
 impl SelfUserProfile {
     /// Creates a new builder-style object to manufacture [`SelfUserProfile`](crate::model::SelfUserProfile).
@@ -6589,7 +6149,7 @@ impl SelfUserProfile {
 /// <p>Describes a layer's load-based auto scaling configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoadBasedAutoScalingConfiguration {
+pub struct LoadBasedAutoScalingConfiguration  {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
     pub layer_id: std::option::Option<std::string::String>,
@@ -6605,7 +6165,7 @@ pub struct LoadBasedAutoScalingConfiguration {
 }
 impl LoadBasedAutoScalingConfiguration {
     /// <p>The layer ID.</p>
-    pub fn layer_id(&self) -> std::option::Option<&str> {
+    pub fn layer_id(&self) -> std::option::Option<& str> {
         self.layer_id.as_deref()
     }
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
@@ -6613,17 +6173,17 @@ impl LoadBasedAutoScalingConfiguration {
         self.enable
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
-    pub fn up_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
+    pub fn up_scaling(&self) -> std::option::Option<& crate::model::AutoScalingThresholds> {
         self.up_scaling.as_ref()
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
-    pub fn down_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
+    pub fn down_scaling(&self) -> std::option::Option<& crate::model::AutoScalingThresholds> {
         self.down_scaling.as_ref()
     }
 }
 /// See [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration).
 pub mod load_based_auto_scaling_configuration {
-
+    
     /// A builder for [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6640,8 +6200,7 @@ pub mod load_based_auto_scaling_configuration {
         }
         /// <p>The layer ID.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_id = input;
-            self
+            self.layer_id = input; self
         }
         /// <p>Whether load-based auto scaling is enabled for the layer.</p>
         pub fn enable(mut self, input: bool) -> Self {
@@ -6650,8 +6209,7 @@ pub mod load_based_auto_scaling_configuration {
         }
         /// <p>Whether load-based auto scaling is enabled for the layer.</p>
         pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable = input;
-            self
+            self.enable = input; self
         }
         /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
         pub fn up_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
@@ -6659,12 +6217,8 @@ pub mod load_based_auto_scaling_configuration {
             self
         }
         /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
-        pub fn set_up_scaling(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingThresholds>,
-        ) -> Self {
-            self.up_scaling = input;
-            self
+        pub fn set_up_scaling(mut self, input: std::option::Option<crate::model::AutoScalingThresholds>) -> Self {
+            self.up_scaling = input; self
         }
         /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
         pub fn down_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
@@ -6672,23 +6226,25 @@ pub mod load_based_auto_scaling_configuration {
             self
         }
         /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
-        pub fn set_down_scaling(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingThresholds>,
-        ) -> Self {
-            self.down_scaling = input;
-            self
+        pub fn set_down_scaling(mut self, input: std::option::Option<crate::model::AutoScalingThresholds>) -> Self {
+            self.down_scaling = input; self
         }
         /// Consumes the builder and constructs a [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration).
         pub fn build(self) -> crate::model::LoadBasedAutoScalingConfiguration {
             crate::model::LoadBasedAutoScalingConfiguration {
-                layer_id: self.layer_id,
-                enable: self.enable,
-                up_scaling: self.up_scaling,
-                down_scaling: self.down_scaling,
+                layer_id: self.layer_id
+                ,
+                enable: self.enable
+                ,
+                up_scaling: self.up_scaling
+                ,
+                down_scaling: self.down_scaling
+                ,
             }
         }
     }
+    
+    
 }
 impl LoadBasedAutoScalingConfiguration {
     /// Creates a new builder-style object to manufacture [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration).
@@ -6700,7 +6256,7 @@ impl LoadBasedAutoScalingConfiguration {
 /// <p>Describes a layer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Layer {
+pub struct Layer  {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6719,17 +6275,14 @@ pub struct Layer {
     /// <p>The layer short name.</p>
     #[doc(hidden)]
     pub shortname: std::option::Option<std::string::String>,
-    /// <p>The layer attributes.</p>
-    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
+    /// <p>The layer attributes.</p> 
+    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p> 
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
-    >,
+    pub attributes: std::option::Option<std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>>,
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_configuration:
-        std::option::Option<crate::model::CloudWatchLogsConfiguration>,
+    pub cloud_watch_logs_configuration: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     #[doc(hidden)]
     pub custom_instance_profile_arn: std::option::Option<std::string::String>,
@@ -6747,8 +6300,7 @@ pub struct Layer {
     pub packages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     #[doc(hidden)]
-    pub volume_configurations:
-        std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
+    pub volume_configurations: std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
     /// <p>Whether auto healing is disabled for the layer.</p>
     #[doc(hidden)]
     pub enable_auto_healing: std::option::Option<bool>,
@@ -6758,7 +6310,7 @@ pub struct Layer {
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     #[doc(hidden)]
     pub auto_assign_public_ips: std::option::Option<bool>,
-    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p> 
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
     #[doc(hidden)]
     pub default_recipes: std::option::Option<crate::model::Recipes>,
@@ -6768,8 +6320,8 @@ pub struct Layer {
     /// <p>Date when the layer was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> 
     /// </note>
     #[doc(hidden)]
     pub install_updates_on_boot: std::option::Option<bool>,
@@ -6778,74 +6330,65 @@ pub struct Layer {
     pub use_ebs_optimized_instances: std::option::Option<bool>,
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     #[doc(hidden)]
-    pub lifecycle_event_configuration:
-        std::option::Option<crate::model::LifecycleEventConfiguration>,
+    pub lifecycle_event_configuration: std::option::Option<crate::model::LifecycleEventConfiguration>,
 }
 impl Layer {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The layer stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The layer ID.</p>
-    pub fn layer_id(&self) -> std::option::Option<&str> {
+    pub fn layer_id(&self) -> std::option::Option<& str> {
         self.layer_id.as_deref()
     }
     /// <p>The layer type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::LayerType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::LayerType> {
         self.r#type.as_ref()
     }
     /// <p>The layer name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The layer short name.</p>
-    pub fn shortname(&self) -> std::option::Option<&str> {
+    pub fn shortname(&self) -> std::option::Option<& str> {
         self.shortname.as_deref()
     }
-    /// <p>The layer attributes.</p>
-    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
+    /// <p>The layer attributes.</p> 
+    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p> 
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
-    pub fn cloud_watch_logs_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsConfiguration> {
+    pub fn cloud_watch_logs_configuration(&self) -> std::option::Option<& crate::model::CloudWatchLogsConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn custom_instance_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_instance_profile_arn(&self) -> std::option::Option<& str> {
         self.custom_instance_profile_arn.as_deref()
     }
     /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
-    pub fn custom_json(&self) -> std::option::Option<&str> {
+    pub fn custom_json(&self) -> std::option::Option<& str> {
         self.custom_json.as_deref()
     }
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn custom_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn custom_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.custom_security_group_ids.as_deref()
     }
     /// <p>An array containing the layer's security group names.</p>
-    pub fn default_security_group_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn default_security_group_names(&self) -> std::option::Option<& [std::string::String]> {
         self.default_security_group_names.as_deref()
     }
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    pub fn packages(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn packages(&self) -> std::option::Option<& [std::string::String]> {
         self.packages.as_deref()
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn volume_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::VolumeConfiguration]> {
+    pub fn volume_configurations(&self) -> std::option::Option<& [crate::model::VolumeConfiguration]> {
         self.volume_configurations.as_deref()
     }
     /// <p>Whether auto healing is disabled for the layer.</p>
@@ -6860,21 +6403,21 @@ impl Layer {
     pub fn auto_assign_public_ips(&self) -> std::option::Option<bool> {
         self.auto_assign_public_ips
     }
-    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p> 
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
-    pub fn default_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
+    pub fn default_recipes(&self) -> std::option::Option<& crate::model::Recipes> {
         self.default_recipes.as_ref()
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-    pub fn custom_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
+    pub fn custom_recipes(&self) -> std::option::Option<& crate::model::Recipes> {
         self.custom_recipes.as_ref()
     }
     /// <p>Date when the layer was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> 
     /// </note>
     pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
         self.install_updates_on_boot
@@ -6884,15 +6427,13 @@ impl Layer {
         self.use_ebs_optimized_instances
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    pub fn lifecycle_event_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LifecycleEventConfiguration> {
+    pub fn lifecycle_event_configuration(&self) -> std::option::Option<& crate::model::LifecycleEventConfiguration> {
         self.lifecycle_event_configuration.as_ref()
     }
 }
 /// See [`Layer`](crate::model::Layer).
 pub mod layer {
-
+    
     /// A builder for [`Layer`](crate::model::Layer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6902,20 +6443,14 @@ pub mod layer {
         pub(crate) r#type: std::option::Option<crate::model::LayerType>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) shortname: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
-        >,
-        pub(crate) cloud_watch_logs_configuration:
-            std::option::Option<crate::model::CloudWatchLogsConfiguration>,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>>,
+        pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
         pub(crate) custom_instance_profile_arn: std::option::Option<std::string::String>,
         pub(crate) custom_json: std::option::Option<std::string::String>,
-        pub(crate) custom_security_group_ids:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) default_security_group_names:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) custom_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) default_security_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) packages: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) volume_configurations:
-            std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
+        pub(crate) volume_configurations: std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
         pub(crate) enable_auto_healing: std::option::Option<bool>,
         pub(crate) auto_assign_elastic_ips: std::option::Option<bool>,
         pub(crate) auto_assign_public_ips: std::option::Option<bool>,
@@ -6924,8 +6459,7 @@ pub mod layer {
         pub(crate) created_at: std::option::Option<std::string::String>,
         pub(crate) install_updates_on_boot: std::option::Option<bool>,
         pub(crate) use_ebs_optimized_instances: std::option::Option<bool>,
-        pub(crate) lifecycle_event_configuration:
-            std::option::Option<crate::model::LifecycleEventConfiguration>,
+        pub(crate) lifecycle_event_configuration: std::option::Option<crate::model::LifecycleEventConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Number (ARN) of a layer.</p>
@@ -6935,8 +6469,7 @@ pub mod layer {
         }
         /// <p>The Amazon Resource Number (ARN) of a layer.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The layer stack ID.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6945,8 +6478,7 @@ pub mod layer {
         }
         /// <p>The layer stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The layer ID.</p>
         pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6955,8 +6487,7 @@ pub mod layer {
         }
         /// <p>The layer ID.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_id = input;
-            self
+            self.layer_id = input; self
         }
         /// <p>The layer type.</p>
         pub fn r#type(mut self, input: crate::model::LayerType) -> Self {
@@ -6965,8 +6496,7 @@ pub mod layer {
         }
         /// <p>The layer type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::LayerType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The layer name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6975,8 +6505,7 @@ pub mod layer {
         }
         /// <p>The layer name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The layer short name.</p>
         pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6985,69 +6514,44 @@ pub mod layer {
         }
         /// <p>The layer short name.</p>
         pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shortname = input;
-            self
+            self.shortname = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The layer attributes.</p>
-        /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
+        /// <p>The layer attributes.</p> 
+        /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p> 
         /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
-        pub fn attributes(
-            mut self,
-            k: crate::model::LayerAttributesKeys,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: crate::model::LayerAttributesKeys, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
-        /// <p>The layer attributes.</p>
-        /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
+        /// <p>The layer attributes.</p> 
+        /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p> 
         /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
-        pub fn cloud_watch_logs_configuration(
-            mut self,
-            input: crate::model::CloudWatchLogsConfiguration,
-        ) -> Self {
+        pub fn cloud_watch_logs_configuration(mut self, input: crate::model::CloudWatchLogsConfiguration) -> Self {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
         /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
-        pub fn set_cloud_watch_logs_configuration(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
-        ) -> Self {
-            self.cloud_watch_logs_configuration = input;
-            self
+        pub fn set_cloud_watch_logs_configuration(mut self, input: std::option::Option<crate::model::CloudWatchLogsConfiguration>) -> Self {
+            self.cloud_watch_logs_configuration = input; self
         }
         /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-        pub fn custom_instance_profile_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn custom_instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_instance_profile_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-        pub fn set_custom_instance_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_instance_profile_arn = input;
-            self
+        pub fn set_custom_instance_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_instance_profile_arn = input; self
         }
         /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7056,8 +6560,7 @@ pub mod layer {
         }
         /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.custom_json = input;
-            self
+            self.custom_json = input; self
         }
         /// Appends an item to `custom_security_group_ids`.
         ///
@@ -7066,39 +6569,28 @@ pub mod layer {
         /// <p>An array containing the layer's custom security group IDs.</p>
         pub fn custom_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.custom_security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.custom_security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.custom_security_group_ids = Some(v);
+                            self
         }
         /// <p>An array containing the layer's custom security group IDs.</p>
-        pub fn set_custom_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.custom_security_group_ids = input;
-            self
+        pub fn set_custom_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.custom_security_group_ids = input; self
         }
         /// Appends an item to `default_security_group_names`.
         ///
         /// To override the contents of this collection use [`set_default_security_group_names`](Self::set_default_security_group_names).
         ///
         /// <p>An array containing the layer's security group names.</p>
-        pub fn default_security_group_names(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.default_security_group_names.unwrap_or_default();
-            v.push(input.into());
-            self.default_security_group_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.default_security_group_names = Some(v);
+                            self
         }
         /// <p>An array containing the layer's security group names.</p>
-        pub fn set_default_security_group_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.default_security_group_names = input;
-            self
+        pub fn set_default_security_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.default_security_group_names = input; self
         }
         /// Appends an item to `packages`.
         ///
@@ -7107,17 +6599,13 @@ pub mod layer {
         /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
         pub fn packages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.packages.unwrap_or_default();
-            v.push(input.into());
-            self.packages = Some(v);
-            self
+                            v.push(input.into());
+                            self.packages = Some(v);
+                            self
         }
         /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-        pub fn set_packages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.packages = input;
-            self
+        pub fn set_packages(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.packages = input; self
         }
         /// Appends an item to `volume_configurations`.
         ///
@@ -7126,17 +6614,13 @@ pub mod layer {
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
         pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
             let mut v = self.volume_configurations.unwrap_or_default();
-            v.push(input);
-            self.volume_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.volume_configurations = Some(v);
+                            self
         }
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn set_volume_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
-        ) -> Self {
-            self.volume_configurations = input;
-            self
+        pub fn set_volume_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>) -> Self {
+            self.volume_configurations = input; self
         }
         /// <p>Whether auto healing is disabled for the layer.</p>
         pub fn enable_auto_healing(mut self, input: bool) -> Self {
@@ -7145,8 +6629,7 @@ pub mod layer {
         }
         /// <p>Whether auto healing is disabled for the layer.</p>
         pub fn set_enable_auto_healing(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_auto_healing = input;
-            self
+            self.enable_auto_healing = input; self
         }
         /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
@@ -7155,8 +6638,7 @@ pub mod layer {
         }
         /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_assign_elastic_ips = input;
-            self
+            self.auto_assign_elastic_ips = input; self
         }
         /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
@@ -7165,23 +6647,18 @@ pub mod layer {
         }
         /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_assign_public_ips = input;
-            self
+            self.auto_assign_public_ips = input; self
         }
-        /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+        /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p> 
         /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
         pub fn default_recipes(mut self, input: crate::model::Recipes) -> Self {
             self.default_recipes = Some(input);
             self
         }
-        /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+        /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p> 
         /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
-        pub fn set_default_recipes(
-            mut self,
-            input: std::option::Option<crate::model::Recipes>,
-        ) -> Self {
-            self.default_recipes = input;
-            self
+        pub fn set_default_recipes(mut self, input: std::option::Option<crate::model::Recipes>) -> Self {
+            self.default_recipes = input; self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
         pub fn custom_recipes(mut self, input: crate::model::Recipes) -> Self {
@@ -7189,12 +6666,8 @@ pub mod layer {
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-        pub fn set_custom_recipes(
-            mut self,
-            input: std::option::Option<crate::model::Recipes>,
-        ) -> Self {
-            self.custom_recipes = input;
-            self
+        pub fn set_custom_recipes(mut self, input: std::option::Option<crate::model::Recipes>) -> Self {
+            self.custom_recipes = input; self
         }
         /// <p>Date when the layer was created.</p>
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7203,22 +6676,20 @@ pub mod layer {
         }
         /// <p>Date when the layer was created.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> 
         /// </note>
         pub fn install_updates_on_boot(mut self, input: bool) -> Self {
             self.install_updates_on_boot = Some(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> 
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
-            self.install_updates_on_boot = input;
-            self
+            self.install_updates_on_boot = input; self
         }
         /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
         pub fn use_ebs_optimized_instances(mut self, input: bool) -> Self {
@@ -7227,54 +6698,71 @@ pub mod layer {
         }
         /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
         pub fn set_use_ebs_optimized_instances(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_ebs_optimized_instances = input;
-            self
+            self.use_ebs_optimized_instances = input; self
         }
         /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-        pub fn lifecycle_event_configuration(
-            mut self,
-            input: crate::model::LifecycleEventConfiguration,
-        ) -> Self {
+        pub fn lifecycle_event_configuration(mut self, input: crate::model::LifecycleEventConfiguration) -> Self {
             self.lifecycle_event_configuration = Some(input);
             self
         }
         /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-        pub fn set_lifecycle_event_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LifecycleEventConfiguration>,
-        ) -> Self {
-            self.lifecycle_event_configuration = input;
-            self
+        pub fn set_lifecycle_event_configuration(mut self, input: std::option::Option<crate::model::LifecycleEventConfiguration>) -> Self {
+            self.lifecycle_event_configuration = input; self
         }
         /// Consumes the builder and constructs a [`Layer`](crate::model::Layer).
         pub fn build(self) -> crate::model::Layer {
             crate::model::Layer {
-                arn: self.arn,
-                stack_id: self.stack_id,
-                layer_id: self.layer_id,
-                r#type: self.r#type,
-                name: self.name,
-                shortname: self.shortname,
-                attributes: self.attributes,
-                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-                custom_instance_profile_arn: self.custom_instance_profile_arn,
-                custom_json: self.custom_json,
-                custom_security_group_ids: self.custom_security_group_ids,
-                default_security_group_names: self.default_security_group_names,
-                packages: self.packages,
-                volume_configurations: self.volume_configurations,
-                enable_auto_healing: self.enable_auto_healing,
-                auto_assign_elastic_ips: self.auto_assign_elastic_ips,
-                auto_assign_public_ips: self.auto_assign_public_ips,
-                default_recipes: self.default_recipes,
-                custom_recipes: self.custom_recipes,
-                created_at: self.created_at,
-                install_updates_on_boot: self.install_updates_on_boot,
-                use_ebs_optimized_instances: self.use_ebs_optimized_instances,
-                lifecycle_event_configuration: self.lifecycle_event_configuration,
+                arn: self.arn
+                ,
+                stack_id: self.stack_id
+                ,
+                layer_id: self.layer_id
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                shortname: self.shortname
+                ,
+                attributes: self.attributes
+                ,
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+                ,
+                custom_instance_profile_arn: self.custom_instance_profile_arn
+                ,
+                custom_json: self.custom_json
+                ,
+                custom_security_group_ids: self.custom_security_group_ids
+                ,
+                default_security_group_names: self.default_security_group_names
+                ,
+                packages: self.packages
+                ,
+                volume_configurations: self.volume_configurations
+                ,
+                enable_auto_healing: self.enable_auto_healing
+                ,
+                auto_assign_elastic_ips: self.auto_assign_elastic_ips
+                ,
+                auto_assign_public_ips: self.auto_assign_public_ips
+                ,
+                default_recipes: self.default_recipes
+                ,
+                custom_recipes: self.custom_recipes
+                ,
+                created_at: self.created_at
+                ,
+                install_updates_on_boot: self.install_updates_on_boot
+                ,
+                use_ebs_optimized_instances: self.use_ebs_optimized_instances
+                ,
+                lifecycle_event_configuration: self.lifecycle_event_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl Layer {
     /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
@@ -7289,9 +6777,9 @@ impl Layer {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let layertype = unimplemented!();
 /// match layertype {
@@ -7323,22 +6811,14 @@ impl Layer {
 /// Specifically, when `layertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LayerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LayerType {
     #[allow(missing_docs)] // documentation missing in model
     AwsFlowRuby,
@@ -7365,7 +6845,7 @@ pub enum LayerType {
     #[allow(missing_docs)] // documentation missing in model
     Web,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LayerType {
     fn from(s: &str) -> Self {
@@ -7382,17 +6862,17 @@ impl std::convert::From<&str> for LayerType {
             "php-app" => LayerType::PhpApp,
             "rails-app" => LayerType::RailsApp,
             "web" => LayerType::Web,
-            other => LayerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LayerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LayerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LayerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LayerType::from(s))
+                }
+            }
 impl LayerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7409,24 +6889,13 @@ impl LayerType {
             LayerType::PhpApp => "php-app",
             LayerType::RailsApp => "rails-app",
             LayerType::Web => "web",
-            LayerType::Unknown(value) => value.as_str(),
+            LayerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "aws-flow-ruby",
-            "custom",
-            "db-master",
-            "ecs-cluster",
-            "java-app",
-            "lb",
-            "memcached",
-            "monitoring-master",
-            "nodejs-app",
-            "php-app",
-            "rails-app",
-            "web",
+            "aws-flow-ruby", "custom", "db-master", "ecs-cluster", "java-app", "lb", "memcached", "monitoring-master", "nodejs-app", "php-app", "rails-app", "web"
         ]
     }
 }
@@ -7439,7 +6908,7 @@ impl AsRef<str> for LayerType {
 /// <p>Describes an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
@@ -7485,8 +6954,8 @@ pub struct Instance {
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     #[doc(hidden)]
     pub infrastructure_class: std::option::Option<std::string::String>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> 
     /// </note>
     #[doc(hidden)]
     pub install_updates_on_boot: std::option::Option<bool>,
@@ -7553,23 +7022,23 @@ pub struct Instance {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>The instance status:</p>
-    /// <ul>
-    /// <li> <p> <code>booting</code> </p> </li>
-    /// <li> <p> <code>connection_lost</code> </p> </li>
-    /// <li> <p> <code>online</code> </p> </li>
-    /// <li> <p> <code>pending</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>requested</code> </p> </li>
-    /// <li> <p> <code>running_setup</code> </p> </li>
-    /// <li> <p> <code>setup_failed</code> </p> </li>
-    /// <li> <p> <code>shutting_down</code> </p> </li>
-    /// <li> <p> <code>start_failed</code> </p> </li>
-    /// <li> <p> <code>stop_failed</code> </p> </li>
-    /// <li> <p> <code>stopped</code> </p> </li>
-    /// <li> <p> <code>stopping</code> </p> </li>
-    /// <li> <p> <code>terminated</code> </p> </li>
-    /// <li> <p> <code>terminating</code> </p> </li>
+    /// <p>The instance status:</p> 
+    /// <ul> 
+    /// <li> <p> <code>booting</code> </p> </li> 
+    /// <li> <p> <code>connection_lost</code> </p> </li> 
+    /// <li> <p> <code>online</code> </p> </li> 
+    /// <li> <p> <code>pending</code> </p> </li> 
+    /// <li> <p> <code>rebooting</code> </p> </li> 
+    /// <li> <p> <code>requested</code> </p> </li> 
+    /// <li> <p> <code>running_setup</code> </p> </li> 
+    /// <li> <p> <code>setup_failed</code> </p> </li> 
+    /// <li> <p> <code>shutting_down</code> </p> </li> 
+    /// <li> <p> <code>start_failed</code> </p> </li> 
+    /// <li> <p> <code>stop_failed</code> </p> </li> 
+    /// <li> <p> <code>stopped</code> </p> </li> 
+    /// <li> <p> <code>stopping</code> </p> </li> 
+    /// <li> <p> <code>terminated</code> </p> </li> 
+    /// <li> <p> <code>terminating</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -7585,37 +7054,35 @@ pub struct Instance {
 }
 impl Instance {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
-    pub fn ami_id(&self) -> std::option::Option<&str> {
+    pub fn ami_id(&self) -> std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The instance architecture: "i386" or "x86_64".</p>
-    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+    pub fn architecture(&self) -> std::option::Option<& crate::model::Architecture> {
         self.architecture.as_ref()
     }
     /// <p>The instance's Amazon Resource Number (ARN).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>For load-based or time-based instances, the type.</p>
-    pub fn auto_scaling_type(&self) -> std::option::Option<&crate::model::AutoScalingType> {
+    pub fn auto_scaling_type(&self) -> std::option::Option<& crate::model::AutoScalingType> {
         self.auto_scaling_type.as_ref()
     }
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::BlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> std::option::Option<& [crate::model::BlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>The time that the instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>Whether this is an Amazon EBS-optimized instance.</p>
@@ -7623,156 +7090,156 @@ impl Instance {
         self.ebs_optimized
     }
     /// <p>The ID of the associated Amazon EC2 instance.</p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
-    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<& str> {
         self.ecs_cluster_arn.as_deref()
     }
     /// <p>For container instances, the instance's ARN.</p>
-    pub fn ecs_container_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn ecs_container_instance_arn(&self) -> std::option::Option<& str> {
         self.ecs_container_instance_arn.as_deref()
     }
     /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
     /// <p>The instance host name.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
-    pub fn infrastructure_class(&self) -> std::option::Option<&str> {
+    pub fn infrastructure_class(&self) -> std::option::Option<& str> {
         self.infrastructure_class.as_deref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> 
     /// </note>
     pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
         self.install_updates_on_boot
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn instance_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_profile_arn(&self) -> std::option::Option<& str> {
         self.instance_profile_arn.as_deref()
     }
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
-    pub fn last_service_error_id(&self) -> std::option::Option<&str> {
+    pub fn last_service_error_id(&self) -> std::option::Option<& str> {
         self.last_service_error_id.as_deref()
     }
     /// <p>An array containing the instance layer IDs.</p>
-    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn layer_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.layer_ids.as_deref()
     }
     /// <p>The instance's operating system.</p>
-    pub fn os(&self) -> std::option::Option<&str> {
+    pub fn os(&self) -> std::option::Option<& str> {
         self.os.as_deref()
     }
     /// <p>The instance's platform.</p>
-    pub fn platform(&self) -> std::option::Option<&str> {
+    pub fn platform(&self) -> std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The instance's private DNS name.</p>
-    pub fn private_dns(&self) -> std::option::Option<&str> {
+    pub fn private_dns(&self) -> std::option::Option<& str> {
         self.private_dns.as_deref()
     }
     /// <p>The instance's private IP address.</p>
-    pub fn private_ip(&self) -> std::option::Option<&str> {
+    pub fn private_ip(&self) -> std::option::Option<& str> {
         self.private_ip.as_deref()
     }
     /// <p>The instance public DNS name.</p>
-    pub fn public_dns(&self) -> std::option::Option<&str> {
+    pub fn public_dns(&self) -> std::option::Option<& str> {
         self.public_dns.as_deref()
     }
     /// <p>The instance public IP address.</p>
-    pub fn public_ip(&self) -> std::option::Option<&str> {
+    pub fn public_ip(&self) -> std::option::Option<& str> {
         self.public_ip.as_deref()
     }
     /// <p>For registered instances, who performed the registration.</p>
-    pub fn registered_by(&self) -> std::option::Option<&str> {
+    pub fn registered_by(&self) -> std::option::Option<& str> {
         self.registered_by.as_deref()
     }
     /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
-    pub fn reported_agent_version(&self) -> std::option::Option<&str> {
+    pub fn reported_agent_version(&self) -> std::option::Option<& str> {
         self.reported_agent_version.as_deref()
     }
     /// <p>For registered instances, the reported operating system.</p>
-    pub fn reported_os(&self) -> std::option::Option<&crate::model::ReportedOs> {
+    pub fn reported_os(&self) -> std::option::Option<& crate::model::ReportedOs> {
         self.reported_os.as_ref()
     }
     /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
+    pub fn root_device_type(&self) -> std::option::Option<& crate::model::RootDeviceType> {
         self.root_device_type.as_ref()
     }
     /// <p>The root device volume ID.</p>
-    pub fn root_device_volume_id(&self) -> std::option::Option<&str> {
+    pub fn root_device_volume_id(&self) -> std::option::Option<& str> {
         self.root_device_volume_id.as_deref()
     }
     /// <p>An array containing the instance security group IDs.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
-    pub fn ssh_host_dsa_key_fingerprint(&self) -> std::option::Option<&str> {
+    pub fn ssh_host_dsa_key_fingerprint(&self) -> std::option::Option<& str> {
         self.ssh_host_dsa_key_fingerprint.as_deref()
     }
     /// <p>The SSH key's RSA fingerprint.</p>
-    pub fn ssh_host_rsa_key_fingerprint(&self) -> std::option::Option<&str> {
+    pub fn ssh_host_rsa_key_fingerprint(&self) -> std::option::Option<& str> {
         self.ssh_host_rsa_key_fingerprint.as_deref()
     }
     /// <p>The instance's Amazon EC2 key-pair name.</p>
-    pub fn ssh_key_name(&self) -> std::option::Option<&str> {
+    pub fn ssh_key_name(&self) -> std::option::Option<& str> {
         self.ssh_key_name.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
-    /// <p>The instance status:</p>
-    /// <ul>
-    /// <li> <p> <code>booting</code> </p> </li>
-    /// <li> <p> <code>connection_lost</code> </p> </li>
-    /// <li> <p> <code>online</code> </p> </li>
-    /// <li> <p> <code>pending</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>requested</code> </p> </li>
-    /// <li> <p> <code>running_setup</code> </p> </li>
-    /// <li> <p> <code>setup_failed</code> </p> </li>
-    /// <li> <p> <code>shutting_down</code> </p> </li>
-    /// <li> <p> <code>start_failed</code> </p> </li>
-    /// <li> <p> <code>stop_failed</code> </p> </li>
-    /// <li> <p> <code>stopped</code> </p> </li>
-    /// <li> <p> <code>stopping</code> </p> </li>
-    /// <li> <p> <code>terminated</code> </p> </li>
-    /// <li> <p> <code>terminating</code> </p> </li>
+    /// <p>The instance status:</p> 
+    /// <ul> 
+    /// <li> <p> <code>booting</code> </p> </li> 
+    /// <li> <p> <code>connection_lost</code> </p> </li> 
+    /// <li> <p> <code>online</code> </p> </li> 
+    /// <li> <p> <code>pending</code> </p> </li> 
+    /// <li> <p> <code>rebooting</code> </p> </li> 
+    /// <li> <p> <code>requested</code> </p> </li> 
+    /// <li> <p> <code>running_setup</code> </p> </li> 
+    /// <li> <p> <code>setup_failed</code> </p> </li> 
+    /// <li> <p> <code>shutting_down</code> </p> </li> 
+    /// <li> <p> <code>start_failed</code> </p> </li> 
+    /// <li> <p> <code>stop_failed</code> </p> </li> 
+    /// <li> <p> <code>stopped</code> </p> </li> 
+    /// <li> <p> <code>stopping</code> </p> </li> 
+    /// <li> <p> <code>terminated</code> </p> </li> 
+    /// <li> <p> <code>terminating</code> </p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
-    pub fn tenancy(&self) -> std::option::Option<&str> {
+    pub fn tenancy(&self) -> std::option::Option<& str> {
         self.tenancy.as_deref()
     }
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
-    pub fn virtualization_type(&self) -> std::option::Option<&crate::model::VirtualizationType> {
+    pub fn virtualization_type(&self) -> std::option::Option<& crate::model::VirtualizationType> {
         self.virtualization_type.as_ref()
     }
 }
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
-
+    
     /// A builder for [`Instance`](crate::model::Instance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7782,8 +7249,7 @@ pub mod instance {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_type: std::option::Option<crate::model::AutoScalingType>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) block_device_mappings:
-            std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
+        pub(crate) block_device_mappings: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
         pub(crate) created_at: std::option::Option<std::string::String>,
         pub(crate) ebs_optimized: std::option::Option<bool>,
         pub(crate) ec2_instance_id: std::option::Option<std::string::String>,
@@ -7826,12 +7292,8 @@ pub mod instance {
             self
         }
         /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
-        pub fn set_agent_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.agent_version = input;
-            self
+        pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agent_version = input; self
         }
         /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
         pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7840,8 +7302,7 @@ pub mod instance {
         }
         /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ami_id = input;
-            self
+            self.ami_id = input; self
         }
         /// <p>The instance architecture: "i386" or "x86_64".</p>
         pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
@@ -7849,12 +7310,8 @@ pub mod instance {
             self
         }
         /// <p>The instance architecture: "i386" or "x86_64".</p>
-        pub fn set_architecture(
-            mut self,
-            input: std::option::Option<crate::model::Architecture>,
-        ) -> Self {
-            self.architecture = input;
-            self
+        pub fn set_architecture(mut self, input: std::option::Option<crate::model::Architecture>) -> Self {
+            self.architecture = input; self
         }
         /// <p>The instance's Amazon Resource Number (ARN).</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7863,8 +7320,7 @@ pub mod instance {
         }
         /// <p>The instance's Amazon Resource Number (ARN).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>For load-based or time-based instances, the type.</p>
         pub fn auto_scaling_type(mut self, input: crate::model::AutoScalingType) -> Self {
@@ -7872,12 +7328,8 @@ pub mod instance {
             self
         }
         /// <p>For load-based or time-based instances, the type.</p>
-        pub fn set_auto_scaling_type(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingType>,
-        ) -> Self {
-            self.auto_scaling_type = input;
-            self
+        pub fn set_auto_scaling_type(mut self, input: std::option::Option<crate::model::AutoScalingType>) -> Self {
+            self.auto_scaling_type = input; self
         }
         /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7885,12 +7337,8 @@ pub mod instance {
             self
         }
         /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// Appends an item to `block_device_mappings`.
         ///
@@ -7899,17 +7347,13 @@ pub mod instance {
         /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
         pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input);
-            self.block_device_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.block_device_mappings = Some(v);
+                            self
         }
         /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-        pub fn set_block_device_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
-        ) -> Self {
-            self.block_device_mappings = input;
-            self
+        pub fn set_block_device_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>) -> Self {
+            self.block_device_mappings = input; self
         }
         /// <p>The time that the instance was created.</p>
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7918,8 +7362,7 @@ pub mod instance {
         }
         /// <p>The time that the instance was created.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// <p>Whether this is an Amazon EBS-optimized instance.</p>
         pub fn ebs_optimized(mut self, input: bool) -> Self {
@@ -7928,8 +7371,7 @@ pub mod instance {
         }
         /// <p>Whether this is an Amazon EBS-optimized instance.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
-            self.ebs_optimized = input;
-            self
+            self.ebs_optimized = input; self
         }
         /// <p>The ID of the associated Amazon EC2 instance.</p>
         pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7937,12 +7379,8 @@ pub mod instance {
             self
         }
         /// <p>The ID of the associated Amazon EC2 instance.</p>
-        pub fn set_ec2_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_instance_id = input;
-            self
+        pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_instance_id = input; self
         }
         /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
         pub fn ecs_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7950,12 +7388,8 @@ pub mod instance {
             self
         }
         /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
-        pub fn set_ecs_cluster_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ecs_cluster_arn = input;
-            self
+        pub fn set_ecs_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ecs_cluster_arn = input; self
         }
         /// <p>For container instances, the instance's ARN.</p>
         pub fn ecs_container_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7963,12 +7397,8 @@ pub mod instance {
             self
         }
         /// <p>For container instances, the instance's ARN.</p>
-        pub fn set_ecs_container_instance_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ecs_container_instance_arn = input;
-            self
+        pub fn set_ecs_container_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ecs_container_instance_arn = input; self
         }
         /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
         pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7977,8 +7407,7 @@ pub mod instance {
         }
         /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.elastic_ip = input;
-            self
+            self.elastic_ip = input; self
         }
         /// <p>The instance host name.</p>
         pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7987,8 +7416,7 @@ pub mod instance {
         }
         /// <p>The instance host name.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input;
-            self
+            self.hostname = input; self
         }
         /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
         pub fn infrastructure_class(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7996,26 +7424,21 @@ pub mod instance {
             self
         }
         /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
-        pub fn set_infrastructure_class(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.infrastructure_class = input;
-            self
+        pub fn set_infrastructure_class(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.infrastructure_class = input; self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> 
         /// </note>
         pub fn install_updates_on_boot(mut self, input: bool) -> Self {
             self.install_updates_on_boot = Some(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p> 
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
-            self.install_updates_on_boot = input;
-            self
+            self.install_updates_on_boot = input; self
         }
         /// <p>The instance ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8024,8 +7447,7 @@ pub mod instance {
         }
         /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8033,12 +7455,8 @@ pub mod instance {
             self
         }
         /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-        pub fn set_instance_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_profile_arn = input;
-            self
+        pub fn set_instance_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_profile_arn = input; self
         }
         /// <p>The instance type, such as <code>t2.micro</code>.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8046,12 +7464,8 @@ pub mod instance {
             self
         }
         /// <p>The instance type, such as <code>t2.micro</code>.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
         pub fn last_service_error_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8059,12 +7473,8 @@ pub mod instance {
             self
         }
         /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
-        pub fn set_last_service_error_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_service_error_id = input;
-            self
+        pub fn set_last_service_error_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_service_error_id = input; self
         }
         /// Appends an item to `layer_ids`.
         ///
@@ -8073,17 +7483,13 @@ pub mod instance {
         /// <p>An array containing the instance layer IDs.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
-            v.push(input.into());
-            self.layer_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.layer_ids = Some(v);
+                            self
         }
         /// <p>An array containing the instance layer IDs.</p>
-        pub fn set_layer_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.layer_ids = input;
-            self
+        pub fn set_layer_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.layer_ids = input; self
         }
         /// <p>The instance's operating system.</p>
         pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8092,8 +7498,7 @@ pub mod instance {
         }
         /// <p>The instance's operating system.</p>
         pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.os = input;
-            self
+            self.os = input; self
         }
         /// <p>The instance's platform.</p>
         pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8102,8 +7507,7 @@ pub mod instance {
         }
         /// <p>The instance's platform.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The instance's private DNS name.</p>
         pub fn private_dns(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8112,8 +7516,7 @@ pub mod instance {
         }
         /// <p>The instance's private DNS name.</p>
         pub fn set_private_dns(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.private_dns = input;
-            self
+            self.private_dns = input; self
         }
         /// <p>The instance's private IP address.</p>
         pub fn private_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8122,8 +7525,7 @@ pub mod instance {
         }
         /// <p>The instance's private IP address.</p>
         pub fn set_private_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.private_ip = input;
-            self
+            self.private_ip = input; self
         }
         /// <p>The instance public DNS name.</p>
         pub fn public_dns(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8132,8 +7534,7 @@ pub mod instance {
         }
         /// <p>The instance public DNS name.</p>
         pub fn set_public_dns(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.public_dns = input;
-            self
+            self.public_dns = input; self
         }
         /// <p>The instance public IP address.</p>
         pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8142,8 +7543,7 @@ pub mod instance {
         }
         /// <p>The instance public IP address.</p>
         pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.public_ip = input;
-            self
+            self.public_ip = input; self
         }
         /// <p>For registered instances, who performed the registration.</p>
         pub fn registered_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8151,12 +7551,8 @@ pub mod instance {
             self
         }
         /// <p>For registered instances, who performed the registration.</p>
-        pub fn set_registered_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.registered_by = input;
-            self
+        pub fn set_registered_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registered_by = input; self
         }
         /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
         pub fn reported_agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8164,12 +7560,8 @@ pub mod instance {
             self
         }
         /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
-        pub fn set_reported_agent_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reported_agent_version = input;
-            self
+        pub fn set_reported_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reported_agent_version = input; self
         }
         /// <p>For registered instances, the reported operating system.</p>
         pub fn reported_os(mut self, input: crate::model::ReportedOs) -> Self {
@@ -8177,12 +7569,8 @@ pub mod instance {
             self
         }
         /// <p>For registered instances, the reported operating system.</p>
-        pub fn set_reported_os(
-            mut self,
-            input: std::option::Option<crate::model::ReportedOs>,
-        ) -> Self {
-            self.reported_os = input;
-            self
+        pub fn set_reported_os(mut self, input: std::option::Option<crate::model::ReportedOs>) -> Self {
+            self.reported_os = input; self
         }
         /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
@@ -8190,12 +7578,8 @@ pub mod instance {
             self
         }
         /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn set_root_device_type(
-            mut self,
-            input: std::option::Option<crate::model::RootDeviceType>,
-        ) -> Self {
-            self.root_device_type = input;
-            self
+        pub fn set_root_device_type(mut self, input: std::option::Option<crate::model::RootDeviceType>) -> Self {
+            self.root_device_type = input; self
         }
         /// <p>The root device volume ID.</p>
         pub fn root_device_volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8203,12 +7587,8 @@ pub mod instance {
             self
         }
         /// <p>The root device volume ID.</p>
-        pub fn set_root_device_volume_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.root_device_volume_id = input;
-            self
+        pub fn set_root_device_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.root_device_volume_id = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -8217,49 +7597,31 @@ pub mod instance {
         /// <p>An array containing the instance security group IDs.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>An array containing the instance security group IDs.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
-        pub fn ssh_host_dsa_key_fingerprint(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ssh_host_dsa_key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_host_dsa_key_fingerprint = Some(input.into());
             self
         }
         /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
-        pub fn set_ssh_host_dsa_key_fingerprint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssh_host_dsa_key_fingerprint = input;
-            self
+        pub fn set_ssh_host_dsa_key_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssh_host_dsa_key_fingerprint = input; self
         }
         /// <p>The SSH key's RSA fingerprint.</p>
-        pub fn ssh_host_rsa_key_fingerprint(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ssh_host_rsa_key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_host_rsa_key_fingerprint = Some(input.into());
             self
         }
         /// <p>The SSH key's RSA fingerprint.</p>
-        pub fn set_ssh_host_rsa_key_fingerprint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssh_host_rsa_key_fingerprint = input;
-            self
+        pub fn set_ssh_host_rsa_key_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssh_host_rsa_key_fingerprint = input; self
         }
         /// <p>The instance's Amazon EC2 key-pair name.</p>
         pub fn ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8268,8 +7630,7 @@ pub mod instance {
         }
         /// <p>The instance's Amazon EC2 key-pair name.</p>
         pub fn set_ssh_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssh_key_name = input;
-            self
+            self.ssh_key_name = input; self
         }
         /// <p>The stack ID.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8278,52 +7639,50 @@ pub mod instance {
         }
         /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
-        /// <p>The instance status:</p>
-        /// <ul>
-        /// <li> <p> <code>booting</code> </p> </li>
-        /// <li> <p> <code>connection_lost</code> </p> </li>
-        /// <li> <p> <code>online</code> </p> </li>
-        /// <li> <p> <code>pending</code> </p> </li>
-        /// <li> <p> <code>rebooting</code> </p> </li>
-        /// <li> <p> <code>requested</code> </p> </li>
-        /// <li> <p> <code>running_setup</code> </p> </li>
-        /// <li> <p> <code>setup_failed</code> </p> </li>
-        /// <li> <p> <code>shutting_down</code> </p> </li>
-        /// <li> <p> <code>start_failed</code> </p> </li>
-        /// <li> <p> <code>stop_failed</code> </p> </li>
-        /// <li> <p> <code>stopped</code> </p> </li>
-        /// <li> <p> <code>stopping</code> </p> </li>
-        /// <li> <p> <code>terminated</code> </p> </li>
-        /// <li> <p> <code>terminating</code> </p> </li>
+        /// <p>The instance status:</p> 
+        /// <ul> 
+        /// <li> <p> <code>booting</code> </p> </li> 
+        /// <li> <p> <code>connection_lost</code> </p> </li> 
+        /// <li> <p> <code>online</code> </p> </li> 
+        /// <li> <p> <code>pending</code> </p> </li> 
+        /// <li> <p> <code>rebooting</code> </p> </li> 
+        /// <li> <p> <code>requested</code> </p> </li> 
+        /// <li> <p> <code>running_setup</code> </p> </li> 
+        /// <li> <p> <code>setup_failed</code> </p> </li> 
+        /// <li> <p> <code>shutting_down</code> </p> </li> 
+        /// <li> <p> <code>start_failed</code> </p> </li> 
+        /// <li> <p> <code>stop_failed</code> </p> </li> 
+        /// <li> <p> <code>stopped</code> </p> </li> 
+        /// <li> <p> <code>stopping</code> </p> </li> 
+        /// <li> <p> <code>terminated</code> </p> </li> 
+        /// <li> <p> <code>terminating</code> </p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The instance status:</p>
-        /// <ul>
-        /// <li> <p> <code>booting</code> </p> </li>
-        /// <li> <p> <code>connection_lost</code> </p> </li>
-        /// <li> <p> <code>online</code> </p> </li>
-        /// <li> <p> <code>pending</code> </p> </li>
-        /// <li> <p> <code>rebooting</code> </p> </li>
-        /// <li> <p> <code>requested</code> </p> </li>
-        /// <li> <p> <code>running_setup</code> </p> </li>
-        /// <li> <p> <code>setup_failed</code> </p> </li>
-        /// <li> <p> <code>shutting_down</code> </p> </li>
-        /// <li> <p> <code>start_failed</code> </p> </li>
-        /// <li> <p> <code>stop_failed</code> </p> </li>
-        /// <li> <p> <code>stopped</code> </p> </li>
-        /// <li> <p> <code>stopping</code> </p> </li>
-        /// <li> <p> <code>terminated</code> </p> </li>
-        /// <li> <p> <code>terminating</code> </p> </li>
+        /// <p>The instance status:</p> 
+        /// <ul> 
+        /// <li> <p> <code>booting</code> </p> </li> 
+        /// <li> <p> <code>connection_lost</code> </p> </li> 
+        /// <li> <p> <code>online</code> </p> </li> 
+        /// <li> <p> <code>pending</code> </p> </li> 
+        /// <li> <p> <code>rebooting</code> </p> </li> 
+        /// <li> <p> <code>requested</code> </p> </li> 
+        /// <li> <p> <code>running_setup</code> </p> </li> 
+        /// <li> <p> <code>setup_failed</code> </p> </li> 
+        /// <li> <p> <code>shutting_down</code> </p> </li> 
+        /// <li> <p> <code>start_failed</code> </p> </li> 
+        /// <li> <p> <code>stop_failed</code> </p> </li> 
+        /// <li> <p> <code>stopped</code> </p> </li> 
+        /// <li> <p> <code>stopping</code> </p> </li> 
+        /// <li> <p> <code>terminated</code> </p> </li> 
+        /// <li> <p> <code>terminating</code> </p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8332,8 +7691,7 @@ pub mod instance {
         }
         /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
         pub fn tenancy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8342,8 +7700,7 @@ pub mod instance {
         }
         /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tenancy = input;
-            self
+            self.tenancy = input; self
         }
         /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
         pub fn virtualization_type(mut self, input: crate::model::VirtualizationType) -> Self {
@@ -8351,60 +7708,99 @@ pub mod instance {
             self
         }
         /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
-        pub fn set_virtualization_type(
-            mut self,
-            input: std::option::Option<crate::model::VirtualizationType>,
-        ) -> Self {
-            self.virtualization_type = input;
-            self
+        pub fn set_virtualization_type(mut self, input: std::option::Option<crate::model::VirtualizationType>) -> Self {
+            self.virtualization_type = input; self
         }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
-                agent_version: self.agent_version,
-                ami_id: self.ami_id,
-                architecture: self.architecture,
-                arn: self.arn,
-                auto_scaling_type: self.auto_scaling_type,
-                availability_zone: self.availability_zone,
-                block_device_mappings: self.block_device_mappings,
-                created_at: self.created_at,
-                ebs_optimized: self.ebs_optimized,
-                ec2_instance_id: self.ec2_instance_id,
-                ecs_cluster_arn: self.ecs_cluster_arn,
-                ecs_container_instance_arn: self.ecs_container_instance_arn,
-                elastic_ip: self.elastic_ip,
-                hostname: self.hostname,
-                infrastructure_class: self.infrastructure_class,
-                install_updates_on_boot: self.install_updates_on_boot,
-                instance_id: self.instance_id,
-                instance_profile_arn: self.instance_profile_arn,
-                instance_type: self.instance_type,
-                last_service_error_id: self.last_service_error_id,
-                layer_ids: self.layer_ids,
-                os: self.os,
-                platform: self.platform,
-                private_dns: self.private_dns,
-                private_ip: self.private_ip,
-                public_dns: self.public_dns,
-                public_ip: self.public_ip,
-                registered_by: self.registered_by,
-                reported_agent_version: self.reported_agent_version,
-                reported_os: self.reported_os,
-                root_device_type: self.root_device_type,
-                root_device_volume_id: self.root_device_volume_id,
-                security_group_ids: self.security_group_ids,
-                ssh_host_dsa_key_fingerprint: self.ssh_host_dsa_key_fingerprint,
-                ssh_host_rsa_key_fingerprint: self.ssh_host_rsa_key_fingerprint,
-                ssh_key_name: self.ssh_key_name,
-                stack_id: self.stack_id,
-                status: self.status,
-                subnet_id: self.subnet_id,
-                tenancy: self.tenancy,
-                virtualization_type: self.virtualization_type,
+                agent_version: self.agent_version
+                ,
+                ami_id: self.ami_id
+                ,
+                architecture: self.architecture
+                ,
+                arn: self.arn
+                ,
+                auto_scaling_type: self.auto_scaling_type
+                ,
+                availability_zone: self.availability_zone
+                ,
+                block_device_mappings: self.block_device_mappings
+                ,
+                created_at: self.created_at
+                ,
+                ebs_optimized: self.ebs_optimized
+                ,
+                ec2_instance_id: self.ec2_instance_id
+                ,
+                ecs_cluster_arn: self.ecs_cluster_arn
+                ,
+                ecs_container_instance_arn: self.ecs_container_instance_arn
+                ,
+                elastic_ip: self.elastic_ip
+                ,
+                hostname: self.hostname
+                ,
+                infrastructure_class: self.infrastructure_class
+                ,
+                install_updates_on_boot: self.install_updates_on_boot
+                ,
+                instance_id: self.instance_id
+                ,
+                instance_profile_arn: self.instance_profile_arn
+                ,
+                instance_type: self.instance_type
+                ,
+                last_service_error_id: self.last_service_error_id
+                ,
+                layer_ids: self.layer_ids
+                ,
+                os: self.os
+                ,
+                platform: self.platform
+                ,
+                private_dns: self.private_dns
+                ,
+                private_ip: self.private_ip
+                ,
+                public_dns: self.public_dns
+                ,
+                public_ip: self.public_ip
+                ,
+                registered_by: self.registered_by
+                ,
+                reported_agent_version: self.reported_agent_version
+                ,
+                reported_os: self.reported_os
+                ,
+                root_device_type: self.root_device_type
+                ,
+                root_device_volume_id: self.root_device_volume_id
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                ssh_host_dsa_key_fingerprint: self.ssh_host_dsa_key_fingerprint
+                ,
+                ssh_host_rsa_key_fingerprint: self.ssh_host_rsa_key_fingerprint
+                ,
+                ssh_key_name: self.ssh_key_name
+                ,
+                stack_id: self.stack_id
+                ,
+                status: self.status
+                ,
+                subnet_id: self.subnet_id
+                ,
+                tenancy: self.tenancy
+                ,
+                virtualization_type: self.virtualization_type
+                ,
             }
         }
     }
+    
+    
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
@@ -8419,9 +7815,9 @@ impl Instance {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let virtualizationtype = unimplemented!();
 /// match virtualizationtype {
@@ -8443,60 +7839,52 @@ impl Instance {
 /// Specifically, when `virtualizationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VirtualizationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VirtualizationType {
     #[allow(missing_docs)] // documentation missing in model
     Hvm,
     #[allow(missing_docs)] // documentation missing in model
     Paravirtual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualizationType {
     fn from(s: &str) -> Self {
         match s {
             "hvm" => VirtualizationType::Hvm,
             "paravirtual" => VirtualizationType::Paravirtual,
-            other => {
-                VirtualizationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => VirtualizationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VirtualizationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VirtualizationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VirtualizationType::from(s))
+                }
+            }
 impl VirtualizationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VirtualizationType::Hvm => "hvm",
             VirtualizationType::Paravirtual => "paravirtual",
-            VirtualizationType::Unknown(value) => value.as_str(),
+            VirtualizationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["hvm", "paravirtual"]
+        &[
+            "hvm", "paravirtual"
+        ]
     }
 }
 impl AsRef<str> for VirtualizationType {
@@ -8508,7 +7896,7 @@ impl AsRef<str> for VirtualizationType {
 /// <p>A registered instance's reported operating system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportedOs {
+pub struct ReportedOs  {
     /// <p>The operating system family.</p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
@@ -8521,21 +7909,21 @@ pub struct ReportedOs {
 }
 impl ReportedOs {
     /// <p>The operating system family.</p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The operating system name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The operating system version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`ReportedOs`](crate::model::ReportedOs).
 pub mod reported_os {
-
+    
     /// A builder for [`ReportedOs`](crate::model::ReportedOs).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8551,8 +7939,7 @@ pub mod reported_os {
         }
         /// <p>The operating system family.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.family = input;
-            self
+            self.family = input; self
         }
         /// <p>The operating system name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8561,8 +7948,7 @@ pub mod reported_os {
         }
         /// <p>The operating system name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The operating system version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8571,18 +7957,22 @@ pub mod reported_os {
         }
         /// <p>The operating system version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`ReportedOs`](crate::model::ReportedOs).
         pub fn build(self) -> crate::model::ReportedOs {
             crate::model::ReportedOs {
-                family: self.family,
-                name: self.name,
-                version: self.version,
+                family: self.family
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl ReportedOs {
     /// Creates a new builder-style object to manufacture [`ReportedOs`](crate::model::ReportedOs).
@@ -8594,7 +7984,7 @@ impl ReportedOs {
 /// <p>Describes a block device mapping. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlockDeviceMapping {
+pub struct BlockDeviceMapping  {
     /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -8610,25 +8000,25 @@ pub struct BlockDeviceMapping {
 }
 impl BlockDeviceMapping {
     /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Suppresses the specified device included in the AMI's block device mapping.</p>
-    pub fn no_device(&self) -> std::option::Option<&str> {
+    pub fn no_device(&self) -> std::option::Option<& str> {
         self.no_device.as_deref()
     }
     /// <p>The virtual device name. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
-    pub fn virtual_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_name(&self) -> std::option::Option<& str> {
         self.virtual_name.as_deref()
     }
     /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
-    pub fn ebs(&self) -> std::option::Option<&crate::model::EbsBlockDevice> {
+    pub fn ebs(&self) -> std::option::Option<& crate::model::EbsBlockDevice> {
         self.ebs.as_ref()
     }
 }
 /// See [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
 pub mod block_device_mapping {
-
+    
     /// A builder for [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8645,8 +8035,7 @@ pub mod block_device_mapping {
         }
         /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>Suppresses the specified device included in the AMI's block device mapping.</p>
         pub fn no_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8655,8 +8044,7 @@ pub mod block_device_mapping {
         }
         /// <p>Suppresses the specified device included in the AMI's block device mapping.</p>
         pub fn set_no_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.no_device = input;
-            self
+            self.no_device = input; self
         }
         /// <p>The virtual device name. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
         pub fn virtual_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8665,8 +8053,7 @@ pub mod block_device_mapping {
         }
         /// <p>The virtual device name. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
         pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.virtual_name = input;
-            self
+            self.virtual_name = input; self
         }
         /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
         pub fn ebs(mut self, input: crate::model::EbsBlockDevice) -> Self {
@@ -8675,19 +8062,24 @@ pub mod block_device_mapping {
         }
         /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
         pub fn set_ebs(mut self, input: std::option::Option<crate::model::EbsBlockDevice>) -> Self {
-            self.ebs = input;
-            self
+            self.ebs = input; self
         }
         /// Consumes the builder and constructs a [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
         pub fn build(self) -> crate::model::BlockDeviceMapping {
             crate::model::BlockDeviceMapping {
-                device_name: self.device_name,
-                no_device: self.no_device,
-                virtual_name: self.virtual_name,
-                ebs: self.ebs,
+                device_name: self.device_name
+                ,
+                no_device: self.no_device
+                ,
+                virtual_name: self.virtual_name
+                ,
+                ebs: self.ebs
+                ,
             }
         }
     }
+    
+    
 }
 impl BlockDeviceMapping {
     /// Creates a new builder-style object to manufacture [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
@@ -8699,7 +8091,7 @@ impl BlockDeviceMapping {
 /// <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsBlockDevice {
+pub struct EbsBlockDevice  {
     /// <p>The snapshot ID.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -8709,7 +8101,7 @@ pub struct EbsBlockDevice {
     /// <p>The volume size, in GiB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     #[doc(hidden)]
     pub volume_size: std::option::Option<i32>,
-    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p> 
     /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
     #[doc(hidden)]
     pub volume_type: std::option::Option<crate::model::VolumeType>,
@@ -8719,7 +8111,7 @@ pub struct EbsBlockDevice {
 }
 impl EbsBlockDevice {
     /// <p>The snapshot ID.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
@@ -8730,9 +8122,9 @@ impl EbsBlockDevice {
     pub fn volume_size(&self) -> std::option::Option<i32> {
         self.volume_size
     }
-    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p> 
     /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::model::VolumeType> {
+    pub fn volume_type(&self) -> std::option::Option<& crate::model::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>Whether the volume is deleted on instance termination.</p>
@@ -8742,7 +8134,7 @@ impl EbsBlockDevice {
 }
 /// See [`EbsBlockDevice`](crate::model::EbsBlockDevice).
 pub mod ebs_block_device {
-
+    
     /// A builder for [`EbsBlockDevice`](crate::model::EbsBlockDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8760,8 +8152,7 @@ pub mod ebs_block_device {
         }
         /// <p>The snapshot ID.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -8770,8 +8161,7 @@ pub mod ebs_block_device {
         }
         /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-            self.iops = input;
-            self
+            self.iops = input; self
         }
         /// <p>The volume size, in GiB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
         pub fn volume_size(mut self, input: i32) -> Self {
@@ -8780,23 +8170,18 @@ pub mod ebs_block_device {
         }
         /// <p>The volume size, in GiB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.volume_size = input;
-            self
+            self.volume_size = input; self
         }
-        /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+        /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p> 
         /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
         pub fn volume_type(mut self, input: crate::model::VolumeType) -> Self {
             self.volume_type = Some(input);
             self
         }
-        /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+        /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p> 
         /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
-        pub fn set_volume_type(
-            mut self,
-            input: std::option::Option<crate::model::VolumeType>,
-        ) -> Self {
-            self.volume_type = input;
-            self
+        pub fn set_volume_type(mut self, input: std::option::Option<crate::model::VolumeType>) -> Self {
+            self.volume_type = input; self
         }
         /// <p>Whether the volume is deleted on instance termination.</p>
         pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -8805,20 +8190,26 @@ pub mod ebs_block_device {
         }
         /// <p>Whether the volume is deleted on instance termination.</p>
         pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_on_termination = input;
-            self
+            self.delete_on_termination = input; self
         }
         /// Consumes the builder and constructs a [`EbsBlockDevice`](crate::model::EbsBlockDevice).
         pub fn build(self) -> crate::model::EbsBlockDevice {
             crate::model::EbsBlockDevice {
-                snapshot_id: self.snapshot_id,
-                iops: self.iops,
-                volume_size: self.volume_size,
-                volume_type: self.volume_type,
-                delete_on_termination: self.delete_on_termination,
+                snapshot_id: self.snapshot_id
+                ,
+                iops: self.iops
+                ,
+                volume_size: self.volume_size
+                ,
+                volume_type: self.volume_type
+                ,
+                delete_on_termination: self.delete_on_termination
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsBlockDevice {
     /// Creates a new builder-style object to manufacture [`EbsBlockDevice`](crate::model::EbsBlockDevice).
@@ -8833,9 +8224,9 @@ impl EbsBlockDevice {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let volumetype = unimplemented!();
 /// match volumetype {
@@ -8858,22 +8249,14 @@ impl EbsBlockDevice {
 /// Specifically, when `volumetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VolumeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VolumeType {
     #[allow(missing_docs)] // documentation missing in model
     Gp2,
@@ -8882,7 +8265,7 @@ pub enum VolumeType {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VolumeType {
     fn from(s: &str) -> Self {
@@ -8890,17 +8273,17 @@ impl std::convert::From<&str> for VolumeType {
             "gp2" => VolumeType::Gp2,
             "io1" => VolumeType::Io1,
             "standard" => VolumeType::Standard,
-            other => VolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VolumeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VolumeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VolumeType::from(s))
+                }
+            }
 impl VolumeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8908,12 +8291,14 @@ impl VolumeType {
             VolumeType::Gp2 => "gp2",
             VolumeType::Io1 => "io1",
             VolumeType::Standard => "standard",
-            VolumeType::Unknown(value) => value.as_str(),
+            VolumeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["gp2", "io1", "standard"]
+        &[
+            "gp2", "io1", "standard"
+        ]
     }
 }
 impl AsRef<str> for VolumeType {
@@ -8925,7 +8310,7 @@ impl AsRef<str> for VolumeType {
 /// <p>Describes an Elastic Load Balancing instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElasticLoadBalancer {
+pub struct ElasticLoadBalancer  {
     /// <p>The Elastic Load Balancing instance's name.</p>
     #[doc(hidden)]
     pub elastic_load_balancer_name: std::option::Option<std::string::String>,
@@ -8956,45 +8341,45 @@ pub struct ElasticLoadBalancer {
 }
 impl ElasticLoadBalancer {
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn elastic_load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn elastic_load_balancer_name(&self) -> std::option::Option<& str> {
         self.elastic_load_balancer_name.as_deref()
     }
     /// <p>The instance's AWS region.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The instance's public DNS name.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p>The ID of the stack that the instance is associated with.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The ID of the layer that the instance is attached to.</p>
-    pub fn layer_id(&self) -> std::option::Option<&str> {
+    pub fn layer_id(&self) -> std::option::Option<& str> {
         self.layer_id.as_deref()
     }
     /// <p>The VPC ID.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of Availability Zones.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
-    pub fn ec2_instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ec2_instance_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ec2_instance_ids.as_deref()
     }
 }
 /// See [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer).
 pub mod elastic_load_balancer {
-
+    
     /// A builder for [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9015,12 +8400,8 @@ pub mod elastic_load_balancer {
             self
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
-        pub fn set_elastic_load_balancer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.elastic_load_balancer_name = input;
-            self
+        pub fn set_elastic_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.elastic_load_balancer_name = input; self
         }
         /// <p>The instance's AWS region.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9029,8 +8410,7 @@ pub mod elastic_load_balancer {
         }
         /// <p>The instance's AWS region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The instance's public DNS name.</p>
         pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9039,8 +8419,7 @@ pub mod elastic_load_balancer {
         }
         /// <p>The instance's public DNS name.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = input;
-            self
+            self.dns_name = input; self
         }
         /// <p>The ID of the stack that the instance is associated with.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9049,8 +8428,7 @@ pub mod elastic_load_balancer {
         }
         /// <p>The ID of the stack that the instance is associated with.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The ID of the layer that the instance is attached to.</p>
         pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9059,8 +8437,7 @@ pub mod elastic_load_balancer {
         }
         /// <p>The ID of the layer that the instance is attached to.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_id = input;
-            self
+            self.layer_id = input; self
         }
         /// <p>The VPC ID.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9069,8 +8446,7 @@ pub mod elastic_load_balancer {
         }
         /// <p>The VPC ID.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -9079,17 +8455,13 @@ pub mod elastic_load_balancer {
         /// <p>A list of Availability Zones.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>A list of Availability Zones.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -9098,17 +8470,13 @@ pub mod elastic_load_balancer {
         /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `ec2_instance_ids`.
         ///
@@ -9117,33 +8485,40 @@ pub mod elastic_load_balancer {
         /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
         pub fn ec2_instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_instance_ids.unwrap_or_default();
-            v.push(input.into());
-            self.ec2_instance_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.ec2_instance_ids = Some(v);
+                            self
         }
         /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
-        pub fn set_ec2_instance_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ec2_instance_ids = input;
-            self
+        pub fn set_ec2_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ec2_instance_ids = input; self
         }
         /// Consumes the builder and constructs a [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer).
         pub fn build(self) -> crate::model::ElasticLoadBalancer {
             crate::model::ElasticLoadBalancer {
-                elastic_load_balancer_name: self.elastic_load_balancer_name,
-                region: self.region,
-                dns_name: self.dns_name,
-                stack_id: self.stack_id,
-                layer_id: self.layer_id,
-                vpc_id: self.vpc_id,
-                availability_zones: self.availability_zones,
-                subnet_ids: self.subnet_ids,
-                ec2_instance_ids: self.ec2_instance_ids,
+                elastic_load_balancer_name: self.elastic_load_balancer_name
+                ,
+                region: self.region
+                ,
+                dns_name: self.dns_name
+                ,
+                stack_id: self.stack_id
+                ,
+                layer_id: self.layer_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                availability_zones: self.availability_zones
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                ec2_instance_ids: self.ec2_instance_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl ElasticLoadBalancer {
     /// Creates a new builder-style object to manufacture [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer).
@@ -9155,7 +8530,7 @@ impl ElasticLoadBalancer {
 /// <p>Describes an Elastic IP address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElasticIp {
+pub struct ElasticIp  {
     /// <p>The IP address.</p>
     #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
@@ -9174,29 +8549,29 @@ pub struct ElasticIp {
 }
 impl ElasticIp {
     /// <p>The IP address.</p>
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> std::option::Option<& str> {
         self.ip.as_deref()
     }
     /// <p>The name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The domain.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The ID of the instance that the address is attached to.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 /// See [`ElasticIp`](crate::model::ElasticIp).
 pub mod elastic_ip {
-
+    
     /// A builder for [`ElasticIp`](crate::model::ElasticIp).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9214,8 +8589,7 @@ pub mod elastic_ip {
         }
         /// <p>The IP address.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip = input;
-            self
+            self.ip = input; self
         }
         /// <p>The name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9224,8 +8598,7 @@ pub mod elastic_ip {
         }
         /// <p>The name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The domain.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9234,8 +8607,7 @@ pub mod elastic_ip {
         }
         /// <p>The domain.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9244,8 +8616,7 @@ pub mod elastic_ip {
         }
         /// <p>The AWS region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The ID of the instance that the address is attached to.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9254,20 +8625,26 @@ pub mod elastic_ip {
         }
         /// <p>The ID of the instance that the address is attached to.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// Consumes the builder and constructs a [`ElasticIp`](crate::model::ElasticIp).
         pub fn build(self) -> crate::model::ElasticIp {
             crate::model::ElasticIp {
-                ip: self.ip,
-                name: self.name,
-                domain: self.domain,
-                region: self.region,
-                instance_id: self.instance_id,
+                ip: self.ip
+                ,
+                name: self.name
+                ,
+                domain: self.domain
+                ,
+                region: self.region
+                ,
+                instance_id: self.instance_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ElasticIp {
     /// Creates a new builder-style object to manufacture [`ElasticIp`](crate::model::ElasticIp).
@@ -9279,7 +8656,7 @@ impl ElasticIp {
 /// <p>Describes a registered Amazon ECS cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsCluster {
+pub struct EcsCluster  {
     /// <p>The cluster's ARN.</p>
     #[doc(hidden)]
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
@@ -9295,25 +8672,25 @@ pub struct EcsCluster {
 }
 impl EcsCluster {
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<& str> {
         self.ecs_cluster_arn.as_deref()
     }
     /// <p>The cluster name.</p>
-    pub fn ecs_cluster_name(&self) -> std::option::Option<&str> {
+    pub fn ecs_cluster_name(&self) -> std::option::Option<& str> {
         self.ecs_cluster_name.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The time and date that the cluster was registered with the stack.</p>
-    pub fn registered_at(&self) -> std::option::Option<&str> {
+    pub fn registered_at(&self) -> std::option::Option<& str> {
         self.registered_at.as_deref()
     }
 }
 /// See [`EcsCluster`](crate::model::EcsCluster).
 pub mod ecs_cluster {
-
+    
     /// A builder for [`EcsCluster`](crate::model::EcsCluster).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9329,12 +8706,8 @@ pub mod ecs_cluster {
             self
         }
         /// <p>The cluster's ARN.</p>
-        pub fn set_ecs_cluster_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ecs_cluster_arn = input;
-            self
+        pub fn set_ecs_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ecs_cluster_arn = input; self
         }
         /// <p>The cluster name.</p>
         pub fn ecs_cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9342,12 +8715,8 @@ pub mod ecs_cluster {
             self
         }
         /// <p>The cluster name.</p>
-        pub fn set_ecs_cluster_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ecs_cluster_name = input;
-            self
+        pub fn set_ecs_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ecs_cluster_name = input; self
         }
         /// <p>The stack ID.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9356,8 +8725,7 @@ pub mod ecs_cluster {
         }
         /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The time and date that the cluster was registered with the stack.</p>
         pub fn registered_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9365,23 +8733,25 @@ pub mod ecs_cluster {
             self
         }
         /// <p>The time and date that the cluster was registered with the stack.</p>
-        pub fn set_registered_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.registered_at = input;
-            self
+        pub fn set_registered_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registered_at = input; self
         }
         /// Consumes the builder and constructs a [`EcsCluster`](crate::model::EcsCluster).
         pub fn build(self) -> crate::model::EcsCluster {
             crate::model::EcsCluster {
-                ecs_cluster_arn: self.ecs_cluster_arn,
-                ecs_cluster_name: self.ecs_cluster_name,
-                stack_id: self.stack_id,
-                registered_at: self.registered_at,
+                ecs_cluster_arn: self.ecs_cluster_arn
+                ,
+                ecs_cluster_name: self.ecs_cluster_name
+                ,
+                stack_id: self.stack_id
+                ,
+                registered_at: self.registered_at
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsCluster {
     /// Creates a new builder-style object to manufacture [`EcsCluster`](crate::model::EcsCluster).
@@ -9393,7 +8763,7 @@ impl EcsCluster {
 /// <p>Describes a deployment of a stack or app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Deployment {
+pub struct Deployment  {
     /// <p>The deployment ID.</p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -9421,16 +8791,16 @@ pub struct Deployment {
     /// <p>Used to specify a stack or deployment command.</p>
     #[doc(hidden)]
     pub command: std::option::Option<crate::model::DeploymentCommand>,
-    /// <p>The deployment status:</p>
-    /// <ul>
-    /// <li> <p>running</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>failed</p> </li>
+    /// <p>The deployment status:</p> 
+    /// <ul> 
+    /// <li> <p>running</p> </li> 
+    /// <li> <p>successful</p> </li> 
+    /// <li> <p>failed</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
-    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p> 
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     #[doc(hidden)]
     pub custom_json: std::option::Option<std::string::String>,
@@ -9440,23 +8810,23 @@ pub struct Deployment {
 }
 impl Deployment {
     /// <p>The deployment ID.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>Date when the deployment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>Date when the deployment completed.</p>
-    pub fn completed_at(&self) -> std::option::Option<&str> {
+    pub fn completed_at(&self) -> std::option::Option<& str> {
         self.completed_at.as_deref()
     }
     /// <p>The deployment duration.</p>
@@ -9464,40 +8834,40 @@ impl Deployment {
         self.duration
     }
     /// <p>The user's IAM ARN.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>A user-defined comment.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>Used to specify a stack or deployment command.</p>
-    pub fn command(&self) -> std::option::Option<&crate::model::DeploymentCommand> {
+    pub fn command(&self) -> std::option::Option<& crate::model::DeploymentCommand> {
         self.command.as_ref()
     }
-    /// <p>The deployment status:</p>
-    /// <ul>
-    /// <li> <p>running</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>failed</p> </li>
+    /// <p>The deployment status:</p> 
+    /// <ul> 
+    /// <li> <p>running</p> </li> 
+    /// <li> <p>successful</p> </li> 
+    /// <li> <p>failed</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
-    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
-    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p> 
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    pub fn custom_json(&self) -> std::option::Option<&str> {
+    pub fn custom_json(&self) -> std::option::Option<& str> {
         self.custom_json.as_deref()
     }
     /// <p>The IDs of the target instances.</p>
-    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_ids.as_deref()
     }
 }
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
-
+    
     /// A builder for [`Deployment`](crate::model::Deployment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9521,12 +8891,8 @@ pub mod deployment {
             self
         }
         /// <p>The deployment ID.</p>
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// <p>The stack ID.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9535,8 +8901,7 @@ pub mod deployment {
         }
         /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The app ID.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9545,8 +8910,7 @@ pub mod deployment {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>Date when the deployment was created.</p>
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9555,8 +8919,7 @@ pub mod deployment {
         }
         /// <p>Date when the deployment was created.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// <p>Date when the deployment completed.</p>
         pub fn completed_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9565,8 +8928,7 @@ pub mod deployment {
         }
         /// <p>Date when the deployment completed.</p>
         pub fn set_completed_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.completed_at = input;
-            self
+            self.completed_at = input; self
         }
         /// <p>The deployment duration.</p>
         pub fn duration(mut self, input: i32) -> Self {
@@ -9575,8 +8937,7 @@ pub mod deployment {
         }
         /// <p>The deployment duration.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>The user's IAM ARN.</p>
         pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9585,8 +8946,7 @@ pub mod deployment {
         }
         /// <p>The user's IAM ARN.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_user_arn = input;
-            self
+            self.iam_user_arn = input; self
         }
         /// <p>A user-defined comment.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9595,8 +8955,7 @@ pub mod deployment {
         }
         /// <p>A user-defined comment.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// <p>Used to specify a stack or deployment command.</p>
         pub fn command(mut self, input: crate::model::DeploymentCommand) -> Self {
@@ -9604,46 +8963,40 @@ pub mod deployment {
             self
         }
         /// <p>Used to specify a stack or deployment command.</p>
-        pub fn set_command(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentCommand>,
-        ) -> Self {
-            self.command = input;
-            self
+        pub fn set_command(mut self, input: std::option::Option<crate::model::DeploymentCommand>) -> Self {
+            self.command = input; self
         }
-        /// <p>The deployment status:</p>
-        /// <ul>
-        /// <li> <p>running</p> </li>
-        /// <li> <p>successful</p> </li>
-        /// <li> <p>failed</p> </li>
+        /// <p>The deployment status:</p> 
+        /// <ul> 
+        /// <li> <p>running</p> </li> 
+        /// <li> <p>successful</p> </li> 
+        /// <li> <p>failed</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The deployment status:</p>
-        /// <ul>
-        /// <li> <p>running</p> </li>
-        /// <li> <p>successful</p> </li>
-        /// <li> <p>failed</p> </li>
+        /// <p>The deployment status:</p> 
+        /// <ul> 
+        /// <li> <p>running</p> </li> 
+        /// <li> <p>successful</p> </li> 
+        /// <li> <p>failed</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
-        /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
-        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p> 
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
         /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
-        /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
-        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p> 
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> 
         /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.custom_json = input;
-            self
+            self.custom_json = input; self
         }
         /// Appends an item to `instance_ids`.
         ///
@@ -9652,36 +9005,46 @@ pub mod deployment {
         /// <p>The IDs of the target instances.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
-            v.push(input.into());
-            self.instance_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.instance_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the target instances.</p>
-        pub fn set_instance_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instance_ids = input;
-            self
+        pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instance_ids = input; self
         }
         /// Consumes the builder and constructs a [`Deployment`](crate::model::Deployment).
         pub fn build(self) -> crate::model::Deployment {
             crate::model::Deployment {
-                deployment_id: self.deployment_id,
-                stack_id: self.stack_id,
-                app_id: self.app_id,
-                created_at: self.created_at,
-                completed_at: self.completed_at,
-                duration: self.duration,
-                iam_user_arn: self.iam_user_arn,
-                comment: self.comment,
-                command: self.command,
-                status: self.status,
-                custom_json: self.custom_json,
-                instance_ids: self.instance_ids,
+                deployment_id: self.deployment_id
+                ,
+                stack_id: self.stack_id
+                ,
+                app_id: self.app_id
+                ,
+                created_at: self.created_at
+                ,
+                completed_at: self.completed_at
+                ,
+                duration: self.duration
+                ,
+                iam_user_arn: self.iam_user_arn
+                ,
+                comment: self.comment
+                ,
+                command: self.command
+                ,
+                status: self.status
+                ,
+                custom_json: self.custom_json
+                ,
+                instance_ids: self.instance_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl Deployment {
     /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
@@ -9693,192 +9056,174 @@ impl Deployment {
 /// <p>Used to specify a stack or deployment command.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentCommand {
-    /// <p>Specifies the operation. You can specify only one command.</p>
-    /// <p>For stacks, the following commands are available:</p>
-    /// <ul>
-    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
-    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
-    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
-    /// </ul> <note>
-    /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
-    /// </note>
-    /// <p>For apps, the following commands are available:</p>
-    /// <ul>
-    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
-    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
-    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
-    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
-    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
-    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
+pub struct DeploymentCommand  {
+    /// <p>Specifies the operation. You can specify only one command.</p> 
+    /// <p>For stacks, the following commands are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li> 
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li> 
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li> 
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p> 
+    /// </note> 
+    /// <p>For apps, the following commands are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li> 
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li> 
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li> 
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li> 
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li> 
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::DeploymentCommandName>,
-    /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
-    /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
-    /// <ul>
-    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
-    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
-    /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
+    /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p> 
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p> 
+    /// <p>The <code>update_dependencies</code> command takes two arguments:</p> 
+    /// <ul> 
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li> 
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li> 
+    /// </ul> 
+    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p> 
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     #[doc(hidden)]
-    pub args: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub args: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
 }
 impl DeploymentCommand {
-    /// <p>Specifies the operation. You can specify only one command.</p>
-    /// <p>For stacks, the following commands are available:</p>
-    /// <ul>
-    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
-    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
-    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
-    /// </ul> <note>
-    /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
-    /// </note>
-    /// <p>For apps, the following commands are available:</p>
-    /// <ul>
-    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
-    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
-    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
-    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
-    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
-    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
+    /// <p>Specifies the operation. You can specify only one command.</p> 
+    /// <p>For stacks, the following commands are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li> 
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li> 
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li> 
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p> 
+    /// </note> 
+    /// <p>For apps, the following commands are available:</p> 
+    /// <ul> 
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li> 
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li> 
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li> 
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li> 
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li> 
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li> 
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::model::DeploymentCommandName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::DeploymentCommandName> {
         self.name.as_ref()
     }
-    /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
-    /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
-    /// <ul>
-    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
-    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
-    /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
+    /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p> 
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p> 
+    /// <p>The <code>update_dependencies</code> command takes two arguments:</p> 
+    /// <ul> 
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li> 
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li> 
+    /// </ul> 
+    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p> 
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
-    pub fn args(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn args(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.args.as_ref()
     }
 }
 /// See [`DeploymentCommand`](crate::model::DeploymentCommand).
 pub mod deployment_command {
-
+    
     /// A builder for [`DeploymentCommand`](crate::model::DeploymentCommand).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::DeploymentCommandName>,
-        pub(crate) args: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
+        pub(crate) args: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     }
     impl Builder {
-        /// <p>Specifies the operation. You can specify only one command.</p>
-        /// <p>For stacks, the following commands are available:</p>
-        /// <ul>
-        /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
-        /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
-        /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
-        /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
-        /// </ul> <note>
-        /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
-        /// </note>
-        /// <p>For apps, the following commands are available:</p>
-        /// <ul>
-        /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
-        /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
-        /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
-        /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
-        /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
-        /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
+        /// <p>Specifies the operation. You can specify only one command.</p> 
+        /// <p>For stacks, the following commands are available:</p> 
+        /// <ul> 
+        /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li> 
+        /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li> 
+        /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li> 
+        /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p> 
+        /// </note> 
+        /// <p>For apps, the following commands are available:</p> 
+        /// <ul> 
+        /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li> 
+        /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li> 
+        /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li> 
+        /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li> 
+        /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li> 
+        /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li> 
         /// </ul>
         pub fn name(mut self, input: crate::model::DeploymentCommandName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>Specifies the operation. You can specify only one command.</p>
-        /// <p>For stacks, the following commands are available:</p>
-        /// <ul>
-        /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
-        /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
-        /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
-        /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
-        /// </ul> <note>
-        /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
-        /// </note>
-        /// <p>For apps, the following commands are available:</p>
-        /// <ul>
-        /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
-        /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
-        /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
-        /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
-        /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
-        /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
+        /// <p>Specifies the operation. You can specify only one command.</p> 
+        /// <p>For stacks, the following commands are available:</p> 
+        /// <ul> 
+        /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li> 
+        /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li> 
+        /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li> 
+        /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p> 
+        /// </note> 
+        /// <p>For apps, the following commands are available:</p> 
+        /// <ul> 
+        /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li> 
+        /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li> 
+        /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li> 
+        /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li> 
+        /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li> 
+        /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li> 
         /// </ul>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentCommandName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::DeploymentCommandName>) -> Self {
+            self.name = input; self
         }
         /// Adds a key-value pair to `args`.
         ///
         /// To override the contents of this collection use [`set_args`](Self::set_args).
         ///
-        /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-        /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
-        /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
-        /// <ul>
-        /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
-        /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
-        /// </ul>
-        /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
+        /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p> 
+        /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p> 
+        /// <p>The <code>update_dependencies</code> command takes two arguments:</p> 
+        /// <ul> 
+        /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li> 
+        /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li> 
+        /// </ul> 
+        /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p> 
         /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
-        pub fn args(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<std::string::String>,
-        ) -> Self {
+        pub fn args(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
             let mut hash_map = self.args.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.args = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.args = Some(hash_map);
+                            self
         }
-        /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-        /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
-        /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
-        /// <ul>
-        /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
-        /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
-        /// </ul>
-        /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
+        /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p> 
+        /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p> 
+        /// <p>The <code>update_dependencies</code> command takes two arguments:</p> 
+        /// <ul> 
+        /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li> 
+        /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li> 
+        /// </ul> 
+        /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p> 
         /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
-        pub fn set_args(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        ) -> Self {
-            self.args = input;
-            self
+        pub fn set_args(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+            self.args = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentCommand`](crate::model::DeploymentCommand).
         pub fn build(self) -> crate::model::DeploymentCommand {
             crate::model::DeploymentCommand {
-                name: self.name,
-                args: self.args,
+                name: self.name
+                ,
+                args: self.args
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentCommand {
     /// Creates a new builder-style object to manufacture [`DeploymentCommand`](crate::model::DeploymentCommand).
@@ -9893,9 +9238,9 @@ impl DeploymentCommand {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentcommandname = unimplemented!();
 /// match deploymentcommandname {
@@ -9927,22 +9272,14 @@ impl DeploymentCommand {
 /// Specifically, when `deploymentcommandname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentCommandName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentCommandName {
     #[allow(missing_docs)] // documentation missing in model
     Configure,
@@ -9969,7 +9306,7 @@ pub enum DeploymentCommandName {
     #[allow(missing_docs)] // documentation missing in model
     UpdateDependencies,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentCommandName {
     fn from(s: &str) -> Self {
@@ -9986,19 +9323,17 @@ impl std::convert::From<&str> for DeploymentCommandName {
             "undeploy" => DeploymentCommandName::Undeploy,
             "update_custom_cookbooks" => DeploymentCommandName::UpdateCustomCookbooks,
             "update_dependencies" => DeploymentCommandName::UpdateDependencies,
-            other => {
-                DeploymentCommandName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeploymentCommandName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentCommandName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentCommandName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentCommandName::from(s))
+                }
+            }
 impl DeploymentCommandName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10015,24 +9350,13 @@ impl DeploymentCommandName {
             DeploymentCommandName::Undeploy => "undeploy",
             DeploymentCommandName::UpdateCustomCookbooks => "update_custom_cookbooks",
             DeploymentCommandName::UpdateDependencies => "update_dependencies",
-            DeploymentCommandName::Unknown(value) => value.as_str(),
+            DeploymentCommandName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "configure",
-            "deploy",
-            "execute_recipes",
-            "install_dependencies",
-            "restart",
-            "rollback",
-            "setup",
-            "start",
-            "stop",
-            "undeploy",
-            "update_custom_cookbooks",
-            "update_dependencies",
+            "configure", "deploy", "execute_recipes", "install_dependencies", "restart", "rollback", "setup", "start", "stop", "undeploy", "update_custom_cookbooks", "update_dependencies"
         ]
     }
 }
@@ -10045,7 +9369,7 @@ impl AsRef<str> for DeploymentCommandName {
 /// <p>Describes a command.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Command {
+pub struct Command  {
     /// <p>The command ID.</p>
     #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
@@ -10064,12 +9388,12 @@ pub struct Command {
     /// <p>Date when the command completed.</p>
     #[doc(hidden)]
     pub completed_at: std::option::Option<std::string::String>,
-    /// <p>The command status:</p>
-    /// <ul>
-    /// <li> <p>failed</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>skipped</p> </li>
-    /// <li> <p>pending</p> </li>
+    /// <p>The command status:</p> 
+    /// <ul> 
+    /// <li> <p>failed</p> </li> 
+    /// <li> <p>successful</p> </li> 
+    /// <li> <p>skipped</p> </li> 
+    /// <li> <p>pending</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -10079,57 +9403,57 @@ pub struct Command {
     /// <p>The URL of the command log.</p>
     #[doc(hidden)]
     pub log_url: std::option::Option<std::string::String>,
-    /// <p>The command type:</p>
-    /// <ul>
-    /// <li> <p> <code>configure</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>execute_recipes</code> </p> </li>
-    /// <li> <p> <code>install_dependencies</code> </p> </li>
-    /// <li> <p> <code>restart</code> </p> </li>
-    /// <li> <p> <code>rollback</code> </p> </li>
-    /// <li> <p> <code>setup</code> </p> </li>
-    /// <li> <p> <code>start</code> </p> </li>
-    /// <li> <p> <code>stop</code> </p> </li>
-    /// <li> <p> <code>undeploy</code> </p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-    /// <li> <p> <code>update_dependencies</code> </p> </li>
+    /// <p>The command type:</p> 
+    /// <ul> 
+    /// <li> <p> <code>configure</code> </p> </li> 
+    /// <li> <p> <code>deploy</code> </p> </li> 
+    /// <li> <p> <code>execute_recipes</code> </p> </li> 
+    /// <li> <p> <code>install_dependencies</code> </p> </li> 
+    /// <li> <p> <code>restart</code> </p> </li> 
+    /// <li> <p> <code>rollback</code> </p> </li> 
+    /// <li> <p> <code>setup</code> </p> </li> 
+    /// <li> <p> <code>start</code> </p> </li> 
+    /// <li> <p> <code>stop</code> </p> </li> 
+    /// <li> <p> <code>undeploy</code> </p> </li> 
+    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li> 
+    /// <li> <p> <code>update_dependencies</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Command {
     /// <p>The command ID.</p>
-    pub fn command_id(&self) -> std::option::Option<&str> {
+    pub fn command_id(&self) -> std::option::Option<& str> {
         self.command_id.as_deref()
     }
     /// <p>The ID of the instance where the command was executed.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The command deployment ID.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>Date and time when the command was run.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>Date and time when the command was acknowledged.</p>
-    pub fn acknowledged_at(&self) -> std::option::Option<&str> {
+    pub fn acknowledged_at(&self) -> std::option::Option<& str> {
         self.acknowledged_at.as_deref()
     }
     /// <p>Date when the command completed.</p>
-    pub fn completed_at(&self) -> std::option::Option<&str> {
+    pub fn completed_at(&self) -> std::option::Option<& str> {
         self.completed_at.as_deref()
     }
-    /// <p>The command status:</p>
-    /// <ul>
-    /// <li> <p>failed</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>skipped</p> </li>
-    /// <li> <p>pending</p> </li>
+    /// <p>The command status:</p> 
+    /// <ul> 
+    /// <li> <p>failed</p> </li> 
+    /// <li> <p>successful</p> </li> 
+    /// <li> <p>skipped</p> </li> 
+    /// <li> <p>pending</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The command exit code.</p>
@@ -10137,31 +9461,31 @@ impl Command {
         self.exit_code
     }
     /// <p>The URL of the command log.</p>
-    pub fn log_url(&self) -> std::option::Option<&str> {
+    pub fn log_url(&self) -> std::option::Option<& str> {
         self.log_url.as_deref()
     }
-    /// <p>The command type:</p>
-    /// <ul>
-    /// <li> <p> <code>configure</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>execute_recipes</code> </p> </li>
-    /// <li> <p> <code>install_dependencies</code> </p> </li>
-    /// <li> <p> <code>restart</code> </p> </li>
-    /// <li> <p> <code>rollback</code> </p> </li>
-    /// <li> <p> <code>setup</code> </p> </li>
-    /// <li> <p> <code>start</code> </p> </li>
-    /// <li> <p> <code>stop</code> </p> </li>
-    /// <li> <p> <code>undeploy</code> </p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-    /// <li> <p> <code>update_dependencies</code> </p> </li>
+    /// <p>The command type:</p> 
+    /// <ul> 
+    /// <li> <p> <code>configure</code> </p> </li> 
+    /// <li> <p> <code>deploy</code> </p> </li> 
+    /// <li> <p> <code>execute_recipes</code> </p> </li> 
+    /// <li> <p> <code>install_dependencies</code> </p> </li> 
+    /// <li> <p> <code>restart</code> </p> </li> 
+    /// <li> <p> <code>rollback</code> </p> </li> 
+    /// <li> <p> <code>setup</code> </p> </li> 
+    /// <li> <p> <code>start</code> </p> </li> 
+    /// <li> <p> <code>stop</code> </p> </li> 
+    /// <li> <p> <code>undeploy</code> </p> </li> 
+    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li> 
+    /// <li> <p> <code>update_dependencies</code> </p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`Command`](crate::model::Command).
 pub mod command {
-
+    
     /// A builder for [`Command`](crate::model::Command).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10184,8 +9508,7 @@ pub mod command {
         }
         /// <p>The command ID.</p>
         pub fn set_command_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.command_id = input;
-            self
+            self.command_id = input; self
         }
         /// <p>The ID of the instance where the command was executed.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10194,8 +9517,7 @@ pub mod command {
         }
         /// <p>The ID of the instance where the command was executed.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The command deployment ID.</p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10203,12 +9525,8 @@ pub mod command {
             self
         }
         /// <p>The command deployment ID.</p>
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// <p>Date and time when the command was run.</p>
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10217,8 +9535,7 @@ pub mod command {
         }
         /// <p>Date and time when the command was run.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// <p>Date and time when the command was acknowledged.</p>
         pub fn acknowledged_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10226,12 +9543,8 @@ pub mod command {
             self
         }
         /// <p>Date and time when the command was acknowledged.</p>
-        pub fn set_acknowledged_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.acknowledged_at = input;
-            self
+        pub fn set_acknowledged_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.acknowledged_at = input; self
         }
         /// <p>Date when the command completed.</p>
         pub fn completed_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10240,30 +9553,28 @@ pub mod command {
         }
         /// <p>Date when the command completed.</p>
         pub fn set_completed_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.completed_at = input;
-            self
+            self.completed_at = input; self
         }
-        /// <p>The command status:</p>
-        /// <ul>
-        /// <li> <p>failed</p> </li>
-        /// <li> <p>successful</p> </li>
-        /// <li> <p>skipped</p> </li>
-        /// <li> <p>pending</p> </li>
+        /// <p>The command status:</p> 
+        /// <ul> 
+        /// <li> <p>failed</p> </li> 
+        /// <li> <p>successful</p> </li> 
+        /// <li> <p>skipped</p> </li> 
+        /// <li> <p>pending</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The command status:</p>
-        /// <ul>
-        /// <li> <p>failed</p> </li>
-        /// <li> <p>successful</p> </li>
-        /// <li> <p>skipped</p> </li>
-        /// <li> <p>pending</p> </li>
+        /// <p>The command status:</p> 
+        /// <ul> 
+        /// <li> <p>failed</p> </li> 
+        /// <li> <p>successful</p> </li> 
+        /// <li> <p>skipped</p> </li> 
+        /// <li> <p>pending</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The command exit code.</p>
         pub fn exit_code(mut self, input: i32) -> Self {
@@ -10272,8 +9583,7 @@ pub mod command {
         }
         /// <p>The command exit code.</p>
         pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.exit_code = input;
-            self
+            self.exit_code = input; self
         }
         /// <p>The URL of the command log.</p>
         pub fn log_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10282,63 +9592,73 @@ pub mod command {
         }
         /// <p>The URL of the command log.</p>
         pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_url = input;
-            self
+            self.log_url = input; self
         }
-        /// <p>The command type:</p>
-        /// <ul>
-        /// <li> <p> <code>configure</code> </p> </li>
-        /// <li> <p> <code>deploy</code> </p> </li>
-        /// <li> <p> <code>execute_recipes</code> </p> </li>
-        /// <li> <p> <code>install_dependencies</code> </p> </li>
-        /// <li> <p> <code>restart</code> </p> </li>
-        /// <li> <p> <code>rollback</code> </p> </li>
-        /// <li> <p> <code>setup</code> </p> </li>
-        /// <li> <p> <code>start</code> </p> </li>
-        /// <li> <p> <code>stop</code> </p> </li>
-        /// <li> <p> <code>undeploy</code> </p> </li>
-        /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-        /// <li> <p> <code>update_dependencies</code> </p> </li>
+        /// <p>The command type:</p> 
+        /// <ul> 
+        /// <li> <p> <code>configure</code> </p> </li> 
+        /// <li> <p> <code>deploy</code> </p> </li> 
+        /// <li> <p> <code>execute_recipes</code> </p> </li> 
+        /// <li> <p> <code>install_dependencies</code> </p> </li> 
+        /// <li> <p> <code>restart</code> </p> </li> 
+        /// <li> <p> <code>rollback</code> </p> </li> 
+        /// <li> <p> <code>setup</code> </p> </li> 
+        /// <li> <p> <code>start</code> </p> </li> 
+        /// <li> <p> <code>stop</code> </p> </li> 
+        /// <li> <p> <code>undeploy</code> </p> </li> 
+        /// <li> <p> <code>update_custom_cookbooks</code> </p> </li> 
+        /// <li> <p> <code>update_dependencies</code> </p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The command type:</p>
-        /// <ul>
-        /// <li> <p> <code>configure</code> </p> </li>
-        /// <li> <p> <code>deploy</code> </p> </li>
-        /// <li> <p> <code>execute_recipes</code> </p> </li>
-        /// <li> <p> <code>install_dependencies</code> </p> </li>
-        /// <li> <p> <code>restart</code> </p> </li>
-        /// <li> <p> <code>rollback</code> </p> </li>
-        /// <li> <p> <code>setup</code> </p> </li>
-        /// <li> <p> <code>start</code> </p> </li>
-        /// <li> <p> <code>stop</code> </p> </li>
-        /// <li> <p> <code>undeploy</code> </p> </li>
-        /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-        /// <li> <p> <code>update_dependencies</code> </p> </li>
+        /// <p>The command type:</p> 
+        /// <ul> 
+        /// <li> <p> <code>configure</code> </p> </li> 
+        /// <li> <p> <code>deploy</code> </p> </li> 
+        /// <li> <p> <code>execute_recipes</code> </p> </li> 
+        /// <li> <p> <code>install_dependencies</code> </p> </li> 
+        /// <li> <p> <code>restart</code> </p> </li> 
+        /// <li> <p> <code>rollback</code> </p> </li> 
+        /// <li> <p> <code>setup</code> </p> </li> 
+        /// <li> <p> <code>start</code> </p> </li> 
+        /// <li> <p> <code>stop</code> </p> </li> 
+        /// <li> <p> <code>undeploy</code> </p> </li> 
+        /// <li> <p> <code>update_custom_cookbooks</code> </p> </li> 
+        /// <li> <p> <code>update_dependencies</code> </p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Command`](crate::model::Command).
         pub fn build(self) -> crate::model::Command {
             crate::model::Command {
-                command_id: self.command_id,
-                instance_id: self.instance_id,
-                deployment_id: self.deployment_id,
-                created_at: self.created_at,
-                acknowledged_at: self.acknowledged_at,
-                completed_at: self.completed_at,
-                status: self.status,
-                exit_code: self.exit_code,
-                log_url: self.log_url,
-                r#type: self.r#type,
+                command_id: self.command_id
+                ,
+                instance_id: self.instance_id
+                ,
+                deployment_id: self.deployment_id
+                ,
+                created_at: self.created_at
+                ,
+                acknowledged_at: self.acknowledged_at
+                ,
+                completed_at: self.completed_at
+                ,
+                status: self.status
+                ,
+                exit_code: self.exit_code
+                ,
+                log_url: self.log_url
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Command {
     /// Creates a new builder-style object to manufacture [`Command`](crate::model::Command).
@@ -10350,7 +9670,7 @@ impl Command {
 /// <p>A description of the app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct App {
+pub struct App  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -10386,53 +9706,51 @@ pub struct App {
     pub ssl_configuration: std::option::Option<crate::model::SslConfiguration>,
     /// <p>The stack attributes.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
-    >,
+    pub attributes: std::option::Option<std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>>,
     /// <p>When the app was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note> 
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p> 
     /// </note>
     #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
 }
 impl App {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The app stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The app's short name.</p>
-    pub fn shortname(&self) -> std::option::Option<&str> {
+    pub fn shortname(&self) -> std::option::Option<& str> {
         self.shortname.as_deref()
     }
     /// <p>The app name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The app's data sources.</p>
-    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+    pub fn data_sources(&self) -> std::option::Option<& [crate::model::DataSource]> {
         self.data_sources.as_deref()
     }
     /// <p>The app type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AppType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AppType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>Source</code> object that describes the app repository.</p>
-    pub fn app_source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn app_source(&self) -> std::option::Option<& crate::model::Source> {
         self.app_source.as_ref()
     }
     /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
-    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn domains(&self) -> std::option::Option<& [std::string::String]> {
         self.domains.as_deref()
     }
     /// <p>Whether to enable SSL for the app.</p>
@@ -10440,31 +9758,27 @@ impl App {
         self.enable_ssl
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-    pub fn ssl_configuration(&self) -> std::option::Option<&crate::model::SslConfiguration> {
+    pub fn ssl_configuration(&self) -> std::option::Option<& crate::model::SslConfiguration> {
         self.ssl_configuration.as_ref()
     }
     /// <p>The stack attributes.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>When the app was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note> 
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p> 
     /// </note>
-    pub fn environment(&self) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
+    pub fn environment(&self) -> std::option::Option<& [crate::model::EnvironmentVariable]> {
         self.environment.as_deref()
     }
 }
 /// See [`App`](crate::model::App).
 pub mod app {
-
+    
     /// A builder for [`App`](crate::model::App).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10479,12 +9793,9 @@ pub mod app {
         pub(crate) domains: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) enable_ssl: std::option::Option<bool>,
         pub(crate) ssl_configuration: std::option::Option<crate::model::SslConfiguration>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>>,
         pub(crate) created_at: std::option::Option<std::string::String>,
-        pub(crate) environment:
-            std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
+        pub(crate) environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -10494,8 +9805,7 @@ pub mod app {
         }
         /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The app stack ID.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10504,8 +9814,7 @@ pub mod app {
         }
         /// <p>The app stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The app's short name.</p>
         pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10514,8 +9823,7 @@ pub mod app {
         }
         /// <p>The app's short name.</p>
         pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shortname = input;
-            self
+            self.shortname = input; self
         }
         /// <p>The app name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10524,8 +9832,7 @@ pub mod app {
         }
         /// <p>The app name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the app.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10534,8 +9841,7 @@ pub mod app {
         }
         /// <p>A description of the app.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `data_sources`.
         ///
@@ -10544,17 +9850,13 @@ pub mod app {
         /// <p>The app's data sources.</p>
         pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input);
-            self.data_sources = Some(v);
-            self
+                            v.push(input);
+                            self.data_sources = Some(v);
+                            self
         }
         /// <p>The app's data sources.</p>
-        pub fn set_data_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
-        ) -> Self {
-            self.data_sources = input;
-            self
+        pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSource>>) -> Self {
+            self.data_sources = input; self
         }
         /// <p>The app type.</p>
         pub fn r#type(mut self, input: crate::model::AppType) -> Self {
@@ -10563,8 +9865,7 @@ pub mod app {
         }
         /// <p>The app type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A <code>Source</code> object that describes the app repository.</p>
         pub fn app_source(mut self, input: crate::model::Source) -> Self {
@@ -10573,8 +9874,7 @@ pub mod app {
         }
         /// <p>A <code>Source</code> object that describes the app repository.</p>
         pub fn set_app_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
-            self.app_source = input;
-            self
+            self.app_source = input; self
         }
         /// Appends an item to `domains`.
         ///
@@ -10583,17 +9883,13 @@ pub mod app {
         /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
-            self.domains = Some(v);
-            self
+                            v.push(input.into());
+                            self.domains = Some(v);
+                            self
         }
         /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
-        pub fn set_domains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.domains = input;
-            self
+        pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.domains = input; self
         }
         /// <p>Whether to enable SSL for the app.</p>
         pub fn enable_ssl(mut self, input: bool) -> Self {
@@ -10602,8 +9898,7 @@ pub mod app {
         }
         /// <p>Whether to enable SSL for the app.</p>
         pub fn set_enable_ssl(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_ssl = input;
-            self
+            self.enable_ssl = input; self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
         pub fn ssl_configuration(mut self, input: crate::model::SslConfiguration) -> Self {
@@ -10611,37 +9906,23 @@ pub mod app {
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-        pub fn set_ssl_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SslConfiguration>,
-        ) -> Self {
-            self.ssl_configuration = input;
-            self
+        pub fn set_ssl_configuration(mut self, input: std::option::Option<crate::model::SslConfiguration>) -> Self {
+            self.ssl_configuration = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The stack attributes.</p>
-        pub fn attributes(
-            mut self,
-            k: crate::model::AppAttributesKeys,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: crate::model::AppAttributesKeys, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The stack attributes.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>When the app was created.</p>
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10650,52 +9931,63 @@ pub mod app {
         }
         /// <p>When the app was created.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// Appends an item to `environment`.
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note> 
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p> 
         /// </note>
         pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input);
-            self.environment = Some(v);
-            self
+                            v.push(input);
+                            self.environment = Some(v);
+                            self
         }
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note> 
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p> 
         /// </note>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>) -> Self {
+            self.environment = input; self
         }
         /// Consumes the builder and constructs a [`App`](crate::model::App).
         pub fn build(self) -> crate::model::App {
             crate::model::App {
-                app_id: self.app_id,
-                stack_id: self.stack_id,
-                shortname: self.shortname,
-                name: self.name,
-                description: self.description,
-                data_sources: self.data_sources,
-                r#type: self.r#type,
-                app_source: self.app_source,
-                domains: self.domains,
-                enable_ssl: self.enable_ssl,
-                ssl_configuration: self.ssl_configuration,
-                attributes: self.attributes,
-                created_at: self.created_at,
-                environment: self.environment,
+                app_id: self.app_id
+                ,
+                stack_id: self.stack_id
+                ,
+                shortname: self.shortname
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                data_sources: self.data_sources
+                ,
+                r#type: self.r#type
+                ,
+                app_source: self.app_source
+                ,
+                domains: self.domains
+                ,
+                enable_ssl: self.enable_ssl
+                ,
+                ssl_configuration: self.ssl_configuration
+                ,
+                attributes: self.attributes
+                ,
+                created_at: self.created_at
+                ,
+                environment: self.environment
+                ,
             }
         }
     }
+    
+    
 }
 impl App {
     /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
@@ -10707,7 +9999,7 @@ impl App {
 /// <p>Describes an agent version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentVersion {
+pub struct AgentVersion  {
     /// <p>The agent version.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -10717,25 +10009,22 @@ pub struct AgentVersion {
 }
 impl AgentVersion {
     /// <p>The agent version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The configuration manager.</p>
-    pub fn configuration_manager(
-        &self,
-    ) -> std::option::Option<&crate::model::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> std::option::Option<& crate::model::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
 }
 /// See [`AgentVersion`](crate::model::AgentVersion).
 pub mod agent_version {
-
+    
     /// A builder for [`AgentVersion`](crate::model::AgentVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) configuration_manager:
-            std::option::Option<crate::model::StackConfigurationManager>,
+        pub(crate) configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
     }
     impl Builder {
         /// <p>The agent version.</p>
@@ -10745,33 +10034,29 @@ pub mod agent_version {
         }
         /// <p>The agent version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The configuration manager.</p>
-        pub fn configuration_manager(
-            mut self,
-            input: crate::model::StackConfigurationManager,
-        ) -> Self {
+        pub fn configuration_manager(mut self, input: crate::model::StackConfigurationManager) -> Self {
             self.configuration_manager = Some(input);
             self
         }
         /// <p>The configuration manager.</p>
-        pub fn set_configuration_manager(
-            mut self,
-            input: std::option::Option<crate::model::StackConfigurationManager>,
-        ) -> Self {
-            self.configuration_manager = input;
-            self
+        pub fn set_configuration_manager(mut self, input: std::option::Option<crate::model::StackConfigurationManager>) -> Self {
+            self.configuration_manager = input; self
         }
         /// Consumes the builder and constructs a [`AgentVersion`](crate::model::AgentVersion).
         pub fn build(self) -> crate::model::AgentVersion {
             crate::model::AgentVersion {
-                version: self.version,
-                configuration_manager: self.configuration_manager,
+                version: self.version
+                ,
+                configuration_manager: self.configuration_manager
+                ,
             }
         }
     }
+    
+    
 }
 impl AgentVersion {
     /// Creates a new builder-style object to manufacture [`AgentVersion`](crate::model::AgentVersion).
@@ -10779,3 +10064,4 @@ impl AgentVersion {
         crate::model::agent_version::Builder::default()
     }
 }
+

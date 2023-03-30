@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartLendingAnalysisOutput {
+pub struct StartLendingAnalysisOutput  {
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartLendingAnalysisOutput {
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
 pub mod start_lending_analysis_output {
-
+    
     /// A builder for [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod start_lending_analysis_output {
         }
         /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
         pub fn build(self) -> crate::output::StartLendingAnalysisOutput {
             crate::output::StartLendingAnalysisOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartLendingAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
@@ -50,20 +52,20 @@ impl StartLendingAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartExpenseAnalysisOutput {
+pub struct StartExpenseAnalysisOutput  {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartExpenseAnalysisOutput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
 pub mod start_expense_analysis_output {
-
+    
     /// A builder for [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,16 +79,18 @@ pub mod start_expense_analysis_output {
         }
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
         pub fn build(self) -> crate::output::StartExpenseAnalysisOutput {
             crate::output::StartExpenseAnalysisOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartExpenseAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
@@ -98,20 +102,20 @@ impl StartExpenseAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDocumentTextDetectionOutput {
+pub struct StartDocumentTextDetectionOutput  {
     /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartDocumentTextDetectionOutput {
     /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
 pub mod start_document_text_detection_output {
-
+    
     /// A builder for [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -125,16 +129,18 @@ pub mod start_document_text_detection_output {
         }
         /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
         pub fn build(self) -> crate::output::StartDocumentTextDetectionOutput {
             crate::output::StartDocumentTextDetectionOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDocumentTextDetectionOutput {
     /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
@@ -146,20 +152,20 @@ impl StartDocumentTextDetectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDocumentAnalysisOutput {
+pub struct StartDocumentAnalysisOutput  {
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartDocumentAnalysisOutput {
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
 pub mod start_document_analysis_output {
-
+    
     /// A builder for [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -173,16 +179,18 @@ pub mod start_document_analysis_output {
         }
         /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
         pub fn build(self) -> crate::output::StartDocumentAnalysisOutput {
             crate::output::StartDocumentAnalysisOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDocumentAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
@@ -194,7 +202,7 @@ impl StartDocumentAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLendingAnalysisSummaryOutput {
+pub struct GetLendingAnalysisSummaryOutput  {
     /// <p>Information about the input document.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -216,33 +224,33 @@ pub struct GetLendingAnalysisSummaryOutput {
 }
 impl GetLendingAnalysisSummaryOutput {
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p> The current status of the lending analysis job. </p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p> Contains summary information for documents grouped by type.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::LendingSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::LendingSummary> {
         self.summary.as_ref()
     }
     /// <p>A list of warnings that occurred during the lending analysis operation.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::model::Warning]> {
         self.warnings.as_deref()
     }
     /// <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The current model version of the Analyze Lending API.</p>
-    pub fn analyze_lending_model_version(&self) -> std::option::Option<&str> {
+    pub fn analyze_lending_model_version(&self) -> std::option::Option<& str> {
         self.analyze_lending_model_version.as_deref()
     }
 }
 /// See [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
 pub mod get_lending_analysis_summary_output {
-
+    
     /// A builder for [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -260,12 +268,8 @@ pub mod get_lending_analysis_summary_output {
             self
         }
         /// <p>Information about the input document.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// <p> The current status of the lending analysis job. </p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -273,12 +277,8 @@ pub mod get_lending_analysis_summary_output {
             self
         }
         /// <p> The current status of the lending analysis job. </p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p> Contains summary information for documents grouped by type.</p>
         pub fn summary(mut self, input: crate::model::LendingSummary) -> Self {
@@ -286,12 +286,8 @@ pub mod get_lending_analysis_summary_output {
             self
         }
         /// <p> Contains summary information for documents grouped by type.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::LendingSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::LendingSummary>) -> Self {
+            self.summary = input; self
         }
         /// Appends an item to `warnings`.
         ///
@@ -300,17 +296,13 @@ pub mod get_lending_analysis_summary_output {
         /// <p>A list of warnings that occurred during the lending analysis operation.</p>
         pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input);
-            self.warnings = Some(v);
-            self
+                            v.push(input);
+                            self.warnings = Some(v);
+                            self
         }
         /// <p>A list of warnings that occurred during the lending analysis operation.</p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Warning>>) -> Self {
+            self.warnings = input; self
         }
         /// <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -318,41 +310,38 @@ pub mod get_lending_analysis_summary_output {
             self
         }
         /// <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The current model version of the Analyze Lending API.</p>
-        pub fn analyze_lending_model_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn analyze_lending_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyze_lending_model_version = Some(input.into());
             self
         }
         /// <p>The current model version of the Analyze Lending API.</p>
-        pub fn set_analyze_lending_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analyze_lending_model_version = input;
-            self
+        pub fn set_analyze_lending_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analyze_lending_model_version = input; self
         }
         /// Consumes the builder and constructs a [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
         pub fn build(self) -> crate::output::GetLendingAnalysisSummaryOutput {
             crate::output::GetLendingAnalysisSummaryOutput {
-                document_metadata: self.document_metadata,
-                job_status: self.job_status,
-                summary: self.summary,
-                warnings: self.warnings,
-                status_message: self.status_message,
-                analyze_lending_model_version: self.analyze_lending_model_version,
+                document_metadata: self.document_metadata
+                ,
+                job_status: self.job_status
+                ,
+                summary: self.summary
+                ,
+                warnings: self.warnings
+                ,
+                status_message: self.status_message
+                ,
+                analyze_lending_model_version: self.analyze_lending_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLendingAnalysisSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
@@ -364,7 +353,7 @@ impl GetLendingAnalysisSummaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLendingAnalysisOutput {
+pub struct GetLendingAnalysisOutput  {
     /// <p>Information about the input document.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -389,37 +378,37 @@ pub struct GetLendingAnalysisOutput {
 }
 impl GetLendingAnalysisOutput {
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p> The current status of the lending analysis job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::model::LendingResult]> {
+    pub fn results(&self) -> std::option::Option<& [crate::model::LendingResult]> {
         self.results.as_deref()
     }
     /// <p> A list of warnings that occurred during the lending analysis operation. </p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::model::Warning]> {
         self.warnings.as_deref()
     }
     /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p> The current model version of the Analyze Lending API.</p>
-    pub fn analyze_lending_model_version(&self) -> std::option::Option<&str> {
+    pub fn analyze_lending_model_version(&self) -> std::option::Option<& str> {
         self.analyze_lending_model_version.as_deref()
     }
 }
 /// See [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
 pub mod get_lending_analysis_output {
-
+    
     /// A builder for [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -438,12 +427,8 @@ pub mod get_lending_analysis_output {
             self
         }
         /// <p>Information about the input document.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// <p> The current status of the lending analysis job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -451,12 +436,8 @@ pub mod get_lending_analysis_output {
             self
         }
         /// <p> The current status of the lending analysis job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -465,8 +446,7 @@ pub mod get_lending_analysis_output {
         }
         /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `results`.
         ///
@@ -475,17 +455,13 @@ pub mod get_lending_analysis_output {
         /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
         pub fn results(mut self, input: crate::model::LendingResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input);
-            self.results = Some(v);
-            self
+                            v.push(input);
+                            self.results = Some(v);
+                            self
         }
         /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
-        pub fn set_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LendingResult>>,
-        ) -> Self {
-            self.results = input;
-            self
+        pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::LendingResult>>) -> Self {
+            self.results = input; self
         }
         /// Appends an item to `warnings`.
         ///
@@ -494,17 +470,13 @@ pub mod get_lending_analysis_output {
         /// <p> A list of warnings that occurred during the lending analysis operation. </p>
         pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input);
-            self.warnings = Some(v);
-            self
+                            v.push(input);
+                            self.warnings = Some(v);
+                            self
         }
         /// <p> A list of warnings that occurred during the lending analysis operation. </p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Warning>>) -> Self {
+            self.warnings = input; self
         }
         /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -512,42 +484,40 @@ pub mod get_lending_analysis_output {
             self
         }
         /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p> The current model version of the Analyze Lending API.</p>
-        pub fn analyze_lending_model_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn analyze_lending_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyze_lending_model_version = Some(input.into());
             self
         }
         /// <p> The current model version of the Analyze Lending API.</p>
-        pub fn set_analyze_lending_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analyze_lending_model_version = input;
-            self
+        pub fn set_analyze_lending_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analyze_lending_model_version = input; self
         }
         /// Consumes the builder and constructs a [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
         pub fn build(self) -> crate::output::GetLendingAnalysisOutput {
             crate::output::GetLendingAnalysisOutput {
-                document_metadata: self.document_metadata,
-                job_status: self.job_status,
-                next_token: self.next_token,
-                results: self.results,
-                warnings: self.warnings,
-                status_message: self.status_message,
-                analyze_lending_model_version: self.analyze_lending_model_version,
+                document_metadata: self.document_metadata
+                ,
+                job_status: self.job_status
+                ,
+                next_token: self.next_token
+                ,
+                results: self.results
+                ,
+                warnings: self.warnings
+                ,
+                status_message: self.status_message
+                ,
+                analyze_lending_model_version: self.analyze_lending_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLendingAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
@@ -559,7 +529,7 @@ impl GetLendingAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExpenseAnalysisOutput {
+pub struct GetExpenseAnalysisOutput  {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -584,45 +554,44 @@ pub struct GetExpenseAnalysisOutput {
 }
 impl GetExpenseAnalysisOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The current status of the text detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The expenses detected by Amazon Textract.</p>
-    pub fn expense_documents(&self) -> std::option::Option<&[crate::model::ExpenseDocument]> {
+    pub fn expense_documents(&self) -> std::option::Option<& [crate::model::ExpenseDocument]> {
         self.expense_documents.as_deref()
     }
     /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::model::Warning]> {
         self.warnings.as_deref()
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The current model version of AnalyzeExpense.</p>
-    pub fn analyze_expense_model_version(&self) -> std::option::Option<&str> {
+    pub fn analyze_expense_model_version(&self) -> std::option::Option<& str> {
         self.analyze_expense_model_version.as_deref()
     }
 }
 /// See [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
 pub mod get_expense_analysis_output {
-
+    
     /// A builder for [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) expense_documents:
-            std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+        pub(crate) expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) analyze_expense_model_version: std::option::Option<std::string::String>,
@@ -634,12 +603,8 @@ pub mod get_expense_analysis_output {
             self
         }
         /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// <p>The current status of the text detection job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -647,12 +612,8 @@ pub mod get_expense_analysis_output {
             self
         }
         /// <p>The current status of the text detection job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -661,8 +622,7 @@ pub mod get_expense_analysis_output {
         }
         /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `expense_documents`.
         ///
@@ -671,17 +631,13 @@ pub mod get_expense_analysis_output {
         /// <p>The expenses detected by Amazon Textract.</p>
         pub fn expense_documents(mut self, input: crate::model::ExpenseDocument) -> Self {
             let mut v = self.expense_documents.unwrap_or_default();
-            v.push(input);
-            self.expense_documents = Some(v);
-            self
+                            v.push(input);
+                            self.expense_documents = Some(v);
+                            self
         }
         /// <p>The expenses detected by Amazon Textract.</p>
-        pub fn set_expense_documents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
-        ) -> Self {
-            self.expense_documents = input;
-            self
+        pub fn set_expense_documents(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>) -> Self {
+            self.expense_documents = input; self
         }
         /// Appends an item to `warnings`.
         ///
@@ -690,17 +646,13 @@ pub mod get_expense_analysis_output {
         /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
         pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input);
-            self.warnings = Some(v);
-            self
+                            v.push(input);
+                            self.warnings = Some(v);
+                            self
         }
         /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Warning>>) -> Self {
+            self.warnings = input; self
         }
         /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -708,42 +660,40 @@ pub mod get_expense_analysis_output {
             self
         }
         /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The current model version of AnalyzeExpense.</p>
-        pub fn analyze_expense_model_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn analyze_expense_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyze_expense_model_version = Some(input.into());
             self
         }
         /// <p>The current model version of AnalyzeExpense.</p>
-        pub fn set_analyze_expense_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analyze_expense_model_version = input;
-            self
+        pub fn set_analyze_expense_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analyze_expense_model_version = input; self
         }
         /// Consumes the builder and constructs a [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
         pub fn build(self) -> crate::output::GetExpenseAnalysisOutput {
             crate::output::GetExpenseAnalysisOutput {
-                document_metadata: self.document_metadata,
-                job_status: self.job_status,
-                next_token: self.next_token,
-                expense_documents: self.expense_documents,
-                warnings: self.warnings,
-                status_message: self.status_message,
-                analyze_expense_model_version: self.analyze_expense_model_version,
+                document_metadata: self.document_metadata
+                ,
+                job_status: self.job_status
+                ,
+                next_token: self.next_token
+                ,
+                expense_documents: self.expense_documents
+                ,
+                warnings: self.warnings
+                ,
+                status_message: self.status_message
+                ,
+                analyze_expense_model_version: self.analyze_expense_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExpenseAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
@@ -755,7 +705,7 @@ impl GetExpenseAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDocumentTextDetectionOutput {
+pub struct GetDocumentTextDetectionOutput  {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -780,37 +730,37 @@ pub struct GetDocumentTextDetectionOutput {
 }
 impl GetDocumentTextDetectionOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The current status of the text detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The results of the text-detection operation.</p>
-    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+    pub fn blocks(&self) -> std::option::Option<& [crate::model::Block]> {
         self.blocks.as_deref()
     }
     /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::model::Warning]> {
         self.warnings.as_deref()
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p></p>
-    pub fn detect_document_text_model_version(&self) -> std::option::Option<&str> {
+    pub fn detect_document_text_model_version(&self) -> std::option::Option<& str> {
         self.detect_document_text_model_version.as_deref()
     }
 }
 /// See [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
 pub mod get_document_text_detection_output {
-
+    
     /// A builder for [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -829,12 +779,8 @@ pub mod get_document_text_detection_output {
             self
         }
         /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// <p>The current status of the text detection job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -842,12 +788,8 @@ pub mod get_document_text_detection_output {
             self
         }
         /// <p>The current status of the text detection job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -856,8 +798,7 @@ pub mod get_document_text_detection_output {
         }
         /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `blocks`.
         ///
@@ -866,17 +807,13 @@ pub mod get_document_text_detection_output {
         /// <p>The results of the text-detection operation.</p>
         pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input);
-            self.blocks = Some(v);
-            self
+                            v.push(input);
+                            self.blocks = Some(v);
+                            self
         }
         /// <p>The results of the text-detection operation.</p>
-        pub fn set_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Block>>,
-        ) -> Self {
-            self.blocks = input;
-            self
+        pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Block>>) -> Self {
+            self.blocks = input; self
         }
         /// Appends an item to `warnings`.
         ///
@@ -885,17 +822,13 @@ pub mod get_document_text_detection_output {
         /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
         pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input);
-            self.warnings = Some(v);
-            self
+                            v.push(input);
+                            self.warnings = Some(v);
+                            self
         }
         /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Warning>>) -> Self {
+            self.warnings = input; self
         }
         /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -903,42 +836,40 @@ pub mod get_document_text_detection_output {
             self
         }
         /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p></p>
-        pub fn detect_document_text_model_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn detect_document_text_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.detect_document_text_model_version = Some(input.into());
             self
         }
         /// <p></p>
-        pub fn set_detect_document_text_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detect_document_text_model_version = input;
-            self
+        pub fn set_detect_document_text_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detect_document_text_model_version = input; self
         }
         /// Consumes the builder and constructs a [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
         pub fn build(self) -> crate::output::GetDocumentTextDetectionOutput {
             crate::output::GetDocumentTextDetectionOutput {
-                document_metadata: self.document_metadata,
-                job_status: self.job_status,
-                next_token: self.next_token,
-                blocks: self.blocks,
-                warnings: self.warnings,
-                status_message: self.status_message,
-                detect_document_text_model_version: self.detect_document_text_model_version,
+                document_metadata: self.document_metadata
+                ,
+                job_status: self.job_status
+                ,
+                next_token: self.next_token
+                ,
+                blocks: self.blocks
+                ,
+                warnings: self.warnings
+                ,
+                status_message: self.status_message
+                ,
+                detect_document_text_model_version: self.detect_document_text_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDocumentTextDetectionOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
@@ -950,7 +881,7 @@ impl GetDocumentTextDetectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDocumentAnalysisOutput {
+pub struct GetDocumentAnalysisOutput  {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -975,37 +906,37 @@ pub struct GetDocumentAnalysisOutput {
 }
 impl GetDocumentAnalysisOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The current status of the text detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The results of the text-analysis operation.</p>
-    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+    pub fn blocks(&self) -> std::option::Option<& [crate::model::Block]> {
         self.blocks.as_deref()
     }
     /// <p>A list of warnings that occurred during the document-analysis operation.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::model::Warning]> {
         self.warnings.as_deref()
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p></p>
-    pub fn analyze_document_model_version(&self) -> std::option::Option<&str> {
+    pub fn analyze_document_model_version(&self) -> std::option::Option<& str> {
         self.analyze_document_model_version.as_deref()
     }
 }
 /// See [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
 pub mod get_document_analysis_output {
-
+    
     /// A builder for [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1024,12 +955,8 @@ pub mod get_document_analysis_output {
             self
         }
         /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// <p>The current status of the text detection job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -1037,12 +964,8 @@ pub mod get_document_analysis_output {
             self
         }
         /// <p>The current status of the text detection job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1051,8 +974,7 @@ pub mod get_document_analysis_output {
         }
         /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `blocks`.
         ///
@@ -1061,17 +983,13 @@ pub mod get_document_analysis_output {
         /// <p>The results of the text-analysis operation.</p>
         pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input);
-            self.blocks = Some(v);
-            self
+                            v.push(input);
+                            self.blocks = Some(v);
+                            self
         }
         /// <p>The results of the text-analysis operation.</p>
-        pub fn set_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Block>>,
-        ) -> Self {
-            self.blocks = input;
-            self
+        pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Block>>) -> Self {
+            self.blocks = input; self
         }
         /// Appends an item to `warnings`.
         ///
@@ -1080,17 +998,13 @@ pub mod get_document_analysis_output {
         /// <p>A list of warnings that occurred during the document-analysis operation.</p>
         pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input);
-            self.warnings = Some(v);
-            self
+                            v.push(input);
+                            self.warnings = Some(v);
+                            self
         }
         /// <p>A list of warnings that occurred during the document-analysis operation.</p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Warning>>) -> Self {
+            self.warnings = input; self
         }
         /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1098,42 +1012,40 @@ pub mod get_document_analysis_output {
             self
         }
         /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p></p>
-        pub fn analyze_document_model_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn analyze_document_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyze_document_model_version = Some(input.into());
             self
         }
         /// <p></p>
-        pub fn set_analyze_document_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analyze_document_model_version = input;
-            self
+        pub fn set_analyze_document_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analyze_document_model_version = input; self
         }
         /// Consumes the builder and constructs a [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
         pub fn build(self) -> crate::output::GetDocumentAnalysisOutput {
             crate::output::GetDocumentAnalysisOutput {
-                document_metadata: self.document_metadata,
-                job_status: self.job_status,
-                next_token: self.next_token,
-                blocks: self.blocks,
-                warnings: self.warnings,
-                status_message: self.status_message,
-                analyze_document_model_version: self.analyze_document_model_version,
+                document_metadata: self.document_metadata
+                ,
+                job_status: self.job_status
+                ,
+                next_token: self.next_token
+                ,
+                blocks: self.blocks
+                ,
+                warnings: self.warnings
+                ,
+                status_message: self.status_message
+                ,
+                analyze_document_model_version: self.analyze_document_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDocumentAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
@@ -1145,7 +1057,7 @@ impl GetDocumentAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectDocumentTextOutput {
+pub struct DetectDocumentTextOutput  {
     /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -1158,21 +1070,21 @@ pub struct DetectDocumentTextOutput {
 }
 impl DetectDocumentTextOutput {
     /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
-    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+    pub fn blocks(&self) -> std::option::Option<& [crate::model::Block]> {
         self.blocks.as_deref()
     }
     /// <p></p>
-    pub fn detect_document_text_model_version(&self) -> std::option::Option<&str> {
+    pub fn detect_document_text_model_version(&self) -> std::option::Option<& str> {
         self.detect_document_text_model_version.as_deref()
     }
 }
 /// See [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
 pub mod detect_document_text_output {
-
+    
     /// A builder for [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1187,12 +1099,8 @@ pub mod detect_document_text_output {
             self
         }
         /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// Appends an item to `blocks`.
         ///
@@ -1201,43 +1109,37 @@ pub mod detect_document_text_output {
         /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
         pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input);
-            self.blocks = Some(v);
-            self
+                            v.push(input);
+                            self.blocks = Some(v);
+                            self
         }
         /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
-        pub fn set_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Block>>,
-        ) -> Self {
-            self.blocks = input;
-            self
+        pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Block>>) -> Self {
+            self.blocks = input; self
         }
         /// <p></p>
-        pub fn detect_document_text_model_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn detect_document_text_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.detect_document_text_model_version = Some(input.into());
             self
         }
         /// <p></p>
-        pub fn set_detect_document_text_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detect_document_text_model_version = input;
-            self
+        pub fn set_detect_document_text_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detect_document_text_model_version = input; self
         }
         /// Consumes the builder and constructs a [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
         pub fn build(self) -> crate::output::DetectDocumentTextOutput {
             crate::output::DetectDocumentTextOutput {
-                document_metadata: self.document_metadata,
-                blocks: self.blocks,
-                detect_document_text_model_version: self.detect_document_text_model_version,
+                document_metadata: self.document_metadata
+                ,
+                blocks: self.blocks
+                ,
+                detect_document_text_model_version: self.detect_document_text_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectDocumentTextOutput {
     /// Creates a new builder-style object to manufacture [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
@@ -1249,7 +1151,7 @@ impl DetectDocumentTextOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzeIdOutput {
+pub struct AnalyzeIdOutput  {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
     #[doc(hidden)]
     pub identity_documents: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
@@ -1262,26 +1164,25 @@ pub struct AnalyzeIdOutput {
 }
 impl AnalyzeIdOutput {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub fn identity_documents(&self) -> std::option::Option<&[crate::model::IdentityDocument]> {
+    pub fn identity_documents(&self) -> std::option::Option<& [crate::model::IdentityDocument]> {
         self.identity_documents.as_deref()
     }
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-    pub fn analyze_id_model_version(&self) -> std::option::Option<&str> {
+    pub fn analyze_id_model_version(&self) -> std::option::Option<& str> {
         self.analyze_id_model_version.as_deref()
     }
 }
 /// See [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
 pub mod analyze_id_output {
-
+    
     /// A builder for [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) identity_documents:
-            std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
+        pub(crate) identity_documents: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) analyze_id_model_version: std::option::Option<std::string::String>,
     }
@@ -1293,17 +1194,13 @@ pub mod analyze_id_output {
         /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
         pub fn identity_documents(mut self, input: crate::model::IdentityDocument) -> Self {
             let mut v = self.identity_documents.unwrap_or_default();
-            v.push(input);
-            self.identity_documents = Some(v);
-            self
+                            v.push(input);
+                            self.identity_documents = Some(v);
+                            self
         }
         /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-        pub fn set_identity_documents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
-        ) -> Self {
-            self.identity_documents = input;
-            self
+        pub fn set_identity_documents(mut self, input: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>) -> Self {
+            self.identity_documents = input; self
         }
         /// <p>Information about the input document.</p>
         pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
@@ -1311,12 +1208,8 @@ pub mod analyze_id_output {
             self
         }
         /// <p>Information about the input document.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
         pub fn analyze_id_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1324,22 +1217,23 @@ pub mod analyze_id_output {
             self
         }
         /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-        pub fn set_analyze_id_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analyze_id_model_version = input;
-            self
+        pub fn set_analyze_id_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analyze_id_model_version = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
         pub fn build(self) -> crate::output::AnalyzeIdOutput {
             crate::output::AnalyzeIdOutput {
-                identity_documents: self.identity_documents,
-                document_metadata: self.document_metadata,
-                analyze_id_model_version: self.analyze_id_model_version,
+                identity_documents: self.identity_documents
+                ,
+                document_metadata: self.document_metadata
+                ,
+                analyze_id_model_version: self.analyze_id_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalyzeIdOutput {
     /// Creates a new builder-style object to manufacture [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
@@ -1351,7 +1245,7 @@ impl AnalyzeIdOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzeExpenseOutput {
+pub struct AnalyzeExpenseOutput  {
     /// <p>Information about the input document.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -1361,23 +1255,22 @@ pub struct AnalyzeExpenseOutput {
 }
 impl AnalyzeExpenseOutput {
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The expenses detected by Amazon Textract.</p>
-    pub fn expense_documents(&self) -> std::option::Option<&[crate::model::ExpenseDocument]> {
+    pub fn expense_documents(&self) -> std::option::Option<& [crate::model::ExpenseDocument]> {
         self.expense_documents.as_deref()
     }
 }
 /// See [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
 pub mod analyze_expense_output {
-
+    
     /// A builder for [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
-        pub(crate) expense_documents:
-            std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+        pub(crate) expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
     }
     impl Builder {
         /// <p>Information about the input document.</p>
@@ -1386,12 +1279,8 @@ pub mod analyze_expense_output {
             self
         }
         /// <p>Information about the input document.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// Appends an item to `expense_documents`.
         ///
@@ -1400,26 +1289,26 @@ pub mod analyze_expense_output {
         /// <p>The expenses detected by Amazon Textract.</p>
         pub fn expense_documents(mut self, input: crate::model::ExpenseDocument) -> Self {
             let mut v = self.expense_documents.unwrap_or_default();
-            v.push(input);
-            self.expense_documents = Some(v);
-            self
+                            v.push(input);
+                            self.expense_documents = Some(v);
+                            self
         }
         /// <p>The expenses detected by Amazon Textract.</p>
-        pub fn set_expense_documents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
-        ) -> Self {
-            self.expense_documents = input;
-            self
+        pub fn set_expense_documents(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>) -> Self {
+            self.expense_documents = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
         pub fn build(self) -> crate::output::AnalyzeExpenseOutput {
             crate::output::AnalyzeExpenseOutput {
-                document_metadata: self.document_metadata,
-                expense_documents: self.expense_documents,
+                document_metadata: self.document_metadata
+                ,
+                expense_documents: self.expense_documents
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalyzeExpenseOutput {
     /// Creates a new builder-style object to manufacture [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
@@ -1431,7 +1320,7 @@ impl AnalyzeExpenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzeDocumentOutput {
+pub struct AnalyzeDocumentOutput  {
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -1447,34 +1336,31 @@ pub struct AnalyzeDocumentOutput {
 }
 impl AnalyzeDocumentOutput {
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+    pub fn blocks(&self) -> std::option::Option<& [crate::model::Block]> {
         self.blocks.as_deref()
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn human_loop_activation_output(
-        &self,
-    ) -> std::option::Option<&crate::model::HumanLoopActivationOutput> {
+    pub fn human_loop_activation_output(&self) -> std::option::Option<& crate::model::HumanLoopActivationOutput> {
         self.human_loop_activation_output.as_ref()
     }
     /// <p>The version of the model used to analyze the document.</p>
-    pub fn analyze_document_model_version(&self) -> std::option::Option<&str> {
+    pub fn analyze_document_model_version(&self) -> std::option::Option<& str> {
         self.analyze_document_model_version.as_deref()
     }
 }
 /// See [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
 pub mod analyze_document_output {
-
+    
     /// A builder for [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
-        pub(crate) human_loop_activation_output:
-            std::option::Option<crate::model::HumanLoopActivationOutput>,
+        pub(crate) human_loop_activation_output: std::option::Option<crate::model::HumanLoopActivationOutput>,
         pub(crate) analyze_document_model_version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1484,12 +1370,8 @@ pub mod analyze_document_output {
             self
         }
         /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// Appends an item to `blocks`.
         ///
@@ -1498,60 +1380,48 @@ pub mod analyze_document_output {
         /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
         pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input);
-            self.blocks = Some(v);
-            self
+                            v.push(input);
+                            self.blocks = Some(v);
+                            self
         }
         /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-        pub fn set_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Block>>,
-        ) -> Self {
-            self.blocks = input;
-            self
+        pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Block>>) -> Self {
+            self.blocks = input; self
         }
         /// <p>Shows the results of the human in the loop evaluation.</p>
-        pub fn human_loop_activation_output(
-            mut self,
-            input: crate::model::HumanLoopActivationOutput,
-        ) -> Self {
+        pub fn human_loop_activation_output(mut self, input: crate::model::HumanLoopActivationOutput) -> Self {
             self.human_loop_activation_output = Some(input);
             self
         }
         /// <p>Shows the results of the human in the loop evaluation.</p>
-        pub fn set_human_loop_activation_output(
-            mut self,
-            input: std::option::Option<crate::model::HumanLoopActivationOutput>,
-        ) -> Self {
-            self.human_loop_activation_output = input;
-            self
+        pub fn set_human_loop_activation_output(mut self, input: std::option::Option<crate::model::HumanLoopActivationOutput>) -> Self {
+            self.human_loop_activation_output = input; self
         }
         /// <p>The version of the model used to analyze the document.</p>
-        pub fn analyze_document_model_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn analyze_document_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyze_document_model_version = Some(input.into());
             self
         }
         /// <p>The version of the model used to analyze the document.</p>
-        pub fn set_analyze_document_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analyze_document_model_version = input;
-            self
+        pub fn set_analyze_document_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analyze_document_model_version = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
         pub fn build(self) -> crate::output::AnalyzeDocumentOutput {
             crate::output::AnalyzeDocumentOutput {
-                document_metadata: self.document_metadata,
-                blocks: self.blocks,
-                human_loop_activation_output: self.human_loop_activation_output,
-                analyze_document_model_version: self.analyze_document_model_version,
+                document_metadata: self.document_metadata
+                ,
+                blocks: self.blocks
+                ,
+                human_loop_activation_output: self.human_loop_activation_output
+                ,
+                analyze_document_model_version: self.analyze_document_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalyzeDocumentOutput {
     /// Creates a new builder-style object to manufacture [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
@@ -1559,3 +1429,4 @@ impl AnalyzeDocumentOutput {
         crate::output::analyze_document_output::Builder::default()
     }
 }
+

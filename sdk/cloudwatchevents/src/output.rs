@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectionOutput {
+pub struct UpdateConnectionOutput  {
     /// <p>The ARN of the connection that was updated.</p>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
@@ -21,29 +21,29 @@ pub struct UpdateConnectionOutput {
 }
 impl UpdateConnectionOutput {
     /// <p>The ARN of the connection that was updated.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The state of the connection that was updated.</p>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_authorized_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
 /// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
 pub mod update_connection_output {
-
+    
     /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -60,12 +60,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>The ARN of the connection that was updated.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The state of the connection that was updated.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
@@ -73,12 +69,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>The state of the connection that was updated.</p>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,12 +78,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,12 +87,8 @@ pub mod update_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
         pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -112,24 +96,27 @@ pub mod update_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
-        pub fn set_last_authorized_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_authorized_time = input;
-            self
+        pub fn set_last_authorized_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_authorized_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
         pub fn build(self) -> crate::output::UpdateConnectionOutput {
             crate::output::UpdateConnectionOutput {
-                connection_arn: self.connection_arn,
-                connection_state: self.connection_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
-                last_authorized_time: self.last_authorized_time,
+                connection_arn: self.connection_arn
+                ,
+                connection_state: self.connection_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                last_authorized_time: self.last_authorized_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
@@ -141,7 +128,7 @@ impl UpdateConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateArchiveOutput {
+pub struct UpdateArchiveOutput  {
     /// <p>The ARN of the archive.</p>
     #[doc(hidden)]
     pub archive_arn: std::option::Option<std::string::String>,
@@ -157,25 +144,25 @@ pub struct UpdateArchiveOutput {
 }
 impl UpdateArchiveOutput {
     /// <p>The ARN of the archive.</p>
-    pub fn archive_arn(&self) -> std::option::Option<&str> {
+    pub fn archive_arn(&self) -> std::option::Option<& str> {
         self.archive_arn.as_deref()
     }
     /// <p>The state of the archive.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ArchiveState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ArchiveState> {
         self.state.as_ref()
     }
     /// <p>The reason that the archive is in the current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The time at which the archive was updated.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`UpdateArchiveOutput`](crate::output::UpdateArchiveOutput).
 pub mod update_archive_output {
-
+    
     /// A builder for [`UpdateArchiveOutput`](crate::output::UpdateArchiveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -192,8 +179,7 @@ pub mod update_archive_output {
         }
         /// <p>The ARN of the archive.</p>
         pub fn set_archive_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_arn = input;
-            self
+            self.archive_arn = input; self
         }
         /// <p>The state of the archive.</p>
         pub fn state(mut self, input: crate::model::ArchiveState) -> Self {
@@ -202,8 +188,7 @@ pub mod update_archive_output {
         }
         /// <p>The state of the archive.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ArchiveState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason that the archive is in the current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,8 +197,7 @@ pub mod update_archive_output {
         }
         /// <p>The reason that the archive is in the current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The time at which the archive was updated.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -221,23 +205,25 @@ pub mod update_archive_output {
             self
         }
         /// <p>The time at which the archive was updated.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateArchiveOutput`](crate::output::UpdateArchiveOutput).
         pub fn build(self) -> crate::output::UpdateArchiveOutput {
             crate::output::UpdateArchiveOutput {
-                archive_arn: self.archive_arn,
-                state: self.state,
-                state_reason: self.state_reason,
-                creation_time: self.creation_time,
+                archive_arn: self.archive_arn
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateArchiveOutput {
     /// Creates a new builder-style object to manufacture [`UpdateArchiveOutput`](crate::output::UpdateArchiveOutput).
@@ -249,7 +235,7 @@ impl UpdateArchiveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApiDestinationOutput {
+pub struct UpdateApiDestinationOutput  {
     /// <p>The ARN of the API destination that was updated.</p>
     #[doc(hidden)]
     pub api_destination_arn: std::option::Option<std::string::String>,
@@ -265,25 +251,25 @@ pub struct UpdateApiDestinationOutput {
 }
 impl UpdateApiDestinationOutput {
     /// <p>The ARN of the API destination that was updated.</p>
-    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn api_destination_arn(&self) -> std::option::Option<& str> {
         self.api_destination_arn.as_deref()
     }
     /// <p>The state of the API destination that was updated.</p>
-    pub fn api_destination_state(&self) -> std::option::Option<&crate::model::ApiDestinationState> {
+    pub fn api_destination_state(&self) -> std::option::Option<& crate::model::ApiDestinationState> {
         self.api_destination_state.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`UpdateApiDestinationOutput`](crate::output::UpdateApiDestinationOutput).
 pub mod update_api_destination_output {
-
+    
     /// A builder for [`UpdateApiDestinationOutput`](crate::output::UpdateApiDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -299,12 +285,8 @@ pub mod update_api_destination_output {
             self
         }
         /// <p>The ARN of the API destination that was updated.</p>
-        pub fn set_api_destination_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_destination_arn = input;
-            self
+        pub fn set_api_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_destination_arn = input; self
         }
         /// <p>The state of the API destination that was updated.</p>
         pub fn api_destination_state(mut self, input: crate::model::ApiDestinationState) -> Self {
@@ -312,12 +294,8 @@ pub mod update_api_destination_output {
             self
         }
         /// <p>The state of the API destination that was updated.</p>
-        pub fn set_api_destination_state(
-            mut self,
-            input: std::option::Option<crate::model::ApiDestinationState>,
-        ) -> Self {
-            self.api_destination_state = input;
-            self
+        pub fn set_api_destination_state(mut self, input: std::option::Option<crate::model::ApiDestinationState>) -> Self {
+            self.api_destination_state = input; self
         }
         /// <p>A time stamp for the time that the API destination was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -325,12 +303,8 @@ pub mod update_api_destination_output {
             self
         }
         /// <p>A time stamp for the time that the API destination was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A time stamp for the time that the API destination was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -338,23 +312,25 @@ pub mod update_api_destination_output {
             self
         }
         /// <p>A time stamp for the time that the API destination was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApiDestinationOutput`](crate::output::UpdateApiDestinationOutput).
         pub fn build(self) -> crate::output::UpdateApiDestinationOutput {
             crate::output::UpdateApiDestinationOutput {
-                api_destination_arn: self.api_destination_arn,
-                api_destination_state: self.api_destination_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                api_destination_arn: self.api_destination_arn
+                ,
+                api_destination_state: self.api_destination_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApiDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApiDestinationOutput`](crate::output::UpdateApiDestinationOutput).
@@ -366,19 +342,24 @@ impl UpdateApiDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -390,7 +371,7 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestEventPatternOutput {
+pub struct TestEventPatternOutput  {
     /// <p>Indicates whether the event matches the event pattern.</p>
     #[doc(hidden)]
     pub result: bool,
@@ -403,7 +384,7 @@ impl TestEventPatternOutput {
 }
 /// See [`TestEventPatternOutput`](crate::output::TestEventPatternOutput).
 pub mod test_event_pattern_output {
-
+    
     /// A builder for [`TestEventPatternOutput`](crate::output::TestEventPatternOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -417,16 +398,19 @@ pub mod test_event_pattern_output {
         }
         /// <p>Indicates whether the event matches the event pattern.</p>
         pub fn set_result(mut self, input: std::option::Option<bool>) -> Self {
-            self.result = input;
-            self
+            self.result = input; self
         }
         /// Consumes the builder and constructs a [`TestEventPatternOutput`](crate::output::TestEventPatternOutput).
         pub fn build(self) -> crate::output::TestEventPatternOutput {
             crate::output::TestEventPatternOutput {
-                result: self.result.unwrap_or_default(),
+                result: self.result
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl TestEventPatternOutput {
     /// Creates a new builder-style object to manufacture [`TestEventPatternOutput`](crate::output::TestEventPatternOutput).
@@ -438,19 +422,24 @@ impl TestEventPatternOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -462,7 +451,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReplayOutput {
+pub struct StartReplayOutput  {
     /// <p>The ARN of the replay.</p>
     #[doc(hidden)]
     pub replay_arn: std::option::Option<std::string::String>,
@@ -478,25 +467,25 @@ pub struct StartReplayOutput {
 }
 impl StartReplayOutput {
     /// <p>The ARN of the replay.</p>
-    pub fn replay_arn(&self) -> std::option::Option<&str> {
+    pub fn replay_arn(&self) -> std::option::Option<& str> {
         self.replay_arn.as_deref()
     }
     /// <p>The state of the replay.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ReplayState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ReplayState> {
         self.state.as_ref()
     }
     /// <p>The reason that the replay is in the state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The time at which the replay started.</p>
-    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn replay_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.replay_start_time.as_ref()
     }
 }
 /// See [`StartReplayOutput`](crate::output::StartReplayOutput).
 pub mod start_replay_output {
-
+    
     /// A builder for [`StartReplayOutput`](crate::output::StartReplayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -513,8 +502,7 @@ pub mod start_replay_output {
         }
         /// <p>The ARN of the replay.</p>
         pub fn set_replay_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.replay_arn = input;
-            self
+            self.replay_arn = input; self
         }
         /// <p>The state of the replay.</p>
         pub fn state(mut self, input: crate::model::ReplayState) -> Self {
@@ -523,8 +511,7 @@ pub mod start_replay_output {
         }
         /// <p>The state of the replay.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ReplayState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason that the replay is in the state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -533,8 +520,7 @@ pub mod start_replay_output {
         }
         /// <p>The reason that the replay is in the state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The time at which the replay started.</p>
         pub fn replay_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -542,23 +528,25 @@ pub mod start_replay_output {
             self
         }
         /// <p>The time at which the replay started.</p>
-        pub fn set_replay_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.replay_start_time = input;
-            self
+        pub fn set_replay_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.replay_start_time = input; self
         }
         /// Consumes the builder and constructs a [`StartReplayOutput`](crate::output::StartReplayOutput).
         pub fn build(self) -> crate::output::StartReplayOutput {
             crate::output::StartReplayOutput {
-                replay_arn: self.replay_arn,
-                state: self.state,
-                state_reason: self.state_reason,
-                replay_start_time: self.replay_start_time,
+                replay_arn: self.replay_arn
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                replay_start_time: self.replay_start_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartReplayOutput {
     /// Creates a new builder-style object to manufacture [`StartReplayOutput`](crate::output::StartReplayOutput).
@@ -570,7 +558,7 @@ impl StartReplayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTargetsOutput {
+pub struct RemoveTargetsOutput  {
     /// <p>The number of failed entries.</p>
     #[doc(hidden)]
     pub failed_entry_count: i32,
@@ -584,19 +572,18 @@ impl RemoveTargetsOutput {
         self.failed_entry_count
     }
     /// <p>The failed target entries.</p>
-    pub fn failed_entries(&self) -> std::option::Option<&[crate::model::RemoveTargetsResultEntry]> {
+    pub fn failed_entries(&self) -> std::option::Option<& [crate::model::RemoveTargetsResultEntry]> {
         self.failed_entries.as_deref()
     }
 }
 /// See [`RemoveTargetsOutput`](crate::output::RemoveTargetsOutput).
 pub mod remove_targets_output {
-
+    
     /// A builder for [`RemoveTargetsOutput`](crate::output::RemoveTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entry_count: std::option::Option<i32>,
-        pub(crate) failed_entries:
-            std::option::Option<std::vec::Vec<crate::model::RemoveTargetsResultEntry>>,
+        pub(crate) failed_entries: std::option::Option<std::vec::Vec<crate::model::RemoveTargetsResultEntry>>,
     }
     impl Builder {
         /// <p>The number of failed entries.</p>
@@ -606,8 +593,7 @@ pub mod remove_targets_output {
         }
         /// <p>The number of failed entries.</p>
         pub fn set_failed_entry_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed_entry_count = input;
-            self
+            self.failed_entry_count = input; self
         }
         /// Appends an item to `failed_entries`.
         ///
@@ -616,26 +602,27 @@ pub mod remove_targets_output {
         /// <p>The failed target entries.</p>
         pub fn failed_entries(mut self, input: crate::model::RemoveTargetsResultEntry) -> Self {
             let mut v = self.failed_entries.unwrap_or_default();
-            v.push(input);
-            self.failed_entries = Some(v);
-            self
+                            v.push(input);
+                            self.failed_entries = Some(v);
+                            self
         }
         /// <p>The failed target entries.</p>
-        pub fn set_failed_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RemoveTargetsResultEntry>>,
-        ) -> Self {
-            self.failed_entries = input;
-            self
+        pub fn set_failed_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::RemoveTargetsResultEntry>>) -> Self {
+            self.failed_entries = input; self
         }
         /// Consumes the builder and constructs a [`RemoveTargetsOutput`](crate::output::RemoveTargetsOutput).
         pub fn build(self) -> crate::output::RemoveTargetsOutput {
             crate::output::RemoveTargetsOutput {
-                failed_entry_count: self.failed_entry_count.unwrap_or_default(),
-                failed_entries: self.failed_entries,
+                failed_entry_count: self.failed_entry_count
+                    .unwrap_or_default()
+                ,
+                failed_entries: self.failed_entries
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveTargetsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTargetsOutput`](crate::output::RemoveTargetsOutput).
@@ -647,19 +634,24 @@ impl RemoveTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemovePermissionOutput {}
+pub struct RemovePermissionOutput  {
+}
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
 pub mod remove_permission_output {
-
+    
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
         pub fn build(self) -> crate::output::RemovePermissionOutput {
-            crate::output::RemovePermissionOutput {}
+            crate::output::RemovePermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl RemovePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
@@ -671,7 +663,7 @@ impl RemovePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutTargetsOutput {
+pub struct PutTargetsOutput  {
     /// <p>The number of failed entries.</p>
     #[doc(hidden)]
     pub failed_entry_count: i32,
@@ -685,19 +677,18 @@ impl PutTargetsOutput {
         self.failed_entry_count
     }
     /// <p>The failed target entries.</p>
-    pub fn failed_entries(&self) -> std::option::Option<&[crate::model::PutTargetsResultEntry]> {
+    pub fn failed_entries(&self) -> std::option::Option<& [crate::model::PutTargetsResultEntry]> {
         self.failed_entries.as_deref()
     }
 }
 /// See [`PutTargetsOutput`](crate::output::PutTargetsOutput).
 pub mod put_targets_output {
-
+    
     /// A builder for [`PutTargetsOutput`](crate::output::PutTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entry_count: std::option::Option<i32>,
-        pub(crate) failed_entries:
-            std::option::Option<std::vec::Vec<crate::model::PutTargetsResultEntry>>,
+        pub(crate) failed_entries: std::option::Option<std::vec::Vec<crate::model::PutTargetsResultEntry>>,
     }
     impl Builder {
         /// <p>The number of failed entries.</p>
@@ -707,8 +698,7 @@ pub mod put_targets_output {
         }
         /// <p>The number of failed entries.</p>
         pub fn set_failed_entry_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed_entry_count = input;
-            self
+            self.failed_entry_count = input; self
         }
         /// Appends an item to `failed_entries`.
         ///
@@ -717,26 +707,27 @@ pub mod put_targets_output {
         /// <p>The failed target entries.</p>
         pub fn failed_entries(mut self, input: crate::model::PutTargetsResultEntry) -> Self {
             let mut v = self.failed_entries.unwrap_or_default();
-            v.push(input);
-            self.failed_entries = Some(v);
-            self
+                            v.push(input);
+                            self.failed_entries = Some(v);
+                            self
         }
         /// <p>The failed target entries.</p>
-        pub fn set_failed_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PutTargetsResultEntry>>,
-        ) -> Self {
-            self.failed_entries = input;
-            self
+        pub fn set_failed_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::PutTargetsResultEntry>>) -> Self {
+            self.failed_entries = input; self
         }
         /// Consumes the builder and constructs a [`PutTargetsOutput`](crate::output::PutTargetsOutput).
         pub fn build(self) -> crate::output::PutTargetsOutput {
             crate::output::PutTargetsOutput {
-                failed_entry_count: self.failed_entry_count.unwrap_or_default(),
-                failed_entries: self.failed_entries,
+                failed_entry_count: self.failed_entry_count
+                    .unwrap_or_default()
+                ,
+                failed_entries: self.failed_entries
+                ,
             }
         }
     }
+    
+    
 }
 impl PutTargetsOutput {
     /// Creates a new builder-style object to manufacture [`PutTargetsOutput`](crate::output::PutTargetsOutput).
@@ -748,20 +739,20 @@ impl PutTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRuleOutput {
+pub struct PutRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
 }
 impl PutRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
 }
 /// See [`PutRuleOutput`](crate::output::PutRuleOutput).
 pub mod put_rule_output {
-
+    
     /// A builder for [`PutRuleOutput`](crate::output::PutRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -775,16 +766,18 @@ pub mod put_rule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
         pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_arn = input;
-            self
+            self.rule_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutRuleOutput`](crate::output::PutRuleOutput).
         pub fn build(self) -> crate::output::PutRuleOutput {
             crate::output::PutRuleOutput {
-                rule_arn: self.rule_arn,
+                rule_arn: self.rule_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutRuleOutput {
     /// Creates a new builder-style object to manufacture [`PutRuleOutput`](crate::output::PutRuleOutput).
@@ -796,19 +789,24 @@ impl PutRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionOutput {}
+pub struct PutPermissionOutput  {
+}
 /// See [`PutPermissionOutput`](crate::output::PutPermissionOutput).
 pub mod put_permission_output {
-
+    
     /// A builder for [`PutPermissionOutput`](crate::output::PutPermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutPermissionOutput`](crate::output::PutPermissionOutput).
         pub fn build(self) -> crate::output::PutPermissionOutput {
-            crate::output::PutPermissionOutput {}
+            crate::output::PutPermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl PutPermissionOutput {
     /// Creates a new builder-style object to manufacture [`PutPermissionOutput`](crate::output::PutPermissionOutput).
@@ -820,7 +818,7 @@ impl PutPermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPartnerEventsOutput {
+pub struct PutPartnerEventsOutput  {
     /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
     #[doc(hidden)]
     pub failed_entry_count: i32,
@@ -834,19 +832,18 @@ impl PutPartnerEventsOutput {
         self.failed_entry_count
     }
     /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::model::PutPartnerEventsResultEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::PutPartnerEventsResultEntry]> {
         self.entries.as_deref()
     }
 }
 /// See [`PutPartnerEventsOutput`](crate::output::PutPartnerEventsOutput).
 pub mod put_partner_events_output {
-
+    
     /// A builder for [`PutPartnerEventsOutput`](crate::output::PutPartnerEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entry_count: std::option::Option<i32>,
-        pub(crate) entries:
-            std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
+        pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
     }
     impl Builder {
         /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
@@ -856,8 +853,7 @@ pub mod put_partner_events_output {
         }
         /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
         pub fn set_failed_entry_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed_entry_count = input;
-            self
+            self.failed_entry_count = input; self
         }
         /// Appends an item to `entries`.
         ///
@@ -866,26 +862,27 @@ pub mod put_partner_events_output {
         /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
         pub fn entries(mut self, input: crate::model::PutPartnerEventsResultEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>) -> Self {
+            self.entries = input; self
         }
         /// Consumes the builder and constructs a [`PutPartnerEventsOutput`](crate::output::PutPartnerEventsOutput).
         pub fn build(self) -> crate::output::PutPartnerEventsOutput {
             crate::output::PutPartnerEventsOutput {
-                failed_entry_count: self.failed_entry_count.unwrap_or_default(),
-                entries: self.entries,
+                failed_entry_count: self.failed_entry_count
+                    .unwrap_or_default()
+                ,
+                entries: self.entries
+                ,
             }
         }
     }
+    
+    
 }
 impl PutPartnerEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutPartnerEventsOutput`](crate::output::PutPartnerEventsOutput).
@@ -897,7 +894,7 @@ impl PutPartnerEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventsOutput {
+pub struct PutEventsOutput  {
     /// <p>The number of failed entries.</p>
     #[doc(hidden)]
     pub failed_entry_count: i32,
@@ -911,13 +908,13 @@ impl PutEventsOutput {
         self.failed_entry_count
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::model::PutEventsResultEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::PutEventsResultEntry]> {
         self.entries.as_deref()
     }
 }
 /// See [`PutEventsOutput`](crate::output::PutEventsOutput).
 pub mod put_events_output {
-
+    
     /// A builder for [`PutEventsOutput`](crate::output::PutEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -932,8 +929,7 @@ pub mod put_events_output {
         }
         /// <p>The number of failed entries.</p>
         pub fn set_failed_entry_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed_entry_count = input;
-            self
+            self.failed_entry_count = input; self
         }
         /// Appends an item to `entries`.
         ///
@@ -942,26 +938,27 @@ pub mod put_events_output {
         /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
         pub fn entries(mut self, input: crate::model::PutEventsResultEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PutEventsResultEntry>>,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::PutEventsResultEntry>>) -> Self {
+            self.entries = input; self
         }
         /// Consumes the builder and constructs a [`PutEventsOutput`](crate::output::PutEventsOutput).
         pub fn build(self) -> crate::output::PutEventsOutput {
             crate::output::PutEventsOutput {
-                failed_entry_count: self.failed_entry_count.unwrap_or_default(),
-                entries: self.entries,
+                failed_entry_count: self.failed_entry_count
+                    .unwrap_or_default()
+                ,
+                entries: self.entries
+                ,
             }
         }
     }
+    
+    
 }
 impl PutEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutEventsOutput`](crate::output::PutEventsOutput).
@@ -973,7 +970,7 @@ impl PutEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsByRuleOutput {
+pub struct ListTargetsByRuleOutput  {
     /// <p>The targets assigned to the rule.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -983,17 +980,17 @@ pub struct ListTargetsByRuleOutput {
 }
 impl ListTargetsByRuleOutput {
     /// <p>The targets assigned to the rule.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::Target]> {
         self.targets.as_deref()
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTargetsByRuleOutput`](crate::output::ListTargetsByRuleOutput).
 pub mod list_targets_by_rule_output {
-
+    
     /// A builder for [`ListTargetsByRuleOutput`](crate::output::ListTargetsByRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1008,17 +1005,13 @@ pub mod list_targets_by_rule_output {
         /// <p>The targets assigned to the rule.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The targets assigned to the rule.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Target>>) -> Self {
+            self.targets = input; self
         }
         /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1027,17 +1020,20 @@ pub mod list_targets_by_rule_output {
         }
         /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTargetsByRuleOutput`](crate::output::ListTargetsByRuleOutput).
         pub fn build(self) -> crate::output::ListTargetsByRuleOutput {
             crate::output::ListTargetsByRuleOutput {
-                targets: self.targets,
-                next_token: self.next_token,
+                targets: self.targets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTargetsByRuleOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsByRuleOutput`](crate::output::ListTargetsByRuleOutput).
@@ -1049,20 +1045,20 @@ impl ListTargetsByRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tag keys and values associated with the resource you specified</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource you specified</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1076,23 +1072,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The list of tag keys and values associated with the resource you specified</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tag keys and values associated with the resource you specified</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1104,7 +1101,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRulesOutput {
+pub struct ListRulesOutput  {
     /// <p>The rules that match the specified criteria.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1114,17 +1111,17 @@ pub struct ListRulesOutput {
 }
 impl ListRulesOutput {
     /// <p>The rules that match the specified criteria.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::Rule]> {
         self.rules.as_deref()
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
-
+    
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1139,17 +1136,13 @@ pub mod list_rules_output {
         /// <p>The rules that match the specified criteria.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>The rules that match the specified criteria.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::Rule>>) -> Self {
+            self.rules = input; self
         }
         /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1158,17 +1151,20 @@ pub mod list_rules_output {
         }
         /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput).
         pub fn build(self) -> crate::output::ListRulesOutput {
             crate::output::ListRulesOutput {
-                rules: self.rules,
-                next_token: self.next_token,
+                rules: self.rules
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
@@ -1180,7 +1176,7 @@ impl ListRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRuleNamesByTargetOutput {
+pub struct ListRuleNamesByTargetOutput  {
     /// <p>The names of the rules that can invoke the given target.</p>
     #[doc(hidden)]
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1190,17 +1186,17 @@ pub struct ListRuleNamesByTargetOutput {
 }
 impl ListRuleNamesByTargetOutput {
     /// <p>The names of the rules that can invoke the given target.</p>
-    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_names(&self) -> std::option::Option<& [std::string::String]> {
         self.rule_names.as_deref()
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRuleNamesByTargetOutput`](crate::output::ListRuleNamesByTargetOutput).
 pub mod list_rule_names_by_target_output {
-
+    
     /// A builder for [`ListRuleNamesByTargetOutput`](crate::output::ListRuleNamesByTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1215,17 +1211,13 @@ pub mod list_rule_names_by_target_output {
         /// <p>The names of the rules that can invoke the given target.</p>
         pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_names.unwrap_or_default();
-            v.push(input.into());
-            self.rule_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.rule_names = Some(v);
+                            self
         }
         /// <p>The names of the rules that can invoke the given target.</p>
-        pub fn set_rule_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rule_names = input;
-            self
+        pub fn set_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rule_names = input; self
         }
         /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1234,17 +1226,20 @@ pub mod list_rule_names_by_target_output {
         }
         /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRuleNamesByTargetOutput`](crate::output::ListRuleNamesByTargetOutput).
         pub fn build(self) -> crate::output::ListRuleNamesByTargetOutput {
             crate::output::ListRuleNamesByTargetOutput {
-                rule_names: self.rule_names,
-                next_token: self.next_token,
+                rule_names: self.rule_names
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRuleNamesByTargetOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleNamesByTargetOutput`](crate::output::ListRuleNamesByTargetOutput).
@@ -1256,7 +1251,7 @@ impl ListRuleNamesByTargetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReplaysOutput {
+pub struct ListReplaysOutput  {
     /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
     #[doc(hidden)]
     pub replays: std::option::Option<std::vec::Vec<crate::model::Replay>>,
@@ -1266,17 +1261,17 @@ pub struct ListReplaysOutput {
 }
 impl ListReplaysOutput {
     /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
-    pub fn replays(&self) -> std::option::Option<&[crate::model::Replay]> {
+    pub fn replays(&self) -> std::option::Option<& [crate::model::Replay]> {
         self.replays.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListReplaysOutput`](crate::output::ListReplaysOutput).
 pub mod list_replays_output {
-
+    
     /// A builder for [`ListReplaysOutput`](crate::output::ListReplaysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1291,17 +1286,13 @@ pub mod list_replays_output {
         /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
         pub fn replays(mut self, input: crate::model::Replay) -> Self {
             let mut v = self.replays.unwrap_or_default();
-            v.push(input);
-            self.replays = Some(v);
-            self
+                            v.push(input);
+                            self.replays = Some(v);
+                            self
         }
         /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
-        pub fn set_replays(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Replay>>,
-        ) -> Self {
-            self.replays = input;
-            self
+        pub fn set_replays(mut self, input: std::option::Option<std::vec::Vec<crate::model::Replay>>) -> Self {
+            self.replays = input; self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1310,17 +1301,20 @@ pub mod list_replays_output {
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListReplaysOutput`](crate::output::ListReplaysOutput).
         pub fn build(self) -> crate::output::ListReplaysOutput {
             crate::output::ListReplaysOutput {
-                replays: self.replays,
-                next_token: self.next_token,
+                replays: self.replays
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReplaysOutput {
     /// Creates a new builder-style object to manufacture [`ListReplaysOutput`](crate::output::ListReplaysOutput).
@@ -1332,7 +1326,7 @@ impl ListReplaysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPartnerEventSourcesOutput {
+pub struct ListPartnerEventSourcesOutput  {
     /// <p>The list of partner event sources returned by the operation.</p>
     #[doc(hidden)]
     pub partner_event_sources: std::option::Option<std::vec::Vec<crate::model::PartnerEventSource>>,
@@ -1342,24 +1336,21 @@ pub struct ListPartnerEventSourcesOutput {
 }
 impl ListPartnerEventSourcesOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
-    pub fn partner_event_sources(
-        &self,
-    ) -> std::option::Option<&[crate::model::PartnerEventSource]> {
+    pub fn partner_event_sources(&self) -> std::option::Option<& [crate::model::PartnerEventSource]> {
         self.partner_event_sources.as_deref()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPartnerEventSourcesOutput`](crate::output::ListPartnerEventSourcesOutput).
 pub mod list_partner_event_sources_output {
-
+    
     /// A builder for [`ListPartnerEventSourcesOutput`](crate::output::ListPartnerEventSourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) partner_event_sources:
-            std::option::Option<std::vec::Vec<crate::model::PartnerEventSource>>,
+        pub(crate) partner_event_sources: std::option::Option<std::vec::Vec<crate::model::PartnerEventSource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1370,17 +1361,13 @@ pub mod list_partner_event_sources_output {
         /// <p>The list of partner event sources returned by the operation.</p>
         pub fn partner_event_sources(mut self, input: crate::model::PartnerEventSource) -> Self {
             let mut v = self.partner_event_sources.unwrap_or_default();
-            v.push(input);
-            self.partner_event_sources = Some(v);
-            self
+                            v.push(input);
+                            self.partner_event_sources = Some(v);
+                            self
         }
         /// <p>The list of partner event sources returned by the operation.</p>
-        pub fn set_partner_event_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PartnerEventSource>>,
-        ) -> Self {
-            self.partner_event_sources = input;
-            self
+        pub fn set_partner_event_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::PartnerEventSource>>) -> Self {
+            self.partner_event_sources = input; self
         }
         /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1389,17 +1376,20 @@ pub mod list_partner_event_sources_output {
         }
         /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPartnerEventSourcesOutput`](crate::output::ListPartnerEventSourcesOutput).
         pub fn build(self) -> crate::output::ListPartnerEventSourcesOutput {
             crate::output::ListPartnerEventSourcesOutput {
-                partner_event_sources: self.partner_event_sources,
-                next_token: self.next_token,
+                partner_event_sources: self.partner_event_sources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPartnerEventSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListPartnerEventSourcesOutput`](crate::output::ListPartnerEventSourcesOutput).
@@ -1411,35 +1401,31 @@ impl ListPartnerEventSourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPartnerEventSourceAccountsOutput {
+pub struct ListPartnerEventSourceAccountsOutput  {
     /// <p>The list of partner event sources returned by the operation.</p>
     #[doc(hidden)]
-    pub partner_event_source_accounts:
-        std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
+    pub partner_event_source_accounts: std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPartnerEventSourceAccountsOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
-    pub fn partner_event_source_accounts(
-        &self,
-    ) -> std::option::Option<&[crate::model::PartnerEventSourceAccount]> {
+    pub fn partner_event_source_accounts(&self) -> std::option::Option<& [crate::model::PartnerEventSourceAccount]> {
         self.partner_event_source_accounts.as_deref()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPartnerEventSourceAccountsOutput`](crate::output::ListPartnerEventSourceAccountsOutput).
 pub mod list_partner_event_source_accounts_output {
-
+    
     /// A builder for [`ListPartnerEventSourceAccountsOutput`](crate::output::ListPartnerEventSourceAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) partner_event_source_accounts:
-            std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
+        pub(crate) partner_event_source_accounts: std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1448,22 +1434,15 @@ pub mod list_partner_event_source_accounts_output {
         /// To override the contents of this collection use [`set_partner_event_source_accounts`](Self::set_partner_event_source_accounts).
         ///
         /// <p>The list of partner event sources returned by the operation.</p>
-        pub fn partner_event_source_accounts(
-            mut self,
-            input: crate::model::PartnerEventSourceAccount,
-        ) -> Self {
+        pub fn partner_event_source_accounts(mut self, input: crate::model::PartnerEventSourceAccount) -> Self {
             let mut v = self.partner_event_source_accounts.unwrap_or_default();
-            v.push(input);
-            self.partner_event_source_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.partner_event_source_accounts = Some(v);
+                            self
         }
         /// <p>The list of partner event sources returned by the operation.</p>
-        pub fn set_partner_event_source_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
-        ) -> Self {
-            self.partner_event_source_accounts = input;
-            self
+        pub fn set_partner_event_source_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>) -> Self {
+            self.partner_event_source_accounts = input; self
         }
         /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1472,17 +1451,20 @@ pub mod list_partner_event_source_accounts_output {
         }
         /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPartnerEventSourceAccountsOutput`](crate::output::ListPartnerEventSourceAccountsOutput).
         pub fn build(self) -> crate::output::ListPartnerEventSourceAccountsOutput {
             crate::output::ListPartnerEventSourceAccountsOutput {
-                partner_event_source_accounts: self.partner_event_source_accounts,
-                next_token: self.next_token,
+                partner_event_source_accounts: self.partner_event_source_accounts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPartnerEventSourceAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListPartnerEventSourceAccountsOutput`](crate::output::ListPartnerEventSourceAccountsOutput).
@@ -1494,7 +1476,7 @@ impl ListPartnerEventSourceAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventSourcesOutput {
+pub struct ListEventSourcesOutput  {
     /// <p>The list of event sources.</p>
     #[doc(hidden)]
     pub event_sources: std::option::Option<std::vec::Vec<crate::model::EventSource>>,
@@ -1504,17 +1486,17 @@ pub struct ListEventSourcesOutput {
 }
 impl ListEventSourcesOutput {
     /// <p>The list of event sources.</p>
-    pub fn event_sources(&self) -> std::option::Option<&[crate::model::EventSource]> {
+    pub fn event_sources(&self) -> std::option::Option<& [crate::model::EventSource]> {
         self.event_sources.as_deref()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEventSourcesOutput`](crate::output::ListEventSourcesOutput).
 pub mod list_event_sources_output {
-
+    
     /// A builder for [`ListEventSourcesOutput`](crate::output::ListEventSourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1529,17 +1511,13 @@ pub mod list_event_sources_output {
         /// <p>The list of event sources.</p>
         pub fn event_sources(mut self, input: crate::model::EventSource) -> Self {
             let mut v = self.event_sources.unwrap_or_default();
-            v.push(input);
-            self.event_sources = Some(v);
-            self
+                            v.push(input);
+                            self.event_sources = Some(v);
+                            self
         }
         /// <p>The list of event sources.</p>
-        pub fn set_event_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventSource>>,
-        ) -> Self {
-            self.event_sources = input;
-            self
+        pub fn set_event_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventSource>>) -> Self {
+            self.event_sources = input; self
         }
         /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1548,17 +1526,20 @@ pub mod list_event_sources_output {
         }
         /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEventSourcesOutput`](crate::output::ListEventSourcesOutput).
         pub fn build(self) -> crate::output::ListEventSourcesOutput {
             crate::output::ListEventSourcesOutput {
-                event_sources: self.event_sources,
-                next_token: self.next_token,
+                event_sources: self.event_sources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListEventSourcesOutput`](crate::output::ListEventSourcesOutput).
@@ -1570,7 +1551,7 @@ impl ListEventSourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventBusesOutput {
+pub struct ListEventBusesOutput  {
     /// <p>This list of event buses.</p>
     #[doc(hidden)]
     pub event_buses: std::option::Option<std::vec::Vec<crate::model::EventBus>>,
@@ -1580,17 +1561,17 @@ pub struct ListEventBusesOutput {
 }
 impl ListEventBusesOutput {
     /// <p>This list of event buses.</p>
-    pub fn event_buses(&self) -> std::option::Option<&[crate::model::EventBus]> {
+    pub fn event_buses(&self) -> std::option::Option<& [crate::model::EventBus]> {
         self.event_buses.as_deref()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEventBusesOutput`](crate::output::ListEventBusesOutput).
 pub mod list_event_buses_output {
-
+    
     /// A builder for [`ListEventBusesOutput`](crate::output::ListEventBusesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1605,17 +1586,13 @@ pub mod list_event_buses_output {
         /// <p>This list of event buses.</p>
         pub fn event_buses(mut self, input: crate::model::EventBus) -> Self {
             let mut v = self.event_buses.unwrap_or_default();
-            v.push(input);
-            self.event_buses = Some(v);
-            self
+                            v.push(input);
+                            self.event_buses = Some(v);
+                            self
         }
         /// <p>This list of event buses.</p>
-        pub fn set_event_buses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventBus>>,
-        ) -> Self {
-            self.event_buses = input;
-            self
+        pub fn set_event_buses(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventBus>>) -> Self {
+            self.event_buses = input; self
         }
         /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1624,17 +1601,20 @@ pub mod list_event_buses_output {
         }
         /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEventBusesOutput`](crate::output::ListEventBusesOutput).
         pub fn build(self) -> crate::output::ListEventBusesOutput {
             crate::output::ListEventBusesOutput {
-                event_buses: self.event_buses,
-                next_token: self.next_token,
+                event_buses: self.event_buses
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventBusesOutput {
     /// Creates a new builder-style object to manufacture [`ListEventBusesOutput`](crate::output::ListEventBusesOutput).
@@ -1646,7 +1626,7 @@ impl ListEventBusesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectionsOutput {
+pub struct ListConnectionsOutput  {
     /// <p>An array of connections objects that include details about the connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -1656,17 +1636,17 @@ pub struct ListConnectionsOutput {
 }
 impl ListConnectionsOutput {
     /// <p>An array of connections objects that include details about the connections.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::model::Connection]> {
         self.connections.as_deref()
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
 pub mod list_connections_output {
-
+    
     /// A builder for [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1681,17 +1661,13 @@ pub mod list_connections_output {
         /// <p>An array of connections objects that include details about the connections.</p>
         pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input);
-            self.connections = Some(v);
-            self
+                            v.push(input);
+                            self.connections = Some(v);
+                            self
         }
         /// <p>An array of connections objects that include details about the connections.</p>
-        pub fn set_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-        ) -> Self {
-            self.connections = input;
-            self
+        pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connection>>) -> Self {
+            self.connections = input; self
         }
         /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1700,17 +1676,20 @@ pub mod list_connections_output {
         }
         /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
         pub fn build(self) -> crate::output::ListConnectionsOutput {
             crate::output::ListConnectionsOutput {
-                connections: self.connections,
-                next_token: self.next_token,
+                connections: self.connections
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
@@ -1722,7 +1701,7 @@ impl ListConnectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListArchivesOutput {
+pub struct ListArchivesOutput  {
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
     #[doc(hidden)]
     pub archives: std::option::Option<std::vec::Vec<crate::model::Archive>>,
@@ -1732,17 +1711,17 @@ pub struct ListArchivesOutput {
 }
 impl ListArchivesOutput {
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-    pub fn archives(&self) -> std::option::Option<&[crate::model::Archive]> {
+    pub fn archives(&self) -> std::option::Option<& [crate::model::Archive]> {
         self.archives.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListArchivesOutput`](crate::output::ListArchivesOutput).
 pub mod list_archives_output {
-
+    
     /// A builder for [`ListArchivesOutput`](crate::output::ListArchivesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1757,17 +1736,13 @@ pub mod list_archives_output {
         /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
         pub fn archives(mut self, input: crate::model::Archive) -> Self {
             let mut v = self.archives.unwrap_or_default();
-            v.push(input);
-            self.archives = Some(v);
-            self
+                            v.push(input);
+                            self.archives = Some(v);
+                            self
         }
         /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-        pub fn set_archives(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Archive>>,
-        ) -> Self {
-            self.archives = input;
-            self
+        pub fn set_archives(mut self, input: std::option::Option<std::vec::Vec<crate::model::Archive>>) -> Self {
+            self.archives = input; self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1776,17 +1751,20 @@ pub mod list_archives_output {
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListArchivesOutput`](crate::output::ListArchivesOutput).
         pub fn build(self) -> crate::output::ListArchivesOutput {
             crate::output::ListArchivesOutput {
-                archives: self.archives,
-                next_token: self.next_token,
+                archives: self.archives
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListArchivesOutput {
     /// Creates a new builder-style object to manufacture [`ListArchivesOutput`](crate::output::ListArchivesOutput).
@@ -1798,7 +1776,7 @@ impl ListArchivesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApiDestinationsOutput {
+pub struct ListApiDestinationsOutput  {
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
     #[doc(hidden)]
     pub api_destinations: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
@@ -1808,22 +1786,21 @@ pub struct ListApiDestinationsOutput {
 }
 impl ListApiDestinationsOutput {
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
-    pub fn api_destinations(&self) -> std::option::Option<&[crate::model::ApiDestination]> {
+    pub fn api_destinations(&self) -> std::option::Option<& [crate::model::ApiDestination]> {
         self.api_destinations.as_deref()
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApiDestinationsOutput`](crate::output::ListApiDestinationsOutput).
 pub mod list_api_destinations_output {
-
+    
     /// A builder for [`ListApiDestinationsOutput`](crate::output::ListApiDestinationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) api_destinations:
-            std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
+        pub(crate) api_destinations: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1834,17 +1811,13 @@ pub mod list_api_destinations_output {
         /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
         pub fn api_destinations(mut self, input: crate::model::ApiDestination) -> Self {
             let mut v = self.api_destinations.unwrap_or_default();
-            v.push(input);
-            self.api_destinations = Some(v);
-            self
+                            v.push(input);
+                            self.api_destinations = Some(v);
+                            self
         }
         /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
-        pub fn set_api_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
-        ) -> Self {
-            self.api_destinations = input;
-            self
+        pub fn set_api_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>) -> Self {
+            self.api_destinations = input; self
         }
         /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1853,17 +1826,20 @@ pub mod list_api_destinations_output {
         }
         /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApiDestinationsOutput`](crate::output::ListApiDestinationsOutput).
         pub fn build(self) -> crate::output::ListApiDestinationsOutput {
             crate::output::ListApiDestinationsOutput {
-                api_destinations: self.api_destinations,
-                next_token: self.next_token,
+                api_destinations: self.api_destinations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApiDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApiDestinationsOutput`](crate::output::ListApiDestinationsOutput).
@@ -1875,19 +1851,24 @@ impl ListApiDestinationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableRuleOutput {}
+pub struct EnableRuleOutput  {
+}
 /// See [`EnableRuleOutput`](crate::output::EnableRuleOutput).
 pub mod enable_rule_output {
-
+    
     /// A builder for [`EnableRuleOutput`](crate::output::EnableRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableRuleOutput`](crate::output::EnableRuleOutput).
         pub fn build(self) -> crate::output::EnableRuleOutput {
-            crate::output::EnableRuleOutput {}
+            crate::output::EnableRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableRuleOutput {
     /// Creates a new builder-style object to manufacture [`EnableRuleOutput`](crate::output::EnableRuleOutput).
@@ -1899,19 +1880,24 @@ impl EnableRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableRuleOutput {}
+pub struct DisableRuleOutput  {
+}
 /// See [`DisableRuleOutput`](crate::output::DisableRuleOutput).
 pub mod disable_rule_output {
-
+    
     /// A builder for [`DisableRuleOutput`](crate::output::DisableRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisableRuleOutput`](crate::output::DisableRuleOutput).
         pub fn build(self) -> crate::output::DisableRuleOutput {
-            crate::output::DisableRuleOutput {}
+            crate::output::DisableRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl DisableRuleOutput {
     /// Creates a new builder-style object to manufacture [`DisableRuleOutput`](crate::output::DisableRuleOutput).
@@ -1923,7 +1909,7 @@ impl DisableRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRuleOutput {
+pub struct DescribeRuleOutput  {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1957,49 +1943,49 @@ pub struct DescribeRuleOutput {
 }
 impl DescribeRuleOutput {
     /// <p>The name of the rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn event_pattern(&self) -> std::option::Option<&str> {
+    pub fn event_pattern(&self) -> std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
-    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>Specifies whether the rule is enabled or disabled.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::RuleState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RuleState> {
         self.state.as_ref()
     }
     /// <p>The description of the rule.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
-    pub fn managed_by(&self) -> std::option::Option<&str> {
+    pub fn managed_by(&self) -> std::option::Option<& str> {
         self.managed_by.as_deref()
     }
     /// <p>The name of the event bus associated with the rule.</p>
-    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
     /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
 }
 /// See [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
 pub mod describe_rule_output {
-
+    
     /// A builder for [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2022,8 +2008,7 @@ pub mod describe_rule_output {
         }
         /// <p>The name of the rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2032,8 +2017,7 @@ pub mod describe_rule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2041,12 +2025,8 @@ pub mod describe_rule_output {
             self
         }
         /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-        pub fn set_event_pattern(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_pattern = input;
-            self
+        pub fn set_event_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_pattern = input; self
         }
         /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2054,12 +2034,8 @@ pub mod describe_rule_output {
             self
         }
         /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
-        pub fn set_schedule_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_expression = input;
-            self
+        pub fn set_schedule_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_expression = input; self
         }
         /// <p>Specifies whether the rule is enabled or disabled.</p>
         pub fn state(mut self, input: crate::model::RuleState) -> Self {
@@ -2068,8 +2044,7 @@ pub mod describe_rule_output {
         }
         /// <p>Specifies whether the rule is enabled or disabled.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RuleState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The description of the rule.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2078,8 +2053,7 @@ pub mod describe_rule_output {
         }
         /// <p>The description of the rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2088,8 +2062,7 @@ pub mod describe_rule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
         pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2098,8 +2071,7 @@ pub mod describe_rule_output {
         }
         /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
         pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.managed_by = input;
-            self
+            self.managed_by = input; self
         }
         /// <p>The name of the event bus associated with the rule.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2107,12 +2079,8 @@ pub mod describe_rule_output {
             self
         }
         /// <p>The name of the event bus associated with the rule.</p>
-        pub fn set_event_bus_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_bus_name = input;
-            self
+        pub fn set_event_bus_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_bus_name = input; self
         }
         /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2121,25 +2089,36 @@ pub mod describe_rule_output {
         }
         /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
         pub fn build(self) -> crate::output::DescribeRuleOutput {
             crate::output::DescribeRuleOutput {
-                name: self.name,
-                arn: self.arn,
-                event_pattern: self.event_pattern,
-                schedule_expression: self.schedule_expression,
-                state: self.state,
-                description: self.description,
-                role_arn: self.role_arn,
-                managed_by: self.managed_by,
-                event_bus_name: self.event_bus_name,
-                created_by: self.created_by,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                event_pattern: self.event_pattern
+                ,
+                schedule_expression: self.schedule_expression
+                ,
+                state: self.state
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                managed_by: self.managed_by
+                ,
+                event_bus_name: self.event_bus_name
+                ,
+                created_by: self.created_by
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRuleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleOutput`](crate::output::DescribeRuleOutput).
@@ -2151,7 +2130,7 @@ impl DescribeRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplayOutput {
+pub struct DescribeReplayOutput  {
     /// <p>The name of the replay.</p>
     #[doc(hidden)]
     pub replay_name: std::option::Option<std::string::String>,
@@ -2191,57 +2170,57 @@ pub struct DescribeReplayOutput {
 }
 impl DescribeReplayOutput {
     /// <p>The name of the replay.</p>
-    pub fn replay_name(&self) -> std::option::Option<&str> {
+    pub fn replay_name(&self) -> std::option::Option<& str> {
         self.replay_name.as_deref()
     }
     /// <p>The ARN of the replay.</p>
-    pub fn replay_arn(&self) -> std::option::Option<&str> {
+    pub fn replay_arn(&self) -> std::option::Option<& str> {
         self.replay_arn.as_deref()
     }
     /// <p>The description of the replay.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current state of the replay.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ReplayState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ReplayState> {
         self.state.as_ref()
     }
     /// <p>The reason that the replay is in the current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The ARN of the archive events were replayed from.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::ReplayDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::ReplayDestination> {
         self.destination.as_ref()
     }
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
-    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
     /// <p>The time that the event was last replayed.</p>
-    pub fn event_last_replayed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_last_replayed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_last_replayed_time.as_ref()
     }
     /// <p>A time stamp for the time that the replay started.</p>
-    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn replay_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.replay_start_time.as_ref()
     }
     /// <p>A time stamp for the time that the replay stopped.</p>
-    pub fn replay_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn replay_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.replay_end_time.as_ref()
     }
 }
 /// See [`DescribeReplayOutput`](crate::output::DescribeReplayOutput).
 pub mod describe_replay_output {
-
+    
     /// A builder for [`DescribeReplayOutput`](crate::output::DescribeReplayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2266,8 +2245,7 @@ pub mod describe_replay_output {
         }
         /// <p>The name of the replay.</p>
         pub fn set_replay_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.replay_name = input;
-            self
+            self.replay_name = input; self
         }
         /// <p>The ARN of the replay.</p>
         pub fn replay_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2276,8 +2254,7 @@ pub mod describe_replay_output {
         }
         /// <p>The ARN of the replay.</p>
         pub fn set_replay_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.replay_arn = input;
-            self
+            self.replay_arn = input; self
         }
         /// <p>The description of the replay.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2286,8 +2263,7 @@ pub mod describe_replay_output {
         }
         /// <p>The description of the replay.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The current state of the replay.</p>
         pub fn state(mut self, input: crate::model::ReplayState) -> Self {
@@ -2296,8 +2272,7 @@ pub mod describe_replay_output {
         }
         /// <p>The current state of the replay.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ReplayState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason that the replay is in the current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2306,8 +2281,7 @@ pub mod describe_replay_output {
         }
         /// <p>The reason that the replay is in the current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The ARN of the archive events were replayed from.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2315,12 +2289,8 @@ pub mod describe_replay_output {
             self
         }
         /// <p>The ARN of the archive events were replayed from.</p>
-        pub fn set_event_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_source_arn = input;
-            self
+        pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_source_arn = input; self
         }
         /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
         pub fn destination(mut self, input: crate::model::ReplayDestination) -> Self {
@@ -2328,12 +2298,8 @@ pub mod describe_replay_output {
             self
         }
         /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::ReplayDestination>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::ReplayDestination>) -> Self {
+            self.destination = input; self
         }
         /// <p>The time stamp of the first event that was last replayed from the archive.</p>
         pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2341,12 +2307,8 @@ pub mod describe_replay_output {
             self
         }
         /// <p>The time stamp of the first event that was last replayed from the archive.</p>
-        pub fn set_event_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_start_time = input;
-            self
+        pub fn set_event_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_start_time = input; self
         }
         /// <p>The time stamp for the last event that was replayed from the archive.</p>
         pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2354,12 +2316,8 @@ pub mod describe_replay_output {
             self
         }
         /// <p>The time stamp for the last event that was replayed from the archive.</p>
-        pub fn set_event_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_end_time = input;
-            self
+        pub fn set_event_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_end_time = input; self
         }
         /// <p>The time that the event was last replayed.</p>
         pub fn event_last_replayed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2367,12 +2325,8 @@ pub mod describe_replay_output {
             self
         }
         /// <p>The time that the event was last replayed.</p>
-        pub fn set_event_last_replayed_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_last_replayed_time = input;
-            self
+        pub fn set_event_last_replayed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_last_replayed_time = input; self
         }
         /// <p>A time stamp for the time that the replay started.</p>
         pub fn replay_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2380,12 +2334,8 @@ pub mod describe_replay_output {
             self
         }
         /// <p>A time stamp for the time that the replay started.</p>
-        pub fn set_replay_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.replay_start_time = input;
-            self
+        pub fn set_replay_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.replay_start_time = input; self
         }
         /// <p>A time stamp for the time that the replay stopped.</p>
         pub fn replay_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2393,31 +2343,41 @@ pub mod describe_replay_output {
             self
         }
         /// <p>A time stamp for the time that the replay stopped.</p>
-        pub fn set_replay_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.replay_end_time = input;
-            self
+        pub fn set_replay_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.replay_end_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplayOutput`](crate::output::DescribeReplayOutput).
         pub fn build(self) -> crate::output::DescribeReplayOutput {
             crate::output::DescribeReplayOutput {
-                replay_name: self.replay_name,
-                replay_arn: self.replay_arn,
-                description: self.description,
-                state: self.state,
-                state_reason: self.state_reason,
-                event_source_arn: self.event_source_arn,
-                destination: self.destination,
-                event_start_time: self.event_start_time,
-                event_end_time: self.event_end_time,
-                event_last_replayed_time: self.event_last_replayed_time,
-                replay_start_time: self.replay_start_time,
-                replay_end_time: self.replay_end_time,
+                replay_name: self.replay_name
+                ,
+                replay_arn: self.replay_arn
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                destination: self.destination
+                ,
+                event_start_time: self.event_start_time
+                ,
+                event_end_time: self.event_end_time
+                ,
+                event_last_replayed_time: self.event_last_replayed_time
+                ,
+                replay_start_time: self.replay_start_time
+                ,
+                replay_end_time: self.replay_end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplayOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplayOutput`](crate::output::DescribeReplayOutput).
@@ -2429,7 +2389,7 @@ impl DescribeReplayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePartnerEventSourceOutput {
+pub struct DescribePartnerEventSourceOutput  {
     /// <p>The ARN of the event source.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2439,17 +2399,17 @@ pub struct DescribePartnerEventSourceOutput {
 }
 impl DescribePartnerEventSourceOutput {
     /// <p>The ARN of the event source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the event source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`DescribePartnerEventSourceOutput`](crate::output::DescribePartnerEventSourceOutput).
 pub mod describe_partner_event_source_output {
-
+    
     /// A builder for [`DescribePartnerEventSourceOutput`](crate::output::DescribePartnerEventSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2464,8 +2424,7 @@ pub mod describe_partner_event_source_output {
         }
         /// <p>The ARN of the event source.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the event source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2474,17 +2433,20 @@ pub mod describe_partner_event_source_output {
         }
         /// <p>The name of the event source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DescribePartnerEventSourceOutput`](crate::output::DescribePartnerEventSourceOutput).
         pub fn build(self) -> crate::output::DescribePartnerEventSourceOutput {
             crate::output::DescribePartnerEventSourceOutput {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePartnerEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribePartnerEventSourceOutput`](crate::output::DescribePartnerEventSourceOutput).
@@ -2496,7 +2458,7 @@ impl DescribePartnerEventSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventSourceOutput {
+pub struct DescribeEventSourceOutput  {
     /// <p>The ARN of the partner event source.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2518,33 +2480,33 @@ pub struct DescribeEventSourceOutput {
 }
 impl DescribeEventSourceOutput {
     /// <p>The ARN of the partner event source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the SaaS partner that created the event source.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the event source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The name of the partner event source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EventSourceState> {
         self.state.as_ref()
     }
 }
 /// See [`DescribeEventSourceOutput`](crate::output::DescribeEventSourceOutput).
 pub mod describe_event_source_output {
-
+    
     /// A builder for [`DescribeEventSourceOutput`](crate::output::DescribeEventSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2563,8 +2525,7 @@ pub mod describe_event_source_output {
         }
         /// <p>The ARN of the partner event source.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the SaaS partner that created the event source.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2573,8 +2534,7 @@ pub mod describe_event_source_output {
         }
         /// <p>The name of the SaaS partner that created the event source.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The date and time that the event source was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2582,12 +2542,8 @@ pub mod describe_event_source_output {
             self
         }
         /// <p>The date and time that the event source was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
         pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2595,12 +2551,8 @@ pub mod describe_event_source_output {
             self
         }
         /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
-        pub fn set_expiration_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration_time = input;
-            self
+        pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiration_time = input; self
         }
         /// <p>The name of the partner event source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2609,8 +2561,7 @@ pub mod describe_event_source_output {
         }
         /// <p>The name of the partner event source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
         pub fn state(mut self, input: crate::model::EventSourceState) -> Self {
@@ -2618,25 +2569,29 @@ pub mod describe_event_source_output {
             self
         }
         /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::EventSourceState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::EventSourceState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventSourceOutput`](crate::output::DescribeEventSourceOutput).
         pub fn build(self) -> crate::output::DescribeEventSourceOutput {
             crate::output::DescribeEventSourceOutput {
-                arn: self.arn,
-                created_by: self.created_by,
-                creation_time: self.creation_time,
-                expiration_time: self.expiration_time,
-                name: self.name,
-                state: self.state,
+                arn: self.arn
+                ,
+                created_by: self.created_by
+                ,
+                creation_time: self.creation_time
+                ,
+                expiration_time: self.expiration_time
+                ,
+                name: self.name
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSourceOutput`](crate::output::DescribeEventSourceOutput).
@@ -2648,7 +2603,7 @@ impl DescribeEventSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventBusOutput {
+pub struct DescribeEventBusOutput  {
     /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2661,21 +2616,21 @@ pub struct DescribeEventBusOutput {
 }
 impl DescribeEventBusOutput {
     /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The policy that enables the external account to send events to your account.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`DescribeEventBusOutput`](crate::output::DescribeEventBusOutput).
 pub mod describe_event_bus_output {
-
+    
     /// A builder for [`DescribeEventBusOutput`](crate::output::DescribeEventBusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2691,8 +2646,7 @@ pub mod describe_event_bus_output {
         }
         /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2701,8 +2655,7 @@ pub mod describe_event_bus_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The policy that enables the external account to send events to your account.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2711,18 +2664,22 @@ pub mod describe_event_bus_output {
         }
         /// <p>The policy that enables the external account to send events to your account.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventBusOutput`](crate::output::DescribeEventBusOutput).
         pub fn build(self) -> crate::output::DescribeEventBusOutput {
             crate::output::DescribeEventBusOutput {
-                name: self.name,
-                arn: self.arn,
-                policy: self.policy,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventBusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventBusOutput`](crate::output::DescribeEventBusOutput).
@@ -2734,7 +2691,7 @@ impl DescribeEventBusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectionOutput {
+pub struct DescribeConnectionOutput  {
     /// <p>The ARN of the connection retrieved.</p>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
@@ -2771,57 +2728,53 @@ pub struct DescribeConnectionOutput {
 }
 impl DescribeConnectionOutput {
     /// <p>The ARN of the connection retrieved.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The name of the connection retrieved.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description for the connection retrieved.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the connection retrieved.</p>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The reason that the connection is in the current connection state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The type of authorization specified for the connection.</p>
-    pub fn authorization_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectionAuthorizationType> {
+    pub fn authorization_type(&self) -> std::option::Option<& crate::model::ConnectionAuthorizationType> {
         self.authorization_type.as_ref()
     }
     /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The parameters to use for authorization for the connection.</p>
-    pub fn auth_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectionAuthResponseParameters> {
+    pub fn auth_parameters(&self) -> std::option::Option<& crate::model::ConnectionAuthResponseParameters> {
         self.auth_parameters.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_authorized_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
 /// See [`DescribeConnectionOutput`](crate::output::DescribeConnectionOutput).
 pub mod describe_connection_output {
-
+    
     /// A builder for [`DescribeConnectionOutput`](crate::output::DescribeConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2830,11 +2783,9 @@ pub mod describe_connection_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
-        pub(crate) authorization_type:
-            std::option::Option<crate::model::ConnectionAuthorizationType>,
+        pub(crate) authorization_type: std::option::Option<crate::model::ConnectionAuthorizationType>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
-        pub(crate) auth_parameters:
-            std::option::Option<crate::model::ConnectionAuthResponseParameters>,
+        pub(crate) auth_parameters: std::option::Option<crate::model::ConnectionAuthResponseParameters>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2846,12 +2797,8 @@ pub mod describe_connection_output {
             self
         }
         /// <p>The ARN of the connection retrieved.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The name of the connection retrieved.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2860,8 +2807,7 @@ pub mod describe_connection_output {
         }
         /// <p>The name of the connection retrieved.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description for the connection retrieved.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2870,8 +2816,7 @@ pub mod describe_connection_output {
         }
         /// <p>The description for the connection retrieved.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the connection retrieved.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
@@ -2879,12 +2824,8 @@ pub mod describe_connection_output {
             self
         }
         /// <p>The state of the connection retrieved.</p>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The reason that the connection is in the current connection state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2893,24 +2834,16 @@ pub mod describe_connection_output {
         }
         /// <p>The reason that the connection is in the current connection state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The type of authorization specified for the connection.</p>
-        pub fn authorization_type(
-            mut self,
-            input: crate::model::ConnectionAuthorizationType,
-        ) -> Self {
+        pub fn authorization_type(mut self, input: crate::model::ConnectionAuthorizationType) -> Self {
             self.authorization_type = Some(input);
             self
         }
         /// <p>The type of authorization specified for the connection.</p>
-        pub fn set_authorization_type(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionAuthorizationType>,
-        ) -> Self {
-            self.authorization_type = input;
-            self
+        pub fn set_authorization_type(mut self, input: std::option::Option<crate::model::ConnectionAuthorizationType>) -> Self {
+            self.authorization_type = input; self
         }
         /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2919,24 +2852,16 @@ pub mod describe_connection_output {
         }
         /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input;
-            self
+            self.secret_arn = input; self
         }
         /// <p>The parameters to use for authorization for the connection.</p>
-        pub fn auth_parameters(
-            mut self,
-            input: crate::model::ConnectionAuthResponseParameters,
-        ) -> Self {
+        pub fn auth_parameters(mut self, input: crate::model::ConnectionAuthResponseParameters) -> Self {
             self.auth_parameters = Some(input);
             self
         }
         /// <p>The parameters to use for authorization for the connection.</p>
-        pub fn set_auth_parameters(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionAuthResponseParameters>,
-        ) -> Self {
-            self.auth_parameters = input;
-            self
+        pub fn set_auth_parameters(mut self, input: std::option::Option<crate::model::ConnectionAuthResponseParameters>) -> Self {
+            self.auth_parameters = input; self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2944,12 +2869,8 @@ pub mod describe_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2957,12 +2878,8 @@ pub mod describe_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
         pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2970,30 +2887,39 @@ pub mod describe_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
-        pub fn set_last_authorized_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_authorized_time = input;
-            self
+        pub fn set_last_authorized_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_authorized_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectionOutput`](crate::output::DescribeConnectionOutput).
         pub fn build(self) -> crate::output::DescribeConnectionOutput {
             crate::output::DescribeConnectionOutput {
-                connection_arn: self.connection_arn,
-                name: self.name,
-                description: self.description,
-                connection_state: self.connection_state,
-                state_reason: self.state_reason,
-                authorization_type: self.authorization_type,
-                secret_arn: self.secret_arn,
-                auth_parameters: self.auth_parameters,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
-                last_authorized_time: self.last_authorized_time,
+                connection_arn: self.connection_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                connection_state: self.connection_state
+                ,
+                state_reason: self.state_reason
+                ,
+                authorization_type: self.authorization_type
+                ,
+                secret_arn: self.secret_arn
+                ,
+                auth_parameters: self.auth_parameters
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                last_authorized_time: self.last_authorized_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionOutput`](crate::output::DescribeConnectionOutput).
@@ -3005,7 +2931,7 @@ impl DescribeConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeArchiveOutput {
+pub struct DescribeArchiveOutput  {
     /// <p>The ARN of the archive.</p>
     #[doc(hidden)]
     pub archive_arn: std::option::Option<std::string::String>,
@@ -3042,31 +2968,31 @@ pub struct DescribeArchiveOutput {
 }
 impl DescribeArchiveOutput {
     /// <p>The ARN of the archive.</p>
-    pub fn archive_arn(&self) -> std::option::Option<&str> {
+    pub fn archive_arn(&self) -> std::option::Option<& str> {
         self.archive_arn.as_deref()
     }
     /// <p>The name of the archive.</p>
-    pub fn archive_name(&self) -> std::option::Option<&str> {
+    pub fn archive_name(&self) -> std::option::Option<& str> {
         self.archive_name.as_deref()
     }
     /// <p>The ARN of the event source associated with the archive.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The description of the archive.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The event pattern used to filter events sent to the archive.</p>
-    pub fn event_pattern(&self) -> std::option::Option<&str> {
+    pub fn event_pattern(&self) -> std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>The state of the archive.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ArchiveState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ArchiveState> {
         self.state.as_ref()
     }
     /// <p>The reason that the archive is in the state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The number of days to retain events for in the archive.</p>
@@ -3082,13 +3008,13 @@ impl DescribeArchiveOutput {
         self.event_count
     }
     /// <p>The time at which the archive was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`DescribeArchiveOutput`](crate::output::DescribeArchiveOutput).
 pub mod describe_archive_output {
-
+    
     /// A builder for [`DescribeArchiveOutput`](crate::output::DescribeArchiveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3112,8 +3038,7 @@ pub mod describe_archive_output {
         }
         /// <p>The ARN of the archive.</p>
         pub fn set_archive_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_arn = input;
-            self
+            self.archive_arn = input; self
         }
         /// <p>The name of the archive.</p>
         pub fn archive_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3122,8 +3047,7 @@ pub mod describe_archive_output {
         }
         /// <p>The name of the archive.</p>
         pub fn set_archive_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_name = input;
-            self
+            self.archive_name = input; self
         }
         /// <p>The ARN of the event source associated with the archive.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3131,12 +3055,8 @@ pub mod describe_archive_output {
             self
         }
         /// <p>The ARN of the event source associated with the archive.</p>
-        pub fn set_event_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_source_arn = input;
-            self
+        pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_source_arn = input; self
         }
         /// <p>The description of the archive.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3145,8 +3065,7 @@ pub mod describe_archive_output {
         }
         /// <p>The description of the archive.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The event pattern used to filter events sent to the archive.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3154,12 +3073,8 @@ pub mod describe_archive_output {
             self
         }
         /// <p>The event pattern used to filter events sent to the archive.</p>
-        pub fn set_event_pattern(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_pattern = input;
-            self
+        pub fn set_event_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_pattern = input; self
         }
         /// <p>The state of the archive.</p>
         pub fn state(mut self, input: crate::model::ArchiveState) -> Self {
@@ -3168,8 +3083,7 @@ pub mod describe_archive_output {
         }
         /// <p>The state of the archive.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ArchiveState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason that the archive is in the state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3178,8 +3092,7 @@ pub mod describe_archive_output {
         }
         /// <p>The reason that the archive is in the state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The number of days to retain events for in the archive.</p>
         pub fn retention_days(mut self, input: i32) -> Self {
@@ -3188,8 +3101,7 @@ pub mod describe_archive_output {
         }
         /// <p>The number of days to retain events for in the archive.</p>
         pub fn set_retention_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.retention_days = input;
-            self
+            self.retention_days = input; self
         }
         /// <p>The size of the archive in bytes.</p>
         pub fn size_bytes(mut self, input: i64) -> Self {
@@ -3198,8 +3110,7 @@ pub mod describe_archive_output {
         }
         /// <p>The size of the archive in bytes.</p>
         pub fn set_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.size_bytes = input;
-            self
+            self.size_bytes = input; self
         }
         /// <p>The number of events in the archive.</p>
         pub fn event_count(mut self, input: i64) -> Self {
@@ -3208,8 +3119,7 @@ pub mod describe_archive_output {
         }
         /// <p>The number of events in the archive.</p>
         pub fn set_event_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.event_count = input;
-            self
+            self.event_count = input; self
         }
         /// <p>The time at which the archive was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3217,30 +3127,41 @@ pub mod describe_archive_output {
             self
         }
         /// <p>The time at which the archive was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeArchiveOutput`](crate::output::DescribeArchiveOutput).
         pub fn build(self) -> crate::output::DescribeArchiveOutput {
             crate::output::DescribeArchiveOutput {
-                archive_arn: self.archive_arn,
-                archive_name: self.archive_name,
-                event_source_arn: self.event_source_arn,
-                description: self.description,
-                event_pattern: self.event_pattern,
-                state: self.state,
-                state_reason: self.state_reason,
-                retention_days: self.retention_days,
-                size_bytes: self.size_bytes.unwrap_or_default(),
-                event_count: self.event_count.unwrap_or_default(),
-                creation_time: self.creation_time,
+                archive_arn: self.archive_arn
+                ,
+                archive_name: self.archive_name
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                description: self.description
+                ,
+                event_pattern: self.event_pattern
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                retention_days: self.retention_days
+                ,
+                size_bytes: self.size_bytes
+                    .unwrap_or_default()
+                ,
+                event_count: self.event_count
+                    .unwrap_or_default()
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeArchiveOutput {
     /// Creates a new builder-style object to manufacture [`DescribeArchiveOutput`](crate::output::DescribeArchiveOutput).
@@ -3252,7 +3173,7 @@ impl DescribeArchiveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApiDestinationOutput {
+pub struct DescribeApiDestinationOutput  {
     /// <p>The ARN of the API destination retrieved.</p>
     #[doc(hidden)]
     pub api_destination_arn: std::option::Option<std::string::String>,
@@ -3286,31 +3207,31 @@ pub struct DescribeApiDestinationOutput {
 }
 impl DescribeApiDestinationOutput {
     /// <p>The ARN of the API destination retrieved.</p>
-    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn api_destination_arn(&self) -> std::option::Option<& str> {
         self.api_destination_arn.as_deref()
     }
     /// <p>The name of the API destination retrieved.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description for the API destination retrieved.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the API destination retrieved.</p>
-    pub fn api_destination_state(&self) -> std::option::Option<&crate::model::ApiDestinationState> {
+    pub fn api_destination_state(&self) -> std::option::Option<& crate::model::ApiDestinationState> {
         self.api_destination_state.as_ref()
     }
     /// <p>The ARN of the connection specified for the API destination retrieved.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The URL to use to connect to the HTTP endpoint.</p>
-    pub fn invocation_endpoint(&self) -> std::option::Option<&str> {
+    pub fn invocation_endpoint(&self) -> std::option::Option<& str> {
         self.invocation_endpoint.as_deref()
     }
     /// <p>The method to use to connect to the HTTP endpoint.</p>
-    pub fn http_method(&self) -> std::option::Option<&crate::model::ApiDestinationHttpMethod> {
+    pub fn http_method(&self) -> std::option::Option<& crate::model::ApiDestinationHttpMethod> {
         self.http_method.as_ref()
     }
     /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
@@ -3318,17 +3239,17 @@ impl DescribeApiDestinationOutput {
         self.invocation_rate_limit_per_second
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`DescribeApiDestinationOutput`](crate::output::DescribeApiDestinationOutput).
 pub mod describe_api_destination_output {
-
+    
     /// A builder for [`DescribeApiDestinationOutput`](crate::output::DescribeApiDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3350,12 +3271,8 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>The ARN of the API destination retrieved.</p>
-        pub fn set_api_destination_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_destination_arn = input;
-            self
+        pub fn set_api_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_destination_arn = input; self
         }
         /// <p>The name of the API destination retrieved.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3364,8 +3281,7 @@ pub mod describe_api_destination_output {
         }
         /// <p>The name of the API destination retrieved.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description for the API destination retrieved.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3374,8 +3290,7 @@ pub mod describe_api_destination_output {
         }
         /// <p>The description for the API destination retrieved.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the API destination retrieved.</p>
         pub fn api_destination_state(mut self, input: crate::model::ApiDestinationState) -> Self {
@@ -3383,12 +3298,8 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>The state of the API destination retrieved.</p>
-        pub fn set_api_destination_state(
-            mut self,
-            input: std::option::Option<crate::model::ApiDestinationState>,
-        ) -> Self {
-            self.api_destination_state = input;
-            self
+        pub fn set_api_destination_state(mut self, input: std::option::Option<crate::model::ApiDestinationState>) -> Self {
+            self.api_destination_state = input; self
         }
         /// <p>The ARN of the connection specified for the API destination retrieved.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3396,12 +3307,8 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>The ARN of the connection specified for the API destination retrieved.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The URL to use to connect to the HTTP endpoint.</p>
         pub fn invocation_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3409,12 +3316,8 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>The URL to use to connect to the HTTP endpoint.</p>
-        pub fn set_invocation_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invocation_endpoint = input;
-            self
+        pub fn set_invocation_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.invocation_endpoint = input; self
         }
         /// <p>The method to use to connect to the HTTP endpoint.</p>
         pub fn http_method(mut self, input: crate::model::ApiDestinationHttpMethod) -> Self {
@@ -3422,12 +3325,8 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>The method to use to connect to the HTTP endpoint.</p>
-        pub fn set_http_method(
-            mut self,
-            input: std::option::Option<crate::model::ApiDestinationHttpMethod>,
-        ) -> Self {
-            self.http_method = input;
-            self
+        pub fn set_http_method(mut self, input: std::option::Option<crate::model::ApiDestinationHttpMethod>) -> Self {
+            self.http_method = input; self
         }
         /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
         pub fn invocation_rate_limit_per_second(mut self, input: i32) -> Self {
@@ -3435,12 +3334,8 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
-        pub fn set_invocation_rate_limit_per_second(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.invocation_rate_limit_per_second = input;
-            self
+        pub fn set_invocation_rate_limit_per_second(mut self, input: std::option::Option<i32>) -> Self {
+            self.invocation_rate_limit_per_second = input; self
         }
         /// <p>A time stamp for the time that the API destination was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3448,12 +3343,8 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>A time stamp for the time that the API destination was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A time stamp for the time that the API destination was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3461,29 +3352,37 @@ pub mod describe_api_destination_output {
             self
         }
         /// <p>A time stamp for the time that the API destination was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApiDestinationOutput`](crate::output::DescribeApiDestinationOutput).
         pub fn build(self) -> crate::output::DescribeApiDestinationOutput {
             crate::output::DescribeApiDestinationOutput {
-                api_destination_arn: self.api_destination_arn,
-                name: self.name,
-                description: self.description,
-                api_destination_state: self.api_destination_state,
-                connection_arn: self.connection_arn,
-                invocation_endpoint: self.invocation_endpoint,
-                http_method: self.http_method,
-                invocation_rate_limit_per_second: self.invocation_rate_limit_per_second,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                api_destination_arn: self.api_destination_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                api_destination_state: self.api_destination_state
+                ,
+                connection_arn: self.connection_arn
+                ,
+                invocation_endpoint: self.invocation_endpoint
+                ,
+                http_method: self.http_method
+                ,
+                invocation_rate_limit_per_second: self.invocation_rate_limit_per_second
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeApiDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApiDestinationOutput`](crate::output::DescribeApiDestinationOutput).
@@ -3495,19 +3394,24 @@ impl DescribeApiDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleOutput {}
+pub struct DeleteRuleOutput  {
+}
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
-
+    
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
         pub fn build(self) -> crate::output::DeleteRuleOutput {
-            crate::output::DeleteRuleOutput {}
+            crate::output::DeleteRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
@@ -3519,19 +3423,24 @@ impl DeleteRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePartnerEventSourceOutput {}
+pub struct DeletePartnerEventSourceOutput  {
+}
 /// See [`DeletePartnerEventSourceOutput`](crate::output::DeletePartnerEventSourceOutput).
 pub mod delete_partner_event_source_output {
-
+    
     /// A builder for [`DeletePartnerEventSourceOutput`](crate::output::DeletePartnerEventSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePartnerEventSourceOutput`](crate::output::DeletePartnerEventSourceOutput).
         pub fn build(self) -> crate::output::DeletePartnerEventSourceOutput {
-            crate::output::DeletePartnerEventSourceOutput {}
+            crate::output::DeletePartnerEventSourceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePartnerEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeletePartnerEventSourceOutput`](crate::output::DeletePartnerEventSourceOutput).
@@ -3543,19 +3452,24 @@ impl DeletePartnerEventSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventBusOutput {}
+pub struct DeleteEventBusOutput  {
+}
 /// See [`DeleteEventBusOutput`](crate::output::DeleteEventBusOutput).
 pub mod delete_event_bus_output {
-
+    
     /// A builder for [`DeleteEventBusOutput`](crate::output::DeleteEventBusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventBusOutput`](crate::output::DeleteEventBusOutput).
         pub fn build(self) -> crate::output::DeleteEventBusOutput {
-            crate::output::DeleteEventBusOutput {}
+            crate::output::DeleteEventBusOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEventBusOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventBusOutput`](crate::output::DeleteEventBusOutput).
@@ -3567,7 +3481,7 @@ impl DeleteEventBusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectionOutput {
+pub struct DeleteConnectionOutput  {
     /// <p>The ARN of the connection that was deleted.</p>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
@@ -3586,29 +3500,29 @@ pub struct DeleteConnectionOutput {
 }
 impl DeleteConnectionOutput {
     /// <p>The ARN of the connection that was deleted.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The state of the connection before it was deleted.</p>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_authorized_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
-
+    
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3625,12 +3539,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The ARN of the connection that was deleted.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The state of the connection before it was deleted.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
@@ -3638,12 +3548,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>The state of the connection before it was deleted.</p>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3651,12 +3557,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3664,12 +3566,8 @@ pub mod delete_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
         pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3677,24 +3575,27 @@ pub mod delete_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
-        pub fn set_last_authorized_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_authorized_time = input;
-            self
+        pub fn set_last_authorized_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_authorized_time = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
             crate::output::DeleteConnectionOutput {
-                connection_arn: self.connection_arn,
-                connection_state: self.connection_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
-                last_authorized_time: self.last_authorized_time,
+                connection_arn: self.connection_arn
+                ,
+                connection_state: self.connection_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                last_authorized_time: self.last_authorized_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
@@ -3706,19 +3607,24 @@ impl DeleteConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteArchiveOutput {}
+pub struct DeleteArchiveOutput  {
+}
 /// See [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
 pub mod delete_archive_output {
-
+    
     /// A builder for [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
         pub fn build(self) -> crate::output::DeleteArchiveOutput {
-            crate::output::DeleteArchiveOutput {}
+            crate::output::DeleteArchiveOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteArchiveOutput {
     /// Creates a new builder-style object to manufacture [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
@@ -3730,19 +3636,24 @@ impl DeleteArchiveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApiDestinationOutput {}
+pub struct DeleteApiDestinationOutput  {
+}
 /// See [`DeleteApiDestinationOutput`](crate::output::DeleteApiDestinationOutput).
 pub mod delete_api_destination_output {
-
+    
     /// A builder for [`DeleteApiDestinationOutput`](crate::output::DeleteApiDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApiDestinationOutput`](crate::output::DeleteApiDestinationOutput).
         pub fn build(self) -> crate::output::DeleteApiDestinationOutput {
-            crate::output::DeleteApiDestinationOutput {}
+            crate::output::DeleteApiDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApiDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApiDestinationOutput`](crate::output::DeleteApiDestinationOutput).
@@ -3754,7 +3665,7 @@ impl DeleteApiDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeauthorizeConnectionOutput {
+pub struct DeauthorizeConnectionOutput  {
     /// <p>The ARN of the connection that authorization was removed from.</p>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
@@ -3773,29 +3684,29 @@ pub struct DeauthorizeConnectionOutput {
 }
 impl DeauthorizeConnectionOutput {
     /// <p>The ARN of the connection that authorization was removed from.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The state of the connection.</p>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_authorized_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
 /// See [`DeauthorizeConnectionOutput`](crate::output::DeauthorizeConnectionOutput).
 pub mod deauthorize_connection_output {
-
+    
     /// A builder for [`DeauthorizeConnectionOutput`](crate::output::DeauthorizeConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3812,12 +3723,8 @@ pub mod deauthorize_connection_output {
             self
         }
         /// <p>The ARN of the connection that authorization was removed from.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The state of the connection.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
@@ -3825,12 +3732,8 @@ pub mod deauthorize_connection_output {
             self
         }
         /// <p>The state of the connection.</p>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3838,12 +3741,8 @@ pub mod deauthorize_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last updated.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3851,12 +3750,8 @@ pub mod deauthorize_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last updated.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
         pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3864,24 +3759,27 @@ pub mod deauthorize_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last authorized.</p>
-        pub fn set_last_authorized_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_authorized_time = input;
-            self
+        pub fn set_last_authorized_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_authorized_time = input; self
         }
         /// Consumes the builder and constructs a [`DeauthorizeConnectionOutput`](crate::output::DeauthorizeConnectionOutput).
         pub fn build(self) -> crate::output::DeauthorizeConnectionOutput {
             crate::output::DeauthorizeConnectionOutput {
-                connection_arn: self.connection_arn,
-                connection_state: self.connection_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
-                last_authorized_time: self.last_authorized_time,
+                connection_arn: self.connection_arn
+                ,
+                connection_state: self.connection_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                last_authorized_time: self.last_authorized_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeauthorizeConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeauthorizeConnectionOutput`](crate::output::DeauthorizeConnectionOutput).
@@ -3893,19 +3791,24 @@ impl DeauthorizeConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateEventSourceOutput {}
+pub struct DeactivateEventSourceOutput  {
+}
 /// See [`DeactivateEventSourceOutput`](crate::output::DeactivateEventSourceOutput).
 pub mod deactivate_event_source_output {
-
+    
     /// A builder for [`DeactivateEventSourceOutput`](crate::output::DeactivateEventSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateEventSourceOutput`](crate::output::DeactivateEventSourceOutput).
         pub fn build(self) -> crate::output::DeactivateEventSourceOutput {
-            crate::output::DeactivateEventSourceOutput {}
+            crate::output::DeactivateEventSourceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeactivateEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateEventSourceOutput`](crate::output::DeactivateEventSourceOutput).
@@ -3917,20 +3820,20 @@ impl DeactivateEventSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePartnerEventSourceOutput {
+pub struct CreatePartnerEventSourceOutput  {
     /// <p>The ARN of the partner event source.</p>
     #[doc(hidden)]
     pub event_source_arn: std::option::Option<std::string::String>,
 }
 impl CreatePartnerEventSourceOutput {
     /// <p>The ARN of the partner event source.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
 }
 /// See [`CreatePartnerEventSourceOutput`](crate::output::CreatePartnerEventSourceOutput).
 pub mod create_partner_event_source_output {
-
+    
     /// A builder for [`CreatePartnerEventSourceOutput`](crate::output::CreatePartnerEventSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3943,20 +3846,19 @@ pub mod create_partner_event_source_output {
             self
         }
         /// <p>The ARN of the partner event source.</p>
-        pub fn set_event_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_source_arn = input;
-            self
+        pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_source_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreatePartnerEventSourceOutput`](crate::output::CreatePartnerEventSourceOutput).
         pub fn build(self) -> crate::output::CreatePartnerEventSourceOutput {
             crate::output::CreatePartnerEventSourceOutput {
-                event_source_arn: self.event_source_arn,
+                event_source_arn: self.event_source_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePartnerEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerEventSourceOutput`](crate::output::CreatePartnerEventSourceOutput).
@@ -3968,20 +3870,20 @@ impl CreatePartnerEventSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventBusOutput {
+pub struct CreateEventBusOutput  {
     /// <p>The ARN of the new event bus.</p>
     #[doc(hidden)]
     pub event_bus_arn: std::option::Option<std::string::String>,
 }
 impl CreateEventBusOutput {
     /// <p>The ARN of the new event bus.</p>
-    pub fn event_bus_arn(&self) -> std::option::Option<&str> {
+    pub fn event_bus_arn(&self) -> std::option::Option<& str> {
         self.event_bus_arn.as_deref()
     }
 }
 /// See [`CreateEventBusOutput`](crate::output::CreateEventBusOutput).
 pub mod create_event_bus_output {
-
+    
     /// A builder for [`CreateEventBusOutput`](crate::output::CreateEventBusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3994,20 +3896,19 @@ pub mod create_event_bus_output {
             self
         }
         /// <p>The ARN of the new event bus.</p>
-        pub fn set_event_bus_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_bus_arn = input;
-            self
+        pub fn set_event_bus_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_bus_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventBusOutput`](crate::output::CreateEventBusOutput).
         pub fn build(self) -> crate::output::CreateEventBusOutput {
             crate::output::CreateEventBusOutput {
-                event_bus_arn: self.event_bus_arn,
+                event_bus_arn: self.event_bus_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEventBusOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventBusOutput`](crate::output::CreateEventBusOutput).
@@ -4019,7 +3920,7 @@ impl CreateEventBusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectionOutput {
+pub struct CreateConnectionOutput  {
     /// <p>The ARN of the connection that was created by the request.</p>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
@@ -4035,25 +3936,25 @@ pub struct CreateConnectionOutput {
 }
 impl CreateConnectionOutput {
     /// <p>The ARN of the connection that was created by the request.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The state of the connection that was created by the request.</p>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
-
+    
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4069,12 +3970,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>The ARN of the connection that was created by the request.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>The state of the connection that was created by the request.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
@@ -4082,12 +3979,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>The state of the connection that was created by the request.</p>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4095,12 +3988,8 @@ pub mod create_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A time stamp for the time that the connection was last updated.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4108,23 +3997,25 @@ pub mod create_connection_output {
             self
         }
         /// <p>A time stamp for the time that the connection was last updated.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
         pub fn build(self) -> crate::output::CreateConnectionOutput {
             crate::output::CreateConnectionOutput {
-                connection_arn: self.connection_arn,
-                connection_state: self.connection_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                connection_arn: self.connection_arn
+                ,
+                connection_state: self.connection_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
@@ -4136,7 +4027,7 @@ impl CreateConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateArchiveOutput {
+pub struct CreateArchiveOutput  {
     /// <p>The ARN of the archive that was created.</p>
     #[doc(hidden)]
     pub archive_arn: std::option::Option<std::string::String>,
@@ -4152,25 +4043,25 @@ pub struct CreateArchiveOutput {
 }
 impl CreateArchiveOutput {
     /// <p>The ARN of the archive that was created.</p>
-    pub fn archive_arn(&self) -> std::option::Option<&str> {
+    pub fn archive_arn(&self) -> std::option::Option<& str> {
         self.archive_arn.as_deref()
     }
     /// <p>The state of the archive that was created.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ArchiveState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ArchiveState> {
         self.state.as_ref()
     }
     /// <p>The reason that the archive is in the state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The time at which the archive was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`CreateArchiveOutput`](crate::output::CreateArchiveOutput).
 pub mod create_archive_output {
-
+    
     /// A builder for [`CreateArchiveOutput`](crate::output::CreateArchiveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4187,8 +4078,7 @@ pub mod create_archive_output {
         }
         /// <p>The ARN of the archive that was created.</p>
         pub fn set_archive_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_arn = input;
-            self
+            self.archive_arn = input; self
         }
         /// <p>The state of the archive that was created.</p>
         pub fn state(mut self, input: crate::model::ArchiveState) -> Self {
@@ -4197,8 +4087,7 @@ pub mod create_archive_output {
         }
         /// <p>The state of the archive that was created.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ArchiveState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason that the archive is in the state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4207,8 +4096,7 @@ pub mod create_archive_output {
         }
         /// <p>The reason that the archive is in the state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The time at which the archive was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4216,23 +4104,25 @@ pub mod create_archive_output {
             self
         }
         /// <p>The time at which the archive was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateArchiveOutput`](crate::output::CreateArchiveOutput).
         pub fn build(self) -> crate::output::CreateArchiveOutput {
             crate::output::CreateArchiveOutput {
-                archive_arn: self.archive_arn,
-                state: self.state,
-                state_reason: self.state_reason,
-                creation_time: self.creation_time,
+                archive_arn: self.archive_arn
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateArchiveOutput {
     /// Creates a new builder-style object to manufacture [`CreateArchiveOutput`](crate::output::CreateArchiveOutput).
@@ -4244,7 +4134,7 @@ impl CreateArchiveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApiDestinationOutput {
+pub struct CreateApiDestinationOutput  {
     /// <p>The ARN of the API destination that was created by the request.</p>
     #[doc(hidden)]
     pub api_destination_arn: std::option::Option<std::string::String>,
@@ -4260,25 +4150,25 @@ pub struct CreateApiDestinationOutput {
 }
 impl CreateApiDestinationOutput {
     /// <p>The ARN of the API destination that was created by the request.</p>
-    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn api_destination_arn(&self) -> std::option::Option<& str> {
         self.api_destination_arn.as_deref()
     }
     /// <p>The state of the API destination that was created by the request.</p>
-    pub fn api_destination_state(&self) -> std::option::Option<&crate::model::ApiDestinationState> {
+    pub fn api_destination_state(&self) -> std::option::Option<& crate::model::ApiDestinationState> {
         self.api_destination_state.as_ref()
     }
     /// <p>A time stamp indicating the time that the API destination was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp indicating the time that the API destination was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`CreateApiDestinationOutput`](crate::output::CreateApiDestinationOutput).
 pub mod create_api_destination_output {
-
+    
     /// A builder for [`CreateApiDestinationOutput`](crate::output::CreateApiDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4294,12 +4184,8 @@ pub mod create_api_destination_output {
             self
         }
         /// <p>The ARN of the API destination that was created by the request.</p>
-        pub fn set_api_destination_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_destination_arn = input;
-            self
+        pub fn set_api_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_destination_arn = input; self
         }
         /// <p>The state of the API destination that was created by the request.</p>
         pub fn api_destination_state(mut self, input: crate::model::ApiDestinationState) -> Self {
@@ -4307,12 +4193,8 @@ pub mod create_api_destination_output {
             self
         }
         /// <p>The state of the API destination that was created by the request.</p>
-        pub fn set_api_destination_state(
-            mut self,
-            input: std::option::Option<crate::model::ApiDestinationState>,
-        ) -> Self {
-            self.api_destination_state = input;
-            self
+        pub fn set_api_destination_state(mut self, input: std::option::Option<crate::model::ApiDestinationState>) -> Self {
+            self.api_destination_state = input; self
         }
         /// <p>A time stamp indicating the time that the API destination was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4320,12 +4202,8 @@ pub mod create_api_destination_output {
             self
         }
         /// <p>A time stamp indicating the time that the API destination was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A time stamp indicating the time that the API destination was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4333,23 +4211,25 @@ pub mod create_api_destination_output {
             self
         }
         /// <p>A time stamp indicating the time that the API destination was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateApiDestinationOutput`](crate::output::CreateApiDestinationOutput).
         pub fn build(self) -> crate::output::CreateApiDestinationOutput {
             crate::output::CreateApiDestinationOutput {
-                api_destination_arn: self.api_destination_arn,
-                api_destination_state: self.api_destination_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                api_destination_arn: self.api_destination_arn
+                ,
+                api_destination_state: self.api_destination_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApiDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApiDestinationOutput`](crate::output::CreateApiDestinationOutput).
@@ -4361,7 +4241,7 @@ impl CreateApiDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelReplayOutput {
+pub struct CancelReplayOutput  {
     /// <p>The ARN of the replay to cancel.</p>
     #[doc(hidden)]
     pub replay_arn: std::option::Option<std::string::String>,
@@ -4374,21 +4254,21 @@ pub struct CancelReplayOutput {
 }
 impl CancelReplayOutput {
     /// <p>The ARN of the replay to cancel.</p>
-    pub fn replay_arn(&self) -> std::option::Option<&str> {
+    pub fn replay_arn(&self) -> std::option::Option<& str> {
         self.replay_arn.as_deref()
     }
     /// <p>The current state of the replay.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ReplayState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ReplayState> {
         self.state.as_ref()
     }
     /// <p>The reason that the replay is in the current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
 }
 /// See [`CancelReplayOutput`](crate::output::CancelReplayOutput).
 pub mod cancel_replay_output {
-
+    
     /// A builder for [`CancelReplayOutput`](crate::output::CancelReplayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4404,8 +4284,7 @@ pub mod cancel_replay_output {
         }
         /// <p>The ARN of the replay to cancel.</p>
         pub fn set_replay_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.replay_arn = input;
-            self
+            self.replay_arn = input; self
         }
         /// <p>The current state of the replay.</p>
         pub fn state(mut self, input: crate::model::ReplayState) -> Self {
@@ -4414,8 +4293,7 @@ pub mod cancel_replay_output {
         }
         /// <p>The current state of the replay.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ReplayState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason that the replay is in the current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4424,18 +4302,22 @@ pub mod cancel_replay_output {
         }
         /// <p>The reason that the replay is in the current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// Consumes the builder and constructs a [`CancelReplayOutput`](crate::output::CancelReplayOutput).
         pub fn build(self) -> crate::output::CancelReplayOutput {
             crate::output::CancelReplayOutput {
-                replay_arn: self.replay_arn,
-                state: self.state,
-                state_reason: self.state_reason,
+                replay_arn: self.replay_arn
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelReplayOutput {
     /// Creates a new builder-style object to manufacture [`CancelReplayOutput`](crate::output::CancelReplayOutput).
@@ -4447,19 +4329,24 @@ impl CancelReplayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateEventSourceOutput {}
+pub struct ActivateEventSourceOutput  {
+}
 /// See [`ActivateEventSourceOutput`](crate::output::ActivateEventSourceOutput).
 pub mod activate_event_source_output {
-
+    
     /// A builder for [`ActivateEventSourceOutput`](crate::output::ActivateEventSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ActivateEventSourceOutput`](crate::output::ActivateEventSourceOutput).
         pub fn build(self) -> crate::output::ActivateEventSourceOutput {
-            crate::output::ActivateEventSourceOutput {}
+            crate::output::ActivateEventSourceOutput {
+            }
         }
     }
+    
+    
 }
 impl ActivateEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`ActivateEventSourceOutput`](crate::output::ActivateEventSourceOutput).
@@ -4467,3 +4354,4 @@ impl ActivateEventSourceOutput {
         crate::output::activate_event_source_output::Builder::default()
     }
 }
+

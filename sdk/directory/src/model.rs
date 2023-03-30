@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let selectiveauth = unimplemented!();
 /// match selectiveauth {
@@ -30,58 +30,52 @@
 /// Specifically, when `selectiveauth` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SelectiveAuth::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SelectiveAuth {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SelectiveAuth {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => SelectiveAuth::Disabled,
             "Enabled" => SelectiveAuth::Enabled,
-            other => SelectiveAuth::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SelectiveAuth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SelectiveAuth {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SelectiveAuth::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SelectiveAuth::from(s))
+                }
+            }
 impl SelectiveAuth {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SelectiveAuth::Disabled => "Disabled",
             SelectiveAuth::Enabled => "Enabled",
-            SelectiveAuth::Unknown(value) => value.as_str(),
+            SelectiveAuth::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for SelectiveAuth {
@@ -93,8 +87,8 @@ impl AsRef<str> for SelectiveAuth {
 /// <p>Contains information about the configurable settings for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Setting {
-    /// <p>The name of the directory setting. For example:</p>
+pub struct Setting  {
+    /// <p>The name of the directory setting. For example:</p> 
     /// <p> <code>TLS_1_0</code> </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -103,19 +97,19 @@ pub struct Setting {
     pub value: std::option::Option<std::string::String>,
 }
 impl Setting {
-    /// <p>The name of the directory setting. For example:</p>
+    /// <p>The name of the directory setting. For example:</p> 
     /// <p> <code>TLS_1_0</code> </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Setting`](crate::model::Setting).
 pub mod setting {
-
+    
     /// A builder for [`Setting`](crate::model::Setting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -123,17 +117,16 @@ pub mod setting {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the directory setting. For example:</p>
+        /// <p>The name of the directory setting. For example:</p> 
         /// <p> <code>TLS_1_0</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the directory setting. For example:</p>
+        /// <p>The name of the directory setting. For example:</p> 
         /// <p> <code>TLS_1_0</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,17 +135,20 @@ pub mod setting {
         }
         /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Setting`](crate::model::Setting).
         pub fn build(self) -> crate::model::Setting {
             crate::model::Setting {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Setting {
     /// Creates a new builder-style object to manufacture [`Setting`](crate::model::Setting).
@@ -164,7 +160,7 @@ impl Setting {
 /// <p>Contains information about a Remote Authentication Dial In User Service (RADIUS) server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RadiusSettings {
+pub struct RadiusSettings  {
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     #[doc(hidden)]
     pub radius_servers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -192,7 +188,7 @@ pub struct RadiusSettings {
 }
 impl RadiusSettings {
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
-    pub fn radius_servers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn radius_servers(&self) -> std::option::Option<& [std::string::String]> {
         self.radius_servers.as_deref()
     }
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
@@ -208,17 +204,15 @@ impl RadiusSettings {
         self.radius_retries
     }
     /// <p>Required for enabling RADIUS on the directory.</p>
-    pub fn shared_secret(&self) -> std::option::Option<&str> {
+    pub fn shared_secret(&self) -> std::option::Option<& str> {
         self.shared_secret.as_deref()
     }
     /// <p>The protocol specified for your RADIUS endpoints.</p>
-    pub fn authentication_protocol(
-        &self,
-    ) -> std::option::Option<&crate::model::RadiusAuthenticationProtocol> {
+    pub fn authentication_protocol(&self) -> std::option::Option<& crate::model::RadiusAuthenticationProtocol> {
         self.authentication_protocol.as_ref()
     }
     /// <p>Not currently used.</p>
-    pub fn display_label(&self) -> std::option::Option<&str> {
+    pub fn display_label(&self) -> std::option::Option<& str> {
         self.display_label.as_deref()
     }
     /// <p>Not currently used.</p>
@@ -226,7 +220,7 @@ impl RadiusSettings {
         self.use_same_username
     }
 }
-impl std::fmt::Debug for RadiusSettings {
+impl  std::fmt::Debug for RadiusSettings  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RadiusSettings");
         formatter.field("radius_servers", &self.radius_servers);
@@ -242,7 +236,7 @@ impl std::fmt::Debug for RadiusSettings {
 }
 /// See [`RadiusSettings`](crate::model::RadiusSettings).
 pub mod radius_settings {
-
+    
     /// A builder for [`RadiusSettings`](crate::model::RadiusSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -251,8 +245,7 @@ pub mod radius_settings {
         pub(crate) radius_timeout: std::option::Option<i32>,
         pub(crate) radius_retries: std::option::Option<i32>,
         pub(crate) shared_secret: std::option::Option<std::string::String>,
-        pub(crate) authentication_protocol:
-            std::option::Option<crate::model::RadiusAuthenticationProtocol>,
+        pub(crate) authentication_protocol: std::option::Option<crate::model::RadiusAuthenticationProtocol>,
         pub(crate) display_label: std::option::Option<std::string::String>,
         pub(crate) use_same_username: std::option::Option<bool>,
     }
@@ -264,17 +257,13 @@ pub mod radius_settings {
         /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
         pub fn radius_servers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.radius_servers.unwrap_or_default();
-            v.push(input.into());
-            self.radius_servers = Some(v);
-            self
+                            v.push(input.into());
+                            self.radius_servers = Some(v);
+                            self
         }
         /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
-        pub fn set_radius_servers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.radius_servers = input;
-            self
+        pub fn set_radius_servers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.radius_servers = input; self
         }
         /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
         pub fn radius_port(mut self, input: i32) -> Self {
@@ -283,8 +272,7 @@ pub mod radius_settings {
         }
         /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
         pub fn set_radius_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.radius_port = input;
-            self
+            self.radius_port = input; self
         }
         /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
         pub fn radius_timeout(mut self, input: i32) -> Self {
@@ -293,8 +281,7 @@ pub mod radius_settings {
         }
         /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
         pub fn set_radius_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.radius_timeout = input;
-            self
+            self.radius_timeout = input; self
         }
         /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
         pub fn radius_retries(mut self, input: i32) -> Self {
@@ -303,8 +290,7 @@ pub mod radius_settings {
         }
         /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
         pub fn set_radius_retries(mut self, input: std::option::Option<i32>) -> Self {
-            self.radius_retries = input;
-            self
+            self.radius_retries = input; self
         }
         /// <p>Required for enabling RADIUS on the directory.</p>
         pub fn shared_secret(mut self, input: impl Into<std::string::String>) -> Self {
@@ -312,28 +298,17 @@ pub mod radius_settings {
             self
         }
         /// <p>Required for enabling RADIUS on the directory.</p>
-        pub fn set_shared_secret(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.shared_secret = input;
-            self
+        pub fn set_shared_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shared_secret = input; self
         }
         /// <p>The protocol specified for your RADIUS endpoints.</p>
-        pub fn authentication_protocol(
-            mut self,
-            input: crate::model::RadiusAuthenticationProtocol,
-        ) -> Self {
+        pub fn authentication_protocol(mut self, input: crate::model::RadiusAuthenticationProtocol) -> Self {
             self.authentication_protocol = Some(input);
             self
         }
         /// <p>The protocol specified for your RADIUS endpoints.</p>
-        pub fn set_authentication_protocol(
-            mut self,
-            input: std::option::Option<crate::model::RadiusAuthenticationProtocol>,
-        ) -> Self {
-            self.authentication_protocol = input;
-            self
+        pub fn set_authentication_protocol(mut self, input: std::option::Option<crate::model::RadiusAuthenticationProtocol>) -> Self {
+            self.authentication_protocol = input; self
         }
         /// <p>Not currently used.</p>
         pub fn display_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -341,12 +316,8 @@ pub mod radius_settings {
             self
         }
         /// <p>Not currently used.</p>
-        pub fn set_display_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.display_label = input;
-            self
+        pub fn set_display_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_label = input; self
         }
         /// <p>Not currently used.</p>
         pub fn use_same_username(mut self, input: bool) -> Self {
@@ -355,20 +326,31 @@ pub mod radius_settings {
         }
         /// <p>Not currently used.</p>
         pub fn set_use_same_username(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_same_username = input;
-            self
+            self.use_same_username = input; self
         }
         /// Consumes the builder and constructs a [`RadiusSettings`](crate::model::RadiusSettings).
         pub fn build(self) -> crate::model::RadiusSettings {
             crate::model::RadiusSettings {
-                radius_servers: self.radius_servers,
-                radius_port: self.radius_port.unwrap_or_default(),
-                radius_timeout: self.radius_timeout.unwrap_or_default(),
-                radius_retries: self.radius_retries.unwrap_or_default(),
-                shared_secret: self.shared_secret,
-                authentication_protocol: self.authentication_protocol,
-                display_label: self.display_label,
-                use_same_username: self.use_same_username.unwrap_or_default(),
+                radius_servers: self.radius_servers
+                ,
+                radius_port: self.radius_port
+                    .unwrap_or_default()
+                ,
+                radius_timeout: self.radius_timeout
+                    .unwrap_or_default()
+                ,
+                radius_retries: self.radius_retries
+                    .unwrap_or_default()
+                ,
+                shared_secret: self.shared_secret
+                ,
+                authentication_protocol: self.authentication_protocol
+                ,
+                display_label: self.display_label
+                ,
+                use_same_username: self.use_same_username
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -386,6 +368,8 @@ pub mod radius_settings {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RadiusSettings {
     /// Creates a new builder-style object to manufacture [`RadiusSettings`](crate::model::RadiusSettings).
@@ -400,9 +384,9 @@ impl RadiusSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let radiusauthenticationprotocol = unimplemented!();
 /// match radiusauthenticationprotocol {
@@ -426,22 +410,14 @@ impl RadiusSettings {
 /// Specifically, when `radiusauthenticationprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RadiusAuthenticationProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RadiusAuthenticationProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Chap,
@@ -452,7 +428,7 @@ pub enum RadiusAuthenticationProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Pap,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RadiusAuthenticationProtocol {
     fn from(s: &str) -> Self {
@@ -461,19 +437,17 @@ impl std::convert::From<&str> for RadiusAuthenticationProtocol {
             "MS-CHAPv1" => RadiusAuthenticationProtocol::Mschapv1,
             "MS-CHAPv2" => RadiusAuthenticationProtocol::Mschapv2,
             "PAP" => RadiusAuthenticationProtocol::Pap,
-            other => RadiusAuthenticationProtocol::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RadiusAuthenticationProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RadiusAuthenticationProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RadiusAuthenticationProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RadiusAuthenticationProtocol::from(s))
+                }
+            }
 impl RadiusAuthenticationProtocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -482,12 +456,14 @@ impl RadiusAuthenticationProtocol {
             RadiusAuthenticationProtocol::Mschapv1 => "MS-CHAPv1",
             RadiusAuthenticationProtocol::Mschapv2 => "MS-CHAPv2",
             RadiusAuthenticationProtocol::Pap => "PAP",
-            RadiusAuthenticationProtocol::Unknown(value) => value.as_str(),
+            RadiusAuthenticationProtocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHAP", "MS-CHAPv1", "MS-CHAPv2", "PAP"]
+        &[
+            "CHAP", "MS-CHAPv1", "MS-CHAPv2", "PAP"
+        ]
     }
 }
 impl AsRef<str> for RadiusAuthenticationProtocol {
@@ -499,20 +475,20 @@ impl AsRef<str> for RadiusAuthenticationProtocol {
 /// <p> OS version that the directory needs to be updated to. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OsUpdateSettings {
+pub struct OsUpdateSettings  {
     /// <p> OS version that the directory needs to be updated to. </p>
     #[doc(hidden)]
     pub os_version: std::option::Option<crate::model::OsVersion>,
 }
 impl OsUpdateSettings {
     /// <p> OS version that the directory needs to be updated to. </p>
-    pub fn os_version(&self) -> std::option::Option<&crate::model::OsVersion> {
+    pub fn os_version(&self) -> std::option::Option<& crate::model::OsVersion> {
         self.os_version.as_ref()
     }
 }
 /// See [`OsUpdateSettings`](crate::model::OsUpdateSettings).
 pub mod os_update_settings {
-
+    
     /// A builder for [`OsUpdateSettings`](crate::model::OsUpdateSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -525,20 +501,19 @@ pub mod os_update_settings {
             self
         }
         /// <p> OS version that the directory needs to be updated to. </p>
-        pub fn set_os_version(
-            mut self,
-            input: std::option::Option<crate::model::OsVersion>,
-        ) -> Self {
-            self.os_version = input;
-            self
+        pub fn set_os_version(mut self, input: std::option::Option<crate::model::OsVersion>) -> Self {
+            self.os_version = input; self
         }
         /// Consumes the builder and constructs a [`OsUpdateSettings`](crate::model::OsUpdateSettings).
         pub fn build(self) -> crate::model::OsUpdateSettings {
             crate::model::OsUpdateSettings {
-                os_version: self.os_version,
+                os_version: self.os_version
+                ,
             }
         }
     }
+    
+    
 }
 impl OsUpdateSettings {
     /// Creates a new builder-style object to manufacture [`OsUpdateSettings`](crate::model::OsUpdateSettings).
@@ -553,9 +528,9 @@ impl OsUpdateSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let osversion = unimplemented!();
 /// match osversion {
@@ -577,58 +552,52 @@ impl OsUpdateSettings {
 /// Specifically, when `osversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OsVersion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OsVersion {
     #[allow(missing_docs)] // documentation missing in model
     Version2012,
     #[allow(missing_docs)] // documentation missing in model
     Version2019,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OsVersion {
     fn from(s: &str) -> Self {
         match s {
             "SERVER_2012" => OsVersion::Version2012,
             "SERVER_2019" => OsVersion::Version2019,
-            other => OsVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OsVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OsVersion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OsVersion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OsVersion::from(s))
+                }
+            }
 impl OsVersion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OsVersion::Version2012 => "SERVER_2012",
             OsVersion::Version2019 => "SERVER_2019",
-            OsVersion::Unknown(value) => value.as_str(),
+            OsVersion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SERVER_2012", "SERVER_2019"]
+        &[
+            "SERVER_2012", "SERVER_2019"
+        ]
     }
 }
 impl AsRef<str> for OsVersion {
@@ -643,9 +612,9 @@ impl AsRef<str> for OsVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatetype = unimplemented!();
 /// match updatetype {
@@ -666,54 +635,48 @@ impl AsRef<str> for OsVersion {
 /// Specifically, when `updatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     Os,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateType {
     fn from(s: &str) -> Self {
         match s {
             "OS" => UpdateType::Os,
-            other => UpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateType::from(s))
+                }
+            }
 impl UpdateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateType::Os => "OS",
-            UpdateType::Unknown(value) => value.as_str(),
+            UpdateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OS"]
+        &[
+            "OS"
+        ]
     }
 }
 impl AsRef<str> for UpdateType {
@@ -725,7 +688,7 @@ impl AsRef<str> for UpdateType {
 /// <p>Identifier that contains details about the directory consumer account with whom the directory is being unshared.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnshareTarget {
+pub struct UnshareTarget  {
     /// <p>Identifier of the directory consumer account.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -735,17 +698,17 @@ pub struct UnshareTarget {
 }
 impl UnshareTarget {
     /// <p>Identifier of the directory consumer account.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.r#type.as_ref()
     }
 }
 /// See [`UnshareTarget`](crate::model::UnshareTarget).
 pub mod unshare_target {
-
+    
     /// A builder for [`UnshareTarget`](crate::model::UnshareTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -760,8 +723,7 @@ pub mod unshare_target {
         }
         /// <p>Identifier of the directory consumer account.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
         pub fn r#type(mut self, input: crate::model::TargetType) -> Self {
@@ -770,17 +732,20 @@ pub mod unshare_target {
         }
         /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`UnshareTarget`](crate::model::UnshareTarget).
         pub fn build(self) -> crate::model::UnshareTarget {
             crate::model::UnshareTarget {
-                id: self.id,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl UnshareTarget {
     /// Creates a new builder-style object to manufacture [`UnshareTarget`](crate::model::UnshareTarget).
@@ -795,9 +760,9 @@ impl UnshareTarget {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targettype = unimplemented!();
 /// match targettype {
@@ -818,54 +783,48 @@ impl UnshareTarget {
 /// Specifically, when `targettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     Account,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => TargetType::Account,
-            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TargetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TargetType::from(s))
+                }
+            }
 impl TargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::Account => "ACCOUNT",
-            TargetType::Unknown(value) => value.as_str(),
+            TargetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT"]
+        &[
+            "ACCOUNT"
+        ]
     }
 }
 impl AsRef<str> for TargetType {
@@ -880,9 +839,9 @@ impl AsRef<str> for TargetType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sharemethod = unimplemented!();
 /// match sharemethod {
@@ -904,58 +863,52 @@ impl AsRef<str> for TargetType {
 /// Specifically, when `sharemethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShareMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShareMethod {
     #[allow(missing_docs)] // documentation missing in model
     Handshake,
     #[allow(missing_docs)] // documentation missing in model
     Organizations,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShareMethod {
     fn from(s: &str) -> Self {
         match s {
             "HANDSHAKE" => ShareMethod::Handshake,
             "ORGANIZATIONS" => ShareMethod::Organizations,
-            other => ShareMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ShareMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShareMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShareMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShareMethod::from(s))
+                }
+            }
 impl ShareMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ShareMethod::Handshake => "HANDSHAKE",
             ShareMethod::Organizations => "ORGANIZATIONS",
-            ShareMethod::Unknown(value) => value.as_str(),
+            ShareMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HANDSHAKE", "ORGANIZATIONS"]
+        &[
+            "HANDSHAKE", "ORGANIZATIONS"
+        ]
     }
 }
 impl AsRef<str> for ShareMethod {
@@ -967,7 +920,7 @@ impl AsRef<str> for ShareMethod {
 /// <p>Identifier that contains details about the directory consumer account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShareTarget {
+pub struct ShareTarget  {
     /// <p>Identifier of the directory consumer account.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -977,17 +930,17 @@ pub struct ShareTarget {
 }
 impl ShareTarget {
     /// <p>Identifier of the directory consumer account.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.r#type.as_ref()
     }
 }
 /// See [`ShareTarget`](crate::model::ShareTarget).
 pub mod share_target {
-
+    
     /// A builder for [`ShareTarget`](crate::model::ShareTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1002,8 +955,7 @@ pub mod share_target {
         }
         /// <p>Identifier of the directory consumer account.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
         pub fn r#type(mut self, input: crate::model::TargetType) -> Self {
@@ -1012,17 +964,20 @@ pub mod share_target {
         }
         /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`ShareTarget`](crate::model::ShareTarget).
         pub fn build(self) -> crate::model::ShareTarget {
             crate::model::ShareTarget {
-                id: self.id,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl ShareTarget {
     /// Creates a new builder-style object to manufacture [`ShareTarget`](crate::model::ShareTarget).
@@ -1034,20 +989,20 @@ impl ShareTarget {
 /// <p>Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientCertAuthSettings {
+pub struct ClientCertAuthSettings  {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
     #[doc(hidden)]
     pub ocsp_url: std::option::Option<std::string::String>,
 }
 impl ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
-    pub fn ocsp_url(&self) -> std::option::Option<&str> {
+    pub fn ocsp_url(&self) -> std::option::Option<& str> {
         self.ocsp_url.as_deref()
     }
 }
 /// See [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
 pub mod client_cert_auth_settings {
-
+    
     /// A builder for [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1061,16 +1016,18 @@ pub mod client_cert_auth_settings {
         }
         /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
         pub fn set_ocsp_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ocsp_url = input;
-            self
+            self.ocsp_url = input; self
         }
         /// Consumes the builder and constructs a [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
         pub fn build(self) -> crate::model::ClientCertAuthSettings {
             crate::model::ClientCertAuthSettings {
-                ocsp_url: self.ocsp_url,
+                ocsp_url: self.ocsp_url
+                ,
             }
         }
     }
+    
+    
 }
 impl ClientCertAuthSettings {
     /// Creates a new builder-style object to manufacture [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
@@ -1085,9 +1042,9 @@ impl ClientCertAuthSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let certificatetype = unimplemented!();
 /// match certificatetype {
@@ -1109,58 +1066,52 @@ impl ClientCertAuthSettings {
 /// Specifically, when `certificatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CertificateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CertificateType {
     #[allow(missing_docs)] // documentation missing in model
     ClientCertAuth,
     #[allow(missing_docs)] // documentation missing in model
     ClientLdaps,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CertificateType {
     fn from(s: &str) -> Self {
         match s {
             "ClientCertAuth" => CertificateType::ClientCertAuth,
             "ClientLDAPS" => CertificateType::ClientLdaps,
-            other => CertificateType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CertificateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CertificateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CertificateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CertificateType::from(s))
+                }
+            }
 impl CertificateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CertificateType::ClientCertAuth => "ClientCertAuth",
             CertificateType::ClientLdaps => "ClientLDAPS",
-            CertificateType::Unknown(value) => value.as_str(),
+            CertificateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ClientCertAuth", "ClientLDAPS"]
+        &[
+            "ClientCertAuth", "ClientLDAPS"
+        ]
     }
 }
 impl AsRef<str> for CertificateType {
@@ -1172,7 +1123,7 @@ impl AsRef<str> for CertificateType {
 /// <p>Metadata assigned to a directory consisting of a key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1182,17 +1133,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1207,8 +1158,7 @@ pub mod tag {
         }
         /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1217,17 +1167,20 @@ pub mod tag {
         }
         /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1239,7 +1192,7 @@ impl Tag {
 /// <p>Information about a schema extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaExtensionInfo {
+pub struct SchemaExtensionInfo  {
     /// <p>The identifier of the directory to which the schema extension is applied.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -1264,47 +1217,44 @@ pub struct SchemaExtensionInfo {
 }
 impl SchemaExtensionInfo {
     /// <p>The identifier of the directory to which the schema extension is applied.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The identifier of the schema extension.</p>
-    pub fn schema_extension_id(&self) -> std::option::Option<&str> {
+    pub fn schema_extension_id(&self) -> std::option::Option<& str> {
         self.schema_extension_id.as_deref()
     }
     /// <p>A description of the schema extension.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the schema extension.</p>
-    pub fn schema_extension_status(
-        &self,
-    ) -> std::option::Option<&crate::model::SchemaExtensionStatus> {
+    pub fn schema_extension_status(&self) -> std::option::Option<& crate::model::SchemaExtensionStatus> {
         self.schema_extension_status.as_ref()
     }
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
-    pub fn schema_extension_status_reason(&self) -> std::option::Option<&str> {
+    pub fn schema_extension_status_reason(&self) -> std::option::Option<& str> {
         self.schema_extension_status_reason.as_deref()
     }
     /// <p>The date and time that the schema extension started being applied to the directory.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time that the schema extension was completed.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
 /// See [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
 pub mod schema_extension_info {
-
+    
     /// A builder for [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) schema_extension_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) schema_extension_status:
-            std::option::Option<crate::model::SchemaExtensionStatus>,
+        pub(crate) schema_extension_status: std::option::Option<crate::model::SchemaExtensionStatus>,
         pub(crate) schema_extension_status_reason: std::option::Option<std::string::String>,
         pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1317,8 +1267,7 @@ pub mod schema_extension_info {
         }
         /// <p>The identifier of the directory to which the schema extension is applied.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>The identifier of the schema extension.</p>
         pub fn schema_extension_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1326,12 +1275,8 @@ pub mod schema_extension_info {
             self
         }
         /// <p>The identifier of the schema extension.</p>
-        pub fn set_schema_extension_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_extension_id = input;
-            self
+        pub fn set_schema_extension_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_extension_id = input; self
         }
         /// <p>A description of the schema extension.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1340,40 +1285,25 @@ pub mod schema_extension_info {
         }
         /// <p>A description of the schema extension.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The current status of the schema extension.</p>
-        pub fn schema_extension_status(
-            mut self,
-            input: crate::model::SchemaExtensionStatus,
-        ) -> Self {
+        pub fn schema_extension_status(mut self, input: crate::model::SchemaExtensionStatus) -> Self {
             self.schema_extension_status = Some(input);
             self
         }
         /// <p>The current status of the schema extension.</p>
-        pub fn set_schema_extension_status(
-            mut self,
-            input: std::option::Option<crate::model::SchemaExtensionStatus>,
-        ) -> Self {
-            self.schema_extension_status = input;
-            self
+        pub fn set_schema_extension_status(mut self, input: std::option::Option<crate::model::SchemaExtensionStatus>) -> Self {
+            self.schema_extension_status = input; self
         }
         /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
-        pub fn schema_extension_status_reason(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn schema_extension_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_extension_status_reason = Some(input.into());
             self
         }
         /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
-        pub fn set_schema_extension_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_extension_status_reason = input;
-            self
+        pub fn set_schema_extension_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_extension_status_reason = input; self
         }
         /// <p>The date and time that the schema extension started being applied to the directory.</p>
         pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1381,12 +1311,8 @@ pub mod schema_extension_info {
             self
         }
         /// <p>The date and time that the schema extension started being applied to the directory.</p>
-        pub fn set_start_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date_time = input;
-            self
+        pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date_time = input; self
         }
         /// <p>The date and time that the schema extension was completed.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1394,26 +1320,31 @@ pub mod schema_extension_info {
             self
         }
         /// <p>The date and time that the schema extension was completed.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// Consumes the builder and constructs a [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
         pub fn build(self) -> crate::model::SchemaExtensionInfo {
             crate::model::SchemaExtensionInfo {
-                directory_id: self.directory_id,
-                schema_extension_id: self.schema_extension_id,
-                description: self.description,
-                schema_extension_status: self.schema_extension_status,
-                schema_extension_status_reason: self.schema_extension_status_reason,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
+                directory_id: self.directory_id
+                ,
+                schema_extension_id: self.schema_extension_id
+                ,
+                description: self.description
+                ,
+                schema_extension_status: self.schema_extension_status
+                ,
+                schema_extension_status_reason: self.schema_extension_status_reason
+                ,
+                start_date_time: self.start_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SchemaExtensionInfo {
     /// Creates a new builder-style object to manufacture [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
@@ -1428,9 +1359,9 @@ impl SchemaExtensionInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let schemaextensionstatus = unimplemented!();
 /// match schemaextensionstatus {
@@ -1459,22 +1390,14 @@ impl SchemaExtensionInfo {
 /// Specifically, when `schemaextensionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SchemaExtensionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SchemaExtensionStatus {
     #[allow(missing_docs)] // documentation missing in model
     CancelInProgress,
@@ -1495,7 +1418,7 @@ pub enum SchemaExtensionStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdatingSchema,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SchemaExtensionStatus {
     fn from(s: &str) -> Self {
@@ -1509,19 +1432,17 @@ impl std::convert::From<&str> for SchemaExtensionStatus {
             "Replicating" => SchemaExtensionStatus::Replicating,
             "RollbackInProgress" => SchemaExtensionStatus::RollbackInProgress,
             "UpdatingSchema" => SchemaExtensionStatus::UpdatingSchema,
-            other => {
-                SchemaExtensionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SchemaExtensionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SchemaExtensionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SchemaExtensionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SchemaExtensionStatus::from(s))
+                }
+            }
 impl SchemaExtensionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1535,21 +1456,13 @@ impl SchemaExtensionStatus {
             SchemaExtensionStatus::Replicating => "Replicating",
             SchemaExtensionStatus::RollbackInProgress => "RollbackInProgress",
             SchemaExtensionStatus::UpdatingSchema => "UpdatingSchema",
-            SchemaExtensionStatus::Unknown(value) => value.as_str(),
+            SchemaExtensionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CancelInProgress",
-            "Cancelled",
-            "Completed",
-            "CreatingSnapshot",
-            "Failed",
-            "Initializing",
-            "Replicating",
-            "RollbackInProgress",
-            "UpdatingSchema",
+            "CancelInProgress", "Cancelled", "Completed", "CreatingSnapshot", "Failed", "Initializing", "Replicating", "RollbackInProgress", "UpdatingSchema"
         ]
     }
 }
@@ -1562,7 +1475,7 @@ impl AsRef<str> for SchemaExtensionStatus {
 /// <p>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogSubscription {
+pub struct LogSubscription  {
     /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -1575,23 +1488,21 @@ pub struct LogSubscription {
 }
 impl LogSubscription {
     /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>The date and time that the log subscription was created.</p>
-    pub fn subscription_created_date_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn subscription_created_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.subscription_created_date_time.as_ref()
     }
 }
 /// See [`LogSubscription`](crate::model::LogSubscription).
 pub mod log_subscription {
-
+    
     /// A builder for [`LogSubscription`](crate::model::LogSubscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1607,8 +1518,7 @@ pub mod log_subscription {
         }
         /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>The name of the log group.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1616,12 +1526,8 @@ pub mod log_subscription {
             self
         }
         /// <p>The name of the log group.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// <p>The date and time that the log subscription was created.</p>
         pub fn subscription_created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1629,22 +1535,23 @@ pub mod log_subscription {
             self
         }
         /// <p>The date and time that the log subscription was created.</p>
-        pub fn set_subscription_created_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.subscription_created_date_time = input;
-            self
+        pub fn set_subscription_created_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.subscription_created_date_time = input; self
         }
         /// Consumes the builder and constructs a [`LogSubscription`](crate::model::LogSubscription).
         pub fn build(self) -> crate::model::LogSubscription {
             crate::model::LogSubscription {
-                directory_id: self.directory_id,
-                log_group_name: self.log_group_name,
-                subscription_created_date_time: self.subscription_created_date_time,
+                directory_id: self.directory_id
+                ,
+                log_group_name: self.log_group_name
+                ,
+                subscription_created_date_time: self.subscription_created_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LogSubscription {
     /// Creates a new builder-style object to manufacture [`LogSubscription`](crate::model::LogSubscription).
@@ -1656,7 +1563,7 @@ impl LogSubscription {
 /// <p>Information about one or more IP address blocks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpRouteInfo {
+pub struct IpRouteInfo  {
     /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -1678,33 +1585,33 @@ pub struct IpRouteInfo {
 }
 impl IpRouteInfo {
     /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>IP address block in the <code>IpRoute</code>.</p>
-    pub fn cidr_ip(&self) -> std::option::Option<&str> {
+    pub fn cidr_ip(&self) -> std::option::Option<& str> {
         self.cidr_ip.as_deref()
     }
     /// <p>The status of the IP address block.</p>
-    pub fn ip_route_status_msg(&self) -> std::option::Option<&crate::model::IpRouteStatusMsg> {
+    pub fn ip_route_status_msg(&self) -> std::option::Option<& crate::model::IpRouteStatusMsg> {
         self.ip_route_status_msg.as_ref()
     }
     /// <p>The date and time the address block was added to the directory.</p>
-    pub fn added_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn added_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.added_date_time.as_ref()
     }
     /// <p>The reason for the IpRouteStatusMsg.</p>
-    pub fn ip_route_status_reason(&self) -> std::option::Option<&str> {
+    pub fn ip_route_status_reason(&self) -> std::option::Option<& str> {
         self.ip_route_status_reason.as_deref()
     }
     /// <p>Description of the <code>IpRouteInfo</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`IpRouteInfo`](crate::model::IpRouteInfo).
 pub mod ip_route_info {
-
+    
     /// A builder for [`IpRouteInfo`](crate::model::IpRouteInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1723,8 +1630,7 @@ pub mod ip_route_info {
         }
         /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>IP address block in the <code>IpRoute</code>.</p>
         pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1733,8 +1639,7 @@ pub mod ip_route_info {
         }
         /// <p>IP address block in the <code>IpRoute</code>.</p>
         pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cidr_ip = input;
-            self
+            self.cidr_ip = input; self
         }
         /// <p>The status of the IP address block.</p>
         pub fn ip_route_status_msg(mut self, input: crate::model::IpRouteStatusMsg) -> Self {
@@ -1742,12 +1647,8 @@ pub mod ip_route_info {
             self
         }
         /// <p>The status of the IP address block.</p>
-        pub fn set_ip_route_status_msg(
-            mut self,
-            input: std::option::Option<crate::model::IpRouteStatusMsg>,
-        ) -> Self {
-            self.ip_route_status_msg = input;
-            self
+        pub fn set_ip_route_status_msg(mut self, input: std::option::Option<crate::model::IpRouteStatusMsg>) -> Self {
+            self.ip_route_status_msg = input; self
         }
         /// <p>The date and time the address block was added to the directory.</p>
         pub fn added_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1755,12 +1656,8 @@ pub mod ip_route_info {
             self
         }
         /// <p>The date and time the address block was added to the directory.</p>
-        pub fn set_added_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.added_date_time = input;
-            self
+        pub fn set_added_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.added_date_time = input; self
         }
         /// <p>The reason for the IpRouteStatusMsg.</p>
         pub fn ip_route_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1768,12 +1665,8 @@ pub mod ip_route_info {
             self
         }
         /// <p>The reason for the IpRouteStatusMsg.</p>
-        pub fn set_ip_route_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ip_route_status_reason = input;
-            self
+        pub fn set_ip_route_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_route_status_reason = input; self
         }
         /// <p>Description of the <code>IpRouteInfo</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1782,21 +1675,28 @@ pub mod ip_route_info {
         }
         /// <p>Description of the <code>IpRouteInfo</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`IpRouteInfo`](crate::model::IpRouteInfo).
         pub fn build(self) -> crate::model::IpRouteInfo {
             crate::model::IpRouteInfo {
-                directory_id: self.directory_id,
-                cidr_ip: self.cidr_ip,
-                ip_route_status_msg: self.ip_route_status_msg,
-                added_date_time: self.added_date_time,
-                ip_route_status_reason: self.ip_route_status_reason,
-                description: self.description,
+                directory_id: self.directory_id
+                ,
+                cidr_ip: self.cidr_ip
+                ,
+                ip_route_status_msg: self.ip_route_status_msg
+                ,
+                added_date_time: self.added_date_time
+                ,
+                ip_route_status_reason: self.ip_route_status_reason
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl IpRouteInfo {
     /// Creates a new builder-style object to manufacture [`IpRouteInfo`](crate::model::IpRouteInfo).
@@ -1811,9 +1711,9 @@ impl IpRouteInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let iproutestatusmsg = unimplemented!();
 /// match iproutestatusmsg {
@@ -1839,22 +1739,14 @@ impl IpRouteInfo {
 /// Specifically, when `iproutestatusmsg` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpRouteStatusMsg::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IpRouteStatusMsg {
     #[allow(missing_docs)] // documentation missing in model
     AddFailed,
@@ -1869,7 +1761,7 @@ pub enum IpRouteStatusMsg {
     #[allow(missing_docs)] // documentation missing in model
     Removing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IpRouteStatusMsg {
     fn from(s: &str) -> Self {
@@ -1880,17 +1772,17 @@ impl std::convert::From<&str> for IpRouteStatusMsg {
             "RemoveFailed" => IpRouteStatusMsg::RemoveFailed,
             "Removed" => IpRouteStatusMsg::Removed,
             "Removing" => IpRouteStatusMsg::Removing,
-            other => IpRouteStatusMsg::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IpRouteStatusMsg::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IpRouteStatusMsg {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IpRouteStatusMsg::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IpRouteStatusMsg::from(s))
+                }
+            }
 impl IpRouteStatusMsg {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1901,18 +1793,13 @@ impl IpRouteStatusMsg {
             IpRouteStatusMsg::RemoveFailed => "RemoveFailed",
             IpRouteStatusMsg::Removed => "Removed",
             IpRouteStatusMsg::Removing => "Removing",
-            IpRouteStatusMsg::Unknown(value) => value.as_str(),
+            IpRouteStatusMsg::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AddFailed",
-            "Added",
-            "Adding",
-            "RemoveFailed",
-            "Removed",
-            "Removing",
+            "AddFailed", "Added", "Adding", "RemoveFailed", "Removed", "Removing"
         ]
     }
 }
@@ -1925,7 +1812,7 @@ impl AsRef<str> for IpRouteStatusMsg {
 /// <p>Contains general information about a certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CertificateInfo {
+pub struct CertificateInfo  {
     /// <p>The identifier of the certificate.</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
@@ -1944,29 +1831,29 @@ pub struct CertificateInfo {
 }
 impl CertificateInfo {
     /// <p>The identifier of the certificate.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>The common name for the certificate.</p>
-    pub fn common_name(&self) -> std::option::Option<&str> {
+    pub fn common_name(&self) -> std::option::Option<& str> {
         self.common_name.as_deref()
     }
     /// <p>The state of the certificate.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::CertificateState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::CertificateState> {
         self.state.as_ref()
     }
     /// <p>The date and time when the certificate will expire.</p>
-    pub fn expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiry_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiry_date_time.as_ref()
     }
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::CertificateType> {
         self.r#type.as_ref()
     }
 }
 /// See [`CertificateInfo`](crate::model::CertificateInfo).
 pub mod certificate_info {
-
+    
     /// A builder for [`CertificateInfo`](crate::model::CertificateInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1983,12 +1870,8 @@ pub mod certificate_info {
             self
         }
         /// <p>The identifier of the certificate.</p>
-        pub fn set_certificate_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_id = input;
-            self
+        pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_id = input; self
         }
         /// <p>The common name for the certificate.</p>
         pub fn common_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1997,8 +1880,7 @@ pub mod certificate_info {
         }
         /// <p>The common name for the certificate.</p>
         pub fn set_common_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.common_name = input;
-            self
+            self.common_name = input; self
         }
         /// <p>The state of the certificate.</p>
         pub fn state(mut self, input: crate::model::CertificateState) -> Self {
@@ -2006,12 +1888,8 @@ pub mod certificate_info {
             self
         }
         /// <p>The state of the certificate.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::CertificateState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::CertificateState>) -> Self {
+            self.state = input; self
         }
         /// <p>The date and time when the certificate will expire.</p>
         pub fn expiry_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2019,12 +1897,8 @@ pub mod certificate_info {
             self
         }
         /// <p>The date and time when the certificate will expire.</p>
-        pub fn set_expiry_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiry_date_time = input;
-            self
+        pub fn set_expiry_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiry_date_time = input; self
         }
         /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
         pub fn r#type(mut self, input: crate::model::CertificateType) -> Self {
@@ -2032,24 +1906,27 @@ pub mod certificate_info {
             self
         }
         /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::CertificateType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CertificateType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`CertificateInfo`](crate::model::CertificateInfo).
         pub fn build(self) -> crate::model::CertificateInfo {
             crate::model::CertificateInfo {
-                certificate_id: self.certificate_id,
-                common_name: self.common_name,
-                state: self.state,
-                expiry_date_time: self.expiry_date_time,
-                r#type: self.r#type,
+                certificate_id: self.certificate_id
+                ,
+                common_name: self.common_name
+                ,
+                state: self.state
+                ,
+                expiry_date_time: self.expiry_date_time
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl CertificateInfo {
     /// Creates a new builder-style object to manufacture [`CertificateInfo`](crate::model::CertificateInfo).
@@ -2064,9 +1941,9 @@ impl CertificateInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let certificatestate = unimplemented!();
 /// match certificatestate {
@@ -2092,22 +1969,14 @@ impl CertificateInfo {
 /// Specifically, when `certificatestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CertificateState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CertificateState {
     #[allow(missing_docs)] // documentation missing in model
     DeregisterFailed,
@@ -2122,7 +1991,7 @@ pub enum CertificateState {
     #[allow(missing_docs)] // documentation missing in model
     Registering,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CertificateState {
     fn from(s: &str) -> Self {
@@ -2133,17 +2002,17 @@ impl std::convert::From<&str> for CertificateState {
             "RegisterFailed" => CertificateState::RegisterFailed,
             "Registered" => CertificateState::Registered,
             "Registering" => CertificateState::Registering,
-            other => CertificateState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CertificateState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CertificateState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CertificateState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CertificateState::from(s))
+                }
+            }
 impl CertificateState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2154,18 +2023,13 @@ impl CertificateState {
             CertificateState::RegisterFailed => "RegisterFailed",
             CertificateState::Registered => "Registered",
             CertificateState::Registering => "Registering",
-            CertificateState::Unknown(value) => value.as_str(),
+            CertificateState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DeregisterFailed",
-            "Deregistered",
-            "Deregistering",
-            "RegisterFailed",
-            "Registered",
-            "Registering",
+            "DeregisterFailed", "Deregistered", "Deregistering", "RegisterFailed", "Registered", "Registering"
         ]
     }
 }
@@ -2178,7 +2042,7 @@ impl AsRef<str> for CertificateState {
 /// <p>Contains manual snapshot limit information for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotLimits {
+pub struct SnapshotLimits  {
     /// <p>The maximum number of manual snapshots allowed.</p>
     #[doc(hidden)]
     pub manual_snapshots_limit: std::option::Option<i32>,
@@ -2205,7 +2069,7 @@ impl SnapshotLimits {
 }
 /// See [`SnapshotLimits`](crate::model::SnapshotLimits).
 pub mod snapshot_limits {
-
+    
     /// A builder for [`SnapshotLimits`](crate::model::SnapshotLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2221,8 +2085,7 @@ pub mod snapshot_limits {
         }
         /// <p>The maximum number of manual snapshots allowed.</p>
         pub fn set_manual_snapshots_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.manual_snapshots_limit = input;
-            self
+            self.manual_snapshots_limit = input; self
         }
         /// <p>The current number of manual snapshots of the directory.</p>
         pub fn manual_snapshots_current_count(mut self, input: i32) -> Self {
@@ -2230,12 +2093,8 @@ pub mod snapshot_limits {
             self
         }
         /// <p>The current number of manual snapshots of the directory.</p>
-        pub fn set_manual_snapshots_current_count(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.manual_snapshots_current_count = input;
-            self
+        pub fn set_manual_snapshots_current_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.manual_snapshots_current_count = input; self
         }
         /// <p>Indicates if the manual snapshot limit has been reached.</p>
         pub fn manual_snapshots_limit_reached(mut self, input: bool) -> Self {
@@ -2243,24 +2102,24 @@ pub mod snapshot_limits {
             self
         }
         /// <p>Indicates if the manual snapshot limit has been reached.</p>
-        pub fn set_manual_snapshots_limit_reached(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.manual_snapshots_limit_reached = input;
-            self
+        pub fn set_manual_snapshots_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
+            self.manual_snapshots_limit_reached = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotLimits`](crate::model::SnapshotLimits).
         pub fn build(self) -> crate::model::SnapshotLimits {
             crate::model::SnapshotLimits {
-                manual_snapshots_limit: self.manual_snapshots_limit,
-                manual_snapshots_current_count: self.manual_snapshots_current_count,
-                manual_snapshots_limit_reached: self
-                    .manual_snapshots_limit_reached
-                    .unwrap_or_default(),
+                manual_snapshots_limit: self.manual_snapshots_limit
+                ,
+                manual_snapshots_current_count: self.manual_snapshots_current_count
+                ,
+                manual_snapshots_limit_reached: self.manual_snapshots_limit_reached
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotLimits {
     /// Creates a new builder-style object to manufacture [`SnapshotLimits`](crate::model::SnapshotLimits).
@@ -2272,7 +2131,7 @@ impl SnapshotLimits {
 /// <p>Contains directory limit information for a Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectoryLimits {
+pub struct DirectoryLimits  {
     /// <p>The maximum number of cloud directories allowed in the Region.</p>
     #[doc(hidden)]
     pub cloud_only_directories_limit: std::option::Option<i32>,
@@ -2341,7 +2200,7 @@ impl DirectoryLimits {
 }
 /// See [`DirectoryLimits`](crate::model::DirectoryLimits).
 pub mod directory_limits {
-
+    
     /// A builder for [`DirectoryLimits`](crate::model::DirectoryLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2363,8 +2222,7 @@ pub mod directory_limits {
         }
         /// <p>The maximum number of cloud directories allowed in the Region.</p>
         pub fn set_cloud_only_directories_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.cloud_only_directories_limit = input;
-            self
+            self.cloud_only_directories_limit = input; self
         }
         /// <p>The current number of cloud directories in the Region.</p>
         pub fn cloud_only_directories_current_count(mut self, input: i32) -> Self {
@@ -2372,12 +2230,8 @@ pub mod directory_limits {
             self
         }
         /// <p>The current number of cloud directories in the Region.</p>
-        pub fn set_cloud_only_directories_current_count(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.cloud_only_directories_current_count = input;
-            self
+        pub fn set_cloud_only_directories_current_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.cloud_only_directories_current_count = input; self
         }
         /// <p>Indicates if the cloud directory limit has been reached.</p>
         pub fn cloud_only_directories_limit_reached(mut self, input: bool) -> Self {
@@ -2385,12 +2239,8 @@ pub mod directory_limits {
             self
         }
         /// <p>Indicates if the cloud directory limit has been reached.</p>
-        pub fn set_cloud_only_directories_limit_reached(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.cloud_only_directories_limit_reached = input;
-            self
+        pub fn set_cloud_only_directories_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
+            self.cloud_only_directories_limit_reached = input; self
         }
         /// <p>The maximum number of Managed Microsoft AD directories allowed in the region.</p>
         pub fn cloud_only_microsoft_ad_limit(mut self, input: i32) -> Self {
@@ -2398,12 +2248,8 @@ pub mod directory_limits {
             self
         }
         /// <p>The maximum number of Managed Microsoft AD directories allowed in the region.</p>
-        pub fn set_cloud_only_microsoft_ad_limit(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.cloud_only_microsoft_ad_limit = input;
-            self
+        pub fn set_cloud_only_microsoft_ad_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.cloud_only_microsoft_ad_limit = input; self
         }
         /// <p>The current number of Managed Microsoft AD directories in the region.</p>
         pub fn cloud_only_microsoft_ad_current_count(mut self, input: i32) -> Self {
@@ -2411,12 +2257,8 @@ pub mod directory_limits {
             self
         }
         /// <p>The current number of Managed Microsoft AD directories in the region.</p>
-        pub fn set_cloud_only_microsoft_ad_current_count(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.cloud_only_microsoft_ad_current_count = input;
-            self
+        pub fn set_cloud_only_microsoft_ad_current_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.cloud_only_microsoft_ad_current_count = input; self
         }
         /// <p>Indicates if the Managed Microsoft AD directory limit has been reached.</p>
         pub fn cloud_only_microsoft_ad_limit_reached(mut self, input: bool) -> Self {
@@ -2424,12 +2266,8 @@ pub mod directory_limits {
             self
         }
         /// <p>Indicates if the Managed Microsoft AD directory limit has been reached.</p>
-        pub fn set_cloud_only_microsoft_ad_limit_reached(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.cloud_only_microsoft_ad_limit_reached = input;
-            self
+        pub fn set_cloud_only_microsoft_ad_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
+            self.cloud_only_microsoft_ad_limit_reached = input; self
         }
         /// <p>The maximum number of connected directories allowed in the Region.</p>
         pub fn connected_directories_limit(mut self, input: i32) -> Self {
@@ -2438,8 +2276,7 @@ pub mod directory_limits {
         }
         /// <p>The maximum number of connected directories allowed in the Region.</p>
         pub fn set_connected_directories_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.connected_directories_limit = input;
-            self
+            self.connected_directories_limit = input; self
         }
         /// <p>The current number of connected directories in the Region.</p>
         pub fn connected_directories_current_count(mut self, input: i32) -> Self {
@@ -2447,12 +2284,8 @@ pub mod directory_limits {
             self
         }
         /// <p>The current number of connected directories in the Region.</p>
-        pub fn set_connected_directories_current_count(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.connected_directories_current_count = input;
-            self
+        pub fn set_connected_directories_current_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.connected_directories_current_count = input; self
         }
         /// <p>Indicates if the connected directory limit has been reached.</p>
         pub fn connected_directories_limit_reached(mut self, input: bool) -> Self {
@@ -2460,34 +2293,38 @@ pub mod directory_limits {
             self
         }
         /// <p>Indicates if the connected directory limit has been reached.</p>
-        pub fn set_connected_directories_limit_reached(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.connected_directories_limit_reached = input;
-            self
+        pub fn set_connected_directories_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
+            self.connected_directories_limit_reached = input; self
         }
         /// Consumes the builder and constructs a [`DirectoryLimits`](crate::model::DirectoryLimits).
         pub fn build(self) -> crate::model::DirectoryLimits {
             crate::model::DirectoryLimits {
-                cloud_only_directories_limit: self.cloud_only_directories_limit,
-                cloud_only_directories_current_count: self.cloud_only_directories_current_count,
-                cloud_only_directories_limit_reached: self
-                    .cloud_only_directories_limit_reached
-                    .unwrap_or_default(),
-                cloud_only_microsoft_ad_limit: self.cloud_only_microsoft_ad_limit,
-                cloud_only_microsoft_ad_current_count: self.cloud_only_microsoft_ad_current_count,
-                cloud_only_microsoft_ad_limit_reached: self
-                    .cloud_only_microsoft_ad_limit_reached
-                    .unwrap_or_default(),
-                connected_directories_limit: self.connected_directories_limit,
-                connected_directories_current_count: self.connected_directories_current_count,
-                connected_directories_limit_reached: self
-                    .connected_directories_limit_reached
-                    .unwrap_or_default(),
+                cloud_only_directories_limit: self.cloud_only_directories_limit
+                ,
+                cloud_only_directories_current_count: self.cloud_only_directories_current_count
+                ,
+                cloud_only_directories_limit_reached: self.cloud_only_directories_limit_reached
+                    .unwrap_or_default()
+                ,
+                cloud_only_microsoft_ad_limit: self.cloud_only_microsoft_ad_limit
+                ,
+                cloud_only_microsoft_ad_current_count: self.cloud_only_microsoft_ad_current_count
+                ,
+                cloud_only_microsoft_ad_limit_reached: self.cloud_only_microsoft_ad_limit_reached
+                    .unwrap_or_default()
+                ,
+                connected_directories_limit: self.connected_directories_limit
+                ,
+                connected_directories_current_count: self.connected_directories_current_count
+                ,
+                connected_directories_limit_reached: self.connected_directories_limit_reached
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DirectoryLimits {
     /// Creates a new builder-style object to manufacture [`DirectoryLimits`](crate::model::DirectoryLimits).
@@ -2502,9 +2339,9 @@ impl DirectoryLimits {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ldapstype = unimplemented!();
 /// match ldapstype {
@@ -2525,54 +2362,48 @@ impl DirectoryLimits {
 /// Specifically, when `ldapstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LdapsType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LdapsType {
     #[allow(missing_docs)] // documentation missing in model
     Client,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LdapsType {
     fn from(s: &str) -> Self {
         match s {
             "Client" => LdapsType::Client,
-            other => LdapsType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LdapsType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LdapsType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LdapsType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LdapsType::from(s))
+                }
+            }
 impl LdapsType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LdapsType::Client => "Client",
-            LdapsType::Unknown(value) => value.as_str(),
+            LdapsType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Client"]
+        &[
+            "Client"
+        ]
     }
 }
 impl AsRef<str> for LdapsType {
@@ -2587,9 +2418,9 @@ impl AsRef<str> for LdapsType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clientauthenticationtype = unimplemented!();
 /// match clientauthenticationtype {
@@ -2611,60 +2442,52 @@ impl AsRef<str> for LdapsType {
 /// Specifically, when `clientauthenticationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClientAuthenticationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClientAuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     SmartCard,
     #[allow(missing_docs)] // documentation missing in model
     SmartCardOrPassword,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClientAuthenticationType {
     fn from(s: &str) -> Self {
         match s {
             "SmartCard" => ClientAuthenticationType::SmartCard,
             "SmartCardOrPassword" => ClientAuthenticationType::SmartCardOrPassword,
-            other => ClientAuthenticationType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ClientAuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClientAuthenticationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClientAuthenticationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClientAuthenticationType::from(s))
+                }
+            }
 impl ClientAuthenticationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClientAuthenticationType::SmartCard => "SmartCard",
             ClientAuthenticationType::SmartCardOrPassword => "SmartCardOrPassword",
-            ClientAuthenticationType::Unknown(value) => value.as_str(),
+            ClientAuthenticationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SmartCard", "SmartCardOrPassword"]
+        &[
+            "SmartCard", "SmartCardOrPassword"
+        ]
     }
 }
 impl AsRef<str> for ClientAuthenticationType {
@@ -2676,7 +2499,7 @@ impl AsRef<str> for ClientAuthenticationType {
 /// <p> An entry of update information related to a requested update type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInfoEntry {
+pub struct UpdateInfoEntry  {
     /// <p> The name of the Region. </p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -2704,41 +2527,41 @@ pub struct UpdateInfoEntry {
 }
 impl UpdateInfoEntry {
     /// <p> The name of the Region. </p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p> The status of the update performed on the directory. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::UpdateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::UpdateStatus> {
         self.status.as_ref()
     }
     /// <p> The reason for the current status of the update type activity. </p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
-    pub fn initiated_by(&self) -> std::option::Option<&str> {
+    pub fn initiated_by(&self) -> std::option::Option<& str> {
         self.initiated_by.as_deref()
     }
     /// <p> The new value of the target setting. </p>
-    pub fn new_value(&self) -> std::option::Option<&crate::model::UpdateValue> {
+    pub fn new_value(&self) -> std::option::Option<& crate::model::UpdateValue> {
         self.new_value.as_ref()
     }
     /// <p> The old value of the target setting. </p>
-    pub fn previous_value(&self) -> std::option::Option<&crate::model::UpdateValue> {
+    pub fn previous_value(&self) -> std::option::Option<& crate::model::UpdateValue> {
         self.previous_value.as_ref()
     }
     /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The last updated date and time of a particular directory setting. </p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
 pub mod update_info_entry {
-
+    
     /// A builder for [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2759,8 +2582,7 @@ pub mod update_info_entry {
         }
         /// <p> The name of the Region. </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p> The status of the update performed on the directory. </p>
         pub fn status(mut self, input: crate::model::UpdateStatus) -> Self {
@@ -2768,12 +2590,8 @@ pub mod update_info_entry {
             self
         }
         /// <p> The status of the update performed on the directory. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::UpdateStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::UpdateStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> The reason for the current status of the update type activity. </p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2781,12 +2599,8 @@ pub mod update_info_entry {
             self
         }
         /// <p> The reason for the current status of the update type activity. </p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
         pub fn initiated_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2795,8 +2609,7 @@ pub mod update_info_entry {
         }
         /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
         pub fn set_initiated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.initiated_by = input;
-            self
+            self.initiated_by = input; self
         }
         /// <p> The new value of the target setting. </p>
         pub fn new_value(mut self, input: crate::model::UpdateValue) -> Self {
@@ -2804,12 +2617,8 @@ pub mod update_info_entry {
             self
         }
         /// <p> The new value of the target setting. </p>
-        pub fn set_new_value(
-            mut self,
-            input: std::option::Option<crate::model::UpdateValue>,
-        ) -> Self {
-            self.new_value = input;
-            self
+        pub fn set_new_value(mut self, input: std::option::Option<crate::model::UpdateValue>) -> Self {
+            self.new_value = input; self
         }
         /// <p> The old value of the target setting. </p>
         pub fn previous_value(mut self, input: crate::model::UpdateValue) -> Self {
@@ -2817,12 +2626,8 @@ pub mod update_info_entry {
             self
         }
         /// <p> The old value of the target setting. </p>
-        pub fn set_previous_value(
-            mut self,
-            input: std::option::Option<crate::model::UpdateValue>,
-        ) -> Self {
-            self.previous_value = input;
-            self
+        pub fn set_previous_value(mut self, input: std::option::Option<crate::model::UpdateValue>) -> Self {
+            self.previous_value = input; self
         }
         /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2830,12 +2635,8 @@ pub mod update_info_entry {
             self
         }
         /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The last updated date and time of a particular directory setting. </p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2843,27 +2644,33 @@ pub mod update_info_entry {
             self
         }
         /// <p> The last updated date and time of a particular directory setting. </p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
         pub fn build(self) -> crate::model::UpdateInfoEntry {
             crate::model::UpdateInfoEntry {
-                region: self.region,
-                status: self.status,
-                status_reason: self.status_reason,
-                initiated_by: self.initiated_by,
-                new_value: self.new_value,
-                previous_value: self.previous_value,
-                start_time: self.start_time,
-                last_updated_date_time: self.last_updated_date_time,
+                region: self.region
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                initiated_by: self.initiated_by
+                ,
+                new_value: self.new_value
+                ,
+                previous_value: self.previous_value
+                ,
+                start_time: self.start_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInfoEntry {
     /// Creates a new builder-style object to manufacture [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
@@ -2875,20 +2682,20 @@ impl UpdateInfoEntry {
 /// <p> The value for a given type of <code>UpdateSettings</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateValue {
+pub struct UpdateValue  {
     /// <p> The OS update related settings. </p>
     #[doc(hidden)]
     pub os_update_settings: std::option::Option<crate::model::OsUpdateSettings>,
 }
 impl UpdateValue {
     /// <p> The OS update related settings. </p>
-    pub fn os_update_settings(&self) -> std::option::Option<&crate::model::OsUpdateSettings> {
+    pub fn os_update_settings(&self) -> std::option::Option<& crate::model::OsUpdateSettings> {
         self.os_update_settings.as_ref()
     }
 }
 /// See [`UpdateValue`](crate::model::UpdateValue).
 pub mod update_value {
-
+    
     /// A builder for [`UpdateValue`](crate::model::UpdateValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2901,20 +2708,19 @@ pub mod update_value {
             self
         }
         /// <p> The OS update related settings. </p>
-        pub fn set_os_update_settings(
-            mut self,
-            input: std::option::Option<crate::model::OsUpdateSettings>,
-        ) -> Self {
-            self.os_update_settings = input;
-            self
+        pub fn set_os_update_settings(mut self, input: std::option::Option<crate::model::OsUpdateSettings>) -> Self {
+            self.os_update_settings = input; self
         }
         /// Consumes the builder and constructs a [`UpdateValue`](crate::model::UpdateValue).
         pub fn build(self) -> crate::model::UpdateValue {
             crate::model::UpdateValue {
-                os_update_settings: self.os_update_settings,
+                os_update_settings: self.os_update_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateValue {
     /// Creates a new builder-style object to manufacture [`UpdateValue`](crate::model::UpdateValue).
@@ -2929,9 +2735,9 @@ impl UpdateValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatestatus = unimplemented!();
 /// match updatestatus {
@@ -2954,22 +2760,14 @@ impl UpdateValue {
 /// Specifically, when `updatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
@@ -2978,7 +2776,7 @@ pub enum UpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateStatus {
     fn from(s: &str) -> Self {
@@ -2986,17 +2784,17 @@ impl std::convert::From<&str> for UpdateStatus {
             "UpdateFailed" => UpdateStatus::UpdateFailed,
             "Updated" => UpdateStatus::Updated,
             "Updating" => UpdateStatus::Updating,
-            other => UpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateStatus::from(s))
+                }
+            }
 impl UpdateStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3004,12 +2802,14 @@ impl UpdateStatus {
             UpdateStatus::UpdateFailed => "UpdateFailed",
             UpdateStatus::Updated => "Updated",
             UpdateStatus::Updating => "Updating",
-            UpdateStatus::Unknown(value) => value.as_str(),
+            UpdateStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UpdateFailed", "Updated", "Updating"]
+        &[
+            "UpdateFailed", "Updated", "Updating"
+        ]
     }
 }
 impl AsRef<str> for UpdateStatus {
@@ -3021,7 +2821,7 @@ impl AsRef<str> for UpdateStatus {
 /// <p>Describes a trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Trust {
+pub struct Trust  {
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -3058,53 +2858,53 @@ pub struct Trust {
 }
 impl Trust {
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The unique ID of the trust relationship.</p>
-    pub fn trust_id(&self) -> std::option::Option<&str> {
+    pub fn trust_id(&self) -> std::option::Option<& str> {
         self.trust_id.as_deref()
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
-    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+    pub fn remote_domain_name(&self) -> std::option::Option<& str> {
         self.remote_domain_name.as_deref()
     }
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
-    pub fn trust_type(&self) -> std::option::Option<&crate::model::TrustType> {
+    pub fn trust_type(&self) -> std::option::Option<& crate::model::TrustType> {
         self.trust_type.as_ref()
     }
     /// <p>The trust relationship direction.</p>
-    pub fn trust_direction(&self) -> std::option::Option<&crate::model::TrustDirection> {
+    pub fn trust_direction(&self) -> std::option::Option<& crate::model::TrustDirection> {
         self.trust_direction.as_ref()
     }
     /// <p>The trust relationship state.</p>
-    pub fn trust_state(&self) -> std::option::Option<&crate::model::TrustState> {
+    pub fn trust_state(&self) -> std::option::Option<& crate::model::TrustState> {
         self.trust_state.as_ref()
     }
     /// <p>The date and time that the trust relationship was created.</p>
-    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date_time.as_ref()
     }
     /// <p>The date and time that the trust relationship was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the TrustState was last updated.</p>
-    pub fn state_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn state_last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.state_last_updated_date_time.as_ref()
     }
     /// <p>The reason for the TrustState.</p>
-    pub fn trust_state_reason(&self) -> std::option::Option<&str> {
+    pub fn trust_state_reason(&self) -> std::option::Option<& str> {
         self.trust_state_reason.as_deref()
     }
     /// <p>Current state of selective authentication for the trust.</p>
-    pub fn selective_auth(&self) -> std::option::Option<&crate::model::SelectiveAuth> {
+    pub fn selective_auth(&self) -> std::option::Option<& crate::model::SelectiveAuth> {
         self.selective_auth.as_ref()
     }
 }
 /// See [`Trust`](crate::model::Trust).
 pub mod trust {
-
+    
     /// A builder for [`Trust`](crate::model::Trust).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3128,8 +2928,7 @@ pub mod trust {
         }
         /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>The unique ID of the trust relationship.</p>
         pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3138,8 +2937,7 @@ pub mod trust {
         }
         /// <p>The unique ID of the trust relationship.</p>
         pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.trust_id = input;
-            self
+            self.trust_id = input; self
         }
         /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3147,12 +2945,8 @@ pub mod trust {
             self
         }
         /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
-        pub fn set_remote_domain_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.remote_domain_name = input;
-            self
+        pub fn set_remote_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.remote_domain_name = input; self
         }
         /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
         pub fn trust_type(mut self, input: crate::model::TrustType) -> Self {
@@ -3160,12 +2954,8 @@ pub mod trust {
             self
         }
         /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
-        pub fn set_trust_type(
-            mut self,
-            input: std::option::Option<crate::model::TrustType>,
-        ) -> Self {
-            self.trust_type = input;
-            self
+        pub fn set_trust_type(mut self, input: std::option::Option<crate::model::TrustType>) -> Self {
+            self.trust_type = input; self
         }
         /// <p>The trust relationship direction.</p>
         pub fn trust_direction(mut self, input: crate::model::TrustDirection) -> Self {
@@ -3173,12 +2963,8 @@ pub mod trust {
             self
         }
         /// <p>The trust relationship direction.</p>
-        pub fn set_trust_direction(
-            mut self,
-            input: std::option::Option<crate::model::TrustDirection>,
-        ) -> Self {
-            self.trust_direction = input;
-            self
+        pub fn set_trust_direction(mut self, input: std::option::Option<crate::model::TrustDirection>) -> Self {
+            self.trust_direction = input; self
         }
         /// <p>The trust relationship state.</p>
         pub fn trust_state(mut self, input: crate::model::TrustState) -> Self {
@@ -3186,12 +2972,8 @@ pub mod trust {
             self
         }
         /// <p>The trust relationship state.</p>
-        pub fn set_trust_state(
-            mut self,
-            input: std::option::Option<crate::model::TrustState>,
-        ) -> Self {
-            self.trust_state = input;
-            self
+        pub fn set_trust_state(mut self, input: std::option::Option<crate::model::TrustState>) -> Self {
+            self.trust_state = input; self
         }
         /// <p>The date and time that the trust relationship was created.</p>
         pub fn created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3199,12 +2981,8 @@ pub mod trust {
             self
         }
         /// <p>The date and time that the trust relationship was created.</p>
-        pub fn set_created_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date_time = input;
-            self
+        pub fn set_created_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date_time = input; self
         }
         /// <p>The date and time that the trust relationship was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3212,12 +2990,8 @@ pub mod trust {
             self
         }
         /// <p>The date and time that the trust relationship was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The date and time that the TrustState was last updated.</p>
         pub fn state_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3225,12 +2999,8 @@ pub mod trust {
             self
         }
         /// <p>The date and time that the TrustState was last updated.</p>
-        pub fn set_state_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.state_last_updated_date_time = input;
-            self
+        pub fn set_state_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.state_last_updated_date_time = input; self
         }
         /// <p>The reason for the TrustState.</p>
         pub fn trust_state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3238,12 +3008,8 @@ pub mod trust {
             self
         }
         /// <p>The reason for the TrustState.</p>
-        pub fn set_trust_state_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.trust_state_reason = input;
-            self
+        pub fn set_trust_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.trust_state_reason = input; self
         }
         /// <p>Current state of selective authentication for the trust.</p>
         pub fn selective_auth(mut self, input: crate::model::SelectiveAuth) -> Self {
@@ -3251,30 +3017,39 @@ pub mod trust {
             self
         }
         /// <p>Current state of selective authentication for the trust.</p>
-        pub fn set_selective_auth(
-            mut self,
-            input: std::option::Option<crate::model::SelectiveAuth>,
-        ) -> Self {
-            self.selective_auth = input;
-            self
+        pub fn set_selective_auth(mut self, input: std::option::Option<crate::model::SelectiveAuth>) -> Self {
+            self.selective_auth = input; self
         }
         /// Consumes the builder and constructs a [`Trust`](crate::model::Trust).
         pub fn build(self) -> crate::model::Trust {
             crate::model::Trust {
-                directory_id: self.directory_id,
-                trust_id: self.trust_id,
-                remote_domain_name: self.remote_domain_name,
-                trust_type: self.trust_type,
-                trust_direction: self.trust_direction,
-                trust_state: self.trust_state,
-                created_date_time: self.created_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                state_last_updated_date_time: self.state_last_updated_date_time,
-                trust_state_reason: self.trust_state_reason,
-                selective_auth: self.selective_auth,
+                directory_id: self.directory_id
+                ,
+                trust_id: self.trust_id
+                ,
+                remote_domain_name: self.remote_domain_name
+                ,
+                trust_type: self.trust_type
+                ,
+                trust_direction: self.trust_direction
+                ,
+                trust_state: self.trust_state
+                ,
+                created_date_time: self.created_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                state_last_updated_date_time: self.state_last_updated_date_time
+                ,
+                trust_state_reason: self.trust_state_reason
+                ,
+                selective_auth: self.selective_auth
+                ,
             }
         }
     }
+    
+    
 }
 impl Trust {
     /// Creates a new builder-style object to manufacture [`Trust`](crate::model::Trust).
@@ -3289,9 +3064,9 @@ impl Trust {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let truststate = unimplemented!();
 /// match truststate {
@@ -3322,22 +3097,14 @@ impl Trust {
 /// Specifically, when `truststate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TrustState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TrustState {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -3362,7 +3129,7 @@ pub enum TrustState {
     #[allow(missing_docs)] // documentation missing in model
     Verifying,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TrustState {
     fn from(s: &str) -> Self {
@@ -3378,17 +3145,17 @@ impl std::convert::From<&str> for TrustState {
             "Verified" => TrustState::Verified,
             "VerifyFailed" => TrustState::VerifyFailed,
             "Verifying" => TrustState::Verifying,
-            other => TrustState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TrustState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TrustState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrustState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TrustState::from(s))
+                }
+            }
 impl TrustState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3404,23 +3171,13 @@ impl TrustState {
             TrustState::Verified => "Verified",
             TrustState::VerifyFailed => "VerifyFailed",
             TrustState::Verifying => "Verifying",
-            TrustState::Unknown(value) => value.as_str(),
+            TrustState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Created",
-            "Creating",
-            "Deleted",
-            "Deleting",
-            "Failed",
-            "UpdateFailed",
-            "Updated",
-            "Updating",
-            "Verified",
-            "VerifyFailed",
-            "Verifying",
+            "Created", "Creating", "Deleted", "Deleting", "Failed", "UpdateFailed", "Updated", "Updating", "Verified", "VerifyFailed", "Verifying"
         ]
     }
 }
@@ -3436,9 +3193,9 @@ impl AsRef<str> for TrustState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let trustdirection = unimplemented!();
 /// match trustdirection {
@@ -3461,22 +3218,14 @@ impl AsRef<str> for TrustState {
 /// Specifically, when `trustdirection` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TrustDirection::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TrustDirection {
     #[allow(missing_docs)] // documentation missing in model
     OneWayIncoming,
@@ -3485,7 +3234,7 @@ pub enum TrustDirection {
     #[allow(missing_docs)] // documentation missing in model
     TwoWay,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TrustDirection {
     fn from(s: &str) -> Self {
@@ -3493,17 +3242,17 @@ impl std::convert::From<&str> for TrustDirection {
             "One-Way: Incoming" => TrustDirection::OneWayIncoming,
             "One-Way: Outgoing" => TrustDirection::OneWayOutgoing,
             "Two-Way" => TrustDirection::TwoWay,
-            other => TrustDirection::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TrustDirection::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TrustDirection {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrustDirection::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TrustDirection::from(s))
+                }
+            }
 impl TrustDirection {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3511,12 +3260,14 @@ impl TrustDirection {
             TrustDirection::OneWayIncoming => "One-Way: Incoming",
             TrustDirection::OneWayOutgoing => "One-Way: Outgoing",
             TrustDirection::TwoWay => "Two-Way",
-            TrustDirection::Unknown(value) => value.as_str(),
+            TrustDirection::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["One-Way: Incoming", "One-Way: Outgoing", "Two-Way"]
+        &[
+            "One-Way: Incoming", "One-Way: Outgoing", "Two-Way"
+        ]
     }
 }
 impl AsRef<str> for TrustDirection {
@@ -3531,9 +3282,9 @@ impl AsRef<str> for TrustDirection {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let trusttype = unimplemented!();
 /// match trusttype {
@@ -3555,58 +3306,52 @@ impl AsRef<str> for TrustDirection {
 /// Specifically, when `trusttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TrustType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TrustType {
     #[allow(missing_docs)] // documentation missing in model
     External,
     #[allow(missing_docs)] // documentation missing in model
     Forest,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TrustType {
     fn from(s: &str) -> Self {
         match s {
             "External" => TrustType::External,
             "Forest" => TrustType::Forest,
-            other => TrustType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TrustType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TrustType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrustType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TrustType::from(s))
+                }
+            }
 impl TrustType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TrustType::External => "External",
             TrustType::Forest => "Forest",
-            TrustType::Unknown(value) => value.as_str(),
+            TrustType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["External", "Forest"]
+        &[
+            "External", "Forest"
+        ]
     }
 }
 impl AsRef<str> for TrustType {
@@ -3618,7 +3363,7 @@ impl AsRef<str> for TrustType {
 /// <p>Describes a directory snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Snapshot {
+pub struct Snapshot  {
     /// <p>The directory identifier.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -3640,33 +3385,33 @@ pub struct Snapshot {
 }
 impl Snapshot {
     /// <p>The directory identifier.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The snapshot identifier.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The snapshot type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SnapshotType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SnapshotType> {
         self.r#type.as_ref()
     }
     /// <p>The descriptive name of the snapshot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The snapshot status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SnapshotStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SnapshotStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the snapshot was taken.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
-
+    
     /// A builder for [`Snapshot`](crate::model::Snapshot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3685,8 +3430,7 @@ pub mod snapshot {
         }
         /// <p>The directory identifier.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>The snapshot identifier.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3695,8 +3439,7 @@ pub mod snapshot {
         }
         /// <p>The snapshot identifier.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>The snapshot type.</p>
         pub fn r#type(mut self, input: crate::model::SnapshotType) -> Self {
@@ -3705,8 +3448,7 @@ pub mod snapshot {
         }
         /// <p>The snapshot type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SnapshotType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The descriptive name of the snapshot.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3715,8 +3457,7 @@ pub mod snapshot {
         }
         /// <p>The descriptive name of the snapshot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The snapshot status.</p>
         pub fn status(mut self, input: crate::model::SnapshotStatus) -> Self {
@@ -3724,12 +3465,8 @@ pub mod snapshot {
             self
         }
         /// <p>The snapshot status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SnapshotStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SnapshotStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time that the snapshot was taken.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3737,25 +3474,29 @@ pub mod snapshot {
             self
         }
         /// <p>The date and time that the snapshot was taken.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// Consumes the builder and constructs a [`Snapshot`](crate::model::Snapshot).
         pub fn build(self) -> crate::model::Snapshot {
             crate::model::Snapshot {
-                directory_id: self.directory_id,
-                snapshot_id: self.snapshot_id,
-                r#type: self.r#type,
-                name: self.name,
-                status: self.status,
-                start_time: self.start_time,
+                directory_id: self.directory_id
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                start_time: self.start_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Snapshot {
     /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
@@ -3770,9 +3511,9 @@ impl Snapshot {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snapshotstatus = unimplemented!();
 /// match snapshotstatus {
@@ -3795,22 +3536,14 @@ impl Snapshot {
 /// Specifically, when `snapshotstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnapshotStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnapshotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -3819,7 +3552,7 @@ pub enum SnapshotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnapshotStatus {
     fn from(s: &str) -> Self {
@@ -3827,17 +3560,17 @@ impl std::convert::From<&str> for SnapshotStatus {
             "Completed" => SnapshotStatus::Completed,
             "Creating" => SnapshotStatus::Creating,
             "Failed" => SnapshotStatus::Failed,
-            other => SnapshotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SnapshotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnapshotStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnapshotStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnapshotStatus::from(s))
+                }
+            }
 impl SnapshotStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3845,12 +3578,14 @@ impl SnapshotStatus {
             SnapshotStatus::Completed => "Completed",
             SnapshotStatus::Creating => "Creating",
             SnapshotStatus::Failed => "Failed",
-            SnapshotStatus::Unknown(value) => value.as_str(),
+            SnapshotStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Creating", "Failed"]
+        &[
+            "Completed", "Creating", "Failed"
+        ]
     }
 }
 impl AsRef<str> for SnapshotStatus {
@@ -3865,9 +3600,9 @@ impl AsRef<str> for SnapshotStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snapshottype = unimplemented!();
 /// match snapshottype {
@@ -3889,58 +3624,52 @@ impl AsRef<str> for SnapshotStatus {
 /// Specifically, when `snapshottype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnapshotType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnapshotType {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
     #[allow(missing_docs)] // documentation missing in model
     Manual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnapshotType {
     fn from(s: &str) -> Self {
         match s {
             "Auto" => SnapshotType::Auto,
             "Manual" => SnapshotType::Manual,
-            other => SnapshotType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SnapshotType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnapshotType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnapshotType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnapshotType::from(s))
+                }
+            }
 impl SnapshotType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SnapshotType::Auto => "Auto",
             SnapshotType::Manual => "Manual",
-            SnapshotType::Unknown(value) => value.as_str(),
+            SnapshotType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Auto", "Manual"]
+        &[
+            "Auto", "Manual"
+        ]
     }
 }
 impl AsRef<str> for SnapshotType {
@@ -3952,7 +3681,7 @@ impl AsRef<str> for SnapshotType {
 /// <p>Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SharedDirectory {
+pub struct SharedDirectory  {
     /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
     #[doc(hidden)]
     pub owner_account_id: std::option::Option<std::string::String>,
@@ -3983,43 +3712,43 @@ pub struct SharedDirectory {
 }
 impl SharedDirectory {
     /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>Identifier of the directory in the directory owner account. </p>
-    pub fn owner_directory_id(&self) -> std::option::Option<&str> {
+    pub fn owner_directory_id(&self) -> std::option::Option<& str> {
         self.owner_directory_id.as_deref()
     }
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
-    pub fn share_method(&self) -> std::option::Option<&crate::model::ShareMethod> {
+    pub fn share_method(&self) -> std::option::Option<& crate::model::ShareMethod> {
         self.share_method.as_ref()
     }
     /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
-    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+    pub fn shared_account_id(&self) -> std::option::Option<& str> {
         self.shared_account_id.as_deref()
     }
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
-    pub fn shared_directory_id(&self) -> std::option::Option<&str> {
+    pub fn shared_directory_id(&self) -> std::option::Option<& str> {
         self.shared_directory_id.as_deref()
     }
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
-    pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+    pub fn share_status(&self) -> std::option::Option<& crate::model::ShareStatus> {
         self.share_status.as_ref()
     }
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
-    pub fn share_notes(&self) -> std::option::Option<&str> {
+    pub fn share_notes(&self) -> std::option::Option<& str> {
         self.share_notes.as_deref()
     }
     /// <p>The date and time that the shared directory was created.</p>
-    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date_time.as_ref()
     }
     /// <p>The date and time that the shared directory was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
-impl std::fmt::Debug for SharedDirectory {
+impl  std::fmt::Debug for SharedDirectory  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SharedDirectory");
         formatter.field("owner_account_id", &self.owner_account_id);
@@ -4036,7 +3765,7 @@ impl std::fmt::Debug for SharedDirectory {
 }
 /// See [`SharedDirectory`](crate::model::SharedDirectory).
 pub mod shared_directory {
-
+    
     /// A builder for [`SharedDirectory`](crate::model::SharedDirectory).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4057,12 +3786,8 @@ pub mod shared_directory {
             self
         }
         /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>Identifier of the directory in the directory owner account. </p>
         pub fn owner_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4070,12 +3795,8 @@ pub mod shared_directory {
             self
         }
         /// <p>Identifier of the directory in the directory owner account. </p>
-        pub fn set_owner_directory_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_directory_id = input;
-            self
+        pub fn set_owner_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_directory_id = input; self
         }
         /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
         pub fn share_method(mut self, input: crate::model::ShareMethod) -> Self {
@@ -4083,12 +3804,8 @@ pub mod shared_directory {
             self
         }
         /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
-        pub fn set_share_method(
-            mut self,
-            input: std::option::Option<crate::model::ShareMethod>,
-        ) -> Self {
-            self.share_method = input;
-            self
+        pub fn set_share_method(mut self, input: std::option::Option<crate::model::ShareMethod>) -> Self {
+            self.share_method = input; self
         }
         /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
         pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4096,12 +3813,8 @@ pub mod shared_directory {
             self
         }
         /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
-        pub fn set_shared_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.shared_account_id = input;
-            self
+        pub fn set_shared_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shared_account_id = input; self
         }
         /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
         pub fn shared_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4109,12 +3822,8 @@ pub mod shared_directory {
             self
         }
         /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
-        pub fn set_shared_directory_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.shared_directory_id = input;
-            self
+        pub fn set_shared_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shared_directory_id = input; self
         }
         /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
         pub fn share_status(mut self, input: crate::model::ShareStatus) -> Self {
@@ -4122,12 +3831,8 @@ pub mod shared_directory {
             self
         }
         /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
-        pub fn set_share_status(
-            mut self,
-            input: std::option::Option<crate::model::ShareStatus>,
-        ) -> Self {
-            self.share_status = input;
-            self
+        pub fn set_share_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
+            self.share_status = input; self
         }
         /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn share_notes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4136,8 +3841,7 @@ pub mod shared_directory {
         }
         /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn set_share_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.share_notes = input;
-            self
+            self.share_notes = input; self
         }
         /// <p>The date and time that the shared directory was created.</p>
         pub fn created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4145,12 +3849,8 @@ pub mod shared_directory {
             self
         }
         /// <p>The date and time that the shared directory was created.</p>
-        pub fn set_created_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date_time = input;
-            self
+        pub fn set_created_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date_time = input; self
         }
         /// <p>The date and time that the shared directory was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4158,25 +3858,30 @@ pub mod shared_directory {
             self
         }
         /// <p>The date and time that the shared directory was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`SharedDirectory`](crate::model::SharedDirectory).
         pub fn build(self) -> crate::model::SharedDirectory {
             crate::model::SharedDirectory {
-                owner_account_id: self.owner_account_id,
-                owner_directory_id: self.owner_directory_id,
-                share_method: self.share_method,
-                shared_account_id: self.shared_account_id,
-                shared_directory_id: self.shared_directory_id,
-                share_status: self.share_status,
-                share_notes: self.share_notes,
-                created_date_time: self.created_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                owner_account_id: self.owner_account_id
+                ,
+                owner_directory_id: self.owner_directory_id
+                ,
+                share_method: self.share_method
+                ,
+                shared_account_id: self.shared_account_id
+                ,
+                shared_directory_id: self.shared_directory_id
+                ,
+                share_status: self.share_status
+                ,
+                share_notes: self.share_notes
+                ,
+                created_date_time: self.created_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
@@ -4195,6 +3900,8 @@ pub mod shared_directory {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SharedDirectory {
     /// Creates a new builder-style object to manufacture [`SharedDirectory`](crate::model::SharedDirectory).
@@ -4209,9 +3916,9 @@ impl SharedDirectory {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sharestatus = unimplemented!();
 /// match sharestatus {
@@ -4240,22 +3947,14 @@ impl SharedDirectory {
 /// Specifically, when `sharestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShareStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShareStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -4276,7 +3975,7 @@ pub enum ShareStatus {
     #[allow(missing_docs)] // documentation missing in model
     Sharing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShareStatus {
     fn from(s: &str) -> Self {
@@ -4290,17 +3989,17 @@ impl std::convert::From<&str> for ShareStatus {
             "ShareFailed" => ShareStatus::ShareFailed,
             "Shared" => ShareStatus::Shared,
             "Sharing" => ShareStatus::Sharing,
-            other => ShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShareStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShareStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShareStatus::from(s))
+                }
+            }
 impl ShareStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4314,21 +4013,13 @@ impl ShareStatus {
             ShareStatus::ShareFailed => "ShareFailed",
             ShareStatus::Shared => "Shared",
             ShareStatus::Sharing => "Sharing",
-            ShareStatus::Unknown(value) => value.as_str(),
+            ShareStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Deleted",
-            "Deleting",
-            "PendingAcceptance",
-            "RejectFailed",
-            "Rejected",
-            "Rejecting",
-            "ShareFailed",
-            "Shared",
-            "Sharing",
+            "Deleted", "Deleting", "PendingAcceptance", "RejectFailed", "Rejected", "Rejecting", "ShareFailed", "Shared", "Sharing"
         ]
     }
 }
@@ -4341,11 +4032,11 @@ impl AsRef<str> for ShareStatus {
 /// <p>Contains information about the specified configurable setting for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SettingEntry {
+pub struct SettingEntry  {
     /// <p>The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>The name of the directory setting. For example:</p>
+    /// <p>The name of the directory setting. For example:</p> 
     /// <p> <code>TLS_1_0</code> </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4363,9 +4054,7 @@ pub struct SettingEntry {
     pub request_status: std::option::Option<crate::model::DirectoryConfigurationStatus>,
     /// <p>Details about the status of the request to update the directory setting. If the directory setting is deployed in more than one region, status is returned for the request in each region where the setting is deployed.</p>
     #[doc(hidden)]
-    pub request_detailed_status: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::DirectoryConfigurationStatus>,
-    >,
+    pub request_detailed_status: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DirectoryConfigurationStatus>>,
     /// <p>The last status message for the directory status request.</p>
     #[doc(hidden)]
     pub request_status_message: std::option::Option<std::string::String>,
@@ -4378,56 +4067,50 @@ pub struct SettingEntry {
 }
 impl SettingEntry {
     /// <p>The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
-    /// <p>The name of the directory setting. For example:</p>
+    /// <p>The name of the directory setting. For example:</p> 
     /// <p> <code>TLS_1_0</code> </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The valid range of values for the directory setting.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&str> {
+    pub fn allowed_values(&self) -> std::option::Option<& str> {
         self.allowed_values.as_deref()
     }
     /// <p>The value of the directory setting that is applied to the directory.</p>
-    pub fn applied_value(&self) -> std::option::Option<&str> {
+    pub fn applied_value(&self) -> std::option::Option<& str> {
         self.applied_value.as_deref()
     }
     /// <p>The value that was last requested for the directory setting.</p>
-    pub fn requested_value(&self) -> std::option::Option<&str> {
+    pub fn requested_value(&self) -> std::option::Option<& str> {
         self.requested_value.as_deref()
     }
     /// <p>The overall status of the request to update the directory setting request. If the directory setting is deployed in more than one region, and the request fails in any region, the overall status is <code>Failed</code>.</p>
-    pub fn request_status(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectoryConfigurationStatus> {
+    pub fn request_status(&self) -> std::option::Option<& crate::model::DirectoryConfigurationStatus> {
         self.request_status.as_ref()
     }
     /// <p>Details about the status of the request to update the directory setting. If the directory setting is deployed in more than one region, status is returned for the request in each region where the setting is deployed.</p>
-    pub fn request_detailed_status(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::DirectoryConfigurationStatus>,
-    > {
+    pub fn request_detailed_status(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::DirectoryConfigurationStatus>> {
         self.request_detailed_status.as_ref()
     }
     /// <p>The last status message for the directory status request.</p>
-    pub fn request_status_message(&self) -> std::option::Option<&str> {
+    pub fn request_status_message(&self) -> std::option::Option<& str> {
         self.request_status_message.as_deref()
     }
     /// <p>The date and time when the directory setting was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The date and time when the request to update a directory setting was last submitted.</p>
-    pub fn last_requested_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_requested_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_requested_date_time.as_ref()
     }
 }
 /// See [`SettingEntry`](crate::model::SettingEntry).
 pub mod setting_entry {
-
+    
     /// A builder for [`SettingEntry`](crate::model::SettingEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4437,12 +4120,7 @@ pub mod setting_entry {
         pub(crate) applied_value: std::option::Option<std::string::String>,
         pub(crate) requested_value: std::option::Option<std::string::String>,
         pub(crate) request_status: std::option::Option<crate::model::DirectoryConfigurationStatus>,
-        pub(crate) request_detailed_status: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::DirectoryConfigurationStatus,
-            >,
-        >,
+        pub(crate) request_detailed_status: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DirectoryConfigurationStatus>>,
         pub(crate) request_status_message: std::option::Option<std::string::String>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_requested_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4455,20 +4133,18 @@ pub mod setting_entry {
         }
         /// <p>The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>The name of the directory setting. For example:</p>
+        /// <p>The name of the directory setting. For example:</p> 
         /// <p> <code>TLS_1_0</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the directory setting. For example:</p>
+        /// <p>The name of the directory setting. For example:</p> 
         /// <p> <code>TLS_1_0</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The valid range of values for the directory setting.</p>
         pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4476,12 +4152,8 @@ pub mod setting_entry {
             self
         }
         /// <p>The valid range of values for the directory setting.</p>
-        pub fn set_allowed_values(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.allowed_values = input;
-            self
+        pub fn set_allowed_values(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.allowed_values = input; self
         }
         /// <p>The value of the directory setting that is applied to the directory.</p>
         pub fn applied_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4489,12 +4161,8 @@ pub mod setting_entry {
             self
         }
         /// <p>The value of the directory setting that is applied to the directory.</p>
-        pub fn set_applied_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.applied_value = input;
-            self
+        pub fn set_applied_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.applied_value = input; self
         }
         /// <p>The value that was last requested for the directory setting.</p>
         pub fn requested_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4502,12 +4170,8 @@ pub mod setting_entry {
             self
         }
         /// <p>The value that was last requested for the directory setting.</p>
-        pub fn set_requested_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.requested_value = input;
-            self
+        pub fn set_requested_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.requested_value = input; self
         }
         /// <p>The overall status of the request to update the directory setting request. If the directory setting is deployed in more than one region, and the request fails in any region, the overall status is <code>Failed</code>.</p>
         pub fn request_status(mut self, input: crate::model::DirectoryConfigurationStatus) -> Self {
@@ -4515,40 +4179,23 @@ pub mod setting_entry {
             self
         }
         /// <p>The overall status of the request to update the directory setting request. If the directory setting is deployed in more than one region, and the request fails in any region, the overall status is <code>Failed</code>.</p>
-        pub fn set_request_status(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryConfigurationStatus>,
-        ) -> Self {
-            self.request_status = input;
-            self
+        pub fn set_request_status(mut self, input: std::option::Option<crate::model::DirectoryConfigurationStatus>) -> Self {
+            self.request_status = input; self
         }
         /// Adds a key-value pair to `request_detailed_status`.
         ///
         /// To override the contents of this collection use [`set_request_detailed_status`](Self::set_request_detailed_status).
         ///
         /// <p>Details about the status of the request to update the directory setting. If the directory setting is deployed in more than one region, status is returned for the request in each region where the setting is deployed.</p>
-        pub fn request_detailed_status(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::DirectoryConfigurationStatus,
-        ) -> Self {
+        pub fn request_detailed_status(mut self, k: impl Into<std::string::String>, v: crate::model::DirectoryConfigurationStatus) -> Self {
             let mut hash_map = self.request_detailed_status.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.request_detailed_status = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.request_detailed_status = Some(hash_map);
+                            self
         }
         /// <p>Details about the status of the request to update the directory setting. If the directory setting is deployed in more than one region, status is returned for the request in each region where the setting is deployed.</p>
-        pub fn set_request_detailed_status(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::DirectoryConfigurationStatus,
-                >,
-            >,
-        ) -> Self {
-            self.request_detailed_status = input;
-            self
+        pub fn set_request_detailed_status(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DirectoryConfigurationStatus>>) -> Self {
+            self.request_detailed_status = input; self
         }
         /// <p>The last status message for the directory status request.</p>
         pub fn request_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4556,12 +4203,8 @@ pub mod setting_entry {
             self
         }
         /// <p>The last status message for the directory status request.</p>
-        pub fn set_request_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_status_message = input;
-            self
+        pub fn set_request_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_status_message = input; self
         }
         /// <p>The date and time when the directory setting was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4569,12 +4212,8 @@ pub mod setting_entry {
             self
         }
         /// <p>The date and time when the directory setting was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The date and time when the request to update a directory setting was last submitted.</p>
         pub fn last_requested_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4582,29 +4221,37 @@ pub mod setting_entry {
             self
         }
         /// <p>The date and time when the request to update a directory setting was last submitted.</p>
-        pub fn set_last_requested_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_requested_date_time = input;
-            self
+        pub fn set_last_requested_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_requested_date_time = input; self
         }
         /// Consumes the builder and constructs a [`SettingEntry`](crate::model::SettingEntry).
         pub fn build(self) -> crate::model::SettingEntry {
             crate::model::SettingEntry {
-                r#type: self.r#type,
-                name: self.name,
-                allowed_values: self.allowed_values,
-                applied_value: self.applied_value,
-                requested_value: self.requested_value,
-                request_status: self.request_status,
-                request_detailed_status: self.request_detailed_status,
-                request_status_message: self.request_status_message,
-                last_updated_date_time: self.last_updated_date_time,
-                last_requested_date_time: self.last_requested_date_time,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                allowed_values: self.allowed_values
+                ,
+                applied_value: self.applied_value
+                ,
+                requested_value: self.requested_value
+                ,
+                request_status: self.request_status
+                ,
+                request_detailed_status: self.request_detailed_status
+                ,
+                request_status_message: self.request_status_message
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                last_requested_date_time: self.last_requested_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SettingEntry {
     /// Creates a new builder-style object to manufacture [`SettingEntry`](crate::model::SettingEntry).
@@ -4619,9 +4266,9 @@ impl SettingEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let directoryconfigurationstatus = unimplemented!();
 /// match directoryconfigurationstatus {
@@ -4646,22 +4293,14 @@ impl SettingEntry {
 /// Specifically, when `directoryconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DirectoryConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DirectoryConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Default,
@@ -4674,7 +4313,7 @@ pub enum DirectoryConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectoryConfigurationStatus {
     fn from(s: &str) -> Self {
@@ -4684,19 +4323,17 @@ impl std::convert::From<&str> for DirectoryConfigurationStatus {
             "Requested" => DirectoryConfigurationStatus::Requested,
             "Updated" => DirectoryConfigurationStatus::Updated,
             "Updating" => DirectoryConfigurationStatus::Updating,
-            other => DirectoryConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DirectoryConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DirectoryConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectoryConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DirectoryConfigurationStatus::from(s))
+                }
+            }
 impl DirectoryConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4706,12 +4343,14 @@ impl DirectoryConfigurationStatus {
             DirectoryConfigurationStatus::Requested => "Requested",
             DirectoryConfigurationStatus::Updated => "Updated",
             DirectoryConfigurationStatus::Updating => "Updating",
-            DirectoryConfigurationStatus::Unknown(value) => value.as_str(),
+            DirectoryConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Default", "Failed", "Requested", "Updated", "Updating"]
+        &[
+            "Default", "Failed", "Requested", "Updated", "Updating"
+        ]
     }
 }
 impl AsRef<str> for DirectoryConfigurationStatus {
@@ -4723,7 +4362,7 @@ impl AsRef<str> for DirectoryConfigurationStatus {
 /// <p>The replicated Region information for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionDescription {
+pub struct RegionDescription  {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -4754,23 +4393,23 @@ pub struct RegionDescription {
 }
 impl RegionDescription {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>Specifies whether the Region is the primary Region or an additional Region.</p>
-    pub fn region_type(&self) -> std::option::Option<&crate::model::RegionType> {
+    pub fn region_type(&self) -> std::option::Option<& crate::model::RegionType> {
         self.region_type.as_ref()
     }
     /// <p>The status of the replication process for the specified Region.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DirectoryStage> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DirectoryStage> {
         self.status.as_ref()
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
+    pub fn vpc_settings(&self) -> std::option::Option<& crate::model::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
     /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
@@ -4778,23 +4417,21 @@ impl RegionDescription {
         self.desired_number_of_domain_controllers
     }
     /// <p>Specifies when the Region replication began.</p>
-    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn launch_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the Region status was last updated.</p>
-    pub fn status_last_updated_date_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.status_last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the Region description was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`RegionDescription`](crate::model::RegionDescription).
 pub mod region_description {
-
+    
     /// A builder for [`RegionDescription`](crate::model::RegionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4816,8 +4453,7 @@ pub mod region_description {
         }
         /// <p>The identifier of the directory.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4826,8 +4462,7 @@ pub mod region_description {
         }
         /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region_name = input;
-            self
+            self.region_name = input; self
         }
         /// <p>Specifies whether the Region is the primary Region or an additional Region.</p>
         pub fn region_type(mut self, input: crate::model::RegionType) -> Self {
@@ -4835,12 +4470,8 @@ pub mod region_description {
             self
         }
         /// <p>Specifies whether the Region is the primary Region or an additional Region.</p>
-        pub fn set_region_type(
-            mut self,
-            input: std::option::Option<crate::model::RegionType>,
-        ) -> Self {
-            self.region_type = input;
-            self
+        pub fn set_region_type(mut self, input: std::option::Option<crate::model::RegionType>) -> Self {
+            self.region_type = input; self
         }
         /// <p>The status of the replication process for the specified Region.</p>
         pub fn status(mut self, input: crate::model::DirectoryStage) -> Self {
@@ -4848,12 +4479,8 @@ pub mod region_description {
             self
         }
         /// <p>The status of the replication process for the specified Region.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryStage>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DirectoryStage>) -> Self {
+            self.status = input; self
         }
         /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
         pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettings) -> Self {
@@ -4861,12 +4488,8 @@ pub mod region_description {
             self
         }
         /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-        pub fn set_vpc_settings(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryVpcSettings>,
-        ) -> Self {
-            self.vpc_settings = input;
-            self
+        pub fn set_vpc_settings(mut self, input: std::option::Option<crate::model::DirectoryVpcSettings>) -> Self {
+            self.vpc_settings = input; self
         }
         /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
         pub fn desired_number_of_domain_controllers(mut self, input: i32) -> Self {
@@ -4874,12 +4497,8 @@ pub mod region_description {
             self
         }
         /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
-        pub fn set_desired_number_of_domain_controllers(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.desired_number_of_domain_controllers = input;
-            self
+        pub fn set_desired_number_of_domain_controllers(mut self, input: std::option::Option<i32>) -> Self {
+            self.desired_number_of_domain_controllers = input; self
         }
         /// <p>Specifies when the Region replication began.</p>
         pub fn launch_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4887,12 +4506,8 @@ pub mod region_description {
             self
         }
         /// <p>Specifies when the Region replication began.</p>
-        pub fn set_launch_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.launch_time = input;
-            self
+        pub fn set_launch_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.launch_time = input; self
         }
         /// <p>The date and time that the Region status was last updated.</p>
         pub fn status_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4900,12 +4515,8 @@ pub mod region_description {
             self
         }
         /// <p>The date and time that the Region status was last updated.</p>
-        pub fn set_status_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.status_last_updated_date_time = input;
-            self
+        pub fn set_status_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.status_last_updated_date_time = input; self
         }
         /// <p>The date and time that the Region description was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4913,30 +4524,36 @@ pub mod region_description {
             self
         }
         /// <p>The date and time that the Region description was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`RegionDescription`](crate::model::RegionDescription).
         pub fn build(self) -> crate::model::RegionDescription {
             crate::model::RegionDescription {
-                directory_id: self.directory_id,
-                region_name: self.region_name,
-                region_type: self.region_type,
-                status: self.status,
-                vpc_settings: self.vpc_settings,
-                desired_number_of_domain_controllers: self
-                    .desired_number_of_domain_controllers
-                    .unwrap_or_default(),
-                launch_time: self.launch_time,
-                status_last_updated_date_time: self.status_last_updated_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                directory_id: self.directory_id
+                ,
+                region_name: self.region_name
+                ,
+                region_type: self.region_type
+                ,
+                status: self.status
+                ,
+                vpc_settings: self.vpc_settings
+                ,
+                desired_number_of_domain_controllers: self.desired_number_of_domain_controllers
+                    .unwrap_or_default()
+                ,
+                launch_time: self.launch_time
+                ,
+                status_last_updated_date_time: self.status_last_updated_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl RegionDescription {
     /// Creates a new builder-style object to manufacture [`RegionDescription`](crate::model::RegionDescription).
@@ -4948,7 +4565,7 @@ impl RegionDescription {
 /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectoryVpcSettings {
+pub struct DirectoryVpcSettings  {
     /// <p>The identifier of the VPC in which to create the directory.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -4958,17 +4575,17 @@ pub struct DirectoryVpcSettings {
 }
 impl DirectoryVpcSettings {
     /// <p>The identifier of the VPC in which to create the directory.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
 /// See [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
 pub mod directory_vpc_settings {
-
+    
     /// A builder for [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4983,8 +4600,7 @@ pub mod directory_vpc_settings {
         }
         /// <p>The identifier of the VPC in which to create the directory.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -4993,26 +4609,26 @@ pub mod directory_vpc_settings {
         /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Consumes the builder and constructs a [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
         pub fn build(self) -> crate::model::DirectoryVpcSettings {
             crate::model::DirectoryVpcSettings {
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl DirectoryVpcSettings {
     /// Creates a new builder-style object to manufacture [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
@@ -5027,9 +4643,9 @@ impl DirectoryVpcSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let directorystage = unimplemented!();
 /// match directorystage {
@@ -5060,22 +4676,14 @@ impl DirectoryVpcSettings {
 /// Specifically, when `directorystage` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DirectoryStage::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DirectoryStage {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -5100,7 +4708,7 @@ pub enum DirectoryStage {
     #[allow(missing_docs)] // documentation missing in model
     Restoring,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectoryStage {
     fn from(s: &str) -> Self {
@@ -5116,17 +4724,17 @@ impl std::convert::From<&str> for DirectoryStage {
             "Requested" => DirectoryStage::Requested,
             "RestoreFailed" => DirectoryStage::Restorefailed,
             "Restoring" => DirectoryStage::Restoring,
-            other => DirectoryStage::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DirectoryStage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DirectoryStage {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectoryStage::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DirectoryStage::from(s))
+                }
+            }
 impl DirectoryStage {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5142,23 +4750,13 @@ impl DirectoryStage {
             DirectoryStage::Requested => "Requested",
             DirectoryStage::Restorefailed => "RestoreFailed",
             DirectoryStage::Restoring => "Restoring",
-            DirectoryStage::Unknown(value) => value.as_str(),
+            DirectoryStage::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Active",
-            "Created",
-            "Creating",
-            "Deleted",
-            "Deleting",
-            "Failed",
-            "Impaired",
-            "Inoperable",
-            "Requested",
-            "RestoreFailed",
-            "Restoring",
+            "Active", "Created", "Creating", "Deleted", "Deleting", "Failed", "Impaired", "Inoperable", "Requested", "RestoreFailed", "Restoring"
         ]
     }
 }
@@ -5174,9 +4772,9 @@ impl AsRef<str> for DirectoryStage {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let regiontype = unimplemented!();
 /// match regiontype {
@@ -5198,58 +4796,52 @@ impl AsRef<str> for DirectoryStage {
 /// Specifically, when `regiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RegionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RegionType {
     #[allow(missing_docs)] // documentation missing in model
     Additional,
     #[allow(missing_docs)] // documentation missing in model
     Primary,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RegionType {
     fn from(s: &str) -> Self {
         match s {
             "Additional" => RegionType::Additional,
             "Primary" => RegionType::Primary,
-            other => RegionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RegionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RegionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RegionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RegionType::from(s))
+                }
+            }
 impl RegionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RegionType::Additional => "Additional",
             RegionType::Primary => "Primary",
-            RegionType::Unknown(value) => value.as_str(),
+            RegionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Additional", "Primary"]
+        &[
+            "Additional", "Primary"
+        ]
     }
 }
 impl AsRef<str> for RegionType {
@@ -5261,7 +4853,7 @@ impl AsRef<str> for RegionType {
 /// <p>Contains general information about the LDAPS settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LdapsSettingInfo {
+pub struct LdapsSettingInfo  {
     /// <p>The state of the LDAPS settings.</p>
     #[doc(hidden)]
     pub ldaps_status: std::option::Option<crate::model::LdapsStatus>,
@@ -5274,21 +4866,21 @@ pub struct LdapsSettingInfo {
 }
 impl LdapsSettingInfo {
     /// <p>The state of the LDAPS settings.</p>
-    pub fn ldaps_status(&self) -> std::option::Option<&crate::model::LdapsStatus> {
+    pub fn ldaps_status(&self) -> std::option::Option<& crate::model::LdapsStatus> {
         self.ldaps_status.as_ref()
     }
     /// <p>Describes a state change for LDAPS.</p>
-    pub fn ldaps_status_reason(&self) -> std::option::Option<&str> {
+    pub fn ldaps_status_reason(&self) -> std::option::Option<& str> {
         self.ldaps_status_reason.as_deref()
     }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
 pub mod ldaps_setting_info {
-
+    
     /// A builder for [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5303,12 +4895,8 @@ pub mod ldaps_setting_info {
             self
         }
         /// <p>The state of the LDAPS settings.</p>
-        pub fn set_ldaps_status(
-            mut self,
-            input: std::option::Option<crate::model::LdapsStatus>,
-        ) -> Self {
-            self.ldaps_status = input;
-            self
+        pub fn set_ldaps_status(mut self, input: std::option::Option<crate::model::LdapsStatus>) -> Self {
+            self.ldaps_status = input; self
         }
         /// <p>Describes a state change for LDAPS.</p>
         pub fn ldaps_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5316,12 +4904,8 @@ pub mod ldaps_setting_info {
             self
         }
         /// <p>Describes a state change for LDAPS.</p>
-        pub fn set_ldaps_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ldaps_status_reason = input;
-            self
+        pub fn set_ldaps_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ldaps_status_reason = input; self
         }
         /// <p>The date and time when the LDAPS settings were last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5329,22 +4913,23 @@ pub mod ldaps_setting_info {
             self
         }
         /// <p>The date and time when the LDAPS settings were last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
         pub fn build(self) -> crate::model::LdapsSettingInfo {
             crate::model::LdapsSettingInfo {
-                ldaps_status: self.ldaps_status,
-                ldaps_status_reason: self.ldaps_status_reason,
-                last_updated_date_time: self.last_updated_date_time,
+                ldaps_status: self.ldaps_status
+                ,
+                ldaps_status_reason: self.ldaps_status_reason
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LdapsSettingInfo {
     /// Creates a new builder-style object to manufacture [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
@@ -5359,9 +4944,9 @@ impl LdapsSettingInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ldapsstatus = unimplemented!();
 /// match ldapsstatus {
@@ -5385,22 +4970,14 @@ impl LdapsSettingInfo {
 /// Specifically, when `ldapsstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LdapsStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LdapsStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -5411,7 +4988,7 @@ pub enum LdapsStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enabling,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LdapsStatus {
     fn from(s: &str) -> Self {
@@ -5420,17 +4997,17 @@ impl std::convert::From<&str> for LdapsStatus {
             "EnableFailed" => LdapsStatus::EnableFailed,
             "Enabled" => LdapsStatus::Enabled,
             "Enabling" => LdapsStatus::Enabling,
-            other => LdapsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LdapsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LdapsStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LdapsStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LdapsStatus::from(s))
+                }
+            }
 impl LdapsStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5439,12 +5016,14 @@ impl LdapsStatus {
             LdapsStatus::EnableFailed => "EnableFailed",
             LdapsStatus::Enabled => "Enabled",
             LdapsStatus::Enabling => "Enabling",
-            LdapsStatus::Unknown(value) => value.as_str(),
+            LdapsStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "EnableFailed", "Enabled", "Enabling"]
+        &[
+            "Disabled", "EnableFailed", "Enabled", "Enabling"
+        ]
     }
 }
 impl AsRef<str> for LdapsStatus {
@@ -5456,7 +5035,7 @@ impl AsRef<str> for LdapsStatus {
 /// <p>Information about Amazon SNS topic and Directory Service directory associations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventTopic {
+pub struct EventTopic  {
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -5475,29 +5054,29 @@ pub struct EventTopic {
 }
 impl EventTopic {
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
-    pub fn topic_name(&self) -> std::option::Option<&str> {
+    pub fn topic_name(&self) -> std::option::Option<& str> {
         self.topic_name.as_deref()
     }
     /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
-    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date_time.as_ref()
     }
     /// <p>The topic registration status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TopicStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TopicStatus> {
         self.status.as_ref()
     }
 }
 /// See [`EventTopic`](crate::model::EventTopic).
 pub mod event_topic {
-
+    
     /// A builder for [`EventTopic`](crate::model::EventTopic).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5515,8 +5094,7 @@ pub mod event_topic {
         }
         /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
         pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5525,8 +5103,7 @@ pub mod event_topic {
         }
         /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_name = input;
-            self
+            self.topic_name = input; self
         }
         /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
         pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5535,8 +5112,7 @@ pub mod event_topic {
         }
         /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = input;
-            self
+            self.topic_arn = input; self
         }
         /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
         pub fn created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5544,12 +5120,8 @@ pub mod event_topic {
             self
         }
         /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
-        pub fn set_created_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date_time = input;
-            self
+        pub fn set_created_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date_time = input; self
         }
         /// <p>The topic registration status.</p>
         pub fn status(mut self, input: crate::model::TopicStatus) -> Self {
@@ -5558,20 +5130,26 @@ pub mod event_topic {
         }
         /// <p>The topic registration status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::TopicStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`EventTopic`](crate::model::EventTopic).
         pub fn build(self) -> crate::model::EventTopic {
             crate::model::EventTopic {
-                directory_id: self.directory_id,
-                topic_name: self.topic_name,
-                topic_arn: self.topic_arn,
-                created_date_time: self.created_date_time,
-                status: self.status,
+                directory_id: self.directory_id
+                ,
+                topic_name: self.topic_name
+                ,
+                topic_arn: self.topic_arn
+                ,
+                created_date_time: self.created_date_time
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl EventTopic {
     /// Creates a new builder-style object to manufacture [`EventTopic`](crate::model::EventTopic).
@@ -5586,9 +5164,9 @@ impl EventTopic {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let topicstatus = unimplemented!();
 /// match topicstatus {
@@ -5612,22 +5190,14 @@ impl EventTopic {
 /// Specifically, when `topicstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TopicStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TopicStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -5638,7 +5208,7 @@ pub enum TopicStatus {
     #[allow(missing_docs)] // documentation missing in model
     TopicNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TopicStatus {
     fn from(s: &str) -> Self {
@@ -5647,17 +5217,17 @@ impl std::convert::From<&str> for TopicStatus {
             "Failed" => TopicStatus::Failed,
             "Registered" => TopicStatus::Registered,
             "Topic not found" => TopicStatus::TopicNotFound,
-            other => TopicStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TopicStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TopicStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TopicStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TopicStatus::from(s))
+                }
+            }
 impl TopicStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5666,12 +5236,14 @@ impl TopicStatus {
             TopicStatus::Failed => "Failed",
             TopicStatus::Registered => "Registered",
             TopicStatus::TopicNotFound => "Topic not found",
-            TopicStatus::Unknown(value) => value.as_str(),
+            TopicStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Deleted", "Failed", "Registered", "Topic not found"]
+        &[
+            "Deleted", "Failed", "Registered", "Topic not found"
+        ]
     }
 }
 impl AsRef<str> for TopicStatus {
@@ -5683,7 +5255,7 @@ impl AsRef<str> for TopicStatus {
 /// <p>Contains information about the domain controllers for a specified directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainController {
+pub struct DomainController  {
     /// <p>Identifier of the directory where the domain controller resides.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -5717,51 +5289,49 @@ pub struct DomainController {
 }
 impl DomainController {
     /// <p>Identifier of the directory where the domain controller resides.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>Identifies a specific domain controller in the directory.</p>
-    pub fn domain_controller_id(&self) -> std::option::Option<&str> {
+    pub fn domain_controller_id(&self) -> std::option::Option<& str> {
         self.domain_controller_id.as_deref()
     }
     /// <p>The IP address of the domain controller.</p>
-    pub fn dns_ip_addr(&self) -> std::option::Option<&str> {
+    pub fn dns_ip_addr(&self) -> std::option::Option<& str> {
         self.dns_ip_addr.as_deref()
     }
     /// <p>The identifier of the VPC that contains the domain controller.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The Availability Zone where the domain controller is located.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The status of the domain controller.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DomainControllerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DomainControllerStatus> {
         self.status.as_ref()
     }
     /// <p>A description of the domain controller state.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Specifies when the domain controller was created.</p>
-    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn launch_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the status was last updated.</p>
-    pub fn status_last_updated_date_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.status_last_updated_date_time.as_ref()
     }
 }
 /// See [`DomainController`](crate::model::DomainController).
 pub mod domain_controller {
-
+    
     /// A builder for [`DomainController`](crate::model::DomainController).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5784,8 +5354,7 @@ pub mod domain_controller {
         }
         /// <p>Identifier of the directory where the domain controller resides.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>Identifies a specific domain controller in the directory.</p>
         pub fn domain_controller_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5793,12 +5362,8 @@ pub mod domain_controller {
             self
         }
         /// <p>Identifies a specific domain controller in the directory.</p>
-        pub fn set_domain_controller_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.domain_controller_id = input;
-            self
+        pub fn set_domain_controller_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_controller_id = input; self
         }
         /// <p>The IP address of the domain controller.</p>
         pub fn dns_ip_addr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5807,8 +5372,7 @@ pub mod domain_controller {
         }
         /// <p>The IP address of the domain controller.</p>
         pub fn set_dns_ip_addr(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dns_ip_addr = input;
-            self
+            self.dns_ip_addr = input; self
         }
         /// <p>The identifier of the VPC that contains the domain controller.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5817,8 +5381,7 @@ pub mod domain_controller {
         }
         /// <p>The identifier of the VPC that contains the domain controller.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5827,8 +5390,7 @@ pub mod domain_controller {
         }
         /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The Availability Zone where the domain controller is located.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5836,12 +5398,8 @@ pub mod domain_controller {
             self
         }
         /// <p>The Availability Zone where the domain controller is located.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The status of the domain controller.</p>
         pub fn status(mut self, input: crate::model::DomainControllerStatus) -> Self {
@@ -5849,12 +5407,8 @@ pub mod domain_controller {
             self
         }
         /// <p>The status of the domain controller.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainControllerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DomainControllerStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A description of the domain controller state.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5862,12 +5416,8 @@ pub mod domain_controller {
             self
         }
         /// <p>A description of the domain controller state.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>Specifies when the domain controller was created.</p>
         pub fn launch_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5875,12 +5425,8 @@ pub mod domain_controller {
             self
         }
         /// <p>Specifies when the domain controller was created.</p>
-        pub fn set_launch_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.launch_time = input;
-            self
+        pub fn set_launch_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.launch_time = input; self
         }
         /// <p>The date and time that the status was last updated.</p>
         pub fn status_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5888,29 +5434,37 @@ pub mod domain_controller {
             self
         }
         /// <p>The date and time that the status was last updated.</p>
-        pub fn set_status_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.status_last_updated_date_time = input;
-            self
+        pub fn set_status_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.status_last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DomainController`](crate::model::DomainController).
         pub fn build(self) -> crate::model::DomainController {
             crate::model::DomainController {
-                directory_id: self.directory_id,
-                domain_controller_id: self.domain_controller_id,
-                dns_ip_addr: self.dns_ip_addr,
-                vpc_id: self.vpc_id,
-                subnet_id: self.subnet_id,
-                availability_zone: self.availability_zone,
-                status: self.status,
-                status_reason: self.status_reason,
-                launch_time: self.launch_time,
-                status_last_updated_date_time: self.status_last_updated_date_time,
+                directory_id: self.directory_id
+                ,
+                domain_controller_id: self.domain_controller_id
+                ,
+                dns_ip_addr: self.dns_ip_addr
+                ,
+                vpc_id: self.vpc_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                availability_zone: self.availability_zone
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                launch_time: self.launch_time
+                ,
+                status_last_updated_date_time: self.status_last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainController {
     /// Creates a new builder-style object to manufacture [`DomainController`](crate::model::DomainController).
@@ -5925,9 +5479,9 @@ impl DomainController {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let domaincontrollerstatus = unimplemented!();
 /// match domaincontrollerstatus {
@@ -5954,22 +5508,14 @@ impl DomainController {
 /// Specifically, when `domaincontrollerstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainControllerStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DomainControllerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -5986,7 +5532,7 @@ pub enum DomainControllerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Restoring,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainControllerStatus {
     fn from(s: &str) -> Self {
@@ -5998,19 +5544,17 @@ impl std::convert::From<&str> for DomainControllerStatus {
             "Failed" => DomainControllerStatus::Failed,
             "Impaired" => DomainControllerStatus::Impaired,
             "Restoring" => DomainControllerStatus::Restoring,
-            other => {
-                DomainControllerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DomainControllerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DomainControllerStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DomainControllerStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DomainControllerStatus::from(s))
+                }
+            }
 impl DomainControllerStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6022,19 +5566,13 @@ impl DomainControllerStatus {
             DomainControllerStatus::Failed => "Failed",
             DomainControllerStatus::Impaired => "Impaired",
             DomainControllerStatus::Restoring => "Restoring",
-            DomainControllerStatus::Unknown(value) => value.as_str(),
+            DomainControllerStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Active",
-            "Creating",
-            "Deleted",
-            "Deleting",
-            "Failed",
-            "Impaired",
-            "Restoring",
+            "Active", "Creating", "Deleted", "Deleting", "Failed", "Impaired", "Restoring"
         ]
     }
 }
@@ -6047,7 +5585,7 @@ impl AsRef<str> for DomainControllerStatus {
 /// <p>Contains information about an Directory Service directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DirectoryDescription {
+pub struct DirectoryDescription  {
     /// <p>The directory identifier.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -6133,27 +5671,27 @@ pub struct DirectoryDescription {
 }
 impl DirectoryDescription {
     /// <p>The directory identifier.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The fully qualified name of the directory.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The short name of the directory.</p>
-    pub fn short_name(&self) -> std::option::Option<&str> {
+    pub fn short_name(&self) -> std::option::Option<& str> {
         self.short_name.as_deref()
     }
     /// <p>The directory size.</p>
-    pub fn size(&self) -> std::option::Option<&crate::model::DirectorySize> {
+    pub fn size(&self) -> std::option::Option<& crate::model::DirectorySize> {
         self.size.as_ref()
     }
     /// <p>The edition associated with this directory.</p>
-    pub fn edition(&self) -> std::option::Option<&crate::model::DirectoryEdition> {
+    pub fn edition(&self) -> std::option::Option<& crate::model::DirectoryEdition> {
         self.edition.as_ref()
     }
     /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The access URL for the directory, such as <code>http://
@@ -6161,67 +5699,63 @@ impl DirectoryDescription {
     /// .awsapps.com
     /// </alias></code>. If no alias has been created for the directory, <code>
     /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
-    pub fn access_url(&self) -> std::option::Option<&str> {
+    pub fn access_url(&self) -> std::option::Option<& str> {
         self.access_url.as_deref()
     }
     /// <p>The description for the directory.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
-    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dns_ip_addrs(&self) -> std::option::Option<& [std::string::String]> {
         self.dns_ip_addrs.as_deref()
     }
     /// <p>The current stage of the directory.</p>
-    pub fn stage(&self) -> std::option::Option<&crate::model::DirectoryStage> {
+    pub fn stage(&self) -> std::option::Option<& crate::model::DirectoryStage> {
         self.stage.as_ref()
     }
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
-    pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+    pub fn share_status(&self) -> std::option::Option<& crate::model::ShareStatus> {
         self.share_status.as_ref()
     }
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
-    pub fn share_method(&self) -> std::option::Option<&crate::model::ShareMethod> {
+    pub fn share_method(&self) -> std::option::Option<& crate::model::ShareMethod> {
         self.share_method.as_ref()
     }
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
-    pub fn share_notes(&self) -> std::option::Option<&str> {
+    pub fn share_notes(&self) -> std::option::Option<& str> {
         self.share_notes.as_deref()
     }
     /// <p>Specifies when the directory was created.</p>
-    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn launch_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the stage was last updated.</p>
-    pub fn stage_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stage_last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stage_last_updated_date_time.as_ref()
     }
     /// <p>The directory size.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DirectoryType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DirectoryType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
-    pub fn vpc_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectoryVpcSettingsDescription> {
+    pub fn vpc_settings(&self) -> std::option::Option<& crate::model::DirectoryVpcSettingsDescription> {
         self.vpc_settings.as_ref()
     }
     /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
-    pub fn connect_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectoryConnectSettingsDescription> {
+    pub fn connect_settings(&self) -> std::option::Option<& crate::model::DirectoryConnectSettingsDescription> {
         self.connect_settings.as_ref()
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
-    pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
+    pub fn radius_settings(&self) -> std::option::Option<& crate::model::RadiusSettings> {
         self.radius_settings.as_ref()
     }
     /// <p>The status of the RADIUS MFA server connection.</p>
-    pub fn radius_status(&self) -> std::option::Option<&crate::model::RadiusStatus> {
+    pub fn radius_status(&self) -> std::option::Option<& crate::model::RadiusStatus> {
         self.radius_status.as_ref()
     }
     /// <p>Additional information about the directory stage.</p>
-    pub fn stage_reason(&self) -> std::option::Option<&str> {
+    pub fn stage_reason(&self) -> std::option::Option<& str> {
         self.stage_reason.as_deref()
     }
     /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
@@ -6233,21 +5767,19 @@ impl DirectoryDescription {
         self.desired_number_of_domain_controllers
     }
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
-    pub fn owner_directory_description(
-        &self,
-    ) -> std::option::Option<&crate::model::OwnerDirectoryDescription> {
+    pub fn owner_directory_description(&self) -> std::option::Option<& crate::model::OwnerDirectoryDescription> {
         self.owner_directory_description.as_ref()
     }
     /// <p>Lists the Regions where the directory has replicated.</p>
-    pub fn regions_info(&self) -> std::option::Option<&crate::model::RegionsInfo> {
+    pub fn regions_info(&self) -> std::option::Option<& crate::model::RegionsInfo> {
         self.regions_info.as_ref()
     }
     /// <p>The operating system (OS) version of the directory.</p>
-    pub fn os_version(&self) -> std::option::Option<&crate::model::OsVersion> {
+    pub fn os_version(&self) -> std::option::Option<& crate::model::OsVersion> {
         self.os_version.as_ref()
     }
 }
-impl std::fmt::Debug for DirectoryDescription {
+impl  std::fmt::Debug for DirectoryDescription  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DirectoryDescription");
         formatter.field("directory_id", &self.directory_id);
@@ -6264,10 +5796,7 @@ impl std::fmt::Debug for DirectoryDescription {
         formatter.field("share_method", &self.share_method);
         formatter.field("share_notes", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_time", &self.launch_time);
-        formatter.field(
-            "stage_last_updated_date_time",
-            &self.stage_last_updated_date_time,
-        );
+        formatter.field("stage_last_updated_date_time", &self.stage_last_updated_date_time);
         formatter.field("r#type", &self.r#type);
         formatter.field("vpc_settings", &self.vpc_settings);
         formatter.field("connect_settings", &self.connect_settings);
@@ -6275,14 +5804,8 @@ impl std::fmt::Debug for DirectoryDescription {
         formatter.field("radius_status", &self.radius_status);
         formatter.field("stage_reason", &self.stage_reason);
         formatter.field("sso_enabled", &self.sso_enabled);
-        formatter.field(
-            "desired_number_of_domain_controllers",
-            &self.desired_number_of_domain_controllers,
-        );
-        formatter.field(
-            "owner_directory_description",
-            &self.owner_directory_description,
-        );
+        formatter.field("desired_number_of_domain_controllers", &self.desired_number_of_domain_controllers);
+        formatter.field("owner_directory_description", &self.owner_directory_description);
         formatter.field("regions_info", &self.regions_info);
         formatter.field("os_version", &self.os_version);
         formatter.finish()
@@ -6290,7 +5813,7 @@ impl std::fmt::Debug for DirectoryDescription {
 }
 /// See [`DirectoryDescription`](crate::model::DirectoryDescription).
 pub mod directory_description {
-
+    
     /// A builder for [`DirectoryDescription`](crate::model::DirectoryDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6311,15 +5834,13 @@ pub mod directory_description {
         pub(crate) stage_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::DirectoryType>,
         pub(crate) vpc_settings: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
-        pub(crate) connect_settings:
-            std::option::Option<crate::model::DirectoryConnectSettingsDescription>,
+        pub(crate) connect_settings: std::option::Option<crate::model::DirectoryConnectSettingsDescription>,
         pub(crate) radius_settings: std::option::Option<crate::model::RadiusSettings>,
         pub(crate) radius_status: std::option::Option<crate::model::RadiusStatus>,
         pub(crate) stage_reason: std::option::Option<std::string::String>,
         pub(crate) sso_enabled: std::option::Option<bool>,
         pub(crate) desired_number_of_domain_controllers: std::option::Option<i32>,
-        pub(crate) owner_directory_description:
-            std::option::Option<crate::model::OwnerDirectoryDescription>,
+        pub(crate) owner_directory_description: std::option::Option<crate::model::OwnerDirectoryDescription>,
         pub(crate) regions_info: std::option::Option<crate::model::RegionsInfo>,
         pub(crate) os_version: std::option::Option<crate::model::OsVersion>,
     }
@@ -6331,8 +5852,7 @@ pub mod directory_description {
         }
         /// <p>The directory identifier.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>The fully qualified name of the directory.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6341,8 +5861,7 @@ pub mod directory_description {
         }
         /// <p>The fully qualified name of the directory.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The short name of the directory.</p>
         pub fn short_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6351,8 +5870,7 @@ pub mod directory_description {
         }
         /// <p>The short name of the directory.</p>
         pub fn set_short_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.short_name = input;
-            self
+            self.short_name = input; self
         }
         /// <p>The directory size.</p>
         pub fn size(mut self, input: crate::model::DirectorySize) -> Self {
@@ -6361,8 +5879,7 @@ pub mod directory_description {
         }
         /// <p>The directory size.</p>
         pub fn set_size(mut self, input: std::option::Option<crate::model::DirectorySize>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p>The edition associated with this directory.</p>
         pub fn edition(mut self, input: crate::model::DirectoryEdition) -> Self {
@@ -6370,12 +5887,8 @@ pub mod directory_description {
             self
         }
         /// <p>The edition associated with this directory.</p>
-        pub fn set_edition(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryEdition>,
-        ) -> Self {
-            self.edition = input;
-            self
+        pub fn set_edition(mut self, input: std::option::Option<crate::model::DirectoryEdition>) -> Self {
+            self.edition = input; self
         }
         /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6384,8 +5897,7 @@ pub mod directory_description {
         }
         /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The access URL for the directory, such as <code>http://
         /// <alias>
@@ -6402,8 +5914,7 @@ pub mod directory_description {
         /// </alias></code>. If no alias has been created for the directory, <code>
         /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
         pub fn set_access_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_url = input;
-            self
+            self.access_url = input; self
         }
         /// <p>The description for the directory.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6412,8 +5923,7 @@ pub mod directory_description {
         }
         /// <p>The description for the directory.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `dns_ip_addrs`.
         ///
@@ -6422,17 +5932,13 @@ pub mod directory_description {
         /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
         pub fn dns_ip_addrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ip_addrs.unwrap_or_default();
-            v.push(input.into());
-            self.dns_ip_addrs = Some(v);
-            self
+                            v.push(input.into());
+                            self.dns_ip_addrs = Some(v);
+                            self
         }
         /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
-        pub fn set_dns_ip_addrs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.dns_ip_addrs = input;
-            self
+        pub fn set_dns_ip_addrs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.dns_ip_addrs = input; self
         }
         /// <p>The current stage of the directory.</p>
         pub fn stage(mut self, input: crate::model::DirectoryStage) -> Self {
@@ -6440,12 +5946,8 @@ pub mod directory_description {
             self
         }
         /// <p>The current stage of the directory.</p>
-        pub fn set_stage(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryStage>,
-        ) -> Self {
-            self.stage = input;
-            self
+        pub fn set_stage(mut self, input: std::option::Option<crate::model::DirectoryStage>) -> Self {
+            self.stage = input; self
         }
         /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
         pub fn share_status(mut self, input: crate::model::ShareStatus) -> Self {
@@ -6453,12 +5955,8 @@ pub mod directory_description {
             self
         }
         /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
-        pub fn set_share_status(
-            mut self,
-            input: std::option::Option<crate::model::ShareStatus>,
-        ) -> Self {
-            self.share_status = input;
-            self
+        pub fn set_share_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
+            self.share_status = input; self
         }
         /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
         pub fn share_method(mut self, input: crate::model::ShareMethod) -> Self {
@@ -6466,12 +5964,8 @@ pub mod directory_description {
             self
         }
         /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
-        pub fn set_share_method(
-            mut self,
-            input: std::option::Option<crate::model::ShareMethod>,
-        ) -> Self {
-            self.share_method = input;
-            self
+        pub fn set_share_method(mut self, input: std::option::Option<crate::model::ShareMethod>) -> Self {
+            self.share_method = input; self
         }
         /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn share_notes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6480,8 +5974,7 @@ pub mod directory_description {
         }
         /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn set_share_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.share_notes = input;
-            self
+            self.share_notes = input; self
         }
         /// <p>Specifies when the directory was created.</p>
         pub fn launch_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6489,12 +5982,8 @@ pub mod directory_description {
             self
         }
         /// <p>Specifies when the directory was created.</p>
-        pub fn set_launch_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.launch_time = input;
-            self
+        pub fn set_launch_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.launch_time = input; self
         }
         /// <p>The date and time that the stage was last updated.</p>
         pub fn stage_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6502,12 +5991,8 @@ pub mod directory_description {
             self
         }
         /// <p>The date and time that the stage was last updated.</p>
-        pub fn set_stage_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stage_last_updated_date_time = input;
-            self
+        pub fn set_stage_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stage_last_updated_date_time = input; self
         }
         /// <p>The directory size.</p>
         pub fn r#type(mut self, input: crate::model::DirectoryType) -> Self {
@@ -6516,40 +6001,25 @@ pub mod directory_description {
         }
         /// <p>The directory size.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::DirectoryType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
-        pub fn vpc_settings(
-            mut self,
-            input: crate::model::DirectoryVpcSettingsDescription,
-        ) -> Self {
+        pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettingsDescription) -> Self {
             self.vpc_settings = Some(input);
             self
         }
         /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
-        pub fn set_vpc_settings(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
-        ) -> Self {
-            self.vpc_settings = input;
-            self
+        pub fn set_vpc_settings(mut self, input: std::option::Option<crate::model::DirectoryVpcSettingsDescription>) -> Self {
+            self.vpc_settings = input; self
         }
         /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
-        pub fn connect_settings(
-            mut self,
-            input: crate::model::DirectoryConnectSettingsDescription,
-        ) -> Self {
+        pub fn connect_settings(mut self, input: crate::model::DirectoryConnectSettingsDescription) -> Self {
             self.connect_settings = Some(input);
             self
         }
         /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
-        pub fn set_connect_settings(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryConnectSettingsDescription>,
-        ) -> Self {
-            self.connect_settings = input;
-            self
+        pub fn set_connect_settings(mut self, input: std::option::Option<crate::model::DirectoryConnectSettingsDescription>) -> Self {
+            self.connect_settings = input; self
         }
         /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
         pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
@@ -6557,12 +6027,8 @@ pub mod directory_description {
             self
         }
         /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
-        pub fn set_radius_settings(
-            mut self,
-            input: std::option::Option<crate::model::RadiusSettings>,
-        ) -> Self {
-            self.radius_settings = input;
-            self
+        pub fn set_radius_settings(mut self, input: std::option::Option<crate::model::RadiusSettings>) -> Self {
+            self.radius_settings = input; self
         }
         /// <p>The status of the RADIUS MFA server connection.</p>
         pub fn radius_status(mut self, input: crate::model::RadiusStatus) -> Self {
@@ -6570,12 +6036,8 @@ pub mod directory_description {
             self
         }
         /// <p>The status of the RADIUS MFA server connection.</p>
-        pub fn set_radius_status(
-            mut self,
-            input: std::option::Option<crate::model::RadiusStatus>,
-        ) -> Self {
-            self.radius_status = input;
-            self
+        pub fn set_radius_status(mut self, input: std::option::Option<crate::model::RadiusStatus>) -> Self {
+            self.radius_status = input; self
         }
         /// <p>Additional information about the directory stage.</p>
         pub fn stage_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6584,8 +6046,7 @@ pub mod directory_description {
         }
         /// <p>Additional information about the directory stage.</p>
         pub fn set_stage_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_reason = input;
-            self
+            self.stage_reason = input; self
         }
         /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
         pub fn sso_enabled(mut self, input: bool) -> Self {
@@ -6594,8 +6055,7 @@ pub mod directory_description {
         }
         /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
         pub fn set_sso_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sso_enabled = input;
-            self
+            self.sso_enabled = input; self
         }
         /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
         pub fn desired_number_of_domain_controllers(mut self, input: i32) -> Self {
@@ -6603,28 +6063,17 @@ pub mod directory_description {
             self
         }
         /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
-        pub fn set_desired_number_of_domain_controllers(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.desired_number_of_domain_controllers = input;
-            self
+        pub fn set_desired_number_of_domain_controllers(mut self, input: std::option::Option<i32>) -> Self {
+            self.desired_number_of_domain_controllers = input; self
         }
         /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
-        pub fn owner_directory_description(
-            mut self,
-            input: crate::model::OwnerDirectoryDescription,
-        ) -> Self {
+        pub fn owner_directory_description(mut self, input: crate::model::OwnerDirectoryDescription) -> Self {
             self.owner_directory_description = Some(input);
             self
         }
         /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
-        pub fn set_owner_directory_description(
-            mut self,
-            input: std::option::Option<crate::model::OwnerDirectoryDescription>,
-        ) -> Self {
-            self.owner_directory_description = input;
-            self
+        pub fn set_owner_directory_description(mut self, input: std::option::Option<crate::model::OwnerDirectoryDescription>) -> Self {
+            self.owner_directory_description = input; self
         }
         /// <p>Lists the Regions where the directory has replicated.</p>
         pub fn regions_info(mut self, input: crate::model::RegionsInfo) -> Self {
@@ -6632,12 +6081,8 @@ pub mod directory_description {
             self
         }
         /// <p>Lists the Regions where the directory has replicated.</p>
-        pub fn set_regions_info(
-            mut self,
-            input: std::option::Option<crate::model::RegionsInfo>,
-        ) -> Self {
-            self.regions_info = input;
-            self
+        pub fn set_regions_info(mut self, input: std::option::Option<crate::model::RegionsInfo>) -> Self {
+            self.regions_info = input; self
         }
         /// <p>The operating system (OS) version of the directory.</p>
         pub fn os_version(mut self, input: crate::model::OsVersion) -> Self {
@@ -6645,44 +6090,66 @@ pub mod directory_description {
             self
         }
         /// <p>The operating system (OS) version of the directory.</p>
-        pub fn set_os_version(
-            mut self,
-            input: std::option::Option<crate::model::OsVersion>,
-        ) -> Self {
-            self.os_version = input;
-            self
+        pub fn set_os_version(mut self, input: std::option::Option<crate::model::OsVersion>) -> Self {
+            self.os_version = input; self
         }
         /// Consumes the builder and constructs a [`DirectoryDescription`](crate::model::DirectoryDescription).
         pub fn build(self) -> crate::model::DirectoryDescription {
             crate::model::DirectoryDescription {
-                directory_id: self.directory_id,
-                name: self.name,
-                short_name: self.short_name,
-                size: self.size,
-                edition: self.edition,
-                alias: self.alias,
-                access_url: self.access_url,
-                description: self.description,
-                dns_ip_addrs: self.dns_ip_addrs,
-                stage: self.stage,
-                share_status: self.share_status,
-                share_method: self.share_method,
-                share_notes: self.share_notes,
-                launch_time: self.launch_time,
-                stage_last_updated_date_time: self.stage_last_updated_date_time,
-                r#type: self.r#type,
-                vpc_settings: self.vpc_settings,
-                connect_settings: self.connect_settings,
-                radius_settings: self.radius_settings,
-                radius_status: self.radius_status,
-                stage_reason: self.stage_reason,
-                sso_enabled: self.sso_enabled.unwrap_or_default(),
-                desired_number_of_domain_controllers: self
-                    .desired_number_of_domain_controllers
-                    .unwrap_or_default(),
-                owner_directory_description: self.owner_directory_description,
-                regions_info: self.regions_info,
-                os_version: self.os_version,
+                directory_id: self.directory_id
+                ,
+                name: self.name
+                ,
+                short_name: self.short_name
+                ,
+                size: self.size
+                ,
+                edition: self.edition
+                ,
+                alias: self.alias
+                ,
+                access_url: self.access_url
+                ,
+                description: self.description
+                ,
+                dns_ip_addrs: self.dns_ip_addrs
+                ,
+                stage: self.stage
+                ,
+                share_status: self.share_status
+                ,
+                share_method: self.share_method
+                ,
+                share_notes: self.share_notes
+                ,
+                launch_time: self.launch_time
+                ,
+                stage_last_updated_date_time: self.stage_last_updated_date_time
+                ,
+                r#type: self.r#type
+                ,
+                vpc_settings: self.vpc_settings
+                ,
+                connect_settings: self.connect_settings
+                ,
+                radius_settings: self.radius_settings
+                ,
+                radius_status: self.radius_status
+                ,
+                stage_reason: self.stage_reason
+                ,
+                sso_enabled: self.sso_enabled
+                    .unwrap_or_default()
+                ,
+                desired_number_of_domain_controllers: self.desired_number_of_domain_controllers
+                    .unwrap_or_default()
+                ,
+                owner_directory_description: self.owner_directory_description
+                ,
+                regions_info: self.regions_info
+                ,
+                os_version: self.os_version
+                ,
             }
         }
     }
@@ -6703,10 +6170,7 @@ pub mod directory_description {
             formatter.field("share_method", &self.share_method);
             formatter.field("share_notes", &"*** Sensitive Data Redacted ***");
             formatter.field("launch_time", &self.launch_time);
-            formatter.field(
-                "stage_last_updated_date_time",
-                &self.stage_last_updated_date_time,
-            );
+            formatter.field("stage_last_updated_date_time", &self.stage_last_updated_date_time);
             formatter.field("r#type", &self.r#type);
             formatter.field("vpc_settings", &self.vpc_settings);
             formatter.field("connect_settings", &self.connect_settings);
@@ -6714,19 +6178,15 @@ pub mod directory_description {
             formatter.field("radius_status", &self.radius_status);
             formatter.field("stage_reason", &self.stage_reason);
             formatter.field("sso_enabled", &self.sso_enabled);
-            formatter.field(
-                "desired_number_of_domain_controllers",
-                &self.desired_number_of_domain_controllers,
-            );
-            formatter.field(
-                "owner_directory_description",
-                &self.owner_directory_description,
-            );
+            formatter.field("desired_number_of_domain_controllers", &self.desired_number_of_domain_controllers);
+            formatter.field("owner_directory_description", &self.owner_directory_description);
             formatter.field("regions_info", &self.regions_info);
             formatter.field("os_version", &self.os_version);
             formatter.finish()
         }
     }
+    
+    
 }
 impl DirectoryDescription {
     /// Creates a new builder-style object to manufacture [`DirectoryDescription`](crate::model::DirectoryDescription).
@@ -6738,7 +6198,7 @@ impl DirectoryDescription {
 /// <p>Provides information about the Regions that are configured for multi-Region replication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionsInfo {
+pub struct RegionsInfo  {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
     #[doc(hidden)]
     pub primary_region: std::option::Option<std::string::String>,
@@ -6748,17 +6208,17 @@ pub struct RegionsInfo {
 }
 impl RegionsInfo {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
-    pub fn primary_region(&self) -> std::option::Option<&str> {
+    pub fn primary_region(&self) -> std::option::Option<& str> {
         self.primary_region.as_deref()
     }
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    pub fn additional_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_regions(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_regions.as_deref()
     }
 }
 /// See [`RegionsInfo`](crate::model::RegionsInfo).
 pub mod regions_info {
-
+    
     /// A builder for [`RegionsInfo`](crate::model::RegionsInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6772,12 +6232,8 @@ pub mod regions_info {
             self
         }
         /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
-        pub fn set_primary_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_region = input;
-            self
+        pub fn set_primary_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_region = input; self
         }
         /// Appends an item to `additional_regions`.
         ///
@@ -6786,26 +6242,26 @@ pub mod regions_info {
         /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
         pub fn additional_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.additional_regions.unwrap_or_default();
-            v.push(input.into());
-            self.additional_regions = Some(v);
-            self
+                            v.push(input.into());
+                            self.additional_regions = Some(v);
+                            self
         }
         /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-        pub fn set_additional_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.additional_regions = input;
-            self
+        pub fn set_additional_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.additional_regions = input; self
         }
         /// Consumes the builder and constructs a [`RegionsInfo`](crate::model::RegionsInfo).
         pub fn build(self) -> crate::model::RegionsInfo {
             crate::model::RegionsInfo {
-                primary_region: self.primary_region,
-                additional_regions: self.additional_regions,
+                primary_region: self.primary_region
+                ,
+                additional_regions: self.additional_regions
+                ,
             }
         }
     }
+    
+    
 }
 impl RegionsInfo {
     /// Creates a new builder-style object to manufacture [`RegionsInfo`](crate::model::RegionsInfo).
@@ -6817,7 +6273,7 @@ impl RegionsInfo {
 /// <p>Describes the directory owner account details that have been shared to the directory consumer account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OwnerDirectoryDescription {
+pub struct OwnerDirectoryDescription  {
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -6839,35 +6295,33 @@ pub struct OwnerDirectoryDescription {
 }
 impl OwnerDirectoryDescription {
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>Identifier of the directory owner account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>IP address of the directory’s domain controllers.</p>
-    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dns_ip_addrs(&self) -> std::option::Option<& [std::string::String]> {
         self.dns_ip_addrs.as_deref()
     }
     /// <p>Information about the VPC settings for the directory.</p>
-    pub fn vpc_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::DirectoryVpcSettingsDescription> {
+    pub fn vpc_settings(&self) -> std::option::Option<& crate::model::DirectoryVpcSettingsDescription> {
         self.vpc_settings.as_ref()
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
+    pub fn radius_settings(&self) -> std::option::Option<& crate::model::RadiusSettings> {
         self.radius_settings.as_ref()
     }
     /// <p>Information about the status of the RADIUS server.</p>
-    pub fn radius_status(&self) -> std::option::Option<&crate::model::RadiusStatus> {
+    pub fn radius_status(&self) -> std::option::Option<& crate::model::RadiusStatus> {
         self.radius_status.as_ref()
     }
 }
 /// See [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
 pub mod owner_directory_description {
-
+    
     /// A builder for [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6886,8 +6340,7 @@ pub mod owner_directory_description {
         }
         /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory_id = input;
-            self
+            self.directory_id = input; self
         }
         /// <p>Identifier of the directory owner account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6896,8 +6349,7 @@ pub mod owner_directory_description {
         }
         /// <p>Identifier of the directory owner account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Appends an item to `dns_ip_addrs`.
         ///
@@ -6906,33 +6358,22 @@ pub mod owner_directory_description {
         /// <p>IP address of the directory’s domain controllers.</p>
         pub fn dns_ip_addrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ip_addrs.unwrap_or_default();
-            v.push(input.into());
-            self.dns_ip_addrs = Some(v);
-            self
+                            v.push(input.into());
+                            self.dns_ip_addrs = Some(v);
+                            self
         }
         /// <p>IP address of the directory’s domain controllers.</p>
-        pub fn set_dns_ip_addrs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.dns_ip_addrs = input;
-            self
+        pub fn set_dns_ip_addrs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.dns_ip_addrs = input; self
         }
         /// <p>Information about the VPC settings for the directory.</p>
-        pub fn vpc_settings(
-            mut self,
-            input: crate::model::DirectoryVpcSettingsDescription,
-        ) -> Self {
+        pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettingsDescription) -> Self {
             self.vpc_settings = Some(input);
             self
         }
         /// <p>Information about the VPC settings for the directory.</p>
-        pub fn set_vpc_settings(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
-        ) -> Self {
-            self.vpc_settings = input;
-            self
+        pub fn set_vpc_settings(mut self, input: std::option::Option<crate::model::DirectoryVpcSettingsDescription>) -> Self {
+            self.vpc_settings = input; self
         }
         /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
         pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
@@ -6940,12 +6381,8 @@ pub mod owner_directory_description {
             self
         }
         /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-        pub fn set_radius_settings(
-            mut self,
-            input: std::option::Option<crate::model::RadiusSettings>,
-        ) -> Self {
-            self.radius_settings = input;
-            self
+        pub fn set_radius_settings(mut self, input: std::option::Option<crate::model::RadiusSettings>) -> Self {
+            self.radius_settings = input; self
         }
         /// <p>Information about the status of the RADIUS server.</p>
         pub fn radius_status(mut self, input: crate::model::RadiusStatus) -> Self {
@@ -6953,25 +6390,29 @@ pub mod owner_directory_description {
             self
         }
         /// <p>Information about the status of the RADIUS server.</p>
-        pub fn set_radius_status(
-            mut self,
-            input: std::option::Option<crate::model::RadiusStatus>,
-        ) -> Self {
-            self.radius_status = input;
-            self
+        pub fn set_radius_status(mut self, input: std::option::Option<crate::model::RadiusStatus>) -> Self {
+            self.radius_status = input; self
         }
         /// Consumes the builder and constructs a [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
         pub fn build(self) -> crate::model::OwnerDirectoryDescription {
             crate::model::OwnerDirectoryDescription {
-                directory_id: self.directory_id,
-                account_id: self.account_id,
-                dns_ip_addrs: self.dns_ip_addrs,
-                vpc_settings: self.vpc_settings,
-                radius_settings: self.radius_settings,
-                radius_status: self.radius_status,
+                directory_id: self.directory_id
+                ,
+                account_id: self.account_id
+                ,
+                dns_ip_addrs: self.dns_ip_addrs
+                ,
+                vpc_settings: self.vpc_settings
+                ,
+                radius_settings: self.radius_settings
+                ,
+                radius_status: self.radius_status
+                ,
             }
         }
     }
+    
+    
 }
 impl OwnerDirectoryDescription {
     /// Creates a new builder-style object to manufacture [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
@@ -6986,9 +6427,9 @@ impl OwnerDirectoryDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let radiusstatus = unimplemented!();
 /// match radiusstatus {
@@ -7011,22 +6452,14 @@ impl OwnerDirectoryDescription {
 /// Specifically, when `radiusstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RadiusStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RadiusStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -7035,7 +6468,7 @@ pub enum RadiusStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RadiusStatus {
     fn from(s: &str) -> Self {
@@ -7043,17 +6476,17 @@ impl std::convert::From<&str> for RadiusStatus {
             "Completed" => RadiusStatus::Completed,
             "Creating" => RadiusStatus::Creating,
             "Failed" => RadiusStatus::Failed,
-            other => RadiusStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RadiusStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RadiusStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RadiusStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RadiusStatus::from(s))
+                }
+            }
 impl RadiusStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7061,12 +6494,14 @@ impl RadiusStatus {
             RadiusStatus::Completed => "Completed",
             RadiusStatus::Creating => "Creating",
             RadiusStatus::Failed => "Failed",
-            RadiusStatus::Unknown(value) => value.as_str(),
+            RadiusStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Creating", "Failed"]
+        &[
+            "Completed", "Creating", "Failed"
+        ]
     }
 }
 impl AsRef<str> for RadiusStatus {
@@ -7078,7 +6513,7 @@ impl AsRef<str> for RadiusStatus {
 /// <p>Contains information about the directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectoryVpcSettingsDescription {
+pub struct DirectoryVpcSettingsDescription  {
     /// <p>The identifier of the VPC that the directory is in.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -7094,25 +6529,25 @@ pub struct DirectoryVpcSettingsDescription {
 }
 impl DirectoryVpcSettingsDescription {
     /// <p>The identifier of the VPC that the directory is in.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The identifiers of the subnets for the directory servers.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The domain controller security group identifier for the directory.</p>
-    pub fn security_group_id(&self) -> std::option::Option<&str> {
+    pub fn security_group_id(&self) -> std::option::Option<& str> {
         self.security_group_id.as_deref()
     }
     /// <p>The list of Availability Zones that the directory is in.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
 /// See [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
 pub mod directory_vpc_settings_description {
-
+    
     /// A builder for [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7129,8 +6564,7 @@ pub mod directory_vpc_settings_description {
         }
         /// <p>The identifier of the VPC that the directory is in.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -7139,17 +6573,13 @@ pub mod directory_vpc_settings_description {
         /// <p>The identifiers of the subnets for the directory servers.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The identifiers of the subnets for the directory servers.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// <p>The domain controller security group identifier for the directory.</p>
         pub fn security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7157,12 +6587,8 @@ pub mod directory_vpc_settings_description {
             self
         }
         /// <p>The domain controller security group identifier for the directory.</p>
-        pub fn set_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.security_group_id = input;
-            self
+        pub fn set_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.security_group_id = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -7171,28 +6597,30 @@ pub mod directory_vpc_settings_description {
         /// <p>The list of Availability Zones that the directory is in.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>The list of Availability Zones that the directory is in.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Consumes the builder and constructs a [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
         pub fn build(self) -> crate::model::DirectoryVpcSettingsDescription {
             crate::model::DirectoryVpcSettingsDescription {
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                security_group_id: self.security_group_id,
-                availability_zones: self.availability_zones,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_id: self.security_group_id
+                ,
+                availability_zones: self.availability_zones
+                ,
             }
         }
     }
+    
+    
 }
 impl DirectoryVpcSettingsDescription {
     /// Creates a new builder-style object to manufacture [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
@@ -7204,7 +6632,7 @@ impl DirectoryVpcSettingsDescription {
 /// <p>Contains information about an AD Connector directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectoryConnectSettingsDescription {
+pub struct DirectoryConnectSettingsDescription  {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -7226,33 +6654,33 @@ pub struct DirectoryConnectSettingsDescription {
 }
 impl DirectoryConnectSettingsDescription {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The user name of the service account in your self-managed directory.</p>
-    pub fn customer_user_name(&self) -> std::option::Option<&str> {
+    pub fn customer_user_name(&self) -> std::option::Option<& str> {
         self.customer_user_name.as_deref()
     }
     /// <p>The security group identifier for the AD Connector directory.</p>
-    pub fn security_group_id(&self) -> std::option::Option<&str> {
+    pub fn security_group_id(&self) -> std::option::Option<& str> {
         self.security_group_id.as_deref()
     }
     /// <p>A list of the Availability Zones that the directory is in.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The IP addresses of the AD Connector servers.</p>
-    pub fn connect_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn connect_ips(&self) -> std::option::Option<& [std::string::String]> {
         self.connect_ips.as_deref()
     }
 }
 /// See [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
 pub mod directory_connect_settings_description {
-
+    
     /// A builder for [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7271,8 +6699,7 @@ pub mod directory_connect_settings_description {
         }
         /// <p>The identifier of the VPC that the AD Connector is in.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -7281,17 +6708,13 @@ pub mod directory_connect_settings_description {
         /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// <p>The user name of the service account in your self-managed directory.</p>
         pub fn customer_user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7299,12 +6722,8 @@ pub mod directory_connect_settings_description {
             self
         }
         /// <p>The user name of the service account in your self-managed directory.</p>
-        pub fn set_customer_user_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_user_name = input;
-            self
+        pub fn set_customer_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_user_name = input; self
         }
         /// <p>The security group identifier for the AD Connector directory.</p>
         pub fn security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7312,12 +6731,8 @@ pub mod directory_connect_settings_description {
             self
         }
         /// <p>The security group identifier for the AD Connector directory.</p>
-        pub fn set_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.security_group_id = input;
-            self
+        pub fn set_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.security_group_id = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -7326,17 +6741,13 @@ pub mod directory_connect_settings_description {
         /// <p>A list of the Availability Zones that the directory is in.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>A list of the Availability Zones that the directory is in.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Appends an item to `connect_ips`.
         ///
@@ -7345,30 +6756,34 @@ pub mod directory_connect_settings_description {
         /// <p>The IP addresses of the AD Connector servers.</p>
         pub fn connect_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.connect_ips.unwrap_or_default();
-            v.push(input.into());
-            self.connect_ips = Some(v);
-            self
+                            v.push(input.into());
+                            self.connect_ips = Some(v);
+                            self
         }
         /// <p>The IP addresses of the AD Connector servers.</p>
-        pub fn set_connect_ips(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.connect_ips = input;
-            self
+        pub fn set_connect_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.connect_ips = input; self
         }
         /// Consumes the builder and constructs a [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
         pub fn build(self) -> crate::model::DirectoryConnectSettingsDescription {
             crate::model::DirectoryConnectSettingsDescription {
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                customer_user_name: self.customer_user_name,
-                security_group_id: self.security_group_id,
-                availability_zones: self.availability_zones,
-                connect_ips: self.connect_ips,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                customer_user_name: self.customer_user_name
+                ,
+                security_group_id: self.security_group_id
+                ,
+                availability_zones: self.availability_zones
+                ,
+                connect_ips: self.connect_ips
+                ,
             }
         }
     }
+    
+    
 }
 impl DirectoryConnectSettingsDescription {
     /// Creates a new builder-style object to manufacture [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
@@ -7383,9 +6798,9 @@ impl DirectoryConnectSettingsDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let directorytype = unimplemented!();
 /// match directorytype {
@@ -7409,22 +6824,14 @@ impl DirectoryConnectSettingsDescription {
 /// Specifically, when `directorytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DirectoryType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DirectoryType {
     #[allow(missing_docs)] // documentation missing in model
     AdConnector,
@@ -7435,7 +6842,7 @@ pub enum DirectoryType {
     #[allow(missing_docs)] // documentation missing in model
     SimpleAd,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectoryType {
     fn from(s: &str) -> Self {
@@ -7444,17 +6851,17 @@ impl std::convert::From<&str> for DirectoryType {
             "MicrosoftAD" => DirectoryType::MicrosoftAd,
             "SharedMicrosoftAD" => DirectoryType::SharedMicrosoftAd,
             "SimpleAD" => DirectoryType::SimpleAd,
-            other => DirectoryType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DirectoryType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DirectoryType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectoryType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DirectoryType::from(s))
+                }
+            }
 impl DirectoryType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7463,16 +6870,13 @@ impl DirectoryType {
             DirectoryType::MicrosoftAd => "MicrosoftAD",
             DirectoryType::SharedMicrosoftAd => "SharedMicrosoftAD",
             DirectoryType::SimpleAd => "SimpleAD",
-            DirectoryType::Unknown(value) => value.as_str(),
+            DirectoryType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ADConnector",
-            "MicrosoftAD",
-            "SharedMicrosoftAD",
-            "SimpleAD",
+            "ADConnector", "MicrosoftAD", "SharedMicrosoftAD", "SimpleAD"
         ]
     }
 }
@@ -7488,9 +6892,9 @@ impl AsRef<str> for DirectoryType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let directoryedition = unimplemented!();
 /// match directoryedition {
@@ -7512,58 +6916,52 @@ impl AsRef<str> for DirectoryType {
 /// Specifically, when `directoryedition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DirectoryEdition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DirectoryEdition {
     #[allow(missing_docs)] // documentation missing in model
     Enterprise,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectoryEdition {
     fn from(s: &str) -> Self {
         match s {
             "Enterprise" => DirectoryEdition::Enterprise,
             "Standard" => DirectoryEdition::Standard,
-            other => DirectoryEdition::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DirectoryEdition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DirectoryEdition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectoryEdition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DirectoryEdition::from(s))
+                }
+            }
 impl DirectoryEdition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DirectoryEdition::Enterprise => "Enterprise",
             DirectoryEdition::Standard => "Standard",
-            DirectoryEdition::Unknown(value) => value.as_str(),
+            DirectoryEdition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Enterprise", "Standard"]
+        &[
+            "Enterprise", "Standard"
+        ]
     }
 }
 impl AsRef<str> for DirectoryEdition {
@@ -7578,9 +6976,9 @@ impl AsRef<str> for DirectoryEdition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let directorysize = unimplemented!();
 /// match directorysize {
@@ -7602,58 +7000,52 @@ impl AsRef<str> for DirectoryEdition {
 /// Specifically, when `directorysize` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DirectorySize::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DirectorySize {
     #[allow(missing_docs)] // documentation missing in model
     Large,
     #[allow(missing_docs)] // documentation missing in model
     Small,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectorySize {
     fn from(s: &str) -> Self {
         match s {
             "Large" => DirectorySize::Large,
             "Small" => DirectorySize::Small,
-            other => DirectorySize::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DirectorySize::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DirectorySize {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectorySize::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DirectorySize::from(s))
+                }
+            }
 impl DirectorySize {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DirectorySize::Large => "Large",
             DirectorySize::Small => "Small",
-            DirectorySize::Unknown(value) => value.as_str(),
+            DirectorySize::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Large", "Small"]
+        &[
+            "Large", "Small"
+        ]
     }
 }
 impl AsRef<str> for DirectorySize {
@@ -7665,7 +7057,7 @@ impl AsRef<str> for DirectorySize {
 /// <p>Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionalForwarder {
+pub struct ConditionalForwarder  {
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
     #[doc(hidden)]
     pub remote_domain_name: std::option::Option<std::string::String>,
@@ -7678,21 +7070,21 @@ pub struct ConditionalForwarder {
 }
 impl ConditionalForwarder {
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
-    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+    pub fn remote_domain_name(&self) -> std::option::Option<& str> {
         self.remote_domain_name.as_deref()
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
-    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dns_ip_addrs(&self) -> std::option::Option<& [std::string::String]> {
         self.dns_ip_addrs.as_deref()
     }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
-    pub fn replication_scope(&self) -> std::option::Option<&crate::model::ReplicationScope> {
+    pub fn replication_scope(&self) -> std::option::Option<& crate::model::ReplicationScope> {
         self.replication_scope.as_ref()
     }
 }
 /// See [`ConditionalForwarder`](crate::model::ConditionalForwarder).
 pub mod conditional_forwarder {
-
+    
     /// A builder for [`ConditionalForwarder`](crate::model::ConditionalForwarder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7707,12 +7099,8 @@ pub mod conditional_forwarder {
             self
         }
         /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
-        pub fn set_remote_domain_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.remote_domain_name = input;
-            self
+        pub fn set_remote_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.remote_domain_name = input; self
         }
         /// Appends an item to `dns_ip_addrs`.
         ///
@@ -7721,17 +7109,13 @@ pub mod conditional_forwarder {
         /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
         pub fn dns_ip_addrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ip_addrs.unwrap_or_default();
-            v.push(input.into());
-            self.dns_ip_addrs = Some(v);
-            self
+                            v.push(input.into());
+                            self.dns_ip_addrs = Some(v);
+                            self
         }
         /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
-        pub fn set_dns_ip_addrs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.dns_ip_addrs = input;
-            self
+        pub fn set_dns_ip_addrs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.dns_ip_addrs = input; self
         }
         /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
         pub fn replication_scope(mut self, input: crate::model::ReplicationScope) -> Self {
@@ -7739,22 +7123,23 @@ pub mod conditional_forwarder {
             self
         }
         /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
-        pub fn set_replication_scope(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationScope>,
-        ) -> Self {
-            self.replication_scope = input;
-            self
+        pub fn set_replication_scope(mut self, input: std::option::Option<crate::model::ReplicationScope>) -> Self {
+            self.replication_scope = input; self
         }
         /// Consumes the builder and constructs a [`ConditionalForwarder`](crate::model::ConditionalForwarder).
         pub fn build(self) -> crate::model::ConditionalForwarder {
             crate::model::ConditionalForwarder {
-                remote_domain_name: self.remote_domain_name,
-                dns_ip_addrs: self.dns_ip_addrs,
-                replication_scope: self.replication_scope,
+                remote_domain_name: self.remote_domain_name
+                ,
+                dns_ip_addrs: self.dns_ip_addrs
+                ,
+                replication_scope: self.replication_scope
+                ,
             }
         }
     }
+    
+    
 }
 impl ConditionalForwarder {
     /// Creates a new builder-style object to manufacture [`ConditionalForwarder`](crate::model::ConditionalForwarder).
@@ -7769,9 +7154,9 @@ impl ConditionalForwarder {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationscope = unimplemented!();
 /// match replicationscope {
@@ -7792,54 +7177,48 @@ impl ConditionalForwarder {
 /// Specifically, when `replicationscope` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationScope::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationScope {
     #[allow(missing_docs)] // documentation missing in model
     Domain,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationScope {
     fn from(s: &str) -> Self {
         match s {
             "Domain" => ReplicationScope::Domain,
-            other => ReplicationScope::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReplicationScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationScope {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationScope::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationScope::from(s))
+                }
+            }
 impl ReplicationScope {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationScope::Domain => "Domain",
-            ReplicationScope::Unknown(value) => value.as_str(),
+            ReplicationScope::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Domain"]
+        &[
+            "Domain"
+        ]
     }
 }
 impl AsRef<str> for ReplicationScope {
@@ -7851,7 +7230,7 @@ impl AsRef<str> for ReplicationScope {
 /// <p>Contains information about a client authentication method for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientAuthenticationSettingInfo {
+pub struct ClientAuthenticationSettingInfo  {
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ClientAuthenticationType>,
@@ -7864,21 +7243,21 @@ pub struct ClientAuthenticationSettingInfo {
 }
 impl ClientAuthenticationSettingInfo {
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
     /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ClientAuthenticationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ClientAuthenticationStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
 pub mod client_authentication_setting_info {
-
+    
     /// A builder for [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7893,12 +7272,8 @@ pub mod client_authentication_setting_info {
             self
         }
         /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ClientAuthenticationType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ClientAuthenticationType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
         pub fn status(mut self, input: crate::model::ClientAuthenticationStatus) -> Self {
@@ -7906,12 +7281,8 @@ pub mod client_authentication_setting_info {
             self
         }
         /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ClientAuthenticationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ClientAuthenticationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time when the status of the client authentication type was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7919,22 +7290,23 @@ pub mod client_authentication_setting_info {
             self
         }
         /// <p>The date and time when the status of the client authentication type was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
         pub fn build(self) -> crate::model::ClientAuthenticationSettingInfo {
             crate::model::ClientAuthenticationSettingInfo {
-                r#type: self.r#type,
-                status: self.status,
-                last_updated_date_time: self.last_updated_date_time,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ClientAuthenticationSettingInfo {
     /// Creates a new builder-style object to manufacture [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
@@ -7949,9 +7321,9 @@ impl ClientAuthenticationSettingInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clientauthenticationstatus = unimplemented!();
 /// match clientauthenticationstatus {
@@ -7973,60 +7345,52 @@ impl ClientAuthenticationSettingInfo {
 /// Specifically, when `clientauthenticationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClientAuthenticationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClientAuthenticationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClientAuthenticationStatus {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => ClientAuthenticationStatus::Disabled,
             "Enabled" => ClientAuthenticationStatus::Enabled,
-            other => ClientAuthenticationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ClientAuthenticationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClientAuthenticationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClientAuthenticationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClientAuthenticationStatus::from(s))
+                }
+            }
 impl ClientAuthenticationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClientAuthenticationStatus::Disabled => "Disabled",
             ClientAuthenticationStatus::Enabled => "Enabled",
-            ClientAuthenticationStatus::Unknown(value) => value.as_str(),
+            ClientAuthenticationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for ClientAuthenticationStatus {
@@ -8038,7 +7402,7 @@ impl AsRef<str> for ClientAuthenticationStatus {
 /// <p>Information about the certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Certificate {
+pub struct Certificate  {
     /// <p>The identifier of the certificate.</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
@@ -8066,43 +7430,41 @@ pub struct Certificate {
 }
 impl Certificate {
     /// <p>The identifier of the certificate.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>The state of the certificate.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::CertificateState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::CertificateState> {
         self.state.as_ref()
     }
     /// <p>Describes a state change for the certificate.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The common name for the certificate.</p>
-    pub fn common_name(&self) -> std::option::Option<&str> {
+    pub fn common_name(&self) -> std::option::Option<& str> {
         self.common_name.as_deref()
     }
     /// <p>The date and time that the certificate was registered.</p>
-    pub fn registered_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn registered_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.registered_date_time.as_ref()
     }
     /// <p>The date and time when the certificate will expire.</p>
-    pub fn expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiry_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiry_date_time.as_ref()
     }
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::CertificateType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn client_cert_auth_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::ClientCertAuthSettings> {
+    pub fn client_cert_auth_settings(&self) -> std::option::Option<& crate::model::ClientCertAuthSettings> {
         self.client_cert_auth_settings.as_ref()
     }
 }
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
-
+    
     /// A builder for [`Certificate`](crate::model::Certificate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8113,8 +7475,7 @@ pub mod certificate {
         pub(crate) registered_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) expiry_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::CertificateType>,
-        pub(crate) client_cert_auth_settings:
-            std::option::Option<crate::model::ClientCertAuthSettings>,
+        pub(crate) client_cert_auth_settings: std::option::Option<crate::model::ClientCertAuthSettings>,
     }
     impl Builder {
         /// <p>The identifier of the certificate.</p>
@@ -8123,12 +7484,8 @@ pub mod certificate {
             self
         }
         /// <p>The identifier of the certificate.</p>
-        pub fn set_certificate_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_id = input;
-            self
+        pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_id = input; self
         }
         /// <p>The state of the certificate.</p>
         pub fn state(mut self, input: crate::model::CertificateState) -> Self {
@@ -8136,12 +7493,8 @@ pub mod certificate {
             self
         }
         /// <p>The state of the certificate.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::CertificateState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::CertificateState>) -> Self {
+            self.state = input; self
         }
         /// <p>Describes a state change for the certificate.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8150,8 +7503,7 @@ pub mod certificate {
         }
         /// <p>Describes a state change for the certificate.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The common name for the certificate.</p>
         pub fn common_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8160,8 +7512,7 @@ pub mod certificate {
         }
         /// <p>The common name for the certificate.</p>
         pub fn set_common_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.common_name = input;
-            self
+            self.common_name = input; self
         }
         /// <p>The date and time that the certificate was registered.</p>
         pub fn registered_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8169,12 +7520,8 @@ pub mod certificate {
             self
         }
         /// <p>The date and time that the certificate was registered.</p>
-        pub fn set_registered_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.registered_date_time = input;
-            self
+        pub fn set_registered_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.registered_date_time = input; self
         }
         /// <p>The date and time when the certificate will expire.</p>
         pub fn expiry_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8182,12 +7529,8 @@ pub mod certificate {
             self
         }
         /// <p>The date and time when the certificate will expire.</p>
-        pub fn set_expiry_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiry_date_time = input;
-            self
+        pub fn set_expiry_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiry_date_time = input; self
         }
         /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
         pub fn r#type(mut self, input: crate::model::CertificateType) -> Self {
@@ -8195,43 +7538,42 @@ pub mod certificate {
             self
         }
         /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::CertificateType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CertificateType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-        pub fn client_cert_auth_settings(
-            mut self,
-            input: crate::model::ClientCertAuthSettings,
-        ) -> Self {
+        pub fn client_cert_auth_settings(mut self, input: crate::model::ClientCertAuthSettings) -> Self {
             self.client_cert_auth_settings = Some(input);
             self
         }
         /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-        pub fn set_client_cert_auth_settings(
-            mut self,
-            input: std::option::Option<crate::model::ClientCertAuthSettings>,
-        ) -> Self {
-            self.client_cert_auth_settings = input;
-            self
+        pub fn set_client_cert_auth_settings(mut self, input: std::option::Option<crate::model::ClientCertAuthSettings>) -> Self {
+            self.client_cert_auth_settings = input; self
         }
         /// Consumes the builder and constructs a [`Certificate`](crate::model::Certificate).
         pub fn build(self) -> crate::model::Certificate {
             crate::model::Certificate {
-                certificate_id: self.certificate_id,
-                state: self.state,
-                state_reason: self.state_reason,
-                common_name: self.common_name,
-                registered_date_time: self.registered_date_time,
-                expiry_date_time: self.expiry_date_time,
-                r#type: self.r#type,
-                client_cert_auth_settings: self.client_cert_auth_settings,
+                certificate_id: self.certificate_id
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                common_name: self.common_name
+                ,
+                registered_date_time: self.registered_date_time
+                ,
+                expiry_date_time: self.expiry_date_time
+                ,
+                r#type: self.r#type
+                ,
+                client_cert_auth_settings: self.client_cert_auth_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl Certificate {
     /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
@@ -8243,7 +7585,7 @@ impl Certificate {
 /// <p>Contains information about a computer account in a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Computer {
+pub struct Computer  {
     /// <p>The identifier of the computer.</p>
     #[doc(hidden)]
     pub computer_id: std::option::Option<std::string::String>,
@@ -8256,21 +7598,21 @@ pub struct Computer {
 }
 impl Computer {
     /// <p>The identifier of the computer.</p>
-    pub fn computer_id(&self) -> std::option::Option<&str> {
+    pub fn computer_id(&self) -> std::option::Option<& str> {
         self.computer_id.as_deref()
     }
     /// <p>The computer name.</p>
-    pub fn computer_name(&self) -> std::option::Option<&str> {
+    pub fn computer_name(&self) -> std::option::Option<& str> {
         self.computer_name.as_deref()
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    pub fn computer_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn computer_attributes(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.computer_attributes.as_deref()
     }
 }
 /// See [`Computer`](crate::model::Computer).
 pub mod computer {
-
+    
     /// A builder for [`Computer`](crate::model::Computer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8286,8 +7628,7 @@ pub mod computer {
         }
         /// <p>The identifier of the computer.</p>
         pub fn set_computer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.computer_id = input;
-            self
+            self.computer_id = input; self
         }
         /// <p>The computer name.</p>
         pub fn computer_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8295,12 +7636,8 @@ pub mod computer {
             self
         }
         /// <p>The computer name.</p>
-        pub fn set_computer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.computer_name = input;
-            self
+        pub fn set_computer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.computer_name = input; self
         }
         /// Appends an item to `computer_attributes`.
         ///
@@ -8309,27 +7646,28 @@ pub mod computer {
         /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
         pub fn computer_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.computer_attributes.unwrap_or_default();
-            v.push(input);
-            self.computer_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.computer_attributes = Some(v);
+                            self
         }
         /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-        pub fn set_computer_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.computer_attributes = input;
-            self
+        pub fn set_computer_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.computer_attributes = input; self
         }
         /// Consumes the builder and constructs a [`Computer`](crate::model::Computer).
         pub fn build(self) -> crate::model::Computer {
             crate::model::Computer {
-                computer_id: self.computer_id,
-                computer_name: self.computer_name,
-                computer_attributes: self.computer_attributes,
+                computer_id: self.computer_id
+                ,
+                computer_name: self.computer_name
+                ,
+                computer_attributes: self.computer_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl Computer {
     /// Creates a new builder-style object to manufacture [`Computer`](crate::model::Computer).
@@ -8341,7 +7679,7 @@ impl Computer {
 /// <p>Represents a named directory attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8351,17 +7689,17 @@ pub struct Attribute {
 }
 impl Attribute {
     /// <p>The name of the attribute.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
-
+    
     /// A builder for [`Attribute`](crate::model::Attribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8376,8 +7714,7 @@ pub mod attribute {
         }
         /// <p>The name of the attribute.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value of the attribute.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8386,17 +7723,20 @@ pub mod attribute {
         }
         /// <p>The value of the attribute.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Attribute`](crate::model::Attribute).
         pub fn build(self) -> crate::model::Attribute {
             crate::model::Attribute {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Attribute {
     /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
@@ -8408,7 +7748,7 @@ impl Attribute {
 /// <p>Contains information for the <code>ConnectDirectory</code> operation when an AD Connector directory is being created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectoryConnectSettings {
+pub struct DirectoryConnectSettings  {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -8418,41 +7758,41 @@ pub struct DirectoryConnectSettings {
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
     #[doc(hidden)]
     pub customer_dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
-    /// <ul>
-    /// <li> <p>Read users and groups</p> </li>
-    /// <li> <p>Create computer objects</p> </li>
-    /// <li> <p>Join computers to the domain</p> </li>
+    /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p> 
+    /// <ul> 
+    /// <li> <p>Read users and groups</p> </li> 
+    /// <li> <p>Create computer objects</p> </li> 
+    /// <li> <p>Join computers to the domain</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub customer_user_name: std::option::Option<std::string::String>,
 }
 impl DirectoryConnectSettings {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub fn customer_dns_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn customer_dns_ips(&self) -> std::option::Option<& [std::string::String]> {
         self.customer_dns_ips.as_deref()
     }
-    /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
-    /// <ul>
-    /// <li> <p>Read users and groups</p> </li>
-    /// <li> <p>Create computer objects</p> </li>
-    /// <li> <p>Join computers to the domain</p> </li>
+    /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p> 
+    /// <ul> 
+    /// <li> <p>Read users and groups</p> </li> 
+    /// <li> <p>Create computer objects</p> </li> 
+    /// <li> <p>Join computers to the domain</p> </li> 
     /// </ul>
-    pub fn customer_user_name(&self) -> std::option::Option<&str> {
+    pub fn customer_user_name(&self) -> std::option::Option<& str> {
         self.customer_user_name.as_deref()
     }
 }
 /// See [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
 pub mod directory_connect_settings {
-
+    
     /// A builder for [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8469,8 +7809,7 @@ pub mod directory_connect_settings {
         }
         /// <p>The identifier of the VPC in which the AD Connector is created.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -8479,17 +7818,13 @@ pub mod directory_connect_settings {
         /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `customer_dns_ips`.
         ///
@@ -8498,51 +7833,49 @@ pub mod directory_connect_settings {
         /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
         pub fn customer_dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.customer_dns_ips.unwrap_or_default();
-            v.push(input.into());
-            self.customer_dns_ips = Some(v);
-            self
+                            v.push(input.into());
+                            self.customer_dns_ips = Some(v);
+                            self
         }
         /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-        pub fn set_customer_dns_ips(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.customer_dns_ips = input;
-            self
+        pub fn set_customer_dns_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.customer_dns_ips = input; self
         }
-        /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
-        /// <ul>
-        /// <li> <p>Read users and groups</p> </li>
-        /// <li> <p>Create computer objects</p> </li>
-        /// <li> <p>Join computers to the domain</p> </li>
+        /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p> 
+        /// <ul> 
+        /// <li> <p>Read users and groups</p> </li> 
+        /// <li> <p>Create computer objects</p> </li> 
+        /// <li> <p>Join computers to the domain</p> </li> 
         /// </ul>
         pub fn customer_user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_user_name = Some(input.into());
             self
         }
-        /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
-        /// <ul>
-        /// <li> <p>Read users and groups</p> </li>
-        /// <li> <p>Create computer objects</p> </li>
-        /// <li> <p>Join computers to the domain</p> </li>
+        /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p> 
+        /// <ul> 
+        /// <li> <p>Read users and groups</p> </li> 
+        /// <li> <p>Create computer objects</p> </li> 
+        /// <li> <p>Join computers to the domain</p> </li> 
         /// </ul>
-        pub fn set_customer_user_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_user_name = input;
-            self
+        pub fn set_customer_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_user_name = input; self
         }
         /// Consumes the builder and constructs a [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
         pub fn build(self) -> crate::model::DirectoryConnectSettings {
             crate::model::DirectoryConnectSettings {
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                customer_dns_ips: self.customer_dns_ips,
-                customer_user_name: self.customer_user_name,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                customer_dns_ips: self.customer_dns_ips
+                ,
+                customer_user_name: self.customer_user_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DirectoryConnectSettings {
     /// Creates a new builder-style object to manufacture [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
@@ -8554,7 +7887,7 @@ impl DirectoryConnectSettings {
 /// <p>IP address block. This is often the address block of the DNS server used for your self-managed domain. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpRoute {
+pub struct IpRoute  {
     /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
     #[doc(hidden)]
     pub cidr_ip: std::option::Option<std::string::String>,
@@ -8564,17 +7897,17 @@ pub struct IpRoute {
 }
 impl IpRoute {
     /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
-    pub fn cidr_ip(&self) -> std::option::Option<&str> {
+    pub fn cidr_ip(&self) -> std::option::Option<& str> {
         self.cidr_ip.as_deref()
     }
     /// <p>Description of the address block.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`IpRoute`](crate::model::IpRoute).
 pub mod ip_route {
-
+    
     /// A builder for [`IpRoute`](crate::model::IpRoute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8589,8 +7922,7 @@ pub mod ip_route {
         }
         /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
         pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cidr_ip = input;
-            self
+            self.cidr_ip = input; self
         }
         /// <p>Description of the address block.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8599,17 +7931,20 @@ pub mod ip_route {
         }
         /// <p>Description of the address block.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`IpRoute`](crate::model::IpRoute).
         pub fn build(self) -> crate::model::IpRoute {
             crate::model::IpRoute {
-                cidr_ip: self.cidr_ip,
-                description: self.description,
+                cidr_ip: self.cidr_ip
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl IpRoute {
     /// Creates a new builder-style object to manufacture [`IpRoute`](crate::model::IpRoute).
@@ -8617,3 +7952,4 @@ impl IpRoute {
         crate::model::ip_route::Builder::default()
     }
 }
+

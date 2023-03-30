@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCostCategoryDefinitionOutput {
+pub struct UpdateCostCategoryDefinitionOutput  {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateCostCategoryDefinitionOutput {
 }
 impl UpdateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
-    pub fn effective_start(&self) -> std::option::Option<&str> {
+    pub fn effective_start(&self) -> std::option::Option<& str> {
         self.effective_start.as_deref()
     }
 }
 /// See [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
 pub mod update_cost_category_definition_output {
-
+    
     /// A builder for [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -36,12 +36,8 @@ pub mod update_cost_category_definition_output {
             self
         }
         /// <p>The unique identifier for your Cost Category. </p>
-        pub fn set_cost_category_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cost_category_arn = input;
-            self
+        pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cost_category_arn = input; self
         }
         /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -49,21 +45,21 @@ pub mod update_cost_category_definition_output {
             self
         }
         /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
-        pub fn set_effective_start(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.effective_start = input;
-            self
+        pub fn set_effective_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.effective_start = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateCostCategoryDefinitionOutput {
             crate::output::UpdateCostCategoryDefinitionOutput {
-                cost_category_arn: self.cost_category_arn,
-                effective_start: self.effective_start,
+                cost_category_arn: self.cost_category_arn
+                ,
+                effective_start: self.effective_start
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
@@ -75,28 +71,24 @@ impl UpdateCostCategoryDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCostAllocationTagsStatusOutput {
+pub struct UpdateCostAllocationTagsStatusOutput  {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
     #[doc(hidden)]
-    pub errors:
-        std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
+    pub errors: std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
 }
 impl UpdateCostAllocationTagsStatusOutput {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
-    pub fn errors(
-        &self,
-    ) -> std::option::Option<&[crate::model::UpdateCostAllocationTagsStatusError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::UpdateCostAllocationTagsStatusError]> {
         self.errors.as_deref()
     }
 }
 /// See [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
 pub mod update_cost_allocation_tags_status_output {
-
+    
     /// A builder for [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -106,27 +98,24 @@ pub mod update_cost_allocation_tags_status_output {
         /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
         pub fn errors(mut self, input: crate::model::UpdateCostAllocationTagsStatusError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>,
-            >,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
         pub fn build(self) -> crate::output::UpdateCostAllocationTagsStatusOutput {
             crate::output::UpdateCostAllocationTagsStatusOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCostAllocationTagsStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
@@ -138,20 +127,20 @@ impl UpdateCostAllocationTagsStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnomalySubscriptionOutput {
+pub struct UpdateAnomalySubscriptionOutput  {
     /// <p>A cost anomaly subscription ARN. </p>
     #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAnomalySubscriptionOutput {
     /// <p>A cost anomaly subscription ARN. </p>
-    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+    pub fn subscription_arn(&self) -> std::option::Option<& str> {
         self.subscription_arn.as_deref()
     }
 }
 /// See [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
 pub mod update_anomaly_subscription_output {
-
+    
     /// A builder for [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -164,20 +153,19 @@ pub mod update_anomaly_subscription_output {
             self
         }
         /// <p>A cost anomaly subscription ARN. </p>
-        pub fn set_subscription_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_arn = input;
-            self
+        pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
         pub fn build(self) -> crate::output::UpdateAnomalySubscriptionOutput {
             crate::output::UpdateAnomalySubscriptionOutput {
-                subscription_arn: self.subscription_arn,
+                subscription_arn: self.subscription_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAnomalySubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
@@ -189,20 +177,20 @@ impl UpdateAnomalySubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnomalyMonitorOutput {
+pub struct UpdateAnomalyMonitorOutput  {
     /// <p>A cost anomaly monitor ARN. </p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAnomalyMonitorOutput {
     /// <p>A cost anomaly monitor ARN. </p>
-    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
 }
 /// See [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
 pub mod update_anomaly_monitor_output {
-
+    
     /// A builder for [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -216,16 +204,18 @@ pub mod update_anomaly_monitor_output {
         }
         /// <p>A cost anomaly monitor ARN. </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.monitor_arn = input;
-            self
+            self.monitor_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
         pub fn build(self) -> crate::output::UpdateAnomalyMonitorOutput {
             crate::output::UpdateAnomalyMonitorOutput {
-                monitor_arn: self.monitor_arn,
+                monitor_arn: self.monitor_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAnomalyMonitorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
@@ -237,19 +227,24 @@ impl UpdateAnomalyMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -261,19 +256,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -285,7 +285,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSavingsPlansPurchaseRecommendationGenerationOutput {
+pub struct StartSavingsPlansPurchaseRecommendationGenerationOutput  {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -298,21 +298,21 @@ pub struct StartSavingsPlansPurchaseRecommendationGenerationOutput {
 }
 impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The start time of the recommendation generation.</p>
-    pub fn generation_started_time(&self) -> std::option::Option<&str> {
+    pub fn generation_started_time(&self) -> std::option::Option<& str> {
         self.generation_started_time.as_deref()
     }
     /// <p>The estimated time for when the recommendation generation will complete.</p>
-    pub fn estimated_completion_time(&self) -> std::option::Option<&str> {
+    pub fn estimated_completion_time(&self) -> std::option::Option<& str> {
         self.estimated_completion_time.as_deref()
     }
 }
 /// See [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
 pub mod start_savings_plans_purchase_recommendation_generation_output {
-
+    
     /// A builder for [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -327,12 +327,8 @@ pub mod start_savings_plans_purchase_recommendation_generation_output {
             self
         }
         /// <p>The ID for this specific recommendation.</p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// <p>The start time of the recommendation generation.</p>
         pub fn generation_started_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -340,12 +336,8 @@ pub mod start_savings_plans_purchase_recommendation_generation_output {
             self
         }
         /// <p>The start time of the recommendation generation.</p>
-        pub fn set_generation_started_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generation_started_time = input;
-            self
+        pub fn set_generation_started_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generation_started_time = input; self
         }
         /// <p>The estimated time for when the recommendation generation will complete.</p>
         pub fn estimated_completion_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -353,29 +345,27 @@ pub mod start_savings_plans_purchase_recommendation_generation_output {
             self
         }
         /// <p>The estimated time for when the recommendation generation will complete.</p>
-        pub fn set_estimated_completion_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.estimated_completion_time = input;
-            self
+        pub fn set_estimated_completion_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.estimated_completion_time = input; self
         }
         /// Consumes the builder and constructs a [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput {
+        pub fn build(self) -> crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput {
             crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput {
-                recommendation_id: self.recommendation_id,
-                generation_started_time: self.generation_started_time,
-                estimated_completion_time: self.estimated_completion_time,
+                recommendation_id: self.recommendation_id
+                ,
+                generation_started_time: self.generation_started_time
+                ,
+                estimated_completion_time: self.estimated_completion_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
     /// Creates a new builder-style object to manufacture [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
-    pub fn builder(
-    ) -> crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder {
+    pub fn builder() -> crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder {
         crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder::default()
     }
 }
@@ -383,20 +373,20 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvideAnomalyFeedbackOutput {
+pub struct ProvideAnomalyFeedbackOutput  {
     /// <p>The ID of the modified cost anomaly. </p>
     #[doc(hidden)]
     pub anomaly_id: std::option::Option<std::string::String>,
 }
 impl ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
-    pub fn anomaly_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_id(&self) -> std::option::Option<& str> {
         self.anomaly_id.as_deref()
     }
 }
 /// See [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
 pub mod provide_anomaly_feedback_output {
-
+    
     /// A builder for [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -410,16 +400,18 @@ pub mod provide_anomaly_feedback_output {
         }
         /// <p>The ID of the modified cost anomaly. </p>
         pub fn set_anomaly_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.anomaly_id = input;
-            self
+            self.anomaly_id = input; self
         }
         /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
         pub fn build(self) -> crate::output::ProvideAnomalyFeedbackOutput {
             crate::output::ProvideAnomalyFeedbackOutput {
-                anomaly_id: self.anomaly_id,
+                anomaly_id: self.anomaly_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvideAnomalyFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
@@ -431,20 +423,20 @@ impl ProvideAnomalyFeedbackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tag key value pairs that are associated with the resource. </p>
     #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tag key value pairs that are associated with the resource. </p>
-    pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
+    pub fn resource_tags(&self) -> std::option::Option<& [crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -458,25 +450,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tag key value pairs that are associated with the resource. </p>
         pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input);
-            self.resource_tags = Some(v);
-            self
+                            v.push(input);
+                            self.resource_tags = Some(v);
+                            self
         }
         /// <p>A list of tag key value pairs that are associated with the resource. </p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>) -> Self {
+            self.resource_tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                resource_tags: self.resource_tags,
+                resource_tags: self.resource_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -488,35 +479,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSavingsPlansPurchaseRecommendationGenerationOutput {
+pub struct ListSavingsPlansPurchaseRecommendationGenerationOutput  {
     /// <p>The list of historical recommendation generations.</p>
     #[doc(hidden)]
-    pub generation_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
+    pub generation_summary_list: std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The list of historical recommendation generations.</p>
-    pub fn generation_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::GenerationSummary]> {
+    pub fn generation_summary_list(&self) -> std::option::Option<& [crate::model::GenerationSummary]> {
         self.generation_summary_list.as_deref()
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
 pub mod list_savings_plans_purchase_recommendation_generation_output {
-
+    
     /// A builder for [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) generation_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
+        pub(crate) generation_summary_list: std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -527,17 +514,13 @@ pub mod list_savings_plans_purchase_recommendation_generation_output {
         /// <p>The list of historical recommendation generations.</p>
         pub fn generation_summary_list(mut self, input: crate::model::GenerationSummary) -> Self {
             let mut v = self.generation_summary_list.unwrap_or_default();
-            v.push(input);
-            self.generation_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.generation_summary_list = Some(v);
+                            self
         }
         /// <p>The list of historical recommendation generations.</p>
-        pub fn set_generation_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
-        ) -> Self {
-            self.generation_summary_list = input;
-            self
+        pub fn set_generation_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>) -> Self {
+            self.generation_summary_list = input; self
         }
         /// <p>The token to retrieve the next set of results.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -545,28 +528,25 @@ pub mod list_savings_plans_purchase_recommendation_generation_output {
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput {
+        pub fn build(self) -> crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput {
             crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput {
-                generation_summary_list: self.generation_summary_list,
-                next_page_token: self.next_page_token,
+                generation_summary_list: self.generation_summary_list
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
     /// Creates a new builder-style object to manufacture [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
-    pub fn builder(
-    ) -> crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder {
+    pub fn builder() -> crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder {
         crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder::default()
     }
 }
@@ -574,35 +554,31 @@ impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCostCategoryDefinitionsOutput {
+pub struct ListCostCategoryDefinitionsOutput  {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
     #[doc(hidden)]
-    pub cost_category_references:
-        std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
+    pub cost_category_references: std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCostCategoryDefinitionsOutput {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
-    pub fn cost_category_references(
-        &self,
-    ) -> std::option::Option<&[crate::model::CostCategoryReference]> {
+    pub fn cost_category_references(&self) -> std::option::Option<& [crate::model::CostCategoryReference]> {
         self.cost_category_references.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
 pub mod list_cost_category_definitions_output {
-
+    
     /// A builder for [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cost_category_references:
-            std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
+        pub(crate) cost_category_references: std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -611,22 +587,15 @@ pub mod list_cost_category_definitions_output {
         /// To override the contents of this collection use [`set_cost_category_references`](Self::set_cost_category_references).
         ///
         /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
-        pub fn cost_category_references(
-            mut self,
-            input: crate::model::CostCategoryReference,
-        ) -> Self {
+        pub fn cost_category_references(mut self, input: crate::model::CostCategoryReference) -> Self {
             let mut v = self.cost_category_references.unwrap_or_default();
-            v.push(input);
-            self.cost_category_references = Some(v);
-            self
+                            v.push(input);
+                            self.cost_category_references = Some(v);
+                            self
         }
         /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
-        pub fn set_cost_category_references(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
-        ) -> Self {
-            self.cost_category_references = input;
-            self
+        pub fn set_cost_category_references(mut self, input: std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>) -> Self {
+            self.cost_category_references = input; self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -635,17 +604,20 @@ pub mod list_cost_category_definitions_output {
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
         pub fn build(self) -> crate::output::ListCostCategoryDefinitionsOutput {
             crate::output::ListCostCategoryDefinitionsOutput {
-                cost_category_references: self.cost_category_references,
-                next_token: self.next_token,
+                cost_category_references: self.cost_category_references
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCostCategoryDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
@@ -657,7 +629,7 @@ impl ListCostCategoryDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCostAllocationTagsOutput {
+pub struct ListCostAllocationTagsOutput  {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     #[doc(hidden)]
     pub cost_allocation_tags: std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
@@ -667,22 +639,21 @@ pub struct ListCostAllocationTagsOutput {
 }
 impl ListCostAllocationTagsOutput {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
-    pub fn cost_allocation_tags(&self) -> std::option::Option<&[crate::model::CostAllocationTag]> {
+    pub fn cost_allocation_tags(&self) -> std::option::Option<& [crate::model::CostAllocationTag]> {
         self.cost_allocation_tags.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
 pub mod list_cost_allocation_tags_output {
-
+    
     /// A builder for [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cost_allocation_tags:
-            std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
+        pub(crate) cost_allocation_tags: std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -693,17 +664,13 @@ pub mod list_cost_allocation_tags_output {
         /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
         pub fn cost_allocation_tags(mut self, input: crate::model::CostAllocationTag) -> Self {
             let mut v = self.cost_allocation_tags.unwrap_or_default();
-            v.push(input);
-            self.cost_allocation_tags = Some(v);
-            self
+                            v.push(input);
+                            self.cost_allocation_tags = Some(v);
+                            self
         }
         /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
-        pub fn set_cost_allocation_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
-        ) -> Self {
-            self.cost_allocation_tags = input;
-            self
+        pub fn set_cost_allocation_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>) -> Self {
+            self.cost_allocation_tags = input; self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -712,17 +679,20 @@ pub mod list_cost_allocation_tags_output {
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
         pub fn build(self) -> crate::output::ListCostAllocationTagsOutput {
             crate::output::ListCostAllocationTagsOutput {
-                cost_allocation_tags: self.cost_allocation_tags,
-                next_token: self.next_token,
+                cost_allocation_tags: self.cost_allocation_tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCostAllocationTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
@@ -734,7 +704,7 @@ impl ListCostAllocationTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUsageForecastOutput {
+pub struct GetUsageForecastOutput  {
     /// <p>How much you're forecasted to use over the forecast period.</p>
     #[doc(hidden)]
     pub total: std::option::Option<crate::model::MetricValue>,
@@ -744,23 +714,22 @@ pub struct GetUsageForecastOutput {
 }
 impl GetUsageForecastOutput {
     /// <p>How much you're forecasted to use over the forecast period.</p>
-    pub fn total(&self) -> std::option::Option<&crate::model::MetricValue> {
+    pub fn total(&self) -> std::option::Option<& crate::model::MetricValue> {
         self.total.as_ref()
     }
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
-    pub fn forecast_results_by_time(&self) -> std::option::Option<&[crate::model::ForecastResult]> {
+    pub fn forecast_results_by_time(&self) -> std::option::Option<& [crate::model::ForecastResult]> {
         self.forecast_results_by_time.as_deref()
     }
 }
 /// See [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
 pub mod get_usage_forecast_output {
-
+    
     /// A builder for [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total: std::option::Option<crate::model::MetricValue>,
-        pub(crate) forecast_results_by_time:
-            std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
+        pub(crate) forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
     }
     impl Builder {
         /// <p>How much you're forecasted to use over the forecast period.</p>
@@ -770,8 +739,7 @@ pub mod get_usage_forecast_output {
         }
         /// <p>How much you're forecasted to use over the forecast period.</p>
         pub fn set_total(mut self, input: std::option::Option<crate::model::MetricValue>) -> Self {
-            self.total = input;
-            self
+            self.total = input; self
         }
         /// Appends an item to `forecast_results_by_time`.
         ///
@@ -780,26 +748,26 @@ pub mod get_usage_forecast_output {
         /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
         pub fn forecast_results_by_time(mut self, input: crate::model::ForecastResult) -> Self {
             let mut v = self.forecast_results_by_time.unwrap_or_default();
-            v.push(input);
-            self.forecast_results_by_time = Some(v);
-            self
+                            v.push(input);
+                            self.forecast_results_by_time = Some(v);
+                            self
         }
         /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
-        pub fn set_forecast_results_by_time(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
-        ) -> Self {
-            self.forecast_results_by_time = input;
-            self
+        pub fn set_forecast_results_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>) -> Self {
+            self.forecast_results_by_time = input; self
         }
         /// Consumes the builder and constructs a [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
         pub fn build(self) -> crate::output::GetUsageForecastOutput {
             crate::output::GetUsageForecastOutput {
-                total: self.total,
-                forecast_results_by_time: self.forecast_results_by_time,
+                total: self.total
+                ,
+                forecast_results_by_time: self.forecast_results_by_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUsageForecastOutput {
     /// Creates a new builder-style object to manufacture [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
@@ -811,7 +779,7 @@ impl GetUsageForecastOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTagsOutput {
+pub struct GetTagsOutput  {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -827,11 +795,11 @@ pub struct GetTagsOutput {
 }
 impl GetTagsOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The tags that match your request.</p>
-    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tags(&self) -> std::option::Option<& [std::string::String]> {
         self.tags.as_deref()
     }
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
@@ -845,7 +813,7 @@ impl GetTagsOutput {
 }
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput).
 pub mod get_tags_output {
-
+    
     /// A builder for [`GetTagsOutput`](crate::output::GetTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -861,12 +829,8 @@ pub mod get_tags_output {
             self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -875,17 +839,13 @@ pub mod get_tags_output {
         /// <p>The tags that match your request.</p>
         pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
-            self.tags = Some(v);
-            self
+                            v.push(input.into());
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags that match your request.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The number of query results that Amazon Web Services returns at a time.</p>
         pub fn return_size(mut self, input: i32) -> Self {
@@ -894,8 +854,7 @@ pub mod get_tags_output {
         }
         /// <p>The number of query results that Amazon Web Services returns at a time.</p>
         pub fn set_return_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.return_size = input;
-            self
+            self.return_size = input; self
         }
         /// <p>The total number of query results.</p>
         pub fn total_size(mut self, input: i32) -> Self {
@@ -904,19 +863,24 @@ pub mod get_tags_output {
         }
         /// <p>The total number of query results.</p>
         pub fn set_total_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_size = input;
-            self
+            self.total_size = input; self
         }
         /// Consumes the builder and constructs a [`GetTagsOutput`](crate::output::GetTagsOutput).
         pub fn build(self) -> crate::output::GetTagsOutput {
             crate::output::GetTagsOutput {
-                next_page_token: self.next_page_token,
-                tags: self.tags,
-                return_size: self.return_size,
-                total_size: self.total_size,
+                next_page_token: self.next_page_token
+                ,
+                tags: self.tags
+                ,
+                return_size: self.return_size
+                ,
+                total_size: self.total_size
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTagsOutput {
     /// Creates a new builder-style object to manufacture [`GetTagsOutput`](crate::output::GetTagsOutput).
@@ -928,11 +892,10 @@ impl GetTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSavingsPlansUtilizationDetailsOutput {
+pub struct GetSavingsPlansUtilizationDetailsOutput  {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
     #[doc(hidden)]
-    pub savings_plans_utilization_details:
-        std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
+    pub savings_plans_utilization_details: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
     #[doc(hidden)]
     pub total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
@@ -945,32 +908,29 @@ pub struct GetSavingsPlansUtilizationDetailsOutput {
 }
 impl GetSavingsPlansUtilizationDetailsOutput {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-    pub fn savings_plans_utilization_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::SavingsPlansUtilizationDetail]> {
+    pub fn savings_plans_utilization_details(&self) -> std::option::Option<& [crate::model::SavingsPlansUtilizationDetail]> {
         self.savings_plans_utilization_details.as_deref()
     }
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
-    pub fn total(&self) -> std::option::Option<&crate::model::SavingsPlansUtilizationAggregates> {
+    pub fn total(&self) -> std::option::Option<& crate::model::SavingsPlansUtilizationAggregates> {
         self.total.as_ref()
     }
     /// <p>The time period of the request. </p>
-    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::model::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
 pub mod get_savings_plans_utilization_details_output {
-
+    
     /// A builder for [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) savings_plans_utilization_details:
-            std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
+        pub(crate) savings_plans_utilization_details: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
         pub(crate) total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -981,22 +941,15 @@ pub mod get_savings_plans_utilization_details_output {
         /// To override the contents of this collection use [`set_savings_plans_utilization_details`](Self::set_savings_plans_utilization_details).
         ///
         /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-        pub fn savings_plans_utilization_details(
-            mut self,
-            input: crate::model::SavingsPlansUtilizationDetail,
-        ) -> Self {
+        pub fn savings_plans_utilization_details(mut self, input: crate::model::SavingsPlansUtilizationDetail) -> Self {
             let mut v = self.savings_plans_utilization_details.unwrap_or_default();
-            v.push(input);
-            self.savings_plans_utilization_details = Some(v);
-            self
+                            v.push(input);
+                            self.savings_plans_utilization_details = Some(v);
+                            self
         }
         /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-        pub fn set_savings_plans_utilization_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
-        ) -> Self {
-            self.savings_plans_utilization_details = input;
-            self
+        pub fn set_savings_plans_utilization_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>) -> Self {
+            self.savings_plans_utilization_details = input; self
         }
         /// <p>The total Savings Plans utilization, regardless of time period.</p>
         pub fn total(mut self, input: crate::model::SavingsPlansUtilizationAggregates) -> Self {
@@ -1004,12 +957,8 @@ pub mod get_savings_plans_utilization_details_output {
             self
         }
         /// <p>The total Savings Plans utilization, regardless of time period.</p>
-        pub fn set_total(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
-        ) -> Self {
-            self.total = input;
-            self
+        pub fn set_total(mut self, input: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>) -> Self {
+            self.total = input; self
         }
         /// <p>The time period of the request. </p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
@@ -1017,12 +966,8 @@ pub mod get_savings_plans_utilization_details_output {
             self
         }
         /// <p>The time period of the request. </p>
-        pub fn set_time_period(
-            mut self,
-            input: std::option::Option<crate::model::DateInterval>,
-        ) -> Self {
-            self.time_period = input;
-            self
+        pub fn set_time_period(mut self, input: std::option::Option<crate::model::DateInterval>) -> Self {
+            self.time_period = input; self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1031,19 +976,24 @@ pub mod get_savings_plans_utilization_details_output {
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
         pub fn build(self) -> crate::output::GetSavingsPlansUtilizationDetailsOutput {
             crate::output::GetSavingsPlansUtilizationDetailsOutput {
-                savings_plans_utilization_details: self.savings_plans_utilization_details,
-                total: self.total,
-                time_period: self.time_period,
-                next_token: self.next_token,
+                savings_plans_utilization_details: self.savings_plans_utilization_details
+                ,
+                total: self.total
+                ,
+                time_period: self.time_period
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSavingsPlansUtilizationDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
@@ -1055,35 +1005,31 @@ impl GetSavingsPlansUtilizationDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSavingsPlansUtilizationOutput {
+pub struct GetSavingsPlansUtilizationOutput  {
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
     #[doc(hidden)]
-    pub savings_plans_utilizations_by_time:
-        std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
+    pub savings_plans_utilizations_by_time: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     #[doc(hidden)]
     pub total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
 }
 impl GetSavingsPlansUtilizationOutput {
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
-    pub fn savings_plans_utilizations_by_time(
-        &self,
-    ) -> std::option::Option<&[crate::model::SavingsPlansUtilizationByTime]> {
+    pub fn savings_plans_utilizations_by_time(&self) -> std::option::Option<& [crate::model::SavingsPlansUtilizationByTime]> {
         self.savings_plans_utilizations_by_time.as_deref()
     }
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
-    pub fn total(&self) -> std::option::Option<&crate::model::SavingsPlansUtilizationAggregates> {
+    pub fn total(&self) -> std::option::Option<& crate::model::SavingsPlansUtilizationAggregates> {
         self.total.as_ref()
     }
 }
 /// See [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
 pub mod get_savings_plans_utilization_output {
-
+    
     /// A builder for [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) savings_plans_utilizations_by_time:
-            std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
+        pub(crate) savings_plans_utilizations_by_time: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
         pub(crate) total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
     }
     impl Builder {
@@ -1092,22 +1038,15 @@ pub mod get_savings_plans_utilization_output {
         /// To override the contents of this collection use [`set_savings_plans_utilizations_by_time`](Self::set_savings_plans_utilizations_by_time).
         ///
         /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
-        pub fn savings_plans_utilizations_by_time(
-            mut self,
-            input: crate::model::SavingsPlansUtilizationByTime,
-        ) -> Self {
+        pub fn savings_plans_utilizations_by_time(mut self, input: crate::model::SavingsPlansUtilizationByTime) -> Self {
             let mut v = self.savings_plans_utilizations_by_time.unwrap_or_default();
-            v.push(input);
-            self.savings_plans_utilizations_by_time = Some(v);
-            self
+                            v.push(input);
+                            self.savings_plans_utilizations_by_time = Some(v);
+                            self
         }
         /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
-        pub fn set_savings_plans_utilizations_by_time(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
-        ) -> Self {
-            self.savings_plans_utilizations_by_time = input;
-            self
+        pub fn set_savings_plans_utilizations_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>) -> Self {
+            self.savings_plans_utilizations_by_time = input; self
         }
         /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
         pub fn total(mut self, input: crate::model::SavingsPlansUtilizationAggregates) -> Self {
@@ -1115,21 +1054,21 @@ pub mod get_savings_plans_utilization_output {
             self
         }
         /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
-        pub fn set_total(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
-        ) -> Self {
-            self.total = input;
-            self
+        pub fn set_total(mut self, input: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>) -> Self {
+            self.total = input; self
         }
         /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
         pub fn build(self) -> crate::output::GetSavingsPlansUtilizationOutput {
             crate::output::GetSavingsPlansUtilizationOutput {
-                savings_plans_utilizations_by_time: self.savings_plans_utilizations_by_time,
-                total: self.total,
+                savings_plans_utilizations_by_time: self.savings_plans_utilizations_by_time
+                ,
+                total: self.total
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSavingsPlansUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
@@ -1141,80 +1080,59 @@ impl GetSavingsPlansUtilizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSavingsPlansPurchaseRecommendationOutput {
+pub struct GetSavingsPlansPurchaseRecommendationOutput  {
     /// <p>Information that regards this specific recommendation set.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>,
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
     #[doc(hidden)]
-    pub savings_plans_purchase_recommendation:
-        std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
+    pub savings_plans_purchase_recommendation: std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetSavingsPlansPurchaseRecommendationOutput {
     /// <p>Information that regards this specific recommendation set.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::SavingsPlansPurchaseRecommendationMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::SavingsPlansPurchaseRecommendationMetadata> {
         self.metadata.as_ref()
     }
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
-    pub fn savings_plans_purchase_recommendation(
-        &self,
-    ) -> std::option::Option<&crate::model::SavingsPlansPurchaseRecommendation> {
+    pub fn savings_plans_purchase_recommendation(&self) -> std::option::Option<& crate::model::SavingsPlansPurchaseRecommendation> {
         self.savings_plans_purchase_recommendation.as_ref()
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
 pub mod get_savings_plans_purchase_recommendation_output {
-
+    
     /// A builder for [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) metadata:
-            std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>,
-        pub(crate) savings_plans_purchase_recommendation:
-            std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
+        pub(crate) metadata: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>,
+        pub(crate) savings_plans_purchase_recommendation: std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Information that regards this specific recommendation set.</p>
-        pub fn metadata(
-            mut self,
-            input: crate::model::SavingsPlansPurchaseRecommendationMetadata,
-        ) -> Self {
+        pub fn metadata(mut self, input: crate::model::SavingsPlansPurchaseRecommendationMetadata) -> Self {
             self.metadata = Some(input);
             self
         }
         /// <p>Information that regards this specific recommendation set.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
-        pub fn savings_plans_purchase_recommendation(
-            mut self,
-            input: crate::model::SavingsPlansPurchaseRecommendation,
-        ) -> Self {
+        pub fn savings_plans_purchase_recommendation(mut self, input: crate::model::SavingsPlansPurchaseRecommendation) -> Self {
             self.savings_plans_purchase_recommendation = Some(input);
             self
         }
         /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
-        pub fn set_savings_plans_purchase_recommendation(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
-        ) -> Self {
-            self.savings_plans_purchase_recommendation = input;
-            self
+        pub fn set_savings_plans_purchase_recommendation(mut self, input: std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>) -> Self {
+            self.savings_plans_purchase_recommendation = input; self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1222,22 +1140,23 @@ pub mod get_savings_plans_purchase_recommendation_output {
             self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
         pub fn build(self) -> crate::output::GetSavingsPlansPurchaseRecommendationOutput {
             crate::output::GetSavingsPlansPurchaseRecommendationOutput {
-                metadata: self.metadata,
-                savings_plans_purchase_recommendation: self.savings_plans_purchase_recommendation,
-                next_page_token: self.next_page_token,
+                metadata: self.metadata
+                ,
+                savings_plans_purchase_recommendation: self.savings_plans_purchase_recommendation
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSavingsPlansPurchaseRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
@@ -1249,35 +1168,31 @@ impl GetSavingsPlansPurchaseRecommendationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSavingsPlansCoverageOutput {
+pub struct GetSavingsPlansCoverageOutput  {
     /// <p>The amount of spend that your Savings Plans covered.</p>
     #[doc(hidden)]
-    pub savings_plans_coverages:
-        std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>,
+    pub savings_plans_coverages: std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSavingsPlansCoverageOutput {
     /// <p>The amount of spend that your Savings Plans covered.</p>
-    pub fn savings_plans_coverages(
-        &self,
-    ) -> std::option::Option<&[crate::model::SavingsPlansCoverage]> {
+    pub fn savings_plans_coverages(&self) -> std::option::Option<& [crate::model::SavingsPlansCoverage]> {
         self.savings_plans_coverages.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
 pub mod get_savings_plans_coverage_output {
-
+    
     /// A builder for [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) savings_plans_coverages:
-            std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>,
+        pub(crate) savings_plans_coverages: std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1286,22 +1201,15 @@ pub mod get_savings_plans_coverage_output {
         /// To override the contents of this collection use [`set_savings_plans_coverages`](Self::set_savings_plans_coverages).
         ///
         /// <p>The amount of spend that your Savings Plans covered.</p>
-        pub fn savings_plans_coverages(
-            mut self,
-            input: crate::model::SavingsPlansCoverage,
-        ) -> Self {
+        pub fn savings_plans_coverages(mut self, input: crate::model::SavingsPlansCoverage) -> Self {
             let mut v = self.savings_plans_coverages.unwrap_or_default();
-            v.push(input);
-            self.savings_plans_coverages = Some(v);
-            self
+                            v.push(input);
+                            self.savings_plans_coverages = Some(v);
+                            self
         }
         /// <p>The amount of spend that your Savings Plans covered.</p>
-        pub fn set_savings_plans_coverages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>,
-        ) -> Self {
-            self.savings_plans_coverages = input;
-            self
+        pub fn set_savings_plans_coverages(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>) -> Self {
+            self.savings_plans_coverages = input; self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1310,17 +1218,20 @@ pub mod get_savings_plans_coverage_output {
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
         pub fn build(self) -> crate::output::GetSavingsPlansCoverageOutput {
             crate::output::GetSavingsPlansCoverageOutput {
-                savings_plans_coverages: self.savings_plans_coverages,
-                next_token: self.next_token,
+                savings_plans_coverages: self.savings_plans_coverages
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSavingsPlansCoverageOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
@@ -1332,7 +1243,7 @@ impl GetSavingsPlansCoverageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRightsizingRecommendationOutput {
+pub struct GetRightsizingRecommendationOutput  {
     /// <p>Information regarding this specific recommendation set.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::RightsizingRecommendationMetadata>,
@@ -1341,8 +1252,7 @@ pub struct GetRightsizingRecommendationOutput {
     pub summary: std::option::Option<crate::model::RightsizingRecommendationSummary>,
     /// <p>Recommendations to rightsize resources.</p>
     #[doc(hidden)]
-    pub rightsizing_recommendations:
-        std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
+    pub rightsizing_recommendations: std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -1352,45 +1262,37 @@ pub struct GetRightsizingRecommendationOutput {
 }
 impl GetRightsizingRecommendationOutput {
     /// <p>Information regarding this specific recommendation set.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::RightsizingRecommendationMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::RightsizingRecommendationMetadata> {
         self.metadata.as_ref()
     }
     /// <p>Summary of this recommendation set.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::RightsizingRecommendationSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::RightsizingRecommendationSummary> {
         self.summary.as_ref()
     }
     /// <p>Recommendations to rightsize resources.</p>
-    pub fn rightsizing_recommendations(
-        &self,
-    ) -> std::option::Option<&[crate::model::RightsizingRecommendation]> {
+    pub fn rightsizing_recommendations(&self) -> std::option::Option<& [crate::model::RightsizingRecommendation]> {
         self.rightsizing_recommendations.as_deref()
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RightsizingRecommendationConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::RightsizingRecommendationConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
 pub mod get_rightsizing_recommendation_output {
-
+    
     /// A builder for [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::RightsizingRecommendationMetadata>,
         pub(crate) summary: std::option::Option<crate::model::RightsizingRecommendationSummary>,
-        pub(crate) rightsizing_recommendations:
-            std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
+        pub(crate) rightsizing_recommendations: std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
-        pub(crate) configuration:
-            std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
+        pub(crate) configuration: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
     }
     impl Builder {
         /// <p>Information regarding this specific recommendation set.</p>
@@ -1399,12 +1301,8 @@ pub mod get_rightsizing_recommendation_output {
             self
         }
         /// <p>Information regarding this specific recommendation set.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::RightsizingRecommendationMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::RightsizingRecommendationMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>Summary of this recommendation set.</p>
         pub fn summary(mut self, input: crate::model::RightsizingRecommendationSummary) -> Self {
@@ -1412,34 +1310,23 @@ pub mod get_rightsizing_recommendation_output {
             self
         }
         /// <p>Summary of this recommendation set.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::RightsizingRecommendationSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::RightsizingRecommendationSummary>) -> Self {
+            self.summary = input; self
         }
         /// Appends an item to `rightsizing_recommendations`.
         ///
         /// To override the contents of this collection use [`set_rightsizing_recommendations`](Self::set_rightsizing_recommendations).
         ///
         /// <p>Recommendations to rightsize resources.</p>
-        pub fn rightsizing_recommendations(
-            mut self,
-            input: crate::model::RightsizingRecommendation,
-        ) -> Self {
+        pub fn rightsizing_recommendations(mut self, input: crate::model::RightsizingRecommendation) -> Self {
             let mut v = self.rightsizing_recommendations.unwrap_or_default();
-            v.push(input);
-            self.rightsizing_recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.rightsizing_recommendations = Some(v);
+                            self
         }
         /// <p>Recommendations to rightsize resources.</p>
-        pub fn set_rightsizing_recommendations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
-        ) -> Self {
-            self.rightsizing_recommendations = input;
-            self
+        pub fn set_rightsizing_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>) -> Self {
+            self.rightsizing_recommendations = input; self
         }
         /// <p>The token to retrieve the next set of results.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1447,40 +1334,36 @@ pub mod get_rightsizing_recommendation_output {
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-        pub fn configuration(
-            mut self,
-            input: crate::model::RightsizingRecommendationConfiguration,
-        ) -> Self {
+        pub fn configuration(mut self, input: crate::model::RightsizingRecommendationConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
         /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::RightsizingRecommendationConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
         pub fn build(self) -> crate::output::GetRightsizingRecommendationOutput {
             crate::output::GetRightsizingRecommendationOutput {
-                metadata: self.metadata,
-                summary: self.summary,
-                rightsizing_recommendations: self.rightsizing_recommendations,
-                next_page_token: self.next_page_token,
-                configuration: self.configuration,
+                metadata: self.metadata
+                ,
+                summary: self.summary
+                ,
+                rightsizing_recommendations: self.rightsizing_recommendations
+                ,
+                next_page_token: self.next_page_token
+                ,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRightsizingRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
@@ -1492,7 +1375,7 @@ impl GetRightsizingRecommendationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReservationUtilizationOutput {
+pub struct GetReservationUtilizationOutput  {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
     #[doc(hidden)]
     pub utilizations_by_time: std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
@@ -1505,26 +1388,25 @@ pub struct GetReservationUtilizationOutput {
 }
 impl GetReservationUtilizationOutput {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn utilizations_by_time(&self) -> std::option::Option<&[crate::model::UtilizationByTime]> {
+    pub fn utilizations_by_time(&self) -> std::option::Option<& [crate::model::UtilizationByTime]> {
         self.utilizations_by_time.as_deref()
     }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn total(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
+    pub fn total(&self) -> std::option::Option<& crate::model::ReservationAggregates> {
         self.total.as_ref()
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
 pub mod get_reservation_utilization_output {
-
+    
     /// A builder for [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) utilizations_by_time:
-            std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
+        pub(crate) utilizations_by_time: std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
         pub(crate) total: std::option::Option<crate::model::ReservationAggregates>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
@@ -1536,17 +1418,13 @@ pub mod get_reservation_utilization_output {
         /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
         pub fn utilizations_by_time(mut self, input: crate::model::UtilizationByTime) -> Self {
             let mut v = self.utilizations_by_time.unwrap_or_default();
-            v.push(input);
-            self.utilizations_by_time = Some(v);
-            self
+                            v.push(input);
+                            self.utilizations_by_time = Some(v);
+                            self
         }
         /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-        pub fn set_utilizations_by_time(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
-        ) -> Self {
-            self.utilizations_by_time = input;
-            self
+        pub fn set_utilizations_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>) -> Self {
+            self.utilizations_by_time = input; self
         }
         /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
         pub fn total(mut self, input: crate::model::ReservationAggregates) -> Self {
@@ -1554,12 +1432,8 @@ pub mod get_reservation_utilization_output {
             self
         }
         /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
-        pub fn set_total(
-            mut self,
-            input: std::option::Option<crate::model::ReservationAggregates>,
-        ) -> Self {
-            self.total = input;
-            self
+        pub fn set_total(mut self, input: std::option::Option<crate::model::ReservationAggregates>) -> Self {
+            self.total = input; self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1567,22 +1441,23 @@ pub mod get_reservation_utilization_output {
             self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
         pub fn build(self) -> crate::output::GetReservationUtilizationOutput {
             crate::output::GetReservationUtilizationOutput {
-                utilizations_by_time: self.utilizations_by_time,
-                total: self.total,
-                next_page_token: self.next_page_token,
+                utilizations_by_time: self.utilizations_by_time
+                ,
+                total: self.total
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReservationUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
@@ -1594,88 +1469,65 @@ impl GetReservationUtilizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReservationPurchaseRecommendationOutput {
+pub struct GetReservationPurchaseRecommendationOutput  {
     /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::ReservationPurchaseRecommendationMetadata>,
     /// <p>Recommendations for reservations to purchase.</p>
     #[doc(hidden)]
-    pub recommendations:
-        std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendation>>,
+    pub recommendations: std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendation>>,
     /// <p>The pagination token for the next set of retrievable results.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetReservationPurchaseRecommendationOutput {
     /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservationPurchaseRecommendationMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::ReservationPurchaseRecommendationMetadata> {
         self.metadata.as_ref()
     }
     /// <p>Recommendations for reservations to purchase.</p>
-    pub fn recommendations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReservationPurchaseRecommendation]> {
+    pub fn recommendations(&self) -> std::option::Option<& [crate::model::ReservationPurchaseRecommendation]> {
         self.recommendations.as_deref()
     }
     /// <p>The pagination token for the next set of retrievable results.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
 pub mod get_reservation_purchase_recommendation_output {
-
+    
     /// A builder for [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) metadata:
-            std::option::Option<crate::model::ReservationPurchaseRecommendationMetadata>,
-        pub(crate) recommendations:
-            std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendation>>,
+        pub(crate) metadata: std::option::Option<crate::model::ReservationPurchaseRecommendationMetadata>,
+        pub(crate) recommendations: std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendation>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
-        pub fn metadata(
-            mut self,
-            input: crate::model::ReservationPurchaseRecommendationMetadata,
-        ) -> Self {
+        pub fn metadata(mut self, input: crate::model::ReservationPurchaseRecommendationMetadata) -> Self {
             self.metadata = Some(input);
             self
         }
         /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ReservationPurchaseRecommendationMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::ReservationPurchaseRecommendationMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// Appends an item to `recommendations`.
         ///
         /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
         ///
         /// <p>Recommendations for reservations to purchase.</p>
-        pub fn recommendations(
-            mut self,
-            input: crate::model::ReservationPurchaseRecommendation,
-        ) -> Self {
+        pub fn recommendations(mut self, input: crate::model::ReservationPurchaseRecommendation) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input);
-            self.recommendations = Some(v);
-            self
+                            v.push(input);
+                            self.recommendations = Some(v);
+                            self
         }
         /// <p>Recommendations for reservations to purchase.</p>
-        pub fn set_recommendations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ReservationPurchaseRecommendation>,
-            >,
-        ) -> Self {
-            self.recommendations = input;
-            self
+        pub fn set_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendation>>) -> Self {
+            self.recommendations = input; self
         }
         /// <p>The pagination token for the next set of retrievable results.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1683,22 +1535,23 @@ pub mod get_reservation_purchase_recommendation_output {
             self
         }
         /// <p>The pagination token for the next set of retrievable results.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
         pub fn build(self) -> crate::output::GetReservationPurchaseRecommendationOutput {
             crate::output::GetReservationPurchaseRecommendationOutput {
-                metadata: self.metadata,
-                recommendations: self.recommendations,
-                next_page_token: self.next_page_token,
+                metadata: self.metadata
+                ,
+                recommendations: self.recommendations
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReservationPurchaseRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
@@ -1710,7 +1563,7 @@ impl GetReservationPurchaseRecommendationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReservationCoverageOutput {
+pub struct GetReservationCoverageOutput  {
     /// <p>The amount of time that your reservations covered.</p>
     #[doc(hidden)]
     pub coverages_by_time: std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>,
@@ -1723,26 +1576,25 @@ pub struct GetReservationCoverageOutput {
 }
 impl GetReservationCoverageOutput {
     /// <p>The amount of time that your reservations covered.</p>
-    pub fn coverages_by_time(&self) -> std::option::Option<&[crate::model::CoverageByTime]> {
+    pub fn coverages_by_time(&self) -> std::option::Option<& [crate::model::CoverageByTime]> {
         self.coverages_by_time.as_deref()
     }
     /// <p>The total amount of instance usage that a reservation covered.</p>
-    pub fn total(&self) -> std::option::Option<&crate::model::Coverage> {
+    pub fn total(&self) -> std::option::Option<& crate::model::Coverage> {
         self.total.as_ref()
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
 pub mod get_reservation_coverage_output {
-
+    
     /// A builder for [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) coverages_by_time:
-            std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>,
+        pub(crate) coverages_by_time: std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>,
         pub(crate) total: std::option::Option<crate::model::Coverage>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
@@ -1754,17 +1606,13 @@ pub mod get_reservation_coverage_output {
         /// <p>The amount of time that your reservations covered.</p>
         pub fn coverages_by_time(mut self, input: crate::model::CoverageByTime) -> Self {
             let mut v = self.coverages_by_time.unwrap_or_default();
-            v.push(input);
-            self.coverages_by_time = Some(v);
-            self
+                            v.push(input);
+                            self.coverages_by_time = Some(v);
+                            self
         }
         /// <p>The amount of time that your reservations covered.</p>
-        pub fn set_coverages_by_time(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>,
-        ) -> Self {
-            self.coverages_by_time = input;
-            self
+        pub fn set_coverages_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>) -> Self {
+            self.coverages_by_time = input; self
         }
         /// <p>The total amount of instance usage that a reservation covered.</p>
         pub fn total(mut self, input: crate::model::Coverage) -> Self {
@@ -1773,8 +1621,7 @@ pub mod get_reservation_coverage_output {
         }
         /// <p>The total amount of instance usage that a reservation covered.</p>
         pub fn set_total(mut self, input: std::option::Option<crate::model::Coverage>) -> Self {
-            self.total = input;
-            self
+            self.total = input; self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1782,22 +1629,23 @@ pub mod get_reservation_coverage_output {
             self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
         pub fn build(self) -> crate::output::GetReservationCoverageOutput {
             crate::output::GetReservationCoverageOutput {
-                coverages_by_time: self.coverages_by_time,
-                total: self.total,
-                next_page_token: self.next_page_token,
+                coverages_by_time: self.coverages_by_time
+                ,
+                total: self.total
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetReservationCoverageOutput {
     /// Creates a new builder-style object to manufacture [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
@@ -1809,50 +1657,49 @@ impl GetReservationCoverageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDimensionValuesOutput {
-    /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
-    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
-    /// <ul>
-    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-    /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-    /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
-    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-    /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
-    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
-    /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
-    /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
-    /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
-    /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
-    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li>
-    /// </ul>
-    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
-    /// <ul>
-    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-    /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
-    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-    /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
-    /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
-    /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
-    /// </ul>
-    /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
-    /// <ul>
-    /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
-    /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
-    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-    /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
-    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-    /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
+pub struct GetDimensionValuesOutput  {
+    /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p> 
+    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p> 
+    /// <ul> 
+    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> 
+    /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li> 
+    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> 
+    /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li> 
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+    /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li> 
+    /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> 
+    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> 
+    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li> 
+    /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li> 
+    /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li> 
+    /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li> 
+    /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> 
+    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li> 
+    /// </ul> 
+    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p> 
+    /// <ul> 
+    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> 
+    /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li> 
+    /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> 
+    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> 
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> 
+    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li> 
+    /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li> 
+    /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li> 
+    /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li> 
+    /// </ul> 
+    /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p> 
+    /// <ul> 
+    /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li> 
+    /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li> 
+    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li> 
+    /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li> 
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+    /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub dimension_values:
-        std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+    pub dimension_values: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
     #[doc(hidden)]
     pub return_size: std::option::Option<i32>,
@@ -1864,49 +1711,47 @@ pub struct GetDimensionValuesOutput {
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetDimensionValuesOutput {
-    /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
-    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
-    /// <ul>
-    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-    /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-    /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
-    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-    /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
-    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
-    /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
-    /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
-    /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
-    /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
-    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li>
+    /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p> 
+    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p> 
+    /// <ul> 
+    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> 
+    /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li> 
+    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> 
+    /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li> 
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+    /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li> 
+    /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> 
+    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> 
+    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li> 
+    /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li> 
+    /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li> 
+    /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li> 
+    /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> 
+    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li> 
+    /// </ul> 
+    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p> 
+    /// <ul> 
+    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> 
+    /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li> 
+    /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> 
+    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> 
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> 
+    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li> 
+    /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li> 
+    /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li> 
+    /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li> 
+    /// </ul> 
+    /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p> 
+    /// <ul> 
+    /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li> 
+    /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li> 
+    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li> 
+    /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li> 
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+    /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li> 
     /// </ul>
-    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
-    /// <ul>
-    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-    /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
-    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-    /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
-    /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
-    /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
-    /// </ul>
-    /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
-    /// <ul>
-    /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
-    /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
-    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-    /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
-    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-    /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
-    /// </ul>
-    pub fn dimension_values(
-        &self,
-    ) -> std::option::Option<&[crate::model::DimensionValuesWithAttributes]> {
+    pub fn dimension_values(&self) -> std::option::Option<& [crate::model::DimensionValuesWithAttributes]> {
         self.dimension_values.as_deref()
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
@@ -1918,18 +1763,17 @@ impl GetDimensionValuesOutput {
         self.total_size
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
 pub mod get_dimension_values_output {
-
+    
     /// A builder for [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dimension_values:
-            std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+        pub(crate) dimension_values: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
         pub(crate) return_size: std::option::Option<i32>,
         pub(crate) total_size: std::option::Option<i32>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -1939,101 +1783,94 @@ pub mod get_dimension_values_output {
         ///
         /// To override the contents of this collection use [`set_dimension_values`](Self::set_dimension_values).
         ///
-        /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
-        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
-        /// <ul>
-        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-        /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-        /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
-        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-        /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
-        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
-        /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
-        /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
-        /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
-        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
-        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li>
+        /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p> 
+        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p> 
+        /// <ul> 
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> 
+        /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li> 
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> 
+        /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li> 
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+        /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li> 
+        /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> 
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> 
+        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li> 
+        /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li> 
+        /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li> 
+        /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li> 
+        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> 
+        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li> 
+        /// </ul> 
+        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p> 
+        /// <ul> 
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> 
+        /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li> 
+        /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> 
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> 
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> 
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li> 
+        /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li> 
+        /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li> 
+        /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li> 
+        /// </ul> 
+        /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p> 
+        /// <ul> 
+        /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li> 
+        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li> 
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li> 
+        /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li> 
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+        /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li> 
         /// </ul>
-        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
-        /// <ul>
-        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-        /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
-        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-        /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
-        /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
-        /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
-        /// </ul>
-        /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
-        /// <ul>
-        /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
-        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
-        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-        /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
-        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-        /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
-        /// </ul>
-        pub fn dimension_values(
-            mut self,
-            input: crate::model::DimensionValuesWithAttributes,
-        ) -> Self {
+        pub fn dimension_values(mut self, input: crate::model::DimensionValuesWithAttributes) -> Self {
             let mut v = self.dimension_values.unwrap_or_default();
-            v.push(input);
-            self.dimension_values = Some(v);
-            self
+                            v.push(input);
+                            self.dimension_values = Some(v);
+                            self
         }
-        /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
-        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
-        /// <ul>
-        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-        /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
-        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-        /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
-        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-        /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
-        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
-        /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
-        /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
-        /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
-        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
-        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li>
+        /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p> 
+        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p> 
+        /// <ul> 
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> 
+        /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li> 
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> 
+        /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li> 
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+        /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li> 
+        /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> 
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> 
+        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li> 
+        /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li> 
+        /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li> 
+        /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li> 
+        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> 
+        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level Data</code> in Cost Management Console preferences.</p> </li> 
+        /// </ul> 
+        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p> 
+        /// <ul> 
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> 
+        /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li> 
+        /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> 
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> 
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> 
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li> 
+        /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li> 
+        /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li> 
+        /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li> 
+        /// </ul> 
+        /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p> 
+        /// <ul> 
+        /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li> 
+        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li> 
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li> 
+        /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li> 
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li> 
+        /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li> 
         /// </ul>
-        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
-        /// <ul>
-        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
-        /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
-        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
-        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
-        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-        /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
-        /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
-        /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
-        /// </ul>
-        /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
-        /// <ul>
-        /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
-        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
-        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
-        /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
-        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
-        /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
-        /// </ul>
-        pub fn set_dimension_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
-        ) -> Self {
-            self.dimension_values = input;
-            self
+        pub fn set_dimension_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>) -> Self {
+            self.dimension_values = input; self
         }
         /// <p>The number of results that Amazon Web Services returned at one time.</p>
         pub fn return_size(mut self, input: i32) -> Self {
@@ -2042,8 +1879,7 @@ pub mod get_dimension_values_output {
         }
         /// <p>The number of results that Amazon Web Services returned at one time.</p>
         pub fn set_return_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.return_size = input;
-            self
+            self.return_size = input; self
         }
         /// <p>The total number of search results.</p>
         pub fn total_size(mut self, input: i32) -> Self {
@@ -2052,8 +1888,7 @@ pub mod get_dimension_values_output {
         }
         /// <p>The total number of search results.</p>
         pub fn set_total_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_size = input;
-            self
+            self.total_size = input; self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2061,23 +1896,25 @@ pub mod get_dimension_values_output {
             self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
         pub fn build(self) -> crate::output::GetDimensionValuesOutput {
             crate::output::GetDimensionValuesOutput {
-                dimension_values: self.dimension_values,
-                return_size: self.return_size,
-                total_size: self.total_size,
-                next_page_token: self.next_page_token,
+                dimension_values: self.dimension_values
+                ,
+                return_size: self.return_size
+                ,
+                total_size: self.total_size
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDimensionValuesOutput {
     /// Creates a new builder-style object to manufacture [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
@@ -2089,7 +1926,7 @@ impl GetDimensionValuesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCostForecastOutput {
+pub struct GetCostForecastOutput  {
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
     #[doc(hidden)]
     pub total: std::option::Option<crate::model::MetricValue>,
@@ -2099,23 +1936,22 @@ pub struct GetCostForecastOutput {
 }
 impl GetCostForecastOutput {
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
-    pub fn total(&self) -> std::option::Option<&crate::model::MetricValue> {
+    pub fn total(&self) -> std::option::Option<& crate::model::MetricValue> {
         self.total.as_ref()
     }
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
-    pub fn forecast_results_by_time(&self) -> std::option::Option<&[crate::model::ForecastResult]> {
+    pub fn forecast_results_by_time(&self) -> std::option::Option<& [crate::model::ForecastResult]> {
         self.forecast_results_by_time.as_deref()
     }
 }
 /// See [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
 pub mod get_cost_forecast_output {
-
+    
     /// A builder for [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total: std::option::Option<crate::model::MetricValue>,
-        pub(crate) forecast_results_by_time:
-            std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
+        pub(crate) forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
     }
     impl Builder {
         /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
@@ -2125,8 +1961,7 @@ pub mod get_cost_forecast_output {
         }
         /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
         pub fn set_total(mut self, input: std::option::Option<crate::model::MetricValue>) -> Self {
-            self.total = input;
-            self
+            self.total = input; self
         }
         /// Appends an item to `forecast_results_by_time`.
         ///
@@ -2135,26 +1970,26 @@ pub mod get_cost_forecast_output {
         /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
         pub fn forecast_results_by_time(mut self, input: crate::model::ForecastResult) -> Self {
             let mut v = self.forecast_results_by_time.unwrap_or_default();
-            v.push(input);
-            self.forecast_results_by_time = Some(v);
-            self
+                            v.push(input);
+                            self.forecast_results_by_time = Some(v);
+                            self
         }
         /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
-        pub fn set_forecast_results_by_time(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
-        ) -> Self {
-            self.forecast_results_by_time = input;
-            self
+        pub fn set_forecast_results_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>) -> Self {
+            self.forecast_results_by_time = input; self
         }
         /// Consumes the builder and constructs a [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
         pub fn build(self) -> crate::output::GetCostForecastOutput {
             crate::output::GetCostForecastOutput {
-                total: self.total,
-                forecast_results_by_time: self.forecast_results_by_time,
+                total: self.total
+                ,
+                forecast_results_by_time: self.forecast_results_by_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCostForecastOutput {
     /// Creates a new builder-style object to manufacture [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
@@ -2166,14 +2001,14 @@ impl GetCostForecastOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCostCategoriesOutput {
+pub struct GetCostCategoriesOutput  {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The names of the Cost Categories.</p>
     #[doc(hidden)]
     pub cost_category_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Cost Category values.</p>
+    /// <p>The Cost Category values.</p> 
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
     #[doc(hidden)]
     pub cost_category_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2186,16 +2021,16 @@ pub struct GetCostCategoriesOutput {
 }
 impl GetCostCategoriesOutput {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The names of the Cost Categories.</p>
-    pub fn cost_category_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cost_category_names(&self) -> std::option::Option<& [std::string::String]> {
         self.cost_category_names.as_deref()
     }
-    /// <p>The Cost Category values.</p>
+    /// <p>The Cost Category values.</p> 
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-    pub fn cost_category_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cost_category_values(&self) -> std::option::Option<& [std::string::String]> {
         self.cost_category_values.as_deref()
     }
     /// <p>The number of objects that are returned.</p>
@@ -2209,7 +2044,7 @@ impl GetCostCategoriesOutput {
 }
 /// See [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
 pub mod get_cost_categories_output {
-
+    
     /// A builder for [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2226,12 +2061,8 @@ pub mod get_cost_categories_output {
             self
         }
         /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Appends an item to `cost_category_names`.
         ///
@@ -2240,38 +2071,30 @@ pub mod get_cost_categories_output {
         /// <p>The names of the Cost Categories.</p>
         pub fn cost_category_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cost_category_names.unwrap_or_default();
-            v.push(input.into());
-            self.cost_category_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.cost_category_names = Some(v);
+                            self
         }
         /// <p>The names of the Cost Categories.</p>
-        pub fn set_cost_category_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cost_category_names = input;
-            self
+        pub fn set_cost_category_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cost_category_names = input; self
         }
         /// Appends an item to `cost_category_values`.
         ///
         /// To override the contents of this collection use [`set_cost_category_values`](Self::set_cost_category_values).
         ///
-        /// <p>The Cost Category values.</p>
+        /// <p>The Cost Category values.</p> 
         /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
         pub fn cost_category_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cost_category_values.unwrap_or_default();
-            v.push(input.into());
-            self.cost_category_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.cost_category_values = Some(v);
+                            self
         }
-        /// <p>The Cost Category values.</p>
+        /// <p>The Cost Category values.</p> 
         /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-        pub fn set_cost_category_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cost_category_values = input;
-            self
+        pub fn set_cost_category_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cost_category_values = input; self
         }
         /// <p>The number of objects that are returned.</p>
         pub fn return_size(mut self, input: i32) -> Self {
@@ -2280,8 +2103,7 @@ pub mod get_cost_categories_output {
         }
         /// <p>The number of objects that are returned.</p>
         pub fn set_return_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.return_size = input;
-            self
+            self.return_size = input; self
         }
         /// <p>The total number of objects.</p>
         pub fn total_size(mut self, input: i32) -> Self {
@@ -2290,20 +2112,26 @@ pub mod get_cost_categories_output {
         }
         /// <p>The total number of objects.</p>
         pub fn set_total_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_size = input;
-            self
+            self.total_size = input; self
         }
         /// Consumes the builder and constructs a [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
         pub fn build(self) -> crate::output::GetCostCategoriesOutput {
             crate::output::GetCostCategoriesOutput {
-                next_page_token: self.next_page_token,
-                cost_category_names: self.cost_category_names,
-                cost_category_values: self.cost_category_values,
-                return_size: self.return_size,
-                total_size: self.total_size,
+                next_page_token: self.next_page_token
+                ,
+                cost_category_names: self.cost_category_names
+                ,
+                cost_category_values: self.cost_category_values
+                ,
+                return_size: self.return_size
+                ,
+                total_size: self.total_size
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCostCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
@@ -2315,7 +2143,7 @@ impl GetCostCategoriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCostAndUsageWithResourcesOutput {
+pub struct GetCostAndUsageWithResourcesOutput  {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -2327,41 +2155,36 @@ pub struct GetCostAndUsageWithResourcesOutput {
     pub results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
     #[doc(hidden)]
-    pub dimension_value_attributes:
-        std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+    pub dimension_value_attributes: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
 }
 impl GetCostAndUsageWithResourcesOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    pub fn group_definitions(&self) -> std::option::Option<&[crate::model::GroupDefinition]> {
+    pub fn group_definitions(&self) -> std::option::Option<& [crate::model::GroupDefinition]> {
         self.group_definitions.as_deref()
     }
     /// <p>The time period that's covered by the results in the response.</p>
-    pub fn results_by_time(&self) -> std::option::Option<&[crate::model::ResultByTime]> {
+    pub fn results_by_time(&self) -> std::option::Option<& [crate::model::ResultByTime]> {
         self.results_by_time.as_deref()
     }
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub fn dimension_value_attributes(
-        &self,
-    ) -> std::option::Option<&[crate::model::DimensionValuesWithAttributes]> {
+    pub fn dimension_value_attributes(&self) -> std::option::Option<& [crate::model::DimensionValuesWithAttributes]> {
         self.dimension_value_attributes.as_deref()
     }
 }
 /// See [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
 pub mod get_cost_and_usage_with_resources_output {
-
+    
     /// A builder for [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
-        pub(crate) group_definitions:
-            std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
+        pub(crate) group_definitions: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
         pub(crate) results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
-        pub(crate) dimension_value_attributes:
-            std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+        pub(crate) dimension_value_attributes: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
     }
     impl Builder {
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -2370,12 +2193,8 @@ pub mod get_cost_and_usage_with_resources_output {
             self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Appends an item to `group_definitions`.
         ///
@@ -2384,17 +2203,13 @@ pub mod get_cost_and_usage_with_resources_output {
         /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
         pub fn group_definitions(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_definitions.unwrap_or_default();
-            v.push(input);
-            self.group_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.group_definitions = Some(v);
+                            self
         }
         /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-        pub fn set_group_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
-        ) -> Self {
-            self.group_definitions = input;
-            self
+        pub fn set_group_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>) -> Self {
+            self.group_definitions = input; self
         }
         /// Appends an item to `results_by_time`.
         ///
@@ -2403,50 +2218,45 @@ pub mod get_cost_and_usage_with_resources_output {
         /// <p>The time period that's covered by the results in the response.</p>
         pub fn results_by_time(mut self, input: crate::model::ResultByTime) -> Self {
             let mut v = self.results_by_time.unwrap_or_default();
-            v.push(input);
-            self.results_by_time = Some(v);
-            self
+                            v.push(input);
+                            self.results_by_time = Some(v);
+                            self
         }
         /// <p>The time period that's covered by the results in the response.</p>
-        pub fn set_results_by_time(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
-        ) -> Self {
-            self.results_by_time = input;
-            self
+        pub fn set_results_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>) -> Self {
+            self.results_by_time = input; self
         }
         /// Appends an item to `dimension_value_attributes`.
         ///
         /// To override the contents of this collection use [`set_dimension_value_attributes`](Self::set_dimension_value_attributes).
         ///
         /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-        pub fn dimension_value_attributes(
-            mut self,
-            input: crate::model::DimensionValuesWithAttributes,
-        ) -> Self {
+        pub fn dimension_value_attributes(mut self, input: crate::model::DimensionValuesWithAttributes) -> Self {
             let mut v = self.dimension_value_attributes.unwrap_or_default();
-            v.push(input);
-            self.dimension_value_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.dimension_value_attributes = Some(v);
+                            self
         }
         /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-        pub fn set_dimension_value_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
-        ) -> Self {
-            self.dimension_value_attributes = input;
-            self
+        pub fn set_dimension_value_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>) -> Self {
+            self.dimension_value_attributes = input; self
         }
         /// Consumes the builder and constructs a [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
         pub fn build(self) -> crate::output::GetCostAndUsageWithResourcesOutput {
             crate::output::GetCostAndUsageWithResourcesOutput {
-                next_page_token: self.next_page_token,
-                group_definitions: self.group_definitions,
-                results_by_time: self.results_by_time,
-                dimension_value_attributes: self.dimension_value_attributes,
+                next_page_token: self.next_page_token
+                ,
+                group_definitions: self.group_definitions
+                ,
+                results_by_time: self.results_by_time
+                ,
+                dimension_value_attributes: self.dimension_value_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCostAndUsageWithResourcesOutput {
     /// Creates a new builder-style object to manufacture [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
@@ -2458,7 +2268,7 @@ impl GetCostAndUsageWithResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCostAndUsageOutput {
+pub struct GetCostAndUsageOutput  {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -2470,41 +2280,36 @@ pub struct GetCostAndUsageOutput {
     pub results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
     #[doc(hidden)]
-    pub dimension_value_attributes:
-        std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+    pub dimension_value_attributes: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
 }
 impl GetCostAndUsageOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    pub fn group_definitions(&self) -> std::option::Option<&[crate::model::GroupDefinition]> {
+    pub fn group_definitions(&self) -> std::option::Option<& [crate::model::GroupDefinition]> {
         self.group_definitions.as_deref()
     }
     /// <p>The time period that's covered by the results in the response.</p>
-    pub fn results_by_time(&self) -> std::option::Option<&[crate::model::ResultByTime]> {
+    pub fn results_by_time(&self) -> std::option::Option<& [crate::model::ResultByTime]> {
         self.results_by_time.as_deref()
     }
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub fn dimension_value_attributes(
-        &self,
-    ) -> std::option::Option<&[crate::model::DimensionValuesWithAttributes]> {
+    pub fn dimension_value_attributes(&self) -> std::option::Option<& [crate::model::DimensionValuesWithAttributes]> {
         self.dimension_value_attributes.as_deref()
     }
 }
 /// See [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
 pub mod get_cost_and_usage_output {
-
+    
     /// A builder for [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
-        pub(crate) group_definitions:
-            std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
+        pub(crate) group_definitions: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
         pub(crate) results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
-        pub(crate) dimension_value_attributes:
-            std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+        pub(crate) dimension_value_attributes: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
     }
     impl Builder {
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -2513,12 +2318,8 @@ pub mod get_cost_and_usage_output {
             self
         }
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Appends an item to `group_definitions`.
         ///
@@ -2527,17 +2328,13 @@ pub mod get_cost_and_usage_output {
         /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
         pub fn group_definitions(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_definitions.unwrap_or_default();
-            v.push(input);
-            self.group_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.group_definitions = Some(v);
+                            self
         }
         /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-        pub fn set_group_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
-        ) -> Self {
-            self.group_definitions = input;
-            self
+        pub fn set_group_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>) -> Self {
+            self.group_definitions = input; self
         }
         /// Appends an item to `results_by_time`.
         ///
@@ -2546,50 +2343,45 @@ pub mod get_cost_and_usage_output {
         /// <p>The time period that's covered by the results in the response.</p>
         pub fn results_by_time(mut self, input: crate::model::ResultByTime) -> Self {
             let mut v = self.results_by_time.unwrap_or_default();
-            v.push(input);
-            self.results_by_time = Some(v);
-            self
+                            v.push(input);
+                            self.results_by_time = Some(v);
+                            self
         }
         /// <p>The time period that's covered by the results in the response.</p>
-        pub fn set_results_by_time(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
-        ) -> Self {
-            self.results_by_time = input;
-            self
+        pub fn set_results_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>) -> Self {
+            self.results_by_time = input; self
         }
         /// Appends an item to `dimension_value_attributes`.
         ///
         /// To override the contents of this collection use [`set_dimension_value_attributes`](Self::set_dimension_value_attributes).
         ///
         /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-        pub fn dimension_value_attributes(
-            mut self,
-            input: crate::model::DimensionValuesWithAttributes,
-        ) -> Self {
+        pub fn dimension_value_attributes(mut self, input: crate::model::DimensionValuesWithAttributes) -> Self {
             let mut v = self.dimension_value_attributes.unwrap_or_default();
-            v.push(input);
-            self.dimension_value_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.dimension_value_attributes = Some(v);
+                            self
         }
         /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-        pub fn set_dimension_value_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
-        ) -> Self {
-            self.dimension_value_attributes = input;
-            self
+        pub fn set_dimension_value_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>) -> Self {
+            self.dimension_value_attributes = input; self
         }
         /// Consumes the builder and constructs a [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
         pub fn build(self) -> crate::output::GetCostAndUsageOutput {
             crate::output::GetCostAndUsageOutput {
-                next_page_token: self.next_page_token,
-                group_definitions: self.group_definitions,
-                results_by_time: self.results_by_time,
-                dimension_value_attributes: self.dimension_value_attributes,
+                next_page_token: self.next_page_token
+                ,
+                group_definitions: self.group_definitions
+                ,
+                results_by_time: self.results_by_time
+                ,
+                dimension_value_attributes: self.dimension_value_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCostAndUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
@@ -2601,35 +2393,31 @@ impl GetCostAndUsageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnomalySubscriptionsOutput {
+pub struct GetAnomalySubscriptionsOutput  {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
     #[doc(hidden)]
-    pub anomaly_subscriptions:
-        std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
+    pub anomaly_subscriptions: std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAnomalySubscriptionsOutput {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
-    pub fn anomaly_subscriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::AnomalySubscription]> {
+    pub fn anomaly_subscriptions(&self) -> std::option::Option<& [crate::model::AnomalySubscription]> {
         self.anomaly_subscriptions.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
 pub mod get_anomaly_subscriptions_output {
-
+    
     /// A builder for [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) anomaly_subscriptions:
-            std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
+        pub(crate) anomaly_subscriptions: std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2640,17 +2428,13 @@ pub mod get_anomaly_subscriptions_output {
         /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
         pub fn anomaly_subscriptions(mut self, input: crate::model::AnomalySubscription) -> Self {
             let mut v = self.anomaly_subscriptions.unwrap_or_default();
-            v.push(input);
-            self.anomaly_subscriptions = Some(v);
-            self
+                            v.push(input);
+                            self.anomaly_subscriptions = Some(v);
+                            self
         }
         /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
-        pub fn set_anomaly_subscriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
-        ) -> Self {
-            self.anomaly_subscriptions = input;
-            self
+        pub fn set_anomaly_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>) -> Self {
+            self.anomaly_subscriptions = input; self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2658,21 +2442,21 @@ pub mod get_anomaly_subscriptions_output {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
         pub fn build(self) -> crate::output::GetAnomalySubscriptionsOutput {
             crate::output::GetAnomalySubscriptionsOutput {
-                anomaly_subscriptions: self.anomaly_subscriptions,
-                next_page_token: self.next_page_token,
+                anomaly_subscriptions: self.anomaly_subscriptions
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAnomalySubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
@@ -2684,7 +2468,7 @@ impl GetAnomalySubscriptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnomalyMonitorsOutput {
+pub struct GetAnomalyMonitorsOutput  {
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
     #[doc(hidden)]
     pub anomaly_monitors: std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
@@ -2694,22 +2478,21 @@ pub struct GetAnomalyMonitorsOutput {
 }
 impl GetAnomalyMonitorsOutput {
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
-    pub fn anomaly_monitors(&self) -> std::option::Option<&[crate::model::AnomalyMonitor]> {
+    pub fn anomaly_monitors(&self) -> std::option::Option<& [crate::model::AnomalyMonitor]> {
         self.anomaly_monitors.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
 pub mod get_anomaly_monitors_output {
-
+    
     /// A builder for [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) anomaly_monitors:
-            std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
+        pub(crate) anomaly_monitors: std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2720,17 +2503,13 @@ pub mod get_anomaly_monitors_output {
         /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
         pub fn anomaly_monitors(mut self, input: crate::model::AnomalyMonitor) -> Self {
             let mut v = self.anomaly_monitors.unwrap_or_default();
-            v.push(input);
-            self.anomaly_monitors = Some(v);
-            self
+                            v.push(input);
+                            self.anomaly_monitors = Some(v);
+                            self
         }
         /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
-        pub fn set_anomaly_monitors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
-        ) -> Self {
-            self.anomaly_monitors = input;
-            self
+        pub fn set_anomaly_monitors(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>) -> Self {
+            self.anomaly_monitors = input; self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2738,21 +2517,21 @@ pub mod get_anomaly_monitors_output {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
         pub fn build(self) -> crate::output::GetAnomalyMonitorsOutput {
             crate::output::GetAnomalyMonitorsOutput {
-                anomaly_monitors: self.anomaly_monitors,
-                next_page_token: self.next_page_token,
+                anomaly_monitors: self.anomaly_monitors
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAnomalyMonitorsOutput {
     /// Creates a new builder-style object to manufacture [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
@@ -2764,7 +2543,7 @@ impl GetAnomalyMonitorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnomaliesOutput {
+pub struct GetAnomaliesOutput  {
     /// <p>A list of cost anomalies. </p>
     #[doc(hidden)]
     pub anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
@@ -2774,17 +2553,17 @@ pub struct GetAnomaliesOutput {
 }
 impl GetAnomaliesOutput {
     /// <p>A list of cost anomalies. </p>
-    pub fn anomalies(&self) -> std::option::Option<&[crate::model::Anomaly]> {
+    pub fn anomalies(&self) -> std::option::Option<& [crate::model::Anomaly]> {
         self.anomalies.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
 pub mod get_anomalies_output {
-
+    
     /// A builder for [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2799,17 +2578,13 @@ pub mod get_anomalies_output {
         /// <p>A list of cost anomalies. </p>
         pub fn anomalies(mut self, input: crate::model::Anomaly) -> Self {
             let mut v = self.anomalies.unwrap_or_default();
-            v.push(input);
-            self.anomalies = Some(v);
-            self
+                            v.push(input);
+                            self.anomalies = Some(v);
+                            self
         }
         /// <p>A list of cost anomalies. </p>
-        pub fn set_anomalies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
-        ) -> Self {
-            self.anomalies = input;
-            self
+        pub fn set_anomalies(mut self, input: std::option::Option<std::vec::Vec<crate::model::Anomaly>>) -> Self {
+            self.anomalies = input; self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2817,21 +2592,21 @@ pub mod get_anomalies_output {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
         pub fn build(self) -> crate::output::GetAnomaliesOutput {
             crate::output::GetAnomaliesOutput {
-                anomalies: self.anomalies,
-                next_page_token: self.next_page_token,
+                anomalies: self.anomalies
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAnomaliesOutput {
     /// Creates a new builder-style object to manufacture [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
@@ -2843,20 +2618,20 @@ impl GetAnomaliesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCostCategoryDefinitionOutput {
+pub struct DescribeCostCategoryDefinitionOutput  {
     /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
     #[doc(hidden)]
     pub cost_category: std::option::Option<crate::model::CostCategory>,
 }
 impl DescribeCostCategoryDefinitionOutput {
     /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
-    pub fn cost_category(&self) -> std::option::Option<&crate::model::CostCategory> {
+    pub fn cost_category(&self) -> std::option::Option<& crate::model::CostCategory> {
         self.cost_category.as_ref()
     }
 }
 /// See [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
 pub mod describe_cost_category_definition_output {
-
+    
     /// A builder for [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2869,20 +2644,19 @@ pub mod describe_cost_category_definition_output {
             self
         }
         /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
-        pub fn set_cost_category(
-            mut self,
-            input: std::option::Option<crate::model::CostCategory>,
-        ) -> Self {
-            self.cost_category = input;
-            self
+        pub fn set_cost_category(mut self, input: std::option::Option<crate::model::CostCategory>) -> Self {
+            self.cost_category = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
         pub fn build(self) -> crate::output::DescribeCostCategoryDefinitionOutput {
             crate::output::DescribeCostCategoryDefinitionOutput {
-                cost_category: self.cost_category,
+                cost_category: self.cost_category
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
@@ -2894,7 +2668,7 @@ impl DescribeCostCategoryDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCostCategoryDefinitionOutput {
+pub struct DeleteCostCategoryDefinitionOutput  {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -2904,17 +2678,17 @@ pub struct DeleteCostCategoryDefinitionOutput {
 }
 impl DeleteCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
-    pub fn effective_end(&self) -> std::option::Option<&str> {
+    pub fn effective_end(&self) -> std::option::Option<& str> {
         self.effective_end.as_deref()
     }
 }
 /// See [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
 pub mod delete_cost_category_definition_output {
-
+    
     /// A builder for [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2928,12 +2702,8 @@ pub mod delete_cost_category_definition_output {
             self
         }
         /// <p>The unique identifier for your Cost Category. </p>
-        pub fn set_cost_category_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cost_category_arn = input;
-            self
+        pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cost_category_arn = input; self
         }
         /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
         pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2941,21 +2711,21 @@ pub mod delete_cost_category_definition_output {
             self
         }
         /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
-        pub fn set_effective_end(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.effective_end = input;
-            self
+        pub fn set_effective_end(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.effective_end = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteCostCategoryDefinitionOutput {
             crate::output::DeleteCostCategoryDefinitionOutput {
-                cost_category_arn: self.cost_category_arn,
-                effective_end: self.effective_end,
+                cost_category_arn: self.cost_category_arn
+                ,
+                effective_end: self.effective_end
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
@@ -2967,19 +2737,24 @@ impl DeleteCostCategoryDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnomalySubscriptionOutput {}
+pub struct DeleteAnomalySubscriptionOutput  {
+}
 /// See [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
 pub mod delete_anomaly_subscription_output {
-
+    
     /// A builder for [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteAnomalySubscriptionOutput {
-            crate::output::DeleteAnomalySubscriptionOutput {}
+            crate::output::DeleteAnomalySubscriptionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAnomalySubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
@@ -2991,19 +2766,24 @@ impl DeleteAnomalySubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnomalyMonitorOutput {}
+pub struct DeleteAnomalyMonitorOutput  {
+}
 /// See [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
 pub mod delete_anomaly_monitor_output {
-
+    
     /// A builder for [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
         pub fn build(self) -> crate::output::DeleteAnomalyMonitorOutput {
-            crate::output::DeleteAnomalyMonitorOutput {}
+            crate::output::DeleteAnomalyMonitorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAnomalyMonitorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
@@ -3015,7 +2795,7 @@ impl DeleteAnomalyMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCostCategoryDefinitionOutput {
+pub struct CreateCostCategoryDefinitionOutput  {
     /// <p>The unique identifier for your newly created Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -3025,17 +2805,17 @@ pub struct CreateCostCategoryDefinitionOutput {
 }
 impl CreateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your newly created Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
-    pub fn effective_start(&self) -> std::option::Option<&str> {
+    pub fn effective_start(&self) -> std::option::Option<& str> {
         self.effective_start.as_deref()
     }
 }
 /// See [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
 pub mod create_cost_category_definition_output {
-
+    
     /// A builder for [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3049,12 +2829,8 @@ pub mod create_cost_category_definition_output {
             self
         }
         /// <p>The unique identifier for your newly created Cost Category. </p>
-        pub fn set_cost_category_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cost_category_arn = input;
-            self
+        pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cost_category_arn = input; self
         }
         /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3062,21 +2838,21 @@ pub mod create_cost_category_definition_output {
             self
         }
         /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
-        pub fn set_effective_start(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.effective_start = input;
-            self
+        pub fn set_effective_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.effective_start = input; self
         }
         /// Consumes the builder and constructs a [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
         pub fn build(self) -> crate::output::CreateCostCategoryDefinitionOutput {
             crate::output::CreateCostCategoryDefinitionOutput {
-                cost_category_arn: self.cost_category_arn,
-                effective_start: self.effective_start,
+                cost_category_arn: self.cost_category_arn
+                ,
+                effective_start: self.effective_start
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
@@ -3088,20 +2864,20 @@ impl CreateCostCategoryDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAnomalySubscriptionOutput {
+pub struct CreateAnomalySubscriptionOutput  {
     /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
     #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl CreateAnomalySubscriptionOutput {
     /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
-    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+    pub fn subscription_arn(&self) -> std::option::Option<& str> {
         self.subscription_arn.as_deref()
     }
 }
 /// See [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
 pub mod create_anomaly_subscription_output {
-
+    
     /// A builder for [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3114,20 +2890,19 @@ pub mod create_anomaly_subscription_output {
             self
         }
         /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
-        pub fn set_subscription_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_arn = input;
-            self
+        pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
         pub fn build(self) -> crate::output::CreateAnomalySubscriptionOutput {
             crate::output::CreateAnomalySubscriptionOutput {
-                subscription_arn: self.subscription_arn,
+                subscription_arn: self.subscription_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAnomalySubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
@@ -3139,20 +2914,20 @@ impl CreateAnomalySubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAnomalyMonitorOutput {
+pub struct CreateAnomalyMonitorOutput  {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl CreateAnomalyMonitorOutput {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
-    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
 }
 /// See [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
 pub mod create_anomaly_monitor_output {
-
+    
     /// A builder for [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3166,16 +2941,18 @@ pub mod create_anomaly_monitor_output {
         }
         /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.monitor_arn = input;
-            self
+            self.monitor_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
         pub fn build(self) -> crate::output::CreateAnomalyMonitorOutput {
             crate::output::CreateAnomalyMonitorOutput {
-                monitor_arn: self.monitor_arn,
+                monitor_arn: self.monitor_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAnomalyMonitorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
@@ -3183,3 +2960,4 @@ impl CreateAnomalyMonitorOutput {
         crate::output::create_anomaly_monitor_output::Builder::default()
     }
 }
+

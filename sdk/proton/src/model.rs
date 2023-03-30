@@ -3,7 +3,7 @@
 /// <p>The detail data for a template sync configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateSyncConfig {
+pub struct TemplateSyncConfig  {
     /// <p>The template name.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -25,33 +25,33 @@ pub struct TemplateSyncConfig {
 }
 impl TemplateSyncConfig {
     /// <p>The template name.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The template type.</p>
-    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+    pub fn template_type(&self) -> std::option::Option<& crate::model::TemplateType> {
         self.template_type.as_ref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
+    pub fn repository_provider(&self) -> std::option::Option<& crate::model::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>A subdirectory path to your template bundle version.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
 }
 /// See [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
 pub mod template_sync_config {
-
+    
     /// A builder for [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -69,12 +69,8 @@ pub mod template_sync_config {
             self
         }
         /// <p>The template name.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The template type.</p>
         pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
@@ -82,12 +78,8 @@ pub mod template_sync_config {
             self
         }
         /// <p>The template type.</p>
-        pub fn set_template_type(
-            mut self,
-            input: std::option::Option<crate::model::TemplateType>,
-        ) -> Self {
-            self.template_type = input;
-            self
+        pub fn set_template_type(mut self, input: std::option::Option<crate::model::TemplateType>) -> Self {
+            self.template_type = input; self
         }
         /// <p>The repository provider.</p>
         pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
@@ -95,12 +87,8 @@ pub mod template_sync_config {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn set_repository_provider(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryProvider>,
-        ) -> Self {
-            self.repository_provider = input;
-            self
+        pub fn set_repository_provider(mut self, input: std::option::Option<crate::model::RepositoryProvider>) -> Self {
+            self.repository_provider = input; self
         }
         /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,12 +96,8 @@ pub mod template_sync_config {
             self
         }
         /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The repository branch.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +106,7 @@ pub mod template_sync_config {
         }
         /// <p>The repository branch.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch = input;
-            self
+            self.branch = input; self
         }
         /// <p>A subdirectory path to your template bundle version.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,21 +115,28 @@ pub mod template_sync_config {
         }
         /// <p>A subdirectory path to your template bundle version.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subdirectory = input;
-            self
+            self.subdirectory = input; self
         }
         /// Consumes the builder and constructs a [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
         pub fn build(self) -> crate::model::TemplateSyncConfig {
             crate::model::TemplateSyncConfig {
-                template_name: self.template_name,
-                template_type: self.template_type,
-                repository_provider: self.repository_provider,
-                repository_name: self.repository_name,
-                branch: self.branch,
-                subdirectory: self.subdirectory,
+                template_name: self.template_name
+                ,
+                template_type: self.template_type
+                ,
+                repository_provider: self.repository_provider
+                ,
+                repository_name: self.repository_name
+                ,
+                branch: self.branch
+                ,
+                subdirectory: self.subdirectory
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateSyncConfig {
     /// Creates a new builder-style object to manufacture [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
@@ -161,9 +151,9 @@ impl TemplateSyncConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let repositoryprovider = unimplemented!();
 /// match repositoryprovider {
@@ -186,22 +176,14 @@ impl TemplateSyncConfig {
 /// Specifically, when `repositoryprovider` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RepositoryProvider::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RepositoryProvider {
     #[allow(missing_docs)] // documentation missing in model
     Bitbucket,
@@ -210,7 +192,7 @@ pub enum RepositoryProvider {
     #[allow(missing_docs)] // documentation missing in model
     GithubEnterprise,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepositoryProvider {
     fn from(s: &str) -> Self {
@@ -218,19 +200,17 @@ impl std::convert::From<&str> for RepositoryProvider {
             "BITBUCKET" => RepositoryProvider::Bitbucket,
             "GITHUB" => RepositoryProvider::Github,
             "GITHUB_ENTERPRISE" => RepositoryProvider::GithubEnterprise,
-            other => {
-                RepositoryProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RepositoryProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RepositoryProvider {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RepositoryProvider::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RepositoryProvider::from(s))
+                }
+            }
 impl RepositoryProvider {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -238,12 +218,14 @@ impl RepositoryProvider {
             RepositoryProvider::Bitbucket => "BITBUCKET",
             RepositoryProvider::Github => "GITHUB",
             RepositoryProvider::GithubEnterprise => "GITHUB_ENTERPRISE",
-            RepositoryProvider::Unknown(value) => value.as_str(),
+            RepositoryProvider::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"]
+        &[
+            "BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"
+        ]
     }
 }
 impl AsRef<str> for RepositoryProvider {
@@ -258,9 +240,9 @@ impl AsRef<str> for RepositoryProvider {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let templatetype = unimplemented!();
 /// match templatetype {
@@ -282,58 +264,52 @@ impl AsRef<str> for RepositoryProvider {
 /// Specifically, when `templatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TemplateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TemplateType {
     #[allow(missing_docs)] // documentation missing in model
     Environment,
     #[allow(missing_docs)] // documentation missing in model
     Service,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateType {
     fn from(s: &str) -> Self {
         match s {
             "ENVIRONMENT" => TemplateType::Environment,
             "SERVICE" => TemplateType::Service,
-            other => TemplateType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TemplateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TemplateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TemplateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TemplateType::from(s))
+                }
+            }
 impl TemplateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemplateType::Environment => "ENVIRONMENT",
             TemplateType::Service => "SERVICE",
-            TemplateType::Unknown(value) => value.as_str(),
+            TemplateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENVIRONMENT", "SERVICE"]
+        &[
+            "ENVIRONMENT", "SERVICE"
+        ]
     }
 }
 impl AsRef<str> for TemplateType {
@@ -345,7 +321,7 @@ impl AsRef<str> for TemplateType {
 /// <p>Summary data of an Proton service template version resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceTemplateVersionSummary {
+pub struct ServiceTemplateVersionSummary  {
     /// <p>The name of the service template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -379,47 +355,47 @@ pub struct ServiceTemplateVersionSummary {
 }
 impl ServiceTemplateVersionSummary {
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The latest major version that's associated with the version of a service template.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>The minor version of a service template.</p>
-    pub fn minor_version(&self) -> std::option::Option<&str> {
+    pub fn minor_version(&self) -> std::option::Option<& str> {
         self.minor_version.as_deref()
     }
     /// <p>The recommended minor version of the service template.</p>
-    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_minor_version(&self) -> std::option::Option<& str> {
         self.recommended_minor_version.as_deref()
     }
     /// <p>The service template minor version status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TemplateVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A service template minor version status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>A description of the version of a service template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the version of a service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of a service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceTemplateVersionSummary {
+impl  std::fmt::Debug for ServiceTemplateVersionSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplateVersionSummary");
         formatter.field("template_name", &self.template_name);
@@ -437,7 +413,7 @@ impl std::fmt::Debug for ServiceTemplateVersionSummary {
 }
 /// See [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
 pub mod service_template_version_summary {
-
+    
     /// A builder for [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -459,12 +435,8 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>The name of the service template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The latest major version that's associated with the version of a service template.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -472,12 +444,8 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>The latest major version that's associated with the version of a service template.</p>
-        pub fn set_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_version = input;
-            self
+        pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_version = input; self
         }
         /// <p>The minor version of a service template.</p>
         pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -485,12 +453,8 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>The minor version of a service template.</p>
-        pub fn set_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minor_version = input;
-            self
+        pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minor_version = input; self
         }
         /// <p>The recommended minor version of the service template.</p>
         pub fn recommended_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -498,12 +462,8 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>The recommended minor version of the service template.</p>
-        pub fn set_recommended_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_minor_version = input;
-            self
+        pub fn set_recommended_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_minor_version = input; self
         }
         /// <p>The service template minor version status.</p>
         pub fn status(mut self, input: crate::model::TemplateVersionStatus) -> Self {
@@ -511,12 +471,8 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>The service template minor version status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TemplateVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TemplateVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A service template minor version status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -524,12 +480,8 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>A service template minor version status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>A description of the version of a service template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -538,8 +490,7 @@ pub mod service_template_version_summary {
         }
         /// <p>A description of the version of a service template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -548,8 +499,7 @@ pub mod service_template_version_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the version of a service template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -557,12 +507,8 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>The time when the version of a service template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the version of a service template was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -570,26 +516,32 @@ pub mod service_template_version_summary {
             self
         }
         /// <p>The time when the version of a service template was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// Consumes the builder and constructs a [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
         pub fn build(self) -> crate::model::ServiceTemplateVersionSummary {
             crate::model::ServiceTemplateVersionSummary {
-                template_name: self.template_name,
-                major_version: self.major_version,
-                minor_version: self.minor_version,
-                recommended_minor_version: self.recommended_minor_version,
-                status: self.status,
-                status_message: self.status_message,
-                description: self.description,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
+                minor_version: self.minor_version
+                ,
+                recommended_minor_version: self.recommended_minor_version
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
             }
         }
     }
@@ -609,6 +561,8 @@ pub mod service_template_version_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceTemplateVersionSummary {
     /// Creates a new builder-style object to manufacture [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
@@ -623,9 +577,9 @@ impl ServiceTemplateVersionSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let templateversionstatus = unimplemented!();
 /// match templateversionstatus {
@@ -649,22 +603,14 @@ impl ServiceTemplateVersionSummary {
 /// Specifically, when `templateversionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TemplateVersionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TemplateVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Draft,
@@ -675,7 +621,7 @@ pub enum TemplateVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     RegistrationInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateVersionStatus {
     fn from(s: &str) -> Self {
@@ -684,19 +630,17 @@ impl std::convert::From<&str> for TemplateVersionStatus {
             "PUBLISHED" => TemplateVersionStatus::Published,
             "REGISTRATION_FAILED" => TemplateVersionStatus::RegistrationFailed,
             "REGISTRATION_IN_PROGRESS" => TemplateVersionStatus::RegistrationInProgress,
-            other => {
-                TemplateVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TemplateVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TemplateVersionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TemplateVersionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TemplateVersionStatus::from(s))
+                }
+            }
 impl TemplateVersionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -705,16 +649,13 @@ impl TemplateVersionStatus {
             TemplateVersionStatus::Published => "PUBLISHED",
             TemplateVersionStatus::RegistrationFailed => "REGISTRATION_FAILED",
             TemplateVersionStatus::RegistrationInProgress => "REGISTRATION_IN_PROGRESS",
-            TemplateVersionStatus::Unknown(value) => value.as_str(),
+            TemplateVersionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DRAFT",
-            "PUBLISHED",
-            "REGISTRATION_FAILED",
-            "REGISTRATION_IN_PROGRESS",
+            "DRAFT", "PUBLISHED", "REGISTRATION_FAILED", "REGISTRATION_IN_PROGRESS"
         ]
     }
 }
@@ -727,7 +668,7 @@ impl AsRef<str> for TemplateVersionStatus {
 /// <p>Detailed data of an Proton service template version resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceTemplateVersion {
+pub struct ServiceTemplateVersion  {
     /// <p>The name of the version of a service template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -760,78 +701,71 @@ pub struct ServiceTemplateVersion {
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
     #[doc(hidden)]
-    pub compatible_environment_templates:
-        std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
+    pub compatible_environment_templates: std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
     /// <p>The schema of the version of a service template.</p>
     #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
-    pub supported_component_sources: std::option::Option<
-        std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
-    >,
+    pub supported_component_sources: std::option::Option<std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>>,
 }
 impl ServiceTemplateVersion {
     /// <p>The name of the version of a service template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The latest major version that's associated with the version of a service template.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>The minor version of a service template.</p>
-    pub fn minor_version(&self) -> std::option::Option<&str> {
+    pub fn minor_version(&self) -> std::option::Option<& str> {
         self.minor_version.as_deref()
     }
     /// <p>The recommended minor version of the service template.</p>
-    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_minor_version(&self) -> std::option::Option<& str> {
         self.recommended_minor_version.as_deref()
     }
     /// <p>The service template version status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TemplateVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A service template version status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>A description of the version of a service template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the version of a service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of a service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
-    pub fn compatible_environment_templates(
-        &self,
-    ) -> std::option::Option<&[crate::model::CompatibleEnvironmentTemplate]> {
+    pub fn compatible_environment_templates(&self) -> std::option::Option<& [crate::model::CompatibleEnvironmentTemplate]> {
         self.compatible_environment_templates.as_deref()
     }
     /// <p>The schema of the version of a service template.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServiceTemplateSupportedComponentSourceType]> {
+    pub fn supported_component_sources(&self) -> std::option::Option<& [crate::model::ServiceTemplateSupportedComponentSourceType]> {
         self.supported_component_sources.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceTemplateVersion {
+impl  std::fmt::Debug for ServiceTemplateVersion  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplateVersion");
         formatter.field("template_name", &self.template_name);
@@ -844,21 +778,15 @@ impl std::fmt::Debug for ServiceTemplateVersion {
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field(
-            "compatible_environment_templates",
-            &self.compatible_environment_templates,
-        );
+        formatter.field("compatible_environment_templates", &self.compatible_environment_templates);
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "supported_component_sources",
-            &self.supported_component_sources,
-        );
+        formatter.field("supported_component_sources", &self.supported_component_sources);
         formatter.finish()
     }
 }
 /// See [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
 pub mod service_template_version {
-
+    
     /// A builder for [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -872,12 +800,9 @@ pub mod service_template_version {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) compatible_environment_templates:
-            std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
+        pub(crate) compatible_environment_templates: std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
         pub(crate) schema: std::option::Option<std::string::String>,
-        pub(crate) supported_component_sources: std::option::Option<
-            std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
-        >,
+        pub(crate) supported_component_sources: std::option::Option<std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>>,
     }
     impl Builder {
         /// <p>The name of the version of a service template.</p>
@@ -886,12 +811,8 @@ pub mod service_template_version {
             self
         }
         /// <p>The name of the version of a service template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The latest major version that's associated with the version of a service template.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -899,12 +820,8 @@ pub mod service_template_version {
             self
         }
         /// <p>The latest major version that's associated with the version of a service template.</p>
-        pub fn set_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_version = input;
-            self
+        pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_version = input; self
         }
         /// <p>The minor version of a service template.</p>
         pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -912,12 +829,8 @@ pub mod service_template_version {
             self
         }
         /// <p>The minor version of a service template.</p>
-        pub fn set_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minor_version = input;
-            self
+        pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minor_version = input; self
         }
         /// <p>The recommended minor version of the service template.</p>
         pub fn recommended_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -925,12 +838,8 @@ pub mod service_template_version {
             self
         }
         /// <p>The recommended minor version of the service template.</p>
-        pub fn set_recommended_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_minor_version = input;
-            self
+        pub fn set_recommended_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_minor_version = input; self
         }
         /// <p>The service template version status.</p>
         pub fn status(mut self, input: crate::model::TemplateVersionStatus) -> Self {
@@ -938,12 +847,8 @@ pub mod service_template_version {
             self
         }
         /// <p>The service template version status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TemplateVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TemplateVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A service template version status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -951,12 +856,8 @@ pub mod service_template_version {
             self
         }
         /// <p>A service template version status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>A description of the version of a service template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -965,8 +866,7 @@ pub mod service_template_version {
         }
         /// <p>A description of the version of a service template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -975,8 +875,7 @@ pub mod service_template_version {
         }
         /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the version of a service template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -984,12 +883,8 @@ pub mod service_template_version {
             self
         }
         /// <p>The time when the version of a service template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the version of a service template was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -997,34 +892,23 @@ pub mod service_template_version {
             self
         }
         /// <p>The time when the version of a service template was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// Appends an item to `compatible_environment_templates`.
         ///
         /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
         ///
         /// <p>An array of compatible environment template names for the major version of a service template.</p>
-        pub fn compatible_environment_templates(
-            mut self,
-            input: crate::model::CompatibleEnvironmentTemplate,
-        ) -> Self {
+        pub fn compatible_environment_templates(mut self, input: crate::model::CompatibleEnvironmentTemplate) -> Self {
             let mut v = self.compatible_environment_templates.unwrap_or_default();
-            v.push(input);
-            self.compatible_environment_templates = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_environment_templates = Some(v);
+                            self
         }
         /// <p>An array of compatible environment template names for the major version of a service template.</p>
-        pub fn set_compatible_environment_templates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
-        ) -> Self {
-            self.compatible_environment_templates = input;
-            self
+        pub fn set_compatible_environment_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>) -> Self {
+            self.compatible_environment_templates = input; self
         }
         /// <p>The schema of the version of a service template.</p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1033,51 +917,54 @@ pub mod service_template_version {
         }
         /// <p>The schema of the version of a service template.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
         /// Appends an item to `supported_component_sources`.
         ///
         /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
         ///
-        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-        pub fn supported_component_sources(
-            mut self,
-            input: crate::model::ServiceTemplateSupportedComponentSourceType,
-        ) -> Self {
+        pub fn supported_component_sources(mut self, input: crate::model::ServiceTemplateSupportedComponentSourceType) -> Self {
             let mut v = self.supported_component_sources.unwrap_or_default();
-            v.push(input);
-            self.supported_component_sources = Some(v);
-            self
+                            v.push(input);
+                            self.supported_component_sources = Some(v);
+                            self
         }
-        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+        /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-        pub fn set_supported_component_sources(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>,
-            >,
-        ) -> Self {
-            self.supported_component_sources = input;
-            self
+        pub fn set_supported_component_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>>) -> Self {
+            self.supported_component_sources = input; self
         }
         /// Consumes the builder and constructs a [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
         pub fn build(self) -> crate::model::ServiceTemplateVersion {
             crate::model::ServiceTemplateVersion {
-                template_name: self.template_name,
-                major_version: self.major_version,
-                minor_version: self.minor_version,
-                recommended_minor_version: self.recommended_minor_version,
-                status: self.status,
-                status_message: self.status_message,
-                description: self.description,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                compatible_environment_templates: self.compatible_environment_templates,
-                schema: self.schema,
-                supported_component_sources: self.supported_component_sources,
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
+                minor_version: self.minor_version
+                ,
+                recommended_minor_version: self.recommended_minor_version
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                compatible_environment_templates: self.compatible_environment_templates
+                ,
+                schema: self.schema
+                ,
+                supported_component_sources: self.supported_component_sources
+                ,
             }
         }
     }
@@ -1094,18 +981,14 @@ pub mod service_template_version {
             formatter.field("arn", &self.arn);
             formatter.field("created_at", &self.created_at);
             formatter.field("last_modified_at", &self.last_modified_at);
-            formatter.field(
-                "compatible_environment_templates",
-                &self.compatible_environment_templates,
-            );
+            formatter.field("compatible_environment_templates", &self.compatible_environment_templates);
             formatter.field("schema", &"*** Sensitive Data Redacted ***");
-            formatter.field(
-                "supported_component_sources",
-                &self.supported_component_sources,
-            );
+            formatter.field("supported_component_sources", &self.supported_component_sources);
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceTemplateVersion {
     /// Creates a new builder-style object to manufacture [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
@@ -1120,9 +1003,9 @@ impl ServiceTemplateVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicetemplatesupportedcomponentsourcetype = unimplemented!();
 /// match servicetemplatesupportedcomponentsourcetype {
@@ -1143,56 +1026,48 @@ impl ServiceTemplateVersion {
 /// Specifically, when `servicetemplatesupportedcomponentsourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceTemplateSupportedComponentSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceTemplateSupportedComponentSourceType {
     #[allow(missing_docs)] // documentation missing in model
     DirectlyDefined,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceTemplateSupportedComponentSourceType {
     fn from(s: &str) -> Self {
         match s {
             "DIRECTLY_DEFINED" => ServiceTemplateSupportedComponentSourceType::DirectlyDefined,
-            other => ServiceTemplateSupportedComponentSourceType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ServiceTemplateSupportedComponentSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceTemplateSupportedComponentSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceTemplateSupportedComponentSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceTemplateSupportedComponentSourceType::from(s))
+                }
+            }
 impl ServiceTemplateSupportedComponentSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceTemplateSupportedComponentSourceType::DirectlyDefined => "DIRECTLY_DEFINED",
-            ServiceTemplateSupportedComponentSourceType::Unknown(value) => value.as_str(),
+            ServiceTemplateSupportedComponentSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIRECTLY_DEFINED"]
+        &[
+            "DIRECTLY_DEFINED"
+        ]
     }
 }
 impl AsRef<str> for ServiceTemplateSupportedComponentSourceType {
@@ -1204,7 +1079,7 @@ impl AsRef<str> for ServiceTemplateSupportedComponentSourceType {
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompatibleEnvironmentTemplate {
+pub struct CompatibleEnvironmentTemplate  {
     /// <p>The compatible environment template name.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -1214,17 +1089,17 @@ pub struct CompatibleEnvironmentTemplate {
 }
 impl CompatibleEnvironmentTemplate {
     /// <p>The compatible environment template name.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the compatible environment template.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
 }
 /// See [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
 pub mod compatible_environment_template {
-
+    
     /// A builder for [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1238,12 +1113,8 @@ pub mod compatible_environment_template {
             self
         }
         /// <p>The compatible environment template name.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The major version of the compatible environment template.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1251,21 +1122,21 @@ pub mod compatible_environment_template {
             self
         }
         /// <p>The major version of the compatible environment template.</p>
-        pub fn set_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_version = input;
-            self
+        pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_version = input; self
         }
         /// Consumes the builder and constructs a [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
         pub fn build(self) -> crate::model::CompatibleEnvironmentTemplate {
             crate::model::CompatibleEnvironmentTemplate {
-                template_name: self.template_name,
-                major_version: self.major_version,
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CompatibleEnvironmentTemplate {
     /// Creates a new builder-style object to manufacture [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
@@ -1277,7 +1148,7 @@ impl CompatibleEnvironmentTemplate {
 /// <p>A description of a resource tag.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the resource tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1287,17 +1158,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the resource tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the resource tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1312,8 +1183,7 @@ pub mod tag {
         }
         /// <p>The key of the resource tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the resource tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1322,17 +1192,20 @@ pub mod tag {
         }
         /// <p>The value of the resource tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1344,7 +1217,7 @@ impl Tag {
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompatibleEnvironmentTemplateInput {
+pub struct CompatibleEnvironmentTemplateInput  {
     /// <p>The compatible environment template name.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -1354,17 +1227,17 @@ pub struct CompatibleEnvironmentTemplateInput {
 }
 impl CompatibleEnvironmentTemplateInput {
     /// <p>The compatible environment template name.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the compatible environment template.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
 }
 /// See [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
 pub mod compatible_environment_template_input {
-
+    
     /// A builder for [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1378,12 +1251,8 @@ pub mod compatible_environment_template_input {
             self
         }
         /// <p>The compatible environment template name.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The major version of the compatible environment template.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1391,21 +1260,21 @@ pub mod compatible_environment_template_input {
             self
         }
         /// <p>The major version of the compatible environment template.</p>
-        pub fn set_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_version = input;
-            self
+        pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_version = input; self
         }
         /// Consumes the builder and constructs a [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
         pub fn build(self) -> crate::model::CompatibleEnvironmentTemplateInput {
             crate::model::CompatibleEnvironmentTemplateInput {
-                template_name: self.template_name,
-                major_version: self.major_version,
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CompatibleEnvironmentTemplateInput {
     /// Creates a new builder-style object to manufacture [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
@@ -1435,11 +1304,7 @@ impl TemplateVersionSourceInput {
     /// Tries to convert the enum instance into [`S3`](crate::model::TemplateVersionSourceInput::S3), extracting the inner [`S3ObjectSource`](crate::model::S3ObjectSource).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> std::result::Result<&crate::model::S3ObjectSource, &Self> {
-        if let TemplateVersionSourceInput::S3(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let TemplateVersionSourceInput::S3(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::model::TemplateVersionSourceInput::S3).
     pub fn is_s3(&self) -> bool {
@@ -1454,7 +1319,7 @@ impl TemplateVersionSourceInput {
 /// <p>Template bundle S3 bucket data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ObjectSource {
+pub struct S3ObjectSource  {
     /// <p>The name of the S3 bucket that contains a template bundle.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -1464,17 +1329,17 @@ pub struct S3ObjectSource {
 }
 impl S3ObjectSource {
     /// <p>The name of the S3 bucket that contains a template bundle.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The path to the S3 bucket that contains a template bundle.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
 /// See [`S3ObjectSource`](crate::model::S3ObjectSource).
 pub mod s3_object_source {
-
+    
     /// A builder for [`S3ObjectSource`](crate::model::S3ObjectSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1489,8 +1354,7 @@ pub mod s3_object_source {
         }
         /// <p>The name of the S3 bucket that contains a template bundle.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The path to the S3 bucket that contains a template bundle.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1499,17 +1363,20 @@ pub mod s3_object_source {
         }
         /// <p>The path to the S3 bucket that contains a template bundle.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Consumes the builder and constructs a [`S3ObjectSource`](crate::model::S3ObjectSource).
         pub fn build(self) -> crate::model::S3ObjectSource {
             crate::model::S3ObjectSource {
-                bucket: self.bucket,
-                key: self.key,
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
             }
         }
     }
+    
+    
 }
 impl S3ObjectSource {
     /// Creates a new builder-style object to manufacture [`S3ObjectSource`](crate::model::S3ObjectSource).
@@ -1521,7 +1388,7 @@ impl S3ObjectSource {
 /// <p>Summary data of an Proton service template resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceTemplateSummary {
+pub struct ServiceTemplateSummary  {
     /// <p>The name of the service template.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1549,39 +1416,39 @@ pub struct ServiceTemplateSummary {
 }
 impl ServiceTemplateSummary {
     /// <p>The name of the service template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The service template name as displayed in the developer interface.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description of the service template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The recommended version of the service template.</p>
-    pub fn recommended_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_version(&self) -> std::option::Option<& str> {
         self.recommended_version.as_deref()
     }
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
-    pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+    pub fn pipeline_provisioning(&self) -> std::option::Option<& crate::model::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceTemplateSummary {
+impl  std::fmt::Debug for ServiceTemplateSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplateSummary");
         formatter.field("name", &self.name);
@@ -1597,7 +1464,7 @@ impl std::fmt::Debug for ServiceTemplateSummary {
 }
 /// See [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
 pub mod service_template_summary {
-
+    
     /// A builder for [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1618,8 +1485,7 @@ pub mod service_template_summary {
         }
         /// <p>The name of the service template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1628,8 +1494,7 @@ pub mod service_template_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the service template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the service template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1637,12 +1502,8 @@ pub mod service_template_summary {
             self
         }
         /// <p>The time when the service template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the service template was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1650,12 +1511,8 @@ pub mod service_template_summary {
             self
         }
         /// <p>The time when the service template was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The service template name as displayed in the developer interface.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1664,8 +1521,7 @@ pub mod service_template_summary {
         }
         /// <p>The service template name as displayed in the developer interface.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>A description of the service template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1674,8 +1530,7 @@ pub mod service_template_summary {
         }
         /// <p>A description of the service template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The recommended version of the service template.</p>
         pub fn recommended_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1683,12 +1538,8 @@ pub mod service_template_summary {
             self
         }
         /// <p>The recommended version of the service template.</p>
-        pub fn set_recommended_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_version = input;
-            self
+        pub fn set_recommended_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_version = input; self
         }
         /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
@@ -1696,24 +1547,28 @@ pub mod service_template_summary {
             self
         }
         /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
-        pub fn set_pipeline_provisioning(
-            mut self,
-            input: std::option::Option<crate::model::Provisioning>,
-        ) -> Self {
-            self.pipeline_provisioning = input;
-            self
+        pub fn set_pipeline_provisioning(mut self, input: std::option::Option<crate::model::Provisioning>) -> Self {
+            self.pipeline_provisioning = input; self
         }
         /// Consumes the builder and constructs a [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
         pub fn build(self) -> crate::model::ServiceTemplateSummary {
             crate::model::ServiceTemplateSummary {
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                display_name: self.display_name,
-                description: self.description,
-                recommended_version: self.recommended_version,
-                pipeline_provisioning: self.pipeline_provisioning,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                recommended_version: self.recommended_version
+                ,
+                pipeline_provisioning: self.pipeline_provisioning
+                ,
             }
         }
     }
@@ -1731,6 +1586,8 @@ pub mod service_template_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceTemplateSummary {
     /// Creates a new builder-style object to manufacture [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
@@ -1745,9 +1602,9 @@ impl ServiceTemplateSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let provisioning = unimplemented!();
 /// match provisioning {
@@ -1768,54 +1625,48 @@ impl ServiceTemplateSummary {
 /// Specifically, when `provisioning` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Provisioning::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Provisioning {
     #[allow(missing_docs)] // documentation missing in model
     CustomerManaged,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Provisioning {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOMER_MANAGED" => Provisioning::CustomerManaged,
-            other => Provisioning::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Provisioning::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Provisioning {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Provisioning::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Provisioning::from(s))
+                }
+            }
 impl Provisioning {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Provisioning::CustomerManaged => "CUSTOMER_MANAGED",
-            Provisioning::Unknown(value) => value.as_str(),
+            Provisioning::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOMER_MANAGED"]
+        &[
+            "CUSTOMER_MANAGED"
+        ]
     }
 }
 impl AsRef<str> for Provisioning {
@@ -1827,7 +1678,7 @@ impl AsRef<str> for Provisioning {
 /// <p>Detailed data of an Proton service template resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceTemplate {
+pub struct ServiceTemplate  {
     /// <p>The name of the service template.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1858,43 +1709,43 @@ pub struct ServiceTemplate {
 }
 impl ServiceTemplate {
     /// <p>The name of the service template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The service template name as displayed in the developer interface.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description of the service template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The recommended version of the service template.</p>
-    pub fn recommended_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_version(&self) -> std::option::Option<& str> {
         self.recommended_version.as_deref()
     }
     /// <p>The customer provided service template encryption key that's used to encrypt data.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
-    pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+    pub fn pipeline_provisioning(&self) -> std::option::Option<& crate::model::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceTemplate {
+impl  std::fmt::Debug for ServiceTemplate  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplate");
         formatter.field("name", &self.name);
@@ -1911,7 +1762,7 @@ impl std::fmt::Debug for ServiceTemplate {
 }
 /// See [`ServiceTemplate`](crate::model::ServiceTemplate).
 pub mod service_template {
-
+    
     /// A builder for [`ServiceTemplate`](crate::model::ServiceTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1933,8 +1784,7 @@ pub mod service_template {
         }
         /// <p>The name of the service template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1943,8 +1793,7 @@ pub mod service_template {
         }
         /// <p>The Amazon Resource Name (ARN) of the service template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the service template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1952,12 +1801,8 @@ pub mod service_template {
             self
         }
         /// <p>The time when the service template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the service template was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1965,12 +1810,8 @@ pub mod service_template {
             self
         }
         /// <p>The time when the service template was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The service template name as displayed in the developer interface.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1979,8 +1820,7 @@ pub mod service_template {
         }
         /// <p>The service template name as displayed in the developer interface.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>A description of the service template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1989,8 +1829,7 @@ pub mod service_template {
         }
         /// <p>A description of the service template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The recommended version of the service template.</p>
         pub fn recommended_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1998,12 +1837,8 @@ pub mod service_template {
             self
         }
         /// <p>The recommended version of the service template.</p>
-        pub fn set_recommended_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_version = input;
-            self
+        pub fn set_recommended_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_version = input; self
         }
         /// <p>The customer provided service template encryption key that's used to encrypt data.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2011,12 +1846,8 @@ pub mod service_template {
             self
         }
         /// <p>The customer provided service template encryption key that's used to encrypt data.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
@@ -2024,25 +1855,30 @@ pub mod service_template {
             self
         }
         /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
-        pub fn set_pipeline_provisioning(
-            mut self,
-            input: std::option::Option<crate::model::Provisioning>,
-        ) -> Self {
-            self.pipeline_provisioning = input;
-            self
+        pub fn set_pipeline_provisioning(mut self, input: std::option::Option<crate::model::Provisioning>) -> Self {
+            self.pipeline_provisioning = input; self
         }
         /// Consumes the builder and constructs a [`ServiceTemplate`](crate::model::ServiceTemplate).
         pub fn build(self) -> crate::model::ServiceTemplate {
             crate::model::ServiceTemplate {
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                display_name: self.display_name,
-                description: self.description,
-                recommended_version: self.recommended_version,
-                encryption_key: self.encryption_key,
-                pipeline_provisioning: self.pipeline_provisioning,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                recommended_version: self.recommended_version
+                ,
+                encryption_key: self.encryption_key
+                ,
+                pipeline_provisioning: self.pipeline_provisioning
+                ,
             }
         }
     }
@@ -2061,6 +1897,8 @@ pub mod service_template {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceTemplate {
     /// Creates a new builder-style object to manufacture [`ServiceTemplate`](crate::model::ServiceTemplate).
@@ -2072,7 +1910,7 @@ impl ServiceTemplate {
 /// <p>Summary data of an Proton service resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceSummary {
+pub struct ServiceSummary  {
     /// <p>The name of the service.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2100,39 +1938,39 @@ pub struct ServiceSummary {
 }
 impl ServiceSummary {
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the service.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The time when the service was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the service.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ServiceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ServiceStatus> {
         self.status.as_ref()
     }
     /// <p>A service status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceSummary {
+impl  std::fmt::Debug for ServiceSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceSummary");
         formatter.field("name", &self.name);
@@ -2148,7 +1986,7 @@ impl std::fmt::Debug for ServiceSummary {
 }
 /// See [`ServiceSummary`](crate::model::ServiceSummary).
 pub mod service_summary {
-
+    
     /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2169,8 +2007,7 @@ pub mod service_summary {
         }
         /// <p>The name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the service.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2179,8 +2016,7 @@ pub mod service_summary {
         }
         /// <p>A description of the service.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2189,8 +2025,7 @@ pub mod service_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the service template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2198,12 +2033,8 @@ pub mod service_summary {
             self
         }
         /// <p>The name of the service template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The time when the service was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2211,12 +2042,8 @@ pub mod service_summary {
             self
         }
         /// <p>The time when the service was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the service was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2224,12 +2051,8 @@ pub mod service_summary {
             self
         }
         /// <p>The time when the service was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The status of the service.</p>
         pub fn status(mut self, input: crate::model::ServiceStatus) -> Self {
@@ -2237,12 +2060,8 @@ pub mod service_summary {
             self
         }
         /// <p>The status of the service.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ServiceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ServiceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A service status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2250,24 +2069,28 @@ pub mod service_summary {
             self
         }
         /// <p>A service status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceSummary`](crate::model::ServiceSummary).
         pub fn build(self) -> crate::model::ServiceSummary {
             crate::model::ServiceSummary {
-                name: self.name,
-                description: self.description,
-                arn: self.arn,
-                template_name: self.template_name,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                status: self.status,
-                status_message: self.status_message,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                template_name: self.template_name
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
             }
         }
     }
@@ -2285,6 +2108,8 @@ pub mod service_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceSummary {
     /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
@@ -2299,9 +2124,9 @@ impl ServiceSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicestatus = unimplemented!();
 /// match servicestatus {
@@ -2335,22 +2160,14 @@ impl ServiceSummary {
 /// Specifically, when `servicestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2381,7 +2198,7 @@ pub enum ServiceStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceStatus {
     fn from(s: &str) -> Self {
@@ -2400,17 +2217,17 @@ impl std::convert::From<&str> for ServiceStatus {
             "UPDATE_FAILED_CLEANUP_FAILED" => ServiceStatus::UpdateFailedCleanupFailed,
             "UPDATE_FAILED_CLEANUP_IN_PROGRESS" => ServiceStatus::UpdateFailedCleanupInProgress,
             "UPDATE_IN_PROGRESS" => ServiceStatus::UpdateInProgress,
-            other => ServiceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ServiceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceStatus::from(s))
+                }
+            }
 impl ServiceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2429,26 +2246,13 @@ impl ServiceStatus {
             ServiceStatus::UpdateFailedCleanupFailed => "UPDATE_FAILED_CLEANUP_FAILED",
             ServiceStatus::UpdateFailedCleanupInProgress => "UPDATE_FAILED_CLEANUP_IN_PROGRESS",
             ServiceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            ServiceStatus::Unknown(value) => value.as_str(),
+            ServiceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATE_FAILED_CLEANUP_COMPLETE",
-            "CREATE_FAILED_CLEANUP_FAILED",
-            "CREATE_FAILED_CLEANUP_IN_PROGRESS",
-            "CREATE_IN_PROGRESS",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "UPDATE_COMPLETE_CLEANUP_FAILED",
-            "UPDATE_FAILED",
-            "UPDATE_FAILED_CLEANUP_COMPLETE",
-            "UPDATE_FAILED_CLEANUP_FAILED",
-            "UPDATE_FAILED_CLEANUP_IN_PROGRESS",
-            "UPDATE_IN_PROGRESS",
+            "ACTIVE", "CREATE_FAILED", "CREATE_FAILED_CLEANUP_COMPLETE", "CREATE_FAILED_CLEANUP_FAILED", "CREATE_FAILED_CLEANUP_IN_PROGRESS", "CREATE_IN_PROGRESS", "DELETE_FAILED", "DELETE_IN_PROGRESS", "UPDATE_COMPLETE_CLEANUP_FAILED", "UPDATE_FAILED", "UPDATE_FAILED_CLEANUP_COMPLETE", "UPDATE_FAILED_CLEANUP_FAILED", "UPDATE_FAILED_CLEANUP_IN_PROGRESS", "UPDATE_IN_PROGRESS"
         ]
     }
 }
@@ -2461,7 +2265,7 @@ impl AsRef<str> for ServiceStatus {
 /// <p>Detailed data of an Proton service resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Service {
+pub struct Service  {
     /// <p>The name of the service.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2504,59 +2308,59 @@ pub struct Service {
 }
 impl Service {
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the service.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The time when the service was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the service.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ServiceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ServiceStatus> {
         self.status.as_ref()
     }
     /// <p>A service status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The formatted specification that defines the service.</p>
-    pub fn spec(&self) -> std::option::Option<&str> {
+    pub fn spec(&self) -> std::option::Option<& str> {
         self.spec.as_deref()
     }
     /// <p>The service pipeline detail data.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::model::ServicePipeline> {
+    pub fn pipeline(&self) -> std::option::Option<& crate::model::ServicePipeline> {
         self.pipeline.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-    pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
+    pub fn repository_connection_arn(&self) -> std::option::Option<& str> {
         self.repository_connection_arn.as_deref()
     }
     /// <p>The ID of the source code repository.</p>
-    pub fn repository_id(&self) -> std::option::Option<&str> {
+    pub fn repository_id(&self) -> std::option::Option<& str> {
         self.repository_id.as_deref()
     }
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
-impl std::fmt::Debug for Service {
+impl  std::fmt::Debug for Service  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Service");
         formatter.field("name", &self.name);
@@ -2577,7 +2381,7 @@ impl std::fmt::Debug for Service {
 }
 /// See [`Service`](crate::model::Service).
 pub mod service {
-
+    
     /// A builder for [`Service`](crate::model::Service).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2603,8 +2407,7 @@ pub mod service {
         }
         /// <p>The name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the service.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2613,8 +2416,7 @@ pub mod service {
         }
         /// <p>A description of the service.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2623,8 +2425,7 @@ pub mod service {
         }
         /// <p>The Amazon Resource Name (ARN) of the service.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the service template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2632,12 +2433,8 @@ pub mod service {
             self
         }
         /// <p>The name of the service template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The time when the service was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2645,12 +2442,8 @@ pub mod service {
             self
         }
         /// <p>The time when the service was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the service was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2658,12 +2451,8 @@ pub mod service {
             self
         }
         /// <p>The time when the service was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The status of the service.</p>
         pub fn status(mut self, input: crate::model::ServiceStatus) -> Self {
@@ -2671,12 +2460,8 @@ pub mod service {
             self
         }
         /// <p>The status of the service.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ServiceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ServiceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A service status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2684,12 +2469,8 @@ pub mod service {
             self
         }
         /// <p>A service status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The formatted specification that defines the service.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2698,8 +2479,7 @@ pub mod service {
         }
         /// <p>The formatted specification that defines the service.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.spec = input;
-            self
+            self.spec = input; self
         }
         /// <p>The service pipeline detail data.</p>
         pub fn pipeline(mut self, input: crate::model::ServicePipeline) -> Self {
@@ -2707,12 +2487,8 @@ pub mod service {
             self
         }
         /// <p>The service pipeline detail data.</p>
-        pub fn set_pipeline(
-            mut self,
-            input: std::option::Option<crate::model::ServicePipeline>,
-        ) -> Self {
-            self.pipeline = input;
-            self
+        pub fn set_pipeline(mut self, input: std::option::Option<crate::model::ServicePipeline>) -> Self {
+            self.pipeline = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2720,12 +2496,8 @@ pub mod service {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-        pub fn set_repository_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_connection_arn = input;
-            self
+        pub fn set_repository_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_connection_arn = input; self
         }
         /// <p>The ID of the source code repository.</p>
         pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2733,12 +2505,8 @@ pub mod service {
             self
         }
         /// <p>The ID of the source code repository.</p>
-        pub fn set_repository_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_id = input;
-            self
+        pub fn set_repository_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_id = input; self
         }
         /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2747,25 +2515,37 @@ pub mod service {
         }
         /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// Consumes the builder and constructs a [`Service`](crate::model::Service).
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
-                name: self.name,
-                description: self.description,
-                arn: self.arn,
-                template_name: self.template_name,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                status: self.status,
-                status_message: self.status_message,
-                spec: self.spec,
-                pipeline: self.pipeline,
-                repository_connection_arn: self.repository_connection_arn,
-                repository_id: self.repository_id,
-                branch_name: self.branch_name,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                template_name: self.template_name
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                spec: self.spec
+                ,
+                pipeline: self.pipeline
+                ,
+                repository_connection_arn: self.repository_connection_arn
+                ,
+                repository_id: self.repository_id
+                ,
+                branch_name: self.branch_name
+                ,
             }
         }
     }
@@ -2788,6 +2568,8 @@ pub mod service {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
@@ -2799,7 +2581,7 @@ impl Service {
 /// <p>Detailed data of an Proton service instance pipeline resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServicePipeline {
+pub struct ServicePipeline  {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2833,74 +2615,65 @@ pub struct ServicePipeline {
 }
 impl ServicePipeline {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the service pipeline was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the service pipeline was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub fn template_major_version(&self) -> std::option::Option<&str> {
+    pub fn template_major_version(&self) -> std::option::Option<& str> {
         self.template_major_version.as_deref()
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+    pub fn template_minor_version(&self) -> std::option::Option<& str> {
         self.template_minor_version.as_deref()
     }
     /// <p>The deployment status of the service pipeline.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>A service pipeline deployment status message.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
-    pub fn spec(&self) -> std::option::Option<&str> {
+    pub fn spec(&self) -> std::option::Option<& str> {
         self.spec.as_deref()
     }
 }
-impl std::fmt::Debug for ServicePipeline {
+impl  std::fmt::Debug for ServicePipeline  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServicePipeline");
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`ServicePipeline`](crate::model::ServicePipeline).
 pub mod service_pipeline {
-
+    
     /// A builder for [`ServicePipeline`](crate::model::ServicePipeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2923,8 +2696,7 @@ pub mod service_pipeline {
         }
         /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the service pipeline was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2932,12 +2704,8 @@ pub mod service_pipeline {
             self
         }
         /// <p>The time when the service pipeline was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when a deployment of the service pipeline was last attempted.</p>
         pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2945,12 +2713,8 @@ pub mod service_pipeline {
             self
         }
         /// <p>The time when a deployment of the service pipeline was last attempted.</p>
-        pub fn set_last_deployment_attempted_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_attempted_at = input;
-            self
+        pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_attempted_at = input; self
         }
         /// <p>The time when the service pipeline was last deployed successfully.</p>
         pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2958,12 +2722,8 @@ pub mod service_pipeline {
             self
         }
         /// <p>The time when the service pipeline was last deployed successfully.</p>
-        pub fn set_last_deployment_succeeded_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_succeeded_at = input;
-            self
+        pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_succeeded_at = input; self
         }
         /// <p>The name of the service template that was used to create the service pipeline.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2971,12 +2731,8 @@ pub mod service_pipeline {
             self
         }
         /// <p>The name of the service template that was used to create the service pipeline.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The major version of the service template that was used to create the service pipeline.</p>
         pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2984,12 +2740,8 @@ pub mod service_pipeline {
             self
         }
         /// <p>The major version of the service template that was used to create the service pipeline.</p>
-        pub fn set_template_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_major_version = input;
-            self
+        pub fn set_template_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_major_version = input; self
         }
         /// <p>The minor version of the service template that was used to create the service pipeline.</p>
         pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2997,12 +2749,8 @@ pub mod service_pipeline {
             self
         }
         /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-        pub fn set_template_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_minor_version = input;
-            self
+        pub fn set_template_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_minor_version = input; self
         }
         /// <p>The deployment status of the service pipeline.</p>
         pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -3010,12 +2758,8 @@ pub mod service_pipeline {
             self
         }
         /// <p>The deployment status of the service pipeline.</p>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>A service pipeline deployment status message.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3023,12 +2767,8 @@ pub mod service_pipeline {
             self
         }
         /// <p>A service pipeline deployment status message.</p>
-        pub fn set_deployment_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status_message = input;
-            self
+        pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status_message = input; self
         }
         /// <p>The service spec that was used to create the service pipeline.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3037,22 +2777,31 @@ pub mod service_pipeline {
         }
         /// <p>The service spec that was used to create the service pipeline.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.spec = input;
-            self
+            self.spec = input; self
         }
         /// Consumes the builder and constructs a [`ServicePipeline`](crate::model::ServicePipeline).
         pub fn build(self) -> crate::model::ServicePipeline {
             crate::model::ServicePipeline {
-                arn: self.arn,
-                created_at: self.created_at,
-                last_deployment_attempted_at: self.last_deployment_attempted_at,
-                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-                template_name: self.template_name,
-                template_major_version: self.template_major_version,
-                template_minor_version: self.template_minor_version,
-                deployment_status: self.deployment_status,
-                deployment_status_message: self.deployment_status_message,
-                spec: self.spec,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                ,
+                template_name: self.template_name
+                ,
+                template_major_version: self.template_major_version
+                ,
+                template_minor_version: self.template_minor_version
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                spec: self.spec
+                ,
             }
         }
     }
@@ -3061,26 +2810,19 @@ pub mod service_pipeline {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("arn", &self.arn);
             formatter.field("created_at", &self.created_at);
-            formatter.field(
-                "last_deployment_attempted_at",
-                &self.last_deployment_attempted_at,
-            );
-            formatter.field(
-                "last_deployment_succeeded_at",
-                &self.last_deployment_succeeded_at,
-            );
+            formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+            formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
             formatter.field("template_name", &self.template_name);
             formatter.field("template_major_version", &self.template_major_version);
             formatter.field("template_minor_version", &self.template_minor_version);
             formatter.field("deployment_status", &self.deployment_status);
-            formatter.field(
-                "deployment_status_message",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
             formatter.field("spec", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServicePipeline {
     /// Creates a new builder-style object to manufacture [`ServicePipeline`](crate::model::ServicePipeline).
@@ -3095,9 +2837,9 @@ impl ServicePipeline {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentstatus = unimplemented!();
 /// match deploymentstatus {
@@ -3125,22 +2867,14 @@ impl ServicePipeline {
 /// Specifically, when `deploymentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -3159,7 +2893,7 @@ pub enum DeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentStatus {
     fn from(s: &str) -> Self {
@@ -3172,17 +2906,17 @@ impl std::convert::From<&str> for DeploymentStatus {
             "FAILED" => DeploymentStatus::Failed,
             "IN_PROGRESS" => DeploymentStatus::InProgress,
             "SUCCEEDED" => DeploymentStatus::Succeeded,
-            other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentStatus::from(s))
+                }
+            }
 impl DeploymentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3195,20 +2929,13 @@ impl DeploymentStatus {
             DeploymentStatus::Failed => "FAILED",
             DeploymentStatus::InProgress => "IN_PROGRESS",
             DeploymentStatus::Succeeded => "SUCCEEDED",
-            DeploymentStatus::Unknown(value) => value.as_str(),
+            DeploymentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELLED",
-            "CANCELLING",
-            "DELETE_COMPLETE",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "FAILED",
-            "IN_PROGRESS",
-            "SUCCEEDED",
+            "CANCELLED", "CANCELLING", "DELETE_COMPLETE", "DELETE_FAILED", "DELETE_IN_PROGRESS", "FAILED", "IN_PROGRESS", "SUCCEEDED"
         ]
     }
 }
@@ -3224,9 +2951,9 @@ impl AsRef<str> for DeploymentStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentupdatetype = unimplemented!();
 /// match deploymentupdatetype {
@@ -3250,22 +2977,14 @@ impl AsRef<str> for DeploymentStatus {
 /// Specifically, when `deploymentupdatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentUpdateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentUpdateType {
     #[allow(missing_docs)] // documentation missing in model
     CurrentVersion,
@@ -3276,7 +2995,7 @@ pub enum DeploymentUpdateType {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentUpdateType {
     fn from(s: &str) -> Self {
@@ -3285,19 +3004,17 @@ impl std::convert::From<&str> for DeploymentUpdateType {
             "MAJOR_VERSION" => DeploymentUpdateType::MajorVersion,
             "MINOR_VERSION" => DeploymentUpdateType::MinorVersion,
             "NONE" => DeploymentUpdateType::None,
-            other => {
-                DeploymentUpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeploymentUpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentUpdateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentUpdateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentUpdateType::from(s))
+                }
+            }
 impl DeploymentUpdateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3306,12 +3023,14 @@ impl DeploymentUpdateType {
             DeploymentUpdateType::MajorVersion => "MAJOR_VERSION",
             DeploymentUpdateType::MinorVersion => "MINOR_VERSION",
             DeploymentUpdateType::None => "NONE",
-            DeploymentUpdateType::Unknown(value) => value.as_str(),
+            DeploymentUpdateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CURRENT_VERSION", "MAJOR_VERSION", "MINOR_VERSION", "NONE"]
+        &[
+            "CURRENT_VERSION", "MAJOR_VERSION", "MINOR_VERSION", "NONE"
+        ]
     }
 }
 impl AsRef<str> for DeploymentUpdateType {
@@ -3323,45 +3042,42 @@ impl AsRef<str> for DeploymentUpdateType {
 /// <p>Detail data for a provisioned resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedResource {
+pub struct ProvisionedResource  {
     /// <p>The provisioned resource name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The provisioned resource identifier.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+    /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub provisioning_engine: std::option::Option<crate::model::ProvisionedResourceEngine>,
 }
 impl ProvisionedResource {
     /// <p>The provisioned resource name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The provisioned resource identifier.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
-    /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+    /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
-    pub fn provisioning_engine(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisionedResourceEngine> {
+    pub fn provisioning_engine(&self) -> std::option::Option<& crate::model::ProvisionedResourceEngine> {
         self.provisioning_engine.as_ref()
     }
 }
 /// See [`ProvisionedResource`](crate::model::ProvisionedResource).
 pub mod provisioned_resource {
-
+    
     /// A builder for [`ProvisionedResource`](crate::model::ProvisionedResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) identifier: std::option::Option<std::string::String>,
-        pub(crate) provisioning_engine:
-            std::option::Option<crate::model::ProvisionedResourceEngine>,
+        pub(crate) provisioning_engine: std::option::Option<crate::model::ProvisionedResourceEngine>,
     }
     impl Builder {
         /// <p>The provisioned resource name.</p>
@@ -3371,8 +3087,7 @@ pub mod provisioned_resource {
         }
         /// <p>The provisioned resource name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The provisioned resource identifier.</p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3381,36 +3096,33 @@ pub mod provisioned_resource {
         }
         /// <p>The provisioned resource identifier.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identifier = input;
-            self
+            self.identifier = input; self
         }
-        /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+        /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
-        pub fn provisioning_engine(
-            mut self,
-            input: crate::model::ProvisionedResourceEngine,
-        ) -> Self {
+        pub fn provisioning_engine(mut self, input: crate::model::ProvisionedResourceEngine) -> Self {
             self.provisioning_engine = Some(input);
             self
         }
-        /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+        /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
-        pub fn set_provisioning_engine(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedResourceEngine>,
-        ) -> Self {
-            self.provisioning_engine = input;
-            self
+        pub fn set_provisioning_engine(mut self, input: std::option::Option<crate::model::ProvisionedResourceEngine>) -> Self {
+            self.provisioning_engine = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionedResource`](crate::model::ProvisionedResource).
         pub fn build(self) -> crate::model::ProvisionedResource {
             crate::model::ProvisionedResource {
-                name: self.name,
-                identifier: self.identifier,
-                provisioning_engine: self.provisioning_engine,
+                name: self.name
+                ,
+                identifier: self.identifier
+                ,
+                provisioning_engine: self.provisioning_engine
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionedResource {
     /// Creates a new builder-style object to manufacture [`ProvisionedResource`](crate::model::ProvisionedResource).
@@ -3425,9 +3137,9 @@ impl ProvisionedResource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let provisionedresourceengine = unimplemented!();
 /// match provisionedresourceengine {
@@ -3449,60 +3161,52 @@ impl ProvisionedResource {
 /// Specifically, when `provisionedresourceengine` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProvisionedResourceEngine::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// List of provisioning engines
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProvisionedResourceEngine {
     #[allow(missing_docs)] // documentation missing in model
     Cloudformation,
     #[allow(missing_docs)] // documentation missing in model
     Terraform,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProvisionedResourceEngine {
     fn from(s: &str) -> Self {
         match s {
             "CLOUDFORMATION" => ProvisionedResourceEngine::Cloudformation,
             "TERRAFORM" => ProvisionedResourceEngine::Terraform,
-            other => ProvisionedResourceEngine::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProvisionedResourceEngine::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProvisionedResourceEngine {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProvisionedResourceEngine::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProvisionedResourceEngine::from(s))
+                }
+            }
 impl ProvisionedResourceEngine {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisionedResourceEngine::Cloudformation => "CLOUDFORMATION",
             ProvisionedResourceEngine::Terraform => "TERRAFORM",
-            ProvisionedResourceEngine::Unknown(value) => value.as_str(),
+            ProvisionedResourceEngine::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUDFORMATION", "TERRAFORM"]
+        &[
+            "CLOUDFORMATION", "TERRAFORM"
+        ]
     }
 }
 impl AsRef<str> for ProvisionedResourceEngine {
@@ -3514,7 +3218,7 @@ impl AsRef<str> for ProvisionedResourceEngine {
 /// <p>An infrastructure as code defined resource output.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Output {
+pub struct Output  {
     /// <p>The output key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -3524,15 +3228,15 @@ pub struct Output {
 }
 impl Output {
     /// <p>The output key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The output value.</p>
-    pub fn value_string(&self) -> std::option::Option<&str> {
+    pub fn value_string(&self) -> std::option::Option<& str> {
         self.value_string.as_deref()
     }
 }
-impl std::fmt::Debug for Output {
+impl  std::fmt::Debug for Output  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Output");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
@@ -3542,7 +3246,7 @@ impl std::fmt::Debug for Output {
 }
 /// See [`Output`](crate::model::Output).
 pub mod output {
-
+    
     /// A builder for [`Output`](crate::model::Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3557,8 +3261,7 @@ pub mod output {
         }
         /// <p>The output key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The output value.</p>
         pub fn value_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3567,14 +3270,15 @@ pub mod output {
         }
         /// <p>The output value.</p>
         pub fn set_value_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value_string = input;
-            self
+            self.value_string = input; self
         }
         /// Consumes the builder and constructs a [`Output`](crate::model::Output).
         pub fn build(self) -> crate::model::Output {
             crate::model::Output {
-                key: self.key,
-                value_string: self.value_string,
+                key: self.key
+                ,
+                value_string: self.value_string
+                ,
             }
         }
     }
@@ -3586,6 +3290,8 @@ pub mod output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Output {
     /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
@@ -3597,7 +3303,7 @@ impl Output {
 /// <p>Summary data of an Proton service instance resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceInstanceSummary {
+pub struct ServiceInstanceSummary  {
     /// <p>The name of the service instance.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3637,84 +3343,75 @@ pub struct ServiceInstanceSummary {
 }
 impl ServiceInstanceSummary {
     /// <p>The name of the service instance.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the service instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the service was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the service was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the environment that the service instance was deployed into.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The service instance template major version.</p>
-    pub fn template_major_version(&self) -> std::option::Option<&str> {
+    pub fn template_major_version(&self) -> std::option::Option<& str> {
         self.template_major_version.as_deref()
     }
     /// <p>The service instance template minor version.</p>
-    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+    pub fn template_minor_version(&self) -> std::option::Option<& str> {
         self.template_minor_version.as_deref()
     }
     /// <p>The service instance deployment status.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>A service instance deployment status message.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceInstanceSummary {
+impl  std::fmt::Debug for ServiceInstanceSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceInstanceSummary");
         formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("service_name", &self.service_name);
         formatter.field("environment_name", &self.environment_name);
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
 pub mod service_instance_summary {
-
+    
     /// A builder for [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3739,8 +3436,7 @@ pub mod service_instance_summary {
         }
         /// <p>The name of the service instance.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3749,8 +3445,7 @@ pub mod service_instance_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the service instance was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3758,12 +3453,8 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The time when the service instance was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when a deployment of the service was last attempted.</p>
         pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3771,12 +3462,8 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The time when a deployment of the service was last attempted.</p>
-        pub fn set_last_deployment_attempted_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_attempted_at = input;
-            self
+        pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_attempted_at = input; self
         }
         /// <p>The time when the service was last deployed successfully.</p>
         pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3784,12 +3471,8 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The time when the service was last deployed successfully.</p>
-        pub fn set_last_deployment_succeeded_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_succeeded_at = input;
-            self
+        pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_succeeded_at = input; self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3798,8 +3481,7 @@ pub mod service_instance_summary {
         }
         /// <p>The name of the service that the service instance belongs to.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>The name of the environment that the service instance was deployed into.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3807,12 +3489,8 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The name of the environment that the service instance was deployed into.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The name of the service template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3820,12 +3498,8 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The name of the service template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The service instance template major version.</p>
         pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3833,12 +3507,8 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The service instance template major version.</p>
-        pub fn set_template_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_major_version = input;
-            self
+        pub fn set_template_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_major_version = input; self
         }
         /// <p>The service instance template minor version.</p>
         pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3846,12 +3516,8 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The service instance template minor version.</p>
-        pub fn set_template_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_minor_version = input;
-            self
+        pub fn set_template_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_minor_version = input; self
         }
         /// <p>The service instance deployment status.</p>
         pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -3859,12 +3525,8 @@ pub mod service_instance_summary {
             self
         }
         /// <p>The service instance deployment status.</p>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>A service instance deployment status message.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3872,28 +3534,36 @@ pub mod service_instance_summary {
             self
         }
         /// <p>A service instance deployment status message.</p>
-        pub fn set_deployment_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status_message = input;
-            self
+        pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status_message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
         pub fn build(self) -> crate::model::ServiceInstanceSummary {
             crate::model::ServiceInstanceSummary {
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_deployment_attempted_at: self.last_deployment_attempted_at,
-                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-                service_name: self.service_name,
-                environment_name: self.environment_name,
-                template_name: self.template_name,
-                template_major_version: self.template_major_version,
-                template_minor_version: self.template_minor_version,
-                deployment_status: self.deployment_status,
-                deployment_status_message: self.deployment_status_message,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                ,
+                service_name: self.service_name
+                ,
+                environment_name: self.environment_name
+                ,
+                template_name: self.template_name
+                ,
+                template_major_version: self.template_major_version
+                ,
+                template_minor_version: self.template_minor_version
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
             }
         }
     }
@@ -3903,27 +3573,20 @@ pub mod service_instance_summary {
             formatter.field("name", &self.name);
             formatter.field("arn", &self.arn);
             formatter.field("created_at", &self.created_at);
-            formatter.field(
-                "last_deployment_attempted_at",
-                &self.last_deployment_attempted_at,
-            );
-            formatter.field(
-                "last_deployment_succeeded_at",
-                &self.last_deployment_succeeded_at,
-            );
+            formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+            formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
             formatter.field("service_name", &self.service_name);
             formatter.field("environment_name", &self.environment_name);
             formatter.field("template_name", &self.template_name);
             formatter.field("template_major_version", &self.template_major_version);
             formatter.field("template_minor_version", &self.template_minor_version);
             formatter.field("deployment_status", &self.deployment_status);
-            formatter.field(
-                "deployment_status_message",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceInstanceSummary {
     /// Creates a new builder-style object to manufacture [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
@@ -3938,9 +3601,9 @@ impl ServiceInstanceSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortorder = unimplemented!();
 /// match sortorder {
@@ -3962,58 +3625,52 @@ impl ServiceInstanceSummary {
 /// Specifically, when `sortorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortOrder {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
     fn from(s: &str) -> Self {
         match s {
             "ASCENDING" => SortOrder::Ascending,
             "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortOrder::from(s))
+                }
+            }
 impl SortOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ASCENDING",
             SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str(),
+            SortOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASCENDING", "DESCENDING"]
+        &[
+            "ASCENDING", "DESCENDING"
+        ]
     }
 }
 impl AsRef<str> for SortOrder {
@@ -4028,9 +3685,9 @@ impl AsRef<str> for SortOrder {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listserviceinstancessortby = unimplemented!();
 /// match listserviceinstancessortby {
@@ -4057,22 +3714,14 @@ impl AsRef<str> for SortOrder {
 /// Specifically, when `listserviceinstancessortby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListServiceInstancesSortBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListServiceInstancesSortBy {
     #[allow(missing_docs)] // documentation missing in model
     CreatedAt,
@@ -4089,7 +3738,7 @@ pub enum ListServiceInstancesSortBy {
     #[allow(missing_docs)] // documentation missing in model
     TemplateName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListServiceInstancesSortBy {
     fn from(s: &str) -> Self {
@@ -4101,19 +3750,17 @@ impl std::convert::From<&str> for ListServiceInstancesSortBy {
             "name" => ListServiceInstancesSortBy::Name,
             "serviceName" => ListServiceInstancesSortBy::ServiceName,
             "templateName" => ListServiceInstancesSortBy::TemplateName,
-            other => ListServiceInstancesSortBy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListServiceInstancesSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListServiceInstancesSortBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListServiceInstancesSortBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListServiceInstancesSortBy::from(s))
+                }
+            }
 impl ListServiceInstancesSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4125,19 +3772,13 @@ impl ListServiceInstancesSortBy {
             ListServiceInstancesSortBy::Name => "name",
             ListServiceInstancesSortBy::ServiceName => "serviceName",
             ListServiceInstancesSortBy::TemplateName => "templateName",
-            ListServiceInstancesSortBy::Unknown(value) => value.as_str(),
+            ListServiceInstancesSortBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "createdAt",
-            "deploymentStatus",
-            "environmentName",
-            "lastDeploymentAttemptedAt",
-            "name",
-            "serviceName",
-            "templateName",
+            "createdAt", "deploymentStatus", "environmentName", "lastDeploymentAttemptedAt", "name", "serviceName", "templateName"
         ]
     }
 }
@@ -4150,29 +3791,29 @@ impl AsRef<str> for ListServiceInstancesSortBy {
 /// <p>A filtering criterion to scope down the result list of the <code>ListServiceInstances</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceInstancesFilter {
+pub struct ListServiceInstancesFilter  {
     /// <p>The name of a filtering criterion.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::model::ListServiceInstancesFilterBy>,
-    /// <p>A value to filter by.</p>
+    /// <p>A value to filter by.</p> 
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ListServiceInstancesFilter {
     /// <p>The name of a filtering criterion.</p>
-    pub fn key(&self) -> std::option::Option<&crate::model::ListServiceInstancesFilterBy> {
+    pub fn key(&self) -> std::option::Option<& crate::model::ListServiceInstancesFilterBy> {
         self.key.as_ref()
     }
-    /// <p>A value to filter by.</p>
+    /// <p>A value to filter by.</p> 
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
 pub mod list_service_instances_filter {
-
+    
     /// A builder for [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4186,33 +3827,32 @@ pub mod list_service_instances_filter {
             self
         }
         /// <p>The name of a filtering criterion.</p>
-        pub fn set_key(
-            mut self,
-            input: std::option::Option<crate::model::ListServiceInstancesFilterBy>,
-        ) -> Self {
-            self.key = input;
-            self
+        pub fn set_key(mut self, input: std::option::Option<crate::model::ListServiceInstancesFilterBy>) -> Self {
+            self.key = input; self
         }
-        /// <p>A value to filter by.</p>
+        /// <p>A value to filter by.</p> 
         /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>A value to filter by.</p>
+        /// <p>A value to filter by.</p> 
         /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
         pub fn build(self) -> crate::model::ListServiceInstancesFilter {
             crate::model::ListServiceInstancesFilter {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServiceInstancesFilter {
     /// Creates a new builder-style object to manufacture [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
@@ -4227,9 +3867,9 @@ impl ListServiceInstancesFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listserviceinstancesfilterby = unimplemented!();
 /// match listserviceinstancesfilterby {
@@ -4259,22 +3899,14 @@ impl ListServiceInstancesFilter {
 /// Specifically, when `listserviceinstancesfilterby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListServiceInstancesFilterBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListServiceInstancesFilterBy {
     #[allow(missing_docs)] // documentation missing in model
     CreatedAtAfter,
@@ -4297,76 +3929,53 @@ pub enum ListServiceInstancesFilterBy {
     #[allow(missing_docs)] // documentation missing in model
     TemplateName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListServiceInstancesFilterBy {
     fn from(s: &str) -> Self {
         match s {
             "createdAtAfter" => ListServiceInstancesFilterBy::CreatedAtAfter,
             "createdAtBefore" => ListServiceInstancesFilterBy::CreatedAtBefore,
-            "deployedTemplateVersionStatus" => {
-                ListServiceInstancesFilterBy::DeployedTemplateVersionStatus
-            }
+            "deployedTemplateVersionStatus" => ListServiceInstancesFilterBy::DeployedTemplateVersionStatus,
             "deploymentStatus" => ListServiceInstancesFilterBy::DeploymentStatus,
             "environmentName" => ListServiceInstancesFilterBy::EnvironmentName,
-            "lastDeploymentAttemptedAtAfter" => {
-                ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter
-            }
-            "lastDeploymentAttemptedAtBefore" => {
-                ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore
-            }
+            "lastDeploymentAttemptedAtAfter" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter,
+            "lastDeploymentAttemptedAtBefore" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore,
             "name" => ListServiceInstancesFilterBy::Name,
             "serviceName" => ListServiceInstancesFilterBy::ServiceName,
             "templateName" => ListServiceInstancesFilterBy::TemplateName,
-            other => ListServiceInstancesFilterBy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListServiceInstancesFilterBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListServiceInstancesFilterBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListServiceInstancesFilterBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListServiceInstancesFilterBy::from(s))
+                }
+            }
 impl ListServiceInstancesFilterBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListServiceInstancesFilterBy::CreatedAtAfter => "createdAtAfter",
             ListServiceInstancesFilterBy::CreatedAtBefore => "createdAtBefore",
-            ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => {
-                "deployedTemplateVersionStatus"
-            }
+            ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => "deployedTemplateVersionStatus",
             ListServiceInstancesFilterBy::DeploymentStatus => "deploymentStatus",
             ListServiceInstancesFilterBy::EnvironmentName => "environmentName",
-            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => {
-                "lastDeploymentAttemptedAtAfter"
-            }
-            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => {
-                "lastDeploymentAttemptedAtBefore"
-            }
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => "lastDeploymentAttemptedAtAfter",
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => "lastDeploymentAttemptedAtBefore",
             ListServiceInstancesFilterBy::Name => "name",
             ListServiceInstancesFilterBy::ServiceName => "serviceName",
             ListServiceInstancesFilterBy::TemplateName => "templateName",
-            ListServiceInstancesFilterBy::Unknown(value) => value.as_str(),
+            ListServiceInstancesFilterBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "createdAtAfter",
-            "createdAtBefore",
-            "deployedTemplateVersionStatus",
-            "deploymentStatus",
-            "environmentName",
-            "lastDeploymentAttemptedAtAfter",
-            "lastDeploymentAttemptedAtBefore",
-            "name",
-            "serviceName",
-            "templateName",
+            "createdAtAfter", "createdAtBefore", "deployedTemplateVersionStatus", "deploymentStatus", "environmentName", "lastDeploymentAttemptedAtAfter", "lastDeploymentAttemptedAtBefore", "name", "serviceName", "templateName"
         ]
     }
 }
@@ -4379,7 +3988,7 @@ impl AsRef<str> for ListServiceInstancesFilterBy {
 /// <p>Detailed data of an Proton service instance resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceInstance {
+pub struct ServiceInstance  {
     /// <p>The name of the service instance.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4422,89 +4031,80 @@ pub struct ServiceInstance {
 }
 impl ServiceInstance {
     /// <p>The name of the service instance.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the service instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the service instance was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the service instance was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the environment that the service instance was deployed into.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the service template that was used to create the service instance.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the service template that was used to create the service instance.</p>
-    pub fn template_major_version(&self) -> std::option::Option<&str> {
+    pub fn template_major_version(&self) -> std::option::Option<& str> {
         self.template_major_version.as_deref()
     }
     /// <p>The minor version of the service template that was used to create the service instance.</p>
-    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+    pub fn template_minor_version(&self) -> std::option::Option<& str> {
         self.template_minor_version.as_deref()
     }
     /// <p>The service instance deployment status.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The message associated with the service instance deployment status.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The service spec that was used to create the service instance.</p>
-    pub fn spec(&self) -> std::option::Option<&str> {
+    pub fn spec(&self) -> std::option::Option<& str> {
         self.spec.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceInstance {
+impl  std::fmt::Debug for ServiceInstance  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceInstance");
         formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("service_name", &self.service_name);
         formatter.field("environment_name", &self.environment_name);
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`ServiceInstance`](crate::model::ServiceInstance).
 pub mod service_instance {
-
+    
     /// A builder for [`ServiceInstance`](crate::model::ServiceInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4530,8 +4130,7 @@ pub mod service_instance {
         }
         /// <p>The name of the service instance.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4540,8 +4139,7 @@ pub mod service_instance {
         }
         /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the service instance was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4549,12 +4147,8 @@ pub mod service_instance {
             self
         }
         /// <p>The time when the service instance was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when a deployment of the service instance was last attempted.</p>
         pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4562,12 +4156,8 @@ pub mod service_instance {
             self
         }
         /// <p>The time when a deployment of the service instance was last attempted.</p>
-        pub fn set_last_deployment_attempted_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_attempted_at = input;
-            self
+        pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_attempted_at = input; self
         }
         /// <p>The time when the service instance was last deployed successfully.</p>
         pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4575,12 +4165,8 @@ pub mod service_instance {
             self
         }
         /// <p>The time when the service instance was last deployed successfully.</p>
-        pub fn set_last_deployment_succeeded_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_succeeded_at = input;
-            self
+        pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_succeeded_at = input; self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4589,8 +4175,7 @@ pub mod service_instance {
         }
         /// <p>The name of the service that the service instance belongs to.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>The name of the environment that the service instance was deployed into.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4598,12 +4183,8 @@ pub mod service_instance {
             self
         }
         /// <p>The name of the environment that the service instance was deployed into.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The name of the service template that was used to create the service instance.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4611,12 +4192,8 @@ pub mod service_instance {
             self
         }
         /// <p>The name of the service template that was used to create the service instance.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The major version of the service template that was used to create the service instance.</p>
         pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4624,12 +4201,8 @@ pub mod service_instance {
             self
         }
         /// <p>The major version of the service template that was used to create the service instance.</p>
-        pub fn set_template_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_major_version = input;
-            self
+        pub fn set_template_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_major_version = input; self
         }
         /// <p>The minor version of the service template that was used to create the service instance.</p>
         pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4637,12 +4210,8 @@ pub mod service_instance {
             self
         }
         /// <p>The minor version of the service template that was used to create the service instance.</p>
-        pub fn set_template_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_minor_version = input;
-            self
+        pub fn set_template_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_minor_version = input; self
         }
         /// <p>The service instance deployment status.</p>
         pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -4650,12 +4219,8 @@ pub mod service_instance {
             self
         }
         /// <p>The service instance deployment status.</p>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>The message associated with the service instance deployment status.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4663,12 +4228,8 @@ pub mod service_instance {
             self
         }
         /// <p>The message associated with the service instance deployment status.</p>
-        pub fn set_deployment_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status_message = input;
-            self
+        pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status_message = input; self
         }
         /// <p>The service spec that was used to create the service instance.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4677,25 +4238,37 @@ pub mod service_instance {
         }
         /// <p>The service spec that was used to create the service instance.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.spec = input;
-            self
+            self.spec = input; self
         }
         /// Consumes the builder and constructs a [`ServiceInstance`](crate::model::ServiceInstance).
         pub fn build(self) -> crate::model::ServiceInstance {
             crate::model::ServiceInstance {
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_deployment_attempted_at: self.last_deployment_attempted_at,
-                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-                service_name: self.service_name,
-                environment_name: self.environment_name,
-                template_name: self.template_name,
-                template_major_version: self.template_major_version,
-                template_minor_version: self.template_minor_version,
-                deployment_status: self.deployment_status,
-                deployment_status_message: self.deployment_status_message,
-                spec: self.spec,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                ,
+                service_name: self.service_name
+                ,
+                environment_name: self.environment_name
+                ,
+                template_name: self.template_name
+                ,
+                template_major_version: self.template_major_version
+                ,
+                template_minor_version: self.template_minor_version
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                spec: self.spec
+                ,
             }
         }
     }
@@ -4705,28 +4278,21 @@ pub mod service_instance {
             formatter.field("name", &self.name);
             formatter.field("arn", &self.arn);
             formatter.field("created_at", &self.created_at);
-            formatter.field(
-                "last_deployment_attempted_at",
-                &self.last_deployment_attempted_at,
-            );
-            formatter.field(
-                "last_deployment_succeeded_at",
-                &self.last_deployment_succeeded_at,
-            );
+            formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+            formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
             formatter.field("service_name", &self.service_name);
             formatter.field("environment_name", &self.environment_name);
             formatter.field("template_name", &self.template_name);
             formatter.field("template_major_version", &self.template_major_version);
             formatter.field("template_minor_version", &self.template_minor_version);
             formatter.field("deployment_status", &self.deployment_status);
-            formatter.field(
-                "deployment_status_message",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
             formatter.field("spec", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceInstance {
     /// Creates a new builder-style object to manufacture [`ServiceInstance`](crate::model::ServiceInstance).
@@ -4738,7 +4304,7 @@ impl ServiceInstance {
 /// <p>Summary data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositorySummary {
+pub struct RepositorySummary  {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4751,21 +4317,21 @@ pub struct RepositorySummary {
 }
 impl RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::model::RepositoryProvider> {
         self.provider.as_ref()
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`RepositorySummary`](crate::model::RepositorySummary).
 pub mod repository_summary {
-
+    
     /// A builder for [`RepositorySummary`](crate::model::RepositorySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4781,8 +4347,7 @@ pub mod repository_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The repository provider.</p>
         pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
@@ -4790,12 +4355,8 @@ pub mod repository_summary {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn set_provider(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryProvider>,
-        ) -> Self {
-            self.provider = input;
-            self
+        pub fn set_provider(mut self, input: std::option::Option<crate::model::RepositoryProvider>) -> Self {
+            self.provider = input; self
         }
         /// <p>The repository name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4804,18 +4365,22 @@ pub mod repository_summary {
         }
         /// <p>The repository name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`RepositorySummary`](crate::model::RepositorySummary).
         pub fn build(self) -> crate::model::RepositorySummary {
             crate::model::RepositorySummary {
-                arn: self.arn,
-                provider: self.provider,
-                name: self.name,
+                arn: self.arn
+                ,
+                provider: self.provider
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositorySummary {
     /// Creates a new builder-style object to manufacture [`RepositorySummary`](crate::model::RepositorySummary).
@@ -4827,7 +4392,7 @@ impl RepositorySummary {
 /// <p>Detailed data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Repository {
+pub struct Repository  {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4846,29 +4411,29 @@ pub struct Repository {
 }
 impl Repository {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::model::RepositoryProvider> {
         self.provider.as_ref()
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
 }
 /// See [`Repository`](crate::model::Repository).
 pub mod repository {
-
+    
     /// A builder for [`Repository`](crate::model::Repository).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4886,8 +4451,7 @@ pub mod repository {
         }
         /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The repository provider.</p>
         pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
@@ -4895,12 +4459,8 @@ pub mod repository {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn set_provider(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryProvider>,
-        ) -> Self {
-            self.provider = input;
-            self
+        pub fn set_provider(mut self, input: std::option::Option<crate::model::RepositoryProvider>) -> Self {
+            self.provider = input; self
         }
         /// <p>The repository name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4909,8 +4469,7 @@ pub mod repository {
         }
         /// <p>The repository name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4918,12 +4477,8 @@ pub mod repository {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
-        pub fn set_connection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connection_arn = input;
-            self
+        pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connection_arn = input; self
         }
         /// <p>Your customer Amazon Web Services KMS encryption key.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4931,24 +4486,27 @@ pub mod repository {
             self
         }
         /// <p>Your customer Amazon Web Services KMS encryption key.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// Consumes the builder and constructs a [`Repository`](crate::model::Repository).
         pub fn build(self) -> crate::model::Repository {
             crate::model::Repository {
-                arn: self.arn,
-                provider: self.provider,
-                name: self.name,
-                connection_arn: self.connection_arn,
-                encryption_key: self.encryption_key,
+                arn: self.arn
+                ,
+                provider: self.provider
+                ,
+                name: self.name
+                ,
+                connection_arn: self.connection_arn
+                ,
+                encryption_key: self.encryption_key
+                ,
             }
         }
     }
+    
+    
 }
 impl Repository {
     /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
@@ -4960,7 +4518,7 @@ impl Repository {
 /// <p>A summary of the version of an environment template detail data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentTemplateVersionSummary {
+pub struct EnvironmentTemplateVersionSummary  {
     /// <p>The name of the environment template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -4994,47 +4552,47 @@ pub struct EnvironmentTemplateVersionSummary {
 }
 impl EnvironmentTemplateVersionSummary {
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The latest major version that's associated with the version of an environment template.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>The version of an environment template.</p>
-    pub fn minor_version(&self) -> std::option::Option<&str> {
+    pub fn minor_version(&self) -> std::option::Option<& str> {
         self.minor_version.as_deref()
     }
     /// <p>The recommended minor version of the environment template.</p>
-    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_minor_version(&self) -> std::option::Option<& str> {
         self.recommended_minor_version.as_deref()
     }
     /// <p>The status of the version of an environment template.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TemplateVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The status message of the version of an environment template.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>A description of the version of an environment template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the version of an environment template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of an environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
 }
-impl std::fmt::Debug for EnvironmentTemplateVersionSummary {
+impl  std::fmt::Debug for EnvironmentTemplateVersionSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentTemplateVersionSummary");
         formatter.field("template_name", &self.template_name);
@@ -5052,7 +4610,7 @@ impl std::fmt::Debug for EnvironmentTemplateVersionSummary {
 }
 /// See [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
 pub mod environment_template_version_summary {
-
+    
     /// A builder for [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5074,12 +4632,8 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The name of the environment template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The latest major version that's associated with the version of an environment template.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5087,12 +4641,8 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The latest major version that's associated with the version of an environment template.</p>
-        pub fn set_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_version = input;
-            self
+        pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_version = input; self
         }
         /// <p>The version of an environment template.</p>
         pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5100,12 +4650,8 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The version of an environment template.</p>
-        pub fn set_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minor_version = input;
-            self
+        pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minor_version = input; self
         }
         /// <p>The recommended minor version of the environment template.</p>
         pub fn recommended_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5113,12 +4659,8 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The recommended minor version of the environment template.</p>
-        pub fn set_recommended_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_minor_version = input;
-            self
+        pub fn set_recommended_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_minor_version = input; self
         }
         /// <p>The status of the version of an environment template.</p>
         pub fn status(mut self, input: crate::model::TemplateVersionStatus) -> Self {
@@ -5126,12 +4668,8 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The status of the version of an environment template.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TemplateVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TemplateVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status message of the version of an environment template.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5139,12 +4677,8 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The status message of the version of an environment template.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>A description of the version of an environment template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5153,8 +4687,7 @@ pub mod environment_template_version_summary {
         }
         /// <p>A description of the version of an environment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5163,8 +4696,7 @@ pub mod environment_template_version_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the version of an environment template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5172,12 +4704,8 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The time when the version of an environment template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the version of an environment template was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5185,26 +4713,32 @@ pub mod environment_template_version_summary {
             self
         }
         /// <p>The time when the version of an environment template was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
         pub fn build(self) -> crate::model::EnvironmentTemplateVersionSummary {
             crate::model::EnvironmentTemplateVersionSummary {
-                template_name: self.template_name,
-                major_version: self.major_version,
-                minor_version: self.minor_version,
-                recommended_minor_version: self.recommended_minor_version,
-                status: self.status,
-                status_message: self.status_message,
-                description: self.description,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
+                minor_version: self.minor_version
+                ,
+                recommended_minor_version: self.recommended_minor_version
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
             }
         }
     }
@@ -5224,6 +4758,8 @@ pub mod environment_template_version_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EnvironmentTemplateVersionSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
@@ -5235,7 +4771,7 @@ impl EnvironmentTemplateVersionSummary {
 /// <p>The environment template version data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentTemplateVersion {
+pub struct EnvironmentTemplateVersion  {
     /// <p>The name of the version of an environment template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -5272,51 +4808,51 @@ pub struct EnvironmentTemplateVersion {
 }
 impl EnvironmentTemplateVersion {
     /// <p>The name of the version of an environment template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The latest major version that's associated with the version of an environment template.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>The minor version of an environment template.</p>
-    pub fn minor_version(&self) -> std::option::Option<&str> {
+    pub fn minor_version(&self) -> std::option::Option<& str> {
         self.minor_version.as_deref()
     }
     /// <p>The recommended minor version of the environment template.</p>
-    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_minor_version(&self) -> std::option::Option<& str> {
         self.recommended_minor_version.as_deref()
     }
     /// <p>The status of the version of an environment template.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TemplateVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The status message of the version of an environment template.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>A description of the minor version of an environment template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the version of an environment template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of an environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The schema of the version of an environment template.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
 }
-impl std::fmt::Debug for EnvironmentTemplateVersion {
+impl  std::fmt::Debug for EnvironmentTemplateVersion  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentTemplateVersion");
         formatter.field("template_name", &self.template_name);
@@ -5335,7 +4871,7 @@ impl std::fmt::Debug for EnvironmentTemplateVersion {
 }
 /// See [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
 pub mod environment_template_version {
-
+    
     /// A builder for [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5358,12 +4894,8 @@ pub mod environment_template_version {
             self
         }
         /// <p>The name of the version of an environment template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The latest major version that's associated with the version of an environment template.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5371,12 +4903,8 @@ pub mod environment_template_version {
             self
         }
         /// <p>The latest major version that's associated with the version of an environment template.</p>
-        pub fn set_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_version = input;
-            self
+        pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_version = input; self
         }
         /// <p>The minor version of an environment template.</p>
         pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5384,12 +4912,8 @@ pub mod environment_template_version {
             self
         }
         /// <p>The minor version of an environment template.</p>
-        pub fn set_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minor_version = input;
-            self
+        pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minor_version = input; self
         }
         /// <p>The recommended minor version of the environment template.</p>
         pub fn recommended_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5397,12 +4921,8 @@ pub mod environment_template_version {
             self
         }
         /// <p>The recommended minor version of the environment template.</p>
-        pub fn set_recommended_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_minor_version = input;
-            self
+        pub fn set_recommended_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_minor_version = input; self
         }
         /// <p>The status of the version of an environment template.</p>
         pub fn status(mut self, input: crate::model::TemplateVersionStatus) -> Self {
@@ -5410,12 +4930,8 @@ pub mod environment_template_version {
             self
         }
         /// <p>The status of the version of an environment template.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TemplateVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TemplateVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status message of the version of an environment template.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5423,12 +4939,8 @@ pub mod environment_template_version {
             self
         }
         /// <p>The status message of the version of an environment template.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>A description of the minor version of an environment template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5437,8 +4949,7 @@ pub mod environment_template_version {
         }
         /// <p>A description of the minor version of an environment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5447,8 +4958,7 @@ pub mod environment_template_version {
         }
         /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the version of an environment template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5456,12 +4966,8 @@ pub mod environment_template_version {
             self
         }
         /// <p>The time when the version of an environment template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the version of an environment template was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5469,12 +4975,8 @@ pub mod environment_template_version {
             self
         }
         /// <p>The time when the version of an environment template was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The schema of the version of an environment template.</p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5483,23 +4985,33 @@ pub mod environment_template_version {
         }
         /// <p>The schema of the version of an environment template.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
         pub fn build(self) -> crate::model::EnvironmentTemplateVersion {
             crate::model::EnvironmentTemplateVersion {
-                template_name: self.template_name,
-                major_version: self.major_version,
-                minor_version: self.minor_version,
-                recommended_minor_version: self.recommended_minor_version,
-                status: self.status,
-                status_message: self.status_message,
-                description: self.description,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                schema: self.schema,
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
+                minor_version: self.minor_version
+                ,
+                recommended_minor_version: self.recommended_minor_version
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                schema: self.schema
+                ,
             }
         }
     }
@@ -5520,6 +5032,8 @@ pub mod environment_template_version {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EnvironmentTemplateVersion {
     /// Creates a new builder-style object to manufacture [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
@@ -5531,7 +5045,7 @@ impl EnvironmentTemplateVersion {
 /// <p>The environment template data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentTemplateSummary {
+pub struct EnvironmentTemplateSummary  {
     /// <p>The name of the environment template.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5559,39 +5073,39 @@ pub struct EnvironmentTemplateSummary {
 }
 impl EnvironmentTemplateSummary {
     /// <p>The name of the environment template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the environment template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The name of the environment template as displayed in the developer interface.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description of the environment template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The recommended version of the environment template.</p>
-    pub fn recommended_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_version(&self) -> std::option::Option<& str> {
         self.recommended_version.as_deref()
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+    pub fn provisioning(&self) -> std::option::Option<& crate::model::Provisioning> {
         self.provisioning.as_ref()
     }
 }
-impl std::fmt::Debug for EnvironmentTemplateSummary {
+impl  std::fmt::Debug for EnvironmentTemplateSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentTemplateSummary");
         formatter.field("name", &self.name);
@@ -5607,7 +5121,7 @@ impl std::fmt::Debug for EnvironmentTemplateSummary {
 }
 /// See [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
 pub mod environment_template_summary {
-
+    
     /// A builder for [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5628,8 +5142,7 @@ pub mod environment_template_summary {
         }
         /// <p>The name of the environment template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5638,8 +5151,7 @@ pub mod environment_template_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the environment template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5647,12 +5159,8 @@ pub mod environment_template_summary {
             self
         }
         /// <p>The time when the environment template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the environment template was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5660,12 +5168,8 @@ pub mod environment_template_summary {
             self
         }
         /// <p>The time when the environment template was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The name of the environment template as displayed in the developer interface.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5674,8 +5178,7 @@ pub mod environment_template_summary {
         }
         /// <p>The name of the environment template as displayed in the developer interface.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>A description of the environment template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5684,8 +5187,7 @@ pub mod environment_template_summary {
         }
         /// <p>A description of the environment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The recommended version of the environment template.</p>
         pub fn recommended_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5693,12 +5195,8 @@ pub mod environment_template_summary {
             self
         }
         /// <p>The recommended version of the environment template.</p>
-        pub fn set_recommended_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_version = input;
-            self
+        pub fn set_recommended_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_version = input; self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
         pub fn provisioning(mut self, input: crate::model::Provisioning) -> Self {
@@ -5706,24 +5204,28 @@ pub mod environment_template_summary {
             self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-        pub fn set_provisioning(
-            mut self,
-            input: std::option::Option<crate::model::Provisioning>,
-        ) -> Self {
-            self.provisioning = input;
-            self
+        pub fn set_provisioning(mut self, input: std::option::Option<crate::model::Provisioning>) -> Self {
+            self.provisioning = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
         pub fn build(self) -> crate::model::EnvironmentTemplateSummary {
             crate::model::EnvironmentTemplateSummary {
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                display_name: self.display_name,
-                description: self.description,
-                recommended_version: self.recommended_version,
-                provisioning: self.provisioning,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                recommended_version: self.recommended_version
+                ,
+                provisioning: self.provisioning
+                ,
             }
         }
     }
@@ -5741,6 +5243,8 @@ pub mod environment_template_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EnvironmentTemplateSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
@@ -5752,7 +5256,7 @@ impl EnvironmentTemplateSummary {
 /// <p>The environment template data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentTemplate {
+pub struct EnvironmentTemplate  {
     /// <p>The name of the environment template.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5783,43 +5287,43 @@ pub struct EnvironmentTemplate {
 }
 impl EnvironmentTemplate {
     /// <p>The name of the environment template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the environment template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The name of the environment template as displayed in the developer interface.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description of the environment template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the recommended version of the environment template.</p>
-    pub fn recommended_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_version(&self) -> std::option::Option<& str> {
         self.recommended_version.as_deref()
     }
     /// <p>The customer provided encryption key for the environment template.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+    pub fn provisioning(&self) -> std::option::Option<& crate::model::Provisioning> {
         self.provisioning.as_ref()
     }
 }
-impl std::fmt::Debug for EnvironmentTemplate {
+impl  std::fmt::Debug for EnvironmentTemplate  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentTemplate");
         formatter.field("name", &self.name);
@@ -5836,7 +5340,7 @@ impl std::fmt::Debug for EnvironmentTemplate {
 }
 /// See [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
 pub mod environment_template {
-
+    
     /// A builder for [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5858,8 +5362,7 @@ pub mod environment_template {
         }
         /// <p>The name of the environment template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5868,8 +5371,7 @@ pub mod environment_template {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the environment template was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5877,12 +5379,8 @@ pub mod environment_template {
             self
         }
         /// <p>The time when the environment template was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the environment template was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5890,12 +5388,8 @@ pub mod environment_template {
             self
         }
         /// <p>The time when the environment template was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The name of the environment template as displayed in the developer interface.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5904,8 +5398,7 @@ pub mod environment_template {
         }
         /// <p>The name of the environment template as displayed in the developer interface.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>A description of the environment template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5914,8 +5407,7 @@ pub mod environment_template {
         }
         /// <p>A description of the environment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ID of the recommended version of the environment template.</p>
         pub fn recommended_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5923,12 +5415,8 @@ pub mod environment_template {
             self
         }
         /// <p>The ID of the recommended version of the environment template.</p>
-        pub fn set_recommended_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_version = input;
-            self
+        pub fn set_recommended_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_version = input; self
         }
         /// <p>The customer provided encryption key for the environment template.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5936,12 +5424,8 @@ pub mod environment_template {
             self
         }
         /// <p>The customer provided encryption key for the environment template.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
         pub fn provisioning(mut self, input: crate::model::Provisioning) -> Self {
@@ -5949,25 +5433,30 @@ pub mod environment_template {
             self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-        pub fn set_provisioning(
-            mut self,
-            input: std::option::Option<crate::model::Provisioning>,
-        ) -> Self {
-            self.provisioning = input;
-            self
+        pub fn set_provisioning(mut self, input: std::option::Option<crate::model::Provisioning>) -> Self {
+            self.provisioning = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
         pub fn build(self) -> crate::model::EnvironmentTemplate {
             crate::model::EnvironmentTemplate {
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                display_name: self.display_name,
-                description: self.description,
-                recommended_version: self.recommended_version,
-                encryption_key: self.encryption_key,
-                provisioning: self.provisioning,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                recommended_version: self.recommended_version
+                ,
+                encryption_key: self.encryption_key
+                ,
+                provisioning: self.provisioning
+                ,
             }
         }
     }
@@ -5986,6 +5475,8 @@ pub mod environment_template {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EnvironmentTemplate {
     /// Creates a new builder-style object to manufacture [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
@@ -5997,7 +5488,7 @@ impl EnvironmentTemplate {
 /// <p>Summary data of an Proton environment resource. An Proton environment is a set of resources shared across Proton services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentSummary {
+pub struct EnvironmentSummary  {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6043,108 +5534,96 @@ pub struct EnvironmentSummary {
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     #[doc(hidden)]
     pub provisioning: std::option::Option<crate::model::Provisioning>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
-    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p> 
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentSummary {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time when the environment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the environment was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the environment was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the environment template.</p>
-    pub fn template_major_version(&self) -> std::option::Option<&str> {
+    pub fn template_major_version(&self) -> std::option::Option<& str> {
         self.template_major_version.as_deref()
     }
     /// <p>The minor version of the environment template.</p>
-    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+    pub fn template_minor_version(&self) -> std::option::Option<& str> {
         self.template_minor_version.as_deref()
     }
     /// <p>The environment deployment status.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>An environment deployment status message.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
-    pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn proton_service_role_arn(&self) -> std::option::Option<& str> {
         self.proton_service_role_arn.as_deref()
     }
     /// <p>The ID of the environment account connection that the environment is associated with.</p>
-    pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
+    pub fn environment_account_connection_id(&self) -> std::option::Option<& str> {
         self.environment_account_connection_id.as_deref()
     }
     /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
-    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+    pub fn environment_account_id(&self) -> std::option::Option<& str> {
         self.environment_account_id.as_deref()
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+    pub fn provisioning(&self) -> std::option::Option<& crate::model::Provisioning> {
         self.provisioning.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
-    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p> 
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+    pub fn component_role_arn(&self) -> std::option::Option<& str> {
         self.component_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EnvironmentSummary {
+impl  std::fmt::Debug for EnvironmentSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentSummary");
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("arn", &self.arn);
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("proton_service_role_arn", &self.proton_service_role_arn);
-        formatter.field(
-            "environment_account_connection_id",
-            &self.environment_account_connection_id,
-        );
+        formatter.field("environment_account_connection_id", &self.environment_account_connection_id);
         formatter.field("environment_account_id", &self.environment_account_id);
         formatter.field("provisioning", &self.provisioning);
         formatter.field("component_role_arn", &self.component_role_arn);
@@ -6153,7 +5632,7 @@ impl std::fmt::Debug for EnvironmentSummary {
 }
 /// See [`EnvironmentSummary`](crate::model::EnvironmentSummary).
 pub mod environment_summary {
-
+    
     /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6182,8 +5661,7 @@ pub mod environment_summary {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6192,8 +5670,7 @@ pub mod environment_summary {
         }
         /// <p>The description of the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The time when the environment was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6201,12 +5678,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The time when the environment was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when a deployment of the environment was last attempted.</p>
         pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6214,12 +5687,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The time when a deployment of the environment was last attempted.</p>
-        pub fn set_last_deployment_attempted_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_attempted_at = input;
-            self
+        pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_attempted_at = input; self
         }
         /// <p>The time when the environment was last deployed successfully.</p>
         pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6227,12 +5696,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The time when the environment was last deployed successfully.</p>
-        pub fn set_last_deployment_succeeded_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_succeeded_at = input;
-            self
+        pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_succeeded_at = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6241,8 +5706,7 @@ pub mod environment_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the environment template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6250,12 +5714,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The name of the environment template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The major version of the environment template.</p>
         pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6263,12 +5723,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The major version of the environment template.</p>
-        pub fn set_template_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_major_version = input;
-            self
+        pub fn set_template_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_major_version = input; self
         }
         /// <p>The minor version of the environment template.</p>
         pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6276,12 +5732,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The minor version of the environment template.</p>
-        pub fn set_template_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_minor_version = input;
-            self
+        pub fn set_template_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_minor_version = input; self
         }
         /// <p>The environment deployment status.</p>
         pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -6289,12 +5741,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The environment deployment status.</p>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>An environment deployment status message.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6302,12 +5750,8 @@ pub mod environment_summary {
             self
         }
         /// <p>An environment deployment status message.</p>
-        pub fn set_deployment_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status_message = input;
-            self
+        pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status_message = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
         pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6315,28 +5759,17 @@ pub mod environment_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
-        pub fn set_proton_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.proton_service_role_arn = input;
-            self
+        pub fn set_proton_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.proton_service_role_arn = input; self
         }
         /// <p>The ID of the environment account connection that the environment is associated with.</p>
-        pub fn environment_account_connection_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_account_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_account_connection_id = Some(input.into());
             self
         }
         /// <p>The ID of the environment account connection that the environment is associated with.</p>
-        pub fn set_environment_account_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_account_connection_id = input;
-            self
+        pub fn set_environment_account_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_account_connection_id = input; self
         }
         /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
         pub fn environment_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6344,12 +5777,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
-        pub fn set_environment_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_account_id = input;
-            self
+        pub fn set_environment_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_account_id = input; self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
         pub fn provisioning(mut self, input: crate::model::Provisioning) -> Self {
@@ -6357,49 +5786,57 @@ pub mod environment_summary {
             self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-        pub fn set_provisioning(
-            mut self,
-            input: std::option::Option<crate::model::Provisioning>,
-        ) -> Self {
-            self.provisioning = input;
-            self
+        pub fn set_provisioning(mut self, input: std::option::Option<crate::model::Provisioning>) -> Self {
+            self.provisioning = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
-        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p> 
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
-        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p> 
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-        pub fn set_component_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_role_arn = input;
-            self
+        pub fn set_component_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::model::EnvironmentSummary).
         pub fn build(self) -> crate::model::EnvironmentSummary {
             crate::model::EnvironmentSummary {
-                name: self.name,
-                description: self.description,
-                created_at: self.created_at,
-                last_deployment_attempted_at: self.last_deployment_attempted_at,
-                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-                arn: self.arn,
-                template_name: self.template_name,
-                template_major_version: self.template_major_version,
-                template_minor_version: self.template_minor_version,
-                deployment_status: self.deployment_status,
-                deployment_status_message: self.deployment_status_message,
-                proton_service_role_arn: self.proton_service_role_arn,
-                environment_account_connection_id: self.environment_account_connection_id,
-                environment_account_id: self.environment_account_id,
-                provisioning: self.provisioning,
-                component_role_arn: self.component_role_arn,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                created_at: self.created_at
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                ,
+                arn: self.arn
+                ,
+                template_name: self.template_name
+                ,
+                template_major_version: self.template_major_version
+                ,
+                template_minor_version: self.template_minor_version
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                proton_service_role_arn: self.proton_service_role_arn
+                ,
+                environment_account_connection_id: self.environment_account_connection_id
+                ,
+                environment_account_id: self.environment_account_id
+                ,
+                provisioning: self.provisioning
+                ,
+                component_role_arn: self.component_role_arn
+                ,
             }
         }
     }
@@ -6409,34 +5846,24 @@ pub mod environment_summary {
             formatter.field("name", &self.name);
             formatter.field("description", &"*** Sensitive Data Redacted ***");
             formatter.field("created_at", &self.created_at);
-            formatter.field(
-                "last_deployment_attempted_at",
-                &self.last_deployment_attempted_at,
-            );
-            formatter.field(
-                "last_deployment_succeeded_at",
-                &self.last_deployment_succeeded_at,
-            );
+            formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+            formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
             formatter.field("arn", &self.arn);
             formatter.field("template_name", &self.template_name);
             formatter.field("template_major_version", &self.template_major_version);
             formatter.field("template_minor_version", &self.template_minor_version);
             formatter.field("deployment_status", &self.deployment_status);
-            formatter.field(
-                "deployment_status_message",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
             formatter.field("proton_service_role_arn", &self.proton_service_role_arn);
-            formatter.field(
-                "environment_account_connection_id",
-                &self.environment_account_connection_id,
-            );
+            formatter.field("environment_account_connection_id", &self.environment_account_connection_id);
             formatter.field("environment_account_id", &self.environment_account_id);
             formatter.field("provisioning", &self.provisioning);
             formatter.field("component_role_arn", &self.component_role_arn);
             formatter.finish()
         }
     }
+    
+    
 }
 impl EnvironmentSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
@@ -6448,7 +5875,7 @@ impl EnvironmentSummary {
 /// <p>A search filter for environment templates.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentTemplateFilter {
+pub struct EnvironmentTemplateFilter  {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -6458,17 +5885,17 @@ pub struct EnvironmentTemplateFilter {
 }
 impl EnvironmentTemplateFilter {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
 }
 /// See [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
 pub mod environment_template_filter {
-
+    
     /// A builder for [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6482,12 +5909,8 @@ pub mod environment_template_filter {
             self
         }
         /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6495,21 +5918,21 @@ pub mod environment_template_filter {
             self
         }
         /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-        pub fn set_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_version = input;
-            self
+        pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_version = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
         pub fn build(self) -> crate::model::EnvironmentTemplateFilter {
             crate::model::EnvironmentTemplateFilter {
-                template_name: self.template_name,
-                major_version: self.major_version,
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentTemplateFilter {
     /// Creates a new builder-style object to manufacture [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
@@ -6521,7 +5944,7 @@ impl EnvironmentTemplateFilter {
 /// <p>Detailed data of an Proton environment resource. An Proton environment is a set of resources shared across Proton services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Environment {
+pub struct Environment  {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6573,8 +5996,8 @@ pub struct Environment {
     /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     #[doc(hidden)]
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
-    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p> 
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
@@ -6584,112 +6007,100 @@ pub struct Environment {
 }
 impl Environment {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time when the environment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the environment was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the environment was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the environment template.</p>
-    pub fn template_major_version(&self) -> std::option::Option<&str> {
+    pub fn template_major_version(&self) -> std::option::Option<& str> {
         self.template_major_version.as_deref()
     }
     /// <p>The minor version of the environment template.</p>
-    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+    pub fn template_minor_version(&self) -> std::option::Option<& str> {
         self.template_minor_version.as_deref()
     }
     /// <p>The environment deployment status.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>An environment deployment status message.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
-    pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn proton_service_role_arn(&self) -> std::option::Option<& str> {
         self.proton_service_role_arn.as_deref()
     }
     /// <p>The ID of the environment account connection that's used to provision infrastructure resources in an environment account.</p>
-    pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
+    pub fn environment_account_connection_id(&self) -> std::option::Option<& str> {
         self.environment_account_connection_id.as_deref()
     }
     /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
-    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+    pub fn environment_account_id(&self) -> std::option::Option<& str> {
         self.environment_account_id.as_deref()
     }
     /// <p>The environment spec.</p>
-    pub fn spec(&self) -> std::option::Option<&str> {
+    pub fn spec(&self) -> std::option::Option<& str> {
         self.spec.as_deref()
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+    pub fn provisioning(&self) -> std::option::Option<& crate::model::Provisioning> {
         self.provisioning.as_ref()
     }
     /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    pub fn provisioning_repository(&self) -> std::option::Option<&crate::model::RepositoryBranch> {
+    pub fn provisioning_repository(&self) -> std::option::Option<& crate::model::RepositoryBranch> {
         self.provisioning_repository.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
-    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p> 
+    /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+    pub fn component_role_arn(&self) -> std::option::Option<& str> {
         self.component_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
-    pub fn codebuild_role_arn(&self) -> std::option::Option<&str> {
+    pub fn codebuild_role_arn(&self) -> std::option::Option<& str> {
         self.codebuild_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for Environment {
+impl  std::fmt::Debug for Environment  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Environment");
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("arn", &self.arn);
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("proton_service_role_arn", &self.proton_service_role_arn);
-        formatter.field(
-            "environment_account_connection_id",
-            &self.environment_account_connection_id,
-        );
+        formatter.field("environment_account_connection_id", &self.environment_account_connection_id);
         formatter.field("environment_account_id", &self.environment_account_id);
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.field("provisioning", &self.provisioning);
@@ -6701,7 +6112,7 @@ impl std::fmt::Debug for Environment {
 }
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
-
+    
     /// A builder for [`Environment`](crate::model::Environment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6733,8 +6144,7 @@ pub mod environment {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6743,8 +6153,7 @@ pub mod environment {
         }
         /// <p>The description of the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The time when the environment was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6752,12 +6161,8 @@ pub mod environment {
             self
         }
         /// <p>The time when the environment was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when a deployment of the environment was last attempted.</p>
         pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6765,12 +6170,8 @@ pub mod environment {
             self
         }
         /// <p>The time when a deployment of the environment was last attempted.</p>
-        pub fn set_last_deployment_attempted_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_attempted_at = input;
-            self
+        pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_attempted_at = input; self
         }
         /// <p>The time when the environment was last deployed successfully.</p>
         pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6778,12 +6179,8 @@ pub mod environment {
             self
         }
         /// <p>The time when the environment was last deployed successfully.</p>
-        pub fn set_last_deployment_succeeded_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_succeeded_at = input;
-            self
+        pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_succeeded_at = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6792,8 +6189,7 @@ pub mod environment {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6801,12 +6197,8 @@ pub mod environment {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The major version of the environment template.</p>
         pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6814,12 +6206,8 @@ pub mod environment {
             self
         }
         /// <p>The major version of the environment template.</p>
-        pub fn set_template_major_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_major_version = input;
-            self
+        pub fn set_template_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_major_version = input; self
         }
         /// <p>The minor version of the environment template.</p>
         pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6827,12 +6215,8 @@ pub mod environment {
             self
         }
         /// <p>The minor version of the environment template.</p>
-        pub fn set_template_minor_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_minor_version = input;
-            self
+        pub fn set_template_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_minor_version = input; self
         }
         /// <p>The environment deployment status.</p>
         pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -6840,12 +6224,8 @@ pub mod environment {
             self
         }
         /// <p>The environment deployment status.</p>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>An environment deployment status message.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6853,12 +6233,8 @@ pub mod environment {
             self
         }
         /// <p>An environment deployment status message.</p>
-        pub fn set_deployment_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status_message = input;
-            self
+        pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status_message = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
         pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6866,28 +6242,17 @@ pub mod environment {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
-        pub fn set_proton_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.proton_service_role_arn = input;
-            self
+        pub fn set_proton_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.proton_service_role_arn = input; self
         }
         /// <p>The ID of the environment account connection that's used to provision infrastructure resources in an environment account.</p>
-        pub fn environment_account_connection_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_account_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_account_connection_id = Some(input.into());
             self
         }
         /// <p>The ID of the environment account connection that's used to provision infrastructure resources in an environment account.</p>
-        pub fn set_environment_account_connection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_account_connection_id = input;
-            self
+        pub fn set_environment_account_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_account_connection_id = input; self
         }
         /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
         pub fn environment_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6895,12 +6260,8 @@ pub mod environment {
             self
         }
         /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
-        pub fn set_environment_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_account_id = input;
-            self
+        pub fn set_environment_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_account_id = input; self
         }
         /// <p>The environment spec.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6909,8 +6270,7 @@ pub mod environment {
         }
         /// <p>The environment spec.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.spec = input;
-            self
+            self.spec = input; self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
         pub fn provisioning(mut self, input: crate::model::Provisioning) -> Self {
@@ -6918,12 +6278,8 @@ pub mod environment {
             self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-        pub fn set_provisioning(
-            mut self,
-            input: std::option::Option<crate::model::Provisioning>,
-        ) -> Self {
-            self.provisioning = input;
-            self
+        pub fn set_provisioning(mut self, input: std::option::Option<crate::model::Provisioning>) -> Self {
+            self.provisioning = input; self
         }
         /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
         pub fn provisioning_repository(mut self, input: crate::model::RepositoryBranch) -> Self {
@@ -6931,29 +6287,21 @@ pub mod environment {
             self
         }
         /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-        pub fn set_provisioning_repository(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryBranch>,
-        ) -> Self {
-            self.provisioning_repository = input;
-            self
+        pub fn set_provisioning_repository(mut self, input: std::option::Option<crate::model::RepositoryBranch>) -> Self {
+            self.provisioning_repository = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
-        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p> 
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
-        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p> 
+        /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-        pub fn set_component_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_role_arn = input;
-            self
+        pub fn set_component_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_role_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
         pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6961,35 +6309,50 @@ pub mod environment {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
-        pub fn set_codebuild_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.codebuild_role_arn = input;
-            self
+        pub fn set_codebuild_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.codebuild_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`Environment`](crate::model::Environment).
         pub fn build(self) -> crate::model::Environment {
             crate::model::Environment {
-                name: self.name,
-                description: self.description,
-                created_at: self.created_at,
-                last_deployment_attempted_at: self.last_deployment_attempted_at,
-                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-                arn: self.arn,
-                template_name: self.template_name,
-                template_major_version: self.template_major_version,
-                template_minor_version: self.template_minor_version,
-                deployment_status: self.deployment_status,
-                deployment_status_message: self.deployment_status_message,
-                proton_service_role_arn: self.proton_service_role_arn,
-                environment_account_connection_id: self.environment_account_connection_id,
-                environment_account_id: self.environment_account_id,
-                spec: self.spec,
-                provisioning: self.provisioning,
-                provisioning_repository: self.provisioning_repository,
-                component_role_arn: self.component_role_arn,
-                codebuild_role_arn: self.codebuild_role_arn,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                created_at: self.created_at
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                ,
+                arn: self.arn
+                ,
+                template_name: self.template_name
+                ,
+                template_major_version: self.template_major_version
+                ,
+                template_minor_version: self.template_minor_version
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                proton_service_role_arn: self.proton_service_role_arn
+                ,
+                environment_account_connection_id: self.environment_account_connection_id
+                ,
+                environment_account_id: self.environment_account_id
+                ,
+                spec: self.spec
+                ,
+                provisioning: self.provisioning
+                ,
+                provisioning_repository: self.provisioning_repository
+                ,
+                component_role_arn: self.component_role_arn
+                ,
+                codebuild_role_arn: self.codebuild_role_arn
+                ,
             }
         }
     }
@@ -6999,28 +6362,16 @@ pub mod environment {
             formatter.field("name", &self.name);
             formatter.field("description", &"*** Sensitive Data Redacted ***");
             formatter.field("created_at", &self.created_at);
-            formatter.field(
-                "last_deployment_attempted_at",
-                &self.last_deployment_attempted_at,
-            );
-            formatter.field(
-                "last_deployment_succeeded_at",
-                &self.last_deployment_succeeded_at,
-            );
+            formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+            formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
             formatter.field("arn", &self.arn);
             formatter.field("template_name", &self.template_name);
             formatter.field("template_major_version", &self.template_major_version);
             formatter.field("template_minor_version", &self.template_minor_version);
             formatter.field("deployment_status", &self.deployment_status);
-            formatter.field(
-                "deployment_status_message",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
             formatter.field("proton_service_role_arn", &self.proton_service_role_arn);
-            formatter.field(
-                "environment_account_connection_id",
-                &self.environment_account_connection_id,
-            );
+            formatter.field("environment_account_connection_id", &self.environment_account_connection_id);
             formatter.field("environment_account_id", &self.environment_account_id);
             formatter.field("spec", &"*** Sensitive Data Redacted ***");
             formatter.field("provisioning", &self.provisioning);
@@ -7030,6 +6381,8 @@ pub mod environment {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Environment {
     /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
@@ -7041,7 +6394,7 @@ impl Environment {
 /// <p>Detail data for a linked repository branch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryBranch {
+pub struct RepositoryBranch  {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7057,25 +6410,25 @@ pub struct RepositoryBranch {
 }
 impl RepositoryBranch {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::model::RepositoryProvider> {
         self.provider.as_ref()
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> std::option::Option<& str> {
         self.branch.as_deref()
     }
 }
 /// See [`RepositoryBranch`](crate::model::RepositoryBranch).
 pub mod repository_branch {
-
+    
     /// A builder for [`RepositoryBranch`](crate::model::RepositoryBranch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7092,8 +6445,7 @@ pub mod repository_branch {
         }
         /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The repository provider.</p>
         pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
@@ -7101,12 +6453,8 @@ pub mod repository_branch {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn set_provider(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryProvider>,
-        ) -> Self {
-            self.provider = input;
-            self
+        pub fn set_provider(mut self, input: std::option::Option<crate::model::RepositoryProvider>) -> Self {
+            self.provider = input; self
         }
         /// <p>The repository name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7115,8 +6463,7 @@ pub mod repository_branch {
         }
         /// <p>The repository name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The repository branch.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7125,19 +6472,24 @@ pub mod repository_branch {
         }
         /// <p>The repository branch.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch = input;
-            self
+            self.branch = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryBranch`](crate::model::RepositoryBranch).
         pub fn build(self) -> crate::model::RepositoryBranch {
             crate::model::RepositoryBranch {
-                arn: self.arn,
-                provider: self.provider,
-                name: self.name,
-                branch: self.branch,
+                arn: self.arn
+                ,
+                provider: self.provider
+                ,
+                name: self.name
+                ,
+                branch: self.branch
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryBranch {
     /// Creates a new builder-style object to manufacture [`RepositoryBranch`](crate::model::RepositoryBranch).
@@ -7149,7 +6501,7 @@ impl RepositoryBranch {
 /// <p>Detail input data for a linked repository branch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryBranchInput {
+pub struct RepositoryBranchInput  {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
     pub provider: std::option::Option<crate::model::RepositoryProvider>,
@@ -7162,21 +6514,21 @@ pub struct RepositoryBranchInput {
 }
 impl RepositoryBranchInput {
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::model::RepositoryProvider> {
         self.provider.as_ref()
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> std::option::Option<& str> {
         self.branch.as_deref()
     }
 }
 /// See [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
 pub mod repository_branch_input {
-
+    
     /// A builder for [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7191,12 +6543,8 @@ pub mod repository_branch_input {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn set_provider(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryProvider>,
-        ) -> Self {
-            self.provider = input;
-            self
+        pub fn set_provider(mut self, input: std::option::Option<crate::model::RepositoryProvider>) -> Self {
+            self.provider = input; self
         }
         /// <p>The repository name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7205,8 +6553,7 @@ pub mod repository_branch_input {
         }
         /// <p>The repository name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The repository branch.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7215,18 +6562,22 @@ pub mod repository_branch_input {
         }
         /// <p>The repository branch.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch = input;
-            self
+            self.branch = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
         pub fn build(self) -> crate::model::RepositoryBranchInput {
             crate::model::RepositoryBranchInput {
-                provider: self.provider,
-                name: self.name,
-                branch: self.branch,
+                provider: self.provider
+                ,
+                name: self.name
+                ,
+                branch: self.branch
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryBranchInput {
     /// Creates a new builder-style object to manufacture [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
@@ -7238,7 +6589,7 @@ impl RepositoryBranchInput {
 /// <p>Detailed data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentAccountConnection {
+pub struct EnvironmentAccountConnection  {
     /// <p>The ID of the environment account connection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7266,8 +6617,8 @@ pub struct EnvironmentAccountConnection {
     /// <p>The status of the environment account connection.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
@@ -7277,55 +6628,55 @@ pub struct EnvironmentAccountConnection {
 }
 impl EnvironmentAccountConnection {
     /// <p>The ID of the environment account connection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
-    pub fn management_account_id(&self) -> std::option::Option<&str> {
+    pub fn management_account_id(&self) -> std::option::Option<& str> {
         self.management_account_id.as_deref()
     }
     /// <p>The environment account that's connected to the environment account connection.</p>
-    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+    pub fn environment_account_id(&self) -> std::option::Option<& str> {
         self.environment_account_id.as_deref()
     }
     /// <p>The IAM service role that's associated with the environment account connection.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the environment that's associated with the environment account connection.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The time when the environment account connection request was made.</p>
-    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn requested_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.requested_at.as_ref()
     }
     /// <p>The time when the environment account connection was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the environment account connection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentAccountConnectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EnvironmentAccountConnectionStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+    pub fn component_role_arn(&self) -> std::option::Option<& str> {
         self.component_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
-    pub fn codebuild_role_arn(&self) -> std::option::Option<&str> {
+    pub fn codebuild_role_arn(&self) -> std::option::Option<& str> {
         self.codebuild_role_arn.as_deref()
     }
 }
 /// See [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
 pub mod environment_account_connection {
-
+    
     /// A builder for [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7349,8 +6700,7 @@ pub mod environment_account_connection {
         }
         /// <p>The ID of the environment account connection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7359,8 +6709,7 @@ pub mod environment_account_connection {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the management account that's connected to the environment account connection.</p>
         pub fn management_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7368,12 +6717,8 @@ pub mod environment_account_connection {
             self
         }
         /// <p>The ID of the management account that's connected to the environment account connection.</p>
-        pub fn set_management_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.management_account_id = input;
-            self
+        pub fn set_management_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.management_account_id = input; self
         }
         /// <p>The environment account that's connected to the environment account connection.</p>
         pub fn environment_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7381,12 +6726,8 @@ pub mod environment_account_connection {
             self
         }
         /// <p>The environment account that's connected to the environment account connection.</p>
-        pub fn set_environment_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_account_id = input;
-            self
+        pub fn set_environment_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_account_id = input; self
         }
         /// <p>The IAM service role that's associated with the environment account connection.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7395,8 +6736,7 @@ pub mod environment_account_connection {
         }
         /// <p>The IAM service role that's associated with the environment account connection.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The name of the environment that's associated with the environment account connection.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7404,12 +6744,8 @@ pub mod environment_account_connection {
             self
         }
         /// <p>The name of the environment that's associated with the environment account connection.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The time when the environment account connection request was made.</p>
         pub fn requested_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7417,12 +6753,8 @@ pub mod environment_account_connection {
             self
         }
         /// <p>The time when the environment account connection request was made.</p>
-        pub fn set_requested_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.requested_at = input;
-            self
+        pub fn set_requested_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.requested_at = input; self
         }
         /// <p>The time when the environment account connection was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7430,12 +6762,8 @@ pub mod environment_account_connection {
             self
         }
         /// <p>The time when the environment account connection was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The status of the environment account connection.</p>
         pub fn status(mut self, input: crate::model::EnvironmentAccountConnectionStatus) -> Self {
@@ -7443,29 +6771,21 @@ pub mod environment_account_connection {
             self
         }
         /// <p>The status of the environment account connection.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>) -> Self {
+            self.status = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-        pub fn set_component_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_role_arn = input;
-            self
+        pub fn set_component_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_role_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
         pub fn codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7473,30 +6793,39 @@ pub mod environment_account_connection {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
-        pub fn set_codebuild_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.codebuild_role_arn = input;
-            self
+        pub fn set_codebuild_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.codebuild_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
         pub fn build(self) -> crate::model::EnvironmentAccountConnection {
             crate::model::EnvironmentAccountConnection {
-                id: self.id,
-                arn: self.arn,
-                management_account_id: self.management_account_id,
-                environment_account_id: self.environment_account_id,
-                role_arn: self.role_arn,
-                environment_name: self.environment_name,
-                requested_at: self.requested_at,
-                last_modified_at: self.last_modified_at,
-                status: self.status,
-                component_role_arn: self.component_role_arn,
-                codebuild_role_arn: self.codebuild_role_arn,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                management_account_id: self.management_account_id
+                ,
+                environment_account_id: self.environment_account_id
+                ,
+                role_arn: self.role_arn
+                ,
+                environment_name: self.environment_name
+                ,
+                requested_at: self.requested_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                status: self.status
+                ,
+                component_role_arn: self.component_role_arn
+                ,
+                codebuild_role_arn: self.codebuild_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentAccountConnection {
     /// Creates a new builder-style object to manufacture [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
@@ -7511,9 +6840,9 @@ impl EnvironmentAccountConnection {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentaccountconnectionstatus = unimplemented!();
 /// match environmentaccountconnectionstatus {
@@ -7536,22 +6865,14 @@ impl EnvironmentAccountConnection {
 /// Specifically, when `environmentaccountconnectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentAccountConnectionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentAccountConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Connected,
@@ -7560,7 +6881,7 @@ pub enum EnvironmentAccountConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentAccountConnectionStatus {
     fn from(s: &str) -> Self {
@@ -7568,19 +6889,17 @@ impl std::convert::From<&str> for EnvironmentAccountConnectionStatus {
             "CONNECTED" => EnvironmentAccountConnectionStatus::Connected,
             "PENDING" => EnvironmentAccountConnectionStatus::Pending,
             "REJECTED" => EnvironmentAccountConnectionStatus::Rejected,
-            other => EnvironmentAccountConnectionStatus::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => EnvironmentAccountConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentAccountConnectionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentAccountConnectionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentAccountConnectionStatus::from(s))
+                }
+            }
 impl EnvironmentAccountConnectionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7588,12 +6907,14 @@ impl EnvironmentAccountConnectionStatus {
             EnvironmentAccountConnectionStatus::Connected => "CONNECTED",
             EnvironmentAccountConnectionStatus::Pending => "PENDING",
             EnvironmentAccountConnectionStatus::Rejected => "REJECTED",
-            EnvironmentAccountConnectionStatus::Unknown(value) => value.as_str(),
+            EnvironmentAccountConnectionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONNECTED", "PENDING", "REJECTED"]
+        &[
+            "CONNECTED", "PENDING", "REJECTED"
+        ]
     }
 }
 impl AsRef<str> for EnvironmentAccountConnectionStatus {
@@ -7605,7 +6926,7 @@ impl AsRef<str> for EnvironmentAccountConnectionStatus {
 /// <p>Summary data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentAccountConnectionSummary {
+pub struct EnvironmentAccountConnectionSummary  {
     /// <p>The ID of the environment account connection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7633,59 +6954,59 @@ pub struct EnvironmentAccountConnectionSummary {
     /// <p>The status of the environment account connection.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentAccountConnectionSummary {
     /// <p>The ID of the environment account connection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
-    pub fn management_account_id(&self) -> std::option::Option<&str> {
+    pub fn management_account_id(&self) -> std::option::Option<& str> {
         self.management_account_id.as_deref()
     }
     /// <p>The ID of the environment account that's connected to the environment account connection.</p>
-    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+    pub fn environment_account_id(&self) -> std::option::Option<& str> {
         self.environment_account_id.as_deref()
     }
     /// <p>The IAM service role that's associated with the environment account connection.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the environment that's associated with the environment account connection.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The time when the environment account connection request was made.</p>
-    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn requested_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.requested_at.as_ref()
     }
     /// <p>The time when the environment account connection was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the environment account connection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentAccountConnectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EnvironmentAccountConnectionStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+    pub fn component_role_arn(&self) -> std::option::Option<& str> {
         self.component_role_arn.as_deref()
     }
 }
 /// See [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
 pub mod environment_account_connection_summary {
-
+    
     /// A builder for [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7708,8 +7029,7 @@ pub mod environment_account_connection_summary {
         }
         /// <p>The ID of the environment account connection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7718,8 +7038,7 @@ pub mod environment_account_connection_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the management account that's connected to the environment account connection.</p>
         pub fn management_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7727,12 +7046,8 @@ pub mod environment_account_connection_summary {
             self
         }
         /// <p>The ID of the management account that's connected to the environment account connection.</p>
-        pub fn set_management_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.management_account_id = input;
-            self
+        pub fn set_management_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.management_account_id = input; self
         }
         /// <p>The ID of the environment account that's connected to the environment account connection.</p>
         pub fn environment_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7740,12 +7055,8 @@ pub mod environment_account_connection_summary {
             self
         }
         /// <p>The ID of the environment account that's connected to the environment account connection.</p>
-        pub fn set_environment_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_account_id = input;
-            self
+        pub fn set_environment_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_account_id = input; self
         }
         /// <p>The IAM service role that's associated with the environment account connection.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7754,8 +7065,7 @@ pub mod environment_account_connection_summary {
         }
         /// <p>The IAM service role that's associated with the environment account connection.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The name of the environment that's associated with the environment account connection.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7763,12 +7073,8 @@ pub mod environment_account_connection_summary {
             self
         }
         /// <p>The name of the environment that's associated with the environment account connection.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The time when the environment account connection request was made.</p>
         pub fn requested_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7776,12 +7082,8 @@ pub mod environment_account_connection_summary {
             self
         }
         /// <p>The time when the environment account connection request was made.</p>
-        pub fn set_requested_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.requested_at = input;
-            self
+        pub fn set_requested_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.requested_at = input; self
         }
         /// <p>The time when the environment account connection was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7789,12 +7091,8 @@ pub mod environment_account_connection_summary {
             self
         }
         /// <p>The time when the environment account connection was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The status of the environment account connection.</p>
         pub fn status(mut self, input: crate::model::EnvironmentAccountConnectionStatus) -> Self {
@@ -7802,46 +7100,50 @@ pub mod environment_account_connection_summary {
             self
         }
         /// <p>The status of the environment account connection.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>) -> Self {
+            self.status = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
         pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+        /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
         /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-        pub fn set_component_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_role_arn = input;
-            self
+        pub fn set_component_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
         pub fn build(self) -> crate::model::EnvironmentAccountConnectionSummary {
             crate::model::EnvironmentAccountConnectionSummary {
-                id: self.id,
-                arn: self.arn,
-                management_account_id: self.management_account_id,
-                environment_account_id: self.environment_account_id,
-                role_arn: self.role_arn,
-                environment_name: self.environment_name,
-                requested_at: self.requested_at,
-                last_modified_at: self.last_modified_at,
-                status: self.status,
-                component_role_arn: self.component_role_arn,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                management_account_id: self.management_account_id
+                ,
+                environment_account_id: self.environment_account_id
+                ,
+                role_arn: self.role_arn
+                ,
+                environment_name: self.environment_name
+                ,
+                requested_at: self.requested_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                status: self.status
+                ,
+                component_role_arn: self.component_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentAccountConnectionSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
@@ -7856,9 +7158,9 @@ impl EnvironmentAccountConnectionSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentaccountconnectionrequesteraccounttype = unimplemented!();
 /// match environmentaccountconnectionrequesteraccounttype {
@@ -7880,68 +7182,52 @@ impl EnvironmentAccountConnectionSummary {
 /// Specifically, when `environmentaccountconnectionrequesteraccounttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentAccountConnectionRequesterAccountType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentAccountConnectionRequesterAccountType {
     #[allow(missing_docs)] // documentation missing in model
     EnvironmentAccount,
     #[allow(missing_docs)] // documentation missing in model
     ManagementAccount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentAccountConnectionRequesterAccountType {
     fn from(s: &str) -> Self {
         match s {
-            "ENVIRONMENT_ACCOUNT" => {
-                EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount
-            }
-            "MANAGEMENT_ACCOUNT" => {
-                EnvironmentAccountConnectionRequesterAccountType::ManagementAccount
-            }
-            other => EnvironmentAccountConnectionRequesterAccountType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "ENVIRONMENT_ACCOUNT" => EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount,
+            "MANAGEMENT_ACCOUNT" => EnvironmentAccountConnectionRequesterAccountType::ManagementAccount,
+            other => EnvironmentAccountConnectionRequesterAccountType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentAccountConnectionRequesterAccountType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentAccountConnectionRequesterAccountType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentAccountConnectionRequesterAccountType::from(s))
+                }
+            }
 impl EnvironmentAccountConnectionRequesterAccountType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount => {
-                "ENVIRONMENT_ACCOUNT"
-            }
-            EnvironmentAccountConnectionRequesterAccountType::ManagementAccount => {
-                "MANAGEMENT_ACCOUNT"
-            }
-            EnvironmentAccountConnectionRequesterAccountType::Unknown(value) => value.as_str(),
+            EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount => "ENVIRONMENT_ACCOUNT",
+            EnvironmentAccountConnectionRequesterAccountType::ManagementAccount => "MANAGEMENT_ACCOUNT",
+            EnvironmentAccountConnectionRequesterAccountType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENVIRONMENT_ACCOUNT", "MANAGEMENT_ACCOUNT"]
+        &[
+            "ENVIRONMENT_ACCOUNT", "MANAGEMENT_ACCOUNT"
+        ]
     }
 }
 impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
@@ -7950,11 +7236,11 @@ impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
     }
 }
 
-/// <p>Summary data of an Proton component resource.</p>
+/// <p>Summary data of an Proton component resource.</p> 
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ComponentSummary {
+pub struct ComponentSummary  {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7991,51 +7277,51 @@ pub struct ComponentSummary {
 }
 impl ComponentSummary {
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The time when the component was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the component was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the component was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The component deployment status.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The message associated with the component deployment status.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
 }
-impl std::fmt::Debug for ComponentSummary {
+impl  std::fmt::Debug for ComponentSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentSummary");
         formatter.field("name", &self.name);
@@ -8045,25 +7331,16 @@ impl std::fmt::Debug for ComponentSummary {
         formatter.field("service_instance_name", &self.service_instance_name);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
 pub mod component_summary {
-
+    
     /// A builder for [`ComponentSummary`](crate::model::ComponentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -8087,8 +7364,7 @@ pub mod component_summary {
         }
         /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8097,8 +7373,7 @@ pub mod component_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the Proton environment that this component is associated with.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8106,12 +7381,8 @@ pub mod component_summary {
             self
         }
         /// <p>The name of the Proton environment that this component is associated with.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8120,8 +7391,7 @@ pub mod component_summary {
         }
         /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
         pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8129,12 +7399,8 @@ pub mod component_summary {
             self
         }
         /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-        pub fn set_service_instance_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_instance_name = input;
-            self
+        pub fn set_service_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_instance_name = input; self
         }
         /// <p>The time when the component was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8142,12 +7408,8 @@ pub mod component_summary {
             self
         }
         /// <p>The time when the component was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the component was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8155,12 +7417,8 @@ pub mod component_summary {
             self
         }
         /// <p>The time when the component was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The time when a deployment of the component was last attempted.</p>
         pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8168,12 +7426,8 @@ pub mod component_summary {
             self
         }
         /// <p>The time when a deployment of the component was last attempted.</p>
-        pub fn set_last_deployment_attempted_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_attempted_at = input;
-            self
+        pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_attempted_at = input; self
         }
         /// <p>The time when the component was last deployed successfully.</p>
         pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8181,12 +7435,8 @@ pub mod component_summary {
             self
         }
         /// <p>The time when the component was last deployed successfully.</p>
-        pub fn set_last_deployment_succeeded_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_succeeded_at = input;
-            self
+        pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_succeeded_at = input; self
         }
         /// <p>The component deployment status.</p>
         pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -8194,12 +7444,8 @@ pub mod component_summary {
             self
         }
         /// <p>The component deployment status.</p>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>The message associated with the component deployment status.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8207,27 +7453,34 @@ pub mod component_summary {
             self
         }
         /// <p>The message associated with the component deployment status.</p>
-        pub fn set_deployment_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status_message = input;
-            self
+        pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status_message = input; self
         }
         /// Consumes the builder and constructs a [`ComponentSummary`](crate::model::ComponentSummary).
         pub fn build(self) -> crate::model::ComponentSummary {
             crate::model::ComponentSummary {
-                name: self.name,
-                arn: self.arn,
-                environment_name: self.environment_name,
-                service_name: self.service_name,
-                service_instance_name: self.service_instance_name,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                last_deployment_attempted_at: self.last_deployment_attempted_at,
-                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-                deployment_status: self.deployment_status,
-                deployment_status_message: self.deployment_status_message,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                environment_name: self.environment_name
+                ,
+                service_name: self.service_name
+                ,
+                service_instance_name: self.service_instance_name
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
             }
         }
     }
@@ -8241,22 +7494,15 @@ pub mod component_summary {
             formatter.field("service_instance_name", &self.service_instance_name);
             formatter.field("created_at", &self.created_at);
             formatter.field("last_modified_at", &self.last_modified_at);
-            formatter.field(
-                "last_deployment_attempted_at",
-                &self.last_deployment_attempted_at,
-            );
-            formatter.field(
-                "last_deployment_succeeded_at",
-                &self.last_deployment_succeeded_at,
-            );
+            formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+            formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
             formatter.field("deployment_status", &self.deployment_status);
-            formatter.field(
-                "deployment_status_message",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl ComponentSummary {
     /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
@@ -8265,11 +7511,11 @@ impl ComponentSummary {
     }
 }
 
-/// <p>Detailed data of an Proton component resource.</p>
+/// <p>Detailed data of an Proton component resource.</p> 
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Component {
+pub struct Component  {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8312,59 +7558,59 @@ pub struct Component {
 }
 impl Component {
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the component.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The time when the component was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the component was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the component was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The component deployment status.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The message associated with the component deployment status.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
-    pub fn service_spec(&self) -> std::option::Option<&str> {
+    pub fn service_spec(&self) -> std::option::Option<& str> {
         self.service_spec.as_deref()
     }
 }
-impl std::fmt::Debug for Component {
+impl  std::fmt::Debug for Component  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Component");
         formatter.field("name", &self.name);
@@ -8375,26 +7621,17 @@ impl std::fmt::Debug for Component {
         formatter.field("service_instance_name", &self.service_instance_name);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field(
-            "last_deployment_attempted_at",
-            &self.last_deployment_attempted_at,
-        );
-        formatter.field(
-            "last_deployment_succeeded_at",
-            &self.last_deployment_succeeded_at,
-        );
+        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`Component`](crate::model::Component).
 pub mod component {
-
+    
     /// A builder for [`Component`](crate::model::Component).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -8420,8 +7657,7 @@ pub mod component {
         }
         /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the component.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8430,8 +7666,7 @@ pub mod component {
         }
         /// <p>A description of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8440,8 +7675,7 @@ pub mod component {
         }
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the Proton environment that this component is associated with.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8449,12 +7683,8 @@ pub mod component {
             self
         }
         /// <p>The name of the Proton environment that this component is associated with.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8463,8 +7693,7 @@ pub mod component {
         }
         /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
         pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8472,12 +7701,8 @@ pub mod component {
             self
         }
         /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-        pub fn set_service_instance_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_instance_name = input;
-            self
+        pub fn set_service_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_instance_name = input; self
         }
         /// <p>The time when the component was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8485,12 +7710,8 @@ pub mod component {
             self
         }
         /// <p>The time when the component was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when the component was last modified.</p>
         pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8498,12 +7719,8 @@ pub mod component {
             self
         }
         /// <p>The time when the component was last modified.</p>
-        pub fn set_last_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_at = input;
-            self
+        pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_at = input; self
         }
         /// <p>The time when a deployment of the component was last attempted.</p>
         pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8511,12 +7728,8 @@ pub mod component {
             self
         }
         /// <p>The time when a deployment of the component was last attempted.</p>
-        pub fn set_last_deployment_attempted_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_attempted_at = input;
-            self
+        pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_attempted_at = input; self
         }
         /// <p>The time when the component was last deployed successfully.</p>
         pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8524,12 +7737,8 @@ pub mod component {
             self
         }
         /// <p>The time when the component was last deployed successfully.</p>
-        pub fn set_last_deployment_succeeded_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_deployment_succeeded_at = input;
-            self
+        pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_deployment_succeeded_at = input; self
         }
         /// <p>The component deployment status.</p>
         pub fn deployment_status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -8537,12 +7746,8 @@ pub mod component {
             self
         }
         /// <p>The component deployment status.</p>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>The message associated with the component deployment status.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8550,12 +7755,8 @@ pub mod component {
             self
         }
         /// <p>The message associated with the component deployment status.</p>
-        pub fn set_deployment_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status_message = input;
-            self
+        pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status_message = input; self
         }
         /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
         pub fn service_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8564,25 +7765,37 @@ pub mod component {
         }
         /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
         pub fn set_service_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_spec = input;
-            self
+            self.service_spec = input; self
         }
         /// Consumes the builder and constructs a [`Component`](crate::model::Component).
         pub fn build(self) -> crate::model::Component {
             crate::model::Component {
-                name: self.name,
-                description: self.description,
-                arn: self.arn,
-                environment_name: self.environment_name,
-                service_name: self.service_name,
-                service_instance_name: self.service_instance_name,
-                created_at: self.created_at,
-                last_modified_at: self.last_modified_at,
-                last_deployment_attempted_at: self.last_deployment_attempted_at,
-                last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-                deployment_status: self.deployment_status,
-                deployment_status_message: self.deployment_status_message,
-                service_spec: self.service_spec,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                environment_name: self.environment_name
+                ,
+                service_name: self.service_name
+                ,
+                service_instance_name: self.service_instance_name
+                ,
+                created_at: self.created_at
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                service_spec: self.service_spec
+                ,
             }
         }
     }
@@ -8597,23 +7810,16 @@ pub mod component {
             formatter.field("service_instance_name", &self.service_instance_name);
             formatter.field("created_at", &self.created_at);
             formatter.field("last_modified_at", &self.last_modified_at);
-            formatter.field(
-                "last_deployment_attempted_at",
-                &self.last_deployment_attempted_at,
-            );
-            formatter.field(
-                "last_deployment_succeeded_at",
-                &self.last_deployment_succeeded_at,
-            );
+            formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
+            formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
             formatter.field("deployment_status", &self.deployment_status);
-            formatter.field(
-                "deployment_status_message",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
             formatter.field("service_spec", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl Component {
     /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
@@ -8628,9 +7834,9 @@ impl Component {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let componentdeploymentupdatetype = unimplemented!();
 /// match componentdeploymentupdatetype {
@@ -8652,60 +7858,52 @@ impl Component {
 /// Specifically, when `componentdeploymentupdatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComponentDeploymentUpdateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComponentDeploymentUpdateType {
     #[allow(missing_docs)] // documentation missing in model
     CurrentVersion,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComponentDeploymentUpdateType {
     fn from(s: &str) -> Self {
         match s {
             "CURRENT_VERSION" => ComponentDeploymentUpdateType::CurrentVersion,
             "NONE" => ComponentDeploymentUpdateType::None,
-            other => ComponentDeploymentUpdateType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ComponentDeploymentUpdateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComponentDeploymentUpdateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComponentDeploymentUpdateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComponentDeploymentUpdateType::from(s))
+                }
+            }
 impl ComponentDeploymentUpdateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentDeploymentUpdateType::CurrentVersion => "CURRENT_VERSION",
             ComponentDeploymentUpdateType::None => "NONE",
-            ComponentDeploymentUpdateType::Unknown(value) => value.as_str(),
+            ComponentDeploymentUpdateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CURRENT_VERSION", "NONE"]
+        &[
+            "CURRENT_VERSION", "NONE"
+        ]
     }
 }
 impl AsRef<str> for ComponentDeploymentUpdateType {
@@ -8717,7 +7915,7 @@ impl AsRef<str> for ComponentDeploymentUpdateType {
 /// <p>Proton settings that are used for multiple services in the Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountSettings {
+pub struct AccountSettings  {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     #[doc(hidden)]
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
@@ -8730,29 +7928,26 @@ pub struct AccountSettings {
 }
 impl AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
-    pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn pipeline_service_role_arn(&self) -> std::option::Option<& str> {
         self.pipeline_service_role_arn.as_deref()
     }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    pub fn pipeline_provisioning_repository(
-        &self,
-    ) -> std::option::Option<&crate::model::RepositoryBranch> {
+    pub fn pipeline_provisioning_repository(&self) -> std::option::Option<& crate::model::RepositoryBranch> {
         self.pipeline_provisioning_repository.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    pub fn pipeline_codebuild_role_arn(&self) -> std::option::Option<&str> {
+    pub fn pipeline_codebuild_role_arn(&self) -> std::option::Option<& str> {
         self.pipeline_codebuild_role_arn.as_deref()
     }
 }
 /// See [`AccountSettings`](crate::model::AccountSettings).
 pub mod account_settings {
-
+    
     /// A builder for [`AccountSettings`](crate::model::AccountSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_service_role_arn: std::option::Option<std::string::String>,
-        pub(crate) pipeline_provisioning_repository:
-            std::option::Option<crate::model::RepositoryBranch>,
+        pub(crate) pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
         pub(crate) pipeline_codebuild_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8762,54 +7957,41 @@ pub mod account_settings {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
-        pub fn set_pipeline_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_service_role_arn = input;
-            self
+        pub fn set_pipeline_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_service_role_arn = input; self
         }
         /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-        pub fn pipeline_provisioning_repository(
-            mut self,
-            input: crate::model::RepositoryBranch,
-        ) -> Self {
+        pub fn pipeline_provisioning_repository(mut self, input: crate::model::RepositoryBranch) -> Self {
             self.pipeline_provisioning_repository = Some(input);
             self
         }
         /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-        pub fn set_pipeline_provisioning_repository(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryBranch>,
-        ) -> Self {
-            self.pipeline_provisioning_repository = input;
-            self
+        pub fn set_pipeline_provisioning_repository(mut self, input: std::option::Option<crate::model::RepositoryBranch>) -> Self {
+            self.pipeline_provisioning_repository = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-        pub fn pipeline_codebuild_role_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn pipeline_codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_codebuild_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-        pub fn set_pipeline_codebuild_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_codebuild_role_arn = input;
-            self
+        pub fn set_pipeline_codebuild_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_codebuild_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`AccountSettings`](crate::model::AccountSettings).
         pub fn build(self) -> crate::model::AccountSettings {
             crate::model::AccountSettings {
-                pipeline_service_role_arn: self.pipeline_service_role_arn,
-                pipeline_provisioning_repository: self.pipeline_provisioning_repository,
-                pipeline_codebuild_role_arn: self.pipeline_codebuild_role_arn,
+                pipeline_service_role_arn: self.pipeline_service_role_arn
+                ,
+                pipeline_provisioning_repository: self.pipeline_provisioning_repository
+                ,
+                pipeline_codebuild_role_arn: self.pipeline_codebuild_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountSettings {
     /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
@@ -8824,9 +8006,9 @@ impl AccountSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcedeploymentstatus = unimplemented!();
 /// match resourcedeploymentstatus {
@@ -8849,22 +8031,14 @@ impl AccountSettings {
 /// Specifically, when `resourcedeploymentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceDeploymentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The state that a PR-based deployment can be updated to.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -8873,7 +8047,7 @@ pub enum ResourceDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceDeploymentStatus {
     fn from(s: &str) -> Self {
@@ -8881,19 +8055,17 @@ impl std::convert::From<&str> for ResourceDeploymentStatus {
             "FAILED" => ResourceDeploymentStatus::Failed,
             "IN_PROGRESS" => ResourceDeploymentStatus::InProgress,
             "SUCCEEDED" => ResourceDeploymentStatus::Succeeded,
-            other => ResourceDeploymentStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceDeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceDeploymentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceDeploymentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceDeploymentStatus::from(s))
+                }
+            }
 impl ResourceDeploymentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8901,12 +8073,14 @@ impl ResourceDeploymentStatus {
             ResourceDeploymentStatus::Failed => "FAILED",
             ResourceDeploymentStatus::InProgress => "IN_PROGRESS",
             ResourceDeploymentStatus::Succeeded => "SUCCEEDED",
-            ResourceDeploymentStatus::Unknown(value) => value.as_str(),
+            ResourceDeploymentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for ResourceDeploymentStatus {
@@ -8918,7 +8092,7 @@ impl AsRef<str> for ResourceDeploymentStatus {
 /// <p>A repository sync definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositorySyncDefinition {
+pub struct RepositorySyncDefinition  {
     /// <p>The resource that is synced to.</p>
     #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
@@ -8934,25 +8108,25 @@ pub struct RepositorySyncDefinition {
 }
 impl RepositorySyncDefinition {
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The resource that is synced from.</p>
-    pub fn parent(&self) -> std::option::Option<&str> {
+    pub fn parent(&self) -> std::option::Option<& str> {
         self.parent.as_deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>The directory in the repository.</p>
-    pub fn directory(&self) -> std::option::Option<&str> {
+    pub fn directory(&self) -> std::option::Option<& str> {
         self.directory.as_deref()
     }
 }
 /// See [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
 pub mod repository_sync_definition {
-
+    
     /// A builder for [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8969,8 +8143,7 @@ pub mod repository_sync_definition {
         }
         /// <p>The resource that is synced to.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// <p>The resource that is synced from.</p>
         pub fn parent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8979,8 +8152,7 @@ pub mod repository_sync_definition {
         }
         /// <p>The resource that is synced from.</p>
         pub fn set_parent(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent = input;
-            self
+            self.parent = input; self
         }
         /// <p>The repository branch.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8989,8 +8161,7 @@ pub mod repository_sync_definition {
         }
         /// <p>The repository branch.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch = input;
-            self
+            self.branch = input; self
         }
         /// <p>The directory in the repository.</p>
         pub fn directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8999,19 +8170,24 @@ pub mod repository_sync_definition {
         }
         /// <p>The directory in the repository.</p>
         pub fn set_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory = input;
-            self
+            self.directory = input; self
         }
         /// Consumes the builder and constructs a [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
         pub fn build(self) -> crate::model::RepositorySyncDefinition {
             crate::model::RepositorySyncDefinition {
-                target: self.target,
-                parent: self.parent,
-                branch: self.branch,
-                directory: self.directory,
+                target: self.target
+                ,
+                parent: self.parent
+                ,
+                branch: self.branch
+                ,
+                directory: self.directory
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositorySyncDefinition {
     /// Creates a new builder-style object to manufacture [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
@@ -9026,9 +8202,9 @@ impl RepositorySyncDefinition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let synctype = unimplemented!();
 /// match synctype {
@@ -9049,54 +8225,48 @@ impl RepositorySyncDefinition {
 /// Specifically, when `synctype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SyncType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SyncType {
     #[allow(missing_docs)] // documentation missing in model
     TemplateSync,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SyncType {
     fn from(s: &str) -> Self {
         match s {
             "TEMPLATE_SYNC" => SyncType::TemplateSync,
-            other => SyncType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SyncType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SyncType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SyncType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SyncType::from(s))
+                }
+            }
 impl SyncType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SyncType::TemplateSync => "TEMPLATE_SYNC",
-            SyncType::Unknown(value) => value.as_str(),
+            SyncType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TEMPLATE_SYNC"]
+        &[
+            "TEMPLATE_SYNC"
+        ]
     }
 }
 impl AsRef<str> for SyncType {
@@ -9108,7 +8278,7 @@ impl AsRef<str> for SyncType {
 /// <p>Revision detail data for a commit and push that activates a sync attempt</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Revision {
+pub struct Revision  {
     /// <p>The repository name.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -9127,29 +8297,29 @@ pub struct Revision {
 }
 impl Revision {
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> std::option::Option<&crate::model::RepositoryProvider> {
+    pub fn repository_provider(&self) -> std::option::Option<& crate::model::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
-    pub fn sha(&self) -> std::option::Option<&str> {
+    pub fn sha(&self) -> std::option::Option<& str> {
         self.sha.as_deref()
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
-    pub fn directory(&self) -> std::option::Option<&str> {
+    pub fn directory(&self) -> std::option::Option<& str> {
         self.directory.as_deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> std::option::Option<& str> {
         self.branch.as_deref()
     }
 }
 /// See [`Revision`](crate::model::Revision).
 pub mod revision {
-
+    
     /// A builder for [`Revision`](crate::model::Revision).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9166,12 +8336,8 @@ pub mod revision {
             self
         }
         /// <p>The repository name.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The repository provider.</p>
         pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
@@ -9179,12 +8345,8 @@ pub mod revision {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn set_repository_provider(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryProvider>,
-        ) -> Self {
-            self.repository_provider = input;
-            self
+        pub fn set_repository_provider(mut self, input: std::option::Option<crate::model::RepositoryProvider>) -> Self {
+            self.repository_provider = input; self
         }
         /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
         pub fn sha(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9193,8 +8355,7 @@ pub mod revision {
         }
         /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
         pub fn set_sha(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sha = input;
-            self
+            self.sha = input; self
         }
         /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
         pub fn directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9203,8 +8364,7 @@ pub mod revision {
         }
         /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
         pub fn set_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.directory = input;
-            self
+            self.directory = input; self
         }
         /// <p>The repository branch.</p>
         pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9213,20 +8373,26 @@ pub mod revision {
         }
         /// <p>The repository branch.</p>
         pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch = input;
-            self
+            self.branch = input; self
         }
         /// Consumes the builder and constructs a [`Revision`](crate::model::Revision).
         pub fn build(self) -> crate::model::Revision {
             crate::model::Revision {
-                repository_name: self.repository_name,
-                repository_provider: self.repository_provider,
-                sha: self.sha,
-                directory: self.directory,
-                branch: self.branch,
+                repository_name: self.repository_name
+                ,
+                repository_provider: self.repository_provider
+                ,
+                sha: self.sha
+                ,
+                directory: self.directory
+                ,
+                branch: self.branch
+                ,
             }
         }
     }
+    
+    
 }
 impl Revision {
     /// Creates a new builder-style object to manufacture [`Revision`](crate::model::Revision).
@@ -9238,7 +8404,7 @@ impl Revision {
 /// <p>Detail data for a resource sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSyncAttempt {
+pub struct ResourceSyncAttempt  {
     /// <p>Detail data for the initial repository commit, path and push.</p>
     #[doc(hidden)]
     pub initial_revision: std::option::Option<crate::model::Revision>,
@@ -9260,33 +8426,33 @@ pub struct ResourceSyncAttempt {
 }
 impl ResourceSyncAttempt {
     /// <p>Detail data for the initial repository commit, path and push.</p>
-    pub fn initial_revision(&self) -> std::option::Option<&crate::model::Revision> {
+    pub fn initial_revision(&self) -> std::option::Option<& crate::model::Revision> {
         self.initial_revision.as_ref()
     }
     /// <p>Detail data for the target revision.</p>
-    pub fn target_revision(&self) -> std::option::Option<&crate::model::Revision> {
+    pub fn target_revision(&self) -> std::option::Option<& crate::model::Revision> {
         self.target_revision.as_ref()
     }
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The status of the sync attempt.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceSyncStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceSyncStatus> {
         self.status.as_ref()
     }
     /// <p>An array of events with detail data.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::ResourceSyncEvent]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::ResourceSyncEvent]> {
         self.events.as_deref()
     }
 }
 /// See [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
 pub mod resource_sync_attempt {
-
+    
     /// A builder for [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9304,12 +8470,8 @@ pub mod resource_sync_attempt {
             self
         }
         /// <p>Detail data for the initial repository commit, path and push.</p>
-        pub fn set_initial_revision(
-            mut self,
-            input: std::option::Option<crate::model::Revision>,
-        ) -> Self {
-            self.initial_revision = input;
-            self
+        pub fn set_initial_revision(mut self, input: std::option::Option<crate::model::Revision>) -> Self {
+            self.initial_revision = input; self
         }
         /// <p>Detail data for the target revision.</p>
         pub fn target_revision(mut self, input: crate::model::Revision) -> Self {
@@ -9317,12 +8479,8 @@ pub mod resource_sync_attempt {
             self
         }
         /// <p>Detail data for the target revision.</p>
-        pub fn set_target_revision(
-            mut self,
-            input: std::option::Option<crate::model::Revision>,
-        ) -> Self {
-            self.target_revision = input;
-            self
+        pub fn set_target_revision(mut self, input: std::option::Option<crate::model::Revision>) -> Self {
+            self.target_revision = input; self
         }
         /// <p>The resource that is synced to.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9331,8 +8489,7 @@ pub mod resource_sync_attempt {
         }
         /// <p>The resource that is synced to.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// <p>The time when the sync attempt started.</p>
         pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9340,12 +8497,8 @@ pub mod resource_sync_attempt {
             self
         }
         /// <p>The time when the sync attempt started.</p>
-        pub fn set_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_at = input;
-            self
+        pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_at = input; self
         }
         /// <p>The status of the sync attempt.</p>
         pub fn status(mut self, input: crate::model::ResourceSyncStatus) -> Self {
@@ -9353,12 +8506,8 @@ pub mod resource_sync_attempt {
             self
         }
         /// <p>The status of the sync attempt.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceSyncStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceSyncStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -9367,30 +8516,34 @@ pub mod resource_sync_attempt {
         /// <p>An array of events with detail data.</p>
         pub fn events(mut self, input: crate::model::ResourceSyncEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>An array of events with detail data.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceSyncEvent>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceSyncEvent>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
         pub fn build(self) -> crate::model::ResourceSyncAttempt {
             crate::model::ResourceSyncAttempt {
-                initial_revision: self.initial_revision,
-                target_revision: self.target_revision,
-                target: self.target,
-                started_at: self.started_at,
-                status: self.status,
-                events: self.events,
+                initial_revision: self.initial_revision
+                ,
+                target_revision: self.target_revision
+                ,
+                target: self.target
+                ,
+                started_at: self.started_at
+                ,
+                status: self.status
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceSyncAttempt {
     /// Creates a new builder-style object to manufacture [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
@@ -9402,7 +8555,7 @@ impl ResourceSyncAttempt {
 /// <p>Detail data for a resource sync event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSyncEvent {
+pub struct ResourceSyncEvent  {
     /// <p>The type of event.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -9418,25 +8571,25 @@ pub struct ResourceSyncEvent {
 }
 impl ResourceSyncEvent {
     /// <p>The type of event.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The external ID for the event.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The time when the event occurred.</p>
-    pub fn time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p>A resource sync event.</p>
-    pub fn event(&self) -> std::option::Option<&str> {
+    pub fn event(&self) -> std::option::Option<& str> {
         self.event.as_deref()
     }
 }
 /// See [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
 pub mod resource_sync_event {
-
+    
     /// A builder for [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9453,8 +8606,7 @@ pub mod resource_sync_event {
         }
         /// <p>The type of event.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The external ID for the event.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9463,8 +8615,7 @@ pub mod resource_sync_event {
         }
         /// <p>The external ID for the event.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.external_id = input;
-            self
+            self.external_id = input; self
         }
         /// <p>The time when the event occurred.</p>
         pub fn time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9473,8 +8624,7 @@ pub mod resource_sync_event {
         }
         /// <p>The time when the event occurred.</p>
         pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.time = input;
-            self
+            self.time = input; self
         }
         /// <p>A resource sync event.</p>
         pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9483,19 +8633,24 @@ pub mod resource_sync_event {
         }
         /// <p>A resource sync event.</p>
         pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// Consumes the builder and constructs a [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
         pub fn build(self) -> crate::model::ResourceSyncEvent {
             crate::model::ResourceSyncEvent {
-                r#type: self.r#type,
-                external_id: self.external_id,
-                time: self.time,
-                event: self.event,
+                r#type: self.r#type
+                ,
+                external_id: self.external_id
+                ,
+                time: self.time
+                ,
+                event: self.event
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceSyncEvent {
     /// Creates a new builder-style object to manufacture [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
@@ -9510,9 +8665,9 @@ impl ResourceSyncEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcesyncstatus = unimplemented!();
 /// match resourcesyncstatus {
@@ -9536,37 +8691,29 @@ impl ResourceSyncEvent {
 /// Specifically, when `resourcesyncstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceSyncStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceSyncStatus {
     /// Syncing has failed.
-    ///
+    /// 
     Failed,
     /// A sync attempt has been created and will begin soon.
-    ///
+    /// 
     Initiated,
     /// Syncing has started and work is being done to reconcile state.
-    ///
+    /// 
     InProgress,
     /// Syncing has completed successfully.
-    ///
+    /// 
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceSyncStatus {
     fn from(s: &str) -> Self {
@@ -9575,19 +8722,17 @@ impl std::convert::From<&str> for ResourceSyncStatus {
             "INITIATED" => ResourceSyncStatus::Initiated,
             "IN_PROGRESS" => ResourceSyncStatus::InProgress,
             "SUCCEEDED" => ResourceSyncStatus::Succeeded,
-            other => {
-                ResourceSyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceSyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceSyncStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceSyncStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceSyncStatus::from(s))
+                }
+            }
 impl ResourceSyncStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9596,12 +8741,14 @@ impl ResourceSyncStatus {
             ResourceSyncStatus::Initiated => "INITIATED",
             ResourceSyncStatus::InProgress => "IN_PROGRESS",
             ResourceSyncStatus::Succeeded => "SUCCEEDED",
-            ResourceSyncStatus::Unknown(value) => value.as_str(),
+            ResourceSyncStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "INITIATED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "FAILED", "INITIATED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for ResourceSyncStatus {
@@ -9613,7 +8760,7 @@ impl AsRef<str> for ResourceSyncStatus {
 /// <p>Detail data for a repository sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositorySyncAttempt {
+pub struct RepositorySyncAttempt  {
     /// <p>The time when the sync attempt started.</p>
     #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -9626,21 +8773,21 @@ pub struct RepositorySyncAttempt {
 }
 impl RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The sync attempt status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RepositorySyncStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RepositorySyncStatus> {
         self.status.as_ref()
     }
     /// <p>Detail data for sync attempt events.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::RepositorySyncEvent]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::RepositorySyncEvent]> {
         self.events.as_deref()
     }
 }
 /// See [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
 pub mod repository_sync_attempt {
-
+    
     /// A builder for [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9655,12 +8802,8 @@ pub mod repository_sync_attempt {
             self
         }
         /// <p>The time when the sync attempt started.</p>
-        pub fn set_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_at = input;
-            self
+        pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_at = input; self
         }
         /// <p>The sync attempt status.</p>
         pub fn status(mut self, input: crate::model::RepositorySyncStatus) -> Self {
@@ -9668,12 +8811,8 @@ pub mod repository_sync_attempt {
             self
         }
         /// <p>The sync attempt status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RepositorySyncStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RepositorySyncStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -9682,27 +8821,28 @@ pub mod repository_sync_attempt {
         /// <p>Detail data for sync attempt events.</p>
         pub fn events(mut self, input: crate::model::RepositorySyncEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>Detail data for sync attempt events.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RepositorySyncEvent>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::RepositorySyncEvent>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
         pub fn build(self) -> crate::model::RepositorySyncAttempt {
             crate::model::RepositorySyncAttempt {
-                started_at: self.started_at,
-                status: self.status,
-                events: self.events,
+                started_at: self.started_at
+                ,
+                status: self.status
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositorySyncAttempt {
     /// Creates a new builder-style object to manufacture [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
@@ -9714,7 +8854,7 @@ impl RepositorySyncAttempt {
 /// <p>Repository sync event detail data for a sync attempt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositorySyncEvent {
+pub struct RepositorySyncEvent  {
     /// <p>The type of event.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -9730,25 +8870,25 @@ pub struct RepositorySyncEvent {
 }
 impl RepositorySyncEvent {
     /// <p>The type of event.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The external ID of the sync event.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The time that the sync event occurred.</p>
-    pub fn time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p>Event detail for a repository sync attempt.</p>
-    pub fn event(&self) -> std::option::Option<&str> {
+    pub fn event(&self) -> std::option::Option<& str> {
         self.event.as_deref()
     }
 }
 /// See [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).
 pub mod repository_sync_event {
-
+    
     /// A builder for [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9765,8 +8905,7 @@ pub mod repository_sync_event {
         }
         /// <p>The type of event.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The external ID of the sync event.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9775,8 +8914,7 @@ pub mod repository_sync_event {
         }
         /// <p>The external ID of the sync event.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.external_id = input;
-            self
+            self.external_id = input; self
         }
         /// <p>The time that the sync event occurred.</p>
         pub fn time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9785,8 +8923,7 @@ pub mod repository_sync_event {
         }
         /// <p>The time that the sync event occurred.</p>
         pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.time = input;
-            self
+            self.time = input; self
         }
         /// <p>Event detail for a repository sync attempt.</p>
         pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9795,19 +8932,24 @@ pub mod repository_sync_event {
         }
         /// <p>Event detail for a repository sync attempt.</p>
         pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// Consumes the builder and constructs a [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).
         pub fn build(self) -> crate::model::RepositorySyncEvent {
             crate::model::RepositorySyncEvent {
-                r#type: self.r#type,
-                external_id: self.external_id,
-                time: self.time,
-                event: self.event,
+                r#type: self.r#type
+                ,
+                external_id: self.external_id
+                ,
+                time: self.time
+                ,
+                event: self.event
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositorySyncEvent {
     /// Creates a new builder-style object to manufacture [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).
@@ -9822,9 +8964,9 @@ impl RepositorySyncEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let repositorysyncstatus = unimplemented!();
 /// match repositorysyncstatus {
@@ -9849,40 +8991,32 @@ impl RepositorySyncEvent {
 /// Specifically, when `repositorysyncstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RepositorySyncStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RepositorySyncStatus {
     /// The repository sync attempt has failed.
-    ///
+    /// 
     Failed,
     /// A repository sync attempt has been created and will begin soon.
-    ///
+    /// 
     Initiated,
     /// A repository sync attempt has started and work is being done to reconcile the branch.
-    ///
+    /// 
     InProgress,
     /// The repository sync attempt didn't execute and was queued.
-    ///
+    /// 
     Queued,
     /// The repository sync attempt has completed successfully.
-    ///
+    /// 
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepositorySyncStatus {
     fn from(s: &str) -> Self {
@@ -9892,19 +9026,17 @@ impl std::convert::From<&str> for RepositorySyncStatus {
             "IN_PROGRESS" => RepositorySyncStatus::InProgress,
             "QUEUED" => RepositorySyncStatus::Queued,
             "SUCCEEDED" => RepositorySyncStatus::Succeeded,
-            other => {
-                RepositorySyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RepositorySyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RepositorySyncStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RepositorySyncStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RepositorySyncStatus::from(s))
+                }
+            }
 impl RepositorySyncStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9914,12 +9046,14 @@ impl RepositorySyncStatus {
             RepositorySyncStatus::InProgress => "IN_PROGRESS",
             RepositorySyncStatus::Queued => "QUEUED",
             RepositorySyncStatus::Succeeded => "SUCCEEDED",
-            RepositorySyncStatus::Unknown(value) => value.as_str(),
+            RepositorySyncStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "INITIATED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"]
+        &[
+            "FAILED", "INITIATED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for RepositorySyncStatus {
@@ -9927,3 +9061,4 @@ impl AsRef<str> for RepositorySyncStatus {
         self.as_str()
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The output for <code>ValidateTemplate</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateTemplateOutput {
+pub struct ValidateTemplateOutput  {
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::TemplateParameter>>,
     /// <p>The description found within the template.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
     #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -23,30 +23,30 @@ pub struct ValidateTemplateOutput {
 }
 impl ValidateTemplateOutput {
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::TemplateParameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::TemplateParameter]> {
         self.parameters.as_deref()
     }
     /// <p>The description found within the template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+    pub fn capabilities(&self) -> std::option::Option<& [crate::model::Capability]> {
         self.capabilities.as_deref()
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    pub fn capabilities_reason(&self) -> std::option::Option<&str> {
+    pub fn capabilities_reason(&self) -> std::option::Option<& str> {
         self.capabilities_reason.as_deref()
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn declared_transforms(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn declared_transforms(&self) -> std::option::Option<& [std::string::String]> {
         self.declared_transforms.as_deref()
     }
 }
 /// See [`ValidateTemplateOutput`](crate::output::ValidateTemplateOutput).
 pub mod validate_template_output {
-
+    
     /// A builder for [`ValidateTemplateOutput`](crate::output::ValidateTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -64,17 +64,13 @@ pub mod validate_template_output {
         /// <p>A list of <code>TemplateParameter</code> structures.</p>
         pub fn parameters(mut self, input: crate::model::TemplateParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A list of <code>TemplateParameter</code> structures.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TemplateParameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::TemplateParameter>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The description found within the template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,29 +79,24 @@ pub mod validate_template_output {
         }
         /// <p>The description found within the template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `capabilities`.
         ///
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
-        /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+        /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
         pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input);
-            self.capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.capabilities = Some(v);
+                            self
         }
-        /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+        /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-        pub fn set_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-        ) -> Self {
-            self.capabilities = input;
-            self
+        pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Capability>>) -> Self {
+            self.capabilities = input; self
         }
         /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
         pub fn capabilities_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,12 +104,8 @@ pub mod validate_template_output {
             self
         }
         /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-        pub fn set_capabilities_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capabilities_reason = input;
-            self
+        pub fn set_capabilities_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capabilities_reason = input; self
         }
         /// Appends an item to `declared_transforms`.
         ///
@@ -127,29 +114,32 @@ pub mod validate_template_output {
         /// <p>A list of the transforms that are declared in the template.</p>
         pub fn declared_transforms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.declared_transforms.unwrap_or_default();
-            v.push(input.into());
-            self.declared_transforms = Some(v);
-            self
+                            v.push(input.into());
+                            self.declared_transforms = Some(v);
+                            self
         }
         /// <p>A list of the transforms that are declared in the template.</p>
-        pub fn set_declared_transforms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.declared_transforms = input;
-            self
+        pub fn set_declared_transforms(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.declared_transforms = input; self
         }
         /// Consumes the builder and constructs a [`ValidateTemplateOutput`](crate::output::ValidateTemplateOutput).
         pub fn build(self) -> crate::output::ValidateTemplateOutput {
             crate::output::ValidateTemplateOutput {
-                parameters: self.parameters,
-                description: self.description,
-                capabilities: self.capabilities,
-                capabilities_reason: self.capabilities_reason,
-                declared_transforms: self.declared_transforms,
+                parameters: self.parameters
+                ,
+                description: self.description
+                ,
+                capabilities: self.capabilities
+                ,
+                capabilities_reason: self.capabilities_reason
+                ,
+                declared_transforms: self.declared_transforms
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ValidateTemplateOutput`](crate::output::ValidateTemplateOutput).
@@ -161,20 +151,20 @@ impl ValidateTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTerminationProtectionOutput {
+pub struct UpdateTerminationProtectionOutput  {
     /// <p>The unique ID of the stack.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl UpdateTerminationProtectionOutput {
     /// <p>The unique ID of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
 /// See [`UpdateTerminationProtectionOutput`](crate::output::UpdateTerminationProtectionOutput).
 pub mod update_termination_protection_output {
-
+    
     /// A builder for [`UpdateTerminationProtectionOutput`](crate::output::UpdateTerminationProtectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -188,16 +178,18 @@ pub mod update_termination_protection_output {
         }
         /// <p>The unique ID of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTerminationProtectionOutput`](crate::output::UpdateTerminationProtectionOutput).
         pub fn build(self) -> crate::output::UpdateTerminationProtectionOutput {
             crate::output::UpdateTerminationProtectionOutput {
-                stack_id: self.stack_id,
+                stack_id: self.stack_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTerminationProtectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTerminationProtectionOutput`](crate::output::UpdateTerminationProtectionOutput).
@@ -209,20 +201,20 @@ impl UpdateTerminationProtectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStackSetOutput {
+pub struct UpdateStackSetOutput  {
     /// <p>The unique ID for this stack set operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateStackSetOutput {
     /// <p>The unique ID for this stack set operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`UpdateStackSetOutput`](crate::output::UpdateStackSetOutput).
 pub mod update_stack_set_output {
-
+    
     /// A builder for [`UpdateStackSetOutput`](crate::output::UpdateStackSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -236,16 +228,18 @@ pub mod update_stack_set_output {
         }
         /// <p>The unique ID for this stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateStackSetOutput`](crate::output::UpdateStackSetOutput).
         pub fn build(self) -> crate::output::UpdateStackSetOutput {
             crate::output::UpdateStackSetOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateStackSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStackSetOutput`](crate::output::UpdateStackSetOutput).
@@ -257,20 +251,20 @@ impl UpdateStackSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStackInstancesOutput {
+pub struct UpdateStackInstancesOutput  {
     /// <p>The unique identifier for this stack set operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateStackInstancesOutput {
     /// <p>The unique identifier for this stack set operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`UpdateStackInstancesOutput`](crate::output::UpdateStackInstancesOutput).
 pub mod update_stack_instances_output {
-
+    
     /// A builder for [`UpdateStackInstancesOutput`](crate::output::UpdateStackInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -284,16 +278,18 @@ pub mod update_stack_instances_output {
         }
         /// <p>The unique identifier for this stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateStackInstancesOutput`](crate::output::UpdateStackInstancesOutput).
         pub fn build(self) -> crate::output::UpdateStackInstancesOutput {
             crate::output::UpdateStackInstancesOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateStackInstancesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStackInstancesOutput`](crate::output::UpdateStackInstancesOutput).
@@ -305,20 +301,20 @@ impl UpdateStackInstancesOutput {
 /// <p>The output for an <code>UpdateStack</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStackOutput {
+pub struct UpdateStackOutput  {
     /// <p>Unique identifier of the stack.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl UpdateStackOutput {
     /// <p>Unique identifier of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
 /// See [`UpdateStackOutput`](crate::output::UpdateStackOutput).
 pub mod update_stack_output {
-
+    
     /// A builder for [`UpdateStackOutput`](crate::output::UpdateStackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -332,16 +328,18 @@ pub mod update_stack_output {
         }
         /// <p>Unique identifier of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateStackOutput`](crate::output::UpdateStackOutput).
         pub fn build(self) -> crate::output::UpdateStackOutput {
             crate::output::UpdateStackOutput {
-                stack_id: self.stack_id,
+                stack_id: self.stack_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateStackOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStackOutput`](crate::output::UpdateStackOutput).
@@ -353,20 +351,20 @@ impl UpdateStackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestTypeOutput {
+pub struct TestTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     #[doc(hidden)]
     pub type_version_arn: std::option::Option<std::string::String>,
 }
 impl TestTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    pub fn type_version_arn(&self) -> std::option::Option<&str> {
+    pub fn type_version_arn(&self) -> std::option::Option<& str> {
         self.type_version_arn.as_deref()
     }
 }
 /// See [`TestTypeOutput`](crate::output::TestTypeOutput).
 pub mod test_type_output {
-
+    
     /// A builder for [`TestTypeOutput`](crate::output::TestTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -379,20 +377,19 @@ pub mod test_type_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-        pub fn set_type_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.type_version_arn = input;
-            self
+        pub fn set_type_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`TestTypeOutput`](crate::output::TestTypeOutput).
         pub fn build(self) -> crate::output::TestTypeOutput {
             crate::output::TestTypeOutput {
-                type_version_arn: self.type_version_arn,
+                type_version_arn: self.type_version_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl TestTypeOutput {
     /// Creates a new builder-style object to manufacture [`TestTypeOutput`](crate::output::TestTypeOutput).
@@ -404,19 +401,24 @@ impl TestTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopStackSetOperationOutput {}
+pub struct StopStackSetOperationOutput  {
+}
 /// See [`StopStackSetOperationOutput`](crate::output::StopStackSetOperationOutput).
 pub mod stop_stack_set_operation_output {
-
+    
     /// A builder for [`StopStackSetOperationOutput`](crate::output::StopStackSetOperationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopStackSetOperationOutput`](crate::output::StopStackSetOperationOutput).
         pub fn build(self) -> crate::output::StopStackSetOperationOutput {
-            crate::output::StopStackSetOperationOutput {}
+            crate::output::StopStackSetOperationOutput {
+            }
         }
     }
+    
+    
 }
 impl StopStackSetOperationOutput {
     /// Creates a new builder-style object to manufacture [`StopStackSetOperationOutput`](crate::output::StopStackSetOperationOutput).
@@ -428,19 +430,24 @@ impl StopStackSetOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalResourceOutput {}
+pub struct SignalResourceOutput  {
+}
 /// See [`SignalResourceOutput`](crate::output::SignalResourceOutput).
 pub mod signal_resource_output {
-
+    
     /// A builder for [`SignalResourceOutput`](crate::output::SignalResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SignalResourceOutput`](crate::output::SignalResourceOutput).
         pub fn build(self) -> crate::output::SignalResourceOutput {
-            crate::output::SignalResourceOutput {}
+            crate::output::SignalResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl SignalResourceOutput {
     /// Creates a new builder-style object to manufacture [`SignalResourceOutput`](crate::output::SignalResourceOutput).
@@ -452,19 +459,24 @@ impl SignalResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetTypeDefaultVersionOutput {}
+pub struct SetTypeDefaultVersionOutput  {
+}
 /// See [`SetTypeDefaultVersionOutput`](crate::output::SetTypeDefaultVersionOutput).
 pub mod set_type_default_version_output {
-
+    
     /// A builder for [`SetTypeDefaultVersionOutput`](crate::output::SetTypeDefaultVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetTypeDefaultVersionOutput`](crate::output::SetTypeDefaultVersionOutput).
         pub fn build(self) -> crate::output::SetTypeDefaultVersionOutput {
-            crate::output::SetTypeDefaultVersionOutput {}
+            crate::output::SetTypeDefaultVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl SetTypeDefaultVersionOutput {
     /// Creates a new builder-style object to manufacture [`SetTypeDefaultVersionOutput`](crate::output::SetTypeDefaultVersionOutput).
@@ -476,50 +488,49 @@ impl SetTypeDefaultVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetTypeConfigurationOutput {
-    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+pub struct SetTypeConfigurationOutput  {
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p> 
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     #[doc(hidden)]
     pub configuration_arn: std::option::Option<std::string::String>,
 }
 impl SetTypeConfigurationOutput {
-    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p> 
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
-    pub fn configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_arn(&self) -> std::option::Option<& str> {
         self.configuration_arn.as_deref()
     }
 }
 /// See [`SetTypeConfigurationOutput`](crate::output::SetTypeConfigurationOutput).
 pub mod set_type_configuration_output {
-
+    
     /// A builder for [`SetTypeConfigurationOutput`](crate::output::SetTypeConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p> 
         /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
         pub fn configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p> 
         /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
-        pub fn set_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_arn = input;
-            self
+        pub fn set_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`SetTypeConfigurationOutput`](crate::output::SetTypeConfigurationOutput).
         pub fn build(self) -> crate::output::SetTypeConfigurationOutput {
             crate::output::SetTypeConfigurationOutput {
-                configuration_arn: self.configuration_arn,
+                configuration_arn: self.configuration_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SetTypeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`SetTypeConfigurationOutput`](crate::output::SetTypeConfigurationOutput).
@@ -531,19 +542,24 @@ impl SetTypeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetStackPolicyOutput {}
+pub struct SetStackPolicyOutput  {
+}
 /// See [`SetStackPolicyOutput`](crate::output::SetStackPolicyOutput).
 pub mod set_stack_policy_output {
-
+    
     /// A builder for [`SetStackPolicyOutput`](crate::output::SetStackPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetStackPolicyOutput`](crate::output::SetStackPolicyOutput).
         pub fn build(self) -> crate::output::SetStackPolicyOutput {
-            crate::output::SetStackPolicyOutput {}
+            crate::output::SetStackPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl SetStackPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetStackPolicyOutput`](crate::output::SetStackPolicyOutput).
@@ -555,20 +571,20 @@ impl SetStackPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RollbackStackOutput {
+pub struct RollbackStackOutput  {
     /// <p>Unique identifier of the stack.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl RollbackStackOutput {
     /// <p>Unique identifier of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
 /// See [`RollbackStackOutput`](crate::output::RollbackStackOutput).
 pub mod rollback_stack_output {
-
+    
     /// A builder for [`RollbackStackOutput`](crate::output::RollbackStackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -582,16 +598,18 @@ pub mod rollback_stack_output {
         }
         /// <p>Unique identifier of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// Consumes the builder and constructs a [`RollbackStackOutput`](crate::output::RollbackStackOutput).
         pub fn build(self) -> crate::output::RollbackStackOutput {
             crate::output::RollbackStackOutput {
-                stack_id: self.stack_id,
+                stack_id: self.stack_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RollbackStackOutput {
     /// Creates a new builder-style object to manufacture [`RollbackStackOutput`](crate::output::RollbackStackOutput).
@@ -603,50 +621,49 @@ impl RollbackStackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterTypeOutput {
-    /// <p>The identifier for this registration request.</p>
+pub struct RegisterTypeOutput  {
+    /// <p>The identifier for this registration request.</p> 
     /// <p>Use this registration token when calling <code> <code>DescribeTypeRegistration</code> </code>, which returns information about the status and IDs of the extension registration.</p>
     #[doc(hidden)]
     pub registration_token: std::option::Option<std::string::String>,
 }
 impl RegisterTypeOutput {
-    /// <p>The identifier for this registration request.</p>
+    /// <p>The identifier for this registration request.</p> 
     /// <p>Use this registration token when calling <code> <code>DescribeTypeRegistration</code> </code>, which returns information about the status and IDs of the extension registration.</p>
-    pub fn registration_token(&self) -> std::option::Option<&str> {
+    pub fn registration_token(&self) -> std::option::Option<& str> {
         self.registration_token.as_deref()
     }
 }
 /// See [`RegisterTypeOutput`](crate::output::RegisterTypeOutput).
 pub mod register_type_output {
-
+    
     /// A builder for [`RegisterTypeOutput`](crate::output::RegisterTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registration_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for this registration request.</p>
+        /// <p>The identifier for this registration request.</p> 
         /// <p>Use this registration token when calling <code> <code>DescribeTypeRegistration</code> </code>, which returns information about the status and IDs of the extension registration.</p>
         pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.registration_token = Some(input.into());
             self
         }
-        /// <p>The identifier for this registration request.</p>
+        /// <p>The identifier for this registration request.</p> 
         /// <p>Use this registration token when calling <code> <code>DescribeTypeRegistration</code> </code>, which returns information about the status and IDs of the extension registration.</p>
-        pub fn set_registration_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.registration_token = input;
-            self
+        pub fn set_registration_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registration_token = input; self
         }
         /// Consumes the builder and constructs a [`RegisterTypeOutput`](crate::output::RegisterTypeOutput).
         pub fn build(self) -> crate::output::RegisterTypeOutput {
             crate::output::RegisterTypeOutput {
-                registration_token: self.registration_token,
+                registration_token: self.registration_token
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterTypeOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTypeOutput`](crate::output::RegisterTypeOutput).
@@ -658,20 +675,20 @@ impl RegisterTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterPublisherOutput {
+pub struct RegisterPublisherOutput  {
     /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
     #[doc(hidden)]
     pub publisher_id: std::option::Option<std::string::String>,
 }
 impl RegisterPublisherOutput {
     /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
-    pub fn publisher_id(&self) -> std::option::Option<&str> {
+    pub fn publisher_id(&self) -> std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
 }
 /// See [`RegisterPublisherOutput`](crate::output::RegisterPublisherOutput).
 pub mod register_publisher_output {
-
+    
     /// A builder for [`RegisterPublisherOutput`](crate::output::RegisterPublisherOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -685,16 +702,18 @@ pub mod register_publisher_output {
         }
         /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.publisher_id = input;
-            self
+            self.publisher_id = input; self
         }
         /// Consumes the builder and constructs a [`RegisterPublisherOutput`](crate::output::RegisterPublisherOutput).
         pub fn build(self) -> crate::output::RegisterPublisherOutput {
             crate::output::RegisterPublisherOutput {
-                publisher_id: self.publisher_id,
+                publisher_id: self.publisher_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterPublisherOutput {
     /// Creates a new builder-style object to manufacture [`RegisterPublisherOutput`](crate::output::RegisterPublisherOutput).
@@ -706,19 +725,24 @@ impl RegisterPublisherOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordHandlerProgressOutput {}
+pub struct RecordHandlerProgressOutput  {
+}
 /// See [`RecordHandlerProgressOutput`](crate::output::RecordHandlerProgressOutput).
 pub mod record_handler_progress_output {
-
+    
     /// A builder for [`RecordHandlerProgressOutput`](crate::output::RecordHandlerProgressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RecordHandlerProgressOutput`](crate::output::RecordHandlerProgressOutput).
         pub fn build(self) -> crate::output::RecordHandlerProgressOutput {
-            crate::output::RecordHandlerProgressOutput {}
+            crate::output::RecordHandlerProgressOutput {
+            }
         }
     }
+    
+    
 }
 impl RecordHandlerProgressOutput {
     /// Creates a new builder-style object to manufacture [`RecordHandlerProgressOutput`](crate::output::RecordHandlerProgressOutput).
@@ -730,20 +754,20 @@ impl RecordHandlerProgressOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishTypeOutput {
+pub struct PublishTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
     #[doc(hidden)]
     pub public_type_arn: std::option::Option<std::string::String>,
 }
 impl PublishTypeOutput {
     /// <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
-    pub fn public_type_arn(&self) -> std::option::Option<&str> {
+    pub fn public_type_arn(&self) -> std::option::Option<& str> {
         self.public_type_arn.as_deref()
     }
 }
 /// See [`PublishTypeOutput`](crate::output::PublishTypeOutput).
 pub mod publish_type_output {
-
+    
     /// A builder for [`PublishTypeOutput`](crate::output::PublishTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -756,20 +780,19 @@ pub mod publish_type_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
-        pub fn set_public_type_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_type_arn = input;
-            self
+        pub fn set_public_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_type_arn = input; self
         }
         /// Consumes the builder and constructs a [`PublishTypeOutput`](crate::output::PublishTypeOutput).
         pub fn build(self) -> crate::output::PublishTypeOutput {
             crate::output::PublishTypeOutput {
-                public_type_arn: self.public_type_arn,
+                public_type_arn: self.public_type_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PublishTypeOutput {
     /// Creates a new builder-style object to manufacture [`PublishTypeOutput`](crate::output::PublishTypeOutput).
@@ -781,35 +804,31 @@ impl PublishTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypeVersionsOutput {
+pub struct ListTypeVersionsOutput  {
     /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
     #[doc(hidden)]
-    pub type_version_summaries:
-        std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
+    pub type_version_summaries: std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTypeVersionsOutput {
     /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
-    pub fn type_version_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::TypeVersionSummary]> {
+    pub fn type_version_summaries(&self) -> std::option::Option<& [crate::model::TypeVersionSummary]> {
         self.type_version_summaries.as_deref()
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTypeVersionsOutput`](crate::output::ListTypeVersionsOutput).
 pub mod list_type_versions_output {
-
+    
     /// A builder for [`ListTypeVersionsOutput`](crate::output::ListTypeVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) type_version_summaries:
-            std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
+        pub(crate) type_version_summaries: std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -820,17 +839,13 @@ pub mod list_type_versions_output {
         /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
         pub fn type_version_summaries(mut self, input: crate::model::TypeVersionSummary) -> Self {
             let mut v = self.type_version_summaries.unwrap_or_default();
-            v.push(input);
-            self.type_version_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.type_version_summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
-        pub fn set_type_version_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
-        ) -> Self {
-            self.type_version_summaries = input;
-            self
+        pub fn set_type_version_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>) -> Self {
+            self.type_version_summaries = input; self
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -839,17 +854,20 @@ pub mod list_type_versions_output {
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTypeVersionsOutput`](crate::output::ListTypeVersionsOutput).
         pub fn build(self) -> crate::output::ListTypeVersionsOutput {
             crate::output::ListTypeVersionsOutput {
-                type_version_summaries: self.type_version_summaries,
-                next_token: self.next_token,
+                type_version_summaries: self.type_version_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTypeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTypeVersionsOutput`](crate::output::ListTypeVersionsOutput).
@@ -861,7 +879,7 @@ impl ListTypeVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypesOutput {
+pub struct ListTypesOutput  {
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
     #[doc(hidden)]
     pub type_summaries: std::option::Option<std::vec::Vec<crate::model::TypeSummary>>,
@@ -871,17 +889,17 @@ pub struct ListTypesOutput {
 }
 impl ListTypesOutput {
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
-    pub fn type_summaries(&self) -> std::option::Option<&[crate::model::TypeSummary]> {
+    pub fn type_summaries(&self) -> std::option::Option<& [crate::model::TypeSummary]> {
         self.type_summaries.as_deref()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTypesOutput`](crate::output::ListTypesOutput).
 pub mod list_types_output {
-
+    
     /// A builder for [`ListTypesOutput`](crate::output::ListTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -896,17 +914,13 @@ pub mod list_types_output {
         /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
         pub fn type_summaries(mut self, input: crate::model::TypeSummary) -> Self {
             let mut v = self.type_summaries.unwrap_or_default();
-            v.push(input);
-            self.type_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.type_summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
-        pub fn set_type_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypeSummary>>,
-        ) -> Self {
-            self.type_summaries = input;
-            self
+        pub fn set_type_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypeSummary>>) -> Self {
+            self.type_summaries = input; self
         }
         /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -915,17 +929,20 @@ pub mod list_types_output {
         }
         /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTypesOutput`](crate::output::ListTypesOutput).
         pub fn build(self) -> crate::output::ListTypesOutput {
             crate::output::ListTypesOutput {
-                type_summaries: self.type_summaries,
-                next_token: self.next_token,
+                type_summaries: self.type_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListTypesOutput`](crate::output::ListTypesOutput).
@@ -937,8 +954,8 @@ impl ListTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypeRegistrationsOutput {
-    /// <p>A list of extension registration tokens.</p>
+pub struct ListTypeRegistrationsOutput  {
+    /// <p>A list of extension registration tokens.</p> 
     /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
     #[doc(hidden)]
     pub registration_token_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -947,19 +964,19 @@ pub struct ListTypeRegistrationsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTypeRegistrationsOutput {
-    /// <p>A list of extension registration tokens.</p>
+    /// <p>A list of extension registration tokens.</p> 
     /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
-    pub fn registration_token_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn registration_token_list(&self) -> std::option::Option<& [std::string::String]> {
         self.registration_token_list.as_deref()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTypeRegistrationsOutput`](crate::output::ListTypeRegistrationsOutput).
 pub mod list_type_registrations_output {
-
+    
     /// A builder for [`ListTypeRegistrationsOutput`](crate::output::ListTypeRegistrationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -971,22 +988,18 @@ pub mod list_type_registrations_output {
         ///
         /// To override the contents of this collection use [`set_registration_token_list`](Self::set_registration_token_list).
         ///
-        /// <p>A list of extension registration tokens.</p>
+        /// <p>A list of extension registration tokens.</p> 
         /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
         pub fn registration_token_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.registration_token_list.unwrap_or_default();
-            v.push(input.into());
-            self.registration_token_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.registration_token_list = Some(v);
+                            self
         }
-        /// <p>A list of extension registration tokens.</p>
+        /// <p>A list of extension registration tokens.</p> 
         /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
-        pub fn set_registration_token_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.registration_token_list = input;
-            self
+        pub fn set_registration_token_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.registration_token_list = input; self
         }
         /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -995,17 +1008,20 @@ pub mod list_type_registrations_output {
         }
         /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTypeRegistrationsOutput`](crate::output::ListTypeRegistrationsOutput).
         pub fn build(self) -> crate::output::ListTypeRegistrationsOutput {
             crate::output::ListTypeRegistrationsOutput {
-                registration_token_list: self.registration_token_list,
-                next_token: self.next_token,
+                registration_token_list: self.registration_token_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTypeRegistrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTypeRegistrationsOutput`](crate::output::ListTypeRegistrationsOutput).
@@ -1017,7 +1033,7 @@ impl ListTypeRegistrationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackSetsOutput {
+pub struct ListStackSetsOutput  {
     /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
     #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::StackSetSummary>>,
@@ -1027,17 +1043,17 @@ pub struct ListStackSetsOutput {
 }
 impl ListStackSetsOutput {
     /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::model::StackSetSummary]> {
+    pub fn summaries(&self) -> std::option::Option<& [crate::model::StackSetSummary]> {
         self.summaries.as_deref()
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStackSetsOutput`](crate::output::ListStackSetsOutput).
 pub mod list_stack_sets_output {
-
+    
     /// A builder for [`ListStackSetsOutput`](crate::output::ListStackSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1052,17 +1068,13 @@ pub mod list_stack_sets_output {
         /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
         pub fn summaries(mut self, input: crate::model::StackSetSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input);
-            self.summaries = Some(v);
-            self
+                            v.push(input);
+                            self.summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
-        pub fn set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackSetSummary>>,
-        ) -> Self {
-            self.summaries = input;
-            self
+        pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackSetSummary>>) -> Self {
+            self.summaries = input; self
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1071,17 +1083,20 @@ pub mod list_stack_sets_output {
         }
         /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStackSetsOutput`](crate::output::ListStackSetsOutput).
         pub fn build(self) -> crate::output::ListStackSetsOutput {
             crate::output::ListStackSetsOutput {
-                summaries: self.summaries,
-                next_token: self.next_token,
+                summaries: self.summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStackSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListStackSetsOutput`](crate::output::ListStackSetsOutput).
@@ -1093,7 +1108,7 @@ impl ListStackSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackSetOperationsOutput {
+pub struct ListStackSetOperationsOutput  {
     /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary information about operations for the specified stack set.</p>
     #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
@@ -1103,22 +1118,21 @@ pub struct ListStackSetOperationsOutput {
 }
 impl ListStackSetOperationsOutput {
     /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary information about operations for the specified stack set.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::model::StackSetOperationSummary]> {
+    pub fn summaries(&self) -> std::option::Option<& [crate::model::StackSetOperationSummary]> {
         self.summaries.as_deref()
     }
     /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStackSetOperationsOutput`](crate::output::ListStackSetOperationsOutput).
 pub mod list_stack_set_operations_output {
-
+    
     /// A builder for [`ListStackSetOperationsOutput`](crate::output::ListStackSetOperationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) summaries:
-            std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
+        pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1129,17 +1143,13 @@ pub mod list_stack_set_operations_output {
         /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary information about operations for the specified stack set.</p>
         pub fn summaries(mut self, input: crate::model::StackSetOperationSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input);
-            self.summaries = Some(v);
-            self
+                            v.push(input);
+                            self.summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary information about operations for the specified stack set.</p>
-        pub fn set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
-        ) -> Self {
-            self.summaries = input;
-            self
+        pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>) -> Self {
+            self.summaries = input; self
         }
         /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1148,17 +1158,20 @@ pub mod list_stack_set_operations_output {
         }
         /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStackSetOperationsOutput`](crate::output::ListStackSetOperationsOutput).
         pub fn build(self) -> crate::output::ListStackSetOperationsOutput {
             crate::output::ListStackSetOperationsOutput {
-                summaries: self.summaries,
-                next_token: self.next_token,
+                summaries: self.summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStackSetOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListStackSetOperationsOutput`](crate::output::ListStackSetOperationsOutput).
@@ -1170,7 +1183,7 @@ impl ListStackSetOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackSetOperationResultsOutput {
+pub struct ListStackSetOperationResultsOutput  {
     /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified operation results, for accounts and Amazon Web Services Regions that are included in the operation.</p>
     #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
@@ -1180,24 +1193,21 @@ pub struct ListStackSetOperationResultsOutput {
 }
 impl ListStackSetOperationResultsOutput {
     /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified operation results, for accounts and Amazon Web Services Regions that are included in the operation.</p>
-    pub fn summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::StackSetOperationResultSummary]> {
+    pub fn summaries(&self) -> std::option::Option<& [crate::model::StackSetOperationResultSummary]> {
         self.summaries.as_deref()
     }
     /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStackSetOperationResultsOutput`](crate::output::ListStackSetOperationResultsOutput).
 pub mod list_stack_set_operation_results_output {
-
+    
     /// A builder for [`ListStackSetOperationResultsOutput`](crate::output::ListStackSetOperationResultsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) summaries:
-            std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
+        pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1208,17 +1218,13 @@ pub mod list_stack_set_operation_results_output {
         /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified operation results, for accounts and Amazon Web Services Regions that are included in the operation.</p>
         pub fn summaries(mut self, input: crate::model::StackSetOperationResultSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input);
-            self.summaries = Some(v);
-            self
+                            v.push(input);
+                            self.summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified operation results, for accounts and Amazon Web Services Regions that are included in the operation.</p>
-        pub fn set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
-        ) -> Self {
-            self.summaries = input;
-            self
+        pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>) -> Self {
+            self.summaries = input; self
         }
         /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1227,17 +1233,20 @@ pub mod list_stack_set_operation_results_output {
         }
         /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStackSetOperationResultsOutput`](crate::output::ListStackSetOperationResultsOutput).
         pub fn build(self) -> crate::output::ListStackSetOperationResultsOutput {
             crate::output::ListStackSetOperationResultsOutput {
-                summaries: self.summaries,
-                next_token: self.next_token,
+                summaries: self.summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStackSetOperationResultsOutput {
     /// Creates a new builder-style object to manufacture [`ListStackSetOperationResultsOutput`](crate::output::ListStackSetOperationResultsOutput).
@@ -1249,7 +1258,7 @@ impl ListStackSetOperationResultsOutput {
 /// <p>The output for <code>ListStacks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStacksOutput {
+pub struct ListStacksOutput  {
     /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
     #[doc(hidden)]
     pub stack_summaries: std::option::Option<std::vec::Vec<crate::model::StackSummary>>,
@@ -1259,17 +1268,17 @@ pub struct ListStacksOutput {
 }
 impl ListStacksOutput {
     /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
-    pub fn stack_summaries(&self) -> std::option::Option<&[crate::model::StackSummary]> {
+    pub fn stack_summaries(&self) -> std::option::Option<& [crate::model::StackSummary]> {
         self.stack_summaries.as_deref()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStacksOutput`](crate::output::ListStacksOutput).
 pub mod list_stacks_output {
-
+    
     /// A builder for [`ListStacksOutput`](crate::output::ListStacksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1284,17 +1293,13 @@ pub mod list_stacks_output {
         /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
         pub fn stack_summaries(mut self, input: crate::model::StackSummary) -> Self {
             let mut v = self.stack_summaries.unwrap_or_default();
-            v.push(input);
-            self.stack_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.stack_summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
-        pub fn set_stack_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackSummary>>,
-        ) -> Self {
-            self.stack_summaries = input;
-            self
+        pub fn set_stack_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackSummary>>) -> Self {
+            self.stack_summaries = input; self
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1303,17 +1308,20 @@ pub mod list_stacks_output {
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStacksOutput`](crate::output::ListStacksOutput).
         pub fn build(self) -> crate::output::ListStacksOutput {
             crate::output::ListStacksOutput {
-                stack_summaries: self.stack_summaries,
-                next_token: self.next_token,
+                stack_summaries: self.stack_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStacksOutput {
     /// Creates a new builder-style object to manufacture [`ListStacksOutput`](crate::output::ListStacksOutput).
@@ -1325,35 +1333,31 @@ impl ListStacksOutput {
 /// <p>The output for a <code>ListStackResources</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackResourcesOutput {
+pub struct ListStackResourcesOutput  {
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
     #[doc(hidden)]
-    pub stack_resource_summaries:
-        std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
+    pub stack_resource_summaries: std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStackResourcesOutput {
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
-    pub fn stack_resource_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::StackResourceSummary]> {
+    pub fn stack_resource_summaries(&self) -> std::option::Option<& [crate::model::StackResourceSummary]> {
         self.stack_resource_summaries.as_deref()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStackResourcesOutput`](crate::output::ListStackResourcesOutput).
 pub mod list_stack_resources_output {
-
+    
     /// A builder for [`ListStackResourcesOutput`](crate::output::ListStackResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) stack_resource_summaries:
-            std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
+        pub(crate) stack_resource_summaries: std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1362,22 +1366,15 @@ pub mod list_stack_resources_output {
         /// To override the contents of this collection use [`set_stack_resource_summaries`](Self::set_stack_resource_summaries).
         ///
         /// <p>A list of <code>StackResourceSummary</code> structures.</p>
-        pub fn stack_resource_summaries(
-            mut self,
-            input: crate::model::StackResourceSummary,
-        ) -> Self {
+        pub fn stack_resource_summaries(mut self, input: crate::model::StackResourceSummary) -> Self {
             let mut v = self.stack_resource_summaries.unwrap_or_default();
-            v.push(input);
-            self.stack_resource_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.stack_resource_summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>StackResourceSummary</code> structures.</p>
-        pub fn set_stack_resource_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
-        ) -> Self {
-            self.stack_resource_summaries = input;
-            self
+        pub fn set_stack_resource_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>) -> Self {
+            self.stack_resource_summaries = input; self
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1386,17 +1383,20 @@ pub mod list_stack_resources_output {
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStackResourcesOutput`](crate::output::ListStackResourcesOutput).
         pub fn build(self) -> crate::output::ListStackResourcesOutput {
             crate::output::ListStackResourcesOutput {
-                stack_resource_summaries: self.stack_resource_summaries,
-                next_token: self.next_token,
+                stack_resource_summaries: self.stack_resource_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStackResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListStackResourcesOutput`](crate::output::ListStackResourcesOutput).
@@ -1408,7 +1408,7 @@ impl ListStackResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackInstancesOutput {
+pub struct ListStackInstancesOutput  {
     /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about the specified stack instances.</p>
     #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>,
@@ -1418,22 +1418,21 @@ pub struct ListStackInstancesOutput {
 }
 impl ListStackInstancesOutput {
     /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about the specified stack instances.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::model::StackInstanceSummary]> {
+    pub fn summaries(&self) -> std::option::Option<& [crate::model::StackInstanceSummary]> {
         self.summaries.as_deref()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStackInstancesOutput`](crate::output::ListStackInstancesOutput).
 pub mod list_stack_instances_output {
-
+    
     /// A builder for [`ListStackInstancesOutput`](crate::output::ListStackInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) summaries:
-            std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>,
+        pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1444,17 +1443,13 @@ pub mod list_stack_instances_output {
         /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about the specified stack instances.</p>
         pub fn summaries(mut self, input: crate::model::StackInstanceSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input);
-            self.summaries = Some(v);
-            self
+                            v.push(input);
+                            self.summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about the specified stack instances.</p>
-        pub fn set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>,
-        ) -> Self {
-            self.summaries = input;
-            self
+        pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>) -> Self {
+            self.summaries = input; self
         }
         /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1463,17 +1458,20 @@ pub mod list_stack_instances_output {
         }
         /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStackInstancesOutput`](crate::output::ListStackInstancesOutput).
         pub fn build(self) -> crate::output::ListStackInstancesOutput {
             crate::output::ListStackInstancesOutput {
-                summaries: self.summaries,
-                next_token: self.next_token,
+                summaries: self.summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStackInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesOutput`](crate::output::ListStackInstancesOutput).
@@ -1485,7 +1483,7 @@ impl ListStackInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportsOutput {
+pub struct ListImportsOutput  {
     /// <p>A list of stack names that are importing the specified exported output value.</p>
     #[doc(hidden)]
     pub imports: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1495,17 +1493,17 @@ pub struct ListImportsOutput {
 }
 impl ListImportsOutput {
     /// <p>A list of stack names that are importing the specified exported output value.</p>
-    pub fn imports(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn imports(&self) -> std::option::Option<& [std::string::String]> {
         self.imports.as_deref()
     }
     /// <p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListImportsOutput`](crate::output::ListImportsOutput).
 pub mod list_imports_output {
-
+    
     /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1520,17 +1518,13 @@ pub mod list_imports_output {
         /// <p>A list of stack names that are importing the specified exported output value.</p>
         pub fn imports(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.imports.unwrap_or_default();
-            v.push(input.into());
-            self.imports = Some(v);
-            self
+                            v.push(input.into());
+                            self.imports = Some(v);
+                            self
         }
         /// <p>A list of stack names that are importing the specified exported output value.</p>
-        pub fn set_imports(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.imports = input;
-            self
+        pub fn set_imports(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.imports = input; self
         }
         /// <p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1539,17 +1533,20 @@ pub mod list_imports_output {
         }
         /// <p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImportsOutput`](crate::output::ListImportsOutput).
         pub fn build(self) -> crate::output::ListImportsOutput {
             crate::output::ListImportsOutput {
-                imports: self.imports,
-                next_token: self.next_token,
+                imports: self.imports
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListImportsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportsOutput`](crate::output::ListImportsOutput).
@@ -1561,7 +1558,7 @@ impl ListImportsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExportsOutput {
+pub struct ListExportsOutput  {
     /// <p>The output for the <code>ListExports</code> action.</p>
     #[doc(hidden)]
     pub exports: std::option::Option<std::vec::Vec<crate::model::Export>>,
@@ -1571,17 +1568,17 @@ pub struct ListExportsOutput {
 }
 impl ListExportsOutput {
     /// <p>The output for the <code>ListExports</code> action.</p>
-    pub fn exports(&self) -> std::option::Option<&[crate::model::Export]> {
+    pub fn exports(&self) -> std::option::Option<& [crate::model::Export]> {
         self.exports.as_deref()
     }
     /// <p>If the output exceeds 100 exported output values, a string that identifies the next page of exports. If there is no additional page, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListExportsOutput`](crate::output::ListExportsOutput).
 pub mod list_exports_output {
-
+    
     /// A builder for [`ListExportsOutput`](crate::output::ListExportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1596,17 +1593,13 @@ pub mod list_exports_output {
         /// <p>The output for the <code>ListExports</code> action.</p>
         pub fn exports(mut self, input: crate::model::Export) -> Self {
             let mut v = self.exports.unwrap_or_default();
-            v.push(input);
-            self.exports = Some(v);
-            self
+                            v.push(input);
+                            self.exports = Some(v);
+                            self
         }
         /// <p>The output for the <code>ListExports</code> action.</p>
-        pub fn set_exports(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Export>>,
-        ) -> Self {
-            self.exports = input;
-            self
+        pub fn set_exports(mut self, input: std::option::Option<std::vec::Vec<crate::model::Export>>) -> Self {
+            self.exports = input; self
         }
         /// <p>If the output exceeds 100 exported output values, a string that identifies the next page of exports. If there is no additional page, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1615,17 +1608,20 @@ pub mod list_exports_output {
         }
         /// <p>If the output exceeds 100 exported output values, a string that identifies the next page of exports. If there is no additional page, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListExportsOutput`](crate::output::ListExportsOutput).
         pub fn build(self) -> crate::output::ListExportsOutput {
             crate::output::ListExportsOutput {
-                exports: self.exports,
-                next_token: self.next_token,
+                exports: self.exports
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListExportsOutput {
     /// Creates a new builder-style object to manufacture [`ListExportsOutput`](crate::output::ListExportsOutput).
@@ -1637,7 +1633,7 @@ impl ListExportsOutput {
 /// <p>The output for the <code>ListChangeSets</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChangeSetsOutput {
+pub struct ListChangeSetsOutput  {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
     #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummary>>,
@@ -1647,17 +1643,17 @@ pub struct ListChangeSetsOutput {
 }
 impl ListChangeSetsOutput {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::model::ChangeSetSummary]> {
+    pub fn summaries(&self) -> std::option::Option<& [crate::model::ChangeSetSummary]> {
         self.summaries.as_deref()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
 pub mod list_change_sets_output {
-
+    
     /// A builder for [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1672,17 +1668,13 @@ pub mod list_change_sets_output {
         /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
         pub fn summaries(mut self, input: crate::model::ChangeSetSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input);
-            self.summaries = Some(v);
-            self
+                            v.push(input);
+                            self.summaries = Some(v);
+                            self
         }
         /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-        pub fn set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummary>>,
-        ) -> Self {
-            self.summaries = input;
-            self
+        pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummary>>) -> Self {
+            self.summaries = input; self
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1691,17 +1683,20 @@ pub mod list_change_sets_output {
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
         pub fn build(self) -> crate::output::ListChangeSetsOutput {
             crate::output::ListChangeSetsOutput {
-                summaries: self.summaries,
-                next_token: self.next_token,
+                summaries: self.summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListChangeSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
@@ -1713,20 +1708,20 @@ impl ListChangeSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportStacksToStackSetOutput {
+pub struct ImportStacksToStackSetOutput  {
     /// <p>The unique identifier for the stack set operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl ImportStacksToStackSetOutput {
     /// <p>The unique identifier for the stack set operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`ImportStacksToStackSetOutput`](crate::output::ImportStacksToStackSetOutput).
 pub mod import_stacks_to_stack_set_output {
-
+    
     /// A builder for [`ImportStacksToStackSetOutput`](crate::output::ImportStacksToStackSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1740,16 +1735,18 @@ pub mod import_stacks_to_stack_set_output {
         }
         /// <p>The unique identifier for the stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`ImportStacksToStackSetOutput`](crate::output::ImportStacksToStackSetOutput).
         pub fn build(self) -> crate::output::ImportStacksToStackSetOutput {
             crate::output::ImportStacksToStackSetOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportStacksToStackSetOutput {
     /// Creates a new builder-style object to manufacture [`ImportStacksToStackSetOutput`](crate::output::ImportStacksToStackSetOutput).
@@ -1761,14 +1758,14 @@ impl ImportStacksToStackSetOutput {
 /// <p>The output for the <code>GetTemplateSummary</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTemplateSummaryOutput {
+pub struct GetTemplateSummaryOutput  {
     /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>,
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
     #[doc(hidden)]
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -1789,58 +1786,54 @@ pub struct GetTemplateSummaryOutput {
     pub declared_transforms: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
     #[doc(hidden)]
-    pub resource_identifier_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
+    pub resource_identifier_summaries: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
 }
 impl GetTemplateSummaryOutput {
     /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::ParameterDeclaration]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::ParameterDeclaration]> {
         self.parameters.as_deref()
     }
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+    pub fn capabilities(&self) -> std::option::Option<& [crate::model::Capability]> {
         self.capabilities.as_deref()
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    pub fn capabilities_reason(&self) -> std::option::Option<&str> {
+    pub fn capabilities_reason(&self) -> std::option::Option<& str> {
         self.capabilities_reason.as_deref()
     }
     /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_types.as_deref()
     }
     /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn declared_transforms(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn declared_transforms(&self) -> std::option::Option<& [std::string::String]> {
         self.declared_transforms.as_deref()
     }
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
-    pub fn resource_identifier_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourceIdentifierSummary]> {
+    pub fn resource_identifier_summaries(&self) -> std::option::Option<& [crate::model::ResourceIdentifierSummary]> {
         self.resource_identifier_summaries.as_deref()
     }
 }
 /// See [`GetTemplateSummaryOutput`](crate::output::GetTemplateSummaryOutput).
 pub mod get_template_summary_output {
-
+    
     /// A builder for [`GetTemplateSummaryOutput`](crate::output::GetTemplateSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) parameters:
-            std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         pub(crate) capabilities_reason: std::option::Option<std::string::String>,
@@ -1848,8 +1841,7 @@ pub mod get_template_summary_output {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
         pub(crate) declared_transforms: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) resource_identifier_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
+        pub(crate) resource_identifier_summaries: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
     }
     impl Builder {
         /// Appends an item to `parameters`.
@@ -1859,17 +1851,13 @@ pub mod get_template_summary_output {
         /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
         pub fn parameters(mut self, input: crate::model::ParameterDeclaration) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1878,29 +1866,24 @@ pub mod get_template_summary_output {
         }
         /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `capabilities`.
         ///
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
-        /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+        /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
         pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input);
-            self.capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.capabilities = Some(v);
+                            self
         }
-        /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+        /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-        pub fn set_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-        ) -> Self {
-            self.capabilities = input;
-            self
+        pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Capability>>) -> Self {
+            self.capabilities = input; self
         }
         /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
         pub fn capabilities_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1908,12 +1891,8 @@ pub mod get_template_summary_output {
             self
         }
         /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-        pub fn set_capabilities_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capabilities_reason = input;
-            self
+        pub fn set_capabilities_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capabilities_reason = input; self
         }
         /// Appends an item to `resource_types`.
         ///
@@ -1922,17 +1901,13 @@ pub mod get_template_summary_output {
         /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
-            self.resource_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_types = input; self
         }
         /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1941,8 +1916,7 @@ pub mod get_template_summary_output {
         }
         /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1951,8 +1925,7 @@ pub mod get_template_summary_output {
         }
         /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata = input;
-            self
+            self.metadata = input; self
         }
         /// Appends an item to `declared_transforms`.
         ///
@@ -1961,55 +1934,55 @@ pub mod get_template_summary_output {
         /// <p>A list of the transforms that are declared in the template.</p>
         pub fn declared_transforms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.declared_transforms.unwrap_or_default();
-            v.push(input.into());
-            self.declared_transforms = Some(v);
-            self
+                            v.push(input.into());
+                            self.declared_transforms = Some(v);
+                            self
         }
         /// <p>A list of the transforms that are declared in the template.</p>
-        pub fn set_declared_transforms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.declared_transforms = input;
-            self
+        pub fn set_declared_transforms(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.declared_transforms = input; self
         }
         /// Appends an item to `resource_identifier_summaries`.
         ///
         /// To override the contents of this collection use [`set_resource_identifier_summaries`](Self::set_resource_identifier_summaries).
         ///
         /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
-        pub fn resource_identifier_summaries(
-            mut self,
-            input: crate::model::ResourceIdentifierSummary,
-        ) -> Self {
+        pub fn resource_identifier_summaries(mut self, input: crate::model::ResourceIdentifierSummary) -> Self {
             let mut v = self.resource_identifier_summaries.unwrap_or_default();
-            v.push(input);
-            self.resource_identifier_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.resource_identifier_summaries = Some(v);
+                            self
         }
         /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
-        pub fn set_resource_identifier_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
-        ) -> Self {
-            self.resource_identifier_summaries = input;
-            self
+        pub fn set_resource_identifier_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>) -> Self {
+            self.resource_identifier_summaries = input; self
         }
         /// Consumes the builder and constructs a [`GetTemplateSummaryOutput`](crate::output::GetTemplateSummaryOutput).
         pub fn build(self) -> crate::output::GetTemplateSummaryOutput {
             crate::output::GetTemplateSummaryOutput {
-                parameters: self.parameters,
-                description: self.description,
-                capabilities: self.capabilities,
-                capabilities_reason: self.capabilities_reason,
-                resource_types: self.resource_types,
-                version: self.version,
-                metadata: self.metadata,
-                declared_transforms: self.declared_transforms,
-                resource_identifier_summaries: self.resource_identifier_summaries,
+                parameters: self.parameters
+                ,
+                description: self.description
+                ,
+                capabilities: self.capabilities
+                ,
+                capabilities_reason: self.capabilities_reason
+                ,
+                resource_types: self.resource_types
+                ,
+                version: self.version
+                ,
+                metadata: self.metadata
+                ,
+                declared_transforms: self.declared_transforms
+                ,
+                resource_identifier_summaries: self.resource_identifier_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTemplateSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSummaryOutput`](crate::output::GetTemplateSummaryOutput).
@@ -2021,8 +1994,8 @@ impl GetTemplateSummaryOutput {
 /// <p>The output for <code>GetTemplate</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTemplateOutput {
-    /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
+pub struct GetTemplateOutput  {
+    /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p> 
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
     #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
@@ -2031,41 +2004,36 @@ pub struct GetTemplateOutput {
     pub stages_available: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
 }
 impl GetTemplateOutput {
-    /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
+    /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p> 
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
-    pub fn template_body(&self) -> std::option::Option<&str> {
+    pub fn template_body(&self) -> std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
-    pub fn stages_available(&self) -> std::option::Option<&[crate::model::TemplateStage]> {
+    pub fn stages_available(&self) -> std::option::Option<& [crate::model::TemplateStage]> {
         self.stages_available.as_deref()
     }
 }
 /// See [`GetTemplateOutput`](crate::output::GetTemplateOutput).
 pub mod get_template_output {
-
+    
     /// A builder for [`GetTemplateOutput`](crate::output::GetTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_body: std::option::Option<std::string::String>,
-        pub(crate) stages_available:
-            std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
+        pub(crate) stages_available: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
     }
     impl Builder {
-        /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
+        /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p> 
         /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
+        /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p> 
         /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
-        pub fn set_template_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_body = input;
-            self
+        pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_body = input; self
         }
         /// Appends an item to `stages_available`.
         ///
@@ -2074,26 +2042,26 @@ pub mod get_template_output {
         /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
         pub fn stages_available(mut self, input: crate::model::TemplateStage) -> Self {
             let mut v = self.stages_available.unwrap_or_default();
-            v.push(input);
-            self.stages_available = Some(v);
-            self
+                            v.push(input);
+                            self.stages_available = Some(v);
+                            self
         }
         /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
-        pub fn set_stages_available(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
-        ) -> Self {
-            self.stages_available = input;
-            self
+        pub fn set_stages_available(mut self, input: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>) -> Self {
+            self.stages_available = input; self
         }
         /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::output::GetTemplateOutput).
         pub fn build(self) -> crate::output::GetTemplateOutput {
             crate::output::GetTemplateOutput {
-                template_body: self.template_body,
-                stages_available: self.stages_available,
+                template_body: self.template_body
+                ,
+                stages_available: self.stages_available
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateOutput`](crate::output::GetTemplateOutput).
@@ -2105,20 +2073,20 @@ impl GetTemplateOutput {
 /// <p>The output for the <code>GetStackPolicy</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStackPolicyOutput {
+pub struct GetStackPolicyOutput  {
     /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the CloudFormation User Guide.)</p>
     #[doc(hidden)]
     pub stack_policy_body: std::option::Option<std::string::String>,
 }
 impl GetStackPolicyOutput {
     /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the CloudFormation User Guide.)</p>
-    pub fn stack_policy_body(&self) -> std::option::Option<&str> {
+    pub fn stack_policy_body(&self) -> std::option::Option<& str> {
         self.stack_policy_body.as_deref()
     }
 }
 /// See [`GetStackPolicyOutput`](crate::output::GetStackPolicyOutput).
 pub mod get_stack_policy_output {
-
+    
     /// A builder for [`GetStackPolicyOutput`](crate::output::GetStackPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2131,20 +2099,19 @@ pub mod get_stack_policy_output {
             self
         }
         /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the CloudFormation User Guide.)</p>
-        pub fn set_stack_policy_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.stack_policy_body = input;
-            self
+        pub fn set_stack_policy_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_policy_body = input; self
         }
         /// Consumes the builder and constructs a [`GetStackPolicyOutput`](crate::output::GetStackPolicyOutput).
         pub fn build(self) -> crate::output::GetStackPolicyOutput {
             crate::output::GetStackPolicyOutput {
-                stack_policy_body: self.stack_policy_body,
+                stack_policy_body: self.stack_policy_body
+                ,
             }
         }
     }
+    
+    
 }
 impl GetStackPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetStackPolicyOutput`](crate::output::GetStackPolicyOutput).
@@ -2156,19 +2123,24 @@ impl GetStackPolicyOutput {
 /// <p>The output for the <code>ExecuteChangeSet</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteChangeSetOutput {}
+pub struct ExecuteChangeSetOutput  {
+}
 /// See [`ExecuteChangeSetOutput`](crate::output::ExecuteChangeSetOutput).
 pub mod execute_change_set_output {
-
+    
     /// A builder for [`ExecuteChangeSetOutput`](crate::output::ExecuteChangeSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ExecuteChangeSetOutput`](crate::output::ExecuteChangeSetOutput).
         pub fn build(self) -> crate::output::ExecuteChangeSetOutput {
-            crate::output::ExecuteChangeSetOutput {}
+            crate::output::ExecuteChangeSetOutput {
+            }
         }
     }
+    
+    
 }
 impl ExecuteChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteChangeSetOutput`](crate::output::ExecuteChangeSetOutput).
@@ -2180,20 +2152,20 @@ impl ExecuteChangeSetOutput {
 /// <p>The output for a <code>EstimateTemplateCost</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EstimateTemplateCostOutput {
+pub struct EstimateTemplateCostOutput  {
     /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl EstimateTemplateCostOutput {
     /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`EstimateTemplateCostOutput`](crate::output::EstimateTemplateCostOutput).
 pub mod estimate_template_cost_output {
-
+    
     /// A builder for [`EstimateTemplateCostOutput`](crate::output::EstimateTemplateCostOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2207,14 +2179,18 @@ pub mod estimate_template_cost_output {
         }
         /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`EstimateTemplateCostOutput`](crate::output::EstimateTemplateCostOutput).
         pub fn build(self) -> crate::output::EstimateTemplateCostOutput {
-            crate::output::EstimateTemplateCostOutput { url: self.url }
+            crate::output::EstimateTemplateCostOutput {
+                url: self.url
+                ,
+            }
         }
     }
+    
+    
 }
 impl EstimateTemplateCostOutput {
     /// Creates a new builder-style object to manufacture [`EstimateTemplateCostOutput`](crate::output::EstimateTemplateCostOutput).
@@ -2226,47 +2202,49 @@ impl EstimateTemplateCostOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectStackSetDriftOutput {
-    /// <p>The ID of the drift detection stack set operation.</p>
+pub struct DetectStackSetDriftOutput  {
+    /// <p>The ID of the drift detection stack set operation.</p> 
     /// <p>You can use this operation ID with <code> <code>DescribeStackSetOperation</code> </code> to monitor the progress of the drift detection operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DetectStackSetDriftOutput {
-    /// <p>The ID of the drift detection stack set operation.</p>
+    /// <p>The ID of the drift detection stack set operation.</p> 
     /// <p>You can use this operation ID with <code> <code>DescribeStackSetOperation</code> </code> to monitor the progress of the drift detection operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`DetectStackSetDriftOutput`](crate::output::DetectStackSetDriftOutput).
 pub mod detect_stack_set_drift_output {
-
+    
     /// A builder for [`DetectStackSetDriftOutput`](crate::output::DetectStackSetDriftOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the drift detection stack set operation.</p>
+        /// <p>The ID of the drift detection stack set operation.</p> 
         /// <p>You can use this operation ID with <code> <code>DescribeStackSetOperation</code> </code> to monitor the progress of the drift detection operation.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>The ID of the drift detection stack set operation.</p>
+        /// <p>The ID of the drift detection stack set operation.</p> 
         /// <p>You can use this operation ID with <code> <code>DescribeStackSetOperation</code> </code> to monitor the progress of the drift detection operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`DetectStackSetDriftOutput`](crate::output::DetectStackSetDriftOutput).
         pub fn build(self) -> crate::output::DetectStackSetDriftOutput {
             crate::output::DetectStackSetDriftOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectStackSetDriftOutput {
     /// Creates a new builder-style object to manufacture [`DetectStackSetDriftOutput`](crate::output::DetectStackSetDriftOutput).
@@ -2278,20 +2256,20 @@ impl DetectStackSetDriftOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectStackResourceDriftOutput {
+pub struct DetectStackResourceDriftOutput  {
     /// <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
     #[doc(hidden)]
     pub stack_resource_drift: std::option::Option<crate::model::StackResourceDrift>,
 }
 impl DetectStackResourceDriftOutput {
     /// <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
-    pub fn stack_resource_drift(&self) -> std::option::Option<&crate::model::StackResourceDrift> {
+    pub fn stack_resource_drift(&self) -> std::option::Option<& crate::model::StackResourceDrift> {
         self.stack_resource_drift.as_ref()
     }
 }
 /// See [`DetectStackResourceDriftOutput`](crate::output::DetectStackResourceDriftOutput).
 pub mod detect_stack_resource_drift_output {
-
+    
     /// A builder for [`DetectStackResourceDriftOutput`](crate::output::DetectStackResourceDriftOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2304,20 +2282,19 @@ pub mod detect_stack_resource_drift_output {
             self
         }
         /// <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
-        pub fn set_stack_resource_drift(
-            mut self,
-            input: std::option::Option<crate::model::StackResourceDrift>,
-        ) -> Self {
-            self.stack_resource_drift = input;
-            self
+        pub fn set_stack_resource_drift(mut self, input: std::option::Option<crate::model::StackResourceDrift>) -> Self {
+            self.stack_resource_drift = input; self
         }
         /// Consumes the builder and constructs a [`DetectStackResourceDriftOutput`](crate::output::DetectStackResourceDriftOutput).
         pub fn build(self) -> crate::output::DetectStackResourceDriftOutput {
             crate::output::DetectStackResourceDriftOutput {
-                stack_resource_drift: self.stack_resource_drift,
+                stack_resource_drift: self.stack_resource_drift
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectStackResourceDriftOutput {
     /// Creates a new builder-style object to manufacture [`DetectStackResourceDriftOutput`](crate::output::DetectStackResourceDriftOutput).
@@ -2329,50 +2306,49 @@ impl DetectStackResourceDriftOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectStackDriftOutput {
-    /// <p>The ID of the drift detection results of this operation.</p>
+pub struct DetectStackDriftOutput  {
+    /// <p>The ID of the drift detection results of this operation.</p> 
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
     #[doc(hidden)]
     pub stack_drift_detection_id: std::option::Option<std::string::String>,
 }
 impl DetectStackDriftOutput {
-    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>The ID of the drift detection results of this operation.</p> 
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn stack_drift_detection_id(&self) -> std::option::Option<&str> {
+    pub fn stack_drift_detection_id(&self) -> std::option::Option<& str> {
         self.stack_drift_detection_id.as_deref()
     }
 }
 /// See [`DetectStackDriftOutput`](crate::output::DetectStackDriftOutput).
 pub mod detect_stack_drift_output {
-
+    
     /// A builder for [`DetectStackDriftOutput`](crate::output::DetectStackDriftOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_drift_detection_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the drift detection results of this operation.</p>
+        /// <p>The ID of the drift detection results of this operation.</p> 
         /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
         pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_drift_detection_id = Some(input.into());
             self
         }
-        /// <p>The ID of the drift detection results of this operation.</p>
+        /// <p>The ID of the drift detection results of this operation.</p> 
         /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
-        pub fn set_stack_drift_detection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.stack_drift_detection_id = input;
-            self
+        pub fn set_stack_drift_detection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_drift_detection_id = input; self
         }
         /// Consumes the builder and constructs a [`DetectStackDriftOutput`](crate::output::DetectStackDriftOutput).
         pub fn build(self) -> crate::output::DetectStackDriftOutput {
             crate::output::DetectStackDriftOutput {
-                stack_drift_detection_id: self.stack_drift_detection_id,
+                stack_drift_detection_id: self.stack_drift_detection_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectStackDriftOutput {
     /// Creates a new builder-style object to manufacture [`DetectStackDriftOutput`](crate::output::DetectStackDriftOutput).
@@ -2384,45 +2360,45 @@ impl DetectStackDriftOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTypeRegistrationOutput {
+pub struct DescribeTypeRegistrationOutput  {
     /// <p>The current status of the extension registration request.</p>
     #[doc(hidden)]
     pub progress_status: std::option::Option<crate::model::RegistrationStatus>,
     /// <p>The description of the extension registration request.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p> 
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
     #[doc(hidden)]
     pub type_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
+    /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p> 
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
     #[doc(hidden)]
     pub type_version_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTypeRegistrationOutput {
     /// <p>The current status of the extension registration request.</p>
-    pub fn progress_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+    pub fn progress_status(&self) -> std::option::Option<& crate::model::RegistrationStatus> {
         self.progress_status.as_ref()
     }
     /// <p>The description of the extension registration request.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p> 
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-    pub fn type_arn(&self) -> std::option::Option<&str> {
+    pub fn type_arn(&self) -> std::option::Option<& str> {
         self.type_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
+    /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p> 
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-    pub fn type_version_arn(&self) -> std::option::Option<&str> {
+    pub fn type_version_arn(&self) -> std::option::Option<& str> {
         self.type_version_arn.as_deref()
     }
 }
 /// See [`DescribeTypeRegistrationOutput`](crate::output::DescribeTypeRegistrationOutput).
 pub mod describe_type_registration_output {
-
+    
     /// A builder for [`DescribeTypeRegistrationOutput`](crate::output::DescribeTypeRegistrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2438,12 +2414,8 @@ pub mod describe_type_registration_output {
             self
         }
         /// <p>The current status of the extension registration request.</p>
-        pub fn set_progress_status(
-            mut self,
-            input: std::option::Option<crate::model::RegistrationStatus>,
-        ) -> Self {
-            self.progress_status = input;
-            self
+        pub fn set_progress_status(mut self, input: std::option::Option<crate::model::RegistrationStatus>) -> Self {
+            self.progress_status = input; self
         }
         /// <p>The description of the extension registration request.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2452,46 +2424,46 @@ pub mod describe_type_registration_output {
         }
         /// <p>The description of the extension registration request.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
+        /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p> 
         /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
         pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
+        /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p> 
         /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
         pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.type_arn = input;
-            self
+            self.type_arn = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
+        /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p> 
         /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
         pub fn type_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
+        /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p> 
         /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-        pub fn set_type_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.type_version_arn = input;
-            self
+        pub fn set_type_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTypeRegistrationOutput`](crate::output::DescribeTypeRegistrationOutput).
         pub fn build(self) -> crate::output::DescribeTypeRegistrationOutput {
             crate::output::DescribeTypeRegistrationOutput {
-                progress_status: self.progress_status,
-                description: self.description,
-                type_arn: self.type_arn,
-                type_version_arn: self.type_version_arn,
+                progress_status: self.progress_status
+                ,
+                description: self.description
+                ,
+                type_arn: self.type_arn
+                ,
+                type_version_arn: self.type_version_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTypeRegistrationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTypeRegistrationOutput`](crate::output::DescribeTypeRegistrationOutput).
@@ -2503,67 +2475,67 @@ impl DescribeTypeRegistrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTypeOutput {
+pub struct DescribeTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The kind of extension.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RegistryType>,
-    /// <p>The name of the extension.</p>
+    /// <p>The name of the extension.</p> 
     /// <p>If the extension is a public third-party type you have activated with a type name alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
     #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p> 
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> 
     /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>.</p>
     #[doc(hidden)]
     pub default_version_id: std::option::Option<std::string::String>,
-    /// <p>Whether the specified extension version is set as the default version.</p>
+    /// <p>Whether the specified extension version is set as the default version.</p> 
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub is_default_version: std::option::Option<bool>,
-    /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
-    /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-    /// <ul>
-    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
-    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
+    /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p> 
+    /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li> 
+    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li> 
+    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub type_tests_status: std::option::Option<crate::model::TypeTestsStatus>,
-    /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
+    /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p> 
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
     #[doc(hidden)]
     pub type_tests_status_description: std::option::Option<std::string::String>,
     /// <p>The description of the extension.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The schema that defines the extension.</p>
+    /// <p>The schema that defines the extension.</p> 
     /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
-    /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
-    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
-    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
-    /// <ul>
-    /// <li> <p>create</p> </li>
-    /// <li> <p>read</p> </li>
-    /// <li> <p>delete</p> </li>
-    /// </ul> </li>
+    /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li> 
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li> 
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p> 
+    /// <ul> 
+    /// <li> <p>create</p> </li> 
+    /// <li> <p>read</p> </li> 
+    /// <li> <p>delete</p> </li> 
+    /// </ul> </li> 
     /// </ul>
     #[doc(hidden)]
     pub provisioning_type: std::option::Option<crate::model::ProvisioningType>,
-    /// <p>The deprecation status of the extension version.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
-    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
-    /// </ul>
+    /// <p>The deprecation status of the extension version.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li> 
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li> 
+    /// </ul> 
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub deprecated_status: std::option::Option<crate::model::DeprecatedStatus>,
@@ -2572,17 +2544,16 @@ pub struct DescribeTypeOutput {
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
     /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
     #[doc(hidden)]
-    pub required_activated_types:
-        std::option::Option<std::vec::Vec<crate::model::RequiredActivatedType>>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    pub required_activated_types: std::option::Option<std::vec::Vec<crate::model::RequiredActivatedType>>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> 
     /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
-    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
+    /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li> 
+    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub visibility: std::option::Option<crate::model::Visibility>,
@@ -2592,40 +2563,40 @@ pub struct DescribeTypeOutput {
     /// <p>The URL of a page providing detailed documentation for this extension.</p>
     #[doc(hidden)]
     pub documentation_url: std::option::Option<std::string::String>,
-    /// <p>When the specified extension version was registered. This applies only to:</p>
-    /// <ul>
-    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
-    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
+    /// <p>When the specified extension version was registered. This applies only to:</p> 
+    /// <ul> 
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li> 
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>When the specified private extension version was registered or activated in your account.</p>
     #[doc(hidden)]
     pub time_created: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p>
+    /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p> 
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub configuration_schema: std::option::Option<std::string::String>,
-    /// <p>The publisher ID of the extension publisher.</p>
+    /// <p>The publisher ID of the extension publisher.</p> 
     /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub publisher_id: std::option::Option<std::string::String>,
-    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p> 
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub original_type_name: std::option::Option<std::string::String>,
     /// <p>For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the public extension.</p>
     #[doc(hidden)]
     pub original_type_arn: std::option::Option<std::string::String>,
-    /// <p>The version number of a public third-party extension.</p>
+    /// <p>The version number of a public third-party extension.</p> 
     /// <p>This applies only if you specify a public extension you have activated in your account, or specify a public extension without specifying a version. For all other extensions, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub public_version_number: std::option::Option<std::string::String>,
-    /// <p>The latest version of a public extension <i>that is available</i> for use.</p>
+    /// <p>The latest version of a public extension <i>that is available</i> for use.</p> 
     /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub latest_public_version: std::option::Option<std::string::String>,
-    /// <p>Whether the extension is activated in the account and region.</p>
+    /// <p>Whether the extension is activated in the account and region.</p> 
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub is_activated: std::option::Option<bool>,
@@ -2635,153 +2606,151 @@ pub struct DescribeTypeOutput {
 }
 impl DescribeTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The kind of extension.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RegistryType> {
         self.r#type.as_ref()
     }
-    /// <p>The name of the extension.</p>
+    /// <p>The name of the extension.</p> 
     /// <p>If the extension is a public third-party type you have activated with a type name alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> std::option::Option<& str> {
         self.type_name.as_deref()
     }
-    /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p> 
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> 
     /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>.</p>
-    pub fn default_version_id(&self) -> std::option::Option<&str> {
+    pub fn default_version_id(&self) -> std::option::Option<& str> {
         self.default_version_id.as_deref()
     }
-    /// <p>Whether the specified extension version is set as the default version.</p>
+    /// <p>Whether the specified extension version is set as the default version.</p> 
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation returns <code>null</code>.</p>
     pub fn is_default_version(&self) -> std::option::Option<bool> {
         self.is_default_version
     }
-    /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
-    /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-    /// <ul>
-    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
-    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
+    /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p> 
+    /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li> 
+    /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li> 
+    /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li> 
     /// </ul>
-    pub fn type_tests_status(&self) -> std::option::Option<&crate::model::TypeTestsStatus> {
+    pub fn type_tests_status(&self) -> std::option::Option<& crate::model::TypeTestsStatus> {
         self.type_tests_status.as_ref()
     }
-    /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
+    /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p> 
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-    pub fn type_tests_status_description(&self) -> std::option::Option<&str> {
+    pub fn type_tests_status_description(&self) -> std::option::Option<& str> {
         self.type_tests_status_description.as_deref()
     }
     /// <p>The description of the extension.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The schema that defines the extension.</p>
+    /// <p>The schema that defines the extension.</p> 
     /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
-    /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
-    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
-    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
-    /// <ul>
-    /// <li> <p>create</p> </li>
-    /// <li> <p>read</p> </li>
-    /// <li> <p>delete</p> </li>
-    /// </ul> </li>
+    /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li> 
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li> 
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p> 
+    /// <ul> 
+    /// <li> <p>create</p> </li> 
+    /// <li> <p>read</p> </li> 
+    /// <li> <p>delete</p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn provisioning_type(&self) -> std::option::Option<&crate::model::ProvisioningType> {
+    pub fn provisioning_type(&self) -> std::option::Option<& crate::model::ProvisioningType> {
         self.provisioning_type.as_ref()
     }
-    /// <p>The deprecation status of the extension version.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
-    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
-    /// </ul>
+    /// <p>The deprecation status of the extension version.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li> 
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li> 
+    /// </ul> 
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
-    pub fn deprecated_status(&self) -> std::option::Option<&crate::model::DeprecatedStatus> {
+    pub fn deprecated_status(&self) -> std::option::Option<& crate::model::DeprecatedStatus> {
         self.deprecated_status.as_ref()
     }
     /// <p>Contains logging configuration information for private extensions. This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+    pub fn logging_config(&self) -> std::option::Option<& crate::model::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
-    pub fn required_activated_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::RequiredActivatedType]> {
+    pub fn required_activated_types(&self) -> std::option::Option<& [crate::model::RequiredActivatedType]> {
         self.required_activated_types.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> 
     /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
-    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
+    /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li> 
+    /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li> 
     /// </ul>
-    pub fn visibility(&self) -> std::option::Option<&crate::model::Visibility> {
+    pub fn visibility(&self) -> std::option::Option<& crate::model::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The URL of the source code for the extension.</p>
-    pub fn source_url(&self) -> std::option::Option<&str> {
+    pub fn source_url(&self) -> std::option::Option<& str> {
         self.source_url.as_deref()
     }
     /// <p>The URL of a page providing detailed documentation for this extension.</p>
-    pub fn documentation_url(&self) -> std::option::Option<&str> {
+    pub fn documentation_url(&self) -> std::option::Option<& str> {
         self.documentation_url.as_deref()
     }
-    /// <p>When the specified extension version was registered. This applies only to:</p>
-    /// <ul>
-    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
-    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
+    /// <p>When the specified extension version was registered. This applies only to:</p> 
+    /// <ul> 
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li> 
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li> 
     /// </ul>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>When the specified private extension version was registered or activated in your account.</p>
-    pub fn time_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time_created.as_ref()
     }
-    /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p>
+    /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p> 
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn configuration_schema(&self) -> std::option::Option<&str> {
+    pub fn configuration_schema(&self) -> std::option::Option<& str> {
         self.configuration_schema.as_deref()
     }
-    /// <p>The publisher ID of the extension publisher.</p>
+    /// <p>The publisher ID of the extension publisher.</p> 
     /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
-    pub fn publisher_id(&self) -> std::option::Option<&str> {
+    pub fn publisher_id(&self) -> std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p> 
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn original_type_name(&self) -> std::option::Option<&str> {
+    pub fn original_type_name(&self) -> std::option::Option<& str> {
         self.original_type_name.as_deref()
     }
     /// <p>For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the public extension.</p>
-    pub fn original_type_arn(&self) -> std::option::Option<&str> {
+    pub fn original_type_arn(&self) -> std::option::Option<& str> {
         self.original_type_arn.as_deref()
     }
-    /// <p>The version number of a public third-party extension.</p>
+    /// <p>The version number of a public third-party extension.</p> 
     /// <p>This applies only if you specify a public extension you have activated in your account, or specify a public extension without specifying a version. For all other extensions, CloudFormation returns <code>null</code>.</p>
-    pub fn public_version_number(&self) -> std::option::Option<&str> {
+    pub fn public_version_number(&self) -> std::option::Option<& str> {
         self.public_version_number.as_deref()
     }
-    /// <p>The latest version of a public extension <i>that is available</i> for use.</p>
+    /// <p>The latest version of a public extension <i>that is available</i> for use.</p> 
     /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
-    pub fn latest_public_version(&self) -> std::option::Option<&str> {
+    pub fn latest_public_version(&self) -> std::option::Option<& str> {
         self.latest_public_version.as_deref()
     }
-    /// <p>Whether the extension is activated in the account and region.</p>
+    /// <p>Whether the extension is activated in the account and region.</p> 
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
     pub fn is_activated(&self) -> std::option::Option<bool> {
         self.is_activated
@@ -2793,7 +2762,7 @@ impl DescribeTypeOutput {
 }
 /// See [`DescribeTypeOutput`](crate::output::DescribeTypeOutput).
 pub mod describe_type_output {
-
+    
     /// A builder for [`DescribeTypeOutput`](crate::output::DescribeTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2809,8 +2778,7 @@ pub mod describe_type_output {
         pub(crate) provisioning_type: std::option::Option<crate::model::ProvisioningType>,
         pub(crate) deprecated_status: std::option::Option<crate::model::DeprecatedStatus>,
         pub(crate) logging_config: std::option::Option<crate::model::LoggingConfig>,
-        pub(crate) required_activated_types:
-            std::option::Option<std::vec::Vec<crate::model::RequiredActivatedType>>,
+        pub(crate) required_activated_types: std::option::Option<std::vec::Vec<crate::model::RequiredActivatedType>>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
         pub(crate) source_url: std::option::Option<std::string::String>,
@@ -2834,8 +2802,7 @@ pub mod describe_type_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The kind of extension.</p>
         pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
@@ -2844,94 +2811,76 @@ pub mod describe_type_output {
         }
         /// <p>The kind of extension.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>The name of the extension.</p>
+        /// <p>The name of the extension.</p> 
         /// <p>If the extension is a public third-party type you have activated with a type name alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
         }
-        /// <p>The name of the extension.</p>
+        /// <p>The name of the extension.</p> 
         /// <p>If the extension is a public third-party type you have activated with a type name alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.type_name = input;
-            self
+            self.type_name = input; self
         }
-        /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-        /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p> 
+        /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> 
         /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>.</p>
         pub fn default_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_version_id = Some(input.into());
             self
         }
-        /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-        /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p> 
+        /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> 
         /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>.</p>
-        pub fn set_default_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_version_id = input;
-            self
+        pub fn set_default_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_version_id = input; self
         }
-        /// <p>Whether the specified extension version is set as the default version.</p>
+        /// <p>Whether the specified extension version is set as the default version.</p> 
         /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation returns <code>null</code>.</p>
         pub fn is_default_version(mut self, input: bool) -> Self {
             self.is_default_version = Some(input);
             self
         }
-        /// <p>Whether the specified extension version is set as the default version.</p>
+        /// <p>Whether the specified extension version is set as the default version.</p> 
         /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation returns <code>null</code>.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_default_version = input;
-            self
+            self.is_default_version = input; self
         }
-        /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
-        /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-        /// <ul>
-        /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
-        /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
-        /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
+        /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p> 
+        /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li> 
+        /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li> 
+        /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li> 
         /// </ul>
         pub fn type_tests_status(mut self, input: crate::model::TypeTestsStatus) -> Self {
             self.type_tests_status = Some(input);
             self
         }
-        /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
-        /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-        /// <ul>
-        /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li>
-        /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li>
-        /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li>
+        /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p> 
+        /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation Command Line Interface User Guide</i>.</p> </li> 
+        /// <li> <p> <code>FAILED</code>: The extension has failed one or more contract tests.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being performed on the extension.</p> </li> 
+        /// <li> <p> <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p> </li> 
         /// </ul>
-        pub fn set_type_tests_status(
-            mut self,
-            input: std::option::Option<crate::model::TypeTestsStatus>,
-        ) -> Self {
-            self.type_tests_status = input;
-            self
+        pub fn set_type_tests_status(mut self, input: std::option::Option<crate::model::TypeTestsStatus>) -> Self {
+            self.type_tests_status = input; self
         }
-        /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
+        /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p> 
         /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-        pub fn type_tests_status_description(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn type_tests_status_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_tests_status_description = Some(input.into());
             self
         }
-        /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
+        /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p> 
         /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-        pub fn set_type_tests_status_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.type_tests_status_description = input;
-            self
+        pub fn set_type_tests_status_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_tests_status_description = input; self
         }
         /// <p>The description of the extension.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2940,80 +2889,70 @@ pub mod describe_type_output {
         }
         /// <p>The description of the extension.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The schema that defines the extension.</p>
+        /// <p>The schema that defines the extension.</p> 
         /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema = Some(input.into());
             self
         }
-        /// <p>The schema that defines the extension.</p>
+        /// <p>The schema that defines the extension.</p> 
         /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
-        /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
-        /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
-        /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
-        /// <ul>
-        /// <li> <p>create</p> </li>
-        /// <li> <p>read</p> </li>
-        /// <li> <p>delete</p> </li>
-        /// </ul> </li>
+        /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li> 
+        /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li> 
+        /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p> 
+        /// <ul> 
+        /// <li> <p>create</p> </li> 
+        /// <li> <p>read</p> </li> 
+        /// <li> <p>delete</p> </li> 
+        /// </ul> </li> 
         /// </ul>
         pub fn provisioning_type(mut self, input: crate::model::ProvisioningType) -> Self {
             self.provisioning_type = Some(input);
             self
         }
-        /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
-        /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
-        /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p>
-        /// <ul>
-        /// <li> <p>create</p> </li>
-        /// <li> <p>read</p> </li>
-        /// <li> <p>delete</p> </li>
-        /// </ul> </li>
+        /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li> 
+        /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li> 
+        /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following handlers, and therefore can't actually be provisioned.</p> 
+        /// <ul> 
+        /// <li> <p>create</p> </li> 
+        /// <li> <p>read</p> </li> 
+        /// <li> <p>delete</p> </li> 
+        /// </ul> </li> 
         /// </ul>
-        pub fn set_provisioning_type(
-            mut self,
-            input: std::option::Option<crate::model::ProvisioningType>,
-        ) -> Self {
-            self.provisioning_type = input;
-            self
+        pub fn set_provisioning_type(mut self, input: std::option::Option<crate::model::ProvisioningType>) -> Self {
+            self.provisioning_type = input; self
         }
-        /// <p>The deprecation status of the extension version.</p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
-        /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
-        /// </ul>
+        /// <p>The deprecation status of the extension version.</p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li> 
+        /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li> 
+        /// </ul> 
         /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
         pub fn deprecated_status(mut self, input: crate::model::DeprecatedStatus) -> Self {
             self.deprecated_status = Some(input);
             self
         }
-        /// <p>The deprecation status of the extension version.</p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li>
-        /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li>
-        /// </ul>
+        /// <p>The deprecation status of the extension version.</p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>LIVE</code>: The extension is activated or registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p> </li> 
+        /// <li> <p> <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p> </li> 
+        /// </ul> 
         /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
-        pub fn set_deprecated_status(
-            mut self,
-            input: std::option::Option<crate::model::DeprecatedStatus>,
-        ) -> Self {
-            self.deprecated_status = input;
-            self
+        pub fn set_deprecated_status(mut self, input: std::option::Option<crate::model::DeprecatedStatus>) -> Self {
+            self.deprecated_status = input; self
         }
         /// <p>Contains logging configuration information for private extensions. This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
         pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
@@ -3021,72 +2960,53 @@ pub mod describe_type_output {
             self
         }
         /// <p>Contains logging configuration information for private extensions. This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-        pub fn set_logging_config(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfig>,
-        ) -> Self {
-            self.logging_config = input;
-            self
+        pub fn set_logging_config(mut self, input: std::option::Option<crate::model::LoggingConfig>) -> Self {
+            self.logging_config = input; self
         }
         /// Appends an item to `required_activated_types`.
         ///
         /// To override the contents of this collection use [`set_required_activated_types`](Self::set_required_activated_types).
         ///
         /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
-        pub fn required_activated_types(
-            mut self,
-            input: crate::model::RequiredActivatedType,
-        ) -> Self {
+        pub fn required_activated_types(mut self, input: crate::model::RequiredActivatedType) -> Self {
             let mut v = self.required_activated_types.unwrap_or_default();
-            v.push(input);
-            self.required_activated_types = Some(v);
-            self
+                            v.push(input);
+                            self.required_activated_types = Some(v);
+                            self
         }
         /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
-        pub fn set_required_activated_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RequiredActivatedType>>,
-        ) -> Self {
-            self.required_activated_types = input;
-            self
+        pub fn set_required_activated_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::RequiredActivatedType>>) -> Self {
+            self.required_activated_types = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> 
         /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> 
         /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
-        /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
-        /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
+        /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li> 
+        /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li> 
         /// </ul>
         pub fn visibility(mut self, input: crate::model::Visibility) -> Self {
             self.visibility = Some(input);
             self
         }
-        /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li>
-        /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li>
+        /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. CloudFormation marks any extensions you register as <code>PRIVATE</code>.</p> </li> 
+        /// <li> <p> <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p> </li> 
         /// </ul>
-        pub fn set_visibility(
-            mut self,
-            input: std::option::Option<crate::model::Visibility>,
-        ) -> Self {
-            self.visibility = input;
-            self
+        pub fn set_visibility(mut self, input: std::option::Option<crate::model::Visibility>) -> Self {
+            self.visibility = input; self
         }
         /// <p>The URL of the source code for the extension.</p>
         pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3095,8 +3015,7 @@ pub mod describe_type_output {
         }
         /// <p>The URL of the source code for the extension.</p>
         pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_url = input;
-            self
+            self.source_url = input; self
         }
         /// <p>The URL of a page providing detailed documentation for this extension.</p>
         pub fn documentation_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3104,33 +3023,25 @@ pub mod describe_type_output {
             self
         }
         /// <p>The URL of a page providing detailed documentation for this extension.</p>
-        pub fn set_documentation_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.documentation_url = input;
-            self
+        pub fn set_documentation_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.documentation_url = input; self
         }
-        /// <p>When the specified extension version was registered. This applies only to:</p>
-        /// <ul>
-        /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
-        /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
+        /// <p>When the specified extension version was registered. This applies only to:</p> 
+        /// <ul> 
+        /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li> 
+        /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li> 
         /// </ul>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
-        /// <p>When the specified extension version was registered. This applies only to:</p>
-        /// <ul>
-        /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
-        /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
+        /// <p>When the specified extension version was registered. This applies only to:</p> 
+        /// <ul> 
+        /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li> 
+        /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li> 
         /// </ul>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// <p>When the specified private extension version was registered or activated in your account.</p>
         pub fn time_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3138,54 +3049,41 @@ pub mod describe_type_output {
             self
         }
         /// <p>When the specified private extension version was registered or activated in your account.</p>
-        pub fn set_time_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.time_created = input;
-            self
+        pub fn set_time_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.time_created = input; self
         }
-        /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p>
+        /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p> 
         /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn configuration_schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_schema = Some(input.into());
             self
         }
-        /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p>
+        /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p> 
         /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
-        pub fn set_configuration_schema(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_schema = input;
-            self
+        pub fn set_configuration_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_schema = input; self
         }
-        /// <p>The publisher ID of the extension publisher.</p>
+        /// <p>The publisher ID of the extension publisher.</p> 
         /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
         pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.publisher_id = Some(input.into());
             self
         }
-        /// <p>The publisher ID of the extension publisher.</p>
+        /// <p>The publisher ID of the extension publisher.</p> 
         /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.publisher_id = input;
-            self
+            self.publisher_id = input; self
         }
-        /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+        /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p> 
         /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn original_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.original_type_name = Some(input.into());
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+        /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p> 
         /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-        pub fn set_original_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.original_type_name = input;
-            self
+        pub fn set_original_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.original_type_name = input; self
         }
         /// <p>For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the public extension.</p>
         pub fn original_type_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3193,54 +3091,41 @@ pub mod describe_type_output {
             self
         }
         /// <p>For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the public extension.</p>
-        pub fn set_original_type_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.original_type_arn = input;
-            self
+        pub fn set_original_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.original_type_arn = input; self
         }
-        /// <p>The version number of a public third-party extension.</p>
+        /// <p>The version number of a public third-party extension.</p> 
         /// <p>This applies only if you specify a public extension you have activated in your account, or specify a public extension without specifying a version. For all other extensions, CloudFormation returns <code>null</code>.</p>
         pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_version_number = Some(input.into());
             self
         }
-        /// <p>The version number of a public third-party extension.</p>
+        /// <p>The version number of a public third-party extension.</p> 
         /// <p>This applies only if you specify a public extension you have activated in your account, or specify a public extension without specifying a version. For all other extensions, CloudFormation returns <code>null</code>.</p>
-        pub fn set_public_version_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_version_number = input;
-            self
+        pub fn set_public_version_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_version_number = input; self
         }
-        /// <p>The latest version of a public extension <i>that is available</i> for use.</p>
+        /// <p>The latest version of a public extension <i>that is available</i> for use.</p> 
         /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
         pub fn latest_public_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.latest_public_version = Some(input.into());
             self
         }
-        /// <p>The latest version of a public extension <i>that is available</i> for use.</p>
+        /// <p>The latest version of a public extension <i>that is available</i> for use.</p> 
         /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
-        pub fn set_latest_public_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_public_version = input;
-            self
+        pub fn set_latest_public_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_public_version = input; self
         }
-        /// <p>Whether the extension is activated in the account and region.</p>
+        /// <p>Whether the extension is activated in the account and region.</p> 
         /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
         pub fn is_activated(mut self, input: bool) -> Self {
             self.is_activated = Some(input);
             self
         }
-        /// <p>Whether the extension is activated in the account and region.</p>
+        /// <p>Whether the extension is activated in the account and region.</p> 
         /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
         pub fn set_is_activated(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_activated = input;
-            self
+            self.is_activated = input; self
         }
         /// <p>Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn auto_update(mut self, input: bool) -> Self {
@@ -3249,42 +3134,70 @@ pub mod describe_type_output {
         }
         /// <p>Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_auto_update(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_update = input;
-            self
+            self.auto_update = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTypeOutput`](crate::output::DescribeTypeOutput).
         pub fn build(self) -> crate::output::DescribeTypeOutput {
             crate::output::DescribeTypeOutput {
-                arn: self.arn,
-                r#type: self.r#type,
-                type_name: self.type_name,
-                default_version_id: self.default_version_id,
-                is_default_version: self.is_default_version,
-                type_tests_status: self.type_tests_status,
-                type_tests_status_description: self.type_tests_status_description,
-                description: self.description,
-                schema: self.schema,
-                provisioning_type: self.provisioning_type,
-                deprecated_status: self.deprecated_status,
-                logging_config: self.logging_config,
-                required_activated_types: self.required_activated_types,
-                execution_role_arn: self.execution_role_arn,
-                visibility: self.visibility,
-                source_url: self.source_url,
-                documentation_url: self.documentation_url,
-                last_updated: self.last_updated,
-                time_created: self.time_created,
-                configuration_schema: self.configuration_schema,
-                publisher_id: self.publisher_id,
-                original_type_name: self.original_type_name,
-                original_type_arn: self.original_type_arn,
-                public_version_number: self.public_version_number,
-                latest_public_version: self.latest_public_version,
-                is_activated: self.is_activated,
-                auto_update: self.auto_update,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                type_name: self.type_name
+                ,
+                default_version_id: self.default_version_id
+                ,
+                is_default_version: self.is_default_version
+                ,
+                type_tests_status: self.type_tests_status
+                ,
+                type_tests_status_description: self.type_tests_status_description
+                ,
+                description: self.description
+                ,
+                schema: self.schema
+                ,
+                provisioning_type: self.provisioning_type
+                ,
+                deprecated_status: self.deprecated_status
+                ,
+                logging_config: self.logging_config
+                ,
+                required_activated_types: self.required_activated_types
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                visibility: self.visibility
+                ,
+                source_url: self.source_url
+                ,
+                documentation_url: self.documentation_url
+                ,
+                last_updated: self.last_updated
+                ,
+                time_created: self.time_created
+                ,
+                configuration_schema: self.configuration_schema
+                ,
+                publisher_id: self.publisher_id
+                ,
+                original_type_name: self.original_type_name
+                ,
+                original_type_arn: self.original_type_arn
+                ,
+                public_version_number: self.public_version_number
+                ,
+                latest_public_version: self.latest_public_version
+                ,
+                is_activated: self.is_activated
+                ,
+                auto_update: self.auto_update
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTypeOutput`](crate::output::DescribeTypeOutput).
@@ -3296,20 +3209,20 @@ impl DescribeTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackSetOperationOutput {
+pub struct DescribeStackSetOperationOutput  {
     /// <p>The specified stack set operation.</p>
     #[doc(hidden)]
     pub stack_set_operation: std::option::Option<crate::model::StackSetOperation>,
 }
 impl DescribeStackSetOperationOutput {
     /// <p>The specified stack set operation.</p>
-    pub fn stack_set_operation(&self) -> std::option::Option<&crate::model::StackSetOperation> {
+    pub fn stack_set_operation(&self) -> std::option::Option<& crate::model::StackSetOperation> {
         self.stack_set_operation.as_ref()
     }
 }
 /// See [`DescribeStackSetOperationOutput`](crate::output::DescribeStackSetOperationOutput).
 pub mod describe_stack_set_operation_output {
-
+    
     /// A builder for [`DescribeStackSetOperationOutput`](crate::output::DescribeStackSetOperationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3322,20 +3235,19 @@ pub mod describe_stack_set_operation_output {
             self
         }
         /// <p>The specified stack set operation.</p>
-        pub fn set_stack_set_operation(
-            mut self,
-            input: std::option::Option<crate::model::StackSetOperation>,
-        ) -> Self {
-            self.stack_set_operation = input;
-            self
+        pub fn set_stack_set_operation(mut self, input: std::option::Option<crate::model::StackSetOperation>) -> Self {
+            self.stack_set_operation = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStackSetOperationOutput`](crate::output::DescribeStackSetOperationOutput).
         pub fn build(self) -> crate::output::DescribeStackSetOperationOutput {
             crate::output::DescribeStackSetOperationOutput {
-                stack_set_operation: self.stack_set_operation,
+                stack_set_operation: self.stack_set_operation
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStackSetOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSetOperationOutput`](crate::output::DescribeStackSetOperationOutput).
@@ -3347,20 +3259,20 @@ impl DescribeStackSetOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackSetOutput {
+pub struct DescribeStackSetOutput  {
     /// <p>The specified stack set.</p>
     #[doc(hidden)]
     pub stack_set: std::option::Option<crate::model::StackSet>,
 }
 impl DescribeStackSetOutput {
     /// <p>The specified stack set.</p>
-    pub fn stack_set(&self) -> std::option::Option<&crate::model::StackSet> {
+    pub fn stack_set(&self) -> std::option::Option<& crate::model::StackSet> {
         self.stack_set.as_ref()
     }
 }
 /// See [`DescribeStackSetOutput`](crate::output::DescribeStackSetOutput).
 pub mod describe_stack_set_output {
-
+    
     /// A builder for [`DescribeStackSetOutput`](crate::output::DescribeStackSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3374,16 +3286,18 @@ pub mod describe_stack_set_output {
         }
         /// <p>The specified stack set.</p>
         pub fn set_stack_set(mut self, input: std::option::Option<crate::model::StackSet>) -> Self {
-            self.stack_set = input;
-            self
+            self.stack_set = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStackSetOutput`](crate::output::DescribeStackSetOutput).
         pub fn build(self) -> crate::output::DescribeStackSetOutput {
             crate::output::DescribeStackSetOutput {
-                stack_set: self.stack_set,
+                stack_set: self.stack_set
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStackSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSetOutput`](crate::output::DescribeStackSetOutput).
@@ -3395,7 +3309,7 @@ impl DescribeStackSetOutput {
 /// <p>The output for a <code>DescribeStacks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStacksOutput {
+pub struct DescribeStacksOutput  {
     /// <p>A list of stack structures.</p>
     #[doc(hidden)]
     pub stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
@@ -3405,17 +3319,17 @@ pub struct DescribeStacksOutput {
 }
 impl DescribeStacksOutput {
     /// <p>A list of stack structures.</p>
-    pub fn stacks(&self) -> std::option::Option<&[crate::model::Stack]> {
+    pub fn stacks(&self) -> std::option::Option<& [crate::model::Stack]> {
         self.stacks.as_deref()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
 pub mod describe_stacks_output {
-
+    
     /// A builder for [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3430,17 +3344,13 @@ pub mod describe_stacks_output {
         /// <p>A list of stack structures.</p>
         pub fn stacks(mut self, input: crate::model::Stack) -> Self {
             let mut v = self.stacks.unwrap_or_default();
-            v.push(input);
-            self.stacks = Some(v);
-            self
+                            v.push(input);
+                            self.stacks = Some(v);
+                            self
         }
         /// <p>A list of stack structures.</p>
-        pub fn set_stacks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Stack>>,
-        ) -> Self {
-            self.stacks = input;
-            self
+        pub fn set_stacks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Stack>>) -> Self {
+            self.stacks = input; self
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3449,17 +3359,20 @@ pub mod describe_stacks_output {
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
         pub fn build(self) -> crate::output::DescribeStacksOutput {
             crate::output::DescribeStacksOutput {
-                stacks: self.stacks,
-                next_token: self.next_token,
+                stacks: self.stacks
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStacksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
@@ -3471,20 +3384,20 @@ impl DescribeStacksOutput {
 /// <p>The output for a <code>DescribeStackResources</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackResourcesOutput {
+pub struct DescribeStackResourcesOutput  {
     /// <p>A list of <code>StackResource</code> structures.</p>
     #[doc(hidden)]
     pub stack_resources: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
 }
 impl DescribeStackResourcesOutput {
     /// <p>A list of <code>StackResource</code> structures.</p>
-    pub fn stack_resources(&self) -> std::option::Option<&[crate::model::StackResource]> {
+    pub fn stack_resources(&self) -> std::option::Option<& [crate::model::StackResource]> {
         self.stack_resources.as_deref()
     }
 }
 /// See [`DescribeStackResourcesOutput`](crate::output::DescribeStackResourcesOutput).
 pub mod describe_stack_resources_output {
-
+    
     /// A builder for [`DescribeStackResourcesOutput`](crate::output::DescribeStackResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3498,25 +3411,24 @@ pub mod describe_stack_resources_output {
         /// <p>A list of <code>StackResource</code> structures.</p>
         pub fn stack_resources(mut self, input: crate::model::StackResource) -> Self {
             let mut v = self.stack_resources.unwrap_or_default();
-            v.push(input);
-            self.stack_resources = Some(v);
-            self
+                            v.push(input);
+                            self.stack_resources = Some(v);
+                            self
         }
         /// <p>A list of <code>StackResource</code> structures.</p>
-        pub fn set_stack_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
-        ) -> Self {
-            self.stack_resources = input;
-            self
+        pub fn set_stack_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackResource>>) -> Self {
+            self.stack_resources = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourcesOutput`](crate::output::DescribeStackResourcesOutput).
         pub fn build(self) -> crate::output::DescribeStackResourcesOutput {
             crate::output::DescribeStackResourcesOutput {
-                stack_resources: self.stack_resources,
+                stack_resources: self.stack_resources
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStackResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourcesOutput`](crate::output::DescribeStackResourcesOutput).
@@ -3528,8 +3440,8 @@ impl DescribeStackResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackResourceDriftsOutput {
-    /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>
+pub struct DescribeStackResourceDriftsOutput  {
+    /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p> 
     /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
     #[doc(hidden)]
     pub stack_resource_drifts: std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>,
@@ -3538,26 +3450,23 @@ pub struct DescribeStackResourceDriftsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStackResourceDriftsOutput {
-    /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>
+    /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p> 
     /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
-    pub fn stack_resource_drifts(
-        &self,
-    ) -> std::option::Option<&[crate::model::StackResourceDrift]> {
+    pub fn stack_resource_drifts(&self) -> std::option::Option<& [crate::model::StackResourceDrift]> {
         self.stack_resource_drifts.as_deref()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>DescribeStackResourceDrifts</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeStackResourceDriftsOutput`](crate::output::DescribeStackResourceDriftsOutput).
 pub mod describe_stack_resource_drifts_output {
-
+    
     /// A builder for [`DescribeStackResourceDriftsOutput`](crate::output::DescribeStackResourceDriftsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) stack_resource_drifts:
-            std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>,
+        pub(crate) stack_resource_drifts: std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3565,22 +3474,18 @@ pub mod describe_stack_resource_drifts_output {
         ///
         /// To override the contents of this collection use [`set_stack_resource_drifts`](Self::set_stack_resource_drifts).
         ///
-        /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>
+        /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p> 
         /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
         pub fn stack_resource_drifts(mut self, input: crate::model::StackResourceDrift) -> Self {
             let mut v = self.stack_resource_drifts.unwrap_or_default();
-            v.push(input);
-            self.stack_resource_drifts = Some(v);
-            self
+                            v.push(input);
+                            self.stack_resource_drifts = Some(v);
+                            self
         }
-        /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>
+        /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p> 
         /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
-        pub fn set_stack_resource_drifts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>,
-        ) -> Self {
-            self.stack_resource_drifts = input;
-            self
+        pub fn set_stack_resource_drifts(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>) -> Self {
+            self.stack_resource_drifts = input; self
         }
         /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>DescribeStackResourceDrifts</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3589,17 +3494,20 @@ pub mod describe_stack_resource_drifts_output {
         }
         /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>DescribeStackResourceDrifts</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourceDriftsOutput`](crate::output::DescribeStackResourceDriftsOutput).
         pub fn build(self) -> crate::output::DescribeStackResourceDriftsOutput {
             crate::output::DescribeStackResourceDriftsOutput {
-                stack_resource_drifts: self.stack_resource_drifts,
-                next_token: self.next_token,
+                stack_resource_drifts: self.stack_resource_drifts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStackResourceDriftsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourceDriftsOutput`](crate::output::DescribeStackResourceDriftsOutput).
@@ -3611,20 +3519,20 @@ impl DescribeStackResourceDriftsOutput {
 /// <p>The output for a <code>DescribeStackResource</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackResourceOutput {
+pub struct DescribeStackResourceOutput  {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
     #[doc(hidden)]
     pub stack_resource_detail: std::option::Option<crate::model::StackResourceDetail>,
 }
 impl DescribeStackResourceOutput {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    pub fn stack_resource_detail(&self) -> std::option::Option<&crate::model::StackResourceDetail> {
+    pub fn stack_resource_detail(&self) -> std::option::Option<& crate::model::StackResourceDetail> {
         self.stack_resource_detail.as_ref()
     }
 }
 /// See [`DescribeStackResourceOutput`](crate::output::DescribeStackResourceOutput).
 pub mod describe_stack_resource_output {
-
+    
     /// A builder for [`DescribeStackResourceOutput`](crate::output::DescribeStackResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3637,20 +3545,19 @@ pub mod describe_stack_resource_output {
             self
         }
         /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-        pub fn set_stack_resource_detail(
-            mut self,
-            input: std::option::Option<crate::model::StackResourceDetail>,
-        ) -> Self {
-            self.stack_resource_detail = input;
-            self
+        pub fn set_stack_resource_detail(mut self, input: std::option::Option<crate::model::StackResourceDetail>) -> Self {
+            self.stack_resource_detail = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStackResourceOutput`](crate::output::DescribeStackResourceOutput).
         pub fn build(self) -> crate::output::DescribeStackResourceOutput {
             crate::output::DescribeStackResourceOutput {
-                stack_resource_detail: self.stack_resource_detail,
+                stack_resource_detail: self.stack_resource_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStackResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourceOutput`](crate::output::DescribeStackResourceOutput).
@@ -3662,20 +3569,20 @@ impl DescribeStackResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackInstanceOutput {
+pub struct DescribeStackInstanceOutput  {
     /// <p>The stack instance that matches the specified request parameters.</p>
     #[doc(hidden)]
     pub stack_instance: std::option::Option<crate::model::StackInstance>,
 }
 impl DescribeStackInstanceOutput {
     /// <p>The stack instance that matches the specified request parameters.</p>
-    pub fn stack_instance(&self) -> std::option::Option<&crate::model::StackInstance> {
+    pub fn stack_instance(&self) -> std::option::Option<& crate::model::StackInstance> {
         self.stack_instance.as_ref()
     }
 }
 /// See [`DescribeStackInstanceOutput`](crate::output::DescribeStackInstanceOutput).
 pub mod describe_stack_instance_output {
-
+    
     /// A builder for [`DescribeStackInstanceOutput`](crate::output::DescribeStackInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3688,20 +3595,19 @@ pub mod describe_stack_instance_output {
             self
         }
         /// <p>The stack instance that matches the specified request parameters.</p>
-        pub fn set_stack_instance(
-            mut self,
-            input: std::option::Option<crate::model::StackInstance>,
-        ) -> Self {
-            self.stack_instance = input;
-            self
+        pub fn set_stack_instance(mut self, input: std::option::Option<crate::model::StackInstance>) -> Self {
+            self.stack_instance = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStackInstanceOutput`](crate::output::DescribeStackInstanceOutput).
         pub fn build(self) -> crate::output::DescribeStackInstanceOutput {
             crate::output::DescribeStackInstanceOutput {
-                stack_instance: self.stack_instance,
+                stack_instance: self.stack_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStackInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackInstanceOutput`](crate::output::DescribeStackInstanceOutput).
@@ -3713,7 +3619,7 @@ impl DescribeStackInstanceOutput {
 /// <p>The output for a <code>DescribeStackEvents</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackEventsOutput {
+pub struct DescribeStackEventsOutput  {
     /// <p>A list of <code>StackEvents</code> structures.</p>
     #[doc(hidden)]
     pub stack_events: std::option::Option<std::vec::Vec<crate::model::StackEvent>>,
@@ -3723,17 +3629,17 @@ pub struct DescribeStackEventsOutput {
 }
 impl DescribeStackEventsOutput {
     /// <p>A list of <code>StackEvents</code> structures.</p>
-    pub fn stack_events(&self) -> std::option::Option<&[crate::model::StackEvent]> {
+    pub fn stack_events(&self) -> std::option::Option<& [crate::model::StackEvent]> {
         self.stack_events.as_deref()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeStackEventsOutput`](crate::output::DescribeStackEventsOutput).
 pub mod describe_stack_events_output {
-
+    
     /// A builder for [`DescribeStackEventsOutput`](crate::output::DescribeStackEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3748,17 +3654,13 @@ pub mod describe_stack_events_output {
         /// <p>A list of <code>StackEvents</code> structures.</p>
         pub fn stack_events(mut self, input: crate::model::StackEvent) -> Self {
             let mut v = self.stack_events.unwrap_or_default();
-            v.push(input);
-            self.stack_events = Some(v);
-            self
+                            v.push(input);
+                            self.stack_events = Some(v);
+                            self
         }
         /// <p>A list of <code>StackEvents</code> structures.</p>
-        pub fn set_stack_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackEvent>>,
-        ) -> Self {
-            self.stack_events = input;
-            self
+        pub fn set_stack_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackEvent>>) -> Self {
+            self.stack_events = input; self
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3767,17 +3669,20 @@ pub mod describe_stack_events_output {
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStackEventsOutput`](crate::output::DescribeStackEventsOutput).
         pub fn build(self) -> crate::output::DescribeStackEventsOutput {
             crate::output::DescribeStackEventsOutput {
-                stack_events: self.stack_events,
-                next_token: self.next_token,
+                stack_events: self.stack_events
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStackEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackEventsOutput`](crate::output::DescribeStackEventsOutput).
@@ -3789,28 +3694,28 @@ impl DescribeStackEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackDriftDetectionStatusOutput {
+pub struct DescribeStackDriftDetectionStatusOutput  {
     /// <p>The ID of the stack.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>The ID of the drift detection results of this operation.</p> 
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
     #[doc(hidden)]
     pub stack_drift_detection_id: std::option::Option<std::string::String>,
-    /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
-    /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+    /// <p>Status of the stack's actual configuration compared to its expected configuration.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li> 
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li> 
+    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li> 
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub stack_drift_status: std::option::Option<crate::model::StackDriftStatus>,
-    /// <p>The status of the stack drift detection operation.</p>
-    /// <ul>
-    /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li>
-    /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
-    /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
+    /// <p>The status of the stack drift detection operation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li> 
+    /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li> 
+    /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub detection_status: std::option::Option<crate::model::StackDriftDetectionStatus>,
@@ -3826,37 +3731,35 @@ pub struct DescribeStackDriftDetectionStatusOutput {
 }
 impl DescribeStackDriftDetectionStatusOutput {
     /// <p>The ID of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
-    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>The ID of the drift detection results of this operation.</p> 
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn stack_drift_detection_id(&self) -> std::option::Option<&str> {
+    pub fn stack_drift_detection_id(&self) -> std::option::Option<& str> {
         self.stack_drift_detection_id.as_deref()
     }
-    /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
-    /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+    /// <p>Status of the stack's actual configuration compared to its expected configuration.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li> 
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li> 
+    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li> 
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li> 
     /// </ul>
-    pub fn stack_drift_status(&self) -> std::option::Option<&crate::model::StackDriftStatus> {
+    pub fn stack_drift_status(&self) -> std::option::Option<& crate::model::StackDriftStatus> {
         self.stack_drift_status.as_ref()
     }
-    /// <p>The status of the stack drift detection operation.</p>
-    /// <ul>
-    /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li>
-    /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
-    /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
+    /// <p>The status of the stack drift detection operation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li> 
+    /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li> 
+    /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li> 
     /// </ul>
-    pub fn detection_status(
-        &self,
-    ) -> std::option::Option<&crate::model::StackDriftDetectionStatus> {
+    pub fn detection_status(&self) -> std::option::Option<& crate::model::StackDriftDetectionStatus> {
         self.detection_status.as_ref()
     }
     /// <p>The reason the stack drift detection operation has its current status.</p>
-    pub fn detection_status_reason(&self) -> std::option::Option<&str> {
+    pub fn detection_status_reason(&self) -> std::option::Option<& str> {
         self.detection_status_reason.as_deref()
     }
     /// <p>Total number of stack resources that have drifted. This is NULL until the drift detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
@@ -3864,13 +3767,13 @@ impl DescribeStackDriftDetectionStatusOutput {
         self.drifted_stack_resource_count
     }
     /// <p>Time at which the stack drift detection operation was initiated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
 /// See [`DescribeStackDriftDetectionStatusOutput`](crate::output::DescribeStackDriftDetectionStatusOutput).
 pub mod describe_stack_drift_detection_status_output {
-
+    
     /// A builder for [`DescribeStackDriftDetectionStatusOutput`](crate::output::DescribeStackDriftDetectionStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3890,71 +3793,58 @@ pub mod describe_stack_drift_detection_status_output {
         }
         /// <p>The ID of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
-        /// <p>The ID of the drift detection results of this operation.</p>
+        /// <p>The ID of the drift detection results of this operation.</p> 
         /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
         pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_drift_detection_id = Some(input.into());
             self
         }
-        /// <p>The ID of the drift detection results of this operation.</p>
+        /// <p>The ID of the drift detection results of this operation.</p> 
         /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
-        pub fn set_stack_drift_detection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.stack_drift_detection_id = input;
-            self
+        pub fn set_stack_drift_detection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_drift_detection_id = input; self
         }
-        /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
-        /// <ul>
-        /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
-        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li>
-        /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
-        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+        /// <p>Status of the stack's actual configuration compared to its expected configuration.</p> 
+        /// <ul> 
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li> 
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li> 
+        /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li> 
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li> 
         /// </ul>
         pub fn stack_drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
             self.stack_drift_status = Some(input);
             self
         }
-        /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
-        /// <ul>
-        /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
-        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li>
-        /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
-        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+        /// <p>Status of the stack's actual configuration compared to its expected configuration.</p> 
+        /// <ul> 
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li> 
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li> 
+        /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li> 
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li> 
         /// </ul>
-        pub fn set_stack_drift_status(
-            mut self,
-            input: std::option::Option<crate::model::StackDriftStatus>,
-        ) -> Self {
-            self.stack_drift_status = input;
-            self
+        pub fn set_stack_drift_status(mut self, input: std::option::Option<crate::model::StackDriftStatus>) -> Self {
+            self.stack_drift_status = input; self
         }
-        /// <p>The status of the stack drift detection operation.</p>
-        /// <ul>
-        /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li>
-        /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
-        /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
+        /// <p>The status of the stack drift detection operation.</p> 
+        /// <ul> 
+        /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li> 
+        /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li> 
+        /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li> 
         /// </ul>
         pub fn detection_status(mut self, input: crate::model::StackDriftDetectionStatus) -> Self {
             self.detection_status = Some(input);
             self
         }
-        /// <p>The status of the stack drift detection operation.</p>
-        /// <ul>
-        /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li>
-        /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
-        /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
+        /// <p>The status of the stack drift detection operation.</p> 
+        /// <ul> 
+        /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li> 
+        /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li> 
+        /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li> 
         /// </ul>
-        pub fn set_detection_status(
-            mut self,
-            input: std::option::Option<crate::model::StackDriftDetectionStatus>,
-        ) -> Self {
-            self.detection_status = input;
-            self
+        pub fn set_detection_status(mut self, input: std::option::Option<crate::model::StackDriftDetectionStatus>) -> Self {
+            self.detection_status = input; self
         }
         /// <p>The reason the stack drift detection operation has its current status.</p>
         pub fn detection_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3962,12 +3852,8 @@ pub mod describe_stack_drift_detection_status_output {
             self
         }
         /// <p>The reason the stack drift detection operation has its current status.</p>
-        pub fn set_detection_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detection_status_reason = input;
-            self
+        pub fn set_detection_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detection_status_reason = input; self
         }
         /// <p>Total number of stack resources that have drifted. This is NULL until the drift detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
         pub fn drifted_stack_resource_count(mut self, input: i32) -> Self {
@@ -3976,8 +3862,7 @@ pub mod describe_stack_drift_detection_status_output {
         }
         /// <p>Total number of stack resources that have drifted. This is NULL until the drift detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
         pub fn set_drifted_stack_resource_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.drifted_stack_resource_count = input;
-            self
+            self.drifted_stack_resource_count = input; self
         }
         /// <p>Time at which the stack drift detection operation was initiated.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3985,26 +3870,31 @@ pub mod describe_stack_drift_detection_status_output {
             self
         }
         /// <p>Time at which the stack drift detection operation was initiated.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStackDriftDetectionStatusOutput`](crate::output::DescribeStackDriftDetectionStatusOutput).
         pub fn build(self) -> crate::output::DescribeStackDriftDetectionStatusOutput {
             crate::output::DescribeStackDriftDetectionStatusOutput {
-                stack_id: self.stack_id,
-                stack_drift_detection_id: self.stack_drift_detection_id,
-                stack_drift_status: self.stack_drift_status,
-                detection_status: self.detection_status,
-                detection_status_reason: self.detection_status_reason,
-                drifted_stack_resource_count: self.drifted_stack_resource_count,
-                timestamp: self.timestamp,
+                stack_id: self.stack_id
+                ,
+                stack_drift_detection_id: self.stack_drift_detection_id
+                ,
+                stack_drift_status: self.stack_drift_status
+                ,
+                detection_status: self.detection_status
+                ,
+                detection_status_reason: self.detection_status_reason
+                ,
+                drifted_stack_resource_count: self.drifted_stack_resource_count
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStackDriftDetectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackDriftDetectionStatusOutput`](crate::output::DescribeStackDriftDetectionStatusOutput).
@@ -4016,7 +3906,7 @@ impl DescribeStackDriftDetectionStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePublisherOutput {
+pub struct DescribePublisherOutput  {
     /// <p>The ID of the extension publisher.</p>
     #[doc(hidden)]
     pub publisher_id: std::option::Option<std::string::String>,
@@ -4032,25 +3922,25 @@ pub struct DescribePublisherOutput {
 }
 impl DescribePublisherOutput {
     /// <p>The ID of the extension publisher.</p>
-    pub fn publisher_id(&self) -> std::option::Option<&str> {
+    pub fn publisher_id(&self) -> std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
     /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
-    pub fn publisher_status(&self) -> std::option::Option<&crate::model::PublisherStatus> {
+    pub fn publisher_status(&self) -> std::option::Option<& crate::model::PublisherStatus> {
         self.publisher_status.as_ref()
     }
     /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<& crate::model::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The URL to the publisher's profile with the identity provider.</p>
-    pub fn publisher_profile(&self) -> std::option::Option<&str> {
+    pub fn publisher_profile(&self) -> std::option::Option<& str> {
         self.publisher_profile.as_deref()
     }
 }
 /// See [`DescribePublisherOutput`](crate::output::DescribePublisherOutput).
 pub mod describe_publisher_output {
-
+    
     /// A builder for [`DescribePublisherOutput`](crate::output::DescribePublisherOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4067,8 +3957,7 @@ pub mod describe_publisher_output {
         }
         /// <p>The ID of the extension publisher.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.publisher_id = input;
-            self
+            self.publisher_id = input; self
         }
         /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
         pub fn publisher_status(mut self, input: crate::model::PublisherStatus) -> Self {
@@ -4076,12 +3965,8 @@ pub mod describe_publisher_output {
             self
         }
         /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
-        pub fn set_publisher_status(
-            mut self,
-            input: std::option::Option<crate::model::PublisherStatus>,
-        ) -> Self {
-            self.publisher_status = input;
-            self
+        pub fn set_publisher_status(mut self, input: std::option::Option<crate::model::PublisherStatus>) -> Self {
+            self.publisher_status = input; self
         }
         /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
         pub fn identity_provider(mut self, input: crate::model::IdentityProvider) -> Self {
@@ -4089,12 +3974,8 @@ pub mod describe_publisher_output {
             self
         }
         /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
-        pub fn set_identity_provider(
-            mut self,
-            input: std::option::Option<crate::model::IdentityProvider>,
-        ) -> Self {
-            self.identity_provider = input;
-            self
+        pub fn set_identity_provider(mut self, input: std::option::Option<crate::model::IdentityProvider>) -> Self {
+            self.identity_provider = input; self
         }
         /// <p>The URL to the publisher's profile with the identity provider.</p>
         pub fn publisher_profile(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4102,23 +3983,25 @@ pub mod describe_publisher_output {
             self
         }
         /// <p>The URL to the publisher's profile with the identity provider.</p>
-        pub fn set_publisher_profile(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.publisher_profile = input;
-            self
+        pub fn set_publisher_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.publisher_profile = input; self
         }
         /// Consumes the builder and constructs a [`DescribePublisherOutput`](crate::output::DescribePublisherOutput).
         pub fn build(self) -> crate::output::DescribePublisherOutput {
             crate::output::DescribePublisherOutput {
-                publisher_id: self.publisher_id,
-                publisher_status: self.publisher_status,
-                identity_provider: self.identity_provider,
-                publisher_profile: self.publisher_profile,
+                publisher_id: self.publisher_id
+                ,
+                publisher_status: self.publisher_status
+                ,
+                identity_provider: self.identity_provider
+                ,
+                publisher_profile: self.publisher_profile
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePublisherOutput {
     /// Creates a new builder-style object to manufacture [`DescribePublisherOutput`](crate::output::DescribePublisherOutput).
@@ -4130,7 +4013,7 @@ impl DescribePublisherOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChangeSetHooksOutput {
+pub struct DescribeChangeSetHooksOutput  {
     /// <p>The change set identifier (stack ID).</p>
     #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
@@ -4155,37 +4038,37 @@ pub struct DescribeChangeSetHooksOutput {
 }
 impl DescribeChangeSetHooksOutput {
     /// <p>The change set identifier (stack ID).</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>The change set name.</p>
-    pub fn change_set_name(&self) -> std::option::Option<&str> {
+    pub fn change_set_name(&self) -> std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>List of hook objects.</p>
-    pub fn hooks(&self) -> std::option::Option<&[crate::model::ChangeSetHook]> {
+    pub fn hooks(&self) -> std::option::Option<& [crate::model::ChangeSetHook]> {
         self.hooks.as_deref()
     }
     /// <p>Provides the status of the change set hook.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ChangeSetHooksStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ChangeSetHooksStatus> {
         self.status.as_ref()
     }
     /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The stack identifier (stack ID).</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The stack name.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
 }
 /// See [`DescribeChangeSetHooksOutput`](crate::output::DescribeChangeSetHooksOutput).
 pub mod describe_change_set_hooks_output {
-
+    
     /// A builder for [`DescribeChangeSetHooksOutput`](crate::output::DescribeChangeSetHooksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4204,12 +4087,8 @@ pub mod describe_change_set_hooks_output {
             self
         }
         /// <p>The change set identifier (stack ID).</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_id = input;
-            self
+        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_id = input; self
         }
         /// <p>The change set name.</p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4217,12 +4096,8 @@ pub mod describe_change_set_hooks_output {
             self
         }
         /// <p>The change set name.</p>
-        pub fn set_change_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_name = input;
-            self
+        pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_name = input; self
         }
         /// Appends an item to `hooks`.
         ///
@@ -4231,17 +4106,13 @@ pub mod describe_change_set_hooks_output {
         /// <p>List of hook objects.</p>
         pub fn hooks(mut self, input: crate::model::ChangeSetHook) -> Self {
             let mut v = self.hooks.unwrap_or_default();
-            v.push(input);
-            self.hooks = Some(v);
-            self
+                            v.push(input);
+                            self.hooks = Some(v);
+                            self
         }
         /// <p>List of hook objects.</p>
-        pub fn set_hooks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChangeSetHook>>,
-        ) -> Self {
-            self.hooks = input;
-            self
+        pub fn set_hooks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChangeSetHook>>) -> Self {
+            self.hooks = input; self
         }
         /// <p>Provides the status of the change set hook.</p>
         pub fn status(mut self, input: crate::model::ChangeSetHooksStatus) -> Self {
@@ -4249,12 +4120,8 @@ pub mod describe_change_set_hooks_output {
             self
         }
         /// <p>Provides the status of the change set hook.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ChangeSetHooksStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ChangeSetHooksStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4263,8 +4130,7 @@ pub mod describe_change_set_hooks_output {
         }
         /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The stack identifier (stack ID).</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4273,8 +4139,7 @@ pub mod describe_change_set_hooks_output {
         }
         /// <p>The stack identifier (stack ID).</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The stack name.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4283,22 +4148,30 @@ pub mod describe_change_set_hooks_output {
         }
         /// <p>The stack name.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = input;
-            self
+            self.stack_name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeChangeSetHooksOutput`](crate::output::DescribeChangeSetHooksOutput).
         pub fn build(self) -> crate::output::DescribeChangeSetHooksOutput {
             crate::output::DescribeChangeSetHooksOutput {
-                change_set_id: self.change_set_id,
-                change_set_name: self.change_set_name,
-                hooks: self.hooks,
-                status: self.status,
-                next_token: self.next_token,
-                stack_id: self.stack_id,
-                stack_name: self.stack_name,
+                change_set_id: self.change_set_id
+                ,
+                change_set_name: self.change_set_name
+                ,
+                hooks: self.hooks
+                ,
+                status: self.status
+                ,
+                next_token: self.next_token
+                ,
+                stack_id: self.stack_id
+                ,
+                stack_name: self.stack_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeChangeSetHooksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChangeSetHooksOutput`](crate::output::DescribeChangeSetHooksOutput).
@@ -4310,7 +4183,7 @@ impl DescribeChangeSetHooksOutput {
 /// <p>The output for the <code>DescribeChangeSet</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChangeSetOutput {
+pub struct DescribeChangeSetOutput  {
     /// <p>The name of the change set.</p>
     #[doc(hidden)]
     pub change_set_name: std::option::Option<std::string::String>,
@@ -4371,69 +4244,67 @@ pub struct DescribeChangeSetOutput {
 }
 impl DescribeChangeSetOutput {
     /// <p>The name of the change set.</p>
-    pub fn change_set_name(&self) -> std::option::Option<&str> {
+    pub fn change_set_name(&self) -> std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stack that's associated with the change set.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The name of the stack that's associated with the change set.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>Information about the change set.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>Parameter</code> structures that describes the input parameters and their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
-    pub fn execution_status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+    pub fn execution_status(&self) -> std::option::Option<& crate::model::ExecutionStatus> {
         self.execution_status.as_ref()
     }
     /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ChangeSetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ChangeSetStatus> {
         self.status.as_ref()
     }
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-    pub fn notification_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn notification_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
         self.notification_ar_ns.as_deref()
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    pub fn rollback_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RollbackConfiguration> {
+    pub fn rollback_configuration(&self) -> std::option::Option<& crate::model::RollbackConfiguration> {
         self.rollback_configuration.as_ref()
     }
     /// <p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
-    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+    pub fn capabilities(&self) -> std::option::Option<& [crate::model::Capability]> {
         self.capabilities.as_deref()
     }
     /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
-    pub fn changes(&self) -> std::option::Option<&[crate::model::Change]> {
+    pub fn changes(&self) -> std::option::Option<& [crate::model::Change]> {
         self.changes.as_deref()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
@@ -4441,17 +4312,17 @@ impl DescribeChangeSetOutput {
         self.include_nested_stacks
     }
     /// <p>Specifies the change set ID of the parent change set in the current nested change set hierarchy.</p>
-    pub fn parent_change_set_id(&self) -> std::option::Option<&str> {
+    pub fn parent_change_set_id(&self) -> std::option::Option<& str> {
         self.parent_change_set_id.as_deref()
     }
     /// <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
-    pub fn root_change_set_id(&self) -> std::option::Option<&str> {
+    pub fn root_change_set_id(&self) -> std::option::Option<& str> {
         self.root_change_set_id.as_deref()
     }
 }
 /// See [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
 pub mod describe_change_set_output {
-
+    
     /// A builder for [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4482,12 +4353,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The name of the change set.</p>
-        pub fn set_change_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_name = input;
-            self
+        pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the change set.</p>
         pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4495,12 +4362,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the change set.</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_id = input;
-            self
+        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the stack that's associated with the change set.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4509,8 +4372,7 @@ pub mod describe_change_set_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the stack that's associated with the change set.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// <p>The name of the stack that's associated with the change set.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4519,8 +4381,7 @@ pub mod describe_change_set_output {
         }
         /// <p>The name of the stack that's associated with the change set.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = input;
-            self
+            self.stack_name = input; self
         }
         /// <p>Information about the change set.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4529,8 +4390,7 @@ pub mod describe_change_set_output {
         }
         /// <p>Information about the change set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `parameters`.
         ///
@@ -4539,17 +4399,13 @@ pub mod describe_change_set_output {
         /// <p>A list of <code>Parameter</code> structures that describes the input parameters and their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A list of <code>Parameter</code> structures that describes the input parameters and their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4557,12 +4413,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
         pub fn execution_status(mut self, input: crate::model::ExecutionStatus) -> Self {
@@ -4570,12 +4422,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
-        pub fn set_execution_status(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionStatus>,
-        ) -> Self {
-            self.execution_status = input;
-            self
+        pub fn set_execution_status(mut self, input: std::option::Option<crate::model::ExecutionStatus>) -> Self {
+            self.execution_status = input; self
         }
         /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
         pub fn status(mut self, input: crate::model::ChangeSetStatus) -> Self {
@@ -4583,12 +4431,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ChangeSetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ChangeSetStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4596,12 +4440,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// Appends an item to `notification_ar_ns`.
         ///
@@ -4610,33 +4450,22 @@ pub mod describe_change_set_output {
         /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
         pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
-            v.push(input.into());
-            self.notification_ar_ns = Some(v);
-            self
+                            v.push(input.into());
+                            self.notification_ar_ns = Some(v);
+                            self
         }
         /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-        pub fn set_notification_ar_ns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.notification_ar_ns = input;
-            self
+        pub fn set_notification_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.notification_ar_ns = input; self
         }
         /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(
-            mut self,
-            input: crate::model::RollbackConfiguration,
-        ) -> Self {
+        pub fn rollback_configuration(mut self, input: crate::model::RollbackConfiguration) -> Self {
             self.rollback_configuration = Some(input);
             self
         }
         /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn set_rollback_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RollbackConfiguration>,
-        ) -> Self {
-            self.rollback_configuration = input;
-            self
+        pub fn set_rollback_configuration(mut self, input: std::option::Option<crate::model::RollbackConfiguration>) -> Self {
+            self.rollback_configuration = input; self
         }
         /// Appends an item to `capabilities`.
         ///
@@ -4645,17 +4474,13 @@ pub mod describe_change_set_output {
         /// <p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
         pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input);
-            self.capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.capabilities = Some(v);
+                            self
         }
         /// <p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
-        pub fn set_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-        ) -> Self {
-            self.capabilities = input;
-            self
+        pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Capability>>) -> Self {
+            self.capabilities = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4664,17 +4489,13 @@ pub mod describe_change_set_output {
         /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `changes`.
         ///
@@ -4683,17 +4504,13 @@ pub mod describe_change_set_output {
         /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
         pub fn changes(mut self, input: crate::model::Change) -> Self {
             let mut v = self.changes.unwrap_or_default();
-            v.push(input);
-            self.changes = Some(v);
-            self
+                            v.push(input);
+                            self.changes = Some(v);
+                            self
         }
         /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
-        pub fn set_changes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Change>>,
-        ) -> Self {
-            self.changes = input;
-            self
+        pub fn set_changes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Change>>) -> Self {
+            self.changes = input; self
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4702,8 +4519,7 @@ pub mod describe_change_set_output {
         }
         /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
         pub fn include_nested_stacks(mut self, input: bool) -> Self {
@@ -4712,8 +4528,7 @@ pub mod describe_change_set_output {
         }
         /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
         pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_nested_stacks = input;
-            self
+            self.include_nested_stacks = input; self
         }
         /// <p>Specifies the change set ID of the parent change set in the current nested change set hierarchy.</p>
         pub fn parent_change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4721,12 +4536,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>Specifies the change set ID of the parent change set in the current nested change set hierarchy.</p>
-        pub fn set_parent_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_change_set_id = input;
-            self
+        pub fn set_parent_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_change_set_id = input; self
         }
         /// <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
         pub fn root_change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4734,38 +4545,55 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
-        pub fn set_root_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.root_change_set_id = input;
-            self
+        pub fn set_root_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.root_change_set_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
         pub fn build(self) -> crate::output::DescribeChangeSetOutput {
             crate::output::DescribeChangeSetOutput {
-                change_set_name: self.change_set_name,
-                change_set_id: self.change_set_id,
-                stack_id: self.stack_id,
-                stack_name: self.stack_name,
-                description: self.description,
-                parameters: self.parameters,
-                creation_time: self.creation_time,
-                execution_status: self.execution_status,
-                status: self.status,
-                status_reason: self.status_reason,
-                notification_ar_ns: self.notification_ar_ns,
-                rollback_configuration: self.rollback_configuration,
-                capabilities: self.capabilities,
-                tags: self.tags,
-                changes: self.changes,
-                next_token: self.next_token,
-                include_nested_stacks: self.include_nested_stacks,
-                parent_change_set_id: self.parent_change_set_id,
-                root_change_set_id: self.root_change_set_id,
+                change_set_name: self.change_set_name
+                ,
+                change_set_id: self.change_set_id
+                ,
+                stack_id: self.stack_id
+                ,
+                stack_name: self.stack_name
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+                creation_time: self.creation_time
+                ,
+                execution_status: self.execution_status
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                notification_ar_ns: self.notification_ar_ns
+                ,
+                rollback_configuration: self.rollback_configuration
+                ,
+                capabilities: self.capabilities
+                ,
+                tags: self.tags
+                ,
+                changes: self.changes
+                ,
+                next_token: self.next_token
+                ,
+                include_nested_stacks: self.include_nested_stacks
+                ,
+                parent_change_set_id: self.parent_change_set_id
+                ,
+                root_change_set_id: self.root_change_set_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
@@ -4777,7 +4605,7 @@ impl DescribeChangeSetOutput {
 /// <p>The output for the <code>DescribeAccountLimits</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountLimitsOutput {
+pub struct DescribeAccountLimitsOutput  {
     /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
     #[doc(hidden)]
     pub account_limits: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
@@ -4787,17 +4615,17 @@ pub struct DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
-    pub fn account_limits(&self) -> std::option::Option<&[crate::model::AccountLimit]> {
+    pub fn account_limits(&self) -> std::option::Option<& [crate::model::AccountLimit]> {
         self.account_limits.as_deref()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
 pub mod describe_account_limits_output {
-
+    
     /// A builder for [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4812,17 +4640,13 @@ pub mod describe_account_limits_output {
         /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
         pub fn account_limits(mut self, input: crate::model::AccountLimit) -> Self {
             let mut v = self.account_limits.unwrap_or_default();
-            v.push(input);
-            self.account_limits = Some(v);
-            self
+                            v.push(input);
+                            self.account_limits = Some(v);
+                            self
         }
         /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
-        pub fn set_account_limits(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
-        ) -> Self {
-            self.account_limits = input;
-            self
+        pub fn set_account_limits(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>) -> Self {
+            self.account_limits = input; self
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4831,17 +4655,20 @@ pub mod describe_account_limits_output {
         }
         /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
         pub fn build(self) -> crate::output::DescribeAccountLimitsOutput {
             crate::output::DescribeAccountLimitsOutput {
-                account_limits: self.account_limits,
-                next_token: self.next_token,
+                account_limits: self.account_limits
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
@@ -4853,19 +4680,24 @@ impl DescribeAccountLimitsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterTypeOutput {}
+pub struct DeregisterTypeOutput  {
+}
 /// See [`DeregisterTypeOutput`](crate::output::DeregisterTypeOutput).
 pub mod deregister_type_output {
-
+    
     /// A builder for [`DeregisterTypeOutput`](crate::output::DeregisterTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterTypeOutput`](crate::output::DeregisterTypeOutput).
         pub fn build(self) -> crate::output::DeregisterTypeOutput {
-            crate::output::DeregisterTypeOutput {}
+            crate::output::DeregisterTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTypeOutput`](crate::output::DeregisterTypeOutput).
@@ -4877,19 +4709,24 @@ impl DeregisterTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStackSetOutput {}
+pub struct DeleteStackSetOutput  {
+}
 /// See [`DeleteStackSetOutput`](crate::output::DeleteStackSetOutput).
 pub mod delete_stack_set_output {
-
+    
     /// A builder for [`DeleteStackSetOutput`](crate::output::DeleteStackSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStackSetOutput`](crate::output::DeleteStackSetOutput).
         pub fn build(self) -> crate::output::DeleteStackSetOutput {
-            crate::output::DeleteStackSetOutput {}
+            crate::output::DeleteStackSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteStackSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStackSetOutput`](crate::output::DeleteStackSetOutput).
@@ -4901,20 +4738,20 @@ impl DeleteStackSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStackInstancesOutput {
+pub struct DeleteStackInstancesOutput  {
     /// <p>The unique identifier for this stack set operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeleteStackInstancesOutput {
     /// <p>The unique identifier for this stack set operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`DeleteStackInstancesOutput`](crate::output::DeleteStackInstancesOutput).
 pub mod delete_stack_instances_output {
-
+    
     /// A builder for [`DeleteStackInstancesOutput`](crate::output::DeleteStackInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4928,16 +4765,18 @@ pub mod delete_stack_instances_output {
         }
         /// <p>The unique identifier for this stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteStackInstancesOutput`](crate::output::DeleteStackInstancesOutput).
         pub fn build(self) -> crate::output::DeleteStackInstancesOutput {
             crate::output::DeleteStackInstancesOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteStackInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStackInstancesOutput`](crate::output::DeleteStackInstancesOutput).
@@ -4949,19 +4788,24 @@ impl DeleteStackInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStackOutput {}
+pub struct DeleteStackOutput  {
+}
 /// See [`DeleteStackOutput`](crate::output::DeleteStackOutput).
 pub mod delete_stack_output {
-
+    
     /// A builder for [`DeleteStackOutput`](crate::output::DeleteStackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStackOutput`](crate::output::DeleteStackOutput).
         pub fn build(self) -> crate::output::DeleteStackOutput {
-            crate::output::DeleteStackOutput {}
+            crate::output::DeleteStackOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteStackOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStackOutput`](crate::output::DeleteStackOutput).
@@ -4973,19 +4817,24 @@ impl DeleteStackOutput {
 /// <p>The output for the <code>DeleteChangeSet</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChangeSetOutput {}
+pub struct DeleteChangeSetOutput  {
+}
 /// See [`DeleteChangeSetOutput`](crate::output::DeleteChangeSetOutput).
 pub mod delete_change_set_output {
-
+    
     /// A builder for [`DeleteChangeSetOutput`](crate::output::DeleteChangeSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChangeSetOutput`](crate::output::DeleteChangeSetOutput).
         pub fn build(self) -> crate::output::DeleteChangeSetOutput {
-            crate::output::DeleteChangeSetOutput {}
+            crate::output::DeleteChangeSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChangeSetOutput`](crate::output::DeleteChangeSetOutput).
@@ -4997,19 +4846,24 @@ impl DeleteChangeSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateTypeOutput {}
+pub struct DeactivateTypeOutput  {
+}
 /// See [`DeactivateTypeOutput`](crate::output::DeactivateTypeOutput).
 pub mod deactivate_type_output {
-
+    
     /// A builder for [`DeactivateTypeOutput`](crate::output::DeactivateTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateTypeOutput`](crate::output::DeactivateTypeOutput).
         pub fn build(self) -> crate::output::DeactivateTypeOutput {
-            crate::output::DeactivateTypeOutput {}
+            crate::output::DeactivateTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeactivateTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateTypeOutput`](crate::output::DeactivateTypeOutput).
@@ -5021,20 +4875,20 @@ impl DeactivateTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStackSetOutput {
+pub struct CreateStackSetOutput  {
     /// <p>The ID of the stack set that you're creating.</p>
     #[doc(hidden)]
     pub stack_set_id: std::option::Option<std::string::String>,
 }
 impl CreateStackSetOutput {
     /// <p>The ID of the stack set that you're creating.</p>
-    pub fn stack_set_id(&self) -> std::option::Option<&str> {
+    pub fn stack_set_id(&self) -> std::option::Option<& str> {
         self.stack_set_id.as_deref()
     }
 }
 /// See [`CreateStackSetOutput`](crate::output::CreateStackSetOutput).
 pub mod create_stack_set_output {
-
+    
     /// A builder for [`CreateStackSetOutput`](crate::output::CreateStackSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5048,16 +4902,18 @@ pub mod create_stack_set_output {
         }
         /// <p>The ID of the stack set that you're creating.</p>
         pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_set_id = input;
-            self
+            self.stack_set_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateStackSetOutput`](crate::output::CreateStackSetOutput).
         pub fn build(self) -> crate::output::CreateStackSetOutput {
             crate::output::CreateStackSetOutput {
-                stack_set_id: self.stack_set_id,
+                stack_set_id: self.stack_set_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateStackSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateStackSetOutput`](crate::output::CreateStackSetOutput).
@@ -5069,20 +4925,20 @@ impl CreateStackSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStackInstancesOutput {
+pub struct CreateStackInstancesOutput  {
     /// <p>The unique identifier for this stack set operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreateStackInstancesOutput {
     /// <p>The unique identifier for this stack set operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`CreateStackInstancesOutput`](crate::output::CreateStackInstancesOutput).
 pub mod create_stack_instances_output {
-
+    
     /// A builder for [`CreateStackInstancesOutput`](crate::output::CreateStackInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5096,16 +4952,18 @@ pub mod create_stack_instances_output {
         }
         /// <p>The unique identifier for this stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateStackInstancesOutput`](crate::output::CreateStackInstancesOutput).
         pub fn build(self) -> crate::output::CreateStackInstancesOutput {
             crate::output::CreateStackInstancesOutput {
-                operation_id: self.operation_id,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateStackInstancesOutput {
     /// Creates a new builder-style object to manufacture [`CreateStackInstancesOutput`](crate::output::CreateStackInstancesOutput).
@@ -5117,20 +4975,20 @@ impl CreateStackInstancesOutput {
 /// <p>The output for a <code>CreateStack</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStackOutput {
+pub struct CreateStackOutput  {
     /// <p>Unique identifier of the stack.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl CreateStackOutput {
     /// <p>Unique identifier of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
 /// See [`CreateStackOutput`](crate::output::CreateStackOutput).
 pub mod create_stack_output {
-
+    
     /// A builder for [`CreateStackOutput`](crate::output::CreateStackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5144,16 +5002,18 @@ pub mod create_stack_output {
         }
         /// <p>Unique identifier of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateStackOutput`](crate::output::CreateStackOutput).
         pub fn build(self) -> crate::output::CreateStackOutput {
             crate::output::CreateStackOutput {
-                stack_id: self.stack_id,
+                stack_id: self.stack_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateStackOutput {
     /// Creates a new builder-style object to manufacture [`CreateStackOutput`](crate::output::CreateStackOutput).
@@ -5165,7 +5025,7 @@ impl CreateStackOutput {
 /// <p>The output for the <code>CreateChangeSet</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChangeSetOutput {
+pub struct CreateChangeSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5175,17 +5035,17 @@ pub struct CreateChangeSetOutput {
 }
 impl CreateChangeSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ID of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
 /// See [`CreateChangeSetOutput`](crate::output::CreateChangeSetOutput).
 pub mod create_change_set_output {
-
+    
     /// A builder for [`CreateChangeSetOutput`](crate::output::CreateChangeSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5200,8 +5060,7 @@ pub mod create_change_set_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the change set.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique ID of the stack.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5210,17 +5069,20 @@ pub mod create_change_set_output {
         }
         /// <p>The unique ID of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateChangeSetOutput`](crate::output::CreateChangeSetOutput).
         pub fn build(self) -> crate::output::CreateChangeSetOutput {
             crate::output::CreateChangeSetOutput {
-                id: self.id,
-                stack_id: self.stack_id,
+                id: self.id
+                ,
+                stack_id: self.stack_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateChangeSetOutput`](crate::output::CreateChangeSetOutput).
@@ -5232,19 +5094,24 @@ impl CreateChangeSetOutput {
 /// <p>The output for a <code>ContinueUpdateRollback</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinueUpdateRollbackOutput {}
+pub struct ContinueUpdateRollbackOutput  {
+}
 /// See [`ContinueUpdateRollbackOutput`](crate::output::ContinueUpdateRollbackOutput).
 pub mod continue_update_rollback_output {
-
+    
     /// A builder for [`ContinueUpdateRollbackOutput`](crate::output::ContinueUpdateRollbackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ContinueUpdateRollbackOutput`](crate::output::ContinueUpdateRollbackOutput).
         pub fn build(self) -> crate::output::ContinueUpdateRollbackOutput {
-            crate::output::ContinueUpdateRollbackOutput {}
+            crate::output::ContinueUpdateRollbackOutput {
+            }
         }
     }
+    
+    
 }
 impl ContinueUpdateRollbackOutput {
     /// Creates a new builder-style object to manufacture [`ContinueUpdateRollbackOutput`](crate::output::ContinueUpdateRollbackOutput).
@@ -5256,19 +5123,24 @@ impl ContinueUpdateRollbackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelUpdateStackOutput {}
+pub struct CancelUpdateStackOutput  {
+}
 /// See [`CancelUpdateStackOutput`](crate::output::CancelUpdateStackOutput).
 pub mod cancel_update_stack_output {
-
+    
     /// A builder for [`CancelUpdateStackOutput`](crate::output::CancelUpdateStackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelUpdateStackOutput`](crate::output::CancelUpdateStackOutput).
         pub fn build(self) -> crate::output::CancelUpdateStackOutput {
-            crate::output::CancelUpdateStackOutput {}
+            crate::output::CancelUpdateStackOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelUpdateStackOutput {
     /// Creates a new builder-style object to manufacture [`CancelUpdateStackOutput`](crate::output::CancelUpdateStackOutput).
@@ -5280,52 +5152,40 @@ impl CancelUpdateStackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDescribeTypeConfigurationsOutput {
+pub struct BatchDescribeTypeConfigurationsOutput  {
     /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
     #[doc(hidden)]
-    pub errors:
-        std::option::Option<std::vec::Vec<crate::model::BatchDescribeTypeConfigurationsError>>,
+    pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDescribeTypeConfigurationsError>>,
     /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
     #[doc(hidden)]
-    pub unprocessed_type_configurations:
-        std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
+    pub unprocessed_type_configurations: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
     /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
     #[doc(hidden)]
-    pub type_configurations:
-        std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>,
+    pub type_configurations: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>,
 }
 impl BatchDescribeTypeConfigurationsOutput {
     /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
-    pub fn errors(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchDescribeTypeConfigurationsError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchDescribeTypeConfigurationsError]> {
         self.errors.as_deref()
     }
     /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
-    pub fn unprocessed_type_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::TypeConfigurationIdentifier]> {
+    pub fn unprocessed_type_configurations(&self) -> std::option::Option<& [crate::model::TypeConfigurationIdentifier]> {
         self.unprocessed_type_configurations.as_deref()
     }
     /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
-    pub fn type_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::TypeConfigurationDetails]> {
+    pub fn type_configurations(&self) -> std::option::Option<& [crate::model::TypeConfigurationDetails]> {
         self.type_configurations.as_deref()
     }
 }
 /// See [`BatchDescribeTypeConfigurationsOutput`](crate::output::BatchDescribeTypeConfigurationsOutput).
 pub mod batch_describe_type_configurations_output {
-
+    
     /// A builder for [`BatchDescribeTypeConfigurationsOutput`](crate::output::BatchDescribeTypeConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchDescribeTypeConfigurationsError>>,
-        pub(crate) unprocessed_type_configurations:
-            std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
-        pub(crate) type_configurations:
-            std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchDescribeTypeConfigurationsError>>,
+        pub(crate) unprocessed_type_configurations: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
+        pub(crate) type_configurations: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -5335,73 +5195,58 @@ pub mod batch_describe_type_configurations_output {
         /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
         pub fn errors(mut self, input: crate::model::BatchDescribeTypeConfigurationsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchDescribeTypeConfigurationsError>,
-            >,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDescribeTypeConfigurationsError>>) -> Self {
+            self.errors = input; self
         }
         /// Appends an item to `unprocessed_type_configurations`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_type_configurations`](Self::set_unprocessed_type_configurations).
         ///
         /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
-        pub fn unprocessed_type_configurations(
-            mut self,
-            input: crate::model::TypeConfigurationIdentifier,
-        ) -> Self {
+        pub fn unprocessed_type_configurations(mut self, input: crate::model::TypeConfigurationIdentifier) -> Self {
             let mut v = self.unprocessed_type_configurations.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_type_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_type_configurations = Some(v);
+                            self
         }
         /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
-        pub fn set_unprocessed_type_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
-        ) -> Self {
-            self.unprocessed_type_configurations = input;
-            self
+        pub fn set_unprocessed_type_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>) -> Self {
+            self.unprocessed_type_configurations = input; self
         }
         /// Appends an item to `type_configurations`.
         ///
         /// To override the contents of this collection use [`set_type_configurations`](Self::set_type_configurations).
         ///
         /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
-        pub fn type_configurations(
-            mut self,
-            input: crate::model::TypeConfigurationDetails,
-        ) -> Self {
+        pub fn type_configurations(mut self, input: crate::model::TypeConfigurationDetails) -> Self {
             let mut v = self.type_configurations.unwrap_or_default();
-            v.push(input);
-            self.type_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.type_configurations = Some(v);
+                            self
         }
         /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
-        pub fn set_type_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>,
-        ) -> Self {
-            self.type_configurations = input;
-            self
+        pub fn set_type_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>) -> Self {
+            self.type_configurations = input; self
         }
         /// Consumes the builder and constructs a [`BatchDescribeTypeConfigurationsOutput`](crate::output::BatchDescribeTypeConfigurationsOutput).
         pub fn build(self) -> crate::output::BatchDescribeTypeConfigurationsOutput {
             crate::output::BatchDescribeTypeConfigurationsOutput {
-                errors: self.errors,
-                unprocessed_type_configurations: self.unprocessed_type_configurations,
-                type_configurations: self.type_configurations,
+                errors: self.errors
+                ,
+                unprocessed_type_configurations: self.unprocessed_type_configurations
+                ,
+                type_configurations: self.type_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDescribeTypeConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeTypeConfigurationsOutput`](crate::output::BatchDescribeTypeConfigurationsOutput).
@@ -5413,20 +5258,20 @@ impl BatchDescribeTypeConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateTypeOutput {
+pub struct ActivateTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and region.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ActivateTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and region.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`ActivateTypeOutput`](crate::output::ActivateTypeOutput).
 pub mod activate_type_output {
-
+    
     /// A builder for [`ActivateTypeOutput`](crate::output::ActivateTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5440,14 +5285,18 @@ pub mod activate_type_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the activated extension, in this account and region.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`ActivateTypeOutput`](crate::output::ActivateTypeOutput).
         pub fn build(self) -> crate::output::ActivateTypeOutput {
-            crate::output::ActivateTypeOutput { arn: self.arn }
+            crate::output::ActivateTypeOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl ActivateTypeOutput {
     /// Creates a new builder-style object to manufacture [`ActivateTypeOutput`](crate::output::ActivateTypeOutput).
@@ -5455,3 +5304,4 @@ impl ActivateTypeOutput {
         crate::output::activate_type_output::Builder::default()
     }
 }
+

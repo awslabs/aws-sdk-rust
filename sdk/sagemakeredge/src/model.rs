@@ -3,7 +3,7 @@
 /// <p>Information about the result of a deployment on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentResult {
+pub struct DeploymentResult  {
     /// <p>The name and unique ID of the deployment.</p>
     #[doc(hidden)]
     pub deployment_name: std::option::Option<std::string::String>,
@@ -25,33 +25,33 @@ pub struct DeploymentResult {
 }
 impl DeploymentResult {
     /// <p>The name and unique ID of the deployment.</p>
-    pub fn deployment_name(&self) -> std::option::Option<&str> {
+    pub fn deployment_name(&self) -> std::option::Option<& str> {
         self.deployment_name.as_deref()
     }
     /// <p>Returns the bucket error code.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&str> {
+    pub fn deployment_status(&self) -> std::option::Option<& str> {
         self.deployment_status.as_deref()
     }
     /// <p>Returns the detailed error message.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The timestamp of when the deployment was started on the agent.</p>
-    pub fn deployment_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deployment_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deployment_start_time.as_ref()
     }
     /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
-    pub fn deployment_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deployment_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deployment_end_time.as_ref()
     }
     /// <p>Returns a list of models deployed on the agent.</p>
-    pub fn deployment_models(&self) -> std::option::Option<&[crate::model::DeploymentModel]> {
+    pub fn deployment_models(&self) -> std::option::Option<& [crate::model::DeploymentModel]> {
         self.deployment_models.as_deref()
     }
 }
 /// See [`DeploymentResult`](crate::model::DeploymentResult).
 pub mod deployment_result {
-
+    
     /// A builder for [`DeploymentResult`](crate::model::DeploymentResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -60,8 +60,7 @@ pub mod deployment_result {
         pub(crate) deployment_status_message: std::option::Option<std::string::String>,
         pub(crate) deployment_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) deployment_end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) deployment_models:
-            std::option::Option<std::vec::Vec<crate::model::DeploymentModel>>,
+        pub(crate) deployment_models: std::option::Option<std::vec::Vec<crate::model::DeploymentModel>>,
     }
     impl Builder {
         /// <p>The name and unique ID of the deployment.</p>
@@ -70,12 +69,8 @@ pub mod deployment_result {
             self
         }
         /// <p>The name and unique ID of the deployment.</p>
-        pub fn set_deployment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_name = input;
-            self
+        pub fn set_deployment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_name = input; self
         }
         /// <p>Returns the bucket error code.</p>
         pub fn deployment_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,12 +78,8 @@ pub mod deployment_result {
             self
         }
         /// <p>Returns the bucket error code.</p>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>Returns the detailed error message.</p>
         pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,12 +87,8 @@ pub mod deployment_result {
             self
         }
         /// <p>Returns the detailed error message.</p>
-        pub fn set_deployment_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status_message = input;
-            self
+        pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status_message = input; self
         }
         /// <p>The timestamp of when the deployment was started on the agent.</p>
         pub fn deployment_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -109,12 +96,8 @@ pub mod deployment_result {
             self
         }
         /// <p>The timestamp of when the deployment was started on the agent.</p>
-        pub fn set_deployment_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deployment_start_time = input;
-            self
+        pub fn set_deployment_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deployment_start_time = input; self
         }
         /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
         pub fn deployment_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,12 +105,8 @@ pub mod deployment_result {
             self
         }
         /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
-        pub fn set_deployment_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deployment_end_time = input;
-            self
+        pub fn set_deployment_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deployment_end_time = input; self
         }
         /// Appends an item to `deployment_models`.
         ///
@@ -136,30 +115,34 @@ pub mod deployment_result {
         /// <p>Returns a list of models deployed on the agent.</p>
         pub fn deployment_models(mut self, input: crate::model::DeploymentModel) -> Self {
             let mut v = self.deployment_models.unwrap_or_default();
-            v.push(input);
-            self.deployment_models = Some(v);
-            self
+                            v.push(input);
+                            self.deployment_models = Some(v);
+                            self
         }
         /// <p>Returns a list of models deployed on the agent.</p>
-        pub fn set_deployment_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentModel>>,
-        ) -> Self {
-            self.deployment_models = input;
-            self
+        pub fn set_deployment_models(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentModel>>) -> Self {
+            self.deployment_models = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentResult`](crate::model::DeploymentResult).
         pub fn build(self) -> crate::model::DeploymentResult {
             crate::model::DeploymentResult {
-                deployment_name: self.deployment_name,
-                deployment_status: self.deployment_status,
-                deployment_status_message: self.deployment_status_message,
-                deployment_start_time: self.deployment_start_time,
-                deployment_end_time: self.deployment_end_time,
-                deployment_models: self.deployment_models,
+                deployment_name: self.deployment_name
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                deployment_start_time: self.deployment_start_time
+                ,
+                deployment_end_time: self.deployment_end_time
+                ,
+                deployment_models: self.deployment_models
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentResult {
     /// Creates a new builder-style object to manufacture [`DeploymentResult`](crate::model::DeploymentResult).
@@ -171,7 +154,7 @@ impl DeploymentResult {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentModel {
+pub struct DeploymentModel  {
     /// <p>The unique handle of the model.</p>
     #[doc(hidden)]
     pub model_handle: std::option::Option<std::string::String>,
@@ -199,41 +182,41 @@ pub struct DeploymentModel {
 }
 impl DeploymentModel {
     /// <p>The unique handle of the model.</p>
-    pub fn model_handle(&self) -> std::option::Option<&str> {
+    pub fn model_handle(&self) -> std::option::Option<& str> {
         self.model_handle.as_deref()
     }
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
     /// <p>The desired state of the model.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::model::ModelState> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::model::ModelState> {
         self.desired_state.as_ref()
     }
     /// <p>Returns the current state of the model.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ModelState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ModelState> {
         self.state.as_ref()
     }
     /// <p>Returns the deployment status of the model.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>Returns the error message for the deployment status result.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Returns the error message if there is a rollback.</p>
-    pub fn rollback_failure_reason(&self) -> std::option::Option<&str> {
+    pub fn rollback_failure_reason(&self) -> std::option::Option<& str> {
         self.rollback_failure_reason.as_deref()
     }
 }
 /// See [`DeploymentModel`](crate::model::DeploymentModel).
 pub mod deployment_model {
-
+    
     /// A builder for [`DeploymentModel`](crate::model::DeploymentModel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -254,8 +237,7 @@ pub mod deployment_model {
         }
         /// <p>The unique handle of the model.</p>
         pub fn set_model_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_handle = input;
-            self
+            self.model_handle = input; self
         }
         /// <p>The name of the model.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -264,8 +246,7 @@ pub mod deployment_model {
         }
         /// <p>The name of the model.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p>The version of the model.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -273,12 +254,8 @@ pub mod deployment_model {
             self
         }
         /// <p>The version of the model.</p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// <p>The desired state of the model.</p>
         pub fn desired_state(mut self, input: crate::model::ModelState) -> Self {
@@ -286,12 +263,8 @@ pub mod deployment_model {
             self
         }
         /// <p>The desired state of the model.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::ModelState>,
-        ) -> Self {
-            self.desired_state = input;
-            self
+        pub fn set_desired_state(mut self, input: std::option::Option<crate::model::ModelState>) -> Self {
+            self.desired_state = input; self
         }
         /// <p>Returns the current state of the model.</p>
         pub fn state(mut self, input: crate::model::ModelState) -> Self {
@@ -300,8 +273,7 @@ pub mod deployment_model {
         }
         /// <p>Returns the current state of the model.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ModelState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Returns the deployment status of the model.</p>
         pub fn status(mut self, input: crate::model::DeploymentStatus) -> Self {
@@ -309,12 +281,8 @@ pub mod deployment_model {
             self
         }
         /// <p>Returns the deployment status of the model.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DeploymentStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Returns the error message for the deployment status result.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -322,12 +290,8 @@ pub mod deployment_model {
             self
         }
         /// <p>Returns the error message for the deployment status result.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>Returns the error message if there is a rollback.</p>
         pub fn rollback_failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -335,27 +299,33 @@ pub mod deployment_model {
             self
         }
         /// <p>Returns the error message if there is a rollback.</p>
-        pub fn set_rollback_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rollback_failure_reason = input;
-            self
+        pub fn set_rollback_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rollback_failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentModel`](crate::model::DeploymentModel).
         pub fn build(self) -> crate::model::DeploymentModel {
             crate::model::DeploymentModel {
-                model_handle: self.model_handle,
-                model_name: self.model_name,
-                model_version: self.model_version,
-                desired_state: self.desired_state,
-                state: self.state,
-                status: self.status,
-                status_reason: self.status_reason,
-                rollback_failure_reason: self.rollback_failure_reason,
+                model_handle: self.model_handle
+                ,
+                model_name: self.model_name
+                ,
+                model_version: self.model_version
+                ,
+                desired_state: self.desired_state
+                ,
+                state: self.state
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                rollback_failure_reason: self.rollback_failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentModel {
     /// Creates a new builder-style object to manufacture [`DeploymentModel`](crate::model::DeploymentModel).
@@ -370,9 +340,9 @@ impl DeploymentModel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentstatus = unimplemented!();
 /// match deploymentstatus {
@@ -394,58 +364,52 @@ impl DeploymentModel {
 /// Specifically, when `deploymentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Fail,
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAIL" => DeploymentStatus::Fail,
             "SUCCESS" => DeploymentStatus::Success,
-            other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentStatus::from(s))
+                }
+            }
 impl DeploymentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentStatus::Fail => "FAIL",
             DeploymentStatus::Success => "SUCCESS",
-            DeploymentStatus::Unknown(value) => value.as_str(),
+            DeploymentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAIL", "SUCCESS"]
+        &[
+            "FAIL", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for DeploymentStatus {
@@ -460,9 +424,9 @@ impl AsRef<str> for DeploymentStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let modelstate = unimplemented!();
 /// match modelstate {
@@ -484,58 +448,52 @@ impl AsRef<str> for DeploymentStatus {
 /// Specifically, when `modelstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ModelState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ModelState {
     #[allow(missing_docs)] // documentation missing in model
     Deploy,
     #[allow(missing_docs)] // documentation missing in model
     Undeploy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ModelState {
     fn from(s: &str) -> Self {
         match s {
             "DEPLOY" => ModelState::Deploy,
             "UNDEPLOY" => ModelState::Undeploy,
-            other => ModelState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ModelState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ModelState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ModelState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ModelState::from(s))
+                }
+            }
 impl ModelState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelState::Deploy => "DEPLOY",
             ModelState::Undeploy => "UNDEPLOY",
-            ModelState::Unknown(value) => value.as_str(),
+            ModelState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPLOY", "UNDEPLOY"]
+        &[
+            "DEPLOY", "UNDEPLOY"
+        ]
     }
 }
 impl AsRef<str> for ModelState {
@@ -547,7 +505,7 @@ impl AsRef<str> for ModelState {
 /// <p>Information about a model deployed on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Model {
+pub struct Model  {
     /// <p>The name of the model.</p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
@@ -566,29 +524,29 @@ pub struct Model {
 }
 impl Model {
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
     /// <p>The timestamp of the last data sample taken.</p>
-    pub fn latest_sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_sample_time.as_ref()
     }
     /// <p>The timestamp of the last inference that was made.</p>
-    pub fn latest_inference(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_inference(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_inference.as_ref()
     }
     /// <p>Information required for model metrics.</p>
-    pub fn model_metrics(&self) -> std::option::Option<&[crate::model::EdgeMetric]> {
+    pub fn model_metrics(&self) -> std::option::Option<& [crate::model::EdgeMetric]> {
         self.model_metrics.as_deref()
     }
 }
 /// See [`Model`](crate::model::Model).
 pub mod model {
-
+    
     /// A builder for [`Model`](crate::model::Model).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -606,8 +564,7 @@ pub mod model {
         }
         /// <p>The name of the model.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// <p>The version of the model.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -615,12 +572,8 @@ pub mod model {
             self
         }
         /// <p>The version of the model.</p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// <p>The timestamp of the last data sample taken.</p>
         pub fn latest_sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -628,12 +581,8 @@ pub mod model {
             self
         }
         /// <p>The timestamp of the last data sample taken.</p>
-        pub fn set_latest_sample_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_sample_time = input;
-            self
+        pub fn set_latest_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_sample_time = input; self
         }
         /// <p>The timestamp of the last inference that was made.</p>
         pub fn latest_inference(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -641,12 +590,8 @@ pub mod model {
             self
         }
         /// <p>The timestamp of the last inference that was made.</p>
-        pub fn set_latest_inference(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_inference = input;
-            self
+        pub fn set_latest_inference(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_inference = input; self
         }
         /// Appends an item to `model_metrics`.
         ///
@@ -655,29 +600,32 @@ pub mod model {
         /// <p>Information required for model metrics.</p>
         pub fn model_metrics(mut self, input: crate::model::EdgeMetric) -> Self {
             let mut v = self.model_metrics.unwrap_or_default();
-            v.push(input);
-            self.model_metrics = Some(v);
-            self
+                            v.push(input);
+                            self.model_metrics = Some(v);
+                            self
         }
         /// <p>Information required for model metrics.</p>
-        pub fn set_model_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
-        ) -> Self {
-            self.model_metrics = input;
-            self
+        pub fn set_model_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>) -> Self {
+            self.model_metrics = input; self
         }
         /// Consumes the builder and constructs a [`Model`](crate::model::Model).
         pub fn build(self) -> crate::model::Model {
             crate::model::Model {
-                model_name: self.model_name,
-                model_version: self.model_version,
-                latest_sample_time: self.latest_sample_time,
-                latest_inference: self.latest_inference,
-                model_metrics: self.model_metrics,
+                model_name: self.model_name
+                ,
+                model_version: self.model_version
+                ,
+                latest_sample_time: self.latest_sample_time
+                ,
+                latest_inference: self.latest_inference
+                ,
+                model_metrics: self.model_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl Model {
     /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
@@ -689,7 +637,7 @@ impl Model {
 /// <p>Information required for edge device metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgeMetric {
+pub struct EdgeMetric  {
     /// <p>The dimension of metrics published.</p>
     #[doc(hidden)]
     pub dimension: std::option::Option<std::string::String>,
@@ -705,11 +653,11 @@ pub struct EdgeMetric {
 }
 impl EdgeMetric {
     /// <p>The dimension of metrics published.</p>
-    pub fn dimension(&self) -> std::option::Option<&str> {
+    pub fn dimension(&self) -> std::option::Option<& str> {
         self.dimension.as_deref()
     }
     /// <p>Returns the name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>Returns the value of the metric.</p>
@@ -717,13 +665,13 @@ impl EdgeMetric {
         self.value
     }
     /// <p>Timestamp of when the metric was requested.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
 /// See [`EdgeMetric`](crate::model::EdgeMetric).
 pub mod edge_metric {
-
+    
     /// A builder for [`EdgeMetric`](crate::model::EdgeMetric).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -740,8 +688,7 @@ pub mod edge_metric {
         }
         /// <p>The dimension of metrics published.</p>
         pub fn set_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dimension = input;
-            self
+            self.dimension = input; self
         }
         /// <p>Returns the name of the metric.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -750,8 +697,7 @@ pub mod edge_metric {
         }
         /// <p>Returns the name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>Returns the value of the metric.</p>
         pub fn value(mut self, input: f64) -> Self {
@@ -760,8 +706,7 @@ pub mod edge_metric {
         }
         /// <p>Returns the value of the metric.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Timestamp of when the metric was requested.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -769,23 +714,26 @@ pub mod edge_metric {
             self
         }
         /// <p>Timestamp of when the metric was requested.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`EdgeMetric`](crate::model::EdgeMetric).
         pub fn build(self) -> crate::model::EdgeMetric {
             crate::model::EdgeMetric {
-                dimension: self.dimension,
-                metric_name: self.metric_name,
-                value: self.value.unwrap_or_default(),
-                timestamp: self.timestamp,
+                dimension: self.dimension
+                ,
+                metric_name: self.metric_name
+                ,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl EdgeMetric {
     /// Creates a new builder-style object to manufacture [`EdgeMetric`](crate::model::EdgeMetric).
@@ -797,7 +745,7 @@ impl EdgeMetric {
 /// <p>Information about a deployment on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgeDeployment {
+pub struct EdgeDeployment  {
     /// <p>The name and unique ID of the deployment.</p>
     #[doc(hidden)]
     pub deployment_name: std::option::Option<std::string::String>,
@@ -813,34 +761,31 @@ pub struct EdgeDeployment {
 }
 impl EdgeDeployment {
     /// <p>The name and unique ID of the deployment.</p>
-    pub fn deployment_name(&self) -> std::option::Option<&str> {
+    pub fn deployment_name(&self) -> std::option::Option<& str> {
         self.deployment_name.as_deref()
     }
     /// <p>The type of the deployment.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DeploymentType> {
         self.r#type.as_ref()
     }
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
-    pub fn failure_handling_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::FailureHandlingPolicy> {
+    pub fn failure_handling_policy(&self) -> std::option::Option<& crate::model::FailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
     /// <p>Returns a list of Definition objects.</p>
-    pub fn definitions(&self) -> std::option::Option<&[crate::model::Definition]> {
+    pub fn definitions(&self) -> std::option::Option<& [crate::model::Definition]> {
         self.definitions.as_deref()
     }
 }
 /// See [`EdgeDeployment`](crate::model::EdgeDeployment).
 pub mod edge_deployment {
-
+    
     /// A builder for [`EdgeDeployment`](crate::model::EdgeDeployment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DeploymentType>,
-        pub(crate) failure_handling_policy:
-            std::option::Option<crate::model::FailureHandlingPolicy>,
+        pub(crate) failure_handling_policy: std::option::Option<crate::model::FailureHandlingPolicy>,
         pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::Definition>>,
     }
     impl Builder {
@@ -850,12 +795,8 @@ pub mod edge_deployment {
             self
         }
         /// <p>The name and unique ID of the deployment.</p>
-        pub fn set_deployment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_name = input;
-            self
+        pub fn set_deployment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_name = input; self
         }
         /// <p>The type of the deployment.</p>
         pub fn r#type(mut self, input: crate::model::DeploymentType) -> Self {
@@ -863,28 +804,17 @@ pub mod edge_deployment {
             self
         }
         /// <p>The type of the deployment.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DeploymentType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
-        pub fn failure_handling_policy(
-            mut self,
-            input: crate::model::FailureHandlingPolicy,
-        ) -> Self {
+        pub fn failure_handling_policy(mut self, input: crate::model::FailureHandlingPolicy) -> Self {
             self.failure_handling_policy = Some(input);
             self
         }
         /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
-        pub fn set_failure_handling_policy(
-            mut self,
-            input: std::option::Option<crate::model::FailureHandlingPolicy>,
-        ) -> Self {
-            self.failure_handling_policy = input;
-            self
+        pub fn set_failure_handling_policy(mut self, input: std::option::Option<crate::model::FailureHandlingPolicy>) -> Self {
+            self.failure_handling_policy = input; self
         }
         /// Appends an item to `definitions`.
         ///
@@ -893,28 +823,30 @@ pub mod edge_deployment {
         /// <p>Returns a list of Definition objects.</p>
         pub fn definitions(mut self, input: crate::model::Definition) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input);
-            self.definitions = Some(v);
-            self
+                            v.push(input);
+                            self.definitions = Some(v);
+                            self
         }
         /// <p>Returns a list of Definition objects.</p>
-        pub fn set_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Definition>>,
-        ) -> Self {
-            self.definitions = input;
-            self
+        pub fn set_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Definition>>) -> Self {
+            self.definitions = input; self
         }
         /// Consumes the builder and constructs a [`EdgeDeployment`](crate::model::EdgeDeployment).
         pub fn build(self) -> crate::model::EdgeDeployment {
             crate::model::EdgeDeployment {
-                deployment_name: self.deployment_name,
-                r#type: self.r#type,
-                failure_handling_policy: self.failure_handling_policy,
-                definitions: self.definitions,
+                deployment_name: self.deployment_name
+                ,
+                r#type: self.r#type
+                ,
+                failure_handling_policy: self.failure_handling_policy
+                ,
+                definitions: self.definitions
+                ,
             }
         }
     }
+    
+    
 }
 impl EdgeDeployment {
     /// Creates a new builder-style object to manufacture [`EdgeDeployment`](crate::model::EdgeDeployment).
@@ -926,7 +858,7 @@ impl EdgeDeployment {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Definition {
+pub struct Definition  {
     /// <p>The unique model handle.</p>
     #[doc(hidden)]
     pub model_handle: std::option::Option<std::string::String>,
@@ -942,25 +874,25 @@ pub struct Definition {
 }
 impl Definition {
     /// <p>The unique model handle.</p>
-    pub fn model_handle(&self) -> std::option::Option<&str> {
+    pub fn model_handle(&self) -> std::option::Option<& str> {
         self.model_handle.as_deref()
     }
     /// <p>The absolute S3 location of the model.</p>
-    pub fn s3_url(&self) -> std::option::Option<&str> {
+    pub fn s3_url(&self) -> std::option::Option<& str> {
         self.s3_url.as_deref()
     }
     /// <p>The checksum information of the model.</p>
-    pub fn checksum(&self) -> std::option::Option<&crate::model::Checksum> {
+    pub fn checksum(&self) -> std::option::Option<& crate::model::Checksum> {
         self.checksum.as_ref()
     }
     /// <p>The desired state of the model.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ModelState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ModelState> {
         self.state.as_ref()
     }
 }
 /// See [`Definition`](crate::model::Definition).
 pub mod definition {
-
+    
     /// A builder for [`Definition`](crate::model::Definition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -977,8 +909,7 @@ pub mod definition {
         }
         /// <p>The unique model handle.</p>
         pub fn set_model_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_handle = input;
-            self
+            self.model_handle = input; self
         }
         /// <p>The absolute S3 location of the model.</p>
         pub fn s3_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -987,8 +918,7 @@ pub mod definition {
         }
         /// <p>The absolute S3 location of the model.</p>
         pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_url = input;
-            self
+            self.s3_url = input; self
         }
         /// <p>The checksum information of the model.</p>
         pub fn checksum(mut self, input: crate::model::Checksum) -> Self {
@@ -997,8 +927,7 @@ pub mod definition {
         }
         /// <p>The checksum information of the model.</p>
         pub fn set_checksum(mut self, input: std::option::Option<crate::model::Checksum>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The desired state of the model.</p>
         pub fn state(mut self, input: crate::model::ModelState) -> Self {
@@ -1007,19 +936,24 @@ pub mod definition {
         }
         /// <p>The desired state of the model.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ModelState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`Definition`](crate::model::Definition).
         pub fn build(self) -> crate::model::Definition {
             crate::model::Definition {
-                model_handle: self.model_handle,
-                s3_url: self.s3_url,
-                checksum: self.checksum,
-                state: self.state,
+                model_handle: self.model_handle
+                ,
+                s3_url: self.s3_url
+                ,
+                checksum: self.checksum
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl Definition {
     /// Creates a new builder-style object to manufacture [`Definition`](crate::model::Definition).
@@ -1031,7 +965,7 @@ impl Definition {
 /// <p>Information about the checksum of a model deployed on a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Checksum {
+pub struct Checksum  {
     /// <p>The type of the checksum.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ChecksumType>,
@@ -1041,17 +975,17 @@ pub struct Checksum {
 }
 impl Checksum {
     /// <p>The type of the checksum.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ChecksumType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ChecksumType> {
         self.r#type.as_ref()
     }
     /// <p>The checksum of the model.</p>
-    pub fn sum(&self) -> std::option::Option<&str> {
+    pub fn sum(&self) -> std::option::Option<& str> {
         self.sum.as_deref()
     }
 }
 /// See [`Checksum`](crate::model::Checksum).
 pub mod checksum {
-
+    
     /// A builder for [`Checksum`](crate::model::Checksum).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1066,8 +1000,7 @@ pub mod checksum {
         }
         /// <p>The type of the checksum.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChecksumType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The checksum of the model.</p>
         pub fn sum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1076,17 +1009,20 @@ pub mod checksum {
         }
         /// <p>The checksum of the model.</p>
         pub fn set_sum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sum = input;
-            self
+            self.sum = input; self
         }
         /// Consumes the builder and constructs a [`Checksum`](crate::model::Checksum).
         pub fn build(self) -> crate::model::Checksum {
             crate::model::Checksum {
-                r#type: self.r#type,
-                sum: self.sum,
+                r#type: self.r#type
+                ,
+                sum: self.sum
+                ,
             }
         }
     }
+    
+    
 }
 impl Checksum {
     /// Creates a new builder-style object to manufacture [`Checksum`](crate::model::Checksum).
@@ -1101,9 +1037,9 @@ impl Checksum {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let checksumtype = unimplemented!();
 /// match checksumtype {
@@ -1124,54 +1060,48 @@ impl Checksum {
 /// Specifically, when `checksumtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChecksumType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChecksumType {
     #[allow(missing_docs)] // documentation missing in model
     Sha1,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChecksumType {
     fn from(s: &str) -> Self {
         match s {
             "SHA1" => ChecksumType::Sha1,
-            other => ChecksumType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChecksumType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChecksumType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChecksumType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChecksumType::from(s))
+                }
+            }
 impl ChecksumType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChecksumType::Sha1 => "SHA1",
-            ChecksumType::Unknown(value) => value.as_str(),
+            ChecksumType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SHA1"]
+        &[
+            "SHA1"
+        ]
     }
 }
 impl AsRef<str> for ChecksumType {
@@ -1186,9 +1116,9 @@ impl AsRef<str> for ChecksumType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failurehandlingpolicy = unimplemented!();
 /// match failurehandlingpolicy {
@@ -1210,60 +1140,52 @@ impl AsRef<str> for ChecksumType {
 /// Specifically, when `failurehandlingpolicy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailureHandlingPolicy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailureHandlingPolicy {
     #[allow(missing_docs)] // documentation missing in model
     DoNothing,
     #[allow(missing_docs)] // documentation missing in model
     RollbackOnFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureHandlingPolicy {
     fn from(s: &str) -> Self {
         match s {
             "DO_NOTHING" => FailureHandlingPolicy::DoNothing,
             "ROLLBACK_ON_FAILURE" => FailureHandlingPolicy::RollbackOnFailure,
-            other => {
-                FailureHandlingPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FailureHandlingPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FailureHandlingPolicy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailureHandlingPolicy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailureHandlingPolicy::from(s))
+                }
+            }
 impl FailureHandlingPolicy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailureHandlingPolicy::DoNothing => "DO_NOTHING",
             FailureHandlingPolicy::RollbackOnFailure => "ROLLBACK_ON_FAILURE",
-            FailureHandlingPolicy::Unknown(value) => value.as_str(),
+            FailureHandlingPolicy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DO_NOTHING", "ROLLBACK_ON_FAILURE"]
+        &[
+            "DO_NOTHING", "ROLLBACK_ON_FAILURE"
+        ]
     }
 }
 impl AsRef<str> for FailureHandlingPolicy {
@@ -1278,9 +1200,9 @@ impl AsRef<str> for FailureHandlingPolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymenttype = unimplemented!();
 /// match deploymenttype {
@@ -1301,54 +1223,48 @@ impl AsRef<str> for FailureHandlingPolicy {
 /// Specifically, when `deploymenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     Model,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentType {
     fn from(s: &str) -> Self {
         match s {
             "Model" => DeploymentType::Model,
-            other => DeploymentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentType::from(s))
+                }
+            }
 impl DeploymentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentType::Model => "Model",
-            DeploymentType::Unknown(value) => value.as_str(),
+            DeploymentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Model"]
+        &[
+            "Model"
+        ]
     }
 }
 impl AsRef<str> for DeploymentType {
@@ -1356,3 +1272,4 @@ impl AsRef<str> for DeploymentType {
         self.as_str()
     }
 }
+

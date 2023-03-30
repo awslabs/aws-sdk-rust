@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateSubscriberError {
     /// Kind of error that occurred.
-    pub kind: UpdateSubscriberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateSubscriberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateSubscriberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -32,26 +32,40 @@ pub enum UpdateSubscriberErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSubscriberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateSubscriberErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateSubscriberErrorKind::DuplicateRecordException(_inner) => _inner.fmt(f),
-            UpdateSubscriberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            UpdateSubscriberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateSubscriberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateSubscriberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateSubscriberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateSubscriberErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSubscriberErrorKind::DuplicateRecordException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSubscriberErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSubscriberErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSubscriberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSubscriberErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSubscriberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -65,73 +79,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateSubscriberError {
 }
 impl UpdateSubscriberError {
     /// Creates a new `UpdateSubscriberError`.
-    pub fn new(kind: UpdateSubscriberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateSubscriberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateSubscriberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateSubscriberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateSubscriberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateSubscriberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSubscriberErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateSubscriberErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSubscriberErrorKind::DuplicateRecordException(_)
-        )
+        matches!(&self.kind, UpdateSubscriberErrorKind::DuplicateRecordException(_))
     }
     /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSubscriberErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateSubscriberErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSubscriberErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateSubscriberErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -139,22 +141,33 @@ impl UpdateSubscriberError {
     }
     /// Returns `true` if the error kind is `UpdateSubscriberErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSubscriberErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, UpdateSubscriberErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for UpdateSubscriberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateSubscriberErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateSubscriberErrorKind::DuplicateRecordException(_inner) => Some(_inner),
-            UpdateSubscriberErrorKind::InternalErrorException(_inner) => Some(_inner),
-            UpdateSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateSubscriberErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateSubscriberErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSubscriberErrorKind::DuplicateRecordException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSubscriberErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSubscriberErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSubscriberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSubscriberErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSubscriberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -162,22 +175,20 @@ impl std::error::Error for UpdateSubscriberError {
 /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -187,7 +198,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -201,16 +212,18 @@ pub mod throttling_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -222,22 +235,20 @@ impl ThrottlingException {
 /// <p>We can’t locate the resource that you specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -247,7 +258,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -261,16 +272,18 @@ pub mod not_found_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -282,22 +295,20 @@ impl NotFoundException {
 /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterException {
+pub struct InvalidParameterException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -307,7 +318,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException).
 pub mod invalid_parameter_exception {
-
+    
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -321,16 +332,18 @@ pub mod invalid_parameter_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
         pub fn build(self) -> crate::error::InvalidParameterException {
             crate::error::InvalidParameterException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
@@ -342,22 +355,20 @@ impl InvalidParameterException {
 /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalErrorException {
+pub struct InternalErrorException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalErrorException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -367,7 +378,7 @@ impl std::fmt::Display for InternalErrorException {
 impl std::error::Error for InternalErrorException {}
 /// See [`InternalErrorException`](crate::error::InternalErrorException).
 pub mod internal_error_exception {
-
+    
     /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -381,16 +392,18 @@ pub mod internal_error_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalErrorException`](crate::error::InternalErrorException).
         pub fn build(self) -> crate::error::InternalErrorException {
             crate::error::InternalErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalErrorException {
     /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException).
@@ -402,22 +415,20 @@ impl InternalErrorException {
 /// <p>The budget name already exists. Budget names must be unique within an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateRecordException {
+pub struct DuplicateRecordException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateRecordException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateRecordException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateRecordException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -427,7 +438,7 @@ impl std::fmt::Display for DuplicateRecordException {
 impl std::error::Error for DuplicateRecordException {}
 /// See [`DuplicateRecordException`](crate::error::DuplicateRecordException).
 pub mod duplicate_record_exception {
-
+    
     /// A builder for [`DuplicateRecordException`](crate::error::DuplicateRecordException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -441,16 +452,18 @@ pub mod duplicate_record_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateRecordException`](crate::error::DuplicateRecordException).
         pub fn build(self) -> crate::error::DuplicateRecordException {
             crate::error::DuplicateRecordException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateRecordException {
     /// Creates a new builder-style object to manufacture [`DuplicateRecordException`](crate::error::DuplicateRecordException).
@@ -462,22 +475,20 @@ impl DuplicateRecordException {
 /// <p>You are not authorized to use this operation with the given parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -487,7 +498,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -501,16 +512,18 @@ pub mod access_denied_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -524,15 +537,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateNotificationError {
     /// Kind of error that occurred.
-    pub kind: UpdateNotificationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateNotificationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateNotificationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -552,26 +565,40 @@ pub enum UpdateNotificationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateNotificationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateNotificationErrorKind::DuplicateRecordException(_inner) => _inner.fmt(f),
-            UpdateNotificationErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            UpdateNotificationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateNotificationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateNotificationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateNotificationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateNotificationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateNotificationErrorKind::DuplicateRecordException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateNotificationErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateNotificationErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateNotificationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateNotificationErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateNotificationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -585,99 +612,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateNotificationError {
 }
 impl UpdateNotificationError {
     /// Creates a new `UpdateNotificationError`.
-    pub fn new(kind: UpdateNotificationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateNotificationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateNotificationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateNotificationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateNotificationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateNotificationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateNotificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateNotificationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateNotificationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateNotificationErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateNotificationErrorKind::DuplicateRecordException(_)
-        )
+        matches!(&self.kind, UpdateNotificationErrorKind::DuplicateRecordException(_))
     }
     /// Returns `true` if the error kind is `UpdateNotificationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateNotificationErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateNotificationErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateNotificationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateNotificationErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateNotificationErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateNotificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateNotificationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateNotificationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateNotificationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateNotificationErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, UpdateNotificationErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for UpdateNotificationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateNotificationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateNotificationErrorKind::DuplicateRecordException(_inner) => Some(_inner),
-            UpdateNotificationErrorKind::InternalErrorException(_inner) => Some(_inner),
-            UpdateNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateNotificationErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateNotificationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateNotificationErrorKind::DuplicateRecordException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateNotificationErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateNotificationErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateNotificationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateNotificationErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateNotificationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -687,15 +710,15 @@ impl std::error::Error for UpdateNotificationError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateBudgetActionError {
     /// Kind of error that occurred.
-    pub kind: UpdateBudgetActionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateBudgetActionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateBudgetActionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -715,26 +738,40 @@ pub enum UpdateBudgetActionErrorKind {
     ResourceLockedException(crate::error::ResourceLockedException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateBudgetActionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateBudgetActionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            UpdateBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateBudgetActionErrorKind::ResourceLockedException(_inner) => _inner.fmt(f),
-            UpdateBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetActionErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetActionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetActionErrorKind::ResourceLockedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetActionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetActionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -748,99 +785,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateBudgetActionError {
 }
 impl UpdateBudgetActionError {
     /// Creates a new `UpdateBudgetActionError`.
-    pub fn new(kind: UpdateBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateBudgetActionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateBudgetActionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateBudgetActionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateBudgetActionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateBudgetActionErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateBudgetActionErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateBudgetActionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateBudgetActionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateBudgetActionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateBudgetActionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::ResourceLockedException`.
     pub fn is_resource_locked_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateBudgetActionErrorKind::ResourceLockedException(_)
-        )
+        matches!(&self.kind, UpdateBudgetActionErrorKind::ResourceLockedException(_))
     }
     /// Returns `true` if the error kind is `UpdateBudgetActionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateBudgetActionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, UpdateBudgetActionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for UpdateBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateBudgetActionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateBudgetActionErrorKind::InternalErrorException(_inner) => Some(_inner),
-            UpdateBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
-            UpdateBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetActionErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetActionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetActionErrorKind::ResourceLockedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetActionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetActionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -848,22 +881,20 @@ impl std::error::Error for UpdateBudgetActionError {
 /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceLockedException {
+pub struct ResourceLockedException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceLockedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceLockedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLockedException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -873,7 +904,7 @@ impl std::fmt::Display for ResourceLockedException {
 impl std::error::Error for ResourceLockedException {}
 /// See [`ResourceLockedException`](crate::error::ResourceLockedException).
 pub mod resource_locked_exception {
-
+    
     /// A builder for [`ResourceLockedException`](crate::error::ResourceLockedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -887,16 +918,18 @@ pub mod resource_locked_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceLockedException`](crate::error::ResourceLockedException).
         pub fn build(self) -> crate::error::ResourceLockedException {
             crate::error::ResourceLockedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceLockedException {
     /// Creates a new builder-style object to manufacture [`ResourceLockedException`](crate::error::ResourceLockedException).
@@ -910,15 +943,15 @@ impl ResourceLockedException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateBudgetError {
     /// Kind of error that occurred.
-    pub kind: UpdateBudgetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateBudgetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateBudgetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -936,25 +969,37 @@ pub enum UpdateBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateBudgetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateBudgetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            UpdateBudgetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            UpdateBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateBudgetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateBudgetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -968,46 +1013,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateBudgetError {
 }
 impl UpdateBudgetError {
     /// Creates a new `UpdateBudgetError`.
-    pub fn new(kind: UpdateBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateBudgetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateBudgetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateBudgetErrorKind::AccessDeniedException(_))
@@ -1018,10 +1063,7 @@ impl UpdateBudgetError {
     }
     /// Returns `true` if the error kind is `UpdateBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateBudgetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, UpdateBudgetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `UpdateBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1035,12 +1077,24 @@ impl UpdateBudgetError {
 impl std::error::Error for UpdateBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateBudgetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
-            UpdateBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            UpdateBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateBudgetErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateBudgetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateBudgetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1050,15 +1104,15 @@ impl std::error::Error for UpdateBudgetError {
 #[derive(std::fmt::Debug)]
 pub struct ExecuteBudgetActionError {
     /// Kind of error that occurred.
-    pub kind: ExecuteBudgetActionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExecuteBudgetActionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExecuteBudgetActionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ExecuteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1078,26 +1132,40 @@ pub enum ExecuteBudgetActionErrorKind {
     ResourceLockedException(crate::error::ResourceLockedException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteBudgetActionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ExecuteBudgetActionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            ExecuteBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            ExecuteBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ExecuteBudgetActionErrorKind::ResourceLockedException(_inner) => _inner.fmt(f),
-            ExecuteBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ExecuteBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ExecuteBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteBudgetActionErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteBudgetActionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteBudgetActionErrorKind::ResourceLockedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteBudgetActionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteBudgetActionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1111,99 +1179,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExecuteBudgetActionError {
 }
 impl ExecuteBudgetActionError {
     /// Creates a new `ExecuteBudgetActionError`.
-    pub fn new(kind: ExecuteBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExecuteBudgetActionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExecuteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExecuteBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExecuteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExecuteBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExecuteBudgetActionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExecuteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExecuteBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExecuteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteBudgetActionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExecuteBudgetActionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteBudgetActionErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, ExecuteBudgetActionErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteBudgetActionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, ExecuteBudgetActionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteBudgetActionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ExecuteBudgetActionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::ResourceLockedException`.
     pub fn is_resource_locked_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteBudgetActionErrorKind::ResourceLockedException(_)
-        )
+        matches!(&self.kind, ExecuteBudgetActionErrorKind::ResourceLockedException(_))
     }
     /// Returns `true` if the error kind is `ExecuteBudgetActionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteBudgetActionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ExecuteBudgetActionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for ExecuteBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteBudgetActionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ExecuteBudgetActionErrorKind::InternalErrorException(_inner) => Some(_inner),
-            ExecuteBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ExecuteBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
-            ExecuteBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
-            ExecuteBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExecuteBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
+            ExecuteBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteBudgetActionErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteBudgetActionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteBudgetActionErrorKind::ResourceLockedException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteBudgetActionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteBudgetActionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1213,17 +1277,15 @@ impl std::error::Error for ExecuteBudgetActionError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeSubscribersForNotificationError {
     /// Kind of error that occurred.
-    pub kind: DescribeSubscribersForNotificationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeSubscribersForNotificationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeSubscribersForNotificationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1245,39 +1307,43 @@ pub enum DescribeSubscribersForNotificationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSubscribersForNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeSubscribersForNotificationErrorKind::AccessDeniedException(_inner) => {
+            DescribeSubscribersForNotificationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSubscribersForNotificationErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSubscribersForNotificationErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSubscribersForNotificationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSubscribersForNotificationErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSubscribersForNotificationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeSubscribersForNotificationErrorKind::InternalErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeSubscribersForNotificationErrorKind::InvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeSubscribersForNotificationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeSubscribersForNotificationErrorKind::ThrottlingException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeSubscribersForNotificationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1291,126 +1357,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeSubscribersForNotific
 }
 impl DescribeSubscribersForNotificationError {
     /// Creates a new `DescribeSubscribersForNotificationError`.
-    pub fn new(
-        kind: DescribeSubscribersForNotificationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeSubscribersForNotificationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeSubscribersForNotificationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeSubscribersForNotificationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeSubscribersForNotificationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeSubscribersForNotificationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeSubscribersForNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSubscribersForNotificationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeSubscribersForNotificationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSubscribersForNotificationErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeSubscribersForNotificationErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSubscribersForNotificationErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeSubscribersForNotificationErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSubscribersForNotificationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeSubscribersForNotificationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeSubscribersForNotificationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSubscribersForNotificationErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeSubscribersForNotificationErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeSubscribersForNotificationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeSubscribersForNotificationErrorKind::AccessDeniedException(_inner) => {
+            DescribeSubscribersForNotificationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSubscribersForNotificationErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSubscribersForNotificationErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSubscribersForNotificationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSubscribersForNotificationErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSubscribersForNotificationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeSubscribersForNotificationErrorKind::ExpiredNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            DescribeSubscribersForNotificationErrorKind::InternalErrorException(_inner) => {
-                Some(_inner)
-            }
-            DescribeSubscribersForNotificationErrorKind::InvalidNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            DescribeSubscribersForNotificationErrorKind::InvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DescribeSubscribersForNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeSubscribersForNotificationErrorKind::ThrottlingException(_inner) => {
-                Some(_inner)
-            }
-            DescribeSubscribersForNotificationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1418,22 +1460,20 @@ impl std::error::Error for DescribeSubscribersForNotificationError {
 /// <p>The pagination token is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidNextTokenException {
+pub struct InvalidNextTokenException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -1443,7 +1483,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
 pub mod invalid_next_token_exception {
-
+    
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1457,16 +1497,18 @@ pub mod invalid_next_token_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
         pub fn build(self) -> crate::error::InvalidNextTokenException {
             crate::error::InvalidNextTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidNextTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
@@ -1478,22 +1520,20 @@ impl InvalidNextTokenException {
 /// <p>The pagination token expired.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpiredNextTokenException {
+pub struct ExpiredNextTokenException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExpiredNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ExpiredNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredNextTokenException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1503,7 +1543,7 @@ impl std::fmt::Display for ExpiredNextTokenException {
 impl std::error::Error for ExpiredNextTokenException {}
 /// See [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException).
 pub mod expired_next_token_exception {
-
+    
     /// A builder for [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1517,16 +1557,18 @@ pub mod expired_next_token_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException).
         pub fn build(self) -> crate::error::ExpiredNextTokenException {
             crate::error::ExpiredNextTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExpiredNextTokenException {
     /// Creates a new builder-style object to manufacture [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException).
@@ -1540,17 +1582,15 @@ impl ExpiredNextTokenException {
 #[derive(std::fmt::Debug)]
 pub struct DescribeNotificationsForBudgetError {
     /// Kind of error that occurred.
-    pub kind: DescribeNotificationsForBudgetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeNotificationsForBudgetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeNotificationsForBudgetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1572,35 +1612,43 @@ pub enum DescribeNotificationsForBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeNotificationsForBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeNotificationsForBudgetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException(_inner) => {
+            DescribeNotificationsForBudgetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeNotificationsForBudgetErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeNotificationsForBudgetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeNotificationsForBudgetErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeNotificationsForBudgetErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeNotificationsForBudgetErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeNotificationsForBudgetErrorKind::InternalErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeNotificationsForBudgetErrorKind::InvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeNotificationsForBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeNotificationsForBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeNotificationsForBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1614,120 +1662,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeNotificationsForBudge
 }
 impl DescribeNotificationsForBudgetError {
     /// Creates a new `DescribeNotificationsForBudgetError`.
-    pub fn new(
-        kind: DescribeNotificationsForBudgetErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeNotificationsForBudgetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeNotificationsForBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeNotificationsForBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeNotificationsForBudgetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeNotificationsForBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeNotificationsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeNotificationsForBudgetErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeNotificationsForBudgetErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeNotificationsForBudgetErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeNotificationsForBudgetErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeNotificationsForBudgetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeNotificationsForBudgetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeNotificationsForBudgetErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeNotificationsForBudgetErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeNotificationsForBudgetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeNotificationsForBudgetErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeNotificationsForBudgetErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeNotificationsForBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeNotificationsForBudgetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException(_inner) => {
+            DescribeNotificationsForBudgetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeNotificationsForBudgetErrorKind::ExpiredNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeNotificationsForBudgetErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeNotificationsForBudgetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeNotificationsForBudgetErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeNotificationsForBudgetErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeNotificationsForBudgetErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeNotificationsForBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DescribeNotificationsForBudgetErrorKind::InvalidNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            DescribeNotificationsForBudgetErrorKind::InvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DescribeNotificationsForBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeNotificationsForBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeNotificationsForBudgetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1737,15 +1767,15 @@ impl std::error::Error for DescribeNotificationsForBudgetError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBudgetsError {
     /// Kind of error that occurred.
-    pub kind: DescribeBudgetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBudgetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeBudgetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1767,27 +1797,43 @@ pub enum DescribeBudgetsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBudgetsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeBudgetsErrorKind::ExpiredNextTokenException(_inner) => _inner.fmt(f),
-            DescribeBudgetsErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            DescribeBudgetsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            DescribeBudgetsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeBudgetsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeBudgetsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeBudgetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeBudgetsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetsErrorKind::ExpiredNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetsErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetsErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1801,80 +1847,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetsError {
 }
 impl DescribeBudgetsError {
     /// Creates a new `DescribeBudgetsError`.
-    pub fn new(kind: DescribeBudgetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBudgetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBudgetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBudgetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBudgetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBudgetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBudgetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBudgetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBudgetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBudgetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBudgetsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetsErrorKind::ExpiredNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetsErrorKind::ExpiredNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetsErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeBudgetsErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetsErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetsErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeBudgetsErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1888,14 +1919,30 @@ impl DescribeBudgetsError {
 impl std::error::Error for DescribeBudgetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBudgetsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeBudgetsErrorKind::ExpiredNextTokenException(_inner) => Some(_inner),
-            DescribeBudgetsErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DescribeBudgetsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            DescribeBudgetsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeBudgetsErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeBudgetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeBudgetsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetsErrorKind::ExpiredNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetsErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetsErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1905,17 +1952,15 @@ impl std::error::Error for DescribeBudgetsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistoryError {
     /// Kind of error that occurred.
-    pub kind: DescribeBudgetPerformanceHistoryErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBudgetPerformanceHistoryErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetPerformanceHistoryError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1937,37 +1982,43 @@ pub enum DescribeBudgetPerformanceHistoryErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetPerformanceHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException(_inner) => {
+            DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeBudgetPerformanceHistoryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1981,124 +2032,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetPerformanceHist
 }
 impl DescribeBudgetPerformanceHistoryError {
     /// Creates a new `DescribeBudgetPerformanceHistoryError`.
-    pub fn new(
-        kind: DescribeBudgetPerformanceHistoryErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBudgetPerformanceHistoryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBudgetPerformanceHistoryError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBudgetPerformanceHistoryErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBudgetPerformanceHistoryError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBudgetPerformanceHistoryError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBudgetPerformanceHistoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeBudgetPerformanceHistoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException(_inner) => {
+            DescribeBudgetPerformanceHistoryErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetPerformanceHistoryErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeBudgetPerformanceHistoryErrorKind::ExpiredNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetPerformanceHistoryErrorKind::InternalErrorException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetPerformanceHistoryErrorKind::InvalidNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetPerformanceHistoryErrorKind::InvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetPerformanceHistoryErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeBudgetPerformanceHistoryErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetPerformanceHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2108,17 +2137,15 @@ impl std::error::Error for DescribeBudgetPerformanceHistoryError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccountError {
     /// Kind of error that occurred.
-    pub kind: DescribeBudgetNotificationsForAccountErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBudgetNotificationsForAccountErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetNotificationsForAccountError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2140,41 +2167,43 @@ pub enum DescribeBudgetNotificationsForAccountErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetNotificationsForAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_inner) => {
+            DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2188,128 +2217,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetNotificationsFo
 }
 impl DescribeBudgetNotificationsForAccountError {
     /// Creates a new `DescribeBudgetNotificationsForAccountError`.
-    pub fn new(
-        kind: DescribeBudgetNotificationsForAccountErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBudgetNotificationsForAccountError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBudgetNotificationsForAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBudgetNotificationsForAccountErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBudgetNotificationsForAccountError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBudgetNotificationsForAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBudgetNotificationsForAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeBudgetNotificationsForAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_inner) => {
+            DescribeBudgetNotificationsForAccountErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeBudgetNotificationsForAccountErrorKind::ExpiredNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::InternalErrorException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::InvalidNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::InvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::ThrottlingException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetNotificationsForAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2319,17 +2322,15 @@ impl std::error::Error for DescribeBudgetNotificationsForAccountError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBudgetActionsForBudgetError {
     /// Kind of error that occurred.
-    pub kind: DescribeBudgetActionsForBudgetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBudgetActionsForBudgetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetActionsForBudgetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2349,32 +2350,40 @@ pub enum DescribeBudgetActionsForBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetActionsForBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionsForBudgetErrorKind::InternalErrorException(_inner) => {
+            DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionsForBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2388,110 +2397,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetActionsForBudge
 }
 impl DescribeBudgetActionsForBudgetError {
     /// Creates a new `DescribeBudgetActionsForBudgetError`.
-    pub fn new(
-        kind: DescribeBudgetActionsForBudgetErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBudgetActionsForBudgetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBudgetActionsForBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBudgetActionsForBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBudgetActionsForBudgetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBudgetActionsForBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBudgetActionsForBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForBudgetErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForBudgetErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForBudgetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeBudgetActionsForBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeBudgetActionsForBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException(_inner) => {
+            DescribeBudgetActionsForBudgetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForBudgetErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeBudgetActionsForBudgetErrorKind::InvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetActionsForBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeBudgetActionsForBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetActionsForBudgetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2501,17 +2495,15 @@ impl std::error::Error for DescribeBudgetActionsForBudgetError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBudgetActionsForAccountError {
     /// Kind of error that occurred.
-    pub kind: DescribeBudgetActionsForAccountErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBudgetActionsForAccountErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetActionsForAccountError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2529,33 +2521,37 @@ pub enum DescribeBudgetActionsForAccountErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetActionsForAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBudgetActionsForAccountErrorKind::AccessDeniedException(_inner) => {
+            DescribeBudgetActionsForAccountErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeBudgetActionsForAccountErrorKind::InternalErrorException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionsForAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2569,104 +2565,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetActionsForAccou
 }
 impl DescribeBudgetActionsForAccountError {
     /// Creates a new `DescribeBudgetActionsForAccountError`.
-    pub fn new(
-        kind: DescribeBudgetActionsForAccountErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBudgetActionsForAccountError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBudgetActionsForAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBudgetActionsForAccountErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBudgetActionsForAccountError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBudgetActionsForAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBudgetActionsForAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForAccountErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForAccountErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForAccountErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForAccountErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionsForAccountErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeBudgetActionsForAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBudgetActionsForAccountErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeBudgetActionsForAccountErrorKind::InternalErrorException(_inner) => {
+            DescribeBudgetActionsForAccountErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionsForAccountErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeBudgetActionsForAccountErrorKind::InvalidNextTokenException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetActionsForAccountErrorKind::InvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetActionsForAccountErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetActionsForAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2676,17 +2656,15 @@ impl std::error::Error for DescribeBudgetActionsForAccountError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesError {
     /// Kind of error that occurred.
-    pub kind: DescribeBudgetActionHistoriesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBudgetActionHistoriesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetActionHistoriesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2706,30 +2684,40 @@ pub enum DescribeBudgetActionHistoriesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetActionHistoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBudgetActionHistoriesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionHistoriesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException(_inner) => {
+            DescribeBudgetActionHistoriesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeBudgetActionHistoriesErrorKind::InvalidParameterException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeBudgetActionHistoriesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionHistoriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2743,110 +2731,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetActionHistories
 }
 impl DescribeBudgetActionHistoriesError {
     /// Creates a new `DescribeBudgetActionHistoriesError`.
-    pub fn new(
-        kind: DescribeBudgetActionHistoriesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBudgetActionHistoriesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBudgetActionHistoriesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBudgetActionHistoriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBudgetActionHistoriesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBudgetActionHistoriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBudgetActionHistoriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionHistoriesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionHistoriesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionHistoriesErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionHistoriesErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionHistoriesErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionHistoriesErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionHistoriesErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionHistoriesErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionHistoriesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeBudgetActionHistoriesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBudgetActionHistoriesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeBudgetActionHistoriesErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException(_inner) => {
+            DescribeBudgetActionHistoriesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionHistoriesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeBudgetActionHistoriesErrorKind::InvalidParameterException(_inner) => {
-                Some(_inner)
-            }
-            DescribeBudgetActionHistoriesErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeBudgetActionHistoriesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetActionHistoriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2856,15 +2829,15 @@ impl std::error::Error for DescribeBudgetActionHistoriesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBudgetActionError {
     /// Kind of error that occurred.
-    pub kind: DescribeBudgetActionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBudgetActionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetActionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2882,25 +2855,37 @@ pub enum DescribeBudgetActionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBudgetActionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetActionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2914,95 +2899,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetActionError {
 }
 impl DescribeBudgetActionError {
     /// Creates a new `DescribeBudgetActionError`.
-    pub fn new(kind: DescribeBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBudgetActionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBudgetActionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetActionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetActionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeBudgetActionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBudgetActionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeBudgetActionErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DescribeBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetActionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3012,15 +2990,15 @@ impl std::error::Error for DescribeBudgetActionError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBudgetError {
     /// Kind of error that occurred.
-    pub kind: DescribeBudgetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBudgetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBudgetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3038,25 +3016,37 @@ pub enum DescribeBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBudgetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeBudgetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            DescribeBudgetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DescribeBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeBudgetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBudgetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3070,66 +3060,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBudgetError {
 }
 impl DescribeBudgetError {
     /// Creates a new `DescribeBudgetError`.
-    pub fn new(kind: DescribeBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBudgetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBudgetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBudgetErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DescribeBudgetErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBudgetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DescribeBudgetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -3143,12 +3124,24 @@ impl DescribeBudgetError {
 impl std::error::Error for DescribeBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBudgetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DescribeBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DescribeBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBudgetErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeBudgetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBudgetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3158,15 +3151,15 @@ impl std::error::Error for DescribeBudgetError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteSubscriberError {
     /// Kind of error that occurred.
-    pub kind: DeleteSubscriberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteSubscriberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteSubscriberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3184,25 +3177,37 @@ pub enum DeleteSubscriberErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSubscriberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSubscriberErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteSubscriberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            DeleteSubscriberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteSubscriberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteSubscriberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteSubscriberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteSubscriberErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSubscriberErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSubscriberErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSubscriberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSubscriberErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSubscriberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3216,66 +3221,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteSubscriberError {
 }
 impl DeleteSubscriberError {
     /// Creates a new `DeleteSubscriberError`.
-    pub fn new(kind: DeleteSubscriberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteSubscriberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteSubscriberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteSubscriberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteSubscriberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteSubscriberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSubscriberErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteSubscriberErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSubscriberErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteSubscriberErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSubscriberErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteSubscriberErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -3283,21 +3279,30 @@ impl DeleteSubscriberError {
     }
     /// Returns `true` if the error kind is `DeleteSubscriberErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSubscriberErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DeleteSubscriberErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DeleteSubscriberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSubscriberErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteSubscriberErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DeleteSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteSubscriberErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteSubscriberErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSubscriberErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSubscriberErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSubscriberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSubscriberErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSubscriberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3307,15 +3312,15 @@ impl std::error::Error for DeleteSubscriberError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteNotificationError {
     /// Kind of error that occurred.
-    pub kind: DeleteNotificationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteNotificationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteNotificationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteNotificationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3333,25 +3338,37 @@ pub enum DeleteNotificationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteNotificationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteNotificationErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            DeleteNotificationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteNotificationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteNotificationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteNotificationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteNotificationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteNotificationErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteNotificationErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteNotificationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteNotificationErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteNotificationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3365,91 +3382,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteNotificationError {
 }
 impl DeleteNotificationError {
     /// Creates a new `DeleteNotificationError`.
-    pub fn new(kind: DeleteNotificationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteNotificationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteNotificationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteNotificationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteNotificationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteNotificationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteNotificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteNotificationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteNotificationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteNotificationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteNotificationErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteNotificationErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteNotificationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteNotificationErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteNotificationErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteNotificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteNotificationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteNotificationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteNotificationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteNotificationErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DeleteNotificationErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DeleteNotificationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteNotificationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteNotificationErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DeleteNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteNotificationErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteNotificationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteNotificationErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteNotificationErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteNotificationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteNotificationErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteNotificationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3459,15 +3473,15 @@ impl std::error::Error for DeleteNotificationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteBudgetActionError {
     /// Kind of error that occurred.
-    pub kind: DeleteBudgetActionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteBudgetActionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteBudgetActionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3487,26 +3501,40 @@ pub enum DeleteBudgetActionErrorKind {
     ResourceLockedException(crate::error::ResourceLockedException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteBudgetActionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteBudgetActionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            DeleteBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteBudgetActionErrorKind::ResourceLockedException(_inner) => _inner.fmt(f),
-            DeleteBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetActionErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetActionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetActionErrorKind::ResourceLockedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetActionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetActionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3520,99 +3548,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteBudgetActionError {
 }
 impl DeleteBudgetActionError {
     /// Creates a new `DeleteBudgetActionError`.
-    pub fn new(kind: DeleteBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteBudgetActionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteBudgetActionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBudgetActionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteBudgetActionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBudgetActionErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteBudgetActionErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBudgetActionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteBudgetActionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBudgetActionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteBudgetActionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::ResourceLockedException`.
     pub fn is_resource_locked_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBudgetActionErrorKind::ResourceLockedException(_)
-        )
+        matches!(&self.kind, DeleteBudgetActionErrorKind::ResourceLockedException(_))
     }
     /// Returns `true` if the error kind is `DeleteBudgetActionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBudgetActionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DeleteBudgetActionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DeleteBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteBudgetActionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteBudgetActionErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DeleteBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteBudgetActionErrorKind::ResourceLockedException(_inner) => Some(_inner),
-            DeleteBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetActionErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetActionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetActionErrorKind::ResourceLockedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetActionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetActionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3622,15 +3646,15 @@ impl std::error::Error for DeleteBudgetActionError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteBudgetError {
     /// Kind of error that occurred.
-    pub kind: DeleteBudgetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteBudgetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteBudgetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3648,25 +3672,37 @@ pub enum DeleteBudgetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteBudgetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteBudgetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            DeleteBudgetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DeleteBudgetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteBudgetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBudgetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3680,46 +3716,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteBudgetError {
 }
 impl DeleteBudgetError {
     /// Creates a new `DeleteBudgetError`.
-    pub fn new(kind: DeleteBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteBudgetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteBudgetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteBudgetErrorKind::AccessDeniedException(_))
@@ -3730,10 +3766,7 @@ impl DeleteBudgetError {
     }
     /// Returns `true` if the error kind is `DeleteBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBudgetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DeleteBudgetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DeleteBudgetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -3747,12 +3780,24 @@ impl DeleteBudgetError {
 impl std::error::Error for DeleteBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteBudgetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
-            DeleteBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DeleteBudgetErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteBudgetErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteBudgetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBudgetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3762,15 +3807,15 @@ impl std::error::Error for DeleteBudgetError {
 #[derive(std::fmt::Debug)]
 pub struct CreateSubscriberError {
     /// Kind of error that occurred.
-    pub kind: CreateSubscriberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateSubscriberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateSubscriberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3792,27 +3837,43 @@ pub enum CreateSubscriberErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSubscriberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateSubscriberErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateSubscriberErrorKind::CreationLimitExceededException(_inner) => _inner.fmt(f),
-            CreateSubscriberErrorKind::DuplicateRecordException(_inner) => _inner.fmt(f),
-            CreateSubscriberErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            CreateSubscriberErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            CreateSubscriberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateSubscriberErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateSubscriberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateSubscriberErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSubscriberErrorKind::CreationLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSubscriberErrorKind::DuplicateRecordException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSubscriberErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSubscriberErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSubscriberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSubscriberErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSubscriberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3826,80 +3887,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateSubscriberError {
 }
 impl CreateSubscriberError {
     /// Creates a new `CreateSubscriberError`.
-    pub fn new(kind: CreateSubscriberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateSubscriberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateSubscriberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateSubscriberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateSubscriberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateSubscriberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateSubscriberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateSubscriberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSubscriberErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateSubscriberErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateSubscriberErrorKind::CreationLimitExceededException`.
     pub fn is_creation_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSubscriberErrorKind::CreationLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateSubscriberErrorKind::CreationLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateSubscriberErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSubscriberErrorKind::DuplicateRecordException(_)
-        )
+        matches!(&self.kind, CreateSubscriberErrorKind::DuplicateRecordException(_))
     }
     /// Returns `true` if the error kind is `CreateSubscriberErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSubscriberErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, CreateSubscriberErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateSubscriberErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSubscriberErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateSubscriberErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateSubscriberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -3907,23 +3953,36 @@ impl CreateSubscriberError {
     }
     /// Returns `true` if the error kind is `CreateSubscriberErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSubscriberErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, CreateSubscriberErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for CreateSubscriberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateSubscriberErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateSubscriberErrorKind::CreationLimitExceededException(_inner) => Some(_inner),
-            CreateSubscriberErrorKind::DuplicateRecordException(_inner) => Some(_inner),
-            CreateSubscriberErrorKind::InternalErrorException(_inner) => Some(_inner),
-            CreateSubscriberErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreateSubscriberErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateSubscriberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateSubscriberErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateSubscriberErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSubscriberErrorKind::CreationLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSubscriberErrorKind::DuplicateRecordException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSubscriberErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSubscriberErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSubscriberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSubscriberErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSubscriberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3931,22 +3990,20 @@ impl std::error::Error for CreateSubscriberError {
 /// <p>You've exceeded the notification or subscriber limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreationLimitExceededException {
+pub struct CreationLimitExceededException  {
     /// <p>The error message the exception carries.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CreationLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CreationLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CreationLimitExceededException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -3956,7 +4013,7 @@ impl std::fmt::Display for CreationLimitExceededException {
 impl std::error::Error for CreationLimitExceededException {}
 /// See [`CreationLimitExceededException`](crate::error::CreationLimitExceededException).
 pub mod creation_limit_exceeded_exception {
-
+    
     /// A builder for [`CreationLimitExceededException`](crate::error::CreationLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3970,16 +4027,18 @@ pub mod creation_limit_exceeded_exception {
         }
         /// <p>The error message the exception carries.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CreationLimitExceededException`](crate::error::CreationLimitExceededException).
         pub fn build(self) -> crate::error::CreationLimitExceededException {
             crate::error::CreationLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CreationLimitExceededException {
     /// Creates a new builder-style object to manufacture [`CreationLimitExceededException`](crate::error::CreationLimitExceededException).
@@ -3993,15 +4052,15 @@ impl CreationLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct CreateNotificationError {
     /// Kind of error that occurred.
-    pub kind: CreateNotificationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateNotificationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateNotificationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4023,27 +4082,43 @@ pub enum CreateNotificationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateNotificationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateNotificationErrorKind::CreationLimitExceededException(_inner) => _inner.fmt(f),
-            CreateNotificationErrorKind::DuplicateRecordException(_inner) => _inner.fmt(f),
-            CreateNotificationErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            CreateNotificationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            CreateNotificationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateNotificationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateNotificationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateNotificationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateNotificationErrorKind::CreationLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateNotificationErrorKind::DuplicateRecordException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateNotificationErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateNotificationErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateNotificationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateNotificationErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateNotificationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4057,107 +4132,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateNotificationError {
 }
 impl CreateNotificationError {
     /// Creates a new `CreateNotificationError`.
-    pub fn new(kind: CreateNotificationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateNotificationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateNotificationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateNotificationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateNotificationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateNotificationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateNotificationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateNotificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateNotificationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateNotificationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateNotificationErrorKind::CreationLimitExceededException`.
     pub fn is_creation_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateNotificationErrorKind::CreationLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateNotificationErrorKind::CreationLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateNotificationErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateNotificationErrorKind::DuplicateRecordException(_)
-        )
+        matches!(&self.kind, CreateNotificationErrorKind::DuplicateRecordException(_))
     }
     /// Returns `true` if the error kind is `CreateNotificationErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateNotificationErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, CreateNotificationErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateNotificationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateNotificationErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateNotificationErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateNotificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateNotificationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateNotificationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateNotificationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateNotificationErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, CreateNotificationErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for CreateNotificationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateNotificationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateNotificationErrorKind::CreationLimitExceededException(_inner) => Some(_inner),
-            CreateNotificationErrorKind::DuplicateRecordException(_inner) => Some(_inner),
-            CreateNotificationErrorKind::InternalErrorException(_inner) => Some(_inner),
-            CreateNotificationErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreateNotificationErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateNotificationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateNotificationErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateNotificationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateNotificationErrorKind::CreationLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateNotificationErrorKind::DuplicateRecordException(_inner) =>
+            Some(_inner)
+            ,
+            CreateNotificationErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateNotificationErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateNotificationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateNotificationErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateNotificationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4167,15 +4237,15 @@ impl std::error::Error for CreateNotificationError {
 #[derive(std::fmt::Debug)]
 pub struct CreateBudgetActionError {
     /// Kind of error that occurred.
-    pub kind: CreateBudgetActionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateBudgetActionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateBudgetActionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4197,27 +4267,43 @@ pub enum CreateBudgetActionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBudgetActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateBudgetActionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateBudgetActionErrorKind::CreationLimitExceededException(_inner) => _inner.fmt(f),
-            CreateBudgetActionErrorKind::DuplicateRecordException(_inner) => _inner.fmt(f),
-            CreateBudgetActionErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            CreateBudgetActionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            CreateBudgetActionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateBudgetActionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateBudgetActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetActionErrorKind::CreationLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetActionErrorKind::DuplicateRecordException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetActionErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetActionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetActionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetActionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4231,107 +4317,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateBudgetActionError {
 }
 impl CreateBudgetActionError {
     /// Creates a new `CreateBudgetActionError`.
-    pub fn new(kind: CreateBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateBudgetActionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateBudgetActionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateBudgetActionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateBudgetActionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateBudgetActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetActionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateBudgetActionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::CreationLimitExceededException`.
     pub fn is_creation_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetActionErrorKind::CreationLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateBudgetActionErrorKind::CreationLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetActionErrorKind::DuplicateRecordException(_)
-        )
+        matches!(&self.kind, CreateBudgetActionErrorKind::DuplicateRecordException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetActionErrorKind::InternalErrorException(_)
-        )
+        matches!(&self.kind, CreateBudgetActionErrorKind::InternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetActionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateBudgetActionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetActionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateBudgetActionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetActionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetActionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, CreateBudgetActionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for CreateBudgetActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateBudgetActionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateBudgetActionErrorKind::CreationLimitExceededException(_inner) => Some(_inner),
-            CreateBudgetActionErrorKind::DuplicateRecordException(_inner) => Some(_inner),
-            CreateBudgetActionErrorKind::InternalErrorException(_inner) => Some(_inner),
-            CreateBudgetActionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreateBudgetActionErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateBudgetActionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateBudgetActionErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateBudgetActionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetActionErrorKind::CreationLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetActionErrorKind::DuplicateRecordException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetActionErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetActionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetActionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetActionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetActionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4341,15 +4422,15 @@ impl std::error::Error for CreateBudgetActionError {
 #[derive(std::fmt::Debug)]
 pub struct CreateBudgetError {
     /// Kind of error that occurred.
-    pub kind: CreateBudgetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateBudgetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateBudgetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4369,26 +4450,40 @@ pub enum CreateBudgetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBudgetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateBudgetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateBudgetErrorKind::CreationLimitExceededException(_inner) => _inner.fmt(f),
-            CreateBudgetErrorKind::DuplicateRecordException(_inner) => _inner.fmt(f),
-            CreateBudgetErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
-            CreateBudgetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            CreateBudgetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateBudgetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateBudgetErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetErrorKind::CreationLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetErrorKind::DuplicateRecordException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetErrorKind::InternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBudgetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4402,63 +4497,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateBudgetError {
 }
 impl CreateBudgetError {
     /// Creates a new `CreateBudgetError`.
-    pub fn new(kind: CreateBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateBudgetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateBudgetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateBudgetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateBudgetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateBudgetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateBudgetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateBudgetErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetErrorKind::CreationLimitExceededException`.
     pub fn is_creation_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetErrorKind::CreationLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateBudgetErrorKind::CreationLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetErrorKind::DuplicateRecordException`.
     pub fn is_duplicate_record_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetErrorKind::DuplicateRecordException(_)
-        )
+        matches!(&self.kind, CreateBudgetErrorKind::DuplicateRecordException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -4466,10 +4555,7 @@ impl CreateBudgetError {
     }
     /// Returns `true` if the error kind is `CreateBudgetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBudgetErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, CreateBudgetErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateBudgetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -4479,42 +4565,57 @@ impl CreateBudgetError {
 impl std::error::Error for CreateBudgetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateBudgetErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateBudgetErrorKind::CreationLimitExceededException(_inner) => Some(_inner),
-            CreateBudgetErrorKind::DuplicateRecordException(_inner) => Some(_inner),
-            CreateBudgetErrorKind::InternalErrorException(_inner) => Some(_inner),
-            CreateBudgetErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            CreateBudgetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateBudgetErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateBudgetErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetErrorKind::CreationLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetErrorKind::DuplicateRecordException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetErrorKind::InternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBudgetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

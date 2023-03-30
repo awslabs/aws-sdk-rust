@@ -3,7 +3,7 @@
 /// <p>Describes a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Stack {
+pub struct Stack  {
     /// <p>The ARN of the stack.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -45,74 +45,69 @@ pub struct Stack {
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     #[doc(hidden)]
-    pub streaming_experience_settings:
-        std::option::Option<crate::model::StreamingExperienceSettings>,
+    pub streaming_experience_settings: std::option::Option<crate::model::StreamingExperienceSettings>,
 }
 impl Stack {
     /// <p>The ARN of the stack.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the stack.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The stack name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The time the stack was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn storage_connectors(&self) -> std::option::Option<&[crate::model::StorageConnector]> {
+    pub fn storage_connectors(&self) -> std::option::Option<& [crate::model::StorageConnector]> {
         self.storage_connectors.as_deref()
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
-    pub fn redirect_url(&self) -> std::option::Option<&str> {
+    pub fn redirect_url(&self) -> std::option::Option<& str> {
         self.redirect_url.as_deref()
     }
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    pub fn feedback_url(&self) -> std::option::Option<&str> {
+    pub fn feedback_url(&self) -> std::option::Option<& str> {
         self.feedback_url.as_deref()
     }
     /// <p>The errors for the stack.</p>
-    pub fn stack_errors(&self) -> std::option::Option<&[crate::model::StackError]> {
+    pub fn stack_errors(&self) -> std::option::Option<& [crate::model::StackError]> {
         self.stack_errors.as_deref()
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
-    pub fn user_settings(&self) -> std::option::Option<&[crate::model::UserSetting]> {
+    pub fn user_settings(&self) -> std::option::Option<& [crate::model::UserSetting]> {
         self.user_settings.as_deref()
     }
     /// <p>The persistent application settings for users of the stack.</p>
-    pub fn application_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationSettingsResponse> {
+    pub fn application_settings(&self) -> std::option::Option<& crate::model::ApplicationSettingsResponse> {
         self.application_settings.as_ref()
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
-    pub fn access_endpoints(&self) -> std::option::Option<&[crate::model::AccessEndpoint]> {
+    pub fn access_endpoints(&self) -> std::option::Option<& [crate::model::AccessEndpoint]> {
         self.access_endpoints.as_deref()
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    pub fn embed_host_domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn embed_host_domains(&self) -> std::option::Option<& [std::string::String]> {
         self.embed_host_domains.as_deref()
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn streaming_experience_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::StreamingExperienceSettings> {
+    pub fn streaming_experience_settings(&self) -> std::option::Option<& crate::model::StreamingExperienceSettings> {
         self.streaming_experience_settings.as_ref()
     }
 }
 /// See [`Stack`](crate::model::Stack).
 pub mod stack {
-
+    
     /// A builder for [`Stack`](crate::model::Stack).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -121,19 +116,15 @@ pub mod stack {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) storage_connectors:
-            std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
+        pub(crate) storage_connectors: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
         pub(crate) redirect_url: std::option::Option<std::string::String>,
         pub(crate) feedback_url: std::option::Option<std::string::String>,
         pub(crate) stack_errors: std::option::Option<std::vec::Vec<crate::model::StackError>>,
         pub(crate) user_settings: std::option::Option<std::vec::Vec<crate::model::UserSetting>>,
-        pub(crate) application_settings:
-            std::option::Option<crate::model::ApplicationSettingsResponse>,
-        pub(crate) access_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
+        pub(crate) application_settings: std::option::Option<crate::model::ApplicationSettingsResponse>,
+        pub(crate) access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
         pub(crate) embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) streaming_experience_settings:
-            std::option::Option<crate::model::StreamingExperienceSettings>,
+        pub(crate) streaming_experience_settings: std::option::Option<crate::model::StreamingExperienceSettings>,
     }
     impl Builder {
         /// <p>The ARN of the stack.</p>
@@ -143,8 +134,7 @@ pub mod stack {
         }
         /// <p>The ARN of the stack.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the stack.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,8 +143,7 @@ pub mod stack {
         }
         /// <p>The name of the stack.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description to display.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,8 +152,7 @@ pub mod stack {
         }
         /// <p>The description to display.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The stack name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,8 +161,7 @@ pub mod stack {
         }
         /// <p>The stack name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The time the stack was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -182,12 +169,8 @@ pub mod stack {
             self
         }
         /// <p>The time the stack was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Appends an item to `storage_connectors`.
         ///
@@ -196,17 +179,13 @@ pub mod stack {
         /// <p>The storage connectors to enable.</p>
         pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
             let mut v = self.storage_connectors.unwrap_or_default();
-            v.push(input);
-            self.storage_connectors = Some(v);
-            self
+                            v.push(input);
+                            self.storage_connectors = Some(v);
+                            self
         }
         /// <p>The storage connectors to enable.</p>
-        pub fn set_storage_connectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
-        ) -> Self {
-            self.storage_connectors = input;
-            self
+        pub fn set_storage_connectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>) -> Self {
+            self.storage_connectors = input; self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
         pub fn redirect_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,8 +194,7 @@ pub mod stack {
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
         pub fn set_redirect_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.redirect_url = input;
-            self
+            self.redirect_url = input; self
         }
         /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
         pub fn feedback_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,8 +203,7 @@ pub mod stack {
         }
         /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
         pub fn set_feedback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.feedback_url = input;
-            self
+            self.feedback_url = input; self
         }
         /// Appends an item to `stack_errors`.
         ///
@@ -235,17 +212,13 @@ pub mod stack {
         /// <p>The errors for the stack.</p>
         pub fn stack_errors(mut self, input: crate::model::StackError) -> Self {
             let mut v = self.stack_errors.unwrap_or_default();
-            v.push(input);
-            self.stack_errors = Some(v);
-            self
+                            v.push(input);
+                            self.stack_errors = Some(v);
+                            self
         }
         /// <p>The errors for the stack.</p>
-        pub fn set_stack_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackError>>,
-        ) -> Self {
-            self.stack_errors = input;
-            self
+        pub fn set_stack_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackError>>) -> Self {
+            self.stack_errors = input; self
         }
         /// Appends an item to `user_settings`.
         ///
@@ -254,33 +227,22 @@ pub mod stack {
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
         pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
             let mut v = self.user_settings.unwrap_or_default();
-            v.push(input);
-            self.user_settings = Some(v);
-            self
+                            v.push(input);
+                            self.user_settings = Some(v);
+                            self
         }
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
-        pub fn set_user_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UserSetting>>,
-        ) -> Self {
-            self.user_settings = input;
-            self
+        pub fn set_user_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::UserSetting>>) -> Self {
+            self.user_settings = input; self
         }
         /// <p>The persistent application settings for users of the stack.</p>
-        pub fn application_settings(
-            mut self,
-            input: crate::model::ApplicationSettingsResponse,
-        ) -> Self {
+        pub fn application_settings(mut self, input: crate::model::ApplicationSettingsResponse) -> Self {
             self.application_settings = Some(input);
             self
         }
         /// <p>The persistent application settings for users of the stack.</p>
-        pub fn set_application_settings(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationSettingsResponse>,
-        ) -> Self {
-            self.application_settings = input;
-            self
+        pub fn set_application_settings(mut self, input: std::option::Option<crate::model::ApplicationSettingsResponse>) -> Self {
+            self.application_settings = input; self
         }
         /// Appends an item to `access_endpoints`.
         ///
@@ -289,17 +251,13 @@ pub mod stack {
         /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
         pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input);
-            self.access_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.access_endpoints = Some(v);
+                            self
         }
         /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
-        pub fn set_access_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
-        ) -> Self {
-            self.access_endpoints = input;
-            self
+        pub fn set_access_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>) -> Self {
+            self.access_endpoints = input; self
         }
         /// Appends an item to `embed_host_domains`.
         ///
@@ -308,54 +266,59 @@ pub mod stack {
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
         pub fn embed_host_domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.embed_host_domains.unwrap_or_default();
-            v.push(input.into());
-            self.embed_host_domains = Some(v);
-            self
+                            v.push(input.into());
+                            self.embed_host_domains = Some(v);
+                            self
         }
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-        pub fn set_embed_host_domains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.embed_host_domains = input;
-            self
+        pub fn set_embed_host_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.embed_host_domains = input; self
         }
         /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-        pub fn streaming_experience_settings(
-            mut self,
-            input: crate::model::StreamingExperienceSettings,
-        ) -> Self {
+        pub fn streaming_experience_settings(mut self, input: crate::model::StreamingExperienceSettings) -> Self {
             self.streaming_experience_settings = Some(input);
             self
         }
         /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-        pub fn set_streaming_experience_settings(
-            mut self,
-            input: std::option::Option<crate::model::StreamingExperienceSettings>,
-        ) -> Self {
-            self.streaming_experience_settings = input;
-            self
+        pub fn set_streaming_experience_settings(mut self, input: std::option::Option<crate::model::StreamingExperienceSettings>) -> Self {
+            self.streaming_experience_settings = input; self
         }
         /// Consumes the builder and constructs a [`Stack`](crate::model::Stack).
         pub fn build(self) -> crate::model::Stack {
             crate::model::Stack {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                display_name: self.display_name,
-                created_time: self.created_time,
-                storage_connectors: self.storage_connectors,
-                redirect_url: self.redirect_url,
-                feedback_url: self.feedback_url,
-                stack_errors: self.stack_errors,
-                user_settings: self.user_settings,
-                application_settings: self.application_settings,
-                access_endpoints: self.access_endpoints,
-                embed_host_domains: self.embed_host_domains,
-                streaming_experience_settings: self.streaming_experience_settings,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                display_name: self.display_name
+                ,
+                created_time: self.created_time
+                ,
+                storage_connectors: self.storage_connectors
+                ,
+                redirect_url: self.redirect_url
+                ,
+                feedback_url: self.feedback_url
+                ,
+                stack_errors: self.stack_errors
+                ,
+                user_settings: self.user_settings
+                ,
+                application_settings: self.application_settings
+                ,
+                access_endpoints: self.access_endpoints
+                ,
+                embed_host_domains: self.embed_host_domains
+                ,
+                streaming_experience_settings: self.streaming_experience_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl Stack {
     /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
@@ -367,20 +330,20 @@ impl Stack {
 /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamingExperienceSettings {
+pub struct StreamingExperienceSettings  {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     #[doc(hidden)]
     pub preferred_protocol: std::option::Option<crate::model::PreferredProtocol>,
 }
 impl StreamingExperienceSettings {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
-    pub fn preferred_protocol(&self) -> std::option::Option<&crate::model::PreferredProtocol> {
+    pub fn preferred_protocol(&self) -> std::option::Option<& crate::model::PreferredProtocol> {
         self.preferred_protocol.as_ref()
     }
 }
 /// See [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
 pub mod streaming_experience_settings {
-
+    
     /// A builder for [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -393,20 +356,19 @@ pub mod streaming_experience_settings {
             self
         }
         /// <p>The preferred protocol that you want to use while streaming your application.</p>
-        pub fn set_preferred_protocol(
-            mut self,
-            input: std::option::Option<crate::model::PreferredProtocol>,
-        ) -> Self {
-            self.preferred_protocol = input;
-            self
+        pub fn set_preferred_protocol(mut self, input: std::option::Option<crate::model::PreferredProtocol>) -> Self {
+            self.preferred_protocol = input; self
         }
         /// Consumes the builder and constructs a [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
         pub fn build(self) -> crate::model::StreamingExperienceSettings {
             crate::model::StreamingExperienceSettings {
-                preferred_protocol: self.preferred_protocol,
+                preferred_protocol: self.preferred_protocol
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamingExperienceSettings {
     /// Creates a new builder-style object to manufacture [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
@@ -421,9 +383,9 @@ impl StreamingExperienceSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let preferredprotocol = unimplemented!();
 /// match preferredprotocol {
@@ -445,60 +407,52 @@ impl StreamingExperienceSettings {
 /// Specifically, when `preferredprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PreferredProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PreferredProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Tcp,
     #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PreferredProtocol {
     fn from(s: &str) -> Self {
         match s {
             "TCP" => PreferredProtocol::Tcp,
             "UDP" => PreferredProtocol::Udp,
-            other => {
-                PreferredProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PreferredProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PreferredProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PreferredProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PreferredProtocol::from(s))
+                }
+            }
 impl PreferredProtocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PreferredProtocol::Tcp => "TCP",
             PreferredProtocol::Udp => "UDP",
-            PreferredProtocol::Unknown(value) => value.as_str(),
+            PreferredProtocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TCP", "UDP"]
+        &[
+            "TCP", "UDP"
+        ]
     }
 }
 impl AsRef<str> for PreferredProtocol {
@@ -510,7 +464,7 @@ impl AsRef<str> for PreferredProtocol {
 /// <p>Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessEndpoint {
+pub struct AccessEndpoint  {
     /// <p>The type of interface endpoint.</p>
     #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::AccessEndpointType>,
@@ -520,17 +474,17 @@ pub struct AccessEndpoint {
 }
 impl AccessEndpoint {
     /// <p>The type of interface endpoint.</p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::AccessEndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::model::AccessEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-    pub fn vpce_id(&self) -> std::option::Option<&str> {
+    pub fn vpce_id(&self) -> std::option::Option<& str> {
         self.vpce_id.as_deref()
     }
 }
 /// See [`AccessEndpoint`](crate::model::AccessEndpoint).
 pub mod access_endpoint {
-
+    
     /// A builder for [`AccessEndpoint`](crate::model::AccessEndpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -544,12 +498,8 @@ pub mod access_endpoint {
             self
         }
         /// <p>The type of interface endpoint.</p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<crate::model::AccessEndpointType>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<crate::model::AccessEndpointType>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
         pub fn vpce_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -558,17 +508,20 @@ pub mod access_endpoint {
         }
         /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
         pub fn set_vpce_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpce_id = input;
-            self
+            self.vpce_id = input; self
         }
         /// Consumes the builder and constructs a [`AccessEndpoint`](crate::model::AccessEndpoint).
         pub fn build(self) -> crate::model::AccessEndpoint {
             crate::model::AccessEndpoint {
-                endpoint_type: self.endpoint_type,
-                vpce_id: self.vpce_id,
+                endpoint_type: self.endpoint_type
+                ,
+                vpce_id: self.vpce_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessEndpoint {
     /// Creates a new builder-style object to manufacture [`AccessEndpoint`](crate::model::AccessEndpoint).
@@ -583,9 +536,9 @@ impl AccessEndpoint {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessendpointtype = unimplemented!();
 /// match accessendpointtype {
@@ -606,56 +559,48 @@ impl AccessEndpoint {
 /// Specifically, when `accessendpointtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessEndpointType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessEndpointType {
     #[allow(missing_docs)] // documentation missing in model
     Streaming,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessEndpointType {
     fn from(s: &str) -> Self {
         match s {
             "STREAMING" => AccessEndpointType::Streaming,
-            other => {
-                AccessEndpointType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccessEndpointType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessEndpointType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessEndpointType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessEndpointType::from(s))
+                }
+            }
 impl AccessEndpointType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessEndpointType::Streaming => "STREAMING",
-            AccessEndpointType::Unknown(value) => value.as_str(),
+            AccessEndpointType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STREAMING"]
+        &[
+            "STREAMING"
+        ]
     }
 }
 impl AsRef<str> for AccessEndpointType {
@@ -667,7 +612,7 @@ impl AsRef<str> for AccessEndpointType {
 /// <p>Describes the persistent application settings for users of a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationSettingsResponse {
+pub struct ApplicationSettingsResponse  {
     /// <p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -684,17 +629,17 @@ impl ApplicationSettingsResponse {
         self.enabled
     }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
-    pub fn settings_group(&self) -> std::option::Option<&str> {
+    pub fn settings_group(&self) -> std::option::Option<& str> {
         self.settings_group.as_deref()
     }
     /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
 }
 /// See [`ApplicationSettingsResponse`](crate::model::ApplicationSettingsResponse).
 pub mod application_settings_response {
-
+    
     /// A builder for [`ApplicationSettingsResponse`](crate::model::ApplicationSettingsResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -710,8 +655,7 @@ pub mod application_settings_response {
         }
         /// <p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
         pub fn settings_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -719,12 +663,8 @@ pub mod application_settings_response {
             self
         }
         /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
-        pub fn set_settings_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.settings_group = input;
-            self
+        pub fn set_settings_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.settings_group = input; self
         }
         /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -732,22 +672,24 @@ pub mod application_settings_response {
             self
         }
         /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationSettingsResponse`](crate::model::ApplicationSettingsResponse).
         pub fn build(self) -> crate::model::ApplicationSettingsResponse {
             crate::model::ApplicationSettingsResponse {
-                enabled: self.enabled.unwrap_or_default(),
-                settings_group: self.settings_group,
-                s3_bucket_name: self.s3_bucket_name,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                settings_group: self.settings_group
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationSettingsResponse {
     /// Creates a new builder-style object to manufacture [`ApplicationSettingsResponse`](crate::model::ApplicationSettingsResponse).
@@ -759,7 +701,7 @@ impl ApplicationSettingsResponse {
 /// <p>Describes an action and whether the action is enabled or disabled for users during their streaming sessions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserSetting {
+pub struct UserSetting  {
     /// <p>The action that is enabled or disabled.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
@@ -769,17 +711,17 @@ pub struct UserSetting {
 }
 impl UserSetting {
     /// <p>The action that is enabled or disabled.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::model::Action> {
         self.action.as_ref()
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
-    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+    pub fn permission(&self) -> std::option::Option<& crate::model::Permission> {
         self.permission.as_ref()
     }
 }
 /// See [`UserSetting`](crate::model::UserSetting).
 pub mod user_setting {
-
+    
     /// A builder for [`UserSetting`](crate::model::UserSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -794,8 +736,7 @@ pub mod user_setting {
         }
         /// <p>The action that is enabled or disabled.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>Indicates whether the action is enabled or disabled.</p>
         pub fn permission(mut self, input: crate::model::Permission) -> Self {
@@ -803,21 +744,21 @@ pub mod user_setting {
             self
         }
         /// <p>Indicates whether the action is enabled or disabled.</p>
-        pub fn set_permission(
-            mut self,
-            input: std::option::Option<crate::model::Permission>,
-        ) -> Self {
-            self.permission = input;
-            self
+        pub fn set_permission(mut self, input: std::option::Option<crate::model::Permission>) -> Self {
+            self.permission = input; self
         }
         /// Consumes the builder and constructs a [`UserSetting`](crate::model::UserSetting).
         pub fn build(self) -> crate::model::UserSetting {
             crate::model::UserSetting {
-                action: self.action,
-                permission: self.permission,
+                action: self.action
+                ,
+                permission: self.permission
+                ,
             }
         }
     }
+    
+    
 }
 impl UserSetting {
     /// Creates a new builder-style object to manufacture [`UserSetting`](crate::model::UserSetting).
@@ -832,9 +773,9 @@ impl UserSetting {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permission = unimplemented!();
 /// match permission {
@@ -856,58 +797,52 @@ impl UserSetting {
 /// Specifically, when `permission` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Permission::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Permission {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => Permission::Disabled,
             "ENABLED" => Permission::Enabled,
-            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Permission {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Permission::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Permission::from(s))
+                }
+            }
 impl Permission {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Permission::Disabled => "DISABLED",
             Permission::Enabled => "ENABLED",
-            Permission::Unknown(value) => value.as_str(),
+            Permission::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for Permission {
@@ -922,9 +857,9 @@ impl AsRef<str> for Permission {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let action = unimplemented!();
 /// match action {
@@ -951,22 +886,14 @@ impl AsRef<str> for Permission {
 /// Specifically, when `action` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Action::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Action {
     #[allow(missing_docs)] // documentation missing in model
     ClipboardCopyFromLocalDevice,
@@ -983,7 +910,7 @@ pub enum Action {
     #[allow(missing_docs)] // documentation missing in model
     PrintingToLocalDevice,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Action {
     fn from(s: &str) -> Self {
@@ -995,17 +922,17 @@ impl std::convert::From<&str> for Action {
             "FILE_DOWNLOAD" => Action::FileDownload,
             "FILE_UPLOAD" => Action::FileUpload,
             "PRINTING_TO_LOCAL_DEVICE" => Action::PrintingToLocalDevice,
-            other => Action::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Action::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Action {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Action::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Action::from(s))
+                }
+            }
 impl Action {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1017,19 +944,13 @@ impl Action {
             Action::FileDownload => "FILE_DOWNLOAD",
             Action::FileUpload => "FILE_UPLOAD",
             Action::PrintingToLocalDevice => "PRINTING_TO_LOCAL_DEVICE",
-            Action::Unknown(value) => value.as_str(),
+            Action::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CLIPBOARD_COPY_FROM_LOCAL_DEVICE",
-            "CLIPBOARD_COPY_TO_LOCAL_DEVICE",
-            "DOMAIN_PASSWORD_SIGNIN",
-            "DOMAIN_SMART_CARD_SIGNIN",
-            "FILE_DOWNLOAD",
-            "FILE_UPLOAD",
-            "PRINTING_TO_LOCAL_DEVICE",
+            "CLIPBOARD_COPY_FROM_LOCAL_DEVICE", "CLIPBOARD_COPY_TO_LOCAL_DEVICE", "DOMAIN_PASSWORD_SIGNIN", "DOMAIN_SMART_CARD_SIGNIN", "FILE_DOWNLOAD", "FILE_UPLOAD", "PRINTING_TO_LOCAL_DEVICE"
         ]
     }
 }
@@ -1042,7 +963,7 @@ impl AsRef<str> for Action {
 /// <p>Describes a stack error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StackError {
+pub struct StackError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::StackErrorCode>,
@@ -1052,17 +973,17 @@ pub struct StackError {
 }
 impl StackError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::StackErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::StackErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`StackError`](crate::model::StackError).
 pub mod stack_error {
-
+    
     /// A builder for [`StackError`](crate::model::StackError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1076,12 +997,8 @@ pub mod stack_error {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::StackErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::StackErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1089,21 +1006,21 @@ pub mod stack_error {
             self
         }
         /// <p>The error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`StackError`](crate::model::StackError).
         pub fn build(self) -> crate::model::StackError {
             crate::model::StackError {
-                error_code: self.error_code,
-                error_message: self.error_message,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl StackError {
     /// Creates a new builder-style object to manufacture [`StackError`](crate::model::StackError).
@@ -1118,9 +1035,9 @@ impl StackError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stackerrorcode = unimplemented!();
 /// match stackerrorcode {
@@ -1142,58 +1059,52 @@ impl StackError {
 /// Specifically, when `stackerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StackErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StackErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalServiceError,
     #[allow(missing_docs)] // documentation missing in model
     StorageConnectorError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StackErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "INTERNAL_SERVICE_ERROR" => StackErrorCode::InternalServiceError,
             "STORAGE_CONNECTOR_ERROR" => StackErrorCode::StorageConnectorError,
-            other => StackErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StackErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StackErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StackErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StackErrorCode::from(s))
+                }
+            }
 impl StackErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StackErrorCode::InternalServiceError => "INTERNAL_SERVICE_ERROR",
             StackErrorCode::StorageConnectorError => "STORAGE_CONNECTOR_ERROR",
-            StackErrorCode::Unknown(value) => value.as_str(),
+            StackErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INTERNAL_SERVICE_ERROR", "STORAGE_CONNECTOR_ERROR"]
+        &[
+            "INTERNAL_SERVICE_ERROR", "STORAGE_CONNECTOR_ERROR"
+        ]
     }
 }
 impl AsRef<str> for StackErrorCode {
@@ -1205,7 +1116,7 @@ impl AsRef<str> for StackErrorCode {
 /// <p>Describes a connector that enables persistent storage for users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageConnector {
+pub struct StorageConnector  {
     /// <p>The type of storage connector.</p>
     #[doc(hidden)]
     pub connector_type: std::option::Option<crate::model::StorageConnectorType>,
@@ -1218,21 +1129,21 @@ pub struct StorageConnector {
 }
 impl StorageConnector {
     /// <p>The type of storage connector.</p>
-    pub fn connector_type(&self) -> std::option::Option<&crate::model::StorageConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<& crate::model::StorageConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The ARN of the storage connector.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The names of the domains for the account.</p>
-    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn domains(&self) -> std::option::Option<& [std::string::String]> {
         self.domains.as_deref()
     }
 }
 /// See [`StorageConnector`](crate::model::StorageConnector).
 pub mod storage_connector {
-
+    
     /// A builder for [`StorageConnector`](crate::model::StorageConnector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1247,12 +1158,8 @@ pub mod storage_connector {
             self
         }
         /// <p>The type of storage connector.</p>
-        pub fn set_connector_type(
-            mut self,
-            input: std::option::Option<crate::model::StorageConnectorType>,
-        ) -> Self {
-            self.connector_type = input;
-            self
+        pub fn set_connector_type(mut self, input: std::option::Option<crate::model::StorageConnectorType>) -> Self {
+            self.connector_type = input; self
         }
         /// <p>The ARN of the storage connector.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1260,12 +1167,8 @@ pub mod storage_connector {
             self
         }
         /// <p>The ARN of the storage connector.</p>
-        pub fn set_resource_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_identifier = input;
-            self
+        pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_identifier = input; self
         }
         /// Appends an item to `domains`.
         ///
@@ -1274,27 +1177,28 @@ pub mod storage_connector {
         /// <p>The names of the domains for the account.</p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
-            self.domains = Some(v);
-            self
+                            v.push(input.into());
+                            self.domains = Some(v);
+                            self
         }
         /// <p>The names of the domains for the account.</p>
-        pub fn set_domains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.domains = input;
-            self
+        pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.domains = input; self
         }
         /// Consumes the builder and constructs a [`StorageConnector`](crate::model::StorageConnector).
         pub fn build(self) -> crate::model::StorageConnector {
             crate::model::StorageConnector {
-                connector_type: self.connector_type,
-                resource_identifier: self.resource_identifier,
-                domains: self.domains,
+                connector_type: self.connector_type
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+                domains: self.domains
+                ,
             }
         }
     }
+    
+    
 }
 impl StorageConnector {
     /// Creates a new builder-style object to manufacture [`StorageConnector`](crate::model::StorageConnector).
@@ -1309,9 +1213,9 @@ impl StorageConnector {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storageconnectortype = unimplemented!();
 /// match storageconnectortype {
@@ -1334,22 +1238,14 @@ impl StorageConnector {
 /// Specifically, when `storageconnectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageConnectorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of storage connector.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StorageConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     GoogleDrive,
@@ -1358,7 +1254,7 @@ pub enum StorageConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     OneDrive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageConnectorType {
     fn from(s: &str) -> Self {
@@ -1366,19 +1262,17 @@ impl std::convert::From<&str> for StorageConnectorType {
             "GOOGLE_DRIVE" => StorageConnectorType::GoogleDrive,
             "HOMEFOLDERS" => StorageConnectorType::Homefolders,
             "ONE_DRIVE" => StorageConnectorType::OneDrive,
-            other => {
-                StorageConnectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StorageConnectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StorageConnectorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageConnectorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StorageConnectorType::from(s))
+                }
+            }
 impl StorageConnectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1386,12 +1280,14 @@ impl StorageConnectorType {
             StorageConnectorType::GoogleDrive => "GOOGLE_DRIVE",
             StorageConnectorType::Homefolders => "HOMEFOLDERS",
             StorageConnectorType::OneDrive => "ONE_DRIVE",
-            StorageConnectorType::Unknown(value) => value.as_str(),
+            StorageConnectorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GOOGLE_DRIVE", "HOMEFOLDERS", "ONE_DRIVE"]
+        &[
+            "GOOGLE_DRIVE", "HOMEFOLDERS", "ONE_DRIVE"
+        ]
     }
 }
 impl AsRef<str> for StorageConnectorType {
@@ -1403,7 +1299,7 @@ impl AsRef<str> for StorageConnectorType {
 /// <p>The persistent application settings for users of a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationSettings {
+pub struct ApplicationSettings  {
     /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -1417,13 +1313,13 @@ impl ApplicationSettings {
         self.enabled
     }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
-    pub fn settings_group(&self) -> std::option::Option<&str> {
+    pub fn settings_group(&self) -> std::option::Option<& str> {
         self.settings_group.as_deref()
     }
 }
 /// See [`ApplicationSettings`](crate::model::ApplicationSettings).
 pub mod application_settings {
-
+    
     /// A builder for [`ApplicationSettings`](crate::model::ApplicationSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1438,8 +1334,7 @@ pub mod application_settings {
         }
         /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
         pub fn settings_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1447,21 +1342,22 @@ pub mod application_settings {
             self
         }
         /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
-        pub fn set_settings_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.settings_group = input;
-            self
+        pub fn set_settings_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.settings_group = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationSettings`](crate::model::ApplicationSettings).
         pub fn build(self) -> crate::model::ApplicationSettings {
             crate::model::ApplicationSettings {
-                enabled: self.enabled.unwrap_or_default(),
-                settings_group: self.settings_group,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                settings_group: self.settings_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationSettings {
     /// Creates a new builder-style object to manufacture [`ApplicationSettings`](crate::model::ApplicationSettings).
@@ -1476,9 +1372,9 @@ impl ApplicationSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stackattribute = unimplemented!();
 /// match stackattribute {
@@ -1510,22 +1406,14 @@ impl ApplicationSettings {
 /// Specifically, when `stackattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StackAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StackAttribute {
     #[allow(missing_docs)] // documentation missing in model
     AccessEndpoints,
@@ -1552,7 +1440,7 @@ pub enum StackAttribute {
     #[allow(missing_docs)] // documentation missing in model
     UserSettings,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StackAttribute {
     fn from(s: &str) -> Self {
@@ -1569,17 +1457,17 @@ impl std::convert::From<&str> for StackAttribute {
             "STREAMING_EXPERIENCE_SETTINGS" => StackAttribute::StreamingExperienceSettings,
             "THEME_NAME" => StackAttribute::ThemeName,
             "USER_SETTINGS" => StackAttribute::UserSettings,
-            other => StackAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StackAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StackAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StackAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StackAttribute::from(s))
+                }
+            }
 impl StackAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1596,24 +1484,13 @@ impl StackAttribute {
             StackAttribute::StreamingExperienceSettings => "STREAMING_EXPERIENCE_SETTINGS",
             StackAttribute::ThemeName => "THEME_NAME",
             StackAttribute::UserSettings => "USER_SETTINGS",
-            StackAttribute::Unknown(value) => value.as_str(),
+            StackAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCESS_ENDPOINTS",
-            "EMBED_HOST_DOMAINS",
-            "FEEDBACK_URL",
-            "IAM_ROLE_ARN",
-            "REDIRECT_URL",
-            "STORAGE_CONNECTORS",
-            "STORAGE_CONNECTOR_GOOGLE_DRIVE",
-            "STORAGE_CONNECTOR_HOMEFOLDERS",
-            "STORAGE_CONNECTOR_ONE_DRIVE",
-            "STREAMING_EXPERIENCE_SETTINGS",
-            "THEME_NAME",
-            "USER_SETTINGS",
+            "ACCESS_ENDPOINTS", "EMBED_HOST_DOMAINS", "FEEDBACK_URL", "IAM_ROLE_ARN", "REDIRECT_URL", "STORAGE_CONNECTORS", "STORAGE_CONNECTOR_GOOGLE_DRIVE", "STORAGE_CONNECTOR_HOMEFOLDERS", "STORAGE_CONNECTOR_ONE_DRIVE", "STREAMING_EXPERIENCE_SETTINGS", "THEME_NAME", "USER_SETTINGS"
         ]
     }
 }
@@ -1626,7 +1503,7 @@ impl AsRef<str> for StackAttribute {
 /// <p>Describes the permissions for an image. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImagePermissions {
+pub struct ImagePermissions  {
     /// <p>Indicates whether the image can be used for a fleet.</p>
     #[doc(hidden)]
     pub allow_fleet: std::option::Option<bool>,
@@ -1646,7 +1523,7 @@ impl ImagePermissions {
 }
 /// See [`ImagePermissions`](crate::model::ImagePermissions).
 pub mod image_permissions {
-
+    
     /// A builder for [`ImagePermissions`](crate::model::ImagePermissions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1661,8 +1538,7 @@ pub mod image_permissions {
         }
         /// <p>Indicates whether the image can be used for a fleet.</p>
         pub fn set_allow_fleet(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_fleet = input;
-            self
+            self.allow_fleet = input; self
         }
         /// <p>Indicates whether the image can be used for an image builder.</p>
         pub fn allow_image_builder(mut self, input: bool) -> Self {
@@ -1671,17 +1547,20 @@ pub mod image_permissions {
         }
         /// <p>Indicates whether the image can be used for an image builder.</p>
         pub fn set_allow_image_builder(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_image_builder = input;
-            self
+            self.allow_image_builder = input; self
         }
         /// Consumes the builder and constructs a [`ImagePermissions`](crate::model::ImagePermissions).
         pub fn build(self) -> crate::model::ImagePermissions {
             crate::model::ImagePermissions {
-                allow_fleet: self.allow_fleet,
-                allow_image_builder: self.allow_image_builder,
+                allow_fleet: self.allow_fleet
+                ,
+                allow_image_builder: self.allow_image_builder
+                ,
             }
         }
     }
+    
+    
 }
 impl ImagePermissions {
     /// Creates a new builder-style object to manufacture [`ImagePermissions`](crate::model::ImagePermissions).
@@ -1693,7 +1572,7 @@ impl ImagePermissions {
 /// <p>Describes a fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Fleet {
+pub struct Fleet  {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1712,69 +1591,69 @@ pub struct Fleet {
     /// <p>The ARN for the public, private, or shared image.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
-    /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p> 
+    /// <ul> 
+    /// <li> <p>stream.standard.small</p> </li> 
+    /// <li> <p>stream.standard.medium</p> </li> 
+    /// <li> <p>stream.standard.large</p> </li> 
+    /// <li> <p>stream.compute.large</p> </li> 
+    /// <li> <p>stream.compute.xlarge</p> </li> 
+    /// <li> <p>stream.compute.2xlarge</p> </li> 
+    /// <li> <p>stream.compute.4xlarge</p> </li> 
+    /// <li> <p>stream.compute.8xlarge</p> </li> 
+    /// <li> <p>stream.memory.large</p> </li> 
+    /// <li> <p>stream.memory.xlarge</p> </li> 
+    /// <li> <p>stream.memory.2xlarge</p> </li> 
+    /// <li> <p>stream.memory.4xlarge</p> </li> 
+    /// <li> <p>stream.memory.8xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.large</p> </li> 
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.large</p> </li> 
+    /// <li> <p>stream.graphics-design.xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The fleet type.</p>
-    /// <dl>
+    /// <p>The fleet type.</p> 
+    /// <dl> 
     /// <dt>
     /// ALWAYS_ON
-    /// </dt>
-    /// <dd>
-    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p> 
+    /// </dd> 
     /// <dt>
     /// ON_DEMAND
-    /// </dt>
-    /// <dd>
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub fleet_type: std::option::Option<crate::model::FleetType>,
     /// <p>The capacity status for the fleet.</p>
     #[doc(hidden)]
     pub compute_capacity_status: std::option::Option<crate::model::ComputeCapacityStatus>,
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p> 
     /// <p>Specify a value between 600 and 360000.</p>
     #[doc(hidden)]
     pub max_user_duration_in_seconds: std::option::Option<i32>,
-    /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p> 
     /// <p>Specify a value between 60 and 360000.</p>
     #[doc(hidden)]
     pub disconnect_timeout_in_seconds: std::option::Option<i32>,
@@ -1796,17 +1675,17 @@ pub struct Fleet {
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
     #[doc(hidden)]
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p> 
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note> 
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p> 
     /// </note>
     #[doc(hidden)]
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
-    /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p> 
     /// <p>The default value is <code>APP</code>.</p>
     #[doc(hidden)]
     pub stream_view: std::option::Option<crate::model::StreamView>,
@@ -1825,116 +1704,114 @@ pub struct Fleet {
 }
 impl Fleet {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the fleet.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The fleet name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the image used to create the fleet.</p>
-    pub fn image_name(&self) -> std::option::Option<&str> {
+    pub fn image_name(&self) -> std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The ARN for the public, private, or shared image.</p>
-    pub fn image_arn(&self) -> std::option::Option<&str> {
+    pub fn image_arn(&self) -> std::option::Option<& str> {
         self.image_arn.as_deref()
     }
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
-    /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p> 
+    /// <ul> 
+    /// <li> <p>stream.standard.small</p> </li> 
+    /// <li> <p>stream.standard.medium</p> </li> 
+    /// <li> <p>stream.standard.large</p> </li> 
+    /// <li> <p>stream.compute.large</p> </li> 
+    /// <li> <p>stream.compute.xlarge</p> </li> 
+    /// <li> <p>stream.compute.2xlarge</p> </li> 
+    /// <li> <p>stream.compute.4xlarge</p> </li> 
+    /// <li> <p>stream.compute.8xlarge</p> </li> 
+    /// <li> <p>stream.memory.large</p> </li> 
+    /// <li> <p>stream.memory.xlarge</p> </li> 
+    /// <li> <p>stream.memory.2xlarge</p> </li> 
+    /// <li> <p>stream.memory.4xlarge</p> </li> 
+    /// <li> <p>stream.memory.8xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.large</p> </li> 
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.large</p> </li> 
+    /// <li> <p>stream.graphics-design.xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
     /// </ul>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
-    /// <p>The fleet type.</p>
-    /// <dl>
+    /// <p>The fleet type.</p> 
+    /// <dl> 
     /// <dt>
     /// ALWAYS_ON
-    /// </dt>
-    /// <dd>
-    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p> 
+    /// </dd> 
     /// <dt>
     /// ON_DEMAND
-    /// </dt>
-    /// <dd>
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
+    pub fn fleet_type(&self) -> std::option::Option<& crate::model::FleetType> {
         self.fleet_type.as_ref()
     }
     /// <p>The capacity status for the fleet.</p>
-    pub fn compute_capacity_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ComputeCapacityStatus> {
+    pub fn compute_capacity_status(&self) -> std::option::Option<& crate::model::ComputeCapacityStatus> {
         self.compute_capacity_status.as_ref()
     }
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p> 
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn max_user_duration_in_seconds(&self) -> std::option::Option<i32> {
         self.max_user_duration_in_seconds
     }
-    /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p> 
     /// <p>Specify a value between 60 and 360000.</p>
     pub fn disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.disconnect_timeout_in_seconds
     }
     /// <p>The current state for the fleet.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::FleetState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::FleetState> {
         self.state.as_ref()
     }
     /// <p>The VPC configuration for the fleet.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>The time the fleet was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The fleet errors.</p>
-    pub fn fleet_errors(&self) -> std::option::Option<&[crate::model::FleetError]> {
+    pub fn fleet_errors(&self) -> std::option::Option<& [crate::model::FleetError]> {
         self.fleet_errors.as_deref()
     }
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
@@ -1942,28 +1819,28 @@ impl Fleet {
         self.enable_default_internet_access
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
-    pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
+    pub fn domain_join_info(&self) -> std::option::Option<& crate::model::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p> 
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note> 
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p> 
     /// </note>
     pub fn idle_disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_disconnect_timeout_in_seconds
     }
-    /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p> 
     /// <p>The default value is <code>APP</code>.</p>
-    pub fn stream_view(&self) -> std::option::Option<&crate::model::StreamView> {
+    pub fn stream_view(&self) -> std::option::Option<& crate::model::StreamView> {
         self.stream_view.as_ref()
     }
     /// <p>The platform of the fleet.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::PlatformType> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::PlatformType> {
         self.platform.as_ref()
     }
     /// <p>The maximum number of concurrent sessions for the fleet.</p>
@@ -1971,17 +1848,17 @@ impl Fleet {
         self.max_concurrent_sessions
     }
     /// <p>The USB device filter strings associated with the fleet.</p>
-    pub fn usb_device_filter_strings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn usb_device_filter_strings(&self) -> std::option::Option<& [std::string::String]> {
         self.usb_device_filter_strings.as_deref()
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
-    pub fn session_script_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn session_script_s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.session_script_s3_location.as_ref()
     }
 }
 /// See [`Fleet`](crate::model::Fleet).
 pub mod fleet {
-
+    
     /// A builder for [`Fleet`](crate::model::Fleet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1993,8 +1870,7 @@ pub mod fleet {
         pub(crate) image_arn: std::option::Option<std::string::String>,
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) fleet_type: std::option::Option<crate::model::FleetType>,
-        pub(crate) compute_capacity_status:
-            std::option::Option<crate::model::ComputeCapacityStatus>,
+        pub(crate) compute_capacity_status: std::option::Option<crate::model::ComputeCapacityStatus>,
         pub(crate) max_user_duration_in_seconds: std::option::Option<i32>,
         pub(crate) disconnect_timeout_in_seconds: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::FleetState>,
@@ -2008,8 +1884,7 @@ pub mod fleet {
         pub(crate) stream_view: std::option::Option<crate::model::StreamView>,
         pub(crate) platform: std::option::Option<crate::model::PlatformType>,
         pub(crate) max_concurrent_sessions: std::option::Option<i32>,
-        pub(crate) usb_device_filter_strings:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) session_script_s3_location: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
@@ -2020,8 +1895,7 @@ pub mod fleet {
         }
         /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the fleet.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2030,8 +1904,7 @@ pub mod fleet {
         }
         /// <p>The name of the fleet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The fleet name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2040,8 +1913,7 @@ pub mod fleet {
         }
         /// <p>The fleet name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The description to display.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2050,8 +1922,7 @@ pub mod fleet {
         }
         /// <p>The description to display.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The name of the image used to create the fleet.</p>
         pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2060,8 +1931,7 @@ pub mod fleet {
         }
         /// <p>The name of the image used to create the fleet.</p>
         pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_name = input;
-            self
+            self.image_name = input; self
         }
         /// <p>The ARN for the public, private, or shared image.</p>
         pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2070,175 +1940,154 @@ pub mod fleet {
         }
         /// <p>The ARN for the public, private, or shared image.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_arn = input;
-            self
+            self.image_arn = input; self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
-        /// <ul>
-        /// <li> <p>stream.standard.small</p> </li>
-        /// <li> <p>stream.standard.medium</p> </li>
-        /// <li> <p>stream.standard.large</p> </li>
-        /// <li> <p>stream.compute.large</p> </li>
-        /// <li> <p>stream.compute.xlarge</p> </li>
-        /// <li> <p>stream.compute.2xlarge</p> </li>
-        /// <li> <p>stream.compute.4xlarge</p> </li>
-        /// <li> <p>stream.compute.8xlarge</p> </li>
-        /// <li> <p>stream.memory.large</p> </li>
-        /// <li> <p>stream.memory.xlarge</p> </li>
-        /// <li> <p>stream.memory.2xlarge</p> </li>
-        /// <li> <p>stream.memory.4xlarge</p> </li>
-        /// <li> <p>stream.memory.8xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.large</p> </li>
-        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.large</p> </li>
-        /// <li> <p>stream.graphics-design.xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p> 
+        /// <ul> 
+        /// <li> <p>stream.standard.small</p> </li> 
+        /// <li> <p>stream.standard.medium</p> </li> 
+        /// <li> <p>stream.standard.large</p> </li> 
+        /// <li> <p>stream.compute.large</p> </li> 
+        /// <li> <p>stream.compute.xlarge</p> </li> 
+        /// <li> <p>stream.compute.2xlarge</p> </li> 
+        /// <li> <p>stream.compute.4xlarge</p> </li> 
+        /// <li> <p>stream.compute.8xlarge</p> </li> 
+        /// <li> <p>stream.memory.large</p> </li> 
+        /// <li> <p>stream.memory.xlarge</p> </li> 
+        /// <li> <p>stream.memory.2xlarge</p> </li> 
+        /// <li> <p>stream.memory.4xlarge</p> </li> 
+        /// <li> <p>stream.memory.8xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.large</p> </li> 
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.large</p> </li> 
+        /// <li> <p>stream.graphics-design.xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
-        /// <ul>
-        /// <li> <p>stream.standard.small</p> </li>
-        /// <li> <p>stream.standard.medium</p> </li>
-        /// <li> <p>stream.standard.large</p> </li>
-        /// <li> <p>stream.compute.large</p> </li>
-        /// <li> <p>stream.compute.xlarge</p> </li>
-        /// <li> <p>stream.compute.2xlarge</p> </li>
-        /// <li> <p>stream.compute.4xlarge</p> </li>
-        /// <li> <p>stream.compute.8xlarge</p> </li>
-        /// <li> <p>stream.memory.large</p> </li>
-        /// <li> <p>stream.memory.xlarge</p> </li>
-        /// <li> <p>stream.memory.2xlarge</p> </li>
-        /// <li> <p>stream.memory.4xlarge</p> </li>
-        /// <li> <p>stream.memory.8xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.large</p> </li>
-        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.large</p> </li>
-        /// <li> <p>stream.graphics-design.xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p> 
+        /// <ul> 
+        /// <li> <p>stream.standard.small</p> </li> 
+        /// <li> <p>stream.standard.medium</p> </li> 
+        /// <li> <p>stream.standard.large</p> </li> 
+        /// <li> <p>stream.compute.large</p> </li> 
+        /// <li> <p>stream.compute.xlarge</p> </li> 
+        /// <li> <p>stream.compute.2xlarge</p> </li> 
+        /// <li> <p>stream.compute.4xlarge</p> </li> 
+        /// <li> <p>stream.compute.8xlarge</p> </li> 
+        /// <li> <p>stream.memory.large</p> </li> 
+        /// <li> <p>stream.memory.xlarge</p> </li> 
+        /// <li> <p>stream.memory.2xlarge</p> </li> 
+        /// <li> <p>stream.memory.4xlarge</p> </li> 
+        /// <li> <p>stream.memory.8xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.large</p> </li> 
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.large</p> </li> 
+        /// <li> <p>stream.graphics-design.xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
         /// </ul>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
-        /// <p>The fleet type.</p>
-        /// <dl>
+        /// <p>The fleet type.</p> 
+        /// <dl> 
         /// <dt>
         /// ALWAYS_ON
-        /// </dt>
-        /// <dd>
-        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p> 
+        /// </dd> 
         /// <dt>
         /// ON_DEMAND
-        /// </dt>
-        /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p> 
+        /// </dd> 
         /// </dl>
         pub fn fleet_type(mut self, input: crate::model::FleetType) -> Self {
             self.fleet_type = Some(input);
             self
         }
-        /// <p>The fleet type.</p>
-        /// <dl>
+        /// <p>The fleet type.</p> 
+        /// <dl> 
         /// <dt>
         /// ALWAYS_ON
-        /// </dt>
-        /// <dd>
-        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p> 
+        /// </dd> 
         /// <dt>
         /// ON_DEMAND
-        /// </dt>
-        /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_fleet_type(
-            mut self,
-            input: std::option::Option<crate::model::FleetType>,
-        ) -> Self {
-            self.fleet_type = input;
-            self
+        pub fn set_fleet_type(mut self, input: std::option::Option<crate::model::FleetType>) -> Self {
+            self.fleet_type = input; self
         }
         /// <p>The capacity status for the fleet.</p>
-        pub fn compute_capacity_status(
-            mut self,
-            input: crate::model::ComputeCapacityStatus,
-        ) -> Self {
+        pub fn compute_capacity_status(mut self, input: crate::model::ComputeCapacityStatus) -> Self {
             self.compute_capacity_status = Some(input);
             self
         }
         /// <p>The capacity status for the fleet.</p>
-        pub fn set_compute_capacity_status(
-            mut self,
-            input: std::option::Option<crate::model::ComputeCapacityStatus>,
-        ) -> Self {
-            self.compute_capacity_status = input;
-            self
+        pub fn set_compute_capacity_status(mut self, input: std::option::Option<crate::model::ComputeCapacityStatus>) -> Self {
+            self.compute_capacity_status = input; self
         }
-        /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+        /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p> 
         /// <p>Specify a value between 600 and 360000.</p>
         pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
             self.max_user_duration_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+        /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p> 
         /// <p>Specify a value between 600 and 360000.</p>
         pub fn set_max_user_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_user_duration_in_seconds = input;
-            self
+            self.max_user_duration_in_seconds = input; self
         }
-        /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
+        /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p> 
         /// <p>Specify a value between 60 and 360000.</p>
         pub fn disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
             self.disconnect_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
+        /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p> 
         /// <p>Specify a value between 60 and 360000.</p>
-        pub fn set_disconnect_timeout_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.disconnect_timeout_in_seconds = input;
-            self
+        pub fn set_disconnect_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.disconnect_timeout_in_seconds = input; self
         }
         /// <p>The current state for the fleet.</p>
         pub fn state(mut self, input: crate::model::FleetState) -> Self {
@@ -2247,8 +2096,7 @@ pub mod fleet {
         }
         /// <p>The current state for the fleet.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::FleetState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The VPC configuration for the fleet.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
@@ -2256,12 +2104,8 @@ pub mod fleet {
             self
         }
         /// <p>The VPC configuration for the fleet.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfig>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfig>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>The time the fleet was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2269,12 +2113,8 @@ pub mod fleet {
             self
         }
         /// <p>The time the fleet was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Appends an item to `fleet_errors`.
         ///
@@ -2283,17 +2123,13 @@ pub mod fleet {
         /// <p>The fleet errors.</p>
         pub fn fleet_errors(mut self, input: crate::model::FleetError) -> Self {
             let mut v = self.fleet_errors.unwrap_or_default();
-            v.push(input);
-            self.fleet_errors = Some(v);
-            self
+                            v.push(input);
+                            self.fleet_errors = Some(v);
+                            self
         }
         /// <p>The fleet errors.</p>
-        pub fn set_fleet_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FleetError>>,
-        ) -> Self {
-            self.fleet_errors = input;
-            self
+        pub fn set_fleet_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::FleetError>>) -> Self {
+            self.fleet_errors = input; self
         }
         /// <p>Indicates whether default internet access is enabled for the fleet.</p>
         pub fn enable_default_internet_access(mut self, input: bool) -> Self {
@@ -2301,12 +2137,8 @@ pub mod fleet {
             self
         }
         /// <p>Indicates whether default internet access is enabled for the fleet.</p>
-        pub fn set_enable_default_internet_access(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_default_internet_access = input;
-            self
+        pub fn set_enable_default_internet_access(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_default_internet_access = input; self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
         pub fn domain_join_info(mut self, input: crate::model::DomainJoinInfo) -> Self {
@@ -2314,58 +2146,45 @@ pub mod fleet {
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
-        pub fn set_domain_join_info(
-            mut self,
-            input: std::option::Option<crate::model::DomainJoinInfo>,
-        ) -> Self {
-            self.domain_join_info = input;
-            self
+        pub fn set_domain_join_info(mut self, input: std::option::Option<crate::model::DomainJoinInfo>) -> Self {
+            self.domain_join_info = input; self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-        /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p> 
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note> 
+        /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p> 
         /// </note>
         pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
             self.idle_disconnect_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
-        /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p> 
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note> 
+        /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p> 
         /// </note>
-        pub fn set_idle_disconnect_timeout_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.idle_disconnect_timeout_in_seconds = input;
-            self
+        pub fn set_idle_disconnect_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.idle_disconnect_timeout_in_seconds = input; self
         }
-        /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+        /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+        /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
-        /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+        /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p> 
         /// <p>The default value is <code>APP</code>.</p>
         pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
             self.stream_view = Some(input);
             self
         }
-        /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+        /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p> 
         /// <p>The default value is <code>APP</code>.</p>
-        pub fn set_stream_view(
-            mut self,
-            input: std::option::Option<crate::model::StreamView>,
-        ) -> Self {
-            self.stream_view = input;
-            self
+        pub fn set_stream_view(mut self, input: std::option::Option<crate::model::StreamView>) -> Self {
+            self.stream_view = input; self
         }
         /// <p>The platform of the fleet.</p>
         pub fn platform(mut self, input: crate::model::PlatformType) -> Self {
@@ -2373,12 +2192,8 @@ pub mod fleet {
             self
         }
         /// <p>The platform of the fleet.</p>
-        pub fn set_platform(
-            mut self,
-            input: std::option::Option<crate::model::PlatformType>,
-        ) -> Self {
-            self.platform = input;
-            self
+        pub fn set_platform(mut self, input: std::option::Option<crate::model::PlatformType>) -> Self {
+            self.platform = input; self
         }
         /// <p>The maximum number of concurrent sessions for the fleet.</p>
         pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
@@ -2387,8 +2202,7 @@ pub mod fleet {
         }
         /// <p>The maximum number of concurrent sessions for the fleet.</p>
         pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_concurrent_sessions = input;
-            self
+            self.max_concurrent_sessions = input; self
         }
         /// Appends an item to `usb_device_filter_strings`.
         ///
@@ -2397,17 +2211,13 @@ pub mod fleet {
         /// <p>The USB device filter strings associated with the fleet.</p>
         pub fn usb_device_filter_strings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.usb_device_filter_strings.unwrap_or_default();
-            v.push(input.into());
-            self.usb_device_filter_strings = Some(v);
-            self
+                            v.push(input.into());
+                            self.usb_device_filter_strings = Some(v);
+                            self
         }
         /// <p>The USB device filter strings associated with the fleet.</p>
-        pub fn set_usb_device_filter_strings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.usb_device_filter_strings = input;
-            self
+        pub fn set_usb_device_filter_strings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.usb_device_filter_strings = input; self
         }
         /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
         pub fn session_script_s3_location(mut self, input: crate::model::S3Location) -> Self {
@@ -2415,43 +2225,65 @@ pub mod fleet {
             self
         }
         /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
-        pub fn set_session_script_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.session_script_s3_location = input;
-            self
+        pub fn set_session_script_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.session_script_s3_location = input; self
         }
         /// Consumes the builder and constructs a [`Fleet`](crate::model::Fleet).
         pub fn build(self) -> crate::model::Fleet {
             crate::model::Fleet {
-                arn: self.arn,
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
-                image_name: self.image_name,
-                image_arn: self.image_arn,
-                instance_type: self.instance_type,
-                fleet_type: self.fleet_type,
-                compute_capacity_status: self.compute_capacity_status,
-                max_user_duration_in_seconds: self.max_user_duration_in_seconds,
-                disconnect_timeout_in_seconds: self.disconnect_timeout_in_seconds,
-                state: self.state,
-                vpc_config: self.vpc_config,
-                created_time: self.created_time,
-                fleet_errors: self.fleet_errors,
-                enable_default_internet_access: self.enable_default_internet_access,
-                domain_join_info: self.domain_join_info,
-                idle_disconnect_timeout_in_seconds: self.idle_disconnect_timeout_in_seconds,
-                iam_role_arn: self.iam_role_arn,
-                stream_view: self.stream_view,
-                platform: self.platform,
-                max_concurrent_sessions: self.max_concurrent_sessions,
-                usb_device_filter_strings: self.usb_device_filter_strings,
-                session_script_s3_location: self.session_script_s3_location,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                image_name: self.image_name
+                ,
+                image_arn: self.image_arn
+                ,
+                instance_type: self.instance_type
+                ,
+                fleet_type: self.fleet_type
+                ,
+                compute_capacity_status: self.compute_capacity_status
+                ,
+                max_user_duration_in_seconds: self.max_user_duration_in_seconds
+                ,
+                disconnect_timeout_in_seconds: self.disconnect_timeout_in_seconds
+                ,
+                state: self.state
+                ,
+                vpc_config: self.vpc_config
+                ,
+                created_time: self.created_time
+                ,
+                fleet_errors: self.fleet_errors
+                ,
+                enable_default_internet_access: self.enable_default_internet_access
+                ,
+                domain_join_info: self.domain_join_info
+                ,
+                idle_disconnect_timeout_in_seconds: self.idle_disconnect_timeout_in_seconds
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                stream_view: self.stream_view
+                ,
+                platform: self.platform
+                ,
+                max_concurrent_sessions: self.max_concurrent_sessions
+                ,
+                usb_device_filter_strings: self.usb_device_filter_strings
+                ,
+                session_script_s3_location: self.session_script_s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl Fleet {
     /// Creates a new builder-style object to manufacture [`Fleet`](crate::model::Fleet).
@@ -2463,7 +2295,7 @@ impl Fleet {
 /// <p>Describes the S3 location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The S3 bucket of the S3 object.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -2473,17 +2305,17 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The S3 bucket of the S3 object.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The S3 key of the S3 object.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2498,8 +2330,7 @@ pub mod s3_location {
         }
         /// <p>The S3 bucket of the S3 object.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The S3 key of the S3 object.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2508,17 +2339,20 @@ pub mod s3_location {
         }
         /// <p>The S3 key of the S3 object.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -2533,9 +2367,9 @@ impl S3Location {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let platformtype = unimplemented!();
 /// match platformtype {
@@ -2559,22 +2393,14 @@ impl S3Location {
 /// Specifically, when `platformtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PlatformType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
     AmazonLinux2,
@@ -2585,7 +2411,7 @@ pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2019,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlatformType {
     fn from(s: &str) -> Self {
@@ -2594,17 +2420,17 @@ impl std::convert::From<&str> for PlatformType {
             "WINDOWS" => PlatformType::Windows,
             "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
             "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
-            other => PlatformType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PlatformType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PlatformType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlatformType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PlatformType::from(s))
+                }
+            }
 impl PlatformType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2613,16 +2439,13 @@ impl PlatformType {
             PlatformType::Windows => "WINDOWS",
             PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
             PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
-            PlatformType::Unknown(value) => value.as_str(),
+            PlatformType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AMAZON_LINUX2",
-            "WINDOWS",
-            "WINDOWS_SERVER_2016",
-            "WINDOWS_SERVER_2019",
+            "AMAZON_LINUX2", "WINDOWS", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019"
         ]
     }
 }
@@ -2638,9 +2461,9 @@ impl AsRef<str> for PlatformType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamview = unimplemented!();
 /// match streamview {
@@ -2662,58 +2485,52 @@ impl AsRef<str> for PlatformType {
 /// Specifically, when `streamview` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamView::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamView {
     #[allow(missing_docs)] // documentation missing in model
     App,
     #[allow(missing_docs)] // documentation missing in model
     Desktop,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamView {
     fn from(s: &str) -> Self {
         match s {
             "APP" => StreamView::App,
             "DESKTOP" => StreamView::Desktop,
-            other => StreamView::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamView::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamView {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamView::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamView::from(s))
+                }
+            }
 impl StreamView {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamView::App => "APP",
             StreamView::Desktop => "DESKTOP",
-            StreamView::Unknown(value) => value.as_str(),
+            StreamView::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APP", "DESKTOP"]
+        &[
+            "APP", "DESKTOP"
+        ]
     }
 }
 impl AsRef<str> for StreamView {
@@ -2725,7 +2542,7 @@ impl AsRef<str> for StreamView {
 /// <p>Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainJoinInfo {
+pub struct DomainJoinInfo  {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
     #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
@@ -2735,17 +2552,17 @@ pub struct DomainJoinInfo {
 }
 impl DomainJoinInfo {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    pub fn directory_name(&self) -> std::option::Option<&str> {
+    pub fn directory_name(&self) -> std::option::Option<& str> {
         self.directory_name.as_deref()
     }
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
-    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<& str> {
         self.organizational_unit_distinguished_name.as_deref()
     }
 }
 /// See [`DomainJoinInfo`](crate::model::DomainJoinInfo).
 pub mod domain_join_info {
-
+    
     /// A builder for [`DomainJoinInfo`](crate::model::DomainJoinInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2759,37 +2576,30 @@ pub mod domain_join_info {
             self
         }
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-        pub fn set_directory_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_name = input;
-            self
+        pub fn set_directory_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_name = input; self
         }
         /// <p>The distinguished name of the organizational unit for computer accounts.</p>
-        pub fn organizational_unit_distinguished_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn organizational_unit_distinguished_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit_distinguished_name = Some(input.into());
             self
         }
         /// <p>The distinguished name of the organizational unit for computer accounts.</p>
-        pub fn set_organizational_unit_distinguished_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.organizational_unit_distinguished_name = input;
-            self
+        pub fn set_organizational_unit_distinguished_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.organizational_unit_distinguished_name = input; self
         }
         /// Consumes the builder and constructs a [`DomainJoinInfo`](crate::model::DomainJoinInfo).
         pub fn build(self) -> crate::model::DomainJoinInfo {
             crate::model::DomainJoinInfo {
-                directory_name: self.directory_name,
-                organizational_unit_distinguished_name: self.organizational_unit_distinguished_name,
+                directory_name: self.directory_name
+                ,
+                organizational_unit_distinguished_name: self.organizational_unit_distinguished_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainJoinInfo {
     /// Creates a new builder-style object to manufacture [`DomainJoinInfo`](crate::model::DomainJoinInfo).
@@ -2801,7 +2611,7 @@ impl DomainJoinInfo {
 /// <p>Describes a fleet error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FleetError {
+pub struct FleetError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::FleetErrorCode>,
@@ -2811,17 +2621,17 @@ pub struct FleetError {
 }
 impl FleetError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::FleetErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::FleetErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`FleetError`](crate::model::FleetError).
 pub mod fleet_error {
-
+    
     /// A builder for [`FleetError`](crate::model::FleetError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2835,12 +2645,8 @@ pub mod fleet_error {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::FleetErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::FleetErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2848,21 +2654,21 @@ pub mod fleet_error {
             self
         }
         /// <p>The error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`FleetError`](crate::model::FleetError).
         pub fn build(self) -> crate::model::FleetError {
             crate::model::FleetError {
-                error_code: self.error_code,
-                error_message: self.error_message,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl FleetError {
     /// Creates a new builder-style object to manufacture [`FleetError`](crate::model::FleetError).
@@ -2877,9 +2683,9 @@ impl FleetError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fleeterrorcode = unimplemented!();
 /// match fleeterrorcode {
@@ -2929,22 +2735,14 @@ impl FleetError {
 /// Specifically, when `fleeterrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FleetErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FleetErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorAccessDenied,
@@ -3007,51 +2805,31 @@ pub enum FleetErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     SubnetNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "DOMAIN_JOIN_ERROR_ACCESS_DENIED" => FleetErrorCode::DomainJoinErrorAccessDenied,
-            "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED" => {
-                FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded
-            }
+            "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED" => FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded,
             "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND" => FleetErrorCode::DomainJoinErrorFileNotFound,
-            "DOMAIN_JOIN_ERROR_INVALID_PARAMETER" => {
-                FleetErrorCode::DomainJoinErrorInvalidParameter
-            }
+            "DOMAIN_JOIN_ERROR_INVALID_PARAMETER" => FleetErrorCode::DomainJoinErrorInvalidParameter,
             "DOMAIN_JOIN_ERROR_LOGON_FAILURE" => FleetErrorCode::DomainJoinErrorLogonFailure,
             "DOMAIN_JOIN_ERROR_MORE_DATA" => FleetErrorCode::DomainJoinErrorMoreData,
             "DOMAIN_JOIN_ERROR_NOT_SUPPORTED" => FleetErrorCode::DomainJoinErrorNotSupported,
             "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN" => FleetErrorCode::DomainJoinErrorNoSuchDomain,
             "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR" => FleetErrorCode::DomainJoinInternalServiceError,
-            "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME" => {
-                FleetErrorCode::DomainJoinNerrInvalidWorkgroupName
-            }
+            "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME" => FleetErrorCode::DomainJoinNerrInvalidWorkgroupName,
             "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED" => FleetErrorCode::DomainJoinNerrPasswordExpired,
-            "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED" => {
-                FleetErrorCode::DomainJoinNerrWorkstationNotStarted
-            }
-            "FLEET_INSTANCE_PROVISIONING_FAILURE" => {
-                FleetErrorCode::FleetInstanceProvisioningFailure
-            }
+            "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED" => FleetErrorCode::DomainJoinNerrWorkstationNotStarted,
+            "FLEET_INSTANCE_PROVISIONING_FAILURE" => FleetErrorCode::FleetInstanceProvisioningFailure,
             "FLEET_STOPPED" => FleetErrorCode::FleetStopped,
             "IAM_SERVICE_ROLE_IS_MISSING" => FleetErrorCode::IamServiceRoleIsMissing,
-            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction
-            }
-            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction
-            }
-            "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingEniCreateAction
-            }
-            "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingEniDeleteAction
-            }
-            "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION" => {
-                FleetErrorCode::IamServiceRoleMissingEniDescribeAction
-            }
+            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION" => FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction,
+            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION" => FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction,
+            "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION" => FleetErrorCode::IamServiceRoleMissingEniCreateAction,
+            "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION" => FleetErrorCode::IamServiceRoleMissingEniDeleteAction,
+            "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION" => FleetErrorCode::IamServiceRoleMissingEniDescribeAction,
             "IGW_NOT_ATTACHED" => FleetErrorCode::IgwNotAttached,
             "IMAGE_NOT_FOUND" => FleetErrorCode::ImageNotFound,
             "INTERNAL_SERVICE_ERROR" => FleetErrorCode::InternalServiceError,
@@ -3060,65 +2838,43 @@ impl std::convert::From<&str> for FleetErrorCode {
             "NETWORK_INTERFACE_LIMIT_EXCEEDED" => FleetErrorCode::NetworkInterfaceLimitExceeded,
             "SECURITY_GROUPS_NOT_FOUND" => FleetErrorCode::SecurityGroupsNotFound,
             "STS_DISABLED_IN_REGION" => FleetErrorCode::StsDisabledInRegion,
-            "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES" => {
-                FleetErrorCode::SubnetHasInsufficientIpAddresses
-            }
+            "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES" => FleetErrorCode::SubnetHasInsufficientIpAddresses,
             "SUBNET_NOT_FOUND" => FleetErrorCode::SubnetNotFound,
-            other => FleetErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FleetErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FleetErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FleetErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FleetErrorCode::from(s))
+                }
+            }
 impl FleetErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FleetErrorCode::DomainJoinErrorAccessDenied => "DOMAIN_JOIN_ERROR_ACCESS_DENIED",
-            FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded => {
-                "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED"
-            }
+            FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded => "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED",
             FleetErrorCode::DomainJoinErrorFileNotFound => "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND",
-            FleetErrorCode::DomainJoinErrorInvalidParameter => {
-                "DOMAIN_JOIN_ERROR_INVALID_PARAMETER"
-            }
+            FleetErrorCode::DomainJoinErrorInvalidParameter => "DOMAIN_JOIN_ERROR_INVALID_PARAMETER",
             FleetErrorCode::DomainJoinErrorLogonFailure => "DOMAIN_JOIN_ERROR_LOGON_FAILURE",
             FleetErrorCode::DomainJoinErrorMoreData => "DOMAIN_JOIN_ERROR_MORE_DATA",
             FleetErrorCode::DomainJoinErrorNotSupported => "DOMAIN_JOIN_ERROR_NOT_SUPPORTED",
             FleetErrorCode::DomainJoinErrorNoSuchDomain => "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN",
             FleetErrorCode::DomainJoinInternalServiceError => "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR",
-            FleetErrorCode::DomainJoinNerrInvalidWorkgroupName => {
-                "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME"
-            }
+            FleetErrorCode::DomainJoinNerrInvalidWorkgroupName => "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME",
             FleetErrorCode::DomainJoinNerrPasswordExpired => "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED",
-            FleetErrorCode::DomainJoinNerrWorkstationNotStarted => {
-                "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED"
-            }
-            FleetErrorCode::FleetInstanceProvisioningFailure => {
-                "FLEET_INSTANCE_PROVISIONING_FAILURE"
-            }
+            FleetErrorCode::DomainJoinNerrWorkstationNotStarted => "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED",
+            FleetErrorCode::FleetInstanceProvisioningFailure => "FLEET_INSTANCE_PROVISIONING_FAILURE",
             FleetErrorCode::FleetStopped => "FLEET_STOPPED",
             FleetErrorCode::IamServiceRoleIsMissing => "IAM_SERVICE_ROLE_IS_MISSING",
-            FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction => {
-                "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION"
-            }
-            FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction => {
-                "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION"
-            }
-            FleetErrorCode::IamServiceRoleMissingEniCreateAction => {
-                "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION"
-            }
-            FleetErrorCode::IamServiceRoleMissingEniDeleteAction => {
-                "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION"
-            }
-            FleetErrorCode::IamServiceRoleMissingEniDescribeAction => {
-                "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION"
-            }
+            FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction => "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION",
+            FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction => "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION",
+            FleetErrorCode::IamServiceRoleMissingEniCreateAction => "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION",
+            FleetErrorCode::IamServiceRoleMissingEniDeleteAction => "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION",
+            FleetErrorCode::IamServiceRoleMissingEniDescribeAction => "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION",
             FleetErrorCode::IgwNotAttached => "IGW_NOT_ATTACHED",
             FleetErrorCode::ImageNotFound => "IMAGE_NOT_FOUND",
             FleetErrorCode::InternalServiceError => "INTERNAL_SERVICE_ERROR",
@@ -3127,46 +2883,15 @@ impl FleetErrorCode {
             FleetErrorCode::NetworkInterfaceLimitExceeded => "NETWORK_INTERFACE_LIMIT_EXCEEDED",
             FleetErrorCode::SecurityGroupsNotFound => "SECURITY_GROUPS_NOT_FOUND",
             FleetErrorCode::StsDisabledInRegion => "STS_DISABLED_IN_REGION",
-            FleetErrorCode::SubnetHasInsufficientIpAddresses => {
-                "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES"
-            }
+            FleetErrorCode::SubnetHasInsufficientIpAddresses => "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES",
             FleetErrorCode::SubnetNotFound => "SUBNET_NOT_FOUND",
-            FleetErrorCode::Unknown(value) => value.as_str(),
+            FleetErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DOMAIN_JOIN_ERROR_ACCESS_DENIED",
-            "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED",
-            "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND",
-            "DOMAIN_JOIN_ERROR_INVALID_PARAMETER",
-            "DOMAIN_JOIN_ERROR_LOGON_FAILURE",
-            "DOMAIN_JOIN_ERROR_MORE_DATA",
-            "DOMAIN_JOIN_ERROR_NOT_SUPPORTED",
-            "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN",
-            "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR",
-            "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME",
-            "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED",
-            "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED",
-            "FLEET_INSTANCE_PROVISIONING_FAILURE",
-            "FLEET_STOPPED",
-            "IAM_SERVICE_ROLE_IS_MISSING",
-            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION",
-            "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION",
-            "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION",
-            "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION",
-            "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION",
-            "IGW_NOT_ATTACHED",
-            "IMAGE_NOT_FOUND",
-            "INTERNAL_SERVICE_ERROR",
-            "INVALID_SUBNET_CONFIGURATION",
-            "MACHINE_ROLE_IS_MISSING",
-            "NETWORK_INTERFACE_LIMIT_EXCEEDED",
-            "SECURITY_GROUPS_NOT_FOUND",
-            "STS_DISABLED_IN_REGION",
-            "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES",
-            "SUBNET_NOT_FOUND",
+            "DOMAIN_JOIN_ERROR_ACCESS_DENIED", "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED", "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND", "DOMAIN_JOIN_ERROR_INVALID_PARAMETER", "DOMAIN_JOIN_ERROR_LOGON_FAILURE", "DOMAIN_JOIN_ERROR_MORE_DATA", "DOMAIN_JOIN_ERROR_NOT_SUPPORTED", "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN", "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR", "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME", "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED", "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED", "FLEET_INSTANCE_PROVISIONING_FAILURE", "FLEET_STOPPED", "IAM_SERVICE_ROLE_IS_MISSING", "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION", "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION", "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION", "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION", "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION", "IGW_NOT_ATTACHED", "IMAGE_NOT_FOUND", "INTERNAL_SERVICE_ERROR", "INVALID_SUBNET_CONFIGURATION", "MACHINE_ROLE_IS_MISSING", "NETWORK_INTERFACE_LIMIT_EXCEEDED", "SECURITY_GROUPS_NOT_FOUND", "STS_DISABLED_IN_REGION", "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES", "SUBNET_NOT_FOUND"
         ]
     }
 }
@@ -3179,7 +2904,7 @@ impl AsRef<str> for FleetErrorCode {
 /// <p>Describes VPC configuration information for fleets and image builders.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfig {
+pub struct VpcConfig  {
     /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3189,17 +2914,17 @@ pub struct VpcConfig {
 }
 impl VpcConfig {
     /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The identifiers of the security groups for the fleet or image builder.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
-
+    
     /// A builder for [`VpcConfig`](crate::model::VpcConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3214,17 +2939,13 @@ pub mod vpc_config {
         /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -3233,26 +2954,26 @@ pub mod vpc_config {
         /// <p>The identifiers of the security groups for the fleet or image builder.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The identifiers of the security groups for the fleet or image builder.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfig`](crate::model::VpcConfig).
         pub fn build(self) -> crate::model::VpcConfig {
             crate::model::VpcConfig {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfig {
     /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
@@ -3267,9 +2988,9 @@ impl VpcConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fleetstate = unimplemented!();
 /// match fleetstate {
@@ -3293,22 +3014,14 @@ impl VpcConfig {
 /// Specifically, when `fleetstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FleetState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FleetState {
     #[allow(missing_docs)] // documentation missing in model
     Running,
@@ -3319,7 +3032,7 @@ pub enum FleetState {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetState {
     fn from(s: &str) -> Self {
@@ -3328,17 +3041,17 @@ impl std::convert::From<&str> for FleetState {
             "STARTING" => FleetState::Starting,
             "STOPPED" => FleetState::Stopped,
             "STOPPING" => FleetState::Stopping,
-            other => FleetState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FleetState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FleetState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FleetState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FleetState::from(s))
+                }
+            }
 impl FleetState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3347,12 +3060,14 @@ impl FleetState {
             FleetState::Starting => "STARTING",
             FleetState::Stopped => "STOPPED",
             FleetState::Stopping => "STOPPING",
-            FleetState::Unknown(value) => value.as_str(),
+            FleetState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RUNNING", "STARTING", "STOPPED", "STOPPING"]
+        &[
+            "RUNNING", "STARTING", "STOPPED", "STOPPING"
+        ]
     }
 }
 impl AsRef<str> for FleetState {
@@ -3364,7 +3079,7 @@ impl AsRef<str> for FleetState {
 /// <p>Describes the capacity status for a fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeCapacityStatus {
+pub struct ComputeCapacityStatus  {
     /// <p>The desired number of streaming instances.</p>
     #[doc(hidden)]
     pub desired: std::option::Option<i32>,
@@ -3398,7 +3113,7 @@ impl ComputeCapacityStatus {
 }
 /// See [`ComputeCapacityStatus`](crate::model::ComputeCapacityStatus).
 pub mod compute_capacity_status {
-
+    
     /// A builder for [`ComputeCapacityStatus`](crate::model::ComputeCapacityStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3415,8 +3130,7 @@ pub mod compute_capacity_status {
         }
         /// <p>The desired number of streaming instances.</p>
         pub fn set_desired(mut self, input: std::option::Option<i32>) -> Self {
-            self.desired = input;
-            self
+            self.desired = input; self
         }
         /// <p>The total number of simultaneous streaming instances that are running.</p>
         pub fn running(mut self, input: i32) -> Self {
@@ -3425,8 +3139,7 @@ pub mod compute_capacity_status {
         }
         /// <p>The total number of simultaneous streaming instances that are running.</p>
         pub fn set_running(mut self, input: std::option::Option<i32>) -> Self {
-            self.running = input;
-            self
+            self.running = input; self
         }
         /// <p>The number of instances in use for streaming.</p>
         pub fn in_use(mut self, input: i32) -> Self {
@@ -3435,8 +3148,7 @@ pub mod compute_capacity_status {
         }
         /// <p>The number of instances in use for streaming.</p>
         pub fn set_in_use(mut self, input: std::option::Option<i32>) -> Self {
-            self.in_use = input;
-            self
+            self.in_use = input; self
         }
         /// <p>The number of currently available instances that can be used to stream sessions.</p>
         pub fn available(mut self, input: i32) -> Self {
@@ -3445,19 +3157,24 @@ pub mod compute_capacity_status {
         }
         /// <p>The number of currently available instances that can be used to stream sessions.</p>
         pub fn set_available(mut self, input: std::option::Option<i32>) -> Self {
-            self.available = input;
-            self
+            self.available = input; self
         }
         /// Consumes the builder and constructs a [`ComputeCapacityStatus`](crate::model::ComputeCapacityStatus).
         pub fn build(self) -> crate::model::ComputeCapacityStatus {
             crate::model::ComputeCapacityStatus {
-                desired: self.desired,
-                running: self.running,
-                in_use: self.in_use,
-                available: self.available,
+                desired: self.desired
+                ,
+                running: self.running
+                ,
+                in_use: self.in_use
+                ,
+                available: self.available
+                ,
             }
         }
     }
+    
+    
 }
 impl ComputeCapacityStatus {
     /// Creates a new builder-style object to manufacture [`ComputeCapacityStatus`](crate::model::ComputeCapacityStatus).
@@ -3472,9 +3189,9 @@ impl ComputeCapacityStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fleettype = unimplemented!();
 /// match fleettype {
@@ -3497,22 +3214,14 @@ impl ComputeCapacityStatus {
 /// Specifically, when `fleettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FleetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FleetType {
     #[allow(missing_docs)] // documentation missing in model
     AlwaysOn,
@@ -3521,7 +3230,7 @@ pub enum FleetType {
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetType {
     fn from(s: &str) -> Self {
@@ -3529,17 +3238,17 @@ impl std::convert::From<&str> for FleetType {
             "ALWAYS_ON" => FleetType::AlwaysOn,
             "ELASTIC" => FleetType::Elastic,
             "ON_DEMAND" => FleetType::OnDemand,
-            other => FleetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FleetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FleetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FleetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FleetType::from(s))
+                }
+            }
 impl FleetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3547,12 +3256,14 @@ impl FleetType {
             FleetType::AlwaysOn => "ALWAYS_ON",
             FleetType::Elastic => "ELASTIC",
             FleetType::OnDemand => "ON_DEMAND",
-            FleetType::Unknown(value) => value.as_str(),
+            FleetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALWAYS_ON", "ELASTIC", "ON_DEMAND"]
+        &[
+            "ALWAYS_ON", "ELASTIC", "ON_DEMAND"
+        ]
     }
 }
 impl AsRef<str> for FleetType {
@@ -3567,9 +3278,9 @@ impl AsRef<str> for FleetType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fleetattribute = unimplemented!();
 /// match fleetattribute {
@@ -3595,22 +3306,14 @@ impl AsRef<str> for FleetType {
 /// Specifically, when `fleetattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FleetAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The fleet attribute.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FleetAttribute {
     #[allow(missing_docs)] // documentation missing in model
     DomainJoinInfo,
@@ -3625,7 +3328,7 @@ pub enum FleetAttribute {
     #[allow(missing_docs)] // documentation missing in model
     VpcConfigurationSecurityGroupIds,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetAttribute {
     fn from(s: &str) -> Self {
@@ -3635,20 +3338,18 @@ impl std::convert::From<&str> for FleetAttribute {
             "SESSION_SCRIPT_S3_LOCATION" => FleetAttribute::SessionScriptS3Location,
             "USB_DEVICE_FILTER_STRINGS" => FleetAttribute::UsbDeviceFilterStrings,
             "VPC_CONFIGURATION" => FleetAttribute::VpcConfiguration,
-            "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => {
-                FleetAttribute::VpcConfigurationSecurityGroupIds
-            }
-            other => FleetAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => FleetAttribute::VpcConfigurationSecurityGroupIds,
+            other => FleetAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FleetAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FleetAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FleetAttribute::from(s))
+                }
+            }
 impl FleetAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3658,21 +3359,14 @@ impl FleetAttribute {
             FleetAttribute::SessionScriptS3Location => "SESSION_SCRIPT_S3_LOCATION",
             FleetAttribute::UsbDeviceFilterStrings => "USB_DEVICE_FILTER_STRINGS",
             FleetAttribute::VpcConfiguration => "VPC_CONFIGURATION",
-            FleetAttribute::VpcConfigurationSecurityGroupIds => {
-                "VPC_CONFIGURATION_SECURITY_GROUP_IDS"
-            }
-            FleetAttribute::Unknown(value) => value.as_str(),
+            FleetAttribute::VpcConfigurationSecurityGroupIds => "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
+            FleetAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DOMAIN_JOIN_INFO",
-            "IAM_ROLE_ARN",
-            "SESSION_SCRIPT_S3_LOCATION",
-            "USB_DEVICE_FILTER_STRINGS",
-            "VPC_CONFIGURATION",
-            "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
+            "DOMAIN_JOIN_INFO", "IAM_ROLE_ARN", "SESSION_SCRIPT_S3_LOCATION", "USB_DEVICE_FILTER_STRINGS", "VPC_CONFIGURATION", "VPC_CONFIGURATION_SECURITY_GROUP_IDS"
         ]
     }
 }
@@ -3685,7 +3379,7 @@ impl AsRef<str> for FleetAttribute {
 /// <p>Describes the capacity for a fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeCapacity {
+pub struct ComputeCapacity  {
     /// <p>The desired number of streaming instances.</p>
     #[doc(hidden)]
     pub desired_instances: std::option::Option<i32>,
@@ -3698,7 +3392,7 @@ impl ComputeCapacity {
 }
 /// See [`ComputeCapacity`](crate::model::ComputeCapacity).
 pub mod compute_capacity {
-
+    
     /// A builder for [`ComputeCapacity`](crate::model::ComputeCapacity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3712,16 +3406,18 @@ pub mod compute_capacity {
         }
         /// <p>The desired number of streaming instances.</p>
         pub fn set_desired_instances(mut self, input: std::option::Option<i32>) -> Self {
-            self.desired_instances = input;
-            self
+            self.desired_instances = input; self
         }
         /// Consumes the builder and constructs a [`ComputeCapacity`](crate::model::ComputeCapacity).
         pub fn build(self) -> crate::model::ComputeCapacity {
             crate::model::ComputeCapacity {
-                desired_instances: self.desired_instances,
+                desired_instances: self.desired_instances
+                ,
             }
         }
     }
+    
+    
 }
 impl ComputeCapacity {
     /// Creates a new builder-style object to manufacture [`ComputeCapacity`](crate::model::ComputeCapacity).
@@ -3733,7 +3429,7 @@ impl ComputeCapacity {
 /// <p>Specifies an entitlement. Entitlements control access to specific applications within a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications in a stack. Entitlements don't apply to the desktop stream view application, or to applications managed by a dynamic app provider using the Dynamic Application Framework.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Entitlement {
+pub struct Entitlement  {
     /// <p>The name of the entitlement.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3758,37 +3454,37 @@ pub struct Entitlement {
 }
 impl Entitlement {
     /// <p>The name of the entitlement.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The description of the entitlement.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether all or selected apps are entitled.</p>
-    pub fn app_visibility(&self) -> std::option::Option<&crate::model::AppVisibility> {
+    pub fn app_visibility(&self) -> std::option::Option<& crate::model::AppVisibility> {
         self.app_visibility.as_ref()
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::EntitlementAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::EntitlementAttribute]> {
         self.attributes.as_deref()
     }
     /// <p>The time when the entitlement was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time when the entitlement was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
-
+    
     /// A builder for [`Entitlement`](crate::model::Entitlement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3796,8 +3492,7 @@ pub mod entitlement {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) app_visibility: std::option::Option<crate::model::AppVisibility>,
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3809,8 +3504,7 @@ pub mod entitlement {
         }
         /// <p>The name of the entitlement.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the stack with which the entitlement is associated.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3819,8 +3513,7 @@ pub mod entitlement {
         }
         /// <p>The name of the stack with which the entitlement is associated.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = input;
-            self
+            self.stack_name = input; self
         }
         /// <p>The description of the entitlement.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3829,8 +3522,7 @@ pub mod entitlement {
         }
         /// <p>The description of the entitlement.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Specifies whether all or selected apps are entitled.</p>
         pub fn app_visibility(mut self, input: crate::model::AppVisibility) -> Self {
@@ -3838,12 +3530,8 @@ pub mod entitlement {
             self
         }
         /// <p>Specifies whether all or selected apps are entitled.</p>
-        pub fn set_app_visibility(
-            mut self,
-            input: std::option::Option<crate::model::AppVisibility>,
-        ) -> Self {
-            self.app_visibility = input;
-            self
+        pub fn set_app_visibility(mut self, input: std::option::Option<crate::model::AppVisibility>) -> Self {
+            self.app_visibility = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -3852,17 +3540,13 @@ pub mod entitlement {
         /// <p>The attributes of the entitlement.</p>
         pub fn attributes(mut self, input: crate::model::EntitlementAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes of the entitlement.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The time when the entitlement was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3870,12 +3554,8 @@ pub mod entitlement {
             self
         }
         /// <p>The time when the entitlement was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The time when the entitlement was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3883,26 +3563,31 @@ pub mod entitlement {
             self
         }
         /// <p>The time when the entitlement was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement).
         pub fn build(self) -> crate::model::Entitlement {
             crate::model::Entitlement {
-                name: self.name,
-                stack_name: self.stack_name,
-                description: self.description,
-                app_visibility: self.app_visibility,
-                attributes: self.attributes,
-                created_time: self.created_time,
-                last_modified_time: self.last_modified_time,
+                name: self.name
+                ,
+                stack_name: self.stack_name
+                ,
+                description: self.description
+                ,
+                app_visibility: self.app_visibility
+                ,
+                attributes: self.attributes
+                ,
+                created_time: self.created_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Entitlement {
     /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
@@ -3914,18 +3599,18 @@ impl Entitlement {
 /// <p>An attribute associated with an entitlement. Application entitlements work by matching a supported SAML 2.0 attribute name to a value when a user identity federates to an Amazon AppStream 2.0 SAML application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitlementAttribute {
-    /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
-    /// <p>The following are valid values:</p>
-    /// <ul>
-    /// <li> <p>roles</p> </li>
-    /// <li> <p>department </p> </li>
-    /// <li> <p>organization </p> </li>
-    /// <li> <p>groups </p> </li>
-    /// <li> <p>title </p> </li>
-    /// <li> <p>costCenter </p> </li>
-    /// <li> <p>userType</p> </li>
-    /// </ul>
+pub struct EntitlementAttribute  {
+    /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p> 
+    /// <p>The following are valid values:</p> 
+    /// <ul> 
+    /// <li> <p>roles</p> </li> 
+    /// <li> <p>department </p> </li> 
+    /// <li> <p>organization </p> </li> 
+    /// <li> <p>groups </p> </li> 
+    /// <li> <p>title </p> </li> 
+    /// <li> <p>costCenter </p> </li> 
+    /// <li> <p>userType</p> </li> 
+    /// </ul> 
     /// <p> </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3934,29 +3619,29 @@ pub struct EntitlementAttribute {
     pub value: std::option::Option<std::string::String>,
 }
 impl EntitlementAttribute {
-    /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
-    /// <p>The following are valid values:</p>
-    /// <ul>
-    /// <li> <p>roles</p> </li>
-    /// <li> <p>department </p> </li>
-    /// <li> <p>organization </p> </li>
-    /// <li> <p>groups </p> </li>
-    /// <li> <p>title </p> </li>
-    /// <li> <p>costCenter </p> </li>
-    /// <li> <p>userType</p> </li>
-    /// </ul>
+    /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p> 
+    /// <p>The following are valid values:</p> 
+    /// <ul> 
+    /// <li> <p>roles</p> </li> 
+    /// <li> <p>department </p> </li> 
+    /// <li> <p>organization </p> </li> 
+    /// <li> <p>groups </p> </li> 
+    /// <li> <p>title </p> </li> 
+    /// <li> <p>costCenter </p> </li> 
+    /// <li> <p>userType</p> </li> 
+    /// </ul> 
     /// <p> </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`EntitlementAttribute`](crate::model::EntitlementAttribute).
 pub mod entitlement_attribute {
-
+    
     /// A builder for [`EntitlementAttribute`](crate::model::EntitlementAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3964,37 +3649,36 @@ pub mod entitlement_attribute {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
-        /// <p>The following are valid values:</p>
-        /// <ul>
-        /// <li> <p>roles</p> </li>
-        /// <li> <p>department </p> </li>
-        /// <li> <p>organization </p> </li>
-        /// <li> <p>groups </p> </li>
-        /// <li> <p>title </p> </li>
-        /// <li> <p>costCenter </p> </li>
-        /// <li> <p>userType</p> </li>
-        /// </ul>
+        /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p> 
+        /// <p>The following are valid values:</p> 
+        /// <ul> 
+        /// <li> <p>roles</p> </li> 
+        /// <li> <p>department </p> </li> 
+        /// <li> <p>organization </p> </li> 
+        /// <li> <p>groups </p> </li> 
+        /// <li> <p>title </p> </li> 
+        /// <li> <p>costCenter </p> </li> 
+        /// <li> <p>userType</p> </li> 
+        /// </ul> 
         /// <p> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
-        /// <p>The following are valid values:</p>
-        /// <ul>
-        /// <li> <p>roles</p> </li>
-        /// <li> <p>department </p> </li>
-        /// <li> <p>organization </p> </li>
-        /// <li> <p>groups </p> </li>
-        /// <li> <p>title </p> </li>
-        /// <li> <p>costCenter </p> </li>
-        /// <li> <p>userType</p> </li>
-        /// </ul>
+        /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p> 
+        /// <p>The following are valid values:</p> 
+        /// <ul> 
+        /// <li> <p>roles</p> </li> 
+        /// <li> <p>department </p> </li> 
+        /// <li> <p>organization </p> </li> 
+        /// <li> <p>groups </p> </li> 
+        /// <li> <p>title </p> </li> 
+        /// <li> <p>costCenter </p> </li> 
+        /// <li> <p>userType</p> </li> 
+        /// </ul> 
         /// <p> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4003,17 +3687,20 @@ pub mod entitlement_attribute {
         }
         /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`EntitlementAttribute`](crate::model::EntitlementAttribute).
         pub fn build(self) -> crate::model::EntitlementAttribute {
             crate::model::EntitlementAttribute {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl EntitlementAttribute {
     /// Creates a new builder-style object to manufacture [`EntitlementAttribute`](crate::model::EntitlementAttribute).
@@ -4028,9 +3715,9 @@ impl EntitlementAttribute {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appvisibility = unimplemented!();
 /// match appvisibility {
@@ -4052,58 +3739,52 @@ impl EntitlementAttribute {
 /// Specifically, when `appvisibility` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppVisibility::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppVisibility {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     Associated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppVisibility {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => AppVisibility::All,
             "ASSOCIATED" => AppVisibility::Associated,
-            other => AppVisibility::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AppVisibility::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppVisibility {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppVisibility::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppVisibility::from(s))
+                }
+            }
 impl AppVisibility {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AppVisibility::All => "ALL",
             AppVisibility::Associated => "ASSOCIATED",
-            AppVisibility::Unknown(value) => value.as_str(),
+            AppVisibility::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "ASSOCIATED"]
+        &[
+            "ALL", "ASSOCIATED"
+        ]
     }
 }
 impl AsRef<str> for AppVisibility {
@@ -4115,14 +3796,13 @@ impl AsRef<str> for AppVisibility {
 /// <p>Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectoryConfig {
+pub struct DirectoryConfig  {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
     #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
     #[doc(hidden)]
-    pub organizational_unit_distinguished_names:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub organizational_unit_distinguished_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     #[doc(hidden)]
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
@@ -4131,51 +3811,41 @@ pub struct DirectoryConfig {
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
     #[doc(hidden)]
-    pub certificate_based_auth_properties:
-        std::option::Option<crate::model::CertificateBasedAuthProperties>,
+    pub certificate_based_auth_properties: std::option::Option<crate::model::CertificateBasedAuthProperties>,
 }
 impl DirectoryConfig {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    pub fn directory_name(&self) -> std::option::Option<&str> {
+    pub fn directory_name(&self) -> std::option::Option<& str> {
         self.directory_name.as_deref()
     }
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn organizational_unit_distinguished_names(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn organizational_unit_distinguished_names(&self) -> std::option::Option<& [std::string::String]> {
         self.organizational_unit_distinguished_names.as_deref()
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-    pub fn service_account_credentials(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceAccountCredentials> {
+    pub fn service_account_credentials(&self) -> std::option::Option<& crate::model::ServiceAccountCredentials> {
         self.service_account_credentials.as_ref()
     }
     /// <p>The time the directory configuration was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-    pub fn certificate_based_auth_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::CertificateBasedAuthProperties> {
+    pub fn certificate_based_auth_properties(&self) -> std::option::Option<& crate::model::CertificateBasedAuthProperties> {
         self.certificate_based_auth_properties.as_ref()
     }
 }
 /// See [`DirectoryConfig`](crate::model::DirectoryConfig).
 pub mod directory_config {
-
+    
     /// A builder for [`DirectoryConfig`](crate::model::DirectoryConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_name: std::option::Option<std::string::String>,
-        pub(crate) organizational_unit_distinguished_names:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) service_account_credentials:
-            std::option::Option<crate::model::ServiceAccountCredentials>,
+        pub(crate) organizational_unit_distinguished_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) certificate_based_auth_properties:
-            std::option::Option<crate::model::CertificateBasedAuthProperties>,
+        pub(crate) certificate_based_auth_properties: std::option::Option<crate::model::CertificateBasedAuthProperties>,
     }
     impl Builder {
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -4184,52 +3854,32 @@ pub mod directory_config {
             self
         }
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-        pub fn set_directory_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_name = input;
-            self
+        pub fn set_directory_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_name = input; self
         }
         /// Appends an item to `organizational_unit_distinguished_names`.
         ///
         /// To override the contents of this collection use [`set_organizational_unit_distinguished_names`](Self::set_organizational_unit_distinguished_names).
         ///
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
-        pub fn organizational_unit_distinguished_names(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .organizational_unit_distinguished_names
-                .unwrap_or_default();
-            v.push(input.into());
-            self.organizational_unit_distinguished_names = Some(v);
-            self
+        pub fn organizational_unit_distinguished_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.organizational_unit_distinguished_names.unwrap_or_default();
+                            v.push(input.into());
+                            self.organizational_unit_distinguished_names = Some(v);
+                            self
         }
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
-        pub fn set_organizational_unit_distinguished_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.organizational_unit_distinguished_names = input;
-            self
+        pub fn set_organizational_unit_distinguished_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.organizational_unit_distinguished_names = input; self
         }
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-        pub fn service_account_credentials(
-            mut self,
-            input: crate::model::ServiceAccountCredentials,
-        ) -> Self {
+        pub fn service_account_credentials(mut self, input: crate::model::ServiceAccountCredentials) -> Self {
             self.service_account_credentials = Some(input);
             self
         }
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
-        pub fn set_service_account_credentials(
-            mut self,
-            input: std::option::Option<crate::model::ServiceAccountCredentials>,
-        ) -> Self {
-            self.service_account_credentials = input;
-            self
+        pub fn set_service_account_credentials(mut self, input: std::option::Option<crate::model::ServiceAccountCredentials>) -> Self {
+            self.service_account_credentials = input; self
         }
         /// <p>The time the directory configuration was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4237,41 +3887,36 @@ pub mod directory_config {
             self
         }
         /// <p>The time the directory configuration was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-        pub fn certificate_based_auth_properties(
-            mut self,
-            input: crate::model::CertificateBasedAuthProperties,
-        ) -> Self {
+        pub fn certificate_based_auth_properties(mut self, input: crate::model::CertificateBasedAuthProperties) -> Self {
             self.certificate_based_auth_properties = Some(input);
             self
         }
         /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
-        pub fn set_certificate_based_auth_properties(
-            mut self,
-            input: std::option::Option<crate::model::CertificateBasedAuthProperties>,
-        ) -> Self {
-            self.certificate_based_auth_properties = input;
-            self
+        pub fn set_certificate_based_auth_properties(mut self, input: std::option::Option<crate::model::CertificateBasedAuthProperties>) -> Self {
+            self.certificate_based_auth_properties = input; self
         }
         /// Consumes the builder and constructs a [`DirectoryConfig`](crate::model::DirectoryConfig).
         pub fn build(self) -> crate::model::DirectoryConfig {
             crate::model::DirectoryConfig {
-                directory_name: self.directory_name,
-                organizational_unit_distinguished_names: self
-                    .organizational_unit_distinguished_names,
-                service_account_credentials: self.service_account_credentials,
-                created_time: self.created_time,
-                certificate_based_auth_properties: self.certificate_based_auth_properties,
+                directory_name: self.directory_name
+                ,
+                organizational_unit_distinguished_names: self.organizational_unit_distinguished_names
+                ,
+                service_account_credentials: self.service_account_credentials
+                ,
+                created_time: self.created_time
+                ,
+                certificate_based_auth_properties: self.certificate_based_auth_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DirectoryConfig {
     /// Creates a new builder-style object to manufacture [`DirectoryConfig`](crate::model::DirectoryConfig).
@@ -4283,7 +3928,7 @@ impl DirectoryConfig {
 /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CertificateBasedAuthProperties {
+pub struct CertificateBasedAuthProperties  {
     /// <p>The status of the certificate-based authentication properties.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::CertificateBasedAuthStatus>,
@@ -4293,17 +3938,17 @@ pub struct CertificateBasedAuthProperties {
 }
 impl CertificateBasedAuthProperties {
     /// <p>The status of the certificate-based authentication properties.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CertificateBasedAuthStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CertificateBasedAuthStatus> {
         self.status.as_ref()
     }
     /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
 }
 /// See [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
 pub mod certificate_based_auth_properties {
-
+    
     /// A builder for [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4317,12 +3962,8 @@ pub mod certificate_based_auth_properties {
             self
         }
         /// <p>The status of the certificate-based authentication properties.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CertificateBasedAuthStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CertificateBasedAuthStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4330,21 +3971,21 @@ pub mod certificate_based_auth_properties {
             self
         }
         /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-        pub fn set_certificate_authority_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_authority_arn = input;
-            self
+        pub fn set_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_authority_arn = input; self
         }
         /// Consumes the builder and constructs a [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
         pub fn build(self) -> crate::model::CertificateBasedAuthProperties {
             crate::model::CertificateBasedAuthProperties {
-                status: self.status,
-                certificate_authority_arn: self.certificate_authority_arn,
+                status: self.status
+                ,
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CertificateBasedAuthProperties {
     /// Creates a new builder-style object to manufacture [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
@@ -4359,9 +4000,9 @@ impl CertificateBasedAuthProperties {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let certificatebasedauthstatus = unimplemented!();
 /// match certificatebasedauthstatus {
@@ -4384,22 +4025,14 @@ impl CertificateBasedAuthProperties {
 /// Specifically, when `certificatebasedauthstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CertificateBasedAuthStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CertificateBasedAuthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -4408,44 +4041,40 @@ pub enum CertificateBasedAuthStatus {
     #[allow(missing_docs)] // documentation missing in model
     EnabledNoDirectoryLoginFallback,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CertificateBasedAuthStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => CertificateBasedAuthStatus::Disabled,
             "ENABLED" => CertificateBasedAuthStatus::Enabled,
-            "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK" => {
-                CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback
-            }
-            other => CertificateBasedAuthStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK" => CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback,
+            other => CertificateBasedAuthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CertificateBasedAuthStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CertificateBasedAuthStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CertificateBasedAuthStatus::from(s))
+                }
+            }
 impl CertificateBasedAuthStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CertificateBasedAuthStatus::Disabled => "DISABLED",
             CertificateBasedAuthStatus::Enabled => "ENABLED",
-            CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback => {
-                "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK"
-            }
-            CertificateBasedAuthStatus::Unknown(value) => value.as_str(),
+            CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback => "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK",
+            CertificateBasedAuthStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED", "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK"]
+        &[
+            "DISABLED", "ENABLED", "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK"
+        ]
     }
 }
 impl AsRef<str> for CertificateBasedAuthStatus {
@@ -4457,7 +4086,7 @@ impl AsRef<str> for CertificateBasedAuthStatus {
 /// <p>Describes the credentials for the service account used by the fleet or image builder to connect to the directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceAccountCredentials {
+pub struct ServiceAccountCredentials  {
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
     #[doc(hidden)]
     pub account_name: std::option::Option<std::string::String>,
@@ -4467,15 +4096,15 @@ pub struct ServiceAccountCredentials {
 }
 impl ServiceAccountCredentials {
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The password for the account.</p>
-    pub fn account_password(&self) -> std::option::Option<&str> {
+    pub fn account_password(&self) -> std::option::Option<& str> {
         self.account_password.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceAccountCredentials {
+impl  std::fmt::Debug for ServiceAccountCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceAccountCredentials");
         formatter.field("account_name", &"*** Sensitive Data Redacted ***");
@@ -4485,7 +4114,7 @@ impl std::fmt::Debug for ServiceAccountCredentials {
 }
 /// See [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
 pub mod service_account_credentials {
-
+    
     /// A builder for [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4500,8 +4129,7 @@ pub mod service_account_credentials {
         }
         /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
         pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_name = input;
-            self
+            self.account_name = input; self
         }
         /// <p>The password for the account.</p>
         pub fn account_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4509,18 +4137,16 @@ pub mod service_account_credentials {
             self
         }
         /// <p>The password for the account.</p>
-        pub fn set_account_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.account_password = input;
-            self
+        pub fn set_account_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_password = input; self
         }
         /// Consumes the builder and constructs a [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
         pub fn build(self) -> crate::model::ServiceAccountCredentials {
             crate::model::ServiceAccountCredentials {
-                account_name: self.account_name,
-                account_password: self.account_password,
+                account_name: self.account_name
+                ,
+                account_password: self.account_password
+                ,
             }
         }
     }
@@ -4532,6 +4158,8 @@ pub mod service_account_credentials {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceAccountCredentials {
     /// Creates a new builder-style object to manufacture [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
@@ -4543,7 +4171,7 @@ impl ServiceAccountCredentials {
 /// <p>Describes an application in the application catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Application {
+pub struct Application  {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4564,8 +4192,7 @@ pub struct Application {
     pub enabled: bool,
     /// <p>Additional attributes that describe the application.</p>
     #[doc(hidden)]
-    pub metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory for the application.</p>
     #[doc(hidden)]
     pub working_directory: std::option::Option<std::string::String>,
@@ -4593,23 +4220,23 @@ pub struct Application {
 }
 impl Application {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The application name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The URL for the application icon. This URL might be time-limited.</p>
-    pub fn icon_url(&self) -> std::option::Option<&str> {
+    pub fn icon_url(&self) -> std::option::Option<& str> {
         self.icon_url.as_deref()
     }
     /// <p>The path to the application executable in the instance.</p>
-    pub fn launch_path(&self) -> std::option::Option<&str> {
+    pub fn launch_path(&self) -> std::option::Option<& str> {
         self.launch_path.as_deref()
     }
     /// <p>The arguments that are passed to the application at launch.</p>
-    pub fn launch_parameters(&self) -> std::option::Option<&str> {
+    pub fn launch_parameters(&self) -> std::option::Option<& str> {
         self.launch_parameters.as_deref()
     }
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
@@ -4617,48 +4244,45 @@ impl Application {
         self.enabled
     }
     /// <p>Additional attributes that describe the application.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The working directory for the application.</p>
-    pub fn working_directory(&self) -> std::option::Option<&str> {
+    pub fn working_directory(&self) -> std::option::Option<& str> {
         self.working_directory.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The app block ARN of the application.</p>
-    pub fn app_block_arn(&self) -> std::option::Option<&str> {
+    pub fn app_block_arn(&self) -> std::option::Option<& str> {
         self.app_block_arn.as_deref()
     }
     /// <p>The S3 location of the application icon.</p>
-    pub fn icon_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn icon_s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.icon_s3_location.as_ref()
     }
     /// <p>The platforms on which the application can run.</p>
-    pub fn platforms(&self) -> std::option::Option<&[crate::model::PlatformType]> {
+    pub fn platforms(&self) -> std::option::Option<& [crate::model::PlatformType]> {
         self.platforms.as_deref()
     }
     /// <p>The instance families for the application.</p>
-    pub fn instance_families(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_families(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_families.as_deref()
     }
     /// <p>The time at which the application was created within the app block.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
 /// See [`Application`](crate::model::Application).
 pub mod application {
-
+    
     /// A builder for [`Application`](crate::model::Application).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4668,9 +4292,7 @@ pub mod application {
         pub(crate) launch_path: std::option::Option<std::string::String>,
         pub(crate) launch_parameters: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) working_directory: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4688,8 +4310,7 @@ pub mod application {
         }
         /// <p>The name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The application name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4698,8 +4319,7 @@ pub mod application {
         }
         /// <p>The application name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The URL for the application icon. This URL might be time-limited.</p>
         pub fn icon_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4708,8 +4328,7 @@ pub mod application {
         }
         /// <p>The URL for the application icon. This URL might be time-limited.</p>
         pub fn set_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.icon_url = input;
-            self
+            self.icon_url = input; self
         }
         /// <p>The path to the application executable in the instance.</p>
         pub fn launch_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4718,8 +4337,7 @@ pub mod application {
         }
         /// <p>The path to the application executable in the instance.</p>
         pub fn set_launch_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.launch_path = input;
-            self
+            self.launch_path = input; self
         }
         /// <p>The arguments that are passed to the application at launch.</p>
         pub fn launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4727,12 +4345,8 @@ pub mod application {
             self
         }
         /// <p>The arguments that are passed to the application at launch.</p>
-        pub fn set_launch_parameters(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_parameters = input;
-            self
+        pub fn set_launch_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_parameters = input; self
         }
         /// <p>If there is a problem, the application can be disabled after image creation.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -4741,33 +4355,22 @@ pub mod application {
         }
         /// <p>If there is a problem, the application can be disabled after image creation.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Adds a key-value pair to `metadata`.
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>Additional attributes that describe the application.</p>
-        pub fn metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.metadata = Some(hash_map);
+                            self
         }
         /// <p>Additional attributes that describe the application.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The working directory for the application.</p>
         pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4775,12 +4378,8 @@ pub mod application {
             self
         }
         /// <p>The working directory for the application.</p>
-        pub fn set_working_directory(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.working_directory = input;
-            self
+        pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.working_directory = input; self
         }
         /// <p>The description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4789,8 +4388,7 @@ pub mod application {
         }
         /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the application.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4799,8 +4397,7 @@ pub mod application {
         }
         /// <p>The ARN of the application.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The app block ARN of the application.</p>
         pub fn app_block_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4808,12 +4405,8 @@ pub mod application {
             self
         }
         /// <p>The app block ARN of the application.</p>
-        pub fn set_app_block_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_block_arn = input;
-            self
+        pub fn set_app_block_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_block_arn = input; self
         }
         /// <p>The S3 location of the application icon.</p>
         pub fn icon_s3_location(mut self, input: crate::model::S3Location) -> Self {
@@ -4821,12 +4414,8 @@ pub mod application {
             self
         }
         /// <p>The S3 location of the application icon.</p>
-        pub fn set_icon_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.icon_s3_location = input;
-            self
+        pub fn set_icon_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.icon_s3_location = input; self
         }
         /// Appends an item to `platforms`.
         ///
@@ -4835,17 +4424,13 @@ pub mod application {
         /// <p>The platforms on which the application can run.</p>
         pub fn platforms(mut self, input: crate::model::PlatformType) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input);
-            self.platforms = Some(v);
-            self
+                            v.push(input);
+                            self.platforms = Some(v);
+                            self
         }
         /// <p>The platforms on which the application can run.</p>
-        pub fn set_platforms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
-        ) -> Self {
-            self.platforms = input;
-            self
+        pub fn set_platforms(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlatformType>>) -> Self {
+            self.platforms = input; self
         }
         /// Appends an item to `instance_families`.
         ///
@@ -4854,17 +4439,13 @@ pub mod application {
         /// <p>The instance families for the application.</p>
         pub fn instance_families(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_families.unwrap_or_default();
-            v.push(input.into());
-            self.instance_families = Some(v);
-            self
+                            v.push(input.into());
+                            self.instance_families = Some(v);
+                            self
         }
         /// <p>The instance families for the application.</p>
-        pub fn set_instance_families(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instance_families = input;
-            self
+        pub fn set_instance_families(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instance_families = input; self
         }
         /// <p>The time at which the application was created within the app block.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4872,34 +4453,48 @@ pub mod application {
             self
         }
         /// <p>The time at which the application was created within the app block.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`Application`](crate::model::Application).
         pub fn build(self) -> crate::model::Application {
             crate::model::Application {
-                name: self.name,
-                display_name: self.display_name,
-                icon_url: self.icon_url,
-                launch_path: self.launch_path,
-                launch_parameters: self.launch_parameters,
-                enabled: self.enabled.unwrap_or_default(),
-                metadata: self.metadata,
-                working_directory: self.working_directory,
-                description: self.description,
-                arn: self.arn,
-                app_block_arn: self.app_block_arn,
-                icon_s3_location: self.icon_s3_location,
-                platforms: self.platforms,
-                instance_families: self.instance_families,
-                created_time: self.created_time,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                icon_url: self.icon_url
+                ,
+                launch_path: self.launch_path
+                ,
+                launch_parameters: self.launch_parameters
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                metadata: self.metadata
+                ,
+                working_directory: self.working_directory
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                app_block_arn: self.app_block_arn
+                ,
+                icon_s3_location: self.icon_s3_location
+                ,
+                platforms: self.platforms
+                ,
+                instance_families: self.instance_families
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
@@ -4914,9 +4509,9 @@ impl Application {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applicationattribute = unimplemented!();
 /// match applicationattribute {
@@ -4938,60 +4533,52 @@ impl Application {
 /// Specifically, when `applicationattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApplicationAttribute {
     #[allow(missing_docs)] // documentation missing in model
     LaunchParameters,
     #[allow(missing_docs)] // documentation missing in model
     WorkingDirectory,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationAttribute {
     fn from(s: &str) -> Self {
         match s {
             "LAUNCH_PARAMETERS" => ApplicationAttribute::LaunchParameters,
             "WORKING_DIRECTORY" => ApplicationAttribute::WorkingDirectory,
-            other => {
-                ApplicationAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ApplicationAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApplicationAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApplicationAttribute::from(s))
+                }
+            }
 impl ApplicationAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationAttribute::LaunchParameters => "LAUNCH_PARAMETERS",
             ApplicationAttribute::WorkingDirectory => "WORKING_DIRECTORY",
-            ApplicationAttribute::Unknown(value) => value.as_str(),
+            ApplicationAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LAUNCH_PARAMETERS", "WORKING_DIRECTORY"]
+        &[
+            "LAUNCH_PARAMETERS", "WORKING_DIRECTORY"
+        ]
     }
 }
 impl AsRef<str> for ApplicationAttribute {
@@ -5003,7 +4590,7 @@ impl AsRef<str> for ApplicationAttribute {
 /// <p>Describes a virtual machine that is used to create an image. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageBuilder {
+pub struct ImageBuilder  {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5022,48 +4609,48 @@ pub struct ImageBuilder {
     /// <p>The VPC configuration of the image builder.</p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>The instance type for the image builder. The following instance types are available:</p>
-    /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <p>The instance type for the image builder. The following instance types are available:</p> 
+    /// <ul> 
+    /// <li> <p>stream.standard.small</p> </li> 
+    /// <li> <p>stream.standard.medium</p> </li> 
+    /// <li> <p>stream.standard.large</p> </li> 
+    /// <li> <p>stream.compute.large</p> </li> 
+    /// <li> <p>stream.compute.xlarge</p> </li> 
+    /// <li> <p>stream.compute.2xlarge</p> </li> 
+    /// <li> <p>stream.compute.4xlarge</p> </li> 
+    /// <li> <p>stream.compute.8xlarge</p> </li> 
+    /// <li> <p>stream.memory.large</p> </li> 
+    /// <li> <p>stream.memory.xlarge</p> </li> 
+    /// <li> <p>stream.memory.2xlarge</p> </li> 
+    /// <li> <p>stream.memory.4xlarge</p> </li> 
+    /// <li> <p>stream.memory.8xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.large</p> </li> 
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.large</p> </li> 
+    /// <li> <p>stream.graphics-design.xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The operating system platform of the image builder.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::model::PlatformType>,
-    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
@@ -5097,89 +4684,87 @@ pub struct ImageBuilder {
 }
 impl ImageBuilder {
     /// <p>The name of the image builder.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN for the image builder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the image from which this builder was created.</p>
-    pub fn image_arn(&self) -> std::option::Option<&str> {
+    pub fn image_arn(&self) -> std::option::Option<& str> {
         self.image_arn.as_deref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The image builder name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The VPC configuration of the image builder.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>The instance type for the image builder. The following instance types are available:</p>
-    /// <ul>
-    /// <li> <p>stream.standard.small</p> </li>
-    /// <li> <p>stream.standard.medium</p> </li>
-    /// <li> <p>stream.standard.large</p> </li>
-    /// <li> <p>stream.compute.large</p> </li>
-    /// <li> <p>stream.compute.xlarge</p> </li>
-    /// <li> <p>stream.compute.2xlarge</p> </li>
-    /// <li> <p>stream.compute.4xlarge</p> </li>
-    /// <li> <p>stream.compute.8xlarge</p> </li>
-    /// <li> <p>stream.memory.large</p> </li>
-    /// <li> <p>stream.memory.xlarge</p> </li>
-    /// <li> <p>stream.memory.2xlarge</p> </li>
-    /// <li> <p>stream.memory.4xlarge</p> </li>
-    /// <li> <p>stream.memory.8xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.large</p> </li>
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.large</p> </li>
-    /// <li> <p>stream.graphics-design.xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// <p>The instance type for the image builder. The following instance types are available:</p> 
+    /// <ul> 
+    /// <li> <p>stream.standard.small</p> </li> 
+    /// <li> <p>stream.standard.medium</p> </li> 
+    /// <li> <p>stream.standard.large</p> </li> 
+    /// <li> <p>stream.compute.large</p> </li> 
+    /// <li> <p>stream.compute.xlarge</p> </li> 
+    /// <li> <p>stream.compute.2xlarge</p> </li> 
+    /// <li> <p>stream.compute.4xlarge</p> </li> 
+    /// <li> <p>stream.compute.8xlarge</p> </li> 
+    /// <li> <p>stream.memory.large</p> </li> 
+    /// <li> <p>stream.memory.xlarge</p> </li> 
+    /// <li> <p>stream.memory.2xlarge</p> </li> 
+    /// <li> <p>stream.memory.4xlarge</p> </li> 
+    /// <li> <p>stream.memory.8xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.large</p> </li> 
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.large</p> </li> 
+    /// <li> <p>stream.graphics-design.xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
     /// </ul>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The operating system platform of the image builder.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::PlatformType> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::PlatformType> {
         self.platform.as_ref()
     }
-    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The state of the image builder.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ImageBuilderState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ImageBuilderState> {
         self.state.as_ref()
     }
     /// <p>The reason why the last state change occurred.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageBuilderStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::model::ImageBuilderStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The time stamp when the image builder was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
@@ -5187,31 +4772,29 @@ impl ImageBuilder {
         self.enable_default_internet_access
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-    pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
+    pub fn domain_join_info(&self) -> std::option::Option<& crate::model::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
-    pub fn network_access_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NetworkAccessConfiguration> {
+    pub fn network_access_configuration(&self) -> std::option::Option<& crate::model::NetworkAccessConfiguration> {
         self.network_access_configuration.as_ref()
     }
     /// <p>The image builder errors.</p>
-    pub fn image_builder_errors(&self) -> std::option::Option<&[crate::model::ResourceError]> {
+    pub fn image_builder_errors(&self) -> std::option::Option<& [crate::model::ResourceError]> {
         self.image_builder_errors.as_deref()
     }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
-    pub fn appstream_agent_version(&self) -> std::option::Option<&str> {
+    pub fn appstream_agent_version(&self) -> std::option::Option<& str> {
         self.appstream_agent_version.as_deref()
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn access_endpoints(&self) -> std::option::Option<&[crate::model::AccessEndpoint]> {
+    pub fn access_endpoints(&self) -> std::option::Option<& [crate::model::AccessEndpoint]> {
         self.access_endpoints.as_deref()
     }
 }
 /// See [`ImageBuilder`](crate::model::ImageBuilder).
 pub mod image_builder {
-
+    
     /// A builder for [`ImageBuilder`](crate::model::ImageBuilder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5225,18 +4808,14 @@ pub mod image_builder {
         pub(crate) platform: std::option::Option<crate::model::PlatformType>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ImageBuilderState>,
-        pub(crate) state_change_reason:
-            std::option::Option<crate::model::ImageBuilderStateChangeReason>,
+        pub(crate) state_change_reason: std::option::Option<crate::model::ImageBuilderStateChangeReason>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enable_default_internet_access: std::option::Option<bool>,
         pub(crate) domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
-        pub(crate) network_access_configuration:
-            std::option::Option<crate::model::NetworkAccessConfiguration>,
-        pub(crate) image_builder_errors:
-            std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
+        pub(crate) network_access_configuration: std::option::Option<crate::model::NetworkAccessConfiguration>,
+        pub(crate) image_builder_errors: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
         pub(crate) appstream_agent_version: std::option::Option<std::string::String>,
-        pub(crate) access_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
+        pub(crate) access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
     }
     impl Builder {
         /// <p>The name of the image builder.</p>
@@ -5246,8 +4825,7 @@ pub mod image_builder {
         }
         /// <p>The name of the image builder.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN for the image builder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5256,8 +4834,7 @@ pub mod image_builder {
         }
         /// <p>The ARN for the image builder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of the image from which this builder was created.</p>
         pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5266,8 +4843,7 @@ pub mod image_builder {
         }
         /// <p>The ARN of the image from which this builder was created.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_arn = input;
-            self
+            self.image_arn = input; self
         }
         /// <p>The description to display.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5276,8 +4852,7 @@ pub mod image_builder {
         }
         /// <p>The description to display.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The image builder name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5286,8 +4861,7 @@ pub mod image_builder {
         }
         /// <p>The image builder name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The VPC configuration of the image builder.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
@@ -5295,95 +4869,87 @@ pub mod image_builder {
             self
         }
         /// <p>The VPC configuration of the image builder.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfig>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfig>) -> Self {
+            self.vpc_config = input; self
         }
-        /// <p>The instance type for the image builder. The following instance types are available:</p>
-        /// <ul>
-        /// <li> <p>stream.standard.small</p> </li>
-        /// <li> <p>stream.standard.medium</p> </li>
-        /// <li> <p>stream.standard.large</p> </li>
-        /// <li> <p>stream.compute.large</p> </li>
-        /// <li> <p>stream.compute.xlarge</p> </li>
-        /// <li> <p>stream.compute.2xlarge</p> </li>
-        /// <li> <p>stream.compute.4xlarge</p> </li>
-        /// <li> <p>stream.compute.8xlarge</p> </li>
-        /// <li> <p>stream.memory.large</p> </li>
-        /// <li> <p>stream.memory.xlarge</p> </li>
-        /// <li> <p>stream.memory.2xlarge</p> </li>
-        /// <li> <p>stream.memory.4xlarge</p> </li>
-        /// <li> <p>stream.memory.8xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.large</p> </li>
-        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.large</p> </li>
-        /// <li> <p>stream.graphics-design.xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+        /// <p>The instance type for the image builder. The following instance types are available:</p> 
+        /// <ul> 
+        /// <li> <p>stream.standard.small</p> </li> 
+        /// <li> <p>stream.standard.medium</p> </li> 
+        /// <li> <p>stream.standard.large</p> </li> 
+        /// <li> <p>stream.compute.large</p> </li> 
+        /// <li> <p>stream.compute.xlarge</p> </li> 
+        /// <li> <p>stream.compute.2xlarge</p> </li> 
+        /// <li> <p>stream.compute.4xlarge</p> </li> 
+        /// <li> <p>stream.compute.8xlarge</p> </li> 
+        /// <li> <p>stream.memory.large</p> </li> 
+        /// <li> <p>stream.memory.xlarge</p> </li> 
+        /// <li> <p>stream.memory.2xlarge</p> </li> 
+        /// <li> <p>stream.memory.4xlarge</p> </li> 
+        /// <li> <p>stream.memory.8xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.large</p> </li> 
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.large</p> </li> 
+        /// <li> <p>stream.graphics-design.xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type for the image builder. The following instance types are available:</p>
-        /// <ul>
-        /// <li> <p>stream.standard.small</p> </li>
-        /// <li> <p>stream.standard.medium</p> </li>
-        /// <li> <p>stream.standard.large</p> </li>
-        /// <li> <p>stream.compute.large</p> </li>
-        /// <li> <p>stream.compute.xlarge</p> </li>
-        /// <li> <p>stream.compute.2xlarge</p> </li>
-        /// <li> <p>stream.compute.4xlarge</p> </li>
-        /// <li> <p>stream.compute.8xlarge</p> </li>
-        /// <li> <p>stream.memory.large</p> </li>
-        /// <li> <p>stream.memory.xlarge</p> </li>
-        /// <li> <p>stream.memory.2xlarge</p> </li>
-        /// <li> <p>stream.memory.4xlarge</p> </li>
-        /// <li> <p>stream.memory.8xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.large</p> </li>
-        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
-        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.large</p> </li>
-        /// <li> <p>stream.graphics-design.xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
-        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
-        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
-        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
-        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+        /// <p>The instance type for the image builder. The following instance types are available:</p> 
+        /// <ul> 
+        /// <li> <p>stream.standard.small</p> </li> 
+        /// <li> <p>stream.standard.medium</p> </li> 
+        /// <li> <p>stream.standard.large</p> </li> 
+        /// <li> <p>stream.compute.large</p> </li> 
+        /// <li> <p>stream.compute.xlarge</p> </li> 
+        /// <li> <p>stream.compute.2xlarge</p> </li> 
+        /// <li> <p>stream.compute.4xlarge</p> </li> 
+        /// <li> <p>stream.compute.8xlarge</p> </li> 
+        /// <li> <p>stream.memory.large</p> </li> 
+        /// <li> <p>stream.memory.xlarge</p> </li> 
+        /// <li> <p>stream.memory.2xlarge</p> </li> 
+        /// <li> <p>stream.memory.4xlarge</p> </li> 
+        /// <li> <p>stream.memory.8xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.large</p> </li> 
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.large</p> </li> 
+        /// <li> <p>stream.graphics-design.xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
         /// </ul>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The operating system platform of the image builder.</p>
         pub fn platform(mut self, input: crate::model::PlatformType) -> Self {
@@ -5391,24 +4957,19 @@ pub mod image_builder {
             self
         }
         /// <p>The operating system platform of the image builder.</p>
-        pub fn set_platform(
-            mut self,
-            input: std::option::Option<crate::model::PlatformType>,
-        ) -> Self {
-            self.platform = input;
-            self
+        pub fn set_platform(mut self, input: std::option::Option<crate::model::PlatformType>) -> Self {
+            self.platform = input; self
         }
-        /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+        /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+        /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// <p>The state of the image builder.</p>
         pub fn state(mut self, input: crate::model::ImageBuilderState) -> Self {
@@ -5416,28 +4977,17 @@ pub mod image_builder {
             self
         }
         /// <p>The state of the image builder.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ImageBuilderState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ImageBuilderState>) -> Self {
+            self.state = input; self
         }
         /// <p>The reason why the last state change occurred.</p>
-        pub fn state_change_reason(
-            mut self,
-            input: crate::model::ImageBuilderStateChangeReason,
-        ) -> Self {
+        pub fn state_change_reason(mut self, input: crate::model::ImageBuilderStateChangeReason) -> Self {
             self.state_change_reason = Some(input);
             self
         }
         /// <p>The reason why the last state change occurred.</p>
-        pub fn set_state_change_reason(
-            mut self,
-            input: std::option::Option<crate::model::ImageBuilderStateChangeReason>,
-        ) -> Self {
-            self.state_change_reason = input;
-            self
+        pub fn set_state_change_reason(mut self, input: std::option::Option<crate::model::ImageBuilderStateChangeReason>) -> Self {
+            self.state_change_reason = input; self
         }
         /// <p>The time stamp when the image builder was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5445,12 +4995,8 @@ pub mod image_builder {
             self
         }
         /// <p>The time stamp when the image builder was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>Enables or disables default internet access for the image builder.</p>
         pub fn enable_default_internet_access(mut self, input: bool) -> Self {
@@ -5458,12 +5004,8 @@ pub mod image_builder {
             self
         }
         /// <p>Enables or disables default internet access for the image builder.</p>
-        pub fn set_enable_default_internet_access(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_default_internet_access = input;
-            self
+        pub fn set_enable_default_internet_access(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_default_internet_access = input; self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
         pub fn domain_join_info(mut self, input: crate::model::DomainJoinInfo) -> Self {
@@ -5471,28 +5013,17 @@ pub mod image_builder {
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-        pub fn set_domain_join_info(
-            mut self,
-            input: std::option::Option<crate::model::DomainJoinInfo>,
-        ) -> Self {
-            self.domain_join_info = input;
-            self
+        pub fn set_domain_join_info(mut self, input: std::option::Option<crate::model::DomainJoinInfo>) -> Self {
+            self.domain_join_info = input; self
         }
         /// <p>Describes the network details of the fleet or image builder instance.</p>
-        pub fn network_access_configuration(
-            mut self,
-            input: crate::model::NetworkAccessConfiguration,
-        ) -> Self {
+        pub fn network_access_configuration(mut self, input: crate::model::NetworkAccessConfiguration) -> Self {
             self.network_access_configuration = Some(input);
             self
         }
         /// <p>Describes the network details of the fleet or image builder instance.</p>
-        pub fn set_network_access_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NetworkAccessConfiguration>,
-        ) -> Self {
-            self.network_access_configuration = input;
-            self
+        pub fn set_network_access_configuration(mut self, input: std::option::Option<crate::model::NetworkAccessConfiguration>) -> Self {
+            self.network_access_configuration = input; self
         }
         /// Appends an item to `image_builder_errors`.
         ///
@@ -5501,17 +5032,13 @@ pub mod image_builder {
         /// <p>The image builder errors.</p>
         pub fn image_builder_errors(mut self, input: crate::model::ResourceError) -> Self {
             let mut v = self.image_builder_errors.unwrap_or_default();
-            v.push(input);
-            self.image_builder_errors = Some(v);
-            self
+                            v.push(input);
+                            self.image_builder_errors = Some(v);
+                            self
         }
         /// <p>The image builder errors.</p>
-        pub fn set_image_builder_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
-        ) -> Self {
-            self.image_builder_errors = input;
-            self
+        pub fn set_image_builder_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceError>>) -> Self {
+            self.image_builder_errors = input; self
         }
         /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
         pub fn appstream_agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5519,12 +5046,8 @@ pub mod image_builder {
             self
         }
         /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
-        pub fn set_appstream_agent_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.appstream_agent_version = input;
-            self
+        pub fn set_appstream_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.appstream_agent_version = input; self
         }
         /// Appends an item to `access_endpoints`.
         ///
@@ -5533,42 +5056,58 @@ pub mod image_builder {
         /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
         pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input);
-            self.access_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.access_endpoints = Some(v);
+                            self
         }
         /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-        pub fn set_access_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
-        ) -> Self {
-            self.access_endpoints = input;
-            self
+        pub fn set_access_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>) -> Self {
+            self.access_endpoints = input; self
         }
         /// Consumes the builder and constructs a [`ImageBuilder`](crate::model::ImageBuilder).
         pub fn build(self) -> crate::model::ImageBuilder {
             crate::model::ImageBuilder {
-                name: self.name,
-                arn: self.arn,
-                image_arn: self.image_arn,
-                description: self.description,
-                display_name: self.display_name,
-                vpc_config: self.vpc_config,
-                instance_type: self.instance_type,
-                platform: self.platform,
-                iam_role_arn: self.iam_role_arn,
-                state: self.state,
-                state_change_reason: self.state_change_reason,
-                created_time: self.created_time,
-                enable_default_internet_access: self.enable_default_internet_access,
-                domain_join_info: self.domain_join_info,
-                network_access_configuration: self.network_access_configuration,
-                image_builder_errors: self.image_builder_errors,
-                appstream_agent_version: self.appstream_agent_version,
-                access_endpoints: self.access_endpoints,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                image_arn: self.image_arn
+                ,
+                description: self.description
+                ,
+                display_name: self.display_name
+                ,
+                vpc_config: self.vpc_config
+                ,
+                instance_type: self.instance_type
+                ,
+                platform: self.platform
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                state: self.state
+                ,
+                state_change_reason: self.state_change_reason
+                ,
+                created_time: self.created_time
+                ,
+                enable_default_internet_access: self.enable_default_internet_access
+                ,
+                domain_join_info: self.domain_join_info
+                ,
+                network_access_configuration: self.network_access_configuration
+                ,
+                image_builder_errors: self.image_builder_errors
+                ,
+                appstream_agent_version: self.appstream_agent_version
+                ,
+                access_endpoints: self.access_endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageBuilder {
     /// Creates a new builder-style object to manufacture [`ImageBuilder`](crate::model::ImageBuilder).
@@ -5580,7 +5119,7 @@ impl ImageBuilder {
 /// <p>Describes a resource error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceError {
+pub struct ResourceError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::FleetErrorCode>,
@@ -5593,21 +5132,21 @@ pub struct ResourceError {
 }
 impl ResourceError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::FleetErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::FleetErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The time the error occurred.</p>
-    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn error_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
     }
 }
 /// See [`ResourceError`](crate::model::ResourceError).
 pub mod resource_error {
-
+    
     /// A builder for [`ResourceError`](crate::model::ResourceError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5622,12 +5161,8 @@ pub mod resource_error {
             self
         }
         /// <p>The error code.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::FleetErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::FleetErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5635,12 +5170,8 @@ pub mod resource_error {
             self
         }
         /// <p>The error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The time the error occurred.</p>
         pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5648,22 +5179,23 @@ pub mod resource_error {
             self
         }
         /// <p>The time the error occurred.</p>
-        pub fn set_error_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.error_timestamp = input;
-            self
+        pub fn set_error_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.error_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`ResourceError`](crate::model::ResourceError).
         pub fn build(self) -> crate::model::ResourceError {
             crate::model::ResourceError {
-                error_code: self.error_code,
-                error_message: self.error_message,
-                error_timestamp: self.error_timestamp,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
+                error_timestamp: self.error_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceError {
     /// Creates a new builder-style object to manufacture [`ResourceError`](crate::model::ResourceError).
@@ -5675,7 +5207,7 @@ impl ResourceError {
 /// <p>Describes the network details of the fleet or image builder instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkAccessConfiguration {
+pub struct NetworkAccessConfiguration  {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
     #[doc(hidden)]
     pub eni_private_ip_address: std::option::Option<std::string::String>,
@@ -5685,17 +5217,17 @@ pub struct NetworkAccessConfiguration {
 }
 impl NetworkAccessConfiguration {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
-    pub fn eni_private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn eni_private_ip_address(&self) -> std::option::Option<& str> {
         self.eni_private_ip_address.as_deref()
     }
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
-    pub fn eni_id(&self) -> std::option::Option<&str> {
+    pub fn eni_id(&self) -> std::option::Option<& str> {
         self.eni_id.as_deref()
     }
 }
 /// See [`NetworkAccessConfiguration`](crate::model::NetworkAccessConfiguration).
 pub mod network_access_configuration {
-
+    
     /// A builder for [`NetworkAccessConfiguration`](crate::model::NetworkAccessConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5709,12 +5241,8 @@ pub mod network_access_configuration {
             self
         }
         /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
-        pub fn set_eni_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.eni_private_ip_address = input;
-            self
+        pub fn set_eni_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.eni_private_ip_address = input; self
         }
         /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
         pub fn eni_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5723,17 +5251,20 @@ pub mod network_access_configuration {
         }
         /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
         pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eni_id = input;
-            self
+            self.eni_id = input; self
         }
         /// Consumes the builder and constructs a [`NetworkAccessConfiguration`](crate::model::NetworkAccessConfiguration).
         pub fn build(self) -> crate::model::NetworkAccessConfiguration {
             crate::model::NetworkAccessConfiguration {
-                eni_private_ip_address: self.eni_private_ip_address,
-                eni_id: self.eni_id,
+                eni_private_ip_address: self.eni_private_ip_address
+                ,
+                eni_id: self.eni_id
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkAccessConfiguration {
     /// Creates a new builder-style object to manufacture [`NetworkAccessConfiguration`](crate::model::NetworkAccessConfiguration).
@@ -5745,7 +5276,7 @@ impl NetworkAccessConfiguration {
 /// <p>Describes the reason why the last image builder state change occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageBuilderStateChangeReason {
+pub struct ImageBuilderStateChangeReason  {
     /// <p>The state change reason code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ImageBuilderStateChangeReasonCode>,
@@ -5755,17 +5286,17 @@ pub struct ImageBuilderStateChangeReason {
 }
 impl ImageBuilderStateChangeReason {
     /// <p>The state change reason code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::ImageBuilderStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ImageBuilderStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The state change reason message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ImageBuilderStateChangeReason`](crate::model::ImageBuilderStateChangeReason).
 pub mod image_builder_state_change_reason {
-
+    
     /// A builder for [`ImageBuilderStateChangeReason`](crate::model::ImageBuilderStateChangeReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5779,12 +5310,8 @@ pub mod image_builder_state_change_reason {
             self
         }
         /// <p>The state change reason code.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::ImageBuilderStateChangeReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::ImageBuilderStateChangeReasonCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The state change reason message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5793,17 +5320,20 @@ pub mod image_builder_state_change_reason {
         }
         /// <p>The state change reason message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ImageBuilderStateChangeReason`](crate::model::ImageBuilderStateChangeReason).
         pub fn build(self) -> crate::model::ImageBuilderStateChangeReason {
             crate::model::ImageBuilderStateChangeReason {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageBuilderStateChangeReason {
     /// Creates a new builder-style object to manufacture [`ImageBuilderStateChangeReason`](crate::model::ImageBuilderStateChangeReason).
@@ -5818,9 +5348,9 @@ impl ImageBuilderStateChangeReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagebuilderstatechangereasoncode = unimplemented!();
 /// match imagebuilderstatechangereasoncode {
@@ -5842,60 +5372,52 @@ impl ImageBuilderStateChangeReason {
 /// Specifically, when `imagebuilderstatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageBuilderStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageBuilderStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ImageUnavailable,
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageBuilderStateChangeReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "IMAGE_UNAVAILABLE" => ImageBuilderStateChangeReasonCode::ImageUnavailable,
             "INTERNAL_ERROR" => ImageBuilderStateChangeReasonCode::InternalError,
-            other => ImageBuilderStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ImageBuilderStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageBuilderStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageBuilderStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageBuilderStateChangeReasonCode::from(s))
+                }
+            }
 impl ImageBuilderStateChangeReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageBuilderStateChangeReasonCode::ImageUnavailable => "IMAGE_UNAVAILABLE",
             ImageBuilderStateChangeReasonCode::InternalError => "INTERNAL_ERROR",
-            ImageBuilderStateChangeReasonCode::Unknown(value) => value.as_str(),
+            ImageBuilderStateChangeReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMAGE_UNAVAILABLE", "INTERNAL_ERROR"]
+        &[
+            "IMAGE_UNAVAILABLE", "INTERNAL_ERROR"
+        ]
     }
 }
 impl AsRef<str> for ImageBuilderStateChangeReasonCode {
@@ -5910,9 +5432,9 @@ impl AsRef<str> for ImageBuilderStateChangeReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagebuilderstate = unimplemented!();
 /// match imagebuilderstate {
@@ -5943,22 +5465,14 @@ impl AsRef<str> for ImageBuilderStateChangeReasonCode {
 /// Specifically, when `imagebuilderstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageBuilderState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageBuilderState {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -5983,7 +5497,7 @@ pub enum ImageBuilderState {
     #[allow(missing_docs)] // documentation missing in model
     UpdatingAgent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageBuilderState {
     fn from(s: &str) -> Self {
@@ -5999,19 +5513,17 @@ impl std::convert::From<&str> for ImageBuilderState {
             "STOPPING" => ImageBuilderState::Stopping,
             "UPDATING" => ImageBuilderState::Updating,
             "UPDATING_AGENT" => ImageBuilderState::UpdatingAgent,
-            other => {
-                ImageBuilderState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImageBuilderState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageBuilderState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageBuilderState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageBuilderState::from(s))
+                }
+            }
 impl ImageBuilderState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6027,23 +5539,13 @@ impl ImageBuilderState {
             ImageBuilderState::Stopping => "STOPPING",
             ImageBuilderState::Updating => "UPDATING",
             ImageBuilderState::UpdatingAgent => "UPDATING_AGENT",
-            ImageBuilderState::Unknown(value) => value.as_str(),
+            ImageBuilderState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DELETING",
-            "FAILED",
-            "PENDING",
-            "PENDING_QUALIFICATION",
-            "REBOOTING",
-            "RUNNING",
-            "SNAPSHOTTING",
-            "STOPPED",
-            "STOPPING",
-            "UPDATING",
-            "UPDATING_AGENT",
+            "DELETING", "FAILED", "PENDING", "PENDING_QUALIFICATION", "REBOOTING", "RUNNING", "SNAPSHOTTING", "STOPPED", "STOPPING", "UPDATING", "UPDATING_AGENT"
         ]
     }
 }
@@ -6056,20 +5558,20 @@ impl AsRef<str> for ImageBuilderState {
 /// <p>The application associated to an entitlement. Access is controlled based on user attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitledApplication {
+pub struct EntitledApplication  {
     /// <p>The identifier of the application.</p>
     #[doc(hidden)]
     pub application_identifier: std::option::Option<std::string::String>,
 }
 impl EntitledApplication {
     /// <p>The identifier of the application.</p>
-    pub fn application_identifier(&self) -> std::option::Option<&str> {
+    pub fn application_identifier(&self) -> std::option::Option<& str> {
         self.application_identifier.as_deref()
     }
 }
 /// See [`EntitledApplication`](crate::model::EntitledApplication).
 pub mod entitled_application {
-
+    
     /// A builder for [`EntitledApplication`](crate::model::EntitledApplication).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6082,20 +5584,19 @@ pub mod entitled_application {
             self
         }
         /// <p>The identifier of the application.</p>
-        pub fn set_application_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_identifier = input;
-            self
+        pub fn set_application_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_identifier = input; self
         }
         /// Consumes the builder and constructs a [`EntitledApplication`](crate::model::EntitledApplication).
         pub fn build(self) -> crate::model::EntitledApplication {
             crate::model::EntitledApplication {
-                application_identifier: self.application_identifier,
+                application_identifier: self.application_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl EntitledApplication {
     /// Creates a new builder-style object to manufacture [`EntitledApplication`](crate::model::EntitledApplication).
@@ -6110,9 +5611,9 @@ impl EntitledApplication {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authenticationtype = unimplemented!();
 /// match authenticationtype {
@@ -6136,22 +5637,14 @@ impl EntitledApplication {
 /// Specifically, when `authenticationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthenticationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     Api,
@@ -6162,7 +5655,7 @@ pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     Userpool,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthenticationType {
     fn from(s: &str) -> Self {
@@ -6171,19 +5664,17 @@ impl std::convert::From<&str> for AuthenticationType {
             "AWS_AD" => AuthenticationType::AwsAd,
             "SAML" => AuthenticationType::Saml,
             "USERPOOL" => AuthenticationType::Userpool,
-            other => {
-                AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthenticationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthenticationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthenticationType::from(s))
+                }
+            }
 impl AuthenticationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6192,12 +5683,14 @@ impl AuthenticationType {
             AuthenticationType::AwsAd => "AWS_AD",
             AuthenticationType::Saml => "SAML",
             AuthenticationType::Userpool => "USERPOOL",
-            AuthenticationType::Unknown(value) => value.as_str(),
+            AuthenticationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["API", "AWS_AD", "SAML", "USERPOOL"]
+        &[
+            "API", "AWS_AD", "SAML", "USERPOOL"
+        ]
     }
 }
 impl AsRef<str> for AuthenticationType {
@@ -6209,12 +5702,12 @@ impl AsRef<str> for AuthenticationType {
 /// <p>Describes a user in the user pool and the associated stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UserStackAssociation {
+pub struct UserStackAssociation  {
     /// <p>The name of the stack that is associated with the user.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user who is associated with the stack.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -6227,17 +5720,17 @@ pub struct UserStackAssociation {
 }
 impl UserStackAssociation {
     /// <p>The name of the stack that is associated with the user.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user who is associated with the stack.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The authentication type for the user.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
@@ -6245,7 +5738,7 @@ impl UserStackAssociation {
         self.send_email_notification
     }
 }
-impl std::fmt::Debug for UserStackAssociation {
+impl  std::fmt::Debug for UserStackAssociation  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserStackAssociation");
         formatter.field("stack_name", &self.stack_name);
@@ -6257,7 +5750,7 @@ impl std::fmt::Debug for UserStackAssociation {
 }
 /// See [`UserStackAssociation`](crate::model::UserStackAssociation).
 pub mod user_stack_association {
-
+    
     /// A builder for [`UserStackAssociation`](crate::model::UserStackAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6274,22 +5767,20 @@ pub mod user_stack_association {
         }
         /// <p>The name of the stack that is associated with the user.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = input;
-            self
+            self.stack_name = input; self
         }
-        /// <p>The email address of the user who is associated with the stack.</p> <note>
-        /// <p>Users' email addresses are case-sensitive.</p>
+        /// <p>The email address of the user who is associated with the stack.</p> <note> 
+        /// <p>Users' email addresses are case-sensitive.</p> 
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p> <note>
-        /// <p>Users' email addresses are case-sensitive.</p>
+        /// <p>The email address of the user who is associated with the stack.</p> <note> 
+        /// <p>Users' email addresses are case-sensitive.</p> 
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>The authentication type for the user.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
@@ -6297,12 +5788,8 @@ pub mod user_stack_association {
             self
         }
         /// <p>The authentication type for the user.</p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::AuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
         pub fn send_email_notification(mut self, input: bool) -> Self {
@@ -6311,16 +5798,20 @@ pub mod user_stack_association {
         }
         /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
         pub fn set_send_email_notification(mut self, input: std::option::Option<bool>) -> Self {
-            self.send_email_notification = input;
-            self
+            self.send_email_notification = input; self
         }
         /// Consumes the builder and constructs a [`UserStackAssociation`](crate::model::UserStackAssociation).
         pub fn build(self) -> crate::model::UserStackAssociation {
             crate::model::UserStackAssociation {
-                stack_name: self.stack_name,
-                user_name: self.user_name,
-                authentication_type: self.authentication_type,
-                send_email_notification: self.send_email_notification.unwrap_or_default(),
+                stack_name: self.stack_name
+                ,
+                user_name: self.user_name
+                ,
+                authentication_type: self.authentication_type
+                ,
+                send_email_notification: self.send_email_notification
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -6334,6 +5825,8 @@ pub mod user_stack_association {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UserStackAssociation {
     /// Creates a new builder-style object to manufacture [`UserStackAssociation`](crate::model::UserStackAssociation).
@@ -6345,25 +5838,25 @@ impl UserStackAssociation {
 /// <p>Describes a user in the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct User {
+pub struct User  {
     /// <p>The ARN of the user.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The email address of the user.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the user in the user pool is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
-    /// <p>The status of the user in the user pool. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
-    /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
-    /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
-    /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
+    /// <p>The status of the user in the user pool. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li> 
+    /// <li> <p>CONFIRMED – The user is confirmed.</p> </li> 
+    /// <li> <p>ARCHIVED – The user is no longer active.</p> </li> 
+    /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li> 
+    /// <li> <p>UNKNOWN – The user status is not known.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -6382,48 +5875,48 @@ pub struct User {
 }
 impl User {
     /// <p>The ARN of the user.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The email address of the user.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Specifies whether the user in the user pool is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>The status of the user in the user pool. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
-    /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
-    /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
-    /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
+    /// <p>The status of the user in the user pool. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li> 
+    /// <li> <p>CONFIRMED – The user is confirmed.</p> </li> 
+    /// <li> <p>ARCHIVED – The user is no longer active.</p> </li> 
+    /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li> 
+    /// <li> <p>UNKNOWN – The user status is not known.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The first name, or given name, of the user.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name, or surname, of the user.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The date and time the user was created in the user pool.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The authentication type for the user.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
-impl std::fmt::Debug for User {
+impl  std::fmt::Debug for User  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("arn", &self.arn);
@@ -6439,7 +5932,7 @@ impl std::fmt::Debug for User {
 }
 /// See [`User`](crate::model::User).
 pub mod user {
-
+    
     /// A builder for [`User`](crate::model::User).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6460,22 +5953,20 @@ pub mod user {
         }
         /// <p>The ARN of the user.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The email address of the user.</p> <note>
-        /// <p>Users' email addresses are case-sensitive.</p>
+        /// <p>The email address of the user.</p> <note> 
+        /// <p>Users' email addresses are case-sensitive.</p> 
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user.</p> <note>
-        /// <p>Users' email addresses are case-sensitive.</p>
+        /// <p>The email address of the user.</p> <note> 
+        /// <p>Users' email addresses are case-sensitive.</p> 
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>Specifies whether the user in the user pool is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -6484,32 +5975,30 @@ pub mod user {
         }
         /// <p>Specifies whether the user in the user pool is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
-        /// <p>The status of the user in the user pool. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
-        /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
-        /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
-        /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
-        /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
+        /// <p>The status of the user in the user pool. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li> 
+        /// <li> <p>CONFIRMED – The user is confirmed.</p> </li> 
+        /// <li> <p>ARCHIVED – The user is no longer active.</p> </li> 
+        /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li> 
+        /// <li> <p>UNKNOWN – The user status is not known.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the user in the user pool. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
-        /// <li> <p>CONFIRMED – The user is confirmed.</p> </li>
-        /// <li> <p>ARCHIVED – The user is no longer active.</p> </li>
-        /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
-        /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
+        /// <p>The status of the user in the user pool. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li> 
+        /// <li> <p>CONFIRMED – The user is confirmed.</p> </li> 
+        /// <li> <p>ARCHIVED – The user is no longer active.</p> </li> 
+        /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li> 
+        /// <li> <p>UNKNOWN – The user status is not known.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The first name, or given name, of the user.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6518,8 +6007,7 @@ pub mod user {
         }
         /// <p>The first name, or given name, of the user.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.first_name = input;
-            self
+            self.first_name = input; self
         }
         /// <p>The last name, or surname, of the user.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6528,8 +6016,7 @@ pub mod user {
         }
         /// <p>The last name, or surname, of the user.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.last_name = input;
-            self
+            self.last_name = input; self
         }
         /// <p>The date and time the user was created in the user pool.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6537,12 +6024,8 @@ pub mod user {
             self
         }
         /// <p>The date and time the user was created in the user pool.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The authentication type for the user.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
@@ -6550,24 +6033,29 @@ pub mod user {
             self
         }
         /// <p>The authentication type for the user.</p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::AuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// Consumes the builder and constructs a [`User`](crate::model::User).
         pub fn build(self) -> crate::model::User {
             crate::model::User {
-                arn: self.arn,
-                user_name: self.user_name,
-                enabled: self.enabled.unwrap_or_default(),
-                status: self.status,
-                first_name: self.first_name,
-                last_name: self.last_name,
-                created_time: self.created_time,
-                authentication_type: self.authentication_type,
+                arn: self.arn
+                ,
+                user_name: self.user_name
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                created_time: self.created_time
+                ,
+                authentication_type: self.authentication_type
+                ,
             }
         }
     }
@@ -6585,6 +6073,8 @@ pub mod user {
             formatter.finish()
         }
     }
+    
+    
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -6596,8 +6086,8 @@ impl User {
 /// <p>Describes information about the usage report subscription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsageReportSubscription {
-    /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+pub struct UsageReportSubscription  {
+    /// <p>The Amazon S3 bucket where generated reports are stored.</p> 
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -6609,57 +6099,49 @@ pub struct UsageReportSubscription {
     pub last_generated_report_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
     #[doc(hidden)]
-    pub subscription_errors:
-        std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
+    pub subscription_errors: std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
 }
 impl UsageReportSubscription {
-    /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+    /// <p>The Amazon S3 bucket where generated reports are stored.</p> 
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The schedule for generating usage reports.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::model::UsageReportSchedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::model::UsageReportSchedule> {
         self.schedule.as_ref()
     }
     /// <p>The time when the last usage report was generated.</p>
-    pub fn last_generated_report_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_generated_report_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_generated_report_date.as_ref()
     }
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
-    pub fn subscription_errors(
-        &self,
-    ) -> std::option::Option<&[crate::model::LastReportGenerationExecutionError]> {
+    pub fn subscription_errors(&self) -> std::option::Option<& [crate::model::LastReportGenerationExecutionError]> {
         self.subscription_errors.as_deref()
     }
 }
 /// See [`UsageReportSubscription`](crate::model::UsageReportSubscription).
 pub mod usage_report_subscription {
-
+    
     /// A builder for [`UsageReportSubscription`](crate::model::UsageReportSubscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) schedule: std::option::Option<crate::model::UsageReportSchedule>,
         pub(crate) last_generated_report_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) subscription_errors:
-            std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
+        pub(crate) subscription_errors: std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
     }
     impl Builder {
-        /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+        /// <p>The Amazon S3 bucket where generated reports are stored.</p> 
         /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+        /// <p>The Amazon S3 bucket where generated reports are stored.</p> 
         /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// <p>The schedule for generating usage reports.</p>
         pub fn schedule(mut self, input: crate::model::UsageReportSchedule) -> Self {
@@ -6667,12 +6149,8 @@ pub mod usage_report_subscription {
             self
         }
         /// <p>The schedule for generating usage reports.</p>
-        pub fn set_schedule(
-            mut self,
-            input: std::option::Option<crate::model::UsageReportSchedule>,
-        ) -> Self {
-            self.schedule = input;
-            self
+        pub fn set_schedule(mut self, input: std::option::Option<crate::model::UsageReportSchedule>) -> Self {
+            self.schedule = input; self
         }
         /// <p>The time when the last usage report was generated.</p>
         pub fn last_generated_report_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6680,47 +6158,40 @@ pub mod usage_report_subscription {
             self
         }
         /// <p>The time when the last usage report was generated.</p>
-        pub fn set_last_generated_report_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_generated_report_date = input;
-            self
+        pub fn set_last_generated_report_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_generated_report_date = input; self
         }
         /// Appends an item to `subscription_errors`.
         ///
         /// To override the contents of this collection use [`set_subscription_errors`](Self::set_subscription_errors).
         ///
         /// <p>The errors that were returned if usage reports couldn't be generated.</p>
-        pub fn subscription_errors(
-            mut self,
-            input: crate::model::LastReportGenerationExecutionError,
-        ) -> Self {
+        pub fn subscription_errors(mut self, input: crate::model::LastReportGenerationExecutionError) -> Self {
             let mut v = self.subscription_errors.unwrap_or_default();
-            v.push(input);
-            self.subscription_errors = Some(v);
-            self
+                            v.push(input);
+                            self.subscription_errors = Some(v);
+                            self
         }
         /// <p>The errors that were returned if usage reports couldn't be generated.</p>
-        pub fn set_subscription_errors(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::LastReportGenerationExecutionError>,
-            >,
-        ) -> Self {
-            self.subscription_errors = input;
-            self
+        pub fn set_subscription_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>) -> Self {
+            self.subscription_errors = input; self
         }
         /// Consumes the builder and constructs a [`UsageReportSubscription`](crate::model::UsageReportSubscription).
         pub fn build(self) -> crate::model::UsageReportSubscription {
             crate::model::UsageReportSubscription {
-                s3_bucket_name: self.s3_bucket_name,
-                schedule: self.schedule,
-                last_generated_report_date: self.last_generated_report_date,
-                subscription_errors: self.subscription_errors,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                schedule: self.schedule
+                ,
+                last_generated_report_date: self.last_generated_report_date
+                ,
+                subscription_errors: self.subscription_errors
+                ,
             }
         }
     }
+    
+    
 }
 impl UsageReportSubscription {
     /// Creates a new builder-style object to manufacture [`UsageReportSubscription`](crate::model::UsageReportSubscription).
@@ -6732,7 +6203,7 @@ impl UsageReportSubscription {
 /// <p>Describes the error that is returned when a usage report can't be generated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LastReportGenerationExecutionError {
+pub struct LastReportGenerationExecutionError  {
     /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::UsageReportExecutionErrorCode>,
@@ -6742,17 +6213,17 @@ pub struct LastReportGenerationExecutionError {
 }
 impl LastReportGenerationExecutionError {
     /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::UsageReportExecutionErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::UsageReportExecutionErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`LastReportGenerationExecutionError`](crate::model::LastReportGenerationExecutionError).
 pub mod last_report_generation_execution_error {
-
+    
     /// A builder for [`LastReportGenerationExecutionError`](crate::model::LastReportGenerationExecutionError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6766,12 +6237,8 @@ pub mod last_report_generation_execution_error {
             self
         }
         /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::UsageReportExecutionErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::UsageReportExecutionErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6779,21 +6246,21 @@ pub mod last_report_generation_execution_error {
             self
         }
         /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`LastReportGenerationExecutionError`](crate::model::LastReportGenerationExecutionError).
         pub fn build(self) -> crate::model::LastReportGenerationExecutionError {
             crate::model::LastReportGenerationExecutionError {
-                error_code: self.error_code,
-                error_message: self.error_message,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl LastReportGenerationExecutionError {
     /// Creates a new builder-style object to manufacture [`LastReportGenerationExecutionError`](crate::model::LastReportGenerationExecutionError).
@@ -6808,9 +6275,9 @@ impl LastReportGenerationExecutionError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagereportexecutionerrorcode = unimplemented!();
 /// match usagereportexecutionerrorcode {
@@ -6833,22 +6300,14 @@ impl LastReportGenerationExecutionError {
 /// Specifically, when `usagereportexecutionerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageReportExecutionErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageReportExecutionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -6857,7 +6316,7 @@ pub enum UsageReportExecutionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageReportExecutionErrorCode {
     fn from(s: &str) -> Self {
@@ -6865,19 +6324,17 @@ impl std::convert::From<&str> for UsageReportExecutionErrorCode {
             "ACCESS_DENIED" => UsageReportExecutionErrorCode::AccessDenied,
             "INTERNAL_SERVICE_ERROR" => UsageReportExecutionErrorCode::InternalServiceError,
             "RESOURCE_NOT_FOUND" => UsageReportExecutionErrorCode::ResourceNotFound,
-            other => UsageReportExecutionErrorCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UsageReportExecutionErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageReportExecutionErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageReportExecutionErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageReportExecutionErrorCode::from(s))
+                }
+            }
 impl UsageReportExecutionErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6885,15 +6342,13 @@ impl UsageReportExecutionErrorCode {
             UsageReportExecutionErrorCode::AccessDenied => "ACCESS_DENIED",
             UsageReportExecutionErrorCode::InternalServiceError => "INTERNAL_SERVICE_ERROR",
             UsageReportExecutionErrorCode::ResourceNotFound => "RESOURCE_NOT_FOUND",
-            UsageReportExecutionErrorCode::Unknown(value) => value.as_str(),
+            UsageReportExecutionErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCESS_DENIED",
-            "INTERNAL_SERVICE_ERROR",
-            "RESOURCE_NOT_FOUND",
+            "ACCESS_DENIED", "INTERNAL_SERVICE_ERROR", "RESOURCE_NOT_FOUND"
         ]
     }
 }
@@ -6909,9 +6364,9 @@ impl AsRef<str> for UsageReportExecutionErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagereportschedule = unimplemented!();
 /// match usagereportschedule {
@@ -6932,56 +6387,48 @@ impl AsRef<str> for UsageReportExecutionErrorCode {
 /// Specifically, when `usagereportschedule` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageReportSchedule::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageReportSchedule {
     #[allow(missing_docs)] // documentation missing in model
     Daily,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageReportSchedule {
     fn from(s: &str) -> Self {
         match s {
             "DAILY" => UsageReportSchedule::Daily,
-            other => {
-                UsageReportSchedule::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UsageReportSchedule::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageReportSchedule {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageReportSchedule::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageReportSchedule::from(s))
+                }
+            }
 impl UsageReportSchedule {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageReportSchedule::Daily => "DAILY",
-            UsageReportSchedule::Unknown(value) => value.as_str(),
+            UsageReportSchedule::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAILY"]
+        &[
+            "DAILY"
+        ]
     }
 }
 impl AsRef<str> for UsageReportSchedule {
@@ -6993,7 +6440,7 @@ impl AsRef<str> for UsageReportSchedule {
 /// <p>Describes a streaming session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Session {
+pub struct Session  {
     /// <p>The identifier of the streaming session.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7027,51 +6474,49 @@ pub struct Session {
 }
 impl Session {
     /// <p>The identifier of the streaming session.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the user for whom the session was created.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The name of the stack for the streaming session.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The name of the fleet for the streaming session.</p>
-    pub fn fleet_name(&self) -> std::option::Option<&str> {
+    pub fn fleet_name(&self) -> std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The current state of the streaming session.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::SessionState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::SessionState> {
         self.state.as_ref()
     }
     /// <p>Specifies whether a user is connected to the streaming session.</p>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::SessionConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::SessionConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The time when a streaming instance is dedicated for the user.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-    pub fn max_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn max_expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.max_expiration_time.as_ref()
     }
     /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The network details for the streaming session.</p>
-    pub fn network_access_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NetworkAccessConfiguration> {
+    pub fn network_access_configuration(&self) -> std::option::Option<& crate::model::NetworkAccessConfiguration> {
         self.network_access_configuration.as_ref()
     }
 }
 /// See [`Session`](crate::model::Session).
 pub mod session {
-
+    
     /// A builder for [`Session`](crate::model::Session).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7084,8 +6529,7 @@ pub mod session {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) max_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
-        pub(crate) network_access_configuration:
-            std::option::Option<crate::model::NetworkAccessConfiguration>,
+        pub(crate) network_access_configuration: std::option::Option<crate::model::NetworkAccessConfiguration>,
     }
     impl Builder {
         /// <p>The identifier of the streaming session.</p>
@@ -7095,8 +6539,7 @@ pub mod session {
         }
         /// <p>The identifier of the streaming session.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The identifier of the user for whom the session was created.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7105,8 +6548,7 @@ pub mod session {
         }
         /// <p>The identifier of the user for whom the session was created.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>The name of the stack for the streaming session.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7115,8 +6557,7 @@ pub mod session {
         }
         /// <p>The name of the stack for the streaming session.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = input;
-            self
+            self.stack_name = input; self
         }
         /// <p>The name of the fleet for the streaming session.</p>
         pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7125,8 +6566,7 @@ pub mod session {
         }
         /// <p>The name of the fleet for the streaming session.</p>
         pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_name = input;
-            self
+            self.fleet_name = input; self
         }
         /// <p>The current state of the streaming session.</p>
         pub fn state(mut self, input: crate::model::SessionState) -> Self {
@@ -7135,8 +6575,7 @@ pub mod session {
         }
         /// <p>The current state of the streaming session.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::SessionState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Specifies whether a user is connected to the streaming session.</p>
         pub fn connection_state(mut self, input: crate::model::SessionConnectionState) -> Self {
@@ -7144,12 +6583,8 @@ pub mod session {
             self
         }
         /// <p>Specifies whether a user is connected to the streaming session.</p>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::SessionConnectionState>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::SessionConnectionState>) -> Self {
+            self.connection_state = input; self
         }
         /// <p>The time when a streaming instance is dedicated for the user.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7157,12 +6592,8 @@ pub mod session {
             self
         }
         /// <p>The time when a streaming instance is dedicated for the user.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
         pub fn max_expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7170,12 +6601,8 @@ pub mod session {
             self
         }
         /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-        pub fn set_max_expiration_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.max_expiration_time = input;
-            self
+        pub fn set_max_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.max_expiration_time = input; self
         }
         /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
@@ -7183,45 +6610,46 @@ pub mod session {
             self
         }
         /// <p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::AuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// <p>The network details for the streaming session.</p>
-        pub fn network_access_configuration(
-            mut self,
-            input: crate::model::NetworkAccessConfiguration,
-        ) -> Self {
+        pub fn network_access_configuration(mut self, input: crate::model::NetworkAccessConfiguration) -> Self {
             self.network_access_configuration = Some(input);
             self
         }
         /// <p>The network details for the streaming session.</p>
-        pub fn set_network_access_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NetworkAccessConfiguration>,
-        ) -> Self {
-            self.network_access_configuration = input;
-            self
+        pub fn set_network_access_configuration(mut self, input: std::option::Option<crate::model::NetworkAccessConfiguration>) -> Self {
+            self.network_access_configuration = input; self
         }
         /// Consumes the builder and constructs a [`Session`](crate::model::Session).
         pub fn build(self) -> crate::model::Session {
             crate::model::Session {
-                id: self.id,
-                user_id: self.user_id,
-                stack_name: self.stack_name,
-                fleet_name: self.fleet_name,
-                state: self.state,
-                connection_state: self.connection_state,
-                start_time: self.start_time,
-                max_expiration_time: self.max_expiration_time,
-                authentication_type: self.authentication_type,
-                network_access_configuration: self.network_access_configuration,
+                id: self.id
+                ,
+                user_id: self.user_id
+                ,
+                stack_name: self.stack_name
+                ,
+                fleet_name: self.fleet_name
+                ,
+                state: self.state
+                ,
+                connection_state: self.connection_state
+                ,
+                start_time: self.start_time
+                ,
+                max_expiration_time: self.max_expiration_time
+                ,
+                authentication_type: self.authentication_type
+                ,
+                network_access_configuration: self.network_access_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl Session {
     /// Creates a new builder-style object to manufacture [`Session`](crate::model::Session).
@@ -7236,9 +6664,9 @@ impl Session {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sessionconnectionstate = unimplemented!();
 /// match sessionconnectionstate {
@@ -7260,60 +6688,52 @@ impl Session {
 /// Specifically, when `sessionconnectionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SessionConnectionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SessionConnectionState {
     #[allow(missing_docs)] // documentation missing in model
     Connected,
     #[allow(missing_docs)] // documentation missing in model
     NotConnected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SessionConnectionState {
     fn from(s: &str) -> Self {
         match s {
             "CONNECTED" => SessionConnectionState::Connected,
             "NOT_CONNECTED" => SessionConnectionState::NotConnected,
-            other => {
-                SessionConnectionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SessionConnectionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SessionConnectionState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SessionConnectionState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SessionConnectionState::from(s))
+                }
+            }
 impl SessionConnectionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SessionConnectionState::Connected => "CONNECTED",
             SessionConnectionState::NotConnected => "NOT_CONNECTED",
-            SessionConnectionState::Unknown(value) => value.as_str(),
+            SessionConnectionState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONNECTED", "NOT_CONNECTED"]
+        &[
+            "CONNECTED", "NOT_CONNECTED"
+        ]
     }
 }
 impl AsRef<str> for SessionConnectionState {
@@ -7328,9 +6748,9 @@ impl AsRef<str> for SessionConnectionState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sessionstate = unimplemented!();
 /// match sessionstate {
@@ -7353,22 +6773,14 @@ impl AsRef<str> for SessionConnectionState {
 /// Specifically, when `sessionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SessionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Possible values for the state of a streaming session.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SessionState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -7377,7 +6789,7 @@ pub enum SessionState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SessionState {
     fn from(s: &str) -> Self {
@@ -7385,17 +6797,17 @@ impl std::convert::From<&str> for SessionState {
             "ACTIVE" => SessionState::Active,
             "EXPIRED" => SessionState::Expired,
             "PENDING" => SessionState::Pending,
-            other => SessionState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SessionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SessionState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SessionState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SessionState::from(s))
+                }
+            }
 impl SessionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7403,12 +6815,14 @@ impl SessionState {
             SessionState::Active => "ACTIVE",
             SessionState::Expired => "EXPIRED",
             SessionState::Pending => "PENDING",
-            SessionState::Unknown(value) => value.as_str(),
+            SessionState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "EXPIRED", "PENDING"]
+        &[
+            "ACTIVE", "EXPIRED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for SessionState {
@@ -7420,7 +6834,7 @@ impl AsRef<str> for SessionState {
 /// <p>Describes an image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Image {
+pub struct Image  {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7475,27 +6889,27 @@ pub struct Image {
 }
 impl Image {
     /// <p>The name of the image.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the image.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the image from which this image was created.</p>
-    pub fn base_image_arn(&self) -> std::option::Option<&str> {
+    pub fn base_image_arn(&self) -> std::option::Option<& str> {
         self.base_image_arn.as_deref()
     }
     /// <p>The image name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ImageState> {
         self.state.as_ref()
     }
     /// <p>Indicates whether the image is public or private.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::model::VisibilityType> {
+    pub fn visibility(&self) -> std::option::Option<& crate::model::VisibilityType> {
         self.visibility.as_ref()
     }
     /// <p>Indicates whether an image builder can be launched from this image.</p>
@@ -7503,53 +6917,49 @@ impl Image {
         self.image_builder_supported
     }
     /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
-    pub fn image_builder_name(&self) -> std::option::Option<&str> {
+    pub fn image_builder_name(&self) -> std::option::Option<& str> {
         self.image_builder_name.as_deref()
     }
     /// <p>The operating system platform of the image.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::PlatformType> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::PlatformType> {
         self.platform.as_ref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The reason why the last state change occurred.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::model::ImageStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The applications associated with the image.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::model::Application]> {
         self.applications.as_deref()
     }
     /// <p>The time the image was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
-    pub fn public_base_image_released_date(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn public_base_image_released_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.public_base_image_released_date.as_ref()
     }
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
-    pub fn appstream_agent_version(&self) -> std::option::Option<&str> {
+    pub fn appstream_agent_version(&self) -> std::option::Option<& str> {
         self.appstream_agent_version.as_deref()
     }
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
-    pub fn image_permissions(&self) -> std::option::Option<&crate::model::ImagePermissions> {
+    pub fn image_permissions(&self) -> std::option::Option<& crate::model::ImagePermissions> {
         self.image_permissions.as_ref()
     }
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
-    pub fn image_errors(&self) -> std::option::Option<&[crate::model::ResourceError]> {
+    pub fn image_errors(&self) -> std::option::Option<& [crate::model::ResourceError]> {
         self.image_errors.as_deref()
     }
 }
 /// See [`Image`](crate::model::Image).
 pub mod image {
-
+    
     /// A builder for [`Image`](crate::model::Image).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7579,8 +6989,7 @@ pub mod image {
         }
         /// <p>The name of the image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the image.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7589,8 +6998,7 @@ pub mod image {
         }
         /// <p>The ARN of the image.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of the image from which this image was created.</p>
         pub fn base_image_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7598,12 +7006,8 @@ pub mod image {
             self
         }
         /// <p>The ARN of the image from which this image was created.</p>
-        pub fn set_base_image_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.base_image_arn = input;
-            self
+        pub fn set_base_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_image_arn = input; self
         }
         /// <p>The image name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7612,8 +7016,7 @@ pub mod image {
         }
         /// <p>The image name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
         pub fn state(mut self, input: crate::model::ImageState) -> Self {
@@ -7622,8 +7025,7 @@ pub mod image {
         }
         /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Indicates whether the image is public or private.</p>
         pub fn visibility(mut self, input: crate::model::VisibilityType) -> Self {
@@ -7631,12 +7033,8 @@ pub mod image {
             self
         }
         /// <p>Indicates whether the image is public or private.</p>
-        pub fn set_visibility(
-            mut self,
-            input: std::option::Option<crate::model::VisibilityType>,
-        ) -> Self {
-            self.visibility = input;
-            self
+        pub fn set_visibility(mut self, input: std::option::Option<crate::model::VisibilityType>) -> Self {
+            self.visibility = input; self
         }
         /// <p>Indicates whether an image builder can be launched from this image.</p>
         pub fn image_builder_supported(mut self, input: bool) -> Self {
@@ -7645,8 +7043,7 @@ pub mod image {
         }
         /// <p>Indicates whether an image builder can be launched from this image.</p>
         pub fn set_image_builder_supported(mut self, input: std::option::Option<bool>) -> Self {
-            self.image_builder_supported = input;
-            self
+            self.image_builder_supported = input; self
         }
         /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
         pub fn image_builder_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7654,12 +7051,8 @@ pub mod image {
             self
         }
         /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
-        pub fn set_image_builder_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.image_builder_name = input;
-            self
+        pub fn set_image_builder_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_builder_name = input; self
         }
         /// <p>The operating system platform of the image.</p>
         pub fn platform(mut self, input: crate::model::PlatformType) -> Self {
@@ -7667,12 +7060,8 @@ pub mod image {
             self
         }
         /// <p>The operating system platform of the image.</p>
-        pub fn set_platform(
-            mut self,
-            input: std::option::Option<crate::model::PlatformType>,
-        ) -> Self {
-            self.platform = input;
-            self
+        pub fn set_platform(mut self, input: std::option::Option<crate::model::PlatformType>) -> Self {
+            self.platform = input; self
         }
         /// <p>The description to display.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7681,8 +7070,7 @@ pub mod image {
         }
         /// <p>The description to display.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The reason why the last state change occurred.</p>
         pub fn state_change_reason(mut self, input: crate::model::ImageStateChangeReason) -> Self {
@@ -7690,12 +7078,8 @@ pub mod image {
             self
         }
         /// <p>The reason why the last state change occurred.</p>
-        pub fn set_state_change_reason(
-            mut self,
-            input: std::option::Option<crate::model::ImageStateChangeReason>,
-        ) -> Self {
-            self.state_change_reason = input;
-            self
+        pub fn set_state_change_reason(mut self, input: std::option::Option<crate::model::ImageStateChangeReason>) -> Self {
+            self.state_change_reason = input; self
         }
         /// Appends an item to `applications`.
         ///
@@ -7704,17 +7088,13 @@ pub mod image {
         /// <p>The applications associated with the image.</p>
         pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input);
-            self.applications = Some(v);
-            self
+                            v.push(input);
+                            self.applications = Some(v);
+                            self
         }
         /// <p>The applications associated with the image.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Application>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::Application>>) -> Self {
+            self.applications = input; self
         }
         /// <p>The time the image was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7722,28 +7102,17 @@ pub mod image {
             self
         }
         /// <p>The time the image was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
-        pub fn public_base_image_released_date(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn public_base_image_released_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.public_base_image_released_date = Some(input);
             self
         }
         /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
-        pub fn set_public_base_image_released_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.public_base_image_released_date = input;
-            self
+        pub fn set_public_base_image_released_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.public_base_image_released_date = input; self
         }
         /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
         pub fn appstream_agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7751,12 +7120,8 @@ pub mod image {
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
-        pub fn set_appstream_agent_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.appstream_agent_version = input;
-            self
+        pub fn set_appstream_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.appstream_agent_version = input; self
         }
         /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
         pub fn image_permissions(mut self, input: crate::model::ImagePermissions) -> Self {
@@ -7764,12 +7129,8 @@ pub mod image {
             self
         }
         /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
-        pub fn set_image_permissions(
-            mut self,
-            input: std::option::Option<crate::model::ImagePermissions>,
-        ) -> Self {
-            self.image_permissions = input;
-            self
+        pub fn set_image_permissions(mut self, input: std::option::Option<crate::model::ImagePermissions>) -> Self {
+            self.image_permissions = input; self
         }
         /// Appends an item to `image_errors`.
         ///
@@ -7778,41 +7139,57 @@ pub mod image {
         /// <p>Describes the errors that are returned when a new image can't be created.</p>
         pub fn image_errors(mut self, input: crate::model::ResourceError) -> Self {
             let mut v = self.image_errors.unwrap_or_default();
-            v.push(input);
-            self.image_errors = Some(v);
-            self
+                            v.push(input);
+                            self.image_errors = Some(v);
+                            self
         }
         /// <p>Describes the errors that are returned when a new image can't be created.</p>
-        pub fn set_image_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
-        ) -> Self {
-            self.image_errors = input;
-            self
+        pub fn set_image_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceError>>) -> Self {
+            self.image_errors = input; self
         }
         /// Consumes the builder and constructs a [`Image`](crate::model::Image).
         pub fn build(self) -> crate::model::Image {
             crate::model::Image {
-                name: self.name,
-                arn: self.arn,
-                base_image_arn: self.base_image_arn,
-                display_name: self.display_name,
-                state: self.state,
-                visibility: self.visibility,
-                image_builder_supported: self.image_builder_supported.unwrap_or_default(),
-                image_builder_name: self.image_builder_name,
-                platform: self.platform,
-                description: self.description,
-                state_change_reason: self.state_change_reason,
-                applications: self.applications,
-                created_time: self.created_time,
-                public_base_image_released_date: self.public_base_image_released_date,
-                appstream_agent_version: self.appstream_agent_version,
-                image_permissions: self.image_permissions,
-                image_errors: self.image_errors,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                base_image_arn: self.base_image_arn
+                ,
+                display_name: self.display_name
+                ,
+                state: self.state
+                ,
+                visibility: self.visibility
+                ,
+                image_builder_supported: self.image_builder_supported
+                    .unwrap_or_default()
+                ,
+                image_builder_name: self.image_builder_name
+                ,
+                platform: self.platform
+                ,
+                description: self.description
+                ,
+                state_change_reason: self.state_change_reason
+                ,
+                applications: self.applications
+                ,
+                created_time: self.created_time
+                ,
+                public_base_image_released_date: self.public_base_image_released_date
+                ,
+                appstream_agent_version: self.appstream_agent_version
+                ,
+                image_permissions: self.image_permissions
+                ,
+                image_errors: self.image_errors
+                ,
             }
         }
     }
+    
+    
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
@@ -7824,7 +7201,7 @@ impl Image {
 /// <p>Describes the reason why the last image state change occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageStateChangeReason {
+pub struct ImageStateChangeReason  {
     /// <p>The state change reason code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ImageStateChangeReasonCode>,
@@ -7834,17 +7211,17 @@ pub struct ImageStateChangeReason {
 }
 impl ImageStateChangeReason {
     /// <p>The state change reason code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::ImageStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ImageStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The state change reason message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ImageStateChangeReason`](crate::model::ImageStateChangeReason).
 pub mod image_state_change_reason {
-
+    
     /// A builder for [`ImageStateChangeReason`](crate::model::ImageStateChangeReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7858,12 +7235,8 @@ pub mod image_state_change_reason {
             self
         }
         /// <p>The state change reason code.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::ImageStateChangeReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::ImageStateChangeReasonCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The state change reason message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7872,17 +7245,20 @@ pub mod image_state_change_reason {
         }
         /// <p>The state change reason message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ImageStateChangeReason`](crate::model::ImageStateChangeReason).
         pub fn build(self) -> crate::model::ImageStateChangeReason {
             crate::model::ImageStateChangeReason {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageStateChangeReason {
     /// Creates a new builder-style object to manufacture [`ImageStateChangeReason`](crate::model::ImageStateChangeReason).
@@ -7897,9 +7273,9 @@ impl ImageStateChangeReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagestatechangereasoncode = unimplemented!();
 /// match imagestatechangereasoncode {
@@ -7922,22 +7298,14 @@ impl ImageStateChangeReason {
 /// Specifically, when `imagestatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ImageBuilderNotAvailable,
@@ -7946,7 +7314,7 @@ pub enum ImageStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageStateChangeReasonCode {
     fn from(s: &str) -> Self {
@@ -7954,19 +7322,17 @@ impl std::convert::From<&str> for ImageStateChangeReasonCode {
             "IMAGE_BUILDER_NOT_AVAILABLE" => ImageStateChangeReasonCode::ImageBuilderNotAvailable,
             "IMAGE_COPY_FAILURE" => ImageStateChangeReasonCode::ImageCopyFailure,
             "INTERNAL_ERROR" => ImageStateChangeReasonCode::InternalError,
-            other => ImageStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ImageStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageStateChangeReasonCode::from(s))
+                }
+            }
 impl ImageStateChangeReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7974,15 +7340,13 @@ impl ImageStateChangeReasonCode {
             ImageStateChangeReasonCode::ImageBuilderNotAvailable => "IMAGE_BUILDER_NOT_AVAILABLE",
             ImageStateChangeReasonCode::ImageCopyFailure => "IMAGE_COPY_FAILURE",
             ImageStateChangeReasonCode::InternalError => "INTERNAL_ERROR",
-            ImageStateChangeReasonCode::Unknown(value) => value.as_str(),
+            ImageStateChangeReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "IMAGE_BUILDER_NOT_AVAILABLE",
-            "IMAGE_COPY_FAILURE",
-            "INTERNAL_ERROR",
+            "IMAGE_BUILDER_NOT_AVAILABLE", "IMAGE_COPY_FAILURE", "INTERNAL_ERROR"
         ]
     }
 }
@@ -7998,9 +7362,9 @@ impl AsRef<str> for ImageStateChangeReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let visibilitytype = unimplemented!();
 /// match visibilitytype {
@@ -8023,22 +7387,14 @@ impl AsRef<str> for ImageStateChangeReasonCode {
 /// Specifically, when `visibilitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VisibilityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VisibilityType {
     #[allow(missing_docs)] // documentation missing in model
     Private,
@@ -8047,7 +7403,7 @@ pub enum VisibilityType {
     #[allow(missing_docs)] // documentation missing in model
     Shared,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VisibilityType {
     fn from(s: &str) -> Self {
@@ -8055,17 +7411,17 @@ impl std::convert::From<&str> for VisibilityType {
             "PRIVATE" => VisibilityType::Private,
             "PUBLIC" => VisibilityType::Public,
             "SHARED" => VisibilityType::Shared,
-            other => VisibilityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VisibilityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VisibilityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VisibilityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VisibilityType::from(s))
+                }
+            }
 impl VisibilityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8073,12 +7429,14 @@ impl VisibilityType {
             VisibilityType::Private => "PRIVATE",
             VisibilityType::Public => "PUBLIC",
             VisibilityType::Shared => "SHARED",
-            VisibilityType::Unknown(value) => value.as_str(),
+            VisibilityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIVATE", "PUBLIC", "SHARED"]
+        &[
+            "PRIVATE", "PUBLIC", "SHARED"
+        ]
     }
 }
 impl AsRef<str> for VisibilityType {
@@ -8093,9 +7451,9 @@ impl AsRef<str> for VisibilityType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagestate = unimplemented!();
 /// match imagestate {
@@ -8122,22 +7480,14 @@ impl AsRef<str> for VisibilityType {
 /// Specifically, when `imagestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -8154,7 +7504,7 @@ pub enum ImageState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageState {
     fn from(s: &str) -> Self {
@@ -8166,17 +7516,17 @@ impl std::convert::From<&str> for ImageState {
             "FAILED" => ImageState::Failed,
             "IMPORTING" => ImageState::Importing,
             "PENDING" => ImageState::Pending,
-            other => ImageState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImageState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageState::from(s))
+                }
+            }
 impl ImageState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8188,19 +7538,13 @@ impl ImageState {
             ImageState::Failed => "FAILED",
             ImageState::Importing => "IMPORTING",
             ImageState::Pending => "PENDING",
-            ImageState::Unknown(value) => value.as_str(),
+            ImageState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "COPYING",
-            "CREATING",
-            "DELETING",
-            "FAILED",
-            "IMPORTING",
-            "PENDING",
+            "AVAILABLE", "COPYING", "CREATING", "DELETING", "FAILED", "IMPORTING", "PENDING"
         ]
     }
 }
@@ -8213,7 +7557,7 @@ impl AsRef<str> for ImageState {
 /// <p>Describes the permissions that are available to the specified AWS account for a shared image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SharedImagePermissions {
+pub struct SharedImagePermissions  {
     /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
     #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
@@ -8223,17 +7567,17 @@ pub struct SharedImagePermissions {
 }
 impl SharedImagePermissions {
     /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
-    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+    pub fn shared_account_id(&self) -> std::option::Option<& str> {
         self.shared_account_id.as_deref()
     }
     /// <p>Describes the permissions for a shared image.</p>
-    pub fn image_permissions(&self) -> std::option::Option<&crate::model::ImagePermissions> {
+    pub fn image_permissions(&self) -> std::option::Option<& crate::model::ImagePermissions> {
         self.image_permissions.as_ref()
     }
 }
 /// See [`SharedImagePermissions`](crate::model::SharedImagePermissions).
 pub mod shared_image_permissions {
-
+    
     /// A builder for [`SharedImagePermissions`](crate::model::SharedImagePermissions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8247,12 +7591,8 @@ pub mod shared_image_permissions {
             self
         }
         /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
-        pub fn set_shared_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.shared_account_id = input;
-            self
+        pub fn set_shared_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shared_account_id = input; self
         }
         /// <p>Describes the permissions for a shared image.</p>
         pub fn image_permissions(mut self, input: crate::model::ImagePermissions) -> Self {
@@ -8260,21 +7600,21 @@ pub mod shared_image_permissions {
             self
         }
         /// <p>Describes the permissions for a shared image.</p>
-        pub fn set_image_permissions(
-            mut self,
-            input: std::option::Option<crate::model::ImagePermissions>,
-        ) -> Self {
-            self.image_permissions = input;
-            self
+        pub fn set_image_permissions(mut self, input: std::option::Option<crate::model::ImagePermissions>) -> Self {
+            self.image_permissions = input; self
         }
         /// Consumes the builder and constructs a [`SharedImagePermissions`](crate::model::SharedImagePermissions).
         pub fn build(self) -> crate::model::SharedImagePermissions {
             crate::model::SharedImagePermissions {
-                shared_account_id: self.shared_account_id,
-                image_permissions: self.image_permissions,
+                shared_account_id: self.shared_account_id
+                ,
+                image_permissions: self.image_permissions
+                ,
             }
         }
     }
+    
+    
 }
 impl SharedImagePermissions {
     /// Creates a new builder-style object to manufacture [`SharedImagePermissions`](crate::model::SharedImagePermissions).
@@ -8286,7 +7626,7 @@ impl SharedImagePermissions {
 /// <p>Describes the application fleet association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationFleetAssociation {
+pub struct ApplicationFleetAssociation  {
     /// <p>The name of the fleet associated with the application.</p>
     #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
@@ -8296,17 +7636,17 @@ pub struct ApplicationFleetAssociation {
 }
 impl ApplicationFleetAssociation {
     /// <p>The name of the fleet associated with the application.</p>
-    pub fn fleet_name(&self) -> std::option::Option<&str> {
+    pub fn fleet_name(&self) -> std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The ARN of the application associated with the fleet.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
 /// See [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation).
 pub mod application_fleet_association {
-
+    
     /// A builder for [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8321,8 +7661,7 @@ pub mod application_fleet_association {
         }
         /// <p>The name of the fleet associated with the application.</p>
         pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_name = input;
-            self
+            self.fleet_name = input; self
         }
         /// <p>The ARN of the application associated with the fleet.</p>
         pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8330,21 +7669,21 @@ pub mod application_fleet_association {
             self
         }
         /// <p>The ARN of the application associated with the fleet.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation).
         pub fn build(self) -> crate::model::ApplicationFleetAssociation {
             crate::model::ApplicationFleetAssociation {
-                fleet_name: self.fleet_name,
-                application_arn: self.application_arn,
+                fleet_name: self.fleet_name
+                ,
+                application_arn: self.application_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationFleetAssociation {
     /// Creates a new builder-style object to manufacture [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation).
@@ -8353,12 +7692,12 @@ impl ApplicationFleetAssociation {
     }
 }
 
-/// <p>Describes an app block.</p>
-/// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard disk includes the application binaries and other files necessary to launch your applications. Multiple applications can be assigned to a single app block.</p>
+/// <p>Describes an app block.</p> 
+/// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard disk includes the application binaries and other files necessary to launch your applications. Multiple applications can be assigned to a single app block.</p> 
 /// <p>This is only supported for Elastic fleets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppBlock {
+pub struct AppBlock  {
     /// <p>The name of the app block.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8383,37 +7722,37 @@ pub struct AppBlock {
 }
 impl AppBlock {
     /// <p>The name of the app block.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the app block.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the app block.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The display name of the app block.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The source S3 location of the app block.</p>
-    pub fn source_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn source_s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.source_s3_location.as_ref()
     }
     /// <p>The setup script details of the app block.</p>
-    pub fn setup_script_details(&self) -> std::option::Option<&crate::model::ScriptDetails> {
+    pub fn setup_script_details(&self) -> std::option::Option<& crate::model::ScriptDetails> {
         self.setup_script_details.as_ref()
     }
     /// <p>The created time of the app block.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
 /// See [`AppBlock`](crate::model::AppBlock).
 pub mod app_block {
-
+    
     /// A builder for [`AppBlock`](crate::model::AppBlock).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8433,8 +7772,7 @@ pub mod app_block {
         }
         /// <p>The name of the app block.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the app block.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8443,8 +7781,7 @@ pub mod app_block {
         }
         /// <p>The ARN of the app block.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The description of the app block.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8453,8 +7790,7 @@ pub mod app_block {
         }
         /// <p>The description of the app block.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The display name of the app block.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8463,8 +7799,7 @@ pub mod app_block {
         }
         /// <p>The display name of the app block.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The source S3 location of the app block.</p>
         pub fn source_s3_location(mut self, input: crate::model::S3Location) -> Self {
@@ -8472,12 +7807,8 @@ pub mod app_block {
             self
         }
         /// <p>The source S3 location of the app block.</p>
-        pub fn set_source_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.source_s3_location = input;
-            self
+        pub fn set_source_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.source_s3_location = input; self
         }
         /// <p>The setup script details of the app block.</p>
         pub fn setup_script_details(mut self, input: crate::model::ScriptDetails) -> Self {
@@ -8485,12 +7816,8 @@ pub mod app_block {
             self
         }
         /// <p>The setup script details of the app block.</p>
-        pub fn set_setup_script_details(
-            mut self,
-            input: std::option::Option<crate::model::ScriptDetails>,
-        ) -> Self {
-            self.setup_script_details = input;
-            self
+        pub fn set_setup_script_details(mut self, input: std::option::Option<crate::model::ScriptDetails>) -> Self {
+            self.setup_script_details = input; self
         }
         /// <p>The created time of the app block.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8498,26 +7825,31 @@ pub mod app_block {
             self
         }
         /// <p>The created time of the app block.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`AppBlock`](crate::model::AppBlock).
         pub fn build(self) -> crate::model::AppBlock {
             crate::model::AppBlock {
-                name: self.name,
-                arn: self.arn,
-                description: self.description,
-                display_name: self.display_name,
-                source_s3_location: self.source_s3_location,
-                setup_script_details: self.setup_script_details,
-                created_time: self.created_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                display_name: self.display_name
+                ,
+                source_s3_location: self.source_s3_location
+                ,
+                setup_script_details: self.setup_script_details
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
+    
+    
 }
 impl AppBlock {
     /// Creates a new builder-style object to manufacture [`AppBlock`](crate::model::AppBlock).
@@ -8529,7 +7861,7 @@ impl AppBlock {
 /// <p>Describes the details of the script.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScriptDetails {
+pub struct ScriptDetails  {
     /// <p>The S3 object location for the script.</p>
     #[doc(hidden)]
     pub script_s3_location: std::option::Option<crate::model::S3Location>,
@@ -8545,15 +7877,15 @@ pub struct ScriptDetails {
 }
 impl ScriptDetails {
     /// <p>The S3 object location for the script.</p>
-    pub fn script_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn script_s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.script_s3_location.as_ref()
     }
     /// <p>The run path for the script.</p>
-    pub fn executable_path(&self) -> std::option::Option<&str> {
+    pub fn executable_path(&self) -> std::option::Option<& str> {
         self.executable_path.as_deref()
     }
     /// <p>The runtime parameters passed to the run path for the script.</p>
-    pub fn executable_parameters(&self) -> std::option::Option<&str> {
+    pub fn executable_parameters(&self) -> std::option::Option<& str> {
         self.executable_parameters.as_deref()
     }
     /// <p>The run timeout, in seconds, for the script.</p>
@@ -8563,7 +7895,7 @@ impl ScriptDetails {
 }
 /// See [`ScriptDetails`](crate::model::ScriptDetails).
 pub mod script_details {
-
+    
     /// A builder for [`ScriptDetails`](crate::model::ScriptDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8579,12 +7911,8 @@ pub mod script_details {
             self
         }
         /// <p>The S3 object location for the script.</p>
-        pub fn set_script_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.script_s3_location = input;
-            self
+        pub fn set_script_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.script_s3_location = input; self
         }
         /// <p>The run path for the script.</p>
         pub fn executable_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8592,12 +7920,8 @@ pub mod script_details {
             self
         }
         /// <p>The run path for the script.</p>
-        pub fn set_executable_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.executable_path = input;
-            self
+        pub fn set_executable_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.executable_path = input; self
         }
         /// <p>The runtime parameters passed to the run path for the script.</p>
         pub fn executable_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8605,12 +7929,8 @@ pub mod script_details {
             self
         }
         /// <p>The runtime parameters passed to the run path for the script.</p>
-        pub fn set_executable_parameters(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.executable_parameters = input;
-            self
+        pub fn set_executable_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.executable_parameters = input; self
         }
         /// <p>The run timeout, in seconds, for the script.</p>
         pub fn timeout_in_seconds(mut self, input: i32) -> Self {
@@ -8619,19 +7939,24 @@ pub mod script_details {
         }
         /// <p>The run timeout, in seconds, for the script.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_seconds = input;
-            self
+            self.timeout_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`ScriptDetails`](crate::model::ScriptDetails).
         pub fn build(self) -> crate::model::ScriptDetails {
             crate::model::ScriptDetails {
-                script_s3_location: self.script_s3_location,
-                executable_path: self.executable_path,
-                executable_parameters: self.executable_parameters,
-                timeout_in_seconds: self.timeout_in_seconds,
+                script_s3_location: self.script_s3_location
+                ,
+                executable_path: self.executable_path
+                ,
+                executable_parameters: self.executable_parameters
+                ,
+                timeout_in_seconds: self.timeout_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl ScriptDetails {
     /// Creates a new builder-style object to manufacture [`ScriptDetails`](crate::model::ScriptDetails).
@@ -8646,9 +7971,9 @@ impl ScriptDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let messageaction = unimplemented!();
 /// match messageaction {
@@ -8670,58 +7995,52 @@ impl ScriptDetails {
 /// Specifically, when `messageaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MessageAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MessageAction {
     #[allow(missing_docs)] // documentation missing in model
     Resend,
     #[allow(missing_docs)] // documentation missing in model
     Suppress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageAction {
     fn from(s: &str) -> Self {
         match s {
             "RESEND" => MessageAction::Resend,
             "SUPPRESS" => MessageAction::Suppress,
-            other => MessageAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MessageAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MessageAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MessageAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MessageAction::from(s))
+                }
+            }
 impl MessageAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageAction::Resend => "RESEND",
             MessageAction::Suppress => "SUPPRESS",
-            MessageAction::Unknown(value) => value.as_str(),
+            MessageAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RESEND", "SUPPRESS"]
+        &[
+            "RESEND", "SUPPRESS"
+        ]
     }
 }
 impl AsRef<str> for MessageAction {
@@ -8733,7 +8052,7 @@ impl AsRef<str> for MessageAction {
 /// <p>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserStackAssociationError {
+pub struct UserStackAssociationError  {
     /// <p>Information about the user and associated stack.</p>
     #[doc(hidden)]
     pub user_stack_association: std::option::Option<crate::model::UserStackAssociation>,
@@ -8746,23 +8065,21 @@ pub struct UserStackAssociationError {
 }
 impl UserStackAssociationError {
     /// <p>Information about the user and associated stack.</p>
-    pub fn user_stack_association(
-        &self,
-    ) -> std::option::Option<&crate::model::UserStackAssociation> {
+    pub fn user_stack_association(&self) -> std::option::Option<& crate::model::UserStackAssociation> {
         self.user_stack_association.as_ref()
     }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::UserStackAssociationErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::UserStackAssociationErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`UserStackAssociationError`](crate::model::UserStackAssociationError).
 pub mod user_stack_association_error {
-
+    
     /// A builder for [`UserStackAssociationError`](crate::model::UserStackAssociationError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8777,12 +8094,8 @@ pub mod user_stack_association_error {
             self
         }
         /// <p>Information about the user and associated stack.</p>
-        pub fn set_user_stack_association(
-            mut self,
-            input: std::option::Option<crate::model::UserStackAssociation>,
-        ) -> Self {
-            self.user_stack_association = input;
-            self
+        pub fn set_user_stack_association(mut self, input: std::option::Option<crate::model::UserStackAssociation>) -> Self {
+            self.user_stack_association = input; self
         }
         /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
         pub fn error_code(mut self, input: crate::model::UserStackAssociationErrorCode) -> Self {
@@ -8790,12 +8103,8 @@ pub mod user_stack_association_error {
             self
         }
         /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::UserStackAssociationErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::UserStackAssociationErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8803,22 +8112,23 @@ pub mod user_stack_association_error {
             self
         }
         /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`UserStackAssociationError`](crate::model::UserStackAssociationError).
         pub fn build(self) -> crate::model::UserStackAssociationError {
             crate::model::UserStackAssociationError {
-                user_stack_association: self.user_stack_association,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                user_stack_association: self.user_stack_association
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl UserStackAssociationError {
     /// Creates a new builder-style object to manufacture [`UserStackAssociationError`](crate::model::UserStackAssociationError).
@@ -8833,9 +8143,9 @@ impl UserStackAssociationError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let userstackassociationerrorcode = unimplemented!();
 /// match userstackassociationerrorcode {
@@ -8859,22 +8169,14 @@ impl UserStackAssociationError {
 /// Specifically, when `userstackassociationerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserStackAssociationErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UserStackAssociationErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     DirectoryNotFound,
@@ -8885,7 +8187,7 @@ pub enum UserStackAssociationErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     UserNameNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UserStackAssociationErrorCode {
     fn from(s: &str) -> Self {
@@ -8894,19 +8196,17 @@ impl std::convert::From<&str> for UserStackAssociationErrorCode {
             "INTERNAL_ERROR" => UserStackAssociationErrorCode::InternalError,
             "STACK_NOT_FOUND" => UserStackAssociationErrorCode::StackNotFound,
             "USER_NAME_NOT_FOUND" => UserStackAssociationErrorCode::UserNameNotFound,
-            other => UserStackAssociationErrorCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UserStackAssociationErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UserStackAssociationErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserStackAssociationErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UserStackAssociationErrorCode::from(s))
+                }
+            }
 impl UserStackAssociationErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8915,16 +8215,13 @@ impl UserStackAssociationErrorCode {
             UserStackAssociationErrorCode::InternalError => "INTERNAL_ERROR",
             UserStackAssociationErrorCode::StackNotFound => "STACK_NOT_FOUND",
             UserStackAssociationErrorCode::UserNameNotFound => "USER_NAME_NOT_FOUND",
-            UserStackAssociationErrorCode::Unknown(value) => value.as_str(),
+            UserStackAssociationErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DIRECTORY_NOT_FOUND",
-            "INTERNAL_ERROR",
-            "STACK_NOT_FOUND",
-            "USER_NAME_NOT_FOUND",
+            "DIRECTORY_NOT_FOUND", "INTERNAL_ERROR", "STACK_NOT_FOUND", "USER_NAME_NOT_FOUND"
         ]
     }
 }
@@ -8933,3 +8230,4 @@ impl AsRef<str> for UserStackAssociationErrorCode {
         self.as_str()
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEnvironmentOutput {
+pub struct UpdateEnvironmentOutput  {
     /// <p>Returns the FinSpace environment object.</p>
     #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateEnvironmentOutput {
     /// <p>Returns the FinSpace environment object.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::Environment> {
         self.environment.as_ref()
     }
 }
 /// See [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
 pub mod update_environment_output {
-
+    
     /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_environment_output {
             self
         }
         /// <p>Returns the FinSpace environment object.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::Environment>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::Environment>) -> Self {
+            self.environment = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
         pub fn build(self) -> crate::output::UpdateEnvironmentOutput {
             crate::output::UpdateEnvironmentOutput {
-                environment: self.environment,
+                environment: self.environment
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
@@ -53,19 +52,24 @@ impl UpdateEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -77,19 +81,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -101,30 +110,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of all tags for a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of all tags for a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -132,31 +135,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of all tags for a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A list of all tags for a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -168,7 +166,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentsOutput {
+pub struct ListEnvironmentsOutput  {
     /// <p>A list of all of your FinSpace environments.</p>
     #[doc(hidden)]
     pub environments: std::option::Option<std::vec::Vec<crate::model::Environment>>,
@@ -178,17 +176,17 @@ pub struct ListEnvironmentsOutput {
 }
 impl ListEnvironmentsOutput {
     /// <p>A list of all of your FinSpace environments.</p>
-    pub fn environments(&self) -> std::option::Option<&[crate::model::Environment]> {
+    pub fn environments(&self) -> std::option::Option<& [crate::model::Environment]> {
         self.environments.as_deref()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
 pub mod list_environments_output {
-
+    
     /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -203,17 +201,13 @@ pub mod list_environments_output {
         /// <p>A list of all of your FinSpace environments.</p>
         pub fn environments(mut self, input: crate::model::Environment) -> Self {
             let mut v = self.environments.unwrap_or_default();
-            v.push(input);
-            self.environments = Some(v);
-            self
+                            v.push(input);
+                            self.environments = Some(v);
+                            self
         }
         /// <p>A list of all of your FinSpace environments.</p>
-        pub fn set_environments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Environment>>,
-        ) -> Self {
-            self.environments = input;
-            self
+        pub fn set_environments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Environment>>) -> Self {
+            self.environments = input; self
         }
         /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,17 +216,20 @@ pub mod list_environments_output {
         }
         /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
         pub fn build(self) -> crate::output::ListEnvironmentsOutput {
             crate::output::ListEnvironmentsOutput {
-                environments: self.environments,
-                next_token: self.next_token,
+                environments: self.environments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
@@ -244,20 +241,20 @@ impl ListEnvironmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEnvironmentOutput {
+pub struct GetEnvironmentOutput  {
     /// <p>The name of the FinSpace environment.</p>
     #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl GetEnvironmentOutput {
     /// <p>The name of the FinSpace environment.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::Environment> {
         self.environment.as_ref()
     }
 }
 /// See [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
 pub mod get_environment_output {
-
+    
     /// A builder for [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -270,20 +267,19 @@ pub mod get_environment_output {
             self
         }
         /// <p>The name of the FinSpace environment.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::Environment>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::Environment>) -> Self {
+            self.environment = input; self
         }
         /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
         pub fn build(self) -> crate::output::GetEnvironmentOutput {
             crate::output::GetEnvironmentOutput {
-                environment: self.environment,
+                environment: self.environment
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
@@ -295,19 +291,24 @@ impl GetEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEnvironmentOutput {}
+pub struct DeleteEnvironmentOutput  {
+}
 /// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
 pub mod delete_environment_output {
-
+    
     /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
         pub fn build(self) -> crate::output::DeleteEnvironmentOutput {
-            crate::output::DeleteEnvironmentOutput {}
+            crate::output::DeleteEnvironmentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
@@ -319,7 +320,7 @@ impl DeleteEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEnvironmentOutput {
+pub struct CreateEnvironmentOutput  {
     /// <p>The unique identifier for FinSpace environment that you created.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
@@ -332,21 +333,21 @@ pub struct CreateEnvironmentOutput {
 }
 impl CreateEnvironmentOutput {
     /// <p>The unique identifier for FinSpace environment that you created.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
-    pub fn environment_arn(&self) -> std::option::Option<&str> {
+    pub fn environment_arn(&self) -> std::option::Option<& str> {
         self.environment_arn.as_deref()
     }
     /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
-    pub fn environment_url(&self) -> std::option::Option<&str> {
+    pub fn environment_url(&self) -> std::option::Option<& str> {
         self.environment_url.as_deref()
     }
 }
 /// See [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
 pub mod create_environment_output {
-
+    
     /// A builder for [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -361,12 +362,8 @@ pub mod create_environment_output {
             self
         }
         /// <p>The unique identifier for FinSpace environment that you created.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
         pub fn environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,12 +371,8 @@ pub mod create_environment_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
-        pub fn set_environment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_arn = input;
-            self
+        pub fn set_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_arn = input; self
         }
         /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
         pub fn environment_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -387,22 +380,23 @@ pub mod create_environment_output {
             self
         }
         /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
-        pub fn set_environment_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_url = input;
-            self
+        pub fn set_environment_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_url = input; self
         }
         /// Consumes the builder and constructs a [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
         pub fn build(self) -> crate::output::CreateEnvironmentOutput {
             crate::output::CreateEnvironmentOutput {
-                environment_id: self.environment_id,
-                environment_arn: self.environment_arn,
-                environment_url: self.environment_url,
+                environment_id: self.environment_id
+                ,
+                environment_arn: self.environment_arn
+                ,
+                environment_url: self.environment_url
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
@@ -410,3 +404,4 @@ impl CreateEnvironmentOutput {
         crate::output::create_environment_output::Builder::default()
     }
 }
+

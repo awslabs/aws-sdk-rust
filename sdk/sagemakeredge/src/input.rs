@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`GetDeploymentsInput`](crate::input::GetDeploymentsInput).
 pub mod get_deployments_input {
-
+    
     /// A builder for [`GetDeploymentsInput`](crate::input::GetDeploymentsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -18,8 +18,7 @@ pub mod get_deployments_input {
         }
         /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
         pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -27,143 +26,91 @@ pub mod get_deployments_input {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn set_device_fleet_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_fleet_name = input;
-            self
+        pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_fleet_name = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::input::GetDeploymentsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetDeploymentsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetDeploymentsInput {
-                device_name: self.device_name,
-                device_fleet_name: self.device_fleet_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetDeploymentsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetDeploymentsInput {
+                    device_name: self.device_name
+                    ,
+                    device_fleet_name: self.device_fleet_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`GetDeployments`](crate::operation::GetDeployments)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDeployments,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDeployments, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDeploymentsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetDeploymentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetDeployments").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetDeploymentsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetDeploymentsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_deployments(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_deployments(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDeployments::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDeployments",
-            "sagemakeredge",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDeployments::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDeployments", "sagemakeredge"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -175,7 +122,7 @@ impl GetDeploymentsInput {
 
 /// See [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput).
 pub mod get_device_registration_input {
-
+    
     /// A builder for [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -190,8 +137,7 @@ pub mod get_device_registration_input {
         }
         /// <p>The unique name of the device you want to get the registration status from.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
         pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,147 +145,91 @@ pub mod get_device_registration_input {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn set_device_fleet_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_fleet_name = input;
-            self
+        pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_fleet_name = input; self
         }
         /// Consumes the builder and constructs a [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetDeviceRegistrationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetDeviceRegistrationInput {
-                device_name: self.device_name,
-                device_fleet_name: self.device_fleet_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetDeviceRegistrationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetDeviceRegistrationInput {
+                    device_name: self.device_name
+                    ,
+                    device_fleet_name: self.device_fleet_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDeviceRegistrationInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceRegistration`](crate::operation::GetDeviceRegistration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDeviceRegistration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDeviceRegistration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDeviceRegistrationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetDeviceRegistrationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetDeviceRegistration").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetDeviceRegistrationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetDeviceRegistrationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_device_registration(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_get_device_registration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDeviceRegistration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDeviceRegistration",
-            "sagemakeredge",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDeviceRegistration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDeviceRegistration", "sagemakeredge"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -351,7 +241,7 @@ impl GetDeviceRegistrationInput {
 
 /// See [`SendHeartbeatInput`](crate::input::SendHeartbeatInput).
 pub mod send_heartbeat_input {
-
+    
     /// A builder for [`SendHeartbeatInput`](crate::input::SendHeartbeatInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -370,17 +260,13 @@ pub mod send_heartbeat_input {
         /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
         pub fn agent_metrics(mut self, input: crate::model::EdgeMetric) -> Self {
             let mut v = self.agent_metrics.unwrap_or_default();
-            v.push(input);
-            self.agent_metrics = Some(v);
-            self
+                            v.push(input);
+                            self.agent_metrics = Some(v);
+                            self
         }
         /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-        pub fn set_agent_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
-        ) -> Self {
-            self.agent_metrics = input;
-            self
+        pub fn set_agent_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>) -> Self {
+            self.agent_metrics = input; self
         }
         /// Appends an item to `models`.
         ///
@@ -389,17 +275,13 @@ pub mod send_heartbeat_input {
         /// <p>Returns a list of models deployed on the the device.</p>
         pub fn models(mut self, input: crate::model::Model) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input);
-            self.models = Some(v);
-            self
+                            v.push(input);
+                            self.models = Some(v);
+                            self
         }
         /// <p>Returns a list of models deployed on the the device.</p>
-        pub fn set_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Model>>,
-        ) -> Self {
-            self.models = input;
-            self
+        pub fn set_models(mut self, input: std::option::Option<std::vec::Vec<crate::model::Model>>) -> Self {
+            self.models = input; self
         }
         /// <p>Returns the version of the agent.</p>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -407,12 +289,8 @@ pub mod send_heartbeat_input {
             self
         }
         /// <p>Returns the version of the agent.</p>
-        pub fn set_agent_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.agent_version = input;
-            self
+        pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agent_version = input; self
         }
         /// <p>The unique name of the device.</p>
         pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -421,8 +299,7 @@ pub mod send_heartbeat_input {
         }
         /// <p>The unique name of the device.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
         pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -430,12 +307,8 @@ pub mod send_heartbeat_input {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn set_device_fleet_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_fleet_name = input;
-            self
+        pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_fleet_name = input; self
         }
         /// <p>Returns the result of a deployment on the device.</p>
         pub fn deployment_result(mut self, input: crate::model::DeploymentResult) -> Self {
@@ -443,147 +316,99 @@ pub mod send_heartbeat_input {
             self
         }
         /// <p>Returns the result of a deployment on the device.</p>
-        pub fn set_deployment_result(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentResult>,
-        ) -> Self {
-            self.deployment_result = input;
-            self
+        pub fn set_deployment_result(mut self, input: std::option::Option<crate::model::DeploymentResult>) -> Self {
+            self.deployment_result = input; self
         }
         /// Consumes the builder and constructs a [`SendHeartbeatInput`](crate::input::SendHeartbeatInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SendHeartbeatInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::SendHeartbeatInput {
-                agent_metrics: self.agent_metrics,
-                models: self.models,
-                agent_version: self.agent_version,
-                device_name: self.device_name,
-                device_fleet_name: self.device_fleet_name,
-                deployment_result: self.deployment_result,
-            })
+        pub fn build(self) -> Result<crate::input::SendHeartbeatInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SendHeartbeatInput {
+                    agent_metrics: self.agent_metrics
+                    ,
+                    models: self.models
+                    ,
+                    agent_version: self.agent_version
+                    ,
+                    device_name: self.device_name
+                    ,
+                    device_fleet_name: self.device_fleet_name
+                    ,
+                    deployment_result: self.deployment_result
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SendHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`SendHeartbeat`](crate::operation::SendHeartbeat)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SendHeartbeat,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SendHeartbeat, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SendHeartbeatInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SendHeartbeatInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/SendHeartbeat").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SendHeartbeatInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SendHeartbeatInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_heartbeat(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_send_heartbeat(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SendHeartbeat::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SendHeartbeat",
-            "sagemakeredge",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SendHeartbeat::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SendHeartbeat", "sagemakeredge"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -596,7 +421,7 @@ impl SendHeartbeatInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendHeartbeatInput {
+pub struct SendHeartbeatInput  {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
     #[doc(hidden)]
     pub agent_metrics: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
@@ -618,27 +443,27 @@ pub struct SendHeartbeatInput {
 }
 impl SendHeartbeatInput {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    pub fn agent_metrics(&self) -> std::option::Option<&[crate::model::EdgeMetric]> {
+    pub fn agent_metrics(&self) -> std::option::Option<& [crate::model::EdgeMetric]> {
         self.agent_metrics.as_deref()
     }
     /// <p>Returns a list of models deployed on the the device.</p>
-    pub fn models(&self) -> std::option::Option<&[crate::model::Model]> {
+    pub fn models(&self) -> std::option::Option<& [crate::model::Model]> {
         self.models.as_deref()
     }
     /// <p>Returns the version of the agent.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// <p>The unique name of the device.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>Returns the result of a deployment on the device.</p>
-    pub fn deployment_result(&self) -> std::option::Option<&crate::model::DeploymentResult> {
+    pub fn deployment_result(&self) -> std::option::Option<& crate::model::DeploymentResult> {
         self.deployment_result.as_ref()
     }
 }
@@ -646,7 +471,7 @@ impl SendHeartbeatInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceRegistrationInput {
+pub struct GetDeviceRegistrationInput  {
     /// <p>The unique name of the device you want to get the registration status from.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -656,11 +481,11 @@ pub struct GetDeviceRegistrationInput {
 }
 impl GetDeviceRegistrationInput {
     /// <p>The unique name of the device you want to get the registration status from.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
 }
@@ -668,7 +493,7 @@ impl GetDeviceRegistrationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentsInput {
+pub struct GetDeploymentsInput  {
     /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -678,11 +503,12 @@ pub struct GetDeploymentsInput {
 }
 impl GetDeploymentsInput {
     /// <p>The unique name of the device you want to get the configuration of active deployments from.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
 }
+

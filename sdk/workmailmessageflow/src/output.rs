@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRawMessageContentOutput {}
+pub struct PutRawMessageContentOutput  {
+}
 /// See [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
 pub mod put_raw_message_content_output {
-
+    
     /// A builder for [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
         pub fn build(self) -> crate::output::PutRawMessageContentOutput {
-            crate::output::PutRawMessageContentOutput {}
+            crate::output::PutRawMessageContentOutput {
+            }
         }
     }
+    
+    
 }
 impl PutRawMessageContentOutput {
     /// Creates a new builder-style object to manufacture [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
@@ -26,19 +31,19 @@ impl PutRawMessageContentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetRawMessageContentOutput {
+pub struct GetRawMessageContentOutput  {
     /// <p>The raw content of the email message, in MIME format.</p>
     pub message_content: aws_smithy_http::byte_stream::ByteStream,
 }
 impl GetRawMessageContentOutput {
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub fn message_content(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn message_content(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.message_content
     }
 }
 /// See [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
 pub mod get_raw_message_content_output {
-
+    
     /// A builder for [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -51,20 +56,20 @@ pub mod get_raw_message_content_output {
             self
         }
         /// <p>The raw content of the email message, in MIME format.</p>
-        pub fn set_message_content(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.message_content = input;
-            self
+        pub fn set_message_content(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.message_content = input; self
         }
         /// Consumes the builder and constructs a [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
         pub fn build(self) -> crate::output::GetRawMessageContentOutput {
             crate::output::GetRawMessageContentOutput {
-                message_content: self.message_content.unwrap_or_default(),
+                message_content: self.message_content
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRawMessageContentOutput {
     /// Creates a new builder-style object to manufacture [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
@@ -72,3 +77,4 @@ impl GetRawMessageContentOutput {
         crate::output::get_raw_message_content_output::Builder::default()
     }
 }
+

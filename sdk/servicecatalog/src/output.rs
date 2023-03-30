@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTagOptionOutput {
+pub struct UpdateTagOptionOutput  {
     /// <p>Information about the TagOption.</p>
     #[doc(hidden)]
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
 impl UpdateTagOptionOutput {
     /// <p>Information about the TagOption.</p>
-    pub fn tag_option_detail(&self) -> std::option::Option<&crate::model::TagOptionDetail> {
+    pub fn tag_option_detail(&self) -> std::option::Option<& crate::model::TagOptionDetail> {
         self.tag_option_detail.as_ref()
     }
 }
 /// See [`UpdateTagOptionOutput`](crate::output::UpdateTagOptionOutput).
 pub mod update_tag_option_output {
-
+    
     /// A builder for [`UpdateTagOptionOutput`](crate::output::UpdateTagOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_tag_option_output {
             self
         }
         /// <p>Information about the TagOption.</p>
-        pub fn set_tag_option_detail(
-            mut self,
-            input: std::option::Option<crate::model::TagOptionDetail>,
-        ) -> Self {
-            self.tag_option_detail = input;
-            self
+        pub fn set_tag_option_detail(mut self, input: std::option::Option<crate::model::TagOptionDetail>) -> Self {
+            self.tag_option_detail = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTagOptionOutput`](crate::output::UpdateTagOptionOutput).
         pub fn build(self) -> crate::output::UpdateTagOptionOutput {
             crate::output::UpdateTagOptionOutput {
-                tag_option_detail: self.tag_option_detail,
+                tag_option_detail: self.tag_option_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTagOptionOutput`](crate::output::UpdateTagOptionOutput).
@@ -53,20 +52,20 @@ impl UpdateTagOptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceActionOutput {
+pub struct UpdateServiceActionOutput  {
     /// <p>Detailed information about the self-service action.</p>
     #[doc(hidden)]
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
 }
 impl UpdateServiceActionOutput {
     /// <p>Detailed information about the self-service action.</p>
-    pub fn service_action_detail(&self) -> std::option::Option<&crate::model::ServiceActionDetail> {
+    pub fn service_action_detail(&self) -> std::option::Option<& crate::model::ServiceActionDetail> {
         self.service_action_detail.as_ref()
     }
 }
 /// See [`UpdateServiceActionOutput`](crate::output::UpdateServiceActionOutput).
 pub mod update_service_action_output {
-
+    
     /// A builder for [`UpdateServiceActionOutput`](crate::output::UpdateServiceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod update_service_action_output {
             self
         }
         /// <p>Detailed information about the self-service action.</p>
-        pub fn set_service_action_detail(
-            mut self,
-            input: std::option::Option<crate::model::ServiceActionDetail>,
-        ) -> Self {
-            self.service_action_detail = input;
-            self
+        pub fn set_service_action_detail(mut self, input: std::option::Option<crate::model::ServiceActionDetail>) -> Self {
+            self.service_action_detail = input; self
         }
         /// Consumes the builder and constructs a [`UpdateServiceActionOutput`](crate::output::UpdateServiceActionOutput).
         pub fn build(self) -> crate::output::UpdateServiceActionOutput {
             crate::output::UpdateServiceActionOutput {
-                service_action_detail: self.service_action_detail,
+                service_action_detail: self.service_action_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceActionOutput`](crate::output::UpdateServiceActionOutput).
@@ -104,91 +102,65 @@ impl UpdateServiceActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProvisioningArtifactOutput {
+pub struct UpdateProvisioningArtifactOutput  {
     /// <p>Information about the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     #[doc(hidden)]
-    pub info:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl UpdateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
-    pub fn provisioning_artifact_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
+    pub fn provisioning_artifact_detail(&self) -> std::option::Option<& crate::model::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    pub fn info(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn info(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.info.as_ref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput).
 pub mod update_provisioning_artifact_output {
-
+    
     /// A builder for [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioning_artifact_detail:
-            std::option::Option<crate::model::ProvisioningArtifactDetail>,
-        pub(crate) info: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
+        pub(crate) info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::Status>,
     }
     impl Builder {
         /// <p>Information about the provisioning artifact.</p>
-        pub fn provisioning_artifact_detail(
-            mut self,
-            input: crate::model::ProvisioningArtifactDetail,
-        ) -> Self {
+        pub fn provisioning_artifact_detail(mut self, input: crate::model::ProvisioningArtifactDetail) -> Self {
             self.provisioning_artifact_detail = Some(input);
             self
         }
         /// <p>Information about the provisioning artifact.</p>
-        pub fn set_provisioning_artifact_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProvisioningArtifactDetail>,
-        ) -> Self {
-            self.provisioning_artifact_detail = input;
-            self
+        pub fn set_provisioning_artifact_detail(mut self, input: std::option::Option<crate::model::ProvisioningArtifactDetail>) -> Self {
+            self.provisioning_artifact_detail = input; self
         }
         /// Adds a key-value pair to `info`.
         ///
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
         /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-        pub fn info(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn info(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.info.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.info = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.info = Some(hash_map);
+                            self
         }
         /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-        pub fn set_info(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.info = input;
-            self
+        pub fn set_info(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.info = input; self
         }
         /// <p>The status of the current request.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -197,18 +169,22 @@ pub mod update_provisioning_artifact_output {
         }
         /// <p>The status of the current request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput).
         pub fn build(self) -> crate::output::UpdateProvisioningArtifactOutput {
             crate::output::UpdateProvisioningArtifactOutput {
-                provisioning_artifact_detail: self.provisioning_artifact_detail,
-                info: self.info,
-                status: self.status,
+                provisioning_artifact_detail: self.provisioning_artifact_detail
+                ,
+                info: self.info
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput).
@@ -220,15 +196,13 @@ impl UpdateProvisioningArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProvisionedProductPropertiesOutput {
+pub struct UpdateProvisionedProductPropertiesOutput  {
     /// <p>The provisioned product identifier.</p>
     #[doc(hidden)]
     pub provisioned_product_id: std::option::Option<std::string::String>,
     /// <p>A map that contains the properties updated.</p>
     #[doc(hidden)]
-    pub provisioned_product_properties: std::option::Option<
-        std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
-    >,
+    pub provisioned_product_properties: std::option::Option<std::collections::HashMap<crate::model::PropertyKey, std::string::String>>,
     /// <p>The identifier of the record.</p>
     #[doc(hidden)]
     pub record_id: std::option::Option<std::string::String>,
@@ -238,36 +212,30 @@ pub struct UpdateProvisionedProductPropertiesOutput {
 }
 impl UpdateProvisionedProductPropertiesOutput {
     /// <p>The provisioned product identifier.</p>
-    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+    pub fn provisioned_product_id(&self) -> std::option::Option<& str> {
         self.provisioned_product_id.as_deref()
     }
     /// <p>A map that contains the properties updated.</p>
-    pub fn provisioned_product_properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
-    > {
+    pub fn provisioned_product_properties(&self) -> std::option::Option<& std::collections::HashMap<crate::model::PropertyKey, std::string::String>> {
         self.provisioned_product_properties.as_ref()
     }
     /// <p>The identifier of the record.</p>
-    pub fn record_id(&self) -> std::option::Option<&str> {
+    pub fn record_id(&self) -> std::option::Option<& str> {
         self.record_id.as_deref()
     }
     /// <p>The status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RecordStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RecordStatus> {
         self.status.as_ref()
     }
 }
 /// See [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput).
 pub mod update_provisioned_product_properties_output {
-
+    
     /// A builder for [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
-        pub(crate) provisioned_product_properties: std::option::Option<
-            std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
-        >,
+        pub(crate) provisioned_product_properties: std::option::Option<std::collections::HashMap<crate::model::PropertyKey, std::string::String>>,
         pub(crate) record_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RecordStatus>,
     }
@@ -278,37 +246,23 @@ pub mod update_provisioned_product_properties_output {
             self
         }
         /// <p>The provisioned product identifier.</p>
-        pub fn set_provisioned_product_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provisioned_product_id = input;
-            self
+        pub fn set_provisioned_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provisioned_product_id = input; self
         }
         /// Adds a key-value pair to `provisioned_product_properties`.
         ///
         /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).
         ///
         /// <p>A map that contains the properties updated.</p>
-        pub fn provisioned_product_properties(
-            mut self,
-            k: crate::model::PropertyKey,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn provisioned_product_properties(mut self, k: crate::model::PropertyKey, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.provisioned_product_properties.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.provisioned_product_properties = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.provisioned_product_properties = Some(hash_map);
+                            self
         }
         /// <p>A map that contains the properties updated.</p>
-        pub fn set_provisioned_product_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
-            >,
-        ) -> Self {
-            self.provisioned_product_properties = input;
-            self
+        pub fn set_provisioned_product_properties(mut self, input: std::option::Option<std::collections::HashMap<crate::model::PropertyKey, std::string::String>>) -> Self {
+            self.provisioned_product_properties = input; self
         }
         /// <p>The identifier of the record.</p>
         pub fn record_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -317,8 +271,7 @@ pub mod update_provisioned_product_properties_output {
         }
         /// <p>The identifier of the record.</p>
         pub fn set_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.record_id = input;
-            self
+            self.record_id = input; self
         }
         /// <p>The status of the request.</p>
         pub fn status(mut self, input: crate::model::RecordStatus) -> Self {
@@ -326,23 +279,25 @@ pub mod update_provisioned_product_properties_output {
             self
         }
         /// <p>The status of the request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RecordStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RecordStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput).
         pub fn build(self) -> crate::output::UpdateProvisionedProductPropertiesOutput {
             crate::output::UpdateProvisionedProductPropertiesOutput {
-                provisioned_product_id: self.provisioned_product_id,
-                provisioned_product_properties: self.provisioned_product_properties,
-                record_id: self.record_id,
-                status: self.status,
+                provisioned_product_id: self.provisioned_product_id
+                ,
+                provisioned_product_properties: self.provisioned_product_properties
+                ,
+                record_id: self.record_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProvisionedProductPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput).
@@ -354,20 +309,20 @@ impl UpdateProvisionedProductPropertiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProvisionedProductOutput {
+pub struct UpdateProvisionedProductOutput  {
     /// <p>Information about the result of the request.</p>
     #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl UpdateProvisionedProductOutput {
     /// <p>Information about the result of the request.</p>
-    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+    pub fn record_detail(&self) -> std::option::Option<& crate::model::RecordDetail> {
         self.record_detail.as_ref()
     }
 }
 /// See [`UpdateProvisionedProductOutput`](crate::output::UpdateProvisionedProductOutput).
 pub mod update_provisioned_product_output {
-
+    
     /// A builder for [`UpdateProvisionedProductOutput`](crate::output::UpdateProvisionedProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -380,20 +335,19 @@ pub mod update_provisioned_product_output {
             self
         }
         /// <p>Information about the result of the request.</p>
-        pub fn set_record_detail(
-            mut self,
-            input: std::option::Option<crate::model::RecordDetail>,
-        ) -> Self {
-            self.record_detail = input;
-            self
+        pub fn set_record_detail(mut self, input: std::option::Option<crate::model::RecordDetail>) -> Self {
+            self.record_detail = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProvisionedProductOutput`](crate::output::UpdateProvisionedProductOutput).
         pub fn build(self) -> crate::output::UpdateProvisionedProductOutput {
             crate::output::UpdateProvisionedProductOutput {
-                record_detail: self.record_detail,
+                record_detail: self.record_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisionedProductOutput`](crate::output::UpdateProvisionedProductOutput).
@@ -405,7 +359,7 @@ impl UpdateProvisionedProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProductOutput {
+pub struct UpdateProductOutput  {
     /// <p>Information about the product view.</p>
     #[doc(hidden)]
     pub product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
@@ -415,17 +369,17 @@ pub struct UpdateProductOutput {
 }
 impl UpdateProductOutput {
     /// <p>Information about the product view.</p>
-    pub fn product_view_detail(&self) -> std::option::Option<&crate::model::ProductViewDetail> {
+    pub fn product_view_detail(&self) -> std::option::Option<& crate::model::ProductViewDetail> {
         self.product_view_detail.as_ref()
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`UpdateProductOutput`](crate::output::UpdateProductOutput).
 pub mod update_product_output {
-
+    
     /// A builder for [`UpdateProductOutput`](crate::output::UpdateProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -439,12 +393,8 @@ pub mod update_product_output {
             self
         }
         /// <p>Information about the product view.</p>
-        pub fn set_product_view_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProductViewDetail>,
-        ) -> Self {
-            self.product_view_detail = input;
-            self
+        pub fn set_product_view_detail(mut self, input: std::option::Option<crate::model::ProductViewDetail>) -> Self {
+            self.product_view_detail = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -453,26 +403,26 @@ pub mod update_product_output {
         /// <p>Information about the tags associated with the product.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Information about the tags associated with the product.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProductOutput`](crate::output::UpdateProductOutput).
         pub fn build(self) -> crate::output::UpdateProductOutput {
             crate::output::UpdateProductOutput {
-                product_view_detail: self.product_view_detail,
-                tags: self.tags,
+                product_view_detail: self.product_view_detail
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateProductOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProductOutput`](crate::output::UpdateProductOutput).
@@ -484,7 +434,7 @@ impl UpdateProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePortfolioShareOutput {
+pub struct UpdatePortfolioShareOutput  {
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
     #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
@@ -494,17 +444,17 @@ pub struct UpdatePortfolioShareOutput {
 }
 impl UpdatePortfolioShareOutput {
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
-    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+    pub fn portfolio_share_token(&self) -> std::option::Option<& str> {
         self.portfolio_share_token.as_deref()
     }
     /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ShareStatus> {
         self.status.as_ref()
     }
 }
 /// See [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput).
 pub mod update_portfolio_share_output {
-
+    
     /// A builder for [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -518,12 +468,8 @@ pub mod update_portfolio_share_output {
             self
         }
         /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
-        pub fn set_portfolio_share_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portfolio_share_token = input;
-            self
+        pub fn set_portfolio_share_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portfolio_share_token = input; self
         }
         /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
         pub fn status(mut self, input: crate::model::ShareStatus) -> Self {
@@ -532,17 +478,20 @@ pub mod update_portfolio_share_output {
         }
         /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput).
         pub fn build(self) -> crate::output::UpdatePortfolioShareOutput {
             crate::output::UpdatePortfolioShareOutput {
-                portfolio_share_token: self.portfolio_share_token,
-                status: self.status,
+                portfolio_share_token: self.portfolio_share_token
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput).
@@ -554,7 +503,7 @@ impl UpdatePortfolioShareOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePortfolioOutput {
+pub struct UpdatePortfolioOutput  {
     /// <p>Information about the portfolio.</p>
     #[doc(hidden)]
     pub portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
@@ -564,17 +513,17 @@ pub struct UpdatePortfolioOutput {
 }
 impl UpdatePortfolioOutput {
     /// <p>Information about the portfolio.</p>
-    pub fn portfolio_detail(&self) -> std::option::Option<&crate::model::PortfolioDetail> {
+    pub fn portfolio_detail(&self) -> std::option::Option<& crate::model::PortfolioDetail> {
         self.portfolio_detail.as_ref()
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`UpdatePortfolioOutput`](crate::output::UpdatePortfolioOutput).
 pub mod update_portfolio_output {
-
+    
     /// A builder for [`UpdatePortfolioOutput`](crate::output::UpdatePortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -588,12 +537,8 @@ pub mod update_portfolio_output {
             self
         }
         /// <p>Information about the portfolio.</p>
-        pub fn set_portfolio_detail(
-            mut self,
-            input: std::option::Option<crate::model::PortfolioDetail>,
-        ) -> Self {
-            self.portfolio_detail = input;
-            self
+        pub fn set_portfolio_detail(mut self, input: std::option::Option<crate::model::PortfolioDetail>) -> Self {
+            self.portfolio_detail = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -602,26 +547,26 @@ pub mod update_portfolio_output {
         /// <p>Information about the tags associated with the portfolio.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Information about the tags associated with the portfolio.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePortfolioOutput`](crate::output::UpdatePortfolioOutput).
         pub fn build(self) -> crate::output::UpdatePortfolioOutput {
             crate::output::UpdatePortfolioOutput {
-                portfolio_detail: self.portfolio_detail,
-                tags: self.tags,
+                portfolio_detail: self.portfolio_detail
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePortfolioOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePortfolioOutput`](crate::output::UpdatePortfolioOutput).
@@ -633,7 +578,7 @@ impl UpdatePortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConstraintOutput {
+pub struct UpdateConstraintOutput  {
     /// <p>Information about the constraint.</p>
     #[doc(hidden)]
     pub constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
@@ -646,21 +591,21 @@ pub struct UpdateConstraintOutput {
 }
 impl UpdateConstraintOutput {
     /// <p>Information about the constraint.</p>
-    pub fn constraint_detail(&self) -> std::option::Option<&crate::model::ConstraintDetail> {
+    pub fn constraint_detail(&self) -> std::option::Option<& crate::model::ConstraintDetail> {
         self.constraint_detail.as_ref()
     }
     /// <p>The constraint parameters.</p>
-    pub fn constraint_parameters(&self) -> std::option::Option<&str> {
+    pub fn constraint_parameters(&self) -> std::option::Option<& str> {
         self.constraint_parameters.as_deref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput).
 pub mod update_constraint_output {
-
+    
     /// A builder for [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -675,12 +620,8 @@ pub mod update_constraint_output {
             self
         }
         /// <p>Information about the constraint.</p>
-        pub fn set_constraint_detail(
-            mut self,
-            input: std::option::Option<crate::model::ConstraintDetail>,
-        ) -> Self {
-            self.constraint_detail = input;
-            self
+        pub fn set_constraint_detail(mut self, input: std::option::Option<crate::model::ConstraintDetail>) -> Self {
+            self.constraint_detail = input; self
         }
         /// <p>The constraint parameters.</p>
         pub fn constraint_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -688,12 +629,8 @@ pub mod update_constraint_output {
             self
         }
         /// <p>The constraint parameters.</p>
-        pub fn set_constraint_parameters(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.constraint_parameters = input;
-            self
+        pub fn set_constraint_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constraint_parameters = input; self
         }
         /// <p>The status of the current request.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -702,18 +639,22 @@ pub mod update_constraint_output {
         }
         /// <p>The status of the current request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput).
         pub fn build(self) -> crate::output::UpdateConstraintOutput {
             crate::output::UpdateConstraintOutput {
-                constraint_detail: self.constraint_detail,
-                constraint_parameters: self.constraint_parameters,
-                status: self.status,
+                constraint_detail: self.constraint_detail
+                ,
+                constraint_parameters: self.constraint_parameters
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConstraintOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput).
@@ -725,20 +666,20 @@ impl UpdateConstraintOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateProvisionedProductOutput {
+pub struct TerminateProvisionedProductOutput  {
     /// <p>Information about the result of this request.</p>
     #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl TerminateProvisionedProductOutput {
     /// <p>Information about the result of this request.</p>
-    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+    pub fn record_detail(&self) -> std::option::Option<& crate::model::RecordDetail> {
         self.record_detail.as_ref()
     }
 }
 /// See [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput).
 pub mod terminate_provisioned_product_output {
-
+    
     /// A builder for [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -751,20 +692,19 @@ pub mod terminate_provisioned_product_output {
             self
         }
         /// <p>Information about the result of this request.</p>
-        pub fn set_record_detail(
-            mut self,
-            input: std::option::Option<crate::model::RecordDetail>,
-        ) -> Self {
-            self.record_detail = input;
-            self
+        pub fn set_record_detail(mut self, input: std::option::Option<crate::model::RecordDetail>) -> Self {
+            self.record_detail = input; self
         }
         /// Consumes the builder and constructs a [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput).
         pub fn build(self) -> crate::output::TerminateProvisionedProductOutput {
             crate::output::TerminateProvisionedProductOutput {
-                record_detail: self.record_detail,
+                record_detail: self.record_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl TerminateProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput).
@@ -776,11 +716,10 @@ impl TerminateProvisionedProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchProvisionedProductsOutput {
+pub struct SearchProvisionedProductsOutput  {
     /// <p>Information about the provisioned products.</p>
     #[doc(hidden)]
-    pub provisioned_products:
-        std::option::Option<std::vec::Vec<crate::model::ProvisionedProductAttribute>>,
+    pub provisioned_products: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductAttribute>>,
     /// <p>The number of provisioned products found.</p>
     #[doc(hidden)]
     pub total_results_count: i32,
@@ -790,9 +729,7 @@ pub struct SearchProvisionedProductsOutput {
 }
 impl SearchProvisionedProductsOutput {
     /// <p>Information about the provisioned products.</p>
-    pub fn provisioned_products(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisionedProductAttribute]> {
+    pub fn provisioned_products(&self) -> std::option::Option<& [crate::model::ProvisionedProductAttribute]> {
         self.provisioned_products.as_deref()
     }
     /// <p>The number of provisioned products found.</p>
@@ -800,18 +737,17 @@ impl SearchProvisionedProductsOutput {
         self.total_results_count
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`SearchProvisionedProductsOutput`](crate::output::SearchProvisionedProductsOutput).
 pub mod search_provisioned_products_output {
-
+    
     /// A builder for [`SearchProvisionedProductsOutput`](crate::output::SearchProvisionedProductsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioned_products:
-            std::option::Option<std::vec::Vec<crate::model::ProvisionedProductAttribute>>,
+        pub(crate) provisioned_products: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductAttribute>>,
         pub(crate) total_results_count: std::option::Option<i32>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
@@ -821,22 +757,15 @@ pub mod search_provisioned_products_output {
         /// To override the contents of this collection use [`set_provisioned_products`](Self::set_provisioned_products).
         ///
         /// <p>Information about the provisioned products.</p>
-        pub fn provisioned_products(
-            mut self,
-            input: crate::model::ProvisionedProductAttribute,
-        ) -> Self {
+        pub fn provisioned_products(mut self, input: crate::model::ProvisionedProductAttribute) -> Self {
             let mut v = self.provisioned_products.unwrap_or_default();
-            v.push(input);
-            self.provisioned_products = Some(v);
-            self
+                            v.push(input);
+                            self.provisioned_products = Some(v);
+                            self
         }
         /// <p>Information about the provisioned products.</p>
-        pub fn set_provisioned_products(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductAttribute>>,
-        ) -> Self {
-            self.provisioned_products = input;
-            self
+        pub fn set_provisioned_products(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductAttribute>>) -> Self {
+            self.provisioned_products = input; self
         }
         /// <p>The number of provisioned products found.</p>
         pub fn total_results_count(mut self, input: i32) -> Self {
@@ -845,8 +774,7 @@ pub mod search_provisioned_products_output {
         }
         /// <p>The number of provisioned products found.</p>
         pub fn set_total_results_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_results_count = input;
-            self
+            self.total_results_count = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -854,22 +782,24 @@ pub mod search_provisioned_products_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`SearchProvisionedProductsOutput`](crate::output::SearchProvisionedProductsOutput).
         pub fn build(self) -> crate::output::SearchProvisionedProductsOutput {
             crate::output::SearchProvisionedProductsOutput {
-                provisioned_products: self.provisioned_products,
-                total_results_count: self.total_results_count.unwrap_or_default(),
-                next_page_token: self.next_page_token,
+                provisioned_products: self.provisioned_products
+                ,
+                total_results_count: self.total_results_count
+                    .unwrap_or_default()
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchProvisionedProductsOutput {
     /// Creates a new builder-style object to manufacture [`SearchProvisionedProductsOutput`](crate::output::SearchProvisionedProductsOutput).
@@ -881,7 +811,7 @@ impl SearchProvisionedProductsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchProductsAsAdminOutput {
+pub struct SearchProductsAsAdminOutput  {
     /// <p>Information about the product views.</p>
     #[doc(hidden)]
     pub product_view_details: std::option::Option<std::vec::Vec<crate::model::ProductViewDetail>>,
@@ -891,22 +821,21 @@ pub struct SearchProductsAsAdminOutput {
 }
 impl SearchProductsAsAdminOutput {
     /// <p>Information about the product views.</p>
-    pub fn product_view_details(&self) -> std::option::Option<&[crate::model::ProductViewDetail]> {
+    pub fn product_view_details(&self) -> std::option::Option<& [crate::model::ProductViewDetail]> {
         self.product_view_details.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`SearchProductsAsAdminOutput`](crate::output::SearchProductsAsAdminOutput).
 pub mod search_products_as_admin_output {
-
+    
     /// A builder for [`SearchProductsAsAdminOutput`](crate::output::SearchProductsAsAdminOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) product_view_details:
-            std::option::Option<std::vec::Vec<crate::model::ProductViewDetail>>,
+        pub(crate) product_view_details: std::option::Option<std::vec::Vec<crate::model::ProductViewDetail>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -917,17 +846,13 @@ pub mod search_products_as_admin_output {
         /// <p>Information about the product views.</p>
         pub fn product_view_details(mut self, input: crate::model::ProductViewDetail) -> Self {
             let mut v = self.product_view_details.unwrap_or_default();
-            v.push(input);
-            self.product_view_details = Some(v);
-            self
+                            v.push(input);
+                            self.product_view_details = Some(v);
+                            self
         }
         /// <p>Information about the product views.</p>
-        pub fn set_product_view_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProductViewDetail>>,
-        ) -> Self {
-            self.product_view_details = input;
-            self
+        pub fn set_product_view_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProductViewDetail>>) -> Self {
+            self.product_view_details = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -935,21 +860,21 @@ pub mod search_products_as_admin_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`SearchProductsAsAdminOutput`](crate::output::SearchProductsAsAdminOutput).
         pub fn build(self) -> crate::output::SearchProductsAsAdminOutput {
             crate::output::SearchProductsAsAdminOutput {
-                product_view_details: self.product_view_details,
-                next_page_token: self.next_page_token,
+                product_view_details: self.product_view_details
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchProductsAsAdminOutput {
     /// Creates a new builder-style object to manufacture [`SearchProductsAsAdminOutput`](crate::output::SearchProductsAsAdminOutput).
@@ -961,60 +886,39 @@ impl SearchProductsAsAdminOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchProductsOutput {
+pub struct SearchProductsOutput  {
     /// <p>Information about the product views.</p>
     #[doc(hidden)]
-    pub product_view_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ProductViewSummary>>,
+    pub product_view_summaries: std::option::Option<std::vec::Vec<crate::model::ProductViewSummary>>,
     /// <p>The product view aggregations.</p>
     #[doc(hidden)]
-    pub product_view_aggregations: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ProductViewAggregationValue>,
-        >,
-    >,
+    pub product_view_aggregations: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ProductViewAggregationValue>>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl SearchProductsOutput {
     /// <p>Information about the product views.</p>
-    pub fn product_view_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProductViewSummary]> {
+    pub fn product_view_summaries(&self) -> std::option::Option<& [crate::model::ProductViewSummary]> {
         self.product_view_summaries.as_deref()
     }
     /// <p>The product view aggregations.</p>
-    pub fn product_view_aggregations(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ProductViewAggregationValue>,
-        >,
-    > {
+    pub fn product_view_aggregations(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ProductViewAggregationValue>>> {
         self.product_view_aggregations.as_ref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`SearchProductsOutput`](crate::output::SearchProductsOutput).
 pub mod search_products_output {
-
+    
     /// A builder for [`SearchProductsOutput`](crate::output::SearchProductsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) product_view_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ProductViewSummary>>,
-        pub(crate) product_view_aggregations: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::ProductViewAggregationValue>,
-            >,
-        >,
+        pub(crate) product_view_summaries: std::option::Option<std::vec::Vec<crate::model::ProductViewSummary>>,
+        pub(crate) product_view_aggregations: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ProductViewAggregationValue>>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1025,45 +929,28 @@ pub mod search_products_output {
         /// <p>Information about the product views.</p>
         pub fn product_view_summaries(mut self, input: crate::model::ProductViewSummary) -> Self {
             let mut v = self.product_view_summaries.unwrap_or_default();
-            v.push(input);
-            self.product_view_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.product_view_summaries = Some(v);
+                            self
         }
         /// <p>Information about the product views.</p>
-        pub fn set_product_view_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProductViewSummary>>,
-        ) -> Self {
-            self.product_view_summaries = input;
-            self
+        pub fn set_product_view_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProductViewSummary>>) -> Self {
+            self.product_view_summaries = input; self
         }
         /// Adds a key-value pair to `product_view_aggregations`.
         ///
         /// To override the contents of this collection use [`set_product_view_aggregations`](Self::set_product_view_aggregations).
         ///
         /// <p>The product view aggregations.</p>
-        pub fn product_view_aggregations(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::ProductViewAggregationValue>,
-        ) -> Self {
+        pub fn product_view_aggregations(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::ProductViewAggregationValue>) -> Self {
             let mut hash_map = self.product_view_aggregations.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.product_view_aggregations = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.product_view_aggregations = Some(hash_map);
+                            self
         }
         /// <p>The product view aggregations.</p>
-        pub fn set_product_view_aggregations(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::ProductViewAggregationValue>,
-                >,
-            >,
-        ) -> Self {
-            self.product_view_aggregations = input;
-            self
+        pub fn set_product_view_aggregations(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ProductViewAggregationValue>>>) -> Self {
+            self.product_view_aggregations = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1071,22 +958,23 @@ pub mod search_products_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`SearchProductsOutput`](crate::output::SearchProductsOutput).
         pub fn build(self) -> crate::output::SearchProductsOutput {
             crate::output::SearchProductsOutput {
-                product_view_summaries: self.product_view_summaries,
-                product_view_aggregations: self.product_view_aggregations,
-                next_page_token: self.next_page_token,
+                product_view_summaries: self.product_view_summaries
+                ,
+                product_view_aggregations: self.product_view_aggregations
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchProductsOutput {
     /// Creates a new builder-style object to manufacture [`SearchProductsOutput`](crate::output::SearchProductsOutput).
@@ -1098,35 +986,31 @@ impl SearchProductsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScanProvisionedProductsOutput {
+pub struct ScanProvisionedProductsOutput  {
     /// <p>Information about the provisioned products.</p>
     #[doc(hidden)]
-    pub provisioned_products:
-        std::option::Option<std::vec::Vec<crate::model::ProvisionedProductDetail>>,
+    pub provisioned_products: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ScanProvisionedProductsOutput {
     /// <p>Information about the provisioned products.</p>
-    pub fn provisioned_products(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisionedProductDetail]> {
+    pub fn provisioned_products(&self) -> std::option::Option<& [crate::model::ProvisionedProductDetail]> {
         self.provisioned_products.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ScanProvisionedProductsOutput`](crate::output::ScanProvisionedProductsOutput).
 pub mod scan_provisioned_products_output {
-
+    
     /// A builder for [`ScanProvisionedProductsOutput`](crate::output::ScanProvisionedProductsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioned_products:
-            std::option::Option<std::vec::Vec<crate::model::ProvisionedProductDetail>>,
+        pub(crate) provisioned_products: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductDetail>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1135,22 +1019,15 @@ pub mod scan_provisioned_products_output {
         /// To override the contents of this collection use [`set_provisioned_products`](Self::set_provisioned_products).
         ///
         /// <p>Information about the provisioned products.</p>
-        pub fn provisioned_products(
-            mut self,
-            input: crate::model::ProvisionedProductDetail,
-        ) -> Self {
+        pub fn provisioned_products(mut self, input: crate::model::ProvisionedProductDetail) -> Self {
             let mut v = self.provisioned_products.unwrap_or_default();
-            v.push(input);
-            self.provisioned_products = Some(v);
-            self
+                            v.push(input);
+                            self.provisioned_products = Some(v);
+                            self
         }
         /// <p>Information about the provisioned products.</p>
-        pub fn set_provisioned_products(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductDetail>>,
-        ) -> Self {
-            self.provisioned_products = input;
-            self
+        pub fn set_provisioned_products(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductDetail>>) -> Self {
+            self.provisioned_products = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1158,21 +1035,21 @@ pub mod scan_provisioned_products_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ScanProvisionedProductsOutput`](crate::output::ScanProvisionedProductsOutput).
         pub fn build(self) -> crate::output::ScanProvisionedProductsOutput {
             crate::output::ScanProvisionedProductsOutput {
-                provisioned_products: self.provisioned_products,
-                next_page_token: self.next_page_token,
+                provisioned_products: self.provisioned_products
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ScanProvisionedProductsOutput {
     /// Creates a new builder-style object to manufacture [`ScanProvisionedProductsOutput`](crate::output::ScanProvisionedProductsOutput).
@@ -1184,19 +1061,24 @@ impl ScanProvisionedProductsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectPortfolioShareOutput {}
+pub struct RejectPortfolioShareOutput  {
+}
 /// See [`RejectPortfolioShareOutput`](crate::output::RejectPortfolioShareOutput).
 pub mod reject_portfolio_share_output {
-
+    
     /// A builder for [`RejectPortfolioShareOutput`](crate::output::RejectPortfolioShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RejectPortfolioShareOutput`](crate::output::RejectPortfolioShareOutput).
         pub fn build(self) -> crate::output::RejectPortfolioShareOutput {
-            crate::output::RejectPortfolioShareOutput {}
+            crate::output::RejectPortfolioShareOutput {
+            }
         }
     }
+    
+    
 }
 impl RejectPortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`RejectPortfolioShareOutput`](crate::output::RejectPortfolioShareOutput).
@@ -1208,20 +1090,20 @@ impl RejectPortfolioShareOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionProductOutput {
+pub struct ProvisionProductOutput  {
     /// <p>Information about the result of provisioning the product.</p>
     #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl ProvisionProductOutput {
     /// <p>Information about the result of provisioning the product.</p>
-    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+    pub fn record_detail(&self) -> std::option::Option<& crate::model::RecordDetail> {
         self.record_detail.as_ref()
     }
 }
 /// See [`ProvisionProductOutput`](crate::output::ProvisionProductOutput).
 pub mod provision_product_output {
-
+    
     /// A builder for [`ProvisionProductOutput`](crate::output::ProvisionProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1234,20 +1116,19 @@ pub mod provision_product_output {
             self
         }
         /// <p>Information about the result of provisioning the product.</p>
-        pub fn set_record_detail(
-            mut self,
-            input: std::option::Option<crate::model::RecordDetail>,
-        ) -> Self {
-            self.record_detail = input;
-            self
+        pub fn set_record_detail(mut self, input: std::option::Option<crate::model::RecordDetail>) -> Self {
+            self.record_detail = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionProductOutput`](crate::output::ProvisionProductOutput).
         pub fn build(self) -> crate::output::ProvisionProductOutput {
             crate::output::ProvisionProductOutput {
-                record_detail: self.record_detail,
+                record_detail: self.record_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionProductOutput {
     /// Creates a new builder-style object to manufacture [`ProvisionProductOutput`](crate::output::ProvisionProductOutput).
@@ -1259,7 +1140,7 @@ impl ProvisionProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagOptionsOutput {
+pub struct ListTagOptionsOutput  {
     /// <p>Information about the TagOptions.</p>
     #[doc(hidden)]
     pub tag_option_details: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
@@ -1269,22 +1150,21 @@ pub struct ListTagOptionsOutput {
 }
 impl ListTagOptionsOutput {
     /// <p>Information about the TagOptions.</p>
-    pub fn tag_option_details(&self) -> std::option::Option<&[crate::model::TagOptionDetail]> {
+    pub fn tag_option_details(&self) -> std::option::Option<& [crate::model::TagOptionDetail]> {
         self.tag_option_details.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<&str> {
+    pub fn page_token(&self) -> std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
 /// See [`ListTagOptionsOutput`](crate::output::ListTagOptionsOutput).
 pub mod list_tag_options_output {
-
+    
     /// A builder for [`ListTagOptionsOutput`](crate::output::ListTagOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tag_option_details:
-            std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
+        pub(crate) tag_option_details: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
         pub(crate) page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1295,17 +1175,13 @@ pub mod list_tag_options_output {
         /// <p>Information about the TagOptions.</p>
         pub fn tag_option_details(mut self, input: crate::model::TagOptionDetail) -> Self {
             let mut v = self.tag_option_details.unwrap_or_default();
-            v.push(input);
-            self.tag_option_details = Some(v);
-            self
+                            v.push(input);
+                            self.tag_option_details = Some(v);
+                            self
         }
         /// <p>Information about the TagOptions.</p>
-        pub fn set_tag_option_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
-        ) -> Self {
-            self.tag_option_details = input;
-            self
+        pub fn set_tag_option_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>) -> Self {
+            self.tag_option_details = input; self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1314,17 +1190,20 @@ pub mod list_tag_options_output {
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.page_token = input;
-            self
+            self.page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagOptionsOutput`](crate::output::ListTagOptionsOutput).
         pub fn build(self) -> crate::output::ListTagOptionsOutput {
             crate::output::ListTagOptionsOutput {
-                tag_option_details: self.tag_option_details,
-                page_token: self.page_token,
+                tag_option_details: self.tag_option_details
+                ,
+                page_token: self.page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTagOptionsOutput`](crate::output::ListTagOptionsOutput).
@@ -1336,7 +1215,7 @@ impl ListTagOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackInstancesForProvisionedProductOutput {
+pub struct ListStackInstancesForProvisionedProductOutput  {
     /// <p>List of stack instances.</p>
     #[doc(hidden)]
     pub stack_instances: std::option::Option<std::vec::Vec<crate::model::StackInstance>>,
@@ -1346,17 +1225,17 @@ pub struct ListStackInstancesForProvisionedProductOutput {
 }
 impl ListStackInstancesForProvisionedProductOutput {
     /// <p>List of stack instances.</p>
-    pub fn stack_instances(&self) -> std::option::Option<&[crate::model::StackInstance]> {
+    pub fn stack_instances(&self) -> std::option::Option<& [crate::model::StackInstance]> {
         self.stack_instances.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListStackInstancesForProvisionedProductOutput`](crate::output::ListStackInstancesForProvisionedProductOutput).
 pub mod list_stack_instances_for_provisioned_product_output {
-
+    
     /// A builder for [`ListStackInstancesForProvisionedProductOutput`](crate::output::ListStackInstancesForProvisionedProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1371,17 +1250,13 @@ pub mod list_stack_instances_for_provisioned_product_output {
         /// <p>List of stack instances.</p>
         pub fn stack_instances(mut self, input: crate::model::StackInstance) -> Self {
             let mut v = self.stack_instances.unwrap_or_default();
-            v.push(input);
-            self.stack_instances = Some(v);
-            self
+                            v.push(input);
+                            self.stack_instances = Some(v);
+                            self
         }
         /// <p>List of stack instances.</p>
-        pub fn set_stack_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StackInstance>>,
-        ) -> Self {
-            self.stack_instances = input;
-            self
+        pub fn set_stack_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::StackInstance>>) -> Self {
+            self.stack_instances = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1389,26 +1264,25 @@ pub mod list_stack_instances_for_provisioned_product_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStackInstancesForProvisionedProductOutput`](crate::output::ListStackInstancesForProvisionedProductOutput).
         pub fn build(self) -> crate::output::ListStackInstancesForProvisionedProductOutput {
             crate::output::ListStackInstancesForProvisionedProductOutput {
-                stack_instances: self.stack_instances,
-                next_page_token: self.next_page_token,
+                stack_instances: self.stack_instances
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStackInstancesForProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesForProvisionedProductOutput`](crate::output::ListStackInstancesForProvisionedProductOutput).
-    pub fn builder() -> crate::output::list_stack_instances_for_provisioned_product_output::Builder
-    {
+    pub fn builder() -> crate::output::list_stack_instances_for_provisioned_product_output::Builder {
         crate::output::list_stack_instances_for_provisioned_product_output::Builder::default()
     }
 }
@@ -1416,35 +1290,31 @@ impl ListStackInstancesForProvisionedProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceActionsForProvisioningArtifactOutput {
+pub struct ListServiceActionsForProvisioningArtifactOutput  {
     /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
     #[doc(hidden)]
-    pub service_action_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
+    pub service_action_summaries: std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListServiceActionsForProvisioningArtifactOutput {
     /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
-    pub fn service_action_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServiceActionSummary]> {
+    pub fn service_action_summaries(&self) -> std::option::Option<& [crate::model::ServiceActionSummary]> {
         self.service_action_summaries.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListServiceActionsForProvisioningArtifactOutput`](crate::output::ListServiceActionsForProvisioningArtifactOutput).
 pub mod list_service_actions_for_provisioning_artifact_output {
-
+    
     /// A builder for [`ListServiceActionsForProvisioningArtifactOutput`](crate::output::ListServiceActionsForProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_action_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
+        pub(crate) service_action_summaries: std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1453,22 +1323,15 @@ pub mod list_service_actions_for_provisioning_artifact_output {
         /// To override the contents of this collection use [`set_service_action_summaries`](Self::set_service_action_summaries).
         ///
         /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
-        pub fn service_action_summaries(
-            mut self,
-            input: crate::model::ServiceActionSummary,
-        ) -> Self {
+        pub fn service_action_summaries(mut self, input: crate::model::ServiceActionSummary) -> Self {
             let mut v = self.service_action_summaries.unwrap_or_default();
-            v.push(input);
-            self.service_action_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.service_action_summaries = Some(v);
+                            self
         }
         /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
-        pub fn set_service_action_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
-        ) -> Self {
-            self.service_action_summaries = input;
-            self
+        pub fn set_service_action_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>) -> Self {
+            self.service_action_summaries = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1476,26 +1339,25 @@ pub mod list_service_actions_for_provisioning_artifact_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListServiceActionsForProvisioningArtifactOutput`](crate::output::ListServiceActionsForProvisioningArtifactOutput).
         pub fn build(self) -> crate::output::ListServiceActionsForProvisioningArtifactOutput {
             crate::output::ListServiceActionsForProvisioningArtifactOutput {
-                service_action_summaries: self.service_action_summaries,
-                next_page_token: self.next_page_token,
+                service_action_summaries: self.service_action_summaries
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServiceActionsForProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceActionsForProvisioningArtifactOutput`](crate::output::ListServiceActionsForProvisioningArtifactOutput).
-    pub fn builder() -> crate::output::list_service_actions_for_provisioning_artifact_output::Builder
-    {
+    pub fn builder() -> crate::output::list_service_actions_for_provisioning_artifact_output::Builder {
         crate::output::list_service_actions_for_provisioning_artifact_output::Builder::default()
     }
 }
@@ -1503,35 +1365,31 @@ impl ListServiceActionsForProvisioningArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceActionsOutput {
+pub struct ListServiceActionsOutput  {
     /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
     #[doc(hidden)]
-    pub service_action_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
+    pub service_action_summaries: std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListServiceActionsOutput {
     /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
-    pub fn service_action_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ServiceActionSummary]> {
+    pub fn service_action_summaries(&self) -> std::option::Option<& [crate::model::ServiceActionSummary]> {
         self.service_action_summaries.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListServiceActionsOutput`](crate::output::ListServiceActionsOutput).
 pub mod list_service_actions_output {
-
+    
     /// A builder for [`ListServiceActionsOutput`](crate::output::ListServiceActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_action_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
+        pub(crate) service_action_summaries: std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1540,22 +1398,15 @@ pub mod list_service_actions_output {
         /// To override the contents of this collection use [`set_service_action_summaries`](Self::set_service_action_summaries).
         ///
         /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
-        pub fn service_action_summaries(
-            mut self,
-            input: crate::model::ServiceActionSummary,
-        ) -> Self {
+        pub fn service_action_summaries(mut self, input: crate::model::ServiceActionSummary) -> Self {
             let mut v = self.service_action_summaries.unwrap_or_default();
-            v.push(input);
-            self.service_action_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.service_action_summaries = Some(v);
+                            self
         }
         /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
-        pub fn set_service_action_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
-        ) -> Self {
-            self.service_action_summaries = input;
-            self
+        pub fn set_service_action_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>) -> Self {
+            self.service_action_summaries = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1563,21 +1414,21 @@ pub mod list_service_actions_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListServiceActionsOutput`](crate::output::ListServiceActionsOutput).
         pub fn build(self) -> crate::output::ListServiceActionsOutput {
             crate::output::ListServiceActionsOutput {
-                service_action_summaries: self.service_action_summaries,
-                next_page_token: self.next_page_token,
+                service_action_summaries: self.service_action_summaries
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServiceActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceActionsOutput`](crate::output::ListServiceActionsOutput).
@@ -1589,7 +1440,7 @@ impl ListServiceActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesForTagOptionOutput {
+pub struct ListResourcesForTagOptionOutput  {
     /// <p>Information about the resources.</p>
     #[doc(hidden)]
     pub resource_details: std::option::Option<std::vec::Vec<crate::model::ResourceDetail>>,
@@ -1599,22 +1450,21 @@ pub struct ListResourcesForTagOptionOutput {
 }
 impl ListResourcesForTagOptionOutput {
     /// <p>Information about the resources.</p>
-    pub fn resource_details(&self) -> std::option::Option<&[crate::model::ResourceDetail]> {
+    pub fn resource_details(&self) -> std::option::Option<& [crate::model::ResourceDetail]> {
         self.resource_details.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<&str> {
+    pub fn page_token(&self) -> std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
 /// See [`ListResourcesForTagOptionOutput`](crate::output::ListResourcesForTagOptionOutput).
 pub mod list_resources_for_tag_option_output {
-
+    
     /// A builder for [`ListResourcesForTagOptionOutput`](crate::output::ListResourcesForTagOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_details:
-            std::option::Option<std::vec::Vec<crate::model::ResourceDetail>>,
+        pub(crate) resource_details: std::option::Option<std::vec::Vec<crate::model::ResourceDetail>>,
         pub(crate) page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1625,17 +1475,13 @@ pub mod list_resources_for_tag_option_output {
         /// <p>Information about the resources.</p>
         pub fn resource_details(mut self, input: crate::model::ResourceDetail) -> Self {
             let mut v = self.resource_details.unwrap_or_default();
-            v.push(input);
-            self.resource_details = Some(v);
-            self
+                            v.push(input);
+                            self.resource_details = Some(v);
+                            self
         }
         /// <p>Information about the resources.</p>
-        pub fn set_resource_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceDetail>>,
-        ) -> Self {
-            self.resource_details = input;
-            self
+        pub fn set_resource_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceDetail>>) -> Self {
+            self.resource_details = input; self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1644,17 +1490,20 @@ pub mod list_resources_for_tag_option_output {
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.page_token = input;
-            self
+            self.page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourcesForTagOptionOutput`](crate::output::ListResourcesForTagOptionOutput).
         pub fn build(self) -> crate::output::ListResourcesForTagOptionOutput {
             crate::output::ListResourcesForTagOptionOutput {
-                resource_details: self.resource_details,
-                page_token: self.page_token,
+                resource_details: self.resource_details
+                ,
+                page_token: self.page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourcesForTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForTagOptionOutput`](crate::output::ListResourcesForTagOptionOutput).
@@ -1666,7 +1515,7 @@ impl ListResourcesForTagOptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecordHistoryOutput {
+pub struct ListRecordHistoryOutput  {
     /// <p>The records, in reverse chronological order.</p>
     #[doc(hidden)]
     pub record_details: std::option::Option<std::vec::Vec<crate::model::RecordDetail>>,
@@ -1676,17 +1525,17 @@ pub struct ListRecordHistoryOutput {
 }
 impl ListRecordHistoryOutput {
     /// <p>The records, in reverse chronological order.</p>
-    pub fn record_details(&self) -> std::option::Option<&[crate::model::RecordDetail]> {
+    pub fn record_details(&self) -> std::option::Option<& [crate::model::RecordDetail]> {
         self.record_details.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListRecordHistoryOutput`](crate::output::ListRecordHistoryOutput).
 pub mod list_record_history_output {
-
+    
     /// A builder for [`ListRecordHistoryOutput`](crate::output::ListRecordHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1701,17 +1550,13 @@ pub mod list_record_history_output {
         /// <p>The records, in reverse chronological order.</p>
         pub fn record_details(mut self, input: crate::model::RecordDetail) -> Self {
             let mut v = self.record_details.unwrap_or_default();
-            v.push(input);
-            self.record_details = Some(v);
-            self
+                            v.push(input);
+                            self.record_details = Some(v);
+                            self
         }
         /// <p>The records, in reverse chronological order.</p>
-        pub fn set_record_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecordDetail>>,
-        ) -> Self {
-            self.record_details = input;
-            self
+        pub fn set_record_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecordDetail>>) -> Self {
+            self.record_details = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1719,21 +1564,21 @@ pub mod list_record_history_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRecordHistoryOutput`](crate::output::ListRecordHistoryOutput).
         pub fn build(self) -> crate::output::ListRecordHistoryOutput {
             crate::output::ListRecordHistoryOutput {
-                record_details: self.record_details,
-                next_page_token: self.next_page_token,
+                record_details: self.record_details
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRecordHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListRecordHistoryOutput`](crate::output::ListRecordHistoryOutput).
@@ -1745,35 +1590,31 @@ impl ListRecordHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProvisioningArtifactsForServiceActionOutput {
+pub struct ListProvisioningArtifactsForServiceActionOutput  {
     /// <p>An array of objects with information about product views and provisioning artifacts.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_views:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>,
+    pub provisioning_artifact_views: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningArtifactsForServiceActionOutput {
     /// <p>An array of objects with information about product views and provisioning artifacts.</p>
-    pub fn provisioning_artifact_views(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisioningArtifactView]> {
+    pub fn provisioning_artifact_views(&self) -> std::option::Option<& [crate::model::ProvisioningArtifactView]> {
         self.provisioning_artifact_views.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListProvisioningArtifactsForServiceActionOutput`](crate::output::ListProvisioningArtifactsForServiceActionOutput).
 pub mod list_provisioning_artifacts_for_service_action_output {
-
+    
     /// A builder for [`ListProvisioningArtifactsForServiceActionOutput`](crate::output::ListProvisioningArtifactsForServiceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioning_artifact_views:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>,
+        pub(crate) provisioning_artifact_views: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1782,22 +1623,15 @@ pub mod list_provisioning_artifacts_for_service_action_output {
         /// To override the contents of this collection use [`set_provisioning_artifact_views`](Self::set_provisioning_artifact_views).
         ///
         /// <p>An array of objects with information about product views and provisioning artifacts.</p>
-        pub fn provisioning_artifact_views(
-            mut self,
-            input: crate::model::ProvisioningArtifactView,
-        ) -> Self {
+        pub fn provisioning_artifact_views(mut self, input: crate::model::ProvisioningArtifactView) -> Self {
             let mut v = self.provisioning_artifact_views.unwrap_or_default();
-            v.push(input);
-            self.provisioning_artifact_views = Some(v);
-            self
+                            v.push(input);
+                            self.provisioning_artifact_views = Some(v);
+                            self
         }
         /// <p>An array of objects with information about product views and provisioning artifacts.</p>
-        pub fn set_provisioning_artifact_views(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>,
-        ) -> Self {
-            self.provisioning_artifact_views = input;
-            self
+        pub fn set_provisioning_artifact_views(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>) -> Self {
+            self.provisioning_artifact_views = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1805,26 +1639,25 @@ pub mod list_provisioning_artifacts_for_service_action_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProvisioningArtifactsForServiceActionOutput`](crate::output::ListProvisioningArtifactsForServiceActionOutput).
         pub fn build(self) -> crate::output::ListProvisioningArtifactsForServiceActionOutput {
             crate::output::ListProvisioningArtifactsForServiceActionOutput {
-                provisioning_artifact_views: self.provisioning_artifact_views,
-                next_page_token: self.next_page_token,
+                provisioning_artifact_views: self.provisioning_artifact_views
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProvisioningArtifactsForServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisioningArtifactsForServiceActionOutput`](crate::output::ListProvisioningArtifactsForServiceActionOutput).
-    pub fn builder() -> crate::output::list_provisioning_artifacts_for_service_action_output::Builder
-    {
+    pub fn builder() -> crate::output::list_provisioning_artifacts_for_service_action_output::Builder {
         crate::output::list_provisioning_artifacts_for_service_action_output::Builder::default()
     }
 }
@@ -1832,35 +1665,31 @@ impl ListProvisioningArtifactsForServiceActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProvisioningArtifactsOutput {
+pub struct ListProvisioningArtifactsOutput  {
     /// <p>Information about the provisioning artifacts.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_details:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactDetail>>,
+    pub provisioning_artifact_details: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningArtifactsOutput {
     /// <p>Information about the provisioning artifacts.</p>
-    pub fn provisioning_artifact_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisioningArtifactDetail]> {
+    pub fn provisioning_artifact_details(&self) -> std::option::Option<& [crate::model::ProvisioningArtifactDetail]> {
         self.provisioning_artifact_details.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListProvisioningArtifactsOutput`](crate::output::ListProvisioningArtifactsOutput).
 pub mod list_provisioning_artifacts_output {
-
+    
     /// A builder for [`ListProvisioningArtifactsOutput`](crate::output::ListProvisioningArtifactsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioning_artifact_details:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactDetail>>,
+        pub(crate) provisioning_artifact_details: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactDetail>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1869,22 +1698,15 @@ pub mod list_provisioning_artifacts_output {
         /// To override the contents of this collection use [`set_provisioning_artifact_details`](Self::set_provisioning_artifact_details).
         ///
         /// <p>Information about the provisioning artifacts.</p>
-        pub fn provisioning_artifact_details(
-            mut self,
-            input: crate::model::ProvisioningArtifactDetail,
-        ) -> Self {
+        pub fn provisioning_artifact_details(mut self, input: crate::model::ProvisioningArtifactDetail) -> Self {
             let mut v = self.provisioning_artifact_details.unwrap_or_default();
-            v.push(input);
-            self.provisioning_artifact_details = Some(v);
-            self
+                            v.push(input);
+                            self.provisioning_artifact_details = Some(v);
+                            self
         }
         /// <p>Information about the provisioning artifacts.</p>
-        pub fn set_provisioning_artifact_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactDetail>>,
-        ) -> Self {
-            self.provisioning_artifact_details = input;
-            self
+        pub fn set_provisioning_artifact_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactDetail>>) -> Self {
+            self.provisioning_artifact_details = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1892,21 +1714,21 @@ pub mod list_provisioning_artifacts_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProvisioningArtifactsOutput`](crate::output::ListProvisioningArtifactsOutput).
         pub fn build(self) -> crate::output::ListProvisioningArtifactsOutput {
             crate::output::ListProvisioningArtifactsOutput {
-                provisioning_artifact_details: self.provisioning_artifact_details,
-                next_page_token: self.next_page_token,
+                provisioning_artifact_details: self.provisioning_artifact_details
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProvisioningArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisioningArtifactsOutput`](crate::output::ListProvisioningArtifactsOutput).
@@ -1918,35 +1740,31 @@ impl ListProvisioningArtifactsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProvisionedProductPlansOutput {
+pub struct ListProvisionedProductPlansOutput  {
     /// <p>Information about the plans.</p>
     #[doc(hidden)]
-    pub provisioned_product_plans:
-        std::option::Option<std::vec::Vec<crate::model::ProvisionedProductPlanSummary>>,
+    pub provisioned_product_plans: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductPlanSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl ListProvisionedProductPlansOutput {
     /// <p>Information about the plans.</p>
-    pub fn provisioned_product_plans(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisionedProductPlanSummary]> {
+    pub fn provisioned_product_plans(&self) -> std::option::Option<& [crate::model::ProvisionedProductPlanSummary]> {
         self.provisioned_product_plans.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListProvisionedProductPlansOutput`](crate::output::ListProvisionedProductPlansOutput).
 pub mod list_provisioned_product_plans_output {
-
+    
     /// A builder for [`ListProvisionedProductPlansOutput`](crate::output::ListProvisionedProductPlansOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioned_product_plans:
-            std::option::Option<std::vec::Vec<crate::model::ProvisionedProductPlanSummary>>,
+        pub(crate) provisioned_product_plans: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductPlanSummary>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1955,22 +1773,15 @@ pub mod list_provisioned_product_plans_output {
         /// To override the contents of this collection use [`set_provisioned_product_plans`](Self::set_provisioned_product_plans).
         ///
         /// <p>Information about the plans.</p>
-        pub fn provisioned_product_plans(
-            mut self,
-            input: crate::model::ProvisionedProductPlanSummary,
-        ) -> Self {
+        pub fn provisioned_product_plans(mut self, input: crate::model::ProvisionedProductPlanSummary) -> Self {
             let mut v = self.provisioned_product_plans.unwrap_or_default();
-            v.push(input);
-            self.provisioned_product_plans = Some(v);
-            self
+                            v.push(input);
+                            self.provisioned_product_plans = Some(v);
+                            self
         }
         /// <p>Information about the plans.</p>
-        pub fn set_provisioned_product_plans(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductPlanSummary>>,
-        ) -> Self {
-            self.provisioned_product_plans = input;
-            self
+        pub fn set_provisioned_product_plans(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisionedProductPlanSummary>>) -> Self {
+            self.provisioned_product_plans = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1978,21 +1789,21 @@ pub mod list_provisioned_product_plans_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProvisionedProductPlansOutput`](crate::output::ListProvisionedProductPlansOutput).
         pub fn build(self) -> crate::output::ListProvisionedProductPlansOutput {
             crate::output::ListProvisionedProductPlansOutput {
-                provisioned_product_plans: self.provisioned_product_plans,
-                next_page_token: self.next_page_token,
+                provisioned_product_plans: self.provisioned_product_plans
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProvisionedProductPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedProductPlansOutput`](crate::output::ListProvisionedProductPlansOutput).
@@ -2004,7 +1815,7 @@ impl ListProvisionedProductPlansOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPrincipalsForPortfolioOutput {
+pub struct ListPrincipalsForPortfolioOutput  {
     /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
     #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -2014,17 +1825,17 @@ pub struct ListPrincipalsForPortfolioOutput {
 }
 impl ListPrincipalsForPortfolioOutput {
     /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
-    pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
+    pub fn principals(&self) -> std::option::Option<& [crate::model::Principal]> {
         self.principals.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput).
 pub mod list_principals_for_portfolio_output {
-
+    
     /// A builder for [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2039,17 +1850,13 @@ pub mod list_principals_for_portfolio_output {
         /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
         pub fn principals(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input);
-            self.principals = Some(v);
-            self
+                            v.push(input);
+                            self.principals = Some(v);
+                            self
         }
         /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
-        pub fn set_principals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-        ) -> Self {
-            self.principals = input;
-            self
+        pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<crate::model::Principal>>) -> Self {
+            self.principals = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2057,21 +1864,21 @@ pub mod list_principals_for_portfolio_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput).
         pub fn build(self) -> crate::output::ListPrincipalsForPortfolioOutput {
             crate::output::ListPrincipalsForPortfolioOutput {
-                principals: self.principals,
-                next_page_token: self.next_page_token,
+                principals: self.principals
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPrincipalsForPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput).
@@ -2083,7 +1890,7 @@ impl ListPrincipalsForPortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPortfoliosForProductOutput {
+pub struct ListPortfoliosForProductOutput  {
     /// <p>Information about the portfolios.</p>
     #[doc(hidden)]
     pub portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
@@ -2093,22 +1900,21 @@ pub struct ListPortfoliosForProductOutput {
 }
 impl ListPortfoliosForProductOutput {
     /// <p>Information about the portfolios.</p>
-    pub fn portfolio_details(&self) -> std::option::Option<&[crate::model::PortfolioDetail]> {
+    pub fn portfolio_details(&self) -> std::option::Option<& [crate::model::PortfolioDetail]> {
         self.portfolio_details.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListPortfoliosForProductOutput`](crate::output::ListPortfoliosForProductOutput).
 pub mod list_portfolios_for_product_output {
-
+    
     /// A builder for [`ListPortfoliosForProductOutput`](crate::output::ListPortfoliosForProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) portfolio_details:
-            std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
+        pub(crate) portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2119,17 +1925,13 @@ pub mod list_portfolios_for_product_output {
         /// <p>Information about the portfolios.</p>
         pub fn portfolio_details(mut self, input: crate::model::PortfolioDetail) -> Self {
             let mut v = self.portfolio_details.unwrap_or_default();
-            v.push(input);
-            self.portfolio_details = Some(v);
-            self
+                            v.push(input);
+                            self.portfolio_details = Some(v);
+                            self
         }
         /// <p>Information about the portfolios.</p>
-        pub fn set_portfolio_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
-        ) -> Self {
-            self.portfolio_details = input;
-            self
+        pub fn set_portfolio_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>) -> Self {
+            self.portfolio_details = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2137,21 +1939,21 @@ pub mod list_portfolios_for_product_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPortfoliosForProductOutput`](crate::output::ListPortfoliosForProductOutput).
         pub fn build(self) -> crate::output::ListPortfoliosForProductOutput {
             crate::output::ListPortfoliosForProductOutput {
-                portfolio_details: self.portfolio_details,
-                next_page_token: self.next_page_token,
+                portfolio_details: self.portfolio_details
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPortfoliosForProductOutput {
     /// Creates a new builder-style object to manufacture [`ListPortfoliosForProductOutput`](crate::output::ListPortfoliosForProductOutput).
@@ -2163,7 +1965,7 @@ impl ListPortfoliosForProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPortfoliosOutput {
+pub struct ListPortfoliosOutput  {
     /// <p>Information about the portfolios.</p>
     #[doc(hidden)]
     pub portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
@@ -2173,22 +1975,21 @@ pub struct ListPortfoliosOutput {
 }
 impl ListPortfoliosOutput {
     /// <p>Information about the portfolios.</p>
-    pub fn portfolio_details(&self) -> std::option::Option<&[crate::model::PortfolioDetail]> {
+    pub fn portfolio_details(&self) -> std::option::Option<& [crate::model::PortfolioDetail]> {
         self.portfolio_details.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListPortfoliosOutput`](crate::output::ListPortfoliosOutput).
 pub mod list_portfolios_output {
-
+    
     /// A builder for [`ListPortfoliosOutput`](crate::output::ListPortfoliosOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) portfolio_details:
-            std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
+        pub(crate) portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2199,17 +2000,13 @@ pub mod list_portfolios_output {
         /// <p>Information about the portfolios.</p>
         pub fn portfolio_details(mut self, input: crate::model::PortfolioDetail) -> Self {
             let mut v = self.portfolio_details.unwrap_or_default();
-            v.push(input);
-            self.portfolio_details = Some(v);
-            self
+                            v.push(input);
+                            self.portfolio_details = Some(v);
+                            self
         }
         /// <p>Information about the portfolios.</p>
-        pub fn set_portfolio_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
-        ) -> Self {
-            self.portfolio_details = input;
-            self
+        pub fn set_portfolio_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>) -> Self {
+            self.portfolio_details = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2217,21 +2014,21 @@ pub mod list_portfolios_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPortfoliosOutput`](crate::output::ListPortfoliosOutput).
         pub fn build(self) -> crate::output::ListPortfoliosOutput {
             crate::output::ListPortfoliosOutput {
-                portfolio_details: self.portfolio_details,
-                next_page_token: self.next_page_token,
+                portfolio_details: self.portfolio_details
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPortfoliosOutput {
     /// Creates a new builder-style object to manufacture [`ListPortfoliosOutput`](crate::output::ListPortfoliosOutput).
@@ -2243,7 +2040,7 @@ impl ListPortfoliosOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPortfolioAccessOutput {
+pub struct ListPortfolioAccessOutput  {
     /// <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2253,17 +2050,17 @@ pub struct ListPortfolioAccessOutput {
 }
 impl ListPortfolioAccessOutput {
     /// <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput).
 pub mod list_portfolio_access_output {
-
+    
     /// A builder for [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2278,17 +2075,13 @@ pub mod list_portfolio_access_output {
         /// <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
-            v.push(input.into());
-            self.account_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.account_ids = Some(v);
+                            self
         }
         /// <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
-        pub fn set_account_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.account_ids = input;
-            self
+        pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.account_ids = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2296,21 +2089,21 @@ pub mod list_portfolio_access_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput).
         pub fn build(self) -> crate::output::ListPortfolioAccessOutput {
             crate::output::ListPortfolioAccessOutput {
-                account_ids: self.account_ids,
-                next_page_token: self.next_page_token,
+                account_ids: self.account_ids
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPortfolioAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput).
@@ -2322,7 +2115,7 @@ impl ListPortfolioAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOrganizationPortfolioAccessOutput {
+pub struct ListOrganizationPortfolioAccessOutput  {
     /// <p>Displays information about the organization nodes.</p>
     #[doc(hidden)]
     pub organization_nodes: std::option::Option<std::vec::Vec<crate::model::OrganizationNode>>,
@@ -2332,22 +2125,21 @@ pub struct ListOrganizationPortfolioAccessOutput {
 }
 impl ListOrganizationPortfolioAccessOutput {
     /// <p>Displays information about the organization nodes.</p>
-    pub fn organization_nodes(&self) -> std::option::Option<&[crate::model::OrganizationNode]> {
+    pub fn organization_nodes(&self) -> std::option::Option<& [crate::model::OrganizationNode]> {
         self.organization_nodes.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListOrganizationPortfolioAccessOutput`](crate::output::ListOrganizationPortfolioAccessOutput).
 pub mod list_organization_portfolio_access_output {
-
+    
     /// A builder for [`ListOrganizationPortfolioAccessOutput`](crate::output::ListOrganizationPortfolioAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) organization_nodes:
-            std::option::Option<std::vec::Vec<crate::model::OrganizationNode>>,
+        pub(crate) organization_nodes: std::option::Option<std::vec::Vec<crate::model::OrganizationNode>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2358,17 +2150,13 @@ pub mod list_organization_portfolio_access_output {
         /// <p>Displays information about the organization nodes.</p>
         pub fn organization_nodes(mut self, input: crate::model::OrganizationNode) -> Self {
             let mut v = self.organization_nodes.unwrap_or_default();
-            v.push(input);
-            self.organization_nodes = Some(v);
-            self
+                            v.push(input);
+                            self.organization_nodes = Some(v);
+                            self
         }
         /// <p>Displays information about the organization nodes.</p>
-        pub fn set_organization_nodes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OrganizationNode>>,
-        ) -> Self {
-            self.organization_nodes = input;
-            self
+        pub fn set_organization_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::model::OrganizationNode>>) -> Self {
+            self.organization_nodes = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2376,21 +2164,21 @@ pub mod list_organization_portfolio_access_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOrganizationPortfolioAccessOutput`](crate::output::ListOrganizationPortfolioAccessOutput).
         pub fn build(self) -> crate::output::ListOrganizationPortfolioAccessOutput {
             crate::output::ListOrganizationPortfolioAccessOutput {
-                organization_nodes: self.organization_nodes,
-                next_page_token: self.next_page_token,
+                organization_nodes: self.organization_nodes
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOrganizationPortfolioAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationPortfolioAccessOutput`](crate::output::ListOrganizationPortfolioAccessOutput).
@@ -2402,7 +2190,7 @@ impl ListOrganizationPortfolioAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLaunchPathsOutput {
+pub struct ListLaunchPathsOutput  {
     /// <p>Information about the launch path.</p>
     #[doc(hidden)]
     pub launch_path_summaries: std::option::Option<std::vec::Vec<crate::model::LaunchPathSummary>>,
@@ -2412,22 +2200,21 @@ pub struct ListLaunchPathsOutput {
 }
 impl ListLaunchPathsOutput {
     /// <p>Information about the launch path.</p>
-    pub fn launch_path_summaries(&self) -> std::option::Option<&[crate::model::LaunchPathSummary]> {
+    pub fn launch_path_summaries(&self) -> std::option::Option<& [crate::model::LaunchPathSummary]> {
         self.launch_path_summaries.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListLaunchPathsOutput`](crate::output::ListLaunchPathsOutput).
 pub mod list_launch_paths_output {
-
+    
     /// A builder for [`ListLaunchPathsOutput`](crate::output::ListLaunchPathsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) launch_path_summaries:
-            std::option::Option<std::vec::Vec<crate::model::LaunchPathSummary>>,
+        pub(crate) launch_path_summaries: std::option::Option<std::vec::Vec<crate::model::LaunchPathSummary>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2438,17 +2225,13 @@ pub mod list_launch_paths_output {
         /// <p>Information about the launch path.</p>
         pub fn launch_path_summaries(mut self, input: crate::model::LaunchPathSummary) -> Self {
             let mut v = self.launch_path_summaries.unwrap_or_default();
-            v.push(input);
-            self.launch_path_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.launch_path_summaries = Some(v);
+                            self
         }
         /// <p>Information about the launch path.</p>
-        pub fn set_launch_path_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LaunchPathSummary>>,
-        ) -> Self {
-            self.launch_path_summaries = input;
-            self
+        pub fn set_launch_path_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::LaunchPathSummary>>) -> Self {
+            self.launch_path_summaries = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2456,21 +2239,21 @@ pub mod list_launch_paths_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLaunchPathsOutput`](crate::output::ListLaunchPathsOutput).
         pub fn build(self) -> crate::output::ListLaunchPathsOutput {
             crate::output::ListLaunchPathsOutput {
-                launch_path_summaries: self.launch_path_summaries,
-                next_page_token: self.next_page_token,
+                launch_path_summaries: self.launch_path_summaries
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLaunchPathsOutput {
     /// Creates a new builder-style object to manufacture [`ListLaunchPathsOutput`](crate::output::ListLaunchPathsOutput).
@@ -2482,7 +2265,7 @@ impl ListLaunchPathsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConstraintsForPortfolioOutput {
+pub struct ListConstraintsForPortfolioOutput  {
     /// <p>Information about the constraints.</p>
     #[doc(hidden)]
     pub constraint_details: std::option::Option<std::vec::Vec<crate::model::ConstraintDetail>>,
@@ -2492,22 +2275,21 @@ pub struct ListConstraintsForPortfolioOutput {
 }
 impl ListConstraintsForPortfolioOutput {
     /// <p>Information about the constraints.</p>
-    pub fn constraint_details(&self) -> std::option::Option<&[crate::model::ConstraintDetail]> {
+    pub fn constraint_details(&self) -> std::option::Option<& [crate::model::ConstraintDetail]> {
         self.constraint_details.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListConstraintsForPortfolioOutput`](crate::output::ListConstraintsForPortfolioOutput).
 pub mod list_constraints_for_portfolio_output {
-
+    
     /// A builder for [`ListConstraintsForPortfolioOutput`](crate::output::ListConstraintsForPortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) constraint_details:
-            std::option::Option<std::vec::Vec<crate::model::ConstraintDetail>>,
+        pub(crate) constraint_details: std::option::Option<std::vec::Vec<crate::model::ConstraintDetail>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2518,17 +2300,13 @@ pub mod list_constraints_for_portfolio_output {
         /// <p>Information about the constraints.</p>
         pub fn constraint_details(mut self, input: crate::model::ConstraintDetail) -> Self {
             let mut v = self.constraint_details.unwrap_or_default();
-            v.push(input);
-            self.constraint_details = Some(v);
-            self
+                            v.push(input);
+                            self.constraint_details = Some(v);
+                            self
         }
         /// <p>Information about the constraints.</p>
-        pub fn set_constraint_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConstraintDetail>>,
-        ) -> Self {
-            self.constraint_details = input;
-            self
+        pub fn set_constraint_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConstraintDetail>>) -> Self {
+            self.constraint_details = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2536,21 +2314,21 @@ pub mod list_constraints_for_portfolio_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConstraintsForPortfolioOutput`](crate::output::ListConstraintsForPortfolioOutput).
         pub fn build(self) -> crate::output::ListConstraintsForPortfolioOutput {
             crate::output::ListConstraintsForPortfolioOutput {
-                constraint_details: self.constraint_details,
-                next_page_token: self.next_page_token,
+                constraint_details: self.constraint_details
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConstraintsForPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`ListConstraintsForPortfolioOutput`](crate::output::ListConstraintsForPortfolioOutput).
@@ -2562,7 +2340,7 @@ impl ListConstraintsForPortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBudgetsForResourceOutput {
+pub struct ListBudgetsForResourceOutput  {
     /// <p>Information about the associated budgets.</p>
     #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
@@ -2572,17 +2350,17 @@ pub struct ListBudgetsForResourceOutput {
 }
 impl ListBudgetsForResourceOutput {
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<&[crate::model::BudgetDetail]> {
+    pub fn budgets(&self) -> std::option::Option<& [crate::model::BudgetDetail]> {
         self.budgets.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListBudgetsForResourceOutput`](crate::output::ListBudgetsForResourceOutput).
 pub mod list_budgets_for_resource_output {
-
+    
     /// A builder for [`ListBudgetsForResourceOutput`](crate::output::ListBudgetsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2597,17 +2375,13 @@ pub mod list_budgets_for_resource_output {
         /// <p>Information about the associated budgets.</p>
         pub fn budgets(mut self, input: crate::model::BudgetDetail) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input);
-            self.budgets = Some(v);
-            self
+                            v.push(input);
+                            self.budgets = Some(v);
+                            self
         }
         /// <p>Information about the associated budgets.</p>
-        pub fn set_budgets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
-        ) -> Self {
-            self.budgets = input;
-            self
+        pub fn set_budgets(mut self, input: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>) -> Self {
+            self.budgets = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2615,21 +2389,21 @@ pub mod list_budgets_for_resource_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBudgetsForResourceOutput`](crate::output::ListBudgetsForResourceOutput).
         pub fn build(self) -> crate::output::ListBudgetsForResourceOutput {
             crate::output::ListBudgetsForResourceOutput {
-                budgets: self.budgets,
-                next_page_token: self.next_page_token,
+                budgets: self.budgets
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBudgetsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListBudgetsForResourceOutput`](crate::output::ListBudgetsForResourceOutput).
@@ -2641,7 +2415,7 @@ impl ListBudgetsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAcceptedPortfolioSharesOutput {
+pub struct ListAcceptedPortfolioSharesOutput  {
     /// <p>Information about the portfolios.</p>
     #[doc(hidden)]
     pub portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
@@ -2651,22 +2425,21 @@ pub struct ListAcceptedPortfolioSharesOutput {
 }
 impl ListAcceptedPortfolioSharesOutput {
     /// <p>Information about the portfolios.</p>
-    pub fn portfolio_details(&self) -> std::option::Option<&[crate::model::PortfolioDetail]> {
+    pub fn portfolio_details(&self) -> std::option::Option<& [crate::model::PortfolioDetail]> {
         self.portfolio_details.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput).
 pub mod list_accepted_portfolio_shares_output {
-
+    
     /// A builder for [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) portfolio_details:
-            std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
+        pub(crate) portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2677,17 +2450,13 @@ pub mod list_accepted_portfolio_shares_output {
         /// <p>Information about the portfolios.</p>
         pub fn portfolio_details(mut self, input: crate::model::PortfolioDetail) -> Self {
             let mut v = self.portfolio_details.unwrap_or_default();
-            v.push(input);
-            self.portfolio_details = Some(v);
-            self
+                            v.push(input);
+                            self.portfolio_details = Some(v);
+                            self
         }
         /// <p>Information about the portfolios.</p>
-        pub fn set_portfolio_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
-        ) -> Self {
-            self.portfolio_details = input;
-            self
+        pub fn set_portfolio_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>) -> Self {
+            self.portfolio_details = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2695,21 +2464,21 @@ pub mod list_accepted_portfolio_shares_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput).
         pub fn build(self) -> crate::output::ListAcceptedPortfolioSharesOutput {
             crate::output::ListAcceptedPortfolioSharesOutput {
-                portfolio_details: self.portfolio_details,
-                next_page_token: self.next_page_token,
+                portfolio_details: self.portfolio_details
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAcceptedPortfolioSharesOutput {
     /// Creates a new builder-style object to manufacture [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput).
@@ -2721,20 +2490,20 @@ impl ListAcceptedPortfolioSharesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportAsProvisionedProductOutput {
+pub struct ImportAsProvisionedProductOutput  {
     /// <p>Information about a request operation.</p>
     #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl ImportAsProvisionedProductOutput {
     /// <p>Information about a request operation.</p>
-    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+    pub fn record_detail(&self) -> std::option::Option<& crate::model::RecordDetail> {
         self.record_detail.as_ref()
     }
 }
 /// See [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput).
 pub mod import_as_provisioned_product_output {
-
+    
     /// A builder for [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2747,20 +2516,19 @@ pub mod import_as_provisioned_product_output {
             self
         }
         /// <p>Information about a request operation.</p>
-        pub fn set_record_detail(
-            mut self,
-            input: std::option::Option<crate::model::RecordDetail>,
-        ) -> Self {
-            self.record_detail = input;
-            self
+        pub fn set_record_detail(mut self, input: std::option::Option<crate::model::RecordDetail>) -> Self {
+            self.record_detail = input; self
         }
         /// Consumes the builder and constructs a [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput).
         pub fn build(self) -> crate::output::ImportAsProvisionedProductOutput {
             crate::output::ImportAsProvisionedProductOutput {
-                record_detail: self.record_detail,
+                record_detail: self.record_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportAsProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput).
@@ -2772,7 +2540,7 @@ impl ImportAsProvisionedProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProvisionedProductOutputsOutput {
+pub struct GetProvisionedProductOutputsOutput  {
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
     #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
@@ -2782,17 +2550,17 @@ pub struct GetProvisionedProductOutputsOutput {
 }
 impl GetProvisionedProductOutputsOutput {
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::RecordOutput]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::model::RecordOutput]> {
         self.outputs.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`GetProvisionedProductOutputsOutput`](crate::output::GetProvisionedProductOutputsOutput).
 pub mod get_provisioned_product_outputs_output {
-
+    
     /// A builder for [`GetProvisionedProductOutputsOutput`](crate::output::GetProvisionedProductOutputsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2807,17 +2575,13 @@ pub mod get_provisioned_product_outputs_output {
         /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
         pub fn outputs(mut self, input: crate::model::RecordOutput) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
+                            v.push(input);
+                            self.outputs = Some(v);
+                            self
         }
         /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
-        ) -> Self {
-            self.outputs = input;
-            self
+        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>) -> Self {
+            self.outputs = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2825,21 +2589,21 @@ pub mod get_provisioned_product_outputs_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`GetProvisionedProductOutputsOutput`](crate::output::GetProvisionedProductOutputsOutput).
         pub fn build(self) -> crate::output::GetProvisionedProductOutputsOutput {
             crate::output::GetProvisionedProductOutputsOutput {
-                outputs: self.outputs,
-                next_page_token: self.next_page_token,
+                outputs: self.outputs
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProvisionedProductOutputsOutput {
     /// Creates a new builder-style object to manufacture [`GetProvisionedProductOutputsOutput`](crate::output::GetProvisionedProductOutputsOutput).
@@ -2851,20 +2615,20 @@ impl GetProvisionedProductOutputsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAwsOrganizationsAccessStatusOutput {
+pub struct GetAwsOrganizationsAccessStatusOutput  {
     /// <p>The status of the portfolio share feature.</p>
     #[doc(hidden)]
     pub access_status: std::option::Option<crate::model::AccessStatus>,
 }
 impl GetAwsOrganizationsAccessStatusOutput {
     /// <p>The status of the portfolio share feature.</p>
-    pub fn access_status(&self) -> std::option::Option<&crate::model::AccessStatus> {
+    pub fn access_status(&self) -> std::option::Option<& crate::model::AccessStatus> {
         self.access_status.as_ref()
     }
 }
 /// See [`GetAwsOrganizationsAccessStatusOutput`](crate::output::GetAwsOrganizationsAccessStatusOutput).
 pub mod get_aws_organizations_access_status_output {
-
+    
     /// A builder for [`GetAwsOrganizationsAccessStatusOutput`](crate::output::GetAwsOrganizationsAccessStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2877,20 +2641,19 @@ pub mod get_aws_organizations_access_status_output {
             self
         }
         /// <p>The status of the portfolio share feature.</p>
-        pub fn set_access_status(
-            mut self,
-            input: std::option::Option<crate::model::AccessStatus>,
-        ) -> Self {
-            self.access_status = input;
-            self
+        pub fn set_access_status(mut self, input: std::option::Option<crate::model::AccessStatus>) -> Self {
+            self.access_status = input; self
         }
         /// Consumes the builder and constructs a [`GetAwsOrganizationsAccessStatusOutput`](crate::output::GetAwsOrganizationsAccessStatusOutput).
         pub fn build(self) -> crate::output::GetAwsOrganizationsAccessStatusOutput {
             crate::output::GetAwsOrganizationsAccessStatusOutput {
-                access_status: self.access_status,
+                access_status: self.access_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAwsOrganizationsAccessStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetAwsOrganizationsAccessStatusOutput`](crate::output::GetAwsOrganizationsAccessStatusOutput).
@@ -2902,20 +2665,20 @@ impl GetAwsOrganizationsAccessStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteProvisionedProductServiceActionOutput {
+pub struct ExecuteProvisionedProductServiceActionOutput  {
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
     #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl ExecuteProvisionedProductServiceActionOutput {
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
-    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+    pub fn record_detail(&self) -> std::option::Option<& crate::model::RecordDetail> {
         self.record_detail.as_ref()
     }
 }
 /// See [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput).
 pub mod execute_provisioned_product_service_action_output {
-
+    
     /// A builder for [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2928,20 +2691,19 @@ pub mod execute_provisioned_product_service_action_output {
             self
         }
         /// <p>An object containing detailed information about the result of provisioning the product.</p>
-        pub fn set_record_detail(
-            mut self,
-            input: std::option::Option<crate::model::RecordDetail>,
-        ) -> Self {
-            self.record_detail = input;
-            self
+        pub fn set_record_detail(mut self, input: std::option::Option<crate::model::RecordDetail>) -> Self {
+            self.record_detail = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput).
         pub fn build(self) -> crate::output::ExecuteProvisionedProductServiceActionOutput {
             crate::output::ExecuteProvisionedProductServiceActionOutput {
-                record_detail: self.record_detail,
+                record_detail: self.record_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteProvisionedProductServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput).
@@ -2953,20 +2715,20 @@ impl ExecuteProvisionedProductServiceActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteProvisionedProductPlanOutput {
+pub struct ExecuteProvisionedProductPlanOutput  {
     /// <p>Information about the result of provisioning the product.</p>
     #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
 impl ExecuteProvisionedProductPlanOutput {
     /// <p>Information about the result of provisioning the product.</p>
-    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+    pub fn record_detail(&self) -> std::option::Option<& crate::model::RecordDetail> {
         self.record_detail.as_ref()
     }
 }
 /// See [`ExecuteProvisionedProductPlanOutput`](crate::output::ExecuteProvisionedProductPlanOutput).
 pub mod execute_provisioned_product_plan_output {
-
+    
     /// A builder for [`ExecuteProvisionedProductPlanOutput`](crate::output::ExecuteProvisionedProductPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2979,20 +2741,19 @@ pub mod execute_provisioned_product_plan_output {
             self
         }
         /// <p>Information about the result of provisioning the product.</p>
-        pub fn set_record_detail(
-            mut self,
-            input: std::option::Option<crate::model::RecordDetail>,
-        ) -> Self {
-            self.record_detail = input;
-            self
+        pub fn set_record_detail(mut self, input: std::option::Option<crate::model::RecordDetail>) -> Self {
+            self.record_detail = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteProvisionedProductPlanOutput`](crate::output::ExecuteProvisionedProductPlanOutput).
         pub fn build(self) -> crate::output::ExecuteProvisionedProductPlanOutput {
             crate::output::ExecuteProvisionedProductPlanOutput {
-                record_detail: self.record_detail,
+                record_detail: self.record_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteProvisionedProductPlanOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteProvisionedProductPlanOutput`](crate::output::ExecuteProvisionedProductPlanOutput).
@@ -3004,19 +2765,24 @@ impl ExecuteProvisionedProductPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAwsOrganizationsAccessOutput {}
+pub struct EnableAwsOrganizationsAccessOutput  {
+}
 /// See [`EnableAwsOrganizationsAccessOutput`](crate::output::EnableAwsOrganizationsAccessOutput).
 pub mod enable_aws_organizations_access_output {
-
+    
     /// A builder for [`EnableAwsOrganizationsAccessOutput`](crate::output::EnableAwsOrganizationsAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableAwsOrganizationsAccessOutput`](crate::output::EnableAwsOrganizationsAccessOutput).
         pub fn build(self) -> crate::output::EnableAwsOrganizationsAccessOutput {
-            crate::output::EnableAwsOrganizationsAccessOutput {}
+            crate::output::EnableAwsOrganizationsAccessOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableAwsOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`EnableAwsOrganizationsAccessOutput`](crate::output::EnableAwsOrganizationsAccessOutput).
@@ -3028,19 +2794,24 @@ impl EnableAwsOrganizationsAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateTagOptionFromResourceOutput {}
+pub struct DisassociateTagOptionFromResourceOutput  {
+}
 /// See [`DisassociateTagOptionFromResourceOutput`](crate::output::DisassociateTagOptionFromResourceOutput).
 pub mod disassociate_tag_option_from_resource_output {
-
+    
     /// A builder for [`DisassociateTagOptionFromResourceOutput`](crate::output::DisassociateTagOptionFromResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateTagOptionFromResourceOutput`](crate::output::DisassociateTagOptionFromResourceOutput).
         pub fn build(self) -> crate::output::DisassociateTagOptionFromResourceOutput {
-            crate::output::DisassociateTagOptionFromResourceOutput {}
+            crate::output::DisassociateTagOptionFromResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateTagOptionFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTagOptionFromResourceOutput`](crate::output::DisassociateTagOptionFromResourceOutput).
@@ -3052,26 +2823,28 @@ impl DisassociateTagOptionFromResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateServiceActionFromProvisioningArtifactOutput {}
+pub struct DisassociateServiceActionFromProvisioningArtifactOutput  {
+}
 /// See [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::DisassociateServiceActionFromProvisioningArtifactOutput).
 pub mod disassociate_service_action_from_provisioning_artifact_output {
-
+    
     /// A builder for [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::DisassociateServiceActionFromProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::DisassociateServiceActionFromProvisioningArtifactOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::DisassociateServiceActionFromProvisioningArtifactOutput {
-            crate::output::DisassociateServiceActionFromProvisioningArtifactOutput {}
+        pub fn build(self) -> crate::output::DisassociateServiceActionFromProvisioningArtifactOutput {
+            crate::output::DisassociateServiceActionFromProvisioningArtifactOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateServiceActionFromProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::DisassociateServiceActionFromProvisioningArtifactOutput).
-    pub fn builder(
-    ) -> crate::output::disassociate_service_action_from_provisioning_artifact_output::Builder {
+    pub fn builder() -> crate::output::disassociate_service_action_from_provisioning_artifact_output::Builder {
         crate::output::disassociate_service_action_from_provisioning_artifact_output::Builder::default()
     }
 }
@@ -3079,19 +2852,24 @@ impl DisassociateServiceActionFromProvisioningArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateProductFromPortfolioOutput {}
+pub struct DisassociateProductFromPortfolioOutput  {
+}
 /// See [`DisassociateProductFromPortfolioOutput`](crate::output::DisassociateProductFromPortfolioOutput).
 pub mod disassociate_product_from_portfolio_output {
-
+    
     /// A builder for [`DisassociateProductFromPortfolioOutput`](crate::output::DisassociateProductFromPortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateProductFromPortfolioOutput`](crate::output::DisassociateProductFromPortfolioOutput).
         pub fn build(self) -> crate::output::DisassociateProductFromPortfolioOutput {
-            crate::output::DisassociateProductFromPortfolioOutput {}
+            crate::output::DisassociateProductFromPortfolioOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateProductFromPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateProductFromPortfolioOutput`](crate::output::DisassociateProductFromPortfolioOutput).
@@ -3103,19 +2881,24 @@ impl DisassociateProductFromPortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociatePrincipalFromPortfolioOutput {}
+pub struct DisassociatePrincipalFromPortfolioOutput  {
+}
 /// See [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput).
 pub mod disassociate_principal_from_portfolio_output {
-
+    
     /// A builder for [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput).
         pub fn build(self) -> crate::output::DisassociatePrincipalFromPortfolioOutput {
-            crate::output::DisassociatePrincipalFromPortfolioOutput {}
+            crate::output::DisassociatePrincipalFromPortfolioOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociatePrincipalFromPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput).
@@ -3127,19 +2910,24 @@ impl DisassociatePrincipalFromPortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateBudgetFromResourceOutput {}
+pub struct DisassociateBudgetFromResourceOutput  {
+}
 /// See [`DisassociateBudgetFromResourceOutput`](crate::output::DisassociateBudgetFromResourceOutput).
 pub mod disassociate_budget_from_resource_output {
-
+    
     /// A builder for [`DisassociateBudgetFromResourceOutput`](crate::output::DisassociateBudgetFromResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateBudgetFromResourceOutput`](crate::output::DisassociateBudgetFromResourceOutput).
         pub fn build(self) -> crate::output::DisassociateBudgetFromResourceOutput {
-            crate::output::DisassociateBudgetFromResourceOutput {}
+            crate::output::DisassociateBudgetFromResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateBudgetFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateBudgetFromResourceOutput`](crate::output::DisassociateBudgetFromResourceOutput).
@@ -3151,19 +2939,24 @@ impl DisassociateBudgetFromResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAwsOrganizationsAccessOutput {}
+pub struct DisableAwsOrganizationsAccessOutput  {
+}
 /// See [`DisableAwsOrganizationsAccessOutput`](crate::output::DisableAwsOrganizationsAccessOutput).
 pub mod disable_aws_organizations_access_output {
-
+    
     /// A builder for [`DisableAwsOrganizationsAccessOutput`](crate::output::DisableAwsOrganizationsAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisableAwsOrganizationsAccessOutput`](crate::output::DisableAwsOrganizationsAccessOutput).
         pub fn build(self) -> crate::output::DisableAwsOrganizationsAccessOutput {
-            crate::output::DisableAwsOrganizationsAccessOutput {}
+            crate::output::DisableAwsOrganizationsAccessOutput {
+            }
         }
     }
+    
+    
 }
 impl DisableAwsOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableAwsOrganizationsAccessOutput`](crate::output::DisableAwsOrganizationsAccessOutput).
@@ -3175,20 +2968,20 @@ impl DisableAwsOrganizationsAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagOptionOutput {
+pub struct DescribeTagOptionOutput  {
     /// <p>Information about the TagOption.</p>
     #[doc(hidden)]
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
 impl DescribeTagOptionOutput {
     /// <p>Information about the TagOption.</p>
-    pub fn tag_option_detail(&self) -> std::option::Option<&crate::model::TagOptionDetail> {
+    pub fn tag_option_detail(&self) -> std::option::Option<& crate::model::TagOptionDetail> {
         self.tag_option_detail.as_ref()
     }
 }
 /// See [`DescribeTagOptionOutput`](crate::output::DescribeTagOptionOutput).
 pub mod describe_tag_option_output {
-
+    
     /// A builder for [`DescribeTagOptionOutput`](crate::output::DescribeTagOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3201,20 +2994,19 @@ pub mod describe_tag_option_output {
             self
         }
         /// <p>Information about the TagOption.</p>
-        pub fn set_tag_option_detail(
-            mut self,
-            input: std::option::Option<crate::model::TagOptionDetail>,
-        ) -> Self {
-            self.tag_option_detail = input;
-            self
+        pub fn set_tag_option_detail(mut self, input: std::option::Option<crate::model::TagOptionDetail>) -> Self {
+            self.tag_option_detail = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTagOptionOutput`](crate::output::DescribeTagOptionOutput).
         pub fn build(self) -> crate::output::DescribeTagOptionOutput {
             crate::output::DescribeTagOptionOutput {
-                tag_option_detail: self.tag_option_detail,
+                tag_option_detail: self.tag_option_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagOptionOutput`](crate::output::DescribeTagOptionOutput).
@@ -3226,28 +3018,24 @@ impl DescribeTagOptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServiceActionExecutionParametersOutput {
+pub struct DescribeServiceActionExecutionParametersOutput  {
     /// <p>The parameters of the self-service action.</p>
     #[doc(hidden)]
-    pub service_action_parameters:
-        std::option::Option<std::vec::Vec<crate::model::ExecutionParameter>>,
+    pub service_action_parameters: std::option::Option<std::vec::Vec<crate::model::ExecutionParameter>>,
 }
 impl DescribeServiceActionExecutionParametersOutput {
     /// <p>The parameters of the self-service action.</p>
-    pub fn service_action_parameters(
-        &self,
-    ) -> std::option::Option<&[crate::model::ExecutionParameter]> {
+    pub fn service_action_parameters(&self) -> std::option::Option<& [crate::model::ExecutionParameter]> {
         self.service_action_parameters.as_deref()
     }
 }
 /// See [`DescribeServiceActionExecutionParametersOutput`](crate::output::DescribeServiceActionExecutionParametersOutput).
 pub mod describe_service_action_execution_parameters_output {
-
+    
     /// A builder for [`DescribeServiceActionExecutionParametersOutput`](crate::output::DescribeServiceActionExecutionParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) service_action_parameters:
-            std::option::Option<std::vec::Vec<crate::model::ExecutionParameter>>,
+        pub(crate) service_action_parameters: std::option::Option<std::vec::Vec<crate::model::ExecutionParameter>>,
     }
     impl Builder {
         /// Appends an item to `service_action_parameters`.
@@ -3255,35 +3043,30 @@ pub mod describe_service_action_execution_parameters_output {
         /// To override the contents of this collection use [`set_service_action_parameters`](Self::set_service_action_parameters).
         ///
         /// <p>The parameters of the self-service action.</p>
-        pub fn service_action_parameters(
-            mut self,
-            input: crate::model::ExecutionParameter,
-        ) -> Self {
+        pub fn service_action_parameters(mut self, input: crate::model::ExecutionParameter) -> Self {
             let mut v = self.service_action_parameters.unwrap_or_default();
-            v.push(input);
-            self.service_action_parameters = Some(v);
-            self
+                            v.push(input);
+                            self.service_action_parameters = Some(v);
+                            self
         }
         /// <p>The parameters of the self-service action.</p>
-        pub fn set_service_action_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExecutionParameter>>,
-        ) -> Self {
-            self.service_action_parameters = input;
-            self
+        pub fn set_service_action_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExecutionParameter>>) -> Self {
+            self.service_action_parameters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServiceActionExecutionParametersOutput`](crate::output::DescribeServiceActionExecutionParametersOutput).
         pub fn build(self) -> crate::output::DescribeServiceActionExecutionParametersOutput {
             crate::output::DescribeServiceActionExecutionParametersOutput {
-                service_action_parameters: self.service_action_parameters,
+                service_action_parameters: self.service_action_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeServiceActionExecutionParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceActionExecutionParametersOutput`](crate::output::DescribeServiceActionExecutionParametersOutput).
-    pub fn builder() -> crate::output::describe_service_action_execution_parameters_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_service_action_execution_parameters_output::Builder {
         crate::output::describe_service_action_execution_parameters_output::Builder::default()
     }
 }
@@ -3291,20 +3074,20 @@ impl DescribeServiceActionExecutionParametersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServiceActionOutput {
+pub struct DescribeServiceActionOutput  {
     /// <p>Detailed information about the self-service action.</p>
     #[doc(hidden)]
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
 }
 impl DescribeServiceActionOutput {
     /// <p>Detailed information about the self-service action.</p>
-    pub fn service_action_detail(&self) -> std::option::Option<&crate::model::ServiceActionDetail> {
+    pub fn service_action_detail(&self) -> std::option::Option<& crate::model::ServiceActionDetail> {
         self.service_action_detail.as_ref()
     }
 }
 /// See [`DescribeServiceActionOutput`](crate::output::DescribeServiceActionOutput).
 pub mod describe_service_action_output {
-
+    
     /// A builder for [`DescribeServiceActionOutput`](crate::output::DescribeServiceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3317,20 +3100,19 @@ pub mod describe_service_action_output {
             self
         }
         /// <p>Detailed information about the self-service action.</p>
-        pub fn set_service_action_detail(
-            mut self,
-            input: std::option::Option<crate::model::ServiceActionDetail>,
-        ) -> Self {
-            self.service_action_detail = input;
-            self
+        pub fn set_service_action_detail(mut self, input: std::option::Option<crate::model::ServiceActionDetail>) -> Self {
+            self.service_action_detail = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServiceActionOutput`](crate::output::DescribeServiceActionOutput).
         pub fn build(self) -> crate::output::DescribeServiceActionOutput {
             crate::output::DescribeServiceActionOutput {
-                service_action_detail: self.service_action_detail,
+                service_action_detail: self.service_action_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceActionOutput`](crate::output::DescribeServiceActionOutput).
@@ -3342,7 +3124,7 @@ impl DescribeServiceActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecordOutput {
+pub struct DescribeRecordOutput  {
     /// <p>Information about the product.</p>
     #[doc(hidden)]
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
@@ -3355,21 +3137,21 @@ pub struct DescribeRecordOutput {
 }
 impl DescribeRecordOutput {
     /// <p>Information about the product.</p>
-    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+    pub fn record_detail(&self) -> std::option::Option<& crate::model::RecordDetail> {
         self.record_detail.as_ref()
     }
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
-    pub fn record_outputs(&self) -> std::option::Option<&[crate::model::RecordOutput]> {
+    pub fn record_outputs(&self) -> std::option::Option<& [crate::model::RecordOutput]> {
         self.record_outputs.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`DescribeRecordOutput`](crate::output::DescribeRecordOutput).
 pub mod describe_record_output {
-
+    
     /// A builder for [`DescribeRecordOutput`](crate::output::DescribeRecordOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3384,12 +3166,8 @@ pub mod describe_record_output {
             self
         }
         /// <p>Information about the product.</p>
-        pub fn set_record_detail(
-            mut self,
-            input: std::option::Option<crate::model::RecordDetail>,
-        ) -> Self {
-            self.record_detail = input;
-            self
+        pub fn set_record_detail(mut self, input: std::option::Option<crate::model::RecordDetail>) -> Self {
+            self.record_detail = input; self
         }
         /// Appends an item to `record_outputs`.
         ///
@@ -3398,17 +3176,13 @@ pub mod describe_record_output {
         /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
         pub fn record_outputs(mut self, input: crate::model::RecordOutput) -> Self {
             let mut v = self.record_outputs.unwrap_or_default();
-            v.push(input);
-            self.record_outputs = Some(v);
-            self
+                            v.push(input);
+                            self.record_outputs = Some(v);
+                            self
         }
         /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
-        pub fn set_record_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
-        ) -> Self {
-            self.record_outputs = input;
-            self
+        pub fn set_record_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>) -> Self {
+            self.record_outputs = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3416,22 +3190,23 @@ pub mod describe_record_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRecordOutput`](crate::output::DescribeRecordOutput).
         pub fn build(self) -> crate::output::DescribeRecordOutput {
             crate::output::DescribeRecordOutput {
-                record_detail: self.record_detail,
-                record_outputs: self.record_outputs,
-                next_page_token: self.next_page_token,
+                record_detail: self.record_detail
+                ,
+                record_outputs: self.record_outputs
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRecordOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecordOutput`](crate::output::DescribeRecordOutput).
@@ -3443,11 +3218,10 @@ impl DescribeRecordOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProvisioningParametersOutput {
+pub struct DescribeProvisioningParametersOutput  {
     /// <p>Information about the parameters used to provision the product.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_parameters:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactParameter>>,
+    pub provisioning_artifact_parameters: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactParameter>>,
     /// <p>Information about the constraints used to provision the product.</p>
     #[doc(hidden)]
     pub constraint_summaries: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
@@ -3459,80 +3233,59 @@ pub struct DescribeProvisioningParametersOutput {
     pub tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionSummary>>,
     /// <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_preferences:
-        std::option::Option<crate::model::ProvisioningArtifactPreferences>,
+    pub provisioning_artifact_preferences: std::option::Option<crate::model::ProvisioningArtifactPreferences>,
     /// <p>The output of the provisioning artifact.</p>
-    #[deprecated(
-        note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
-    )]
+    #[deprecated(note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs.")]
     #[doc(hidden)]
-    pub provisioning_artifact_outputs:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
+    pub provisioning_artifact_outputs: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
     /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_output_keys:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
+    pub provisioning_artifact_output_keys: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
 }
 impl DescribeProvisioningParametersOutput {
     /// <p>Information about the parameters used to provision the product.</p>
-    pub fn provisioning_artifact_parameters(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisioningArtifactParameter]> {
+    pub fn provisioning_artifact_parameters(&self) -> std::option::Option<& [crate::model::ProvisioningArtifactParameter]> {
         self.provisioning_artifact_parameters.as_deref()
     }
     /// <p>Information about the constraints used to provision the product.</p>
-    pub fn constraint_summaries(&self) -> std::option::Option<&[crate::model::ConstraintSummary]> {
+    pub fn constraint_summaries(&self) -> std::option::Option<& [crate::model::ConstraintSummary]> {
         self.constraint_summaries.as_deref()
     }
     /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
-    pub fn usage_instructions(&self) -> std::option::Option<&[crate::model::UsageInstruction]> {
+    pub fn usage_instructions(&self) -> std::option::Option<& [crate::model::UsageInstruction]> {
         self.usage_instructions.as_deref()
     }
     /// <p>Information about the TagOptions associated with the resource.</p>
-    pub fn tag_options(&self) -> std::option::Option<&[crate::model::TagOptionSummary]> {
+    pub fn tag_options(&self) -> std::option::Option<& [crate::model::TagOptionSummary]> {
         self.tag_options.as_deref()
     }
     /// <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
-    pub fn provisioning_artifact_preferences(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisioningArtifactPreferences> {
+    pub fn provisioning_artifact_preferences(&self) -> std::option::Option<& crate::model::ProvisioningArtifactPreferences> {
         self.provisioning_artifact_preferences.as_ref()
     }
     /// <p>The output of the provisioning artifact.</p>
-    #[deprecated(
-        note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
-    )]
-    pub fn provisioning_artifact_outputs(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisioningArtifactOutput]> {
+    #[deprecated(note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs.")]
+    pub fn provisioning_artifact_outputs(&self) -> std::option::Option<& [crate::model::ProvisioningArtifactOutput]> {
         self.provisioning_artifact_outputs.as_deref()
     }
     /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
-    pub fn provisioning_artifact_output_keys(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisioningArtifactOutput]> {
+    pub fn provisioning_artifact_output_keys(&self) -> std::option::Option<& [crate::model::ProvisioningArtifactOutput]> {
         self.provisioning_artifact_output_keys.as_deref()
     }
 }
 /// See [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput).
 pub mod describe_provisioning_parameters_output {
-
+    
     /// A builder for [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioning_artifact_parameters:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactParameter>>,
-        pub(crate) constraint_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
-        pub(crate) usage_instructions:
-            std::option::Option<std::vec::Vec<crate::model::UsageInstruction>>,
+        pub(crate) provisioning_artifact_parameters: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactParameter>>,
+        pub(crate) constraint_summaries: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
+        pub(crate) usage_instructions: std::option::Option<std::vec::Vec<crate::model::UsageInstruction>>,
         pub(crate) tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionSummary>>,
-        pub(crate) provisioning_artifact_preferences:
-            std::option::Option<crate::model::ProvisioningArtifactPreferences>,
-        pub(crate) provisioning_artifact_outputs:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
-        pub(crate) provisioning_artifact_output_keys:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
+        pub(crate) provisioning_artifact_preferences: std::option::Option<crate::model::ProvisioningArtifactPreferences>,
+        pub(crate) provisioning_artifact_outputs: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
+        pub(crate) provisioning_artifact_output_keys: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
     }
     impl Builder {
         /// Appends an item to `provisioning_artifact_parameters`.
@@ -3540,22 +3293,15 @@ pub mod describe_provisioning_parameters_output {
         /// To override the contents of this collection use [`set_provisioning_artifact_parameters`](Self::set_provisioning_artifact_parameters).
         ///
         /// <p>Information about the parameters used to provision the product.</p>
-        pub fn provisioning_artifact_parameters(
-            mut self,
-            input: crate::model::ProvisioningArtifactParameter,
-        ) -> Self {
+        pub fn provisioning_artifact_parameters(mut self, input: crate::model::ProvisioningArtifactParameter) -> Self {
             let mut v = self.provisioning_artifact_parameters.unwrap_or_default();
-            v.push(input);
-            self.provisioning_artifact_parameters = Some(v);
-            self
+                            v.push(input);
+                            self.provisioning_artifact_parameters = Some(v);
+                            self
         }
         /// <p>Information about the parameters used to provision the product.</p>
-        pub fn set_provisioning_artifact_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactParameter>>,
-        ) -> Self {
-            self.provisioning_artifact_parameters = input;
-            self
+        pub fn set_provisioning_artifact_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactParameter>>) -> Self {
+            self.provisioning_artifact_parameters = input; self
         }
         /// Appends an item to `constraint_summaries`.
         ///
@@ -3564,17 +3310,13 @@ pub mod describe_provisioning_parameters_output {
         /// <p>Information about the constraints used to provision the product.</p>
         pub fn constraint_summaries(mut self, input: crate::model::ConstraintSummary) -> Self {
             let mut v = self.constraint_summaries.unwrap_or_default();
-            v.push(input);
-            self.constraint_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.constraint_summaries = Some(v);
+                            self
         }
         /// <p>Information about the constraints used to provision the product.</p>
-        pub fn set_constraint_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
-        ) -> Self {
-            self.constraint_summaries = input;
-            self
+        pub fn set_constraint_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>) -> Self {
+            self.constraint_summaries = input; self
         }
         /// Appends an item to `usage_instructions`.
         ///
@@ -3583,17 +3325,13 @@ pub mod describe_provisioning_parameters_output {
         /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
         pub fn usage_instructions(mut self, input: crate::model::UsageInstruction) -> Self {
             let mut v = self.usage_instructions.unwrap_or_default();
-            v.push(input);
-            self.usage_instructions = Some(v);
-            self
+                            v.push(input);
+                            self.usage_instructions = Some(v);
+                            self
         }
         /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
-        pub fn set_usage_instructions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UsageInstruction>>,
-        ) -> Self {
-            self.usage_instructions = input;
-            self
+        pub fn set_usage_instructions(mut self, input: std::option::Option<std::vec::Vec<crate::model::UsageInstruction>>) -> Self {
+            self.usage_instructions = input; self
         }
         /// Appends an item to `tag_options`.
         ///
@@ -3602,97 +3340,77 @@ pub mod describe_provisioning_parameters_output {
         /// <p>Information about the TagOptions associated with the resource.</p>
         pub fn tag_options(mut self, input: crate::model::TagOptionSummary) -> Self {
             let mut v = self.tag_options.unwrap_or_default();
-            v.push(input);
-            self.tag_options = Some(v);
-            self
+                            v.push(input);
+                            self.tag_options = Some(v);
+                            self
         }
         /// <p>Information about the TagOptions associated with the resource.</p>
-        pub fn set_tag_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagOptionSummary>>,
-        ) -> Self {
-            self.tag_options = input;
-            self
+        pub fn set_tag_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagOptionSummary>>) -> Self {
+            self.tag_options = input; self
         }
         /// <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
-        pub fn provisioning_artifact_preferences(
-            mut self,
-            input: crate::model::ProvisioningArtifactPreferences,
-        ) -> Self {
+        pub fn provisioning_artifact_preferences(mut self, input: crate::model::ProvisioningArtifactPreferences) -> Self {
             self.provisioning_artifact_preferences = Some(input);
             self
         }
         /// <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
-        pub fn set_provisioning_artifact_preferences(
-            mut self,
-            input: std::option::Option<crate::model::ProvisioningArtifactPreferences>,
-        ) -> Self {
-            self.provisioning_artifact_preferences = input;
-            self
+        pub fn set_provisioning_artifact_preferences(mut self, input: std::option::Option<crate::model::ProvisioningArtifactPreferences>) -> Self {
+            self.provisioning_artifact_preferences = input; self
         }
         /// Appends an item to `provisioning_artifact_outputs`.
         ///
         /// To override the contents of this collection use [`set_provisioning_artifact_outputs`](Self::set_provisioning_artifact_outputs).
         ///
         /// <p>The output of the provisioning artifact.</p>
-        #[deprecated(
-            note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
-        )]
-        pub fn provisioning_artifact_outputs(
-            mut self,
-            input: crate::model::ProvisioningArtifactOutput,
-        ) -> Self {
+        #[deprecated(note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs.")]
+        pub fn provisioning_artifact_outputs(mut self, input: crate::model::ProvisioningArtifactOutput) -> Self {
             let mut v = self.provisioning_artifact_outputs.unwrap_or_default();
-            v.push(input);
-            self.provisioning_artifact_outputs = Some(v);
-            self
+                            v.push(input);
+                            self.provisioning_artifact_outputs = Some(v);
+                            self
         }
         /// <p>The output of the provisioning artifact.</p>
-        #[deprecated(
-            note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
-        )]
-        pub fn set_provisioning_artifact_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
-        ) -> Self {
-            self.provisioning_artifact_outputs = input;
-            self
+        #[deprecated(note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs.")]
+        pub fn set_provisioning_artifact_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>) -> Self {
+            self.provisioning_artifact_outputs = input; self
         }
         /// Appends an item to `provisioning_artifact_output_keys`.
         ///
         /// To override the contents of this collection use [`set_provisioning_artifact_output_keys`](Self::set_provisioning_artifact_output_keys).
         ///
         /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
-        pub fn provisioning_artifact_output_keys(
-            mut self,
-            input: crate::model::ProvisioningArtifactOutput,
-        ) -> Self {
+        pub fn provisioning_artifact_output_keys(mut self, input: crate::model::ProvisioningArtifactOutput) -> Self {
             let mut v = self.provisioning_artifact_output_keys.unwrap_or_default();
-            v.push(input);
-            self.provisioning_artifact_output_keys = Some(v);
-            self
+                            v.push(input);
+                            self.provisioning_artifact_output_keys = Some(v);
+                            self
         }
         /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
-        pub fn set_provisioning_artifact_output_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
-        ) -> Self {
-            self.provisioning_artifact_output_keys = input;
-            self
+        pub fn set_provisioning_artifact_output_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>) -> Self {
+            self.provisioning_artifact_output_keys = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput).
         pub fn build(self) -> crate::output::DescribeProvisioningParametersOutput {
             crate::output::DescribeProvisioningParametersOutput {
-                provisioning_artifact_parameters: self.provisioning_artifact_parameters,
-                constraint_summaries: self.constraint_summaries,
-                usage_instructions: self.usage_instructions,
-                tag_options: self.tag_options,
-                provisioning_artifact_preferences: self.provisioning_artifact_preferences,
-                provisioning_artifact_outputs: self.provisioning_artifact_outputs,
-                provisioning_artifact_output_keys: self.provisioning_artifact_output_keys,
+                provisioning_artifact_parameters: self.provisioning_artifact_parameters
+                ,
+                constraint_summaries: self.constraint_summaries
+                ,
+                usage_instructions: self.usage_instructions
+                ,
+                tag_options: self.tag_options
+                ,
+                provisioning_artifact_preferences: self.provisioning_artifact_preferences
+                ,
+                provisioning_artifact_outputs: self.provisioning_artifact_outputs
+                ,
+                provisioning_artifact_output_keys: self.provisioning_artifact_output_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProvisioningParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput).
@@ -3704,91 +3422,65 @@ impl DescribeProvisioningParametersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProvisioningArtifactOutput {
+pub struct DescribeProvisioningArtifactOutput  {
     /// <p>Information about the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     #[doc(hidden)]
-    pub info:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl DescribeProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
-    pub fn provisioning_artifact_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
+    pub fn provisioning_artifact_detail(&self) -> std::option::Option<& crate::model::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    pub fn info(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn info(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.info.as_ref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput).
 pub mod describe_provisioning_artifact_output {
-
+    
     /// A builder for [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioning_artifact_detail:
-            std::option::Option<crate::model::ProvisioningArtifactDetail>,
-        pub(crate) info: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
+        pub(crate) info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::Status>,
     }
     impl Builder {
         /// <p>Information about the provisioning artifact.</p>
-        pub fn provisioning_artifact_detail(
-            mut self,
-            input: crate::model::ProvisioningArtifactDetail,
-        ) -> Self {
+        pub fn provisioning_artifact_detail(mut self, input: crate::model::ProvisioningArtifactDetail) -> Self {
             self.provisioning_artifact_detail = Some(input);
             self
         }
         /// <p>Information about the provisioning artifact.</p>
-        pub fn set_provisioning_artifact_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProvisioningArtifactDetail>,
-        ) -> Self {
-            self.provisioning_artifact_detail = input;
-            self
+        pub fn set_provisioning_artifact_detail(mut self, input: std::option::Option<crate::model::ProvisioningArtifactDetail>) -> Self {
+            self.provisioning_artifact_detail = input; self
         }
         /// Adds a key-value pair to `info`.
         ///
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
         /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-        pub fn info(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn info(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.info.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.info = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.info = Some(hash_map);
+                            self
         }
         /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-        pub fn set_info(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.info = input;
-            self
+        pub fn set_info(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.info = input; self
         }
         /// <p>The status of the current request.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -3797,18 +3489,22 @@ pub mod describe_provisioning_artifact_output {
         }
         /// <p>The status of the current request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput).
         pub fn build(self) -> crate::output::DescribeProvisioningArtifactOutput {
             crate::output::DescribeProvisioningArtifactOutput {
-                provisioning_artifact_detail: self.provisioning_artifact_detail,
-                info: self.info,
-                status: self.status,
+                provisioning_artifact_detail: self.provisioning_artifact_detail
+                ,
+                info: self.info
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput).
@@ -3820,11 +3516,10 @@ impl DescribeProvisioningArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProvisionedProductPlanOutput {
+pub struct DescribeProvisionedProductPlanOutput  {
     /// <p>Information about the plan.</p>
     #[doc(hidden)]
-    pub provisioned_product_plan_details:
-        std::option::Option<crate::model::ProvisionedProductPlanDetails>,
+    pub provisioned_product_plan_details: std::option::Option<crate::model::ProvisionedProductPlanDetails>,
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
     #[doc(hidden)]
     pub resource_changes: std::option::Option<std::vec::Vec<crate::model::ResourceChange>>,
@@ -3834,48 +3529,37 @@ pub struct DescribeProvisionedProductPlanOutput {
 }
 impl DescribeProvisionedProductPlanOutput {
     /// <p>Information about the plan.</p>
-    pub fn provisioned_product_plan_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisionedProductPlanDetails> {
+    pub fn provisioned_product_plan_details(&self) -> std::option::Option<& crate::model::ProvisionedProductPlanDetails> {
         self.provisioned_product_plan_details.as_ref()
     }
     /// <p>Information about the resource changes that will occur when the plan is executed.</p>
-    pub fn resource_changes(&self) -> std::option::Option<&[crate::model::ResourceChange]> {
+    pub fn resource_changes(&self) -> std::option::Option<& [crate::model::ResourceChange]> {
         self.resource_changes.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`DescribeProvisionedProductPlanOutput`](crate::output::DescribeProvisionedProductPlanOutput).
 pub mod describe_provisioned_product_plan_output {
-
+    
     /// A builder for [`DescribeProvisionedProductPlanOutput`](crate::output::DescribeProvisionedProductPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioned_product_plan_details:
-            std::option::Option<crate::model::ProvisionedProductPlanDetails>,
-        pub(crate) resource_changes:
-            std::option::Option<std::vec::Vec<crate::model::ResourceChange>>,
+        pub(crate) provisioned_product_plan_details: std::option::Option<crate::model::ProvisionedProductPlanDetails>,
+        pub(crate) resource_changes: std::option::Option<std::vec::Vec<crate::model::ResourceChange>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Information about the plan.</p>
-        pub fn provisioned_product_plan_details(
-            mut self,
-            input: crate::model::ProvisionedProductPlanDetails,
-        ) -> Self {
+        pub fn provisioned_product_plan_details(mut self, input: crate::model::ProvisionedProductPlanDetails) -> Self {
             self.provisioned_product_plan_details = Some(input);
             self
         }
         /// <p>Information about the plan.</p>
-        pub fn set_provisioned_product_plan_details(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedProductPlanDetails>,
-        ) -> Self {
-            self.provisioned_product_plan_details = input;
-            self
+        pub fn set_provisioned_product_plan_details(mut self, input: std::option::Option<crate::model::ProvisionedProductPlanDetails>) -> Self {
+            self.provisioned_product_plan_details = input; self
         }
         /// Appends an item to `resource_changes`.
         ///
@@ -3884,17 +3568,13 @@ pub mod describe_provisioned_product_plan_output {
         /// <p>Information about the resource changes that will occur when the plan is executed.</p>
         pub fn resource_changes(mut self, input: crate::model::ResourceChange) -> Self {
             let mut v = self.resource_changes.unwrap_or_default();
-            v.push(input);
-            self.resource_changes = Some(v);
-            self
+                            v.push(input);
+                            self.resource_changes = Some(v);
+                            self
         }
         /// <p>Information about the resource changes that will occur when the plan is executed.</p>
-        pub fn set_resource_changes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceChange>>,
-        ) -> Self {
-            self.resource_changes = input;
-            self
+        pub fn set_resource_changes(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceChange>>) -> Self {
+            self.resource_changes = input; self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3902,22 +3582,23 @@ pub mod describe_provisioned_product_plan_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProvisionedProductPlanOutput`](crate::output::DescribeProvisionedProductPlanOutput).
         pub fn build(self) -> crate::output::DescribeProvisionedProductPlanOutput {
             crate::output::DescribeProvisionedProductPlanOutput {
-                provisioned_product_plan_details: self.provisioned_product_plan_details,
-                resource_changes: self.resource_changes,
-                next_page_token: self.next_page_token,
+                provisioned_product_plan_details: self.provisioned_product_plan_details
+                ,
+                resource_changes: self.resource_changes
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProvisionedProductPlanOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisionedProductPlanOutput`](crate::output::DescribeProvisionedProductPlanOutput).
@@ -3929,56 +3610,42 @@ impl DescribeProvisionedProductPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProvisionedProductOutput {
+pub struct DescribeProvisionedProductOutput  {
     /// <p>Information about the provisioned product.</p>
     #[doc(hidden)]
     pub provisioned_product_detail: std::option::Option<crate::model::ProvisionedProductDetail>,
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
     #[doc(hidden)]
-    pub cloud_watch_dashboards:
-        std::option::Option<std::vec::Vec<crate::model::CloudWatchDashboard>>,
+    pub cloud_watch_dashboards: std::option::Option<std::vec::Vec<crate::model::CloudWatchDashboard>>,
 }
 impl DescribeProvisionedProductOutput {
     /// <p>Information about the provisioned product.</p>
-    pub fn provisioned_product_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisionedProductDetail> {
+    pub fn provisioned_product_detail(&self) -> std::option::Option<& crate::model::ProvisionedProductDetail> {
         self.provisioned_product_detail.as_ref()
     }
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-    pub fn cloud_watch_dashboards(
-        &self,
-    ) -> std::option::Option<&[crate::model::CloudWatchDashboard]> {
+    pub fn cloud_watch_dashboards(&self) -> std::option::Option<& [crate::model::CloudWatchDashboard]> {
         self.cloud_watch_dashboards.as_deref()
     }
 }
 /// See [`DescribeProvisionedProductOutput`](crate::output::DescribeProvisionedProductOutput).
 pub mod describe_provisioned_product_output {
-
+    
     /// A builder for [`DescribeProvisionedProductOutput`](crate::output::DescribeProvisionedProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioned_product_detail:
-            std::option::Option<crate::model::ProvisionedProductDetail>,
-        pub(crate) cloud_watch_dashboards:
-            std::option::Option<std::vec::Vec<crate::model::CloudWatchDashboard>>,
+        pub(crate) provisioned_product_detail: std::option::Option<crate::model::ProvisionedProductDetail>,
+        pub(crate) cloud_watch_dashboards: std::option::Option<std::vec::Vec<crate::model::CloudWatchDashboard>>,
     }
     impl Builder {
         /// <p>Information about the provisioned product.</p>
-        pub fn provisioned_product_detail(
-            mut self,
-            input: crate::model::ProvisionedProductDetail,
-        ) -> Self {
+        pub fn provisioned_product_detail(mut self, input: crate::model::ProvisionedProductDetail) -> Self {
             self.provisioned_product_detail = Some(input);
             self
         }
         /// <p>Information about the provisioned product.</p>
-        pub fn set_provisioned_product_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedProductDetail>,
-        ) -> Self {
-            self.provisioned_product_detail = input;
-            self
+        pub fn set_provisioned_product_detail(mut self, input: std::option::Option<crate::model::ProvisionedProductDetail>) -> Self {
+            self.provisioned_product_detail = input; self
         }
         /// Appends an item to `cloud_watch_dashboards`.
         ///
@@ -3987,26 +3654,26 @@ pub mod describe_provisioned_product_output {
         /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
         pub fn cloud_watch_dashboards(mut self, input: crate::model::CloudWatchDashboard) -> Self {
             let mut v = self.cloud_watch_dashboards.unwrap_or_default();
-            v.push(input);
-            self.cloud_watch_dashboards = Some(v);
-            self
+                            v.push(input);
+                            self.cloud_watch_dashboards = Some(v);
+                            self
         }
         /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-        pub fn set_cloud_watch_dashboards(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CloudWatchDashboard>>,
-        ) -> Self {
-            self.cloud_watch_dashboards = input;
-            self
+        pub fn set_cloud_watch_dashboards(mut self, input: std::option::Option<std::vec::Vec<crate::model::CloudWatchDashboard>>) -> Self {
+            self.cloud_watch_dashboards = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProvisionedProductOutput`](crate::output::DescribeProvisionedProductOutput).
         pub fn build(self) -> crate::output::DescribeProvisionedProductOutput {
             crate::output::DescribeProvisionedProductOutput {
-                provisioned_product_detail: self.provisioned_product_detail,
-                cloud_watch_dashboards: self.cloud_watch_dashboards,
+                provisioned_product_detail: self.provisioned_product_detail
+                ,
+                cloud_watch_dashboards: self.cloud_watch_dashboards
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisionedProductOutput`](crate::output::DescribeProvisionedProductOutput).
@@ -4018,36 +3685,32 @@ impl DescribeProvisionedProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProductViewOutput {
+pub struct DescribeProductViewOutput  {
     /// <p>Summary information about the product.</p>
     #[doc(hidden)]
     pub product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the product.</p>
     #[doc(hidden)]
-    pub provisioning_artifacts:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
+    pub provisioning_artifacts: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
 }
 impl DescribeProductViewOutput {
     /// <p>Summary information about the product.</p>
-    pub fn product_view_summary(&self) -> std::option::Option<&crate::model::ProductViewSummary> {
+    pub fn product_view_summary(&self) -> std::option::Option<& crate::model::ProductViewSummary> {
         self.product_view_summary.as_ref()
     }
     /// <p>Information about the provisioning artifacts for the product.</p>
-    pub fn provisioning_artifacts(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisioningArtifact]> {
+    pub fn provisioning_artifacts(&self) -> std::option::Option<& [crate::model::ProvisioningArtifact]> {
         self.provisioning_artifacts.as_deref()
     }
 }
 /// See [`DescribeProductViewOutput`](crate::output::DescribeProductViewOutput).
 pub mod describe_product_view_output {
-
+    
     /// A builder for [`DescribeProductViewOutput`](crate::output::DescribeProductViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
-        pub(crate) provisioning_artifacts:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
+        pub(crate) provisioning_artifacts: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
     }
     impl Builder {
         /// <p>Summary information about the product.</p>
@@ -4056,12 +3719,8 @@ pub mod describe_product_view_output {
             self
         }
         /// <p>Summary information about the product.</p>
-        pub fn set_product_view_summary(
-            mut self,
-            input: std::option::Option<crate::model::ProductViewSummary>,
-        ) -> Self {
-            self.product_view_summary = input;
-            self
+        pub fn set_product_view_summary(mut self, input: std::option::Option<crate::model::ProductViewSummary>) -> Self {
+            self.product_view_summary = input; self
         }
         /// Appends an item to `provisioning_artifacts`.
         ///
@@ -4070,26 +3729,26 @@ pub mod describe_product_view_output {
         /// <p>Information about the provisioning artifacts for the product.</p>
         pub fn provisioning_artifacts(mut self, input: crate::model::ProvisioningArtifact) -> Self {
             let mut v = self.provisioning_artifacts.unwrap_or_default();
-            v.push(input);
-            self.provisioning_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.provisioning_artifacts = Some(v);
+                            self
         }
         /// <p>Information about the provisioning artifacts for the product.</p>
-        pub fn set_provisioning_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
-        ) -> Self {
-            self.provisioning_artifacts = input;
-            self
+        pub fn set_provisioning_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>) -> Self {
+            self.provisioning_artifacts = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProductViewOutput`](crate::output::DescribeProductViewOutput).
         pub fn build(self) -> crate::output::DescribeProductViewOutput {
             crate::output::DescribeProductViewOutput {
-                product_view_summary: self.product_view_summary,
-                provisioning_artifacts: self.provisioning_artifacts,
+                product_view_summary: self.product_view_summary
+                ,
+                provisioning_artifacts: self.provisioning_artifacts
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProductViewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductViewOutput`](crate::output::DescribeProductViewOutput).
@@ -4101,14 +3760,13 @@ impl DescribeProductViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProductAsAdminOutput {
+pub struct DescribeProductAsAdminOutput  {
     /// <p>Information about the product view.</p>
     #[doc(hidden)]
     pub product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactSummary>>,
+    pub provisioning_artifact_summaries: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactSummary>>,
     /// <p>Information about the tags associated with the product.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4121,37 +3779,34 @@ pub struct DescribeProductAsAdminOutput {
 }
 impl DescribeProductAsAdminOutput {
     /// <p>Information about the product view.</p>
-    pub fn product_view_detail(&self) -> std::option::Option<&crate::model::ProductViewDetail> {
+    pub fn product_view_detail(&self) -> std::option::Option<& crate::model::ProductViewDetail> {
         self.product_view_detail.as_ref()
     }
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    pub fn provisioning_artifact_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisioningArtifactSummary]> {
+    pub fn provisioning_artifact_summaries(&self) -> std::option::Option<& [crate::model::ProvisioningArtifactSummary]> {
         self.provisioning_artifact_summaries.as_deref()
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Information about the TagOptions associated with the product.</p>
-    pub fn tag_options(&self) -> std::option::Option<&[crate::model::TagOptionDetail]> {
+    pub fn tag_options(&self) -> std::option::Option<& [crate::model::TagOptionDetail]> {
         self.tag_options.as_deref()
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<&[crate::model::BudgetDetail]> {
+    pub fn budgets(&self) -> std::option::Option<& [crate::model::BudgetDetail]> {
         self.budgets.as_deref()
     }
 }
 /// See [`DescribeProductAsAdminOutput`](crate::output::DescribeProductAsAdminOutput).
 pub mod describe_product_as_admin_output {
-
+    
     /// A builder for [`DescribeProductAsAdminOutput`](crate::output::DescribeProductAsAdminOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
-        pub(crate) provisioning_artifact_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactSummary>>,
+        pub(crate) provisioning_artifact_summaries: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactSummary>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
         pub(crate) budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
@@ -4163,34 +3818,23 @@ pub mod describe_product_as_admin_output {
             self
         }
         /// <p>Information about the product view.</p>
-        pub fn set_product_view_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProductViewDetail>,
-        ) -> Self {
-            self.product_view_detail = input;
-            self
+        pub fn set_product_view_detail(mut self, input: std::option::Option<crate::model::ProductViewDetail>) -> Self {
+            self.product_view_detail = input; self
         }
         /// Appends an item to `provisioning_artifact_summaries`.
         ///
         /// To override the contents of this collection use [`set_provisioning_artifact_summaries`](Self::set_provisioning_artifact_summaries).
         ///
         /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-        pub fn provisioning_artifact_summaries(
-            mut self,
-            input: crate::model::ProvisioningArtifactSummary,
-        ) -> Self {
+        pub fn provisioning_artifact_summaries(mut self, input: crate::model::ProvisioningArtifactSummary) -> Self {
             let mut v = self.provisioning_artifact_summaries.unwrap_or_default();
-            v.push(input);
-            self.provisioning_artifact_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.provisioning_artifact_summaries = Some(v);
+                            self
         }
         /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-        pub fn set_provisioning_artifact_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactSummary>>,
-        ) -> Self {
-            self.provisioning_artifact_summaries = input;
-            self
+        pub fn set_provisioning_artifact_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactSummary>>) -> Self {
+            self.provisioning_artifact_summaries = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4199,17 +3843,13 @@ pub mod describe_product_as_admin_output {
         /// <p>Information about the tags associated with the product.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Information about the tags associated with the product.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `tag_options`.
         ///
@@ -4218,17 +3858,13 @@ pub mod describe_product_as_admin_output {
         /// <p>Information about the TagOptions associated with the product.</p>
         pub fn tag_options(mut self, input: crate::model::TagOptionDetail) -> Self {
             let mut v = self.tag_options.unwrap_or_default();
-            v.push(input);
-            self.tag_options = Some(v);
-            self
+                            v.push(input);
+                            self.tag_options = Some(v);
+                            self
         }
         /// <p>Information about the TagOptions associated with the product.</p>
-        pub fn set_tag_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
-        ) -> Self {
-            self.tag_options = input;
-            self
+        pub fn set_tag_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>) -> Self {
+            self.tag_options = input; self
         }
         /// Appends an item to `budgets`.
         ///
@@ -4237,29 +3873,32 @@ pub mod describe_product_as_admin_output {
         /// <p>Information about the associated budgets.</p>
         pub fn budgets(mut self, input: crate::model::BudgetDetail) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input);
-            self.budgets = Some(v);
-            self
+                            v.push(input);
+                            self.budgets = Some(v);
+                            self
         }
         /// <p>Information about the associated budgets.</p>
-        pub fn set_budgets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
-        ) -> Self {
-            self.budgets = input;
-            self
+        pub fn set_budgets(mut self, input: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>) -> Self {
+            self.budgets = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProductAsAdminOutput`](crate::output::DescribeProductAsAdminOutput).
         pub fn build(self) -> crate::output::DescribeProductAsAdminOutput {
             crate::output::DescribeProductAsAdminOutput {
-                product_view_detail: self.product_view_detail,
-                provisioning_artifact_summaries: self.provisioning_artifact_summaries,
-                tags: self.tags,
-                tag_options: self.tag_options,
-                budgets: self.budgets,
+                product_view_detail: self.product_view_detail
+                ,
+                provisioning_artifact_summaries: self.provisioning_artifact_summaries
+                ,
+                tags: self.tags
+                ,
+                tag_options: self.tag_options
+                ,
+                budgets: self.budgets
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProductAsAdminOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductAsAdminOutput`](crate::output::DescribeProductAsAdminOutput).
@@ -4271,14 +3910,13 @@ impl DescribeProductAsAdminOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProductOutput {
+pub struct DescribeProductOutput  {
     /// <p>Summary information about the product view.</p>
     #[doc(hidden)]
     pub product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the specified product.</p>
     #[doc(hidden)]
-    pub provisioning_artifacts:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
+    pub provisioning_artifacts: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
     /// <p>Information about the associated budgets.</p>
     #[doc(hidden)]
     pub budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
@@ -4288,33 +3926,30 @@ pub struct DescribeProductOutput {
 }
 impl DescribeProductOutput {
     /// <p>Summary information about the product view.</p>
-    pub fn product_view_summary(&self) -> std::option::Option<&crate::model::ProductViewSummary> {
+    pub fn product_view_summary(&self) -> std::option::Option<& crate::model::ProductViewSummary> {
         self.product_view_summary.as_ref()
     }
     /// <p>Information about the provisioning artifacts for the specified product.</p>
-    pub fn provisioning_artifacts(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisioningArtifact]> {
+    pub fn provisioning_artifacts(&self) -> std::option::Option<& [crate::model::ProvisioningArtifact]> {
         self.provisioning_artifacts.as_deref()
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<&[crate::model::BudgetDetail]> {
+    pub fn budgets(&self) -> std::option::Option<& [crate::model::BudgetDetail]> {
         self.budgets.as_deref()
     }
     /// <p>Information about the associated launch paths.</p>
-    pub fn launch_paths(&self) -> std::option::Option<&[crate::model::LaunchPath]> {
+    pub fn launch_paths(&self) -> std::option::Option<& [crate::model::LaunchPath]> {
         self.launch_paths.as_deref()
     }
 }
 /// See [`DescribeProductOutput`](crate::output::DescribeProductOutput).
 pub mod describe_product_output {
-
+    
     /// A builder for [`DescribeProductOutput`](crate::output::DescribeProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
-        pub(crate) provisioning_artifacts:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
+        pub(crate) provisioning_artifacts: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
         pub(crate) budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
         pub(crate) launch_paths: std::option::Option<std::vec::Vec<crate::model::LaunchPath>>,
     }
@@ -4325,12 +3960,8 @@ pub mod describe_product_output {
             self
         }
         /// <p>Summary information about the product view.</p>
-        pub fn set_product_view_summary(
-            mut self,
-            input: std::option::Option<crate::model::ProductViewSummary>,
-        ) -> Self {
-            self.product_view_summary = input;
-            self
+        pub fn set_product_view_summary(mut self, input: std::option::Option<crate::model::ProductViewSummary>) -> Self {
+            self.product_view_summary = input; self
         }
         /// Appends an item to `provisioning_artifacts`.
         ///
@@ -4339,17 +3970,13 @@ pub mod describe_product_output {
         /// <p>Information about the provisioning artifacts for the specified product.</p>
         pub fn provisioning_artifacts(mut self, input: crate::model::ProvisioningArtifact) -> Self {
             let mut v = self.provisioning_artifacts.unwrap_or_default();
-            v.push(input);
-            self.provisioning_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.provisioning_artifacts = Some(v);
+                            self
         }
         /// <p>Information about the provisioning artifacts for the specified product.</p>
-        pub fn set_provisioning_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
-        ) -> Self {
-            self.provisioning_artifacts = input;
-            self
+        pub fn set_provisioning_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>) -> Self {
+            self.provisioning_artifacts = input; self
         }
         /// Appends an item to `budgets`.
         ///
@@ -4358,17 +3985,13 @@ pub mod describe_product_output {
         /// <p>Information about the associated budgets.</p>
         pub fn budgets(mut self, input: crate::model::BudgetDetail) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input);
-            self.budgets = Some(v);
-            self
+                            v.push(input);
+                            self.budgets = Some(v);
+                            self
         }
         /// <p>Information about the associated budgets.</p>
-        pub fn set_budgets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
-        ) -> Self {
-            self.budgets = input;
-            self
+        pub fn set_budgets(mut self, input: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>) -> Self {
+            self.budgets = input; self
         }
         /// Appends an item to `launch_paths`.
         ///
@@ -4377,28 +4000,30 @@ pub mod describe_product_output {
         /// <p>Information about the associated launch paths.</p>
         pub fn launch_paths(mut self, input: crate::model::LaunchPath) -> Self {
             let mut v = self.launch_paths.unwrap_or_default();
-            v.push(input);
-            self.launch_paths = Some(v);
-            self
+                            v.push(input);
+                            self.launch_paths = Some(v);
+                            self
         }
         /// <p>Information about the associated launch paths.</p>
-        pub fn set_launch_paths(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LaunchPath>>,
-        ) -> Self {
-            self.launch_paths = input;
-            self
+        pub fn set_launch_paths(mut self, input: std::option::Option<std::vec::Vec<crate::model::LaunchPath>>) -> Self {
+            self.launch_paths = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProductOutput`](crate::output::DescribeProductOutput).
         pub fn build(self) -> crate::output::DescribeProductOutput {
             crate::output::DescribeProductOutput {
-                product_view_summary: self.product_view_summary,
-                provisioning_artifacts: self.provisioning_artifacts,
-                budgets: self.budgets,
-                launch_paths: self.launch_paths,
+                product_view_summary: self.product_view_summary
+                ,
+                provisioning_artifacts: self.provisioning_artifacts
+                ,
+                budgets: self.budgets
+                ,
+                launch_paths: self.launch_paths
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProductOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductOutput`](crate::output::DescribeProductOutput).
@@ -4410,7 +4035,7 @@ impl DescribeProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePortfolioShareStatusOutput {
+pub struct DescribePortfolioShareStatusOutput  {
     /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
     #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
@@ -4429,29 +4054,29 @@ pub struct DescribePortfolioShareStatusOutput {
 }
 impl DescribePortfolioShareStatusOutput {
     /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
-    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+    pub fn portfolio_share_token(&self) -> std::option::Option<& str> {
         self.portfolio_share_token.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
     /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
-    pub fn organization_node_value(&self) -> std::option::Option<&str> {
+    pub fn organization_node_value(&self) -> std::option::Option<& str> {
         self.organization_node_value.as_deref()
     }
     /// <p>Status of the portfolio share operation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ShareStatus> {
         self.status.as_ref()
     }
     /// <p>Information about the portfolio share operation.</p>
-    pub fn share_details(&self) -> std::option::Option<&crate::model::ShareDetails> {
+    pub fn share_details(&self) -> std::option::Option<& crate::model::ShareDetails> {
         self.share_details.as_ref()
     }
 }
 /// See [`DescribePortfolioShareStatusOutput`](crate::output::DescribePortfolioShareStatusOutput).
 pub mod describe_portfolio_share_status_output {
-
+    
     /// A builder for [`DescribePortfolioShareStatusOutput`](crate::output::DescribePortfolioShareStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4468,12 +4093,8 @@ pub mod describe_portfolio_share_status_output {
             self
         }
         /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
-        pub fn set_portfolio_share_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portfolio_share_token = input;
-            self
+        pub fn set_portfolio_share_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portfolio_share_token = input; self
         }
         /// <p>The portfolio identifier.</p>
         pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4482,8 +4103,7 @@ pub mod describe_portfolio_share_status_output {
         }
         /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.portfolio_id = input;
-            self
+            self.portfolio_id = input; self
         }
         /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
         pub fn organization_node_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4491,12 +4111,8 @@ pub mod describe_portfolio_share_status_output {
             self
         }
         /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
-        pub fn set_organization_node_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.organization_node_value = input;
-            self
+        pub fn set_organization_node_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.organization_node_value = input; self
         }
         /// <p>Status of the portfolio share operation.</p>
         pub fn status(mut self, input: crate::model::ShareStatus) -> Self {
@@ -4505,8 +4121,7 @@ pub mod describe_portfolio_share_status_output {
         }
         /// <p>Status of the portfolio share operation.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Information about the portfolio share operation.</p>
         pub fn share_details(mut self, input: crate::model::ShareDetails) -> Self {
@@ -4514,24 +4129,27 @@ pub mod describe_portfolio_share_status_output {
             self
         }
         /// <p>Information about the portfolio share operation.</p>
-        pub fn set_share_details(
-            mut self,
-            input: std::option::Option<crate::model::ShareDetails>,
-        ) -> Self {
-            self.share_details = input;
-            self
+        pub fn set_share_details(mut self, input: std::option::Option<crate::model::ShareDetails>) -> Self {
+            self.share_details = input; self
         }
         /// Consumes the builder and constructs a [`DescribePortfolioShareStatusOutput`](crate::output::DescribePortfolioShareStatusOutput).
         pub fn build(self) -> crate::output::DescribePortfolioShareStatusOutput {
             crate::output::DescribePortfolioShareStatusOutput {
-                portfolio_share_token: self.portfolio_share_token,
-                portfolio_id: self.portfolio_id,
-                organization_node_value: self.organization_node_value,
-                status: self.status,
-                share_details: self.share_details,
+                portfolio_share_token: self.portfolio_share_token
+                ,
+                portfolio_id: self.portfolio_id
+                ,
+                organization_node_value: self.organization_node_value
+                ,
+                status: self.status
+                ,
+                share_details: self.share_details
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePortfolioShareStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioShareStatusOutput`](crate::output::DescribePortfolioShareStatusOutput).
@@ -4543,36 +4161,32 @@ impl DescribePortfolioShareStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePortfolioSharesOutput {
+pub struct DescribePortfolioSharesOutput  {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>Summaries about each of the portfolio shares.</p>
     #[doc(hidden)]
-    pub portfolio_share_details:
-        std::option::Option<std::vec::Vec<crate::model::PortfolioShareDetail>>,
+    pub portfolio_share_details: std::option::Option<std::vec::Vec<crate::model::PortfolioShareDetail>>,
 }
 impl DescribePortfolioSharesOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>Summaries about each of the portfolio shares.</p>
-    pub fn portfolio_share_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::PortfolioShareDetail]> {
+    pub fn portfolio_share_details(&self) -> std::option::Option<& [crate::model::PortfolioShareDetail]> {
         self.portfolio_share_details.as_deref()
     }
 }
 /// See [`DescribePortfolioSharesOutput`](crate::output::DescribePortfolioSharesOutput).
 pub mod describe_portfolio_shares_output {
-
+    
     /// A builder for [`DescribePortfolioSharesOutput`](crate::output::DescribePortfolioSharesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
-        pub(crate) portfolio_share_details:
-            std::option::Option<std::vec::Vec<crate::model::PortfolioShareDetail>>,
+        pub(crate) portfolio_share_details: std::option::Option<std::vec::Vec<crate::model::PortfolioShareDetail>>,
     }
     impl Builder {
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -4581,43 +4195,36 @@ pub mod describe_portfolio_shares_output {
             self
         }
         /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Appends an item to `portfolio_share_details`.
         ///
         /// To override the contents of this collection use [`set_portfolio_share_details`](Self::set_portfolio_share_details).
         ///
         /// <p>Summaries about each of the portfolio shares.</p>
-        pub fn portfolio_share_details(
-            mut self,
-            input: crate::model::PortfolioShareDetail,
-        ) -> Self {
+        pub fn portfolio_share_details(mut self, input: crate::model::PortfolioShareDetail) -> Self {
             let mut v = self.portfolio_share_details.unwrap_or_default();
-            v.push(input);
-            self.portfolio_share_details = Some(v);
-            self
+                            v.push(input);
+                            self.portfolio_share_details = Some(v);
+                            self
         }
         /// <p>Summaries about each of the portfolio shares.</p>
-        pub fn set_portfolio_share_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PortfolioShareDetail>>,
-        ) -> Self {
-            self.portfolio_share_details = input;
-            self
+        pub fn set_portfolio_share_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::PortfolioShareDetail>>) -> Self {
+            self.portfolio_share_details = input; self
         }
         /// Consumes the builder and constructs a [`DescribePortfolioSharesOutput`](crate::output::DescribePortfolioSharesOutput).
         pub fn build(self) -> crate::output::DescribePortfolioSharesOutput {
             crate::output::DescribePortfolioSharesOutput {
-                next_page_token: self.next_page_token,
-                portfolio_share_details: self.portfolio_share_details,
+                next_page_token: self.next_page_token
+                ,
+                portfolio_share_details: self.portfolio_share_details
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePortfolioSharesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioSharesOutput`](crate::output::DescribePortfolioSharesOutput).
@@ -4629,7 +4236,7 @@ impl DescribePortfolioSharesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePortfolioOutput {
+pub struct DescribePortfolioOutput  {
     /// <p>Information about the portfolio.</p>
     #[doc(hidden)]
     pub portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
@@ -4645,25 +4252,25 @@ pub struct DescribePortfolioOutput {
 }
 impl DescribePortfolioOutput {
     /// <p>Information about the portfolio.</p>
-    pub fn portfolio_detail(&self) -> std::option::Option<&crate::model::PortfolioDetail> {
+    pub fn portfolio_detail(&self) -> std::option::Option<& crate::model::PortfolioDetail> {
         self.portfolio_detail.as_ref()
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Information about the TagOptions associated with the portfolio.</p>
-    pub fn tag_options(&self) -> std::option::Option<&[crate::model::TagOptionDetail]> {
+    pub fn tag_options(&self) -> std::option::Option<& [crate::model::TagOptionDetail]> {
         self.tag_options.as_deref()
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<&[crate::model::BudgetDetail]> {
+    pub fn budgets(&self) -> std::option::Option<& [crate::model::BudgetDetail]> {
         self.budgets.as_deref()
     }
 }
 /// See [`DescribePortfolioOutput`](crate::output::DescribePortfolioOutput).
 pub mod describe_portfolio_output {
-
+    
     /// A builder for [`DescribePortfolioOutput`](crate::output::DescribePortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4679,12 +4286,8 @@ pub mod describe_portfolio_output {
             self
         }
         /// <p>Information about the portfolio.</p>
-        pub fn set_portfolio_detail(
-            mut self,
-            input: std::option::Option<crate::model::PortfolioDetail>,
-        ) -> Self {
-            self.portfolio_detail = input;
-            self
+        pub fn set_portfolio_detail(mut self, input: std::option::Option<crate::model::PortfolioDetail>) -> Self {
+            self.portfolio_detail = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4693,17 +4296,13 @@ pub mod describe_portfolio_output {
         /// <p>Information about the tags associated with the portfolio.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Information about the tags associated with the portfolio.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `tag_options`.
         ///
@@ -4712,17 +4311,13 @@ pub mod describe_portfolio_output {
         /// <p>Information about the TagOptions associated with the portfolio.</p>
         pub fn tag_options(mut self, input: crate::model::TagOptionDetail) -> Self {
             let mut v = self.tag_options.unwrap_or_default();
-            v.push(input);
-            self.tag_options = Some(v);
-            self
+                            v.push(input);
+                            self.tag_options = Some(v);
+                            self
         }
         /// <p>Information about the TagOptions associated with the portfolio.</p>
-        pub fn set_tag_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
-        ) -> Self {
-            self.tag_options = input;
-            self
+        pub fn set_tag_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>) -> Self {
+            self.tag_options = input; self
         }
         /// Appends an item to `budgets`.
         ///
@@ -4731,28 +4326,30 @@ pub mod describe_portfolio_output {
         /// <p>Information about the associated budgets.</p>
         pub fn budgets(mut self, input: crate::model::BudgetDetail) -> Self {
             let mut v = self.budgets.unwrap_or_default();
-            v.push(input);
-            self.budgets = Some(v);
-            self
+                            v.push(input);
+                            self.budgets = Some(v);
+                            self
         }
         /// <p>Information about the associated budgets.</p>
-        pub fn set_budgets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
-        ) -> Self {
-            self.budgets = input;
-            self
+        pub fn set_budgets(mut self, input: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>) -> Self {
+            self.budgets = input; self
         }
         /// Consumes the builder and constructs a [`DescribePortfolioOutput`](crate::output::DescribePortfolioOutput).
         pub fn build(self) -> crate::output::DescribePortfolioOutput {
             crate::output::DescribePortfolioOutput {
-                portfolio_detail: self.portfolio_detail,
-                tags: self.tags,
-                tag_options: self.tag_options,
-                budgets: self.budgets,
+                portfolio_detail: self.portfolio_detail
+                ,
+                tags: self.tags
+                ,
+                tag_options: self.tag_options
+                ,
+                budgets: self.budgets
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioOutput`](crate::output::DescribePortfolioOutput).
@@ -4764,7 +4361,7 @@ impl DescribePortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCopyProductStatusOutput {
+pub struct DescribeCopyProductStatusOutput  {
     /// <p>The status of the copy product operation.</p>
     #[doc(hidden)]
     pub copy_product_status: std::option::Option<crate::model::CopyProductStatus>,
@@ -4777,21 +4374,21 @@ pub struct DescribeCopyProductStatusOutput {
 }
 impl DescribeCopyProductStatusOutput {
     /// <p>The status of the copy product operation.</p>
-    pub fn copy_product_status(&self) -> std::option::Option<&crate::model::CopyProductStatus> {
+    pub fn copy_product_status(&self) -> std::option::Option<& crate::model::CopyProductStatus> {
         self.copy_product_status.as_ref()
     }
     /// <p>The identifier of the copied product.</p>
-    pub fn target_product_id(&self) -> std::option::Option<&str> {
+    pub fn target_product_id(&self) -> std::option::Option<& str> {
         self.target_product_id.as_deref()
     }
     /// <p>The status message.</p>
-    pub fn status_detail(&self) -> std::option::Option<&str> {
+    pub fn status_detail(&self) -> std::option::Option<& str> {
         self.status_detail.as_deref()
     }
 }
 /// See [`DescribeCopyProductStatusOutput`](crate::output::DescribeCopyProductStatusOutput).
 pub mod describe_copy_product_status_output {
-
+    
     /// A builder for [`DescribeCopyProductStatusOutput`](crate::output::DescribeCopyProductStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4806,12 +4403,8 @@ pub mod describe_copy_product_status_output {
             self
         }
         /// <p>The status of the copy product operation.</p>
-        pub fn set_copy_product_status(
-            mut self,
-            input: std::option::Option<crate::model::CopyProductStatus>,
-        ) -> Self {
-            self.copy_product_status = input;
-            self
+        pub fn set_copy_product_status(mut self, input: std::option::Option<crate::model::CopyProductStatus>) -> Self {
+            self.copy_product_status = input; self
         }
         /// <p>The identifier of the copied product.</p>
         pub fn target_product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4819,12 +4412,8 @@ pub mod describe_copy_product_status_output {
             self
         }
         /// <p>The identifier of the copied product.</p>
-        pub fn set_target_product_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_product_id = input;
-            self
+        pub fn set_target_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_product_id = input; self
         }
         /// <p>The status message.</p>
         pub fn status_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4832,22 +4421,23 @@ pub mod describe_copy_product_status_output {
             self
         }
         /// <p>The status message.</p>
-        pub fn set_status_detail(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_detail = input;
-            self
+        pub fn set_status_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_detail = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCopyProductStatusOutput`](crate::output::DescribeCopyProductStatusOutput).
         pub fn build(self) -> crate::output::DescribeCopyProductStatusOutput {
             crate::output::DescribeCopyProductStatusOutput {
-                copy_product_status: self.copy_product_status,
-                target_product_id: self.target_product_id,
-                status_detail: self.status_detail,
+                copy_product_status: self.copy_product_status
+                ,
+                target_product_id: self.target_product_id
+                ,
+                status_detail: self.status_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCopyProductStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCopyProductStatusOutput`](crate::output::DescribeCopyProductStatusOutput).
@@ -4859,7 +4449,7 @@ impl DescribeCopyProductStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConstraintOutput {
+pub struct DescribeConstraintOutput  {
     /// <p>Information about the constraint.</p>
     #[doc(hidden)]
     pub constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
@@ -4872,21 +4462,21 @@ pub struct DescribeConstraintOutput {
 }
 impl DescribeConstraintOutput {
     /// <p>Information about the constraint.</p>
-    pub fn constraint_detail(&self) -> std::option::Option<&crate::model::ConstraintDetail> {
+    pub fn constraint_detail(&self) -> std::option::Option<& crate::model::ConstraintDetail> {
         self.constraint_detail.as_ref()
     }
     /// <p>The constraint parameters.</p>
-    pub fn constraint_parameters(&self) -> std::option::Option<&str> {
+    pub fn constraint_parameters(&self) -> std::option::Option<& str> {
         self.constraint_parameters.as_deref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`DescribeConstraintOutput`](crate::output::DescribeConstraintOutput).
 pub mod describe_constraint_output {
-
+    
     /// A builder for [`DescribeConstraintOutput`](crate::output::DescribeConstraintOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4901,12 +4491,8 @@ pub mod describe_constraint_output {
             self
         }
         /// <p>Information about the constraint.</p>
-        pub fn set_constraint_detail(
-            mut self,
-            input: std::option::Option<crate::model::ConstraintDetail>,
-        ) -> Self {
-            self.constraint_detail = input;
-            self
+        pub fn set_constraint_detail(mut self, input: std::option::Option<crate::model::ConstraintDetail>) -> Self {
+            self.constraint_detail = input; self
         }
         /// <p>The constraint parameters.</p>
         pub fn constraint_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4914,12 +4500,8 @@ pub mod describe_constraint_output {
             self
         }
         /// <p>The constraint parameters.</p>
-        pub fn set_constraint_parameters(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.constraint_parameters = input;
-            self
+        pub fn set_constraint_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constraint_parameters = input; self
         }
         /// <p>The status of the current request.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -4928,18 +4510,22 @@ pub mod describe_constraint_output {
         }
         /// <p>The status of the current request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConstraintOutput`](crate::output::DescribeConstraintOutput).
         pub fn build(self) -> crate::output::DescribeConstraintOutput {
             crate::output::DescribeConstraintOutput {
-                constraint_detail: self.constraint_detail,
-                constraint_parameters: self.constraint_parameters,
-                status: self.status,
+                constraint_detail: self.constraint_detail
+                ,
+                constraint_parameters: self.constraint_parameters
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConstraintOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConstraintOutput`](crate::output::DescribeConstraintOutput).
@@ -4951,19 +4537,24 @@ impl DescribeConstraintOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagOptionOutput {}
+pub struct DeleteTagOptionOutput  {
+}
 /// See [`DeleteTagOptionOutput`](crate::output::DeleteTagOptionOutput).
 pub mod delete_tag_option_output {
-
+    
     /// A builder for [`DeleteTagOptionOutput`](crate::output::DeleteTagOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTagOptionOutput`](crate::output::DeleteTagOptionOutput).
         pub fn build(self) -> crate::output::DeleteTagOptionOutput {
-            crate::output::DeleteTagOptionOutput {}
+            crate::output::DeleteTagOptionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTagOptionOutput`](crate::output::DeleteTagOptionOutput).
@@ -4975,19 +4566,24 @@ impl DeleteTagOptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceActionOutput {}
+pub struct DeleteServiceActionOutput  {
+}
 /// See [`DeleteServiceActionOutput`](crate::output::DeleteServiceActionOutput).
 pub mod delete_service_action_output {
-
+    
     /// A builder for [`DeleteServiceActionOutput`](crate::output::DeleteServiceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServiceActionOutput`](crate::output::DeleteServiceActionOutput).
         pub fn build(self) -> crate::output::DeleteServiceActionOutput {
-            crate::output::DeleteServiceActionOutput {}
+            crate::output::DeleteServiceActionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceActionOutput`](crate::output::DeleteServiceActionOutput).
@@ -4999,19 +4595,24 @@ impl DeleteServiceActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProvisioningArtifactOutput {}
+pub struct DeleteProvisioningArtifactOutput  {
+}
 /// See [`DeleteProvisioningArtifactOutput`](crate::output::DeleteProvisioningArtifactOutput).
 pub mod delete_provisioning_artifact_output {
-
+    
     /// A builder for [`DeleteProvisioningArtifactOutput`](crate::output::DeleteProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProvisioningArtifactOutput`](crate::output::DeleteProvisioningArtifactOutput).
         pub fn build(self) -> crate::output::DeleteProvisioningArtifactOutput {
-            crate::output::DeleteProvisioningArtifactOutput {}
+            crate::output::DeleteProvisioningArtifactOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisioningArtifactOutput`](crate::output::DeleteProvisioningArtifactOutput).
@@ -5023,19 +4624,24 @@ impl DeleteProvisioningArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProvisionedProductPlanOutput {}
+pub struct DeleteProvisionedProductPlanOutput  {
+}
 /// See [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput).
 pub mod delete_provisioned_product_plan_output {
-
+    
     /// A builder for [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput).
         pub fn build(self) -> crate::output::DeleteProvisionedProductPlanOutput {
-            crate::output::DeleteProvisionedProductPlanOutput {}
+            crate::output::DeleteProvisionedProductPlanOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProvisionedProductPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput).
@@ -5047,19 +4653,24 @@ impl DeleteProvisionedProductPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProductOutput {}
+pub struct DeleteProductOutput  {
+}
 /// See [`DeleteProductOutput`](crate::output::DeleteProductOutput).
 pub mod delete_product_output {
-
+    
     /// A builder for [`DeleteProductOutput`](crate::output::DeleteProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProductOutput`](crate::output::DeleteProductOutput).
         pub fn build(self) -> crate::output::DeleteProductOutput {
-            crate::output::DeleteProductOutput {}
+            crate::output::DeleteProductOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProductOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProductOutput`](crate::output::DeleteProductOutput).
@@ -5071,20 +4682,20 @@ impl DeleteProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePortfolioShareOutput {
+pub struct DeletePortfolioShareOutput  {
     /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
     #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
 }
 impl DeletePortfolioShareOutput {
     /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
-    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+    pub fn portfolio_share_token(&self) -> std::option::Option<& str> {
         self.portfolio_share_token.as_deref()
     }
 }
 /// See [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput).
 pub mod delete_portfolio_share_output {
-
+    
     /// A builder for [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5097,20 +4708,19 @@ pub mod delete_portfolio_share_output {
             self
         }
         /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
-        pub fn set_portfolio_share_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portfolio_share_token = input;
-            self
+        pub fn set_portfolio_share_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portfolio_share_token = input; self
         }
         /// Consumes the builder and constructs a [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput).
         pub fn build(self) -> crate::output::DeletePortfolioShareOutput {
             crate::output::DeletePortfolioShareOutput {
-                portfolio_share_token: self.portfolio_share_token,
+                portfolio_share_token: self.portfolio_share_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletePortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput).
@@ -5122,19 +4732,24 @@ impl DeletePortfolioShareOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePortfolioOutput {}
+pub struct DeletePortfolioOutput  {
+}
 /// See [`DeletePortfolioOutput`](crate::output::DeletePortfolioOutput).
 pub mod delete_portfolio_output {
-
+    
     /// A builder for [`DeletePortfolioOutput`](crate::output::DeletePortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePortfolioOutput`](crate::output::DeletePortfolioOutput).
         pub fn build(self) -> crate::output::DeletePortfolioOutput {
-            crate::output::DeletePortfolioOutput {}
+            crate::output::DeletePortfolioOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DeletePortfolioOutput`](crate::output::DeletePortfolioOutput).
@@ -5146,19 +4761,24 @@ impl DeletePortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConstraintOutput {}
+pub struct DeleteConstraintOutput  {
+}
 /// See [`DeleteConstraintOutput`](crate::output::DeleteConstraintOutput).
 pub mod delete_constraint_output {
-
+    
     /// A builder for [`DeleteConstraintOutput`](crate::output::DeleteConstraintOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConstraintOutput`](crate::output::DeleteConstraintOutput).
         pub fn build(self) -> crate::output::DeleteConstraintOutput {
-            crate::output::DeleteConstraintOutput {}
+            crate::output::DeleteConstraintOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConstraintOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConstraintOutput`](crate::output::DeleteConstraintOutput).
@@ -5170,20 +4790,20 @@ impl DeleteConstraintOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTagOptionOutput {
+pub struct CreateTagOptionOutput  {
     /// <p>Information about the TagOption.</p>
     #[doc(hidden)]
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
 impl CreateTagOptionOutput {
     /// <p>Information about the TagOption.</p>
-    pub fn tag_option_detail(&self) -> std::option::Option<&crate::model::TagOptionDetail> {
+    pub fn tag_option_detail(&self) -> std::option::Option<& crate::model::TagOptionDetail> {
         self.tag_option_detail.as_ref()
     }
 }
 /// See [`CreateTagOptionOutput`](crate::output::CreateTagOptionOutput).
 pub mod create_tag_option_output {
-
+    
     /// A builder for [`CreateTagOptionOutput`](crate::output::CreateTagOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5196,20 +4816,19 @@ pub mod create_tag_option_output {
             self
         }
         /// <p>Information about the TagOption.</p>
-        pub fn set_tag_option_detail(
-            mut self,
-            input: std::option::Option<crate::model::TagOptionDetail>,
-        ) -> Self {
-            self.tag_option_detail = input;
-            self
+        pub fn set_tag_option_detail(mut self, input: std::option::Option<crate::model::TagOptionDetail>) -> Self {
+            self.tag_option_detail = input; self
         }
         /// Consumes the builder and constructs a [`CreateTagOptionOutput`](crate::output::CreateTagOptionOutput).
         pub fn build(self) -> crate::output::CreateTagOptionOutput {
             crate::output::CreateTagOptionOutput {
-                tag_option_detail: self.tag_option_detail,
+                tag_option_detail: self.tag_option_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateTagOptionOutput`](crate::output::CreateTagOptionOutput).
@@ -5221,20 +4840,20 @@ impl CreateTagOptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceActionOutput {
+pub struct CreateServiceActionOutput  {
     /// <p>An object containing information about the self-service action.</p>
     #[doc(hidden)]
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
 }
 impl CreateServiceActionOutput {
     /// <p>An object containing information about the self-service action.</p>
-    pub fn service_action_detail(&self) -> std::option::Option<&crate::model::ServiceActionDetail> {
+    pub fn service_action_detail(&self) -> std::option::Option<& crate::model::ServiceActionDetail> {
         self.service_action_detail.as_ref()
     }
 }
 /// See [`CreateServiceActionOutput`](crate::output::CreateServiceActionOutput).
 pub mod create_service_action_output {
-
+    
     /// A builder for [`CreateServiceActionOutput`](crate::output::CreateServiceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5247,20 +4866,19 @@ pub mod create_service_action_output {
             self
         }
         /// <p>An object containing information about the self-service action.</p>
-        pub fn set_service_action_detail(
-            mut self,
-            input: std::option::Option<crate::model::ServiceActionDetail>,
-        ) -> Self {
-            self.service_action_detail = input;
-            self
+        pub fn set_service_action_detail(mut self, input: std::option::Option<crate::model::ServiceActionDetail>) -> Self {
+            self.service_action_detail = input; self
         }
         /// Consumes the builder and constructs a [`CreateServiceActionOutput`](crate::output::CreateServiceActionOutput).
         pub fn build(self) -> crate::output::CreateServiceActionOutput {
             crate::output::CreateServiceActionOutput {
-                service_action_detail: self.service_action_detail,
+                service_action_detail: self.service_action_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceActionOutput`](crate::output::CreateServiceActionOutput).
@@ -5272,111 +4890,85 @@ impl CreateServiceActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProvisioningArtifactOutput {
+pub struct CreateProvisioningArtifactOutput  {
     /// <p>Information about the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
-    /// <p> <code>LoadTemplateFromURL</code> </p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p> <code>ImportFromPhysicalId</code> </p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p> 
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p> 
+    /// <p> <code>LoadTemplateFromURL</code> </p> 
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p> 
+    /// <p> <code>ImportFromPhysicalId</code> </p> 
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     #[doc(hidden)]
-    pub info:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl CreateProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
-    pub fn provisioning_artifact_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
+    pub fn provisioning_artifact_detail(&self) -> std::option::Option<& crate::model::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
-    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
-    /// <p> <code>LoadTemplateFromURL</code> </p>
-    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    /// <p> <code>ImportFromPhysicalId</code> </p>
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p> 
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p> 
+    /// <p> <code>LoadTemplateFromURL</code> </p> 
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p> 
+    /// <p> <code>ImportFromPhysicalId</code> </p> 
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-    pub fn info(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn info(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.info.as_ref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput).
 pub mod create_provisioning_artifact_output {
-
+    
     /// A builder for [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioning_artifact_detail:
-            std::option::Option<crate::model::ProvisioningArtifactDetail>,
-        pub(crate) info: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
+        pub(crate) info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::Status>,
     }
     impl Builder {
         /// <p>Information about the provisioning artifact.</p>
-        pub fn provisioning_artifact_detail(
-            mut self,
-            input: crate::model::ProvisioningArtifactDetail,
-        ) -> Self {
+        pub fn provisioning_artifact_detail(mut self, input: crate::model::ProvisioningArtifactDetail) -> Self {
             self.provisioning_artifact_detail = Some(input);
             self
         }
         /// <p>Information about the provisioning artifact.</p>
-        pub fn set_provisioning_artifact_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProvisioningArtifactDetail>,
-        ) -> Self {
-            self.provisioning_artifact_detail = input;
-            self
+        pub fn set_provisioning_artifact_detail(mut self, input: std::option::Option<crate::model::ProvisioningArtifactDetail>) -> Self {
+            self.provisioning_artifact_detail = input; self
         }
         /// Adds a key-value pair to `info`.
         ///
         /// To override the contents of this collection use [`set_info`](Self::set_info).
         ///
-        /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
-        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
-        /// <p> <code>LoadTemplateFromURL</code> </p>
-        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-        /// <p> <code>ImportFromPhysicalId</code> </p>
+        /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p> 
+        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p> 
+        /// <p> <code>LoadTemplateFromURL</code> </p> 
+        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p> 
+        /// <p> <code>ImportFromPhysicalId</code> </p> 
         /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-        pub fn info(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn info(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.info.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.info = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.info = Some(hash_map);
+                            self
         }
-        /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
-        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
-        /// <p> <code>LoadTemplateFromURL</code> </p>
-        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-        /// <p> <code>ImportFromPhysicalId</code> </p>
+        /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p> 
+        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p> 
+        /// <p> <code>LoadTemplateFromURL</code> </p> 
+        /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p> 
+        /// <p> <code>ImportFromPhysicalId</code> </p> 
         /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-        pub fn set_info(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.info = input;
-            self
+        pub fn set_info(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.info = input; self
         }
         /// <p>The status of the current request.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -5385,18 +4977,22 @@ pub mod create_provisioning_artifact_output {
         }
         /// <p>The status of the current request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput).
         pub fn build(self) -> crate::output::CreateProvisioningArtifactOutput {
             crate::output::CreateProvisioningArtifactOutput {
-                provisioning_artifact_detail: self.provisioning_artifact_detail,
-                info: self.info,
-                status: self.status,
+                provisioning_artifact_detail: self.provisioning_artifact_detail
+                ,
+                info: self.info
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput).
@@ -5408,7 +5004,7 @@ impl CreateProvisioningArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProvisionedProductPlanOutput {
+pub struct CreateProvisionedProductPlanOutput  {
     /// <p>The name of the plan.</p>
     #[doc(hidden)]
     pub plan_name: std::option::Option<std::string::String>,
@@ -5427,29 +5023,29 @@ pub struct CreateProvisionedProductPlanOutput {
 }
 impl CreateProvisionedProductPlanOutput {
     /// <p>The name of the plan.</p>
-    pub fn plan_name(&self) -> std::option::Option<&str> {
+    pub fn plan_name(&self) -> std::option::Option<& str> {
         self.plan_name.as_deref()
     }
     /// <p>The plan identifier.</p>
-    pub fn plan_id(&self) -> std::option::Option<&str> {
+    pub fn plan_id(&self) -> std::option::Option<& str> {
         self.plan_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(&self) -> std::option::Option<&str> {
+    pub fn provision_product_id(&self) -> std::option::Option<& str> {
         self.provision_product_id.as_deref()
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+    pub fn provisioned_product_name(&self) -> std::option::Option<& str> {
         self.provisioned_product_name.as_deref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
 }
 /// See [`CreateProvisionedProductPlanOutput`](crate::output::CreateProvisionedProductPlanOutput).
 pub mod create_provisioned_product_plan_output {
-
+    
     /// A builder for [`CreateProvisionedProductPlanOutput`](crate::output::CreateProvisionedProductPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5467,8 +5063,7 @@ pub mod create_provisioned_product_plan_output {
         }
         /// <p>The name of the plan.</p>
         pub fn set_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.plan_name = input;
-            self
+            self.plan_name = input; self
         }
         /// <p>The plan identifier.</p>
         pub fn plan_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5477,8 +5072,7 @@ pub mod create_provisioned_product_plan_output {
         }
         /// <p>The plan identifier.</p>
         pub fn set_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.plan_id = input;
-            self
+            self.plan_id = input; self
         }
         /// <p>The product identifier.</p>
         pub fn provision_product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5486,12 +5080,8 @@ pub mod create_provisioned_product_plan_output {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn set_provision_product_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provision_product_id = input;
-            self
+        pub fn set_provision_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provision_product_id = input; self
         }
         /// <p>The user-friendly name of the provisioned product.</p>
         pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5499,12 +5089,8 @@ pub mod create_provisioned_product_plan_output {
             self
         }
         /// <p>The user-friendly name of the provisioned product.</p>
-        pub fn set_provisioned_product_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provisioned_product_name = input;
-            self
+        pub fn set_provisioned_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provisioned_product_name = input; self
         }
         /// <p>The identifier of the provisioning artifact.</p>
         pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5512,24 +5098,27 @@ pub mod create_provisioned_product_plan_output {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn set_provisioning_artifact_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provisioning_artifact_id = input;
-            self
+        pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provisioning_artifact_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateProvisionedProductPlanOutput`](crate::output::CreateProvisionedProductPlanOutput).
         pub fn build(self) -> crate::output::CreateProvisionedProductPlanOutput {
             crate::output::CreateProvisionedProductPlanOutput {
-                plan_name: self.plan_name,
-                plan_id: self.plan_id,
-                provision_product_id: self.provision_product_id,
-                provisioned_product_name: self.provisioned_product_name,
-                provisioning_artifact_id: self.provisioning_artifact_id,
+                plan_name: self.plan_name
+                ,
+                plan_id: self.plan_id
+                ,
+                provision_product_id: self.provision_product_id
+                ,
+                provisioned_product_name: self.provisioned_product_name
+                ,
+                provisioning_artifact_id: self.provisioning_artifact_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProvisionedProductPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisionedProductPlanOutput`](crate::output::CreateProvisionedProductPlanOutput).
@@ -5541,7 +5130,7 @@ impl CreateProvisionedProductPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProductOutput {
+pub struct CreateProductOutput  {
     /// <p>Information about the product view.</p>
     #[doc(hidden)]
     pub product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
@@ -5554,29 +5143,26 @@ pub struct CreateProductOutput {
 }
 impl CreateProductOutput {
     /// <p>Information about the product view.</p>
-    pub fn product_view_detail(&self) -> std::option::Option<&crate::model::ProductViewDetail> {
+    pub fn product_view_detail(&self) -> std::option::Option<& crate::model::ProductViewDetail> {
         self.product_view_detail.as_ref()
     }
     /// <p>Information about the provisioning artifact. </p>
-    pub fn provisioning_artifact_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
+    pub fn provisioning_artifact_detail(&self) -> std::option::Option<& crate::model::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`CreateProductOutput`](crate::output::CreateProductOutput).
 pub mod create_product_output {
-
+    
     /// A builder for [`CreateProductOutput`](crate::output::CreateProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
-        pub(crate) provisioning_artifact_detail:
-            std::option::Option<crate::model::ProvisioningArtifactDetail>,
+        pub(crate) provisioning_artifact_detail: std::option::Option<crate::model::ProvisioningArtifactDetail>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -5586,28 +5172,17 @@ pub mod create_product_output {
             self
         }
         /// <p>Information about the product view.</p>
-        pub fn set_product_view_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProductViewDetail>,
-        ) -> Self {
-            self.product_view_detail = input;
-            self
+        pub fn set_product_view_detail(mut self, input: std::option::Option<crate::model::ProductViewDetail>) -> Self {
+            self.product_view_detail = input; self
         }
         /// <p>Information about the provisioning artifact. </p>
-        pub fn provisioning_artifact_detail(
-            mut self,
-            input: crate::model::ProvisioningArtifactDetail,
-        ) -> Self {
+        pub fn provisioning_artifact_detail(mut self, input: crate::model::ProvisioningArtifactDetail) -> Self {
             self.provisioning_artifact_detail = Some(input);
             self
         }
         /// <p>Information about the provisioning artifact. </p>
-        pub fn set_provisioning_artifact_detail(
-            mut self,
-            input: std::option::Option<crate::model::ProvisioningArtifactDetail>,
-        ) -> Self {
-            self.provisioning_artifact_detail = input;
-            self
+        pub fn set_provisioning_artifact_detail(mut self, input: std::option::Option<crate::model::ProvisioningArtifactDetail>) -> Self {
+            self.provisioning_artifact_detail = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5616,27 +5191,28 @@ pub mod create_product_output {
         /// <p>Information about the tags associated with the product.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Information about the tags associated with the product.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateProductOutput`](crate::output::CreateProductOutput).
         pub fn build(self) -> crate::output::CreateProductOutput {
             crate::output::CreateProductOutput {
-                product_view_detail: self.product_view_detail,
-                provisioning_artifact_detail: self.provisioning_artifact_detail,
-                tags: self.tags,
+                product_view_detail: self.product_view_detail
+                ,
+                provisioning_artifact_detail: self.provisioning_artifact_detail
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProductOutput {
     /// Creates a new builder-style object to manufacture [`CreateProductOutput`](crate::output::CreateProductOutput).
@@ -5648,20 +5224,20 @@ impl CreateProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePortfolioShareOutput {
+pub struct CreatePortfolioShareOutput  {
     /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
     #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
 }
 impl CreatePortfolioShareOutput {
     /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
-    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+    pub fn portfolio_share_token(&self) -> std::option::Option<& str> {
         self.portfolio_share_token.as_deref()
     }
 }
 /// See [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput).
 pub mod create_portfolio_share_output {
-
+    
     /// A builder for [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5674,20 +5250,19 @@ pub mod create_portfolio_share_output {
             self
         }
         /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
-        pub fn set_portfolio_share_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portfolio_share_token = input;
-            self
+        pub fn set_portfolio_share_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portfolio_share_token = input; self
         }
         /// Consumes the builder and constructs a [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput).
         pub fn build(self) -> crate::output::CreatePortfolioShareOutput {
             crate::output::CreatePortfolioShareOutput {
-                portfolio_share_token: self.portfolio_share_token,
+                portfolio_share_token: self.portfolio_share_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput).
@@ -5699,7 +5274,7 @@ impl CreatePortfolioShareOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePortfolioOutput {
+pub struct CreatePortfolioOutput  {
     /// <p>Information about the portfolio.</p>
     #[doc(hidden)]
     pub portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
@@ -5709,17 +5284,17 @@ pub struct CreatePortfolioOutput {
 }
 impl CreatePortfolioOutput {
     /// <p>Information about the portfolio.</p>
-    pub fn portfolio_detail(&self) -> std::option::Option<&crate::model::PortfolioDetail> {
+    pub fn portfolio_detail(&self) -> std::option::Option<& crate::model::PortfolioDetail> {
         self.portfolio_detail.as_ref()
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`CreatePortfolioOutput`](crate::output::CreatePortfolioOutput).
 pub mod create_portfolio_output {
-
+    
     /// A builder for [`CreatePortfolioOutput`](crate::output::CreatePortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5733,12 +5308,8 @@ pub mod create_portfolio_output {
             self
         }
         /// <p>Information about the portfolio.</p>
-        pub fn set_portfolio_detail(
-            mut self,
-            input: std::option::Option<crate::model::PortfolioDetail>,
-        ) -> Self {
-            self.portfolio_detail = input;
-            self
+        pub fn set_portfolio_detail(mut self, input: std::option::Option<crate::model::PortfolioDetail>) -> Self {
+            self.portfolio_detail = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5747,26 +5318,26 @@ pub mod create_portfolio_output {
         /// <p>Information about the tags associated with the portfolio.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Information about the tags associated with the portfolio.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreatePortfolioOutput`](crate::output::CreatePortfolioOutput).
         pub fn build(self) -> crate::output::CreatePortfolioOutput {
             crate::output::CreatePortfolioOutput {
-                portfolio_detail: self.portfolio_detail,
-                tags: self.tags,
+                portfolio_detail: self.portfolio_detail
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePortfolioOutput {
     /// Creates a new builder-style object to manufacture [`CreatePortfolioOutput`](crate::output::CreatePortfolioOutput).
@@ -5778,7 +5349,7 @@ impl CreatePortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConstraintOutput {
+pub struct CreateConstraintOutput  {
     /// <p>Information about the constraint.</p>
     #[doc(hidden)]
     pub constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
@@ -5791,21 +5362,21 @@ pub struct CreateConstraintOutput {
 }
 impl CreateConstraintOutput {
     /// <p>Information about the constraint.</p>
-    pub fn constraint_detail(&self) -> std::option::Option<&crate::model::ConstraintDetail> {
+    pub fn constraint_detail(&self) -> std::option::Option<& crate::model::ConstraintDetail> {
         self.constraint_detail.as_ref()
     }
     /// <p>The constraint parameters.</p>
-    pub fn constraint_parameters(&self) -> std::option::Option<&str> {
+    pub fn constraint_parameters(&self) -> std::option::Option<& str> {
         self.constraint_parameters.as_deref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`CreateConstraintOutput`](crate::output::CreateConstraintOutput).
 pub mod create_constraint_output {
-
+    
     /// A builder for [`CreateConstraintOutput`](crate::output::CreateConstraintOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5820,12 +5391,8 @@ pub mod create_constraint_output {
             self
         }
         /// <p>Information about the constraint.</p>
-        pub fn set_constraint_detail(
-            mut self,
-            input: std::option::Option<crate::model::ConstraintDetail>,
-        ) -> Self {
-            self.constraint_detail = input;
-            self
+        pub fn set_constraint_detail(mut self, input: std::option::Option<crate::model::ConstraintDetail>) -> Self {
+            self.constraint_detail = input; self
         }
         /// <p>The constraint parameters.</p>
         pub fn constraint_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5833,12 +5400,8 @@ pub mod create_constraint_output {
             self
         }
         /// <p>The constraint parameters.</p>
-        pub fn set_constraint_parameters(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.constraint_parameters = input;
-            self
+        pub fn set_constraint_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constraint_parameters = input; self
         }
         /// <p>The status of the current request.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -5847,18 +5410,22 @@ pub mod create_constraint_output {
         }
         /// <p>The status of the current request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateConstraintOutput`](crate::output::CreateConstraintOutput).
         pub fn build(self) -> crate::output::CreateConstraintOutput {
             crate::output::CreateConstraintOutput {
-                constraint_detail: self.constraint_detail,
-                constraint_parameters: self.constraint_parameters,
-                status: self.status,
+                constraint_detail: self.constraint_detail
+                ,
+                constraint_parameters: self.constraint_parameters
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConstraintOutput {
     /// Creates a new builder-style object to manufacture [`CreateConstraintOutput`](crate::output::CreateConstraintOutput).
@@ -5870,20 +5437,20 @@ impl CreateConstraintOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyProductOutput {
+pub struct CopyProductOutput  {
     /// <p>The token to use to track the progress of the operation.</p>
     #[doc(hidden)]
     pub copy_product_token: std::option::Option<std::string::String>,
 }
 impl CopyProductOutput {
     /// <p>The token to use to track the progress of the operation.</p>
-    pub fn copy_product_token(&self) -> std::option::Option<&str> {
+    pub fn copy_product_token(&self) -> std::option::Option<& str> {
         self.copy_product_token.as_deref()
     }
 }
 /// See [`CopyProductOutput`](crate::output::CopyProductOutput).
 pub mod copy_product_output {
-
+    
     /// A builder for [`CopyProductOutput`](crate::output::CopyProductOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5896,20 +5463,19 @@ pub mod copy_product_output {
             self
         }
         /// <p>The token to use to track the progress of the operation.</p>
-        pub fn set_copy_product_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.copy_product_token = input;
-            self
+        pub fn set_copy_product_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.copy_product_token = input; self
         }
         /// Consumes the builder and constructs a [`CopyProductOutput`](crate::output::CopyProductOutput).
         pub fn build(self) -> crate::output::CopyProductOutput {
             crate::output::CopyProductOutput {
-                copy_product_token: self.copy_product_token,
+                copy_product_token: self.copy_product_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyProductOutput {
     /// Creates a new builder-style object to manufacture [`CopyProductOutput`](crate::output::CopyProductOutput).
@@ -5921,28 +5487,24 @@ impl CopyProductOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateServiceActionFromProvisioningArtifactOutput {
+pub struct BatchDisassociateServiceActionFromProvisioningArtifactOutput  {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
     #[doc(hidden)]
-    pub failed_service_action_associations:
-        std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
+    pub failed_service_action_associations: std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
 }
 impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub fn failed_service_action_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::FailedServiceActionAssociation]> {
+    pub fn failed_service_action_associations(&self) -> std::option::Option<& [crate::model::FailedServiceActionAssociation]> {
         self.failed_service_action_associations.as_deref()
     }
 }
 /// See [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput).
 pub mod batch_disassociate_service_action_from_provisioning_artifact_output {
-
+    
     /// A builder for [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) failed_service_action_associations:
-            std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
+        pub(crate) failed_service_action_associations: std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
     }
     impl Builder {
         /// Appends an item to `failed_service_action_associations`.
@@ -5950,38 +5512,30 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_output {
         /// To override the contents of this collection use [`set_failed_service_action_associations`](Self::set_failed_service_action_associations).
         ///
         /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-        pub fn failed_service_action_associations(
-            mut self,
-            input: crate::model::FailedServiceActionAssociation,
-        ) -> Self {
+        pub fn failed_service_action_associations(mut self, input: crate::model::FailedServiceActionAssociation) -> Self {
             let mut v = self.failed_service_action_associations.unwrap_or_default();
-            v.push(input);
-            self.failed_service_action_associations = Some(v);
-            self
+                            v.push(input);
+                            self.failed_service_action_associations = Some(v);
+                            self
         }
         /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-        pub fn set_failed_service_action_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
-        ) -> Self {
-            self.failed_service_action_associations = input;
-            self
+        pub fn set_failed_service_action_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>) -> Self {
+            self.failed_service_action_associations = input; self
         }
         /// Consumes the builder and constructs a [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput {
+        pub fn build(self) -> crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput {
             crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput {
-                failed_service_action_associations: self.failed_service_action_associations,
+                failed_service_action_associations: self.failed_service_action_associations
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput).
-    pub fn builder(
-    ) -> crate::output::batch_disassociate_service_action_from_provisioning_artifact_output::Builder
-    {
+    pub fn builder() -> crate::output::batch_disassociate_service_action_from_provisioning_artifact_output::Builder {
         crate::output::batch_disassociate_service_action_from_provisioning_artifact_output::Builder::default()
     }
 }
@@ -5989,28 +5543,24 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateServiceActionWithProvisioningArtifactOutput {
+pub struct BatchAssociateServiceActionWithProvisioningArtifactOutput  {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
     #[doc(hidden)]
-    pub failed_service_action_associations:
-        std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
+    pub failed_service_action_associations: std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
 }
 impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub fn failed_service_action_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::FailedServiceActionAssociation]> {
+    pub fn failed_service_action_associations(&self) -> std::option::Option<& [crate::model::FailedServiceActionAssociation]> {
         self.failed_service_action_associations.as_deref()
     }
 }
 /// See [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput).
 pub mod batch_associate_service_action_with_provisioning_artifact_output {
-
+    
     /// A builder for [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) failed_service_action_associations:
-            std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
+        pub(crate) failed_service_action_associations: std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
     }
     impl Builder {
         /// Appends an item to `failed_service_action_associations`.
@@ -6018,38 +5568,30 @@ pub mod batch_associate_service_action_with_provisioning_artifact_output {
         /// To override the contents of this collection use [`set_failed_service_action_associations`](Self::set_failed_service_action_associations).
         ///
         /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-        pub fn failed_service_action_associations(
-            mut self,
-            input: crate::model::FailedServiceActionAssociation,
-        ) -> Self {
+        pub fn failed_service_action_associations(mut self, input: crate::model::FailedServiceActionAssociation) -> Self {
             let mut v = self.failed_service_action_associations.unwrap_or_default();
-            v.push(input);
-            self.failed_service_action_associations = Some(v);
-            self
+                            v.push(input);
+                            self.failed_service_action_associations = Some(v);
+                            self
         }
         /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-        pub fn set_failed_service_action_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
-        ) -> Self {
-            self.failed_service_action_associations = input;
-            self
+        pub fn set_failed_service_action_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>) -> Self {
+            self.failed_service_action_associations = input; self
         }
         /// Consumes the builder and constructs a [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput {
+        pub fn build(self) -> crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput {
             crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput {
-                failed_service_action_associations: self.failed_service_action_associations,
+                failed_service_action_associations: self.failed_service_action_associations
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput).
-    pub fn builder(
-    ) -> crate::output::batch_associate_service_action_with_provisioning_artifact_output::Builder
-    {
+    pub fn builder() -> crate::output::batch_associate_service_action_with_provisioning_artifact_output::Builder {
         crate::output::batch_associate_service_action_with_provisioning_artifact_output::Builder::default()
     }
 }
@@ -6057,19 +5599,24 @@ impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTagOptionWithResourceOutput {}
+pub struct AssociateTagOptionWithResourceOutput  {
+}
 /// See [`AssociateTagOptionWithResourceOutput`](crate::output::AssociateTagOptionWithResourceOutput).
 pub mod associate_tag_option_with_resource_output {
-
+    
     /// A builder for [`AssociateTagOptionWithResourceOutput`](crate::output::AssociateTagOptionWithResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateTagOptionWithResourceOutput`](crate::output::AssociateTagOptionWithResourceOutput).
         pub fn build(self) -> crate::output::AssociateTagOptionWithResourceOutput {
-            crate::output::AssociateTagOptionWithResourceOutput {}
+            crate::output::AssociateTagOptionWithResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateTagOptionWithResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTagOptionWithResourceOutput`](crate::output::AssociateTagOptionWithResourceOutput).
@@ -6081,45 +5628,53 @@ impl AssociateTagOptionWithResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateServiceActionWithProvisioningArtifactOutput {}
+pub struct AssociateServiceActionWithProvisioningArtifactOutput  {
+}
 /// See [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::output::AssociateServiceActionWithProvisioningArtifactOutput).
 pub mod associate_service_action_with_provisioning_artifact_output {
-
+    
     /// A builder for [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::output::AssociateServiceActionWithProvisioningArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::output::AssociateServiceActionWithProvisioningArtifactOutput).
         pub fn build(self) -> crate::output::AssociateServiceActionWithProvisioningArtifactOutput {
-            crate::output::AssociateServiceActionWithProvisioningArtifactOutput {}
+            crate::output::AssociateServiceActionWithProvisioningArtifactOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateServiceActionWithProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::output::AssociateServiceActionWithProvisioningArtifactOutput).
-    pub fn builder(
-    ) -> crate::output::associate_service_action_with_provisioning_artifact_output::Builder {
-        crate::output::associate_service_action_with_provisioning_artifact_output::Builder::default(
-        )
+    pub fn builder() -> crate::output::associate_service_action_with_provisioning_artifact_output::Builder {
+        crate::output::associate_service_action_with_provisioning_artifact_output::Builder::default()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateProductWithPortfolioOutput {}
+pub struct AssociateProductWithPortfolioOutput  {
+}
 /// See [`AssociateProductWithPortfolioOutput`](crate::output::AssociateProductWithPortfolioOutput).
 pub mod associate_product_with_portfolio_output {
-
+    
     /// A builder for [`AssociateProductWithPortfolioOutput`](crate::output::AssociateProductWithPortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateProductWithPortfolioOutput`](crate::output::AssociateProductWithPortfolioOutput).
         pub fn build(self) -> crate::output::AssociateProductWithPortfolioOutput {
-            crate::output::AssociateProductWithPortfolioOutput {}
+            crate::output::AssociateProductWithPortfolioOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateProductWithPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`AssociateProductWithPortfolioOutput`](crate::output::AssociateProductWithPortfolioOutput).
@@ -6131,19 +5686,24 @@ impl AssociateProductWithPortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePrincipalWithPortfolioOutput {}
+pub struct AssociatePrincipalWithPortfolioOutput  {
+}
 /// See [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput).
 pub mod associate_principal_with_portfolio_output {
-
+    
     /// A builder for [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput).
         pub fn build(self) -> crate::output::AssociatePrincipalWithPortfolioOutput {
-            crate::output::AssociatePrincipalWithPortfolioOutput {}
+            crate::output::AssociatePrincipalWithPortfolioOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociatePrincipalWithPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput).
@@ -6155,19 +5715,24 @@ impl AssociatePrincipalWithPortfolioOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateBudgetWithResourceOutput {}
+pub struct AssociateBudgetWithResourceOutput  {
+}
 /// See [`AssociateBudgetWithResourceOutput`](crate::output::AssociateBudgetWithResourceOutput).
 pub mod associate_budget_with_resource_output {
-
+    
     /// A builder for [`AssociateBudgetWithResourceOutput`](crate::output::AssociateBudgetWithResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateBudgetWithResourceOutput`](crate::output::AssociateBudgetWithResourceOutput).
         pub fn build(self) -> crate::output::AssociateBudgetWithResourceOutput {
-            crate::output::AssociateBudgetWithResourceOutput {}
+            crate::output::AssociateBudgetWithResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateBudgetWithResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateBudgetWithResourceOutput`](crate::output::AssociateBudgetWithResourceOutput).
@@ -6179,19 +5744,24 @@ impl AssociateBudgetWithResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptPortfolioShareOutput {}
+pub struct AcceptPortfolioShareOutput  {
+}
 /// See [`AcceptPortfolioShareOutput`](crate::output::AcceptPortfolioShareOutput).
 pub mod accept_portfolio_share_output {
-
+    
     /// A builder for [`AcceptPortfolioShareOutput`](crate::output::AcceptPortfolioShareOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptPortfolioShareOutput`](crate::output::AcceptPortfolioShareOutput).
         pub fn build(self) -> crate::output::AcceptPortfolioShareOutput {
-            crate::output::AcceptPortfolioShareOutput {}
+            crate::output::AcceptPortfolioShareOutput {
+            }
         }
     }
+    
+    
 }
 impl AcceptPortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`AcceptPortfolioShareOutput`](crate::output::AcceptPortfolioShareOutput).
@@ -6199,3 +5769,4 @@ impl AcceptPortfolioShareOutput {
         crate::output::accept_portfolio_share_output::Builder::default()
     }
 }
+

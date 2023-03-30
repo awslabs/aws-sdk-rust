@@ -4,17 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateEnvironmentMembershipError {
     /// Kind of error that occurred.
-    pub kind: UpdateEnvironmentMembershipErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateEnvironmentMembershipErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateEnvironmentMembershipError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -36,29 +34,43 @@ pub enum UpdateEnvironmentMembershipErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEnvironmentMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateEnvironmentMembershipErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentMembershipErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentMembershipErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) => {
+            UpdateEnvironmentMembershipErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentMembershipErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentMembershipErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentMembershipErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentMembershipErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentMembershipErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateEnvironmentMembershipErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentMembershipErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentMembershipErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -72,113 +84,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateEnvironmentMembershipEr
 }
 impl UpdateEnvironmentMembershipError {
     /// Creates a new `UpdateEnvironmentMembershipError`.
-    pub fn new(kind: UpdateEnvironmentMembershipErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateEnvironmentMembershipError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateEnvironmentMembershipError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateEnvironmentMembershipErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateEnvironmentMembershipError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateEnvironmentMembershipError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentMembershipErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentMembershipErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentMembershipErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentMembershipErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentMembershipErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentMembershipErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentMembershipErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentMembershipErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentMembershipErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentMembershipErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentMembershipErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentMembershipErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentMembershipErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentMembershipErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateEnvironmentMembershipError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateEnvironmentMembershipErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateEnvironmentMembershipErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateEnvironmentMembershipErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) => {
+            UpdateEnvironmentMembershipErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentMembershipErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentMembershipErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentMembershipErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentMembershipErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentMembershipErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateEnvironmentMembershipErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateEnvironmentMembershipErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -186,7 +187,7 @@ impl std::error::Error for UpdateEnvironmentMembershipError {
 /// <p>Too many service requests were made over the given time period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyRequestsException {
+pub struct TooManyRequestsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -199,7 +200,7 @@ pub struct TooManyRequestsException {
 }
 impl TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> std::option::Option<& str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -209,15 +210,13 @@ impl TooManyRequestsException {
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -227,7 +226,7 @@ impl std::fmt::Display for TooManyRequestsException {
 impl std::error::Error for TooManyRequestsException {}
 /// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
 pub mod too_many_requests_exception {
-
+    
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -243,8 +242,7 @@ pub mod too_many_requests_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,8 +251,7 @@ pub mod too_many_requests_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.class_name = input;
-            self
+            self.class_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: i32) -> Self {
@@ -263,18 +260,23 @@ pub mod too_many_requests_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
         pub fn build(self) -> crate::error::TooManyRequestsException {
             crate::error::TooManyRequestsException {
-                message: self.message,
-                class_name: self.class_name,
-                code: self.code.unwrap_or_default(),
+                message: self.message
+                ,
+                class_name: self.class_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyRequestsException {
     /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
@@ -286,7 +288,7 @@ impl TooManyRequestsException {
 /// <p>The target resource cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -299,7 +301,7 @@ pub struct NotFoundException {
 }
 impl NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> std::option::Option<& str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -309,15 +311,13 @@ impl NotFoundException {
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -327,7 +327,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -343,8 +343,7 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -353,8 +352,7 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.class_name = input;
-            self
+            self.class_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: i32) -> Self {
@@ -363,18 +361,23 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                message: self.message,
-                class_name: self.class_name,
-                code: self.code.unwrap_or_default(),
+                message: self.message
+                ,
+                class_name: self.class_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -386,7 +389,7 @@ impl NotFoundException {
 /// <p>A service limit was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -399,7 +402,7 @@ pub struct LimitExceededException {
 }
 impl LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> std::option::Option<& str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -409,15 +412,13 @@ impl LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -427,7 +428,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -443,8 +444,7 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -453,8 +453,7 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.class_name = input;
-            self
+            self.class_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: i32) -> Self {
@@ -463,18 +462,23 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
-                class_name: self.class_name,
-                code: self.code.unwrap_or_default(),
+                message: self.message
+                ,
+                class_name: self.class_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -486,7 +490,7 @@ impl LimitExceededException {
 /// <p>An internal server error occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerErrorException {
+pub struct InternalServerErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -499,7 +503,7 @@ pub struct InternalServerErrorException {
 }
 impl InternalServerErrorException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> std::option::Option<& str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -509,15 +513,13 @@ impl InternalServerErrorException {
 }
 impl InternalServerErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerErrorException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -527,7 +529,7 @@ impl std::fmt::Display for InternalServerErrorException {
 impl std::error::Error for InternalServerErrorException {}
 /// See [`InternalServerErrorException`](crate::error::InternalServerErrorException).
 pub mod internal_server_error_exception {
-
+    
     /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -543,8 +545,7 @@ pub mod internal_server_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -553,8 +554,7 @@ pub mod internal_server_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.class_name = input;
-            self
+            self.class_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: i32) -> Self {
@@ -563,18 +563,23 @@ pub mod internal_server_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException).
         pub fn build(self) -> crate::error::InternalServerErrorException {
             crate::error::InternalServerErrorException {
-                message: self.message,
-                class_name: self.class_name,
-                code: self.code.unwrap_or_default(),
+                message: self.message
+                ,
+                class_name: self.class_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerErrorException {
     /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException).
@@ -586,7 +591,7 @@ impl InternalServerErrorException {
 /// <p>An access permissions issue occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException {
+pub struct ForbiddenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -599,7 +604,7 @@ pub struct ForbiddenException {
 }
 impl ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> std::option::Option<& str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -609,15 +614,13 @@ impl ForbiddenException {
 }
 impl ForbiddenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -627,7 +630,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
-
+    
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -643,8 +646,7 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -653,8 +655,7 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.class_name = input;
-            self
+            self.class_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: i32) -> Self {
@@ -663,18 +664,23 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
         pub fn build(self) -> crate::error::ForbiddenException {
             crate::error::ForbiddenException {
-                message: self.message,
-                class_name: self.class_name,
-                code: self.code.unwrap_or_default(),
+                message: self.message
+                ,
+                class_name: self.class_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ForbiddenException {
     /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
@@ -686,7 +692,7 @@ impl ForbiddenException {
 /// <p>A conflict occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -699,7 +705,7 @@ pub struct ConflictException {
 }
 impl ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> std::option::Option<& str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -709,15 +715,13 @@ impl ConflictException {
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -727,7 +731,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -743,8 +747,7 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -753,8 +756,7 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.class_name = input;
-            self
+            self.class_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: i32) -> Self {
@@ -763,18 +765,23 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
-                class_name: self.class_name,
-                code: self.code.unwrap_or_default(),
+                message: self.message
+                ,
+                class_name: self.class_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -786,7 +793,7 @@ impl ConflictException {
 /// <p>The target request is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -799,7 +806,7 @@ pub struct BadRequestException {
 }
 impl BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> std::option::Option<& str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -809,15 +816,13 @@ impl BadRequestException {
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -827,7 +832,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -843,8 +848,7 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -853,8 +857,7 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.class_name = input;
-            self
+            self.class_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: i32) -> Self {
@@ -863,18 +866,23 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                message: self.message,
-                class_name: self.class_name,
-                code: self.code.unwrap_or_default(),
+                message: self.message
+                ,
+                class_name: self.class_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -888,15 +896,15 @@ impl BadRequestException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateEnvironmentError {
     /// Kind of error that occurred.
-    pub kind: UpdateEnvironmentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateEnvironmentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateEnvironmentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -918,27 +926,43 @@ pub enum UpdateEnvironmentErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateEnvironmentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateEnvironmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateEnvironmentErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnvironmentErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -952,52 +976,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateEnvironmentError {
 }
 impl UpdateEnvironmentError {
     /// Creates a new `UpdateEnvironmentError`.
-    pub fn new(kind: UpdateEnvironmentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateEnvironmentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateEnvironmentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateEnvironmentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateEnvironmentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateEnvironmentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -1005,24 +1026,15 @@ impl UpdateEnvironmentError {
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1030,23 +1042,36 @@ impl UpdateEnvironmentError {
     }
     /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnvironmentErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateEnvironmentErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateEnvironmentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateEnvironmentErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateEnvironmentErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnvironmentErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1056,15 +1081,15 @@ impl std::error::Error for UpdateEnvironmentError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1080,24 +1105,34 @@ pub enum UntagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ConcurrentAccessException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ConcurrentAccessException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1111,63 +1146,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ConcurrentAccessException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ConcurrentAccessException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1177,11 +1206,21 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ConcurrentAccessException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1189,7 +1228,7 @@ impl std::error::Error for UntagResourceError {
 /// <p>A concurrent access issue occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConcurrentAccessException {
+pub struct ConcurrentAccessException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -1202,7 +1241,7 @@ pub struct ConcurrentAccessException {
 }
 impl ConcurrentAccessException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> std::option::Option<& str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -1212,15 +1251,13 @@ impl ConcurrentAccessException {
 }
 impl ConcurrentAccessException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConcurrentAccessException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentAccessException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -1230,7 +1267,7 @@ impl std::fmt::Display for ConcurrentAccessException {
 impl std::error::Error for ConcurrentAccessException {}
 /// See [`ConcurrentAccessException`](crate::error::ConcurrentAccessException).
 pub mod concurrent_access_exception {
-
+    
     /// A builder for [`ConcurrentAccessException`](crate::error::ConcurrentAccessException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1246,8 +1283,7 @@ pub mod concurrent_access_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1256,8 +1292,7 @@ pub mod concurrent_access_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.class_name = input;
-            self
+            self.class_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: i32) -> Self {
@@ -1266,18 +1301,23 @@ pub mod concurrent_access_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ConcurrentAccessException`](crate::error::ConcurrentAccessException).
         pub fn build(self) -> crate::error::ConcurrentAccessException {
             crate::error::ConcurrentAccessException {
-                message: self.message,
-                class_name: self.class_name,
-                code: self.code.unwrap_or_default(),
+                message: self.message
+                ,
+                class_name: self.class_name
+                ,
+                code: self.code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ConcurrentAccessException {
     /// Creates a new builder-style object to manufacture [`ConcurrentAccessException`](crate::error::ConcurrentAccessException).
@@ -1291,15 +1331,15 @@ impl ConcurrentAccessException {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1315,24 +1355,34 @@ pub enum TagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ConcurrentAccessException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ConcurrentAccessException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1346,63 +1396,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ConcurrentAccessException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ConcurrentAccessException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1412,11 +1456,21 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            TagResourceErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
-            TagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ConcurrentAccessException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1426,15 +1480,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1448,23 +1502,31 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1478,75 +1540,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1556,15 +1617,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListEnvironmentsError {
     /// Kind of error that occurred.
-    pub kind: ListEnvironmentsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListEnvironmentsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListEnvironmentsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1586,27 +1647,43 @@ pub enum ListEnvironmentsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEnvironmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListEnvironmentsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListEnvironmentsErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            ListEnvironmentsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListEnvironmentsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListEnvironmentsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            ListEnvironmentsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListEnvironmentsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListEnvironmentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListEnvironmentsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEnvironmentsErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEnvironmentsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEnvironmentsErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEnvironmentsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEnvironmentsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEnvironmentsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEnvironmentsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1620,52 +1697,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListEnvironmentsError {
 }
 impl ListEnvironmentsError {
     /// Creates a new `ListEnvironmentsError`.
-    pub fn new(kind: ListEnvironmentsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListEnvironmentsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListEnvironmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListEnvironmentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListEnvironmentsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListEnvironmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEnvironmentsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListEnvironmentsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -1677,17 +1751,11 @@ impl ListEnvironmentsError {
     }
     /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEnvironmentsErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListEnvironmentsErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEnvironmentsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ListEnvironmentsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1695,23 +1763,36 @@ impl ListEnvironmentsError {
     }
     /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEnvironmentsErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListEnvironmentsErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListEnvironmentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListEnvironmentsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::ConflictException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListEnvironmentsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListEnvironmentsErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            ListEnvironmentsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListEnvironmentsErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListEnvironmentsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListEnvironmentsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListEnvironmentsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListEnvironmentsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1721,17 +1802,15 @@ impl std::error::Error for ListEnvironmentsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEnvironmentStatusError {
     /// Kind of error that occurred.
-    pub kind: DescribeEnvironmentStatusErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEnvironmentStatusErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEnvironmentStatusError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeEnvironmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeEnvironmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1753,29 +1832,43 @@ pub enum DescribeEnvironmentStatusErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEnvironmentStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEnvironmentStatusErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentStatusErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentStatusErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentStatusErrorKind::InternalServerErrorException(_inner) => {
+            DescribeEnvironmentStatusErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentStatusErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentStatusErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentStatusErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentStatusErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentStatusErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentStatusErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentStatusErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeEnvironmentStatusErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentStatusErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentStatusErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1789,113 +1882,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEnvironmentStatusErro
 }
 impl DescribeEnvironmentStatusError {
     /// Creates a new `DescribeEnvironmentStatusError`.
-    pub fn new(kind: DescribeEnvironmentStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEnvironmentStatusError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEnvironmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEnvironmentStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEnvironmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEnvironmentStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEnvironmentStatusError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEnvironmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEnvironmentStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEnvironmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentStatusErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentStatusErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentStatusErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentStatusErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentStatusErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentStatusErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentStatusErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentStatusErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentStatusErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentStatusErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentStatusErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentStatusErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentStatusErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentStatusErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeEnvironmentStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEnvironmentStatusErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeEnvironmentStatusErrorKind::ConflictException(_inner) => Some(_inner),
-            DescribeEnvironmentStatusErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeEnvironmentStatusErrorKind::InternalServerErrorException(_inner) => {
+            DescribeEnvironmentStatusErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentStatusErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentStatusErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentStatusErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentStatusErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentStatusErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentStatusErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentStatusErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeEnvironmentStatusErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DescribeEnvironmentStatusErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeEnvironmentStatusErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEnvironmentStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1905,15 +1987,15 @@ impl std::error::Error for DescribeEnvironmentStatusError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEnvironmentsError {
     /// Kind of error that occurred.
-    pub kind: DescribeEnvironmentsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEnvironmentsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEnvironmentsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1935,27 +2017,43 @@ pub enum DescribeEnvironmentsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEnvironmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEnvironmentsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentsErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEnvironmentsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentsErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentsErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1969,111 +2067,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEnvironmentsError {
 }
 impl DescribeEnvironmentsError {
     /// Creates a new `DescribeEnvironmentsError`.
-    pub fn new(kind: DescribeEnvironmentsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEnvironmentsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEnvironmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEnvironmentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEnvironmentsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEnvironmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentsErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentsErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentsErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentsErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentsErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentsErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentsErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentsErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeEnvironmentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEnvironmentsErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeEnvironmentsErrorKind::ConflictException(_inner) => Some(_inner),
-            DescribeEnvironmentsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeEnvironmentsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DescribeEnvironmentsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DescribeEnvironmentsErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeEnvironmentsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEnvironmentsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentsErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentsErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2083,17 +2172,15 @@ impl std::error::Error for DescribeEnvironmentsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsError {
     /// Kind of error that occurred.
-    pub kind: DescribeEnvironmentMembershipsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEnvironmentMembershipsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEnvironmentMembershipsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2115,33 +2202,43 @@ pub enum DescribeEnvironmentMembershipsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEnvironmentMembershipsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEnvironmentMembershipsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentMembershipsErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentMembershipsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException(_inner) => {
+            DescribeEnvironmentMembershipsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeEnvironmentMembershipsErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeEnvironmentMembershipsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeEnvironmentMembershipsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2155,118 +2252,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEnvironmentMembership
 }
 impl DescribeEnvironmentMembershipsError {
     /// Creates a new `DescribeEnvironmentMembershipsError`.
-    pub fn new(
-        kind: DescribeEnvironmentMembershipsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEnvironmentMembershipsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEnvironmentMembershipsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEnvironmentMembershipsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEnvironmentMembershipsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEnvironmentMembershipsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentMembershipsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentMembershipsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentMembershipsErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentMembershipsErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentMembershipsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentMembershipsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentMembershipsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentMembershipsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentMembershipsErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentMembershipsErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeEnvironmentMembershipsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEnvironmentMembershipsErrorKind::BadRequestException(_inner) => Some(_inner),
-            DescribeEnvironmentMembershipsErrorKind::ConflictException(_inner) => Some(_inner),
-            DescribeEnvironmentMembershipsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException(_inner) => {
+            DescribeEnvironmentMembershipsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEnvironmentMembershipsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeEnvironmentMembershipsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DescribeEnvironmentMembershipsErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException(_inner) => {
-                Some(_inner)
-            }
-            DescribeEnvironmentMembershipsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2276,17 +2357,15 @@ impl std::error::Error for DescribeEnvironmentMembershipsError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteEnvironmentMembershipError {
     /// Kind of error that occurred.
-    pub kind: DeleteEnvironmentMembershipErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteEnvironmentMembershipErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteEnvironmentMembershipError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2308,29 +2387,43 @@ pub enum DeleteEnvironmentMembershipErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEnvironmentMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEnvironmentMembershipErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentMembershipErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentMembershipErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) => {
+            DeleteEnvironmentMembershipErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentMembershipErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentMembershipErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentMembershipErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentMembershipErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentMembershipErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteEnvironmentMembershipErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentMembershipErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentMembershipErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2344,113 +2437,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteEnvironmentMembershipEr
 }
 impl DeleteEnvironmentMembershipError {
     /// Creates a new `DeleteEnvironmentMembershipError`.
-    pub fn new(kind: DeleteEnvironmentMembershipErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteEnvironmentMembershipError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteEnvironmentMembershipError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteEnvironmentMembershipErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteEnvironmentMembershipError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteEnvironmentMembershipError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentMembershipErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentMembershipErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentMembershipErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentMembershipErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentMembershipErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentMembershipErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentMembershipErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentMembershipErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentMembershipErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentMembershipErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentMembershipErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentMembershipErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentMembershipErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentMembershipErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteEnvironmentMembershipError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEnvironmentMembershipErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteEnvironmentMembershipErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteEnvironmentMembershipErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) => {
+            DeleteEnvironmentMembershipErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentMembershipErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentMembershipErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentMembershipErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentMembershipErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentMembershipErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteEnvironmentMembershipErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DeleteEnvironmentMembershipErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2460,15 +2542,15 @@ impl std::error::Error for DeleteEnvironmentMembershipError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteEnvironmentError {
     /// Kind of error that occurred.
-    pub kind: DeleteEnvironmentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteEnvironmentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteEnvironmentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2490,27 +2572,43 @@ pub enum DeleteEnvironmentErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEnvironmentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteEnvironmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteEnvironmentErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEnvironmentErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2524,52 +2622,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteEnvironmentError {
 }
 impl DeleteEnvironmentError {
     /// Creates a new `DeleteEnvironmentError`.
-    pub fn new(kind: DeleteEnvironmentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteEnvironmentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteEnvironmentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteEnvironmentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteEnvironmentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteEnvironmentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -2577,24 +2672,15 @@ impl DeleteEnvironmentError {
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -2602,23 +2688,36 @@ impl DeleteEnvironmentError {
     }
     /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEnvironmentErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteEnvironmentErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteEnvironmentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEnvironmentErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteEnvironmentErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEnvironmentErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2628,17 +2727,15 @@ impl std::error::Error for DeleteEnvironmentError {
 #[derive(std::fmt::Debug)]
 pub struct CreateEnvironmentMembershipError {
     /// Kind of error that occurred.
-    pub kind: CreateEnvironmentMembershipErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateEnvironmentMembershipErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateEnvironmentMembershipError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2660,29 +2757,43 @@ pub enum CreateEnvironmentMembershipErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEnvironmentMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateEnvironmentMembershipErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateEnvironmentMembershipErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateEnvironmentMembershipErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) => {
+            CreateEnvironmentMembershipErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentMembershipErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentMembershipErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentMembershipErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentMembershipErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentMembershipErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateEnvironmentMembershipErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateEnvironmentMembershipErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateEnvironmentMembershipErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2696,113 +2807,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateEnvironmentMembershipEr
 }
 impl CreateEnvironmentMembershipError {
     /// Creates a new `CreateEnvironmentMembershipError`.
-    pub fn new(kind: CreateEnvironmentMembershipErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateEnvironmentMembershipError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateEnvironmentMembershipError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateEnvironmentMembershipErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateEnvironmentMembershipError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateEnvironmentMembershipError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentMembershipErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentMembershipErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentMembershipErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentMembershipErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentMembershipErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentMembershipErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentMembershipErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentMembershipErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentMembershipErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentMembershipErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentMembershipErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentMembershipErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentMembershipErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentMembershipErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateEnvironmentMembershipError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateEnvironmentMembershipErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateEnvironmentMembershipErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateEnvironmentMembershipErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) => {
+            CreateEnvironmentMembershipErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentMembershipErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentMembershipErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentMembershipErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentMembershipErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentMembershipErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentMembershipErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateEnvironmentMembershipErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateEnvironmentMembershipErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2812,15 +2912,15 @@ impl std::error::Error for CreateEnvironmentMembershipError {
 #[derive(std::fmt::Debug)]
 pub struct CreateEnvironmentEC2Error {
     /// Kind of error that occurred.
-    pub kind: CreateEnvironmentEC2ErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateEnvironmentEC2ErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateEnvironmentEC2Error {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateEnvironmentEC2ErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2842,27 +2942,43 @@ pub enum CreateEnvironmentEC2ErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEnvironmentEC2Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateEnvironmentEC2ErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateEnvironmentEC2ErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateEnvironmentEC2ErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateEnvironmentEC2ErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateEnvironmentEC2ErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateEnvironmentEC2ErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateEnvironmentEC2ErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateEnvironmentEC2ErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateEnvironmentEC2ErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentEC2ErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentEC2ErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentEC2ErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentEC2ErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentEC2ErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentEC2ErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEnvironmentEC2ErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2876,140 +2992,132 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateEnvironmentEC2Error {
 }
 impl CreateEnvironmentEC2Error {
     /// Creates a new `CreateEnvironmentEC2Error`.
-    pub fn new(kind: CreateEnvironmentEC2ErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateEnvironmentEC2Error::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateEnvironmentEC2ErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateEnvironmentEC2Error::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateEnvironmentEC2ErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateEnvironmentEC2ErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateEnvironmentEC2Error::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateEnvironmentEC2ErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateEnvironmentEC2Error::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateEnvironmentEC2ErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentEC2ErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentEC2ErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentEC2ErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentEC2ErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentEC2ErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentEC2ErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentEC2ErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentEC2ErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentEC2ErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentEC2ErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentEC2ErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentEC2ErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateEnvironmentEC2ErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateEnvironmentEC2ErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateEnvironmentEC2Error {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateEnvironmentEC2ErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateEnvironmentEC2ErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateEnvironmentEC2ErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateEnvironmentEC2ErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateEnvironmentEC2ErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateEnvironmentEC2ErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateEnvironmentEC2ErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateEnvironmentEC2ErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateEnvironmentEC2ErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentEC2ErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentEC2ErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentEC2ErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentEC2ErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentEC2ErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentEC2ErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEnvironmentEC2ErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

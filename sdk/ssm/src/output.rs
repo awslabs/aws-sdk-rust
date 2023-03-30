@@ -3,19 +3,24 @@
 /// <p>The result body of the UpdateServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceSettingOutput {}
+pub struct UpdateServiceSettingOutput  {
+}
 /// See [`UpdateServiceSettingOutput`](crate::output::UpdateServiceSettingOutput).
 pub mod update_service_setting_output {
-
+    
     /// A builder for [`UpdateServiceSettingOutput`](crate::output::UpdateServiceSettingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateServiceSettingOutput`](crate::output::UpdateServiceSettingOutput).
         pub fn build(self) -> crate::output::UpdateServiceSettingOutput {
-            crate::output::UpdateServiceSettingOutput {}
+            crate::output::UpdateServiceSettingOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateServiceSettingOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSettingOutput`](crate::output::UpdateServiceSettingOutput).
@@ -27,19 +32,24 @@ impl UpdateServiceSettingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceDataSyncOutput {}
+pub struct UpdateResourceDataSyncOutput  {
+}
 /// See [`UpdateResourceDataSyncOutput`](crate::output::UpdateResourceDataSyncOutput).
 pub mod update_resource_data_sync_output {
-
+    
     /// A builder for [`UpdateResourceDataSyncOutput`](crate::output::UpdateResourceDataSyncOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateResourceDataSyncOutput`](crate::output::UpdateResourceDataSyncOutput).
         pub fn build(self) -> crate::output::UpdateResourceDataSyncOutput {
-            crate::output::UpdateResourceDataSyncOutput {}
+            crate::output::UpdateResourceDataSyncOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateResourceDataSyncOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceDataSyncOutput`](crate::output::UpdateResourceDataSyncOutput).
@@ -51,7 +61,7 @@ impl UpdateResourceDataSyncOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePatchBaselineOutput {
+pub struct UpdatePatchBaselineOutput  {
     /// <p>The ID of the deleted patch baseline.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -97,33 +107,31 @@ pub struct UpdatePatchBaselineOutput {
 }
 impl UpdatePatchBaselineOutput {
     /// <p>The ID of the deleted patch baseline.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch baseline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The operating system rule used by the updated patch baseline.</p>
-    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+    pub fn operating_system(&self) -> std::option::Option<& crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
-    pub fn global_filters(&self) -> std::option::Option<&crate::model::PatchFilterGroup> {
+    pub fn global_filters(&self) -> std::option::Option<& crate::model::PatchFilterGroup> {
         self.global_filters.as_ref()
     }
     /// <p>A set of rules used to include patches in the baseline.</p>
-    pub fn approval_rules(&self) -> std::option::Option<&crate::model::PatchRuleGroup> {
+    pub fn approval_rules(&self) -> std::option::Option<& crate::model::PatchRuleGroup> {
         self.approval_rules.as_ref()
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub fn approved_patches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn approved_patches(&self) -> std::option::Option<& [std::string::String]> {
         self.approved_patches.as_deref()
     }
     /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
-    pub fn approved_patches_compliance_level(
-        &self,
-    ) -> std::option::Option<&crate::model::PatchComplianceLevel> {
+    pub fn approved_patches_compliance_level(&self) -> std::option::Option<& crate::model::PatchComplianceLevel> {
         self.approved_patches_compliance_level.as_ref()
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
@@ -131,33 +139,33 @@ impl UpdatePatchBaselineOutput {
         self.approved_patches_enable_non_security
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub fn rejected_patches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rejected_patches(&self) -> std::option::Option<& [std::string::String]> {
         self.rejected_patches.as_deref()
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
-    pub fn rejected_patches_action(&self) -> std::option::Option<&crate::model::PatchAction> {
+    pub fn rejected_patches_action(&self) -> std::option::Option<& crate::model::PatchAction> {
         self.rejected_patches_action.as_ref()
     }
     /// <p>The date when the patch baseline was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the patch baseline was last modified.</p>
-    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_date.as_ref()
     }
     /// <p>A description of the patch baseline.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::PatchSource]> {
         self.sources.as_deref()
     }
 }
 /// See [`UpdatePatchBaselineOutput`](crate::output::UpdatePatchBaselineOutput).
 pub mod update_patch_baseline_output {
-
+    
     /// A builder for [`UpdatePatchBaselineOutput`](crate::output::UpdatePatchBaselineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -167,8 +175,7 @@ pub mod update_patch_baseline_output {
         pub(crate) global_filters: std::option::Option<crate::model::PatchFilterGroup>,
         pub(crate) approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
         pub(crate) approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) approved_patches_compliance_level:
-            std::option::Option<crate::model::PatchComplianceLevel>,
+        pub(crate) approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
         pub(crate) approved_patches_enable_non_security: std::option::Option<bool>,
         pub(crate) rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) rejected_patches_action: std::option::Option<crate::model::PatchAction>,
@@ -185,8 +192,7 @@ pub mod update_patch_baseline_output {
         }
         /// <p>The ID of the deleted patch baseline.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// <p>The name of the patch baseline.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +201,7 @@ pub mod update_patch_baseline_output {
         }
         /// <p>The name of the patch baseline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The operating system rule used by the updated patch baseline.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
@@ -204,12 +209,8 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>The operating system rule used by the updated patch baseline.</p>
-        pub fn set_operating_system(
-            mut self,
-            input: std::option::Option<crate::model::OperatingSystem>,
-        ) -> Self {
-            self.operating_system = input;
-            self
+        pub fn set_operating_system(mut self, input: std::option::Option<crate::model::OperatingSystem>) -> Self {
+            self.operating_system = input; self
         }
         /// <p>A set of global filters used to exclude patches from the baseline.</p>
         pub fn global_filters(mut self, input: crate::model::PatchFilterGroup) -> Self {
@@ -217,12 +218,8 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>A set of global filters used to exclude patches from the baseline.</p>
-        pub fn set_global_filters(
-            mut self,
-            input: std::option::Option<crate::model::PatchFilterGroup>,
-        ) -> Self {
-            self.global_filters = input;
-            self
+        pub fn set_global_filters(mut self, input: std::option::Option<crate::model::PatchFilterGroup>) -> Self {
+            self.global_filters = input; self
         }
         /// <p>A set of rules used to include patches in the baseline.</p>
         pub fn approval_rules(mut self, input: crate::model::PatchRuleGroup) -> Self {
@@ -230,12 +227,8 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>A set of rules used to include patches in the baseline.</p>
-        pub fn set_approval_rules(
-            mut self,
-            input: std::option::Option<crate::model::PatchRuleGroup>,
-        ) -> Self {
-            self.approval_rules = input;
-            self
+        pub fn set_approval_rules(mut self, input: std::option::Option<crate::model::PatchRuleGroup>) -> Self {
+            self.approval_rules = input; self
         }
         /// Appends an item to `approved_patches`.
         ///
@@ -244,33 +237,22 @@ pub mod update_patch_baseline_output {
         /// <p>A list of explicitly approved patches for the baseline.</p>
         pub fn approved_patches(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.approved_patches.unwrap_or_default();
-            v.push(input.into());
-            self.approved_patches = Some(v);
-            self
+                            v.push(input.into());
+                            self.approved_patches = Some(v);
+                            self
         }
         /// <p>A list of explicitly approved patches for the baseline.</p>
-        pub fn set_approved_patches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.approved_patches = input;
-            self
+        pub fn set_approved_patches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.approved_patches = input; self
         }
         /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
-        pub fn approved_patches_compliance_level(
-            mut self,
-            input: crate::model::PatchComplianceLevel,
-        ) -> Self {
+        pub fn approved_patches_compliance_level(mut self, input: crate::model::PatchComplianceLevel) -> Self {
             self.approved_patches_compliance_level = Some(input);
             self
         }
         /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
-        pub fn set_approved_patches_compliance_level(
-            mut self,
-            input: std::option::Option<crate::model::PatchComplianceLevel>,
-        ) -> Self {
-            self.approved_patches_compliance_level = input;
-            self
+        pub fn set_approved_patches_compliance_level(mut self, input: std::option::Option<crate::model::PatchComplianceLevel>) -> Self {
+            self.approved_patches_compliance_level = input; self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
@@ -278,12 +260,8 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
-        pub fn set_approved_patches_enable_non_security(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.approved_patches_enable_non_security = input;
-            self
+        pub fn set_approved_patches_enable_non_security(mut self, input: std::option::Option<bool>) -> Self {
+            self.approved_patches_enable_non_security = input; self
         }
         /// Appends an item to `rejected_patches`.
         ///
@@ -292,17 +270,13 @@ pub mod update_patch_baseline_output {
         /// <p>A list of explicitly rejected patches for the baseline.</p>
         pub fn rejected_patches(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rejected_patches.unwrap_or_default();
-            v.push(input.into());
-            self.rejected_patches = Some(v);
-            self
+                            v.push(input.into());
+                            self.rejected_patches = Some(v);
+                            self
         }
         /// <p>A list of explicitly rejected patches for the baseline.</p>
-        pub fn set_rejected_patches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rejected_patches = input;
-            self
+        pub fn set_rejected_patches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rejected_patches = input; self
         }
         /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
@@ -310,12 +284,8 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
-        pub fn set_rejected_patches_action(
-            mut self,
-            input: std::option::Option<crate::model::PatchAction>,
-        ) -> Self {
-            self.rejected_patches_action = input;
-            self
+        pub fn set_rejected_patches_action(mut self, input: std::option::Option<crate::model::PatchAction>) -> Self {
+            self.rejected_patches_action = input; self
         }
         /// <p>The date when the patch baseline was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -323,12 +293,8 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>The date when the patch baseline was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The date when the patch baseline was last modified.</p>
         pub fn modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -336,12 +302,8 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>The date when the patch baseline was last modified.</p>
-        pub fn set_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_date = input;
-            self
+        pub fn set_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_date = input; self
         }
         /// <p>A description of the patch baseline.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -350,8 +312,7 @@ pub mod update_patch_baseline_output {
         }
         /// <p>A description of the patch baseline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -360,38 +321,50 @@ pub mod update_patch_baseline_output {
         /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePatchBaselineOutput`](crate::output::UpdatePatchBaselineOutput).
         pub fn build(self) -> crate::output::UpdatePatchBaselineOutput {
             crate::output::UpdatePatchBaselineOutput {
-                baseline_id: self.baseline_id,
-                name: self.name,
-                operating_system: self.operating_system,
-                global_filters: self.global_filters,
-                approval_rules: self.approval_rules,
-                approved_patches: self.approved_patches,
-                approved_patches_compliance_level: self.approved_patches_compliance_level,
-                approved_patches_enable_non_security: self.approved_patches_enable_non_security,
-                rejected_patches: self.rejected_patches,
-                rejected_patches_action: self.rejected_patches_action,
-                created_date: self.created_date,
-                modified_date: self.modified_date,
-                description: self.description,
-                sources: self.sources,
+                baseline_id: self.baseline_id
+                ,
+                name: self.name
+                ,
+                operating_system: self.operating_system
+                ,
+                global_filters: self.global_filters
+                ,
+                approval_rules: self.approval_rules
+                ,
+                approved_patches: self.approved_patches
+                ,
+                approved_patches_compliance_level: self.approved_patches_compliance_level
+                ,
+                approved_patches_enable_non_security: self.approved_patches_enable_non_security
+                ,
+                rejected_patches: self.rejected_patches
+                ,
+                rejected_patches_action: self.rejected_patches_action
+                ,
+                created_date: self.created_date
+                ,
+                modified_date: self.modified_date
+                ,
+                description: self.description
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePatchBaselineOutput`](crate::output::UpdatePatchBaselineOutput).
@@ -403,20 +376,20 @@ impl UpdatePatchBaselineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOpsMetadataOutput {
+pub struct UpdateOpsMetadataOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
     #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
 }
 impl UpdateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
-    pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
+    pub fn ops_metadata_arn(&self) -> std::option::Option<& str> {
         self.ops_metadata_arn.as_deref()
     }
 }
 /// See [`UpdateOpsMetadataOutput`](crate::output::UpdateOpsMetadataOutput).
 pub mod update_ops_metadata_output {
-
+    
     /// A builder for [`UpdateOpsMetadataOutput`](crate::output::UpdateOpsMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -429,20 +402,19 @@ pub mod update_ops_metadata_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
-        pub fn set_ops_metadata_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ops_metadata_arn = input;
-            self
+        pub fn set_ops_metadata_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_metadata_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateOpsMetadataOutput`](crate::output::UpdateOpsMetadataOutput).
         pub fn build(self) -> crate::output::UpdateOpsMetadataOutput {
             crate::output::UpdateOpsMetadataOutput {
-                ops_metadata_arn: self.ops_metadata_arn,
+                ops_metadata_arn: self.ops_metadata_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOpsMetadataOutput`](crate::output::UpdateOpsMetadataOutput).
@@ -454,19 +426,24 @@ impl UpdateOpsMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOpsItemOutput {}
+pub struct UpdateOpsItemOutput  {
+}
 /// See [`UpdateOpsItemOutput`](crate::output::UpdateOpsItemOutput).
 pub mod update_ops_item_output {
-
+    
     /// A builder for [`UpdateOpsItemOutput`](crate::output::UpdateOpsItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateOpsItemOutput`](crate::output::UpdateOpsItemOutput).
         pub fn build(self) -> crate::output::UpdateOpsItemOutput {
-            crate::output::UpdateOpsItemOutput {}
+            crate::output::UpdateOpsItemOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateOpsItemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOpsItemOutput`](crate::output::UpdateOpsItemOutput).
@@ -478,19 +455,24 @@ impl UpdateOpsItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateManagedInstanceRoleOutput {}
+pub struct UpdateManagedInstanceRoleOutput  {
+}
 /// See [`UpdateManagedInstanceRoleOutput`](crate::output::UpdateManagedInstanceRoleOutput).
 pub mod update_managed_instance_role_output {
-
+    
     /// A builder for [`UpdateManagedInstanceRoleOutput`](crate::output::UpdateManagedInstanceRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateManagedInstanceRoleOutput`](crate::output::UpdateManagedInstanceRoleOutput).
         pub fn build(self) -> crate::output::UpdateManagedInstanceRoleOutput {
-            crate::output::UpdateManagedInstanceRoleOutput {}
+            crate::output::UpdateManagedInstanceRoleOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateManagedInstanceRoleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateManagedInstanceRoleOutput`](crate::output::UpdateManagedInstanceRoleOutput).
@@ -502,7 +484,7 @@ impl UpdateManagedInstanceRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateMaintenanceWindowTaskOutput {
+pub struct UpdateMaintenanceWindowTaskOutput  {
     /// <p>The ID of the maintenance window that was updated.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -518,20 +500,14 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     #[doc(hidden)]
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The updated parameter values.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The updated parameter values.</p> <note> 
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
     /// </note>
     #[doc(hidden)]
-    pub task_parameters: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            crate::model::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    >,
+    pub task_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The updated parameter values.</p>
     #[doc(hidden)]
-    pub task_invocation_parameters:
-        std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
+    pub task_invocation_parameters: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The updated priority value.</p>
     #[doc(hidden)]
     pub priority: i32,
@@ -541,8 +517,8 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     /// <p>The updated <code>MaxErrors</code> value.</p>
     #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>The updated logging information in Amazon S3.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The updated logging information in Amazon S3.</p> <note> 
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
@@ -561,42 +537,33 @@ pub struct UpdateMaintenanceWindowTaskOutput {
 }
 impl UpdateMaintenanceWindowTaskOutput {
     /// <p>The ID of the maintenance window that was updated.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The task ID of the maintenance window that was updated.</p>
-    pub fn window_task_id(&self) -> std::option::Option<&str> {
+    pub fn window_task_id(&self) -> std::option::Option<& str> {
         self.window_task_id.as_deref()
     }
     /// <p>The updated target values.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::Target]> {
         self.targets.as_deref()
     }
     /// <p>The updated task ARN value.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The updated parameter values.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The updated parameter values.</p> <note> 
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
     /// </note>
-    pub fn task_parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            crate::model::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    > {
+    pub fn task_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>> {
         self.task_parameters.as_ref()
     }
     /// <p>The updated parameter values.</p>
-    pub fn task_invocation_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskInvocationParameters> {
+    pub fn task_invocation_parameters(&self) -> std::option::Option<& crate::model::MaintenanceWindowTaskInvocationParameters> {
         self.task_invocation_parameters.as_ref()
     }
     /// <p>The updated priority value.</p>
@@ -604,39 +571,37 @@ impl UpdateMaintenanceWindowTaskOutput {
         self.priority
     }
     /// <p>The updated <code>MaxConcurrency</code> value.</p>
-    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+    pub fn max_concurrency(&self) -> std::option::Option<& str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The updated <code>MaxErrors</code> value.</p>
-    pub fn max_errors(&self) -> std::option::Option<&str> {
+    pub fn max_errors(&self) -> std::option::Option<& str> {
         self.max_errors.as_deref()
     }
-    /// <p>The updated logging information in Amazon S3.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The updated logging information in Amazon S3.</p> <note> 
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
     /// </note>
-    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+    pub fn logging_info(&self) -> std::option::Option<& crate::model::LoggingInfo> {
         self.logging_info.as_ref()
     }
     /// <p>The updated task name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated task description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-    pub fn cutoff_behavior(
-        &self,
-    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
+    pub fn cutoff_behavior(&self) -> std::option::Option<& crate::model::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+    pub fn alarm_configuration(&self) -> std::option::Option<& crate::model::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
+impl  std::fmt::Debug for UpdateMaintenanceWindowTaskOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceWindowTaskOutput");
         formatter.field("window_id", &self.window_id);
@@ -645,10 +610,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
         formatter.field("task_arn", &self.task_arn);
         formatter.field("service_role_arn", &self.service_role_arn);
         formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "task_invocation_parameters",
-            &self.task_invocation_parameters,
-        );
+        formatter.field("task_invocation_parameters", &self.task_invocation_parameters);
         formatter.field("priority", &self.priority);
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("max_errors", &self.max_errors);
@@ -662,7 +624,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
 }
 /// See [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput).
 pub mod update_maintenance_window_task_output {
-
+    
     /// A builder for [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -671,22 +633,15 @@ pub mod update_maintenance_window_task_output {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) service_role_arn: std::option::Option<std::string::String>,
-        pub(crate) task_parameters: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
-        pub(crate) task_invocation_parameters:
-            std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
+        pub(crate) task_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>,
+        pub(crate) task_invocation_parameters: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) max_concurrency: std::option::Option<std::string::String>,
         pub(crate) max_errors: std::option::Option<std::string::String>,
         pub(crate) logging_info: std::option::Option<crate::model::LoggingInfo>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) cutoff_behavior:
-            std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        pub(crate) cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
         pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
@@ -697,8 +652,7 @@ pub mod update_maintenance_window_task_output {
         }
         /// <p>The ID of the maintenance window that was updated.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// <p>The task ID of the maintenance window that was updated.</p>
         pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -706,12 +660,8 @@ pub mod update_maintenance_window_task_output {
             self
         }
         /// <p>The task ID of the maintenance window that was updated.</p>
-        pub fn set_window_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_task_id = input;
-            self
+        pub fn set_window_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_task_id = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -720,17 +670,13 @@ pub mod update_maintenance_window_task_output {
         /// <p>The updated target values.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The updated target values.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Target>>) -> Self {
+            self.targets = input; self
         }
         /// <p>The updated task ARN value.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -739,8 +685,7 @@ pub mod update_maintenance_window_task_output {
         }
         /// <p>The updated task ARN value.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -748,60 +693,36 @@ pub mod update_maintenance_window_task_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-        pub fn set_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_role_arn = input;
-            self
+        pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role_arn = input; self
         }
         /// Adds a key-value pair to `task_parameters`.
         ///
         /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
         ///
-        /// <p>The updated parameter values.</p> <note>
-        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+        /// <p>The updated parameter values.</p> <note> 
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
         /// </note>
-        pub fn task_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::MaintenanceWindowTaskParameterValueExpression,
-        ) -> Self {
+        pub fn task_parameters(mut self, k: impl Into<std::string::String>, v: crate::model::MaintenanceWindowTaskParameterValueExpression) -> Self {
             let mut hash_map = self.task_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.task_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.task_parameters = Some(hash_map);
+                            self
         }
-        /// <p>The updated parameter values.</p> <note>
-        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+        /// <p>The updated parameter values.</p> <note> 
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
         /// </note>
-        pub fn set_task_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::MaintenanceWindowTaskParameterValueExpression,
-                >,
-            >,
-        ) -> Self {
-            self.task_parameters = input;
-            self
+        pub fn set_task_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>) -> Self {
+            self.task_parameters = input; self
         }
         /// <p>The updated parameter values.</p>
-        pub fn task_invocation_parameters(
-            mut self,
-            input: crate::model::MaintenanceWindowTaskInvocationParameters,
-        ) -> Self {
+        pub fn task_invocation_parameters(mut self, input: crate::model::MaintenanceWindowTaskInvocationParameters) -> Self {
             self.task_invocation_parameters = Some(input);
             self
         }
         /// <p>The updated parameter values.</p>
-        pub fn set_task_invocation_parameters(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
-        ) -> Self {
-            self.task_invocation_parameters = input;
-            self
+        pub fn set_task_invocation_parameters(mut self, input: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>) -> Self {
+            self.task_invocation_parameters = input; self
         }
         /// <p>The updated priority value.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -810,8 +731,7 @@ pub mod update_maintenance_window_task_output {
         }
         /// <p>The updated priority value.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>The updated <code>MaxConcurrency</code> value.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -819,12 +739,8 @@ pub mod update_maintenance_window_task_output {
             self
         }
         /// <p>The updated <code>MaxConcurrency</code> value.</p>
-        pub fn set_max_concurrency(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_concurrency = input;
-            self
+        pub fn set_max_concurrency(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_concurrency = input; self
         }
         /// <p>The updated <code>MaxErrors</code> value.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
@@ -833,25 +749,20 @@ pub mod update_maintenance_window_task_output {
         }
         /// <p>The updated <code>MaxErrors</code> value.</p>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = input;
-            self
+            self.max_errors = input; self
         }
-        /// <p>The updated logging information in Amazon S3.</p> <note>
-        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+        /// <p>The updated logging information in Amazon S3.</p> <note> 
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
             self.logging_info = Some(input);
             self
         }
-        /// <p>The updated logging information in Amazon S3.</p> <note>
-        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+        /// <p>The updated logging information in Amazon S3.</p> <note> 
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
         /// </note>
-        pub fn set_logging_info(
-            mut self,
-            input: std::option::Option<crate::model::LoggingInfo>,
-        ) -> Self {
-            self.logging_info = input;
-            self
+        pub fn set_logging_info(mut self, input: std::option::Option<crate::model::LoggingInfo>) -> Self {
+            self.logging_info = input; self
         }
         /// <p>The updated task name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -860,8 +771,7 @@ pub mod update_maintenance_window_task_output {
         }
         /// <p>The updated task name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The updated task description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -870,24 +780,16 @@ pub mod update_maintenance_window_task_output {
         }
         /// <p>The updated task description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-        pub fn cutoff_behavior(
-            mut self,
-            input: crate::model::MaintenanceWindowTaskCutoffBehavior,
-        ) -> Self {
+        pub fn cutoff_behavior(mut self, input: crate::model::MaintenanceWindowTaskCutoffBehavior) -> Self {
             self.cutoff_behavior = Some(input);
             self
         }
         /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-        pub fn set_cutoff_behavior(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
-        ) -> Self {
-            self.cutoff_behavior = input;
-            self
+        pub fn set_cutoff_behavior(mut self, input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>) -> Self {
+            self.cutoff_behavior = input; self
         }
         /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
         pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
@@ -895,31 +797,43 @@ pub mod update_maintenance_window_task_output {
             self
         }
         /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-        pub fn set_alarm_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AlarmConfiguration>,
-        ) -> Self {
-            self.alarm_configuration = input;
-            self
+        pub fn set_alarm_configuration(mut self, input: std::option::Option<crate::model::AlarmConfiguration>) -> Self {
+            self.alarm_configuration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput).
         pub fn build(self) -> crate::output::UpdateMaintenanceWindowTaskOutput {
             crate::output::UpdateMaintenanceWindowTaskOutput {
-                window_id: self.window_id,
-                window_task_id: self.window_task_id,
-                targets: self.targets,
-                task_arn: self.task_arn,
-                service_role_arn: self.service_role_arn,
-                task_parameters: self.task_parameters,
-                task_invocation_parameters: self.task_invocation_parameters,
-                priority: self.priority.unwrap_or_default(),
-                max_concurrency: self.max_concurrency,
-                max_errors: self.max_errors,
-                logging_info: self.logging_info,
-                name: self.name,
-                description: self.description,
-                cutoff_behavior: self.cutoff_behavior,
-                alarm_configuration: self.alarm_configuration,
+                window_id: self.window_id
+                ,
+                window_task_id: self.window_task_id
+                ,
+                targets: self.targets
+                ,
+                task_arn: self.task_arn
+                ,
+                service_role_arn: self.service_role_arn
+                ,
+                task_parameters: self.task_parameters
+                ,
+                task_invocation_parameters: self.task_invocation_parameters
+                ,
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
+                max_concurrency: self.max_concurrency
+                ,
+                max_errors: self.max_errors
+                ,
+                logging_info: self.logging_info
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                cutoff_behavior: self.cutoff_behavior
+                ,
+                alarm_configuration: self.alarm_configuration
+                ,
             }
         }
     }
@@ -932,10 +846,7 @@ pub mod update_maintenance_window_task_output {
             formatter.field("task_arn", &self.task_arn);
             formatter.field("service_role_arn", &self.service_role_arn);
             formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
-            formatter.field(
-                "task_invocation_parameters",
-                &self.task_invocation_parameters,
-            );
+            formatter.field("task_invocation_parameters", &self.task_invocation_parameters);
             formatter.field("priority", &self.priority);
             formatter.field("max_concurrency", &self.max_concurrency);
             formatter.field("max_errors", &self.max_errors);
@@ -947,6 +858,8 @@ pub mod update_maintenance_window_task_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateMaintenanceWindowTaskOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput).
@@ -958,7 +871,7 @@ impl UpdateMaintenanceWindowTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateMaintenanceWindowTargetOutput {
+pub struct UpdateMaintenanceWindowTargetOutput  {
     /// <p>The maintenance window ID specified in the update request.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -980,31 +893,31 @@ pub struct UpdateMaintenanceWindowTargetOutput {
 }
 impl UpdateMaintenanceWindowTargetOutput {
     /// <p>The maintenance window ID specified in the update request.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The target ID specified in the update request.</p>
-    pub fn window_target_id(&self) -> std::option::Option<&str> {
+    pub fn window_target_id(&self) -> std::option::Option<& str> {
         self.window_target_id.as_deref()
     }
     /// <p>The updated targets.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::Target]> {
         self.targets.as_deref()
     }
     /// <p>The updated owner.</p>
-    pub fn owner_information(&self) -> std::option::Option<&str> {
+    pub fn owner_information(&self) -> std::option::Option<& str> {
         self.owner_information.as_deref()
     }
     /// <p>The updated name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMaintenanceWindowTargetOutput {
+impl  std::fmt::Debug for UpdateMaintenanceWindowTargetOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceWindowTargetOutput");
         formatter.field("window_id", &self.window_id);
@@ -1018,7 +931,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTargetOutput {
 }
 /// See [`UpdateMaintenanceWindowTargetOutput`](crate::output::UpdateMaintenanceWindowTargetOutput).
 pub mod update_maintenance_window_target_output {
-
+    
     /// A builder for [`UpdateMaintenanceWindowTargetOutput`](crate::output::UpdateMaintenanceWindowTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1037,8 +950,7 @@ pub mod update_maintenance_window_target_output {
         }
         /// <p>The maintenance window ID specified in the update request.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// <p>The target ID specified in the update request.</p>
         pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1046,12 +958,8 @@ pub mod update_maintenance_window_target_output {
             self
         }
         /// <p>The target ID specified in the update request.</p>
-        pub fn set_window_target_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_target_id = input;
-            self
+        pub fn set_window_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_target_id = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -1060,17 +968,13 @@ pub mod update_maintenance_window_target_output {
         /// <p>The updated targets.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The updated targets.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Target>>) -> Self {
+            self.targets = input; self
         }
         /// <p>The updated owner.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1078,12 +982,8 @@ pub mod update_maintenance_window_target_output {
             self
         }
         /// <p>The updated owner.</p>
-        pub fn set_owner_information(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_information = input;
-            self
+        pub fn set_owner_information(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_information = input; self
         }
         /// <p>The updated name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1092,8 +992,7 @@ pub mod update_maintenance_window_target_output {
         }
         /// <p>The updated name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The updated description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1102,18 +1001,23 @@ pub mod update_maintenance_window_target_output {
         }
         /// <p>The updated description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTargetOutput`](crate::output::UpdateMaintenanceWindowTargetOutput).
         pub fn build(self) -> crate::output::UpdateMaintenanceWindowTargetOutput {
             crate::output::UpdateMaintenanceWindowTargetOutput {
-                window_id: self.window_id,
-                window_target_id: self.window_target_id,
-                targets: self.targets,
-                owner_information: self.owner_information,
-                name: self.name,
-                description: self.description,
+                window_id: self.window_id
+                ,
+                window_target_id: self.window_target_id
+                ,
+                targets: self.targets
+                ,
+                owner_information: self.owner_information
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
@@ -1129,6 +1033,8 @@ pub mod update_maintenance_window_target_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateMaintenanceWindowTargetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowTargetOutput`](crate::output::UpdateMaintenanceWindowTargetOutput).
@@ -1140,7 +1046,7 @@ impl UpdateMaintenanceWindowTargetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateMaintenanceWindowOutput {
+pub struct UpdateMaintenanceWindowOutput  {
     /// <p>The ID of the created maintenance window.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -1180,31 +1086,31 @@ pub struct UpdateMaintenanceWindowOutput {
 }
 impl UpdateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The name of the maintenance window.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description of the update.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> std::option::Option<& str> {
         self.start_date.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> std::option::Option<& str> {
         self.end_date.as_deref()
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    pub fn schedule(&self) -> std::option::Option<&str> {
+    pub fn schedule(&self) -> std::option::Option<& str> {
         self.schedule.as_deref()
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(&self) -> std::option::Option<&str> {
+    pub fn schedule_timezone(&self) -> std::option::Option<& str> {
         self.schedule_timezone.as_deref()
     }
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
@@ -1228,7 +1134,7 @@ impl UpdateMaintenanceWindowOutput {
         self.enabled
     }
 }
-impl std::fmt::Debug for UpdateMaintenanceWindowOutput {
+impl  std::fmt::Debug for UpdateMaintenanceWindowOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceWindowOutput");
         formatter.field("window_id", &self.window_id);
@@ -1241,17 +1147,14 @@ impl std::fmt::Debug for UpdateMaintenanceWindowOutput {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("enabled", &self.enabled);
         formatter.finish()
     }
 }
 /// See [`UpdateMaintenanceWindowOutput`](crate::output::UpdateMaintenanceWindowOutput).
 pub mod update_maintenance_window_output {
-
+    
     /// A builder for [`UpdateMaintenanceWindowOutput`](crate::output::UpdateMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1276,8 +1179,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>The ID of the created maintenance window.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// <p>The name of the maintenance window.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1286,8 +1188,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>The name of the maintenance window.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>An optional description of the update.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1296,8 +1197,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>An optional description of the update.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1306,8 +1206,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input;
-            self
+            self.start_date = input; self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1316,8 +1215,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_date = input;
-            self
+            self.end_date = input; self
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1326,8 +1224,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schedule = input;
-            self
+            self.schedule = input; self
         }
         /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1335,12 +1232,8 @@ pub mod update_maintenance_window_output {
             self
         }
         /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-        pub fn set_schedule_timezone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_timezone = input;
-            self
+        pub fn set_schedule_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_timezone = input; self
         }
         /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
         pub fn schedule_offset(mut self, input: i32) -> Self {
@@ -1349,8 +1242,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.schedule_offset = input;
-            self
+            self.schedule_offset = input; self
         }
         /// <p>The duration of the maintenance window in hours.</p>
         pub fn duration(mut self, input: i32) -> Self {
@@ -1359,8 +1251,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>The duration of the maintenance window in hours.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
@@ -1369,8 +1260,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
-            self.cutoff = input;
-            self
+            self.cutoff = input; self
         }
         /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
@@ -1379,8 +1269,7 @@ pub mod update_maintenance_window_output {
         }
         /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn set_allow_unassociated_targets(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_unassociated_targets = input;
-            self
+            self.allow_unassociated_targets = input; self
         }
         /// <p>Whether the maintenance window is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -1389,24 +1278,39 @@ pub mod update_maintenance_window_output {
         }
         /// <p>Whether the maintenance window is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMaintenanceWindowOutput`](crate::output::UpdateMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::UpdateMaintenanceWindowOutput {
             crate::output::UpdateMaintenanceWindowOutput {
-                window_id: self.window_id,
-                name: self.name,
-                description: self.description,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                schedule: self.schedule,
-                schedule_timezone: self.schedule_timezone,
-                schedule_offset: self.schedule_offset,
-                duration: self.duration.unwrap_or_default(),
-                cutoff: self.cutoff.unwrap_or_default(),
-                allow_unassociated_targets: self.allow_unassociated_targets.unwrap_or_default(),
-                enabled: self.enabled.unwrap_or_default(),
+                window_id: self.window_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+                schedule: self.schedule
+                ,
+                schedule_timezone: self.schedule_timezone
+                ,
+                schedule_offset: self.schedule_offset
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                cutoff: self.cutoff
+                    .unwrap_or_default()
+                ,
+                allow_unassociated_targets: self.allow_unassociated_targets
+                    .unwrap_or_default()
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -1423,14 +1327,13 @@ pub mod update_maintenance_window_output {
             formatter.field("schedule_offset", &self.schedule_offset);
             formatter.field("duration", &self.duration);
             formatter.field("cutoff", &self.cutoff);
-            formatter.field(
-                "allow_unassociated_targets",
-                &self.allow_unassociated_targets,
-            );
+            formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
             formatter.field("enabled", &self.enabled);
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowOutput`](crate::output::UpdateMaintenanceWindowOutput).
@@ -1442,19 +1345,24 @@ impl UpdateMaintenanceWindowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDocumentMetadataOutput {}
+pub struct UpdateDocumentMetadataOutput  {
+}
 /// See [`UpdateDocumentMetadataOutput`](crate::output::UpdateDocumentMetadataOutput).
 pub mod update_document_metadata_output {
-
+    
     /// A builder for [`UpdateDocumentMetadataOutput`](crate::output::UpdateDocumentMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDocumentMetadataOutput`](crate::output::UpdateDocumentMetadataOutput).
         pub fn build(self) -> crate::output::UpdateDocumentMetadataOutput {
-            crate::output::UpdateDocumentMetadataOutput {}
+            crate::output::UpdateDocumentMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDocumentMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentMetadataOutput`](crate::output::UpdateDocumentMetadataOutput).
@@ -1466,52 +1374,45 @@ impl UpdateDocumentMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDocumentDefaultVersionOutput {
+pub struct UpdateDocumentDefaultVersionOutput  {
     /// <p>The description of a custom document that you want to set as the default version.</p>
     #[doc(hidden)]
     pub description: std::option::Option<crate::model::DocumentDefaultVersionDescription>,
 }
 impl UpdateDocumentDefaultVersionOutput {
     /// <p>The description of a custom document that you want to set as the default version.</p>
-    pub fn description(
-        &self,
-    ) -> std::option::Option<&crate::model::DocumentDefaultVersionDescription> {
+    pub fn description(&self) -> std::option::Option<& crate::model::DocumentDefaultVersionDescription> {
         self.description.as_ref()
     }
 }
 /// See [`UpdateDocumentDefaultVersionOutput`](crate::output::UpdateDocumentDefaultVersionOutput).
 pub mod update_document_default_version_output {
-
+    
     /// A builder for [`UpdateDocumentDefaultVersionOutput`](crate::output::UpdateDocumentDefaultVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) description:
-            std::option::Option<crate::model::DocumentDefaultVersionDescription>,
+        pub(crate) description: std::option::Option<crate::model::DocumentDefaultVersionDescription>,
     }
     impl Builder {
         /// <p>The description of a custom document that you want to set as the default version.</p>
-        pub fn description(
-            mut self,
-            input: crate::model::DocumentDefaultVersionDescription,
-        ) -> Self {
+        pub fn description(mut self, input: crate::model::DocumentDefaultVersionDescription) -> Self {
             self.description = Some(input);
             self
         }
         /// <p>The description of a custom document that you want to set as the default version.</p>
-        pub fn set_description(
-            mut self,
-            input: std::option::Option<crate::model::DocumentDefaultVersionDescription>,
-        ) -> Self {
-            self.description = input;
-            self
+        pub fn set_description(mut self, input: std::option::Option<crate::model::DocumentDefaultVersionDescription>) -> Self {
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDocumentDefaultVersionOutput`](crate::output::UpdateDocumentDefaultVersionOutput).
         pub fn build(self) -> crate::output::UpdateDocumentDefaultVersionOutput {
             crate::output::UpdateDocumentDefaultVersionOutput {
-                description: self.description,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDocumentDefaultVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentDefaultVersionOutput`](crate::output::UpdateDocumentDefaultVersionOutput).
@@ -1523,20 +1424,20 @@ impl UpdateDocumentDefaultVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDocumentOutput {
+pub struct UpdateDocumentOutput  {
     /// <p>A description of the document that was updated.</p>
     #[doc(hidden)]
     pub document_description: std::option::Option<crate::model::DocumentDescription>,
 }
 impl UpdateDocumentOutput {
     /// <p>A description of the document that was updated.</p>
-    pub fn document_description(&self) -> std::option::Option<&crate::model::DocumentDescription> {
+    pub fn document_description(&self) -> std::option::Option<& crate::model::DocumentDescription> {
         self.document_description.as_ref()
     }
 }
 /// See [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
 pub mod update_document_output {
-
+    
     /// A builder for [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1549,20 +1450,19 @@ pub mod update_document_output {
             self
         }
         /// <p>A description of the document that was updated.</p>
-        pub fn set_document_description(
-            mut self,
-            input: std::option::Option<crate::model::DocumentDescription>,
-        ) -> Self {
-            self.document_description = input;
-            self
+        pub fn set_document_description(mut self, input: std::option::Option<crate::model::DocumentDescription>) -> Self {
+            self.document_description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
         pub fn build(self) -> crate::output::UpdateDocumentOutput {
             crate::output::UpdateDocumentOutput {
-                document_description: self.document_description,
+                document_description: self.document_description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDocumentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
@@ -1574,52 +1474,45 @@ impl UpdateDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssociationStatusOutput {
+pub struct UpdateAssociationStatusOutput  {
     /// <p>Information about the association.</p>
     #[doc(hidden)]
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
 impl UpdateAssociationStatusOutput {
     /// <p>Information about the association.</p>
-    pub fn association_description(
-        &self,
-    ) -> std::option::Option<&crate::model::AssociationDescription> {
+    pub fn association_description(&self) -> std::option::Option<& crate::model::AssociationDescription> {
         self.association_description.as_ref()
     }
 }
 /// See [`UpdateAssociationStatusOutput`](crate::output::UpdateAssociationStatusOutput).
 pub mod update_association_status_output {
-
+    
     /// A builder for [`UpdateAssociationStatusOutput`](crate::output::UpdateAssociationStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) association_description:
-            std::option::Option<crate::model::AssociationDescription>,
+        pub(crate) association_description: std::option::Option<crate::model::AssociationDescription>,
     }
     impl Builder {
         /// <p>Information about the association.</p>
-        pub fn association_description(
-            mut self,
-            input: crate::model::AssociationDescription,
-        ) -> Self {
+        pub fn association_description(mut self, input: crate::model::AssociationDescription) -> Self {
             self.association_description = Some(input);
             self
         }
         /// <p>Information about the association.</p>
-        pub fn set_association_description(
-            mut self,
-            input: std::option::Option<crate::model::AssociationDescription>,
-        ) -> Self {
-            self.association_description = input;
-            self
+        pub fn set_association_description(mut self, input: std::option::Option<crate::model::AssociationDescription>) -> Self {
+            self.association_description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAssociationStatusOutput`](crate::output::UpdateAssociationStatusOutput).
         pub fn build(self) -> crate::output::UpdateAssociationStatusOutput {
             crate::output::UpdateAssociationStatusOutput {
-                association_description: self.association_description,
+                association_description: self.association_description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAssociationStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssociationStatusOutput`](crate::output::UpdateAssociationStatusOutput).
@@ -1631,52 +1524,45 @@ impl UpdateAssociationStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssociationOutput {
+pub struct UpdateAssociationOutput  {
     /// <p>The description of the association that was updated.</p>
     #[doc(hidden)]
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
 impl UpdateAssociationOutput {
     /// <p>The description of the association that was updated.</p>
-    pub fn association_description(
-        &self,
-    ) -> std::option::Option<&crate::model::AssociationDescription> {
+    pub fn association_description(&self) -> std::option::Option<& crate::model::AssociationDescription> {
         self.association_description.as_ref()
     }
 }
 /// See [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput).
 pub mod update_association_output {
-
+    
     /// A builder for [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) association_description:
-            std::option::Option<crate::model::AssociationDescription>,
+        pub(crate) association_description: std::option::Option<crate::model::AssociationDescription>,
     }
     impl Builder {
         /// <p>The description of the association that was updated.</p>
-        pub fn association_description(
-            mut self,
-            input: crate::model::AssociationDescription,
-        ) -> Self {
+        pub fn association_description(mut self, input: crate::model::AssociationDescription) -> Self {
             self.association_description = Some(input);
             self
         }
         /// <p>The description of the association that was updated.</p>
-        pub fn set_association_description(
-            mut self,
-            input: std::option::Option<crate::model::AssociationDescription>,
-        ) -> Self {
-            self.association_description = input;
-            self
+        pub fn set_association_description(mut self, input: std::option::Option<crate::model::AssociationDescription>) -> Self {
+            self.association_description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput).
         pub fn build(self) -> crate::output::UpdateAssociationOutput {
             crate::output::UpdateAssociationOutput {
-                association_description: self.association_description,
+                association_description: self.association_description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput).
@@ -1688,7 +1574,7 @@ impl UpdateAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnlabelParameterVersionOutput {
+pub struct UnlabelParameterVersionOutput  {
     /// <p>A list of all labels deleted from the parameter.</p>
     #[doc(hidden)]
     pub removed_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1698,17 +1584,17 @@ pub struct UnlabelParameterVersionOutput {
 }
 impl UnlabelParameterVersionOutput {
     /// <p>A list of all labels deleted from the parameter.</p>
-    pub fn removed_labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn removed_labels(&self) -> std::option::Option<& [std::string::String]> {
         self.removed_labels.as_deref()
     }
     /// <p>The labels that aren't attached to the given parameter version.</p>
-    pub fn invalid_labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn invalid_labels(&self) -> std::option::Option<& [std::string::String]> {
         self.invalid_labels.as_deref()
     }
 }
 /// See [`UnlabelParameterVersionOutput`](crate::output::UnlabelParameterVersionOutput).
 pub mod unlabel_parameter_version_output {
-
+    
     /// A builder for [`UnlabelParameterVersionOutput`](crate::output::UnlabelParameterVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1723,17 +1609,13 @@ pub mod unlabel_parameter_version_output {
         /// <p>A list of all labels deleted from the parameter.</p>
         pub fn removed_labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.removed_labels.unwrap_or_default();
-            v.push(input.into());
-            self.removed_labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.removed_labels = Some(v);
+                            self
         }
         /// <p>A list of all labels deleted from the parameter.</p>
-        pub fn set_removed_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.removed_labels = input;
-            self
+        pub fn set_removed_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.removed_labels = input; self
         }
         /// Appends an item to `invalid_labels`.
         ///
@@ -1742,26 +1624,26 @@ pub mod unlabel_parameter_version_output {
         /// <p>The labels that aren't attached to the given parameter version.</p>
         pub fn invalid_labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.invalid_labels.unwrap_or_default();
-            v.push(input.into());
-            self.invalid_labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.invalid_labels = Some(v);
+                            self
         }
         /// <p>The labels that aren't attached to the given parameter version.</p>
-        pub fn set_invalid_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.invalid_labels = input;
-            self
+        pub fn set_invalid_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.invalid_labels = input; self
         }
         /// Consumes the builder and constructs a [`UnlabelParameterVersionOutput`](crate::output::UnlabelParameterVersionOutput).
         pub fn build(self) -> crate::output::UnlabelParameterVersionOutput {
             crate::output::UnlabelParameterVersionOutput {
-                removed_labels: self.removed_labels,
-                invalid_labels: self.invalid_labels,
+                removed_labels: self.removed_labels
+                ,
+                invalid_labels: self.invalid_labels
+                ,
             }
         }
     }
+    
+    
 }
 impl UnlabelParameterVersionOutput {
     /// Creates a new builder-style object to manufacture [`UnlabelParameterVersionOutput`](crate::output::UnlabelParameterVersionOutput).
@@ -1773,20 +1655,20 @@ impl UnlabelParameterVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateSessionOutput {
+pub struct TerminateSessionOutput  {
     /// <p>The ID of the session that has been terminated.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl TerminateSessionOutput {
     /// <p>The ID of the session that has been terminated.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
 /// See [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
 pub mod terminate_session_output {
-
+    
     /// A builder for [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1800,16 +1682,18 @@ pub mod terminate_session_output {
         }
         /// <p>The ID of the session that has been terminated.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// Consumes the builder and constructs a [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
         pub fn build(self) -> crate::output::TerminateSessionOutput {
             crate::output::TerminateSessionOutput {
-                session_id: self.session_id,
+                session_id: self.session_id
+                ,
             }
         }
     }
+    
+    
 }
 impl TerminateSessionOutput {
     /// Creates a new builder-style object to manufacture [`TerminateSessionOutput`](crate::output::TerminateSessionOutput).
@@ -1821,19 +1705,24 @@ impl TerminateSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopAutomationExecutionOutput {}
+pub struct StopAutomationExecutionOutput  {
+}
 /// See [`StopAutomationExecutionOutput`](crate::output::StopAutomationExecutionOutput).
 pub mod stop_automation_execution_output {
-
+    
     /// A builder for [`StopAutomationExecutionOutput`](crate::output::StopAutomationExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopAutomationExecutionOutput`](crate::output::StopAutomationExecutionOutput).
         pub fn build(self) -> crate::output::StopAutomationExecutionOutput {
-            crate::output::StopAutomationExecutionOutput {}
+            crate::output::StopAutomationExecutionOutput {
+            }
         }
     }
+    
+    
 }
 impl StopAutomationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopAutomationExecutionOutput`](crate::output::StopAutomationExecutionOutput).
@@ -1845,38 +1734,38 @@ impl StopAutomationExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSessionOutput {
+pub struct StartSessionOutput  {
     /// <p>The ID of the session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
     #[doc(hidden)]
     pub token_value: std::option::Option<std::string::String>,
-    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p> 
+    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     #[doc(hidden)]
     pub stream_url: std::option::Option<std::string::String>,
 }
 impl StartSessionOutput {
     /// <p>The ID of the session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
-    pub fn token_value(&self) -> std::option::Option<&str> {
+    pub fn token_value(&self) -> std::option::Option<& str> {
         self.token_value.as_deref()
     }
-    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p> 
+    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
-    pub fn stream_url(&self) -> std::option::Option<&str> {
+    pub fn stream_url(&self) -> std::option::Option<& str> {
         self.stream_url.as_deref()
     }
 }
 /// See [`StartSessionOutput`](crate::output::StartSessionOutput).
 pub mod start_session_output {
-
+    
     /// A builder for [`StartSessionOutput`](crate::output::StartSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1892,8 +1781,7 @@ pub mod start_session_output {
         }
         /// <p>The ID of the session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
         pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1902,32 +1790,35 @@ pub mod start_session_output {
         }
         /// <p>An encrypted token value containing session and caller information. This token is used to authenticate the connection to the managed node, and is valid only long enough to ensure the connection is successful. Never share your session's token.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_value = input;
-            self
+            self.token_value = input; self
         }
-        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
-        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p> 
+        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
         /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
         pub fn stream_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_url = Some(input.into());
             self
         }
-        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>
-        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p> 
+        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
         /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
         pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_url = input;
-            self
+            self.stream_url = input; self
         }
         /// Consumes the builder and constructs a [`StartSessionOutput`](crate::output::StartSessionOutput).
         pub fn build(self) -> crate::output::StartSessionOutput {
             crate::output::StartSessionOutput {
-                session_id: self.session_id,
-                token_value: self.token_value,
-                stream_url: self.stream_url,
+                session_id: self.session_id
+                ,
+                token_value: self.token_value
+                ,
+                stream_url: self.stream_url
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartSessionOutput`](crate::output::StartSessionOutput).
@@ -1939,20 +1830,20 @@ impl StartSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartChangeRequestExecutionOutput {
+pub struct StartChangeRequestExecutionOutput  {
     /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
 impl StartChangeRequestExecutionOutput {
     /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
-    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+    pub fn automation_execution_id(&self) -> std::option::Option<& str> {
         self.automation_execution_id.as_deref()
     }
 }
 /// See [`StartChangeRequestExecutionOutput`](crate::output::StartChangeRequestExecutionOutput).
 pub mod start_change_request_execution_output {
-
+    
     /// A builder for [`StartChangeRequestExecutionOutput`](crate::output::StartChangeRequestExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1965,20 +1856,19 @@ pub mod start_change_request_execution_output {
             self
         }
         /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
-        pub fn set_automation_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.automation_execution_id = input;
-            self
+        pub fn set_automation_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.automation_execution_id = input; self
         }
         /// Consumes the builder and constructs a [`StartChangeRequestExecutionOutput`](crate::output::StartChangeRequestExecutionOutput).
         pub fn build(self) -> crate::output::StartChangeRequestExecutionOutput {
             crate::output::StartChangeRequestExecutionOutput {
-                automation_execution_id: self.automation_execution_id,
+                automation_execution_id: self.automation_execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartChangeRequestExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartChangeRequestExecutionOutput`](crate::output::StartChangeRequestExecutionOutput).
@@ -1990,20 +1880,20 @@ impl StartChangeRequestExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAutomationExecutionOutput {
+pub struct StartAutomationExecutionOutput  {
     /// <p>The unique ID of a newly scheduled automation execution.</p>
     #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
 impl StartAutomationExecutionOutput {
     /// <p>The unique ID of a newly scheduled automation execution.</p>
-    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+    pub fn automation_execution_id(&self) -> std::option::Option<& str> {
         self.automation_execution_id.as_deref()
     }
 }
 /// See [`StartAutomationExecutionOutput`](crate::output::StartAutomationExecutionOutput).
 pub mod start_automation_execution_output {
-
+    
     /// A builder for [`StartAutomationExecutionOutput`](crate::output::StartAutomationExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2016,20 +1906,19 @@ pub mod start_automation_execution_output {
             self
         }
         /// <p>The unique ID of a newly scheduled automation execution.</p>
-        pub fn set_automation_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.automation_execution_id = input;
-            self
+        pub fn set_automation_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.automation_execution_id = input; self
         }
         /// Consumes the builder and constructs a [`StartAutomationExecutionOutput`](crate::output::StartAutomationExecutionOutput).
         pub fn build(self) -> crate::output::StartAutomationExecutionOutput {
             crate::output::StartAutomationExecutionOutput {
-                automation_execution_id: self.automation_execution_id,
+                automation_execution_id: self.automation_execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartAutomationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartAutomationExecutionOutput`](crate::output::StartAutomationExecutionOutput).
@@ -2041,19 +1930,24 @@ impl StartAutomationExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAssociationsOnceOutput {}
+pub struct StartAssociationsOnceOutput  {
+}
 /// See [`StartAssociationsOnceOutput`](crate::output::StartAssociationsOnceOutput).
 pub mod start_associations_once_output {
-
+    
     /// A builder for [`StartAssociationsOnceOutput`](crate::output::StartAssociationsOnceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartAssociationsOnceOutput`](crate::output::StartAssociationsOnceOutput).
         pub fn build(self) -> crate::output::StartAssociationsOnceOutput {
-            crate::output::StartAssociationsOnceOutput {}
+            crate::output::StartAssociationsOnceOutput {
+            }
         }
     }
+    
+    
 }
 impl StartAssociationsOnceOutput {
     /// Creates a new builder-style object to manufacture [`StartAssociationsOnceOutput`](crate::output::StartAssociationsOnceOutput).
@@ -2065,20 +1959,20 @@ impl StartAssociationsOnceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendCommandOutput {
+pub struct SendCommandOutput  {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     #[doc(hidden)]
     pub command: std::option::Option<crate::model::Command>,
 }
 impl SendCommandOutput {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
-    pub fn command(&self) -> std::option::Option<&crate::model::Command> {
+    pub fn command(&self) -> std::option::Option<& crate::model::Command> {
         self.command.as_ref()
     }
 }
 /// See [`SendCommandOutput`](crate::output::SendCommandOutput).
 pub mod send_command_output {
-
+    
     /// A builder for [`SendCommandOutput`](crate::output::SendCommandOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2092,16 +1986,18 @@ pub mod send_command_output {
         }
         /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
         pub fn set_command(mut self, input: std::option::Option<crate::model::Command>) -> Self {
-            self.command = input;
-            self
+            self.command = input; self
         }
         /// Consumes the builder and constructs a [`SendCommandOutput`](crate::output::SendCommandOutput).
         pub fn build(self) -> crate::output::SendCommandOutput {
             crate::output::SendCommandOutput {
-                command: self.command,
+                command: self.command
+                ,
             }
         }
     }
+    
+    
 }
 impl SendCommandOutput {
     /// Creates a new builder-style object to manufacture [`SendCommandOutput`](crate::output::SendCommandOutput).
@@ -2113,19 +2009,24 @@ impl SendCommandOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendAutomationSignalOutput {}
+pub struct SendAutomationSignalOutput  {
+}
 /// See [`SendAutomationSignalOutput`](crate::output::SendAutomationSignalOutput).
 pub mod send_automation_signal_output {
-
+    
     /// A builder for [`SendAutomationSignalOutput`](crate::output::SendAutomationSignalOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendAutomationSignalOutput`](crate::output::SendAutomationSignalOutput).
         pub fn build(self) -> crate::output::SendAutomationSignalOutput {
-            crate::output::SendAutomationSignalOutput {}
+            crate::output::SendAutomationSignalOutput {
+            }
         }
     }
+    
+    
 }
 impl SendAutomationSignalOutput {
     /// Creates a new builder-style object to manufacture [`SendAutomationSignalOutput`](crate::output::SendAutomationSignalOutput).
@@ -2137,38 +2038,38 @@ impl SendAutomationSignalOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResumeSessionOutput {
+pub struct ResumeSessionOutput  {
     /// <p>The ID of the session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
     #[doc(hidden)]
     pub token_value: std::option::Option<std::string::String>,
-    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p> 
+    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     #[doc(hidden)]
     pub stream_url: std::option::Option<std::string::String>,
 }
 impl ResumeSessionOutput {
     /// <p>The ID of the session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
-    pub fn token_value(&self) -> std::option::Option<&str> {
+    pub fn token_value(&self) -> std::option::Option<& str> {
         self.token_value.as_deref()
     }
-    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p> 
+    /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
     /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
-    pub fn stream_url(&self) -> std::option::Option<&str> {
+    pub fn stream_url(&self) -> std::option::Option<& str> {
         self.stream_url.as_deref()
     }
 }
 /// See [`ResumeSessionOutput`](crate::output::ResumeSessionOutput).
 pub mod resume_session_output {
-
+    
     /// A builder for [`ResumeSessionOutput`](crate::output::ResumeSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2184,8 +2085,7 @@ pub mod resume_session_output {
         }
         /// <p>The ID of the session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
         pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2194,32 +2094,35 @@ pub mod resume_session_output {
         }
         /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_value = input;
-            self
+            self.token_value = input; self
         }
-        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p> 
+        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
         /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
         pub fn stream_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_url = Some(input.into());
             self
         }
-        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
-        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p> 
+        /// <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
         /// <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
         pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_url = input;
-            self
+            self.stream_url = input; self
         }
         /// Consumes the builder and constructs a [`ResumeSessionOutput`](crate::output::ResumeSessionOutput).
         pub fn build(self) -> crate::output::ResumeSessionOutput {
             crate::output::ResumeSessionOutput {
-                session_id: self.session_id,
-                token_value: self.token_value,
-                stream_url: self.stream_url,
+                session_id: self.session_id
+                ,
+                token_value: self.token_value
+                ,
+                stream_url: self.stream_url
+                ,
             }
         }
     }
+    
+    
 }
 impl ResumeSessionOutput {
     /// Creates a new builder-style object to manufacture [`ResumeSessionOutput`](crate::output::ResumeSessionOutput).
@@ -2231,20 +2134,20 @@ impl ResumeSessionOutput {
 /// <p>The result body of the ResetServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetServiceSettingOutput {
+pub struct ResetServiceSettingOutput  {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     #[doc(hidden)]
     pub service_setting: std::option::Option<crate::model::ServiceSetting>,
 }
 impl ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
-    pub fn service_setting(&self) -> std::option::Option<&crate::model::ServiceSetting> {
+    pub fn service_setting(&self) -> std::option::Option<& crate::model::ServiceSetting> {
         self.service_setting.as_ref()
     }
 }
 /// See [`ResetServiceSettingOutput`](crate::output::ResetServiceSettingOutput).
 pub mod reset_service_setting_output {
-
+    
     /// A builder for [`ResetServiceSettingOutput`](crate::output::ResetServiceSettingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2257,20 +2160,19 @@ pub mod reset_service_setting_output {
             self
         }
         /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
-        pub fn set_service_setting(
-            mut self,
-            input: std::option::Option<crate::model::ServiceSetting>,
-        ) -> Self {
-            self.service_setting = input;
-            self
+        pub fn set_service_setting(mut self, input: std::option::Option<crate::model::ServiceSetting>) -> Self {
+            self.service_setting = input; self
         }
         /// Consumes the builder and constructs a [`ResetServiceSettingOutput`](crate::output::ResetServiceSettingOutput).
         pub fn build(self) -> crate::output::ResetServiceSettingOutput {
             crate::output::ResetServiceSettingOutput {
-                service_setting: self.service_setting,
+                service_setting: self.service_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetServiceSettingOutput {
     /// Creates a new builder-style object to manufacture [`ResetServiceSettingOutput`](crate::output::ResetServiceSettingOutput).
@@ -2282,19 +2184,24 @@ impl ResetServiceSettingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromResourceOutput {}
+pub struct RemoveTagsFromResourceOutput  {
+}
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
-
+    
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
-            crate::output::RemoveTagsFromResourceOutput {}
+            crate::output::RemoveTagsFromResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
@@ -2306,20 +2213,20 @@ impl RemoveTagsFromResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterTaskWithMaintenanceWindowOutput {
+pub struct RegisterTaskWithMaintenanceWindowOutput  {
     /// <p>The ID of the task in the maintenance window.</p>
     #[doc(hidden)]
     pub window_task_id: std::option::Option<std::string::String>,
 }
 impl RegisterTaskWithMaintenanceWindowOutput {
     /// <p>The ID of the task in the maintenance window.</p>
-    pub fn window_task_id(&self) -> std::option::Option<&str> {
+    pub fn window_task_id(&self) -> std::option::Option<& str> {
         self.window_task_id.as_deref()
     }
 }
 /// See [`RegisterTaskWithMaintenanceWindowOutput`](crate::output::RegisterTaskWithMaintenanceWindowOutput).
 pub mod register_task_with_maintenance_window_output {
-
+    
     /// A builder for [`RegisterTaskWithMaintenanceWindowOutput`](crate::output::RegisterTaskWithMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2332,20 +2239,19 @@ pub mod register_task_with_maintenance_window_output {
             self
         }
         /// <p>The ID of the task in the maintenance window.</p>
-        pub fn set_window_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_task_id = input;
-            self
+        pub fn set_window_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_task_id = input; self
         }
         /// Consumes the builder and constructs a [`RegisterTaskWithMaintenanceWindowOutput`](crate::output::RegisterTaskWithMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::RegisterTaskWithMaintenanceWindowOutput {
             crate::output::RegisterTaskWithMaintenanceWindowOutput {
-                window_task_id: self.window_task_id,
+                window_task_id: self.window_task_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterTaskWithMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTaskWithMaintenanceWindowOutput`](crate::output::RegisterTaskWithMaintenanceWindowOutput).
@@ -2357,20 +2263,20 @@ impl RegisterTaskWithMaintenanceWindowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterTargetWithMaintenanceWindowOutput {
+pub struct RegisterTargetWithMaintenanceWindowOutput  {
     /// <p>The ID of the target definition in this maintenance window.</p>
     #[doc(hidden)]
     pub window_target_id: std::option::Option<std::string::String>,
 }
 impl RegisterTargetWithMaintenanceWindowOutput {
     /// <p>The ID of the target definition in this maintenance window.</p>
-    pub fn window_target_id(&self) -> std::option::Option<&str> {
+    pub fn window_target_id(&self) -> std::option::Option<& str> {
         self.window_target_id.as_deref()
     }
 }
 /// See [`RegisterTargetWithMaintenanceWindowOutput`](crate::output::RegisterTargetWithMaintenanceWindowOutput).
 pub mod register_target_with_maintenance_window_output {
-
+    
     /// A builder for [`RegisterTargetWithMaintenanceWindowOutput`](crate::output::RegisterTargetWithMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2383,20 +2289,19 @@ pub mod register_target_with_maintenance_window_output {
             self
         }
         /// <p>The ID of the target definition in this maintenance window.</p>
-        pub fn set_window_target_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_target_id = input;
-            self
+        pub fn set_window_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_target_id = input; self
         }
         /// Consumes the builder and constructs a [`RegisterTargetWithMaintenanceWindowOutput`](crate::output::RegisterTargetWithMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::RegisterTargetWithMaintenanceWindowOutput {
             crate::output::RegisterTargetWithMaintenanceWindowOutput {
-                window_target_id: self.window_target_id,
+                window_target_id: self.window_target_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterTargetWithMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTargetWithMaintenanceWindowOutput`](crate::output::RegisterTargetWithMaintenanceWindowOutput).
@@ -2408,7 +2313,7 @@ impl RegisterTargetWithMaintenanceWindowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterPatchBaselineForPatchGroupOutput {
+pub struct RegisterPatchBaselineForPatchGroupOutput  {
     /// <p>The ID of the patch baseline the patch group was registered with.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -2418,17 +2323,17 @@ pub struct RegisterPatchBaselineForPatchGroupOutput {
 }
 impl RegisterPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline the patch group was registered with.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch group registered with the patch baseline.</p>
-    pub fn patch_group(&self) -> std::option::Option<&str> {
+    pub fn patch_group(&self) -> std::option::Option<& str> {
         self.patch_group.as_deref()
     }
 }
 /// See [`RegisterPatchBaselineForPatchGroupOutput`](crate::output::RegisterPatchBaselineForPatchGroupOutput).
 pub mod register_patch_baseline_for_patch_group_output {
-
+    
     /// A builder for [`RegisterPatchBaselineForPatchGroupOutput`](crate::output::RegisterPatchBaselineForPatchGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2443,8 +2348,7 @@ pub mod register_patch_baseline_for_patch_group_output {
         }
         /// <p>The ID of the patch baseline the patch group was registered with.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// <p>The name of the patch group registered with the patch baseline.</p>
         pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2453,17 +2357,20 @@ pub mod register_patch_baseline_for_patch_group_output {
         }
         /// <p>The name of the patch group registered with the patch baseline.</p>
         pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.patch_group = input;
-            self
+            self.patch_group = input; self
         }
         /// Consumes the builder and constructs a [`RegisterPatchBaselineForPatchGroupOutput`](crate::output::RegisterPatchBaselineForPatchGroupOutput).
         pub fn build(self) -> crate::output::RegisterPatchBaselineForPatchGroupOutput {
             crate::output::RegisterPatchBaselineForPatchGroupOutput {
-                baseline_id: self.baseline_id,
-                patch_group: self.patch_group,
+                baseline_id: self.baseline_id
+                ,
+                patch_group: self.patch_group
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterPatchBaselineForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`RegisterPatchBaselineForPatchGroupOutput`](crate::output::RegisterPatchBaselineForPatchGroupOutput).
@@ -2475,20 +2382,20 @@ impl RegisterPatchBaselineForPatchGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDefaultPatchBaselineOutput {
+pub struct RegisterDefaultPatchBaselineOutput  {
     /// <p>The ID of the default patch baseline.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl RegisterDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
 /// See [`RegisterDefaultPatchBaselineOutput`](crate::output::RegisterDefaultPatchBaselineOutput).
 pub mod register_default_patch_baseline_output {
-
+    
     /// A builder for [`RegisterDefaultPatchBaselineOutput`](crate::output::RegisterDefaultPatchBaselineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2502,16 +2409,18 @@ pub mod register_default_patch_baseline_output {
         }
         /// <p>The ID of the default patch baseline.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// Consumes the builder and constructs a [`RegisterDefaultPatchBaselineOutput`](crate::output::RegisterDefaultPatchBaselineOutput).
         pub fn build(self) -> crate::output::RegisterDefaultPatchBaselineOutput {
             crate::output::RegisterDefaultPatchBaselineOutput {
-                baseline_id: self.baseline_id,
+                baseline_id: self.baseline_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterDefaultPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDefaultPatchBaselineOutput`](crate::output::RegisterDefaultPatchBaselineOutput).
@@ -2523,7 +2432,7 @@ impl RegisterDefaultPatchBaselineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {
+pub struct PutResourcePolicyOutput  {
     /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
     #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
@@ -2533,17 +2442,17 @@ pub struct PutResourcePolicyOutput {
 }
 impl PutResourcePolicyOutput {
     /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
-    pub fn policy_id(&self) -> std::option::Option<&str> {
+    pub fn policy_id(&self) -> std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>ID of the current policy version.</p>
-    pub fn policy_hash(&self) -> std::option::Option<&str> {
+    pub fn policy_hash(&self) -> std::option::Option<& str> {
         self.policy_hash.as_deref()
     }
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
-
+    
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2558,8 +2467,7 @@ pub mod put_resource_policy_output {
         }
         /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_id = input;
-            self
+            self.policy_id = input; self
         }
         /// <p>ID of the current policy version.</p>
         pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2568,17 +2476,20 @@ pub mod put_resource_policy_output {
         }
         /// <p>ID of the current policy version.</p>
         pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_hash = input;
-            self
+            self.policy_hash = input; self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
-                policy_id: self.policy_id,
-                policy_hash: self.policy_hash,
+                policy_id: self.policy_id
+                ,
+                policy_hash: self.policy_hash
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
@@ -2590,7 +2501,7 @@ impl PutResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutParameterOutput {
+pub struct PutParameterOutput  {
     /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
     #[doc(hidden)]
     pub version: i64,
@@ -2604,13 +2515,13 @@ impl PutParameterOutput {
         self.version
     }
     /// <p>The tier assigned to the parameter.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::model::ParameterTier> {
+    pub fn tier(&self) -> std::option::Option<& crate::model::ParameterTier> {
         self.tier.as_ref()
     }
 }
 /// See [`PutParameterOutput`](crate::output::PutParameterOutput).
 pub mod put_parameter_output {
-
+    
     /// A builder for [`PutParameterOutput`](crate::output::PutParameterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2625,8 +2536,7 @@ pub mod put_parameter_output {
         }
         /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The tier assigned to the parameter.</p>
         pub fn tier(mut self, input: crate::model::ParameterTier) -> Self {
@@ -2635,17 +2545,21 @@ pub mod put_parameter_output {
         }
         /// <p>The tier assigned to the parameter.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::ParameterTier>) -> Self {
-            self.tier = input;
-            self
+            self.tier = input; self
         }
         /// Consumes the builder and constructs a [`PutParameterOutput`](crate::output::PutParameterOutput).
         pub fn build(self) -> crate::output::PutParameterOutput {
             crate::output::PutParameterOutput {
-                version: self.version.unwrap_or_default(),
-                tier: self.tier,
+                version: self.version
+                    .unwrap_or_default()
+                ,
+                tier: self.tier
+                ,
             }
         }
     }
+    
+    
 }
 impl PutParameterOutput {
     /// Creates a new builder-style object to manufacture [`PutParameterOutput`](crate::output::PutParameterOutput).
@@ -2657,20 +2571,20 @@ impl PutParameterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInventoryOutput {
+pub struct PutInventoryOutput  {
     /// <p>Information about the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PutInventoryOutput {
     /// <p>Information about the request.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`PutInventoryOutput`](crate::output::PutInventoryOutput).
 pub mod put_inventory_output {
-
+    
     /// A builder for [`PutInventoryOutput`](crate::output::PutInventoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2684,16 +2598,18 @@ pub mod put_inventory_output {
         }
         /// <p>Information about the request.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`PutInventoryOutput`](crate::output::PutInventoryOutput).
         pub fn build(self) -> crate::output::PutInventoryOutput {
             crate::output::PutInventoryOutput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl PutInventoryOutput {
     /// Creates a new builder-style object to manufacture [`PutInventoryOutput`](crate::output::PutInventoryOutput).
@@ -2705,19 +2621,24 @@ impl PutInventoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutComplianceItemsOutput {}
+pub struct PutComplianceItemsOutput  {
+}
 /// See [`PutComplianceItemsOutput`](crate::output::PutComplianceItemsOutput).
 pub mod put_compliance_items_output {
-
+    
     /// A builder for [`PutComplianceItemsOutput`](crate::output::PutComplianceItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutComplianceItemsOutput`](crate::output::PutComplianceItemsOutput).
         pub fn build(self) -> crate::output::PutComplianceItemsOutput {
-            crate::output::PutComplianceItemsOutput {}
+            crate::output::PutComplianceItemsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutComplianceItemsOutput {
     /// Creates a new builder-style object to manufacture [`PutComplianceItemsOutput`](crate::output::PutComplianceItemsOutput).
@@ -2729,19 +2650,24 @@ impl PutComplianceItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDocumentPermissionOutput {}
+pub struct ModifyDocumentPermissionOutput  {
+}
 /// See [`ModifyDocumentPermissionOutput`](crate::output::ModifyDocumentPermissionOutput).
 pub mod modify_document_permission_output {
-
+    
     /// A builder for [`ModifyDocumentPermissionOutput`](crate::output::ModifyDocumentPermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ModifyDocumentPermissionOutput`](crate::output::ModifyDocumentPermissionOutput).
         pub fn build(self) -> crate::output::ModifyDocumentPermissionOutput {
-            crate::output::ModifyDocumentPermissionOutput {}
+            crate::output::ModifyDocumentPermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl ModifyDocumentPermissionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDocumentPermissionOutput`](crate::output::ModifyDocumentPermissionOutput).
@@ -2753,20 +2679,20 @@ impl ModifyDocumentPermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2780,25 +2706,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tags.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of tags.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2810,35 +2735,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceDataSyncOutput {
+pub struct ListResourceDataSyncOutput  {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
     #[doc(hidden)]
-    pub resource_data_sync_items:
-        std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>,
+    pub resource_data_sync_items: std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceDataSyncOutput {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    pub fn resource_data_sync_items(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourceDataSyncItem]> {
+    pub fn resource_data_sync_items(&self) -> std::option::Option<& [crate::model::ResourceDataSyncItem]> {
         self.resource_data_sync_items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourceDataSyncOutput`](crate::output::ListResourceDataSyncOutput).
 pub mod list_resource_data_sync_output {
-
+    
     /// A builder for [`ListResourceDataSyncOutput`](crate::output::ListResourceDataSyncOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_data_sync_items:
-            std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>,
+        pub(crate) resource_data_sync_items: std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2847,22 +2768,15 @@ pub mod list_resource_data_sync_output {
         /// To override the contents of this collection use [`set_resource_data_sync_items`](Self::set_resource_data_sync_items).
         ///
         /// <p>A list of your current resource data sync configurations and their statuses.</p>
-        pub fn resource_data_sync_items(
-            mut self,
-            input: crate::model::ResourceDataSyncItem,
-        ) -> Self {
+        pub fn resource_data_sync_items(mut self, input: crate::model::ResourceDataSyncItem) -> Self {
             let mut v = self.resource_data_sync_items.unwrap_or_default();
-            v.push(input);
-            self.resource_data_sync_items = Some(v);
-            self
+                            v.push(input);
+                            self.resource_data_sync_items = Some(v);
+                            self
         }
         /// <p>A list of your current resource data sync configurations and their statuses.</p>
-        pub fn set_resource_data_sync_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>,
-        ) -> Self {
-            self.resource_data_sync_items = input;
-            self
+        pub fn set_resource_data_sync_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncItem>>) -> Self {
+            self.resource_data_sync_items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2871,17 +2785,20 @@ pub mod list_resource_data_sync_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceDataSyncOutput`](crate::output::ListResourceDataSyncOutput).
         pub fn build(self) -> crate::output::ListResourceDataSyncOutput {
             crate::output::ListResourceDataSyncOutput {
-                resource_data_sync_items: self.resource_data_sync_items,
-                next_token: self.next_token,
+                resource_data_sync_items: self.resource_data_sync_items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceDataSyncOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceDataSyncOutput`](crate::output::ListResourceDataSyncOutput).
@@ -2893,35 +2810,31 @@ impl ListResourceDataSyncOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceComplianceSummariesOutput {
+pub struct ListResourceComplianceSummariesOutput  {
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     #[doc(hidden)]
-    pub resource_compliance_summary_items:
-        std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
+    pub resource_compliance_summary_items: std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceComplianceSummariesOutput {
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
-    pub fn resource_compliance_summary_items(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourceComplianceSummaryItem]> {
+    pub fn resource_compliance_summary_items(&self) -> std::option::Option<& [crate::model::ResourceComplianceSummaryItem]> {
         self.resource_compliance_summary_items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourceComplianceSummariesOutput`](crate::output::ListResourceComplianceSummariesOutput).
 pub mod list_resource_compliance_summaries_output {
-
+    
     /// A builder for [`ListResourceComplianceSummariesOutput`](crate::output::ListResourceComplianceSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_compliance_summary_items:
-            std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
+        pub(crate) resource_compliance_summary_items: std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2930,22 +2843,15 @@ pub mod list_resource_compliance_summaries_output {
         /// To override the contents of this collection use [`set_resource_compliance_summary_items`](Self::set_resource_compliance_summary_items).
         ///
         /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
-        pub fn resource_compliance_summary_items(
-            mut self,
-            input: crate::model::ResourceComplianceSummaryItem,
-        ) -> Self {
+        pub fn resource_compliance_summary_items(mut self, input: crate::model::ResourceComplianceSummaryItem) -> Self {
             let mut v = self.resource_compliance_summary_items.unwrap_or_default();
-            v.push(input);
-            self.resource_compliance_summary_items = Some(v);
-            self
+                            v.push(input);
+                            self.resource_compliance_summary_items = Some(v);
+                            self
         }
         /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
-        pub fn set_resource_compliance_summary_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
-        ) -> Self {
-            self.resource_compliance_summary_items = input;
-            self
+        pub fn set_resource_compliance_summary_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>) -> Self {
+            self.resource_compliance_summary_items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2954,17 +2860,20 @@ pub mod list_resource_compliance_summaries_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceComplianceSummariesOutput`](crate::output::ListResourceComplianceSummariesOutput).
         pub fn build(self) -> crate::output::ListResourceComplianceSummariesOutput {
             crate::output::ListResourceComplianceSummariesOutput {
-                resource_compliance_summary_items: self.resource_compliance_summary_items,
-                next_token: self.next_token,
+                resource_compliance_summary_items: self.resource_compliance_summary_items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceComplianceSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceComplianceSummariesOutput`](crate::output::ListResourceComplianceSummariesOutput).
@@ -2976,7 +2885,7 @@ impl ListResourceComplianceSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpsMetadataOutput {
+pub struct ListOpsMetadataOutput  {
     /// <p>Returns a list of OpsMetadata objects.</p>
     #[doc(hidden)]
     pub ops_metadata_list: std::option::Option<std::vec::Vec<crate::model::OpsMetadata>>,
@@ -2986,17 +2895,17 @@ pub struct ListOpsMetadataOutput {
 }
 impl ListOpsMetadataOutput {
     /// <p>Returns a list of OpsMetadata objects.</p>
-    pub fn ops_metadata_list(&self) -> std::option::Option<&[crate::model::OpsMetadata]> {
+    pub fn ops_metadata_list(&self) -> std::option::Option<& [crate::model::OpsMetadata]> {
         self.ops_metadata_list.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListOpsMetadataOutput`](crate::output::ListOpsMetadataOutput).
 pub mod list_ops_metadata_output {
-
+    
     /// A builder for [`ListOpsMetadataOutput`](crate::output::ListOpsMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3011,17 +2920,13 @@ pub mod list_ops_metadata_output {
         /// <p>Returns a list of OpsMetadata objects.</p>
         pub fn ops_metadata_list(mut self, input: crate::model::OpsMetadata) -> Self {
             let mut v = self.ops_metadata_list.unwrap_or_default();
-            v.push(input);
-            self.ops_metadata_list = Some(v);
-            self
+                            v.push(input);
+                            self.ops_metadata_list = Some(v);
+                            self
         }
         /// <p>Returns a list of OpsMetadata objects.</p>
-        pub fn set_ops_metadata_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OpsMetadata>>,
-        ) -> Self {
-            self.ops_metadata_list = input;
-            self
+        pub fn set_ops_metadata_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::OpsMetadata>>) -> Self {
+            self.ops_metadata_list = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3030,17 +2935,20 @@ pub mod list_ops_metadata_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOpsMetadataOutput`](crate::output::ListOpsMetadataOutput).
         pub fn build(self) -> crate::output::ListOpsMetadataOutput {
             crate::output::ListOpsMetadataOutput {
-                ops_metadata_list: self.ops_metadata_list,
-                next_token: self.next_token,
+                ops_metadata_list: self.ops_metadata_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`ListOpsMetadataOutput`](crate::output::ListOpsMetadataOutput).
@@ -3052,7 +2960,7 @@ impl ListOpsMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpsItemRelatedItemsOutput {
+pub struct ListOpsItemRelatedItemsOutput  {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -3062,23 +2970,22 @@ pub struct ListOpsItemRelatedItemsOutput {
 }
 impl ListOpsItemRelatedItemsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of related-item resources for the specified OpsItem.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::model::OpsItemRelatedItemSummary]> {
+    pub fn summaries(&self) -> std::option::Option<& [crate::model::OpsItemRelatedItemSummary]> {
         self.summaries.as_deref()
     }
 }
 /// See [`ListOpsItemRelatedItemsOutput`](crate::output::ListOpsItemRelatedItemsOutput).
 pub mod list_ops_item_related_items_output {
-
+    
     /// A builder for [`ListOpsItemRelatedItemsOutput`](crate::output::ListOpsItemRelatedItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) summaries:
-            std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemSummary>>,
+        pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemSummary>>,
     }
     impl Builder {
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -3088,8 +2995,7 @@ pub mod list_ops_item_related_items_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `summaries`.
         ///
@@ -3098,26 +3004,26 @@ pub mod list_ops_item_related_items_output {
         /// <p>A list of related-item resources for the specified OpsItem.</p>
         pub fn summaries(mut self, input: crate::model::OpsItemRelatedItemSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input);
-            self.summaries = Some(v);
-            self
+                            v.push(input);
+                            self.summaries = Some(v);
+                            self
         }
         /// <p>A list of related-item resources for the specified OpsItem.</p>
-        pub fn set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemSummary>>,
-        ) -> Self {
-            self.summaries = input;
-            self
+        pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemSummary>>) -> Self {
+            self.summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListOpsItemRelatedItemsOutput`](crate::output::ListOpsItemRelatedItemsOutput).
         pub fn build(self) -> crate::output::ListOpsItemRelatedItemsOutput {
             crate::output::ListOpsItemRelatedItemsOutput {
-                next_token: self.next_token,
-                summaries: self.summaries,
+                next_token: self.next_token
+                ,
+                summaries: self.summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOpsItemRelatedItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListOpsItemRelatedItemsOutput`](crate::output::ListOpsItemRelatedItemsOutput).
@@ -3129,7 +3035,7 @@ impl ListOpsItemRelatedItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpsItemEventsOutput {
+pub struct ListOpsItemEventsOutput  {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -3139,17 +3045,17 @@ pub struct ListOpsItemEventsOutput {
 }
 impl ListOpsItemEventsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of event information for the specified OpsItems.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::model::OpsItemEventSummary]> {
+    pub fn summaries(&self) -> std::option::Option<& [crate::model::OpsItemEventSummary]> {
         self.summaries.as_deref()
     }
 }
 /// See [`ListOpsItemEventsOutput`](crate::output::ListOpsItemEventsOutput).
 pub mod list_ops_item_events_output {
-
+    
     /// A builder for [`ListOpsItemEventsOutput`](crate::output::ListOpsItemEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3164,8 +3070,7 @@ pub mod list_ops_item_events_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `summaries`.
         ///
@@ -3174,26 +3079,26 @@ pub mod list_ops_item_events_output {
         /// <p>A list of event information for the specified OpsItems.</p>
         pub fn summaries(mut self, input: crate::model::OpsItemEventSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input);
-            self.summaries = Some(v);
-            self
+                            v.push(input);
+                            self.summaries = Some(v);
+                            self
         }
         /// <p>A list of event information for the specified OpsItems.</p>
-        pub fn set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OpsItemEventSummary>>,
-        ) -> Self {
-            self.summaries = input;
-            self
+        pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::OpsItemEventSummary>>) -> Self {
+            self.summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListOpsItemEventsOutput`](crate::output::ListOpsItemEventsOutput).
         pub fn build(self) -> crate::output::ListOpsItemEventsOutput {
             crate::output::ListOpsItemEventsOutput {
-                next_token: self.next_token,
-                summaries: self.summaries,
+                next_token: self.next_token
+                ,
+                summaries: self.summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOpsItemEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListOpsItemEventsOutput`](crate::output::ListOpsItemEventsOutput).
@@ -3205,7 +3110,7 @@ impl ListOpsItemEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInventoryEntriesOutput {
+pub struct ListInventoryEntriesOutput  {
     /// <p>The type of inventory item returned by the request.</p>
     #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
@@ -3220,45 +3125,40 @@ pub struct ListInventoryEntriesOutput {
     pub capture_time: std::option::Option<std::string::String>,
     /// <p>A list of inventory items on the managed node(s).</p>
     #[doc(hidden)]
-    pub entries: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-    >,
+    pub entries: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInventoryEntriesOutput {
     /// <p>The type of inventory item returned by the request.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The inventory schema version used by the managed node(s).</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The time that inventory information was collected for the managed node(s).</p>
-    pub fn capture_time(&self) -> std::option::Option<&str> {
+    pub fn capture_time(&self) -> std::option::Option<& str> {
         self.capture_time.as_deref()
     }
     /// <p>A list of inventory items on the managed node(s).</p>
-    pub fn entries(
-        &self,
-    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
-    {
+    pub fn entries(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, std::string::String>]> {
         self.entries.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInventoryEntriesOutput`](crate::output::ListInventoryEntriesOutput).
 pub mod list_inventory_entries_output {
-
+    
     /// A builder for [`ListInventoryEntriesOutput`](crate::output::ListInventoryEntriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3266,9 +3166,7 @@ pub mod list_inventory_entries_output {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
         pub(crate) capture_time: std::option::Option<std::string::String>,
-        pub(crate) entries: std::option::Option<
-            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-        >,
+        pub(crate) entries: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3279,8 +3177,7 @@ pub mod list_inventory_entries_output {
         }
         /// <p>The type of inventory item returned by the request.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.type_name = input;
-            self
+            self.type_name = input; self
         }
         /// <p>The managed node ID targeted by the request to query inventory information.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3289,8 +3186,7 @@ pub mod list_inventory_entries_output {
         }
         /// <p>The managed node ID targeted by the request to query inventory information.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The inventory schema version used by the managed node(s).</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3298,12 +3194,8 @@ pub mod list_inventory_entries_output {
             self
         }
         /// <p>The inventory schema version used by the managed node(s).</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// <p>The time that inventory information was collected for the managed node(s).</p>
         pub fn capture_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3312,32 +3204,22 @@ pub mod list_inventory_entries_output {
         }
         /// <p>The time that inventory information was collected for the managed node(s).</p>
         pub fn set_capture_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.capture_time = input;
-            self
+            self.capture_time = input; self
         }
         /// Appends an item to `entries`.
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of inventory items on the managed node(s).</p>
-        pub fn entries(
-            mut self,
-            input: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn entries(mut self, input: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>A list of inventory items on the managed node(s).</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-            >,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.entries = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3346,21 +3228,28 @@ pub mod list_inventory_entries_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInventoryEntriesOutput`](crate::output::ListInventoryEntriesOutput).
         pub fn build(self) -> crate::output::ListInventoryEntriesOutput {
             crate::output::ListInventoryEntriesOutput {
-                type_name: self.type_name,
-                instance_id: self.instance_id,
-                schema_version: self.schema_version,
-                capture_time: self.capture_time,
-                entries: self.entries,
-                next_token: self.next_token,
+                type_name: self.type_name
+                ,
+                instance_id: self.instance_id
+                ,
+                schema_version: self.schema_version
+                ,
+                capture_time: self.capture_time
+                ,
+                entries: self.entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInventoryEntriesOutput {
     /// Creates a new builder-style object to manufacture [`ListInventoryEntriesOutput`](crate::output::ListInventoryEntriesOutput).
@@ -3372,7 +3261,7 @@ impl ListInventoryEntriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentVersionsOutput {
+pub struct ListDocumentVersionsOutput  {
     /// <p>The document versions.</p>
     #[doc(hidden)]
     pub document_versions: std::option::Option<std::vec::Vec<crate::model::DocumentVersionInfo>>,
@@ -3382,22 +3271,21 @@ pub struct ListDocumentVersionsOutput {
 }
 impl ListDocumentVersionsOutput {
     /// <p>The document versions.</p>
-    pub fn document_versions(&self) -> std::option::Option<&[crate::model::DocumentVersionInfo]> {
+    pub fn document_versions(&self) -> std::option::Option<& [crate::model::DocumentVersionInfo]> {
         self.document_versions.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDocumentVersionsOutput`](crate::output::ListDocumentVersionsOutput).
 pub mod list_document_versions_output {
-
+    
     /// A builder for [`ListDocumentVersionsOutput`](crate::output::ListDocumentVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) document_versions:
-            std::option::Option<std::vec::Vec<crate::model::DocumentVersionInfo>>,
+        pub(crate) document_versions: std::option::Option<std::vec::Vec<crate::model::DocumentVersionInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3408,17 +3296,13 @@ pub mod list_document_versions_output {
         /// <p>The document versions.</p>
         pub fn document_versions(mut self, input: crate::model::DocumentVersionInfo) -> Self {
             let mut v = self.document_versions.unwrap_or_default();
-            v.push(input);
-            self.document_versions = Some(v);
-            self
+                            v.push(input);
+                            self.document_versions = Some(v);
+                            self
         }
         /// <p>The document versions.</p>
-        pub fn set_document_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentVersionInfo>>,
-        ) -> Self {
-            self.document_versions = input;
-            self
+        pub fn set_document_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentVersionInfo>>) -> Self {
+            self.document_versions = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3427,17 +3311,20 @@ pub mod list_document_versions_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDocumentVersionsOutput`](crate::output::ListDocumentVersionsOutput).
         pub fn build(self) -> crate::output::ListDocumentVersionsOutput {
             crate::output::ListDocumentVersionsOutput {
-                document_versions: self.document_versions,
-                next_token: self.next_token,
+                document_versions: self.document_versions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDocumentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentVersionsOutput`](crate::output::ListDocumentVersionsOutput).
@@ -3449,7 +3336,7 @@ impl ListDocumentVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentsOutput {
+pub struct ListDocumentsOutput  {
     /// <p>The names of the SSM documents.</p>
     #[doc(hidden)]
     pub document_identifiers: std::option::Option<std::vec::Vec<crate::model::DocumentIdentifier>>,
@@ -3459,22 +3346,21 @@ pub struct ListDocumentsOutput {
 }
 impl ListDocumentsOutput {
     /// <p>The names of the SSM documents.</p>
-    pub fn document_identifiers(&self) -> std::option::Option<&[crate::model::DocumentIdentifier]> {
+    pub fn document_identifiers(&self) -> std::option::Option<& [crate::model::DocumentIdentifier]> {
         self.document_identifiers.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDocumentsOutput`](crate::output::ListDocumentsOutput).
 pub mod list_documents_output {
-
+    
     /// A builder for [`ListDocumentsOutput`](crate::output::ListDocumentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) document_identifiers:
-            std::option::Option<std::vec::Vec<crate::model::DocumentIdentifier>>,
+        pub(crate) document_identifiers: std::option::Option<std::vec::Vec<crate::model::DocumentIdentifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3485,17 +3371,13 @@ pub mod list_documents_output {
         /// <p>The names of the SSM documents.</p>
         pub fn document_identifiers(mut self, input: crate::model::DocumentIdentifier) -> Self {
             let mut v = self.document_identifiers.unwrap_or_default();
-            v.push(input);
-            self.document_identifiers = Some(v);
-            self
+                            v.push(input);
+                            self.document_identifiers = Some(v);
+                            self
         }
         /// <p>The names of the SSM documents.</p>
-        pub fn set_document_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentIdentifier>>,
-        ) -> Self {
-            self.document_identifiers = input;
-            self
+        pub fn set_document_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentIdentifier>>) -> Self {
+            self.document_identifiers = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3504,17 +3386,20 @@ pub mod list_documents_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDocumentsOutput`](crate::output::ListDocumentsOutput).
         pub fn build(self) -> crate::output::ListDocumentsOutput {
             crate::output::ListDocumentsOutput {
-                document_identifiers: self.document_identifiers,
-                next_token: self.next_token,
+                document_identifiers: self.document_identifiers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDocumentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentsOutput`](crate::output::ListDocumentsOutput).
@@ -3526,7 +3411,7 @@ impl ListDocumentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentMetadataHistoryOutput {
+pub struct ListDocumentMetadataHistoryOutput  {
     /// <p>The name of the change template.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3545,29 +3430,29 @@ pub struct ListDocumentMetadataHistoryOutput {
 }
 impl ListDocumentMetadataHistoryOutput {
     /// <p>The name of the change template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the change template.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
-    pub fn author(&self) -> std::option::Option<&str> {
+    pub fn author(&self) -> std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>Information about the response to the change template approval request.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentMetadataResponseInfo> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::DocumentMetadataResponseInfo> {
         self.metadata.as_ref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDocumentMetadataHistoryOutput`](crate::output::ListDocumentMetadataHistoryOutput).
 pub mod list_document_metadata_history_output {
-
+    
     /// A builder for [`ListDocumentMetadataHistoryOutput`](crate::output::ListDocumentMetadataHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3585,8 +3470,7 @@ pub mod list_document_metadata_history_output {
         }
         /// <p>The name of the change template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the change template.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3594,12 +3478,8 @@ pub mod list_document_metadata_history_output {
             self
         }
         /// <p>The version of the change template.</p>
-        pub fn set_document_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_version = input;
-            self
+        pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_version = input; self
         }
         /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3608,8 +3488,7 @@ pub mod list_document_metadata_history_output {
         }
         /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.author = input;
-            self
+            self.author = input; self
         }
         /// <p>Information about the response to the change template approval request.</p>
         pub fn metadata(mut self, input: crate::model::DocumentMetadataResponseInfo) -> Self {
@@ -3617,12 +3496,8 @@ pub mod list_document_metadata_history_output {
             self
         }
         /// <p>Information about the response to the change template approval request.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadataResponseInfo>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadataResponseInfo>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3631,20 +3506,26 @@ pub mod list_document_metadata_history_output {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDocumentMetadataHistoryOutput`](crate::output::ListDocumentMetadataHistoryOutput).
         pub fn build(self) -> crate::output::ListDocumentMetadataHistoryOutput {
             crate::output::ListDocumentMetadataHistoryOutput {
-                name: self.name,
-                document_version: self.document_version,
-                author: self.author,
-                metadata: self.metadata,
-                next_token: self.next_token,
+                name: self.name
+                ,
+                document_version: self.document_version
+                ,
+                author: self.author
+                ,
+                metadata: self.metadata
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDocumentMetadataHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentMetadataHistoryOutput`](crate::output::ListDocumentMetadataHistoryOutput).
@@ -3656,35 +3537,31 @@ impl ListDocumentMetadataHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComplianceSummariesOutput {
+pub struct ListComplianceSummariesOutput  {
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
     #[doc(hidden)]
-    pub compliance_summary_items:
-        std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
+    pub compliance_summary_items: std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComplianceSummariesOutput {
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
-    pub fn compliance_summary_items(
-        &self,
-    ) -> std::option::Option<&[crate::model::ComplianceSummaryItem]> {
+    pub fn compliance_summary_items(&self) -> std::option::Option<& [crate::model::ComplianceSummaryItem]> {
         self.compliance_summary_items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListComplianceSummariesOutput`](crate::output::ListComplianceSummariesOutput).
 pub mod list_compliance_summaries_output {
-
+    
     /// A builder for [`ListComplianceSummariesOutput`](crate::output::ListComplianceSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) compliance_summary_items:
-            std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
+        pub(crate) compliance_summary_items: std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3693,22 +3570,15 @@ pub mod list_compliance_summaries_output {
         /// To override the contents of this collection use [`set_compliance_summary_items`](Self::set_compliance_summary_items).
         ///
         /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
-        pub fn compliance_summary_items(
-            mut self,
-            input: crate::model::ComplianceSummaryItem,
-        ) -> Self {
+        pub fn compliance_summary_items(mut self, input: crate::model::ComplianceSummaryItem) -> Self {
             let mut v = self.compliance_summary_items.unwrap_or_default();
-            v.push(input);
-            self.compliance_summary_items = Some(v);
-            self
+                            v.push(input);
+                            self.compliance_summary_items = Some(v);
+                            self
         }
         /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
-        pub fn set_compliance_summary_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>,
-        ) -> Self {
-            self.compliance_summary_items = input;
-            self
+        pub fn set_compliance_summary_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryItem>>) -> Self {
+            self.compliance_summary_items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3717,17 +3587,20 @@ pub mod list_compliance_summaries_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListComplianceSummariesOutput`](crate::output::ListComplianceSummariesOutput).
         pub fn build(self) -> crate::output::ListComplianceSummariesOutput {
             crate::output::ListComplianceSummariesOutput {
-                compliance_summary_items: self.compliance_summary_items,
-                next_token: self.next_token,
+                compliance_summary_items: self.compliance_summary_items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListComplianceSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListComplianceSummariesOutput`](crate::output::ListComplianceSummariesOutput).
@@ -3739,7 +3612,7 @@ impl ListComplianceSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComplianceItemsOutput {
+pub struct ListComplianceItemsOutput  {
     /// <p>A list of compliance information for the specified resource ID. </p>
     #[doc(hidden)]
     pub compliance_items: std::option::Option<std::vec::Vec<crate::model::ComplianceItem>>,
@@ -3749,22 +3622,21 @@ pub struct ListComplianceItemsOutput {
 }
 impl ListComplianceItemsOutput {
     /// <p>A list of compliance information for the specified resource ID. </p>
-    pub fn compliance_items(&self) -> std::option::Option<&[crate::model::ComplianceItem]> {
+    pub fn compliance_items(&self) -> std::option::Option<& [crate::model::ComplianceItem]> {
         self.compliance_items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListComplianceItemsOutput`](crate::output::ListComplianceItemsOutput).
 pub mod list_compliance_items_output {
-
+    
     /// A builder for [`ListComplianceItemsOutput`](crate::output::ListComplianceItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) compliance_items:
-            std::option::Option<std::vec::Vec<crate::model::ComplianceItem>>,
+        pub(crate) compliance_items: std::option::Option<std::vec::Vec<crate::model::ComplianceItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3775,17 +3647,13 @@ pub mod list_compliance_items_output {
         /// <p>A list of compliance information for the specified resource ID. </p>
         pub fn compliance_items(mut self, input: crate::model::ComplianceItem) -> Self {
             let mut v = self.compliance_items.unwrap_or_default();
-            v.push(input);
-            self.compliance_items = Some(v);
-            self
+                            v.push(input);
+                            self.compliance_items = Some(v);
+                            self
         }
         /// <p>A list of compliance information for the specified resource ID. </p>
-        pub fn set_compliance_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComplianceItem>>,
-        ) -> Self {
-            self.compliance_items = input;
-            self
+        pub fn set_compliance_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComplianceItem>>) -> Self {
+            self.compliance_items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3794,17 +3662,20 @@ pub mod list_compliance_items_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListComplianceItemsOutput`](crate::output::ListComplianceItemsOutput).
         pub fn build(self) -> crate::output::ListComplianceItemsOutput {
             crate::output::ListComplianceItemsOutput {
-                compliance_items: self.compliance_items,
-                next_token: self.next_token,
+                compliance_items: self.compliance_items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListComplianceItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListComplianceItemsOutput`](crate::output::ListComplianceItemsOutput).
@@ -3816,7 +3687,7 @@ impl ListComplianceItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCommandsOutput {
+pub struct ListCommandsOutput  {
     /// <p>(Optional) The list of commands requested by the user. </p>
     #[doc(hidden)]
     pub commands: std::option::Option<std::vec::Vec<crate::model::Command>>,
@@ -3826,17 +3697,17 @@ pub struct ListCommandsOutput {
 }
 impl ListCommandsOutput {
     /// <p>(Optional) The list of commands requested by the user. </p>
-    pub fn commands(&self) -> std::option::Option<&[crate::model::Command]> {
+    pub fn commands(&self) -> std::option::Option<& [crate::model::Command]> {
         self.commands.as_deref()
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCommandsOutput`](crate::output::ListCommandsOutput).
 pub mod list_commands_output {
-
+    
     /// A builder for [`ListCommandsOutput`](crate::output::ListCommandsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3851,17 +3722,13 @@ pub mod list_commands_output {
         /// <p>(Optional) The list of commands requested by the user. </p>
         pub fn commands(mut self, input: crate::model::Command) -> Self {
             let mut v = self.commands.unwrap_or_default();
-            v.push(input);
-            self.commands = Some(v);
-            self
+                            v.push(input);
+                            self.commands = Some(v);
+                            self
         }
         /// <p>(Optional) The list of commands requested by the user. </p>
-        pub fn set_commands(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Command>>,
-        ) -> Self {
-            self.commands = input;
-            self
+        pub fn set_commands(mut self, input: std::option::Option<std::vec::Vec<crate::model::Command>>) -> Self {
+            self.commands = input; self
         }
         /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3870,17 +3737,20 @@ pub mod list_commands_output {
         }
         /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCommandsOutput`](crate::output::ListCommandsOutput).
         pub fn build(self) -> crate::output::ListCommandsOutput {
             crate::output::ListCommandsOutput {
-                commands: self.commands,
-                next_token: self.next_token,
+                commands: self.commands
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCommandsOutput {
     /// Creates a new builder-style object to manufacture [`ListCommandsOutput`](crate::output::ListCommandsOutput).
@@ -3892,7 +3762,7 @@ impl ListCommandsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCommandInvocationsOutput {
+pub struct ListCommandInvocationsOutput  {
     /// <p>(Optional) A list of all invocations. </p>
     #[doc(hidden)]
     pub command_invocations: std::option::Option<std::vec::Vec<crate::model::CommandInvocation>>,
@@ -3902,22 +3772,21 @@ pub struct ListCommandInvocationsOutput {
 }
 impl ListCommandInvocationsOutput {
     /// <p>(Optional) A list of all invocations. </p>
-    pub fn command_invocations(&self) -> std::option::Option<&[crate::model::CommandInvocation]> {
+    pub fn command_invocations(&self) -> std::option::Option<& [crate::model::CommandInvocation]> {
         self.command_invocations.as_deref()
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCommandInvocationsOutput`](crate::output::ListCommandInvocationsOutput).
 pub mod list_command_invocations_output {
-
+    
     /// A builder for [`ListCommandInvocationsOutput`](crate::output::ListCommandInvocationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) command_invocations:
-            std::option::Option<std::vec::Vec<crate::model::CommandInvocation>>,
+        pub(crate) command_invocations: std::option::Option<std::vec::Vec<crate::model::CommandInvocation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3928,17 +3797,13 @@ pub mod list_command_invocations_output {
         /// <p>(Optional) A list of all invocations. </p>
         pub fn command_invocations(mut self, input: crate::model::CommandInvocation) -> Self {
             let mut v = self.command_invocations.unwrap_or_default();
-            v.push(input);
-            self.command_invocations = Some(v);
-            self
+                            v.push(input);
+                            self.command_invocations = Some(v);
+                            self
         }
         /// <p>(Optional) A list of all invocations. </p>
-        pub fn set_command_invocations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CommandInvocation>>,
-        ) -> Self {
-            self.command_invocations = input;
-            self
+        pub fn set_command_invocations(mut self, input: std::option::Option<std::vec::Vec<crate::model::CommandInvocation>>) -> Self {
+            self.command_invocations = input; self
         }
         /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3947,17 +3812,20 @@ pub mod list_command_invocations_output {
         }
         /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCommandInvocationsOutput`](crate::output::ListCommandInvocationsOutput).
         pub fn build(self) -> crate::output::ListCommandInvocationsOutput {
             crate::output::ListCommandInvocationsOutput {
-                command_invocations: self.command_invocations,
-                next_token: self.next_token,
+                command_invocations: self.command_invocations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCommandInvocationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCommandInvocationsOutput`](crate::output::ListCommandInvocationsOutput).
@@ -3969,35 +3837,31 @@ impl ListCommandInvocationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociationVersionsOutput {
+pub struct ListAssociationVersionsOutput  {
     /// <p>Information about all versions of the association for the specified association ID.</p>
     #[doc(hidden)]
-    pub association_versions:
-        std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>,
+    pub association_versions: std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
-    pub fn association_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssociationVersionInfo]> {
+    pub fn association_versions(&self) -> std::option::Option<& [crate::model::AssociationVersionInfo]> {
         self.association_versions.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssociationVersionsOutput`](crate::output::ListAssociationVersionsOutput).
 pub mod list_association_versions_output {
-
+    
     /// A builder for [`ListAssociationVersionsOutput`](crate::output::ListAssociationVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) association_versions:
-            std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>,
+        pub(crate) association_versions: std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4008,17 +3872,13 @@ pub mod list_association_versions_output {
         /// <p>Information about all versions of the association for the specified association ID.</p>
         pub fn association_versions(mut self, input: crate::model::AssociationVersionInfo) -> Self {
             let mut v = self.association_versions.unwrap_or_default();
-            v.push(input);
-            self.association_versions = Some(v);
-            self
+                            v.push(input);
+                            self.association_versions = Some(v);
+                            self
         }
         /// <p>Information about all versions of the association for the specified association ID.</p>
-        pub fn set_association_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>,
-        ) -> Self {
-            self.association_versions = input;
-            self
+        pub fn set_association_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociationVersionInfo>>) -> Self {
+            self.association_versions = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4027,17 +3887,20 @@ pub mod list_association_versions_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssociationVersionsOutput`](crate::output::ListAssociationVersionsOutput).
         pub fn build(self) -> crate::output::ListAssociationVersionsOutput {
             crate::output::ListAssociationVersionsOutput {
-                association_versions: self.association_versions,
-                next_token: self.next_token,
+                association_versions: self.association_versions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssociationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationVersionsOutput`](crate::output::ListAssociationVersionsOutput).
@@ -4049,7 +3912,7 @@ impl ListAssociationVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociationsOutput {
+pub struct ListAssociationsOutput  {
     /// <p>The associations.</p>
     #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::Association>>,
@@ -4059,17 +3922,17 @@ pub struct ListAssociationsOutput {
 }
 impl ListAssociationsOutput {
     /// <p>The associations.</p>
-    pub fn associations(&self) -> std::option::Option<&[crate::model::Association]> {
+    pub fn associations(&self) -> std::option::Option<& [crate::model::Association]> {
         self.associations.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssociationsOutput`](crate::output::ListAssociationsOutput).
 pub mod list_associations_output {
-
+    
     /// A builder for [`ListAssociationsOutput`](crate::output::ListAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4084,17 +3947,13 @@ pub mod list_associations_output {
         /// <p>The associations.</p>
         pub fn associations(mut self, input: crate::model::Association) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input);
-            self.associations = Some(v);
-            self
+                            v.push(input);
+                            self.associations = Some(v);
+                            self
         }
         /// <p>The associations.</p>
-        pub fn set_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Association>>,
-        ) -> Self {
-            self.associations = input;
-            self
+        pub fn set_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Association>>) -> Self {
+            self.associations = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4103,17 +3962,20 @@ pub mod list_associations_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssociationsOutput`](crate::output::ListAssociationsOutput).
         pub fn build(self) -> crate::output::ListAssociationsOutput {
             crate::output::ListAssociationsOutput {
-                associations: self.associations,
-                next_token: self.next_token,
+                associations: self.associations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsOutput`](crate::output::ListAssociationsOutput).
@@ -4125,7 +3987,7 @@ impl ListAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelParameterVersionOutput {
+pub struct LabelParameterVersionOutput  {
     /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
     pub invalid_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4135,7 +3997,7 @@ pub struct LabelParameterVersionOutput {
 }
 impl LabelParameterVersionOutput {
     /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn invalid_labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn invalid_labels(&self) -> std::option::Option<& [std::string::String]> {
         self.invalid_labels.as_deref()
     }
     /// <p>The version of the parameter that has been labeled.</p>
@@ -4145,7 +4007,7 @@ impl LabelParameterVersionOutput {
 }
 /// See [`LabelParameterVersionOutput`](crate::output::LabelParameterVersionOutput).
 pub mod label_parameter_version_output {
-
+    
     /// A builder for [`LabelParameterVersionOutput`](crate::output::LabelParameterVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4160,17 +4022,13 @@ pub mod label_parameter_version_output {
         /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn invalid_labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.invalid_labels.unwrap_or_default();
-            v.push(input.into());
-            self.invalid_labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.invalid_labels = Some(v);
+                            self
         }
         /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn set_invalid_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.invalid_labels = input;
-            self
+        pub fn set_invalid_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.invalid_labels = input; self
         }
         /// <p>The version of the parameter that has been labeled.</p>
         pub fn parameter_version(mut self, input: i64) -> Self {
@@ -4179,17 +4037,21 @@ pub mod label_parameter_version_output {
         }
         /// <p>The version of the parameter that has been labeled.</p>
         pub fn set_parameter_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.parameter_version = input;
-            self
+            self.parameter_version = input; self
         }
         /// Consumes the builder and constructs a [`LabelParameterVersionOutput`](crate::output::LabelParameterVersionOutput).
         pub fn build(self) -> crate::output::LabelParameterVersionOutput {
             crate::output::LabelParameterVersionOutput {
-                invalid_labels: self.invalid_labels,
-                parameter_version: self.parameter_version.unwrap_or_default(),
+                invalid_labels: self.invalid_labels
+                ,
+                parameter_version: self.parameter_version
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LabelParameterVersionOutput {
     /// Creates a new builder-style object to manufacture [`LabelParameterVersionOutput`](crate::output::LabelParameterVersionOutput).
@@ -4201,20 +4063,20 @@ impl LabelParameterVersionOutput {
 /// <p>The query result body of the GetServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceSettingOutput {
+pub struct GetServiceSettingOutput  {
     /// <p>The query result of the current service setting.</p>
     #[doc(hidden)]
     pub service_setting: std::option::Option<crate::model::ServiceSetting>,
 }
 impl GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
-    pub fn service_setting(&self) -> std::option::Option<&crate::model::ServiceSetting> {
+    pub fn service_setting(&self) -> std::option::Option<& crate::model::ServiceSetting> {
         self.service_setting.as_ref()
     }
 }
 /// See [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput).
 pub mod get_service_setting_output {
-
+    
     /// A builder for [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4227,20 +4089,19 @@ pub mod get_service_setting_output {
             self
         }
         /// <p>The query result of the current service setting.</p>
-        pub fn set_service_setting(
-            mut self,
-            input: std::option::Option<crate::model::ServiceSetting>,
-        ) -> Self {
-            self.service_setting = input;
-            self
+        pub fn set_service_setting(mut self, input: std::option::Option<crate::model::ServiceSetting>) -> Self {
+            self.service_setting = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput).
         pub fn build(self) -> crate::output::GetServiceSettingOutput {
             crate::output::GetServiceSettingOutput {
-                service_setting: self.service_setting,
+                service_setting: self.service_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceSettingOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput).
@@ -4252,36 +4113,32 @@ impl GetServiceSettingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePoliciesOutput {
+pub struct GetResourcePoliciesOutput  {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of the <code>Policy</code> object.</p>
     #[doc(hidden)]
-    pub policies:
-        std::option::Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>>,
+    pub policies: std::option::Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>>,
 }
 impl GetResourcePoliciesOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of the <code>Policy</code> object.</p>
-    pub fn policies(
-        &self,
-    ) -> std::option::Option<&[crate::model::GetResourcePoliciesResponseEntry]> {
+    pub fn policies(&self) -> std::option::Option<& [crate::model::GetResourcePoliciesResponseEntry]> {
         self.policies.as_deref()
     }
 }
 /// See [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
 pub mod get_resource_policies_output {
-
+    
     /// A builder for [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) policies:
-            std::option::Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>>,
+        pub(crate) policies: std::option::Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>>,
     }
     impl Builder {
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -4291,8 +4148,7 @@ pub mod get_resource_policies_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `policies`.
         ///
@@ -4301,28 +4157,26 @@ pub mod get_resource_policies_output {
         /// <p>An array of the <code>Policy</code> object.</p>
         pub fn policies(mut self, input: crate::model::GetResourcePoliciesResponseEntry) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input);
-            self.policies = Some(v);
-            self
+                            v.push(input);
+                            self.policies = Some(v);
+                            self
         }
         /// <p>An array of the <code>Policy</code> object.</p>
-        pub fn set_policies(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>,
-            >,
-        ) -> Self {
-            self.policies = input;
-            self
+        pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>>) -> Self {
+            self.policies = input; self
         }
         /// Consumes the builder and constructs a [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
         pub fn build(self) -> crate::output::GetResourcePoliciesOutput {
             crate::output::GetResourcePoliciesOutput {
-                next_token: self.next_token,
-                policies: self.policies,
+                next_token: self.next_token
+                ,
+                policies: self.policies
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
@@ -4334,7 +4188,7 @@ impl GetResourcePoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPatchBaselineForPatchGroupOutput {
+pub struct GetPatchBaselineForPatchGroupOutput  {
     /// <p>The ID of the patch baseline that should be used for the patch group.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -4347,21 +4201,21 @@ pub struct GetPatchBaselineForPatchGroupOutput {
 }
 impl GetPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline that should be used for the patch group.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch group.</p>
-    pub fn patch_group(&self) -> std::option::Option<&str> {
+    pub fn patch_group(&self) -> std::option::Option<& str> {
         self.patch_group.as_deref()
     }
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
-    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+    pub fn operating_system(&self) -> std::option::Option<& crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }
 }
 /// See [`GetPatchBaselineForPatchGroupOutput`](crate::output::GetPatchBaselineForPatchGroupOutput).
 pub mod get_patch_baseline_for_patch_group_output {
-
+    
     /// A builder for [`GetPatchBaselineForPatchGroupOutput`](crate::output::GetPatchBaselineForPatchGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4377,8 +4231,7 @@ pub mod get_patch_baseline_for_patch_group_output {
         }
         /// <p>The ID of the patch baseline that should be used for the patch group.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// <p>The name of the patch group.</p>
         pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4387,8 +4240,7 @@ pub mod get_patch_baseline_for_patch_group_output {
         }
         /// <p>The name of the patch group.</p>
         pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.patch_group = input;
-            self
+            self.patch_group = input; self
         }
         /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
@@ -4396,22 +4248,23 @@ pub mod get_patch_baseline_for_patch_group_output {
             self
         }
         /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
-        pub fn set_operating_system(
-            mut self,
-            input: std::option::Option<crate::model::OperatingSystem>,
-        ) -> Self {
-            self.operating_system = input;
-            self
+        pub fn set_operating_system(mut self, input: std::option::Option<crate::model::OperatingSystem>) -> Self {
+            self.operating_system = input; self
         }
         /// Consumes the builder and constructs a [`GetPatchBaselineForPatchGroupOutput`](crate::output::GetPatchBaselineForPatchGroupOutput).
         pub fn build(self) -> crate::output::GetPatchBaselineForPatchGroupOutput {
             crate::output::GetPatchBaselineForPatchGroupOutput {
-                baseline_id: self.baseline_id,
-                patch_group: self.patch_group,
-                operating_system: self.operating_system,
+                baseline_id: self.baseline_id
+                ,
+                patch_group: self.patch_group
+                ,
+                operating_system: self.operating_system
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPatchBaselineForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetPatchBaselineForPatchGroupOutput`](crate::output::GetPatchBaselineForPatchGroupOutput).
@@ -4423,7 +4276,7 @@ impl GetPatchBaselineForPatchGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPatchBaselineOutput {
+pub struct GetPatchBaselineOutput  {
     /// <p>The ID of the retrieved patch baseline.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -4472,33 +4325,31 @@ pub struct GetPatchBaselineOutput {
 }
 impl GetPatchBaselineOutput {
     /// <p>The ID of the retrieved patch baseline.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch baseline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Returns the operating system specified for the patch baseline.</p>
-    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+    pub fn operating_system(&self) -> std::option::Option<& crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
-    pub fn global_filters(&self) -> std::option::Option<&crate::model::PatchFilterGroup> {
+    pub fn global_filters(&self) -> std::option::Option<& crate::model::PatchFilterGroup> {
         self.global_filters.as_ref()
     }
     /// <p>A set of rules used to include patches in the baseline.</p>
-    pub fn approval_rules(&self) -> std::option::Option<&crate::model::PatchRuleGroup> {
+    pub fn approval_rules(&self) -> std::option::Option<& crate::model::PatchRuleGroup> {
         self.approval_rules.as_ref()
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub fn approved_patches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn approved_patches(&self) -> std::option::Option<& [std::string::String]> {
         self.approved_patches.as_deref()
     }
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
-    pub fn approved_patches_compliance_level(
-        &self,
-    ) -> std::option::Option<&crate::model::PatchComplianceLevel> {
+    pub fn approved_patches_compliance_level(&self) -> std::option::Option<& crate::model::PatchComplianceLevel> {
         self.approved_patches_compliance_level.as_ref()
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
@@ -4506,37 +4357,37 @@ impl GetPatchBaselineOutput {
         self.approved_patches_enable_non_security
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub fn rejected_patches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rejected_patches(&self) -> std::option::Option<& [std::string::String]> {
         self.rejected_patches.as_deref()
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
-    pub fn rejected_patches_action(&self) -> std::option::Option<&crate::model::PatchAction> {
+    pub fn rejected_patches_action(&self) -> std::option::Option<& crate::model::PatchAction> {
         self.rejected_patches_action.as_ref()
     }
     /// <p>Patch groups included in the patch baseline.</p>
-    pub fn patch_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn patch_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.patch_groups.as_deref()
     }
     /// <p>The date the patch baseline was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date the patch baseline was last modified.</p>
-    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_date.as_ref()
     }
     /// <p>A description of the patch baseline.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::PatchSource]> {
         self.sources.as_deref()
     }
 }
 /// See [`GetPatchBaselineOutput`](crate::output::GetPatchBaselineOutput).
 pub mod get_patch_baseline_output {
-
+    
     /// A builder for [`GetPatchBaselineOutput`](crate::output::GetPatchBaselineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4546,8 +4397,7 @@ pub mod get_patch_baseline_output {
         pub(crate) global_filters: std::option::Option<crate::model::PatchFilterGroup>,
         pub(crate) approval_rules: std::option::Option<crate::model::PatchRuleGroup>,
         pub(crate) approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) approved_patches_compliance_level:
-            std::option::Option<crate::model::PatchComplianceLevel>,
+        pub(crate) approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
         pub(crate) approved_patches_enable_non_security: std::option::Option<bool>,
         pub(crate) rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) rejected_patches_action: std::option::Option<crate::model::PatchAction>,
@@ -4565,8 +4415,7 @@ pub mod get_patch_baseline_output {
         }
         /// <p>The ID of the retrieved patch baseline.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// <p>The name of the patch baseline.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4575,8 +4424,7 @@ pub mod get_patch_baseline_output {
         }
         /// <p>The name of the patch baseline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Returns the operating system specified for the patch baseline.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
@@ -4584,12 +4432,8 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>Returns the operating system specified for the patch baseline.</p>
-        pub fn set_operating_system(
-            mut self,
-            input: std::option::Option<crate::model::OperatingSystem>,
-        ) -> Self {
-            self.operating_system = input;
-            self
+        pub fn set_operating_system(mut self, input: std::option::Option<crate::model::OperatingSystem>) -> Self {
+            self.operating_system = input; self
         }
         /// <p>A set of global filters used to exclude patches from the baseline.</p>
         pub fn global_filters(mut self, input: crate::model::PatchFilterGroup) -> Self {
@@ -4597,12 +4441,8 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>A set of global filters used to exclude patches from the baseline.</p>
-        pub fn set_global_filters(
-            mut self,
-            input: std::option::Option<crate::model::PatchFilterGroup>,
-        ) -> Self {
-            self.global_filters = input;
-            self
+        pub fn set_global_filters(mut self, input: std::option::Option<crate::model::PatchFilterGroup>) -> Self {
+            self.global_filters = input; self
         }
         /// <p>A set of rules used to include patches in the baseline.</p>
         pub fn approval_rules(mut self, input: crate::model::PatchRuleGroup) -> Self {
@@ -4610,12 +4450,8 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>A set of rules used to include patches in the baseline.</p>
-        pub fn set_approval_rules(
-            mut self,
-            input: std::option::Option<crate::model::PatchRuleGroup>,
-        ) -> Self {
-            self.approval_rules = input;
-            self
+        pub fn set_approval_rules(mut self, input: std::option::Option<crate::model::PatchRuleGroup>) -> Self {
+            self.approval_rules = input; self
         }
         /// Appends an item to `approved_patches`.
         ///
@@ -4624,33 +4460,22 @@ pub mod get_patch_baseline_output {
         /// <p>A list of explicitly approved patches for the baseline.</p>
         pub fn approved_patches(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.approved_patches.unwrap_or_default();
-            v.push(input.into());
-            self.approved_patches = Some(v);
-            self
+                            v.push(input.into());
+                            self.approved_patches = Some(v);
+                            self
         }
         /// <p>A list of explicitly approved patches for the baseline.</p>
-        pub fn set_approved_patches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.approved_patches = input;
-            self
+        pub fn set_approved_patches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.approved_patches = input; self
         }
         /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
-        pub fn approved_patches_compliance_level(
-            mut self,
-            input: crate::model::PatchComplianceLevel,
-        ) -> Self {
+        pub fn approved_patches_compliance_level(mut self, input: crate::model::PatchComplianceLevel) -> Self {
             self.approved_patches_compliance_level = Some(input);
             self
         }
         /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
-        pub fn set_approved_patches_compliance_level(
-            mut self,
-            input: std::option::Option<crate::model::PatchComplianceLevel>,
-        ) -> Self {
-            self.approved_patches_compliance_level = input;
-            self
+        pub fn set_approved_patches_compliance_level(mut self, input: std::option::Option<crate::model::PatchComplianceLevel>) -> Self {
+            self.approved_patches_compliance_level = input; self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
@@ -4658,12 +4483,8 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
-        pub fn set_approved_patches_enable_non_security(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.approved_patches_enable_non_security = input;
-            self
+        pub fn set_approved_patches_enable_non_security(mut self, input: std::option::Option<bool>) -> Self {
+            self.approved_patches_enable_non_security = input; self
         }
         /// Appends an item to `rejected_patches`.
         ///
@@ -4672,17 +4493,13 @@ pub mod get_patch_baseline_output {
         /// <p>A list of explicitly rejected patches for the baseline.</p>
         pub fn rejected_patches(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rejected_patches.unwrap_or_default();
-            v.push(input.into());
-            self.rejected_patches = Some(v);
-            self
+                            v.push(input.into());
+                            self.rejected_patches = Some(v);
+                            self
         }
         /// <p>A list of explicitly rejected patches for the baseline.</p>
-        pub fn set_rejected_patches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rejected_patches = input;
-            self
+        pub fn set_rejected_patches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rejected_patches = input; self
         }
         /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
@@ -4690,12 +4507,8 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
-        pub fn set_rejected_patches_action(
-            mut self,
-            input: std::option::Option<crate::model::PatchAction>,
-        ) -> Self {
-            self.rejected_patches_action = input;
-            self
+        pub fn set_rejected_patches_action(mut self, input: std::option::Option<crate::model::PatchAction>) -> Self {
+            self.rejected_patches_action = input; self
         }
         /// Appends an item to `patch_groups`.
         ///
@@ -4704,17 +4517,13 @@ pub mod get_patch_baseline_output {
         /// <p>Patch groups included in the patch baseline.</p>
         pub fn patch_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.patch_groups.unwrap_or_default();
-            v.push(input.into());
-            self.patch_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.patch_groups = Some(v);
+                            self
         }
         /// <p>Patch groups included in the patch baseline.</p>
-        pub fn set_patch_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.patch_groups = input;
-            self
+        pub fn set_patch_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.patch_groups = input; self
         }
         /// <p>The date the patch baseline was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4722,12 +4531,8 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>The date the patch baseline was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The date the patch baseline was last modified.</p>
         pub fn modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4735,12 +4540,8 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>The date the patch baseline was last modified.</p>
-        pub fn set_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_date = input;
-            self
+        pub fn set_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_date = input; self
         }
         /// <p>A description of the patch baseline.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4749,8 +4550,7 @@ pub mod get_patch_baseline_output {
         }
         /// <p>A description of the patch baseline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -4759,39 +4559,52 @@ pub mod get_patch_baseline_output {
         /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`GetPatchBaselineOutput`](crate::output::GetPatchBaselineOutput).
         pub fn build(self) -> crate::output::GetPatchBaselineOutput {
             crate::output::GetPatchBaselineOutput {
-                baseline_id: self.baseline_id,
-                name: self.name,
-                operating_system: self.operating_system,
-                global_filters: self.global_filters,
-                approval_rules: self.approval_rules,
-                approved_patches: self.approved_patches,
-                approved_patches_compliance_level: self.approved_patches_compliance_level,
-                approved_patches_enable_non_security: self.approved_patches_enable_non_security,
-                rejected_patches: self.rejected_patches,
-                rejected_patches_action: self.rejected_patches_action,
-                patch_groups: self.patch_groups,
-                created_date: self.created_date,
-                modified_date: self.modified_date,
-                description: self.description,
-                sources: self.sources,
+                baseline_id: self.baseline_id
+                ,
+                name: self.name
+                ,
+                operating_system: self.operating_system
+                ,
+                global_filters: self.global_filters
+                ,
+                approval_rules: self.approval_rules
+                ,
+                approved_patches: self.approved_patches
+                ,
+                approved_patches_compliance_level: self.approved_patches_compliance_level
+                ,
+                approved_patches_enable_non_security: self.approved_patches_enable_non_security
+                ,
+                rejected_patches: self.rejected_patches
+                ,
+                rejected_patches_action: self.rejected_patches_action
+                ,
+                patch_groups: self.patch_groups
+                ,
+                created_date: self.created_date
+                ,
+                modified_date: self.modified_date
+                ,
+                description: self.description
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`GetPatchBaselineOutput`](crate::output::GetPatchBaselineOutput).
@@ -4803,7 +4616,7 @@ impl GetPatchBaselineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetParametersByPathOutput {
+pub struct GetParametersByPathOutput  {
     /// <p>A list of parameters found in the specified hierarchy.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -4813,17 +4626,17 @@ pub struct GetParametersByPathOutput {
 }
 impl GetParametersByPathOutput {
     /// <p>A list of parameters found in the specified hierarchy.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetParametersByPathOutput`](crate::output::GetParametersByPathOutput).
 pub mod get_parameters_by_path_output {
-
+    
     /// A builder for [`GetParametersByPathOutput`](crate::output::GetParametersByPathOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4838,17 +4651,13 @@ pub mod get_parameters_by_path_output {
         /// <p>A list of parameters found in the specified hierarchy.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A list of parameters found in the specified hierarchy.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4857,17 +4666,20 @@ pub mod get_parameters_by_path_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetParametersByPathOutput`](crate::output::GetParametersByPathOutput).
         pub fn build(self) -> crate::output::GetParametersByPathOutput {
             crate::output::GetParametersByPathOutput {
-                parameters: self.parameters,
-                next_token: self.next_token,
+                parameters: self.parameters
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetParametersByPathOutput {
     /// Creates a new builder-style object to manufacture [`GetParametersByPathOutput`](crate::output::GetParametersByPathOutput).
@@ -4879,7 +4691,7 @@ impl GetParametersByPathOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetParametersOutput {
+pub struct GetParametersOutput  {
     /// <p>A list of details for a parameter.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -4889,17 +4701,17 @@ pub struct GetParametersOutput {
 }
 impl GetParametersOutput {
     /// <p>A list of details for a parameter.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
-    pub fn invalid_parameters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn invalid_parameters(&self) -> std::option::Option<& [std::string::String]> {
         self.invalid_parameters.as_deref()
     }
 }
 /// See [`GetParametersOutput`](crate::output::GetParametersOutput).
 pub mod get_parameters_output {
-
+    
     /// A builder for [`GetParametersOutput`](crate::output::GetParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4914,17 +4726,13 @@ pub mod get_parameters_output {
         /// <p>A list of details for a parameter.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A list of details for a parameter.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Appends an item to `invalid_parameters`.
         ///
@@ -4933,26 +4741,26 @@ pub mod get_parameters_output {
         /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
         pub fn invalid_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.invalid_parameters.unwrap_or_default();
-            v.push(input.into());
-            self.invalid_parameters = Some(v);
-            self
+                            v.push(input.into());
+                            self.invalid_parameters = Some(v);
+                            self
         }
         /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
-        pub fn set_invalid_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.invalid_parameters = input;
-            self
+        pub fn set_invalid_parameters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.invalid_parameters = input; self
         }
         /// Consumes the builder and constructs a [`GetParametersOutput`](crate::output::GetParametersOutput).
         pub fn build(self) -> crate::output::GetParametersOutput {
             crate::output::GetParametersOutput {
-                parameters: self.parameters,
-                invalid_parameters: self.invalid_parameters,
+                parameters: self.parameters
+                ,
+                invalid_parameters: self.invalid_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl GetParametersOutput {
     /// Creates a new builder-style object to manufacture [`GetParametersOutput`](crate::output::GetParametersOutput).
@@ -4964,7 +4772,7 @@ impl GetParametersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetParameterHistoryOutput {
+pub struct GetParameterHistoryOutput  {
     /// <p>A list of parameters returned by the request.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ParameterHistory>>,
@@ -4974,17 +4782,17 @@ pub struct GetParameterHistoryOutput {
 }
 impl GetParameterHistoryOutput {
     /// <p>A list of parameters returned by the request.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::ParameterHistory]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::ParameterHistory]> {
         self.parameters.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetParameterHistoryOutput`](crate::output::GetParameterHistoryOutput).
 pub mod get_parameter_history_output {
-
+    
     /// A builder for [`GetParameterHistoryOutput`](crate::output::GetParameterHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4999,17 +4807,13 @@ pub mod get_parameter_history_output {
         /// <p>A list of parameters returned by the request.</p>
         pub fn parameters(mut self, input: crate::model::ParameterHistory) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A list of parameters returned by the request.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParameterHistory>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterHistory>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5018,17 +4822,20 @@ pub mod get_parameter_history_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetParameterHistoryOutput`](crate::output::GetParameterHistoryOutput).
         pub fn build(self) -> crate::output::GetParameterHistoryOutput {
             crate::output::GetParameterHistoryOutput {
-                parameters: self.parameters,
-                next_token: self.next_token,
+                parameters: self.parameters
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetParameterHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetParameterHistoryOutput`](crate::output::GetParameterHistoryOutput).
@@ -5040,20 +4847,20 @@ impl GetParameterHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetParameterOutput {
+pub struct GetParameterOutput  {
     /// <p>Information about a parameter.</p>
     #[doc(hidden)]
     pub parameter: std::option::Option<crate::model::Parameter>,
 }
 impl GetParameterOutput {
     /// <p>Information about a parameter.</p>
-    pub fn parameter(&self) -> std::option::Option<&crate::model::Parameter> {
+    pub fn parameter(&self) -> std::option::Option<& crate::model::Parameter> {
         self.parameter.as_ref()
     }
 }
 /// See [`GetParameterOutput`](crate::output::GetParameterOutput).
 pub mod get_parameter_output {
-
+    
     /// A builder for [`GetParameterOutput`](crate::output::GetParameterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5066,20 +4873,19 @@ pub mod get_parameter_output {
             self
         }
         /// <p>Information about a parameter.</p>
-        pub fn set_parameter(
-            mut self,
-            input: std::option::Option<crate::model::Parameter>,
-        ) -> Self {
-            self.parameter = input;
-            self
+        pub fn set_parameter(mut self, input: std::option::Option<crate::model::Parameter>) -> Self {
+            self.parameter = input; self
         }
         /// Consumes the builder and constructs a [`GetParameterOutput`](crate::output::GetParameterOutput).
         pub fn build(self) -> crate::output::GetParameterOutput {
             crate::output::GetParameterOutput {
-                parameter: self.parameter,
+                parameter: self.parameter
+                ,
             }
         }
     }
+    
+    
 }
 impl GetParameterOutput {
     /// Creates a new builder-style object to manufacture [`GetParameterOutput`](crate::output::GetParameterOutput).
@@ -5091,7 +4897,7 @@ impl GetParameterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOpsSummaryOutput {
+pub struct GetOpsSummaryOutput  {
     /// <p>The list of aggregated details and filtered OpsData.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::OpsEntity>>,
@@ -5101,17 +4907,17 @@ pub struct GetOpsSummaryOutput {
 }
 impl GetOpsSummaryOutput {
     /// <p>The list of aggregated details and filtered OpsData.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::OpsEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::OpsEntity]> {
         self.entities.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetOpsSummaryOutput`](crate::output::GetOpsSummaryOutput).
 pub mod get_ops_summary_output {
-
+    
     /// A builder for [`GetOpsSummaryOutput`](crate::output::GetOpsSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5126,17 +4932,13 @@ pub mod get_ops_summary_output {
         /// <p>The list of aggregated details and filtered OpsData.</p>
         pub fn entities(mut self, input: crate::model::OpsEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>The list of aggregated details and filtered OpsData.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OpsEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::OpsEntity>>) -> Self {
+            self.entities = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5145,17 +4947,20 @@ pub mod get_ops_summary_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetOpsSummaryOutput`](crate::output::GetOpsSummaryOutput).
         pub fn build(self) -> crate::output::GetOpsSummaryOutput {
             crate::output::GetOpsSummaryOutput {
-                entities: self.entities,
-                next_token: self.next_token,
+                entities: self.entities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOpsSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetOpsSummaryOutput`](crate::output::GetOpsSummaryOutput).
@@ -5167,47 +4972,39 @@ impl GetOpsSummaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOpsMetadataOutput {
+pub struct GetOpsMetadataOutput  {
     /// <p>The resource ID of the Application Manager application.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>OpsMetadata for an Application Manager application.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
-    >,
+    pub metadata: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetadataValue>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOpsMetadataOutput {
     /// <p>The resource ID of the Application Manager application.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>OpsMetadata for an Application Manager application.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
-    > {
+    pub fn metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::MetadataValue>> {
         self.metadata.as_ref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetOpsMetadataOutput`](crate::output::GetOpsMetadataOutput).
 pub mod get_ops_metadata_output {
-
+    
     /// A builder for [`GetOpsMetadataOutput`](crate::output::GetOpsMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
-        pub(crate) metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
-        >,
+        pub(crate) metadata: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetadataValue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5218,33 +5015,22 @@ pub mod get_ops_metadata_output {
         }
         /// <p>The resource ID of the Application Manager application.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Adds a key-value pair to `metadata`.
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>OpsMetadata for an Application Manager application.</p>
-        pub fn metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::MetadataValue,
-        ) -> Self {
+        pub fn metadata(mut self, k: impl Into<std::string::String>, v: crate::model::MetadataValue) -> Self {
             let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.metadata = Some(hash_map);
+                            self
         }
         /// <p>OpsMetadata for an Application Manager application.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
-            >,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MetadataValue>>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5253,18 +5039,22 @@ pub mod get_ops_metadata_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetOpsMetadataOutput`](crate::output::GetOpsMetadataOutput).
         pub fn build(self) -> crate::output::GetOpsMetadataOutput {
             crate::output::GetOpsMetadataOutput {
-                resource_id: self.resource_id,
-                metadata: self.metadata,
-                next_token: self.next_token,
+                resource_id: self.resource_id
+                ,
+                metadata: self.metadata
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetOpsMetadataOutput`](crate::output::GetOpsMetadataOutput).
@@ -5276,20 +5066,20 @@ impl GetOpsMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOpsItemOutput {
+pub struct GetOpsItemOutput  {
     /// <p>The OpsItem.</p>
     #[doc(hidden)]
     pub ops_item: std::option::Option<crate::model::OpsItem>,
 }
 impl GetOpsItemOutput {
     /// <p>The OpsItem.</p>
-    pub fn ops_item(&self) -> std::option::Option<&crate::model::OpsItem> {
+    pub fn ops_item(&self) -> std::option::Option<& crate::model::OpsItem> {
         self.ops_item.as_ref()
     }
 }
 /// See [`GetOpsItemOutput`](crate::output::GetOpsItemOutput).
 pub mod get_ops_item_output {
-
+    
     /// A builder for [`GetOpsItemOutput`](crate::output::GetOpsItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5303,16 +5093,18 @@ pub mod get_ops_item_output {
         }
         /// <p>The OpsItem.</p>
         pub fn set_ops_item(mut self, input: std::option::Option<crate::model::OpsItem>) -> Self {
-            self.ops_item = input;
-            self
+            self.ops_item = input; self
         }
         /// Consumes the builder and constructs a [`GetOpsItemOutput`](crate::output::GetOpsItemOutput).
         pub fn build(self) -> crate::output::GetOpsItemOutput {
             crate::output::GetOpsItemOutput {
-                ops_item: self.ops_item,
+                ops_item: self.ops_item
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOpsItemOutput {
     /// Creates a new builder-style object to manufacture [`GetOpsItemOutput`](crate::output::GetOpsItemOutput).
@@ -5324,7 +5116,7 @@ impl GetOpsItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetMaintenanceWindowTaskOutput {
+pub struct GetMaintenanceWindowTaskOutput  {
     /// <p>The retrieved maintenance window ID.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -5343,35 +5135,29 @@ pub struct GetMaintenanceWindowTaskOutput {
     /// <p>The type of task to run.</p>
     #[doc(hidden)]
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-    /// <p>The parameters to pass to the task when it runs.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The parameters to pass to the task when it runs.</p> <note> 
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
     /// </note>
     #[doc(hidden)]
-    pub task_parameters: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            crate::model::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    >,
+    pub task_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The parameters to pass to the task when it runs.</p>
     #[doc(hidden)]
-    pub task_invocation_parameters:
-        std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
+    pub task_invocation_parameters: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     #[doc(hidden)]
     pub priority: i32,
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note> 
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p> 
     /// </note>
     #[doc(hidden)]
     pub max_concurrency: std::option::Option<std::string::String>,
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note> 
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p> 
     /// </note>
     #[doc(hidden)]
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note> 
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
@@ -5390,90 +5176,79 @@ pub struct GetMaintenanceWindowTaskOutput {
 }
 impl GetMaintenanceWindowTaskOutput {
     /// <p>The retrieved maintenance window ID.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The retrieved maintenance window task ID.</p>
-    pub fn window_task_id(&self) -> std::option::Option<&str> {
+    pub fn window_task_id(&self) -> std::option::Option<& str> {
         self.window_task_id.as_deref()
     }
     /// <p>The targets where the task should run.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::Target]> {
         self.targets.as_deref()
     }
     /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>The type of task to run.</p>
-    pub fn task_type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
+    pub fn task_type(&self) -> std::option::Option<& crate::model::MaintenanceWindowTaskType> {
         self.task_type.as_ref()
     }
-    /// <p>The parameters to pass to the task when it runs.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The parameters to pass to the task when it runs.</p> <note> 
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
     /// </note>
-    pub fn task_parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            crate::model::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    > {
+    pub fn task_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>> {
         self.task_parameters.as_ref()
     }
     /// <p>The parameters to pass to the task when it runs.</p>
-    pub fn task_invocation_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskInvocationParameters> {
+    pub fn task_invocation_parameters(&self) -> std::option::Option<& crate::model::MaintenanceWindowTaskInvocationParameters> {
         self.task_invocation_parameters.as_ref()
     }
     /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note> 
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p> 
     /// </note>
-    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+    pub fn max_concurrency(&self) -> std::option::Option<& str> {
         self.max_concurrency.as_deref()
     }
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
-    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note> 
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p> 
     /// </note>
-    pub fn max_errors(&self) -> std::option::Option<&str> {
+    pub fn max_errors(&self) -> std::option::Option<& str> {
         self.max_errors.as_deref()
     }
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note> 
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
     /// </note>
-    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+    pub fn logging_info(&self) -> std::option::Option<& crate::model::LoggingInfo> {
         self.logging_info.as_ref()
     }
     /// <p>The retrieved task name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The retrieved task description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
-    pub fn cutoff_behavior(
-        &self,
-    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
+    pub fn cutoff_behavior(&self) -> std::option::Option<& crate::model::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+    pub fn alarm_configuration(&self) -> std::option::Option<& crate::model::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
+impl  std::fmt::Debug for GetMaintenanceWindowTaskOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowTaskOutput");
         formatter.field("window_id", &self.window_id);
@@ -5483,10 +5258,7 @@ impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
         formatter.field("service_role_arn", &self.service_role_arn);
         formatter.field("task_type", &self.task_type);
         formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "task_invocation_parameters",
-            &self.task_invocation_parameters,
-        );
+        formatter.field("task_invocation_parameters", &self.task_invocation_parameters);
         formatter.field("priority", &self.priority);
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("max_errors", &self.max_errors);
@@ -5500,7 +5272,7 @@ impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
 }
 /// See [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput).
 pub mod get_maintenance_window_task_output {
-
+    
     /// A builder for [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5510,22 +5282,15 @@ pub mod get_maintenance_window_task_output {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) service_role_arn: std::option::Option<std::string::String>,
         pub(crate) task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-        pub(crate) task_parameters: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
-        pub(crate) task_invocation_parameters:
-            std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
+        pub(crate) task_parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>,
+        pub(crate) task_invocation_parameters: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) max_concurrency: std::option::Option<std::string::String>,
         pub(crate) max_errors: std::option::Option<std::string::String>,
         pub(crate) logging_info: std::option::Option<crate::model::LoggingInfo>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) cutoff_behavior:
-            std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        pub(crate) cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
         pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
     }
     impl Builder {
@@ -5536,8 +5301,7 @@ pub mod get_maintenance_window_task_output {
         }
         /// <p>The retrieved maintenance window ID.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// <p>The retrieved maintenance window task ID.</p>
         pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5545,12 +5309,8 @@ pub mod get_maintenance_window_task_output {
             self
         }
         /// <p>The retrieved maintenance window task ID.</p>
-        pub fn set_window_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_task_id = input;
-            self
+        pub fn set_window_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_task_id = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -5559,17 +5319,13 @@ pub mod get_maintenance_window_task_output {
         /// <p>The targets where the task should run.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The targets where the task should run.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Target>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Target>>) -> Self {
+            self.targets = input; self
         }
         /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5578,8 +5334,7 @@ pub mod get_maintenance_window_task_output {
         }
         /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5587,12 +5342,8 @@ pub mod get_maintenance_window_task_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-        pub fn set_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_role_arn = input;
-            self
+        pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role_arn = input; self
         }
         /// <p>The type of task to run.</p>
         pub fn task_type(mut self, input: crate::model::MaintenanceWindowTaskType) -> Self {
@@ -5600,60 +5351,36 @@ pub mod get_maintenance_window_task_output {
             self
         }
         /// <p>The type of task to run.</p>
-        pub fn set_task_type(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-        ) -> Self {
-            self.task_type = input;
-            self
+        pub fn set_task_type(mut self, input: std::option::Option<crate::model::MaintenanceWindowTaskType>) -> Self {
+            self.task_type = input; self
         }
         /// Adds a key-value pair to `task_parameters`.
         ///
         /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
         ///
-        /// <p>The parameters to pass to the task when it runs.</p> <note>
-        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+        /// <p>The parameters to pass to the task when it runs.</p> <note> 
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
         /// </note>
-        pub fn task_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::MaintenanceWindowTaskParameterValueExpression,
-        ) -> Self {
+        pub fn task_parameters(mut self, k: impl Into<std::string::String>, v: crate::model::MaintenanceWindowTaskParameterValueExpression) -> Self {
             let mut hash_map = self.task_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.task_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.task_parameters = Some(hash_map);
+                            self
         }
-        /// <p>The parameters to pass to the task when it runs.</p> <note>
-        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+        /// <p>The parameters to pass to the task when it runs.</p> <note> 
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
         /// </note>
-        pub fn set_task_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::MaintenanceWindowTaskParameterValueExpression,
-                >,
-            >,
-        ) -> Self {
-            self.task_parameters = input;
-            self
+        pub fn set_task_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>) -> Self {
+            self.task_parameters = input; self
         }
         /// <p>The parameters to pass to the task when it runs.</p>
-        pub fn task_invocation_parameters(
-            mut self,
-            input: crate::model::MaintenanceWindowTaskInvocationParameters,
-        ) -> Self {
+        pub fn task_invocation_parameters(mut self, input: crate::model::MaintenanceWindowTaskInvocationParameters) -> Self {
             self.task_invocation_parameters = Some(input);
             self
         }
         /// <p>The parameters to pass to the task when it runs.</p>
-        pub fn set_task_invocation_parameters(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
-        ) -> Self {
-            self.task_invocation_parameters = input;
-            self
+        pub fn set_task_invocation_parameters(mut self, input: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>) -> Self {
+            self.task_invocation_parameters = input; self
         }
         /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -5662,56 +5389,46 @@ pub mod get_maintenance_window_task_output {
         }
         /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
-        /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+        /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note> 
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p> 
         /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
         }
-        /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+        /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note> 
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p> 
         /// </note>
-        pub fn set_max_concurrency(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_concurrency = input;
-            self
+        pub fn set_max_concurrency(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_concurrency = input; self
         }
-        /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+        /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note> 
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p> 
         /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
         }
-        /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
+        /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note> 
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p> 
         /// </note>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = input;
-            self
+            self.max_errors = input; self
         }
-        /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
-        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+        /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note> 
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
             self.logging_info = Some(input);
             self
         }
-        /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
-        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+        /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note> 
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
         /// </note>
-        pub fn set_logging_info(
-            mut self,
-            input: std::option::Option<crate::model::LoggingInfo>,
-        ) -> Self {
-            self.logging_info = input;
-            self
+        pub fn set_logging_info(mut self, input: std::option::Option<crate::model::LoggingInfo>) -> Self {
+            self.logging_info = input; self
         }
         /// <p>The retrieved task name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5720,8 +5437,7 @@ pub mod get_maintenance_window_task_output {
         }
         /// <p>The retrieved task name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The retrieved task description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5730,24 +5446,16 @@ pub mod get_maintenance_window_task_output {
         }
         /// <p>The retrieved task description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
-        pub fn cutoff_behavior(
-            mut self,
-            input: crate::model::MaintenanceWindowTaskCutoffBehavior,
-        ) -> Self {
+        pub fn cutoff_behavior(mut self, input: crate::model::MaintenanceWindowTaskCutoffBehavior) -> Self {
             self.cutoff_behavior = Some(input);
             self
         }
         /// <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
-        pub fn set_cutoff_behavior(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
-        ) -> Self {
-            self.cutoff_behavior = input;
-            self
+        pub fn set_cutoff_behavior(mut self, input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>) -> Self {
+            self.cutoff_behavior = input; self
         }
         /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
         pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
@@ -5755,32 +5463,45 @@ pub mod get_maintenance_window_task_output {
             self
         }
         /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-        pub fn set_alarm_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AlarmConfiguration>,
-        ) -> Self {
-            self.alarm_configuration = input;
-            self
+        pub fn set_alarm_configuration(mut self, input: std::option::Option<crate::model::AlarmConfiguration>) -> Self {
+            self.alarm_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput).
         pub fn build(self) -> crate::output::GetMaintenanceWindowTaskOutput {
             crate::output::GetMaintenanceWindowTaskOutput {
-                window_id: self.window_id,
-                window_task_id: self.window_task_id,
-                targets: self.targets,
-                task_arn: self.task_arn,
-                service_role_arn: self.service_role_arn,
-                task_type: self.task_type,
-                task_parameters: self.task_parameters,
-                task_invocation_parameters: self.task_invocation_parameters,
-                priority: self.priority.unwrap_or_default(),
-                max_concurrency: self.max_concurrency,
-                max_errors: self.max_errors,
-                logging_info: self.logging_info,
-                name: self.name,
-                description: self.description,
-                cutoff_behavior: self.cutoff_behavior,
-                alarm_configuration: self.alarm_configuration,
+                window_id: self.window_id
+                ,
+                window_task_id: self.window_task_id
+                ,
+                targets: self.targets
+                ,
+                task_arn: self.task_arn
+                ,
+                service_role_arn: self.service_role_arn
+                ,
+                task_type: self.task_type
+                ,
+                task_parameters: self.task_parameters
+                ,
+                task_invocation_parameters: self.task_invocation_parameters
+                ,
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
+                max_concurrency: self.max_concurrency
+                ,
+                max_errors: self.max_errors
+                ,
+                logging_info: self.logging_info
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                cutoff_behavior: self.cutoff_behavior
+                ,
+                alarm_configuration: self.alarm_configuration
+                ,
             }
         }
     }
@@ -5794,10 +5515,7 @@ pub mod get_maintenance_window_task_output {
             formatter.field("service_role_arn", &self.service_role_arn);
             formatter.field("task_type", &self.task_type);
             formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
-            formatter.field(
-                "task_invocation_parameters",
-                &self.task_invocation_parameters,
-            );
+            formatter.field("task_invocation_parameters", &self.task_invocation_parameters);
             formatter.field("priority", &self.priority);
             formatter.field("max_concurrency", &self.max_concurrency);
             formatter.field("max_errors", &self.max_errors);
@@ -5809,6 +5527,8 @@ pub mod get_maintenance_window_task_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetMaintenanceWindowTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput).
@@ -5820,7 +5540,7 @@ impl GetMaintenanceWindowTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetMaintenanceWindowExecutionTaskInvocationOutput {
+pub struct GetMaintenanceWindowExecutionTaskInvocationOutput  {
     /// <p>The maintenance window execution ID.</p>
     #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
@@ -5860,55 +5580,55 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationOutput {
 }
 impl GetMaintenanceWindowExecutionTaskInvocationOutput {
     /// <p>The maintenance window execution ID.</p>
-    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
     /// <p>The task execution ID.</p>
-    pub fn task_execution_id(&self) -> std::option::Option<&str> {
+    pub fn task_execution_id(&self) -> std::option::Option<& str> {
         self.task_execution_id.as_deref()
     }
     /// <p>The invocation ID.</p>
-    pub fn invocation_id(&self) -> std::option::Option<&str> {
+    pub fn invocation_id(&self) -> std::option::Option<& str> {
         self.invocation_id.as_deref()
     }
     /// <p>The execution ID.</p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>Retrieves the task type for a maintenance window.</p>
-    pub fn task_type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
+    pub fn task_type(&self) -> std::option::Option<& crate::model::MaintenanceWindowTaskType> {
         self.task_type.as_ref()
     }
     /// <p>The parameters used at the time that the task ran.</p>
-    pub fn parameters(&self) -> std::option::Option<&str> {
+    pub fn parameters(&self) -> std::option::Option<& str> {
         self.parameters.as_deref()
     }
     /// <p>The task status for an invocation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MaintenanceWindowExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MaintenanceWindowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The details explaining the status. Details are only available for certain status values.</p>
-    pub fn status_details(&self) -> std::option::Option<&str> {
+    pub fn status_details(&self) -> std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>The time that the task started running on the target.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the task finished running on the target.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn owner_information(&self) -> std::option::Option<&str> {
+    pub fn owner_information(&self) -> std::option::Option<& str> {
         self.owner_information.as_deref()
     }
     /// <p>The maintenance window target ID.</p>
-    pub fn window_target_id(&self) -> std::option::Option<&str> {
+    pub fn window_target_id(&self) -> std::option::Option<& str> {
         self.window_target_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskInvocationOutput {
+impl  std::fmt::Debug for GetMaintenanceWindowExecutionTaskInvocationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionTaskInvocationOutput");
         formatter.field("window_execution_id", &self.window_execution_id);
@@ -5928,7 +5648,7 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskInvocationOutput {
 }
 /// See [`GetMaintenanceWindowExecutionTaskInvocationOutput`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput).
 pub mod get_maintenance_window_execution_task_invocation_output {
-
+    
     /// A builder for [`GetMaintenanceWindowExecutionTaskInvocationOutput`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5952,12 +5672,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The maintenance window execution ID.</p>
-        pub fn set_window_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_execution_id = input;
-            self
+        pub fn set_window_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_execution_id = input; self
         }
         /// <p>The task execution ID.</p>
         pub fn task_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5965,12 +5681,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The task execution ID.</p>
-        pub fn set_task_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_execution_id = input;
-            self
+        pub fn set_task_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_execution_id = input; self
         }
         /// <p>The invocation ID.</p>
         pub fn invocation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5978,12 +5690,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The invocation ID.</p>
-        pub fn set_invocation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invocation_id = input;
-            self
+        pub fn set_invocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.invocation_id = input; self
         }
         /// <p>The execution ID.</p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5992,8 +5700,7 @@ pub mod get_maintenance_window_execution_task_invocation_output {
         }
         /// <p>The execution ID.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = input;
-            self
+            self.execution_id = input; self
         }
         /// <p>Retrieves the task type for a maintenance window.</p>
         pub fn task_type(mut self, input: crate::model::MaintenanceWindowTaskType) -> Self {
@@ -6001,12 +5708,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>Retrieves the task type for a maintenance window.</p>
-        pub fn set_task_type(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-        ) -> Self {
-            self.task_type = input;
-            self
+        pub fn set_task_type(mut self, input: std::option::Option<crate::model::MaintenanceWindowTaskType>) -> Self {
+            self.task_type = input; self
         }
         /// <p>The parameters used at the time that the task ran.</p>
         pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6015,8 +5718,7 @@ pub mod get_maintenance_window_execution_task_invocation_output {
         }
         /// <p>The parameters used at the time that the task ran.</p>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parameters = input;
-            self
+            self.parameters = input; self
         }
         /// <p>The task status for an invocation.</p>
         pub fn status(mut self, input: crate::model::MaintenanceWindowExecutionStatus) -> Self {
@@ -6024,12 +5726,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The task status for an invocation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The details explaining the status. Details are only available for certain status values.</p>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6037,12 +5735,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The details explaining the status. Details are only available for certain status values.</p>
-        pub fn set_status_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_details = input;
-            self
+        pub fn set_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_details = input; self
         }
         /// <p>The time that the task started running on the target.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6050,12 +5744,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The time that the task started running on the target.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time that the task finished running on the target.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6063,12 +5753,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The time that the task finished running on the target.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6076,12 +5762,8 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
-        pub fn set_owner_information(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_information = input;
-            self
+        pub fn set_owner_information(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_information = input; self
         }
         /// <p>The maintenance window target ID.</p>
         pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6089,28 +5771,36 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             self
         }
         /// <p>The maintenance window target ID.</p>
-        pub fn set_window_target_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_target_id = input;
-            self
+        pub fn set_window_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_target_id = input; self
         }
         /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskInvocationOutput`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput).
         pub fn build(self) -> crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput {
             crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput {
-                window_execution_id: self.window_execution_id,
-                task_execution_id: self.task_execution_id,
-                invocation_id: self.invocation_id,
-                execution_id: self.execution_id,
-                task_type: self.task_type,
-                parameters: self.parameters,
-                status: self.status,
-                status_details: self.status_details,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                owner_information: self.owner_information,
-                window_target_id: self.window_target_id,
+                window_execution_id: self.window_execution_id
+                ,
+                task_execution_id: self.task_execution_id
+                ,
+                invocation_id: self.invocation_id
+                ,
+                execution_id: self.execution_id
+                ,
+                task_type: self.task_type
+                ,
+                parameters: self.parameters
+                ,
+                status: self.status
+                ,
+                status_details: self.status_details
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                owner_information: self.owner_information
+                ,
+                window_target_id: self.window_target_id
+                ,
             }
         }
     }
@@ -6132,11 +5822,12 @@ pub mod get_maintenance_window_execution_task_invocation_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetMaintenanceWindowExecutionTaskInvocationOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionTaskInvocationOutput`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput).
-    pub fn builder(
-    ) -> crate::output::get_maintenance_window_execution_task_invocation_output::Builder {
+    pub fn builder() -> crate::output::get_maintenance_window_execution_task_invocation_output::Builder {
         crate::output::get_maintenance_window_execution_task_invocation_output::Builder::default()
     }
 }
@@ -6144,7 +5835,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetMaintenanceWindowExecutionTaskOutput {
+pub struct GetMaintenanceWindowExecutionTaskOutput  {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
@@ -6160,23 +5851,16 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The type of task that was run.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-    /// <p>The parameters passed to the task when it was run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
-    /// </note>
-    /// <p>The map has the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
-    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
+    /// <p>The parameters passed to the task when it was run.</p> <note> 
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
+    /// </note> 
+    /// <p>The map has the following format:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li> 
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub task_parameters: std::option::Option<
-        std::vec::Vec<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
-    >,
+    pub task_parameters: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>>,
     /// <p>The priority of the task.</p>
     #[doc(hidden)]
     pub priority: i32,
@@ -6207,41 +5891,34 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
-    pub fn task_execution_id(&self) -> std::option::Option<&str> {
+    pub fn task_execution_id(&self) -> std::option::Option<& str> {
         self.task_execution_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
     /// <p>The role that was assumed when running the task.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>The type of task that was run.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::MaintenanceWindowTaskType> {
         self.r#type.as_ref()
     }
-    /// <p>The parameters passed to the task when it was run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
-    /// </note>
-    /// <p>The map has the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
-    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
+    /// <p>The parameters passed to the task when it was run.</p> <note> 
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
+    /// </note> 
+    /// <p>The map has the following format:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li> 
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li> 
     /// </ul>
-    pub fn task_parameters(
-        &self,
-    ) -> std::option::Option<
-        &[std::collections::HashMap<
-            std::string::String,
-            crate::model::MaintenanceWindowTaskParameterValueExpression,
-        >],
-    > {
+    pub fn task_parameters(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>]> {
         self.task_parameters.as_deref()
     }
     /// <p>The priority of the task.</p>
@@ -6249,39 +5926,39 @@ impl GetMaintenanceWindowExecutionTaskOutput {
         self.priority
     }
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
-    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+    pub fn max_concurrency(&self) -> std::option::Option<& str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
-    pub fn max_errors(&self) -> std::option::Option<&str> {
+    pub fn max_errors(&self) -> std::option::Option<& str> {
         self.max_errors.as_deref()
     }
     /// <p>The status of the task.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MaintenanceWindowExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MaintenanceWindowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn status_details(&self) -> std::option::Option<&str> {
+    pub fn status_details(&self) -> std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>The time the task execution started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the task execution completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+    pub fn alarm_configuration(&self) -> std::option::Option<& crate::model::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::model::AlarmStateInformation]> {
+    pub fn triggered_alarms(&self) -> std::option::Option<& [crate::model::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
     }
 }
-impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {
+impl  std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionTaskOutput");
         formatter.field("window_execution_id", &self.window_execution_id);
@@ -6304,7 +5981,7 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {
 }
 /// See [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput).
 pub mod get_maintenance_window_execution_task_output {
-
+    
     /// A builder for [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6313,14 +5990,7 @@ pub mod get_maintenance_window_execution_task_output {
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) service_role: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-        pub(crate) task_parameters: std::option::Option<
-            std::vec::Vec<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::MaintenanceWindowTaskParameterValueExpression,
-                >,
-            >,
-        >,
+        pub(crate) task_parameters: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>>,
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) max_concurrency: std::option::Option<std::string::String>,
         pub(crate) max_errors: std::option::Option<std::string::String>,
@@ -6329,8 +5999,7 @@ pub mod get_maintenance_window_execution_task_output {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
-        pub(crate) triggered_alarms:
-            std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+        pub(crate) triggered_alarms: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window execution that includes the task.</p>
@@ -6339,12 +6008,8 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The ID of the maintenance window execution that includes the task.</p>
-        pub fn set_window_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_execution_id = input;
-            self
+        pub fn set_window_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_execution_id = input; self
         }
         /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
         pub fn task_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6352,12 +6017,8 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
-        pub fn set_task_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_execution_id = input;
-            self
+        pub fn set_task_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_execution_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6366,8 +6027,7 @@ pub mod get_maintenance_window_execution_task_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
         /// <p>The role that was assumed when running the task.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6376,8 +6036,7 @@ pub mod get_maintenance_window_execution_task_output {
         }
         /// <p>The role that was assumed when running the task.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_role = input;
-            self
+            self.service_role = input; self
         }
         /// <p>The type of task that was run.</p>
         pub fn r#type(mut self, input: crate::model::MaintenanceWindowTaskType) -> Self {
@@ -6385,58 +6044,37 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The type of task that was run.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowTaskType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::MaintenanceWindowTaskType>) -> Self {
+            self.r#type = input; self
         }
         /// Appends an item to `task_parameters`.
         ///
         /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
         ///
-        /// <p>The parameters passed to the task when it was run.</p> <note>
-        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
-        /// </note>
-        /// <p>The map has the following format:</p>
-        /// <ul>
-        /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
-        /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
+        /// <p>The parameters passed to the task when it was run.</p> <note> 
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
+        /// </note> 
+        /// <p>The map has the following format:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li> 
+        /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li> 
         /// </ul>
-        pub fn task_parameters(
-            mut self,
-            input: std::collections::HashMap<
-                std::string::String,
-                crate::model::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        ) -> Self {
+        pub fn task_parameters(mut self, input: std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>) -> Self {
             let mut v = self.task_parameters.unwrap_or_default();
-            v.push(input);
-            self.task_parameters = Some(v);
-            self
+                            v.push(input);
+                            self.task_parameters = Some(v);
+                            self
         }
-        /// <p>The parameters passed to the task when it was run.</p> <note>
-        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
-        /// </note>
-        /// <p>The map has the following format:</p>
-        /// <ul>
-        /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
-        /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
+        /// <p>The parameters passed to the task when it was run.</p> <note> 
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
+        /// </note> 
+        /// <p>The map has the following format:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li> 
+        /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li> 
         /// </ul>
-        pub fn set_task_parameters(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<
-                    std::collections::HashMap<
-                        std::string::String,
-                        crate::model::MaintenanceWindowTaskParameterValueExpression,
-                    >,
-                >,
-            >,
-        ) -> Self {
-            self.task_parameters = input;
-            self
+        pub fn set_task_parameters(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::MaintenanceWindowTaskParameterValueExpression>>>) -> Self {
+            self.task_parameters = input; self
         }
         /// <p>The priority of the task.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -6445,8 +6083,7 @@ pub mod get_maintenance_window_execution_task_output {
         }
         /// <p>The priority of the task.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>The defined maximum number of task executions that could be run in parallel.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6454,12 +6091,8 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The defined maximum number of task executions that could be run in parallel.</p>
-        pub fn set_max_concurrency(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_concurrency = input;
-            self
+        pub fn set_max_concurrency(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_concurrency = input; self
         }
         /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6468,8 +6101,7 @@ pub mod get_maintenance_window_execution_task_output {
         }
         /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max_errors = input;
-            self
+            self.max_errors = input; self
         }
         /// <p>The status of the task.</p>
         pub fn status(mut self, input: crate::model::MaintenanceWindowExecutionStatus) -> Self {
@@ -6477,12 +6109,8 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The status of the task.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The details explaining the status. Not available for all status values.</p>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6490,12 +6118,8 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The details explaining the status. Not available for all status values.</p>
-        pub fn set_status_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_details = input;
-            self
+        pub fn set_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_details = input; self
         }
         /// <p>The time the task execution started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6503,12 +6127,8 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The time the task execution started.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time the task execution completed.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6516,12 +6136,8 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The time the task execution completed.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
         pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
@@ -6529,12 +6145,8 @@ pub mod get_maintenance_window_execution_task_output {
             self
         }
         /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-        pub fn set_alarm_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AlarmConfiguration>,
-        ) -> Self {
-            self.alarm_configuration = input;
-            self
+        pub fn set_alarm_configuration(mut self, input: std::option::Option<crate::model::AlarmConfiguration>) -> Self {
+            self.alarm_configuration = input; self
         }
         /// Appends an item to `triggered_alarms`.
         ///
@@ -6543,36 +6155,48 @@ pub mod get_maintenance_window_execution_task_output {
         /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
         pub fn triggered_alarms(mut self, input: crate::model::AlarmStateInformation) -> Self {
             let mut v = self.triggered_alarms.unwrap_or_default();
-            v.push(input);
-            self.triggered_alarms = Some(v);
-            self
+                            v.push(input);
+                            self.triggered_alarms = Some(v);
+                            self
         }
         /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-        pub fn set_triggered_alarms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
-        ) -> Self {
-            self.triggered_alarms = input;
-            self
+        pub fn set_triggered_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::model::AlarmStateInformation>>) -> Self {
+            self.triggered_alarms = input; self
         }
         /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput).
         pub fn build(self) -> crate::output::GetMaintenanceWindowExecutionTaskOutput {
             crate::output::GetMaintenanceWindowExecutionTaskOutput {
-                window_execution_id: self.window_execution_id,
-                task_execution_id: self.task_execution_id,
-                task_arn: self.task_arn,
-                service_role: self.service_role,
-                r#type: self.r#type,
-                task_parameters: self.task_parameters,
-                priority: self.priority.unwrap_or_default(),
-                max_concurrency: self.max_concurrency,
-                max_errors: self.max_errors,
-                status: self.status,
-                status_details: self.status_details,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                alarm_configuration: self.alarm_configuration,
-                triggered_alarms: self.triggered_alarms,
+                window_execution_id: self.window_execution_id
+                ,
+                task_execution_id: self.task_execution_id
+                ,
+                task_arn: self.task_arn
+                ,
+                service_role: self.service_role
+                ,
+                r#type: self.r#type
+                ,
+                task_parameters: self.task_parameters
+                ,
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
+                max_concurrency: self.max_concurrency
+                ,
+                max_errors: self.max_errors
+                ,
+                status: self.status
+                ,
+                status_details: self.status_details
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                alarm_configuration: self.alarm_configuration
+                ,
+                triggered_alarms: self.triggered_alarms
+                ,
             }
         }
     }
@@ -6597,6 +6221,8 @@ pub mod get_maintenance_window_execution_task_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput).
@@ -6608,7 +6234,7 @@ impl GetMaintenanceWindowExecutionTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMaintenanceWindowExecutionOutput {
+pub struct GetMaintenanceWindowExecutionOutput  {
     /// <p>The ID of the maintenance window execution.</p>
     #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
@@ -6630,33 +6256,33 @@ pub struct GetMaintenanceWindowExecutionOutput {
 }
 impl GetMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution.</p>
-    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
     /// <p>The ID of the task executions from the maintenance window execution.</p>
-    pub fn task_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn task_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.task_ids.as_deref()
     }
     /// <p>The status of the maintenance window execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MaintenanceWindowExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MaintenanceWindowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn status_details(&self) -> std::option::Option<&str> {
+    pub fn status_details(&self) -> std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>The time the maintenance window started running.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the maintenance window finished running.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`GetMaintenanceWindowExecutionOutput`](crate::output::GetMaintenanceWindowExecutionOutput).
 pub mod get_maintenance_window_execution_output {
-
+    
     /// A builder for [`GetMaintenanceWindowExecutionOutput`](crate::output::GetMaintenanceWindowExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6674,12 +6300,8 @@ pub mod get_maintenance_window_execution_output {
             self
         }
         /// <p>The ID of the maintenance window execution.</p>
-        pub fn set_window_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_execution_id = input;
-            self
+        pub fn set_window_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_execution_id = input; self
         }
         /// Appends an item to `task_ids`.
         ///
@@ -6688,17 +6310,13 @@ pub mod get_maintenance_window_execution_output {
         /// <p>The ID of the task executions from the maintenance window execution.</p>
         pub fn task_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.task_ids.unwrap_or_default();
-            v.push(input.into());
-            self.task_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.task_ids = Some(v);
+                            self
         }
         /// <p>The ID of the task executions from the maintenance window execution.</p>
-        pub fn set_task_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.task_ids = input;
-            self
+        pub fn set_task_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.task_ids = input; self
         }
         /// <p>The status of the maintenance window execution.</p>
         pub fn status(mut self, input: crate::model::MaintenanceWindowExecutionStatus) -> Self {
@@ -6706,12 +6324,8 @@ pub mod get_maintenance_window_execution_output {
             self
         }
         /// <p>The status of the maintenance window execution.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The details explaining the status. Not available for all status values.</p>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6719,12 +6333,8 @@ pub mod get_maintenance_window_execution_output {
             self
         }
         /// <p>The details explaining the status. Not available for all status values.</p>
-        pub fn set_status_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_details = input;
-            self
+        pub fn set_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_details = input; self
         }
         /// <p>The time the maintenance window started running.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6732,12 +6342,8 @@ pub mod get_maintenance_window_execution_output {
             self
         }
         /// <p>The time the maintenance window started running.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time the maintenance window finished running.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6745,25 +6351,29 @@ pub mod get_maintenance_window_execution_output {
             self
         }
         /// <p>The time the maintenance window finished running.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionOutput`](crate::output::GetMaintenanceWindowExecutionOutput).
         pub fn build(self) -> crate::output::GetMaintenanceWindowExecutionOutput {
             crate::output::GetMaintenanceWindowExecutionOutput {
-                window_execution_id: self.window_execution_id,
-                task_ids: self.task_ids,
-                status: self.status,
-                status_details: self.status_details,
-                start_time: self.start_time,
-                end_time: self.end_time,
+                window_execution_id: self.window_execution_id
+                ,
+                task_ids: self.task_ids
+                ,
+                status: self.status
+                ,
+                status_details: self.status_details
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMaintenanceWindowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionOutput`](crate::output::GetMaintenanceWindowExecutionOutput).
@@ -6775,7 +6385,7 @@ impl GetMaintenanceWindowExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetMaintenanceWindowOutput {
+pub struct GetMaintenanceWindowOutput  {
     /// <p>The ID of the created maintenance window.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -6824,31 +6434,31 @@ pub struct GetMaintenanceWindowOutput {
 }
 impl GetMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The name of the maintenance window.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the maintenance window.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> std::option::Option<& str> {
         self.start_date.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> std::option::Option<& str> {
         self.end_date.as_deref()
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    pub fn schedule(&self) -> std::option::Option<&str> {
+    pub fn schedule(&self) -> std::option::Option<& str> {
         self.schedule.as_deref()
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(&self) -> std::option::Option<&str> {
+    pub fn schedule_timezone(&self) -> std::option::Option<& str> {
         self.schedule_timezone.as_deref()
     }
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
@@ -6856,7 +6466,7 @@ impl GetMaintenanceWindowOutput {
         self.schedule_offset
     }
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    pub fn next_execution_time(&self) -> std::option::Option<&str> {
+    pub fn next_execution_time(&self) -> std::option::Option<& str> {
         self.next_execution_time.as_deref()
     }
     /// <p>The duration of the maintenance window in hours.</p>
@@ -6876,15 +6486,15 @@ impl GetMaintenanceWindowOutput {
         self.enabled
     }
     /// <p>The date the maintenance window was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date the maintenance window was last modified.</p>
-    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_date.as_ref()
     }
 }
-impl std::fmt::Debug for GetMaintenanceWindowOutput {
+impl  std::fmt::Debug for GetMaintenanceWindowOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowOutput");
         formatter.field("window_id", &self.window_id);
@@ -6898,10 +6508,7 @@ impl std::fmt::Debug for GetMaintenanceWindowOutput {
         formatter.field("next_execution_time", &self.next_execution_time);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("enabled", &self.enabled);
         formatter.field("created_date", &self.created_date);
         formatter.field("modified_date", &self.modified_date);
@@ -6910,7 +6517,7 @@ impl std::fmt::Debug for GetMaintenanceWindowOutput {
 }
 /// See [`GetMaintenanceWindowOutput`](crate::output::GetMaintenanceWindowOutput).
 pub mod get_maintenance_window_output {
-
+    
     /// A builder for [`GetMaintenanceWindowOutput`](crate::output::GetMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6938,8 +6545,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The ID of the created maintenance window.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// <p>The name of the maintenance window.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6948,8 +6554,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The name of the maintenance window.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the maintenance window.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6958,8 +6563,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The description of the maintenance window.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6968,8 +6572,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input;
-            self
+            self.start_date = input; self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6978,8 +6581,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_date = input;
-            self
+            self.end_date = input; self
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6988,8 +6590,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schedule = input;
-            self
+            self.schedule = input; self
         }
         /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6997,12 +6598,8 @@ pub mod get_maintenance_window_output {
             self
         }
         /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-        pub fn set_schedule_timezone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_timezone = input;
-            self
+        pub fn set_schedule_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_timezone = input; self
         }
         /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
         pub fn schedule_offset(mut self, input: i32) -> Self {
@@ -7011,8 +6608,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.schedule_offset = input;
-            self
+            self.schedule_offset = input; self
         }
         /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
         pub fn next_execution_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7020,12 +6616,8 @@ pub mod get_maintenance_window_output {
             self
         }
         /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-        pub fn set_next_execution_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_execution_time = input;
-            self
+        pub fn set_next_execution_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_execution_time = input; self
         }
         /// <p>The duration of the maintenance window in hours.</p>
         pub fn duration(mut self, input: i32) -> Self {
@@ -7034,8 +6626,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The duration of the maintenance window in hours.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
@@ -7044,8 +6635,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
-            self.cutoff = input;
-            self
+            self.cutoff = input; self
         }
         /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
@@ -7054,8 +6644,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn set_allow_unassociated_targets(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_unassociated_targets = input;
-            self
+            self.allow_unassociated_targets = input; self
         }
         /// <p>Indicates whether the maintenance window is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -7064,8 +6653,7 @@ pub mod get_maintenance_window_output {
         }
         /// <p>Indicates whether the maintenance window is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The date the maintenance window was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7073,12 +6661,8 @@ pub mod get_maintenance_window_output {
             self
         }
         /// <p>The date the maintenance window was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The date the maintenance window was last modified.</p>
         pub fn modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7086,31 +6670,46 @@ pub mod get_maintenance_window_output {
             self
         }
         /// <p>The date the maintenance window was last modified.</p>
-        pub fn set_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_date = input;
-            self
+        pub fn set_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_date = input; self
         }
         /// Consumes the builder and constructs a [`GetMaintenanceWindowOutput`](crate::output::GetMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::GetMaintenanceWindowOutput {
             crate::output::GetMaintenanceWindowOutput {
-                window_id: self.window_id,
-                name: self.name,
-                description: self.description,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                schedule: self.schedule,
-                schedule_timezone: self.schedule_timezone,
-                schedule_offset: self.schedule_offset,
-                next_execution_time: self.next_execution_time,
-                duration: self.duration.unwrap_or_default(),
-                cutoff: self.cutoff.unwrap_or_default(),
-                allow_unassociated_targets: self.allow_unassociated_targets.unwrap_or_default(),
-                enabled: self.enabled.unwrap_or_default(),
-                created_date: self.created_date,
-                modified_date: self.modified_date,
+                window_id: self.window_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+                schedule: self.schedule
+                ,
+                schedule_timezone: self.schedule_timezone
+                ,
+                schedule_offset: self.schedule_offset
+                ,
+                next_execution_time: self.next_execution_time
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                cutoff: self.cutoff
+                    .unwrap_or_default()
+                ,
+                allow_unassociated_targets: self.allow_unassociated_targets
+                    .unwrap_or_default()
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                created_date: self.created_date
+                ,
+                modified_date: self.modified_date
+                ,
             }
         }
     }
@@ -7128,16 +6727,15 @@ pub mod get_maintenance_window_output {
             formatter.field("next_execution_time", &self.next_execution_time);
             formatter.field("duration", &self.duration);
             formatter.field("cutoff", &self.cutoff);
-            formatter.field(
-                "allow_unassociated_targets",
-                &self.allow_unassociated_targets,
-            );
+            formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
             formatter.field("enabled", &self.enabled);
             formatter.field("created_date", &self.created_date);
             formatter.field("modified_date", &self.modified_date);
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowOutput`](crate::output::GetMaintenanceWindowOutput).
@@ -7149,7 +6747,7 @@ impl GetMaintenanceWindowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInventorySchemaOutput {
+pub struct GetInventorySchemaOutput  {
     /// <p>Inventory schemas returned by the request.</p>
     #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<crate::model::InventoryItemSchema>>,
@@ -7159,17 +6757,17 @@ pub struct GetInventorySchemaOutput {
 }
 impl GetInventorySchemaOutput {
     /// <p>Inventory schemas returned by the request.</p>
-    pub fn schemas(&self) -> std::option::Option<&[crate::model::InventoryItemSchema]> {
+    pub fn schemas(&self) -> std::option::Option<& [crate::model::InventoryItemSchema]> {
         self.schemas.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetInventorySchemaOutput`](crate::output::GetInventorySchemaOutput).
 pub mod get_inventory_schema_output {
-
+    
     /// A builder for [`GetInventorySchemaOutput`](crate::output::GetInventorySchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7184,17 +6782,13 @@ pub mod get_inventory_schema_output {
         /// <p>Inventory schemas returned by the request.</p>
         pub fn schemas(mut self, input: crate::model::InventoryItemSchema) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input);
-            self.schemas = Some(v);
-            self
+                            v.push(input);
+                            self.schemas = Some(v);
+                            self
         }
         /// <p>Inventory schemas returned by the request.</p>
-        pub fn set_schemas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InventoryItemSchema>>,
-        ) -> Self {
-            self.schemas = input;
-            self
+        pub fn set_schemas(mut self, input: std::option::Option<std::vec::Vec<crate::model::InventoryItemSchema>>) -> Self {
+            self.schemas = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7203,17 +6797,20 @@ pub mod get_inventory_schema_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInventorySchemaOutput`](crate::output::GetInventorySchemaOutput).
         pub fn build(self) -> crate::output::GetInventorySchemaOutput {
             crate::output::GetInventorySchemaOutput {
-                schemas: self.schemas,
-                next_token: self.next_token,
+                schemas: self.schemas
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInventorySchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetInventorySchemaOutput`](crate::output::GetInventorySchemaOutput).
@@ -7225,7 +6822,7 @@ impl GetInventorySchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInventoryOutput {
+pub struct GetInventoryOutput  {
     /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
@@ -7235,22 +6832,21 @@ pub struct GetInventoryOutput {
 }
 impl GetInventoryOutput {
     /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::InventoryResultEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::InventoryResultEntity]> {
         self.entities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetInventoryOutput`](crate::output::GetInventoryOutput).
 pub mod get_inventory_output {
-
+    
     /// A builder for [`GetInventoryOutput`](crate::output::GetInventoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entities:
-            std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
+        pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7261,17 +6857,13 @@ pub mod get_inventory_output {
         /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
         pub fn entities(mut self, input: crate::model::InventoryResultEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>) -> Self {
+            self.entities = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7280,17 +6872,20 @@ pub mod get_inventory_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInventoryOutput`](crate::output::GetInventoryOutput).
         pub fn build(self) -> crate::output::GetInventoryOutput {
             crate::output::GetInventoryOutput {
-                entities: self.entities,
-                next_token: self.next_token,
+                entities: self.entities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInventoryOutput {
     /// Creates a new builder-style object to manufacture [`GetInventoryOutput`](crate::output::GetInventoryOutput).
@@ -7302,7 +6897,7 @@ impl GetInventoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDocumentOutput {
+pub struct GetDocumentOutput  {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7339,71 +6934,71 @@ pub struct GetDocumentOutput {
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
     #[doc(hidden)]
     pub attachments_content: std::option::Option<std::vec::Vec<crate::model::AttachmentContent>>,
-    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
-    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> 
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
     #[doc(hidden)]
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
 }
 impl GetDocumentOutput {
     /// <p>The name of the SSM document.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date the SSM document was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    pub fn version_name(&self) -> std::option::Option<&str> {
+    pub fn version_name(&self) -> std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The document version.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DocumentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DocumentStatus> {
         self.status.as_ref()
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    pub fn status_information(&self) -> std::option::Option<&str> {
+    pub fn status_information(&self) -> std::option::Option<& str> {
         self.status_information.as_deref()
     }
     /// <p>The contents of the SSM document.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The document type.</p>
-    pub fn document_type(&self) -> std::option::Option<&crate::model::DocumentType> {
+    pub fn document_type(&self) -> std::option::Option<& crate::model::DocumentType> {
         self.document_type.as_ref()
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn document_format(&self) -> std::option::Option<&crate::model::DocumentFormat> {
+    pub fn document_format(&self) -> std::option::Option<& crate::model::DocumentFormat> {
         self.document_format.as_ref()
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn requires(&self) -> std::option::Option<&[crate::model::DocumentRequires]> {
+    pub fn requires(&self) -> std::option::Option<& [crate::model::DocumentRequires]> {
         self.requires.as_deref()
     }
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
-    pub fn attachments_content(&self) -> std::option::Option<&[crate::model::AttachmentContent]> {
+    pub fn attachments_content(&self) -> std::option::Option<& [crate::model::AttachmentContent]> {
         self.attachments_content.as_deref()
     }
-    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
-    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> 
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
-    pub fn review_status(&self) -> std::option::Option<&crate::model::ReviewStatus> {
+    pub fn review_status(&self) -> std::option::Option<& crate::model::ReviewStatus> {
         self.review_status.as_ref()
     }
 }
 /// See [`GetDocumentOutput`](crate::output::GetDocumentOutput).
 pub mod get_document_output {
-
+    
     /// A builder for [`GetDocumentOutput`](crate::output::GetDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7418,8 +7013,7 @@ pub mod get_document_output {
         pub(crate) document_type: std::option::Option<crate::model::DocumentType>,
         pub(crate) document_format: std::option::Option<crate::model::DocumentFormat>,
         pub(crate) requires: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
-        pub(crate) attachments_content:
-            std::option::Option<std::vec::Vec<crate::model::AttachmentContent>>,
+        pub(crate) attachments_content: std::option::Option<std::vec::Vec<crate::model::AttachmentContent>>,
         pub(crate) review_status: std::option::Option<crate::model::ReviewStatus>,
     }
     impl Builder {
@@ -7430,8 +7024,7 @@ pub mod get_document_output {
         }
         /// <p>The name of the SSM document.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date the SSM document was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7439,12 +7032,8 @@ pub mod get_document_output {
             self
         }
         /// <p>The date the SSM document was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7453,8 +7042,7 @@ pub mod get_document_output {
         }
         /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7463,8 +7051,7 @@ pub mod get_document_output {
         }
         /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_name = input;
-            self
+            self.version_name = input; self
         }
         /// <p>The document version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7472,12 +7059,8 @@ pub mod get_document_output {
             self
         }
         /// <p>The document version.</p>
-        pub fn set_document_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_version = input;
-            self
+        pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_version = input; self
         }
         /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
         pub fn status(mut self, input: crate::model::DocumentStatus) -> Self {
@@ -7485,12 +7068,8 @@ pub mod get_document_output {
             self
         }
         /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DocumentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DocumentStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
         pub fn status_information(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7498,12 +7077,8 @@ pub mod get_document_output {
             self
         }
         /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-        pub fn set_status_information(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_information = input;
-            self
+        pub fn set_status_information(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_information = input; self
         }
         /// <p>The contents of the SSM document.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7512,8 +7087,7 @@ pub mod get_document_output {
         }
         /// <p>The contents of the SSM document.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The document type.</p>
         pub fn document_type(mut self, input: crate::model::DocumentType) -> Self {
@@ -7521,12 +7095,8 @@ pub mod get_document_output {
             self
         }
         /// <p>The document type.</p>
-        pub fn set_document_type(
-            mut self,
-            input: std::option::Option<crate::model::DocumentType>,
-        ) -> Self {
-            self.document_type = input;
-            self
+        pub fn set_document_type(mut self, input: std::option::Option<crate::model::DocumentType>) -> Self {
+            self.document_type = input; self
         }
         /// <p>The document format, either JSON or YAML.</p>
         pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
@@ -7534,12 +7104,8 @@ pub mod get_document_output {
             self
         }
         /// <p>The document format, either JSON or YAML.</p>
-        pub fn set_document_format(
-            mut self,
-            input: std::option::Option<crate::model::DocumentFormat>,
-        ) -> Self {
-            self.document_format = input;
-            self
+        pub fn set_document_format(mut self, input: std::option::Option<crate::model::DocumentFormat>) -> Self {
+            self.document_format = input; self
         }
         /// Appends an item to `requires`.
         ///
@@ -7548,17 +7114,13 @@ pub mod get_document_output {
         /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
         pub fn requires(mut self, input: crate::model::DocumentRequires) -> Self {
             let mut v = self.requires.unwrap_or_default();
-            v.push(input);
-            self.requires = Some(v);
-            self
+                            v.push(input);
+                            self.requires = Some(v);
+                            self
         }
         /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-        pub fn set_requires(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
-        ) -> Self {
-            self.requires = input;
-            self
+        pub fn set_requires(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>) -> Self {
+            self.requires = input; self
         }
         /// Appends an item to `attachments_content`.
         ///
@@ -7567,54 +7129,61 @@ pub mod get_document_output {
         /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
         pub fn attachments_content(mut self, input: crate::model::AttachmentContent) -> Self {
             let mut v = self.attachments_content.unwrap_or_default();
-            v.push(input);
-            self.attachments_content = Some(v);
-            self
+                            v.push(input);
+                            self.attachments_content = Some(v);
+                            self
         }
         /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
-        pub fn set_attachments_content(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttachmentContent>>,
-        ) -> Self {
-            self.attachments_content = input;
-            self
+        pub fn set_attachments_content(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttachmentContent>>) -> Self {
+            self.attachments_content = input; self
         }
-        /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
-        /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
+        /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> 
+        /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
         /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
         pub fn review_status(mut self, input: crate::model::ReviewStatus) -> Self {
             self.review_status = Some(input);
             self
         }
-        /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
-        /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
+        /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> 
+        /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
         /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
-        pub fn set_review_status(
-            mut self,
-            input: std::option::Option<crate::model::ReviewStatus>,
-        ) -> Self {
-            self.review_status = input;
-            self
+        pub fn set_review_status(mut self, input: std::option::Option<crate::model::ReviewStatus>) -> Self {
+            self.review_status = input; self
         }
         /// Consumes the builder and constructs a [`GetDocumentOutput`](crate::output::GetDocumentOutput).
         pub fn build(self) -> crate::output::GetDocumentOutput {
             crate::output::GetDocumentOutput {
-                name: self.name,
-                created_date: self.created_date,
-                display_name: self.display_name,
-                version_name: self.version_name,
-                document_version: self.document_version,
-                status: self.status,
-                status_information: self.status_information,
-                content: self.content,
-                document_type: self.document_type,
-                document_format: self.document_format,
-                requires: self.requires,
-                attachments_content: self.attachments_content,
-                review_status: self.review_status,
+                name: self.name
+                ,
+                created_date: self.created_date
+                ,
+                display_name: self.display_name
+                ,
+                version_name: self.version_name
+                ,
+                document_version: self.document_version
+                ,
+                status: self.status
+                ,
+                status_information: self.status_information
+                ,
+                content: self.content
+                ,
+                document_type: self.document_type
+                ,
+                document_format: self.document_format
+                ,
+                requires: self.requires
+                ,
+                attachments_content: self.attachments_content
+                ,
+                review_status: self.review_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDocumentOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentOutput`](crate::output::GetDocumentOutput).
@@ -7626,7 +7195,7 @@ impl GetDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeployablePatchSnapshotForInstanceOutput {
+pub struct GetDeployablePatchSnapshotForInstanceOutput  {
     /// <p>The managed node ID.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -7642,25 +7211,25 @@ pub struct GetDeployablePatchSnapshotForInstanceOutput {
 }
 impl GetDeployablePatchSnapshotForInstanceOutput {
     /// <p>The managed node ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The user-defined snapshot ID.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
-    pub fn snapshot_download_url(&self) -> std::option::Option<&str> {
+    pub fn snapshot_download_url(&self) -> std::option::Option<& str> {
         self.snapshot_download_url.as_deref()
     }
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> std::option::Option<& str> {
         self.product.as_deref()
     }
 }
 /// See [`GetDeployablePatchSnapshotForInstanceOutput`](crate::output::GetDeployablePatchSnapshotForInstanceOutput).
 pub mod get_deployable_patch_snapshot_for_instance_output {
-
+    
     /// A builder for [`GetDeployablePatchSnapshotForInstanceOutput`](crate::output::GetDeployablePatchSnapshotForInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7677,8 +7246,7 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
         }
         /// <p>The managed node ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The user-defined snapshot ID.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7687,8 +7255,7 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
         }
         /// <p>The user-defined snapshot ID.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
         pub fn snapshot_download_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7696,12 +7263,8 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
             self
         }
         /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
-        pub fn set_snapshot_download_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_download_url = input;
-            self
+        pub fn set_snapshot_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_download_url = input; self
         }
         /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
         pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7710,19 +7273,24 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
         }
         /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
         pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product = input;
-            self
+            self.product = input; self
         }
         /// Consumes the builder and constructs a [`GetDeployablePatchSnapshotForInstanceOutput`](crate::output::GetDeployablePatchSnapshotForInstanceOutput).
         pub fn build(self) -> crate::output::GetDeployablePatchSnapshotForInstanceOutput {
             crate::output::GetDeployablePatchSnapshotForInstanceOutput {
-                instance_id: self.instance_id,
-                snapshot_id: self.snapshot_id,
-                snapshot_download_url: self.snapshot_download_url,
-                product: self.product,
+                instance_id: self.instance_id
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                snapshot_download_url: self.snapshot_download_url
+                ,
+                product: self.product
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeployablePatchSnapshotForInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetDeployablePatchSnapshotForInstanceOutput`](crate::output::GetDeployablePatchSnapshotForInstanceOutput).
@@ -7734,7 +7302,7 @@ impl GetDeployablePatchSnapshotForInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDefaultPatchBaselineOutput {
+pub struct GetDefaultPatchBaselineOutput  {
     /// <p>The ID of the default patch baseline.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -7744,17 +7312,17 @@ pub struct GetDefaultPatchBaselineOutput {
 }
 impl GetDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The operating system for the returned patch baseline. </p>
-    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+    pub fn operating_system(&self) -> std::option::Option<& crate::model::OperatingSystem> {
         self.operating_system.as_ref()
     }
 }
 /// See [`GetDefaultPatchBaselineOutput`](crate::output::GetDefaultPatchBaselineOutput).
 pub mod get_default_patch_baseline_output {
-
+    
     /// A builder for [`GetDefaultPatchBaselineOutput`](crate::output::GetDefaultPatchBaselineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7769,8 +7337,7 @@ pub mod get_default_patch_baseline_output {
         }
         /// <p>The ID of the default patch baseline.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// <p>The operating system for the returned patch baseline. </p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
@@ -7778,21 +7345,21 @@ pub mod get_default_patch_baseline_output {
             self
         }
         /// <p>The operating system for the returned patch baseline. </p>
-        pub fn set_operating_system(
-            mut self,
-            input: std::option::Option<crate::model::OperatingSystem>,
-        ) -> Self {
-            self.operating_system = input;
-            self
+        pub fn set_operating_system(mut self, input: std::option::Option<crate::model::OperatingSystem>) -> Self {
+            self.operating_system = input; self
         }
         /// Consumes the builder and constructs a [`GetDefaultPatchBaselineOutput`](crate::output::GetDefaultPatchBaselineOutput).
         pub fn build(self) -> crate::output::GetDefaultPatchBaselineOutput {
             crate::output::GetDefaultPatchBaselineOutput {
-                baseline_id: self.baseline_id,
-                operating_system: self.operating_system,
+                baseline_id: self.baseline_id
+                ,
+                operating_system: self.operating_system
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDefaultPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`GetDefaultPatchBaselineOutput`](crate::output::GetDefaultPatchBaselineOutput).
@@ -7804,7 +7371,7 @@ impl GetDefaultPatchBaselineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectionStatusOutput {
+pub struct GetConnectionStatusOutput  {
     /// <p>The ID of the managed node to check connection status. </p>
     #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
@@ -7814,17 +7381,17 @@ pub struct GetConnectionStatusOutput {
 }
 impl GetConnectionStatusOutput {
     /// <p>The ID of the managed node to check connection status. </p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ConnectionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`GetConnectionStatusOutput`](crate::output::GetConnectionStatusOutput).
 pub mod get_connection_status_output {
-
+    
     /// A builder for [`GetConnectionStatusOutput`](crate::output::GetConnectionStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7839,8 +7406,7 @@ pub mod get_connection_status_output {
         }
         /// <p>The ID of the managed node to check connection status. </p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
         pub fn status(mut self, input: crate::model::ConnectionStatus) -> Self {
@@ -7848,21 +7414,21 @@ pub mod get_connection_status_output {
             self
         }
         /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ConnectionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GetConnectionStatusOutput`](crate::output::GetConnectionStatusOutput).
         pub fn build(self) -> crate::output::GetConnectionStatusOutput {
             crate::output::GetConnectionStatusOutput {
-                target: self.target,
-                status: self.status,
+                target: self.target
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConnectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectionStatusOutput`](crate::output::GetConnectionStatusOutput).
@@ -7874,7 +7440,7 @@ impl GetConnectionStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCommandInvocationOutput {
+pub struct GetCommandInvocationOutput  {
     /// <p>The parent command ID of the invocation plugin.</p>
     #[doc(hidden)]
     pub command_id: std::option::Option<std::string::String>,
@@ -7896,34 +7462,34 @@ pub struct GetCommandInvocationOutput {
     /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
     #[doc(hidden)]
     pub response_code: i32,
-    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
+    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p> 
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p> 
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     #[doc(hidden)]
     pub execution_start_date_time: std::option::Option<std::string::String>,
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
     #[doc(hidden)]
     pub execution_elapsed_time: std::option::Option<std::string::String>,
-    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
+    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p> 
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p> 
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
     #[doc(hidden)]
     pub execution_end_date_time: std::option::Option<std::string::String>,
     /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::CommandInvocationStatus>,
-    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
-    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
-    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
-    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
-    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
-    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
-    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
-    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li> 
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li> 
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li> 
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li> 
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> 
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> 
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> 
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li> 
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> 
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status_details: std::option::Option<std::string::String>,
@@ -7945,95 +7511,93 @@ pub struct GetCommandInvocationOutput {
 }
 impl GetCommandInvocationOutput {
     /// <p>The parent command ID of the invocation plugin.</p>
-    pub fn command_id(&self) -> std::option::Option<&str> {
+    pub fn command_id(&self) -> std::option::Option<& str> {
         self.command_id.as_deref()
     }
     /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The comment text for the command.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
-    pub fn document_name(&self) -> std::option::Option<&str> {
+    pub fn document_name(&self) -> std::option::Option<& str> {
         self.document_name.as_deref()
     }
     /// <p>The Systems Manager document (SSM document) version used in the request.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
-    pub fn plugin_name(&self) -> std::option::Option<&str> {
+    pub fn plugin_name(&self) -> std::option::Option<& str> {
         self.plugin_name.as_deref()
     }
     /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
     pub fn response_code(&self) -> i32 {
         self.response_code
     }
-    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
+    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p> 
+    /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p> 
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
-    pub fn execution_start_date_time(&self) -> std::option::Option<&str> {
+    pub fn execution_start_date_time(&self) -> std::option::Option<& str> {
         self.execution_start_date_time.as_deref()
     }
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
-    pub fn execution_elapsed_time(&self) -> std::option::Option<&str> {
+    pub fn execution_elapsed_time(&self) -> std::option::Option<& str> {
         self.execution_elapsed_time.as_deref()
     }
-    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
+    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p> 
+    /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p> 
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
-    pub fn execution_end_date_time(&self) -> std::option::Option<&str> {
+    pub fn execution_end_date_time(&self) -> std::option::Option<& str> {
         self.execution_end_date_time.as_deref()
     }
     /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CommandInvocationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CommandInvocationStatus> {
         self.status.as_ref()
     }
-    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
-    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
-    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
-    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
-    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
-    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
-    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
-    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li> 
+    /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li> 
+    /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li> 
+    /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li> 
+    /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> 
+    /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> 
+    /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> 
+    /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li> 
+    /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> 
+    /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> 
     /// </ul>
-    pub fn status_details(&self) -> std::option::Option<&str> {
+    pub fn status_details(&self) -> std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
-    pub fn standard_output_content(&self) -> std::option::Option<&str> {
+    pub fn standard_output_content(&self) -> std::option::Option<& str> {
         self.standard_output_content.as_deref()
     }
     /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
-    pub fn standard_output_url(&self) -> std::option::Option<&str> {
+    pub fn standard_output_url(&self) -> std::option::Option<& str> {
         self.standard_output_url.as_deref()
     }
     /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-    pub fn standard_error_content(&self) -> std::option::Option<&str> {
+    pub fn standard_error_content(&self) -> std::option::Option<& str> {
         self.standard_error_content.as_deref()
     }
     /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-    pub fn standard_error_url(&self) -> std::option::Option<&str> {
+    pub fn standard_error_url(&self) -> std::option::Option<& str> {
         self.standard_error_url.as_deref()
     }
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
-    pub fn cloud_watch_output_config(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchOutputConfig> {
+    pub fn cloud_watch_output_config(&self) -> std::option::Option<& crate::model::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
     }
 }
 /// See [`GetCommandInvocationOutput`](crate::output::GetCommandInvocationOutput).
 pub mod get_command_invocation_output {
-
+    
     /// A builder for [`GetCommandInvocationOutput`](crate::output::GetCommandInvocationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8053,8 +7617,7 @@ pub mod get_command_invocation_output {
         pub(crate) standard_output_url: std::option::Option<std::string::String>,
         pub(crate) standard_error_content: std::option::Option<std::string::String>,
         pub(crate) standard_error_url: std::option::Option<std::string::String>,
-        pub(crate) cloud_watch_output_config:
-            std::option::Option<crate::model::CloudWatchOutputConfig>,
+        pub(crate) cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
     }
     impl Builder {
         /// <p>The parent command ID of the invocation plugin.</p>
@@ -8064,8 +7627,7 @@ pub mod get_command_invocation_output {
         }
         /// <p>The parent command ID of the invocation plugin.</p>
         pub fn set_command_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.command_id = input;
-            self
+            self.command_id = input; self
         }
         /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8074,8 +7636,7 @@ pub mod get_command_invocation_output {
         }
         /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The comment text for the command.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8084,8 +7645,7 @@ pub mod get_command_invocation_output {
         }
         /// <p>The comment text for the command.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8093,12 +7653,8 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
-        pub fn set_document_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_name = input;
-            self
+        pub fn set_document_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_name = input; self
         }
         /// <p>The Systems Manager document (SSM document) version used in the request.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8106,12 +7662,8 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>The Systems Manager document (SSM document) version used in the request.</p>
-        pub fn set_document_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_version = input;
-            self
+        pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_version = input; self
         }
         /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
         pub fn plugin_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8120,8 +7672,7 @@ pub mod get_command_invocation_output {
         }
         /// <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
         pub fn set_plugin_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.plugin_name = input;
-            self
+            self.plugin_name = input; self
         }
         /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
         pub fn response_code(mut self, input: i32) -> Self {
@@ -8130,25 +7681,20 @@ pub mod get_command_invocation_output {
         }
         /// <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
         pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.response_code = input;
-            self
+            self.response_code = input; self
         }
-        /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-        /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
+        /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p> 
+        /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p> 
         /// <p>If the plugin hasn't started to run, the string is empty.</p>
         pub fn execution_start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_start_date_time = Some(input.into());
             self
         }
-        /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
-        /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
+        /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p> 
+        /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p> 
         /// <p>If the plugin hasn't started to run, the string is empty.</p>
-        pub fn set_execution_start_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_start_date_time = input;
-            self
+        pub fn set_execution_start_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_start_date_time = input; self
         }
         /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
         pub fn execution_elapsed_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8156,29 +7702,21 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
-        pub fn set_execution_elapsed_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_elapsed_time = input;
-            self
+        pub fn set_execution_elapsed_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_elapsed_time = input; self
         }
-        /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-        /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
+        /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p> 
+        /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p> 
         /// <p>If the plugin hasn't started to run, the string is empty.</p>
         pub fn execution_end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_end_date_time = Some(input.into());
             self
         }
-        /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
-        /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
+        /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p> 
+        /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p> 
         /// <p>If the plugin hasn't started to run, the string is empty.</p>
-        pub fn set_execution_end_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_end_date_time = input;
-            self
+        pub fn set_execution_end_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_end_date_time = input; self
         }
         /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
         pub fn status(mut self, input: crate::model::CommandInvocationStatus) -> Self {
@@ -8186,49 +7724,41 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CommandInvocationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CommandInvocationStatus>) -> Self {
+            self.status = input; self
         }
-        /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
-        /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
-        /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
-        /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
-        /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
-        /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-        /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
-        /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
-        /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+        /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li> 
+        /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li> 
+        /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li> 
+        /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li> 
+        /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> 
+        /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> 
+        /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> 
+        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li> 
+        /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> 
+        /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> 
         /// </ul>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_details = Some(input.into());
             self
         }
-        /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
-        /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>
-        /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>
-        /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>
-        /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
-        /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-        /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>
-        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
-        /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
-        /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+        /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li> 
+        /// <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li> 
+        /// <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li> 
+        /// <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li> 
+        /// <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> 
+        /// <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> 
+        /// <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> 
+        /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li> 
+        /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> 
+        /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> 
         /// </ul>
-        pub fn set_status_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_details = input;
-            self
+        pub fn set_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_details = input; self
         }
         /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
         pub fn standard_output_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8236,12 +7766,8 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
-        pub fn set_standard_output_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.standard_output_content = input;
-            self
+        pub fn set_standard_output_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.standard_output_content = input; self
         }
         /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
         pub fn standard_output_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8249,12 +7775,8 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
-        pub fn set_standard_output_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.standard_output_url = input;
-            self
+        pub fn set_standard_output_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.standard_output_url = input; self
         }
         /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
         pub fn standard_error_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8262,12 +7784,8 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-        pub fn set_standard_error_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.standard_error_content = input;
-            self
+        pub fn set_standard_error_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.standard_error_content = input; self
         }
         /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
         pub fn standard_error_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8275,52 +7793,61 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-        pub fn set_standard_error_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.standard_error_url = input;
-            self
+        pub fn set_standard_error_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.standard_error_url = input; self
         }
         /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
-        pub fn cloud_watch_output_config(
-            mut self,
-            input: crate::model::CloudWatchOutputConfig,
-        ) -> Self {
+        pub fn cloud_watch_output_config(mut self, input: crate::model::CloudWatchOutputConfig) -> Self {
             self.cloud_watch_output_config = Some(input);
             self
         }
         /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
-        pub fn set_cloud_watch_output_config(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchOutputConfig>,
-        ) -> Self {
-            self.cloud_watch_output_config = input;
-            self
+        pub fn set_cloud_watch_output_config(mut self, input: std::option::Option<crate::model::CloudWatchOutputConfig>) -> Self {
+            self.cloud_watch_output_config = input; self
         }
         /// Consumes the builder and constructs a [`GetCommandInvocationOutput`](crate::output::GetCommandInvocationOutput).
         pub fn build(self) -> crate::output::GetCommandInvocationOutput {
             crate::output::GetCommandInvocationOutput {
-                command_id: self.command_id,
-                instance_id: self.instance_id,
-                comment: self.comment,
-                document_name: self.document_name,
-                document_version: self.document_version,
-                plugin_name: self.plugin_name,
-                response_code: self.response_code.unwrap_or_default(),
-                execution_start_date_time: self.execution_start_date_time,
-                execution_elapsed_time: self.execution_elapsed_time,
-                execution_end_date_time: self.execution_end_date_time,
-                status: self.status,
-                status_details: self.status_details,
-                standard_output_content: self.standard_output_content,
-                standard_output_url: self.standard_output_url,
-                standard_error_content: self.standard_error_content,
-                standard_error_url: self.standard_error_url,
-                cloud_watch_output_config: self.cloud_watch_output_config,
+                command_id: self.command_id
+                ,
+                instance_id: self.instance_id
+                ,
+                comment: self.comment
+                ,
+                document_name: self.document_name
+                ,
+                document_version: self.document_version
+                ,
+                plugin_name: self.plugin_name
+                ,
+                response_code: self.response_code
+                    .unwrap_or_default()
+                ,
+                execution_start_date_time: self.execution_start_date_time
+                ,
+                execution_elapsed_time: self.execution_elapsed_time
+                ,
+                execution_end_date_time: self.execution_end_date_time
+                ,
+                status: self.status
+                ,
+                status_details: self.status_details
+                ,
+                standard_output_content: self.standard_output_content
+                ,
+                standard_output_url: self.standard_output_url
+                ,
+                standard_error_content: self.standard_error_content
+                ,
+                standard_error_url: self.standard_error_url
+                ,
+                cloud_watch_output_config: self.cloud_watch_output_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCommandInvocationOutput {
     /// Creates a new builder-style object to manufacture [`GetCommandInvocationOutput`](crate::output::GetCommandInvocationOutput).
@@ -8332,7 +7859,7 @@ impl GetCommandInvocationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCalendarStateOutput {
+pub struct GetCalendarStateOutput  {
     /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::CalendarState>,
@@ -8345,21 +7872,21 @@ pub struct GetCalendarStateOutput {
 }
 impl GetCalendarStateOutput {
     /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::CalendarState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::CalendarState> {
         self.state.as_ref()
     }
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
-    pub fn at_time(&self) -> std::option::Option<&str> {
+    pub fn at_time(&self) -> std::option::Option<& str> {
         self.at_time.as_deref()
     }
     /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
-    pub fn next_transition_time(&self) -> std::option::Option<&str> {
+    pub fn next_transition_time(&self) -> std::option::Option<& str> {
         self.next_transition_time.as_deref()
     }
 }
 /// See [`GetCalendarStateOutput`](crate::output::GetCalendarStateOutput).
 pub mod get_calendar_state_output {
-
+    
     /// A builder for [`GetCalendarStateOutput`](crate::output::GetCalendarStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8374,12 +7901,8 @@ pub mod get_calendar_state_output {
             self
         }
         /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::CalendarState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::CalendarState>) -> Self {
+            self.state = input; self
         }
         /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
         pub fn at_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8388,8 +7911,7 @@ pub mod get_calendar_state_output {
         }
         /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
         pub fn set_at_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.at_time = input;
-            self
+            self.at_time = input; self
         }
         /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
         pub fn next_transition_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8397,22 +7919,23 @@ pub mod get_calendar_state_output {
             self
         }
         /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
-        pub fn set_next_transition_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_transition_time = input;
-            self
+        pub fn set_next_transition_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_transition_time = input; self
         }
         /// Consumes the builder and constructs a [`GetCalendarStateOutput`](crate::output::GetCalendarStateOutput).
         pub fn build(self) -> crate::output::GetCalendarStateOutput {
             crate::output::GetCalendarStateOutput {
-                state: self.state,
-                at_time: self.at_time,
-                next_transition_time: self.next_transition_time,
+                state: self.state
+                ,
+                at_time: self.at_time
+                ,
+                next_transition_time: self.next_transition_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCalendarStateOutput {
     /// Creates a new builder-style object to manufacture [`GetCalendarStateOutput`](crate::output::GetCalendarStateOutput).
@@ -8424,20 +7947,20 @@ impl GetCalendarStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAutomationExecutionOutput {
+pub struct GetAutomationExecutionOutput  {
     /// <p>Detailed information about the current state of an automation execution.</p>
     #[doc(hidden)]
     pub automation_execution: std::option::Option<crate::model::AutomationExecution>,
 }
 impl GetAutomationExecutionOutput {
     /// <p>Detailed information about the current state of an automation execution.</p>
-    pub fn automation_execution(&self) -> std::option::Option<&crate::model::AutomationExecution> {
+    pub fn automation_execution(&self) -> std::option::Option<& crate::model::AutomationExecution> {
         self.automation_execution.as_ref()
     }
 }
 /// See [`GetAutomationExecutionOutput`](crate::output::GetAutomationExecutionOutput).
 pub mod get_automation_execution_output {
-
+    
     /// A builder for [`GetAutomationExecutionOutput`](crate::output::GetAutomationExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8450,20 +7973,19 @@ pub mod get_automation_execution_output {
             self
         }
         /// <p>Detailed information about the current state of an automation execution.</p>
-        pub fn set_automation_execution(
-            mut self,
-            input: std::option::Option<crate::model::AutomationExecution>,
-        ) -> Self {
-            self.automation_execution = input;
-            self
+        pub fn set_automation_execution(mut self, input: std::option::Option<crate::model::AutomationExecution>) -> Self {
+            self.automation_execution = input; self
         }
         /// Consumes the builder and constructs a [`GetAutomationExecutionOutput`](crate::output::GetAutomationExecutionOutput).
         pub fn build(self) -> crate::output::GetAutomationExecutionOutput {
             crate::output::GetAutomationExecutionOutput {
-                automation_execution: self.automation_execution,
+                automation_execution: self.automation_execution
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAutomationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetAutomationExecutionOutput`](crate::output::GetAutomationExecutionOutput).
@@ -8475,19 +7997,24 @@ impl GetAutomationExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateOpsItemRelatedItemOutput {}
+pub struct DisassociateOpsItemRelatedItemOutput  {
+}
 /// See [`DisassociateOpsItemRelatedItemOutput`](crate::output::DisassociateOpsItemRelatedItemOutput).
 pub mod disassociate_ops_item_related_item_output {
-
+    
     /// A builder for [`DisassociateOpsItemRelatedItemOutput`](crate::output::DisassociateOpsItemRelatedItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateOpsItemRelatedItemOutput`](crate::output::DisassociateOpsItemRelatedItemOutput).
         pub fn build(self) -> crate::output::DisassociateOpsItemRelatedItemOutput {
-            crate::output::DisassociateOpsItemRelatedItemOutput {}
+            crate::output::DisassociateOpsItemRelatedItemOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateOpsItemRelatedItemOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateOpsItemRelatedItemOutput`](crate::output::DisassociateOpsItemRelatedItemOutput).
@@ -8499,7 +8026,7 @@ impl DisassociateOpsItemRelatedItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSessionsOutput {
+pub struct DescribeSessionsOutput  {
     /// <p>A list of sessions meeting the request parameters.</p>
     #[doc(hidden)]
     pub sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
@@ -8509,17 +8036,17 @@ pub struct DescribeSessionsOutput {
 }
 impl DescribeSessionsOutput {
     /// <p>A list of sessions meeting the request parameters.</p>
-    pub fn sessions(&self) -> std::option::Option<&[crate::model::Session]> {
+    pub fn sessions(&self) -> std::option::Option<& [crate::model::Session]> {
         self.sessions.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput).
 pub mod describe_sessions_output {
-
+    
     /// A builder for [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8534,17 +8061,13 @@ pub mod describe_sessions_output {
         /// <p>A list of sessions meeting the request parameters.</p>
         pub fn sessions(mut self, input: crate::model::Session) -> Self {
             let mut v = self.sessions.unwrap_or_default();
-            v.push(input);
-            self.sessions = Some(v);
-            self
+                            v.push(input);
+                            self.sessions = Some(v);
+                            self
         }
         /// <p>A list of sessions meeting the request parameters.</p>
-        pub fn set_sessions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Session>>,
-        ) -> Self {
-            self.sessions = input;
-            self
+        pub fn set_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Session>>) -> Self {
+            self.sessions = input; self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8553,17 +8076,20 @@ pub mod describe_sessions_output {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput).
         pub fn build(self) -> crate::output::DescribeSessionsOutput {
             crate::output::DescribeSessionsOutput {
-                sessions: self.sessions,
-                next_token: self.next_token,
+                sessions: self.sessions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSessionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput).
@@ -8575,38 +8101,31 @@ impl DescribeSessionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePatchPropertiesOutput {
+pub struct DescribePatchPropertiesOutput  {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-    >,
+    pub properties: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchPropertiesOutput {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
-    {
+    pub fn properties(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, std::string::String>]> {
         self.properties.as_deref()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribePatchPropertiesOutput`](crate::output::DescribePatchPropertiesOutput).
 pub mod describe_patch_properties_output {
-
+    
     /// A builder for [`DescribePatchPropertiesOutput`](crate::output::DescribePatchPropertiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) properties: std::option::Option<
-            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-        >,
+        pub(crate) properties: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8615,24 +8134,15 @@ pub mod describe_patch_properties_output {
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>A list of the properties for patches matching the filter request parameters.</p>
-        pub fn properties(
-            mut self,
-            input: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn properties(mut self, input: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>A list of the properties for patches matching the filter request parameters.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.properties = input; self
         }
         /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8641,17 +8151,20 @@ pub mod describe_patch_properties_output {
         }
         /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribePatchPropertiesOutput`](crate::output::DescribePatchPropertiesOutput).
         pub fn build(self) -> crate::output::DescribePatchPropertiesOutput {
             crate::output::DescribePatchPropertiesOutput {
-                properties: self.properties,
-                next_token: self.next_token,
+                properties: self.properties
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePatchPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchPropertiesOutput`](crate::output::DescribePatchPropertiesOutput).
@@ -8663,7 +8176,7 @@ impl DescribePatchPropertiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePatchGroupStateOutput {
+pub struct DescribePatchGroupStateOutput  {
     /// <p>The number of managed nodes in the patch group.</p>
     #[doc(hidden)]
     pub instances: i32,
@@ -8676,8 +8189,8 @@ pub struct DescribePatchGroupStateOutput {
     /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     #[doc(hidden)]
     pub instances_with_installed_pending_reboot_patches: std::option::Option<i32>,
-    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
-    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note> 
+    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p> 
     /// </note>
     #[doc(hidden)]
     pub instances_with_installed_rejected_patches: std::option::Option<i32>,
@@ -8720,8 +8233,8 @@ impl DescribePatchGroupStateOutput {
     pub fn instances_with_installed_pending_reboot_patches(&self) -> std::option::Option<i32> {
         self.instances_with_installed_pending_reboot_patches
     }
-    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
-    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+    /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note> 
+    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p> 
     /// </note>
     pub fn instances_with_installed_rejected_patches(&self) -> std::option::Option<i32> {
         self.instances_with_installed_rejected_patches
@@ -8757,7 +8270,7 @@ impl DescribePatchGroupStateOutput {
 }
 /// See [`DescribePatchGroupStateOutput`](crate::output::DescribePatchGroupStateOutput).
 pub mod describe_patch_group_state_output {
-
+    
     /// A builder for [`DescribePatchGroupStateOutput`](crate::output::DescribePatchGroupStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8782,8 +8295,7 @@ pub mod describe_patch_group_state_output {
         }
         /// <p>The number of managed nodes in the patch group.</p>
         pub fn set_instances(mut self, input: std::option::Option<i32>) -> Self {
-            self.instances = input;
-            self
+            self.instances = input; self
         }
         /// <p>The number of managed nodes with installed patches.</p>
         pub fn instances_with_installed_patches(mut self, input: i32) -> Self {
@@ -8791,12 +8303,8 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes with installed patches.</p>
-        pub fn set_instances_with_installed_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_installed_patches = input;
-            self
+        pub fn set_instances_with_installed_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_installed_patches = input; self
         }
         /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
         pub fn instances_with_installed_other_patches(mut self, input: i32) -> Self {
@@ -8804,12 +8312,8 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
-        pub fn set_instances_with_installed_other_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_installed_other_patches = input;
-            self
+        pub fn set_instances_with_installed_other_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_installed_other_patches = input; self
         }
         /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_installed_pending_reboot_patches(mut self, input: i32) -> Self {
@@ -8817,29 +8321,21 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-        pub fn set_instances_with_installed_pending_reboot_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_installed_pending_reboot_patches = input;
-            self
+        pub fn set_instances_with_installed_pending_reboot_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_installed_pending_reboot_patches = input; self
         }
-        /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
-        /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+        /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note> 
+        /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p> 
         /// </note>
         pub fn instances_with_installed_rejected_patches(mut self, input: i32) -> Self {
             self.instances_with_installed_rejected_patches = Some(input);
             self
         }
-        /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
-        /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+        /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note> 
+        /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p> 
         /// </note>
-        pub fn set_instances_with_installed_rejected_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_installed_rejected_patches = input;
-            self
+        pub fn set_instances_with_installed_rejected_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_installed_rejected_patches = input; self
         }
         /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
         pub fn instances_with_missing_patches(mut self, input: i32) -> Self {
@@ -8847,12 +8343,8 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
-        pub fn set_instances_with_missing_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_missing_patches = input;
-            self
+        pub fn set_instances_with_missing_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_missing_patches = input; self
         }
         /// <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
         pub fn instances_with_failed_patches(mut self, input: i32) -> Self {
@@ -8860,12 +8352,8 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
-        pub fn set_instances_with_failed_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_failed_patches = input;
-            self
+        pub fn set_instances_with_failed_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_failed_patches = input; self
         }
         /// <p>The number of managed nodes with patches that aren't applicable.</p>
         pub fn instances_with_not_applicable_patches(mut self, input: i32) -> Self {
@@ -8873,12 +8361,8 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes with patches that aren't applicable.</p>
-        pub fn set_instances_with_not_applicable_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_not_applicable_patches = input;
-            self
+        pub fn set_instances_with_not_applicable_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_not_applicable_patches = input; self
         }
         /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
         pub fn instances_with_unreported_not_applicable_patches(mut self, input: i32) -> Self {
@@ -8886,12 +8370,8 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
-        pub fn set_instances_with_unreported_not_applicable_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_unreported_not_applicable_patches = input;
-            self
+        pub fn set_instances_with_unreported_not_applicable_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_unreported_not_applicable_patches = input; self
         }
         /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_critical_non_compliant_patches(mut self, input: i32) -> Self {
@@ -8899,12 +8379,8 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-        pub fn set_instances_with_critical_non_compliant_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_critical_non_compliant_patches = input;
-            self
+        pub fn set_instances_with_critical_non_compliant_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_critical_non_compliant_patches = input; self
         }
         /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_security_non_compliant_patches(mut self, input: i32) -> Self {
@@ -8912,12 +8388,8 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-        pub fn set_instances_with_security_non_compliant_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_security_non_compliant_patches = input;
-            self
+        pub fn set_instances_with_security_non_compliant_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_security_non_compliant_patches = input; self
         }
         /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_other_non_compliant_patches(mut self, input: i32) -> Self {
@@ -8925,47 +8397,47 @@ pub mod describe_patch_group_state_output {
             self
         }
         /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-        pub fn set_instances_with_other_non_compliant_patches(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.instances_with_other_non_compliant_patches = input;
-            self
+        pub fn set_instances_with_other_non_compliant_patches(mut self, input: std::option::Option<i32>) -> Self {
+            self.instances_with_other_non_compliant_patches = input; self
         }
         /// Consumes the builder and constructs a [`DescribePatchGroupStateOutput`](crate::output::DescribePatchGroupStateOutput).
         pub fn build(self) -> crate::output::DescribePatchGroupStateOutput {
             crate::output::DescribePatchGroupStateOutput {
-                instances: self.instances.unwrap_or_default(),
-                instances_with_installed_patches: self
-                    .instances_with_installed_patches
-                    .unwrap_or_default(),
-                instances_with_installed_other_patches: self
-                    .instances_with_installed_other_patches
-                    .unwrap_or_default(),
-                instances_with_installed_pending_reboot_patches: self
-                    .instances_with_installed_pending_reboot_patches,
-                instances_with_installed_rejected_patches: self
-                    .instances_with_installed_rejected_patches,
-                instances_with_missing_patches: self
-                    .instances_with_missing_patches
-                    .unwrap_or_default(),
-                instances_with_failed_patches: self
-                    .instances_with_failed_patches
-                    .unwrap_or_default(),
-                instances_with_not_applicable_patches: self
-                    .instances_with_not_applicable_patches
-                    .unwrap_or_default(),
-                instances_with_unreported_not_applicable_patches: self
-                    .instances_with_unreported_not_applicable_patches,
-                instances_with_critical_non_compliant_patches: self
-                    .instances_with_critical_non_compliant_patches,
-                instances_with_security_non_compliant_patches: self
-                    .instances_with_security_non_compliant_patches,
-                instances_with_other_non_compliant_patches: self
-                    .instances_with_other_non_compliant_patches,
+                instances: self.instances
+                    .unwrap_or_default()
+                ,
+                instances_with_installed_patches: self.instances_with_installed_patches
+                    .unwrap_or_default()
+                ,
+                instances_with_installed_other_patches: self.instances_with_installed_other_patches
+                    .unwrap_or_default()
+                ,
+                instances_with_installed_pending_reboot_patches: self.instances_with_installed_pending_reboot_patches
+                ,
+                instances_with_installed_rejected_patches: self.instances_with_installed_rejected_patches
+                ,
+                instances_with_missing_patches: self.instances_with_missing_patches
+                    .unwrap_or_default()
+                ,
+                instances_with_failed_patches: self.instances_with_failed_patches
+                    .unwrap_or_default()
+                ,
+                instances_with_not_applicable_patches: self.instances_with_not_applicable_patches
+                    .unwrap_or_default()
+                ,
+                instances_with_unreported_not_applicable_patches: self.instances_with_unreported_not_applicable_patches
+                ,
+                instances_with_critical_non_compliant_patches: self.instances_with_critical_non_compliant_patches
+                ,
+                instances_with_security_non_compliant_patches: self.instances_with_security_non_compliant_patches
+                ,
+                instances_with_other_non_compliant_patches: self.instances_with_other_non_compliant_patches
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePatchGroupStateOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchGroupStateOutput`](crate::output::DescribePatchGroupStateOutput).
@@ -8977,11 +8449,11 @@ impl DescribePatchGroupStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePatchGroupsOutput {
-    /// <p>Each entry in the array contains:</p>
-    /// <ul>
-    /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
-    /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
+pub struct DescribePatchGroupsOutput  {
+    /// <p>Each entry in the array contains:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li> 
+    /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub mappings: std::option::Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>,
@@ -8990,27 +8462,26 @@ pub struct DescribePatchGroupsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchGroupsOutput {
-    /// <p>Each entry in the array contains:</p>
-    /// <ul>
-    /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
-    /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
+    /// <p>Each entry in the array contains:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li> 
+    /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li> 
     /// </ul>
-    pub fn mappings(&self) -> std::option::Option<&[crate::model::PatchGroupPatchBaselineMapping]> {
+    pub fn mappings(&self) -> std::option::Option<& [crate::model::PatchGroupPatchBaselineMapping]> {
         self.mappings.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribePatchGroupsOutput`](crate::output::DescribePatchGroupsOutput).
 pub mod describe_patch_groups_output {
-
+    
     /// A builder for [`DescribePatchGroupsOutput`](crate::output::DescribePatchGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) mappings:
-            std::option::Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>,
+        pub(crate) mappings: std::option::Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9018,28 +8489,24 @@ pub mod describe_patch_groups_output {
         ///
         /// To override the contents of this collection use [`set_mappings`](Self::set_mappings).
         ///
-        /// <p>Each entry in the array contains:</p>
-        /// <ul>
-        /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
-        /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
+        /// <p>Each entry in the array contains:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li> 
+        /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li> 
         /// </ul>
         pub fn mappings(mut self, input: crate::model::PatchGroupPatchBaselineMapping) -> Self {
             let mut v = self.mappings.unwrap_or_default();
-            v.push(input);
-            self.mappings = Some(v);
-            self
+                            v.push(input);
+                            self.mappings = Some(v);
+                            self
         }
-        /// <p>Each entry in the array contains:</p>
-        /// <ul>
-        /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
-        /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
+        /// <p>Each entry in the array contains:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li> 
+        /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li> 
         /// </ul>
-        pub fn set_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>,
-        ) -> Self {
-            self.mappings = input;
-            self
+        pub fn set_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>) -> Self {
+            self.mappings = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9048,17 +8515,20 @@ pub mod describe_patch_groups_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribePatchGroupsOutput`](crate::output::DescribePatchGroupsOutput).
         pub fn build(self) -> crate::output::DescribePatchGroupsOutput {
             crate::output::DescribePatchGroupsOutput {
-                mappings: self.mappings,
-                next_token: self.next_token,
+                mappings: self.mappings
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePatchGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchGroupsOutput`](crate::output::DescribePatchGroupsOutput).
@@ -9070,35 +8540,31 @@ impl DescribePatchGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePatchBaselinesOutput {
+pub struct DescribePatchBaselinesOutput  {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
     #[doc(hidden)]
-    pub baseline_identities:
-        std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>,
+    pub baseline_identities: std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchBaselinesOutput {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
-    pub fn baseline_identities(
-        &self,
-    ) -> std::option::Option<&[crate::model::PatchBaselineIdentity]> {
+    pub fn baseline_identities(&self) -> std::option::Option<& [crate::model::PatchBaselineIdentity]> {
         self.baseline_identities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribePatchBaselinesOutput`](crate::output::DescribePatchBaselinesOutput).
 pub mod describe_patch_baselines_output {
-
+    
     /// A builder for [`DescribePatchBaselinesOutput`](crate::output::DescribePatchBaselinesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) baseline_identities:
-            std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>,
+        pub(crate) baseline_identities: std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9109,17 +8575,13 @@ pub mod describe_patch_baselines_output {
         /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
         pub fn baseline_identities(mut self, input: crate::model::PatchBaselineIdentity) -> Self {
             let mut v = self.baseline_identities.unwrap_or_default();
-            v.push(input);
-            self.baseline_identities = Some(v);
-            self
+                            v.push(input);
+                            self.baseline_identities = Some(v);
+                            self
         }
         /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
-        pub fn set_baseline_identities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>,
-        ) -> Self {
-            self.baseline_identities = input;
-            self
+        pub fn set_baseline_identities(mut self, input: std::option::Option<std::vec::Vec<crate::model::PatchBaselineIdentity>>) -> Self {
+            self.baseline_identities = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9128,17 +8590,20 @@ pub mod describe_patch_baselines_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribePatchBaselinesOutput`](crate::output::DescribePatchBaselinesOutput).
         pub fn build(self) -> crate::output::DescribePatchBaselinesOutput {
             crate::output::DescribePatchBaselinesOutput {
-                baseline_identities: self.baseline_identities,
-                next_token: self.next_token,
+                baseline_identities: self.baseline_identities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePatchBaselinesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchBaselinesOutput`](crate::output::DescribePatchBaselinesOutput).
@@ -9150,7 +8615,7 @@ impl DescribePatchBaselinesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeParametersOutput {
+pub struct DescribeParametersOutput  {
     /// <p>Parameters returned by the request.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::ParameterMetadata>>,
@@ -9160,17 +8625,17 @@ pub struct DescribeParametersOutput {
 }
 impl DescribeParametersOutput {
     /// <p>Parameters returned by the request.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::ParameterMetadata]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::ParameterMetadata]> {
         self.parameters.as_deref()
     }
     /// <p>The token to use when requesting the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
 pub mod describe_parameters_output {
-
+    
     /// A builder for [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9185,17 +8650,13 @@ pub mod describe_parameters_output {
         /// <p>Parameters returned by the request.</p>
         pub fn parameters(mut self, input: crate::model::ParameterMetadata) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>Parameters returned by the request.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParameterMetadata>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterMetadata>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The token to use when requesting the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9204,17 +8665,20 @@ pub mod describe_parameters_output {
         }
         /// <p>The token to use when requesting the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
         pub fn build(self) -> crate::output::DescribeParametersOutput {
             crate::output::DescribeParametersOutput {
-                parameters: self.parameters,
-                next_token: self.next_token,
+                parameters: self.parameters
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
@@ -9226,7 +8690,7 @@ impl DescribeParametersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOpsItemsOutput {
+pub struct DescribeOpsItemsOutput  {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -9236,23 +8700,22 @@ pub struct DescribeOpsItemsOutput {
 }
 impl DescribeOpsItemsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of OpsItems.</p>
-    pub fn ops_item_summaries(&self) -> std::option::Option<&[crate::model::OpsItemSummary]> {
+    pub fn ops_item_summaries(&self) -> std::option::Option<& [crate::model::OpsItemSummary]> {
         self.ops_item_summaries.as_deref()
     }
 }
 /// See [`DescribeOpsItemsOutput`](crate::output::DescribeOpsItemsOutput).
 pub mod describe_ops_items_output {
-
+    
     /// A builder for [`DescribeOpsItemsOutput`](crate::output::DescribeOpsItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) ops_item_summaries:
-            std::option::Option<std::vec::Vec<crate::model::OpsItemSummary>>,
+        pub(crate) ops_item_summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemSummary>>,
     }
     impl Builder {
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -9262,8 +8725,7 @@ pub mod describe_ops_items_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `ops_item_summaries`.
         ///
@@ -9272,26 +8734,26 @@ pub mod describe_ops_items_output {
         /// <p>A list of OpsItems.</p>
         pub fn ops_item_summaries(mut self, input: crate::model::OpsItemSummary) -> Self {
             let mut v = self.ops_item_summaries.unwrap_or_default();
-            v.push(input);
-            self.ops_item_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.ops_item_summaries = Some(v);
+                            self
         }
         /// <p>A list of OpsItems.</p>
-        pub fn set_ops_item_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OpsItemSummary>>,
-        ) -> Self {
-            self.ops_item_summaries = input;
-            self
+        pub fn set_ops_item_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::OpsItemSummary>>) -> Self {
+            self.ops_item_summaries = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOpsItemsOutput`](crate::output::DescribeOpsItemsOutput).
         pub fn build(self) -> crate::output::DescribeOpsItemsOutput {
             crate::output::DescribeOpsItemsOutput {
-                next_token: self.next_token,
-                ops_item_summaries: self.ops_item_summaries,
+                next_token: self.next_token
+                ,
+                ops_item_summaries: self.ops_item_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOpsItemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOpsItemsOutput`](crate::output::DescribeOpsItemsOutput).
@@ -9303,7 +8765,7 @@ impl DescribeOpsItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowTasksOutput {
+pub struct DescribeMaintenanceWindowTasksOutput  {
     /// <p>Information about the tasks in the maintenance window.</p>
     #[doc(hidden)]
     pub tasks: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTask>>,
@@ -9313,17 +8775,17 @@ pub struct DescribeMaintenanceWindowTasksOutput {
 }
 impl DescribeMaintenanceWindowTasksOutput {
     /// <p>Information about the tasks in the maintenance window.</p>
-    pub fn tasks(&self) -> std::option::Option<&[crate::model::MaintenanceWindowTask]> {
+    pub fn tasks(&self) -> std::option::Option<& [crate::model::MaintenanceWindowTask]> {
         self.tasks.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMaintenanceWindowTasksOutput`](crate::output::DescribeMaintenanceWindowTasksOutput).
 pub mod describe_maintenance_window_tasks_output {
-
+    
     /// A builder for [`DescribeMaintenanceWindowTasksOutput`](crate::output::DescribeMaintenanceWindowTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9338,17 +8800,13 @@ pub mod describe_maintenance_window_tasks_output {
         /// <p>Information about the tasks in the maintenance window.</p>
         pub fn tasks(mut self, input: crate::model::MaintenanceWindowTask) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input);
-            self.tasks = Some(v);
-            self
+                            v.push(input);
+                            self.tasks = Some(v);
+                            self
         }
         /// <p>Information about the tasks in the maintenance window.</p>
-        pub fn set_tasks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTask>>,
-        ) -> Self {
-            self.tasks = input;
-            self
+        pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTask>>) -> Self {
+            self.tasks = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9357,17 +8815,20 @@ pub mod describe_maintenance_window_tasks_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMaintenanceWindowTasksOutput`](crate::output::DescribeMaintenanceWindowTasksOutput).
         pub fn build(self) -> crate::output::DescribeMaintenanceWindowTasksOutput {
             crate::output::DescribeMaintenanceWindowTasksOutput {
-                tasks: self.tasks,
-                next_token: self.next_token,
+                tasks: self.tasks
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMaintenanceWindowTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowTasksOutput`](crate::output::DescribeMaintenanceWindowTasksOutput).
@@ -9379,7 +8840,7 @@ impl DescribeMaintenanceWindowTasksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowTargetsOutput {
+pub struct DescribeMaintenanceWindowTargetsOutput  {
     /// <p>Information about the targets in the maintenance window.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTarget>>,
@@ -9389,22 +8850,21 @@ pub struct DescribeMaintenanceWindowTargetsOutput {
 }
 impl DescribeMaintenanceWindowTargetsOutput {
     /// <p>Information about the targets in the maintenance window.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::MaintenanceWindowTarget]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::MaintenanceWindowTarget]> {
         self.targets.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMaintenanceWindowTargetsOutput`](crate::output::DescribeMaintenanceWindowTargetsOutput).
 pub mod describe_maintenance_window_targets_output {
-
+    
     /// A builder for [`DescribeMaintenanceWindowTargetsOutput`](crate::output::DescribeMaintenanceWindowTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) targets:
-            std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTarget>>,
+        pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTarget>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9415,17 +8875,13 @@ pub mod describe_maintenance_window_targets_output {
         /// <p>Information about the targets in the maintenance window.</p>
         pub fn targets(mut self, input: crate::model::MaintenanceWindowTarget) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>Information about the targets in the maintenance window.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTarget>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowTarget>>) -> Self {
+            self.targets = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9434,17 +8890,20 @@ pub mod describe_maintenance_window_targets_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMaintenanceWindowTargetsOutput`](crate::output::DescribeMaintenanceWindowTargetsOutput).
         pub fn build(self) -> crate::output::DescribeMaintenanceWindowTargetsOutput {
             crate::output::DescribeMaintenanceWindowTargetsOutput {
-                targets: self.targets,
-                next_token: self.next_token,
+                targets: self.targets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMaintenanceWindowTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowTargetsOutput`](crate::output::DescribeMaintenanceWindowTargetsOutput).
@@ -9456,35 +8915,31 @@ impl DescribeMaintenanceWindowTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowsForTargetOutput {
+pub struct DescribeMaintenanceWindowsForTargetOutput  {
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
     #[doc(hidden)]
-    pub window_identities:
-        std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
+    pub window_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsForTargetOutput {
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-    pub fn window_identities(
-        &self,
-    ) -> std::option::Option<&[crate::model::MaintenanceWindowIdentityForTarget]> {
+    pub fn window_identities(&self) -> std::option::Option<& [crate::model::MaintenanceWindowIdentityForTarget]> {
         self.window_identities.as_deref()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMaintenanceWindowsForTargetOutput`](crate::output::DescribeMaintenanceWindowsForTargetOutput).
 pub mod describe_maintenance_windows_for_target_output {
-
+    
     /// A builder for [`DescribeMaintenanceWindowsForTargetOutput`](crate::output::DescribeMaintenanceWindowsForTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) window_identities:
-            std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
+        pub(crate) window_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9493,24 +8948,15 @@ pub mod describe_maintenance_windows_for_target_output {
         /// To override the contents of this collection use [`set_window_identities`](Self::set_window_identities).
         ///
         /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-        pub fn window_identities(
-            mut self,
-            input: crate::model::MaintenanceWindowIdentityForTarget,
-        ) -> Self {
+        pub fn window_identities(mut self, input: crate::model::MaintenanceWindowIdentityForTarget) -> Self {
             let mut v = self.window_identities.unwrap_or_default();
-            v.push(input);
-            self.window_identities = Some(v);
-            self
+                            v.push(input);
+                            self.window_identities = Some(v);
+                            self
         }
         /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-        pub fn set_window_identities(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>,
-            >,
-        ) -> Self {
-            self.window_identities = input;
-            self
+        pub fn set_window_identities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>) -> Self {
+            self.window_identities = input; self
         }
         /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9519,17 +8965,20 @@ pub mod describe_maintenance_windows_for_target_output {
         }
         /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMaintenanceWindowsForTargetOutput`](crate::output::DescribeMaintenanceWindowsForTargetOutput).
         pub fn build(self) -> crate::output::DescribeMaintenanceWindowsForTargetOutput {
             crate::output::DescribeMaintenanceWindowsForTargetOutput {
-                window_identities: self.window_identities,
-                next_token: self.next_token,
+                window_identities: self.window_identities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMaintenanceWindowsForTargetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowsForTargetOutput`](crate::output::DescribeMaintenanceWindowsForTargetOutput).
@@ -9541,35 +8990,31 @@ impl DescribeMaintenanceWindowsForTargetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowScheduleOutput {
+pub struct DescribeMaintenanceWindowScheduleOutput  {
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
     #[doc(hidden)]
-    pub scheduled_window_executions:
-        std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
+    pub scheduled_window_executions: std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowScheduleOutput {
     /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
-    pub fn scheduled_window_executions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ScheduledWindowExecution]> {
+    pub fn scheduled_window_executions(&self) -> std::option::Option<& [crate::model::ScheduledWindowExecution]> {
         self.scheduled_window_executions.as_deref()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMaintenanceWindowScheduleOutput`](crate::output::DescribeMaintenanceWindowScheduleOutput).
 pub mod describe_maintenance_window_schedule_output {
-
+    
     /// A builder for [`DescribeMaintenanceWindowScheduleOutput`](crate::output::DescribeMaintenanceWindowScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) scheduled_window_executions:
-            std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
+        pub(crate) scheduled_window_executions: std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9578,22 +9023,15 @@ pub mod describe_maintenance_window_schedule_output {
         /// To override the contents of this collection use [`set_scheduled_window_executions`](Self::set_scheduled_window_executions).
         ///
         /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
-        pub fn scheduled_window_executions(
-            mut self,
-            input: crate::model::ScheduledWindowExecution,
-        ) -> Self {
+        pub fn scheduled_window_executions(mut self, input: crate::model::ScheduledWindowExecution) -> Self {
             let mut v = self.scheduled_window_executions.unwrap_or_default();
-            v.push(input);
-            self.scheduled_window_executions = Some(v);
-            self
+                            v.push(input);
+                            self.scheduled_window_executions = Some(v);
+                            self
         }
         /// <p>Information about maintenance window executions scheduled for the specified time range.</p>
-        pub fn set_scheduled_window_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
-        ) -> Self {
-            self.scheduled_window_executions = input;
-            self
+        pub fn set_scheduled_window_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>) -> Self {
+            self.scheduled_window_executions = input; self
         }
         /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9602,17 +9040,20 @@ pub mod describe_maintenance_window_schedule_output {
         }
         /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMaintenanceWindowScheduleOutput`](crate::output::DescribeMaintenanceWindowScheduleOutput).
         pub fn build(self) -> crate::output::DescribeMaintenanceWindowScheduleOutput {
             crate::output::DescribeMaintenanceWindowScheduleOutput {
-                scheduled_window_executions: self.scheduled_window_executions,
-                next_token: self.next_token,
+                scheduled_window_executions: self.scheduled_window_executions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMaintenanceWindowScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowScheduleOutput`](crate::output::DescribeMaintenanceWindowScheduleOutput).
@@ -9624,35 +9065,31 @@ impl DescribeMaintenanceWindowScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowsOutput {
+pub struct DescribeMaintenanceWindowsOutput  {
     /// <p>Information about the maintenance windows.</p>
     #[doc(hidden)]
-    pub window_identities:
-        std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>,
+    pub window_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsOutput {
     /// <p>Information about the maintenance windows.</p>
-    pub fn window_identities(
-        &self,
-    ) -> std::option::Option<&[crate::model::MaintenanceWindowIdentity]> {
+    pub fn window_identities(&self) -> std::option::Option<& [crate::model::MaintenanceWindowIdentity]> {
         self.window_identities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMaintenanceWindowsOutput`](crate::output::DescribeMaintenanceWindowsOutput).
 pub mod describe_maintenance_windows_output {
-
+    
     /// A builder for [`DescribeMaintenanceWindowsOutput`](crate::output::DescribeMaintenanceWindowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) window_identities:
-            std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>,
+        pub(crate) window_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9663,17 +9100,13 @@ pub mod describe_maintenance_windows_output {
         /// <p>Information about the maintenance windows.</p>
         pub fn window_identities(mut self, input: crate::model::MaintenanceWindowIdentity) -> Self {
             let mut v = self.window_identities.unwrap_or_default();
-            v.push(input);
-            self.window_identities = Some(v);
-            self
+                            v.push(input);
+                            self.window_identities = Some(v);
+                            self
         }
         /// <p>Information about the maintenance windows.</p>
-        pub fn set_window_identities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>,
-        ) -> Self {
-            self.window_identities = input;
-            self
+        pub fn set_window_identities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentity>>) -> Self {
+            self.window_identities = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9682,17 +9115,20 @@ pub mod describe_maintenance_windows_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMaintenanceWindowsOutput`](crate::output::DescribeMaintenanceWindowsOutput).
         pub fn build(self) -> crate::output::DescribeMaintenanceWindowsOutput {
             crate::output::DescribeMaintenanceWindowsOutput {
-                window_identities: self.window_identities,
-                next_token: self.next_token,
+                window_identities: self.window_identities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMaintenanceWindowsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowsOutput`](crate::output::DescribeMaintenanceWindowsOutput).
@@ -9704,36 +9140,31 @@ impl DescribeMaintenanceWindowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowExecutionTasksOutput {
+pub struct DescribeMaintenanceWindowExecutionTasksOutput  {
     /// <p>Information about the task executions.</p>
     #[doc(hidden)]
-    pub window_execution_task_identities:
-        std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>>,
+    pub window_execution_task_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>Information about the task executions.</p>
-    pub fn window_execution_task_identities(
-        &self,
-    ) -> std::option::Option<&[crate::model::MaintenanceWindowExecutionTaskIdentity]> {
+    pub fn window_execution_task_identities(&self) -> std::option::Option<& [crate::model::MaintenanceWindowExecutionTaskIdentity]> {
         self.window_execution_task_identities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput).
 pub mod describe_maintenance_window_execution_tasks_output {
-
+    
     /// A builder for [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) window_execution_task_identities: std::option::Option<
-            std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>,
-        >,
+        pub(crate) window_execution_task_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9742,24 +9173,15 @@ pub mod describe_maintenance_window_execution_tasks_output {
         /// To override the contents of this collection use [`set_window_execution_task_identities`](Self::set_window_execution_task_identities).
         ///
         /// <p>Information about the task executions.</p>
-        pub fn window_execution_task_identities(
-            mut self,
-            input: crate::model::MaintenanceWindowExecutionTaskIdentity,
-        ) -> Self {
+        pub fn window_execution_task_identities(mut self, input: crate::model::MaintenanceWindowExecutionTaskIdentity) -> Self {
             let mut v = self.window_execution_task_identities.unwrap_or_default();
-            v.push(input);
-            self.window_execution_task_identities = Some(v);
-            self
+                            v.push(input);
+                            self.window_execution_task_identities = Some(v);
+                            self
         }
         /// <p>Information about the task executions.</p>
-        pub fn set_window_execution_task_identities(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>,
-            >,
-        ) -> Self {
-            self.window_execution_task_identities = input;
-            self
+        pub fn set_window_execution_task_identities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskIdentity>>) -> Self {
+            self.window_execution_task_identities = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9768,17 +9190,20 @@ pub mod describe_maintenance_window_execution_tasks_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput).
         pub fn build(self) -> crate::output::DescribeMaintenanceWindowExecutionTasksOutput {
             crate::output::DescribeMaintenanceWindowExecutionTasksOutput {
-                window_execution_task_identities: self.window_execution_task_identities,
-                next_token: self.next_token,
+                window_execution_task_identities: self.window_execution_task_identities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMaintenanceWindowExecutionTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput).
@@ -9790,38 +9215,31 @@ impl DescribeMaintenanceWindowExecutionTasksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
+pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutput  {
     /// <p>Information about the task invocation results per invocation.</p>
     #[doc(hidden)]
-    pub window_execution_task_invocation_identities: std::option::Option<
-        std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>,
-    >,
+    pub window_execution_task_invocation_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     /// <p>Information about the task invocation results per invocation.</p>
-    pub fn window_execution_task_invocation_identities(
-        &self,
-    ) -> std::option::Option<&[crate::model::MaintenanceWindowExecutionTaskInvocationIdentity]>
-    {
+    pub fn window_execution_task_invocation_identities(&self) -> std::option::Option<& [crate::model::MaintenanceWindowExecutionTaskInvocationIdentity]> {
         self.window_execution_task_invocation_identities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput).
 pub mod describe_maintenance_window_execution_task_invocations_output {
-
+    
     /// A builder for [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) window_execution_task_invocation_identities: std::option::Option<
-            std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>,
-        >,
+        pub(crate) window_execution_task_invocation_identities: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9830,26 +9248,15 @@ pub mod describe_maintenance_window_execution_task_invocations_output {
         /// To override the contents of this collection use [`set_window_execution_task_invocation_identities`](Self::set_window_execution_task_invocation_identities).
         ///
         /// <p>Information about the task invocation results per invocation.</p>
-        pub fn window_execution_task_invocation_identities(
-            mut self,
-            input: crate::model::MaintenanceWindowExecutionTaskInvocationIdentity,
-        ) -> Self {
-            let mut v = self
-                .window_execution_task_invocation_identities
-                .unwrap_or_default();
-            v.push(input);
-            self.window_execution_task_invocation_identities = Some(v);
-            self
+        pub fn window_execution_task_invocation_identities(mut self, input: crate::model::MaintenanceWindowExecutionTaskInvocationIdentity) -> Self {
+            let mut v = self.window_execution_task_invocation_identities.unwrap_or_default();
+                            v.push(input);
+                            self.window_execution_task_invocation_identities = Some(v);
+                            self
         }
         /// <p>Information about the task invocation results per invocation.</p>
-        pub fn set_window_execution_task_invocation_identities(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>,
-            >,
-        ) -> Self {
-            self.window_execution_task_invocation_identities = input;
-            self
+        pub fn set_window_execution_task_invocation_identities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>>) -> Self {
+            self.window_execution_task_invocation_identities = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9858,25 +9265,24 @@ pub mod describe_maintenance_window_execution_task_invocations_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
+        pub fn build(self) -> crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
             crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
-                window_execution_task_invocation_identities: self
-                    .window_execution_task_invocation_identities,
-                next_token: self.next_token,
+                window_execution_task_invocation_identities: self.window_execution_task_invocation_identities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput).
-    pub fn builder(
-    ) -> crate::output::describe_maintenance_window_execution_task_invocations_output::Builder {
+    pub fn builder() -> crate::output::describe_maintenance_window_execution_task_invocations_output::Builder {
         crate::output::describe_maintenance_window_execution_task_invocations_output::Builder::default()
     }
 }
@@ -9884,35 +9290,31 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowExecutionsOutput {
+pub struct DescribeMaintenanceWindowExecutionsOutput  {
     /// <p>Information about the maintenance window executions.</p>
     #[doc(hidden)]
-    pub window_executions:
-        std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>,
+    pub window_executions: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowExecutionsOutput {
     /// <p>Information about the maintenance window executions.</p>
-    pub fn window_executions(
-        &self,
-    ) -> std::option::Option<&[crate::model::MaintenanceWindowExecution]> {
+    pub fn window_executions(&self) -> std::option::Option<& [crate::model::MaintenanceWindowExecution]> {
         self.window_executions.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMaintenanceWindowExecutionsOutput`](crate::output::DescribeMaintenanceWindowExecutionsOutput).
 pub mod describe_maintenance_window_executions_output {
-
+    
     /// A builder for [`DescribeMaintenanceWindowExecutionsOutput`](crate::output::DescribeMaintenanceWindowExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) window_executions:
-            std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>,
+        pub(crate) window_executions: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -9921,22 +9323,15 @@ pub mod describe_maintenance_window_executions_output {
         /// To override the contents of this collection use [`set_window_executions`](Self::set_window_executions).
         ///
         /// <p>Information about the maintenance window executions.</p>
-        pub fn window_executions(
-            mut self,
-            input: crate::model::MaintenanceWindowExecution,
-        ) -> Self {
+        pub fn window_executions(mut self, input: crate::model::MaintenanceWindowExecution) -> Self {
             let mut v = self.window_executions.unwrap_or_default();
-            v.push(input);
-            self.window_executions = Some(v);
-            self
+                            v.push(input);
+                            self.window_executions = Some(v);
+                            self
         }
         /// <p>Information about the maintenance window executions.</p>
-        pub fn set_window_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>,
-        ) -> Self {
-            self.window_executions = input;
-            self
+        pub fn set_window_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowExecution>>) -> Self {
+            self.window_executions = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9945,17 +9340,20 @@ pub mod describe_maintenance_window_executions_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionsOutput`](crate::output::DescribeMaintenanceWindowExecutionsOutput).
         pub fn build(self) -> crate::output::DescribeMaintenanceWindowExecutionsOutput {
             crate::output::DescribeMaintenanceWindowExecutionsOutput {
-                window_executions: self.window_executions,
-                next_token: self.next_token,
+                window_executions: self.window_executions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMaintenanceWindowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionsOutput`](crate::output::DescribeMaintenanceWindowExecutionsOutput).
@@ -9967,35 +9365,31 @@ impl DescribeMaintenanceWindowExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInventoryDeletionsOutput {
+pub struct DescribeInventoryDeletionsOutput  {
     /// <p>A list of status items for deleted inventory.</p>
     #[doc(hidden)]
-    pub inventory_deletions:
-        std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>,
+    pub inventory_deletions: std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInventoryDeletionsOutput {
     /// <p>A list of status items for deleted inventory.</p>
-    pub fn inventory_deletions(
-        &self,
-    ) -> std::option::Option<&[crate::model::InventoryDeletionStatusItem]> {
+    pub fn inventory_deletions(&self) -> std::option::Option<& [crate::model::InventoryDeletionStatusItem]> {
         self.inventory_deletions.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeInventoryDeletionsOutput`](crate::output::DescribeInventoryDeletionsOutput).
 pub mod describe_inventory_deletions_output {
-
+    
     /// A builder for [`DescribeInventoryDeletionsOutput`](crate::output::DescribeInventoryDeletionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) inventory_deletions:
-            std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>,
+        pub(crate) inventory_deletions: std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10004,22 +9398,15 @@ pub mod describe_inventory_deletions_output {
         /// To override the contents of this collection use [`set_inventory_deletions`](Self::set_inventory_deletions).
         ///
         /// <p>A list of status items for deleted inventory.</p>
-        pub fn inventory_deletions(
-            mut self,
-            input: crate::model::InventoryDeletionStatusItem,
-        ) -> Self {
+        pub fn inventory_deletions(mut self, input: crate::model::InventoryDeletionStatusItem) -> Self {
             let mut v = self.inventory_deletions.unwrap_or_default();
-            v.push(input);
-            self.inventory_deletions = Some(v);
-            self
+                            v.push(input);
+                            self.inventory_deletions = Some(v);
+                            self
         }
         /// <p>A list of status items for deleted inventory.</p>
-        pub fn set_inventory_deletions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>,
-        ) -> Self {
-            self.inventory_deletions = input;
-            self
+        pub fn set_inventory_deletions(mut self, input: std::option::Option<std::vec::Vec<crate::model::InventoryDeletionStatusItem>>) -> Self {
+            self.inventory_deletions = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10028,17 +9415,20 @@ pub mod describe_inventory_deletions_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInventoryDeletionsOutput`](crate::output::DescribeInventoryDeletionsOutput).
         pub fn build(self) -> crate::output::DescribeInventoryDeletionsOutput {
             crate::output::DescribeInventoryDeletionsOutput {
-                inventory_deletions: self.inventory_deletions,
-                next_token: self.next_token,
+                inventory_deletions: self.inventory_deletions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInventoryDeletionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInventoryDeletionsOutput`](crate::output::DescribeInventoryDeletionsOutput).
@@ -10050,7 +9440,7 @@ impl DescribeInventoryDeletionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancePatchStatesForPatchGroupOutput {
+pub struct DescribeInstancePatchStatesForPatchGroupOutput  {
     /// <p>The high-level patch state for the requested managed nodes. </p>
     #[doc(hidden)]
     pub instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
@@ -10060,24 +9450,21 @@ pub struct DescribeInstancePatchStatesForPatchGroupOutput {
 }
 impl DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The high-level patch state for the requested managed nodes. </p>
-    pub fn instance_patch_states(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstancePatchState]> {
+    pub fn instance_patch_states(&self) -> std::option::Option<& [crate::model::InstancePatchState]> {
         self.instance_patch_states.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput).
 pub mod describe_instance_patch_states_for_patch_group_output {
-
+    
     /// A builder for [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_patch_states:
-            std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
+        pub(crate) instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10088,17 +9475,13 @@ pub mod describe_instance_patch_states_for_patch_group_output {
         /// <p>The high-level patch state for the requested managed nodes. </p>
         pub fn instance_patch_states(mut self, input: crate::model::InstancePatchState) -> Self {
             let mut v = self.instance_patch_states.unwrap_or_default();
-            v.push(input);
-            self.instance_patch_states = Some(v);
-            self
+                            v.push(input);
+                            self.instance_patch_states = Some(v);
+                            self
         }
         /// <p>The high-level patch state for the requested managed nodes. </p>
-        pub fn set_instance_patch_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
-        ) -> Self {
-            self.instance_patch_states = input;
-            self
+        pub fn set_instance_patch_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>) -> Self {
+            self.instance_patch_states = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10107,22 +9490,24 @@ pub mod describe_instance_patch_states_for_patch_group_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput).
         pub fn build(self) -> crate::output::DescribeInstancePatchStatesForPatchGroupOutput {
             crate::output::DescribeInstancePatchStatesForPatchGroupOutput {
-                instance_patch_states: self.instance_patch_states,
-                next_token: self.next_token,
+                instance_patch_states: self.instance_patch_states
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInstancePatchStatesForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput).
-    pub fn builder() -> crate::output::describe_instance_patch_states_for_patch_group_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_instance_patch_states_for_patch_group_output::Builder {
         crate::output::describe_instance_patch_states_for_patch_group_output::Builder::default()
     }
 }
@@ -10130,7 +9515,7 @@ impl DescribeInstancePatchStatesForPatchGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancePatchStatesOutput {
+pub struct DescribeInstancePatchStatesOutput  {
     /// <p>The high-level patch state for the requested managed nodes.</p>
     #[doc(hidden)]
     pub instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
@@ -10140,24 +9525,21 @@ pub struct DescribeInstancePatchStatesOutput {
 }
 impl DescribeInstancePatchStatesOutput {
     /// <p>The high-level patch state for the requested managed nodes.</p>
-    pub fn instance_patch_states(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstancePatchState]> {
+    pub fn instance_patch_states(&self) -> std::option::Option<& [crate::model::InstancePatchState]> {
         self.instance_patch_states.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeInstancePatchStatesOutput`](crate::output::DescribeInstancePatchStatesOutput).
 pub mod describe_instance_patch_states_output {
-
+    
     /// A builder for [`DescribeInstancePatchStatesOutput`](crate::output::DescribeInstancePatchStatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_patch_states:
-            std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
+        pub(crate) instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10168,17 +9550,13 @@ pub mod describe_instance_patch_states_output {
         /// <p>The high-level patch state for the requested managed nodes.</p>
         pub fn instance_patch_states(mut self, input: crate::model::InstancePatchState) -> Self {
             let mut v = self.instance_patch_states.unwrap_or_default();
-            v.push(input);
-            self.instance_patch_states = Some(v);
-            self
+                            v.push(input);
+                            self.instance_patch_states = Some(v);
+                            self
         }
         /// <p>The high-level patch state for the requested managed nodes.</p>
-        pub fn set_instance_patch_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
-        ) -> Self {
-            self.instance_patch_states = input;
-            self
+        pub fn set_instance_patch_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>) -> Self {
+            self.instance_patch_states = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10187,17 +9565,20 @@ pub mod describe_instance_patch_states_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstancePatchStatesOutput`](crate::output::DescribeInstancePatchStatesOutput).
         pub fn build(self) -> crate::output::DescribeInstancePatchStatesOutput {
             crate::output::DescribeInstancePatchStatesOutput {
-                instance_patch_states: self.instance_patch_states,
-                next_token: self.next_token,
+                instance_patch_states: self.instance_patch_states
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInstancePatchStatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchStatesOutput`](crate::output::DescribeInstancePatchStatesOutput).
@@ -10209,16 +9590,16 @@ impl DescribeInstancePatchStatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancePatchesOutput {
-    /// <p>Each entry in the array is a structure containing:</p>
-    /// <ul>
-    /// <li> <p>Title (string)</p> </li>
-    /// <li> <p>KBId (string)</p> </li>
-    /// <li> <p>Classification (string)</p> </li>
-    /// <li> <p>Severity (string)</p> </li>
-    /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
-    /// <li> <p>InstalledTime (DateTime)</p> </li>
-    /// <li> <p>InstalledBy (string)</p> </li>
+pub struct DescribeInstancePatchesOutput  {
+    /// <p>Each entry in the array is a structure containing:</p> 
+    /// <ul> 
+    /// <li> <p>Title (string)</p> </li> 
+    /// <li> <p>KBId (string)</p> </li> 
+    /// <li> <p>Classification (string)</p> </li> 
+    /// <li> <p>Severity (string)</p> </li> 
+    /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li> 
+    /// <li> <p>InstalledTime (DateTime)</p> </li> 
+    /// <li> <p>InstalledBy (string)</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub patches: std::option::Option<std::vec::Vec<crate::model::PatchComplianceData>>,
@@ -10227,27 +9608,27 @@ pub struct DescribeInstancePatchesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchesOutput {
-    /// <p>Each entry in the array is a structure containing:</p>
-    /// <ul>
-    /// <li> <p>Title (string)</p> </li>
-    /// <li> <p>KBId (string)</p> </li>
-    /// <li> <p>Classification (string)</p> </li>
-    /// <li> <p>Severity (string)</p> </li>
-    /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
-    /// <li> <p>InstalledTime (DateTime)</p> </li>
-    /// <li> <p>InstalledBy (string)</p> </li>
+    /// <p>Each entry in the array is a structure containing:</p> 
+    /// <ul> 
+    /// <li> <p>Title (string)</p> </li> 
+    /// <li> <p>KBId (string)</p> </li> 
+    /// <li> <p>Classification (string)</p> </li> 
+    /// <li> <p>Severity (string)</p> </li> 
+    /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li> 
+    /// <li> <p>InstalledTime (DateTime)</p> </li> 
+    /// <li> <p>InstalledBy (string)</p> </li> 
     /// </ul>
-    pub fn patches(&self) -> std::option::Option<&[crate::model::PatchComplianceData]> {
+    pub fn patches(&self) -> std::option::Option<& [crate::model::PatchComplianceData]> {
         self.patches.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeInstancePatchesOutput`](crate::output::DescribeInstancePatchesOutput).
 pub mod describe_instance_patches_output {
-
+    
     /// A builder for [`DescribeInstancePatchesOutput`](crate::output::DescribeInstancePatchesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10259,38 +9640,34 @@ pub mod describe_instance_patches_output {
         ///
         /// To override the contents of this collection use [`set_patches`](Self::set_patches).
         ///
-        /// <p>Each entry in the array is a structure containing:</p>
-        /// <ul>
-        /// <li> <p>Title (string)</p> </li>
-        /// <li> <p>KBId (string)</p> </li>
-        /// <li> <p>Classification (string)</p> </li>
-        /// <li> <p>Severity (string)</p> </li>
-        /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
-        /// <li> <p>InstalledTime (DateTime)</p> </li>
-        /// <li> <p>InstalledBy (string)</p> </li>
+        /// <p>Each entry in the array is a structure containing:</p> 
+        /// <ul> 
+        /// <li> <p>Title (string)</p> </li> 
+        /// <li> <p>KBId (string)</p> </li> 
+        /// <li> <p>Classification (string)</p> </li> 
+        /// <li> <p>Severity (string)</p> </li> 
+        /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li> 
+        /// <li> <p>InstalledTime (DateTime)</p> </li> 
+        /// <li> <p>InstalledBy (string)</p> </li> 
         /// </ul>
         pub fn patches(mut self, input: crate::model::PatchComplianceData) -> Self {
             let mut v = self.patches.unwrap_or_default();
-            v.push(input);
-            self.patches = Some(v);
-            self
+                            v.push(input);
+                            self.patches = Some(v);
+                            self
         }
-        /// <p>Each entry in the array is a structure containing:</p>
-        /// <ul>
-        /// <li> <p>Title (string)</p> </li>
-        /// <li> <p>KBId (string)</p> </li>
-        /// <li> <p>Classification (string)</p> </li>
-        /// <li> <p>Severity (string)</p> </li>
-        /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>
-        /// <li> <p>InstalledTime (DateTime)</p> </li>
-        /// <li> <p>InstalledBy (string)</p> </li>
+        /// <p>Each entry in the array is a structure containing:</p> 
+        /// <ul> 
+        /// <li> <p>Title (string)</p> </li> 
+        /// <li> <p>KBId (string)</p> </li> 
+        /// <li> <p>Classification (string)</p> </li> 
+        /// <li> <p>Severity (string)</p> </li> 
+        /// <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li> 
+        /// <li> <p>InstalledTime (DateTime)</p> </li> 
+        /// <li> <p>InstalledBy (string)</p> </li> 
         /// </ul>
-        pub fn set_patches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PatchComplianceData>>,
-        ) -> Self {
-            self.patches = input;
-            self
+        pub fn set_patches(mut self, input: std::option::Option<std::vec::Vec<crate::model::PatchComplianceData>>) -> Self {
+            self.patches = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10299,17 +9676,20 @@ pub mod describe_instance_patches_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstancePatchesOutput`](crate::output::DescribeInstancePatchesOutput).
         pub fn build(self) -> crate::output::DescribeInstancePatchesOutput {
             crate::output::DescribeInstancePatchesOutput {
-                patches: self.patches,
-                next_token: self.next_token,
+                patches: self.patches
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInstancePatchesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchesOutput`](crate::output::DescribeInstancePatchesOutput).
@@ -10321,35 +9701,31 @@ impl DescribeInstancePatchesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceInformationOutput {
+pub struct DescribeInstanceInformationOutput  {
     /// <p>The managed node information list.</p>
     #[doc(hidden)]
-    pub instance_information_list:
-        std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
+    pub instance_information_list: std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceInformationOutput {
     /// <p>The managed node information list.</p>
-    pub fn instance_information_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceInformation]> {
+    pub fn instance_information_list(&self) -> std::option::Option<& [crate::model::InstanceInformation]> {
         self.instance_information_list.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeInstanceInformationOutput`](crate::output::DescribeInstanceInformationOutput).
 pub mod describe_instance_information_output {
-
+    
     /// A builder for [`DescribeInstanceInformationOutput`](crate::output::DescribeInstanceInformationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_information_list:
-            std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
+        pub(crate) instance_information_list: std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10358,22 +9734,15 @@ pub mod describe_instance_information_output {
         /// To override the contents of this collection use [`set_instance_information_list`](Self::set_instance_information_list).
         ///
         /// <p>The managed node information list.</p>
-        pub fn instance_information_list(
-            mut self,
-            input: crate::model::InstanceInformation,
-        ) -> Self {
+        pub fn instance_information_list(mut self, input: crate::model::InstanceInformation) -> Self {
             let mut v = self.instance_information_list.unwrap_or_default();
-            v.push(input);
-            self.instance_information_list = Some(v);
-            self
+                            v.push(input);
+                            self.instance_information_list = Some(v);
+                            self
         }
         /// <p>The managed node information list.</p>
-        pub fn set_instance_information_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
-        ) -> Self {
-            self.instance_information_list = input;
-            self
+        pub fn set_instance_information_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>) -> Self {
+            self.instance_information_list = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10382,17 +9751,20 @@ pub mod describe_instance_information_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceInformationOutput`](crate::output::DescribeInstanceInformationOutput).
         pub fn build(self) -> crate::output::DescribeInstanceInformationOutput {
             crate::output::DescribeInstanceInformationOutput {
-                instance_information_list: self.instance_information_list,
-                next_token: self.next_token,
+                instance_information_list: self.instance_information_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInstanceInformationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceInformationOutput`](crate::output::DescribeInstanceInformationOutput).
@@ -10404,35 +9776,31 @@ impl DescribeInstanceInformationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceAssociationsStatusOutput {
+pub struct DescribeInstanceAssociationsStatusOutput  {
     /// <p>Status information about the association.</p>
     #[doc(hidden)]
-    pub instance_association_status_infos:
-        std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
+    pub instance_association_status_infos: std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceAssociationsStatusOutput {
     /// <p>Status information about the association.</p>
-    pub fn instance_association_status_infos(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceAssociationStatusInfo]> {
+    pub fn instance_association_status_infos(&self) -> std::option::Option<& [crate::model::InstanceAssociationStatusInfo]> {
         self.instance_association_status_infos.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeInstanceAssociationsStatusOutput`](crate::output::DescribeInstanceAssociationsStatusOutput).
 pub mod describe_instance_associations_status_output {
-
+    
     /// A builder for [`DescribeInstanceAssociationsStatusOutput`](crate::output::DescribeInstanceAssociationsStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_association_status_infos:
-            std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
+        pub(crate) instance_association_status_infos: std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10441,22 +9809,15 @@ pub mod describe_instance_associations_status_output {
         /// To override the contents of this collection use [`set_instance_association_status_infos`](Self::set_instance_association_status_infos).
         ///
         /// <p>Status information about the association.</p>
-        pub fn instance_association_status_infos(
-            mut self,
-            input: crate::model::InstanceAssociationStatusInfo,
-        ) -> Self {
+        pub fn instance_association_status_infos(mut self, input: crate::model::InstanceAssociationStatusInfo) -> Self {
             let mut v = self.instance_association_status_infos.unwrap_or_default();
-            v.push(input);
-            self.instance_association_status_infos = Some(v);
-            self
+                            v.push(input);
+                            self.instance_association_status_infos = Some(v);
+                            self
         }
         /// <p>Status information about the association.</p>
-        pub fn set_instance_association_status_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
-        ) -> Self {
-            self.instance_association_status_infos = input;
-            self
+        pub fn set_instance_association_status_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>) -> Self {
+            self.instance_association_status_infos = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10465,17 +9826,20 @@ pub mod describe_instance_associations_status_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceAssociationsStatusOutput`](crate::output::DescribeInstanceAssociationsStatusOutput).
         pub fn build(self) -> crate::output::DescribeInstanceAssociationsStatusOutput {
             crate::output::DescribeInstanceAssociationsStatusOutput {
-                instance_association_status_infos: self.instance_association_status_infos,
-                next_token: self.next_token,
+                instance_association_status_infos: self.instance_association_status_infos
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInstanceAssociationsStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAssociationsStatusOutput`](crate::output::DescribeInstanceAssociationsStatusOutput).
@@ -10487,7 +9851,7 @@ impl DescribeInstanceAssociationsStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEffectivePatchesForPatchBaselineOutput {
+pub struct DescribeEffectivePatchesForPatchBaselineOutput  {
     /// <p>An array of patches and patch status.</p>
     #[doc(hidden)]
     pub effective_patches: std::option::Option<std::vec::Vec<crate::model::EffectivePatch>>,
@@ -10497,22 +9861,21 @@ pub struct DescribeEffectivePatchesForPatchBaselineOutput {
 }
 impl DescribeEffectivePatchesForPatchBaselineOutput {
     /// <p>An array of patches and patch status.</p>
-    pub fn effective_patches(&self) -> std::option::Option<&[crate::model::EffectivePatch]> {
+    pub fn effective_patches(&self) -> std::option::Option<& [crate::model::EffectivePatch]> {
         self.effective_patches.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput).
 pub mod describe_effective_patches_for_patch_baseline_output {
-
+    
     /// A builder for [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) effective_patches:
-            std::option::Option<std::vec::Vec<crate::model::EffectivePatch>>,
+        pub(crate) effective_patches: std::option::Option<std::vec::Vec<crate::model::EffectivePatch>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10523,17 +9886,13 @@ pub mod describe_effective_patches_for_patch_baseline_output {
         /// <p>An array of patches and patch status.</p>
         pub fn effective_patches(mut self, input: crate::model::EffectivePatch) -> Self {
             let mut v = self.effective_patches.unwrap_or_default();
-            v.push(input);
-            self.effective_patches = Some(v);
-            self
+                            v.push(input);
+                            self.effective_patches = Some(v);
+                            self
         }
         /// <p>An array of patches and patch status.</p>
-        pub fn set_effective_patches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EffectivePatch>>,
-        ) -> Self {
-            self.effective_patches = input;
-            self
+        pub fn set_effective_patches(mut self, input: std::option::Option<std::vec::Vec<crate::model::EffectivePatch>>) -> Self {
+            self.effective_patches = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10542,22 +9901,24 @@ pub mod describe_effective_patches_for_patch_baseline_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput).
         pub fn build(self) -> crate::output::DescribeEffectivePatchesForPatchBaselineOutput {
             crate::output::DescribeEffectivePatchesForPatchBaselineOutput {
-                effective_patches: self.effective_patches,
-                next_token: self.next_token,
+                effective_patches: self.effective_patches
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEffectivePatchesForPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput).
-    pub fn builder() -> crate::output::describe_effective_patches_for_patch_baseline_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_effective_patches_for_patch_baseline_output::Builder {
         crate::output::describe_effective_patches_for_patch_baseline_output::Builder::default()
     }
 }
@@ -10565,7 +9926,7 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEffectiveInstanceAssociationsOutput {
+pub struct DescribeEffectiveInstanceAssociationsOutput  {
     /// <p>The associations for the requested managed node.</p>
     #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,
@@ -10575,22 +9936,21 @@ pub struct DescribeEffectiveInstanceAssociationsOutput {
 }
 impl DescribeEffectiveInstanceAssociationsOutput {
     /// <p>The associations for the requested managed node.</p>
-    pub fn associations(&self) -> std::option::Option<&[crate::model::InstanceAssociation]> {
+    pub fn associations(&self) -> std::option::Option<& [crate::model::InstanceAssociation]> {
         self.associations.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeEffectiveInstanceAssociationsOutput`](crate::output::DescribeEffectiveInstanceAssociationsOutput).
 pub mod describe_effective_instance_associations_output {
-
+    
     /// A builder for [`DescribeEffectiveInstanceAssociationsOutput`](crate::output::DescribeEffectiveInstanceAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) associations:
-            std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,
+        pub(crate) associations: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10601,17 +9961,13 @@ pub mod describe_effective_instance_associations_output {
         /// <p>The associations for the requested managed node.</p>
         pub fn associations(mut self, input: crate::model::InstanceAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input);
-            self.associations = Some(v);
-            self
+                            v.push(input);
+                            self.associations = Some(v);
+                            self
         }
         /// <p>The associations for the requested managed node.</p>
-        pub fn set_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,
-        ) -> Self {
-            self.associations = input;
-            self
+        pub fn set_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>) -> Self {
+            self.associations = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10620,17 +9976,20 @@ pub mod describe_effective_instance_associations_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEffectiveInstanceAssociationsOutput`](crate::output::DescribeEffectiveInstanceAssociationsOutput).
         pub fn build(self) -> crate::output::DescribeEffectiveInstanceAssociationsOutput {
             crate::output::DescribeEffectiveInstanceAssociationsOutput {
-                associations: self.associations,
-                next_token: self.next_token,
+                associations: self.associations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEffectiveInstanceAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectiveInstanceAssociationsOutput`](crate::output::DescribeEffectiveInstanceAssociationsOutput).
@@ -10642,43 +10001,39 @@ impl DescribeEffectiveInstanceAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDocumentPermissionOutput {
+pub struct DescribeDocumentPermissionOutput  {
     /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
     #[doc(hidden)]
-    pub account_sharing_info_list:
-        std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
+    pub account_sharing_info_list: std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentPermissionOutput {
     /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
-    pub fn account_sharing_info_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::AccountSharingInfo]> {
+    pub fn account_sharing_info_list(&self) -> std::option::Option<& [crate::model::AccountSharingInfo]> {
         self.account_sharing_info_list.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeDocumentPermissionOutput`](crate::output::DescribeDocumentPermissionOutput).
 pub mod describe_document_permission_output {
-
+    
     /// A builder for [`DescribeDocumentPermissionOutput`](crate::output::DescribeDocumentPermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) account_sharing_info_list:
-            std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
+        pub(crate) account_sharing_info_list: std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10689,39 +10044,28 @@ pub mod describe_document_permission_output {
         /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
-            v.push(input.into());
-            self.account_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.account_ids = Some(v);
+                            self
         }
         /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
-        pub fn set_account_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.account_ids = input;
-            self
+        pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.account_ids = input; self
         }
         /// Appends an item to `account_sharing_info_list`.
         ///
         /// To override the contents of this collection use [`set_account_sharing_info_list`](Self::set_account_sharing_info_list).
         ///
         /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
-        pub fn account_sharing_info_list(
-            mut self,
-            input: crate::model::AccountSharingInfo,
-        ) -> Self {
+        pub fn account_sharing_info_list(mut self, input: crate::model::AccountSharingInfo) -> Self {
             let mut v = self.account_sharing_info_list.unwrap_or_default();
-            v.push(input);
-            self.account_sharing_info_list = Some(v);
-            self
+                            v.push(input);
+                            self.account_sharing_info_list = Some(v);
+                            self
         }
         /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
-        pub fn set_account_sharing_info_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
-        ) -> Self {
-            self.account_sharing_info_list = input;
-            self
+        pub fn set_account_sharing_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>) -> Self {
+            self.account_sharing_info_list = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10730,18 +10074,22 @@ pub mod describe_document_permission_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDocumentPermissionOutput`](crate::output::DescribeDocumentPermissionOutput).
         pub fn build(self) -> crate::output::DescribeDocumentPermissionOutput {
             crate::output::DescribeDocumentPermissionOutput {
-                account_ids: self.account_ids,
-                account_sharing_info_list: self.account_sharing_info_list,
-                next_token: self.next_token,
+                account_ids: self.account_ids
+                ,
+                account_sharing_info_list: self.account_sharing_info_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDocumentPermissionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentPermissionOutput`](crate::output::DescribeDocumentPermissionOutput).
@@ -10753,20 +10101,20 @@ impl DescribeDocumentPermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDocumentOutput {
+pub struct DescribeDocumentOutput  {
     /// <p>Information about the SSM document.</p>
     #[doc(hidden)]
     pub document: std::option::Option<crate::model::DocumentDescription>,
 }
 impl DescribeDocumentOutput {
     /// <p>Information about the SSM document.</p>
-    pub fn document(&self) -> std::option::Option<&crate::model::DocumentDescription> {
+    pub fn document(&self) -> std::option::Option<& crate::model::DocumentDescription> {
         self.document.as_ref()
     }
 }
 /// See [`DescribeDocumentOutput`](crate::output::DescribeDocumentOutput).
 pub mod describe_document_output {
-
+    
     /// A builder for [`DescribeDocumentOutput`](crate::output::DescribeDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10779,20 +10127,19 @@ pub mod describe_document_output {
             self
         }
         /// <p>Information about the SSM document.</p>
-        pub fn set_document(
-            mut self,
-            input: std::option::Option<crate::model::DocumentDescription>,
-        ) -> Self {
-            self.document = input;
-            self
+        pub fn set_document(mut self, input: std::option::Option<crate::model::DocumentDescription>) -> Self {
+            self.document = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDocumentOutput`](crate::output::DescribeDocumentOutput).
         pub fn build(self) -> crate::output::DescribeDocumentOutput {
             crate::output::DescribeDocumentOutput {
-                document: self.document,
+                document: self.document
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDocumentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentOutput`](crate::output::DescribeDocumentOutput).
@@ -10804,7 +10151,7 @@ impl DescribeDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAvailablePatchesOutput {
+pub struct DescribeAvailablePatchesOutput  {
     /// <p>An array of patches. Each entry in the array is a patch structure.</p>
     #[doc(hidden)]
     pub patches: std::option::Option<std::vec::Vec<crate::model::Patch>>,
@@ -10814,17 +10161,17 @@ pub struct DescribeAvailablePatchesOutput {
 }
 impl DescribeAvailablePatchesOutput {
     /// <p>An array of patches. Each entry in the array is a patch structure.</p>
-    pub fn patches(&self) -> std::option::Option<&[crate::model::Patch]> {
+    pub fn patches(&self) -> std::option::Option<& [crate::model::Patch]> {
         self.patches.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAvailablePatchesOutput`](crate::output::DescribeAvailablePatchesOutput).
 pub mod describe_available_patches_output {
-
+    
     /// A builder for [`DescribeAvailablePatchesOutput`](crate::output::DescribeAvailablePatchesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10839,17 +10186,13 @@ pub mod describe_available_patches_output {
         /// <p>An array of patches. Each entry in the array is a patch structure.</p>
         pub fn patches(mut self, input: crate::model::Patch) -> Self {
             let mut v = self.patches.unwrap_or_default();
-            v.push(input);
-            self.patches = Some(v);
-            self
+                            v.push(input);
+                            self.patches = Some(v);
+                            self
         }
         /// <p>An array of patches. Each entry in the array is a patch structure.</p>
-        pub fn set_patches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Patch>>,
-        ) -> Self {
-            self.patches = input;
-            self
+        pub fn set_patches(mut self, input: std::option::Option<std::vec::Vec<crate::model::Patch>>) -> Self {
+            self.patches = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10858,17 +10201,20 @@ pub mod describe_available_patches_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAvailablePatchesOutput`](crate::output::DescribeAvailablePatchesOutput).
         pub fn build(self) -> crate::output::DescribeAvailablePatchesOutput {
             crate::output::DescribeAvailablePatchesOutput {
-                patches: self.patches,
-                next_token: self.next_token,
+                patches: self.patches
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAvailablePatchesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailablePatchesOutput`](crate::output::DescribeAvailablePatchesOutput).
@@ -10880,7 +10226,7 @@ impl DescribeAvailablePatchesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAutomationStepExecutionsOutput {
+pub struct DescribeAutomationStepExecutionsOutput  {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
     #[doc(hidden)]
     pub step_executions: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
@@ -10890,17 +10236,17 @@ pub struct DescribeAutomationStepExecutionsOutput {
 }
 impl DescribeAutomationStepExecutionsOutput {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
-    pub fn step_executions(&self) -> std::option::Option<&[crate::model::StepExecution]> {
+    pub fn step_executions(&self) -> std::option::Option<& [crate::model::StepExecution]> {
         self.step_executions.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAutomationStepExecutionsOutput`](crate::output::DescribeAutomationStepExecutionsOutput).
 pub mod describe_automation_step_executions_output {
-
+    
     /// A builder for [`DescribeAutomationStepExecutionsOutput`](crate::output::DescribeAutomationStepExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10915,17 +10261,13 @@ pub mod describe_automation_step_executions_output {
         /// <p>A list of details about the current state of all steps that make up an execution.</p>
         pub fn step_executions(mut self, input: crate::model::StepExecution) -> Self {
             let mut v = self.step_executions.unwrap_or_default();
-            v.push(input);
-            self.step_executions = Some(v);
-            self
+                            v.push(input);
+                            self.step_executions = Some(v);
+                            self
         }
         /// <p>A list of details about the current state of all steps that make up an execution.</p>
-        pub fn set_step_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
-        ) -> Self {
-            self.step_executions = input;
-            self
+        pub fn set_step_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::StepExecution>>) -> Self {
+            self.step_executions = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10934,17 +10276,20 @@ pub mod describe_automation_step_executions_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAutomationStepExecutionsOutput`](crate::output::DescribeAutomationStepExecutionsOutput).
         pub fn build(self) -> crate::output::DescribeAutomationStepExecutionsOutput {
             crate::output::DescribeAutomationStepExecutionsOutput {
-                step_executions: self.step_executions,
-                next_token: self.next_token,
+                step_executions: self.step_executions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAutomationStepExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutomationStepExecutionsOutput`](crate::output::DescribeAutomationStepExecutionsOutput).
@@ -10956,35 +10301,31 @@ impl DescribeAutomationStepExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAutomationExecutionsOutput {
+pub struct DescribeAutomationExecutionsOutput  {
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
     #[doc(hidden)]
-    pub automation_execution_metadata_list:
-        std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
+    pub automation_execution_metadata_list: std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutomationExecutionsOutput {
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
-    pub fn automation_execution_metadata_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::AutomationExecutionMetadata]> {
+    pub fn automation_execution_metadata_list(&self) -> std::option::Option<& [crate::model::AutomationExecutionMetadata]> {
         self.automation_execution_metadata_list.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAutomationExecutionsOutput`](crate::output::DescribeAutomationExecutionsOutput).
 pub mod describe_automation_executions_output {
-
+    
     /// A builder for [`DescribeAutomationExecutionsOutput`](crate::output::DescribeAutomationExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) automation_execution_metadata_list:
-            std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
+        pub(crate) automation_execution_metadata_list: std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10993,22 +10334,15 @@ pub mod describe_automation_executions_output {
         /// To override the contents of this collection use [`set_automation_execution_metadata_list`](Self::set_automation_execution_metadata_list).
         ///
         /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
-        pub fn automation_execution_metadata_list(
-            mut self,
-            input: crate::model::AutomationExecutionMetadata,
-        ) -> Self {
+        pub fn automation_execution_metadata_list(mut self, input: crate::model::AutomationExecutionMetadata) -> Self {
             let mut v = self.automation_execution_metadata_list.unwrap_or_default();
-            v.push(input);
-            self.automation_execution_metadata_list = Some(v);
-            self
+                            v.push(input);
+                            self.automation_execution_metadata_list = Some(v);
+                            self
         }
         /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
-        pub fn set_automation_execution_metadata_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>,
-        ) -> Self {
-            self.automation_execution_metadata_list = input;
-            self
+        pub fn set_automation_execution_metadata_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutomationExecutionMetadata>>) -> Self {
+            self.automation_execution_metadata_list = input; self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11017,17 +10351,20 @@ pub mod describe_automation_executions_output {
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAutomationExecutionsOutput`](crate::output::DescribeAutomationExecutionsOutput).
         pub fn build(self) -> crate::output::DescribeAutomationExecutionsOutput {
             crate::output::DescribeAutomationExecutionsOutput {
-                automation_execution_metadata_list: self.automation_execution_metadata_list,
-                next_token: self.next_token,
+                automation_execution_metadata_list: self.automation_execution_metadata_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAutomationExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutomationExecutionsOutput`](crate::output::DescribeAutomationExecutionsOutput).
@@ -11039,35 +10376,31 @@ impl DescribeAutomationExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssociationExecutionTargetsOutput {
+pub struct DescribeAssociationExecutionTargetsOutput  {
     /// <p>Information about the execution.</p>
     #[doc(hidden)]
-    pub association_execution_targets:
-        std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
+    pub association_execution_targets: std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationExecutionTargetsOutput {
     /// <p>Information about the execution.</p>
-    pub fn association_execution_targets(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssociationExecutionTarget]> {
+    pub fn association_execution_targets(&self) -> std::option::Option<& [crate::model::AssociationExecutionTarget]> {
         self.association_execution_targets.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAssociationExecutionTargetsOutput`](crate::output::DescribeAssociationExecutionTargetsOutput).
 pub mod describe_association_execution_targets_output {
-
+    
     /// A builder for [`DescribeAssociationExecutionTargetsOutput`](crate::output::DescribeAssociationExecutionTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) association_execution_targets:
-            std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
+        pub(crate) association_execution_targets: std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -11076,22 +10409,15 @@ pub mod describe_association_execution_targets_output {
         /// To override the contents of this collection use [`set_association_execution_targets`](Self::set_association_execution_targets).
         ///
         /// <p>Information about the execution.</p>
-        pub fn association_execution_targets(
-            mut self,
-            input: crate::model::AssociationExecutionTarget,
-        ) -> Self {
+        pub fn association_execution_targets(mut self, input: crate::model::AssociationExecutionTarget) -> Self {
             let mut v = self.association_execution_targets.unwrap_or_default();
-            v.push(input);
-            self.association_execution_targets = Some(v);
-            self
+                            v.push(input);
+                            self.association_execution_targets = Some(v);
+                            self
         }
         /// <p>Information about the execution.</p>
-        pub fn set_association_execution_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
-        ) -> Self {
-            self.association_execution_targets = input;
-            self
+        pub fn set_association_execution_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>) -> Self {
+            self.association_execution_targets = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11100,17 +10426,20 @@ pub mod describe_association_execution_targets_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAssociationExecutionTargetsOutput`](crate::output::DescribeAssociationExecutionTargetsOutput).
         pub fn build(self) -> crate::output::DescribeAssociationExecutionTargetsOutput {
             crate::output::DescribeAssociationExecutionTargetsOutput {
-                association_execution_targets: self.association_execution_targets,
-                next_token: self.next_token,
+                association_execution_targets: self.association_execution_targets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAssociationExecutionTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationExecutionTargetsOutput`](crate::output::DescribeAssociationExecutionTargetsOutput).
@@ -11122,35 +10451,31 @@ impl DescribeAssociationExecutionTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssociationExecutionsOutput {
+pub struct DescribeAssociationExecutionsOutput  {
     /// <p>A list of the executions for the specified association ID.</p>
     #[doc(hidden)]
-    pub association_executions:
-        std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>,
+    pub association_executions: std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAssociationExecutionsOutput {
     /// <p>A list of the executions for the specified association ID.</p>
-    pub fn association_executions(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssociationExecution]> {
+    pub fn association_executions(&self) -> std::option::Option<& [crate::model::AssociationExecution]> {
         self.association_executions.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAssociationExecutionsOutput`](crate::output::DescribeAssociationExecutionsOutput).
 pub mod describe_association_executions_output {
-
+    
     /// A builder for [`DescribeAssociationExecutionsOutput`](crate::output::DescribeAssociationExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) association_executions:
-            std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>,
+        pub(crate) association_executions: std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -11161,17 +10486,13 @@ pub mod describe_association_executions_output {
         /// <p>A list of the executions for the specified association ID.</p>
         pub fn association_executions(mut self, input: crate::model::AssociationExecution) -> Self {
             let mut v = self.association_executions.unwrap_or_default();
-            v.push(input);
-            self.association_executions = Some(v);
-            self
+                            v.push(input);
+                            self.association_executions = Some(v);
+                            self
         }
         /// <p>A list of the executions for the specified association ID.</p>
-        pub fn set_association_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>,
-        ) -> Self {
-            self.association_executions = input;
-            self
+        pub fn set_association_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociationExecution>>) -> Self {
+            self.association_executions = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11180,17 +10501,20 @@ pub mod describe_association_executions_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAssociationExecutionsOutput`](crate::output::DescribeAssociationExecutionsOutput).
         pub fn build(self) -> crate::output::DescribeAssociationExecutionsOutput {
             crate::output::DescribeAssociationExecutionsOutput {
-                association_executions: self.association_executions,
-                next_token: self.next_token,
+                association_executions: self.association_executions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAssociationExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationExecutionsOutput`](crate::output::DescribeAssociationExecutionsOutput).
@@ -11202,52 +10526,45 @@ impl DescribeAssociationExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssociationOutput {
+pub struct DescribeAssociationOutput  {
     /// <p>Information about the association.</p>
     #[doc(hidden)]
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
 impl DescribeAssociationOutput {
     /// <p>Information about the association.</p>
-    pub fn association_description(
-        &self,
-    ) -> std::option::Option<&crate::model::AssociationDescription> {
+    pub fn association_description(&self) -> std::option::Option<& crate::model::AssociationDescription> {
         self.association_description.as_ref()
     }
 }
 /// See [`DescribeAssociationOutput`](crate::output::DescribeAssociationOutput).
 pub mod describe_association_output {
-
+    
     /// A builder for [`DescribeAssociationOutput`](crate::output::DescribeAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) association_description:
-            std::option::Option<crate::model::AssociationDescription>,
+        pub(crate) association_description: std::option::Option<crate::model::AssociationDescription>,
     }
     impl Builder {
         /// <p>Information about the association.</p>
-        pub fn association_description(
-            mut self,
-            input: crate::model::AssociationDescription,
-        ) -> Self {
+        pub fn association_description(mut self, input: crate::model::AssociationDescription) -> Self {
             self.association_description = Some(input);
             self
         }
         /// <p>Information about the association.</p>
-        pub fn set_association_description(
-            mut self,
-            input: std::option::Option<crate::model::AssociationDescription>,
-        ) -> Self {
-            self.association_description = input;
-            self
+        pub fn set_association_description(mut self, input: std::option::Option<crate::model::AssociationDescription>) -> Self {
+            self.association_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAssociationOutput`](crate::output::DescribeAssociationOutput).
         pub fn build(self) -> crate::output::DescribeAssociationOutput {
             crate::output::DescribeAssociationOutput {
-                association_description: self.association_description,
+                association_description: self.association_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationOutput`](crate::output::DescribeAssociationOutput).
@@ -11259,7 +10576,7 @@ impl DescribeAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeActivationsOutput {
+pub struct DescribeActivationsOutput  {
     /// <p>A list of activations for your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub activation_list: std::option::Option<std::vec::Vec<crate::model::Activation>>,
@@ -11269,17 +10586,17 @@ pub struct DescribeActivationsOutput {
 }
 impl DescribeActivationsOutput {
     /// <p>A list of activations for your Amazon Web Services account.</p>
-    pub fn activation_list(&self) -> std::option::Option<&[crate::model::Activation]> {
+    pub fn activation_list(&self) -> std::option::Option<& [crate::model::Activation]> {
         self.activation_list.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeActivationsOutput`](crate::output::DescribeActivationsOutput).
 pub mod describe_activations_output {
-
+    
     /// A builder for [`DescribeActivationsOutput`](crate::output::DescribeActivationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11294,17 +10611,13 @@ pub mod describe_activations_output {
         /// <p>A list of activations for your Amazon Web Services account.</p>
         pub fn activation_list(mut self, input: crate::model::Activation) -> Self {
             let mut v = self.activation_list.unwrap_or_default();
-            v.push(input);
-            self.activation_list = Some(v);
-            self
+                            v.push(input);
+                            self.activation_list = Some(v);
+                            self
         }
         /// <p>A list of activations for your Amazon Web Services account.</p>
-        pub fn set_activation_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Activation>>,
-        ) -> Self {
-            self.activation_list = input;
-            self
+        pub fn set_activation_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Activation>>) -> Self {
+            self.activation_list = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11313,17 +10626,20 @@ pub mod describe_activations_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeActivationsOutput`](crate::output::DescribeActivationsOutput).
         pub fn build(self) -> crate::output::DescribeActivationsOutput {
             crate::output::DescribeActivationsOutput {
-                activation_list: self.activation_list,
-                next_token: self.next_token,
+                activation_list: self.activation_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeActivationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivationsOutput`](crate::output::DescribeActivationsOutput).
@@ -11335,7 +10651,7 @@ impl DescribeActivationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterTaskFromMaintenanceWindowOutput {
+pub struct DeregisterTaskFromMaintenanceWindowOutput  {
     /// <p>The ID of the maintenance window the task was removed from.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -11345,17 +10661,17 @@ pub struct DeregisterTaskFromMaintenanceWindowOutput {
 }
 impl DeregisterTaskFromMaintenanceWindowOutput {
     /// <p>The ID of the maintenance window the task was removed from.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The ID of the task removed from the maintenance window.</p>
-    pub fn window_task_id(&self) -> std::option::Option<&str> {
+    pub fn window_task_id(&self) -> std::option::Option<& str> {
         self.window_task_id.as_deref()
     }
 }
 /// See [`DeregisterTaskFromMaintenanceWindowOutput`](crate::output::DeregisterTaskFromMaintenanceWindowOutput).
 pub mod deregister_task_from_maintenance_window_output {
-
+    
     /// A builder for [`DeregisterTaskFromMaintenanceWindowOutput`](crate::output::DeregisterTaskFromMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11370,8 +10686,7 @@ pub mod deregister_task_from_maintenance_window_output {
         }
         /// <p>The ID of the maintenance window the task was removed from.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// <p>The ID of the task removed from the maintenance window.</p>
         pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11379,21 +10694,21 @@ pub mod deregister_task_from_maintenance_window_output {
             self
         }
         /// <p>The ID of the task removed from the maintenance window.</p>
-        pub fn set_window_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_task_id = input;
-            self
+        pub fn set_window_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_task_id = input; self
         }
         /// Consumes the builder and constructs a [`DeregisterTaskFromMaintenanceWindowOutput`](crate::output::DeregisterTaskFromMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::DeregisterTaskFromMaintenanceWindowOutput {
             crate::output::DeregisterTaskFromMaintenanceWindowOutput {
-                window_id: self.window_id,
-                window_task_id: self.window_task_id,
+                window_id: self.window_id
+                ,
+                window_task_id: self.window_task_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeregisterTaskFromMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTaskFromMaintenanceWindowOutput`](crate::output::DeregisterTaskFromMaintenanceWindowOutput).
@@ -11405,7 +10720,7 @@ impl DeregisterTaskFromMaintenanceWindowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterTargetFromMaintenanceWindowOutput {
+pub struct DeregisterTargetFromMaintenanceWindowOutput  {
     /// <p>The ID of the maintenance window the target was removed from.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -11415,17 +10730,17 @@ pub struct DeregisterTargetFromMaintenanceWindowOutput {
 }
 impl DeregisterTargetFromMaintenanceWindowOutput {
     /// <p>The ID of the maintenance window the target was removed from.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The ID of the removed target definition.</p>
-    pub fn window_target_id(&self) -> std::option::Option<&str> {
+    pub fn window_target_id(&self) -> std::option::Option<& str> {
         self.window_target_id.as_deref()
     }
 }
 /// See [`DeregisterTargetFromMaintenanceWindowOutput`](crate::output::DeregisterTargetFromMaintenanceWindowOutput).
 pub mod deregister_target_from_maintenance_window_output {
-
+    
     /// A builder for [`DeregisterTargetFromMaintenanceWindowOutput`](crate::output::DeregisterTargetFromMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11440,8 +10755,7 @@ pub mod deregister_target_from_maintenance_window_output {
         }
         /// <p>The ID of the maintenance window the target was removed from.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// <p>The ID of the removed target definition.</p>
         pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11449,21 +10763,21 @@ pub mod deregister_target_from_maintenance_window_output {
             self
         }
         /// <p>The ID of the removed target definition.</p>
-        pub fn set_window_target_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_target_id = input;
-            self
+        pub fn set_window_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_target_id = input; self
         }
         /// Consumes the builder and constructs a [`DeregisterTargetFromMaintenanceWindowOutput`](crate::output::DeregisterTargetFromMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::DeregisterTargetFromMaintenanceWindowOutput {
             crate::output::DeregisterTargetFromMaintenanceWindowOutput {
-                window_id: self.window_id,
-                window_target_id: self.window_target_id,
+                window_id: self.window_id
+                ,
+                window_target_id: self.window_target_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeregisterTargetFromMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTargetFromMaintenanceWindowOutput`](crate::output::DeregisterTargetFromMaintenanceWindowOutput).
@@ -11475,7 +10789,7 @@ impl DeregisterTargetFromMaintenanceWindowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterPatchBaselineForPatchGroupOutput {
+pub struct DeregisterPatchBaselineForPatchGroupOutput  {
     /// <p>The ID of the patch baseline the patch group was deregistered from.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -11485,17 +10799,17 @@ pub struct DeregisterPatchBaselineForPatchGroupOutput {
 }
 impl DeregisterPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline the patch group was deregistered from.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch group deregistered from the patch baseline.</p>
-    pub fn patch_group(&self) -> std::option::Option<&str> {
+    pub fn patch_group(&self) -> std::option::Option<& str> {
         self.patch_group.as_deref()
     }
 }
 /// See [`DeregisterPatchBaselineForPatchGroupOutput`](crate::output::DeregisterPatchBaselineForPatchGroupOutput).
 pub mod deregister_patch_baseline_for_patch_group_output {
-
+    
     /// A builder for [`DeregisterPatchBaselineForPatchGroupOutput`](crate::output::DeregisterPatchBaselineForPatchGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11510,8 +10824,7 @@ pub mod deregister_patch_baseline_for_patch_group_output {
         }
         /// <p>The ID of the patch baseline the patch group was deregistered from.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// <p>The name of the patch group deregistered from the patch baseline.</p>
         pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11520,17 +10833,20 @@ pub mod deregister_patch_baseline_for_patch_group_output {
         }
         /// <p>The name of the patch group deregistered from the patch baseline.</p>
         pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.patch_group = input;
-            self
+            self.patch_group = input; self
         }
         /// Consumes the builder and constructs a [`DeregisterPatchBaselineForPatchGroupOutput`](crate::output::DeregisterPatchBaselineForPatchGroupOutput).
         pub fn build(self) -> crate::output::DeregisterPatchBaselineForPatchGroupOutput {
             crate::output::DeregisterPatchBaselineForPatchGroupOutput {
-                baseline_id: self.baseline_id,
-                patch_group: self.patch_group,
+                baseline_id: self.baseline_id
+                ,
+                patch_group: self.patch_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DeregisterPatchBaselineForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterPatchBaselineForPatchGroupOutput`](crate::output::DeregisterPatchBaselineForPatchGroupOutput).
@@ -11542,19 +10858,24 @@ impl DeregisterPatchBaselineForPatchGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterManagedInstanceOutput {}
+pub struct DeregisterManagedInstanceOutput  {
+}
 /// See [`DeregisterManagedInstanceOutput`](crate::output::DeregisterManagedInstanceOutput).
 pub mod deregister_managed_instance_output {
-
+    
     /// A builder for [`DeregisterManagedInstanceOutput`](crate::output::DeregisterManagedInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterManagedInstanceOutput`](crate::output::DeregisterManagedInstanceOutput).
         pub fn build(self) -> crate::output::DeregisterManagedInstanceOutput {
-            crate::output::DeregisterManagedInstanceOutput {}
+            crate::output::DeregisterManagedInstanceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterManagedInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterManagedInstanceOutput`](crate::output::DeregisterManagedInstanceOutput).
@@ -11566,19 +10887,24 @@ impl DeregisterManagedInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {}
+pub struct DeleteResourcePolicyOutput  {
+}
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
-
+    
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
-            crate::output::DeleteResourcePolicyOutput {}
+            crate::output::DeleteResourcePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -11590,19 +10916,24 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourceDataSyncOutput {}
+pub struct DeleteResourceDataSyncOutput  {
+}
 /// See [`DeleteResourceDataSyncOutput`](crate::output::DeleteResourceDataSyncOutput).
 pub mod delete_resource_data_sync_output {
-
+    
     /// A builder for [`DeleteResourceDataSyncOutput`](crate::output::DeleteResourceDataSyncOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourceDataSyncOutput`](crate::output::DeleteResourceDataSyncOutput).
         pub fn build(self) -> crate::output::DeleteResourceDataSyncOutput {
-            crate::output::DeleteResourceDataSyncOutput {}
+            crate::output::DeleteResourceDataSyncOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourceDataSyncOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceDataSyncOutput`](crate::output::DeleteResourceDataSyncOutput).
@@ -11614,20 +10945,20 @@ impl DeleteResourceDataSyncOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePatchBaselineOutput {
+pub struct DeletePatchBaselineOutput  {
     /// <p>The ID of the deleted patch baseline.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl DeletePatchBaselineOutput {
     /// <p>The ID of the deleted patch baseline.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
 /// See [`DeletePatchBaselineOutput`](crate::output::DeletePatchBaselineOutput).
 pub mod delete_patch_baseline_output {
-
+    
     /// A builder for [`DeletePatchBaselineOutput`](crate::output::DeletePatchBaselineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11641,16 +10972,18 @@ pub mod delete_patch_baseline_output {
         }
         /// <p>The ID of the deleted patch baseline.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// Consumes the builder and constructs a [`DeletePatchBaselineOutput`](crate::output::DeletePatchBaselineOutput).
         pub fn build(self) -> crate::output::DeletePatchBaselineOutput {
             crate::output::DeletePatchBaselineOutput {
-                baseline_id: self.baseline_id,
+                baseline_id: self.baseline_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletePatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`DeletePatchBaselineOutput`](crate::output::DeletePatchBaselineOutput).
@@ -11662,7 +10995,7 @@ impl DeletePatchBaselineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteParametersOutput {
+pub struct DeleteParametersOutput  {
     /// <p>The names of the deleted parameters.</p>
     #[doc(hidden)]
     pub deleted_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11672,17 +11005,17 @@ pub struct DeleteParametersOutput {
 }
 impl DeleteParametersOutput {
     /// <p>The names of the deleted parameters.</p>
-    pub fn deleted_parameters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn deleted_parameters(&self) -> std::option::Option<& [std::string::String]> {
         self.deleted_parameters.as_deref()
     }
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
-    pub fn invalid_parameters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn invalid_parameters(&self) -> std::option::Option<& [std::string::String]> {
         self.invalid_parameters.as_deref()
     }
 }
 /// See [`DeleteParametersOutput`](crate::output::DeleteParametersOutput).
 pub mod delete_parameters_output {
-
+    
     /// A builder for [`DeleteParametersOutput`](crate::output::DeleteParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11697,17 +11030,13 @@ pub mod delete_parameters_output {
         /// <p>The names of the deleted parameters.</p>
         pub fn deleted_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deleted_parameters.unwrap_or_default();
-            v.push(input.into());
-            self.deleted_parameters = Some(v);
-            self
+                            v.push(input.into());
+                            self.deleted_parameters = Some(v);
+                            self
         }
         /// <p>The names of the deleted parameters.</p>
-        pub fn set_deleted_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.deleted_parameters = input;
-            self
+        pub fn set_deleted_parameters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.deleted_parameters = input; self
         }
         /// Appends an item to `invalid_parameters`.
         ///
@@ -11716,26 +11045,26 @@ pub mod delete_parameters_output {
         /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
         pub fn invalid_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.invalid_parameters.unwrap_or_default();
-            v.push(input.into());
-            self.invalid_parameters = Some(v);
-            self
+                            v.push(input.into());
+                            self.invalid_parameters = Some(v);
+                            self
         }
         /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
-        pub fn set_invalid_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.invalid_parameters = input;
-            self
+        pub fn set_invalid_parameters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.invalid_parameters = input; self
         }
         /// Consumes the builder and constructs a [`DeleteParametersOutput`](crate::output::DeleteParametersOutput).
         pub fn build(self) -> crate::output::DeleteParametersOutput {
             crate::output::DeleteParametersOutput {
-                deleted_parameters: self.deleted_parameters,
-                invalid_parameters: self.invalid_parameters,
+                deleted_parameters: self.deleted_parameters
+                ,
+                invalid_parameters: self.invalid_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteParametersOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParametersOutput`](crate::output::DeleteParametersOutput).
@@ -11747,19 +11076,24 @@ impl DeleteParametersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteParameterOutput {}
+pub struct DeleteParameterOutput  {
+}
 /// See [`DeleteParameterOutput`](crate::output::DeleteParameterOutput).
 pub mod delete_parameter_output {
-
+    
     /// A builder for [`DeleteParameterOutput`](crate::output::DeleteParameterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteParameterOutput`](crate::output::DeleteParameterOutput).
         pub fn build(self) -> crate::output::DeleteParameterOutput {
-            crate::output::DeleteParameterOutput {}
+            crate::output::DeleteParameterOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteParameterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParameterOutput`](crate::output::DeleteParameterOutput).
@@ -11771,19 +11105,24 @@ impl DeleteParameterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOpsMetadataOutput {}
+pub struct DeleteOpsMetadataOutput  {
+}
 /// See [`DeleteOpsMetadataOutput`](crate::output::DeleteOpsMetadataOutput).
 pub mod delete_ops_metadata_output {
-
+    
     /// A builder for [`DeleteOpsMetadataOutput`](crate::output::DeleteOpsMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOpsMetadataOutput`](crate::output::DeleteOpsMetadataOutput).
         pub fn build(self) -> crate::output::DeleteOpsMetadataOutput {
-            crate::output::DeleteOpsMetadataOutput {}
+            crate::output::DeleteOpsMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOpsMetadataOutput`](crate::output::DeleteOpsMetadataOutput).
@@ -11795,20 +11134,20 @@ impl DeleteOpsMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMaintenanceWindowOutput {
+pub struct DeleteMaintenanceWindowOutput  {
     /// <p>The ID of the deleted maintenance window.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
 }
 impl DeleteMaintenanceWindowOutput {
     /// <p>The ID of the deleted maintenance window.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
 }
 /// See [`DeleteMaintenanceWindowOutput`](crate::output::DeleteMaintenanceWindowOutput).
 pub mod delete_maintenance_window_output {
-
+    
     /// A builder for [`DeleteMaintenanceWindowOutput`](crate::output::DeleteMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11822,16 +11161,18 @@ pub mod delete_maintenance_window_output {
         }
         /// <p>The ID of the deleted maintenance window.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMaintenanceWindowOutput`](crate::output::DeleteMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::DeleteMaintenanceWindowOutput {
             crate::output::DeleteMaintenanceWindowOutput {
-                window_id: self.window_id,
+                window_id: self.window_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMaintenanceWindowOutput`](crate::output::DeleteMaintenanceWindowOutput).
@@ -11843,7 +11184,7 @@ impl DeleteMaintenanceWindowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInventoryOutput {
+pub struct DeleteInventoryOutput  {
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
     #[doc(hidden)]
     pub deletion_id: std::option::Option<std::string::String>,
@@ -11856,21 +11197,21 @@ pub struct DeleteInventoryOutput {
 }
 impl DeleteInventoryOutput {
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
-    pub fn deletion_id(&self) -> std::option::Option<&str> {
+    pub fn deletion_id(&self) -> std::option::Option<& str> {
         self.deletion_id.as_deref()
     }
     /// <p>The name of the inventory data type specified in the request.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn deletion_summary(&self) -> std::option::Option<&crate::model::InventoryDeletionSummary> {
+    pub fn deletion_summary(&self) -> std::option::Option<& crate::model::InventoryDeletionSummary> {
         self.deletion_summary.as_ref()
     }
 }
 /// See [`DeleteInventoryOutput`](crate::output::DeleteInventoryOutput).
 pub mod delete_inventory_output {
-
+    
     /// A builder for [`DeleteInventoryOutput`](crate::output::DeleteInventoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11886,8 +11227,7 @@ pub mod delete_inventory_output {
         }
         /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
         pub fn set_deletion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.deletion_id = input;
-            self
+            self.deletion_id = input; self
         }
         /// <p>The name of the inventory data type specified in the request.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11896,8 +11236,7 @@ pub mod delete_inventory_output {
         }
         /// <p>The name of the inventory data type specified in the request.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.type_name = input;
-            self
+            self.type_name = input; self
         }
         /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn deletion_summary(mut self, input: crate::model::InventoryDeletionSummary) -> Self {
@@ -11905,22 +11244,23 @@ pub mod delete_inventory_output {
             self
         }
         /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn set_deletion_summary(
-            mut self,
-            input: std::option::Option<crate::model::InventoryDeletionSummary>,
-        ) -> Self {
-            self.deletion_summary = input;
-            self
+        pub fn set_deletion_summary(mut self, input: std::option::Option<crate::model::InventoryDeletionSummary>) -> Self {
+            self.deletion_summary = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInventoryOutput`](crate::output::DeleteInventoryOutput).
         pub fn build(self) -> crate::output::DeleteInventoryOutput {
             crate::output::DeleteInventoryOutput {
-                deletion_id: self.deletion_id,
-                type_name: self.type_name,
-                deletion_summary: self.deletion_summary,
+                deletion_id: self.deletion_id
+                ,
+                type_name: self.type_name
+                ,
+                deletion_summary: self.deletion_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteInventoryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInventoryOutput`](crate::output::DeleteInventoryOutput).
@@ -11932,19 +11272,24 @@ impl DeleteInventoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDocumentOutput {}
+pub struct DeleteDocumentOutput  {
+}
 /// See [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
 pub mod delete_document_output {
-
+    
     /// A builder for [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
         pub fn build(self) -> crate::output::DeleteDocumentOutput {
-            crate::output::DeleteDocumentOutput {}
+            crate::output::DeleteDocumentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDocumentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
@@ -11956,19 +11301,24 @@ impl DeleteDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssociationOutput {}
+pub struct DeleteAssociationOutput  {
+}
 /// See [`DeleteAssociationOutput`](crate::output::DeleteAssociationOutput).
 pub mod delete_association_output {
-
+    
     /// A builder for [`DeleteAssociationOutput`](crate::output::DeleteAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAssociationOutput`](crate::output::DeleteAssociationOutput).
         pub fn build(self) -> crate::output::DeleteAssociationOutput {
-            crate::output::DeleteAssociationOutput {}
+            crate::output::DeleteAssociationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssociationOutput`](crate::output::DeleteAssociationOutput).
@@ -11980,19 +11330,24 @@ impl DeleteAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteActivationOutput {}
+pub struct DeleteActivationOutput  {
+}
 /// See [`DeleteActivationOutput`](crate::output::DeleteActivationOutput).
 pub mod delete_activation_output {
-
+    
     /// A builder for [`DeleteActivationOutput`](crate::output::DeleteActivationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteActivationOutput`](crate::output::DeleteActivationOutput).
         pub fn build(self) -> crate::output::DeleteActivationOutput {
-            crate::output::DeleteActivationOutput {}
+            crate::output::DeleteActivationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteActivationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteActivationOutput`](crate::output::DeleteActivationOutput).
@@ -12004,19 +11359,24 @@ impl DeleteActivationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceDataSyncOutput {}
+pub struct CreateResourceDataSyncOutput  {
+}
 /// See [`CreateResourceDataSyncOutput`](crate::output::CreateResourceDataSyncOutput).
 pub mod create_resource_data_sync_output {
-
+    
     /// A builder for [`CreateResourceDataSyncOutput`](crate::output::CreateResourceDataSyncOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateResourceDataSyncOutput`](crate::output::CreateResourceDataSyncOutput).
         pub fn build(self) -> crate::output::CreateResourceDataSyncOutput {
-            crate::output::CreateResourceDataSyncOutput {}
+            crate::output::CreateResourceDataSyncOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateResourceDataSyncOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceDataSyncOutput`](crate::output::CreateResourceDataSyncOutput).
@@ -12028,20 +11388,20 @@ impl CreateResourceDataSyncOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePatchBaselineOutput {
+pub struct CreatePatchBaselineOutput  {
     /// <p>The ID of the created patch baseline.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl CreatePatchBaselineOutput {
     /// <p>The ID of the created patch baseline.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
 /// See [`CreatePatchBaselineOutput`](crate::output::CreatePatchBaselineOutput).
 pub mod create_patch_baseline_output {
-
+    
     /// A builder for [`CreatePatchBaselineOutput`](crate::output::CreatePatchBaselineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12055,16 +11415,18 @@ pub mod create_patch_baseline_output {
         }
         /// <p>The ID of the created patch baseline.</p>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.baseline_id = input;
-            self
+            self.baseline_id = input; self
         }
         /// Consumes the builder and constructs a [`CreatePatchBaselineOutput`](crate::output::CreatePatchBaselineOutput).
         pub fn build(self) -> crate::output::CreatePatchBaselineOutput {
             crate::output::CreatePatchBaselineOutput {
-                baseline_id: self.baseline_id,
+                baseline_id: self.baseline_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`CreatePatchBaselineOutput`](crate::output::CreatePatchBaselineOutput).
@@ -12076,20 +11438,20 @@ impl CreatePatchBaselineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOpsMetadataOutput {
+pub struct CreateOpsMetadataOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
     #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
 }
 impl CreateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
-    pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
+    pub fn ops_metadata_arn(&self) -> std::option::Option<& str> {
         self.ops_metadata_arn.as_deref()
     }
 }
 /// See [`CreateOpsMetadataOutput`](crate::output::CreateOpsMetadataOutput).
 pub mod create_ops_metadata_output {
-
+    
     /// A builder for [`CreateOpsMetadataOutput`](crate::output::CreateOpsMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12102,20 +11464,19 @@ pub mod create_ops_metadata_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
-        pub fn set_ops_metadata_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ops_metadata_arn = input;
-            self
+        pub fn set_ops_metadata_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_metadata_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateOpsMetadataOutput`](crate::output::CreateOpsMetadataOutput).
         pub fn build(self) -> crate::output::CreateOpsMetadataOutput {
             crate::output::CreateOpsMetadataOutput {
-                ops_metadata_arn: self.ops_metadata_arn,
+                ops_metadata_arn: self.ops_metadata_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`CreateOpsMetadataOutput`](crate::output::CreateOpsMetadataOutput).
@@ -12127,7 +11488,7 @@ impl CreateOpsMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOpsItemOutput {
+pub struct CreateOpsItemOutput  {
     /// <p>The ID of the OpsItem.</p>
     #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
@@ -12137,17 +11498,17 @@ pub struct CreateOpsItemOutput {
 }
 impl CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
+    pub fn ops_item_arn(&self) -> std::option::Option<& str> {
         self.ops_item_arn.as_deref()
     }
 }
 /// See [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput).
 pub mod create_ops_item_output {
-
+    
     /// A builder for [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12162,8 +11523,7 @@ pub mod create_ops_item_output {
         }
         /// <p>The ID of the OpsItem.</p>
         pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_id = input;
-            self
+            self.ops_item_id = input; self
         }
         /// <p>The OpsItem Amazon Resource Name (ARN).</p>
         pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12172,17 +11532,20 @@ pub mod create_ops_item_output {
         }
         /// <p>The OpsItem Amazon Resource Name (ARN).</p>
         pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ops_item_arn = input;
-            self
+            self.ops_item_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput).
         pub fn build(self) -> crate::output::CreateOpsItemOutput {
             crate::output::CreateOpsItemOutput {
-                ops_item_id: self.ops_item_id,
-                ops_item_arn: self.ops_item_arn,
+                ops_item_id: self.ops_item_id
+                ,
+                ops_item_arn: self.ops_item_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOpsItemOutput {
     /// Creates a new builder-style object to manufacture [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput).
@@ -12194,20 +11557,20 @@ impl CreateOpsItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMaintenanceWindowOutput {
+pub struct CreateMaintenanceWindowOutput  {
     /// <p>The ID of the created maintenance window.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
 }
 impl CreateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
 }
 /// See [`CreateMaintenanceWindowOutput`](crate::output::CreateMaintenanceWindowOutput).
 pub mod create_maintenance_window_output {
-
+    
     /// A builder for [`CreateMaintenanceWindowOutput`](crate::output::CreateMaintenanceWindowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12221,16 +11584,18 @@ pub mod create_maintenance_window_output {
         }
         /// <p>The ID of the created maintenance window.</p>
         pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.window_id = input;
-            self
+            self.window_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateMaintenanceWindowOutput`](crate::output::CreateMaintenanceWindowOutput).
         pub fn build(self) -> crate::output::CreateMaintenanceWindowOutput {
             crate::output::CreateMaintenanceWindowOutput {
-                window_id: self.window_id,
+                window_id: self.window_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`CreateMaintenanceWindowOutput`](crate::output::CreateMaintenanceWindowOutput).
@@ -12242,20 +11607,20 @@ impl CreateMaintenanceWindowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDocumentOutput {
+pub struct CreateDocumentOutput  {
     /// <p>Information about the SSM document.</p>
     #[doc(hidden)]
     pub document_description: std::option::Option<crate::model::DocumentDescription>,
 }
 impl CreateDocumentOutput {
     /// <p>Information about the SSM document.</p>
-    pub fn document_description(&self) -> std::option::Option<&crate::model::DocumentDescription> {
+    pub fn document_description(&self) -> std::option::Option<& crate::model::DocumentDescription> {
         self.document_description.as_ref()
     }
 }
 /// See [`CreateDocumentOutput`](crate::output::CreateDocumentOutput).
 pub mod create_document_output {
-
+    
     /// A builder for [`CreateDocumentOutput`](crate::output::CreateDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12268,20 +11633,19 @@ pub mod create_document_output {
             self
         }
         /// <p>Information about the SSM document.</p>
-        pub fn set_document_description(
-            mut self,
-            input: std::option::Option<crate::model::DocumentDescription>,
-        ) -> Self {
-            self.document_description = input;
-            self
+        pub fn set_document_description(mut self, input: std::option::Option<crate::model::DocumentDescription>) -> Self {
+            self.document_description = input; self
         }
         /// Consumes the builder and constructs a [`CreateDocumentOutput`](crate::output::CreateDocumentOutput).
         pub fn build(self) -> crate::output::CreateDocumentOutput {
             crate::output::CreateDocumentOutput {
-                document_description: self.document_description,
+                document_description: self.document_description
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDocumentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentOutput`](crate::output::CreateDocumentOutput).
@@ -12293,7 +11657,7 @@ impl CreateDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssociationBatchOutput {
+pub struct CreateAssociationBatchOutput  {
     /// <p>Information about the associations that succeeded.</p>
     #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::AssociationDescription>>,
@@ -12303,24 +11667,22 @@ pub struct CreateAssociationBatchOutput {
 }
 impl CreateAssociationBatchOutput {
     /// <p>Information about the associations that succeeded.</p>
-    pub fn successful(&self) -> std::option::Option<&[crate::model::AssociationDescription]> {
+    pub fn successful(&self) -> std::option::Option<& [crate::model::AssociationDescription]> {
         self.successful.as_deref()
     }
     /// <p>Information about the associations that failed.</p>
-    pub fn failed(&self) -> std::option::Option<&[crate::model::FailedCreateAssociation]> {
+    pub fn failed(&self) -> std::option::Option<& [crate::model::FailedCreateAssociation]> {
         self.failed.as_deref()
     }
 }
 /// See [`CreateAssociationBatchOutput`](crate::output::CreateAssociationBatchOutput).
 pub mod create_association_batch_output {
-
+    
     /// A builder for [`CreateAssociationBatchOutput`](crate::output::CreateAssociationBatchOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) successful:
-            std::option::Option<std::vec::Vec<crate::model::AssociationDescription>>,
-        pub(crate) failed:
-            std::option::Option<std::vec::Vec<crate::model::FailedCreateAssociation>>,
+        pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::AssociationDescription>>,
+        pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::FailedCreateAssociation>>,
     }
     impl Builder {
         /// Appends an item to `successful`.
@@ -12330,17 +11692,13 @@ pub mod create_association_batch_output {
         /// <p>Information about the associations that succeeded.</p>
         pub fn successful(mut self, input: crate::model::AssociationDescription) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input);
-            self.successful = Some(v);
-            self
+                            v.push(input);
+                            self.successful = Some(v);
+                            self
         }
         /// <p>Information about the associations that succeeded.</p>
-        pub fn set_successful(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssociationDescription>>,
-        ) -> Self {
-            self.successful = input;
-            self
+        pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociationDescription>>) -> Self {
+            self.successful = input; self
         }
         /// Appends an item to `failed`.
         ///
@@ -12349,26 +11707,26 @@ pub mod create_association_batch_output {
         /// <p>Information about the associations that failed.</p>
         pub fn failed(mut self, input: crate::model::FailedCreateAssociation) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input);
-            self.failed = Some(v);
-            self
+                            v.push(input);
+                            self.failed = Some(v);
+                            self
         }
         /// <p>Information about the associations that failed.</p>
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedCreateAssociation>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedCreateAssociation>>) -> Self {
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`CreateAssociationBatchOutput`](crate::output::CreateAssociationBatchOutput).
         pub fn build(self) -> crate::output::CreateAssociationBatchOutput {
             crate::output::CreateAssociationBatchOutput {
-                successful: self.successful,
-                failed: self.failed,
+                successful: self.successful
+                ,
+                failed: self.failed
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAssociationBatchOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssociationBatchOutput`](crate::output::CreateAssociationBatchOutput).
@@ -12380,52 +11738,45 @@ impl CreateAssociationBatchOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssociationOutput {
+pub struct CreateAssociationOutput  {
     /// <p>Information about the association.</p>
     #[doc(hidden)]
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
 impl CreateAssociationOutput {
     /// <p>Information about the association.</p>
-    pub fn association_description(
-        &self,
-    ) -> std::option::Option<&crate::model::AssociationDescription> {
+    pub fn association_description(&self) -> std::option::Option<& crate::model::AssociationDescription> {
         self.association_description.as_ref()
     }
 }
 /// See [`CreateAssociationOutput`](crate::output::CreateAssociationOutput).
 pub mod create_association_output {
-
+    
     /// A builder for [`CreateAssociationOutput`](crate::output::CreateAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) association_description:
-            std::option::Option<crate::model::AssociationDescription>,
+        pub(crate) association_description: std::option::Option<crate::model::AssociationDescription>,
     }
     impl Builder {
         /// <p>Information about the association.</p>
-        pub fn association_description(
-            mut self,
-            input: crate::model::AssociationDescription,
-        ) -> Self {
+        pub fn association_description(mut self, input: crate::model::AssociationDescription) -> Self {
             self.association_description = Some(input);
             self
         }
         /// <p>Information about the association.</p>
-        pub fn set_association_description(
-            mut self,
-            input: std::option::Option<crate::model::AssociationDescription>,
-        ) -> Self {
-            self.association_description = input;
-            self
+        pub fn set_association_description(mut self, input: std::option::Option<crate::model::AssociationDescription>) -> Self {
+            self.association_description = input; self
         }
         /// Consumes the builder and constructs a [`CreateAssociationOutput`](crate::output::CreateAssociationOutput).
         pub fn build(self) -> crate::output::CreateAssociationOutput {
             crate::output::CreateAssociationOutput {
-                association_description: self.association_description,
+                association_description: self.association_description
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssociationOutput`](crate::output::CreateAssociationOutput).
@@ -12437,7 +11788,7 @@ impl CreateAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateActivationOutput {
+pub struct CreateActivationOutput  {
     /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
     #[doc(hidden)]
     pub activation_id: std::option::Option<std::string::String>,
@@ -12447,17 +11798,17 @@ pub struct CreateActivationOutput {
 }
 impl CreateActivationOutput {
     /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
-    pub fn activation_id(&self) -> std::option::Option<&str> {
+    pub fn activation_id(&self) -> std::option::Option<& str> {
         self.activation_id.as_deref()
     }
     /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
-    pub fn activation_code(&self) -> std::option::Option<&str> {
+    pub fn activation_code(&self) -> std::option::Option<& str> {
         self.activation_code.as_deref()
     }
 }
 /// See [`CreateActivationOutput`](crate::output::CreateActivationOutput).
 pub mod create_activation_output {
-
+    
     /// A builder for [`CreateActivationOutput`](crate::output::CreateActivationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12471,12 +11822,8 @@ pub mod create_activation_output {
             self
         }
         /// <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
-        pub fn set_activation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.activation_id = input;
-            self
+        pub fn set_activation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.activation_id = input; self
         }
         /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
         pub fn activation_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12484,21 +11831,21 @@ pub mod create_activation_output {
             self
         }
         /// <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
-        pub fn set_activation_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.activation_code = input;
-            self
+        pub fn set_activation_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.activation_code = input; self
         }
         /// Consumes the builder and constructs a [`CreateActivationOutput`](crate::output::CreateActivationOutput).
         pub fn build(self) -> crate::output::CreateActivationOutput {
             crate::output::CreateActivationOutput {
-                activation_id: self.activation_id,
-                activation_code: self.activation_code,
+                activation_id: self.activation_id
+                ,
+                activation_code: self.activation_code
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateActivationOutput {
     /// Creates a new builder-style object to manufacture [`CreateActivationOutput`](crate::output::CreateActivationOutput).
@@ -12510,20 +11857,20 @@ impl CreateActivationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelMaintenanceWindowExecutionOutput {
+pub struct CancelMaintenanceWindowExecutionOutput  {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
     #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
 }
 impl CancelMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
-    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
 }
 /// See [`CancelMaintenanceWindowExecutionOutput`](crate::output::CancelMaintenanceWindowExecutionOutput).
 pub mod cancel_maintenance_window_execution_output {
-
+    
     /// A builder for [`CancelMaintenanceWindowExecutionOutput`](crate::output::CancelMaintenanceWindowExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12536,20 +11883,19 @@ pub mod cancel_maintenance_window_execution_output {
             self
         }
         /// <p>The ID of the maintenance window execution that has been stopped.</p>
-        pub fn set_window_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.window_execution_id = input;
-            self
+        pub fn set_window_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.window_execution_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelMaintenanceWindowExecutionOutput`](crate::output::CancelMaintenanceWindowExecutionOutput).
         pub fn build(self) -> crate::output::CancelMaintenanceWindowExecutionOutput {
             crate::output::CancelMaintenanceWindowExecutionOutput {
-                window_execution_id: self.window_execution_id,
+                window_execution_id: self.window_execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelMaintenanceWindowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`CancelMaintenanceWindowExecutionOutput`](crate::output::CancelMaintenanceWindowExecutionOutput).
@@ -12561,19 +11907,24 @@ impl CancelMaintenanceWindowExecutionOutput {
 /// <p>Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelCommandOutput {}
+pub struct CancelCommandOutput  {
+}
 /// See [`CancelCommandOutput`](crate::output::CancelCommandOutput).
 pub mod cancel_command_output {
-
+    
     /// A builder for [`CancelCommandOutput`](crate::output::CancelCommandOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelCommandOutput`](crate::output::CancelCommandOutput).
         pub fn build(self) -> crate::output::CancelCommandOutput {
-            crate::output::CancelCommandOutput {}
+            crate::output::CancelCommandOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelCommandOutput {
     /// Creates a new builder-style object to manufacture [`CancelCommandOutput`](crate::output::CancelCommandOutput).
@@ -12585,20 +11936,20 @@ impl CancelCommandOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateOpsItemRelatedItemOutput {
+pub struct AssociateOpsItemRelatedItemOutput  {
     /// <p>The association ID.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl AssociateOpsItemRelatedItemOutput {
     /// <p>The association ID.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
 }
 /// See [`AssociateOpsItemRelatedItemOutput`](crate::output::AssociateOpsItemRelatedItemOutput).
 pub mod associate_ops_item_related_item_output {
-
+    
     /// A builder for [`AssociateOpsItemRelatedItemOutput`](crate::output::AssociateOpsItemRelatedItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12611,20 +11962,19 @@ pub mod associate_ops_item_related_item_output {
             self
         }
         /// <p>The association ID.</p>
-        pub fn set_association_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.association_id = input;
-            self
+        pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.association_id = input; self
         }
         /// Consumes the builder and constructs a [`AssociateOpsItemRelatedItemOutput`](crate::output::AssociateOpsItemRelatedItemOutput).
         pub fn build(self) -> crate::output::AssociateOpsItemRelatedItemOutput {
             crate::output::AssociateOpsItemRelatedItemOutput {
-                association_id: self.association_id,
+                association_id: self.association_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateOpsItemRelatedItemOutput {
     /// Creates a new builder-style object to manufacture [`AssociateOpsItemRelatedItemOutput`](crate::output::AssociateOpsItemRelatedItemOutput).
@@ -12636,19 +11986,24 @@ impl AssociateOpsItemRelatedItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceOutput {}
+pub struct AddTagsToResourceOutput  {
+}
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
-
+    
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
-            crate::output::AddTagsToResourceOutput {}
+            crate::output::AddTagsToResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
@@ -12656,3 +12011,4 @@ impl AddTagsToResourceOutput {
         crate::output::add_tags_to_resource_output::Builder::default()
     }
 }
+

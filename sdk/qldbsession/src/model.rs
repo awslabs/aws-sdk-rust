@@ -3,7 +3,7 @@
 /// <p>Contains the page that was fetched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FetchPageResult {
+pub struct FetchPageResult  {
     /// <p>Contains details of the fetched page.</p>
     #[doc(hidden)]
     pub page: std::option::Option<crate::model::Page>,
@@ -16,21 +16,21 @@ pub struct FetchPageResult {
 }
 impl FetchPageResult {
     /// <p>Contains details of the fetched page.</p>
-    pub fn page(&self) -> std::option::Option<&crate::model::Page> {
+    pub fn page(&self) -> std::option::Option<& crate::model::Page> {
         self.page.as_ref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<& crate::model::TimingInformation> {
         self.timing_information.as_ref()
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn consumed_i_os(&self) -> std::option::Option<&crate::model::IoUsage> {
+    pub fn consumed_i_os(&self) -> std::option::Option<& crate::model::IoUsage> {
         self.consumed_i_os.as_ref()
     }
 }
 /// See [`FetchPageResult`](crate::model::FetchPageResult).
 pub mod fetch_page_result {
-
+    
     /// A builder for [`FetchPageResult`](crate::model::FetchPageResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -46,8 +46,7 @@ pub mod fetch_page_result {
         }
         /// <p>Contains details of the fetched page.</p>
         pub fn set_page(mut self, input: std::option::Option<crate::model::Page>) -> Self {
-            self.page = input;
-            self
+            self.page = input; self
         }
         /// <p>Contains server-side performance information for the command.</p>
         pub fn timing_information(mut self, input: crate::model::TimingInformation) -> Self {
@@ -55,12 +54,8 @@ pub mod fetch_page_result {
             self
         }
         /// <p>Contains server-side performance information for the command.</p>
-        pub fn set_timing_information(
-            mut self,
-            input: std::option::Option<crate::model::TimingInformation>,
-        ) -> Self {
-            self.timing_information = input;
-            self
+        pub fn set_timing_information(mut self, input: std::option::Option<crate::model::TimingInformation>) -> Self {
+            self.timing_information = input; self
         }
         /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
         pub fn consumed_i_os(mut self, input: crate::model::IoUsage) -> Self {
@@ -68,22 +63,23 @@ pub mod fetch_page_result {
             self
         }
         /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-        pub fn set_consumed_i_os(
-            mut self,
-            input: std::option::Option<crate::model::IoUsage>,
-        ) -> Self {
-            self.consumed_i_os = input;
-            self
+        pub fn set_consumed_i_os(mut self, input: std::option::Option<crate::model::IoUsage>) -> Self {
+            self.consumed_i_os = input; self
         }
         /// Consumes the builder and constructs a [`FetchPageResult`](crate::model::FetchPageResult).
         pub fn build(self) -> crate::model::FetchPageResult {
             crate::model::FetchPageResult {
-                page: self.page,
-                timing_information: self.timing_information,
-                consumed_i_os: self.consumed_i_os,
+                page: self.page
+                ,
+                timing_information: self.timing_information
+                ,
+                consumed_i_os: self.consumed_i_os
+                ,
             }
         }
     }
+    
+    
 }
 impl FetchPageResult {
     /// Creates a new builder-style object to manufacture [`FetchPageResult`](crate::model::FetchPageResult).
@@ -95,7 +91,7 @@ impl FetchPageResult {
 /// <p>Contains I/O usage metrics for a command that was invoked.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IoUsage {
+pub struct IoUsage  {
     /// <p>The number of read I/O requests that the command made.</p>
     #[doc(hidden)]
     pub read_i_os: i64,
@@ -115,7 +111,7 @@ impl IoUsage {
 }
 /// See [`IoUsage`](crate::model::IoUsage).
 pub mod io_usage {
-
+    
     /// A builder for [`IoUsage`](crate::model::IoUsage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -130,8 +126,7 @@ pub mod io_usage {
         }
         /// <p>The number of read I/O requests that the command made.</p>
         pub fn set_read_i_os(mut self, input: std::option::Option<i64>) -> Self {
-            self.read_i_os = input;
-            self
+            self.read_i_os = input; self
         }
         /// <p>The number of write I/O requests that the command made.</p>
         pub fn write_i_os(mut self, input: i64) -> Self {
@@ -140,17 +135,22 @@ pub mod io_usage {
         }
         /// <p>The number of write I/O requests that the command made.</p>
         pub fn set_write_i_os(mut self, input: std::option::Option<i64>) -> Self {
-            self.write_i_os = input;
-            self
+            self.write_i_os = input; self
         }
         /// Consumes the builder and constructs a [`IoUsage`](crate::model::IoUsage).
         pub fn build(self) -> crate::model::IoUsage {
             crate::model::IoUsage {
-                read_i_os: self.read_i_os.unwrap_or_default(),
-                write_i_os: self.write_i_os.unwrap_or_default(),
+                read_i_os: self.read_i_os
+                    .unwrap_or_default()
+                ,
+                write_i_os: self.write_i_os
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl IoUsage {
     /// Creates a new builder-style object to manufacture [`IoUsage`](crate::model::IoUsage).
@@ -162,7 +162,7 @@ impl IoUsage {
 /// <p>Contains server-side performance information for a command. Amazon QLDB captures timing information between the times when it receives the request and when it sends the corresponding response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimingInformation {
+pub struct TimingInformation  {
     /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
     #[doc(hidden)]
     pub processing_time_milliseconds: i64,
@@ -175,7 +175,7 @@ impl TimingInformation {
 }
 /// See [`TimingInformation`](crate::model::TimingInformation).
 pub mod timing_information {
-
+    
     /// A builder for [`TimingInformation`](crate::model::TimingInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -189,16 +189,19 @@ pub mod timing_information {
         }
         /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
         pub fn set_processing_time_milliseconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.processing_time_milliseconds = input;
-            self
+            self.processing_time_milliseconds = input; self
         }
         /// Consumes the builder and constructs a [`TimingInformation`](crate::model::TimingInformation).
         pub fn build(self) -> crate::model::TimingInformation {
             crate::model::TimingInformation {
-                processing_time_milliseconds: self.processing_time_milliseconds.unwrap_or_default(),
+                processing_time_milliseconds: self.processing_time_milliseconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl TimingInformation {
     /// Creates a new builder-style object to manufacture [`TimingInformation`](crate::model::TimingInformation).
@@ -210,7 +213,7 @@ impl TimingInformation {
 /// <p>Contains details of the fetched page.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Page {
+pub struct Page  {
     /// <p>A structure that contains values in multiple encoding formats.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
@@ -220,17 +223,17 @@ pub struct Page {
 }
 impl Page {
     /// <p>A structure that contains values in multiple encoding formats.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::model::ValueHolder]> {
+    pub fn values(&self) -> std::option::Option<& [crate::model::ValueHolder]> {
         self.values.as_deref()
     }
     /// <p>The token of the next page.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`Page`](crate::model::Page).
 pub mod page {
-
+    
     /// A builder for [`Page`](crate::model::Page).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -245,17 +248,13 @@ pub mod page {
         /// <p>A structure that contains values in multiple encoding formats.</p>
         pub fn values(mut self, input: crate::model::ValueHolder) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p>A structure that contains values in multiple encoding formats.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>) -> Self {
+            self.values = input; self
         }
         /// <p>The token of the next page.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -263,21 +262,21 @@ pub mod page {
             self
         }
         /// <p>The token of the next page.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`Page`](crate::model::Page).
         pub fn build(self) -> crate::model::Page {
             crate::model::Page {
-                values: self.values,
-                next_page_token: self.next_page_token,
+                values: self.values
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl Page {
     /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
@@ -289,7 +288,7 @@ impl Page {
 /// <p>A structure that can contain a value in multiple encoding formats.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValueHolder {
+pub struct ValueHolder  {
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
     #[doc(hidden)]
     pub ion_binary: std::option::Option<aws_smithy_types::Blob>,
@@ -299,17 +298,17 @@ pub struct ValueHolder {
 }
 impl ValueHolder {
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn ion_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn ion_binary(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.ion_binary.as_ref()
     }
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn ion_text(&self) -> std::option::Option<&str> {
+    pub fn ion_text(&self) -> std::option::Option<& str> {
         self.ion_text.as_deref()
     }
 }
 /// See [`ValueHolder`](crate::model::ValueHolder).
 pub mod value_holder {
-
+    
     /// A builder for [`ValueHolder`](crate::model::ValueHolder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -323,12 +322,8 @@ pub mod value_holder {
             self
         }
         /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
-        pub fn set_ion_binary(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.ion_binary = input;
-            self
+        pub fn set_ion_binary(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.ion_binary = input; self
         }
         /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
         pub fn ion_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -337,17 +332,20 @@ pub mod value_holder {
         }
         /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
         pub fn set_ion_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ion_text = input;
-            self
+            self.ion_text = input; self
         }
         /// Consumes the builder and constructs a [`ValueHolder`](crate::model::ValueHolder).
         pub fn build(self) -> crate::model::ValueHolder {
             crate::model::ValueHolder {
-                ion_binary: self.ion_binary,
-                ion_text: self.ion_text,
+                ion_binary: self.ion_binary
+                ,
+                ion_text: self.ion_text
+                ,
             }
         }
     }
+    
+    
 }
 impl ValueHolder {
     /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder).
@@ -359,7 +357,7 @@ impl ValueHolder {
 /// <p>Contains the details of the executed statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteStatementResult {
+pub struct ExecuteStatementResult  {
     /// <p>Contains the details of the first fetched page.</p>
     #[doc(hidden)]
     pub first_page: std::option::Option<crate::model::Page>,
@@ -372,21 +370,21 @@ pub struct ExecuteStatementResult {
 }
 impl ExecuteStatementResult {
     /// <p>Contains the details of the first fetched page.</p>
-    pub fn first_page(&self) -> std::option::Option<&crate::model::Page> {
+    pub fn first_page(&self) -> std::option::Option<& crate::model::Page> {
         self.first_page.as_ref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<& crate::model::TimingInformation> {
         self.timing_information.as_ref()
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn consumed_i_os(&self) -> std::option::Option<&crate::model::IoUsage> {
+    pub fn consumed_i_os(&self) -> std::option::Option<& crate::model::IoUsage> {
         self.consumed_i_os.as_ref()
     }
 }
 /// See [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
 pub mod execute_statement_result {
-
+    
     /// A builder for [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -402,8 +400,7 @@ pub mod execute_statement_result {
         }
         /// <p>Contains the details of the first fetched page.</p>
         pub fn set_first_page(mut self, input: std::option::Option<crate::model::Page>) -> Self {
-            self.first_page = input;
-            self
+            self.first_page = input; self
         }
         /// <p>Contains server-side performance information for the command.</p>
         pub fn timing_information(mut self, input: crate::model::TimingInformation) -> Self {
@@ -411,12 +408,8 @@ pub mod execute_statement_result {
             self
         }
         /// <p>Contains server-side performance information for the command.</p>
-        pub fn set_timing_information(
-            mut self,
-            input: std::option::Option<crate::model::TimingInformation>,
-        ) -> Self {
-            self.timing_information = input;
-            self
+        pub fn set_timing_information(mut self, input: std::option::Option<crate::model::TimingInformation>) -> Self {
+            self.timing_information = input; self
         }
         /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
         pub fn consumed_i_os(mut self, input: crate::model::IoUsage) -> Self {
@@ -424,22 +417,23 @@ pub mod execute_statement_result {
             self
         }
         /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-        pub fn set_consumed_i_os(
-            mut self,
-            input: std::option::Option<crate::model::IoUsage>,
-        ) -> Self {
-            self.consumed_i_os = input;
-            self
+        pub fn set_consumed_i_os(mut self, input: std::option::Option<crate::model::IoUsage>) -> Self {
+            self.consumed_i_os = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
         pub fn build(self) -> crate::model::ExecuteStatementResult {
             crate::model::ExecuteStatementResult {
-                first_page: self.first_page,
-                timing_information: self.timing_information,
-                consumed_i_os: self.consumed_i_os,
+                first_page: self.first_page
+                ,
+                timing_information: self.timing_information
+                ,
+                consumed_i_os: self.consumed_i_os
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteStatementResult {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
@@ -451,20 +445,20 @@ impl ExecuteStatementResult {
 /// <p>Contains the details of the aborted transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortTransactionResult {
+pub struct AbortTransactionResult  {
     /// <p>Contains server-side performance information for the command.</p>
     #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
 impl AbortTransactionResult {
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<& crate::model::TimingInformation> {
         self.timing_information.as_ref()
     }
 }
 /// See [`AbortTransactionResult`](crate::model::AbortTransactionResult).
 pub mod abort_transaction_result {
-
+    
     /// A builder for [`AbortTransactionResult`](crate::model::AbortTransactionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -477,20 +471,19 @@ pub mod abort_transaction_result {
             self
         }
         /// <p>Contains server-side performance information for the command.</p>
-        pub fn set_timing_information(
-            mut self,
-            input: std::option::Option<crate::model::TimingInformation>,
-        ) -> Self {
-            self.timing_information = input;
-            self
+        pub fn set_timing_information(mut self, input: std::option::Option<crate::model::TimingInformation>) -> Self {
+            self.timing_information = input; self
         }
         /// Consumes the builder and constructs a [`AbortTransactionResult`](crate::model::AbortTransactionResult).
         pub fn build(self) -> crate::model::AbortTransactionResult {
             crate::model::AbortTransactionResult {
-                timing_information: self.timing_information,
+                timing_information: self.timing_information
+                ,
             }
         }
     }
+    
+    
 }
 impl AbortTransactionResult {
     /// Creates a new builder-style object to manufacture [`AbortTransactionResult`](crate::model::AbortTransactionResult).
@@ -502,7 +495,7 @@ impl AbortTransactionResult {
 /// <p>Contains the details of the committed transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommitTransactionResult {
+pub struct CommitTransactionResult  {
     /// <p>The transaction ID of the committed transaction.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
@@ -518,25 +511,25 @@ pub struct CommitTransactionResult {
 }
 impl CommitTransactionResult {
     /// <p>The transaction ID of the committed transaction.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>The commit digest of the committed transaction.</p>
-    pub fn commit_digest(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn commit_digest(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.commit_digest.as_ref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<& crate::model::TimingInformation> {
         self.timing_information.as_ref()
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn consumed_i_os(&self) -> std::option::Option<&crate::model::IoUsage> {
+    pub fn consumed_i_os(&self) -> std::option::Option<& crate::model::IoUsage> {
         self.consumed_i_os.as_ref()
     }
 }
 /// See [`CommitTransactionResult`](crate::model::CommitTransactionResult).
 pub mod commit_transaction_result {
-
+    
     /// A builder for [`CommitTransactionResult`](crate::model::CommitTransactionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -552,12 +545,8 @@ pub mod commit_transaction_result {
             self
         }
         /// <p>The transaction ID of the committed transaction.</p>
-        pub fn set_transaction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transaction_id = input;
-            self
+        pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transaction_id = input; self
         }
         /// <p>The commit digest of the committed transaction.</p>
         pub fn commit_digest(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -565,12 +554,8 @@ pub mod commit_transaction_result {
             self
         }
         /// <p>The commit digest of the committed transaction.</p>
-        pub fn set_commit_digest(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.commit_digest = input;
-            self
+        pub fn set_commit_digest(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.commit_digest = input; self
         }
         /// <p>Contains server-side performance information for the command.</p>
         pub fn timing_information(mut self, input: crate::model::TimingInformation) -> Self {
@@ -578,12 +563,8 @@ pub mod commit_transaction_result {
             self
         }
         /// <p>Contains server-side performance information for the command.</p>
-        pub fn set_timing_information(
-            mut self,
-            input: std::option::Option<crate::model::TimingInformation>,
-        ) -> Self {
-            self.timing_information = input;
-            self
+        pub fn set_timing_information(mut self, input: std::option::Option<crate::model::TimingInformation>) -> Self {
+            self.timing_information = input; self
         }
         /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
         pub fn consumed_i_os(mut self, input: crate::model::IoUsage) -> Self {
@@ -591,23 +572,25 @@ pub mod commit_transaction_result {
             self
         }
         /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-        pub fn set_consumed_i_os(
-            mut self,
-            input: std::option::Option<crate::model::IoUsage>,
-        ) -> Self {
-            self.consumed_i_os = input;
-            self
+        pub fn set_consumed_i_os(mut self, input: std::option::Option<crate::model::IoUsage>) -> Self {
+            self.consumed_i_os = input; self
         }
         /// Consumes the builder and constructs a [`CommitTransactionResult`](crate::model::CommitTransactionResult).
         pub fn build(self) -> crate::model::CommitTransactionResult {
             crate::model::CommitTransactionResult {
-                transaction_id: self.transaction_id,
-                commit_digest: self.commit_digest,
-                timing_information: self.timing_information,
-                consumed_i_os: self.consumed_i_os,
+                transaction_id: self.transaction_id
+                ,
+                commit_digest: self.commit_digest
+                ,
+                timing_information: self.timing_information
+                ,
+                consumed_i_os: self.consumed_i_os
+                ,
             }
         }
     }
+    
+    
 }
 impl CommitTransactionResult {
     /// Creates a new builder-style object to manufacture [`CommitTransactionResult`](crate::model::CommitTransactionResult).
@@ -619,20 +602,20 @@ impl CommitTransactionResult {
 /// <p>Contains the details of the ended session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndSessionResult {
+pub struct EndSessionResult  {
     /// <p>Contains server-side performance information for the command.</p>
     #[doc(hidden)]
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
 impl EndSessionResult {
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<& crate::model::TimingInformation> {
         self.timing_information.as_ref()
     }
 }
 /// See [`EndSessionResult`](crate::model::EndSessionResult).
 pub mod end_session_result {
-
+    
     /// A builder for [`EndSessionResult`](crate::model::EndSessionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -645,20 +628,19 @@ pub mod end_session_result {
             self
         }
         /// <p>Contains server-side performance information for the command.</p>
-        pub fn set_timing_information(
-            mut self,
-            input: std::option::Option<crate::model::TimingInformation>,
-        ) -> Self {
-            self.timing_information = input;
-            self
+        pub fn set_timing_information(mut self, input: std::option::Option<crate::model::TimingInformation>) -> Self {
+            self.timing_information = input; self
         }
         /// Consumes the builder and constructs a [`EndSessionResult`](crate::model::EndSessionResult).
         pub fn build(self) -> crate::model::EndSessionResult {
             crate::model::EndSessionResult {
-                timing_information: self.timing_information,
+                timing_information: self.timing_information
+                ,
             }
         }
     }
+    
+    
 }
 impl EndSessionResult {
     /// Creates a new builder-style object to manufacture [`EndSessionResult`](crate::model::EndSessionResult).
@@ -670,7 +652,7 @@ impl EndSessionResult {
 /// <p>Contains the details of the started transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTransactionResult {
+pub struct StartTransactionResult  {
     /// <p>The transaction ID of the started transaction.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
@@ -680,17 +662,17 @@ pub struct StartTransactionResult {
 }
 impl StartTransactionResult {
     /// <p>The transaction ID of the started transaction.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<& crate::model::TimingInformation> {
         self.timing_information.as_ref()
     }
 }
 /// See [`StartTransactionResult`](crate::model::StartTransactionResult).
 pub mod start_transaction_result {
-
+    
     /// A builder for [`StartTransactionResult`](crate::model::StartTransactionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -704,12 +686,8 @@ pub mod start_transaction_result {
             self
         }
         /// <p>The transaction ID of the started transaction.</p>
-        pub fn set_transaction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transaction_id = input;
-            self
+        pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transaction_id = input; self
         }
         /// <p>Contains server-side performance information for the command.</p>
         pub fn timing_information(mut self, input: crate::model::TimingInformation) -> Self {
@@ -717,21 +695,21 @@ pub mod start_transaction_result {
             self
         }
         /// <p>Contains server-side performance information for the command.</p>
-        pub fn set_timing_information(
-            mut self,
-            input: std::option::Option<crate::model::TimingInformation>,
-        ) -> Self {
-            self.timing_information = input;
-            self
+        pub fn set_timing_information(mut self, input: std::option::Option<crate::model::TimingInformation>) -> Self {
+            self.timing_information = input; self
         }
         /// Consumes the builder and constructs a [`StartTransactionResult`](crate::model::StartTransactionResult).
         pub fn build(self) -> crate::model::StartTransactionResult {
             crate::model::StartTransactionResult {
-                transaction_id: self.transaction_id,
-                timing_information: self.timing_information,
+                transaction_id: self.transaction_id
+                ,
+                timing_information: self.timing_information
+                ,
             }
         }
     }
+    
+    
 }
 impl StartTransactionResult {
     /// Creates a new builder-style object to manufacture [`StartTransactionResult`](crate::model::StartTransactionResult).
@@ -743,7 +721,7 @@ impl StartTransactionResult {
 /// <p>Contains the details of the started session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSessionResult {
+pub struct StartSessionResult  {
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     #[doc(hidden)]
     pub session_token: std::option::Option<std::string::String>,
@@ -753,17 +731,17 @@ pub struct StartSessionResult {
 }
 impl StartSessionResult {
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn session_token(&self) -> std::option::Option<&str> {
+    pub fn session_token(&self) -> std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::model::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<& crate::model::TimingInformation> {
         self.timing_information.as_ref()
     }
 }
 /// See [`StartSessionResult`](crate::model::StartSessionResult).
 pub mod start_session_result {
-
+    
     /// A builder for [`StartSessionResult`](crate::model::StartSessionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -777,12 +755,8 @@ pub mod start_session_result {
             self
         }
         /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-        pub fn set_session_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_token = input;
-            self
+        pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_token = input; self
         }
         /// <p>Contains server-side performance information for the command.</p>
         pub fn timing_information(mut self, input: crate::model::TimingInformation) -> Self {
@@ -790,21 +764,21 @@ pub mod start_session_result {
             self
         }
         /// <p>Contains server-side performance information for the command.</p>
-        pub fn set_timing_information(
-            mut self,
-            input: std::option::Option<crate::model::TimingInformation>,
-        ) -> Self {
-            self.timing_information = input;
-            self
+        pub fn set_timing_information(mut self, input: std::option::Option<crate::model::TimingInformation>) -> Self {
+            self.timing_information = input; self
         }
         /// Consumes the builder and constructs a [`StartSessionResult`](crate::model::StartSessionResult).
         pub fn build(self) -> crate::model::StartSessionResult {
             crate::model::StartSessionResult {
-                session_token: self.session_token,
-                timing_information: self.timing_information,
+                session_token: self.session_token
+                ,
+                timing_information: self.timing_information
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSessionResult {
     /// Creates a new builder-style object to manufacture [`StartSessionResult`](crate::model::StartSessionResult).
@@ -816,7 +790,7 @@ impl StartSessionResult {
 /// <p>Specifies the details of the page to be fetched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FetchPageRequest {
+pub struct FetchPageRequest  {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
@@ -826,17 +800,17 @@ pub struct FetchPageRequest {
 }
 impl FetchPageRequest {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>Specifies the next page token of the page to be fetched.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`FetchPageRequest`](crate::model::FetchPageRequest).
 pub mod fetch_page_request {
-
+    
     /// A builder for [`FetchPageRequest`](crate::model::FetchPageRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -850,12 +824,8 @@ pub mod fetch_page_request {
             self
         }
         /// <p>Specifies the transaction ID of the page to be fetched.</p>
-        pub fn set_transaction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transaction_id = input;
-            self
+        pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transaction_id = input; self
         }
         /// <p>Specifies the next page token of the page to be fetched.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -863,21 +833,21 @@ pub mod fetch_page_request {
             self
         }
         /// <p>Specifies the next page token of the page to be fetched.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`FetchPageRequest`](crate::model::FetchPageRequest).
         pub fn build(self) -> crate::model::FetchPageRequest {
             crate::model::FetchPageRequest {
-                transaction_id: self.transaction_id,
-                next_page_token: self.next_page_token,
+                transaction_id: self.transaction_id
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl FetchPageRequest {
     /// Creates a new builder-style object to manufacture [`FetchPageRequest`](crate::model::FetchPageRequest).
@@ -889,7 +859,7 @@ impl FetchPageRequest {
 /// <p>Specifies a request to execute a statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteStatementRequest {
+pub struct ExecuteStatementRequest  {
     /// <p>Specifies the transaction ID of the request.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
@@ -902,21 +872,21 @@ pub struct ExecuteStatementRequest {
 }
 impl ExecuteStatementRequest {
     /// <p>Specifies the transaction ID of the request.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>Specifies the statement of the request.</p>
-    pub fn statement(&self) -> std::option::Option<&str> {
+    pub fn statement(&self) -> std::option::Option<& str> {
         self.statement.as_deref()
     }
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::ValueHolder]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::ValueHolder]> {
         self.parameters.as_deref()
     }
 }
 /// See [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
 pub mod execute_statement_request {
-
+    
     /// A builder for [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -931,12 +901,8 @@ pub mod execute_statement_request {
             self
         }
         /// <p>Specifies the transaction ID of the request.</p>
-        pub fn set_transaction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transaction_id = input;
-            self
+        pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transaction_id = input; self
         }
         /// <p>Specifies the statement of the request.</p>
         pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
@@ -945,8 +911,7 @@ pub mod execute_statement_request {
         }
         /// <p>Specifies the statement of the request.</p>
         pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statement = input;
-            self
+            self.statement = input; self
         }
         /// Appends an item to `parameters`.
         ///
@@ -955,27 +920,28 @@ pub mod execute_statement_request {
         /// <p>Specifies the parameters for the parameterized statement in the request.</p>
         pub fn parameters(mut self, input: crate::model::ValueHolder) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
         pub fn build(self) -> crate::model::ExecuteStatementRequest {
             crate::model::ExecuteStatementRequest {
-                transaction_id: self.transaction_id,
-                statement: self.statement,
-                parameters: self.parameters,
+                transaction_id: self.transaction_id
+                ,
+                statement: self.statement
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteStatementRequest {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
@@ -987,19 +953,24 @@ impl ExecuteStatementRequest {
 /// <p>Contains the details of the transaction to abort.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortTransactionRequest {}
+pub struct AbortTransactionRequest  {
+}
 /// See [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
 pub mod abort_transaction_request {
-
+    
     /// A builder for [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
         pub fn build(self) -> crate::model::AbortTransactionRequest {
-            crate::model::AbortTransactionRequest {}
+            crate::model::AbortTransactionRequest {
+            }
         }
     }
+    
+    
 }
 impl AbortTransactionRequest {
     /// Creates a new builder-style object to manufacture [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
@@ -1011,29 +982,29 @@ impl AbortTransactionRequest {
 /// <p>Contains the details of the transaction to commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommitTransactionRequest {
+pub struct CommitTransactionRequest  {
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p> 
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
     #[doc(hidden)]
     pub commit_digest: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CommitTransactionRequest {
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
-    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p> 
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
-    pub fn commit_digest(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn commit_digest(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.commit_digest.as_ref()
     }
 }
 /// See [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
 pub mod commit_transaction_request {
-
+    
     /// A builder for [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1047,36 +1018,32 @@ pub mod commit_transaction_request {
             self
         }
         /// <p>Specifies the transaction ID of the transaction to commit.</p>
-        pub fn set_transaction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transaction_id = input;
-            self
+        pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transaction_id = input; self
         }
-        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p> 
         /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
         pub fn commit_digest(mut self, input: aws_smithy_types::Blob) -> Self {
             self.commit_digest = Some(input);
             self
         }
-        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p> 
         /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
-        pub fn set_commit_digest(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.commit_digest = input;
-            self
+        pub fn set_commit_digest(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.commit_digest = input; self
         }
         /// Consumes the builder and constructs a [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
         pub fn build(self) -> crate::model::CommitTransactionRequest {
             crate::model::CommitTransactionRequest {
-                transaction_id: self.transaction_id,
-                commit_digest: self.commit_digest,
+                transaction_id: self.transaction_id
+                ,
+                commit_digest: self.commit_digest
+                ,
             }
         }
     }
+    
+    
 }
 impl CommitTransactionRequest {
     /// Creates a new builder-style object to manufacture [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
@@ -1088,19 +1055,24 @@ impl CommitTransactionRequest {
 /// <p>Specifies a request to end the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndSessionRequest {}
+pub struct EndSessionRequest  {
+}
 /// See [`EndSessionRequest`](crate::model::EndSessionRequest).
 pub mod end_session_request {
-
+    
     /// A builder for [`EndSessionRequest`](crate::model::EndSessionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EndSessionRequest`](crate::model::EndSessionRequest).
         pub fn build(self) -> crate::model::EndSessionRequest {
-            crate::model::EndSessionRequest {}
+            crate::model::EndSessionRequest {
+            }
         }
     }
+    
+    
 }
 impl EndSessionRequest {
     /// Creates a new builder-style object to manufacture [`EndSessionRequest`](crate::model::EndSessionRequest).
@@ -1112,19 +1084,24 @@ impl EndSessionRequest {
 /// <p>Specifies a request to start a transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTransactionRequest {}
+pub struct StartTransactionRequest  {
+}
 /// See [`StartTransactionRequest`](crate::model::StartTransactionRequest).
 pub mod start_transaction_request {
-
+    
     /// A builder for [`StartTransactionRequest`](crate::model::StartTransactionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartTransactionRequest`](crate::model::StartTransactionRequest).
         pub fn build(self) -> crate::model::StartTransactionRequest {
-            crate::model::StartTransactionRequest {}
+            crate::model::StartTransactionRequest {
+            }
         }
     }
+    
+    
 }
 impl StartTransactionRequest {
     /// Creates a new builder-style object to manufacture [`StartTransactionRequest`](crate::model::StartTransactionRequest).
@@ -1136,20 +1113,20 @@ impl StartTransactionRequest {
 /// <p>Specifies a request to start a new session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSessionRequest {
+pub struct StartSessionRequest  {
     /// <p>The name of the ledger to start a new session against.</p>
     #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
 }
 impl StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
-    pub fn ledger_name(&self) -> std::option::Option<&str> {
+    pub fn ledger_name(&self) -> std::option::Option<& str> {
         self.ledger_name.as_deref()
     }
 }
 /// See [`StartSessionRequest`](crate::model::StartSessionRequest).
 pub mod start_session_request {
-
+    
     /// A builder for [`StartSessionRequest`](crate::model::StartSessionRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1163,16 +1140,18 @@ pub mod start_session_request {
         }
         /// <p>The name of the ledger to start a new session against.</p>
         pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ledger_name = input;
-            self
+            self.ledger_name = input; self
         }
         /// Consumes the builder and constructs a [`StartSessionRequest`](crate::model::StartSessionRequest).
         pub fn build(self) -> crate::model::StartSessionRequest {
             crate::model::StartSessionRequest {
-                ledger_name: self.ledger_name,
+                ledger_name: self.ledger_name
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSessionRequest {
     /// Creates a new builder-style object to manufacture [`StartSessionRequest`](crate::model::StartSessionRequest).
@@ -1180,3 +1159,4 @@ impl StartSessionRequest {
         crate::model::start_session_request::Builder::default()
     }
 }
+

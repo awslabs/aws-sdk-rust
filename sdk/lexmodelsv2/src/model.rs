@@ -3,25 +3,24 @@
 /// <p>A composite slot is a combination of two or more slots that capture multiple pieces of information in a single user input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompositeSlotTypeSetting {
+pub struct CompositeSlotTypeSetting  {
     /// <p>Subslots in the composite slot.</p>
     #[doc(hidden)]
     pub sub_slots: std::option::Option<std::vec::Vec<crate::model::SubSlotTypeComposition>>,
 }
 impl CompositeSlotTypeSetting {
     /// <p>Subslots in the composite slot.</p>
-    pub fn sub_slots(&self) -> std::option::Option<&[crate::model::SubSlotTypeComposition]> {
+    pub fn sub_slots(&self) -> std::option::Option<& [crate::model::SubSlotTypeComposition]> {
         self.sub_slots.as_deref()
     }
 }
 /// See [`CompositeSlotTypeSetting`](crate::model::CompositeSlotTypeSetting).
 pub mod composite_slot_type_setting {
-
+    
     /// A builder for [`CompositeSlotTypeSetting`](crate::model::CompositeSlotTypeSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sub_slots:
-            std::option::Option<std::vec::Vec<crate::model::SubSlotTypeComposition>>,
+        pub(crate) sub_slots: std::option::Option<std::vec::Vec<crate::model::SubSlotTypeComposition>>,
     }
     impl Builder {
         /// Appends an item to `sub_slots`.
@@ -31,25 +30,24 @@ pub mod composite_slot_type_setting {
         /// <p>Subslots in the composite slot.</p>
         pub fn sub_slots(mut self, input: crate::model::SubSlotTypeComposition) -> Self {
             let mut v = self.sub_slots.unwrap_or_default();
-            v.push(input);
-            self.sub_slots = Some(v);
-            self
+                            v.push(input);
+                            self.sub_slots = Some(v);
+                            self
         }
         /// <p>Subslots in the composite slot.</p>
-        pub fn set_sub_slots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubSlotTypeComposition>>,
-        ) -> Self {
-            self.sub_slots = input;
-            self
+        pub fn set_sub_slots(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubSlotTypeComposition>>) -> Self {
+            self.sub_slots = input; self
         }
         /// Consumes the builder and constructs a [`CompositeSlotTypeSetting`](crate::model::CompositeSlotTypeSetting).
         pub fn build(self) -> crate::model::CompositeSlotTypeSetting {
             crate::model::CompositeSlotTypeSetting {
-                sub_slots: self.sub_slots,
+                sub_slots: self.sub_slots
+                ,
             }
         }
     }
+    
+    
 }
 impl CompositeSlotTypeSetting {
     /// Creates a new builder-style object to manufacture [`CompositeSlotTypeSetting`](crate::model::CompositeSlotTypeSetting).
@@ -61,7 +59,7 @@ impl CompositeSlotTypeSetting {
 /// <p>Subslot type composition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubSlotTypeComposition {
+pub struct SubSlotTypeComposition  {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -71,17 +69,17 @@ pub struct SubSlotTypeComposition {
 }
 impl SubSlotTypeComposition {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
 }
 /// See [`SubSlotTypeComposition`](crate::model::SubSlotTypeComposition).
 pub mod sub_slot_type_composition {
-
+    
     /// A builder for [`SubSlotTypeComposition`](crate::model::SubSlotTypeComposition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -96,8 +94,7 @@ pub mod sub_slot_type_composition {
         }
         /// <p>Name of a constituent sub slot inside a composite slot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
         pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,17 +103,20 @@ pub mod sub_slot_type_composition {
         }
         /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// Consumes the builder and constructs a [`SubSlotTypeComposition`](crate::model::SubSlotTypeComposition).
         pub fn build(self) -> crate::model::SubSlotTypeComposition {
             crate::model::SubSlotTypeComposition {
-                name: self.name,
-                slot_type_id: self.slot_type_id,
+                name: self.name
+                ,
+                slot_type_id: self.slot_type_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SubSlotTypeComposition {
     /// Creates a new builder-style object to manufacture [`SubSlotTypeComposition`](crate::model::SubSlotTypeComposition).
@@ -128,52 +128,45 @@ impl SubSlotTypeComposition {
 /// <p>Provides information about the external source of the slot type's definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExternalSourceSetting {
+pub struct ExternalSourceSetting  {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
     #[doc(hidden)]
     pub grammar_slot_type_setting: std::option::Option<crate::model::GrammarSlotTypeSetting>,
 }
 impl ExternalSourceSetting {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
-    pub fn grammar_slot_type_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::GrammarSlotTypeSetting> {
+    pub fn grammar_slot_type_setting(&self) -> std::option::Option<& crate::model::GrammarSlotTypeSetting> {
         self.grammar_slot_type_setting.as_ref()
     }
 }
 /// See [`ExternalSourceSetting`](crate::model::ExternalSourceSetting).
 pub mod external_source_setting {
-
+    
     /// A builder for [`ExternalSourceSetting`](crate::model::ExternalSourceSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) grammar_slot_type_setting:
-            std::option::Option<crate::model::GrammarSlotTypeSetting>,
+        pub(crate) grammar_slot_type_setting: std::option::Option<crate::model::GrammarSlotTypeSetting>,
     }
     impl Builder {
         /// <p>Settings required for a slot type based on a grammar that you provide.</p>
-        pub fn grammar_slot_type_setting(
-            mut self,
-            input: crate::model::GrammarSlotTypeSetting,
-        ) -> Self {
+        pub fn grammar_slot_type_setting(mut self, input: crate::model::GrammarSlotTypeSetting) -> Self {
             self.grammar_slot_type_setting = Some(input);
             self
         }
         /// <p>Settings required for a slot type based on a grammar that you provide.</p>
-        pub fn set_grammar_slot_type_setting(
-            mut self,
-            input: std::option::Option<crate::model::GrammarSlotTypeSetting>,
-        ) -> Self {
-            self.grammar_slot_type_setting = input;
-            self
+        pub fn set_grammar_slot_type_setting(mut self, input: std::option::Option<crate::model::GrammarSlotTypeSetting>) -> Self {
+            self.grammar_slot_type_setting = input; self
         }
         /// Consumes the builder and constructs a [`ExternalSourceSetting`](crate::model::ExternalSourceSetting).
         pub fn build(self) -> crate::model::ExternalSourceSetting {
             crate::model::ExternalSourceSetting {
-                grammar_slot_type_setting: self.grammar_slot_type_setting,
+                grammar_slot_type_setting: self.grammar_slot_type_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl ExternalSourceSetting {
     /// Creates a new builder-style object to manufacture [`ExternalSourceSetting`](crate::model::ExternalSourceSetting).
@@ -185,20 +178,20 @@ impl ExternalSourceSetting {
 /// <p>Settings requried for a slot type based on a grammar that you provide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrammarSlotTypeSetting {
+pub struct GrammarSlotTypeSetting  {
     /// <p>The source of the grammar used to create the slot type.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::GrammarSlotTypeSource>,
 }
 impl GrammarSlotTypeSetting {
     /// <p>The source of the grammar used to create the slot type.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::GrammarSlotTypeSource> {
+    pub fn source(&self) -> std::option::Option<& crate::model::GrammarSlotTypeSource> {
         self.source.as_ref()
     }
 }
 /// See [`GrammarSlotTypeSetting`](crate::model::GrammarSlotTypeSetting).
 pub mod grammar_slot_type_setting {
-
+    
     /// A builder for [`GrammarSlotTypeSetting`](crate::model::GrammarSlotTypeSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -211,20 +204,19 @@ pub mod grammar_slot_type_setting {
             self
         }
         /// <p>The source of the grammar used to create the slot type.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<crate::model::GrammarSlotTypeSource>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<crate::model::GrammarSlotTypeSource>) -> Self {
+            self.source = input; self
         }
         /// Consumes the builder and constructs a [`GrammarSlotTypeSetting`](crate::model::GrammarSlotTypeSetting).
         pub fn build(self) -> crate::model::GrammarSlotTypeSetting {
             crate::model::GrammarSlotTypeSetting {
-                source: self.source,
+                source: self.source
+                ,
             }
         }
     }
+    
+    
 }
 impl GrammarSlotTypeSetting {
     /// Creates a new builder-style object to manufacture [`GrammarSlotTypeSetting`](crate::model::GrammarSlotTypeSetting).
@@ -236,7 +228,7 @@ impl GrammarSlotTypeSetting {
 /// <p>Describes the Amazon S3 bucket name and location for the grammar that is the source for the slot type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrammarSlotTypeSource {
+pub struct GrammarSlotTypeSource  {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -249,21 +241,21 @@ pub struct GrammarSlotTypeSource {
 }
 impl GrammarSlotTypeSource {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The path to the grammar in the S3 bucket.</p>
-    pub fn s3_object_key(&self) -> std::option::Option<&str> {
+    pub fn s3_object_key(&self) -> std::option::Option<& str> {
         self.s3_object_key.as_deref()
     }
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
 /// See [`GrammarSlotTypeSource`](crate::model::GrammarSlotTypeSource).
 pub mod grammar_slot_type_source {
-
+    
     /// A builder for [`GrammarSlotTypeSource`](crate::model::GrammarSlotTypeSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -278,12 +270,8 @@ pub mod grammar_slot_type_source {
             self
         }
         /// <p>The name of the S3 bucket that contains the grammar source.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// <p>The path to the grammar in the S3 bucket.</p>
         pub fn s3_object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -291,12 +279,8 @@ pub mod grammar_slot_type_source {
             self
         }
         /// <p>The path to the grammar in the S3 bucket.</p>
-        pub fn set_s3_object_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_object_key = input;
-            self
+        pub fn set_s3_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_object_key = input; self
         }
         /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -305,18 +289,22 @@ pub mod grammar_slot_type_source {
         }
         /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`GrammarSlotTypeSource`](crate::model::GrammarSlotTypeSource).
         pub fn build(self) -> crate::model::GrammarSlotTypeSource {
             crate::model::GrammarSlotTypeSource {
-                s3_bucket_name: self.s3_bucket_name,
-                s3_object_key: self.s3_object_key,
-                kms_key_arn: self.kms_key_arn,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                s3_object_key: self.s3_object_key
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GrammarSlotTypeSource {
     /// Creates a new builder-style object to manufacture [`GrammarSlotTypeSource`](crate::model::GrammarSlotTypeSource).
@@ -328,12 +316,12 @@ impl GrammarSlotTypeSource {
 /// <p>Contains settings used by Amazon Lex to select a slot value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotValueSelectionSetting {
-    /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
-    /// <ul>
-    /// <li> <p>OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
-    /// </ul>
+pub struct SlotValueSelectionSetting  {
+    /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li> 
+    /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify the valueSelectionStrategy, the default is OriginalValue. </p>
     #[doc(hidden)]
     pub resolution_strategy: std::option::Option<crate::model::SlotValueResolutionStrategy>,
@@ -345,66 +333,53 @@ pub struct SlotValueSelectionSetting {
     pub advanced_recognition_setting: std::option::Option<crate::model::AdvancedRecognitionSetting>,
 }
 impl SlotValueSelectionSetting {
-    /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
-    /// <ul>
-    /// <li> <p>OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
-    /// </ul>
+    /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li> 
+    /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify the valueSelectionStrategy, the default is OriginalValue. </p>
-    pub fn resolution_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueResolutionStrategy> {
+    pub fn resolution_strategy(&self) -> std::option::Option<& crate::model::SlotValueResolutionStrategy> {
         self.resolution_strategy.as_ref()
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
-    pub fn regex_filter(&self) -> std::option::Option<&crate::model::SlotValueRegexFilter> {
+    pub fn regex_filter(&self) -> std::option::Option<& crate::model::SlotValueRegexFilter> {
         self.regex_filter.as_ref()
     }
     /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
-    pub fn advanced_recognition_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::AdvancedRecognitionSetting> {
+    pub fn advanced_recognition_setting(&self) -> std::option::Option<& crate::model::AdvancedRecognitionSetting> {
         self.advanced_recognition_setting.as_ref()
     }
 }
 /// See [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting).
 pub mod slot_value_selection_setting {
-
+    
     /// A builder for [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolution_strategy:
-            std::option::Option<crate::model::SlotValueResolutionStrategy>,
+        pub(crate) resolution_strategy: std::option::Option<crate::model::SlotValueResolutionStrategy>,
         pub(crate) regex_filter: std::option::Option<crate::model::SlotValueRegexFilter>,
-        pub(crate) advanced_recognition_setting:
-            std::option::Option<crate::model::AdvancedRecognitionSetting>,
+        pub(crate) advanced_recognition_setting: std::option::Option<crate::model::AdvancedRecognitionSetting>,
     }
     impl Builder {
-        /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
-        /// <ul>
-        /// <li> <p>OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-        /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
-        /// </ul>
+        /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li> 
+        /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li> 
+        /// </ul> 
         /// <p>If you don't specify the valueSelectionStrategy, the default is OriginalValue. </p>
-        pub fn resolution_strategy(
-            mut self,
-            input: crate::model::SlotValueResolutionStrategy,
-        ) -> Self {
+        pub fn resolution_strategy(mut self, input: crate::model::SlotValueResolutionStrategy) -> Self {
             self.resolution_strategy = Some(input);
             self
         }
-        /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
-        /// <ul>
-        /// <li> <p>OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-        /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
-        /// </ul>
+        /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li> 
+        /// <li> <p>TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li> 
+        /// </ul> 
         /// <p>If you don't specify the valueSelectionStrategy, the default is OriginalValue. </p>
-        pub fn set_resolution_strategy(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueResolutionStrategy>,
-        ) -> Self {
-            self.resolution_strategy = input;
-            self
+        pub fn set_resolution_strategy(mut self, input: std::option::Option<crate::model::SlotValueResolutionStrategy>) -> Self {
+            self.resolution_strategy = input; self
         }
         /// <p>A regular expression used to validate the value of a slot.</p>
         pub fn regex_filter(mut self, input: crate::model::SlotValueRegexFilter) -> Self {
@@ -412,38 +387,32 @@ pub mod slot_value_selection_setting {
             self
         }
         /// <p>A regular expression used to validate the value of a slot.</p>
-        pub fn set_regex_filter(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueRegexFilter>,
-        ) -> Self {
-            self.regex_filter = input;
-            self
+        pub fn set_regex_filter(mut self, input: std::option::Option<crate::model::SlotValueRegexFilter>) -> Self {
+            self.regex_filter = input; self
         }
         /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
-        pub fn advanced_recognition_setting(
-            mut self,
-            input: crate::model::AdvancedRecognitionSetting,
-        ) -> Self {
+        pub fn advanced_recognition_setting(mut self, input: crate::model::AdvancedRecognitionSetting) -> Self {
             self.advanced_recognition_setting = Some(input);
             self
         }
         /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
-        pub fn set_advanced_recognition_setting(
-            mut self,
-            input: std::option::Option<crate::model::AdvancedRecognitionSetting>,
-        ) -> Self {
-            self.advanced_recognition_setting = input;
-            self
+        pub fn set_advanced_recognition_setting(mut self, input: std::option::Option<crate::model::AdvancedRecognitionSetting>) -> Self {
+            self.advanced_recognition_setting = input; self
         }
         /// Consumes the builder and constructs a [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting).
         pub fn build(self) -> crate::model::SlotValueSelectionSetting {
             crate::model::SlotValueSelectionSetting {
-                resolution_strategy: self.resolution_strategy,
-                regex_filter: self.regex_filter,
-                advanced_recognition_setting: self.advanced_recognition_setting,
+                resolution_strategy: self.resolution_strategy
+                ,
+                regex_filter: self.regex_filter
+                ,
+                advanced_recognition_setting: self.advanced_recognition_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotValueSelectionSetting {
     /// Creates a new builder-style object to manufacture [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting).
@@ -455,52 +424,45 @@ impl SlotValueSelectionSetting {
 /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdvancedRecognitionSetting {
+pub struct AdvancedRecognitionSetting  {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
     #[doc(hidden)]
     pub audio_recognition_strategy: std::option::Option<crate::model::AudioRecognitionStrategy>,
 }
 impl AdvancedRecognitionSetting {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
-    pub fn audio_recognition_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::AudioRecognitionStrategy> {
+    pub fn audio_recognition_strategy(&self) -> std::option::Option<& crate::model::AudioRecognitionStrategy> {
         self.audio_recognition_strategy.as_ref()
     }
 }
 /// See [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting).
 pub mod advanced_recognition_setting {
-
+    
     /// A builder for [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) audio_recognition_strategy:
-            std::option::Option<crate::model::AudioRecognitionStrategy>,
+        pub(crate) audio_recognition_strategy: std::option::Option<crate::model::AudioRecognitionStrategy>,
     }
     impl Builder {
         /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
-        pub fn audio_recognition_strategy(
-            mut self,
-            input: crate::model::AudioRecognitionStrategy,
-        ) -> Self {
+        pub fn audio_recognition_strategy(mut self, input: crate::model::AudioRecognitionStrategy) -> Self {
             self.audio_recognition_strategy = Some(input);
             self
         }
         /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
-        pub fn set_audio_recognition_strategy(
-            mut self,
-            input: std::option::Option<crate::model::AudioRecognitionStrategy>,
-        ) -> Self {
-            self.audio_recognition_strategy = input;
-            self
+        pub fn set_audio_recognition_strategy(mut self, input: std::option::Option<crate::model::AudioRecognitionStrategy>) -> Self {
+            self.audio_recognition_strategy = input; self
         }
         /// Consumes the builder and constructs a [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting).
         pub fn build(self) -> crate::model::AdvancedRecognitionSetting {
             crate::model::AdvancedRecognitionSetting {
-                audio_recognition_strategy: self.audio_recognition_strategy,
+                audio_recognition_strategy: self.audio_recognition_strategy
+                ,
             }
         }
     }
+    
+    
 }
 impl AdvancedRecognitionSetting {
     /// Creates a new builder-style object to manufacture [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting).
@@ -515,9 +477,9 @@ impl AdvancedRecognitionSetting {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let audiorecognitionstrategy = unimplemented!();
 /// match audiorecognitionstrategy {
@@ -538,60 +500,48 @@ impl AdvancedRecognitionSetting {
 /// Specifically, when `audiorecognitionstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AudioRecognitionStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AudioRecognitionStrategy {
     #[allow(missing_docs)] // documentation missing in model
     UseSlotValuesAsCustomVocabulary,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AudioRecognitionStrategy {
     fn from(s: &str) -> Self {
         match s {
-            "UseSlotValuesAsCustomVocabulary" => {
-                AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary
-            }
-            other => AudioRecognitionStrategy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UseSlotValuesAsCustomVocabulary" => AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary,
+            other => AudioRecognitionStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AudioRecognitionStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioRecognitionStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AudioRecognitionStrategy::from(s))
+                }
+            }
 impl AudioRecognitionStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary => {
-                "UseSlotValuesAsCustomVocabulary"
-            }
-            AudioRecognitionStrategy::Unknown(value) => value.as_str(),
+            AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary => "UseSlotValuesAsCustomVocabulary",
+            AudioRecognitionStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UseSlotValuesAsCustomVocabulary"]
+        &[
+            "UseSlotValuesAsCustomVocabulary"
+        ]
     }
 }
 impl AsRef<str> for AudioRecognitionStrategy {
@@ -603,99 +553,101 @@ impl AsRef<str> for AudioRecognitionStrategy {
 /// <p>Provides a regular expression used to validate the value of a slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotValueRegexFilter {
-    /// <p>A regular expression used to validate the value of a slot.</p>
-    /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p>
-    /// <ul>
-    /// <li> <p>A-Z, a-z</p> </li>
-    /// <li> <p>0-9</p> </li>
+pub struct SlotValueRegexFilter  {
+    /// <p>A regular expression used to validate the value of a slot.</p> 
+    /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p> 
+    /// <ul> 
+    /// <li> <p>A-Z, a-z</p> </li> 
+    /// <li> <p>0-9</p> </li> 
     /// <li> <p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li>
-    /// </ul>
-    /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p>
-    /// <p> The following regular expression operators are not supported: </p>
-    /// <ul>
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-    /// <li> <p>Wild card (.)</p> </li>
+    /// </unicode></p> </li> 
+    /// </ul> 
+    /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p> 
+    /// <p> The following regular expression operators are not supported: </p> 
+    /// <ul> 
+    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> 
+    /// <li> <p>Wild card (.)</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
 }
 impl SlotValueRegexFilter {
-    /// <p>A regular expression used to validate the value of a slot.</p>
-    /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p>
-    /// <ul>
-    /// <li> <p>A-Z, a-z</p> </li>
-    /// <li> <p>0-9</p> </li>
+    /// <p>A regular expression used to validate the value of a slot.</p> 
+    /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p> 
+    /// <ul> 
+    /// <li> <p>A-Z, a-z</p> </li> 
+    /// <li> <p>0-9</p> </li> 
     /// <li> <p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li>
+    /// </unicode></p> </li> 
+    /// </ul> 
+    /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p> 
+    /// <p> The following regular expression operators are not supported: </p> 
+    /// <ul> 
+    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> 
+    /// <li> <p>Wild card (.)</p> </li> 
     /// </ul>
-    /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p>
-    /// <p> The following regular expression operators are not supported: </p>
-    /// <ul>
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-    /// <li> <p>Wild card (.)</p> </li>
-    /// </ul>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> std::option::Option<& str> {
         self.pattern.as_deref()
     }
 }
 /// See [`SlotValueRegexFilter`](crate::model::SlotValueRegexFilter).
 pub mod slot_value_regex_filter {
-
+    
     /// A builder for [`SlotValueRegexFilter`](crate::model::SlotValueRegexFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pattern: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A regular expression used to validate the value of a slot.</p>
-        /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p>
-        /// <ul>
-        /// <li> <p>A-Z, a-z</p> </li>
-        /// <li> <p>0-9</p> </li>
+        /// <p>A regular expression used to validate the value of a slot.</p> 
+        /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p> 
+        /// <ul> 
+        /// <li> <p>A-Z, a-z</p> </li> 
+        /// <li> <p>0-9</p> </li> 
         /// <li> <p>Unicode characters ("\ u<unicode>
         /// ")
-        /// </unicode></p> </li>
-        /// </ul>
-        /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p>
-        /// <p> The following regular expression operators are not supported: </p>
-        /// <ul>
-        /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-        /// <li> <p>Wild card (.)</p> </li>
+        /// </unicode></p> </li> 
+        /// </ul> 
+        /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p> 
+        /// <p> The following regular expression operators are not supported: </p> 
+        /// <ul> 
+        /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> 
+        /// <li> <p>Wild card (.)</p> </li> 
         /// </ul>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.pattern = Some(input.into());
             self
         }
-        /// <p>A regular expression used to validate the value of a slot.</p>
-        /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p>
-        /// <ul>
-        /// <li> <p>A-Z, a-z</p> </li>
-        /// <li> <p>0-9</p> </li>
+        /// <p>A regular expression used to validate the value of a slot.</p> 
+        /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p> 
+        /// <ul> 
+        /// <li> <p>A-Z, a-z</p> </li> 
+        /// <li> <p>0-9</p> </li> 
         /// <li> <p>Unicode characters ("\ u<unicode>
         /// ")
-        /// </unicode></p> </li>
-        /// </ul>
-        /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p>
-        /// <p> The following regular expression operators are not supported: </p>
-        /// <ul>
-        /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
-        /// <li> <p>Wild card (.)</p> </li>
+        /// </unicode></p> </li> 
+        /// </ul> 
+        /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p> 
+        /// <p> The following regular expression operators are not supported: </p> 
+        /// <ul> 
+        /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> 
+        /// <li> <p>Wild card (.)</p> </li> 
         /// </ul>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pattern = input;
-            self
+            self.pattern = input; self
         }
         /// Consumes the builder and constructs a [`SlotValueRegexFilter`](crate::model::SlotValueRegexFilter).
         pub fn build(self) -> crate::model::SlotValueRegexFilter {
             crate::model::SlotValueRegexFilter {
-                pattern: self.pattern,
+                pattern: self.pattern
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotValueRegexFilter {
     /// Creates a new builder-style object to manufacture [`SlotValueRegexFilter`](crate::model::SlotValueRegexFilter).
@@ -710,9 +662,9 @@ impl SlotValueRegexFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slotvalueresolutionstrategy = unimplemented!();
 /// match slotvalueresolutionstrategy {
@@ -735,22 +687,14 @@ impl SlotValueRegexFilter {
 /// Specifically, when `slotvalueresolutionstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotValueResolutionStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotValueResolutionStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Concatenation,
@@ -759,7 +703,7 @@ pub enum SlotValueResolutionStrategy {
     #[allow(missing_docs)] // documentation missing in model
     TopResolution,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotValueResolutionStrategy {
     fn from(s: &str) -> Self {
@@ -767,19 +711,17 @@ impl std::convert::From<&str> for SlotValueResolutionStrategy {
             "Concatenation" => SlotValueResolutionStrategy::Concatenation,
             "OriginalValue" => SlotValueResolutionStrategy::OriginalValue,
             "TopResolution" => SlotValueResolutionStrategy::TopResolution,
-            other => SlotValueResolutionStrategy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SlotValueResolutionStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotValueResolutionStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotValueResolutionStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotValueResolutionStrategy::from(s))
+                }
+            }
 impl SlotValueResolutionStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -787,12 +729,14 @@ impl SlotValueResolutionStrategy {
             SlotValueResolutionStrategy::Concatenation => "Concatenation",
             SlotValueResolutionStrategy::OriginalValue => "OriginalValue",
             SlotValueResolutionStrategy::TopResolution => "TopResolution",
-            SlotValueResolutionStrategy::Unknown(value) => value.as_str(),
+            SlotValueResolutionStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Concatenation", "OriginalValue", "TopResolution"]
+        &[
+            "Concatenation", "OriginalValue", "TopResolution"
+        ]
     }
 }
 impl AsRef<str> for SlotValueResolutionStrategy {
@@ -804,7 +748,7 @@ impl AsRef<str> for SlotValueResolutionStrategy {
 /// <p>Each slot type can have a set of values. Each <code>SlotTypeValue</code> represents a value that the slot type can take.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotTypeValue {
+pub struct SlotTypeValue  {
     /// <p>The value of the slot type entry.</p>
     #[doc(hidden)]
     pub sample_value: std::option::Option<crate::model::SampleValue>,
@@ -814,17 +758,17 @@ pub struct SlotTypeValue {
 }
 impl SlotTypeValue {
     /// <p>The value of the slot type entry.</p>
-    pub fn sample_value(&self) -> std::option::Option<&crate::model::SampleValue> {
+    pub fn sample_value(&self) -> std::option::Option<& crate::model::SampleValue> {
         self.sample_value.as_ref()
     }
     /// <p>Additional values related to the slot type entry.</p>
-    pub fn synonyms(&self) -> std::option::Option<&[crate::model::SampleValue]> {
+    pub fn synonyms(&self) -> std::option::Option<& [crate::model::SampleValue]> {
         self.synonyms.as_deref()
     }
 }
 /// See [`SlotTypeValue`](crate::model::SlotTypeValue).
 pub mod slot_type_value {
-
+    
     /// A builder for [`SlotTypeValue`](crate::model::SlotTypeValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -838,12 +782,8 @@ pub mod slot_type_value {
             self
         }
         /// <p>The value of the slot type entry.</p>
-        pub fn set_sample_value(
-            mut self,
-            input: std::option::Option<crate::model::SampleValue>,
-        ) -> Self {
-            self.sample_value = input;
-            self
+        pub fn set_sample_value(mut self, input: std::option::Option<crate::model::SampleValue>) -> Self {
+            self.sample_value = input; self
         }
         /// Appends an item to `synonyms`.
         ///
@@ -852,26 +792,26 @@ pub mod slot_type_value {
         /// <p>Additional values related to the slot type entry.</p>
         pub fn synonyms(mut self, input: crate::model::SampleValue) -> Self {
             let mut v = self.synonyms.unwrap_or_default();
-            v.push(input);
-            self.synonyms = Some(v);
-            self
+                            v.push(input);
+                            self.synonyms = Some(v);
+                            self
         }
         /// <p>Additional values related to the slot type entry.</p>
-        pub fn set_synonyms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SampleValue>>,
-        ) -> Self {
-            self.synonyms = input;
-            self
+        pub fn set_synonyms(mut self, input: std::option::Option<std::vec::Vec<crate::model::SampleValue>>) -> Self {
+            self.synonyms = input; self
         }
         /// Consumes the builder and constructs a [`SlotTypeValue`](crate::model::SlotTypeValue).
         pub fn build(self) -> crate::model::SlotTypeValue {
             crate::model::SlotTypeValue {
-                sample_value: self.sample_value,
-                synonyms: self.synonyms,
+                sample_value: self.sample_value
+                ,
+                synonyms: self.synonyms
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotTypeValue {
     /// Creates a new builder-style object to manufacture [`SlotTypeValue`](crate::model::SlotTypeValue).
@@ -883,20 +823,20 @@ impl SlotTypeValue {
 /// <p>Defines one of the values for a slot type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SampleValue {
+pub struct SampleValue  {
     /// <p>The value that can be used for a slot type.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SampleValue {
     /// <p>The value that can be used for a slot type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`SampleValue`](crate::model::SampleValue).
 pub mod sample_value {
-
+    
     /// A builder for [`SampleValue`](crate::model::SampleValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -910,14 +850,18 @@ pub mod sample_value {
         }
         /// <p>The value that can be used for a slot type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SampleValue`](crate::model::SampleValue).
         pub fn build(self) -> crate::model::SampleValue {
-            crate::model::SampleValue { value: self.value }
+            crate::model::SampleValue {
+                value: self.value
+                ,
+            }
         }
     }
+    
+    
 }
 impl SampleValue {
     /// Creates a new builder-style object to manufacture [`SampleValue`](crate::model::SampleValue).
@@ -929,40 +873,32 @@ impl SampleValue {
 /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubSlotSetting {
+pub struct SubSlotSetting  {
     /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>Specifications for the constituent sub slots of a composite slot.</p>
     #[doc(hidden)]
-    pub slot_specifications: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::Specifications>,
-    >,
+    pub slot_specifications: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Specifications>>,
 }
 impl SubSlotSetting {
     /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>Specifications for the constituent sub slots of a composite slot.</p>
-    pub fn slot_specifications(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::Specifications>,
-    > {
+    pub fn slot_specifications(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Specifications>> {
         self.slot_specifications.as_ref()
     }
 }
 /// See [`SubSlotSetting`](crate::model::SubSlotSetting).
 pub mod sub_slot_setting {
-
+    
     /// A builder for [`SubSlotSetting`](crate::model::SubSlotSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
-        pub(crate) slot_specifications: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Specifications>,
-        >,
+        pub(crate) slot_specifications: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Specifications>>,
     }
     impl Builder {
         /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
@@ -972,42 +908,35 @@ pub mod sub_slot_setting {
         }
         /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// Adds a key-value pair to `slot_specifications`.
         ///
         /// To override the contents of this collection use [`set_slot_specifications`](Self::set_slot_specifications).
         ///
         /// <p>Specifications for the constituent sub slots of a composite slot.</p>
-        pub fn slot_specifications(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Specifications,
-        ) -> Self {
+        pub fn slot_specifications(mut self, k: impl Into<std::string::String>, v: crate::model::Specifications) -> Self {
             let mut hash_map = self.slot_specifications.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.slot_specifications = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.slot_specifications = Some(hash_map);
+                            self
         }
         /// <p>Specifications for the constituent sub slots of a composite slot.</p>
-        pub fn set_slot_specifications(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Specifications>,
-            >,
-        ) -> Self {
-            self.slot_specifications = input;
-            self
+        pub fn set_slot_specifications(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Specifications>>) -> Self {
+            self.slot_specifications = input; self
         }
         /// Consumes the builder and constructs a [`SubSlotSetting`](crate::model::SubSlotSetting).
         pub fn build(self) -> crate::model::SubSlotSetting {
             crate::model::SubSlotSetting {
-                expression: self.expression,
-                slot_specifications: self.slot_specifications,
+                expression: self.expression
+                ,
+                slot_specifications: self.slot_specifications
+                ,
             }
         }
     }
+    
+    
 }
 impl SubSlotSetting {
     /// Creates a new builder-style object to manufacture [`SubSlotSetting`](crate::model::SubSlotSetting).
@@ -1019,36 +948,32 @@ impl SubSlotSetting {
 /// <p>Subslot specifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Specifications {
+pub struct Specifications  {
     /// <p>The unique identifier assigned to the slot type.</p>
     #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
     #[doc(hidden)]
-    pub value_elicitation_setting:
-        std::option::Option<crate::model::SubSlotValueElicitationSetting>,
+    pub value_elicitation_setting: std::option::Option<crate::model::SubSlotValueElicitationSetting>,
 }
 impl Specifications {
     /// <p>The unique identifier assigned to the slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::SubSlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> std::option::Option<& crate::model::SubSlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
 }
 /// See [`Specifications`](crate::model::Specifications).
 pub mod specifications {
-
+    
     /// A builder for [`Specifications`](crate::model::Specifications).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
-        pub(crate) value_elicitation_setting:
-            std::option::Option<crate::model::SubSlotValueElicitationSetting>,
+        pub(crate) value_elicitation_setting: std::option::Option<crate::model::SubSlotValueElicitationSetting>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the slot type.</p>
@@ -1058,33 +983,29 @@ pub mod specifications {
         }
         /// <p>The unique identifier assigned to the slot type.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-        pub fn value_elicitation_setting(
-            mut self,
-            input: crate::model::SubSlotValueElicitationSetting,
-        ) -> Self {
+        pub fn value_elicitation_setting(mut self, input: crate::model::SubSlotValueElicitationSetting) -> Self {
             self.value_elicitation_setting = Some(input);
             self
         }
         /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-        pub fn set_value_elicitation_setting(
-            mut self,
-            input: std::option::Option<crate::model::SubSlotValueElicitationSetting>,
-        ) -> Self {
-            self.value_elicitation_setting = input;
-            self
+        pub fn set_value_elicitation_setting(mut self, input: std::option::Option<crate::model::SubSlotValueElicitationSetting>) -> Self {
+            self.value_elicitation_setting = input; self
         }
         /// Consumes the builder and constructs a [`Specifications`](crate::model::Specifications).
         pub fn build(self) -> crate::model::Specifications {
             crate::model::Specifications {
-                slot_type_id: self.slot_type_id,
-                value_elicitation_setting: self.value_elicitation_setting,
+                slot_type_id: self.slot_type_id
+                ,
+                value_elicitation_setting: self.value_elicitation_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl Specifications {
     /// Creates a new builder-style object to manufacture [`Specifications`](crate::model::Specifications).
@@ -1093,16 +1014,15 @@ impl Specifications {
     }
 }
 
-/// <p>Subslot elicitation settings.</p>
-/// <p> <code>DefaultValueSpecification</code> is a list of default values for a constituent sub slot in a composite slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values. This is similar to <code>DefaultValueSpecification</code> for slots.</p>
+/// <p>Subslot elicitation settings.</p> 
+/// <p> <code>DefaultValueSpecification</code> is a list of default values for a constituent sub slot in a composite slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values. This is similar to <code>DefaultValueSpecification</code> for slots.</p> 
 /// <p> <code>PromptSpecification</code> is the prompt that Amazon Lex uses to elicit the sub slot value from the user. This is similar to <code>PromptSpecification</code> for slots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubSlotValueElicitationSetting {
+pub struct SubSlotValueElicitationSetting  {
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
     #[doc(hidden)]
-    pub default_value_specification:
-        std::option::Option<crate::model::SlotDefaultValueSpecification>,
+    pub default_value_specification: std::option::Option<crate::model::SlotDefaultValueSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
     #[doc(hidden)]
     pub prompt_specification: std::option::Option<crate::model::PromptSpecification>,
@@ -1111,61 +1031,46 @@ pub struct SubSlotValueElicitationSetting {
     pub sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
     #[doc(hidden)]
-    pub wait_and_continue_specification:
-        std::option::Option<crate::model::WaitAndContinueSpecification>,
+    pub wait_and_continue_specification: std::option::Option<crate::model::WaitAndContinueSpecification>,
 }
 impl SubSlotValueElicitationSetting {
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
-    pub fn default_value_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotDefaultValueSpecification> {
+    pub fn default_value_specification(&self) -> std::option::Option<& crate::model::SlotDefaultValueSpecification> {
         self.default_value_specification.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
-    pub fn prompt_specification(&self) -> std::option::Option<&crate::model::PromptSpecification> {
+    pub fn prompt_specification(&self) -> std::option::Option<& crate::model::PromptSpecification> {
         self.prompt_specification.as_ref()
     }
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a sub slot value, you can provide those utterances to improve accuracy. This is optional. In most cases Amazon Lex is capable of understanding user utterances. This is similar to <code>SampleUtterances</code> for slots.</p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [crate::model::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-    pub fn wait_and_continue_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::WaitAndContinueSpecification> {
+    pub fn wait_and_continue_specification(&self) -> std::option::Option<& crate::model::WaitAndContinueSpecification> {
         self.wait_and_continue_specification.as_ref()
     }
 }
 /// See [`SubSlotValueElicitationSetting`](crate::model::SubSlotValueElicitationSetting).
 pub mod sub_slot_value_elicitation_setting {
-
+    
     /// A builder for [`SubSlotValueElicitationSetting`](crate::model::SubSlotValueElicitationSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) default_value_specification:
-            std::option::Option<crate::model::SlotDefaultValueSpecification>,
+        pub(crate) default_value_specification: std::option::Option<crate::model::SlotDefaultValueSpecification>,
         pub(crate) prompt_specification: std::option::Option<crate::model::PromptSpecification>,
-        pub(crate) sample_utterances:
-            std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-        pub(crate) wait_and_continue_specification:
-            std::option::Option<crate::model::WaitAndContinueSpecification>,
+        pub(crate) sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
+        pub(crate) wait_and_continue_specification: std::option::Option<crate::model::WaitAndContinueSpecification>,
     }
     impl Builder {
         /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
-        pub fn default_value_specification(
-            mut self,
-            input: crate::model::SlotDefaultValueSpecification,
-        ) -> Self {
+        pub fn default_value_specification(mut self, input: crate::model::SlotDefaultValueSpecification) -> Self {
             self.default_value_specification = Some(input);
             self
         }
         /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
-        pub fn set_default_value_specification(
-            mut self,
-            input: std::option::Option<crate::model::SlotDefaultValueSpecification>,
-        ) -> Self {
-            self.default_value_specification = input;
-            self
+        pub fn set_default_value_specification(mut self, input: std::option::Option<crate::model::SlotDefaultValueSpecification>) -> Self {
+            self.default_value_specification = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
         pub fn prompt_specification(mut self, input: crate::model::PromptSpecification) -> Self {
@@ -1173,12 +1078,8 @@ pub mod sub_slot_value_elicitation_setting {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
-        pub fn set_prompt_specification(
-            mut self,
-            input: std::option::Option<crate::model::PromptSpecification>,
-        ) -> Self {
-            self.prompt_specification = input;
-            self
+        pub fn set_prompt_specification(mut self, input: std::option::Option<crate::model::PromptSpecification>) -> Self {
+            self.prompt_specification = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -1187,44 +1088,39 @@ pub mod sub_slot_value_elicitation_setting {
         /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a sub slot value, you can provide those utterances to improve accuracy. This is optional. In most cases Amazon Lex is capable of understanding user utterances. This is similar to <code>SampleUtterances</code> for slots.</p>
         pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input);
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input);
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a sub slot value, you can provide those utterances to improve accuracy. This is optional. In most cases Amazon Lex is capable of understanding user utterances. This is similar to <code>SampleUtterances</code> for slots.</p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-        pub fn wait_and_continue_specification(
-            mut self,
-            input: crate::model::WaitAndContinueSpecification,
-        ) -> Self {
+        pub fn wait_and_continue_specification(mut self, input: crate::model::WaitAndContinueSpecification) -> Self {
             self.wait_and_continue_specification = Some(input);
             self
         }
         /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-        pub fn set_wait_and_continue_specification(
-            mut self,
-            input: std::option::Option<crate::model::WaitAndContinueSpecification>,
-        ) -> Self {
-            self.wait_and_continue_specification = input;
-            self
+        pub fn set_wait_and_continue_specification(mut self, input: std::option::Option<crate::model::WaitAndContinueSpecification>) -> Self {
+            self.wait_and_continue_specification = input; self
         }
         /// Consumes the builder and constructs a [`SubSlotValueElicitationSetting`](crate::model::SubSlotValueElicitationSetting).
         pub fn build(self) -> crate::model::SubSlotValueElicitationSetting {
             crate::model::SubSlotValueElicitationSetting {
-                default_value_specification: self.default_value_specification,
-                prompt_specification: self.prompt_specification,
-                sample_utterances: self.sample_utterances,
-                wait_and_continue_specification: self.wait_and_continue_specification,
+                default_value_specification: self.default_value_specification
+                ,
+                prompt_specification: self.prompt_specification
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                wait_and_continue_specification: self.wait_and_continue_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl SubSlotValueElicitationSetting {
     /// Creates a new builder-style object to manufacture [`SubSlotValueElicitationSetting`](crate::model::SubSlotValueElicitationSetting).
@@ -1236,7 +1132,7 @@ impl SubSlotValueElicitationSetting {
 /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WaitAndContinueSpecification {
+pub struct WaitAndContinueSpecification  {
     /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
     #[doc(hidden)]
     pub waiting_response: std::option::Option<crate::model::ResponseSpecification>,
@@ -1245,25 +1141,22 @@ pub struct WaitAndContinueSpecification {
     pub continue_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
     #[doc(hidden)]
-    pub still_waiting_response:
-        std::option::Option<crate::model::StillWaitingResponseSpecification>,
+    pub still_waiting_response: std::option::Option<crate::model::StillWaitingResponseSpecification>,
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
     #[doc(hidden)]
     pub active: std::option::Option<bool>,
 }
 impl WaitAndContinueSpecification {
     /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-    pub fn waiting_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn waiting_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.waiting_response.as_ref()
     }
     /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-    pub fn continue_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn continue_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.continue_response.as_ref()
     }
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-    pub fn still_waiting_response(
-        &self,
-    ) -> std::option::Option<&crate::model::StillWaitingResponseSpecification> {
+    pub fn still_waiting_response(&self) -> std::option::Option<& crate::model::StillWaitingResponseSpecification> {
         self.still_waiting_response.as_ref()
     }
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
@@ -1273,14 +1166,13 @@ impl WaitAndContinueSpecification {
 }
 /// See [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
 pub mod wait_and_continue_specification {
-
+    
     /// A builder for [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) waiting_response: std::option::Option<crate::model::ResponseSpecification>,
         pub(crate) continue_response: std::option::Option<crate::model::ResponseSpecification>,
-        pub(crate) still_waiting_response:
-            std::option::Option<crate::model::StillWaitingResponseSpecification>,
+        pub(crate) still_waiting_response: std::option::Option<crate::model::StillWaitingResponseSpecification>,
         pub(crate) active: std::option::Option<bool>,
     }
     impl Builder {
@@ -1290,12 +1182,8 @@ pub mod wait_and_continue_specification {
             self
         }
         /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-        pub fn set_waiting_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.waiting_response = input;
-            self
+        pub fn set_waiting_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.waiting_response = input; self
         }
         /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
         pub fn continue_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -1303,28 +1191,17 @@ pub mod wait_and_continue_specification {
             self
         }
         /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-        pub fn set_continue_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.continue_response = input;
-            self
+        pub fn set_continue_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.continue_response = input; self
         }
         /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-        pub fn still_waiting_response(
-            mut self,
-            input: crate::model::StillWaitingResponseSpecification,
-        ) -> Self {
+        pub fn still_waiting_response(mut self, input: crate::model::StillWaitingResponseSpecification) -> Self {
             self.still_waiting_response = Some(input);
             self
         }
         /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-        pub fn set_still_waiting_response(
-            mut self,
-            input: std::option::Option<crate::model::StillWaitingResponseSpecification>,
-        ) -> Self {
-            self.still_waiting_response = input;
-            self
+        pub fn set_still_waiting_response(mut self, input: std::option::Option<crate::model::StillWaitingResponseSpecification>) -> Self {
+            self.still_waiting_response = input; self
         }
         /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -1333,19 +1210,24 @@ pub mod wait_and_continue_specification {
         }
         /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// Consumes the builder and constructs a [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
         pub fn build(self) -> crate::model::WaitAndContinueSpecification {
             crate::model::WaitAndContinueSpecification {
-                waiting_response: self.waiting_response,
-                continue_response: self.continue_response,
-                still_waiting_response: self.still_waiting_response,
-                active: self.active,
+                waiting_response: self.waiting_response
+                ,
+                continue_response: self.continue_response
+                ,
+                still_waiting_response: self.still_waiting_response
+                ,
+                active: self.active
+                ,
             }
         }
     }
+    
+    
 }
 impl WaitAndContinueSpecification {
     /// Creates a new builder-style object to manufacture [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
@@ -1357,7 +1239,7 @@ impl WaitAndContinueSpecification {
 /// <p>Defines the messages that Amazon Lex sends to a user to remind them that the bot is waiting for a response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StillWaitingResponseSpecification {
+pub struct StillWaitingResponseSpecification  {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
@@ -1373,7 +1255,7 @@ pub struct StillWaitingResponseSpecification {
 }
 impl StillWaitingResponseSpecification {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+    pub fn message_groups(&self) -> std::option::Option<& [crate::model::MessageGroup]> {
         self.message_groups.as_deref()
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
@@ -1391,7 +1273,7 @@ impl StillWaitingResponseSpecification {
 }
 /// See [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
 pub mod still_waiting_response_specification {
-
+    
     /// A builder for [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1408,17 +1290,13 @@ pub mod still_waiting_response_specification {
         /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
         pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input);
-            self.message_groups = Some(v);
-            self
+                            v.push(input);
+                            self.message_groups = Some(v);
+                            self
         }
         /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-        pub fn set_message_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-        ) -> Self {
-            self.message_groups = input;
-            self
+        pub fn set_message_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>) -> Self {
+            self.message_groups = input; self
         }
         /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
         pub fn frequency_in_seconds(mut self, input: i32) -> Self {
@@ -1427,8 +1305,7 @@ pub mod still_waiting_response_specification {
         }
         /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
         pub fn set_frequency_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.frequency_in_seconds = input;
-            self
+            self.frequency_in_seconds = input; self
         }
         /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
         pub fn timeout_in_seconds(mut self, input: i32) -> Self {
@@ -1437,8 +1314,7 @@ pub mod still_waiting_response_specification {
         }
         /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_seconds = input;
-            self
+            self.timeout_in_seconds = input; self
         }
         /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
         pub fn allow_interrupt(mut self, input: bool) -> Self {
@@ -1447,19 +1323,24 @@ pub mod still_waiting_response_specification {
         }
         /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
         pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_interrupt = input;
-            self
+            self.allow_interrupt = input; self
         }
         /// Consumes the builder and constructs a [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
         pub fn build(self) -> crate::model::StillWaitingResponseSpecification {
             crate::model::StillWaitingResponseSpecification {
-                message_groups: self.message_groups,
-                frequency_in_seconds: self.frequency_in_seconds,
-                timeout_in_seconds: self.timeout_in_seconds,
-                allow_interrupt: self.allow_interrupt,
+                message_groups: self.message_groups
+                ,
+                frequency_in_seconds: self.frequency_in_seconds
+                ,
+                timeout_in_seconds: self.timeout_in_seconds
+                ,
+                allow_interrupt: self.allow_interrupt
+                ,
             }
         }
     }
+    
+    
 }
 impl StillWaitingResponseSpecification {
     /// Creates a new builder-style object to manufacture [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
@@ -1471,7 +1352,7 @@ impl StillWaitingResponseSpecification {
 /// <p>Provides one or more messages that Amazon Lex should send to the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageGroup {
+pub struct MessageGroup  {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
     #[doc(hidden)]
     pub message: std::option::Option<crate::model::Message>,
@@ -1481,17 +1362,17 @@ pub struct MessageGroup {
 }
 impl MessageGroup {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
-    pub fn message(&self) -> std::option::Option<&crate::model::Message> {
+    pub fn message(&self) -> std::option::Option<& crate::model::Message> {
         self.message.as_ref()
     }
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    pub fn variations(&self) -> std::option::Option<&[crate::model::Message]> {
+    pub fn variations(&self) -> std::option::Option<& [crate::model::Message]> {
         self.variations.as_deref()
     }
 }
 /// See [`MessageGroup`](crate::model::MessageGroup).
 pub mod message_group {
-
+    
     /// A builder for [`MessageGroup`](crate::model::MessageGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1506,8 +1387,7 @@ pub mod message_group {
         }
         /// <p>The primary message that Amazon Lex should send to the user.</p>
         pub fn set_message(mut self, input: std::option::Option<crate::model::Message>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Appends an item to `variations`.
         ///
@@ -1516,26 +1396,26 @@ pub mod message_group {
         /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
         pub fn variations(mut self, input: crate::model::Message) -> Self {
             let mut v = self.variations.unwrap_or_default();
-            v.push(input);
-            self.variations = Some(v);
-            self
+                            v.push(input);
+                            self.variations = Some(v);
+                            self
         }
         /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-        pub fn set_variations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Message>>,
-        ) -> Self {
-            self.variations = input;
-            self
+        pub fn set_variations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Message>>) -> Self {
+            self.variations = input; self
         }
         /// Consumes the builder and constructs a [`MessageGroup`](crate::model::MessageGroup).
         pub fn build(self) -> crate::model::MessageGroup {
             crate::model::MessageGroup {
-                message: self.message,
-                variations: self.variations,
+                message: self.message
+                ,
+                variations: self.variations
+                ,
             }
         }
     }
+    
+    
 }
 impl MessageGroup {
     /// Creates a new builder-style object to manufacture [`MessageGroup`](crate::model::MessageGroup).
@@ -1547,7 +1427,7 @@ impl MessageGroup {
 /// <p>The object that provides message text and it's type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>A message in plain text format.</p>
     #[doc(hidden)]
     pub plain_text_message: std::option::Option<crate::model::PlainTextMessage>,
@@ -1563,25 +1443,25 @@ pub struct Message {
 }
 impl Message {
     /// <p>A message in plain text format.</p>
-    pub fn plain_text_message(&self) -> std::option::Option<&crate::model::PlainTextMessage> {
+    pub fn plain_text_message(&self) -> std::option::Option<& crate::model::PlainTextMessage> {
         self.plain_text_message.as_ref()
     }
     /// <p>A message in a custom format defined by the client application.</p>
-    pub fn custom_payload(&self) -> std::option::Option<&crate::model::CustomPayload> {
+    pub fn custom_payload(&self) -> std::option::Option<& crate::model::CustomPayload> {
         self.custom_payload.as_ref()
     }
     /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
-    pub fn ssml_message(&self) -> std::option::Option<&crate::model::SsmlMessage> {
+    pub fn ssml_message(&self) -> std::option::Option<& crate::model::SsmlMessage> {
         self.ssml_message.as_ref()
     }
     /// <p>A message that defines a response card that the client application can show to the user.</p>
-    pub fn image_response_card(&self) -> std::option::Option<&crate::model::ImageResponseCard> {
+    pub fn image_response_card(&self) -> std::option::Option<& crate::model::ImageResponseCard> {
         self.image_response_card.as_ref()
     }
 }
 /// See [`Message`](crate::model::Message).
 pub mod message {
-
+    
     /// A builder for [`Message`](crate::model::Message).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1597,12 +1477,8 @@ pub mod message {
             self
         }
         /// <p>A message in plain text format.</p>
-        pub fn set_plain_text_message(
-            mut self,
-            input: std::option::Option<crate::model::PlainTextMessage>,
-        ) -> Self {
-            self.plain_text_message = input;
-            self
+        pub fn set_plain_text_message(mut self, input: std::option::Option<crate::model::PlainTextMessage>) -> Self {
+            self.plain_text_message = input; self
         }
         /// <p>A message in a custom format defined by the client application.</p>
         pub fn custom_payload(mut self, input: crate::model::CustomPayload) -> Self {
@@ -1610,12 +1486,8 @@ pub mod message {
             self
         }
         /// <p>A message in a custom format defined by the client application.</p>
-        pub fn set_custom_payload(
-            mut self,
-            input: std::option::Option<crate::model::CustomPayload>,
-        ) -> Self {
-            self.custom_payload = input;
-            self
+        pub fn set_custom_payload(mut self, input: std::option::Option<crate::model::CustomPayload>) -> Self {
+            self.custom_payload = input; self
         }
         /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
         pub fn ssml_message(mut self, input: crate::model::SsmlMessage) -> Self {
@@ -1623,12 +1495,8 @@ pub mod message {
             self
         }
         /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
-        pub fn set_ssml_message(
-            mut self,
-            input: std::option::Option<crate::model::SsmlMessage>,
-        ) -> Self {
-            self.ssml_message = input;
-            self
+        pub fn set_ssml_message(mut self, input: std::option::Option<crate::model::SsmlMessage>) -> Self {
+            self.ssml_message = input; self
         }
         /// <p>A message that defines a response card that the client application can show to the user.</p>
         pub fn image_response_card(mut self, input: crate::model::ImageResponseCard) -> Self {
@@ -1636,23 +1504,25 @@ pub mod message {
             self
         }
         /// <p>A message that defines a response card that the client application can show to the user.</p>
-        pub fn set_image_response_card(
-            mut self,
-            input: std::option::Option<crate::model::ImageResponseCard>,
-        ) -> Self {
-            self.image_response_card = input;
-            self
+        pub fn set_image_response_card(mut self, input: std::option::Option<crate::model::ImageResponseCard>) -> Self {
+            self.image_response_card = input; self
         }
         /// Consumes the builder and constructs a [`Message`](crate::model::Message).
         pub fn build(self) -> crate::model::Message {
             crate::model::Message {
-                plain_text_message: self.plain_text_message,
-                custom_payload: self.custom_payload,
-                ssml_message: self.ssml_message,
-                image_response_card: self.image_response_card,
+                plain_text_message: self.plain_text_message
+                ,
+                custom_payload: self.custom_payload
+                ,
+                ssml_message: self.ssml_message
+                ,
+                image_response_card: self.image_response_card
+                ,
             }
         }
     }
+    
+    
 }
 impl Message {
     /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
@@ -1661,11 +1531,11 @@ impl Message {
     }
 }
 
-/// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+/// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> 
 /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageResponseCard {
+pub struct ImageResponseCard  {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -1681,25 +1551,25 @@ pub struct ImageResponseCard {
 }
 impl ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
-    pub fn subtitle(&self) -> std::option::Option<&str> {
+    pub fn subtitle(&self) -> std::option::Option<& str> {
         self.subtitle.as_deref()
     }
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
-    pub fn image_url(&self) -> std::option::Option<&str> {
+    pub fn image_url(&self) -> std::option::Option<& str> {
         self.image_url.as_deref()
     }
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    pub fn buttons(&self) -> std::option::Option<&[crate::model::Button]> {
+    pub fn buttons(&self) -> std::option::Option<& [crate::model::Button]> {
         self.buttons.as_deref()
     }
 }
 /// See [`ImageResponseCard`](crate::model::ImageResponseCard).
 pub mod image_response_card {
-
+    
     /// A builder for [`ImageResponseCard`](crate::model::ImageResponseCard).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1716,8 +1586,7 @@ pub mod image_response_card {
         }
         /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
         pub fn subtitle(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1726,8 +1595,7 @@ pub mod image_response_card {
         }
         /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
         pub fn set_subtitle(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subtitle = input;
-            self
+            self.subtitle = input; self
         }
         /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
         pub fn image_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1736,8 +1604,7 @@ pub mod image_response_card {
         }
         /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_url = input;
-            self
+            self.image_url = input; self
         }
         /// Appends an item to `buttons`.
         ///
@@ -1746,28 +1613,30 @@ pub mod image_response_card {
         /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
         pub fn buttons(mut self, input: crate::model::Button) -> Self {
             let mut v = self.buttons.unwrap_or_default();
-            v.push(input);
-            self.buttons = Some(v);
-            self
+                            v.push(input);
+                            self.buttons = Some(v);
+                            self
         }
         /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-        pub fn set_buttons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Button>>,
-        ) -> Self {
-            self.buttons = input;
-            self
+        pub fn set_buttons(mut self, input: std::option::Option<std::vec::Vec<crate::model::Button>>) -> Self {
+            self.buttons = input; self
         }
         /// Consumes the builder and constructs a [`ImageResponseCard`](crate::model::ImageResponseCard).
         pub fn build(self) -> crate::model::ImageResponseCard {
             crate::model::ImageResponseCard {
-                title: self.title,
-                subtitle: self.subtitle,
-                image_url: self.image_url,
-                buttons: self.buttons,
+                title: self.title
+                ,
+                subtitle: self.subtitle
+                ,
+                image_url: self.image_url
+                ,
+                buttons: self.buttons
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageResponseCard {
     /// Creates a new builder-style object to manufacture [`ImageResponseCard`](crate::model::ImageResponseCard).
@@ -1779,7 +1648,7 @@ impl ImageResponseCard {
 /// <p>Describes a button to use on a response card used to gather slot values from a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Button {
+pub struct Button  {
     /// <p>The text that appears on the button. Use this to tell the user what value is returned when they choose this button.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
@@ -1789,17 +1658,17 @@ pub struct Button {
 }
 impl Button {
     /// <p>The text that appears on the button. Use this to tell the user what value is returned when they choose this button.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Button`](crate::model::Button).
 pub mod button {
-
+    
     /// A builder for [`Button`](crate::model::Button).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1814,8 +1683,7 @@ pub mod button {
         }
         /// <p>The text that appears on the button. Use this to tell the user what value is returned when they choose this button.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// <p>The value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1824,17 +1692,20 @@ pub mod button {
         }
         /// <p>The value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Button`](crate::model::Button).
         pub fn build(self) -> crate::model::Button {
             crate::model::Button {
-                text: self.text,
-                value: self.value,
+                text: self.text
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Button {
     /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
@@ -1846,20 +1717,20 @@ impl Button {
 /// <p>Defines a Speech Synthesis Markup Language (SSML) prompt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmlMessage {
+pub struct SsmlMessage  {
     /// <p>The SSML text that defines the prompt.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`SsmlMessage`](crate::model::SsmlMessage).
 pub mod ssml_message {
-
+    
     /// A builder for [`SsmlMessage`](crate::model::SsmlMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1873,14 +1744,18 @@ pub mod ssml_message {
         }
         /// <p>The SSML text that defines the prompt.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SsmlMessage`](crate::model::SsmlMessage).
         pub fn build(self) -> crate::model::SsmlMessage {
-            crate::model::SsmlMessage { value: self.value }
+            crate::model::SsmlMessage {
+                value: self.value
+                ,
+            }
         }
     }
+    
+    
 }
 impl SsmlMessage {
     /// Creates a new builder-style object to manufacture [`SsmlMessage`](crate::model::SsmlMessage).
@@ -1892,20 +1767,20 @@ impl SsmlMessage {
 /// <p>A custom response string that Amazon Lex sends to your application. You define the content and structure the string.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPayload {
+pub struct CustomPayload  {
     /// <p>The string that is sent to your application.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CustomPayload {
     /// <p>The string that is sent to your application.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`CustomPayload`](crate::model::CustomPayload).
 pub mod custom_payload {
-
+    
     /// A builder for [`CustomPayload`](crate::model::CustomPayload).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1919,14 +1794,18 @@ pub mod custom_payload {
         }
         /// <p>The string that is sent to your application.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`CustomPayload`](crate::model::CustomPayload).
         pub fn build(self) -> crate::model::CustomPayload {
-            crate::model::CustomPayload { value: self.value }
+            crate::model::CustomPayload {
+                value: self.value
+                ,
+            }
         }
     }
+    
+    
 }
 impl CustomPayload {
     /// Creates a new builder-style object to manufacture [`CustomPayload`](crate::model::CustomPayload).
@@ -1938,20 +1817,20 @@ impl CustomPayload {
 /// <p>Defines an ASCII text message to send to the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlainTextMessage {
+pub struct PlainTextMessage  {
     /// <p>The message to send to the user.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl PlainTextMessage {
     /// <p>The message to send to the user.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`PlainTextMessage`](crate::model::PlainTextMessage).
 pub mod plain_text_message {
-
+    
     /// A builder for [`PlainTextMessage`](crate::model::PlainTextMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1965,14 +1844,18 @@ pub mod plain_text_message {
         }
         /// <p>The message to send to the user.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`PlainTextMessage`](crate::model::PlainTextMessage).
         pub fn build(self) -> crate::model::PlainTextMessage {
-            crate::model::PlainTextMessage { value: self.value }
+            crate::model::PlainTextMessage {
+                value: self.value
+                ,
+            }
         }
     }
+    
+    
 }
 impl PlainTextMessage {
     /// Creates a new builder-style object to manufacture [`PlainTextMessage`](crate::model::PlainTextMessage).
@@ -1984,7 +1867,7 @@ impl PlainTextMessage {
 /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseSpecification {
+pub struct ResponseSpecification  {
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
     #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
@@ -1994,7 +1877,7 @@ pub struct ResponseSpecification {
 }
 impl ResponseSpecification {
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
-    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+    pub fn message_groups(&self) -> std::option::Option<& [crate::model::MessageGroup]> {
         self.message_groups.as_deref()
     }
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
@@ -2004,7 +1887,7 @@ impl ResponseSpecification {
 }
 /// See [`ResponseSpecification`](crate::model::ResponseSpecification).
 pub mod response_specification {
-
+    
     /// A builder for [`ResponseSpecification`](crate::model::ResponseSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2019,17 +1902,13 @@ pub mod response_specification {
         /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
         pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input);
-            self.message_groups = Some(v);
-            self
+                            v.push(input);
+                            self.message_groups = Some(v);
+                            self
         }
         /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
-        pub fn set_message_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-        ) -> Self {
-            self.message_groups = input;
-            self
+        pub fn set_message_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>) -> Self {
+            self.message_groups = input; self
         }
         /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
         pub fn allow_interrupt(mut self, input: bool) -> Self {
@@ -2038,17 +1917,20 @@ pub mod response_specification {
         }
         /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
         pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_interrupt = input;
-            self
+            self.allow_interrupt = input; self
         }
         /// Consumes the builder and constructs a [`ResponseSpecification`](crate::model::ResponseSpecification).
         pub fn build(self) -> crate::model::ResponseSpecification {
             crate::model::ResponseSpecification {
-                message_groups: self.message_groups,
-                allow_interrupt: self.allow_interrupt,
+                message_groups: self.message_groups
+                ,
+                allow_interrupt: self.allow_interrupt
+                ,
             }
         }
     }
+    
+    
 }
 impl ResponseSpecification {
     /// Creates a new builder-style object to manufacture [`ResponseSpecification`](crate::model::ResponseSpecification).
@@ -2060,20 +1942,20 @@ impl ResponseSpecification {
 /// <p>A sample utterance that invokes an intent or respond to a slot elicitation prompt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SampleUtterance {
+pub struct SampleUtterance  {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
     #[doc(hidden)]
     pub utterance: std::option::Option<std::string::String>,
 }
 impl SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
-    pub fn utterance(&self) -> std::option::Option<&str> {
+    pub fn utterance(&self) -> std::option::Option<& str> {
         self.utterance.as_deref()
     }
 }
 /// See [`SampleUtterance`](crate::model::SampleUtterance).
 pub mod sample_utterance {
-
+    
     /// A builder for [`SampleUtterance`](crate::model::SampleUtterance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2087,16 +1969,18 @@ pub mod sample_utterance {
         }
         /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
         pub fn set_utterance(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.utterance = input;
-            self
+            self.utterance = input; self
         }
         /// Consumes the builder and constructs a [`SampleUtterance`](crate::model::SampleUtterance).
         pub fn build(self) -> crate::model::SampleUtterance {
             crate::model::SampleUtterance {
-                utterance: self.utterance,
+                utterance: self.utterance
+                ,
             }
         }
     }
+    
+    
 }
 impl SampleUtterance {
     /// Creates a new builder-style object to manufacture [`SampleUtterance`](crate::model::SampleUtterance).
@@ -2108,7 +1992,7 @@ impl SampleUtterance {
 /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PromptSpecification {
+pub struct PromptSpecification  {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
     #[doc(hidden)]
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
@@ -2123,16 +2007,11 @@ pub struct PromptSpecification {
     pub message_selection_strategy: std::option::Option<crate::model::MessageSelectionStrategy>,
     /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
     #[doc(hidden)]
-    pub prompt_attempts_specification: std::option::Option<
-        std::collections::HashMap<
-            crate::model::PromptAttempt,
-            crate::model::PromptAttemptSpecification,
-        >,
-    >,
+    pub prompt_attempts_specification: std::option::Option<std::collections::HashMap<crate::model::PromptAttempt, crate::model::PromptAttemptSpecification>>,
 }
 impl PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
-    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+    pub fn message_groups(&self) -> std::option::Option<& [crate::model::MessageGroup]> {
         self.message_groups.as_deref()
     }
     /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
@@ -2144,40 +2023,25 @@ impl PromptSpecification {
         self.allow_interrupt
     }
     /// <p>Indicates how a message is selected from a message group among retries.</p>
-    pub fn message_selection_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::MessageSelectionStrategy> {
+    pub fn message_selection_strategy(&self) -> std::option::Option<& crate::model::MessageSelectionStrategy> {
         self.message_selection_strategy.as_ref()
     }
     /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
-    pub fn prompt_attempts_specification(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::PromptAttempt,
-            crate::model::PromptAttemptSpecification,
-        >,
-    > {
+    pub fn prompt_attempts_specification(&self) -> std::option::Option<& std::collections::HashMap<crate::model::PromptAttempt, crate::model::PromptAttemptSpecification>> {
         self.prompt_attempts_specification.as_ref()
     }
 }
 /// See [`PromptSpecification`](crate::model::PromptSpecification).
 pub mod prompt_specification {
-
+    
     /// A builder for [`PromptSpecification`](crate::model::PromptSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
         pub(crate) max_retries: std::option::Option<i32>,
         pub(crate) allow_interrupt: std::option::Option<bool>,
-        pub(crate) message_selection_strategy:
-            std::option::Option<crate::model::MessageSelectionStrategy>,
-        pub(crate) prompt_attempts_specification: std::option::Option<
-            std::collections::HashMap<
-                crate::model::PromptAttempt,
-                crate::model::PromptAttemptSpecification,
-            >,
-        >,
+        pub(crate) message_selection_strategy: std::option::Option<crate::model::MessageSelectionStrategy>,
+        pub(crate) prompt_attempts_specification: std::option::Option<std::collections::HashMap<crate::model::PromptAttempt, crate::model::PromptAttemptSpecification>>,
     }
     impl Builder {
         /// Appends an item to `message_groups`.
@@ -2187,17 +2051,13 @@ pub mod prompt_specification {
         /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
         pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input);
-            self.message_groups = Some(v);
-            self
+                            v.push(input);
+                            self.message_groups = Some(v);
+                            self
         }
         /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
-        pub fn set_message_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-        ) -> Self {
-            self.message_groups = input;
-            self
+        pub fn set_message_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>) -> Self {
+            self.message_groups = input; self
         }
         /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
         pub fn max_retries(mut self, input: i32) -> Self {
@@ -2206,8 +2066,7 @@ pub mod prompt_specification {
         }
         /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
         pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_retries = input;
-            self
+            self.max_retries = input; self
         }
         /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
         pub fn allow_interrupt(mut self, input: bool) -> Self {
@@ -2216,64 +2075,50 @@ pub mod prompt_specification {
         }
         /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
         pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_interrupt = input;
-            self
+            self.allow_interrupt = input; self
         }
         /// <p>Indicates how a message is selected from a message group among retries.</p>
-        pub fn message_selection_strategy(
-            mut self,
-            input: crate::model::MessageSelectionStrategy,
-        ) -> Self {
+        pub fn message_selection_strategy(mut self, input: crate::model::MessageSelectionStrategy) -> Self {
             self.message_selection_strategy = Some(input);
             self
         }
         /// <p>Indicates how a message is selected from a message group among retries.</p>
-        pub fn set_message_selection_strategy(
-            mut self,
-            input: std::option::Option<crate::model::MessageSelectionStrategy>,
-        ) -> Self {
-            self.message_selection_strategy = input;
-            self
+        pub fn set_message_selection_strategy(mut self, input: std::option::Option<crate::model::MessageSelectionStrategy>) -> Self {
+            self.message_selection_strategy = input; self
         }
         /// Adds a key-value pair to `prompt_attempts_specification`.
         ///
         /// To override the contents of this collection use [`set_prompt_attempts_specification`](Self::set_prompt_attempts_specification).
         ///
         /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
-        pub fn prompt_attempts_specification(
-            mut self,
-            k: crate::model::PromptAttempt,
-            v: crate::model::PromptAttemptSpecification,
-        ) -> Self {
+        pub fn prompt_attempts_specification(mut self, k: crate::model::PromptAttempt, v: crate::model::PromptAttemptSpecification) -> Self {
             let mut hash_map = self.prompt_attempts_specification.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.prompt_attempts_specification = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.prompt_attempts_specification = Some(hash_map);
+                            self
         }
         /// <p>Specifies the advanced settings on each attempt of the prompt.</p>
-        pub fn set_prompt_attempts_specification(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::PromptAttempt,
-                    crate::model::PromptAttemptSpecification,
-                >,
-            >,
-        ) -> Self {
-            self.prompt_attempts_specification = input;
-            self
+        pub fn set_prompt_attempts_specification(mut self, input: std::option::Option<std::collections::HashMap<crate::model::PromptAttempt, crate::model::PromptAttemptSpecification>>) -> Self {
+            self.prompt_attempts_specification = input; self
         }
         /// Consumes the builder and constructs a [`PromptSpecification`](crate::model::PromptSpecification).
         pub fn build(self) -> crate::model::PromptSpecification {
             crate::model::PromptSpecification {
-                message_groups: self.message_groups,
-                max_retries: self.max_retries,
-                allow_interrupt: self.allow_interrupt,
-                message_selection_strategy: self.message_selection_strategy,
-                prompt_attempts_specification: self.prompt_attempts_specification,
+                message_groups: self.message_groups
+                ,
+                max_retries: self.max_retries
+                ,
+                allow_interrupt: self.allow_interrupt
+                ,
+                message_selection_strategy: self.message_selection_strategy
+                ,
+                prompt_attempts_specification: self.prompt_attempts_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl PromptSpecification {
     /// Creates a new builder-style object to manufacture [`PromptSpecification`](crate::model::PromptSpecification).
@@ -2285,7 +2130,7 @@ impl PromptSpecification {
 /// <p>Specifies the settings on a prompt attempt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PromptAttemptSpecification {
+pub struct PromptAttemptSpecification  {
     /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
     #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
@@ -2294,8 +2139,7 @@ pub struct PromptAttemptSpecification {
     pub allowed_input_types: std::option::Option<crate::model::AllowedInputTypes>,
     /// <p>Specifies the settings on audio and DTMF input.</p>
     #[doc(hidden)]
-    pub audio_and_dtmf_input_specification:
-        std::option::Option<crate::model::AudioAndDtmfInputSpecification>,
+    pub audio_and_dtmf_input_specification: std::option::Option<crate::model::AudioAndDtmfInputSpecification>,
     /// <p>Specifies the settings on text input.</p>
     #[doc(hidden)]
     pub text_input_specification: std::option::Option<crate::model::TextInputSpecification>,
@@ -2306,34 +2150,28 @@ impl PromptAttemptSpecification {
         self.allow_interrupt
     }
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
-    pub fn allowed_input_types(&self) -> std::option::Option<&crate::model::AllowedInputTypes> {
+    pub fn allowed_input_types(&self) -> std::option::Option<& crate::model::AllowedInputTypes> {
         self.allowed_input_types.as_ref()
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    pub fn audio_and_dtmf_input_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::AudioAndDtmfInputSpecification> {
+    pub fn audio_and_dtmf_input_specification(&self) -> std::option::Option<& crate::model::AudioAndDtmfInputSpecification> {
         self.audio_and_dtmf_input_specification.as_ref()
     }
     /// <p>Specifies the settings on text input.</p>
-    pub fn text_input_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::TextInputSpecification> {
+    pub fn text_input_specification(&self) -> std::option::Option<& crate::model::TextInputSpecification> {
         self.text_input_specification.as_ref()
     }
 }
 /// See [`PromptAttemptSpecification`](crate::model::PromptAttemptSpecification).
 pub mod prompt_attempt_specification {
-
+    
     /// A builder for [`PromptAttemptSpecification`](crate::model::PromptAttemptSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_interrupt: std::option::Option<bool>,
         pub(crate) allowed_input_types: std::option::Option<crate::model::AllowedInputTypes>,
-        pub(crate) audio_and_dtmf_input_specification:
-            std::option::Option<crate::model::AudioAndDtmfInputSpecification>,
-        pub(crate) text_input_specification:
-            std::option::Option<crate::model::TextInputSpecification>,
+        pub(crate) audio_and_dtmf_input_specification: std::option::Option<crate::model::AudioAndDtmfInputSpecification>,
+        pub(crate) text_input_specification: std::option::Option<crate::model::TextInputSpecification>,
     }
     impl Builder {
         /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
@@ -2343,8 +2181,7 @@ pub mod prompt_attempt_specification {
         }
         /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
         pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_interrupt = input;
-            self
+            self.allow_interrupt = input; self
         }
         /// <p>Indicates the allowed input types of the prompt attempt.</p>
         pub fn allowed_input_types(mut self, input: crate::model::AllowedInputTypes) -> Self {
@@ -2352,55 +2189,43 @@ pub mod prompt_attempt_specification {
             self
         }
         /// <p>Indicates the allowed input types of the prompt attempt.</p>
-        pub fn set_allowed_input_types(
-            mut self,
-            input: std::option::Option<crate::model::AllowedInputTypes>,
-        ) -> Self {
-            self.allowed_input_types = input;
-            self
+        pub fn set_allowed_input_types(mut self, input: std::option::Option<crate::model::AllowedInputTypes>) -> Self {
+            self.allowed_input_types = input; self
         }
         /// <p>Specifies the settings on audio and DTMF input.</p>
-        pub fn audio_and_dtmf_input_specification(
-            mut self,
-            input: crate::model::AudioAndDtmfInputSpecification,
-        ) -> Self {
+        pub fn audio_and_dtmf_input_specification(mut self, input: crate::model::AudioAndDtmfInputSpecification) -> Self {
             self.audio_and_dtmf_input_specification = Some(input);
             self
         }
         /// <p>Specifies the settings on audio and DTMF input.</p>
-        pub fn set_audio_and_dtmf_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::AudioAndDtmfInputSpecification>,
-        ) -> Self {
-            self.audio_and_dtmf_input_specification = input;
-            self
+        pub fn set_audio_and_dtmf_input_specification(mut self, input: std::option::Option<crate::model::AudioAndDtmfInputSpecification>) -> Self {
+            self.audio_and_dtmf_input_specification = input; self
         }
         /// <p>Specifies the settings on text input.</p>
-        pub fn text_input_specification(
-            mut self,
-            input: crate::model::TextInputSpecification,
-        ) -> Self {
+        pub fn text_input_specification(mut self, input: crate::model::TextInputSpecification) -> Self {
             self.text_input_specification = Some(input);
             self
         }
         /// <p>Specifies the settings on text input.</p>
-        pub fn set_text_input_specification(
-            mut self,
-            input: std::option::Option<crate::model::TextInputSpecification>,
-        ) -> Self {
-            self.text_input_specification = input;
-            self
+        pub fn set_text_input_specification(mut self, input: std::option::Option<crate::model::TextInputSpecification>) -> Self {
+            self.text_input_specification = input; self
         }
         /// Consumes the builder and constructs a [`PromptAttemptSpecification`](crate::model::PromptAttemptSpecification).
         pub fn build(self) -> crate::model::PromptAttemptSpecification {
             crate::model::PromptAttemptSpecification {
-                allow_interrupt: self.allow_interrupt,
-                allowed_input_types: self.allowed_input_types,
-                audio_and_dtmf_input_specification: self.audio_and_dtmf_input_specification,
-                text_input_specification: self.text_input_specification,
+                allow_interrupt: self.allow_interrupt
+                ,
+                allowed_input_types: self.allowed_input_types
+                ,
+                audio_and_dtmf_input_specification: self.audio_and_dtmf_input_specification
+                ,
+                text_input_specification: self.text_input_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl PromptAttemptSpecification {
     /// Creates a new builder-style object to manufacture [`PromptAttemptSpecification`](crate::model::PromptAttemptSpecification).
@@ -2412,7 +2237,7 @@ impl PromptAttemptSpecification {
 /// <p>Specifies the text input specifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextInputSpecification {
+pub struct TextInputSpecification  {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     #[doc(hidden)]
     pub start_timeout_ms: std::option::Option<i32>,
@@ -2425,7 +2250,7 @@ impl TextInputSpecification {
 }
 /// See [`TextInputSpecification`](crate::model::TextInputSpecification).
 pub mod text_input_specification {
-
+    
     /// A builder for [`TextInputSpecification`](crate::model::TextInputSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2439,16 +2264,18 @@ pub mod text_input_specification {
         }
         /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
         pub fn set_start_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_timeout_ms = input;
-            self
+            self.start_timeout_ms = input; self
         }
         /// Consumes the builder and constructs a [`TextInputSpecification`](crate::model::TextInputSpecification).
         pub fn build(self) -> crate::model::TextInputSpecification {
             crate::model::TextInputSpecification {
-                start_timeout_ms: self.start_timeout_ms,
+                start_timeout_ms: self.start_timeout_ms
+                ,
             }
         }
     }
+    
+    
 }
 impl TextInputSpecification {
     /// Creates a new builder-style object to manufacture [`TextInputSpecification`](crate::model::TextInputSpecification).
@@ -2460,7 +2287,7 @@ impl TextInputSpecification {
 /// <p>Specifies the audio and DTMF input specification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioAndDtmfInputSpecification {
+pub struct AudioAndDtmfInputSpecification  {
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
     #[doc(hidden)]
     pub start_timeout_ms: std::option::Option<i32>,
@@ -2477,17 +2304,17 @@ impl AudioAndDtmfInputSpecification {
         self.start_timeout_ms
     }
     /// <p>Specifies the settings on audio input.</p>
-    pub fn audio_specification(&self) -> std::option::Option<&crate::model::AudioSpecification> {
+    pub fn audio_specification(&self) -> std::option::Option<& crate::model::AudioSpecification> {
         self.audio_specification.as_ref()
     }
     /// <p>Specifies the settings on DTMF input.</p>
-    pub fn dtmf_specification(&self) -> std::option::Option<&crate::model::DtmfSpecification> {
+    pub fn dtmf_specification(&self) -> std::option::Option<& crate::model::DtmfSpecification> {
         self.dtmf_specification.as_ref()
     }
 }
 /// See [`AudioAndDtmfInputSpecification`](crate::model::AudioAndDtmfInputSpecification).
 pub mod audio_and_dtmf_input_specification {
-
+    
     /// A builder for [`AudioAndDtmfInputSpecification`](crate::model::AudioAndDtmfInputSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2503,8 +2330,7 @@ pub mod audio_and_dtmf_input_specification {
         }
         /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
         pub fn set_start_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_timeout_ms = input;
-            self
+            self.start_timeout_ms = input; self
         }
         /// <p>Specifies the settings on audio input.</p>
         pub fn audio_specification(mut self, input: crate::model::AudioSpecification) -> Self {
@@ -2512,12 +2338,8 @@ pub mod audio_and_dtmf_input_specification {
             self
         }
         /// <p>Specifies the settings on audio input.</p>
-        pub fn set_audio_specification(
-            mut self,
-            input: std::option::Option<crate::model::AudioSpecification>,
-        ) -> Self {
-            self.audio_specification = input;
-            self
+        pub fn set_audio_specification(mut self, input: std::option::Option<crate::model::AudioSpecification>) -> Self {
+            self.audio_specification = input; self
         }
         /// <p>Specifies the settings on DTMF input.</p>
         pub fn dtmf_specification(mut self, input: crate::model::DtmfSpecification) -> Self {
@@ -2525,22 +2347,23 @@ pub mod audio_and_dtmf_input_specification {
             self
         }
         /// <p>Specifies the settings on DTMF input.</p>
-        pub fn set_dtmf_specification(
-            mut self,
-            input: std::option::Option<crate::model::DtmfSpecification>,
-        ) -> Self {
-            self.dtmf_specification = input;
-            self
+        pub fn set_dtmf_specification(mut self, input: std::option::Option<crate::model::DtmfSpecification>) -> Self {
+            self.dtmf_specification = input; self
         }
         /// Consumes the builder and constructs a [`AudioAndDtmfInputSpecification`](crate::model::AudioAndDtmfInputSpecification).
         pub fn build(self) -> crate::model::AudioAndDtmfInputSpecification {
             crate::model::AudioAndDtmfInputSpecification {
-                start_timeout_ms: self.start_timeout_ms,
-                audio_specification: self.audio_specification,
-                dtmf_specification: self.dtmf_specification,
+                start_timeout_ms: self.start_timeout_ms
+                ,
+                audio_specification: self.audio_specification
+                ,
+                dtmf_specification: self.dtmf_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl AudioAndDtmfInputSpecification {
     /// Creates a new builder-style object to manufacture [`AudioAndDtmfInputSpecification`](crate::model::AudioAndDtmfInputSpecification).
@@ -2552,7 +2375,7 @@ impl AudioAndDtmfInputSpecification {
 /// <p>Specifies the DTMF input specifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DtmfSpecification {
+pub struct DtmfSpecification  {
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
     #[doc(hidden)]
     pub max_length: std::option::Option<i32>,
@@ -2576,17 +2399,17 @@ impl DtmfSpecification {
         self.end_timeout_ms
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-    pub fn deletion_character(&self) -> std::option::Option<&str> {
+    pub fn deletion_character(&self) -> std::option::Option<& str> {
         self.deletion_character.as_deref()
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-    pub fn end_character(&self) -> std::option::Option<&str> {
+    pub fn end_character(&self) -> std::option::Option<& str> {
         self.end_character.as_deref()
     }
 }
 /// See [`DtmfSpecification`](crate::model::DtmfSpecification).
 pub mod dtmf_specification {
-
+    
     /// A builder for [`DtmfSpecification`](crate::model::DtmfSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2603,8 +2426,7 @@ pub mod dtmf_specification {
         }
         /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
         pub fn set_max_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_length = input;
-            self
+            self.max_length = input; self
         }
         /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
         pub fn end_timeout_ms(mut self, input: i32) -> Self {
@@ -2613,8 +2435,7 @@ pub mod dtmf_specification {
         }
         /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
         pub fn set_end_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_timeout_ms = input;
-            self
+            self.end_timeout_ms = input; self
         }
         /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
         pub fn deletion_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2622,12 +2443,8 @@ pub mod dtmf_specification {
             self
         }
         /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-        pub fn set_deletion_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deletion_character = input;
-            self
+        pub fn set_deletion_character(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deletion_character = input; self
         }
         /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
         pub fn end_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2635,23 +2452,25 @@ pub mod dtmf_specification {
             self
         }
         /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-        pub fn set_end_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.end_character = input;
-            self
+        pub fn set_end_character(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_character = input; self
         }
         /// Consumes the builder and constructs a [`DtmfSpecification`](crate::model::DtmfSpecification).
         pub fn build(self) -> crate::model::DtmfSpecification {
             crate::model::DtmfSpecification {
-                max_length: self.max_length,
-                end_timeout_ms: self.end_timeout_ms,
-                deletion_character: self.deletion_character,
-                end_character: self.end_character,
+                max_length: self.max_length
+                ,
+                end_timeout_ms: self.end_timeout_ms
+                ,
+                deletion_character: self.deletion_character
+                ,
+                end_character: self.end_character
+                ,
             }
         }
     }
+    
+    
 }
 impl DtmfSpecification {
     /// Creates a new builder-style object to manufacture [`DtmfSpecification`](crate::model::DtmfSpecification).
@@ -2663,7 +2482,7 @@ impl DtmfSpecification {
 /// <p>Specifies the audio input specifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioSpecification {
+pub struct AudioSpecification  {
     /// <p>Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.</p>
     #[doc(hidden)]
     pub max_length_ms: std::option::Option<i32>,
@@ -2683,7 +2502,7 @@ impl AudioSpecification {
 }
 /// See [`AudioSpecification`](crate::model::AudioSpecification).
 pub mod audio_specification {
-
+    
     /// A builder for [`AudioSpecification`](crate::model::AudioSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2698,8 +2517,7 @@ pub mod audio_specification {
         }
         /// <p>Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.</p>
         pub fn set_max_length_ms(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_length_ms = input;
-            self
+            self.max_length_ms = input; self
         }
         /// <p>Time for which a bot waits after the customer stops speaking to assume the utterance is finished.</p>
         pub fn end_timeout_ms(mut self, input: i32) -> Self {
@@ -2708,17 +2526,20 @@ pub mod audio_specification {
         }
         /// <p>Time for which a bot waits after the customer stops speaking to assume the utterance is finished.</p>
         pub fn set_end_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_timeout_ms = input;
-            self
+            self.end_timeout_ms = input; self
         }
         /// Consumes the builder and constructs a [`AudioSpecification`](crate::model::AudioSpecification).
         pub fn build(self) -> crate::model::AudioSpecification {
             crate::model::AudioSpecification {
-                max_length_ms: self.max_length_ms,
-                end_timeout_ms: self.end_timeout_ms,
+                max_length_ms: self.max_length_ms
+                ,
+                end_timeout_ms: self.end_timeout_ms
+                ,
             }
         }
     }
+    
+    
 }
 impl AudioSpecification {
     /// Creates a new builder-style object to manufacture [`AudioSpecification`](crate::model::AudioSpecification).
@@ -2730,7 +2551,7 @@ impl AudioSpecification {
 /// <p>Specifies the allowed input types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllowedInputTypes {
+pub struct AllowedInputTypes  {
     /// <p>Indicates whether audio input is allowed.</p>
     #[doc(hidden)]
     pub allow_audio_input: std::option::Option<bool>,
@@ -2750,7 +2571,7 @@ impl AllowedInputTypes {
 }
 /// See [`AllowedInputTypes`](crate::model::AllowedInputTypes).
 pub mod allowed_input_types {
-
+    
     /// A builder for [`AllowedInputTypes`](crate::model::AllowedInputTypes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2765,8 +2586,7 @@ pub mod allowed_input_types {
         }
         /// <p>Indicates whether audio input is allowed.</p>
         pub fn set_allow_audio_input(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_audio_input = input;
-            self
+            self.allow_audio_input = input; self
         }
         /// <p>Indicates whether DTMF input is allowed.</p>
         pub fn allow_dtmf_input(mut self, input: bool) -> Self {
@@ -2775,17 +2595,20 @@ pub mod allowed_input_types {
         }
         /// <p>Indicates whether DTMF input is allowed.</p>
         pub fn set_allow_dtmf_input(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_dtmf_input = input;
-            self
+            self.allow_dtmf_input = input; self
         }
         /// Consumes the builder and constructs a [`AllowedInputTypes`](crate::model::AllowedInputTypes).
         pub fn build(self) -> crate::model::AllowedInputTypes {
             crate::model::AllowedInputTypes {
-                allow_audio_input: self.allow_audio_input,
-                allow_dtmf_input: self.allow_dtmf_input,
+                allow_audio_input: self.allow_audio_input
+                ,
+                allow_dtmf_input: self.allow_dtmf_input
+                ,
             }
         }
     }
+    
+    
 }
 impl AllowedInputTypes {
     /// Creates a new builder-style object to manufacture [`AllowedInputTypes`](crate::model::AllowedInputTypes).
@@ -2800,9 +2623,9 @@ impl AllowedInputTypes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let promptattempt = unimplemented!();
 /// match promptattempt {
@@ -2828,22 +2651,14 @@ impl AllowedInputTypes {
 /// Specifically, when `promptattempt` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PromptAttempt::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The attempt name of attempts of a prompt.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PromptAttempt {
     #[allow(missing_docs)] // documentation missing in model
     Initial,
@@ -2858,7 +2673,7 @@ pub enum PromptAttempt {
     #[allow(missing_docs)] // documentation missing in model
     Retry5,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PromptAttempt {
     fn from(s: &str) -> Self {
@@ -2869,17 +2684,17 @@ impl std::convert::From<&str> for PromptAttempt {
             "Retry3" => PromptAttempt::Retry3,
             "Retry4" => PromptAttempt::Retry4,
             "Retry5" => PromptAttempt::Retry5,
-            other => PromptAttempt::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PromptAttempt::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PromptAttempt {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PromptAttempt::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PromptAttempt::from(s))
+                }
+            }
 impl PromptAttempt {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2890,12 +2705,14 @@ impl PromptAttempt {
             PromptAttempt::Retry3 => "Retry3",
             PromptAttempt::Retry4 => "Retry4",
             PromptAttempt::Retry5 => "Retry5",
-            PromptAttempt::Unknown(value) => value.as_str(),
+            PromptAttempt::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Initial", "Retry1", "Retry2", "Retry3", "Retry4", "Retry5"]
+        &[
+            "Initial", "Retry1", "Retry2", "Retry3", "Retry4", "Retry5"
+        ]
     }
 }
 impl AsRef<str> for PromptAttempt {
@@ -2910,9 +2727,9 @@ impl AsRef<str> for PromptAttempt {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let messageselectionstrategy = unimplemented!();
 /// match messageselectionstrategy {
@@ -2934,60 +2751,52 @@ impl AsRef<str> for PromptAttempt {
 /// Specifically, when `messageselectionstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MessageSelectionStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MessageSelectionStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Ordered,
     #[allow(missing_docs)] // documentation missing in model
     Random,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageSelectionStrategy {
     fn from(s: &str) -> Self {
         match s {
             "Ordered" => MessageSelectionStrategy::Ordered,
             "Random" => MessageSelectionStrategy::Random,
-            other => MessageSelectionStrategy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MessageSelectionStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MessageSelectionStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MessageSelectionStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MessageSelectionStrategy::from(s))
+                }
+            }
 impl MessageSelectionStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageSelectionStrategy::Ordered => "Ordered",
             MessageSelectionStrategy::Random => "Random",
-            MessageSelectionStrategy::Unknown(value) => value.as_str(),
+            MessageSelectionStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Ordered", "Random"]
+        &[
+            "Ordered", "Random"
+        ]
     }
 }
 impl AsRef<str> for MessageSelectionStrategy {
@@ -2999,25 +2808,24 @@ impl AsRef<str> for MessageSelectionStrategy {
 /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotDefaultValueSpecification {
+pub struct SlotDefaultValueSpecification  {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
     #[doc(hidden)]
     pub default_value_list: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpecification {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub fn default_value_list(&self) -> std::option::Option<&[crate::model::SlotDefaultValue]> {
+    pub fn default_value_list(&self) -> std::option::Option<& [crate::model::SlotDefaultValue]> {
         self.default_value_list.as_deref()
     }
 }
 /// See [`SlotDefaultValueSpecification`](crate::model::SlotDefaultValueSpecification).
 pub mod slot_default_value_specification {
-
+    
     /// A builder for [`SlotDefaultValueSpecification`](crate::model::SlotDefaultValueSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) default_value_list:
-            std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
+        pub(crate) default_value_list: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
     }
     impl Builder {
         /// Appends an item to `default_value_list`.
@@ -3027,25 +2835,24 @@ pub mod slot_default_value_specification {
         /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
         pub fn default_value_list(mut self, input: crate::model::SlotDefaultValue) -> Self {
             let mut v = self.default_value_list.unwrap_or_default();
-            v.push(input);
-            self.default_value_list = Some(v);
-            self
+                            v.push(input);
+                            self.default_value_list = Some(v);
+                            self
         }
         /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-        pub fn set_default_value_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
-        ) -> Self {
-            self.default_value_list = input;
-            self
+        pub fn set_default_value_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>) -> Self {
+            self.default_value_list = input; self
         }
         /// Consumes the builder and constructs a [`SlotDefaultValueSpecification`](crate::model::SlotDefaultValueSpecification).
         pub fn build(self) -> crate::model::SlotDefaultValueSpecification {
             crate::model::SlotDefaultValueSpecification {
-                default_value_list: self.default_value_list,
+                default_value_list: self.default_value_list
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotDefaultValueSpecification {
     /// Creates a new builder-style object to manufacture [`SlotDefaultValueSpecification`](crate::model::SlotDefaultValueSpecification).
@@ -3057,20 +2864,20 @@ impl SlotDefaultValueSpecification {
 /// <p>Specifies the default value to use when a user doesn't provide a value for a slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotDefaultValue {
+pub struct SlotDefaultValue  {
     /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl SlotDefaultValue {
     /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
 /// See [`SlotDefaultValue`](crate::model::SlotDefaultValue).
 pub mod slot_default_value {
-
+    
     /// A builder for [`SlotDefaultValue`](crate::model::SlotDefaultValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3083,20 +2890,19 @@ pub mod slot_default_value {
             self
         }
         /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// Consumes the builder and constructs a [`SlotDefaultValue`](crate::model::SlotDefaultValue).
         pub fn build(self) -> crate::model::SlotDefaultValue {
             crate::model::SlotDefaultValue {
-                default_value: self.default_value,
+                default_value: self.default_value
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotDefaultValue {
     /// Creates a new builder-style object to manufacture [`SlotDefaultValue`](crate::model::SlotDefaultValue).
@@ -3108,16 +2914,16 @@ impl SlotDefaultValue {
 /// <p>Indicates whether a slot can return multiple values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultipleValuesSetting {
-    /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
-    /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+pub struct MultipleValuesSetting  {
+    /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p> 
+    /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p> 
     /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub allow_multiple_values: bool,
 }
 impl MultipleValuesSetting {
-    /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
-    /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p> 
+    /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p> 
     /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
     pub fn allow_multiple_values(&self) -> bool {
         self.allow_multiple_values
@@ -3125,34 +2931,37 @@ impl MultipleValuesSetting {
 }
 /// See [`MultipleValuesSetting`](crate::model::MultipleValuesSetting).
 pub mod multiple_values_setting {
-
+    
     /// A builder for [`MultipleValuesSetting`](crate::model::MultipleValuesSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_multiple_values: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
-        /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+        /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p> 
+        /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p> 
         /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
         pub fn allow_multiple_values(mut self, input: bool) -> Self {
             self.allow_multiple_values = Some(input);
             self
         }
-        /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
-        /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+        /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p> 
+        /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p> 
         /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
         pub fn set_allow_multiple_values(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_multiple_values = input;
-            self
+            self.allow_multiple_values = input; self
         }
         /// Consumes the builder and constructs a [`MultipleValuesSetting`](crate::model::MultipleValuesSetting).
         pub fn build(self) -> crate::model::MultipleValuesSetting {
             crate::model::MultipleValuesSetting {
-                allow_multiple_values: self.allow_multiple_values.unwrap_or_default(),
+                allow_multiple_values: self.allow_multiple_values
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl MultipleValuesSetting {
     /// Creates a new builder-style object to manufacture [`MultipleValuesSetting`](crate::model::MultipleValuesSetting).
@@ -3164,52 +2973,45 @@ impl MultipleValuesSetting {
 /// <p>Determines whether Amazon Lex obscures slot values in conversation logs. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObfuscationSetting {
+pub struct ObfuscationSetting  {
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
     #[doc(hidden)]
     pub obfuscation_setting_type: std::option::Option<crate::model::ObfuscationSettingType>,
 }
 impl ObfuscationSetting {
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
-    pub fn obfuscation_setting_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ObfuscationSettingType> {
+    pub fn obfuscation_setting_type(&self) -> std::option::Option<& crate::model::ObfuscationSettingType> {
         self.obfuscation_setting_type.as_ref()
     }
 }
 /// See [`ObfuscationSetting`](crate::model::ObfuscationSetting).
 pub mod obfuscation_setting {
-
+    
     /// A builder for [`ObfuscationSetting`](crate::model::ObfuscationSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) obfuscation_setting_type:
-            std::option::Option<crate::model::ObfuscationSettingType>,
+        pub(crate) obfuscation_setting_type: std::option::Option<crate::model::ObfuscationSettingType>,
     }
     impl Builder {
         /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
-        pub fn obfuscation_setting_type(
-            mut self,
-            input: crate::model::ObfuscationSettingType,
-        ) -> Self {
+        pub fn obfuscation_setting_type(mut self, input: crate::model::ObfuscationSettingType) -> Self {
             self.obfuscation_setting_type = Some(input);
             self
         }
         /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
-        pub fn set_obfuscation_setting_type(
-            mut self,
-            input: std::option::Option<crate::model::ObfuscationSettingType>,
-        ) -> Self {
-            self.obfuscation_setting_type = input;
-            self
+        pub fn set_obfuscation_setting_type(mut self, input: std::option::Option<crate::model::ObfuscationSettingType>) -> Self {
+            self.obfuscation_setting_type = input; self
         }
         /// Consumes the builder and constructs a [`ObfuscationSetting`](crate::model::ObfuscationSetting).
         pub fn build(self) -> crate::model::ObfuscationSetting {
             crate::model::ObfuscationSetting {
-                obfuscation_setting_type: self.obfuscation_setting_type,
+                obfuscation_setting_type: self.obfuscation_setting_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ObfuscationSetting {
     /// Creates a new builder-style object to manufacture [`ObfuscationSetting`](crate::model::ObfuscationSetting).
@@ -3224,9 +3026,9 @@ impl ObfuscationSetting {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let obfuscationsettingtype = unimplemented!();
 /// match obfuscationsettingtype {
@@ -3248,60 +3050,52 @@ impl ObfuscationSetting {
 /// Specifically, when `obfuscationsettingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObfuscationSettingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObfuscationSettingType {
     #[allow(missing_docs)] // documentation missing in model
     DefaultObfuscation,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObfuscationSettingType {
     fn from(s: &str) -> Self {
         match s {
             "DefaultObfuscation" => ObfuscationSettingType::DefaultObfuscation,
             "None" => ObfuscationSettingType::None,
-            other => {
-                ObfuscationSettingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ObfuscationSettingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ObfuscationSettingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObfuscationSettingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObfuscationSettingType::from(s))
+                }
+            }
 impl ObfuscationSettingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ObfuscationSettingType::DefaultObfuscation => "DefaultObfuscation",
             ObfuscationSettingType::None => "None",
-            ObfuscationSettingType::Unknown(value) => value.as_str(),
+            ObfuscationSettingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DefaultObfuscation", "None"]
+        &[
+            "DefaultObfuscation", "None"
+        ]
     }
 }
 impl AsRef<str> for ObfuscationSettingType {
@@ -3313,11 +3107,10 @@ impl AsRef<str> for ObfuscationSettingType {
 /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotValueElicitationSetting {
+pub struct SlotValueElicitationSetting  {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
     #[doc(hidden)]
-    pub default_value_specification:
-        std::option::Option<crate::model::SlotDefaultValueSpecification>,
+    pub default_value_specification: std::option::Option<crate::model::SlotDefaultValueSpecification>,
     /// <p>Specifies whether the slot is required or optional.</p>
     #[doc(hidden)]
     pub slot_constraint: std::option::Option<crate::model::SlotConstraint>,
@@ -3329,74 +3122,59 @@ pub struct SlotValueElicitationSetting {
     pub sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
     #[doc(hidden)]
-    pub wait_and_continue_specification:
-        std::option::Option<crate::model::WaitAndContinueSpecification>,
+    pub wait_and_continue_specification: std::option::Option<crate::model::WaitAndContinueSpecification>,
     /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
     #[doc(hidden)]
     pub slot_capture_setting: std::option::Option<crate::model::SlotCaptureSetting>,
 }
 impl SlotValueElicitationSetting {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
-    pub fn default_value_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotDefaultValueSpecification> {
+    pub fn default_value_specification(&self) -> std::option::Option<& crate::model::SlotDefaultValueSpecification> {
         self.default_value_specification.as_ref()
     }
     /// <p>Specifies whether the slot is required or optional.</p>
-    pub fn slot_constraint(&self) -> std::option::Option<&crate::model::SlotConstraint> {
+    pub fn slot_constraint(&self) -> std::option::Option<& crate::model::SlotConstraint> {
         self.slot_constraint.as_ref()
     }
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
-    pub fn prompt_specification(&self) -> std::option::Option<&crate::model::PromptSpecification> {
+    pub fn prompt_specification(&self) -> std::option::Option<& crate::model::PromptSpecification> {
         self.prompt_specification.as_ref()
     }
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [crate::model::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-    pub fn wait_and_continue_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::WaitAndContinueSpecification> {
+    pub fn wait_and_continue_specification(&self) -> std::option::Option<& crate::model::WaitAndContinueSpecification> {
         self.wait_and_continue_specification.as_ref()
     }
     /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
-    pub fn slot_capture_setting(&self) -> std::option::Option<&crate::model::SlotCaptureSetting> {
+    pub fn slot_capture_setting(&self) -> std::option::Option<& crate::model::SlotCaptureSetting> {
         self.slot_capture_setting.as_ref()
     }
 }
 /// See [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
 pub mod slot_value_elicitation_setting {
-
+    
     /// A builder for [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) default_value_specification:
-            std::option::Option<crate::model::SlotDefaultValueSpecification>,
+        pub(crate) default_value_specification: std::option::Option<crate::model::SlotDefaultValueSpecification>,
         pub(crate) slot_constraint: std::option::Option<crate::model::SlotConstraint>,
         pub(crate) prompt_specification: std::option::Option<crate::model::PromptSpecification>,
-        pub(crate) sample_utterances:
-            std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-        pub(crate) wait_and_continue_specification:
-            std::option::Option<crate::model::WaitAndContinueSpecification>,
+        pub(crate) sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
+        pub(crate) wait_and_continue_specification: std::option::Option<crate::model::WaitAndContinueSpecification>,
         pub(crate) slot_capture_setting: std::option::Option<crate::model::SlotCaptureSetting>,
     }
     impl Builder {
         /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
-        pub fn default_value_specification(
-            mut self,
-            input: crate::model::SlotDefaultValueSpecification,
-        ) -> Self {
+        pub fn default_value_specification(mut self, input: crate::model::SlotDefaultValueSpecification) -> Self {
             self.default_value_specification = Some(input);
             self
         }
         /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
-        pub fn set_default_value_specification(
-            mut self,
-            input: std::option::Option<crate::model::SlotDefaultValueSpecification>,
-        ) -> Self {
-            self.default_value_specification = input;
-            self
+        pub fn set_default_value_specification(mut self, input: std::option::Option<crate::model::SlotDefaultValueSpecification>) -> Self {
+            self.default_value_specification = input; self
         }
         /// <p>Specifies whether the slot is required or optional.</p>
         pub fn slot_constraint(mut self, input: crate::model::SlotConstraint) -> Self {
@@ -3404,12 +3182,8 @@ pub mod slot_value_elicitation_setting {
             self
         }
         /// <p>Specifies whether the slot is required or optional.</p>
-        pub fn set_slot_constraint(
-            mut self,
-            input: std::option::Option<crate::model::SlotConstraint>,
-        ) -> Self {
-            self.slot_constraint = input;
-            self
+        pub fn set_slot_constraint(mut self, input: std::option::Option<crate::model::SlotConstraint>) -> Self {
+            self.slot_constraint = input; self
         }
         /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
         pub fn prompt_specification(mut self, input: crate::model::PromptSpecification) -> Self {
@@ -3417,12 +3191,8 @@ pub mod slot_value_elicitation_setting {
             self
         }
         /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
-        pub fn set_prompt_specification(
-            mut self,
-            input: std::option::Option<crate::model::PromptSpecification>,
-        ) -> Self {
-            self.prompt_specification = input;
-            self
+        pub fn set_prompt_specification(mut self, input: std::option::Option<crate::model::PromptSpecification>) -> Self {
+            self.prompt_specification = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -3431,33 +3201,22 @@ pub mod slot_value_elicitation_setting {
         /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
         pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input);
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input);
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-        pub fn wait_and_continue_specification(
-            mut self,
-            input: crate::model::WaitAndContinueSpecification,
-        ) -> Self {
+        pub fn wait_and_continue_specification(mut self, input: crate::model::WaitAndContinueSpecification) -> Self {
             self.wait_and_continue_specification = Some(input);
             self
         }
         /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-        pub fn set_wait_and_continue_specification(
-            mut self,
-            input: std::option::Option<crate::model::WaitAndContinueSpecification>,
-        ) -> Self {
-            self.wait_and_continue_specification = input;
-            self
+        pub fn set_wait_and_continue_specification(mut self, input: std::option::Option<crate::model::WaitAndContinueSpecification>) -> Self {
+            self.wait_and_continue_specification = input; self
         }
         /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
         pub fn slot_capture_setting(mut self, input: crate::model::SlotCaptureSetting) -> Self {
@@ -3465,25 +3224,29 @@ pub mod slot_value_elicitation_setting {
             self
         }
         /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
-        pub fn set_slot_capture_setting(
-            mut self,
-            input: std::option::Option<crate::model::SlotCaptureSetting>,
-        ) -> Self {
-            self.slot_capture_setting = input;
-            self
+        pub fn set_slot_capture_setting(mut self, input: std::option::Option<crate::model::SlotCaptureSetting>) -> Self {
+            self.slot_capture_setting = input; self
         }
         /// Consumes the builder and constructs a [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
         pub fn build(self) -> crate::model::SlotValueElicitationSetting {
             crate::model::SlotValueElicitationSetting {
-                default_value_specification: self.default_value_specification,
-                slot_constraint: self.slot_constraint,
-                prompt_specification: self.prompt_specification,
-                sample_utterances: self.sample_utterances,
-                wait_and_continue_specification: self.wait_and_continue_specification,
-                slot_capture_setting: self.slot_capture_setting,
+                default_value_specification: self.default_value_specification
+                ,
+                slot_constraint: self.slot_constraint
+                ,
+                prompt_specification: self.prompt_specification
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                wait_and_continue_specification: self.wait_and_continue_specification
+                ,
+                slot_capture_setting: self.slot_capture_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotValueElicitationSetting {
     /// Creates a new builder-style object to manufacture [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
@@ -3495,7 +3258,7 @@ impl SlotValueElicitationSetting {
 /// <p>Settings used when Amazon Lex successfully captures a slot value from a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotCaptureSetting {
+pub struct SlotCaptureSetting  {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
     pub capture_response: std::option::Option<crate::model::ResponseSpecification>,
@@ -3519,52 +3282,45 @@ pub struct SlotCaptureSetting {
     pub code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
     /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
     #[doc(hidden)]
-    pub elicitation_code_hook:
-        std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
+    pub elicitation_code_hook: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
 }
 impl SlotCaptureSetting {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn capture_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn capture_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.capture_response.as_ref()
     }
     /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
-    pub fn capture_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn capture_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.capture_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
-    pub fn capture_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn capture_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.capture_conditional.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn failure_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn failure_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.failure_response.as_ref()
     }
     /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
-    pub fn failure_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn failure_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.failure_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
-    pub fn failure_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn failure_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
     /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
-    pub fn code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookInvocationSetting> {
+    pub fn code_hook(&self) -> std::option::Option<& crate::model::DialogCodeHookInvocationSetting> {
         self.code_hook.as_ref()
     }
     /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
-    pub fn elicitation_code_hook(
-        &self,
-    ) -> std::option::Option<&crate::model::ElicitationCodeHookInvocationSetting> {
+    pub fn elicitation_code_hook(&self) -> std::option::Option<& crate::model::ElicitationCodeHookInvocationSetting> {
         self.elicitation_code_hook.as_ref()
     }
 }
 /// See [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
 pub mod slot_capture_setting {
-
+    
     /// A builder for [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3575,8 +3331,7 @@ pub mod slot_capture_setting {
         pub(crate) failure_next_step: std::option::Option<crate::model::DialogState>,
         pub(crate) failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
         pub(crate) code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
-        pub(crate) elicitation_code_hook:
-            std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
+        pub(crate) elicitation_code_hook: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
     }
     impl Builder {
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -3585,12 +3340,8 @@ pub mod slot_capture_setting {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_capture_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.capture_response = input;
-            self
+        pub fn set_capture_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.capture_response = input; self
         }
         /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
         pub fn capture_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -3598,28 +3349,17 @@ pub mod slot_capture_setting {
             self
         }
         /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
-        pub fn set_capture_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.capture_next_step = input;
-            self
+        pub fn set_capture_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.capture_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
-        pub fn capture_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn capture_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.capture_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
-        pub fn set_capture_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.capture_conditional = input;
-            self
+        pub fn set_capture_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.capture_conditional = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn failure_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -3627,12 +3367,8 @@ pub mod slot_capture_setting {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_failure_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.failure_response = input;
-            self
+        pub fn set_failure_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.failure_response = input; self
         }
         /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
         pub fn failure_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -3640,28 +3376,17 @@ pub mod slot_capture_setting {
             self
         }
         /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
-        pub fn set_failure_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.failure_next_step = input;
-            self
+        pub fn set_failure_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.failure_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
-        pub fn failure_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn failure_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.failure_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
-        pub fn set_failure_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.failure_conditional = input;
-            self
+        pub fn set_failure_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.failure_conditional = input; self
         }
         /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
         pub fn code_hook(mut self, input: crate::model::DialogCodeHookInvocationSetting) -> Self {
@@ -3669,43 +3394,42 @@ pub mod slot_capture_setting {
             self
         }
         /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
-        pub fn set_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
-        ) -> Self {
-            self.code_hook = input;
-            self
+        pub fn set_code_hook(mut self, input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>) -> Self {
+            self.code_hook = input; self
         }
         /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
-        pub fn elicitation_code_hook(
-            mut self,
-            input: crate::model::ElicitationCodeHookInvocationSetting,
-        ) -> Self {
+        pub fn elicitation_code_hook(mut self, input: crate::model::ElicitationCodeHookInvocationSetting) -> Self {
             self.elicitation_code_hook = Some(input);
             self
         }
         /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
-        pub fn set_elicitation_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
-        ) -> Self {
-            self.elicitation_code_hook = input;
-            self
+        pub fn set_elicitation_code_hook(mut self, input: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>) -> Self {
+            self.elicitation_code_hook = input; self
         }
         /// Consumes the builder and constructs a [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
         pub fn build(self) -> crate::model::SlotCaptureSetting {
             crate::model::SlotCaptureSetting {
-                capture_response: self.capture_response,
-                capture_next_step: self.capture_next_step,
-                capture_conditional: self.capture_conditional,
-                failure_response: self.failure_response,
-                failure_next_step: self.failure_next_step,
-                failure_conditional: self.failure_conditional,
-                code_hook: self.code_hook,
-                elicitation_code_hook: self.elicitation_code_hook,
+                capture_response: self.capture_response
+                ,
+                capture_next_step: self.capture_next_step
+                ,
+                capture_conditional: self.capture_conditional
+                ,
+                failure_response: self.failure_response
+                ,
+                failure_next_step: self.failure_next_step
+                ,
+                failure_conditional: self.failure_conditional
+                ,
+                code_hook: self.code_hook
+                ,
+                elicitation_code_hook: self.elicitation_code_hook
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotCaptureSetting {
     /// Creates a new builder-style object to manufacture [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
@@ -3717,7 +3441,7 @@ impl SlotCaptureSetting {
 /// <p>Settings that specify the dialog code hook that is called by Amazon Lex between eliciting slot values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElicitationCodeHookInvocationSetting {
+pub struct ElicitationCodeHookInvocationSetting  {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     #[doc(hidden)]
     pub enable_code_hook_invocation: std::option::Option<bool>,
@@ -3731,13 +3455,13 @@ impl ElicitationCodeHookInvocationSetting {
         self.enable_code_hook_invocation
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn invocation_label(&self) -> std::option::Option<&str> {
+    pub fn invocation_label(&self) -> std::option::Option<& str> {
         self.invocation_label.as_deref()
     }
 }
 /// See [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
 pub mod elicitation_code_hook_invocation_setting {
-
+    
     /// A builder for [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3752,8 +3476,7 @@ pub mod elicitation_code_hook_invocation_setting {
         }
         /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
         pub fn set_enable_code_hook_invocation(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_code_hook_invocation = input;
-            self
+            self.enable_code_hook_invocation = input; self
         }
         /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
         pub fn invocation_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3761,21 +3484,21 @@ pub mod elicitation_code_hook_invocation_setting {
             self
         }
         /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-        pub fn set_invocation_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invocation_label = input;
-            self
+        pub fn set_invocation_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.invocation_label = input; self
         }
         /// Consumes the builder and constructs a [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
         pub fn build(self) -> crate::model::ElicitationCodeHookInvocationSetting {
             crate::model::ElicitationCodeHookInvocationSetting {
-                enable_code_hook_invocation: self.enable_code_hook_invocation,
-                invocation_label: self.invocation_label,
+                enable_code_hook_invocation: self.enable_code_hook_invocation
+                ,
+                invocation_label: self.invocation_label
+                ,
             }
         }
     }
+    
+    
 }
 impl ElicitationCodeHookInvocationSetting {
     /// Creates a new builder-style object to manufacture [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
@@ -3787,7 +3510,7 @@ impl ElicitationCodeHookInvocationSetting {
 /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DialogCodeHookInvocationSetting {
+pub struct DialogCodeHookInvocationSetting  {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     #[doc(hidden)]
     pub enable_code_hook_invocation: std::option::Option<bool>,
@@ -3799,8 +3522,7 @@ pub struct DialogCodeHookInvocationSetting {
     pub invocation_label: std::option::Option<std::string::String>,
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
     #[doc(hidden)]
-    pub post_code_hook_specification:
-        std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>,
+    pub post_code_hook_specification: std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>,
 }
 impl DialogCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
@@ -3812,27 +3534,24 @@ impl DialogCodeHookInvocationSetting {
         self.active
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn invocation_label(&self) -> std::option::Option<&str> {
+    pub fn invocation_label(&self) -> std::option::Option<& str> {
         self.invocation_label.as_deref()
     }
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
-    pub fn post_code_hook_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::PostDialogCodeHookInvocationSpecification> {
+    pub fn post_code_hook_specification(&self) -> std::option::Option<& crate::model::PostDialogCodeHookInvocationSpecification> {
         self.post_code_hook_specification.as_ref()
     }
 }
 /// See [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
 pub mod dialog_code_hook_invocation_setting {
-
+    
     /// A builder for [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_code_hook_invocation: std::option::Option<bool>,
         pub(crate) active: std::option::Option<bool>,
         pub(crate) invocation_label: std::option::Option<std::string::String>,
-        pub(crate) post_code_hook_specification:
-            std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>,
+        pub(crate) post_code_hook_specification: std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>,
     }
     impl Builder {
         /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
@@ -3842,8 +3561,7 @@ pub mod dialog_code_hook_invocation_setting {
         }
         /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
         pub fn set_enable_code_hook_invocation(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_code_hook_invocation = input;
-            self
+            self.enable_code_hook_invocation = input; self
         }
         /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -3852,8 +3570,7 @@ pub mod dialog_code_hook_invocation_setting {
         }
         /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
         pub fn invocation_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3861,39 +3578,34 @@ pub mod dialog_code_hook_invocation_setting {
             self
         }
         /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-        pub fn set_invocation_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invocation_label = input;
-            self
+        pub fn set_invocation_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.invocation_label = input; self
         }
         /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
-        pub fn post_code_hook_specification(
-            mut self,
-            input: crate::model::PostDialogCodeHookInvocationSpecification,
-        ) -> Self {
+        pub fn post_code_hook_specification(mut self, input: crate::model::PostDialogCodeHookInvocationSpecification) -> Self {
             self.post_code_hook_specification = Some(input);
             self
         }
         /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
-        pub fn set_post_code_hook_specification(
-            mut self,
-            input: std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>,
-        ) -> Self {
-            self.post_code_hook_specification = input;
-            self
+        pub fn set_post_code_hook_specification(mut self, input: std::option::Option<crate::model::PostDialogCodeHookInvocationSpecification>) -> Self {
+            self.post_code_hook_specification = input; self
         }
         /// Consumes the builder and constructs a [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
         pub fn build(self) -> crate::model::DialogCodeHookInvocationSetting {
             crate::model::DialogCodeHookInvocationSetting {
-                enable_code_hook_invocation: self.enable_code_hook_invocation,
-                active: self.active,
-                invocation_label: self.invocation_label,
-                post_code_hook_specification: self.post_code_hook_specification,
+                enable_code_hook_invocation: self.enable_code_hook_invocation
+                ,
+                active: self.active
+                ,
+                invocation_label: self.invocation_label
+                ,
+                post_code_hook_specification: self.post_code_hook_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl DialogCodeHookInvocationSetting {
     /// Creates a new builder-style object to manufacture [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
@@ -3905,7 +3617,7 @@ impl DialogCodeHookInvocationSetting {
 /// <p>Specifies next steps to run after the dialog code hook finishes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostDialogCodeHookInvocationSpecification {
+pub struct PostDialogCodeHookInvocationSpecification  {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
     pub success_response: std::option::Option<crate::model::ResponseSpecification>,
@@ -3936,51 +3648,45 @@ pub struct PostDialogCodeHookInvocationSpecification {
 }
 impl PostDialogCodeHookInvocationSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn success_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn success_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.success_response.as_ref()
     }
     /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
-    pub fn success_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn success_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.success_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
-    pub fn success_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn success_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.success_conditional.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn failure_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn failure_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.failure_response.as_ref()
     }
     /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn failure_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn failure_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.failure_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn failure_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn failure_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn timeout_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn timeout_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.timeout_response.as_ref()
     }
     /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
-    pub fn timeout_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn timeout_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.timeout_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
-    pub fn timeout_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn timeout_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.timeout_conditional.as_ref()
     }
 }
 /// See [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
 pub mod post_dialog_code_hook_invocation_specification {
-
+    
     /// A builder for [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4001,12 +3707,8 @@ pub mod post_dialog_code_hook_invocation_specification {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_success_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.success_response = input;
-            self
+        pub fn set_success_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.success_response = input; self
         }
         /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
         pub fn success_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -4014,28 +3716,17 @@ pub mod post_dialog_code_hook_invocation_specification {
             self
         }
         /// <p>Specifics the next step the bot runs after the dialog code hook finishes successfully. </p>
-        pub fn set_success_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.success_next_step = input;
-            self
+        pub fn set_success_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.success_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
-        pub fn success_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn success_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.success_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate after the dialog code hook finishes successfully.</p>
-        pub fn set_success_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.success_conditional = input;
-            self
+        pub fn set_success_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.success_conditional = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn failure_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -4043,12 +3734,8 @@ pub mod post_dialog_code_hook_invocation_specification {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_failure_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.failure_response = input;
-            self
+        pub fn set_failure_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.failure_response = input; self
         }
         /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
         pub fn failure_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -4056,28 +3743,17 @@ pub mod post_dialog_code_hook_invocation_specification {
             self
         }
         /// <p>Specifies the next step the bot runs after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-        pub fn set_failure_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.failure_next_step = input;
-            self
+        pub fn set_failure_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.failure_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-        pub fn failure_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn failure_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.failure_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate after the dialog code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-        pub fn set_failure_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.failure_conditional = input;
-            self
+        pub fn set_failure_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.failure_conditional = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn timeout_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -4085,12 +3761,8 @@ pub mod post_dialog_code_hook_invocation_specification {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_timeout_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.timeout_response = input;
-            self
+        pub fn set_timeout_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.timeout_response = input; self
         }
         /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
         pub fn timeout_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -4098,44 +3770,44 @@ pub mod post_dialog_code_hook_invocation_specification {
             self
         }
         /// <p>Specifies the next step that the bot runs when the code hook times out.</p>
-        pub fn set_timeout_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.timeout_next_step = input;
-            self
+        pub fn set_timeout_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.timeout_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
-        pub fn timeout_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn timeout_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.timeout_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate if the code hook times out.</p>
-        pub fn set_timeout_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.timeout_conditional = input;
-            self
+        pub fn set_timeout_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.timeout_conditional = input; self
         }
         /// Consumes the builder and constructs a [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
         pub fn build(self) -> crate::model::PostDialogCodeHookInvocationSpecification {
             crate::model::PostDialogCodeHookInvocationSpecification {
-                success_response: self.success_response,
-                success_next_step: self.success_next_step,
-                success_conditional: self.success_conditional,
-                failure_response: self.failure_response,
-                failure_next_step: self.failure_next_step,
-                failure_conditional: self.failure_conditional,
-                timeout_response: self.timeout_response,
-                timeout_next_step: self.timeout_next_step,
-                timeout_conditional: self.timeout_conditional,
+                success_response: self.success_response
+                ,
+                success_next_step: self.success_next_step
+                ,
+                success_conditional: self.success_conditional
+                ,
+                failure_response: self.failure_response
+                ,
+                failure_next_step: self.failure_next_step
+                ,
+                failure_conditional: self.failure_conditional
+                ,
+                timeout_response: self.timeout_response
+                ,
+                timeout_next_step: self.timeout_next_step
+                ,
+                timeout_conditional: self.timeout_conditional
+                ,
             }
         }
     }
+    
+    
 }
 impl PostDialogCodeHookInvocationSpecification {
     /// Creates a new builder-style object to manufacture [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
@@ -4147,7 +3819,7 @@ impl PostDialogCodeHookInvocationSpecification {
 /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionalSpecification {
+pub struct ConditionalSpecification  {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
     #[doc(hidden)]
     pub active: std::option::Option<bool>,
@@ -4164,23 +3836,22 @@ impl ConditionalSpecification {
         self.active
     }
     /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
-    pub fn conditional_branches(&self) -> std::option::Option<&[crate::model::ConditionalBranch]> {
+    pub fn conditional_branches(&self) -> std::option::Option<& [crate::model::ConditionalBranch]> {
         self.conditional_branches.as_deref()
     }
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
-    pub fn default_branch(&self) -> std::option::Option<&crate::model::DefaultConditionalBranch> {
+    pub fn default_branch(&self) -> std::option::Option<& crate::model::DefaultConditionalBranch> {
         self.default_branch.as_ref()
     }
 }
 /// See [`ConditionalSpecification`](crate::model::ConditionalSpecification).
 pub mod conditional_specification {
-
+    
     /// A builder for [`ConditionalSpecification`](crate::model::ConditionalSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active: std::option::Option<bool>,
-        pub(crate) conditional_branches:
-            std::option::Option<std::vec::Vec<crate::model::ConditionalBranch>>,
+        pub(crate) conditional_branches: std::option::Option<std::vec::Vec<crate::model::ConditionalBranch>>,
         pub(crate) default_branch: std::option::Option<crate::model::DefaultConditionalBranch>,
     }
     impl Builder {
@@ -4191,8 +3862,7 @@ pub mod conditional_specification {
         }
         /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// Appends an item to `conditional_branches`.
         ///
@@ -4201,17 +3871,13 @@ pub mod conditional_specification {
         /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
         pub fn conditional_branches(mut self, input: crate::model::ConditionalBranch) -> Self {
             let mut v = self.conditional_branches.unwrap_or_default();
-            v.push(input);
-            self.conditional_branches = Some(v);
-            self
+                            v.push(input);
+                            self.conditional_branches = Some(v);
+                            self
         }
         /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
-        pub fn set_conditional_branches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConditionalBranch>>,
-        ) -> Self {
-            self.conditional_branches = input;
-            self
+        pub fn set_conditional_branches(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConditionalBranch>>) -> Self {
+            self.conditional_branches = input; self
         }
         /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
         pub fn default_branch(mut self, input: crate::model::DefaultConditionalBranch) -> Self {
@@ -4219,22 +3885,23 @@ pub mod conditional_specification {
             self
         }
         /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
-        pub fn set_default_branch(
-            mut self,
-            input: std::option::Option<crate::model::DefaultConditionalBranch>,
-        ) -> Self {
-            self.default_branch = input;
-            self
+        pub fn set_default_branch(mut self, input: std::option::Option<crate::model::DefaultConditionalBranch>) -> Self {
+            self.default_branch = input; self
         }
         /// Consumes the builder and constructs a [`ConditionalSpecification`](crate::model::ConditionalSpecification).
         pub fn build(self) -> crate::model::ConditionalSpecification {
             crate::model::ConditionalSpecification {
-                active: self.active,
-                conditional_branches: self.conditional_branches,
-                default_branch: self.default_branch,
+                active: self.active
+                ,
+                conditional_branches: self.conditional_branches
+                ,
+                default_branch: self.default_branch
+                ,
             }
         }
     }
+    
+    
 }
 impl ConditionalSpecification {
     /// Creates a new builder-style object to manufacture [`ConditionalSpecification`](crate::model::ConditionalSpecification).
@@ -4246,7 +3913,7 @@ impl ConditionalSpecification {
 /// <p>A set of actions that Amazon Lex should run if none of the other conditions are met.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultConditionalBranch {
+pub struct DefaultConditionalBranch  {
     /// <p>The next step in the conversation.</p>
     #[doc(hidden)]
     pub next_step: std::option::Option<crate::model::DialogState>,
@@ -4256,17 +3923,17 @@ pub struct DefaultConditionalBranch {
 }
 impl DefaultConditionalBranch {
     /// <p>The next step in the conversation.</p>
-    pub fn next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.next_step.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.response.as_ref()
     }
 }
 /// See [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
 pub mod default_conditional_branch {
-
+    
     /// A builder for [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4280,12 +3947,8 @@ pub mod default_conditional_branch {
             self
         }
         /// <p>The next step in the conversation.</p>
-        pub fn set_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.next_step = input;
-            self
+        pub fn set_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.next_step = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -4293,21 +3956,21 @@ pub mod default_conditional_branch {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.response = input;
-            self
+        pub fn set_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.response = input; self
         }
         /// Consumes the builder and constructs a [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
         pub fn build(self) -> crate::model::DefaultConditionalBranch {
             crate::model::DefaultConditionalBranch {
-                next_step: self.next_step,
-                response: self.response,
+                next_step: self.next_step
+                ,
+                response: self.response
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultConditionalBranch {
     /// Creates a new builder-style object to manufacture [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
@@ -4319,7 +3982,7 @@ impl DefaultConditionalBranch {
 /// <p>The current state of the conversation with the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DialogState {
+pub struct DialogState  {
     /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
     #[doc(hidden)]
     pub dialog_action: std::option::Option<crate::model::DialogAction>,
@@ -4328,37 +3991,31 @@ pub struct DialogState {
     pub intent: std::option::Option<crate::model::IntentOverride>,
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
     #[doc(hidden)]
-    pub session_attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub session_attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DialogState {
     /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
-    pub fn dialog_action(&self) -> std::option::Option<&crate::model::DialogAction> {
+    pub fn dialog_action(&self) -> std::option::Option<& crate::model::DialogAction> {
         self.dialog_action.as_ref()
     }
     /// <p>Override settings to configure the intent state.</p>
-    pub fn intent(&self) -> std::option::Option<&crate::model::IntentOverride> {
+    pub fn intent(&self) -> std::option::Option<& crate::model::IntentOverride> {
         self.intent.as_ref()
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn session_attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn session_attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.session_attributes.as_ref()
     }
 }
 /// See [`DialogState`](crate::model::DialogState).
 pub mod dialog_state {
-
+    
     /// A builder for [`DialogState`](crate::model::DialogState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dialog_action: std::option::Option<crate::model::DialogAction>,
         pub(crate) intent: std::option::Option<crate::model::IntentOverride>,
-        pub(crate) session_attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) session_attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
@@ -4367,12 +4024,8 @@ pub mod dialog_state {
             self
         }
         /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
-        pub fn set_dialog_action(
-            mut self,
-            input: std::option::Option<crate::model::DialogAction>,
-        ) -> Self {
-            self.dialog_action = input;
-            self
+        pub fn set_dialog_action(mut self, input: std::option::Option<crate::model::DialogAction>) -> Self {
+            self.dialog_action = input; self
         }
         /// <p>Override settings to configure the intent state.</p>
         pub fn intent(mut self, input: crate::model::IntentOverride) -> Self {
@@ -4380,47 +4033,38 @@ pub mod dialog_state {
             self
         }
         /// <p>Override settings to configure the intent state.</p>
-        pub fn set_intent(
-            mut self,
-            input: std::option::Option<crate::model::IntentOverride>,
-        ) -> Self {
-            self.intent = input;
-            self
+        pub fn set_intent(mut self, input: std::option::Option<crate::model::IntentOverride>) -> Self {
+            self.intent = input; self
         }
         /// Adds a key-value pair to `session_attributes`.
         ///
         /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
         ///
         /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-        pub fn session_attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn session_attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.session_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.session_attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.session_attributes = Some(hash_map);
+                            self
         }
         /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-        pub fn set_session_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.session_attributes = input;
-            self
+        pub fn set_session_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.session_attributes = input; self
         }
         /// Consumes the builder and constructs a [`DialogState`](crate::model::DialogState).
         pub fn build(self) -> crate::model::DialogState {
             crate::model::DialogState {
-                dialog_action: self.dialog_action,
-                intent: self.intent,
-                session_attributes: self.session_attributes,
+                dialog_action: self.dialog_action
+                ,
+                intent: self.intent
+                ,
+                session_attributes: self.session_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl DialogState {
     /// Creates a new builder-style object to manufacture [`DialogState`](crate::model::DialogState).
@@ -4432,40 +4076,32 @@ impl DialogState {
 /// <p>Override settings to configure the intent state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentOverride {
+pub struct IntentOverride  {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.,</p>
     #[doc(hidden)]
-    pub slots: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
-    >,
+    pub slots: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>>,
 }
 impl IntentOverride {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.,</p>
-    pub fn slots(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
-    > {
+    pub fn slots(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>> {
         self.slots.as_ref()
     }
 }
 /// See [`IntentOverride`](crate::model::IntentOverride).
 pub mod intent_override {
-
+    
     /// A builder for [`IntentOverride`](crate::model::IntentOverride).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) slots: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
-        >,
+        pub(crate) slots: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>>,
     }
     impl Builder {
         /// <p>The name of the intent. Only required when you're switching intents.</p>
@@ -4475,42 +4111,35 @@ pub mod intent_override {
         }
         /// <p>The name of the intent. Only required when you're switching intents.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `slots`.
         ///
         /// To override the contents of this collection use [`set_slots`](Self::set_slots).
         ///
         /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.,</p>
-        pub fn slots(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::SlotValueOverride,
-        ) -> Self {
+        pub fn slots(mut self, k: impl Into<std::string::String>, v: crate::model::SlotValueOverride) -> Self {
             let mut hash_map = self.slots.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.slots = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.slots = Some(hash_map);
+                            self
         }
         /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.,</p>
-        pub fn set_slots(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
-            >,
-        ) -> Self {
-            self.slots = input;
-            self
+        pub fn set_slots(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>>) -> Self {
+            self.slots = input; self
         }
         /// Consumes the builder and constructs a [`IntentOverride`](crate::model::IntentOverride).
         pub fn build(self) -> crate::model::IntentOverride {
             crate::model::IntentOverride {
-                name: self.name,
-                slots: self.slots,
+                name: self.name
+                ,
+                slots: self.slots
+                ,
             }
         }
     }
+    
+    
 }
 impl IntentOverride {
     /// Creates a new builder-style object to manufacture [`IntentOverride`](crate::model::IntentOverride).
@@ -4522,7 +4151,7 @@ impl IntentOverride {
 /// <p>The slot values that Amazon Lex uses when it sets slot values in a dialog step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotValueOverride {
+pub struct SlotValueOverride  {
     /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
     #[doc(hidden)]
     pub shape: std::option::Option<crate::model::SlotShape>,
@@ -4535,21 +4164,21 @@ pub struct SlotValueOverride {
 }
 impl SlotValueOverride {
     /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
-    pub fn shape(&self) -> std::option::Option<&crate::model::SlotShape> {
+    pub fn shape(&self) -> std::option::Option<& crate::model::SlotShape> {
         self.shape.as_ref()
     }
     /// <p>The current value of the slot.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::SlotValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::SlotValue> {
         self.value.as_ref()
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
-    pub fn values(&self) -> std::option::Option<&[crate::model::SlotValueOverride]> {
+    pub fn values(&self) -> std::option::Option<& [crate::model::SlotValueOverride]> {
         self.values.as_deref()
     }
 }
 /// See [`SlotValueOverride`](crate::model::SlotValueOverride).
 pub mod slot_value_override {
-
+    
     /// A builder for [`SlotValueOverride`](crate::model::SlotValueOverride).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4565,8 +4194,7 @@ pub mod slot_value_override {
         }
         /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
         pub fn set_shape(mut self, input: std::option::Option<crate::model::SlotShape>) -> Self {
-            self.shape = input;
-            self
+            self.shape = input; self
         }
         /// <p>The current value of the slot.</p>
         pub fn value(mut self, input: crate::model::SlotValue) -> Self {
@@ -4575,8 +4203,7 @@ pub mod slot_value_override {
         }
         /// <p>The current value of the slot.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::SlotValue>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -4585,27 +4212,28 @@ pub mod slot_value_override {
         /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
         pub fn values(mut self, input: crate::model::SlotValueOverride) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotValueOverride>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotValueOverride>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`SlotValueOverride`](crate::model::SlotValueOverride).
         pub fn build(self) -> crate::model::SlotValueOverride {
             crate::model::SlotValueOverride {
-                shape: self.shape,
-                value: self.value,
-                values: self.values,
+                shape: self.shape
+                ,
+                value: self.value
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotValueOverride {
     /// Creates a new builder-style object to manufacture [`SlotValueOverride`](crate::model::SlotValueOverride).
@@ -4617,20 +4245,20 @@ impl SlotValueOverride {
 /// <p>The value to set in a slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotValue {
+pub struct SlotValue  {
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
     #[doc(hidden)]
     pub interpreted_value: std::option::Option<std::string::String>,
 }
 impl SlotValue {
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
-    pub fn interpreted_value(&self) -> std::option::Option<&str> {
+    pub fn interpreted_value(&self) -> std::option::Option<& str> {
         self.interpreted_value.as_deref()
     }
 }
 /// See [`SlotValue`](crate::model::SlotValue).
 pub mod slot_value {
-
+    
     /// A builder for [`SlotValue`](crate::model::SlotValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4643,20 +4271,19 @@ pub mod slot_value {
             self
         }
         /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
-        pub fn set_interpreted_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.interpreted_value = input;
-            self
+        pub fn set_interpreted_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.interpreted_value = input; self
         }
         /// Consumes the builder and constructs a [`SlotValue`](crate::model::SlotValue).
         pub fn build(self) -> crate::model::SlotValue {
             crate::model::SlotValue {
-                interpreted_value: self.interpreted_value,
+                interpreted_value: self.interpreted_value
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotValue {
     /// Creates a new builder-style object to manufacture [`SlotValue`](crate::model::SlotValue).
@@ -4671,9 +4298,9 @@ impl SlotValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slotshape = unimplemented!();
 /// match slotshape {
@@ -4695,58 +4322,52 @@ impl SlotValue {
 /// Specifically, when `slotshape` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotShape::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotShape {
     #[allow(missing_docs)] // documentation missing in model
     List,
     #[allow(missing_docs)] // documentation missing in model
     Scalar,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotShape {
     fn from(s: &str) -> Self {
         match s {
             "List" => SlotShape::List,
             "Scalar" => SlotShape::Scalar,
-            other => SlotShape::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SlotShape::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotShape {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotShape::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotShape::from(s))
+                }
+            }
 impl SlotShape {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotShape::List => "List",
             SlotShape::Scalar => "Scalar",
-            SlotShape::Unknown(value) => value.as_str(),
+            SlotShape::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["List", "Scalar"]
+        &[
+            "List", "Scalar"
+        ]
     }
 }
 impl AsRef<str> for SlotShape {
@@ -4758,7 +4379,7 @@ impl AsRef<str> for SlotShape {
 /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DialogAction {
+pub struct DialogAction  {
     /// <p>The action that the bot should execute. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DialogActionType>,
@@ -4771,11 +4392,11 @@ pub struct DialogAction {
 }
 impl DialogAction {
     /// <p>The action that the bot should execute. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DialogActionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DialogActionType> {
         self.r#type.as_ref()
     }
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
-    pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
+    pub fn slot_to_elicit(&self) -> std::option::Option<& str> {
         self.slot_to_elicit.as_deref()
     }
     /// <p>When true the next message for the intent is not used.</p>
@@ -4785,7 +4406,7 @@ impl DialogAction {
 }
 /// See [`DialogAction`](crate::model::DialogAction).
 pub mod dialog_action {
-
+    
     /// A builder for [`DialogAction`](crate::model::DialogAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4800,12 +4421,8 @@ pub mod dialog_action {
             self
         }
         /// <p>The action that the bot should execute. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::DialogActionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DialogActionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
         pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4813,12 +4430,8 @@ pub mod dialog_action {
             self
         }
         /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
-        pub fn set_slot_to_elicit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slot_to_elicit = input;
-            self
+        pub fn set_slot_to_elicit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slot_to_elicit = input; self
         }
         /// <p>When true the next message for the intent is not used.</p>
         pub fn suppress_next_message(mut self, input: bool) -> Self {
@@ -4827,18 +4440,22 @@ pub mod dialog_action {
         }
         /// <p>When true the next message for the intent is not used.</p>
         pub fn set_suppress_next_message(mut self, input: std::option::Option<bool>) -> Self {
-            self.suppress_next_message = input;
-            self
+            self.suppress_next_message = input; self
         }
         /// Consumes the builder and constructs a [`DialogAction`](crate::model::DialogAction).
         pub fn build(self) -> crate::model::DialogAction {
             crate::model::DialogAction {
-                r#type: self.r#type,
-                slot_to_elicit: self.slot_to_elicit,
-                suppress_next_message: self.suppress_next_message,
+                r#type: self.r#type
+                ,
+                slot_to_elicit: self.slot_to_elicit
+                ,
+                suppress_next_message: self.suppress_next_message
+                ,
             }
         }
     }
+    
+    
 }
 impl DialogAction {
     /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
@@ -4853,9 +4470,9 @@ impl DialogAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dialogactiontype = unimplemented!();
 /// match dialogactiontype {
@@ -4884,22 +4501,14 @@ impl DialogAction {
 /// Specifically, when `dialogactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DialogActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DialogActionType {
     #[allow(missing_docs)] // documentation missing in model
     CloseIntent,
@@ -4920,7 +4529,7 @@ pub enum DialogActionType {
     #[allow(missing_docs)] // documentation missing in model
     StartIntent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DialogActionType {
     fn from(s: &str) -> Self {
@@ -4934,17 +4543,17 @@ impl std::convert::From<&str> for DialogActionType {
             "FulfillIntent" => DialogActionType::FulfillIntent,
             "InvokeDialogCodeHook" => DialogActionType::InvokeDialogCodeHook,
             "StartIntent" => DialogActionType::StartIntent,
-            other => DialogActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DialogActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DialogActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DialogActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DialogActionType::from(s))
+                }
+            }
 impl DialogActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4958,21 +4567,13 @@ impl DialogActionType {
             DialogActionType::FulfillIntent => "FulfillIntent",
             DialogActionType::InvokeDialogCodeHook => "InvokeDialogCodeHook",
             DialogActionType::StartIntent => "StartIntent",
-            DialogActionType::Unknown(value) => value.as_str(),
+            DialogActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CloseIntent",
-            "ConfirmIntent",
-            "ElicitIntent",
-            "ElicitSlot",
-            "EndConversation",
-            "EvaluateConditional",
-            "FulfillIntent",
-            "InvokeDialogCodeHook",
-            "StartIntent",
+            "CloseIntent", "ConfirmIntent", "ElicitIntent", "ElicitSlot", "EndConversation", "EvaluateConditional", "FulfillIntent", "InvokeDialogCodeHook", "StartIntent"
         ]
     }
 }
@@ -4985,7 +4586,7 @@ impl AsRef<str> for DialogActionType {
 /// <p>A set of actions that Amazon Lex should run if the condition is matched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionalBranch {
+pub struct ConditionalBranch  {
     /// <p>The name of the branch. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5001,25 +4602,25 @@ pub struct ConditionalBranch {
 }
 impl ConditionalBranch {
     /// <p>The name of the branch. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+    pub fn condition(&self) -> std::option::Option<& crate::model::Condition> {
         self.condition.as_ref()
     }
     /// <p>The next step in the conversation.</p>
-    pub fn next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.next_step.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.response.as_ref()
     }
 }
 /// See [`ConditionalBranch`](crate::model::ConditionalBranch).
 pub mod conditional_branch {
-
+    
     /// A builder for [`ConditionalBranch`](crate::model::ConditionalBranch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5036,8 +4637,7 @@ pub mod conditional_branch {
         }
         /// <p>The name of the branch. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
         pub fn condition(mut self, input: crate::model::Condition) -> Self {
@@ -5045,12 +4645,8 @@ pub mod conditional_branch {
             self
         }
         /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
-        pub fn set_condition(
-            mut self,
-            input: std::option::Option<crate::model::Condition>,
-        ) -> Self {
-            self.condition = input;
-            self
+        pub fn set_condition(mut self, input: std::option::Option<crate::model::Condition>) -> Self {
+            self.condition = input; self
         }
         /// <p>The next step in the conversation.</p>
         pub fn next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -5058,12 +4654,8 @@ pub mod conditional_branch {
             self
         }
         /// <p>The next step in the conversation.</p>
-        pub fn set_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.next_step = input;
-            self
+        pub fn set_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.next_step = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -5071,23 +4663,25 @@ pub mod conditional_branch {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.response = input;
-            self
+        pub fn set_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.response = input; self
         }
         /// Consumes the builder and constructs a [`ConditionalBranch`](crate::model::ConditionalBranch).
         pub fn build(self) -> crate::model::ConditionalBranch {
             crate::model::ConditionalBranch {
-                name: self.name,
-                condition: self.condition,
-                next_step: self.next_step,
-                response: self.response,
+                name: self.name
+                ,
+                condition: self.condition
+                ,
+                next_step: self.next_step
+                ,
+                response: self.response
+                ,
             }
         }
     }
+    
+    
 }
 impl ConditionalBranch {
     /// Creates a new builder-style object to manufacture [`ConditionalBranch`](crate::model::ConditionalBranch).
@@ -5099,20 +4693,20 @@ impl ConditionalBranch {
 /// <p>Provides an expression that evaluates to true or false. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Condition {
+pub struct Condition  {
     /// <p>The expression string that is evaluated. </p>
     #[doc(hidden)]
     pub expression_string: std::option::Option<std::string::String>,
 }
 impl Condition {
     /// <p>The expression string that is evaluated. </p>
-    pub fn expression_string(&self) -> std::option::Option<&str> {
+    pub fn expression_string(&self) -> std::option::Option<& str> {
         self.expression_string.as_deref()
     }
 }
 /// See [`Condition`](crate::model::Condition).
 pub mod condition {
-
+    
     /// A builder for [`Condition`](crate::model::Condition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5125,20 +4719,19 @@ pub mod condition {
             self
         }
         /// <p>The expression string that is evaluated. </p>
-        pub fn set_expression_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expression_string = input;
-            self
+        pub fn set_expression_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression_string = input; self
         }
         /// Consumes the builder and constructs a [`Condition`](crate::model::Condition).
         pub fn build(self) -> crate::model::Condition {
             crate::model::Condition {
-                expression_string: self.expression_string,
+                expression_string: self.expression_string
+                ,
             }
         }
     }
+    
+    
 }
 impl Condition {
     /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
@@ -5153,9 +4746,9 @@ impl Condition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slotconstraint = unimplemented!();
 /// match slotconstraint {
@@ -5177,58 +4770,52 @@ impl Condition {
 /// Specifically, when `slotconstraint` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotConstraint::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotConstraint {
     #[allow(missing_docs)] // documentation missing in model
     Optional,
     #[allow(missing_docs)] // documentation missing in model
     Required,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotConstraint {
     fn from(s: &str) -> Self {
         match s {
             "Optional" => SlotConstraint::Optional,
             "Required" => SlotConstraint::Required,
-            other => SlotConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SlotConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotConstraint {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotConstraint::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotConstraint::from(s))
+                }
+            }
 impl SlotConstraint {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotConstraint::Optional => "Optional",
             SlotConstraint::Required => "Required",
-            SlotConstraint::Unknown(value) => value.as_str(),
+            SlotConstraint::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Optional", "Required"]
+        &[
+            "Optional", "Required"
+        ]
     }
 }
 impl AsRef<str> for SlotConstraint {
@@ -5240,7 +4827,7 @@ impl AsRef<str> for SlotConstraint {
 /// <p>Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitialResponseSetting {
+pub struct InitialResponseSetting  {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
     pub initial_response: std::option::Option<crate::model::ResponseSpecification>,
@@ -5256,25 +4843,25 @@ pub struct InitialResponseSetting {
 }
 impl InitialResponseSetting {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn initial_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn initial_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.initial_response.as_ref()
     }
     /// <p>The next step in the conversation.</p>
-    pub fn next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.next_step.as_ref()
     }
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-    pub fn conditional(&self) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.conditional.as_ref()
     }
     /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
-    pub fn code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookInvocationSetting> {
+    pub fn code_hook(&self) -> std::option::Option<& crate::model::DialogCodeHookInvocationSetting> {
         self.code_hook.as_ref()
     }
 }
 /// See [`InitialResponseSetting`](crate::model::InitialResponseSetting).
 pub mod initial_response_setting {
-
+    
     /// A builder for [`InitialResponseSetting`](crate::model::InitialResponseSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5290,12 +4877,8 @@ pub mod initial_response_setting {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_initial_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.initial_response = input;
-            self
+        pub fn set_initial_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.initial_response = input; self
         }
         /// <p>The next step in the conversation.</p>
         pub fn next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -5303,12 +4886,8 @@ pub mod initial_response_setting {
             self
         }
         /// <p>The next step in the conversation.</p>
-        pub fn set_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.next_step = input;
-            self
+        pub fn set_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.next_step = input; self
         }
         /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
         pub fn conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
@@ -5316,12 +4895,8 @@ pub mod initial_response_setting {
             self
         }
         /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-        pub fn set_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.conditional = input;
-            self
+        pub fn set_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.conditional = input; self
         }
         /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
         pub fn code_hook(mut self, input: crate::model::DialogCodeHookInvocationSetting) -> Self {
@@ -5329,23 +4904,25 @@ pub mod initial_response_setting {
             self
         }
         /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
-        pub fn set_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
-        ) -> Self {
-            self.code_hook = input;
-            self
+        pub fn set_code_hook(mut self, input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>) -> Self {
+            self.code_hook = input; self
         }
         /// Consumes the builder and constructs a [`InitialResponseSetting`](crate::model::InitialResponseSetting).
         pub fn build(self) -> crate::model::InitialResponseSetting {
             crate::model::InitialResponseSetting {
-                initial_response: self.initial_response,
-                next_step: self.next_step,
-                conditional: self.conditional,
-                code_hook: self.code_hook,
+                initial_response: self.initial_response
+                ,
+                next_step: self.next_step
+                ,
+                conditional: self.conditional
+                ,
+                code_hook: self.code_hook
+                ,
             }
         }
     }
+    
+    
 }
 impl InitialResponseSetting {
     /// Creates a new builder-style object to manufacture [`InitialResponseSetting`](crate::model::InitialResponseSetting).
@@ -5357,7 +4934,7 @@ impl InitialResponseSetting {
 /// <p>Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KendraConfiguration {
+pub struct KendraConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
     #[doc(hidden)]
     pub kendra_index: std::option::Option<std::string::String>,
@@ -5370,7 +4947,7 @@ pub struct KendraConfiguration {
 }
 impl KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
-    pub fn kendra_index(&self) -> std::option::Option<&str> {
+    pub fn kendra_index(&self) -> std::option::Option<& str> {
         self.kendra_index.as_deref()
     }
     /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.</p>
@@ -5378,13 +4955,13 @@ impl KendraConfiguration {
         self.query_filter_string_enabled
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
-    pub fn query_filter_string(&self) -> std::option::Option<&str> {
+    pub fn query_filter_string(&self) -> std::option::Option<& str> {
         self.query_filter_string.as_deref()
     }
 }
 /// See [`KendraConfiguration`](crate::model::KendraConfiguration).
 pub mod kendra_configuration {
-
+    
     /// A builder for [`KendraConfiguration`](crate::model::KendraConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5400,8 +4977,7 @@ pub mod kendra_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
         pub fn set_kendra_index(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kendra_index = input;
-            self
+            self.kendra_index = input; self
         }
         /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.</p>
         pub fn query_filter_string_enabled(mut self, input: bool) -> Self {
@@ -5410,8 +4986,7 @@ pub mod kendra_configuration {
         }
         /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.</p>
         pub fn set_query_filter_string_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.query_filter_string_enabled = input;
-            self
+            self.query_filter_string_enabled = input; self
         }
         /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
         pub fn query_filter_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5419,22 +4994,24 @@ pub mod kendra_configuration {
             self
         }
         /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
-        pub fn set_query_filter_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.query_filter_string = input;
-            self
+        pub fn set_query_filter_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_filter_string = input; self
         }
         /// Consumes the builder and constructs a [`KendraConfiguration`](crate::model::KendraConfiguration).
         pub fn build(self) -> crate::model::KendraConfiguration {
             crate::model::KendraConfiguration {
-                kendra_index: self.kendra_index,
-                query_filter_string_enabled: self.query_filter_string_enabled.unwrap_or_default(),
-                query_filter_string: self.query_filter_string,
+                kendra_index: self.kendra_index
+                ,
+                query_filter_string_enabled: self.query_filter_string_enabled
+                    .unwrap_or_default()
+                ,
+                query_filter_string: self.query_filter_string
+                ,
             }
         }
     }
+    
+    
 }
 impl KendraConfiguration {
     /// Creates a new builder-style object to manufacture [`KendraConfiguration`](crate::model::KendraConfiguration).
@@ -5446,7 +5023,7 @@ impl KendraConfiguration {
 /// <p>Describes a session context that is activated when an intent is fulfilled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputContext {
+pub struct OutputContext  {
     /// <p>The name of the output context.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5459,7 +5036,7 @@ pub struct OutputContext {
 }
 impl OutputContext {
     /// <p>The name of the output context.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The amount of time, in seconds, that the output context should remain active. The time is figured from the first time the context is sent to the user.</p>
@@ -5473,7 +5050,7 @@ impl OutputContext {
 }
 /// See [`OutputContext`](crate::model::OutputContext).
 pub mod output_context {
-
+    
     /// A builder for [`OutputContext`](crate::model::OutputContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5489,8 +5066,7 @@ pub mod output_context {
         }
         /// <p>The name of the output context.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The amount of time, in seconds, that the output context should remain active. The time is figured from the first time the context is sent to the user.</p>
         pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
@@ -5499,8 +5075,7 @@ pub mod output_context {
         }
         /// <p>The amount of time, in seconds, that the output context should remain active. The time is figured from the first time the context is sent to the user.</p>
         pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.time_to_live_in_seconds = input;
-            self
+            self.time_to_live_in_seconds = input; self
         }
         /// <p>The number of conversation turns that the output context should remain active. The number of turns is counted from the first time that the context is sent to the user.</p>
         pub fn turns_to_live(mut self, input: i32) -> Self {
@@ -5509,18 +5084,22 @@ pub mod output_context {
         }
         /// <p>The number of conversation turns that the output context should remain active. The number of turns is counted from the first time that the context is sent to the user.</p>
         pub fn set_turns_to_live(mut self, input: std::option::Option<i32>) -> Self {
-            self.turns_to_live = input;
-            self
+            self.turns_to_live = input; self
         }
         /// Consumes the builder and constructs a [`OutputContext`](crate::model::OutputContext).
         pub fn build(self) -> crate::model::OutputContext {
             crate::model::OutputContext {
-                name: self.name,
-                time_to_live_in_seconds: self.time_to_live_in_seconds,
-                turns_to_live: self.turns_to_live,
+                name: self.name
+                ,
+                time_to_live_in_seconds: self.time_to_live_in_seconds
+                ,
+                turns_to_live: self.turns_to_live
+                ,
             }
         }
     }
+    
+    
 }
 impl OutputContext {
     /// Creates a new builder-style object to manufacture [`OutputContext`](crate::model::OutputContext).
@@ -5532,20 +5111,20 @@ impl OutputContext {
 /// <p>The name of a context that must be active for an intent to be selected by Amazon Lex.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputContext {
+pub struct InputContext  {
     /// <p>The name of the context.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InputContext {
     /// <p>The name of the context.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`InputContext`](crate::model::InputContext).
 pub mod input_context {
-
+    
     /// A builder for [`InputContext`](crate::model::InputContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5559,14 +5138,18 @@ pub mod input_context {
         }
         /// <p>The name of the context.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`InputContext`](crate::model::InputContext).
         pub fn build(self) -> crate::model::InputContext {
-            crate::model::InputContext { name: self.name }
+            crate::model::InputContext {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl InputContext {
     /// Creates a new builder-style object to manufacture [`InputContext`](crate::model::InputContext).
@@ -5578,7 +5161,7 @@ impl InputContext {
 /// <p>Provides a statement the Amazon Lex conveys to the user when the intent is successfully fulfilled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentClosingSetting {
+pub struct IntentClosingSetting  {
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
     #[doc(hidden)]
     pub closing_response: std::option::Option<crate::model::ResponseSpecification>,
@@ -5594,7 +5177,7 @@ pub struct IntentClosingSetting {
 }
 impl IntentClosingSetting {
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
-    pub fn closing_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn closing_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.closing_response.as_ref()
     }
     /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
@@ -5602,17 +5185,17 @@ impl IntentClosingSetting {
         self.active
     }
     /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
-    pub fn next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.next_step.as_ref()
     }
     /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
-    pub fn conditional(&self) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.conditional.as_ref()
     }
 }
 /// See [`IntentClosingSetting`](crate::model::IntentClosingSetting).
 pub mod intent_closing_setting {
-
+    
     /// A builder for [`IntentClosingSetting`](crate::model::IntentClosingSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5628,12 +5211,8 @@ pub mod intent_closing_setting {
             self
         }
         /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
-        pub fn set_closing_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.closing_response = input;
-            self
+        pub fn set_closing_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.closing_response = input; self
         }
         /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -5642,8 +5221,7 @@ pub mod intent_closing_setting {
         }
         /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
         pub fn next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -5651,12 +5229,8 @@ pub mod intent_closing_setting {
             self
         }
         /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
-        pub fn set_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.next_step = input;
-            self
+        pub fn set_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.next_step = input; self
         }
         /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
         pub fn conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
@@ -5664,23 +5238,25 @@ pub mod intent_closing_setting {
             self
         }
         /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
-        pub fn set_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.conditional = input;
-            self
+        pub fn set_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.conditional = input; self
         }
         /// Consumes the builder and constructs a [`IntentClosingSetting`](crate::model::IntentClosingSetting).
         pub fn build(self) -> crate::model::IntentClosingSetting {
             crate::model::IntentClosingSetting {
-                closing_response: self.closing_response,
-                active: self.active,
-                next_step: self.next_step,
-                conditional: self.conditional,
+                closing_response: self.closing_response
+                ,
+                active: self.active
+                ,
+                next_step: self.next_step
+                ,
+                conditional: self.conditional
+                ,
             }
         }
     }
+    
+    
 }
 impl IntentClosingSetting {
     /// Creates a new builder-style object to manufacture [`IntentClosingSetting`](crate::model::IntentClosingSetting).
@@ -5692,8 +5268,8 @@ impl IntentClosingSetting {
 /// <p>Provides a prompt for making sure that the user is ready for the intent to be fulfilled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentConfirmationSetting {
-    /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
+pub struct IntentConfirmationSetting  {
+    /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p> 
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
     #[doc(hidden)]
     pub prompt_specification: std::option::Option<crate::model::PromptSpecification>,
@@ -5732,19 +5308,16 @@ pub struct IntentConfirmationSetting {
     pub code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
     /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
     #[doc(hidden)]
-    pub elicitation_code_hook:
-        std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
+    pub elicitation_code_hook: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
 }
 impl IntentConfirmationSetting {
-    /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
+    /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p> 
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
-    pub fn prompt_specification(&self) -> std::option::Option<&crate::model::PromptSpecification> {
+    pub fn prompt_specification(&self) -> std::option::Option<& crate::model::PromptSpecification> {
         self.prompt_specification.as_ref()
     }
     /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
-    pub fn declination_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn declination_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.declination_response.as_ref()
     }
     /// <p>Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and declination responses aren't sent. If the <code>active</code> field isn't specified, the default is true.</p>
@@ -5752,59 +5325,49 @@ impl IntentConfirmationSetting {
         self.active
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn confirmation_response(
-        &self,
-    ) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn confirmation_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.confirmation_response.as_ref()
     }
     /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
-    pub fn confirmation_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn confirmation_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.confirmation_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
-    pub fn confirmation_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn confirmation_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.confirmation_conditional.as_ref()
     }
     /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
-    pub fn declination_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn declination_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.declination_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
-    pub fn declination_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn declination_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.declination_conditional.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn failure_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn failure_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.failure_response.as_ref()
     }
     /// <p>The next step to take in the conversation if the confirmation step fails.</p>
-    pub fn failure_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn failure_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.failure_next_step.as_ref()
     }
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-    pub fn failure_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn failure_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
-    pub fn code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookInvocationSetting> {
+    pub fn code_hook(&self) -> std::option::Option<& crate::model::DialogCodeHookInvocationSetting> {
         self.code_hook.as_ref()
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
-    pub fn elicitation_code_hook(
-        &self,
-    ) -> std::option::Option<&crate::model::ElicitationCodeHookInvocationSetting> {
+    pub fn elicitation_code_hook(&self) -> std::option::Option<& crate::model::ElicitationCodeHookInvocationSetting> {
         self.elicitation_code_hook.as_ref()
     }
 }
 /// See [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
 pub mod intent_confirmation_setting {
-
+    
     /// A builder for [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5813,33 +5376,26 @@ pub mod intent_confirmation_setting {
         pub(crate) active: std::option::Option<bool>,
         pub(crate) confirmation_response: std::option::Option<crate::model::ResponseSpecification>,
         pub(crate) confirmation_next_step: std::option::Option<crate::model::DialogState>,
-        pub(crate) confirmation_conditional:
-            std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) confirmation_conditional: std::option::Option<crate::model::ConditionalSpecification>,
         pub(crate) declination_next_step: std::option::Option<crate::model::DialogState>,
-        pub(crate) declination_conditional:
-            std::option::Option<crate::model::ConditionalSpecification>,
+        pub(crate) declination_conditional: std::option::Option<crate::model::ConditionalSpecification>,
         pub(crate) failure_response: std::option::Option<crate::model::ResponseSpecification>,
         pub(crate) failure_next_step: std::option::Option<crate::model::DialogState>,
         pub(crate) failure_conditional: std::option::Option<crate::model::ConditionalSpecification>,
         pub(crate) code_hook: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
-        pub(crate) elicitation_code_hook:
-            std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
+        pub(crate) elicitation_code_hook: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
     }
     impl Builder {
-        /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
+        /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p> 
         /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
         pub fn prompt_specification(mut self, input: crate::model::PromptSpecification) -> Self {
             self.prompt_specification = Some(input);
             self
         }
-        /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
+        /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p> 
         /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
-        pub fn set_prompt_specification(
-            mut self,
-            input: std::option::Option<crate::model::PromptSpecification>,
-        ) -> Self {
-            self.prompt_specification = input;
-            self
+        pub fn set_prompt_specification(mut self, input: std::option::Option<crate::model::PromptSpecification>) -> Self {
+            self.prompt_specification = input; self
         }
         /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
         pub fn declination_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -5847,12 +5403,8 @@ pub mod intent_confirmation_setting {
             self
         }
         /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
-        pub fn set_declination_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.declination_response = input;
-            self
+        pub fn set_declination_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.declination_response = input; self
         }
         /// <p>Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and declination responses aren't sent. If the <code>active</code> field isn't specified, the default is true.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -5861,8 +5413,7 @@ pub mod intent_confirmation_setting {
         }
         /// <p>Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and declination responses aren't sent. If the <code>active</code> field isn't specified, the default is true.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn confirmation_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -5870,12 +5421,8 @@ pub mod intent_confirmation_setting {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_confirmation_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.confirmation_response = input;
-            self
+        pub fn set_confirmation_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.confirmation_response = input; self
         }
         /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
         pub fn confirmation_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -5883,28 +5430,17 @@ pub mod intent_confirmation_setting {
             self
         }
         /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
-        pub fn set_confirmation_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.confirmation_next_step = input;
-            self
+        pub fn set_confirmation_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.confirmation_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
-        pub fn confirmation_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn confirmation_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.confirmation_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
-        pub fn set_confirmation_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.confirmation_conditional = input;
-            self
+        pub fn set_confirmation_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.confirmation_conditional = input; self
         }
         /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
         pub fn declination_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -5912,28 +5448,17 @@ pub mod intent_confirmation_setting {
             self
         }
         /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
-        pub fn set_declination_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.declination_next_step = input;
-            self
+        pub fn set_declination_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.declination_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
-        pub fn declination_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn declination_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.declination_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
-        pub fn set_declination_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.declination_conditional = input;
-            self
+        pub fn set_declination_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.declination_conditional = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn failure_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -5941,12 +5466,8 @@ pub mod intent_confirmation_setting {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_failure_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.failure_response = input;
-            self
+        pub fn set_failure_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.failure_response = input; self
         }
         /// <p>The next step to take in the conversation if the confirmation step fails.</p>
         pub fn failure_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -5954,28 +5475,17 @@ pub mod intent_confirmation_setting {
             self
         }
         /// <p>The next step to take in the conversation if the confirmation step fails.</p>
-        pub fn set_failure_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.failure_next_step = input;
-            self
+        pub fn set_failure_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.failure_next_step = input; self
         }
         /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-        pub fn failure_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn failure_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.failure_conditional = Some(input);
             self
         }
         /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-        pub fn set_failure_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.failure_conditional = input;
-            self
+        pub fn set_failure_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.failure_conditional = input; self
         }
         /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
         pub fn code_hook(mut self, input: crate::model::DialogCodeHookInvocationSetting) -> Self {
@@ -5983,48 +5493,52 @@ pub mod intent_confirmation_setting {
             self
         }
         /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
-        pub fn set_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>,
-        ) -> Self {
-            self.code_hook = input;
-            self
+        pub fn set_code_hook(mut self, input: std::option::Option<crate::model::DialogCodeHookInvocationSetting>) -> Self {
+            self.code_hook = input; self
         }
         /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
-        pub fn elicitation_code_hook(
-            mut self,
-            input: crate::model::ElicitationCodeHookInvocationSetting,
-        ) -> Self {
+        pub fn elicitation_code_hook(mut self, input: crate::model::ElicitationCodeHookInvocationSetting) -> Self {
             self.elicitation_code_hook = Some(input);
             self
         }
         /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
-        pub fn set_elicitation_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>,
-        ) -> Self {
-            self.elicitation_code_hook = input;
-            self
+        pub fn set_elicitation_code_hook(mut self, input: std::option::Option<crate::model::ElicitationCodeHookInvocationSetting>) -> Self {
+            self.elicitation_code_hook = input; self
         }
         /// Consumes the builder and constructs a [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
         pub fn build(self) -> crate::model::IntentConfirmationSetting {
             crate::model::IntentConfirmationSetting {
-                prompt_specification: self.prompt_specification,
-                declination_response: self.declination_response,
-                active: self.active,
-                confirmation_response: self.confirmation_response,
-                confirmation_next_step: self.confirmation_next_step,
-                confirmation_conditional: self.confirmation_conditional,
-                declination_next_step: self.declination_next_step,
-                declination_conditional: self.declination_conditional,
-                failure_response: self.failure_response,
-                failure_next_step: self.failure_next_step,
-                failure_conditional: self.failure_conditional,
-                code_hook: self.code_hook,
-                elicitation_code_hook: self.elicitation_code_hook,
+                prompt_specification: self.prompt_specification
+                ,
+                declination_response: self.declination_response
+                ,
+                active: self.active
+                ,
+                confirmation_response: self.confirmation_response
+                ,
+                confirmation_next_step: self.confirmation_next_step
+                ,
+                confirmation_conditional: self.confirmation_conditional
+                ,
+                declination_next_step: self.declination_next_step
+                ,
+                declination_conditional: self.declination_conditional
+                ,
+                failure_response: self.failure_response
+                ,
+                failure_next_step: self.failure_next_step
+                ,
+                failure_conditional: self.failure_conditional
+                ,
+                code_hook: self.code_hook
+                ,
+                elicitation_code_hook: self.elicitation_code_hook
+                ,
             }
         }
     }
+    
+    
 }
 impl IntentConfirmationSetting {
     /// Creates a new builder-style object to manufacture [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
@@ -6036,7 +5550,7 @@ impl IntentConfirmationSetting {
 /// <p>Sets the priority that Amazon Lex should use when eliciting slot values from a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotPriority {
+pub struct SlotPriority  {
     /// <p>The priority that a slot should be elicited.</p>
     #[doc(hidden)]
     pub priority: std::option::Option<i32>,
@@ -6050,13 +5564,13 @@ impl SlotPriority {
         self.priority
     }
     /// <p>The unique identifier of the slot.</p>
-    pub fn slot_id(&self) -> std::option::Option<&str> {
+    pub fn slot_id(&self) -> std::option::Option<& str> {
         self.slot_id.as_deref()
     }
 }
 /// See [`SlotPriority`](crate::model::SlotPriority).
 pub mod slot_priority {
-
+    
     /// A builder for [`SlotPriority`](crate::model::SlotPriority).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6071,8 +5585,7 @@ pub mod slot_priority {
         }
         /// <p>The priority that a slot should be elicited.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>The unique identifier of the slot.</p>
         pub fn slot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6081,17 +5594,20 @@ pub mod slot_priority {
         }
         /// <p>The unique identifier of the slot.</p>
         pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_id = input;
-            self
+            self.slot_id = input; self
         }
         /// Consumes the builder and constructs a [`SlotPriority`](crate::model::SlotPriority).
         pub fn build(self) -> crate::model::SlotPriority {
             crate::model::SlotPriority {
-                priority: self.priority,
-                slot_id: self.slot_id,
+                priority: self.priority
+                ,
+                slot_id: self.slot_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotPriority {
     /// Creates a new builder-style object to manufacture [`SlotPriority`](crate::model::SlotPriority).
@@ -6103,18 +5619,16 @@ impl SlotPriority {
 /// <p>Determines if a Lambda function should be invoked for a specific intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FulfillmentCodeHookSettings {
+pub struct FulfillmentCodeHookSettings  {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
     #[doc(hidden)]
     pub enabled: bool,
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
     #[doc(hidden)]
-    pub post_fulfillment_status_specification:
-        std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
+    pub post_fulfillment_status_specification: std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
     /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
     #[doc(hidden)]
-    pub fulfillment_updates_specification:
-        std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
+    pub fulfillment_updates_specification: std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
     #[doc(hidden)]
     pub active: std::option::Option<bool>,
@@ -6125,15 +5639,11 @@ impl FulfillmentCodeHookSettings {
         self.enabled
     }
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
-    pub fn post_fulfillment_status_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::PostFulfillmentStatusSpecification> {
+    pub fn post_fulfillment_status_specification(&self) -> std::option::Option<& crate::model::PostFulfillmentStatusSpecification> {
         self.post_fulfillment_status_specification.as_ref()
     }
     /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
-    pub fn fulfillment_updates_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::FulfillmentUpdatesSpecification> {
+    pub fn fulfillment_updates_specification(&self) -> std::option::Option<& crate::model::FulfillmentUpdatesSpecification> {
         self.fulfillment_updates_specification.as_ref()
     }
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
@@ -6143,15 +5653,13 @@ impl FulfillmentCodeHookSettings {
 }
 /// See [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
 pub mod fulfillment_code_hook_settings {
-
+    
     /// A builder for [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) post_fulfillment_status_specification:
-            std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
-        pub(crate) fulfillment_updates_specification:
-            std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
+        pub(crate) post_fulfillment_status_specification: std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
+        pub(crate) fulfillment_updates_specification: std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
         pub(crate) active: std::option::Option<bool>,
     }
     impl Builder {
@@ -6162,40 +5670,25 @@ pub mod fulfillment_code_hook_settings {
         }
         /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
-        pub fn post_fulfillment_status_specification(
-            mut self,
-            input: crate::model::PostFulfillmentStatusSpecification,
-        ) -> Self {
+        pub fn post_fulfillment_status_specification(mut self, input: crate::model::PostFulfillmentStatusSpecification) -> Self {
             self.post_fulfillment_status_specification = Some(input);
             self
         }
         /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
-        pub fn set_post_fulfillment_status_specification(
-            mut self,
-            input: std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
-        ) -> Self {
-            self.post_fulfillment_status_specification = input;
-            self
+        pub fn set_post_fulfillment_status_specification(mut self, input: std::option::Option<crate::model::PostFulfillmentStatusSpecification>) -> Self {
+            self.post_fulfillment_status_specification = input; self
         }
         /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
-        pub fn fulfillment_updates_specification(
-            mut self,
-            input: crate::model::FulfillmentUpdatesSpecification,
-        ) -> Self {
+        pub fn fulfillment_updates_specification(mut self, input: crate::model::FulfillmentUpdatesSpecification) -> Self {
             self.fulfillment_updates_specification = Some(input);
             self
         }
         /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
-        pub fn set_fulfillment_updates_specification(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
-        ) -> Self {
-            self.fulfillment_updates_specification = input;
-            self
+        pub fn set_fulfillment_updates_specification(mut self, input: std::option::Option<crate::model::FulfillmentUpdatesSpecification>) -> Self {
+            self.fulfillment_updates_specification = input; self
         }
         /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -6204,19 +5697,25 @@ pub mod fulfillment_code_hook_settings {
         }
         /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// Consumes the builder and constructs a [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
         pub fn build(self) -> crate::model::FulfillmentCodeHookSettings {
             crate::model::FulfillmentCodeHookSettings {
-                enabled: self.enabled.unwrap_or_default(),
-                post_fulfillment_status_specification: self.post_fulfillment_status_specification,
-                fulfillment_updates_specification: self.fulfillment_updates_specification,
-                active: self.active,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                post_fulfillment_status_specification: self.post_fulfillment_status_specification
+                ,
+                fulfillment_updates_specification: self.fulfillment_updates_specification
+                ,
+                active: self.active
+                ,
             }
         }
     }
+    
+    
 }
 impl FulfillmentCodeHookSettings {
     /// Creates a new builder-style object to manufacture [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
@@ -6228,8 +5727,8 @@ impl FulfillmentCodeHookSettings {
 /// <p>Provides information for updating the user on the progress of fulfilling an intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FulfillmentUpdatesSpecification {
-    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+pub struct FulfillmentUpdatesSpecification  {
+    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
     #[doc(hidden)]
     pub active: std::option::Option<bool>,
@@ -6244,21 +5743,17 @@ pub struct FulfillmentUpdatesSpecification {
     pub timeout_in_seconds: std::option::Option<i32>,
 }
 impl FulfillmentUpdatesSpecification {
-    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
     }
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
-    pub fn start_response(
-        &self,
-    ) -> std::option::Option<&crate::model::FulfillmentStartResponseSpecification> {
+    pub fn start_response(&self) -> std::option::Option<& crate::model::FulfillmentStartResponseSpecification> {
         self.start_response.as_ref()
     }
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
-    pub fn update_response(
-        &self,
-    ) -> std::option::Option<&crate::model::FulfillmentUpdateResponseSpecification> {
+    pub fn update_response(&self) -> std::option::Option<& crate::model::FulfillmentUpdateResponseSpecification> {
         self.update_response.as_ref()
     }
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
@@ -6268,61 +5763,44 @@ impl FulfillmentUpdatesSpecification {
 }
 /// See [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification).
 pub mod fulfillment_updates_specification {
-
+    
     /// A builder for [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active: std::option::Option<bool>,
-        pub(crate) start_response:
-            std::option::Option<crate::model::FulfillmentStartResponseSpecification>,
-        pub(crate) update_response:
-            std::option::Option<crate::model::FulfillmentUpdateResponseSpecification>,
+        pub(crate) start_response: std::option::Option<crate::model::FulfillmentStartResponseSpecification>,
+        pub(crate) update_response: std::option::Option<crate::model::FulfillmentUpdateResponseSpecification>,
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+        /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
         /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
         pub fn active(mut self, input: bool) -> Self {
             self.active = Some(input);
             self
         }
-        /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+        /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p> 
         /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
-        pub fn start_response(
-            mut self,
-            input: crate::model::FulfillmentStartResponseSpecification,
-        ) -> Self {
+        pub fn start_response(mut self, input: crate::model::FulfillmentStartResponseSpecification) -> Self {
             self.start_response = Some(input);
             self
         }
         /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
-        pub fn set_start_response(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentStartResponseSpecification>,
-        ) -> Self {
-            self.start_response = input;
-            self
+        pub fn set_start_response(mut self, input: std::option::Option<crate::model::FulfillmentStartResponseSpecification>) -> Self {
+            self.start_response = input; self
         }
         /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
-        pub fn update_response(
-            mut self,
-            input: crate::model::FulfillmentUpdateResponseSpecification,
-        ) -> Self {
+        pub fn update_response(mut self, input: crate::model::FulfillmentUpdateResponseSpecification) -> Self {
             self.update_response = Some(input);
             self
         }
         /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
-        pub fn set_update_response(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentUpdateResponseSpecification>,
-        ) -> Self {
-            self.update_response = input;
-            self
+        pub fn set_update_response(mut self, input: std::option::Option<crate::model::FulfillmentUpdateResponseSpecification>) -> Self {
+            self.update_response = input; self
         }
         /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
         pub fn timeout_in_seconds(mut self, input: i32) -> Self {
@@ -6331,19 +5809,24 @@ pub mod fulfillment_updates_specification {
         }
         /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_seconds = input;
-            self
+            self.timeout_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification).
         pub fn build(self) -> crate::model::FulfillmentUpdatesSpecification {
             crate::model::FulfillmentUpdatesSpecification {
-                active: self.active,
-                start_response: self.start_response,
-                update_response: self.update_response,
-                timeout_in_seconds: self.timeout_in_seconds,
+                active: self.active
+                ,
+                start_response: self.start_response
+                ,
+                update_response: self.update_response
+                ,
+                timeout_in_seconds: self.timeout_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl FulfillmentUpdatesSpecification {
     /// Creates a new builder-style object to manufacture [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification).
@@ -6355,7 +5838,7 @@ impl FulfillmentUpdatesSpecification {
 /// <p>Provides settings for a message that is sent periodically to the user while a fulfillment Lambda function is running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FulfillmentUpdateResponseSpecification {
+pub struct FulfillmentUpdateResponseSpecification  {
     /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
     #[doc(hidden)]
     pub frequency_in_seconds: std::option::Option<i32>,
@@ -6372,7 +5855,7 @@ impl FulfillmentUpdateResponseSpecification {
         self.frequency_in_seconds
     }
     /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+    pub fn message_groups(&self) -> std::option::Option<& [crate::model::MessageGroup]> {
         self.message_groups.as_deref()
     }
     /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
@@ -6382,7 +5865,7 @@ impl FulfillmentUpdateResponseSpecification {
 }
 /// See [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification).
 pub mod fulfillment_update_response_specification {
-
+    
     /// A builder for [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6398,8 +5881,7 @@ pub mod fulfillment_update_response_specification {
         }
         /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
         pub fn set_frequency_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.frequency_in_seconds = input;
-            self
+            self.frequency_in_seconds = input; self
         }
         /// Appends an item to `message_groups`.
         ///
@@ -6408,17 +5890,13 @@ pub mod fulfillment_update_response_specification {
         /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
         pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input);
-            self.message_groups = Some(v);
-            self
+                            v.push(input);
+                            self.message_groups = Some(v);
+                            self
         }
         /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
-        pub fn set_message_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-        ) -> Self {
-            self.message_groups = input;
-            self
+        pub fn set_message_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>) -> Self {
+            self.message_groups = input; self
         }
         /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
         pub fn allow_interrupt(mut self, input: bool) -> Self {
@@ -6427,18 +5905,22 @@ pub mod fulfillment_update_response_specification {
         }
         /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
         pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_interrupt = input;
-            self
+            self.allow_interrupt = input; self
         }
         /// Consumes the builder and constructs a [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification).
         pub fn build(self) -> crate::model::FulfillmentUpdateResponseSpecification {
             crate::model::FulfillmentUpdateResponseSpecification {
-                frequency_in_seconds: self.frequency_in_seconds,
-                message_groups: self.message_groups,
-                allow_interrupt: self.allow_interrupt,
+                frequency_in_seconds: self.frequency_in_seconds
+                ,
+                message_groups: self.message_groups
+                ,
+                allow_interrupt: self.allow_interrupt
+                ,
             }
         }
     }
+    
+    
 }
 impl FulfillmentUpdateResponseSpecification {
     /// Creates a new builder-style object to manufacture [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification).
@@ -6450,7 +5932,7 @@ impl FulfillmentUpdateResponseSpecification {
 /// <p>Provides settings for a message that is sent to the user when a fulfillment Lambda function starts running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FulfillmentStartResponseSpecification {
+pub struct FulfillmentStartResponseSpecification  {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
     #[doc(hidden)]
     pub delay_in_seconds: std::option::Option<i32>,
@@ -6467,7 +5949,7 @@ impl FulfillmentStartResponseSpecification {
         self.delay_in_seconds
     }
     /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+    pub fn message_groups(&self) -> std::option::Option<& [crate::model::MessageGroup]> {
         self.message_groups.as_deref()
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
@@ -6477,7 +5959,7 @@ impl FulfillmentStartResponseSpecification {
 }
 /// See [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification).
 pub mod fulfillment_start_response_specification {
-
+    
     /// A builder for [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6493,8 +5975,7 @@ pub mod fulfillment_start_response_specification {
         }
         /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
         pub fn set_delay_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.delay_in_seconds = input;
-            self
+            self.delay_in_seconds = input; self
         }
         /// Appends an item to `message_groups`.
         ///
@@ -6503,17 +5984,13 @@ pub mod fulfillment_start_response_specification {
         /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
         pub fn message_groups(mut self, input: crate::model::MessageGroup) -> Self {
             let mut v = self.message_groups.unwrap_or_default();
-            v.push(input);
-            self.message_groups = Some(v);
-            self
+                            v.push(input);
+                            self.message_groups = Some(v);
+                            self
         }
         /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-        pub fn set_message_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-        ) -> Self {
-            self.message_groups = input;
-            self
+        pub fn set_message_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>) -> Self {
+            self.message_groups = input; self
         }
         /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
         pub fn allow_interrupt(mut self, input: bool) -> Self {
@@ -6522,18 +5999,22 @@ pub mod fulfillment_start_response_specification {
         }
         /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
         pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_interrupt = input;
-            self
+            self.allow_interrupt = input; self
         }
         /// Consumes the builder and constructs a [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification).
         pub fn build(self) -> crate::model::FulfillmentStartResponseSpecification {
             crate::model::FulfillmentStartResponseSpecification {
-                delay_in_seconds: self.delay_in_seconds,
-                message_groups: self.message_groups,
-                allow_interrupt: self.allow_interrupt,
+                delay_in_seconds: self.delay_in_seconds
+                ,
+                message_groups: self.message_groups
+                ,
+                allow_interrupt: self.allow_interrupt
+                ,
             }
         }
     }
+    
+    
 }
 impl FulfillmentStartResponseSpecification {
     /// Creates a new builder-style object to manufacture [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification).
@@ -6545,7 +6026,7 @@ impl FulfillmentStartResponseSpecification {
 /// <p>Provides a setting that determines whether the post-fulfillment response is sent to the user. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete">https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostFulfillmentStatusSpecification {
+pub struct PostFulfillmentStatusSpecification  {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
     pub success_response: std::option::Option<crate::model::ResponseSpecification>,
@@ -6576,51 +6057,45 @@ pub struct PostFulfillmentStatusSpecification {
 }
 impl PostFulfillmentStatusSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn success_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn success_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.success_response.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn failure_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn failure_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.failure_response.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn timeout_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+    pub fn timeout_response(&self) -> std::option::Option<& crate::model::ResponseSpecification> {
         self.timeout_response.as_ref()
     }
     /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
-    pub fn success_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn success_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.success_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
-    pub fn success_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn success_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.success_conditional.as_ref()
     }
     /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn failure_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn failure_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.failure_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn failure_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn failure_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
     /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
-    pub fn timeout_next_step(&self) -> std::option::Option<&crate::model::DialogState> {
+    pub fn timeout_next_step(&self) -> std::option::Option<& crate::model::DialogState> {
         self.timeout_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
-    pub fn timeout_conditional(
-        &self,
-    ) -> std::option::Option<&crate::model::ConditionalSpecification> {
+    pub fn timeout_conditional(&self) -> std::option::Option<& crate::model::ConditionalSpecification> {
         self.timeout_conditional.as_ref()
     }
 }
 /// See [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
 pub mod post_fulfillment_status_specification {
-
+    
     /// A builder for [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6641,12 +6116,8 @@ pub mod post_fulfillment_status_specification {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_success_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.success_response = input;
-            self
+        pub fn set_success_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.success_response = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn failure_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -6654,12 +6125,8 @@ pub mod post_fulfillment_status_specification {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_failure_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.failure_response = input;
-            self
+        pub fn set_failure_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.failure_response = input; self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
         pub fn timeout_response(mut self, input: crate::model::ResponseSpecification) -> Self {
@@ -6667,12 +6134,8 @@ pub mod post_fulfillment_status_specification {
             self
         }
         /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-        pub fn set_timeout_response(
-            mut self,
-            input: std::option::Option<crate::model::ResponseSpecification>,
-        ) -> Self {
-            self.timeout_response = input;
-            self
+        pub fn set_timeout_response(mut self, input: std::option::Option<crate::model::ResponseSpecification>) -> Self {
+            self.timeout_response = input; self
         }
         /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
         pub fn success_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -6680,28 +6143,17 @@ pub mod post_fulfillment_status_specification {
             self
         }
         /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
-        pub fn set_success_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.success_next_step = input;
-            self
+        pub fn set_success_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.success_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
-        pub fn success_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn success_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.success_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
-        pub fn set_success_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.success_conditional = input;
-            self
+        pub fn set_success_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.success_conditional = input; self
         }
         /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
         pub fn failure_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -6709,28 +6161,17 @@ pub mod post_fulfillment_status_specification {
             self
         }
         /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-        pub fn set_failure_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.failure_next_step = input;
-            self
+        pub fn set_failure_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.failure_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-        pub fn failure_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn failure_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.failure_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-        pub fn set_failure_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.failure_conditional = input;
-            self
+        pub fn set_failure_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.failure_conditional = input; self
         }
         /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
         pub fn timeout_next_step(mut self, input: crate::model::DialogState) -> Self {
@@ -6738,44 +6179,44 @@ pub mod post_fulfillment_status_specification {
             self
         }
         /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
-        pub fn set_timeout_next_step(
-            mut self,
-            input: std::option::Option<crate::model::DialogState>,
-        ) -> Self {
-            self.timeout_next_step = input;
-            self
+        pub fn set_timeout_next_step(mut self, input: std::option::Option<crate::model::DialogState>) -> Self {
+            self.timeout_next_step = input; self
         }
         /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
-        pub fn timeout_conditional(
-            mut self,
-            input: crate::model::ConditionalSpecification,
-        ) -> Self {
+        pub fn timeout_conditional(mut self, input: crate::model::ConditionalSpecification) -> Self {
             self.timeout_conditional = Some(input);
             self
         }
         /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
-        pub fn set_timeout_conditional(
-            mut self,
-            input: std::option::Option<crate::model::ConditionalSpecification>,
-        ) -> Self {
-            self.timeout_conditional = input;
-            self
+        pub fn set_timeout_conditional(mut self, input: std::option::Option<crate::model::ConditionalSpecification>) -> Self {
+            self.timeout_conditional = input; self
         }
         /// Consumes the builder and constructs a [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
         pub fn build(self) -> crate::model::PostFulfillmentStatusSpecification {
             crate::model::PostFulfillmentStatusSpecification {
-                success_response: self.success_response,
-                failure_response: self.failure_response,
-                timeout_response: self.timeout_response,
-                success_next_step: self.success_next_step,
-                success_conditional: self.success_conditional,
-                failure_next_step: self.failure_next_step,
-                failure_conditional: self.failure_conditional,
-                timeout_next_step: self.timeout_next_step,
-                timeout_conditional: self.timeout_conditional,
+                success_response: self.success_response
+                ,
+                failure_response: self.failure_response
+                ,
+                timeout_response: self.timeout_response
+                ,
+                success_next_step: self.success_next_step
+                ,
+                success_conditional: self.success_conditional
+                ,
+                failure_next_step: self.failure_next_step
+                ,
+                failure_conditional: self.failure_conditional
+                ,
+                timeout_next_step: self.timeout_next_step
+                ,
+                timeout_conditional: self.timeout_conditional
+                ,
             }
         }
     }
+    
+    
 }
 impl PostFulfillmentStatusSpecification {
     /// Creates a new builder-style object to manufacture [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
@@ -6787,7 +6228,7 @@ impl PostFulfillmentStatusSpecification {
 /// <p>Settings that determine the Lambda function that Amazon Lex uses for processing user responses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DialogCodeHookSettings {
+pub struct DialogCodeHookSettings  {
     /// <p>Enables the dialog code hook so that it processes user requests.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -6800,7 +6241,7 @@ impl DialogCodeHookSettings {
 }
 /// See [`DialogCodeHookSettings`](crate::model::DialogCodeHookSettings).
 pub mod dialog_code_hook_settings {
-
+    
     /// A builder for [`DialogCodeHookSettings`](crate::model::DialogCodeHookSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6814,16 +6255,19 @@ pub mod dialog_code_hook_settings {
         }
         /// <p>Enables the dialog code hook so that it processes user requests.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`DialogCodeHookSettings`](crate::model::DialogCodeHookSettings).
         pub fn build(self) -> crate::model::DialogCodeHookSettings {
             crate::model::DialogCodeHookSettings {
-                enabled: self.enabled.unwrap_or_default(),
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DialogCodeHookSettings {
     /// Creates a new builder-style object to manufacture [`DialogCodeHookSettings`](crate::model::DialogCodeHookSettings).
@@ -6838,9 +6282,9 @@ impl DialogCodeHookSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exportstatus = unimplemented!();
 /// match exportstatus {
@@ -6864,22 +6308,14 @@ impl DialogCodeHookSettings {
 /// Specifically, when `exportstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExportStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -6890,7 +6326,7 @@ pub enum ExportStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportStatus {
     fn from(s: &str) -> Self {
@@ -6899,17 +6335,17 @@ impl std::convert::From<&str> for ExportStatus {
             "Deleting" => ExportStatus::Deleting,
             "Failed" => ExportStatus::Failed,
             "InProgress" => ExportStatus::InProgress,
-            other => ExportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExportStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExportStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExportStatus::from(s))
+                }
+            }
 impl ExportStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6918,12 +6354,14 @@ impl ExportStatus {
             ExportStatus::Deleting => "Deleting",
             ExportStatus::Failed => "Failed",
             ExportStatus::InProgress => "InProgress",
-            ExportStatus::Unknown(value) => value.as_str(),
+            ExportStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Deleting", "Failed", "InProgress"]
+        &[
+            "Completed", "Deleting", "Failed", "InProgress"
+        ]
     }
 }
 impl AsRef<str> for ExportStatus {
@@ -6938,9 +6376,9 @@ impl AsRef<str> for ExportStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importexportfileformat = unimplemented!();
 /// match importexportfileformat {
@@ -6962,60 +6400,52 @@ impl AsRef<str> for ExportStatus {
 /// Specifically, when `importexportfileformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportExportFileFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportExportFileFormat {
     #[allow(missing_docs)] // documentation missing in model
     LexJson,
     #[allow(missing_docs)] // documentation missing in model
     Tsv,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportExportFileFormat {
     fn from(s: &str) -> Self {
         match s {
             "LexJson" => ImportExportFileFormat::LexJson,
             "TSV" => ImportExportFileFormat::Tsv,
-            other => {
-                ImportExportFileFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImportExportFileFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportExportFileFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportExportFileFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportExportFileFormat::from(s))
+                }
+            }
 impl ImportExportFileFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportExportFileFormat::LexJson => "LexJson",
             ImportExportFileFormat::Tsv => "TSV",
-            ImportExportFileFormat::Unknown(value) => value.as_str(),
+            ImportExportFileFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LexJson", "TSV"]
+        &[
+            "LexJson", "TSV"
+        ]
     }
 }
 impl AsRef<str> for ImportExportFileFormat {
@@ -7027,110 +6457,83 @@ impl AsRef<str> for ImportExportFileFormat {
 /// <p>Provides information about the bot or bot locale that you want to export. You can specify the <code>botExportSpecification</code> or the <code>botLocaleExportSpecification</code>, but not both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportResourceSpecification {
+pub struct ExportResourceSpecification  {
     /// <p>Parameters for exporting a bot.</p>
     #[doc(hidden)]
     pub bot_export_specification: std::option::Option<crate::model::BotExportSpecification>,
     /// <p>Parameters for exporting a bot locale.</p>
     #[doc(hidden)]
-    pub bot_locale_export_specification:
-        std::option::Option<crate::model::BotLocaleExportSpecification>,
+    pub bot_locale_export_specification: std::option::Option<crate::model::BotLocaleExportSpecification>,
     /// <p>The parameters required to export a custom vocabulary.</p>
     #[doc(hidden)]
-    pub custom_vocabulary_export_specification:
-        std::option::Option<crate::model::CustomVocabularyExportSpecification>,
+    pub custom_vocabulary_export_specification: std::option::Option<crate::model::CustomVocabularyExportSpecification>,
 }
 impl ExportResourceSpecification {
     /// <p>Parameters for exporting a bot.</p>
-    pub fn bot_export_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::BotExportSpecification> {
+    pub fn bot_export_specification(&self) -> std::option::Option<& crate::model::BotExportSpecification> {
         self.bot_export_specification.as_ref()
     }
     /// <p>Parameters for exporting a bot locale.</p>
-    pub fn bot_locale_export_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::BotLocaleExportSpecification> {
+    pub fn bot_locale_export_specification(&self) -> std::option::Option<& crate::model::BotLocaleExportSpecification> {
         self.bot_locale_export_specification.as_ref()
     }
     /// <p>The parameters required to export a custom vocabulary.</p>
-    pub fn custom_vocabulary_export_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomVocabularyExportSpecification> {
+    pub fn custom_vocabulary_export_specification(&self) -> std::option::Option<& crate::model::CustomVocabularyExportSpecification> {
         self.custom_vocabulary_export_specification.as_ref()
     }
 }
 /// See [`ExportResourceSpecification`](crate::model::ExportResourceSpecification).
 pub mod export_resource_specification {
-
+    
     /// A builder for [`ExportResourceSpecification`](crate::model::ExportResourceSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bot_export_specification:
-            std::option::Option<crate::model::BotExportSpecification>,
-        pub(crate) bot_locale_export_specification:
-            std::option::Option<crate::model::BotLocaleExportSpecification>,
-        pub(crate) custom_vocabulary_export_specification:
-            std::option::Option<crate::model::CustomVocabularyExportSpecification>,
+        pub(crate) bot_export_specification: std::option::Option<crate::model::BotExportSpecification>,
+        pub(crate) bot_locale_export_specification: std::option::Option<crate::model::BotLocaleExportSpecification>,
+        pub(crate) custom_vocabulary_export_specification: std::option::Option<crate::model::CustomVocabularyExportSpecification>,
     }
     impl Builder {
         /// <p>Parameters for exporting a bot.</p>
-        pub fn bot_export_specification(
-            mut self,
-            input: crate::model::BotExportSpecification,
-        ) -> Self {
+        pub fn bot_export_specification(mut self, input: crate::model::BotExportSpecification) -> Self {
             self.bot_export_specification = Some(input);
             self
         }
         /// <p>Parameters for exporting a bot.</p>
-        pub fn set_bot_export_specification(
-            mut self,
-            input: std::option::Option<crate::model::BotExportSpecification>,
-        ) -> Self {
-            self.bot_export_specification = input;
-            self
+        pub fn set_bot_export_specification(mut self, input: std::option::Option<crate::model::BotExportSpecification>) -> Self {
+            self.bot_export_specification = input; self
         }
         /// <p>Parameters for exporting a bot locale.</p>
-        pub fn bot_locale_export_specification(
-            mut self,
-            input: crate::model::BotLocaleExportSpecification,
-        ) -> Self {
+        pub fn bot_locale_export_specification(mut self, input: crate::model::BotLocaleExportSpecification) -> Self {
             self.bot_locale_export_specification = Some(input);
             self
         }
         /// <p>Parameters for exporting a bot locale.</p>
-        pub fn set_bot_locale_export_specification(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleExportSpecification>,
-        ) -> Self {
-            self.bot_locale_export_specification = input;
-            self
+        pub fn set_bot_locale_export_specification(mut self, input: std::option::Option<crate::model::BotLocaleExportSpecification>) -> Self {
+            self.bot_locale_export_specification = input; self
         }
         /// <p>The parameters required to export a custom vocabulary.</p>
-        pub fn custom_vocabulary_export_specification(
-            mut self,
-            input: crate::model::CustomVocabularyExportSpecification,
-        ) -> Self {
+        pub fn custom_vocabulary_export_specification(mut self, input: crate::model::CustomVocabularyExportSpecification) -> Self {
             self.custom_vocabulary_export_specification = Some(input);
             self
         }
         /// <p>The parameters required to export a custom vocabulary.</p>
-        pub fn set_custom_vocabulary_export_specification(
-            mut self,
-            input: std::option::Option<crate::model::CustomVocabularyExportSpecification>,
-        ) -> Self {
-            self.custom_vocabulary_export_specification = input;
-            self
+        pub fn set_custom_vocabulary_export_specification(mut self, input: std::option::Option<crate::model::CustomVocabularyExportSpecification>) -> Self {
+            self.custom_vocabulary_export_specification = input; self
         }
         /// Consumes the builder and constructs a [`ExportResourceSpecification`](crate::model::ExportResourceSpecification).
         pub fn build(self) -> crate::model::ExportResourceSpecification {
             crate::model::ExportResourceSpecification {
-                bot_export_specification: self.bot_export_specification,
-                bot_locale_export_specification: self.bot_locale_export_specification,
-                custom_vocabulary_export_specification: self.custom_vocabulary_export_specification,
+                bot_export_specification: self.bot_export_specification
+                ,
+                bot_locale_export_specification: self.bot_locale_export_specification
+                ,
+                custom_vocabulary_export_specification: self.custom_vocabulary_export_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportResourceSpecification {
     /// Creates a new builder-style object to manufacture [`ExportResourceSpecification`](crate::model::ExportResourceSpecification).
@@ -7142,7 +6545,7 @@ impl ExportResourceSpecification {
 /// <p>Provides the parameters required for exporting a custom vocabulary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomVocabularyExportSpecification {
+pub struct CustomVocabularyExportSpecification  {
     /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -7155,21 +6558,21 @@ pub struct CustomVocabularyExportSpecification {
 }
 impl CustomVocabularyExportSpecification {
     /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the custom vocabulary to export.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 /// See [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification).
 pub mod custom_vocabulary_export_specification {
-
+    
     /// A builder for [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7185,8 +6588,7 @@ pub mod custom_vocabulary_export_specification {
         }
         /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that contains the custom vocabulary to export.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7195,8 +6597,7 @@ pub mod custom_vocabulary_export_specification {
         }
         /// <p>The version of the bot that contains the custom vocabulary to export.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7205,18 +6606,22 @@ pub mod custom_vocabulary_export_specification {
         }
         /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Consumes the builder and constructs a [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification).
         pub fn build(self) -> crate::model::CustomVocabularyExportSpecification {
             crate::model::CustomVocabularyExportSpecification {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomVocabularyExportSpecification {
     /// Creates a new builder-style object to manufacture [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification).
@@ -7228,7 +6633,7 @@ impl CustomVocabularyExportSpecification {
 /// <p>Provides the bot locale parameters required for exporting a bot locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleExportSpecification {
+pub struct BotLocaleExportSpecification  {
     /// <p>The identifier of the bot to create the locale for.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -7241,21 +6646,21 @@ pub struct BotLocaleExportSpecification {
 }
 impl BotLocaleExportSpecification {
     /// <p>The identifier of the bot to create the locale for.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to export.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 /// See [`BotLocaleExportSpecification`](crate::model::BotLocaleExportSpecification).
 pub mod bot_locale_export_specification {
-
+    
     /// A builder for [`BotLocaleExportSpecification`](crate::model::BotLocaleExportSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7271,8 +6676,7 @@ pub mod bot_locale_export_specification {
         }
         /// <p>The identifier of the bot to create the locale for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot to export.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7281,8 +6685,7 @@ pub mod bot_locale_export_specification {
         }
         /// <p>The version of the bot to export.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7291,18 +6694,22 @@ pub mod bot_locale_export_specification {
         }
         /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Consumes the builder and constructs a [`BotLocaleExportSpecification`](crate::model::BotLocaleExportSpecification).
         pub fn build(self) -> crate::model::BotLocaleExportSpecification {
             crate::model::BotLocaleExportSpecification {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
             }
         }
     }
+    
+    
 }
 impl BotLocaleExportSpecification {
     /// Creates a new builder-style object to manufacture [`BotLocaleExportSpecification`](crate::model::BotLocaleExportSpecification).
@@ -7314,7 +6721,7 @@ impl BotLocaleExportSpecification {
 /// <p>Provides the identity of a the bot that was exported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotExportSpecification {
+pub struct BotExportSpecification  {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -7324,17 +6731,17 @@ pub struct BotExportSpecification {
 }
 impl BotExportSpecification {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
 }
 /// See [`BotExportSpecification`](crate::model::BotExportSpecification).
 pub mod bot_export_specification {
-
+    
     /// A builder for [`BotExportSpecification`](crate::model::BotExportSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7349,8 +6756,7 @@ pub mod bot_export_specification {
         }
         /// <p>The identifier of the bot assigned by Amazon Lex.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7359,17 +6765,20 @@ pub mod bot_export_specification {
         }
         /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// Consumes the builder and constructs a [`BotExportSpecification`](crate::model::BotExportSpecification).
         pub fn build(self) -> crate::model::BotExportSpecification {
             crate::model::BotExportSpecification {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
             }
         }
     }
+    
+    
 }
 impl BotExportSpecification {
     /// Creates a new builder-style object to manufacture [`BotExportSpecification`](crate::model::BotExportSpecification).
@@ -7381,7 +6790,7 @@ impl BotExportSpecification {
 /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation, as well as the KMS key ARN used to encrypt the associated metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EncryptionSetting {
+pub struct EncryptionSetting  {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
@@ -7394,36 +6803,30 @@ pub struct EncryptionSetting {
 }
 impl EncryptionSetting {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
-    pub fn bot_locale_export_password(&self) -> std::option::Option<&str> {
+    pub fn bot_locale_export_password(&self) -> std::option::Option<& str> {
         self.bot_locale_export_password.as_deref()
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
-    pub fn associated_transcripts_password(&self) -> std::option::Option<&str> {
+    pub fn associated_transcripts_password(&self) -> std::option::Option<& str> {
         self.associated_transcripts_password.as_deref()
     }
 }
-impl std::fmt::Debug for EncryptionSetting {
+impl  std::fmt::Debug for EncryptionSetting  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionSetting");
         formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field(
-            "bot_locale_export_password",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "associated_transcripts_password",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("bot_locale_export_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("associated_transcripts_password", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`EncryptionSetting`](crate::model::EncryptionSetting).
 pub mod encryption_setting {
-
+    
     /// A builder for [`EncryptionSetting`](crate::model::EncryptionSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7439,8 +6842,7 @@ pub mod encryption_setting {
         }
         /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The password used to encrypt the recommended bot recommendation file.</p>
         pub fn bot_locale_export_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7448,35 +6850,27 @@ pub mod encryption_setting {
             self
         }
         /// <p>The password used to encrypt the recommended bot recommendation file.</p>
-        pub fn set_bot_locale_export_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_locale_export_password = input;
-            self
+        pub fn set_bot_locale_export_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_locale_export_password = input; self
         }
         /// <p>The password used to encrypt the associated transcript file.</p>
-        pub fn associated_transcripts_password(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn associated_transcripts_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.associated_transcripts_password = Some(input.into());
             self
         }
         /// <p>The password used to encrypt the associated transcript file.</p>
-        pub fn set_associated_transcripts_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.associated_transcripts_password = input;
-            self
+        pub fn set_associated_transcripts_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.associated_transcripts_password = input; self
         }
         /// Consumes the builder and constructs a [`EncryptionSetting`](crate::model::EncryptionSetting).
         pub fn build(self) -> crate::model::EncryptionSetting {
             crate::model::EncryptionSetting {
-                kms_key_arn: self.kms_key_arn,
-                bot_locale_export_password: self.bot_locale_export_password,
-                associated_transcripts_password: self.associated_transcripts_password,
+                kms_key_arn: self.kms_key_arn
+                ,
+                bot_locale_export_password: self.bot_locale_export_password
+                ,
+                associated_transcripts_password: self.associated_transcripts_password
+                ,
             }
         }
     }
@@ -7484,17 +6878,13 @@ pub mod encryption_setting {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("kms_key_arn", &self.kms_key_arn);
-            formatter.field(
-                "bot_locale_export_password",
-                &"*** Sensitive Data Redacted ***",
-            );
-            formatter.field(
-                "associated_transcripts_password",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("bot_locale_export_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("associated_transcripts_password", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl EncryptionSetting {
     /// Creates a new builder-style object to manufacture [`EncryptionSetting`](crate::model::EncryptionSetting).
@@ -7506,52 +6896,45 @@ impl EncryptionSetting {
 /// <p>Indicates the setting of the location where the transcript is stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TranscriptSourceSetting {
+pub struct TranscriptSourceSetting  {
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
     #[doc(hidden)]
     pub s3_bucket_transcript_source: std::option::Option<crate::model::S3BucketTranscriptSource>,
 }
 impl TranscriptSourceSetting {
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
-    pub fn s3_bucket_transcript_source(
-        &self,
-    ) -> std::option::Option<&crate::model::S3BucketTranscriptSource> {
+    pub fn s3_bucket_transcript_source(&self) -> std::option::Option<& crate::model::S3BucketTranscriptSource> {
         self.s3_bucket_transcript_source.as_ref()
     }
 }
 /// See [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting).
 pub mod transcript_source_setting {
-
+    
     /// A builder for [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) s3_bucket_transcript_source:
-            std::option::Option<crate::model::S3BucketTranscriptSource>,
+        pub(crate) s3_bucket_transcript_source: std::option::Option<crate::model::S3BucketTranscriptSource>,
     }
     impl Builder {
         /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
-        pub fn s3_bucket_transcript_source(
-            mut self,
-            input: crate::model::S3BucketTranscriptSource,
-        ) -> Self {
+        pub fn s3_bucket_transcript_source(mut self, input: crate::model::S3BucketTranscriptSource) -> Self {
             self.s3_bucket_transcript_source = Some(input);
             self
         }
         /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
-        pub fn set_s3_bucket_transcript_source(
-            mut self,
-            input: std::option::Option<crate::model::S3BucketTranscriptSource>,
-        ) -> Self {
-            self.s3_bucket_transcript_source = input;
-            self
+        pub fn set_s3_bucket_transcript_source(mut self, input: std::option::Option<crate::model::S3BucketTranscriptSource>) -> Self {
+            self.s3_bucket_transcript_source = input; self
         }
         /// Consumes the builder and constructs a [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting).
         pub fn build(self) -> crate::model::TranscriptSourceSetting {
             crate::model::TranscriptSourceSetting {
-                s3_bucket_transcript_source: self.s3_bucket_transcript_source,
+                s3_bucket_transcript_source: self.s3_bucket_transcript_source
+                ,
             }
         }
     }
+    
+    
 }
 impl TranscriptSourceSetting {
     /// Creates a new builder-style object to manufacture [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting).
@@ -7563,7 +6946,7 @@ impl TranscriptSourceSetting {
 /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketTranscriptSource {
+pub struct S3BucketTranscriptSource  {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -7582,29 +6965,29 @@ pub struct S3BucketTranscriptSource {
 }
 impl S3BucketTranscriptSource {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
-    pub fn path_format(&self) -> std::option::Option<&crate::model::PathFormat> {
+    pub fn path_format(&self) -> std::option::Option<& crate::model::PathFormat> {
         self.path_format.as_ref()
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
-    pub fn transcript_format(&self) -> std::option::Option<&crate::model::TranscriptFormat> {
+    pub fn transcript_format(&self) -> std::option::Option<& crate::model::TranscriptFormat> {
         self.transcript_format.as_ref()
     }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
-    pub fn transcript_filter(&self) -> std::option::Option<&crate::model::TranscriptFilter> {
+    pub fn transcript_filter(&self) -> std::option::Option<& crate::model::TranscriptFilter> {
         self.transcript_filter.as_ref()
     }
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
 /// See [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource).
 pub mod s3_bucket_transcript_source {
-
+    
     /// A builder for [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7621,12 +7004,8 @@ pub mod s3_bucket_transcript_source {
             self
         }
         /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
         pub fn path_format(mut self, input: crate::model::PathFormat) -> Self {
@@ -7634,12 +7013,8 @@ pub mod s3_bucket_transcript_source {
             self
         }
         /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
-        pub fn set_path_format(
-            mut self,
-            input: std::option::Option<crate::model::PathFormat>,
-        ) -> Self {
-            self.path_format = input;
-            self
+        pub fn set_path_format(mut self, input: std::option::Option<crate::model::PathFormat>) -> Self {
+            self.path_format = input; self
         }
         /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
         pub fn transcript_format(mut self, input: crate::model::TranscriptFormat) -> Self {
@@ -7647,12 +7022,8 @@ pub mod s3_bucket_transcript_source {
             self
         }
         /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
-        pub fn set_transcript_format(
-            mut self,
-            input: std::option::Option<crate::model::TranscriptFormat>,
-        ) -> Self {
-            self.transcript_format = input;
-            self
+        pub fn set_transcript_format(mut self, input: std::option::Option<crate::model::TranscriptFormat>) -> Self {
+            self.transcript_format = input; self
         }
         /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
         pub fn transcript_filter(mut self, input: crate::model::TranscriptFilter) -> Self {
@@ -7660,12 +7031,8 @@ pub mod s3_bucket_transcript_source {
             self
         }
         /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
-        pub fn set_transcript_filter(
-            mut self,
-            input: std::option::Option<crate::model::TranscriptFilter>,
-        ) -> Self {
-            self.transcript_filter = input;
-            self
+        pub fn set_transcript_filter(mut self, input: std::option::Option<crate::model::TranscriptFilter>) -> Self {
+            self.transcript_filter = input; self
         }
         /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7674,20 +7041,26 @@ pub mod s3_bucket_transcript_source {
         }
         /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource).
         pub fn build(self) -> crate::model::S3BucketTranscriptSource {
             crate::model::S3BucketTranscriptSource {
-                s3_bucket_name: self.s3_bucket_name,
-                path_format: self.path_format,
-                transcript_format: self.transcript_format,
-                transcript_filter: self.transcript_filter,
-                kms_key_arn: self.kms_key_arn,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                path_format: self.path_format
+                ,
+                transcript_format: self.transcript_format
+                ,
+                transcript_filter: self.transcript_filter
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl S3BucketTranscriptSource {
     /// Creates a new builder-style object to manufacture [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource).
@@ -7699,20 +7072,20 @@ impl S3BucketTranscriptSource {
 /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TranscriptFilter {
+pub struct TranscriptFilter  {
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
     #[doc(hidden)]
     pub lex_transcript_filter: std::option::Option<crate::model::LexTranscriptFilter>,
 }
 impl TranscriptFilter {
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
-    pub fn lex_transcript_filter(&self) -> std::option::Option<&crate::model::LexTranscriptFilter> {
+    pub fn lex_transcript_filter(&self) -> std::option::Option<& crate::model::LexTranscriptFilter> {
         self.lex_transcript_filter.as_ref()
     }
 }
 /// See [`TranscriptFilter`](crate::model::TranscriptFilter).
 pub mod transcript_filter {
-
+    
     /// A builder for [`TranscriptFilter`](crate::model::TranscriptFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7725,20 +7098,19 @@ pub mod transcript_filter {
             self
         }
         /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
-        pub fn set_lex_transcript_filter(
-            mut self,
-            input: std::option::Option<crate::model::LexTranscriptFilter>,
-        ) -> Self {
-            self.lex_transcript_filter = input;
-            self
+        pub fn set_lex_transcript_filter(mut self, input: std::option::Option<crate::model::LexTranscriptFilter>) -> Self {
+            self.lex_transcript_filter = input; self
         }
         /// Consumes the builder and constructs a [`TranscriptFilter`](crate::model::TranscriptFilter).
         pub fn build(self) -> crate::model::TranscriptFilter {
             crate::model::TranscriptFilter {
-                lex_transcript_filter: self.lex_transcript_filter,
+                lex_transcript_filter: self.lex_transcript_filter
+                ,
             }
         }
     }
+    
+    
 }
 impl TranscriptFilter {
     /// Creates a new builder-style object to manufacture [`TranscriptFilter`](crate::model::TranscriptFilter).
@@ -7750,20 +7122,20 @@ impl TranscriptFilter {
 /// <p>The object that contains transcript filter details that are associated with a bot recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexTranscriptFilter {
+pub struct LexTranscriptFilter  {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
     #[doc(hidden)]
     pub date_range_filter: std::option::Option<crate::model::DateRangeFilter>,
 }
 impl LexTranscriptFilter {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
-    pub fn date_range_filter(&self) -> std::option::Option<&crate::model::DateRangeFilter> {
+    pub fn date_range_filter(&self) -> std::option::Option<& crate::model::DateRangeFilter> {
         self.date_range_filter.as_ref()
     }
 }
 /// See [`LexTranscriptFilter`](crate::model::LexTranscriptFilter).
 pub mod lex_transcript_filter {
-
+    
     /// A builder for [`LexTranscriptFilter`](crate::model::LexTranscriptFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7776,20 +7148,19 @@ pub mod lex_transcript_filter {
             self
         }
         /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
-        pub fn set_date_range_filter(
-            mut self,
-            input: std::option::Option<crate::model::DateRangeFilter>,
-        ) -> Self {
-            self.date_range_filter = input;
-            self
+        pub fn set_date_range_filter(mut self, input: std::option::Option<crate::model::DateRangeFilter>) -> Self {
+            self.date_range_filter = input; self
         }
         /// Consumes the builder and constructs a [`LexTranscriptFilter`](crate::model::LexTranscriptFilter).
         pub fn build(self) -> crate::model::LexTranscriptFilter {
             crate::model::LexTranscriptFilter {
-                date_range_filter: self.date_range_filter,
+                date_range_filter: self.date_range_filter
+                ,
             }
         }
     }
+    
+    
 }
 impl LexTranscriptFilter {
     /// Creates a new builder-style object to manufacture [`LexTranscriptFilter`](crate::model::LexTranscriptFilter).
@@ -7801,7 +7172,7 @@ impl LexTranscriptFilter {
 /// <p>The object used for specifying the data range that the customer wants Amazon Lex to read through in the input transcripts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateRangeFilter {
+pub struct DateRangeFilter  {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
     #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7811,17 +7182,17 @@ pub struct DateRangeFilter {
 }
 impl DateRangeFilter {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
 /// See [`DateRangeFilter`](crate::model::DateRangeFilter).
 pub mod date_range_filter {
-
+    
     /// A builder for [`DateRangeFilter`](crate::model::DateRangeFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7835,12 +7206,8 @@ pub mod date_range_filter {
             self
         }
         /// <p>A timestamp indicating the start date for the date range filter.</p>
-        pub fn set_start_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date_time = input;
-            self
+        pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date_time = input; self
         }
         /// <p>A timestamp indicating the end date for the date range filter.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7848,21 +7215,21 @@ pub mod date_range_filter {
             self
         }
         /// <p>A timestamp indicating the end date for the date range filter.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DateRangeFilter`](crate::model::DateRangeFilter).
         pub fn build(self) -> crate::model::DateRangeFilter {
             crate::model::DateRangeFilter {
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
+                start_date_time: self.start_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DateRangeFilter {
     /// Creates a new builder-style object to manufacture [`DateRangeFilter`](crate::model::DateRangeFilter).
@@ -7877,9 +7244,9 @@ impl DateRangeFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transcriptformat = unimplemented!();
 /// match transcriptformat {
@@ -7900,54 +7267,48 @@ impl DateRangeFilter {
 /// Specifically, when `transcriptformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TranscriptFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TranscriptFormat {
     #[allow(missing_docs)] // documentation missing in model
     Lex,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TranscriptFormat {
     fn from(s: &str) -> Self {
         match s {
             "Lex" => TranscriptFormat::Lex,
-            other => TranscriptFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TranscriptFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TranscriptFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TranscriptFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TranscriptFormat::from(s))
+                }
+            }
 impl TranscriptFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TranscriptFormat::Lex => "Lex",
-            TranscriptFormat::Unknown(value) => value.as_str(),
+            TranscriptFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Lex"]
+        &[
+            "Lex"
+        ]
     }
 }
 impl AsRef<str> for TranscriptFormat {
@@ -7959,20 +7320,20 @@ impl AsRef<str> for TranscriptFormat {
 /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PathFormat {
+pub struct PathFormat  {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
     #[doc(hidden)]
     pub object_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
-    pub fn object_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_prefixes(&self) -> std::option::Option<& [std::string::String]> {
         self.object_prefixes.as_deref()
     }
 }
 /// See [`PathFormat`](crate::model::PathFormat).
 pub mod path_format {
-
+    
     /// A builder for [`PathFormat`](crate::model::PathFormat).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7986,25 +7347,24 @@ pub mod path_format {
         /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
         pub fn object_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_prefixes.unwrap_or_default();
-            v.push(input.into());
-            self.object_prefixes = Some(v);
-            self
+                            v.push(input.into());
+                            self.object_prefixes = Some(v);
+                            self
         }
         /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
-        pub fn set_object_prefixes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.object_prefixes = input;
-            self
+        pub fn set_object_prefixes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.object_prefixes = input; self
         }
         /// Consumes the builder and constructs a [`PathFormat`](crate::model::PathFormat).
         pub fn build(self) -> crate::model::PathFormat {
             crate::model::PathFormat {
-                object_prefixes: self.object_prefixes,
+                object_prefixes: self.object_prefixes
+                ,
             }
         }
     }
+    
+    
 }
 impl PathFormat {
     /// Creates a new builder-style object to manufacture [`PathFormat`](crate::model::PathFormat).
@@ -8019,9 +7379,9 @@ impl PathFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botrecommendationstatus = unimplemented!();
 /// match botrecommendationstatus {
@@ -8050,22 +7410,14 @@ impl PathFormat {
 /// Specifically, when `botrecommendationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotRecommendationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotRecommendationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -8086,7 +7438,7 @@ pub enum BotRecommendationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotRecommendationStatus {
     fn from(s: &str) -> Self {
@@ -8100,19 +7452,17 @@ impl std::convert::From<&str> for BotRecommendationStatus {
             "Stopped" => BotRecommendationStatus::Stopped,
             "Stopping" => BotRecommendationStatus::Stopping,
             "Updating" => BotRecommendationStatus::Updating,
-            other => BotRecommendationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BotRecommendationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotRecommendationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotRecommendationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotRecommendationStatus::from(s))
+                }
+            }
 impl BotRecommendationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8126,21 +7476,13 @@ impl BotRecommendationStatus {
             BotRecommendationStatus::Stopped => "Stopped",
             BotRecommendationStatus::Stopping => "Stopping",
             BotRecommendationStatus::Updating => "Updating",
-            BotRecommendationStatus::Unknown(value) => value.as_str(),
+            BotRecommendationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Available",
-            "Deleted",
-            "Deleting",
-            "Downloading",
-            "Failed",
-            "Processing",
-            "Stopped",
-            "Stopping",
-            "Updating",
+            "Available", "Deleted", "Deleting", "Downloading", "Failed", "Processing", "Stopped", "Stopping", "Updating"
         ]
     }
 }
@@ -8156,9 +7498,9 @@ impl AsRef<str> for BotRecommendationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botlocalestatus = unimplemented!();
 /// match botlocalestatus {
@@ -8187,22 +7529,14 @@ impl AsRef<str> for BotRecommendationStatus {
 /// Specifically, when `botlocalestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotLocaleStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotLocaleStatus {
     #[allow(missing_docs)] // documentation missing in model
     Building,
@@ -8223,7 +7557,7 @@ pub enum BotLocaleStatus {
     #[allow(missing_docs)] // documentation missing in model
     ReadyExpressTesting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotLocaleStatus {
     fn from(s: &str) -> Self {
@@ -8237,17 +7571,17 @@ impl std::convert::From<&str> for BotLocaleStatus {
             "NotBuilt" => BotLocaleStatus::NotBuilt,
             "Processing" => BotLocaleStatus::Processing,
             "ReadyExpressTesting" => BotLocaleStatus::ReadyExpressTesting,
-            other => BotLocaleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BotLocaleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotLocaleStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotLocaleStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotLocaleStatus::from(s))
+                }
+            }
 impl BotLocaleStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8261,21 +7595,13 @@ impl BotLocaleStatus {
             BotLocaleStatus::NotBuilt => "NotBuilt",
             BotLocaleStatus::Processing => "Processing",
             BotLocaleStatus::ReadyExpressTesting => "ReadyExpressTesting",
-            BotLocaleStatus::Unknown(value) => value.as_str(),
+            BotLocaleStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Building",
-            "Built",
-            "Creating",
-            "Deleting",
-            "Failed",
-            "Importing",
-            "NotBuilt",
-            "Processing",
-            "ReadyExpressTesting",
+            "Building", "Built", "Creating", "Deleting", "Failed", "Importing", "NotBuilt", "Processing", "ReadyExpressTesting"
         ]
     }
 }
@@ -8288,29 +7614,29 @@ impl AsRef<str> for BotLocaleStatus {
 /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceSettings {
+pub struct VoiceSettings  {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
     #[doc(hidden)]
     pub voice_id: std::option::Option<std::string::String>,
-    /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
+    /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p> 
     /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<crate::model::VoiceEngine>,
 }
 impl VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
-    pub fn voice_id(&self) -> std::option::Option<&str> {
+    pub fn voice_id(&self) -> std::option::Option<& str> {
         self.voice_id.as_deref()
     }
-    /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
+    /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p> 
     /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
-    pub fn engine(&self) -> std::option::Option<&crate::model::VoiceEngine> {
+    pub fn engine(&self) -> std::option::Option<& crate::model::VoiceEngine> {
         self.engine.as_ref()
     }
 }
 /// See [`VoiceSettings`](crate::model::VoiceSettings).
 pub mod voice_settings {
-
+    
     /// A builder for [`VoiceSettings`](crate::model::VoiceSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8325,29 +7651,31 @@ pub mod voice_settings {
         }
         /// <p>The identifier of the Amazon Polly voice to use.</p>
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.voice_id = input;
-            self
+            self.voice_id = input; self
         }
-        /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
+        /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p> 
         /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
         pub fn engine(mut self, input: crate::model::VoiceEngine) -> Self {
             self.engine = Some(input);
             self
         }
-        /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
+        /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p> 
         /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
         pub fn set_engine(mut self, input: std::option::Option<crate::model::VoiceEngine>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// Consumes the builder and constructs a [`VoiceSettings`](crate::model::VoiceSettings).
         pub fn build(self) -> crate::model::VoiceSettings {
             crate::model::VoiceSettings {
-                voice_id: self.voice_id,
-                engine: self.engine,
+                voice_id: self.voice_id
+                ,
+                engine: self.engine
+                ,
             }
         }
     }
+    
+    
 }
 impl VoiceSettings {
     /// Creates a new builder-style object to manufacture [`VoiceSettings`](crate::model::VoiceSettings).
@@ -8362,9 +7690,9 @@ impl VoiceSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let voiceengine = unimplemented!();
 /// match voiceengine {
@@ -8386,58 +7714,52 @@ impl VoiceSettings {
 /// Specifically, when `voiceengine` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VoiceEngine::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VoiceEngine {
     #[allow(missing_docs)] // documentation missing in model
     Neural,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VoiceEngine {
     fn from(s: &str) -> Self {
         match s {
             "neural" => VoiceEngine::Neural,
             "standard" => VoiceEngine::Standard,
-            other => VoiceEngine::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VoiceEngine::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VoiceEngine {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VoiceEngine::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VoiceEngine::from(s))
+                }
+            }
 impl VoiceEngine {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VoiceEngine::Neural => "neural",
             VoiceEngine::Standard => "standard",
-            VoiceEngine::Unknown(value) => value.as_str(),
+            VoiceEngine::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["neural", "standard"]
+        &[
+            "neural", "standard"
+        ]
     }
 }
 impl AsRef<str> for VoiceEngine {
@@ -8452,9 +7774,9 @@ impl AsRef<str> for VoiceEngine {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botaliasstatus = unimplemented!();
 /// match botaliasstatus {
@@ -8478,22 +7800,14 @@ impl AsRef<str> for VoiceEngine {
 /// Specifically, when `botaliasstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotAliasStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotAliasStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -8504,7 +7818,7 @@ pub enum BotAliasStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotAliasStatus {
     fn from(s: &str) -> Self {
@@ -8513,17 +7827,17 @@ impl std::convert::From<&str> for BotAliasStatus {
             "Creating" => BotAliasStatus::Creating,
             "Deleting" => BotAliasStatus::Deleting,
             "Failed" => BotAliasStatus::Failed,
-            other => BotAliasStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BotAliasStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotAliasStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotAliasStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotAliasStatus::from(s))
+                }
+            }
 impl BotAliasStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8532,12 +7846,14 @@ impl BotAliasStatus {
             BotAliasStatus::Creating => "Creating",
             BotAliasStatus::Deleting => "Deleting",
             BotAliasStatus::Failed => "Failed",
-            BotAliasStatus::Unknown(value) => value.as_str(),
+            BotAliasStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Available", "Creating", "Deleting", "Failed"]
+        &[
+            "Available", "Creating", "Deleting", "Failed"
+        ]
     }
 }
 impl AsRef<str> for BotAliasStatus {
@@ -8549,7 +7865,7 @@ impl AsRef<str> for BotAliasStatus {
 /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SentimentAnalysisSettings {
+pub struct SentimentAnalysisSettings  {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     #[doc(hidden)]
     pub detect_sentiment: bool,
@@ -8562,7 +7878,7 @@ impl SentimentAnalysisSettings {
 }
 /// See [`SentimentAnalysisSettings`](crate::model::SentimentAnalysisSettings).
 pub mod sentiment_analysis_settings {
-
+    
     /// A builder for [`SentimentAnalysisSettings`](crate::model::SentimentAnalysisSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8576,16 +7892,19 @@ pub mod sentiment_analysis_settings {
         }
         /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn set_detect_sentiment(mut self, input: std::option::Option<bool>) -> Self {
-            self.detect_sentiment = input;
-            self
+            self.detect_sentiment = input; self
         }
         /// Consumes the builder and constructs a [`SentimentAnalysisSettings`](crate::model::SentimentAnalysisSettings).
         pub fn build(self) -> crate::model::SentimentAnalysisSettings {
             crate::model::SentimentAnalysisSettings {
-                detect_sentiment: self.detect_sentiment.unwrap_or_default(),
+                detect_sentiment: self.detect_sentiment
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SentimentAnalysisSettings {
     /// Creates a new builder-style object to manufacture [`SentimentAnalysisSettings`](crate::model::SentimentAnalysisSettings).
@@ -8597,7 +7916,7 @@ impl SentimentAnalysisSettings {
 /// <p>Configures conversation logging that saves audio, text, and metadata for the conversations with your users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConversationLogSettings {
+pub struct ConversationLogSettings  {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
     #[doc(hidden)]
     pub text_log_settings: std::option::Option<std::vec::Vec<crate::model::TextLogSetting>>,
@@ -8607,24 +7926,22 @@ pub struct ConversationLogSettings {
 }
 impl ConversationLogSettings {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    pub fn text_log_settings(&self) -> std::option::Option<&[crate::model::TextLogSetting]> {
+    pub fn text_log_settings(&self) -> std::option::Option<& [crate::model::TextLogSetting]> {
         self.text_log_settings.as_deref()
     }
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    pub fn audio_log_settings(&self) -> std::option::Option<&[crate::model::AudioLogSetting]> {
+    pub fn audio_log_settings(&self) -> std::option::Option<& [crate::model::AudioLogSetting]> {
         self.audio_log_settings.as_deref()
     }
 }
 /// See [`ConversationLogSettings`](crate::model::ConversationLogSettings).
 pub mod conversation_log_settings {
-
+    
     /// A builder for [`ConversationLogSettings`](crate::model::ConversationLogSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) text_log_settings:
-            std::option::Option<std::vec::Vec<crate::model::TextLogSetting>>,
-        pub(crate) audio_log_settings:
-            std::option::Option<std::vec::Vec<crate::model::AudioLogSetting>>,
+        pub(crate) text_log_settings: std::option::Option<std::vec::Vec<crate::model::TextLogSetting>>,
+        pub(crate) audio_log_settings: std::option::Option<std::vec::Vec<crate::model::AudioLogSetting>>,
     }
     impl Builder {
         /// Appends an item to `text_log_settings`.
@@ -8634,17 +7951,13 @@ pub mod conversation_log_settings {
         /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
         pub fn text_log_settings(mut self, input: crate::model::TextLogSetting) -> Self {
             let mut v = self.text_log_settings.unwrap_or_default();
-            v.push(input);
-            self.text_log_settings = Some(v);
-            self
+                            v.push(input);
+                            self.text_log_settings = Some(v);
+                            self
         }
         /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-        pub fn set_text_log_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TextLogSetting>>,
-        ) -> Self {
-            self.text_log_settings = input;
-            self
+        pub fn set_text_log_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::TextLogSetting>>) -> Self {
+            self.text_log_settings = input; self
         }
         /// Appends an item to `audio_log_settings`.
         ///
@@ -8653,26 +7966,26 @@ pub mod conversation_log_settings {
         /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
         pub fn audio_log_settings(mut self, input: crate::model::AudioLogSetting) -> Self {
             let mut v = self.audio_log_settings.unwrap_or_default();
-            v.push(input);
-            self.audio_log_settings = Some(v);
-            self
+                            v.push(input);
+                            self.audio_log_settings = Some(v);
+                            self
         }
         /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-        pub fn set_audio_log_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AudioLogSetting>>,
-        ) -> Self {
-            self.audio_log_settings = input;
-            self
+        pub fn set_audio_log_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::AudioLogSetting>>) -> Self {
+            self.audio_log_settings = input; self
         }
         /// Consumes the builder and constructs a [`ConversationLogSettings`](crate::model::ConversationLogSettings).
         pub fn build(self) -> crate::model::ConversationLogSettings {
             crate::model::ConversationLogSettings {
-                text_log_settings: self.text_log_settings,
-                audio_log_settings: self.audio_log_settings,
+                text_log_settings: self.text_log_settings
+                ,
+                audio_log_settings: self.audio_log_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl ConversationLogSettings {
     /// Creates a new builder-style object to manufacture [`ConversationLogSettings`](crate::model::ConversationLogSettings).
@@ -8684,7 +7997,7 @@ impl ConversationLogSettings {
 /// <p>Settings for logging audio of conversations between Amazon Lex and a user. You specify whether to log audio and the Amazon S3 bucket where the audio file is stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioLogSetting {
+pub struct AudioLogSetting  {
     /// <p>Determines whether audio logging in enabled for the bot.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -8698,13 +8011,13 @@ impl AudioLogSetting {
         self.enabled
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::AudioLogDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::AudioLogDestination> {
         self.destination.as_ref()
     }
 }
 /// See [`AudioLogSetting`](crate::model::AudioLogSetting).
 pub mod audio_log_setting {
-
+    
     /// A builder for [`AudioLogSetting`](crate::model::AudioLogSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8719,8 +8032,7 @@ pub mod audio_log_setting {
         }
         /// <p>Determines whether audio logging in enabled for the bot.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
         pub fn destination(mut self, input: crate::model::AudioLogDestination) -> Self {
@@ -8728,21 +8040,22 @@ pub mod audio_log_setting {
             self
         }
         /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::AudioLogDestination>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::AudioLogDestination>) -> Self {
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`AudioLogSetting`](crate::model::AudioLogSetting).
         pub fn build(self) -> crate::model::AudioLogSetting {
             crate::model::AudioLogSetting {
-                enabled: self.enabled.unwrap_or_default(),
-                destination: self.destination,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl AudioLogSetting {
     /// Creates a new builder-style object to manufacture [`AudioLogSetting`](crate::model::AudioLogSetting).
@@ -8754,20 +8067,20 @@ impl AudioLogSetting {
 /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioLogDestination {
+pub struct AudioLogDestination  {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<crate::model::S3BucketLogDestination>,
 }
 impl AudioLogDestination {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&crate::model::S3BucketLogDestination> {
+    pub fn s3_bucket(&self) -> std::option::Option<& crate::model::S3BucketLogDestination> {
         self.s3_bucket.as_ref()
     }
 }
 /// See [`AudioLogDestination`](crate::model::AudioLogDestination).
 pub mod audio_log_destination {
-
+    
     /// A builder for [`AudioLogDestination`](crate::model::AudioLogDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8780,20 +8093,19 @@ pub mod audio_log_destination {
             self
         }
         /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
-        pub fn set_s3_bucket(
-            mut self,
-            input: std::option::Option<crate::model::S3BucketLogDestination>,
-        ) -> Self {
-            self.s3_bucket = input;
-            self
+        pub fn set_s3_bucket(mut self, input: std::option::Option<crate::model::S3BucketLogDestination>) -> Self {
+            self.s3_bucket = input; self
         }
         /// Consumes the builder and constructs a [`AudioLogDestination`](crate::model::AudioLogDestination).
         pub fn build(self) -> crate::model::AudioLogDestination {
             crate::model::AudioLogDestination {
-                s3_bucket: self.s3_bucket,
+                s3_bucket: self.s3_bucket
+                ,
             }
         }
     }
+    
+    
 }
 impl AudioLogDestination {
     /// Creates a new builder-style object to manufacture [`AudioLogDestination`](crate::model::AudioLogDestination).
@@ -8805,7 +8117,7 @@ impl AudioLogDestination {
 /// <p>Specifies an Amazon S3 bucket for logging audio conversations</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketLogDestination {
+pub struct S3BucketLogDestination  {
     /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
@@ -8818,21 +8130,21 @@ pub struct S3BucketLogDestination {
 }
 impl S3BucketLogDestination {
     /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>The S3 prefix to assign to audio log files.</p>
-    pub fn log_prefix(&self) -> std::option::Option<&str> {
+    pub fn log_prefix(&self) -> std::option::Option<& str> {
         self.log_prefix.as_deref()
     }
 }
 /// See [`S3BucketLogDestination`](crate::model::S3BucketLogDestination).
 pub mod s3_bucket_log_destination {
-
+    
     /// A builder for [`S3BucketLogDestination`](crate::model::S3BucketLogDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8848,8 +8160,7 @@ pub mod s3_bucket_log_destination {
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8857,12 +8168,8 @@ pub mod s3_bucket_log_destination {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.</p>
-        pub fn set_s3_bucket_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_arn = input;
-            self
+        pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_arn = input; self
         }
         /// <p>The S3 prefix to assign to audio log files.</p>
         pub fn log_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8871,18 +8178,22 @@ pub mod s3_bucket_log_destination {
         }
         /// <p>The S3 prefix to assign to audio log files.</p>
         pub fn set_log_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_prefix = input;
-            self
+            self.log_prefix = input; self
         }
         /// Consumes the builder and constructs a [`S3BucketLogDestination`](crate::model::S3BucketLogDestination).
         pub fn build(self) -> crate::model::S3BucketLogDestination {
             crate::model::S3BucketLogDestination {
-                kms_key_arn: self.kms_key_arn,
-                s3_bucket_arn: self.s3_bucket_arn,
-                log_prefix: self.log_prefix,
+                kms_key_arn: self.kms_key_arn
+                ,
+                s3_bucket_arn: self.s3_bucket_arn
+                ,
+                log_prefix: self.log_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl S3BucketLogDestination {
     /// Creates a new builder-style object to manufacture [`S3BucketLogDestination`](crate::model::S3BucketLogDestination).
@@ -8894,7 +8205,7 @@ impl S3BucketLogDestination {
 /// <p>Defines settings to enable text conversation logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextLogSetting {
+pub struct TextLogSetting  {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -8908,13 +8219,13 @@ impl TextLogSetting {
         self.enabled
     }
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::model::TextLogDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::model::TextLogDestination> {
         self.destination.as_ref()
     }
 }
 /// See [`TextLogSetting`](crate::model::TextLogSetting).
 pub mod text_log_setting {
-
+    
     /// A builder for [`TextLogSetting`](crate::model::TextLogSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8929,8 +8240,7 @@ pub mod text_log_setting {
         }
         /// <p>Determines whether conversation logs should be stored for an alias.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
         pub fn destination(mut self, input: crate::model::TextLogDestination) -> Self {
@@ -8938,21 +8248,22 @@ pub mod text_log_setting {
             self
         }
         /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
-        pub fn set_destination(
-            mut self,
-            input: std::option::Option<crate::model::TextLogDestination>,
-        ) -> Self {
-            self.destination = input;
-            self
+        pub fn set_destination(mut self, input: std::option::Option<crate::model::TextLogDestination>) -> Self {
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`TextLogSetting`](crate::model::TextLogSetting).
         pub fn build(self) -> crate::model::TextLogSetting {
             crate::model::TextLogSetting {
-                enabled: self.enabled.unwrap_or_default(),
-                destination: self.destination,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl TextLogSetting {
     /// Creates a new builder-style object to manufacture [`TextLogSetting`](crate::model::TextLogSetting).
@@ -8964,22 +8275,20 @@ impl TextLogSetting {
 /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextLogDestination {
+pub struct TextLogDestination  {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
     #[doc(hidden)]
     pub cloud_watch: std::option::Option<crate::model::CloudWatchLogGroupLogDestination>,
 }
 impl TextLogDestination {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
-    pub fn cloud_watch(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogGroupLogDestination> {
+    pub fn cloud_watch(&self) -> std::option::Option<& crate::model::CloudWatchLogGroupLogDestination> {
         self.cloud_watch.as_ref()
     }
 }
 /// See [`TextLogDestination`](crate::model::TextLogDestination).
 pub mod text_log_destination {
-
+    
     /// A builder for [`TextLogDestination`](crate::model::TextLogDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8987,28 +8296,24 @@ pub mod text_log_destination {
     }
     impl Builder {
         /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
-        pub fn cloud_watch(
-            mut self,
-            input: crate::model::CloudWatchLogGroupLogDestination,
-        ) -> Self {
+        pub fn cloud_watch(mut self, input: crate::model::CloudWatchLogGroupLogDestination) -> Self {
             self.cloud_watch = Some(input);
             self
         }
         /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
-        pub fn set_cloud_watch(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogGroupLogDestination>,
-        ) -> Self {
-            self.cloud_watch = input;
-            self
+        pub fn set_cloud_watch(mut self, input: std::option::Option<crate::model::CloudWatchLogGroupLogDestination>) -> Self {
+            self.cloud_watch = input; self
         }
         /// Consumes the builder and constructs a [`TextLogDestination`](crate::model::TextLogDestination).
         pub fn build(self) -> crate::model::TextLogDestination {
             crate::model::TextLogDestination {
-                cloud_watch: self.cloud_watch,
+                cloud_watch: self.cloud_watch
+                ,
             }
         }
     }
+    
+    
 }
 impl TextLogDestination {
     /// Creates a new builder-style object to manufacture [`TextLogDestination`](crate::model::TextLogDestination).
@@ -9020,7 +8325,7 @@ impl TextLogDestination {
 /// <p>The Amazon CloudWatch Logs log group where the text and metadata logs are delivered. The log group must exist before you enable logging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogGroupLogDestination {
+pub struct CloudWatchLogGroupLogDestination  {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
     #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
@@ -9030,17 +8335,17 @@ pub struct CloudWatchLogGroupLogDestination {
 }
 impl CloudWatchLogGroupLogDestination {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>The prefix of the log stream name within the log group that you specified </p>
-    pub fn log_prefix(&self) -> std::option::Option<&str> {
+    pub fn log_prefix(&self) -> std::option::Option<& str> {
         self.log_prefix.as_deref()
     }
 }
 /// See [`CloudWatchLogGroupLogDestination`](crate::model::CloudWatchLogGroupLogDestination).
 pub mod cloud_watch_log_group_log_destination {
-
+    
     /// A builder for [`CloudWatchLogGroupLogDestination`](crate::model::CloudWatchLogGroupLogDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9054,12 +8359,8 @@ pub mod cloud_watch_log_group_log_destination {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-        pub fn set_cloud_watch_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_log_group_arn = input;
-            self
+        pub fn set_cloud_watch_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_log_group_arn = input; self
         }
         /// <p>The prefix of the log stream name within the log group that you specified </p>
         pub fn log_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9068,17 +8369,20 @@ pub mod cloud_watch_log_group_log_destination {
         }
         /// <p>The prefix of the log stream name within the log group that you specified </p>
         pub fn set_log_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_prefix = input;
-            self
+            self.log_prefix = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogGroupLogDestination`](crate::model::CloudWatchLogGroupLogDestination).
         pub fn build(self) -> crate::model::CloudWatchLogGroupLogDestination {
             crate::model::CloudWatchLogGroupLogDestination {
-                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-                log_prefix: self.log_prefix,
+                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+                ,
+                log_prefix: self.log_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogGroupLogDestination {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogGroupLogDestination`](crate::model::CloudWatchLogGroupLogDestination).
@@ -9090,7 +8394,7 @@ impl CloudWatchLogGroupLogDestination {
 /// <p>Specifies settings that are unique to a locale. For example, you can use different Lambda function depending on the bot's locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotAliasLocaleSettings {
+pub struct BotAliasLocaleSettings  {
     /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -9104,21 +8408,18 @@ impl BotAliasLocaleSettings {
         self.enabled
     }
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
-    pub fn code_hook_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CodeHookSpecification> {
+    pub fn code_hook_specification(&self) -> std::option::Option<& crate::model::CodeHookSpecification> {
         self.code_hook_specification.as_ref()
     }
 }
 /// See [`BotAliasLocaleSettings`](crate::model::BotAliasLocaleSettings).
 pub mod bot_alias_locale_settings {
-
+    
     /// A builder for [`BotAliasLocaleSettings`](crate::model::BotAliasLocaleSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) code_hook_specification:
-            std::option::Option<crate::model::CodeHookSpecification>,
+        pub(crate) code_hook_specification: std::option::Option<crate::model::CodeHookSpecification>,
     }
     impl Builder {
         /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
@@ -9128,33 +8429,30 @@ pub mod bot_alias_locale_settings {
         }
         /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>Specifies the Lambda function that should be used in the locale.</p>
-        pub fn code_hook_specification(
-            mut self,
-            input: crate::model::CodeHookSpecification,
-        ) -> Self {
+        pub fn code_hook_specification(mut self, input: crate::model::CodeHookSpecification) -> Self {
             self.code_hook_specification = Some(input);
             self
         }
         /// <p>Specifies the Lambda function that should be used in the locale.</p>
-        pub fn set_code_hook_specification(
-            mut self,
-            input: std::option::Option<crate::model::CodeHookSpecification>,
-        ) -> Self {
-            self.code_hook_specification = input;
-            self
+        pub fn set_code_hook_specification(mut self, input: std::option::Option<crate::model::CodeHookSpecification>) -> Self {
+            self.code_hook_specification = input; self
         }
         /// Consumes the builder and constructs a [`BotAliasLocaleSettings`](crate::model::BotAliasLocaleSettings).
         pub fn build(self) -> crate::model::BotAliasLocaleSettings {
             crate::model::BotAliasLocaleSettings {
-                enabled: self.enabled.unwrap_or_default(),
-                code_hook_specification: self.code_hook_specification,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                code_hook_specification: self.code_hook_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl BotAliasLocaleSettings {
     /// Creates a new builder-style object to manufacture [`BotAliasLocaleSettings`](crate::model::BotAliasLocaleSettings).
@@ -9166,20 +8464,20 @@ impl BotAliasLocaleSettings {
 /// <p>Contains information about code hooks that Amazon Lex calls during a conversation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeHookSpecification {
+pub struct CodeHookSpecification  {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     #[doc(hidden)]
     pub lambda_code_hook: std::option::Option<crate::model::LambdaCodeHook>,
 }
 impl CodeHookSpecification {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
-    pub fn lambda_code_hook(&self) -> std::option::Option<&crate::model::LambdaCodeHook> {
+    pub fn lambda_code_hook(&self) -> std::option::Option<& crate::model::LambdaCodeHook> {
         self.lambda_code_hook.as_ref()
     }
 }
 /// See [`CodeHookSpecification`](crate::model::CodeHookSpecification).
 pub mod code_hook_specification {
-
+    
     /// A builder for [`CodeHookSpecification`](crate::model::CodeHookSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9192,20 +8490,19 @@ pub mod code_hook_specification {
             self
         }
         /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
-        pub fn set_lambda_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::LambdaCodeHook>,
-        ) -> Self {
-            self.lambda_code_hook = input;
-            self
+        pub fn set_lambda_code_hook(mut self, input: std::option::Option<crate::model::LambdaCodeHook>) -> Self {
+            self.lambda_code_hook = input; self
         }
         /// Consumes the builder and constructs a [`CodeHookSpecification`](crate::model::CodeHookSpecification).
         pub fn build(self) -> crate::model::CodeHookSpecification {
             crate::model::CodeHookSpecification {
-                lambda_code_hook: self.lambda_code_hook,
+                lambda_code_hook: self.lambda_code_hook
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeHookSpecification {
     /// Creates a new builder-style object to manufacture [`CodeHookSpecification`](crate::model::CodeHookSpecification).
@@ -9217,7 +8514,7 @@ impl CodeHookSpecification {
 /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaCodeHook {
+pub struct LambdaCodeHook  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
@@ -9227,17 +8524,17 @@ pub struct LambdaCodeHook {
 }
 impl LambdaCodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> std::option::Option<& str> {
         self.lambda_arn.as_deref()
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
-    pub fn code_hook_interface_version(&self) -> std::option::Option<&str> {
+    pub fn code_hook_interface_version(&self) -> std::option::Option<& str> {
         self.code_hook_interface_version.as_deref()
     }
 }
 /// See [`LambdaCodeHook`](crate::model::LambdaCodeHook).
 pub mod lambda_code_hook {
-
+    
     /// A builder for [`LambdaCodeHook`](crate::model::LambdaCodeHook).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9252,33 +8549,29 @@ pub mod lambda_code_hook {
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lambda_arn = input;
-            self
+            self.lambda_arn = input; self
         }
         /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
-        pub fn code_hook_interface_version(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn code_hook_interface_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_hook_interface_version = Some(input.into());
             self
         }
         /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
-        pub fn set_code_hook_interface_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_hook_interface_version = input;
-            self
+        pub fn set_code_hook_interface_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_hook_interface_version = input; self
         }
         /// Consumes the builder and constructs a [`LambdaCodeHook`](crate::model::LambdaCodeHook).
         pub fn build(self) -> crate::model::LambdaCodeHook {
             crate::model::LambdaCodeHook {
-                lambda_arn: self.lambda_arn,
-                code_hook_interface_version: self.code_hook_interface_version,
+                lambda_arn: self.lambda_arn
+                ,
+                code_hook_interface_version: self.code_hook_interface_version
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaCodeHook {
     /// Creates a new builder-style object to manufacture [`LambdaCodeHook`](crate::model::LambdaCodeHook).
@@ -9293,9 +8586,9 @@ impl LambdaCodeHook {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botstatus = unimplemented!();
 /// match botstatus {
@@ -9322,22 +8615,14 @@ impl LambdaCodeHook {
 /// Specifically, when `botstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -9354,7 +8639,7 @@ pub enum BotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Versioning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotStatus {
     fn from(s: &str) -> Self {
@@ -9366,17 +8651,17 @@ impl std::convert::From<&str> for BotStatus {
             "Importing" => BotStatus::Importing,
             "Inactive" => BotStatus::Inactive,
             "Versioning" => BotStatus::Versioning,
-            other => BotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotStatus::from(s))
+                }
+            }
 impl BotStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9388,19 +8673,13 @@ impl BotStatus {
             BotStatus::Importing => "Importing",
             BotStatus::Inactive => "Inactive",
             BotStatus::Versioning => "Versioning",
-            BotStatus::Unknown(value) => value.as_str(),
+            BotStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Available",
-            "Creating",
-            "Deleting",
-            "Failed",
-            "Importing",
-            "Inactive",
-            "Versioning",
+            "Available", "Creating", "Deleting", "Failed", "Importing", "Inactive", "Versioning"
         ]
     }
 }
@@ -9413,7 +8692,7 @@ impl AsRef<str> for BotStatus {
 /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataPrivacy {
+pub struct DataPrivacy  {
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
     #[doc(hidden)]
     pub child_directed: bool,
@@ -9426,7 +8705,7 @@ impl DataPrivacy {
 }
 /// See [`DataPrivacy`](crate::model::DataPrivacy).
 pub mod data_privacy {
-
+    
     /// A builder for [`DataPrivacy`](crate::model::DataPrivacy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9440,16 +8719,19 @@ pub mod data_privacy {
         }
         /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
         pub fn set_child_directed(mut self, input: std::option::Option<bool>) -> Self {
-            self.child_directed = input;
-            self
+            self.child_directed = input; self
         }
         /// Consumes the builder and constructs a [`DataPrivacy`](crate::model::DataPrivacy).
         pub fn build(self) -> crate::model::DataPrivacy {
             crate::model::DataPrivacy {
-                child_directed: self.child_directed.unwrap_or_default(),
+                child_directed: self.child_directed
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DataPrivacy {
     /// Creates a new builder-style object to manufacture [`DataPrivacy`](crate::model::DataPrivacy).
@@ -9464,9 +8746,9 @@ impl DataPrivacy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importstatus = unimplemented!();
 /// match importstatus {
@@ -9490,22 +8772,14 @@ impl DataPrivacy {
 /// Specifically, when `importstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -9516,7 +8790,7 @@ pub enum ImportStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportStatus {
     fn from(s: &str) -> Self {
@@ -9525,17 +8799,17 @@ impl std::convert::From<&str> for ImportStatus {
             "Deleting" => ImportStatus::Deleting,
             "Failed" => ImportStatus::Failed,
             "InProgress" => ImportStatus::InProgress,
-            other => ImportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportStatus::from(s))
+                }
+            }
 impl ImportStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9544,12 +8818,14 @@ impl ImportStatus {
             ImportStatus::Deleting => "Deleting",
             ImportStatus::Failed => "Failed",
             ImportStatus::InProgress => "InProgress",
-            ImportStatus::Unknown(value) => value.as_str(),
+            ImportStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Deleting", "Failed", "InProgress"]
+        &[
+            "Completed", "Deleting", "Failed", "InProgress"
+        ]
     }
 }
 impl AsRef<str> for ImportStatus {
@@ -9564,9 +8840,9 @@ impl AsRef<str> for ImportStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mergestrategy = unimplemented!();
 /// match mergestrategy {
@@ -9589,22 +8865,14 @@ impl AsRef<str> for ImportStatus {
 /// Specifically, when `mergestrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MergeStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MergeStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Append,
@@ -9613,7 +8881,7 @@ pub enum MergeStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Overwrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MergeStrategy {
     fn from(s: &str) -> Self {
@@ -9621,17 +8889,17 @@ impl std::convert::From<&str> for MergeStrategy {
             "Append" => MergeStrategy::Append,
             "FailOnConflict" => MergeStrategy::FailOnConflict,
             "Overwrite" => MergeStrategy::Overwrite,
-            other => MergeStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MergeStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MergeStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MergeStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MergeStrategy::from(s))
+                }
+            }
 impl MergeStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9639,12 +8907,14 @@ impl MergeStrategy {
             MergeStrategy::Append => "Append",
             MergeStrategy::FailOnConflict => "FailOnConflict",
             MergeStrategy::Overwrite => "Overwrite",
-            MergeStrategy::Unknown(value) => value.as_str(),
+            MergeStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Append", "FailOnConflict", "Overwrite"]
+        &[
+            "Append", "FailOnConflict", "Overwrite"
+        ]
     }
 }
 impl AsRef<str> for MergeStrategy {
@@ -9656,110 +8926,83 @@ impl AsRef<str> for MergeStrategy {
 /// <p>Provides information about the bot or bot locale that you want to import. You can specify the <code>botImportSpecification</code> or the <code>botLocaleImportSpecification</code>, but not both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportResourceSpecification {
+pub struct ImportResourceSpecification  {
     /// <p>Parameters for importing a bot.</p>
     #[doc(hidden)]
     pub bot_import_specification: std::option::Option<crate::model::BotImportSpecification>,
     /// <p>Parameters for importing a bot locale.</p>
     #[doc(hidden)]
-    pub bot_locale_import_specification:
-        std::option::Option<crate::model::BotLocaleImportSpecification>,
+    pub bot_locale_import_specification: std::option::Option<crate::model::BotLocaleImportSpecification>,
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
     #[doc(hidden)]
-    pub custom_vocabulary_import_specification:
-        std::option::Option<crate::model::CustomVocabularyImportSpecification>,
+    pub custom_vocabulary_import_specification: std::option::Option<crate::model::CustomVocabularyImportSpecification>,
 }
 impl ImportResourceSpecification {
     /// <p>Parameters for importing a bot.</p>
-    pub fn bot_import_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::BotImportSpecification> {
+    pub fn bot_import_specification(&self) -> std::option::Option<& crate::model::BotImportSpecification> {
         self.bot_import_specification.as_ref()
     }
     /// <p>Parameters for importing a bot locale.</p>
-    pub fn bot_locale_import_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::BotLocaleImportSpecification> {
+    pub fn bot_locale_import_specification(&self) -> std::option::Option<& crate::model::BotLocaleImportSpecification> {
         self.bot_locale_import_specification.as_ref()
     }
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
-    pub fn custom_vocabulary_import_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomVocabularyImportSpecification> {
+    pub fn custom_vocabulary_import_specification(&self) -> std::option::Option<& crate::model::CustomVocabularyImportSpecification> {
         self.custom_vocabulary_import_specification.as_ref()
     }
 }
 /// See [`ImportResourceSpecification`](crate::model::ImportResourceSpecification).
 pub mod import_resource_specification {
-
+    
     /// A builder for [`ImportResourceSpecification`](crate::model::ImportResourceSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bot_import_specification:
-            std::option::Option<crate::model::BotImportSpecification>,
-        pub(crate) bot_locale_import_specification:
-            std::option::Option<crate::model::BotLocaleImportSpecification>,
-        pub(crate) custom_vocabulary_import_specification:
-            std::option::Option<crate::model::CustomVocabularyImportSpecification>,
+        pub(crate) bot_import_specification: std::option::Option<crate::model::BotImportSpecification>,
+        pub(crate) bot_locale_import_specification: std::option::Option<crate::model::BotLocaleImportSpecification>,
+        pub(crate) custom_vocabulary_import_specification: std::option::Option<crate::model::CustomVocabularyImportSpecification>,
     }
     impl Builder {
         /// <p>Parameters for importing a bot.</p>
-        pub fn bot_import_specification(
-            mut self,
-            input: crate::model::BotImportSpecification,
-        ) -> Self {
+        pub fn bot_import_specification(mut self, input: crate::model::BotImportSpecification) -> Self {
             self.bot_import_specification = Some(input);
             self
         }
         /// <p>Parameters for importing a bot.</p>
-        pub fn set_bot_import_specification(
-            mut self,
-            input: std::option::Option<crate::model::BotImportSpecification>,
-        ) -> Self {
-            self.bot_import_specification = input;
-            self
+        pub fn set_bot_import_specification(mut self, input: std::option::Option<crate::model::BotImportSpecification>) -> Self {
+            self.bot_import_specification = input; self
         }
         /// <p>Parameters for importing a bot locale.</p>
-        pub fn bot_locale_import_specification(
-            mut self,
-            input: crate::model::BotLocaleImportSpecification,
-        ) -> Self {
+        pub fn bot_locale_import_specification(mut self, input: crate::model::BotLocaleImportSpecification) -> Self {
             self.bot_locale_import_specification = Some(input);
             self
         }
         /// <p>Parameters for importing a bot locale.</p>
-        pub fn set_bot_locale_import_specification(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleImportSpecification>,
-        ) -> Self {
-            self.bot_locale_import_specification = input;
-            self
+        pub fn set_bot_locale_import_specification(mut self, input: std::option::Option<crate::model::BotLocaleImportSpecification>) -> Self {
+            self.bot_locale_import_specification = input; self
         }
         /// <p>Provides the parameters required for importing a custom vocabulary.</p>
-        pub fn custom_vocabulary_import_specification(
-            mut self,
-            input: crate::model::CustomVocabularyImportSpecification,
-        ) -> Self {
+        pub fn custom_vocabulary_import_specification(mut self, input: crate::model::CustomVocabularyImportSpecification) -> Self {
             self.custom_vocabulary_import_specification = Some(input);
             self
         }
         /// <p>Provides the parameters required for importing a custom vocabulary.</p>
-        pub fn set_custom_vocabulary_import_specification(
-            mut self,
-            input: std::option::Option<crate::model::CustomVocabularyImportSpecification>,
-        ) -> Self {
-            self.custom_vocabulary_import_specification = input;
-            self
+        pub fn set_custom_vocabulary_import_specification(mut self, input: std::option::Option<crate::model::CustomVocabularyImportSpecification>) -> Self {
+            self.custom_vocabulary_import_specification = input; self
         }
         /// Consumes the builder and constructs a [`ImportResourceSpecification`](crate::model::ImportResourceSpecification).
         pub fn build(self) -> crate::model::ImportResourceSpecification {
             crate::model::ImportResourceSpecification {
-                bot_import_specification: self.bot_import_specification,
-                bot_locale_import_specification: self.bot_locale_import_specification,
-                custom_vocabulary_import_specification: self.custom_vocabulary_import_specification,
+                bot_import_specification: self.bot_import_specification
+                ,
+                bot_locale_import_specification: self.bot_locale_import_specification
+                ,
+                custom_vocabulary_import_specification: self.custom_vocabulary_import_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportResourceSpecification {
     /// Creates a new builder-style object to manufacture [`ImportResourceSpecification`](crate::model::ImportResourceSpecification).
@@ -9771,7 +9014,7 @@ impl ImportResourceSpecification {
 /// <p>Provides the parameters required for importing a custom vocabulary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomVocabularyImportSpecification {
+pub struct CustomVocabularyImportSpecification  {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -9784,21 +9027,21 @@ pub struct CustomVocabularyImportSpecification {
 }
 impl CustomVocabularyImportSpecification {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to import the custom vocabulary to.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 /// See [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification).
 pub mod custom_vocabulary_import_specification {
-
+    
     /// A builder for [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9814,8 +9057,7 @@ pub mod custom_vocabulary_import_specification {
         }
         /// <p>The identifier of the bot to import the custom vocabulary to.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot to import the custom vocabulary to.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9824,8 +9066,7 @@ pub mod custom_vocabulary_import_specification {
         }
         /// <p>The version of the bot to import the custom vocabulary to.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9834,18 +9075,22 @@ pub mod custom_vocabulary_import_specification {
         }
         /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// Consumes the builder and constructs a [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification).
         pub fn build(self) -> crate::model::CustomVocabularyImportSpecification {
             crate::model::CustomVocabularyImportSpecification {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomVocabularyImportSpecification {
     /// Creates a new builder-style object to manufacture [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification).
@@ -9857,7 +9102,7 @@ impl CustomVocabularyImportSpecification {
 /// <p>Provides the bot locale parameters required for importing a bot locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleImportSpecification {
+pub struct BotLocaleImportSpecification  {
     /// <p>The identifier of the bot to import the locale to.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -9867,13 +9112,13 @@ pub struct BotLocaleImportSpecification {
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
-    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
-    /// <ul>
-    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li>
-    /// <li> <p> <code>IntentA</code> </p> </li>
-    /// <li> <p> <code>IntentB</code> </p> </li>
-    /// <li> <p> <code>IntentC</code> </p> </li>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p> 
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li> 
+    /// <li> <p> <code>IntentA</code> </p> </li> 
+    /// <li> <p> <code>IntentB</code> </p> </li> 
+    /// <li> <p> <code>IntentC</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub nlu_intent_confidence_threshold: std::option::Option<f64>,
@@ -9883,36 +9128,36 @@ pub struct BotLocaleImportSpecification {
 }
 impl BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
-    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
-    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
-    /// <ul>
-    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li>
-    /// <li> <p> <code>IntentA</code> </p> </li>
-    /// <li> <p> <code>IntentB</code> </p> </li>
-    /// <li> <p> <code>IntentC</code> </p> </li>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p> 
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li> 
+    /// <li> <p> <code>IntentA</code> </p> </li> 
+    /// <li> <p> <code>IntentB</code> </p> </li> 
+    /// <li> <p> <code>IntentC</code> </p> </li> 
     /// </ul>
     pub fn nlu_intent_confidence_threshold(&self) -> std::option::Option<f64> {
         self.nlu_intent_confidence_threshold
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
-    pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
+    pub fn voice_settings(&self) -> std::option::Option<& crate::model::VoiceSettings> {
         self.voice_settings.as_ref()
     }
 }
 /// See [`BotLocaleImportSpecification`](crate::model::BotLocaleImportSpecification).
 pub mod bot_locale_import_specification {
-
+    
     /// A builder for [`BotLocaleImportSpecification`](crate::model::BotLocaleImportSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9930,8 +9175,7 @@ pub mod bot_locale_import_specification {
         }
         /// <p>The identifier of the bot to import the locale to.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9940,8 +9184,7 @@ pub mod bot_locale_import_specification {
         }
         /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9950,35 +9193,30 @@ pub mod bot_locale_import_specification {
         }
         /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
-        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
-        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
-        /// <ul>
-        /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li>
-        /// <li> <p> <code>IntentA</code> </p> </li>
-        /// <li> <p> <code>IntentB</code> </p> </li>
-        /// <li> <p> <code>IntentC</code> </p> </li>
+        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p> 
+        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> 
+        /// <ul> 
+        /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li> 
+        /// <li> <p> <code>IntentA</code> </p> </li> 
+        /// <li> <p> <code>IntentB</code> </p> </li> 
+        /// <li> <p> <code>IntentC</code> </p> </li> 
         /// </ul>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
             self.nlu_intent_confidence_threshold = Some(input);
             self
         }
-        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
-        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
-        /// <ul>
-        /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li>
-        /// <li> <p> <code>IntentA</code> </p> </li>
-        /// <li> <p> <code>IntentB</code> </p> </li>
-        /// <li> <p> <code>IntentC</code> </p> </li>
+        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p> 
+        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> 
+        /// <ul> 
+        /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li> 
+        /// <li> <p> <code>IntentA</code> </p> </li> 
+        /// <li> <p> <code>IntentB</code> </p> </li> 
+        /// <li> <p> <code>IntentC</code> </p> </li> 
         /// </ul>
-        pub fn set_nlu_intent_confidence_threshold(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.nlu_intent_confidence_threshold = input;
-            self
+        pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.nlu_intent_confidence_threshold = input; self
         }
         /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
         pub fn voice_settings(mut self, input: crate::model::VoiceSettings) -> Self {
@@ -9986,24 +9224,27 @@ pub mod bot_locale_import_specification {
             self
         }
         /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
-        pub fn set_voice_settings(
-            mut self,
-            input: std::option::Option<crate::model::VoiceSettings>,
-        ) -> Self {
-            self.voice_settings = input;
-            self
+        pub fn set_voice_settings(mut self, input: std::option::Option<crate::model::VoiceSettings>) -> Self {
+            self.voice_settings = input; self
         }
         /// Consumes the builder and constructs a [`BotLocaleImportSpecification`](crate::model::BotLocaleImportSpecification).
         pub fn build(self) -> crate::model::BotLocaleImportSpecification {
             crate::model::BotLocaleImportSpecification {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-                voice_settings: self.voice_settings,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+                ,
+                voice_settings: self.voice_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl BotLocaleImportSpecification {
     /// Creates a new builder-style object to manufacture [`BotLocaleImportSpecification`](crate::model::BotLocaleImportSpecification).
@@ -10015,7 +9256,7 @@ impl BotLocaleImportSpecification {
 /// <p>Provides the bot parameters required for importing a bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotImportSpecification {
+pub struct BotImportSpecification  {
     /// <p>The name that Amazon Lex should use for the bot.</p>
     #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
@@ -10025,57 +9266,49 @@ pub struct BotImportSpecification {
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
     #[doc(hidden)]
     pub data_privacy: std::option::Option<crate::model::DataPrivacy>,
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
-    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p> 
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> 
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     #[doc(hidden)]
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
     /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     #[doc(hidden)]
-    pub bot_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub bot_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
     #[doc(hidden)]
-    pub test_bot_alias_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub test_bot_alias_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl BotImportSpecification {
     /// <p>The name that Amazon Lex should use for the bot.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
-    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+    pub fn data_privacy(&self) -> std::option::Option<& crate::model::DataPrivacy> {
         self.data_privacy.as_ref()
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
-    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p> 
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> 
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_session_ttl_in_seconds
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn bot_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn bot_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.bot_tags.as_ref()
     }
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub fn test_bot_alias_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn test_bot_alias_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.test_bot_alias_tags.as_ref()
     }
 }
 /// See [`BotImportSpecification`](crate::model::BotImportSpecification).
 pub mod bot_import_specification {
-
+    
     /// A builder for [`BotImportSpecification`](crate::model::BotImportSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10083,12 +9316,8 @@ pub mod bot_import_specification {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) data_privacy: std::option::Option<crate::model::DataPrivacy>,
         pub(crate) idle_session_ttl_in_seconds: std::option::Option<i32>,
-        pub(crate) bot_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) test_bot_alias_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) bot_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) test_bot_alias_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name that Amazon Lex should use for the bot.</p>
@@ -10098,8 +9327,7 @@ pub mod bot_import_specification {
         }
         /// <p>The name that Amazon Lex should use for the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10108,8 +9336,7 @@ pub mod bot_import_specification {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
         pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
@@ -10117,89 +9344,72 @@ pub mod bot_import_specification {
             self
         }
         /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
-        pub fn set_data_privacy(
-            mut self,
-            input: std::option::Option<crate::model::DataPrivacy>,
-        ) -> Self {
-            self.data_privacy = input;
-            self
+        pub fn set_data_privacy(mut self, input: std::option::Option<crate::model::DataPrivacy>) -> Self {
+            self.data_privacy = input; self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
-        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p> 
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> 
         /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
             self.idle_session_ttl_in_seconds = Some(input);
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
-        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p> 
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> 
         /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_session_ttl_in_seconds = input;
-            self
+            self.idle_session_ttl_in_seconds = input; self
         }
         /// Adds a key-value pair to `bot_tags`.
         ///
         /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
         ///
         /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-        pub fn bot_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bot_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.bot_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.bot_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.bot_tags = Some(hash_map);
+                            self
         }
         /// <p>A list of tags to add to the bot. You can only add tags when you import a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-        pub fn set_bot_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.bot_tags = input;
-            self
+        pub fn set_bot_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.bot_tags = input; self
         }
         /// Adds a key-value pair to `test_bot_alias_tags`.
         ///
         /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
         ///
         /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-        pub fn test_bot_alias_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn test_bot_alias_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.test_bot_alias_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.test_bot_alias_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.test_bot_alias_tags = Some(hash_map);
+                            self
         }
         /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you import a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-        pub fn set_test_bot_alias_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.test_bot_alias_tags = input;
-            self
+        pub fn set_test_bot_alias_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.test_bot_alias_tags = input; self
         }
         /// Consumes the builder and constructs a [`BotImportSpecification`](crate::model::BotImportSpecification).
         pub fn build(self) -> crate::model::BotImportSpecification {
             crate::model::BotImportSpecification {
-                bot_name: self.bot_name,
-                role_arn: self.role_arn,
-                data_privacy: self.data_privacy,
-                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-                bot_tags: self.bot_tags,
-                test_bot_alias_tags: self.test_bot_alias_tags,
+                bot_name: self.bot_name
+                ,
+                role_arn: self.role_arn
+                ,
+                data_privacy: self.data_privacy
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                bot_tags: self.bot_tags
+                ,
+                test_bot_alias_tags: self.test_bot_alias_tags
+                ,
             }
         }
     }
+    
+    
 }
 impl BotImportSpecification {
     /// Creates a new builder-style object to manufacture [`BotImportSpecification`](crate::model::BotImportSpecification).
@@ -10211,20 +9421,20 @@ impl BotImportSpecification {
 /// <p>The object containing information that associates the recommended intent/slot type with a conversation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedTranscript {
+pub struct AssociatedTranscript  {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
 }
 impl AssociatedTranscript {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
-    pub fn transcript(&self) -> std::option::Option<&str> {
+    pub fn transcript(&self) -> std::option::Option<& str> {
         self.transcript.as_deref()
     }
 }
 /// See [`AssociatedTranscript`](crate::model::AssociatedTranscript).
 pub mod associated_transcript {
-
+    
     /// A builder for [`AssociatedTranscript`](crate::model::AssociatedTranscript).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10238,16 +9448,18 @@ pub mod associated_transcript {
         }
         /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
         pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.transcript = input;
-            self
+            self.transcript = input; self
         }
         /// Consumes the builder and constructs a [`AssociatedTranscript`](crate::model::AssociatedTranscript).
         pub fn build(self) -> crate::model::AssociatedTranscript {
             crate::model::AssociatedTranscript {
-                transcript: self.transcript,
+                transcript: self.transcript
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociatedTranscript {
     /// Creates a new builder-style object to manufacture [`AssociatedTranscript`](crate::model::AssociatedTranscript).
@@ -10259,7 +9471,7 @@ impl AssociatedTranscript {
 /// <p>Filters to search for the associated transcript.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedTranscriptFilter {
+pub struct AssociatedTranscriptFilter  {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::AssociatedTranscriptFilterName>,
@@ -10269,17 +9481,17 @@ pub struct AssociatedTranscriptFilter {
 }
 impl AssociatedTranscriptFilter {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::AssociatedTranscriptFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::AssociatedTranscriptFilterName> {
         self.name.as_ref()
     }
     /// <p>The values to use to filter the transcript.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter).
 pub mod associated_transcript_filter {
-
+    
     /// A builder for [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10293,12 +9505,8 @@ pub mod associated_transcript_filter {
             self
         }
         /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::AssociatedTranscriptFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::AssociatedTranscriptFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -10307,26 +9515,26 @@ pub mod associated_transcript_filter {
         /// <p>The values to use to filter the transcript.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The values to use to filter the transcript.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter).
         pub fn build(self) -> crate::model::AssociatedTranscriptFilter {
             crate::model::AssociatedTranscriptFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociatedTranscriptFilter {
     /// Creates a new builder-style object to manufacture [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter).
@@ -10341,9 +9549,9 @@ impl AssociatedTranscriptFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let associatedtranscriptfiltername = unimplemented!();
 /// match associatedtranscriptfiltername {
@@ -10365,60 +9573,52 @@ impl AssociatedTranscriptFilter {
 /// Specifically, when `associatedtranscriptfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssociatedTranscriptFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssociatedTranscriptFilterName {
     #[allow(missing_docs)] // documentation missing in model
     IntentId,
     #[allow(missing_docs)] // documentation missing in model
     SlotTypeId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssociatedTranscriptFilterName {
     fn from(s: &str) -> Self {
         match s {
             "IntentId" => AssociatedTranscriptFilterName::IntentId,
             "SlotTypeId" => AssociatedTranscriptFilterName::SlotTypeId,
-            other => AssociatedTranscriptFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AssociatedTranscriptFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssociatedTranscriptFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssociatedTranscriptFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssociatedTranscriptFilterName::from(s))
+                }
+            }
 impl AssociatedTranscriptFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssociatedTranscriptFilterName::IntentId => "IntentId",
             AssociatedTranscriptFilterName::SlotTypeId => "SlotTypeId",
-            AssociatedTranscriptFilterName::Unknown(value) => value.as_str(),
+            AssociatedTranscriptFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IntentId", "SlotTypeId"]
+        &[
+            "IntentId", "SlotTypeId"
+        ]
     }
 }
 impl AsRef<str> for AssociatedTranscriptFilterName {
@@ -10433,9 +9633,9 @@ impl AsRef<str> for AssociatedTranscriptFilterName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let searchorder = unimplemented!();
 /// match searchorder {
@@ -10457,58 +9657,52 @@ impl AsRef<str> for AssociatedTranscriptFilterName {
 /// Specifically, when `searchorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SearchOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SearchOrder {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SearchOrder {
     fn from(s: &str) -> Self {
         match s {
             "Ascending" => SearchOrder::Ascending,
             "Descending" => SearchOrder::Descending,
-            other => SearchOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SearchOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SearchOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SearchOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SearchOrder::from(s))
+                }
+            }
 impl SearchOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SearchOrder::Ascending => "Ascending",
             SearchOrder::Descending => "Descending",
-            SearchOrder::Unknown(value) => value.as_str(),
+            SearchOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Ascending", "Descending"]
+        &[
+            "Ascending", "Descending"
+        ]
     }
 }
 impl AsRef<str> for SearchOrder {
@@ -10520,7 +9714,7 @@ impl AsRef<str> for SearchOrder {
 /// <p>Provides summary information about a slot type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotTypeSummary {
+pub struct SlotTypeSummary  {
     /// <p>The unique identifier assigned to the slot type.</p>
     #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
@@ -10536,49 +9730,49 @@ pub struct SlotTypeSummary {
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates the type of the slot type.</p>
-    /// <ul>
-    /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li>
-    /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
-    /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
+    /// <p>Indicates the type of the slot type.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li> 
+    /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li> 
+    /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub slot_type_category: std::option::Option<crate::model::SlotTypeCategory>,
 }
 impl SlotTypeSummary {
     /// <p>The unique identifier assigned to the slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The name of the slot type.</p>
-    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+    pub fn slot_type_name(&self) -> std::option::Option<& str> {
         self.slot_type_name.as_deref()
     }
     /// <p>The description of the slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If the slot type is derived from a built-on slot type, the name of the parent slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
-    /// <p>Indicates the type of the slot type.</p>
-    /// <ul>
-    /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li>
-    /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
-    /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
+    /// <p>Indicates the type of the slot type.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li> 
+    /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li> 
+    /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li> 
     /// </ul>
-    pub fn slot_type_category(&self) -> std::option::Option<&crate::model::SlotTypeCategory> {
+    pub fn slot_type_category(&self) -> std::option::Option<& crate::model::SlotTypeCategory> {
         self.slot_type_category.as_ref()
     }
 }
 /// See [`SlotTypeSummary`](crate::model::SlotTypeSummary).
 pub mod slot_type_summary {
-
+    
     /// A builder for [`SlotTypeSummary`](crate::model::SlotTypeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10597,8 +9791,7 @@ pub mod slot_type_summary {
         }
         /// <p>The unique identifier assigned to the slot type.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>The name of the slot type.</p>
         pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10606,12 +9799,8 @@ pub mod slot_type_summary {
             self
         }
         /// <p>The name of the slot type.</p>
-        pub fn set_slot_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slot_type_name = input;
-            self
+        pub fn set_slot_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slot_type_name = input; self
         }
         /// <p>The description of the slot type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10620,8 +9809,7 @@ pub mod slot_type_summary {
         }
         /// <p>The description of the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>If the slot type is derived from a built-on slot type, the name of the parent slot type.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10629,12 +9817,8 @@ pub mod slot_type_summary {
             self
         }
         /// <p>If the slot type is derived from a built-on slot type, the name of the parent slot type.</p>
-        pub fn set_parent_slot_type_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_slot_type_signature = input;
-            self
+        pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_slot_type_signature = input; self
         }
         /// <p>A timestamp of the date and time that the slot type was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10642,48 +9826,48 @@ pub mod slot_type_summary {
             self
         }
         /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
-        /// <p>Indicates the type of the slot type.</p>
-        /// <ul>
-        /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li>
-        /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
-        /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
+        /// <p>Indicates the type of the slot type.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li> 
+        /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li> 
+        /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li> 
         /// </ul>
         pub fn slot_type_category(mut self, input: crate::model::SlotTypeCategory) -> Self {
             self.slot_type_category = Some(input);
             self
         }
-        /// <p>Indicates the type of the slot type.</p>
-        /// <ul>
-        /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li>
-        /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
-        /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
+        /// <p>Indicates the type of the slot type.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li> 
+        /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li> 
+        /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li> 
         /// </ul>
-        pub fn set_slot_type_category(
-            mut self,
-            input: std::option::Option<crate::model::SlotTypeCategory>,
-        ) -> Self {
-            self.slot_type_category = input;
-            self
+        pub fn set_slot_type_category(mut self, input: std::option::Option<crate::model::SlotTypeCategory>) -> Self {
+            self.slot_type_category = input; self
         }
         /// Consumes the builder and constructs a [`SlotTypeSummary`](crate::model::SlotTypeSummary).
         pub fn build(self) -> crate::model::SlotTypeSummary {
             crate::model::SlotTypeSummary {
-                slot_type_id: self.slot_type_id,
-                slot_type_name: self.slot_type_name,
-                description: self.description,
-                parent_slot_type_signature: self.parent_slot_type_signature,
-                last_updated_date_time: self.last_updated_date_time,
-                slot_type_category: self.slot_type_category,
+                slot_type_id: self.slot_type_id
+                ,
+                slot_type_name: self.slot_type_name
+                ,
+                description: self.description
+                ,
+                parent_slot_type_signature: self.parent_slot_type_signature
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                slot_type_category: self.slot_type_category
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotTypeSummary {
     /// Creates a new builder-style object to manufacture [`SlotTypeSummary`](crate::model::SlotTypeSummary).
@@ -10698,9 +9882,9 @@ impl SlotTypeSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slottypecategory = unimplemented!();
 /// match slottypecategory {
@@ -10724,22 +9908,14 @@ impl SlotTypeSummary {
 /// Specifically, when `slottypecategory` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotTypeCategory::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotTypeCategory {
     #[allow(missing_docs)] // documentation missing in model
     Composite,
@@ -10750,7 +9926,7 @@ pub enum SlotTypeCategory {
     #[allow(missing_docs)] // documentation missing in model
     ExternalGrammar,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotTypeCategory {
     fn from(s: &str) -> Self {
@@ -10759,17 +9935,17 @@ impl std::convert::From<&str> for SlotTypeCategory {
             "Custom" => SlotTypeCategory::Custom,
             "Extended" => SlotTypeCategory::Extended,
             "ExternalGrammar" => SlotTypeCategory::ExternalGrammar,
-            other => SlotTypeCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SlotTypeCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotTypeCategory {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotTypeCategory::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotTypeCategory::from(s))
+                }
+            }
 impl SlotTypeCategory {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10778,12 +9954,14 @@ impl SlotTypeCategory {
             SlotTypeCategory::Custom => "Custom",
             SlotTypeCategory::Extended => "Extended",
             SlotTypeCategory::ExternalGrammar => "ExternalGrammar",
-            SlotTypeCategory::Unknown(value) => value.as_str(),
+            SlotTypeCategory::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Composite", "Custom", "Extended", "ExternalGrammar"]
+        &[
+            "Composite", "Custom", "Extended", "ExternalGrammar"
+        ]
     }
 }
 impl AsRef<str> for SlotTypeCategory {
@@ -10795,7 +9973,7 @@ impl AsRef<str> for SlotTypeCategory {
 /// <p>Filters the response from the <code>ListSlotTypes</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotTypeFilter {
+pub struct SlotTypeFilter  {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SlotTypeFilterName>,
@@ -10808,21 +9986,21 @@ pub struct SlotTypeFilter {
 }
 impl SlotTypeFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SlotTypeFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SlotTypeFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use to filter the response.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlotTypes</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlotTypes</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::SlotTypeFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::SlotTypeFilterOperator> {
         self.operator.as_ref()
     }
 }
 /// See [`SlotTypeFilter`](crate::model::SlotTypeFilter).
 pub mod slot_type_filter {
-
+    
     /// A builder for [`SlotTypeFilter`](crate::model::SlotTypeFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10837,12 +10015,8 @@ pub mod slot_type_filter {
             self
         }
         /// <p>The name of the field to use for filtering.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SlotTypeFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SlotTypeFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -10851,17 +10025,13 @@ pub mod slot_type_filter {
         /// <p>The value to use to filter the response.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value to use to filter the response.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlotTypes</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlotTypes</code> operation should return aliases that contain the specified value.</p>
         pub fn operator(mut self, input: crate::model::SlotTypeFilterOperator) -> Self {
@@ -10869,22 +10039,23 @@ pub mod slot_type_filter {
             self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlotTypes</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlotTypes</code> operation should return aliases that contain the specified value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::SlotTypeFilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::SlotTypeFilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`SlotTypeFilter`](crate::model::SlotTypeFilter).
         pub fn build(self) -> crate::model::SlotTypeFilter {
             crate::model::SlotTypeFilter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotTypeFilter {
     /// Creates a new builder-style object to manufacture [`SlotTypeFilter`](crate::model::SlotTypeFilter).
@@ -10899,9 +10070,9 @@ impl SlotTypeFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slottypefilteroperator = unimplemented!();
 /// match slottypefilteroperator {
@@ -10923,60 +10094,52 @@ impl SlotTypeFilter {
 /// Specifically, when `slottypefilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotTypeFilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotTypeFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotTypeFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "CO" => SlotTypeFilterOperator::Contains,
             "EQ" => SlotTypeFilterOperator::Equals,
-            other => {
-                SlotTypeFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SlotTypeFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotTypeFilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotTypeFilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotTypeFilterOperator::from(s))
+                }
+            }
 impl SlotTypeFilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotTypeFilterOperator::Contains => "CO",
             SlotTypeFilterOperator::Equals => "EQ",
-            SlotTypeFilterOperator::Unknown(value) => value.as_str(),
+            SlotTypeFilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &[
+            "CO", "EQ"
+        ]
     }
 }
 impl AsRef<str> for SlotTypeFilterOperator {
@@ -10991,9 +10154,9 @@ impl AsRef<str> for SlotTypeFilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slottypefiltername = unimplemented!();
 /// match slottypefiltername {
@@ -11015,60 +10178,52 @@ impl AsRef<str> for SlotTypeFilterOperator {
 /// Specifically, when `slottypefiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotTypeFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotTypeFilterName {
     #[allow(missing_docs)] // documentation missing in model
     ExternalSourceType,
     #[allow(missing_docs)] // documentation missing in model
     SlotTypeName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotTypeFilterName {
     fn from(s: &str) -> Self {
         match s {
             "ExternalSourceType" => SlotTypeFilterName::ExternalSourceType,
             "SlotTypeName" => SlotTypeFilterName::SlotTypeName,
-            other => {
-                SlotTypeFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SlotTypeFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotTypeFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotTypeFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotTypeFilterName::from(s))
+                }
+            }
 impl SlotTypeFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotTypeFilterName::ExternalSourceType => "ExternalSourceType",
             SlotTypeFilterName::SlotTypeName => "SlotTypeName",
-            SlotTypeFilterName::Unknown(value) => value.as_str(),
+            SlotTypeFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ExternalSourceType", "SlotTypeName"]
+        &[
+            "ExternalSourceType", "SlotTypeName"
+        ]
     }
 }
 impl AsRef<str> for SlotTypeFilterName {
@@ -11080,7 +10235,7 @@ impl AsRef<str> for SlotTypeFilterName {
 /// <p>Specifies attributes for sorting a list of slot types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotTypeSortBy {
+pub struct SlotTypeSortBy  {
     /// <p>The attribute to use to sort the list of slot types.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::SlotTypeSortAttribute>,
@@ -11090,17 +10245,17 @@ pub struct SlotTypeSortBy {
 }
 impl SlotTypeSortBy {
     /// <p>The attribute to use to sort the list of slot types.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::SlotTypeSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::SlotTypeSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can say ascending or descending.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`SlotTypeSortBy`](crate::model::SlotTypeSortBy).
 pub mod slot_type_sort_by {
-
+    
     /// A builder for [`SlotTypeSortBy`](crate::model::SlotTypeSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11114,12 +10269,8 @@ pub mod slot_type_sort_by {
             self
         }
         /// <p>The attribute to use to sort the list of slot types.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::SlotTypeSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::SlotTypeSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list. You can say ascending or descending.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -11128,17 +10279,20 @@ pub mod slot_type_sort_by {
         }
         /// <p>The order to sort the list. You can say ascending or descending.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`SlotTypeSortBy`](crate::model::SlotTypeSortBy).
         pub fn build(self) -> crate::model::SlotTypeSortBy {
             crate::model::SlotTypeSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotTypeSortBy {
     /// Creates a new builder-style object to manufacture [`SlotTypeSortBy`](crate::model::SlotTypeSortBy).
@@ -11153,9 +10307,9 @@ impl SlotTypeSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortorder = unimplemented!();
 /// match sortorder {
@@ -11177,58 +10331,52 @@ impl SlotTypeSortBy {
 /// Specifically, when `sortorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortOrder {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
     fn from(s: &str) -> Self {
         match s {
             "Ascending" => SortOrder::Ascending,
             "Descending" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortOrder::from(s))
+                }
+            }
 impl SortOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "Ascending",
             SortOrder::Descending => "Descending",
-            SortOrder::Unknown(value) => value.as_str(),
+            SortOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Ascending", "Descending"]
+        &[
+            "Ascending", "Descending"
+        ]
     }
 }
 impl AsRef<str> for SortOrder {
@@ -11243,9 +10391,9 @@ impl AsRef<str> for SortOrder {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slottypesortattribute = unimplemented!();
 /// match slottypesortattribute {
@@ -11267,60 +10415,52 @@ impl AsRef<str> for SortOrder {
 /// Specifically, when `slottypesortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotTypeSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotTypeSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     LastUpdatedDateTime,
     #[allow(missing_docs)] // documentation missing in model
     SlotTypeName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotTypeSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "LastUpdatedDateTime" => SlotTypeSortAttribute::LastUpdatedDateTime,
             "SlotTypeName" => SlotTypeSortAttribute::SlotTypeName,
-            other => {
-                SlotTypeSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SlotTypeSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotTypeSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotTypeSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotTypeSortAttribute::from(s))
+                }
+            }
 impl SlotTypeSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotTypeSortAttribute::LastUpdatedDateTime => "LastUpdatedDateTime",
             SlotTypeSortAttribute::SlotTypeName => "SlotTypeName",
-            SlotTypeSortAttribute::Unknown(value) => value.as_str(),
+            SlotTypeSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LastUpdatedDateTime", "SlotTypeName"]
+        &[
+            "LastUpdatedDateTime", "SlotTypeName"
+        ]
     }
 }
 impl AsRef<str> for SlotTypeSortAttribute {
@@ -11332,7 +10472,7 @@ impl AsRef<str> for SlotTypeSortAttribute {
 /// <p>Summary information about a slot, a value that the bot elicits from the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotSummary {
+pub struct SlotSummary  {
     /// <p>The unique identifier of the slot.</p>
     #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
@@ -11350,47 +10490,44 @@ pub struct SlotSummary {
     pub slot_type_id: std::option::Option<std::string::String>,
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
     #[doc(hidden)]
-    pub value_elicitation_prompt_specification:
-        std::option::Option<crate::model::PromptSpecification>,
+    pub value_elicitation_prompt_specification: std::option::Option<crate::model::PromptSpecification>,
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SlotSummary {
     /// <p>The unique identifier of the slot.</p>
-    pub fn slot_id(&self) -> std::option::Option<&str> {
+    pub fn slot_id(&self) -> std::option::Option<& str> {
         self.slot_id.as_deref()
     }
     /// <p>The name given to the slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<&str> {
+    pub fn slot_name(&self) -> std::option::Option<& str> {
         self.slot_name.as_deref()
     }
     /// <p>The description of the slot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
-    pub fn slot_constraint(&self) -> std::option::Option<&crate::model::SlotConstraint> {
+    pub fn slot_constraint(&self) -> std::option::Option<& crate::model::SlotConstraint> {
         self.slot_constraint.as_ref()
     }
     /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
-    pub fn value_elicitation_prompt_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::PromptSpecification> {
+    pub fn value_elicitation_prompt_specification(&self) -> std::option::Option<& crate::model::PromptSpecification> {
         self.value_elicitation_prompt_specification.as_ref()
     }
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`SlotSummary`](crate::model::SlotSummary).
 pub mod slot_summary {
-
+    
     /// A builder for [`SlotSummary`](crate::model::SlotSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11399,8 +10536,7 @@ pub mod slot_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) slot_constraint: std::option::Option<crate::model::SlotConstraint>,
         pub(crate) slot_type_id: std::option::Option<std::string::String>,
-        pub(crate) value_elicitation_prompt_specification:
-            std::option::Option<crate::model::PromptSpecification>,
+        pub(crate) value_elicitation_prompt_specification: std::option::Option<crate::model::PromptSpecification>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -11411,8 +10547,7 @@ pub mod slot_summary {
         }
         /// <p>The unique identifier of the slot.</p>
         pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_id = input;
-            self
+            self.slot_id = input; self
         }
         /// <p>The name given to the slot.</p>
         pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11421,8 +10556,7 @@ pub mod slot_summary {
         }
         /// <p>The name given to the slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_name = input;
-            self
+            self.slot_name = input; self
         }
         /// <p>The description of the slot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11431,8 +10565,7 @@ pub mod slot_summary {
         }
         /// <p>The description of the slot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
         pub fn slot_constraint(mut self, input: crate::model::SlotConstraint) -> Self {
@@ -11440,12 +10573,8 @@ pub mod slot_summary {
             self
         }
         /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
-        pub fn set_slot_constraint(
-            mut self,
-            input: std::option::Option<crate::model::SlotConstraint>,
-        ) -> Self {
-            self.slot_constraint = input;
-            self
+        pub fn set_slot_constraint(mut self, input: std::option::Option<crate::model::SlotConstraint>) -> Self {
+            self.slot_constraint = input; self
         }
         /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
         pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11454,24 +10583,16 @@ pub mod slot_summary {
         }
         /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_type_id = input;
-            self
+            self.slot_type_id = input; self
         }
         /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
-        pub fn value_elicitation_prompt_specification(
-            mut self,
-            input: crate::model::PromptSpecification,
-        ) -> Self {
+        pub fn value_elicitation_prompt_specification(mut self, input: crate::model::PromptSpecification) -> Self {
             self.value_elicitation_prompt_specification = Some(input);
             self
         }
         /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
-        pub fn set_value_elicitation_prompt_specification(
-            mut self,
-            input: std::option::Option<crate::model::PromptSpecification>,
-        ) -> Self {
-            self.value_elicitation_prompt_specification = input;
-            self
+        pub fn set_value_elicitation_prompt_specification(mut self, input: std::option::Option<crate::model::PromptSpecification>) -> Self {
+            self.value_elicitation_prompt_specification = input; self
         }
         /// <p>The timestamp of the last date and time that the slot was updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11479,26 +10600,31 @@ pub mod slot_summary {
             self
         }
         /// <p>The timestamp of the last date and time that the slot was updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`SlotSummary`](crate::model::SlotSummary).
         pub fn build(self) -> crate::model::SlotSummary {
             crate::model::SlotSummary {
-                slot_id: self.slot_id,
-                slot_name: self.slot_name,
-                description: self.description,
-                slot_constraint: self.slot_constraint,
-                slot_type_id: self.slot_type_id,
-                value_elicitation_prompt_specification: self.value_elicitation_prompt_specification,
-                last_updated_date_time: self.last_updated_date_time,
+                slot_id: self.slot_id
+                ,
+                slot_name: self.slot_name
+                ,
+                description: self.description
+                ,
+                slot_constraint: self.slot_constraint
+                ,
+                slot_type_id: self.slot_type_id
+                ,
+                value_elicitation_prompt_specification: self.value_elicitation_prompt_specification
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotSummary {
     /// Creates a new builder-style object to manufacture [`SlotSummary`](crate::model::SlotSummary).
@@ -11510,7 +10636,7 @@ impl SlotSummary {
 /// <p>Filters the response from the <code>ListSlots</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotFilter {
+pub struct SlotFilter  {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SlotFilterName>,
@@ -11523,21 +10649,21 @@ pub struct SlotFilter {
 }
 impl SlotFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SlotFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SlotFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use to filter the response.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::SlotFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::SlotFilterOperator> {
         self.operator.as_ref()
     }
 }
 /// See [`SlotFilter`](crate::model::SlotFilter).
 pub mod slot_filter {
-
+    
     /// A builder for [`SlotFilter`](crate::model::SlotFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11552,12 +10678,8 @@ pub mod slot_filter {
             self
         }
         /// <p>The name of the field to use for filtering.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SlotFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SlotFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -11566,17 +10688,13 @@ pub mod slot_filter {
         /// <p>The value to use to filter the response.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value to use to filter the response.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
         pub fn operator(mut self, input: crate::model::SlotFilterOperator) -> Self {
@@ -11584,22 +10702,23 @@ pub mod slot_filter {
             self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::SlotFilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::SlotFilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`SlotFilter`](crate::model::SlotFilter).
         pub fn build(self) -> crate::model::SlotFilter {
             crate::model::SlotFilter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotFilter {
     /// Creates a new builder-style object to manufacture [`SlotFilter`](crate::model::SlotFilter).
@@ -11614,9 +10733,9 @@ impl SlotFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slotfilteroperator = unimplemented!();
 /// match slotfilteroperator {
@@ -11638,60 +10757,52 @@ impl SlotFilter {
 /// Specifically, when `slotfilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotFilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "CO" => SlotFilterOperator::Contains,
             "EQ" => SlotFilterOperator::Equals,
-            other => {
-                SlotFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SlotFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotFilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotFilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotFilterOperator::from(s))
+                }
+            }
 impl SlotFilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotFilterOperator::Contains => "CO",
             SlotFilterOperator::Equals => "EQ",
-            SlotFilterOperator::Unknown(value) => value.as_str(),
+            SlotFilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &[
+            "CO", "EQ"
+        ]
     }
 }
 impl AsRef<str> for SlotFilterOperator {
@@ -11706,9 +10817,9 @@ impl AsRef<str> for SlotFilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slotfiltername = unimplemented!();
 /// match slotfiltername {
@@ -11729,54 +10840,48 @@ impl AsRef<str> for SlotFilterOperator {
 /// Specifically, when `slotfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotFilterName {
     #[allow(missing_docs)] // documentation missing in model
     SlotName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotFilterName {
     fn from(s: &str) -> Self {
         match s {
             "SlotName" => SlotFilterName::SlotName,
-            other => SlotFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SlotFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotFilterName::from(s))
+                }
+            }
 impl SlotFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotFilterName::SlotName => "SlotName",
-            SlotFilterName::Unknown(value) => value.as_str(),
+            SlotFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SlotName"]
+        &[
+            "SlotName"
+        ]
     }
 }
 impl AsRef<str> for SlotFilterName {
@@ -11788,7 +10893,7 @@ impl AsRef<str> for SlotFilterName {
 /// <p>Specifies attributes for sorting a list of bots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotSortBy {
+pub struct SlotSortBy  {
     /// <p>The attribute to use to sort the list.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::SlotSortAttribute>,
@@ -11798,17 +10903,17 @@ pub struct SlotSortBy {
 }
 impl SlotSortBy {
     /// <p>The attribute to use to sort the list.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::SlotSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::SlotSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`SlotSortBy`](crate::model::SlotSortBy).
 pub mod slot_sort_by {
-
+    
     /// A builder for [`SlotSortBy`](crate::model::SlotSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11822,12 +10927,8 @@ pub mod slot_sort_by {
             self
         }
         /// <p>The attribute to use to sort the list.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::SlotSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::SlotSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list. You can choose ascending or descending.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -11836,17 +10937,20 @@ pub mod slot_sort_by {
         }
         /// <p>The order to sort the list. You can choose ascending or descending.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`SlotSortBy`](crate::model::SlotSortBy).
         pub fn build(self) -> crate::model::SlotSortBy {
             crate::model::SlotSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotSortBy {
     /// Creates a new builder-style object to manufacture [`SlotSortBy`](crate::model::SlotSortBy).
@@ -11861,9 +10965,9 @@ impl SlotSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slotsortattribute = unimplemented!();
 /// match slotsortattribute {
@@ -11885,60 +10989,52 @@ impl SlotSortBy {
 /// Specifically, when `slotsortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlotSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlotSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     LastUpdatedDateTime,
     #[allow(missing_docs)] // documentation missing in model
     SlotName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlotSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "LastUpdatedDateTime" => SlotSortAttribute::LastUpdatedDateTime,
             "SlotName" => SlotSortAttribute::SlotName,
-            other => {
-                SlotSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SlotSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SlotSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlotSortAttribute::from(s))
+                }
+            }
 impl SlotSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotSortAttribute::LastUpdatedDateTime => "LastUpdatedDateTime",
             SlotSortAttribute::SlotName => "SlotName",
-            SlotSortAttribute::Unknown(value) => value.as_str(),
+            SlotSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LastUpdatedDateTime", "SlotName"]
+        &[
+            "LastUpdatedDateTime", "SlotName"
+        ]
     }
 }
 impl AsRef<str> for SlotSortAttribute {
@@ -11950,7 +11046,7 @@ impl AsRef<str> for SlotSortAttribute {
 /// <p>An object that contains a summary of a recommended intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendedIntentSummary {
+pub struct RecommendedIntentSummary  {
     /// <p>The unique identifier of a recommended intent associated with the bot recommendation.</p>
     #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
@@ -11963,11 +11059,11 @@ pub struct RecommendedIntentSummary {
 }
 impl RecommendedIntentSummary {
     /// <p>The unique identifier of a recommended intent associated with the bot recommendation.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The name of a recommended intent associated with the bot recommendation.</p>
-    pub fn intent_name(&self) -> std::option::Option<&str> {
+    pub fn intent_name(&self) -> std::option::Option<& str> {
         self.intent_name.as_deref()
     }
     /// <p>The count of sample utterances of a recommended intent that is associated with a bot recommendation.</p>
@@ -11977,7 +11073,7 @@ impl RecommendedIntentSummary {
 }
 /// See [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary).
 pub mod recommended_intent_summary {
-
+    
     /// A builder for [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11993,8 +11089,7 @@ pub mod recommended_intent_summary {
         }
         /// <p>The unique identifier of a recommended intent associated with the bot recommendation.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// <p>The name of a recommended intent associated with the bot recommendation.</p>
         pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12003,8 +11098,7 @@ pub mod recommended_intent_summary {
         }
         /// <p>The name of a recommended intent associated with the bot recommendation.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_name = input;
-            self
+            self.intent_name = input; self
         }
         /// <p>The count of sample utterances of a recommended intent that is associated with a bot recommendation.</p>
         pub fn sample_utterances_count(mut self, input: i32) -> Self {
@@ -12013,18 +11107,22 @@ pub mod recommended_intent_summary {
         }
         /// <p>The count of sample utterances of a recommended intent that is associated with a bot recommendation.</p>
         pub fn set_sample_utterances_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.sample_utterances_count = input;
-            self
+            self.sample_utterances_count = input; self
         }
         /// Consumes the builder and constructs a [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary).
         pub fn build(self) -> crate::model::RecommendedIntentSummary {
             crate::model::RecommendedIntentSummary {
-                intent_id: self.intent_id,
-                intent_name: self.intent_name,
-                sample_utterances_count: self.sample_utterances_count,
+                intent_id: self.intent_id
+                ,
+                intent_name: self.intent_name
+                ,
+                sample_utterances_count: self.sample_utterances_count
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommendedIntentSummary {
     /// Creates a new builder-style object to manufacture [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary).
@@ -12036,7 +11134,7 @@ impl RecommendedIntentSummary {
 /// <p>Summary information about an intent returned by the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentSummary {
+pub struct IntentSummary  {
     /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
     #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
@@ -12061,37 +11159,37 @@ pub struct IntentSummary {
 }
 impl IntentSummary {
     /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The name of the intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<&str> {
+    pub fn intent_name(&self) -> std::option::Option<& str> {
         self.intent_name.as_deref()
     }
     /// <p>The description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
-    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<& [crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<& [crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`IntentSummary`](crate::model::IntentSummary).
 pub mod intent_summary {
-
+    
     /// A builder for [`IntentSummary`](crate::model::IntentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12111,8 +11209,7 @@ pub mod intent_summary {
         }
         /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_id = input;
-            self
+            self.intent_id = input; self
         }
         /// <p>The name of the intent.</p>
         pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12121,8 +11218,7 @@ pub mod intent_summary {
         }
         /// <p>The name of the intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.intent_name = input;
-            self
+            self.intent_name = input; self
         }
         /// <p>The description of the intent.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12131,8 +11227,7 @@ pub mod intent_summary {
         }
         /// <p>The description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12140,12 +11235,8 @@ pub mod intent_summary {
             self
         }
         /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
-        pub fn set_parent_intent_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_intent_signature = input;
-            self
+        pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_intent_signature = input; self
         }
         /// Appends an item to `input_contexts`.
         ///
@@ -12154,17 +11245,13 @@ pub mod intent_summary {
         /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
         pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input);
-            self.input_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.input_contexts = Some(v);
+                            self
         }
         /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
-        pub fn set_input_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-        ) -> Self {
-            self.input_contexts = input;
-            self
+        pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputContext>>) -> Self {
+            self.input_contexts = input; self
         }
         /// Appends an item to `output_contexts`.
         ///
@@ -12173,17 +11260,13 @@ pub mod intent_summary {
         /// <p>The output contexts that are activated when this intent is fulfilled.</p>
         pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input);
-            self.output_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.output_contexts = Some(v);
+                            self
         }
         /// <p>The output contexts that are activated when this intent is fulfilled.</p>
-        pub fn set_output_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-        ) -> Self {
-            self.output_contexts = input;
-            self
+        pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>) -> Self {
+            self.output_contexts = input; self
         }
         /// <p>The timestamp of the date and time that the intent was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12191,26 +11274,31 @@ pub mod intent_summary {
             self
         }
         /// <p>The timestamp of the date and time that the intent was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`IntentSummary`](crate::model::IntentSummary).
         pub fn build(self) -> crate::model::IntentSummary {
             crate::model::IntentSummary {
-                intent_id: self.intent_id,
-                intent_name: self.intent_name,
-                description: self.description,
-                parent_intent_signature: self.parent_intent_signature,
-                input_contexts: self.input_contexts,
-                output_contexts: self.output_contexts,
-                last_updated_date_time: self.last_updated_date_time,
+                intent_id: self.intent_id
+                ,
+                intent_name: self.intent_name
+                ,
+                description: self.description
+                ,
+                parent_intent_signature: self.parent_intent_signature
+                ,
+                input_contexts: self.input_contexts
+                ,
+                output_contexts: self.output_contexts
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl IntentSummary {
     /// Creates a new builder-style object to manufacture [`IntentSummary`](crate::model::IntentSummary).
@@ -12222,7 +11310,7 @@ impl IntentSummary {
 /// <p>Filters the response from the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentFilter {
+pub struct IntentFilter  {
     /// <p>The name of the field to use for the filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::IntentFilterName>,
@@ -12235,21 +11323,21 @@ pub struct IntentFilter {
 }
 impl IntentFilter {
     /// <p>The name of the field to use for the filter.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::IntentFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::IntentFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use for the filter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::IntentFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::IntentFilterOperator> {
         self.operator.as_ref()
     }
 }
 /// See [`IntentFilter`](crate::model::IntentFilter).
 pub mod intent_filter {
-
+    
     /// A builder for [`IntentFilter`](crate::model::IntentFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12264,12 +11352,8 @@ pub mod intent_filter {
             self
         }
         /// <p>The name of the field to use for the filter.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::IntentFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::IntentFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -12278,17 +11362,13 @@ pub mod intent_filter {
         /// <p>The value to use for the filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value to use for the filter.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
         pub fn operator(mut self, input: crate::model::IntentFilterOperator) -> Self {
@@ -12296,22 +11376,23 @@ pub mod intent_filter {
             self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::IntentFilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::IntentFilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`IntentFilter`](crate::model::IntentFilter).
         pub fn build(self) -> crate::model::IntentFilter {
             crate::model::IntentFilter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl IntentFilter {
     /// Creates a new builder-style object to manufacture [`IntentFilter`](crate::model::IntentFilter).
@@ -12326,9 +11407,9 @@ impl IntentFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let intentfilteroperator = unimplemented!();
 /// match intentfilteroperator {
@@ -12350,60 +11431,52 @@ impl IntentFilter {
 /// Specifically, when `intentfilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IntentFilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IntentFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IntentFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "CO" => IntentFilterOperator::Contains,
             "EQ" => IntentFilterOperator::Equals,
-            other => {
-                IntentFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => IntentFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IntentFilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IntentFilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IntentFilterOperator::from(s))
+                }
+            }
 impl IntentFilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IntentFilterOperator::Contains => "CO",
             IntentFilterOperator::Equals => "EQ",
-            IntentFilterOperator::Unknown(value) => value.as_str(),
+            IntentFilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &[
+            "CO", "EQ"
+        ]
     }
 }
 impl AsRef<str> for IntentFilterOperator {
@@ -12418,9 +11491,9 @@ impl AsRef<str> for IntentFilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let intentfiltername = unimplemented!();
 /// match intentfiltername {
@@ -12441,54 +11514,48 @@ impl AsRef<str> for IntentFilterOperator {
 /// Specifically, when `intentfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IntentFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IntentFilterName {
     #[allow(missing_docs)] // documentation missing in model
     IntentName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IntentFilterName {
     fn from(s: &str) -> Self {
         match s {
             "IntentName" => IntentFilterName::IntentName,
-            other => IntentFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IntentFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IntentFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IntentFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IntentFilterName::from(s))
+                }
+            }
 impl IntentFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IntentFilterName::IntentName => "IntentName",
-            IntentFilterName::Unknown(value) => value.as_str(),
+            IntentFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IntentName"]
+        &[
+            "IntentName"
+        ]
     }
 }
 impl AsRef<str> for IntentFilterName {
@@ -12500,7 +11567,7 @@ impl AsRef<str> for IntentFilterName {
 /// <p>Specifies attributes for sorting a list of intents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentSortBy {
+pub struct IntentSortBy  {
     /// <p>The attribute to use to sort the list of intents.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::IntentSortAttribute>,
@@ -12510,17 +11577,17 @@ pub struct IntentSortBy {
 }
 impl IntentSortBy {
     /// <p>The attribute to use to sort the list of intents.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::IntentSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::IntentSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`IntentSortBy`](crate::model::IntentSortBy).
 pub mod intent_sort_by {
-
+    
     /// A builder for [`IntentSortBy`](crate::model::IntentSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12534,12 +11601,8 @@ pub mod intent_sort_by {
             self
         }
         /// <p>The attribute to use to sort the list of intents.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::IntentSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::IntentSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list. You can choose ascending or descending.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -12548,17 +11611,20 @@ pub mod intent_sort_by {
         }
         /// <p>The order to sort the list. You can choose ascending or descending.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`IntentSortBy`](crate::model::IntentSortBy).
         pub fn build(self) -> crate::model::IntentSortBy {
             crate::model::IntentSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl IntentSortBy {
     /// Creates a new builder-style object to manufacture [`IntentSortBy`](crate::model::IntentSortBy).
@@ -12573,9 +11639,9 @@ impl IntentSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let intentsortattribute = unimplemented!();
 /// match intentsortattribute {
@@ -12597,60 +11663,52 @@ impl IntentSortBy {
 /// Specifically, when `intentsortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IntentSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IntentSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     IntentName,
     #[allow(missing_docs)] // documentation missing in model
     LastUpdatedDateTime,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IntentSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "IntentName" => IntentSortAttribute::IntentName,
             "LastUpdatedDateTime" => IntentSortAttribute::LastUpdatedDateTime,
-            other => {
-                IntentSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => IntentSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IntentSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IntentSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IntentSortAttribute::from(s))
+                }
+            }
 impl IntentSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IntentSortAttribute::IntentName => "IntentName",
             IntentSortAttribute::LastUpdatedDateTime => "LastUpdatedDateTime",
-            IntentSortAttribute::Unknown(value) => value.as_str(),
+            IntentSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IntentName", "LastUpdatedDateTime"]
+        &[
+            "IntentName", "LastUpdatedDateTime"
+        ]
     }
 }
 impl AsRef<str> for IntentSortAttribute {
@@ -12662,7 +11720,7 @@ impl AsRef<str> for IntentSortAttribute {
 /// <p>Provides summary information about an import in an import list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportSummary {
+pub struct ImportSummary  {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -12690,41 +11748,41 @@ pub struct ImportSummary {
 }
 impl ImportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>The unique identifier that Amazon Lex assigned to the imported resource.</p>
-    pub fn imported_resource_id(&self) -> std::option::Option<&str> {
+    pub fn imported_resource_id(&self) -> std::option::Option<& str> {
         self.imported_resource_id.as_deref()
     }
     /// <p>The name that you gave the imported resource.</p>
-    pub fn imported_resource_name(&self) -> std::option::Option<&str> {
+    pub fn imported_resource_name(&self) -> std::option::Option<& str> {
         self.imported_resource_name.as_deref()
     }
     /// <p>The status of the resource. When the status is <code>Completed</code> the resource is ready to build.</p>
-    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<& crate::model::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>The strategy used to merge existing bot or bot locale definitions with the imported definition.</p>
-    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<& crate::model::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The date and time that the import was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the import was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The type of resource that was imported.</p>
-    pub fn imported_resource_type(&self) -> std::option::Option<&crate::model::ImportResourceType> {
+    pub fn imported_resource_type(&self) -> std::option::Option<& crate::model::ImportResourceType> {
         self.imported_resource_type.as_ref()
     }
 }
 /// See [`ImportSummary`](crate::model::ImportSummary).
 pub mod import_summary {
-
+    
     /// A builder for [`ImportSummary`](crate::model::ImportSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12745,8 +11803,7 @@ pub mod import_summary {
         }
         /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.import_id = input;
-            self
+            self.import_id = input; self
         }
         /// <p>The unique identifier that Amazon Lex assigned to the imported resource.</p>
         pub fn imported_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12754,12 +11811,8 @@ pub mod import_summary {
             self
         }
         /// <p>The unique identifier that Amazon Lex assigned to the imported resource.</p>
-        pub fn set_imported_resource_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.imported_resource_id = input;
-            self
+        pub fn set_imported_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.imported_resource_id = input; self
         }
         /// <p>The name that you gave the imported resource.</p>
         pub fn imported_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12767,12 +11820,8 @@ pub mod import_summary {
             self
         }
         /// <p>The name that you gave the imported resource.</p>
-        pub fn set_imported_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.imported_resource_name = input;
-            self
+        pub fn set_imported_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.imported_resource_name = input; self
         }
         /// <p>The status of the resource. When the status is <code>Completed</code> the resource is ready to build.</p>
         pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
@@ -12780,12 +11829,8 @@ pub mod import_summary {
             self
         }
         /// <p>The status of the resource. When the status is <code>Completed</code> the resource is ready to build.</p>
-        pub fn set_import_status(
-            mut self,
-            input: std::option::Option<crate::model::ImportStatus>,
-        ) -> Self {
-            self.import_status = input;
-            self
+        pub fn set_import_status(mut self, input: std::option::Option<crate::model::ImportStatus>) -> Self {
+            self.import_status = input; self
         }
         /// <p>The strategy used to merge existing bot or bot locale definitions with the imported definition.</p>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
@@ -12793,12 +11838,8 @@ pub mod import_summary {
             self
         }
         /// <p>The strategy used to merge existing bot or bot locale definitions with the imported definition.</p>
-        pub fn set_merge_strategy(
-            mut self,
-            input: std::option::Option<crate::model::MergeStrategy>,
-        ) -> Self {
-            self.merge_strategy = input;
-            self
+        pub fn set_merge_strategy(mut self, input: std::option::Option<crate::model::MergeStrategy>) -> Self {
+            self.merge_strategy = input; self
         }
         /// <p>The date and time that the import was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12806,12 +11847,8 @@ pub mod import_summary {
             self
         }
         /// <p>The date and time that the import was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time that the import was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12819,12 +11856,8 @@ pub mod import_summary {
             self
         }
         /// <p>The date and time that the import was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The type of resource that was imported.</p>
         pub fn imported_resource_type(mut self, input: crate::model::ImportResourceType) -> Self {
@@ -12832,27 +11865,33 @@ pub mod import_summary {
             self
         }
         /// <p>The type of resource that was imported.</p>
-        pub fn set_imported_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ImportResourceType>,
-        ) -> Self {
-            self.imported_resource_type = input;
-            self
+        pub fn set_imported_resource_type(mut self, input: std::option::Option<crate::model::ImportResourceType>) -> Self {
+            self.imported_resource_type = input; self
         }
         /// Consumes the builder and constructs a [`ImportSummary`](crate::model::ImportSummary).
         pub fn build(self) -> crate::model::ImportSummary {
             crate::model::ImportSummary {
-                import_id: self.import_id,
-                imported_resource_id: self.imported_resource_id,
-                imported_resource_name: self.imported_resource_name,
-                import_status: self.import_status,
-                merge_strategy: self.merge_strategy,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                imported_resource_type: self.imported_resource_type,
+                import_id: self.import_id
+                ,
+                imported_resource_id: self.imported_resource_id
+                ,
+                imported_resource_name: self.imported_resource_name
+                ,
+                import_status: self.import_status
+                ,
+                merge_strategy: self.merge_strategy
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                imported_resource_type: self.imported_resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportSummary {
     /// Creates a new builder-style object to manufacture [`ImportSummary`](crate::model::ImportSummary).
@@ -12867,9 +11906,9 @@ impl ImportSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importresourcetype = unimplemented!();
 /// match importresourcetype {
@@ -12892,22 +11931,14 @@ impl ImportSummary {
 /// Specifically, when `importresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Bot,
@@ -12916,7 +11947,7 @@ pub enum ImportResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CustomVocabulary,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportResourceType {
     fn from(s: &str) -> Self {
@@ -12924,19 +11955,17 @@ impl std::convert::From<&str> for ImportResourceType {
             "Bot" => ImportResourceType::Bot,
             "BotLocale" => ImportResourceType::BotLocale,
             "CustomVocabulary" => ImportResourceType::CustomVocabulary,
-            other => {
-                ImportResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImportResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportResourceType::from(s))
+                }
+            }
 impl ImportResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12944,12 +11973,14 @@ impl ImportResourceType {
             ImportResourceType::Bot => "Bot",
             ImportResourceType::BotLocale => "BotLocale",
             ImportResourceType::CustomVocabulary => "CustomVocabulary",
-            ImportResourceType::Unknown(value) => value.as_str(),
+            ImportResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Bot", "BotLocale", "CustomVocabulary"]
+        &[
+            "Bot", "BotLocale", "CustomVocabulary"
+        ]
     }
 }
 impl AsRef<str> for ImportResourceType {
@@ -12961,7 +11992,7 @@ impl AsRef<str> for ImportResourceType {
 /// <p>Filters the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportFilter {
+pub struct ImportFilter  {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ImportFilterName>,
@@ -12974,21 +12005,21 @@ pub struct ImportFilter {
 }
 impl ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ImportFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ImportFilterName> {
         self.name.as_ref()
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::ImportFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::ImportFilterOperator> {
         self.operator.as_ref()
     }
 }
 /// See [`ImportFilter`](crate::model::ImportFilter).
 pub mod import_filter {
-
+    
     /// A builder for [`ImportFilter`](crate::model::ImportFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13003,12 +12034,8 @@ pub mod import_filter {
             self
         }
         /// <p>The name of the field to use for filtering.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ImportFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ImportFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -13017,17 +12044,13 @@ pub mod import_filter {
         /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
         pub fn operator(mut self, input: crate::model::ImportFilterOperator) -> Self {
@@ -13035,22 +12058,23 @@ pub mod import_filter {
             self
         }
         /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::ImportFilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::ImportFilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`ImportFilter`](crate::model::ImportFilter).
         pub fn build(self) -> crate::model::ImportFilter {
             crate::model::ImportFilter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportFilter {
     /// Creates a new builder-style object to manufacture [`ImportFilter`](crate::model::ImportFilter).
@@ -13065,9 +12089,9 @@ impl ImportFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importfilteroperator = unimplemented!();
 /// match importfilteroperator {
@@ -13089,60 +12113,52 @@ impl ImportFilter {
 /// Specifically, when `importfilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportFilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "CO" => ImportFilterOperator::Contains,
             "EQ" => ImportFilterOperator::Equals,
-            other => {
-                ImportFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImportFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportFilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportFilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportFilterOperator::from(s))
+                }
+            }
 impl ImportFilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportFilterOperator::Contains => "CO",
             ImportFilterOperator::Equals => "EQ",
-            ImportFilterOperator::Unknown(value) => value.as_str(),
+            ImportFilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &[
+            "CO", "EQ"
+        ]
     }
 }
 impl AsRef<str> for ImportFilterOperator {
@@ -13157,9 +12173,9 @@ impl AsRef<str> for ImportFilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importfiltername = unimplemented!();
 /// match importfiltername {
@@ -13180,54 +12196,48 @@ impl AsRef<str> for ImportFilterOperator {
 /// Specifically, when `importfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportFilterName {
     #[allow(missing_docs)] // documentation missing in model
     ImportResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportFilterName {
     fn from(s: &str) -> Self {
         match s {
             "ImportResourceType" => ImportFilterName::ImportResourceType,
-            other => ImportFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImportFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportFilterName::from(s))
+                }
+            }
 impl ImportFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportFilterName::ImportResourceType => "ImportResourceType",
-            ImportFilterName::Unknown(value) => value.as_str(),
+            ImportFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ImportResourceType"]
+        &[
+            "ImportResourceType"
+        ]
     }
 }
 impl AsRef<str> for ImportFilterName {
@@ -13239,7 +12249,7 @@ impl AsRef<str> for ImportFilterName {
 /// <p>Provides information for sorting a list of imports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportSortBy {
+pub struct ImportSortBy  {
     /// <p>The export field to use for sorting.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::ImportSortAttribute>,
@@ -13249,17 +12259,17 @@ pub struct ImportSortBy {
 }
 impl ImportSortBy {
     /// <p>The export field to use for sorting.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::ImportSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::ImportSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`ImportSortBy`](crate::model::ImportSortBy).
 pub mod import_sort_by {
-
+    
     /// A builder for [`ImportSortBy`](crate::model::ImportSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13273,12 +12283,8 @@ pub mod import_sort_by {
             self
         }
         /// <p>The export field to use for sorting.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::ImportSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::ImportSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -13287,17 +12293,20 @@ pub mod import_sort_by {
         }
         /// <p>The order to sort the list.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`ImportSortBy`](crate::model::ImportSortBy).
         pub fn build(self) -> crate::model::ImportSortBy {
             crate::model::ImportSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportSortBy {
     /// Creates a new builder-style object to manufacture [`ImportSortBy`](crate::model::ImportSortBy).
@@ -13312,9 +12321,9 @@ impl ImportSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importsortattribute = unimplemented!();
 /// match importsortattribute {
@@ -13335,56 +12344,48 @@ impl ImportSortBy {
 /// Specifically, when `importsortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     LastUpdatedDateTime,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "LastUpdatedDateTime" => ImportSortAttribute::LastUpdatedDateTime,
-            other => {
-                ImportSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImportSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportSortAttribute::from(s))
+                }
+            }
 impl ImportSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportSortAttribute::LastUpdatedDateTime => "LastUpdatedDateTime",
-            ImportSortAttribute::Unknown(value) => value.as_str(),
+            ImportSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LastUpdatedDateTime"]
+        &[
+            "LastUpdatedDateTime"
+        ]
     }
 }
 impl AsRef<str> for ImportSortAttribute {
@@ -13396,7 +12397,7 @@ impl AsRef<str> for ImportSortAttribute {
 /// <p>Provides summary information about an export in an export list. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSummary {
+pub struct ExportSummary  {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
@@ -13418,41 +12419,38 @@ pub struct ExportSummary {
 }
 impl ExportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>Information about the bot or bot locale that was exported.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::model::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format used in the export files.</p>
-    pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
+    pub fn file_format(&self) -> std::option::Option<& crate::model::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
-    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the export was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`ExportSummary`](crate::model::ExportSummary).
 pub mod export_summary {
-
+    
     /// A builder for [`ExportSummary`](crate::model::ExportSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
-        pub(crate) resource_specification:
-            std::option::Option<crate::model::ExportResourceSpecification>,
+        pub(crate) resource_specification: std::option::Option<crate::model::ExportResourceSpecification>,
         pub(crate) file_format: std::option::Option<crate::model::ImportExportFileFormat>,
         pub(crate) export_status: std::option::Option<crate::model::ExportStatus>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13466,24 +12464,16 @@ pub mod export_summary {
         }
         /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.export_id = input;
-            self
+            self.export_id = input; self
         }
         /// <p>Information about the bot or bot locale that was exported.</p>
-        pub fn resource_specification(
-            mut self,
-            input: crate::model::ExportResourceSpecification,
-        ) -> Self {
+        pub fn resource_specification(mut self, input: crate::model::ExportResourceSpecification) -> Self {
             self.resource_specification = Some(input);
             self
         }
         /// <p>Information about the bot or bot locale that was exported.</p>
-        pub fn set_resource_specification(
-            mut self,
-            input: std::option::Option<crate::model::ExportResourceSpecification>,
-        ) -> Self {
-            self.resource_specification = input;
-            self
+        pub fn set_resource_specification(mut self, input: std::option::Option<crate::model::ExportResourceSpecification>) -> Self {
+            self.resource_specification = input; self
         }
         /// <p>The file format used in the export files.</p>
         pub fn file_format(mut self, input: crate::model::ImportExportFileFormat) -> Self {
@@ -13491,12 +12481,8 @@ pub mod export_summary {
             self
         }
         /// <p>The file format used in the export files.</p>
-        pub fn set_file_format(
-            mut self,
-            input: std::option::Option<crate::model::ImportExportFileFormat>,
-        ) -> Self {
-            self.file_format = input;
-            self
+        pub fn set_file_format(mut self, input: std::option::Option<crate::model::ImportExportFileFormat>) -> Self {
+            self.file_format = input; self
         }
         /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
         pub fn export_status(mut self, input: crate::model::ExportStatus) -> Self {
@@ -13504,12 +12490,8 @@ pub mod export_summary {
             self
         }
         /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::ExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::ExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// <p>The date and time that the export was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13517,12 +12499,8 @@ pub mod export_summary {
             self
         }
         /// <p>The date and time that the export was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time that the export was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13530,25 +12508,29 @@ pub mod export_summary {
             self
         }
         /// <p>The date and time that the export was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`ExportSummary`](crate::model::ExportSummary).
         pub fn build(self) -> crate::model::ExportSummary {
             crate::model::ExportSummary {
-                export_id: self.export_id,
-                resource_specification: self.resource_specification,
-                file_format: self.file_format,
-                export_status: self.export_status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                export_id: self.export_id
+                ,
+                resource_specification: self.resource_specification
+                ,
+                file_format: self.file_format
+                ,
+                export_status: self.export_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportSummary {
     /// Creates a new builder-style object to manufacture [`ExportSummary`](crate::model::ExportSummary).
@@ -13560,7 +12542,7 @@ impl ExportSummary {
 /// <p>Filters the response form the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportFilter {
+pub struct ExportFilter  {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ExportFilterName>,
@@ -13573,21 +12555,21 @@ pub struct ExportFilter {
 }
 impl ExportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ExportFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ExportFilterName> {
         self.name.as_ref()
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::ExportFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::ExportFilterOperator> {
         self.operator.as_ref()
     }
 }
 /// See [`ExportFilter`](crate::model::ExportFilter).
 pub mod export_filter {
-
+    
     /// A builder for [`ExportFilter`](crate::model::ExportFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13602,12 +12584,8 @@ pub mod export_filter {
             self
         }
         /// <p>The name of the field to use for filtering.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ExportFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ExportFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -13616,17 +12594,13 @@ pub mod export_filter {
         /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
         pub fn operator(mut self, input: crate::model::ExportFilterOperator) -> Self {
@@ -13634,22 +12608,23 @@ pub mod export_filter {
             self
         }
         /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::ExportFilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::ExportFilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`ExportFilter`](crate::model::ExportFilter).
         pub fn build(self) -> crate::model::ExportFilter {
             crate::model::ExportFilter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportFilter {
     /// Creates a new builder-style object to manufacture [`ExportFilter`](crate::model::ExportFilter).
@@ -13664,9 +12639,9 @@ impl ExportFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exportfilteroperator = unimplemented!();
 /// match exportfilteroperator {
@@ -13688,60 +12663,52 @@ impl ExportFilter {
 /// Specifically, when `exportfilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportFilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExportFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "CO" => ExportFilterOperator::Contains,
             "EQ" => ExportFilterOperator::Equals,
-            other => {
-                ExportFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExportFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExportFilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExportFilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExportFilterOperator::from(s))
+                }
+            }
 impl ExportFilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportFilterOperator::Contains => "CO",
             ExportFilterOperator::Equals => "EQ",
-            ExportFilterOperator::Unknown(value) => value.as_str(),
+            ExportFilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &[
+            "CO", "EQ"
+        ]
     }
 }
 impl AsRef<str> for ExportFilterOperator {
@@ -13756,9 +12723,9 @@ impl AsRef<str> for ExportFilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exportfiltername = unimplemented!();
 /// match exportfiltername {
@@ -13779,54 +12746,48 @@ impl AsRef<str> for ExportFilterOperator {
 /// Specifically, when `exportfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExportFilterName {
     #[allow(missing_docs)] // documentation missing in model
     ExportResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportFilterName {
     fn from(s: &str) -> Self {
         match s {
             "ExportResourceType" => ExportFilterName::ExportResourceType,
-            other => ExportFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExportFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExportFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExportFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExportFilterName::from(s))
+                }
+            }
 impl ExportFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportFilterName::ExportResourceType => "ExportResourceType",
-            ExportFilterName::Unknown(value) => value.as_str(),
+            ExportFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ExportResourceType"]
+        &[
+            "ExportResourceType"
+        ]
     }
 }
 impl AsRef<str> for ExportFilterName {
@@ -13838,7 +12799,7 @@ impl AsRef<str> for ExportFilterName {
 /// <p>Provides information about sorting a list of exports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSortBy {
+pub struct ExportSortBy  {
     /// <p>The export field to use for sorting.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::ExportSortAttribute>,
@@ -13848,17 +12809,17 @@ pub struct ExportSortBy {
 }
 impl ExportSortBy {
     /// <p>The export field to use for sorting.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::ExportSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::ExportSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`ExportSortBy`](crate::model::ExportSortBy).
 pub mod export_sort_by {
-
+    
     /// A builder for [`ExportSortBy`](crate::model::ExportSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13872,12 +12833,8 @@ pub mod export_sort_by {
             self
         }
         /// <p>The export field to use for sorting.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::ExportSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::ExportSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -13886,17 +12843,20 @@ pub mod export_sort_by {
         }
         /// <p>The order to sort the list.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`ExportSortBy`](crate::model::ExportSortBy).
         pub fn build(self) -> crate::model::ExportSortBy {
             crate::model::ExportSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportSortBy {
     /// Creates a new builder-style object to manufacture [`ExportSortBy`](crate::model::ExportSortBy).
@@ -13911,9 +12871,9 @@ impl ExportSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exportsortattribute = unimplemented!();
 /// match exportsortattribute {
@@ -13934,56 +12894,48 @@ impl ExportSortBy {
 /// Specifically, when `exportsortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExportSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     LastUpdatedDateTime,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "LastUpdatedDateTime" => ExportSortAttribute::LastUpdatedDateTime,
-            other => {
-                ExportSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExportSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExportSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExportSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExportSortAttribute::from(s))
+                }
+            }
 impl ExportSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportSortAttribute::LastUpdatedDateTime => "LastUpdatedDateTime",
-            ExportSortAttribute::Unknown(value) => value.as_str(),
+            ExportSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LastUpdatedDateTime"]
+        &[
+            "LastUpdatedDateTime"
+        ]
     }
 }
 impl AsRef<str> for ExportSortAttribute {
@@ -13995,7 +12947,7 @@ impl AsRef<str> for ExportSortAttribute {
 /// <p>The unique custom vocabulary item from the custom vocabulary list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomVocabularyItem {
+pub struct CustomVocabularyItem  {
     /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
     #[doc(hidden)]
     pub item_id: std::option::Option<std::string::String>,
@@ -14011,11 +12963,11 @@ pub struct CustomVocabularyItem {
 }
 impl CustomVocabularyItem {
     /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
-    pub fn item_id(&self) -> std::option::Option<&str> {
+    pub fn item_id(&self) -> std::option::Option<& str> {
         self.item_id.as_deref()
     }
     /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
-    pub fn phrase(&self) -> std::option::Option<&str> {
+    pub fn phrase(&self) -> std::option::Option<& str> {
         self.phrase.as_deref()
     }
     /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
@@ -14023,13 +12975,13 @@ impl CustomVocabularyItem {
         self.weight
     }
     /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
-    pub fn display_as(&self) -> std::option::Option<&str> {
+    pub fn display_as(&self) -> std::option::Option<& str> {
         self.display_as.as_deref()
     }
 }
 /// See [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
 pub mod custom_vocabulary_item {
-
+    
     /// A builder for [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14046,8 +12998,7 @@ pub mod custom_vocabulary_item {
         }
         /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.item_id = input;
-            self
+            self.item_id = input; self
         }
         /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
         pub fn phrase(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14056,8 +13007,7 @@ pub mod custom_vocabulary_item {
         }
         /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
         pub fn set_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phrase = input;
-            self
+            self.phrase = input; self
         }
         /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
         pub fn weight(mut self, input: i32) -> Self {
@@ -14066,8 +13016,7 @@ pub mod custom_vocabulary_item {
         }
         /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
         /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
         pub fn display_as(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14076,19 +13025,24 @@ pub mod custom_vocabulary_item {
         }
         /// <p>The display as value for the custom vocabulary item from the custom vocabulary list.</p>
         pub fn set_display_as(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_as = input;
-            self
+            self.display_as = input; self
         }
         /// Consumes the builder and constructs a [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
         pub fn build(self) -> crate::model::CustomVocabularyItem {
             crate::model::CustomVocabularyItem {
-                item_id: self.item_id,
-                phrase: self.phrase,
-                weight: self.weight,
-                display_as: self.display_as,
+                item_id: self.item_id
+                ,
+                phrase: self.phrase
+                ,
+                weight: self.weight
+                ,
+                display_as: self.display_as
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomVocabularyItem {
     /// Creates a new builder-style object to manufacture [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
@@ -14100,7 +13054,7 @@ impl CustomVocabularyItem {
 /// <p>Provides summary information about a built-in slot type for the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInSlotTypes.html"> ListBuiltInSlotTypes </a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuiltInSlotTypeSummary {
+pub struct BuiltInSlotTypeSummary  {
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
     #[doc(hidden)]
     pub slot_type_signature: std::option::Option<std::string::String>,
@@ -14110,17 +13064,17 @@ pub struct BuiltInSlotTypeSummary {
 }
 impl BuiltInSlotTypeSummary {
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
-    pub fn slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn slot_type_signature(&self) -> std::option::Option<& str> {
         self.slot_type_signature.as_deref()
     }
     /// <p>The description of the built-in slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`BuiltInSlotTypeSummary`](crate::model::BuiltInSlotTypeSummary).
 pub mod built_in_slot_type_summary {
-
+    
     /// A builder for [`BuiltInSlotTypeSummary`](crate::model::BuiltInSlotTypeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14134,12 +13088,8 @@ pub mod built_in_slot_type_summary {
             self
         }
         /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
-        pub fn set_slot_type_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slot_type_signature = input;
-            self
+        pub fn set_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slot_type_signature = input; self
         }
         /// <p>The description of the built-in slot type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14148,17 +13098,20 @@ pub mod built_in_slot_type_summary {
         }
         /// <p>The description of the built-in slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`BuiltInSlotTypeSummary`](crate::model::BuiltInSlotTypeSummary).
         pub fn build(self) -> crate::model::BuiltInSlotTypeSummary {
             crate::model::BuiltInSlotTypeSummary {
-                slot_type_signature: self.slot_type_signature,
-                description: self.description,
+                slot_type_signature: self.slot_type_signature
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl BuiltInSlotTypeSummary {
     /// Creates a new builder-style object to manufacture [`BuiltInSlotTypeSummary`](crate::model::BuiltInSlotTypeSummary).
@@ -14170,7 +13123,7 @@ impl BuiltInSlotTypeSummary {
 /// <p>Specifies attributes for sorting a list of built-in slot types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuiltInSlotTypeSortBy {
+pub struct BuiltInSlotTypeSortBy  {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BuiltInSlotTypeSortAttribute>,
@@ -14180,17 +13133,17 @@ pub struct BuiltInSlotTypeSortBy {
 }
 impl BuiltInSlotTypeSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::BuiltInSlotTypeSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::BuiltInSlotTypeSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`BuiltInSlotTypeSortBy`](crate::model::BuiltInSlotTypeSortBy).
 pub mod built_in_slot_type_sort_by {
-
+    
     /// A builder for [`BuiltInSlotTypeSortBy`](crate::model::BuiltInSlotTypeSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14204,12 +13157,8 @@ pub mod built_in_slot_type_sort_by {
             self
         }
         /// <p>The attribute to use to sort the list of built-in intents.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::BuiltInSlotTypeSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::BuiltInSlotTypeSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list. You can choose ascending or descending.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -14218,17 +13167,20 @@ pub mod built_in_slot_type_sort_by {
         }
         /// <p>The order to sort the list. You can choose ascending or descending.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`BuiltInSlotTypeSortBy`](crate::model::BuiltInSlotTypeSortBy).
         pub fn build(self) -> crate::model::BuiltInSlotTypeSortBy {
             crate::model::BuiltInSlotTypeSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl BuiltInSlotTypeSortBy {
     /// Creates a new builder-style object to manufacture [`BuiltInSlotTypeSortBy`](crate::model::BuiltInSlotTypeSortBy).
@@ -14243,9 +13195,9 @@ impl BuiltInSlotTypeSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let builtinslottypesortattribute = unimplemented!();
 /// match builtinslottypesortattribute {
@@ -14266,56 +13218,48 @@ impl BuiltInSlotTypeSortBy {
 /// Specifically, when `builtinslottypesortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BuiltInSlotTypeSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BuiltInSlotTypeSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     SlotTypeSignature,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BuiltInSlotTypeSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "SlotTypeSignature" => BuiltInSlotTypeSortAttribute::SlotTypeSignature,
-            other => BuiltInSlotTypeSortAttribute::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BuiltInSlotTypeSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BuiltInSlotTypeSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BuiltInSlotTypeSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BuiltInSlotTypeSortAttribute::from(s))
+                }
+            }
 impl BuiltInSlotTypeSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BuiltInSlotTypeSortAttribute::SlotTypeSignature => "SlotTypeSignature",
-            BuiltInSlotTypeSortAttribute::Unknown(value) => value.as_str(),
+            BuiltInSlotTypeSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SlotTypeSignature"]
+        &[
+            "SlotTypeSignature"
+        ]
     }
 }
 impl AsRef<str> for BuiltInSlotTypeSortAttribute {
@@ -14327,7 +13271,7 @@ impl AsRef<str> for BuiltInSlotTypeSortAttribute {
 /// <p>Provides summary information about a built-in intent for the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInIntents.html"> ListBuiltInIntents </a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuiltInIntentSummary {
+pub struct BuiltInIntentSummary  {
     /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
     #[doc(hidden)]
     pub intent_signature: std::option::Option<std::string::String>,
@@ -14337,17 +13281,17 @@ pub struct BuiltInIntentSummary {
 }
 impl BuiltInIntentSummary {
     /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
-    pub fn intent_signature(&self) -> std::option::Option<&str> {
+    pub fn intent_signature(&self) -> std::option::Option<& str> {
         self.intent_signature.as_deref()
     }
     /// <p>The description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`BuiltInIntentSummary`](crate::model::BuiltInIntentSummary).
 pub mod built_in_intent_summary {
-
+    
     /// A builder for [`BuiltInIntentSummary`](crate::model::BuiltInIntentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14361,12 +13305,8 @@ pub mod built_in_intent_summary {
             self
         }
         /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
-        pub fn set_intent_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.intent_signature = input;
-            self
+        pub fn set_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.intent_signature = input; self
         }
         /// <p>The description of the intent.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14375,17 +13315,20 @@ pub mod built_in_intent_summary {
         }
         /// <p>The description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`BuiltInIntentSummary`](crate::model::BuiltInIntentSummary).
         pub fn build(self) -> crate::model::BuiltInIntentSummary {
             crate::model::BuiltInIntentSummary {
-                intent_signature: self.intent_signature,
-                description: self.description,
+                intent_signature: self.intent_signature
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl BuiltInIntentSummary {
     /// Creates a new builder-style object to manufacture [`BuiltInIntentSummary`](crate::model::BuiltInIntentSummary).
@@ -14397,7 +13340,7 @@ impl BuiltInIntentSummary {
 /// <p>Specifies attributes for sorting a list of built-in intents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuiltInIntentSortBy {
+pub struct BuiltInIntentSortBy  {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BuiltInIntentSortAttribute>,
@@ -14407,17 +13350,17 @@ pub struct BuiltInIntentSortBy {
 }
 impl BuiltInIntentSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::BuiltInIntentSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::BuiltInIntentSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`BuiltInIntentSortBy`](crate::model::BuiltInIntentSortBy).
 pub mod built_in_intent_sort_by {
-
+    
     /// A builder for [`BuiltInIntentSortBy`](crate::model::BuiltInIntentSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14431,12 +13374,8 @@ pub mod built_in_intent_sort_by {
             self
         }
         /// <p>The attribute to use to sort the list of built-in intents.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::BuiltInIntentSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::BuiltInIntentSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list. You can specify ascending or descending order.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -14445,17 +13384,20 @@ pub mod built_in_intent_sort_by {
         }
         /// <p>The order to sort the list. You can specify ascending or descending order.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`BuiltInIntentSortBy`](crate::model::BuiltInIntentSortBy).
         pub fn build(self) -> crate::model::BuiltInIntentSortBy {
             crate::model::BuiltInIntentSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl BuiltInIntentSortBy {
     /// Creates a new builder-style object to manufacture [`BuiltInIntentSortBy`](crate::model::BuiltInIntentSortBy).
@@ -14470,9 +13412,9 @@ impl BuiltInIntentSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let builtinintentsortattribute = unimplemented!();
 /// match builtinintentsortattribute {
@@ -14493,56 +13435,48 @@ impl BuiltInIntentSortBy {
 /// Specifically, when `builtinintentsortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BuiltInIntentSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BuiltInIntentSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     IntentSignature,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BuiltInIntentSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "IntentSignature" => BuiltInIntentSortAttribute::IntentSignature,
-            other => BuiltInIntentSortAttribute::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BuiltInIntentSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BuiltInIntentSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BuiltInIntentSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BuiltInIntentSortAttribute::from(s))
+                }
+            }
 impl BuiltInIntentSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BuiltInIntentSortAttribute::IntentSignature => "IntentSignature",
-            BuiltInIntentSortAttribute::Unknown(value) => value.as_str(),
+            BuiltInIntentSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IntentSignature"]
+        &[
+            "IntentSignature"
+        ]
     }
 }
 impl AsRef<str> for BuiltInIntentSortAttribute {
@@ -14554,7 +13488,7 @@ impl AsRef<str> for BuiltInIntentSortAttribute {
 /// <p>Summary information about a bot version returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotVersions.html">ListBotVersions</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotVersionSummary {
+pub struct BotVersionSummary  {
     /// <p>The name of the bot associated with the version.</p>
     #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
@@ -14573,29 +13507,29 @@ pub struct BotVersionSummary {
 }
 impl BotVersionSummary {
     /// <p>The name of the bot associated with the version.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The description of the version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`BotVersionSummary`](crate::model::BotVersionSummary).
 pub mod bot_version_summary {
-
+    
     /// A builder for [`BotVersionSummary`](crate::model::BotVersionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14613,8 +13547,7 @@ pub mod bot_version_summary {
         }
         /// <p>The name of the bot associated with the version.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14623,8 +13556,7 @@ pub mod bot_version_summary {
         }
         /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The description of the version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14633,8 +13565,7 @@ pub mod bot_version_summary {
         }
         /// <p>The description of the version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -14642,12 +13573,8 @@ pub mod bot_version_summary {
             self
         }
         /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// <p>A timestamp of the date and time that the version was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -14655,24 +13582,27 @@ pub mod bot_version_summary {
             self
         }
         /// <p>A timestamp of the date and time that the version was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`BotVersionSummary`](crate::model::BotVersionSummary).
         pub fn build(self) -> crate::model::BotVersionSummary {
             crate::model::BotVersionSummary {
-                bot_name: self.bot_name,
-                bot_version: self.bot_version,
-                description: self.description,
-                bot_status: self.bot_status,
-                creation_date_time: self.creation_date_time,
+                bot_name: self.bot_name
+                ,
+                bot_version: self.bot_version
+                ,
+                description: self.description
+                ,
+                bot_status: self.bot_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BotVersionSummary {
     /// Creates a new builder-style object to manufacture [`BotVersionSummary`](crate::model::BotVersionSummary).
@@ -14684,7 +13614,7 @@ impl BotVersionSummary {
 /// <p>Specifies attributes for sorting a list of bot versions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotVersionSortBy {
+pub struct BotVersionSortBy  {
     /// <p>The attribute to use to sort the list of versions.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BotVersionSortAttribute>,
@@ -14694,17 +13624,17 @@ pub struct BotVersionSortBy {
 }
 impl BotVersionSortBy {
     /// <p>The attribute to use to sort the list of versions.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::BotVersionSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::BotVersionSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`BotVersionSortBy`](crate::model::BotVersionSortBy).
 pub mod bot_version_sort_by {
-
+    
     /// A builder for [`BotVersionSortBy`](crate::model::BotVersionSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14718,12 +13648,8 @@ pub mod bot_version_sort_by {
             self
         }
         /// <p>The attribute to use to sort the list of versions.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::BotVersionSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::BotVersionSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list. You can specify ascending or descending order.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -14732,17 +13658,20 @@ pub mod bot_version_sort_by {
         }
         /// <p>The order to sort the list. You can specify ascending or descending order.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`BotVersionSortBy`](crate::model::BotVersionSortBy).
         pub fn build(self) -> crate::model::BotVersionSortBy {
             crate::model::BotVersionSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl BotVersionSortBy {
     /// Creates a new builder-style object to manufacture [`BotVersionSortBy`](crate::model::BotVersionSortBy).
@@ -14757,9 +13686,9 @@ impl BotVersionSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botversionsortattribute = unimplemented!();
 /// match botversionsortattribute {
@@ -14780,56 +13709,48 @@ impl BotVersionSortBy {
 /// Specifically, when `botversionsortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotVersionSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotVersionSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     BotVersion,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotVersionSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "BotVersion" => BotVersionSortAttribute::BotVersion,
-            other => BotVersionSortAttribute::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BotVersionSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotVersionSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotVersionSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotVersionSortAttribute::from(s))
+                }
+            }
 impl BotVersionSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BotVersionSortAttribute::BotVersion => "BotVersion",
-            BotVersionSortAttribute::Unknown(value) => value.as_str(),
+            BotVersionSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BotVersion"]
+        &[
+            "BotVersion"
+        ]
     }
 }
 impl AsRef<str> for BotVersionSortAttribute {
@@ -14841,7 +13762,7 @@ impl AsRef<str> for BotVersionSortAttribute {
 /// <p>Summary information about a bot returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBots.html">ListBots</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotSummary {
+pub struct BotSummary  {
     /// <p>The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -14863,33 +13784,33 @@ pub struct BotSummary {
 }
 impl BotSummary {
     /// <p>The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The name of the bot.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The description of the bot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready for use.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<& crate::model::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>The latest numerical version in use for the bot.</p>
-    pub fn latest_bot_version(&self) -> std::option::Option<&str> {
+    pub fn latest_bot_version(&self) -> std::option::Option<& str> {
         self.latest_bot_version.as_deref()
     }
     /// <p>The date and time that the bot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`BotSummary`](crate::model::BotSummary).
 pub mod bot_summary {
-
+    
     /// A builder for [`BotSummary`](crate::model::BotSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14908,8 +13829,7 @@ pub mod bot_summary {
         }
         /// <p>The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_id = input;
-            self
+            self.bot_id = input; self
         }
         /// <p>The name of the bot.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14918,8 +13838,7 @@ pub mod bot_summary {
         }
         /// <p>The name of the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The description of the bot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14928,8 +13847,7 @@ pub mod bot_summary {
         }
         /// <p>The description of the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready for use.</p>
         pub fn bot_status(mut self, input: crate::model::BotStatus) -> Self {
@@ -14937,12 +13855,8 @@ pub mod bot_summary {
             self
         }
         /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready for use.</p>
-        pub fn set_bot_status(
-            mut self,
-            input: std::option::Option<crate::model::BotStatus>,
-        ) -> Self {
-            self.bot_status = input;
-            self
+        pub fn set_bot_status(mut self, input: std::option::Option<crate::model::BotStatus>) -> Self {
+            self.bot_status = input; self
         }
         /// <p>The latest numerical version in use for the bot.</p>
         pub fn latest_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14950,12 +13864,8 @@ pub mod bot_summary {
             self
         }
         /// <p>The latest numerical version in use for the bot.</p>
-        pub fn set_latest_bot_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_bot_version = input;
-            self
+        pub fn set_latest_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_bot_version = input; self
         }
         /// <p>The date and time that the bot was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -14963,25 +13873,29 @@ pub mod bot_summary {
             self
         }
         /// <p>The date and time that the bot was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`BotSummary`](crate::model::BotSummary).
         pub fn build(self) -> crate::model::BotSummary {
             crate::model::BotSummary {
-                bot_id: self.bot_id,
-                bot_name: self.bot_name,
-                description: self.description,
-                bot_status: self.bot_status,
-                latest_bot_version: self.latest_bot_version,
-                last_updated_date_time: self.last_updated_date_time,
+                bot_id: self.bot_id
+                ,
+                bot_name: self.bot_name
+                ,
+                description: self.description
+                ,
+                bot_status: self.bot_status
+                ,
+                latest_bot_version: self.latest_bot_version
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BotSummary {
     /// Creates a new builder-style object to manufacture [`BotSummary`](crate::model::BotSummary).
@@ -14993,7 +13907,7 @@ impl BotSummary {
 /// <p>Filters the responses returned by the <code>ListBots</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotFilter {
+pub struct BotFilter  {
     /// <p>The name of the field to filter the list of bots.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::BotFilterName>,
@@ -15006,21 +13920,21 @@ pub struct BotFilter {
 }
 impl BotFilter {
     /// <p>The name of the field to filter the list of bots.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::BotFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::BotFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::BotFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::BotFilterOperator> {
         self.operator.as_ref()
     }
 }
 /// See [`BotFilter`](crate::model::BotFilter).
 pub mod bot_filter {
-
+    
     /// A builder for [`BotFilter`](crate::model::BotFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -15036,8 +13950,7 @@ pub mod bot_filter {
         }
         /// <p>The name of the field to filter the list of bots.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::BotFilterName>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -15046,17 +13959,13 @@ pub mod bot_filter {
         /// <p>The value to use for filtering the list of bots.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value to use for filtering the list of bots.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
         pub fn operator(mut self, input: crate::model::BotFilterOperator) -> Self {
@@ -15064,22 +13973,23 @@ pub mod bot_filter {
             self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::BotFilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::BotFilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`BotFilter`](crate::model::BotFilter).
         pub fn build(self) -> crate::model::BotFilter {
             crate::model::BotFilter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl BotFilter {
     /// Creates a new builder-style object to manufacture [`BotFilter`](crate::model::BotFilter).
@@ -15094,9 +14004,9 @@ impl BotFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botfilteroperator = unimplemented!();
 /// match botfilteroperator {
@@ -15118,60 +14028,52 @@ impl BotFilter {
 /// Specifically, when `botfilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotFilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "CO" => BotFilterOperator::Contains,
             "EQ" => BotFilterOperator::Equals,
-            other => {
-                BotFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BotFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotFilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotFilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotFilterOperator::from(s))
+                }
+            }
 impl BotFilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BotFilterOperator::Contains => "CO",
             BotFilterOperator::Equals => "EQ",
-            BotFilterOperator::Unknown(value) => value.as_str(),
+            BotFilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &[
+            "CO", "EQ"
+        ]
     }
 }
 impl AsRef<str> for BotFilterOperator {
@@ -15186,9 +14088,9 @@ impl AsRef<str> for BotFilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botfiltername = unimplemented!();
 /// match botfiltername {
@@ -15209,54 +14111,48 @@ impl AsRef<str> for BotFilterOperator {
 /// Specifically, when `botfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotFilterName {
     #[allow(missing_docs)] // documentation missing in model
     BotName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotFilterName {
     fn from(s: &str) -> Self {
         match s {
             "BotName" => BotFilterName::BotName,
-            other => BotFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BotFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotFilterName::from(s))
+                }
+            }
 impl BotFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BotFilterName::BotName => "BotName",
-            BotFilterName::Unknown(value) => value.as_str(),
+            BotFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BotName"]
+        &[
+            "BotName"
+        ]
     }
 }
 impl AsRef<str> for BotFilterName {
@@ -15268,7 +14164,7 @@ impl AsRef<str> for BotFilterName {
 /// <p>Specifies attributes for sorting a list of bots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotSortBy {
+pub struct BotSortBy  {
     /// <p>The attribute to use to sort the list of bots.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BotSortAttribute>,
@@ -15278,17 +14174,17 @@ pub struct BotSortBy {
 }
 impl BotSortBy {
     /// <p>The attribute to use to sort the list of bots.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::BotSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::BotSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`BotSortBy`](crate::model::BotSortBy).
 pub mod bot_sort_by {
-
+    
     /// A builder for [`BotSortBy`](crate::model::BotSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -15302,12 +14198,8 @@ pub mod bot_sort_by {
             self
         }
         /// <p>The attribute to use to sort the list of bots.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::BotSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::BotSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order to sort the list. You can choose ascending or descending.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -15316,17 +14208,20 @@ pub mod bot_sort_by {
         }
         /// <p>The order to sort the list. You can choose ascending or descending.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`BotSortBy`](crate::model::BotSortBy).
         pub fn build(self) -> crate::model::BotSortBy {
             crate::model::BotSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl BotSortBy {
     /// Creates a new builder-style object to manufacture [`BotSortBy`](crate::model::BotSortBy).
@@ -15341,9 +14236,9 @@ impl BotSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botsortattribute = unimplemented!();
 /// match botsortattribute {
@@ -15364,54 +14259,48 @@ impl BotSortBy {
 /// Specifically, when `botsortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     BotName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "BotName" => BotSortAttribute::BotName,
-            other => BotSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BotSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotSortAttribute::from(s))
+                }
+            }
 impl BotSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BotSortAttribute::BotName => "BotName",
-            BotSortAttribute::Unknown(value) => value.as_str(),
+            BotSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BotName"]
+        &[
+            "BotName"
+        ]
     }
 }
 impl AsRef<str> for BotSortAttribute {
@@ -15423,8 +14312,8 @@ impl AsRef<str> for BotSortAttribute {
 /// <p>A summary of the bot recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotRecommendationSummary {
-    /// <p>The status of the bot recommendation.</p>
+pub struct BotRecommendationSummary  {
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
     #[doc(hidden)]
     pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
@@ -15439,56 +14328,46 @@ pub struct BotRecommendationSummary {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BotRecommendationSummary {
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(&self) -> std::option::Option<& crate::model::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`BotRecommendationSummary`](crate::model::BotRecommendationSummary).
 pub mod bot_recommendation_summary {
-
+    
     /// A builder for [`BotRecommendationSummary`](crate::model::BotRecommendationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bot_recommendation_status:
-            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
         pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The status of the bot recommendation.</p>
+        /// <p>The status of the bot recommendation.</p> 
         /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-        pub fn bot_recommendation_status(
-            mut self,
-            input: crate::model::BotRecommendationStatus,
-        ) -> Self {
+        pub fn bot_recommendation_status(mut self, input: crate::model::BotRecommendationStatus) -> Self {
             self.bot_recommendation_status = Some(input);
             self
         }
-        /// <p>The status of the bot recommendation.</p>
+        /// <p>The status of the bot recommendation.</p> 
         /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-        pub fn set_bot_recommendation_status(
-            mut self,
-            input: std::option::Option<crate::model::BotRecommendationStatus>,
-        ) -> Self {
-            self.bot_recommendation_status = input;
-            self
+        pub fn set_bot_recommendation_status(mut self, input: std::option::Option<crate::model::BotRecommendationStatus>) -> Self {
+            self.bot_recommendation_status = input; self
         }
         /// <p>The unique identifier of the bot recommendation to be updated.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15496,12 +14375,8 @@ pub mod bot_recommendation_summary {
             self
         }
         /// <p>The unique identifier of the bot recommendation to be updated.</p>
-        pub fn set_bot_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_recommendation_id = input;
-            self
+        pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_recommendation_id = input; self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15509,12 +14384,8 @@ pub mod bot_recommendation_summary {
             self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15522,23 +14393,25 @@ pub mod bot_recommendation_summary {
             self
         }
         /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`BotRecommendationSummary`](crate::model::BotRecommendationSummary).
         pub fn build(self) -> crate::model::BotRecommendationSummary {
             crate::model::BotRecommendationSummary {
-                bot_recommendation_status: self.bot_recommendation_status,
-                bot_recommendation_id: self.bot_recommendation_id,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                bot_recommendation_status: self.bot_recommendation_status
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BotRecommendationSummary {
     /// Creates a new builder-style object to manufacture [`BotRecommendationSummary`](crate::model::BotRecommendationSummary).
@@ -15550,7 +14423,7 @@ impl BotRecommendationSummary {
 /// <p>Summary information about bot locales returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotLocales.html">ListBotLocales</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleSummary {
+pub struct BotLocaleSummary  {
     /// <p>The language and locale of the bot locale.</p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
@@ -15572,35 +14445,33 @@ pub struct BotLocaleSummary {
 }
 impl BotLocaleSummary {
     /// <p>The language and locale of the bot locale.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The name of the bot locale.</p>
-    pub fn locale_name(&self) -> std::option::Option<&str> {
+    pub fn locale_name(&self) -> std::option::Option<& str> {
         self.locale_name.as_deref()
     }
     /// <p>The description of the bot locale.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the bot locale. When the status is <code>Built</code> the locale is ready for use.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<& crate::model::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot locale was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot locale was last built.</p>
-    pub fn last_build_submitted_date_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_build_submitted_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_build_submitted_date_time.as_ref()
     }
 }
 /// See [`BotLocaleSummary`](crate::model::BotLocaleSummary).
 pub mod bot_locale_summary {
-
+    
     /// A builder for [`BotLocaleSummary`](crate::model::BotLocaleSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -15619,8 +14490,7 @@ pub mod bot_locale_summary {
         }
         /// <p>The language and locale of the bot locale.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_id = input;
-            self
+            self.locale_id = input; self
         }
         /// <p>The name of the bot locale.</p>
         pub fn locale_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15629,8 +14499,7 @@ pub mod bot_locale_summary {
         }
         /// <p>The name of the bot locale.</p>
         pub fn set_locale_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_name = input;
-            self
+            self.locale_name = input; self
         }
         /// <p>The description of the bot locale.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15639,8 +14508,7 @@ pub mod bot_locale_summary {
         }
         /// <p>The description of the bot locale.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The current status of the bot locale. When the status is <code>Built</code> the locale is ready for use.</p>
         pub fn bot_locale_status(mut self, input: crate::model::BotLocaleStatus) -> Self {
@@ -15648,12 +14516,8 @@ pub mod bot_locale_summary {
             self
         }
         /// <p>The current status of the bot locale. When the status is <code>Built</code> the locale is ready for use.</p>
-        pub fn set_bot_locale_status(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleStatus>,
-        ) -> Self {
-            self.bot_locale_status = input;
-            self
+        pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::model::BotLocaleStatus>) -> Self {
+            self.bot_locale_status = input; self
         }
         /// <p>A timestamp of the date and time that the bot locale was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15661,12 +14525,8 @@ pub mod bot_locale_summary {
             self
         }
         /// <p>A timestamp of the date and time that the bot locale was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the bot locale was last built.</p>
         pub fn last_build_submitted_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15674,25 +14534,29 @@ pub mod bot_locale_summary {
             self
         }
         /// <p>A timestamp of the date and time that the bot locale was last built.</p>
-        pub fn set_last_build_submitted_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_build_submitted_date_time = input;
-            self
+        pub fn set_last_build_submitted_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_build_submitted_date_time = input; self
         }
         /// Consumes the builder and constructs a [`BotLocaleSummary`](crate::model::BotLocaleSummary).
         pub fn build(self) -> crate::model::BotLocaleSummary {
             crate::model::BotLocaleSummary {
-                locale_id: self.locale_id,
-                locale_name: self.locale_name,
-                description: self.description,
-                bot_locale_status: self.bot_locale_status,
-                last_updated_date_time: self.last_updated_date_time,
-                last_build_submitted_date_time: self.last_build_submitted_date_time,
+                locale_id: self.locale_id
+                ,
+                locale_name: self.locale_name
+                ,
+                description: self.description
+                ,
+                bot_locale_status: self.bot_locale_status
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                last_build_submitted_date_time: self.last_build_submitted_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BotLocaleSummary {
     /// Creates a new builder-style object to manufacture [`BotLocaleSummary`](crate::model::BotLocaleSummary).
@@ -15704,7 +14568,7 @@ impl BotLocaleSummary {
 /// <p>Filters responses returned by the <code>ListBotLocales</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleFilter {
+pub struct BotLocaleFilter  {
     /// <p>The name of the field to filter the list of bots.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::BotLocaleFilterName>,
@@ -15717,21 +14581,21 @@ pub struct BotLocaleFilter {
 }
 impl BotLocaleFilter {
     /// <p>The name of the field to filter the list of bots.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::BotLocaleFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::BotLocaleFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::BotLocaleFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::BotLocaleFilterOperator> {
         self.operator.as_ref()
     }
 }
 /// See [`BotLocaleFilter`](crate::model::BotLocaleFilter).
 pub mod bot_locale_filter {
-
+    
     /// A builder for [`BotLocaleFilter`](crate::model::BotLocaleFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -15746,12 +14610,8 @@ pub mod bot_locale_filter {
             self
         }
         /// <p>The name of the field to filter the list of bots.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::BotLocaleFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -15760,17 +14620,13 @@ pub mod bot_locale_filter {
         /// <p>The value to use for filtering the list of bots.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value to use for filtering the list of bots.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
         pub fn operator(mut self, input: crate::model::BotLocaleFilterOperator) -> Self {
@@ -15778,22 +14634,23 @@ pub mod bot_locale_filter {
             self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleFilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::BotLocaleFilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`BotLocaleFilter`](crate::model::BotLocaleFilter).
         pub fn build(self) -> crate::model::BotLocaleFilter {
             crate::model::BotLocaleFilter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl BotLocaleFilter {
     /// Creates a new builder-style object to manufacture [`BotLocaleFilter`](crate::model::BotLocaleFilter).
@@ -15808,9 +14665,9 @@ impl BotLocaleFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botlocalefilteroperator = unimplemented!();
 /// match botlocalefilteroperator {
@@ -15832,60 +14689,52 @@ impl BotLocaleFilter {
 /// Specifically, when `botlocalefilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotLocaleFilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotLocaleFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotLocaleFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "CO" => BotLocaleFilterOperator::Contains,
             "EQ" => BotLocaleFilterOperator::Equals,
-            other => BotLocaleFilterOperator::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BotLocaleFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotLocaleFilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotLocaleFilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotLocaleFilterOperator::from(s))
+                }
+            }
 impl BotLocaleFilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BotLocaleFilterOperator::Contains => "CO",
             BotLocaleFilterOperator::Equals => "EQ",
-            BotLocaleFilterOperator::Unknown(value) => value.as_str(),
+            BotLocaleFilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &[
+            "CO", "EQ"
+        ]
     }
 }
 impl AsRef<str> for BotLocaleFilterOperator {
@@ -15900,9 +14749,9 @@ impl AsRef<str> for BotLocaleFilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botlocalefiltername = unimplemented!();
 /// match botlocalefiltername {
@@ -15923,56 +14772,48 @@ impl AsRef<str> for BotLocaleFilterOperator {
 /// Specifically, when `botlocalefiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotLocaleFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotLocaleFilterName {
     #[allow(missing_docs)] // documentation missing in model
     BotLocaleName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotLocaleFilterName {
     fn from(s: &str) -> Self {
         match s {
             "BotLocaleName" => BotLocaleFilterName::BotLocaleName,
-            other => {
-                BotLocaleFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BotLocaleFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotLocaleFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotLocaleFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotLocaleFilterName::from(s))
+                }
+            }
 impl BotLocaleFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BotLocaleFilterName::BotLocaleName => "BotLocaleName",
-            BotLocaleFilterName::Unknown(value) => value.as_str(),
+            BotLocaleFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BotLocaleName"]
+        &[
+            "BotLocaleName"
+        ]
     }
 }
 impl AsRef<str> for BotLocaleFilterName {
@@ -15984,7 +14825,7 @@ impl AsRef<str> for BotLocaleFilterName {
 /// <p>Specifies attributes for sorting a list of bot locales.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleSortBy {
+pub struct BotLocaleSortBy  {
     /// <p>The bot locale attribute to sort by.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::BotLocaleSortAttribute>,
@@ -15994,17 +14835,17 @@ pub struct BotLocaleSortBy {
 }
 impl BotLocaleSortBy {
     /// <p>The bot locale attribute to sort by.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::BotLocaleSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::BotLocaleSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`BotLocaleSortBy`](crate::model::BotLocaleSortBy).
 pub mod bot_locale_sort_by {
-
+    
     /// A builder for [`BotLocaleSortBy`](crate::model::BotLocaleSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -16018,12 +14859,8 @@ pub mod bot_locale_sort_by {
             self
         }
         /// <p>The bot locale attribute to sort by.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::BotLocaleSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::BotLocaleSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -16032,17 +14869,20 @@ pub mod bot_locale_sort_by {
         }
         /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`BotLocaleSortBy`](crate::model::BotLocaleSortBy).
         pub fn build(self) -> crate::model::BotLocaleSortBy {
             crate::model::BotLocaleSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl BotLocaleSortBy {
     /// Creates a new builder-style object to manufacture [`BotLocaleSortBy`](crate::model::BotLocaleSortBy).
@@ -16057,9 +14897,9 @@ impl BotLocaleSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let botlocalesortattribute = unimplemented!();
 /// match botlocalesortattribute {
@@ -16080,56 +14920,48 @@ impl BotLocaleSortBy {
 /// Specifically, when `botlocalesortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BotLocaleSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BotLocaleSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     BotLocaleName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BotLocaleSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "BotLocaleName" => BotLocaleSortAttribute::BotLocaleName,
-            other => {
-                BotLocaleSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BotLocaleSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BotLocaleSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotLocaleSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BotLocaleSortAttribute::from(s))
+                }
+            }
 impl BotLocaleSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BotLocaleSortAttribute::BotLocaleName => "BotLocaleName",
-            BotLocaleSortAttribute::Unknown(value) => value.as_str(),
+            BotLocaleSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BotLocaleName"]
+        &[
+            "BotLocaleName"
+        ]
     }
 }
 impl AsRef<str> for BotLocaleSortAttribute {
@@ -16141,7 +14973,7 @@ impl AsRef<str> for BotLocaleSortAttribute {
 /// <p>Summary information about bot aliases returned from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotAliases.html">ListBotAliases</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotAliasSummary {
+pub struct BotAliasSummary  {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
     #[doc(hidden)]
     pub bot_alias_id: std::option::Option<std::string::String>,
@@ -16166,37 +14998,37 @@ pub struct BotAliasSummary {
 }
 impl BotAliasSummary {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The name of the bot alias.</p>
-    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_name(&self) -> std::option::Option<& str> {
         self.bot_alias_name.as_deref()
     }
     /// <p>The description of the bot alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the bot that the bot alias references.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
-    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+    pub fn bot_alias_status(&self) -> std::option::Option<& crate::model::BotAliasStatus> {
         self.bot_alias_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot alias was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`BotAliasSummary`](crate::model::BotAliasSummary).
 pub mod bot_alias_summary {
-
+    
     /// A builder for [`BotAliasSummary`](crate::model::BotAliasSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -16216,8 +15048,7 @@ pub mod bot_alias_summary {
         }
         /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_alias_id = input;
-            self
+            self.bot_alias_id = input; self
         }
         /// <p>The name of the bot alias.</p>
         pub fn bot_alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16225,12 +15056,8 @@ pub mod bot_alias_summary {
             self
         }
         /// <p>The name of the bot alias.</p>
-        pub fn set_bot_alias_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_alias_name = input;
-            self
+        pub fn set_bot_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_alias_name = input; self
         }
         /// <p>The description of the bot alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16239,8 +15066,7 @@ pub mod bot_alias_summary {
         }
         /// <p>The description of the bot alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The version of the bot that the bot alias references.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16249,8 +15075,7 @@ pub mod bot_alias_summary {
         }
         /// <p>The version of the bot that the bot alias references.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
         pub fn bot_alias_status(mut self, input: crate::model::BotAliasStatus) -> Self {
@@ -16258,12 +15083,8 @@ pub mod bot_alias_summary {
             self
         }
         /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
-        pub fn set_bot_alias_status(
-            mut self,
-            input: std::option::Option<crate::model::BotAliasStatus>,
-        ) -> Self {
-            self.bot_alias_status = input;
-            self
+        pub fn set_bot_alias_status(mut self, input: std::option::Option<crate::model::BotAliasStatus>) -> Self {
+            self.bot_alias_status = input; self
         }
         /// <p>A timestamp of the date and time that the bot alias was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -16271,12 +15092,8 @@ pub mod bot_alias_summary {
             self
         }
         /// <p>A timestamp of the date and time that the bot alias was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -16284,26 +15101,31 @@ pub mod bot_alias_summary {
             self
         }
         /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`BotAliasSummary`](crate::model::BotAliasSummary).
         pub fn build(self) -> crate::model::BotAliasSummary {
             crate::model::BotAliasSummary {
-                bot_alias_id: self.bot_alias_id,
-                bot_alias_name: self.bot_alias_name,
-                description: self.description,
-                bot_version: self.bot_version,
-                bot_alias_status: self.bot_alias_status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_alias_name: self.bot_alias_name
+                ,
+                description: self.description
+                ,
+                bot_version: self.bot_version
+                ,
+                bot_alias_status: self.bot_alias_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BotAliasSummary {
     /// Creates a new builder-style object to manufacture [`BotAliasSummary`](crate::model::BotAliasSummary).
@@ -16315,7 +15137,7 @@ impl BotAliasSummary {
 /// <p>Provides summary information for aggregated utterances. The <code>ListAggregatedUtterances</code> operations combines all instances of the same utterance into a single aggregated summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregatedUtterancesSummary {
+pub struct AggregatedUtterancesSummary  {
     /// <p>The text of the utterance. If the utterance was used with the <code>RecognizeUtterance</code> operation, the text is the transcription of the audio utterance.</p>
     #[doc(hidden)]
     pub utterance: std::option::Option<std::string::String>,
@@ -16327,19 +15149,17 @@ pub struct AggregatedUtterancesSummary {
     pub missed_count: std::option::Option<i32>,
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
     #[doc(hidden)]
-    pub utterance_first_recorded_in_aggregation_duration:
-        std::option::Option<aws_smithy_types::DateTime>,
+    pub utterance_first_recorded_in_aggregation_duration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
     #[doc(hidden)]
-    pub utterance_last_recorded_in_aggregation_duration:
-        std::option::Option<aws_smithy_types::DateTime>,
+    pub utterance_last_recorded_in_aggregation_duration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
     #[doc(hidden)]
     pub contains_data_from_deleted_resources: std::option::Option<bool>,
 }
 impl AggregatedUtterancesSummary {
     /// <p>The text of the utterance. If the utterance was used with the <code>RecognizeUtterance</code> operation, the text is the transcription of the audio utterance.</p>
-    pub fn utterance(&self) -> std::option::Option<&str> {
+    pub fn utterance(&self) -> std::option::Option<& str> {
         self.utterance.as_deref()
     }
     /// <p>The number of times that the utterance was detected by Amazon Lex during the time period. When an utterance is detected, it activates an intent or a slot.</p>
@@ -16351,18 +15171,12 @@ impl AggregatedUtterancesSummary {
         self.missed_count
     }
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
-    pub fn utterance_first_recorded_in_aggregation_duration(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.utterance_first_recorded_in_aggregation_duration
-            .as_ref()
+    pub fn utterance_first_recorded_in_aggregation_duration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+        self.utterance_first_recorded_in_aggregation_duration.as_ref()
     }
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
-    pub fn utterance_last_recorded_in_aggregation_duration(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
-        self.utterance_last_recorded_in_aggregation_duration
-            .as_ref()
+    pub fn utterance_last_recorded_in_aggregation_duration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+        self.utterance_last_recorded_in_aggregation_duration.as_ref()
     }
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
     pub fn contains_data_from_deleted_resources(&self) -> std::option::Option<bool> {
@@ -16371,17 +15185,15 @@ impl AggregatedUtterancesSummary {
 }
 /// See [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary).
 pub mod aggregated_utterances_summary {
-
+    
     /// A builder for [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) utterance: std::option::Option<std::string::String>,
         pub(crate) hit_count: std::option::Option<i32>,
         pub(crate) missed_count: std::option::Option<i32>,
-        pub(crate) utterance_first_recorded_in_aggregation_duration:
-            std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) utterance_last_recorded_in_aggregation_duration:
-            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) utterance_first_recorded_in_aggregation_duration: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) utterance_last_recorded_in_aggregation_duration: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) contains_data_from_deleted_resources: std::option::Option<bool>,
     }
     impl Builder {
@@ -16392,8 +15204,7 @@ pub mod aggregated_utterances_summary {
         }
         /// <p>The text of the utterance. If the utterance was used with the <code>RecognizeUtterance</code> operation, the text is the transcription of the audio utterance.</p>
         pub fn set_utterance(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.utterance = input;
-            self
+            self.utterance = input; self
         }
         /// <p>The number of times that the utterance was detected by Amazon Lex during the time period. When an utterance is detected, it activates an intent or a slot.</p>
         pub fn hit_count(mut self, input: i32) -> Self {
@@ -16402,8 +15213,7 @@ pub mod aggregated_utterances_summary {
         }
         /// <p>The number of times that the utterance was detected by Amazon Lex during the time period. When an utterance is detected, it activates an intent or a slot.</p>
         pub fn set_hit_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.hit_count = input;
-            self
+            self.hit_count = input; self
         }
         /// <p>The number of times that the utterance was missed by Amazon Lex An utterance is missed when it doesn't activate an intent or slot.</p>
         pub fn missed_count(mut self, input: i32) -> Self {
@@ -16412,40 +15222,25 @@ pub mod aggregated_utterances_summary {
         }
         /// <p>The number of times that the utterance was missed by Amazon Lex An utterance is missed when it doesn't activate an intent or slot.</p>
         pub fn set_missed_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.missed_count = input;
-            self
+            self.missed_count = input; self
         }
         /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
-        pub fn utterance_first_recorded_in_aggregation_duration(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn utterance_first_recorded_in_aggregation_duration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.utterance_first_recorded_in_aggregation_duration = Some(input);
             self
         }
         /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
-        pub fn set_utterance_first_recorded_in_aggregation_duration(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.utterance_first_recorded_in_aggregation_duration = input;
-            self
+        pub fn set_utterance_first_recorded_in_aggregation_duration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.utterance_first_recorded_in_aggregation_duration = input; self
         }
         /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
-        pub fn utterance_last_recorded_in_aggregation_duration(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn utterance_last_recorded_in_aggregation_duration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.utterance_last_recorded_in_aggregation_duration = Some(input);
             self
         }
         /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
-        pub fn set_utterance_last_recorded_in_aggregation_duration(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.utterance_last_recorded_in_aggregation_duration = input;
-            self
+        pub fn set_utterance_last_recorded_in_aggregation_duration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.utterance_last_recorded_in_aggregation_duration = input; self
         }
         /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
         pub fn contains_data_from_deleted_resources(mut self, input: bool) -> Self {
@@ -16453,27 +15248,29 @@ pub mod aggregated_utterances_summary {
             self
         }
         /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
-        pub fn set_contains_data_from_deleted_resources(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.contains_data_from_deleted_resources = input;
-            self
+        pub fn set_contains_data_from_deleted_resources(mut self, input: std::option::Option<bool>) -> Self {
+            self.contains_data_from_deleted_resources = input; self
         }
         /// Consumes the builder and constructs a [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary).
         pub fn build(self) -> crate::model::AggregatedUtterancesSummary {
             crate::model::AggregatedUtterancesSummary {
-                utterance: self.utterance,
-                hit_count: self.hit_count,
-                missed_count: self.missed_count,
-                utterance_first_recorded_in_aggregation_duration: self
-                    .utterance_first_recorded_in_aggregation_duration,
-                utterance_last_recorded_in_aggregation_duration: self
-                    .utterance_last_recorded_in_aggregation_duration,
-                contains_data_from_deleted_resources: self.contains_data_from_deleted_resources,
+                utterance: self.utterance
+                ,
+                hit_count: self.hit_count
+                ,
+                missed_count: self.missed_count
+                ,
+                utterance_first_recorded_in_aggregation_duration: self.utterance_first_recorded_in_aggregation_duration
+                ,
+                utterance_last_recorded_in_aggregation_duration: self.utterance_last_recorded_in_aggregation_duration
+                ,
+                contains_data_from_deleted_resources: self.contains_data_from_deleted_resources
+                ,
             }
         }
     }
+    
+    
 }
 impl AggregatedUtterancesSummary {
     /// Creates a new builder-style object to manufacture [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary).
@@ -16485,53 +15282,45 @@ impl AggregatedUtterancesSummary {
 /// <p>Provides parameters for setting the time window and duration for aggregating utterance data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UtteranceAggregationDuration {
+pub struct UtteranceAggregationDuration  {
     /// <p>The desired time window for aggregating utterances. </p>
     #[doc(hidden)]
-    pub relative_aggregation_duration:
-        std::option::Option<crate::model::RelativeAggregationDuration>,
+    pub relative_aggregation_duration: std::option::Option<crate::model::RelativeAggregationDuration>,
 }
 impl UtteranceAggregationDuration {
     /// <p>The desired time window for aggregating utterances. </p>
-    pub fn relative_aggregation_duration(
-        &self,
-    ) -> std::option::Option<&crate::model::RelativeAggregationDuration> {
+    pub fn relative_aggregation_duration(&self) -> std::option::Option<& crate::model::RelativeAggregationDuration> {
         self.relative_aggregation_duration.as_ref()
     }
 }
 /// See [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration).
 pub mod utterance_aggregation_duration {
-
+    
     /// A builder for [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) relative_aggregation_duration:
-            std::option::Option<crate::model::RelativeAggregationDuration>,
+        pub(crate) relative_aggregation_duration: std::option::Option<crate::model::RelativeAggregationDuration>,
     }
     impl Builder {
         /// <p>The desired time window for aggregating utterances. </p>
-        pub fn relative_aggregation_duration(
-            mut self,
-            input: crate::model::RelativeAggregationDuration,
-        ) -> Self {
+        pub fn relative_aggregation_duration(mut self, input: crate::model::RelativeAggregationDuration) -> Self {
             self.relative_aggregation_duration = Some(input);
             self
         }
         /// <p>The desired time window for aggregating utterances. </p>
-        pub fn set_relative_aggregation_duration(
-            mut self,
-            input: std::option::Option<crate::model::RelativeAggregationDuration>,
-        ) -> Self {
-            self.relative_aggregation_duration = input;
-            self
+        pub fn set_relative_aggregation_duration(mut self, input: std::option::Option<crate::model::RelativeAggregationDuration>) -> Self {
+            self.relative_aggregation_duration = input; self
         }
         /// Consumes the builder and constructs a [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration).
         pub fn build(self) -> crate::model::UtteranceAggregationDuration {
             crate::model::UtteranceAggregationDuration {
-                relative_aggregation_duration: self.relative_aggregation_duration,
+                relative_aggregation_duration: self.relative_aggregation_duration
+                ,
             }
         }
     }
+    
+    
 }
 impl UtteranceAggregationDuration {
     /// Creates a new builder-style object to manufacture [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration).
@@ -16540,38 +15329,38 @@ impl UtteranceAggregationDuration {
     }
 }
 
-/// <p>Specifies the time window that utterance statistics are returned for. The time window is always relative to the last time that the that utterances were aggregated. For example, if the <code>ListAggregatedUtterances</code> operation is called at 1600, the time window is set to 1 hour, and the last refresh time was 1530, only utterances made between 1430 and 1530 are returned.</p>
-/// <p>You can choose the time window that statistics should be returned for.</p>
-/// <ul>
-/// <li> <p> <b>Hours</b> - You can request utterance statistics for 1, 3, 6, 12, or 24 hour time windows. Statistics are refreshed every half hour for 1 hour time windows, and hourly for the other time windows.</p> </li>
-/// <li> <p> <b>Days</b> - You can request utterance statistics for 3 days. Statistics are refreshed every 6 hours.</p> </li>
-/// <li> <p> <b>Weeks</b> - You can see statistics for one or two weeks. Statistics are refreshed every 12 hours for one week time windows, and once per day for two week time windows.</p> </li>
+/// <p>Specifies the time window that utterance statistics are returned for. The time window is always relative to the last time that the that utterances were aggregated. For example, if the <code>ListAggregatedUtterances</code> operation is called at 1600, the time window is set to 1 hour, and the last refresh time was 1530, only utterances made between 1430 and 1530 are returned.</p> 
+/// <p>You can choose the time window that statistics should be returned for.</p> 
+/// <ul> 
+/// <li> <p> <b>Hours</b> - You can request utterance statistics for 1, 3, 6, 12, or 24 hour time windows. Statistics are refreshed every half hour for 1 hour time windows, and hourly for the other time windows.</p> </li> 
+/// <li> <p> <b>Days</b> - You can request utterance statistics for 3 days. Statistics are refreshed every 6 hours.</p> </li> 
+/// <li> <p> <b>Weeks</b> - You can see statistics for one or two weeks. Statistics are refreshed every 12 hours for one week time windows, and once per day for two week time windows.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelativeAggregationDuration {
+pub struct RelativeAggregationDuration  {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
     #[doc(hidden)]
     pub time_dimension: std::option::Option<crate::model::TimeDimension>,
-    /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
-    /// <ul>
-    /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li>
-    /// <li> <p> <code>Days</code> - 3</p> </li>
-    /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
+    /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li> 
+    /// <li> <p> <code>Days</code> - 3</p> </li> 
+    /// <li> <p> <code>Weeks</code> - 1/2</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub time_value: i32,
 }
 impl RelativeAggregationDuration {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
-    pub fn time_dimension(&self) -> std::option::Option<&crate::model::TimeDimension> {
+    pub fn time_dimension(&self) -> std::option::Option<& crate::model::TimeDimension> {
         self.time_dimension.as_ref()
     }
-    /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
-    /// <ul>
-    /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li>
-    /// <li> <p> <code>Days</code> - 3</p> </li>
-    /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
+    /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li> 
+    /// <li> <p> <code>Days</code> - 3</p> </li> 
+    /// <li> <p> <code>Weeks</code> - 1/2</p> </li> 
     /// </ul>
     pub fn time_value(&self) -> i32 {
         self.time_value
@@ -16579,7 +15368,7 @@ impl RelativeAggregationDuration {
 }
 /// See [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration).
 pub mod relative_aggregation_duration {
-
+    
     /// A builder for [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -16593,41 +15382,41 @@ pub mod relative_aggregation_duration {
             self
         }
         /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
-        pub fn set_time_dimension(
-            mut self,
-            input: std::option::Option<crate::model::TimeDimension>,
-        ) -> Self {
-            self.time_dimension = input;
-            self
+        pub fn set_time_dimension(mut self, input: std::option::Option<crate::model::TimeDimension>) -> Self {
+            self.time_dimension = input; self
         }
-        /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
-        /// <ul>
-        /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li>
-        /// <li> <p> <code>Days</code> - 3</p> </li>
-        /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
+        /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li> 
+        /// <li> <p> <code>Days</code> - 3</p> </li> 
+        /// <li> <p> <code>Weeks</code> - 1/2</p> </li> 
         /// </ul>
         pub fn time_value(mut self, input: i32) -> Self {
             self.time_value = Some(input);
             self
         }
-        /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
-        /// <ul>
-        /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li>
-        /// <li> <p> <code>Days</code> - 3</p> </li>
-        /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
+        /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li> 
+        /// <li> <p> <code>Days</code> - 3</p> </li> 
+        /// <li> <p> <code>Weeks</code> - 1/2</p> </li> 
         /// </ul>
         pub fn set_time_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.time_value = input;
-            self
+            self.time_value = input; self
         }
         /// Consumes the builder and constructs a [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration).
         pub fn build(self) -> crate::model::RelativeAggregationDuration {
             crate::model::RelativeAggregationDuration {
-                time_dimension: self.time_dimension,
-                time_value: self.time_value.unwrap_or_default(),
+                time_dimension: self.time_dimension
+                ,
+                time_value: self.time_value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RelativeAggregationDuration {
     /// Creates a new builder-style object to manufacture [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration).
@@ -16642,9 +15431,9 @@ impl RelativeAggregationDuration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let timedimension = unimplemented!();
 /// match timedimension {
@@ -16667,22 +15456,14 @@ impl RelativeAggregationDuration {
 /// Specifically, when `timedimension` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimeDimension::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TimeDimension {
     #[allow(missing_docs)] // documentation missing in model
     Days,
@@ -16691,7 +15472,7 @@ pub enum TimeDimension {
     #[allow(missing_docs)] // documentation missing in model
     Weeks,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TimeDimension {
     fn from(s: &str) -> Self {
@@ -16699,17 +15480,17 @@ impl std::convert::From<&str> for TimeDimension {
             "Days" => TimeDimension::Days,
             "Hours" => TimeDimension::Hours,
             "Weeks" => TimeDimension::Weeks,
-            other => TimeDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TimeDimension::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TimeDimension {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimeDimension::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TimeDimension::from(s))
+                }
+            }
 impl TimeDimension {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -16717,12 +15498,14 @@ impl TimeDimension {
             TimeDimension::Days => "Days",
             TimeDimension::Hours => "Hours",
             TimeDimension::Weeks => "Weeks",
-            TimeDimension::Unknown(value) => value.as_str(),
+            TimeDimension::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Days", "Hours", "Weeks"]
+        &[
+            "Days", "Hours", "Weeks"
+        ]
     }
 }
 impl AsRef<str> for TimeDimension {
@@ -16734,7 +15517,7 @@ impl AsRef<str> for TimeDimension {
 /// <p>Filters responses returned by the <code>ListAggregatedUtterances</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregatedUtterancesFilter {
+pub struct AggregatedUtterancesFilter  {
     /// <p>The name of the field to filter the utterance list.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::AggregatedUtterancesFilterName>,
@@ -16747,23 +15530,21 @@ pub struct AggregatedUtterancesFilter {
 }
 impl AggregatedUtterancesFilter {
     /// <p>The name of the field to filter the utterance list.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::AggregatedUtterancesFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::AggregatedUtterancesFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub fn operator(
-        &self,
-    ) -> std::option::Option<&crate::model::AggregatedUtterancesFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::AggregatedUtterancesFilterOperator> {
         self.operator.as_ref()
     }
 }
 /// See [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter).
 pub mod aggregated_utterances_filter {
-
+    
     /// A builder for [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -16778,12 +15559,8 @@ pub mod aggregated_utterances_filter {
             self
         }
         /// <p>The name of the field to filter the utterance list.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::AggregatedUtterancesFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::AggregatedUtterancesFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -16792,17 +15569,13 @@ pub mod aggregated_utterances_filter {
         /// <p>The value to use for filtering the list of bots.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value to use for filtering the list of bots.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
         pub fn operator(mut self, input: crate::model::AggregatedUtterancesFilterOperator) -> Self {
@@ -16810,22 +15583,23 @@ pub mod aggregated_utterances_filter {
             self
         }
         /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::AggregatedUtterancesFilterOperator>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::AggregatedUtterancesFilterOperator>) -> Self {
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter).
         pub fn build(self) -> crate::model::AggregatedUtterancesFilter {
             crate::model::AggregatedUtterancesFilter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl AggregatedUtterancesFilter {
     /// Creates a new builder-style object to manufacture [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter).
@@ -16840,9 +15614,9 @@ impl AggregatedUtterancesFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggregatedutterancesfilteroperator = unimplemented!();
 /// match aggregatedutterancesfilteroperator {
@@ -16864,60 +15638,52 @@ impl AggregatedUtterancesFilter {
 /// Specifically, when `aggregatedutterancesfilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregatedUtterancesFilterOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AggregatedUtterancesFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
     #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregatedUtterancesFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "CO" => AggregatedUtterancesFilterOperator::Contains,
             "EQ" => AggregatedUtterancesFilterOperator::Equals,
-            other => AggregatedUtterancesFilterOperator::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AggregatedUtterancesFilterOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AggregatedUtterancesFilterOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregatedUtterancesFilterOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AggregatedUtterancesFilterOperator::from(s))
+                }
+            }
 impl AggregatedUtterancesFilterOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregatedUtterancesFilterOperator::Contains => "CO",
             AggregatedUtterancesFilterOperator::Equals => "EQ",
-            AggregatedUtterancesFilterOperator::Unknown(value) => value.as_str(),
+            AggregatedUtterancesFilterOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CO", "EQ"]
+        &[
+            "CO", "EQ"
+        ]
     }
 }
 impl AsRef<str> for AggregatedUtterancesFilterOperator {
@@ -16932,9 +15698,9 @@ impl AsRef<str> for AggregatedUtterancesFilterOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggregatedutterancesfiltername = unimplemented!();
 /// match aggregatedutterancesfiltername {
@@ -16955,56 +15721,48 @@ impl AsRef<str> for AggregatedUtterancesFilterOperator {
 /// Specifically, when `aggregatedutterancesfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregatedUtterancesFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AggregatedUtterancesFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Utterance,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregatedUtterancesFilterName {
     fn from(s: &str) -> Self {
         match s {
             "Utterance" => AggregatedUtterancesFilterName::Utterance,
-            other => AggregatedUtterancesFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AggregatedUtterancesFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AggregatedUtterancesFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregatedUtterancesFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AggregatedUtterancesFilterName::from(s))
+                }
+            }
 impl AggregatedUtterancesFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregatedUtterancesFilterName::Utterance => "Utterance",
-            AggregatedUtterancesFilterName::Unknown(value) => value.as_str(),
+            AggregatedUtterancesFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Utterance"]
+        &[
+            "Utterance"
+        ]
     }
 }
 impl AsRef<str> for AggregatedUtterancesFilterName {
@@ -17016,7 +15774,7 @@ impl AsRef<str> for AggregatedUtterancesFilterName {
 /// <p>Specifies attributes for sorting a list of utterances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregatedUtterancesSortBy {
+pub struct AggregatedUtterancesSortBy  {
     /// <p>The utterance attribute to sort by.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::AggregatedUtterancesSortAttribute>,
@@ -17026,19 +15784,17 @@ pub struct AggregatedUtterancesSortBy {
 }
 impl AggregatedUtterancesSortBy {
     /// <p>The utterance attribute to sort by.</p>
-    pub fn attribute(
-        &self,
-    ) -> std::option::Option<&crate::model::AggregatedUtterancesSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::AggregatedUtterancesSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.order.as_ref()
     }
 }
 /// See [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy).
 pub mod aggregated_utterances_sort_by {
-
+    
     /// A builder for [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17052,12 +15808,8 @@ pub mod aggregated_utterances_sort_by {
             self
         }
         /// <p>The utterance attribute to sort by.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::AggregatedUtterancesSortAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::AggregatedUtterancesSortAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
         pub fn order(mut self, input: crate::model::SortOrder) -> Self {
@@ -17066,17 +15818,20 @@ pub mod aggregated_utterances_sort_by {
         }
         /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy).
         pub fn build(self) -> crate::model::AggregatedUtterancesSortBy {
             crate::model::AggregatedUtterancesSortBy {
-                attribute: self.attribute,
-                order: self.order,
+                attribute: self.attribute
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl AggregatedUtterancesSortBy {
     /// Creates a new builder-style object to manufacture [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy).
@@ -17091,9 +15846,9 @@ impl AggregatedUtterancesSortBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggregatedutterancessortattribute = unimplemented!();
 /// match aggregatedutterancessortattribute {
@@ -17115,60 +15870,52 @@ impl AggregatedUtterancesSortBy {
 /// Specifically, when `aggregatedutterancessortattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregatedUtterancesSortAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AggregatedUtterancesSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
     HitCount,
     #[allow(missing_docs)] // documentation missing in model
     MissedCount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregatedUtterancesSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "HitCount" => AggregatedUtterancesSortAttribute::HitCount,
             "MissedCount" => AggregatedUtterancesSortAttribute::MissedCount,
-            other => AggregatedUtterancesSortAttribute::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AggregatedUtterancesSortAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AggregatedUtterancesSortAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregatedUtterancesSortAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AggregatedUtterancesSortAttribute::from(s))
+                }
+            }
 impl AggregatedUtterancesSortAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregatedUtterancesSortAttribute::HitCount => "HitCount",
             AggregatedUtterancesSortAttribute::MissedCount => "MissedCount",
-            AggregatedUtterancesSortAttribute::Unknown(value) => value.as_str(),
+            AggregatedUtterancesSortAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HitCount", "MissedCount"]
+        &[
+            "HitCount", "MissedCount"
+        ]
     }
 }
 impl AsRef<str> for AggregatedUtterancesSortAttribute {
@@ -17183,9 +15930,9 @@ impl AsRef<str> for AggregatedUtterancesSortAttribute {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let customvocabularystatus = unimplemented!();
 /// match customvocabularystatus {
@@ -17210,22 +15957,14 @@ impl AsRef<str> for AggregatedUtterancesSortAttribute {
 /// Specifically, when `customvocabularystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CustomVocabularyStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CustomVocabularyStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -17238,7 +15977,7 @@ pub enum CustomVocabularyStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomVocabularyStatus {
     fn from(s: &str) -> Self {
@@ -17248,19 +15987,17 @@ impl std::convert::From<&str> for CustomVocabularyStatus {
             "Exporting" => CustomVocabularyStatus::Exporting,
             "Importing" => CustomVocabularyStatus::Importing,
             "Ready" => CustomVocabularyStatus::Ready,
-            other => {
-                CustomVocabularyStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CustomVocabularyStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CustomVocabularyStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomVocabularyStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CustomVocabularyStatus::from(s))
+                }
+            }
 impl CustomVocabularyStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -17270,12 +16007,14 @@ impl CustomVocabularyStatus {
             CustomVocabularyStatus::Exporting => "Exporting",
             CustomVocabularyStatus::Importing => "Importing",
             CustomVocabularyStatus::Ready => "Ready",
-            CustomVocabularyStatus::Unknown(value) => value.as_str(),
+            CustomVocabularyStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Creating", "Deleting", "Exporting", "Importing", "Ready"]
+        &[
+            "Creating", "Deleting", "Exporting", "Importing", "Ready"
+        ]
     }
 }
 impl AsRef<str> for CustomVocabularyStatus {
@@ -17287,7 +16026,7 @@ impl AsRef<str> for CustomVocabularyStatus {
 /// <p>The object representing the URL of the bot definition, the URL of the associated transcript, and a statistical summary of the bot recommendation results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotRecommendationResults {
+pub struct BotRecommendationResults  {
     /// <p>The presigned URL link of the recommended bot definition.</p>
     #[doc(hidden)]
     pub bot_locale_export_url: std::option::Option<std::string::String>,
@@ -17300,23 +16039,21 @@ pub struct BotRecommendationResults {
 }
 impl BotRecommendationResults {
     /// <p>The presigned URL link of the recommended bot definition.</p>
-    pub fn bot_locale_export_url(&self) -> std::option::Option<&str> {
+    pub fn bot_locale_export_url(&self) -> std::option::Option<& str> {
         self.bot_locale_export_url.as_deref()
     }
     /// <p>The presigned url link of the associated transcript.</p>
-    pub fn associated_transcripts_url(&self) -> std::option::Option<&str> {
+    pub fn associated_transcripts_url(&self) -> std::option::Option<& str> {
         self.associated_transcripts_url.as_deref()
     }
     /// <p>The statistical summary of the bot recommendation results.</p>
-    pub fn statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::BotRecommendationResultStatistics> {
+    pub fn statistics(&self) -> std::option::Option<& crate::model::BotRecommendationResultStatistics> {
         self.statistics.as_ref()
     }
 }
 /// See [`BotRecommendationResults`](crate::model::BotRecommendationResults).
 pub mod bot_recommendation_results {
-
+    
     /// A builder for [`BotRecommendationResults`](crate::model::BotRecommendationResults).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17331,12 +16068,8 @@ pub mod bot_recommendation_results {
             self
         }
         /// <p>The presigned URL link of the recommended bot definition.</p>
-        pub fn set_bot_locale_export_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bot_locale_export_url = input;
-            self
+        pub fn set_bot_locale_export_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_locale_export_url = input; self
         }
         /// <p>The presigned url link of the associated transcript.</p>
         pub fn associated_transcripts_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -17344,38 +16077,32 @@ pub mod bot_recommendation_results {
             self
         }
         /// <p>The presigned url link of the associated transcript.</p>
-        pub fn set_associated_transcripts_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.associated_transcripts_url = input;
-            self
+        pub fn set_associated_transcripts_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.associated_transcripts_url = input; self
         }
         /// <p>The statistical summary of the bot recommendation results.</p>
-        pub fn statistics(
-            mut self,
-            input: crate::model::BotRecommendationResultStatistics,
-        ) -> Self {
+        pub fn statistics(mut self, input: crate::model::BotRecommendationResultStatistics) -> Self {
             self.statistics = Some(input);
             self
         }
         /// <p>The statistical summary of the bot recommendation results.</p>
-        pub fn set_statistics(
-            mut self,
-            input: std::option::Option<crate::model::BotRecommendationResultStatistics>,
-        ) -> Self {
-            self.statistics = input;
-            self
+        pub fn set_statistics(mut self, input: std::option::Option<crate::model::BotRecommendationResultStatistics>) -> Self {
+            self.statistics = input; self
         }
         /// Consumes the builder and constructs a [`BotRecommendationResults`](crate::model::BotRecommendationResults).
         pub fn build(self) -> crate::model::BotRecommendationResults {
             crate::model::BotRecommendationResults {
-                bot_locale_export_url: self.bot_locale_export_url,
-                associated_transcripts_url: self.associated_transcripts_url,
-                statistics: self.statistics,
+                bot_locale_export_url: self.bot_locale_export_url
+                ,
+                associated_transcripts_url: self.associated_transcripts_url
+                ,
+                statistics: self.statistics
+                ,
             }
         }
     }
+    
+    
 }
 impl BotRecommendationResults {
     /// Creates a new builder-style object to manufacture [`BotRecommendationResults`](crate::model::BotRecommendationResults).
@@ -17387,7 +16114,7 @@ impl BotRecommendationResults {
 /// <p>A statistical summary of the bot recommendation results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotRecommendationResultStatistics {
+pub struct BotRecommendationResultStatistics  {
     /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
     #[doc(hidden)]
     pub intents: std::option::Option<crate::model::IntentStatistics>,
@@ -17397,17 +16124,17 @@ pub struct BotRecommendationResultStatistics {
 }
 impl BotRecommendationResultStatistics {
     /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
-    pub fn intents(&self) -> std::option::Option<&crate::model::IntentStatistics> {
+    pub fn intents(&self) -> std::option::Option<& crate::model::IntentStatistics> {
         self.intents.as_ref()
     }
     /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
-    pub fn slot_types(&self) -> std::option::Option<&crate::model::SlotTypeStatistics> {
+    pub fn slot_types(&self) -> std::option::Option<& crate::model::SlotTypeStatistics> {
         self.slot_types.as_ref()
     }
 }
 /// See [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics).
 pub mod bot_recommendation_result_statistics {
-
+    
     /// A builder for [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17421,12 +16148,8 @@ pub mod bot_recommendation_result_statistics {
             self
         }
         /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
-        pub fn set_intents(
-            mut self,
-            input: std::option::Option<crate::model::IntentStatistics>,
-        ) -> Self {
-            self.intents = input;
-            self
+        pub fn set_intents(mut self, input: std::option::Option<crate::model::IntentStatistics>) -> Self {
+            self.intents = input; self
         }
         /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
         pub fn slot_types(mut self, input: crate::model::SlotTypeStatistics) -> Self {
@@ -17434,21 +16157,21 @@ pub mod bot_recommendation_result_statistics {
             self
         }
         /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
-        pub fn set_slot_types(
-            mut self,
-            input: std::option::Option<crate::model::SlotTypeStatistics>,
-        ) -> Self {
-            self.slot_types = input;
-            self
+        pub fn set_slot_types(mut self, input: std::option::Option<crate::model::SlotTypeStatistics>) -> Self {
+            self.slot_types = input; self
         }
         /// Consumes the builder and constructs a [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics).
         pub fn build(self) -> crate::model::BotRecommendationResultStatistics {
             crate::model::BotRecommendationResultStatistics {
-                intents: self.intents,
-                slot_types: self.slot_types,
+                intents: self.intents
+                ,
+                slot_types: self.slot_types
+                ,
             }
         }
     }
+    
+    
 }
 impl BotRecommendationResultStatistics {
     /// Creates a new builder-style object to manufacture [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics).
@@ -17460,7 +16183,7 @@ impl BotRecommendationResultStatistics {
 /// <p>The object that contains the statistical summary of the recommended slot type associated with the bot recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotTypeStatistics {
+pub struct SlotTypeStatistics  {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
     #[doc(hidden)]
     pub discovered_slot_type_count: std::option::Option<i32>,
@@ -17473,7 +16196,7 @@ impl SlotTypeStatistics {
 }
 /// See [`SlotTypeStatistics`](crate::model::SlotTypeStatistics).
 pub mod slot_type_statistics {
-
+    
     /// A builder for [`SlotTypeStatistics`](crate::model::SlotTypeStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17487,16 +16210,18 @@ pub mod slot_type_statistics {
         }
         /// <p>The number of recommended slot types associated with the bot recommendation.</p>
         pub fn set_discovered_slot_type_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.discovered_slot_type_count = input;
-            self
+            self.discovered_slot_type_count = input; self
         }
         /// Consumes the builder and constructs a [`SlotTypeStatistics`](crate::model::SlotTypeStatistics).
         pub fn build(self) -> crate::model::SlotTypeStatistics {
             crate::model::SlotTypeStatistics {
-                discovered_slot_type_count: self.discovered_slot_type_count,
+                discovered_slot_type_count: self.discovered_slot_type_count
+                ,
             }
         }
     }
+    
+    
 }
 impl SlotTypeStatistics {
     /// Creates a new builder-style object to manufacture [`SlotTypeStatistics`](crate::model::SlotTypeStatistics).
@@ -17508,7 +16233,7 @@ impl SlotTypeStatistics {
 /// <p>The object that contains the statistical summary of recommended intents associated with the bot recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentStatistics {
+pub struct IntentStatistics  {
     /// <p>The number of recommended intents associated with the bot recommendation.</p>
     #[doc(hidden)]
     pub discovered_intent_count: std::option::Option<i32>,
@@ -17521,7 +16246,7 @@ impl IntentStatistics {
 }
 /// See [`IntentStatistics`](crate::model::IntentStatistics).
 pub mod intent_statistics {
-
+    
     /// A builder for [`IntentStatistics`](crate::model::IntentStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17535,16 +16260,18 @@ pub mod intent_statistics {
         }
         /// <p>The number of recommended intents associated with the bot recommendation.</p>
         pub fn set_discovered_intent_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.discovered_intent_count = input;
-            self
+            self.discovered_intent_count = input; self
         }
         /// Consumes the builder and constructs a [`IntentStatistics`](crate::model::IntentStatistics).
         pub fn build(self) -> crate::model::IntentStatistics {
             crate::model::IntentStatistics {
-                discovered_intent_count: self.discovered_intent_count,
+                discovered_intent_count: self.discovered_intent_count
+                ,
             }
         }
     }
+    
+    
 }
 impl IntentStatistics {
     /// Creates a new builder-style object to manufacture [`IntentStatistics`](crate::model::IntentStatistics).
@@ -17556,7 +16283,7 @@ impl IntentStatistics {
 /// <p>Provides information about an event that occurred affecting the bot locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleHistoryEvent {
+pub struct BotLocaleHistoryEvent  {
     /// <p>A description of the event that occurred.</p>
     #[doc(hidden)]
     pub event: std::option::Option<std::string::String>,
@@ -17566,17 +16293,17 @@ pub struct BotLocaleHistoryEvent {
 }
 impl BotLocaleHistoryEvent {
     /// <p>A description of the event that occurred.</p>
-    pub fn event(&self) -> std::option::Option<&str> {
+    pub fn event(&self) -> std::option::Option<& str> {
         self.event.as_deref()
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
-    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
 }
 /// See [`BotLocaleHistoryEvent`](crate::model::BotLocaleHistoryEvent).
 pub mod bot_locale_history_event {
-
+    
     /// A builder for [`BotLocaleHistoryEvent`](crate::model::BotLocaleHistoryEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17591,8 +16318,7 @@ pub mod bot_locale_history_event {
         }
         /// <p>A description of the event that occurred.</p>
         pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// <p>A timestamp of the date and time that the event occurred.</p>
         pub fn event_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -17600,21 +16326,21 @@ pub mod bot_locale_history_event {
             self
         }
         /// <p>A timestamp of the date and time that the event occurred.</p>
-        pub fn set_event_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_date = input;
-            self
+        pub fn set_event_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_date = input; self
         }
         /// Consumes the builder and constructs a [`BotLocaleHistoryEvent`](crate::model::BotLocaleHistoryEvent).
         pub fn build(self) -> crate::model::BotLocaleHistoryEvent {
             crate::model::BotLocaleHistoryEvent {
-                event: self.event,
-                event_date: self.event_date,
+                event: self.event
+                ,
+                event_date: self.event_date
+                ,
             }
         }
     }
+    
+    
 }
 impl BotLocaleHistoryEvent {
     /// Creates a new builder-style object to manufacture [`BotLocaleHistoryEvent`](crate::model::BotLocaleHistoryEvent).
@@ -17626,7 +16352,7 @@ impl BotLocaleHistoryEvent {
 /// <p>Provides a record of an event that affects a bot alias. For example, when the version of a bot that the alias points to changes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotAliasHistoryEvent {
+pub struct BotAliasHistoryEvent  {
     /// <p>The version of the bot that was used in the event. </p>
     #[doc(hidden)]
     pub bot_version: std::option::Option<std::string::String>,
@@ -17639,21 +16365,21 @@ pub struct BotAliasHistoryEvent {
 }
 impl BotAliasHistoryEvent {
     /// <p>The version of the bot that was used in the event. </p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The date and time that the event started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date and time that the event ended.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
 /// See [`BotAliasHistoryEvent`](crate::model::BotAliasHistoryEvent).
 pub mod bot_alias_history_event {
-
+    
     /// A builder for [`BotAliasHistoryEvent`](crate::model::BotAliasHistoryEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17669,8 +16395,7 @@ pub mod bot_alias_history_event {
         }
         /// <p>The version of the bot that was used in the event. </p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The date and time that the event started.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -17678,12 +16403,8 @@ pub mod bot_alias_history_event {
             self
         }
         /// <p>The date and time that the event started.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The date and time that the event ended.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -17691,22 +16412,23 @@ pub mod bot_alias_history_event {
             self
         }
         /// <p>The date and time that the event ended.</p>
-        pub fn set_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date = input;
-            self
+        pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date = input; self
         }
         /// Consumes the builder and constructs a [`BotAliasHistoryEvent`](crate::model::BotAliasHistoryEvent).
         pub fn build(self) -> crate::model::BotAliasHistoryEvent {
             crate::model::BotAliasHistoryEvent {
-                bot_version: self.bot_version,
-                start_date: self.start_date,
-                end_date: self.end_date,
+                bot_version: self.bot_version
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
             }
         }
     }
+    
+    
 }
 impl BotAliasHistoryEvent {
     /// Creates a new builder-style object to manufacture [`BotAliasHistoryEvent`](crate::model::BotAliasHistoryEvent).
@@ -17718,7 +16440,7 @@ impl BotAliasHistoryEvent {
 /// <p>The IAM principal that you allowing or denying access to an Amazon Lex action. You must provide a <code>service</code> or an <code>arn</code>, but not both in the same statement. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html"> AWS JSON policy elements: Principal </a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Principal {
+pub struct Principal  {
     /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
     #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
@@ -17728,17 +16450,17 @@ pub struct Principal {
 }
 impl Principal {
     /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
-
+    
     /// A builder for [`Principal`](crate::model::Principal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17753,8 +16475,7 @@ pub mod principal {
         }
         /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the principal.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -17763,17 +16484,20 @@ pub mod principal {
         }
         /// <p>The Amazon Resource Name (ARN) of the principal.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`Principal`](crate::model::Principal).
         pub fn build(self) -> crate::model::Principal {
             crate::model::Principal {
-                service: self.service,
-                arn: self.arn,
+                service: self.service
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Principal {
     /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
@@ -17788,9 +16512,9 @@ impl Principal {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let effect = unimplemented!();
 /// match effect {
@@ -17812,58 +16536,52 @@ impl Principal {
 /// Specifically, when `effect` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Effect::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Effect {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Effect {
     fn from(s: &str) -> Self {
         match s {
             "Allow" => Effect::Allow,
             "Deny" => Effect::Deny,
-            other => Effect::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Effect::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Effect {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Effect::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Effect::from(s))
+                }
+            }
 impl Effect {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Effect::Allow => "Allow",
             Effect::Deny => "Deny",
-            Effect::Unknown(value) => value.as_str(),
+            Effect::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Allow", "Deny"]
+        &[
+            "Allow", "Deny"
+        ]
     }
 }
 impl AsRef<str> for Effect {
@@ -17875,20 +16593,20 @@ impl AsRef<str> for Effect {
 /// <p>The version of a bot used for a bot locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotVersionLocaleDetails {
+pub struct BotVersionLocaleDetails  {
     /// <p>The version of a bot used for a bot locale.</p>
     #[doc(hidden)]
     pub source_bot_version: std::option::Option<std::string::String>,
 }
 impl BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn source_bot_version(&self) -> std::option::Option<&str> {
+    pub fn source_bot_version(&self) -> std::option::Option<& str> {
         self.source_bot_version.as_deref()
     }
 }
 /// See [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).
 pub mod bot_version_locale_details {
-
+    
     /// A builder for [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17901,20 +16619,19 @@ pub mod bot_version_locale_details {
             self
         }
         /// <p>The version of a bot used for a bot locale.</p>
-        pub fn set_source_bot_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_bot_version = input;
-            self
+        pub fn set_source_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_bot_version = input; self
         }
         /// Consumes the builder and constructs a [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).
         pub fn build(self) -> crate::model::BotVersionLocaleDetails {
             crate::model::BotVersionLocaleDetails {
-                source_bot_version: self.source_bot_version,
+                source_bot_version: self.source_bot_version
+                ,
             }
         }
     }
+    
+    
 }
 impl BotVersionLocaleDetails {
     /// Creates a new builder-style object to manufacture [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).
@@ -17926,7 +16643,7 @@ impl BotVersionLocaleDetails {
 /// <p>The unique failed custom vocabulary item from the custom vocabulary list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedCustomVocabularyItem {
+pub struct FailedCustomVocabularyItem  {
     /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
     #[doc(hidden)]
     pub item_id: std::option::Option<std::string::String>,
@@ -17939,21 +16656,21 @@ pub struct FailedCustomVocabularyItem {
 }
 impl FailedCustomVocabularyItem {
     /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
-    pub fn item_id(&self) -> std::option::Option<&str> {
+    pub fn item_id(&self) -> std::option::Option<& str> {
         self.item_id.as_deref()
     }
     /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
 }
 /// See [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
 pub mod failed_custom_vocabulary_item {
-
+    
     /// A builder for [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17969,8 +16686,7 @@ pub mod failed_custom_vocabulary_item {
         }
         /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.item_id = input;
-            self
+            self.item_id = input; self
         }
         /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -17978,12 +16694,8 @@ pub mod failed_custom_vocabulary_item {
             self
         }
         /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
@@ -17991,22 +16703,23 @@ pub mod failed_custom_vocabulary_item {
             self
         }
         /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// Consumes the builder and constructs a [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
         pub fn build(self) -> crate::model::FailedCustomVocabularyItem {
             crate::model::FailedCustomVocabularyItem {
-                item_id: self.item_id,
-                error_message: self.error_message,
-                error_code: self.error_code,
+                item_id: self.item_id
+                ,
+                error_message: self.error_message
+                ,
+                error_code: self.error_code
+                ,
             }
         }
     }
+    
+    
 }
 impl FailedCustomVocabularyItem {
     /// Creates a new builder-style object to manufacture [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
@@ -18021,9 +16734,9 @@ impl FailedCustomVocabularyItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -18047,22 +16760,14 @@ impl FailedCustomVocabularyItem {
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     DuplicateInput,
@@ -18073,7 +16778,7 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceDoesNotExist,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -18082,17 +16787,17 @@ impl std::convert::From<&str> for ErrorCode {
             "INTERNAL_SERVER_FAILURE" => ErrorCode::InternalServerFailure,
             "RESOURCE_ALREADY_EXISTS" => ErrorCode::ResourceAlreadyExists,
             "RESOURCE_DOES_NOT_EXIST" => ErrorCode::ResourceDoesNotExist,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -18101,16 +16806,13 @@ impl ErrorCode {
             ErrorCode::InternalServerFailure => "INTERNAL_SERVER_FAILURE",
             ErrorCode::ResourceAlreadyExists => "RESOURCE_ALREADY_EXISTS",
             ErrorCode::ResourceDoesNotExist => "RESOURCE_DOES_NOT_EXIST",
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DUPLICATE_INPUT",
-            "INTERNAL_SERVER_FAILURE",
-            "RESOURCE_ALREADY_EXISTS",
-            "RESOURCE_DOES_NOT_EXIST",
+            "DUPLICATE_INPUT", "INTERNAL_SERVER_FAILURE", "RESOURCE_ALREADY_EXISTS", "RESOURCE_DOES_NOT_EXIST"
         ]
     }
 }
@@ -18123,20 +16825,20 @@ impl AsRef<str> for ErrorCode {
 /// <p>The unique entry identifier for the custom vocabulary items.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomVocabularyEntryId {
+pub struct CustomVocabularyEntryId  {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
     #[doc(hidden)]
     pub item_id: std::option::Option<std::string::String>,
 }
 impl CustomVocabularyEntryId {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
-    pub fn item_id(&self) -> std::option::Option<&str> {
+    pub fn item_id(&self) -> std::option::Option<& str> {
         self.item_id.as_deref()
     }
 }
 /// See [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
 pub mod custom_vocabulary_entry_id {
-
+    
     /// A builder for [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -18150,16 +16852,18 @@ pub mod custom_vocabulary_entry_id {
         }
         /// <p>The unique item identifier for the custom vocabulary items.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.item_id = input;
-            self
+            self.item_id = input; self
         }
         /// Consumes the builder and constructs a [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
         pub fn build(self) -> crate::model::CustomVocabularyEntryId {
             crate::model::CustomVocabularyEntryId {
-                item_id: self.item_id,
+                item_id: self.item_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomVocabularyEntryId {
     /// Creates a new builder-style object to manufacture [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
@@ -18171,7 +16875,7 @@ impl CustomVocabularyEntryId {
 /// <p>The new custom vocabulary item from the custom vocabulary list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NewCustomVocabularyItem {
+pub struct NewCustomVocabularyItem  {
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
     #[doc(hidden)]
     pub phrase: std::option::Option<std::string::String>,
@@ -18184,7 +16888,7 @@ pub struct NewCustomVocabularyItem {
 }
 impl NewCustomVocabularyItem {
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
-    pub fn phrase(&self) -> std::option::Option<&str> {
+    pub fn phrase(&self) -> std::option::Option<& str> {
         self.phrase.as_deref()
     }
     /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
@@ -18192,13 +16896,13 @@ impl NewCustomVocabularyItem {
         self.weight
     }
     /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
-    pub fn display_as(&self) -> std::option::Option<&str> {
+    pub fn display_as(&self) -> std::option::Option<& str> {
         self.display_as.as_deref()
     }
 }
 /// See [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
 pub mod new_custom_vocabulary_item {
-
+    
     /// A builder for [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -18214,8 +16918,7 @@ pub mod new_custom_vocabulary_item {
         }
         /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
         pub fn set_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phrase = input;
-            self
+            self.phrase = input; self
         }
         /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
         pub fn weight(mut self, input: i32) -> Self {
@@ -18224,8 +16927,7 @@ pub mod new_custom_vocabulary_item {
         }
         /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
         /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
         pub fn display_as(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18234,18 +16936,22 @@ pub mod new_custom_vocabulary_item {
         }
         /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
         pub fn set_display_as(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_as = input;
-            self
+            self.display_as = input; self
         }
         /// Consumes the builder and constructs a [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
         pub fn build(self) -> crate::model::NewCustomVocabularyItem {
             crate::model::NewCustomVocabularyItem {
-                phrase: self.phrase,
-                weight: self.weight,
-                display_as: self.display_as,
+                phrase: self.phrase
+                ,
+                weight: self.weight
+                ,
+                display_as: self.display_as
+                ,
             }
         }
     }
+    
+    
 }
 impl NewCustomVocabularyItem {
     /// Creates a new builder-style object to manufacture [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
@@ -18253,3 +16959,4 @@ impl NewCustomVocabularyItem {
         crate::model::new_custom_vocabulary_item::Builder::default()
     }
 }
+

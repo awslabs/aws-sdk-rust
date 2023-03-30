@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,7 +60,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFhirImportJobOutput {
+pub struct StartFhirImportJobOutput  {
     /// <p>The AWS-generated job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -63,21 +73,21 @@ pub struct StartFhirImportJobOutput {
 }
 impl StartFhirImportJobOutput {
     /// <p>The AWS-generated job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of an import job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The AWS-generated Data Store ID.</p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
 }
 /// See [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
 pub mod start_fhir_import_job_output {
-
+    
     /// A builder for [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -93,8 +103,7 @@ pub mod start_fhir_import_job_output {
         }
         /// <p>The AWS-generated job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The status of an import job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -102,12 +111,8 @@ pub mod start_fhir_import_job_output {
             self
         }
         /// <p>The status of an import job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The AWS-generated Data Store ID.</p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,18 +121,22 @@ pub mod start_fhir_import_job_output {
         }
         /// <p>The AWS-generated Data Store ID.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.datastore_id = input;
-            self
+            self.datastore_id = input; self
         }
         /// Consumes the builder and constructs a [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
         pub fn build(self) -> crate::output::StartFhirImportJobOutput {
             crate::output::StartFhirImportJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
-                datastore_id: self.datastore_id,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
+                datastore_id: self.datastore_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartFhirImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
@@ -139,7 +148,7 @@ impl StartFhirImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFhirExportJobOutput {
+pub struct StartFhirExportJobOutput  {
     /// <p>The AWS generated ID for an export job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -152,21 +161,21 @@ pub struct StartFhirExportJobOutput {
 }
 impl StartFhirExportJobOutput {
     /// <p>The AWS generated ID for an export job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
 }
 /// See [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
 pub mod start_fhir_export_job_output {
-
+    
     /// A builder for [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -182,8 +191,7 @@ pub mod start_fhir_export_job_output {
         }
         /// <p>The AWS generated ID for an export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -191,12 +199,8 @@ pub mod start_fhir_export_job_output {
             self
         }
         /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,18 +209,22 @@ pub mod start_fhir_export_job_output {
         }
         /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.datastore_id = input;
-            self
+            self.datastore_id = input; self
         }
         /// Consumes the builder and constructs a [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
         pub fn build(self) -> crate::output::StartFhirExportJobOutput {
             crate::output::StartFhirExportJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
-                datastore_id: self.datastore_id,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
+                datastore_id: self.datastore_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartFhirExportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
@@ -228,20 +236,20 @@ impl StartFhirExportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p> Returns a list of tags associated with a Data Store. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p> Returns a list of tags associated with a Data Store. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -255,23 +263,24 @@ pub mod list_tags_for_resource_output {
         /// <p> Returns a list of tags associated with a Data Store. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p> Returns a list of tags associated with a Data Store. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -283,35 +292,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFhirImportJobsOutput {
+pub struct ListFhirImportJobsOutput  {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
     #[doc(hidden)]
-    pub import_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
+    pub import_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub fn import_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ImportJobProperties]> {
+    pub fn import_job_properties_list(&self) -> std::option::Option<& [crate::model::ImportJobProperties]> {
         self.import_job_properties_list.as_deref()
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
 pub mod list_fhir_import_jobs_output {
-
+    
     /// A builder for [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) import_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
+        pub(crate) import_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -320,22 +325,15 @@ pub mod list_fhir_import_jobs_output {
         /// To override the contents of this collection use [`set_import_job_properties_list`](Self::set_import_job_properties_list).
         ///
         /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-        pub fn import_job_properties_list(
-            mut self,
-            input: crate::model::ImportJobProperties,
-        ) -> Self {
+        pub fn import_job_properties_list(mut self, input: crate::model::ImportJobProperties) -> Self {
             let mut v = self.import_job_properties_list.unwrap_or_default();
-            v.push(input);
-            self.import_job_properties_list = Some(v);
-            self
+                            v.push(input);
+                            self.import_job_properties_list = Some(v);
+                            self
         }
         /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-        pub fn set_import_job_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
-        ) -> Self {
-            self.import_job_properties_list = input;
-            self
+        pub fn set_import_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>) -> Self {
+            self.import_job_properties_list = input; self
         }
         /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -344,17 +342,20 @@ pub mod list_fhir_import_jobs_output {
         }
         /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
         pub fn build(self) -> crate::output::ListFhirImportJobsOutput {
             crate::output::ListFhirImportJobsOutput {
-                import_job_properties_list: self.import_job_properties_list,
-                next_token: self.next_token,
+                import_job_properties_list: self.import_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFhirImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
@@ -366,35 +367,31 @@ impl ListFhirImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFhirExportJobsOutput {
+pub struct ListFhirExportJobsOutput  {
     /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
     #[doc(hidden)]
-    pub export_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
+    pub export_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFhirExportJobsOutput {
     /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub fn export_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ExportJobProperties]> {
+    pub fn export_job_properties_list(&self) -> std::option::Option<& [crate::model::ExportJobProperties]> {
         self.export_job_properties_list.as_deref()
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
 pub mod list_fhir_export_jobs_output {
-
+    
     /// A builder for [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) export_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
+        pub(crate) export_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -403,22 +400,15 @@ pub mod list_fhir_export_jobs_output {
         /// To override the contents of this collection use [`set_export_job_properties_list`](Self::set_export_job_properties_list).
         ///
         /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
-        pub fn export_job_properties_list(
-            mut self,
-            input: crate::model::ExportJobProperties,
-        ) -> Self {
+        pub fn export_job_properties_list(mut self, input: crate::model::ExportJobProperties) -> Self {
             let mut v = self.export_job_properties_list.unwrap_or_default();
-            v.push(input);
-            self.export_job_properties_list = Some(v);
-            self
+                            v.push(input);
+                            self.export_job_properties_list = Some(v);
+                            self
         }
         /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
-        pub fn set_export_job_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
-        ) -> Self {
-            self.export_job_properties_list = input;
-            self
+        pub fn set_export_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>) -> Self {
+            self.export_job_properties_list = input; self
         }
         /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -427,17 +417,20 @@ pub mod list_fhir_export_jobs_output {
         }
         /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
         pub fn build(self) -> crate::output::ListFhirExportJobsOutput {
             crate::output::ListFhirExportJobsOutput {
-                export_job_properties_list: self.export_job_properties_list,
-                next_token: self.next_token,
+                export_job_properties_list: self.export_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFhirExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
@@ -449,35 +442,31 @@ impl ListFhirExportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFhirDatastoresOutput {
+pub struct ListFhirDatastoresOutput  {
     /// <p>All properties associated with the listed Data Stores.</p>
     #[doc(hidden)]
-    pub datastore_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>,
+    pub datastore_properties_list: std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>,
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFhirDatastoresOutput {
     /// <p>All properties associated with the listed Data Stores.</p>
-    pub fn datastore_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DatastoreProperties]> {
+    pub fn datastore_properties_list(&self) -> std::option::Option<& [crate::model::DatastoreProperties]> {
         self.datastore_properties_list.as_deref()
     }
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
 pub mod list_fhir_datastores_output {
-
+    
     /// A builder for [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) datastore_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>,
+        pub(crate) datastore_properties_list: std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -486,22 +475,15 @@ pub mod list_fhir_datastores_output {
         /// To override the contents of this collection use [`set_datastore_properties_list`](Self::set_datastore_properties_list).
         ///
         /// <p>All properties associated with the listed Data Stores.</p>
-        pub fn datastore_properties_list(
-            mut self,
-            input: crate::model::DatastoreProperties,
-        ) -> Self {
+        pub fn datastore_properties_list(mut self, input: crate::model::DatastoreProperties) -> Self {
             let mut v = self.datastore_properties_list.unwrap_or_default();
-            v.push(input);
-            self.datastore_properties_list = Some(v);
-            self
+                            v.push(input);
+                            self.datastore_properties_list = Some(v);
+                            self
         }
         /// <p>All properties associated with the listed Data Stores.</p>
-        pub fn set_datastore_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>,
-        ) -> Self {
-            self.datastore_properties_list = input;
-            self
+        pub fn set_datastore_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>) -> Self {
+            self.datastore_properties_list = input; self
         }
         /// <p>Pagination token that can be used to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -510,17 +492,20 @@ pub mod list_fhir_datastores_output {
         }
         /// <p>Pagination token that can be used to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
         pub fn build(self) -> crate::output::ListFhirDatastoresOutput {
             crate::output::ListFhirDatastoresOutput {
-                datastore_properties_list: self.datastore_properties_list,
-                next_token: self.next_token,
+                datastore_properties_list: self.datastore_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFhirDatastoresOutput {
     /// Creates a new builder-style object to manufacture [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
@@ -532,20 +517,20 @@ impl ListFhirDatastoresOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFhirImportJobOutput {
+pub struct DescribeFhirImportJobOutput  {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
     #[doc(hidden)]
     pub import_job_properties: std::option::Option<crate::model::ImportJobProperties>,
 }
 impl DescribeFhirImportJobOutput {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
-    pub fn import_job_properties(&self) -> std::option::Option<&crate::model::ImportJobProperties> {
+    pub fn import_job_properties(&self) -> std::option::Option<& crate::model::ImportJobProperties> {
         self.import_job_properties.as_ref()
     }
 }
 /// See [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
 pub mod describe_fhir_import_job_output {
-
+    
     /// A builder for [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -558,20 +543,19 @@ pub mod describe_fhir_import_job_output {
             self
         }
         /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
-        pub fn set_import_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::ImportJobProperties>,
-        ) -> Self {
-            self.import_job_properties = input;
-            self
+        pub fn set_import_job_properties(mut self, input: std::option::Option<crate::model::ImportJobProperties>) -> Self {
+            self.import_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
         pub fn build(self) -> crate::output::DescribeFhirImportJobOutput {
             crate::output::DescribeFhirImportJobOutput {
-                import_job_properties: self.import_job_properties,
+                import_job_properties: self.import_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFhirImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
@@ -583,20 +567,20 @@ impl DescribeFhirImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFhirExportJobOutput {
+pub struct DescribeFhirExportJobOutput  {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     #[doc(hidden)]
     pub export_job_properties: std::option::Option<crate::model::ExportJobProperties>,
 }
 impl DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
-    pub fn export_job_properties(&self) -> std::option::Option<&crate::model::ExportJobProperties> {
+    pub fn export_job_properties(&self) -> std::option::Option<& crate::model::ExportJobProperties> {
         self.export_job_properties.as_ref()
     }
 }
 /// See [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
 pub mod describe_fhir_export_job_output {
-
+    
     /// A builder for [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -609,20 +593,19 @@ pub mod describe_fhir_export_job_output {
             self
         }
         /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
-        pub fn set_export_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::ExportJobProperties>,
-        ) -> Self {
-            self.export_job_properties = input;
-            self
+        pub fn set_export_job_properties(mut self, input: std::option::Option<crate::model::ExportJobProperties>) -> Self {
+            self.export_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
         pub fn build(self) -> crate::output::DescribeFhirExportJobOutput {
             crate::output::DescribeFhirExportJobOutput {
-                export_job_properties: self.export_job_properties,
+                export_job_properties: self.export_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFhirExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
@@ -634,20 +617,20 @@ impl DescribeFhirExportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFhirDatastoreOutput {
+pub struct DescribeFhirDatastoreOutput  {
     /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
     #[doc(hidden)]
     pub datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
 }
 impl DescribeFhirDatastoreOutput {
     /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
-    pub fn datastore_properties(&self) -> std::option::Option<&crate::model::DatastoreProperties> {
+    pub fn datastore_properties(&self) -> std::option::Option<& crate::model::DatastoreProperties> {
         self.datastore_properties.as_ref()
     }
 }
 /// See [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
 pub mod describe_fhir_datastore_output {
-
+    
     /// A builder for [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -660,20 +643,19 @@ pub mod describe_fhir_datastore_output {
             self
         }
         /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
-        pub fn set_datastore_properties(
-            mut self,
-            input: std::option::Option<crate::model::DatastoreProperties>,
-        ) -> Self {
-            self.datastore_properties = input;
-            self
+        pub fn set_datastore_properties(mut self, input: std::option::Option<crate::model::DatastoreProperties>) -> Self {
+            self.datastore_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
         pub fn build(self) -> crate::output::DescribeFhirDatastoreOutput {
             crate::output::DescribeFhirDatastoreOutput {
-                datastore_properties: self.datastore_properties,
+                datastore_properties: self.datastore_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFhirDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
@@ -685,7 +667,7 @@ impl DescribeFhirDatastoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFhirDatastoreOutput {
+pub struct DeleteFhirDatastoreOutput  {
     /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
     #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
@@ -701,25 +683,25 @@ pub struct DeleteFhirDatastoreOutput {
 }
 impl DeleteFhirDatastoreOutput {
     /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
-    pub fn datastore_arn(&self) -> std::option::Option<&str> {
+    pub fn datastore_arn(&self) -> std::option::Option<& str> {
         self.datastore_arn.as_deref()
     }
     /// <p>The status of the Data Store that the user has requested to be deleted. </p>
-    pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+    pub fn datastore_status(&self) -> std::option::Option<& crate::model::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
     /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
-    pub fn datastore_endpoint(&self) -> std::option::Option<&str> {
+    pub fn datastore_endpoint(&self) -> std::option::Option<& str> {
         self.datastore_endpoint.as_deref()
     }
 }
 /// See [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
 pub mod delete_fhir_datastore_output {
-
+    
     /// A builder for [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -736,8 +718,7 @@ pub mod delete_fhir_datastore_output {
         }
         /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.datastore_id = input;
-            self
+            self.datastore_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
         pub fn datastore_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -745,12 +726,8 @@ pub mod delete_fhir_datastore_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
-        pub fn set_datastore_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datastore_arn = input;
-            self
+        pub fn set_datastore_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_arn = input; self
         }
         /// <p>The status of the Data Store that the user has requested to be deleted. </p>
         pub fn datastore_status(mut self, input: crate::model::DatastoreStatus) -> Self {
@@ -758,12 +735,8 @@ pub mod delete_fhir_datastore_output {
             self
         }
         /// <p>The status of the Data Store that the user has requested to be deleted. </p>
-        pub fn set_datastore_status(
-            mut self,
-            input: std::option::Option<crate::model::DatastoreStatus>,
-        ) -> Self {
-            self.datastore_status = input;
-            self
+        pub fn set_datastore_status(mut self, input: std::option::Option<crate::model::DatastoreStatus>) -> Self {
+            self.datastore_status = input; self
         }
         /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
         pub fn datastore_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -771,23 +744,25 @@ pub mod delete_fhir_datastore_output {
             self
         }
         /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
-        pub fn set_datastore_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datastore_endpoint = input;
-            self
+        pub fn set_datastore_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
         pub fn build(self) -> crate::output::DeleteFhirDatastoreOutput {
             crate::output::DeleteFhirDatastoreOutput {
-                datastore_id: self.datastore_id,
-                datastore_arn: self.datastore_arn,
-                datastore_status: self.datastore_status,
-                datastore_endpoint: self.datastore_endpoint,
+                datastore_id: self.datastore_id
+                ,
+                datastore_arn: self.datastore_arn
+                ,
+                datastore_status: self.datastore_status
+                ,
+                datastore_endpoint: self.datastore_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFhirDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
@@ -799,7 +774,7 @@ impl DeleteFhirDatastoreOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFhirDatastoreOutput {
+pub struct CreateFhirDatastoreOutput  {
     /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
     #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
@@ -815,25 +790,25 @@ pub struct CreateFhirDatastoreOutput {
 }
 impl CreateFhirDatastoreOutput {
     /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
-    pub fn datastore_arn(&self) -> std::option::Option<&str> {
+    pub fn datastore_arn(&self) -> std::option::Option<& str> {
         self.datastore_arn.as_deref()
     }
     /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
-    pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+    pub fn datastore_status(&self) -> std::option::Option<& crate::model::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
     /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
-    pub fn datastore_endpoint(&self) -> std::option::Option<&str> {
+    pub fn datastore_endpoint(&self) -> std::option::Option<& str> {
         self.datastore_endpoint.as_deref()
     }
 }
 /// See [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
 pub mod create_fhir_datastore_output {
-
+    
     /// A builder for [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -850,8 +825,7 @@ pub mod create_fhir_datastore_output {
         }
         /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.datastore_id = input;
-            self
+            self.datastore_id = input; self
         }
         /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
         pub fn datastore_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -859,12 +833,8 @@ pub mod create_fhir_datastore_output {
             self
         }
         /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
-        pub fn set_datastore_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datastore_arn = input;
-            self
+        pub fn set_datastore_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_arn = input; self
         }
         /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
         pub fn datastore_status(mut self, input: crate::model::DatastoreStatus) -> Self {
@@ -872,12 +842,8 @@ pub mod create_fhir_datastore_output {
             self
         }
         /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
-        pub fn set_datastore_status(
-            mut self,
-            input: std::option::Option<crate::model::DatastoreStatus>,
-        ) -> Self {
-            self.datastore_status = input;
-            self
+        pub fn set_datastore_status(mut self, input: std::option::Option<crate::model::DatastoreStatus>) -> Self {
+            self.datastore_status = input; self
         }
         /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
         pub fn datastore_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -885,23 +851,25 @@ pub mod create_fhir_datastore_output {
             self
         }
         /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
-        pub fn set_datastore_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datastore_endpoint = input;
-            self
+        pub fn set_datastore_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datastore_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
         pub fn build(self) -> crate::output::CreateFhirDatastoreOutput {
             crate::output::CreateFhirDatastoreOutput {
-                datastore_id: self.datastore_id,
-                datastore_arn: self.datastore_arn,
-                datastore_status: self.datastore_status,
-                datastore_endpoint: self.datastore_endpoint,
+                datastore_id: self.datastore_id
+                ,
+                datastore_arn: self.datastore_arn
+                ,
+                datastore_status: self.datastore_status
+                ,
+                datastore_endpoint: self.datastore_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFhirDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
@@ -909,3 +877,4 @@ impl CreateFhirDatastoreOutput {
         crate::output::create_fhir_datastore_output::Builder::default()
     }
 }
+

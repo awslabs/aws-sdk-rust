@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let macalgorithmspec = unimplemented!();
 /// match macalgorithmspec {
@@ -32,22 +32,14 @@
 /// Specifically, when `macalgorithmspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MacAlgorithmSpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MacAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     HmacSha224,
@@ -58,7 +50,7 @@ pub enum MacAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     HmacSha512,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MacAlgorithmSpec {
     fn from(s: &str) -> Self {
@@ -67,17 +59,17 @@ impl std::convert::From<&str> for MacAlgorithmSpec {
             "HMAC_SHA_256" => MacAlgorithmSpec::HmacSha256,
             "HMAC_SHA_384" => MacAlgorithmSpec::HmacSha384,
             "HMAC_SHA_512" => MacAlgorithmSpec::HmacSha512,
-            other => MacAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MacAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MacAlgorithmSpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MacAlgorithmSpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MacAlgorithmSpec::from(s))
+                }
+            }
 impl MacAlgorithmSpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -86,16 +78,13 @@ impl MacAlgorithmSpec {
             MacAlgorithmSpec::HmacSha256 => "HMAC_SHA_256",
             MacAlgorithmSpec::HmacSha384 => "HMAC_SHA_384",
             MacAlgorithmSpec::HmacSha512 => "HMAC_SHA_512",
-            MacAlgorithmSpec::Unknown(value) => value.as_str(),
+            MacAlgorithmSpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "HMAC_SHA_224",
-            "HMAC_SHA_256",
-            "HMAC_SHA_384",
-            "HMAC_SHA_512",
+            "HMAC_SHA_224", "HMAC_SHA_256", "HMAC_SHA_384", "HMAC_SHA_512"
         ]
     }
 }
@@ -111,9 +100,9 @@ impl AsRef<str> for MacAlgorithmSpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let signingalgorithmspec = unimplemented!();
 /// match signingalgorithmspec {
@@ -143,22 +132,14 @@ impl AsRef<str> for MacAlgorithmSpec {
 /// Specifically, when `signingalgorithmspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SigningAlgorithmSpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SigningAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     EcdsaSha256,
@@ -181,7 +162,7 @@ pub enum SigningAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     Sm2Dsa,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SigningAlgorithmSpec {
     fn from(s: &str) -> Self {
@@ -196,19 +177,17 @@ impl std::convert::From<&str> for SigningAlgorithmSpec {
             "RSASSA_PSS_SHA_384" => SigningAlgorithmSpec::RsassaPssSha384,
             "RSASSA_PSS_SHA_512" => SigningAlgorithmSpec::RsassaPssSha512,
             "SM2DSA" => SigningAlgorithmSpec::Sm2Dsa,
-            other => {
-                SigningAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SigningAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SigningAlgorithmSpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SigningAlgorithmSpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SigningAlgorithmSpec::from(s))
+                }
+            }
 impl SigningAlgorithmSpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -223,22 +202,13 @@ impl SigningAlgorithmSpec {
             SigningAlgorithmSpec::RsassaPssSha384 => "RSASSA_PSS_SHA_384",
             SigningAlgorithmSpec::RsassaPssSha512 => "RSASSA_PSS_SHA_512",
             SigningAlgorithmSpec::Sm2Dsa => "SM2DSA",
-            SigningAlgorithmSpec::Unknown(value) => value.as_str(),
+            SigningAlgorithmSpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ECDSA_SHA_256",
-            "ECDSA_SHA_384",
-            "ECDSA_SHA_512",
-            "RSASSA_PKCS1_V1_5_SHA_256",
-            "RSASSA_PKCS1_V1_5_SHA_384",
-            "RSASSA_PKCS1_V1_5_SHA_512",
-            "RSASSA_PSS_SHA_256",
-            "RSASSA_PSS_SHA_384",
-            "RSASSA_PSS_SHA_512",
-            "SM2DSA",
+            "ECDSA_SHA_256", "ECDSA_SHA_384", "ECDSA_SHA_512", "RSASSA_PKCS1_V1_5_SHA_256", "RSASSA_PKCS1_V1_5_SHA_384", "RSASSA_PKCS1_V1_5_SHA_512", "RSASSA_PSS_SHA_256", "RSASSA_PSS_SHA_384", "RSASSA_PSS_SHA_512", "SM2DSA"
         ]
     }
 }
@@ -254,9 +224,9 @@ impl AsRef<str> for SigningAlgorithmSpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let messagetype = unimplemented!();
 /// match messagetype {
@@ -278,58 +248,52 @@ impl AsRef<str> for SigningAlgorithmSpec {
 /// Specifically, when `messagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MessageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
     Digest,
     #[allow(missing_docs)] // documentation missing in model
     Raw,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
         match s {
             "DIGEST" => MessageType::Digest,
             "RAW" => MessageType::Raw,
-            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MessageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MessageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MessageType::from(s))
+                }
+            }
 impl MessageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageType::Digest => "DIGEST",
             MessageType::Raw => "RAW",
-            MessageType::Unknown(value) => value.as_str(),
+            MessageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIGEST", "RAW"]
+        &[
+            "DIGEST", "RAW"
+        ]
     }
 }
 impl AsRef<str> for MessageType {
@@ -344,9 +308,9 @@ impl AsRef<str> for MessageType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let xksproxyconnectivitytype = unimplemented!();
 /// match xksproxyconnectivitytype {
@@ -368,60 +332,52 @@ impl AsRef<str> for MessageType {
 /// Specifically, when `xksproxyconnectivitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `XksProxyConnectivityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum XksProxyConnectivityType {
     #[allow(missing_docs)] // documentation missing in model
     PublicEndpoint,
     #[allow(missing_docs)] // documentation missing in model
     VpcEndpointService,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for XksProxyConnectivityType {
     fn from(s: &str) -> Self {
         match s {
             "PUBLIC_ENDPOINT" => XksProxyConnectivityType::PublicEndpoint,
             "VPC_ENDPOINT_SERVICE" => XksProxyConnectivityType::VpcEndpointService,
-            other => XksProxyConnectivityType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => XksProxyConnectivityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for XksProxyConnectivityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XksProxyConnectivityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(XksProxyConnectivityType::from(s))
+                }
+            }
 impl XksProxyConnectivityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             XksProxyConnectivityType::PublicEndpoint => "PUBLIC_ENDPOINT",
             XksProxyConnectivityType::VpcEndpointService => "VPC_ENDPOINT_SERVICE",
-            XksProxyConnectivityType::Unknown(value) => value.as_str(),
+            XksProxyConnectivityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PUBLIC_ENDPOINT", "VPC_ENDPOINT_SERVICE"]
+        &[
+            "PUBLIC_ENDPOINT", "VPC_ENDPOINT_SERVICE"
+        ]
     }
 }
 impl AsRef<str> for XksProxyConnectivityType {
@@ -430,11 +386,11 @@ impl AsRef<str> for XksProxyConnectivityType {
     }
 }
 
-/// <p>KMS uses the authentication credential to sign requests that it sends to the external key store proxy (XKS proxy) on your behalf. You establish these credentials on your external key store proxy and report them to KMS.</p>
+/// <p>KMS uses the authentication credential to sign requests that it sends to the external key store proxy (XKS proxy) on your behalf. You establish these credentials on your external key store proxy and report them to KMS.</p> 
 /// <p>The <code>XksProxyAuthenticationCredential</code> includes two required elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct XksProxyAuthenticationCredentialType {
+pub struct XksProxyAuthenticationCredentialType  {
     /// <p>A unique identifier for the raw secret access key.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -444,15 +400,15 @@ pub struct XksProxyAuthenticationCredentialType {
 }
 impl XksProxyAuthenticationCredentialType {
     /// <p>A unique identifier for the raw secret access key.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
-    pub fn raw_secret_access_key(&self) -> std::option::Option<&str> {
+    pub fn raw_secret_access_key(&self) -> std::option::Option<& str> {
         self.raw_secret_access_key.as_deref()
     }
 }
-impl std::fmt::Debug for XksProxyAuthenticationCredentialType {
+impl  std::fmt::Debug for XksProxyAuthenticationCredentialType  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("XksProxyAuthenticationCredentialType");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
@@ -462,7 +418,7 @@ impl std::fmt::Debug for XksProxyAuthenticationCredentialType {
 }
 /// See [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
 pub mod xks_proxy_authentication_credential_type {
-
+    
     /// A builder for [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -476,12 +432,8 @@ pub mod xks_proxy_authentication_credential_type {
             self
         }
         /// <p>A unique identifier for the raw secret access key.</p>
-        pub fn set_access_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_key_id = input;
-            self
+        pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_key_id = input; self
         }
         /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
         pub fn raw_secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -489,18 +441,16 @@ pub mod xks_proxy_authentication_credential_type {
             self
         }
         /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
-        pub fn set_raw_secret_access_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.raw_secret_access_key = input;
-            self
+        pub fn set_raw_secret_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.raw_secret_access_key = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
         pub fn build(self) -> crate::model::XksProxyAuthenticationCredentialType {
             crate::model::XksProxyAuthenticationCredentialType {
-                access_key_id: self.access_key_id,
-                raw_secret_access_key: self.raw_secret_access_key,
+                access_key_id: self.access_key_id
+                ,
+                raw_secret_access_key: self.raw_secret_access_key
+                ,
             }
         }
     }
@@ -512,6 +462,8 @@ pub mod xks_proxy_authentication_credential_type {
             formatter.finish()
         }
     }
+    
+    
 }
 impl XksProxyAuthenticationCredentialType {
     /// Creates a new builder-style object to manufacture [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
@@ -520,11 +472,11 @@ impl XksProxyAuthenticationCredentialType {
     }
 }
 
-/// <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p>
+/// <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p> 
 /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -534,17 +486,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn tag_value(&self) -> std::option::Option<&str> {
+    pub fn tag_value(&self) -> std::option::Option<& str> {
         self.tag_value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -559,8 +511,7 @@ pub mod tag {
         }
         /// <p>The key of the tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -569,17 +520,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_value = input;
-            self
+            self.tag_value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                tag_key: self.tag_key,
-                tag_value: self.tag_value,
+                tag_key: self.tag_key
+                ,
+                tag_value: self.tag_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -594,9 +548,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keystate = unimplemented!();
 /// match keystate {
@@ -624,22 +578,14 @@ impl Tag {
 /// Specifically, when `keystate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeyState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeyState {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -658,7 +604,7 @@ pub enum KeyState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyState {
     fn from(s: &str) -> Self {
@@ -671,17 +617,17 @@ impl std::convert::From<&str> for KeyState {
             "PendingReplicaDeletion" => KeyState::PendingReplicaDeletion,
             "Unavailable" => KeyState::Unavailable,
             "Updating" => KeyState::Updating,
-            other => KeyState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => KeyState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KeyState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeyState::from(s))
+                }
+            }
 impl KeyState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -694,20 +640,13 @@ impl KeyState {
             KeyState::PendingReplicaDeletion => "PendingReplicaDeletion",
             KeyState::Unavailable => "Unavailable",
             KeyState::Updating => "Updating",
-            KeyState::Unknown(value) => value.as_str(),
+            KeyState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Creating",
-            "Disabled",
-            "Enabled",
-            "PendingDeletion",
-            "PendingImport",
-            "PendingReplicaDeletion",
-            "Unavailable",
-            "Updating",
+            "Creating", "Disabled", "Enabled", "PendingDeletion", "PendingImport", "PendingReplicaDeletion", "Unavailable", "Updating"
         ]
     }
 }
@@ -717,11 +656,11 @@ impl AsRef<str> for KeyState {
     }
 }
 
-/// <p>Contains metadata about a KMS key.</p>
+/// <p>Contains metadata about a KMS key.</p> 
 /// <p>This data type is used as a response element for the <code>CreateKey</code>, <code>DescribeKey</code>, and <code>ReplicateKey</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyMetadata {
+pub struct KeyMetadata  {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -743,11 +682,11 @@ pub struct KeyMetadata {
     /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
     #[doc(hidden)]
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
-    /// <p>The current status of the KMS key.</p>
+    /// <p>The current status of the KMS key.</p> 
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub key_state: std::option::Option<crate::model::KeyState>,
-    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p> 
     /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
     #[doc(hidden)]
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -769,7 +708,7 @@ pub struct KeyMetadata {
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub key_manager: std::option::Option<crate::model::KeyManagerType>,
-    /// <p>Instead, use the <code>KeySpec</code> field.</p>
+    /// <p>Instead, use the <code>KeySpec</code> field.</p> 
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
     #[doc(hidden)]
@@ -777,56 +716,55 @@ pub struct KeyMetadata {
     /// <p>Describes the type of key material in the KMS key.</p>
     #[doc(hidden)]
     pub key_spec: std::option::Option<crate::model::KeySpec>,
-    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
+    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p> 
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
     #[doc(hidden)]
-    pub encryption_algorithms:
-        std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
+    pub encryption_algorithms: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
+    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p> 
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
     #[doc(hidden)]
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
-    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
+    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p> 
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub multi_region: std::option::Option<bool>,
-    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
-    /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
-    /// <ul>
-    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p> 
+    /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li> 
+    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li> 
+    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub multi_region_configuration: std::option::Option<crate::model::MultiRegionConfiguration>,
-    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p> 
     /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
     #[doc(hidden)]
     pub pending_deletion_window_in_days: std::option::Option<i32>,
-    /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
+    /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p> 
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
     #[doc(hidden)]
     pub mac_algorithms: std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
-    /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
+    /// <p>Information about the external key that is associated with a KMS key in an external key store.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub xks_key_configuration: std::option::Option<crate::model::XksKeyConfigurationType>,
 }
 impl KeyMetadata {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The globally unique identifier for the KMS key.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time when the KMS key was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code> this value is true, otherwise it is false.</p>
@@ -834,109 +772,101 @@ impl KeyMetadata {
         self.enabled
     }
     /// <p>The description of the KMS key.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
-    pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsageType> {
+    pub fn key_usage(&self) -> std::option::Option<& crate::model::KeyUsageType> {
         self.key_usage.as_ref()
     }
-    /// <p>The current status of the KMS key.</p>
+    /// <p>The current status of the KMS key.</p> 
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn key_state(&self) -> std::option::Option<&crate::model::KeyState> {
+    pub fn key_state(&self) -> std::option::Option<& crate::model::KeyState> {
         self.key_state.as_ref()
     }
-    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p> 
     /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
-    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deletion_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
     /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-    pub fn valid_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn valid_to(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.valid_to.as_ref()
     }
     /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
-    pub fn origin(&self) -> std::option::Option<&crate::model::OriginType> {
+    pub fn origin(&self) -> std::option::Option<& crate::model::OriginType> {
         self.origin.as_ref()
     }
     /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
-    pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
+    pub fn custom_key_store_id(&self) -> std::option::Option<& str> {
         self.custom_key_store_id.as_deref()
     }
     /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
-    pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<& str> {
         self.cloud_hsm_cluster_id.as_deref()
     }
     /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
-    pub fn expiration_model(&self) -> std::option::Option<&crate::model::ExpirationModelType> {
+    pub fn expiration_model(&self) -> std::option::Option<& crate::model::ExpirationModelType> {
         self.expiration_model.as_ref()
     }
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn key_manager(&self) -> std::option::Option<&crate::model::KeyManagerType> {
+    pub fn key_manager(&self) -> std::option::Option<& crate::model::KeyManagerType> {
         self.key_manager.as_ref()
     }
-    /// <p>Instead, use the <code>KeySpec</code> field.</p>
+    /// <p>Instead, use the <code>KeySpec</code> field.</p> 
     /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
     #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
-    pub fn customer_master_key_spec(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {
+    pub fn customer_master_key_spec(&self) -> std::option::Option<& crate::model::CustomerMasterKeySpec> {
         self.customer_master_key_spec.as_ref()
     }
     /// <p>Describes the type of key material in the KMS key.</p>
-    pub fn key_spec(&self) -> std::option::Option<&crate::model::KeySpec> {
+    pub fn key_spec(&self) -> std::option::Option<& crate::model::KeySpec> {
         self.key_spec.as_ref()
     }
-    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
+    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p> 
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
-    pub fn encryption_algorithms(
-        &self,
-    ) -> std::option::Option<&[crate::model::EncryptionAlgorithmSpec]> {
+    pub fn encryption_algorithms(&self) -> std::option::Option<& [crate::model::EncryptionAlgorithmSpec]> {
         self.encryption_algorithms.as_deref()
     }
-    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
+    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p> 
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
-    pub fn signing_algorithms(&self) -> std::option::Option<&[crate::model::SigningAlgorithmSpec]> {
+    pub fn signing_algorithms(&self) -> std::option::Option<& [crate::model::SigningAlgorithmSpec]> {
         self.signing_algorithms.as_deref()
     }
-    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
+    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p> 
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn multi_region(&self) -> std::option::Option<bool> {
         self.multi_region
     }
-    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
-    /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
-    /// <ul>
-    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p> 
+    /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li> 
+    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li> 
+    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li> 
     /// </ul>
-    pub fn multi_region_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::MultiRegionConfiguration> {
+    pub fn multi_region_configuration(&self) -> std::option::Option<& crate::model::MultiRegionConfiguration> {
         self.multi_region_configuration.as_ref()
     }
-    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p> 
     /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
     pub fn pending_deletion_window_in_days(&self) -> std::option::Option<i32> {
         self.pending_deletion_window_in_days
     }
-    /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
+    /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p> 
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
-    pub fn mac_algorithms(&self) -> std::option::Option<&[crate::model::MacAlgorithmSpec]> {
+    pub fn mac_algorithms(&self) -> std::option::Option<& [crate::model::MacAlgorithmSpec]> {
         self.mac_algorithms.as_deref()
     }
-    /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
+    /// <p>Information about the external key that is associated with a KMS key in an external key store.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn xks_key_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::XksKeyConfigurationType> {
+    pub fn xks_key_configuration(&self) -> std::option::Option<& crate::model::XksKeyConfigurationType> {
         self.xks_key_configuration.as_ref()
     }
 }
 /// See [`KeyMetadata`](crate::model::KeyMetadata).
 pub mod key_metadata {
-
+    
     /// A builder for [`KeyMetadata`](crate::model::KeyMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -955,21 +885,15 @@ pub mod key_metadata {
         pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
         pub(crate) expiration_model: std::option::Option<crate::model::ExpirationModelType>,
         pub(crate) key_manager: std::option::Option<crate::model::KeyManagerType>,
-        pub(crate) customer_master_key_spec:
-            std::option::Option<crate::model::CustomerMasterKeySpec>,
+        pub(crate) customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
         pub(crate) key_spec: std::option::Option<crate::model::KeySpec>,
-        pub(crate) encryption_algorithms:
-            std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-        pub(crate) signing_algorithms:
-            std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+        pub(crate) encryption_algorithms: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
+        pub(crate) signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
         pub(crate) multi_region: std::option::Option<bool>,
-        pub(crate) multi_region_configuration:
-            std::option::Option<crate::model::MultiRegionConfiguration>,
+        pub(crate) multi_region_configuration: std::option::Option<crate::model::MultiRegionConfiguration>,
         pub(crate) pending_deletion_window_in_days: std::option::Option<i32>,
-        pub(crate) mac_algorithms:
-            std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
-        pub(crate) xks_key_configuration:
-            std::option::Option<crate::model::XksKeyConfigurationType>,
+        pub(crate) mac_algorithms: std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
+        pub(crate) xks_key_configuration: std::option::Option<crate::model::XksKeyConfigurationType>,
     }
     impl Builder {
         /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
@@ -978,12 +902,8 @@ pub mod key_metadata {
             self
         }
         /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
+        pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_id = input; self
         }
         /// <p>The globally unique identifier for the KMS key.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -992,8 +912,7 @@ pub mod key_metadata {
         }
         /// <p>The globally unique identifier for the KMS key.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1002,8 +921,7 @@ pub mod key_metadata {
         }
         /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time when the KMS key was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1011,12 +929,8 @@ pub mod key_metadata {
             self
         }
         /// <p>The date and time when the KMS key was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code> this value is true, otherwise it is false.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -1025,8 +939,7 @@ pub mod key_metadata {
         }
         /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code> this value is true, otherwise it is false.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The description of the KMS key.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1035,8 +948,7 @@ pub mod key_metadata {
         }
         /// <p>The description of the KMS key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
         pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
@@ -1044,39 +956,30 @@ pub mod key_metadata {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
-        pub fn set_key_usage(
-            mut self,
-            input: std::option::Option<crate::model::KeyUsageType>,
-        ) -> Self {
-            self.key_usage = input;
-            self
+        pub fn set_key_usage(mut self, input: std::option::Option<crate::model::KeyUsageType>) -> Self {
+            self.key_usage = input; self
         }
-        /// <p>The current status of the KMS key.</p>
+        /// <p>The current status of the KMS key.</p> 
         /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
             self.key_state = Some(input);
             self
         }
-        /// <p>The current status of the KMS key.</p>
+        /// <p>The current status of the KMS key.</p> 
         /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_key_state(mut self, input: std::option::Option<crate::model::KeyState>) -> Self {
-            self.key_state = input;
-            self
+            self.key_state = input; self
         }
-        /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+        /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p> 
         /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
         pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
-        /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+        /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p> 
         /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
-        pub fn set_deletion_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deletion_date = input;
-            self
+        pub fn set_deletion_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deletion_date = input; self
         }
         /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
         pub fn valid_to(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1084,12 +987,8 @@ pub mod key_metadata {
             self
         }
         /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-        pub fn set_valid_to(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.valid_to = input;
-            self
+        pub fn set_valid_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.valid_to = input; self
         }
         /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
         pub fn origin(mut self, input: crate::model::OriginType) -> Self {
@@ -1098,8 +997,7 @@ pub mod key_metadata {
         }
         /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::OriginType>) -> Self {
-            self.origin = input;
-            self
+            self.origin = input; self
         }
         /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
         pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1107,12 +1005,8 @@ pub mod key_metadata {
             self
         }
         /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This field is present only when the KMS key is created in a custom key store.</p>
-        pub fn set_custom_key_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_key_store_id = input;
-            self
+        pub fn set_custom_key_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_key_store_id = input; self
         }
         /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
         pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1120,12 +1014,8 @@ pub mod key_metadata {
             self
         }
         /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This field is present only when the KMS key is created in an CloudHSM key store.</p>
-        pub fn set_cloud_hsm_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_hsm_cluster_id = input;
-            self
+        pub fn set_cloud_hsm_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_hsm_cluster_id = input; self
         }
         /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
         pub fn expiration_model(mut self, input: crate::model::ExpirationModelType) -> Self {
@@ -1133,12 +1023,8 @@ pub mod key_metadata {
             self
         }
         /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
-        pub fn set_expiration_model(
-            mut self,
-            input: std::option::Option<crate::model::ExpirationModelType>,
-        ) -> Self {
-            self.expiration_model = input;
-            self
+        pub fn set_expiration_model(mut self, input: std::option::Option<crate::model::ExpirationModelType>) -> Self {
+            self.expiration_model = input; self
         }
         /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn key_manager(mut self, input: crate::model::KeyManagerType) -> Self {
@@ -1146,32 +1032,21 @@ pub mod key_metadata {
             self
         }
         /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        pub fn set_key_manager(
-            mut self,
-            input: std::option::Option<crate::model::KeyManagerType>,
-        ) -> Self {
-            self.key_manager = input;
-            self
+        pub fn set_key_manager(mut self, input: std::option::Option<crate::model::KeyManagerType>) -> Self {
+            self.key_manager = input; self
         }
-        /// <p>Instead, use the <code>KeySpec</code> field.</p>
+        /// <p>Instead, use the <code>KeySpec</code> field.</p> 
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
         #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
-        pub fn customer_master_key_spec(
-            mut self,
-            input: crate::model::CustomerMasterKeySpec,
-        ) -> Self {
+        pub fn customer_master_key_spec(mut self, input: crate::model::CustomerMasterKeySpec) -> Self {
             self.customer_master_key_spec = Some(input);
             self
         }
-        /// <p>Instead, use the <code>KeySpec</code> field.</p>
+        /// <p>Instead, use the <code>KeySpec</code> field.</p> 
         /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.</p>
         #[deprecated(note = "This field has been deprecated. Instead, use the KeySpec field.")]
-        pub fn set_customer_master_key_spec(
-            mut self,
-            input: std::option::Option<crate::model::CustomerMasterKeySpec>,
-        ) -> Self {
-            self.customer_master_key_spec = input;
-            self
+        pub fn set_customer_master_key_spec(mut self, input: std::option::Option<crate::model::CustomerMasterKeySpec>) -> Self {
+            self.customer_master_key_spec = input; self
         }
         /// <p>Describes the type of key material in the KMS key.</p>
         pub fn key_spec(mut self, input: crate::model::KeySpec) -> Self {
@@ -1180,178 +1055,170 @@ pub mod key_metadata {
         }
         /// <p>Describes the type of key material in the KMS key.</p>
         pub fn set_key_spec(mut self, input: std::option::Option<crate::model::KeySpec>) -> Self {
-            self.key_spec = input;
-            self
+            self.key_spec = input; self
         }
         /// Appends an item to `encryption_algorithms`.
         ///
         /// To override the contents of this collection use [`set_encryption_algorithms`](Self::set_encryption_algorithms).
         ///
-        /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
+        /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p> 
         /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
-        pub fn encryption_algorithms(
-            mut self,
-            input: crate::model::EncryptionAlgorithmSpec,
-        ) -> Self {
+        pub fn encryption_algorithms(mut self, input: crate::model::EncryptionAlgorithmSpec) -> Self {
             let mut v = self.encryption_algorithms.unwrap_or_default();
-            v.push(input);
-            self.encryption_algorithms = Some(v);
-            self
+                            v.push(input);
+                            self.encryption_algorithms = Some(v);
+                            self
         }
-        /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
+        /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p> 
         /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
-        pub fn set_encryption_algorithms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-        ) -> Self {
-            self.encryption_algorithms = input;
-            self
+        pub fn set_encryption_algorithms(mut self, input: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>) -> Self {
+            self.encryption_algorithms = input; self
         }
         /// Appends an item to `signing_algorithms`.
         ///
         /// To override the contents of this collection use [`set_signing_algorithms`](Self::set_signing_algorithms).
         ///
-        /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
+        /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p> 
         /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
         pub fn signing_algorithms(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
             let mut v = self.signing_algorithms.unwrap_or_default();
-            v.push(input);
-            self.signing_algorithms = Some(v);
-            self
+                            v.push(input);
+                            self.signing_algorithms = Some(v);
+                            self
         }
-        /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
+        /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p> 
         /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
-        pub fn set_signing_algorithms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
-        ) -> Self {
-            self.signing_algorithms = input;
-            self
+        pub fn set_signing_algorithms(mut self, input: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>) -> Self {
+            self.signing_algorithms = input; self
         }
-        /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
+        /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p> 
         /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn multi_region(mut self, input: bool) -> Self {
             self.multi_region = Some(input);
             self
         }
-        /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
+        /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p> 
         /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_multi_region(mut self, input: std::option::Option<bool>) -> Self {
-            self.multi_region = input;
-            self
+            self.multi_region = input; self
         }
-        /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
-        /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
-        /// <ul>
-        /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-        /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-        /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+        /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p> 
+        /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p> 
+        /// <ul> 
+        /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li> 
+        /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li> 
+        /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li> 
         /// </ul>
-        pub fn multi_region_configuration(
-            mut self,
-            input: crate::model::MultiRegionConfiguration,
-        ) -> Self {
+        pub fn multi_region_configuration(mut self, input: crate::model::MultiRegionConfiguration) -> Self {
             self.multi_region_configuration = Some(input);
             self
         }
-        /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
-        /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
-        /// <ul>
-        /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-        /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-        /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+        /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p> 
+        /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p> 
+        /// <ul> 
+        /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li> 
+        /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li> 
+        /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li> 
         /// </ul>
-        pub fn set_multi_region_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MultiRegionConfiguration>,
-        ) -> Self {
-            self.multi_region_configuration = input;
-            self
+        pub fn set_multi_region_configuration(mut self, input: std::option::Option<crate::model::MultiRegionConfiguration>) -> Self {
+            self.multi_region_configuration = input; self
         }
-        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p> 
         /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
         pub fn pending_deletion_window_in_days(mut self, input: i32) -> Self {
             self.pending_deletion_window_in_days = Some(input);
             self
         }
-        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p> 
         /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
-        pub fn set_pending_deletion_window_in_days(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.pending_deletion_window_in_days = input;
-            self
+        pub fn set_pending_deletion_window_in_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_deletion_window_in_days = input; self
         }
         /// Appends an item to `mac_algorithms`.
         ///
         /// To override the contents of this collection use [`set_mac_algorithms`](Self::set_mac_algorithms).
         ///
-        /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
+        /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p> 
         /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
         pub fn mac_algorithms(mut self, input: crate::model::MacAlgorithmSpec) -> Self {
             let mut v = self.mac_algorithms.unwrap_or_default();
-            v.push(input);
-            self.mac_algorithms = Some(v);
-            self
+                            v.push(input);
+                            self.mac_algorithms = Some(v);
+                            self
         }
-        /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
+        /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p> 
         /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
-        pub fn set_mac_algorithms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>,
-        ) -> Self {
-            self.mac_algorithms = input;
-            self
+        pub fn set_mac_algorithms(mut self, input: std::option::Option<std::vec::Vec<crate::model::MacAlgorithmSpec>>) -> Self {
+            self.mac_algorithms = input; self
         }
-        /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
+        /// <p>Information about the external key that is associated with a KMS key in an external key store.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        pub fn xks_key_configuration(
-            mut self,
-            input: crate::model::XksKeyConfigurationType,
-        ) -> Self {
+        pub fn xks_key_configuration(mut self, input: crate::model::XksKeyConfigurationType) -> Self {
             self.xks_key_configuration = Some(input);
             self
         }
-        /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
+        /// <p>Information about the external key that is associated with a KMS key in an external key store.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        pub fn set_xks_key_configuration(
-            mut self,
-            input: std::option::Option<crate::model::XksKeyConfigurationType>,
-        ) -> Self {
-            self.xks_key_configuration = input;
-            self
+        pub fn set_xks_key_configuration(mut self, input: std::option::Option<crate::model::XksKeyConfigurationType>) -> Self {
+            self.xks_key_configuration = input; self
         }
         /// Consumes the builder and constructs a [`KeyMetadata`](crate::model::KeyMetadata).
         pub fn build(self) -> crate::model::KeyMetadata {
             crate::model::KeyMetadata {
-                aws_account_id: self.aws_account_id,
-                key_id: self.key_id,
-                arn: self.arn,
-                creation_date: self.creation_date,
-                enabled: self.enabled.unwrap_or_default(),
-                description: self.description,
-                key_usage: self.key_usage,
-                key_state: self.key_state,
-                deletion_date: self.deletion_date,
-                valid_to: self.valid_to,
-                origin: self.origin,
-                custom_key_store_id: self.custom_key_store_id,
-                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
-                expiration_model: self.expiration_model,
-                key_manager: self.key_manager,
-                customer_master_key_spec: self.customer_master_key_spec,
-                key_spec: self.key_spec,
-                encryption_algorithms: self.encryption_algorithms,
-                signing_algorithms: self.signing_algorithms,
-                multi_region: self.multi_region,
-                multi_region_configuration: self.multi_region_configuration,
-                pending_deletion_window_in_days: self.pending_deletion_window_in_days,
-                mac_algorithms: self.mac_algorithms,
-                xks_key_configuration: self.xks_key_configuration,
+                aws_account_id: self.aws_account_id
+                ,
+                key_id: self.key_id
+                ,
+                arn: self.arn
+                ,
+                creation_date: self.creation_date
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                key_usage: self.key_usage
+                ,
+                key_state: self.key_state
+                ,
+                deletion_date: self.deletion_date
+                ,
+                valid_to: self.valid_to
+                ,
+                origin: self.origin
+                ,
+                custom_key_store_id: self.custom_key_store_id
+                ,
+                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id
+                ,
+                expiration_model: self.expiration_model
+                ,
+                key_manager: self.key_manager
+                ,
+                customer_master_key_spec: self.customer_master_key_spec
+                ,
+                key_spec: self.key_spec
+                ,
+                encryption_algorithms: self.encryption_algorithms
+                ,
+                signing_algorithms: self.signing_algorithms
+                ,
+                multi_region: self.multi_region
+                ,
+                multi_region_configuration: self.multi_region_configuration
+                ,
+                pending_deletion_window_in_days: self.pending_deletion_window_in_days
+                ,
+                mac_algorithms: self.mac_algorithms
+                ,
+                xks_key_configuration: self.xks_key_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl KeyMetadata {
     /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::model::KeyMetadata).
@@ -1360,25 +1227,25 @@ impl KeyMetadata {
     }
 }
 
-/// <p>Information about the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">external key </a>that is associated with a KMS key in an external key store. </p>
-/// <p>This element appears in a <code>CreateKey</code> or <code>DescribeKey</code> response only for a KMS key in an external key store.</p>
+/// <p>Information about the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">external key </a>that is associated with a KMS key in an external key store. </p> 
+/// <p>This element appears in a <code>CreateKey</code> or <code>DescribeKey</code> response only for a KMS key in an external key store.</p> 
 /// <p>The <i>external key</i> is a symmetric encryption key that is hosted by an external key manager outside of Amazon Web Services. When you use the KMS key in an external key store in a cryptographic operation, the cryptographic operation is performed in the external key manager using the specified external key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksKeyConfigurationType {
+pub struct XksKeyConfigurationType  {
     /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl XksKeyConfigurationType {
     /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
 pub mod xks_key_configuration_type {
-
+    
     /// A builder for [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1392,14 +1259,18 @@ pub mod xks_key_configuration_type {
         }
         /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
         pub fn build(self) -> crate::model::XksKeyConfigurationType {
-            crate::model::XksKeyConfigurationType { id: self.id }
+            crate::model::XksKeyConfigurationType {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl XksKeyConfigurationType {
     /// Creates a new builder-style object to manufacture [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
@@ -1408,11 +1279,11 @@ impl XksKeyConfigurationType {
     }
 }
 
-/// <p>Describes the configuration of this multi-Region key. This field appears only when the KMS key is a primary or replica of a multi-Region key.</p>
+/// <p>Describes the configuration of this multi-Region key. This field appears only when the KMS key is a primary or replica of a multi-Region key.</p> 
 /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiRegionConfiguration {
+pub struct MultiRegionConfiguration  {
     /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
     #[doc(hidden)]
     pub multi_region_key_type: std::option::Option<crate::model::MultiRegionKeyType>,
@@ -1425,21 +1296,21 @@ pub struct MultiRegionConfiguration {
 }
 impl MultiRegionConfiguration {
     /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
-    pub fn multi_region_key_type(&self) -> std::option::Option<&crate::model::MultiRegionKeyType> {
+    pub fn multi_region_key_type(&self) -> std::option::Option<& crate::model::MultiRegionKeyType> {
         self.multi_region_key_type.as_ref()
     }
     /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
-    pub fn primary_key(&self) -> std::option::Option<&crate::model::MultiRegionKey> {
+    pub fn primary_key(&self) -> std::option::Option<& crate::model::MultiRegionKey> {
         self.primary_key.as_ref()
     }
     /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
-    pub fn replica_keys(&self) -> std::option::Option<&[crate::model::MultiRegionKey]> {
+    pub fn replica_keys(&self) -> std::option::Option<& [crate::model::MultiRegionKey]> {
         self.replica_keys.as_deref()
     }
 }
 /// See [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
 pub mod multi_region_configuration {
-
+    
     /// A builder for [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1454,12 +1325,8 @@ pub mod multi_region_configuration {
             self
         }
         /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
-        pub fn set_multi_region_key_type(
-            mut self,
-            input: std::option::Option<crate::model::MultiRegionKeyType>,
-        ) -> Self {
-            self.multi_region_key_type = input;
-            self
+        pub fn set_multi_region_key_type(mut self, input: std::option::Option<crate::model::MultiRegionKeyType>) -> Self {
+            self.multi_region_key_type = input; self
         }
         /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
         pub fn primary_key(mut self, input: crate::model::MultiRegionKey) -> Self {
@@ -1467,12 +1334,8 @@ pub mod multi_region_configuration {
             self
         }
         /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
-        pub fn set_primary_key(
-            mut self,
-            input: std::option::Option<crate::model::MultiRegionKey>,
-        ) -> Self {
-            self.primary_key = input;
-            self
+        pub fn set_primary_key(mut self, input: std::option::Option<crate::model::MultiRegionKey>) -> Self {
+            self.primary_key = input; self
         }
         /// Appends an item to `replica_keys`.
         ///
@@ -1481,27 +1344,28 @@ pub mod multi_region_configuration {
         /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
         pub fn replica_keys(mut self, input: crate::model::MultiRegionKey) -> Self {
             let mut v = self.replica_keys.unwrap_or_default();
-            v.push(input);
-            self.replica_keys = Some(v);
-            self
+                            v.push(input);
+                            self.replica_keys = Some(v);
+                            self
         }
         /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
-        pub fn set_replica_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
-        ) -> Self {
-            self.replica_keys = input;
-            self
+        pub fn set_replica_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>) -> Self {
+            self.replica_keys = input; self
         }
         /// Consumes the builder and constructs a [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
         pub fn build(self) -> crate::model::MultiRegionConfiguration {
             crate::model::MultiRegionConfiguration {
-                multi_region_key_type: self.multi_region_key_type,
-                primary_key: self.primary_key,
-                replica_keys: self.replica_keys,
+                multi_region_key_type: self.multi_region_key_type
+                ,
+                primary_key: self.primary_key
+                ,
+                replica_keys: self.replica_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl MultiRegionConfiguration {
     /// Creates a new builder-style object to manufacture [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
@@ -1513,7 +1377,7 @@ impl MultiRegionConfiguration {
 /// <p>Describes the primary or replica key in a multi-Region key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiRegionKey {
+pub struct MultiRegionKey  {
     /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1523,17 +1387,17 @@ pub struct MultiRegionKey {
 }
 impl MultiRegionKey {
     /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
 }
 /// See [`MultiRegionKey`](crate::model::MultiRegionKey).
 pub mod multi_region_key {
-
+    
     /// A builder for [`MultiRegionKey`](crate::model::MultiRegionKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1548,8 +1412,7 @@ pub mod multi_region_key {
         }
         /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1558,17 +1421,20 @@ pub mod multi_region_key {
         }
         /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Consumes the builder and constructs a [`MultiRegionKey`](crate::model::MultiRegionKey).
         pub fn build(self) -> crate::model::MultiRegionKey {
             crate::model::MultiRegionKey {
-                arn: self.arn,
-                region: self.region,
+                arn: self.arn
+                ,
+                region: self.region
+                ,
             }
         }
     }
+    
+    
 }
 impl MultiRegionKey {
     /// Creates a new builder-style object to manufacture [`MultiRegionKey`](crate::model::MultiRegionKey).
@@ -1583,9 +1449,9 @@ impl MultiRegionKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let multiregionkeytype = unimplemented!();
 /// match multiregionkeytype {
@@ -1607,60 +1473,52 @@ impl MultiRegionKey {
 /// Specifically, when `multiregionkeytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MultiRegionKeyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MultiRegionKeyType {
     #[allow(missing_docs)] // documentation missing in model
     Primary,
     #[allow(missing_docs)] // documentation missing in model
     Replica,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MultiRegionKeyType {
     fn from(s: &str) -> Self {
         match s {
             "PRIMARY" => MultiRegionKeyType::Primary,
             "REPLICA" => MultiRegionKeyType::Replica,
-            other => {
-                MultiRegionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MultiRegionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MultiRegionKeyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MultiRegionKeyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MultiRegionKeyType::from(s))
+                }
+            }
 impl MultiRegionKeyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MultiRegionKeyType::Primary => "PRIMARY",
             MultiRegionKeyType::Replica => "REPLICA",
-            MultiRegionKeyType::Unknown(value) => value.as_str(),
+            MultiRegionKeyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIMARY", "REPLICA"]
+        &[
+            "PRIMARY", "REPLICA"
+        ]
     }
 }
 impl AsRef<str> for MultiRegionKeyType {
@@ -1675,9 +1533,9 @@ impl AsRef<str> for MultiRegionKeyType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionalgorithmspec = unimplemented!();
 /// match encryptionalgorithmspec {
@@ -1701,22 +1559,14 @@ impl AsRef<str> for MultiRegionKeyType {
 /// Specifically, when `encryptionalgorithmspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionAlgorithmSpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     RsaesOaepSha1,
@@ -1727,7 +1577,7 @@ pub enum EncryptionAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     SymmetricDefault,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionAlgorithmSpec {
     fn from(s: &str) -> Self {
@@ -1736,19 +1586,17 @@ impl std::convert::From<&str> for EncryptionAlgorithmSpec {
             "RSAES_OAEP_SHA_256" => EncryptionAlgorithmSpec::RsaesOaepSha256,
             "SM2PKE" => EncryptionAlgorithmSpec::Sm2Pke,
             "SYMMETRIC_DEFAULT" => EncryptionAlgorithmSpec::SymmetricDefault,
-            other => EncryptionAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EncryptionAlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionAlgorithmSpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionAlgorithmSpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionAlgorithmSpec::from(s))
+                }
+            }
 impl EncryptionAlgorithmSpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1757,16 +1605,13 @@ impl EncryptionAlgorithmSpec {
             EncryptionAlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
             EncryptionAlgorithmSpec::Sm2Pke => "SM2PKE",
             EncryptionAlgorithmSpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            EncryptionAlgorithmSpec::Unknown(value) => value.as_str(),
+            EncryptionAlgorithmSpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "RSAES_OAEP_SHA_1",
-            "RSAES_OAEP_SHA_256",
-            "SM2PKE",
-            "SYMMETRIC_DEFAULT",
+            "RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "SM2PKE", "SYMMETRIC_DEFAULT"
         ]
     }
 }
@@ -1782,9 +1627,9 @@ impl AsRef<str> for EncryptionAlgorithmSpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keyspec = unimplemented!();
 /// match keyspec {
@@ -1817,22 +1662,14 @@ impl AsRef<str> for EncryptionAlgorithmSpec {
 /// Specifically, when `keyspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeySpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeySpec {
     #[allow(missing_docs)] // documentation missing in model
     EccNistP256,
@@ -1861,7 +1698,7 @@ pub enum KeySpec {
     #[allow(missing_docs)] // documentation missing in model
     SymmetricDefault,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeySpec {
     fn from(s: &str) -> Self {
@@ -1879,17 +1716,17 @@ impl std::convert::From<&str> for KeySpec {
             "RSA_4096" => KeySpec::Rsa4096,
             "SM2" => KeySpec::Sm2,
             "SYMMETRIC_DEFAULT" => KeySpec::SymmetricDefault,
-            other => KeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => KeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KeySpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeySpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeySpec::from(s))
+                }
+            }
 impl KeySpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1907,25 +1744,13 @@ impl KeySpec {
             KeySpec::Rsa4096 => "RSA_4096",
             KeySpec::Sm2 => "SM2",
             KeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            KeySpec::Unknown(value) => value.as_str(),
+            KeySpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ECC_NIST_P256",
-            "ECC_NIST_P384",
-            "ECC_NIST_P521",
-            "ECC_SECG_P256K1",
-            "HMAC_224",
-            "HMAC_256",
-            "HMAC_384",
-            "HMAC_512",
-            "RSA_2048",
-            "RSA_3072",
-            "RSA_4096",
-            "SM2",
-            "SYMMETRIC_DEFAULT",
+            "ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "HMAC_224", "HMAC_256", "HMAC_384", "HMAC_512", "RSA_2048", "RSA_3072", "RSA_4096", "SM2", "SYMMETRIC_DEFAULT"
         ]
     }
 }
@@ -1941,9 +1766,9 @@ impl AsRef<str> for KeySpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let customermasterkeyspec = unimplemented!();
 /// match customermasterkeyspec {
@@ -1976,7 +1801,7 @@ impl AsRef<str> for KeySpec {
 /// Specifically, when `customermasterkeyspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CustomerMasterKeySpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -1984,15 +1809,7 @@ impl AsRef<str> for KeySpec {
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This enum has been deprecated. Instead, use the KeySpec enum.")]
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CustomerMasterKeySpec {
     #[allow(missing_docs)] // documentation missing in model
     EccNistP256,
@@ -2021,7 +1838,7 @@ pub enum CustomerMasterKeySpec {
     #[allow(missing_docs)] // documentation missing in model
     SymmetricDefault,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomerMasterKeySpec {
     fn from(s: &str) -> Self {
@@ -2039,19 +1856,17 @@ impl std::convert::From<&str> for CustomerMasterKeySpec {
             "RSA_4096" => CustomerMasterKeySpec::Rsa4096,
             "SM2" => CustomerMasterKeySpec::Sm2,
             "SYMMETRIC_DEFAULT" => CustomerMasterKeySpec::SymmetricDefault,
-            other => {
-                CustomerMasterKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CustomerMasterKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CustomerMasterKeySpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomerMasterKeySpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CustomerMasterKeySpec::from(s))
+                }
+            }
 impl CustomerMasterKeySpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2069,25 +1884,13 @@ impl CustomerMasterKeySpec {
             CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
             CustomerMasterKeySpec::Sm2 => "SM2",
             CustomerMasterKeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            CustomerMasterKeySpec::Unknown(value) => value.as_str(),
+            CustomerMasterKeySpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ECC_NIST_P256",
-            "ECC_NIST_P384",
-            "ECC_NIST_P521",
-            "ECC_SECG_P256K1",
-            "HMAC_224",
-            "HMAC_256",
-            "HMAC_384",
-            "HMAC_512",
-            "RSA_2048",
-            "RSA_3072",
-            "RSA_4096",
-            "SM2",
-            "SYMMETRIC_DEFAULT",
+            "ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "HMAC_224", "HMAC_256", "HMAC_384", "HMAC_512", "RSA_2048", "RSA_3072", "RSA_4096", "SM2", "SYMMETRIC_DEFAULT"
         ]
     }
 }
@@ -2103,9 +1906,9 @@ impl AsRef<str> for CustomerMasterKeySpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keymanagertype = unimplemented!();
 /// match keymanagertype {
@@ -2127,58 +1930,52 @@ impl AsRef<str> for CustomerMasterKeySpec {
 /// Specifically, when `keymanagertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeyManagerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeyManagerType {
     #[allow(missing_docs)] // documentation missing in model
     Aws,
     #[allow(missing_docs)] // documentation missing in model
     Customer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyManagerType {
     fn from(s: &str) -> Self {
         match s {
             "AWS" => KeyManagerType::Aws,
             "CUSTOMER" => KeyManagerType::Customer,
-            other => KeyManagerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => KeyManagerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KeyManagerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyManagerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeyManagerType::from(s))
+                }
+            }
 impl KeyManagerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KeyManagerType::Aws => "AWS",
             KeyManagerType::Customer => "CUSTOMER",
-            KeyManagerType::Unknown(value) => value.as_str(),
+            KeyManagerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS", "CUSTOMER"]
+        &[
+            "AWS", "CUSTOMER"
+        ]
     }
 }
 impl AsRef<str> for KeyManagerType {
@@ -2193,9 +1990,9 @@ impl AsRef<str> for KeyManagerType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let expirationmodeltype = unimplemented!();
 /// match expirationmodeltype {
@@ -2217,60 +2014,52 @@ impl AsRef<str> for KeyManagerType {
 /// Specifically, when `expirationmodeltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExpirationModelType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExpirationModelType {
     #[allow(missing_docs)] // documentation missing in model
     KeyMaterialDoesNotExpire,
     #[allow(missing_docs)] // documentation missing in model
     KeyMaterialExpires,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExpirationModelType {
     fn from(s: &str) -> Self {
         match s {
             "KEY_MATERIAL_DOES_NOT_EXPIRE" => ExpirationModelType::KeyMaterialDoesNotExpire,
             "KEY_MATERIAL_EXPIRES" => ExpirationModelType::KeyMaterialExpires,
-            other => {
-                ExpirationModelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExpirationModelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExpirationModelType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExpirationModelType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExpirationModelType::from(s))
+                }
+            }
 impl ExpirationModelType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExpirationModelType::KeyMaterialDoesNotExpire => "KEY_MATERIAL_DOES_NOT_EXPIRE",
             ExpirationModelType::KeyMaterialExpires => "KEY_MATERIAL_EXPIRES",
-            ExpirationModelType::Unknown(value) => value.as_str(),
+            ExpirationModelType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KEY_MATERIAL_DOES_NOT_EXPIRE", "KEY_MATERIAL_EXPIRES"]
+        &[
+            "KEY_MATERIAL_DOES_NOT_EXPIRE", "KEY_MATERIAL_EXPIRES"
+        ]
     }
 }
 impl AsRef<str> for ExpirationModelType {
@@ -2285,9 +2074,9 @@ impl AsRef<str> for ExpirationModelType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let origintype = unimplemented!();
 /// match origintype {
@@ -2311,22 +2100,14 @@ impl AsRef<str> for ExpirationModelType {
 /// Specifically, when `origintype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OriginType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OriginType {
     #[allow(missing_docs)] // documentation missing in model
     AwsCloudhsm,
@@ -2337,7 +2118,7 @@ pub enum OriginType {
     #[allow(missing_docs)] // documentation missing in model
     ExternalKeyStore,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OriginType {
     fn from(s: &str) -> Self {
@@ -2346,17 +2127,17 @@ impl std::convert::From<&str> for OriginType {
             "AWS_KMS" => OriginType::AwsKms,
             "EXTERNAL" => OriginType::External,
             "EXTERNAL_KEY_STORE" => OriginType::ExternalKeyStore,
-            other => OriginType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OriginType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OriginType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OriginType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OriginType::from(s))
+                }
+            }
 impl OriginType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2365,12 +2146,14 @@ impl OriginType {
             OriginType::AwsKms => "AWS_KMS",
             OriginType::External => "EXTERNAL",
             OriginType::ExternalKeyStore => "EXTERNAL_KEY_STORE",
-            OriginType::Unknown(value) => value.as_str(),
+            OriginType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL", "EXTERNAL_KEY_STORE"]
+        &[
+            "AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL", "EXTERNAL_KEY_STORE"
+        ]
     }
 }
 impl AsRef<str> for OriginType {
@@ -2385,9 +2168,9 @@ impl AsRef<str> for OriginType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keyusagetype = unimplemented!();
 /// match keyusagetype {
@@ -2410,22 +2193,14 @@ impl AsRef<str> for OriginType {
 /// Specifically, when `keyusagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeyUsageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeyUsageType {
     #[allow(missing_docs)] // documentation missing in model
     EncryptDecrypt,
@@ -2434,7 +2209,7 @@ pub enum KeyUsageType {
     #[allow(missing_docs)] // documentation missing in model
     SignVerify,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyUsageType {
     fn from(s: &str) -> Self {
@@ -2442,17 +2217,17 @@ impl std::convert::From<&str> for KeyUsageType {
             "ENCRYPT_DECRYPT" => KeyUsageType::EncryptDecrypt,
             "GENERATE_VERIFY_MAC" => KeyUsageType::GenerateVerifyMac,
             "SIGN_VERIFY" => KeyUsageType::SignVerify,
-            other => KeyUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => KeyUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KeyUsageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyUsageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeyUsageType::from(s))
+                }
+            }
 impl KeyUsageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2460,12 +2235,14 @@ impl KeyUsageType {
             KeyUsageType::EncryptDecrypt => "ENCRYPT_DECRYPT",
             KeyUsageType::GenerateVerifyMac => "GENERATE_VERIFY_MAC",
             KeyUsageType::SignVerify => "SIGN_VERIFY",
-            KeyUsageType::Unknown(value) => value.as_str(),
+            KeyUsageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "SIGN_VERIFY"]
+        &[
+            "ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "SIGN_VERIFY"
+        ]
     }
 }
 impl AsRef<str> for KeyUsageType {
@@ -2477,7 +2254,7 @@ impl AsRef<str> for KeyUsageType {
 /// <p>Contains information about a grant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantListEntry {
+pub struct GrantListEntry  {
     /// <p>The unique identifier for the KMS key to which the grant applies.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -2490,7 +2267,7 @@ pub struct GrantListEntry {
     /// <p>The date and time when the grant was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The identity that gets the permissions in the grant.</p>
+    /// <p>The identity that gets the permissions in the grant.</p> 
     /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
     #[doc(hidden)]
     pub grantee_principal: std::option::Option<std::string::String>,
@@ -2509,46 +2286,46 @@ pub struct GrantListEntry {
 }
 impl GrantListEntry {
     /// <p>The unique identifier for the KMS key to which the grant applies.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The unique identifier for the grant.</p>
-    pub fn grant_id(&self) -> std::option::Option<&str> {
+    pub fn grant_id(&self) -> std::option::Option<& str> {
         self.grant_id.as_deref()
     }
     /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time when the grant was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>The identity that gets the permissions in the grant.</p>
+    /// <p>The identity that gets the permissions in the grant.</p> 
     /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
-    pub fn grantee_principal(&self) -> std::option::Option<&str> {
+    pub fn grantee_principal(&self) -> std::option::Option<& str> {
         self.grantee_principal.as_deref()
     }
     /// <p>The principal that can retire the grant.</p>
-    pub fn retiring_principal(&self) -> std::option::Option<&str> {
+    pub fn retiring_principal(&self) -> std::option::Option<& str> {
         self.retiring_principal.as_deref()
     }
     /// <p>The Amazon Web Services account under which the grant was issued.</p>
-    pub fn issuing_account(&self) -> std::option::Option<&str> {
+    pub fn issuing_account(&self) -> std::option::Option<& str> {
         self.issuing_account.as_deref()
     }
     /// <p>The list of operations permitted by the grant.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::GrantOperation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::GrantOperation]> {
         self.operations.as_deref()
     }
     /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
-    pub fn constraints(&self) -> std::option::Option<&crate::model::GrantConstraints> {
+    pub fn constraints(&self) -> std::option::Option<& crate::model::GrantConstraints> {
         self.constraints.as_ref()
     }
 }
 /// See [`GrantListEntry`](crate::model::GrantListEntry).
 pub mod grant_list_entry {
-
+    
     /// A builder for [`GrantListEntry`](crate::model::GrantListEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2570,8 +2347,7 @@ pub mod grant_list_entry {
         }
         /// <p>The unique identifier for the KMS key to which the grant applies.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// <p>The unique identifier for the grant.</p>
         pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2580,8 +2356,7 @@ pub mod grant_list_entry {
         }
         /// <p>The unique identifier for the grant.</p>
         pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_id = input;
-            self
+            self.grant_id = input; self
         }
         /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2590,8 +2365,7 @@ pub mod grant_list_entry {
         }
         /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date and time when the grant was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2599,27 +2373,19 @@ pub mod grant_list_entry {
             self
         }
         /// <p>The date and time when the grant was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
-        /// <p>The identity that gets the permissions in the grant.</p>
+        /// <p>The identity that gets the permissions in the grant.</p> 
         /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
         pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee_principal = Some(input.into());
             self
         }
-        /// <p>The identity that gets the permissions in the grant.</p>
+        /// <p>The identity that gets the permissions in the grant.</p> 
         /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
-        pub fn set_grantee_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.grantee_principal = input;
-            self
+        pub fn set_grantee_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grantee_principal = input; self
         }
         /// <p>The principal that can retire the grant.</p>
         pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2627,12 +2393,8 @@ pub mod grant_list_entry {
             self
         }
         /// <p>The principal that can retire the grant.</p>
-        pub fn set_retiring_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retiring_principal = input;
-            self
+        pub fn set_retiring_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retiring_principal = input; self
         }
         /// <p>The Amazon Web Services account under which the grant was issued.</p>
         pub fn issuing_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2640,12 +2402,8 @@ pub mod grant_list_entry {
             self
         }
         /// <p>The Amazon Web Services account under which the grant was issued.</p>
-        pub fn set_issuing_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.issuing_account = input;
-            self
+        pub fn set_issuing_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.issuing_account = input; self
         }
         /// Appends an item to `operations`.
         ///
@@ -2654,17 +2412,13 @@ pub mod grant_list_entry {
         /// <p>The list of operations permitted by the grant.</p>
         pub fn operations(mut self, input: crate::model::GrantOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>The list of operations permitted by the grant.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>) -> Self {
+            self.operations = input; self
         }
         /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
         pub fn constraints(mut self, input: crate::model::GrantConstraints) -> Self {
@@ -2672,28 +2426,35 @@ pub mod grant_list_entry {
             self
         }
         /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
-        pub fn set_constraints(
-            mut self,
-            input: std::option::Option<crate::model::GrantConstraints>,
-        ) -> Self {
-            self.constraints = input;
-            self
+        pub fn set_constraints(mut self, input: std::option::Option<crate::model::GrantConstraints>) -> Self {
+            self.constraints = input; self
         }
         /// Consumes the builder and constructs a [`GrantListEntry`](crate::model::GrantListEntry).
         pub fn build(self) -> crate::model::GrantListEntry {
             crate::model::GrantListEntry {
-                key_id: self.key_id,
-                grant_id: self.grant_id,
-                name: self.name,
-                creation_date: self.creation_date,
-                grantee_principal: self.grantee_principal,
-                retiring_principal: self.retiring_principal,
-                issuing_account: self.issuing_account,
-                operations: self.operations,
-                constraints: self.constraints,
+                key_id: self.key_id
+                ,
+                grant_id: self.grant_id
+                ,
+                name: self.name
+                ,
+                creation_date: self.creation_date
+                ,
+                grantee_principal: self.grantee_principal
+                ,
+                retiring_principal: self.retiring_principal
+                ,
+                issuing_account: self.issuing_account
+                ,
+                operations: self.operations
+                ,
+                constraints: self.constraints
+                ,
             }
         }
     }
+    
+    
 }
 impl GrantListEntry {
     /// Creates a new builder-style object to manufacture [`GrantListEntry`](crate::model::GrantListEntry).
@@ -2702,52 +2463,40 @@ impl GrantListEntry {
     }
 }
 
-/// <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p>
-/// <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <code>DescribeKey</code> or <code>RetireGrant</code>.</p> <important>
-/// <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p>
-/// <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p>
-/// <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
+/// <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> 
+/// <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <code>DescribeKey</code> or <code>RetireGrant</code>.</p> <important> 
+/// <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> 
+/// <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> 
+/// <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> 
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantConstraints {
+pub struct GrantConstraints  {
     /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
     #[doc(hidden)]
-    pub encryption_context_subset:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub encryption_context_subset: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
     #[doc(hidden)]
-    pub encryption_context_equals:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub encryption_context_equals: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GrantConstraints {
     /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
-    pub fn encryption_context_subset(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn encryption_context_subset(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.encryption_context_subset.as_ref()
     }
     /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
-    pub fn encryption_context_equals(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn encryption_context_equals(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.encryption_context_equals.as_ref()
     }
 }
 /// See [`GrantConstraints`](crate::model::GrantConstraints).
 pub mod grant_constraints {
-
+    
     /// A builder for [`GrantConstraints`](crate::model::GrantConstraints).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) encryption_context_subset: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) encryption_context_equals: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) encryption_context_subset: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) encryption_context_equals: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `encryption_context_subset`.
@@ -2755,59 +2504,43 @@ pub mod grant_constraints {
         /// To override the contents of this collection use [`set_encryption_context_subset`](Self::set_encryption_context_subset).
         ///
         /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
-        pub fn encryption_context_subset(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn encryption_context_subset(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.encryption_context_subset.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.encryption_context_subset = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.encryption_context_subset = Some(hash_map);
+                            self
         }
         /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
-        pub fn set_encryption_context_subset(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.encryption_context_subset = input;
-            self
+        pub fn set_encryption_context_subset(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.encryption_context_subset = input; self
         }
         /// Adds a key-value pair to `encryption_context_equals`.
         ///
         /// To override the contents of this collection use [`set_encryption_context_equals`](Self::set_encryption_context_equals).
         ///
         /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
-        pub fn encryption_context_equals(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn encryption_context_equals(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.encryption_context_equals.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.encryption_context_equals = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.encryption_context_equals = Some(hash_map);
+                            self
         }
         /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
-        pub fn set_encryption_context_equals(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.encryption_context_equals = input;
-            self
+        pub fn set_encryption_context_equals(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.encryption_context_equals = input; self
         }
         /// Consumes the builder and constructs a [`GrantConstraints`](crate::model::GrantConstraints).
         pub fn build(self) -> crate::model::GrantConstraints {
             crate::model::GrantConstraints {
-                encryption_context_subset: self.encryption_context_subset,
-                encryption_context_equals: self.encryption_context_equals,
+                encryption_context_subset: self.encryption_context_subset
+                ,
+                encryption_context_equals: self.encryption_context_equals
+                ,
             }
         }
     }
+    
+    
 }
 impl GrantConstraints {
     /// Creates a new builder-style object to manufacture [`GrantConstraints`](crate::model::GrantConstraints).
@@ -2822,9 +2555,9 @@ impl GrantConstraints {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let grantoperation = unimplemented!();
 /// match grantoperation {
@@ -2860,22 +2593,14 @@ impl GrantConstraints {
 /// Specifically, when `grantoperation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GrantOperation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GrantOperation {
     #[allow(missing_docs)] // documentation missing in model
     CreateGrant,
@@ -2910,7 +2635,7 @@ pub enum GrantOperation {
     #[allow(missing_docs)] // documentation missing in model
     VerifyMac,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GrantOperation {
     fn from(s: &str) -> Self {
@@ -2921,9 +2646,7 @@ impl std::convert::From<&str> for GrantOperation {
             "Encrypt" => GrantOperation::Encrypt,
             "GenerateDataKey" => GrantOperation::GenerateDataKey,
             "GenerateDataKeyPair" => GrantOperation::GenerateDataKeyPair,
-            "GenerateDataKeyPairWithoutPlaintext" => {
-                GrantOperation::GenerateDataKeyPairWithoutPlaintext
-            }
+            "GenerateDataKeyPairWithoutPlaintext" => GrantOperation::GenerateDataKeyPairWithoutPlaintext,
             "GenerateDataKeyWithoutPlaintext" => GrantOperation::GenerateDataKeyWithoutPlaintext,
             "GenerateMac" => GrantOperation::GenerateMac,
             "GetPublicKey" => GrantOperation::GetPublicKey,
@@ -2933,17 +2656,17 @@ impl std::convert::From<&str> for GrantOperation {
             "Sign" => GrantOperation::Sign,
             "Verify" => GrantOperation::Verify,
             "VerifyMac" => GrantOperation::VerifyMac,
-            other => GrantOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GrantOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GrantOperation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GrantOperation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GrantOperation::from(s))
+                }
+            }
 impl GrantOperation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2954,9 +2677,7 @@ impl GrantOperation {
             GrantOperation::Encrypt => "Encrypt",
             GrantOperation::GenerateDataKey => "GenerateDataKey",
             GrantOperation::GenerateDataKeyPair => "GenerateDataKeyPair",
-            GrantOperation::GenerateDataKeyPairWithoutPlaintext => {
-                "GenerateDataKeyPairWithoutPlaintext"
-            }
+            GrantOperation::GenerateDataKeyPairWithoutPlaintext => "GenerateDataKeyPairWithoutPlaintext",
             GrantOperation::GenerateDataKeyWithoutPlaintext => "GenerateDataKeyWithoutPlaintext",
             GrantOperation::GenerateMac => "GenerateMac",
             GrantOperation::GetPublicKey => "GetPublicKey",
@@ -2966,28 +2687,13 @@ impl GrantOperation {
             GrantOperation::Sign => "Sign",
             GrantOperation::Verify => "Verify",
             GrantOperation::VerifyMac => "VerifyMac",
-            GrantOperation::Unknown(value) => value.as_str(),
+            GrantOperation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CreateGrant",
-            "Decrypt",
-            "DescribeKey",
-            "Encrypt",
-            "GenerateDataKey",
-            "GenerateDataKeyPair",
-            "GenerateDataKeyPairWithoutPlaintext",
-            "GenerateDataKeyWithoutPlaintext",
-            "GenerateMac",
-            "GetPublicKey",
-            "ReEncryptFrom",
-            "ReEncryptTo",
-            "RetireGrant",
-            "Sign",
-            "Verify",
-            "VerifyMac",
+            "CreateGrant", "Decrypt", "DescribeKey", "Encrypt", "GenerateDataKey", "GenerateDataKeyPair", "GenerateDataKeyPairWithoutPlaintext", "GenerateDataKeyWithoutPlaintext", "GenerateMac", "GetPublicKey", "ReEncryptFrom", "ReEncryptTo", "RetireGrant", "Sign", "Verify", "VerifyMac"
         ]
     }
 }
@@ -3000,7 +2706,7 @@ impl AsRef<str> for GrantOperation {
 /// <p>Contains information about each entry in the key list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyListEntry {
+pub struct KeyListEntry  {
     /// <p>Unique identifier of the key.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -3010,17 +2716,17 @@ pub struct KeyListEntry {
 }
 impl KeyListEntry {
     /// <p>Unique identifier of the key.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>ARN of the key.</p>
-    pub fn key_arn(&self) -> std::option::Option<&str> {
+    pub fn key_arn(&self) -> std::option::Option<& str> {
         self.key_arn.as_deref()
     }
 }
 /// See [`KeyListEntry`](crate::model::KeyListEntry).
 pub mod key_list_entry {
-
+    
     /// A builder for [`KeyListEntry`](crate::model::KeyListEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3035,8 +2741,7 @@ pub mod key_list_entry {
         }
         /// <p>Unique identifier of the key.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// <p>ARN of the key.</p>
         pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3045,17 +2750,20 @@ pub mod key_list_entry {
         }
         /// <p>ARN of the key.</p>
         pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_arn = input;
-            self
+            self.key_arn = input; self
         }
         /// Consumes the builder and constructs a [`KeyListEntry`](crate::model::KeyListEntry).
         pub fn build(self) -> crate::model::KeyListEntry {
             crate::model::KeyListEntry {
-                key_id: self.key_id,
-                key_arn: self.key_arn,
+                key_id: self.key_id
+                ,
+                key_arn: self.key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl KeyListEntry {
     /// Creates a new builder-style object to manufacture [`KeyListEntry`](crate::model::KeyListEntry).
@@ -3067,7 +2775,7 @@ impl KeyListEntry {
 /// <p>Contains information about an alias.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AliasListEntry {
+pub struct AliasListEntry  {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
     #[doc(hidden)]
     pub alias_name: std::option::Option<std::string::String>,
@@ -3086,29 +2794,29 @@ pub struct AliasListEntry {
 }
 impl AliasListEntry {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>String that contains the key ARN.</p>
-    pub fn alias_arn(&self) -> std::option::Option<&str> {
+    pub fn alias_arn(&self) -> std::option::Option<& str> {
         self.alias_arn.as_deref()
     }
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
-    pub fn target_key_id(&self) -> std::option::Option<&str> {
+    pub fn target_key_id(&self) -> std::option::Option<& str> {
         self.target_key_id.as_deref()
     }
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
 }
 /// See [`AliasListEntry`](crate::model::AliasListEntry).
 pub mod alias_list_entry {
-
+    
     /// A builder for [`AliasListEntry`](crate::model::AliasListEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3126,8 +2834,7 @@ pub mod alias_list_entry {
         }
         /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias_name = input;
-            self
+            self.alias_name = input; self
         }
         /// <p>String that contains the key ARN.</p>
         pub fn alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3136,8 +2843,7 @@ pub mod alias_list_entry {
         }
         /// <p>String that contains the key ARN.</p>
         pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = input;
-            self
+            self.alias_arn = input; self
         }
         /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
         pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3145,12 +2851,8 @@ pub mod alias_list_entry {
             self
         }
         /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
-        pub fn set_target_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_key_id = input;
-            self
+        pub fn set_target_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_key_id = input; self
         }
         /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3158,12 +2860,8 @@ pub mod alias_list_entry {
             self
         }
         /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3171,24 +2869,27 @@ pub mod alias_list_entry {
             self
         }
         /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// Consumes the builder and constructs a [`AliasListEntry`](crate::model::AliasListEntry).
         pub fn build(self) -> crate::model::AliasListEntry {
             crate::model::AliasListEntry {
-                alias_name: self.alias_name,
-                alias_arn: self.alias_arn,
-                target_key_id: self.target_key_id,
-                creation_date: self.creation_date,
-                last_updated_date: self.last_updated_date,
+                alias_name: self.alias_name
+                ,
+                alias_arn: self.alias_arn
+                ,
+                target_key_id: self.target_key_id
+                ,
+                creation_date: self.creation_date
+                ,
+                last_updated_date: self.last_updated_date
+                ,
             }
         }
     }
+    
+    
 }
 impl AliasListEntry {
     /// Creates a new builder-style object to manufacture [`AliasListEntry`](crate::model::AliasListEntry).
@@ -3203,9 +2904,9 @@ impl AliasListEntry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wrappingkeyspec = unimplemented!();
 /// match wrappingkeyspec {
@@ -3226,54 +2927,48 @@ impl AliasListEntry {
 /// Specifically, when `wrappingkeyspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WrappingKeySpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WrappingKeySpec {
     #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WrappingKeySpec {
     fn from(s: &str) -> Self {
         match s {
             "RSA_2048" => WrappingKeySpec::Rsa2048,
-            other => WrappingKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => WrappingKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WrappingKeySpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WrappingKeySpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WrappingKeySpec::from(s))
+                }
+            }
 impl WrappingKeySpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WrappingKeySpec::Rsa2048 => "RSA_2048",
-            WrappingKeySpec::Unknown(value) => value.as_str(),
+            WrappingKeySpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RSA_2048"]
+        &[
+            "RSA_2048"
+        ]
     }
 }
 impl AsRef<str> for WrappingKeySpec {
@@ -3288,9 +2983,9 @@ impl AsRef<str> for WrappingKeySpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let algorithmspec = unimplemented!();
 /// match algorithmspec {
@@ -3313,22 +3008,14 @@ impl AsRef<str> for WrappingKeySpec {
 /// Specifically, when `algorithmspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlgorithmSpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     RsaesOaepSha1,
@@ -3337,7 +3024,7 @@ pub enum AlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     RsaesPkcs1V15,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlgorithmSpec {
     fn from(s: &str) -> Self {
@@ -3345,17 +3032,17 @@ impl std::convert::From<&str> for AlgorithmSpec {
             "RSAES_OAEP_SHA_1" => AlgorithmSpec::RsaesOaepSha1,
             "RSAES_OAEP_SHA_256" => AlgorithmSpec::RsaesOaepSha256,
             "RSAES_PKCS1_V1_5" => AlgorithmSpec::RsaesPkcs1V15,
-            other => AlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AlgorithmSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AlgorithmSpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlgorithmSpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlgorithmSpec::from(s))
+                }
+            }
 impl AlgorithmSpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3363,12 +3050,14 @@ impl AlgorithmSpec {
             AlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
             AlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
             AlgorithmSpec::RsaesPkcs1V15 => "RSAES_PKCS1_V1_5",
-            AlgorithmSpec::Unknown(value) => value.as_str(),
+            AlgorithmSpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "RSAES_PKCS1_V1_5"]
+        &[
+            "RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "RSAES_PKCS1_V1_5"
+        ]
     }
 }
 impl AsRef<str> for AlgorithmSpec {
@@ -3383,9 +3072,9 @@ impl AsRef<str> for AlgorithmSpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datakeyspec = unimplemented!();
 /// match datakeyspec {
@@ -3407,58 +3096,52 @@ impl AsRef<str> for AlgorithmSpec {
 /// Specifically, when `datakeyspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataKeySpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataKeySpec {
     #[allow(missing_docs)] // documentation missing in model
     Aes128,
     #[allow(missing_docs)] // documentation missing in model
     Aes256,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataKeySpec {
     fn from(s: &str) -> Self {
         match s {
             "AES_128" => DataKeySpec::Aes128,
             "AES_256" => DataKeySpec::Aes256,
-            other => DataKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DataKeySpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataKeySpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataKeySpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataKeySpec::from(s))
+                }
+            }
 impl DataKeySpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataKeySpec::Aes128 => "AES_128",
             DataKeySpec::Aes256 => "AES_256",
-            DataKeySpec::Unknown(value) => value.as_str(),
+            DataKeySpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES_128", "AES_256"]
+        &[
+            "AES_128", "AES_256"
+        ]
     }
 }
 impl AsRef<str> for DataKeySpec {
@@ -3473,9 +3156,9 @@ impl AsRef<str> for DataKeySpec {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datakeypairspec = unimplemented!();
 /// match datakeypairspec {
@@ -3503,22 +3186,14 @@ impl AsRef<str> for DataKeySpec {
 /// Specifically, when `datakeypairspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataKeyPairSpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataKeyPairSpec {
     #[allow(missing_docs)] // documentation missing in model
     EccNistP256,
@@ -3537,7 +3212,7 @@ pub enum DataKeyPairSpec {
     #[allow(missing_docs)] // documentation missing in model
     Sm2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataKeyPairSpec {
     fn from(s: &str) -> Self {
@@ -3550,17 +3225,17 @@ impl std::convert::From<&str> for DataKeyPairSpec {
             "RSA_3072" => DataKeyPairSpec::Rsa3072,
             "RSA_4096" => DataKeyPairSpec::Rsa4096,
             "SM2" => DataKeyPairSpec::Sm2,
-            other => DataKeyPairSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DataKeyPairSpec::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataKeyPairSpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataKeyPairSpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataKeyPairSpec::from(s))
+                }
+            }
 impl DataKeyPairSpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3573,20 +3248,13 @@ impl DataKeyPairSpec {
             DataKeyPairSpec::Rsa3072 => "RSA_3072",
             DataKeyPairSpec::Rsa4096 => "RSA_4096",
             DataKeyPairSpec::Sm2 => "SM2",
-            DataKeyPairSpec::Unknown(value) => value.as_str(),
+            DataKeyPairSpec::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ECC_NIST_P256",
-            "ECC_NIST_P384",
-            "ECC_NIST_P521",
-            "ECC_SECG_P256K1",
-            "RSA_2048",
-            "RSA_3072",
-            "RSA_4096",
-            "SM2",
+            "ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "RSA_2048", "RSA_3072", "RSA_4096", "SM2"
         ]
     }
 }
@@ -3599,7 +3267,7 @@ impl AsRef<str> for DataKeyPairSpec {
 /// <p>Contains information about each custom key store in the custom key store list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomKeyStoresListEntry {
+pub struct CustomKeyStoresListEntry  {
     /// <p>A unique identifier for the custom key store.</p>
     #[doc(hidden)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
@@ -3609,57 +3277,57 @@ pub struct CustomKeyStoresListEntry {
     /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
     #[doc(hidden)]
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
-    /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+    /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p> 
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
     #[doc(hidden)]
     pub trust_anchor_certificate: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p>
-    /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-    /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
+    /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p> 
+    /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p> 
+    /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p> 
     /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionStateType>,
-    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
-    /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
-    /// <p> <b>All custom key stores:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
-    /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li>
-    /// </ul>
-    /// <p> <b>CloudHSM key stores:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li>
-    /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-    /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
-    /// </ul>
-    /// <p> <b>External key stores:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
-    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p>
-    /// <ul>
-    /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li>
-    /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li>
+    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p> 
+    /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p> 
+    /// <p> <b>All custom key stores:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li> 
+    /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li> 
+    /// </ul> 
+    /// <p> <b>CloudHSM key stores:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li> 
+    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li> 
+    /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li> 
+    /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+    /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li> 
+    /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+    /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li> 
+    /// </ul> 
+    /// <p> <b>External key stores:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li> 
+    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p> 
+    /// <ul> 
+    /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li> 
+    /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li> 
     /// <li> <p>The <code>Allow principals</code> list must include the KMS service principal for the Region, <code>cks.kms.
     /// <region>
     /// .amazonaws.com
-    /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li>
-    /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li>
-    /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li>
-    /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li>
-    /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
+    /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li> 
+    /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li> 
+    /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li> 
+    /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li> 
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
@@ -3669,102 +3337,98 @@ pub struct CustomKeyStoresListEntry {
     /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
     #[doc(hidden)]
     pub custom_key_store_type: std::option::Option<crate::model::CustomKeyStoreType>,
-    /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
+    /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p> 
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
     #[doc(hidden)]
     pub xks_proxy_configuration: std::option::Option<crate::model::XksProxyConfigurationType>,
 }
 impl CustomKeyStoresListEntry {
     /// <p>A unique identifier for the custom key store.</p>
-    pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
+    pub fn custom_key_store_id(&self) -> std::option::Option<& str> {
         self.custom_key_store_id.as_deref()
     }
     /// <p>The user-specified friendly name for the custom key store.</p>
-    pub fn custom_key_store_name(&self) -> std::option::Option<&str> {
+    pub fn custom_key_store_name(&self) -> std::option::Option<& str> {
         self.custom_key_store_name.as_deref()
     }
     /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
-    pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<& str> {
         self.cloud_hsm_cluster_id.as_deref()
     }
-    /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+    /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p> 
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
-    pub fn trust_anchor_certificate(&self) -> std::option::Option<&str> {
+    pub fn trust_anchor_certificate(&self) -> std::option::Option<& str> {
         self.trust_anchor_certificate.as_deref()
     }
-    /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p>
-    /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-    /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
+    /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p> 
+    /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p> 
+    /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p> 
     /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionStateType> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::model::ConnectionStateType> {
         self.connection_state.as_ref()
     }
-    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
-    /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
-    /// <p> <b>All custom key stores:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
-    /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li>
-    /// </ul>
-    /// <p> <b>CloudHSM key stores:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li>
-    /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-    /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-    /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
-    /// </ul>
-    /// <p> <b>External key stores:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li>
-    /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
-    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p>
-    /// <ul>
-    /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li>
-    /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li>
+    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p> 
+    /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p> 
+    /// <p> <b>All custom key stores:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li> 
+    /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li> 
+    /// </ul> 
+    /// <p> <b>CloudHSM key stores:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li> 
+    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li> 
+    /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li> 
+    /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+    /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li> 
+    /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+    /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li> 
+    /// </ul> 
+    /// <p> <b>External key stores:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li> 
+    /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li> 
+    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p> 
+    /// <ul> 
+    /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li> 
+    /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li> 
     /// <li> <p>The <code>Allow principals</code> list must include the KMS service principal for the Region, <code>cks.kms.
     /// <region>
     /// .amazonaws.com
-    /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li>
-    /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li>
-    /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li>
-    /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li>
-    /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
+    /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li> 
+    /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li> 
+    /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li> 
+    /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li> 
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li> 
     /// </ul>
-    pub fn connection_error_code(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectionErrorCodeType> {
+    pub fn connection_error_code(&self) -> std::option::Option<& crate::model::ConnectionErrorCodeType> {
         self.connection_error_code.as_ref()
     }
     /// <p>The date and time when the custom key store was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
-    pub fn custom_key_store_type(&self) -> std::option::Option<&crate::model::CustomKeyStoreType> {
+    pub fn custom_key_store_type(&self) -> std::option::Option<& crate::model::CustomKeyStoreType> {
         self.custom_key_store_type.as_ref()
     }
-    /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
+    /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p> 
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
-    pub fn xks_proxy_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::XksProxyConfigurationType> {
+    pub fn xks_proxy_configuration(&self) -> std::option::Option<& crate::model::XksProxyConfigurationType> {
         self.xks_proxy_configuration.as_ref()
     }
 }
 /// See [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
 pub mod custom_key_stores_list_entry {
-
+    
     /// A builder for [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3773,12 +3437,10 @@ pub mod custom_key_stores_list_entry {
         pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
         pub(crate) trust_anchor_certificate: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionStateType>,
-        pub(crate) connection_error_code:
-            std::option::Option<crate::model::ConnectionErrorCodeType>,
+        pub(crate) connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) custom_key_store_type: std::option::Option<crate::model::CustomKeyStoreType>,
-        pub(crate) xks_proxy_configuration:
-            std::option::Option<crate::model::XksProxyConfigurationType>,
+        pub(crate) xks_proxy_configuration: std::option::Option<crate::model::XksProxyConfigurationType>,
     }
     impl Builder {
         /// <p>A unique identifier for the custom key store.</p>
@@ -3787,12 +3449,8 @@ pub mod custom_key_stores_list_entry {
             self
         }
         /// <p>A unique identifier for the custom key store.</p>
-        pub fn set_custom_key_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_key_store_id = input;
-            self
+        pub fn set_custom_key_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_key_store_id = input; self
         }
         /// <p>The user-specified friendly name for the custom key store.</p>
         pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3800,12 +3458,8 @@ pub mod custom_key_stores_list_entry {
             self
         }
         /// <p>The user-specified friendly name for the custom key store.</p>
-        pub fn set_custom_key_store_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_key_store_name = input;
-            self
+        pub fn set_custom_key_store_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_key_store_name = input; self
         }
         /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
         pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3813,144 +3467,125 @@ pub mod custom_key_stores_list_entry {
             self
         }
         /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
-        pub fn set_cloud_hsm_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_hsm_cluster_id = input;
-            self
+        pub fn set_cloud_hsm_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_hsm_cluster_id = input; self
         }
-        /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+        /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p> 
         /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
         pub fn trust_anchor_certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.trust_anchor_certificate = Some(input.into());
             self
         }
-        /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
+        /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p> 
         /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
-        pub fn set_trust_anchor_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.trust_anchor_certificate = input;
-            self
+        pub fn set_trust_anchor_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.trust_anchor_certificate = input; self
         }
-        /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p>
-        /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-        /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
+        /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p> 
+        /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p> 
+        /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p> 
         /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionStateType) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p>
-        /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
-        /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
+        /// <p>Indicates whether the custom key store is connected to its backing key store. For an CloudHSM key store, the <code>ConnectionState</code> indicates whether it is connected to its CloudHSM cluster. For an external key store, the <code>ConnectionState</code> indicates whether it is connected to the external key store proxy that communicates with your external key manager.</p> 
+        /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p> 
+        /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p> 
         /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        pub fn set_connection_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionStateType>,
-        ) -> Self {
-            self.connection_state = input;
-            self
+        pub fn set_connection_state(mut self, input: std::option::Option<crate::model::ConnectionStateType>) -> Self {
+            self.connection_state = input; self
         }
-        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
-        /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
-        /// <p> <b>All custom key stores:</b> </p>
-        /// <ul>
-        /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
-        /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li>
-        /// </ul>
-        /// <p> <b>CloudHSM key stores:</b> </p>
-        /// <ul>
-        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
-        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
-        /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li>
-        /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-        /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
-        /// </ul>
-        /// <p> <b>External key stores:</b> </p>
-        /// <ul>
-        /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
-        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p>
-        /// <ul>
-        /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li>
-        /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li>
+        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p> 
+        /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p> 
+        /// <p> <b>All custom key stores:</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li> 
+        /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li> 
+        /// </ul> 
+        /// <p> <b>CloudHSM key stores:</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li> 
+        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li> 
+        /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li> 
+        /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+        /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li> 
+        /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+        /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li> 
+        /// </ul> 
+        /// <p> <b>External key stores:</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li> 
+        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p> 
+        /// <ul> 
+        /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li> 
+        /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li> 
         /// <li> <p>The <code>Allow principals</code> list must include the KMS service principal for the Region, <code>cks.kms.
         /// <region>
         /// .amazonaws.com
-        /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li>
-        /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li>
-        /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li>
-        /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li>
-        /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
+        /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li> 
+        /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li> 
+        /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li> 
+        /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li> 
+        /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li> 
         /// </ul>
-        pub fn connection_error_code(
-            mut self,
-            input: crate::model::ConnectionErrorCodeType,
-        ) -> Self {
+        pub fn connection_error_code(mut self, input: crate::model::ConnectionErrorCodeType) -> Self {
             self.connection_error_code = Some(input);
             self
         }
-        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
-        /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
-        /// <p> <b>All custom key stores:</b> </p>
-        /// <ul>
-        /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
-        /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li>
-        /// </ul>
-        /// <p> <b>CloudHSM key stores:</b> </p>
-        /// <ul>
-        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
-        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
-        /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li>
-        /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
-        /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
-        /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
-        /// </ul>
-        /// <p> <b>External key stores:</b> </p>
-        /// <ul>
-        /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li>
-        /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li>
-        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p>
-        /// <ul>
-        /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li>
-        /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li>
+        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p> 
+        /// <p>Many failures can be resolved by updating the properties of the custom key store. To update a custom key store, disconnect it (<code>DisconnectCustomKeyStore</code>), correct the errors (<code>UpdateCustomKeyStore</code>), and try to connect again (<code>ConnectCustomKeyStore</code>). For additional help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p> 
+        /// <p> <b>All custom key stores:</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>INTERNAL_ERROR</code> — KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li> 
+        /// <li> <p> <code>NETWORK_ERRORS</code> — Network errors are preventing KMS from connecting the custom key store to its backing key store.</p> </li> 
+        /// </ul> 
+        /// <p> <b>CloudHSM key stores:</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> — KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li> 
+        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> — The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li> 
+        /// <li> <p> <code>INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET</code> — At least one private subnet associated with the CloudHSM cluster doesn't have any available IP addresses. A CloudHSM key store connection requires one free IP address in each of the associated private subnets, although two are preferable. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> — The <code>KeyStorePassword</code> for the custom key store doesn't match the current password of the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the <code>KeyStorePassword</code> value for the custom key store.</p> </li> 
+        /// <li> <p> <code>SUBNET_NOT_FOUND</code> — A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+        /// <li> <p> <code>USER_LOCKED_OUT</code> — The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li> 
+        /// <li> <p> <code>USER_LOGGED_IN</code> — The <code>kmsuser</code> CU account is logged into the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li> 
+        /// <li> <p> <code>USER_NOT_FOUND</code> — KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li> 
+        /// </ul> 
+        /// <p> <b>External key stores:</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> — One or both of the <code>XksProxyAuthenticationCredential</code> values is not valid on the specified external key store proxy.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_ACCESS_DENIED</code> — KMS requests are denied access to the external key store proxy. If the external key store proxy has authorization rules, verify that they permit KMS to communicate with the proxy on your behalf.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_INVALID_CONFIGURATION</code> — A configuration error is preventing the external key store from connecting to its proxy. Verify the value of the <code>XksProxyUriPath</code>.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_INVALID_RESPONSE</code> — KMS cannot interpret the response from the external key store proxy. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_INVALID_TLS_CONFIGURATION</code> — KMS cannot connect to the external key store proxy because the TLS configuration is invalid. Verify that the XKS proxy supports TLS 1.2 or 1.3. Also, verify that the TLS certificate is not expired, and that it matches the hostname in the <code>XksProxyUriEndpoint</code> value, and that it is signed by a certificate authority included in the <a href="https://github.com/aws/aws-kms-xksproxy-api-spec/blob/main/TrustedCertificateAuthorities">Trusted Certificate Authorities</a> list.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_NOT_REACHABLE</code> — KMS can't communicate with your external key store proxy. Verify that the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> are correct. Use the tools for your external key store proxy to verify that the proxy is active and available on its network. Also, verify that your external key manager instances are operating properly. Connection attempts fail with this connection error code if the proxy reports that all external key manager instances are unavailable.</p> </li> 
+        /// <li> <p> <code>XKS_PROXY_TIMED_OUT</code> — KMS can connect to the external key store proxy, but the proxy does not respond to KMS in the time allotted. If you see this connection error code repeatedly, notify your external key store proxy vendor.</p> </li> 
+        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION</code> — The Amazon VPC endpoint service configuration doesn't conform to the requirements for an KMS external key store.</p> 
+        /// <ul> 
+        /// <li> <p>The VPC endpoint service must be an endpoint service for interface endpoints in the caller's Amazon Web Services account.</p> </li> 
+        /// <li> <p>It must have a network load balancer (NLB) connected to at least two subnets, each in a different Availability Zone.</p> </li> 
         /// <li> <p>The <code>Allow principals</code> list must include the KMS service principal for the Region, <code>cks.kms.
         /// <region>
         /// .amazonaws.com
-        /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li>
-        /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li>
-        /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li>
-        /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li>
-        /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
+        /// </region></code>, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p> </li> 
+        /// <li> <p>It must <i>not</i> require <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">acceptance</a> of connection requests.</p> </li> 
+        /// <li> <p>It must have a private DNS name. The private DNS name for an external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must be unique in its Amazon Web Services Region.</p> </li> 
+        /// <li> <p>The domain of the private DNS name must have a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/verify-domains.html">verification status</a> of <code>verified</code>.</p> </li> 
+        /// <li> <p>The <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS certificate</a> specifies the private DNS hostname at which the endpoint is reachable.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li> 
         /// </ul>
-        pub fn set_connection_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionErrorCodeType>,
-        ) -> Self {
-            self.connection_error_code = input;
-            self
+        pub fn set_connection_error_code(mut self, input: std::option::Option<crate::model::ConnectionErrorCodeType>) -> Self {
+            self.connection_error_code = input; self
         }
         /// <p>The date and time when the custom key store was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3958,12 +3593,8 @@ pub mod custom_key_stores_list_entry {
             self
         }
         /// <p>The date and time when the custom key store was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
         pub fn custom_key_store_type(mut self, input: crate::model::CustomKeyStoreType) -> Self {
@@ -3971,46 +3602,46 @@ pub mod custom_key_stores_list_entry {
             self
         }
         /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
-        pub fn set_custom_key_store_type(
-            mut self,
-            input: std::option::Option<crate::model::CustomKeyStoreType>,
-        ) -> Self {
-            self.custom_key_store_type = input;
-            self
+        pub fn set_custom_key_store_type(mut self, input: std::option::Option<crate::model::CustomKeyStoreType>) -> Self {
+            self.custom_key_store_type = input; self
         }
-        /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
+        /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p> 
         /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
-        pub fn xks_proxy_configuration(
-            mut self,
-            input: crate::model::XksProxyConfigurationType,
-        ) -> Self {
+        pub fn xks_proxy_configuration(mut self, input: crate::model::XksProxyConfigurationType) -> Self {
             self.xks_proxy_configuration = Some(input);
             self
         }
-        /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
+        /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p> 
         /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
-        pub fn set_xks_proxy_configuration(
-            mut self,
-            input: std::option::Option<crate::model::XksProxyConfigurationType>,
-        ) -> Self {
-            self.xks_proxy_configuration = input;
-            self
+        pub fn set_xks_proxy_configuration(mut self, input: std::option::Option<crate::model::XksProxyConfigurationType>) -> Self {
+            self.xks_proxy_configuration = input; self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
         pub fn build(self) -> crate::model::CustomKeyStoresListEntry {
             crate::model::CustomKeyStoresListEntry {
-                custom_key_store_id: self.custom_key_store_id,
-                custom_key_store_name: self.custom_key_store_name,
-                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
-                trust_anchor_certificate: self.trust_anchor_certificate,
-                connection_state: self.connection_state,
-                connection_error_code: self.connection_error_code,
-                creation_date: self.creation_date,
-                custom_key_store_type: self.custom_key_store_type,
-                xks_proxy_configuration: self.xks_proxy_configuration,
+                custom_key_store_id: self.custom_key_store_id
+                ,
+                custom_key_store_name: self.custom_key_store_name
+                ,
+                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id
+                ,
+                trust_anchor_certificate: self.trust_anchor_certificate
+                ,
+                connection_state: self.connection_state
+                ,
+                connection_error_code: self.connection_error_code
+                ,
+                creation_date: self.creation_date
+                ,
+                custom_key_store_type: self.custom_key_store_type
+                ,
+                xks_proxy_configuration: self.xks_proxy_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomKeyStoresListEntry {
     /// Creates a new builder-style object to manufacture [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
@@ -4022,15 +3653,15 @@ impl CustomKeyStoresListEntry {
 /// <p>Detailed information about the external key store proxy (XKS proxy). Your external key store proxy translates KMS requests into a format that your external key manager can understand. These fields appear in a <code>DescribeCustomKeyStores</code> response only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct XksProxyConfigurationType {
+pub struct XksProxyConfigurationType  {
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
     #[doc(hidden)]
     pub connectivity: std::option::Option<crate::model::XksProxyConnectivityType>,
     /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
-    /// <p>The URI endpoint for the external key store proxy.</p>
-    /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
+    /// <p>The URI endpoint for the external key store proxy.</p> 
+    /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p> 
     /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
     #[doc(hidden)]
     pub uri_endpoint: std::option::Option<std::string::String>,
@@ -4043,29 +3674,29 @@ pub struct XksProxyConfigurationType {
 }
 impl XksProxyConfigurationType {
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
-    pub fn connectivity(&self) -> std::option::Option<&crate::model::XksProxyConnectivityType> {
+    pub fn connectivity(&self) -> std::option::Option<& crate::model::XksProxyConnectivityType> {
         self.connectivity.as_ref()
     }
     /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
-    /// <p>The URI endpoint for the external key store proxy.</p>
-    /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
+    /// <p>The URI endpoint for the external key store proxy.</p> 
+    /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p> 
     /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
-    pub fn uri_endpoint(&self) -> std::option::Option<&str> {
+    pub fn uri_endpoint(&self) -> std::option::Option<& str> {
         self.uri_endpoint.as_deref()
     }
     /// <p>The path to the external key store proxy APIs.</p>
-    pub fn uri_path(&self) -> std::option::Option<&str> {
+    pub fn uri_path(&self) -> std::option::Option<& str> {
         self.uri_path.as_deref()
     }
     /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
-    pub fn vpc_endpoint_service_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_service_name(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_service_name.as_deref()
     }
 }
-impl std::fmt::Debug for XksProxyConfigurationType {
+impl  std::fmt::Debug for XksProxyConfigurationType  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("XksProxyConfigurationType");
         formatter.field("connectivity", &self.connectivity);
@@ -4078,7 +3709,7 @@ impl std::fmt::Debug for XksProxyConfigurationType {
 }
 /// See [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
 pub mod xks_proxy_configuration_type {
-
+    
     /// A builder for [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4095,12 +3726,8 @@ pub mod xks_proxy_configuration_type {
             self
         }
         /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
-        pub fn set_connectivity(
-            mut self,
-            input: std::option::Option<crate::model::XksProxyConnectivityType>,
-        ) -> Self {
-            self.connectivity = input;
-            self
+        pub fn set_connectivity(mut self, input: std::option::Option<crate::model::XksProxyConnectivityType>) -> Self {
+            self.connectivity = input; self
         }
         /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4108,26 +3735,21 @@ pub mod xks_proxy_configuration_type {
             self
         }
         /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
-        pub fn set_access_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_key_id = input;
-            self
+        pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_key_id = input; self
         }
-        /// <p>The URI endpoint for the external key store proxy.</p>
-        /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
+        /// <p>The URI endpoint for the external key store proxy.</p> 
+        /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p> 
         /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
         pub fn uri_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri_endpoint = Some(input.into());
             self
         }
-        /// <p>The URI endpoint for the external key store proxy.</p>
-        /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
+        /// <p>The URI endpoint for the external key store proxy.</p> 
+        /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p> 
         /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
         pub fn set_uri_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri_endpoint = input;
-            self
+            self.uri_endpoint = input; self
         }
         /// <p>The path to the external key store proxy APIs.</p>
         pub fn uri_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4136,8 +3758,7 @@ pub mod xks_proxy_configuration_type {
         }
         /// <p>The path to the external key store proxy APIs.</p>
         pub fn set_uri_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri_path = input;
-            self
+            self.uri_path = input; self
         }
         /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
         pub fn vpc_endpoint_service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4145,21 +3766,22 @@ pub mod xks_proxy_configuration_type {
             self
         }
         /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
-        pub fn set_vpc_endpoint_service_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_endpoint_service_name = input;
-            self
+        pub fn set_vpc_endpoint_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_endpoint_service_name = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
         pub fn build(self) -> crate::model::XksProxyConfigurationType {
             crate::model::XksProxyConfigurationType {
-                connectivity: self.connectivity,
-                access_key_id: self.access_key_id,
-                uri_endpoint: self.uri_endpoint,
-                uri_path: self.uri_path,
-                vpc_endpoint_service_name: self.vpc_endpoint_service_name,
+                connectivity: self.connectivity
+                ,
+                access_key_id: self.access_key_id
+                ,
+                uri_endpoint: self.uri_endpoint
+                ,
+                uri_path: self.uri_path
+                ,
+                vpc_endpoint_service_name: self.vpc_endpoint_service_name
+                ,
             }
         }
     }
@@ -4174,6 +3796,8 @@ pub mod xks_proxy_configuration_type {
             formatter.finish()
         }
     }
+    
+    
 }
 impl XksProxyConfigurationType {
     /// Creates a new builder-style object to manufacture [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
@@ -4188,9 +3812,9 @@ impl XksProxyConfigurationType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let customkeystoretype = unimplemented!();
 /// match customkeystoretype {
@@ -4212,60 +3836,52 @@ impl XksProxyConfigurationType {
 /// Specifically, when `customkeystoretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CustomKeyStoreType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CustomKeyStoreType {
     #[allow(missing_docs)] // documentation missing in model
     AwsCloudhsm,
     #[allow(missing_docs)] // documentation missing in model
     ExternalKeyStore,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomKeyStoreType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_CLOUDHSM" => CustomKeyStoreType::AwsCloudhsm,
             "EXTERNAL_KEY_STORE" => CustomKeyStoreType::ExternalKeyStore,
-            other => {
-                CustomKeyStoreType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CustomKeyStoreType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CustomKeyStoreType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomKeyStoreType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CustomKeyStoreType::from(s))
+                }
+            }
 impl CustomKeyStoreType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomKeyStoreType::AwsCloudhsm => "AWS_CLOUDHSM",
             CustomKeyStoreType::ExternalKeyStore => "EXTERNAL_KEY_STORE",
-            CustomKeyStoreType::Unknown(value) => value.as_str(),
+            CustomKeyStoreType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_CLOUDHSM", "EXTERNAL_KEY_STORE"]
+        &[
+            "AWS_CLOUDHSM", "EXTERNAL_KEY_STORE"
+        ]
     }
 }
 impl AsRef<str> for CustomKeyStoreType {
@@ -4280,9 +3896,9 @@ impl AsRef<str> for CustomKeyStoreType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectionerrorcodetype = unimplemented!();
 /// match connectionerrorcodetype {
@@ -4320,22 +3936,14 @@ impl AsRef<str> for CustomKeyStoreType {
 /// Specifically, when `connectionerrorcodetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectionErrorCodeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectionErrorCodeType {
     #[allow(missing_docs)] // documentation missing in model
     ClusterNotFound,
@@ -4374,16 +3982,14 @@ pub enum ConnectionErrorCodeType {
     #[allow(missing_docs)] // documentation missing in model
     XksVpcEndpointServiceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionErrorCodeType {
     fn from(s: &str) -> Self {
         match s {
             "CLUSTER_NOT_FOUND" => ConnectionErrorCodeType::ClusterNotFound,
             "INSUFFICIENT_CLOUDHSM_HSMS" => ConnectionErrorCodeType::InsufficientCloudhsmHsms,
-            "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET" => {
-                ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet
-            }
+            "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET" => ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet,
             "INTERNAL_ERROR" => ConnectionErrorCodeType::InternalError,
             "INVALID_CREDENTIALS" => ConnectionErrorCodeType::InvalidCredentials,
             "NETWORK_ERRORS" => ConnectionErrorCodeType::NetworkErrors,
@@ -4392,43 +3998,31 @@ impl std::convert::From<&str> for ConnectionErrorCodeType {
             "USER_LOGGED_IN" => ConnectionErrorCodeType::UserLoggedIn,
             "USER_NOT_FOUND" => ConnectionErrorCodeType::UserNotFound,
             "XKS_PROXY_ACCESS_DENIED" => ConnectionErrorCodeType::XksProxyAccessDenied,
-            "XKS_PROXY_INVALID_CONFIGURATION" => {
-                ConnectionErrorCodeType::XksProxyInvalidConfiguration
-            }
+            "XKS_PROXY_INVALID_CONFIGURATION" => ConnectionErrorCodeType::XksProxyInvalidConfiguration,
             "XKS_PROXY_INVALID_RESPONSE" => ConnectionErrorCodeType::XksProxyInvalidResponse,
-            "XKS_PROXY_INVALID_TLS_CONFIGURATION" => {
-                ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration
-            }
+            "XKS_PROXY_INVALID_TLS_CONFIGURATION" => ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration,
             "XKS_PROXY_NOT_REACHABLE" => ConnectionErrorCodeType::XksProxyNotReachable,
             "XKS_PROXY_TIMED_OUT" => ConnectionErrorCodeType::XksProxyTimedOut,
-            "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION" => {
-                ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration
-            }
-            "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND" => {
-                ConnectionErrorCodeType::XksVpcEndpointServiceNotFound
-            }
-            other => ConnectionErrorCodeType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION" => ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration,
+            "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND" => ConnectionErrorCodeType::XksVpcEndpointServiceNotFound,
+            other => ConnectionErrorCodeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectionErrorCodeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectionErrorCodeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectionErrorCodeType::from(s))
+                }
+            }
 impl ConnectionErrorCodeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionErrorCodeType::ClusterNotFound => "CLUSTER_NOT_FOUND",
             ConnectionErrorCodeType::InsufficientCloudhsmHsms => "INSUFFICIENT_CLOUDHSM_HSMS",
-            ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet => {
-                "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET"
-            }
+            ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet => "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET",
             ConnectionErrorCodeType::InternalError => "INTERNAL_ERROR",
             ConnectionErrorCodeType::InvalidCredentials => "INVALID_CREDENTIALS",
             ConnectionErrorCodeType::NetworkErrors => "NETWORK_ERRORS",
@@ -4437,45 +4031,20 @@ impl ConnectionErrorCodeType {
             ConnectionErrorCodeType::UserLoggedIn => "USER_LOGGED_IN",
             ConnectionErrorCodeType::UserNotFound => "USER_NOT_FOUND",
             ConnectionErrorCodeType::XksProxyAccessDenied => "XKS_PROXY_ACCESS_DENIED",
-            ConnectionErrorCodeType::XksProxyInvalidConfiguration => {
-                "XKS_PROXY_INVALID_CONFIGURATION"
-            }
+            ConnectionErrorCodeType::XksProxyInvalidConfiguration => "XKS_PROXY_INVALID_CONFIGURATION",
             ConnectionErrorCodeType::XksProxyInvalidResponse => "XKS_PROXY_INVALID_RESPONSE",
-            ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => {
-                "XKS_PROXY_INVALID_TLS_CONFIGURATION"
-            }
+            ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => "XKS_PROXY_INVALID_TLS_CONFIGURATION",
             ConnectionErrorCodeType::XksProxyNotReachable => "XKS_PROXY_NOT_REACHABLE",
             ConnectionErrorCodeType::XksProxyTimedOut => "XKS_PROXY_TIMED_OUT",
-            ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => {
-                "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION"
-            }
-            ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => {
-                "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"
-            }
-            ConnectionErrorCodeType::Unknown(value) => value.as_str(),
+            ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION",
+            ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND",
+            ConnectionErrorCodeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CLUSTER_NOT_FOUND",
-            "INSUFFICIENT_CLOUDHSM_HSMS",
-            "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET",
-            "INTERNAL_ERROR",
-            "INVALID_CREDENTIALS",
-            "NETWORK_ERRORS",
-            "SUBNET_NOT_FOUND",
-            "USER_LOCKED_OUT",
-            "USER_LOGGED_IN",
-            "USER_NOT_FOUND",
-            "XKS_PROXY_ACCESS_DENIED",
-            "XKS_PROXY_INVALID_CONFIGURATION",
-            "XKS_PROXY_INVALID_RESPONSE",
-            "XKS_PROXY_INVALID_TLS_CONFIGURATION",
-            "XKS_PROXY_NOT_REACHABLE",
-            "XKS_PROXY_TIMED_OUT",
-            "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION",
-            "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND",
+            "CLUSTER_NOT_FOUND", "INSUFFICIENT_CLOUDHSM_HSMS", "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET", "INTERNAL_ERROR", "INVALID_CREDENTIALS", "NETWORK_ERRORS", "SUBNET_NOT_FOUND", "USER_LOCKED_OUT", "USER_LOGGED_IN", "USER_NOT_FOUND", "XKS_PROXY_ACCESS_DENIED", "XKS_PROXY_INVALID_CONFIGURATION", "XKS_PROXY_INVALID_RESPONSE", "XKS_PROXY_INVALID_TLS_CONFIGURATION", "XKS_PROXY_NOT_REACHABLE", "XKS_PROXY_TIMED_OUT", "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION", "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"
         ]
     }
 }
@@ -4491,9 +4060,9 @@ impl AsRef<str> for ConnectionErrorCodeType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectionstatetype = unimplemented!();
 /// match connectionstatetype {
@@ -4518,22 +4087,14 @@ impl AsRef<str> for ConnectionErrorCodeType {
 /// Specifically, when `connectionstatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectionStateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectionStateType {
     #[allow(missing_docs)] // documentation missing in model
     Connected,
@@ -4546,7 +4107,7 @@ pub enum ConnectionStateType {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionStateType {
     fn from(s: &str) -> Self {
@@ -4556,19 +4117,17 @@ impl std::convert::From<&str> for ConnectionStateType {
             "DISCONNECTED" => ConnectionStateType::Disconnected,
             "DISCONNECTING" => ConnectionStateType::Disconnecting,
             "FAILED" => ConnectionStateType::Failed,
-            other => {
-                ConnectionStateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConnectionStateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectionStateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectionStateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectionStateType::from(s))
+                }
+            }
 impl ConnectionStateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4578,17 +4137,13 @@ impl ConnectionStateType {
             ConnectionStateType::Disconnected => "DISCONNECTED",
             ConnectionStateType::Disconnecting => "DISCONNECTING",
             ConnectionStateType::Failed => "FAILED",
-            ConnectionStateType::Unknown(value) => value.as_str(),
+            ConnectionStateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CONNECTED",
-            "CONNECTING",
-            "DISCONNECTED",
-            "DISCONNECTING",
-            "FAILED",
+            "CONNECTED", "CONNECTING", "DISCONNECTED", "DISCONNECTING", "FAILED"
         ]
     }
 }
@@ -4597,3 +4152,4 @@ impl AsRef<str> for ConnectionStateType {
         self.as_str()
     }
 }
+

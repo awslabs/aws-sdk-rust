@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInputOutput {
+pub struct UpdateInputOutput  {
     /// <p>Information about the configuration of the input.</p>
     #[doc(hidden)]
     pub input_configuration: std::option::Option<crate::model::InputConfiguration>,
 }
 impl UpdateInputOutput {
     /// <p>Information about the configuration of the input.</p>
-    pub fn input_configuration(&self) -> std::option::Option<&crate::model::InputConfiguration> {
+    pub fn input_configuration(&self) -> std::option::Option<& crate::model::InputConfiguration> {
         self.input_configuration.as_ref()
     }
 }
 /// See [`UpdateInputOutput`](crate::output::UpdateInputOutput).
 pub mod update_input_output {
-
+    
     /// A builder for [`UpdateInputOutput`](crate::output::UpdateInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_input_output {
             self
         }
         /// <p>Information about the configuration of the input.</p>
-        pub fn set_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InputConfiguration>,
-        ) -> Self {
-            self.input_configuration = input;
-            self
+        pub fn set_input_configuration(mut self, input: std::option::Option<crate::model::InputConfiguration>) -> Self {
+            self.input_configuration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInputOutput`](crate::output::UpdateInputOutput).
         pub fn build(self) -> crate::output::UpdateInputOutput {
             crate::output::UpdateInputOutput {
-                input_configuration: self.input_configuration,
+                input_configuration: self.input_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInputOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInputOutput`](crate::output::UpdateInputOutput).
@@ -53,52 +52,45 @@ impl UpdateInputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDetectorModelOutput {
+pub struct UpdateDetectorModelOutput  {
     /// <p>Information about how the detector model is configured.</p>
     #[doc(hidden)]
     pub detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
 }
 impl UpdateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
-    pub fn detector_model_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DetectorModelConfiguration> {
+    pub fn detector_model_configuration(&self) -> std::option::Option<& crate::model::DetectorModelConfiguration> {
         self.detector_model_configuration.as_ref()
     }
 }
 /// See [`UpdateDetectorModelOutput`](crate::output::UpdateDetectorModelOutput).
 pub mod update_detector_model_output {
-
+    
     /// A builder for [`UpdateDetectorModelOutput`](crate::output::UpdateDetectorModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) detector_model_configuration:
-            std::option::Option<crate::model::DetectorModelConfiguration>,
+        pub(crate) detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
     }
     impl Builder {
         /// <p>Information about how the detector model is configured.</p>
-        pub fn detector_model_configuration(
-            mut self,
-            input: crate::model::DetectorModelConfiguration,
-        ) -> Self {
+        pub fn detector_model_configuration(mut self, input: crate::model::DetectorModelConfiguration) -> Self {
             self.detector_model_configuration = Some(input);
             self
         }
         /// <p>Information about how the detector model is configured.</p>
-        pub fn set_detector_model_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DetectorModelConfiguration>,
-        ) -> Self {
-            self.detector_model_configuration = input;
-            self
+        pub fn set_detector_model_configuration(mut self, input: std::option::Option<crate::model::DetectorModelConfiguration>) -> Self {
+            self.detector_model_configuration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDetectorModelOutput`](crate::output::UpdateDetectorModelOutput).
         pub fn build(self) -> crate::output::UpdateDetectorModelOutput {
             crate::output::UpdateDetectorModelOutput {
-                detector_model_configuration: self.detector_model_configuration,
+                detector_model_configuration: self.detector_model_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDetectorModelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorModelOutput`](crate::output::UpdateDetectorModelOutput).
@@ -110,7 +102,7 @@ impl UpdateDetectorModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAlarmModelOutput {
+pub struct UpdateAlarmModelOutput  {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -123,47 +115,47 @@ pub struct UpdateAlarmModelOutput {
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the alarm model. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
 }
 impl UpdateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn alarm_model_arn(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_arn(&self) -> std::option::Option<& str> {
         self.alarm_model_arn.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_version(&self) -> std::option::Option<& str> {
         self.alarm_model_version.as_deref()
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
-    /// <p>The status of the alarm model. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AlarmModelVersionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`UpdateAlarmModelOutput`](crate::output::UpdateAlarmModelOutput).
 pub mod update_alarm_model_output {
-
+    
     /// A builder for [`UpdateAlarmModelOutput`](crate::output::UpdateAlarmModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -180,12 +172,8 @@ pub mod update_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn alarm_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,12 +181,8 @@ pub mod update_alarm_model_output {
             self
         }
         /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_alarm_model_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_arn = input;
-            self
+        pub fn set_alarm_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_arn = input; self
         }
         /// <p>The version of the alarm model.</p>
         pub fn alarm_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,12 +190,8 @@ pub mod update_alarm_model_output {
             self
         }
         /// <p>The version of the alarm model.</p>
-        pub fn set_alarm_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_version = input;
-            self
+        pub fn set_alarm_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_version = input; self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -219,49 +199,48 @@ pub mod update_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
-        /// <p>The status of the alarm model. The status can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+        /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::AlarmModelVersionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the alarm model. The status can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+        /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AlarmModelVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AlarmModelVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAlarmModelOutput`](crate::output::UpdateAlarmModelOutput).
         pub fn build(self) -> crate::output::UpdateAlarmModelOutput {
             crate::output::UpdateAlarmModelOutput {
-                creation_time: self.creation_time,
-                alarm_model_arn: self.alarm_model_arn,
-                alarm_model_version: self.alarm_model_version,
-                last_update_time: self.last_update_time,
-                status: self.status,
+                creation_time: self.creation_time
+                ,
+                alarm_model_arn: self.alarm_model_arn
+                ,
+                alarm_model_version: self.alarm_model_version
+                ,
+                last_update_time: self.last_update_time
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAlarmModelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAlarmModelOutput`](crate::output::UpdateAlarmModelOutput).
@@ -273,19 +252,24 @@ impl UpdateAlarmModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -297,19 +281,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -321,20 +310,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDetectorModelAnalysisOutput {
+pub struct StartDetectorModelAnalysisOutput  {
     /// <p>The ID that you can use to retrieve the analysis result.</p>
     #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
 }
 impl StartDetectorModelAnalysisOutput {
     /// <p>The ID that you can use to retrieve the analysis result.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
 }
 /// See [`StartDetectorModelAnalysisOutput`](crate::output::StartDetectorModelAnalysisOutput).
 pub mod start_detector_model_analysis_output {
-
+    
     /// A builder for [`StartDetectorModelAnalysisOutput`](crate::output::StartDetectorModelAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -348,16 +337,18 @@ pub mod start_detector_model_analysis_output {
         }
         /// <p>The ID that you can use to retrieve the analysis result.</p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analysis_id = input;
-            self
+            self.analysis_id = input; self
         }
         /// Consumes the builder and constructs a [`StartDetectorModelAnalysisOutput`](crate::output::StartDetectorModelAnalysisOutput).
         pub fn build(self) -> crate::output::StartDetectorModelAnalysisOutput {
             crate::output::StartDetectorModelAnalysisOutput {
-                analysis_id: self.analysis_id,
+                analysis_id: self.analysis_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDetectorModelAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartDetectorModelAnalysisOutput`](crate::output::StartDetectorModelAnalysisOutput).
@@ -369,19 +360,24 @@ impl StartDetectorModelAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLoggingOptionsOutput {}
+pub struct PutLoggingOptionsOutput  {
+}
 /// See [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
 pub mod put_logging_options_output {
-
+    
     /// A builder for [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
         pub fn build(self) -> crate::output::PutLoggingOptionsOutput {
-            crate::output::PutLoggingOptionsOutput {}
+            crate::output::PutLoggingOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
@@ -393,20 +389,20 @@ impl PutLoggingOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags assigned to the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -420,23 +416,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The list of tags assigned to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags assigned to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -448,7 +445,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputsOutput {
+pub struct ListInputsOutput  {
     /// <p>Summary information about the inputs.</p>
     #[doc(hidden)]
     pub input_summaries: std::option::Option<std::vec::Vec<crate::model::InputSummary>>,
@@ -458,17 +455,17 @@ pub struct ListInputsOutput {
 }
 impl ListInputsOutput {
     /// <p>Summary information about the inputs.</p>
-    pub fn input_summaries(&self) -> std::option::Option<&[crate::model::InputSummary]> {
+    pub fn input_summaries(&self) -> std::option::Option<& [crate::model::InputSummary]> {
         self.input_summaries.as_deref()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInputsOutput`](crate::output::ListInputsOutput).
 pub mod list_inputs_output {
-
+    
     /// A builder for [`ListInputsOutput`](crate::output::ListInputsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -483,17 +480,13 @@ pub mod list_inputs_output {
         /// <p>Summary information about the inputs.</p>
         pub fn input_summaries(mut self, input: crate::model::InputSummary) -> Self {
             let mut v = self.input_summaries.unwrap_or_default();
-            v.push(input);
-            self.input_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.input_summaries = Some(v);
+                            self
         }
         /// <p>Summary information about the inputs.</p>
-        pub fn set_input_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputSummary>>,
-        ) -> Self {
-            self.input_summaries = input;
-            self
+        pub fn set_input_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputSummary>>) -> Self {
+            self.input_summaries = input; self
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -502,17 +495,20 @@ pub mod list_inputs_output {
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInputsOutput`](crate::output::ListInputsOutput).
         pub fn build(self) -> crate::output::ListInputsOutput {
             crate::output::ListInputsOutput {
-                input_summaries: self.input_summaries,
-                next_token: self.next_token,
+                input_summaries: self.input_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInputsOutput {
     /// Creates a new builder-style object to manufacture [`ListInputsOutput`](crate::output::ListInputsOutput).
@@ -524,7 +520,7 @@ impl ListInputsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputRoutingsOutput {
+pub struct ListInputRoutingsOutput  {
     /// <p> Summary information about the routed resources. </p>
     #[doc(hidden)]
     pub routed_resources: std::option::Option<std::vec::Vec<crate::model::RoutedResource>>,
@@ -534,22 +530,21 @@ pub struct ListInputRoutingsOutput {
 }
 impl ListInputRoutingsOutput {
     /// <p> Summary information about the routed resources. </p>
-    pub fn routed_resources(&self) -> std::option::Option<&[crate::model::RoutedResource]> {
+    pub fn routed_resources(&self) -> std::option::Option<& [crate::model::RoutedResource]> {
         self.routed_resources.as_deref()
     }
     /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInputRoutingsOutput`](crate::output::ListInputRoutingsOutput).
 pub mod list_input_routings_output {
-
+    
     /// A builder for [`ListInputRoutingsOutput`](crate::output::ListInputRoutingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) routed_resources:
-            std::option::Option<std::vec::Vec<crate::model::RoutedResource>>,
+        pub(crate) routed_resources: std::option::Option<std::vec::Vec<crate::model::RoutedResource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -560,17 +555,13 @@ pub mod list_input_routings_output {
         /// <p> Summary information about the routed resources. </p>
         pub fn routed_resources(mut self, input: crate::model::RoutedResource) -> Self {
             let mut v = self.routed_resources.unwrap_or_default();
-            v.push(input);
-            self.routed_resources = Some(v);
-            self
+                            v.push(input);
+                            self.routed_resources = Some(v);
+                            self
         }
         /// <p> Summary information about the routed resources. </p>
-        pub fn set_routed_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RoutedResource>>,
-        ) -> Self {
-            self.routed_resources = input;
-            self
+        pub fn set_routed_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::RoutedResource>>) -> Self {
+            self.routed_resources = input; self
         }
         /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -579,17 +570,20 @@ pub mod list_input_routings_output {
         }
         /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInputRoutingsOutput`](crate::output::ListInputRoutingsOutput).
         pub fn build(self) -> crate::output::ListInputRoutingsOutput {
             crate::output::ListInputRoutingsOutput {
-                routed_resources: self.routed_resources,
-                next_token: self.next_token,
+                routed_resources: self.routed_resources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInputRoutingsOutput {
     /// Creates a new builder-style object to manufacture [`ListInputRoutingsOutput`](crate::output::ListInputRoutingsOutput).
@@ -601,35 +595,31 @@ impl ListInputRoutingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDetectorModelVersionsOutput {
+pub struct ListDetectorModelVersionsOutput  {
     /// <p>Summary information about the detector model versions.</p>
     #[doc(hidden)]
-    pub detector_model_version_summaries:
-        std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>,
+    pub detector_model_version_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorModelVersionsOutput {
     /// <p>Summary information about the detector model versions.</p>
-    pub fn detector_model_version_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::DetectorModelVersionSummary]> {
+    pub fn detector_model_version_summaries(&self) -> std::option::Option<& [crate::model::DetectorModelVersionSummary]> {
         self.detector_model_version_summaries.as_deref()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDetectorModelVersionsOutput`](crate::output::ListDetectorModelVersionsOutput).
 pub mod list_detector_model_versions_output {
-
+    
     /// A builder for [`ListDetectorModelVersionsOutput`](crate::output::ListDetectorModelVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) detector_model_version_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>,
+        pub(crate) detector_model_version_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -638,22 +628,15 @@ pub mod list_detector_model_versions_output {
         /// To override the contents of this collection use [`set_detector_model_version_summaries`](Self::set_detector_model_version_summaries).
         ///
         /// <p>Summary information about the detector model versions.</p>
-        pub fn detector_model_version_summaries(
-            mut self,
-            input: crate::model::DetectorModelVersionSummary,
-        ) -> Self {
+        pub fn detector_model_version_summaries(mut self, input: crate::model::DetectorModelVersionSummary) -> Self {
             let mut v = self.detector_model_version_summaries.unwrap_or_default();
-            v.push(input);
-            self.detector_model_version_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.detector_model_version_summaries = Some(v);
+                            self
         }
         /// <p>Summary information about the detector model versions.</p>
-        pub fn set_detector_model_version_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>,
-        ) -> Self {
-            self.detector_model_version_summaries = input;
-            self
+        pub fn set_detector_model_version_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>) -> Self {
+            self.detector_model_version_summaries = input; self
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -662,17 +645,20 @@ pub mod list_detector_model_versions_output {
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDetectorModelVersionsOutput`](crate::output::ListDetectorModelVersionsOutput).
         pub fn build(self) -> crate::output::ListDetectorModelVersionsOutput {
             crate::output::ListDetectorModelVersionsOutput {
-                detector_model_version_summaries: self.detector_model_version_summaries,
-                next_token: self.next_token,
+                detector_model_version_summaries: self.detector_model_version_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDetectorModelVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDetectorModelVersionsOutput`](crate::output::ListDetectorModelVersionsOutput).
@@ -684,35 +670,31 @@ impl ListDetectorModelVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDetectorModelsOutput {
+pub struct ListDetectorModelsOutput  {
     /// <p>Summary information about the detector models.</p>
     #[doc(hidden)]
-    pub detector_model_summaries:
-        std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>,
+    pub detector_model_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorModelsOutput {
     /// <p>Summary information about the detector models.</p>
-    pub fn detector_model_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::DetectorModelSummary]> {
+    pub fn detector_model_summaries(&self) -> std::option::Option<& [crate::model::DetectorModelSummary]> {
         self.detector_model_summaries.as_deref()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDetectorModelsOutput`](crate::output::ListDetectorModelsOutput).
 pub mod list_detector_models_output {
-
+    
     /// A builder for [`ListDetectorModelsOutput`](crate::output::ListDetectorModelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) detector_model_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>,
+        pub(crate) detector_model_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -721,22 +703,15 @@ pub mod list_detector_models_output {
         /// To override the contents of this collection use [`set_detector_model_summaries`](Self::set_detector_model_summaries).
         ///
         /// <p>Summary information about the detector models.</p>
-        pub fn detector_model_summaries(
-            mut self,
-            input: crate::model::DetectorModelSummary,
-        ) -> Self {
+        pub fn detector_model_summaries(mut self, input: crate::model::DetectorModelSummary) -> Self {
             let mut v = self.detector_model_summaries.unwrap_or_default();
-            v.push(input);
-            self.detector_model_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.detector_model_summaries = Some(v);
+                            self
         }
         /// <p>Summary information about the detector models.</p>
-        pub fn set_detector_model_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>,
-        ) -> Self {
-            self.detector_model_summaries = input;
-            self
+        pub fn set_detector_model_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>) -> Self {
+            self.detector_model_summaries = input; self
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -745,17 +720,20 @@ pub mod list_detector_models_output {
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDetectorModelsOutput`](crate::output::ListDetectorModelsOutput).
         pub fn build(self) -> crate::output::ListDetectorModelsOutput {
             crate::output::ListDetectorModelsOutput {
-                detector_model_summaries: self.detector_model_summaries,
-                next_token: self.next_token,
+                detector_model_summaries: self.detector_model_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDetectorModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListDetectorModelsOutput`](crate::output::ListDetectorModelsOutput).
@@ -767,35 +745,31 @@ impl ListDetectorModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAlarmModelVersionsOutput {
+pub struct ListAlarmModelVersionsOutput  {
     /// <p>A list that summarizes each alarm model version.</p>
     #[doc(hidden)]
-    pub alarm_model_version_summaries:
-        std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>,
+    pub alarm_model_version_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmModelVersionsOutput {
     /// <p>A list that summarizes each alarm model version.</p>
-    pub fn alarm_model_version_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::AlarmModelVersionSummary]> {
+    pub fn alarm_model_version_summaries(&self) -> std::option::Option<& [crate::model::AlarmModelVersionSummary]> {
         self.alarm_model_version_summaries.as_deref()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAlarmModelVersionsOutput`](crate::output::ListAlarmModelVersionsOutput).
 pub mod list_alarm_model_versions_output {
-
+    
     /// A builder for [`ListAlarmModelVersionsOutput`](crate::output::ListAlarmModelVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) alarm_model_version_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>,
+        pub(crate) alarm_model_version_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -804,22 +778,15 @@ pub mod list_alarm_model_versions_output {
         /// To override the contents of this collection use [`set_alarm_model_version_summaries`](Self::set_alarm_model_version_summaries).
         ///
         /// <p>A list that summarizes each alarm model version.</p>
-        pub fn alarm_model_version_summaries(
-            mut self,
-            input: crate::model::AlarmModelVersionSummary,
-        ) -> Self {
+        pub fn alarm_model_version_summaries(mut self, input: crate::model::AlarmModelVersionSummary) -> Self {
             let mut v = self.alarm_model_version_summaries.unwrap_or_default();
-            v.push(input);
-            self.alarm_model_version_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.alarm_model_version_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each alarm model version.</p>
-        pub fn set_alarm_model_version_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>,
-        ) -> Self {
-            self.alarm_model_version_summaries = input;
-            self
+        pub fn set_alarm_model_version_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>) -> Self {
+            self.alarm_model_version_summaries = input; self
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -828,17 +795,20 @@ pub mod list_alarm_model_versions_output {
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAlarmModelVersionsOutput`](crate::output::ListAlarmModelVersionsOutput).
         pub fn build(self) -> crate::output::ListAlarmModelVersionsOutput {
             crate::output::ListAlarmModelVersionsOutput {
-                alarm_model_version_summaries: self.alarm_model_version_summaries,
-                next_token: self.next_token,
+                alarm_model_version_summaries: self.alarm_model_version_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAlarmModelVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAlarmModelVersionsOutput`](crate::output::ListAlarmModelVersionsOutput).
@@ -850,7 +820,7 @@ impl ListAlarmModelVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAlarmModelsOutput {
+pub struct ListAlarmModelsOutput  {
     /// <p>A list that summarizes each alarm model.</p>
     #[doc(hidden)]
     pub alarm_model_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmModelSummary>>,
@@ -860,22 +830,21 @@ pub struct ListAlarmModelsOutput {
 }
 impl ListAlarmModelsOutput {
     /// <p>A list that summarizes each alarm model.</p>
-    pub fn alarm_model_summaries(&self) -> std::option::Option<&[crate::model::AlarmModelSummary]> {
+    pub fn alarm_model_summaries(&self) -> std::option::Option<& [crate::model::AlarmModelSummary]> {
         self.alarm_model_summaries.as_deref()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAlarmModelsOutput`](crate::output::ListAlarmModelsOutput).
 pub mod list_alarm_models_output {
-
+    
     /// A builder for [`ListAlarmModelsOutput`](crate::output::ListAlarmModelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) alarm_model_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AlarmModelSummary>>,
+        pub(crate) alarm_model_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmModelSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -886,17 +855,13 @@ pub mod list_alarm_models_output {
         /// <p>A list that summarizes each alarm model.</p>
         pub fn alarm_model_summaries(mut self, input: crate::model::AlarmModelSummary) -> Self {
             let mut v = self.alarm_model_summaries.unwrap_or_default();
-            v.push(input);
-            self.alarm_model_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.alarm_model_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each alarm model.</p>
-        pub fn set_alarm_model_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AlarmModelSummary>>,
-        ) -> Self {
-            self.alarm_model_summaries = input;
-            self
+        pub fn set_alarm_model_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AlarmModelSummary>>) -> Self {
+            self.alarm_model_summaries = input; self
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -905,17 +870,20 @@ pub mod list_alarm_models_output {
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAlarmModelsOutput`](crate::output::ListAlarmModelsOutput).
         pub fn build(self) -> crate::output::ListAlarmModelsOutput {
             crate::output::ListAlarmModelsOutput {
-                alarm_model_summaries: self.alarm_model_summaries,
-                next_token: self.next_token,
+                alarm_model_summaries: self.alarm_model_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAlarmModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListAlarmModelsOutput`](crate::output::ListAlarmModelsOutput).
@@ -927,7 +895,7 @@ impl ListAlarmModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDetectorModelAnalysisResultsOutput {
+pub struct GetDetectorModelAnalysisResultsOutput  {
     /// <p>Contains information about one or more analysis results.</p>
     #[doc(hidden)]
     pub analysis_results: std::option::Option<std::vec::Vec<crate::model::AnalysisResult>>,
@@ -937,22 +905,21 @@ pub struct GetDetectorModelAnalysisResultsOutput {
 }
 impl GetDetectorModelAnalysisResultsOutput {
     /// <p>Contains information about one or more analysis results.</p>
-    pub fn analysis_results(&self) -> std::option::Option<&[crate::model::AnalysisResult]> {
+    pub fn analysis_results(&self) -> std::option::Option<& [crate::model::AnalysisResult]> {
         self.analysis_results.as_deref()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetDetectorModelAnalysisResultsOutput`](crate::output::GetDetectorModelAnalysisResultsOutput).
 pub mod get_detector_model_analysis_results_output {
-
+    
     /// A builder for [`GetDetectorModelAnalysisResultsOutput`](crate::output::GetDetectorModelAnalysisResultsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) analysis_results:
-            std::option::Option<std::vec::Vec<crate::model::AnalysisResult>>,
+        pub(crate) analysis_results: std::option::Option<std::vec::Vec<crate::model::AnalysisResult>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -963,17 +930,13 @@ pub mod get_detector_model_analysis_results_output {
         /// <p>Contains information about one or more analysis results.</p>
         pub fn analysis_results(mut self, input: crate::model::AnalysisResult) -> Self {
             let mut v = self.analysis_results.unwrap_or_default();
-            v.push(input);
-            self.analysis_results = Some(v);
-            self
+                            v.push(input);
+                            self.analysis_results = Some(v);
+                            self
         }
         /// <p>Contains information about one or more analysis results.</p>
-        pub fn set_analysis_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalysisResult>>,
-        ) -> Self {
-            self.analysis_results = input;
-            self
+        pub fn set_analysis_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalysisResult>>) -> Self {
+            self.analysis_results = input; self
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -982,17 +945,20 @@ pub mod get_detector_model_analysis_results_output {
         }
         /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDetectorModelAnalysisResultsOutput`](crate::output::GetDetectorModelAnalysisResultsOutput).
         pub fn build(self) -> crate::output::GetDetectorModelAnalysisResultsOutput {
             crate::output::GetDetectorModelAnalysisResultsOutput {
-                analysis_results: self.analysis_results,
-                next_token: self.next_token,
+                analysis_results: self.analysis_results
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDetectorModelAnalysisResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetDetectorModelAnalysisResultsOutput`](crate::output::GetDetectorModelAnalysisResultsOutput).
@@ -1004,20 +970,20 @@ impl GetDetectorModelAnalysisResultsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoggingOptionsOutput {
+pub struct DescribeLoggingOptionsOutput  {
     /// <p>The current settings of the AWS IoT Events logging options.</p>
     #[doc(hidden)]
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl DescribeLoggingOptionsOutput {
     /// <p>The current settings of the AWS IoT Events logging options.</p>
-    pub fn logging_options(&self) -> std::option::Option<&crate::model::LoggingOptions> {
+    pub fn logging_options(&self) -> std::option::Option<& crate::model::LoggingOptions> {
         self.logging_options.as_ref()
     }
 }
 /// See [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
 pub mod describe_logging_options_output {
-
+    
     /// A builder for [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1030,20 +996,19 @@ pub mod describe_logging_options_output {
             self
         }
         /// <p>The current settings of the AWS IoT Events logging options.</p>
-        pub fn set_logging_options(
-            mut self,
-            input: std::option::Option<crate::model::LoggingOptions>,
-        ) -> Self {
-            self.logging_options = input;
-            self
+        pub fn set_logging_options(mut self, input: std::option::Option<crate::model::LoggingOptions>) -> Self {
+            self.logging_options = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
         pub fn build(self) -> crate::output::DescribeLoggingOptionsOutput {
             crate::output::DescribeLoggingOptionsOutput {
-                logging_options: self.logging_options,
+                logging_options: self.logging_options
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
@@ -1055,20 +1020,20 @@ impl DescribeLoggingOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInputOutput {
+pub struct DescribeInputOutput  {
     /// <p>Information about the input.</p>
     #[doc(hidden)]
     pub input: std::option::Option<crate::model::Input>,
 }
 impl DescribeInputOutput {
     /// <p>Information about the input.</p>
-    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+    pub fn input(&self) -> std::option::Option<& crate::model::Input> {
         self.input.as_ref()
     }
 }
 /// See [`DescribeInputOutput`](crate::output::DescribeInputOutput).
 pub mod describe_input_output {
-
+    
     /// A builder for [`DescribeInputOutput`](crate::output::DescribeInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1082,14 +1047,18 @@ pub mod describe_input_output {
         }
         /// <p>Information about the input.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInputOutput`](crate::output::DescribeInputOutput).
         pub fn build(self) -> crate::output::DescribeInputOutput {
-            crate::output::DescribeInputOutput { input: self.input }
+            crate::output::DescribeInputOutput {
+                input: self.input
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeInputOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputOutput`](crate::output::DescribeInputOutput).
@@ -1101,66 +1070,65 @@ impl DescribeInputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectorModelAnalysisOutput {
-    /// <p>The status of the analysis activity. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
-    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+pub struct DescribeDetectorModelAnalysisOutput  {
+    /// <p>The status of the analysis activity. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li> 
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnalysisStatus>,
 }
 impl DescribeDetectorModelAnalysisOutput {
-    /// <p>The status of the analysis activity. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
-    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+    /// <p>The status of the analysis activity. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li> 
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::AnalysisStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AnalysisStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DescribeDetectorModelAnalysisOutput`](crate::output::DescribeDetectorModelAnalysisOutput).
 pub mod describe_detector_model_analysis_output {
-
+    
     /// A builder for [`DescribeDetectorModelAnalysisOutput`](crate::output::DescribeDetectorModelAnalysisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AnalysisStatus>,
     }
     impl Builder {
-        /// <p>The status of the analysis activity. The status can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
-        /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
-        /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+        /// <p>The status of the analysis activity. The status can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li> 
+        /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::AnalysisStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the analysis activity. The status can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
-        /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
-        /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+        /// <p>The status of the analysis activity. The status can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li> 
+        /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AnalysisStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDetectorModelAnalysisOutput`](crate::output::DescribeDetectorModelAnalysisOutput).
         pub fn build(self) -> crate::output::DescribeDetectorModelAnalysisOutput {
             crate::output::DescribeDetectorModelAnalysisOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDetectorModelAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorModelAnalysisOutput`](crate::output::DescribeDetectorModelAnalysisOutput).
@@ -1172,20 +1140,20 @@ impl DescribeDetectorModelAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectorModelOutput {
+pub struct DescribeDetectorModelOutput  {
     /// <p>Information about the detector model.</p>
     #[doc(hidden)]
     pub detector_model: std::option::Option<crate::model::DetectorModel>,
 }
 impl DescribeDetectorModelOutput {
     /// <p>Information about the detector model.</p>
-    pub fn detector_model(&self) -> std::option::Option<&crate::model::DetectorModel> {
+    pub fn detector_model(&self) -> std::option::Option<& crate::model::DetectorModel> {
         self.detector_model.as_ref()
     }
 }
 /// See [`DescribeDetectorModelOutput`](crate::output::DescribeDetectorModelOutput).
 pub mod describe_detector_model_output {
-
+    
     /// A builder for [`DescribeDetectorModelOutput`](crate::output::DescribeDetectorModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1198,20 +1166,19 @@ pub mod describe_detector_model_output {
             self
         }
         /// <p>Information about the detector model.</p>
-        pub fn set_detector_model(
-            mut self,
-            input: std::option::Option<crate::model::DetectorModel>,
-        ) -> Self {
-            self.detector_model = input;
-            self
+        pub fn set_detector_model(mut self, input: std::option::Option<crate::model::DetectorModel>) -> Self {
+            self.detector_model = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDetectorModelOutput`](crate::output::DescribeDetectorModelOutput).
         pub fn build(self) -> crate::output::DescribeDetectorModelOutput {
             crate::output::DescribeDetectorModelOutput {
-                detector_model: self.detector_model,
+                detector_model: self.detector_model
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDetectorModelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorModelOutput`](crate::output::DescribeDetectorModelOutput).
@@ -1223,7 +1190,7 @@ impl DescribeDetectorModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlarmModelOutput {
+pub struct DescribeAlarmModelOutput  {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1236,12 +1203,12 @@ pub struct DescribeAlarmModelOutput {
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the alarm model. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
@@ -1278,49 +1245,49 @@ pub struct DescribeAlarmModelOutput {
 }
 impl DescribeAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn alarm_model_arn(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_arn(&self) -> std::option::Option<& str> {
         self.alarm_model_arn.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_version(&self) -> std::option::Option<& str> {
         self.alarm_model_version.as_deref()
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
-    /// <p>The status of the alarm model. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AlarmModelVersionStatus> {
         self.status.as_ref()
     }
     /// <p> Contains information about the status of the alarm model. </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The description of the alarm model.</p>
-    pub fn alarm_model_description(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_description(&self) -> std::option::Option<& str> {
         self.alarm_model_description.as_deref()
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -1328,25 +1295,25 @@ impl DescribeAlarmModelOutput {
         self.severity
     }
     /// <p>Defines when your alarm is invoked.</p>
-    pub fn alarm_rule(&self) -> std::option::Option<&crate::model::AlarmRule> {
+    pub fn alarm_rule(&self) -> std::option::Option<& crate::model::AlarmRule> {
         self.alarm_rule.as_ref()
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn alarm_notification(&self) -> std::option::Option<&crate::model::AlarmNotification> {
+    pub fn alarm_notification(&self) -> std::option::Option<& crate::model::AlarmNotification> {
         self.alarm_notification.as_ref()
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn alarm_event_actions(&self) -> std::option::Option<&crate::model::AlarmEventActions> {
+    pub fn alarm_event_actions(&self) -> std::option::Option<& crate::model::AlarmEventActions> {
         self.alarm_event_actions.as_ref()
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn alarm_capabilities(&self) -> std::option::Option<&crate::model::AlarmCapabilities> {
+    pub fn alarm_capabilities(&self) -> std::option::Option<& crate::model::AlarmCapabilities> {
         self.alarm_capabilities.as_ref()
     }
 }
 /// See [`DescribeAlarmModelOutput`](crate::output::DescribeAlarmModelOutput).
 pub mod describe_alarm_model_output {
-
+    
     /// A builder for [`DescribeAlarmModelOutput`](crate::output::DescribeAlarmModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1373,12 +1340,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn alarm_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1386,12 +1349,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_alarm_model_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_arn = input;
-            self
+        pub fn set_alarm_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_arn = input; self
         }
         /// <p>The version of the alarm model.</p>
         pub fn alarm_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1399,12 +1358,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>The version of the alarm model.</p>
-        pub fn set_alarm_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_version = input;
-            self
+        pub fn set_alarm_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_version = input; self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1412,37 +1367,29 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
-        /// <p>The status of the alarm model. The status can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+        /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::AlarmModelVersionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the alarm model. The status can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+        /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AlarmModelVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AlarmModelVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> Contains information about the status of the alarm model. </p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1450,12 +1397,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p> Contains information about the status of the alarm model. </p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The name of the alarm model.</p>
         pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1463,12 +1406,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>The name of the alarm model.</p>
-        pub fn set_alarm_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_name = input;
-            self
+        pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_name = input; self
         }
         /// <p>The description of the alarm model.</p>
         pub fn alarm_model_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1476,12 +1415,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>The description of the alarm model.</p>
-        pub fn set_alarm_model_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_description = input;
-            self
+        pub fn set_alarm_model_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_description = input; self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1490,8 +1425,7 @@ pub mod describe_alarm_model_output {
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1500,8 +1434,7 @@ pub mod describe_alarm_model_output {
         }
         /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
         pub fn severity(mut self, input: i32) -> Self {
@@ -1510,8 +1443,7 @@ pub mod describe_alarm_model_output {
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
         pub fn set_severity(mut self, input: std::option::Option<i32>) -> Self {
-            self.severity = input;
-            self
+            self.severity = input; self
         }
         /// <p>Defines when your alarm is invoked.</p>
         pub fn alarm_rule(mut self, input: crate::model::AlarmRule) -> Self {
@@ -1519,12 +1451,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
-        pub fn set_alarm_rule(
-            mut self,
-            input: std::option::Option<crate::model::AlarmRule>,
-        ) -> Self {
-            self.alarm_rule = input;
-            self
+        pub fn set_alarm_rule(mut self, input: std::option::Option<crate::model::AlarmRule>) -> Self {
+            self.alarm_rule = input; self
         }
         /// <p>Contains information about one or more notification actions.</p>
         pub fn alarm_notification(mut self, input: crate::model::AlarmNotification) -> Self {
@@ -1532,12 +1460,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
-        pub fn set_alarm_notification(
-            mut self,
-            input: std::option::Option<crate::model::AlarmNotification>,
-        ) -> Self {
-            self.alarm_notification = input;
-            self
+        pub fn set_alarm_notification(mut self, input: std::option::Option<crate::model::AlarmNotification>) -> Self {
+            self.alarm_notification = input; self
         }
         /// <p>Contains information about one or more alarm actions.</p>
         pub fn alarm_event_actions(mut self, input: crate::model::AlarmEventActions) -> Self {
@@ -1545,12 +1469,8 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
-        pub fn set_alarm_event_actions(
-            mut self,
-            input: std::option::Option<crate::model::AlarmEventActions>,
-        ) -> Self {
-            self.alarm_event_actions = input;
-            self
+        pub fn set_alarm_event_actions(mut self, input: std::option::Option<crate::model::AlarmEventActions>) -> Self {
+            self.alarm_event_actions = input; self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
         pub fn alarm_capabilities(mut self, input: crate::model::AlarmCapabilities) -> Self {
@@ -1558,34 +1478,47 @@ pub mod describe_alarm_model_output {
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
-        pub fn set_alarm_capabilities(
-            mut self,
-            input: std::option::Option<crate::model::AlarmCapabilities>,
-        ) -> Self {
-            self.alarm_capabilities = input;
-            self
+        pub fn set_alarm_capabilities(mut self, input: std::option::Option<crate::model::AlarmCapabilities>) -> Self {
+            self.alarm_capabilities = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlarmModelOutput`](crate::output::DescribeAlarmModelOutput).
         pub fn build(self) -> crate::output::DescribeAlarmModelOutput {
             crate::output::DescribeAlarmModelOutput {
-                creation_time: self.creation_time,
-                alarm_model_arn: self.alarm_model_arn,
-                alarm_model_version: self.alarm_model_version,
-                last_update_time: self.last_update_time,
-                status: self.status,
-                status_message: self.status_message,
-                alarm_model_name: self.alarm_model_name,
-                alarm_model_description: self.alarm_model_description,
-                role_arn: self.role_arn,
-                key: self.key,
-                severity: self.severity,
-                alarm_rule: self.alarm_rule,
-                alarm_notification: self.alarm_notification,
-                alarm_event_actions: self.alarm_event_actions,
-                alarm_capabilities: self.alarm_capabilities,
+                creation_time: self.creation_time
+                ,
+                alarm_model_arn: self.alarm_model_arn
+                ,
+                alarm_model_version: self.alarm_model_version
+                ,
+                last_update_time: self.last_update_time
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                alarm_model_name: self.alarm_model_name
+                ,
+                alarm_model_description: self.alarm_model_description
+                ,
+                role_arn: self.role_arn
+                ,
+                key: self.key
+                ,
+                severity: self.severity
+                ,
+                alarm_rule: self.alarm_rule
+                ,
+                alarm_notification: self.alarm_notification
+                ,
+                alarm_event_actions: self.alarm_event_actions
+                ,
+                alarm_capabilities: self.alarm_capabilities
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAlarmModelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmModelOutput`](crate::output::DescribeAlarmModelOutput).
@@ -1597,19 +1530,24 @@ impl DescribeAlarmModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInputOutput {}
+pub struct DeleteInputOutput  {
+}
 /// See [`DeleteInputOutput`](crate::output::DeleteInputOutput).
 pub mod delete_input_output {
-
+    
     /// A builder for [`DeleteInputOutput`](crate::output::DeleteInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInputOutput`](crate::output::DeleteInputOutput).
         pub fn build(self) -> crate::output::DeleteInputOutput {
-            crate::output::DeleteInputOutput {}
+            crate::output::DeleteInputOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteInputOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInputOutput`](crate::output::DeleteInputOutput).
@@ -1621,19 +1559,24 @@ impl DeleteInputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDetectorModelOutput {}
+pub struct DeleteDetectorModelOutput  {
+}
 /// See [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput).
 pub mod delete_detector_model_output {
-
+    
     /// A builder for [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput).
         pub fn build(self) -> crate::output::DeleteDetectorModelOutput {
-            crate::output::DeleteDetectorModelOutput {}
+            crate::output::DeleteDetectorModelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDetectorModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput).
@@ -1645,19 +1588,24 @@ impl DeleteDetectorModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlarmModelOutput {}
+pub struct DeleteAlarmModelOutput  {
+}
 /// See [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput).
 pub mod delete_alarm_model_output {
-
+    
     /// A builder for [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput).
         pub fn build(self) -> crate::output::DeleteAlarmModelOutput {
-            crate::output::DeleteAlarmModelOutput {}
+            crate::output::DeleteAlarmModelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAlarmModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput).
@@ -1669,20 +1617,20 @@ impl DeleteAlarmModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInputOutput {
+pub struct CreateInputOutput  {
     /// <p>Information about the configuration of the input.</p>
     #[doc(hidden)]
     pub input_configuration: std::option::Option<crate::model::InputConfiguration>,
 }
 impl CreateInputOutput {
     /// <p>Information about the configuration of the input.</p>
-    pub fn input_configuration(&self) -> std::option::Option<&crate::model::InputConfiguration> {
+    pub fn input_configuration(&self) -> std::option::Option<& crate::model::InputConfiguration> {
         self.input_configuration.as_ref()
     }
 }
 /// See [`CreateInputOutput`](crate::output::CreateInputOutput).
 pub mod create_input_output {
-
+    
     /// A builder for [`CreateInputOutput`](crate::output::CreateInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1695,20 +1643,19 @@ pub mod create_input_output {
             self
         }
         /// <p>Information about the configuration of the input.</p>
-        pub fn set_input_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InputConfiguration>,
-        ) -> Self {
-            self.input_configuration = input;
-            self
+        pub fn set_input_configuration(mut self, input: std::option::Option<crate::model::InputConfiguration>) -> Self {
+            self.input_configuration = input; self
         }
         /// Consumes the builder and constructs a [`CreateInputOutput`](crate::output::CreateInputOutput).
         pub fn build(self) -> crate::output::CreateInputOutput {
             crate::output::CreateInputOutput {
-                input_configuration: self.input_configuration,
+                input_configuration: self.input_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInputOutput {
     /// Creates a new builder-style object to manufacture [`CreateInputOutput`](crate::output::CreateInputOutput).
@@ -1720,52 +1667,45 @@ impl CreateInputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDetectorModelOutput {
+pub struct CreateDetectorModelOutput  {
     /// <p>Information about how the detector model is configured.</p>
     #[doc(hidden)]
     pub detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
 }
 impl CreateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
-    pub fn detector_model_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DetectorModelConfiguration> {
+    pub fn detector_model_configuration(&self) -> std::option::Option<& crate::model::DetectorModelConfiguration> {
         self.detector_model_configuration.as_ref()
     }
 }
 /// See [`CreateDetectorModelOutput`](crate::output::CreateDetectorModelOutput).
 pub mod create_detector_model_output {
-
+    
     /// A builder for [`CreateDetectorModelOutput`](crate::output::CreateDetectorModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) detector_model_configuration:
-            std::option::Option<crate::model::DetectorModelConfiguration>,
+        pub(crate) detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
     }
     impl Builder {
         /// <p>Information about how the detector model is configured.</p>
-        pub fn detector_model_configuration(
-            mut self,
-            input: crate::model::DetectorModelConfiguration,
-        ) -> Self {
+        pub fn detector_model_configuration(mut self, input: crate::model::DetectorModelConfiguration) -> Self {
             self.detector_model_configuration = Some(input);
             self
         }
         /// <p>Information about how the detector model is configured.</p>
-        pub fn set_detector_model_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DetectorModelConfiguration>,
-        ) -> Self {
-            self.detector_model_configuration = input;
-            self
+        pub fn set_detector_model_configuration(mut self, input: std::option::Option<crate::model::DetectorModelConfiguration>) -> Self {
+            self.detector_model_configuration = input; self
         }
         /// Consumes the builder and constructs a [`CreateDetectorModelOutput`](crate::output::CreateDetectorModelOutput).
         pub fn build(self) -> crate::output::CreateDetectorModelOutput {
             crate::output::CreateDetectorModelOutput {
-                detector_model_configuration: self.detector_model_configuration,
+                detector_model_configuration: self.detector_model_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDetectorModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateDetectorModelOutput`](crate::output::CreateDetectorModelOutput).
@@ -1777,7 +1717,7 @@ impl CreateDetectorModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAlarmModelOutput {
+pub struct CreateAlarmModelOutput  {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1790,47 +1730,47 @@ pub struct CreateAlarmModelOutput {
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
     #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the alarm model. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
 }
 impl CreateAlarmModelOutput {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn alarm_model_arn(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_arn(&self) -> std::option::Option<& str> {
         self.alarm_model_arn.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+    pub fn alarm_model_version(&self) -> std::option::Option<& str> {
         self.alarm_model_version.as_deref()
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
-    /// <p>The status of the alarm model. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AlarmModelVersionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateAlarmModelOutput`](crate::output::CreateAlarmModelOutput).
 pub mod create_alarm_model_output {
-
+    
     /// A builder for [`CreateAlarmModelOutput`](crate::output::CreateAlarmModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1847,12 +1787,8 @@ pub mod create_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn alarm_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1860,12 +1796,8 @@ pub mod create_alarm_model_output {
             self
         }
         /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_alarm_model_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_arn = input;
-            self
+        pub fn set_alarm_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_arn = input; self
         }
         /// <p>The version of the alarm model.</p>
         pub fn alarm_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1873,12 +1805,8 @@ pub mod create_alarm_model_output {
             self
         }
         /// <p>The version of the alarm model.</p>
-        pub fn set_alarm_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_model_version = input;
-            self
+        pub fn set_alarm_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_model_version = input; self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1886,49 +1814,48 @@ pub mod create_alarm_model_output {
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
-        /// <p>The status of the alarm model. The status can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+        /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::AlarmModelVersionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the alarm model. The status can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+        /// <p>The status of the alarm model. The status can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li> 
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li> 
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AlarmModelVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AlarmModelVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateAlarmModelOutput`](crate::output::CreateAlarmModelOutput).
         pub fn build(self) -> crate::output::CreateAlarmModelOutput {
             crate::output::CreateAlarmModelOutput {
-                creation_time: self.creation_time,
-                alarm_model_arn: self.alarm_model_arn,
-                alarm_model_version: self.alarm_model_version,
-                last_update_time: self.last_update_time,
-                status: self.status,
+                creation_time: self.creation_time
+                ,
+                alarm_model_arn: self.alarm_model_arn
+                ,
+                alarm_model_version: self.alarm_model_version
+                ,
+                last_update_time: self.last_update_time
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAlarmModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateAlarmModelOutput`](crate::output::CreateAlarmModelOutput).
@@ -1936,3 +1863,4 @@ impl CreateAlarmModelOutput {
         crate::output::create_alarm_model_output::Builder::default()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainsOutput {
+pub struct ListDomainsOutput  {
     /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub domain_summaries: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -12,22 +12,21 @@ pub struct ListDomainsOutput {
 }
 impl ListDomainsOutput {
     /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-    pub fn domain_summaries(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
+    pub fn domain_summaries(&self) -> std::option::Option<& [crate::model::DomainSummary]> {
         self.domain_summaries.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
-
+    
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) domain_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
+        pub(crate) domain_summaries: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -38,17 +37,13 @@ pub mod list_domains_output {
         /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
         pub fn domain_summaries(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domain_summaries.unwrap_or_default();
-            v.push(input);
-            self.domain_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.domain_summaries = Some(v);
+                            self
         }
         /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-        pub fn set_domain_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-        ) -> Self {
-            self.domain_summaries = input;
-            self
+        pub fn set_domain_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>) -> Self {
+            self.domain_summaries = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,17 +52,20 @@ pub mod list_domains_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
-                domain_summaries: self.domain_summaries,
-                next_token: self.next_token,
+                domain_summaries: self.domain_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
@@ -79,20 +77,20 @@ impl ListDomainsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainOutput {
+pub struct CreateDomainOutput  {
     /// <p>Information about the newly created domain.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateDomainOutput {
     /// <p>Information about the newly created domain.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
-
+    
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -106,16 +104,18 @@ pub mod create_domain_output {
         }
         /// <p>Information about the newly created domain.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
         pub fn build(self) -> crate::output::CreateDomainOutput {
             crate::output::CreateDomainOutput {
-                domain: self.domain,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
@@ -127,19 +127,24 @@ impl CreateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainOutput {}
+pub struct DeleteDomainOutput  {
+}
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
-
+    
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
         pub fn build(self) -> crate::output::DeleteDomainOutput {
-            crate::output::DeleteDomainOutput {}
+            crate::output::DeleteDomainOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
@@ -151,20 +156,20 @@ impl DeleteDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainOutput {
+pub struct UpdateDomainOutput  {
     /// <p>Details about the updated domain</p>
     #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl UpdateDomainOutput {
     /// <p>Details about the updated domain</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
 pub mod update_domain_output {
-
+    
     /// A builder for [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -178,16 +183,18 @@ pub mod update_domain_output {
         }
         /// <p>Details about the updated domain</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
         pub fn build(self) -> crate::output::UpdateDomainOutput {
             crate::output::UpdateDomainOutput {
-                domain: self.domain,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
@@ -199,20 +206,20 @@ impl UpdateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainOutput {
+pub struct DescribeDomainOutput  {
     /// <p>Information about the specified domain.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl DescribeDomainOutput {
     /// <p>Information about the specified domain.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
-
+    
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -226,16 +233,18 @@ pub mod describe_domain_output {
         }
         /// <p>Information about the specified domain.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
         pub fn build(self) -> crate::output::DescribeDomainOutput {
             crate::output::DescribeDomainOutput {
-                domain: self.domain,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
@@ -247,19 +256,24 @@ impl DescribeDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -271,19 +285,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -295,20 +314,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSpeakerEnrollmentJobOutput {
+pub struct StartSpeakerEnrollmentJobOutput  {
     /// <p>Details about the started speaker enrollment job.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::SpeakerEnrollmentJob>,
 }
 impl StartSpeakerEnrollmentJobOutput {
     /// <p>Details about the started speaker enrollment job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::SpeakerEnrollmentJob> {
+    pub fn job(&self) -> std::option::Option<& crate::model::SpeakerEnrollmentJob> {
         self.job.as_ref()
     }
 }
 /// See [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput).
 pub mod start_speaker_enrollment_job_output {
-
+    
     /// A builder for [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -321,18 +340,19 @@ pub mod start_speaker_enrollment_job_output {
             self
         }
         /// <p>Details about the started speaker enrollment job.</p>
-        pub fn set_job(
-            mut self,
-            input: std::option::Option<crate::model::SpeakerEnrollmentJob>,
-        ) -> Self {
-            self.job = input;
-            self
+        pub fn set_job(mut self, input: std::option::Option<crate::model::SpeakerEnrollmentJob>) -> Self {
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput).
         pub fn build(self) -> crate::output::StartSpeakerEnrollmentJobOutput {
-            crate::output::StartSpeakerEnrollmentJobOutput { job: self.job }
+            crate::output::StartSpeakerEnrollmentJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl StartSpeakerEnrollmentJobOutput {
     /// Creates a new builder-style object to manufacture [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput).
@@ -344,20 +364,20 @@ impl StartSpeakerEnrollmentJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFraudsterRegistrationJobOutput {
+pub struct StartFraudsterRegistrationJobOutput  {
     /// <p>Details about the started fraudster registration job.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::FraudsterRegistrationJob>,
 }
 impl StartFraudsterRegistrationJobOutput {
     /// <p>Details about the started fraudster registration job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::FraudsterRegistrationJob> {
+    pub fn job(&self) -> std::option::Option<& crate::model::FraudsterRegistrationJob> {
         self.job.as_ref()
     }
 }
 /// See [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput).
 pub mod start_fraudster_registration_job_output {
-
+    
     /// A builder for [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -370,18 +390,19 @@ pub mod start_fraudster_registration_job_output {
             self
         }
         /// <p>Details about the started fraudster registration job.</p>
-        pub fn set_job(
-            mut self,
-            input: std::option::Option<crate::model::FraudsterRegistrationJob>,
-        ) -> Self {
-            self.job = input;
-            self
+        pub fn set_job(mut self, input: std::option::Option<crate::model::FraudsterRegistrationJob>) -> Self {
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput).
         pub fn build(self) -> crate::output::StartFraudsterRegistrationJobOutput {
-            crate::output::StartFraudsterRegistrationJobOutput { job: self.job }
+            crate::output::StartFraudsterRegistrationJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl StartFraudsterRegistrationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput).
@@ -393,20 +414,20 @@ impl StartFraudsterRegistrationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptOutSpeakerOutput {
+pub struct OptOutSpeakerOutput  {
     /// <p>Details about the opted-out speaker.</p>
     #[doc(hidden)]
     pub speaker: std::option::Option<crate::model::Speaker>,
 }
 impl OptOutSpeakerOutput {
     /// <p>Details about the opted-out speaker.</p>
-    pub fn speaker(&self) -> std::option::Option<&crate::model::Speaker> {
+    pub fn speaker(&self) -> std::option::Option<& crate::model::Speaker> {
         self.speaker.as_ref()
     }
 }
 /// See [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput).
 pub mod opt_out_speaker_output {
-
+    
     /// A builder for [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -420,16 +441,18 @@ pub mod opt_out_speaker_output {
         }
         /// <p>Details about the opted-out speaker.</p>
         pub fn set_speaker(mut self, input: std::option::Option<crate::model::Speaker>) -> Self {
-            self.speaker = input;
-            self
+            self.speaker = input; self
         }
         /// Consumes the builder and constructs a [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput).
         pub fn build(self) -> crate::output::OptOutSpeakerOutput {
             crate::output::OptOutSpeakerOutput {
-                speaker: self.speaker,
+                speaker: self.speaker
+                ,
             }
         }
     }
+    
+    
 }
 impl OptOutSpeakerOutput {
     /// Creates a new builder-style object to manufacture [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput).
@@ -441,20 +464,20 @@ impl OptOutSpeakerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags associated with the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags associated with the specified resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -468,23 +491,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The list of tags associated with the specified resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags associated with the specified resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -496,7 +520,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSpeakersOutput {
+pub struct ListSpeakersOutput  {
     /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
     #[doc(hidden)]
     pub speaker_summaries: std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>,
@@ -506,22 +530,21 @@ pub struct ListSpeakersOutput {
 }
 impl ListSpeakersOutput {
     /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
-    pub fn speaker_summaries(&self) -> std::option::Option<&[crate::model::SpeakerSummary]> {
+    pub fn speaker_summaries(&self) -> std::option::Option<& [crate::model::SpeakerSummary]> {
         self.speaker_summaries.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSpeakersOutput`](crate::output::ListSpeakersOutput).
 pub mod list_speakers_output {
-
+    
     /// A builder for [`ListSpeakersOutput`](crate::output::ListSpeakersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) speaker_summaries:
-            std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>,
+        pub(crate) speaker_summaries: std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -532,17 +555,13 @@ pub mod list_speakers_output {
         /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
         pub fn speaker_summaries(mut self, input: crate::model::SpeakerSummary) -> Self {
             let mut v = self.speaker_summaries.unwrap_or_default();
-            v.push(input);
-            self.speaker_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.speaker_summaries = Some(v);
+                            self
         }
         /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
-        pub fn set_speaker_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>,
-        ) -> Self {
-            self.speaker_summaries = input;
-            self
+        pub fn set_speaker_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>) -> Self {
+            self.speaker_summaries = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -551,17 +570,20 @@ pub mod list_speakers_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSpeakersOutput`](crate::output::ListSpeakersOutput).
         pub fn build(self) -> crate::output::ListSpeakersOutput {
             crate::output::ListSpeakersOutput {
-                speaker_summaries: self.speaker_summaries,
-                next_token: self.next_token,
+                speaker_summaries: self.speaker_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSpeakersOutput {
     /// Creates a new builder-style object to manufacture [`ListSpeakersOutput`](crate::output::ListSpeakersOutput).
@@ -573,35 +595,31 @@ impl ListSpeakersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSpeakerEnrollmentJobsOutput {
+pub struct ListSpeakerEnrollmentJobsOutput  {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
     #[doc(hidden)]
-    pub job_summaries:
-        std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>,
+    pub job_summaries: std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
-    pub fn job_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::SpeakerEnrollmentJobSummary]> {
+    pub fn job_summaries(&self) -> std::option::Option<& [crate::model::SpeakerEnrollmentJobSummary]> {
         self.job_summaries.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput).
 pub mod list_speaker_enrollment_jobs_output {
-
+    
     /// A builder for [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) job_summaries:
-            std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>,
+        pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -612,17 +630,13 @@ pub mod list_speaker_enrollment_jobs_output {
         /// <p>A list containing details about each specified speaker enrollment job.</p>
         pub fn job_summaries(mut self, input: crate::model::SpeakerEnrollmentJobSummary) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
-            v.push(input);
-            self.job_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.job_summaries = Some(v);
+                            self
         }
         /// <p>A list containing details about each specified speaker enrollment job.</p>
-        pub fn set_job_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>,
-        ) -> Self {
-            self.job_summaries = input;
-            self
+        pub fn set_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>) -> Self {
+            self.job_summaries = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -631,17 +645,20 @@ pub mod list_speaker_enrollment_jobs_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput).
         pub fn build(self) -> crate::output::ListSpeakerEnrollmentJobsOutput {
             crate::output::ListSpeakerEnrollmentJobsOutput {
-                job_summaries: self.job_summaries,
-                next_token: self.next_token,
+                job_summaries: self.job_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSpeakerEnrollmentJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput).
@@ -653,35 +670,31 @@ impl ListSpeakerEnrollmentJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFraudsterRegistrationJobsOutput {
+pub struct ListFraudsterRegistrationJobsOutput  {
     /// <p>A list containing details about each specified fraudster registration job.</p>
     #[doc(hidden)]
-    pub job_summaries:
-        std::option::Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>,
+    pub job_summaries: std::option::Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFraudsterRegistrationJobsOutput {
     /// <p>A list containing details about each specified fraudster registration job.</p>
-    pub fn job_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::FraudsterRegistrationJobSummary]> {
+    pub fn job_summaries(&self) -> std::option::Option<& [crate::model::FraudsterRegistrationJobSummary]> {
         self.job_summaries.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput).
 pub mod list_fraudster_registration_jobs_output {
-
+    
     /// A builder for [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) job_summaries:
-            std::option::Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>,
+        pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -690,24 +703,15 @@ pub mod list_fraudster_registration_jobs_output {
         /// To override the contents of this collection use [`set_job_summaries`](Self::set_job_summaries).
         ///
         /// <p>A list containing details about each specified fraudster registration job.</p>
-        pub fn job_summaries(
-            mut self,
-            input: crate::model::FraudsterRegistrationJobSummary,
-        ) -> Self {
+        pub fn job_summaries(mut self, input: crate::model::FraudsterRegistrationJobSummary) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
-            v.push(input);
-            self.job_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.job_summaries = Some(v);
+                            self
         }
         /// <p>A list containing details about each specified fraudster registration job.</p>
-        pub fn set_job_summaries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>,
-            >,
-        ) -> Self {
-            self.job_summaries = input;
-            self
+        pub fn set_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>) -> Self {
+            self.job_summaries = input; self
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -716,17 +720,20 @@ pub mod list_fraudster_registration_jobs_output {
         }
         /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput).
         pub fn build(self) -> crate::output::ListFraudsterRegistrationJobsOutput {
             crate::output::ListFraudsterRegistrationJobsOutput {
-                job_summaries: self.job_summaries,
-                next_token: self.next_token,
+                job_summaries: self.job_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFraudsterRegistrationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput).
@@ -738,7 +745,7 @@ impl ListFraudsterRegistrationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluateSessionOutput {
+pub struct EvaluateSessionOutput  {
     /// <p>The identifier of the domain containing the session.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -760,37 +767,33 @@ pub struct EvaluateSessionOutput {
 }
 impl EvaluateSessionOutput {
     /// <p>The identifier of the domain containing the session.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The service-generated identifier of the session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The client-provided name of the session.</p>
-    pub fn session_name(&self) -> std::option::Option<&str> {
+    pub fn session_name(&self) -> std::option::Option<& str> {
         self.session_name.as_deref()
     }
     /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
-    pub fn streaming_status(&self) -> std::option::Option<&crate::model::StreamingStatus> {
+    pub fn streaming_status(&self) -> std::option::Option<& crate::model::StreamingStatus> {
         self.streaming_status.as_ref()
     }
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
-    pub fn authentication_result(
-        &self,
-    ) -> std::option::Option<&crate::model::AuthenticationResult> {
+    pub fn authentication_result(&self) -> std::option::Option<& crate::model::AuthenticationResult> {
         self.authentication_result.as_ref()
     }
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
-    pub fn fraud_detection_result(
-        &self,
-    ) -> std::option::Option<&crate::model::FraudDetectionResult> {
+    pub fn fraud_detection_result(&self) -> std::option::Option<& crate::model::FraudDetectionResult> {
         self.fraud_detection_result.as_ref()
     }
 }
 /// See [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput).
 pub mod evaluate_session_output {
-
+    
     /// A builder for [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -809,8 +812,7 @@ pub mod evaluate_session_output {
         }
         /// <p>The identifier of the domain containing the session.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The service-generated identifier of the session.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -819,8 +821,7 @@ pub mod evaluate_session_output {
         }
         /// <p>The service-generated identifier of the session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>The client-provided name of the session.</p>
         pub fn session_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -829,8 +830,7 @@ pub mod evaluate_session_output {
         }
         /// <p>The client-provided name of the session.</p>
         pub fn set_session_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_name = input;
-            self
+            self.session_name = input; self
         }
         /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
         pub fn streaming_status(mut self, input: crate::model::StreamingStatus) -> Self {
@@ -838,12 +838,8 @@ pub mod evaluate_session_output {
             self
         }
         /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
-        pub fn set_streaming_status(
-            mut self,
-            input: std::option::Option<crate::model::StreamingStatus>,
-        ) -> Self {
-            self.streaming_status = input;
-            self
+        pub fn set_streaming_status(mut self, input: std::option::Option<crate::model::StreamingStatus>) -> Self {
+            self.streaming_status = input; self
         }
         /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
         pub fn authentication_result(mut self, input: crate::model::AuthenticationResult) -> Self {
@@ -851,12 +847,8 @@ pub mod evaluate_session_output {
             self
         }
         /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
-        pub fn set_authentication_result(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationResult>,
-        ) -> Self {
-            self.authentication_result = input;
-            self
+        pub fn set_authentication_result(mut self, input: std::option::Option<crate::model::AuthenticationResult>) -> Self {
+            self.authentication_result = input; self
         }
         /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
         pub fn fraud_detection_result(mut self, input: crate::model::FraudDetectionResult) -> Self {
@@ -864,25 +856,29 @@ pub mod evaluate_session_output {
             self
         }
         /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
-        pub fn set_fraud_detection_result(
-            mut self,
-            input: std::option::Option<crate::model::FraudDetectionResult>,
-        ) -> Self {
-            self.fraud_detection_result = input;
-            self
+        pub fn set_fraud_detection_result(mut self, input: std::option::Option<crate::model::FraudDetectionResult>) -> Self {
+            self.fraud_detection_result = input; self
         }
         /// Consumes the builder and constructs a [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput).
         pub fn build(self) -> crate::output::EvaluateSessionOutput {
             crate::output::EvaluateSessionOutput {
-                domain_id: self.domain_id,
-                session_id: self.session_id,
-                session_name: self.session_name,
-                streaming_status: self.streaming_status,
-                authentication_result: self.authentication_result,
-                fraud_detection_result: self.fraud_detection_result,
+                domain_id: self.domain_id
+                ,
+                session_id: self.session_id
+                ,
+                session_name: self.session_name
+                ,
+                streaming_status: self.streaming_status
+                ,
+                authentication_result: self.authentication_result
+                ,
+                fraud_detection_result: self.fraud_detection_result
+                ,
             }
         }
     }
+    
+    
 }
 impl EvaluateSessionOutput {
     /// Creates a new builder-style object to manufacture [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput).
@@ -894,20 +890,20 @@ impl EvaluateSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSpeakerEnrollmentJobOutput {
+pub struct DescribeSpeakerEnrollmentJobOutput  {
     /// <p>Contains details about the specified speaker enrollment job.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::SpeakerEnrollmentJob>,
 }
 impl DescribeSpeakerEnrollmentJobOutput {
     /// <p>Contains details about the specified speaker enrollment job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::SpeakerEnrollmentJob> {
+    pub fn job(&self) -> std::option::Option<& crate::model::SpeakerEnrollmentJob> {
         self.job.as_ref()
     }
 }
 /// See [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput).
 pub mod describe_speaker_enrollment_job_output {
-
+    
     /// A builder for [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -920,18 +916,19 @@ pub mod describe_speaker_enrollment_job_output {
             self
         }
         /// <p>Contains details about the specified speaker enrollment job.</p>
-        pub fn set_job(
-            mut self,
-            input: std::option::Option<crate::model::SpeakerEnrollmentJob>,
-        ) -> Self {
-            self.job = input;
-            self
+        pub fn set_job(mut self, input: std::option::Option<crate::model::SpeakerEnrollmentJob>) -> Self {
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput).
         pub fn build(self) -> crate::output::DescribeSpeakerEnrollmentJobOutput {
-            crate::output::DescribeSpeakerEnrollmentJobOutput { job: self.job }
+            crate::output::DescribeSpeakerEnrollmentJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeSpeakerEnrollmentJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput).
@@ -943,20 +940,20 @@ impl DescribeSpeakerEnrollmentJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSpeakerOutput {
+pub struct DescribeSpeakerOutput  {
     /// <p>Information about the specified speaker.</p>
     #[doc(hidden)]
     pub speaker: std::option::Option<crate::model::Speaker>,
 }
 impl DescribeSpeakerOutput {
     /// <p>Information about the specified speaker.</p>
-    pub fn speaker(&self) -> std::option::Option<&crate::model::Speaker> {
+    pub fn speaker(&self) -> std::option::Option<& crate::model::Speaker> {
         self.speaker.as_ref()
     }
 }
 /// See [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput).
 pub mod describe_speaker_output {
-
+    
     /// A builder for [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -970,16 +967,18 @@ pub mod describe_speaker_output {
         }
         /// <p>Information about the specified speaker.</p>
         pub fn set_speaker(mut self, input: std::option::Option<crate::model::Speaker>) -> Self {
-            self.speaker = input;
-            self
+            self.speaker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput).
         pub fn build(self) -> crate::output::DescribeSpeakerOutput {
             crate::output::DescribeSpeakerOutput {
-                speaker: self.speaker,
+                speaker: self.speaker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSpeakerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput).
@@ -991,20 +990,20 @@ impl DescribeSpeakerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFraudsterRegistrationJobOutput {
+pub struct DescribeFraudsterRegistrationJobOutput  {
     /// <p>Contains details about the specified fraudster registration job.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::FraudsterRegistrationJob>,
 }
 impl DescribeFraudsterRegistrationJobOutput {
     /// <p>Contains details about the specified fraudster registration job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::FraudsterRegistrationJob> {
+    pub fn job(&self) -> std::option::Option<& crate::model::FraudsterRegistrationJob> {
         self.job.as_ref()
     }
 }
 /// See [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput).
 pub mod describe_fraudster_registration_job_output {
-
+    
     /// A builder for [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1017,18 +1016,19 @@ pub mod describe_fraudster_registration_job_output {
             self
         }
         /// <p>Contains details about the specified fraudster registration job.</p>
-        pub fn set_job(
-            mut self,
-            input: std::option::Option<crate::model::FraudsterRegistrationJob>,
-        ) -> Self {
-            self.job = input;
-            self
+        pub fn set_job(mut self, input: std::option::Option<crate::model::FraudsterRegistrationJob>) -> Self {
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput).
         pub fn build(self) -> crate::output::DescribeFraudsterRegistrationJobOutput {
-            crate::output::DescribeFraudsterRegistrationJobOutput { job: self.job }
+            crate::output::DescribeFraudsterRegistrationJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeFraudsterRegistrationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput).
@@ -1040,20 +1040,20 @@ impl DescribeFraudsterRegistrationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFraudsterOutput {
+pub struct DescribeFraudsterOutput  {
     /// <p>Information about the specified fraudster.</p>
     #[doc(hidden)]
     pub fraudster: std::option::Option<crate::model::Fraudster>,
 }
 impl DescribeFraudsterOutput {
     /// <p>Information about the specified fraudster.</p>
-    pub fn fraudster(&self) -> std::option::Option<&crate::model::Fraudster> {
+    pub fn fraudster(&self) -> std::option::Option<& crate::model::Fraudster> {
         self.fraudster.as_ref()
     }
 }
 /// See [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput).
 pub mod describe_fraudster_output {
-
+    
     /// A builder for [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1066,20 +1066,19 @@ pub mod describe_fraudster_output {
             self
         }
         /// <p>Information about the specified fraudster.</p>
-        pub fn set_fraudster(
-            mut self,
-            input: std::option::Option<crate::model::Fraudster>,
-        ) -> Self {
-            self.fraudster = input;
-            self
+        pub fn set_fraudster(mut self, input: std::option::Option<crate::model::Fraudster>) -> Self {
+            self.fraudster = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput).
         pub fn build(self) -> crate::output::DescribeFraudsterOutput {
             crate::output::DescribeFraudsterOutput {
-                fraudster: self.fraudster,
+                fraudster: self.fraudster
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFraudsterOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput).
@@ -1091,19 +1090,24 @@ impl DescribeFraudsterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSpeakerOutput {}
+pub struct DeleteSpeakerOutput  {
+}
 /// See [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput).
 pub mod delete_speaker_output {
-
+    
     /// A builder for [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput).
         pub fn build(self) -> crate::output::DeleteSpeakerOutput {
-            crate::output::DeleteSpeakerOutput {}
+            crate::output::DeleteSpeakerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSpeakerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput).
@@ -1115,19 +1119,24 @@ impl DeleteSpeakerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFraudsterOutput {}
+pub struct DeleteFraudsterOutput  {
+}
 /// See [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
 pub mod delete_fraudster_output {
-
+    
     /// A builder for [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
         pub fn build(self) -> crate::output::DeleteFraudsterOutput {
-            crate::output::DeleteFraudsterOutput {}
+            crate::output::DeleteFraudsterOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFraudsterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
@@ -1135,3 +1144,4 @@ impl DeleteFraudsterOutput {
         crate::output::delete_fraudster_output::Builder::default()
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let votevalue = unimplemented!();
 /// match votevalue {
@@ -30,58 +30,52 @@
 /// Specifically, when `votevalue` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VoteValue::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VoteValue {
     #[allow(missing_docs)] // documentation missing in model
     No,
     #[allow(missing_docs)] // documentation missing in model
     Yes,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VoteValue {
     fn from(s: &str) -> Self {
         match s {
             "NO" => VoteValue::No,
             "YES" => VoteValue::Yes,
-            other => VoteValue::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VoteValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VoteValue {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VoteValue::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VoteValue::from(s))
+                }
+            }
 impl VoteValue {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VoteValue::No => "NO",
             VoteValue::Yes => "YES",
-            VoteValue::Unknown(value) => value.as_str(),
+            VoteValue::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NO", "YES"]
+        &[
+            "NO", "YES"
+        ]
     }
 }
 impl AsRef<str> for VoteValue {
@@ -93,22 +87,20 @@ impl AsRef<str> for VoteValue {
 /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeLogPublishingConfiguration {
+pub struct NodeLogPublishingConfiguration  {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::NodeFabricLogPublishingConfiguration>,
 }
 impl NodeLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    pub fn fabric(
-        &self,
-    ) -> std::option::Option<&crate::model::NodeFabricLogPublishingConfiguration> {
+    pub fn fabric(&self) -> std::option::Option<& crate::model::NodeFabricLogPublishingConfiguration> {
         self.fabric.as_ref()
     }
 }
 /// See [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
 pub mod node_log_publishing_configuration {
-
+    
     /// A builder for [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -121,20 +113,19 @@ pub mod node_log_publishing_configuration {
             self
         }
         /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-        pub fn set_fabric(
-            mut self,
-            input: std::option::Option<crate::model::NodeFabricLogPublishingConfiguration>,
-        ) -> Self {
-            self.fabric = input;
-            self
+        pub fn set_fabric(mut self, input: std::option::Option<crate::model::NodeFabricLogPublishingConfiguration>) -> Self {
+            self.fabric = input; self
         }
         /// Consumes the builder and constructs a [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
         pub fn build(self) -> crate::model::NodeLogPublishingConfiguration {
             crate::model::NodeLogPublishingConfiguration {
-                fabric: self.fabric,
+                fabric: self.fabric
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeLogPublishingConfiguration {
     /// Creates a new builder-style object to manufacture [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
@@ -146,7 +137,7 @@ impl NodeLogPublishingConfiguration {
 /// <p>Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeFabricLogPublishingConfiguration {
+pub struct NodeFabricLogPublishingConfiguration  {
     /// <p>Configuration properties for logging events associated with chaincode execution on a peer node. Chaincode logs contain the results of instantiating, invoking, and querying the chaincode. A peer can run multiple instances of chaincode. When enabled, a log stream is created for all chaincodes, with an individual log stream for each chaincode.</p>
     #[doc(hidden)]
     pub chaincode_logs: std::option::Option<crate::model::LogConfigurations>,
@@ -156,17 +147,17 @@ pub struct NodeFabricLogPublishingConfiguration {
 }
 impl NodeFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with chaincode execution on a peer node. Chaincode logs contain the results of instantiating, invoking, and querying the chaincode. A peer can run multiple instances of chaincode. When enabled, a log stream is created for all chaincodes, with an individual log stream for each chaincode.</p>
-    pub fn chaincode_logs(&self) -> std::option::Option<&crate::model::LogConfigurations> {
+    pub fn chaincode_logs(&self) -> std::option::Option<& crate::model::LogConfigurations> {
         self.chaincode_logs.as_ref()
     }
     /// <p>Configuration properties for a peer node log. Peer node logs contain messages generated when your client submits transaction proposals to peer nodes, requests to join channels, enrolls an admin peer, and lists the chaincode instances on a peer node. </p>
-    pub fn peer_logs(&self) -> std::option::Option<&crate::model::LogConfigurations> {
+    pub fn peer_logs(&self) -> std::option::Option<& crate::model::LogConfigurations> {
         self.peer_logs.as_ref()
     }
 }
 /// See [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
 pub mod node_fabric_log_publishing_configuration {
-
+    
     /// A builder for [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -180,12 +171,8 @@ pub mod node_fabric_log_publishing_configuration {
             self
         }
         /// <p>Configuration properties for logging events associated with chaincode execution on a peer node. Chaincode logs contain the results of instantiating, invoking, and querying the chaincode. A peer can run multiple instances of chaincode. When enabled, a log stream is created for all chaincodes, with an individual log stream for each chaincode.</p>
-        pub fn set_chaincode_logs(
-            mut self,
-            input: std::option::Option<crate::model::LogConfigurations>,
-        ) -> Self {
-            self.chaincode_logs = input;
-            self
+        pub fn set_chaincode_logs(mut self, input: std::option::Option<crate::model::LogConfigurations>) -> Self {
+            self.chaincode_logs = input; self
         }
         /// <p>Configuration properties for a peer node log. Peer node logs contain messages generated when your client submits transaction proposals to peer nodes, requests to join channels, enrolls an admin peer, and lists the chaincode instances on a peer node. </p>
         pub fn peer_logs(mut self, input: crate::model::LogConfigurations) -> Self {
@@ -193,21 +180,21 @@ pub mod node_fabric_log_publishing_configuration {
             self
         }
         /// <p>Configuration properties for a peer node log. Peer node logs contain messages generated when your client submits transaction proposals to peer nodes, requests to join channels, enrolls an admin peer, and lists the chaincode instances on a peer node. </p>
-        pub fn set_peer_logs(
-            mut self,
-            input: std::option::Option<crate::model::LogConfigurations>,
-        ) -> Self {
-            self.peer_logs = input;
-            self
+        pub fn set_peer_logs(mut self, input: std::option::Option<crate::model::LogConfigurations>) -> Self {
+            self.peer_logs = input; self
         }
         /// Consumes the builder and constructs a [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
         pub fn build(self) -> crate::model::NodeFabricLogPublishingConfiguration {
             crate::model::NodeFabricLogPublishingConfiguration {
-                chaincode_logs: self.chaincode_logs,
-                peer_logs: self.peer_logs,
+                chaincode_logs: self.chaincode_logs
+                ,
+                peer_logs: self.peer_logs
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeFabricLogPublishingConfiguration {
     /// Creates a new builder-style object to manufacture [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
@@ -219,20 +206,20 @@ impl NodeFabricLogPublishingConfiguration {
 /// <p>A collection of log configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogConfigurations {
+pub struct LogConfigurations  {
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
     pub cloudwatch: std::option::Option<crate::model::LogConfiguration>,
 }
 impl LogConfigurations {
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-    pub fn cloudwatch(&self) -> std::option::Option<&crate::model::LogConfiguration> {
+    pub fn cloudwatch(&self) -> std::option::Option<& crate::model::LogConfiguration> {
         self.cloudwatch.as_ref()
     }
 }
 /// See [`LogConfigurations`](crate::model::LogConfigurations).
 pub mod log_configurations {
-
+    
     /// A builder for [`LogConfigurations`](crate::model::LogConfigurations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -245,20 +232,19 @@ pub mod log_configurations {
             self
         }
         /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-        pub fn set_cloudwatch(
-            mut self,
-            input: std::option::Option<crate::model::LogConfiguration>,
-        ) -> Self {
-            self.cloudwatch = input;
-            self
+        pub fn set_cloudwatch(mut self, input: std::option::Option<crate::model::LogConfiguration>) -> Self {
+            self.cloudwatch = input; self
         }
         /// Consumes the builder and constructs a [`LogConfigurations`](crate::model::LogConfigurations).
         pub fn build(self) -> crate::model::LogConfigurations {
             crate::model::LogConfigurations {
-                cloudwatch: self.cloudwatch,
+                cloudwatch: self.cloudwatch
+                ,
             }
         }
     }
+    
+    
 }
 impl LogConfigurations {
     /// Creates a new builder-style object to manufacture [`LogConfigurations`](crate::model::LogConfigurations).
@@ -270,7 +256,7 @@ impl LogConfigurations {
 /// <p>A configuration for logging events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogConfiguration {
+pub struct LogConfiguration  {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -283,7 +269,7 @@ impl LogConfiguration {
 }
 /// See [`LogConfiguration`](crate::model::LogConfiguration).
 pub mod log_configuration {
-
+    
     /// A builder for [`LogConfiguration`](crate::model::LogConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -297,16 +283,18 @@ pub mod log_configuration {
         }
         /// <p>Indicates whether logging is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`LogConfiguration`](crate::model::LogConfiguration).
         pub fn build(self) -> crate::model::LogConfiguration {
             crate::model::LogConfiguration {
-                enabled: self.enabled,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl LogConfiguration {
     /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
@@ -318,52 +306,45 @@ impl LogConfiguration {
 /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberLogPublishingConfiguration {
+pub struct MemberLogPublishingConfiguration  {
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::MemberFabricLogPublishingConfiguration>,
 }
 impl MemberLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    pub fn fabric(
-        &self,
-    ) -> std::option::Option<&crate::model::MemberFabricLogPublishingConfiguration> {
+    pub fn fabric(&self) -> std::option::Option<& crate::model::MemberFabricLogPublishingConfiguration> {
         self.fabric.as_ref()
     }
 }
 /// See [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
 pub mod member_log_publishing_configuration {
-
+    
     /// A builder for [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fabric:
-            std::option::Option<crate::model::MemberFabricLogPublishingConfiguration>,
+        pub(crate) fabric: std::option::Option<crate::model::MemberFabricLogPublishingConfiguration>,
     }
     impl Builder {
         /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-        pub fn fabric(
-            mut self,
-            input: crate::model::MemberFabricLogPublishingConfiguration,
-        ) -> Self {
+        pub fn fabric(mut self, input: crate::model::MemberFabricLogPublishingConfiguration) -> Self {
             self.fabric = Some(input);
             self
         }
         /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-        pub fn set_fabric(
-            mut self,
-            input: std::option::Option<crate::model::MemberFabricLogPublishingConfiguration>,
-        ) -> Self {
-            self.fabric = input;
-            self
+        pub fn set_fabric(mut self, input: std::option::Option<crate::model::MemberFabricLogPublishingConfiguration>) -> Self {
+            self.fabric = input; self
         }
         /// Consumes the builder and constructs a [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
         pub fn build(self) -> crate::model::MemberLogPublishingConfiguration {
             crate::model::MemberLogPublishingConfiguration {
-                fabric: self.fabric,
+                fabric: self.fabric
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberLogPublishingConfiguration {
     /// Creates a new builder-style object to manufacture [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
@@ -375,20 +356,20 @@ impl MemberLogPublishingConfiguration {
 /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberFabricLogPublishingConfiguration {
+pub struct MemberFabricLogPublishingConfiguration  {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
     #[doc(hidden)]
     pub ca_logs: std::option::Option<crate::model::LogConfigurations>,
 }
 impl MemberFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
-    pub fn ca_logs(&self) -> std::option::Option<&crate::model::LogConfigurations> {
+    pub fn ca_logs(&self) -> std::option::Option<& crate::model::LogConfigurations> {
         self.ca_logs.as_ref()
     }
 }
 /// See [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
 pub mod member_fabric_log_publishing_configuration {
-
+    
     /// A builder for [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -401,20 +382,19 @@ pub mod member_fabric_log_publishing_configuration {
             self
         }
         /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
-        pub fn set_ca_logs(
-            mut self,
-            input: std::option::Option<crate::model::LogConfigurations>,
-        ) -> Self {
-            self.ca_logs = input;
-            self
+        pub fn set_ca_logs(mut self, input: std::option::Option<crate::model::LogConfigurations>) -> Self {
+            self.ca_logs = input; self
         }
         /// Consumes the builder and constructs a [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
         pub fn build(self) -> crate::model::MemberFabricLogPublishingConfiguration {
             crate::model::MemberFabricLogPublishingConfiguration {
-                ca_logs: self.ca_logs,
+                ca_logs: self.ca_logs
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberFabricLogPublishingConfiguration {
     /// Creates a new builder-style object to manufacture [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
@@ -423,11 +403,11 @@ impl MemberFabricLogPublishingConfiguration {
     }
 }
 
-/// <p> Properties of an individual vote that a member cast for a proposal. </p>
+/// <p> Properties of an individual vote that a member cast for a proposal. </p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoteSummary {
+pub struct VoteSummary  {
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
     #[doc(hidden)]
     pub vote: std::option::Option<crate::model::VoteValue>,
@@ -440,21 +420,21 @@ pub struct VoteSummary {
 }
 impl VoteSummary {
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
-    pub fn vote(&self) -> std::option::Option<&crate::model::VoteValue> {
+    pub fn vote(&self) -> std::option::Option<& crate::model::VoteValue> {
         self.vote.as_ref()
     }
     /// <p> The name of the member that cast the vote. </p>
-    pub fn member_name(&self) -> std::option::Option<&str> {
+    pub fn member_name(&self) -> std::option::Option<& str> {
         self.member_name.as_deref()
     }
     /// <p> The unique identifier of the member that cast the vote. </p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> std::option::Option<& str> {
         self.member_id.as_deref()
     }
 }
 /// See [`VoteSummary`](crate::model::VoteSummary).
 pub mod vote_summary {
-
+    
     /// A builder for [`VoteSummary`](crate::model::VoteSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -470,8 +450,7 @@ pub mod vote_summary {
         }
         /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
         pub fn set_vote(mut self, input: std::option::Option<crate::model::VoteValue>) -> Self {
-            self.vote = input;
-            self
+            self.vote = input; self
         }
         /// <p> The name of the member that cast the vote. </p>
         pub fn member_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -480,8 +459,7 @@ pub mod vote_summary {
         }
         /// <p> The name of the member that cast the vote. </p>
         pub fn set_member_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.member_name = input;
-            self
+            self.member_name = input; self
         }
         /// <p> The unique identifier of the member that cast the vote. </p>
         pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -490,18 +468,22 @@ pub mod vote_summary {
         }
         /// <p> The unique identifier of the member that cast the vote. </p>
         pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.member_id = input;
-            self
+            self.member_id = input; self
         }
         /// Consumes the builder and constructs a [`VoteSummary`](crate::model::VoteSummary).
         pub fn build(self) -> crate::model::VoteSummary {
             crate::model::VoteSummary {
-                vote: self.vote,
-                member_name: self.member_name,
-                member_id: self.member_id,
+                vote: self.vote
+                ,
+                member_name: self.member_name
+                ,
+                member_id: self.member_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VoteSummary {
     /// Creates a new builder-style object to manufacture [`VoteSummary`](crate::model::VoteSummary).
@@ -510,11 +492,11 @@ impl VoteSummary {
     }
 }
 
-/// <p>Properties of a proposal.</p>
+/// <p>Properties of a proposal.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProposalSummary {
+pub struct ProposalSummary  {
     /// <p> The unique identifier of the proposal. </p>
     #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
@@ -527,13 +509,13 @@ pub struct ProposalSummary {
     /// <p> The name of the member that created the proposal. </p>
     #[doc(hidden)]
     pub proposed_by_member_name: std::option::Option<std::string::String>,
-    /// <p>The status of the proposal. Values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
-    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
+    /// <p>The status of the proposal. Values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li> 
+    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li> 
+    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+    /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProposalStatus>,
@@ -549,48 +531,48 @@ pub struct ProposalSummary {
 }
 impl ProposalSummary {
     /// <p> The unique identifier of the proposal. </p>
-    pub fn proposal_id(&self) -> std::option::Option<&str> {
+    pub fn proposal_id(&self) -> std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
     /// <p> The description of the proposal. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The unique identifier of the member that created the proposal. </p>
-    pub fn proposed_by_member_id(&self) -> std::option::Option<&str> {
+    pub fn proposed_by_member_id(&self) -> std::option::Option<& str> {
         self.proposed_by_member_id.as_deref()
     }
     /// <p> The name of the member that created the proposal. </p>
-    pub fn proposed_by_member_name(&self) -> std::option::Option<&str> {
+    pub fn proposed_by_member_name(&self) -> std::option::Option<& str> {
         self.proposed_by_member_name.as_deref()
     }
-    /// <p>The status of the proposal. Values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
-    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
+    /// <p>The status of the proposal. Values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li> 
+    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li> 
+    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+    /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProposalStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProposalStatus> {
         self.status.as_ref()
     }
     /// <p> The date and time that the proposal was created. </p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`ProposalSummary`](crate::model::ProposalSummary).
 pub mod proposal_summary {
-
+    
     /// A builder for [`ProposalSummary`](crate::model::ProposalSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -611,8 +593,7 @@ pub mod proposal_summary {
         }
         /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.proposal_id = input;
-            self
+            self.proposal_id = input; self
         }
         /// <p> The description of the proposal. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -621,8 +602,7 @@ pub mod proposal_summary {
         }
         /// <p> The description of the proposal. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The unique identifier of the member that created the proposal. </p>
         pub fn proposed_by_member_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -630,12 +610,8 @@ pub mod proposal_summary {
             self
         }
         /// <p> The unique identifier of the member that created the proposal. </p>
-        pub fn set_proposed_by_member_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.proposed_by_member_id = input;
-            self
+        pub fn set_proposed_by_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.proposed_by_member_id = input; self
         }
         /// <p> The name of the member that created the proposal. </p>
         pub fn proposed_by_member_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -643,39 +619,31 @@ pub mod proposal_summary {
             self
         }
         /// <p> The name of the member that created the proposal. </p>
-        pub fn set_proposed_by_member_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.proposed_by_member_name = input;
-            self
+        pub fn set_proposed_by_member_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.proposed_by_member_name = input; self
         }
-        /// <p>The status of the proposal. Values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
-        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
-        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-        /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
+        /// <p>The status of the proposal. Values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li> 
+        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li> 
+        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+        /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::ProposalStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the proposal. Values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
-        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
-        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-        /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
+        /// <p>The status of the proposal. Values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li> 
+        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li> 
+        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+        /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProposalStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProposalStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> The date and time that the proposal was created. </p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -683,12 +651,8 @@ pub mod proposal_summary {
             self
         }
         /// <p> The date and time that the proposal was created. </p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -696,12 +660,8 @@ pub mod proposal_summary {
             self
         }
         /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
-        pub fn set_expiration_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration_date = input;
-            self
+        pub fn set_expiration_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiration_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -710,23 +670,32 @@ pub mod proposal_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`ProposalSummary`](crate::model::ProposalSummary).
         pub fn build(self) -> crate::model::ProposalSummary {
             crate::model::ProposalSummary {
-                proposal_id: self.proposal_id,
-                description: self.description,
-                proposed_by_member_id: self.proposed_by_member_id,
-                proposed_by_member_name: self.proposed_by_member_name,
-                status: self.status,
-                creation_date: self.creation_date,
-                expiration_date: self.expiration_date,
-                arn: self.arn,
+                proposal_id: self.proposal_id
+                ,
+                description: self.description
+                ,
+                proposed_by_member_id: self.proposed_by_member_id
+                ,
+                proposed_by_member_name: self.proposed_by_member_name
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                expiration_date: self.expiration_date
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ProposalSummary {
     /// Creates a new builder-style object to manufacture [`ProposalSummary`](crate::model::ProposalSummary).
@@ -741,9 +710,9 @@ impl ProposalSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let proposalstatus = unimplemented!();
 /// match proposalstatus {
@@ -768,22 +737,14 @@ impl ProposalSummary {
 /// Specifically, when `proposalstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProposalStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProposalStatus {
     #[allow(missing_docs)] // documentation missing in model
     ActionFailed,
@@ -796,7 +757,7 @@ pub enum ProposalStatus {
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProposalStatus {
     fn from(s: &str) -> Self {
@@ -806,17 +767,17 @@ impl std::convert::From<&str> for ProposalStatus {
             "EXPIRED" => ProposalStatus::Expired,
             "IN_PROGRESS" => ProposalStatus::InProgress,
             "REJECTED" => ProposalStatus::Rejected,
-            other => ProposalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ProposalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProposalStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProposalStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProposalStatus::from(s))
+                }
+            }
 impl ProposalStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -826,17 +787,13 @@ impl ProposalStatus {
             ProposalStatus::Expired => "EXPIRED",
             ProposalStatus::InProgress => "IN_PROGRESS",
             ProposalStatus::Rejected => "REJECTED",
-            ProposalStatus::Unknown(value) => value.as_str(),
+            ProposalStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTION_FAILED",
-            "APPROVED",
-            "EXPIRED",
-            "IN_PROGRESS",
-            "REJECTED",
+            "ACTION_FAILED", "APPROVED", "EXPIRED", "IN_PROGRESS", "REJECTED"
         ]
     }
 }
@@ -849,7 +806,7 @@ impl AsRef<str> for ProposalStatus {
 /// <p>A summary of configuration properties for a node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeSummary {
+pub struct NodeSummary  {
     /// <p>The unique identifier of the node.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -871,33 +828,33 @@ pub struct NodeSummary {
 }
 impl NodeSummary {
     /// <p>The unique identifier of the node.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the node.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NodeStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NodeStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the node was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Availability Zone in which the node exists.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The EC2 instance type for the node.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`NodeSummary`](crate::model::NodeSummary).
 pub mod node_summary {
-
+    
     /// A builder for [`NodeSummary`](crate::model::NodeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -916,8 +873,7 @@ pub mod node_summary {
         }
         /// <p>The unique identifier of the node.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The status of the node.</p>
         pub fn status(mut self, input: crate::model::NodeStatus) -> Self {
@@ -926,8 +882,7 @@ pub mod node_summary {
         }
         /// <p>The status of the node.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::NodeStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time that the node was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -935,12 +890,8 @@ pub mod node_summary {
             self
         }
         /// <p>The date and time that the node was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Availability Zone in which the node exists.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -948,12 +899,8 @@ pub mod node_summary {
             self
         }
         /// <p>The Availability Zone in which the node exists.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The EC2 instance type for the node.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -961,12 +908,8 @@ pub mod node_summary {
             self
         }
         /// <p>The EC2 instance type for the node.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -975,21 +918,28 @@ pub mod node_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`NodeSummary`](crate::model::NodeSummary).
         pub fn build(self) -> crate::model::NodeSummary {
             crate::model::NodeSummary {
-                id: self.id,
-                status: self.status,
-                creation_date: self.creation_date,
-                availability_zone: self.availability_zone,
-                instance_type: self.instance_type,
-                arn: self.arn,
+                id: self.id
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                availability_zone: self.availability_zone
+                ,
+                instance_type: self.instance_type
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeSummary {
     /// Creates a new builder-style object to manufacture [`NodeSummary`](crate::model::NodeSummary).
@@ -1004,9 +954,9 @@ impl NodeSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let nodestatus = unimplemented!();
 /// match nodestatus {
@@ -1035,22 +985,14 @@ impl NodeSummary {
 /// Specifically, when `nodestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NodeStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NodeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -1071,7 +1013,7 @@ pub enum NodeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NodeStatus {
     fn from(s: &str) -> Self {
@@ -1085,17 +1027,17 @@ impl std::convert::From<&str> for NodeStatus {
             "INACCESSIBLE_ENCRYPTION_KEY" => NodeStatus::InaccessibleEncryptionKey,
             "UNHEALTHY" => NodeStatus::Unhealthy,
             "UPDATING" => NodeStatus::Updating,
-            other => NodeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NodeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NodeStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NodeStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NodeStatus::from(s))
+                }
+            }
 impl NodeStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1109,21 +1051,13 @@ impl NodeStatus {
             NodeStatus::InaccessibleEncryptionKey => "INACCESSIBLE_ENCRYPTION_KEY",
             NodeStatus::Unhealthy => "UNHEALTHY",
             NodeStatus::Updating => "UPDATING",
-            NodeStatus::Unknown(value) => value.as_str(),
+            NodeStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETED",
-            "DELETING",
-            "FAILED",
-            "INACCESSIBLE_ENCRYPTION_KEY",
-            "UNHEALTHY",
-            "UPDATING",
+            "AVAILABLE", "CREATE_FAILED", "CREATING", "DELETED", "DELETING", "FAILED", "INACCESSIBLE_ENCRYPTION_KEY", "UNHEALTHY", "UPDATING"
         ]
     }
 }
@@ -1136,7 +1070,7 @@ impl AsRef<str> for NodeStatus {
 /// <p>A summary of network configuration properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkSummary {
+pub struct NetworkSummary  {
     /// <p>The unique identifier of the network.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1164,41 +1098,41 @@ pub struct NetworkSummary {
 }
 impl NetworkSummary {
     /// <p>The unique identifier of the network.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the network.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description of the network.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The blockchain framework that the network uses.</p>
-    pub fn framework(&self) -> std::option::Option<&crate::model::Framework> {
+    pub fn framework(&self) -> std::option::Option<& crate::model::Framework> {
         self.framework.as_ref()
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
-    pub fn framework_version(&self) -> std::option::Option<&str> {
+    pub fn framework_version(&self) -> std::option::Option<& str> {
         self.framework_version.as_deref()
     }
     /// <p>The current status of the network.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NetworkStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NetworkStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the network was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`NetworkSummary`](crate::model::NetworkSummary).
 pub mod network_summary {
-
+    
     /// A builder for [`NetworkSummary`](crate::model::NetworkSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1219,8 +1153,7 @@ pub mod network_summary {
         }
         /// <p>The unique identifier of the network.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the network.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1229,8 +1162,7 @@ pub mod network_summary {
         }
         /// <p>The name of the network.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>An optional description of the network.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1239,8 +1171,7 @@ pub mod network_summary {
         }
         /// <p>An optional description of the network.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The blockchain framework that the network uses.</p>
         pub fn framework(mut self, input: crate::model::Framework) -> Self {
@@ -1248,12 +1179,8 @@ pub mod network_summary {
             self
         }
         /// <p>The blockchain framework that the network uses.</p>
-        pub fn set_framework(
-            mut self,
-            input: std::option::Option<crate::model::Framework>,
-        ) -> Self {
-            self.framework = input;
-            self
+        pub fn set_framework(mut self, input: std::option::Option<crate::model::Framework>) -> Self {
+            self.framework = input; self
         }
         /// <p>The version of the blockchain framework that the network uses.</p>
         pub fn framework_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1261,12 +1188,8 @@ pub mod network_summary {
             self
         }
         /// <p>The version of the blockchain framework that the network uses.</p>
-        pub fn set_framework_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.framework_version = input;
-            self
+        pub fn set_framework_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.framework_version = input; self
         }
         /// <p>The current status of the network.</p>
         pub fn status(mut self, input: crate::model::NetworkStatus) -> Self {
@@ -1274,12 +1197,8 @@ pub mod network_summary {
             self
         }
         /// <p>The current status of the network.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NetworkStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NetworkStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time that the network was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1287,12 +1206,8 @@ pub mod network_summary {
             self
         }
         /// <p>The date and time that the network was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1301,23 +1216,32 @@ pub mod network_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`NetworkSummary`](crate::model::NetworkSummary).
         pub fn build(self) -> crate::model::NetworkSummary {
             crate::model::NetworkSummary {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                framework: self.framework,
-                framework_version: self.framework_version,
-                status: self.status,
-                creation_date: self.creation_date,
-                arn: self.arn,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                framework: self.framework
+                ,
+                framework_version: self.framework_version
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkSummary {
     /// Creates a new builder-style object to manufacture [`NetworkSummary`](crate::model::NetworkSummary).
@@ -1332,9 +1256,9 @@ impl NetworkSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkstatus = unimplemented!();
 /// match networkstatus {
@@ -1359,22 +1283,14 @@ impl NetworkSummary {
 /// Specifically, when `networkstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -1387,7 +1303,7 @@ pub enum NetworkStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkStatus {
     fn from(s: &str) -> Self {
@@ -1397,17 +1313,17 @@ impl std::convert::From<&str> for NetworkStatus {
             "CREATING" => NetworkStatus::Creating,
             "DELETED" => NetworkStatus::Deleted,
             "DELETING" => NetworkStatus::Deleting,
-            other => NetworkStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NetworkStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkStatus::from(s))
+                }
+            }
 impl NetworkStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1417,17 +1333,13 @@ impl NetworkStatus {
             NetworkStatus::Creating => "CREATING",
             NetworkStatus::Deleted => "DELETED",
             NetworkStatus::Deleting => "DELETING",
-            NetworkStatus::Unknown(value) => value.as_str(),
+            NetworkStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETED",
-            "DELETING",
+            "AVAILABLE", "CREATE_FAILED", "CREATING", "DELETED", "DELETING"
         ]
     }
 }
@@ -1443,9 +1355,9 @@ impl AsRef<str> for NetworkStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let framework = unimplemented!();
 /// match framework {
@@ -1467,58 +1379,52 @@ impl AsRef<str> for NetworkStatus {
 /// Specifically, when `framework` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Framework::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Framework {
     #[allow(missing_docs)] // documentation missing in model
     Ethereum,
     #[allow(missing_docs)] // documentation missing in model
     HyperledgerFabric,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Framework {
     fn from(s: &str) -> Self {
         match s {
             "ETHEREUM" => Framework::Ethereum,
             "HYPERLEDGER_FABRIC" => Framework::HyperledgerFabric,
-            other => Framework::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Framework::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Framework {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Framework::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Framework::from(s))
+                }
+            }
 impl Framework {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Framework::Ethereum => "ETHEREUM",
             Framework::HyperledgerFabric => "HYPERLEDGER_FABRIC",
-            Framework::Unknown(value) => value.as_str(),
+            Framework::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ETHEREUM", "HYPERLEDGER_FABRIC"]
+        &[
+            "ETHEREUM", "HYPERLEDGER_FABRIC"
+        ]
     }
 }
 impl AsRef<str> for Framework {
@@ -1527,11 +1433,11 @@ impl AsRef<str> for Framework {
     }
 }
 
-/// <p>A summary of configuration properties for a member.</p>
+/// <p>A summary of configuration properties for a member.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberSummary {
+pub struct MemberSummary  {
     /// <p>The unique identifier of the member.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1541,15 +1447,15 @@ pub struct MemberSummary {
     /// <p>An optional description of the member.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The status of the member.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <p>The status of the member.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li> 
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li> 
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::MemberStatus>,
@@ -1565,32 +1471,32 @@ pub struct MemberSummary {
 }
 impl MemberSummary {
     /// <p>The unique identifier of the member.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the member.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description of the member.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The status of the member.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <p>The status of the member.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li> 
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li> 
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MemberStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the member was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>An indicator of whether the member is owned by your Amazon Web Services account or a different Amazon Web Services account.</p>
@@ -1598,13 +1504,13 @@ impl MemberSummary {
         self.is_owned
     }
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`MemberSummary`](crate::model::MemberSummary).
 pub mod member_summary {
-
+    
     /// A builder for [`MemberSummary`](crate::model::MemberSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1624,8 +1530,7 @@ pub mod member_summary {
         }
         /// <p>The unique identifier of the member.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the member.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1634,8 +1539,7 @@ pub mod member_summary {
         }
         /// <p>The name of the member.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>An optional description of the member.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1644,39 +1548,34 @@ pub mod member_summary {
         }
         /// <p>An optional description of the member.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The status of the member.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
-        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+        /// <p>The status of the member.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li> 
+        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li> 
+        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::MemberStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the member.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
-        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+        /// <p>The status of the member.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li> 
+        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li> 
+        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in Key Management Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MemberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MemberStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time that the member was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1684,12 +1583,8 @@ pub mod member_summary {
             self
         }
         /// <p>The date and time that the member was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>An indicator of whether the member is owned by your Amazon Web Services account or a different Amazon Web Services account.</p>
         pub fn is_owned(mut self, input: bool) -> Self {
@@ -1698,8 +1593,7 @@ pub mod member_summary {
         }
         /// <p>An indicator of whether the member is owned by your Amazon Web Services account or a different Amazon Web Services account.</p>
         pub fn set_is_owned(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_owned = input;
-            self
+            self.is_owned = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1708,22 +1602,30 @@ pub mod member_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`MemberSummary`](crate::model::MemberSummary).
         pub fn build(self) -> crate::model::MemberSummary {
             crate::model::MemberSummary {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                status: self.status,
-                creation_date: self.creation_date,
-                is_owned: self.is_owned,
-                arn: self.arn,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                is_owned: self.is_owned
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberSummary {
     /// Creates a new builder-style object to manufacture [`MemberSummary`](crate::model::MemberSummary).
@@ -1738,9 +1640,9 @@ impl MemberSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let memberstatus = unimplemented!();
 /// match memberstatus {
@@ -1767,22 +1669,14 @@ impl MemberSummary {
 /// Specifically, when `memberstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MemberStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MemberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -1799,7 +1693,7 @@ pub enum MemberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberStatus {
     fn from(s: &str) -> Self {
@@ -1811,17 +1705,17 @@ impl std::convert::From<&str> for MemberStatus {
             "DELETING" => MemberStatus::Deleting,
             "INACCESSIBLE_ENCRYPTION_KEY" => MemberStatus::InaccessibleEncryptionKey,
             "UPDATING" => MemberStatus::Updating,
-            other => MemberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MemberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MemberStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MemberStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MemberStatus::from(s))
+                }
+            }
 impl MemberStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1833,19 +1727,13 @@ impl MemberStatus {
             MemberStatus::Deleting => "DELETING",
             MemberStatus::InaccessibleEncryptionKey => "INACCESSIBLE_ENCRYPTION_KEY",
             MemberStatus::Updating => "UPDATING",
-            MemberStatus::Unknown(value) => value.as_str(),
+            MemberStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETED",
-            "DELETING",
-            "INACCESSIBLE_ENCRYPTION_KEY",
-            "UPDATING",
+            "AVAILABLE", "CREATE_FAILED", "CREATING", "DELETED", "DELETING", "INACCESSIBLE_ENCRYPTION_KEY", "UPDATING"
         ]
     }
 }
@@ -1855,11 +1743,11 @@ impl AsRef<str> for MemberStatus {
     }
 }
 
-/// <p>An invitation to an Amazon Web Services account to create a member and join the network.</p>
+/// <p>An invitation to an Amazon Web Services account to create a member and join the network.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Invitation {
+pub struct Invitation  {
     /// <p>The unique identifier for the invitation.</p>
     #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
@@ -1869,13 +1757,13 @@ pub struct Invitation {
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
     #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the invitation:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+    /// <p>The status of the invitation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li> 
+    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li> 
+    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li> 
+    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li> 
+    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::InvitationStatus>,
@@ -1888,40 +1776,40 @@ pub struct Invitation {
 }
 impl Invitation {
     /// <p>The unique identifier for the invitation.</p>
-    pub fn invitation_id(&self) -> std::option::Option<&str> {
+    pub fn invitation_id(&self) -> std::option::Option<& str> {
         self.invitation_id.as_deref()
     }
     /// <p>The date and time that the invitation was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>The status of the invitation:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+    /// <p>The status of the invitation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li> 
+    /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li> 
+    /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li> 
+    /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li> 
+    /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::InvitationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InvitationStatus> {
         self.status.as_ref()
     }
     /// <p>A summary of network configuration properties.</p>
-    pub fn network_summary(&self) -> std::option::Option<&crate::model::NetworkSummary> {
+    pub fn network_summary(&self) -> std::option::Option<& crate::model::NetworkSummary> {
         self.network_summary.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`Invitation`](crate::model::Invitation).
 pub mod invitation {
-
+    
     /// A builder for [`Invitation`](crate::model::Invitation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1939,12 +1827,8 @@ pub mod invitation {
             self
         }
         /// <p>The unique identifier for the invitation.</p>
-        pub fn set_invitation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invitation_id = input;
-            self
+        pub fn set_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.invitation_id = input; self
         }
         /// <p>The date and time that the invitation was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1952,12 +1836,8 @@ pub mod invitation {
             self
         }
         /// <p>The date and time that the invitation was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1965,39 +1845,31 @@ pub mod invitation {
             self
         }
         /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
-        pub fn set_expiration_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration_date = input;
-            self
+        pub fn set_expiration_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiration_date = input; self
         }
-        /// <p>The status of the invitation:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-        /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-        /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-        /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-        /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+        /// <p>The status of the invitation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li> 
+        /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li> 
+        /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li> 
+        /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li> 
+        /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::InvitationStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the invitation:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
-        /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li>
-        /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li>
-        /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
-        /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
+        /// <p>The status of the invitation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li> 
+        /// <li> <p> <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't yet completed.</p> </li> 
+        /// <li> <p> <code>ACCEPTED</code> - The invitee created a member and joined the network using the <code>InvitationID</code>.</p> </li> 
+        /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li> 
+        /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InvitationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InvitationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A summary of network configuration properties.</p>
         pub fn network_summary(mut self, input: crate::model::NetworkSummary) -> Self {
@@ -2005,12 +1877,8 @@ pub mod invitation {
             self
         }
         /// <p>A summary of network configuration properties.</p>
-        pub fn set_network_summary(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSummary>,
-        ) -> Self {
-            self.network_summary = input;
-            self
+        pub fn set_network_summary(mut self, input: std::option::Option<crate::model::NetworkSummary>) -> Self {
+            self.network_summary = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2019,21 +1887,28 @@ pub mod invitation {
         }
         /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`Invitation`](crate::model::Invitation).
         pub fn build(self) -> crate::model::Invitation {
             crate::model::Invitation {
-                invitation_id: self.invitation_id,
-                creation_date: self.creation_date,
-                expiration_date: self.expiration_date,
-                status: self.status,
-                network_summary: self.network_summary,
-                arn: self.arn,
+                invitation_id: self.invitation_id
+                ,
+                creation_date: self.creation_date
+                ,
+                expiration_date: self.expiration_date
+                ,
+                status: self.status
+                ,
+                network_summary: self.network_summary
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Invitation {
     /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation).
@@ -2048,9 +1923,9 @@ impl Invitation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invitationstatus = unimplemented!();
 /// match invitationstatus {
@@ -2075,22 +1950,14 @@ impl Invitation {
 /// Specifically, when `invitationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvitationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InvitationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Accepted,
@@ -2103,7 +1970,7 @@ pub enum InvitationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvitationStatus {
     fn from(s: &str) -> Self {
@@ -2113,17 +1980,17 @@ impl std::convert::From<&str> for InvitationStatus {
             "EXPIRED" => InvitationStatus::Expired,
             "PENDING" => InvitationStatus::Pending,
             "REJECTED" => InvitationStatus::Rejected,
-            other => InvitationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InvitationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InvitationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InvitationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InvitationStatus::from(s))
+                }
+            }
 impl InvitationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2133,12 +2000,14 @@ impl InvitationStatus {
             InvitationStatus::Expired => "EXPIRED",
             InvitationStatus::Pending => "PENDING",
             InvitationStatus::Rejected => "REJECTED",
-            InvitationStatus::Unknown(value) => value.as_str(),
+            InvitationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCEPTED", "ACCEPTING", "EXPIRED", "PENDING", "REJECTED"]
+        &[
+            "ACCEPTED", "ACCEPTING", "EXPIRED", "PENDING", "REJECTED"
+        ]
     }
 }
 impl AsRef<str> for InvitationStatus {
@@ -2147,18 +2016,18 @@ impl AsRef<str> for InvitationStatus {
     }
 }
 
-/// <important>
-/// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
-/// </important>
+/// <important> 
+/// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p> 
+/// </important> 
 /// <p>A summary of accessor properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessorSummary {
+pub struct AccessorSummary  {
     /// <p>The unique identifier of the accessor.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The type of the accessor.</p> <note>
-    /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+    /// <p>The type of the accessor.</p> <note> 
+    /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AccessorType>,
@@ -2174,31 +2043,31 @@ pub struct AccessorSummary {
 }
 impl AccessorSummary {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The type of the accessor.</p> <note>
-    /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+    /// <p>The type of the accessor.</p> <note> 
+    /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p> 
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AccessorType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AccessorType> {
         self.r#type.as_ref()
     }
     /// <p>The current status of the accessor.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AccessorStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AccessorStatus> {
         self.status.as_ref()
     }
     /// <p>The creation date and time of the accessor.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`AccessorSummary`](crate::model::AccessorSummary).
 pub mod accessor_summary {
-
+    
     /// A builder for [`AccessorSummary`](crate::model::AccessorSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2216,22 +2085,20 @@ pub mod accessor_summary {
         }
         /// <p>The unique identifier of the accessor.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The type of the accessor.</p> <note>
-        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+        /// <p>The type of the accessor.</p> <note> 
+        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p> 
         /// </note>
         pub fn r#type(mut self, input: crate::model::AccessorType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the accessor.</p> <note>
-        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+        /// <p>The type of the accessor.</p> <note> 
+        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p> 
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AccessorType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The current status of the accessor.</p>
         pub fn status(mut self, input: crate::model::AccessorStatus) -> Self {
@@ -2239,12 +2106,8 @@ pub mod accessor_summary {
             self
         }
         /// <p>The current status of the accessor.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AccessorStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AccessorStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The creation date and time of the accessor.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2252,12 +2115,8 @@ pub mod accessor_summary {
             self
         }
         /// <p>The creation date and time of the accessor.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2266,20 +2125,26 @@ pub mod accessor_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`AccessorSummary`](crate::model::AccessorSummary).
         pub fn build(self) -> crate::model::AccessorSummary {
             crate::model::AccessorSummary {
-                id: self.id,
-                r#type: self.r#type,
-                status: self.status,
-                creation_date: self.creation_date,
-                arn: self.arn,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessorSummary {
     /// Creates a new builder-style object to manufacture [`AccessorSummary`](crate::model::AccessorSummary).
@@ -2294,9 +2159,9 @@ impl AccessorSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessorstatus = unimplemented!();
 /// match accessorstatus {
@@ -2319,22 +2184,14 @@ impl AccessorSummary {
 /// Specifically, when `accessorstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessorStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessorStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -2343,7 +2200,7 @@ pub enum AccessorStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingDeletion,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessorStatus {
     fn from(s: &str) -> Self {
@@ -2351,17 +2208,17 @@ impl std::convert::From<&str> for AccessorStatus {
             "AVAILABLE" => AccessorStatus::Available,
             "DELETED" => AccessorStatus::Deleted,
             "PENDING_DELETION" => AccessorStatus::PendingDeletion,
-            other => AccessorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccessorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessorStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessorStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessorStatus::from(s))
+                }
+            }
 impl AccessorStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2369,12 +2226,14 @@ impl AccessorStatus {
             AccessorStatus::Available => "AVAILABLE",
             AccessorStatus::Deleted => "DELETED",
             AccessorStatus::PendingDeletion => "PENDING_DELETION",
-            AccessorStatus::Unknown(value) => value.as_str(),
+            AccessorStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "DELETED", "PENDING_DELETION"]
+        &[
+            "AVAILABLE", "DELETED", "PENDING_DELETION"
+        ]
     }
 }
 impl AsRef<str> for AccessorStatus {
@@ -2389,9 +2248,9 @@ impl AsRef<str> for AccessorStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessortype = unimplemented!();
 /// match accessortype {
@@ -2412,54 +2271,48 @@ impl AsRef<str> for AccessorStatus {
 /// Specifically, when `accessortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessorType {
     #[allow(missing_docs)] // documentation missing in model
     BillingToken,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessorType {
     fn from(s: &str) -> Self {
         match s {
             "BILLING_TOKEN" => AccessorType::BillingToken,
-            other => AccessorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccessorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessorType::from(s))
+                }
+            }
 impl AccessorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessorType::BillingToken => "BILLING_TOKEN",
-            AccessorType::Unknown(value) => value.as_str(),
+            AccessorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BILLING_TOKEN"]
+        &[
+            "BILLING_TOKEN"
+        ]
     }
 }
 impl AsRef<str> for AccessorType {
@@ -2468,11 +2321,11 @@ impl AsRef<str> for AccessorType {
     }
 }
 
-/// <p>Properties of a proposal on a Managed Blockchain network.</p>
+/// <p>Properties of a proposal on a Managed Blockchain network.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Proposal {
+pub struct Proposal  {
     /// <p>The unique identifier of the proposal.</p>
     #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
@@ -2491,13 +2344,13 @@ pub struct Proposal {
     /// <p>The name of the member that created the proposal.</p>
     #[doc(hidden)]
     pub proposed_by_member_name: std::option::Option<std::string::String>,
-    /// <p>The status of the proposal. Values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
-    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
+    /// <p>The status of the proposal. Values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li> 
+    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li> 
+    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+    /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProposalStatus>,
@@ -2516,57 +2369,56 @@ pub struct Proposal {
     /// <p> The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes. </p>
     #[doc(hidden)]
     pub outstanding_vote_count: std::option::Option<i32>,
-    /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
+    /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p> 
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Proposal {
     /// <p>The unique identifier of the proposal.</p>
-    pub fn proposal_id(&self) -> std::option::Option<&str> {
+    pub fn proposal_id(&self) -> std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
     /// <p>The unique identifier of the network for which the proposal is made.</p>
-    pub fn network_id(&self) -> std::option::Option<&str> {
+    pub fn network_id(&self) -> std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The description of the proposal.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The actions to perform on the network if the proposal is <code>APPROVED</code>.</p>
-    pub fn actions(&self) -> std::option::Option<&crate::model::ProposalActions> {
+    pub fn actions(&self) -> std::option::Option<& crate::model::ProposalActions> {
         self.actions.as_ref()
     }
     /// <p>The unique identifier of the member that created the proposal.</p>
-    pub fn proposed_by_member_id(&self) -> std::option::Option<&str> {
+    pub fn proposed_by_member_id(&self) -> std::option::Option<& str> {
         self.proposed_by_member_id.as_deref()
     }
     /// <p>The name of the member that created the proposal.</p>
-    pub fn proposed_by_member_name(&self) -> std::option::Option<&str> {
+    pub fn proposed_by_member_name(&self) -> std::option::Option<& str> {
         self.proposed_by_member_name.as_deref()
     }
-    /// <p>The status of the proposal. Values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
-    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
-    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-    /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
+    /// <p>The status of the proposal. Values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li> 
+    /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li> 
+    /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+    /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+    /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProposalStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProposalStatus> {
         self.status.as_ref()
     }
     /// <p> The date and time that the proposal was created. </p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p> The current total of <code>YES</code> votes cast on the proposal by members. </p>
@@ -2581,22 +2433,19 @@ impl Proposal {
     pub fn outstanding_vote_count(&self) -> std::option::Option<i32> {
         self.outstanding_vote_count
     }
-    /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
+    /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p> 
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`Proposal`](crate::model::Proposal).
 pub mod proposal {
-
+    
     /// A builder for [`Proposal`](crate::model::Proposal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2612,9 +2461,7 @@ pub mod proposal {
         pub(crate) yes_vote_count: std::option::Option<i32>,
         pub(crate) no_vote_count: std::option::Option<i32>,
         pub(crate) outstanding_vote_count: std::option::Option<i32>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2625,8 +2472,7 @@ pub mod proposal {
         }
         /// <p>The unique identifier of the proposal.</p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.proposal_id = input;
-            self
+            self.proposal_id = input; self
         }
         /// <p>The unique identifier of the network for which the proposal is made.</p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2635,8 +2481,7 @@ pub mod proposal {
         }
         /// <p>The unique identifier of the network for which the proposal is made.</p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_id = input;
-            self
+            self.network_id = input; self
         }
         /// <p>The description of the proposal.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2645,8 +2490,7 @@ pub mod proposal {
         }
         /// <p>The description of the proposal.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The actions to perform on the network if the proposal is <code>APPROVED</code>.</p>
         pub fn actions(mut self, input: crate::model::ProposalActions) -> Self {
@@ -2654,12 +2498,8 @@ pub mod proposal {
             self
         }
         /// <p>The actions to perform on the network if the proposal is <code>APPROVED</code>.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<crate::model::ProposalActions>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<crate::model::ProposalActions>) -> Self {
+            self.actions = input; self
         }
         /// <p>The unique identifier of the member that created the proposal.</p>
         pub fn proposed_by_member_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2667,12 +2507,8 @@ pub mod proposal {
             self
         }
         /// <p>The unique identifier of the member that created the proposal.</p>
-        pub fn set_proposed_by_member_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.proposed_by_member_id = input;
-            self
+        pub fn set_proposed_by_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.proposed_by_member_id = input; self
         }
         /// <p>The name of the member that created the proposal.</p>
         pub fn proposed_by_member_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2680,39 +2516,31 @@ pub mod proposal {
             self
         }
         /// <p>The name of the member that created the proposal.</p>
-        pub fn set_proposed_by_member_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.proposed_by_member_name = input;
-            self
+        pub fn set_proposed_by_member_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.proposed_by_member_name = input; self
         }
-        /// <p>The status of the proposal. Values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
-        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
-        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-        /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
+        /// <p>The status of the proposal. Values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li> 
+        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li> 
+        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+        /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::ProposalStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the proposal. Values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
-        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li>
-        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-        /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
-        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li>
+        /// <p>The status of the proposal. Values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li> 
+        /// <li> <p> <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p> </li> 
+        /// <li> <p> <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+        /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li> 
+        /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProposalStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProposalStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> The date and time that the proposal was created. </p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2720,12 +2548,8 @@ pub mod proposal {
             self
         }
         /// <p> The date and time that the proposal was created. </p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2733,12 +2557,8 @@ pub mod proposal {
             self
         }
         /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
-        pub fn set_expiration_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration_date = input;
-            self
+        pub fn set_expiration_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiration_date = input; self
         }
         /// <p> The current total of <code>YES</code> votes cast on the proposal by members. </p>
         pub fn yes_vote_count(mut self, input: i32) -> Self {
@@ -2747,8 +2567,7 @@ pub mod proposal {
         }
         /// <p> The current total of <code>YES</code> votes cast on the proposal by members. </p>
         pub fn set_yes_vote_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.yes_vote_count = input;
-            self
+            self.yes_vote_count = input; self
         }
         /// <p> The current total of <code>NO</code> votes cast on the proposal by members. </p>
         pub fn no_vote_count(mut self, input: i32) -> Self {
@@ -2757,8 +2576,7 @@ pub mod proposal {
         }
         /// <p> The current total of <code>NO</code> votes cast on the proposal by members. </p>
         pub fn set_no_vote_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.no_vote_count = input;
-            self
+            self.no_vote_count = input; self
         }
         /// <p> The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes. </p>
         pub fn outstanding_vote_count(mut self, input: i32) -> Self {
@@ -2767,35 +2585,24 @@ pub mod proposal {
         }
         /// <p> The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes. </p>
         pub fn set_outstanding_vote_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.outstanding_vote_count = input;
-            self
+            self.outstanding_vote_count = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
+        /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p> 
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
+        /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p> 
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2804,29 +2611,44 @@ pub mod proposal {
         }
         /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`Proposal`](crate::model::Proposal).
         pub fn build(self) -> crate::model::Proposal {
             crate::model::Proposal {
-                proposal_id: self.proposal_id,
-                network_id: self.network_id,
-                description: self.description,
-                actions: self.actions,
-                proposed_by_member_id: self.proposed_by_member_id,
-                proposed_by_member_name: self.proposed_by_member_name,
-                status: self.status,
-                creation_date: self.creation_date,
-                expiration_date: self.expiration_date,
-                yes_vote_count: self.yes_vote_count,
-                no_vote_count: self.no_vote_count,
-                outstanding_vote_count: self.outstanding_vote_count,
-                tags: self.tags,
-                arn: self.arn,
+                proposal_id: self.proposal_id
+                ,
+                network_id: self.network_id
+                ,
+                description: self.description
+                ,
+                actions: self.actions
+                ,
+                proposed_by_member_id: self.proposed_by_member_id
+                ,
+                proposed_by_member_name: self.proposed_by_member_name
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                expiration_date: self.expiration_date
+                ,
+                yes_vote_count: self.yes_vote_count
+                ,
+                no_vote_count: self.no_vote_count
+                ,
+                outstanding_vote_count: self.outstanding_vote_count
+                ,
+                tags: self.tags
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Proposal {
     /// Creates a new builder-style object to manufacture [`Proposal`](crate::model::Proposal).
@@ -2835,11 +2657,11 @@ impl Proposal {
     }
 }
 
-/// <p> The actions to carry out if a proposal is <code>APPROVED</code>. </p>
+/// <p> The actions to carry out if a proposal is <code>APPROVED</code>. </p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProposalActions {
+pub struct ProposalActions  {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
     #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::model::InviteAction>>,
@@ -2849,17 +2671,17 @@ pub struct ProposalActions {
 }
 impl ProposalActions {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
-    pub fn invitations(&self) -> std::option::Option<&[crate::model::InviteAction]> {
+    pub fn invitations(&self) -> std::option::Option<& [crate::model::InviteAction]> {
         self.invitations.as_deref()
     }
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
-    pub fn removals(&self) -> std::option::Option<&[crate::model::RemoveAction]> {
+    pub fn removals(&self) -> std::option::Option<& [crate::model::RemoveAction]> {
         self.removals.as_deref()
     }
 }
 /// See [`ProposalActions`](crate::model::ProposalActions).
 pub mod proposal_actions {
-
+    
     /// A builder for [`ProposalActions`](crate::model::ProposalActions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2874,17 +2696,13 @@ pub mod proposal_actions {
         /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
         pub fn invitations(mut self, input: crate::model::InviteAction) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input);
-            self.invitations = Some(v);
-            self
+                            v.push(input);
+                            self.invitations = Some(v);
+                            self
         }
         /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
-        pub fn set_invitations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InviteAction>>,
-        ) -> Self {
-            self.invitations = input;
-            self
+        pub fn set_invitations(mut self, input: std::option::Option<std::vec::Vec<crate::model::InviteAction>>) -> Self {
+            self.invitations = input; self
         }
         /// Appends an item to `removals`.
         ///
@@ -2893,26 +2711,26 @@ pub mod proposal_actions {
         /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
         pub fn removals(mut self, input: crate::model::RemoveAction) -> Self {
             let mut v = self.removals.unwrap_or_default();
-            v.push(input);
-            self.removals = Some(v);
-            self
+                            v.push(input);
+                            self.removals = Some(v);
+                            self
         }
         /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
-        pub fn set_removals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RemoveAction>>,
-        ) -> Self {
-            self.removals = input;
-            self
+        pub fn set_removals(mut self, input: std::option::Option<std::vec::Vec<crate::model::RemoveAction>>) -> Self {
+            self.removals = input; self
         }
         /// Consumes the builder and constructs a [`ProposalActions`](crate::model::ProposalActions).
         pub fn build(self) -> crate::model::ProposalActions {
             crate::model::ProposalActions {
-                invitations: self.invitations,
-                removals: self.removals,
+                invitations: self.invitations
+                ,
+                removals: self.removals
+                ,
             }
         }
     }
+    
+    
 }
 impl ProposalActions {
     /// Creates a new builder-style object to manufacture [`ProposalActions`](crate::model::ProposalActions).
@@ -2921,24 +2739,24 @@ impl ProposalActions {
     }
 }
 
-/// <p>An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.</p>
+/// <p>An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAction {
+pub struct RemoveAction  {
     /// <p>The unique identifier of the member to remove.</p>
     #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
 }
 impl RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> std::option::Option<& str> {
         self.member_id.as_deref()
     }
 }
 /// See [`RemoveAction`](crate::model::RemoveAction).
 pub mod remove_action {
-
+    
     /// A builder for [`RemoveAction`](crate::model::RemoveAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2952,16 +2770,18 @@ pub mod remove_action {
         }
         /// <p>The unique identifier of the member to remove.</p>
         pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.member_id = input;
-            self
+            self.member_id = input; self
         }
         /// Consumes the builder and constructs a [`RemoveAction`](crate::model::RemoveAction).
         pub fn build(self) -> crate::model::RemoveAction {
             crate::model::RemoveAction {
-                member_id: self.member_id,
+                member_id: self.member_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveAction {
     /// Creates a new builder-style object to manufacture [`RemoveAction`](crate::model::RemoveAction).
@@ -2970,24 +2790,24 @@ impl RemoveAction {
     }
 }
 
-/// <p>An action to invite a specific Amazon Web Services account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.</p>
+/// <p>An action to invite a specific Amazon Web Services account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InviteAction {
+pub struct InviteAction  {
     /// <p>The Amazon Web Services account ID to invite.</p>
     #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
 }
 impl InviteAction {
     /// <p>The Amazon Web Services account ID to invite.</p>
-    pub fn principal(&self) -> std::option::Option<&str> {
+    pub fn principal(&self) -> std::option::Option<& str> {
         self.principal.as_deref()
     }
 }
 /// See [`InviteAction`](crate::model::InviteAction).
 pub mod invite_action {
-
+    
     /// A builder for [`InviteAction`](crate::model::InviteAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3001,16 +2821,18 @@ pub mod invite_action {
         }
         /// <p>The Amazon Web Services account ID to invite.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.principal = input;
-            self
+            self.principal = input; self
         }
         /// Consumes the builder and constructs a [`InviteAction`](crate::model::InviteAction).
         pub fn build(self) -> crate::model::InviteAction {
             crate::model::InviteAction {
-                principal: self.principal,
+                principal: self.principal
+                ,
             }
         }
     }
+    
+    
 }
 impl InviteAction {
     /// Creates a new builder-style object to manufacture [`InviteAction`](crate::model::InviteAction).
@@ -3022,11 +2844,11 @@ impl InviteAction {
 /// <p>Configuration properties of a node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Node {
+pub struct Node  {
     /// <p>The unique identifier of the network that the node is on.</p>
     #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the member to which the node belongs.</p>
+    /// <p>The unique identifier of the member to which the node belongs.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
@@ -3044,123 +2866,114 @@ pub struct Node {
     pub framework_attributes: std::option::Option<crate::model::NodeFrameworkAttributes>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
     #[doc(hidden)]
-    pub log_publishing_configuration:
-        std::option::Option<crate::model::NodeLogPublishingConfiguration>,
-    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+    pub log_publishing_configuration: std::option::Option<crate::model::NodeLogPublishingConfiguration>,
+    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub state_db: std::option::Option<crate::model::StateDbType>,
-    /// <p>The status of the node.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <p>The status of the node.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li> 
+    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li> 
+    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li> 
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li> 
+    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li> 
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::NodeStatus>,
     /// <p>The date and time that the node was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
+    /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p> 
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl Node {
     /// <p>The unique identifier of the network that the node is on.</p>
-    pub fn network_id(&self) -> std::option::Option<&str> {
+    pub fn network_id(&self) -> std::option::Option<& str> {
         self.network_id.as_deref()
     }
-    /// <p>The unique identifier of the member to which the node belongs.</p>
+    /// <p>The unique identifier of the member to which the node belongs.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The unique identifier of the node.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The instance type of the node.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>Attributes of the blockchain framework being used.</p>
-    pub fn framework_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::NodeFrameworkAttributes> {
+    pub fn framework_attributes(&self) -> std::option::Option<& crate::model::NodeFrameworkAttributes> {
         self.framework_attributes.as_ref()
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
-    pub fn log_publishing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NodeLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> std::option::Option<& crate::model::NodeLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
-    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
-    pub fn state_db(&self) -> std::option::Option<&crate::model::StateDbType> {
+    pub fn state_db(&self) -> std::option::Option<& crate::model::StateDbType> {
         self.state_db.as_ref()
     }
-    /// <p>The status of the node.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <p>The status of the node.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li> 
+    /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li> 
+    /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li> 
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li> 
+    /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li> 
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::NodeStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NodeStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the node was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
+    /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p> 
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
 /// See [`Node`](crate::model::Node).
 pub mod node {
-
+    
     /// A builder for [`Node`](crate::model::Node).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3170,14 +2983,11 @@ pub mod node {
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) framework_attributes: std::option::Option<crate::model::NodeFrameworkAttributes>,
-        pub(crate) log_publishing_configuration:
-            std::option::Option<crate::model::NodeLogPublishingConfiguration>,
+        pub(crate) log_publishing_configuration: std::option::Option<crate::model::NodeLogPublishingConfiguration>,
         pub(crate) state_db: std::option::Option<crate::model::StateDbType>,
         pub(crate) status: std::option::Option<crate::model::NodeStatus>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
@@ -3189,20 +2999,18 @@ pub mod node {
         }
         /// <p>The unique identifier of the network that the node is on.</p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_id = input;
-            self
+            self.network_id = input; self
         }
-        /// <p>The unique identifier of the member to which the node belongs.</p>
+        /// <p>The unique identifier of the member to which the node belongs.</p> 
         /// <p>Applies only to Hyperledger Fabric.</p>
         pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the member to which the node belongs.</p>
+        /// <p>The unique identifier of the member to which the node belongs.</p> 
         /// <p>Applies only to Hyperledger Fabric.</p>
         pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.member_id = input;
-            self
+            self.member_id = input; self
         }
         /// <p>The unique identifier of the node.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3211,8 +3019,7 @@ pub mod node {
         }
         /// <p>The unique identifier of the node.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The instance type of the node.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3220,12 +3027,8 @@ pub mod node {
             self
         }
         /// <p>The instance type of the node.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3233,91 +3036,68 @@ pub mod node {
             self
         }
         /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>Attributes of the blockchain framework being used.</p>
-        pub fn framework_attributes(
-            mut self,
-            input: crate::model::NodeFrameworkAttributes,
-        ) -> Self {
+        pub fn framework_attributes(mut self, input: crate::model::NodeFrameworkAttributes) -> Self {
             self.framework_attributes = Some(input);
             self
         }
         /// <p>Attributes of the blockchain framework being used.</p>
-        pub fn set_framework_attributes(
-            mut self,
-            input: std::option::Option<crate::model::NodeFrameworkAttributes>,
-        ) -> Self {
-            self.framework_attributes = input;
-            self
+        pub fn set_framework_attributes(mut self, input: std::option::Option<crate::model::NodeFrameworkAttributes>) -> Self {
+            self.framework_attributes = input; self
         }
         /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
-        pub fn log_publishing_configuration(
-            mut self,
-            input: crate::model::NodeLogPublishingConfiguration,
-        ) -> Self {
+        pub fn log_publishing_configuration(mut self, input: crate::model::NodeLogPublishingConfiguration) -> Self {
             self.log_publishing_configuration = Some(input);
             self
         }
         /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
-        pub fn set_log_publishing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NodeLogPublishingConfiguration>,
-        ) -> Self {
-            self.log_publishing_configuration = input;
-            self
+        pub fn set_log_publishing_configuration(mut self, input: std::option::Option<crate::model::NodeLogPublishingConfiguration>) -> Self {
+            self.log_publishing_configuration = input; self
         }
-        /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+        /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p> 
         /// <p>Applies only to Hyperledger Fabric.</p>
         pub fn state_db(mut self, input: crate::model::StateDbType) -> Self {
             self.state_db = Some(input);
             self
         }
-        /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+        /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p> 
         /// <p>Applies only to Hyperledger Fabric.</p>
-        pub fn set_state_db(
-            mut self,
-            input: std::option::Option<crate::model::StateDbType>,
-        ) -> Self {
-            self.state_db = input;
-            self
+        pub fn set_state_db(mut self, input: std::option::Option<crate::model::StateDbType>) -> Self {
+            self.state_db = input; self
         }
-        /// <p>The status of the node.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-        /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-        /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-        /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-        /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+        /// <p>The status of the node.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li> 
+        /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li> 
+        /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li> 
+        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li> 
+        /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li> 
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::NodeStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the node.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li>
-        /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li>
-        /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li>
-        /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li>
-        /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
-        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+        /// <p>The status of the node.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a node.</p> </li> 
+        /// <li> <p> <code>AVAILABLE</code> - The node has been created and can participate in the network.</p> </li> 
+        /// <li> <p> <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.</p> </li> 
+        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a node and creation failed.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - The node is in the process of being updated.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The node is in the process of being deleted.</p> </li> 
+        /// <li> <p> <code>DELETED</code> - The node can no longer participate on the network.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li> 
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::NodeStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time that the node was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3325,39 +3105,25 @@ pub mod node {
             self
         }
         /// <p>The date and time that the node was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
+        /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p> 
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
+        /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p> 
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3366,42 +3132,55 @@ pub mod node {
         }
         /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p> 
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
         /// <p>Applies only to Hyperledger Fabric.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p> 
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
         /// <p>Applies only to Hyperledger Fabric.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`Node`](crate::model::Node).
         pub fn build(self) -> crate::model::Node {
             crate::model::Node {
-                network_id: self.network_id,
-                member_id: self.member_id,
-                id: self.id,
-                instance_type: self.instance_type,
-                availability_zone: self.availability_zone,
-                framework_attributes: self.framework_attributes,
-                log_publishing_configuration: self.log_publishing_configuration,
-                state_db: self.state_db,
-                status: self.status,
-                creation_date: self.creation_date,
-                tags: self.tags,
-                arn: self.arn,
-                kms_key_arn: self.kms_key_arn,
+                network_id: self.network_id
+                ,
+                member_id: self.member_id
+                ,
+                id: self.id
+                ,
+                instance_type: self.instance_type
+                ,
+                availability_zone: self.availability_zone
+                ,
+                framework_attributes: self.framework_attributes
+                ,
+                log_publishing_configuration: self.log_publishing_configuration
+                ,
+                state_db: self.state_db
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                tags: self.tags
+                ,
+                arn: self.arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Node {
     /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
@@ -3416,9 +3195,9 @@ impl Node {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statedbtype = unimplemented!();
 /// match statedbtype {
@@ -3440,58 +3219,52 @@ impl Node {
 /// Specifically, when `statedbtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StateDbType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StateDbType {
     #[allow(missing_docs)] // documentation missing in model
     CouchDb,
     #[allow(missing_docs)] // documentation missing in model
     LevelDb,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StateDbType {
     fn from(s: &str) -> Self {
         match s {
             "CouchDB" => StateDbType::CouchDb,
             "LevelDB" => StateDbType::LevelDb,
-            other => StateDbType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StateDbType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StateDbType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StateDbType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StateDbType::from(s))
+                }
+            }
 impl StateDbType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StateDbType::CouchDb => "CouchDB",
             StateDbType::LevelDb => "LevelDB",
-            StateDbType::Unknown(value) => value.as_str(),
+            StateDbType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CouchDB", "LevelDB"]
+        &[
+            "CouchDB", "LevelDB"
+        ]
     }
 }
 impl AsRef<str> for StateDbType {
@@ -3503,7 +3276,7 @@ impl AsRef<str> for StateDbType {
 /// <p>Attributes relevant to a node on a Managed Blockchain network for the blockchain framework that the network uses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeFrameworkAttributes {
+pub struct NodeFrameworkAttributes  {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::NodeFabricAttributes>,
@@ -3513,17 +3286,17 @@ pub struct NodeFrameworkAttributes {
 }
 impl NodeFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn fabric(&self) -> std::option::Option<&crate::model::NodeFabricAttributes> {
+    pub fn fabric(&self) -> std::option::Option<& crate::model::NodeFabricAttributes> {
         self.fabric.as_ref()
     }
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
-    pub fn ethereum(&self) -> std::option::Option<&crate::model::NodeEthereumAttributes> {
+    pub fn ethereum(&self) -> std::option::Option<& crate::model::NodeEthereumAttributes> {
         self.ethereum.as_ref()
     }
 }
 /// See [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
 pub mod node_framework_attributes {
-
+    
     /// A builder for [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3537,12 +3310,8 @@ pub mod node_framework_attributes {
             self
         }
         /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-        pub fn set_fabric(
-            mut self,
-            input: std::option::Option<crate::model::NodeFabricAttributes>,
-        ) -> Self {
-            self.fabric = input;
-            self
+        pub fn set_fabric(mut self, input: std::option::Option<crate::model::NodeFabricAttributes>) -> Self {
+            self.fabric = input; self
         }
         /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
         pub fn ethereum(mut self, input: crate::model::NodeEthereumAttributes) -> Self {
@@ -3550,21 +3319,21 @@ pub mod node_framework_attributes {
             self
         }
         /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
-        pub fn set_ethereum(
-            mut self,
-            input: std::option::Option<crate::model::NodeEthereumAttributes>,
-        ) -> Self {
-            self.ethereum = input;
-            self
+        pub fn set_ethereum(mut self, input: std::option::Option<crate::model::NodeEthereumAttributes>) -> Self {
+            self.ethereum = input; self
         }
         /// Consumes the builder and constructs a [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
         pub fn build(self) -> crate::model::NodeFrameworkAttributes {
             crate::model::NodeFrameworkAttributes {
-                fabric: self.fabric,
-                ethereum: self.ethereum,
+                fabric: self.fabric
+                ,
+                ethereum: self.ethereum
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeFrameworkAttributes {
     /// Creates a new builder-style object to manufacture [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
@@ -3576,7 +3345,7 @@ impl NodeFrameworkAttributes {
 /// <p>Attributes of an Ethereum node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeEthereumAttributes {
+pub struct NodeEthereumAttributes  {
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
     #[doc(hidden)]
     pub http_endpoint: std::option::Option<std::string::String>,
@@ -3586,17 +3355,17 @@ pub struct NodeEthereumAttributes {
 }
 impl NodeEthereumAttributes {
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn http_endpoint(&self) -> std::option::Option<&str> {
+    pub fn http_endpoint(&self) -> std::option::Option<& str> {
         self.http_endpoint.as_deref()
     }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn web_socket_endpoint(&self) -> std::option::Option<&str> {
+    pub fn web_socket_endpoint(&self) -> std::option::Option<& str> {
         self.web_socket_endpoint.as_deref()
     }
 }
 /// See [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
 pub mod node_ethereum_attributes {
-
+    
     /// A builder for [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3610,12 +3379,8 @@ pub mod node_ethereum_attributes {
             self
         }
         /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-        pub fn set_http_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.http_endpoint = input;
-            self
+        pub fn set_http_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_endpoint = input; self
         }
         /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
         pub fn web_socket_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3623,21 +3388,21 @@ pub mod node_ethereum_attributes {
             self
         }
         /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-        pub fn set_web_socket_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.web_socket_endpoint = input;
-            self
+        pub fn set_web_socket_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.web_socket_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
         pub fn build(self) -> crate::model::NodeEthereumAttributes {
             crate::model::NodeEthereumAttributes {
-                http_endpoint: self.http_endpoint,
-                web_socket_endpoint: self.web_socket_endpoint,
+                http_endpoint: self.http_endpoint
+                ,
+                web_socket_endpoint: self.web_socket_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeEthereumAttributes {
     /// Creates a new builder-style object to manufacture [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
@@ -3649,7 +3414,7 @@ impl NodeEthereumAttributes {
 /// <p>Attributes of Hyperledger Fabric for a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeFabricAttributes {
+pub struct NodeFabricAttributes  {
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
     #[doc(hidden)]
     pub peer_endpoint: std::option::Option<std::string::String>,
@@ -3659,17 +3424,17 @@ pub struct NodeFabricAttributes {
 }
 impl NodeFabricAttributes {
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
-    pub fn peer_endpoint(&self) -> std::option::Option<&str> {
+    pub fn peer_endpoint(&self) -> std::option::Option<& str> {
         self.peer_endpoint.as_deref()
     }
     /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
-    pub fn peer_event_endpoint(&self) -> std::option::Option<&str> {
+    pub fn peer_event_endpoint(&self) -> std::option::Option<& str> {
         self.peer_event_endpoint.as_deref()
     }
 }
 /// See [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
 pub mod node_fabric_attributes {
-
+    
     /// A builder for [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3683,12 +3448,8 @@ pub mod node_fabric_attributes {
             self
         }
         /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
-        pub fn set_peer_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.peer_endpoint = input;
-            self
+        pub fn set_peer_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peer_endpoint = input; self
         }
         /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
         pub fn peer_event_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3696,21 +3457,21 @@ pub mod node_fabric_attributes {
             self
         }
         /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
-        pub fn set_peer_event_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.peer_event_endpoint = input;
-            self
+        pub fn set_peer_event_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.peer_event_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
         pub fn build(self) -> crate::model::NodeFabricAttributes {
             crate::model::NodeFabricAttributes {
-                peer_endpoint: self.peer_endpoint,
-                peer_event_endpoint: self.peer_event_endpoint,
+                peer_endpoint: self.peer_endpoint
+                ,
+                peer_event_endpoint: self.peer_event_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeFabricAttributes {
     /// Creates a new builder-style object to manufacture [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
@@ -3722,7 +3483,7 @@ impl NodeFabricAttributes {
 /// <p>Network configuration properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Network {
+pub struct Network  {
     /// <p>The unique identifier of the network.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3753,74 +3514,68 @@ pub struct Network {
     /// <p>The date and time that the network was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
+    /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p> 
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Network {
     /// <p>The unique identifier of the network.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the network.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Attributes of the blockchain framework for the network.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The blockchain framework that the network uses.</p>
-    pub fn framework(&self) -> std::option::Option<&crate::model::Framework> {
+    pub fn framework(&self) -> std::option::Option<& crate::model::Framework> {
         self.framework.as_ref()
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
-    pub fn framework_version(&self) -> std::option::Option<&str> {
+    pub fn framework_version(&self) -> std::option::Option<& str> {
         self.framework_version.as_deref()
     }
     /// <p>Attributes of the blockchain framework that the network uses.</p>
-    pub fn framework_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::NetworkFrameworkAttributes> {
+    pub fn framework_attributes(&self) -> std::option::Option<& crate::model::NetworkFrameworkAttributes> {
         self.framework_attributes.as_ref()
     }
     /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
-    pub fn vpc_endpoint_service_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_service_name(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_service_name.as_deref()
     }
     /// <p>The voting rules for the network to decide if a proposal is accepted.</p>
-    pub fn voting_policy(&self) -> std::option::Option<&crate::model::VotingPolicy> {
+    pub fn voting_policy(&self) -> std::option::Option<& crate::model::VotingPolicy> {
         self.voting_policy.as_ref()
     }
     /// <p>The current status of the network.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NetworkStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NetworkStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the network was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
+    /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p> 
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`Network`](crate::model::Network).
 pub mod network {
-
+    
     /// A builder for [`Network`](crate::model::Network).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3829,15 +3584,12 @@ pub mod network {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) framework: std::option::Option<crate::model::Framework>,
         pub(crate) framework_version: std::option::Option<std::string::String>,
-        pub(crate) framework_attributes:
-            std::option::Option<crate::model::NetworkFrameworkAttributes>,
+        pub(crate) framework_attributes: std::option::Option<crate::model::NetworkFrameworkAttributes>,
         pub(crate) vpc_endpoint_service_name: std::option::Option<std::string::String>,
         pub(crate) voting_policy: std::option::Option<crate::model::VotingPolicy>,
         pub(crate) status: std::option::Option<crate::model::NetworkStatus>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3848,8 +3600,7 @@ pub mod network {
         }
         /// <p>The unique identifier of the network.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the network.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3858,8 +3609,7 @@ pub mod network {
         }
         /// <p>The name of the network.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Attributes of the blockchain framework for the network.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3868,8 +3618,7 @@ pub mod network {
         }
         /// <p>Attributes of the blockchain framework for the network.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The blockchain framework that the network uses.</p>
         pub fn framework(mut self, input: crate::model::Framework) -> Self {
@@ -3877,12 +3626,8 @@ pub mod network {
             self
         }
         /// <p>The blockchain framework that the network uses.</p>
-        pub fn set_framework(
-            mut self,
-            input: std::option::Option<crate::model::Framework>,
-        ) -> Self {
-            self.framework = input;
-            self
+        pub fn set_framework(mut self, input: std::option::Option<crate::model::Framework>) -> Self {
+            self.framework = input; self
         }
         /// <p>The version of the blockchain framework that the network uses.</p>
         pub fn framework_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3890,28 +3635,17 @@ pub mod network {
             self
         }
         /// <p>The version of the blockchain framework that the network uses.</p>
-        pub fn set_framework_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.framework_version = input;
-            self
+        pub fn set_framework_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.framework_version = input; self
         }
         /// <p>Attributes of the blockchain framework that the network uses.</p>
-        pub fn framework_attributes(
-            mut self,
-            input: crate::model::NetworkFrameworkAttributes,
-        ) -> Self {
+        pub fn framework_attributes(mut self, input: crate::model::NetworkFrameworkAttributes) -> Self {
             self.framework_attributes = Some(input);
             self
         }
         /// <p>Attributes of the blockchain framework that the network uses.</p>
-        pub fn set_framework_attributes(
-            mut self,
-            input: std::option::Option<crate::model::NetworkFrameworkAttributes>,
-        ) -> Self {
-            self.framework_attributes = input;
-            self
+        pub fn set_framework_attributes(mut self, input: std::option::Option<crate::model::NetworkFrameworkAttributes>) -> Self {
+            self.framework_attributes = input; self
         }
         /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
         pub fn vpc_endpoint_service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3919,12 +3653,8 @@ pub mod network {
             self
         }
         /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
-        pub fn set_vpc_endpoint_service_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_endpoint_service_name = input;
-            self
+        pub fn set_vpc_endpoint_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_endpoint_service_name = input; self
         }
         /// <p>The voting rules for the network to decide if a proposal is accepted.</p>
         pub fn voting_policy(mut self, input: crate::model::VotingPolicy) -> Self {
@@ -3932,12 +3662,8 @@ pub mod network {
             self
         }
         /// <p>The voting rules for the network to decide if a proposal is accepted.</p>
-        pub fn set_voting_policy(
-            mut self,
-            input: std::option::Option<crate::model::VotingPolicy>,
-        ) -> Self {
-            self.voting_policy = input;
-            self
+        pub fn set_voting_policy(mut self, input: std::option::Option<crate::model::VotingPolicy>) -> Self {
+            self.voting_policy = input; self
         }
         /// <p>The current status of the network.</p>
         pub fn status(mut self, input: crate::model::NetworkStatus) -> Self {
@@ -3945,12 +3671,8 @@ pub mod network {
             self
         }
         /// <p>The current status of the network.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NetworkStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NetworkStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time that the network was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3958,39 +3680,25 @@ pub mod network {
             self
         }
         /// <p>The date and time that the network was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
+        /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p> 
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
+        /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p> 
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3999,27 +3707,40 @@ pub mod network {
         }
         /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`Network`](crate::model::Network).
         pub fn build(self) -> crate::model::Network {
             crate::model::Network {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                framework: self.framework,
-                framework_version: self.framework_version,
-                framework_attributes: self.framework_attributes,
-                vpc_endpoint_service_name: self.vpc_endpoint_service_name,
-                voting_policy: self.voting_policy,
-                status: self.status,
-                creation_date: self.creation_date,
-                tags: self.tags,
-                arn: self.arn,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                framework: self.framework
+                ,
+                framework_version: self.framework_version
+                ,
+                framework_attributes: self.framework_attributes
+                ,
+                vpc_endpoint_service_name: self.vpc_endpoint_service_name
+                ,
+                voting_policy: self.voting_policy
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                tags: self.tags
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Network {
     /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
@@ -4028,56 +3749,49 @@ impl Network {
     }
 }
 
-/// <p> The voting rules for the network to decide if a proposal is accepted </p>
+/// <p> The voting rules for the network to decide if a proposal is accepted </p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VotingPolicy {
+pub struct VotingPolicy  {
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
     #[doc(hidden)]
     pub approval_threshold_policy: std::option::Option<crate::model::ApprovalThresholdPolicy>,
 }
 impl VotingPolicy {
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
-    pub fn approval_threshold_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::ApprovalThresholdPolicy> {
+    pub fn approval_threshold_policy(&self) -> std::option::Option<& crate::model::ApprovalThresholdPolicy> {
         self.approval_threshold_policy.as_ref()
     }
 }
 /// See [`VotingPolicy`](crate::model::VotingPolicy).
 pub mod voting_policy {
-
+    
     /// A builder for [`VotingPolicy`](crate::model::VotingPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) approval_threshold_policy:
-            std::option::Option<crate::model::ApprovalThresholdPolicy>,
+        pub(crate) approval_threshold_policy: std::option::Option<crate::model::ApprovalThresholdPolicy>,
     }
     impl Builder {
         /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
-        pub fn approval_threshold_policy(
-            mut self,
-            input: crate::model::ApprovalThresholdPolicy,
-        ) -> Self {
+        pub fn approval_threshold_policy(mut self, input: crate::model::ApprovalThresholdPolicy) -> Self {
             self.approval_threshold_policy = Some(input);
             self
         }
         /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
-        pub fn set_approval_threshold_policy(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalThresholdPolicy>,
-        ) -> Self {
-            self.approval_threshold_policy = input;
-            self
+        pub fn set_approval_threshold_policy(mut self, input: std::option::Option<crate::model::ApprovalThresholdPolicy>) -> Self {
+            self.approval_threshold_policy = input; self
         }
         /// Consumes the builder and constructs a [`VotingPolicy`](crate::model::VotingPolicy).
         pub fn build(self) -> crate::model::VotingPolicy {
             crate::model::VotingPolicy {
-                approval_threshold_policy: self.approval_threshold_policy,
+                approval_threshold_policy: self.approval_threshold_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl VotingPolicy {
     /// Creates a new builder-style object to manufacture [`VotingPolicy`](crate::model::VotingPolicy).
@@ -4086,11 +3800,11 @@ impl VotingPolicy {
     }
 }
 
-/// <p>A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
+/// <p>A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalThresholdPolicy {
+pub struct ApprovalThresholdPolicy  {
     /// <p>The percentage of votes among all members that must be <code>YES</code> for a proposal to be approved. For example, a <code>ThresholdPercentage</code> value of <code>50</code> indicates 50%. The <code>ThresholdComparator</code> determines the precise comparison. If a <code>ThresholdPercentage</code> value of <code>50</code> is specified on a network with 10 members, along with a <code>ThresholdComparator</code> value of <code>GREATER_THAN</code>, this indicates that 6 <code>YES</code> votes are required for the proposal to be approved.</p>
     #[doc(hidden)]
     pub threshold_percentage: std::option::Option<i32>,
@@ -4111,13 +3825,13 @@ impl ApprovalThresholdPolicy {
         self.proposal_duration_in_hours
     }
     /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
-    pub fn threshold_comparator(&self) -> std::option::Option<&crate::model::ThresholdComparator> {
+    pub fn threshold_comparator(&self) -> std::option::Option<& crate::model::ThresholdComparator> {
         self.threshold_comparator.as_ref()
     }
 }
 /// See [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
 pub mod approval_threshold_policy {
-
+    
     /// A builder for [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4133,8 +3847,7 @@ pub mod approval_threshold_policy {
         }
         /// <p>The percentage of votes among all members that must be <code>YES</code> for a proposal to be approved. For example, a <code>ThresholdPercentage</code> value of <code>50</code> indicates 50%. The <code>ThresholdComparator</code> determines the precise comparison. If a <code>ThresholdPercentage</code> value of <code>50</code> is specified on a network with 10 members, along with a <code>ThresholdComparator</code> value of <code>GREATER_THAN</code>, this indicates that 6 <code>YES</code> votes are required for the proposal to be approved.</p>
         pub fn set_threshold_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.threshold_percentage = input;
-            self
+            self.threshold_percentage = input; self
         }
         /// <p>The duration from the time that a proposal is created until it expires. If members cast neither the required number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes required to reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> aren't carried out.</p>
         pub fn proposal_duration_in_hours(mut self, input: i32) -> Self {
@@ -4143,8 +3856,7 @@ pub mod approval_threshold_policy {
         }
         /// <p>The duration from the time that a proposal is created until it expires. If members cast neither the required number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes required to reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> aren't carried out.</p>
         pub fn set_proposal_duration_in_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.proposal_duration_in_hours = input;
-            self
+            self.proposal_duration_in_hours = input; self
         }
         /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
         pub fn threshold_comparator(mut self, input: crate::model::ThresholdComparator) -> Self {
@@ -4152,22 +3864,23 @@ pub mod approval_threshold_policy {
             self
         }
         /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
-        pub fn set_threshold_comparator(
-            mut self,
-            input: std::option::Option<crate::model::ThresholdComparator>,
-        ) -> Self {
-            self.threshold_comparator = input;
-            self
+        pub fn set_threshold_comparator(mut self, input: std::option::Option<crate::model::ThresholdComparator>) -> Self {
+            self.threshold_comparator = input; self
         }
         /// Consumes the builder and constructs a [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
         pub fn build(self) -> crate::model::ApprovalThresholdPolicy {
             crate::model::ApprovalThresholdPolicy {
-                threshold_percentage: self.threshold_percentage,
-                proposal_duration_in_hours: self.proposal_duration_in_hours,
-                threshold_comparator: self.threshold_comparator,
+                threshold_percentage: self.threshold_percentage
+                ,
+                proposal_duration_in_hours: self.proposal_duration_in_hours
+                ,
+                threshold_comparator: self.threshold_comparator
+                ,
             }
         }
     }
+    
+    
 }
 impl ApprovalThresholdPolicy {
     /// Creates a new builder-style object to manufacture [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
@@ -4182,9 +3895,9 @@ impl ApprovalThresholdPolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let thresholdcomparator = unimplemented!();
 /// match thresholdcomparator {
@@ -4206,60 +3919,52 @@ impl ApprovalThresholdPolicy {
 /// Specifically, when `thresholdcomparator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ThresholdComparator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ThresholdComparator {
     #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
     #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqualTo,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ThresholdComparator {
     fn from(s: &str) -> Self {
         match s {
             "GREATER_THAN" => ThresholdComparator::GreaterThan,
             "GREATER_THAN_OR_EQUAL_TO" => ThresholdComparator::GreaterThanOrEqualTo,
-            other => {
-                ThresholdComparator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ThresholdComparator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ThresholdComparator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThresholdComparator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ThresholdComparator::from(s))
+                }
+            }
 impl ThresholdComparator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ThresholdComparator::GreaterThan => "GREATER_THAN",
             ThresholdComparator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            ThresholdComparator::Unknown(value) => value.as_str(),
+            ThresholdComparator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO"]
+        &[
+            "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO"
+        ]
     }
 }
 impl AsRef<str> for ThresholdComparator {
@@ -4271,7 +3976,7 @@ impl AsRef<str> for ThresholdComparator {
 /// <p>Attributes relevant to the network for the blockchain framework that the network uses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkFrameworkAttributes {
+pub struct NetworkFrameworkAttributes  {
     /// <p>Attributes of Hyperledger Fabric for a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::NetworkFabricAttributes>,
@@ -4281,17 +3986,17 @@ pub struct NetworkFrameworkAttributes {
 }
 impl NetworkFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn fabric(&self) -> std::option::Option<&crate::model::NetworkFabricAttributes> {
+    pub fn fabric(&self) -> std::option::Option<& crate::model::NetworkFabricAttributes> {
         self.fabric.as_ref()
     }
     /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
-    pub fn ethereum(&self) -> std::option::Option<&crate::model::NetworkEthereumAttributes> {
+    pub fn ethereum(&self) -> std::option::Option<& crate::model::NetworkEthereumAttributes> {
         self.ethereum.as_ref()
     }
 }
 /// See [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
 pub mod network_framework_attributes {
-
+    
     /// A builder for [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4305,12 +4010,8 @@ pub mod network_framework_attributes {
             self
         }
         /// <p>Attributes of Hyperledger Fabric for a Managed Blockchain network that uses Hyperledger Fabric.</p>
-        pub fn set_fabric(
-            mut self,
-            input: std::option::Option<crate::model::NetworkFabricAttributes>,
-        ) -> Self {
-            self.fabric = input;
-            self
+        pub fn set_fabric(mut self, input: std::option::Option<crate::model::NetworkFabricAttributes>) -> Self {
+            self.fabric = input; self
         }
         /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
         pub fn ethereum(mut self, input: crate::model::NetworkEthereumAttributes) -> Self {
@@ -4318,21 +4019,21 @@ pub mod network_framework_attributes {
             self
         }
         /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
-        pub fn set_ethereum(
-            mut self,
-            input: std::option::Option<crate::model::NetworkEthereumAttributes>,
-        ) -> Self {
-            self.ethereum = input;
-            self
+        pub fn set_ethereum(mut self, input: std::option::Option<crate::model::NetworkEthereumAttributes>) -> Self {
+            self.ethereum = input; self
         }
         /// Consumes the builder and constructs a [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
         pub fn build(self) -> crate::model::NetworkFrameworkAttributes {
             crate::model::NetworkFrameworkAttributes {
-                fabric: self.fabric,
-                ethereum: self.ethereum,
+                fabric: self.fabric
+                ,
+                ethereum: self.ethereum
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkFrameworkAttributes {
     /// Creates a new builder-style object to manufacture [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
@@ -4344,67 +4045,69 @@ impl NetworkFrameworkAttributes {
 /// <p>Attributes of Ethereum for a network. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkEthereumAttributes {
-    /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
-    /// <ul>
-    /// <li> <p>mainnet = <code>1</code> </p> </li>
-    /// <li> <p>goerli = <code>5</code> </p> </li>
-    /// <li> <p>rinkeby = <code>4</code> </p> </li>
-    /// <li> <p>ropsten = <code>3</code> </p> </li>
+pub struct NetworkEthereumAttributes  {
+    /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p> 
+    /// <ul> 
+    /// <li> <p>mainnet = <code>1</code> </p> </li> 
+    /// <li> <p>goerli = <code>5</code> </p> </li> 
+    /// <li> <p>rinkeby = <code>4</code> </p> </li> 
+    /// <li> <p>ropsten = <code>3</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub chain_id: std::option::Option<std::string::String>,
 }
 impl NetworkEthereumAttributes {
-    /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
-    /// <ul>
-    /// <li> <p>mainnet = <code>1</code> </p> </li>
-    /// <li> <p>goerli = <code>5</code> </p> </li>
-    /// <li> <p>rinkeby = <code>4</code> </p> </li>
-    /// <li> <p>ropsten = <code>3</code> </p> </li>
+    /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p> 
+    /// <ul> 
+    /// <li> <p>mainnet = <code>1</code> </p> </li> 
+    /// <li> <p>goerli = <code>5</code> </p> </li> 
+    /// <li> <p>rinkeby = <code>4</code> </p> </li> 
+    /// <li> <p>ropsten = <code>3</code> </p> </li> 
     /// </ul>
-    pub fn chain_id(&self) -> std::option::Option<&str> {
+    pub fn chain_id(&self) -> std::option::Option<& str> {
         self.chain_id.as_deref()
     }
 }
 /// See [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
 pub mod network_ethereum_attributes {
-
+    
     /// A builder for [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chain_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
-        /// <ul>
-        /// <li> <p>mainnet = <code>1</code> </p> </li>
-        /// <li> <p>goerli = <code>5</code> </p> </li>
-        /// <li> <p>rinkeby = <code>4</code> </p> </li>
-        /// <li> <p>ropsten = <code>3</code> </p> </li>
+        /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p> 
+        /// <ul> 
+        /// <li> <p>mainnet = <code>1</code> </p> </li> 
+        /// <li> <p>goerli = <code>5</code> </p> </li> 
+        /// <li> <p>rinkeby = <code>4</code> </p> </li> 
+        /// <li> <p>ropsten = <code>3</code> </p> </li> 
         /// </ul>
         pub fn chain_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.chain_id = Some(input.into());
             self
         }
-        /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
-        /// <ul>
-        /// <li> <p>mainnet = <code>1</code> </p> </li>
-        /// <li> <p>goerli = <code>5</code> </p> </li>
-        /// <li> <p>rinkeby = <code>4</code> </p> </li>
-        /// <li> <p>ropsten = <code>3</code> </p> </li>
+        /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p> 
+        /// <ul> 
+        /// <li> <p>mainnet = <code>1</code> </p> </li> 
+        /// <li> <p>goerli = <code>5</code> </p> </li> 
+        /// <li> <p>rinkeby = <code>4</code> </p> </li> 
+        /// <li> <p>ropsten = <code>3</code> </p> </li> 
         /// </ul>
         pub fn set_chain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.chain_id = input;
-            self
+            self.chain_id = input; self
         }
         /// Consumes the builder and constructs a [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
         pub fn build(self) -> crate::model::NetworkEthereumAttributes {
             crate::model::NetworkEthereumAttributes {
-                chain_id: self.chain_id,
+                chain_id: self.chain_id
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkEthereumAttributes {
     /// Creates a new builder-style object to manufacture [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
@@ -4416,7 +4119,7 @@ impl NetworkEthereumAttributes {
 /// <p>Attributes of Hyperledger Fabric for a network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkFabricAttributes {
+pub struct NetworkFabricAttributes  {
     /// <p>The endpoint of the ordering service for the network.</p>
     #[doc(hidden)]
     pub ordering_service_endpoint: std::option::Option<std::string::String>,
@@ -4426,17 +4129,17 @@ pub struct NetworkFabricAttributes {
 }
 impl NetworkFabricAttributes {
     /// <p>The endpoint of the ordering service for the network.</p>
-    pub fn ordering_service_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ordering_service_endpoint(&self) -> std::option::Option<& str> {
         self.ordering_service_endpoint.as_deref()
     }
     /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
-    pub fn edition(&self) -> std::option::Option<&crate::model::Edition> {
+    pub fn edition(&self) -> std::option::Option<& crate::model::Edition> {
         self.edition.as_ref()
     }
 }
 /// See [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
 pub mod network_fabric_attributes {
-
+    
     /// A builder for [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4450,12 +4153,8 @@ pub mod network_fabric_attributes {
             self
         }
         /// <p>The endpoint of the ordering service for the network.</p>
-        pub fn set_ordering_service_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ordering_service_endpoint = input;
-            self
+        pub fn set_ordering_service_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ordering_service_endpoint = input; self
         }
         /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
         pub fn edition(mut self, input: crate::model::Edition) -> Self {
@@ -4464,17 +4163,20 @@ pub mod network_fabric_attributes {
         }
         /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
         pub fn set_edition(mut self, input: std::option::Option<crate::model::Edition>) -> Self {
-            self.edition = input;
-            self
+            self.edition = input; self
         }
         /// Consumes the builder and constructs a [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
         pub fn build(self) -> crate::model::NetworkFabricAttributes {
             crate::model::NetworkFabricAttributes {
-                ordering_service_endpoint: self.ordering_service_endpoint,
-                edition: self.edition,
+                ordering_service_endpoint: self.ordering_service_endpoint
+                ,
+                edition: self.edition
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkFabricAttributes {
     /// Creates a new builder-style object to manufacture [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
@@ -4489,9 +4191,9 @@ impl NetworkFabricAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let edition = unimplemented!();
 /// match edition {
@@ -4513,58 +4215,52 @@ impl NetworkFabricAttributes {
 /// Specifically, when `edition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Edition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Edition {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     #[allow(missing_docs)] // documentation missing in model
     Starter,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Edition {
     fn from(s: &str) -> Self {
         match s {
             "STANDARD" => Edition::Standard,
             "STARTER" => Edition::Starter,
-            other => Edition::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Edition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Edition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Edition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Edition::from(s))
+                }
+            }
 impl Edition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Edition::Standard => "STANDARD",
             Edition::Starter => "STARTER",
-            Edition::Unknown(value) => value.as_str(),
+            Edition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STANDARD", "STARTER"]
+        &[
+            "STANDARD", "STARTER"
+        ]
     }
 }
 impl AsRef<str> for Edition {
@@ -4573,11 +4269,11 @@ impl AsRef<str> for Edition {
     }
 }
 
-/// <p>Member configuration properties.</p>
+/// <p>Member configuration properties.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Member {
+pub struct Member  {
     /// <p>The unique identifier of the network to which the member belongs.</p>
     #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
@@ -4595,17 +4291,16 @@ pub struct Member {
     pub framework_attributes: std::option::Option<crate::model::MemberFrameworkAttributes>,
     /// <p>Configuration properties for logging events associated with a member.</p>
     #[doc(hidden)]
-    pub log_publishing_configuration:
-        std::option::Option<crate::model::MemberLogPublishingConfiguration>,
-    /// <p>The status of a member.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    pub log_publishing_configuration: std::option::Option<crate::model::MemberLogPublishingConfiguration>,
+    /// <p>The status of a member.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li> 
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li> 
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::MemberStatus>,
@@ -4614,82 +4309,74 @@ pub struct Member {
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web Services owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web Services owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl Member {
     /// <p>The unique identifier of the network to which the member belongs.</p>
-    pub fn network_id(&self) -> std::option::Option<&str> {
+    pub fn network_id(&self) -> std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The unique identifier of the member.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the member.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description for the member.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
-    pub fn framework_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::MemberFrameworkAttributes> {
+    pub fn framework_attributes(&self) -> std::option::Option<& crate::model::MemberFrameworkAttributes> {
         self.framework_attributes.as_ref()
     }
     /// <p>Configuration properties for logging events associated with a member.</p>
-    pub fn log_publishing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::MemberLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> std::option::Option<& crate::model::MemberLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
-    /// <p>The status of a member.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+    /// <p>The status of a member.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li> 
+    /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li> 
+    /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+    /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MemberStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the member was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web Services owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web Services owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
 /// See [`Member`](crate::model::Member).
 pub mod member {
-
+    
     /// A builder for [`Member`](crate::model::Member).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4697,15 +4384,11 @@ pub mod member {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) framework_attributes:
-            std::option::Option<crate::model::MemberFrameworkAttributes>,
-        pub(crate) log_publishing_configuration:
-            std::option::Option<crate::model::MemberLogPublishingConfiguration>,
+        pub(crate) framework_attributes: std::option::Option<crate::model::MemberFrameworkAttributes>,
+        pub(crate) log_publishing_configuration: std::option::Option<crate::model::MemberLogPublishingConfiguration>,
         pub(crate) status: std::option::Option<crate::model::MemberStatus>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
@@ -4717,8 +4400,7 @@ pub mod member {
         }
         /// <p>The unique identifier of the network to which the member belongs.</p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_id = input;
-            self
+            self.network_id = input; self
         }
         /// <p>The unique identifier of the member.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4727,8 +4409,7 @@ pub mod member {
         }
         /// <p>The unique identifier of the member.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the member.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4737,8 +4418,7 @@ pub mod member {
         }
         /// <p>The name of the member.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>An optional description for the member.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4747,71 +4427,52 @@ pub mod member {
         }
         /// <p>An optional description for the member.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
-        pub fn framework_attributes(
-            mut self,
-            input: crate::model::MemberFrameworkAttributes,
-        ) -> Self {
+        pub fn framework_attributes(mut self, input: crate::model::MemberFrameworkAttributes) -> Self {
             self.framework_attributes = Some(input);
             self
         }
         /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
-        pub fn set_framework_attributes(
-            mut self,
-            input: std::option::Option<crate::model::MemberFrameworkAttributes>,
-        ) -> Self {
-            self.framework_attributes = input;
-            self
+        pub fn set_framework_attributes(mut self, input: std::option::Option<crate::model::MemberFrameworkAttributes>) -> Self {
+            self.framework_attributes = input; self
         }
         /// <p>Configuration properties for logging events associated with a member.</p>
-        pub fn log_publishing_configuration(
-            mut self,
-            input: crate::model::MemberLogPublishingConfiguration,
-        ) -> Self {
+        pub fn log_publishing_configuration(mut self, input: crate::model::MemberLogPublishingConfiguration) -> Self {
             self.log_publishing_configuration = Some(input);
             self
         }
         /// <p>Configuration properties for logging events associated with a member.</p>
-        pub fn set_log_publishing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MemberLogPublishingConfiguration>,
-        ) -> Self {
-            self.log_publishing_configuration = input;
-            self
+        pub fn set_log_publishing_configuration(mut self, input: std::option::Option<crate::model::MemberLogPublishingConfiguration>) -> Self {
+            self.log_publishing_configuration = input; self
         }
-        /// <p>The status of a member.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
-        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+        /// <p>The status of a member.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li> 
+        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li> 
+        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::MemberStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of a member.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li>
-        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
+        /// <p>The status of a member.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The Amazon Web Services account is in the process of creating a member.</p> </li> 
+        /// <li> <p> <code>AVAILABLE</code> - The member has been created and can participate in the network.</p> </li> 
+        /// <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create a member and creation failed.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - The member is in the process of being updated.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+        /// <li> <p> <code>DELETED</code> - The member can no longer participate on the network and all associated resources are deleted. Either the Amazon Web Services account that owns the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> 
+        /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the member resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MemberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MemberStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time that the member was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4819,37 +4480,23 @@ pub mod member {
             self
         }
         /// <p>The date and time that the member was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4858,38 +4505,49 @@ pub mod member {
         }
         /// <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web Services owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web Services owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web Services owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web Services owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`Member`](crate::model::Member).
         pub fn build(self) -> crate::model::Member {
             crate::model::Member {
-                network_id: self.network_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                framework_attributes: self.framework_attributes,
-                log_publishing_configuration: self.log_publishing_configuration,
-                status: self.status,
-                creation_date: self.creation_date,
-                tags: self.tags,
-                arn: self.arn,
-                kms_key_arn: self.kms_key_arn,
+                network_id: self.network_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                framework_attributes: self.framework_attributes
+                ,
+                log_publishing_configuration: self.log_publishing_configuration
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                tags: self.tags
+                ,
+                arn: self.arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Member {
     /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
@@ -4901,20 +4559,20 @@ impl Member {
 /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberFrameworkAttributes {
+pub struct MemberFrameworkAttributes  {
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::MemberFabricAttributes>,
 }
 impl MemberFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn fabric(&self) -> std::option::Option<&crate::model::MemberFabricAttributes> {
+    pub fn fabric(&self) -> std::option::Option<& crate::model::MemberFabricAttributes> {
         self.fabric.as_ref()
     }
 }
 /// See [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
 pub mod member_framework_attributes {
-
+    
     /// A builder for [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4927,20 +4585,19 @@ pub mod member_framework_attributes {
             self
         }
         /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-        pub fn set_fabric(
-            mut self,
-            input: std::option::Option<crate::model::MemberFabricAttributes>,
-        ) -> Self {
-            self.fabric = input;
-            self
+        pub fn set_fabric(mut self, input: std::option::Option<crate::model::MemberFabricAttributes>) -> Self {
+            self.fabric = input; self
         }
         /// Consumes the builder and constructs a [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
         pub fn build(self) -> crate::model::MemberFrameworkAttributes {
             crate::model::MemberFrameworkAttributes {
-                fabric: self.fabric,
+                fabric: self.fabric
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberFrameworkAttributes {
     /// Creates a new builder-style object to manufacture [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
@@ -4952,7 +4609,7 @@ impl MemberFrameworkAttributes {
 /// <p>Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberFabricAttributes {
+pub struct MemberFabricAttributes  {
     /// <p>The user name for the initial administrator user for the member.</p>
     #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
@@ -4962,17 +4619,17 @@ pub struct MemberFabricAttributes {
 }
 impl MemberFabricAttributes {
     /// <p>The user name for the initial administrator user for the member.</p>
-    pub fn admin_username(&self) -> std::option::Option<&str> {
+    pub fn admin_username(&self) -> std::option::Option<& str> {
         self.admin_username.as_deref()
     }
     /// <p>The endpoint used to access the member's certificate authority.</p>
-    pub fn ca_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ca_endpoint(&self) -> std::option::Option<& str> {
         self.ca_endpoint.as_deref()
     }
 }
 /// See [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
 pub mod member_fabric_attributes {
-
+    
     /// A builder for [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4986,12 +4643,8 @@ pub mod member_fabric_attributes {
             self
         }
         /// <p>The user name for the initial administrator user for the member.</p>
-        pub fn set_admin_username(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_username = input;
-            self
+        pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_username = input; self
         }
         /// <p>The endpoint used to access the member's certificate authority.</p>
         pub fn ca_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5000,17 +4653,20 @@ pub mod member_fabric_attributes {
         }
         /// <p>The endpoint used to access the member's certificate authority.</p>
         pub fn set_ca_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ca_endpoint = input;
-            self
+            self.ca_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
         pub fn build(self) -> crate::model::MemberFabricAttributes {
             crate::model::MemberFabricAttributes {
-                admin_username: self.admin_username,
-                ca_endpoint: self.ca_endpoint,
+                admin_username: self.admin_username
+                ,
+                ca_endpoint: self.ca_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberFabricAttributes {
     /// Creates a new builder-style object to manufacture [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
@@ -5019,18 +4675,18 @@ impl MemberFabricAttributes {
     }
 }
 
-/// <important>
-/// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p>
-/// </important>
+/// <important> 
+/// <p>The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments.</p> 
+/// </important> 
 /// <p>The properties of the Accessor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Accessor {
+pub struct Accessor  {
     /// <p>The unique identifier of the accessor.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The type of the accessor.</p> <note>
-    /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+    /// <p>The type of the accessor.</p> <note> 
+    /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AccessorType>,
@@ -5049,35 +4705,35 @@ pub struct Accessor {
 }
 impl Accessor {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The type of the accessor.</p> <note>
-    /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+    /// <p>The type of the accessor.</p> <note> 
+    /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p> 
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AccessorType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AccessorType> {
         self.r#type.as_ref()
     }
     /// <p>The billing token is a property of the accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
-    pub fn billing_token(&self) -> std::option::Option<&str> {
+    pub fn billing_token(&self) -> std::option::Option<& str> {
         self.billing_token.as_deref()
     }
     /// <p>The current status of the accessor.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AccessorStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AccessorStatus> {
         self.status.as_ref()
     }
     /// <p>The creation date and time of the accessor.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`Accessor`](crate::model::Accessor).
 pub mod accessor {
-
+    
     /// A builder for [`Accessor`](crate::model::Accessor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5096,22 +4752,20 @@ pub mod accessor {
         }
         /// <p>The unique identifier of the accessor.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The type of the accessor.</p> <note>
-        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+        /// <p>The type of the accessor.</p> <note> 
+        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p> 
         /// </note>
         pub fn r#type(mut self, input: crate::model::AccessorType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the accessor.</p> <note>
-        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
+        /// <p>The type of the accessor.</p> <note> 
+        /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p> 
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AccessorType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The billing token is a property of the accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
         pub fn billing_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5119,12 +4773,8 @@ pub mod accessor {
             self
         }
         /// <p>The billing token is a property of the accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
-        pub fn set_billing_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_token = input;
-            self
+        pub fn set_billing_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_token = input; self
         }
         /// <p>The current status of the accessor.</p>
         pub fn status(mut self, input: crate::model::AccessorStatus) -> Self {
@@ -5132,12 +4782,8 @@ pub mod accessor {
             self
         }
         /// <p>The current status of the accessor.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AccessorStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AccessorStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The creation date and time of the accessor.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5145,12 +4791,8 @@ pub mod accessor {
             self
         }
         /// <p>The creation date and time of the accessor.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5159,21 +4801,28 @@ pub mod accessor {
         }
         /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`Accessor`](crate::model::Accessor).
         pub fn build(self) -> crate::model::Accessor {
             crate::model::Accessor {
-                id: self.id,
-                r#type: self.r#type,
-                billing_token: self.billing_token,
-                status: self.status,
-                creation_date: self.creation_date,
-                arn: self.arn,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                billing_token: self.billing_token
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Accessor {
     /// Creates a new builder-style object to manufacture [`Accessor`](crate::model::Accessor).
@@ -5185,7 +4834,7 @@ impl Accessor {
 /// <p>Configuration properties of a node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeConfiguration {
+pub struct NodeConfiguration  {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
@@ -5194,44 +4843,40 @@ pub struct NodeConfiguration {
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     #[doc(hidden)]
-    pub log_publishing_configuration:
-        std::option::Option<crate::model::NodeLogPublishingConfiguration>,
-    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
+    pub log_publishing_configuration: std::option::Option<crate::model::NodeLogPublishingConfiguration>,
+    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub state_db: std::option::Option<crate::model::StateDbType>,
 }
 impl NodeConfiguration {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
-    pub fn log_publishing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NodeLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> std::option::Option<& crate::model::NodeLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
-    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
+    /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p> 
     /// <p>Applies only to Hyperledger Fabric.</p>
-    pub fn state_db(&self) -> std::option::Option<&crate::model::StateDbType> {
+    pub fn state_db(&self) -> std::option::Option<& crate::model::StateDbType> {
         self.state_db.as_ref()
     }
 }
 /// See [`NodeConfiguration`](crate::model::NodeConfiguration).
 pub mod node_configuration {
-
+    
     /// A builder for [`NodeConfiguration`](crate::model::NodeConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) log_publishing_configuration:
-            std::option::Option<crate::model::NodeLogPublishingConfiguration>,
+        pub(crate) log_publishing_configuration: std::option::Option<crate::model::NodeLogPublishingConfiguration>,
         pub(crate) state_db: std::option::Option<crate::model::StateDbType>,
     }
     impl Builder {
@@ -5241,12 +4886,8 @@ pub mod node_configuration {
             self
         }
         /// <p>The Amazon Managed Blockchain instance type for the node.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5254,54 +4895,45 @@ pub mod node_configuration {
             self
         }
         /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
-        pub fn log_publishing_configuration(
-            mut self,
-            input: crate::model::NodeLogPublishingConfiguration,
-        ) -> Self {
+        pub fn log_publishing_configuration(mut self, input: crate::model::NodeLogPublishingConfiguration) -> Self {
             self.log_publishing_configuration = Some(input);
             self
         }
         /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
-        pub fn set_log_publishing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NodeLogPublishingConfiguration>,
-        ) -> Self {
-            self.log_publishing_configuration = input;
-            self
+        pub fn set_log_publishing_configuration(mut self, input: std::option::Option<crate::model::NodeLogPublishingConfiguration>) -> Self {
+            self.log_publishing_configuration = input; self
         }
-        /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
+        /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p> 
         /// <p>Applies only to Hyperledger Fabric.</p>
         pub fn state_db(mut self, input: crate::model::StateDbType) -> Self {
             self.state_db = Some(input);
             self
         }
-        /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
+        /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p> 
         /// <p>Applies only to Hyperledger Fabric.</p>
-        pub fn set_state_db(
-            mut self,
-            input: std::option::Option<crate::model::StateDbType>,
-        ) -> Self {
-            self.state_db = input;
-            self
+        pub fn set_state_db(mut self, input: std::option::Option<crate::model::StateDbType>) -> Self {
+            self.state_db = input; self
         }
         /// Consumes the builder and constructs a [`NodeConfiguration`](crate::model::NodeConfiguration).
         pub fn build(self) -> crate::model::NodeConfiguration {
             crate::model::NodeConfiguration {
-                instance_type: self.instance_type,
-                availability_zone: self.availability_zone,
-                log_publishing_configuration: self.log_publishing_configuration,
-                state_db: self.state_db,
+                instance_type: self.instance_type
+                ,
+                availability_zone: self.availability_zone
+                ,
+                log_publishing_configuration: self.log_publishing_configuration
+                ,
+                state_db: self.state_db
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeConfiguration {
     /// Creates a new builder-style object to manufacture [`NodeConfiguration`](crate::model::NodeConfiguration).
@@ -5310,11 +4942,11 @@ impl NodeConfiguration {
     }
 }
 
-/// <p>Configuration properties of the member.</p>
+/// <p>Configuration properties of the member.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberConfiguration {
+pub struct MemberConfiguration  {
     /// <p>The name of the member.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5326,76 +4958,63 @@ pub struct MemberConfiguration {
     pub framework_configuration: std::option::Option<crate::model::MemberFrameworkConfiguration>,
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
     #[doc(hidden)]
-    pub log_publishing_configuration:
-        std::option::Option<crate::model::MemberLogPublishingConfiguration>,
-    /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    pub log_publishing_configuration: std::option::Option<crate::model::MemberLogPublishingConfiguration>,
+    /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
     /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    /// <p>Use one of the following options to specify this parameter:</p>
-    /// <ul>
-    /// <li> <p> <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
-    /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
+    /// <p>Use one of the following options to specify this parameter:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li> 
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl MemberConfiguration {
     /// <p>The name of the member.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description of the member.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configuration properties of the blockchain framework relevant to the member.</p>
-    pub fn framework_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::MemberFrameworkConfiguration> {
+    pub fn framework_configuration(&self) -> std::option::Option<& crate::model::MemberFrameworkConfiguration> {
         self.framework_configuration.as_ref()
     }
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
-    pub fn log_publishing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::MemberLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> std::option::Option<& crate::model::MemberLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
-    /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+    /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
     /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    /// <p>Use one of the following options to specify this parameter:</p>
-    /// <ul>
-    /// <li> <p> <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
-    /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
+    /// <p>Use one of the following options to specify this parameter:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li> 
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
     /// </ul>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
 /// See [`MemberConfiguration`](crate::model::MemberConfiguration).
 pub mod member_configuration {
-
+    
     /// A builder for [`MemberConfiguration`](crate::model::MemberConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) framework_configuration:
-            std::option::Option<crate::model::MemberFrameworkConfiguration>,
-        pub(crate) log_publishing_configuration:
-            std::option::Option<crate::model::MemberLogPublishingConfiguration>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) framework_configuration: std::option::Option<crate::model::MemberFrameworkConfiguration>,
+        pub(crate) log_publishing_configuration: std::option::Option<crate::model::MemberLogPublishingConfiguration>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5406,8 +5025,7 @@ pub mod member_configuration {
         }
         /// <p>The name of the member.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>An optional description of the member.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5416,100 +5034,82 @@ pub mod member_configuration {
         }
         /// <p>An optional description of the member.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Configuration properties of the blockchain framework relevant to the member.</p>
-        pub fn framework_configuration(
-            mut self,
-            input: crate::model::MemberFrameworkConfiguration,
-        ) -> Self {
+        pub fn framework_configuration(mut self, input: crate::model::MemberFrameworkConfiguration) -> Self {
             self.framework_configuration = Some(input);
             self
         }
         /// <p>Configuration properties of the blockchain framework relevant to the member.</p>
-        pub fn set_framework_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MemberFrameworkConfiguration>,
-        ) -> Self {
-            self.framework_configuration = input;
-            self
+        pub fn set_framework_configuration(mut self, input: std::option::Option<crate::model::MemberFrameworkConfiguration>) -> Self {
+            self.framework_configuration = input; self
         }
         /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
-        pub fn log_publishing_configuration(
-            mut self,
-            input: crate::model::MemberLogPublishingConfiguration,
-        ) -> Self {
+        pub fn log_publishing_configuration(mut self, input: crate::model::MemberLogPublishingConfiguration) -> Self {
             self.log_publishing_configuration = Some(input);
             self
         }
         /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
-        pub fn set_log_publishing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MemberLogPublishingConfiguration>,
-        ) -> Self {
-            self.log_publishing_configuration = input;
-            self
+        pub fn set_log_publishing_configuration(mut self, input: std::option::Option<crate::model::MemberLogPublishingConfiguration>) -> Self {
+            self.log_publishing_configuration = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+        /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
         /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
+        /// <p>Tags assigned to the member. Tags consist of a key and optional value. For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
         /// <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        /// <p>Use one of the following options to specify this parameter:</p>
-        /// <ul>
-        /// <li> <p> <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
-        /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
+        /// <p>Use one of the following options to specify this parameter:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li> 
+        /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
         /// </ul>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-        /// <p>Use one of the following options to specify this parameter:</p>
-        /// <ul>
-        /// <li> <p> <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
-        /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) to use for encryption at rest in the member. This parameter is inherited by any nodes that this member creates. For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p> 
+        /// <p>Use one of the following options to specify this parameter:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Undefined or empty string</b> - By default, use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li> 
+        /// <li> <p> <b>A valid symmetric customer managed KMS key</b> - Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
         /// </ul>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`MemberConfiguration`](crate::model::MemberConfiguration).
         pub fn build(self) -> crate::model::MemberConfiguration {
             crate::model::MemberConfiguration {
-                name: self.name,
-                description: self.description,
-                framework_configuration: self.framework_configuration,
-                log_publishing_configuration: self.log_publishing_configuration,
-                tags: self.tags,
-                kms_key_arn: self.kms_key_arn,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                framework_configuration: self.framework_configuration
+                ,
+                log_publishing_configuration: self.log_publishing_configuration
+                ,
+                tags: self.tags
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberConfiguration {
     /// Creates a new builder-style object to manufacture [`MemberConfiguration`](crate::model::MemberConfiguration).
@@ -5521,20 +5121,20 @@ impl MemberConfiguration {
 /// <p>Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberFrameworkConfiguration {
+pub struct MemberFrameworkConfiguration  {
     /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::MemberFabricConfiguration>,
 }
 impl MemberFrameworkConfiguration {
     /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn fabric(&self) -> std::option::Option<&crate::model::MemberFabricConfiguration> {
+    pub fn fabric(&self) -> std::option::Option<& crate::model::MemberFabricConfiguration> {
         self.fabric.as_ref()
     }
 }
 /// See [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
 pub mod member_framework_configuration {
-
+    
     /// A builder for [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5547,20 +5147,19 @@ pub mod member_framework_configuration {
             self
         }
         /// <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-        pub fn set_fabric(
-            mut self,
-            input: std::option::Option<crate::model::MemberFabricConfiguration>,
-        ) -> Self {
-            self.fabric = input;
-            self
+        pub fn set_fabric(mut self, input: std::option::Option<crate::model::MemberFabricConfiguration>) -> Self {
+            self.fabric = input; self
         }
         /// Consumes the builder and constructs a [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
         pub fn build(self) -> crate::model::MemberFrameworkConfiguration {
             crate::model::MemberFrameworkConfiguration {
-                fabric: self.fabric,
+                fabric: self.fabric
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberFrameworkConfiguration {
     /// Creates a new builder-style object to manufacture [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
@@ -5572,7 +5171,7 @@ impl MemberFrameworkConfiguration {
 /// <p>Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MemberFabricConfiguration {
+pub struct MemberFabricConfiguration  {
     /// <p>The user name for the member's initial administrative user.</p>
     #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
@@ -5582,15 +5181,15 @@ pub struct MemberFabricConfiguration {
 }
 impl MemberFabricConfiguration {
     /// <p>The user name for the member's initial administrative user.</p>
-    pub fn admin_username(&self) -> std::option::Option<&str> {
+    pub fn admin_username(&self) -> std::option::Option<& str> {
         self.admin_username.as_deref()
     }
     /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-    pub fn admin_password(&self) -> std::option::Option<&str> {
+    pub fn admin_password(&self) -> std::option::Option<& str> {
         self.admin_password.as_deref()
     }
 }
-impl std::fmt::Debug for MemberFabricConfiguration {
+impl  std::fmt::Debug for MemberFabricConfiguration  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MemberFabricConfiguration");
         formatter.field("admin_username", &self.admin_username);
@@ -5600,7 +5199,7 @@ impl std::fmt::Debug for MemberFabricConfiguration {
 }
 /// See [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
 pub mod member_fabric_configuration {
-
+    
     /// A builder for [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5614,12 +5213,8 @@ pub mod member_fabric_configuration {
             self
         }
         /// <p>The user name for the member's initial administrative user.</p>
-        pub fn set_admin_username(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_username = input;
-            self
+        pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_username = input; self
         }
         /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
         pub fn admin_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5627,18 +5222,16 @@ pub mod member_fabric_configuration {
             self
         }
         /// <p>The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-        pub fn set_admin_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_password = input;
-            self
+        pub fn set_admin_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_password = input; self
         }
         /// Consumes the builder and constructs a [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
         pub fn build(self) -> crate::model::MemberFabricConfiguration {
             crate::model::MemberFabricConfiguration {
-                admin_username: self.admin_username,
-                admin_password: self.admin_password,
+                admin_username: self.admin_username
+                ,
+                admin_password: self.admin_password
+                ,
             }
         }
     }
@@ -5650,6 +5243,8 @@ pub mod member_fabric_configuration {
             formatter.finish()
         }
     }
+    
+    
 }
 impl MemberFabricConfiguration {
     /// Creates a new builder-style object to manufacture [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
@@ -5661,20 +5256,20 @@ impl MemberFabricConfiguration {
 /// <p> Configuration properties relevant to the network for the blockchain framework that the network uses. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkFrameworkConfiguration {
+pub struct NetworkFrameworkConfiguration  {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
     #[doc(hidden)]
     pub fabric: std::option::Option<crate::model::NetworkFabricConfiguration>,
 }
 impl NetworkFrameworkConfiguration {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
-    pub fn fabric(&self) -> std::option::Option<&crate::model::NetworkFabricConfiguration> {
+    pub fn fabric(&self) -> std::option::Option<& crate::model::NetworkFabricConfiguration> {
         self.fabric.as_ref()
     }
 }
 /// See [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
 pub mod network_framework_configuration {
-
+    
     /// A builder for [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5687,20 +5282,19 @@ pub mod network_framework_configuration {
             self
         }
         /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
-        pub fn set_fabric(
-            mut self,
-            input: std::option::Option<crate::model::NetworkFabricConfiguration>,
-        ) -> Self {
-            self.fabric = input;
-            self
+        pub fn set_fabric(mut self, input: std::option::Option<crate::model::NetworkFabricConfiguration>) -> Self {
+            self.fabric = input; self
         }
         /// Consumes the builder and constructs a [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
         pub fn build(self) -> crate::model::NetworkFrameworkConfiguration {
             crate::model::NetworkFrameworkConfiguration {
-                fabric: self.fabric,
+                fabric: self.fabric
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkFrameworkConfiguration {
     /// Creates a new builder-style object to manufacture [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
@@ -5712,20 +5306,20 @@ impl NetworkFrameworkConfiguration {
 /// <p>Hyperledger Fabric configuration properties for the network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkFabricConfiguration {
+pub struct NetworkFabricConfiguration  {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     #[doc(hidden)]
     pub edition: std::option::Option<crate::model::Edition>,
 }
 impl NetworkFabricConfiguration {
     /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
-    pub fn edition(&self) -> std::option::Option<&crate::model::Edition> {
+    pub fn edition(&self) -> std::option::Option<& crate::model::Edition> {
         self.edition.as_ref()
     }
 }
 /// See [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).
 pub mod network_fabric_configuration {
-
+    
     /// A builder for [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5739,16 +5333,18 @@ pub mod network_fabric_configuration {
         }
         /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
         pub fn set_edition(mut self, input: std::option::Option<crate::model::Edition>) -> Self {
-            self.edition = input;
-            self
+            self.edition = input; self
         }
         /// Consumes the builder and constructs a [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).
         pub fn build(self) -> crate::model::NetworkFabricConfiguration {
             crate::model::NetworkFabricConfiguration {
-                edition: self.edition,
+                edition: self.edition
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkFabricConfiguration {
     /// Creates a new builder-style object to manufacture [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).
@@ -5756,3 +5352,4 @@ impl NetworkFabricConfiguration {
         crate::model::network_fabric_configuration::Builder::default()
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamprocessorparametertodelete = unimplemented!();
 /// match streamprocessorparametertodelete {
@@ -30,64 +30,52 @@
 /// Specifically, when `streamprocessorparametertodelete` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamProcessorParameterToDelete::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamProcessorParameterToDelete {
     #[allow(missing_docs)] // documentation missing in model
     ConnectedHomeMinConfidence,
     #[allow(missing_docs)] // documentation missing in model
     RegionsOfInterest,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamProcessorParameterToDelete {
     fn from(s: &str) -> Self {
         match s {
-            "ConnectedHomeMinConfidence" => {
-                StreamProcessorParameterToDelete::ConnectedHomeMinConfidence
-            }
+            "ConnectedHomeMinConfidence" => StreamProcessorParameterToDelete::ConnectedHomeMinConfidence,
             "RegionsOfInterest" => StreamProcessorParameterToDelete::RegionsOfInterest,
-            other => StreamProcessorParameterToDelete::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StreamProcessorParameterToDelete::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamProcessorParameterToDelete {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamProcessorParameterToDelete::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamProcessorParameterToDelete::from(s))
+                }
+            }
 impl StreamProcessorParameterToDelete {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            StreamProcessorParameterToDelete::ConnectedHomeMinConfidence => {
-                "ConnectedHomeMinConfidence"
-            }
+            StreamProcessorParameterToDelete::ConnectedHomeMinConfidence => "ConnectedHomeMinConfidence",
             StreamProcessorParameterToDelete::RegionsOfInterest => "RegionsOfInterest",
-            StreamProcessorParameterToDelete::Unknown(value) => value.as_str(),
+            StreamProcessorParameterToDelete::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ConnectedHomeMinConfidence", "RegionsOfInterest"]
+        &[
+            "ConnectedHomeMinConfidence", "RegionsOfInterest"
+        ]
     }
 }
 impl AsRef<str> for StreamProcessorParameterToDelete {
@@ -99,7 +87,7 @@ impl AsRef<str> for StreamProcessorParameterToDelete {
 /// <p> Allows you to opt in or opt out to share data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessorDataSharingPreference {
+pub struct StreamProcessorDataSharingPreference  {
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
     #[doc(hidden)]
     pub opt_in: bool,
@@ -112,7 +100,7 @@ impl StreamProcessorDataSharingPreference {
 }
 /// See [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
 pub mod stream_processor_data_sharing_preference {
-
+    
     /// A builder for [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -126,16 +114,19 @@ pub mod stream_processor_data_sharing_preference {
         }
         /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
         pub fn set_opt_in(mut self, input: std::option::Option<bool>) -> Self {
-            self.opt_in = input;
-            self
+            self.opt_in = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
         pub fn build(self) -> crate::model::StreamProcessorDataSharingPreference {
             crate::model::StreamProcessorDataSharingPreference {
-                opt_in: self.opt_in.unwrap_or_default(),
+                opt_in: self.opt_in
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessorDataSharingPreference {
     /// Creates a new builder-style object to manufacture [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
@@ -144,11 +135,11 @@ impl StreamProcessorDataSharingPreference {
     }
 }
 
-/// <p>Specifies a location within the frame that Rekognition checks for objects of interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code> to set a region of the screen.</p>
+/// <p>Specifies a location within the frame that Rekognition checks for objects of interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code> to set a region of the screen.</p> 
 /// <p>A word, face, or label is included in the region if it is more than half in that region. If there is more than one region, the word, face, or label is compared with all regions of the screen. Any object of interest that is more than half in a region is kept in the results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionOfInterest {
+pub struct RegionOfInterest  {
     /// <p>The box representing a region of interest on screen.</p>
     #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -158,17 +149,17 @@ pub struct RegionOfInterest {
 }
 impl RegionOfInterest {
     /// <p>The box representing a region of interest on screen.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
-    pub fn polygon(&self) -> std::option::Option<&[crate::model::Point]> {
+    pub fn polygon(&self) -> std::option::Option<& [crate::model::Point]> {
         self.polygon.as_deref()
     }
 }
 /// See [`RegionOfInterest`](crate::model::RegionOfInterest).
 pub mod region_of_interest {
-
+    
     /// A builder for [`RegionOfInterest`](crate::model::RegionOfInterest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -182,12 +173,8 @@ pub mod region_of_interest {
             self
         }
         /// <p>The box representing a region of interest on screen.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// Appends an item to `polygon`.
         ///
@@ -196,26 +183,26 @@ pub mod region_of_interest {
         /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
         pub fn polygon(mut self, input: crate::model::Point) -> Self {
             let mut v = self.polygon.unwrap_or_default();
-            v.push(input);
-            self.polygon = Some(v);
-            self
+                            v.push(input);
+                            self.polygon = Some(v);
+                            self
         }
         /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
-        pub fn set_polygon(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Point>>,
-        ) -> Self {
-            self.polygon = input;
-            self
+        pub fn set_polygon(mut self, input: std::option::Option<std::vec::Vec<crate::model::Point>>) -> Self {
+            self.polygon = input; self
         }
         /// Consumes the builder and constructs a [`RegionOfInterest`](crate::model::RegionOfInterest).
         pub fn build(self) -> crate::model::RegionOfInterest {
             crate::model::RegionOfInterest {
-                bounding_box: self.bounding_box,
-                polygon: self.polygon,
+                bounding_box: self.bounding_box
+                ,
+                polygon: self.polygon
+                ,
             }
         }
     }
+    
+    
 }
 impl RegionOfInterest {
     /// Creates a new builder-style object to manufacture [`RegionOfInterest`](crate::model::RegionOfInterest).
@@ -224,11 +211,11 @@ impl RegionOfInterest {
     }
 }
 
-/// <p>The X and Y coordinates of a point on an image or video frame. The X and Y values are ratios of the overall image size or video resolution. For example, if an input image is 700x200 and the values are X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.</p>
+/// <p>The X and Y coordinates of a point on an image or video frame. The X and Y values are ratios of the overall image size or video resolution. For example, if an input image is 700x200 and the values are X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.</p> 
 /// <p>An array of <code>Point</code> objects makes up a <code>Polygon</code>. A <code>Polygon</code> is returned by <code>DetectText</code> and by <code>DetectCustomLabels</code> <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Point {
+pub struct Point  {
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
     #[doc(hidden)]
     pub x: std::option::Option<f32>,
@@ -248,7 +235,7 @@ impl Point {
 }
 /// See [`Point`](crate::model::Point).
 pub mod point {
-
+    
     /// A builder for [`Point`](crate::model::Point).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -263,8 +250,7 @@ pub mod point {
         }
         /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
         pub fn set_x(mut self, input: std::option::Option<f32>) -> Self {
-            self.x = input;
-            self
+            self.x = input; self
         }
         /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
         pub fn y(mut self, input: f32) -> Self {
@@ -273,17 +259,20 @@ pub mod point {
         }
         /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
         pub fn set_y(mut self, input: std::option::Option<f32>) -> Self {
-            self.y = input;
-            self
+            self.y = input; self
         }
         /// Consumes the builder and constructs a [`Point`](crate::model::Point).
         pub fn build(self) -> crate::model::Point {
             crate::model::Point {
-                x: self.x,
-                y: self.y,
+                x: self.x
+                ,
+                y: self.y
+                ,
             }
         }
     }
+    
+    
 }
 impl Point {
     /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point).
@@ -292,14 +281,14 @@ impl Point {
     }
 }
 
-/// <p>Identifies the bounding box around the label, face, text, object of interest, or personal protective equipment. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p>
-/// <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p>
-/// <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note>
-/// <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p>
+/// <p>Identifies the bounding box around the label, face, text, object of interest, or personal protective equipment. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> 
+/// <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> 
+/// <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> 
+/// <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BoundingBox {
+pub struct BoundingBox  {
     /// <p>Width of the bounding box as a ratio of the overall image width.</p>
     #[doc(hidden)]
     pub width: std::option::Option<f32>,
@@ -333,7 +322,7 @@ impl BoundingBox {
 }
 /// See [`BoundingBox`](crate::model::BoundingBox).
 pub mod bounding_box {
-
+    
     /// A builder for [`BoundingBox`](crate::model::BoundingBox).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -350,8 +339,7 @@ pub mod bounding_box {
         }
         /// <p>Width of the bounding box as a ratio of the overall image width.</p>
         pub fn set_width(mut self, input: std::option::Option<f32>) -> Self {
-            self.width = input;
-            self
+            self.width = input; self
         }
         /// <p>Height of the bounding box as a ratio of the overall image height.</p>
         pub fn height(mut self, input: f32) -> Self {
@@ -360,8 +348,7 @@ pub mod bounding_box {
         }
         /// <p>Height of the bounding box as a ratio of the overall image height.</p>
         pub fn set_height(mut self, input: std::option::Option<f32>) -> Self {
-            self.height = input;
-            self
+            self.height = input; self
         }
         /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
         pub fn left(mut self, input: f32) -> Self {
@@ -370,8 +357,7 @@ pub mod bounding_box {
         }
         /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
         pub fn set_left(mut self, input: std::option::Option<f32>) -> Self {
-            self.left = input;
-            self
+            self.left = input; self
         }
         /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
         pub fn top(mut self, input: f32) -> Self {
@@ -380,19 +366,24 @@ pub mod bounding_box {
         }
         /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
         pub fn set_top(mut self, input: std::option::Option<f32>) -> Self {
-            self.top = input;
-            self
+            self.top = input; self
         }
         /// Consumes the builder and constructs a [`BoundingBox`](crate::model::BoundingBox).
         pub fn build(self) -> crate::model::BoundingBox {
             crate::model::BoundingBox {
-                width: self.width,
-                height: self.height,
-                left: self.left,
-                top: self.top,
+                width: self.width
+                ,
+                height: self.height
+                ,
+                left: self.left
+                ,
+                top: self.top
+                ,
             }
         }
     }
+    
+    
 }
 impl BoundingBox {
     /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox).
@@ -404,53 +395,45 @@ impl BoundingBox {
 /// <p> The stream processor settings that you want to update. <code>ConnectedHome</code> settings can be updated to detect different labels with a different minimum confidence. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessorSettingsForUpdate {
+pub struct StreamProcessorSettingsForUpdate  {
     /// <p> The label detection settings you want to use for your stream processor. </p>
     #[doc(hidden)]
-    pub connected_home_for_update:
-        std::option::Option<crate::model::ConnectedHomeSettingsForUpdate>,
+    pub connected_home_for_update: std::option::Option<crate::model::ConnectedHomeSettingsForUpdate>,
 }
 impl StreamProcessorSettingsForUpdate {
     /// <p> The label detection settings you want to use for your stream processor. </p>
-    pub fn connected_home_for_update(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectedHomeSettingsForUpdate> {
+    pub fn connected_home_for_update(&self) -> std::option::Option<& crate::model::ConnectedHomeSettingsForUpdate> {
         self.connected_home_for_update.as_ref()
     }
 }
 /// See [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
 pub mod stream_processor_settings_for_update {
-
+    
     /// A builder for [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connected_home_for_update:
-            std::option::Option<crate::model::ConnectedHomeSettingsForUpdate>,
+        pub(crate) connected_home_for_update: std::option::Option<crate::model::ConnectedHomeSettingsForUpdate>,
     }
     impl Builder {
         /// <p> The label detection settings you want to use for your stream processor. </p>
-        pub fn connected_home_for_update(
-            mut self,
-            input: crate::model::ConnectedHomeSettingsForUpdate,
-        ) -> Self {
+        pub fn connected_home_for_update(mut self, input: crate::model::ConnectedHomeSettingsForUpdate) -> Self {
             self.connected_home_for_update = Some(input);
             self
         }
         /// <p> The label detection settings you want to use for your stream processor. </p>
-        pub fn set_connected_home_for_update(
-            mut self,
-            input: std::option::Option<crate::model::ConnectedHomeSettingsForUpdate>,
-        ) -> Self {
-            self.connected_home_for_update = input;
-            self
+        pub fn set_connected_home_for_update(mut self, input: std::option::Option<crate::model::ConnectedHomeSettingsForUpdate>) -> Self {
+            self.connected_home_for_update = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
         pub fn build(self) -> crate::model::StreamProcessorSettingsForUpdate {
             crate::model::StreamProcessorSettingsForUpdate {
-                connected_home_for_update: self.connected_home_for_update,
+                connected_home_for_update: self.connected_home_for_update
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessorSettingsForUpdate {
     /// Creates a new builder-style object to manufacture [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
@@ -462,7 +445,7 @@ impl StreamProcessorSettingsForUpdate {
 /// <p> The label detection settings you want to use in your stream processor. This includes the labels you want the stream processor to detect and the minimum confidence level allowed to label objects. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectedHomeSettingsForUpdate {
+pub struct ConnectedHomeSettingsForUpdate  {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
     #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -472,7 +455,7 @@ pub struct ConnectedHomeSettingsForUpdate {
 }
 impl ConnectedHomeSettingsForUpdate {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
@@ -482,7 +465,7 @@ impl ConnectedHomeSettingsForUpdate {
 }
 /// See [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
 pub mod connected_home_settings_for_update {
-
+    
     /// A builder for [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -497,17 +480,13 @@ pub mod connected_home_settings_for_update {
         /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
-            self.labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.labels = Some(v);
+                            self
         }
         /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.labels = input; self
         }
         /// <p> The minimum confidence required to label an object in the video. </p>
         pub fn min_confidence(mut self, input: f32) -> Self {
@@ -516,17 +495,20 @@ pub mod connected_home_settings_for_update {
         }
         /// <p> The minimum confidence required to label an object in the video. </p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_confidence = input;
-            self
+            self.min_confidence = input; self
         }
         /// Consumes the builder and constructs a [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
         pub fn build(self) -> crate::model::ConnectedHomeSettingsForUpdate {
             crate::model::ConnectedHomeSettingsForUpdate {
-                labels: self.labels,
-                min_confidence: self.min_confidence,
+                labels: self.labels
+                ,
+                min_confidence: self.min_confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectedHomeSettingsForUpdate {
     /// Creates a new builder-style object to manufacture [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
@@ -538,50 +520,49 @@ impl ConnectedHomeSettingsForUpdate {
 /// <p> Describes updates or additions to a dataset. A Single update or addition is an entry (JSON Line) that provides information about a single image. To update an existing entry, you match the <code>source-ref</code> field of the update entry with the <code>source-ref</code> filed of the entry that you want to update. If the <code>source-ref</code> field doesn't match an existing entry, the entry is added to dataset as a new entry. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetChanges {
-    /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
+pub struct DatasetChanges  {
+    /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p> 
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
     #[doc(hidden)]
     pub ground_truth: std::option::Option<aws_smithy_types::Blob>,
 }
 impl DatasetChanges {
-    /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
+    /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p> 
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
-    pub fn ground_truth(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn ground_truth(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.ground_truth.as_ref()
     }
 }
 /// See [`DatasetChanges`](crate::model::DatasetChanges).
 pub mod dataset_changes {
-
+    
     /// A builder for [`DatasetChanges`](crate::model::DatasetChanges).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ground_truth: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
+        /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p> 
         /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
         pub fn ground_truth(mut self, input: aws_smithy_types::Blob) -> Self {
             self.ground_truth = Some(input);
             self
         }
-        /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p>
+        /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you. </p> 
         /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
-        pub fn set_ground_truth(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.ground_truth = input;
-            self
+        pub fn set_ground_truth(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.ground_truth = input; self
         }
         /// Consumes the builder and constructs a [`DatasetChanges`](crate::model::DatasetChanges).
         pub fn build(self) -> crate::model::DatasetChanges {
             crate::model::DatasetChanges {
-                ground_truth: self.ground_truth,
+                ground_truth: self.ground_truth
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetChanges {
     /// Creates a new builder-style object to manufacture [`DatasetChanges`](crate::model::DatasetChanges).
@@ -596,9 +577,9 @@ impl DatasetChanges {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let projectversionstatus = unimplemented!();
 /// match projectversionstatus {
@@ -630,22 +611,14 @@ impl DatasetChanges {
 /// Specifically, when `projectversionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProjectVersionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProjectVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     CopyingCompleted,
@@ -672,7 +645,7 @@ pub enum ProjectVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     TrainingInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProjectVersionStatus {
     fn from(s: &str) -> Self {
@@ -689,19 +662,17 @@ impl std::convert::From<&str> for ProjectVersionStatus {
             "TRAINING_COMPLETED" => ProjectVersionStatus::TrainingCompleted,
             "TRAINING_FAILED" => ProjectVersionStatus::TrainingFailed,
             "TRAINING_IN_PROGRESS" => ProjectVersionStatus::TrainingInProgress,
-            other => {
-                ProjectVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProjectVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProjectVersionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProjectVersionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProjectVersionStatus::from(s))
+                }
+            }
 impl ProjectVersionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -718,24 +689,13 @@ impl ProjectVersionStatus {
             ProjectVersionStatus::TrainingCompleted => "TRAINING_COMPLETED",
             ProjectVersionStatus::TrainingFailed => "TRAINING_FAILED",
             ProjectVersionStatus::TrainingInProgress => "TRAINING_IN_PROGRESS",
-            ProjectVersionStatus::Unknown(value) => value.as_str(),
+            ProjectVersionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COPYING_COMPLETED",
-            "COPYING_FAILED",
-            "COPYING_IN_PROGRESS",
-            "DELETING",
-            "FAILED",
-            "RUNNING",
-            "STARTING",
-            "STOPPED",
-            "STOPPING",
-            "TRAINING_COMPLETED",
-            "TRAINING_FAILED",
-            "TRAINING_IN_PROGRESS",
+            "COPYING_COMPLETED", "COPYING_FAILED", "COPYING_IN_PROGRESS", "DELETING", "FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "TRAINING_COMPLETED", "TRAINING_FAILED", "TRAINING_IN_PROGRESS"
         ]
     }
 }
@@ -748,7 +708,7 @@ impl AsRef<str> for ProjectVersionStatus {
 /// <p>Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTextDetectionFilters {
+pub struct StartTextDetectionFilters  {
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
     #[doc(hidden)]
     pub word_filter: std::option::Option<crate::model::DetectionFilter>,
@@ -758,23 +718,22 @@ pub struct StartTextDetectionFilters {
 }
 impl StartTextDetectionFilters {
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
-    pub fn word_filter(&self) -> std::option::Option<&crate::model::DetectionFilter> {
+    pub fn word_filter(&self) -> std::option::Option<& crate::model::DetectionFilter> {
         self.word_filter.as_ref()
     }
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
-    pub fn regions_of_interest(&self) -> std::option::Option<&[crate::model::RegionOfInterest]> {
+    pub fn regions_of_interest(&self) -> std::option::Option<& [crate::model::RegionOfInterest]> {
         self.regions_of_interest.as_deref()
     }
 }
 /// See [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
 pub mod start_text_detection_filters {
-
+    
     /// A builder for [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) word_filter: std::option::Option<crate::model::DetectionFilter>,
-        pub(crate) regions_of_interest:
-            std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
+        pub(crate) regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
     }
     impl Builder {
         /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
@@ -783,12 +742,8 @@ pub mod start_text_detection_filters {
             self
         }
         /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
-        pub fn set_word_filter(
-            mut self,
-            input: std::option::Option<crate::model::DetectionFilter>,
-        ) -> Self {
-            self.word_filter = input;
-            self
+        pub fn set_word_filter(mut self, input: std::option::Option<crate::model::DetectionFilter>) -> Self {
+            self.word_filter = input; self
         }
         /// Appends an item to `regions_of_interest`.
         ///
@@ -797,26 +752,26 @@ pub mod start_text_detection_filters {
         /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
         pub fn regions_of_interest(mut self, input: crate::model::RegionOfInterest) -> Self {
             let mut v = self.regions_of_interest.unwrap_or_default();
-            v.push(input);
-            self.regions_of_interest = Some(v);
-            self
+                            v.push(input);
+                            self.regions_of_interest = Some(v);
+                            self
         }
         /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
-        pub fn set_regions_of_interest(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
-        ) -> Self {
-            self.regions_of_interest = input;
-            self
+        pub fn set_regions_of_interest(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>) -> Self {
+            self.regions_of_interest = input; self
         }
         /// Consumes the builder and constructs a [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
         pub fn build(self) -> crate::model::StartTextDetectionFilters {
             crate::model::StartTextDetectionFilters {
-                word_filter: self.word_filter,
-                regions_of_interest: self.regions_of_interest,
+                word_filter: self.word_filter
+                ,
+                regions_of_interest: self.regions_of_interest
+                ,
             }
         }
     }
+    
+    
 }
 impl StartTextDetectionFilters {
     /// Creates a new builder-style object to manufacture [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
@@ -828,7 +783,7 @@ impl StartTextDetectionFilters {
 /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectionFilter {
+pub struct DetectionFilter  {
     /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
     #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
@@ -855,7 +810,7 @@ impl DetectionFilter {
 }
 /// See [`DetectionFilter`](crate::model::DetectionFilter).
 pub mod detection_filter {
-
+    
     /// A builder for [`DetectionFilter`](crate::model::DetectionFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -871,8 +826,7 @@ pub mod detection_filter {
         }
         /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_confidence = input;
-            self
+            self.min_confidence = input; self
         }
         /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
         pub fn min_bounding_box_height(mut self, input: f32) -> Self {
@@ -881,8 +835,7 @@ pub mod detection_filter {
         }
         /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
         pub fn set_min_bounding_box_height(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_bounding_box_height = input;
-            self
+            self.min_bounding_box_height = input; self
         }
         /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
         pub fn min_bounding_box_width(mut self, input: f32) -> Self {
@@ -891,18 +844,22 @@ pub mod detection_filter {
         }
         /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
         pub fn set_min_bounding_box_width(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_bounding_box_width = input;
-            self
+            self.min_bounding_box_width = input; self
         }
         /// Consumes the builder and constructs a [`DetectionFilter`](crate::model::DetectionFilter).
         pub fn build(self) -> crate::model::DetectionFilter {
             crate::model::DetectionFilter {
-                min_confidence: self.min_confidence,
-                min_bounding_box_height: self.min_bounding_box_height,
-                min_bounding_box_width: self.min_bounding_box_width,
+                min_confidence: self.min_confidence
+                ,
+                min_bounding_box_height: self.min_bounding_box_height
+                ,
+                min_bounding_box_width: self.min_bounding_box_width
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectionFilter {
     /// Creates a new builder-style object to manufacture [`DetectionFilter`](crate::model::DetectionFilter).
@@ -914,7 +871,7 @@ impl DetectionFilter {
 /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationChannel {
+pub struct NotificationChannel  {
     /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
@@ -924,17 +881,17 @@ pub struct NotificationChannel {
 }
 impl NotificationChannel {
     /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`NotificationChannel`](crate::model::NotificationChannel).
 pub mod notification_channel {
-
+    
     /// A builder for [`NotificationChannel`](crate::model::NotificationChannel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -948,12 +905,8 @@ pub mod notification_channel {
             self
         }
         /// <p>The Amazon SNS topic to which Amazon Rekognition posts the completion status.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -962,17 +915,20 @@ pub mod notification_channel {
         }
         /// <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`NotificationChannel`](crate::model::NotificationChannel).
         pub fn build(self) -> crate::model::NotificationChannel {
             crate::model::NotificationChannel {
-                sns_topic_arn: self.sns_topic_arn,
-                role_arn: self.role_arn,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl NotificationChannel {
     /// Creates a new builder-style object to manufacture [`NotificationChannel`](crate::model::NotificationChannel).
@@ -984,20 +940,20 @@ impl NotificationChannel {
 /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Video {
+pub struct Video  {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
     #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl Video {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+    pub fn s3_object(&self) -> std::option::Option<& crate::model::S3Object> {
         self.s3_object.as_ref()
     }
 }
 /// See [`Video`](crate::model::Video).
 pub mod video {
-
+    
     /// A builder for [`Video`](crate::model::Video).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1011,16 +967,18 @@ pub mod video {
         }
         /// <p>The Amazon S3 bucket name and file name for the video.</p>
         pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
-            self.s3_object = input;
-            self
+            self.s3_object = input; self
         }
         /// Consumes the builder and constructs a [`Video`](crate::model::Video).
         pub fn build(self) -> crate::model::Video {
             crate::model::Video {
-                s3_object: self.s3_object,
+                s3_object: self.s3_object
+                ,
             }
         }
     }
+    
+    
 }
 impl Video {
     /// Creates a new builder-style object to manufacture [`Video`](crate::model::Video).
@@ -1029,12 +987,12 @@ impl Video {
     }
 }
 
-/// <p>Provides the S3 bucket name and object name.</p>
-/// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+/// <p>Provides the S3 bucket name and object name.</p> 
+/// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
 /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Object {
+pub struct S3Object  {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -1047,21 +1005,21 @@ pub struct S3Object {
 }
 impl S3Object {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>S3 object key name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
-
+    
     /// A builder for [`S3Object`](crate::model::S3Object).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1077,8 +1035,7 @@ pub mod s3_object {
         }
         /// <p>Name of the S3 bucket.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>S3 object key name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1087,8 +1044,7 @@ pub mod s3_object {
         }
         /// <p>S3 object key name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1097,18 +1053,22 @@ pub mod s3_object {
         }
         /// <p>If the bucket is versioning enabled, you can specify the object version. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`S3Object`](crate::model::S3Object).
         pub fn build(self) -> crate::model::S3Object {
             crate::model::S3Object {
-                bucket: self.bucket,
-                name: self.name,
-                version: self.version,
+                bucket: self.bucket
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Object {
     /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
@@ -1120,7 +1080,7 @@ impl S3Object {
 /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessingStopSelector {
+pub struct StreamProcessingStopSelector  {
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
     #[doc(hidden)]
     pub max_duration_in_seconds: std::option::Option<i64>,
@@ -1133,7 +1093,7 @@ impl StreamProcessingStopSelector {
 }
 /// See [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
 pub mod stream_processing_stop_selector {
-
+    
     /// A builder for [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1147,16 +1107,18 @@ pub mod stream_processing_stop_selector {
         }
         /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
         pub fn set_max_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_duration_in_seconds = input;
-            self
+            self.max_duration_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
         pub fn build(self) -> crate::model::StreamProcessingStopSelector {
             crate::model::StreamProcessingStopSelector {
-                max_duration_in_seconds: self.max_duration_in_seconds,
+                max_duration_in_seconds: self.max_duration_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessingStopSelector {
     /// Creates a new builder-style object to manufacture [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
@@ -1168,53 +1130,45 @@ impl StreamProcessingStopSelector {
 /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessingStartSelector {
+pub struct StreamProcessingStartSelector  {
     /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
     #[doc(hidden)]
-    pub kvs_stream_start_selector:
-        std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
+    pub kvs_stream_start_selector: std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
 }
 impl StreamProcessingStartSelector {
     /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
-    pub fn kvs_stream_start_selector(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisVideoStreamStartSelector> {
+    pub fn kvs_stream_start_selector(&self) -> std::option::Option<& crate::model::KinesisVideoStreamStartSelector> {
         self.kvs_stream_start_selector.as_ref()
     }
 }
 /// See [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
 pub mod stream_processing_start_selector {
-
+    
     /// A builder for [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) kvs_stream_start_selector:
-            std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
+        pub(crate) kvs_stream_start_selector: std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
     }
     impl Builder {
         /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
-        pub fn kvs_stream_start_selector(
-            mut self,
-            input: crate::model::KinesisVideoStreamStartSelector,
-        ) -> Self {
+        pub fn kvs_stream_start_selector(mut self, input: crate::model::KinesisVideoStreamStartSelector) -> Self {
             self.kvs_stream_start_selector = Some(input);
             self
         }
         /// <p> Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream. </p>
-        pub fn set_kvs_stream_start_selector(
-            mut self,
-            input: std::option::Option<crate::model::KinesisVideoStreamStartSelector>,
-        ) -> Self {
-            self.kvs_stream_start_selector = input;
-            self
+        pub fn set_kvs_stream_start_selector(mut self, input: std::option::Option<crate::model::KinesisVideoStreamStartSelector>) -> Self {
+            self.kvs_stream_start_selector = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
         pub fn build(self) -> crate::model::StreamProcessingStartSelector {
             crate::model::StreamProcessingStartSelector {
-                kvs_stream_start_selector: self.kvs_stream_start_selector,
+                kvs_stream_start_selector: self.kvs_stream_start_selector
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessingStartSelector {
     /// Creates a new builder-style object to manufacture [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
@@ -1226,7 +1180,7 @@ impl StreamProcessingStartSelector {
 /// <p>Specifies the starting point in a Kinesis stream to start processing. You can use the producer timestamp or the fragment number. One of either producer timestamp or fragment number is required. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisVideoStreamStartSelector {
+pub struct KinesisVideoStreamStartSelector  {
     /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
     #[doc(hidden)]
     pub producer_timestamp: std::option::Option<i64>,
@@ -1240,13 +1194,13 @@ impl KinesisVideoStreamStartSelector {
         self.producer_timestamp
     }
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
-    pub fn fragment_number(&self) -> std::option::Option<&str> {
+    pub fn fragment_number(&self) -> std::option::Option<& str> {
         self.fragment_number.as_deref()
     }
 }
 /// See [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
 pub mod kinesis_video_stream_start_selector {
-
+    
     /// A builder for [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1261,8 +1215,7 @@ pub mod kinesis_video_stream_start_selector {
         }
         /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
         pub fn set_producer_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.producer_timestamp = input;
-            self
+            self.producer_timestamp = input; self
         }
         /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
         pub fn fragment_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1270,21 +1223,21 @@ pub mod kinesis_video_stream_start_selector {
             self
         }
         /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
-        pub fn set_fragment_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fragment_number = input;
-            self
+        pub fn set_fragment_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fragment_number = input; self
         }
         /// Consumes the builder and constructs a [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
         pub fn build(self) -> crate::model::KinesisVideoStreamStartSelector {
             crate::model::KinesisVideoStreamStartSelector {
-                producer_timestamp: self.producer_timestamp,
-                fragment_number: self.fragment_number,
+                producer_timestamp: self.producer_timestamp
+                ,
+                fragment_number: self.fragment_number
+                ,
             }
         }
     }
+    
+    
 }
 impl KinesisVideoStreamStartSelector {
     /// Creates a new builder-style object to manufacture [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
@@ -1299,9 +1252,9 @@ impl KinesisVideoStreamStartSelector {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let segmenttype = unimplemented!();
 /// match segmenttype {
@@ -1323,58 +1276,52 @@ impl KinesisVideoStreamStartSelector {
 /// Specifically, when `segmenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SegmentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SegmentType {
     #[allow(missing_docs)] // documentation missing in model
     Shot,
     #[allow(missing_docs)] // documentation missing in model
     TechnicalCue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SegmentType {
     fn from(s: &str) -> Self {
         match s {
             "SHOT" => SegmentType::Shot,
             "TECHNICAL_CUE" => SegmentType::TechnicalCue,
-            other => SegmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SegmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SegmentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SegmentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SegmentType::from(s))
+                }
+            }
 impl SegmentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SegmentType::Shot => "SHOT",
             SegmentType::TechnicalCue => "TECHNICAL_CUE",
-            SegmentType::Unknown(value) => value.as_str(),
+            SegmentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SHOT", "TECHNICAL_CUE"]
+        &[
+            "SHOT", "TECHNICAL_CUE"
+        ]
     }
 }
 impl AsRef<str> for SegmentType {
@@ -1386,7 +1333,7 @@ impl AsRef<str> for SegmentType {
 /// <p>Filters applied to the technical cue or shot detection segments. For more information, see <code>StartSegmentDetection</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSegmentDetectionFilters {
+pub struct StartSegmentDetectionFilters  {
     /// <p>Filters that are specific to technical cues.</p>
     #[doc(hidden)]
     pub technical_cue_filter: std::option::Option<crate::model::StartTechnicalCueDetectionFilter>,
@@ -1396,42 +1343,32 @@ pub struct StartSegmentDetectionFilters {
 }
 impl StartSegmentDetectionFilters {
     /// <p>Filters that are specific to technical cues.</p>
-    pub fn technical_cue_filter(
-        &self,
-    ) -> std::option::Option<&crate::model::StartTechnicalCueDetectionFilter> {
+    pub fn technical_cue_filter(&self) -> std::option::Option<& crate::model::StartTechnicalCueDetectionFilter> {
         self.technical_cue_filter.as_ref()
     }
     /// <p>Filters that are specific to shot detections.</p>
-    pub fn shot_filter(&self) -> std::option::Option<&crate::model::StartShotDetectionFilter> {
+    pub fn shot_filter(&self) -> std::option::Option<& crate::model::StartShotDetectionFilter> {
         self.shot_filter.as_ref()
     }
 }
 /// See [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
 pub mod start_segment_detection_filters {
-
+    
     /// A builder for [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) technical_cue_filter:
-            std::option::Option<crate::model::StartTechnicalCueDetectionFilter>,
+        pub(crate) technical_cue_filter: std::option::Option<crate::model::StartTechnicalCueDetectionFilter>,
         pub(crate) shot_filter: std::option::Option<crate::model::StartShotDetectionFilter>,
     }
     impl Builder {
         /// <p>Filters that are specific to technical cues.</p>
-        pub fn technical_cue_filter(
-            mut self,
-            input: crate::model::StartTechnicalCueDetectionFilter,
-        ) -> Self {
+        pub fn technical_cue_filter(mut self, input: crate::model::StartTechnicalCueDetectionFilter) -> Self {
             self.technical_cue_filter = Some(input);
             self
         }
         /// <p>Filters that are specific to technical cues.</p>
-        pub fn set_technical_cue_filter(
-            mut self,
-            input: std::option::Option<crate::model::StartTechnicalCueDetectionFilter>,
-        ) -> Self {
-            self.technical_cue_filter = input;
-            self
+        pub fn set_technical_cue_filter(mut self, input: std::option::Option<crate::model::StartTechnicalCueDetectionFilter>) -> Self {
+            self.technical_cue_filter = input; self
         }
         /// <p>Filters that are specific to shot detections.</p>
         pub fn shot_filter(mut self, input: crate::model::StartShotDetectionFilter) -> Self {
@@ -1439,21 +1376,21 @@ pub mod start_segment_detection_filters {
             self
         }
         /// <p>Filters that are specific to shot detections.</p>
-        pub fn set_shot_filter(
-            mut self,
-            input: std::option::Option<crate::model::StartShotDetectionFilter>,
-        ) -> Self {
-            self.shot_filter = input;
-            self
+        pub fn set_shot_filter(mut self, input: std::option::Option<crate::model::StartShotDetectionFilter>) -> Self {
+            self.shot_filter = input; self
         }
         /// Consumes the builder and constructs a [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
         pub fn build(self) -> crate::model::StartSegmentDetectionFilters {
             crate::model::StartSegmentDetectionFilters {
-                technical_cue_filter: self.technical_cue_filter,
-                shot_filter: self.shot_filter,
+                technical_cue_filter: self.technical_cue_filter
+                ,
+                shot_filter: self.shot_filter
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSegmentDetectionFilters {
     /// Creates a new builder-style object to manufacture [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
@@ -1465,14 +1402,14 @@ impl StartSegmentDetectionFilters {
 /// <p>Filters for the shot detection segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartShotDetectionFilter {
-    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
+pub struct StartShotDetectionFilter  {
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p> 
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     #[doc(hidden)]
     pub min_segment_confidence: std::option::Option<f32>,
 }
 impl StartShotDetectionFilter {
-    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p> 
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub fn min_segment_confidence(&self) -> std::option::Option<f32> {
         self.min_segment_confidence
@@ -1480,32 +1417,34 @@ impl StartShotDetectionFilter {
 }
 /// See [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
 pub mod start_shot_detection_filter {
-
+    
     /// A builder for [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_segment_confidence: std::option::Option<f32>,
     }
     impl Builder {
-        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
+        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p> 
         /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
         pub fn min_segment_confidence(mut self, input: f32) -> Self {
             self.min_segment_confidence = Some(input);
             self
         }
-        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
+        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p> 
         /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_segment_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_segment_confidence = input;
-            self
+            self.min_segment_confidence = input; self
         }
         /// Consumes the builder and constructs a [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
         pub fn build(self) -> crate::model::StartShotDetectionFilter {
             crate::model::StartShotDetectionFilter {
-                min_segment_confidence: self.min_segment_confidence,
+                min_segment_confidence: self.min_segment_confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl StartShotDetectionFilter {
     /// Creates a new builder-style object to manufacture [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
@@ -1517,8 +1456,8 @@ impl StartShotDetectionFilter {
 /// <p>Filters for the technical segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTechnicalCueDetectionFilter {
-    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
+pub struct StartTechnicalCueDetectionFilter  {
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p> 
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     #[doc(hidden)]
     pub min_segment_confidence: std::option::Option<f32>,
@@ -1527,19 +1466,19 @@ pub struct StartTechnicalCueDetectionFilter {
     pub black_frame: std::option::Option<crate::model::BlackFrame>,
 }
 impl StartTechnicalCueDetectionFilter {
-    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p> 
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub fn min_segment_confidence(&self) -> std::option::Option<f32> {
         self.min_segment_confidence
     }
     /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
-    pub fn black_frame(&self) -> std::option::Option<&crate::model::BlackFrame> {
+    pub fn black_frame(&self) -> std::option::Option<& crate::model::BlackFrame> {
         self.black_frame.as_ref()
     }
 }
 /// See [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
 pub mod start_technical_cue_detection_filter {
-
+    
     /// A builder for [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1547,17 +1486,16 @@ pub mod start_technical_cue_detection_filter {
         pub(crate) black_frame: std::option::Option<crate::model::BlackFrame>,
     }
     impl Builder {
-        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
+        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p> 
         /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
         pub fn min_segment_confidence(mut self, input: f32) -> Self {
             self.min_segment_confidence = Some(input);
             self
         }
-        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
+        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p> 
         /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_segment_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_segment_confidence = input;
-            self
+            self.min_segment_confidence = input; self
         }
         /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
         pub fn black_frame(mut self, input: crate::model::BlackFrame) -> Self {
@@ -1565,21 +1503,21 @@ pub mod start_technical_cue_detection_filter {
             self
         }
         /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
-        pub fn set_black_frame(
-            mut self,
-            input: std::option::Option<crate::model::BlackFrame>,
-        ) -> Self {
-            self.black_frame = input;
-            self
+        pub fn set_black_frame(mut self, input: std::option::Option<crate::model::BlackFrame>) -> Self {
+            self.black_frame = input; self
         }
         /// Consumes the builder and constructs a [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
         pub fn build(self) -> crate::model::StartTechnicalCueDetectionFilter {
             crate::model::StartTechnicalCueDetectionFilter {
-                min_segment_confidence: self.min_segment_confidence,
-                black_frame: self.black_frame,
+                min_segment_confidence: self.min_segment_confidence
+                ,
+                black_frame: self.black_frame
+                ,
             }
         }
     }
+    
+    
 }
 impl StartTechnicalCueDetectionFilter {
     /// Creates a new builder-style object to manufacture [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
@@ -1591,25 +1529,25 @@ impl StartTechnicalCueDetectionFilter {
 /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. As videos can come from multiple sources, formats, and time periods, they may contain different standards and varying noise levels for black frames that need to be accounted for. For more information, see <code>StartSegmentDetection</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlackFrame {
-    /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p>
-    /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
+pub struct BlackFrame  {
+    /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p> 
+    /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p> 
     /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video. You can lower this threshold to be more strict on black levels.</p>
     #[doc(hidden)]
     pub max_pixel_threshold: std::option::Option<f32>,
-    /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p>
+    /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p> 
     /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
     #[doc(hidden)]
     pub min_coverage_percentage: std::option::Option<f32>,
 }
 impl BlackFrame {
-    /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p>
-    /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
+    /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p> 
+    /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p> 
     /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video. You can lower this threshold to be more strict on black levels.</p>
     pub fn max_pixel_threshold(&self) -> std::option::Option<f32> {
         self.max_pixel_threshold
     }
-    /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p>
+    /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p> 
     /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
     pub fn min_coverage_percentage(&self) -> std::option::Option<f32> {
         self.min_coverage_percentage
@@ -1617,7 +1555,7 @@ impl BlackFrame {
 }
 /// See [`BlackFrame`](crate::model::BlackFrame).
 pub mod black_frame {
-
+    
     /// A builder for [`BlackFrame`](crate::model::BlackFrame).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1625,40 +1563,42 @@ pub mod black_frame {
         pub(crate) min_coverage_percentage: std::option::Option<f32>,
     }
     impl Builder {
-        /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p>
-        /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
+        /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p> 
+        /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p> 
         /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video. You can lower this threshold to be more strict on black levels.</p>
         pub fn max_pixel_threshold(mut self, input: f32) -> Self {
             self.max_pixel_threshold = Some(input);
             self
         }
-        /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p>
-        /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
+        /// <p> A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range. </p> 
+        /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p> 
         /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video. You can lower this threshold to be more strict on black levels.</p>
         pub fn set_max_pixel_threshold(mut self, input: std::option::Option<f32>) -> Self {
-            self.max_pixel_threshold = input;
-            self
+            self.max_pixel_threshold = input; self
         }
-        /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p>
+        /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p> 
         /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
         pub fn min_coverage_percentage(mut self, input: f32) -> Self {
             self.min_coverage_percentage = Some(input);
             self
         }
-        /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p>
+        /// <p> The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix. </p> 
         /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
         pub fn set_min_coverage_percentage(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_coverage_percentage = input;
-            self
+            self.min_coverage_percentage = input; self
         }
         /// Consumes the builder and constructs a [`BlackFrame`](crate::model::BlackFrame).
         pub fn build(self) -> crate::model::BlackFrame {
             crate::model::BlackFrame {
-                max_pixel_threshold: self.max_pixel_threshold,
-                min_coverage_percentage: self.min_coverage_percentage,
+                max_pixel_threshold: self.max_pixel_threshold
+                ,
+                min_coverage_percentage: self.min_coverage_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl BlackFrame {
     /// Creates a new builder-style object to manufacture [`BlackFrame`](crate::model::BlackFrame).
@@ -1670,20 +1610,20 @@ impl BlackFrame {
 /// <p>Contains the specified filters that should be applied to a list of returned GENERAL_LABELS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelDetectionSettings {
+pub struct LabelDetectionSettings  {
     /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
     #[doc(hidden)]
     pub general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
 }
 impl LabelDetectionSettings {
     /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
-    pub fn general_labels(&self) -> std::option::Option<&crate::model::GeneralLabelsSettings> {
+    pub fn general_labels(&self) -> std::option::Option<& crate::model::GeneralLabelsSettings> {
         self.general_labels.as_ref()
     }
 }
 /// See [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
 pub mod label_detection_settings {
-
+    
     /// A builder for [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1696,20 +1636,19 @@ pub mod label_detection_settings {
             self
         }
         /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
-        pub fn set_general_labels(
-            mut self,
-            input: std::option::Option<crate::model::GeneralLabelsSettings>,
-        ) -> Self {
-            self.general_labels = input;
-            self
+        pub fn set_general_labels(mut self, input: std::option::Option<crate::model::GeneralLabelsSettings>) -> Self {
+            self.general_labels = input; self
         }
         /// Consumes the builder and constructs a [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
         pub fn build(self) -> crate::model::LabelDetectionSettings {
             crate::model::LabelDetectionSettings {
-                general_labels: self.general_labels,
+                general_labels: self.general_labels
+                ,
             }
         }
     }
+    
+    
 }
 impl LabelDetectionSettings {
     /// Creates a new builder-style object to manufacture [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
@@ -1721,7 +1660,7 @@ impl LabelDetectionSettings {
 /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneralLabelsSettings {
+pub struct GeneralLabelsSettings  {
     /// <p>The labels that should be included in the return from DetectLabels.</p>
     #[doc(hidden)]
     pub label_inclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1737,34 +1676,32 @@ pub struct GeneralLabelsSettings {
 }
 impl GeneralLabelsSettings {
     /// <p>The labels that should be included in the return from DetectLabels.</p>
-    pub fn label_inclusion_filters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn label_inclusion_filters(&self) -> std::option::Option<& [std::string::String]> {
         self.label_inclusion_filters.as_deref()
     }
     /// <p>The labels that should be excluded from the return from DetectLabels.</p>
-    pub fn label_exclusion_filters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn label_exclusion_filters(&self) -> std::option::Option<& [std::string::String]> {
         self.label_exclusion_filters.as_deref()
     }
     /// <p>The label categories that should be included in the return from DetectLabels.</p>
-    pub fn label_category_inclusion_filters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn label_category_inclusion_filters(&self) -> std::option::Option<& [std::string::String]> {
         self.label_category_inclusion_filters.as_deref()
     }
     /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-    pub fn label_category_exclusion_filters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn label_category_exclusion_filters(&self) -> std::option::Option<& [std::string::String]> {
         self.label_category_exclusion_filters.as_deref()
     }
 }
 /// See [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
 pub mod general_labels_settings {
-
+    
     /// A builder for [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_inclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) label_exclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) label_category_inclusion_filters:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) label_category_exclusion_filters:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) label_category_inclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) label_category_exclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `label_inclusion_filters`.
@@ -1774,17 +1711,13 @@ pub mod general_labels_settings {
         /// <p>The labels that should be included in the return from DetectLabels.</p>
         pub fn label_inclusion_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.label_inclusion_filters.unwrap_or_default();
-            v.push(input.into());
-            self.label_inclusion_filters = Some(v);
-            self
+                            v.push(input.into());
+                            self.label_inclusion_filters = Some(v);
+                            self
         }
         /// <p>The labels that should be included in the return from DetectLabels.</p>
-        pub fn set_label_inclusion_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.label_inclusion_filters = input;
-            self
+        pub fn set_label_inclusion_filters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.label_inclusion_filters = input; self
         }
         /// Appends an item to `label_exclusion_filters`.
         ///
@@ -1793,72 +1726,60 @@ pub mod general_labels_settings {
         /// <p>The labels that should be excluded from the return from DetectLabels.</p>
         pub fn label_exclusion_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.label_exclusion_filters.unwrap_or_default();
-            v.push(input.into());
-            self.label_exclusion_filters = Some(v);
-            self
+                            v.push(input.into());
+                            self.label_exclusion_filters = Some(v);
+                            self
         }
         /// <p>The labels that should be excluded from the return from DetectLabels.</p>
-        pub fn set_label_exclusion_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.label_exclusion_filters = input;
-            self
+        pub fn set_label_exclusion_filters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.label_exclusion_filters = input; self
         }
         /// Appends an item to `label_category_inclusion_filters`.
         ///
         /// To override the contents of this collection use [`set_label_category_inclusion_filters`](Self::set_label_category_inclusion_filters).
         ///
         /// <p>The label categories that should be included in the return from DetectLabels.</p>
-        pub fn label_category_inclusion_filters(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn label_category_inclusion_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.label_category_inclusion_filters.unwrap_or_default();
-            v.push(input.into());
-            self.label_category_inclusion_filters = Some(v);
-            self
+                            v.push(input.into());
+                            self.label_category_inclusion_filters = Some(v);
+                            self
         }
         /// <p>The label categories that should be included in the return from DetectLabels.</p>
-        pub fn set_label_category_inclusion_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.label_category_inclusion_filters = input;
-            self
+        pub fn set_label_category_inclusion_filters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.label_category_inclusion_filters = input; self
         }
         /// Appends an item to `label_category_exclusion_filters`.
         ///
         /// To override the contents of this collection use [`set_label_category_exclusion_filters`](Self::set_label_category_exclusion_filters).
         ///
         /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-        pub fn label_category_exclusion_filters(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn label_category_exclusion_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.label_category_exclusion_filters.unwrap_or_default();
-            v.push(input.into());
-            self.label_category_exclusion_filters = Some(v);
-            self
+                            v.push(input.into());
+                            self.label_category_exclusion_filters = Some(v);
+                            self
         }
         /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-        pub fn set_label_category_exclusion_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.label_category_exclusion_filters = input;
-            self
+        pub fn set_label_category_exclusion_filters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.label_category_exclusion_filters = input; self
         }
         /// Consumes the builder and constructs a [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
         pub fn build(self) -> crate::model::GeneralLabelsSettings {
             crate::model::GeneralLabelsSettings {
-                label_inclusion_filters: self.label_inclusion_filters,
-                label_exclusion_filters: self.label_exclusion_filters,
-                label_category_inclusion_filters: self.label_category_inclusion_filters,
-                label_category_exclusion_filters: self.label_category_exclusion_filters,
+                label_inclusion_filters: self.label_inclusion_filters
+                ,
+                label_exclusion_filters: self.label_exclusion_filters
+                ,
+                label_category_inclusion_filters: self.label_category_inclusion_filters
+                ,
+                label_category_exclusion_filters: self.label_category_exclusion_filters
+                ,
             }
         }
     }
+    
+    
 }
 impl GeneralLabelsSettings {
     /// Creates a new builder-style object to manufacture [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
@@ -1873,9 +1794,9 @@ impl GeneralLabelsSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let labeldetectionfeaturename = unimplemented!();
 /// match labeldetectionfeaturename {
@@ -1896,56 +1817,48 @@ impl GeneralLabelsSettings {
 /// Specifically, when `labeldetectionfeaturename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LabelDetectionFeatureName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LabelDetectionFeatureName {
     #[allow(missing_docs)] // documentation missing in model
     GeneralLabels,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LabelDetectionFeatureName {
     fn from(s: &str) -> Self {
         match s {
             "GENERAL_LABELS" => LabelDetectionFeatureName::GeneralLabels,
-            other => LabelDetectionFeatureName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LabelDetectionFeatureName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LabelDetectionFeatureName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LabelDetectionFeatureName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LabelDetectionFeatureName::from(s))
+                }
+            }
 impl LabelDetectionFeatureName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LabelDetectionFeatureName::GeneralLabels => "GENERAL_LABELS",
-            LabelDetectionFeatureName::Unknown(value) => value.as_str(),
+            LabelDetectionFeatureName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GENERAL_LABELS"]
+        &[
+            "GENERAL_LABELS"
+        ]
     }
 }
 impl AsRef<str> for LabelDetectionFeatureName {
@@ -1960,9 +1873,9 @@ impl AsRef<str> for LabelDetectionFeatureName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let faceattributes = unimplemented!();
 /// match faceattributes {
@@ -1984,58 +1897,52 @@ impl AsRef<str> for LabelDetectionFeatureName {
 /// Specifically, when `faceattributes` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FaceAttributes::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FaceAttributes {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     Default,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FaceAttributes {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => FaceAttributes::All,
             "DEFAULT" => FaceAttributes::Default,
-            other => FaceAttributes::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FaceAttributes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FaceAttributes {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FaceAttributes::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FaceAttributes::from(s))
+                }
+            }
 impl FaceAttributes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FaceAttributes::All => "ALL",
             FaceAttributes::Default => "DEFAULT",
-            FaceAttributes::Unknown(value) => value.as_str(),
+            FaceAttributes::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "DEFAULT"]
+        &[
+            "ALL", "DEFAULT"
+        ]
     }
 }
 impl AsRef<str> for FaceAttributes {
@@ -2047,7 +1954,7 @@ impl AsRef<str> for FaceAttributes {
 /// <p>Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaceMatch {
+pub struct FaceMatch  {
     /// <p>Confidence in the match of this face with the input face.</p>
     #[doc(hidden)]
     pub similarity: std::option::Option<f32>,
@@ -2061,13 +1968,13 @@ impl FaceMatch {
         self.similarity
     }
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
-    pub fn face(&self) -> std::option::Option<&crate::model::Face> {
+    pub fn face(&self) -> std::option::Option<& crate::model::Face> {
         self.face.as_ref()
     }
 }
 /// See [`FaceMatch`](crate::model::FaceMatch).
 pub mod face_match {
-
+    
     /// A builder for [`FaceMatch`](crate::model::FaceMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2082,8 +1989,7 @@ pub mod face_match {
         }
         /// <p>Confidence in the match of this face with the input face.</p>
         pub fn set_similarity(mut self, input: std::option::Option<f32>) -> Self {
-            self.similarity = input;
-            self
+            self.similarity = input; self
         }
         /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
         pub fn face(mut self, input: crate::model::Face) -> Self {
@@ -2092,17 +1998,20 @@ pub mod face_match {
         }
         /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
         pub fn set_face(mut self, input: std::option::Option<crate::model::Face>) -> Self {
-            self.face = input;
-            self
+            self.face = input; self
         }
         /// Consumes the builder and constructs a [`FaceMatch`](crate::model::FaceMatch).
         pub fn build(self) -> crate::model::FaceMatch {
             crate::model::FaceMatch {
-                similarity: self.similarity,
-                face: self.face,
+                similarity: self.similarity
+                ,
+                face: self.face
+                ,
             }
         }
     }
+    
+    
 }
 impl FaceMatch {
     /// Creates a new builder-style object to manufacture [`FaceMatch`](crate::model::FaceMatch).
@@ -2114,7 +2023,7 @@ impl FaceMatch {
 /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Face {
+pub struct Face  {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
     #[doc(hidden)]
     pub face_id: std::option::Option<std::string::String>,
@@ -2136,19 +2045,19 @@ pub struct Face {
 }
 impl Face {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
-    pub fn face_id(&self) -> std::option::Option<&str> {
+    pub fn face_id(&self) -> std::option::Option<& str> {
         self.face_id.as_deref()
     }
     /// <p>Bounding box of the face.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>Identifier that you assign to all the faces in the input image.</p>
-    pub fn external_image_id(&self) -> std::option::Option<&str> {
+    pub fn external_image_id(&self) -> std::option::Option<& str> {
         self.external_image_id.as_deref()
     }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
@@ -2156,13 +2065,13 @@ impl Face {
         self.confidence
     }
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
-    pub fn index_faces_model_version(&self) -> std::option::Option<&str> {
+    pub fn index_faces_model_version(&self) -> std::option::Option<& str> {
         self.index_faces_model_version.as_deref()
     }
 }
 /// See [`Face`](crate::model::Face).
 pub mod face {
-
+    
     /// A builder for [`Face`](crate::model::Face).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2181,8 +2090,7 @@ pub mod face {
         }
         /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
         pub fn set_face_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.face_id = input;
-            self
+            self.face_id = input; self
         }
         /// <p>Bounding box of the face.</p>
         pub fn bounding_box(mut self, input: crate::model::BoundingBox) -> Self {
@@ -2190,12 +2098,8 @@ pub mod face {
             self
         }
         /// <p>Bounding box of the face.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
         pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2204,8 +2108,7 @@ pub mod face {
         }
         /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_id = input;
-            self
+            self.image_id = input; self
         }
         /// <p>Identifier that you assign to all the faces in the input image.</p>
         pub fn external_image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2213,12 +2116,8 @@ pub mod face {
             self
         }
         /// <p>Identifier that you assign to all the faces in the input image.</p>
-        pub fn set_external_image_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_image_id = input;
-            self
+        pub fn set_external_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_image_id = input; self
         }
         /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -2227,8 +2126,7 @@ pub mod face {
         }
         /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
         pub fn index_faces_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2236,25 +2134,29 @@ pub mod face {
             self
         }
         /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
-        pub fn set_index_faces_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.index_faces_model_version = input;
-            self
+        pub fn set_index_faces_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_faces_model_version = input; self
         }
         /// Consumes the builder and constructs a [`Face`](crate::model::Face).
         pub fn build(self) -> crate::model::Face {
             crate::model::Face {
-                face_id: self.face_id,
-                bounding_box: self.bounding_box,
-                image_id: self.image_id,
-                external_image_id: self.external_image_id,
-                confidence: self.confidence,
-                index_faces_model_version: self.index_faces_model_version,
+                face_id: self.face_id
+                ,
+                bounding_box: self.bounding_box
+                ,
+                image_id: self.image_id
+                ,
+                external_image_id: self.external_image_id
+                ,
+                confidence: self.confidence
+                ,
+                index_faces_model_version: self.index_faces_model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Face {
     /// Creates a new builder-style object to manufacture [`Face`](crate::model::Face).
@@ -2269,9 +2171,9 @@ impl Face {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let qualityfilter = unimplemented!();
 /// match qualityfilter {
@@ -2296,22 +2198,14 @@ impl Face {
 /// Specifically, when `qualityfilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QualityFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QualityFilter {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -2324,7 +2218,7 @@ pub enum QualityFilter {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QualityFilter {
     fn from(s: &str) -> Self {
@@ -2334,17 +2228,17 @@ impl std::convert::From<&str> for QualityFilter {
             "LOW" => QualityFilter::Low,
             "MEDIUM" => QualityFilter::Medium,
             "NONE" => QualityFilter::None,
-            other => QualityFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => QualityFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for QualityFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QualityFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QualityFilter::from(s))
+                }
+            }
 impl QualityFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2354,12 +2248,14 @@ impl QualityFilter {
             QualityFilter::Low => "LOW",
             QualityFilter::Medium => "MEDIUM",
             QualityFilter::None => "NONE",
-            QualityFilter::Unknown(value) => value.as_str(),
+            QualityFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "HIGH", "LOW", "MEDIUM", "NONE"]
+        &[
+            "AUTO", "HIGH", "LOW", "MEDIUM", "NONE"
+        ]
     }
 }
 impl AsRef<str> for QualityFilter {
@@ -2368,16 +2264,16 @@ impl AsRef<str> for QualityFilter {
     }
 }
 
-/// <p>Provides the input image either as bytes or an S3 object.</p>
-/// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
-/// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
-/// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
-/// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
-/// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
+/// <p>Provides the input image either as bytes or an S3 object.</p> 
+/// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p> 
+/// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p> 
+/// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p> 
+/// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
+/// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p> 
 /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Image {
+pub struct Image  {
     /// <p>Blob of image bytes up to 5 MBs.</p>
     #[doc(hidden)]
     pub bytes: std::option::Option<aws_smithy_types::Blob>,
@@ -2387,17 +2283,17 @@ pub struct Image {
 }
 impl Image {
     /// <p>Blob of image bytes up to 5 MBs.</p>
-    pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn bytes(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.bytes.as_ref()
     }
     /// <p>Identifies an S3 object as the image source.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+    pub fn s3_object(&self) -> std::option::Option<& crate::model::S3Object> {
         self.s3_object.as_ref()
     }
 }
 /// See [`Image`](crate::model::Image).
 pub mod image {
-
+    
     /// A builder for [`Image`](crate::model::Image).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2412,8 +2308,7 @@ pub mod image {
         }
         /// <p>Blob of image bytes up to 5 MBs.</p>
         pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.bytes = input;
-            self
+            self.bytes = input; self
         }
         /// <p>Identifies an S3 object as the image source.</p>
         pub fn s3_object(mut self, input: crate::model::S3Object) -> Self {
@@ -2422,17 +2317,20 @@ pub mod image {
         }
         /// <p>Identifies an S3 object as the image source.</p>
         pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
-            self.s3_object = input;
-            self
+            self.s3_object = input; self
         }
         /// Consumes the builder and constructs a [`Image`](crate::model::Image).
         pub fn build(self) -> crate::model::Image {
             crate::model::Image {
-                bytes: self.bytes,
-                s3_object: self.s3_object,
+                bytes: self.bytes
+                ,
+                s3_object: self.s3_object
+                ,
             }
         }
     }
+    
+    
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
@@ -2447,9 +2345,9 @@ impl Image {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orientationcorrection = unimplemented!();
 /// match orientationcorrection {
@@ -2473,22 +2371,14 @@ impl Image {
 /// Specifically, when `orientationcorrection` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrientationCorrection::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrientationCorrection {
     #[allow(missing_docs)] // documentation missing in model
     Rotate0,
@@ -2499,7 +2389,7 @@ pub enum OrientationCorrection {
     #[allow(missing_docs)] // documentation missing in model
     Rotate90,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrientationCorrection {
     fn from(s: &str) -> Self {
@@ -2508,19 +2398,17 @@ impl std::convert::From<&str> for OrientationCorrection {
             "ROTATE_180" => OrientationCorrection::Rotate180,
             "ROTATE_270" => OrientationCorrection::Rotate270,
             "ROTATE_90" => OrientationCorrection::Rotate90,
-            other => {
-                OrientationCorrection::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => OrientationCorrection::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrientationCorrection {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrientationCorrection::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrientationCorrection::from(s))
+                }
+            }
 impl OrientationCorrection {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2529,12 +2417,14 @@ impl OrientationCorrection {
             OrientationCorrection::Rotate180 => "ROTATE_180",
             OrientationCorrection::Rotate270 => "ROTATE_270",
             OrientationCorrection::Rotate90 => "ROTATE_90",
-            OrientationCorrection::Unknown(value) => value.as_str(),
+            OrientationCorrection::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ROTATE_0", "ROTATE_180", "ROTATE_270", "ROTATE_90"]
+        &[
+            "ROTATE_0", "ROTATE_180", "ROTATE_270", "ROTATE_90"
+        ]
     }
 }
 impl AsRef<str> for OrientationCorrection {
@@ -2546,7 +2436,7 @@ impl AsRef<str> for OrientationCorrection {
 /// <p>Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComparedFace {
+pub struct ComparedFace  {
     /// <p>Bounding box of the face.</p>
     #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -2571,7 +2461,7 @@ pub struct ComparedFace {
 }
 impl ComparedFace {
     /// <p>Bounding box of the face.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Level of confidence that what the bounding box contains is a face.</p>
@@ -2579,29 +2469,29 @@ impl ComparedFace {
         self.confidence
     }
     /// <p>An array of facial landmarks.</p>
-    pub fn landmarks(&self) -> std::option::Option<&[crate::model::Landmark]> {
+    pub fn landmarks(&self) -> std::option::Option<& [crate::model::Landmark]> {
         self.landmarks.as_deref()
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
-    pub fn pose(&self) -> std::option::Option<&crate::model::Pose> {
+    pub fn pose(&self) -> std::option::Option<& crate::model::Pose> {
         self.pose.as_ref()
     }
     /// <p>Identifies face image brightness and sharpness. </p>
-    pub fn quality(&self) -> std::option::Option<&crate::model::ImageQuality> {
+    pub fn quality(&self) -> std::option::Option<& crate::model::ImageQuality> {
         self.quality.as_ref()
     }
     /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
-    pub fn emotions(&self) -> std::option::Option<&[crate::model::Emotion]> {
+    pub fn emotions(&self) -> std::option::Option<& [crate::model::Emotion]> {
         self.emotions.as_deref()
     }
     /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
-    pub fn smile(&self) -> std::option::Option<&crate::model::Smile> {
+    pub fn smile(&self) -> std::option::Option<& crate::model::Smile> {
         self.smile.as_ref()
     }
 }
 /// See [`ComparedFace`](crate::model::ComparedFace).
 pub mod compared_face {
-
+    
     /// A builder for [`ComparedFace`](crate::model::ComparedFace).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2620,12 +2510,8 @@ pub mod compared_face {
             self
         }
         /// <p>Bounding box of the face.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>Level of confidence that what the bounding box contains is a face.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -2634,8 +2520,7 @@ pub mod compared_face {
         }
         /// <p>Level of confidence that what the bounding box contains is a face.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Appends an item to `landmarks`.
         ///
@@ -2644,17 +2529,13 @@ pub mod compared_face {
         /// <p>An array of facial landmarks.</p>
         pub fn landmarks(mut self, input: crate::model::Landmark) -> Self {
             let mut v = self.landmarks.unwrap_or_default();
-            v.push(input);
-            self.landmarks = Some(v);
-            self
+                            v.push(input);
+                            self.landmarks = Some(v);
+                            self
         }
         /// <p>An array of facial landmarks.</p>
-        pub fn set_landmarks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Landmark>>,
-        ) -> Self {
-            self.landmarks = input;
-            self
+        pub fn set_landmarks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Landmark>>) -> Self {
+            self.landmarks = input; self
         }
         /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
         pub fn pose(mut self, input: crate::model::Pose) -> Self {
@@ -2663,8 +2544,7 @@ pub mod compared_face {
         }
         /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
         pub fn set_pose(mut self, input: std::option::Option<crate::model::Pose>) -> Self {
-            self.pose = input;
-            self
+            self.pose = input; self
         }
         /// <p>Identifies face image brightness and sharpness. </p>
         pub fn quality(mut self, input: crate::model::ImageQuality) -> Self {
@@ -2672,12 +2552,8 @@ pub mod compared_face {
             self
         }
         /// <p>Identifies face image brightness and sharpness. </p>
-        pub fn set_quality(
-            mut self,
-            input: std::option::Option<crate::model::ImageQuality>,
-        ) -> Self {
-            self.quality = input;
-            self
+        pub fn set_quality(mut self, input: std::option::Option<crate::model::ImageQuality>) -> Self {
+            self.quality = input; self
         }
         /// Appends an item to `emotions`.
         ///
@@ -2686,17 +2562,13 @@ pub mod compared_face {
         /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
         pub fn emotions(mut self, input: crate::model::Emotion) -> Self {
             let mut v = self.emotions.unwrap_or_default();
-            v.push(input);
-            self.emotions = Some(v);
-            self
+                            v.push(input);
+                            self.emotions = Some(v);
+                            self
         }
         /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
-        pub fn set_emotions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Emotion>>,
-        ) -> Self {
-            self.emotions = input;
-            self
+        pub fn set_emotions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Emotion>>) -> Self {
+            self.emotions = input; self
         }
         /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
         pub fn smile(mut self, input: crate::model::Smile) -> Self {
@@ -2705,22 +2577,30 @@ pub mod compared_face {
         }
         /// <p> Indicates whether or not the face is smiling, and the confidence level in the determination. </p>
         pub fn set_smile(mut self, input: std::option::Option<crate::model::Smile>) -> Self {
-            self.smile = input;
-            self
+            self.smile = input; self
         }
         /// Consumes the builder and constructs a [`ComparedFace`](crate::model::ComparedFace).
         pub fn build(self) -> crate::model::ComparedFace {
             crate::model::ComparedFace {
-                bounding_box: self.bounding_box,
-                confidence: self.confidence,
-                landmarks: self.landmarks,
-                pose: self.pose,
-                quality: self.quality,
-                emotions: self.emotions,
-                smile: self.smile,
+                bounding_box: self.bounding_box
+                ,
+                confidence: self.confidence
+                ,
+                landmarks: self.landmarks
+                ,
+                pose: self.pose
+                ,
+                quality: self.quality
+                ,
+                emotions: self.emotions
+                ,
+                smile: self.smile
+                ,
             }
         }
     }
+    
+    
 }
 impl ComparedFace {
     /// Creates a new builder-style object to manufacture [`ComparedFace`](crate::model::ComparedFace).
@@ -2732,7 +2612,7 @@ impl ComparedFace {
 /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Smile {
+pub struct Smile  {
     /// <p>Boolean value that indicates whether the face is smiling or not.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -2752,7 +2632,7 @@ impl Smile {
 }
 /// See [`Smile`](crate::model::Smile).
 pub mod smile {
-
+    
     /// A builder for [`Smile`](crate::model::Smile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2767,8 +2647,7 @@ pub mod smile {
         }
         /// <p>Boolean value that indicates whether the face is smiling or not.</p>
         pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -2777,17 +2656,21 @@ pub mod smile {
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`Smile`](crate::model::Smile).
         pub fn build(self) -> crate::model::Smile {
             crate::model::Smile {
-                value: self.value.unwrap_or_default(),
-                confidence: self.confidence,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl Smile {
     /// Creates a new builder-style object to manufacture [`Smile`](crate::model::Smile).
@@ -2799,7 +2682,7 @@ impl Smile {
 /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Emotion {
+pub struct Emotion  {
     /// <p>Type of emotion detected.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EmotionName>,
@@ -2809,7 +2692,7 @@ pub struct Emotion {
 }
 impl Emotion {
     /// <p>Type of emotion detected.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EmotionName> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EmotionName> {
         self.r#type.as_ref()
     }
     /// <p>Level of confidence in the determination.</p>
@@ -2819,7 +2702,7 @@ impl Emotion {
 }
 /// See [`Emotion`](crate::model::Emotion).
 pub mod emotion {
-
+    
     /// A builder for [`Emotion`](crate::model::Emotion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2834,8 +2717,7 @@ pub mod emotion {
         }
         /// <p>Type of emotion detected.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::EmotionName>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -2844,17 +2726,20 @@ pub mod emotion {
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`Emotion`](crate::model::Emotion).
         pub fn build(self) -> crate::model::Emotion {
             crate::model::Emotion {
-                r#type: self.r#type,
-                confidence: self.confidence,
+                r#type: self.r#type
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl Emotion {
     /// Creates a new builder-style object to manufacture [`Emotion`](crate::model::Emotion).
@@ -2869,9 +2754,9 @@ impl Emotion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let emotionname = unimplemented!();
 /// match emotionname {
@@ -2900,22 +2785,14 @@ impl Emotion {
 /// Specifically, when `emotionname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EmotionName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `EmotionName::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EmotionName {
     #[allow(missing_docs)] // documentation missing in model
     Angry,
@@ -2936,7 +2813,7 @@ pub enum EmotionName {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EmotionName {
     fn from(s: &str) -> Self {
@@ -2950,17 +2827,17 @@ impl std::convert::From<&str> for EmotionName {
             "SAD" => EmotionName::Sad,
             "SURPRISED" => EmotionName::Surprised,
             "UNKNOWN" => EmotionName::UnknownValue,
-            other => EmotionName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EmotionName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EmotionName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EmotionName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EmotionName::from(s))
+                }
+            }
 impl EmotionName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2974,21 +2851,13 @@ impl EmotionName {
             EmotionName::Sad => "SAD",
             EmotionName::Surprised => "SURPRISED",
             EmotionName::UnknownValue => "UNKNOWN",
-            EmotionName::Unknown(value) => value.as_str(),
+            EmotionName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ANGRY",
-            "CALM",
-            "CONFUSED",
-            "DISGUSTED",
-            "FEAR",
-            "HAPPY",
-            "SAD",
-            "SURPRISED",
-            "UNKNOWN",
+            "ANGRY", "CALM", "CONFUSED", "DISGUSTED", "FEAR", "HAPPY", "SAD", "SURPRISED", "UNKNOWN"
         ]
     }
 }
@@ -3001,7 +2870,7 @@ impl AsRef<str> for EmotionName {
 /// <p>Identifies face image brightness and sharpness. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageQuality {
+pub struct ImageQuality  {
     /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
     #[doc(hidden)]
     pub brightness: std::option::Option<f32>,
@@ -3021,7 +2890,7 @@ impl ImageQuality {
 }
 /// See [`ImageQuality`](crate::model::ImageQuality).
 pub mod image_quality {
-
+    
     /// A builder for [`ImageQuality`](crate::model::ImageQuality).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3036,8 +2905,7 @@ pub mod image_quality {
         }
         /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
         pub fn set_brightness(mut self, input: std::option::Option<f32>) -> Self {
-            self.brightness = input;
-            self
+            self.brightness = input; self
         }
         /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
         pub fn sharpness(mut self, input: f32) -> Self {
@@ -3046,17 +2914,20 @@ pub mod image_quality {
         }
         /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
         pub fn set_sharpness(mut self, input: std::option::Option<f32>) -> Self {
-            self.sharpness = input;
-            self
+            self.sharpness = input; self
         }
         /// Consumes the builder and constructs a [`ImageQuality`](crate::model::ImageQuality).
         pub fn build(self) -> crate::model::ImageQuality {
             crate::model::ImageQuality {
-                brightness: self.brightness,
-                sharpness: self.sharpness,
+                brightness: self.brightness
+                ,
+                sharpness: self.sharpness
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageQuality {
     /// Creates a new builder-style object to manufacture [`ImageQuality`](crate::model::ImageQuality).
@@ -3068,7 +2939,7 @@ impl ImageQuality {
 /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Pose {
+pub struct Pose  {
     /// <p>Value representing the face rotation on the roll axis.</p>
     #[doc(hidden)]
     pub roll: std::option::Option<f32>,
@@ -3095,7 +2966,7 @@ impl Pose {
 }
 /// See [`Pose`](crate::model::Pose).
 pub mod pose {
-
+    
     /// A builder for [`Pose`](crate::model::Pose).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3111,8 +2982,7 @@ pub mod pose {
         }
         /// <p>Value representing the face rotation on the roll axis.</p>
         pub fn set_roll(mut self, input: std::option::Option<f32>) -> Self {
-            self.roll = input;
-            self
+            self.roll = input; self
         }
         /// <p>Value representing the face rotation on the yaw axis.</p>
         pub fn yaw(mut self, input: f32) -> Self {
@@ -3121,8 +2991,7 @@ pub mod pose {
         }
         /// <p>Value representing the face rotation on the yaw axis.</p>
         pub fn set_yaw(mut self, input: std::option::Option<f32>) -> Self {
-            self.yaw = input;
-            self
+            self.yaw = input; self
         }
         /// <p>Value representing the face rotation on the pitch axis.</p>
         pub fn pitch(mut self, input: f32) -> Self {
@@ -3131,18 +3000,22 @@ pub mod pose {
         }
         /// <p>Value representing the face rotation on the pitch axis.</p>
         pub fn set_pitch(mut self, input: std::option::Option<f32>) -> Self {
-            self.pitch = input;
-            self
+            self.pitch = input; self
         }
         /// Consumes the builder and constructs a [`Pose`](crate::model::Pose).
         pub fn build(self) -> crate::model::Pose {
             crate::model::Pose {
-                roll: self.roll,
-                yaw: self.yaw,
-                pitch: self.pitch,
+                roll: self.roll
+                ,
+                yaw: self.yaw
+                ,
+                pitch: self.pitch
+                ,
             }
         }
     }
+    
+    
 }
 impl Pose {
     /// Creates a new builder-style object to manufacture [`Pose`](crate::model::Pose).
@@ -3154,7 +3027,7 @@ impl Pose {
 /// <p>Indicates the location of the landmark on the face.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Landmark {
+pub struct Landmark  {
     /// <p>Type of landmark.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::LandmarkType>,
@@ -3167,7 +3040,7 @@ pub struct Landmark {
 }
 impl Landmark {
     /// <p>Type of landmark.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::LandmarkType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::LandmarkType> {
         self.r#type.as_ref()
     }
     /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
@@ -3181,7 +3054,7 @@ impl Landmark {
 }
 /// See [`Landmark`](crate::model::Landmark).
 pub mod landmark {
-
+    
     /// A builder for [`Landmark`](crate::model::Landmark).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3197,8 +3070,7 @@ pub mod landmark {
         }
         /// <p>Type of landmark.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::LandmarkType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
         pub fn x(mut self, input: f32) -> Self {
@@ -3207,8 +3079,7 @@ pub mod landmark {
         }
         /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
         pub fn set_x(mut self, input: std::option::Option<f32>) -> Self {
-            self.x = input;
-            self
+            self.x = input; self
         }
         /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
         pub fn y(mut self, input: f32) -> Self {
@@ -3217,18 +3088,22 @@ pub mod landmark {
         }
         /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
         pub fn set_y(mut self, input: std::option::Option<f32>) -> Self {
-            self.y = input;
-            self
+            self.y = input; self
         }
         /// Consumes the builder and constructs a [`Landmark`](crate::model::Landmark).
         pub fn build(self) -> crate::model::Landmark {
             crate::model::Landmark {
-                r#type: self.r#type,
-                x: self.x,
-                y: self.y,
+                r#type: self.r#type
+                ,
+                x: self.x
+                ,
+                y: self.y
+                ,
             }
         }
     }
+    
+    
 }
 impl Landmark {
     /// Creates a new builder-style object to manufacture [`Landmark`](crate::model::Landmark).
@@ -3243,9 +3118,9 @@ impl Landmark {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let landmarktype = unimplemented!();
 /// match landmarktype {
@@ -3295,22 +3170,14 @@ impl Landmark {
 /// Specifically, when `landmarktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LandmarkType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LandmarkType {
     #[allow(missing_docs)] // documentation missing in model
     ChinBottom,
@@ -3373,7 +3240,7 @@ pub enum LandmarkType {
     #[allow(missing_docs)] // documentation missing in model
     UpperJawlineRight,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LandmarkType {
     fn from(s: &str) -> Self {
@@ -3408,17 +3275,17 @@ impl std::convert::From<&str> for LandmarkType {
             "rightPupil" => LandmarkType::RightPupil,
             "upperJawlineLeft" => LandmarkType::UpperJawlineLeft,
             "upperJawlineRight" => LandmarkType::UpperJawlineRight,
-            other => LandmarkType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LandmarkType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LandmarkType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LandmarkType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LandmarkType::from(s))
+                }
+            }
 impl LandmarkType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3453,42 +3320,13 @@ impl LandmarkType {
             LandmarkType::RightPupil => "rightPupil",
             LandmarkType::UpperJawlineLeft => "upperJawlineLeft",
             LandmarkType::UpperJawlineRight => "upperJawlineRight",
-            LandmarkType::Unknown(value) => value.as_str(),
+            LandmarkType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "chinBottom",
-            "eyeLeft",
-            "eyeRight",
-            "leftEyeBrowLeft",
-            "leftEyeBrowRight",
-            "leftEyeBrowUp",
-            "leftEyeDown",
-            "leftEyeLeft",
-            "leftEyeRight",
-            "leftEyeUp",
-            "leftPupil",
-            "midJawlineLeft",
-            "midJawlineRight",
-            "mouthDown",
-            "mouthLeft",
-            "mouthRight",
-            "mouthUp",
-            "nose",
-            "noseLeft",
-            "noseRight",
-            "rightEyeBrowLeft",
-            "rightEyeBrowRight",
-            "rightEyeBrowUp",
-            "rightEyeDown",
-            "rightEyeLeft",
-            "rightEyeRight",
-            "rightEyeUp",
-            "rightPupil",
-            "upperJawlineLeft",
-            "upperJawlineRight",
+            "chinBottom", "eyeLeft", "eyeRight", "leftEyeBrowLeft", "leftEyeBrowRight", "leftEyeBrowUp", "leftEyeDown", "leftEyeLeft", "leftEyeRight", "leftEyeUp", "leftPupil", "midJawlineLeft", "midJawlineRight", "mouthDown", "mouthLeft", "mouthRight", "mouthUp", "nose", "noseLeft", "noseRight", "rightEyeBrowLeft", "rightEyeBrowRight", "rightEyeBrowUp", "rightEyeDown", "rightEyeLeft", "rightEyeRight", "rightEyeUp", "rightPupil", "upperJawlineLeft", "upperJawlineRight"
         ]
     }
 }
@@ -3501,7 +3339,7 @@ impl AsRef<str> for LandmarkType {
 /// <p>Provides information about a celebrity recognized by the <code>RecognizeCelebrities</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Celebrity {
+pub struct Celebrity  {
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
     #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3523,19 +3361,19 @@ pub struct Celebrity {
 }
 impl Celebrity {
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
-    pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn urls(&self) -> std::option::Option<& [std::string::String]> {
         self.urls.as_deref()
     }
     /// <p>The name of the celebrity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the celebrity. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
-    pub fn face(&self) -> std::option::Option<&crate::model::ComparedFace> {
+    pub fn face(&self) -> std::option::Option<& crate::model::ComparedFace> {
         self.face.as_ref()
     }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
@@ -3543,13 +3381,13 @@ impl Celebrity {
         self.match_confidence
     }
     /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
-    pub fn known_gender(&self) -> std::option::Option<&crate::model::KnownGender> {
+    pub fn known_gender(&self) -> std::option::Option<& crate::model::KnownGender> {
         self.known_gender.as_ref()
     }
 }
 /// See [`Celebrity`](crate::model::Celebrity).
 pub mod celebrity {
-
+    
     /// A builder for [`Celebrity`](crate::model::Celebrity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3568,17 +3406,13 @@ pub mod celebrity {
         /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
         pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.urls.unwrap_or_default();
-            v.push(input.into());
-            self.urls = Some(v);
-            self
+                            v.push(input.into());
+                            self.urls = Some(v);
+                            self
         }
         /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
-        pub fn set_urls(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.urls = input;
-            self
+        pub fn set_urls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.urls = input; self
         }
         /// <p>The name of the celebrity.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3587,8 +3421,7 @@ pub mod celebrity {
         }
         /// <p>The name of the celebrity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A unique identifier for the celebrity. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3597,8 +3430,7 @@ pub mod celebrity {
         }
         /// <p>A unique identifier for the celebrity. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
         pub fn face(mut self, input: crate::model::ComparedFace) -> Self {
@@ -3607,8 +3439,7 @@ pub mod celebrity {
         }
         /// <p>Provides information about the celebrity's face, such as its location on the image.</p>
         pub fn set_face(mut self, input: std::option::Option<crate::model::ComparedFace>) -> Self {
-            self.face = input;
-            self
+            self.face = input; self
         }
         /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
         pub fn match_confidence(mut self, input: f32) -> Self {
@@ -3617,8 +3448,7 @@ pub mod celebrity {
         }
         /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.</p>
         pub fn set_match_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.match_confidence = input;
-            self
+            self.match_confidence = input; self
         }
         /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
         pub fn known_gender(mut self, input: crate::model::KnownGender) -> Self {
@@ -3626,25 +3456,29 @@ pub mod celebrity {
             self
         }
         /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
-        pub fn set_known_gender(
-            mut self,
-            input: std::option::Option<crate::model::KnownGender>,
-        ) -> Self {
-            self.known_gender = input;
-            self
+        pub fn set_known_gender(mut self, input: std::option::Option<crate::model::KnownGender>) -> Self {
+            self.known_gender = input; self
         }
         /// Consumes the builder and constructs a [`Celebrity`](crate::model::Celebrity).
         pub fn build(self) -> crate::model::Celebrity {
             crate::model::Celebrity {
-                urls: self.urls,
-                name: self.name,
-                id: self.id,
-                face: self.face,
-                match_confidence: self.match_confidence,
-                known_gender: self.known_gender,
+                urls: self.urls
+                ,
+                name: self.name
+                ,
+                id: self.id
+                ,
+                face: self.face
+                ,
+                match_confidence: self.match_confidence
+                ,
+                known_gender: self.known_gender
+                ,
             }
         }
     }
+    
+    
 }
 impl Celebrity {
     /// Creates a new builder-style object to manufacture [`Celebrity`](crate::model::Celebrity).
@@ -3656,20 +3490,20 @@ impl Celebrity {
 /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KnownGender {
+pub struct KnownGender  {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::KnownGenderType>,
 }
 impl KnownGender {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::KnownGenderType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::KnownGenderType> {
         self.r#type.as_ref()
     }
 }
 /// See [`KnownGender`](crate::model::KnownGender).
 pub mod known_gender {
-
+    
     /// A builder for [`KnownGender`](crate::model::KnownGender).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3682,20 +3516,19 @@ pub mod known_gender {
             self
         }
         /// <p>A string value of the KnownGender info about the Celebrity.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::KnownGenderType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::KnownGenderType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`KnownGender`](crate::model::KnownGender).
         pub fn build(self) -> crate::model::KnownGender {
             crate::model::KnownGender {
-                r#type: self.r#type,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl KnownGender {
     /// Creates a new builder-style object to manufacture [`KnownGender`](crate::model::KnownGender).
@@ -3710,9 +3543,9 @@ impl KnownGender {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let knowngendertype = unimplemented!();
 /// match knowngendertype {
@@ -3736,22 +3569,14 @@ impl KnownGender {
 /// Specifically, when `knowngendertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KnownGenderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>A list of enum string of possible gender values that Celebrity returns.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KnownGenderType {
     #[allow(missing_docs)] // documentation missing in model
     Female,
@@ -3762,7 +3587,7 @@ pub enum KnownGenderType {
     #[allow(missing_docs)] // documentation missing in model
     Unlisted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KnownGenderType {
     fn from(s: &str) -> Self {
@@ -3771,17 +3596,17 @@ impl std::convert::From<&str> for KnownGenderType {
             "Male" => KnownGenderType::Male,
             "Nonbinary" => KnownGenderType::Nonbinary,
             "Unlisted" => KnownGenderType::Unlisted,
-            other => KnownGenderType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => KnownGenderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KnownGenderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KnownGenderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KnownGenderType::from(s))
+                }
+            }
 impl KnownGenderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3790,12 +3615,14 @@ impl KnownGenderType {
             KnownGenderType::Male => "Male",
             KnownGenderType::Nonbinary => "Nonbinary",
             KnownGenderType::Unlisted => "Unlisted",
-            KnownGenderType::Unknown(value) => value.as_str(),
+            KnownGenderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Female", "Male", "Nonbinary", "Unlisted"]
+        &[
+            "Female", "Male", "Nonbinary", "Unlisted"
+        ]
     }
 }
 impl AsRef<str> for KnownGenderType {
@@ -3807,7 +3634,7 @@ impl AsRef<str> for KnownGenderType {
 /// <p>An object that recognizes faces or labels in a streaming video. An Amazon Rekognition stream processor is created by a call to <code>CreateStreamProcessor</code>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessor {
+pub struct StreamProcessor  {
     /// <p>Name of the Amazon Rekognition stream processor. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3817,17 +3644,17 @@ pub struct StreamProcessor {
 }
 impl StreamProcessor {
     /// <p>Name of the Amazon Rekognition stream processor. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StreamProcessorStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StreamProcessorStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StreamProcessor`](crate::model::StreamProcessor).
 pub mod stream_processor {
-
+    
     /// A builder for [`StreamProcessor`](crate::model::StreamProcessor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3842,8 +3669,7 @@ pub mod stream_processor {
         }
         /// <p>Name of the Amazon Rekognition stream processor. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Current status of the Amazon Rekognition stream processor.</p>
         pub fn status(mut self, input: crate::model::StreamProcessorStatus) -> Self {
@@ -3851,21 +3677,21 @@ pub mod stream_processor {
             self
         }
         /// <p>Current status of the Amazon Rekognition stream processor.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StreamProcessorStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StreamProcessorStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessor`](crate::model::StreamProcessor).
         pub fn build(self) -> crate::model::StreamProcessor {
             crate::model::StreamProcessor {
-                name: self.name,
-                status: self.status,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessor {
     /// Creates a new builder-style object to manufacture [`StreamProcessor`](crate::model::StreamProcessor).
@@ -3880,9 +3706,9 @@ impl StreamProcessor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamprocessorstatus = unimplemented!();
 /// match streamprocessorstatus {
@@ -3908,22 +3734,14 @@ impl StreamProcessor {
 /// Specifically, when `streamprocessorstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamProcessorStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamProcessorStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3938,7 +3756,7 @@ pub enum StreamProcessorStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamProcessorStatus {
     fn from(s: &str) -> Self {
@@ -3949,19 +3767,17 @@ impl std::convert::From<&str> for StreamProcessorStatus {
             "STOPPED" => StreamProcessorStatus::Stopped,
             "STOPPING" => StreamProcessorStatus::Stopping,
             "UPDATING" => StreamProcessorStatus::Updating,
-            other => {
-                StreamProcessorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StreamProcessorStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamProcessorStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamProcessorStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamProcessorStatus::from(s))
+                }
+            }
 impl StreamProcessorStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3972,13 +3788,13 @@ impl StreamProcessorStatus {
             StreamProcessorStatus::Stopped => "STOPPED",
             StreamProcessorStatus::Stopping => "STOPPING",
             StreamProcessorStatus::Updating => "UPDATING",
-            StreamProcessorStatus::Unknown(value) => value.as_str(),
+            StreamProcessorStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING",
+            "FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING"
         ]
     }
 }
@@ -3988,11 +3804,11 @@ impl AsRef<str> for StreamProcessorStatus {
     }
 }
 
-/// <p>Describes a project policy in the response from <code>ListProjectPolicies</code>. </p>
+/// <p>Describes a project policy in the response from <code>ListProjectPolicies</code>. </p> 
 /// <p> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectPolicy {
+pub struct ProjectPolicy  {
     /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
@@ -4014,33 +3830,33 @@ pub struct ProjectPolicy {
 }
 impl ProjectPolicy {
     /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The name of the project policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The revision ID of the project policy.</p>
-    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
     /// <p>The JSON document for the project policy.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The Unix datetime for the creation of the project policy.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The Unix datetime for when the project policy was last updated. </p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
 /// See [`ProjectPolicy`](crate::model::ProjectPolicy).
 pub mod project_policy {
-
+    
     /// A builder for [`ProjectPolicy`](crate::model::ProjectPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4059,8 +3875,7 @@ pub mod project_policy {
         }
         /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_arn = input;
-            self
+            self.project_arn = input; self
         }
         /// <p>The name of the project policy.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4069,8 +3884,7 @@ pub mod project_policy {
         }
         /// <p>The name of the project policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
         /// <p>The revision ID of the project policy.</p>
         pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4078,12 +3892,8 @@ pub mod project_policy {
             self
         }
         /// <p>The revision ID of the project policy.</p>
-        pub fn set_policy_revision_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_revision_id = input;
-            self
+        pub fn set_policy_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_revision_id = input; self
         }
         /// <p>The JSON document for the project policy.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4091,12 +3901,8 @@ pub mod project_policy {
             self
         }
         /// <p>The JSON document for the project policy.</p>
-        pub fn set_policy_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_document = input;
-            self
+        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_document = input; self
         }
         /// <p>The Unix datetime for the creation of the project policy.</p>
         pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4104,12 +3910,8 @@ pub mod project_policy {
             self
         }
         /// <p>The Unix datetime for the creation of the project policy.</p>
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// <p>The Unix datetime for when the project policy was last updated. </p>
         pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4117,25 +3919,29 @@ pub mod project_policy {
             self
         }
         /// <p>The Unix datetime for when the project policy was last updated. </p>
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`ProjectPolicy`](crate::model::ProjectPolicy).
         pub fn build(self) -> crate::model::ProjectPolicy {
             crate::model::ProjectPolicy {
-                project_arn: self.project_arn,
-                policy_name: self.policy_name,
-                policy_revision_id: self.policy_revision_id,
-                policy_document: self.policy_document,
-                creation_timestamp: self.creation_timestamp,
-                last_updated_timestamp: self.last_updated_timestamp,
+                project_arn: self.project_arn
+                ,
+                policy_name: self.policy_name
+                ,
+                policy_revision_id: self.policy_revision_id
+                ,
+                policy_document: self.policy_document
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl ProjectPolicy {
     /// Creates a new builder-style object to manufacture [`ProjectPolicy`](crate::model::ProjectPolicy).
@@ -4147,7 +3953,7 @@ impl ProjectPolicy {
 /// <p> Describes a dataset label. For more information, see <code>ListDatasetLabels</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetLabelDescription {
+pub struct DatasetLabelDescription  {
     /// <p> The name of the label. </p>
     #[doc(hidden)]
     pub label_name: std::option::Option<std::string::String>,
@@ -4157,17 +3963,17 @@ pub struct DatasetLabelDescription {
 }
 impl DatasetLabelDescription {
     /// <p> The name of the label. </p>
-    pub fn label_name(&self) -> std::option::Option<&str> {
+    pub fn label_name(&self) -> std::option::Option<& str> {
         self.label_name.as_deref()
     }
     /// <p> Statistics about the label. </p>
-    pub fn label_stats(&self) -> std::option::Option<&crate::model::DatasetLabelStats> {
+    pub fn label_stats(&self) -> std::option::Option<& crate::model::DatasetLabelStats> {
         self.label_stats.as_ref()
     }
 }
 /// See [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
 pub mod dataset_label_description {
-
+    
     /// A builder for [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4182,8 +3988,7 @@ pub mod dataset_label_description {
         }
         /// <p> The name of the label. </p>
         pub fn set_label_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_name = input;
-            self
+            self.label_name = input; self
         }
         /// <p> Statistics about the label. </p>
         pub fn label_stats(mut self, input: crate::model::DatasetLabelStats) -> Self {
@@ -4191,21 +3996,21 @@ pub mod dataset_label_description {
             self
         }
         /// <p> Statistics about the label. </p>
-        pub fn set_label_stats(
-            mut self,
-            input: std::option::Option<crate::model::DatasetLabelStats>,
-        ) -> Self {
-            self.label_stats = input;
-            self
+        pub fn set_label_stats(mut self, input: std::option::Option<crate::model::DatasetLabelStats>) -> Self {
+            self.label_stats = input; self
         }
         /// Consumes the builder and constructs a [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
         pub fn build(self) -> crate::model::DatasetLabelDescription {
             crate::model::DatasetLabelDescription {
-                label_name: self.label_name,
-                label_stats: self.label_stats,
+                label_name: self.label_name
+                ,
+                label_stats: self.label_stats
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetLabelDescription {
     /// Creates a new builder-style object to manufacture [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
@@ -4217,7 +4022,7 @@ impl DatasetLabelDescription {
 /// <p> Statistics about a label used in a dataset. For more information, see <code>DatasetLabelDescription</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetLabelStats {
+pub struct DatasetLabelStats  {
     /// <p> The total number of images that use the label. </p>
     #[doc(hidden)]
     pub entry_count: std::option::Option<i32>,
@@ -4237,7 +4042,7 @@ impl DatasetLabelStats {
 }
 /// See [`DatasetLabelStats`](crate::model::DatasetLabelStats).
 pub mod dataset_label_stats {
-
+    
     /// A builder for [`DatasetLabelStats`](crate::model::DatasetLabelStats).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4252,8 +4057,7 @@ pub mod dataset_label_stats {
         }
         /// <p> The total number of images that use the label. </p>
         pub fn set_entry_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.entry_count = input;
-            self
+            self.entry_count = input; self
         }
         /// <p> The total number of images that have the label assigned to a bounding box. </p>
         pub fn bounding_box_count(mut self, input: i32) -> Self {
@@ -4262,17 +4066,20 @@ pub mod dataset_label_stats {
         }
         /// <p> The total number of images that have the label assigned to a bounding box. </p>
         pub fn set_bounding_box_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.bounding_box_count = input;
-            self
+            self.bounding_box_count = input; self
         }
         /// Consumes the builder and constructs a [`DatasetLabelStats`](crate::model::DatasetLabelStats).
         pub fn build(self) -> crate::model::DatasetLabelStats {
             crate::model::DatasetLabelStats {
-                entry_count: self.entry_count,
-                bounding_box_count: self.bounding_box_count,
+                entry_count: self.entry_count
+                ,
+                bounding_box_count: self.bounding_box_count
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetLabelStats {
     /// Creates a new builder-style object to manufacture [`DatasetLabelStats`](crate::model::DatasetLabelStats).
@@ -4284,15 +4091,15 @@ impl DatasetLabelStats {
 /// <p>A face that <code>IndexFaces</code> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnindexedFace {
-    /// <p>An array of reasons that specify why a face wasn't indexed. </p>
-    /// <ul>
-    /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li>
-    /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li>
-    /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li>
-    /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li>
-    /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
-    /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
+pub struct UnindexedFace  {
+    /// <p>An array of reasons that specify why a face wasn't indexed. </p> 
+    /// <ul> 
+    /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li> 
+    /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li> 
+    /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li> 
+    /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li> 
+    /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li> 
+    /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub reasons: std::option::Option<std::vec::Vec<crate::model::Reason>>,
@@ -4301,26 +4108,26 @@ pub struct UnindexedFace {
     pub face_detail: std::option::Option<crate::model::FaceDetail>,
 }
 impl UnindexedFace {
-    /// <p>An array of reasons that specify why a face wasn't indexed. </p>
-    /// <ul>
-    /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li>
-    /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li>
-    /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li>
-    /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li>
-    /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
-    /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
+    /// <p>An array of reasons that specify why a face wasn't indexed. </p> 
+    /// <ul> 
+    /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li> 
+    /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li> 
+    /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li> 
+    /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li> 
+    /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li> 
+    /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li> 
     /// </ul>
-    pub fn reasons(&self) -> std::option::Option<&[crate::model::Reason]> {
+    pub fn reasons(&self) -> std::option::Option<& [crate::model::Reason]> {
         self.reasons.as_deref()
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
-    pub fn face_detail(&self) -> std::option::Option<&crate::model::FaceDetail> {
+    pub fn face_detail(&self) -> std::option::Option<& crate::model::FaceDetail> {
         self.face_detail.as_ref()
     }
 }
 /// See [`UnindexedFace`](crate::model::UnindexedFace).
 pub mod unindexed_face {
-
+    
     /// A builder for [`UnindexedFace`](crate::model::UnindexedFace).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4332,36 +4139,32 @@ pub mod unindexed_face {
         ///
         /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
         ///
-        /// <p>An array of reasons that specify why a face wasn't indexed. </p>
-        /// <ul>
-        /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li>
-        /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li>
-        /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li>
-        /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li>
-        /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
-        /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
+        /// <p>An array of reasons that specify why a face wasn't indexed. </p> 
+        /// <ul> 
+        /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li> 
+        /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li> 
+        /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li> 
+        /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li> 
+        /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li> 
+        /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li> 
         /// </ul>
         pub fn reasons(mut self, input: crate::model::Reason) -> Self {
             let mut v = self.reasons.unwrap_or_default();
-            v.push(input);
-            self.reasons = Some(v);
-            self
+                            v.push(input);
+                            self.reasons = Some(v);
+                            self
         }
-        /// <p>An array of reasons that specify why a face wasn't indexed. </p>
-        /// <ul>
-        /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li>
-        /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li>
-        /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li>
-        /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li>
-        /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
-        /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
+        /// <p>An array of reasons that specify why a face wasn't indexed. </p> 
+        /// <ul> 
+        /// <li> <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p> </li> 
+        /// <li> <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li> 
+        /// <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li> 
+        /// <li> <p>LOW_SHARPNESS - The image is too blurry.</p> </li> 
+        /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li> 
+        /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li> 
         /// </ul>
-        pub fn set_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Reason>>,
-        ) -> Self {
-            self.reasons = input;
-            self
+        pub fn set_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::model::Reason>>) -> Self {
+            self.reasons = input; self
         }
         /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
         pub fn face_detail(mut self, input: crate::model::FaceDetail) -> Self {
@@ -4369,21 +4172,21 @@ pub mod unindexed_face {
             self
         }
         /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
-        pub fn set_face_detail(
-            mut self,
-            input: std::option::Option<crate::model::FaceDetail>,
-        ) -> Self {
-            self.face_detail = input;
-            self
+        pub fn set_face_detail(mut self, input: std::option::Option<crate::model::FaceDetail>) -> Self {
+            self.face_detail = input; self
         }
         /// Consumes the builder and constructs a [`UnindexedFace`](crate::model::UnindexedFace).
         pub fn build(self) -> crate::model::UnindexedFace {
             crate::model::UnindexedFace {
-                reasons: self.reasons,
-                face_detail: self.face_detail,
+                reasons: self.reasons
+                ,
+                face_detail: self.face_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl UnindexedFace {
     /// Creates a new builder-style object to manufacture [`UnindexedFace`](crate::model::UnindexedFace).
@@ -4392,18 +4195,18 @@ impl UnindexedFace {
     }
 }
 
-/// <p>Structure containing attributes of the face that the algorithm detected.</p>
-/// <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p>
-/// <p> <code>GetFaceDetection</code> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <code>StartFaceDetection</code>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter:</p>
-/// <ul>
-/// <li> <p>GetCelebrityRecognition</p> </li>
-/// <li> <p>GetPersonTracking</p> </li>
-/// <li> <p>GetFaceSearch</p> </li>
-/// </ul>
+/// <p>Structure containing attributes of the face that the algorithm detected.</p> 
+/// <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> 
+/// <p> <code>GetFaceDetection</code> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <code>StartFaceDetection</code>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter:</p> 
+/// <ul> 
+/// <li> <p>GetCelebrityRecognition</p> </li> 
+/// <li> <p>GetPersonTracking</p> </li> 
+/// <li> <p>GetFaceSearch</p> </li> 
+/// </ul> 
 /// <p>The Amazon Rekognition Image <code>DetectFaces</code> and <code>IndexFaces</code> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaceDetail {
+pub struct FaceDetail  {
     /// <p>Bounding box of the face. Default attribute.</p>
     #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -4452,59 +4255,59 @@ pub struct FaceDetail {
 }
 impl FaceDetail {
     /// <p>Bounding box of the face. Default attribute.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
-    pub fn age_range(&self) -> std::option::Option<&crate::model::AgeRange> {
+    pub fn age_range(&self) -> std::option::Option<& crate::model::AgeRange> {
         self.age_range.as_ref()
     }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
-    pub fn smile(&self) -> std::option::Option<&crate::model::Smile> {
+    pub fn smile(&self) -> std::option::Option<& crate::model::Smile> {
         self.smile.as_ref()
     }
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
-    pub fn eyeglasses(&self) -> std::option::Option<&crate::model::Eyeglasses> {
+    pub fn eyeglasses(&self) -> std::option::Option<& crate::model::Eyeglasses> {
         self.eyeglasses.as_ref()
     }
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
-    pub fn sunglasses(&self) -> std::option::Option<&crate::model::Sunglasses> {
+    pub fn sunglasses(&self) -> std::option::Option<& crate::model::Sunglasses> {
         self.sunglasses.as_ref()
     }
     /// <p>The predicted gender of a detected face. </p>
-    pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
+    pub fn gender(&self) -> std::option::Option<& crate::model::Gender> {
         self.gender.as_ref()
     }
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
-    pub fn beard(&self) -> std::option::Option<&crate::model::Beard> {
+    pub fn beard(&self) -> std::option::Option<& crate::model::Beard> {
         self.beard.as_ref()
     }
     /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
-    pub fn mustache(&self) -> std::option::Option<&crate::model::Mustache> {
+    pub fn mustache(&self) -> std::option::Option<& crate::model::Mustache> {
         self.mustache.as_ref()
     }
     /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
-    pub fn eyes_open(&self) -> std::option::Option<&crate::model::EyeOpen> {
+    pub fn eyes_open(&self) -> std::option::Option<& crate::model::EyeOpen> {
         self.eyes_open.as_ref()
     }
     /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
-    pub fn mouth_open(&self) -> std::option::Option<&crate::model::MouthOpen> {
+    pub fn mouth_open(&self) -> std::option::Option<& crate::model::MouthOpen> {
         self.mouth_open.as_ref()
     }
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
-    pub fn emotions(&self) -> std::option::Option<&[crate::model::Emotion]> {
+    pub fn emotions(&self) -> std::option::Option<& [crate::model::Emotion]> {
         self.emotions.as_deref()
     }
     /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
-    pub fn landmarks(&self) -> std::option::Option<&[crate::model::Landmark]> {
+    pub fn landmarks(&self) -> std::option::Option<& [crate::model::Landmark]> {
         self.landmarks.as_deref()
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
-    pub fn pose(&self) -> std::option::Option<&crate::model::Pose> {
+    pub fn pose(&self) -> std::option::Option<& crate::model::Pose> {
         self.pose.as_ref()
     }
     /// <p>Identifies image brightness and sharpness. Default attribute.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::model::ImageQuality> {
+    pub fn quality(&self) -> std::option::Option<& crate::model::ImageQuality> {
         self.quality.as_ref()
     }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
@@ -4514,7 +4317,7 @@ impl FaceDetail {
 }
 /// See [`FaceDetail`](crate::model::FaceDetail).
 pub mod face_detail {
-
+    
     /// A builder for [`FaceDetail`](crate::model::FaceDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4541,12 +4344,8 @@ pub mod face_detail {
             self
         }
         /// <p>Bounding box of the face. Default attribute.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
         pub fn age_range(mut self, input: crate::model::AgeRange) -> Self {
@@ -4555,8 +4354,7 @@ pub mod face_detail {
         }
         /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
         pub fn set_age_range(mut self, input: std::option::Option<crate::model::AgeRange>) -> Self {
-            self.age_range = input;
-            self
+            self.age_range = input; self
         }
         /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
         pub fn smile(mut self, input: crate::model::Smile) -> Self {
@@ -4565,8 +4363,7 @@ pub mod face_detail {
         }
         /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
         pub fn set_smile(mut self, input: std::option::Option<crate::model::Smile>) -> Self {
-            self.smile = input;
-            self
+            self.smile = input; self
         }
         /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
         pub fn eyeglasses(mut self, input: crate::model::Eyeglasses) -> Self {
@@ -4574,12 +4371,8 @@ pub mod face_detail {
             self
         }
         /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
-        pub fn set_eyeglasses(
-            mut self,
-            input: std::option::Option<crate::model::Eyeglasses>,
-        ) -> Self {
-            self.eyeglasses = input;
-            self
+        pub fn set_eyeglasses(mut self, input: std::option::Option<crate::model::Eyeglasses>) -> Self {
+            self.eyeglasses = input; self
         }
         /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
         pub fn sunglasses(mut self, input: crate::model::Sunglasses) -> Self {
@@ -4587,12 +4380,8 @@ pub mod face_detail {
             self
         }
         /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
-        pub fn set_sunglasses(
-            mut self,
-            input: std::option::Option<crate::model::Sunglasses>,
-        ) -> Self {
-            self.sunglasses = input;
-            self
+        pub fn set_sunglasses(mut self, input: std::option::Option<crate::model::Sunglasses>) -> Self {
+            self.sunglasses = input; self
         }
         /// <p>The predicted gender of a detected face. </p>
         pub fn gender(mut self, input: crate::model::Gender) -> Self {
@@ -4601,8 +4390,7 @@ pub mod face_detail {
         }
         /// <p>The predicted gender of a detected face. </p>
         pub fn set_gender(mut self, input: std::option::Option<crate::model::Gender>) -> Self {
-            self.gender = input;
-            self
+            self.gender = input; self
         }
         /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
         pub fn beard(mut self, input: crate::model::Beard) -> Self {
@@ -4611,8 +4399,7 @@ pub mod face_detail {
         }
         /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
         pub fn set_beard(mut self, input: std::option::Option<crate::model::Beard>) -> Self {
-            self.beard = input;
-            self
+            self.beard = input; self
         }
         /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
         pub fn mustache(mut self, input: crate::model::Mustache) -> Self {
@@ -4621,8 +4408,7 @@ pub mod face_detail {
         }
         /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
         pub fn set_mustache(mut self, input: std::option::Option<crate::model::Mustache>) -> Self {
-            self.mustache = input;
-            self
+            self.mustache = input; self
         }
         /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
         pub fn eyes_open(mut self, input: crate::model::EyeOpen) -> Self {
@@ -4631,8 +4417,7 @@ pub mod face_detail {
         }
         /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
         pub fn set_eyes_open(mut self, input: std::option::Option<crate::model::EyeOpen>) -> Self {
-            self.eyes_open = input;
-            self
+            self.eyes_open = input; self
         }
         /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
         pub fn mouth_open(mut self, input: crate::model::MouthOpen) -> Self {
@@ -4640,12 +4425,8 @@ pub mod face_detail {
             self
         }
         /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
-        pub fn set_mouth_open(
-            mut self,
-            input: std::option::Option<crate::model::MouthOpen>,
-        ) -> Self {
-            self.mouth_open = input;
-            self
+        pub fn set_mouth_open(mut self, input: std::option::Option<crate::model::MouthOpen>) -> Self {
+            self.mouth_open = input; self
         }
         /// Appends an item to `emotions`.
         ///
@@ -4654,17 +4435,13 @@ pub mod face_detail {
         /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
         pub fn emotions(mut self, input: crate::model::Emotion) -> Self {
             let mut v = self.emotions.unwrap_or_default();
-            v.push(input);
-            self.emotions = Some(v);
-            self
+                            v.push(input);
+                            self.emotions = Some(v);
+                            self
         }
         /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
-        pub fn set_emotions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Emotion>>,
-        ) -> Self {
-            self.emotions = input;
-            self
+        pub fn set_emotions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Emotion>>) -> Self {
+            self.emotions = input; self
         }
         /// Appends an item to `landmarks`.
         ///
@@ -4673,17 +4450,13 @@ pub mod face_detail {
         /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
         pub fn landmarks(mut self, input: crate::model::Landmark) -> Self {
             let mut v = self.landmarks.unwrap_or_default();
-            v.push(input);
-            self.landmarks = Some(v);
-            self
+                            v.push(input);
+                            self.landmarks = Some(v);
+                            self
         }
         /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
-        pub fn set_landmarks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Landmark>>,
-        ) -> Self {
-            self.landmarks = input;
-            self
+        pub fn set_landmarks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Landmark>>) -> Self {
+            self.landmarks = input; self
         }
         /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
         pub fn pose(mut self, input: crate::model::Pose) -> Self {
@@ -4692,8 +4465,7 @@ pub mod face_detail {
         }
         /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
         pub fn set_pose(mut self, input: std::option::Option<crate::model::Pose>) -> Self {
-            self.pose = input;
-            self
+            self.pose = input; self
         }
         /// <p>Identifies image brightness and sharpness. Default attribute.</p>
         pub fn quality(mut self, input: crate::model::ImageQuality) -> Self {
@@ -4701,12 +4473,8 @@ pub mod face_detail {
             self
         }
         /// <p>Identifies image brightness and sharpness. Default attribute.</p>
-        pub fn set_quality(
-            mut self,
-            input: std::option::Option<crate::model::ImageQuality>,
-        ) -> Self {
-            self.quality = input;
-            self
+        pub fn set_quality(mut self, input: std::option::Option<crate::model::ImageQuality>) -> Self {
+            self.quality = input; self
         }
         /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -4715,30 +4483,46 @@ pub mod face_detail {
         }
         /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`FaceDetail`](crate::model::FaceDetail).
         pub fn build(self) -> crate::model::FaceDetail {
             crate::model::FaceDetail {
-                bounding_box: self.bounding_box,
-                age_range: self.age_range,
-                smile: self.smile,
-                eyeglasses: self.eyeglasses,
-                sunglasses: self.sunglasses,
-                gender: self.gender,
-                beard: self.beard,
-                mustache: self.mustache,
-                eyes_open: self.eyes_open,
-                mouth_open: self.mouth_open,
-                emotions: self.emotions,
-                landmarks: self.landmarks,
-                pose: self.pose,
-                quality: self.quality,
-                confidence: self.confidence,
+                bounding_box: self.bounding_box
+                ,
+                age_range: self.age_range
+                ,
+                smile: self.smile
+                ,
+                eyeglasses: self.eyeglasses
+                ,
+                sunglasses: self.sunglasses
+                ,
+                gender: self.gender
+                ,
+                beard: self.beard
+                ,
+                mustache: self.mustache
+                ,
+                eyes_open: self.eyes_open
+                ,
+                mouth_open: self.mouth_open
+                ,
+                emotions: self.emotions
+                ,
+                landmarks: self.landmarks
+                ,
+                pose: self.pose
+                ,
+                quality: self.quality
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl FaceDetail {
     /// Creates a new builder-style object to manufacture [`FaceDetail`](crate::model::FaceDetail).
@@ -4750,7 +4534,7 @@ impl FaceDetail {
 /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MouthOpen {
+pub struct MouthOpen  {
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -4770,7 +4554,7 @@ impl MouthOpen {
 }
 /// See [`MouthOpen`](crate::model::MouthOpen).
 pub mod mouth_open {
-
+    
     /// A builder for [`MouthOpen`](crate::model::MouthOpen).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4785,8 +4569,7 @@ pub mod mouth_open {
         }
         /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
         pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -4795,17 +4578,21 @@ pub mod mouth_open {
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`MouthOpen`](crate::model::MouthOpen).
         pub fn build(self) -> crate::model::MouthOpen {
             crate::model::MouthOpen {
-                value: self.value.unwrap_or_default(),
-                confidence: self.confidence,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl MouthOpen {
     /// Creates a new builder-style object to manufacture [`MouthOpen`](crate::model::MouthOpen).
@@ -4817,7 +4604,7 @@ impl MouthOpen {
 /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EyeOpen {
+pub struct EyeOpen  {
     /// <p>Boolean value that indicates whether the eyes on the face are open.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -4837,7 +4624,7 @@ impl EyeOpen {
 }
 /// See [`EyeOpen`](crate::model::EyeOpen).
 pub mod eye_open {
-
+    
     /// A builder for [`EyeOpen`](crate::model::EyeOpen).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4852,8 +4639,7 @@ pub mod eye_open {
         }
         /// <p>Boolean value that indicates whether the eyes on the face are open.</p>
         pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -4862,17 +4648,21 @@ pub mod eye_open {
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`EyeOpen`](crate::model::EyeOpen).
         pub fn build(self) -> crate::model::EyeOpen {
             crate::model::EyeOpen {
-                value: self.value.unwrap_or_default(),
-                confidence: self.confidence,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl EyeOpen {
     /// Creates a new builder-style object to manufacture [`EyeOpen`](crate::model::EyeOpen).
@@ -4884,7 +4674,7 @@ impl EyeOpen {
 /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Mustache {
+pub struct Mustache  {
     /// <p>Boolean value that indicates whether the face has mustache or not.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -4904,7 +4694,7 @@ impl Mustache {
 }
 /// See [`Mustache`](crate::model::Mustache).
 pub mod mustache {
-
+    
     /// A builder for [`Mustache`](crate::model::Mustache).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4919,8 +4709,7 @@ pub mod mustache {
         }
         /// <p>Boolean value that indicates whether the face has mustache or not.</p>
         pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -4929,17 +4718,21 @@ pub mod mustache {
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`Mustache`](crate::model::Mustache).
         pub fn build(self) -> crate::model::Mustache {
             crate::model::Mustache {
-                value: self.value.unwrap_or_default(),
-                confidence: self.confidence,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl Mustache {
     /// Creates a new builder-style object to manufacture [`Mustache`](crate::model::Mustache).
@@ -4951,7 +4744,7 @@ impl Mustache {
 /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Beard {
+pub struct Beard  {
     /// <p>Boolean value that indicates whether the face has beard or not.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -4971,7 +4764,7 @@ impl Beard {
 }
 /// See [`Beard`](crate::model::Beard).
 pub mod beard {
-
+    
     /// A builder for [`Beard`](crate::model::Beard).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4986,8 +4779,7 @@ pub mod beard {
         }
         /// <p>Boolean value that indicates whether the face has beard or not.</p>
         pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -4996,17 +4788,21 @@ pub mod beard {
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`Beard`](crate::model::Beard).
         pub fn build(self) -> crate::model::Beard {
             crate::model::Beard {
-                value: self.value.unwrap_or_default(),
-                confidence: self.confidence,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl Beard {
     /// Creates a new builder-style object to manufacture [`Beard`](crate::model::Beard).
@@ -5015,13 +4811,13 @@ impl Beard {
     }
 }
 
-/// <p>The predicted gender of a detected face. </p>
-/// <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p>
-/// <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p>
+/// <p>The predicted gender of a detected face. </p> 
+/// <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> 
+/// <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p> 
 /// <p>We don't recommend using gender binary predictions to make decisions that impact an individual's rights, privacy, or access to services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Gender {
+pub struct Gender  {
     /// <p>The predicted gender of the face.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::model::GenderType>,
@@ -5031,7 +4827,7 @@ pub struct Gender {
 }
 impl Gender {
     /// <p>The predicted gender of the face.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::GenderType> {
+    pub fn value(&self) -> std::option::Option<& crate::model::GenderType> {
         self.value.as_ref()
     }
     /// <p>Level of confidence in the prediction.</p>
@@ -5041,7 +4837,7 @@ impl Gender {
 }
 /// See [`Gender`](crate::model::Gender).
 pub mod gender {
-
+    
     /// A builder for [`Gender`](crate::model::Gender).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5056,8 +4852,7 @@ pub mod gender {
         }
         /// <p>The predicted gender of the face.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::GenderType>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Level of confidence in the prediction.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -5066,17 +4861,20 @@ pub mod gender {
         }
         /// <p>Level of confidence in the prediction.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`Gender`](crate::model::Gender).
         pub fn build(self) -> crate::model::Gender {
             crate::model::Gender {
-                value: self.value,
-                confidence: self.confidence,
+                value: self.value
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl Gender {
     /// Creates a new builder-style object to manufacture [`Gender`](crate::model::Gender).
@@ -5091,9 +4889,9 @@ impl Gender {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let gendertype = unimplemented!();
 /// match gendertype {
@@ -5115,58 +4913,52 @@ impl Gender {
 /// Specifically, when `gendertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GenderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GenderType {
     #[allow(missing_docs)] // documentation missing in model
     Female,
     #[allow(missing_docs)] // documentation missing in model
     Male,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GenderType {
     fn from(s: &str) -> Self {
         match s {
             "Female" => GenderType::Female,
             "Male" => GenderType::Male,
-            other => GenderType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GenderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GenderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GenderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GenderType::from(s))
+                }
+            }
 impl GenderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GenderType::Female => "Female",
             GenderType::Male => "Male",
-            GenderType::Unknown(value) => value.as_str(),
+            GenderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Female", "Male"]
+        &[
+            "Female", "Male"
+        ]
     }
 }
 impl AsRef<str> for GenderType {
@@ -5178,7 +4970,7 @@ impl AsRef<str> for GenderType {
 /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sunglasses {
+pub struct Sunglasses  {
     /// <p>Boolean value that indicates whether the face is wearing sunglasses or not.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -5198,7 +4990,7 @@ impl Sunglasses {
 }
 /// See [`Sunglasses`](crate::model::Sunglasses).
 pub mod sunglasses {
-
+    
     /// A builder for [`Sunglasses`](crate::model::Sunglasses).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5213,8 +5005,7 @@ pub mod sunglasses {
         }
         /// <p>Boolean value that indicates whether the face is wearing sunglasses or not.</p>
         pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -5223,17 +5014,21 @@ pub mod sunglasses {
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`Sunglasses`](crate::model::Sunglasses).
         pub fn build(self) -> crate::model::Sunglasses {
             crate::model::Sunglasses {
-                value: self.value.unwrap_or_default(),
-                confidence: self.confidence,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl Sunglasses {
     /// Creates a new builder-style object to manufacture [`Sunglasses`](crate::model::Sunglasses).
@@ -5245,7 +5040,7 @@ impl Sunglasses {
 /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Eyeglasses {
+pub struct Eyeglasses  {
     /// <p>Boolean value that indicates whether the face is wearing eye glasses or not.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -5265,7 +5060,7 @@ impl Eyeglasses {
 }
 /// See [`Eyeglasses`](crate::model::Eyeglasses).
 pub mod eyeglasses {
-
+    
     /// A builder for [`Eyeglasses`](crate::model::Eyeglasses).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5280,8 +5075,7 @@ pub mod eyeglasses {
         }
         /// <p>Boolean value that indicates whether the face is wearing eye glasses or not.</p>
         pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -5290,17 +5084,21 @@ pub mod eyeglasses {
         }
         /// <p>Level of confidence in the determination.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`Eyeglasses`](crate::model::Eyeglasses).
         pub fn build(self) -> crate::model::Eyeglasses {
             crate::model::Eyeglasses {
-                value: self.value.unwrap_or_default(),
-                confidence: self.confidence,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl Eyeglasses {
     /// Creates a new builder-style object to manufacture [`Eyeglasses`](crate::model::Eyeglasses).
@@ -5309,11 +5107,11 @@ impl Eyeglasses {
     }
 }
 
-/// <p>Structure containing the estimated age range, in years, for a face.</p>
+/// <p>Structure containing the estimated age range, in years, for a face.</p> 
 /// <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgeRange {
+pub struct AgeRange  {
     /// <p>The lowest estimated age.</p>
     #[doc(hidden)]
     pub low: std::option::Option<i32>,
@@ -5333,7 +5131,7 @@ impl AgeRange {
 }
 /// See [`AgeRange`](crate::model::AgeRange).
 pub mod age_range {
-
+    
     /// A builder for [`AgeRange`](crate::model::AgeRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5348,8 +5146,7 @@ pub mod age_range {
         }
         /// <p>The lowest estimated age.</p>
         pub fn set_low(mut self, input: std::option::Option<i32>) -> Self {
-            self.low = input;
-            self
+            self.low = input; self
         }
         /// <p>The highest estimated age.</p>
         pub fn high(mut self, input: i32) -> Self {
@@ -5358,17 +5155,20 @@ pub mod age_range {
         }
         /// <p>The highest estimated age.</p>
         pub fn set_high(mut self, input: std::option::Option<i32>) -> Self {
-            self.high = input;
-            self
+            self.high = input; self
         }
         /// Consumes the builder and constructs a [`AgeRange`](crate::model::AgeRange).
         pub fn build(self) -> crate::model::AgeRange {
             crate::model::AgeRange {
-                low: self.low,
-                high: self.high,
+                low: self.low
+                ,
+                high: self.high
+                ,
             }
         }
     }
+    
+    
 }
 impl AgeRange {
     /// Creates a new builder-style object to manufacture [`AgeRange`](crate::model::AgeRange).
@@ -5383,9 +5183,9 @@ impl AgeRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reason = unimplemented!();
 /// match reason {
@@ -5412,22 +5212,14 @@ impl AgeRange {
 /// Specifically, when `reason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Reason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Reason {
     #[allow(missing_docs)] // documentation missing in model
     ExceedsMaxFaces,
@@ -5444,7 +5236,7 @@ pub enum Reason {
     #[allow(missing_docs)] // documentation missing in model
     SmallBoundingBox,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Reason {
     fn from(s: &str) -> Self {
@@ -5456,17 +5248,17 @@ impl std::convert::From<&str> for Reason {
             "LOW_FACE_QUALITY" => Reason::LowFaceQuality,
             "LOW_SHARPNESS" => Reason::LowSharpness,
             "SMALL_BOUNDING_BOX" => Reason::SmallBoundingBox,
-            other => Reason::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Reason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Reason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Reason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Reason::from(s))
+                }
+            }
 impl Reason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5478,19 +5270,13 @@ impl Reason {
             Reason::LowFaceQuality => "LOW_FACE_QUALITY",
             Reason::LowSharpness => "LOW_SHARPNESS",
             Reason::SmallBoundingBox => "SMALL_BOUNDING_BOX",
-            Reason::Unknown(value) => value.as_str(),
+            Reason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EXCEEDS_MAX_FACES",
-            "EXTREME_POSE",
-            "LOW_BRIGHTNESS",
-            "LOW_CONFIDENCE",
-            "LOW_FACE_QUALITY",
-            "LOW_SHARPNESS",
-            "SMALL_BOUNDING_BOX",
+            "EXCEEDS_MAX_FACES", "EXTREME_POSE", "LOW_BRIGHTNESS", "LOW_CONFIDENCE", "LOW_FACE_QUALITY", "LOW_SHARPNESS", "SMALL_BOUNDING_BOX"
         ]
     }
 }
@@ -5503,7 +5289,7 @@ impl AsRef<str> for Reason {
 /// <p>Object containing both the face metadata (stored in the backend database), and facial attributes that are detected but aren't stored in the database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaceRecord {
+pub struct FaceRecord  {
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
     #[doc(hidden)]
     pub face: std::option::Option<crate::model::Face>,
@@ -5513,17 +5299,17 @@ pub struct FaceRecord {
 }
 impl FaceRecord {
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
-    pub fn face(&self) -> std::option::Option<&crate::model::Face> {
+    pub fn face(&self) -> std::option::Option<& crate::model::Face> {
         self.face.as_ref()
     }
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
-    pub fn face_detail(&self) -> std::option::Option<&crate::model::FaceDetail> {
+    pub fn face_detail(&self) -> std::option::Option<& crate::model::FaceDetail> {
         self.face_detail.as_ref()
     }
 }
 /// See [`FaceRecord`](crate::model::FaceRecord).
 pub mod face_record {
-
+    
     /// A builder for [`FaceRecord`](crate::model::FaceRecord).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5538,8 +5324,7 @@ pub mod face_record {
         }
         /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
         pub fn set_face(mut self, input: std::option::Option<crate::model::Face>) -> Self {
-            self.face = input;
-            self
+            self.face = input; self
         }
         /// <p>Structure containing attributes of the face that the algorithm detected.</p>
         pub fn face_detail(mut self, input: crate::model::FaceDetail) -> Self {
@@ -5547,21 +5332,21 @@ pub mod face_record {
             self
         }
         /// <p>Structure containing attributes of the face that the algorithm detected.</p>
-        pub fn set_face_detail(
-            mut self,
-            input: std::option::Option<crate::model::FaceDetail>,
-        ) -> Self {
-            self.face_detail = input;
-            self
+        pub fn set_face_detail(mut self, input: std::option::Option<crate::model::FaceDetail>) -> Self {
+            self.face_detail = input; self
         }
         /// Consumes the builder and constructs a [`FaceRecord`](crate::model::FaceRecord).
         pub fn build(self) -> crate::model::FaceRecord {
             crate::model::FaceRecord {
-                face: self.face,
-                face_detail: self.face_detail,
+                face: self.face
+                ,
+                face_detail: self.face_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl FaceRecord {
     /// Creates a new builder-style object to manufacture [`FaceRecord`](crate::model::FaceRecord).
@@ -5576,9 +5361,9 @@ impl FaceRecord {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let attribute = unimplemented!();
 /// match attribute {
@@ -5600,58 +5385,52 @@ impl FaceRecord {
 /// Specifically, when `attribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Attribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Attribute {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     Default,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Attribute {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => Attribute::All,
             "DEFAULT" => Attribute::Default,
-            other => Attribute::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Attribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Attribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Attribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Attribute::from(s))
+                }
+            }
 impl Attribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Attribute::All => "ALL",
             Attribute::Default => "DEFAULT",
-            Attribute::Unknown(value) => value.as_str(),
+            Attribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "DEFAULT"]
+        &[
+            "ALL", "DEFAULT"
+        ]
     }
 }
 impl AsRef<str> for Attribute {
@@ -5663,7 +5442,7 @@ impl AsRef<str> for Attribute {
 /// <p>Information about text detected in a video. Incudes the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextDetectionResult {
+pub struct TextDetectionResult  {
     /// <p>The time, in milliseconds from the start of the video, that the text was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the text first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -5677,13 +5456,13 @@ impl TextDetectionResult {
         self.timestamp
     }
     /// <p>Details about text detected in a video.</p>
-    pub fn text_detection(&self) -> std::option::Option<&crate::model::TextDetection> {
+    pub fn text_detection(&self) -> std::option::Option<& crate::model::TextDetection> {
         self.text_detection.as_ref()
     }
 }
 /// See [`TextDetectionResult`](crate::model::TextDetectionResult).
 pub mod text_detection_result {
-
+    
     /// A builder for [`TextDetectionResult`](crate::model::TextDetectionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5698,8 +5477,7 @@ pub mod text_detection_result {
         }
         /// <p>The time, in milliseconds from the start of the video, that the text was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the text first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>Details about text detected in a video.</p>
         pub fn text_detection(mut self, input: crate::model::TextDetection) -> Self {
@@ -5707,21 +5485,22 @@ pub mod text_detection_result {
             self
         }
         /// <p>Details about text detected in a video.</p>
-        pub fn set_text_detection(
-            mut self,
-            input: std::option::Option<crate::model::TextDetection>,
-        ) -> Self {
-            self.text_detection = input;
-            self
+        pub fn set_text_detection(mut self, input: std::option::Option<crate::model::TextDetection>) -> Self {
+            self.text_detection = input; self
         }
         /// Consumes the builder and constructs a [`TextDetectionResult`](crate::model::TextDetectionResult).
         pub fn build(self) -> crate::model::TextDetectionResult {
             crate::model::TextDetectionResult {
-                timestamp: self.timestamp.unwrap_or_default(),
-                text_detection: self.text_detection,
+                timestamp: self.timestamp
+                    .unwrap_or_default()
+                ,
+                text_detection: self.text_detection
+                ,
             }
         }
     }
+    
+    
 }
 impl TextDetectionResult {
     /// Creates a new builder-style object to manufacture [`TextDetectionResult`](crate::model::TextDetectionResult).
@@ -5730,13 +5509,13 @@ impl TextDetectionResult {
     }
 }
 
-/// <p>Information about a word or line of text detected by <code>DetectText</code>.</p>
-/// <p>The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image. </p>
-/// <p>Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. </p>
+/// <p>Information about a word or line of text detected by <code>DetectText</code>.</p> 
+/// <p>The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image. </p> 
+/// <p>Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. </p> 
 /// <p>For more information, see Detecting text in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextDetection {
+pub struct TextDetection  {
     /// <p>The word or line of text recognized by Amazon Rekognition. </p>
     #[doc(hidden)]
     pub detected_text: std::option::Option<std::string::String>,
@@ -5758,11 +5537,11 @@ pub struct TextDetection {
 }
 impl TextDetection {
     /// <p>The word or line of text recognized by Amazon Rekognition. </p>
-    pub fn detected_text(&self) -> std::option::Option<&str> {
+    pub fn detected_text(&self) -> std::option::Option<& str> {
         self.detected_text.as_deref()
     }
     /// <p>The type of text that was detected.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::TextTypes> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::TextTypes> {
         self.r#type.as_ref()
     }
     /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>. </p>
@@ -5778,13 +5557,13 @@ impl TextDetection {
         self.confidence
     }
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::model::Geometry> {
+    pub fn geometry(&self) -> std::option::Option<& crate::model::Geometry> {
         self.geometry.as_ref()
     }
 }
 /// See [`TextDetection`](crate::model::TextDetection).
 pub mod text_detection {
-
+    
     /// A builder for [`TextDetection`](crate::model::TextDetection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5802,12 +5581,8 @@ pub mod text_detection {
             self
         }
         /// <p>The word or line of text recognized by Amazon Rekognition. </p>
-        pub fn set_detected_text(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detected_text = input;
-            self
+        pub fn set_detected_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detected_text = input; self
         }
         /// <p>The type of text that was detected.</p>
         pub fn r#type(mut self, input: crate::model::TextTypes) -> Self {
@@ -5816,8 +5591,7 @@ pub mod text_detection {
         }
         /// <p>The type of text that was detected.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TextTypes>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>. </p>
         pub fn id(mut self, input: i32) -> Self {
@@ -5826,8 +5600,7 @@ pub mod text_detection {
         }
         /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is <code>Null</code>. </p>
         pub fn parent_id(mut self, input: i32) -> Self {
@@ -5836,8 +5609,7 @@ pub mod text_detection {
         }
         /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is <code>Null</code>. </p>
         pub fn set_parent_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.parent_id = input;
-            self
+            self.parent_id = input; self
         }
         /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy of the geometry points around the detected text.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -5846,8 +5618,7 @@ pub mod text_detection {
         }
         /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy of the geometry points around the detected text.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
         pub fn geometry(mut self, input: crate::model::Geometry) -> Self {
@@ -5856,21 +5627,28 @@ pub mod text_detection {
         }
         /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
         pub fn set_geometry(mut self, input: std::option::Option<crate::model::Geometry>) -> Self {
-            self.geometry = input;
-            self
+            self.geometry = input; self
         }
         /// Consumes the builder and constructs a [`TextDetection`](crate::model::TextDetection).
         pub fn build(self) -> crate::model::TextDetection {
             crate::model::TextDetection {
-                detected_text: self.detected_text,
-                r#type: self.r#type,
-                id: self.id,
-                parent_id: self.parent_id,
-                confidence: self.confidence,
-                geometry: self.geometry,
+                detected_text: self.detected_text
+                ,
+                r#type: self.r#type
+                ,
+                id: self.id
+                ,
+                parent_id: self.parent_id
+                ,
+                confidence: self.confidence
+                ,
+                geometry: self.geometry
+                ,
             }
         }
     }
+    
+    
 }
 impl TextDetection {
     /// Creates a new builder-style object to manufacture [`TextDetection`](crate::model::TextDetection).
@@ -5882,7 +5660,7 @@ impl TextDetection {
 /// <p>Information about where an object (<code>DetectCustomLabels</code>) or text (<code>DetectText</code>) is located on an image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Geometry {
+pub struct Geometry  {
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
     #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -5892,17 +5670,17 @@ pub struct Geometry {
 }
 impl Geometry {
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-    pub fn polygon(&self) -> std::option::Option<&[crate::model::Point]> {
+    pub fn polygon(&self) -> std::option::Option<& [crate::model::Point]> {
         self.polygon.as_deref()
     }
 }
 /// See [`Geometry`](crate::model::Geometry).
 pub mod geometry {
-
+    
     /// A builder for [`Geometry`](crate::model::Geometry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5916,12 +5694,8 @@ pub mod geometry {
             self
         }
         /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// Appends an item to `polygon`.
         ///
@@ -5930,26 +5704,26 @@ pub mod geometry {
         /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
         pub fn polygon(mut self, input: crate::model::Point) -> Self {
             let mut v = self.polygon.unwrap_or_default();
-            v.push(input);
-            self.polygon = Some(v);
-            self
+                            v.push(input);
+                            self.polygon = Some(v);
+                            self
         }
         /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-        pub fn set_polygon(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Point>>,
-        ) -> Self {
-            self.polygon = input;
-            self
+        pub fn set_polygon(mut self, input: std::option::Option<std::vec::Vec<crate::model::Point>>) -> Self {
+            self.polygon = input; self
         }
         /// Consumes the builder and constructs a [`Geometry`](crate::model::Geometry).
         pub fn build(self) -> crate::model::Geometry {
             crate::model::Geometry {
-                bounding_box: self.bounding_box,
-                polygon: self.polygon,
+                bounding_box: self.bounding_box
+                ,
+                polygon: self.polygon
+                ,
             }
         }
     }
+    
+    
 }
 impl Geometry {
     /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
@@ -5964,9 +5738,9 @@ impl Geometry {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let texttypes = unimplemented!();
 /// match texttypes {
@@ -5988,58 +5762,52 @@ impl Geometry {
 /// Specifically, when `texttypes` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TextTypes::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TextTypes {
     #[allow(missing_docs)] // documentation missing in model
     Line,
     #[allow(missing_docs)] // documentation missing in model
     Word,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TextTypes {
     fn from(s: &str) -> Self {
         match s {
             "LINE" => TextTypes::Line,
             "WORD" => TextTypes::Word,
-            other => TextTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TextTypes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TextTypes {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TextTypes::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TextTypes::from(s))
+                }
+            }
 impl TextTypes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TextTypes::Line => "LINE",
             TextTypes::Word => "WORD",
-            TextTypes::Unknown(value) => value.as_str(),
+            TextTypes::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LINE", "WORD"]
+        &[
+            "LINE", "WORD"
+        ]
     }
 }
 impl AsRef<str> for TextTypes {
@@ -6051,7 +5819,7 @@ impl AsRef<str> for TextTypes {
 /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VideoMetadata {
+pub struct VideoMetadata  {
     /// <p>Type of compression used in the analyzed video. </p>
     #[doc(hidden)]
     pub codec: std::option::Option<std::string::String>,
@@ -6076,7 +5844,7 @@ pub struct VideoMetadata {
 }
 impl VideoMetadata {
     /// <p>Type of compression used in the analyzed video. </p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// <p>Length of the video in milliseconds.</p>
@@ -6084,7 +5852,7 @@ impl VideoMetadata {
         self.duration_millis
     }
     /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>Number of frames per second in the video.</p>
@@ -6100,13 +5868,13 @@ impl VideoMetadata {
         self.frame_width
     }
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
-    pub fn color_range(&self) -> std::option::Option<&crate::model::VideoColorRange> {
+    pub fn color_range(&self) -> std::option::Option<& crate::model::VideoColorRange> {
         self.color_range.as_ref()
     }
 }
 /// See [`VideoMetadata`](crate::model::VideoMetadata).
 pub mod video_metadata {
-
+    
     /// A builder for [`VideoMetadata`](crate::model::VideoMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6126,8 +5894,7 @@ pub mod video_metadata {
         }
         /// <p>Type of compression used in the analyzed video. </p>
         pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.codec = input;
-            self
+            self.codec = input; self
         }
         /// <p>Length of the video in milliseconds.</p>
         pub fn duration_millis(mut self, input: i64) -> Self {
@@ -6136,8 +5903,7 @@ pub mod video_metadata {
         }
         /// <p>Length of the video in milliseconds.</p>
         pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_millis = input;
-            self
+            self.duration_millis = input; self
         }
         /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
         pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6146,8 +5912,7 @@ pub mod video_metadata {
         }
         /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
         pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// <p>Number of frames per second in the video.</p>
         pub fn frame_rate(mut self, input: f32) -> Self {
@@ -6156,8 +5921,7 @@ pub mod video_metadata {
         }
         /// <p>Number of frames per second in the video.</p>
         pub fn set_frame_rate(mut self, input: std::option::Option<f32>) -> Self {
-            self.frame_rate = input;
-            self
+            self.frame_rate = input; self
         }
         /// <p>Vertical pixel dimension of the video.</p>
         pub fn frame_height(mut self, input: i64) -> Self {
@@ -6166,8 +5930,7 @@ pub mod video_metadata {
         }
         /// <p>Vertical pixel dimension of the video.</p>
         pub fn set_frame_height(mut self, input: std::option::Option<i64>) -> Self {
-            self.frame_height = input;
-            self
+            self.frame_height = input; self
         }
         /// <p>Horizontal pixel dimension of the video.</p>
         pub fn frame_width(mut self, input: i64) -> Self {
@@ -6176,8 +5939,7 @@ pub mod video_metadata {
         }
         /// <p>Horizontal pixel dimension of the video.</p>
         pub fn set_frame_width(mut self, input: std::option::Option<i64>) -> Self {
-            self.frame_width = input;
-            self
+            self.frame_width = input; self
         }
         /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
         pub fn color_range(mut self, input: crate::model::VideoColorRange) -> Self {
@@ -6185,26 +5947,31 @@ pub mod video_metadata {
             self
         }
         /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
-        pub fn set_color_range(
-            mut self,
-            input: std::option::Option<crate::model::VideoColorRange>,
-        ) -> Self {
-            self.color_range = input;
-            self
+        pub fn set_color_range(mut self, input: std::option::Option<crate::model::VideoColorRange>) -> Self {
+            self.color_range = input; self
         }
         /// Consumes the builder and constructs a [`VideoMetadata`](crate::model::VideoMetadata).
         pub fn build(self) -> crate::model::VideoMetadata {
             crate::model::VideoMetadata {
-                codec: self.codec,
-                duration_millis: self.duration_millis,
-                format: self.format,
-                frame_rate: self.frame_rate,
-                frame_height: self.frame_height,
-                frame_width: self.frame_width,
-                color_range: self.color_range,
+                codec: self.codec
+                ,
+                duration_millis: self.duration_millis
+                ,
+                format: self.format
+                ,
+                frame_rate: self.frame_rate
+                ,
+                frame_height: self.frame_height
+                ,
+                frame_width: self.frame_width
+                ,
+                color_range: self.color_range
+                ,
             }
         }
     }
+    
+    
 }
 impl VideoMetadata {
     /// Creates a new builder-style object to manufacture [`VideoMetadata`](crate::model::VideoMetadata).
@@ -6219,9 +5986,9 @@ impl VideoMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let videocolorrange = unimplemented!();
 /// match videocolorrange {
@@ -6243,58 +6010,52 @@ impl VideoMetadata {
 /// Specifically, when `videocolorrange` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VideoColorRange::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VideoColorRange {
     #[allow(missing_docs)] // documentation missing in model
     Full,
     #[allow(missing_docs)] // documentation missing in model
     Limited,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VideoColorRange {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => VideoColorRange::Full,
             "LIMITED" => VideoColorRange::Limited,
-            other => VideoColorRange::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VideoColorRange::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VideoColorRange {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VideoColorRange::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VideoColorRange::from(s))
+                }
+            }
 impl VideoColorRange {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VideoColorRange::Full => "FULL",
             VideoColorRange::Limited => "LIMITED",
-            VideoColorRange::Unknown(value) => value.as_str(),
+            VideoColorRange::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL", "LIMITED"]
+        &[
+            "FULL", "LIMITED"
+        ]
     }
 }
 impl AsRef<str> for VideoColorRange {
@@ -6309,9 +6070,9 @@ impl AsRef<str> for VideoColorRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let videojobstatus = unimplemented!();
 /// match videojobstatus {
@@ -6334,22 +6095,14 @@ impl AsRef<str> for VideoColorRange {
 /// Specifically, when `videojobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VideoJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VideoJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -6358,7 +6111,7 @@ pub enum VideoJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VideoJobStatus {
     fn from(s: &str) -> Self {
@@ -6366,17 +6119,17 @@ impl std::convert::From<&str> for VideoJobStatus {
             "FAILED" => VideoJobStatus::Failed,
             "IN_PROGRESS" => VideoJobStatus::InProgress,
             "SUCCEEDED" => VideoJobStatus::Succeeded,
-            other => VideoJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VideoJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VideoJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VideoJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VideoJobStatus::from(s))
+                }
+            }
 impl VideoJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6384,12 +6137,14 @@ impl VideoJobStatus {
             VideoJobStatus::Failed => "FAILED",
             VideoJobStatus::InProgress => "IN_PROGRESS",
             VideoJobStatus::Succeeded => "SUCCEEDED",
-            VideoJobStatus::Unknown(value) => value.as_str(),
+            VideoJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for VideoJobStatus {
@@ -6401,7 +6156,7 @@ impl AsRef<str> for VideoJobStatus {
 /// <p>Information about the type of a segment requested in a call to <code>StartSegmentDetection</code>. An array of <code>SegmentTypeInfo</code> objects is returned by the response from <code>GetSegmentDetection</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SegmentTypeInfo {
+pub struct SegmentTypeInfo  {
     /// <p>The type of a segment (technical cue or shot detection).</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SegmentType>,
@@ -6411,17 +6166,17 @@ pub struct SegmentTypeInfo {
 }
 impl SegmentTypeInfo {
     /// <p>The type of a segment (technical cue or shot detection).</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SegmentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SegmentType> {
         self.r#type.as_ref()
     }
     /// <p>The version of the model used to detect segments.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 /// See [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
 pub mod segment_type_info {
-
+    
     /// A builder for [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6436,8 +6191,7 @@ pub mod segment_type_info {
         }
         /// <p>The type of a segment (technical cue or shot detection).</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SegmentType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The version of the model used to detect segments.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6445,21 +6199,21 @@ pub mod segment_type_info {
             self
         }
         /// <p>The version of the model used to detect segments.</p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// Consumes the builder and constructs a [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
         pub fn build(self) -> crate::model::SegmentTypeInfo {
             crate::model::SegmentTypeInfo {
-                r#type: self.r#type,
-                model_version: self.model_version,
+                r#type: self.r#type
+                ,
+                model_version: self.model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl SegmentTypeInfo {
     /// Creates a new builder-style object to manufacture [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
@@ -6471,7 +6225,7 @@ impl SegmentTypeInfo {
 /// <p>A technical cue or shot detection segment detected in a video. An array of <code>SegmentDetection</code> objects containing all segments detected in a stored video is returned by <code>GetSegmentDetection</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SegmentDetection {
+pub struct SegmentDetection  {
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SegmentType>,
@@ -6511,7 +6265,7 @@ pub struct SegmentDetection {
 }
 impl SegmentDetection {
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SegmentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SegmentType> {
         self.r#type.as_ref()
     }
     /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
@@ -6527,23 +6281,23 @@ impl SegmentDetection {
         self.duration_millis
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
-    pub fn start_timecode_smpte(&self) -> std::option::Option<&str> {
+    pub fn start_timecode_smpte(&self) -> std::option::Option<& str> {
         self.start_timecode_smpte.as_deref()
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
-    pub fn end_timecode_smpte(&self) -> std::option::Option<&str> {
+    pub fn end_timecode_smpte(&self) -> std::option::Option<& str> {
         self.end_timecode_smpte.as_deref()
     }
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
-    pub fn duration_smpte(&self) -> std::option::Option<&str> {
+    pub fn duration_smpte(&self) -> std::option::Option<& str> {
         self.duration_smpte.as_deref()
     }
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
-    pub fn technical_cue_segment(&self) -> std::option::Option<&crate::model::TechnicalCueSegment> {
+    pub fn technical_cue_segment(&self) -> std::option::Option<& crate::model::TechnicalCueSegment> {
         self.technical_cue_segment.as_ref()
     }
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
-    pub fn shot_segment(&self) -> std::option::Option<&crate::model::ShotSegment> {
+    pub fn shot_segment(&self) -> std::option::Option<& crate::model::ShotSegment> {
         self.shot_segment.as_ref()
     }
     /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
@@ -6561,7 +6315,7 @@ impl SegmentDetection {
 }
 /// See [`SegmentDetection`](crate::model::SegmentDetection).
 pub mod segment_detection {
-
+    
     /// A builder for [`SegmentDetection`](crate::model::SegmentDetection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6586,8 +6340,7 @@ pub mod segment_detection {
         }
         /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SegmentType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
         pub fn start_timestamp_millis(mut self, input: i64) -> Self {
@@ -6596,8 +6349,7 @@ pub mod segment_detection {
         }
         /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
         pub fn set_start_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.start_timestamp_millis = input;
-            self
+            self.start_timestamp_millis = input; self
         }
         /// <p>The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.</p>
         pub fn end_timestamp_millis(mut self, input: i64) -> Self {
@@ -6606,8 +6358,7 @@ pub mod segment_detection {
         }
         /// <p>The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.</p>
         pub fn set_end_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.end_timestamp_millis = input;
-            self
+            self.end_timestamp_millis = input; self
         }
         /// <p>The duration of the detected segment in milliseconds. </p>
         pub fn duration_millis(mut self, input: i64) -> Self {
@@ -6616,8 +6367,7 @@ pub mod segment_detection {
         }
         /// <p>The duration of the detected segment in milliseconds. </p>
         pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_millis = input;
-            self
+            self.duration_millis = input; self
         }
         /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
         pub fn start_timecode_smpte(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6625,12 +6375,8 @@ pub mod segment_detection {
             self
         }
         /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
-        pub fn set_start_timecode_smpte(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.start_timecode_smpte = input;
-            self
+        pub fn set_start_timecode_smpte(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_timecode_smpte = input; self
         }
         /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
         pub fn end_timecode_smpte(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6638,12 +6384,8 @@ pub mod segment_detection {
             self
         }
         /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
-        pub fn set_end_timecode_smpte(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.end_timecode_smpte = input;
-            self
+        pub fn set_end_timecode_smpte(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_timecode_smpte = input; self
         }
         /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
         pub fn duration_smpte(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6651,12 +6393,8 @@ pub mod segment_detection {
             self
         }
         /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
-        pub fn set_duration_smpte(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.duration_smpte = input;
-            self
+        pub fn set_duration_smpte(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.duration_smpte = input; self
         }
         /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
         pub fn technical_cue_segment(mut self, input: crate::model::TechnicalCueSegment) -> Self {
@@ -6664,12 +6402,8 @@ pub mod segment_detection {
             self
         }
         /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
-        pub fn set_technical_cue_segment(
-            mut self,
-            input: std::option::Option<crate::model::TechnicalCueSegment>,
-        ) -> Self {
-            self.technical_cue_segment = input;
-            self
+        pub fn set_technical_cue_segment(mut self, input: std::option::Option<crate::model::TechnicalCueSegment>) -> Self {
+            self.technical_cue_segment = input; self
         }
         /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
         pub fn shot_segment(mut self, input: crate::model::ShotSegment) -> Self {
@@ -6677,12 +6411,8 @@ pub mod segment_detection {
             self
         }
         /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
-        pub fn set_shot_segment(
-            mut self,
-            input: std::option::Option<crate::model::ShotSegment>,
-        ) -> Self {
-            self.shot_segment = input;
-            self
+        pub fn set_shot_segment(mut self, input: std::option::Option<crate::model::ShotSegment>) -> Self {
+            self.shot_segment = input; self
         }
         /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
         pub fn start_frame_number(mut self, input: i64) -> Self {
@@ -6691,8 +6421,7 @@ pub mod segment_detection {
         }
         /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
         pub fn set_start_frame_number(mut self, input: std::option::Option<i64>) -> Self {
-            self.start_frame_number = input;
-            self
+            self.start_frame_number = input; self
         }
         /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
         pub fn end_frame_number(mut self, input: i64) -> Self {
@@ -6701,8 +6430,7 @@ pub mod segment_detection {
         }
         /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
         pub fn set_end_frame_number(mut self, input: std::option::Option<i64>) -> Self {
-            self.end_frame_number = input;
-            self
+            self.end_frame_number = input; self
         }
         /// <p> The duration of a video segment, expressed in frames. </p>
         pub fn duration_frames(mut self, input: i64) -> Self {
@@ -6711,27 +6439,42 @@ pub mod segment_detection {
         }
         /// <p> The duration of a video segment, expressed in frames. </p>
         pub fn set_duration_frames(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_frames = input;
-            self
+            self.duration_frames = input; self
         }
         /// Consumes the builder and constructs a [`SegmentDetection`](crate::model::SegmentDetection).
         pub fn build(self) -> crate::model::SegmentDetection {
             crate::model::SegmentDetection {
-                r#type: self.r#type,
-                start_timestamp_millis: self.start_timestamp_millis.unwrap_or_default(),
-                end_timestamp_millis: self.end_timestamp_millis.unwrap_or_default(),
-                duration_millis: self.duration_millis,
-                start_timecode_smpte: self.start_timecode_smpte,
-                end_timecode_smpte: self.end_timecode_smpte,
-                duration_smpte: self.duration_smpte,
-                technical_cue_segment: self.technical_cue_segment,
-                shot_segment: self.shot_segment,
-                start_frame_number: self.start_frame_number,
-                end_frame_number: self.end_frame_number,
-                duration_frames: self.duration_frames,
+                r#type: self.r#type
+                ,
+                start_timestamp_millis: self.start_timestamp_millis
+                    .unwrap_or_default()
+                ,
+                end_timestamp_millis: self.end_timestamp_millis
+                    .unwrap_or_default()
+                ,
+                duration_millis: self.duration_millis
+                ,
+                start_timecode_smpte: self.start_timecode_smpte
+                ,
+                end_timecode_smpte: self.end_timecode_smpte
+                ,
+                duration_smpte: self.duration_smpte
+                ,
+                technical_cue_segment: self.technical_cue_segment
+                ,
+                shot_segment: self.shot_segment
+                ,
+                start_frame_number: self.start_frame_number
+                ,
+                end_frame_number: self.end_frame_number
+                ,
+                duration_frames: self.duration_frames
+                ,
             }
         }
     }
+    
+    
 }
 impl SegmentDetection {
     /// Creates a new builder-style object to manufacture [`SegmentDetection`](crate::model::SegmentDetection).
@@ -6743,7 +6486,7 @@ impl SegmentDetection {
 /// <p>Information about a shot detection segment detected in a video. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShotSegment {
+pub struct ShotSegment  {
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
     #[doc(hidden)]
     pub index: std::option::Option<i64>,
@@ -6763,7 +6506,7 @@ impl ShotSegment {
 }
 /// See [`ShotSegment`](crate::model::ShotSegment).
 pub mod shot_segment {
-
+    
     /// A builder for [`ShotSegment`](crate::model::ShotSegment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6778,8 +6521,7 @@ pub mod shot_segment {
         }
         /// <p>An Identifier for a shot detection segment detected in a video. </p>
         pub fn set_index(mut self, input: std::option::Option<i64>) -> Self {
-            self.index = input;
-            self
+            self.index = input; self
         }
         /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -6788,17 +6530,20 @@ pub mod shot_segment {
         }
         /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`ShotSegment`](crate::model::ShotSegment).
         pub fn build(self) -> crate::model::ShotSegment {
             crate::model::ShotSegment {
-                index: self.index,
-                confidence: self.confidence,
+                index: self.index
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl ShotSegment {
     /// Creates a new builder-style object to manufacture [`ShotSegment`](crate::model::ShotSegment).
@@ -6810,7 +6555,7 @@ impl ShotSegment {
 /// <p>Information about a technical cue segment. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TechnicalCueSegment {
+pub struct TechnicalCueSegment  {
     /// <p>The type of the technical cue.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::TechnicalCueType>,
@@ -6820,7 +6565,7 @@ pub struct TechnicalCueSegment {
 }
 impl TechnicalCueSegment {
     /// <p>The type of the technical cue.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::TechnicalCueType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::TechnicalCueType> {
         self.r#type.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
@@ -6830,7 +6575,7 @@ impl TechnicalCueSegment {
 }
 /// See [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
 pub mod technical_cue_segment {
-
+    
     /// A builder for [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6844,12 +6589,8 @@ pub mod technical_cue_segment {
             self
         }
         /// <p>The type of the technical cue.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::TechnicalCueType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::TechnicalCueType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -6858,17 +6599,20 @@ pub mod technical_cue_segment {
         }
         /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
         pub fn build(self) -> crate::model::TechnicalCueSegment {
             crate::model::TechnicalCueSegment {
-                r#type: self.r#type,
-                confidence: self.confidence,
+                r#type: self.r#type
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl TechnicalCueSegment {
     /// Creates a new builder-style object to manufacture [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
@@ -6883,9 +6627,9 @@ impl TechnicalCueSegment {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let technicalcuetype = unimplemented!();
 /// match technicalcuetype {
@@ -6912,22 +6656,14 @@ impl TechnicalCueSegment {
 /// Specifically, when `technicalcuetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TechnicalCueType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TechnicalCueType {
     #[allow(missing_docs)] // documentation missing in model
     BlackFrames,
@@ -6944,7 +6680,7 @@ pub enum TechnicalCueType {
     #[allow(missing_docs)] // documentation missing in model
     StudioLogo,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TechnicalCueType {
     fn from(s: &str) -> Self {
@@ -6956,17 +6692,17 @@ impl std::convert::From<&str> for TechnicalCueType {
             "OpeningCredits" => TechnicalCueType::OpeningCredits,
             "Slate" => TechnicalCueType::Slate,
             "StudioLogo" => TechnicalCueType::StudioLogo,
-            other => TechnicalCueType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TechnicalCueType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TechnicalCueType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TechnicalCueType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TechnicalCueType::from(s))
+                }
+            }
 impl TechnicalCueType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6978,19 +6714,13 @@ impl TechnicalCueType {
             TechnicalCueType::OpeningCredits => "OpeningCredits",
             TechnicalCueType::Slate => "Slate",
             TechnicalCueType::StudioLogo => "StudioLogo",
-            TechnicalCueType::Unknown(value) => value.as_str(),
+            TechnicalCueType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BlackFrames",
-            "ColorBars",
-            "Content",
-            "EndCredits",
-            "OpeningCredits",
-            "Slate",
-            "StudioLogo",
+            "BlackFrames", "ColorBars", "Content", "EndCredits", "OpeningCredits", "Slate", "StudioLogo"
         ]
     }
 }
@@ -7003,7 +6733,7 @@ impl AsRef<str> for TechnicalCueType {
 /// <p>Metadata information about an audio stream. An array of <code>AudioMetadata</code> objects for the audio streams found in a stored video is returned by <code>GetSegmentDetection</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioMetadata {
+pub struct AudioMetadata  {
     /// <p>The audio codec used to encode or decode the audio stream. </p>
     #[doc(hidden)]
     pub codec: std::option::Option<std::string::String>,
@@ -7019,7 +6749,7 @@ pub struct AudioMetadata {
 }
 impl AudioMetadata {
     /// <p>The audio codec used to encode or decode the audio stream. </p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// <p>The duration of the audio stream in milliseconds.</p>
@@ -7037,7 +6767,7 @@ impl AudioMetadata {
 }
 /// See [`AudioMetadata`](crate::model::AudioMetadata).
 pub mod audio_metadata {
-
+    
     /// A builder for [`AudioMetadata`](crate::model::AudioMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7054,8 +6784,7 @@ pub mod audio_metadata {
         }
         /// <p>The audio codec used to encode or decode the audio stream. </p>
         pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.codec = input;
-            self
+            self.codec = input; self
         }
         /// <p>The duration of the audio stream in milliseconds.</p>
         pub fn duration_millis(mut self, input: i64) -> Self {
@@ -7064,8 +6793,7 @@ pub mod audio_metadata {
         }
         /// <p>The duration of the audio stream in milliseconds.</p>
         pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_millis = input;
-            self
+            self.duration_millis = input; self
         }
         /// <p>The sample rate for the audio stream.</p>
         pub fn sample_rate(mut self, input: i64) -> Self {
@@ -7074,8 +6802,7 @@ pub mod audio_metadata {
         }
         /// <p>The sample rate for the audio stream.</p>
         pub fn set_sample_rate(mut self, input: std::option::Option<i64>) -> Self {
-            self.sample_rate = input;
-            self
+            self.sample_rate = input; self
         }
         /// <p>The number of audio channels in the segment.</p>
         pub fn number_of_channels(mut self, input: i64) -> Self {
@@ -7084,19 +6811,24 @@ pub mod audio_metadata {
         }
         /// <p>The number of audio channels in the segment.</p>
         pub fn set_number_of_channels(mut self, input: std::option::Option<i64>) -> Self {
-            self.number_of_channels = input;
-            self
+            self.number_of_channels = input; self
         }
         /// Consumes the builder and constructs a [`AudioMetadata`](crate::model::AudioMetadata).
         pub fn build(self) -> crate::model::AudioMetadata {
             crate::model::AudioMetadata {
-                codec: self.codec,
-                duration_millis: self.duration_millis,
-                sample_rate: self.sample_rate,
-                number_of_channels: self.number_of_channels,
+                codec: self.codec
+                ,
+                duration_millis: self.duration_millis
+                ,
+                sample_rate: self.sample_rate
+                ,
+                number_of_channels: self.number_of_channels
+                ,
             }
         }
     }
+    
+    
 }
 impl AudioMetadata {
     /// Creates a new builder-style object to manufacture [`AudioMetadata`](crate::model::AudioMetadata).
@@ -7105,11 +6837,11 @@ impl AudioMetadata {
     }
 }
 
-/// <p>Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video. </p>
+/// <p>Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video. </p> 
 /// <p>For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PersonDetection {
+pub struct PersonDetection  {
     /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -7123,13 +6855,13 @@ impl PersonDetection {
         self.timestamp
     }
     /// <p>Details about a person whose path was tracked in a video.</p>
-    pub fn person(&self) -> std::option::Option<&crate::model::PersonDetail> {
+    pub fn person(&self) -> std::option::Option<& crate::model::PersonDetail> {
         self.person.as_ref()
     }
 }
 /// See [`PersonDetection`](crate::model::PersonDetection).
 pub mod person_detection {
-
+    
     /// A builder for [`PersonDetection`](crate::model::PersonDetection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7144,8 +6876,7 @@ pub mod person_detection {
         }
         /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>Details about a person whose path was tracked in a video.</p>
         pub fn person(mut self, input: crate::model::PersonDetail) -> Self {
@@ -7153,21 +6884,22 @@ pub mod person_detection {
             self
         }
         /// <p>Details about a person whose path was tracked in a video.</p>
-        pub fn set_person(
-            mut self,
-            input: std::option::Option<crate::model::PersonDetail>,
-        ) -> Self {
-            self.person = input;
-            self
+        pub fn set_person(mut self, input: std::option::Option<crate::model::PersonDetail>) -> Self {
+            self.person = input; self
         }
         /// Consumes the builder and constructs a [`PersonDetection`](crate::model::PersonDetection).
         pub fn build(self) -> crate::model::PersonDetection {
             crate::model::PersonDetection {
-                timestamp: self.timestamp.unwrap_or_default(),
-                person: self.person,
+                timestamp: self.timestamp
+                    .unwrap_or_default()
+                ,
+                person: self.person
+                ,
             }
         }
     }
+    
+    
 }
 impl PersonDetection {
     /// Creates a new builder-style object to manufacture [`PersonDetection`](crate::model::PersonDetection).
@@ -7179,7 +6911,7 @@ impl PersonDetection {
 /// <p>Details about a person detected in a video analysis request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PersonDetail {
+pub struct PersonDetail  {
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
     #[doc(hidden)]
     pub index: i64,
@@ -7196,17 +6928,17 @@ impl PersonDetail {
         self.index
     }
     /// <p>Bounding box around the detected person.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Face details for the detected person.</p>
-    pub fn face(&self) -> std::option::Option<&crate::model::FaceDetail> {
+    pub fn face(&self) -> std::option::Option<& crate::model::FaceDetail> {
         self.face.as_ref()
     }
 }
 /// See [`PersonDetail`](crate::model::PersonDetail).
 pub mod person_detail {
-
+    
     /// A builder for [`PersonDetail`](crate::model::PersonDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7222,8 +6954,7 @@ pub mod person_detail {
         }
         /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
         pub fn set_index(mut self, input: std::option::Option<i64>) -> Self {
-            self.index = input;
-            self
+            self.index = input; self
         }
         /// <p>Bounding box around the detected person.</p>
         pub fn bounding_box(mut self, input: crate::model::BoundingBox) -> Self {
@@ -7231,12 +6962,8 @@ pub mod person_detail {
             self
         }
         /// <p>Bounding box around the detected person.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>Face details for the detected person.</p>
         pub fn face(mut self, input: crate::model::FaceDetail) -> Self {
@@ -7245,18 +6972,23 @@ pub mod person_detail {
         }
         /// <p>Face details for the detected person.</p>
         pub fn set_face(mut self, input: std::option::Option<crate::model::FaceDetail>) -> Self {
-            self.face = input;
-            self
+            self.face = input; self
         }
         /// Consumes the builder and constructs a [`PersonDetail`](crate::model::PersonDetail).
         pub fn build(self) -> crate::model::PersonDetail {
             crate::model::PersonDetail {
-                index: self.index.unwrap_or_default(),
-                bounding_box: self.bounding_box,
-                face: self.face,
+                index: self.index
+                    .unwrap_or_default()
+                ,
+                bounding_box: self.bounding_box
+                ,
+                face: self.face
+                ,
             }
         }
     }
+    
+    
 }
 impl PersonDetail {
     /// Creates a new builder-style object to manufacture [`PersonDetail`](crate::model::PersonDetail).
@@ -7271,9 +7003,9 @@ impl PersonDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let persontrackingsortby = unimplemented!();
 /// match persontrackingsortby {
@@ -7295,60 +7027,52 @@ impl PersonDetail {
 /// Specifically, when `persontrackingsortby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PersonTrackingSortBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PersonTrackingSortBy {
     #[allow(missing_docs)] // documentation missing in model
     Index,
     #[allow(missing_docs)] // documentation missing in model
     Timestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PersonTrackingSortBy {
     fn from(s: &str) -> Self {
         match s {
             "INDEX" => PersonTrackingSortBy::Index,
             "TIMESTAMP" => PersonTrackingSortBy::Timestamp,
-            other => {
-                PersonTrackingSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PersonTrackingSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PersonTrackingSortBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PersonTrackingSortBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PersonTrackingSortBy::from(s))
+                }
+            }
 impl PersonTrackingSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PersonTrackingSortBy::Index => "INDEX",
             PersonTrackingSortBy::Timestamp => "TIMESTAMP",
-            PersonTrackingSortBy::Unknown(value) => value.as_str(),
+            PersonTrackingSortBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INDEX", "TIMESTAMP"]
+        &[
+            "INDEX", "TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for PersonTrackingSortBy {
@@ -7360,7 +7084,7 @@ impl AsRef<str> for PersonTrackingSortBy {
 /// <p>Information about a label detected in a video analysis request and the time the label was detected in the video. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelDetection {
+pub struct LabelDetection  {
     /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -7383,7 +7107,7 @@ impl LabelDetection {
         self.timestamp
     }
     /// <p>Details about the detected label.</p>
-    pub fn label(&self) -> std::option::Option<&crate::model::Label> {
+    pub fn label(&self) -> std::option::Option<& crate::model::Label> {
         self.label.as_ref()
     }
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
@@ -7401,7 +7125,7 @@ impl LabelDetection {
 }
 /// See [`LabelDetection`](crate::model::LabelDetection).
 pub mod label_detection {
-
+    
     /// A builder for [`LabelDetection`](crate::model::LabelDetection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7419,8 +7143,7 @@ pub mod label_detection {
         }
         /// <p>Time, in milliseconds from the start of the video, that the label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the label first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>Details about the detected label.</p>
         pub fn label(mut self, input: crate::model::Label) -> Self {
@@ -7429,8 +7152,7 @@ pub mod label_detection {
         }
         /// <p>Details about the detected label.</p>
         pub fn set_label(mut self, input: std::option::Option<crate::model::Label>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
         pub fn start_timestamp_millis(mut self, input: i64) -> Self {
@@ -7439,8 +7161,7 @@ pub mod label_detection {
         }
         /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected label.</p>
         pub fn set_start_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.start_timestamp_millis = input;
-            self
+            self.start_timestamp_millis = input; self
         }
         /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
         pub fn end_timestamp_millis(mut self, input: i64) -> Self {
@@ -7449,8 +7170,7 @@ pub mod label_detection {
         }
         /// <p>The time in milliseconds defining the end of the timeline segment containing a continuously detected label.</p>
         pub fn set_end_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.end_timestamp_millis = input;
-            self
+            self.end_timestamp_millis = input; self
         }
         /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
         pub fn duration_millis(mut self, input: i64) -> Self {
@@ -7459,20 +7179,27 @@ pub mod label_detection {
         }
         /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
         pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_millis = input;
-            self
+            self.duration_millis = input; self
         }
         /// Consumes the builder and constructs a [`LabelDetection`](crate::model::LabelDetection).
         pub fn build(self) -> crate::model::LabelDetection {
             crate::model::LabelDetection {
-                timestamp: self.timestamp.unwrap_or_default(),
-                label: self.label,
-                start_timestamp_millis: self.start_timestamp_millis,
-                end_timestamp_millis: self.end_timestamp_millis,
-                duration_millis: self.duration_millis,
+                timestamp: self.timestamp
+                    .unwrap_or_default()
+                ,
+                label: self.label
+                ,
+                start_timestamp_millis: self.start_timestamp_millis
+                ,
+                end_timestamp_millis: self.end_timestamp_millis
+                ,
+                duration_millis: self.duration_millis
+                ,
             }
         }
     }
+    
+    
 }
 impl LabelDetection {
     /// Creates a new builder-style object to manufacture [`LabelDetection`](crate::model::LabelDetection).
@@ -7481,11 +7208,11 @@ impl LabelDetection {
     }
 }
 
-/// <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p>
+/// <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p> 
 /// <p> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Label {
+pub struct Label  {
     /// <p>The name (label) of the object or scene.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7507,7 +7234,7 @@ pub struct Label {
 }
 impl Label {
     /// <p>The name (label) of the object or scene.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Level of confidence.</p>
@@ -7515,25 +7242,25 @@ impl Label {
         self.confidence
     }
     /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
         self.instances.as_deref()
     }
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
-    pub fn parents(&self) -> std::option::Option<&[crate::model::Parent]> {
+    pub fn parents(&self) -> std::option::Option<& [crate::model::Parent]> {
         self.parents.as_deref()
     }
     /// <p>A list of potential aliases for a given label.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::model::LabelAlias]> {
+    pub fn aliases(&self) -> std::option::Option<& [crate::model::LabelAlias]> {
         self.aliases.as_deref()
     }
     /// <p>A list of the categories associated with a given label.</p>
-    pub fn categories(&self) -> std::option::Option<&[crate::model::LabelCategory]> {
+    pub fn categories(&self) -> std::option::Option<& [crate::model::LabelCategory]> {
         self.categories.as_deref()
     }
 }
 /// See [`Label`](crate::model::Label).
 pub mod label {
-
+    
     /// A builder for [`Label`](crate::model::Label).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7552,8 +7279,7 @@ pub mod label {
         }
         /// <p>The name (label) of the object or scene.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Level of confidence.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -7562,8 +7288,7 @@ pub mod label {
         }
         /// <p>Level of confidence.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Appends an item to `instances`.
         ///
@@ -7572,17 +7297,13 @@ pub mod label {
         /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
+            self.instances = input; self
         }
         /// Appends an item to `parents`.
         ///
@@ -7591,17 +7312,13 @@ pub mod label {
         /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
         pub fn parents(mut self, input: crate::model::Parent) -> Self {
             let mut v = self.parents.unwrap_or_default();
-            v.push(input);
-            self.parents = Some(v);
-            self
+                            v.push(input);
+                            self.parents = Some(v);
+                            self
         }
         /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
-        pub fn set_parents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parent>>,
-        ) -> Self {
-            self.parents = input;
-            self
+        pub fn set_parents(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parent>>) -> Self {
+            self.parents = input; self
         }
         /// Appends an item to `aliases`.
         ///
@@ -7610,17 +7327,13 @@ pub mod label {
         /// <p>A list of potential aliases for a given label.</p>
         pub fn aliases(mut self, input: crate::model::LabelAlias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input);
-            self.aliases = Some(v);
-            self
+                            v.push(input);
+                            self.aliases = Some(v);
+                            self
         }
         /// <p>A list of potential aliases for a given label.</p>
-        pub fn set_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LabelAlias>>,
-        ) -> Self {
-            self.aliases = input;
-            self
+        pub fn set_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::model::LabelAlias>>) -> Self {
+            self.aliases = input; self
         }
         /// Appends an item to `categories`.
         ///
@@ -7629,30 +7342,34 @@ pub mod label {
         /// <p>A list of the categories associated with a given label.</p>
         pub fn categories(mut self, input: crate::model::LabelCategory) -> Self {
             let mut v = self.categories.unwrap_or_default();
-            v.push(input);
-            self.categories = Some(v);
-            self
+                            v.push(input);
+                            self.categories = Some(v);
+                            self
         }
         /// <p>A list of the categories associated with a given label.</p>
-        pub fn set_categories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LabelCategory>>,
-        ) -> Self {
-            self.categories = input;
-            self
+        pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<crate::model::LabelCategory>>) -> Self {
+            self.categories = input; self
         }
         /// Consumes the builder and constructs a [`Label`](crate::model::Label).
         pub fn build(self) -> crate::model::Label {
             crate::model::Label {
-                name: self.name,
-                confidence: self.confidence,
-                instances: self.instances,
-                parents: self.parents,
-                aliases: self.aliases,
-                categories: self.categories,
+                name: self.name
+                ,
+                confidence: self.confidence
+                ,
+                instances: self.instances
+                ,
+                parents: self.parents
+                ,
+                aliases: self.aliases
+                ,
+                categories: self.categories
+                ,
             }
         }
     }
+    
+    
 }
 impl Label {
     /// Creates a new builder-style object to manufacture [`Label`](crate::model::Label).
@@ -7664,20 +7381,20 @@ impl Label {
 /// <p>The category that applies to a given label.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelCategory {
+pub struct LabelCategory  {
     /// <p>The name of a category that applies to a given label.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LabelCategory {
     /// <p>The name of a category that applies to a given label.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`LabelCategory`](crate::model::LabelCategory).
 pub mod label_category {
-
+    
     /// A builder for [`LabelCategory`](crate::model::LabelCategory).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7691,14 +7408,18 @@ pub mod label_category {
         }
         /// <p>The name of a category that applies to a given label.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`LabelCategory`](crate::model::LabelCategory).
         pub fn build(self) -> crate::model::LabelCategory {
-            crate::model::LabelCategory { name: self.name }
+            crate::model::LabelCategory {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl LabelCategory {
     /// Creates a new builder-style object to manufacture [`LabelCategory`](crate::model::LabelCategory).
@@ -7710,20 +7431,20 @@ impl LabelCategory {
 /// <p>A potential alias of for a given label.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelAlias {
+pub struct LabelAlias  {
     /// <p>The name of an alias for a given label.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LabelAlias {
     /// <p>The name of an alias for a given label.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`LabelAlias`](crate::model::LabelAlias).
 pub mod label_alias {
-
+    
     /// A builder for [`LabelAlias`](crate::model::LabelAlias).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7737,14 +7458,18 @@ pub mod label_alias {
         }
         /// <p>The name of an alias for a given label.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`LabelAlias`](crate::model::LabelAlias).
         pub fn build(self) -> crate::model::LabelAlias {
-            crate::model::LabelAlias { name: self.name }
+            crate::model::LabelAlias {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl LabelAlias {
     /// Creates a new builder-style object to manufacture [`LabelAlias`](crate::model::LabelAlias).
@@ -7756,20 +7481,20 @@ impl LabelAlias {
 /// <p>A parent label for a label. A label can have 0, 1, or more parents. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Parent {
+pub struct Parent  {
     /// <p>The name of the parent label.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Parent {
     /// <p>The name of the parent label.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`Parent`](crate::model::Parent).
 pub mod parent {
-
+    
     /// A builder for [`Parent`](crate::model::Parent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7783,14 +7508,18 @@ pub mod parent {
         }
         /// <p>The name of the parent label.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`Parent`](crate::model::Parent).
         pub fn build(self) -> crate::model::Parent {
-            crate::model::Parent { name: self.name }
+            crate::model::Parent {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl Parent {
     /// Creates a new builder-style object to manufacture [`Parent`](crate::model::Parent).
@@ -7802,7 +7531,7 @@ impl Parent {
 /// <p>An instance of a label returned by Amazon Rekognition Image (<code>DetectLabels</code>) or by Amazon Rekognition Video (<code>GetLabelDetection</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The position of the label instance on the image.</p>
     #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -7815,7 +7544,7 @@ pub struct Instance {
 }
 impl Instance {
     /// <p>The position of the label instance on the image.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
@@ -7823,13 +7552,13 @@ impl Instance {
         self.confidence
     }
     /// <p>The dominant colors found in an individual instance of a label.</p>
-    pub fn dominant_colors(&self) -> std::option::Option<&[crate::model::DominantColor]> {
+    pub fn dominant_colors(&self) -> std::option::Option<& [crate::model::DominantColor]> {
         self.dominant_colors.as_deref()
     }
 }
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
-
+    
     /// A builder for [`Instance`](crate::model::Instance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7844,12 +7573,8 @@ pub mod instance {
             self
         }
         /// <p>The position of the label instance on the image.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -7858,8 +7583,7 @@ pub mod instance {
         }
         /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Appends an item to `dominant_colors`.
         ///
@@ -7868,27 +7592,28 @@ pub mod instance {
         /// <p>The dominant colors found in an individual instance of a label.</p>
         pub fn dominant_colors(mut self, input: crate::model::DominantColor) -> Self {
             let mut v = self.dominant_colors.unwrap_or_default();
-            v.push(input);
-            self.dominant_colors = Some(v);
-            self
+                            v.push(input);
+                            self.dominant_colors = Some(v);
+                            self
         }
         /// <p>The dominant colors found in an individual instance of a label.</p>
-        pub fn set_dominant_colors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
-        ) -> Self {
-            self.dominant_colors = input;
-            self
+        pub fn set_dominant_colors(mut self, input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>) -> Self {
+            self.dominant_colors = input; self
         }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
-                bounding_box: self.bounding_box,
-                confidence: self.confidence,
-                dominant_colors: self.dominant_colors,
+                bounding_box: self.bounding_box
+                ,
+                confidence: self.confidence
+                ,
+                dominant_colors: self.dominant_colors
+                ,
             }
         }
     }
+    
+    
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
@@ -7900,7 +7625,7 @@ impl Instance {
 /// <p>A description of the dominant colors in an image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DominantColor {
+pub struct DominantColor  {
     /// <p>The Red RGB value for a dominant color.</p>
     #[doc(hidden)]
     pub red: std::option::Option<i32>,
@@ -7937,15 +7662,15 @@ impl DominantColor {
         self.green
     }
     /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
-    pub fn hex_code(&self) -> std::option::Option<&str> {
+    pub fn hex_code(&self) -> std::option::Option<& str> {
         self.hex_code.as_deref()
     }
     /// <p>The CSS color name of a dominant color.</p>
-    pub fn css_color(&self) -> std::option::Option<&str> {
+    pub fn css_color(&self) -> std::option::Option<& str> {
         self.css_color.as_deref()
     }
     /// <p>One of 12 simplified color names applied to a dominant color.</p>
-    pub fn simplified_color(&self) -> std::option::Option<&str> {
+    pub fn simplified_color(&self) -> std::option::Option<& str> {
         self.simplified_color.as_deref()
     }
     /// <p>The percentage of image pixels that have a given dominant color.</p>
@@ -7955,7 +7680,7 @@ impl DominantColor {
 }
 /// See [`DominantColor`](crate::model::DominantColor).
 pub mod dominant_color {
-
+    
     /// A builder for [`DominantColor`](crate::model::DominantColor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7975,8 +7700,7 @@ pub mod dominant_color {
         }
         /// <p>The Red RGB value for a dominant color.</p>
         pub fn set_red(mut self, input: std::option::Option<i32>) -> Self {
-            self.red = input;
-            self
+            self.red = input; self
         }
         /// <p>The Blue RGB value for a dominant color.</p>
         pub fn blue(mut self, input: i32) -> Self {
@@ -7985,8 +7709,7 @@ pub mod dominant_color {
         }
         /// <p>The Blue RGB value for a dominant color.</p>
         pub fn set_blue(mut self, input: std::option::Option<i32>) -> Self {
-            self.blue = input;
-            self
+            self.blue = input; self
         }
         /// <p>The Green RGB value for a dominant color.</p>
         pub fn green(mut self, input: i32) -> Self {
@@ -7995,8 +7718,7 @@ pub mod dominant_color {
         }
         /// <p>The Green RGB value for a dominant color.</p>
         pub fn set_green(mut self, input: std::option::Option<i32>) -> Self {
-            self.green = input;
-            self
+            self.green = input; self
         }
         /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
         pub fn hex_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8005,8 +7727,7 @@ pub mod dominant_color {
         }
         /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
         pub fn set_hex_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hex_code = input;
-            self
+            self.hex_code = input; self
         }
         /// <p>The CSS color name of a dominant color.</p>
         pub fn css_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8015,8 +7736,7 @@ pub mod dominant_color {
         }
         /// <p>The CSS color name of a dominant color.</p>
         pub fn set_css_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.css_color = input;
-            self
+            self.css_color = input; self
         }
         /// <p>One of 12 simplified color names applied to a dominant color.</p>
         pub fn simplified_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8024,12 +7744,8 @@ pub mod dominant_color {
             self
         }
         /// <p>One of 12 simplified color names applied to a dominant color.</p>
-        pub fn set_simplified_color(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.simplified_color = input;
-            self
+        pub fn set_simplified_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.simplified_color = input; self
         }
         /// <p>The percentage of image pixels that have a given dominant color.</p>
         pub fn pixel_percent(mut self, input: f32) -> Self {
@@ -8038,22 +7754,30 @@ pub mod dominant_color {
         }
         /// <p>The percentage of image pixels that have a given dominant color.</p>
         pub fn set_pixel_percent(mut self, input: std::option::Option<f32>) -> Self {
-            self.pixel_percent = input;
-            self
+            self.pixel_percent = input; self
         }
         /// Consumes the builder and constructs a [`DominantColor`](crate::model::DominantColor).
         pub fn build(self) -> crate::model::DominantColor {
             crate::model::DominantColor {
-                red: self.red,
-                blue: self.blue,
-                green: self.green,
-                hex_code: self.hex_code,
-                css_color: self.css_color,
-                simplified_color: self.simplified_color,
-                pixel_percent: self.pixel_percent,
+                red: self.red
+                ,
+                blue: self.blue
+                ,
+                green: self.green
+                ,
+                hex_code: self.hex_code
+                ,
+                css_color: self.css_color
+                ,
+                simplified_color: self.simplified_color
+                ,
+                pixel_percent: self.pixel_percent
+                ,
             }
         }
     }
+    
+    
 }
 impl DominantColor {
     /// Creates a new builder-style object to manufacture [`DominantColor`](crate::model::DominantColor).
@@ -8068,9 +7792,9 @@ impl DominantColor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let labeldetectionaggregateby = unimplemented!();
 /// match labeldetectionaggregateby {
@@ -8092,60 +7816,52 @@ impl DominantColor {
 /// Specifically, when `labeldetectionaggregateby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LabelDetectionAggregateBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LabelDetectionAggregateBy {
     #[allow(missing_docs)] // documentation missing in model
     Segments,
     #[allow(missing_docs)] // documentation missing in model
     Timestamps,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LabelDetectionAggregateBy {
     fn from(s: &str) -> Self {
         match s {
             "SEGMENTS" => LabelDetectionAggregateBy::Segments,
             "TIMESTAMPS" => LabelDetectionAggregateBy::Timestamps,
-            other => LabelDetectionAggregateBy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LabelDetectionAggregateBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LabelDetectionAggregateBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LabelDetectionAggregateBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LabelDetectionAggregateBy::from(s))
+                }
+            }
 impl LabelDetectionAggregateBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LabelDetectionAggregateBy::Segments => "SEGMENTS",
             LabelDetectionAggregateBy::Timestamps => "TIMESTAMPS",
-            LabelDetectionAggregateBy::Unknown(value) => value.as_str(),
+            LabelDetectionAggregateBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SEGMENTS", "TIMESTAMPS"]
+        &[
+            "SEGMENTS", "TIMESTAMPS"
+        ]
     }
 }
 impl AsRef<str> for LabelDetectionAggregateBy {
@@ -8160,9 +7876,9 @@ impl AsRef<str> for LabelDetectionAggregateBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let labeldetectionsortby = unimplemented!();
 /// match labeldetectionsortby {
@@ -8184,60 +7900,52 @@ impl AsRef<str> for LabelDetectionAggregateBy {
 /// Specifically, when `labeldetectionsortby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LabelDetectionSortBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LabelDetectionSortBy {
     #[allow(missing_docs)] // documentation missing in model
     Name,
     #[allow(missing_docs)] // documentation missing in model
     Timestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LabelDetectionSortBy {
     fn from(s: &str) -> Self {
         match s {
             "NAME" => LabelDetectionSortBy::Name,
             "TIMESTAMP" => LabelDetectionSortBy::Timestamp,
-            other => {
-                LabelDetectionSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LabelDetectionSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LabelDetectionSortBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LabelDetectionSortBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LabelDetectionSortBy::from(s))
+                }
+            }
 impl LabelDetectionSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LabelDetectionSortBy::Name => "NAME",
             LabelDetectionSortBy::Timestamp => "TIMESTAMP",
-            LabelDetectionSortBy::Unknown(value) => value.as_str(),
+            LabelDetectionSortBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NAME", "TIMESTAMP"]
+        &[
+            "NAME", "TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for LabelDetectionSortBy {
@@ -8249,7 +7957,7 @@ impl AsRef<str> for LabelDetectionSortBy {
 /// <p>Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (<code>FaceMatch</code>), information about the person (<code>PersonDetail</code>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by <code>GetFaceSearch</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PersonMatch {
+pub struct PersonMatch  {
     /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -8266,17 +7974,17 @@ impl PersonMatch {
         self.timestamp
     }
     /// <p>Information about the matched person.</p>
-    pub fn person(&self) -> std::option::Option<&crate::model::PersonDetail> {
+    pub fn person(&self) -> std::option::Option<& crate::model::PersonDetail> {
         self.person.as_ref()
     }
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
-    pub fn face_matches(&self) -> std::option::Option<&[crate::model::FaceMatch]> {
+    pub fn face_matches(&self) -> std::option::Option<& [crate::model::FaceMatch]> {
         self.face_matches.as_deref()
     }
 }
 /// See [`PersonMatch`](crate::model::PersonMatch).
 pub mod person_match {
-
+    
     /// A builder for [`PersonMatch`](crate::model::PersonMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8292,8 +8000,7 @@ pub mod person_match {
         }
         /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>Information about the matched person.</p>
         pub fn person(mut self, input: crate::model::PersonDetail) -> Self {
@@ -8301,12 +8008,8 @@ pub mod person_match {
             self
         }
         /// <p>Information about the matched person.</p>
-        pub fn set_person(
-            mut self,
-            input: std::option::Option<crate::model::PersonDetail>,
-        ) -> Self {
-            self.person = input;
-            self
+        pub fn set_person(mut self, input: std::option::Option<crate::model::PersonDetail>) -> Self {
+            self.person = input; self
         }
         /// Appends an item to `face_matches`.
         ///
@@ -8315,27 +8018,29 @@ pub mod person_match {
         /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
         pub fn face_matches(mut self, input: crate::model::FaceMatch) -> Self {
             let mut v = self.face_matches.unwrap_or_default();
-            v.push(input);
-            self.face_matches = Some(v);
-            self
+                            v.push(input);
+                            self.face_matches = Some(v);
+                            self
         }
         /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
-        pub fn set_face_matches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
-        ) -> Self {
-            self.face_matches = input;
-            self
+        pub fn set_face_matches(mut self, input: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>) -> Self {
+            self.face_matches = input; self
         }
         /// Consumes the builder and constructs a [`PersonMatch`](crate::model::PersonMatch).
         pub fn build(self) -> crate::model::PersonMatch {
             crate::model::PersonMatch {
-                timestamp: self.timestamp.unwrap_or_default(),
-                person: self.person,
-                face_matches: self.face_matches,
+                timestamp: self.timestamp
+                    .unwrap_or_default()
+                ,
+                person: self.person
+                ,
+                face_matches: self.face_matches
+                ,
             }
         }
     }
+    
+    
 }
 impl PersonMatch {
     /// Creates a new builder-style object to manufacture [`PersonMatch`](crate::model::PersonMatch).
@@ -8350,9 +8055,9 @@ impl PersonMatch {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let facesearchsortby = unimplemented!();
 /// match facesearchsortby {
@@ -8374,58 +8079,52 @@ impl PersonMatch {
 /// Specifically, when `facesearchsortby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FaceSearchSortBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FaceSearchSortBy {
     #[allow(missing_docs)] // documentation missing in model
     Index,
     #[allow(missing_docs)] // documentation missing in model
     Timestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FaceSearchSortBy {
     fn from(s: &str) -> Self {
         match s {
             "INDEX" => FaceSearchSortBy::Index,
             "TIMESTAMP" => FaceSearchSortBy::Timestamp,
-            other => FaceSearchSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FaceSearchSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FaceSearchSortBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FaceSearchSortBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FaceSearchSortBy::from(s))
+                }
+            }
 impl FaceSearchSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FaceSearchSortBy::Index => "INDEX",
             FaceSearchSortBy::Timestamp => "TIMESTAMP",
-            FaceSearchSortBy::Unknown(value) => value.as_str(),
+            FaceSearchSortBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INDEX", "TIMESTAMP"]
+        &[
+            "INDEX", "TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for FaceSearchSortBy {
@@ -8437,7 +8136,7 @@ impl AsRef<str> for FaceSearchSortBy {
 /// <p>Information about a face detected in a video analysis request and the time the face was detected in the video. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaceDetection {
+pub struct FaceDetection  {
     /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -8451,13 +8150,13 @@ impl FaceDetection {
         self.timestamp
     }
     /// <p>The face properties for the detected face.</p>
-    pub fn face(&self) -> std::option::Option<&crate::model::FaceDetail> {
+    pub fn face(&self) -> std::option::Option<& crate::model::FaceDetail> {
         self.face.as_ref()
     }
 }
 /// See [`FaceDetection`](crate::model::FaceDetection).
 pub mod face_detection {
-
+    
     /// A builder for [`FaceDetection`](crate::model::FaceDetection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8472,8 +8171,7 @@ pub mod face_detection {
         }
         /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>The face properties for the detected face.</p>
         pub fn face(mut self, input: crate::model::FaceDetail) -> Self {
@@ -8482,17 +8180,21 @@ pub mod face_detection {
         }
         /// <p>The face properties for the detected face.</p>
         pub fn set_face(mut self, input: std::option::Option<crate::model::FaceDetail>) -> Self {
-            self.face = input;
-            self
+            self.face = input; self
         }
         /// Consumes the builder and constructs a [`FaceDetection`](crate::model::FaceDetection).
         pub fn build(self) -> crate::model::FaceDetection {
             crate::model::FaceDetection {
-                timestamp: self.timestamp.unwrap_or_default(),
-                face: self.face,
+                timestamp: self.timestamp
+                    .unwrap_or_default()
+                ,
+                face: self.face
+                ,
             }
         }
     }
+    
+    
 }
 impl FaceDetection {
     /// Creates a new builder-style object to manufacture [`FaceDetection`](crate::model::FaceDetection).
@@ -8504,7 +8206,7 @@ impl FaceDetection {
 /// <p>Information about an inappropriate, unwanted, or offensive content label detection in a stored video.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContentModerationDetection {
+pub struct ContentModerationDetection  {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -8518,13 +8220,13 @@ impl ContentModerationDetection {
         self.timestamp
     }
     /// <p>The content moderation label detected by in the stored video.</p>
-    pub fn moderation_label(&self) -> std::option::Option<&crate::model::ModerationLabel> {
+    pub fn moderation_label(&self) -> std::option::Option<& crate::model::ModerationLabel> {
         self.moderation_label.as_ref()
     }
 }
 /// See [`ContentModerationDetection`](crate::model::ContentModerationDetection).
 pub mod content_moderation_detection {
-
+    
     /// A builder for [`ContentModerationDetection`](crate::model::ContentModerationDetection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8539,8 +8241,7 @@ pub mod content_moderation_detection {
         }
         /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>The content moderation label detected by in the stored video.</p>
         pub fn moderation_label(mut self, input: crate::model::ModerationLabel) -> Self {
@@ -8548,21 +8249,22 @@ pub mod content_moderation_detection {
             self
         }
         /// <p>The content moderation label detected by in the stored video.</p>
-        pub fn set_moderation_label(
-            mut self,
-            input: std::option::Option<crate::model::ModerationLabel>,
-        ) -> Self {
-            self.moderation_label = input;
-            self
+        pub fn set_moderation_label(mut self, input: std::option::Option<crate::model::ModerationLabel>) -> Self {
+            self.moderation_label = input; self
         }
         /// Consumes the builder and constructs a [`ContentModerationDetection`](crate::model::ContentModerationDetection).
         pub fn build(self) -> crate::model::ContentModerationDetection {
             crate::model::ContentModerationDetection {
-                timestamp: self.timestamp.unwrap_or_default(),
-                moderation_label: self.moderation_label,
+                timestamp: self.timestamp
+                    .unwrap_or_default()
+                ,
+                moderation_label: self.moderation_label
+                ,
             }
         }
     }
+    
+    
 }
 impl ContentModerationDetection {
     /// Creates a new builder-style object to manufacture [`ContentModerationDetection`](crate::model::ContentModerationDetection).
@@ -8574,8 +8276,8 @@ impl ContentModerationDetection {
 /// <p>Provides information about a single type of inappropriate, unwanted, or offensive content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Content moderation in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModerationLabel {
-    /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
+pub struct ModerationLabel  {
+    /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p> 
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
@@ -8587,23 +8289,23 @@ pub struct ModerationLabel {
     pub parent_name: std::option::Option<std::string::String>,
 }
 impl ModerationLabel {
-    /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
+    /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p> 
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
     }
     /// <p>The label name for the type of unsafe content detected in the image.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
-    pub fn parent_name(&self) -> std::option::Option<&str> {
+    pub fn parent_name(&self) -> std::option::Option<& str> {
         self.parent_name.as_deref()
     }
 }
 /// See [`ModerationLabel`](crate::model::ModerationLabel).
 pub mod moderation_label {
-
+    
     /// A builder for [`ModerationLabel`](crate::model::ModerationLabel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8612,17 +8314,16 @@ pub mod moderation_label {
         pub(crate) parent_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
+        /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p> 
         /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
         pub fn confidence(mut self, input: f32) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
+        /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p> 
         /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>The label name for the type of unsafe content detected in the image.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8631,8 +8332,7 @@ pub mod moderation_label {
         }
         /// <p>The label name for the type of unsafe content detected in the image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
         pub fn parent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8641,18 +8341,22 @@ pub mod moderation_label {
         }
         /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
         pub fn set_parent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_name = input;
-            self
+            self.parent_name = input; self
         }
         /// Consumes the builder and constructs a [`ModerationLabel`](crate::model::ModerationLabel).
         pub fn build(self) -> crate::model::ModerationLabel {
             crate::model::ModerationLabel {
-                confidence: self.confidence,
-                name: self.name,
-                parent_name: self.parent_name,
+                confidence: self.confidence
+                ,
+                name: self.name
+                ,
+                parent_name: self.parent_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ModerationLabel {
     /// Creates a new builder-style object to manufacture [`ModerationLabel`](crate::model::ModerationLabel).
@@ -8667,9 +8371,9 @@ impl ModerationLabel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contentmoderationsortby = unimplemented!();
 /// match contentmoderationsortby {
@@ -8691,60 +8395,52 @@ impl ModerationLabel {
 /// Specifically, when `contentmoderationsortby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContentModerationSortBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContentModerationSortBy {
     #[allow(missing_docs)] // documentation missing in model
     Name,
     #[allow(missing_docs)] // documentation missing in model
     Timestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentModerationSortBy {
     fn from(s: &str) -> Self {
         match s {
             "NAME" => ContentModerationSortBy::Name,
             "TIMESTAMP" => ContentModerationSortBy::Timestamp,
-            other => ContentModerationSortBy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ContentModerationSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContentModerationSortBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContentModerationSortBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContentModerationSortBy::from(s))
+                }
+            }
 impl ContentModerationSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentModerationSortBy::Name => "NAME",
             ContentModerationSortBy::Timestamp => "TIMESTAMP",
-            ContentModerationSortBy::Unknown(value) => value.as_str(),
+            ContentModerationSortBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NAME", "TIMESTAMP"]
+        &[
+            "NAME", "TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for ContentModerationSortBy {
@@ -8756,7 +8452,7 @@ impl AsRef<str> for ContentModerationSortBy {
 /// <p>Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CelebrityRecognition {
+pub struct CelebrityRecognition  {
     /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -8770,13 +8466,13 @@ impl CelebrityRecognition {
         self.timestamp
     }
     /// <p>Information about a recognized celebrity.</p>
-    pub fn celebrity(&self) -> std::option::Option<&crate::model::CelebrityDetail> {
+    pub fn celebrity(&self) -> std::option::Option<& crate::model::CelebrityDetail> {
         self.celebrity.as_ref()
     }
 }
 /// See [`CelebrityRecognition`](crate::model::CelebrityRecognition).
 pub mod celebrity_recognition {
-
+    
     /// A builder for [`CelebrityRecognition`](crate::model::CelebrityRecognition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8791,8 +8487,7 @@ pub mod celebrity_recognition {
         }
         /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>Information about a recognized celebrity.</p>
         pub fn celebrity(mut self, input: crate::model::CelebrityDetail) -> Self {
@@ -8800,21 +8495,22 @@ pub mod celebrity_recognition {
             self
         }
         /// <p>Information about a recognized celebrity.</p>
-        pub fn set_celebrity(
-            mut self,
-            input: std::option::Option<crate::model::CelebrityDetail>,
-        ) -> Self {
-            self.celebrity = input;
-            self
+        pub fn set_celebrity(mut self, input: std::option::Option<crate::model::CelebrityDetail>) -> Self {
+            self.celebrity = input; self
         }
         /// Consumes the builder and constructs a [`CelebrityRecognition`](crate::model::CelebrityRecognition).
         pub fn build(self) -> crate::model::CelebrityRecognition {
             crate::model::CelebrityRecognition {
-                timestamp: self.timestamp.unwrap_or_default(),
-                celebrity: self.celebrity,
+                timestamp: self.timestamp
+                    .unwrap_or_default()
+                ,
+                celebrity: self.celebrity
+                ,
             }
         }
     }
+    
+    
 }
 impl CelebrityRecognition {
     /// Creates a new builder-style object to manufacture [`CelebrityRecognition`](crate::model::CelebrityRecognition).
@@ -8826,7 +8522,7 @@ impl CelebrityRecognition {
 /// <p>Information about a recognized celebrity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CelebrityDetail {
+pub struct CelebrityDetail  {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
     #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8851,15 +8547,15 @@ pub struct CelebrityDetail {
 }
 impl CelebrityDetail {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn urls(&self) -> std::option::Option<& [std::string::String]> {
         self.urls.as_deref()
     }
     /// <p>The name of the celebrity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the celebrity. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
@@ -8867,21 +8563,21 @@ impl CelebrityDetail {
         self.confidence
     }
     /// <p>Bounding box around the body of a celebrity.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Face details for the recognized celebrity.</p>
-    pub fn face(&self) -> std::option::Option<&crate::model::FaceDetail> {
+    pub fn face(&self) -> std::option::Option<& crate::model::FaceDetail> {
         self.face.as_ref()
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
-    pub fn known_gender(&self) -> std::option::Option<&crate::model::KnownGender> {
+    pub fn known_gender(&self) -> std::option::Option<& crate::model::KnownGender> {
         self.known_gender.as_ref()
     }
 }
 /// See [`CelebrityDetail`](crate::model::CelebrityDetail).
 pub mod celebrity_detail {
-
+    
     /// A builder for [`CelebrityDetail`](crate::model::CelebrityDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8901,17 +8597,13 @@ pub mod celebrity_detail {
         /// <p>An array of URLs pointing to additional celebrity information. </p>
         pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.urls.unwrap_or_default();
-            v.push(input.into());
-            self.urls = Some(v);
-            self
+                            v.push(input.into());
+                            self.urls = Some(v);
+                            self
         }
         /// <p>An array of URLs pointing to additional celebrity information. </p>
-        pub fn set_urls(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.urls = input;
-            self
+        pub fn set_urls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.urls = input; self
         }
         /// <p>The name of the celebrity.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8920,8 +8612,7 @@ pub mod celebrity_detail {
         }
         /// <p>The name of the celebrity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier for the celebrity. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8930,8 +8621,7 @@ pub mod celebrity_detail {
         }
         /// <p>The unique identifier for the celebrity. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -8940,8 +8630,7 @@ pub mod celebrity_detail {
         }
         /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>Bounding box around the body of a celebrity.</p>
         pub fn bounding_box(mut self, input: crate::model::BoundingBox) -> Self {
@@ -8949,12 +8638,8 @@ pub mod celebrity_detail {
             self
         }
         /// <p>Bounding box around the body of a celebrity.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>Face details for the recognized celebrity.</p>
         pub fn face(mut self, input: crate::model::FaceDetail) -> Self {
@@ -8963,8 +8648,7 @@ pub mod celebrity_detail {
         }
         /// <p>Face details for the recognized celebrity.</p>
         pub fn set_face(mut self, input: std::option::Option<crate::model::FaceDetail>) -> Self {
-            self.face = input;
-            self
+            self.face = input; self
         }
         /// <p>Retrieves the known gender for the celebrity.</p>
         pub fn known_gender(mut self, input: crate::model::KnownGender) -> Self {
@@ -8972,26 +8656,31 @@ pub mod celebrity_detail {
             self
         }
         /// <p>Retrieves the known gender for the celebrity.</p>
-        pub fn set_known_gender(
-            mut self,
-            input: std::option::Option<crate::model::KnownGender>,
-        ) -> Self {
-            self.known_gender = input;
-            self
+        pub fn set_known_gender(mut self, input: std::option::Option<crate::model::KnownGender>) -> Self {
+            self.known_gender = input; self
         }
         /// Consumes the builder and constructs a [`CelebrityDetail`](crate::model::CelebrityDetail).
         pub fn build(self) -> crate::model::CelebrityDetail {
             crate::model::CelebrityDetail {
-                urls: self.urls,
-                name: self.name,
-                id: self.id,
-                confidence: self.confidence,
-                bounding_box: self.bounding_box,
-                face: self.face,
-                known_gender: self.known_gender,
+                urls: self.urls
+                ,
+                name: self.name
+                ,
+                id: self.id
+                ,
+                confidence: self.confidence
+                ,
+                bounding_box: self.bounding_box
+                ,
+                face: self.face
+                ,
+                known_gender: self.known_gender
+                ,
             }
         }
     }
+    
+    
 }
 impl CelebrityDetail {
     /// Creates a new builder-style object to manufacture [`CelebrityDetail`](crate::model::CelebrityDetail).
@@ -9006,9 +8695,9 @@ impl CelebrityDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let celebrityrecognitionsortby = unimplemented!();
 /// match celebrityrecognitionsortby {
@@ -9030,60 +8719,52 @@ impl CelebrityDetail {
 /// Specifically, when `celebrityrecognitionsortby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CelebrityRecognitionSortBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CelebrityRecognitionSortBy {
     #[allow(missing_docs)] // documentation missing in model
     Id,
     #[allow(missing_docs)] // documentation missing in model
     Timestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CelebrityRecognitionSortBy {
     fn from(s: &str) -> Self {
         match s {
             "ID" => CelebrityRecognitionSortBy::Id,
             "TIMESTAMP" => CelebrityRecognitionSortBy::Timestamp,
-            other => CelebrityRecognitionSortBy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CelebrityRecognitionSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CelebrityRecognitionSortBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CelebrityRecognitionSortBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CelebrityRecognitionSortBy::from(s))
+                }
+            }
 impl CelebrityRecognitionSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CelebrityRecognitionSortBy::Id => "ID",
             CelebrityRecognitionSortBy::Timestamp => "TIMESTAMP",
-            CelebrityRecognitionSortBy::Unknown(value) => value.as_str(),
+            CelebrityRecognitionSortBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ID", "TIMESTAMP"]
+        &[
+            "ID", "TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for CelebrityRecognitionSortBy {
@@ -9095,20 +8776,20 @@ impl AsRef<str> for CelebrityRecognitionSortBy {
 /// <p> A training dataset or a test dataset used in a dataset distribution operation. For more information, see <code>DistributeDatasetEntries</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DistributeDataset {
+pub struct DistributeDataset  {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DistributeDataset {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DistributeDataset`](crate::model::DistributeDataset).
 pub mod distribute_dataset {
-
+    
     /// A builder for [`DistributeDataset`](crate::model::DistributeDataset).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9122,14 +8803,18 @@ pub mod distribute_dataset {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DistributeDataset`](crate::model::DistributeDataset).
         pub fn build(self) -> crate::model::DistributeDataset {
-            crate::model::DistributeDataset { arn: self.arn }
+            crate::model::DistributeDataset {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DistributeDataset {
     /// Creates a new builder-style object to manufacture [`DistributeDataset`](crate::model::DistributeDataset).
@@ -9141,7 +8826,7 @@ impl DistributeDataset {
 /// <p>A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectTextFilters {
+pub struct DetectTextFilters  {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
     #[doc(hidden)]
     pub word_filter: std::option::Option<crate::model::DetectionFilter>,
@@ -9151,23 +8836,22 @@ pub struct DetectTextFilters {
 }
 impl DetectTextFilters {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
-    pub fn word_filter(&self) -> std::option::Option<&crate::model::DetectionFilter> {
+    pub fn word_filter(&self) -> std::option::Option<& crate::model::DetectionFilter> {
         self.word_filter.as_ref()
     }
     /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-    pub fn regions_of_interest(&self) -> std::option::Option<&[crate::model::RegionOfInterest]> {
+    pub fn regions_of_interest(&self) -> std::option::Option<& [crate::model::RegionOfInterest]> {
         self.regions_of_interest.as_deref()
     }
 }
 /// See [`DetectTextFilters`](crate::model::DetectTextFilters).
 pub mod detect_text_filters {
-
+    
     /// A builder for [`DetectTextFilters`](crate::model::DetectTextFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) word_filter: std::option::Option<crate::model::DetectionFilter>,
-        pub(crate) regions_of_interest:
-            std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
+        pub(crate) regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
     }
     impl Builder {
         /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
@@ -9176,12 +8860,8 @@ pub mod detect_text_filters {
             self
         }
         /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
-        pub fn set_word_filter(
-            mut self,
-            input: std::option::Option<crate::model::DetectionFilter>,
-        ) -> Self {
-            self.word_filter = input;
-            self
+        pub fn set_word_filter(mut self, input: std::option::Option<crate::model::DetectionFilter>) -> Self {
+            self.word_filter = input; self
         }
         /// Appends an item to `regions_of_interest`.
         ///
@@ -9190,26 +8870,26 @@ pub mod detect_text_filters {
         /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
         pub fn regions_of_interest(mut self, input: crate::model::RegionOfInterest) -> Self {
             let mut v = self.regions_of_interest.unwrap_or_default();
-            v.push(input);
-            self.regions_of_interest = Some(v);
-            self
+                            v.push(input);
+                            self.regions_of_interest = Some(v);
+                            self
         }
         /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-        pub fn set_regions_of_interest(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
-        ) -> Self {
-            self.regions_of_interest = input;
-            self
+        pub fn set_regions_of_interest(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>) -> Self {
+            self.regions_of_interest = input; self
         }
         /// Consumes the builder and constructs a [`DetectTextFilters`](crate::model::DetectTextFilters).
         pub fn build(self) -> crate::model::DetectTextFilters {
             crate::model::DetectTextFilters {
-                word_filter: self.word_filter,
-                regions_of_interest: self.regions_of_interest,
+                word_filter: self.word_filter
+                ,
+                regions_of_interest: self.regions_of_interest
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectTextFilters {
     /// Creates a new builder-style object to manufacture [`DetectTextFilters`](crate::model::DetectTextFilters).
@@ -9218,11 +8898,11 @@ impl DetectTextFilters {
     }
 }
 
-/// <p>Summary information for required items of personal protective equipment (PPE) detected on persons by a call to <code>DetectProtectiveEquipment</code>. You specify the required type of PPE in the <code>SummarizationAttributes</code> (<code>ProtectiveEquipmentSummarizationAttributes</code>) input parameter. The summary includes which persons were detected wearing the required personal protective equipment (<code>PersonsWithRequiredEquipment</code>), which persons were detected as not wearing the required PPE (<code>PersonsWithoutRequiredEquipment</code>), and the persons in which a determination could not be made (<code>PersonsIndeterminate</code>).</p>
+/// <p>Summary information for required items of personal protective equipment (PPE) detected on persons by a call to <code>DetectProtectiveEquipment</code>. You specify the required type of PPE in the <code>SummarizationAttributes</code> (<code>ProtectiveEquipmentSummarizationAttributes</code>) input parameter. The summary includes which persons were detected wearing the required personal protective equipment (<code>PersonsWithRequiredEquipment</code>), which persons were detected as not wearing the required PPE (<code>PersonsWithoutRequiredEquipment</code>), and the persons in which a determination could not be made (<code>PersonsIndeterminate</code>).</p> 
 /// <p>To get a total for each category, use the size of the field array. For example, to find out how many people were detected as wearing the specified PPE, use the size of the <code>PersonsWithRequiredEquipment</code> array. If you want to find out more about a person, such as the location (<code>BoundingBox</code>) of the person on the image, use the person ID in each array element. Each person ID matches the ID field of a <code>ProtectiveEquipmentPerson</code> object returned in the <code>Persons</code> array by <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectiveEquipmentSummary {
+pub struct ProtectiveEquipmentSummary  {
     /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
     #[doc(hidden)]
     pub persons_with_required_equipment: std::option::Option<std::vec::Vec<i32>>,
@@ -9235,21 +8915,21 @@ pub struct ProtectiveEquipmentSummary {
 }
 impl ProtectiveEquipmentSummary {
     /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
-    pub fn persons_with_required_equipment(&self) -> std::option::Option<&[i32]> {
+    pub fn persons_with_required_equipment(&self) -> std::option::Option<& [i32]> {
         self.persons_with_required_equipment.as_deref()
     }
     /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
-    pub fn persons_without_required_equipment(&self) -> std::option::Option<&[i32]> {
+    pub fn persons_without_required_equipment(&self) -> std::option::Option<& [i32]> {
         self.persons_without_required_equipment.as_deref()
     }
     /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
-    pub fn persons_indeterminate(&self) -> std::option::Option<&[i32]> {
+    pub fn persons_indeterminate(&self) -> std::option::Option<& [i32]> {
         self.persons_indeterminate.as_deref()
     }
 }
 /// See [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
 pub mod protective_equipment_summary {
-
+    
     /// A builder for [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9265,17 +8945,13 @@ pub mod protective_equipment_summary {
         /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
         pub fn persons_with_required_equipment(mut self, input: i32) -> Self {
             let mut v = self.persons_with_required_equipment.unwrap_or_default();
-            v.push(input);
-            self.persons_with_required_equipment = Some(v);
-            self
+                            v.push(input);
+                            self.persons_with_required_equipment = Some(v);
+                            self
         }
         /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
-        pub fn set_persons_with_required_equipment(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i32>>,
-        ) -> Self {
-            self.persons_with_required_equipment = input;
-            self
+        pub fn set_persons_with_required_equipment(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.persons_with_required_equipment = input; self
         }
         /// Appends an item to `persons_without_required_equipment`.
         ///
@@ -9284,17 +8960,13 @@ pub mod protective_equipment_summary {
         /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
         pub fn persons_without_required_equipment(mut self, input: i32) -> Self {
             let mut v = self.persons_without_required_equipment.unwrap_or_default();
-            v.push(input);
-            self.persons_without_required_equipment = Some(v);
-            self
+                            v.push(input);
+                            self.persons_without_required_equipment = Some(v);
+                            self
         }
         /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
-        pub fn set_persons_without_required_equipment(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i32>>,
-        ) -> Self {
-            self.persons_without_required_equipment = input;
-            self
+        pub fn set_persons_without_required_equipment(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.persons_without_required_equipment = input; self
         }
         /// Appends an item to `persons_indeterminate`.
         ///
@@ -9303,27 +8975,28 @@ pub mod protective_equipment_summary {
         /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
         pub fn persons_indeterminate(mut self, input: i32) -> Self {
             let mut v = self.persons_indeterminate.unwrap_or_default();
-            v.push(input);
-            self.persons_indeterminate = Some(v);
-            self
+                            v.push(input);
+                            self.persons_indeterminate = Some(v);
+                            self
         }
         /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
-        pub fn set_persons_indeterminate(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i32>>,
-        ) -> Self {
-            self.persons_indeterminate = input;
-            self
+        pub fn set_persons_indeterminate(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.persons_indeterminate = input; self
         }
         /// Consumes the builder and constructs a [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
         pub fn build(self) -> crate::model::ProtectiveEquipmentSummary {
             crate::model::ProtectiveEquipmentSummary {
-                persons_with_required_equipment: self.persons_with_required_equipment,
-                persons_without_required_equipment: self.persons_without_required_equipment,
-                persons_indeterminate: self.persons_indeterminate,
+                persons_with_required_equipment: self.persons_with_required_equipment
+                ,
+                persons_without_required_equipment: self.persons_without_required_equipment
+                ,
+                persons_indeterminate: self.persons_indeterminate
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectiveEquipmentSummary {
     /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
@@ -9335,7 +9008,7 @@ impl ProtectiveEquipmentSummary {
 /// <p>A person detected by a call to <code>DetectProtectiveEquipment</code>. The API returns all persons detected in the input image in an array of <code>ProtectiveEquipmentPerson</code> objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectiveEquipmentPerson {
+pub struct ProtectiveEquipmentPerson  {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     #[doc(hidden)]
     pub body_parts: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentBodyPart>>,
@@ -9351,11 +9024,11 @@ pub struct ProtectiveEquipmentPerson {
 }
 impl ProtectiveEquipmentPerson {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-    pub fn body_parts(&self) -> std::option::Option<&[crate::model::ProtectiveEquipmentBodyPart]> {
+    pub fn body_parts(&self) -> std::option::Option<& [crate::model::ProtectiveEquipmentBodyPart]> {
         self.body_parts.as_deref()
     }
     /// <p>A bounding box around the detected person.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
@@ -9369,12 +9042,11 @@ impl ProtectiveEquipmentPerson {
 }
 /// See [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
 pub mod protective_equipment_person {
-
+    
     /// A builder for [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) body_parts:
-            std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentBodyPart>>,
+        pub(crate) body_parts: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentBodyPart>>,
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
         pub(crate) confidence: std::option::Option<f32>,
         pub(crate) id: std::option::Option<i32>,
@@ -9387,17 +9059,13 @@ pub mod protective_equipment_person {
         /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
         pub fn body_parts(mut self, input: crate::model::ProtectiveEquipmentBodyPart) -> Self {
             let mut v = self.body_parts.unwrap_or_default();
-            v.push(input);
-            self.body_parts = Some(v);
-            self
+                            v.push(input);
+                            self.body_parts = Some(v);
+                            self
         }
         /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-        pub fn set_body_parts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentBodyPart>>,
-        ) -> Self {
-            self.body_parts = input;
-            self
+        pub fn set_body_parts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentBodyPart>>) -> Self {
+            self.body_parts = input; self
         }
         /// <p>A bounding box around the detected person.</p>
         pub fn bounding_box(mut self, input: crate::model::BoundingBox) -> Self {
@@ -9405,12 +9073,8 @@ pub mod protective_equipment_person {
             self
         }
         /// <p>A bounding box around the detected person.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -9419,8 +9083,7 @@ pub mod protective_equipment_person {
         }
         /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
         pub fn id(mut self, input: i32) -> Self {
@@ -9429,19 +9092,24 @@ pub mod protective_equipment_person {
         }
         /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
         pub fn build(self) -> crate::model::ProtectiveEquipmentPerson {
             crate::model::ProtectiveEquipmentPerson {
-                body_parts: self.body_parts,
-                bounding_box: self.bounding_box,
-                confidence: self.confidence,
-                id: self.id,
+                body_parts: self.body_parts
+                ,
+                bounding_box: self.bounding_box
+                ,
+                confidence: self.confidence
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectiveEquipmentPerson {
     /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
@@ -9453,7 +9121,7 @@ impl ProtectiveEquipmentPerson {
 /// <p>Information about a body part detected by <code>DetectProtectiveEquipment</code> that contains PPE. An array of <code>ProtectiveEquipmentBodyPart</code> objects is returned for each person detected by <code>DetectProtectiveEquipment</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectiveEquipmentBodyPart {
+pub struct ProtectiveEquipmentBodyPart  {
     /// <p>The detected body part.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::BodyPart>,
@@ -9466,7 +9134,7 @@ pub struct ProtectiveEquipmentBodyPart {
 }
 impl ProtectiveEquipmentBodyPart {
     /// <p>The detected body part.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::BodyPart> {
+    pub fn name(&self) -> std::option::Option<& crate::model::BodyPart> {
         self.name.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part. </p>
@@ -9474,20 +9142,19 @@ impl ProtectiveEquipmentBodyPart {
         self.confidence
     }
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    pub fn equipment_detections(&self) -> std::option::Option<&[crate::model::EquipmentDetection]> {
+    pub fn equipment_detections(&self) -> std::option::Option<& [crate::model::EquipmentDetection]> {
         self.equipment_detections.as_deref()
     }
 }
 /// See [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
 pub mod protective_equipment_body_part {
-
+    
     /// A builder for [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::BodyPart>,
         pub(crate) confidence: std::option::Option<f32>,
-        pub(crate) equipment_detections:
-            std::option::Option<std::vec::Vec<crate::model::EquipmentDetection>>,
+        pub(crate) equipment_detections: std::option::Option<std::vec::Vec<crate::model::EquipmentDetection>>,
     }
     impl Builder {
         /// <p>The detected body part.</p>
@@ -9497,8 +9164,7 @@ pub mod protective_equipment_body_part {
         }
         /// <p>The detected body part.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::BodyPart>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part. </p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -9507,8 +9173,7 @@ pub mod protective_equipment_body_part {
         }
         /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part. </p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Appends an item to `equipment_detections`.
         ///
@@ -9517,27 +9182,28 @@ pub mod protective_equipment_body_part {
         /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
         pub fn equipment_detections(mut self, input: crate::model::EquipmentDetection) -> Self {
             let mut v = self.equipment_detections.unwrap_or_default();
-            v.push(input);
-            self.equipment_detections = Some(v);
-            self
+                            v.push(input);
+                            self.equipment_detections = Some(v);
+                            self
         }
         /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-        pub fn set_equipment_detections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EquipmentDetection>>,
-        ) -> Self {
-            self.equipment_detections = input;
-            self
+        pub fn set_equipment_detections(mut self, input: std::option::Option<std::vec::Vec<crate::model::EquipmentDetection>>) -> Self {
+            self.equipment_detections = input; self
         }
         /// Consumes the builder and constructs a [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
         pub fn build(self) -> crate::model::ProtectiveEquipmentBodyPart {
             crate::model::ProtectiveEquipmentBodyPart {
-                name: self.name,
-                confidence: self.confidence,
-                equipment_detections: self.equipment_detections,
+                name: self.name
+                ,
+                confidence: self.confidence
+                ,
+                equipment_detections: self.equipment_detections
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectiveEquipmentBodyPart {
     /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
@@ -9549,7 +9215,7 @@ impl ProtectiveEquipmentBodyPart {
 /// <p>Information about an item of Personal Protective Equipment (PPE) detected by <code>DetectProtectiveEquipment</code>. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EquipmentDetection {
+pub struct EquipmentDetection  {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
     #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -9565,7 +9231,7 @@ pub struct EquipmentDetection {
 }
 impl EquipmentDetection {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
@@ -9573,17 +9239,17 @@ impl EquipmentDetection {
         self.confidence
     }
     /// <p>The type of detected PPE.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ProtectiveEquipmentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ProtectiveEquipmentType> {
         self.r#type.as_ref()
     }
     /// <p>Information about the body part covered by the detected PPE.</p>
-    pub fn covers_body_part(&self) -> std::option::Option<&crate::model::CoversBodyPart> {
+    pub fn covers_body_part(&self) -> std::option::Option<& crate::model::CoversBodyPart> {
         self.covers_body_part.as_ref()
     }
 }
 /// See [`EquipmentDetection`](crate::model::EquipmentDetection).
 pub mod equipment_detection {
-
+    
     /// A builder for [`EquipmentDetection`](crate::model::EquipmentDetection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9599,12 +9265,8 @@ pub mod equipment_detection {
             self
         }
         /// <p>A bounding box surrounding the item of detected PPE.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -9613,8 +9275,7 @@ pub mod equipment_detection {
         }
         /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>The type of detected PPE.</p>
         pub fn r#type(mut self, input: crate::model::ProtectiveEquipmentType) -> Self {
@@ -9622,12 +9283,8 @@ pub mod equipment_detection {
             self
         }
         /// <p>The type of detected PPE.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ProtectiveEquipmentType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ProtectiveEquipmentType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Information about the body part covered by the detected PPE.</p>
         pub fn covers_body_part(mut self, input: crate::model::CoversBodyPart) -> Self {
@@ -9635,23 +9292,25 @@ pub mod equipment_detection {
             self
         }
         /// <p>Information about the body part covered by the detected PPE.</p>
-        pub fn set_covers_body_part(
-            mut self,
-            input: std::option::Option<crate::model::CoversBodyPart>,
-        ) -> Self {
-            self.covers_body_part = input;
-            self
+        pub fn set_covers_body_part(mut self, input: std::option::Option<crate::model::CoversBodyPart>) -> Self {
+            self.covers_body_part = input; self
         }
         /// Consumes the builder and constructs a [`EquipmentDetection`](crate::model::EquipmentDetection).
         pub fn build(self) -> crate::model::EquipmentDetection {
             crate::model::EquipmentDetection {
-                bounding_box: self.bounding_box,
-                confidence: self.confidence,
-                r#type: self.r#type,
-                covers_body_part: self.covers_body_part,
+                bounding_box: self.bounding_box
+                ,
+                confidence: self.confidence
+                ,
+                r#type: self.r#type
+                ,
+                covers_body_part: self.covers_body_part
+                ,
             }
         }
     }
+    
+    
 }
 impl EquipmentDetection {
     /// Creates a new builder-style object to manufacture [`EquipmentDetection`](crate::model::EquipmentDetection).
@@ -9663,7 +9322,7 @@ impl EquipmentDetection {
 /// <p>Information about an item of Personal Protective Equipment covering a corresponding body part. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoversBodyPart {
+pub struct CoversBodyPart  {
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
@@ -9683,7 +9342,7 @@ impl CoversBodyPart {
 }
 /// See [`CoversBodyPart`](crate::model::CoversBodyPart).
 pub mod covers_body_part {
-
+    
     /// A builder for [`CoversBodyPart`](crate::model::CoversBodyPart).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9698,8 +9357,7 @@ pub mod covers_body_part {
         }
         /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
         pub fn value(mut self, input: bool) -> Self {
@@ -9708,17 +9366,21 @@ pub mod covers_body_part {
         }
         /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
         pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`CoversBodyPart`](crate::model::CoversBodyPart).
         pub fn build(self) -> crate::model::CoversBodyPart {
             crate::model::CoversBodyPart {
-                confidence: self.confidence,
-                value: self.value.unwrap_or_default(),
+                confidence: self.confidence
+                ,
+                value: self.value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CoversBodyPart {
     /// Creates a new builder-style object to manufacture [`CoversBodyPart`](crate::model::CoversBodyPart).
@@ -9733,9 +9395,9 @@ impl CoversBodyPart {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protectiveequipmenttype = unimplemented!();
 /// match protectiveequipmenttype {
@@ -9758,22 +9420,14 @@ impl CoversBodyPart {
 /// Specifically, when `protectiveequipmenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProtectiveEquipmentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProtectiveEquipmentType {
     #[allow(missing_docs)] // documentation missing in model
     FaceCover,
@@ -9782,7 +9436,7 @@ pub enum ProtectiveEquipmentType {
     #[allow(missing_docs)] // documentation missing in model
     HeadCover,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtectiveEquipmentType {
     fn from(s: &str) -> Self {
@@ -9790,19 +9444,17 @@ impl std::convert::From<&str> for ProtectiveEquipmentType {
             "FACE_COVER" => ProtectiveEquipmentType::FaceCover,
             "HAND_COVER" => ProtectiveEquipmentType::HandCover,
             "HEAD_COVER" => ProtectiveEquipmentType::HeadCover,
-            other => ProtectiveEquipmentType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProtectiveEquipmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProtectiveEquipmentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProtectiveEquipmentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProtectiveEquipmentType::from(s))
+                }
+            }
 impl ProtectiveEquipmentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9810,12 +9462,14 @@ impl ProtectiveEquipmentType {
             ProtectiveEquipmentType::FaceCover => "FACE_COVER",
             ProtectiveEquipmentType::HandCover => "HAND_COVER",
             ProtectiveEquipmentType::HeadCover => "HEAD_COVER",
-            ProtectiveEquipmentType::Unknown(value) => value.as_str(),
+            ProtectiveEquipmentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FACE_COVER", "HAND_COVER", "HEAD_COVER"]
+        &[
+            "FACE_COVER", "HAND_COVER", "HEAD_COVER"
+        ]
     }
 }
 impl AsRef<str> for ProtectiveEquipmentType {
@@ -9830,9 +9484,9 @@ impl AsRef<str> for ProtectiveEquipmentType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let bodypart = unimplemented!();
 /// match bodypart {
@@ -9856,22 +9510,14 @@ impl AsRef<str> for ProtectiveEquipmentType {
 /// Specifically, when `bodypart` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BodyPart::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BodyPart {
     #[allow(missing_docs)] // documentation missing in model
     Face,
@@ -9882,7 +9528,7 @@ pub enum BodyPart {
     #[allow(missing_docs)] // documentation missing in model
     RightHand,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BodyPart {
     fn from(s: &str) -> Self {
@@ -9891,17 +9537,17 @@ impl std::convert::From<&str> for BodyPart {
             "HEAD" => BodyPart::Head,
             "LEFT_HAND" => BodyPart::LeftHand,
             "RIGHT_HAND" => BodyPart::RightHand,
-            other => BodyPart::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BodyPart::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BodyPart {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BodyPart::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BodyPart::from(s))
+                }
+            }
 impl BodyPart {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9910,12 +9556,14 @@ impl BodyPart {
             BodyPart::Head => "HEAD",
             BodyPart::LeftHand => "LEFT_HAND",
             BodyPart::RightHand => "RIGHT_HAND",
-            BodyPart::Unknown(value) => value.as_str(),
+            BodyPart::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FACE", "HEAD", "LEFT_HAND", "RIGHT_HAND"]
+        &[
+            "FACE", "HEAD", "LEFT_HAND", "RIGHT_HAND"
+        ]
     }
 }
 impl AsRef<str> for BodyPart {
@@ -9927,86 +9575,78 @@ impl AsRef<str> for BodyPart {
 /// <p>Specifies summary attributes to return from a call to <code>DetectProtectiveEquipment</code>. You can specify which types of PPE to summarize. You can also specify a minimum confidence value for detections. Summary information is returned in the <code>Summary</code> (<code>ProtectiveEquipmentSummary</code>) field of the response from <code>DetectProtectiveEquipment</code>. The summary includes which persons in an image were detected wearing the requested types of person protective equipment (PPE), which persons were detected as not wearing PPE, and the persons in which a determination could not be made. For more information, see <code>ProtectiveEquipmentSummary</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectiveEquipmentSummarizationAttributes {
-    /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
-    /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
+pub struct ProtectiveEquipmentSummarizationAttributes  {
+    /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p> 
+    /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p> 
     /// <p> </p>
     #[doc(hidden)]
     pub min_confidence: std::option::Option<f32>,
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
     #[doc(hidden)]
-    pub required_equipment_types:
-        std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentType>>,
+    pub required_equipment_types: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentType>>,
 }
 impl ProtectiveEquipmentSummarizationAttributes {
-    /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
-    /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
+    /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p> 
+    /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p> 
     /// <p> </p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
     }
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-    pub fn required_equipment_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProtectiveEquipmentType]> {
+    pub fn required_equipment_types(&self) -> std::option::Option<& [crate::model::ProtectiveEquipmentType]> {
         self.required_equipment_types.as_deref()
     }
 }
 /// See [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
 pub mod protective_equipment_summarization_attributes {
-
+    
     /// A builder for [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_confidence: std::option::Option<f32>,
-        pub(crate) required_equipment_types:
-            std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentType>>,
+        pub(crate) required_equipment_types: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentType>>,
     }
     impl Builder {
-        /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
-        /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
+        /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p> 
+        /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p> 
         /// <p> </p>
         pub fn min_confidence(mut self, input: f32) -> Self {
             self.min_confidence = Some(input);
             self
         }
-        /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
-        /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
+        /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p> 
+        /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p> 
         /// <p> </p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_confidence = input;
-            self
+            self.min_confidence = input; self
         }
         /// Appends an item to `required_equipment_types`.
         ///
         /// To override the contents of this collection use [`set_required_equipment_types`](Self::set_required_equipment_types).
         ///
         /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-        pub fn required_equipment_types(
-            mut self,
-            input: crate::model::ProtectiveEquipmentType,
-        ) -> Self {
+        pub fn required_equipment_types(mut self, input: crate::model::ProtectiveEquipmentType) -> Self {
             let mut v = self.required_equipment_types.unwrap_or_default();
-            v.push(input);
-            self.required_equipment_types = Some(v);
-            self
+                            v.push(input);
+                            self.required_equipment_types = Some(v);
+                            self
         }
         /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-        pub fn set_required_equipment_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentType>>,
-        ) -> Self {
-            self.required_equipment_types = input;
-            self
+        pub fn set_required_equipment_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentType>>) -> Self {
+            self.required_equipment_types = input; self
         }
         /// Consumes the builder and constructs a [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
         pub fn build(self) -> crate::model::ProtectiveEquipmentSummarizationAttributes {
             crate::model::ProtectiveEquipmentSummarizationAttributes {
-                min_confidence: self.min_confidence,
-                required_equipment_types: self.required_equipment_types,
+                min_confidence: self.min_confidence
+                ,
+                required_equipment_types: self.required_equipment_types
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectiveEquipmentSummarizationAttributes {
     /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
@@ -10018,7 +9658,7 @@ impl ProtectiveEquipmentSummarizationAttributes {
 /// <p>Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopActivationOutput {
+pub struct HumanLoopActivationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
     #[doc(hidden)]
     pub human_loop_arn: std::option::Option<std::string::String>,
@@ -10027,35 +9667,31 @@ pub struct HumanLoopActivationOutput {
     pub human_loop_activation_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
     #[doc(hidden)]
-    pub human_loop_activation_conditions_evaluation_results:
-        std::option::Option<std::string::String>,
+    pub human_loop_activation_conditions_evaluation_results: std::option::Option<std::string::String>,
 }
 impl HumanLoopActivationOutput {
     /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-    pub fn human_loop_arn(&self) -> std::option::Option<&str> {
+    pub fn human_loop_arn(&self) -> std::option::Option<& str> {
         self.human_loop_arn.as_deref()
     }
     /// <p>Shows if and why human review was needed.</p>
-    pub fn human_loop_activation_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn human_loop_activation_reasons(&self) -> std::option::Option<& [std::string::String]> {
         self.human_loop_activation_reasons.as_deref()
     }
     /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
-    pub fn human_loop_activation_conditions_evaluation_results(&self) -> std::option::Option<&str> {
-        self.human_loop_activation_conditions_evaluation_results
-            .as_deref()
+    pub fn human_loop_activation_conditions_evaluation_results(&self) -> std::option::Option<& str> {
+        self.human_loop_activation_conditions_evaluation_results.as_deref()
     }
 }
 /// See [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
 pub mod human_loop_activation_output {
-
+    
     /// A builder for [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_arn: std::option::Option<std::string::String>,
-        pub(crate) human_loop_activation_reasons:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) human_loop_activation_conditions_evaluation_results:
-            std::option::Option<std::string::String>,
+        pub(crate) human_loop_activation_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) human_loop_activation_conditions_evaluation_results: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
@@ -10064,61 +9700,47 @@ pub mod human_loop_activation_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
-        pub fn set_human_loop_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.human_loop_arn = input;
-            self
+        pub fn set_human_loop_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.human_loop_arn = input; self
         }
         /// Appends an item to `human_loop_activation_reasons`.
         ///
         /// To override the contents of this collection use [`set_human_loop_activation_reasons`](Self::set_human_loop_activation_reasons).
         ///
         /// <p>Shows if and why human review was needed.</p>
-        pub fn human_loop_activation_reasons(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn human_loop_activation_reasons(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.human_loop_activation_reasons.unwrap_or_default();
-            v.push(input.into());
-            self.human_loop_activation_reasons = Some(v);
-            self
+                            v.push(input.into());
+                            self.human_loop_activation_reasons = Some(v);
+                            self
         }
         /// <p>Shows if and why human review was needed.</p>
-        pub fn set_human_loop_activation_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.human_loop_activation_reasons = input;
-            self
+        pub fn set_human_loop_activation_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.human_loop_activation_reasons = input; self
         }
         /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
-        pub fn human_loop_activation_conditions_evaluation_results(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn human_loop_activation_conditions_evaluation_results(mut self, input: impl Into<std::string::String>) -> Self {
             self.human_loop_activation_conditions_evaluation_results = Some(input.into());
             self
         }
         /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
-        pub fn set_human_loop_activation_conditions_evaluation_results(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.human_loop_activation_conditions_evaluation_results = input;
-            self
+        pub fn set_human_loop_activation_conditions_evaluation_results(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.human_loop_activation_conditions_evaluation_results = input; self
         }
         /// Consumes the builder and constructs a [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
         pub fn build(self) -> crate::model::HumanLoopActivationOutput {
             crate::model::HumanLoopActivationOutput {
-                human_loop_arn: self.human_loop_arn,
-                human_loop_activation_reasons: self.human_loop_activation_reasons,
-                human_loop_activation_conditions_evaluation_results: self
-                    .human_loop_activation_conditions_evaluation_results,
+                human_loop_arn: self.human_loop_arn
+                ,
+                human_loop_activation_reasons: self.human_loop_activation_reasons
+                ,
+                human_loop_activation_conditions_evaluation_results: self.human_loop_activation_conditions_evaluation_results
+                ,
             }
         }
     }
+    
+    
 }
 impl HumanLoopActivationOutput {
     /// Creates a new builder-style object to manufacture [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
@@ -10130,7 +9752,7 @@ impl HumanLoopActivationOutput {
 /// <p>Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopConfig {
+pub struct HumanLoopConfig  {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
     #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
@@ -10143,21 +9765,21 @@ pub struct HumanLoopConfig {
 }
 impl HumanLoopConfig {
     /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
-    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+    pub fn human_loop_name(&self) -> std::option::Option<& str> {
         self.human_loop_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
-    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_definition_arn(&self) -> std::option::Option<& str> {
         self.flow_definition_arn.as_deref()
     }
     /// <p>Sets attributes of the input data.</p>
-    pub fn data_attributes(&self) -> std::option::Option<&crate::model::HumanLoopDataAttributes> {
+    pub fn data_attributes(&self) -> std::option::Option<& crate::model::HumanLoopDataAttributes> {
         self.data_attributes.as_ref()
     }
 }
 /// See [`HumanLoopConfig`](crate::model::HumanLoopConfig).
 pub mod human_loop_config {
-
+    
     /// A builder for [`HumanLoopConfig`](crate::model::HumanLoopConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10172,12 +9794,8 @@ pub mod human_loop_config {
             self
         }
         /// <p>The name of the human review used for this image. This should be kept unique within a region.</p>
-        pub fn set_human_loop_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.human_loop_name = input;
-            self
+        pub fn set_human_loop_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.human_loop_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
         pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10185,12 +9803,8 @@ pub mod human_loop_config {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow definition by using the Amazon Sagemaker <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a> Operation. </p>
-        pub fn set_flow_definition_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.flow_definition_arn = input;
-            self
+        pub fn set_flow_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_definition_arn = input; self
         }
         /// <p>Sets attributes of the input data.</p>
         pub fn data_attributes(mut self, input: crate::model::HumanLoopDataAttributes) -> Self {
@@ -10198,22 +9812,23 @@ pub mod human_loop_config {
             self
         }
         /// <p>Sets attributes of the input data.</p>
-        pub fn set_data_attributes(
-            mut self,
-            input: std::option::Option<crate::model::HumanLoopDataAttributes>,
-        ) -> Self {
-            self.data_attributes = input;
-            self
+        pub fn set_data_attributes(mut self, input: std::option::Option<crate::model::HumanLoopDataAttributes>) -> Self {
+            self.data_attributes = input; self
         }
         /// Consumes the builder and constructs a [`HumanLoopConfig`](crate::model::HumanLoopConfig).
         pub fn build(self) -> crate::model::HumanLoopConfig {
             crate::model::HumanLoopConfig {
-                human_loop_name: self.human_loop_name,
-                flow_definition_arn: self.flow_definition_arn,
-                data_attributes: self.data_attributes,
+                human_loop_name: self.human_loop_name
+                ,
+                flow_definition_arn: self.flow_definition_arn
+                ,
+                data_attributes: self.data_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl HumanLoopConfig {
     /// Creates a new builder-style object to manufacture [`HumanLoopConfig`](crate::model::HumanLoopConfig).
@@ -10225,25 +9840,24 @@ impl HumanLoopConfig {
 /// <p>Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopDataAttributes {
+pub struct HumanLoopDataAttributes  {
     /// <p>Sets whether the input image is free of personally identifiable information.</p>
     #[doc(hidden)]
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
 }
 impl HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information.</p>
-    pub fn content_classifiers(&self) -> std::option::Option<&[crate::model::ContentClassifier]> {
+    pub fn content_classifiers(&self) -> std::option::Option<& [crate::model::ContentClassifier]> {
         self.content_classifiers.as_deref()
     }
 }
 /// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
 pub mod human_loop_data_attributes {
-
+    
     /// A builder for [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) content_classifiers:
-            std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
+        pub(crate) content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
     }
     impl Builder {
         /// Appends an item to `content_classifiers`.
@@ -10253,25 +9867,24 @@ pub mod human_loop_data_attributes {
         /// <p>Sets whether the input image is free of personally identifiable information.</p>
         pub fn content_classifiers(mut self, input: crate::model::ContentClassifier) -> Self {
             let mut v = self.content_classifiers.unwrap_or_default();
-            v.push(input);
-            self.content_classifiers = Some(v);
-            self
+                            v.push(input);
+                            self.content_classifiers = Some(v);
+                            self
         }
         /// <p>Sets whether the input image is free of personally identifiable information.</p>
-        pub fn set_content_classifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
-        ) -> Self {
-            self.content_classifiers = input;
-            self
+        pub fn set_content_classifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>) -> Self {
+            self.content_classifiers = input; self
         }
         /// Consumes the builder and constructs a [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
         pub fn build(self) -> crate::model::HumanLoopDataAttributes {
             crate::model::HumanLoopDataAttributes {
-                content_classifiers: self.content_classifiers,
+                content_classifiers: self.content_classifiers
+                ,
             }
         }
     }
+    
+    
 }
 impl HumanLoopDataAttributes {
     /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
@@ -10286,9 +9899,9 @@ impl HumanLoopDataAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contentclassifier = unimplemented!();
 /// match contentclassifier {
@@ -10310,66 +9923,51 @@ impl HumanLoopDataAttributes {
 /// Specifically, when `contentclassifier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContentClassifier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContentClassifier {
     #[allow(missing_docs)] // documentation missing in model
     FreeOfAdultContent,
     #[allow(missing_docs)] // documentation missing in model
     FreeOfPersonallyIdentifiableInformation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentClassifier {
     fn from(s: &str) -> Self {
         match s {
             "FreeOfAdultContent" => ContentClassifier::FreeOfAdultContent,
-            "FreeOfPersonallyIdentifiableInformation" => {
-                ContentClassifier::FreeOfPersonallyIdentifiableInformation
-            }
-            other => {
-                ContentClassifier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            "FreeOfPersonallyIdentifiableInformation" => ContentClassifier::FreeOfPersonallyIdentifiableInformation,
+            other => ContentClassifier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContentClassifier {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContentClassifier::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContentClassifier::from(s))
+                }
+            }
 impl ContentClassifier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentClassifier::FreeOfAdultContent => "FreeOfAdultContent",
-            ContentClassifier::FreeOfPersonallyIdentifiableInformation => {
-                "FreeOfPersonallyIdentifiableInformation"
-            }
-            ContentClassifier::Unknown(value) => value.as_str(),
+            ContentClassifier::FreeOfPersonallyIdentifiableInformation => "FreeOfPersonallyIdentifiableInformation",
+            ContentClassifier::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FreeOfAdultContent",
-            "FreeOfPersonallyIdentifiableInformation",
+            "FreeOfAdultContent", "FreeOfPersonallyIdentifiableInformation"
         ]
     }
 }
@@ -10382,7 +9980,7 @@ impl AsRef<str> for ContentClassifier {
 /// <p>Information about the quality and dominant colors of an input image. Quality and color information is returned for the entire image, foreground, and background.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectLabelsImageProperties {
+pub struct DetectLabelsImageProperties  {
     /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
     #[doc(hidden)]
     pub quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
@@ -10398,25 +9996,25 @@ pub struct DetectLabelsImageProperties {
 }
 impl DetectLabelsImageProperties {
     /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::model::DetectLabelsImageQuality> {
+    pub fn quality(&self) -> std::option::Option<& crate::model::DetectLabelsImageQuality> {
         self.quality.as_ref()
     }
     /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn dominant_colors(&self) -> std::option::Option<&[crate::model::DominantColor]> {
+    pub fn dominant_colors(&self) -> std::option::Option<& [crate::model::DominantColor]> {
         self.dominant_colors.as_deref()
     }
     /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-    pub fn foreground(&self) -> std::option::Option<&crate::model::DetectLabelsImageForeground> {
+    pub fn foreground(&self) -> std::option::Option<& crate::model::DetectLabelsImageForeground> {
         self.foreground.as_ref()
     }
     /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-    pub fn background(&self) -> std::option::Option<&crate::model::DetectLabelsImageBackground> {
+    pub fn background(&self) -> std::option::Option<& crate::model::DetectLabelsImageBackground> {
         self.background.as_ref()
     }
 }
 /// See [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
 pub mod detect_labels_image_properties {
-
+    
     /// A builder for [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10432,12 +10030,8 @@ pub mod detect_labels_image_properties {
             self
         }
         /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
-        pub fn set_quality(
-            mut self,
-            input: std::option::Option<crate::model::DetectLabelsImageQuality>,
-        ) -> Self {
-            self.quality = input;
-            self
+        pub fn set_quality(mut self, input: std::option::Option<crate::model::DetectLabelsImageQuality>) -> Self {
+            self.quality = input; self
         }
         /// Appends an item to `dominant_colors`.
         ///
@@ -10446,17 +10040,13 @@ pub mod detect_labels_image_properties {
         /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
         pub fn dominant_colors(mut self, input: crate::model::DominantColor) -> Self {
             let mut v = self.dominant_colors.unwrap_or_default();
-            v.push(input);
-            self.dominant_colors = Some(v);
-            self
+                            v.push(input);
+                            self.dominant_colors = Some(v);
+                            self
         }
         /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-        pub fn set_dominant_colors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
-        ) -> Self {
-            self.dominant_colors = input;
-            self
+        pub fn set_dominant_colors(mut self, input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>) -> Self {
+            self.dominant_colors = input; self
         }
         /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
         pub fn foreground(mut self, input: crate::model::DetectLabelsImageForeground) -> Self {
@@ -10464,12 +10054,8 @@ pub mod detect_labels_image_properties {
             self
         }
         /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-        pub fn set_foreground(
-            mut self,
-            input: std::option::Option<crate::model::DetectLabelsImageForeground>,
-        ) -> Self {
-            self.foreground = input;
-            self
+        pub fn set_foreground(mut self, input: std::option::Option<crate::model::DetectLabelsImageForeground>) -> Self {
+            self.foreground = input; self
         }
         /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
         pub fn background(mut self, input: crate::model::DetectLabelsImageBackground) -> Self {
@@ -10477,23 +10063,25 @@ pub mod detect_labels_image_properties {
             self
         }
         /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-        pub fn set_background(
-            mut self,
-            input: std::option::Option<crate::model::DetectLabelsImageBackground>,
-        ) -> Self {
-            self.background = input;
-            self
+        pub fn set_background(mut self, input: std::option::Option<crate::model::DetectLabelsImageBackground>) -> Self {
+            self.background = input; self
         }
         /// Consumes the builder and constructs a [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
         pub fn build(self) -> crate::model::DetectLabelsImageProperties {
             crate::model::DetectLabelsImageProperties {
-                quality: self.quality,
-                dominant_colors: self.dominant_colors,
-                foreground: self.foreground,
-                background: self.background,
+                quality: self.quality
+                ,
+                dominant_colors: self.dominant_colors
+                ,
+                foreground: self.foreground
+                ,
+                background: self.background
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectLabelsImageProperties {
     /// Creates a new builder-style object to manufacture [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
@@ -10505,7 +10093,7 @@ impl DetectLabelsImageProperties {
 /// <p>The background of the image with regard to image quality and dominant colors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectLabelsImageBackground {
+pub struct DetectLabelsImageBackground  {
     /// <p>The quality of the image background as defined by brightness and sharpness.</p>
     #[doc(hidden)]
     pub quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
@@ -10515,17 +10103,17 @@ pub struct DetectLabelsImageBackground {
 }
 impl DetectLabelsImageBackground {
     /// <p>The quality of the image background as defined by brightness and sharpness.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::model::DetectLabelsImageQuality> {
+    pub fn quality(&self) -> std::option::Option<& crate::model::DetectLabelsImageQuality> {
         self.quality.as_ref()
     }
     /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn dominant_colors(&self) -> std::option::Option<&[crate::model::DominantColor]> {
+    pub fn dominant_colors(&self) -> std::option::Option<& [crate::model::DominantColor]> {
         self.dominant_colors.as_deref()
     }
 }
 /// See [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
 pub mod detect_labels_image_background {
-
+    
     /// A builder for [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10539,12 +10127,8 @@ pub mod detect_labels_image_background {
             self
         }
         /// <p>The quality of the image background as defined by brightness and sharpness.</p>
-        pub fn set_quality(
-            mut self,
-            input: std::option::Option<crate::model::DetectLabelsImageQuality>,
-        ) -> Self {
-            self.quality = input;
-            self
+        pub fn set_quality(mut self, input: std::option::Option<crate::model::DetectLabelsImageQuality>) -> Self {
+            self.quality = input; self
         }
         /// Appends an item to `dominant_colors`.
         ///
@@ -10553,26 +10137,26 @@ pub mod detect_labels_image_background {
         /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
         pub fn dominant_colors(mut self, input: crate::model::DominantColor) -> Self {
             let mut v = self.dominant_colors.unwrap_or_default();
-            v.push(input);
-            self.dominant_colors = Some(v);
-            self
+                            v.push(input);
+                            self.dominant_colors = Some(v);
+                            self
         }
         /// <p>The dominant colors found in the background of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-        pub fn set_dominant_colors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
-        ) -> Self {
-            self.dominant_colors = input;
-            self
+        pub fn set_dominant_colors(mut self, input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>) -> Self {
+            self.dominant_colors = input; self
         }
         /// Consumes the builder and constructs a [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
         pub fn build(self) -> crate::model::DetectLabelsImageBackground {
             crate::model::DetectLabelsImageBackground {
-                quality: self.quality,
-                dominant_colors: self.dominant_colors,
+                quality: self.quality
+                ,
+                dominant_colors: self.dominant_colors
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectLabelsImageBackground {
     /// Creates a new builder-style object to manufacture [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
@@ -10584,7 +10168,7 @@ impl DetectLabelsImageBackground {
 /// <p>The quality of an image provided for label detection, with regard to brightness, sharpness, and contrast.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectLabelsImageQuality {
+pub struct DetectLabelsImageQuality  {
     /// <p>The brightness of an image provided for label detection.</p>
     #[doc(hidden)]
     pub brightness: std::option::Option<f32>,
@@ -10611,7 +10195,7 @@ impl DetectLabelsImageQuality {
 }
 /// See [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
 pub mod detect_labels_image_quality {
-
+    
     /// A builder for [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10627,8 +10211,7 @@ pub mod detect_labels_image_quality {
         }
         /// <p>The brightness of an image provided for label detection.</p>
         pub fn set_brightness(mut self, input: std::option::Option<f32>) -> Self {
-            self.brightness = input;
-            self
+            self.brightness = input; self
         }
         /// <p>The sharpness of an image provided for label detection.</p>
         pub fn sharpness(mut self, input: f32) -> Self {
@@ -10637,8 +10220,7 @@ pub mod detect_labels_image_quality {
         }
         /// <p>The sharpness of an image provided for label detection.</p>
         pub fn set_sharpness(mut self, input: std::option::Option<f32>) -> Self {
-            self.sharpness = input;
-            self
+            self.sharpness = input; self
         }
         /// <p>The contrast of an image provided for label detection.</p>
         pub fn contrast(mut self, input: f32) -> Self {
@@ -10647,18 +10229,22 @@ pub mod detect_labels_image_quality {
         }
         /// <p>The contrast of an image provided for label detection.</p>
         pub fn set_contrast(mut self, input: std::option::Option<f32>) -> Self {
-            self.contrast = input;
-            self
+            self.contrast = input; self
         }
         /// Consumes the builder and constructs a [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
         pub fn build(self) -> crate::model::DetectLabelsImageQuality {
             crate::model::DetectLabelsImageQuality {
-                brightness: self.brightness,
-                sharpness: self.sharpness,
-                contrast: self.contrast,
+                brightness: self.brightness
+                ,
+                sharpness: self.sharpness
+                ,
+                contrast: self.contrast
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectLabelsImageQuality {
     /// Creates a new builder-style object to manufacture [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
@@ -10670,7 +10256,7 @@ impl DetectLabelsImageQuality {
 /// <p>The foreground of the image with regard to image quality and dominant colors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectLabelsImageForeground {
+pub struct DetectLabelsImageForeground  {
     /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
     #[doc(hidden)]
     pub quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
@@ -10680,17 +10266,17 @@ pub struct DetectLabelsImageForeground {
 }
 impl DetectLabelsImageForeground {
     /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::model::DetectLabelsImageQuality> {
+    pub fn quality(&self) -> std::option::Option<& crate::model::DetectLabelsImageQuality> {
         self.quality.as_ref()
     }
     /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn dominant_colors(&self) -> std::option::Option<&[crate::model::DominantColor]> {
+    pub fn dominant_colors(&self) -> std::option::Option<& [crate::model::DominantColor]> {
         self.dominant_colors.as_deref()
     }
 }
 /// See [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
 pub mod detect_labels_image_foreground {
-
+    
     /// A builder for [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10704,12 +10290,8 @@ pub mod detect_labels_image_foreground {
             self
         }
         /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
-        pub fn set_quality(
-            mut self,
-            input: std::option::Option<crate::model::DetectLabelsImageQuality>,
-        ) -> Self {
-            self.quality = input;
-            self
+        pub fn set_quality(mut self, input: std::option::Option<crate::model::DetectLabelsImageQuality>) -> Self {
+            self.quality = input; self
         }
         /// Appends an item to `dominant_colors`.
         ///
@@ -10718,26 +10300,26 @@ pub mod detect_labels_image_foreground {
         /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
         pub fn dominant_colors(mut self, input: crate::model::DominantColor) -> Self {
             let mut v = self.dominant_colors.unwrap_or_default();
-            v.push(input);
-            self.dominant_colors = Some(v);
-            self
+                            v.push(input);
+                            self.dominant_colors = Some(v);
+                            self
         }
         /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-        pub fn set_dominant_colors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>,
-        ) -> Self {
-            self.dominant_colors = input;
-            self
+        pub fn set_dominant_colors(mut self, input: std::option::Option<std::vec::Vec<crate::model::DominantColor>>) -> Self {
+            self.dominant_colors = input; self
         }
         /// Consumes the builder and constructs a [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
         pub fn build(self) -> crate::model::DetectLabelsImageForeground {
             crate::model::DetectLabelsImageForeground {
-                quality: self.quality,
-                dominant_colors: self.dominant_colors,
+                quality: self.quality
+                ,
+                dominant_colors: self.dominant_colors
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectLabelsImageForeground {
     /// Creates a new builder-style object to manufacture [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
@@ -10749,7 +10331,7 @@ impl DetectLabelsImageForeground {
 /// <p>Settings for the DetectLabels request. Settings can include filters for both GENERAL_LABELS and IMAGE_PROPERTIES. GENERAL_LABELS filters can be inclusive or exclusive and applied to individual labels or label categories. IMAGE_PROPERTIES filters allow specification of a maximum number of dominant colors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectLabelsSettings {
+pub struct DetectLabelsSettings  {
     /// <p>Contains the specified filters for GENERAL_LABELS.</p>
     #[doc(hidden)]
     pub general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
@@ -10759,25 +10341,22 @@ pub struct DetectLabelsSettings {
 }
 impl DetectLabelsSettings {
     /// <p>Contains the specified filters for GENERAL_LABELS.</p>
-    pub fn general_labels(&self) -> std::option::Option<&crate::model::GeneralLabelsSettings> {
+    pub fn general_labels(&self) -> std::option::Option<& crate::model::GeneralLabelsSettings> {
         self.general_labels.as_ref()
     }
     /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
-    pub fn image_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::DetectLabelsImagePropertiesSettings> {
+    pub fn image_properties(&self) -> std::option::Option<& crate::model::DetectLabelsImagePropertiesSettings> {
         self.image_properties.as_ref()
     }
 }
 /// See [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
 pub mod detect_labels_settings {
-
+    
     /// A builder for [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
-        pub(crate) image_properties:
-            std::option::Option<crate::model::DetectLabelsImagePropertiesSettings>,
+        pub(crate) image_properties: std::option::Option<crate::model::DetectLabelsImagePropertiesSettings>,
     }
     impl Builder {
         /// <p>Contains the specified filters for GENERAL_LABELS.</p>
@@ -10786,37 +10365,30 @@ pub mod detect_labels_settings {
             self
         }
         /// <p>Contains the specified filters for GENERAL_LABELS.</p>
-        pub fn set_general_labels(
-            mut self,
-            input: std::option::Option<crate::model::GeneralLabelsSettings>,
-        ) -> Self {
-            self.general_labels = input;
-            self
+        pub fn set_general_labels(mut self, input: std::option::Option<crate::model::GeneralLabelsSettings>) -> Self {
+            self.general_labels = input; self
         }
         /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
-        pub fn image_properties(
-            mut self,
-            input: crate::model::DetectLabelsImagePropertiesSettings,
-        ) -> Self {
+        pub fn image_properties(mut self, input: crate::model::DetectLabelsImagePropertiesSettings) -> Self {
             self.image_properties = Some(input);
             self
         }
         /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
-        pub fn set_image_properties(
-            mut self,
-            input: std::option::Option<crate::model::DetectLabelsImagePropertiesSettings>,
-        ) -> Self {
-            self.image_properties = input;
-            self
+        pub fn set_image_properties(mut self, input: std::option::Option<crate::model::DetectLabelsImagePropertiesSettings>) -> Self {
+            self.image_properties = input; self
         }
         /// Consumes the builder and constructs a [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
         pub fn build(self) -> crate::model::DetectLabelsSettings {
             crate::model::DetectLabelsSettings {
-                general_labels: self.general_labels,
-                image_properties: self.image_properties,
+                general_labels: self.general_labels
+                ,
+                image_properties: self.image_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectLabelsSettings {
     /// Creates a new builder-style object to manufacture [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
@@ -10828,7 +10400,7 @@ impl DetectLabelsSettings {
 /// <p>Settings for the IMAGE_PROPERTIES feature type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectLabelsImagePropertiesSettings {
+pub struct DetectLabelsImagePropertiesSettings  {
     /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
     #[doc(hidden)]
     pub max_dominant_colors: i32,
@@ -10841,7 +10413,7 @@ impl DetectLabelsImagePropertiesSettings {
 }
 /// See [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
 pub mod detect_labels_image_properties_settings {
-
+    
     /// A builder for [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10855,16 +10427,19 @@ pub mod detect_labels_image_properties_settings {
         }
         /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
         pub fn set_max_dominant_colors(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_dominant_colors = input;
-            self
+            self.max_dominant_colors = input; self
         }
         /// Consumes the builder and constructs a [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
         pub fn build(self) -> crate::model::DetectLabelsImagePropertiesSettings {
             crate::model::DetectLabelsImagePropertiesSettings {
-                max_dominant_colors: self.max_dominant_colors.unwrap_or_default(),
+                max_dominant_colors: self.max_dominant_colors
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectLabelsImagePropertiesSettings {
     /// Creates a new builder-style object to manufacture [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
@@ -10879,9 +10454,9 @@ impl DetectLabelsImagePropertiesSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let detectlabelsfeaturename = unimplemented!();
 /// match detectlabelsfeaturename {
@@ -10903,60 +10478,52 @@ impl DetectLabelsImagePropertiesSettings {
 /// Specifically, when `detectlabelsfeaturename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DetectLabelsFeatureName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DetectLabelsFeatureName {
     #[allow(missing_docs)] // documentation missing in model
     GeneralLabels,
     #[allow(missing_docs)] // documentation missing in model
     ImageProperties,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DetectLabelsFeatureName {
     fn from(s: &str) -> Self {
         match s {
             "GENERAL_LABELS" => DetectLabelsFeatureName::GeneralLabels,
             "IMAGE_PROPERTIES" => DetectLabelsFeatureName::ImageProperties,
-            other => DetectLabelsFeatureName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DetectLabelsFeatureName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DetectLabelsFeatureName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DetectLabelsFeatureName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DetectLabelsFeatureName::from(s))
+                }
+            }
 impl DetectLabelsFeatureName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DetectLabelsFeatureName::GeneralLabels => "GENERAL_LABELS",
             DetectLabelsFeatureName::ImageProperties => "IMAGE_PROPERTIES",
-            DetectLabelsFeatureName::Unknown(value) => value.as_str(),
+            DetectLabelsFeatureName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GENERAL_LABELS", "IMAGE_PROPERTIES"]
+        &[
+            "GENERAL_LABELS", "IMAGE_PROPERTIES"
+        ]
     }
 }
 impl AsRef<str> for DetectLabelsFeatureName {
@@ -10968,7 +10535,7 @@ impl AsRef<str> for DetectLabelsFeatureName {
 /// <p>A custom label detected in an image by a call to <code>DetectCustomLabels</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomLabel {
+pub struct CustomLabel  {
     /// <p>The name of the custom label.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10981,7 +10548,7 @@ pub struct CustomLabel {
 }
 impl CustomLabel {
     /// <p>The name of the custom label.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The confidence that the model has in the detection of the custom label. The range is 0-100. A higher value indicates a higher confidence.</p>
@@ -10989,13 +10556,13 @@ impl CustomLabel {
         self.confidence
     }
     /// <p>The location of the detected object on the image that corresponds to the custom label. Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon for more accurate spatial information.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::model::Geometry> {
+    pub fn geometry(&self) -> std::option::Option<& crate::model::Geometry> {
         self.geometry.as_ref()
     }
 }
 /// See [`CustomLabel`](crate::model::CustomLabel).
 pub mod custom_label {
-
+    
     /// A builder for [`CustomLabel`](crate::model::CustomLabel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11011,8 +10578,7 @@ pub mod custom_label {
         }
         /// <p>The name of the custom label.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The confidence that the model has in the detection of the custom label. The range is 0-100. A higher value indicates a higher confidence.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -11021,8 +10587,7 @@ pub mod custom_label {
         }
         /// <p>The confidence that the model has in the detection of the custom label. The range is 0-100. A higher value indicates a higher confidence.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>The location of the detected object on the image that corresponds to the custom label. Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon for more accurate spatial information.</p>
         pub fn geometry(mut self, input: crate::model::Geometry) -> Self {
@@ -11031,18 +10596,22 @@ pub mod custom_label {
         }
         /// <p>The location of the detected object on the image that corresponds to the custom label. Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon for more accurate spatial information.</p>
         pub fn set_geometry(mut self, input: std::option::Option<crate::model::Geometry>) -> Self {
-            self.geometry = input;
-            self
+            self.geometry = input; self
         }
         /// Consumes the builder and constructs a [`CustomLabel`](crate::model::CustomLabel).
         pub fn build(self) -> crate::model::CustomLabel {
             crate::model::CustomLabel {
-                name: self.name,
-                confidence: self.confidence,
-                geometry: self.geometry,
+                name: self.name
+                ,
+                confidence: self.confidence
+                ,
+                geometry: self.geometry
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomLabel {
     /// Creates a new builder-style object to manufacture [`CustomLabel`](crate::model::CustomLabel).
@@ -11051,25 +10620,25 @@ impl CustomLabel {
     }
 }
 
-/// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
-/// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
+/// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p> 
+/// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p> 
 /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessorNotificationChannel {
+pub struct StreamProcessorNotificationChannel  {
     /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
 }
 impl StreamProcessorNotificationChannel {
     /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
 }
 /// See [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
 pub mod stream_processor_notification_channel {
-
+    
     /// A builder for [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11082,20 +10651,19 @@ pub mod stream_processor_notification_channel {
             self
         }
         /// <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification Service topic to which Amazon Rekognition posts the completion status. </p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
         pub fn build(self) -> crate::model::StreamProcessorNotificationChannel {
             crate::model::StreamProcessorNotificationChannel {
-                sns_topic_arn: self.sns_topic_arn,
+                sns_topic_arn: self.sns_topic_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessorNotificationChannel {
     /// Creates a new builder-style object to manufacture [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
@@ -11107,7 +10675,7 @@ impl StreamProcessorNotificationChannel {
 /// <p>Input parameters used in a streaming video analyzed by a Amazon Rekognition stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessorSettings {
+pub struct StreamProcessorSettings  {
     /// <p>Face search settings to use on a streaming video. </p>
     #[doc(hidden)]
     pub face_search: std::option::Option<crate::model::FaceSearchSettings>,
@@ -11117,17 +10685,17 @@ pub struct StreamProcessorSettings {
 }
 impl StreamProcessorSettings {
     /// <p>Face search settings to use on a streaming video. </p>
-    pub fn face_search(&self) -> std::option::Option<&crate::model::FaceSearchSettings> {
+    pub fn face_search(&self) -> std::option::Option<& crate::model::FaceSearchSettings> {
         self.face_search.as_ref()
     }
     /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
-    pub fn connected_home(&self) -> std::option::Option<&crate::model::ConnectedHomeSettings> {
+    pub fn connected_home(&self) -> std::option::Option<& crate::model::ConnectedHomeSettings> {
         self.connected_home.as_ref()
     }
 }
 /// See [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
 pub mod stream_processor_settings {
-
+    
     /// A builder for [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11141,12 +10709,8 @@ pub mod stream_processor_settings {
             self
         }
         /// <p>Face search settings to use on a streaming video. </p>
-        pub fn set_face_search(
-            mut self,
-            input: std::option::Option<crate::model::FaceSearchSettings>,
-        ) -> Self {
-            self.face_search = input;
-            self
+        pub fn set_face_search(mut self, input: std::option::Option<crate::model::FaceSearchSettings>) -> Self {
+            self.face_search = input; self
         }
         /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
         pub fn connected_home(mut self, input: crate::model::ConnectedHomeSettings) -> Self {
@@ -11154,21 +10718,21 @@ pub mod stream_processor_settings {
             self
         }
         /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
-        pub fn set_connected_home(
-            mut self,
-            input: std::option::Option<crate::model::ConnectedHomeSettings>,
-        ) -> Self {
-            self.connected_home = input;
-            self
+        pub fn set_connected_home(mut self, input: std::option::Option<crate::model::ConnectedHomeSettings>) -> Self {
+            self.connected_home = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
         pub fn build(self) -> crate::model::StreamProcessorSettings {
             crate::model::StreamProcessorSettings {
-                face_search: self.face_search,
-                connected_home: self.connected_home,
+                face_search: self.face_search
+                ,
+                connected_home: self.connected_home
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessorSettings {
     /// Creates a new builder-style object to manufacture [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
@@ -11180,7 +10744,7 @@ impl StreamProcessorSettings {
 /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectedHomeSettings {
+pub struct ConnectedHomeSettings  {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
     #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11190,7 +10754,7 @@ pub struct ConnectedHomeSettings {
 }
 impl ConnectedHomeSettings {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
@@ -11200,7 +10764,7 @@ impl ConnectedHomeSettings {
 }
 /// See [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
 pub mod connected_home_settings {
-
+    
     /// A builder for [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11215,17 +10779,13 @@ pub mod connected_home_settings {
         /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
-            self.labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.labels = Some(v);
+                            self
         }
         /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.labels = input; self
         }
         /// <p> The minimum confidence required to label an object in the video. </p>
         pub fn min_confidence(mut self, input: f32) -> Self {
@@ -11234,17 +10794,20 @@ pub mod connected_home_settings {
         }
         /// <p> The minimum confidence required to label an object in the video. </p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_confidence = input;
-            self
+            self.min_confidence = input; self
         }
         /// Consumes the builder and constructs a [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
         pub fn build(self) -> crate::model::ConnectedHomeSettings {
             crate::model::ConnectedHomeSettings {
-                labels: self.labels,
-                min_confidence: self.min_confidence,
+                labels: self.labels
+                ,
+                min_confidence: self.min_confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectedHomeSettings {
     /// Creates a new builder-style object to manufacture [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
@@ -11256,7 +10819,7 @@ impl ConnectedHomeSettings {
 /// <p>Input face recognition parameters for an Amazon Rekognition stream processor. Includes the collection to use for face recognition and the face attributes to detect. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaceSearchSettings {
+pub struct FaceSearchSettings  {
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
     #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
@@ -11266,7 +10829,7 @@ pub struct FaceSearchSettings {
 }
 impl FaceSearchSettings {
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
-    pub fn collection_id(&self) -> std::option::Option<&str> {
+    pub fn collection_id(&self) -> std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
@@ -11276,7 +10839,7 @@ impl FaceSearchSettings {
 }
 /// See [`FaceSearchSettings`](crate::model::FaceSearchSettings).
 pub mod face_search_settings {
-
+    
     /// A builder for [`FaceSearchSettings`](crate::model::FaceSearchSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11290,12 +10853,8 @@ pub mod face_search_settings {
             self
         }
         /// <p>The ID of a collection that contains faces that you want to search for.</p>
-        pub fn set_collection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_id = input;
-            self
+        pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_id = input; self
         }
         /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
         pub fn face_match_threshold(mut self, input: f32) -> Self {
@@ -11304,17 +10863,20 @@ pub mod face_search_settings {
         }
         /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
         pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
-            self.face_match_threshold = input;
-            self
+            self.face_match_threshold = input; self
         }
         /// Consumes the builder and constructs a [`FaceSearchSettings`](crate::model::FaceSearchSettings).
         pub fn build(self) -> crate::model::FaceSearchSettings {
             crate::model::FaceSearchSettings {
-                collection_id: self.collection_id,
-                face_match_threshold: self.face_match_threshold,
+                collection_id: self.collection_id
+                ,
+                face_match_threshold: self.face_match_threshold
+                ,
             }
         }
     }
+    
+    
 }
 impl FaceSearchSettings {
     /// Creates a new builder-style object to manufacture [`FaceSearchSettings`](crate::model::FaceSearchSettings).
@@ -11326,7 +10888,7 @@ impl FaceSearchSettings {
 /// <p>Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessorOutput {
+pub struct StreamProcessorOutput  {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
     #[doc(hidden)]
     pub kinesis_data_stream: std::option::Option<crate::model::KinesisDataStream>,
@@ -11336,17 +10898,17 @@ pub struct StreamProcessorOutput {
 }
 impl StreamProcessorOutput {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
-    pub fn kinesis_data_stream(&self) -> std::option::Option<&crate::model::KinesisDataStream> {
+    pub fn kinesis_data_stream(&self) -> std::option::Option<& crate::model::KinesisDataStream> {
         self.kinesis_data_stream.as_ref()
     }
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
-    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+    pub fn s3_destination(&self) -> std::option::Option<& crate::model::S3Destination> {
         self.s3_destination.as_ref()
     }
 }
 /// See [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
 pub mod stream_processor_output {
-
+    
     /// A builder for [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11360,12 +10922,8 @@ pub mod stream_processor_output {
             self
         }
         /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
-        pub fn set_kinesis_data_stream(
-            mut self,
-            input: std::option::Option<crate::model::KinesisDataStream>,
-        ) -> Self {
-            self.kinesis_data_stream = input;
-            self
+        pub fn set_kinesis_data_stream(mut self, input: std::option::Option<crate::model::KinesisDataStream>) -> Self {
+            self.kinesis_data_stream = input; self
         }
         /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
         pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
@@ -11373,21 +10931,21 @@ pub mod stream_processor_output {
             self
         }
         /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
-        pub fn set_s3_destination(
-            mut self,
-            input: std::option::Option<crate::model::S3Destination>,
-        ) -> Self {
-            self.s3_destination = input;
-            self
+        pub fn set_s3_destination(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
+            self.s3_destination = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
         pub fn build(self) -> crate::model::StreamProcessorOutput {
             crate::model::StreamProcessorOutput {
-                kinesis_data_stream: self.kinesis_data_stream,
-                s3_destination: self.s3_destination,
+                kinesis_data_stream: self.kinesis_data_stream
+                ,
+                s3_destination: self.s3_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessorOutput {
     /// Creates a new builder-style object to manufacture [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
@@ -11399,7 +10957,7 @@ impl StreamProcessorOutput {
 /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. These results include the name of the stream processor resource, the session ID of the stream processing session, and labeled timestamps and bounding boxes for detected labels. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Destination {
+pub struct S3Destination  {
     /// <p> The name of the Amazon S3 bucket you want to associate with the streaming video project. You must be the owner of the Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -11409,17 +10967,17 @@ pub struct S3Destination {
 }
 impl S3Destination {
     /// <p> The name of the Amazon S3 bucket you want to associate with the streaming video project. You must be the owner of the Amazon S3 bucket. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p> The prefix value of the location within the bucket that you want the information to be published to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Using prefixes</a>. </p>
-    pub fn key_prefix(&self) -> std::option::Option<&str> {
+    pub fn key_prefix(&self) -> std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
 }
 /// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
-
+    
     /// A builder for [`S3Destination`](crate::model::S3Destination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11434,8 +10992,7 @@ pub mod s3_destination {
         }
         /// <p> The name of the Amazon S3 bucket you want to associate with the streaming video project. You must be the owner of the Amazon S3 bucket. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p> The prefix value of the location within the bucket that you want the information to be published to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Using prefixes</a>. </p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11444,17 +11001,20 @@ pub mod s3_destination {
         }
         /// <p> The prefix value of the location within the bucket that you want the information to be published to. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Using prefixes</a>. </p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_prefix = input;
-            self
+            self.key_prefix = input; self
         }
         /// Consumes the builder and constructs a [`S3Destination`](crate::model::S3Destination).
         pub fn build(self) -> crate::model::S3Destination {
             crate::model::S3Destination {
-                bucket: self.bucket,
-                key_prefix: self.key_prefix,
+                bucket: self.bucket
+                ,
+                key_prefix: self.key_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Destination {
     /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
@@ -11466,20 +11026,20 @@ impl S3Destination {
 /// <p>The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisDataStream {
+pub struct KinesisDataStream  {
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl KinesisDataStream {
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`KinesisDataStream`](crate::model::KinesisDataStream).
 pub mod kinesis_data_stream {
-
+    
     /// A builder for [`KinesisDataStream`](crate::model::KinesisDataStream).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11493,14 +11053,18 @@ pub mod kinesis_data_stream {
         }
         /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`KinesisDataStream`](crate::model::KinesisDataStream).
         pub fn build(self) -> crate::model::KinesisDataStream {
-            crate::model::KinesisDataStream { arn: self.arn }
+            crate::model::KinesisDataStream {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl KinesisDataStream {
     /// Creates a new builder-style object to manufacture [`KinesisDataStream`](crate::model::KinesisDataStream).
@@ -11512,20 +11076,20 @@ impl KinesisDataStream {
 /// <p>Information about the source streaming video. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessorInput {
+pub struct StreamProcessorInput  {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
     #[doc(hidden)]
     pub kinesis_video_stream: std::option::Option<crate::model::KinesisVideoStream>,
 }
 impl StreamProcessorInput {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
-    pub fn kinesis_video_stream(&self) -> std::option::Option<&crate::model::KinesisVideoStream> {
+    pub fn kinesis_video_stream(&self) -> std::option::Option<& crate::model::KinesisVideoStream> {
         self.kinesis_video_stream.as_ref()
     }
 }
 /// See [`StreamProcessorInput`](crate::model::StreamProcessorInput).
 pub mod stream_processor_input {
-
+    
     /// A builder for [`StreamProcessorInput`](crate::model::StreamProcessorInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11538,20 +11102,19 @@ pub mod stream_processor_input {
             self
         }
         /// <p>The Kinesis video stream input stream for the source streaming video.</p>
-        pub fn set_kinesis_video_stream(
-            mut self,
-            input: std::option::Option<crate::model::KinesisVideoStream>,
-        ) -> Self {
-            self.kinesis_video_stream = input;
-            self
+        pub fn set_kinesis_video_stream(mut self, input: std::option::Option<crate::model::KinesisVideoStream>) -> Self {
+            self.kinesis_video_stream = input; self
         }
         /// Consumes the builder and constructs a [`StreamProcessorInput`](crate::model::StreamProcessorInput).
         pub fn build(self) -> crate::model::StreamProcessorInput {
             crate::model::StreamProcessorInput {
-                kinesis_video_stream: self.kinesis_video_stream,
+                kinesis_video_stream: self.kinesis_video_stream
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamProcessorInput {
     /// Creates a new builder-style object to manufacture [`StreamProcessorInput`](crate::model::StreamProcessorInput).
@@ -11563,20 +11126,20 @@ impl StreamProcessorInput {
 /// <p>Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisVideoStream {
+pub struct KinesisVideoStream  {
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl KinesisVideoStream {
     /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`KinesisVideoStream`](crate::model::KinesisVideoStream).
 pub mod kinesis_video_stream {
-
+    
     /// A builder for [`KinesisVideoStream`](crate::model::KinesisVideoStream).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11590,14 +11153,18 @@ pub mod kinesis_video_stream {
         }
         /// <p>ARN of the Kinesis video stream stream that streams the source video.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`KinesisVideoStream`](crate::model::KinesisVideoStream).
         pub fn build(self) -> crate::model::KinesisVideoStream {
-            crate::model::KinesisVideoStream { arn: self.arn }
+            crate::model::KinesisVideoStream {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl KinesisVideoStream {
     /// Creates a new builder-style object to manufacture [`KinesisVideoStream`](crate::model::KinesisVideoStream).
@@ -11609,7 +11176,7 @@ impl KinesisVideoStream {
 /// <p>A description of a version of an Amazon Rekognition Custom Labels model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectVersionDescription {
+pub struct ProjectVersionDescription  {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
     #[doc(hidden)]
     pub project_version_arn: std::option::Option<std::string::String>,
@@ -11658,11 +11225,11 @@ pub struct ProjectVersionDescription {
 }
 impl ProjectVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
-    pub fn project_version_arn(&self) -> std::option::Option<&str> {
+    pub fn project_version_arn(&self) -> std::option::Option<& str> {
         self.project_version_arn.as_deref()
     }
     /// <p>The Unix datetime for the date and time that training started.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The minimum number of inference units used by the model. For more information, see <code>StartProjectVersion</code>.</p>
@@ -11670,11 +11237,11 @@ impl ProjectVersionDescription {
         self.min_inference_units
     }
     /// <p>The current status of the model version.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProjectVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProjectVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A descriptive message for an error or warning that occurred.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
@@ -11682,31 +11249,31 @@ impl ProjectVersionDescription {
         self.billable_training_time_in_seconds
     }
     /// <p>The Unix date and time that training of the model ended.</p>
-    pub fn training_end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn training_end_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.training_end_timestamp.as_ref()
     }
     /// <p>The location where training results are saved.</p>
-    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::model::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>Contains information about the training results.</p>
-    pub fn training_data_result(&self) -> std::option::Option<&crate::model::TrainingDataResult> {
+    pub fn training_data_result(&self) -> std::option::Option<& crate::model::TrainingDataResult> {
         self.training_data_result.as_ref()
     }
     /// <p>Contains information about the testing results.</p>
-    pub fn testing_data_result(&self) -> std::option::Option<&crate::model::TestingDataResult> {
+    pub fn testing_data_result(&self) -> std::option::Option<& crate::model::TestingDataResult> {
         self.testing_data_result.as_ref()
     }
     /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
-    pub fn evaluation_result(&self) -> std::option::Option<&crate::model::EvaluationResult> {
+    pub fn evaluation_result(&self) -> std::option::Option<& crate::model::EvaluationResult> {
         self.evaluation_result.as_ref()
     }
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
-    pub fn manifest_summary(&self) -> std::option::Option<&crate::model::GroundTruthManifest> {
+    pub fn manifest_summary(&self) -> std::option::Option<& crate::model::GroundTruthManifest> {
         self.manifest_summary.as_ref()
     }
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
@@ -11714,13 +11281,13 @@ impl ProjectVersionDescription {
         self.max_inference_units
     }
     /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
-    pub fn source_project_version_arn(&self) -> std::option::Option<&str> {
+    pub fn source_project_version_arn(&self) -> std::option::Option<& str> {
         self.source_project_version_arn.as_deref()
     }
 }
 /// See [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
 pub mod project_version_description {
-
+    
     /// A builder for [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11747,12 +11314,8 @@ pub mod project_version_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model version. </p>
-        pub fn set_project_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.project_version_arn = input;
-            self
+        pub fn set_project_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_version_arn = input; self
         }
         /// <p>The Unix datetime for the date and time that training started.</p>
         pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11760,12 +11323,8 @@ pub mod project_version_description {
             self
         }
         /// <p>The Unix datetime for the date and time that training started.</p>
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// <p>The minimum number of inference units used by the model. For more information, see <code>StartProjectVersion</code>.</p>
         pub fn min_inference_units(mut self, input: i32) -> Self {
@@ -11774,8 +11333,7 @@ pub mod project_version_description {
         }
         /// <p>The minimum number of inference units used by the model. For more information, see <code>StartProjectVersion</code>.</p>
         pub fn set_min_inference_units(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_inference_units = input;
-            self
+            self.min_inference_units = input; self
         }
         /// <p>The current status of the model version.</p>
         pub fn status(mut self, input: crate::model::ProjectVersionStatus) -> Self {
@@ -11783,12 +11341,8 @@ pub mod project_version_description {
             self
         }
         /// <p>The current status of the model version.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProjectVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProjectVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A descriptive message for an error or warning that occurred.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11796,12 +11350,8 @@ pub mod project_version_description {
             self
         }
         /// <p>A descriptive message for an error or warning that occurred.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
         pub fn billable_training_time_in_seconds(mut self, input: i64) -> Self {
@@ -11809,12 +11359,8 @@ pub mod project_version_description {
             self
         }
         /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
-        pub fn set_billable_training_time_in_seconds(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.billable_training_time_in_seconds = input;
-            self
+        pub fn set_billable_training_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.billable_training_time_in_seconds = input; self
         }
         /// <p>The Unix date and time that training of the model ended.</p>
         pub fn training_end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11822,12 +11368,8 @@ pub mod project_version_description {
             self
         }
         /// <p>The Unix date and time that training of the model ended.</p>
-        pub fn set_training_end_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.training_end_timestamp = input;
-            self
+        pub fn set_training_end_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.training_end_timestamp = input; self
         }
         /// <p>The location where training results are saved.</p>
         pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
@@ -11835,12 +11377,8 @@ pub mod project_version_description {
             self
         }
         /// <p>The location where training results are saved.</p>
-        pub fn set_output_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputConfig>,
-        ) -> Self {
-            self.output_config = input;
-            self
+        pub fn set_output_config(mut self, input: std::option::Option<crate::model::OutputConfig>) -> Self {
+            self.output_config = input; self
         }
         /// <p>Contains information about the training results.</p>
         pub fn training_data_result(mut self, input: crate::model::TrainingDataResult) -> Self {
@@ -11848,12 +11386,8 @@ pub mod project_version_description {
             self
         }
         /// <p>Contains information about the training results.</p>
-        pub fn set_training_data_result(
-            mut self,
-            input: std::option::Option<crate::model::TrainingDataResult>,
-        ) -> Self {
-            self.training_data_result = input;
-            self
+        pub fn set_training_data_result(mut self, input: std::option::Option<crate::model::TrainingDataResult>) -> Self {
+            self.training_data_result = input; self
         }
         /// <p>Contains information about the testing results.</p>
         pub fn testing_data_result(mut self, input: crate::model::TestingDataResult) -> Self {
@@ -11861,12 +11395,8 @@ pub mod project_version_description {
             self
         }
         /// <p>Contains information about the testing results.</p>
-        pub fn set_testing_data_result(
-            mut self,
-            input: std::option::Option<crate::model::TestingDataResult>,
-        ) -> Self {
-            self.testing_data_result = input;
-            self
+        pub fn set_testing_data_result(mut self, input: std::option::Option<crate::model::TestingDataResult>) -> Self {
+            self.testing_data_result = input; self
         }
         /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
         pub fn evaluation_result(mut self, input: crate::model::EvaluationResult) -> Self {
@@ -11874,12 +11404,8 @@ pub mod project_version_description {
             self
         }
         /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
-        pub fn set_evaluation_result(
-            mut self,
-            input: std::option::Option<crate::model::EvaluationResult>,
-        ) -> Self {
-            self.evaluation_result = input;
-            self
+        pub fn set_evaluation_result(mut self, input: std::option::Option<crate::model::EvaluationResult>) -> Self {
+            self.evaluation_result = input; self
         }
         /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
         pub fn manifest_summary(mut self, input: crate::model::GroundTruthManifest) -> Self {
@@ -11887,12 +11413,8 @@ pub mod project_version_description {
             self
         }
         /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
-        pub fn set_manifest_summary(
-            mut self,
-            input: std::option::Option<crate::model::GroundTruthManifest>,
-        ) -> Self {
-            self.manifest_summary = input;
-            self
+        pub fn set_manifest_summary(mut self, input: std::option::Option<crate::model::GroundTruthManifest>) -> Self {
+            self.manifest_summary = input; self
         }
         /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11901,8 +11423,7 @@ pub mod project_version_description {
         }
         /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
         pub fn max_inference_units(mut self, input: i32) -> Self {
@@ -11911,8 +11432,7 @@ pub mod project_version_description {
         }
         /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
         pub fn set_max_inference_units(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_inference_units = input;
-            self
+            self.max_inference_units = input; self
         }
         /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
         pub fn source_project_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11920,34 +11440,47 @@ pub mod project_version_description {
             self
         }
         /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
-        pub fn set_source_project_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_project_version_arn = input;
-            self
+        pub fn set_source_project_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_project_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
         pub fn build(self) -> crate::model::ProjectVersionDescription {
             crate::model::ProjectVersionDescription {
-                project_version_arn: self.project_version_arn,
-                creation_timestamp: self.creation_timestamp,
-                min_inference_units: self.min_inference_units,
-                status: self.status,
-                status_message: self.status_message,
-                billable_training_time_in_seconds: self.billable_training_time_in_seconds,
-                training_end_timestamp: self.training_end_timestamp,
-                output_config: self.output_config,
-                training_data_result: self.training_data_result,
-                testing_data_result: self.testing_data_result,
-                evaluation_result: self.evaluation_result,
-                manifest_summary: self.manifest_summary,
-                kms_key_id: self.kms_key_id,
-                max_inference_units: self.max_inference_units,
-                source_project_version_arn: self.source_project_version_arn,
+                project_version_arn: self.project_version_arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                min_inference_units: self.min_inference_units
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                billable_training_time_in_seconds: self.billable_training_time_in_seconds
+                ,
+                training_end_timestamp: self.training_end_timestamp
+                ,
+                output_config: self.output_config
+                ,
+                training_data_result: self.training_data_result
+                ,
+                testing_data_result: self.testing_data_result
+                ,
+                evaluation_result: self.evaluation_result
+                ,
+                manifest_summary: self.manifest_summary
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                max_inference_units: self.max_inference_units
+                ,
+                source_project_version_arn: self.source_project_version_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ProjectVersionDescription {
     /// Creates a new builder-style object to manufacture [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
@@ -11959,51 +11492,53 @@ impl ProjectVersionDescription {
 /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroundTruthManifest {
-    /// <p>Provides the S3 bucket name and object name.</p>
-    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+pub struct GroundTruthManifest  {
+    /// <p>Provides the S3 bucket name and object name.</p> 
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
     #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl GroundTruthManifest {
-    /// <p>Provides the S3 bucket name and object name.</p>
-    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+    /// <p>Provides the S3 bucket name and object name.</p> 
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+    pub fn s3_object(&self) -> std::option::Option<& crate::model::S3Object> {
         self.s3_object.as_ref()
     }
 }
 /// See [`GroundTruthManifest`](crate::model::GroundTruthManifest).
 pub mod ground_truth_manifest {
-
+    
     /// A builder for [`GroundTruthManifest`](crate::model::GroundTruthManifest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
     }
     impl Builder {
-        /// <p>Provides the S3 bucket name and object name.</p>
-        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+        /// <p>Provides the S3 bucket name and object name.</p> 
+        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
         /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
         pub fn s3_object(mut self, input: crate::model::S3Object) -> Self {
             self.s3_object = Some(input);
             self
         }
-        /// <p>Provides the S3 bucket name and object name.</p>
-        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+        /// <p>Provides the S3 bucket name and object name.</p> 
+        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
         /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
         pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
-            self.s3_object = input;
-            self
+            self.s3_object = input; self
         }
         /// Consumes the builder and constructs a [`GroundTruthManifest`](crate::model::GroundTruthManifest).
         pub fn build(self) -> crate::model::GroundTruthManifest {
             crate::model::GroundTruthManifest {
-                s3_object: self.s3_object,
+                s3_object: self.s3_object
+                ,
             }
         }
     }
+    
+    
 }
 impl GroundTruthManifest {
     /// Creates a new builder-style object to manufacture [`GroundTruthManifest`](crate::model::GroundTruthManifest).
@@ -12015,7 +11550,7 @@ impl GroundTruthManifest {
 /// <p>The evaluation results for the training of a model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluationResult {
+pub struct EvaluationResult  {
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
     #[doc(hidden)]
     pub f1_score: std::option::Option<f32>,
@@ -12029,13 +11564,13 @@ impl EvaluationResult {
         self.f1_score
     }
     /// <p>The S3 bucket that contains the training summary.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::Summary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::Summary> {
         self.summary.as_ref()
     }
 }
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
-
+    
     /// A builder for [`EvaluationResult`](crate::model::EvaluationResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12050,8 +11585,7 @@ pub mod evaluation_result {
         }
         /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
         pub fn set_f1_score(mut self, input: std::option::Option<f32>) -> Self {
-            self.f1_score = input;
-            self
+            self.f1_score = input; self
         }
         /// <p>The S3 bucket that contains the training summary.</p>
         pub fn summary(mut self, input: crate::model::Summary) -> Self {
@@ -12060,17 +11594,20 @@ pub mod evaluation_result {
         }
         /// <p>The S3 bucket that contains the training summary.</p>
         pub fn set_summary(mut self, input: std::option::Option<crate::model::Summary>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// Consumes the builder and constructs a [`EvaluationResult`](crate::model::EvaluationResult).
         pub fn build(self) -> crate::model::EvaluationResult {
             crate::model::EvaluationResult {
-                f1_score: self.f1_score,
-                summary: self.summary,
+                f1_score: self.f1_score
+                ,
+                summary: self.summary
+                ,
             }
         }
     }
+    
+    
 }
 impl EvaluationResult {
     /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
@@ -12079,55 +11616,57 @@ impl EvaluationResult {
     }
 }
 
-/// <p>The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label. </p>
+/// <p>The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label. </p> 
 /// <p>You get the training summary S3 bucket location by calling <code>DescribeProjectVersions</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Summary {
-    /// <p>Provides the S3 bucket name and object name.</p>
-    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+pub struct Summary  {
+    /// <p>Provides the S3 bucket name and object name.</p> 
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
     #[doc(hidden)]
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl Summary {
-    /// <p>Provides the S3 bucket name and object name.</p>
-    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+    /// <p>Provides the S3 bucket name and object name.</p> 
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+    pub fn s3_object(&self) -> std::option::Option<& crate::model::S3Object> {
         self.s3_object.as_ref()
     }
 }
 /// See [`Summary`](crate::model::Summary).
 pub mod summary {
-
+    
     /// A builder for [`Summary`](crate::model::Summary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
     }
     impl Builder {
-        /// <p>Provides the S3 bucket name and object name.</p>
-        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+        /// <p>Provides the S3 bucket name and object name.</p> 
+        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
         /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
         pub fn s3_object(mut self, input: crate::model::S3Object) -> Self {
             self.s3_object = Some(input);
             self
         }
-        /// <p>Provides the S3 bucket name and object name.</p>
-        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+        /// <p>Provides the S3 bucket name and object name.</p> 
+        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> 
         /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
         pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
-            self.s3_object = input;
-            self
+            self.s3_object = input; self
         }
         /// Consumes the builder and constructs a [`Summary`](crate::model::Summary).
         pub fn build(self) -> crate::model::Summary {
             crate::model::Summary {
-                s3_object: self.s3_object,
+                s3_object: self.s3_object
+                ,
             }
         }
     }
+    
+    
 }
 impl Summary {
     /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary).
@@ -12139,7 +11678,7 @@ impl Summary {
 /// <p>Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestingDataResult {
+pub struct TestingDataResult  {
     /// <p>The testing dataset that was supplied for training.</p>
     #[doc(hidden)]
     pub input: std::option::Option<crate::model::TestingData>,
@@ -12152,21 +11691,21 @@ pub struct TestingDataResult {
 }
 impl TestingDataResult {
     /// <p>The testing dataset that was supplied for training.</p>
-    pub fn input(&self) -> std::option::Option<&crate::model::TestingData> {
+    pub fn input(&self) -> std::option::Option<& crate::model::TestingData> {
         self.input.as_ref()
     }
     /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
-    pub fn output(&self) -> std::option::Option<&crate::model::TestingData> {
+    pub fn output(&self) -> std::option::Option<& crate::model::TestingData> {
         self.output.as_ref()
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
-    pub fn validation(&self) -> std::option::Option<&crate::model::ValidationData> {
+    pub fn validation(&self) -> std::option::Option<& crate::model::ValidationData> {
         self.validation.as_ref()
     }
 }
 /// See [`TestingDataResult`](crate::model::TestingDataResult).
 pub mod testing_data_result {
-
+    
     /// A builder for [`TestingDataResult`](crate::model::TestingDataResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12182,8 +11721,7 @@ pub mod testing_data_result {
         }
         /// <p>The testing dataset that was supplied for training.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::TestingData>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
         pub fn output(mut self, input: crate::model::TestingData) -> Self {
@@ -12192,8 +11730,7 @@ pub mod testing_data_result {
         }
         /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
         pub fn set_output(mut self, input: std::option::Option<crate::model::TestingData>) -> Self {
-            self.output = input;
-            self
+            self.output = input; self
         }
         /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
         pub fn validation(mut self, input: crate::model::ValidationData) -> Self {
@@ -12201,22 +11738,23 @@ pub mod testing_data_result {
             self
         }
         /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
-        pub fn set_validation(
-            mut self,
-            input: std::option::Option<crate::model::ValidationData>,
-        ) -> Self {
-            self.validation = input;
-            self
+        pub fn set_validation(mut self, input: std::option::Option<crate::model::ValidationData>) -> Self {
+            self.validation = input; self
         }
         /// Consumes the builder and constructs a [`TestingDataResult`](crate::model::TestingDataResult).
         pub fn build(self) -> crate::model::TestingDataResult {
             crate::model::TestingDataResult {
-                input: self.input,
-                output: self.output,
-                validation: self.validation,
+                input: self.input
+                ,
+                output: self.output
+                ,
+                validation: self.validation
+                ,
             }
         }
     }
+    
+    
 }
 impl TestingDataResult {
     /// Creates a new builder-style object to manufacture [`TestingDataResult`](crate::model::TestingDataResult).
@@ -12225,26 +11763,26 @@ impl TestingDataResult {
     }
 }
 
-/// <p>Contains the Amazon S3 bucket location of the validation data for a model training job. </p>
-/// <p>The validation data includes error information for individual JSON Lines in the dataset. For more information, see <i>Debugging a Failed Model Training</i> in the Amazon Rekognition Custom Labels Developer Guide. </p>
-/// <p>You get the <code>ValidationData</code> object for the training dataset (<code>TrainingDataResult</code>) and the test dataset (<code>TestingDataResult</code>) by calling <code>DescribeProjectVersions</code>. </p>
+/// <p>Contains the Amazon S3 bucket location of the validation data for a model training job. </p> 
+/// <p>The validation data includes error information for individual JSON Lines in the dataset. For more information, see <i>Debugging a Failed Model Training</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> 
+/// <p>You get the <code>ValidationData</code> object for the training dataset (<code>TrainingDataResult</code>) and the test dataset (<code>TestingDataResult</code>) by calling <code>DescribeProjectVersions</code>. </p> 
 /// <p>The assets array contains a single <code>Asset</code> object. The <code>GroundTruthManifest</code> field of the Asset object contains the S3 bucket location of the validation data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationData {
+pub struct ValidationData  {
     /// <p>The assets that comprise the validation data. </p>
     #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
 }
 impl ValidationData {
     /// <p>The assets that comprise the validation data. </p>
-    pub fn assets(&self) -> std::option::Option<&[crate::model::Asset]> {
+    pub fn assets(&self) -> std::option::Option<& [crate::model::Asset]> {
         self.assets.as_deref()
     }
 }
 /// See [`ValidationData`](crate::model::ValidationData).
 pub mod validation_data {
-
+    
     /// A builder for [`ValidationData`](crate::model::ValidationData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12258,25 +11796,24 @@ pub mod validation_data {
         /// <p>The assets that comprise the validation data. </p>
         pub fn assets(mut self, input: crate::model::Asset) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input);
-            self.assets = Some(v);
-            self
+                            v.push(input);
+                            self.assets = Some(v);
+                            self
         }
         /// <p>The assets that comprise the validation data. </p>
-        pub fn set_assets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Asset>>,
-        ) -> Self {
-            self.assets = input;
-            self
+        pub fn set_assets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Asset>>) -> Self {
+            self.assets = input; self
         }
         /// Consumes the builder and constructs a [`ValidationData`](crate::model::ValidationData).
         pub fn build(self) -> crate::model::ValidationData {
             crate::model::ValidationData {
-                assets: self.assets,
+                assets: self.assets
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationData {
     /// Creates a new builder-style object to manufacture [`ValidationData`](crate::model::ValidationData).
@@ -12288,20 +11825,20 @@ impl ValidationData {
 /// <p>Assets are the images that you use to train and evaluate a model version. Assets can also contain validation information that you use to debug a failed model training. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Asset {
+pub struct Asset  {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
     #[doc(hidden)]
     pub ground_truth_manifest: std::option::Option<crate::model::GroundTruthManifest>,
 }
 impl Asset {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn ground_truth_manifest(&self) -> std::option::Option<&crate::model::GroundTruthManifest> {
+    pub fn ground_truth_manifest(&self) -> std::option::Option<& crate::model::GroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
 }
 /// See [`Asset`](crate::model::Asset).
 pub mod asset {
-
+    
     /// A builder for [`Asset`](crate::model::Asset).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12314,20 +11851,19 @@ pub mod asset {
             self
         }
         /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-        pub fn set_ground_truth_manifest(
-            mut self,
-            input: std::option::Option<crate::model::GroundTruthManifest>,
-        ) -> Self {
-            self.ground_truth_manifest = input;
-            self
+        pub fn set_ground_truth_manifest(mut self, input: std::option::Option<crate::model::GroundTruthManifest>) -> Self {
+            self.ground_truth_manifest = input; self
         }
         /// Consumes the builder and constructs a [`Asset`](crate::model::Asset).
         pub fn build(self) -> crate::model::Asset {
             crate::model::Asset {
-                ground_truth_manifest: self.ground_truth_manifest,
+                ground_truth_manifest: self.ground_truth_manifest
+                ,
             }
         }
     }
+    
+    
 }
 impl Asset {
     /// Creates a new builder-style object to manufacture [`Asset`](crate::model::Asset).
@@ -12339,7 +11875,7 @@ impl Asset {
 /// <p>The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels uses the training dataset to create a test dataset with a temporary split of the training dataset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestingData {
+pub struct TestingData  {
     /// <p>The assets used for testing.</p>
     #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
@@ -12349,7 +11885,7 @@ pub struct TestingData {
 }
 impl TestingData {
     /// <p>The assets used for testing.</p>
-    pub fn assets(&self) -> std::option::Option<&[crate::model::Asset]> {
+    pub fn assets(&self) -> std::option::Option<& [crate::model::Asset]> {
         self.assets.as_deref()
     }
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
@@ -12359,7 +11895,7 @@ impl TestingData {
 }
 /// See [`TestingData`](crate::model::TestingData).
 pub mod testing_data {
-
+    
     /// A builder for [`TestingData`](crate::model::TestingData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12374,17 +11910,13 @@ pub mod testing_data {
         /// <p>The assets used for testing.</p>
         pub fn assets(mut self, input: crate::model::Asset) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input);
-            self.assets = Some(v);
-            self
+                            v.push(input);
+                            self.assets = Some(v);
+                            self
         }
         /// <p>The assets used for testing.</p>
-        pub fn set_assets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Asset>>,
-        ) -> Self {
-            self.assets = input;
-            self
+        pub fn set_assets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Asset>>) -> Self {
+            self.assets = input; self
         }
         /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
         pub fn auto_create(mut self, input: bool) -> Self {
@@ -12393,17 +11925,21 @@ pub mod testing_data {
         }
         /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
         pub fn set_auto_create(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_create = input;
-            self
+            self.auto_create = input; self
         }
         /// Consumes the builder and constructs a [`TestingData`](crate::model::TestingData).
         pub fn build(self) -> crate::model::TestingData {
             crate::model::TestingData {
-                assets: self.assets,
-                auto_create: self.auto_create.unwrap_or_default(),
+                assets: self.assets
+                ,
+                auto_create: self.auto_create
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl TestingData {
     /// Creates a new builder-style object to manufacture [`TestingData`](crate::model::TestingData).
@@ -12415,7 +11951,7 @@ impl TestingData {
 /// <p>Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrainingDataResult {
+pub struct TrainingDataResult  {
     /// <p>The training assets that you supplied for training.</p>
     #[doc(hidden)]
     pub input: std::option::Option<crate::model::TrainingData>,
@@ -12428,21 +11964,21 @@ pub struct TrainingDataResult {
 }
 impl TrainingDataResult {
     /// <p>The training assets that you supplied for training.</p>
-    pub fn input(&self) -> std::option::Option<&crate::model::TrainingData> {
+    pub fn input(&self) -> std::option::Option<& crate::model::TrainingData> {
         self.input.as_ref()
     }
     /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
-    pub fn output(&self) -> std::option::Option<&crate::model::TrainingData> {
+    pub fn output(&self) -> std::option::Option<& crate::model::TrainingData> {
         self.output.as_ref()
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
-    pub fn validation(&self) -> std::option::Option<&crate::model::ValidationData> {
+    pub fn validation(&self) -> std::option::Option<& crate::model::ValidationData> {
         self.validation.as_ref()
     }
 }
 /// See [`TrainingDataResult`](crate::model::TrainingDataResult).
 pub mod training_data_result {
-
+    
     /// A builder for [`TrainingDataResult`](crate::model::TrainingDataResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12458,8 +11994,7 @@ pub mod training_data_result {
         }
         /// <p>The training assets that you supplied for training.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::TrainingData>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
         pub fn output(mut self, input: crate::model::TrainingData) -> Self {
@@ -12467,12 +12002,8 @@ pub mod training_data_result {
             self
         }
         /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
-        pub fn set_output(
-            mut self,
-            input: std::option::Option<crate::model::TrainingData>,
-        ) -> Self {
-            self.output = input;
-            self
+        pub fn set_output(mut self, input: std::option::Option<crate::model::TrainingData>) -> Self {
+            self.output = input; self
         }
         /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
         pub fn validation(mut self, input: crate::model::ValidationData) -> Self {
@@ -12480,22 +12011,23 @@ pub mod training_data_result {
             self
         }
         /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
-        pub fn set_validation(
-            mut self,
-            input: std::option::Option<crate::model::ValidationData>,
-        ) -> Self {
-            self.validation = input;
-            self
+        pub fn set_validation(mut self, input: std::option::Option<crate::model::ValidationData>) -> Self {
+            self.validation = input; self
         }
         /// Consumes the builder and constructs a [`TrainingDataResult`](crate::model::TrainingDataResult).
         pub fn build(self) -> crate::model::TrainingDataResult {
             crate::model::TrainingDataResult {
-                input: self.input,
-                output: self.output,
-                validation: self.validation,
+                input: self.input
+                ,
+                output: self.output
+                ,
+                validation: self.validation
+                ,
             }
         }
     }
+    
+    
 }
 impl TrainingDataResult {
     /// Creates a new builder-style object to manufacture [`TrainingDataResult`](crate::model::TrainingDataResult).
@@ -12507,20 +12039,20 @@ impl TrainingDataResult {
 /// <p>The dataset used for training.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrainingData {
+pub struct TrainingData  {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
     #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
 }
 impl TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
-    pub fn assets(&self) -> std::option::Option<&[crate::model::Asset]> {
+    pub fn assets(&self) -> std::option::Option<& [crate::model::Asset]> {
         self.assets.as_deref()
     }
 }
 /// See [`TrainingData`](crate::model::TrainingData).
 pub mod training_data {
-
+    
     /// A builder for [`TrainingData`](crate::model::TrainingData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12534,25 +12066,24 @@ pub mod training_data {
         /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
         pub fn assets(mut self, input: crate::model::Asset) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input);
-            self.assets = Some(v);
-            self
+                            v.push(input);
+                            self.assets = Some(v);
+                            self
         }
         /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
-        pub fn set_assets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Asset>>,
-        ) -> Self {
-            self.assets = input;
-            self
+        pub fn set_assets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Asset>>) -> Self {
+            self.assets = input; self
         }
         /// Consumes the builder and constructs a [`TrainingData`](crate::model::TrainingData).
         pub fn build(self) -> crate::model::TrainingData {
             crate::model::TrainingData {
-                assets: self.assets,
+                assets: self.assets
+                ,
             }
         }
     }
+    
+    
 }
 impl TrainingData {
     /// Creates a new builder-style object to manufacture [`TrainingData`](crate::model::TrainingData).
@@ -12564,7 +12095,7 @@ impl TrainingData {
 /// <p>The S3 bucket and folder location where training output is placed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputConfig {
+pub struct OutputConfig  {
     /// <p>The S3 bucket where training output is placed.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -12574,17 +12105,17 @@ pub struct OutputConfig {
 }
 impl OutputConfig {
     /// <p>The S3 bucket where training output is placed.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The prefix applied to the training output files. </p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
 }
 /// See [`OutputConfig`](crate::model::OutputConfig).
 pub mod output_config {
-
+    
     /// A builder for [`OutputConfig`](crate::model::OutputConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12599,8 +12130,7 @@ pub mod output_config {
         }
         /// <p>The S3 bucket where training output is placed.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The prefix applied to the training output files. </p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12608,21 +12138,21 @@ pub mod output_config {
             self
         }
         /// <p>The prefix applied to the training output files. </p>
-        pub fn set_s3_key_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_key_prefix = input;
-            self
+        pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_key_prefix = input; self
         }
         /// Consumes the builder and constructs a [`OutputConfig`](crate::model::OutputConfig).
         pub fn build(self) -> crate::model::OutputConfig {
             crate::model::OutputConfig {
-                s3_bucket: self.s3_bucket,
-                s3_key_prefix: self.s3_key_prefix,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key_prefix: self.s3_key_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl OutputConfig {
     /// Creates a new builder-style object to manufacture [`OutputConfig`](crate::model::OutputConfig).
@@ -12634,7 +12164,7 @@ impl OutputConfig {
 /// <p>A description of an Amazon Rekognition Custom Labels project. For more information, see <code>DescribeProjects</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectDescription {
+pub struct ProjectDescription  {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
@@ -12650,25 +12180,25 @@ pub struct ProjectDescription {
 }
 impl ProjectDescription {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The current status of the project.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProjectStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProjectStatus> {
         self.status.as_ref()
     }
     /// <p> Information about the training and test datasets in the project. </p>
-    pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetMetadata]> {
+    pub fn datasets(&self) -> std::option::Option<& [crate::model::DatasetMetadata]> {
         self.datasets.as_deref()
     }
 }
 /// See [`ProjectDescription`](crate::model::ProjectDescription).
 pub mod project_description {
-
+    
     /// A builder for [`ProjectDescription`](crate::model::ProjectDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12685,8 +12215,7 @@ pub mod project_description {
         }
         /// <p>The Amazon Resource Name (ARN) of the project.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_arn = input;
-            self
+            self.project_arn = input; self
         }
         /// <p>The Unix timestamp for the date and time that the project was created.</p>
         pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12694,12 +12223,8 @@ pub mod project_description {
             self
         }
         /// <p>The Unix timestamp for the date and time that the project was created.</p>
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// <p>The current status of the project.</p>
         pub fn status(mut self, input: crate::model::ProjectStatus) -> Self {
@@ -12707,12 +12232,8 @@ pub mod project_description {
             self
         }
         /// <p>The current status of the project.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProjectStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProjectStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `datasets`.
         ///
@@ -12721,28 +12242,30 @@ pub mod project_description {
         /// <p> Information about the training and test datasets in the project. </p>
         pub fn datasets(mut self, input: crate::model::DatasetMetadata) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input);
-            self.datasets = Some(v);
-            self
+                            v.push(input);
+                            self.datasets = Some(v);
+                            self
         }
         /// <p> Information about the training and test datasets in the project. </p>
-        pub fn set_datasets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DatasetMetadata>>,
-        ) -> Self {
-            self.datasets = input;
-            self
+        pub fn set_datasets(mut self, input: std::option::Option<std::vec::Vec<crate::model::DatasetMetadata>>) -> Self {
+            self.datasets = input; self
         }
         /// Consumes the builder and constructs a [`ProjectDescription`](crate::model::ProjectDescription).
         pub fn build(self) -> crate::model::ProjectDescription {
             crate::model::ProjectDescription {
-                project_arn: self.project_arn,
-                creation_timestamp: self.creation_timestamp,
-                status: self.status,
-                datasets: self.datasets,
+                project_arn: self.project_arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                status: self.status
+                ,
+                datasets: self.datasets
+                ,
             }
         }
     }
+    
+    
 }
 impl ProjectDescription {
     /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription).
@@ -12754,7 +12277,7 @@ impl ProjectDescription {
 /// <p> Summary information for an Amazon Rekognition Custom Labels dataset. For more information, see <code>ProjectDescription</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetMetadata {
+pub struct DatasetMetadata  {
     /// <p> The Unix timestamp for the date and time that the dataset was created. </p>
     #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -12776,35 +12299,33 @@ pub struct DatasetMetadata {
 }
 impl DatasetMetadata {
     /// <p> The Unix timestamp for the date and time that the dataset was created. </p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p> The type of the dataset. </p>
-    pub fn dataset_type(&self) -> std::option::Option<&crate::model::DatasetType> {
+    pub fn dataset_type(&self) -> std::option::Option<& crate::model::DatasetType> {
         self.dataset_type.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) for the dataset. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p> The status for the dataset. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p> The status message for the dataset. </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-    pub fn status_message_code(
-        &self,
-    ) -> std::option::Option<&crate::model::DatasetStatusMessageCode> {
+    pub fn status_message_code(&self) -> std::option::Option<& crate::model::DatasetStatusMessageCode> {
         self.status_message_code.as_ref()
     }
 }
 /// See [`DatasetMetadata`](crate::model::DatasetMetadata).
 pub mod dataset_metadata {
-
+    
     /// A builder for [`DatasetMetadata`](crate::model::DatasetMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12822,12 +12343,8 @@ pub mod dataset_metadata {
             self
         }
         /// <p> The Unix timestamp for the date and time that the dataset was created. </p>
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// <p> The type of the dataset. </p>
         pub fn dataset_type(mut self, input: crate::model::DatasetType) -> Self {
@@ -12835,12 +12352,8 @@ pub mod dataset_metadata {
             self
         }
         /// <p> The type of the dataset. </p>
-        pub fn set_dataset_type(
-            mut self,
-            input: std::option::Option<crate::model::DatasetType>,
-        ) -> Self {
-            self.dataset_type = input;
-            self
+        pub fn set_dataset_type(mut self, input: std::option::Option<crate::model::DatasetType>) -> Self {
+            self.dataset_type = input; self
         }
         /// <p> The Amazon Resource Name (ARN) for the dataset. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12849,8 +12362,7 @@ pub mod dataset_metadata {
         }
         /// <p> The Amazon Resource Name (ARN) for the dataset. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p> The status for the dataset. </p>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
@@ -12858,12 +12370,8 @@ pub mod dataset_metadata {
             self
         }
         /// <p> The status for the dataset. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DatasetStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> The status message for the dataset. </p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12871,41 +12379,38 @@ pub mod dataset_metadata {
             self
         }
         /// <p> The status message for the dataset. </p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-        pub fn status_message_code(
-            mut self,
-            input: crate::model::DatasetStatusMessageCode,
-        ) -> Self {
+        pub fn status_message_code(mut self, input: crate::model::DatasetStatusMessageCode) -> Self {
             self.status_message_code = Some(input);
             self
         }
         /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-        pub fn set_status_message_code(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStatusMessageCode>,
-        ) -> Self {
-            self.status_message_code = input;
-            self
+        pub fn set_status_message_code(mut self, input: std::option::Option<crate::model::DatasetStatusMessageCode>) -> Self {
+            self.status_message_code = input; self
         }
         /// Consumes the builder and constructs a [`DatasetMetadata`](crate::model::DatasetMetadata).
         pub fn build(self) -> crate::model::DatasetMetadata {
             crate::model::DatasetMetadata {
-                creation_timestamp: self.creation_timestamp,
-                dataset_type: self.dataset_type,
-                dataset_arn: self.dataset_arn,
-                status: self.status,
-                status_message: self.status_message,
-                status_message_code: self.status_message_code,
+                creation_timestamp: self.creation_timestamp
+                ,
+                dataset_type: self.dataset_type
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                status_message_code: self.status_message_code
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetMetadata {
     /// Creates a new builder-style object to manufacture [`DatasetMetadata`](crate::model::DatasetMetadata).
@@ -12920,9 +12425,9 @@ impl DatasetMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasetstatusmessagecode = unimplemented!();
 /// match datasetstatusmessagecode {
@@ -12945,22 +12450,14 @@ impl DatasetMetadata {
 /// Specifically, when `datasetstatusmessagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatasetStatusMessageCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatasetStatusMessageCode {
     #[allow(missing_docs)] // documentation missing in model
     ClientError,
@@ -12969,7 +12466,7 @@ pub enum DatasetStatusMessageCode {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatasetStatusMessageCode {
     fn from(s: &str) -> Self {
@@ -12977,19 +12474,17 @@ impl std::convert::From<&str> for DatasetStatusMessageCode {
             "CLIENT_ERROR" => DatasetStatusMessageCode::ClientError,
             "SERVICE_ERROR" => DatasetStatusMessageCode::ServiceError,
             "SUCCESS" => DatasetStatusMessageCode::Success,
-            other => DatasetStatusMessageCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DatasetStatusMessageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DatasetStatusMessageCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatasetStatusMessageCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatasetStatusMessageCode::from(s))
+                }
+            }
 impl DatasetStatusMessageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12997,12 +12492,14 @@ impl DatasetStatusMessageCode {
             DatasetStatusMessageCode::ClientError => "CLIENT_ERROR",
             DatasetStatusMessageCode::ServiceError => "SERVICE_ERROR",
             DatasetStatusMessageCode::Success => "SUCCESS",
-            DatasetStatusMessageCode::Unknown(value) => value.as_str(),
+            DatasetStatusMessageCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLIENT_ERROR", "SERVICE_ERROR", "SUCCESS"]
+        &[
+            "CLIENT_ERROR", "SERVICE_ERROR", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for DatasetStatusMessageCode {
@@ -13017,9 +12514,9 @@ impl AsRef<str> for DatasetStatusMessageCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasetstatus = unimplemented!();
 /// match datasetstatus {
@@ -13046,22 +12543,14 @@ impl AsRef<str> for DatasetStatusMessageCode {
 /// Specifically, when `datasetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatasetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -13078,7 +12567,7 @@ pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatasetStatus {
     fn from(s: &str) -> Self {
@@ -13090,17 +12579,17 @@ impl std::convert::From<&str> for DatasetStatus {
             "UPDATE_COMPLETE" => DatasetStatus::UpdateComplete,
             "UPDATE_FAILED" => DatasetStatus::UpdateFailed,
             "UPDATE_IN_PROGRESS" => DatasetStatus::UpdateInProgress,
-            other => DatasetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DatasetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DatasetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatasetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatasetStatus::from(s))
+                }
+            }
 impl DatasetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -13112,19 +12601,13 @@ impl DatasetStatus {
             DatasetStatus::UpdateComplete => "UPDATE_COMPLETE",
             DatasetStatus::UpdateFailed => "UPDATE_FAILED",
             DatasetStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            DatasetStatus::Unknown(value) => value.as_str(),
+            DatasetStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATE_COMPLETE",
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETE_IN_PROGRESS",
-            "UPDATE_COMPLETE",
-            "UPDATE_FAILED",
-            "UPDATE_IN_PROGRESS",
+            "CREATE_COMPLETE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_IN_PROGRESS", "UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"
         ]
     }
 }
@@ -13140,9 +12623,9 @@ impl AsRef<str> for DatasetStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasettype = unimplemented!();
 /// match datasettype {
@@ -13164,58 +12647,52 @@ impl AsRef<str> for DatasetStatus {
 /// Specifically, when `datasettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatasetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatasetType {
     #[allow(missing_docs)] // documentation missing in model
     Test,
     #[allow(missing_docs)] // documentation missing in model
     Train,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatasetType {
     fn from(s: &str) -> Self {
         match s {
             "TEST" => DatasetType::Test,
             "TRAIN" => DatasetType::Train,
-            other => DatasetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DatasetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DatasetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatasetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatasetType::from(s))
+                }
+            }
 impl DatasetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatasetType::Test => "TEST",
             DatasetType::Train => "TRAIN",
-            DatasetType::Unknown(value) => value.as_str(),
+            DatasetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TEST", "TRAIN"]
+        &[
+            "TEST", "TRAIN"
+        ]
     }
 }
 impl AsRef<str> for DatasetType {
@@ -13230,9 +12707,9 @@ impl AsRef<str> for DatasetType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let projectstatus = unimplemented!();
 /// match projectstatus {
@@ -13255,22 +12732,14 @@ impl AsRef<str> for DatasetType {
 /// Specifically, when `projectstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProjectStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProjectStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -13279,7 +12748,7 @@ pub enum ProjectStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProjectStatus {
     fn from(s: &str) -> Self {
@@ -13287,17 +12756,17 @@ impl std::convert::From<&str> for ProjectStatus {
             "CREATED" => ProjectStatus::Created,
             "CREATING" => ProjectStatus::Creating,
             "DELETING" => ProjectStatus::Deleting,
-            other => ProjectStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ProjectStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProjectStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProjectStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProjectStatus::from(s))
+                }
+            }
 impl ProjectStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -13305,12 +12774,14 @@ impl ProjectStatus {
             ProjectStatus::Created => "CREATED",
             ProjectStatus::Creating => "CREATING",
             ProjectStatus::Deleting => "DELETING",
-            ProjectStatus::Unknown(value) => value.as_str(),
+            ProjectStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED", "CREATING", "DELETING"]
+        &[
+            "CREATED", "CREATING", "DELETING"
+        ]
     }
 }
 impl AsRef<str> for ProjectStatus {
@@ -13319,11 +12790,11 @@ impl AsRef<str> for ProjectStatus {
     }
 }
 
-/// <p> A description for a dataset. For more information, see <code>DescribeDataset</code>.</p>
+/// <p> A description for a dataset. For more information, see <code>DescribeDataset</code>.</p> 
 /// <p>The status fields <code>Status</code>, <code>StatusMessage</code>, and <code>StatusMessageCode</code> reflect the last operation on the dataset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetDescription {
+pub struct DatasetDescription  {
     /// <p> The Unix timestamp for the time and date that the dataset was created. </p>
     #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -13345,35 +12816,33 @@ pub struct DatasetDescription {
 }
 impl DatasetDescription {
     /// <p> The Unix timestamp for the time and date that the dataset was created. </p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p> The Unix timestamp for the date and time that the dataset was last updated. </p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p> The status of the dataset. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p> The status message for the dataset. </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-    pub fn status_message_code(
-        &self,
-    ) -> std::option::Option<&crate::model::DatasetStatusMessageCode> {
+    pub fn status_message_code(&self) -> std::option::Option<& crate::model::DatasetStatusMessageCode> {
         self.status_message_code.as_ref()
     }
     /// <p> The status message code for the dataset. </p>
-    pub fn dataset_stats(&self) -> std::option::Option<&crate::model::DatasetStats> {
+    pub fn dataset_stats(&self) -> std::option::Option<& crate::model::DatasetStats> {
         self.dataset_stats.as_ref()
     }
 }
 /// See [`DatasetDescription`](crate::model::DatasetDescription).
 pub mod dataset_description {
-
+    
     /// A builder for [`DatasetDescription`](crate::model::DatasetDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13391,12 +12860,8 @@ pub mod dataset_description {
             self
         }
         /// <p> The Unix timestamp for the time and date that the dataset was created. </p>
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// <p> The Unix timestamp for the date and time that the dataset was last updated. </p>
         pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13404,12 +12869,8 @@ pub mod dataset_description {
             self
         }
         /// <p> The Unix timestamp for the date and time that the dataset was last updated. </p>
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// <p> The status of the dataset. </p>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
@@ -13417,12 +12878,8 @@ pub mod dataset_description {
             self
         }
         /// <p> The status of the dataset. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DatasetStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> The status message for the dataset. </p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13430,28 +12887,17 @@ pub mod dataset_description {
             self
         }
         /// <p> The status message for the dataset. </p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-        pub fn status_message_code(
-            mut self,
-            input: crate::model::DatasetStatusMessageCode,
-        ) -> Self {
+        pub fn status_message_code(mut self, input: crate::model::DatasetStatusMessageCode) -> Self {
             self.status_message_code = Some(input);
             self
         }
         /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-        pub fn set_status_message_code(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStatusMessageCode>,
-        ) -> Self {
-            self.status_message_code = input;
-            self
+        pub fn set_status_message_code(mut self, input: std::option::Option<crate::model::DatasetStatusMessageCode>) -> Self {
+            self.status_message_code = input; self
         }
         /// <p> The status message code for the dataset. </p>
         pub fn dataset_stats(mut self, input: crate::model::DatasetStats) -> Self {
@@ -13459,25 +12905,29 @@ pub mod dataset_description {
             self
         }
         /// <p> The status message code for the dataset. </p>
-        pub fn set_dataset_stats(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStats>,
-        ) -> Self {
-            self.dataset_stats = input;
-            self
+        pub fn set_dataset_stats(mut self, input: std::option::Option<crate::model::DatasetStats>) -> Self {
+            self.dataset_stats = input; self
         }
         /// Consumes the builder and constructs a [`DatasetDescription`](crate::model::DatasetDescription).
         pub fn build(self) -> crate::model::DatasetDescription {
             crate::model::DatasetDescription {
-                creation_timestamp: self.creation_timestamp,
-                last_updated_timestamp: self.last_updated_timestamp,
-                status: self.status,
-                status_message: self.status_message,
-                status_message_code: self.status_message_code,
-                dataset_stats: self.dataset_stats,
+                creation_timestamp: self.creation_timestamp
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                status_message_code: self.status_message_code
+                ,
+                dataset_stats: self.dataset_stats
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetDescription {
     /// Creates a new builder-style object to manufacture [`DatasetDescription`](crate::model::DatasetDescription).
@@ -13489,7 +12939,7 @@ impl DatasetDescription {
 /// <p> Provides statistics about a dataset. For more information, see <code>DescribeDataset</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetStats {
+pub struct DatasetStats  {
     /// <p> The total number of images in the dataset that have labels. </p>
     #[doc(hidden)]
     pub labeled_entries: std::option::Option<i32>,
@@ -13523,7 +12973,7 @@ impl DatasetStats {
 }
 /// See [`DatasetStats`](crate::model::DatasetStats).
 pub mod dataset_stats {
-
+    
     /// A builder for [`DatasetStats`](crate::model::DatasetStats).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13540,8 +12990,7 @@ pub mod dataset_stats {
         }
         /// <p> The total number of images in the dataset that have labels. </p>
         pub fn set_labeled_entries(mut self, input: std::option::Option<i32>) -> Self {
-            self.labeled_entries = input;
-            self
+            self.labeled_entries = input; self
         }
         /// <p> The total number of images in the dataset. </p>
         pub fn total_entries(mut self, input: i32) -> Self {
@@ -13550,8 +12999,7 @@ pub mod dataset_stats {
         }
         /// <p> The total number of images in the dataset. </p>
         pub fn set_total_entries(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_entries = input;
-            self
+            self.total_entries = input; self
         }
         /// <p> The total number of labels declared in the dataset. </p>
         pub fn total_labels(mut self, input: i32) -> Self {
@@ -13560,8 +13008,7 @@ pub mod dataset_stats {
         }
         /// <p> The total number of labels declared in the dataset. </p>
         pub fn set_total_labels(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_labels = input;
-            self
+            self.total_labels = input; self
         }
         /// <p> The total number of entries that contain at least one error. </p>
         pub fn error_entries(mut self, input: i32) -> Self {
@@ -13570,19 +13017,24 @@ pub mod dataset_stats {
         }
         /// <p> The total number of entries that contain at least one error. </p>
         pub fn set_error_entries(mut self, input: std::option::Option<i32>) -> Self {
-            self.error_entries = input;
-            self
+            self.error_entries = input; self
         }
         /// Consumes the builder and constructs a [`DatasetStats`](crate::model::DatasetStats).
         pub fn build(self) -> crate::model::DatasetStats {
             crate::model::DatasetStats {
-                labeled_entries: self.labeled_entries,
-                total_entries: self.total_entries,
-                total_labels: self.total_labels,
-                error_entries: self.error_entries,
+                labeled_entries: self.labeled_entries
+                ,
+                total_entries: self.total_entries
+                ,
+                total_labels: self.total_labels
+                ,
+                error_entries: self.error_entries
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetStats {
     /// Creates a new builder-style object to manufacture [`DatasetStats`](crate::model::DatasetStats).
@@ -13591,12 +13043,12 @@ impl DatasetStats {
     }
 }
 
-/// <p> The source that Amazon Rekognition Custom Labels uses to create a dataset. To use an Amazon Sagemaker format manifest file, specify the S3 bucket location in the <code>GroundTruthManifest</code> field. The S3 bucket must be in your AWS account. To create a copy of an existing dataset, specify the Amazon Resource Name (ARN) of an existing dataset in <code>DatasetArn</code>.</p>
-/// <p>You need to specify a value for <code>DatasetArn</code> or <code>GroundTruthManifest</code>, but not both. if you supply both values, or if you don't specify any values, an InvalidParameterException exception occurs. </p>
+/// <p> The source that Amazon Rekognition Custom Labels uses to create a dataset. To use an Amazon Sagemaker format manifest file, specify the S3 bucket location in the <code>GroundTruthManifest</code> field. The S3 bucket must be in your AWS account. To create a copy of an existing dataset, specify the Amazon Resource Name (ARN) of an existing dataset in <code>DatasetArn</code>.</p> 
+/// <p>You need to specify a value for <code>DatasetArn</code> or <code>GroundTruthManifest</code>, but not both. if you supply both values, or if you don't specify any values, an InvalidParameterException exception occurs. </p> 
 /// <p>For more information, see <code>CreateDataset</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetSource {
+pub struct DatasetSource  {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
     #[doc(hidden)]
     pub ground_truth_manifest: std::option::Option<crate::model::GroundTruthManifest>,
@@ -13606,17 +13058,17 @@ pub struct DatasetSource {
 }
 impl DatasetSource {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn ground_truth_manifest(&self) -> std::option::Option<&crate::model::GroundTruthManifest> {
+    pub fn ground_truth_manifest(&self) -> std::option::Option<& crate::model::GroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
     /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
 }
 /// See [`DatasetSource`](crate::model::DatasetSource).
 pub mod dataset_source {
-
+    
     /// A builder for [`DatasetSource`](crate::model::DatasetSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13630,12 +13082,8 @@ pub mod dataset_source {
             self
         }
         /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-        pub fn set_ground_truth_manifest(
-            mut self,
-            input: std::option::Option<crate::model::GroundTruthManifest>,
-        ) -> Self {
-            self.ground_truth_manifest = input;
-            self
+        pub fn set_ground_truth_manifest(mut self, input: std::option::Option<crate::model::GroundTruthManifest>) -> Self {
+            self.ground_truth_manifest = input; self
         }
         /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13644,17 +13092,20 @@ pub mod dataset_source {
         }
         /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// Consumes the builder and constructs a [`DatasetSource`](crate::model::DatasetSource).
         pub fn build(self) -> crate::model::DatasetSource {
             crate::model::DatasetSource {
-                ground_truth_manifest: self.ground_truth_manifest,
-                dataset_arn: self.dataset_arn,
+                ground_truth_manifest: self.ground_truth_manifest
+                ,
+                dataset_arn: self.dataset_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetSource {
     /// Creates a new builder-style object to manufacture [`DatasetSource`](crate::model::DatasetSource).
@@ -13666,7 +13117,7 @@ impl DatasetSource {
 /// <p>Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompareFacesMatch {
+pub struct CompareFacesMatch  {
     /// <p>Level of confidence that the faces match.</p>
     #[doc(hidden)]
     pub similarity: std::option::Option<f32>,
@@ -13680,13 +13131,13 @@ impl CompareFacesMatch {
         self.similarity
     }
     /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
-    pub fn face(&self) -> std::option::Option<&crate::model::ComparedFace> {
+    pub fn face(&self) -> std::option::Option<& crate::model::ComparedFace> {
         self.face.as_ref()
     }
 }
 /// See [`CompareFacesMatch`](crate::model::CompareFacesMatch).
 pub mod compare_faces_match {
-
+    
     /// A builder for [`CompareFacesMatch`](crate::model::CompareFacesMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13701,8 +13152,7 @@ pub mod compare_faces_match {
         }
         /// <p>Level of confidence that the faces match.</p>
         pub fn set_similarity(mut self, input: std::option::Option<f32>) -> Self {
-            self.similarity = input;
-            self
+            self.similarity = input; self
         }
         /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
         pub fn face(mut self, input: crate::model::ComparedFace) -> Self {
@@ -13711,17 +13161,20 @@ pub mod compare_faces_match {
         }
         /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
         pub fn set_face(mut self, input: std::option::Option<crate::model::ComparedFace>) -> Self {
-            self.face = input;
-            self
+            self.face = input; self
         }
         /// Consumes the builder and constructs a [`CompareFacesMatch`](crate::model::CompareFacesMatch).
         pub fn build(self) -> crate::model::CompareFacesMatch {
             crate::model::CompareFacesMatch {
-                similarity: self.similarity,
-                face: self.face,
+                similarity: self.similarity
+                ,
+                face: self.face
+                ,
             }
         }
     }
+    
+    
 }
 impl CompareFacesMatch {
     /// Creates a new builder-style object to manufacture [`CompareFacesMatch`](crate::model::CompareFacesMatch).
@@ -13733,7 +13186,7 @@ impl CompareFacesMatch {
 /// <p>Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComparedSourceImageFace {
+pub struct ComparedSourceImageFace  {
     /// <p>Bounding box of the face.</p>
     #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -13743,7 +13196,7 @@ pub struct ComparedSourceImageFace {
 }
 impl ComparedSourceImageFace {
     /// <p>Bounding box of the face.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::model::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Confidence level that the selected bounding box contains a face.</p>
@@ -13753,7 +13206,7 @@ impl ComparedSourceImageFace {
 }
 /// See [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).
 pub mod compared_source_image_face {
-
+    
     /// A builder for [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13767,12 +13220,8 @@ pub mod compared_source_image_face {
             self
         }
         /// <p>Bounding box of the face.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
+        pub fn set_bounding_box(mut self, input: std::option::Option<crate::model::BoundingBox>) -> Self {
+            self.bounding_box = input; self
         }
         /// <p>Confidence level that the selected bounding box contains a face.</p>
         pub fn confidence(mut self, input: f32) -> Self {
@@ -13781,17 +13230,20 @@ pub mod compared_source_image_face {
         }
         /// <p>Confidence level that the selected bounding box contains a face.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// Consumes the builder and constructs a [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).
         pub fn build(self) -> crate::model::ComparedSourceImageFace {
             crate::model::ComparedSourceImageFace {
-                bounding_box: self.bounding_box,
-                confidence: self.confidence,
+                bounding_box: self.bounding_box
+                ,
+                confidence: self.confidence
+                ,
             }
         }
     }
+    
+    
 }
 impl ComparedSourceImageFace {
     /// Creates a new builder-style object to manufacture [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).
@@ -13799,3 +13251,4 @@ impl ComparedSourceImageFace {
         crate::model::compared_source_image_face::Builder::default()
     }
 }
+

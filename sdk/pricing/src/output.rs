@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProductsOutput {
+pub struct GetProductsOutput  {
     /// <p>The format version of the response. For example, aws_v1.</p>
     #[doc(hidden)]
     pub format_version: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetProductsOutput {
 }
 impl GetProductsOutput {
     /// <p>The format version of the response. For example, aws_v1.</p>
-    pub fn format_version(&self) -> std::option::Option<&str> {
+    pub fn format_version(&self) -> std::option::Option<& str> {
         self.format_version.as_deref()
     }
     /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
-    pub fn price_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn price_list(&self) -> std::option::Option<& [std::string::String]> {
         self.price_list.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetProductsOutput`](crate::output::GetProductsOutput).
 pub mod get_products_output {
-
+    
     /// A builder for [`GetProductsOutput`](crate::output::GetProductsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -44,12 +44,8 @@ pub mod get_products_output {
             self
         }
         /// <p>The format version of the response. For example, aws_v1.</p>
-        pub fn set_format_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.format_version = input;
-            self
+        pub fn set_format_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format_version = input; self
         }
         /// Appends an item to `price_list`.
         ///
@@ -58,17 +54,13 @@ pub mod get_products_output {
         /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
         pub fn price_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.price_list.unwrap_or_default();
-            v.push(input.into());
-            self.price_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.price_list = Some(v);
+                            self
         }
         /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
-        pub fn set_price_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.price_list = input;
-            self
+        pub fn set_price_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.price_list = input; self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,18 +69,22 @@ pub mod get_products_output {
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetProductsOutput`](crate::output::GetProductsOutput).
         pub fn build(self) -> crate::output::GetProductsOutput {
             crate::output::GetProductsOutput {
-                format_version: self.format_version,
-                price_list: self.price_list,
-                next_token: self.next_token,
+                format_version: self.format_version
+                ,
+                price_list: self.price_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProductsOutput {
     /// Creates a new builder-style object to manufacture [`GetProductsOutput`](crate::output::GetProductsOutput).
@@ -100,7 +96,7 @@ impl GetProductsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAttributeValuesOutput {
+pub struct GetAttributeValuesOutput  {
     /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
     #[doc(hidden)]
     pub attribute_values: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -110,22 +106,21 @@ pub struct GetAttributeValuesOutput {
 }
 impl GetAttributeValuesOutput {
     /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
-    pub fn attribute_values(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
+    pub fn attribute_values(&self) -> std::option::Option<& [crate::model::AttributeValue]> {
         self.attribute_values.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
 pub mod get_attribute_values_output {
-
+    
     /// A builder for [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attribute_values:
-            std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
+        pub(crate) attribute_values: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -136,17 +131,13 @@ pub mod get_attribute_values_output {
         /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
         pub fn attribute_values(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.attribute_values.unwrap_or_default();
-            v.push(input);
-            self.attribute_values = Some(v);
-            self
+                            v.push(input);
+                            self.attribute_values = Some(v);
+                            self
         }
         /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
-        pub fn set_attribute_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
-        ) -> Self {
-            self.attribute_values = input;
-            self
+        pub fn set_attribute_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>) -> Self {
+            self.attribute_values = input; self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,17 +146,20 @@ pub mod get_attribute_values_output {
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
         pub fn build(self) -> crate::output::GetAttributeValuesOutput {
             crate::output::GetAttributeValuesOutput {
-                attribute_values: self.attribute_values,
-                next_token: self.next_token,
+                attribute_values: self.attribute_values
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAttributeValuesOutput {
     /// Creates a new builder-style object to manufacture [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
@@ -177,7 +171,7 @@ impl GetAttributeValuesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServicesOutput {
+pub struct DescribeServicesOutput  {
     /// <p>The service metadata for the service or services in the response.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
@@ -190,21 +184,21 @@ pub struct DescribeServicesOutput {
 }
 impl DescribeServicesOutput {
     /// <p>The service metadata for the service or services in the response.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::Service]> {
         self.services.as_deref()
     }
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
-    pub fn format_version(&self) -> std::option::Option<&str> {
+    pub fn format_version(&self) -> std::option::Option<& str> {
         self.format_version.as_deref()
     }
     /// <p>The pagination token for the next set of retrievable results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
 pub mod describe_services_output {
-
+    
     /// A builder for [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -220,17 +214,13 @@ pub mod describe_services_output {
         /// <p>The service metadata for the service or services in the response.</p>
         pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>The service metadata for the service or services in the response.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Service>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::Service>>) -> Self {
+            self.services = input; self
         }
         /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
         pub fn format_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -238,12 +228,8 @@ pub mod describe_services_output {
             self
         }
         /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
-        pub fn set_format_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.format_version = input;
-            self
+        pub fn set_format_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.format_version = input; self
         }
         /// <p>The pagination token for the next set of retrievable results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -252,18 +238,22 @@ pub mod describe_services_output {
         }
         /// <p>The pagination token for the next set of retrievable results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
         pub fn build(self) -> crate::output::DescribeServicesOutput {
             crate::output::DescribeServicesOutput {
-                services: self.services,
-                format_version: self.format_version,
-                next_token: self.next_token,
+                services: self.services
+                ,
+                format_version: self.format_version
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeServicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
@@ -271,3 +261,4 @@ impl DescribeServicesOutput {
         crate::output::describe_services_output::Builder::default()
     }
 }
+

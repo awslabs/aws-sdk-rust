@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
 pub mod delete_thing_shadow_input {
-
+    
     /// A builder for [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -18,8 +18,7 @@ pub mod delete_thing_shadow_input {
         }
         /// <p>The name of the thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
+            self.thing_name = input; self
         }
         /// <p>The name of the shadow.</p>
         pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -28,92 +27,54 @@ pub mod delete_thing_shadow_input {
         }
         /// <p>The name of the shadow.</p>
         pub fn set_shadow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shadow_name = input;
-            self
+            self.shadow_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteThingShadowInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteThingShadowInput {
-                thing_name: self.thing_name,
-                shadow_name: self.shadow_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteThingShadowInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteThingShadowInput {
+                    thing_name: self.thing_name
+                    ,
+                    shadow_name: self.shadow_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteThingShadow`](crate::operation::DeleteThingShadow)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteThingShadow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteThingShadow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteThingShadowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteThingShadowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.thing_name;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "thing_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let thing_name = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))?;
+                let thing_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if thing_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "thing_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/things/{thingName}/shadow", thingName = thing_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/things/{thingName}/shadow", thingName = thing_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::DeleteThingShadowInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::DeleteThingShadowInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.shadow_name {
-                    {
+                     {
                         query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
@@ -121,12 +82,9 @@ impl DeleteThingShadowInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteThingShadowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteThingShadowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -137,51 +95,34 @@ impl DeleteThingShadowInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteThingShadow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteThingShadow",
-            "iotdataplane",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteThingShadow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteThingShadow", "iotdataplane"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -193,7 +134,7 @@ impl DeleteThingShadowInput {
 
 /// See [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
 pub mod get_retained_message_input {
-
+    
     /// A builder for [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -207,90 +148,53 @@ pub mod get_retained_message_input {
         }
         /// <p>The topic name of the retained message to retrieve.</p>
         pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic = input;
-            self
+            self.topic = input; self
         }
         /// Consumes the builder and constructs a [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetRetainedMessageInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetRetainedMessageInput { topic: self.topic })
+        pub fn build(self) -> Result<crate::input::GetRetainedMessageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetRetainedMessageInput {
+                    topic: self.topic
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetRetainedMessageInput {
     /// Consumes the builder and constructs an Operation<[`GetRetainedMessage`](crate::operation::GetRetainedMessage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetRetainedMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetRetainedMessage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetRetainedMessageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetRetainedMessageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.topic;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "topic",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let topic = aws_smithy_http::label::fmt_string(
-                    input_3,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_3 = input_3.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("topic", "cannot be empty or unset"))?;
+                let topic = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if topic.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "topic",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/retainedMessage/{topic}", topic = topic)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("topic", "cannot be empty or unset"))
+                            }
+                write!(output, "/retainedMessage/{topic}", topic = topic).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetRetainedMessageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetRetainedMessageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -300,51 +204,34 @@ impl GetRetainedMessageInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetRetainedMessage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetRetainedMessage",
-            "iotdataplane",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetRetainedMessage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetRetainedMessage", "iotdataplane"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -356,7 +243,7 @@ impl GetRetainedMessageInput {
 
 /// See [`GetThingShadowInput`](crate::input::GetThingShadowInput).
 pub mod get_thing_shadow_input {
-
+    
     /// A builder for [`GetThingShadowInput`](crate::input::GetThingShadowInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -371,8 +258,7 @@ pub mod get_thing_shadow_input {
         }
         /// <p>The name of the thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
+            self.thing_name = input; self
         }
         /// <p>The name of the shadow.</p>
         pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -381,90 +267,54 @@ pub mod get_thing_shadow_input {
         }
         /// <p>The name of the shadow.</p>
         pub fn set_shadow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shadow_name = input;
-            self
+            self.shadow_name = input; self
         }
         /// Consumes the builder and constructs a [`GetThingShadowInput`](crate::input::GetThingShadowInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetThingShadowInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetThingShadowInput {
-                thing_name: self.thing_name,
-                shadow_name: self.shadow_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetThingShadowInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetThingShadowInput {
+                    thing_name: self.thing_name
+                    ,
+                    shadow_name: self.shadow_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`GetThingShadow`](crate::operation::GetThingShadow)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetThingShadow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetThingShadow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetThingShadowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetThingShadowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.thing_name;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "thing_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let thing_name = aws_smithy_http::label::fmt_string(
-                    input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_4 = input_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))?;
+                let thing_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if thing_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "thing_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/things/{thingName}/shadow", thingName = thing_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/things/{thingName}/shadow", thingName = thing_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::GetThingShadowInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::GetThingShadowInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.shadow_name {
-                    {
+                     {
                         query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
@@ -472,12 +322,9 @@ impl GetThingShadowInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetThingShadowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetThingShadowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -488,51 +335,34 @@ impl GetThingShadowInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetThingShadow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetThingShadow",
-            "iotdataplane",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetThingShadow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetThingShadow", "iotdataplane"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -544,7 +374,7 @@ impl GetThingShadowInput {
 
 /// See [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput).
 pub mod list_named_shadows_for_thing_input {
-
+    
     /// A builder for [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -560,8 +390,7 @@ pub mod list_named_shadows_for_thing_input {
         }
         /// <p>The name of the thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
+            self.thing_name = input; self
         }
         /// <p>The token to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -570,8 +399,7 @@ pub mod list_named_shadows_for_thing_input {
         }
         /// <p>The token to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The result page size.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -580,118 +408,71 @@ pub mod list_named_shadows_for_thing_input {
         }
         /// <p>The result page size.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListNamedShadowsForThingInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListNamedShadowsForThingInput {
-                thing_name: self.thing_name,
-                next_token: self.next_token,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::ListNamedShadowsForThingInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListNamedShadowsForThingInput {
+                    thing_name: self.thing_name
+                    ,
+                    next_token: self.next_token
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListNamedShadowsForThingInput {
     /// Consumes the builder and constructs an Operation<[`ListNamedShadowsForThing`](crate::operation::ListNamedShadowsForThing)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListNamedShadowsForThing,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListNamedShadowsForThing, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListNamedShadowsForThingInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListNamedShadowsForThingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.thing_name;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "thing_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let thing_name = aws_smithy_http::label::fmt_string(
-                    input_6,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_6 = input_6.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))?;
+                let thing_name = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if thing_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "thing_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/api/things/shadow/ListNamedShadowsForThing/{thingName}",
-                    thingName = thing_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/api/things/shadow/ListNamedShadowsForThing/{thingName}", thingName = thing_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListNamedShadowsForThingInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListNamedShadowsForThingInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
                     }
                 }
                 if let Some(inner_8) = &_input.page_size {
                     if *inner_8 != 0 {
-                        query.push_kv(
-                            "pageSize",
-                            aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                        );
+                        query.push_kv("pageSize", aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListNamedShadowsForThingInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListNamedShadowsForThingInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -702,51 +483,34 @@ impl ListNamedShadowsForThingInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListNamedShadowsForThing::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListNamedShadowsForThing",
-            "iotdataplane",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListNamedShadowsForThing::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListNamedShadowsForThing", "iotdataplane"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -758,7 +522,7 @@ impl ListNamedShadowsForThingInput {
 
 /// See [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
 pub mod list_retained_messages_input {
-
+    
     /// A builder for [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -773,8 +537,7 @@ pub mod list_retained_messages_input {
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return at one time.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -783,91 +546,62 @@ pub mod list_retained_messages_input {
         }
         /// <p>The maximum number of results to return at one time.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListRetainedMessagesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListRetainedMessagesInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListRetainedMessagesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListRetainedMessagesInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListRetainedMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListRetainedMessages`](crate::operation::ListRetainedMessages)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListRetainedMessages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRetainedMessages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListRetainedMessagesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListRetainedMessagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/retainedMessage").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListRetainedMessagesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListRetainedMessagesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListRetainedMessagesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListRetainedMessagesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -878,51 +612,34 @@ impl ListRetainedMessagesInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListRetainedMessages::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListRetainedMessages",
-            "iotdataplane",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRetainedMessages::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRetainedMessages", "iotdataplane"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -934,7 +651,7 @@ impl ListRetainedMessagesInput {
 
 /// See [`PublishInput`](crate::input::PublishInput).
 pub mod publish_input {
-
+    
     /// A builder for [`PublishInput`](crate::input::PublishInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -943,8 +660,7 @@ pub mod publish_input {
         pub(crate) retain: std::option::Option<bool>,
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) user_properties: std::option::Option<std::string::String>,
-        pub(crate) payload_format_indicator:
-            std::option::Option<crate::model::PayloadFormatIndicator>,
+        pub(crate) payload_format_indicator: std::option::Option<crate::model::PayloadFormatIndicator>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) response_topic: std::option::Option<std::string::String>,
         pub(crate) correlation_data: std::option::Option<std::string::String>,
@@ -958,8 +674,7 @@ pub mod publish_input {
         }
         /// <p>The name of the MQTT topic.</p>
         pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic = input;
-            self
+            self.topic = input; self
         }
         /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
         pub fn qos(mut self, input: i32) -> Self {
@@ -968,69 +683,55 @@ pub mod publish_input {
         }
         /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
         pub fn set_qos(mut self, input: std::option::Option<i32>) -> Self {
-            self.qos = input;
-            self
+            self.qos = input; self
         }
-        /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-        /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+        /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+        /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+        /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
         /// <p>Default value: <code>false</code> </p>
         pub fn retain(mut self, input: bool) -> Self {
             self.retain = Some(input);
             self
         }
-        /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-        /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+        /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+        /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+        /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
         /// <p>Default value: <code>false</code> </p>
         pub fn set_retain(mut self, input: std::option::Option<bool>) -> Self {
-            self.retain = input;
-            self
+            self.retain = input; self
         }
-        /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+        /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
         /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
-        /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+        /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
         /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.payload = input;
-            self
+            self.payload = input; self
         }
-        /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-        /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
+        /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+        /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
         /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
         pub fn user_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_properties = Some(input.into());
             self
         }
-        /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-        /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
+        /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+        /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
         /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-        pub fn set_user_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_properties = input;
-            self
+        pub fn set_user_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_properties = input; self
         }
         /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-        pub fn payload_format_indicator(
-            mut self,
-            input: crate::model::PayloadFormatIndicator,
-        ) -> Self {
+        pub fn payload_format_indicator(mut self, input: crate::model::PayloadFormatIndicator) -> Self {
             self.payload_format_indicator = Some(input);
             self
         }
         /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-        pub fn set_payload_format_indicator(
-            mut self,
-            input: std::option::Option<crate::model::PayloadFormatIndicator>,
-        ) -> Self {
-            self.payload_format_indicator = input;
-            self
+        pub fn set_payload_format_indicator(mut self, input: std::option::Option<crate::model::PayloadFormatIndicator>) -> Self {
+            self.payload_format_indicator = input; self
         }
         /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1039,8 +740,7 @@ pub mod publish_input {
         }
         /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
         pub fn response_topic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1048,12 +748,8 @@ pub mod publish_input {
             self
         }
         /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-        pub fn set_response_topic(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.response_topic = input;
-            self
+        pub fn set_response_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.response_topic = input; self
         }
         /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
         pub fn correlation_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1061,12 +757,8 @@ pub mod publish_input {
             self
         }
         /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-        pub fn set_correlation_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.correlation_data = input;
-            self
+        pub fn set_correlation_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.correlation_data = input; self
         }
         /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
         pub fn message_expiry(mut self, input: i64) -> Self {
@@ -1075,140 +767,97 @@ pub mod publish_input {
         }
         /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
         pub fn set_message_expiry(mut self, input: std::option::Option<i64>) -> Self {
-            self.message_expiry = input;
-            self
+            self.message_expiry = input; self
         }
         /// Consumes the builder and constructs a [`PublishInput`](crate::input::PublishInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PublishInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PublishInput {
-                topic: self.topic,
-                qos: self.qos.unwrap_or_default(),
-                retain: self.retain.unwrap_or_default(),
-                payload: self.payload,
-                user_properties: self.user_properties,
-                payload_format_indicator: self.payload_format_indicator,
-                content_type: self.content_type,
-                response_topic: self.response_topic,
-                correlation_data: self.correlation_data,
-                message_expiry: self.message_expiry.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::PublishInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PublishInput {
+                    topic: self.topic
+                    ,
+                    qos: self.qos
+                        .unwrap_or_default()
+                    ,
+                    retain: self.retain
+                        .unwrap_or_default()
+                    ,
+                    payload: self.payload
+                    ,
+                    user_properties: self.user_properties
+                    ,
+                    payload_format_indicator: self.payload_format_indicator
+                    ,
+                    content_type: self.content_type
+                    ,
+                    response_topic: self.response_topic
+                    ,
+                    correlation_data: self.correlation_data
+                    ,
+                    message_expiry: self.message_expiry
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PublishInput {
     /// Consumes the builder and constructs an Operation<[`Publish`](crate::operation::Publish)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::Publish,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::Publish, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PublishInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PublishInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.topic;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "topic",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let topic = aws_smithy_http::label::fmt_string(
-                    input_10,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_10 = input_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("topic", "cannot be empty or unset"))?;
+                let topic = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if topic.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "topic",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/topics/{topic}", topic = topic)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("topic", "cannot be empty or unset"))
+                            }
+                write!(output, "/topics/{topic}", topic = topic).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::PublishInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::PublishInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.qos != 0 {
-                    query.push_kv(
-                        "qos",
-                        aws_smithy_types::primitive::Encoder::from(_input.qos).encode(),
-                    );
+                    query.push_kv("qos", aws_smithy_types::primitive::Encoder::from(_input.qos).encode());
                 }
                 if _input.retain {
-                    query.push_kv(
-                        "retain",
-                        aws_smithy_types::primitive::Encoder::from(_input.retain).encode(),
-                    );
+                    query.push_kv("retain", aws_smithy_types::primitive::Encoder::from(_input.retain).encode());
                 }
                 if let Some(inner_11) = &_input.content_type {
-                    {
-                        query.push_kv(
-                            "contentType",
-                            &aws_smithy_http::query::fmt_string(&inner_11),
-                        );
+                     {
+                        query.push_kv("contentType", &aws_smithy_http::query::fmt_string(&inner_11));
                     }
                 }
                 if let Some(inner_12) = &_input.response_topic {
-                    {
-                        query.push_kv(
-                            "responseTopic",
-                            &aws_smithy_http::query::fmt_string(&inner_12),
-                        );
+                     {
+                        query.push_kv("responseTopic", &aws_smithy_http::query::fmt_string(&inner_12));
                     }
                 }
                 if _input.message_expiry != 0 {
-                    query.push_kv(
-                        "messageExpiry",
-                        aws_smithy_types::primitive::Encoder::from(_input.message_expiry).encode(),
-                    );
+                    query.push_kv("messageExpiry", aws_smithy_types::primitive::Encoder::from(_input.message_expiry).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PublishInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PublishInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1216,67 +865,42 @@ impl PublishInput {
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/octet-stream",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/octet-stream");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_publish_input(self.payload)?,
+            crate::operation_ser::serialize_payload_publish_input( self.payload)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::Publish::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "Publish",
-                    "iotdataplane",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::Publish::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("Publish", "iotdataplane"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1288,7 +912,7 @@ impl PublishInput {
 
 /// See [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).
 pub mod update_thing_shadow_input {
-
+    
     /// A builder for [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1304,8 +928,7 @@ pub mod update_thing_shadow_input {
         }
         /// <p>The name of the thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
+            self.thing_name = input; self
         }
         /// <p>The name of the shadow.</p>
         pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1314,8 +937,7 @@ pub mod update_thing_shadow_input {
         }
         /// <p>The name of the shadow.</p>
         pub fn set_shadow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shadow_name = input;
-            self
+            self.shadow_name = input; self
         }
         /// <p>The state information, in JSON format.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -1324,93 +946,56 @@ pub mod update_thing_shadow_input {
         }
         /// <p>The state information, in JSON format.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.payload = input;
-            self
+            self.payload = input; self
         }
         /// Consumes the builder and constructs a [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateThingShadowInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateThingShadowInput {
-                thing_name: self.thing_name,
-                shadow_name: self.shadow_name,
-                payload: self.payload,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateThingShadowInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateThingShadowInput {
+                    thing_name: self.thing_name
+                    ,
+                    shadow_name: self.shadow_name
+                    ,
+                    payload: self.payload
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThingShadow`](crate::operation::UpdateThingShadow)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateThingShadow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateThingShadow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateThingShadowInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateThingShadowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.thing_name;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "thing_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let thing_name = aws_smithy_http::label::fmt_string(
-                    input_13,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_13 = input_13.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))?;
+                let thing_name = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if thing_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "thing_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/things/{thingName}/shadow", thingName = thing_name)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/things/{thingName}/shadow", thingName = thing_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UpdateThingShadowInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::UpdateThingShadowInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.shadow_name {
-                    {
+                     {
                         query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_14));
                     }
                 }
@@ -1418,81 +1003,51 @@ impl UpdateThingShadowInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateThingShadowInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateThingShadowInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/octet-stream",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/octet-stream");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_thing_shadow_input(self.payload)?,
+            crate::operation_ser::serialize_payload_update_thing_shadow_input( self.payload)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateThingShadow::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateThingShadow",
-            "iotdataplane",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateThingShadow::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateThingShadow", "iotdataplane"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1505,7 +1060,7 @@ impl UpdateThingShadowInput {
 /// <p>The input for the UpdateThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThingShadowInput {
+pub struct UpdateThingShadowInput  {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -1518,15 +1073,15 @@ pub struct UpdateThingShadowInput {
 }
 impl UpdateThingShadowInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the shadow.</p>
-    pub fn shadow_name(&self) -> std::option::Option<&str> {
+    pub fn shadow_name(&self) -> std::option::Option<& str> {
         self.shadow_name.as_deref()
     }
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
@@ -1534,25 +1089,25 @@ impl UpdateThingShadowInput {
 /// <p>The input for the Publish operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishInput {
+pub struct PublishInput  {
     /// <p>The name of the MQTT topic.</p>
     #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
     #[doc(hidden)]
     pub qos: i32,
-    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
     /// <p>Default value: <code>false</code> </p>
     #[doc(hidden)]
     pub retain: bool,
-    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
+    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     #[doc(hidden)]
     pub user_properties: std::option::Option<std::string::String>,
@@ -1574,47 +1129,45 @@ pub struct PublishInput {
 }
 impl PublishInput {
     /// <p>The name of the MQTT topic.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> std::option::Option<& str> {
         self.topic.as_deref()
     }
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
     pub fn qos(&self) -> i32 {
         self.qos
     }
-    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
-    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p> 
+    /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p> 
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p> 
     /// <p>Default value: <code>false</code> </p>
     pub fn retain(&self) -> bool {
         self.retain
     }
-    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
+    /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p> 
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
-    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
-    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
+    /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p> 
+    /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p> 
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn user_properties(&self) -> std::option::Option<&str> {
+    pub fn user_properties(&self) -> std::option::Option<& str> {
         self.user_properties.as_deref()
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    pub fn payload_format_indicator(
-        &self,
-    ) -> std::option::Option<&crate::model::PayloadFormatIndicator> {
+    pub fn payload_format_indicator(&self) -> std::option::Option<& crate::model::PayloadFormatIndicator> {
         self.payload_format_indicator.as_ref()
     }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn response_topic(&self) -> std::option::Option<&str> {
+    pub fn response_topic(&self) -> std::option::Option<& str> {
         self.response_topic.as_deref()
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn correlation_data(&self) -> std::option::Option<&str> {
+    pub fn correlation_data(&self) -> std::option::Option<& str> {
         self.correlation_data.as_deref()
     }
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
@@ -1626,7 +1179,7 @@ impl PublishInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRetainedMessagesInput {
+pub struct ListRetainedMessagesInput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1636,7 +1189,7 @@ pub struct ListRetainedMessagesInput {
 }
 impl ListRetainedMessagesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -1648,7 +1201,7 @@ impl ListRetainedMessagesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNamedShadowsForThingInput {
+pub struct ListNamedShadowsForThingInput  {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -1661,11 +1214,11 @@ pub struct ListNamedShadowsForThingInput {
 }
 impl ListNamedShadowsForThingInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The result page size.</p>
@@ -1677,7 +1230,7 @@ impl ListNamedShadowsForThingInput {
 /// <p>The input for the GetThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetThingShadowInput {
+pub struct GetThingShadowInput  {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -1687,11 +1240,11 @@ pub struct GetThingShadowInput {
 }
 impl GetThingShadowInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the shadow.</p>
-    pub fn shadow_name(&self) -> std::option::Option<&str> {
+    pub fn shadow_name(&self) -> std::option::Option<& str> {
         self.shadow_name.as_deref()
     }
 }
@@ -1699,14 +1252,14 @@ impl GetThingShadowInput {
 /// <p>The input for the GetRetainedMessage operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRetainedMessageInput {
+pub struct GetRetainedMessageInput  {
     /// <p>The topic name of the retained message to retrieve.</p>
     #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
 }
 impl GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> std::option::Option<& str> {
         self.topic.as_deref()
     }
 }
@@ -1714,7 +1267,7 @@ impl GetRetainedMessageInput {
 /// <p>The input for the DeleteThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThingShadowInput {
+pub struct DeleteThingShadowInput  {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -1724,11 +1277,12 @@ pub struct DeleteThingShadowInput {
 }
 impl DeleteThingShadowInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the shadow.</p>
-    pub fn shadow_name(&self) -> std::option::Option<&str> {
+    pub fn shadow_name(&self) -> std::option::Option<& str> {
         self.shadow_name.as_deref()
     }
 }
+

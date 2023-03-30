@@ -3,14 +3,14 @@
 /// <p>Sets additional capacity units configured for your rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API. You can add and remove capacity units to fit your usage requirements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CapacityUnitsConfiguration {
-    /// <p>The amount of extra capacity for your rescore execution plan.</p>
+pub struct CapacityUnitsConfiguration  {
+    /// <p>The amount of extra capacity for your rescore execution plan.</p> 
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
     #[doc(hidden)]
     pub rescore_capacity_units: std::option::Option<i32>,
 }
 impl CapacityUnitsConfiguration {
-    /// <p>The amount of extra capacity for your rescore execution plan.</p>
+    /// <p>The amount of extra capacity for your rescore execution plan.</p> 
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
     pub fn rescore_capacity_units(&self) -> std::option::Option<i32> {
         self.rescore_capacity_units
@@ -18,32 +18,34 @@ impl CapacityUnitsConfiguration {
 }
 /// See [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
 pub mod capacity_units_configuration {
-
+    
     /// A builder for [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rescore_capacity_units: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The amount of extra capacity for your rescore execution plan.</p>
+        /// <p>The amount of extra capacity for your rescore execution plan.</p> 
         /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
         pub fn rescore_capacity_units(mut self, input: i32) -> Self {
             self.rescore_capacity_units = Some(input);
             self
         }
-        /// <p>The amount of extra capacity for your rescore execution plan.</p>
+        /// <p>The amount of extra capacity for your rescore execution plan.</p> 
         /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
         pub fn set_rescore_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
-            self.rescore_capacity_units = input;
-            self
+            self.rescore_capacity_units = input; self
         }
         /// Consumes the builder and constructs a [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
         pub fn build(self) -> crate::model::CapacityUnitsConfiguration {
             crate::model::CapacityUnitsConfiguration {
-                rescore_capacity_units: self.rescore_capacity_units,
+                rescore_capacity_units: self.rescore_capacity_units
+                ,
             }
         }
     }
+    
+    
 }
 impl CapacityUnitsConfiguration {
     /// Creates a new builder-style object to manufacture [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
@@ -55,7 +57,7 @@ impl CapacityUnitsConfiguration {
 /// <p>A key-value pair that identifies or categorizes a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API. You can also use a tag to help control access to a rescore execution plan. A tag key and value can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key for the tag. Keys are not case sensitive and must be unique.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -65,17 +67,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key for the tag. Keys are not case sensitive and must be unique.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value associated with the tag. The value can be an empty string but it can't be null.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -90,8 +92,7 @@ pub mod tag {
         }
         /// <p>The key for the tag. Keys are not case sensitive and must be unique.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value associated with the tag. The value can be an empty string but it can't be null.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,17 +101,20 @@ pub mod tag {
         }
         /// <p>The value associated with the tag. The value can be an empty string but it can't be null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -122,7 +126,7 @@ impl Tag {
 /// <p>A result item for a document with a new relevancy score.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RescoreResultItem {
+pub struct RescoreResultItem  {
     /// <p>The identifier of the document from the search service.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
@@ -132,7 +136,7 @@ pub struct RescoreResultItem {
 }
 impl RescoreResultItem {
     /// <p>The identifier of the document from the search service.</p>
-    pub fn document_id(&self) -> std::option::Option<&str> {
+    pub fn document_id(&self) -> std::option::Option<& str> {
         self.document_id.as_deref()
     }
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
@@ -142,7 +146,7 @@ impl RescoreResultItem {
 }
 /// See [`RescoreResultItem`](crate::model::RescoreResultItem).
 pub mod rescore_result_item {
-
+    
     /// A builder for [`RescoreResultItem`](crate::model::RescoreResultItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -157,8 +161,7 @@ pub mod rescore_result_item {
         }
         /// <p>The identifier of the document from the search service.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.document_id = input;
-            self
+            self.document_id = input; self
         }
         /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
         pub fn score(mut self, input: f32) -> Self {
@@ -167,17 +170,20 @@ pub mod rescore_result_item {
         }
         /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
-            self.score = input;
-            self
+            self.score = input; self
         }
         /// Consumes the builder and constructs a [`RescoreResultItem`](crate::model::RescoreResultItem).
         pub fn build(self) -> crate::model::RescoreResultItem {
             crate::model::RescoreResultItem {
-                document_id: self.document_id,
-                score: self.score,
+                document_id: self.document_id
+                ,
+                score: self.score
+                ,
             }
         }
     }
+    
+    
 }
 impl RescoreResultItem {
     /// Creates a new builder-style object to manufacture [`RescoreResultItem`](crate::model::RescoreResultItem).
@@ -189,7 +195,7 @@ impl RescoreResultItem {
 /// <p>Information about a document from a search service such as OpenSearch (self managed). Amazon Kendra Intelligent Ranking uses this information to rank and score on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Document {
+pub struct Document  {
     /// <p>The identifier of the document from the search service.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -214,27 +220,27 @@ pub struct Document {
 }
 impl Document {
     /// <p>The identifier of the document from the search service.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The title of the search service's document.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The body text of the search service's document.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    pub fn tokenized_title(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tokenized_title(&self) -> std::option::Option<& [std::string::String]> {
         self.tokenized_title.as_deref()
     }
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    pub fn tokenized_body(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tokenized_body(&self) -> std::option::Option<& [std::string::String]> {
         self.tokenized_body.as_deref()
     }
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
@@ -244,7 +250,7 @@ impl Document {
 }
 /// See [`Document`](crate::model::Document).
 pub mod document {
-
+    
     /// A builder for [`Document`](crate::model::Document).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -264,8 +270,7 @@ pub mod document {
         }
         /// <p>The identifier of the document from the search service.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -274,8 +279,7 @@ pub mod document {
         }
         /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// <p>The title of the search service's document.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,8 +288,7 @@ pub mod document {
         }
         /// <p>The title of the search service's document.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The body text of the search service's document.</p>
         pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -294,8 +297,7 @@ pub mod document {
         }
         /// <p>The body text of the search service's document.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.body = input;
-            self
+            self.body = input; self
         }
         /// Appends an item to `tokenized_title`.
         ///
@@ -304,17 +306,13 @@ pub mod document {
         /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
         pub fn tokenized_title(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tokenized_title.unwrap_or_default();
-            v.push(input.into());
-            self.tokenized_title = Some(v);
-            self
+                            v.push(input.into());
+                            self.tokenized_title = Some(v);
+                            self
         }
         /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-        pub fn set_tokenized_title(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tokenized_title = input;
-            self
+        pub fn set_tokenized_title(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tokenized_title = input; self
         }
         /// Appends an item to `tokenized_body`.
         ///
@@ -323,17 +321,13 @@ pub mod document {
         /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
         pub fn tokenized_body(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tokenized_body.unwrap_or_default();
-            v.push(input.into());
-            self.tokenized_body = Some(v);
-            self
+                            v.push(input.into());
+                            self.tokenized_body = Some(v);
+                            self
         }
         /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-        pub fn set_tokenized_body(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tokenized_body = input;
-            self
+        pub fn set_tokenized_body(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tokenized_body = input; self
         }
         /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
         pub fn original_score(mut self, input: f32) -> Self {
@@ -342,22 +336,30 @@ pub mod document {
         }
         /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
         pub fn set_original_score(mut self, input: std::option::Option<f32>) -> Self {
-            self.original_score = input;
-            self
+            self.original_score = input; self
         }
         /// Consumes the builder and constructs a [`Document`](crate::model::Document).
         pub fn build(self) -> crate::model::Document {
             crate::model::Document {
-                id: self.id,
-                group_id: self.group_id,
-                title: self.title,
-                body: self.body,
-                tokenized_title: self.tokenized_title,
-                tokenized_body: self.tokenized_body,
-                original_score: self.original_score,
+                id: self.id
+                ,
+                group_id: self.group_id
+                ,
+                title: self.title
+                ,
+                body: self.body
+                ,
+                tokenized_title: self.tokenized_title
+                ,
+                tokenized_body: self.tokenized_body
+                ,
+                original_score: self.original_score
+                ,
             }
         }
     }
+    
+    
 }
 impl Document {
     /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
@@ -369,7 +371,7 @@ impl Document {
 /// <p>Summary information for a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RescoreExecutionPlanSummary {
+pub struct RescoreExecutionPlanSummary  {
     /// <p>The name of the rescore execution plan.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -388,29 +390,29 @@ pub struct RescoreExecutionPlanSummary {
 }
 impl RescoreExecutionPlanSummary {
     /// <p>The name of the rescore execution plan.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the rescore execution plan.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Unix timestamp when the rescore execution plan was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the rescore execution plan was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RescoreExecutionPlanStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RescoreExecutionPlanStatus> {
         self.status.as_ref()
     }
 }
 /// See [`RescoreExecutionPlanSummary`](crate::model::RescoreExecutionPlanSummary).
 pub mod rescore_execution_plan_summary {
-
+    
     /// A builder for [`RescoreExecutionPlanSummary`](crate::model::RescoreExecutionPlanSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -428,8 +430,7 @@ pub mod rescore_execution_plan_summary {
         }
         /// <p>The name of the rescore execution plan.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The identifier of the rescore execution plan.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -438,8 +439,7 @@ pub mod rescore_execution_plan_summary {
         }
         /// <p>The identifier of the rescore execution plan.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Unix timestamp when the rescore execution plan was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -447,12 +447,8 @@ pub mod rescore_execution_plan_summary {
             self
         }
         /// <p>The Unix timestamp when the rescore execution plan was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix timestamp when the rescore execution plan was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -460,12 +456,8 @@ pub mod rescore_execution_plan_summary {
             self
         }
         /// <p>The Unix timestamp when the rescore execution plan was last updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use.</p>
         pub fn status(mut self, input: crate::model::RescoreExecutionPlanStatus) -> Self {
@@ -473,24 +465,27 @@ pub mod rescore_execution_plan_summary {
             self
         }
         /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RescoreExecutionPlanStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RescoreExecutionPlanStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RescoreExecutionPlanSummary`](crate::model::RescoreExecutionPlanSummary).
         pub fn build(self) -> crate::model::RescoreExecutionPlanSummary {
             crate::model::RescoreExecutionPlanSummary {
-                name: self.name,
-                id: self.id,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                status: self.status,
+                name: self.name
+                ,
+                id: self.id
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl RescoreExecutionPlanSummary {
     /// Creates a new builder-style object to manufacture [`RescoreExecutionPlanSummary`](crate::model::RescoreExecutionPlanSummary).
@@ -505,9 +500,9 @@ impl RescoreExecutionPlanSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rescoreexecutionplanstatus = unimplemented!();
 /// match rescoreexecutionplanstatus {
@@ -532,22 +527,14 @@ impl RescoreExecutionPlanSummary {
 /// Specifically, when `rescoreexecutionplanstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RescoreExecutionPlanStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RescoreExecutionPlanStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -560,7 +547,7 @@ pub enum RescoreExecutionPlanStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RescoreExecutionPlanStatus {
     fn from(s: &str) -> Self {
@@ -570,19 +557,17 @@ impl std::convert::From<&str> for RescoreExecutionPlanStatus {
             "DELETING" => RescoreExecutionPlanStatus::Deleting,
             "FAILED" => RescoreExecutionPlanStatus::Failed,
             "UPDATING" => RescoreExecutionPlanStatus::Updating,
-            other => RescoreExecutionPlanStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RescoreExecutionPlanStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RescoreExecutionPlanStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RescoreExecutionPlanStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RescoreExecutionPlanStatus::from(s))
+                }
+            }
 impl RescoreExecutionPlanStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -592,12 +577,14 @@ impl RescoreExecutionPlanStatus {
             RescoreExecutionPlanStatus::Deleting => "DELETING",
             RescoreExecutionPlanStatus::Failed => "FAILED",
             RescoreExecutionPlanStatus::Updating => "UPDATING",
-            RescoreExecutionPlanStatus::Unknown(value) => value.as_str(),
+            RescoreExecutionPlanStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for RescoreExecutionPlanStatus {
@@ -605,3 +592,4 @@ impl AsRef<str> for RescoreExecutionPlanStatus {
         self.as_str()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualMachinesOutput {
+pub struct ListVirtualMachinesOutput  {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
     pub virtual_machines: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
@@ -12,22 +12,21 @@ pub struct ListVirtualMachinesOutput {
 }
 impl ListVirtualMachinesOutput {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn virtual_machines(&self) -> std::option::Option<&[crate::model::VirtualMachine]> {
+    pub fn virtual_machines(&self) -> std::option::Option<& [crate::model::VirtualMachine]> {
         self.virtual_machines.as_deref()
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
 pub mod list_virtual_machines_output {
-
+    
     /// A builder for [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_machines:
-            std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
+        pub(crate) virtual_machines: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -38,17 +37,13 @@ pub mod list_virtual_machines_output {
         /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
         pub fn virtual_machines(mut self, input: crate::model::VirtualMachine) -> Self {
             let mut v = self.virtual_machines.unwrap_or_default();
-            v.push(input);
-            self.virtual_machines = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_machines = Some(v);
+                            self
         }
         /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-        pub fn set_virtual_machines(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
-        ) -> Self {
-            self.virtual_machines = input;
-            self
+        pub fn set_virtual_machines(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>) -> Self {
+            self.virtual_machines = input; self
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,17 +52,20 @@ pub mod list_virtual_machines_output {
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
         pub fn build(self) -> crate::output::ListVirtualMachinesOutput {
             crate::output::ListVirtualMachinesOutput {
-                virtual_machines: self.virtual_machines,
-                next_token: self.next_token,
+                virtual_machines: self.virtual_machines
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVirtualMachinesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
@@ -79,20 +77,20 @@ impl ListVirtualMachinesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVirtualMachineOutput {
+pub struct GetVirtualMachineOutput  {
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     #[doc(hidden)]
     pub virtual_machine: std::option::Option<crate::model::VirtualMachineDetails>,
 }
 impl GetVirtualMachineOutput {
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
-    pub fn virtual_machine(&self) -> std::option::Option<&crate::model::VirtualMachineDetails> {
+    pub fn virtual_machine(&self) -> std::option::Option<& crate::model::VirtualMachineDetails> {
         self.virtual_machine.as_ref()
     }
 }
 /// See [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
 pub mod get_virtual_machine_output {
-
+    
     /// A builder for [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -105,20 +103,19 @@ pub mod get_virtual_machine_output {
             self
         }
         /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
-        pub fn set_virtual_machine(
-            mut self,
-            input: std::option::Option<crate::model::VirtualMachineDetails>,
-        ) -> Self {
-            self.virtual_machine = input;
-            self
+        pub fn set_virtual_machine(mut self, input: std::option::Option<crate::model::VirtualMachineDetails>) -> Self {
+            self.virtual_machine = input; self
         }
         /// Consumes the builder and constructs a [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
         pub fn build(self) -> crate::output::GetVirtualMachineOutput {
             crate::output::GetVirtualMachineOutput {
-                virtual_machine: self.virtual_machine,
+                virtual_machine: self.virtual_machine
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
@@ -130,20 +127,20 @@ impl GetVirtualMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartVirtualMachinesMetadataSyncOutput {
+pub struct StartVirtualMachinesMetadataSyncOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl StartVirtualMachinesMetadataSyncOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
 /// See [`StartVirtualMachinesMetadataSyncOutput`](crate::output::StartVirtualMachinesMetadataSyncOutput).
 pub mod start_virtual_machines_metadata_sync_output {
-
+    
     /// A builder for [`StartVirtualMachinesMetadataSyncOutput`](crate::output::StartVirtualMachinesMetadataSyncOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -156,20 +153,19 @@ pub mod start_virtual_machines_metadata_sync_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-        pub fn set_hypervisor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_arn = input;
-            self
+        pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_arn = input; self
         }
         /// Consumes the builder and constructs a [`StartVirtualMachinesMetadataSyncOutput`](crate::output::StartVirtualMachinesMetadataSyncOutput).
         pub fn build(self) -> crate::output::StartVirtualMachinesMetadataSyncOutput {
             crate::output::StartVirtualMachinesMetadataSyncOutput {
-                hypervisor_arn: self.hypervisor_arn,
+                hypervisor_arn: self.hypervisor_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StartVirtualMachinesMetadataSyncOutput {
     /// Creates a new builder-style object to manufacture [`StartVirtualMachinesMetadataSyncOutput`](crate::output::StartVirtualMachinesMetadataSyncOutput).
@@ -181,7 +177,7 @@ impl StartVirtualMachinesMetadataSyncOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHypervisorsOutput {
+pub struct ListHypervisorsOutput  {
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
     pub hypervisors: std::option::Option<std::vec::Vec<crate::model::Hypervisor>>,
@@ -191,17 +187,17 @@ pub struct ListHypervisorsOutput {
 }
 impl ListHypervisorsOutput {
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn hypervisors(&self) -> std::option::Option<&[crate::model::Hypervisor]> {
+    pub fn hypervisors(&self) -> std::option::Option<& [crate::model::Hypervisor]> {
         self.hypervisors.as_deref()
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput).
 pub mod list_hypervisors_output {
-
+    
     /// A builder for [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -216,17 +212,13 @@ pub mod list_hypervisors_output {
         /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
         pub fn hypervisors(mut self, input: crate::model::Hypervisor) -> Self {
             let mut v = self.hypervisors.unwrap_or_default();
-            v.push(input);
-            self.hypervisors = Some(v);
-            self
+                            v.push(input);
+                            self.hypervisors = Some(v);
+                            self
         }
         /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-        pub fn set_hypervisors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Hypervisor>>,
-        ) -> Self {
-            self.hypervisors = input;
-            self
+        pub fn set_hypervisors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Hypervisor>>) -> Self {
+            self.hypervisors = input; self
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,17 +227,20 @@ pub mod list_hypervisors_output {
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput).
         pub fn build(self) -> crate::output::ListHypervisorsOutput {
             crate::output::ListHypervisorsOutput {
-                hypervisors: self.hypervisors,
-                next_token: self.next_token,
+                hypervisors: self.hypervisors
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHypervisorsOutput {
     /// Creates a new builder-style object to manufacture [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput).
@@ -257,20 +252,20 @@ impl ListHypervisorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportHypervisorConfigurationOutput {
+pub struct ImportHypervisorConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl ImportHypervisorConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
 /// See [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput).
 pub mod import_hypervisor_configuration_output {
-
+    
     /// A builder for [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -283,20 +278,19 @@ pub mod import_hypervisor_configuration_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
-        pub fn set_hypervisor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_arn = input;
-            self
+        pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_arn = input; self
         }
         /// Consumes the builder and constructs a [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput).
         pub fn build(self) -> crate::output::ImportHypervisorConfigurationOutput {
             crate::output::ImportHypervisorConfigurationOutput {
-                hypervisor_arn: self.hypervisor_arn,
+                hypervisor_arn: self.hypervisor_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportHypervisorConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput).
@@ -308,20 +302,20 @@ impl ImportHypervisorConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHypervisorOutput {
+pub struct DeleteHypervisorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl DeleteHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
 /// See [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput).
 pub mod delete_hypervisor_output {
-
+    
     /// A builder for [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -334,20 +328,19 @@ pub mod delete_hypervisor_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
-        pub fn set_hypervisor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_arn = input;
-            self
+        pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput).
         pub fn build(self) -> crate::output::DeleteHypervisorOutput {
             crate::output::DeleteHypervisorOutput {
-                hypervisor_arn: self.hypervisor_arn,
+                hypervisor_arn: self.hypervisor_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteHypervisorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput).
@@ -359,20 +352,20 @@ impl DeleteHypervisorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHypervisorOutput {
+pub struct UpdateHypervisorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl UpdateHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
 /// See [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput).
 pub mod update_hypervisor_output {
-
+    
     /// A builder for [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -385,20 +378,19 @@ pub mod update_hypervisor_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
-        pub fn set_hypervisor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_arn = input;
-            self
+        pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput).
         pub fn build(self) -> crate::output::UpdateHypervisorOutput {
             crate::output::UpdateHypervisorOutput {
-                hypervisor_arn: self.hypervisor_arn,
+                hypervisor_arn: self.hypervisor_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateHypervisorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput).
@@ -410,20 +402,20 @@ impl UpdateHypervisorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHypervisorOutput {
+pub struct GetHypervisorOutput  {
     /// <p>Details about the requested hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor: std::option::Option<crate::model::HypervisorDetails>,
 }
 impl GetHypervisorOutput {
     /// <p>Details about the requested hypervisor.</p>
-    pub fn hypervisor(&self) -> std::option::Option<&crate::model::HypervisorDetails> {
+    pub fn hypervisor(&self) -> std::option::Option<& crate::model::HypervisorDetails> {
         self.hypervisor.as_ref()
     }
 }
 /// See [`GetHypervisorOutput`](crate::output::GetHypervisorOutput).
 pub mod get_hypervisor_output {
-
+    
     /// A builder for [`GetHypervisorOutput`](crate::output::GetHypervisorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -436,20 +428,19 @@ pub mod get_hypervisor_output {
             self
         }
         /// <p>Details about the requested hypervisor.</p>
-        pub fn set_hypervisor(
-            mut self,
-            input: std::option::Option<crate::model::HypervisorDetails>,
-        ) -> Self {
-            self.hypervisor = input;
-            self
+        pub fn set_hypervisor(mut self, input: std::option::Option<crate::model::HypervisorDetails>) -> Self {
+            self.hypervisor = input; self
         }
         /// Consumes the builder and constructs a [`GetHypervisorOutput`](crate::output::GetHypervisorOutput).
         pub fn build(self) -> crate::output::GetHypervisorOutput {
             crate::output::GetHypervisorOutput {
-                hypervisor: self.hypervisor,
+                hypervisor: self.hypervisor
+                ,
             }
         }
     }
+    
+    
 }
 impl GetHypervisorOutput {
     /// Creates a new builder-style object to manufacture [`GetHypervisorOutput`](crate::output::GetHypervisorOutput).
@@ -461,20 +452,20 @@ impl GetHypervisorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutHypervisorPropertyMappingsOutput {
+pub struct PutHypervisorPropertyMappingsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
 }
 impl PutHypervisorPropertyMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
 /// See [`PutHypervisorPropertyMappingsOutput`](crate::output::PutHypervisorPropertyMappingsOutput).
 pub mod put_hypervisor_property_mappings_output {
-
+    
     /// A builder for [`PutHypervisorPropertyMappingsOutput`](crate::output::PutHypervisorPropertyMappingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -487,20 +478,19 @@ pub mod put_hypervisor_property_mappings_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-        pub fn set_hypervisor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_arn = input;
-            self
+        pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutHypervisorPropertyMappingsOutput`](crate::output::PutHypervisorPropertyMappingsOutput).
         pub fn build(self) -> crate::output::PutHypervisorPropertyMappingsOutput {
             crate::output::PutHypervisorPropertyMappingsOutput {
-                hypervisor_arn: self.hypervisor_arn,
+                hypervisor_arn: self.hypervisor_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutHypervisorPropertyMappingsOutput {
     /// Creates a new builder-style object to manufacture [`PutHypervisorPropertyMappingsOutput`](crate::output::PutHypervisorPropertyMappingsOutput).
@@ -512,43 +502,39 @@ impl PutHypervisorPropertyMappingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHypervisorPropertyMappingsOutput {
+pub struct GetHypervisorPropertyMappingsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
     #[doc(hidden)]
-    pub vmware_to_aws_tag_mappings:
-        std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
+    pub vmware_to_aws_tag_mappings: std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
 impl GetHypervisorPropertyMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn vmware_to_aws_tag_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::VmwareToAwsTagMapping]> {
+    pub fn vmware_to_aws_tag_mappings(&self) -> std::option::Option<& [crate::model::VmwareToAwsTagMapping]> {
         self.vmware_to_aws_tag_mappings.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
 /// See [`GetHypervisorPropertyMappingsOutput`](crate::output::GetHypervisorPropertyMappingsOutput).
 pub mod get_hypervisor_property_mappings_output {
-
+    
     /// A builder for [`GetHypervisorPropertyMappingsOutput`](crate::output::GetHypervisorPropertyMappingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
-        pub(crate) vmware_to_aws_tag_mappings:
-            std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
+        pub(crate) vmware_to_aws_tag_mappings: std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -558,34 +544,23 @@ pub mod get_hypervisor_property_mappings_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-        pub fn set_hypervisor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hypervisor_arn = input;
-            self
+        pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor_arn = input; self
         }
         /// Appends an item to `vmware_to_aws_tag_mappings`.
         ///
         /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
         ///
         /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-        pub fn vmware_to_aws_tag_mappings(
-            mut self,
-            input: crate::model::VmwareToAwsTagMapping,
-        ) -> Self {
+        pub fn vmware_to_aws_tag_mappings(mut self, input: crate::model::VmwareToAwsTagMapping) -> Self {
             let mut v = self.vmware_to_aws_tag_mappings.unwrap_or_default();
-            v.push(input);
-            self.vmware_to_aws_tag_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.vmware_to_aws_tag_mappings = Some(v);
+                            self
         }
         /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-        pub fn set_vmware_to_aws_tag_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
-        ) -> Self {
-            self.vmware_to_aws_tag_mappings = input;
-            self
+        pub fn set_vmware_to_aws_tag_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>) -> Self {
+            self.vmware_to_aws_tag_mappings = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -594,18 +569,22 @@ pub mod get_hypervisor_property_mappings_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetHypervisorPropertyMappingsOutput`](crate::output::GetHypervisorPropertyMappingsOutput).
         pub fn build(self) -> crate::output::GetHypervisorPropertyMappingsOutput {
             crate::output::GetHypervisorPropertyMappingsOutput {
-                hypervisor_arn: self.hypervisor_arn,
-                vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings,
-                iam_role_arn: self.iam_role_arn,
+                hypervisor_arn: self.hypervisor_arn
+                ,
+                vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetHypervisorPropertyMappingsOutput {
     /// Creates a new builder-style object to manufacture [`GetHypervisorPropertyMappingsOutput`](crate::output::GetHypervisorPropertyMappingsOutput).
@@ -617,20 +596,20 @@ impl GetHypervisorPropertyMappingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGatewaySoftwareNowOutput {
+pub struct UpdateGatewaySoftwareNowOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateGatewaySoftwareNowOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
 pub mod update_gateway_software_now_output {
-
+    
     /// A builder for [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -644,16 +623,18 @@ pub mod update_gateway_software_now_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
         pub fn build(self) -> crate::output::UpdateGatewaySoftwareNowOutput {
             crate::output::UpdateGatewaySoftwareNowOutput {
-                gateway_arn: self.gateway_arn,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGatewaySoftwareNowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
@@ -665,19 +646,24 @@ impl UpdateGatewaySoftwareNowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestHypervisorConfigurationOutput {}
+pub struct TestHypervisorConfigurationOutput  {
+}
 /// See [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput).
 pub mod test_hypervisor_configuration_output {
-
+    
     /// A builder for [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput).
         pub fn build(self) -> crate::output::TestHypervisorConfigurationOutput {
-            crate::output::TestHypervisorConfigurationOutput {}
+            crate::output::TestHypervisorConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl TestHypervisorConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput).
@@ -689,20 +675,20 @@ impl TestHypervisorConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMaintenanceStartTimeOutput {
+pub struct PutMaintenanceStartTimeOutput  {
     /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl PutMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput).
 pub mod put_maintenance_start_time_output {
-
+    
     /// A builder for [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -716,16 +702,18 @@ pub mod put_maintenance_start_time_output {
         }
         /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput).
         pub fn build(self) -> crate::output::PutMaintenanceStartTimeOutput {
             crate::output::PutMaintenanceStartTimeOutput {
-                gateway_arn: self.gateway_arn,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutMaintenanceStartTimeOutput {
     /// Creates a new builder-style object to manufacture [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput).
@@ -737,20 +725,20 @@ impl PutMaintenanceStartTimeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateGatewayFromServerOutput {
+pub struct DisassociateGatewayFromServerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateGatewayFromServerOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput).
 pub mod disassociate_gateway_from_server_output {
-
+    
     /// A builder for [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -764,16 +752,18 @@ pub mod disassociate_gateway_from_server_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput).
         pub fn build(self) -> crate::output::DisassociateGatewayFromServerOutput {
             crate::output::DisassociateGatewayFromServerOutput {
-                gateway_arn: self.gateway_arn,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateGatewayFromServerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput).
@@ -785,20 +775,20 @@ impl DisassociateGatewayFromServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateGatewayToServerOutput {
+pub struct AssociateGatewayToServerOutput  {
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl AssociateGatewayToServerOutput {
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput).
 pub mod associate_gateway_to_server_output {
-
+    
     /// A builder for [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -812,16 +802,18 @@ pub mod associate_gateway_to_server_output {
         }
         /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput).
         pub fn build(self) -> crate::output::AssociateGatewayToServerOutput {
             crate::output::AssociateGatewayToServerOutput {
-                gateway_arn: self.gateway_arn,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateGatewayToServerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput).
@@ -833,7 +825,7 @@ impl AssociateGatewayToServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGatewaysOutput {
+pub struct ListGatewaysOutput  {
     /// <p>A list of your gateways.</p>
     #[doc(hidden)]
     pub gateways: std::option::Option<std::vec::Vec<crate::model::Gateway>>,
@@ -843,17 +835,17 @@ pub struct ListGatewaysOutput {
 }
 impl ListGatewaysOutput {
     /// <p>A list of your gateways.</p>
-    pub fn gateways(&self) -> std::option::Option<&[crate::model::Gateway]> {
+    pub fn gateways(&self) -> std::option::Option<& [crate::model::Gateway]> {
         self.gateways.as_deref()
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
 pub mod list_gateways_output {
-
+    
     /// A builder for [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -868,17 +860,13 @@ pub mod list_gateways_output {
         /// <p>A list of your gateways.</p>
         pub fn gateways(mut self, input: crate::model::Gateway) -> Self {
             let mut v = self.gateways.unwrap_or_default();
-            v.push(input);
-            self.gateways = Some(v);
-            self
+                            v.push(input);
+                            self.gateways = Some(v);
+                            self
         }
         /// <p>A list of your gateways.</p>
-        pub fn set_gateways(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Gateway>>,
-        ) -> Self {
-            self.gateways = input;
-            self
+        pub fn set_gateways(mut self, input: std::option::Option<std::vec::Vec<crate::model::Gateway>>) -> Self {
+            self.gateways = input; self
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -887,17 +875,20 @@ pub mod list_gateways_output {
         }
         /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
         pub fn build(self) -> crate::output::ListGatewaysOutput {
             crate::output::ListGatewaysOutput {
-                gateways: self.gateways,
-                next_token: self.next_token,
+                gateways: self.gateways
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
@@ -909,20 +900,20 @@ impl ListGatewaysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGatewayOutput {
+pub struct CreateGatewayOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl CreateGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
 pub mod create_gateway_output {
-
+    
     /// A builder for [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -936,16 +927,18 @@ pub mod create_gateway_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
         pub fn build(self) -> crate::output::CreateGatewayOutput {
             crate::output::CreateGatewayOutput {
-                gateway_arn: self.gateway_arn,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
@@ -957,20 +950,20 @@ impl CreateGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGatewayOutput {
+pub struct DeleteGatewayOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway you deleted.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you deleted.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
 pub mod delete_gateway_output {
-
+    
     /// A builder for [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -984,16 +977,18 @@ pub mod delete_gateway_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway you deleted.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
         pub fn build(self) -> crate::output::DeleteGatewayOutput {
             crate::output::DeleteGatewayOutput {
-                gateway_arn: self.gateway_arn,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
@@ -1005,20 +1000,20 @@ impl DeleteGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGatewayInformationOutput {
+pub struct UpdateGatewayInformationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
 pub mod update_gateway_information_output {
-
+    
     /// A builder for [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1032,16 +1027,18 @@ pub mod update_gateway_information_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
         pub fn build(self) -> crate::output::UpdateGatewayInformationOutput {
             crate::output::UpdateGatewayInformationOutput {
-                gateway_arn: self.gateway_arn,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGatewayInformationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
@@ -1053,20 +1050,20 @@ impl UpdateGatewayInformationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGatewayOutput {
+pub struct GetGatewayOutput  {
     /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
     #[doc(hidden)]
     pub gateway: std::option::Option<crate::model::GatewayDetails>,
 }
 impl GetGatewayOutput {
     /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
-    pub fn gateway(&self) -> std::option::Option<&crate::model::GatewayDetails> {
+    pub fn gateway(&self) -> std::option::Option<& crate::model::GatewayDetails> {
         self.gateway.as_ref()
     }
 }
 /// See [`GetGatewayOutput`](crate::output::GetGatewayOutput).
 pub mod get_gateway_output {
-
+    
     /// A builder for [`GetGatewayOutput`](crate::output::GetGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1079,20 +1076,19 @@ pub mod get_gateway_output {
             self
         }
         /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
-        pub fn set_gateway(
-            mut self,
-            input: std::option::Option<crate::model::GatewayDetails>,
-        ) -> Self {
-            self.gateway = input;
-            self
+        pub fn set_gateway(mut self, input: std::option::Option<crate::model::GatewayDetails>) -> Self {
+            self.gateway = input; self
         }
         /// Consumes the builder and constructs a [`GetGatewayOutput`](crate::output::GetGatewayOutput).
         pub fn build(self) -> crate::output::GetGatewayOutput {
             crate::output::GetGatewayOutput {
-                gateway: self.gateway,
+                gateway: self.gateway
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGatewayOutput {
     /// Creates a new builder-style object to manufacture [`GetGatewayOutput`](crate::output::GetGatewayOutput).
@@ -1104,20 +1100,20 @@ impl GetGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBandwidthRateLimitScheduleOutput {
+pub struct PutBandwidthRateLimitScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl PutBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`PutBandwidthRateLimitScheduleOutput`](crate::output::PutBandwidthRateLimitScheduleOutput).
 pub mod put_bandwidth_rate_limit_schedule_output {
-
+    
     /// A builder for [`PutBandwidthRateLimitScheduleOutput`](crate::output::PutBandwidthRateLimitScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1131,16 +1127,18 @@ pub mod put_bandwidth_rate_limit_schedule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutBandwidthRateLimitScheduleOutput`](crate::output::PutBandwidthRateLimitScheduleOutput).
         pub fn build(self) -> crate::output::PutBandwidthRateLimitScheduleOutput {
             crate::output::PutBandwidthRateLimitScheduleOutput {
-                gateway_arn: self.gateway_arn,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutBandwidthRateLimitScheduleOutput {
     /// Creates a new builder-style object to manufacture [`PutBandwidthRateLimitScheduleOutput`](crate::output::PutBandwidthRateLimitScheduleOutput).
@@ -1152,36 +1150,32 @@ impl PutBandwidthRateLimitScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBandwidthRateLimitScheduleOutput {
+pub struct GetBandwidthRateLimitScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     #[doc(hidden)]
-    pub bandwidth_rate_limit_intervals:
-        std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
+    pub bandwidth_rate_limit_intervals: std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
 }
 impl GetBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn bandwidth_rate_limit_intervals(
-        &self,
-    ) -> std::option::Option<&[crate::model::BandwidthRateLimitInterval]> {
+    pub fn bandwidth_rate_limit_intervals(&self) -> std::option::Option<& [crate::model::BandwidthRateLimitInterval]> {
         self.bandwidth_rate_limit_intervals.as_deref()
     }
 }
 /// See [`GetBandwidthRateLimitScheduleOutput`](crate::output::GetBandwidthRateLimitScheduleOutput).
 pub mod get_bandwidth_rate_limit_schedule_output {
-
+    
     /// A builder for [`GetBandwidthRateLimitScheduleOutput`](crate::output::GetBandwidthRateLimitScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
-        pub(crate) bandwidth_rate_limit_intervals:
-            std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
+        pub(crate) bandwidth_rate_limit_intervals: std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -1191,39 +1185,35 @@ pub mod get_bandwidth_rate_limit_schedule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Appends an item to `bandwidth_rate_limit_intervals`.
         ///
         /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
         ///
         /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-        pub fn bandwidth_rate_limit_intervals(
-            mut self,
-            input: crate::model::BandwidthRateLimitInterval,
-        ) -> Self {
+        pub fn bandwidth_rate_limit_intervals(mut self, input: crate::model::BandwidthRateLimitInterval) -> Self {
             let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
-            v.push(input);
-            self.bandwidth_rate_limit_intervals = Some(v);
-            self
+                            v.push(input);
+                            self.bandwidth_rate_limit_intervals = Some(v);
+                            self
         }
         /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-        pub fn set_bandwidth_rate_limit_intervals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
-        ) -> Self {
-            self.bandwidth_rate_limit_intervals = input;
-            self
+        pub fn set_bandwidth_rate_limit_intervals(mut self, input: std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>) -> Self {
+            self.bandwidth_rate_limit_intervals = input; self
         }
         /// Consumes the builder and constructs a [`GetBandwidthRateLimitScheduleOutput`](crate::output::GetBandwidthRateLimitScheduleOutput).
         pub fn build(self) -> crate::output::GetBandwidthRateLimitScheduleOutput {
             crate::output::GetBandwidthRateLimitScheduleOutput {
-                gateway_arn: self.gateway_arn,
-                bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals,
+                gateway_arn: self.gateway_arn
+                ,
+                bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBandwidthRateLimitScheduleOutput {
     /// Creates a new builder-style object to manufacture [`GetBandwidthRateLimitScheduleOutput`](crate::output::GetBandwidthRateLimitScheduleOutput).
@@ -1235,20 +1225,20 @@ impl GetBandwidthRateLimitScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {
+pub struct UntagResourceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you removed tags.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl UntagResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you removed tags.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1262,16 +1252,18 @@ pub mod untag_resource_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which you removed tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
-                resource_arn: self.resource_arn,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1283,20 +1275,20 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {
+pub struct TagResourceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl TagResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1310,16 +1302,18 @@ pub mod tag_resource_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
-                resource_arn: self.resource_arn,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1331,7 +1325,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource's tags that you listed.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -1341,17 +1335,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource's tags that you listed.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of the resource's tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1366,8 +1360,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource's tags that you listed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1376,26 +1369,26 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of the resource's tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of the resource's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
+                resource_arn: self.resource_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1403,3 +1396,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

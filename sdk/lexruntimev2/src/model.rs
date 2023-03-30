@@ -3,11 +3,11 @@
 /// <p>An intent that Amazon Lex V2 determined might satisfy the user's utterance. The intents are ordered by the confidence score. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Interpretation {
+pub struct Interpretation  {
     /// <p>Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     #[doc(hidden)]
     pub nlu_confidence: std::option::Option<crate::model::ConfidenceScore>,
-    /// <p>The sentiment expressed in an utterance. </p>
+    /// <p>The sentiment expressed in an utterance. </p> 
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
     #[doc(hidden)]
     pub sentiment_response: std::option::Option<crate::model::SentimentResponse>,
@@ -17,22 +17,22 @@ pub struct Interpretation {
 }
 impl Interpretation {
     /// <p>Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
-    pub fn nlu_confidence(&self) -> std::option::Option<&crate::model::ConfidenceScore> {
+    pub fn nlu_confidence(&self) -> std::option::Option<& crate::model::ConfidenceScore> {
         self.nlu_confidence.as_ref()
     }
-    /// <p>The sentiment expressed in an utterance. </p>
+    /// <p>The sentiment expressed in an utterance. </p> 
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
-    pub fn sentiment_response(&self) -> std::option::Option<&crate::model::SentimentResponse> {
+    pub fn sentiment_response(&self) -> std::option::Option<& crate::model::SentimentResponse> {
         self.sentiment_response.as_ref()
     }
     /// <p>A list of intents that might satisfy the user's utterance. The intents are ordered by the confidence score.</p>
-    pub fn intent(&self) -> std::option::Option<&crate::model::Intent> {
+    pub fn intent(&self) -> std::option::Option<& crate::model::Intent> {
         self.intent.as_ref()
     }
 }
 /// See [`Interpretation`](crate::model::Interpretation).
 pub mod interpretation {
-
+    
     /// A builder for [`Interpretation`](crate::model::Interpretation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -47,27 +47,19 @@ pub mod interpretation {
             self
         }
         /// <p>Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
-        pub fn set_nlu_confidence(
-            mut self,
-            input: std::option::Option<crate::model::ConfidenceScore>,
-        ) -> Self {
-            self.nlu_confidence = input;
-            self
+        pub fn set_nlu_confidence(mut self, input: std::option::Option<crate::model::ConfidenceScore>) -> Self {
+            self.nlu_confidence = input; self
         }
-        /// <p>The sentiment expressed in an utterance. </p>
+        /// <p>The sentiment expressed in an utterance. </p> 
         /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
         pub fn sentiment_response(mut self, input: crate::model::SentimentResponse) -> Self {
             self.sentiment_response = Some(input);
             self
         }
-        /// <p>The sentiment expressed in an utterance. </p>
+        /// <p>The sentiment expressed in an utterance. </p> 
         /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
-        pub fn set_sentiment_response(
-            mut self,
-            input: std::option::Option<crate::model::SentimentResponse>,
-        ) -> Self {
-            self.sentiment_response = input;
-            self
+        pub fn set_sentiment_response(mut self, input: std::option::Option<crate::model::SentimentResponse>) -> Self {
+            self.sentiment_response = input; self
         }
         /// <p>A list of intents that might satisfy the user's utterance. The intents are ordered by the confidence score.</p>
         pub fn intent(mut self, input: crate::model::Intent) -> Self {
@@ -76,18 +68,22 @@ pub mod interpretation {
         }
         /// <p>A list of intents that might satisfy the user's utterance. The intents are ordered by the confidence score.</p>
         pub fn set_intent(mut self, input: std::option::Option<crate::model::Intent>) -> Self {
-            self.intent = input;
-            self
+            self.intent = input; self
         }
         /// Consumes the builder and constructs a [`Interpretation`](crate::model::Interpretation).
         pub fn build(self) -> crate::model::Interpretation {
             crate::model::Interpretation {
-                nlu_confidence: self.nlu_confidence,
-                sentiment_response: self.sentiment_response,
-                intent: self.intent,
+                nlu_confidence: self.nlu_confidence
+                ,
+                sentiment_response: self.sentiment_response
+                ,
+                intent: self.intent
+                ,
             }
         }
     }
+    
+    
 }
 impl Interpretation {
     /// Creates a new builder-style object to manufacture [`Interpretation`](crate::model::Interpretation).
@@ -99,14 +95,13 @@ impl Interpretation {
 /// <p>The current intent that Amazon Lex V2 is attempting to fulfill.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Intent {
+pub struct Intent  {
     /// <p>The name of the intent.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
     #[doc(hidden)]
-    pub slots:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
+    pub slots: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
     /// <p>Contains fulfillment information for the intent. </p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::IntentState>,
@@ -116,34 +111,30 @@ pub struct Intent {
 }
 impl Intent {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
-    pub fn slots(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Slot>>
-    {
+    pub fn slots(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Slot>> {
         self.slots.as_ref()
     }
     /// <p>Contains fulfillment information for the intent. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::IntentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::IntentState> {
         self.state.as_ref()
     }
     /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
-    pub fn confirmation_state(&self) -> std::option::Option<&crate::model::ConfirmationState> {
+    pub fn confirmation_state(&self) -> std::option::Option<& crate::model::ConfirmationState> {
         self.confirmation_state.as_ref()
     }
 }
 /// See [`Intent`](crate::model::Intent).
 pub mod intent {
-
+    
     /// A builder for [`Intent`](crate::model::Intent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) slots:
-            std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
+        pub(crate) slots: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
         pub(crate) state: std::option::Option<crate::model::IntentState>,
         pub(crate) confirmation_state: std::option::Option<crate::model::ConfirmationState>,
     }
@@ -155,8 +146,7 @@ pub mod intent {
         }
         /// <p>The name of the intent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `slots`.
         ///
@@ -165,19 +155,13 @@ pub mod intent {
         /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
         pub fn slots(mut self, k: impl Into<std::string::String>, v: crate::model::Slot) -> Self {
             let mut hash_map = self.slots.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.slots = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.slots = Some(hash_map);
+                            self
         }
         /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
-        pub fn set_slots(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Slot>,
-            >,
-        ) -> Self {
-            self.slots = input;
-            self
+        pub fn set_slots(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>) -> Self {
+            self.slots = input; self
         }
         /// <p>Contains fulfillment information for the intent. </p>
         pub fn state(mut self, input: crate::model::IntentState) -> Self {
@@ -186,8 +170,7 @@ pub mod intent {
         }
         /// <p>Contains fulfillment information for the intent. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::IntentState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
         pub fn confirmation_state(mut self, input: crate::model::ConfirmationState) -> Self {
@@ -195,23 +178,25 @@ pub mod intent {
             self
         }
         /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
-        pub fn set_confirmation_state(
-            mut self,
-            input: std::option::Option<crate::model::ConfirmationState>,
-        ) -> Self {
-            self.confirmation_state = input;
-            self
+        pub fn set_confirmation_state(mut self, input: std::option::Option<crate::model::ConfirmationState>) -> Self {
+            self.confirmation_state = input; self
         }
         /// Consumes the builder and constructs a [`Intent`](crate::model::Intent).
         pub fn build(self) -> crate::model::Intent {
             crate::model::Intent {
-                name: self.name,
-                slots: self.slots,
-                state: self.state,
-                confirmation_state: self.confirmation_state,
+                name: self.name
+                ,
+                slots: self.slots
+                ,
+                state: self.state
+                ,
+                confirmation_state: self.confirmation_state
+                ,
             }
         }
     }
+    
+    
 }
 impl Intent {
     /// Creates a new builder-style object to manufacture [`Intent`](crate::model::Intent).
@@ -226,9 +211,9 @@ impl Intent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let confirmationstate = unimplemented!();
 /// match confirmationstate {
@@ -251,22 +236,14 @@ impl Intent {
 /// Specifically, when `confirmationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfirmationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfirmationState {
     #[allow(missing_docs)] // documentation missing in model
     Confirmed,
@@ -275,7 +252,7 @@ pub enum ConfirmationState {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfirmationState {
     fn from(s: &str) -> Self {
@@ -283,19 +260,17 @@ impl std::convert::From<&str> for ConfirmationState {
             "Confirmed" => ConfirmationState::Confirmed,
             "Denied" => ConfirmationState::Denied,
             "None" => ConfirmationState::None,
-            other => {
-                ConfirmationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConfirmationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfirmationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfirmationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfirmationState::from(s))
+                }
+            }
 impl ConfirmationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -303,12 +278,14 @@ impl ConfirmationState {
             ConfirmationState::Confirmed => "Confirmed",
             ConfirmationState::Denied => "Denied",
             ConfirmationState::None => "None",
-            ConfirmationState::Unknown(value) => value.as_str(),
+            ConfirmationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Confirmed", "Denied", "None"]
+        &[
+            "Confirmed", "Denied", "None"
+        ]
     }
 }
 impl AsRef<str> for ConfirmationState {
@@ -323,9 +300,9 @@ impl AsRef<str> for ConfirmationState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let intentstate = unimplemented!();
 /// match intentstate {
@@ -351,22 +328,14 @@ impl AsRef<str> for ConfirmationState {
 /// Specifically, when `intentstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IntentState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IntentState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -381,7 +350,7 @@ pub enum IntentState {
     #[allow(missing_docs)] // documentation missing in model
     Waiting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IntentState {
     fn from(s: &str) -> Self {
@@ -392,17 +361,17 @@ impl std::convert::From<&str> for IntentState {
             "InProgress" => IntentState::InProgress,
             "ReadyForFulfillment" => IntentState::ReadyForFulfillment,
             "Waiting" => IntentState::Waiting,
-            other => IntentState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IntentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IntentState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IntentState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IntentState::from(s))
+                }
+            }
 impl IntentState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -413,18 +382,13 @@ impl IntentState {
             IntentState::InProgress => "InProgress",
             IntentState::ReadyForFulfillment => "ReadyForFulfillment",
             IntentState::Waiting => "Waiting",
-            IntentState::Unknown(value) => value.as_str(),
+            IntentState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Failed",
-            "Fulfilled",
-            "FulfillmentInProgress",
-            "InProgress",
-            "ReadyForFulfillment",
-            "Waiting",
+            "Failed", "Fulfilled", "FulfillmentInProgress", "InProgress", "ReadyForFulfillment", "Waiting"
         ]
     }
 }
@@ -437,7 +401,7 @@ impl AsRef<str> for IntentState {
 /// <p>A value that Amazon Lex V2 uses to fulfill an intent. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Slot {
+pub struct Slot  {
     /// <p>The current value of the slot.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::model::Value>,
@@ -449,41 +413,36 @@ pub struct Slot {
     pub values: std::option::Option<std::vec::Vec<crate::model::Slot>>,
     /// <p>The constituent sub slots of a composite slot.</p>
     #[doc(hidden)]
-    pub sub_slots:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
+    pub sub_slots: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
 }
 impl Slot {
     /// <p>The current value of the slot.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::Value> {
+    pub fn value(&self) -> std::option::Option<& crate::model::Value> {
         self.value.as_ref()
     }
     /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
-    pub fn shape(&self) -> std::option::Option<&crate::model::Shape> {
+    pub fn shape(&self) -> std::option::Option<& crate::model::Shape> {
         self.shape.as_ref()
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
-    pub fn values(&self) -> std::option::Option<&[crate::model::Slot]> {
+    pub fn values(&self) -> std::option::Option<& [crate::model::Slot]> {
         self.values.as_deref()
     }
     /// <p>The constituent sub slots of a composite slot.</p>
-    pub fn sub_slots(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Slot>>
-    {
+    pub fn sub_slots(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Slot>> {
         self.sub_slots.as_ref()
     }
 }
 /// See [`Slot`](crate::model::Slot).
 pub mod slot {
-
+    
     /// A builder for [`Slot`](crate::model::Slot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::Value>,
         pub(crate) shape: std::option::Option<crate::model::Shape>,
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::Slot>>,
-        pub(crate) sub_slots:
-            std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
+        pub(crate) sub_slots: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>,
     }
     impl Builder {
         /// <p>The current value of the slot.</p>
@@ -493,8 +452,7 @@ pub mod slot {
         }
         /// <p>The current value of the slot.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::Value>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
         pub fn shape(mut self, input: crate::model::Shape) -> Self {
@@ -503,8 +461,7 @@ pub mod slot {
         }
         /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
         pub fn set_shape(mut self, input: std::option::Option<crate::model::Shape>) -> Self {
-            self.shape = input;
-            self
+            self.shape = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -513,53 +470,45 @@ pub mod slot {
         /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
         pub fn values(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Slot>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::Slot>>) -> Self {
+            self.values = input; self
         }
         /// Adds a key-value pair to `sub_slots`.
         ///
         /// To override the contents of this collection use [`set_sub_slots`](Self::set_sub_slots).
         ///
         /// <p>The constituent sub slots of a composite slot.</p>
-        pub fn sub_slots(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Slot,
-        ) -> Self {
+        pub fn sub_slots(mut self, k: impl Into<std::string::String>, v: crate::model::Slot) -> Self {
             let mut hash_map = self.sub_slots.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.sub_slots = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.sub_slots = Some(hash_map);
+                            self
         }
         /// <p>The constituent sub slots of a composite slot.</p>
-        pub fn set_sub_slots(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Slot>,
-            >,
-        ) -> Self {
-            self.sub_slots = input;
-            self
+        pub fn set_sub_slots(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Slot>>) -> Self {
+            self.sub_slots = input; self
         }
         /// Consumes the builder and constructs a [`Slot`](crate::model::Slot).
         pub fn build(self) -> crate::model::Slot {
             crate::model::Slot {
-                value: self.value,
-                shape: self.shape,
-                values: self.values,
-                sub_slots: self.sub_slots,
+                value: self.value
+                ,
+                shape: self.shape
+                ,
+                values: self.values
+                ,
+                sub_slots: self.sub_slots
+                ,
             }
         }
     }
+    
+    
 }
 impl Slot {
     /// Creates a new builder-style object to manufacture [`Slot`](crate::model::Slot).
@@ -574,9 +523,9 @@ impl Slot {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let shape = unimplemented!();
 /// match shape {
@@ -599,22 +548,14 @@ impl Slot {
 /// Specifically, when `shape` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Shape::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Shape {
     #[allow(missing_docs)] // documentation missing in model
     Composite,
@@ -623,7 +564,7 @@ pub enum Shape {
     #[allow(missing_docs)] // documentation missing in model
     Scalar,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Shape {
     fn from(s: &str) -> Self {
@@ -631,17 +572,17 @@ impl std::convert::From<&str> for Shape {
             "Composite" => Shape::Composite,
             "List" => Shape::List,
             "Scalar" => Shape::Scalar,
-            other => Shape::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Shape::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Shape {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Shape::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Shape::from(s))
+                }
+            }
 impl Shape {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -649,12 +590,14 @@ impl Shape {
             Shape::Composite => "Composite",
             Shape::List => "List",
             Shape::Scalar => "Scalar",
-            Shape::Unknown(value) => value.as_str(),
+            Shape::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Composite", "List", "Scalar"]
+        &[
+            "Composite", "List", "Scalar"
+        ]
     }
 }
 impl AsRef<str> for Shape {
@@ -666,7 +609,7 @@ impl AsRef<str> for Shape {
 /// <p>The value of a slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Value {
+pub struct Value  {
     /// <p>The text of the utterance from the user that was entered for the slot.</p>
     #[doc(hidden)]
     pub original_value: std::option::Option<std::string::String>,
@@ -679,21 +622,21 @@ pub struct Value {
 }
 impl Value {
     /// <p>The text of the utterance from the user that was entered for the slot.</p>
-    pub fn original_value(&self) -> std::option::Option<&str> {
+    pub fn original_value(&self) -> std::option::Option<& str> {
         self.original_value.as_deref()
     }
     /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-    pub fn interpreted_value(&self) -> std::option::Option<&str> {
+    pub fn interpreted_value(&self) -> std::option::Option<& str> {
         self.interpreted_value.as_deref()
     }
     /// <p>A list of additional values that have been recognized for the slot.</p>
-    pub fn resolved_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resolved_values(&self) -> std::option::Option<& [std::string::String]> {
         self.resolved_values.as_deref()
     }
 }
 /// See [`Value`](crate::model::Value).
 pub mod value {
-
+    
     /// A builder for [`Value`](crate::model::Value).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -708,12 +651,8 @@ pub mod value {
             self
         }
         /// <p>The text of the utterance from the user that was entered for the slot.</p>
-        pub fn set_original_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.original_value = input;
-            self
+        pub fn set_original_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.original_value = input; self
         }
         /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
         pub fn interpreted_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -721,12 +660,8 @@ pub mod value {
             self
         }
         /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-        pub fn set_interpreted_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.interpreted_value = input;
-            self
+        pub fn set_interpreted_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.interpreted_value = input; self
         }
         /// Appends an item to `resolved_values`.
         ///
@@ -735,27 +670,28 @@ pub mod value {
         /// <p>A list of additional values that have been recognized for the slot.</p>
         pub fn resolved_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resolved_values.unwrap_or_default();
-            v.push(input.into());
-            self.resolved_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.resolved_values = Some(v);
+                            self
         }
         /// <p>A list of additional values that have been recognized for the slot.</p>
-        pub fn set_resolved_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resolved_values = input;
-            self
+        pub fn set_resolved_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resolved_values = input; self
         }
         /// Consumes the builder and constructs a [`Value`](crate::model::Value).
         pub fn build(self) -> crate::model::Value {
             crate::model::Value {
-                original_value: self.original_value,
-                interpreted_value: self.interpreted_value,
-                resolved_values: self.resolved_values,
+                original_value: self.original_value
+                ,
+                interpreted_value: self.interpreted_value
+                ,
+                resolved_values: self.resolved_values
+                ,
             }
         }
     }
+    
+    
 }
 impl Value {
     /// Creates a new builder-style object to manufacture [`Value`](crate::model::Value).
@@ -764,11 +700,11 @@ impl Value {
     }
 }
 
-/// <p>Provides information about the sentiment expressed in a user's response in a conversation. Sentiments are determined using Amazon Comprehend. Sentiments are only returned if they are enabled for the bot.</p>
+/// <p>Provides information about the sentiment expressed in a user's response in a conversation. Sentiments are determined using Amazon Comprehend. Sentiments are only returned if they are enabled for the bot.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html"> Determine Sentiment </a> in the <i>Amazon Comprehend developer guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SentimentResponse {
+pub struct SentimentResponse  {
     /// <p>The overall sentiment expressed in the user's response. This is the sentiment most likely expressed by the user based on the analysis by Amazon Comprehend.</p>
     #[doc(hidden)]
     pub sentiment: std::option::Option<crate::model::SentimentType>,
@@ -778,17 +714,17 @@ pub struct SentimentResponse {
 }
 impl SentimentResponse {
     /// <p>The overall sentiment expressed in the user's response. This is the sentiment most likely expressed by the user based on the analysis by Amazon Comprehend.</p>
-    pub fn sentiment(&self) -> std::option::Option<&crate::model::SentimentType> {
+    pub fn sentiment(&self) -> std::option::Option<& crate::model::SentimentType> {
         self.sentiment.as_ref()
     }
     /// <p>The individual sentiment responses for the utterance.</p>
-    pub fn sentiment_score(&self) -> std::option::Option<&crate::model::SentimentScore> {
+    pub fn sentiment_score(&self) -> std::option::Option<& crate::model::SentimentScore> {
         self.sentiment_score.as_ref()
     }
 }
 /// See [`SentimentResponse`](crate::model::SentimentResponse).
 pub mod sentiment_response {
-
+    
     /// A builder for [`SentimentResponse`](crate::model::SentimentResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -802,12 +738,8 @@ pub mod sentiment_response {
             self
         }
         /// <p>The overall sentiment expressed in the user's response. This is the sentiment most likely expressed by the user based on the analysis by Amazon Comprehend.</p>
-        pub fn set_sentiment(
-            mut self,
-            input: std::option::Option<crate::model::SentimentType>,
-        ) -> Self {
-            self.sentiment = input;
-            self
+        pub fn set_sentiment(mut self, input: std::option::Option<crate::model::SentimentType>) -> Self {
+            self.sentiment = input; self
         }
         /// <p>The individual sentiment responses for the utterance.</p>
         pub fn sentiment_score(mut self, input: crate::model::SentimentScore) -> Self {
@@ -815,21 +747,21 @@ pub mod sentiment_response {
             self
         }
         /// <p>The individual sentiment responses for the utterance.</p>
-        pub fn set_sentiment_score(
-            mut self,
-            input: std::option::Option<crate::model::SentimentScore>,
-        ) -> Self {
-            self.sentiment_score = input;
-            self
+        pub fn set_sentiment_score(mut self, input: std::option::Option<crate::model::SentimentScore>) -> Self {
+            self.sentiment_score = input; self
         }
         /// Consumes the builder and constructs a [`SentimentResponse`](crate::model::SentimentResponse).
         pub fn build(self) -> crate::model::SentimentResponse {
             crate::model::SentimentResponse {
-                sentiment: self.sentiment,
-                sentiment_score: self.sentiment_score,
+                sentiment: self.sentiment
+                ,
+                sentiment_score: self.sentiment_score
+                ,
             }
         }
     }
+    
+    
 }
 impl SentimentResponse {
     /// Creates a new builder-style object to manufacture [`SentimentResponse`](crate::model::SentimentResponse).
@@ -841,7 +773,7 @@ impl SentimentResponse {
 /// <p>The individual sentiment responses for the utterance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SentimentScore {
+pub struct SentimentScore  {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     #[doc(hidden)]
     pub positive: f64,
@@ -875,7 +807,7 @@ impl SentimentScore {
 }
 /// See [`SentimentScore`](crate::model::SentimentScore).
 pub mod sentiment_score {
-
+    
     /// A builder for [`SentimentScore`](crate::model::SentimentScore).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -892,8 +824,7 @@ pub mod sentiment_score {
         }
         /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
         pub fn set_positive(mut self, input: std::option::Option<f64>) -> Self {
-            self.positive = input;
-            self
+            self.positive = input; self
         }
         /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
         pub fn negative(mut self, input: f64) -> Self {
@@ -902,8 +833,7 @@ pub mod sentiment_score {
         }
         /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
         pub fn set_negative(mut self, input: std::option::Option<f64>) -> Self {
-            self.negative = input;
-            self
+            self.negative = input; self
         }
         /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
         pub fn neutral(mut self, input: f64) -> Self {
@@ -912,8 +842,7 @@ pub mod sentiment_score {
         }
         /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
         pub fn set_neutral(mut self, input: std::option::Option<f64>) -> Self {
-            self.neutral = input;
-            self
+            self.neutral = input; self
         }
         /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
         pub fn mixed(mut self, input: f64) -> Self {
@@ -922,19 +851,28 @@ pub mod sentiment_score {
         }
         /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
         pub fn set_mixed(mut self, input: std::option::Option<f64>) -> Self {
-            self.mixed = input;
-            self
+            self.mixed = input; self
         }
         /// Consumes the builder and constructs a [`SentimentScore`](crate::model::SentimentScore).
         pub fn build(self) -> crate::model::SentimentScore {
             crate::model::SentimentScore {
-                positive: self.positive.unwrap_or_default(),
-                negative: self.negative.unwrap_or_default(),
-                neutral: self.neutral.unwrap_or_default(),
-                mixed: self.mixed.unwrap_or_default(),
+                positive: self.positive
+                    .unwrap_or_default()
+                ,
+                negative: self.negative
+                    .unwrap_or_default()
+                ,
+                neutral: self.neutral
+                    .unwrap_or_default()
+                ,
+                mixed: self.mixed
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SentimentScore {
     /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore).
@@ -949,9 +887,9 @@ impl SentimentScore {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sentimenttype = unimplemented!();
 /// match sentimenttype {
@@ -975,22 +913,14 @@ impl SentimentScore {
 /// Specifically, when `sentimenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SentimentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SentimentType {
     #[allow(missing_docs)] // documentation missing in model
     Mixed,
@@ -1001,7 +931,7 @@ pub enum SentimentType {
     #[allow(missing_docs)] // documentation missing in model
     Positive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SentimentType {
     fn from(s: &str) -> Self {
@@ -1010,17 +940,17 @@ impl std::convert::From<&str> for SentimentType {
             "NEGATIVE" => SentimentType::Negative,
             "NEUTRAL" => SentimentType::Neutral,
             "POSITIVE" => SentimentType::Positive,
-            other => SentimentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SentimentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SentimentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SentimentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SentimentType::from(s))
+                }
+            }
 impl SentimentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1029,12 +959,14 @@ impl SentimentType {
             SentimentType::Negative => "NEGATIVE",
             SentimentType::Neutral => "NEUTRAL",
             SentimentType::Positive => "POSITIVE",
-            SentimentType::Unknown(value) => value.as_str(),
+            SentimentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
+        &[
+            "MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"
+        ]
     }
 }
 impl AsRef<str> for SentimentType {
@@ -1046,7 +978,7 @@ impl AsRef<str> for SentimentType {
 /// <p>Provides a score that indicates the confidence that Amazon Lex V2 has that an intent is the one that satisfies the user's intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfidenceScore {
+pub struct ConfidenceScore  {
     /// <p>A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
     #[doc(hidden)]
     pub score: f64,
@@ -1059,7 +991,7 @@ impl ConfidenceScore {
 }
 /// See [`ConfidenceScore`](crate::model::ConfidenceScore).
 pub mod confidence_score {
-
+    
     /// A builder for [`ConfidenceScore`](crate::model::ConfidenceScore).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1073,16 +1005,19 @@ pub mod confidence_score {
         }
         /// <p>A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
         pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
-            self.score = input;
-            self
+            self.score = input; self
         }
         /// Consumes the builder and constructs a [`ConfidenceScore`](crate::model::ConfidenceScore).
         pub fn build(self) -> crate::model::ConfidenceScore {
             crate::model::ConfidenceScore {
-                score: self.score.unwrap_or_default(),
+                score: self.score
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfidenceScore {
     /// Creates a new builder-style object to manufacture [`ConfidenceScore`](crate::model::ConfidenceScore).
@@ -1094,7 +1029,7 @@ impl ConfidenceScore {
 /// <p>The state of the user's session with Amazon Lex V2.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionState {
+pub struct SessionState  {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
     #[doc(hidden)]
     pub dialog_action: std::option::Option<crate::model::DialogAction>,
@@ -1106,8 +1041,7 @@ pub struct SessionState {
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
     #[doc(hidden)]
-    pub session_attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub session_attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique identifier for a specific request.</p>
     #[doc(hidden)]
     pub originating_request_id: std::option::Option<std::string::String>,
@@ -1117,45 +1051,40 @@ pub struct SessionState {
 }
 impl SessionState {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
-    pub fn dialog_action(&self) -> std::option::Option<&crate::model::DialogAction> {
+    pub fn dialog_action(&self) -> std::option::Option<& crate::model::DialogAction> {
         self.dialog_action.as_ref()
     }
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
-    pub fn intent(&self) -> std::option::Option<&crate::model::Intent> {
+    pub fn intent(&self) -> std::option::Option<& crate::model::Intent> {
         self.intent.as_ref()
     }
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-    pub fn active_contexts(&self) -> std::option::Option<&[crate::model::ActiveContext]> {
+    pub fn active_contexts(&self) -> std::option::Option<& [crate::model::ActiveContext]> {
         self.active_contexts.as_deref()
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-    pub fn session_attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn session_attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.session_attributes.as_ref()
     }
     /// <p>A unique identifier for a specific request.</p>
-    pub fn originating_request_id(&self) -> std::option::Option<&str> {
+    pub fn originating_request_id(&self) -> std::option::Option<& str> {
         self.originating_request_id.as_deref()
     }
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
-    pub fn runtime_hints(&self) -> std::option::Option<&crate::model::RuntimeHints> {
+    pub fn runtime_hints(&self) -> std::option::Option<& crate::model::RuntimeHints> {
         self.runtime_hints.as_ref()
     }
 }
 /// See [`SessionState`](crate::model::SessionState).
 pub mod session_state {
-
+    
     /// A builder for [`SessionState`](crate::model::SessionState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dialog_action: std::option::Option<crate::model::DialogAction>,
         pub(crate) intent: std::option::Option<crate::model::Intent>,
         pub(crate) active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
-        pub(crate) session_attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) session_attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) originating_request_id: std::option::Option<std::string::String>,
         pub(crate) runtime_hints: std::option::Option<crate::model::RuntimeHints>,
     }
@@ -1166,12 +1095,8 @@ pub mod session_state {
             self
         }
         /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
-        pub fn set_dialog_action(
-            mut self,
-            input: std::option::Option<crate::model::DialogAction>,
-        ) -> Self {
-            self.dialog_action = input;
-            self
+        pub fn set_dialog_action(mut self, input: std::option::Option<crate::model::DialogAction>) -> Self {
+            self.dialog_action = input; self
         }
         /// <p>The active intent that Amazon Lex V2 is processing.</p>
         pub fn intent(mut self, input: crate::model::Intent) -> Self {
@@ -1180,8 +1105,7 @@ pub mod session_state {
         }
         /// <p>The active intent that Amazon Lex V2 is processing.</p>
         pub fn set_intent(mut self, input: std::option::Option<crate::model::Intent>) -> Self {
-            self.intent = input;
-            self
+            self.intent = input; self
         }
         /// Appends an item to `active_contexts`.
         ///
@@ -1190,42 +1114,28 @@ pub mod session_state {
         /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
         pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
-            v.push(input);
-            self.active_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.active_contexts = Some(v);
+                            self
         }
         /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-        pub fn set_active_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
-        ) -> Self {
-            self.active_contexts = input;
-            self
+        pub fn set_active_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>) -> Self {
+            self.active_contexts = input; self
         }
         /// Adds a key-value pair to `session_attributes`.
         ///
         /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
         ///
         /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-        pub fn session_attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn session_attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.session_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.session_attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.session_attributes = Some(hash_map);
+                            self
         }
         /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-        pub fn set_session_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.session_attributes = input;
-            self
+        pub fn set_session_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.session_attributes = input; self
         }
         /// <p>A unique identifier for a specific request.</p>
         pub fn originating_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1233,12 +1143,8 @@ pub mod session_state {
             self
         }
         /// <p>A unique identifier for a specific request.</p>
-        pub fn set_originating_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.originating_request_id = input;
-            self
+        pub fn set_originating_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.originating_request_id = input; self
         }
         /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
         pub fn runtime_hints(mut self, input: crate::model::RuntimeHints) -> Self {
@@ -1246,25 +1152,29 @@ pub mod session_state {
             self
         }
         /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
-        pub fn set_runtime_hints(
-            mut self,
-            input: std::option::Option<crate::model::RuntimeHints>,
-        ) -> Self {
-            self.runtime_hints = input;
-            self
+        pub fn set_runtime_hints(mut self, input: std::option::Option<crate::model::RuntimeHints>) -> Self {
+            self.runtime_hints = input; self
         }
         /// Consumes the builder and constructs a [`SessionState`](crate::model::SessionState).
         pub fn build(self) -> crate::model::SessionState {
             crate::model::SessionState {
-                dialog_action: self.dialog_action,
-                intent: self.intent,
-                active_contexts: self.active_contexts,
-                session_attributes: self.session_attributes,
-                originating_request_id: self.originating_request_id,
-                runtime_hints: self.runtime_hints,
+                dialog_action: self.dialog_action
+                ,
+                intent: self.intent
+                ,
+                active_contexts: self.active_contexts
+                ,
+                session_attributes: self.session_attributes
+                ,
+                originating_request_id: self.originating_request_id
+                ,
+                runtime_hints: self.runtime_hints
+                ,
             }
         }
     }
+    
+    
 }
 impl SessionState {
     /// Creates a new builder-style object to manufacture [`SessionState`](crate::model::SessionState).
@@ -1273,94 +1183,64 @@ impl SessionState {
     }
 }
 
-/// <p>You can provide Amazon Lex V2 with hints to the phrases that a customer is likely to use for a slot. When a slot with hints is resolved, the phrases in the runtime hints are preferred in the resolution. You can provide hints for a maximum of 100 intents. You can provide a maximum of 100 slots.</p>
-/// <p>Before you can use runtime hints with an existing bot, you must first rebuild the bot.</p>
+/// <p>You can provide Amazon Lex V2 with hints to the phrases that a customer is likely to use for a slot. When a slot with hints is resolved, the phrases in the runtime hints are preferred in the resolution. You can provide hints for a maximum of 100 intents. You can provide a maximum of 100 slots.</p> 
+/// <p>Before you can use runtime hints with an existing bot, you must first rebuild the bot.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using runtime hints to improve recognition of slot values</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeHints {
-    /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
-    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
+pub struct RuntimeHints  {
+    /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p> 
+    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p> 
     /// <p>The intent name and slot name must exist.</p>
     #[doc(hidden)]
-    pub slot_hints: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
-        >,
-    >,
+    pub slot_hints: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>>>,
 }
 impl RuntimeHints {
-    /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
-    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
+    /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p> 
+    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p> 
     /// <p>The intent name and slot name must exist.</p>
-    pub fn slot_hints(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
-        >,
-    > {
+    pub fn slot_hints(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>>> {
         self.slot_hints.as_ref()
     }
 }
 /// See [`RuntimeHints`](crate::model::RuntimeHints).
 pub mod runtime_hints {
-
+    
     /// A builder for [`RuntimeHints`](crate::model::RuntimeHints).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) slot_hints: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
-            >,
-        >,
+        pub(crate) slot_hints: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>>>,
     }
     impl Builder {
         /// Adds a key-value pair to `slot_hints`.
         ///
         /// To override the contents of this collection use [`set_slot_hints`](Self::set_slot_hints).
         ///
-        /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
-        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
+        /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p> 
+        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p> 
         /// <p>The intent name and slot name must exist.</p>
-        pub fn slot_hints(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
-        ) -> Self {
+        pub fn slot_hints(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>) -> Self {
             let mut hash_map = self.slot_hints.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.slot_hints = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.slot_hints = Some(hash_map);
+                            self
         }
-        /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
-        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
+        /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p> 
+        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p> 
         /// <p>The intent name and slot name must exist.</p>
-        pub fn set_slot_hints(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::collections::HashMap<
-                        std::string::String,
-                        crate::model::RuntimeHintDetails,
-                    >,
-                >,
-            >,
-        ) -> Self {
-            self.slot_hints = input;
-            self
+        pub fn set_slot_hints(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>>>) -> Self {
+            self.slot_hints = input; self
         }
         /// Consumes the builder and constructs a [`RuntimeHints`](crate::model::RuntimeHints).
         pub fn build(self) -> crate::model::RuntimeHints {
             crate::model::RuntimeHints {
-                slot_hints: self.slot_hints,
+                slot_hints: self.slot_hints
+                ,
             }
         }
     }
+    
+    
 }
 impl RuntimeHints {
     /// Creates a new builder-style object to manufacture [`RuntimeHints`](crate::model::RuntimeHints).
@@ -1372,41 +1252,32 @@ impl RuntimeHints {
 /// <p>Provides an array of phrases that should be given preference when resolving values for a slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeHintDetails {
+pub struct RuntimeHintDetails  {
     /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
     #[doc(hidden)]
     pub runtime_hint_values: std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
     #[doc(hidden)]
-    pub sub_slot_hints: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
-    >,
+    pub sub_slot_hints: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>>,
 }
 impl RuntimeHintDetails {
     /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
-    pub fn runtime_hint_values(&self) -> std::option::Option<&[crate::model::RuntimeHintValue]> {
+    pub fn runtime_hint_values(&self) -> std::option::Option<& [crate::model::RuntimeHintValue]> {
         self.runtime_hint_values.as_deref()
     }
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
-    pub fn sub_slot_hints(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
-    > {
+    pub fn sub_slot_hints(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>> {
         self.sub_slot_hints.as_ref()
     }
 }
 /// See [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
 pub mod runtime_hint_details {
-
+    
     /// A builder for [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) runtime_hint_values:
-            std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
-        pub(crate) sub_slot_hints: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
-        >,
+        pub(crate) runtime_hint_values: std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
+        pub(crate) sub_slot_hints: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>>,
     }
     impl Builder {
         /// Appends an item to `runtime_hint_values`.
@@ -1416,51 +1287,41 @@ pub mod runtime_hint_details {
         /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
         pub fn runtime_hint_values(mut self, input: crate::model::RuntimeHintValue) -> Self {
             let mut v = self.runtime_hint_values.unwrap_or_default();
-            v.push(input);
-            self.runtime_hint_values = Some(v);
-            self
+                            v.push(input);
+                            self.runtime_hint_values = Some(v);
+                            self
         }
         /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
-        pub fn set_runtime_hint_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
-        ) -> Self {
-            self.runtime_hint_values = input;
-            self
+        pub fn set_runtime_hint_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>) -> Self {
+            self.runtime_hint_values = input; self
         }
         /// Adds a key-value pair to `sub_slot_hints`.
         ///
         /// To override the contents of this collection use [`set_sub_slot_hints`](Self::set_sub_slot_hints).
         ///
         /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
-        pub fn sub_slot_hints(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::RuntimeHintDetails,
-        ) -> Self {
+        pub fn sub_slot_hints(mut self, k: impl Into<std::string::String>, v: crate::model::RuntimeHintDetails) -> Self {
             let mut hash_map = self.sub_slot_hints.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.sub_slot_hints = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.sub_slot_hints = Some(hash_map);
+                            self
         }
         /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
-        pub fn set_sub_slot_hints(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
-            >,
-        ) -> Self {
-            self.sub_slot_hints = input;
-            self
+        pub fn set_sub_slot_hints(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>>) -> Self {
+            self.sub_slot_hints = input; self
         }
         /// Consumes the builder and constructs a [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
         pub fn build(self) -> crate::model::RuntimeHintDetails {
             crate::model::RuntimeHintDetails {
-                runtime_hint_values: self.runtime_hint_values,
-                sub_slot_hints: self.sub_slot_hints,
+                runtime_hint_values: self.runtime_hint_values
+                ,
+                sub_slot_hints: self.sub_slot_hints
+                ,
             }
         }
     }
+    
+    
 }
 impl RuntimeHintDetails {
     /// Creates a new builder-style object to manufacture [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
@@ -1472,20 +1333,20 @@ impl RuntimeHintDetails {
 /// <p>Provides the phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeHintValue {
+pub struct RuntimeHintValue  {
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
     #[doc(hidden)]
     pub phrase: std::option::Option<std::string::String>,
 }
 impl RuntimeHintValue {
     /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
-    pub fn phrase(&self) -> std::option::Option<&str> {
+    pub fn phrase(&self) -> std::option::Option<& str> {
         self.phrase.as_deref()
     }
 }
 /// See [`RuntimeHintValue`](crate::model::RuntimeHintValue).
 pub mod runtime_hint_value {
-
+    
     /// A builder for [`RuntimeHintValue`](crate::model::RuntimeHintValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1499,16 +1360,18 @@ pub mod runtime_hint_value {
         }
         /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
         pub fn set_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phrase = input;
-            self
+            self.phrase = input; self
         }
         /// Consumes the builder and constructs a [`RuntimeHintValue`](crate::model::RuntimeHintValue).
         pub fn build(self) -> crate::model::RuntimeHintValue {
             crate::model::RuntimeHintValue {
-                phrase: self.phrase,
+                phrase: self.phrase
+                ,
             }
         }
     }
+    
+    
 }
 impl RuntimeHintValue {
     /// Creates a new builder-style object to manufacture [`RuntimeHintValue`](crate::model::RuntimeHintValue).
@@ -1517,52 +1380,46 @@ impl RuntimeHintValue {
     }
 }
 
-/// <p>Contains information about the contexts that a user is using in a session. You can configure Amazon Lex V2 to set a context when an intent is fulfilled, or you can set a context using the , , or operations.</p>
+/// <p>Contains information about the contexts that a user is using in a session. You can configure Amazon Lex V2 to set a context when an intent is fulfilled, or you can set a context using the , , or operations.</p> 
 /// <p>Use a context to indicate to Amazon Lex V2 intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActiveContext {
+pub struct ActiveContext  {
     /// <p>The name of the context.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
     #[doc(hidden)]
     pub time_to_live: std::option::Option<crate::model::ActiveContextTimeToLive>,
-    /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
+    /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p> 
     /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
     #[doc(hidden)]
-    pub context_attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub context_attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ActiveContext {
     /// <p>The name of the context.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
-    pub fn time_to_live(&self) -> std::option::Option<&crate::model::ActiveContextTimeToLive> {
+    pub fn time_to_live(&self) -> std::option::Option<& crate::model::ActiveContextTimeToLive> {
         self.time_to_live.as_ref()
     }
-    /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
+    /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p> 
     /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
-    pub fn context_attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn context_attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.context_attributes.as_ref()
     }
 }
 /// See [`ActiveContext`](crate::model::ActiveContext).
 pub mod active_context {
-
+    
     /// A builder for [`ActiveContext`](crate::model::ActiveContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) time_to_live: std::option::Option<crate::model::ActiveContextTimeToLive>,
-        pub(crate) context_attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) context_attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the context.</p>
@@ -1572,8 +1429,7 @@ pub mod active_context {
         }
         /// <p>The name of the context.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
         pub fn time_to_live(mut self, input: crate::model::ActiveContextTimeToLive) -> Self {
@@ -1581,49 +1437,40 @@ pub mod active_context {
             self
         }
         /// <p>Indicates the number of turns or seconds that the context is active. Once the time to live expires, the context is no longer returned in a response.</p>
-        pub fn set_time_to_live(
-            mut self,
-            input: std::option::Option<crate::model::ActiveContextTimeToLive>,
-        ) -> Self {
-            self.time_to_live = input;
-            self
+        pub fn set_time_to_live(mut self, input: std::option::Option<crate::model::ActiveContextTimeToLive>) -> Self {
+            self.time_to_live = input; self
         }
         /// Adds a key-value pair to `context_attributes`.
         ///
         /// To override the contents of this collection use [`set_context_attributes`](Self::set_context_attributes).
         ///
-        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
+        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p> 
         /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
-        pub fn context_attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn context_attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.context_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.context_attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.context_attributes = Some(hash_map);
+                            self
         }
-        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p>
+        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request.</p> 
         /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared. </p>
-        pub fn set_context_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.context_attributes = input;
-            self
+        pub fn set_context_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.context_attributes = input; self
         }
         /// Consumes the builder and constructs a [`ActiveContext`](crate::model::ActiveContext).
         pub fn build(self) -> crate::model::ActiveContext {
             crate::model::ActiveContext {
-                name: self.name,
-                time_to_live: self.time_to_live,
-                context_attributes: self.context_attributes,
+                name: self.name
+                ,
+                time_to_live: self.time_to_live
+                ,
+                context_attributes: self.context_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl ActiveContext {
     /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::model::ActiveContext).
@@ -1635,7 +1482,7 @@ impl ActiveContext {
 /// <p>The time that a context is active. You can specify the time to live in seconds or in conversation turns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActiveContextTimeToLive {
+pub struct ActiveContextTimeToLive  {
     /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
     #[doc(hidden)]
     pub time_to_live_in_seconds: std::option::Option<i32>,
@@ -1655,7 +1502,7 @@ impl ActiveContextTimeToLive {
 }
 /// See [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
 pub mod active_context_time_to_live {
-
+    
     /// A builder for [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1670,8 +1517,7 @@ pub mod active_context_time_to_live {
         }
         /// <p>The number of seconds that the context is active. You can specify between 5 and 86400 seconds (24 hours).</p>
         pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.time_to_live_in_seconds = input;
-            self
+            self.time_to_live_in_seconds = input; self
         }
         /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
         pub fn turns_to_live(mut self, input: i32) -> Self {
@@ -1680,17 +1526,20 @@ pub mod active_context_time_to_live {
         }
         /// <p>The number of turns that the context is active. You can specify up to 20 turns. Each request and response from the bot is a turn.</p>
         pub fn set_turns_to_live(mut self, input: std::option::Option<i32>) -> Self {
-            self.turns_to_live = input;
-            self
+            self.turns_to_live = input; self
         }
         /// Consumes the builder and constructs a [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
         pub fn build(self) -> crate::model::ActiveContextTimeToLive {
             crate::model::ActiveContextTimeToLive {
-                time_to_live_in_seconds: self.time_to_live_in_seconds,
-                turns_to_live: self.turns_to_live,
+                time_to_live_in_seconds: self.time_to_live_in_seconds
+                ,
+                turns_to_live: self.turns_to_live
+                ,
             }
         }
     }
+    
+    
 }
 impl ActiveContextTimeToLive {
     /// Creates a new builder-style object to manufacture [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
@@ -1702,25 +1551,25 @@ impl ActiveContextTimeToLive {
 /// <p>The next action that Amazon Lex V2 should take.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DialogAction {
-    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
-    /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+pub struct DialogAction  {
+    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li> 
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li> 
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li> 
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li> 
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DialogActionType>,
     /// <p>The name of the slot that should be elicited from the user.</p>
     #[doc(hidden)]
     pub slot_to_elicit: std::option::Option<std::string::String>,
-    /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
-    /// <ul>
-    /// <li> <p>Spell by letter - "b" "o" "b"</p> </li>
-    /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
-    /// </ul>
+    /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> 
+    /// <ul> 
+    /// <li> <p>Spell by letter - "b" "o" "b"</p> </li> 
+    /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
     #[doc(hidden)]
     pub slot_elicitation_style: std::option::Option<crate::model::StyleType>,
@@ -1729,38 +1578,38 @@ pub struct DialogAction {
     pub sub_slot_to_elicit: std::option::Option<crate::model::ElicitSubSlot>,
 }
 impl DialogAction {
-    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
-    /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li> 
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li> 
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li> 
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li> 
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DialogActionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DialogActionType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
+    pub fn slot_to_elicit(&self) -> std::option::Option<& str> {
         self.slot_to_elicit.as_deref()
     }
-    /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
-    /// <ul>
-    /// <li> <p>Spell by letter - "b" "o" "b"</p> </li>
-    /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
-    /// </ul>
+    /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> 
+    /// <ul> 
+    /// <li> <p>Spell by letter - "b" "o" "b"</p> </li> 
+    /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
-    pub fn slot_elicitation_style(&self) -> std::option::Option<&crate::model::StyleType> {
+    pub fn slot_elicitation_style(&self) -> std::option::Option<& crate::model::StyleType> {
         self.slot_elicitation_style.as_ref()
     }
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
-    pub fn sub_slot_to_elicit(&self) -> std::option::Option<&crate::model::ElicitSubSlot> {
+    pub fn sub_slot_to_elicit(&self) -> std::option::Option<& crate::model::ElicitSubSlot> {
         self.sub_slot_to_elicit.as_ref()
     }
 }
 /// See [`DialogAction`](crate::model::DialogAction).
 pub mod dialog_action {
-
+    
     /// A builder for [`DialogAction`](crate::model::DialogAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1770,32 +1619,28 @@ pub mod dialog_action {
         pub(crate) sub_slot_to_elicit: std::option::Option<crate::model::ElicitSubSlot>,
     }
     impl Builder {
-        /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
-        /// <ul>
-        /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-        /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-        /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
-        /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
-        /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+        /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li> 
+        /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li> 
+        /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li> 
+        /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li> 
+        /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DialogActionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
-        /// <ul>
-        /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
-        /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
-        /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
-        /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
-        /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+        /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li> 
+        /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li> 
+        /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li> 
+        /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li> 
+        /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::DialogActionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DialogActionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the slot that should be elicited from the user.</p>
         pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1803,35 +1648,27 @@ pub mod dialog_action {
             self
         }
         /// <p>The name of the slot that should be elicited from the user.</p>
-        pub fn set_slot_to_elicit(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slot_to_elicit = input;
-            self
+        pub fn set_slot_to_elicit(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slot_to_elicit = input; self
         }
-        /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
-        /// <ul>
-        /// <li> <p>Spell by letter - "b" "o" "b"</p> </li>
-        /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
-        /// </ul>
+        /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> 
+        /// <ul> 
+        /// <li> <p>Spell by letter - "b" "o" "b"</p> </li> 
+        /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
         pub fn slot_elicitation_style(mut self, input: crate::model::StyleType) -> Self {
             self.slot_elicitation_style = Some(input);
             self
         }
-        /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
-        /// <ul>
-        /// <li> <p>Spell by letter - "b" "o" "b"</p> </li>
-        /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
-        /// </ul>
+        /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p> 
+        /// <ul> 
+        /// <li> <p>Spell by letter - "b" "o" "b"</p> </li> 
+        /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
-        pub fn set_slot_elicitation_style(
-            mut self,
-            input: std::option::Option<crate::model::StyleType>,
-        ) -> Self {
-            self.slot_elicitation_style = input;
-            self
+        pub fn set_slot_elicitation_style(mut self, input: std::option::Option<crate::model::StyleType>) -> Self {
+            self.slot_elicitation_style = input; self
         }
         /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
         pub fn sub_slot_to_elicit(mut self, input: crate::model::ElicitSubSlot) -> Self {
@@ -1839,23 +1676,25 @@ pub mod dialog_action {
             self
         }
         /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
-        pub fn set_sub_slot_to_elicit(
-            mut self,
-            input: std::option::Option<crate::model::ElicitSubSlot>,
-        ) -> Self {
-            self.sub_slot_to_elicit = input;
-            self
+        pub fn set_sub_slot_to_elicit(mut self, input: std::option::Option<crate::model::ElicitSubSlot>) -> Self {
+            self.sub_slot_to_elicit = input; self
         }
         /// Consumes the builder and constructs a [`DialogAction`](crate::model::DialogAction).
         pub fn build(self) -> crate::model::DialogAction {
             crate::model::DialogAction {
-                r#type: self.r#type,
-                slot_to_elicit: self.slot_to_elicit,
-                slot_elicitation_style: self.slot_elicitation_style,
-                sub_slot_to_elicit: self.sub_slot_to_elicit,
+                r#type: self.r#type
+                ,
+                slot_to_elicit: self.slot_to_elicit
+                ,
+                slot_elicitation_style: self.slot_elicitation_style
+                ,
+                sub_slot_to_elicit: self.sub_slot_to_elicit
+                ,
             }
         }
     }
+    
+    
 }
 impl DialogAction {
     /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
@@ -1867,7 +1706,7 @@ impl DialogAction {
 /// <p>The specific constituent sub slot of the composite slot to elicit in dialog action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElicitSubSlot {
+pub struct ElicitSubSlot  {
     /// <p>The name of the slot that should be elicited from the user.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1877,23 +1716,22 @@ pub struct ElicitSubSlot {
 }
 impl ElicitSubSlot {
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The field is not supported.</p>
-    pub fn sub_slot_to_elicit(&self) -> std::option::Option<&crate::model::ElicitSubSlot> {
+    pub fn sub_slot_to_elicit(&self) -> std::option::Option<& crate::model::ElicitSubSlot> {
         self.sub_slot_to_elicit.as_deref()
     }
 }
 /// See [`ElicitSubSlot`](crate::model::ElicitSubSlot).
 pub mod elicit_sub_slot {
-
+    
     /// A builder for [`ElicitSubSlot`](crate::model::ElicitSubSlot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) sub_slot_to_elicit:
-            std::option::Option<std::boxed::Box<crate::model::ElicitSubSlot>>,
+        pub(crate) sub_slot_to_elicit: std::option::Option<std::boxed::Box<crate::model::ElicitSubSlot>>,
     }
     impl Builder {
         /// <p>The name of the slot that should be elicited from the user.</p>
@@ -1903,33 +1741,29 @@ pub mod elicit_sub_slot {
         }
         /// <p>The name of the slot that should be elicited from the user.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The field is not supported.</p>
-        pub fn sub_slot_to_elicit(
-            mut self,
-            input: impl Into<std::boxed::Box<crate::model::ElicitSubSlot>>,
-        ) -> Self {
+        pub fn sub_slot_to_elicit(mut self, input: impl Into<std::boxed::Box<crate::model::ElicitSubSlot>>) -> Self {
             self.sub_slot_to_elicit = Some(input.into());
             self
         }
         /// <p>The field is not supported.</p>
-        pub fn set_sub_slot_to_elicit(
-            mut self,
-            input: std::option::Option<std::boxed::Box<crate::model::ElicitSubSlot>>,
-        ) -> Self {
-            self.sub_slot_to_elicit = input;
-            self
+        pub fn set_sub_slot_to_elicit(mut self, input: std::option::Option<std::boxed::Box<crate::model::ElicitSubSlot>>) -> Self {
+            self.sub_slot_to_elicit = input; self
         }
         /// Consumes the builder and constructs a [`ElicitSubSlot`](crate::model::ElicitSubSlot).
         pub fn build(self) -> crate::model::ElicitSubSlot {
             crate::model::ElicitSubSlot {
-                name: self.name,
-                sub_slot_to_elicit: self.sub_slot_to_elicit,
+                name: self.name
+                ,
+                sub_slot_to_elicit: self.sub_slot_to_elicit
+                ,
             }
         }
     }
+    
+    
 }
 impl ElicitSubSlot {
     /// Creates a new builder-style object to manufacture [`ElicitSubSlot`](crate::model::ElicitSubSlot).
@@ -1944,9 +1778,9 @@ impl ElicitSubSlot {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let styletype = unimplemented!();
 /// match styletype {
@@ -1969,22 +1803,14 @@ impl ElicitSubSlot {
 /// Specifically, when `styletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StyleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StyleType {
     #[allow(missing_docs)] // documentation missing in model
     Default,
@@ -1993,7 +1819,7 @@ pub enum StyleType {
     #[allow(missing_docs)] // documentation missing in model
     SpellByWord,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StyleType {
     fn from(s: &str) -> Self {
@@ -2001,17 +1827,17 @@ impl std::convert::From<&str> for StyleType {
             "Default" => StyleType::Default,
             "SpellByLetter" => StyleType::SpellByLetter,
             "SpellByWord" => StyleType::SpellByWord,
-            other => StyleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StyleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StyleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StyleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StyleType::from(s))
+                }
+            }
 impl StyleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2019,12 +1845,14 @@ impl StyleType {
             StyleType::Default => "Default",
             StyleType::SpellByLetter => "SpellByLetter",
             StyleType::SpellByWord => "SpellByWord",
-            StyleType::Unknown(value) => value.as_str(),
+            StyleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Default", "SpellByLetter", "SpellByWord"]
+        &[
+            "Default", "SpellByLetter", "SpellByWord"
+        ]
     }
 }
 impl AsRef<str> for StyleType {
@@ -2039,9 +1867,9 @@ impl AsRef<str> for StyleType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dialogactiontype = unimplemented!();
 /// match dialogactiontype {
@@ -2067,22 +1895,14 @@ impl AsRef<str> for StyleType {
 /// Specifically, when `dialogactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DialogActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DialogActionType {
     #[allow(missing_docs)] // documentation missing in model
     Close,
@@ -2097,7 +1917,7 @@ pub enum DialogActionType {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DialogActionType {
     fn from(s: &str) -> Self {
@@ -2108,17 +1928,17 @@ impl std::convert::From<&str> for DialogActionType {
             "ElicitIntent" => DialogActionType::ElicitIntent,
             "ElicitSlot" => DialogActionType::ElicitSlot,
             "None" => DialogActionType::None,
-            other => DialogActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DialogActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DialogActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DialogActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DialogActionType::from(s))
+                }
+            }
 impl DialogActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2129,18 +1949,13 @@ impl DialogActionType {
             DialogActionType::ElicitIntent => "ElicitIntent",
             DialogActionType::ElicitSlot => "ElicitSlot",
             DialogActionType::None => "None",
-            DialogActionType::Unknown(value) => value.as_str(),
+            DialogActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Close",
-            "ConfirmIntent",
-            "Delegate",
-            "ElicitIntent",
-            "ElicitSlot",
-            "None",
+            "Close", "ConfirmIntent", "Delegate", "ElicitIntent", "ElicitSlot", "None"
         ]
     }
 }
@@ -2153,34 +1968,34 @@ impl AsRef<str> for DialogActionType {
 /// <p>Container for text that is returned to the customer..</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Message {
+pub struct Message  {
     /// <p>The text of the message.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
     /// <p>Indicates the type of response.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::MessageContentType>,
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> 
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     #[doc(hidden)]
     pub image_response_card: std::option::Option<crate::model::ImageResponseCard>,
 }
 impl Message {
     /// <p>The text of the message.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>Indicates the type of response.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::model::MessageContentType> {
+    pub fn content_type(&self) -> std::option::Option<& crate::model::MessageContentType> {
         self.content_type.as_ref()
     }
-    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+    /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> 
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-    pub fn image_response_card(&self) -> std::option::Option<&crate::model::ImageResponseCard> {
+    pub fn image_response_card(&self) -> std::option::Option<& crate::model::ImageResponseCard> {
         self.image_response_card.as_ref()
     }
 }
-impl std::fmt::Debug for Message {
+impl  std::fmt::Debug for Message  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Message");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -2191,7 +2006,7 @@ impl std::fmt::Debug for Message {
 }
 /// See [`Message`](crate::model::Message).
 pub mod message {
-
+    
     /// A builder for [`Message`](crate::model::Message).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2207,8 +2022,7 @@ pub mod message {
         }
         /// <p>The text of the message.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>Indicates the type of response.</p>
         pub fn content_type(mut self, input: crate::model::MessageContentType) -> Self {
@@ -2216,34 +2030,29 @@ pub mod message {
             self
         }
         /// <p>Indicates the type of response.</p>
-        pub fn set_content_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageContentType>,
-        ) -> Self {
-            self.content_type = input;
-            self
+        pub fn set_content_type(mut self, input: std::option::Option<crate::model::MessageContentType>) -> Self {
+            self.content_type = input; self
         }
-        /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+        /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> 
         /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
         pub fn image_response_card(mut self, input: crate::model::ImageResponseCard) -> Self {
             self.image_response_card = Some(input);
             self
         }
-        /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+        /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> 
         /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-        pub fn set_image_response_card(
-            mut self,
-            input: std::option::Option<crate::model::ImageResponseCard>,
-        ) -> Self {
-            self.image_response_card = input;
-            self
+        pub fn set_image_response_card(mut self, input: std::option::Option<crate::model::ImageResponseCard>) -> Self {
+            self.image_response_card = input; self
         }
         /// Consumes the builder and constructs a [`Message`](crate::model::Message).
         pub fn build(self) -> crate::model::Message {
             crate::model::Message {
-                content: self.content,
-                content_type: self.content_type,
-                image_response_card: self.image_response_card,
+                content: self.content
+                ,
+                content_type: self.content_type
+                ,
+                image_response_card: self.image_response_card
+                ,
             }
         }
     }
@@ -2256,6 +2065,8 @@ pub mod message {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Message {
     /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
@@ -2264,11 +2075,11 @@ impl Message {
     }
 }
 
-/// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
+/// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> 
 /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageResponseCard {
+pub struct ImageResponseCard  {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -2284,25 +2095,25 @@ pub struct ImageResponseCard {
 }
 impl ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
-    pub fn subtitle(&self) -> std::option::Option<&str> {
+    pub fn subtitle(&self) -> std::option::Option<& str> {
         self.subtitle.as_deref()
     }
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
-    pub fn image_url(&self) -> std::option::Option<&str> {
+    pub fn image_url(&self) -> std::option::Option<& str> {
         self.image_url.as_deref()
     }
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    pub fn buttons(&self) -> std::option::Option<&[crate::model::Button]> {
+    pub fn buttons(&self) -> std::option::Option<& [crate::model::Button]> {
         self.buttons.as_deref()
     }
 }
 /// See [`ImageResponseCard`](crate::model::ImageResponseCard).
 pub mod image_response_card {
-
+    
     /// A builder for [`ImageResponseCard`](crate::model::ImageResponseCard).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2319,8 +2130,7 @@ pub mod image_response_card {
         }
         /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
         pub fn subtitle(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2329,8 +2139,7 @@ pub mod image_response_card {
         }
         /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
         pub fn set_subtitle(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subtitle = input;
-            self
+            self.subtitle = input; self
         }
         /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
         pub fn image_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2339,8 +2148,7 @@ pub mod image_response_card {
         }
         /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_url = input;
-            self
+            self.image_url = input; self
         }
         /// Appends an item to `buttons`.
         ///
@@ -2349,28 +2157,30 @@ pub mod image_response_card {
         /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
         pub fn buttons(mut self, input: crate::model::Button) -> Self {
             let mut v = self.buttons.unwrap_or_default();
-            v.push(input);
-            self.buttons = Some(v);
-            self
+                            v.push(input);
+                            self.buttons = Some(v);
+                            self
         }
         /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-        pub fn set_buttons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Button>>,
-        ) -> Self {
-            self.buttons = input;
-            self
+        pub fn set_buttons(mut self, input: std::option::Option<std::vec::Vec<crate::model::Button>>) -> Self {
+            self.buttons = input; self
         }
         /// Consumes the builder and constructs a [`ImageResponseCard`](crate::model::ImageResponseCard).
         pub fn build(self) -> crate::model::ImageResponseCard {
             crate::model::ImageResponseCard {
-                title: self.title,
-                subtitle: self.subtitle,
-                image_url: self.image_url,
-                buttons: self.buttons,
+                title: self.title
+                ,
+                subtitle: self.subtitle
+                ,
+                image_url: self.image_url
+                ,
+                buttons: self.buttons
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageResponseCard {
     /// Creates a new builder-style object to manufacture [`ImageResponseCard`](crate::model::ImageResponseCard).
@@ -2382,7 +2192,7 @@ impl ImageResponseCard {
 /// <p>A button that appears on a response card show to the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Button {
+pub struct Button  {
     /// <p>The text that is displayed on the button.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
@@ -2392,17 +2202,17 @@ pub struct Button {
 }
 impl Button {
     /// <p>The text that is displayed on the button.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Button`](crate::model::Button).
 pub mod button {
-
+    
     /// A builder for [`Button`](crate::model::Button).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2417,8 +2227,7 @@ pub mod button {
         }
         /// <p>The text that is displayed on the button.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2427,17 +2236,20 @@ pub mod button {
         }
         /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Button`](crate::model::Button).
         pub fn build(self) -> crate::model::Button {
             crate::model::Button {
-                text: self.text,
-                value: self.value,
+                text: self.text
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Button {
     /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
@@ -2452,9 +2264,9 @@ impl Button {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let messagecontenttype = unimplemented!();
 /// match messagecontenttype {
@@ -2478,22 +2290,14 @@ impl Button {
 /// Specifically, when `messagecontenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MessageContentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MessageContentType {
     #[allow(missing_docs)] // documentation missing in model
     CustomPayload,
@@ -2504,7 +2308,7 @@ pub enum MessageContentType {
     #[allow(missing_docs)] // documentation missing in model
     Ssml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageContentType {
     fn from(s: &str) -> Self {
@@ -2513,19 +2317,17 @@ impl std::convert::From<&str> for MessageContentType {
             "ImageResponseCard" => MessageContentType::ImageResponseCard,
             "PlainText" => MessageContentType::PlainText,
             "SSML" => MessageContentType::Ssml,
-            other => {
-                MessageContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MessageContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MessageContentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MessageContentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MessageContentType::from(s))
+                }
+            }
 impl MessageContentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2534,12 +2336,14 @@ impl MessageContentType {
             MessageContentType::ImageResponseCard => "ImageResponseCard",
             MessageContentType::PlainText => "PlainText",
             MessageContentType::Ssml => "SSML",
-            MessageContentType::Unknown(value) => value.as_str(),
+            MessageContentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CustomPayload", "ImageResponseCard", "PlainText", "SSML"]
+        &[
+            "CustomPayload", "ImageResponseCard", "PlainText", "SSML"
+        ]
     }
 }
 impl AsRef<str> for MessageContentType {
@@ -2547,3 +2351,4 @@ impl AsRef<str> for MessageContentType {
         self.as_str()
     }
 }
+

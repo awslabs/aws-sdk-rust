@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpgradePublishedSchemaOutput {
+pub struct UpgradePublishedSchemaOutput  {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     #[doc(hidden)]
     pub upgraded_schema_arn: std::option::Option<std::string::String>,
 }
 impl UpgradePublishedSchemaOutput {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-    pub fn upgraded_schema_arn(&self) -> std::option::Option<&str> {
+    pub fn upgraded_schema_arn(&self) -> std::option::Option<& str> {
         self.upgraded_schema_arn.as_deref()
     }
 }
 /// See [`UpgradePublishedSchemaOutput`](crate::output::UpgradePublishedSchemaOutput).
 pub mod upgrade_published_schema_output {
-
+    
     /// A builder for [`UpgradePublishedSchemaOutput`](crate::output::UpgradePublishedSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod upgrade_published_schema_output {
             self
         }
         /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-        pub fn set_upgraded_schema_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.upgraded_schema_arn = input;
-            self
+        pub fn set_upgraded_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upgraded_schema_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpgradePublishedSchemaOutput`](crate::output::UpgradePublishedSchemaOutput).
         pub fn build(self) -> crate::output::UpgradePublishedSchemaOutput {
             crate::output::UpgradePublishedSchemaOutput {
-                upgraded_schema_arn: self.upgraded_schema_arn,
+                upgraded_schema_arn: self.upgraded_schema_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpgradePublishedSchemaOutput {
     /// Creates a new builder-style object to manufacture [`UpgradePublishedSchemaOutput`](crate::output::UpgradePublishedSchemaOutput).
@@ -53,7 +52,7 @@ impl UpgradePublishedSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpgradeAppliedSchemaOutput {
+pub struct UpgradeAppliedSchemaOutput  {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     #[doc(hidden)]
     pub upgraded_schema_arn: std::option::Option<std::string::String>,
@@ -63,17 +62,17 @@ pub struct UpgradeAppliedSchemaOutput {
 }
 impl UpgradeAppliedSchemaOutput {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-    pub fn upgraded_schema_arn(&self) -> std::option::Option<&str> {
+    pub fn upgraded_schema_arn(&self) -> std::option::Option<& str> {
         self.upgraded_schema_arn.as_deref()
     }
     /// <p>The ARN of the directory that is returned as part of the response.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
 /// See [`UpgradeAppliedSchemaOutput`](crate::output::UpgradeAppliedSchemaOutput).
 pub mod upgrade_applied_schema_output {
-
+    
     /// A builder for [`UpgradeAppliedSchemaOutput`](crate::output::UpgradeAppliedSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -87,12 +86,8 @@ pub mod upgrade_applied_schema_output {
             self
         }
         /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-        pub fn set_upgraded_schema_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.upgraded_schema_arn = input;
-            self
+        pub fn set_upgraded_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upgraded_schema_arn = input; self
         }
         /// <p>The ARN of the directory that is returned as part of the response.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,21 +95,21 @@ pub mod upgrade_applied_schema_output {
             self
         }
         /// <p>The ARN of the directory that is returned as part of the response.</p>
-        pub fn set_directory_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_arn = input;
-            self
+        pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpgradeAppliedSchemaOutput`](crate::output::UpgradeAppliedSchemaOutput).
         pub fn build(self) -> crate::output::UpgradeAppliedSchemaOutput {
             crate::output::UpgradeAppliedSchemaOutput {
-                upgraded_schema_arn: self.upgraded_schema_arn,
-                directory_arn: self.directory_arn,
+                upgraded_schema_arn: self.upgraded_schema_arn
+                ,
+                directory_arn: self.directory_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpgradeAppliedSchemaOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeAppliedSchemaOutput`](crate::output::UpgradeAppliedSchemaOutput).
@@ -126,19 +121,24 @@ impl UpgradeAppliedSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTypedLinkFacetOutput {}
+pub struct UpdateTypedLinkFacetOutput  {
+}
 /// See [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput).
 pub mod update_typed_link_facet_output {
-
+    
     /// A builder for [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput).
         pub fn build(self) -> crate::output::UpdateTypedLinkFacetOutput {
-            crate::output::UpdateTypedLinkFacetOutput {}
+            crate::output::UpdateTypedLinkFacetOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateTypedLinkFacetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput).
@@ -150,20 +150,20 @@ impl UpdateTypedLinkFacetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSchemaOutput {
+pub struct UpdateSchemaOutput  {
     /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSchemaOutput {
     /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
 /// See [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
 pub mod update_schema_output {
-
+    
     /// A builder for [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -177,16 +177,18 @@ pub mod update_schema_output {
         }
         /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
         pub fn build(self) -> crate::output::UpdateSchemaOutput {
             crate::output::UpdateSchemaOutput {
-                schema_arn: self.schema_arn,
+                schema_arn: self.schema_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSchemaOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
@@ -198,20 +200,20 @@ impl UpdateSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateObjectAttributesOutput {
+pub struct UpdateObjectAttributesOutput  {
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl UpdateObjectAttributesOutput {
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`UpdateObjectAttributesOutput`](crate::output::UpdateObjectAttributesOutput).
 pub mod update_object_attributes_output {
-
+    
     /// A builder for [`UpdateObjectAttributesOutput`](crate::output::UpdateObjectAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -224,20 +226,19 @@ pub mod update_object_attributes_output {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`UpdateObjectAttributesOutput`](crate::output::UpdateObjectAttributesOutput).
         pub fn build(self) -> crate::output::UpdateObjectAttributesOutput {
             crate::output::UpdateObjectAttributesOutput {
-                object_identifier: self.object_identifier,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateObjectAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateObjectAttributesOutput`](crate::output::UpdateObjectAttributesOutput).
@@ -249,19 +250,24 @@ impl UpdateObjectAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLinkAttributesOutput {}
+pub struct UpdateLinkAttributesOutput  {
+}
 /// See [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput).
 pub mod update_link_attributes_output {
-
+    
     /// A builder for [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput).
         pub fn build(self) -> crate::output::UpdateLinkAttributesOutput {
-            crate::output::UpdateLinkAttributesOutput {}
+            crate::output::UpdateLinkAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLinkAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput).
@@ -273,19 +279,24 @@ impl UpdateLinkAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFacetOutput {}
+pub struct UpdateFacetOutput  {
+}
 /// See [`UpdateFacetOutput`](crate::output::UpdateFacetOutput).
 pub mod update_facet_output {
-
+    
     /// A builder for [`UpdateFacetOutput`](crate::output::UpdateFacetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFacetOutput`](crate::output::UpdateFacetOutput).
         pub fn build(self) -> crate::output::UpdateFacetOutput {
-            crate::output::UpdateFacetOutput {}
+            crate::output::UpdateFacetOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateFacetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFacetOutput`](crate::output::UpdateFacetOutput).
@@ -297,19 +308,24 @@ impl UpdateFacetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -321,19 +337,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -345,19 +366,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFacetFromObjectOutput {}
+pub struct RemoveFacetFromObjectOutput  {
+}
 /// See [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput).
 pub mod remove_facet_from_object_output {
-
+    
     /// A builder for [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput).
         pub fn build(self) -> crate::output::RemoveFacetFromObjectOutput {
-            crate::output::RemoveFacetFromObjectOutput {}
+            crate::output::RemoveFacetFromObjectOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveFacetFromObjectOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput).
@@ -369,20 +395,20 @@ impl RemoveFacetFromObjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSchemaFromJsonOutput {
+pub struct PutSchemaFromJsonOutput  {
     /// <p>The ARN of the schema to update.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl PutSchemaFromJsonOutput {
     /// <p>The ARN of the schema to update.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`PutSchemaFromJsonOutput`](crate::output::PutSchemaFromJsonOutput).
 pub mod put_schema_from_json_output {
-
+    
     /// A builder for [`PutSchemaFromJsonOutput`](crate::output::PutSchemaFromJsonOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -396,14 +422,18 @@ pub mod put_schema_from_json_output {
         }
         /// <p>The ARN of the schema to update.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`PutSchemaFromJsonOutput`](crate::output::PutSchemaFromJsonOutput).
         pub fn build(self) -> crate::output::PutSchemaFromJsonOutput {
-            crate::output::PutSchemaFromJsonOutput { arn: self.arn }
+            crate::output::PutSchemaFromJsonOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl PutSchemaFromJsonOutput {
     /// Creates a new builder-style object to manufacture [`PutSchemaFromJsonOutput`](crate::output::PutSchemaFromJsonOutput).
@@ -415,20 +445,20 @@ impl PutSchemaFromJsonOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishSchemaOutput {
+pub struct PublishSchemaOutput  {
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub published_schema_arn: std::option::Option<std::string::String>,
 }
 impl PublishSchemaOutput {
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
-    pub fn published_schema_arn(&self) -> std::option::Option<&str> {
+    pub fn published_schema_arn(&self) -> std::option::Option<& str> {
         self.published_schema_arn.as_deref()
     }
 }
 /// See [`PublishSchemaOutput`](crate::output::PublishSchemaOutput).
 pub mod publish_schema_output {
-
+    
     /// A builder for [`PublishSchemaOutput`](crate::output::PublishSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -441,20 +471,19 @@ pub mod publish_schema_output {
             self
         }
         /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
-        pub fn set_published_schema_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.published_schema_arn = input;
-            self
+        pub fn set_published_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.published_schema_arn = input; self
         }
         /// Consumes the builder and constructs a [`PublishSchemaOutput`](crate::output::PublishSchemaOutput).
         pub fn build(self) -> crate::output::PublishSchemaOutput {
             crate::output::PublishSchemaOutput {
-                published_schema_arn: self.published_schema_arn,
+                published_schema_arn: self.published_schema_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PublishSchemaOutput {
     /// Creates a new builder-style object to manufacture [`PublishSchemaOutput`](crate::output::PublishSchemaOutput).
@@ -466,7 +495,7 @@ impl PublishSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LookupPolicyOutput {
+pub struct LookupPolicyOutput  {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     #[doc(hidden)]
     pub policy_to_path_list: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
@@ -476,22 +505,21 @@ pub struct LookupPolicyOutput {
 }
 impl LookupPolicyOutput {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn policy_to_path_list(&self) -> std::option::Option<&[crate::model::PolicyToPath]> {
+    pub fn policy_to_path_list(&self) -> std::option::Option<& [crate::model::PolicyToPath]> {
         self.policy_to_path_list.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`LookupPolicyOutput`](crate::output::LookupPolicyOutput).
 pub mod lookup_policy_output {
-
+    
     /// A builder for [`LookupPolicyOutput`](crate::output::LookupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policy_to_path_list:
-            std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
+        pub(crate) policy_to_path_list: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -502,17 +530,13 @@ pub mod lookup_policy_output {
         /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
         pub fn policy_to_path_list(mut self, input: crate::model::PolicyToPath) -> Self {
             let mut v = self.policy_to_path_list.unwrap_or_default();
-            v.push(input);
-            self.policy_to_path_list = Some(v);
-            self
+                            v.push(input);
+                            self.policy_to_path_list = Some(v);
+                            self
         }
         /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        pub fn set_policy_to_path_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
-        ) -> Self {
-            self.policy_to_path_list = input;
-            self
+        pub fn set_policy_to_path_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>) -> Self {
+            self.policy_to_path_list = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -521,17 +545,20 @@ pub mod lookup_policy_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`LookupPolicyOutput`](crate::output::LookupPolicyOutput).
         pub fn build(self) -> crate::output::LookupPolicyOutput {
             crate::output::LookupPolicyOutput {
-                policy_to_path_list: self.policy_to_path_list,
-                next_token: self.next_token,
+                policy_to_path_list: self.policy_to_path_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl LookupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`LookupPolicyOutput`](crate::output::LookupPolicyOutput).
@@ -543,7 +570,7 @@ impl LookupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypedLinkFacetNamesOutput {
+pub struct ListTypedLinkFacetNamesOutput  {
     /// <p>The names of typed link facets that exist within the schema.</p>
     #[doc(hidden)]
     pub facet_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -553,17 +580,17 @@ pub struct ListTypedLinkFacetNamesOutput {
 }
 impl ListTypedLinkFacetNamesOutput {
     /// <p>The names of typed link facets that exist within the schema.</p>
-    pub fn facet_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn facet_names(&self) -> std::option::Option<& [std::string::String]> {
         self.facet_names.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTypedLinkFacetNamesOutput`](crate::output::ListTypedLinkFacetNamesOutput).
 pub mod list_typed_link_facet_names_output {
-
+    
     /// A builder for [`ListTypedLinkFacetNamesOutput`](crate::output::ListTypedLinkFacetNamesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -578,17 +605,13 @@ pub mod list_typed_link_facet_names_output {
         /// <p>The names of typed link facets that exist within the schema.</p>
         pub fn facet_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.facet_names.unwrap_or_default();
-            v.push(input.into());
-            self.facet_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.facet_names = Some(v);
+                            self
         }
         /// <p>The names of typed link facets that exist within the schema.</p>
-        pub fn set_facet_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.facet_names = input;
-            self
+        pub fn set_facet_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.facet_names = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -597,17 +620,20 @@ pub mod list_typed_link_facet_names_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTypedLinkFacetNamesOutput`](crate::output::ListTypedLinkFacetNamesOutput).
         pub fn build(self) -> crate::output::ListTypedLinkFacetNamesOutput {
             crate::output::ListTypedLinkFacetNamesOutput {
-                facet_names: self.facet_names,
-                next_token: self.next_token,
+                facet_names: self.facet_names
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTypedLinkFacetNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListTypedLinkFacetNamesOutput`](crate::output::ListTypedLinkFacetNamesOutput).
@@ -619,7 +645,7 @@ impl ListTypedLinkFacetNamesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypedLinkFacetAttributesOutput {
+pub struct ListTypedLinkFacetAttributesOutput  {
     /// <p>An ordered set of attributes associate with the typed link.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
@@ -629,22 +655,21 @@ pub struct ListTypedLinkFacetAttributesOutput {
 }
 impl ListTypedLinkFacetAttributesOutput {
     /// <p>An ordered set of attributes associate with the typed link.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::TypedLinkAttributeDefinition]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::TypedLinkAttributeDefinition]> {
         self.attributes.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTypedLinkFacetAttributesOutput`](crate::output::ListTypedLinkFacetAttributesOutput).
 pub mod list_typed_link_facet_attributes_output {
-
+    
     /// A builder for [`ListTypedLinkFacetAttributesOutput`](crate::output::ListTypedLinkFacetAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -655,17 +680,13 @@ pub mod list_typed_link_facet_attributes_output {
         /// <p>An ordered set of attributes associate with the typed link.</p>
         pub fn attributes(mut self, input: crate::model::TypedLinkAttributeDefinition) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>An ordered set of attributes associate with the typed link.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -674,17 +695,20 @@ pub mod list_typed_link_facet_attributes_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTypedLinkFacetAttributesOutput`](crate::output::ListTypedLinkFacetAttributesOutput).
         pub fn build(self) -> crate::output::ListTypedLinkFacetAttributesOutput {
             crate::output::ListTypedLinkFacetAttributesOutput {
-                attributes: self.attributes,
-                next_token: self.next_token,
+                attributes: self.attributes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTypedLinkFacetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListTypedLinkFacetAttributesOutput`](crate::output::ListTypedLinkFacetAttributesOutput).
@@ -696,7 +720,7 @@ impl ListTypedLinkFacetAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tag key value pairs that are associated with the response.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -706,17 +730,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tag key value pairs that are associated with the response.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -731,17 +755,13 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tag key value pairs that are associated with the response.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tag key value pairs that are associated with the response.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -750,17 +770,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -772,7 +795,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPublishedSchemaArnsOutput {
+pub struct ListPublishedSchemaArnsOutput  {
     /// <p>The ARNs of published schemas.</p>
     #[doc(hidden)]
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -782,17 +805,17 @@ pub struct ListPublishedSchemaArnsOutput {
 }
 impl ListPublishedSchemaArnsOutput {
     /// <p>The ARNs of published schemas.</p>
-    pub fn schema_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schema_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.schema_arns.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPublishedSchemaArnsOutput`](crate::output::ListPublishedSchemaArnsOutput).
 pub mod list_published_schema_arns_output {
-
+    
     /// A builder for [`ListPublishedSchemaArnsOutput`](crate::output::ListPublishedSchemaArnsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -807,17 +830,13 @@ pub mod list_published_schema_arns_output {
         /// <p>The ARNs of published schemas.</p>
         pub fn schema_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.schema_arns.unwrap_or_default();
-            v.push(input.into());
-            self.schema_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.schema_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of published schemas.</p>
-        pub fn set_schema_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.schema_arns = input;
-            self
+        pub fn set_schema_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.schema_arns = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -826,17 +845,20 @@ pub mod list_published_schema_arns_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPublishedSchemaArnsOutput`](crate::output::ListPublishedSchemaArnsOutput).
         pub fn build(self) -> crate::output::ListPublishedSchemaArnsOutput {
             crate::output::ListPublishedSchemaArnsOutput {
-                schema_arns: self.schema_arns,
-                next_token: self.next_token,
+                schema_arns: self.schema_arns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPublishedSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListPublishedSchemaArnsOutput`](crate::output::ListPublishedSchemaArnsOutput).
@@ -848,7 +870,7 @@ impl ListPublishedSchemaArnsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPolicyAttachmentsOutput {
+pub struct ListPolicyAttachmentsOutput  {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     #[doc(hidden)]
     pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -858,17 +880,17 @@ pub struct ListPolicyAttachmentsOutput {
 }
 impl ListPolicyAttachmentsOutput {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.object_identifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPolicyAttachmentsOutput`](crate::output::ListPolicyAttachmentsOutput).
 pub mod list_policy_attachments_output {
-
+    
     /// A builder for [`ListPolicyAttachmentsOutput`](crate::output::ListPolicyAttachmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -883,17 +905,13 @@ pub mod list_policy_attachments_output {
         /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
         pub fn object_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_identifiers.unwrap_or_default();
-            v.push(input.into());
-            self.object_identifiers = Some(v);
-            self
+                            v.push(input.into());
+                            self.object_identifiers = Some(v);
+                            self
         }
         /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-        pub fn set_object_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.object_identifiers = input;
-            self
+        pub fn set_object_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.object_identifiers = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -902,17 +920,20 @@ pub mod list_policy_attachments_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPolicyAttachmentsOutput`](crate::output::ListPolicyAttachmentsOutput).
         pub fn build(self) -> crate::output::ListPolicyAttachmentsOutput {
             crate::output::ListPolicyAttachmentsOutput {
-                object_identifiers: self.object_identifiers,
-                next_token: self.next_token,
+                object_identifiers: self.object_identifiers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPolicyAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyAttachmentsOutput`](crate::output::ListPolicyAttachmentsOutput).
@@ -924,7 +945,7 @@ impl ListPolicyAttachmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOutgoingTypedLinksOutput {
+pub struct ListOutgoingTypedLinksOutput  {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
     pub typed_link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -934,24 +955,21 @@ pub struct ListOutgoingTypedLinksOutput {
 }
 impl ListOutgoingTypedLinksOutput {
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn typed_link_specifiers(
-        &self,
-    ) -> std::option::Option<&[crate::model::TypedLinkSpecifier]> {
+    pub fn typed_link_specifiers(&self) -> std::option::Option<& [crate::model::TypedLinkSpecifier]> {
         self.typed_link_specifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListOutgoingTypedLinksOutput`](crate::output::ListOutgoingTypedLinksOutput).
 pub mod list_outgoing_typed_links_output {
-
+    
     /// A builder for [`ListOutgoingTypedLinksOutput`](crate::output::ListOutgoingTypedLinksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) typed_link_specifiers:
-            std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
+        pub(crate) typed_link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -962,17 +980,13 @@ pub mod list_outgoing_typed_links_output {
         /// <p>Returns a typed link specifier as output.</p>
         pub fn typed_link_specifiers(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
             let mut v = self.typed_link_specifiers.unwrap_or_default();
-            v.push(input);
-            self.typed_link_specifiers = Some(v);
-            self
+                            v.push(input);
+                            self.typed_link_specifiers = Some(v);
+                            self
         }
         /// <p>Returns a typed link specifier as output.</p>
-        pub fn set_typed_link_specifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
-        ) -> Self {
-            self.typed_link_specifiers = input;
-            self
+        pub fn set_typed_link_specifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>) -> Self {
+            self.typed_link_specifiers = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -981,17 +995,20 @@ pub mod list_outgoing_typed_links_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOutgoingTypedLinksOutput`](crate::output::ListOutgoingTypedLinksOutput).
         pub fn build(self) -> crate::output::ListOutgoingTypedLinksOutput {
             crate::output::ListOutgoingTypedLinksOutput {
-                typed_link_specifiers: self.typed_link_specifiers,
-                next_token: self.next_token,
+                typed_link_specifiers: self.typed_link_specifiers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOutgoingTypedLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListOutgoingTypedLinksOutput`](crate::output::ListOutgoingTypedLinksOutput).
@@ -1003,7 +1020,7 @@ impl ListOutgoingTypedLinksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListObjectPoliciesOutput {
+pub struct ListObjectPoliciesOutput  {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     #[doc(hidden)]
     pub attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1013,17 +1030,17 @@ pub struct ListObjectPoliciesOutput {
 }
 impl ListObjectPoliciesOutput {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-    pub fn attached_policy_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attached_policy_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.attached_policy_ids.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListObjectPoliciesOutput`](crate::output::ListObjectPoliciesOutput).
 pub mod list_object_policies_output {
-
+    
     /// A builder for [`ListObjectPoliciesOutput`](crate::output::ListObjectPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1038,17 +1055,13 @@ pub mod list_object_policies_output {
         /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
         pub fn attached_policy_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attached_policy_ids.unwrap_or_default();
-            v.push(input.into());
-            self.attached_policy_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.attached_policy_ids = Some(v);
+                            self
         }
         /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-        pub fn set_attached_policy_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.attached_policy_ids = input;
-            self
+        pub fn set_attached_policy_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.attached_policy_ids = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1057,17 +1070,20 @@ pub mod list_object_policies_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListObjectPoliciesOutput`](crate::output::ListObjectPoliciesOutput).
         pub fn build(self) -> crate::output::ListObjectPoliciesOutput {
             crate::output::ListObjectPoliciesOutput {
-                attached_policy_ids: self.attached_policy_ids,
-                next_token: self.next_token,
+                attached_policy_ids: self.attached_policy_ids
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListObjectPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectPoliciesOutput`](crate::output::ListObjectPoliciesOutput).
@@ -1079,50 +1095,40 @@ impl ListObjectPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListObjectParentsOutput {
+pub struct ListObjectParentsOutput  {
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
     #[doc(hidden)]
-    pub parents:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parents: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     #[doc(hidden)]
-    pub parent_links:
-        std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
+    pub parent_links: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
 }
 impl ListObjectParentsOutput {
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
-    pub fn parents(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parents(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parents.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn parent_links(
-        &self,
-    ) -> std::option::Option<&[crate::model::ObjectIdentifierAndLinkNameTuple]> {
+    pub fn parent_links(&self) -> std::option::Option<& [crate::model::ObjectIdentifierAndLinkNameTuple]> {
         self.parent_links.as_deref()
     }
 }
 /// See [`ListObjectParentsOutput`](crate::output::ListObjectParentsOutput).
 pub mod list_object_parents_output {
-
+    
     /// A builder for [`ListObjectParentsOutput`](crate::output::ListObjectParentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) parents: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parents: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) parent_links:
-            std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
+        pub(crate) parent_links: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
     }
     impl Builder {
         /// Adds a key-value pair to `parents`.
@@ -1130,25 +1136,15 @@ pub mod list_object_parents_output {
         /// To override the contents of this collection use [`set_parents`](Self::set_parents).
         ///
         /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
-        pub fn parents(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parents(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parents.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parents = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parents = Some(hash_map);
+                            self
         }
         /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
-        pub fn set_parents(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parents = input;
-            self
+        pub fn set_parents(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parents = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1157,42 +1153,37 @@ pub mod list_object_parents_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `parent_links`.
         ///
         /// To override the contents of this collection use [`set_parent_links`](Self::set_parent_links).
         ///
         /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-        pub fn parent_links(
-            mut self,
-            input: crate::model::ObjectIdentifierAndLinkNameTuple,
-        ) -> Self {
+        pub fn parent_links(mut self, input: crate::model::ObjectIdentifierAndLinkNameTuple) -> Self {
             let mut v = self.parent_links.unwrap_or_default();
-            v.push(input);
-            self.parent_links = Some(v);
-            self
+                            v.push(input);
+                            self.parent_links = Some(v);
+                            self
         }
         /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-        pub fn set_parent_links(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>,
-            >,
-        ) -> Self {
-            self.parent_links = input;
-            self
+        pub fn set_parent_links(mut self, input: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>) -> Self {
+            self.parent_links = input; self
         }
         /// Consumes the builder and constructs a [`ListObjectParentsOutput`](crate::output::ListObjectParentsOutput).
         pub fn build(self) -> crate::output::ListObjectParentsOutput {
             crate::output::ListObjectParentsOutput {
-                parents: self.parents,
-                next_token: self.next_token,
-                parent_links: self.parent_links,
+                parents: self.parents
+                ,
+                next_token: self.next_token
+                ,
+                parent_links: self.parent_links
+                ,
             }
         }
     }
+    
+    
 }
 impl ListObjectParentsOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectParentsOutput`](crate::output::ListObjectParentsOutput).
@@ -1204,35 +1195,31 @@ impl ListObjectParentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListObjectParentPathsOutput {
+pub struct ListObjectParentPathsOutput  {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     #[doc(hidden)]
-    pub path_to_object_identifiers_list:
-        std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
+    pub path_to_object_identifiers_list: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectParentPathsOutput {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn path_to_object_identifiers_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::PathToObjectIdentifiers]> {
+    pub fn path_to_object_identifiers_list(&self) -> std::option::Option<& [crate::model::PathToObjectIdentifiers]> {
         self.path_to_object_identifiers_list.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListObjectParentPathsOutput`](crate::output::ListObjectParentPathsOutput).
 pub mod list_object_parent_paths_output {
-
+    
     /// A builder for [`ListObjectParentPathsOutput`](crate::output::ListObjectParentPathsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) path_to_object_identifiers_list:
-            std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
+        pub(crate) path_to_object_identifiers_list: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1241,22 +1228,15 @@ pub mod list_object_parent_paths_output {
         /// To override the contents of this collection use [`set_path_to_object_identifiers_list`](Self::set_path_to_object_identifiers_list).
         ///
         /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-        pub fn path_to_object_identifiers_list(
-            mut self,
-            input: crate::model::PathToObjectIdentifiers,
-        ) -> Self {
+        pub fn path_to_object_identifiers_list(mut self, input: crate::model::PathToObjectIdentifiers) -> Self {
             let mut v = self.path_to_object_identifiers_list.unwrap_or_default();
-            v.push(input);
-            self.path_to_object_identifiers_list = Some(v);
-            self
+                            v.push(input);
+                            self.path_to_object_identifiers_list = Some(v);
+                            self
         }
         /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-        pub fn set_path_to_object_identifiers_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
-        ) -> Self {
-            self.path_to_object_identifiers_list = input;
-            self
+        pub fn set_path_to_object_identifiers_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>) -> Self {
+            self.path_to_object_identifiers_list = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1265,17 +1245,20 @@ pub mod list_object_parent_paths_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListObjectParentPathsOutput`](crate::output::ListObjectParentPathsOutput).
         pub fn build(self) -> crate::output::ListObjectParentPathsOutput {
             crate::output::ListObjectParentPathsOutput {
-                path_to_object_identifiers_list: self.path_to_object_identifiers_list,
-                next_token: self.next_token,
+                path_to_object_identifiers_list: self.path_to_object_identifiers_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListObjectParentPathsOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectParentPathsOutput`](crate::output::ListObjectParentPathsOutput).
@@ -1287,37 +1270,31 @@ impl ListObjectParentPathsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListObjectChildrenOutput {
+pub struct ListObjectChildrenOutput  {
     /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     #[doc(hidden)]
-    pub children:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub children: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectChildrenOutput {
     /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn children(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn children(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.children.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListObjectChildrenOutput`](crate::output::ListObjectChildrenOutput).
 pub mod list_object_children_output {
-
+    
     /// A builder for [`ListObjectChildrenOutput`](crate::output::ListObjectChildrenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) children: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) children: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1326,25 +1303,15 @@ pub mod list_object_children_output {
         /// To override the contents of this collection use [`set_children`](Self::set_children).
         ///
         /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-        pub fn children(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn children(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.children.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.children = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.children = Some(hash_map);
+                            self
         }
         /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-        pub fn set_children(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.children = input;
-            self
+        pub fn set_children(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.children = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1353,17 +1320,20 @@ pub mod list_object_children_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListObjectChildrenOutput`](crate::output::ListObjectChildrenOutput).
         pub fn build(self) -> crate::output::ListObjectChildrenOutput {
             crate::output::ListObjectChildrenOutput {
-                children: self.children,
-                next_token: self.next_token,
+                children: self.children
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListObjectChildrenOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectChildrenOutput`](crate::output::ListObjectChildrenOutput).
@@ -1375,7 +1345,7 @@ impl ListObjectChildrenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListObjectAttributesOutput {
+pub struct ListObjectAttributesOutput  {
     /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -1385,22 +1355,21 @@ pub struct ListObjectAttributesOutput {
 }
 impl ListObjectAttributesOutput {
     /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListObjectAttributesOutput`](crate::output::ListObjectAttributesOutput).
 pub mod list_object_attributes_output {
-
+    
     /// A builder for [`ListObjectAttributesOutput`](crate::output::ListObjectAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1411,17 +1380,13 @@ pub mod list_object_attributes_output {
         /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
         pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1430,17 +1395,20 @@ pub mod list_object_attributes_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListObjectAttributesOutput`](crate::output::ListObjectAttributesOutput).
         pub fn build(self) -> crate::output::ListObjectAttributesOutput {
             crate::output::ListObjectAttributesOutput {
-                attributes: self.attributes,
-                next_token: self.next_token,
+                attributes: self.attributes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListObjectAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectAttributesOutput`](crate::output::ListObjectAttributesOutput).
@@ -1452,7 +1420,7 @@ impl ListObjectAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedSchemaArnsOutput {
+pub struct ListManagedSchemaArnsOutput  {
     /// <p>The ARNs for all AWS managed schemas.</p>
     #[doc(hidden)]
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1462,17 +1430,17 @@ pub struct ListManagedSchemaArnsOutput {
 }
 impl ListManagedSchemaArnsOutput {
     /// <p>The ARNs for all AWS managed schemas.</p>
-    pub fn schema_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schema_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.schema_arns.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListManagedSchemaArnsOutput`](crate::output::ListManagedSchemaArnsOutput).
 pub mod list_managed_schema_arns_output {
-
+    
     /// A builder for [`ListManagedSchemaArnsOutput`](crate::output::ListManagedSchemaArnsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1487,17 +1455,13 @@ pub mod list_managed_schema_arns_output {
         /// <p>The ARNs for all AWS managed schemas.</p>
         pub fn schema_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.schema_arns.unwrap_or_default();
-            v.push(input.into());
-            self.schema_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.schema_arns = Some(v);
+                            self
         }
         /// <p>The ARNs for all AWS managed schemas.</p>
-        pub fn set_schema_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.schema_arns = input;
-            self
+        pub fn set_schema_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.schema_arns = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1506,17 +1470,20 @@ pub mod list_managed_schema_arns_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListManagedSchemaArnsOutput`](crate::output::ListManagedSchemaArnsOutput).
         pub fn build(self) -> crate::output::ListManagedSchemaArnsOutput {
             crate::output::ListManagedSchemaArnsOutput {
-                schema_arns: self.schema_arns,
-                next_token: self.next_token,
+                schema_arns: self.schema_arns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListManagedSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedSchemaArnsOutput`](crate::output::ListManagedSchemaArnsOutput).
@@ -1528,7 +1495,7 @@ impl ListManagedSchemaArnsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIndexOutput {
+pub struct ListIndexOutput  {
     /// <p>The objects and indexed values attached to the index.</p>
     #[doc(hidden)]
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -1538,22 +1505,21 @@ pub struct ListIndexOutput {
 }
 impl ListIndexOutput {
     /// <p>The objects and indexed values attached to the index.</p>
-    pub fn index_attachments(&self) -> std::option::Option<&[crate::model::IndexAttachment]> {
+    pub fn index_attachments(&self) -> std::option::Option<& [crate::model::IndexAttachment]> {
         self.index_attachments.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListIndexOutput`](crate::output::ListIndexOutput).
 pub mod list_index_output {
-
+    
     /// A builder for [`ListIndexOutput`](crate::output::ListIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) index_attachments:
-            std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
+        pub(crate) index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1564,17 +1530,13 @@ pub mod list_index_output {
         /// <p>The objects and indexed values attached to the index.</p>
         pub fn index_attachments(mut self, input: crate::model::IndexAttachment) -> Self {
             let mut v = self.index_attachments.unwrap_or_default();
-            v.push(input);
-            self.index_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.index_attachments = Some(v);
+                            self
         }
         /// <p>The objects and indexed values attached to the index.</p>
-        pub fn set_index_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
-        ) -> Self {
-            self.index_attachments = input;
-            self
+        pub fn set_index_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>) -> Self {
+            self.index_attachments = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1583,17 +1545,20 @@ pub mod list_index_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListIndexOutput`](crate::output::ListIndexOutput).
         pub fn build(self) -> crate::output::ListIndexOutput {
             crate::output::ListIndexOutput {
-                index_attachments: self.index_attachments,
-                next_token: self.next_token,
+                index_attachments: self.index_attachments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIndexOutput {
     /// Creates a new builder-style object to manufacture [`ListIndexOutput`](crate::output::ListIndexOutput).
@@ -1605,7 +1570,7 @@ impl ListIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIncomingTypedLinksOutput {
+pub struct ListIncomingTypedLinksOutput  {
     /// <p>Returns one or more typed link specifiers as output.</p>
     #[doc(hidden)]
     pub link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -1615,22 +1580,21 @@ pub struct ListIncomingTypedLinksOutput {
 }
 impl ListIncomingTypedLinksOutput {
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn link_specifiers(&self) -> std::option::Option<&[crate::model::TypedLinkSpecifier]> {
+    pub fn link_specifiers(&self) -> std::option::Option<& [crate::model::TypedLinkSpecifier]> {
         self.link_specifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListIncomingTypedLinksOutput`](crate::output::ListIncomingTypedLinksOutput).
 pub mod list_incoming_typed_links_output {
-
+    
     /// A builder for [`ListIncomingTypedLinksOutput`](crate::output::ListIncomingTypedLinksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) link_specifiers:
-            std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
+        pub(crate) link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1641,17 +1605,13 @@ pub mod list_incoming_typed_links_output {
         /// <p>Returns one or more typed link specifiers as output.</p>
         pub fn link_specifiers(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
             let mut v = self.link_specifiers.unwrap_or_default();
-            v.push(input);
-            self.link_specifiers = Some(v);
-            self
+                            v.push(input);
+                            self.link_specifiers = Some(v);
+                            self
         }
         /// <p>Returns one or more typed link specifiers as output.</p>
-        pub fn set_link_specifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
-        ) -> Self {
-            self.link_specifiers = input;
-            self
+        pub fn set_link_specifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>) -> Self {
+            self.link_specifiers = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1660,17 +1620,20 @@ pub mod list_incoming_typed_links_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListIncomingTypedLinksOutput`](crate::output::ListIncomingTypedLinksOutput).
         pub fn build(self) -> crate::output::ListIncomingTypedLinksOutput {
             crate::output::ListIncomingTypedLinksOutput {
-                link_specifiers: self.link_specifiers,
-                next_token: self.next_token,
+                link_specifiers: self.link_specifiers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIncomingTypedLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListIncomingTypedLinksOutput`](crate::output::ListIncomingTypedLinksOutput).
@@ -1682,7 +1645,7 @@ impl ListIncomingTypedLinksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFacetNamesOutput {
+pub struct ListFacetNamesOutput  {
     /// <p>The names of facets that exist within the schema.</p>
     #[doc(hidden)]
     pub facet_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1692,17 +1655,17 @@ pub struct ListFacetNamesOutput {
 }
 impl ListFacetNamesOutput {
     /// <p>The names of facets that exist within the schema.</p>
-    pub fn facet_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn facet_names(&self) -> std::option::Option<& [std::string::String]> {
         self.facet_names.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFacetNamesOutput`](crate::output::ListFacetNamesOutput).
 pub mod list_facet_names_output {
-
+    
     /// A builder for [`ListFacetNamesOutput`](crate::output::ListFacetNamesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1717,17 +1680,13 @@ pub mod list_facet_names_output {
         /// <p>The names of facets that exist within the schema.</p>
         pub fn facet_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.facet_names.unwrap_or_default();
-            v.push(input.into());
-            self.facet_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.facet_names = Some(v);
+                            self
         }
         /// <p>The names of facets that exist within the schema.</p>
-        pub fn set_facet_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.facet_names = input;
-            self
+        pub fn set_facet_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.facet_names = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1736,17 +1695,20 @@ pub mod list_facet_names_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFacetNamesOutput`](crate::output::ListFacetNamesOutput).
         pub fn build(self) -> crate::output::ListFacetNamesOutput {
             crate::output::ListFacetNamesOutput {
-                facet_names: self.facet_names,
-                next_token: self.next_token,
+                facet_names: self.facet_names
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFacetNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListFacetNamesOutput`](crate::output::ListFacetNamesOutput).
@@ -1758,7 +1720,7 @@ impl ListFacetNamesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFacetAttributesOutput {
+pub struct ListFacetAttributesOutput  {
     /// <p>The attributes attached to the facet.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
@@ -1768,17 +1730,17 @@ pub struct ListFacetAttributesOutput {
 }
 impl ListFacetAttributesOutput {
     /// <p>The attributes attached to the facet.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::FacetAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::FacetAttribute]> {
         self.attributes.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFacetAttributesOutput`](crate::output::ListFacetAttributesOutput).
 pub mod list_facet_attributes_output {
-
+    
     /// A builder for [`ListFacetAttributesOutput`](crate::output::ListFacetAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1793,17 +1755,13 @@ pub mod list_facet_attributes_output {
         /// <p>The attributes attached to the facet.</p>
         pub fn attributes(mut self, input: crate::model::FacetAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes attached to the facet.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1812,17 +1770,20 @@ pub mod list_facet_attributes_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFacetAttributesOutput`](crate::output::ListFacetAttributesOutput).
         pub fn build(self) -> crate::output::ListFacetAttributesOutput {
             crate::output::ListFacetAttributesOutput {
-                attributes: self.attributes,
-                next_token: self.next_token,
+                attributes: self.attributes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFacetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListFacetAttributesOutput`](crate::output::ListFacetAttributesOutput).
@@ -1834,7 +1795,7 @@ impl ListFacetAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDirectoriesOutput {
+pub struct ListDirectoriesOutput  {
     /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
     #[doc(hidden)]
     pub directories: std::option::Option<std::vec::Vec<crate::model::Directory>>,
@@ -1844,17 +1805,17 @@ pub struct ListDirectoriesOutput {
 }
 impl ListDirectoriesOutput {
     /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
-    pub fn directories(&self) -> std::option::Option<&[crate::model::Directory]> {
+    pub fn directories(&self) -> std::option::Option<& [crate::model::Directory]> {
         self.directories.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDirectoriesOutput`](crate::output::ListDirectoriesOutput).
 pub mod list_directories_output {
-
+    
     /// A builder for [`ListDirectoriesOutput`](crate::output::ListDirectoriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1869,17 +1830,13 @@ pub mod list_directories_output {
         /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
         pub fn directories(mut self, input: crate::model::Directory) -> Self {
             let mut v = self.directories.unwrap_or_default();
-            v.push(input);
-            self.directories = Some(v);
-            self
+                            v.push(input);
+                            self.directories = Some(v);
+                            self
         }
         /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
-        pub fn set_directories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Directory>>,
-        ) -> Self {
-            self.directories = input;
-            self
+        pub fn set_directories(mut self, input: std::option::Option<std::vec::Vec<crate::model::Directory>>) -> Self {
+            self.directories = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1888,17 +1845,20 @@ pub mod list_directories_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDirectoriesOutput`](crate::output::ListDirectoriesOutput).
         pub fn build(self) -> crate::output::ListDirectoriesOutput {
             crate::output::ListDirectoriesOutput {
-                directories: self.directories,
-                next_token: self.next_token,
+                directories: self.directories
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDirectoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListDirectoriesOutput`](crate::output::ListDirectoriesOutput).
@@ -1910,7 +1870,7 @@ impl ListDirectoriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDevelopmentSchemaArnsOutput {
+pub struct ListDevelopmentSchemaArnsOutput  {
     /// <p>The ARNs of retrieved development schemas.</p>
     #[doc(hidden)]
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1920,17 +1880,17 @@ pub struct ListDevelopmentSchemaArnsOutput {
 }
 impl ListDevelopmentSchemaArnsOutput {
     /// <p>The ARNs of retrieved development schemas.</p>
-    pub fn schema_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schema_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.schema_arns.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDevelopmentSchemaArnsOutput`](crate::output::ListDevelopmentSchemaArnsOutput).
 pub mod list_development_schema_arns_output {
-
+    
     /// A builder for [`ListDevelopmentSchemaArnsOutput`](crate::output::ListDevelopmentSchemaArnsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1945,17 +1905,13 @@ pub mod list_development_schema_arns_output {
         /// <p>The ARNs of retrieved development schemas.</p>
         pub fn schema_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.schema_arns.unwrap_or_default();
-            v.push(input.into());
-            self.schema_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.schema_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of retrieved development schemas.</p>
-        pub fn set_schema_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.schema_arns = input;
-            self
+        pub fn set_schema_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.schema_arns = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1964,17 +1920,20 @@ pub mod list_development_schema_arns_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDevelopmentSchemaArnsOutput`](crate::output::ListDevelopmentSchemaArnsOutput).
         pub fn build(self) -> crate::output::ListDevelopmentSchemaArnsOutput {
             crate::output::ListDevelopmentSchemaArnsOutput {
-                schema_arns: self.schema_arns,
-                next_token: self.next_token,
+                schema_arns: self.schema_arns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDevelopmentSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevelopmentSchemaArnsOutput`](crate::output::ListDevelopmentSchemaArnsOutput).
@@ -1986,7 +1945,7 @@ impl ListDevelopmentSchemaArnsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedIndicesOutput {
+pub struct ListAttachedIndicesOutput  {
     /// <p>The indices attached to the specified object.</p>
     #[doc(hidden)]
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -1996,22 +1955,21 @@ pub struct ListAttachedIndicesOutput {
 }
 impl ListAttachedIndicesOutput {
     /// <p>The indices attached to the specified object.</p>
-    pub fn index_attachments(&self) -> std::option::Option<&[crate::model::IndexAttachment]> {
+    pub fn index_attachments(&self) -> std::option::Option<& [crate::model::IndexAttachment]> {
         self.index_attachments.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAttachedIndicesOutput`](crate::output::ListAttachedIndicesOutput).
 pub mod list_attached_indices_output {
-
+    
     /// A builder for [`ListAttachedIndicesOutput`](crate::output::ListAttachedIndicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) index_attachments:
-            std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
+        pub(crate) index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2022,17 +1980,13 @@ pub mod list_attached_indices_output {
         /// <p>The indices attached to the specified object.</p>
         pub fn index_attachments(mut self, input: crate::model::IndexAttachment) -> Self {
             let mut v = self.index_attachments.unwrap_or_default();
-            v.push(input);
-            self.index_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.index_attachments = Some(v);
+                            self
         }
         /// <p>The indices attached to the specified object.</p>
-        pub fn set_index_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
-        ) -> Self {
-            self.index_attachments = input;
-            self
+        pub fn set_index_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>) -> Self {
+            self.index_attachments = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2041,17 +1995,20 @@ pub mod list_attached_indices_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAttachedIndicesOutput`](crate::output::ListAttachedIndicesOutput).
         pub fn build(self) -> crate::output::ListAttachedIndicesOutput {
             crate::output::ListAttachedIndicesOutput {
-                index_attachments: self.index_attachments,
-                next_token: self.next_token,
+                index_attachments: self.index_attachments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttachedIndicesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedIndicesOutput`](crate::output::ListAttachedIndicesOutput).
@@ -2063,7 +2020,7 @@ impl ListAttachedIndicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppliedSchemaArnsOutput {
+pub struct ListAppliedSchemaArnsOutput  {
     /// <p>The ARNs of schemas that are applied to the directory.</p>
     #[doc(hidden)]
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2073,17 +2030,17 @@ pub struct ListAppliedSchemaArnsOutput {
 }
 impl ListAppliedSchemaArnsOutput {
     /// <p>The ARNs of schemas that are applied to the directory.</p>
-    pub fn schema_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schema_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.schema_arns.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppliedSchemaArnsOutput`](crate::output::ListAppliedSchemaArnsOutput).
 pub mod list_applied_schema_arns_output {
-
+    
     /// A builder for [`ListAppliedSchemaArnsOutput`](crate::output::ListAppliedSchemaArnsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2098,17 +2055,13 @@ pub mod list_applied_schema_arns_output {
         /// <p>The ARNs of schemas that are applied to the directory.</p>
         pub fn schema_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.schema_arns.unwrap_or_default();
-            v.push(input.into());
-            self.schema_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.schema_arns = Some(v);
+                            self
         }
         /// <p>The ARNs of schemas that are applied to the directory.</p>
-        pub fn set_schema_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.schema_arns = input;
-            self
+        pub fn set_schema_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.schema_arns = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2117,17 +2070,20 @@ pub mod list_applied_schema_arns_output {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppliedSchemaArnsOutput`](crate::output::ListAppliedSchemaArnsOutput).
         pub fn build(self) -> crate::output::ListAppliedSchemaArnsOutput {
             crate::output::ListAppliedSchemaArnsOutput {
-                schema_arns: self.schema_arns,
-                next_token: self.next_token,
+                schema_arns: self.schema_arns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppliedSchemaArnsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppliedSchemaArnsOutput`](crate::output::ListAppliedSchemaArnsOutput).
@@ -2139,25 +2095,24 @@ impl ListAppliedSchemaArnsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTypedLinkFacetInformationOutput {
+pub struct GetTypedLinkFacetInformationOutput  {
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[doc(hidden)]
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTypedLinkFacetInformationOutput {
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn identity_attribute_order(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn identity_attribute_order(&self) -> std::option::Option<& [std::string::String]> {
         self.identity_attribute_order.as_deref()
     }
 }
 /// See [`GetTypedLinkFacetInformationOutput`](crate::output::GetTypedLinkFacetInformationOutput).
 pub mod get_typed_link_facet_information_output {
-
+    
     /// A builder for [`GetTypedLinkFacetInformationOutput`](crate::output::GetTypedLinkFacetInformationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) identity_attribute_order:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `identity_attribute_order`.
@@ -2167,25 +2122,24 @@ pub mod get_typed_link_facet_information_output {
         /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn identity_attribute_order(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_attribute_order.unwrap_or_default();
-            v.push(input.into());
-            self.identity_attribute_order = Some(v);
-            self
+                            v.push(input.into());
+                            self.identity_attribute_order = Some(v);
+                            self
         }
         /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_identity_attribute_order(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.identity_attribute_order = input;
-            self
+        pub fn set_identity_attribute_order(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.identity_attribute_order = input; self
         }
         /// Consumes the builder and constructs a [`GetTypedLinkFacetInformationOutput`](crate::output::GetTypedLinkFacetInformationOutput).
         pub fn build(self) -> crate::output::GetTypedLinkFacetInformationOutput {
             crate::output::GetTypedLinkFacetInformationOutput {
-                identity_attribute_order: self.identity_attribute_order,
+                identity_attribute_order: self.identity_attribute_order
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTypedLinkFacetInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetTypedLinkFacetInformationOutput`](crate::output::GetTypedLinkFacetInformationOutput).
@@ -2197,7 +2151,7 @@ impl GetTypedLinkFacetInformationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaAsJsonOutput {
+pub struct GetSchemaAsJsonOutput  {
     /// <p>The name of the retrieved schema.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2207,17 +2161,17 @@ pub struct GetSchemaAsJsonOutput {
 }
 impl GetSchemaAsJsonOutput {
     /// <p>The name of the retrieved schema.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The JSON representation of the schema document.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
 }
 /// See [`GetSchemaAsJsonOutput`](crate::output::GetSchemaAsJsonOutput).
 pub mod get_schema_as_json_output {
-
+    
     /// A builder for [`GetSchemaAsJsonOutput`](crate::output::GetSchemaAsJsonOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2232,8 +2186,7 @@ pub mod get_schema_as_json_output {
         }
         /// <p>The name of the retrieved schema.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The JSON representation of the schema document.</p>
         pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2242,17 +2195,20 @@ pub mod get_schema_as_json_output {
         }
         /// <p>The JSON representation of the schema document.</p>
         pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// Consumes the builder and constructs a [`GetSchemaAsJsonOutput`](crate::output::GetSchemaAsJsonOutput).
         pub fn build(self) -> crate::output::GetSchemaAsJsonOutput {
             crate::output::GetSchemaAsJsonOutput {
-                name: self.name,
-                document: self.document,
+                name: self.name
+                ,
+                document: self.document
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSchemaAsJsonOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaAsJsonOutput`](crate::output::GetSchemaAsJsonOutput).
@@ -2264,7 +2220,7 @@ impl GetSchemaAsJsonOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetObjectInformationOutput {
+pub struct GetObjectInformationOutput  {
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
     #[doc(hidden)]
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
@@ -2274,17 +2230,17 @@ pub struct GetObjectInformationOutput {
 }
 impl GetObjectInformationOutput {
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
-    pub fn schema_facets(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
+    pub fn schema_facets(&self) -> std::option::Option<& [crate::model::SchemaFacet]> {
         self.schema_facets.as_deref()
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`GetObjectInformationOutput`](crate::output::GetObjectInformationOutput).
 pub mod get_object_information_output {
-
+    
     /// A builder for [`GetObjectInformationOutput`](crate::output::GetObjectInformationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2299,17 +2255,13 @@ pub mod get_object_information_output {
         /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
         pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
             let mut v = self.schema_facets.unwrap_or_default();
-            v.push(input);
-            self.schema_facets = Some(v);
-            self
+                            v.push(input);
+                            self.schema_facets = Some(v);
+                            self
         }
         /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
-        pub fn set_schema_facets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
-        ) -> Self {
-            self.schema_facets = input;
-            self
+        pub fn set_schema_facets(mut self, input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>) -> Self {
+            self.schema_facets = input; self
         }
         /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
         pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2317,21 +2269,21 @@ pub mod get_object_information_output {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`GetObjectInformationOutput`](crate::output::GetObjectInformationOutput).
         pub fn build(self) -> crate::output::GetObjectInformationOutput {
             crate::output::GetObjectInformationOutput {
-                schema_facets: self.schema_facets,
-                object_identifier: self.object_identifier,
+                schema_facets: self.schema_facets
+                ,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl GetObjectInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectInformationOutput`](crate::output::GetObjectInformationOutput).
@@ -2343,25 +2295,24 @@ impl GetObjectInformationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetObjectAttributesOutput {
+pub struct GetObjectAttributesOutput  {
     /// <p>The attributes that are associated with the object.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
 impl GetObjectAttributesOutput {
     /// <p>The attributes that are associated with the object.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
 }
 /// See [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
 pub mod get_object_attributes_output {
-
+    
     /// A builder for [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     }
     impl Builder {
         /// Appends an item to `attributes`.
@@ -2371,25 +2322,24 @@ pub mod get_object_attributes_output {
         /// <p>The attributes that are associated with the object.</p>
         pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes that are associated with the object.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
         pub fn build(self) -> crate::output::GetObjectAttributesOutput {
             crate::output::GetObjectAttributesOutput {
-                attributes: self.attributes,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetObjectAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
@@ -2401,25 +2351,24 @@ impl GetObjectAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLinkAttributesOutput {
+pub struct GetLinkAttributesOutput  {
     /// <p>The attributes that are associated with the typed link.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
 impl GetLinkAttributesOutput {
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
 }
 /// See [`GetLinkAttributesOutput`](crate::output::GetLinkAttributesOutput).
 pub mod get_link_attributes_output {
-
+    
     /// A builder for [`GetLinkAttributesOutput`](crate::output::GetLinkAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     }
     impl Builder {
         /// Appends an item to `attributes`.
@@ -2429,25 +2378,24 @@ pub mod get_link_attributes_output {
         /// <p>The attributes that are associated with the typed link.</p>
         pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes that are associated with the typed link.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`GetLinkAttributesOutput`](crate::output::GetLinkAttributesOutput).
         pub fn build(self) -> crate::output::GetLinkAttributesOutput {
             crate::output::GetLinkAttributesOutput {
-                attributes: self.attributes,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLinkAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetLinkAttributesOutput`](crate::output::GetLinkAttributesOutput).
@@ -2459,20 +2407,20 @@ impl GetLinkAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFacetOutput {
+pub struct GetFacetOutput  {
     /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
     #[doc(hidden)]
     pub facet: std::option::Option<crate::model::Facet>,
 }
 impl GetFacetOutput {
     /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
-    pub fn facet(&self) -> std::option::Option<&crate::model::Facet> {
+    pub fn facet(&self) -> std::option::Option<& crate::model::Facet> {
         self.facet.as_ref()
     }
 }
 /// See [`GetFacetOutput`](crate::output::GetFacetOutput).
 pub mod get_facet_output {
-
+    
     /// A builder for [`GetFacetOutput`](crate::output::GetFacetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2486,14 +2434,18 @@ pub mod get_facet_output {
         }
         /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
         pub fn set_facet(mut self, input: std::option::Option<crate::model::Facet>) -> Self {
-            self.facet = input;
-            self
+            self.facet = input; self
         }
         /// Consumes the builder and constructs a [`GetFacetOutput`](crate::output::GetFacetOutput).
         pub fn build(self) -> crate::output::GetFacetOutput {
-            crate::output::GetFacetOutput { facet: self.facet }
+            crate::output::GetFacetOutput {
+                facet: self.facet
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetFacetOutput {
     /// Creates a new builder-style object to manufacture [`GetFacetOutput`](crate::output::GetFacetOutput).
@@ -2505,20 +2457,20 @@ impl GetFacetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDirectoryOutput {
+pub struct GetDirectoryOutput  {
     /// <p>Metadata about the directory.</p>
     #[doc(hidden)]
     pub directory: std::option::Option<crate::model::Directory>,
 }
 impl GetDirectoryOutput {
     /// <p>Metadata about the directory.</p>
-    pub fn directory(&self) -> std::option::Option<&crate::model::Directory> {
+    pub fn directory(&self) -> std::option::Option<& crate::model::Directory> {
         self.directory.as_ref()
     }
 }
 /// See [`GetDirectoryOutput`](crate::output::GetDirectoryOutput).
 pub mod get_directory_output {
-
+    
     /// A builder for [`GetDirectoryOutput`](crate::output::GetDirectoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2531,20 +2483,19 @@ pub mod get_directory_output {
             self
         }
         /// <p>Metadata about the directory.</p>
-        pub fn set_directory(
-            mut self,
-            input: std::option::Option<crate::model::Directory>,
-        ) -> Self {
-            self.directory = input;
-            self
+        pub fn set_directory(mut self, input: std::option::Option<crate::model::Directory>) -> Self {
+            self.directory = input; self
         }
         /// Consumes the builder and constructs a [`GetDirectoryOutput`](crate::output::GetDirectoryOutput).
         pub fn build(self) -> crate::output::GetDirectoryOutput {
             crate::output::GetDirectoryOutput {
-                directory: self.directory,
+                directory: self.directory
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`GetDirectoryOutput`](crate::output::GetDirectoryOutput).
@@ -2556,20 +2507,20 @@ impl GetDirectoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppliedSchemaVersionOutput {
+pub struct GetAppliedSchemaVersionOutput  {
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
     #[doc(hidden)]
     pub applied_schema_arn: std::option::Option<std::string::String>,
 }
 impl GetAppliedSchemaVersionOutput {
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
-    pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
+    pub fn applied_schema_arn(&self) -> std::option::Option<& str> {
         self.applied_schema_arn.as_deref()
     }
 }
 /// See [`GetAppliedSchemaVersionOutput`](crate::output::GetAppliedSchemaVersionOutput).
 pub mod get_applied_schema_version_output {
-
+    
     /// A builder for [`GetAppliedSchemaVersionOutput`](crate::output::GetAppliedSchemaVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2582,20 +2533,19 @@ pub mod get_applied_schema_version_output {
             self
         }
         /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
-        pub fn set_applied_schema_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.applied_schema_arn = input;
-            self
+        pub fn set_applied_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.applied_schema_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetAppliedSchemaVersionOutput`](crate::output::GetAppliedSchemaVersionOutput).
         pub fn build(self) -> crate::output::GetAppliedSchemaVersionOutput {
             crate::output::GetAppliedSchemaVersionOutput {
-                applied_schema_arn: self.applied_schema_arn,
+                applied_schema_arn: self.applied_schema_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAppliedSchemaVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetAppliedSchemaVersionOutput`](crate::output::GetAppliedSchemaVersionOutput).
@@ -2607,20 +2557,20 @@ impl GetAppliedSchemaVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableDirectoryOutput {
+pub struct EnableDirectoryOutput  {
     /// <p>The ARN of the enabled directory.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl EnableDirectoryOutput {
     /// <p>The ARN of the enabled directory.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
 /// See [`EnableDirectoryOutput`](crate::output::EnableDirectoryOutput).
 pub mod enable_directory_output {
-
+    
     /// A builder for [`EnableDirectoryOutput`](crate::output::EnableDirectoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2633,20 +2583,19 @@ pub mod enable_directory_output {
             self
         }
         /// <p>The ARN of the enabled directory.</p>
-        pub fn set_directory_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_arn = input;
-            self
+        pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_arn = input; self
         }
         /// Consumes the builder and constructs a [`EnableDirectoryOutput`](crate::output::EnableDirectoryOutput).
         pub fn build(self) -> crate::output::EnableDirectoryOutput {
             crate::output::EnableDirectoryOutput {
-                directory_arn: self.directory_arn,
+                directory_arn: self.directory_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`EnableDirectoryOutput`](crate::output::EnableDirectoryOutput).
@@ -2658,20 +2607,20 @@ impl EnableDirectoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableDirectoryOutput {
+pub struct DisableDirectoryOutput  {
     /// <p>The ARN of the directory that has been disabled.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl DisableDirectoryOutput {
     /// <p>The ARN of the directory that has been disabled.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
 /// See [`DisableDirectoryOutput`](crate::output::DisableDirectoryOutput).
 pub mod disable_directory_output {
-
+    
     /// A builder for [`DisableDirectoryOutput`](crate::output::DisableDirectoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2684,20 +2633,19 @@ pub mod disable_directory_output {
             self
         }
         /// <p>The ARN of the directory that has been disabled.</p>
-        pub fn set_directory_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_arn = input;
-            self
+        pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_arn = input; self
         }
         /// Consumes the builder and constructs a [`DisableDirectoryOutput`](crate::output::DisableDirectoryOutput).
         pub fn build(self) -> crate::output::DisableDirectoryOutput {
             crate::output::DisableDirectoryOutput {
-                directory_arn: self.directory_arn,
+                directory_arn: self.directory_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`DisableDirectoryOutput`](crate::output::DisableDirectoryOutput).
@@ -2709,19 +2657,24 @@ impl DisableDirectoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachTypedLinkOutput {}
+pub struct DetachTypedLinkOutput  {
+}
 /// See [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput).
 pub mod detach_typed_link_output {
-
+    
     /// A builder for [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput).
         pub fn build(self) -> crate::output::DetachTypedLinkOutput {
-            crate::output::DetachTypedLinkOutput {}
+            crate::output::DetachTypedLinkOutput {
+            }
         }
     }
+    
+    
 }
 impl DetachTypedLinkOutput {
     /// Creates a new builder-style object to manufacture [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput).
@@ -2733,19 +2686,24 @@ impl DetachTypedLinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachPolicyOutput {}
+pub struct DetachPolicyOutput  {
+}
 /// See [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
 pub mod detach_policy_output {
-
+    
     /// A builder for [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
         pub fn build(self) -> crate::output::DetachPolicyOutput {
-            crate::output::DetachPolicyOutput {}
+            crate::output::DetachPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DetachPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
@@ -2757,20 +2715,20 @@ impl DetachPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachObjectOutput {
+pub struct DetachObjectOutput  {
     /// <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
     #[doc(hidden)]
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
 impl DetachObjectOutput {
     /// <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
-    pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn detached_object_identifier(&self) -> std::option::Option<& str> {
         self.detached_object_identifier.as_deref()
     }
 }
 /// See [`DetachObjectOutput`](crate::output::DetachObjectOutput).
 pub mod detach_object_output {
-
+    
     /// A builder for [`DetachObjectOutput`](crate::output::DetachObjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2783,20 +2741,19 @@ pub mod detach_object_output {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
-        pub fn set_detached_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detached_object_identifier = input;
-            self
+        pub fn set_detached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detached_object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DetachObjectOutput`](crate::output::DetachObjectOutput).
         pub fn build(self) -> crate::output::DetachObjectOutput {
             crate::output::DetachObjectOutput {
-                detached_object_identifier: self.detached_object_identifier,
+                detached_object_identifier: self.detached_object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl DetachObjectOutput {
     /// Creates a new builder-style object to manufacture [`DetachObjectOutput`](crate::output::DetachObjectOutput).
@@ -2808,20 +2765,20 @@ impl DetachObjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachFromIndexOutput {
+pub struct DetachFromIndexOutput  {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     #[doc(hidden)]
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
 impl DetachFromIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-    pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn detached_object_identifier(&self) -> std::option::Option<& str> {
         self.detached_object_identifier.as_deref()
     }
 }
 /// See [`DetachFromIndexOutput`](crate::output::DetachFromIndexOutput).
 pub mod detach_from_index_output {
-
+    
     /// A builder for [`DetachFromIndexOutput`](crate::output::DetachFromIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2834,20 +2791,19 @@ pub mod detach_from_index_output {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-        pub fn set_detached_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detached_object_identifier = input;
-            self
+        pub fn set_detached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detached_object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DetachFromIndexOutput`](crate::output::DetachFromIndexOutput).
         pub fn build(self) -> crate::output::DetachFromIndexOutput {
             crate::output::DetachFromIndexOutput {
-                detached_object_identifier: self.detached_object_identifier,
+                detached_object_identifier: self.detached_object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl DetachFromIndexOutput {
     /// Creates a new builder-style object to manufacture [`DetachFromIndexOutput`](crate::output::DetachFromIndexOutput).
@@ -2859,19 +2815,24 @@ impl DetachFromIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTypedLinkFacetOutput {}
+pub struct DeleteTypedLinkFacetOutput  {
+}
 /// See [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput).
 pub mod delete_typed_link_facet_output {
-
+    
     /// A builder for [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput).
         pub fn build(self) -> crate::output::DeleteTypedLinkFacetOutput {
-            crate::output::DeleteTypedLinkFacetOutput {}
+            crate::output::DeleteTypedLinkFacetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTypedLinkFacetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput).
@@ -2883,20 +2844,20 @@ impl DeleteTypedLinkFacetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSchemaOutput {
+pub struct DeleteSchemaOutput  {
     /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaOutput {
     /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
 /// See [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
 pub mod delete_schema_output {
-
+    
     /// A builder for [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2910,16 +2871,18 @@ pub mod delete_schema_output {
         }
         /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
         pub fn build(self) -> crate::output::DeleteSchemaOutput {
             crate::output::DeleteSchemaOutput {
-                schema_arn: self.schema_arn,
+                schema_arn: self.schema_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
@@ -2931,19 +2894,24 @@ impl DeleteSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteObjectOutput {}
+pub struct DeleteObjectOutput  {
+}
 /// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
 pub mod delete_object_output {
-
+    
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
         pub fn build(self) -> crate::output::DeleteObjectOutput {
-            crate::output::DeleteObjectOutput {}
+            crate::output::DeleteObjectOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteObjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
@@ -2955,19 +2923,24 @@ impl DeleteObjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFacetOutput {}
+pub struct DeleteFacetOutput  {
+}
 /// See [`DeleteFacetOutput`](crate::output::DeleteFacetOutput).
 pub mod delete_facet_output {
-
+    
     /// A builder for [`DeleteFacetOutput`](crate::output::DeleteFacetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFacetOutput`](crate::output::DeleteFacetOutput).
         pub fn build(self) -> crate::output::DeleteFacetOutput {
-            crate::output::DeleteFacetOutput {}
+            crate::output::DeleteFacetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFacetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFacetOutput`](crate::output::DeleteFacetOutput).
@@ -2979,20 +2952,20 @@ impl DeleteFacetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDirectoryOutput {
+pub struct DeleteDirectoryOutput  {
     /// <p>The ARN of the deleted directory.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDirectoryOutput {
     /// <p>The ARN of the deleted directory.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
 /// See [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput).
 pub mod delete_directory_output {
-
+    
     /// A builder for [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3005,20 +2978,19 @@ pub mod delete_directory_output {
             self
         }
         /// <p>The ARN of the deleted directory.</p>
-        pub fn set_directory_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_arn = input;
-            self
+        pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput).
         pub fn build(self) -> crate::output::DeleteDirectoryOutput {
             crate::output::DeleteDirectoryOutput {
-                directory_arn: self.directory_arn,
+                directory_arn: self.directory_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput).
@@ -3030,19 +3002,24 @@ impl DeleteDirectoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTypedLinkFacetOutput {}
+pub struct CreateTypedLinkFacetOutput  {
+}
 /// See [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput).
 pub mod create_typed_link_facet_output {
-
+    
     /// A builder for [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput).
         pub fn build(self) -> crate::output::CreateTypedLinkFacetOutput {
-            crate::output::CreateTypedLinkFacetOutput {}
+            crate::output::CreateTypedLinkFacetOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateTypedLinkFacetOutput {
     /// Creates a new builder-style object to manufacture [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput).
@@ -3054,20 +3031,20 @@ impl CreateTypedLinkFacetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSchemaOutput {
+pub struct CreateSchemaOutput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl CreateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
 /// See [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
 pub mod create_schema_output {
-
+    
     /// A builder for [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3081,16 +3058,18 @@ pub mod create_schema_output {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
         pub fn build(self) -> crate::output::CreateSchemaOutput {
             crate::output::CreateSchemaOutput {
-                schema_arn: self.schema_arn,
+                schema_arn: self.schema_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSchemaOutput {
     /// Creates a new builder-style object to manufacture [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
@@ -3102,20 +3081,20 @@ impl CreateSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateObjectOutput {
+pub struct CreateObjectOutput  {
     /// <p>The identifier that is associated with the object.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl CreateObjectOutput {
     /// <p>The identifier that is associated with the object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`CreateObjectOutput`](crate::output::CreateObjectOutput).
 pub mod create_object_output {
-
+    
     /// A builder for [`CreateObjectOutput`](crate::output::CreateObjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3128,20 +3107,19 @@ pub mod create_object_output {
             self
         }
         /// <p>The identifier that is associated with the object.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`CreateObjectOutput`](crate::output::CreateObjectOutput).
         pub fn build(self) -> crate::output::CreateObjectOutput {
             crate::output::CreateObjectOutput {
-                object_identifier: self.object_identifier,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateObjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateObjectOutput`](crate::output::CreateObjectOutput).
@@ -3153,20 +3131,20 @@ impl CreateObjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIndexOutput {
+pub struct CreateIndexOutput  {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl CreateIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`CreateIndexOutput`](crate::output::CreateIndexOutput).
 pub mod create_index_output {
-
+    
     /// A builder for [`CreateIndexOutput`](crate::output::CreateIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3179,20 +3157,19 @@ pub mod create_index_output {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`CreateIndexOutput`](crate::output::CreateIndexOutput).
         pub fn build(self) -> crate::output::CreateIndexOutput {
             crate::output::CreateIndexOutput {
-                object_identifier: self.object_identifier,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIndexOutput {
     /// Creates a new builder-style object to manufacture [`CreateIndexOutput`](crate::output::CreateIndexOutput).
@@ -3204,19 +3181,24 @@ impl CreateIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFacetOutput {}
+pub struct CreateFacetOutput  {
+}
 /// See [`CreateFacetOutput`](crate::output::CreateFacetOutput).
 pub mod create_facet_output {
-
+    
     /// A builder for [`CreateFacetOutput`](crate::output::CreateFacetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateFacetOutput`](crate::output::CreateFacetOutput).
         pub fn build(self) -> crate::output::CreateFacetOutput {
-            crate::output::CreateFacetOutput {}
+            crate::output::CreateFacetOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateFacetOutput {
     /// Creates a new builder-style object to manufacture [`CreateFacetOutput`](crate::output::CreateFacetOutput).
@@ -3228,7 +3210,7 @@ impl CreateFacetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDirectoryOutput {
+pub struct CreateDirectoryOutput  {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -3244,25 +3226,25 @@ pub struct CreateDirectoryOutput {
 }
 impl CreateDirectoryOutput {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The name of the <code>Directory</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The root object node of the created directory.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-    pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
+    pub fn applied_schema_arn(&self) -> std::option::Option<& str> {
         self.applied_schema_arn.as_deref()
     }
 }
 /// See [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput).
 pub mod create_directory_output {
-
+    
     /// A builder for [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3278,12 +3260,8 @@ pub mod create_directory_output {
             self
         }
         /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-        pub fn set_directory_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_arn = input;
-            self
+        pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_arn = input; self
         }
         /// <p>The name of the <code>Directory</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3292,8 +3270,7 @@ pub mod create_directory_output {
         }
         /// <p>The name of the <code>Directory</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The root object node of the created directory.</p>
         pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3301,12 +3278,8 @@ pub mod create_directory_output {
             self
         }
         /// <p>The root object node of the created directory.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
         pub fn applied_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3314,23 +3287,25 @@ pub mod create_directory_output {
             self
         }
         /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-        pub fn set_applied_schema_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.applied_schema_arn = input;
-            self
+        pub fn set_applied_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.applied_schema_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput).
         pub fn build(self) -> crate::output::CreateDirectoryOutput {
             crate::output::CreateDirectoryOutput {
-                directory_arn: self.directory_arn,
-                name: self.name,
-                object_identifier: self.object_identifier,
-                applied_schema_arn: self.applied_schema_arn,
+                directory_arn: self.directory_arn
+                ,
+                name: self.name
+                ,
+                object_identifier: self.object_identifier
+                ,
+                applied_schema_arn: self.applied_schema_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput).
@@ -3342,25 +3317,24 @@ impl CreateDirectoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchWriteOutput {
+pub struct BatchWriteOutput  {
     /// <p>A list of all the responses for each batch write.</p>
     #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>,
 }
 impl BatchWriteOutput {
     /// <p>A list of all the responses for each batch write.</p>
-    pub fn responses(&self) -> std::option::Option<&[crate::model::BatchWriteOperationResponse]> {
+    pub fn responses(&self) -> std::option::Option<& [crate::model::BatchWriteOperationResponse]> {
         self.responses.as_deref()
     }
 }
 /// See [`BatchWriteOutput`](crate::output::BatchWriteOutput).
 pub mod batch_write_output {
-
+    
     /// A builder for [`BatchWriteOutput`](crate::output::BatchWriteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) responses:
-            std::option::Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>,
+        pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>,
     }
     impl Builder {
         /// Appends an item to `responses`.
@@ -3370,25 +3344,24 @@ pub mod batch_write_output {
         /// <p>A list of all the responses for each batch write.</p>
         pub fn responses(mut self, input: crate::model::BatchWriteOperationResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input);
-            self.responses = Some(v);
-            self
+                            v.push(input);
+                            self.responses = Some(v);
+                            self
         }
         /// <p>A list of all the responses for each batch write.</p>
-        pub fn set_responses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>,
-        ) -> Self {
-            self.responses = input;
-            self
+        pub fn set_responses(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>) -> Self {
+            self.responses = input; self
         }
         /// Consumes the builder and constructs a [`BatchWriteOutput`](crate::output::BatchWriteOutput).
         pub fn build(self) -> crate::output::BatchWriteOutput {
             crate::output::BatchWriteOutput {
-                responses: self.responses,
+                responses: self.responses
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchWriteOutput {
     /// Creates a new builder-style object to manufacture [`BatchWriteOutput`](crate::output::BatchWriteOutput).
@@ -3400,25 +3373,24 @@ impl BatchWriteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchReadOutput {
+pub struct BatchReadOutput  {
     /// <p>A list of all the responses for each batch read.</p>
     #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchReadOperationResponse>>,
 }
 impl BatchReadOutput {
     /// <p>A list of all the responses for each batch read.</p>
-    pub fn responses(&self) -> std::option::Option<&[crate::model::BatchReadOperationResponse]> {
+    pub fn responses(&self) -> std::option::Option<& [crate::model::BatchReadOperationResponse]> {
         self.responses.as_deref()
     }
 }
 /// See [`BatchReadOutput`](crate::output::BatchReadOutput).
 pub mod batch_read_output {
-
+    
     /// A builder for [`BatchReadOutput`](crate::output::BatchReadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) responses:
-            std::option::Option<std::vec::Vec<crate::model::BatchReadOperationResponse>>,
+        pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::BatchReadOperationResponse>>,
     }
     impl Builder {
         /// Appends an item to `responses`.
@@ -3428,25 +3400,24 @@ pub mod batch_read_output {
         /// <p>A list of all the responses for each batch read.</p>
         pub fn responses(mut self, input: crate::model::BatchReadOperationResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input);
-            self.responses = Some(v);
-            self
+                            v.push(input);
+                            self.responses = Some(v);
+                            self
         }
         /// <p>A list of all the responses for each batch read.</p>
-        pub fn set_responses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchReadOperationResponse>>,
-        ) -> Self {
-            self.responses = input;
-            self
+        pub fn set_responses(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchReadOperationResponse>>) -> Self {
+            self.responses = input; self
         }
         /// Consumes the builder and constructs a [`BatchReadOutput`](crate::output::BatchReadOutput).
         pub fn build(self) -> crate::output::BatchReadOutput {
             crate::output::BatchReadOutput {
-                responses: self.responses,
+                responses: self.responses
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchReadOutput {
     /// Creates a new builder-style object to manufacture [`BatchReadOutput`](crate::output::BatchReadOutput).
@@ -3458,20 +3429,20 @@ impl BatchReadOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachTypedLinkOutput {
+pub struct AttachTypedLinkOutput  {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
 impl AttachTypedLinkOutput {
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::model::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
 }
 /// See [`AttachTypedLinkOutput`](crate::output::AttachTypedLinkOutput).
 pub mod attach_typed_link_output {
-
+    
     /// A builder for [`AttachTypedLinkOutput`](crate::output::AttachTypedLinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3484,20 +3455,19 @@ pub mod attach_typed_link_output {
             self
         }
         /// <p>Returns a typed link specifier as output.</p>
-        pub fn set_typed_link_specifier(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
-            self.typed_link_specifier = input;
-            self
+        pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::model::TypedLinkSpecifier>) -> Self {
+            self.typed_link_specifier = input; self
         }
         /// Consumes the builder and constructs a [`AttachTypedLinkOutput`](crate::output::AttachTypedLinkOutput).
         pub fn build(self) -> crate::output::AttachTypedLinkOutput {
             crate::output::AttachTypedLinkOutput {
-                typed_link_specifier: self.typed_link_specifier,
+                typed_link_specifier: self.typed_link_specifier
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachTypedLinkOutput {
     /// Creates a new builder-style object to manufacture [`AttachTypedLinkOutput`](crate::output::AttachTypedLinkOutput).
@@ -3509,20 +3479,20 @@ impl AttachTypedLinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachToIndexOutput {
+pub struct AttachToIndexOutput  {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl AttachToIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn attached_object_identifier(&self) -> std::option::Option<& str> {
         self.attached_object_identifier.as_deref()
     }
 }
 /// See [`AttachToIndexOutput`](crate::output::AttachToIndexOutput).
 pub mod attach_to_index_output {
-
+    
     /// A builder for [`AttachToIndexOutput`](crate::output::AttachToIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3535,20 +3505,19 @@ pub mod attach_to_index_output {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-        pub fn set_attached_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attached_object_identifier = input;
-            self
+        pub fn set_attached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attached_object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`AttachToIndexOutput`](crate::output::AttachToIndexOutput).
         pub fn build(self) -> crate::output::AttachToIndexOutput {
             crate::output::AttachToIndexOutput {
-                attached_object_identifier: self.attached_object_identifier,
+                attached_object_identifier: self.attached_object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachToIndexOutput {
     /// Creates a new builder-style object to manufacture [`AttachToIndexOutput`](crate::output::AttachToIndexOutput).
@@ -3560,19 +3529,24 @@ impl AttachToIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachPolicyOutput {}
+pub struct AttachPolicyOutput  {
+}
 /// See [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
 pub mod attach_policy_output {
-
+    
     /// A builder for [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
         pub fn build(self) -> crate::output::AttachPolicyOutput {
-            crate::output::AttachPolicyOutput {}
+            crate::output::AttachPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl AttachPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
@@ -3584,20 +3558,20 @@ impl AttachPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachObjectOutput {
+pub struct AttachObjectOutput  {
     /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
     #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl AttachObjectOutput {
     /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
-    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn attached_object_identifier(&self) -> std::option::Option<& str> {
         self.attached_object_identifier.as_deref()
     }
 }
 /// See [`AttachObjectOutput`](crate::output::AttachObjectOutput).
 pub mod attach_object_output {
-
+    
     /// A builder for [`AttachObjectOutput`](crate::output::AttachObjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3610,20 +3584,19 @@ pub mod attach_object_output {
             self
         }
         /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
-        pub fn set_attached_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attached_object_identifier = input;
-            self
+        pub fn set_attached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attached_object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`AttachObjectOutput`](crate::output::AttachObjectOutput).
         pub fn build(self) -> crate::output::AttachObjectOutput {
             crate::output::AttachObjectOutput {
-                attached_object_identifier: self.attached_object_identifier,
+                attached_object_identifier: self.attached_object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachObjectOutput {
     /// Creates a new builder-style object to manufacture [`AttachObjectOutput`](crate::output::AttachObjectOutput).
@@ -3635,7 +3608,7 @@ impl AttachObjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplySchemaOutput {
+pub struct ApplySchemaOutput  {
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub applied_schema_arn: std::option::Option<std::string::String>,
@@ -3645,17 +3618,17 @@ pub struct ApplySchemaOutput {
 }
 impl ApplySchemaOutput {
     /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
-    pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
+    pub fn applied_schema_arn(&self) -> std::option::Option<& str> {
         self.applied_schema_arn.as_deref()
     }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
 /// See [`ApplySchemaOutput`](crate::output::ApplySchemaOutput).
 pub mod apply_schema_output {
-
+    
     /// A builder for [`ApplySchemaOutput`](crate::output::ApplySchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3669,12 +3642,8 @@ pub mod apply_schema_output {
             self
         }
         /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
-        pub fn set_applied_schema_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.applied_schema_arn = input;
-            self
+        pub fn set_applied_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.applied_schema_arn = input; self
         }
         /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3682,21 +3651,21 @@ pub mod apply_schema_output {
             self
         }
         /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-        pub fn set_directory_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_arn = input;
-            self
+        pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_arn = input; self
         }
         /// Consumes the builder and constructs a [`ApplySchemaOutput`](crate::output::ApplySchemaOutput).
         pub fn build(self) -> crate::output::ApplySchemaOutput {
             crate::output::ApplySchemaOutput {
-                applied_schema_arn: self.applied_schema_arn,
-                directory_arn: self.directory_arn,
+                applied_schema_arn: self.applied_schema_arn
+                ,
+                directory_arn: self.directory_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplySchemaOutput {
     /// Creates a new builder-style object to manufacture [`ApplySchemaOutput`](crate::output::ApplySchemaOutput).
@@ -3708,19 +3677,24 @@ impl ApplySchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFacetToObjectOutput {}
+pub struct AddFacetToObjectOutput  {
+}
 /// See [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput).
 pub mod add_facet_to_object_output {
-
+    
     /// A builder for [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput).
         pub fn build(self) -> crate::output::AddFacetToObjectOutput {
-            crate::output::AddFacetToObjectOutput {}
+            crate::output::AddFacetToObjectOutput {
+            }
         }
     }
+    
+    
 }
 impl AddFacetToObjectOutput {
     /// Creates a new builder-style object to manufacture [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput).
@@ -3728,3 +3702,4 @@ impl AddFacetToObjectOutput {
         crate::output::add_facet_to_object_output::Builder::default()
     }
 }
+

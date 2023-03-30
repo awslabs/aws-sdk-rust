@@ -3,7 +3,7 @@
 /// <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPoliciesStatus {
+pub struct AccessPoliciesStatus  {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
     #[doc(hidden)]
     pub options: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct AccessPoliciesStatus {
 }
 impl AccessPoliciesStatus {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
-    pub fn options(&self) -> std::option::Option<&str> {
+    pub fn options(&self) -> std::option::Option<& str> {
         self.options.as_deref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OptionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
 pub mod access_policies_status {
-
+    
     /// A builder for [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod access_policies_status {
         }
         /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
         pub fn set_options(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// <p>The status of domain configuration option.</p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
@@ -47,21 +46,21 @@ pub mod access_policies_status {
             self
         }
         /// <p>The status of domain configuration option.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OptionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
         pub fn build(self) -> crate::model::AccessPoliciesStatus {
             crate::model::AccessPoliciesStatus {
-                options: self.options,
-                status: self.status,
+                options: self.options
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPoliciesStatus {
     /// Creates a new builder-style object to manufacture [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
@@ -73,7 +72,7 @@ impl AccessPoliciesStatus {
 /// <p>The status of domain configuration option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptionStatus {
+pub struct OptionStatus  {
     /// <p>A timestamp for when this option was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -84,11 +83,11 @@ pub struct OptionStatus {
     #[doc(hidden)]
     pub update_version: i32,
     /// <p>The state of processing a change to an option. Possible values:</p>
-    /// <ul>
-    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
-    /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
-    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+    /// <ul> 
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li> 
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li> 
+    /// <li><code>Active</code>: the option's latest value is completely deployed.</li> 
+    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::OptionState>,
@@ -98,11 +97,11 @@ pub struct OptionStatus {
 }
 impl OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A timestamp for when this option was last updated.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>A unique integer that indicates when this option was last updated.</p>
@@ -110,13 +109,13 @@ impl OptionStatus {
         self.update_version
     }
     /// <p>The state of processing a change to an option. Possible values:</p>
-    /// <ul>
-    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
-    /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
-    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+    /// <ul> 
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li> 
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li> 
+    /// <li><code>Active</code>: the option's latest value is completely deployed.</li> 
+    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::model::OptionState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::OptionState> {
         self.state.as_ref()
     }
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
@@ -126,7 +125,7 @@ impl OptionStatus {
 }
 /// See [`OptionStatus`](crate::model::OptionStatus).
 pub mod option_status {
-
+    
     /// A builder for [`OptionStatus`](crate::model::OptionStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -143,12 +142,8 @@ pub mod option_status {
             self
         }
         /// <p>A timestamp for when this option was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>A timestamp for when this option was last updated.</p>
         pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -156,12 +151,8 @@ pub mod option_status {
             self
         }
         /// <p>A timestamp for when this option was last updated.</p>
-        pub fn set_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_date = input;
-            self
+        pub fn set_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_date = input; self
         }
         /// <p>A unique integer that indicates when this option was last updated.</p>
         pub fn update_version(mut self, input: i32) -> Self {
@@ -170,30 +161,28 @@ pub mod option_status {
         }
         /// <p>A unique integer that indicates when this option was last updated.</p>
         pub fn set_update_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.update_version = input;
-            self
+            self.update_version = input; self
         }
         /// <p>The state of processing a change to an option. Possible values:</p>
-        /// <ul>
-        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-        /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
-        /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
-        /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+        /// <ul> 
+        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li> 
+        /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li> 
+        /// <li><code>Active</code>: the option's latest value is completely deployed.</li> 
+        /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> 
         /// </ul>
         pub fn state(mut self, input: crate::model::OptionState) -> Self {
             self.state = Some(input);
             self
         }
         /// <p>The state of processing a change to an option. Possible values:</p>
-        /// <ul>
-        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-        /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
-        /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
-        /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+        /// <ul> 
+        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li> 
+        /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li> 
+        /// <li><code>Active</code>: the option's latest value is completely deployed.</li> 
+        /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> 
         /// </ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::OptionState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Indicates that the option will be deleted once processing is complete.</p>
         pub fn pending_deletion(mut self, input: bool) -> Self {
@@ -202,20 +191,27 @@ pub mod option_status {
         }
         /// <p>Indicates that the option will be deleted once processing is complete.</p>
         pub fn set_pending_deletion(mut self, input: std::option::Option<bool>) -> Self {
-            self.pending_deletion = input;
-            self
+            self.pending_deletion = input; self
         }
         /// Consumes the builder and constructs a [`OptionStatus`](crate::model::OptionStatus).
         pub fn build(self) -> crate::model::OptionStatus {
             crate::model::OptionStatus {
-                creation_date: self.creation_date,
-                update_date: self.update_date,
-                update_version: self.update_version.unwrap_or_default(),
-                state: self.state,
-                pending_deletion: self.pending_deletion,
+                creation_date: self.creation_date
+                ,
+                update_date: self.update_date
+                ,
+                update_version: self.update_version
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                pending_deletion: self.pending_deletion
+                ,
             }
         }
     }
+    
+    
 }
 impl OptionStatus {
     /// Creates a new builder-style object to manufacture [`OptionStatus`](crate::model::OptionStatus).
@@ -230,9 +226,9 @@ impl OptionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let optionstate = unimplemented!();
 /// match optionstate {
@@ -256,7 +252,7 @@ impl OptionStatus {
 /// Specifically, when `optionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OptionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -269,15 +265,7 @@ impl OptionStatus {
 /// <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OptionState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -288,7 +276,7 @@ pub enum OptionState {
     #[allow(missing_docs)] // documentation missing in model
     RequiresIndexDocuments,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OptionState {
     fn from(s: &str) -> Self {
@@ -297,17 +285,17 @@ impl std::convert::From<&str> for OptionState {
             "FailedToValidate" => OptionState::FailedToValidate,
             "Processing" => OptionState::Processing,
             "RequiresIndexDocuments" => OptionState::RequiresIndexDocuments,
-            other => OptionState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OptionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OptionState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OptionState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OptionState::from(s))
+                }
+            }
 impl OptionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -316,16 +304,13 @@ impl OptionState {
             OptionState::FailedToValidate => "FailedToValidate",
             OptionState::Processing => "Processing",
             OptionState::RequiresIndexDocuments => "RequiresIndexDocuments",
-            OptionState::Unknown(value) => value.as_str(),
+            OptionState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Active",
-            "FailedToValidate",
-            "Processing",
-            "RequiresIndexDocuments",
+            "Active", "FailedToValidate", "Processing", "RequiresIndexDocuments"
         ]
     }
 }
@@ -338,7 +323,7 @@ impl AsRef<str> for OptionState {
 /// <p>The status and configuration of a search domain's scaling parameters. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScalingParametersStatus {
+pub struct ScalingParametersStatus  {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::ScalingParameters>,
@@ -348,17 +333,17 @@ pub struct ScalingParametersStatus {
 }
 impl ScalingParametersStatus {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::ScalingParameters> {
+    pub fn options(&self) -> std::option::Option<& crate::model::ScalingParameters> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OptionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
 pub mod scaling_parameters_status {
-
+    
     /// A builder for [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -372,12 +357,8 @@ pub mod scaling_parameters_status {
             self
         }
         /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-        pub fn set_options(
-            mut self,
-            input: std::option::Option<crate::model::ScalingParameters>,
-        ) -> Self {
-            self.options = input;
-            self
+        pub fn set_options(mut self, input: std::option::Option<crate::model::ScalingParameters>) -> Self {
+            self.options = input; self
         }
         /// <p>The status of domain configuration option.</p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
@@ -385,21 +366,21 @@ pub mod scaling_parameters_status {
             self
         }
         /// <p>The status of domain configuration option.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OptionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
         pub fn build(self) -> crate::model::ScalingParametersStatus {
             crate::model::ScalingParametersStatus {
-                options: self.options,
-                status: self.status,
+                options: self.options
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ScalingParametersStatus {
     /// Creates a new builder-style object to manufacture [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
@@ -411,7 +392,7 @@ impl ScalingParametersStatus {
 /// <p>The desired instance type and desired number of replicas of each index partition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScalingParameters {
+pub struct ScalingParameters  {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
     #[doc(hidden)]
     pub desired_instance_type: std::option::Option<crate::model::PartitionInstanceType>,
@@ -424,9 +405,7 @@ pub struct ScalingParameters {
 }
 impl ScalingParameters {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
-    pub fn desired_instance_type(
-        &self,
-    ) -> std::option::Option<&crate::model::PartitionInstanceType> {
+    pub fn desired_instance_type(&self) -> std::option::Option<& crate::model::PartitionInstanceType> {
         self.desired_instance_type.as_ref()
     }
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
@@ -440,7 +419,7 @@ impl ScalingParameters {
 }
 /// See [`ScalingParameters`](crate::model::ScalingParameters).
 pub mod scaling_parameters {
-
+    
     /// A builder for [`ScalingParameters`](crate::model::ScalingParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -455,12 +434,8 @@ pub mod scaling_parameters {
             self
         }
         /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
-        pub fn set_desired_instance_type(
-            mut self,
-            input: std::option::Option<crate::model::PartitionInstanceType>,
-        ) -> Self {
-            self.desired_instance_type = input;
-            self
+        pub fn set_desired_instance_type(mut self, input: std::option::Option<crate::model::PartitionInstanceType>) -> Self {
+            self.desired_instance_type = input; self
         }
         /// <p>The number of replicas you want to preconfigure for each index partition.</p>
         pub fn desired_replication_count(mut self, input: i32) -> Self {
@@ -469,8 +444,7 @@ pub mod scaling_parameters {
         }
         /// <p>The number of replicas you want to preconfigure for each index partition.</p>
         pub fn set_desired_replication_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.desired_replication_count = input;
-            self
+            self.desired_replication_count = input; self
         }
         /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
         pub fn desired_partition_count(mut self, input: i32) -> Self {
@@ -479,18 +453,24 @@ pub mod scaling_parameters {
         }
         /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
         pub fn set_desired_partition_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.desired_partition_count = input;
-            self
+            self.desired_partition_count = input; self
         }
         /// Consumes the builder and constructs a [`ScalingParameters`](crate::model::ScalingParameters).
         pub fn build(self) -> crate::model::ScalingParameters {
             crate::model::ScalingParameters {
-                desired_instance_type: self.desired_instance_type,
-                desired_replication_count: self.desired_replication_count.unwrap_or_default(),
-                desired_partition_count: self.desired_partition_count.unwrap_or_default(),
+                desired_instance_type: self.desired_instance_type
+                ,
+                desired_replication_count: self.desired_replication_count
+                    .unwrap_or_default()
+                ,
+                desired_partition_count: self.desired_partition_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ScalingParameters {
     /// Creates a new builder-style object to manufacture [`ScalingParameters`](crate::model::ScalingParameters).
@@ -505,9 +485,9 @@ impl ScalingParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let partitioninstancetype = unimplemented!();
 /// match partitioninstancetype {
@@ -544,22 +524,14 @@ impl ScalingParameters {
 /// Specifically, when `partitioninstancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PartitionInstanceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     Search2xlarge,
@@ -596,7 +568,7 @@ pub enum PartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     SearchXlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PartitionInstanceType {
     fn from(s: &str) -> Self {
@@ -612,33 +584,23 @@ impl std::convert::From<&str> for PartitionInstanceType {
             "search.m3.medium" => PartitionInstanceType::SearchM3Medium,
             "search.m3.xlarge" => PartitionInstanceType::SearchM3Xlarge,
             "search.medium" => PartitionInstanceType::SearchMedium,
-            "search.previousgeneration.2xlarge" => {
-                PartitionInstanceType::SearchPreviousgeneration2xlarge
-            }
-            "search.previousgeneration.large" => {
-                PartitionInstanceType::SearchPreviousgenerationLarge
-            }
-            "search.previousgeneration.small" => {
-                PartitionInstanceType::SearchPreviousgenerationSmall
-            }
-            "search.previousgeneration.xlarge" => {
-                PartitionInstanceType::SearchPreviousgenerationXlarge
-            }
+            "search.previousgeneration.2xlarge" => PartitionInstanceType::SearchPreviousgeneration2xlarge,
+            "search.previousgeneration.large" => PartitionInstanceType::SearchPreviousgenerationLarge,
+            "search.previousgeneration.small" => PartitionInstanceType::SearchPreviousgenerationSmall,
+            "search.previousgeneration.xlarge" => PartitionInstanceType::SearchPreviousgenerationXlarge,
             "search.small" => PartitionInstanceType::SearchSmall,
             "search.xlarge" => PartitionInstanceType::SearchXlarge,
-            other => {
-                PartitionInstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PartitionInstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PartitionInstanceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PartitionInstanceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PartitionInstanceType::from(s))
+                }
+            }
 impl PartitionInstanceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -654,43 +616,19 @@ impl PartitionInstanceType {
             PartitionInstanceType::SearchM3Medium => "search.m3.medium",
             PartitionInstanceType::SearchM3Xlarge => "search.m3.xlarge",
             PartitionInstanceType::SearchMedium => "search.medium",
-            PartitionInstanceType::SearchPreviousgeneration2xlarge => {
-                "search.previousgeneration.2xlarge"
-            }
-            PartitionInstanceType::SearchPreviousgenerationLarge => {
-                "search.previousgeneration.large"
-            }
-            PartitionInstanceType::SearchPreviousgenerationSmall => {
-                "search.previousgeneration.small"
-            }
-            PartitionInstanceType::SearchPreviousgenerationXlarge => {
-                "search.previousgeneration.xlarge"
-            }
+            PartitionInstanceType::SearchPreviousgeneration2xlarge => "search.previousgeneration.2xlarge",
+            PartitionInstanceType::SearchPreviousgenerationLarge => "search.previousgeneration.large",
+            PartitionInstanceType::SearchPreviousgenerationSmall => "search.previousgeneration.small",
+            PartitionInstanceType::SearchPreviousgenerationXlarge => "search.previousgeneration.xlarge",
             PartitionInstanceType::SearchSmall => "search.small",
             PartitionInstanceType::SearchXlarge => "search.xlarge",
-            PartitionInstanceType::Unknown(value) => value.as_str(),
+            PartitionInstanceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "search.2xlarge",
-            "search.large",
-            "search.m1.large",
-            "search.m1.small",
-            "search.m2.2xlarge",
-            "search.m2.xlarge",
-            "search.m3.2xlarge",
-            "search.m3.large",
-            "search.m3.medium",
-            "search.m3.xlarge",
-            "search.medium",
-            "search.previousgeneration.2xlarge",
-            "search.previousgeneration.large",
-            "search.previousgeneration.small",
-            "search.previousgeneration.xlarge",
-            "search.small",
-            "search.xlarge",
+            "search.2xlarge", "search.large", "search.m1.large", "search.m1.small", "search.m2.2xlarge", "search.m2.xlarge", "search.m3.2xlarge", "search.m3.large", "search.m3.medium", "search.m3.xlarge", "search.medium", "search.previousgeneration.2xlarge", "search.previousgeneration.large", "search.previousgeneration.small", "search.previousgeneration.xlarge", "search.small", "search.xlarge"
         ]
     }
 }
@@ -703,7 +641,7 @@ impl AsRef<str> for PartitionInstanceType {
 /// <p>The configuration and status of the domain's endpoint options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainEndpointOptionsStatus {
+pub struct DomainEndpointOptionsStatus  {
     /// <p>The domain endpoint options configured for the domain.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::DomainEndpointOptions>,
@@ -713,17 +651,17 @@ pub struct DomainEndpointOptionsStatus {
 }
 impl DomainEndpointOptionsStatus {
     /// <p>The domain endpoint options configured for the domain.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+    pub fn options(&self) -> std::option::Option<& crate::model::DomainEndpointOptions> {
         self.options.as_ref()
     }
     /// <p>The status of the configured domain endpoint options.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OptionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
 pub mod domain_endpoint_options_status {
-
+    
     /// A builder for [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -737,12 +675,8 @@ pub mod domain_endpoint_options_status {
             self
         }
         /// <p>The domain endpoint options configured for the domain.</p>
-        pub fn set_options(
-            mut self,
-            input: std::option::Option<crate::model::DomainEndpointOptions>,
-        ) -> Self {
-            self.options = input;
-            self
+        pub fn set_options(mut self, input: std::option::Option<crate::model::DomainEndpointOptions>) -> Self {
+            self.options = input; self
         }
         /// <p>The status of the configured domain endpoint options.</p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
@@ -750,21 +684,21 @@ pub mod domain_endpoint_options_status {
             self
         }
         /// <p>The status of the configured domain endpoint options.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OptionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
         pub fn build(self) -> crate::model::DomainEndpointOptionsStatus {
             crate::model::DomainEndpointOptionsStatus {
-                options: self.options,
-                status: self.status,
+                options: self.options
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainEndpointOptionsStatus {
     /// Creates a new builder-style object to manufacture [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
@@ -776,7 +710,7 @@ impl DomainEndpointOptionsStatus {
 /// <p>The domain's endpoint options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainEndpointOptions {
+pub struct DomainEndpointOptions  {
     /// <p>Whether the domain is HTTPS only enabled.</p>
     #[doc(hidden)]
     pub enforce_https: std::option::Option<bool>,
@@ -790,13 +724,13 @@ impl DomainEndpointOptions {
         self.enforce_https
     }
     /// <p>The minimum required TLS version</p>
-    pub fn tls_security_policy(&self) -> std::option::Option<&crate::model::TlsSecurityPolicy> {
+    pub fn tls_security_policy(&self) -> std::option::Option<& crate::model::TlsSecurityPolicy> {
         self.tls_security_policy.as_ref()
     }
 }
 /// See [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
 pub mod domain_endpoint_options {
-
+    
     /// A builder for [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -811,8 +745,7 @@ pub mod domain_endpoint_options {
         }
         /// <p>Whether the domain is HTTPS only enabled.</p>
         pub fn set_enforce_https(mut self, input: std::option::Option<bool>) -> Self {
-            self.enforce_https = input;
-            self
+            self.enforce_https = input; self
         }
         /// <p>The minimum required TLS version</p>
         pub fn tls_security_policy(mut self, input: crate::model::TlsSecurityPolicy) -> Self {
@@ -820,21 +753,21 @@ pub mod domain_endpoint_options {
             self
         }
         /// <p>The minimum required TLS version</p>
-        pub fn set_tls_security_policy(
-            mut self,
-            input: std::option::Option<crate::model::TlsSecurityPolicy>,
-        ) -> Self {
-            self.tls_security_policy = input;
-            self
+        pub fn set_tls_security_policy(mut self, input: std::option::Option<crate::model::TlsSecurityPolicy>) -> Self {
+            self.tls_security_policy = input; self
         }
         /// Consumes the builder and constructs a [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
         pub fn build(self) -> crate::model::DomainEndpointOptions {
             crate::model::DomainEndpointOptions {
-                enforce_https: self.enforce_https,
-                tls_security_policy: self.tls_security_policy,
+                enforce_https: self.enforce_https
+                ,
+                tls_security_policy: self.tls_security_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainEndpointOptions {
     /// Creates a new builder-style object to manufacture [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
@@ -849,9 +782,9 @@ impl DomainEndpointOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tlssecuritypolicy = unimplemented!();
 /// match tlssecuritypolicy {
@@ -873,60 +806,52 @@ impl DomainEndpointOptions {
 /// Specifically, when `tlssecuritypolicy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TlsSecurityPolicy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The minimum required TLS version.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TlsSecurityPolicy {
     #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls10201907,
     #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls12201907,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TlsSecurityPolicy {
     fn from(s: &str) -> Self {
         match s {
             "Policy-Min-TLS-1-0-2019-07" => TlsSecurityPolicy::PolicyMinTls10201907,
             "Policy-Min-TLS-1-2-2019-07" => TlsSecurityPolicy::PolicyMinTls12201907,
-            other => {
-                TlsSecurityPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TlsSecurityPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TlsSecurityPolicy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TlsSecurityPolicy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TlsSecurityPolicy::from(s))
+                }
+            }
 impl TlsSecurityPolicy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TlsSecurityPolicy::PolicyMinTls10201907 => "Policy-Min-TLS-1-0-2019-07",
             TlsSecurityPolicy::PolicyMinTls12201907 => "Policy-Min-TLS-1-2-2019-07",
-            TlsSecurityPolicy::Unknown(value) => value.as_str(),
+            TlsSecurityPolicy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"]
+        &[
+            "Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"
+        ]
     }
 }
 impl AsRef<str> for TlsSecurityPolicy {
@@ -938,7 +863,7 @@ impl AsRef<str> for TlsSecurityPolicy {
 /// <p>The status and configuration of the domain's availability options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityOptionsStatus {
+pub struct AvailabilityOptionsStatus  {
     /// <p>The availability options configured for the domain.</p>
     #[doc(hidden)]
     pub options: bool,
@@ -952,13 +877,13 @@ impl AvailabilityOptionsStatus {
         self.options
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OptionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
 pub mod availability_options_status {
-
+    
     /// A builder for [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -973,8 +898,7 @@ pub mod availability_options_status {
         }
         /// <p>The availability options configured for the domain.</p>
         pub fn set_options(mut self, input: std::option::Option<bool>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// <p>The status of domain configuration option.</p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
@@ -982,21 +906,22 @@ pub mod availability_options_status {
             self
         }
         /// <p>The status of domain configuration option.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OptionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
         pub fn build(self) -> crate::model::AvailabilityOptionsStatus {
             crate::model::AvailabilityOptionsStatus {
-                options: self.options.unwrap_or_default(),
-                status: self.status,
+                options: self.options
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl AvailabilityOptionsStatus {
     /// Creates a new builder-style object to manufacture [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
@@ -1008,7 +933,7 @@ impl AvailabilityOptionsStatus {
 /// <p>The value of a <code>Suggester</code> and its current status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuggesterStatus {
+pub struct SuggesterStatus  {
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Suggester>,
@@ -1018,17 +943,17 @@ pub struct SuggesterStatus {
 }
 impl SuggesterStatus {
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
-    pub fn options(&self) -> std::option::Option<&crate::model::Suggester> {
+    pub fn options(&self) -> std::option::Option<& crate::model::Suggester> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OptionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`SuggesterStatus`](crate::model::SuggesterStatus).
 pub mod suggester_status {
-
+    
     /// A builder for [`SuggesterStatus`](crate::model::SuggesterStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1043,8 +968,7 @@ pub mod suggester_status {
         }
         /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Suggester>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// <p>The status of domain configuration option.</p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
@@ -1052,21 +976,21 @@ pub mod suggester_status {
             self
         }
         /// <p>The status of domain configuration option.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OptionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`SuggesterStatus`](crate::model::SuggesterStatus).
         pub fn build(self) -> crate::model::SuggesterStatus {
             crate::model::SuggesterStatus {
-                options: self.options,
-                status: self.status,
+                options: self.options
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl SuggesterStatus {
     /// Creates a new builder-style object to manufacture [`SuggesterStatus`](crate::model::SuggesterStatus).
@@ -1078,7 +1002,7 @@ impl SuggesterStatus {
 /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Suggester {
+pub struct Suggester  {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     #[doc(hidden)]
     pub suggester_name: std::option::Option<std::string::String>,
@@ -1088,25 +1012,22 @@ pub struct Suggester {
 }
 impl Suggester {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn suggester_name(&self) -> std::option::Option<&str> {
+    pub fn suggester_name(&self) -> std::option::Option<& str> {
         self.suggester_name.as_deref()
     }
     /// <p>Options for a search suggester.</p>
-    pub fn document_suggester_options(
-        &self,
-    ) -> std::option::Option<&crate::model::DocumentSuggesterOptions> {
+    pub fn document_suggester_options(&self) -> std::option::Option<& crate::model::DocumentSuggesterOptions> {
         self.document_suggester_options.as_ref()
     }
 }
 /// See [`Suggester`](crate::model::Suggester).
 pub mod suggester {
-
+    
     /// A builder for [`Suggester`](crate::model::Suggester).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester_name: std::option::Option<std::string::String>,
-        pub(crate) document_suggester_options:
-            std::option::Option<crate::model::DocumentSuggesterOptions>,
+        pub(crate) document_suggester_options: std::option::Option<crate::model::DocumentSuggesterOptions>,
     }
     impl Builder {
         /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
@@ -1115,37 +1036,30 @@ pub mod suggester {
             self
         }
         /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-        pub fn set_suggester_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.suggester_name = input;
-            self
+        pub fn set_suggester_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suggester_name = input; self
         }
         /// <p>Options for a search suggester.</p>
-        pub fn document_suggester_options(
-            mut self,
-            input: crate::model::DocumentSuggesterOptions,
-        ) -> Self {
+        pub fn document_suggester_options(mut self, input: crate::model::DocumentSuggesterOptions) -> Self {
             self.document_suggester_options = Some(input);
             self
         }
         /// <p>Options for a search suggester.</p>
-        pub fn set_document_suggester_options(
-            mut self,
-            input: std::option::Option<crate::model::DocumentSuggesterOptions>,
-        ) -> Self {
-            self.document_suggester_options = input;
-            self
+        pub fn set_document_suggester_options(mut self, input: std::option::Option<crate::model::DocumentSuggesterOptions>) -> Self {
+            self.document_suggester_options = input; self
         }
         /// Consumes the builder and constructs a [`Suggester`](crate::model::Suggester).
         pub fn build(self) -> crate::model::Suggester {
             crate::model::Suggester {
-                suggester_name: self.suggester_name,
-                document_suggester_options: self.document_suggester_options,
+                suggester_name: self.suggester_name
+                ,
+                document_suggester_options: self.document_suggester_options
+                ,
             }
         }
     }
+    
+    
 }
 impl Suggester {
     /// Creates a new builder-style object to manufacture [`Suggester`](crate::model::Suggester).
@@ -1157,7 +1071,7 @@ impl Suggester {
 /// <p>Options for a search suggester.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentSuggesterOptions {
+pub struct DocumentSuggesterOptions  {
     /// <p>The name of the index field you want to use for suggestions. </p>
     #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
@@ -1170,21 +1084,21 @@ pub struct DocumentSuggesterOptions {
 }
 impl DocumentSuggesterOptions {
     /// <p>The name of the index field you want to use for suggestions. </p>
-    pub fn source_field(&self) -> std::option::Option<&str> {
+    pub fn source_field(&self) -> std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
-    pub fn fuzzy_matching(&self) -> std::option::Option<&crate::model::SuggesterFuzzyMatching> {
+    pub fn fuzzy_matching(&self) -> std::option::Option<& crate::model::SuggesterFuzzyMatching> {
         self.fuzzy_matching.as_ref()
     }
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
-    pub fn sort_expression(&self) -> std::option::Option<&str> {
+    pub fn sort_expression(&self) -> std::option::Option<& str> {
         self.sort_expression.as_deref()
     }
 }
 /// See [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
 pub mod document_suggester_options {
-
+    
     /// A builder for [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1200,8 +1114,7 @@ pub mod document_suggester_options {
         }
         /// <p>The name of the index field you want to use for suggestions. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_field = input;
-            self
+            self.source_field = input; self
         }
         /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
         pub fn fuzzy_matching(mut self, input: crate::model::SuggesterFuzzyMatching) -> Self {
@@ -1209,12 +1122,8 @@ pub mod document_suggester_options {
             self
         }
         /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
-        pub fn set_fuzzy_matching(
-            mut self,
-            input: std::option::Option<crate::model::SuggesterFuzzyMatching>,
-        ) -> Self {
-            self.fuzzy_matching = input;
-            self
+        pub fn set_fuzzy_matching(mut self, input: std::option::Option<crate::model::SuggesterFuzzyMatching>) -> Self {
+            self.fuzzy_matching = input; self
         }
         /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
         pub fn sort_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1222,22 +1131,23 @@ pub mod document_suggester_options {
             self
         }
         /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
-        pub fn set_sort_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sort_expression = input;
-            self
+        pub fn set_sort_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sort_expression = input; self
         }
         /// Consumes the builder and constructs a [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
         pub fn build(self) -> crate::model::DocumentSuggesterOptions {
             crate::model::DocumentSuggesterOptions {
-                source_field: self.source_field,
-                fuzzy_matching: self.fuzzy_matching,
-                sort_expression: self.sort_expression,
+                source_field: self.source_field
+                ,
+                fuzzy_matching: self.fuzzy_matching
+                ,
+                sort_expression: self.sort_expression
+                ,
             }
         }
     }
+    
+    
 }
 impl DocumentSuggesterOptions {
     /// Creates a new builder-style object to manufacture [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
@@ -1252,9 +1162,9 @@ impl DocumentSuggesterOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let suggesterfuzzymatching = unimplemented!();
 /// match suggesterfuzzymatching {
@@ -1277,22 +1187,14 @@ impl DocumentSuggesterOptions {
 /// Specifically, when `suggesterfuzzymatching` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SuggesterFuzzyMatching::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SuggesterFuzzyMatching {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -1301,7 +1203,7 @@ pub enum SuggesterFuzzyMatching {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SuggesterFuzzyMatching {
     fn from(s: &str) -> Self {
@@ -1309,19 +1211,17 @@ impl std::convert::From<&str> for SuggesterFuzzyMatching {
             "high" => SuggesterFuzzyMatching::High,
             "low" => SuggesterFuzzyMatching::Low,
             "none" => SuggesterFuzzyMatching::None,
-            other => {
-                SuggesterFuzzyMatching::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SuggesterFuzzyMatching::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SuggesterFuzzyMatching {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SuggesterFuzzyMatching::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SuggesterFuzzyMatching::from(s))
+                }
+            }
 impl SuggesterFuzzyMatching {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1329,12 +1229,14 @@ impl SuggesterFuzzyMatching {
             SuggesterFuzzyMatching::High => "high",
             SuggesterFuzzyMatching::Low => "low",
             SuggesterFuzzyMatching::None => "none",
-            SuggesterFuzzyMatching::Unknown(value) => value.as_str(),
+            SuggesterFuzzyMatching::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["high", "low", "none"]
+        &[
+            "high", "low", "none"
+        ]
     }
 }
 impl AsRef<str> for SuggesterFuzzyMatching {
@@ -1346,7 +1248,7 @@ impl AsRef<str> for SuggesterFuzzyMatching {
 /// <p>The value of an <code>IndexField</code> and its current status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexFieldStatus {
+pub struct IndexFieldStatus  {
     /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::IndexField>,
@@ -1356,17 +1258,17 @@ pub struct IndexFieldStatus {
 }
 impl IndexFieldStatus {
     /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::IndexField> {
+    pub fn options(&self) -> std::option::Option<& crate::model::IndexField> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OptionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`IndexFieldStatus`](crate::model::IndexFieldStatus).
 pub mod index_field_status {
-
+    
     /// A builder for [`IndexFieldStatus`](crate::model::IndexFieldStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1381,8 +1283,7 @@ pub mod index_field_status {
         }
         /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::IndexField>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// <p>The status of domain configuration option.</p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
@@ -1390,21 +1291,21 @@ pub mod index_field_status {
             self
         }
         /// <p>The status of domain configuration option.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OptionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`IndexFieldStatus`](crate::model::IndexFieldStatus).
         pub fn build(self) -> crate::model::IndexFieldStatus {
             crate::model::IndexFieldStatus {
-                options: self.options,
-                status: self.status,
+                options: self.options
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl IndexFieldStatus {
     /// Creates a new builder-style object to manufacture [`IndexFieldStatus`](crate::model::IndexFieldStatus).
@@ -1416,9 +1317,9 @@ impl IndexFieldStatus {
 /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexField {
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+pub struct IndexField  {
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     #[doc(hidden)]
     pub index_field_name: std::option::Option<std::string::String>,
@@ -1460,64 +1361,64 @@ pub struct IndexField {
     pub date_array_options: std::option::Option<crate::model::DateArrayOptions>,
 }
 impl IndexField {
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-    pub fn index_field_name(&self) -> std::option::Option<&str> {
+    pub fn index_field_name(&self) -> std::option::Option<& str> {
         self.index_field_name.as_deref()
     }
     /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn index_field_type(&self) -> std::option::Option<&crate::model::IndexFieldType> {
+    pub fn index_field_type(&self) -> std::option::Option<& crate::model::IndexFieldType> {
         self.index_field_type.as_ref()
     }
     /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
-    pub fn int_options(&self) -> std::option::Option<&crate::model::IntOptions> {
+    pub fn int_options(&self) -> std::option::Option<& crate::model::IntOptions> {
         self.int_options.as_ref()
     }
     /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
-    pub fn double_options(&self) -> std::option::Option<&crate::model::DoubleOptions> {
+    pub fn double_options(&self) -> std::option::Option<& crate::model::DoubleOptions> {
         self.double_options.as_ref()
     }
     /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
-    pub fn literal_options(&self) -> std::option::Option<&crate::model::LiteralOptions> {
+    pub fn literal_options(&self) -> std::option::Option<& crate::model::LiteralOptions> {
         self.literal_options.as_ref()
     }
     /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
-    pub fn text_options(&self) -> std::option::Option<&crate::model::TextOptions> {
+    pub fn text_options(&self) -> std::option::Option<& crate::model::TextOptions> {
         self.text_options.as_ref()
     }
     /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
-    pub fn date_options(&self) -> std::option::Option<&crate::model::DateOptions> {
+    pub fn date_options(&self) -> std::option::Option<& crate::model::DateOptions> {
         self.date_options.as_ref()
     }
     /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
-    pub fn lat_lon_options(&self) -> std::option::Option<&crate::model::LatLonOptions> {
+    pub fn lat_lon_options(&self) -> std::option::Option<& crate::model::LatLonOptions> {
         self.lat_lon_options.as_ref()
     }
     /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
-    pub fn int_array_options(&self) -> std::option::Option<&crate::model::IntArrayOptions> {
+    pub fn int_array_options(&self) -> std::option::Option<& crate::model::IntArrayOptions> {
         self.int_array_options.as_ref()
     }
     /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
-    pub fn double_array_options(&self) -> std::option::Option<&crate::model::DoubleArrayOptions> {
+    pub fn double_array_options(&self) -> std::option::Option<& crate::model::DoubleArrayOptions> {
         self.double_array_options.as_ref()
     }
     /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
-    pub fn literal_array_options(&self) -> std::option::Option<&crate::model::LiteralArrayOptions> {
+    pub fn literal_array_options(&self) -> std::option::Option<& crate::model::LiteralArrayOptions> {
         self.literal_array_options.as_ref()
     }
     /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
-    pub fn text_array_options(&self) -> std::option::Option<&crate::model::TextArrayOptions> {
+    pub fn text_array_options(&self) -> std::option::Option<& crate::model::TextArrayOptions> {
         self.text_array_options.as_ref()
     }
     /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
-    pub fn date_array_options(&self) -> std::option::Option<&crate::model::DateArrayOptions> {
+    pub fn date_array_options(&self) -> std::option::Option<& crate::model::DateArrayOptions> {
         self.date_array_options.as_ref()
     }
 }
 /// See [`IndexField`](crate::model::IndexField).
 pub mod index_field {
-
+    
     /// A builder for [`IndexField`](crate::model::IndexField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1536,22 +1437,18 @@ pub mod index_field {
         pub(crate) date_array_options: std::option::Option<crate::model::DateArrayOptions>,
     }
     impl Builder {
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_field_name = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-        pub fn set_index_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.index_field_name = input;
-            self
+        pub fn set_index_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_field_name = input; self
         }
         /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
         pub fn index_field_type(mut self, input: crate::model::IndexFieldType) -> Self {
@@ -1559,12 +1456,8 @@ pub mod index_field {
             self
         }
         /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn set_index_field_type(
-            mut self,
-            input: std::option::Option<crate::model::IndexFieldType>,
-        ) -> Self {
-            self.index_field_type = input;
-            self
+        pub fn set_index_field_type(mut self, input: std::option::Option<crate::model::IndexFieldType>) -> Self {
+            self.index_field_type = input; self
         }
         /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
         pub fn int_options(mut self, input: crate::model::IntOptions) -> Self {
@@ -1572,12 +1465,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
-        pub fn set_int_options(
-            mut self,
-            input: std::option::Option<crate::model::IntOptions>,
-        ) -> Self {
-            self.int_options = input;
-            self
+        pub fn set_int_options(mut self, input: std::option::Option<crate::model::IntOptions>) -> Self {
+            self.int_options = input; self
         }
         /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
         pub fn double_options(mut self, input: crate::model::DoubleOptions) -> Self {
@@ -1585,12 +1474,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
-        pub fn set_double_options(
-            mut self,
-            input: std::option::Option<crate::model::DoubleOptions>,
-        ) -> Self {
-            self.double_options = input;
-            self
+        pub fn set_double_options(mut self, input: std::option::Option<crate::model::DoubleOptions>) -> Self {
+            self.double_options = input; self
         }
         /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
         pub fn literal_options(mut self, input: crate::model::LiteralOptions) -> Self {
@@ -1598,12 +1483,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
-        pub fn set_literal_options(
-            mut self,
-            input: std::option::Option<crate::model::LiteralOptions>,
-        ) -> Self {
-            self.literal_options = input;
-            self
+        pub fn set_literal_options(mut self, input: std::option::Option<crate::model::LiteralOptions>) -> Self {
+            self.literal_options = input; self
         }
         /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
         pub fn text_options(mut self, input: crate::model::TextOptions) -> Self {
@@ -1611,12 +1492,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
-        pub fn set_text_options(
-            mut self,
-            input: std::option::Option<crate::model::TextOptions>,
-        ) -> Self {
-            self.text_options = input;
-            self
+        pub fn set_text_options(mut self, input: std::option::Option<crate::model::TextOptions>) -> Self {
+            self.text_options = input; self
         }
         /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
         pub fn date_options(mut self, input: crate::model::DateOptions) -> Self {
@@ -1624,12 +1501,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
-        pub fn set_date_options(
-            mut self,
-            input: std::option::Option<crate::model::DateOptions>,
-        ) -> Self {
-            self.date_options = input;
-            self
+        pub fn set_date_options(mut self, input: std::option::Option<crate::model::DateOptions>) -> Self {
+            self.date_options = input; self
         }
         /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
         pub fn lat_lon_options(mut self, input: crate::model::LatLonOptions) -> Self {
@@ -1637,12 +1510,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
-        pub fn set_lat_lon_options(
-            mut self,
-            input: std::option::Option<crate::model::LatLonOptions>,
-        ) -> Self {
-            self.lat_lon_options = input;
-            self
+        pub fn set_lat_lon_options(mut self, input: std::option::Option<crate::model::LatLonOptions>) -> Self {
+            self.lat_lon_options = input; self
         }
         /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
         pub fn int_array_options(mut self, input: crate::model::IntArrayOptions) -> Self {
@@ -1650,12 +1519,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
-        pub fn set_int_array_options(
-            mut self,
-            input: std::option::Option<crate::model::IntArrayOptions>,
-        ) -> Self {
-            self.int_array_options = input;
-            self
+        pub fn set_int_array_options(mut self, input: std::option::Option<crate::model::IntArrayOptions>) -> Self {
+            self.int_array_options = input; self
         }
         /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
         pub fn double_array_options(mut self, input: crate::model::DoubleArrayOptions) -> Self {
@@ -1663,12 +1528,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
-        pub fn set_double_array_options(
-            mut self,
-            input: std::option::Option<crate::model::DoubleArrayOptions>,
-        ) -> Self {
-            self.double_array_options = input;
-            self
+        pub fn set_double_array_options(mut self, input: std::option::Option<crate::model::DoubleArrayOptions>) -> Self {
+            self.double_array_options = input; self
         }
         /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
         pub fn literal_array_options(mut self, input: crate::model::LiteralArrayOptions) -> Self {
@@ -1676,12 +1537,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
-        pub fn set_literal_array_options(
-            mut self,
-            input: std::option::Option<crate::model::LiteralArrayOptions>,
-        ) -> Self {
-            self.literal_array_options = input;
-            self
+        pub fn set_literal_array_options(mut self, input: std::option::Option<crate::model::LiteralArrayOptions>) -> Self {
+            self.literal_array_options = input; self
         }
         /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
         pub fn text_array_options(mut self, input: crate::model::TextArrayOptions) -> Self {
@@ -1689,12 +1546,8 @@ pub mod index_field {
             self
         }
         /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
-        pub fn set_text_array_options(
-            mut self,
-            input: std::option::Option<crate::model::TextArrayOptions>,
-        ) -> Self {
-            self.text_array_options = input;
-            self
+        pub fn set_text_array_options(mut self, input: std::option::Option<crate::model::TextArrayOptions>) -> Self {
+            self.text_array_options = input; self
         }
         /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
         pub fn date_array_options(mut self, input: crate::model::DateArrayOptions) -> Self {
@@ -1702,32 +1555,43 @@ pub mod index_field {
             self
         }
         /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
-        pub fn set_date_array_options(
-            mut self,
-            input: std::option::Option<crate::model::DateArrayOptions>,
-        ) -> Self {
-            self.date_array_options = input;
-            self
+        pub fn set_date_array_options(mut self, input: std::option::Option<crate::model::DateArrayOptions>) -> Self {
+            self.date_array_options = input; self
         }
         /// Consumes the builder and constructs a [`IndexField`](crate::model::IndexField).
         pub fn build(self) -> crate::model::IndexField {
             crate::model::IndexField {
-                index_field_name: self.index_field_name,
-                index_field_type: self.index_field_type,
-                int_options: self.int_options,
-                double_options: self.double_options,
-                literal_options: self.literal_options,
-                text_options: self.text_options,
-                date_options: self.date_options,
-                lat_lon_options: self.lat_lon_options,
-                int_array_options: self.int_array_options,
-                double_array_options: self.double_array_options,
-                literal_array_options: self.literal_array_options,
-                text_array_options: self.text_array_options,
-                date_array_options: self.date_array_options,
+                index_field_name: self.index_field_name
+                ,
+                index_field_type: self.index_field_type
+                ,
+                int_options: self.int_options
+                ,
+                double_options: self.double_options
+                ,
+                literal_options: self.literal_options
+                ,
+                text_options: self.text_options
+                ,
+                date_options: self.date_options
+                ,
+                lat_lon_options: self.lat_lon_options
+                ,
+                int_array_options: self.int_array_options
+                ,
+                double_array_options: self.double_array_options
+                ,
+                literal_array_options: self.literal_array_options
+                ,
+                text_array_options: self.text_array_options
+                ,
+                date_array_options: self.date_array_options
+                ,
             }
         }
     }
+    
+    
 }
 impl IndexField {
     /// Creates a new builder-style object to manufacture [`IndexField`](crate::model::IndexField).
@@ -1739,7 +1603,7 @@ impl IndexField {
 /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateArrayOptions {
+pub struct DateArrayOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
@@ -1758,11 +1622,11 @@ pub struct DateArrayOptions {
 }
 impl DateArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>A list of source fields to map to the field. </p>
-    pub fn source_fields(&self) -> std::option::Option<&str> {
+    pub fn source_fields(&self) -> std::option::Option<& str> {
         self.source_fields.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -1780,7 +1644,7 @@ impl DateArrayOptions {
 }
 /// See [`DateArrayOptions`](crate::model::DateArrayOptions).
 pub mod date_array_options {
-
+    
     /// A builder for [`DateArrayOptions`](crate::model::DateArrayOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1797,12 +1661,8 @@ pub mod date_array_options {
             self
         }
         /// A value to use for the field if the field isn't specified for a document.
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// <p>A list of source fields to map to the field. </p>
         pub fn source_fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1810,12 +1670,8 @@ pub mod date_array_options {
             self
         }
         /// <p>A list of source fields to map to the field. </p>
-        pub fn set_source_fields(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_fields = input;
-            self
+        pub fn set_source_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_fields = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -1824,8 +1680,7 @@ pub mod date_array_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -1834,8 +1689,7 @@ pub mod date_array_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -1844,20 +1698,26 @@ pub mod date_array_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// Consumes the builder and constructs a [`DateArrayOptions`](crate::model::DateArrayOptions).
         pub fn build(self) -> crate::model::DateArrayOptions {
             crate::model::DateArrayOptions {
-                default_value: self.default_value,
-                source_fields: self.source_fields,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
+                default_value: self.default_value
+                ,
+                source_fields: self.source_fields
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl DateArrayOptions {
     /// Creates a new builder-style object to manufacture [`DateArrayOptions`](crate::model::DateArrayOptions).
@@ -1869,7 +1729,7 @@ impl DateArrayOptions {
 /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextArrayOptions {
+pub struct TextArrayOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
@@ -1888,11 +1748,11 @@ pub struct TextArrayOptions {
 }
 impl TextArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>A list of source fields to map to the field. </p>
-    pub fn source_fields(&self) -> std::option::Option<&str> {
+    pub fn source_fields(&self) -> std::option::Option<& str> {
         self.source_fields.as_deref()
     }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
@@ -1904,13 +1764,13 @@ impl TextArrayOptions {
         self.highlight_enabled
     }
     /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
-    pub fn analysis_scheme(&self) -> std::option::Option<&str> {
+    pub fn analysis_scheme(&self) -> std::option::Option<& str> {
         self.analysis_scheme.as_deref()
     }
 }
 /// See [`TextArrayOptions`](crate::model::TextArrayOptions).
 pub mod text_array_options {
-
+    
     /// A builder for [`TextArrayOptions`](crate::model::TextArrayOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1927,12 +1787,8 @@ pub mod text_array_options {
             self
         }
         /// A value to use for the field if the field isn't specified for a document.
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// <p>A list of source fields to map to the field. </p>
         pub fn source_fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1940,12 +1796,8 @@ pub mod text_array_options {
             self
         }
         /// <p>A list of source fields to map to the field. </p>
-        pub fn set_source_fields(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_fields = input;
-            self
+        pub fn set_source_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_fields = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -1954,8 +1806,7 @@ pub mod text_array_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// <p>Whether highlights can be returned for the field.</p>
         pub fn highlight_enabled(mut self, input: bool) -> Self {
@@ -1964,8 +1815,7 @@ pub mod text_array_options {
         }
         /// <p>Whether highlights can be returned for the field.</p>
         pub fn set_highlight_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.highlight_enabled = input;
-            self
+            self.highlight_enabled = input; self
         }
         /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
         pub fn analysis_scheme(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1973,24 +1823,27 @@ pub mod text_array_options {
             self
         }
         /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
-        pub fn set_analysis_scheme(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analysis_scheme = input;
-            self
+        pub fn set_analysis_scheme(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analysis_scheme = input; self
         }
         /// Consumes the builder and constructs a [`TextArrayOptions`](crate::model::TextArrayOptions).
         pub fn build(self) -> crate::model::TextArrayOptions {
             crate::model::TextArrayOptions {
-                default_value: self.default_value,
-                source_fields: self.source_fields,
-                return_enabled: self.return_enabled,
-                highlight_enabled: self.highlight_enabled,
-                analysis_scheme: self.analysis_scheme,
+                default_value: self.default_value
+                ,
+                source_fields: self.source_fields
+                ,
+                return_enabled: self.return_enabled
+                ,
+                highlight_enabled: self.highlight_enabled
+                ,
+                analysis_scheme: self.analysis_scheme
+                ,
             }
         }
     }
+    
+    
 }
 impl TextArrayOptions {
     /// Creates a new builder-style object to manufacture [`TextArrayOptions`](crate::model::TextArrayOptions).
@@ -2002,7 +1855,7 @@ impl TextArrayOptions {
 /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LiteralArrayOptions {
+pub struct LiteralArrayOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
@@ -2021,11 +1874,11 @@ pub struct LiteralArrayOptions {
 }
 impl LiteralArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>A list of source fields to map to the field. </p>
-    pub fn source_fields(&self) -> std::option::Option<&str> {
+    pub fn source_fields(&self) -> std::option::Option<& str> {
         self.source_fields.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -2043,7 +1896,7 @@ impl LiteralArrayOptions {
 }
 /// See [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
 pub mod literal_array_options {
-
+    
     /// A builder for [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2060,12 +1913,8 @@ pub mod literal_array_options {
             self
         }
         /// A value to use for the field if the field isn't specified for a document.
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// <p>A list of source fields to map to the field. </p>
         pub fn source_fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2073,12 +1922,8 @@ pub mod literal_array_options {
             self
         }
         /// <p>A list of source fields to map to the field. </p>
-        pub fn set_source_fields(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_fields = input;
-            self
+        pub fn set_source_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_fields = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -2087,8 +1932,7 @@ pub mod literal_array_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -2097,8 +1941,7 @@ pub mod literal_array_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -2107,20 +1950,26 @@ pub mod literal_array_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// Consumes the builder and constructs a [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
         pub fn build(self) -> crate::model::LiteralArrayOptions {
             crate::model::LiteralArrayOptions {
-                default_value: self.default_value,
-                source_fields: self.source_fields,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
+                default_value: self.default_value
+                ,
+                source_fields: self.source_fields
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl LiteralArrayOptions {
     /// Creates a new builder-style object to manufacture [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
@@ -2132,7 +1981,7 @@ impl LiteralArrayOptions {
 /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DoubleArrayOptions {
+pub struct DoubleArrayOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<f64>,
@@ -2155,7 +2004,7 @@ impl DoubleArrayOptions {
         self.default_value
     }
     /// <p>A list of source fields to map to the field. </p>
-    pub fn source_fields(&self) -> std::option::Option<&str> {
+    pub fn source_fields(&self) -> std::option::Option<& str> {
         self.source_fields.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -2173,7 +2022,7 @@ impl DoubleArrayOptions {
 }
 /// See [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
 pub mod double_array_options {
-
+    
     /// A builder for [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2191,8 +2040,7 @@ pub mod double_array_options {
         }
         /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.default_value = input;
-            self
+            self.default_value = input; self
         }
         /// <p>A list of source fields to map to the field. </p>
         pub fn source_fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2200,12 +2048,8 @@ pub mod double_array_options {
             self
         }
         /// <p>A list of source fields to map to the field. </p>
-        pub fn set_source_fields(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_fields = input;
-            self
+        pub fn set_source_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_fields = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -2214,8 +2058,7 @@ pub mod double_array_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -2224,8 +2067,7 @@ pub mod double_array_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -2234,20 +2076,26 @@ pub mod double_array_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// Consumes the builder and constructs a [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
         pub fn build(self) -> crate::model::DoubleArrayOptions {
             crate::model::DoubleArrayOptions {
-                default_value: self.default_value,
-                source_fields: self.source_fields,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
+                default_value: self.default_value
+                ,
+                source_fields: self.source_fields
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl DoubleArrayOptions {
     /// Creates a new builder-style object to manufacture [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
@@ -2259,7 +2107,7 @@ impl DoubleArrayOptions {
 /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntArrayOptions {
+pub struct IntArrayOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<i64>,
@@ -2282,7 +2130,7 @@ impl IntArrayOptions {
         self.default_value
     }
     /// <p>A list of source fields to map to the field. </p>
-    pub fn source_fields(&self) -> std::option::Option<&str> {
+    pub fn source_fields(&self) -> std::option::Option<& str> {
         self.source_fields.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -2300,7 +2148,7 @@ impl IntArrayOptions {
 }
 /// See [`IntArrayOptions`](crate::model::IntArrayOptions).
 pub mod int_array_options {
-
+    
     /// A builder for [`IntArrayOptions`](crate::model::IntArrayOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2318,8 +2166,7 @@ pub mod int_array_options {
         }
         /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.default_value = input;
-            self
+            self.default_value = input; self
         }
         /// <p>A list of source fields to map to the field. </p>
         pub fn source_fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2327,12 +2174,8 @@ pub mod int_array_options {
             self
         }
         /// <p>A list of source fields to map to the field. </p>
-        pub fn set_source_fields(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_fields = input;
-            self
+        pub fn set_source_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_fields = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -2341,8 +2184,7 @@ pub mod int_array_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -2351,8 +2193,7 @@ pub mod int_array_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -2361,20 +2202,26 @@ pub mod int_array_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// Consumes the builder and constructs a [`IntArrayOptions`](crate::model::IntArrayOptions).
         pub fn build(self) -> crate::model::IntArrayOptions {
             crate::model::IntArrayOptions {
-                default_value: self.default_value,
-                source_fields: self.source_fields,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
+                default_value: self.default_value
+                ,
+                source_fields: self.source_fields
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl IntArrayOptions {
     /// Creates a new builder-style object to manufacture [`IntArrayOptions`](crate::model::IntArrayOptions).
@@ -2386,12 +2233,12 @@ impl IntArrayOptions {
 /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LatLonOptions {
+pub struct LatLonOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
@@ -2410,13 +2257,13 @@ pub struct LatLonOptions {
 }
 impl LatLonOptions {
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-    pub fn source_field(&self) -> std::option::Option<&str> {
+    pub fn source_field(&self) -> std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -2438,7 +2285,7 @@ impl LatLonOptions {
 }
 /// See [`LatLonOptions`](crate::model::LatLonOptions).
 pub mod lat_lon_options {
-
+    
     /// A builder for [`LatLonOptions`](crate::model::LatLonOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2456,26 +2303,21 @@ pub mod lat_lon_options {
             self
         }
         /// A value to use for the field if the field isn't specified for a document.
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_field = input;
-            self
+            self.source_field = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -2484,8 +2326,7 @@ pub mod lat_lon_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -2494,8 +2335,7 @@ pub mod lat_lon_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -2504,8 +2344,7 @@ pub mod lat_lon_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn sort_enabled(mut self, input: bool) -> Self {
@@ -2514,21 +2353,28 @@ pub mod lat_lon_options {
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sort_enabled = input;
-            self
+            self.sort_enabled = input; self
         }
         /// Consumes the builder and constructs a [`LatLonOptions`](crate::model::LatLonOptions).
         pub fn build(self) -> crate::model::LatLonOptions {
             crate::model::LatLonOptions {
-                default_value: self.default_value,
-                source_field: self.source_field,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
-                sort_enabled: self.sort_enabled,
+                default_value: self.default_value
+                ,
+                source_field: self.source_field
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
+                sort_enabled: self.sort_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl LatLonOptions {
     /// Creates a new builder-style object to manufacture [`LatLonOptions`](crate::model::LatLonOptions).
@@ -2540,12 +2386,12 @@ impl LatLonOptions {
 /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateOptions {
+pub struct DateOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
@@ -2564,13 +2410,13 @@ pub struct DateOptions {
 }
 impl DateOptions {
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-    pub fn source_field(&self) -> std::option::Option<&str> {
+    pub fn source_field(&self) -> std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -2592,7 +2438,7 @@ impl DateOptions {
 }
 /// See [`DateOptions`](crate::model::DateOptions).
 pub mod date_options {
-
+    
     /// A builder for [`DateOptions`](crate::model::DateOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2610,26 +2456,21 @@ pub mod date_options {
             self
         }
         /// A value to use for the field if the field isn't specified for a document.
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_field = input;
-            self
+            self.source_field = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -2638,8 +2479,7 @@ pub mod date_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -2648,8 +2488,7 @@ pub mod date_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -2658,8 +2497,7 @@ pub mod date_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn sort_enabled(mut self, input: bool) -> Self {
@@ -2668,21 +2506,28 @@ pub mod date_options {
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sort_enabled = input;
-            self
+            self.sort_enabled = input; self
         }
         /// Consumes the builder and constructs a [`DateOptions`](crate::model::DateOptions).
         pub fn build(self) -> crate::model::DateOptions {
             crate::model::DateOptions {
-                default_value: self.default_value,
-                source_field: self.source_field,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
-                sort_enabled: self.sort_enabled,
+                default_value: self.default_value
+                ,
+                source_field: self.source_field
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
+                sort_enabled: self.sort_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl DateOptions {
     /// Creates a new builder-style object to manufacture [`DateOptions`](crate::model::DateOptions).
@@ -2694,12 +2539,12 @@ impl DateOptions {
 /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextOptions {
+pub struct TextOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
@@ -2718,13 +2563,13 @@ pub struct TextOptions {
 }
 impl TextOptions {
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-    pub fn source_field(&self) -> std::option::Option<&str> {
+    pub fn source_field(&self) -> std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
@@ -2740,13 +2585,13 @@ impl TextOptions {
         self.highlight_enabled
     }
     /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
-    pub fn analysis_scheme(&self) -> std::option::Option<&str> {
+    pub fn analysis_scheme(&self) -> std::option::Option<& str> {
         self.analysis_scheme.as_deref()
     }
 }
 /// See [`TextOptions`](crate::model::TextOptions).
 pub mod text_options {
-
+    
     /// A builder for [`TextOptions`](crate::model::TextOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2764,26 +2609,21 @@ pub mod text_options {
             self
         }
         /// A value to use for the field if the field isn't specified for a document.
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_field = input;
-            self
+            self.source_field = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -2792,8 +2632,7 @@ pub mod text_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn sort_enabled(mut self, input: bool) -> Self {
@@ -2802,8 +2641,7 @@ pub mod text_options {
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sort_enabled = input;
-            self
+            self.sort_enabled = input; self
         }
         /// <p>Whether highlights can be returned for the field.</p>
         pub fn highlight_enabled(mut self, input: bool) -> Self {
@@ -2812,8 +2650,7 @@ pub mod text_options {
         }
         /// <p>Whether highlights can be returned for the field.</p>
         pub fn set_highlight_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.highlight_enabled = input;
-            self
+            self.highlight_enabled = input; self
         }
         /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
         pub fn analysis_scheme(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2821,25 +2658,29 @@ pub mod text_options {
             self
         }
         /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
-        pub fn set_analysis_scheme(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analysis_scheme = input;
-            self
+        pub fn set_analysis_scheme(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analysis_scheme = input; self
         }
         /// Consumes the builder and constructs a [`TextOptions`](crate::model::TextOptions).
         pub fn build(self) -> crate::model::TextOptions {
             crate::model::TextOptions {
-                default_value: self.default_value,
-                source_field: self.source_field,
-                return_enabled: self.return_enabled,
-                sort_enabled: self.sort_enabled,
-                highlight_enabled: self.highlight_enabled,
-                analysis_scheme: self.analysis_scheme,
+                default_value: self.default_value
+                ,
+                source_field: self.source_field
+                ,
+                return_enabled: self.return_enabled
+                ,
+                sort_enabled: self.sort_enabled
+                ,
+                highlight_enabled: self.highlight_enabled
+                ,
+                analysis_scheme: self.analysis_scheme
+                ,
             }
         }
     }
+    
+    
 }
 impl TextOptions {
     /// Creates a new builder-style object to manufacture [`TextOptions`](crate::model::TextOptions).
@@ -2851,12 +2692,12 @@ impl TextOptions {
 /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LiteralOptions {
+pub struct LiteralOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
     #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
@@ -2875,13 +2716,13 @@ pub struct LiteralOptions {
 }
 impl LiteralOptions {
     /// A value to use for the field if the field isn't specified for a document.
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
-    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-    pub fn source_field(&self) -> std::option::Option<&str> {
+    pub fn source_field(&self) -> std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -2903,7 +2744,7 @@ impl LiteralOptions {
 }
 /// See [`LiteralOptions`](crate::model::LiteralOptions).
 pub mod literal_options {
-
+    
     /// A builder for [`LiteralOptions`](crate::model::LiteralOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2921,26 +2762,21 @@ pub mod literal_options {
             self
         }
         /// A value to use for the field if the field isn't specified for a document.
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_field = Some(input.into());
             self
         }
-        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
-        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> 
+        /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> 
         /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_field = input;
-            self
+            self.source_field = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -2949,8 +2785,7 @@ pub mod literal_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -2959,8 +2794,7 @@ pub mod literal_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -2969,8 +2803,7 @@ pub mod literal_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn sort_enabled(mut self, input: bool) -> Self {
@@ -2979,21 +2812,28 @@ pub mod literal_options {
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sort_enabled = input;
-            self
+            self.sort_enabled = input; self
         }
         /// Consumes the builder and constructs a [`LiteralOptions`](crate::model::LiteralOptions).
         pub fn build(self) -> crate::model::LiteralOptions {
             crate::model::LiteralOptions {
-                default_value: self.default_value,
-                source_field: self.source_field,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
-                sort_enabled: self.sort_enabled,
+                default_value: self.default_value
+                ,
+                source_field: self.source_field
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
+                sort_enabled: self.sort_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl LiteralOptions {
     /// Creates a new builder-style object to manufacture [`LiteralOptions`](crate::model::LiteralOptions).
@@ -3005,7 +2845,7 @@ impl LiteralOptions {
 /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DoubleOptions {
+pub struct DoubleOptions  {
     /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<f64>,
@@ -3031,7 +2871,7 @@ impl DoubleOptions {
         self.default_value
     }
     /// <p>The name of the source field to map to the field. </p>
-    pub fn source_field(&self) -> std::option::Option<&str> {
+    pub fn source_field(&self) -> std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -3053,7 +2893,7 @@ impl DoubleOptions {
 }
 /// See [`DoubleOptions`](crate::model::DoubleOptions).
 pub mod double_options {
-
+    
     /// A builder for [`DoubleOptions`](crate::model::DoubleOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3072,8 +2912,7 @@ pub mod double_options {
         }
         /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
         pub fn set_default_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.default_value = input;
-            self
+            self.default_value = input; self
         }
         /// <p>The name of the source field to map to the field. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3082,8 +2921,7 @@ pub mod double_options {
         }
         /// <p>The name of the source field to map to the field. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_field = input;
-            self
+            self.source_field = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -3092,8 +2930,7 @@ pub mod double_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -3102,8 +2939,7 @@ pub mod double_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -3112,8 +2948,7 @@ pub mod double_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn sort_enabled(mut self, input: bool) -> Self {
@@ -3122,21 +2957,28 @@ pub mod double_options {
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sort_enabled = input;
-            self
+            self.sort_enabled = input; self
         }
         /// Consumes the builder and constructs a [`DoubleOptions`](crate::model::DoubleOptions).
         pub fn build(self) -> crate::model::DoubleOptions {
             crate::model::DoubleOptions {
-                default_value: self.default_value,
-                source_field: self.source_field,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
-                sort_enabled: self.sort_enabled,
+                default_value: self.default_value
+                ,
+                source_field: self.source_field
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
+                sort_enabled: self.sort_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl DoubleOptions {
     /// Creates a new builder-style object to manufacture [`DoubleOptions`](crate::model::DoubleOptions).
@@ -3148,7 +2990,7 @@ impl DoubleOptions {
 /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntOptions {
+pub struct IntOptions  {
     /// A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.
     #[doc(hidden)]
     pub default_value: std::option::Option<i64>,
@@ -3174,7 +3016,7 @@ impl IntOptions {
         self.default_value
     }
     /// <p>The name of the source field to map to the field. </p>
-    pub fn source_field(&self) -> std::option::Option<&str> {
+    pub fn source_field(&self) -> std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -3196,7 +3038,7 @@ impl IntOptions {
 }
 /// See [`IntOptions`](crate::model::IntOptions).
 pub mod int_options {
-
+    
     /// A builder for [`IntOptions`](crate::model::IntOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3215,8 +3057,7 @@ pub mod int_options {
         }
         /// A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.
         pub fn set_default_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.default_value = input;
-            self
+            self.default_value = input; self
         }
         /// <p>The name of the source field to map to the field. </p>
         pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3225,8 +3066,7 @@ pub mod int_options {
         }
         /// <p>The name of the source field to map to the field. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_field = input;
-            self
+            self.source_field = input; self
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -3235,8 +3075,7 @@ pub mod int_options {
         }
         /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.facet_enabled = input;
-            self
+            self.facet_enabled = input; self
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn search_enabled(mut self, input: bool) -> Self {
@@ -3245,8 +3084,7 @@ pub mod int_options {
         }
         /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.search_enabled = input;
-            self
+            self.search_enabled = input; self
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn return_enabled(mut self, input: bool) -> Self {
@@ -3255,8 +3093,7 @@ pub mod int_options {
         }
         /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_enabled = input;
-            self
+            self.return_enabled = input; self
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn sort_enabled(mut self, input: bool) -> Self {
@@ -3265,21 +3102,28 @@ pub mod int_options {
         }
         /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sort_enabled = input;
-            self
+            self.sort_enabled = input; self
         }
         /// Consumes the builder and constructs a [`IntOptions`](crate::model::IntOptions).
         pub fn build(self) -> crate::model::IntOptions {
             crate::model::IntOptions {
-                default_value: self.default_value,
-                source_field: self.source_field,
-                facet_enabled: self.facet_enabled,
-                search_enabled: self.search_enabled,
-                return_enabled: self.return_enabled,
-                sort_enabled: self.sort_enabled,
+                default_value: self.default_value
+                ,
+                source_field: self.source_field
+                ,
+                facet_enabled: self.facet_enabled
+                ,
+                search_enabled: self.search_enabled
+                ,
+                return_enabled: self.return_enabled
+                ,
+                sort_enabled: self.sort_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl IntOptions {
     /// Creates a new builder-style object to manufacture [`IntOptions`](crate::model::IntOptions).
@@ -3294,9 +3138,9 @@ impl IntOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let indexfieldtype = unimplemented!();
 /// match indexfieldtype {
@@ -3327,22 +3171,14 @@ impl IntOptions {
 /// Specifically, when `indexfieldtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IndexFieldType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IndexFieldType {
     #[allow(missing_docs)] // documentation missing in model
     Date,
@@ -3367,7 +3203,7 @@ pub enum IndexFieldType {
     #[allow(missing_docs)] // documentation missing in model
     TextArray,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IndexFieldType {
     fn from(s: &str) -> Self {
@@ -3383,17 +3219,17 @@ impl std::convert::From<&str> for IndexFieldType {
             "literal-array" => IndexFieldType::LiteralArray,
             "text" => IndexFieldType::Text,
             "text-array" => IndexFieldType::TextArray,
-            other => IndexFieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IndexFieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IndexFieldType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IndexFieldType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IndexFieldType::from(s))
+                }
+            }
 impl IndexFieldType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3409,23 +3245,13 @@ impl IndexFieldType {
             IndexFieldType::LiteralArray => "literal-array",
             IndexFieldType::Text => "text",
             IndexFieldType::TextArray => "text-array",
-            IndexFieldType::Unknown(value) => value.as_str(),
+            IndexFieldType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "date",
-            "date-array",
-            "double",
-            "double-array",
-            "int",
-            "int-array",
-            "latlon",
-            "literal",
-            "literal-array",
-            "text",
-            "text-array",
+            "date", "date-array", "double", "double-array", "int", "int-array", "latlon", "literal", "literal-array", "text", "text-array"
         ]
     }
 }
@@ -3438,7 +3264,7 @@ impl AsRef<str> for IndexFieldType {
 /// <p>The value of an <code>Expression</code> and its current status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpressionStatus {
+pub struct ExpressionStatus  {
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::Expression>,
@@ -3448,17 +3274,17 @@ pub struct ExpressionStatus {
 }
 impl ExpressionStatus {
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::Expression> {
+    pub fn options(&self) -> std::option::Option<& crate::model::Expression> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OptionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`ExpressionStatus`](crate::model::ExpressionStatus).
 pub mod expression_status {
-
+    
     /// A builder for [`ExpressionStatus`](crate::model::ExpressionStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3473,8 +3299,7 @@ pub mod expression_status {
         }
         /// <p>The expression that is evaluated for sorting while processing a search request.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
-            self.options = input;
-            self
+            self.options = input; self
         }
         /// <p>The status of domain configuration option.</p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
@@ -3482,21 +3307,21 @@ pub mod expression_status {
             self
         }
         /// <p>The status of domain configuration option.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OptionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ExpressionStatus`](crate::model::ExpressionStatus).
         pub fn build(self) -> crate::model::ExpressionStatus {
             crate::model::ExpressionStatus {
-                options: self.options,
-                status: self.status,
+                options: self.options
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ExpressionStatus {
     /// Creates a new builder-style object to manufacture [`ExpressionStatus`](crate::model::ExpressionStatus).
@@ -3508,7 +3333,7 @@ impl ExpressionStatus {
 /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Expression {
+pub struct Expression  {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     #[doc(hidden)]
     pub expression_name: std::option::Option<std::string::String>,
@@ -3518,17 +3343,17 @@ pub struct Expression {
 }
 impl Expression {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn expression_name(&self) -> std::option::Option<&str> {
+    pub fn expression_name(&self) -> std::option::Option<& str> {
         self.expression_name.as_deref()
     }
     /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn expression_value(&self) -> std::option::Option<&str> {
+    pub fn expression_value(&self) -> std::option::Option<& str> {
         self.expression_value.as_deref()
     }
 }
 /// See [`Expression`](crate::model::Expression).
 pub mod expression {
-
+    
     /// A builder for [`Expression`](crate::model::Expression).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3542,12 +3367,8 @@ pub mod expression {
             self
         }
         /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-        pub fn set_expression_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expression_name = input;
-            self
+        pub fn set_expression_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression_name = input; self
         }
         /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
         pub fn expression_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3555,21 +3376,21 @@ pub mod expression {
             self
         }
         /// <p>The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-        pub fn set_expression_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expression_value = input;
-            self
+        pub fn set_expression_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression_value = input; self
         }
         /// Consumes the builder and constructs a [`Expression`](crate::model::Expression).
         pub fn build(self) -> crate::model::Expression {
             crate::model::Expression {
-                expression_name: self.expression_name,
-                expression_value: self.expression_value,
+                expression_name: self.expression_name
+                ,
+                expression_value: self.expression_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Expression {
     /// Creates a new builder-style object to manufacture [`Expression`](crate::model::Expression).
@@ -3581,7 +3402,7 @@ impl Expression {
 /// <p>The current status of the search domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainStatus {
+pub struct DomainStatus  {
     /// <p>An internally generated unique identifier for a domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -3624,15 +3445,15 @@ pub struct DomainStatus {
 }
 impl DomainStatus {
     /// <p>An internally generated unique identifier for a domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
@@ -3644,11 +3465,11 @@ impl DomainStatus {
         self.deleted
     }
     /// <p>The service endpoint for updating documents in a search domain.</p>
-    pub fn doc_service(&self) -> std::option::Option<&crate::model::ServiceEndpoint> {
+    pub fn doc_service(&self) -> std::option::Option<& crate::model::ServiceEndpoint> {
         self.doc_service.as_ref()
     }
     /// <p>The service endpoint for requesting search results from a search domain.</p>
-    pub fn search_service(&self) -> std::option::Option<&crate::model::ServiceEndpoint> {
+    pub fn search_service(&self) -> std::option::Option<& crate::model::ServiceEndpoint> {
         self.search_service.as_ref()
     }
     /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
@@ -3660,7 +3481,7 @@ impl DomainStatus {
         self.processing
     }
     /// <p>The instance type that is being used to process search requests.</p>
-    pub fn search_instance_type(&self) -> std::option::Option<&str> {
+    pub fn search_instance_type(&self) -> std::option::Option<& str> {
         self.search_instance_type.as_deref()
     }
     /// <p>The number of partitions across which the search index is spread.</p>
@@ -3672,13 +3493,13 @@ impl DomainStatus {
         self.search_instance_count
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn limits(&self) -> std::option::Option<&crate::model::Limits> {
+    pub fn limits(&self) -> std::option::Option<& crate::model::Limits> {
         self.limits.as_ref()
     }
 }
 /// See [`DomainStatus`](crate::model::DomainStatus).
 pub mod domain_status {
-
+    
     /// A builder for [`DomainStatus`](crate::model::DomainStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3704,8 +3525,7 @@ pub mod domain_status {
         }
         /// <p>An internally generated unique identifier for a domain.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3714,8 +3534,7 @@ pub mod domain_status {
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3724,8 +3543,7 @@ pub mod domain_status {
         }
         /// <p>The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
         pub fn created(mut self, input: bool) -> Self {
@@ -3734,8 +3552,7 @@ pub mod domain_status {
         }
         /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <code>CreateDomain</code> is called. Newly created search domains are returned from <code>DescribeDomains</code> with a false value for Created until domain creation is complete.</p>
         pub fn set_created(mut self, input: std::option::Option<bool>) -> Self {
-            self.created = input;
-            self
+            self.created = input; self
         }
         /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
         pub fn deleted(mut self, input: bool) -> Self {
@@ -3744,8 +3561,7 @@ pub mod domain_status {
         }
         /// <p>True if the search domain has been deleted. The system must clean up resources dedicated to the search domain when <code>DeleteDomain</code> is called. Newly deleted search domains are returned from <code>DescribeDomains</code> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
         pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
-            self.deleted = input;
-            self
+            self.deleted = input; self
         }
         /// <p>The service endpoint for updating documents in a search domain.</p>
         pub fn doc_service(mut self, input: crate::model::ServiceEndpoint) -> Self {
@@ -3753,12 +3569,8 @@ pub mod domain_status {
             self
         }
         /// <p>The service endpoint for updating documents in a search domain.</p>
-        pub fn set_doc_service(
-            mut self,
-            input: std::option::Option<crate::model::ServiceEndpoint>,
-        ) -> Self {
-            self.doc_service = input;
-            self
+        pub fn set_doc_service(mut self, input: std::option::Option<crate::model::ServiceEndpoint>) -> Self {
+            self.doc_service = input; self
         }
         /// <p>The service endpoint for requesting search results from a search domain.</p>
         pub fn search_service(mut self, input: crate::model::ServiceEndpoint) -> Self {
@@ -3766,12 +3578,8 @@ pub mod domain_status {
             self
         }
         /// <p>The service endpoint for requesting search results from a search domain.</p>
-        pub fn set_search_service(
-            mut self,
-            input: std::option::Option<crate::model::ServiceEndpoint>,
-        ) -> Self {
-            self.search_service = input;
-            self
+        pub fn set_search_service(mut self, input: std::option::Option<crate::model::ServiceEndpoint>) -> Self {
+            self.search_service = input; self
         }
         /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
         pub fn requires_index_documents(mut self, input: bool) -> Self {
@@ -3780,8 +3588,7 @@ pub mod domain_status {
         }
         /// <p>True if <code>IndexDocuments</code> needs to be called to activate the current domain configuration.</p>
         pub fn set_requires_index_documents(mut self, input: std::option::Option<bool>) -> Self {
-            self.requires_index_documents = input;
-            self
+            self.requires_index_documents = input; self
         }
         /// <p>True if processing is being done to activate the current domain configuration.</p>
         pub fn processing(mut self, input: bool) -> Self {
@@ -3790,8 +3597,7 @@ pub mod domain_status {
         }
         /// <p>True if processing is being done to activate the current domain configuration.</p>
         pub fn set_processing(mut self, input: std::option::Option<bool>) -> Self {
-            self.processing = input;
-            self
+            self.processing = input; self
         }
         /// <p>The instance type that is being used to process search requests.</p>
         pub fn search_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3799,12 +3605,8 @@ pub mod domain_status {
             self
         }
         /// <p>The instance type that is being used to process search requests.</p>
-        pub fn set_search_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.search_instance_type = input;
-            self
+        pub fn set_search_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.search_instance_type = input; self
         }
         /// <p>The number of partitions across which the search index is spread.</p>
         pub fn search_partition_count(mut self, input: i32) -> Self {
@@ -3813,8 +3615,7 @@ pub mod domain_status {
         }
         /// <p>The number of partitions across which the search index is spread.</p>
         pub fn set_search_partition_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.search_partition_count = input;
-            self
+            self.search_partition_count = input; self
         }
         /// <p>The number of search instances that are available to process search requests.</p>
         pub fn search_instance_count(mut self, input: i32) -> Self {
@@ -3823,8 +3624,7 @@ pub mod domain_status {
         }
         /// <p>The number of search instances that are available to process search requests.</p>
         pub fn set_search_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.search_instance_count = input;
-            self
+            self.search_instance_count = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn limits(mut self, input: crate::model::Limits) -> Self {
@@ -3833,28 +3633,44 @@ pub mod domain_status {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_limits(mut self, input: std::option::Option<crate::model::Limits>) -> Self {
-            self.limits = input;
-            self
+            self.limits = input; self
         }
         /// Consumes the builder and constructs a [`DomainStatus`](crate::model::DomainStatus).
         pub fn build(self) -> crate::model::DomainStatus {
             crate::model::DomainStatus {
-                domain_id: self.domain_id,
-                domain_name: self.domain_name,
-                arn: self.arn,
-                created: self.created,
-                deleted: self.deleted,
-                doc_service: self.doc_service,
-                search_service: self.search_service,
-                requires_index_documents: self.requires_index_documents,
-                processing: self.processing,
-                search_instance_type: self.search_instance_type,
-                search_partition_count: self.search_partition_count.unwrap_or_default(),
-                search_instance_count: self.search_instance_count.unwrap_or_default(),
-                limits: self.limits,
+                domain_id: self.domain_id
+                ,
+                domain_name: self.domain_name
+                ,
+                arn: self.arn
+                ,
+                created: self.created
+                ,
+                deleted: self.deleted
+                ,
+                doc_service: self.doc_service
+                ,
+                search_service: self.search_service
+                ,
+                requires_index_documents: self.requires_index_documents
+                ,
+                processing: self.processing
+                ,
+                search_instance_type: self.search_instance_type
+                ,
+                search_partition_count: self.search_partition_count
+                    .unwrap_or_default()
+                ,
+                search_instance_count: self.search_instance_count
+                    .unwrap_or_default()
+                ,
+                limits: self.limits
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainStatus {
     /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::model::DomainStatus).
@@ -3866,7 +3682,7 @@ impl DomainStatus {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Limits {
+pub struct Limits  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub maximum_replication_count: i32,
@@ -3886,7 +3702,7 @@ impl Limits {
 }
 /// See [`Limits`](crate::model::Limits).
 pub mod limits {
-
+    
     /// A builder for [`Limits`](crate::model::Limits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3901,8 +3717,7 @@ pub mod limits {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_maximum_replication_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_replication_count = input;
-            self
+            self.maximum_replication_count = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn maximum_partition_count(mut self, input: i32) -> Self {
@@ -3911,17 +3726,22 @@ pub mod limits {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_maximum_partition_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_partition_count = input;
-            self
+            self.maximum_partition_count = input; self
         }
         /// Consumes the builder and constructs a [`Limits`](crate::model::Limits).
         pub fn build(self) -> crate::model::Limits {
             crate::model::Limits {
-                maximum_replication_count: self.maximum_replication_count.unwrap_or_default(),
-                maximum_partition_count: self.maximum_partition_count.unwrap_or_default(),
+                maximum_replication_count: self.maximum_replication_count
+                    .unwrap_or_default()
+                ,
+                maximum_partition_count: self.maximum_partition_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Limits {
     /// Creates a new builder-style object to manufacture [`Limits`](crate::model::Limits).
@@ -3933,20 +3753,20 @@ impl Limits {
 /// <p>The endpoint to which service requests can be submitted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceEndpoint {
+pub struct ServiceEndpoint  {
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
 }
 impl ServiceEndpoint {
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
 /// See [`ServiceEndpoint`](crate::model::ServiceEndpoint).
 pub mod service_endpoint {
-
+    
     /// A builder for [`ServiceEndpoint`](crate::model::ServiceEndpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3960,16 +3780,18 @@ pub mod service_endpoint {
         }
         /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// Consumes the builder and constructs a [`ServiceEndpoint`](crate::model::ServiceEndpoint).
         pub fn build(self) -> crate::model::ServiceEndpoint {
             crate::model::ServiceEndpoint {
-                endpoint: self.endpoint,
+                endpoint: self.endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceEndpoint {
     /// Creates a new builder-style object to manufacture [`ServiceEndpoint`](crate::model::ServiceEndpoint).
@@ -3981,7 +3803,7 @@ impl ServiceEndpoint {
 /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalysisSchemeStatus {
+pub struct AnalysisSchemeStatus  {
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::model::AnalysisScheme>,
@@ -3991,17 +3813,17 @@ pub struct AnalysisSchemeStatus {
 }
 impl AnalysisSchemeStatus {
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-    pub fn options(&self) -> std::option::Option<&crate::model::AnalysisScheme> {
+    pub fn options(&self) -> std::option::Option<& crate::model::AnalysisScheme> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OptionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
 pub mod analysis_scheme_status {
-
+    
     /// A builder for [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4015,12 +3837,8 @@ pub mod analysis_scheme_status {
             self
         }
         /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-        pub fn set_options(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisScheme>,
-        ) -> Self {
-            self.options = input;
-            self
+        pub fn set_options(mut self, input: std::option::Option<crate::model::AnalysisScheme>) -> Self {
+            self.options = input; self
         }
         /// <p>The status of domain configuration option.</p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
@@ -4028,21 +3846,21 @@ pub mod analysis_scheme_status {
             self
         }
         /// <p>The status of domain configuration option.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OptionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
         pub fn build(self) -> crate::model::AnalysisSchemeStatus {
             crate::model::AnalysisSchemeStatus {
-                options: self.options,
-                status: self.status,
+                options: self.options
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalysisSchemeStatus {
     /// Creates a new builder-style object to manufacture [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
@@ -4054,7 +3872,7 @@ impl AnalysisSchemeStatus {
 /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalysisScheme {
+pub struct AnalysisScheme  {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     #[doc(hidden)]
     pub analysis_scheme_name: std::option::Option<std::string::String>,
@@ -4067,29 +3885,26 @@ pub struct AnalysisScheme {
 }
 impl AnalysisScheme {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn analysis_scheme_name(&self) -> std::option::Option<&str> {
+    pub fn analysis_scheme_name(&self) -> std::option::Option<& str> {
         self.analysis_scheme_name.as_deref()
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
-    pub fn analysis_scheme_language(
-        &self,
-    ) -> std::option::Option<&crate::model::AnalysisSchemeLanguage> {
+    pub fn analysis_scheme_language(&self) -> std::option::Option<& crate::model::AnalysisSchemeLanguage> {
         self.analysis_scheme_language.as_ref()
     }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
-    pub fn analysis_options(&self) -> std::option::Option<&crate::model::AnalysisOptions> {
+    pub fn analysis_options(&self) -> std::option::Option<& crate::model::AnalysisOptions> {
         self.analysis_options.as_ref()
     }
 }
 /// See [`AnalysisScheme`](crate::model::AnalysisScheme).
 pub mod analysis_scheme {
-
+    
     /// A builder for [`AnalysisScheme`](crate::model::AnalysisScheme).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme_name: std::option::Option<std::string::String>,
-        pub(crate) analysis_scheme_language:
-            std::option::Option<crate::model::AnalysisSchemeLanguage>,
+        pub(crate) analysis_scheme_language: std::option::Option<crate::model::AnalysisSchemeLanguage>,
         pub(crate) analysis_options: std::option::Option<crate::model::AnalysisOptions>,
     }
     impl Builder {
@@ -4099,28 +3914,17 @@ pub mod analysis_scheme {
             self
         }
         /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-        pub fn set_analysis_scheme_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.analysis_scheme_name = input;
-            self
+        pub fn set_analysis_scheme_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.analysis_scheme_name = input; self
         }
         /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
-        pub fn analysis_scheme_language(
-            mut self,
-            input: crate::model::AnalysisSchemeLanguage,
-        ) -> Self {
+        pub fn analysis_scheme_language(mut self, input: crate::model::AnalysisSchemeLanguage) -> Self {
             self.analysis_scheme_language = Some(input);
             self
         }
         /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
-        pub fn set_analysis_scheme_language(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisSchemeLanguage>,
-        ) -> Self {
-            self.analysis_scheme_language = input;
-            self
+        pub fn set_analysis_scheme_language(mut self, input: std::option::Option<crate::model::AnalysisSchemeLanguage>) -> Self {
+            self.analysis_scheme_language = input; self
         }
         /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
         pub fn analysis_options(mut self, input: crate::model::AnalysisOptions) -> Self {
@@ -4128,22 +3932,23 @@ pub mod analysis_scheme {
             self
         }
         /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
-        pub fn set_analysis_options(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisOptions>,
-        ) -> Self {
-            self.analysis_options = input;
-            self
+        pub fn set_analysis_options(mut self, input: std::option::Option<crate::model::AnalysisOptions>) -> Self {
+            self.analysis_options = input; self
         }
         /// Consumes the builder and constructs a [`AnalysisScheme`](crate::model::AnalysisScheme).
         pub fn build(self) -> crate::model::AnalysisScheme {
             crate::model::AnalysisScheme {
-                analysis_scheme_name: self.analysis_scheme_name,
-                analysis_scheme_language: self.analysis_scheme_language,
-                analysis_options: self.analysis_options,
+                analysis_scheme_name: self.analysis_scheme_name
+                ,
+                analysis_scheme_language: self.analysis_scheme_language
+                ,
+                analysis_options: self.analysis_options
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalysisScheme {
     /// Creates a new builder-style object to manufacture [`AnalysisScheme`](crate::model::AnalysisScheme).
@@ -4155,7 +3960,7 @@ impl AnalysisScheme {
 /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalysisOptions {
+pub struct AnalysisOptions  {
     /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     #[doc(hidden)]
     pub synonyms: std::option::Option<std::string::String>,
@@ -4174,29 +3979,29 @@ pub struct AnalysisOptions {
 }
 impl AnalysisOptions {
     /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn synonyms(&self) -> std::option::Option<&str> {
+    pub fn synonyms(&self) -> std::option::Option<& str> {
         self.synonyms.as_deref()
     }
     /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
-    pub fn stopwords(&self) -> std::option::Option<&str> {
+    pub fn stopwords(&self) -> std::option::Option<& str> {
         self.stopwords.as_deref()
     }
     /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
-    pub fn stemming_dictionary(&self) -> std::option::Option<&str> {
+    pub fn stemming_dictionary(&self) -> std::option::Option<& str> {
         self.stemming_dictionary.as_deref()
     }
     /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
-    pub fn japanese_tokenization_dictionary(&self) -> std::option::Option<&str> {
+    pub fn japanese_tokenization_dictionary(&self) -> std::option::Option<& str> {
         self.japanese_tokenization_dictionary.as_deref()
     }
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
-    pub fn algorithmic_stemming(&self) -> std::option::Option<&crate::model::AlgorithmicStemming> {
+    pub fn algorithmic_stemming(&self) -> std::option::Option<& crate::model::AlgorithmicStemming> {
         self.algorithmic_stemming.as_ref()
     }
 }
 /// See [`AnalysisOptions`](crate::model::AnalysisOptions).
 pub mod analysis_options {
-
+    
     /// A builder for [`AnalysisOptions`](crate::model::AnalysisOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4214,8 +4019,7 @@ pub mod analysis_options {
         }
         /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
         pub fn set_synonyms(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.synonyms = input;
-            self
+            self.synonyms = input; self
         }
         /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
         pub fn stopwords(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4224,8 +4028,7 @@ pub mod analysis_options {
         }
         /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
         pub fn set_stopwords(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stopwords = input;
-            self
+            self.stopwords = input; self
         }
         /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
         pub fn stemming_dictionary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4233,28 +4036,17 @@ pub mod analysis_options {
             self
         }
         /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
-        pub fn set_stemming_dictionary(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.stemming_dictionary = input;
-            self
+        pub fn set_stemming_dictionary(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stemming_dictionary = input; self
         }
         /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
-        pub fn japanese_tokenization_dictionary(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn japanese_tokenization_dictionary(mut self, input: impl Into<std::string::String>) -> Self {
             self.japanese_tokenization_dictionary = Some(input.into());
             self
         }
         /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
-        pub fn set_japanese_tokenization_dictionary(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.japanese_tokenization_dictionary = input;
-            self
+        pub fn set_japanese_tokenization_dictionary(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.japanese_tokenization_dictionary = input; self
         }
         /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
         pub fn algorithmic_stemming(mut self, input: crate::model::AlgorithmicStemming) -> Self {
@@ -4262,24 +4054,27 @@ pub mod analysis_options {
             self
         }
         /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
-        pub fn set_algorithmic_stemming(
-            mut self,
-            input: std::option::Option<crate::model::AlgorithmicStemming>,
-        ) -> Self {
-            self.algorithmic_stemming = input;
-            self
+        pub fn set_algorithmic_stemming(mut self, input: std::option::Option<crate::model::AlgorithmicStemming>) -> Self {
+            self.algorithmic_stemming = input; self
         }
         /// Consumes the builder and constructs a [`AnalysisOptions`](crate::model::AnalysisOptions).
         pub fn build(self) -> crate::model::AnalysisOptions {
             crate::model::AnalysisOptions {
-                synonyms: self.synonyms,
-                stopwords: self.stopwords,
-                stemming_dictionary: self.stemming_dictionary,
-                japanese_tokenization_dictionary: self.japanese_tokenization_dictionary,
-                algorithmic_stemming: self.algorithmic_stemming,
+                synonyms: self.synonyms
+                ,
+                stopwords: self.stopwords
+                ,
+                stemming_dictionary: self.stemming_dictionary
+                ,
+                japanese_tokenization_dictionary: self.japanese_tokenization_dictionary
+                ,
+                algorithmic_stemming: self.algorithmic_stemming
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalysisOptions {
     /// Creates a new builder-style object to manufacture [`AnalysisOptions`](crate::model::AnalysisOptions).
@@ -4294,9 +4089,9 @@ impl AnalysisOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let algorithmicstemming = unimplemented!();
 /// match algorithmicstemming {
@@ -4320,22 +4115,14 @@ impl AnalysisOptions {
 /// Specifically, when `algorithmicstemming` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlgorithmicStemming::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlgorithmicStemming {
     #[allow(missing_docs)] // documentation missing in model
     Full,
@@ -4346,7 +4133,7 @@ pub enum AlgorithmicStemming {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlgorithmicStemming {
     fn from(s: &str) -> Self {
@@ -4355,19 +4142,17 @@ impl std::convert::From<&str> for AlgorithmicStemming {
             "light" => AlgorithmicStemming::Light,
             "minimal" => AlgorithmicStemming::Minimal,
             "none" => AlgorithmicStemming::None,
-            other => {
-                AlgorithmicStemming::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AlgorithmicStemming::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AlgorithmicStemming {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlgorithmicStemming::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlgorithmicStemming::from(s))
+                }
+            }
 impl AlgorithmicStemming {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4376,12 +4161,14 @@ impl AlgorithmicStemming {
             AlgorithmicStemming::Light => "light",
             AlgorithmicStemming::Minimal => "minimal",
             AlgorithmicStemming::None => "none",
-            AlgorithmicStemming::Unknown(value) => value.as_str(),
+            AlgorithmicStemming::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["full", "light", "minimal", "none"]
+        &[
+            "full", "light", "minimal", "none"
+        ]
     }
 }
 impl AsRef<str> for AlgorithmicStemming {
@@ -4396,9 +4183,9 @@ impl AsRef<str> for AlgorithmicStemming {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analysisschemelanguage = unimplemented!();
 /// match analysisschemelanguage {
@@ -4453,22 +4240,14 @@ impl AsRef<str> for AlgorithmicStemming {
 /// Specifically, when `analysisschemelanguage` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalysisSchemeLanguage::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnalysisSchemeLanguage {
     #[allow(missing_docs)] // documentation missing in model
     Ar,
@@ -4541,7 +4320,7 @@ pub enum AnalysisSchemeLanguage {
     #[allow(missing_docs)] // documentation missing in model
     ZhHant,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalysisSchemeLanguage {
     fn from(s: &str) -> Self {
@@ -4581,19 +4360,17 @@ impl std::convert::From<&str> for AnalysisSchemeLanguage {
             "tr" => AnalysisSchemeLanguage::Tr,
             "zh-Hans" => AnalysisSchemeLanguage::ZhHans,
             "zh-Hant" => AnalysisSchemeLanguage::ZhHant,
-            other => {
-                AnalysisSchemeLanguage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AnalysisSchemeLanguage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnalysisSchemeLanguage {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalysisSchemeLanguage::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnalysisSchemeLanguage::from(s))
+                }
+            }
 impl AnalysisSchemeLanguage {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4633,15 +4410,13 @@ impl AnalysisSchemeLanguage {
             AnalysisSchemeLanguage::Tr => "tr",
             AnalysisSchemeLanguage::ZhHans => "zh-Hans",
             AnalysisSchemeLanguage::ZhHant => "zh-Hant",
-            AnalysisSchemeLanguage::Unknown(value) => value.as_str(),
+            AnalysisSchemeLanguage::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga",
-            "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko", "lv", "mul", "nl", "no", "pt",
-            "ro", "ru", "sv", "th", "tr", "zh-Hans", "zh-Hant",
+            "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga", "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko", "lv", "mul", "nl", "no", "pt", "ro", "ru", "sv", "th", "tr", "zh-Hans", "zh-Hant"
         ]
     }
 }
@@ -4650,3 +4425,4 @@ impl AsRef<str> for AnalysisSchemeLanguage {
         self.as_str()
     }
 }
+

@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,7 +60,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMigrationOutput {
+pub struct StartMigrationOutput  {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
     #[doc(hidden)]
     pub v1_bot_name: std::option::Option<std::string::String>,
@@ -78,41 +88,41 @@ pub struct StartMigrationOutput {
 }
 impl StartMigrationOutput {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
-    pub fn v1_bot_name(&self) -> std::option::Option<&str> {
+    pub fn v1_bot_name(&self) -> std::option::Option<& str> {
         self.v1_bot_name.as_deref()
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
-    pub fn v1_bot_version(&self) -> std::option::Option<&str> {
+    pub fn v1_bot_version(&self) -> std::option::Option<& str> {
         self.v1_bot_version.as_deref()
     }
     /// <p>The locale used for the Amazon Lex V1 bot. </p>
-    pub fn v1_bot_locale(&self) -> std::option::Option<&crate::model::Locale> {
+    pub fn v1_bot_locale(&self) -> std::option::Option<& crate::model::Locale> {
         self.v1_bot_locale.as_ref()
     }
     /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
-    pub fn v2_bot_id(&self) -> std::option::Option<&str> {
+    pub fn v2_bot_id(&self) -> std::option::Option<& str> {
         self.v2_bot_id.as_deref()
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    pub fn v2_bot_role(&self) -> std::option::Option<&str> {
+    pub fn v2_bot_role(&self) -> std::option::Option<& str> {
         self.v2_bot_role.as_deref()
     }
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
-    pub fn migration_id(&self) -> std::option::Option<&str> {
+    pub fn migration_id(&self) -> std::option::Option<& str> {
         self.migration_id.as_deref()
     }
     /// <p>The strategy used to conduct the migration.</p>
-    pub fn migration_strategy(&self) -> std::option::Option<&crate::model::MigrationStrategy> {
+    pub fn migration_strategy(&self) -> std::option::Option<& crate::model::MigrationStrategy> {
         self.migration_strategy.as_ref()
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn migration_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn migration_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.migration_timestamp.as_ref()
     }
 }
 /// See [`StartMigrationOutput`](crate::output::StartMigrationOutput).
 pub mod start_migration_output {
-
+    
     /// A builder for [`StartMigrationOutput`](crate::output::StartMigrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -133,8 +143,7 @@ pub mod start_migration_output {
         }
         /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
         pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.v1_bot_name = input;
-            self
+            self.v1_bot_name = input; self
         }
         /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
         pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,12 +151,8 @@ pub mod start_migration_output {
             self
         }
         /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
-        pub fn set_v1_bot_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.v1_bot_version = input;
-            self
+        pub fn set_v1_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v1_bot_version = input; self
         }
         /// <p>The locale used for the Amazon Lex V1 bot. </p>
         pub fn v1_bot_locale(mut self, input: crate::model::Locale) -> Self {
@@ -155,12 +160,8 @@ pub mod start_migration_output {
             self
         }
         /// <p>The locale used for the Amazon Lex V1 bot. </p>
-        pub fn set_v1_bot_locale(
-            mut self,
-            input: std::option::Option<crate::model::Locale>,
-        ) -> Self {
-            self.v1_bot_locale = input;
-            self
+        pub fn set_v1_bot_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
+            self.v1_bot_locale = input; self
         }
         /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
         pub fn v2_bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,8 +170,7 @@ pub mod start_migration_output {
         }
         /// <p>The unique identifier for the Amazon Lex V2 bot. </p>
         pub fn set_v2_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.v2_bot_id = input;
-            self
+            self.v2_bot_id = input; self
         }
         /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
         pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,8 +179,7 @@ pub mod start_migration_output {
         }
         /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
         pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.v2_bot_role = input;
-            self
+            self.v2_bot_role = input; self
         }
         /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
         pub fn migration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,8 +188,7 @@ pub mod start_migration_output {
         }
         /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
         pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.migration_id = input;
-            self
+            self.migration_id = input; self
         }
         /// <p>The strategy used to conduct the migration.</p>
         pub fn migration_strategy(mut self, input: crate::model::MigrationStrategy) -> Self {
@@ -198,12 +196,8 @@ pub mod start_migration_output {
             self
         }
         /// <p>The strategy used to conduct the migration.</p>
-        pub fn set_migration_strategy(
-            mut self,
-            input: std::option::Option<crate::model::MigrationStrategy>,
-        ) -> Self {
-            self.migration_strategy = input;
-            self
+        pub fn set_migration_strategy(mut self, input: std::option::Option<crate::model::MigrationStrategy>) -> Self {
+            self.migration_strategy = input; self
         }
         /// <p>The date and time that the migration started.</p>
         pub fn migration_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -211,27 +205,33 @@ pub mod start_migration_output {
             self
         }
         /// <p>The date and time that the migration started.</p>
-        pub fn set_migration_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.migration_timestamp = input;
-            self
+        pub fn set_migration_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.migration_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`StartMigrationOutput`](crate::output::StartMigrationOutput).
         pub fn build(self) -> crate::output::StartMigrationOutput {
             crate::output::StartMigrationOutput {
-                v1_bot_name: self.v1_bot_name,
-                v1_bot_version: self.v1_bot_version,
-                v1_bot_locale: self.v1_bot_locale,
-                v2_bot_id: self.v2_bot_id,
-                v2_bot_role: self.v2_bot_role,
-                migration_id: self.migration_id,
-                migration_strategy: self.migration_strategy,
-                migration_timestamp: self.migration_timestamp,
+                v1_bot_name: self.v1_bot_name
+                ,
+                v1_bot_version: self.v1_bot_version
+                ,
+                v1_bot_locale: self.v1_bot_locale
+                ,
+                v2_bot_id: self.v2_bot_id
+                ,
+                v2_bot_role: self.v2_bot_role
+                ,
+                migration_id: self.migration_id
+                ,
+                migration_strategy: self.migration_strategy
+                ,
+                migration_timestamp: self.migration_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl StartMigrationOutput {
     /// Creates a new builder-style object to manufacture [`StartMigrationOutput`](crate::output::StartMigrationOutput).
@@ -243,7 +243,7 @@ impl StartMigrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportOutput {
+pub struct StartImportOutput  {
     /// <p>The name given to the import job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -268,37 +268,37 @@ pub struct StartImportOutput {
 }
 impl StartImportOutput {
     /// <p>The name given to the import job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of resource to import.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The action to take when there is a merge conflict.</p>
-    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<& crate::model::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The identifier for the specific import job.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
-    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<& crate::model::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>A list of tags added to the imported bot.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A timestamp for the date and time that the import job was requested.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
 /// See [`StartImportOutput`](crate::output::StartImportOutput).
 pub mod start_import_output {
-
+    
     /// A builder for [`StartImportOutput`](crate::output::StartImportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -318,8 +318,7 @@ pub mod start_import_output {
         }
         /// <p>The name given to the import job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of resource to import.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -327,12 +326,8 @@ pub mod start_import_output {
             self
         }
         /// <p>The type of resource to import.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The action to take when there is a merge conflict.</p>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
@@ -340,12 +335,8 @@ pub mod start_import_output {
             self
         }
         /// <p>The action to take when there is a merge conflict.</p>
-        pub fn set_merge_strategy(
-            mut self,
-            input: std::option::Option<crate::model::MergeStrategy>,
-        ) -> Self {
-            self.merge_strategy = input;
-            self
+        pub fn set_merge_strategy(mut self, input: std::option::Option<crate::model::MergeStrategy>) -> Self {
+            self.merge_strategy = input; self
         }
         /// <p>The identifier for the specific import job.</p>
         pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,8 +345,7 @@ pub mod start_import_output {
         }
         /// <p>The identifier for the specific import job.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.import_id = input;
-            self
+            self.import_id = input; self
         }
         /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
         pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
@@ -363,12 +353,8 @@ pub mod start_import_output {
             self
         }
         /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
-        pub fn set_import_status(
-            mut self,
-            input: std::option::Option<crate::model::ImportStatus>,
-        ) -> Self {
-            self.import_status = input;
-            self
+        pub fn set_import_status(mut self, input: std::option::Option<crate::model::ImportStatus>) -> Self {
+            self.import_status = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -377,17 +363,13 @@ pub mod start_import_output {
         /// <p>A list of tags added to the imported bot.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags added to the imported bot.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A timestamp for the date and time that the import job was requested.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -395,26 +377,31 @@ pub mod start_import_output {
             self
         }
         /// <p>A timestamp for the date and time that the import job was requested.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// Consumes the builder and constructs a [`StartImportOutput`](crate::output::StartImportOutput).
         pub fn build(self) -> crate::output::StartImportOutput {
             crate::output::StartImportOutput {
-                name: self.name,
-                resource_type: self.resource_type,
-                merge_strategy: self.merge_strategy,
-                import_id: self.import_id,
-                import_status: self.import_status,
-                tags: self.tags,
-                created_date: self.created_date,
+                name: self.name
+                ,
+                resource_type: self.resource_type
+                ,
+                merge_strategy: self.merge_strategy
+                ,
+                import_id: self.import_id
+                ,
+                import_status: self.import_status
+                ,
+                tags: self.tags
+                ,
+                created_date: self.created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl StartImportOutput {
     /// Creates a new builder-style object to manufacture [`StartImportOutput`](crate::output::StartImportOutput).
@@ -426,7 +413,7 @@ impl StartImportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSlotTypeOutput {
+pub struct PutSlotTypeOutput  {
     /// <p>The name of the slot type.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -459,42 +446,39 @@ pub struct PutSlotTypeOutput {
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type.</p>
     #[doc(hidden)]
-    pub slot_type_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
+    pub slot_type_configurations: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
 }
 impl PutSlotTypeOutput {
     /// <p>The name of the slot type.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
-    pub fn enumeration_values(&self) -> std::option::Option<&[crate::model::EnumerationValue]> {
+    pub fn enumeration_values(&self) -> std::option::Option<& [crate::model::EnumerationValue]> {
         self.enumeration_values.as_deref()
     }
     /// <p>The date that the slot type was updated. When you create a slot type, the creation date and last update date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the slot type was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-    pub fn value_selection_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueSelectionStrategy> {
+    pub fn value_selection_strategy(&self) -> std::option::Option<& crate::model::SlotValueSelectionStrategy> {
         self.value_selection_strategy.as_ref()
     }
     /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
@@ -502,36 +486,31 @@ impl PutSlotTypeOutput {
         self.create_version
     }
     /// <p>The built-in slot type used as the parent of the slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>Configuration information that extends the parent built-in slot type.</p>
-    pub fn slot_type_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SlotTypeConfiguration]> {
+    pub fn slot_type_configurations(&self) -> std::option::Option<& [crate::model::SlotTypeConfiguration]> {
         self.slot_type_configurations.as_deref()
     }
 }
 /// See [`PutSlotTypeOutput`](crate::output::PutSlotTypeOutput).
 pub mod put_slot_type_output {
-
+    
     /// A builder for [`PutSlotTypeOutput`](crate::output::PutSlotTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) enumeration_values:
-            std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
+        pub(crate) enumeration_values: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
         pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) checksum: std::option::Option<std::string::String>,
-        pub(crate) value_selection_strategy:
-            std::option::Option<crate::model::SlotValueSelectionStrategy>,
+        pub(crate) value_selection_strategy: std::option::Option<crate::model::SlotValueSelectionStrategy>,
         pub(crate) create_version: std::option::Option<bool>,
         pub(crate) parent_slot_type_signature: std::option::Option<std::string::String>,
-        pub(crate) slot_type_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
+        pub(crate) slot_type_configurations: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
     }
     impl Builder {
         /// <p>The name of the slot type.</p>
@@ -541,8 +520,7 @@ pub mod put_slot_type_output {
         }
         /// <p>The name of the slot type.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the slot type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -551,8 +529,7 @@ pub mod put_slot_type_output {
         }
         /// <p>A description of the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `enumeration_values`.
         ///
@@ -561,17 +538,13 @@ pub mod put_slot_type_output {
         /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
         pub fn enumeration_values(mut self, input: crate::model::EnumerationValue) -> Self {
             let mut v = self.enumeration_values.unwrap_or_default();
-            v.push(input);
-            self.enumeration_values = Some(v);
-            self
+                            v.push(input);
+                            self.enumeration_values = Some(v);
+                            self
         }
         /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
-        pub fn set_enumeration_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
-        ) -> Self {
-            self.enumeration_values = input;
-            self
+        pub fn set_enumeration_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>) -> Self {
+            self.enumeration_values = input; self
         }
         /// <p>The date that the slot type was updated. When you create a slot type, the creation date and last update date are the same.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -579,12 +552,8 @@ pub mod put_slot_type_output {
             self
         }
         /// <p>The date that the slot type was updated. When you create a slot type, the creation date and last update date are the same.</p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the slot type was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -592,12 +561,8 @@ pub mod put_slot_type_output {
             self
         }
         /// <p>The date that the slot type was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -606,8 +571,7 @@ pub mod put_slot_type_output {
         }
         /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -616,24 +580,16 @@ pub mod put_slot_type_output {
         }
         /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-        pub fn value_selection_strategy(
-            mut self,
-            input: crate::model::SlotValueSelectionStrategy,
-        ) -> Self {
+        pub fn value_selection_strategy(mut self, input: crate::model::SlotValueSelectionStrategy) -> Self {
             self.value_selection_strategy = Some(input);
             self
         }
         /// <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-        pub fn set_value_selection_strategy(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueSelectionStrategy>,
-        ) -> Self {
-            self.value_selection_strategy = input;
-            self
+        pub fn set_value_selection_strategy(mut self, input: std::option::Option<crate::model::SlotValueSelectionStrategy>) -> Self {
+            self.value_selection_strategy = input; self
         }
         /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
         pub fn create_version(mut self, input: bool) -> Self {
@@ -642,8 +598,7 @@ pub mod put_slot_type_output {
         }
         /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
         pub fn set_create_version(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_version = input;
-            self
+            self.create_version = input; self
         }
         /// <p>The built-in slot type used as the parent of the slot type.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -651,52 +606,54 @@ pub mod put_slot_type_output {
             self
         }
         /// <p>The built-in slot type used as the parent of the slot type.</p>
-        pub fn set_parent_slot_type_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_slot_type_signature = input;
-            self
+        pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_slot_type_signature = input; self
         }
         /// Appends an item to `slot_type_configurations`.
         ///
         /// To override the contents of this collection use [`set_slot_type_configurations`](Self::set_slot_type_configurations).
         ///
         /// <p>Configuration information that extends the parent built-in slot type.</p>
-        pub fn slot_type_configurations(
-            mut self,
-            input: crate::model::SlotTypeConfiguration,
-        ) -> Self {
+        pub fn slot_type_configurations(mut self, input: crate::model::SlotTypeConfiguration) -> Self {
             let mut v = self.slot_type_configurations.unwrap_or_default();
-            v.push(input);
-            self.slot_type_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.slot_type_configurations = Some(v);
+                            self
         }
         /// <p>Configuration information that extends the parent built-in slot type.</p>
-        pub fn set_slot_type_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
-        ) -> Self {
-            self.slot_type_configurations = input;
-            self
+        pub fn set_slot_type_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>) -> Self {
+            self.slot_type_configurations = input; self
         }
         /// Consumes the builder and constructs a [`PutSlotTypeOutput`](crate::output::PutSlotTypeOutput).
         pub fn build(self) -> crate::output::PutSlotTypeOutput {
             crate::output::PutSlotTypeOutput {
-                name: self.name,
-                description: self.description,
-                enumeration_values: self.enumeration_values,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                version: self.version,
-                checksum: self.checksum,
-                value_selection_strategy: self.value_selection_strategy,
-                create_version: self.create_version,
-                parent_slot_type_signature: self.parent_slot_type_signature,
-                slot_type_configurations: self.slot_type_configurations,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                enumeration_values: self.enumeration_values
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                ,
+                checksum: self.checksum
+                ,
+                value_selection_strategy: self.value_selection_strategy
+                ,
+                create_version: self.create_version
+                ,
+                parent_slot_type_signature: self.parent_slot_type_signature
+                ,
+                slot_type_configurations: self.slot_type_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl PutSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`PutSlotTypeOutput`](crate::output::PutSlotTypeOutput).
@@ -708,7 +665,7 @@ impl PutSlotTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutIntentOutput {
+pub struct PutIntentOutput  {
     /// <p>The name of the intent.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -769,63 +726,63 @@ pub struct PutIntentOutput {
 }
 impl PutIntentOutput {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of intent slots that are configured for the intent.</p>
-    pub fn slots(&self) -> std::option::Option<&[crate::model::Slot]> {
+    pub fn slots(&self) -> std::option::Option<& [crate::model::Slot]> {
         self.slots.as_deref()
     }
     /// <p> An array of sample utterances that are configured for the intent. </p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [std::string::String]> {
         self.sample_utterances.as_deref()
     }
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
-    pub fn confirmation_prompt(&self) -> std::option::Option<&crate::model::Prompt> {
+    pub fn confirmation_prompt(&self) -> std::option::Option<& crate::model::Prompt> {
         self.confirmation_prompt.as_ref()
     }
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-    pub fn rejection_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn rejection_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.rejection_statement.as_ref()
     }
     /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
-    pub fn follow_up_prompt(&self) -> std::option::Option<&crate::model::FollowUpPrompt> {
+    pub fn follow_up_prompt(&self) -> std::option::Option<& crate::model::FollowUpPrompt> {
         self.follow_up_prompt.as_ref()
     }
     /// <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
-    pub fn conclusion_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn conclusion_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.conclusion_statement.as_ref()
     }
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
-    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::CodeHook> {
+    pub fn dialog_code_hook(&self) -> std::option::Option<& crate::model::CodeHook> {
         self.dialog_code_hook.as_ref()
     }
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
-    pub fn fulfillment_activity(&self) -> std::option::Option<&crate::model::FulfillmentActivity> {
+    pub fn fulfillment_activity(&self) -> std::option::Option<& crate::model::FulfillmentActivity> {
         self.fulfillment_activity.as_ref()
     }
     /// <p>A unique identifier for the built-in intent that this intent is based on.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the intent was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
@@ -833,21 +790,21 @@ impl PutIntentOutput {
         self.create_version
     }
     /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> std::option::Option<& crate::model::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<& [crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<& [crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
 }
 /// See [`PutIntentOutput`](crate::output::PutIntentOutput).
 pub mod put_intent_output {
-
+    
     /// A builder for [`PutIntentOutput`](crate::output::PutIntentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -879,8 +836,7 @@ pub mod put_intent_output {
         }
         /// <p>The name of the intent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the intent.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -889,8 +845,7 @@ pub mod put_intent_output {
         }
         /// <p>A description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `slots`.
         ///
@@ -899,17 +854,13 @@ pub mod put_intent_output {
         /// <p>An array of intent slots that are configured for the intent.</p>
         pub fn slots(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input);
-            self.slots = Some(v);
-            self
+                            v.push(input);
+                            self.slots = Some(v);
+                            self
         }
         /// <p>An array of intent slots that are configured for the intent.</p>
-        pub fn set_slots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Slot>>,
-        ) -> Self {
-            self.slots = input;
-            self
+        pub fn set_slots(mut self, input: std::option::Option<std::vec::Vec<crate::model::Slot>>) -> Self {
+            self.slots = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -918,17 +869,13 @@ pub mod put_intent_output {
         /// <p> An array of sample utterances that are configured for the intent. </p>
         pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input.into());
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p> An array of sample utterances that are configured for the intent. </p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
         pub fn confirmation_prompt(mut self, input: crate::model::Prompt) -> Self {
@@ -936,12 +883,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
-        pub fn set_confirmation_prompt(
-            mut self,
-            input: std::option::Option<crate::model::Prompt>,
-        ) -> Self {
-            self.confirmation_prompt = input;
-            self
+        pub fn set_confirmation_prompt(mut self, input: std::option::Option<crate::model::Prompt>) -> Self {
+            self.confirmation_prompt = input; self
         }
         /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
         pub fn rejection_statement(mut self, input: crate::model::Statement) -> Self {
@@ -949,12 +892,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-        pub fn set_rejection_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.rejection_statement = input;
-            self
+        pub fn set_rejection_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.rejection_statement = input; self
         }
         /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
         pub fn follow_up_prompt(mut self, input: crate::model::FollowUpPrompt) -> Self {
@@ -962,12 +901,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
-        pub fn set_follow_up_prompt(
-            mut self,
-            input: std::option::Option<crate::model::FollowUpPrompt>,
-        ) -> Self {
-            self.follow_up_prompt = input;
-            self
+        pub fn set_follow_up_prompt(mut self, input: std::option::Option<crate::model::FollowUpPrompt>) -> Self {
+            self.follow_up_prompt = input; self
         }
         /// <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
         pub fn conclusion_statement(mut self, input: crate::model::Statement) -> Self {
@@ -975,12 +910,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
-        pub fn set_conclusion_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.conclusion_statement = input;
-            self
+        pub fn set_conclusion_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.conclusion_statement = input; self
         }
         /// <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
         pub fn dialog_code_hook(mut self, input: crate::model::CodeHook) -> Self {
@@ -988,12 +919,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
-        pub fn set_dialog_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::CodeHook>,
-        ) -> Self {
-            self.dialog_code_hook = input;
-            self
+        pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::model::CodeHook>) -> Self {
+            self.dialog_code_hook = input; self
         }
         /// <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
         pub fn fulfillment_activity(mut self, input: crate::model::FulfillmentActivity) -> Self {
@@ -1001,12 +928,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
-        pub fn set_fulfillment_activity(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentActivity>,
-        ) -> Self {
-            self.fulfillment_activity = input;
-            self
+        pub fn set_fulfillment_activity(mut self, input: std::option::Option<crate::model::FulfillmentActivity>) -> Self {
+            self.fulfillment_activity = input; self
         }
         /// <p>A unique identifier for the built-in intent that this intent is based on.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1014,12 +937,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>A unique identifier for the built-in intent that this intent is based on.</p>
-        pub fn set_parent_intent_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_intent_signature = input;
-            self
+        pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_intent_signature = input; self
         }
         /// <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1027,12 +946,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the intent was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1040,12 +955,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>The date that the intent was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1054,8 +965,7 @@ pub mod put_intent_output {
         }
         /// <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1064,8 +974,7 @@ pub mod put_intent_output {
         }
         /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
         pub fn create_version(mut self, input: bool) -> Self {
@@ -1074,8 +983,7 @@ pub mod put_intent_output {
         }
         /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
         pub fn set_create_version(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_version = input;
-            self
+            self.create_version = input; self
         }
         /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
         pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
@@ -1083,12 +991,8 @@ pub mod put_intent_output {
             self
         }
         /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-        pub fn set_kendra_configuration(
-            mut self,
-            input: std::option::Option<crate::model::KendraConfiguration>,
-        ) -> Self {
-            self.kendra_configuration = input;
-            self
+        pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::model::KendraConfiguration>) -> Self {
+            self.kendra_configuration = input; self
         }
         /// Appends an item to `input_contexts`.
         ///
@@ -1097,17 +1001,13 @@ pub mod put_intent_output {
         /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
         pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input);
-            self.input_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.input_contexts = Some(v);
+                            self
         }
         /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-        pub fn set_input_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-        ) -> Self {
-            self.input_contexts = input;
-            self
+        pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputContext>>) -> Self {
+            self.input_contexts = input; self
         }
         /// Appends an item to `output_contexts`.
         ///
@@ -1116,43 +1016,60 @@ pub mod put_intent_output {
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
         pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input);
-            self.output_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.output_contexts = Some(v);
+                            self
         }
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-        pub fn set_output_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-        ) -> Self {
-            self.output_contexts = input;
-            self
+        pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>) -> Self {
+            self.output_contexts = input; self
         }
         /// Consumes the builder and constructs a [`PutIntentOutput`](crate::output::PutIntentOutput).
         pub fn build(self) -> crate::output::PutIntentOutput {
             crate::output::PutIntentOutput {
-                name: self.name,
-                description: self.description,
-                slots: self.slots,
-                sample_utterances: self.sample_utterances,
-                confirmation_prompt: self.confirmation_prompt,
-                rejection_statement: self.rejection_statement,
-                follow_up_prompt: self.follow_up_prompt,
-                conclusion_statement: self.conclusion_statement,
-                dialog_code_hook: self.dialog_code_hook,
-                fulfillment_activity: self.fulfillment_activity,
-                parent_intent_signature: self.parent_intent_signature,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                version: self.version,
-                checksum: self.checksum,
-                create_version: self.create_version,
-                kendra_configuration: self.kendra_configuration,
-                input_contexts: self.input_contexts,
-                output_contexts: self.output_contexts,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                slots: self.slots
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                confirmation_prompt: self.confirmation_prompt
+                ,
+                rejection_statement: self.rejection_statement
+                ,
+                follow_up_prompt: self.follow_up_prompt
+                ,
+                conclusion_statement: self.conclusion_statement
+                ,
+                dialog_code_hook: self.dialog_code_hook
+                ,
+                fulfillment_activity: self.fulfillment_activity
+                ,
+                parent_intent_signature: self.parent_intent_signature
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                ,
+                checksum: self.checksum
+                ,
+                create_version: self.create_version
+                ,
+                kendra_configuration: self.kendra_configuration
+                ,
+                input_contexts: self.input_contexts
+                ,
+                output_contexts: self.output_contexts
+                ,
             }
         }
     }
+    
+    
 }
 impl PutIntentOutput {
     /// Creates a new builder-style object to manufacture [`PutIntentOutput`](crate::output::PutIntentOutput).
@@ -1164,7 +1081,7 @@ impl PutIntentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBotAliasOutput {
+pub struct PutBotAliasOutput  {
     /// <p>The name of the alias.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1195,47 +1112,45 @@ pub struct PutBotAliasOutput {
 }
 impl PutBotAliasOutput {
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the bot that the alias points to.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The name of the bot that the alias points to.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the bot alias was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The checksum for the current version of the alias.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
-    pub fn conversation_logs(
-        &self,
-    ) -> std::option::Option<&crate::model::ConversationLogsResponse> {
+    pub fn conversation_logs(&self) -> std::option::Option<& crate::model::ConversationLogsResponse> {
         self.conversation_logs.as_ref()
     }
     /// <p>A list of tags associated with a bot.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`PutBotAliasOutput`](crate::output::PutBotAliasOutput).
 pub mod put_bot_alias_output {
-
+    
     /// A builder for [`PutBotAliasOutput`](crate::output::PutBotAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1257,8 +1172,7 @@ pub mod put_bot_alias_output {
         }
         /// <p>The name of the alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1267,8 +1181,7 @@ pub mod put_bot_alias_output {
         }
         /// <p>A description of the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The version of the bot that the alias points to.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1277,8 +1190,7 @@ pub mod put_bot_alias_output {
         }
         /// <p>The version of the bot that the alias points to.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The name of the bot that the alias points to.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1287,8 +1199,7 @@ pub mod put_bot_alias_output {
         }
         /// <p>The name of the bot that the alias points to.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1296,12 +1207,8 @@ pub mod put_bot_alias_output {
             self
         }
         /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the bot alias was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1309,12 +1216,8 @@ pub mod put_bot_alias_output {
             self
         }
         /// <p>The date that the bot alias was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The checksum for the current version of the alias.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1323,8 +1226,7 @@ pub mod put_bot_alias_output {
         }
         /// <p>The checksum for the current version of the alias.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
         pub fn conversation_logs(mut self, input: crate::model::ConversationLogsResponse) -> Self {
@@ -1332,12 +1234,8 @@ pub mod put_bot_alias_output {
             self
         }
         /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
-        pub fn set_conversation_logs(
-            mut self,
-            input: std::option::Option<crate::model::ConversationLogsResponse>,
-        ) -> Self {
-            self.conversation_logs = input;
-            self
+        pub fn set_conversation_logs(mut self, input: std::option::Option<crate::model::ConversationLogsResponse>) -> Self {
+            self.conversation_logs = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1346,33 +1244,40 @@ pub mod put_bot_alias_output {
         /// <p>A list of tags associated with a bot.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags associated with a bot.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PutBotAliasOutput`](crate::output::PutBotAliasOutput).
         pub fn build(self) -> crate::output::PutBotAliasOutput {
             crate::output::PutBotAliasOutput {
-                name: self.name,
-                description: self.description,
-                bot_version: self.bot_version,
-                bot_name: self.bot_name,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                checksum: self.checksum,
-                conversation_logs: self.conversation_logs,
-                tags: self.tags,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                bot_version: self.bot_version
+                ,
+                bot_name: self.bot_name
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                checksum: self.checksum
+                ,
+                conversation_logs: self.conversation_logs
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PutBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`PutBotAliasOutput`](crate::output::PutBotAliasOutput).
@@ -1384,7 +1289,7 @@ impl PutBotAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBotOutput {
+pub struct PutBotOutput  {
     /// <p>The name of the bot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1406,10 +1311,10 @@ pub struct PutBotOutput {
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
     #[doc(hidden)]
     pub abort_statement: std::option::Option<crate::model::Statement>,
-    /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
-    /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p>
-    /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
-    /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p>
+    /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p> 
+    /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p> 
+    /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p> 
+    /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p> 
     /// <p>When the bot is in the <code>READY</code> state you can test and publish the bot.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
@@ -1437,7 +1342,7 @@ pub struct PutBotOutput {
     /// <p> The target locale for the bot. </p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
-    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
     #[doc(hidden)]
     pub child_directed: std::option::Option<bool>,
@@ -1453,15 +1358,15 @@ pub struct PutBotOutput {
 }
 impl PutBotOutput {
     /// <p>The name of the bot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the bot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn intents(&self) -> std::option::Option<&[crate::model::Intent]> {
+    pub fn intents(&self) -> std::option::Option<& [crate::model::Intent]> {
         self.intents.as_deref()
     }
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
@@ -1473,31 +1378,31 @@ impl PutBotOutput {
         self.nlu_intent_confidence_threshold
     }
     /// <p> The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see <code>PutBot</code>. </p>
-    pub fn clarification_prompt(&self) -> std::option::Option<&crate::model::Prompt> {
+    pub fn clarification_prompt(&self) -> std::option::Option<& crate::model::Prompt> {
         self.clarification_prompt.as_ref()
     }
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
-    pub fn abort_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn abort_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.abort_statement.as_ref()
     }
-    /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
-    /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p>
-    /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
-    /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p>
+    /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p> 
+    /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p> 
+    /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p> 
+    /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p> 
     /// <p>When the bot is in the <code>READY</code> state you can test and publish the bot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the bot was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
@@ -1505,22 +1410,22 @@ impl PutBotOutput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
-    pub fn voice_id(&self) -> std::option::Option<&str> {
+    pub fn voice_id(&self) -> std::option::Option<& str> {
         self.voice_id.as_deref()
     }
     /// <p>Checksum of the bot that you created.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p> The target locale for the bot. </p>
-    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
         self.locale.as_ref()
     }
-    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
     pub fn child_directed(&self) -> std::option::Option<bool> {
         self.child_directed
@@ -1534,13 +1439,13 @@ impl PutBotOutput {
         self.detect_sentiment
     }
     /// <p>A list of tags associated with the bot.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`PutBotOutput`](crate::output::PutBotOutput).
 pub mod put_bot_output {
-
+    
     /// A builder for [`PutBotOutput`](crate::output::PutBotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1573,8 +1478,7 @@ pub mod put_bot_output {
         }
         /// <p>The name of the bot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the bot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1583,8 +1487,7 @@ pub mod put_bot_output {
         }
         /// <p>A description of the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `intents`.
         ///
@@ -1593,17 +1496,13 @@ pub mod put_bot_output {
         /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
         pub fn intents(mut self, input: crate::model::Intent) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input);
-            self.intents = Some(v);
-            self
+                            v.push(input);
+                            self.intents = Some(v);
+                            self
         }
         /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-        pub fn set_intents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Intent>>,
-        ) -> Self {
-            self.intents = input;
-            self
+        pub fn set_intents(mut self, input: std::option::Option<std::vec::Vec<crate::model::Intent>>) -> Self {
+            self.intents = input; self
         }
         /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
         pub fn enable_model_improvements(mut self, input: bool) -> Self {
@@ -1612,8 +1511,7 @@ pub mod put_bot_output {
         }
         /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
         pub fn set_enable_model_improvements(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_model_improvements = input;
-            self
+            self.enable_model_improvements = input; self
         }
         /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -1621,12 +1519,8 @@ pub mod put_bot_output {
             self
         }
         /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
-        pub fn set_nlu_intent_confidence_threshold(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.nlu_intent_confidence_threshold = input;
-            self
+        pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.nlu_intent_confidence_threshold = input; self
         }
         /// <p> The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see <code>PutBot</code>. </p>
         pub fn clarification_prompt(mut self, input: crate::model::Prompt) -> Self {
@@ -1634,12 +1528,8 @@ pub mod put_bot_output {
             self
         }
         /// <p> The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see <code>PutBot</code>. </p>
-        pub fn set_clarification_prompt(
-            mut self,
-            input: std::option::Option<crate::model::Prompt>,
-        ) -> Self {
-            self.clarification_prompt = input;
-            self
+        pub fn set_clarification_prompt(mut self, input: std::option::Option<crate::model::Prompt>) -> Self {
+            self.clarification_prompt = input; self
         }
         /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
         pub fn abort_statement(mut self, input: crate::model::Statement) -> Self {
@@ -1647,30 +1537,25 @@ pub mod put_bot_output {
             self
         }
         /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
-        pub fn set_abort_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.abort_statement = input;
-            self
+        pub fn set_abort_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.abort_statement = input; self
         }
-        /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
-        /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p>
-        /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
-        /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p>
+        /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p> 
+        /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p> 
+        /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p> 
+        /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p> 
         /// <p>When the bot is in the <code>READY</code> state you can test and publish the bot.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
-        /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p>
-        /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
-        /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p>
+        /// <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p> 
+        /// <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p> 
+        /// <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p> 
+        /// <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p> 
         /// <p>When the bot is in the <code>READY</code> state you can test and publish the bot.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1678,12 +1563,8 @@ pub mod put_bot_output {
             self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1691,12 +1572,8 @@ pub mod put_bot_output {
             self
         }
         /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the bot was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1704,12 +1581,8 @@ pub mod put_bot_output {
             self
         }
         /// <p>The date that the bot was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
@@ -1718,8 +1591,7 @@ pub mod put_bot_output {
         }
         /// <p>The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_session_ttl_in_seconds = input;
-            self
+            self.idle_session_ttl_in_seconds = input; self
         }
         /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
         pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1728,8 +1600,7 @@ pub mod put_bot_output {
         }
         /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.voice_id = input;
-            self
+            self.voice_id = input; self
         }
         /// <p>Checksum of the bot that you created.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1738,8 +1609,7 @@ pub mod put_bot_output {
         }
         /// <p>Checksum of the bot that you created.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1748,8 +1618,7 @@ pub mod put_bot_output {
         }
         /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p> The target locale for the bot. </p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
@@ -1758,20 +1627,18 @@ pub mod put_bot_output {
         }
         /// <p> The target locale for the bot. </p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
-        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
         /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
         pub fn child_directed(mut self, input: bool) -> Self {
             self.child_directed = Some(input);
             self
         }
-        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
         /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
         pub fn set_child_directed(mut self, input: std::option::Option<bool>) -> Self {
-            self.child_directed = input;
-            self
+            self.child_directed = input; self
         }
         /// <p> <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
         pub fn create_version(mut self, input: bool) -> Self {
@@ -1780,8 +1647,7 @@ pub mod put_bot_output {
         }
         /// <p> <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
         pub fn set_create_version(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_version = input;
-            self
+            self.create_version = input; self
         }
         /// <p> <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code> field is <code>false</code> in the response.</p>
         pub fn detect_sentiment(mut self, input: bool) -> Self {
@@ -1790,8 +1656,7 @@ pub mod put_bot_output {
         }
         /// <p> <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code> field is <code>false</code> in the response.</p>
         pub fn set_detect_sentiment(mut self, input: std::option::Option<bool>) -> Self {
-            self.detect_sentiment = input;
-            self
+            self.detect_sentiment = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1800,44 +1665,62 @@ pub mod put_bot_output {
         /// <p>A list of tags associated with the bot.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags associated with the bot.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PutBotOutput`](crate::output::PutBotOutput).
         pub fn build(self) -> crate::output::PutBotOutput {
             crate::output::PutBotOutput {
-                name: self.name,
-                description: self.description,
-                intents: self.intents,
-                enable_model_improvements: self.enable_model_improvements,
-                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-                clarification_prompt: self.clarification_prompt,
-                abort_statement: self.abort_statement,
-                status: self.status,
-                failure_reason: self.failure_reason,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-                voice_id: self.voice_id,
-                checksum: self.checksum,
-                version: self.version,
-                locale: self.locale,
-                child_directed: self.child_directed,
-                create_version: self.create_version,
-                detect_sentiment: self.detect_sentiment,
-                tags: self.tags,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                intents: self.intents
+                ,
+                enable_model_improvements: self.enable_model_improvements
+                ,
+                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+                ,
+                clarification_prompt: self.clarification_prompt
+                ,
+                abort_statement: self.abort_statement
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                voice_id: self.voice_id
+                ,
+                checksum: self.checksum
+                ,
+                version: self.version
+                ,
+                locale: self.locale
+                ,
+                child_directed: self.child_directed
+                ,
+                create_version: self.create_version
+                ,
+                detect_sentiment: self.detect_sentiment
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PutBotOutput {
     /// Creates a new builder-style object to manufacture [`PutBotOutput`](crate::output::PutBotOutput).
@@ -1849,20 +1732,20 @@ impl PutBotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags associated with a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags associated with a resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1876,23 +1759,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags associated with a resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1904,7 +1788,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUtterancesViewOutput {
+pub struct GetUtterancesViewOutput  {
     /// <p>The name of the bot for which utterance information was returned.</p>
     #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
@@ -1914,17 +1798,17 @@ pub struct GetUtterancesViewOutput {
 }
 impl GetUtterancesViewOutput {
     /// <p>The name of the bot for which utterance information was returned.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    pub fn utterances(&self) -> std::option::Option<&[crate::model::UtteranceList]> {
+    pub fn utterances(&self) -> std::option::Option<& [crate::model::UtteranceList]> {
         self.utterances.as_deref()
     }
 }
 /// See [`GetUtterancesViewOutput`](crate::output::GetUtterancesViewOutput).
 pub mod get_utterances_view_output {
-
+    
     /// A builder for [`GetUtterancesViewOutput`](crate::output::GetUtterancesViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1939,8 +1823,7 @@ pub mod get_utterances_view_output {
         }
         /// <p>The name of the bot for which utterance information was returned.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// Appends an item to `utterances`.
         ///
@@ -1949,26 +1832,26 @@ pub mod get_utterances_view_output {
         /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
         pub fn utterances(mut self, input: crate::model::UtteranceList) -> Self {
             let mut v = self.utterances.unwrap_or_default();
-            v.push(input);
-            self.utterances = Some(v);
-            self
+                            v.push(input);
+                            self.utterances = Some(v);
+                            self
         }
         /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-        pub fn set_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UtteranceList>>,
-        ) -> Self {
-            self.utterances = input;
-            self
+        pub fn set_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::model::UtteranceList>>) -> Self {
+            self.utterances = input; self
         }
         /// Consumes the builder and constructs a [`GetUtterancesViewOutput`](crate::output::GetUtterancesViewOutput).
         pub fn build(self) -> crate::output::GetUtterancesViewOutput {
             crate::output::GetUtterancesViewOutput {
-                bot_name: self.bot_name,
-                utterances: self.utterances,
+                bot_name: self.bot_name
+                ,
+                utterances: self.utterances
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUtterancesViewOutput {
     /// Creates a new builder-style object to manufacture [`GetUtterancesViewOutput`](crate::output::GetUtterancesViewOutput).
@@ -1980,7 +1863,7 @@ impl GetUtterancesViewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSlotTypeVersionsOutput {
+pub struct GetSlotTypeVersionsOutput  {
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
     #[doc(hidden)]
     pub slot_types: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>,
@@ -1990,17 +1873,17 @@ pub struct GetSlotTypeVersionsOutput {
 }
 impl GetSlotTypeVersionsOutput {
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-    pub fn slot_types(&self) -> std::option::Option<&[crate::model::SlotTypeMetadata]> {
+    pub fn slot_types(&self) -> std::option::Option<& [crate::model::SlotTypeMetadata]> {
         self.slot_types.as_deref()
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetSlotTypeVersionsOutput`](crate::output::GetSlotTypeVersionsOutput).
 pub mod get_slot_type_versions_output {
-
+    
     /// A builder for [`GetSlotTypeVersionsOutput`](crate::output::GetSlotTypeVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2015,17 +1898,13 @@ pub mod get_slot_type_versions_output {
         /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
         pub fn slot_types(mut self, input: crate::model::SlotTypeMetadata) -> Self {
             let mut v = self.slot_types.unwrap_or_default();
-            v.push(input);
-            self.slot_types = Some(v);
-            self
+                            v.push(input);
+                            self.slot_types = Some(v);
+                            self
         }
         /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-        pub fn set_slot_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>,
-        ) -> Self {
-            self.slot_types = input;
-            self
+        pub fn set_slot_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>) -> Self {
+            self.slot_types = input; self
         }
         /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2034,17 +1913,20 @@ pub mod get_slot_type_versions_output {
         }
         /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetSlotTypeVersionsOutput`](crate::output::GetSlotTypeVersionsOutput).
         pub fn build(self) -> crate::output::GetSlotTypeVersionsOutput {
             crate::output::GetSlotTypeVersionsOutput {
-                slot_types: self.slot_types,
-                next_token: self.next_token,
+                slot_types: self.slot_types
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSlotTypeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetSlotTypeVersionsOutput`](crate::output::GetSlotTypeVersionsOutput).
@@ -2056,7 +1938,7 @@ impl GetSlotTypeVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSlotTypesOutput {
+pub struct GetSlotTypesOutput  {
     /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
     #[doc(hidden)]
     pub slot_types: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>,
@@ -2066,17 +1948,17 @@ pub struct GetSlotTypesOutput {
 }
 impl GetSlotTypesOutput {
     /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
-    pub fn slot_types(&self) -> std::option::Option<&[crate::model::SlotTypeMetadata]> {
+    pub fn slot_types(&self) -> std::option::Option<& [crate::model::SlotTypeMetadata]> {
         self.slot_types.as_deref()
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetSlotTypesOutput`](crate::output::GetSlotTypesOutput).
 pub mod get_slot_types_output {
-
+    
     /// A builder for [`GetSlotTypesOutput`](crate::output::GetSlotTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2091,17 +1973,13 @@ pub mod get_slot_types_output {
         /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
         pub fn slot_types(mut self, input: crate::model::SlotTypeMetadata) -> Self {
             let mut v = self.slot_types.unwrap_or_default();
-            v.push(input);
-            self.slot_types = Some(v);
-            self
+                            v.push(input);
+                            self.slot_types = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
-        pub fn set_slot_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>,
-        ) -> Self {
-            self.slot_types = input;
-            self
+        pub fn set_slot_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>) -> Self {
+            self.slot_types = input; self
         }
         /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2110,17 +1988,20 @@ pub mod get_slot_types_output {
         }
         /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetSlotTypesOutput`](crate::output::GetSlotTypesOutput).
         pub fn build(self) -> crate::output::GetSlotTypesOutput {
             crate::output::GetSlotTypesOutput {
-                slot_types: self.slot_types,
-                next_token: self.next_token,
+                slot_types: self.slot_types
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSlotTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetSlotTypesOutput`](crate::output::GetSlotTypesOutput).
@@ -2132,7 +2013,7 @@ impl GetSlotTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSlotTypeOutput {
+pub struct GetSlotTypeOutput  {
     /// <p>The name of the slot type.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2162,74 +2043,66 @@ pub struct GetSlotTypeOutput {
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type.</p>
     #[doc(hidden)]
-    pub slot_type_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
+    pub slot_type_configurations: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
 }
 impl GetSlotTypeOutput {
     /// <p>The name of the slot type.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
-    pub fn enumeration_values(&self) -> std::option::Option<&[crate::model::EnumerationValue]> {
+    pub fn enumeration_values(&self) -> std::option::Option<& [crate::model::EnumerationValue]> {
         self.enumeration_values.as_deref()
     }
     /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the slot type was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the slot type.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-    pub fn value_selection_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueSelectionStrategy> {
+    pub fn value_selection_strategy(&self) -> std::option::Option<& crate::model::SlotValueSelectionStrategy> {
         self.value_selection_strategy.as_ref()
     }
     /// <p>The built-in slot type used as a parent for the slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>Configuration information that extends the parent built-in slot type.</p>
-    pub fn slot_type_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SlotTypeConfiguration]> {
+    pub fn slot_type_configurations(&self) -> std::option::Option<& [crate::model::SlotTypeConfiguration]> {
         self.slot_type_configurations.as_deref()
     }
 }
 /// See [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput).
 pub mod get_slot_type_output {
-
+    
     /// A builder for [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) enumeration_values:
-            std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
+        pub(crate) enumeration_values: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
         pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) checksum: std::option::Option<std::string::String>,
-        pub(crate) value_selection_strategy:
-            std::option::Option<crate::model::SlotValueSelectionStrategy>,
+        pub(crate) value_selection_strategy: std::option::Option<crate::model::SlotValueSelectionStrategy>,
         pub(crate) parent_slot_type_signature: std::option::Option<std::string::String>,
-        pub(crate) slot_type_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
+        pub(crate) slot_type_configurations: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
     }
     impl Builder {
         /// <p>The name of the slot type.</p>
@@ -2239,8 +2112,7 @@ pub mod get_slot_type_output {
         }
         /// <p>The name of the slot type.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the slot type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2249,8 +2121,7 @@ pub mod get_slot_type_output {
         }
         /// <p>A description of the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `enumeration_values`.
         ///
@@ -2259,17 +2130,13 @@ pub mod get_slot_type_output {
         /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
         pub fn enumeration_values(mut self, input: crate::model::EnumerationValue) -> Self {
             let mut v = self.enumeration_values.unwrap_or_default();
-            v.push(input);
-            self.enumeration_values = Some(v);
-            self
+                            v.push(input);
+                            self.enumeration_values = Some(v);
+                            self
         }
         /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
-        pub fn set_enumeration_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
-        ) -> Self {
-            self.enumeration_values = input;
-            self
+        pub fn set_enumeration_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>) -> Self {
+            self.enumeration_values = input; self
         }
         /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2277,12 +2144,8 @@ pub mod get_slot_type_output {
             self
         }
         /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the slot type was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2290,12 +2153,8 @@ pub mod get_slot_type_output {
             self
         }
         /// <p>The date that the slot type was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The version of the slot type.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2304,8 +2163,7 @@ pub mod get_slot_type_output {
         }
         /// <p>The version of the slot type.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2314,24 +2172,16 @@ pub mod get_slot_type_output {
         }
         /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-        pub fn value_selection_strategy(
-            mut self,
-            input: crate::model::SlotValueSelectionStrategy,
-        ) -> Self {
+        pub fn value_selection_strategy(mut self, input: crate::model::SlotValueSelectionStrategy) -> Self {
             self.value_selection_strategy = Some(input);
             self
         }
         /// <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-        pub fn set_value_selection_strategy(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueSelectionStrategy>,
-        ) -> Self {
-            self.value_selection_strategy = input;
-            self
+        pub fn set_value_selection_strategy(mut self, input: std::option::Option<crate::model::SlotValueSelectionStrategy>) -> Self {
+            self.value_selection_strategy = input; self
         }
         /// <p>The built-in slot type used as a parent for the slot type.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2339,51 +2189,52 @@ pub mod get_slot_type_output {
             self
         }
         /// <p>The built-in slot type used as a parent for the slot type.</p>
-        pub fn set_parent_slot_type_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_slot_type_signature = input;
-            self
+        pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_slot_type_signature = input; self
         }
         /// Appends an item to `slot_type_configurations`.
         ///
         /// To override the contents of this collection use [`set_slot_type_configurations`](Self::set_slot_type_configurations).
         ///
         /// <p>Configuration information that extends the parent built-in slot type.</p>
-        pub fn slot_type_configurations(
-            mut self,
-            input: crate::model::SlotTypeConfiguration,
-        ) -> Self {
+        pub fn slot_type_configurations(mut self, input: crate::model::SlotTypeConfiguration) -> Self {
             let mut v = self.slot_type_configurations.unwrap_or_default();
-            v.push(input);
-            self.slot_type_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.slot_type_configurations = Some(v);
+                            self
         }
         /// <p>Configuration information that extends the parent built-in slot type.</p>
-        pub fn set_slot_type_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
-        ) -> Self {
-            self.slot_type_configurations = input;
-            self
+        pub fn set_slot_type_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>) -> Self {
+            self.slot_type_configurations = input; self
         }
         /// Consumes the builder and constructs a [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput).
         pub fn build(self) -> crate::output::GetSlotTypeOutput {
             crate::output::GetSlotTypeOutput {
-                name: self.name,
-                description: self.description,
-                enumeration_values: self.enumeration_values,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                version: self.version,
-                checksum: self.checksum,
-                value_selection_strategy: self.value_selection_strategy,
-                parent_slot_type_signature: self.parent_slot_type_signature,
-                slot_type_configurations: self.slot_type_configurations,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                enumeration_values: self.enumeration_values
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                ,
+                checksum: self.checksum
+                ,
+                value_selection_strategy: self.value_selection_strategy
+                ,
+                parent_slot_type_signature: self.parent_slot_type_signature
+                ,
+                slot_type_configurations: self.slot_type_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput).
@@ -2395,7 +2246,7 @@ impl GetSlotTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMigrationsOutput {
+pub struct GetMigrationsOutput  {
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
     #[doc(hidden)]
     pub migration_summaries: std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
@@ -2405,22 +2256,21 @@ pub struct GetMigrationsOutput {
 }
 impl GetMigrationsOutput {
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
-    pub fn migration_summaries(&self) -> std::option::Option<&[crate::model::MigrationSummary]> {
+    pub fn migration_summaries(&self) -> std::option::Option<& [crate::model::MigrationSummary]> {
         self.migration_summaries.as_deref()
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetMigrationsOutput`](crate::output::GetMigrationsOutput).
 pub mod get_migrations_output {
-
+    
     /// A builder for [`GetMigrationsOutput`](crate::output::GetMigrationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) migration_summaries:
-            std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
+        pub(crate) migration_summaries: std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2431,17 +2281,13 @@ pub mod get_migrations_output {
         /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
         pub fn migration_summaries(mut self, input: crate::model::MigrationSummary) -> Self {
             let mut v = self.migration_summaries.unwrap_or_default();
-            v.push(input);
-            self.migration_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.migration_summaries = Some(v);
+                            self
         }
         /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
-        pub fn set_migration_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
-        ) -> Self {
-            self.migration_summaries = input;
-            self
+        pub fn set_migration_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>) -> Self {
+            self.migration_summaries = input; self
         }
         /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2450,17 +2296,20 @@ pub mod get_migrations_output {
         }
         /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetMigrationsOutput`](crate::output::GetMigrationsOutput).
         pub fn build(self) -> crate::output::GetMigrationsOutput {
             crate::output::GetMigrationsOutput {
-                migration_summaries: self.migration_summaries,
-                next_token: self.next_token,
+                migration_summaries: self.migration_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMigrationsOutput {
     /// Creates a new builder-style object to manufacture [`GetMigrationsOutput`](crate::output::GetMigrationsOutput).
@@ -2472,7 +2321,7 @@ impl GetMigrationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMigrationOutput {
+pub struct GetMigrationOutput  {
     /// <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
     #[doc(hidden)]
     pub migration_id: std::option::Option<std::string::String>,
@@ -2494,71 +2343,71 @@ pub struct GetMigrationOutput {
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
     #[doc(hidden)]
     pub migration_status: std::option::Option<crate::model::MigrationStatus>,
-    /// <p>The strategy used to conduct the migration.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
-    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+    /// <p>The strategy used to conduct the migration.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li> 
+    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
     #[doc(hidden)]
     pub migration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
+    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
     #[doc(hidden)]
     pub alerts: std::option::Option<std::vec::Vec<crate::model::MigrationAlert>>,
 }
 impl GetMigrationOutput {
     /// <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
-    pub fn migration_id(&self) -> std::option::Option<&str> {
+    pub fn migration_id(&self) -> std::option::Option<& str> {
         self.migration_id.as_deref()
     }
     /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    pub fn v1_bot_name(&self) -> std::option::Option<&str> {
+    pub fn v1_bot_name(&self) -> std::option::Option<& str> {
         self.v1_bot_name.as_deref()
     }
     /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    pub fn v1_bot_version(&self) -> std::option::Option<&str> {
+    pub fn v1_bot_version(&self) -> std::option::Option<& str> {
         self.v1_bot_version.as_deref()
     }
     /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    pub fn v1_bot_locale(&self) -> std::option::Option<&crate::model::Locale> {
+    pub fn v1_bot_locale(&self) -> std::option::Option<& crate::model::Locale> {
         self.v1_bot_locale.as_ref()
     }
     /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
-    pub fn v2_bot_id(&self) -> std::option::Option<&str> {
+    pub fn v2_bot_id(&self) -> std::option::Option<& str> {
         self.v2_bot_id.as_deref()
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    pub fn v2_bot_role(&self) -> std::option::Option<&str> {
+    pub fn v2_bot_role(&self) -> std::option::Option<& str> {
         self.v2_bot_role.as_deref()
     }
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    pub fn migration_status(&self) -> std::option::Option<&crate::model::MigrationStatus> {
+    pub fn migration_status(&self) -> std::option::Option<& crate::model::MigrationStatus> {
         self.migration_status.as_ref()
     }
-    /// <p>The strategy used to conduct the migration.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
-    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+    /// <p>The strategy used to conduct the migration.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li> 
+    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li> 
     /// </ul>
-    pub fn migration_strategy(&self) -> std::option::Option<&crate::model::MigrationStrategy> {
+    pub fn migration_strategy(&self) -> std::option::Option<& crate::model::MigrationStrategy> {
         self.migration_strategy.as_ref()
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn migration_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn migration_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.migration_timestamp.as_ref()
     }
-    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
+    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
-    pub fn alerts(&self) -> std::option::Option<&[crate::model::MigrationAlert]> {
+    pub fn alerts(&self) -> std::option::Option<& [crate::model::MigrationAlert]> {
         self.alerts.as_deref()
     }
 }
 /// See [`GetMigrationOutput`](crate::output::GetMigrationOutput).
 pub mod get_migration_output {
-
+    
     /// A builder for [`GetMigrationOutput`](crate::output::GetMigrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2581,8 +2430,7 @@ pub mod get_migration_output {
         }
         /// <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
         pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.migration_id = input;
-            self
+            self.migration_id = input; self
         }
         /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
         pub fn v1_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2591,8 +2439,7 @@ pub mod get_migration_output {
         }
         /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
         pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.v1_bot_name = input;
-            self
+            self.v1_bot_name = input; self
         }
         /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
         pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2600,12 +2447,8 @@ pub mod get_migration_output {
             self
         }
         /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-        pub fn set_v1_bot_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.v1_bot_version = input;
-            self
+        pub fn set_v1_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.v1_bot_version = input; self
         }
         /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
         pub fn v1_bot_locale(mut self, input: crate::model::Locale) -> Self {
@@ -2613,12 +2456,8 @@ pub mod get_migration_output {
             self
         }
         /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-        pub fn set_v1_bot_locale(
-            mut self,
-            input: std::option::Option<crate::model::Locale>,
-        ) -> Self {
-            self.v1_bot_locale = input;
-            self
+        pub fn set_v1_bot_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
+            self.v1_bot_locale = input; self
         }
         /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
         pub fn v2_bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2627,8 +2466,7 @@ pub mod get_migration_output {
         }
         /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
         pub fn set_v2_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.v2_bot_id = input;
-            self
+            self.v2_bot_id = input; self
         }
         /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
         pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2637,8 +2475,7 @@ pub mod get_migration_output {
         }
         /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
         pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.v2_bot_role = input;
-            self
+            self.v2_bot_role = input; self
         }
         /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
         pub fn migration_status(mut self, input: crate::model::MigrationStatus) -> Self {
@@ -2646,33 +2483,25 @@ pub mod get_migration_output {
             self
         }
         /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-        pub fn set_migration_status(
-            mut self,
-            input: std::option::Option<crate::model::MigrationStatus>,
-        ) -> Self {
-            self.migration_status = input;
-            self
+        pub fn set_migration_status(mut self, input: std::option::Option<crate::model::MigrationStatus>) -> Self {
+            self.migration_status = input; self
         }
-        /// <p>The strategy used to conduct the migration.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
-        /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+        /// <p>The strategy used to conduct the migration.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li> 
+        /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li> 
         /// </ul>
         pub fn migration_strategy(mut self, input: crate::model::MigrationStrategy) -> Self {
             self.migration_strategy = Some(input);
             self
         }
-        /// <p>The strategy used to conduct the migration.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
-        /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+        /// <p>The strategy used to conduct the migration.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li> 
+        /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li> 
         /// </ul>
-        pub fn set_migration_strategy(
-            mut self,
-            input: std::option::Option<crate::model::MigrationStrategy>,
-        ) -> Self {
-            self.migration_strategy = input;
-            self
+        pub fn set_migration_strategy(mut self, input: std::option::Option<crate::model::MigrationStrategy>) -> Self {
+            self.migration_strategy = input; self
         }
         /// <p>The date and time that the migration started.</p>
         pub fn migration_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2680,50 +2509,54 @@ pub mod get_migration_output {
             self
         }
         /// <p>The date and time that the migration started.</p>
-        pub fn set_migration_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.migration_timestamp = input;
-            self
+        pub fn set_migration_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.migration_timestamp = input; self
         }
         /// Appends an item to `alerts`.
         ///
         /// To override the contents of this collection use [`set_alerts`](Self::set_alerts).
         ///
-        /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
+        /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
         pub fn alerts(mut self, input: crate::model::MigrationAlert) -> Self {
             let mut v = self.alerts.unwrap_or_default();
-            v.push(input);
-            self.alerts = Some(v);
-            self
+                            v.push(input);
+                            self.alerts = Some(v);
+                            self
         }
-        /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
+        /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
-        pub fn set_alerts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MigrationAlert>>,
-        ) -> Self {
-            self.alerts = input;
-            self
+        pub fn set_alerts(mut self, input: std::option::Option<std::vec::Vec<crate::model::MigrationAlert>>) -> Self {
+            self.alerts = input; self
         }
         /// Consumes the builder and constructs a [`GetMigrationOutput`](crate::output::GetMigrationOutput).
         pub fn build(self) -> crate::output::GetMigrationOutput {
             crate::output::GetMigrationOutput {
-                migration_id: self.migration_id,
-                v1_bot_name: self.v1_bot_name,
-                v1_bot_version: self.v1_bot_version,
-                v1_bot_locale: self.v1_bot_locale,
-                v2_bot_id: self.v2_bot_id,
-                v2_bot_role: self.v2_bot_role,
-                migration_status: self.migration_status,
-                migration_strategy: self.migration_strategy,
-                migration_timestamp: self.migration_timestamp,
-                alerts: self.alerts,
+                migration_id: self.migration_id
+                ,
+                v1_bot_name: self.v1_bot_name
+                ,
+                v1_bot_version: self.v1_bot_version
+                ,
+                v1_bot_locale: self.v1_bot_locale
+                ,
+                v2_bot_id: self.v2_bot_id
+                ,
+                v2_bot_role: self.v2_bot_role
+                ,
+                migration_status: self.migration_status
+                ,
+                migration_strategy: self.migration_strategy
+                ,
+                migration_timestamp: self.migration_timestamp
+                ,
+                alerts: self.alerts
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMigrationOutput {
     /// Creates a new builder-style object to manufacture [`GetMigrationOutput`](crate::output::GetMigrationOutput).
@@ -2735,7 +2568,7 @@ impl GetMigrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIntentVersionsOutput {
+pub struct GetIntentVersionsOutput  {
     /// <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
     #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>,
@@ -2745,17 +2578,17 @@ pub struct GetIntentVersionsOutput {
 }
 impl GetIntentVersionsOutput {
     /// <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
-    pub fn intents(&self) -> std::option::Option<&[crate::model::IntentMetadata]> {
+    pub fn intents(&self) -> std::option::Option<& [crate::model::IntentMetadata]> {
         self.intents.as_deref()
     }
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetIntentVersionsOutput`](crate::output::GetIntentVersionsOutput).
 pub mod get_intent_versions_output {
-
+    
     /// A builder for [`GetIntentVersionsOutput`](crate::output::GetIntentVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2770,17 +2603,13 @@ pub mod get_intent_versions_output {
         /// <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
         pub fn intents(mut self, input: crate::model::IntentMetadata) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input);
-            self.intents = Some(v);
-            self
+                            v.push(input);
+                            self.intents = Some(v);
+                            self
         }
         /// <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
-        pub fn set_intents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>,
-        ) -> Self {
-            self.intents = input;
-            self
+        pub fn set_intents(mut self, input: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>) -> Self {
+            self.intents = input; self
         }
         /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2789,17 +2618,20 @@ pub mod get_intent_versions_output {
         }
         /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetIntentVersionsOutput`](crate::output::GetIntentVersionsOutput).
         pub fn build(self) -> crate::output::GetIntentVersionsOutput {
             crate::output::GetIntentVersionsOutput {
-                intents: self.intents,
-                next_token: self.next_token,
+                intents: self.intents
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetIntentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetIntentVersionsOutput`](crate::output::GetIntentVersionsOutput).
@@ -2811,7 +2643,7 @@ impl GetIntentVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIntentsOutput {
+pub struct GetIntentsOutput  {
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
     #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>,
@@ -2821,17 +2653,17 @@ pub struct GetIntentsOutput {
 }
 impl GetIntentsOutput {
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn intents(&self) -> std::option::Option<&[crate::model::IntentMetadata]> {
+    pub fn intents(&self) -> std::option::Option<& [crate::model::IntentMetadata]> {
         self.intents.as_deref()
     }
     /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetIntentsOutput`](crate::output::GetIntentsOutput).
 pub mod get_intents_output {
-
+    
     /// A builder for [`GetIntentsOutput`](crate::output::GetIntentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2846,17 +2678,13 @@ pub mod get_intents_output {
         /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
         pub fn intents(mut self, input: crate::model::IntentMetadata) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input);
-            self.intents = Some(v);
-            self
+                            v.push(input);
+                            self.intents = Some(v);
+                            self
         }
         /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-        pub fn set_intents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>,
-        ) -> Self {
-            self.intents = input;
-            self
+        pub fn set_intents(mut self, input: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>) -> Self {
+            self.intents = input; self
         }
         /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2865,17 +2693,20 @@ pub mod get_intents_output {
         }
         /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetIntentsOutput`](crate::output::GetIntentsOutput).
         pub fn build(self) -> crate::output::GetIntentsOutput {
             crate::output::GetIntentsOutput {
-                intents: self.intents,
-                next_token: self.next_token,
+                intents: self.intents
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetIntentsOutput {
     /// Creates a new builder-style object to manufacture [`GetIntentsOutput`](crate::output::GetIntentsOutput).
@@ -2887,7 +2718,7 @@ impl GetIntentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIntentOutput {
+pub struct GetIntentOutput  {
     /// <p>The name of the intent.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2945,81 +2776,81 @@ pub struct GetIntentOutput {
 }
 impl GetIntentOutput {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of intent slots configured for the intent.</p>
-    pub fn slots(&self) -> std::option::Option<&[crate::model::Slot]> {
+    pub fn slots(&self) -> std::option::Option<& [crate::model::Slot]> {
         self.slots.as_deref()
     }
     /// <p>An array of sample utterances configured for the intent.</p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [std::string::String]> {
         self.sample_utterances.as_deref()
     }
     /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
-    pub fn confirmation_prompt(&self) -> std::option::Option<&crate::model::Prompt> {
+    pub fn confirmation_prompt(&self) -> std::option::Option<& crate::model::Prompt> {
         self.confirmation_prompt.as_ref()
     }
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-    pub fn rejection_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn rejection_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.rejection_statement.as_ref()
     }
     /// <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
-    pub fn follow_up_prompt(&self) -> std::option::Option<&crate::model::FollowUpPrompt> {
+    pub fn follow_up_prompt(&self) -> std::option::Option<& crate::model::FollowUpPrompt> {
         self.follow_up_prompt.as_ref()
     }
     /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> element fulfills the intent, Amazon Lex conveys this statement to the user.</p>
-    pub fn conclusion_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn conclusion_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.conclusion_statement.as_ref()
     }
     /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
-    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::CodeHook> {
+    pub fn dialog_code_hook(&self) -> std::option::Option<& crate::model::CodeHook> {
         self.dialog_code_hook.as_ref()
     }
     /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
-    pub fn fulfillment_activity(&self) -> std::option::Option<&crate::model::FulfillmentActivity> {
+    pub fn fulfillment_activity(&self) -> std::option::Option<& crate::model::FulfillmentActivity> {
         self.fulfillment_activity.as_ref()
     }
     /// <p>A unique identifier for a built-in intent.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the intent was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the intent.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Checksum of the intent.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> std::option::Option<& crate::model::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<& [crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<& [crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
 }
 /// See [`GetIntentOutput`](crate::output::GetIntentOutput).
 pub mod get_intent_output {
-
+    
     /// A builder for [`GetIntentOutput`](crate::output::GetIntentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3050,8 +2881,7 @@ pub mod get_intent_output {
         }
         /// <p>The name of the intent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the intent.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3060,8 +2890,7 @@ pub mod get_intent_output {
         }
         /// <p>A description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `slots`.
         ///
@@ -3070,17 +2899,13 @@ pub mod get_intent_output {
         /// <p>An array of intent slots configured for the intent.</p>
         pub fn slots(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input);
-            self.slots = Some(v);
-            self
+                            v.push(input);
+                            self.slots = Some(v);
+                            self
         }
         /// <p>An array of intent slots configured for the intent.</p>
-        pub fn set_slots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Slot>>,
-        ) -> Self {
-            self.slots = input;
-            self
+        pub fn set_slots(mut self, input: std::option::Option<std::vec::Vec<crate::model::Slot>>) -> Self {
+            self.slots = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -3089,17 +2914,13 @@ pub mod get_intent_output {
         /// <p>An array of sample utterances configured for the intent.</p>
         pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input.into());
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p>An array of sample utterances configured for the intent.</p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
         pub fn confirmation_prompt(mut self, input: crate::model::Prompt) -> Self {
@@ -3107,12 +2928,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
-        pub fn set_confirmation_prompt(
-            mut self,
-            input: std::option::Option<crate::model::Prompt>,
-        ) -> Self {
-            self.confirmation_prompt = input;
-            self
+        pub fn set_confirmation_prompt(mut self, input: std::option::Option<crate::model::Prompt>) -> Self {
+            self.confirmation_prompt = input; self
         }
         /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
         pub fn rejection_statement(mut self, input: crate::model::Statement) -> Self {
@@ -3120,12 +2937,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-        pub fn set_rejection_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.rejection_statement = input;
-            self
+        pub fn set_rejection_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.rejection_statement = input; self
         }
         /// <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
         pub fn follow_up_prompt(mut self, input: crate::model::FollowUpPrompt) -> Self {
@@ -3133,12 +2946,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
-        pub fn set_follow_up_prompt(
-            mut self,
-            input: std::option::Option<crate::model::FollowUpPrompt>,
-        ) -> Self {
-            self.follow_up_prompt = input;
-            self
+        pub fn set_follow_up_prompt(mut self, input: std::option::Option<crate::model::FollowUpPrompt>) -> Self {
+            self.follow_up_prompt = input; self
         }
         /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> element fulfills the intent, Amazon Lex conveys this statement to the user.</p>
         pub fn conclusion_statement(mut self, input: crate::model::Statement) -> Self {
@@ -3146,12 +2955,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> element fulfills the intent, Amazon Lex conveys this statement to the user.</p>
-        pub fn set_conclusion_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.conclusion_statement = input;
-            self
+        pub fn set_conclusion_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.conclusion_statement = input; self
         }
         /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
         pub fn dialog_code_hook(mut self, input: crate::model::CodeHook) -> Self {
@@ -3159,12 +2964,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
-        pub fn set_dialog_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::CodeHook>,
-        ) -> Self {
-            self.dialog_code_hook = input;
-            self
+        pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::model::CodeHook>) -> Self {
+            self.dialog_code_hook = input; self
         }
         /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
         pub fn fulfillment_activity(mut self, input: crate::model::FulfillmentActivity) -> Self {
@@ -3172,12 +2973,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
-        pub fn set_fulfillment_activity(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentActivity>,
-        ) -> Self {
-            self.fulfillment_activity = input;
-            self
+        pub fn set_fulfillment_activity(mut self, input: std::option::Option<crate::model::FulfillmentActivity>) -> Self {
+            self.fulfillment_activity = input; self
         }
         /// <p>A unique identifier for a built-in intent.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3185,12 +2982,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>A unique identifier for a built-in intent.</p>
-        pub fn set_parent_intent_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_intent_signature = input;
-            self
+        pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_intent_signature = input; self
         }
         /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3198,12 +2991,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the intent was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3211,12 +3000,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>The date that the intent was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The version of the intent.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3225,8 +3010,7 @@ pub mod get_intent_output {
         }
         /// <p>The version of the intent.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Checksum of the intent.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3235,8 +3019,7 @@ pub mod get_intent_output {
         }
         /// <p>Checksum of the intent.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
         pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
@@ -3244,12 +3027,8 @@ pub mod get_intent_output {
             self
         }
         /// <p>Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-        pub fn set_kendra_configuration(
-            mut self,
-            input: std::option::Option<crate::model::KendraConfiguration>,
-        ) -> Self {
-            self.kendra_configuration = input;
-            self
+        pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::model::KendraConfiguration>) -> Self {
+            self.kendra_configuration = input; self
         }
         /// Appends an item to `input_contexts`.
         ///
@@ -3258,17 +3037,13 @@ pub mod get_intent_output {
         /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
         pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input);
-            self.input_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.input_contexts = Some(v);
+                            self
         }
         /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-        pub fn set_input_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-        ) -> Self {
-            self.input_contexts = input;
-            self
+        pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputContext>>) -> Self {
+            self.input_contexts = input; self
         }
         /// Appends an item to `output_contexts`.
         ///
@@ -3277,42 +3052,58 @@ pub mod get_intent_output {
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
         pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input);
-            self.output_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.output_contexts = Some(v);
+                            self
         }
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-        pub fn set_output_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-        ) -> Self {
-            self.output_contexts = input;
-            self
+        pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>) -> Self {
+            self.output_contexts = input; self
         }
         /// Consumes the builder and constructs a [`GetIntentOutput`](crate::output::GetIntentOutput).
         pub fn build(self) -> crate::output::GetIntentOutput {
             crate::output::GetIntentOutput {
-                name: self.name,
-                description: self.description,
-                slots: self.slots,
-                sample_utterances: self.sample_utterances,
-                confirmation_prompt: self.confirmation_prompt,
-                rejection_statement: self.rejection_statement,
-                follow_up_prompt: self.follow_up_prompt,
-                conclusion_statement: self.conclusion_statement,
-                dialog_code_hook: self.dialog_code_hook,
-                fulfillment_activity: self.fulfillment_activity,
-                parent_intent_signature: self.parent_intent_signature,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                version: self.version,
-                checksum: self.checksum,
-                kendra_configuration: self.kendra_configuration,
-                input_contexts: self.input_contexts,
-                output_contexts: self.output_contexts,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                slots: self.slots
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                confirmation_prompt: self.confirmation_prompt
+                ,
+                rejection_statement: self.rejection_statement
+                ,
+                follow_up_prompt: self.follow_up_prompt
+                ,
+                conclusion_statement: self.conclusion_statement
+                ,
+                dialog_code_hook: self.dialog_code_hook
+                ,
+                fulfillment_activity: self.fulfillment_activity
+                ,
+                parent_intent_signature: self.parent_intent_signature
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                ,
+                checksum: self.checksum
+                ,
+                kendra_configuration: self.kendra_configuration
+                ,
+                input_contexts: self.input_contexts
+                ,
+                output_contexts: self.output_contexts
+                ,
             }
         }
     }
+    
+    
 }
 impl GetIntentOutput {
     /// Creates a new builder-style object to manufacture [`GetIntentOutput`](crate::output::GetIntentOutput).
@@ -3324,7 +3115,7 @@ impl GetIntentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImportOutput {
+pub struct GetImportOutput  {
     /// <p>The name given to the import job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3349,37 +3140,37 @@ pub struct GetImportOutput {
 }
 impl GetImportOutput {
     /// <p>The name given to the import job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of resource imported.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
-    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<& crate::model::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The identifier for the specific import job.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
-    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<& crate::model::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>A string that describes why an import job failed to complete.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failure_reason(&self) -> std::option::Option<& [std::string::String]> {
         self.failure_reason.as_deref()
     }
     /// <p>A timestamp for the date and time that the import job was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
 /// See [`GetImportOutput`](crate::output::GetImportOutput).
 pub mod get_import_output {
-
+    
     /// A builder for [`GetImportOutput`](crate::output::GetImportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3399,8 +3190,7 @@ pub mod get_import_output {
         }
         /// <p>The name given to the import job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of resource imported.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -3408,12 +3198,8 @@ pub mod get_import_output {
             self
         }
         /// <p>The type of resource imported.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
@@ -3421,12 +3207,8 @@ pub mod get_import_output {
             self
         }
         /// <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
-        pub fn set_merge_strategy(
-            mut self,
-            input: std::option::Option<crate::model::MergeStrategy>,
-        ) -> Self {
-            self.merge_strategy = input;
-            self
+        pub fn set_merge_strategy(mut self, input: std::option::Option<crate::model::MergeStrategy>) -> Self {
+            self.merge_strategy = input; self
         }
         /// <p>The identifier for the specific import job.</p>
         pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3435,8 +3217,7 @@ pub mod get_import_output {
         }
         /// <p>The identifier for the specific import job.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.import_id = input;
-            self
+            self.import_id = input; self
         }
         /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
         pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
@@ -3444,12 +3225,8 @@ pub mod get_import_output {
             self
         }
         /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
-        pub fn set_import_status(
-            mut self,
-            input: std::option::Option<crate::model::ImportStatus>,
-        ) -> Self {
-            self.import_status = input;
-            self
+        pub fn set_import_status(mut self, input: std::option::Option<crate::model::ImportStatus>) -> Self {
+            self.import_status = input; self
         }
         /// Appends an item to `failure_reason`.
         ///
@@ -3458,17 +3235,13 @@ pub mod get_import_output {
         /// <p>A string that describes why an import job failed to complete.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failure_reason.unwrap_or_default();
-            v.push(input.into());
-            self.failure_reason = Some(v);
-            self
+                            v.push(input.into());
+                            self.failure_reason = Some(v);
+                            self
         }
         /// <p>A string that describes why an import job failed to complete.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>A timestamp for the date and time that the import job was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3476,26 +3249,31 @@ pub mod get_import_output {
             self
         }
         /// <p>A timestamp for the date and time that the import job was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// Consumes the builder and constructs a [`GetImportOutput`](crate::output::GetImportOutput).
         pub fn build(self) -> crate::output::GetImportOutput {
             crate::output::GetImportOutput {
-                name: self.name,
-                resource_type: self.resource_type,
-                merge_strategy: self.merge_strategy,
-                import_id: self.import_id,
-                import_status: self.import_status,
-                failure_reason: self.failure_reason,
-                created_date: self.created_date,
+                name: self.name
+                ,
+                resource_type: self.resource_type
+                ,
+                merge_strategy: self.merge_strategy
+                ,
+                import_id: self.import_id
+                ,
+                import_status: self.import_status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                created_date: self.created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl GetImportOutput {
     /// Creates a new builder-style object to manufacture [`GetImportOutput`](crate::output::GetImportOutput).
@@ -3507,7 +3285,7 @@ impl GetImportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExportOutput {
+pub struct GetExportOutput  {
     /// <p>The name of the bot being exported.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3520,11 +3298,11 @@ pub struct GetExportOutput {
     /// <p>The format of the exported data.</p>
     #[doc(hidden)]
     pub export_type: std::option::Option<crate::model::ExportType>,
-    /// <p>The status of the export. </p>
-    /// <ul>
-    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
-    /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
+    /// <p>The status of the export. </p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li> 
+    /// <li> <p> <code>READY</code> - The export is complete.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub export_status: std::option::Option<crate::model::ExportStatus>,
@@ -3537,42 +3315,42 @@ pub struct GetExportOutput {
 }
 impl GetExportOutput {
     /// <p>The name of the bot being exported.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the bot being exported.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The type of the exported resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The format of the exported data.</p>
-    pub fn export_type(&self) -> std::option::Option<&crate::model::ExportType> {
+    pub fn export_type(&self) -> std::option::Option<& crate::model::ExportType> {
         self.export_type.as_ref()
     }
-    /// <p>The status of the export. </p>
-    /// <ul>
-    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
-    /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
-    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
+    /// <p>The status of the export. </p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li> 
+    /// <li> <p> <code>READY</code> - The export is complete.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li> 
     /// </ul>
-    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`GetExportOutput`](crate::output::GetExportOutput).
 pub mod get_export_output {
-
+    
     /// A builder for [`GetExportOutput`](crate::output::GetExportOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3592,8 +3370,7 @@ pub mod get_export_output {
         }
         /// <p>The name of the bot being exported.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the bot being exported.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3602,8 +3379,7 @@ pub mod get_export_output {
         }
         /// <p>The version of the bot being exported.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The type of the exported resource.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -3611,12 +3387,8 @@ pub mod get_export_output {
             self
         }
         /// <p>The type of the exported resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The format of the exported data.</p>
         pub fn export_type(mut self, input: crate::model::ExportType) -> Self {
@@ -3624,35 +3396,27 @@ pub mod get_export_output {
             self
         }
         /// <p>The format of the exported data.</p>
-        pub fn set_export_type(
-            mut self,
-            input: std::option::Option<crate::model::ExportType>,
-        ) -> Self {
-            self.export_type = input;
-            self
+        pub fn set_export_type(mut self, input: std::option::Option<crate::model::ExportType>) -> Self {
+            self.export_type = input; self
         }
-        /// <p>The status of the export. </p>
-        /// <ul>
-        /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
-        /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
-        /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
+        /// <p>The status of the export. </p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li> 
+        /// <li> <p> <code>READY</code> - The export is complete.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li> 
         /// </ul>
         pub fn export_status(mut self, input: crate::model::ExportStatus) -> Self {
             self.export_status = Some(input);
             self
         }
-        /// <p>The status of the export. </p>
-        /// <ul>
-        /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>
-        /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
-        /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
+        /// <p>The status of the export. </p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li> 
+        /// <li> <p> <code>READY</code> - The export is complete.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li> 
         /// </ul>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::ExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::ExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3660,12 +3424,8 @@ pub mod get_export_output {
             self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3674,22 +3434,30 @@ pub mod get_export_output {
         }
         /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`GetExportOutput`](crate::output::GetExportOutput).
         pub fn build(self) -> crate::output::GetExportOutput {
             crate::output::GetExportOutput {
-                name: self.name,
-                version: self.version,
-                resource_type: self.resource_type,
-                export_type: self.export_type,
-                export_status: self.export_status,
-                failure_reason: self.failure_reason,
-                url: self.url,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                resource_type: self.resource_type
+                ,
+                export_type: self.export_type
+                ,
+                export_status: self.export_status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExportOutput {
     /// Creates a new builder-style object to manufacture [`GetExportOutput`](crate::output::GetExportOutput).
@@ -3701,7 +3469,7 @@ impl GetExportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBuiltinSlotTypesOutput {
+pub struct GetBuiltinSlotTypesOutput  {
     /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
     #[doc(hidden)]
     pub slot_types: std::option::Option<std::vec::Vec<crate::model::BuiltinSlotTypeMetadata>>,
@@ -3711,22 +3479,21 @@ pub struct GetBuiltinSlotTypesOutput {
 }
 impl GetBuiltinSlotTypesOutput {
     /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
-    pub fn slot_types(&self) -> std::option::Option<&[crate::model::BuiltinSlotTypeMetadata]> {
+    pub fn slot_types(&self) -> std::option::Option<& [crate::model::BuiltinSlotTypeMetadata]> {
         self.slot_types.as_deref()
     }
     /// <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetBuiltinSlotTypesOutput`](crate::output::GetBuiltinSlotTypesOutput).
 pub mod get_builtin_slot_types_output {
-
+    
     /// A builder for [`GetBuiltinSlotTypesOutput`](crate::output::GetBuiltinSlotTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) slot_types:
-            std::option::Option<std::vec::Vec<crate::model::BuiltinSlotTypeMetadata>>,
+        pub(crate) slot_types: std::option::Option<std::vec::Vec<crate::model::BuiltinSlotTypeMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3737,17 +3504,13 @@ pub mod get_builtin_slot_types_output {
         /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
         pub fn slot_types(mut self, input: crate::model::BuiltinSlotTypeMetadata) -> Self {
             let mut v = self.slot_types.unwrap_or_default();
-            v.push(input);
-            self.slot_types = Some(v);
-            self
+                            v.push(input);
+                            self.slot_types = Some(v);
+                            self
         }
         /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
-        pub fn set_slot_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BuiltinSlotTypeMetadata>>,
-        ) -> Self {
-            self.slot_types = input;
-            self
+        pub fn set_slot_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::BuiltinSlotTypeMetadata>>) -> Self {
+            self.slot_types = input; self
         }
         /// <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3756,17 +3519,20 @@ pub mod get_builtin_slot_types_output {
         }
         /// <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBuiltinSlotTypesOutput`](crate::output::GetBuiltinSlotTypesOutput).
         pub fn build(self) -> crate::output::GetBuiltinSlotTypesOutput {
             crate::output::GetBuiltinSlotTypesOutput {
-                slot_types: self.slot_types,
-                next_token: self.next_token,
+                slot_types: self.slot_types
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBuiltinSlotTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinSlotTypesOutput`](crate::output::GetBuiltinSlotTypesOutput).
@@ -3778,7 +3544,7 @@ impl GetBuiltinSlotTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBuiltinIntentsOutput {
+pub struct GetBuiltinIntentsOutput  {
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
     #[doc(hidden)]
     pub intents: std::option::Option<std::vec::Vec<crate::model::BuiltinIntentMetadata>>,
@@ -3788,17 +3554,17 @@ pub struct GetBuiltinIntentsOutput {
 }
 impl GetBuiltinIntentsOutput {
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    pub fn intents(&self) -> std::option::Option<&[crate::model::BuiltinIntentMetadata]> {
+    pub fn intents(&self) -> std::option::Option<& [crate::model::BuiltinIntentMetadata]> {
         self.intents.as_deref()
     }
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetBuiltinIntentsOutput`](crate::output::GetBuiltinIntentsOutput).
 pub mod get_builtin_intents_output {
-
+    
     /// A builder for [`GetBuiltinIntentsOutput`](crate::output::GetBuiltinIntentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3813,17 +3579,13 @@ pub mod get_builtin_intents_output {
         /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
         pub fn intents(mut self, input: crate::model::BuiltinIntentMetadata) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input);
-            self.intents = Some(v);
-            self
+                            v.push(input);
+                            self.intents = Some(v);
+                            self
         }
         /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-        pub fn set_intents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BuiltinIntentMetadata>>,
-        ) -> Self {
-            self.intents = input;
-            self
+        pub fn set_intents(mut self, input: std::option::Option<std::vec::Vec<crate::model::BuiltinIntentMetadata>>) -> Self {
+            self.intents = input; self
         }
         /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3832,17 +3594,20 @@ pub mod get_builtin_intents_output {
         }
         /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBuiltinIntentsOutput`](crate::output::GetBuiltinIntentsOutput).
         pub fn build(self) -> crate::output::GetBuiltinIntentsOutput {
             crate::output::GetBuiltinIntentsOutput {
-                intents: self.intents,
-                next_token: self.next_token,
+                intents: self.intents
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBuiltinIntentsOutput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinIntentsOutput`](crate::output::GetBuiltinIntentsOutput).
@@ -3854,7 +3619,7 @@ impl GetBuiltinIntentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBuiltinIntentOutput {
+pub struct GetBuiltinIntentOutput  {
     /// <p>The unique identifier for a built-in intent.</p>
     #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
@@ -3867,21 +3632,21 @@ pub struct GetBuiltinIntentOutput {
 }
 impl GetBuiltinIntentOutput {
     /// <p>The unique identifier for a built-in intent.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> std::option::Option<& str> {
         self.signature.as_deref()
     }
     /// <p>A list of locales that the intent supports.</p>
-    pub fn supported_locales(&self) -> std::option::Option<&[crate::model::Locale]> {
+    pub fn supported_locales(&self) -> std::option::Option<& [crate::model::Locale]> {
         self.supported_locales.as_deref()
     }
     /// <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
-    pub fn slots(&self) -> std::option::Option<&[crate::model::BuiltinIntentSlot]> {
+    pub fn slots(&self) -> std::option::Option<& [crate::model::BuiltinIntentSlot]> {
         self.slots.as_deref()
     }
 }
 /// See [`GetBuiltinIntentOutput`](crate::output::GetBuiltinIntentOutput).
 pub mod get_builtin_intent_output {
-
+    
     /// A builder for [`GetBuiltinIntentOutput`](crate::output::GetBuiltinIntentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3897,8 +3662,7 @@ pub mod get_builtin_intent_output {
         }
         /// <p>The unique identifier for a built-in intent.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.signature = input;
-            self
+            self.signature = input; self
         }
         /// Appends an item to `supported_locales`.
         ///
@@ -3907,17 +3671,13 @@ pub mod get_builtin_intent_output {
         /// <p>A list of locales that the intent supports.</p>
         pub fn supported_locales(mut self, input: crate::model::Locale) -> Self {
             let mut v = self.supported_locales.unwrap_or_default();
-            v.push(input);
-            self.supported_locales = Some(v);
-            self
+                            v.push(input);
+                            self.supported_locales = Some(v);
+                            self
         }
         /// <p>A list of locales that the intent supports.</p>
-        pub fn set_supported_locales(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Locale>>,
-        ) -> Self {
-            self.supported_locales = input;
-            self
+        pub fn set_supported_locales(mut self, input: std::option::Option<std::vec::Vec<crate::model::Locale>>) -> Self {
+            self.supported_locales = input; self
         }
         /// Appends an item to `slots`.
         ///
@@ -3926,27 +3686,28 @@ pub mod get_builtin_intent_output {
         /// <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
         pub fn slots(mut self, input: crate::model::BuiltinIntentSlot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input);
-            self.slots = Some(v);
-            self
+                            v.push(input);
+                            self.slots = Some(v);
+                            self
         }
         /// <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
-        pub fn set_slots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BuiltinIntentSlot>>,
-        ) -> Self {
-            self.slots = input;
-            self
+        pub fn set_slots(mut self, input: std::option::Option<std::vec::Vec<crate::model::BuiltinIntentSlot>>) -> Self {
+            self.slots = input; self
         }
         /// Consumes the builder and constructs a [`GetBuiltinIntentOutput`](crate::output::GetBuiltinIntentOutput).
         pub fn build(self) -> crate::output::GetBuiltinIntentOutput {
             crate::output::GetBuiltinIntentOutput {
-                signature: self.signature,
-                supported_locales: self.supported_locales,
-                slots: self.slots,
+                signature: self.signature
+                ,
+                supported_locales: self.supported_locales
+                ,
+                slots: self.slots
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBuiltinIntentOutput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinIntentOutput`](crate::output::GetBuiltinIntentOutput).
@@ -3958,7 +3719,7 @@ impl GetBuiltinIntentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotVersionsOutput {
+pub struct GetBotVersionsOutput  {
     /// <p>An array of <code>BotMetadata</code> objects, one for each numbered version of the bot plus one for the <code>$LATEST</code> version.</p>
     #[doc(hidden)]
     pub bots: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>,
@@ -3968,17 +3729,17 @@ pub struct GetBotVersionsOutput {
 }
 impl GetBotVersionsOutput {
     /// <p>An array of <code>BotMetadata</code> objects, one for each numbered version of the bot plus one for the <code>$LATEST</code> version.</p>
-    pub fn bots(&self) -> std::option::Option<&[crate::model::BotMetadata]> {
+    pub fn bots(&self) -> std::option::Option<& [crate::model::BotMetadata]> {
         self.bots.as_deref()
     }
     /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetBotVersionsOutput`](crate::output::GetBotVersionsOutput).
 pub mod get_bot_versions_output {
-
+    
     /// A builder for [`GetBotVersionsOutput`](crate::output::GetBotVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3993,17 +3754,13 @@ pub mod get_bot_versions_output {
         /// <p>An array of <code>BotMetadata</code> objects, one for each numbered version of the bot plus one for the <code>$LATEST</code> version.</p>
         pub fn bots(mut self, input: crate::model::BotMetadata) -> Self {
             let mut v = self.bots.unwrap_or_default();
-            v.push(input);
-            self.bots = Some(v);
-            self
+                            v.push(input);
+                            self.bots = Some(v);
+                            self
         }
         /// <p>An array of <code>BotMetadata</code> objects, one for each numbered version of the bot plus one for the <code>$LATEST</code> version.</p>
-        pub fn set_bots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>,
-        ) -> Self {
-            self.bots = input;
-            self
+        pub fn set_bots(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>) -> Self {
+            self.bots = input; self
         }
         /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4012,17 +3769,20 @@ pub mod get_bot_versions_output {
         }
         /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBotVersionsOutput`](crate::output::GetBotVersionsOutput).
         pub fn build(self) -> crate::output::GetBotVersionsOutput {
             crate::output::GetBotVersionsOutput {
-                bots: self.bots,
-                next_token: self.next_token,
+                bots: self.bots
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBotVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetBotVersionsOutput`](crate::output::GetBotVersionsOutput).
@@ -4034,7 +3794,7 @@ impl GetBotVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotsOutput {
+pub struct GetBotsOutput  {
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     #[doc(hidden)]
     pub bots: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>,
@@ -4044,17 +3804,17 @@ pub struct GetBotsOutput {
 }
 impl GetBotsOutput {
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
-    pub fn bots(&self) -> std::option::Option<&[crate::model::BotMetadata]> {
+    pub fn bots(&self) -> std::option::Option<& [crate::model::BotMetadata]> {
         self.bots.as_deref()
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetBotsOutput`](crate::output::GetBotsOutput).
 pub mod get_bots_output {
-
+    
     /// A builder for [`GetBotsOutput`](crate::output::GetBotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4069,17 +3829,13 @@ pub mod get_bots_output {
         /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
         pub fn bots(mut self, input: crate::model::BotMetadata) -> Self {
             let mut v = self.bots.unwrap_or_default();
-            v.push(input);
-            self.bots = Some(v);
-            self
+                            v.push(input);
+                            self.bots = Some(v);
+                            self
         }
         /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
-        pub fn set_bots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>,
-        ) -> Self {
-            self.bots = input;
-            self
+        pub fn set_bots(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>) -> Self {
+            self.bots = input; self
         }
         /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4088,17 +3844,20 @@ pub mod get_bots_output {
         }
         /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBotsOutput`](crate::output::GetBotsOutput).
         pub fn build(self) -> crate::output::GetBotsOutput {
             crate::output::GetBotsOutput {
-                bots: self.bots,
-                next_token: self.next_token,
+                bots: self.bots
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBotsOutput {
     /// Creates a new builder-style object to manufacture [`GetBotsOutput`](crate::output::GetBotsOutput).
@@ -4110,35 +3869,31 @@ impl GetBotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotChannelAssociationsOutput {
+pub struct GetBotChannelAssociationsOutput  {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
     #[doc(hidden)]
-    pub bot_channel_associations:
-        std::option::Option<std::vec::Vec<crate::model::BotChannelAssociation>>,
+    pub bot_channel_associations: std::option::Option<std::vec::Vec<crate::model::BotChannelAssociation>>,
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBotChannelAssociationsOutput {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
-    pub fn bot_channel_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::BotChannelAssociation]> {
+    pub fn bot_channel_associations(&self) -> std::option::Option<& [crate::model::BotChannelAssociation]> {
         self.bot_channel_associations.as_deref()
     }
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetBotChannelAssociationsOutput`](crate::output::GetBotChannelAssociationsOutput).
 pub mod get_bot_channel_associations_output {
-
+    
     /// A builder for [`GetBotChannelAssociationsOutput`](crate::output::GetBotChannelAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bot_channel_associations:
-            std::option::Option<std::vec::Vec<crate::model::BotChannelAssociation>>,
+        pub(crate) bot_channel_associations: std::option::Option<std::vec::Vec<crate::model::BotChannelAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4147,22 +3902,15 @@ pub mod get_bot_channel_associations_output {
         /// To override the contents of this collection use [`set_bot_channel_associations`](Self::set_bot_channel_associations).
         ///
         /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
-        pub fn bot_channel_associations(
-            mut self,
-            input: crate::model::BotChannelAssociation,
-        ) -> Self {
+        pub fn bot_channel_associations(mut self, input: crate::model::BotChannelAssociation) -> Self {
             let mut v = self.bot_channel_associations.unwrap_or_default();
-            v.push(input);
-            self.bot_channel_associations = Some(v);
-            self
+                            v.push(input);
+                            self.bot_channel_associations = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
-        pub fn set_bot_channel_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotChannelAssociation>>,
-        ) -> Self {
-            self.bot_channel_associations = input;
-            self
+        pub fn set_bot_channel_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotChannelAssociation>>) -> Self {
+            self.bot_channel_associations = input; self
         }
         /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4171,17 +3919,20 @@ pub mod get_bot_channel_associations_output {
         }
         /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBotChannelAssociationsOutput`](crate::output::GetBotChannelAssociationsOutput).
         pub fn build(self) -> crate::output::GetBotChannelAssociationsOutput {
             crate::output::GetBotChannelAssociationsOutput {
-                bot_channel_associations: self.bot_channel_associations,
-                next_token: self.next_token,
+                bot_channel_associations: self.bot_channel_associations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBotChannelAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetBotChannelAssociationsOutput`](crate::output::GetBotChannelAssociationsOutput).
@@ -4193,7 +3944,7 @@ impl GetBotChannelAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetBotChannelAssociationOutput {
+pub struct GetBotChannelAssociationOutput  {
     /// <p>The name of the association between the bot and the channel.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4214,13 +3965,12 @@ pub struct GetBotChannelAssociationOutput {
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
     #[doc(hidden)]
-    pub bot_configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The status of the bot channel. </p>
-    /// <ul>
-    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
-    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
+    pub bot_configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The status of the bot channel. </p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelStatus>,
@@ -4230,51 +3980,48 @@ pub struct GetBotChannelAssociationOutput {
 }
 impl GetBotChannelAssociationOutput {
     /// <p>The name of the association between the bot and the channel.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the association between the bot and the channel.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
-    pub fn bot_alias(&self) -> std::option::Option<&str> {
+    pub fn bot_alias(&self) -> std::option::Option<& str> {
         self.bot_alias.as_deref()
     }
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The date that the association between the bot and the channel was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The type of the messaging platform.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-    pub fn bot_configuration(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn bot_configuration(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.bot_configuration.as_ref()
     }
-    /// <p>The status of the bot channel. </p>
-    /// <ul>
-    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
-    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
+    /// <p>The status of the bot channel. </p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::ChannelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ChannelStatus> {
         self.status.as_ref()
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
-impl std::fmt::Debug for GetBotChannelAssociationOutput {
+impl  std::fmt::Debug for GetBotChannelAssociationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBotChannelAssociationOutput");
         formatter.field("name", &self.name);
@@ -4291,7 +4038,7 @@ impl std::fmt::Debug for GetBotChannelAssociationOutput {
 }
 /// See [`GetBotChannelAssociationOutput`](crate::output::GetBotChannelAssociationOutput).
 pub mod get_bot_channel_association_output {
-
+    
     /// A builder for [`GetBotChannelAssociationOutput`](crate::output::GetBotChannelAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4301,9 +4048,7 @@ pub mod get_bot_channel_association_output {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelType>,
-        pub(crate) bot_configuration: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) bot_configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::ChannelStatus>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
@@ -4315,8 +4060,7 @@ pub mod get_bot_channel_association_output {
         }
         /// <p>The name of the association between the bot and the channel.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the association between the bot and the channel.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4325,8 +4069,7 @@ pub mod get_bot_channel_association_output {
         }
         /// <p>A description of the association between the bot and the channel.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
         pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4335,8 +4078,7 @@ pub mod get_bot_channel_association_output {
         }
         /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_alias = input;
-            self
+            self.bot_alias = input; self
         }
         /// <p>The name of the Amazon Lex bot.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4345,8 +4087,7 @@ pub mod get_bot_channel_association_output {
         }
         /// <p>The name of the Amazon Lex bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The date that the association between the bot and the channel was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4354,12 +4095,8 @@ pub mod get_bot_channel_association_output {
             self
         }
         /// <p>The date that the association between the bot and the channel was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The type of the messaging platform.</p>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
@@ -4368,56 +4105,41 @@ pub mod get_bot_channel_association_output {
         }
         /// <p>The type of the messaging platform.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Adds a key-value pair to `bot_configuration`.
         ///
         /// To override the contents of this collection use [`set_bot_configuration`](Self::set_bot_configuration).
         ///
         /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-        pub fn bot_configuration(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bot_configuration(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.bot_configuration.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.bot_configuration = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.bot_configuration = Some(hash_map);
+                            self
         }
         /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-        pub fn set_bot_configuration(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.bot_configuration = input;
-            self
+        pub fn set_bot_configuration(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.bot_configuration = input; self
         }
-        /// <p>The status of the bot channel. </p>
-        /// <ul>
-        /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
-        /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
+        /// <p>The status of the bot channel. </p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::ChannelStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the bot channel. </p>
-        /// <ul>
-        /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>
-        /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>
+        /// <p>The status of the bot channel. </p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> 
+        /// <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ChannelStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ChannelStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4425,25 +4147,30 @@ pub mod get_bot_channel_association_output {
             self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`GetBotChannelAssociationOutput`](crate::output::GetBotChannelAssociationOutput).
         pub fn build(self) -> crate::output::GetBotChannelAssociationOutput {
             crate::output::GetBotChannelAssociationOutput {
-                name: self.name,
-                description: self.description,
-                bot_alias: self.bot_alias,
-                bot_name: self.bot_name,
-                created_date: self.created_date,
-                r#type: self.r#type,
-                bot_configuration: self.bot_configuration,
-                status: self.status,
-                failure_reason: self.failure_reason,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                bot_alias: self.bot_alias
+                ,
+                bot_name: self.bot_name
+                ,
+                created_date: self.created_date
+                ,
+                r#type: self.r#type
+                ,
+                bot_configuration: self.bot_configuration
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
@@ -4462,6 +4189,8 @@ pub mod get_bot_channel_association_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetBotChannelAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetBotChannelAssociationOutput`](crate::output::GetBotChannelAssociationOutput).
@@ -4473,7 +4202,7 @@ impl GetBotChannelAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotAliasesOutput {
+pub struct GetBotAliasesOutput  {
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
     #[doc(hidden)]
     pub bot_aliases: std::option::Option<std::vec::Vec<crate::model::BotAliasMetadata>>,
@@ -4483,17 +4212,17 @@ pub struct GetBotAliasesOutput {
 }
 impl GetBotAliasesOutput {
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
-    pub fn bot_aliases(&self) -> std::option::Option<&[crate::model::BotAliasMetadata]> {
+    pub fn bot_aliases(&self) -> std::option::Option<& [crate::model::BotAliasMetadata]> {
         self.bot_aliases.as_deref()
     }
     /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetBotAliasesOutput`](crate::output::GetBotAliasesOutput).
 pub mod get_bot_aliases_output {
-
+    
     /// A builder for [`GetBotAliasesOutput`](crate::output::GetBotAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4508,17 +4237,13 @@ pub mod get_bot_aliases_output {
         /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
         pub fn bot_aliases(mut self, input: crate::model::BotAliasMetadata) -> Self {
             let mut v = self.bot_aliases.unwrap_or_default();
-            v.push(input);
-            self.bot_aliases = Some(v);
-            self
+                            v.push(input);
+                            self.bot_aliases = Some(v);
+                            self
         }
         /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
-        pub fn set_bot_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BotAliasMetadata>>,
-        ) -> Self {
-            self.bot_aliases = input;
-            self
+        pub fn set_bot_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::model::BotAliasMetadata>>) -> Self {
+            self.bot_aliases = input; self
         }
         /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4527,17 +4252,20 @@ pub mod get_bot_aliases_output {
         }
         /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBotAliasesOutput`](crate::output::GetBotAliasesOutput).
         pub fn build(self) -> crate::output::GetBotAliasesOutput {
             crate::output::GetBotAliasesOutput {
-                bot_aliases: self.bot_aliases,
-                next_token: self.next_token,
+                bot_aliases: self.bot_aliases
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBotAliasesOutput {
     /// Creates a new builder-style object to manufacture [`GetBotAliasesOutput`](crate::output::GetBotAliasesOutput).
@@ -4549,7 +4277,7 @@ impl GetBotAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotAliasOutput {
+pub struct GetBotAliasOutput  {
     /// <p>The name of the bot alias.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4577,43 +4305,41 @@ pub struct GetBotAliasOutput {
 }
 impl GetBotAliasOutput {
     /// <p>The name of the bot alias.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the bot alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the bot that the alias points to.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The name of the bot that the alias points to.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the bot alias was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>Checksum of the bot alias.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
-    pub fn conversation_logs(
-        &self,
-    ) -> std::option::Option<&crate::model::ConversationLogsResponse> {
+    pub fn conversation_logs(&self) -> std::option::Option<& crate::model::ConversationLogsResponse> {
         self.conversation_logs.as_ref()
     }
 }
 /// See [`GetBotAliasOutput`](crate::output::GetBotAliasOutput).
 pub mod get_bot_alias_output {
-
+    
     /// A builder for [`GetBotAliasOutput`](crate::output::GetBotAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4634,8 +4360,7 @@ pub mod get_bot_alias_output {
         }
         /// <p>The name of the bot alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the bot alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4644,8 +4369,7 @@ pub mod get_bot_alias_output {
         }
         /// <p>A description of the bot alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The version of the bot that the alias points to.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4654,8 +4378,7 @@ pub mod get_bot_alias_output {
         }
         /// <p>The version of the bot that the alias points to.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_version = input;
-            self
+            self.bot_version = input; self
         }
         /// <p>The name of the bot that the alias points to.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4664,8 +4387,7 @@ pub mod get_bot_alias_output {
         }
         /// <p>The name of the bot that the alias points to.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bot_name = input;
-            self
+            self.bot_name = input; self
         }
         /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4673,12 +4395,8 @@ pub mod get_bot_alias_output {
             self
         }
         /// <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the bot alias was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4686,12 +4404,8 @@ pub mod get_bot_alias_output {
             self
         }
         /// <p>The date that the bot alias was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>Checksum of the bot alias.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4700,8 +4414,7 @@ pub mod get_bot_alias_output {
         }
         /// <p>Checksum of the bot alias.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
         pub fn conversation_logs(mut self, input: crate::model::ConversationLogsResponse) -> Self {
@@ -4709,27 +4422,33 @@ pub mod get_bot_alias_output {
             self
         }
         /// <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
-        pub fn set_conversation_logs(
-            mut self,
-            input: std::option::Option<crate::model::ConversationLogsResponse>,
-        ) -> Self {
-            self.conversation_logs = input;
-            self
+        pub fn set_conversation_logs(mut self, input: std::option::Option<crate::model::ConversationLogsResponse>) -> Self {
+            self.conversation_logs = input; self
         }
         /// Consumes the builder and constructs a [`GetBotAliasOutput`](crate::output::GetBotAliasOutput).
         pub fn build(self) -> crate::output::GetBotAliasOutput {
             crate::output::GetBotAliasOutput {
-                name: self.name,
-                description: self.description,
-                bot_version: self.bot_version,
-                bot_name: self.bot_name,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                checksum: self.checksum,
-                conversation_logs: self.conversation_logs,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                bot_version: self.bot_version
+                ,
+                bot_name: self.bot_name
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                checksum: self.checksum
+                ,
+                conversation_logs: self.conversation_logs
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`GetBotAliasOutput`](crate::output::GetBotAliasOutput).
@@ -4741,7 +4460,7 @@ impl GetBotAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotOutput {
+pub struct GetBotOutput  {
     /// <p>The name of the bot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4763,10 +4482,10 @@ pub struct GetBotOutput {
     /// <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
     #[doc(hidden)]
     pub abort_statement: std::option::Option<crate::model::Statement>,
-    /// <p>The status of the bot. </p>
-    /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p>
-    /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p>
-    /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p>
+    /// <p>The status of the bot. </p> 
+    /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p> 
+    /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p> 
+    /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p> 
     /// <p>If the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
@@ -4794,7 +4513,7 @@ pub struct GetBotOutput {
     /// <p> The target locale for the bot. </p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
-    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
     #[doc(hidden)]
     pub child_directed: std::option::Option<bool>,
@@ -4804,15 +4523,15 @@ pub struct GetBotOutput {
 }
 impl GetBotOutput {
     /// <p>The name of the bot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the bot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn intents(&self) -> std::option::Option<&[crate::model::Intent]> {
+    pub fn intents(&self) -> std::option::Option<& [crate::model::Intent]> {
         self.intents.as_deref()
     }
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
@@ -4824,31 +4543,31 @@ impl GetBotOutput {
         self.nlu_intent_confidence_threshold
     }
     /// <p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
-    pub fn clarification_prompt(&self) -> std::option::Option<&crate::model::Prompt> {
+    pub fn clarification_prompt(&self) -> std::option::Option<& crate::model::Prompt> {
         self.clarification_prompt.as_ref()
     }
     /// <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
-    pub fn abort_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn abort_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.abort_statement.as_ref()
     }
-    /// <p>The status of the bot. </p>
-    /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p>
-    /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p>
-    /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p>
+    /// <p>The status of the bot. </p> 
+    /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p> 
+    /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p> 
+    /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p> 
     /// <p>If the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to build the bot.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the bot was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
@@ -4856,22 +4575,22 @@ impl GetBotOutput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
-    pub fn voice_id(&self) -> std::option::Option<&str> {
+    pub fn voice_id(&self) -> std::option::Option<& str> {
         self.voice_id.as_deref()
     }
     /// <p>Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code> version.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p> The target locale for the bot. </p>
-    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
         self.locale.as_ref()
     }
-    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
     pub fn child_directed(&self) -> std::option::Option<bool> {
         self.child_directed
@@ -4883,7 +4602,7 @@ impl GetBotOutput {
 }
 /// See [`GetBotOutput`](crate::output::GetBotOutput).
 pub mod get_bot_output {
-
+    
     /// A builder for [`GetBotOutput`](crate::output::GetBotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4914,8 +4633,7 @@ pub mod get_bot_output {
         }
         /// <p>The name of the bot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the bot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4924,8 +4642,7 @@ pub mod get_bot_output {
         }
         /// <p>A description of the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `intents`.
         ///
@@ -4934,17 +4651,13 @@ pub mod get_bot_output {
         /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
         pub fn intents(mut self, input: crate::model::Intent) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input);
-            self.intents = Some(v);
-            self
+                            v.push(input);
+                            self.intents = Some(v);
+                            self
         }
         /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
-        pub fn set_intents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Intent>>,
-        ) -> Self {
-            self.intents = input;
-            self
+        pub fn set_intents(mut self, input: std::option::Option<std::vec::Vec<crate::model::Intent>>) -> Self {
+            self.intents = input; self
         }
         /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
         pub fn enable_model_improvements(mut self, input: bool) -> Self {
@@ -4953,8 +4666,7 @@ pub mod get_bot_output {
         }
         /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
         pub fn set_enable_model_improvements(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_model_improvements = input;
-            self
+            self.enable_model_improvements = input; self
         }
         /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -4962,12 +4674,8 @@ pub mod get_bot_output {
             self
         }
         /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
-        pub fn set_nlu_intent_confidence_threshold(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.nlu_intent_confidence_threshold = input;
-            self
+        pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.nlu_intent_confidence_threshold = input; self
         }
         /// <p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
         pub fn clarification_prompt(mut self, input: crate::model::Prompt) -> Self {
@@ -4975,12 +4683,8 @@ pub mod get_bot_output {
             self
         }
         /// <p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
-        pub fn set_clarification_prompt(
-            mut self,
-            input: std::option::Option<crate::model::Prompt>,
-        ) -> Self {
-            self.clarification_prompt = input;
-            self
+        pub fn set_clarification_prompt(mut self, input: std::option::Option<crate::model::Prompt>) -> Self {
+            self.clarification_prompt = input; self
         }
         /// <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
         pub fn abort_statement(mut self, input: crate::model::Statement) -> Self {
@@ -4988,30 +4692,25 @@ pub mod get_bot_output {
             self
         }
         /// <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
-        pub fn set_abort_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.abort_statement = input;
-            self
+        pub fn set_abort_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.abort_statement = input; self
         }
-        /// <p>The status of the bot. </p>
-        /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p>
-        /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p>
-        /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p>
+        /// <p>The status of the bot. </p> 
+        /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p> 
+        /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p> 
+        /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p> 
         /// <p>If the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the bot. </p>
-        /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p>
-        /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p>
-        /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p>
+        /// <p>The status of the bot. </p> 
+        /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p> 
+        /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p> 
+        /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p> 
         /// <p>If the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to build the bot.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5019,12 +4718,8 @@ pub mod get_bot_output {
             self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to build the bot.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same. </p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5032,12 +4727,8 @@ pub mod get_bot_output {
             self
         }
         /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same. </p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the bot was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5045,12 +4736,8 @@ pub mod get_bot_output {
             self
         }
         /// <p>The date that the bot was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
@@ -5059,8 +4746,7 @@ pub mod get_bot_output {
         }
         /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_session_ttl_in_seconds = input;
-            self
+            self.idle_session_ttl_in_seconds = input; self
         }
         /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
         pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5069,8 +4755,7 @@ pub mod get_bot_output {
         }
         /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.voice_id = input;
-            self
+            self.voice_id = input; self
         }
         /// <p>Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code> version.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5079,8 +4764,7 @@ pub mod get_bot_output {
         }
         /// <p>Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code> version.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5089,8 +4773,7 @@ pub mod get_bot_output {
         }
         /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p> The target locale for the bot. </p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
@@ -5099,20 +4782,18 @@ pub mod get_bot_output {
         }
         /// <p> The target locale for the bot. </p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
-        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
         /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
         pub fn child_directed(mut self, input: bool) -> Self {
             self.child_directed = Some(input);
             self
         }
-        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
         /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
         pub fn set_child_directed(mut self, input: std::option::Option<bool>) -> Self {
-            self.child_directed = input;
-            self
+            self.child_directed = input; self
         }
         /// <p>Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.</p>
         pub fn detect_sentiment(mut self, input: bool) -> Self {
@@ -5121,33 +4802,52 @@ pub mod get_bot_output {
         }
         /// <p>Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.</p>
         pub fn set_detect_sentiment(mut self, input: std::option::Option<bool>) -> Self {
-            self.detect_sentiment = input;
-            self
+            self.detect_sentiment = input; self
         }
         /// Consumes the builder and constructs a [`GetBotOutput`](crate::output::GetBotOutput).
         pub fn build(self) -> crate::output::GetBotOutput {
             crate::output::GetBotOutput {
-                name: self.name,
-                description: self.description,
-                intents: self.intents,
-                enable_model_improvements: self.enable_model_improvements,
-                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-                clarification_prompt: self.clarification_prompt,
-                abort_statement: self.abort_statement,
-                status: self.status,
-                failure_reason: self.failure_reason,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-                voice_id: self.voice_id,
-                checksum: self.checksum,
-                version: self.version,
-                locale: self.locale,
-                child_directed: self.child_directed,
-                detect_sentiment: self.detect_sentiment,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                intents: self.intents
+                ,
+                enable_model_improvements: self.enable_model_improvements
+                ,
+                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+                ,
+                clarification_prompt: self.clarification_prompt
+                ,
+                abort_statement: self.abort_statement
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                voice_id: self.voice_id
+                ,
+                checksum: self.checksum
+                ,
+                version: self.version
+                ,
+                locale: self.locale
+                ,
+                child_directed: self.child_directed
+                ,
+                detect_sentiment: self.detect_sentiment
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBotOutput {
     /// Creates a new builder-style object to manufacture [`GetBotOutput`](crate::output::GetBotOutput).
@@ -5159,19 +4859,24 @@ impl GetBotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUtterancesOutput {}
+pub struct DeleteUtterancesOutput  {
+}
 /// See [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
 pub mod delete_utterances_output {
-
+    
     /// A builder for [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
         pub fn build(self) -> crate::output::DeleteUtterancesOutput {
-            crate::output::DeleteUtterancesOutput {}
+            crate::output::DeleteUtterancesOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteUtterancesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
@@ -5183,19 +4888,24 @@ impl DeleteUtterancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlotTypeVersionOutput {}
+pub struct DeleteSlotTypeVersionOutput  {
+}
 /// See [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput).
 pub mod delete_slot_type_version_output {
-
+    
     /// A builder for [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput).
         pub fn build(self) -> crate::output::DeleteSlotTypeVersionOutput {
-            crate::output::DeleteSlotTypeVersionOutput {}
+            crate::output::DeleteSlotTypeVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSlotTypeVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput).
@@ -5207,19 +4917,24 @@ impl DeleteSlotTypeVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlotTypeOutput {}
+pub struct DeleteSlotTypeOutput  {
+}
 /// See [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
 pub mod delete_slot_type_output {
-
+    
     /// A builder for [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
         pub fn build(self) -> crate::output::DeleteSlotTypeOutput {
-            crate::output::DeleteSlotTypeOutput {}
+            crate::output::DeleteSlotTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
@@ -5231,19 +4946,24 @@ impl DeleteSlotTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIntentVersionOutput {}
+pub struct DeleteIntentVersionOutput  {
+}
 /// See [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput).
 pub mod delete_intent_version_output {
-
+    
     /// A builder for [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput).
         pub fn build(self) -> crate::output::DeleteIntentVersionOutput {
-            crate::output::DeleteIntentVersionOutput {}
+            crate::output::DeleteIntentVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteIntentVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput).
@@ -5255,19 +4975,24 @@ impl DeleteIntentVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIntentOutput {}
+pub struct DeleteIntentOutput  {
+}
 /// See [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
 pub mod delete_intent_output {
-
+    
     /// A builder for [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
         pub fn build(self) -> crate::output::DeleteIntentOutput {
-            crate::output::DeleteIntentOutput {}
+            crate::output::DeleteIntentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteIntentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
@@ -5279,19 +5004,24 @@ impl DeleteIntentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotVersionOutput {}
+pub struct DeleteBotVersionOutput  {
+}
 /// See [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
 pub mod delete_bot_version_output {
-
+    
     /// A builder for [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
         pub fn build(self) -> crate::output::DeleteBotVersionOutput {
-            crate::output::DeleteBotVersionOutput {}
+            crate::output::DeleteBotVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
@@ -5303,19 +5033,24 @@ impl DeleteBotVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotChannelAssociationOutput {}
+pub struct DeleteBotChannelAssociationOutput  {
+}
 /// See [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput).
 pub mod delete_bot_channel_association_output {
-
+    
     /// A builder for [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput).
         pub fn build(self) -> crate::output::DeleteBotChannelAssociationOutput {
-            crate::output::DeleteBotChannelAssociationOutput {}
+            crate::output::DeleteBotChannelAssociationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBotChannelAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput).
@@ -5327,19 +5062,24 @@ impl DeleteBotChannelAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotAliasOutput {}
+pub struct DeleteBotAliasOutput  {
+}
 /// See [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
 pub mod delete_bot_alias_output {
-
+    
     /// A builder for [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
         pub fn build(self) -> crate::output::DeleteBotAliasOutput {
-            crate::output::DeleteBotAliasOutput {}
+            crate::output::DeleteBotAliasOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
@@ -5351,19 +5091,24 @@ impl DeleteBotAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotOutput {}
+pub struct DeleteBotOutput  {
+}
 /// See [`DeleteBotOutput`](crate::output::DeleteBotOutput).
 pub mod delete_bot_output {
-
+    
     /// A builder for [`DeleteBotOutput`](crate::output::DeleteBotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBotOutput`](crate::output::DeleteBotOutput).
         pub fn build(self) -> crate::output::DeleteBotOutput {
-            crate::output::DeleteBotOutput {}
+            crate::output::DeleteBotOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotOutput`](crate::output::DeleteBotOutput).
@@ -5375,7 +5120,7 @@ impl DeleteBotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSlotTypeVersionOutput {
+pub struct CreateSlotTypeVersionOutput  {
     /// <p>The name of the slot type.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5405,74 +5150,66 @@ pub struct CreateSlotTypeVersionOutput {
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type.</p>
     #[doc(hidden)]
-    pub slot_type_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
+    pub slot_type_configurations: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
 }
 impl CreateSlotTypeVersionOutput {
     /// <p>The name of the slot type.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
-    pub fn enumeration_values(&self) -> std::option::Option<&[crate::model::EnumerationValue]> {
+    pub fn enumeration_values(&self) -> std::option::Option<& [crate::model::EnumerationValue]> {
         self.enumeration_values.as_deref()
     }
     /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the slot type was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version assigned to the new slot type version. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-    pub fn value_selection_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::SlotValueSelectionStrategy> {
+    pub fn value_selection_strategy(&self) -> std::option::Option<& crate::model::SlotValueSelectionStrategy> {
         self.value_selection_strategy.as_ref()
     }
     /// <p>The built-in slot type used a the parent of the slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>Configuration information that extends the parent built-in slot type.</p>
-    pub fn slot_type_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SlotTypeConfiguration]> {
+    pub fn slot_type_configurations(&self) -> std::option::Option<& [crate::model::SlotTypeConfiguration]> {
         self.slot_type_configurations.as_deref()
     }
 }
 /// See [`CreateSlotTypeVersionOutput`](crate::output::CreateSlotTypeVersionOutput).
 pub mod create_slot_type_version_output {
-
+    
     /// A builder for [`CreateSlotTypeVersionOutput`](crate::output::CreateSlotTypeVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) enumeration_values:
-            std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
+        pub(crate) enumeration_values: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
         pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) checksum: std::option::Option<std::string::String>,
-        pub(crate) value_selection_strategy:
-            std::option::Option<crate::model::SlotValueSelectionStrategy>,
+        pub(crate) value_selection_strategy: std::option::Option<crate::model::SlotValueSelectionStrategy>,
         pub(crate) parent_slot_type_signature: std::option::Option<std::string::String>,
-        pub(crate) slot_type_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
+        pub(crate) slot_type_configurations: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
     }
     impl Builder {
         /// <p>The name of the slot type.</p>
@@ -5482,8 +5219,7 @@ pub mod create_slot_type_version_output {
         }
         /// <p>The name of the slot type.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the slot type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5492,8 +5228,7 @@ pub mod create_slot_type_version_output {
         }
         /// <p>A description of the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `enumeration_values`.
         ///
@@ -5502,17 +5237,13 @@ pub mod create_slot_type_version_output {
         /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
         pub fn enumeration_values(mut self, input: crate::model::EnumerationValue) -> Self {
             let mut v = self.enumeration_values.unwrap_or_default();
-            v.push(input);
-            self.enumeration_values = Some(v);
-            self
+                            v.push(input);
+                            self.enumeration_values = Some(v);
+                            self
         }
         /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
-        pub fn set_enumeration_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
-        ) -> Self {
-            self.enumeration_values = input;
-            self
+        pub fn set_enumeration_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>) -> Self {
+            self.enumeration_values = input; self
         }
         /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5520,12 +5251,8 @@ pub mod create_slot_type_version_output {
             self
         }
         /// <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the slot type was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5533,12 +5260,8 @@ pub mod create_slot_type_version_output {
             self
         }
         /// <p>The date that the slot type was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The version assigned to the new slot type version. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5547,8 +5270,7 @@ pub mod create_slot_type_version_output {
         }
         /// <p>The version assigned to the new slot type version. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5557,24 +5279,16 @@ pub mod create_slot_type_version_output {
         }
         /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-        pub fn value_selection_strategy(
-            mut self,
-            input: crate::model::SlotValueSelectionStrategy,
-        ) -> Self {
+        pub fn value_selection_strategy(mut self, input: crate::model::SlotValueSelectionStrategy) -> Self {
             self.value_selection_strategy = Some(input);
             self
         }
         /// <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-        pub fn set_value_selection_strategy(
-            mut self,
-            input: std::option::Option<crate::model::SlotValueSelectionStrategy>,
-        ) -> Self {
-            self.value_selection_strategy = input;
-            self
+        pub fn set_value_selection_strategy(mut self, input: std::option::Option<crate::model::SlotValueSelectionStrategy>) -> Self {
+            self.value_selection_strategy = input; self
         }
         /// <p>The built-in slot type used a the parent of the slot type.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5582,51 +5296,52 @@ pub mod create_slot_type_version_output {
             self
         }
         /// <p>The built-in slot type used a the parent of the slot type.</p>
-        pub fn set_parent_slot_type_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_slot_type_signature = input;
-            self
+        pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_slot_type_signature = input; self
         }
         /// Appends an item to `slot_type_configurations`.
         ///
         /// To override the contents of this collection use [`set_slot_type_configurations`](Self::set_slot_type_configurations).
         ///
         /// <p>Configuration information that extends the parent built-in slot type.</p>
-        pub fn slot_type_configurations(
-            mut self,
-            input: crate::model::SlotTypeConfiguration,
-        ) -> Self {
+        pub fn slot_type_configurations(mut self, input: crate::model::SlotTypeConfiguration) -> Self {
             let mut v = self.slot_type_configurations.unwrap_or_default();
-            v.push(input);
-            self.slot_type_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.slot_type_configurations = Some(v);
+                            self
         }
         /// <p>Configuration information that extends the parent built-in slot type.</p>
-        pub fn set_slot_type_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
-        ) -> Self {
-            self.slot_type_configurations = input;
-            self
+        pub fn set_slot_type_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>) -> Self {
+            self.slot_type_configurations = input; self
         }
         /// Consumes the builder and constructs a [`CreateSlotTypeVersionOutput`](crate::output::CreateSlotTypeVersionOutput).
         pub fn build(self) -> crate::output::CreateSlotTypeVersionOutput {
             crate::output::CreateSlotTypeVersionOutput {
-                name: self.name,
-                description: self.description,
-                enumeration_values: self.enumeration_values,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                version: self.version,
-                checksum: self.checksum,
-                value_selection_strategy: self.value_selection_strategy,
-                parent_slot_type_signature: self.parent_slot_type_signature,
-                slot_type_configurations: self.slot_type_configurations,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                enumeration_values: self.enumeration_values
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                ,
+                checksum: self.checksum
+                ,
+                value_selection_strategy: self.value_selection_strategy
+                ,
+                parent_slot_type_signature: self.parent_slot_type_signature
+                ,
+                slot_type_configurations: self.slot_type_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSlotTypeVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSlotTypeVersionOutput`](crate::output::CreateSlotTypeVersionOutput).
@@ -5638,7 +5353,7 @@ impl CreateSlotTypeVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIntentVersionOutput {
+pub struct CreateIntentVersionOutput  {
     /// <p>The name of the intent.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5696,81 +5411,81 @@ pub struct CreateIntentVersionOutput {
 }
 impl CreateIntentVersionOutput {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of slot types that defines the information required to fulfill the intent.</p>
-    pub fn slots(&self) -> std::option::Option<&[crate::model::Slot]> {
+    pub fn slots(&self) -> std::option::Option<& [crate::model::Slot]> {
         self.slots.as_deref()
     }
     /// <p>An array of sample utterances configured for the intent. </p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [std::string::String]> {
         self.sample_utterances.as_deref()
     }
     /// <p>If defined, the prompt that Amazon Lex uses to confirm the user's intent before fulfilling it. </p>
-    pub fn confirmation_prompt(&self) -> std::option::Option<&crate::model::Prompt> {
+    pub fn confirmation_prompt(&self) -> std::option::Option<& crate::model::Prompt> {
         self.confirmation_prompt.as_ref()
     }
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-    pub fn rejection_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn rejection_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.rejection_statement.as_ref()
     }
     /// <p>If defined, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. </p>
-    pub fn follow_up_prompt(&self) -> std::option::Option<&crate::model::FollowUpPrompt> {
+    pub fn follow_up_prompt(&self) -> std::option::Option<& crate::model::FollowUpPrompt> {
         self.follow_up_prompt.as_ref()
     }
     /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> field fulfills the intent, Amazon Lex conveys this statement to the user. </p>
-    pub fn conclusion_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn conclusion_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.conclusion_statement.as_ref()
     }
     /// <p>If defined, Amazon Lex invokes this Lambda function for each user input.</p>
-    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::CodeHook> {
+    pub fn dialog_code_hook(&self) -> std::option::Option<& crate::model::CodeHook> {
         self.dialog_code_hook.as_ref()
     }
     /// <p> Describes how the intent is fulfilled. </p>
-    pub fn fulfillment_activity(&self) -> std::option::Option<&crate::model::FulfillmentActivity> {
+    pub fn fulfillment_activity(&self) -> std::option::Option<& crate::model::FulfillmentActivity> {
         self.fulfillment_activity.as_ref()
     }
     /// <p>A unique identifier for a built-in intent.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The date that the intent was updated. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the intent was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version number assigned to the new version of the intent.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Checksum of the intent version created.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>Configuration information, if any, for connecting an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> std::option::Option<& crate::model::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<& [crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<& [crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
 }
 /// See [`CreateIntentVersionOutput`](crate::output::CreateIntentVersionOutput).
 pub mod create_intent_version_output {
-
+    
     /// A builder for [`CreateIntentVersionOutput`](crate::output::CreateIntentVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5801,8 +5516,7 @@ pub mod create_intent_version_output {
         }
         /// <p>The name of the intent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the intent.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5811,8 +5525,7 @@ pub mod create_intent_version_output {
         }
         /// <p>A description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `slots`.
         ///
@@ -5821,17 +5534,13 @@ pub mod create_intent_version_output {
         /// <p>An array of slot types that defines the information required to fulfill the intent.</p>
         pub fn slots(mut self, input: crate::model::Slot) -> Self {
             let mut v = self.slots.unwrap_or_default();
-            v.push(input);
-            self.slots = Some(v);
-            self
+                            v.push(input);
+                            self.slots = Some(v);
+                            self
         }
         /// <p>An array of slot types that defines the information required to fulfill the intent.</p>
-        pub fn set_slots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Slot>>,
-        ) -> Self {
-            self.slots = input;
-            self
+        pub fn set_slots(mut self, input: std::option::Option<std::vec::Vec<crate::model::Slot>>) -> Self {
+            self.slots = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -5840,17 +5549,13 @@ pub mod create_intent_version_output {
         /// <p>An array of sample utterances configured for the intent. </p>
         pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input.into());
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p>An array of sample utterances configured for the intent. </p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>If defined, the prompt that Amazon Lex uses to confirm the user's intent before fulfilling it. </p>
         pub fn confirmation_prompt(mut self, input: crate::model::Prompt) -> Self {
@@ -5858,12 +5563,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>If defined, the prompt that Amazon Lex uses to confirm the user's intent before fulfilling it. </p>
-        pub fn set_confirmation_prompt(
-            mut self,
-            input: std::option::Option<crate::model::Prompt>,
-        ) -> Self {
-            self.confirmation_prompt = input;
-            self
+        pub fn set_confirmation_prompt(mut self, input: std::option::Option<crate::model::Prompt>) -> Self {
+            self.confirmation_prompt = input; self
         }
         /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
         pub fn rejection_statement(mut self, input: crate::model::Statement) -> Self {
@@ -5871,12 +5572,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-        pub fn set_rejection_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.rejection_statement = input;
-            self
+        pub fn set_rejection_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.rejection_statement = input; self
         }
         /// <p>If defined, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. </p>
         pub fn follow_up_prompt(mut self, input: crate::model::FollowUpPrompt) -> Self {
@@ -5884,12 +5581,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>If defined, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. </p>
-        pub fn set_follow_up_prompt(
-            mut self,
-            input: std::option::Option<crate::model::FollowUpPrompt>,
-        ) -> Self {
-            self.follow_up_prompt = input;
-            self
+        pub fn set_follow_up_prompt(mut self, input: std::option::Option<crate::model::FollowUpPrompt>) -> Self {
+            self.follow_up_prompt = input; self
         }
         /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> field fulfills the intent, Amazon Lex conveys this statement to the user. </p>
         pub fn conclusion_statement(mut self, input: crate::model::Statement) -> Self {
@@ -5897,12 +5590,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> field fulfills the intent, Amazon Lex conveys this statement to the user. </p>
-        pub fn set_conclusion_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.conclusion_statement = input;
-            self
+        pub fn set_conclusion_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.conclusion_statement = input; self
         }
         /// <p>If defined, Amazon Lex invokes this Lambda function for each user input.</p>
         pub fn dialog_code_hook(mut self, input: crate::model::CodeHook) -> Self {
@@ -5910,12 +5599,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>If defined, Amazon Lex invokes this Lambda function for each user input.</p>
-        pub fn set_dialog_code_hook(
-            mut self,
-            input: std::option::Option<crate::model::CodeHook>,
-        ) -> Self {
-            self.dialog_code_hook = input;
-            self
+        pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::model::CodeHook>) -> Self {
+            self.dialog_code_hook = input; self
         }
         /// <p> Describes how the intent is fulfilled. </p>
         pub fn fulfillment_activity(mut self, input: crate::model::FulfillmentActivity) -> Self {
@@ -5923,12 +5608,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p> Describes how the intent is fulfilled. </p>
-        pub fn set_fulfillment_activity(
-            mut self,
-            input: std::option::Option<crate::model::FulfillmentActivity>,
-        ) -> Self {
-            self.fulfillment_activity = input;
-            self
+        pub fn set_fulfillment_activity(mut self, input: std::option::Option<crate::model::FulfillmentActivity>) -> Self {
+            self.fulfillment_activity = input; self
         }
         /// <p>A unique identifier for a built-in intent.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5936,12 +5617,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>A unique identifier for a built-in intent.</p>
-        pub fn set_parent_intent_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_intent_signature = input;
-            self
+        pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_intent_signature = input; self
         }
         /// <p>The date that the intent was updated. </p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5949,12 +5626,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>The date that the intent was updated. </p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date that the intent was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5962,12 +5635,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>The date that the intent was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The version number assigned to the new version of the intent.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5976,8 +5645,7 @@ pub mod create_intent_version_output {
         }
         /// <p>The version number assigned to the new version of the intent.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Checksum of the intent version created.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5986,8 +5654,7 @@ pub mod create_intent_version_output {
         }
         /// <p>Checksum of the intent version created.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>Configuration information, if any, for connecting an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
         pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
@@ -5995,12 +5662,8 @@ pub mod create_intent_version_output {
             self
         }
         /// <p>Configuration information, if any, for connecting an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-        pub fn set_kendra_configuration(
-            mut self,
-            input: std::option::Option<crate::model::KendraConfiguration>,
-        ) -> Self {
-            self.kendra_configuration = input;
-            self
+        pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::model::KendraConfiguration>) -> Self {
+            self.kendra_configuration = input; self
         }
         /// Appends an item to `input_contexts`.
         ///
@@ -6009,17 +5672,13 @@ pub mod create_intent_version_output {
         /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
         pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input);
-            self.input_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.input_contexts = Some(v);
+                            self
         }
         /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-        pub fn set_input_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-        ) -> Self {
-            self.input_contexts = input;
-            self
+        pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputContext>>) -> Self {
+            self.input_contexts = input; self
         }
         /// Appends an item to `output_contexts`.
         ///
@@ -6028,42 +5687,58 @@ pub mod create_intent_version_output {
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
         pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input);
-            self.output_contexts = Some(v);
-            self
+                            v.push(input);
+                            self.output_contexts = Some(v);
+                            self
         }
         /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-        pub fn set_output_contexts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-        ) -> Self {
-            self.output_contexts = input;
-            self
+        pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>) -> Self {
+            self.output_contexts = input; self
         }
         /// Consumes the builder and constructs a [`CreateIntentVersionOutput`](crate::output::CreateIntentVersionOutput).
         pub fn build(self) -> crate::output::CreateIntentVersionOutput {
             crate::output::CreateIntentVersionOutput {
-                name: self.name,
-                description: self.description,
-                slots: self.slots,
-                sample_utterances: self.sample_utterances,
-                confirmation_prompt: self.confirmation_prompt,
-                rejection_statement: self.rejection_statement,
-                follow_up_prompt: self.follow_up_prompt,
-                conclusion_statement: self.conclusion_statement,
-                dialog_code_hook: self.dialog_code_hook,
-                fulfillment_activity: self.fulfillment_activity,
-                parent_intent_signature: self.parent_intent_signature,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                version: self.version,
-                checksum: self.checksum,
-                kendra_configuration: self.kendra_configuration,
-                input_contexts: self.input_contexts,
-                output_contexts: self.output_contexts,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                slots: self.slots
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                confirmation_prompt: self.confirmation_prompt
+                ,
+                rejection_statement: self.rejection_statement
+                ,
+                follow_up_prompt: self.follow_up_prompt
+                ,
+                conclusion_statement: self.conclusion_statement
+                ,
+                dialog_code_hook: self.dialog_code_hook
+                ,
+                fulfillment_activity: self.fulfillment_activity
+                ,
+                parent_intent_signature: self.parent_intent_signature
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                ,
+                checksum: self.checksum
+                ,
+                kendra_configuration: self.kendra_configuration
+                ,
+                input_contexts: self.input_contexts
+                ,
+                output_contexts: self.output_contexts
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIntentVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateIntentVersionOutput`](crate::output::CreateIntentVersionOutput).
@@ -6075,7 +5750,7 @@ impl CreateIntentVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBotVersionOutput {
+pub struct CreateBotVersionOutput  {
     /// <p>The name of the bot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6118,7 +5793,7 @@ pub struct CreateBotVersionOutput {
     /// <p> Specifies the target locale for the bot. </p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
-    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
     #[doc(hidden)]
     pub child_directed: std::option::Option<bool>,
@@ -6131,39 +5806,39 @@ pub struct CreateBotVersionOutput {
 }
 impl CreateBotVersionOutput {
     /// <p>The name of the bot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the bot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn intents(&self) -> std::option::Option<&[crate::model::Intent]> {
+    pub fn intents(&self) -> std::option::Option<& [crate::model::Intent]> {
         self.intents.as_deref()
     }
     /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
-    pub fn clarification_prompt(&self) -> std::option::Option<&crate::model::Prompt> {
+    pub fn clarification_prompt(&self) -> std::option::Option<& crate::model::Prompt> {
         self.clarification_prompt.as_ref()
     }
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
-    pub fn abort_statement(&self) -> std::option::Option<&crate::model::Statement> {
+    pub fn abort_statement(&self) -> std::option::Option<& crate::model::Statement> {
         self.abort_statement.as_ref()
     }
     /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date when the bot version was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
@@ -6171,22 +5846,22 @@ impl CreateBotVersionOutput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>
-    pub fn voice_id(&self) -> std::option::Option<&str> {
+    pub fn voice_id(&self) -> std::option::Option<& str> {
         self.voice_id.as_deref()
     }
     /// <p>Checksum identifying the version of the bot that was created.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The version of the bot. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p> Specifies the target locale for the bot. </p>
-    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
         self.locale.as_ref()
     }
-    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
     pub fn child_directed(&self) -> std::option::Option<bool> {
         self.child_directed
@@ -6202,7 +5877,7 @@ impl CreateBotVersionOutput {
 }
 /// See [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
 pub mod create_bot_version_output {
-
+    
     /// A builder for [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6232,8 +5907,7 @@ pub mod create_bot_version_output {
         }
         /// <p>The name of the bot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the bot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6242,8 +5916,7 @@ pub mod create_bot_version_output {
         }
         /// <p>A description of the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `intents`.
         ///
@@ -6252,17 +5925,13 @@ pub mod create_bot_version_output {
         /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
         pub fn intents(mut self, input: crate::model::Intent) -> Self {
             let mut v = self.intents.unwrap_or_default();
-            v.push(input);
-            self.intents = Some(v);
-            self
+                            v.push(input);
+                            self.intents = Some(v);
+                            self
         }
         /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-        pub fn set_intents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Intent>>,
-        ) -> Self {
-            self.intents = input;
-            self
+        pub fn set_intents(mut self, input: std::option::Option<std::vec::Vec<crate::model::Intent>>) -> Self {
+            self.intents = input; self
         }
         /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
         pub fn clarification_prompt(mut self, input: crate::model::Prompt) -> Self {
@@ -6270,12 +5939,8 @@ pub mod create_bot_version_output {
             self
         }
         /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
-        pub fn set_clarification_prompt(
-            mut self,
-            input: std::option::Option<crate::model::Prompt>,
-        ) -> Self {
-            self.clarification_prompt = input;
-            self
+        pub fn set_clarification_prompt(mut self, input: std::option::Option<crate::model::Prompt>) -> Self {
+            self.clarification_prompt = input; self
         }
         /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
         pub fn abort_statement(mut self, input: crate::model::Statement) -> Self {
@@ -6283,12 +5948,8 @@ pub mod create_bot_version_output {
             self
         }
         /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
-        pub fn set_abort_statement(
-            mut self,
-            input: std::option::Option<crate::model::Statement>,
-        ) -> Self {
-            self.abort_statement = input;
-            self
+        pub fn set_abort_statement(mut self, input: std::option::Option<crate::model::Statement>) -> Self {
+            self.abort_statement = input; self
         }
         /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -6297,8 +5958,7 @@ pub mod create_bot_version_output {
         }
         /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6306,12 +5966,8 @@ pub mod create_bot_version_output {
             self
         }
         /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6319,12 +5975,8 @@ pub mod create_bot_version_output {
             self
         }
         /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// <p>The date when the bot version was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6332,12 +5984,8 @@ pub mod create_bot_version_output {
             self
         }
         /// <p>The date when the bot version was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
@@ -6346,8 +5994,7 @@ pub mod create_bot_version_output {
         }
         /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.idle_session_ttl_in_seconds = input;
-            self
+            self.idle_session_ttl_in_seconds = input; self
         }
         /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>
         pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6356,8 +6003,7 @@ pub mod create_bot_version_output {
         }
         /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.voice_id = input;
-            self
+            self.voice_id = input; self
         }
         /// <p>Checksum identifying the version of the bot that was created.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6366,8 +6012,7 @@ pub mod create_bot_version_output {
         }
         /// <p>Checksum identifying the version of the bot that was created.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The version of the bot. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6376,8 +6021,7 @@ pub mod create_bot_version_output {
         }
         /// <p>The version of the bot. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p> Specifies the target locale for the bot. </p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
@@ -6386,20 +6030,18 @@ pub mod create_bot_version_output {
         }
         /// <p> Specifies the target locale for the bot. </p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
-        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
         /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
         pub fn child_directed(mut self, input: bool) -> Self {
             self.child_directed = Some(input);
             self
         }
-        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> 
         /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
         pub fn set_child_directed(mut self, input: std::option::Option<bool>) -> Self {
-            self.child_directed = input;
-            self
+            self.child_directed = input; self
         }
         /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
         pub fn enable_model_improvements(mut self, input: bool) -> Self {
@@ -6408,8 +6050,7 @@ pub mod create_bot_version_output {
         }
         /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
         pub fn set_enable_model_improvements(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_model_improvements = input;
-            self
+            self.enable_model_improvements = input; self
         }
         /// <p>Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.</p>
         pub fn detect_sentiment(mut self, input: bool) -> Self {
@@ -6418,32 +6059,50 @@ pub mod create_bot_version_output {
         }
         /// <p>Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.</p>
         pub fn set_detect_sentiment(mut self, input: std::option::Option<bool>) -> Self {
-            self.detect_sentiment = input;
-            self
+            self.detect_sentiment = input; self
         }
         /// Consumes the builder and constructs a [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
         pub fn build(self) -> crate::output::CreateBotVersionOutput {
             crate::output::CreateBotVersionOutput {
-                name: self.name,
-                description: self.description,
-                intents: self.intents,
-                clarification_prompt: self.clarification_prompt,
-                abort_statement: self.abort_statement,
-                status: self.status,
-                failure_reason: self.failure_reason,
-                last_updated_date: self.last_updated_date,
-                created_date: self.created_date,
-                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-                voice_id: self.voice_id,
-                checksum: self.checksum,
-                version: self.version,
-                locale: self.locale,
-                child_directed: self.child_directed,
-                enable_model_improvements: self.enable_model_improvements,
-                detect_sentiment: self.detect_sentiment,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                intents: self.intents
+                ,
+                clarification_prompt: self.clarification_prompt
+                ,
+                abort_statement: self.abort_statement
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                created_date: self.created_date
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                voice_id: self.voice_id
+                ,
+                checksum: self.checksum
+                ,
+                version: self.version
+                ,
+                locale: self.locale
+                ,
+                child_directed: self.child_directed
+                ,
+                enable_model_improvements: self.enable_model_improvements
+                ,
+                detect_sentiment: self.detect_sentiment
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
@@ -6451,3 +6110,4 @@ impl CreateBotVersionOutput {
         crate::output::create_bot_version_output::Builder::default()
     }
 }
+

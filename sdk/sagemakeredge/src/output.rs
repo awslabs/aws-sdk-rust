@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendHeartbeatOutput {}
+pub struct SendHeartbeatOutput  {
+}
 /// See [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
 pub mod send_heartbeat_output {
-
+    
     /// A builder for [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
         pub fn build(self) -> crate::output::SendHeartbeatOutput {
-            crate::output::SendHeartbeatOutput {}
+            crate::output::SendHeartbeatOutput {
+            }
         }
     }
+    
+    
 }
 impl SendHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
@@ -26,7 +31,7 @@ impl SendHeartbeatOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceRegistrationOutput {
+pub struct GetDeviceRegistrationOutput  {
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
     #[doc(hidden)]
     pub device_registration: std::option::Option<std::string::String>,
@@ -36,17 +41,17 @@ pub struct GetDeviceRegistrationOutput {
 }
 impl GetDeviceRegistrationOutput {
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-    pub fn device_registration(&self) -> std::option::Option<&str> {
+    pub fn device_registration(&self) -> std::option::Option<& str> {
         self.device_registration.as_deref()
     }
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
-    pub fn cache_ttl(&self) -> std::option::Option<&str> {
+    pub fn cache_ttl(&self) -> std::option::Option<& str> {
         self.cache_ttl.as_deref()
     }
 }
 /// See [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
 pub mod get_device_registration_output {
-
+    
     /// A builder for [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -60,12 +65,8 @@ pub mod get_device_registration_output {
             self
         }
         /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-        pub fn set_device_registration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_registration = input;
-            self
+        pub fn set_device_registration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_registration = input; self
         }
         /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
         pub fn cache_ttl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,17 +75,20 @@ pub mod get_device_registration_output {
         }
         /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
         pub fn set_cache_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cache_ttl = input;
-            self
+            self.cache_ttl = input; self
         }
         /// Consumes the builder and constructs a [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
         pub fn build(self) -> crate::output::GetDeviceRegistrationOutput {
             crate::output::GetDeviceRegistrationOutput {
-                device_registration: self.device_registration,
-                cache_ttl: self.cache_ttl,
+                device_registration: self.device_registration
+                ,
+                cache_ttl: self.cache_ttl
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeviceRegistrationOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
@@ -96,20 +100,20 @@ impl GetDeviceRegistrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentsOutput {
+pub struct GetDeploymentsOutput  {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::EdgeDeployment>>,
 }
 impl GetDeploymentsOutput {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    pub fn deployments(&self) -> std::option::Option<&[crate::model::EdgeDeployment]> {
+    pub fn deployments(&self) -> std::option::Option<& [crate::model::EdgeDeployment]> {
         self.deployments.as_deref()
     }
 }
 /// See [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
 pub mod get_deployments_output {
-
+    
     /// A builder for [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -123,25 +127,24 @@ pub mod get_deployments_output {
         /// <p>Returns a list of the configurations of the active deployments on the device.</p>
         pub fn deployments(mut self, input: crate::model::EdgeDeployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input);
-            self.deployments = Some(v);
-            self
+                            v.push(input);
+                            self.deployments = Some(v);
+                            self
         }
         /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-        pub fn set_deployments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EdgeDeployment>>,
-        ) -> Self {
-            self.deployments = input;
-            self
+        pub fn set_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::model::EdgeDeployment>>) -> Self {
+            self.deployments = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
         pub fn build(self) -> crate::output::GetDeploymentsOutput {
             crate::output::GetDeploymentsOutput {
-                deployments: self.deployments,
+                deployments: self.deployments
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
@@ -149,3 +152,4 @@ impl GetDeploymentsOutput {
         crate::output::get_deployments_output::Builder::default()
     }
 }
+

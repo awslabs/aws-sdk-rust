@@ -3,12 +3,12 @@
 /// <p>Information about an environment member for an Cloud9 development environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentMember {
-    /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
-    /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+pub struct EnvironmentMember  {
+    /// <p>The type of environment member permissions associated with this environment member. Available values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li> 
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> 
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub permissions: std::option::Option<crate::model::Permissions>,
@@ -26,35 +26,35 @@ pub struct EnvironmentMember {
     pub last_access: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentMember {
-    /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
-    /// <ul>
-    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <p>The type of environment member permissions associated with this environment member. Available values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li> 
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> 
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> 
     /// </ul>
-    pub fn permissions(&self) -> std::option::Option<&crate::model::Permissions> {
+    pub fn permissions(&self) -> std::option::Option<& crate::model::Permissions> {
         self.permissions.as_ref()
     }
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The ID of the environment for the environment member.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
-    pub fn last_access(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_access(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_access.as_ref()
     }
 }
 /// See [`EnvironmentMember`](crate::model::EnvironmentMember).
 pub mod environment_member {
-
+    
     /// A builder for [`EnvironmentMember`](crate::model::EnvironmentMember).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -65,28 +65,24 @@ pub mod environment_member {
         pub(crate) last_access: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
-        /// <ul>
-        /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+        /// <p>The type of environment member permissions associated with this environment member. Available values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>owner</code>: Owns the environment.</p> </li> 
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> 
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> 
         /// </ul>
         pub fn permissions(mut self, input: crate::model::Permissions) -> Self {
             self.permissions = Some(input);
             self
         }
-        /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
-        /// <ul>
-        /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
-        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+        /// <p>The type of environment member permissions associated with this environment member. Available values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>owner</code>: Owns the environment.</p> </li> 
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li> 
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li> 
         /// </ul>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<crate::model::Permissions>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<crate::model::Permissions>) -> Self {
+            self.permissions = input; self
         }
         /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +91,7 @@ pub mod environment_member {
         }
         /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +100,7 @@ pub mod environment_member {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_arn = input;
-            self
+            self.user_arn = input; self
         }
         /// <p>The ID of the environment for the environment member.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,12 +108,8 @@ pub mod environment_member {
             self
         }
         /// <p>The ID of the environment for the environment member.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
         pub fn last_access(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,24 +117,27 @@ pub mod environment_member {
             self
         }
         /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
-        pub fn set_last_access(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_access = input;
-            self
+        pub fn set_last_access(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_access = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentMember`](crate::model::EnvironmentMember).
         pub fn build(self) -> crate::model::EnvironmentMember {
             crate::model::EnvironmentMember {
-                permissions: self.permissions,
-                user_id: self.user_id,
-                user_arn: self.user_arn,
-                environment_id: self.environment_id,
-                last_access: self.last_access,
+                permissions: self.permissions
+                ,
+                user_id: self.user_id
+                ,
+                user_arn: self.user_arn
+                ,
+                environment_id: self.environment_id
+                ,
+                last_access: self.last_access
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentMember {
     /// Creates a new builder-style object to manufacture [`EnvironmentMember`](crate::model::EnvironmentMember).
@@ -159,9 +152,9 @@ impl EnvironmentMember {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permissions = unimplemented!();
 /// match permissions {
@@ -184,22 +177,14 @@ impl EnvironmentMember {
 /// Specifically, when `permissions` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Permissions::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Permissions {
     #[allow(missing_docs)] // documentation missing in model
     Owner,
@@ -208,7 +193,7 @@ pub enum Permissions {
     #[allow(missing_docs)] // documentation missing in model
     ReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Permissions {
     fn from(s: &str) -> Self {
@@ -216,17 +201,17 @@ impl std::convert::From<&str> for Permissions {
             "owner" => Permissions::Owner,
             "read-only" => Permissions::ReadOnly,
             "read-write" => Permissions::ReadWrite,
-            other => Permissions::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Permissions::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Permissions {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Permissions::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Permissions::from(s))
+                }
+            }
 impl Permissions {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -234,12 +219,14 @@ impl Permissions {
             Permissions::Owner => "owner",
             Permissions::ReadOnly => "read-only",
             Permissions::ReadWrite => "read-write",
-            Permissions::Unknown(value) => value.as_str(),
+            Permissions::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["owner", "read-only", "read-write"]
+        &[
+            "owner", "read-only", "read-write"
+        ]
     }
 }
 impl AsRef<str> for Permissions {
@@ -254,9 +241,9 @@ impl AsRef<str> for Permissions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let memberpermissions = unimplemented!();
 /// match memberpermissions {
@@ -278,60 +265,52 @@ impl AsRef<str> for Permissions {
 /// Specifically, when `memberpermissions` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MemberPermissions::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MemberPermissions {
     #[allow(missing_docs)] // documentation missing in model
     ReadOnly,
     #[allow(missing_docs)] // documentation missing in model
     ReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberPermissions {
     fn from(s: &str) -> Self {
         match s {
             "read-only" => MemberPermissions::ReadOnly,
             "read-write" => MemberPermissions::ReadWrite,
-            other => {
-                MemberPermissions::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MemberPermissions::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MemberPermissions {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MemberPermissions::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MemberPermissions::from(s))
+                }
+            }
 impl MemberPermissions {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberPermissions::ReadOnly => "read-only",
             MemberPermissions::ReadWrite => "read-write",
-            MemberPermissions::Unknown(value) => value.as_str(),
+            MemberPermissions::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["read-only", "read-write"]
+        &[
+            "read-only", "read-write"
+        ]
     }
 }
 impl AsRef<str> for MemberPermissions {
@@ -346,9 +325,9 @@ impl AsRef<str> for MemberPermissions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let managedcredentialsaction = unimplemented!();
 /// match managedcredentialsaction {
@@ -370,60 +349,52 @@ impl AsRef<str> for MemberPermissions {
 /// Specifically, when `managedcredentialsaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ManagedCredentialsAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ManagedCredentialsAction {
     #[allow(missing_docs)] // documentation missing in model
     Disable,
     #[allow(missing_docs)] // documentation missing in model
     Enable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ManagedCredentialsAction {
     fn from(s: &str) -> Self {
         match s {
             "DISABLE" => ManagedCredentialsAction::Disable,
             "ENABLE" => ManagedCredentialsAction::Enable,
-            other => ManagedCredentialsAction::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ManagedCredentialsAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ManagedCredentialsAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ManagedCredentialsAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ManagedCredentialsAction::from(s))
+                }
+            }
 impl ManagedCredentialsAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManagedCredentialsAction::Disable => "DISABLE",
             ManagedCredentialsAction::Enable => "ENABLE",
-            ManagedCredentialsAction::Unknown(value) => value.as_str(),
+            ManagedCredentialsAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLE", "ENABLE"]
+        &[
+            "DISABLE", "ENABLE"
+        ]
     }
 }
 impl AsRef<str> for ManagedCredentialsAction {
@@ -435,7 +406,7 @@ impl AsRef<str> for ManagedCredentialsAction {
 /// <p>Metadata that is associated with Amazon Web Services resources. In particular, a name-value pair that can be associated with an Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by Amazon Web Services services. A system tag is prefixed with <code>"aws:"</code> and cannot be modified by the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The <b>name</b> part of a tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -445,15 +416,15 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The <b>name</b> part of a tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The <b>value</b> part of a tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
+impl  std::fmt::Debug for Tag  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
@@ -463,7 +434,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -478,8 +449,7 @@ pub mod tag {
         }
         /// <p>The <b>name</b> part of a tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The <b>value</b> part of a tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -488,14 +458,15 @@ pub mod tag {
         }
         /// <p>The <b>value</b> part of a tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
@@ -507,6 +478,8 @@ pub mod tag {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -521,9 +494,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentstatus = unimplemented!();
 /// match environmentstatus {
@@ -550,22 +523,14 @@ impl Tag {
 /// Specifically, when `environmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Connecting,
@@ -582,7 +547,7 @@ pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentStatus {
     fn from(s: &str) -> Self {
@@ -594,19 +559,17 @@ impl std::convert::From<&str> for EnvironmentStatus {
             "ready" => EnvironmentStatus::Ready,
             "stopped" => EnvironmentStatus::Stopped,
             "stopping" => EnvironmentStatus::Stopping,
-            other => {
-                EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentStatus::from(s))
+                }
+            }
 impl EnvironmentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -618,19 +581,13 @@ impl EnvironmentStatus {
             EnvironmentStatus::Ready => "ready",
             EnvironmentStatus::Stopped => "stopped",
             EnvironmentStatus::Stopping => "stopping",
-            EnvironmentStatus::Unknown(value) => value.as_str(),
+            EnvironmentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "connecting",
-            "creating",
-            "deleting",
-            "error",
-            "ready",
-            "stopped",
-            "stopping",
+            "connecting", "creating", "deleting", "error", "ready", "stopped", "stopping"
         ]
     }
 }
@@ -643,7 +600,7 @@ impl AsRef<str> for EnvironmentStatus {
 /// <p>Information about an Cloud9 development environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Environment {
+pub struct Environment  {
     /// <p>The ID of the environment.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -653,10 +610,10 @@ pub struct Environment {
     /// <p>The description for the environment.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of environment. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
-    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+    /// <p>The type of environment. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> 
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EnvironmentType>,
@@ -672,79 +629,77 @@ pub struct Environment {
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::EnvironmentLifecycle>,
-    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub managed_credentials_status: std::option::Option<crate::model::ManagedCredentialsStatus>,
 }
 impl Environment {
     /// <p>The ID of the environment.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description for the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The type of environment. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
-    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+    /// <p>The type of environment. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> 
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EnvironmentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EnvironmentType> {
         self.r#type.as_ref()
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
-    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+    pub fn connection_type(&self) -> std::option::Option<& crate::model::ConnectionType> {
         self.connection_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
-    pub fn owner_arn(&self) -> std::option::Option<&str> {
+    pub fn owner_arn(&self) -> std::option::Option<& str> {
         self.owner_arn.as_deref()
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::EnvironmentLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::EnvironmentLifecycle> {
         self.lifecycle.as_ref()
     }
-    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
     /// </ul>
-    pub fn managed_credentials_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ManagedCredentialsStatus> {
+    pub fn managed_credentials_status(&self) -> std::option::Option<& crate::model::ManagedCredentialsStatus> {
         self.managed_credentials_status.as_ref()
     }
 }
-impl std::fmt::Debug for Environment {
+impl  std::fmt::Debug for Environment  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Environment");
         formatter.field("id", &self.id);
@@ -755,16 +710,13 @@ impl std::fmt::Debug for Environment {
         formatter.field("arn", &self.arn);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("lifecycle", &self.lifecycle);
-        formatter.field(
-            "managed_credentials_status",
-            &self.managed_credentials_status,
-        );
+        formatter.field("managed_credentials_status", &self.managed_credentials_status);
         formatter.finish()
     }
 }
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
-
+    
     /// A builder for [`Environment`](crate::model::Environment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -776,8 +728,7 @@ pub mod environment {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) owner_arn: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::EnvironmentLifecycle>,
-        pub(crate) managed_credentials_status:
-            std::option::Option<crate::model::ManagedCredentialsStatus>,
+        pub(crate) managed_credentials_status: std::option::Option<crate::model::ManagedCredentialsStatus>,
     }
     impl Builder {
         /// <p>The ID of the environment.</p>
@@ -787,8 +738,7 @@ pub mod environment {
         }
         /// <p>The ID of the environment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the environment.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -797,8 +747,7 @@ pub mod environment {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description for the environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -807,29 +756,24 @@ pub mod environment {
         }
         /// <p>The description for the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The type of environment. Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
-        /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+        /// <p>The type of environment. Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> 
+        /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::EnvironmentType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of environment. Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
-        /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+        /// <p>The type of environment. Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> 
+        /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::EnvironmentType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
         pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
@@ -837,12 +781,8 @@ pub mod environment {
             self
         }
         /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
-        pub fn set_connection_type(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionType>,
-        ) -> Self {
-            self.connection_type = input;
-            self
+        pub fn set_connection_type(mut self, input: std::option::Option<crate::model::ConnectionType>) -> Self {
+            self.connection_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -851,8 +791,7 @@ pub mod environment {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
         pub fn owner_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -861,8 +800,7 @@ pub mod environment {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
         pub fn set_owner_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_arn = input;
-            self
+            self.owner_arn = input; self
         }
         /// <p>The state of the environment in its creation or deletion lifecycle.</p>
         pub fn lifecycle(mut self, input: crate::model::EnvironmentLifecycle) -> Self {
@@ -870,65 +808,63 @@ pub mod environment {
             self
         }
         /// <p>The state of the environment in its creation or deletion lifecycle.</p>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentLifecycle>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::EnvironmentLifecycle>) -> Self {
+            self.lifecycle = input; self
         }
-        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
-        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
-        /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
-        /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
-        /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-        /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
-        /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> 
+        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
+        /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> 
+        /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> 
+        /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+        /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> 
+        /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
         /// </ul>
-        pub fn managed_credentials_status(
-            mut self,
-            input: crate::model::ManagedCredentialsStatus,
-        ) -> Self {
+        pub fn managed_credentials_status(mut self, input: crate::model::ManagedCredentialsStatus) -> Self {
             self.managed_credentials_status = Some(input);
             self
         }
-        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
-        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
-        /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
-        /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
-        /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-        /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
-        /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> 
+        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
+        /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> 
+        /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> 
+        /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+        /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> 
+        /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
         /// </ul>
-        pub fn set_managed_credentials_status(
-            mut self,
-            input: std::option::Option<crate::model::ManagedCredentialsStatus>,
-        ) -> Self {
-            self.managed_credentials_status = input;
-            self
+        pub fn set_managed_credentials_status(mut self, input: std::option::Option<crate::model::ManagedCredentialsStatus>) -> Self {
+            self.managed_credentials_status = input; self
         }
         /// Consumes the builder and constructs a [`Environment`](crate::model::Environment).
         pub fn build(self) -> crate::model::Environment {
             crate::model::Environment {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                connection_type: self.connection_type,
-                arn: self.arn,
-                owner_arn: self.owner_arn,
-                lifecycle: self.lifecycle,
-                managed_credentials_status: self.managed_credentials_status,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                connection_type: self.connection_type
+                ,
+                arn: self.arn
+                ,
+                owner_arn: self.owner_arn
+                ,
+                lifecycle: self.lifecycle
+                ,
+                managed_credentials_status: self.managed_credentials_status
+                ,
             }
         }
     }
@@ -943,13 +879,12 @@ pub mod environment {
             formatter.field("arn", &self.arn);
             formatter.field("owner_arn", &self.owner_arn);
             formatter.field("lifecycle", &self.lifecycle);
-            formatter.field(
-                "managed_credentials_status",
-                &self.managed_credentials_status,
-            );
+            formatter.field("managed_credentials_status", &self.managed_credentials_status);
             formatter.finish()
         }
     }
+    
+    
 }
 impl Environment {
     /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
@@ -964,9 +899,9 @@ impl Environment {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let managedcredentialsstatus = unimplemented!();
 /// match managedcredentialsstatus {
@@ -997,22 +932,14 @@ impl Environment {
 /// Specifically, when `managedcredentialsstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ManagedCredentialsStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ManagedCredentialsStatus {
     #[allow(missing_docs)] // documentation missing in model
     DisabledByCollaborator,
@@ -1037,7 +964,7 @@ pub enum ManagedCredentialsStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingStartRemovalByOwner,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ManagedCredentialsStatus {
     fn from(s: &str) -> Self {
@@ -1047,33 +974,23 @@ impl std::convert::From<&str> for ManagedCredentialsStatus {
             "DISABLED_BY_OWNER" => ManagedCredentialsStatus::DisabledByOwner,
             "ENABLED_BY_OWNER" => ManagedCredentialsStatus::EnabledByOwner,
             "ENABLED_ON_CREATE" => ManagedCredentialsStatus::EnabledOnCreate,
-            "FAILED_REMOVAL_BY_COLLABORATOR" => {
-                ManagedCredentialsStatus::FailedRemovalByCollaborator
-            }
+            "FAILED_REMOVAL_BY_COLLABORATOR" => ManagedCredentialsStatus::FailedRemovalByCollaborator,
             "FAILED_REMOVAL_BY_OWNER" => ManagedCredentialsStatus::FailedRemovalByOwner,
-            "PENDING_REMOVAL_BY_COLLABORATOR" => {
-                ManagedCredentialsStatus::PendingRemovalByCollaborator
-            }
+            "PENDING_REMOVAL_BY_COLLABORATOR" => ManagedCredentialsStatus::PendingRemovalByCollaborator,
             "PENDING_REMOVAL_BY_OWNER" => ManagedCredentialsStatus::PendingRemovalByOwner,
-            "PENDING_START_REMOVAL_BY_COLLABORATOR" => {
-                ManagedCredentialsStatus::PendingStartRemovalByCollaborator
-            }
-            "PENDING_START_REMOVAL_BY_OWNER" => {
-                ManagedCredentialsStatus::PendingStartRemovalByOwner
-            }
-            other => ManagedCredentialsStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "PENDING_START_REMOVAL_BY_COLLABORATOR" => ManagedCredentialsStatus::PendingStartRemovalByCollaborator,
+            "PENDING_START_REMOVAL_BY_OWNER" => ManagedCredentialsStatus::PendingStartRemovalByOwner,
+            other => ManagedCredentialsStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ManagedCredentialsStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ManagedCredentialsStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ManagedCredentialsStatus::from(s))
+                }
+            }
 impl ManagedCredentialsStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1083,37 +1000,19 @@ impl ManagedCredentialsStatus {
             ManagedCredentialsStatus::DisabledByOwner => "DISABLED_BY_OWNER",
             ManagedCredentialsStatus::EnabledByOwner => "ENABLED_BY_OWNER",
             ManagedCredentialsStatus::EnabledOnCreate => "ENABLED_ON_CREATE",
-            ManagedCredentialsStatus::FailedRemovalByCollaborator => {
-                "FAILED_REMOVAL_BY_COLLABORATOR"
-            }
+            ManagedCredentialsStatus::FailedRemovalByCollaborator => "FAILED_REMOVAL_BY_COLLABORATOR",
             ManagedCredentialsStatus::FailedRemovalByOwner => "FAILED_REMOVAL_BY_OWNER",
-            ManagedCredentialsStatus::PendingRemovalByCollaborator => {
-                "PENDING_REMOVAL_BY_COLLABORATOR"
-            }
+            ManagedCredentialsStatus::PendingRemovalByCollaborator => "PENDING_REMOVAL_BY_COLLABORATOR",
             ManagedCredentialsStatus::PendingRemovalByOwner => "PENDING_REMOVAL_BY_OWNER",
-            ManagedCredentialsStatus::PendingStartRemovalByCollaborator => {
-                "PENDING_START_REMOVAL_BY_COLLABORATOR"
-            }
-            ManagedCredentialsStatus::PendingStartRemovalByOwner => {
-                "PENDING_START_REMOVAL_BY_OWNER"
-            }
-            ManagedCredentialsStatus::Unknown(value) => value.as_str(),
+            ManagedCredentialsStatus::PendingStartRemovalByCollaborator => "PENDING_START_REMOVAL_BY_COLLABORATOR",
+            ManagedCredentialsStatus::PendingStartRemovalByOwner => "PENDING_START_REMOVAL_BY_OWNER",
+            ManagedCredentialsStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DISABLED_BY_COLLABORATOR",
-            "DISABLED_BY_DEFAULT",
-            "DISABLED_BY_OWNER",
-            "ENABLED_BY_OWNER",
-            "ENABLED_ON_CREATE",
-            "FAILED_REMOVAL_BY_COLLABORATOR",
-            "FAILED_REMOVAL_BY_OWNER",
-            "PENDING_REMOVAL_BY_COLLABORATOR",
-            "PENDING_REMOVAL_BY_OWNER",
-            "PENDING_START_REMOVAL_BY_COLLABORATOR",
-            "PENDING_START_REMOVAL_BY_OWNER",
+            "DISABLED_BY_COLLABORATOR", "DISABLED_BY_DEFAULT", "DISABLED_BY_OWNER", "ENABLED_BY_OWNER", "ENABLED_ON_CREATE", "FAILED_REMOVAL_BY_COLLABORATOR", "FAILED_REMOVAL_BY_OWNER", "PENDING_REMOVAL_BY_COLLABORATOR", "PENDING_REMOVAL_BY_OWNER", "PENDING_START_REMOVAL_BY_COLLABORATOR", "PENDING_START_REMOVAL_BY_OWNER"
         ]
     }
 }
@@ -1126,14 +1025,14 @@ impl AsRef<str> for ManagedCredentialsStatus {
 /// <p>Information about the current creation or deletion lifecycle state of an Cloud9 development environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentLifecycle {
-    /// <p>The current creation or deletion lifecycle state of the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+pub struct EnvironmentLifecycle  {
+    /// <p>The current creation or deletion lifecycle state of the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li> 
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li> 
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li> 
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li> 
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentLifecycleStatus>,
@@ -1145,29 +1044,29 @@ pub struct EnvironmentLifecycle {
     pub failure_resource: std::option::Option<std::string::String>,
 }
 impl EnvironmentLifecycle {
-    /// <p>The current creation or deletion lifecycle state of the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+    /// <p>The current creation or deletion lifecycle state of the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li> 
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li> 
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li> 
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li> 
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentLifecycleStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EnvironmentLifecycleStatus> {
         self.status.as_ref()
     }
     /// <p>Any informational message about the lifecycle state of the environment.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-    pub fn failure_resource(&self) -> std::option::Option<&str> {
+    pub fn failure_resource(&self) -> std::option::Option<& str> {
         self.failure_resource.as_deref()
     }
 }
 /// See [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
 pub mod environment_lifecycle {
-
+    
     /// A builder for [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1176,32 +1075,28 @@ pub mod environment_lifecycle {
         pub(crate) failure_resource: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current creation or deletion lifecycle state of the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-        /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-        /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-        /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+        /// <p>The current creation or deletion lifecycle state of the environment.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li> 
+        /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li> 
+        /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li> 
+        /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li> 
+        /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::EnvironmentLifecycleStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current creation or deletion lifecycle state of the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-        /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-        /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-        /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-        /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+        /// <p>The current creation or deletion lifecycle state of the environment.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li> 
+        /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li> 
+        /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li> 
+        /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li> 
+        /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentLifecycleStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EnvironmentLifecycleStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Any informational message about the lifecycle state of the environment.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1210,8 +1105,7 @@ pub mod environment_lifecycle {
         }
         /// <p>Any informational message about the lifecycle state of the environment.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
         pub fn failure_resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1219,22 +1113,23 @@ pub mod environment_lifecycle {
             self
         }
         /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-        pub fn set_failure_resource(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_resource = input;
-            self
+        pub fn set_failure_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_resource = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
         pub fn build(self) -> crate::model::EnvironmentLifecycle {
             crate::model::EnvironmentLifecycle {
-                status: self.status,
-                reason: self.reason,
-                failure_resource: self.failure_resource,
+                status: self.status
+                ,
+                reason: self.reason
+                ,
+                failure_resource: self.failure_resource
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentLifecycle {
     /// Creates a new builder-style object to manufacture [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
@@ -1249,9 +1144,9 @@ impl EnvironmentLifecycle {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentlifecyclestatus = unimplemented!();
 /// match environmentlifecyclestatus {
@@ -1276,22 +1171,14 @@ impl EnvironmentLifecycle {
 /// Specifically, when `environmentlifecyclestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentLifecycleStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentLifecycleStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -1304,7 +1191,7 @@ pub enum EnvironmentLifecycleStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentLifecycleStatus {
     fn from(s: &str) -> Self {
@@ -1314,19 +1201,17 @@ impl std::convert::From<&str> for EnvironmentLifecycleStatus {
             "CREATING" => EnvironmentLifecycleStatus::Creating,
             "DELETE_FAILED" => EnvironmentLifecycleStatus::DeleteFailed,
             "DELETING" => EnvironmentLifecycleStatus::Deleting,
-            other => EnvironmentLifecycleStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EnvironmentLifecycleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentLifecycleStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentLifecycleStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentLifecycleStatus::from(s))
+                }
+            }
 impl EnvironmentLifecycleStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1336,17 +1221,13 @@ impl EnvironmentLifecycleStatus {
             EnvironmentLifecycleStatus::Creating => "CREATING",
             EnvironmentLifecycleStatus::DeleteFailed => "DELETE_FAILED",
             EnvironmentLifecycleStatus::Deleting => "DELETING",
-            EnvironmentLifecycleStatus::Unknown(value) => value.as_str(),
+            EnvironmentLifecycleStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATED",
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETE_FAILED",
-            "DELETING",
+            "CREATED", "CREATE_FAILED", "CREATING", "DELETE_FAILED", "DELETING"
         ]
     }
 }
@@ -1362,9 +1243,9 @@ impl AsRef<str> for EnvironmentLifecycleStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectiontype = unimplemented!();
 /// match connectiontype {
@@ -1386,58 +1267,52 @@ impl AsRef<str> for EnvironmentLifecycleStatus {
 /// Specifically, when `connectiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectionType {
     #[allow(missing_docs)] // documentation missing in model
     ConnectSsh,
     #[allow(missing_docs)] // documentation missing in model
     ConnectSsm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionType {
     fn from(s: &str) -> Self {
         match s {
             "CONNECT_SSH" => ConnectionType::ConnectSsh,
             "CONNECT_SSM" => ConnectionType::ConnectSsm,
-            other => ConnectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConnectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectionType::from(s))
+                }
+            }
 impl ConnectionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionType::ConnectSsh => "CONNECT_SSH",
             ConnectionType::ConnectSsm => "CONNECT_SSM",
-            ConnectionType::Unknown(value) => value.as_str(),
+            ConnectionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONNECT_SSH", "CONNECT_SSM"]
+        &[
+            "CONNECT_SSH", "CONNECT_SSM"
+        ]
     }
 }
 impl AsRef<str> for ConnectionType {
@@ -1452,9 +1327,9 @@ impl AsRef<str> for ConnectionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmenttype = unimplemented!();
 /// match environmenttype {
@@ -1476,58 +1351,52 @@ impl AsRef<str> for ConnectionType {
 /// Specifically, when `environmenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
     #[allow(missing_docs)] // documentation missing in model
     Ssh,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentType {
     fn from(s: &str) -> Self {
         match s {
             "ec2" => EnvironmentType::Ec2,
             "ssh" => EnvironmentType::Ssh,
-            other => EnvironmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EnvironmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentType::from(s))
+                }
+            }
 impl EnvironmentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentType::Ec2 => "ec2",
             EnvironmentType::Ssh => "ssh",
-            EnvironmentType::Unknown(value) => value.as_str(),
+            EnvironmentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ec2", "ssh"]
+        &[
+            "ec2", "ssh"
+        ]
     }
 }
 impl AsRef<str> for EnvironmentType {
@@ -1535,3 +1404,4 @@ impl AsRef<str> for EnvironmentType {
         self.as_str()
     }
 }
+

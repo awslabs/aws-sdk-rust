@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`AddListenerCertificatesInput`](crate::input::AddListenerCertificatesInput).
 pub mod add_listener_certificates_input {
-
+    
     /// A builder for [`AddListenerCertificatesInput`](crate::input::AddListenerCertificatesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -18,8 +18,7 @@ pub mod add_listener_certificates_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.listener_arn = input;
-            self
+            self.listener_arn = input; self
         }
         /// Appends an item to `certificates`.
         ///
@@ -28,152 +27,96 @@ pub mod add_listener_certificates_input {
         /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Certificate>>) -> Self {
+            self.certificates = input; self
         }
         /// Consumes the builder and constructs a [`AddListenerCertificatesInput`](crate::input::AddListenerCertificatesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AddListenerCertificatesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::AddListenerCertificatesInput {
-                listener_arn: self.listener_arn,
-                certificates: self.certificates,
-            })
+        pub fn build(self) -> Result<crate::input::AddListenerCertificatesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AddListenerCertificatesInput {
+                    listener_arn: self.listener_arn
+                    ,
+                    certificates: self.certificates
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AddListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`AddListenerCertificates`](crate::operation::AddListenerCertificates)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AddListenerCertificates,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddListenerCertificates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AddListenerCertificatesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AddListenerCertificatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AddListenerCertificatesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AddListenerCertificatesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_listener_certificates(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_add_listener_certificates(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AddListenerCertificates::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AddListenerCertificates",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddListenerCertificates::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddListenerCertificates", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -185,7 +128,7 @@ impl AddListenerCertificatesInput {
 
 /// See [`AddTagsInput`](crate::input::AddTagsInput).
 pub mod add_tags_input {
-
+    
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -200,17 +143,13 @@ pub mod add_tags_input {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -219,146 +158,96 @@ pub mod add_tags_input {
         /// <p>The tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::AddTagsInput {
-                resource_arns: self.resource_arns,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AddTagsInput {
+                    resource_arns: self.resource_arns
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AddTags,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AddTagsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AddTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AddTagsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AddTagsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "AddTags",
-                    "elasticloadbalancingv2",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddTags", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -370,7 +259,7 @@ impl AddTagsInput {
 
 /// See [`CreateListenerInput`](crate::input::CreateListenerInput).
 pub mod create_listener_input {
-
+    
     /// A builder for [`CreateListenerInput`](crate::input::CreateListenerInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -390,12 +279,8 @@ pub mod create_listener_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
         pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
@@ -403,12 +288,8 @@ pub mod create_listener_input {
             self
         }
         /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ProtocolEnum>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::ProtocolEnum>) -> Self {
+            self.protocol = input; self
         }
         /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -417,20 +298,18 @@ pub mod create_listener_input {
         }
         /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssl_policy = Some(input.into());
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssl_policy = input;
-            self
+            self.ssl_policy = input; self
         }
         /// Appends an item to `certificates`.
         ///
@@ -439,17 +318,13 @@ pub mod create_listener_input {
         /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Certificate>>) -> Self {
+            self.certificates = input; self
         }
         /// Appends an item to `default_actions`.
         ///
@@ -458,52 +333,44 @@ pub mod create_listener_input {
         /// <p>The actions for the default rule.</p>
         pub fn default_actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.default_actions.unwrap_or_default();
-            v.push(input);
-            self.default_actions = Some(v);
-            self
+                            v.push(input);
+                            self.default_actions = Some(v);
+                            self
         }
         /// <p>The actions for the default rule.</p>
-        pub fn set_default_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Action>>,
-        ) -> Self {
-            self.default_actions = input;
-            self
+        pub fn set_default_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Action>>) -> Self {
+            self.default_actions = input; self
         }
         /// Appends an item to `alpn_policy`.
         ///
         /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
         ///
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>HTTP1Only</code> </p> </li>
-        /// <li> <p> <code>HTTP2Only</code> </p> </li>
-        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-        /// <li> <p> <code>None</code> </p> </li>
-        /// </ul>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+        /// <li> <p> <code>None</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alpn_policy.unwrap_or_default();
-            v.push(input.into());
-            self.alpn_policy = Some(v);
-            self
+                            v.push(input.into());
+                            self.alpn_policy = Some(v);
+                            self
         }
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>HTTP1Only</code> </p> </li>
-        /// <li> <p> <code>HTTP2Only</code> </p> </li>
-        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-        /// <li> <p> <code>None</code> </p> </li>
-        /// </ul>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+        /// <li> <p> <code>None</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-        pub fn set_alpn_policy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alpn_policy = input;
-            self
+        pub fn set_alpn_policy(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alpn_policy = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -512,154 +379,108 @@ pub mod create_listener_input {
         /// <p>The tags to assign to the listener.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags to assign to the listener.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateListenerInput`](crate::input::CreateListenerInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateListenerInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateListenerInput {
-                load_balancer_arn: self.load_balancer_arn,
-                protocol: self.protocol,
-                port: self.port,
-                ssl_policy: self.ssl_policy,
-                certificates: self.certificates,
-                default_actions: self.default_actions,
-                alpn_policy: self.alpn_policy,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateListenerInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateListenerInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                    protocol: self.protocol
+                    ,
+                    port: self.port
+                    ,
+                    ssl_policy: self.ssl_policy
+                    ,
+                    certificates: self.certificates
+                    ,
+                    default_actions: self.default_actions
+                    ,
+                    alpn_policy: self.alpn_policy
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateListenerInput {
     /// Consumes the builder and constructs an Operation<[`CreateListener`](crate::operation::CreateListener)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateListener,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateListener, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateListenerInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateListenerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateListenerInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateListenerInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_listener(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateListener::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateListener",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateListener::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateListener", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -671,7 +492,7 @@ impl CreateListenerInput {
 
 /// See [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
 pub mod create_load_balancer_input {
-
+    
     /// A builder for [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -686,75 +507,66 @@ pub mod create_load_balancer_input {
         pub(crate) customer_owned_ipv4_pool: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the load balancer.</p>
+        /// <p>The name of the load balancer.</p> 
         /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the load balancer.</p>
+        /// <p>The name of the load balancer.</p> 
         /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `subnets`.
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
-        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p> 
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p> 
+        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p> 
         /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
-        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p> 
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p> 
+        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p> 
         /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Appends an item to `subnet_mappings`.
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p> 
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> 
+        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p> 
         /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input);
-            self.subnet_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.subnet_mappings = Some(v);
+                            self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p> 
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> 
+        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p> 
         /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-        pub fn set_subnet_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
-        ) -> Self {
-            self.subnet_mappings = input;
-            self
+        pub fn set_subnet_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>) -> Self {
+            self.subnet_mappings = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -763,36 +575,28 @@ pub mod create_load_balancer_input {
         /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
-        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
-        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
-        /// <p>The default is an Internet-facing load balancer.</p>
+        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p> 
+        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p> 
+        /// <p>The default is an Internet-facing load balancer.</p> 
         /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
         pub fn scheme(mut self, input: crate::model::LoadBalancerSchemeEnum) -> Self {
             self.scheme = Some(input);
             self
         }
-        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
-        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
-        /// <p>The default is an Internet-facing load balancer.</p>
+        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p> 
+        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p> 
+        /// <p>The default is an Internet-facing load balancer.</p> 
         /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
-        pub fn set_scheme(
-            mut self,
-            input: std::option::Option<crate::model::LoadBalancerSchemeEnum>,
-        ) -> Self {
-            self.scheme = input;
-            self
+        pub fn set_scheme(mut self, input: std::option::Option<crate::model::LoadBalancerSchemeEnum>) -> Self {
+            self.scheme = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -801,17 +605,13 @@ pub mod create_load_balancer_input {
         /// <p>The tags to assign to the load balancer.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags to assign to the load balancer.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The type of load balancer. The default is <code>application</code>.</p>
         pub fn r#type(mut self, input: crate::model::LoadBalancerTypeEnum) -> Self {
@@ -819,12 +619,8 @@ pub mod create_load_balancer_input {
             self
         }
         /// <p>The type of load balancer. The default is <code>application</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::LoadBalancerTypeEnum>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::LoadBalancerTypeEnum>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
@@ -832,12 +628,8 @@ pub mod create_load_balancer_input {
             self
         }
         /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
-        pub fn set_ip_address_type(
-            mut self,
-            input: std::option::Option<crate::model::IpAddressType>,
-        ) -> Self {
-            self.ip_address_type = input;
-            self
+        pub fn set_ip_address_type(mut self, input: std::option::Option<crate::model::IpAddressType>) -> Self {
+            self.ip_address_type = input; self
         }
         /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
         pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
@@ -845,152 +637,105 @@ pub mod create_load_balancer_input {
             self
         }
         /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
-        pub fn set_customer_owned_ipv4_pool(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_owned_ipv4_pool = input;
-            self
+        pub fn set_customer_owned_ipv4_pool(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_owned_ipv4_pool = input; self
         }
         /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLoadBalancerInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateLoadBalancerInput {
-                name: self.name,
-                subnets: self.subnets,
-                subnet_mappings: self.subnet_mappings,
-                security_groups: self.security_groups,
-                scheme: self.scheme,
-                tags: self.tags,
-                r#type: self.r#type,
-                ip_address_type: self.ip_address_type,
-                customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLoadBalancerInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateLoadBalancerInput {
+                    name: self.name
+                    ,
+                    subnets: self.subnets
+                    ,
+                    subnet_mappings: self.subnet_mappings
+                    ,
+                    security_groups: self.security_groups
+                    ,
+                    scheme: self.scheme
+                    ,
+                    tags: self.tags
+                    ,
+                    r#type: self.r#type
+                    ,
+                    ip_address_type: self.ip_address_type
+                    ,
+                    customer_owned_ipv4_pool: self.customer_owned_ipv4_pool
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancer`](crate::operation::CreateLoadBalancer)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLoadBalancer,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLoadBalancerInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateLoadBalancerInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateLoadBalancerInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLoadBalancer::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLoadBalancer",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLoadBalancer::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLoadBalancer", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1002,7 +747,7 @@ impl CreateLoadBalancerInput {
 
 /// See [`CreateRuleInput`](crate::input::CreateRuleInput).
 pub mod create_rule_input {
-
+    
     /// A builder for [`CreateRuleInput`](crate::input::CreateRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1020,8 +765,7 @@ pub mod create_rule_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.listener_arn = input;
-            self
+            self.listener_arn = input; self
         }
         /// Appends an item to `conditions`.
         ///
@@ -1030,17 +774,13 @@ pub mod create_rule_input {
         /// <p>The conditions.</p>
         pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input);
-            self.conditions = Some(v);
-            self
+                            v.push(input);
+                            self.conditions = Some(v);
+                            self
         }
         /// <p>The conditions.</p>
-        pub fn set_conditions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>,
-        ) -> Self {
-            self.conditions = input;
-            self
+        pub fn set_conditions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>) -> Self {
+            self.conditions = input; self
         }
         /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -1049,8 +789,7 @@ pub mod create_rule_input {
         }
         /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// Appends an item to `actions`.
         ///
@@ -1059,17 +798,13 @@ pub mod create_rule_input {
         /// <p>The actions.</p>
         pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input);
-            self.actions = Some(v);
-            self
+                            v.push(input);
+                            self.actions = Some(v);
+                            self
         }
         /// <p>The actions.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Action>>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Action>>) -> Self {
+            self.actions = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1078,151 +813,102 @@ pub mod create_rule_input {
         /// <p>The tags to assign to the rule.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags to assign to the rule.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateRuleInput`](crate::input::CreateRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateRuleInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateRuleInput {
-                listener_arn: self.listener_arn,
-                conditions: self.conditions,
-                priority: self.priority,
-                actions: self.actions,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateRuleInput {
+                    listener_arn: self.listener_arn
+                    ,
+                    conditions: self.conditions
+                    ,
+                    priority: self.priority
+                    ,
+                    actions: self.actions
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateRule`](crate::operation::CreateRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_rule(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateRule",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateRule", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1234,7 +920,7 @@ impl CreateRuleInput {
 
 /// See [`CreateTargetGroupInput`](crate::input::CreateTargetGroupInput).
 pub mod create_target_group_input {
-
+    
     /// A builder for [`CreateTargetGroupInput`](crate::input::CreateTargetGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1257,17 +943,16 @@ pub mod create_target_group_input {
         pub(crate) ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
     }
     impl Builder {
-        /// <p>The name of the target group.</p>
+        /// <p>The name of the target group.</p> 
         /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the target group.</p>
+        /// <p>The name of the target group.</p> 
         /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
         pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
@@ -1275,12 +960,8 @@ pub mod create_target_group_input {
             self
         }
         /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ProtocolEnum>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::ProtocolEnum>) -> Self {
+            self.protocol = input; self
         }
         /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
         pub fn protocol_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1288,12 +969,8 @@ pub mod create_target_group_input {
             self
         }
         /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
-        pub fn set_protocol_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protocol_version = input;
-            self
+        pub fn set_protocol_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol_version = input; self
         }
         /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -1302,8 +979,7 @@ pub mod create_target_group_input {
         }
         /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1312,8 +988,7 @@ pub mod create_target_group_input {
         }
         /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
@@ -1321,12 +996,8 @@ pub mod create_target_group_input {
             self
         }
         /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-        pub fn set_health_check_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ProtocolEnum>,
-        ) -> Self {
-            self.health_check_protocol = input;
-            self
+        pub fn set_health_check_protocol(mut self, input: std::option::Option<crate::model::ProtocolEnum>) -> Self {
+            self.health_check_protocol = input; self
         }
         /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
         pub fn health_check_port(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1334,12 +1005,8 @@ pub mod create_target_group_input {
             self
         }
         /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
-        pub fn set_health_check_port(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_check_port = input;
-            self
+        pub fn set_health_check_port(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_check_port = input; self
         }
         /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
         pub fn health_check_enabled(mut self, input: bool) -> Self {
@@ -1348,25 +1015,20 @@ pub mod create_target_group_input {
         }
         /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
         pub fn set_health_check_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.health_check_enabled = input;
-            self
+            self.health_check_enabled = input; self
         }
-        /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-        /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+        /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+        /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
         /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_path = Some(input.into());
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-        /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+        /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+        /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
         /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-        pub fn set_health_check_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_check_path = input;
-            self
+        pub fn set_health_check_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_check_path = input; self
         }
         /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
@@ -1374,12 +1036,8 @@ pub mod create_target_group_input {
             self
         }
         /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
-        pub fn set_health_check_interval_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.health_check_interval_seconds = input;
-            self
+        pub fn set_health_check_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.health_check_interval_seconds = input; self
         }
         /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. The range is 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target groups with a protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
         pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
@@ -1388,8 +1046,7 @@ pub mod create_target_group_input {
         }
         /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. The range is 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target groups with a protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.health_check_timeout_seconds = input;
-            self
+            self.health_check_timeout_seconds = input; self
         }
         /// <p>The number of consecutive health check successes required before considering a target healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
         pub fn healthy_threshold_count(mut self, input: i32) -> Self {
@@ -1398,8 +1055,7 @@ pub mod create_target_group_input {
         }
         /// <p>The number of consecutive health check successes required before considering a target healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
         pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.healthy_threshold_count = input;
-            self
+            self.healthy_threshold_count = input; self
         }
         /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
         pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
@@ -1408,8 +1064,7 @@ pub mod create_target_group_input {
         }
         /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
         pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.unhealthy_threshold_count = input;
-            self
+            self.unhealthy_threshold_count = input; self
         }
         /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
         pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
@@ -1418,33 +1073,28 @@ pub mod create_target_group_input {
         }
         /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
-            self.matcher = input;
-            self
+            self.matcher = input; self
         }
-        /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
-        /// <ul>
-        /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-        /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-        /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-        /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+        /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p> 
+        /// <ul> 
+        /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li> 
+        /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li> 
+        /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li> 
+        /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li> 
         /// </ul>
         pub fn target_type(mut self, input: crate::model::TargetTypeEnum) -> Self {
             self.target_type = Some(input);
             self
         }
-        /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
-        /// <ul>
-        /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-        /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-        /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-        /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+        /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p> 
+        /// <ul> 
+        /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li> 
+        /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li> 
+        /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li> 
+        /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li> 
         /// </ul>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetTypeEnum>,
-        ) -> Self {
-            self.target_type = input;
-            self
+        pub fn set_target_type(mut self, input: std::option::Option<crate::model::TargetTypeEnum>) -> Self {
+            self.target_type = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1453,181 +1103,135 @@ pub mod create_target_group_input {
         /// <p>The tags to assign to the target group.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags to assign to the target group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-        pub fn ip_address_type(
-            mut self,
-            input: crate::model::TargetGroupIpAddressTypeEnum,
-        ) -> Self {
+        pub fn ip_address_type(mut self, input: crate::model::TargetGroupIpAddressTypeEnum) -> Self {
             self.ip_address_type = Some(input);
             self
         }
         /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-        pub fn set_ip_address_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
-        ) -> Self {
-            self.ip_address_type = input;
-            self
+        pub fn set_ip_address_type(mut self, input: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>) -> Self {
+            self.ip_address_type = input; self
         }
         /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::input::CreateTargetGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateTargetGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateTargetGroupInput {
-                name: self.name,
-                protocol: self.protocol,
-                protocol_version: self.protocol_version,
-                port: self.port,
-                vpc_id: self.vpc_id,
-                health_check_protocol: self.health_check_protocol,
-                health_check_port: self.health_check_port,
-                health_check_enabled: self.health_check_enabled,
-                health_check_path: self.health_check_path,
-                health_check_interval_seconds: self.health_check_interval_seconds,
-                health_check_timeout_seconds: self.health_check_timeout_seconds,
-                healthy_threshold_count: self.healthy_threshold_count,
-                unhealthy_threshold_count: self.unhealthy_threshold_count,
-                matcher: self.matcher,
-                target_type: self.target_type,
-                tags: self.tags,
-                ip_address_type: self.ip_address_type,
-            })
+        pub fn build(self) -> Result<crate::input::CreateTargetGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateTargetGroupInput {
+                    name: self.name
+                    ,
+                    protocol: self.protocol
+                    ,
+                    protocol_version: self.protocol_version
+                    ,
+                    port: self.port
+                    ,
+                    vpc_id: self.vpc_id
+                    ,
+                    health_check_protocol: self.health_check_protocol
+                    ,
+                    health_check_port: self.health_check_port
+                    ,
+                    health_check_enabled: self.health_check_enabled
+                    ,
+                    health_check_path: self.health_check_path
+                    ,
+                    health_check_interval_seconds: self.health_check_interval_seconds
+                    ,
+                    health_check_timeout_seconds: self.health_check_timeout_seconds
+                    ,
+                    healthy_threshold_count: self.healthy_threshold_count
+                    ,
+                    unhealthy_threshold_count: self.unhealthy_threshold_count
+                    ,
+                    matcher: self.matcher
+                    ,
+                    target_type: self.target_type
+                    ,
+                    tags: self.tags
+                    ,
+                    ip_address_type: self.ip_address_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateTargetGroup`](crate::operation::CreateTargetGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateTargetGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateTargetGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateTargetGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateTargetGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateTargetGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateTargetGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_target_group(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_target_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateTargetGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateTargetGroup",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateTargetGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateTargetGroup", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1639,7 +1243,7 @@ impl CreateTargetGroupInput {
 
 /// See [`DeleteListenerInput`](crate::input::DeleteListenerInput).
 pub mod delete_listener_input {
-
+    
     /// A builder for [`DeleteListenerInput`](crate::input::DeleteListenerInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1653,138 +1257,88 @@ pub mod delete_listener_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.listener_arn = input;
-            self
+            self.listener_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteListenerInput`](crate::input::DeleteListenerInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteListenerInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteListenerInput {
-                listener_arn: self.listener_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteListenerInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteListenerInput {
+                    listener_arn: self.listener_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteListenerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteListener`](crate::operation::DeleteListener)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteListener,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteListener, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteListenerInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteListenerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteListenerInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteListenerInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_listener(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteListener::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteListener",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteListener::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteListener", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1796,7 +1350,7 @@ impl DeleteListenerInput {
 
 /// See [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
 pub mod delete_load_balancer_input {
-
+    
     /// A builder for [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1809,144 +1363,89 @@ pub mod delete_load_balancer_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteLoadBalancerInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteLoadBalancerInput {
-                load_balancer_arn: self.load_balancer_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteLoadBalancerInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteLoadBalancerInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancer`](crate::operation::DeleteLoadBalancer)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteLoadBalancer,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteLoadBalancerInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteLoadBalancerInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteLoadBalancerInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteLoadBalancer::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteLoadBalancer",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLoadBalancer::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLoadBalancer", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1958,7 +1457,7 @@ impl DeleteLoadBalancerInput {
 
 /// See [`DeleteRuleInput`](crate::input::DeleteRuleInput).
 pub mod delete_rule_input {
-
+    
     /// A builder for [`DeleteRuleInput`](crate::input::DeleteRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1972,138 +1471,88 @@ pub mod delete_rule_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
         pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_arn = input;
-            self
+            self.rule_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::input::DeleteRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteRuleInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteRuleInput {
-                rule_arn: self.rule_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteRuleInput {
+                    rule_arn: self.rule_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRule`](crate::operation::DeleteRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_rule(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteRule",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteRule", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2115,7 +1564,7 @@ impl DeleteRuleInput {
 
 /// See [`DeleteTargetGroupInput`](crate::input::DeleteTargetGroupInput).
 pub mod delete_target_group_input {
-
+    
     /// A builder for [`DeleteTargetGroupInput`](crate::input::DeleteTargetGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2128,144 +1577,89 @@ pub mod delete_target_group_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn set_target_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_group_arn = input;
-            self
+        pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTargetGroupInput`](crate::input::DeleteTargetGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteTargetGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteTargetGroupInput {
-                target_group_arn: self.target_group_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteTargetGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteTargetGroupInput {
+                    target_group_arn: self.target_group_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTargetGroup`](crate::operation::DeleteTargetGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteTargetGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteTargetGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteTargetGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteTargetGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteTargetGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteTargetGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_target_group(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_target_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteTargetGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteTargetGroup",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteTargetGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteTargetGroup", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2277,7 +1671,7 @@ impl DeleteTargetGroupInput {
 
 /// See [`DeregisterTargetsInput`](crate::input::DeregisterTargetsInput).
 pub mod deregister_targets_input {
-
+    
     /// A builder for [`DeregisterTargetsInput`](crate::input::DeregisterTargetsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2291,12 +1685,8 @@ pub mod deregister_targets_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn set_target_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_group_arn = input;
-            self
+        pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_group_arn = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -2305,150 +1695,96 @@ pub mod deregister_targets_input {
         /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
         pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>) -> Self {
+            self.targets = input; self
         }
         /// Consumes the builder and constructs a [`DeregisterTargetsInput`](crate::input::DeregisterTargetsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeregisterTargetsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeregisterTargetsInput {
-                target_group_arn: self.target_group_arn,
-                targets: self.targets,
-            })
+        pub fn build(self) -> Result<crate::input::DeregisterTargetsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeregisterTargetsInput {
+                    target_group_arn: self.target_group_arn
+                    ,
+                    targets: self.targets
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeregisterTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterTargets`](crate::operation::DeregisterTargets)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeregisterTargets,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeregisterTargets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeregisterTargetsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeregisterTargetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeregisterTargetsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeregisterTargetsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deregister_targets(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_deregister_targets(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeregisterTargets::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeregisterTargets",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeregisterTargets::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeregisterTargets", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2460,7 +1796,7 @@ impl DeregisterTargetsInput {
 
 /// See [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
 pub mod describe_account_limits_input {
-
+    
     /// A builder for [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2475,8 +1811,7 @@ pub mod describe_account_limits_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -2485,143 +1820,90 @@ pub mod describe_account_limits_input {
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAccountLimitsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeAccountLimitsInput {
-                marker: self.marker,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAccountLimitsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAccountLimitsInput {
+                    marker: self.marker
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAccountLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountLimits`](crate::operation::DescribeAccountLimits)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAccountLimits,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAccountLimits, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAccountLimitsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAccountLimitsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAccountLimitsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAccountLimitsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAccountLimits::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAccountLimits",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAccountLimits::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAccountLimits", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2633,7 +1915,7 @@ impl DescribeAccountLimitsInput {
 
 /// See [`DescribeListenerCertificatesInput`](crate::input::DescribeListenerCertificatesInput).
 pub mod describe_listener_certificates_input {
-
+    
     /// A builder for [`DescribeListenerCertificatesInput`](crate::input::DescribeListenerCertificatesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2649,8 +1931,7 @@ pub mod describe_listener_certificates_input {
         }
         /// <p>The Amazon Resource Names (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.listener_arn = input;
-            self
+            self.listener_arn = input; self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2659,8 +1940,7 @@ pub mod describe_listener_certificates_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -2669,84 +1949,57 @@ pub mod describe_listener_certificates_input {
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`DescribeListenerCertificatesInput`](crate::input::DescribeListenerCertificatesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeListenerCertificatesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeListenerCertificatesInput {
-                listener_arn: self.listener_arn,
-                marker: self.marker,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeListenerCertificatesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeListenerCertificatesInput {
+                    listener_arn: self.listener_arn
+                    ,
+                    marker: self.marker
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeListenerCertificates`](crate::operation::DescribeListenerCertificates)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeListenerCertificates,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeListenerCertificates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeListenerCertificatesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeListenerCertificatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeListenerCertificatesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeListenerCertificatesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2755,56 +2008,33 @@ impl DescribeListenerCertificatesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_listener_certificates(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeListenerCertificates::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeListenerCertificates",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeListenerCertificates::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeListenerCertificates", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2816,7 +2046,7 @@ impl DescribeListenerCertificatesInput {
 
 /// See [`DescribeListenersInput`](crate::input::DescribeListenersInput).
 pub mod describe_listeners_input {
-
+    
     /// A builder for [`DescribeListenersInput`](crate::input::DescribeListenersInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2832,12 +2062,8 @@ pub mod describe_listeners_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// Appends an item to `listener_arns`.
         ///
@@ -2846,17 +2072,13 @@ pub mod describe_listeners_input {
         /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
         pub fn listener_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.listener_arns.unwrap_or_default();
-            v.push(input.into());
-            self.listener_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.listener_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-        pub fn set_listener_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.listener_arns = input;
-            self
+        pub fn set_listener_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.listener_arns = input; self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2865,8 +2087,7 @@ pub mod describe_listeners_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -2875,143 +2096,94 @@ pub mod describe_listeners_input {
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`DescribeListenersInput`](crate::input::DescribeListenersInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeListenersInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeListenersInput {
-                load_balancer_arn: self.load_balancer_arn,
-                listener_arns: self.listener_arns,
-                marker: self.marker,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeListenersInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeListenersInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                    listener_arns: self.listener_arns
+                    ,
+                    marker: self.marker
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeListenersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeListeners`](crate::operation::DescribeListeners)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeListeners,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeListeners, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeListenersInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeListenersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeListenersInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeListenersInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_listeners(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_listeners(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeListeners::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeListeners",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeListeners::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeListeners", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3023,7 +2195,7 @@ impl DescribeListenersInput {
 
 /// See [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput).
 pub mod describe_load_balancer_attributes_input {
-
+    
     /// A builder for [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3036,86 +2208,54 @@ pub mod describe_load_balancer_attributes_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeLoadBalancerAttributesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeLoadBalancerAttributesInput {
-                load_balancer_arn: self.load_balancer_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLoadBalancerAttributesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeLoadBalancerAttributesInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerAttributes`](crate::operation::DescribeLoadBalancerAttributes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLoadBalancerAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLoadBalancerAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLoadBalancerAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLoadBalancerAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeLoadBalancerAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeLoadBalancerAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3124,56 +2264,33 @@ impl DescribeLoadBalancerAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLoadBalancerAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLoadBalancerAttributes",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLoadBalancerAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLoadBalancerAttributes", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3185,7 +2302,7 @@ impl DescribeLoadBalancerAttributesInput {
 
 /// See [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
 pub mod describe_load_balancers_input {
-
+    
     /// A builder for [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3202,17 +2319,13 @@ pub mod describe_load_balancers_input {
         /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
         pub fn load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_arns.unwrap_or_default();
-            v.push(input.into());
-            self.load_balancer_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.load_balancer_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
-        pub fn set_load_balancer_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.load_balancer_arns = input;
-            self
+        pub fn set_load_balancer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.load_balancer_arns = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -3221,17 +2334,13 @@ pub mod describe_load_balancers_input {
         /// <p>The names of the load balancers.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>The names of the load balancers.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3240,8 +2349,7 @@ pub mod describe_load_balancers_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -3250,145 +2358,94 @@ pub mod describe_load_balancers_input {
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeLoadBalancersInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeLoadBalancersInput {
-                load_balancer_arns: self.load_balancer_arns,
-                names: self.names,
-                marker: self.marker,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeLoadBalancersInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeLoadBalancersInput {
+                    load_balancer_arns: self.load_balancer_arns
+                    ,
+                    names: self.names
+                    ,
+                    marker: self.marker
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancers`](crate::operation::DescribeLoadBalancers)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeLoadBalancers,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLoadBalancers, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeLoadBalancersInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeLoadBalancersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeLoadBalancersInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeLoadBalancersInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancers(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancers(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeLoadBalancers::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeLoadBalancers",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLoadBalancers::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLoadBalancers", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3400,7 +2457,7 @@ impl DescribeLoadBalancersInput {
 
 /// See [`DescribeRulesInput`](crate::input::DescribeRulesInput).
 pub mod describe_rules_input {
-
+    
     /// A builder for [`DescribeRulesInput`](crate::input::DescribeRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3417,8 +2474,7 @@ pub mod describe_rules_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.listener_arn = input;
-            self
+            self.listener_arn = input; self
         }
         /// Appends an item to `rule_arns`.
         ///
@@ -3427,17 +2483,13 @@ pub mod describe_rules_input {
         /// <p>The Amazon Resource Names (ARN) of the rules.</p>
         pub fn rule_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_arns.unwrap_or_default();
-            v.push(input.into());
-            self.rule_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.rule_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARN) of the rules.</p>
-        pub fn set_rule_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rule_arns = input;
-            self
+        pub fn set_rule_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rule_arns = input; self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3446,8 +2498,7 @@ pub mod describe_rules_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -3456,141 +2507,94 @@ pub mod describe_rules_input {
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRulesInput`](crate::input::DescribeRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeRulesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeRulesInput {
-                listener_arn: self.listener_arn,
-                rule_arns: self.rule_arns,
-                marker: self.marker,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeRulesInput {
+                    listener_arn: self.listener_arn
+                    ,
+                    rule_arns: self.rule_arns
+                    ,
+                    marker: self.marker
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRules`](crate::operation::DescribeRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_rules(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeRules",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeRules", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3602,7 +2606,7 @@ impl DescribeRulesInput {
 
 /// See [`DescribeSslPoliciesInput`](crate::input::DescribeSslPoliciesInput).
 pub mod describe_ssl_policies_input {
-
+    
     /// A builder for [`DescribeSslPoliciesInput`](crate::input::DescribeSslPoliciesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3619,17 +2623,13 @@ pub mod describe_ssl_policies_input {
         /// <p>The names of the policies.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>The names of the policies.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3638,8 +2638,7 @@ pub mod describe_ssl_policies_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -3648,8 +2647,7 @@ pub mod describe_ssl_policies_input {
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
         pub fn load_balancer_type(mut self, input: crate::model::LoadBalancerTypeEnum) -> Self {
@@ -3657,147 +2655,95 @@ pub mod describe_ssl_policies_input {
             self
         }
         /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
-        pub fn set_load_balancer_type(
-            mut self,
-            input: std::option::Option<crate::model::LoadBalancerTypeEnum>,
-        ) -> Self {
-            self.load_balancer_type = input;
-            self
+        pub fn set_load_balancer_type(mut self, input: std::option::Option<crate::model::LoadBalancerTypeEnum>) -> Self {
+            self.load_balancer_type = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSslPoliciesInput`](crate::input::DescribeSslPoliciesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeSslPoliciesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeSslPoliciesInput {
-                names: self.names,
-                marker: self.marker,
-                page_size: self.page_size,
-                load_balancer_type: self.load_balancer_type,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeSslPoliciesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeSslPoliciesInput {
+                    names: self.names
+                    ,
+                    marker: self.marker
+                    ,
+                    page_size: self.page_size
+                    ,
+                    load_balancer_type: self.load_balancer_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeSslPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSSLPolicies`](crate::operation::DescribeSSLPolicies)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeSSLPolicies,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeSSLPolicies, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeSslPoliciesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeSslPoliciesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeSslPoliciesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeSslPoliciesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_ssl_policies(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_ssl_policies(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeSSLPolicies::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeSSLPolicies",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeSSLPolicies::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeSSLPolicies", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3809,7 +2755,7 @@ impl DescribeSslPoliciesInput {
 
 /// See [`DescribeTagsInput`](crate::input::DescribeTagsInput).
 pub mod describe_tags_input {
-
+    
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3823,147 +2769,94 @@ pub mod describe_tags_input {
         /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeTagsInput {
-                resource_arns: self.resource_arns,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeTagsInput {
+                    resource_arns: self.resource_arns
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTags,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTagsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeTagsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeTagsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTags::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTags",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTags::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTags", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3975,7 +2868,7 @@ impl DescribeTagsInput {
 
 /// See [`DescribeTargetGroupAttributesInput`](crate::input::DescribeTargetGroupAttributesInput).
 pub mod describe_target_group_attributes_input {
-
+    
     /// A builder for [`DescribeTargetGroupAttributesInput`](crate::input::DescribeTargetGroupAttributesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3988,86 +2881,54 @@ pub mod describe_target_group_attributes_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn set_target_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_group_arn = input;
-            self
+        pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTargetGroupAttributesInput`](crate::input::DescribeTargetGroupAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeTargetGroupAttributesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeTargetGroupAttributesInput {
-                target_group_arn: self.target_group_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTargetGroupAttributesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeTargetGroupAttributesInput {
+                    target_group_arn: self.target_group_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTargetGroupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetGroupAttributes`](crate::operation::DescribeTargetGroupAttributes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTargetGroupAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTargetGroupAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTargetGroupAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTargetGroupAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeTargetGroupAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeTargetGroupAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4076,56 +2937,33 @@ impl DescribeTargetGroupAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_target_group_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTargetGroupAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTargetGroupAttributes",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTargetGroupAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTargetGroupAttributes", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4137,7 +2975,7 @@ impl DescribeTargetGroupAttributesInput {
 
 /// See [`DescribeTargetGroupsInput`](crate::input::DescribeTargetGroupsInput).
 pub mod describe_target_groups_input {
-
+    
     /// A builder for [`DescribeTargetGroupsInput`](crate::input::DescribeTargetGroupsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4154,12 +2992,8 @@ pub mod describe_target_groups_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// Appends an item to `target_group_arns`.
         ///
@@ -4168,17 +3002,13 @@ pub mod describe_target_groups_input {
         /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
         pub fn target_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_group_arns.unwrap_or_default();
-            v.push(input.into());
-            self.target_group_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.target_group_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-        pub fn set_target_group_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.target_group_arns = input;
-            self
+        pub fn set_target_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.target_group_arns = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -4187,17 +3017,13 @@ pub mod describe_target_groups_input {
         /// <p>The names of the target groups.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>The names of the target groups.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4206,8 +3032,7 @@ pub mod describe_target_groups_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -4216,146 +3041,96 @@ pub mod describe_target_groups_input {
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input;
-            self
+            self.page_size = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTargetGroupsInput`](crate::input::DescribeTargetGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeTargetGroupsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeTargetGroupsInput {
-                load_balancer_arn: self.load_balancer_arn,
-                target_group_arns: self.target_group_arns,
-                names: self.names,
-                marker: self.marker,
-                page_size: self.page_size,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTargetGroupsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeTargetGroupsInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                    target_group_arns: self.target_group_arns
+                    ,
+                    names: self.names
+                    ,
+                    marker: self.marker
+                    ,
+                    page_size: self.page_size
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTargetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetGroups`](crate::operation::DescribeTargetGroups)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTargetGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTargetGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTargetGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTargetGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeTargetGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeTargetGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_target_groups(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_target_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTargetGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTargetGroups",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTargetGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTargetGroups", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4367,7 +3142,7 @@ impl DescribeTargetGroupsInput {
 
 /// See [`DescribeTargetHealthInput`](crate::input::DescribeTargetHealthInput).
 pub mod describe_target_health_input {
-
+    
     /// A builder for [`DescribeTargetHealthInput`](crate::input::DescribeTargetHealthInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4381,12 +3156,8 @@ pub mod describe_target_health_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn set_target_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_group_arn = input;
-            self
+        pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_group_arn = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -4395,152 +3166,96 @@ pub mod describe_target_health_input {
         /// <p>The targets.</p>
         pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The targets.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>) -> Self {
+            self.targets = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTargetHealthInput`](crate::input::DescribeTargetHealthInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeTargetHealthInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeTargetHealthInput {
-                target_group_arn: self.target_group_arn,
-                targets: self.targets,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeTargetHealthInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeTargetHealthInput {
+                    target_group_arn: self.target_group_arn
+                    ,
+                    targets: self.targets
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeTargetHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetHealth`](crate::operation::DescribeTargetHealth)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeTargetHealth,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTargetHealth, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeTargetHealthInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeTargetHealthInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeTargetHealthInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeTargetHealthInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_target_health(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_target_health(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeTargetHealth::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeTargetHealth",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTargetHealth::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTargetHealth", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4552,7 +3267,7 @@ impl DescribeTargetHealthInput {
 
 /// See [`ModifyListenerInput`](crate::input::ModifyListenerInput).
 pub mod modify_listener_input {
-
+    
     /// A builder for [`ModifyListenerInput`](crate::input::ModifyListenerInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4572,8 +3287,7 @@ pub mod modify_listener_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.listener_arn = input;
-            self
+            self.listener_arn = input; self
         }
         /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -4582,8 +3296,7 @@ pub mod modify_listener_input {
         }
         /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
         pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
@@ -4591,24 +3304,19 @@ pub mod modify_listener_input {
             self
         }
         /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ProtocolEnum>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::ProtocolEnum>) -> Self {
+            self.protocol = input; self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssl_policy = Some(input.into());
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssl_policy = input;
-            self
+            self.ssl_policy = input; self
         }
         /// Appends an item to `certificates`.
         ///
@@ -4617,17 +3325,13 @@ pub mod modify_listener_input {
         /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Certificate>>) -> Self {
+            self.certificates = input; self
         }
         /// Appends an item to `default_actions`.
         ///
@@ -4636,188 +3340,137 @@ pub mod modify_listener_input {
         /// <p>The actions for the default rule.</p>
         pub fn default_actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.default_actions.unwrap_or_default();
-            v.push(input);
-            self.default_actions = Some(v);
-            self
+                            v.push(input);
+                            self.default_actions = Some(v);
+                            self
         }
         /// <p>The actions for the default rule.</p>
-        pub fn set_default_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Action>>,
-        ) -> Self {
-            self.default_actions = input;
-            self
+        pub fn set_default_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Action>>) -> Self {
+            self.default_actions = input; self
         }
         /// Appends an item to `alpn_policy`.
         ///
         /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
         ///
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>HTTP1Only</code> </p> </li>
-        /// <li> <p> <code>HTTP2Only</code> </p> </li>
-        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-        /// <li> <p> <code>None</code> </p> </li>
-        /// </ul>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+        /// <li> <p> <code>None</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alpn_policy.unwrap_or_default();
-            v.push(input.into());
-            self.alpn_policy = Some(v);
-            self
+                            v.push(input.into());
+                            self.alpn_policy = Some(v);
+                            self
         }
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>HTTP1Only</code> </p> </li>
-        /// <li> <p> <code>HTTP2Only</code> </p> </li>
-        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-        /// <li> <p> <code>None</code> </p> </li>
-        /// </ul>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+        /// <li> <p> <code>None</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-        pub fn set_alpn_policy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alpn_policy = input;
-            self
+        pub fn set_alpn_policy(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alpn_policy = input; self
         }
         /// Consumes the builder and constructs a [`ModifyListenerInput`](crate::input::ModifyListenerInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ModifyListenerInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ModifyListenerInput {
-                listener_arn: self.listener_arn,
-                port: self.port,
-                protocol: self.protocol,
-                ssl_policy: self.ssl_policy,
-                certificates: self.certificates,
-                default_actions: self.default_actions,
-                alpn_policy: self.alpn_policy,
-            })
+        pub fn build(self) -> Result<crate::input::ModifyListenerInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ModifyListenerInput {
+                    listener_arn: self.listener_arn
+                    ,
+                    port: self.port
+                    ,
+                    protocol: self.protocol
+                    ,
+                    ssl_policy: self.ssl_policy
+                    ,
+                    certificates: self.certificates
+                    ,
+                    default_actions: self.default_actions
+                    ,
+                    alpn_policy: self.alpn_policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ModifyListenerInput {
     /// Consumes the builder and constructs an Operation<[`ModifyListener`](crate::operation::ModifyListener)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ModifyListener,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ModifyListener, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ModifyListenerInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ModifyListenerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ModifyListenerInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ModifyListenerInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_modify_listener(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_modify_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ModifyListener::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ModifyListener",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ModifyListener::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ModifyListener", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4829,13 +3482,12 @@ impl ModifyListenerInput {
 
 /// See [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput).
 pub mod modify_load_balancer_attributes_input {
-
+    
     /// A builder for [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_arn: std::option::Option<std::string::String>,
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -4844,12 +3496,8 @@ pub mod modify_load_balancer_attributes_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -4858,92 +3506,61 @@ pub mod modify_load_balancer_attributes_input {
         /// <p>The load balancer attributes.</p>
         pub fn attributes(mut self, input: crate::model::LoadBalancerAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The load balancer attributes.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ModifyLoadBalancerAttributesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ModifyLoadBalancerAttributesInput {
-                load_balancer_arn: self.load_balancer_arn,
-                attributes: self.attributes,
-            })
+        pub fn build(self) -> Result<crate::input::ModifyLoadBalancerAttributesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ModifyLoadBalancerAttributesInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                    attributes: self.attributes
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ModifyLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyLoadBalancerAttributes`](crate::operation::ModifyLoadBalancerAttributes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ModifyLoadBalancerAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ModifyLoadBalancerAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ModifyLoadBalancerAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ModifyLoadBalancerAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ModifyLoadBalancerAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ModifyLoadBalancerAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4952,56 +3569,33 @@ impl ModifyLoadBalancerAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_modify_load_balancer_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ModifyLoadBalancerAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ModifyLoadBalancerAttributes",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ModifyLoadBalancerAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ModifyLoadBalancerAttributes", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5013,7 +3607,7 @@ impl ModifyLoadBalancerAttributesInput {
 
 /// See [`ModifyRuleInput`](crate::input::ModifyRuleInput).
 pub mod modify_rule_input {
-
+    
     /// A builder for [`ModifyRuleInput`](crate::input::ModifyRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5029,8 +3623,7 @@ pub mod modify_rule_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
         pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_arn = input;
-            self
+            self.rule_arn = input; self
         }
         /// Appends an item to `conditions`.
         ///
@@ -5039,17 +3632,13 @@ pub mod modify_rule_input {
         /// <p>The conditions.</p>
         pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input);
-            self.conditions = Some(v);
-            self
+                            v.push(input);
+                            self.conditions = Some(v);
+                            self
         }
         /// <p>The conditions.</p>
-        pub fn set_conditions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>,
-        ) -> Self {
-            self.conditions = input;
-            self
+        pub fn set_conditions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>) -> Self {
+            self.conditions = input; self
         }
         /// Appends an item to `actions`.
         ///
@@ -5058,149 +3647,98 @@ pub mod modify_rule_input {
         /// <p>The actions.</p>
         pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input);
-            self.actions = Some(v);
-            self
+                            v.push(input);
+                            self.actions = Some(v);
+                            self
         }
         /// <p>The actions.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Action>>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Action>>) -> Self {
+            self.actions = input; self
         }
         /// Consumes the builder and constructs a [`ModifyRuleInput`](crate::input::ModifyRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ModifyRuleInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ModifyRuleInput {
-                rule_arn: self.rule_arn,
-                conditions: self.conditions,
-                actions: self.actions,
-            })
+        pub fn build(self) -> Result<crate::input::ModifyRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ModifyRuleInput {
+                    rule_arn: self.rule_arn
+                    ,
+                    conditions: self.conditions
+                    ,
+                    actions: self.actions
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ModifyRuleInput {
     /// Consumes the builder and constructs an Operation<[`ModifyRule`](crate::operation::ModifyRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ModifyRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ModifyRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ModifyRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ModifyRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ModifyRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ModifyRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_modify_rule(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_modify_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ModifyRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ModifyRule",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ModifyRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ModifyRule", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5212,7 +3750,7 @@ impl ModifyRuleInput {
 
 /// See [`ModifyTargetGroupInput`](crate::input::ModifyTargetGroupInput).
 pub mod modify_target_group_input {
-
+    
     /// A builder for [`ModifyTargetGroupInput`](crate::input::ModifyTargetGroupInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5234,12 +3772,8 @@ pub mod modify_target_group_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn set_target_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_group_arn = input;
-            self
+        pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_group_arn = input; self
         }
         /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
@@ -5247,12 +3781,8 @@ pub mod modify_target_group_input {
             self
         }
         /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-        pub fn set_health_check_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ProtocolEnum>,
-        ) -> Self {
-            self.health_check_protocol = input;
-            self
+        pub fn set_health_check_protocol(mut self, input: std::option::Option<crate::model::ProtocolEnum>) -> Self {
+            self.health_check_protocol = input; self
         }
         /// <p>The port the load balancer uses when performing health checks on targets.</p>
         pub fn health_check_port(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5260,29 +3790,21 @@ pub mod modify_target_group_input {
             self
         }
         /// <p>The port the load balancer uses when performing health checks on targets.</p>
-        pub fn set_health_check_port(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_check_port = input;
-            self
+        pub fn set_health_check_port(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_check_port = input; self
         }
-        /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-        /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+        /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+        /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
         /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_path = Some(input.into());
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-        /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+        /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+        /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
         /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-        pub fn set_health_check_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_check_path = input;
-            self
+        pub fn set_health_check_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_check_path = input; self
         }
         /// <p>Indicates whether health checks are enabled.</p>
         pub fn health_check_enabled(mut self, input: bool) -> Self {
@@ -5291,8 +3813,7 @@ pub mod modify_target_group_input {
         }
         /// <p>Indicates whether health checks are enabled.</p>
         pub fn set_health_check_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.health_check_enabled = input;
-            self
+            self.health_check_enabled = input; self
         }
         /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
@@ -5300,12 +3821,8 @@ pub mod modify_target_group_input {
             self
         }
         /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
-        pub fn set_health_check_interval_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.health_check_interval_seconds = input;
-            self
+        pub fn set_health_check_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.health_check_interval_seconds = input; self
         }
         /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
         pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
@@ -5314,8 +3831,7 @@ pub mod modify_target_group_input {
         }
         /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.health_check_timeout_seconds = input;
-            self
+            self.health_check_timeout_seconds = input; self
         }
         /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
         pub fn healthy_threshold_count(mut self, input: i32) -> Self {
@@ -5324,8 +3840,7 @@ pub mod modify_target_group_input {
         }
         /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
         pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.healthy_threshold_count = input;
-            self
+            self.healthy_threshold_count = input; self
         }
         /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
         pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
@@ -5334,8 +3849,7 @@ pub mod modify_target_group_input {
         }
         /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
         pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.unhealthy_threshold_count = input;
-            self
+            self.unhealthy_threshold_count = input; self
         }
         /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
         pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
@@ -5344,149 +3858,106 @@ pub mod modify_target_group_input {
         }
         /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
-            self.matcher = input;
-            self
+            self.matcher = input; self
         }
         /// Consumes the builder and constructs a [`ModifyTargetGroupInput`](crate::input::ModifyTargetGroupInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ModifyTargetGroupInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ModifyTargetGroupInput {
-                target_group_arn: self.target_group_arn,
-                health_check_protocol: self.health_check_protocol,
-                health_check_port: self.health_check_port,
-                health_check_path: self.health_check_path,
-                health_check_enabled: self.health_check_enabled,
-                health_check_interval_seconds: self.health_check_interval_seconds,
-                health_check_timeout_seconds: self.health_check_timeout_seconds,
-                healthy_threshold_count: self.healthy_threshold_count,
-                unhealthy_threshold_count: self.unhealthy_threshold_count,
-                matcher: self.matcher,
-            })
+        pub fn build(self) -> Result<crate::input::ModifyTargetGroupInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ModifyTargetGroupInput {
+                    target_group_arn: self.target_group_arn
+                    ,
+                    health_check_protocol: self.health_check_protocol
+                    ,
+                    health_check_port: self.health_check_port
+                    ,
+                    health_check_path: self.health_check_path
+                    ,
+                    health_check_enabled: self.health_check_enabled
+                    ,
+                    health_check_interval_seconds: self.health_check_interval_seconds
+                    ,
+                    health_check_timeout_seconds: self.health_check_timeout_seconds
+                    ,
+                    healthy_threshold_count: self.healthy_threshold_count
+                    ,
+                    unhealthy_threshold_count: self.unhealthy_threshold_count
+                    ,
+                    matcher: self.matcher
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ModifyTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyTargetGroup`](crate::operation::ModifyTargetGroup)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ModifyTargetGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ModifyTargetGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ModifyTargetGroupInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ModifyTargetGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ModifyTargetGroupInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ModifyTargetGroupInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_modify_target_group(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_modify_target_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ModifyTargetGroup::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ModifyTargetGroup",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ModifyTargetGroup::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ModifyTargetGroup", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5498,13 +3969,12 @@ impl ModifyTargetGroupInput {
 
 /// See [`ModifyTargetGroupAttributesInput`](crate::input::ModifyTargetGroupAttributesInput).
 pub mod modify_target_group_attributes_input {
-
+    
     /// A builder for [`ModifyTargetGroupAttributesInput`](crate::input::ModifyTargetGroupAttributesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_group_arn: std::option::Option<std::string::String>,
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -5513,12 +3983,8 @@ pub mod modify_target_group_attributes_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn set_target_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_group_arn = input;
-            self
+        pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_group_arn = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -5527,92 +3993,61 @@ pub mod modify_target_group_attributes_input {
         /// <p>The attributes.</p>
         pub fn attributes(mut self, input: crate::model::TargetGroupAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`ModifyTargetGroupAttributesInput`](crate::input::ModifyTargetGroupAttributesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ModifyTargetGroupAttributesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ModifyTargetGroupAttributesInput {
-                target_group_arn: self.target_group_arn,
-                attributes: self.attributes,
-            })
+        pub fn build(self) -> Result<crate::input::ModifyTargetGroupAttributesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ModifyTargetGroupAttributesInput {
+                    target_group_arn: self.target_group_arn
+                    ,
+                    attributes: self.attributes
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ModifyTargetGroupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyTargetGroupAttributes`](crate::operation::ModifyTargetGroupAttributes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ModifyTargetGroupAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ModifyTargetGroupAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ModifyTargetGroupAttributesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ModifyTargetGroupAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ModifyTargetGroupAttributesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ModifyTargetGroupAttributesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5621,56 +4056,33 @@ impl ModifyTargetGroupAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_modify_target_group_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ModifyTargetGroupAttributes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ModifyTargetGroupAttributes",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ModifyTargetGroupAttributes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ModifyTargetGroupAttributes", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5682,7 +4094,7 @@ impl ModifyTargetGroupAttributesInput {
 
 /// See [`RegisterTargetsInput`](crate::input::RegisterTargetsInput).
 pub mod register_targets_input {
-
+    
     /// A builder for [`RegisterTargetsInput`](crate::input::RegisterTargetsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5696,12 +4108,8 @@ pub mod register_targets_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn set_target_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_group_arn = input;
-            self
+        pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_group_arn = input; self
         }
         /// Appends an item to `targets`.
         ///
@@ -5710,148 +4118,96 @@ pub mod register_targets_input {
         /// <p>The targets.</p>
         pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>The targets.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>) -> Self {
+            self.targets = input; self
         }
         /// Consumes the builder and constructs a [`RegisterTargetsInput`](crate::input::RegisterTargetsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RegisterTargetsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::RegisterTargetsInput {
-                target_group_arn: self.target_group_arn,
-                targets: self.targets,
-            })
+        pub fn build(self) -> Result<crate::input::RegisterTargetsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RegisterTargetsInput {
+                    target_group_arn: self.target_group_arn
+                    ,
+                    targets: self.targets
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RegisterTargetsInput {
     /// Consumes the builder and constructs an Operation<[`RegisterTargets`](crate::operation::RegisterTargets)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RegisterTargets,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterTargets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RegisterTargetsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RegisterTargetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RegisterTargetsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RegisterTargetsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_targets(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_register_targets(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RegisterTargets::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RegisterTargets",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterTargets::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterTargets", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5863,7 +4219,7 @@ impl RegisterTargetsInput {
 
 /// See [`RemoveListenerCertificatesInput`](crate::input::RemoveListenerCertificatesInput).
 pub mod remove_listener_certificates_input {
-
+    
     /// A builder for [`RemoveListenerCertificatesInput`](crate::input::RemoveListenerCertificatesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5878,8 +4234,7 @@ pub mod remove_listener_certificates_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.listener_arn = input;
-            self
+            self.listener_arn = input; self
         }
         /// Appends an item to `certificates`.
         ///
@@ -5888,152 +4243,96 @@ pub mod remove_listener_certificates_input {
         /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Certificate>>) -> Self {
+            self.certificates = input; self
         }
         /// Consumes the builder and constructs a [`RemoveListenerCertificatesInput`](crate::input::RemoveListenerCertificatesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RemoveListenerCertificatesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RemoveListenerCertificatesInput {
-                listener_arn: self.listener_arn,
-                certificates: self.certificates,
-            })
+        pub fn build(self) -> Result<crate::input::RemoveListenerCertificatesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RemoveListenerCertificatesInput {
+                    listener_arn: self.listener_arn
+                    ,
+                    certificates: self.certificates
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RemoveListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`RemoveListenerCertificates`](crate::operation::RemoveListenerCertificates)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RemoveListenerCertificates,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveListenerCertificates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RemoveListenerCertificatesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RemoveListenerCertificatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RemoveListenerCertificatesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RemoveListenerCertificatesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_listener_certificates(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_remove_listener_certificates(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RemoveListenerCertificates::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RemoveListenerCertificates",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveListenerCertificates::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveListenerCertificates", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6045,7 +4344,7 @@ impl RemoveListenerCertificatesInput {
 
 /// See [`RemoveTagsInput`](crate::input::RemoveTagsInput).
 pub mod remove_tags_input {
-
+    
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6060,17 +4359,13 @@ pub mod remove_tags_input {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -6079,148 +4374,96 @@ pub mod remove_tags_input {
         /// <p>The tag keys for the tags to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The tag keys for the tags to remove.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::RemoveTagsInput {
-                resource_arns: self.resource_arns,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RemoveTagsInput {
+                    resource_arns: self.resource_arns
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RemoveTags,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RemoveTagsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RemoveTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RemoveTagsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RemoveTagsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RemoveTags::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RemoveTags",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveTags::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveTags", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6232,7 +4475,7 @@ impl RemoveTagsInput {
 
 /// See [`SetIpAddressTypeInput`](crate::input::SetIpAddressTypeInput).
 pub mod set_ip_address_type_input {
-
+    
     /// A builder for [`SetIpAddressTypeInput`](crate::input::SetIpAddressTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6246,12 +4489,8 @@ pub mod set_ip_address_type_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
@@ -6259,145 +4498,91 @@ pub mod set_ip_address_type_input {
             self
         }
         /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
-        pub fn set_ip_address_type(
-            mut self,
-            input: std::option::Option<crate::model::IpAddressType>,
-        ) -> Self {
-            self.ip_address_type = input;
-            self
+        pub fn set_ip_address_type(mut self, input: std::option::Option<crate::model::IpAddressType>) -> Self {
+            self.ip_address_type = input; self
         }
         /// Consumes the builder and constructs a [`SetIpAddressTypeInput`](crate::input::SetIpAddressTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SetIpAddressTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::SetIpAddressTypeInput {
-                load_balancer_arn: self.load_balancer_arn,
-                ip_address_type: self.ip_address_type,
-            })
+        pub fn build(self) -> Result<crate::input::SetIpAddressTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SetIpAddressTypeInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                    ip_address_type: self.ip_address_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetIpAddressTypeInput {
     /// Consumes the builder and constructs an Operation<[`SetIpAddressType`](crate::operation::SetIpAddressType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetIpAddressType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetIpAddressType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetIpAddressTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SetIpAddressTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SetIpAddressTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SetIpAddressTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_ip_address_type(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_set_ip_address_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetIpAddressType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetIpAddressType",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetIpAddressType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetIpAddressType", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6409,12 +4594,11 @@ impl SetIpAddressTypeInput {
 
 /// See [`SetRulePrioritiesInput`](crate::input::SetRulePrioritiesInput).
 pub mod set_rule_priorities_input {
-
+    
     /// A builder for [`SetRulePrioritiesInput`](crate::input::SetRulePrioritiesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) rule_priorities:
-            std::option::Option<std::vec::Vec<crate::model::RulePriorityPair>>,
+        pub(crate) rule_priorities: std::option::Option<std::vec::Vec<crate::model::RulePriorityPair>>,
     }
     impl Builder {
         /// Appends an item to `rule_priorities`.
@@ -6424,149 +4608,94 @@ pub mod set_rule_priorities_input {
         /// <p>The rule priorities.</p>
         pub fn rule_priorities(mut self, input: crate::model::RulePriorityPair) -> Self {
             let mut v = self.rule_priorities.unwrap_or_default();
-            v.push(input);
-            self.rule_priorities = Some(v);
-            self
+                            v.push(input);
+                            self.rule_priorities = Some(v);
+                            self
         }
         /// <p>The rule priorities.</p>
-        pub fn set_rule_priorities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RulePriorityPair>>,
-        ) -> Self {
-            self.rule_priorities = input;
-            self
+        pub fn set_rule_priorities(mut self, input: std::option::Option<std::vec::Vec<crate::model::RulePriorityPair>>) -> Self {
+            self.rule_priorities = input; self
         }
         /// Consumes the builder and constructs a [`SetRulePrioritiesInput`](crate::input::SetRulePrioritiesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SetRulePrioritiesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::SetRulePrioritiesInput {
-                rule_priorities: self.rule_priorities,
-            })
+        pub fn build(self) -> Result<crate::input::SetRulePrioritiesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SetRulePrioritiesInput {
+                    rule_priorities: self.rule_priorities
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetRulePrioritiesInput {
     /// Consumes the builder and constructs an Operation<[`SetRulePriorities`](crate::operation::SetRulePriorities)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetRulePriorities,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetRulePriorities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetRulePrioritiesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SetRulePrioritiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SetRulePrioritiesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SetRulePrioritiesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_rule_priorities(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_set_rule_priorities(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetRulePriorities::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetRulePriorities",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetRulePriorities::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetRulePriorities", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6578,7 +4707,7 @@ impl SetRulePrioritiesInput {
 
 /// See [`SetSecurityGroupsInput`](crate::input::SetSecurityGroupsInput).
 pub mod set_security_groups_input {
-
+    
     /// A builder for [`SetSecurityGroupsInput`](crate::input::SetSecurityGroupsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6592,12 +4721,8 @@ pub mod set_security_groups_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -6606,150 +4731,96 @@ pub mod set_security_groups_input {
         /// <p>The IDs of the security groups.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>The IDs of the security groups.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// Consumes the builder and constructs a [`SetSecurityGroupsInput`](crate::input::SetSecurityGroupsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SetSecurityGroupsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::SetSecurityGroupsInput {
-                load_balancer_arn: self.load_balancer_arn,
-                security_groups: self.security_groups,
-            })
+        pub fn build(self) -> Result<crate::input::SetSecurityGroupsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SetSecurityGroupsInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                    security_groups: self.security_groups
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetSecurityGroupsInput {
     /// Consumes the builder and constructs an Operation<[`SetSecurityGroups`](crate::operation::SetSecurityGroups)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetSecurityGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetSecurityGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetSecurityGroupsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SetSecurityGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SetSecurityGroupsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SetSecurityGroupsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_security_groups(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_set_security_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetSecurityGroups::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetSecurityGroups",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetSecurityGroups::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetSecurityGroups", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6761,7 +4832,7 @@ impl SetSecurityGroupsInput {
 
 /// See [`SetSubnetsInput`](crate::input::SetSubnetsInput).
 pub mod set_subnets_input {
-
+    
     /// A builder for [`SetSubnetsInput`](crate::input::SetSubnetsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6777,66 +4848,54 @@ pub mod set_subnets_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn set_load_balancer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_arn = input;
-            self
+        pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_arn = input; self
         }
         /// Appends an item to `subnets`.
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
-        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> 
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p> 
+        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
         /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
-        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> 
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p> 
+        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
         /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Appends an item to `subnet_mappings`.
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> 
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> 
+        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
         /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
         pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input);
-            self.subnet_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.subnet_mappings = Some(v);
+                            self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> 
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> 
+        /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
         /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
-        pub fn set_subnet_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
-        ) -> Self {
-            self.subnet_mappings = input;
-            self
+        pub fn set_subnet_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>) -> Self {
+            self.subnet_mappings = input; self
         }
         /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
@@ -6844,145 +4903,95 @@ pub mod set_subnets_input {
             self
         }
         /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
-        pub fn set_ip_address_type(
-            mut self,
-            input: std::option::Option<crate::model::IpAddressType>,
-        ) -> Self {
-            self.ip_address_type = input;
-            self
+        pub fn set_ip_address_type(mut self, input: std::option::Option<crate::model::IpAddressType>) -> Self {
+            self.ip_address_type = input; self
         }
         /// Consumes the builder and constructs a [`SetSubnetsInput`](crate::input::SetSubnetsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SetSubnetsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::SetSubnetsInput {
-                load_balancer_arn: self.load_balancer_arn,
-                subnets: self.subnets,
-                subnet_mappings: self.subnet_mappings,
-                ip_address_type: self.ip_address_type,
-            })
+        pub fn build(self) -> Result<crate::input::SetSubnetsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SetSubnetsInput {
+                    load_balancer_arn: self.load_balancer_arn
+                    ,
+                    subnets: self.subnets
+                    ,
+                    subnet_mappings: self.subnet_mappings
+                    ,
+                    ip_address_type: self.ip_address_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`SetSubnets`](crate::operation::SetSubnets)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetSubnets,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetSubnets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetSubnetsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SetSubnetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SetSubnetsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SetSubnetsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_subnets(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_set_subnets(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetSubnets::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetSubnets",
-            "elasticloadbalancingv2",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetSubnets::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetSubnets", "elasticloadbalancingv2"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6995,21 +5004,21 @@ impl SetSubnetsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetSubnetsInput {
+pub struct SetSubnetsInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
-    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> 
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p> 
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> 
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> 
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     #[doc(hidden)]
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
@@ -7019,27 +5028,27 @@ pub struct SetSubnetsInput {
 }
 impl SetSubnetsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
-    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> 
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p> 
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p> 
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> 
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
-    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
+    pub fn subnet_mappings(&self) -> std::option::Option<& [crate::model::SubnetMapping]> {
         self.subnet_mappings.as_deref()
     }
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<& crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
 }
@@ -7047,7 +5056,7 @@ impl SetSubnetsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetSecurityGroupsInput {
+pub struct SetSecurityGroupsInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
@@ -7057,11 +5066,11 @@ pub struct SetSecurityGroupsInput {
 }
 impl SetSecurityGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
 }
@@ -7069,14 +5078,14 @@ impl SetSecurityGroupsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetRulePrioritiesInput {
+pub struct SetRulePrioritiesInput  {
     /// <p>The rule priorities.</p>
     #[doc(hidden)]
     pub rule_priorities: std::option::Option<std::vec::Vec<crate::model::RulePriorityPair>>,
 }
 impl SetRulePrioritiesInput {
     /// <p>The rule priorities.</p>
-    pub fn rule_priorities(&self) -> std::option::Option<&[crate::model::RulePriorityPair]> {
+    pub fn rule_priorities(&self) -> std::option::Option<& [crate::model::RulePriorityPair]> {
         self.rule_priorities.as_deref()
     }
 }
@@ -7084,7 +5093,7 @@ impl SetRulePrioritiesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetIpAddressTypeInput {
+pub struct SetIpAddressTypeInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
@@ -7094,11 +5103,11 @@ pub struct SetIpAddressTypeInput {
 }
 impl SetIpAddressTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<& crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
 }
@@ -7106,7 +5115,7 @@ impl SetIpAddressTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsInput {
+pub struct RemoveTagsInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7116,11 +5125,11 @@ pub struct RemoveTagsInput {
 }
 impl RemoveTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The tag keys for the tags to remove.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -7128,7 +5137,7 @@ impl RemoveTagsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveListenerCertificatesInput {
+pub struct RemoveListenerCertificatesInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -7138,11 +5147,11 @@ pub struct RemoveListenerCertificatesInput {
 }
 impl RemoveListenerCertificatesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::Certificate]> {
         self.certificates.as_deref()
     }
 }
@@ -7150,7 +5159,7 @@ impl RemoveListenerCertificatesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterTargetsInput {
+pub struct RegisterTargetsInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
@@ -7160,11 +5169,11 @@ pub struct RegisterTargetsInput {
 }
 impl RegisterTargetsInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The targets.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::TargetDescription]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::TargetDescription]> {
         self.targets.as_deref()
     }
 }
@@ -7172,7 +5181,7 @@ impl RegisterTargetsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyTargetGroupAttributesInput {
+pub struct ModifyTargetGroupAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
@@ -7182,11 +5191,11 @@ pub struct ModifyTargetGroupAttributesInput {
 }
 impl ModifyTargetGroupAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The attributes.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::TargetGroupAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::TargetGroupAttribute]> {
         self.attributes.as_deref()
     }
 }
@@ -7194,7 +5203,7 @@ impl ModifyTargetGroupAttributesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyTargetGroupInput {
+pub struct ModifyTargetGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
@@ -7204,8 +5213,8 @@ pub struct ModifyTargetGroupInput {
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
     #[doc(hidden)]
     pub health_check_port: std::option::Option<std::string::String>,
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     #[doc(hidden)]
     pub health_check_path: std::option::Option<std::string::String>,
@@ -7230,21 +5239,21 @@ pub struct ModifyTargetGroupInput {
 }
 impl ModifyTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
+    pub fn health_check_protocol(&self) -> std::option::Option<& crate::model::ProtocolEnum> {
         self.health_check_protocol.as_ref()
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn health_check_port(&self) -> std::option::Option<&str> {
+    pub fn health_check_port(&self) -> std::option::Option<& str> {
         self.health_check_port.as_deref()
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(&self) -> std::option::Option<&str> {
+    pub fn health_check_path(&self) -> std::option::Option<& str> {
         self.health_check_path.as_deref()
     }
     /// <p>Indicates whether health checks are enabled.</p>
@@ -7268,7 +5277,7 @@ impl ModifyTargetGroupInput {
         self.unhealthy_threshold_count
     }
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
-    pub fn matcher(&self) -> std::option::Option<&crate::model::Matcher> {
+    pub fn matcher(&self) -> std::option::Option<& crate::model::Matcher> {
         self.matcher.as_ref()
     }
 }
@@ -7276,7 +5285,7 @@ impl ModifyTargetGroupInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyRuleInput {
+pub struct ModifyRuleInput  {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
@@ -7289,15 +5298,15 @@ pub struct ModifyRuleInput {
 }
 impl ModifyRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>The conditions.</p>
-    pub fn conditions(&self) -> std::option::Option<&[crate::model::RuleCondition]> {
+    pub fn conditions(&self) -> std::option::Option<& [crate::model::RuleCondition]> {
         self.conditions.as_deref()
     }
     /// <p>The actions.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::model::Action]> {
         self.actions.as_deref()
     }
 }
@@ -7305,7 +5314,7 @@ impl ModifyRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyLoadBalancerAttributesInput {
+pub struct ModifyLoadBalancerAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
@@ -7315,11 +5324,11 @@ pub struct ModifyLoadBalancerAttributesInput {
 }
 impl ModifyLoadBalancerAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The load balancer attributes.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::LoadBalancerAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::LoadBalancerAttribute]> {
         self.attributes.as_deref()
     }
 }
@@ -7327,7 +5336,7 @@ impl ModifyLoadBalancerAttributesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyListenerInput {
+pub struct ModifyListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -7337,7 +5346,7 @@ pub struct ModifyListenerInput {
     /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub ssl_policy: std::option::Option<std::string::String>,
@@ -7347,21 +5356,21 @@ pub struct ModifyListenerInput {
     /// <p>The actions for the default rule.</p>
     #[doc(hidden)]
     pub default_actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>HTTP1Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-    /// <li> <p> <code>None</code> </p> </li>
-    /// </ul>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
@@ -7369,32 +5378,32 @@ impl ModifyListenerInput {
         self.port
     }
     /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::ProtocolEnum> {
         self.protocol.as_ref()
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn ssl_policy(&self) -> std::option::Option<&str> {
+    pub fn ssl_policy(&self) -> std::option::Option<& str> {
         self.ssl_policy.as_deref()
     }
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::Certificate]> {
         self.certificates.as_deref()
     }
     /// <p>The actions for the default rule.</p>
-    pub fn default_actions(&self) -> std::option::Option<&[crate::model::Action]> {
+    pub fn default_actions(&self) -> std::option::Option<& [crate::model::Action]> {
         self.default_actions.as_deref()
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>HTTP1Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-    /// <li> <p> <code>None</code> </p> </li>
-    /// </ul>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn alpn_policy(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alpn_policy(&self) -> std::option::Option<& [std::string::String]> {
         self.alpn_policy.as_deref()
     }
 }
@@ -7402,7 +5411,7 @@ impl ModifyListenerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTargetHealthInput {
+pub struct DescribeTargetHealthInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
@@ -7412,11 +5421,11 @@ pub struct DescribeTargetHealthInput {
 }
 impl DescribeTargetHealthInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The targets.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::TargetDescription]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::TargetDescription]> {
         self.targets.as_deref()
     }
 }
@@ -7424,7 +5433,7 @@ impl DescribeTargetHealthInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTargetGroupsInput {
+pub struct DescribeTargetGroupsInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
@@ -7443,19 +5452,19 @@ pub struct DescribeTargetGroupsInput {
 }
 impl DescribeTargetGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn target_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.target_group_arns.as_deref()
     }
     /// <p>The names of the target groups.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -7467,14 +5476,14 @@ impl DescribeTargetGroupsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTargetGroupAttributesInput {
+pub struct DescribeTargetGroupAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTargetGroupAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
 }
@@ -7482,14 +5491,14 @@ impl DescribeTargetGroupAttributesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsInput {
+pub struct DescribeTagsInput  {
     /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
 }
@@ -7497,7 +5506,7 @@ impl DescribeTagsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSslPoliciesInput {
+pub struct DescribeSslPoliciesInput  {
     /// <p>The names of the policies.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7513,11 +5522,11 @@ pub struct DescribeSslPoliciesInput {
 }
 impl DescribeSslPoliciesInput {
     /// <p>The names of the policies.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -7525,7 +5534,7 @@ impl DescribeSslPoliciesInput {
         self.page_size
     }
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
-    pub fn load_balancer_type(&self) -> std::option::Option<&crate::model::LoadBalancerTypeEnum> {
+    pub fn load_balancer_type(&self) -> std::option::Option<& crate::model::LoadBalancerTypeEnum> {
         self.load_balancer_type.as_ref()
     }
 }
@@ -7533,7 +5542,7 @@ impl DescribeSslPoliciesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRulesInput {
+pub struct DescribeRulesInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -7549,15 +5558,15 @@ pub struct DescribeRulesInput {
 }
 impl DescribeRulesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the rules.</p>
-    pub fn rule_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.rule_arns.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -7569,7 +5578,7 @@ impl DescribeRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoadBalancersInput {
+pub struct DescribeLoadBalancersInput  {
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
     #[doc(hidden)]
     pub load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7585,15 +5594,15 @@ pub struct DescribeLoadBalancersInput {
 }
 impl DescribeLoadBalancersInput {
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
-    pub fn load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn load_balancer_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.load_balancer_arns.as_deref()
     }
     /// <p>The names of the load balancers.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -7605,14 +5614,14 @@ impl DescribeLoadBalancersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoadBalancerAttributesInput {
+pub struct DescribeLoadBalancerAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancerAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
 }
@@ -7620,7 +5629,7 @@ impl DescribeLoadBalancerAttributesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeListenersInput {
+pub struct DescribeListenersInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
@@ -7636,15 +5645,15 @@ pub struct DescribeListenersInput {
 }
 impl DescribeListenersInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn listener_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn listener_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.listener_arns.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -7656,7 +5665,7 @@ impl DescribeListenersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeListenerCertificatesInput {
+pub struct DescribeListenerCertificatesInput  {
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -7669,11 +5678,11 @@ pub struct DescribeListenerCertificatesInput {
 }
 impl DescribeListenerCertificatesInput {
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -7685,7 +5694,7 @@ impl DescribeListenerCertificatesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountLimitsInput {
+pub struct DescribeAccountLimitsInput  {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -7695,7 +5704,7 @@ pub struct DescribeAccountLimitsInput {
 }
 impl DescribeAccountLimitsInput {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -7707,7 +5716,7 @@ impl DescribeAccountLimitsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterTargetsInput {
+pub struct DeregisterTargetsInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
@@ -7717,11 +5726,11 @@ pub struct DeregisterTargetsInput {
 }
 impl DeregisterTargetsInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::TargetDescription]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::TargetDescription]> {
         self.targets.as_deref()
     }
 }
@@ -7729,14 +5738,14 @@ impl DeregisterTargetsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTargetGroupInput {
+pub struct DeleteTargetGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
 }
@@ -7744,14 +5753,14 @@ impl DeleteTargetGroupInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleInput {
+pub struct DeleteRuleInput  {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
 }
@@ -7759,14 +5768,14 @@ impl DeleteRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoadBalancerInput {
+pub struct DeleteLoadBalancerInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLoadBalancerInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
 }
@@ -7774,14 +5783,14 @@ impl DeleteLoadBalancerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteListenerInput {
+pub struct DeleteListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
 }
 impl DeleteListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
 }
@@ -7789,8 +5798,8 @@ impl DeleteListenerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTargetGroupInput {
-    /// <p>The name of the target group.</p>
+pub struct CreateTargetGroupInput  {
+    /// <p>The name of the target group.</p> 
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7815,8 +5824,8 @@ pub struct CreateTargetGroupInput {
     /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
     #[doc(hidden)]
     pub health_check_enabled: std::option::Option<bool>,
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     #[doc(hidden)]
     pub health_check_path: std::option::Option<std::string::String>,
@@ -7835,12 +5844,12 @@ pub struct CreateTargetGroupInput {
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     #[doc(hidden)]
     pub matcher: std::option::Option<crate::model::Matcher>,
-    /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
-    /// <ul>
-    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+    /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p> 
+    /// <ul> 
+    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li> 
+    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li> 
+    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li> 
+    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub target_type: std::option::Option<crate::model::TargetTypeEnum>,
@@ -7852,17 +5861,17 @@ pub struct CreateTargetGroupInput {
     pub ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
 }
 impl CreateTargetGroupInput {
-    /// <p>The name of the target group.</p>
+    /// <p>The name of the target group.</p> 
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::ProtocolEnum> {
         self.protocol.as_ref()
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
-    pub fn protocol_version(&self) -> std::option::Option<&str> {
+    pub fn protocol_version(&self) -> std::option::Option<& str> {
         self.protocol_version.as_deref()
     }
     /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
@@ -7870,25 +5879,25 @@ impl CreateTargetGroupInput {
         self.port
     }
     /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
+    pub fn health_check_protocol(&self) -> std::option::Option<& crate::model::ProtocolEnum> {
         self.health_check_protocol.as_ref()
     }
     /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
-    pub fn health_check_port(&self) -> std::option::Option<&str> {
+    pub fn health_check_port(&self) -> std::option::Option<& str> {
         self.health_check_port.as_deref()
     }
     /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
     pub fn health_check_enabled(&self) -> std::option::Option<bool> {
         self.health_check_enabled
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(&self) -> std::option::Option<&str> {
+    pub fn health_check_path(&self) -> std::option::Option<& str> {
         self.health_check_path.as_deref()
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
@@ -7908,27 +5917,25 @@ impl CreateTargetGroupInput {
         self.unhealthy_threshold_count
     }
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
-    pub fn matcher(&self) -> std::option::Option<&crate::model::Matcher> {
+    pub fn matcher(&self) -> std::option::Option<& crate::model::Matcher> {
         self.matcher.as_ref()
     }
-    /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
-    /// <ul>
-    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
-    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
-    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
-    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
+    /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p> 
+    /// <ul> 
+    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li> 
+    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li> 
+    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li> 
+    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li> 
     /// </ul>
-    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetTypeEnum> {
+    pub fn target_type(&self) -> std::option::Option<& crate::model::TargetTypeEnum> {
         self.target_type.as_ref()
     }
     /// <p>The tags to assign to the target group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn ip_address_type(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetGroupIpAddressTypeEnum> {
+    pub fn ip_address_type(&self) -> std::option::Option<& crate::model::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
     }
 }
@@ -7936,7 +5943,7 @@ impl CreateTargetGroupInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleInput {
+pub struct CreateRuleInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -7955,11 +5962,11 @@ pub struct CreateRuleInput {
 }
 impl CreateRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The conditions.</p>
-    pub fn conditions(&self) -> std::option::Option<&[crate::model::RuleCondition]> {
+    pub fn conditions(&self) -> std::option::Option<& [crate::model::RuleCondition]> {
         self.conditions.as_deref()
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
@@ -7967,11 +5974,11 @@ impl CreateRuleInput {
         self.priority
     }
     /// <p>The actions.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::model::Action]> {
         self.actions.as_deref()
     }
     /// <p>The tags to assign to the rule.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -7979,33 +5986,33 @@ impl CreateRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoadBalancerInput {
-    /// <p>The name of the load balancer.</p>
+pub struct CreateLoadBalancerInput  {
+    /// <p>The name of the load balancer.</p> 
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
-    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p> 
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p> 
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p> 
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p> 
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> 
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p> 
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     #[doc(hidden)]
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
-    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
-    /// <p>The default is an Internet-facing load balancer.</p>
+    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p> 
+    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p> 
+    /// <p>The default is an Internet-facing load balancer.</p> 
     /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
     #[doc(hidden)]
     pub scheme: std::option::Option<crate::model::LoadBalancerSchemeEnum>,
@@ -8023,54 +6030,54 @@ pub struct CreateLoadBalancerInput {
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
 }
 impl CreateLoadBalancerInput {
-    /// <p>The name of the load balancer.</p>
+    /// <p>The name of the load balancer.</p> 
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
-    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.</p> 
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p> 
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p> 
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.</p> 
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p> 
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p> 
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p> 
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p> 
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
-    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
+    pub fn subnet_mappings(&self) -> std::option::Option<& [crate::model::SubnetMapping]> {
         self.subnet_mappings.as_deref()
     }
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
-    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
-    /// <p>The default is an Internet-facing load balancer.</p>
+    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p> 
+    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p> 
+    /// <p>The default is an Internet-facing load balancer.</p> 
     /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
-    pub fn scheme(&self) -> std::option::Option<&crate::model::LoadBalancerSchemeEnum> {
+    pub fn scheme(&self) -> std::option::Option<& crate::model::LoadBalancerSchemeEnum> {
         self.scheme.as_ref()
     }
     /// <p>The tags to assign to the load balancer.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The type of load balancer. The default is <code>application</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::LoadBalancerTypeEnum> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::LoadBalancerTypeEnum> {
         self.r#type.as_ref()
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<& crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
-    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
+    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<& str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
 }
@@ -8078,7 +6085,7 @@ impl CreateLoadBalancerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateListenerInput {
+pub struct CreateListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
@@ -8088,7 +6095,7 @@ pub struct CreateListenerInput {
     /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub ssl_policy: std::option::Option<std::string::String>,
@@ -8098,14 +6105,14 @@ pub struct CreateListenerInput {
     /// <p>The actions for the default rule.</p>
     #[doc(hidden)]
     pub default_actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>HTTP1Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-    /// <li> <p> <code>None</code> </p> </li>
-    /// </ul>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     #[doc(hidden)]
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8115,44 +6122,44 @@ pub struct CreateListenerInput {
 }
 impl CreateListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::ProtocolEnum> {
         self.protocol.as_ref()
     }
     /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn ssl_policy(&self) -> std::option::Option<&str> {
+    pub fn ssl_policy(&self) -> std::option::Option<& str> {
         self.ssl_policy.as_deref()
     }
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::Certificate]> {
         self.certificates.as_deref()
     }
     /// <p>The actions for the default rule.</p>
-    pub fn default_actions(&self) -> std::option::Option<&[crate::model::Action]> {
+    pub fn default_actions(&self) -> std::option::Option<& [crate::model::Action]> {
         self.default_actions.as_deref()
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>HTTP1Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Only</code> </p> </li>
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
-    /// <li> <p> <code>None</code> </p> </li>
-    /// </ul>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
+    /// <li> <p> <code>None</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn alpn_policy(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alpn_policy(&self) -> std::option::Option<& [std::string::String]> {
         self.alpn_policy.as_deref()
     }
     /// <p>The tags to assign to the listener.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -8160,7 +6167,7 @@ impl CreateListenerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsInput {
+pub struct AddTagsInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8170,11 +6177,11 @@ pub struct AddTagsInput {
 }
 impl AddTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -8182,7 +6189,7 @@ impl AddTagsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddListenerCertificatesInput {
+pub struct AddListenerCertificatesInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -8192,11 +6199,12 @@ pub struct AddListenerCertificatesInput {
 }
 impl AddListenerCertificatesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::Certificate]> {
         self.certificates.as_deref()
     }
 }
+

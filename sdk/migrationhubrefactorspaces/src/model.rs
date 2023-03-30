@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let routestate = unimplemented!();
 /// match routestate {
@@ -34,22 +34,14 @@
 /// Specifically, when `routestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RouteState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RouteState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -64,7 +56,7 @@ pub enum RouteState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RouteState {
     fn from(s: &str) -> Self {
@@ -75,17 +67,17 @@ impl std::convert::From<&str> for RouteState {
             "FAILED" => RouteState::Failed,
             "INACTIVE" => RouteState::Inactive,
             "UPDATING" => RouteState::Updating,
-            other => RouteState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RouteState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RouteState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RouteState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RouteState::from(s))
+                }
+            }
 impl RouteState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -96,13 +88,13 @@ impl RouteState {
             RouteState::Failed => "FAILED",
             RouteState::Inactive => "INACTIVE",
             RouteState::Updating => "UPDATING",
-            RouteState::Unknown(value) => value.as_str(),
+            RouteState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE", "CREATING", "DELETING", "FAILED", "INACTIVE", "UPDATING",
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "INACTIVE", "UPDATING"
         ]
     }
 }
@@ -118,9 +110,9 @@ impl AsRef<str> for RouteState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let routeactivationstate = unimplemented!();
 /// match routeactivationstate {
@@ -142,60 +134,52 @@ impl AsRef<str> for RouteState {
 /// Specifically, when `routeactivationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RouteActivationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RouteActivationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RouteActivationState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => RouteActivationState::Active,
             "INACTIVE" => RouteActivationState::Inactive,
-            other => {
-                RouteActivationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RouteActivationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RouteActivationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RouteActivationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RouteActivationState::from(s))
+                }
+            }
 impl RouteActivationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RouteActivationState::Active => "ACTIVE",
             RouteActivationState::Inactive => "INACTIVE",
-            RouteActivationState::Unknown(value) => value.as_str(),
+            RouteActivationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE"]
+        &[
+            "ACTIVE", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for RouteActivationState {
@@ -207,7 +191,7 @@ impl AsRef<str> for RouteActivationState {
 /// <p>A summary for the service as a response to <code>ListServices</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceSummary {
+pub struct ServiceSummary  {
     /// <p>The unique identifier of the service. </p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
@@ -249,8 +233,7 @@ pub struct ServiceSummary {
     pub state: std::option::Option<crate::model::ServiceState>,
     /// <p>The tags assigned to the service. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the service resource. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
@@ -263,78 +246,75 @@ pub struct ServiceSummary {
 }
 impl ServiceSummary {
     /// <p>The unique identifier of the service. </p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The name of the service. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the service creator. </p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>A description of the service. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The unique identifier of the application. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the virtual private cloud (VPC). </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The endpoint type of the service. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::ServiceEndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::model::ServiceEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The summary of the configuration for the URL endpoint type. </p>
-    pub fn url_endpoint(&self) -> std::option::Option<&crate::model::UrlEndpointSummary> {
+    pub fn url_endpoint(&self) -> std::option::Option<& crate::model::UrlEndpointSummary> {
         self.url_endpoint.as_ref()
     }
     /// <p>A summary of the configuration for the Lambda endpoint type. </p>
-    pub fn lambda_endpoint(&self) -> std::option::Option<&crate::model::LambdaEndpointSummary> {
+    pub fn lambda_endpoint(&self) -> std::option::Option<& crate::model::LambdaEndpointSummary> {
         self.lambda_endpoint.as_ref()
     }
     /// <p>The current state of the service. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ServiceState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ServiceState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the service. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the service resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorResponse> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the service was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the service is created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceSummary {
+impl  std::fmt::Debug for ServiceSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceSummary");
         formatter.field("service_id", &self.service_id);
@@ -359,7 +339,7 @@ impl std::fmt::Debug for ServiceSummary {
 }
 /// See [`ServiceSummary`](crate::model::ServiceSummary).
 pub mod service_summary {
-
+    
     /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -376,9 +356,7 @@ pub mod service_summary {
         pub(crate) url_endpoint: std::option::Option<crate::model::UrlEndpointSummary>,
         pub(crate) lambda_endpoint: std::option::Option<crate::model::LambdaEndpointSummary>,
         pub(crate) state: std::option::Option<crate::model::ServiceState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -391,8 +369,7 @@ pub mod service_summary {
         }
         /// <p>The unique identifier of the service. </p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p>The name of the service. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -401,8 +378,7 @@ pub mod service_summary {
         }
         /// <p>The name of the service. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -411,8 +387,7 @@ pub mod service_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the service. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the service owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -420,12 +395,8 @@ pub mod service_summary {
             self
         }
         /// <p>The Amazon Web Services account ID of the service owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the service creator. </p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -433,12 +404,8 @@ pub mod service_summary {
             self
         }
         /// <p>The Amazon Web Services account ID of the service creator. </p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>A description of the service. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -447,8 +414,7 @@ pub mod service_summary {
         }
         /// <p>A description of the service. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier of the environment. </p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -456,12 +422,8 @@ pub mod service_summary {
             self
         }
         /// <p>The unique identifier of the environment. </p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The unique identifier of the application. </p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -469,12 +431,8 @@ pub mod service_summary {
             self
         }
         /// <p>The unique identifier of the application. </p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ID of the virtual private cloud (VPC). </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -483,8 +441,7 @@ pub mod service_summary {
         }
         /// <p>The ID of the virtual private cloud (VPC). </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The endpoint type of the service. </p>
         pub fn endpoint_type(mut self, input: crate::model::ServiceEndpointType) -> Self {
@@ -492,12 +449,8 @@ pub mod service_summary {
             self
         }
         /// <p>The endpoint type of the service. </p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<crate::model::ServiceEndpointType>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<crate::model::ServiceEndpointType>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The summary of the configuration for the URL endpoint type. </p>
         pub fn url_endpoint(mut self, input: crate::model::UrlEndpointSummary) -> Self {
@@ -505,12 +458,8 @@ pub mod service_summary {
             self
         }
         /// <p>The summary of the configuration for the URL endpoint type. </p>
-        pub fn set_url_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::UrlEndpointSummary>,
-        ) -> Self {
-            self.url_endpoint = input;
-            self
+        pub fn set_url_endpoint(mut self, input: std::option::Option<crate::model::UrlEndpointSummary>) -> Self {
+            self.url_endpoint = input; self
         }
         /// <p>A summary of the configuration for the Lambda endpoint type. </p>
         pub fn lambda_endpoint(mut self, input: crate::model::LambdaEndpointSummary) -> Self {
@@ -518,12 +467,8 @@ pub mod service_summary {
             self
         }
         /// <p>A summary of the configuration for the Lambda endpoint type. </p>
-        pub fn set_lambda_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::LambdaEndpointSummary>,
-        ) -> Self {
-            self.lambda_endpoint = input;
-            self
+        pub fn set_lambda_endpoint(mut self, input: std::option::Option<crate::model::LambdaEndpointSummary>) -> Self {
+            self.lambda_endpoint = input; self
         }
         /// <p>The current state of the service. </p>
         pub fn state(mut self, input: crate::model::ServiceState) -> Self {
@@ -532,33 +477,22 @@ pub mod service_summary {
         }
         /// <p>The current state of the service. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ServiceState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the service. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the service. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Any error associated with the service resource. </p>
         pub fn error(mut self, input: crate::model::ErrorResponse) -> Self {
@@ -566,12 +500,8 @@ pub mod service_summary {
             self
         }
         /// <p>Any error associated with the service resource. </p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResponse>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorResponse>) -> Self {
+            self.error = input; self
         }
         /// <p>A timestamp that indicates when the service was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -579,12 +509,8 @@ pub mod service_summary {
             self
         }
         /// <p>A timestamp that indicates when the service was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the service is created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -592,33 +518,46 @@ pub mod service_summary {
             self
         }
         /// <p>A timestamp that indicates when the service is created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`ServiceSummary`](crate::model::ServiceSummary).
         pub fn build(self) -> crate::model::ServiceSummary {
             crate::model::ServiceSummary {
-                service_id: self.service_id,
-                name: self.name,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                description: self.description,
-                environment_id: self.environment_id,
-                application_id: self.application_id,
-                vpc_id: self.vpc_id,
-                endpoint_type: self.endpoint_type,
-                url_endpoint: self.url_endpoint,
-                lambda_endpoint: self.lambda_endpoint,
-                state: self.state,
-                tags: self.tags,
-                error: self.error,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                service_id: self.service_id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                description: self.description
+                ,
+                environment_id: self.environment_id
+                ,
+                application_id: self.application_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                url_endpoint: self.url_endpoint
+                ,
+                lambda_endpoint: self.lambda_endpoint
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                error: self.error
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -645,6 +584,8 @@ pub mod service_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ServiceSummary {
     /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
@@ -656,7 +597,7 @@ impl ServiceSummary {
 /// <p>Error associated with a resource returned for a Get or List resource response. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorResponse {
+pub struct ErrorResponse  {
     /// <p>The error code associated with the error. </p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -674,41 +615,37 @@ pub struct ErrorResponse {
     pub resource_type: std::option::Option<crate::model::ErrorResourceType>,
     /// <p>Additional details about the error. </p>
     #[doc(hidden)]
-    pub additional_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ErrorResponse {
     /// <p>The error code associated with the error. </p>
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The message associated with the error. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the resource owner. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the resource. </p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The type of resource. </p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ErrorResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ErrorResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Additional details about the error. </p>
-    pub fn additional_details(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn additional_details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.additional_details.as_ref()
     }
 }
 /// See [`ErrorResponse`](crate::model::ErrorResponse).
 pub mod error_response {
-
+    
     /// A builder for [`ErrorResponse`](crate::model::ErrorResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -717,9 +654,7 @@ pub mod error_response {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ErrorResourceType>,
-        pub(crate) additional_details: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) additional_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The error code associated with the error. </p>
@@ -729,8 +664,7 @@ pub mod error_response {
         }
         /// <p>The error code associated with the error. </p>
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>The message associated with the error. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -739,8 +673,7 @@ pub mod error_response {
         }
         /// <p>The message associated with the error. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The Amazon Web Services account ID of the resource owner. </p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -749,8 +682,7 @@ pub mod error_response {
         }
         /// <p>The Amazon Web Services account ID of the resource owner. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The ID of the resource. </p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -758,12 +690,8 @@ pub mod error_response {
             self
         }
         /// <p>The ID of the resource. </p>
-        pub fn set_resource_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_identifier = input;
-            self
+        pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_identifier = input; self
         }
         /// <p>The type of resource. </p>
         pub fn resource_type(mut self, input: crate::model::ErrorResourceType) -> Self {
@@ -771,50 +699,44 @@ pub mod error_response {
             self
         }
         /// <p>The type of resource. </p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ErrorResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Adds a key-value pair to `additional_details`.
         ///
         /// To override the contents of this collection use [`set_additional_details`](Self::set_additional_details).
         ///
         /// <p>Additional details about the error. </p>
-        pub fn additional_details(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_details(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.additional_details.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.additional_details = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.additional_details = Some(hash_map);
+                            self
         }
         /// <p>Additional details about the error. </p>
-        pub fn set_additional_details(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.additional_details = input;
-            self
+        pub fn set_additional_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.additional_details = input; self
         }
         /// Consumes the builder and constructs a [`ErrorResponse`](crate::model::ErrorResponse).
         pub fn build(self) -> crate::model::ErrorResponse {
             crate::model::ErrorResponse {
-                code: self.code,
-                message: self.message,
-                account_id: self.account_id,
-                resource_identifier: self.resource_identifier,
-                resource_type: self.resource_type,
-                additional_details: self.additional_details,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                account_id: self.account_id
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+                additional_details: self.additional_details
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorResponse {
     /// Creates a new builder-style object to manufacture [`ErrorResponse`](crate::model::ErrorResponse).
@@ -829,9 +751,9 @@ impl ErrorResponse {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorresourcetype = unimplemented!();
 /// match errorresourcetype {
@@ -870,22 +792,14 @@ impl ErrorResponse {
 /// Specifically, when `errorresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
@@ -926,7 +840,7 @@ pub enum ErrorResourceType {
     #[allow(missing_docs)] // documentation missing in model
     VpcLink,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorResourceType {
     fn from(s: &str) -> Self {
@@ -948,23 +862,19 @@ impl std::convert::From<&str> for ErrorResourceType {
             "TRANSIT_GATEWAY" => ErrorResourceType::TransitGateway,
             "TRANSIT_GATEWAY_ATTACHMENT" => ErrorResourceType::TransitGatewayAttachment,
             "VPC" => ErrorResourceType::Vpc,
-            "VPC_ENDPOINT_SERVICE_CONFIGURATION" => {
-                ErrorResourceType::VpcEndpointServiceConfiguration
-            }
+            "VPC_ENDPOINT_SERVICE_CONFIGURATION" => ErrorResourceType::VpcEndpointServiceConfiguration,
             "VPC_LINK" => ErrorResourceType::VpcLink,
-            other => {
-                ErrorResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ErrorResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorResourceType::from(s))
+                }
+            }
 impl ErrorResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -986,35 +896,15 @@ impl ErrorResourceType {
             ErrorResourceType::TransitGateway => "TRANSIT_GATEWAY",
             ErrorResourceType::TransitGatewayAttachment => "TRANSIT_GATEWAY_ATTACHMENT",
             ErrorResourceType::Vpc => "VPC",
-            ErrorResourceType::VpcEndpointServiceConfiguration => {
-                "VPC_ENDPOINT_SERVICE_CONFIGURATION"
-            }
+            ErrorResourceType::VpcEndpointServiceConfiguration => "VPC_ENDPOINT_SERVICE_CONFIGURATION",
             ErrorResourceType::VpcLink => "VPC_LINK",
-            ErrorResourceType::Unknown(value) => value.as_str(),
+            ErrorResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "API_GATEWAY",
-            "APPLICATION",
-            "ENVIRONMENT",
-            "IAM_ROLE",
-            "LAMBDA",
-            "LOAD_BALANCER_LISTENER",
-            "NLB",
-            "RESOURCE_SHARE",
-            "ROUTE",
-            "ROUTE_TABLE",
-            "SECURITY_GROUP",
-            "SERVICE",
-            "SUBNET",
-            "TARGET_GROUP",
-            "TRANSIT_GATEWAY",
-            "TRANSIT_GATEWAY_ATTACHMENT",
-            "VPC",
-            "VPC_ENDPOINT_SERVICE_CONFIGURATION",
-            "VPC_LINK",
+            "API_GATEWAY", "APPLICATION", "ENVIRONMENT", "IAM_ROLE", "LAMBDA", "LOAD_BALANCER_LISTENER", "NLB", "RESOURCE_SHARE", "ROUTE", "ROUTE_TABLE", "SECURITY_GROUP", "SERVICE", "SUBNET", "TARGET_GROUP", "TRANSIT_GATEWAY", "TRANSIT_GATEWAY_ATTACHMENT", "VPC", "VPC_ENDPOINT_SERVICE_CONFIGURATION", "VPC_LINK"
         ]
     }
 }
@@ -1030,9 +920,9 @@ impl AsRef<str> for ErrorResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -1064,22 +954,14 @@ impl AsRef<str> for ErrorResourceType {
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InvalidResourceState,
@@ -1106,7 +988,7 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     StateTransitionFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -1123,17 +1005,17 @@ impl std::convert::From<&str> for ErrorCode {
             "RESOURCE_UPDATE_FAILURE" => ErrorCode::ResourceUpdateFailure,
             "SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE" => ErrorCode::ServiceEndpointHealthCheckFailure,
             "STATE_TRANSITION_FAILURE" => ErrorCode::StateTransitionFailure,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1150,24 +1032,13 @@ impl ErrorCode {
             ErrorCode::ResourceUpdateFailure => "RESOURCE_UPDATE_FAILURE",
             ErrorCode::ServiceEndpointHealthCheckFailure => "SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE",
             ErrorCode::StateTransitionFailure => "STATE_TRANSITION_FAILURE",
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "INVALID_RESOURCE_STATE",
-            "NOT_AUTHORIZED",
-            "REQUEST_LIMIT_EXCEEDED",
-            "RESOURCE_CREATION_FAILURE",
-            "RESOURCE_DELETION_FAILURE",
-            "RESOURCE_IN_USE",
-            "RESOURCE_LIMIT_EXCEEDED",
-            "RESOURCE_NOT_FOUND",
-            "RESOURCE_RETRIEVAL_FAILURE",
-            "RESOURCE_UPDATE_FAILURE",
-            "SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE",
-            "STATE_TRANSITION_FAILURE",
+            "INVALID_RESOURCE_STATE", "NOT_AUTHORIZED", "REQUEST_LIMIT_EXCEEDED", "RESOURCE_CREATION_FAILURE", "RESOURCE_DELETION_FAILURE", "RESOURCE_IN_USE", "RESOURCE_LIMIT_EXCEEDED", "RESOURCE_NOT_FOUND", "RESOURCE_RETRIEVAL_FAILURE", "RESOURCE_UPDATE_FAILURE", "SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE", "STATE_TRANSITION_FAILURE"
         ]
     }
 }
@@ -1183,9 +1054,9 @@ impl AsRef<str> for ErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicestate = unimplemented!();
 /// match servicestate {
@@ -1209,22 +1080,14 @@ impl AsRef<str> for ErrorCode {
 /// Specifically, when `servicestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1235,7 +1098,7 @@ pub enum ServiceState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceState {
     fn from(s: &str) -> Self {
@@ -1244,17 +1107,17 @@ impl std::convert::From<&str> for ServiceState {
             "CREATING" => ServiceState::Creating,
             "DELETING" => ServiceState::Deleting,
             "FAILED" => ServiceState::Failed,
-            other => ServiceState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ServiceState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceState::from(s))
+                }
+            }
 impl ServiceState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1263,12 +1126,14 @@ impl ServiceState {
             ServiceState::Creating => "CREATING",
             ServiceState::Deleting => "DELETING",
             ServiceState::Failed => "FAILED",
-            ServiceState::Unknown(value) => value.as_str(),
+            ServiceState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED"
+        ]
     }
 }
 impl AsRef<str> for ServiceState {
@@ -1280,20 +1145,20 @@ impl AsRef<str> for ServiceState {
 /// <p>The summary for the Lambda endpoint type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaEndpointSummary {
+pub struct LambdaEndpointSummary  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointSummary {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
 pub mod lambda_endpoint_summary {
-
+    
     /// A builder for [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1307,14 +1172,18 @@ pub mod lambda_endpoint_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
         pub fn build(self) -> crate::model::LambdaEndpointSummary {
-            crate::model::LambdaEndpointSummary { arn: self.arn }
+            crate::model::LambdaEndpointSummary {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl LambdaEndpointSummary {
     /// Creates a new builder-style object to manufacture [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
@@ -1326,7 +1195,7 @@ impl LambdaEndpointSummary {
 /// <p>The summary of the configuration for the URL endpoint type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UrlEndpointSummary {
+pub struct UrlEndpointSummary  {
     /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -1336,17 +1205,17 @@ pub struct UrlEndpointSummary {
 }
 impl UrlEndpointSummary {
     /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
-    pub fn health_url(&self) -> std::option::Option<&str> {
+    pub fn health_url(&self) -> std::option::Option<& str> {
         self.health_url.as_deref()
     }
 }
 /// See [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
 pub mod url_endpoint_summary {
-
+    
     /// A builder for [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1361,8 +1230,7 @@ pub mod url_endpoint_summary {
         }
         /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
         pub fn health_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1371,17 +1239,20 @@ pub mod url_endpoint_summary {
         }
         /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
         pub fn set_health_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.health_url = input;
-            self
+            self.health_url = input; self
         }
         /// Consumes the builder and constructs a [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
         pub fn build(self) -> crate::model::UrlEndpointSummary {
             crate::model::UrlEndpointSummary {
-                url: self.url,
-                health_url: self.health_url,
+                url: self.url
+                ,
+                health_url: self.health_url
+                ,
             }
         }
     }
+    
+    
 }
 impl UrlEndpointSummary {
     /// Creates a new builder-style object to manufacture [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
@@ -1396,9 +1267,9 @@ impl UrlEndpointSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let serviceendpointtype = unimplemented!();
 /// match serviceendpointtype {
@@ -1420,60 +1291,52 @@ impl UrlEndpointSummary {
 /// Specifically, when `serviceendpointtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceEndpointType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceEndpointType {
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
     #[allow(missing_docs)] // documentation missing in model
     Url,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceEndpointType {
     fn from(s: &str) -> Self {
         match s {
             "LAMBDA" => ServiceEndpointType::Lambda,
             "URL" => ServiceEndpointType::Url,
-            other => {
-                ServiceEndpointType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ServiceEndpointType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceEndpointType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceEndpointType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceEndpointType::from(s))
+                }
+            }
 impl ServiceEndpointType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceEndpointType::Lambda => "LAMBDA",
             ServiceEndpointType::Url => "URL",
-            ServiceEndpointType::Unknown(value) => value.as_str(),
+            ServiceEndpointType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LAMBDA", "URL"]
+        &[
+            "LAMBDA", "URL"
+        ]
     }
 }
 impl AsRef<str> for ServiceEndpointType {
@@ -1485,7 +1348,7 @@ impl AsRef<str> for ServiceEndpointType {
 /// <p>The summary information for the routes as a response to <code>ListRoutes</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RouteSummary {
+pub struct RouteSummary  {
     /// <p>The unique identifier of the route. </p>
     #[doc(hidden)]
     pub route_id: std::option::Option<std::string::String>,
@@ -1521,15 +1384,13 @@ pub struct RouteSummary {
     pub include_child_paths: std::option::Option<bool>,
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
     #[doc(hidden)]
-    pub path_resource_to_id:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub path_resource_to_id: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The current state of the route. </p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The tags assigned to the route. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the route resource. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
@@ -1542,43 +1403,43 @@ pub struct RouteSummary {
 }
 impl RouteSummary {
     /// <p>The unique identifier of the route. </p>
-    pub fn route_id(&self) -> std::option::Option<&str> {
+    pub fn route_id(&self) -> std::option::Option<& str> {
         self.route_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the route. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the route owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the route creator. </p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>The route type of the route. </p>
-    pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
+    pub fn route_type(&self) -> std::option::Option<& crate::model::RouteType> {
         self.route_type.as_ref()
     }
     /// <p>The unique identifier of the service. </p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The unique identifier of the application. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> std::option::Option<& str> {
         self.source_path.as_deref()
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    pub fn methods(&self) -> std::option::Option<&[crate::model::HttpMethod]> {
+    pub fn methods(&self) -> std::option::Option<& [crate::model::HttpMethod]> {
         self.methods.as_deref()
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
@@ -1586,37 +1447,31 @@ impl RouteSummary {
         self.include_child_paths
     }
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
-    pub fn path_resource_to_id(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn path_resource_to_id(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.path_resource_to_id.as_ref()
     }
     /// <p>The current state of the route. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::RouteState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the route. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the route resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorResponse> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the route was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the route is created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for RouteSummary {
+impl  std::fmt::Debug for RouteSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RouteSummary");
         formatter.field("route_id", &self.route_id);
@@ -1641,7 +1496,7 @@ impl std::fmt::Debug for RouteSummary {
 }
 /// See [`RouteSummary`](crate::model::RouteSummary).
 pub mod route_summary {
-
+    
     /// A builder for [`RouteSummary`](crate::model::RouteSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1656,13 +1511,9 @@ pub mod route_summary {
         pub(crate) source_path: std::option::Option<std::string::String>,
         pub(crate) methods: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
         pub(crate) include_child_paths: std::option::Option<bool>,
-        pub(crate) path_resource_to_id: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) path_resource_to_id: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) state: std::option::Option<crate::model::RouteState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1675,8 +1526,7 @@ pub mod route_summary {
         }
         /// <p>The unique identifier of the route. </p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.route_id = input;
-            self
+            self.route_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the route. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1685,8 +1535,7 @@ pub mod route_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the route. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the route owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1694,12 +1543,8 @@ pub mod route_summary {
             self
         }
         /// <p>The Amazon Web Services account ID of the route owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the route creator. </p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1707,12 +1552,8 @@ pub mod route_summary {
             self
         }
         /// <p>The Amazon Web Services account ID of the route creator. </p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>The route type of the route. </p>
         pub fn route_type(mut self, input: crate::model::RouteType) -> Self {
@@ -1720,12 +1561,8 @@ pub mod route_summary {
             self
         }
         /// <p>The route type of the route. </p>
-        pub fn set_route_type(
-            mut self,
-            input: std::option::Option<crate::model::RouteType>,
-        ) -> Self {
-            self.route_type = input;
-            self
+        pub fn set_route_type(mut self, input: std::option::Option<crate::model::RouteType>) -> Self {
+            self.route_type = input; self
         }
         /// <p>The unique identifier of the service. </p>
         pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1734,8 +1571,7 @@ pub mod route_summary {
         }
         /// <p>The unique identifier of the service. </p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_id = input;
-            self
+            self.service_id = input; self
         }
         /// <p>The unique identifier of the application. </p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1743,12 +1579,8 @@ pub mod route_summary {
             self
         }
         /// <p>The unique identifier of the application. </p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The unique identifier of the environment. </p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1756,12 +1588,8 @@ pub mod route_summary {
             self
         }
         /// <p>The unique identifier of the environment. </p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
         pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1770,8 +1598,7 @@ pub mod route_summary {
         }
         /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_path = input;
-            self
+            self.source_path = input; self
         }
         /// Appends an item to `methods`.
         ///
@@ -1780,17 +1607,13 @@ pub mod route_summary {
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
         pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input);
-            self.methods = Some(v);
-            self
+                            v.push(input);
+                            self.methods = Some(v);
+                            self
         }
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn set_methods(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
-        ) -> Self {
-            self.methods = input;
-            self
+        pub fn set_methods(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>) -> Self {
+            self.methods = input; self
         }
         /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
         pub fn include_child_paths(mut self, input: bool) -> Self {
@@ -1799,33 +1622,22 @@ pub mod route_summary {
         }
         /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
         pub fn set_include_child_paths(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_child_paths = input;
-            self
+            self.include_child_paths = input; self
         }
         /// Adds a key-value pair to `path_resource_to_id`.
         ///
         /// To override the contents of this collection use [`set_path_resource_to_id`](Self::set_path_resource_to_id).
         ///
         /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
-        pub fn path_resource_to_id(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn path_resource_to_id(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.path_resource_to_id.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.path_resource_to_id = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.path_resource_to_id = Some(hash_map);
+                            self
         }
         /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
-        pub fn set_path_resource_to_id(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.path_resource_to_id = input;
-            self
+        pub fn set_path_resource_to_id(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.path_resource_to_id = input; self
         }
         /// <p>The current state of the route. </p>
         pub fn state(mut self, input: crate::model::RouteState) -> Self {
@@ -1834,33 +1646,22 @@ pub mod route_summary {
         }
         /// <p>The current state of the route. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the route. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the route. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Any error associated with the route resource. </p>
         pub fn error(mut self, input: crate::model::ErrorResponse) -> Self {
@@ -1868,12 +1669,8 @@ pub mod route_summary {
             self
         }
         /// <p>Any error associated with the route resource. </p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResponse>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorResponse>) -> Self {
+            self.error = input; self
         }
         /// <p>A timestamp that indicates when the route was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1881,12 +1678,8 @@ pub mod route_summary {
             self
         }
         /// <p>A timestamp that indicates when the route was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the route is created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1894,33 +1687,46 @@ pub mod route_summary {
             self
         }
         /// <p>A timestamp that indicates when the route is created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`RouteSummary`](crate::model::RouteSummary).
         pub fn build(self) -> crate::model::RouteSummary {
             crate::model::RouteSummary {
-                route_id: self.route_id,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                route_type: self.route_type,
-                service_id: self.service_id,
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                source_path: self.source_path,
-                methods: self.methods,
-                include_child_paths: self.include_child_paths,
-                path_resource_to_id: self.path_resource_to_id,
-                state: self.state,
-                tags: self.tags,
-                error: self.error,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                route_id: self.route_id
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                route_type: self.route_type
+                ,
+                service_id: self.service_id
+                ,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                source_path: self.source_path
+                ,
+                methods: self.methods
+                ,
+                include_child_paths: self.include_child_paths
+                ,
+                path_resource_to_id: self.path_resource_to_id
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                error: self.error
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -1947,6 +1753,8 @@ pub mod route_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RouteSummary {
     /// Creates a new builder-style object to manufacture [`RouteSummary`](crate::model::RouteSummary).
@@ -1961,9 +1769,9 @@ impl RouteSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let httpmethod = unimplemented!();
 /// match httpmethod {
@@ -1990,22 +1798,14 @@ impl RouteSummary {
 /// Specifically, when `httpmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HttpMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HttpMethod {
     #[allow(missing_docs)] // documentation missing in model
     Delete,
@@ -2022,7 +1822,7 @@ pub enum HttpMethod {
     #[allow(missing_docs)] // documentation missing in model
     Put,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HttpMethod {
     fn from(s: &str) -> Self {
@@ -2034,17 +1834,17 @@ impl std::convert::From<&str> for HttpMethod {
             "PATCH" => HttpMethod::Patch,
             "POST" => HttpMethod::Post,
             "PUT" => HttpMethod::Put,
-            other => HttpMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HttpMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HttpMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HttpMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HttpMethod::from(s))
+                }
+            }
 impl HttpMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2056,12 +1856,14 @@ impl HttpMethod {
             HttpMethod::Patch => "PATCH",
             HttpMethod::Post => "POST",
             HttpMethod::Put => "PUT",
-            HttpMethod::Unknown(value) => value.as_str(),
+            HttpMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
+        &[
+            "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"
+        ]
     }
 }
 impl AsRef<str> for HttpMethod {
@@ -2076,9 +1878,9 @@ impl AsRef<str> for HttpMethod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let routetype = unimplemented!();
 /// match routetype {
@@ -2100,58 +1902,52 @@ impl AsRef<str> for HttpMethod {
 /// Specifically, when `routetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RouteType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RouteType {
     #[allow(missing_docs)] // documentation missing in model
     Default,
     #[allow(missing_docs)] // documentation missing in model
     UriPath,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RouteType {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => RouteType::Default,
             "URI_PATH" => RouteType::UriPath,
-            other => RouteType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RouteType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RouteType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RouteType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RouteType::from(s))
+                }
+            }
 impl RouteType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RouteType::Default => "DEFAULT",
             RouteType::UriPath => "URI_PATH",
-            RouteType::Unknown(value) => value.as_str(),
+            RouteType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEFAULT", "URI_PATH"]
+        &[
+            "DEFAULT", "URI_PATH"
+        ]
     }
 }
 impl AsRef<str> for RouteType {
@@ -2163,7 +1959,7 @@ impl AsRef<str> for RouteType {
 /// <p>Provides summary information for the <code>EnvironmentVpc</code> resource as a response to <code>ListEnvironmentVpc</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentVpc {
+pub struct EnvironmentVpc  {
     /// <p>The unique identifier of the environment. </p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
@@ -2188,37 +1984,37 @@ pub struct EnvironmentVpc {
 }
 impl EnvironmentVpc {
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the VPC. </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
-    pub fn cidr_blocks(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidr_blocks(&self) -> std::option::Option<& [std::string::String]> {
         self.cidr_blocks.as_deref()
     }
     /// <p>The name of the VPC at the time it is added to the environment. </p>
-    pub fn vpc_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_name(&self) -> std::option::Option<& str> {
         self.vpc_name.as_deref()
     }
     /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
 /// See [`EnvironmentVpc`](crate::model::EnvironmentVpc).
 pub mod environment_vpc {
-
+    
     /// A builder for [`EnvironmentVpc`](crate::model::EnvironmentVpc).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2237,12 +2033,8 @@ pub mod environment_vpc {
             self
         }
         /// <p>The unique identifier of the environment. </p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the VPC. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2251,8 +2043,7 @@ pub mod environment_vpc {
         }
         /// <p>The ID of the VPC. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2261,8 +2052,7 @@ pub mod environment_vpc {
         }
         /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Appends an item to `cidr_blocks`.
         ///
@@ -2271,17 +2061,13 @@ pub mod environment_vpc {
         /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
         pub fn cidr_blocks(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_blocks.unwrap_or_default();
-            v.push(input.into());
-            self.cidr_blocks = Some(v);
-            self
+                            v.push(input.into());
+                            self.cidr_blocks = Some(v);
+                            self
         }
         /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
-        pub fn set_cidr_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cidr_blocks = input;
-            self
+        pub fn set_cidr_blocks(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cidr_blocks = input; self
         }
         /// <p>The name of the VPC at the time it is added to the environment. </p>
         pub fn vpc_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2290,8 +2076,7 @@ pub mod environment_vpc {
         }
         /// <p>The name of the VPC at the time it is added to the environment. </p>
         pub fn set_vpc_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_name = input;
-            self
+            self.vpc_name = input; self
         }
         /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2299,12 +2084,8 @@ pub mod environment_vpc {
             self
         }
         /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2312,26 +2093,31 @@ pub mod environment_vpc {
             self
         }
         /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentVpc`](crate::model::EnvironmentVpc).
         pub fn build(self) -> crate::model::EnvironmentVpc {
             crate::model::EnvironmentVpc {
-                environment_id: self.environment_id,
-                vpc_id: self.vpc_id,
-                account_id: self.account_id,
-                cidr_blocks: self.cidr_blocks,
-                vpc_name: self.vpc_name,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                environment_id: self.environment_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                account_id: self.account_id
+                ,
+                cidr_blocks: self.cidr_blocks
+                ,
+                vpc_name: self.vpc_name
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentVpc {
     /// Creates a new builder-style object to manufacture [`EnvironmentVpc`](crate::model::EnvironmentVpc).
@@ -2343,7 +2129,7 @@ impl EnvironmentVpc {
 /// <p>The summary information for environments as a response to <code>ListEnvironments</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentSummary {
+pub struct EnvironmentSummary  {
     /// <p>The name of the environment. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2370,8 +2156,7 @@ pub struct EnvironmentSummary {
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>The tags assigned to the environment. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the environment resource. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
@@ -2384,58 +2169,55 @@ pub struct EnvironmentSummary {
 }
 impl EnvironmentSummary {
     /// <p>The name of the environment. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A description of the environment. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The network fabric type of the environment. </p>
-    pub fn network_fabric_type(&self) -> std::option::Option<&crate::model::NetworkFabricType> {
+    pub fn network_fabric_type(&self) -> std::option::Option<& crate::model::NetworkFabricType> {
         self.network_fabric_type.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The ID of the transit gateway set up by the environment. </p>
-    pub fn transit_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The current state of the environment. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the environment. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the environment resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorResponse> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the environment is created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for EnvironmentSummary {
+impl  std::fmt::Debug for EnvironmentSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentSummary");
         formatter.field("name", &self.name);
@@ -2455,7 +2237,7 @@ impl std::fmt::Debug for EnvironmentSummary {
 }
 /// See [`EnvironmentSummary`](crate::model::EnvironmentSummary).
 pub mod environment_summary {
-
+    
     /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2467,9 +2249,7 @@ pub mod environment_summary {
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
         pub(crate) transit_gateway_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EnvironmentState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2482,8 +2262,7 @@ pub mod environment_summary {
         }
         /// <p>The name of the environment. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2492,8 +2271,7 @@ pub mod environment_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the environment. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A description of the environment. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2502,8 +2280,7 @@ pub mod environment_summary {
         }
         /// <p>A description of the environment. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier of the environment. </p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2511,12 +2288,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The unique identifier of the environment. </p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The network fabric type of the environment. </p>
         pub fn network_fabric_type(mut self, input: crate::model::NetworkFabricType) -> Self {
@@ -2524,12 +2297,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The network fabric type of the environment. </p>
-        pub fn set_network_fabric_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkFabricType>,
-        ) -> Self {
-            self.network_fabric_type = input;
-            self
+        pub fn set_network_fabric_type(mut self, input: std::option::Option<crate::model::NetworkFabricType>) -> Self {
+            self.network_fabric_type = input; self
         }
         /// <p>The Amazon Web Services account ID of the environment owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2537,12 +2306,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The Amazon Web Services account ID of the environment owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The ID of the transit gateway set up by the environment. </p>
         pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2550,12 +2315,8 @@ pub mod environment_summary {
             self
         }
         /// <p>The ID of the transit gateway set up by the environment. </p>
-        pub fn set_transit_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transit_gateway_id = input;
-            self
+        pub fn set_transit_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transit_gateway_id = input; self
         }
         /// <p>The current state of the environment. </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
@@ -2563,37 +2324,23 @@ pub mod environment_summary {
             self
         }
         /// <p>The current state of the environment. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::EnvironmentState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the environment. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the environment. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Any error associated with the environment resource. </p>
         pub fn error(mut self, input: crate::model::ErrorResponse) -> Self {
@@ -2601,12 +2348,8 @@ pub mod environment_summary {
             self
         }
         /// <p>Any error associated with the environment resource. </p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResponse>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorResponse>) -> Self {
+            self.error = input; self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2614,12 +2357,8 @@ pub mod environment_summary {
             self
         }
         /// <p>A timestamp that indicates when the environment was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the environment is created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2627,28 +2366,36 @@ pub mod environment_summary {
             self
         }
         /// <p>A timestamp that indicates when the environment is created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::model::EnvironmentSummary).
         pub fn build(self) -> crate::model::EnvironmentSummary {
             crate::model::EnvironmentSummary {
-                name: self.name,
-                arn: self.arn,
-                description: self.description,
-                environment_id: self.environment_id,
-                network_fabric_type: self.network_fabric_type,
-                owner_account_id: self.owner_account_id,
-                transit_gateway_id: self.transit_gateway_id,
-                state: self.state,
-                tags: self.tags,
-                error: self.error,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                environment_id: self.environment_id
+                ,
+                network_fabric_type: self.network_fabric_type
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                transit_gateway_id: self.transit_gateway_id
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                error: self.error
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -2670,6 +2417,8 @@ pub mod environment_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EnvironmentSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
@@ -2684,9 +2433,9 @@ impl EnvironmentSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentstate = unimplemented!();
 /// match environmentstate {
@@ -2710,22 +2459,14 @@ impl EnvironmentSummary {
 /// Specifically, when `environmentstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2736,7 +2477,7 @@ pub enum EnvironmentState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentState {
     fn from(s: &str) -> Self {
@@ -2745,17 +2486,17 @@ impl std::convert::From<&str> for EnvironmentState {
             "CREATING" => EnvironmentState::Creating,
             "DELETING" => EnvironmentState::Deleting,
             "FAILED" => EnvironmentState::Failed,
-            other => EnvironmentState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EnvironmentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentState::from(s))
+                }
+            }
 impl EnvironmentState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2764,12 +2505,14 @@ impl EnvironmentState {
             EnvironmentState::Creating => "CREATING",
             EnvironmentState::Deleting => "DELETING",
             EnvironmentState::Failed => "FAILED",
-            EnvironmentState::Unknown(value) => value.as_str(),
+            EnvironmentState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED"
+        ]
     }
 }
 impl AsRef<str> for EnvironmentState {
@@ -2784,9 +2527,9 @@ impl AsRef<str> for EnvironmentState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkfabrictype = unimplemented!();
 /// match networkfabrictype {
@@ -2807,56 +2550,48 @@ impl AsRef<str> for EnvironmentState {
 /// Specifically, when `networkfabrictype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkFabricType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkFabricType {
     #[allow(missing_docs)] // documentation missing in model
     TransitGateway,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkFabricType {
     fn from(s: &str) -> Self {
         match s {
             "TRANSIT_GATEWAY" => NetworkFabricType::TransitGateway,
-            other => {
-                NetworkFabricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkFabricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkFabricType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkFabricType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkFabricType::from(s))
+                }
+            }
 impl NetworkFabricType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkFabricType::TransitGateway => "TRANSIT_GATEWAY",
-            NetworkFabricType::Unknown(value) => value.as_str(),
+            NetworkFabricType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TRANSIT_GATEWAY"]
+        &[
+            "TRANSIT_GATEWAY"
+        ]
     }
 }
 impl AsRef<str> for NetworkFabricType {
@@ -2868,7 +2603,7 @@ impl AsRef<str> for NetworkFabricType {
 /// <p>The list of <code>ApplicationSummary</code> objects. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The name of the application. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2901,8 +2636,7 @@ pub struct ApplicationSummary {
     pub state: std::option::Option<crate::model::ApplicationState>,
     /// <p>The tags assigned to the application. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Any error associated with the application resource. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::ErrorResponse>,
@@ -2915,66 +2649,63 @@ pub struct ApplicationSummary {
 }
 impl ApplicationSummary {
     /// <p>The name of the application. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the application creator. </p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> std::option::Option<& str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>The unique identifier of the application. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the virtual private cloud (VPC). </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The proxy type of the proxy created within the application. </p>
-    pub fn proxy_type(&self) -> std::option::Option<&crate::model::ProxyType> {
+    pub fn proxy_type(&self) -> std::option::Option<& crate::model::ProxyType> {
         self.proxy_type.as_ref()
     }
     /// <p>The endpoint URL of the Amazon API Gateway proxy. </p>
-    pub fn api_gateway_proxy(&self) -> std::option::Option<&crate::model::ApiGatewayProxySummary> {
+    pub fn api_gateway_proxy(&self) -> std::option::Option<& crate::model::ApiGatewayProxySummary> {
         self.api_gateway_proxy.as_ref()
     }
     /// <p>The current state of the application. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ApplicationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ApplicationState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the application. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the application resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ErrorResponse> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the application was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the application is created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for ApplicationSummary {
+impl  std::fmt::Debug for ApplicationSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationSummary");
         formatter.field("name", &self.name);
@@ -2996,7 +2727,7 @@ impl std::fmt::Debug for ApplicationSummary {
 }
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
-
+    
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3010,9 +2741,7 @@ pub mod application_summary {
         pub(crate) proxy_type: std::option::Option<crate::model::ProxyType>,
         pub(crate) api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxySummary>,
         pub(crate) state: std::option::Option<crate::model::ApplicationState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3025,8 +2754,7 @@ pub mod application_summary {
         }
         /// <p>The name of the application. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3035,8 +2763,7 @@ pub mod application_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the application. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3044,12 +2771,8 @@ pub mod application_summary {
             self
         }
         /// <p>The Amazon Web Services account ID of the application owner (which is always the same as the environment owner account ID).</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// <p>The Amazon Web Services account ID of the application creator. </p>
         pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3057,12 +2780,8 @@ pub mod application_summary {
             self
         }
         /// <p>The Amazon Web Services account ID of the application creator. </p>
-        pub fn set_created_by_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_account_id = input;
-            self
+        pub fn set_created_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_account_id = input; self
         }
         /// <p>The unique identifier of the application. </p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3070,12 +2789,8 @@ pub mod application_summary {
             self
         }
         /// <p>The unique identifier of the application. </p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The unique identifier of the environment. </p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3083,12 +2798,8 @@ pub mod application_summary {
             self
         }
         /// <p>The unique identifier of the environment. </p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the virtual private cloud (VPC). </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3097,8 +2808,7 @@ pub mod application_summary {
         }
         /// <p>The ID of the virtual private cloud (VPC). </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The proxy type of the proxy created within the application. </p>
         pub fn proxy_type(mut self, input: crate::model::ProxyType) -> Self {
@@ -3106,12 +2816,8 @@ pub mod application_summary {
             self
         }
         /// <p>The proxy type of the proxy created within the application. </p>
-        pub fn set_proxy_type(
-            mut self,
-            input: std::option::Option<crate::model::ProxyType>,
-        ) -> Self {
-            self.proxy_type = input;
-            self
+        pub fn set_proxy_type(mut self, input: std::option::Option<crate::model::ProxyType>) -> Self {
+            self.proxy_type = input; self
         }
         /// <p>The endpoint URL of the Amazon API Gateway proxy. </p>
         pub fn api_gateway_proxy(mut self, input: crate::model::ApiGatewayProxySummary) -> Self {
@@ -3119,12 +2825,8 @@ pub mod application_summary {
             self
         }
         /// <p>The endpoint URL of the Amazon API Gateway proxy. </p>
-        pub fn set_api_gateway_proxy(
-            mut self,
-            input: std::option::Option<crate::model::ApiGatewayProxySummary>,
-        ) -> Self {
-            self.api_gateway_proxy = input;
-            self
+        pub fn set_api_gateway_proxy(mut self, input: std::option::Option<crate::model::ApiGatewayProxySummary>) -> Self {
+            self.api_gateway_proxy = input; self
         }
         /// <p>The current state of the application. </p>
         pub fn state(mut self, input: crate::model::ApplicationState) -> Self {
@@ -3132,37 +2834,23 @@ pub mod application_summary {
             self
         }
         /// <p>The current state of the application. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ApplicationState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the application. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the application. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Any error associated with the application resource. </p>
         pub fn error(mut self, input: crate::model::ErrorResponse) -> Self {
@@ -3170,12 +2858,8 @@ pub mod application_summary {
             self
         }
         /// <p>Any error associated with the application resource. </p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ErrorResponse>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorResponse>) -> Self {
+            self.error = input; self
         }
         /// <p>A timestamp that indicates when the application was last updated. </p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3183,12 +2867,8 @@ pub mod application_summary {
             self
         }
         /// <p>A timestamp that indicates when the application was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>A timestamp that indicates when the application is created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3196,30 +2876,40 @@ pub mod application_summary {
             self
         }
         /// <p>A timestamp that indicates when the application is created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationSummary`](crate::model::ApplicationSummary).
         pub fn build(self) -> crate::model::ApplicationSummary {
             crate::model::ApplicationSummary {
-                name: self.name,
-                arn: self.arn,
-                owner_account_id: self.owner_account_id,
-                created_by_account_id: self.created_by_account_id,
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                vpc_id: self.vpc_id,
-                proxy_type: self.proxy_type,
-                api_gateway_proxy: self.api_gateway_proxy,
-                state: self.state,
-                tags: self.tags,
-                error: self.error,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                created_by_account_id: self.created_by_account_id
+                ,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                proxy_type: self.proxy_type
+                ,
+                api_gateway_proxy: self.api_gateway_proxy
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                error: self.error
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
@@ -3243,6 +2933,8 @@ pub mod application_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ApplicationSummary {
     /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
@@ -3257,9 +2949,9 @@ impl ApplicationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applicationstate = unimplemented!();
 /// match applicationstate {
@@ -3284,22 +2976,14 @@ impl ApplicationSummary {
 /// Specifically, when `applicationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApplicationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3312,7 +2996,7 @@ pub enum ApplicationState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationState {
     fn from(s: &str) -> Self {
@@ -3322,17 +3006,17 @@ impl std::convert::From<&str> for ApplicationState {
             "DELETING" => ApplicationState::Deleting,
             "FAILED" => ApplicationState::Failed,
             "UPDATING" => ApplicationState::Updating,
-            other => ApplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ApplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApplicationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApplicationState::from(s))
+                }
+            }
 impl ApplicationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3342,12 +3026,14 @@ impl ApplicationState {
             ApplicationState::Deleting => "DELETING",
             ApplicationState::Failed => "FAILED",
             ApplicationState::Updating => "UPDATING",
-            ApplicationState::Unknown(value) => value.as_str(),
+            ApplicationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for ApplicationState {
@@ -3359,7 +3045,7 @@ impl AsRef<str> for ApplicationState {
 /// <p>A wrapper object holding the Amazon API Gateway proxy summary. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiGatewayProxySummary {
+pub struct ApiGatewayProxySummary  {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
     #[doc(hidden)]
     pub proxy_url: std::option::Option<std::string::String>,
@@ -3384,37 +3070,37 @@ pub struct ApiGatewayProxySummary {
 }
 impl ApiGatewayProxySummary {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    pub fn proxy_url(&self) -> std::option::Option<&str> {
+    pub fn proxy_url(&self) -> std::option::Option<& str> {
         self.proxy_url.as_deref()
     }
     /// <p>The resource ID of the API Gateway for the proxy. </p>
-    pub fn api_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn api_gateway_id(&self) -> std::option::Option<& str> {
         self.api_gateway_id.as_deref()
     }
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
-    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
-    pub fn nlb_arn(&self) -> std::option::Option<&str> {
+    pub fn nlb_arn(&self) -> std::option::Option<& str> {
         self.nlb_arn.as_deref()
     }
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
-    pub fn nlb_name(&self) -> std::option::Option<&str> {
+    pub fn nlb_name(&self) -> std::option::Option<& str> {
         self.nlb_name.as_deref()
     }
     /// <p>The type of API Gateway endpoint created. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::ApiGatewayEndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::model::ApiGatewayEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
 /// See [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
 pub mod api_gateway_proxy_summary {
-
+    
     /// A builder for [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3434,8 +3120,7 @@ pub mod api_gateway_proxy_summary {
         }
         /// <p>The endpoint URL of the API Gateway proxy. </p>
         pub fn set_proxy_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.proxy_url = input;
-            self
+            self.proxy_url = input; self
         }
         /// <p>The resource ID of the API Gateway for the proxy. </p>
         pub fn api_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3443,12 +3128,8 @@ pub mod api_gateway_proxy_summary {
             self
         }
         /// <p>The resource ID of the API Gateway for the proxy. </p>
-        pub fn set_api_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_gateway_id = input;
-            self
+        pub fn set_api_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_gateway_id = input; self
         }
         /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
         pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3457,8 +3138,7 @@ pub mod api_gateway_proxy_summary {
         }
         /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_link_id = input;
-            self
+            self.vpc_link_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
         pub fn nlb_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3467,8 +3147,7 @@ pub mod api_gateway_proxy_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
         pub fn set_nlb_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nlb_arn = input;
-            self
+            self.nlb_arn = input; self
         }
         /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
         pub fn nlb_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3477,8 +3156,7 @@ pub mod api_gateway_proxy_summary {
         }
         /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
         pub fn set_nlb_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nlb_name = input;
-            self
+            self.nlb_name = input; self
         }
         /// <p>The type of API Gateway endpoint created. </p>
         pub fn endpoint_type(mut self, input: crate::model::ApiGatewayEndpointType) -> Self {
@@ -3486,12 +3164,8 @@ pub mod api_gateway_proxy_summary {
             self
         }
         /// <p>The type of API Gateway endpoint created. </p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<crate::model::ApiGatewayEndpointType>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<crate::model::ApiGatewayEndpointType>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3500,22 +3174,30 @@ pub mod api_gateway_proxy_summary {
         }
         /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// Consumes the builder and constructs a [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
         pub fn build(self) -> crate::model::ApiGatewayProxySummary {
             crate::model::ApiGatewayProxySummary {
-                proxy_url: self.proxy_url,
-                api_gateway_id: self.api_gateway_id,
-                vpc_link_id: self.vpc_link_id,
-                nlb_arn: self.nlb_arn,
-                nlb_name: self.nlb_name,
-                endpoint_type: self.endpoint_type,
-                stage_name: self.stage_name,
+                proxy_url: self.proxy_url
+                ,
+                api_gateway_id: self.api_gateway_id
+                ,
+                vpc_link_id: self.vpc_link_id
+                ,
+                nlb_arn: self.nlb_arn
+                ,
+                nlb_name: self.nlb_name
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                stage_name: self.stage_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ApiGatewayProxySummary {
     /// Creates a new builder-style object to manufacture [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
@@ -3530,9 +3212,9 @@ impl ApiGatewayProxySummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let apigatewayendpointtype = unimplemented!();
 /// match apigatewayendpointtype {
@@ -3554,60 +3236,52 @@ impl ApiGatewayProxySummary {
 /// Specifically, when `apigatewayendpointtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApiGatewayEndpointType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApiGatewayEndpointType {
     #[allow(missing_docs)] // documentation missing in model
     Private,
     #[allow(missing_docs)] // documentation missing in model
     Regional,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApiGatewayEndpointType {
     fn from(s: &str) -> Self {
         match s {
             "PRIVATE" => ApiGatewayEndpointType::Private,
             "REGIONAL" => ApiGatewayEndpointType::Regional,
-            other => {
-                ApiGatewayEndpointType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ApiGatewayEndpointType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApiGatewayEndpointType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApiGatewayEndpointType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApiGatewayEndpointType::from(s))
+                }
+            }
 impl ApiGatewayEndpointType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApiGatewayEndpointType::Private => "PRIVATE",
             ApiGatewayEndpointType::Regional => "REGIONAL",
-            ApiGatewayEndpointType::Unknown(value) => value.as_str(),
+            ApiGatewayEndpointType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIVATE", "REGIONAL"]
+        &[
+            "PRIVATE", "REGIONAL"
+        ]
     }
 }
 impl AsRef<str> for ApiGatewayEndpointType {
@@ -3622,9 +3296,9 @@ impl AsRef<str> for ApiGatewayEndpointType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let proxytype = unimplemented!();
 /// match proxytype {
@@ -3645,54 +3319,48 @@ impl AsRef<str> for ApiGatewayEndpointType {
 /// Specifically, when `proxytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProxyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProxyType {
     #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProxyType {
     fn from(s: &str) -> Self {
         match s {
             "API_GATEWAY" => ProxyType::ApiGateway,
-            other => ProxyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ProxyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProxyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProxyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProxyType::from(s))
+                }
+            }
 impl ProxyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProxyType::ApiGateway => "API_GATEWAY",
-            ProxyType::Unknown(value) => value.as_str(),
+            ProxyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["API_GATEWAY"]
+        &[
+            "API_GATEWAY"
+        ]
     }
 }
 impl AsRef<str> for ProxyType {
@@ -3704,20 +3372,20 @@ impl AsRef<str> for ProxyType {
 /// <p>The configuration for the Lambda endpoint type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaEndpointConfig {
+pub struct LambdaEndpointConfig  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointConfig {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
 pub mod lambda_endpoint_config {
-
+    
     /// A builder for [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3731,14 +3399,18 @@ pub mod lambda_endpoint_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
         pub fn build(self) -> crate::model::LambdaEndpointConfig {
-            crate::model::LambdaEndpointConfig { arn: self.arn }
+            crate::model::LambdaEndpointConfig {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl LambdaEndpointConfig {
     /// Creates a new builder-style object to manufacture [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
@@ -3750,7 +3422,7 @@ impl LambdaEndpointConfig {
 /// <p>The configuration for the URL endpoint type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UrlEndpointConfig {
+pub struct UrlEndpointConfig  {
     /// <p>The HTTP URL endpoint. </p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -3760,17 +3432,17 @@ pub struct UrlEndpointConfig {
 }
 impl UrlEndpointConfig {
     /// <p>The HTTP URL endpoint. </p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The health check URL of the URL endpoint type. </p>
-    pub fn health_url(&self) -> std::option::Option<&str> {
+    pub fn health_url(&self) -> std::option::Option<& str> {
         self.health_url.as_deref()
     }
 }
 /// See [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
 pub mod url_endpoint_config {
-
+    
     /// A builder for [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3785,8 +3457,7 @@ pub mod url_endpoint_config {
         }
         /// <p>The HTTP URL endpoint. </p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// <p>The health check URL of the URL endpoint type. </p>
         pub fn health_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3795,17 +3466,20 @@ pub mod url_endpoint_config {
         }
         /// <p>The health check URL of the URL endpoint type. </p>
         pub fn set_health_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.health_url = input;
-            self
+            self.health_url = input; self
         }
         /// Consumes the builder and constructs a [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
         pub fn build(self) -> crate::model::UrlEndpointConfig {
             crate::model::UrlEndpointConfig {
-                url: self.url,
-                health_url: self.health_url,
+                url: self.url
+                ,
+                health_url: self.health_url
+                ,
             }
         }
     }
+    
+    
 }
 impl UrlEndpointConfig {
     /// Creates a new builder-style object to manufacture [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
@@ -3817,7 +3491,7 @@ impl UrlEndpointConfig {
 /// <p>A wrapper object holding the Amazon API Gateway proxy configuration. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiGatewayProxyConfig {
+pub struct ApiGatewayProxyConfig  {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
     #[doc(hidden)]
     pub proxy_url: std::option::Option<std::string::String>,
@@ -3842,37 +3516,37 @@ pub struct ApiGatewayProxyConfig {
 }
 impl ApiGatewayProxyConfig {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    pub fn proxy_url(&self) -> std::option::Option<&str> {
+    pub fn proxy_url(&self) -> std::option::Option<& str> {
         self.proxy_url.as_deref()
     }
     /// <p>The resource ID of the API Gateway for the proxy. </p>
-    pub fn api_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn api_gateway_id(&self) -> std::option::Option<& str> {
         self.api_gateway_id.as_deref()
     }
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
-    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
-    pub fn nlb_arn(&self) -> std::option::Option<&str> {
+    pub fn nlb_arn(&self) -> std::option::Option<& str> {
         self.nlb_arn.as_deref()
     }
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
-    pub fn nlb_name(&self) -> std::option::Option<&str> {
+    pub fn nlb_name(&self) -> std::option::Option<& str> {
         self.nlb_name.as_deref()
     }
     /// <p>The type of API Gateway endpoint created. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::ApiGatewayEndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::model::ApiGatewayEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
 /// See [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
 pub mod api_gateway_proxy_config {
-
+    
     /// A builder for [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3892,8 +3566,7 @@ pub mod api_gateway_proxy_config {
         }
         /// <p>The endpoint URL of the API Gateway proxy. </p>
         pub fn set_proxy_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.proxy_url = input;
-            self
+            self.proxy_url = input; self
         }
         /// <p>The resource ID of the API Gateway for the proxy. </p>
         pub fn api_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3901,12 +3574,8 @@ pub mod api_gateway_proxy_config {
             self
         }
         /// <p>The resource ID of the API Gateway for the proxy. </p>
-        pub fn set_api_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_gateway_id = input;
-            self
+        pub fn set_api_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_gateway_id = input; self
         }
         /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
         pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3915,8 +3584,7 @@ pub mod api_gateway_proxy_config {
         }
         /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_link_id = input;
-            self
+            self.vpc_link_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
         pub fn nlb_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3925,8 +3593,7 @@ pub mod api_gateway_proxy_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
         pub fn set_nlb_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nlb_arn = input;
-            self
+            self.nlb_arn = input; self
         }
         /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
         pub fn nlb_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3935,8 +3602,7 @@ pub mod api_gateway_proxy_config {
         }
         /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
         pub fn set_nlb_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nlb_name = input;
-            self
+            self.nlb_name = input; self
         }
         /// <p>The type of API Gateway endpoint created. </p>
         pub fn endpoint_type(mut self, input: crate::model::ApiGatewayEndpointType) -> Self {
@@ -3944,12 +3610,8 @@ pub mod api_gateway_proxy_config {
             self
         }
         /// <p>The type of API Gateway endpoint created. </p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<crate::model::ApiGatewayEndpointType>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<crate::model::ApiGatewayEndpointType>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3958,22 +3620,30 @@ pub mod api_gateway_proxy_config {
         }
         /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// Consumes the builder and constructs a [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
         pub fn build(self) -> crate::model::ApiGatewayProxyConfig {
             crate::model::ApiGatewayProxyConfig {
-                proxy_url: self.proxy_url,
-                api_gateway_id: self.api_gateway_id,
-                vpc_link_id: self.vpc_link_id,
-                nlb_arn: self.nlb_arn,
-                nlb_name: self.nlb_name,
-                endpoint_type: self.endpoint_type,
-                stage_name: self.stage_name,
+                proxy_url: self.proxy_url
+                ,
+                api_gateway_id: self.api_gateway_id
+                ,
+                vpc_link_id: self.vpc_link_id
+                ,
+                nlb_arn: self.nlb_arn
+                ,
+                nlb_name: self.nlb_name
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                stage_name: self.stage_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ApiGatewayProxyConfig {
     /// Creates a new builder-style object to manufacture [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
@@ -3985,20 +3655,20 @@ impl ApiGatewayProxyConfig {
 /// <p>The input for the Lambda endpoint type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaEndpointInput {
+pub struct LambdaEndpointInput  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
 pub mod lambda_endpoint_input {
-
+    
     /// A builder for [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4012,14 +3682,18 @@ pub mod lambda_endpoint_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
         pub fn build(self) -> crate::model::LambdaEndpointInput {
-            crate::model::LambdaEndpointInput { arn: self.arn }
+            crate::model::LambdaEndpointInput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl LambdaEndpointInput {
     /// Creates a new builder-style object to manufacture [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
@@ -4031,7 +3705,7 @@ impl LambdaEndpointInput {
 /// <p>The configuration for the URL endpoint type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UrlEndpointInput {
+pub struct UrlEndpointInput  {
     /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -4041,17 +3715,17 @@ pub struct UrlEndpointInput {
 }
 impl UrlEndpointInput {
     /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
-    pub fn health_url(&self) -> std::option::Option<&str> {
+    pub fn health_url(&self) -> std::option::Option<& str> {
         self.health_url.as_deref()
     }
 }
 /// See [`UrlEndpointInput`](crate::model::UrlEndpointInput).
 pub mod url_endpoint_input {
-
+    
     /// A builder for [`UrlEndpointInput`](crate::model::UrlEndpointInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4066,8 +3740,7 @@ pub mod url_endpoint_input {
         }
         /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
         pub fn health_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4076,17 +3749,20 @@ pub mod url_endpoint_input {
         }
         /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
         pub fn set_health_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.health_url = input;
-            self
+            self.health_url = input; self
         }
         /// Consumes the builder and constructs a [`UrlEndpointInput`](crate::model::UrlEndpointInput).
         pub fn build(self) -> crate::model::UrlEndpointInput {
             crate::model::UrlEndpointInput {
-                url: self.url,
-                health_url: self.health_url,
+                url: self.url
+                ,
+                health_url: self.health_url
+                ,
             }
         }
     }
+    
+    
 }
 impl UrlEndpointInput {
     /// Creates a new builder-style object to manufacture [`UrlEndpointInput`](crate::model::UrlEndpointInput).
@@ -4098,7 +3774,7 @@ impl UrlEndpointInput {
 /// <p>The configuration for the URI path route type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UriPathRouteInput {
+pub struct UriPathRouteInput  {
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
     #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
@@ -4114,15 +3790,15 @@ pub struct UriPathRouteInput {
 }
 impl UriPathRouteInput {
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> std::option::Option<& str> {
         self.source_path.as_deref()
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    pub fn activation_state(&self) -> std::option::Option<&crate::model::RouteActivationState> {
+    pub fn activation_state(&self) -> std::option::Option<& crate::model::RouteActivationState> {
         self.activation_state.as_ref()
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    pub fn methods(&self) -> std::option::Option<&[crate::model::HttpMethod]> {
+    pub fn methods(&self) -> std::option::Option<& [crate::model::HttpMethod]> {
         self.methods.as_deref()
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
@@ -4132,7 +3808,7 @@ impl UriPathRouteInput {
 }
 /// See [`UriPathRouteInput`](crate::model::UriPathRouteInput).
 pub mod uri_path_route_input {
-
+    
     /// A builder for [`UriPathRouteInput`](crate::model::UriPathRouteInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4149,8 +3825,7 @@ pub mod uri_path_route_input {
         }
         /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_path = input;
-            self
+            self.source_path = input; self
         }
         /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
         pub fn activation_state(mut self, input: crate::model::RouteActivationState) -> Self {
@@ -4158,12 +3833,8 @@ pub mod uri_path_route_input {
             self
         }
         /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-        pub fn set_activation_state(
-            mut self,
-            input: std::option::Option<crate::model::RouteActivationState>,
-        ) -> Self {
-            self.activation_state = input;
-            self
+        pub fn set_activation_state(mut self, input: std::option::Option<crate::model::RouteActivationState>) -> Self {
+            self.activation_state = input; self
         }
         /// Appends an item to `methods`.
         ///
@@ -4172,17 +3843,13 @@ pub mod uri_path_route_input {
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
         pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input);
-            self.methods = Some(v);
-            self
+                            v.push(input);
+                            self.methods = Some(v);
+                            self
         }
         /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn set_methods(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
-        ) -> Self {
-            self.methods = input;
-            self
+        pub fn set_methods(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>) -> Self {
+            self.methods = input; self
         }
         /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
         pub fn include_child_paths(mut self, input: bool) -> Self {
@@ -4191,19 +3858,24 @@ pub mod uri_path_route_input {
         }
         /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
         pub fn set_include_child_paths(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_child_paths = input;
-            self
+            self.include_child_paths = input; self
         }
         /// Consumes the builder and constructs a [`UriPathRouteInput`](crate::model::UriPathRouteInput).
         pub fn build(self) -> crate::model::UriPathRouteInput {
             crate::model::UriPathRouteInput {
-                source_path: self.source_path,
-                activation_state: self.activation_state,
-                methods: self.methods,
-                include_child_paths: self.include_child_paths,
+                source_path: self.source_path
+                ,
+                activation_state: self.activation_state
+                ,
+                methods: self.methods
+                ,
+                include_child_paths: self.include_child_paths
+                ,
             }
         }
     }
+    
+    
 }
 impl UriPathRouteInput {
     /// Creates a new builder-style object to manufacture [`UriPathRouteInput`](crate::model::UriPathRouteInput).
@@ -4215,20 +3887,20 @@ impl UriPathRouteInput {
 /// <p> The configuration for the default route type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultRouteInput {
+pub struct DefaultRouteInput  {
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
     #[doc(hidden)]
     pub activation_state: std::option::Option<crate::model::RouteActivationState>,
 }
 impl DefaultRouteInput {
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    pub fn activation_state(&self) -> std::option::Option<&crate::model::RouteActivationState> {
+    pub fn activation_state(&self) -> std::option::Option<& crate::model::RouteActivationState> {
         self.activation_state.as_ref()
     }
 }
 /// See [`DefaultRouteInput`](crate::model::DefaultRouteInput).
 pub mod default_route_input {
-
+    
     /// A builder for [`DefaultRouteInput`](crate::model::DefaultRouteInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4241,20 +3913,19 @@ pub mod default_route_input {
             self
         }
         /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-        pub fn set_activation_state(
-            mut self,
-            input: std::option::Option<crate::model::RouteActivationState>,
-        ) -> Self {
-            self.activation_state = input;
-            self
+        pub fn set_activation_state(mut self, input: std::option::Option<crate::model::RouteActivationState>) -> Self {
+            self.activation_state = input; self
         }
         /// Consumes the builder and constructs a [`DefaultRouteInput`](crate::model::DefaultRouteInput).
         pub fn build(self) -> crate::model::DefaultRouteInput {
             crate::model::DefaultRouteInput {
-                activation_state: self.activation_state,
+                activation_state: self.activation_state
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultRouteInput {
     /// Creates a new builder-style object to manufacture [`DefaultRouteInput`](crate::model::DefaultRouteInput).
@@ -4266,8 +3937,8 @@ impl DefaultRouteInput {
 /// <p>A wrapper object holding the Amazon API Gateway endpoint input. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiGatewayProxyInput {
-    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+pub struct ApiGatewayProxyInput  {
+    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p> 
     /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
     #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::model::ApiGatewayEndpointType>,
@@ -4276,19 +3947,19 @@ pub struct ApiGatewayProxyInput {
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl ApiGatewayProxyInput {
-    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p> 
     /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::ApiGatewayEndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::model::ApiGatewayEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
 /// See [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
 pub mod api_gateway_proxy_input {
-
+    
     /// A builder for [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4296,20 +3967,16 @@ pub mod api_gateway_proxy_input {
         pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+        /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p> 
         /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
         pub fn endpoint_type(mut self, input: crate::model::ApiGatewayEndpointType) -> Self {
             self.endpoint_type = Some(input);
             self
         }
-        /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+        /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p> 
         /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<crate::model::ApiGatewayEndpointType>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<crate::model::ApiGatewayEndpointType>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4318,17 +3985,20 @@ pub mod api_gateway_proxy_input {
         }
         /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// Consumes the builder and constructs a [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
         pub fn build(self) -> crate::model::ApiGatewayProxyInput {
             crate::model::ApiGatewayProxyInput {
-                endpoint_type: self.endpoint_type,
-                stage_name: self.stage_name,
+                endpoint_type: self.endpoint_type
+                ,
+                stage_name: self.stage_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ApiGatewayProxyInput {
     /// Creates a new builder-style object to manufacture [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
@@ -4336,3 +4006,4 @@ impl ApiGatewayProxyInput {
         crate::model::api_gateway_proxy_input::Builder::default()
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectorstate = unimplemented!();
 /// match connectorstate {
@@ -33,22 +33,14 @@
 /// Specifically, when `connectorstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectorState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectorState {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -61,7 +53,7 @@ pub enum ConnectorState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectorState {
     fn from(s: &str) -> Self {
@@ -71,17 +63,17 @@ impl std::convert::From<&str> for ConnectorState {
             "FAILED" => ConnectorState::Failed,
             "RUNNING" => ConnectorState::Running,
             "UPDATING" => ConnectorState::Updating,
-            other => ConnectorState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConnectorState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectorState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectorState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectorState::from(s))
+                }
+            }
 impl ConnectorState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -91,12 +83,14 @@ impl ConnectorState {
             ConnectorState::Failed => "FAILED",
             ConnectorState::Running => "RUNNING",
             ConnectorState::Updating => "UPDATING",
-            ConnectorState::Unknown(value) => value.as_str(),
+            ConnectorState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATING", "DELETING", "FAILED", "RUNNING", "UPDATING"]
+        &[
+            "CREATING", "DELETING", "FAILED", "RUNNING", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for ConnectorState {
@@ -108,7 +102,7 @@ impl AsRef<str> for ConnectorState {
 /// <p>The target capacity for the connector. The capacity can be auto scaled or provisioned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CapacityUpdate {
+pub struct CapacityUpdate  {
     /// <p>The target auto scaling setting.</p>
     #[doc(hidden)]
     pub auto_scaling: std::option::Option<crate::model::AutoScalingUpdate>,
@@ -118,25 +112,22 @@ pub struct CapacityUpdate {
 }
 impl CapacityUpdate {
     /// <p>The target auto scaling setting.</p>
-    pub fn auto_scaling(&self) -> std::option::Option<&crate::model::AutoScalingUpdate> {
+    pub fn auto_scaling(&self) -> std::option::Option<& crate::model::AutoScalingUpdate> {
         self.auto_scaling.as_ref()
     }
     /// <p>The target settings for provisioned capacity.</p>
-    pub fn provisioned_capacity(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisionedCapacityUpdate> {
+    pub fn provisioned_capacity(&self) -> std::option::Option<& crate::model::ProvisionedCapacityUpdate> {
         self.provisioned_capacity.as_ref()
     }
 }
 /// See [`CapacityUpdate`](crate::model::CapacityUpdate).
 pub mod capacity_update {
-
+    
     /// A builder for [`CapacityUpdate`](crate::model::CapacityUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling: std::option::Option<crate::model::AutoScalingUpdate>,
-        pub(crate) provisioned_capacity:
-            std::option::Option<crate::model::ProvisionedCapacityUpdate>,
+        pub(crate) provisioned_capacity: std::option::Option<crate::model::ProvisionedCapacityUpdate>,
     }
     impl Builder {
         /// <p>The target auto scaling setting.</p>
@@ -145,37 +136,30 @@ pub mod capacity_update {
             self
         }
         /// <p>The target auto scaling setting.</p>
-        pub fn set_auto_scaling(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingUpdate>,
-        ) -> Self {
-            self.auto_scaling = input;
-            self
+        pub fn set_auto_scaling(mut self, input: std::option::Option<crate::model::AutoScalingUpdate>) -> Self {
+            self.auto_scaling = input; self
         }
         /// <p>The target settings for provisioned capacity.</p>
-        pub fn provisioned_capacity(
-            mut self,
-            input: crate::model::ProvisionedCapacityUpdate,
-        ) -> Self {
+        pub fn provisioned_capacity(mut self, input: crate::model::ProvisionedCapacityUpdate) -> Self {
             self.provisioned_capacity = Some(input);
             self
         }
         /// <p>The target settings for provisioned capacity.</p>
-        pub fn set_provisioned_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedCapacityUpdate>,
-        ) -> Self {
-            self.provisioned_capacity = input;
-            self
+        pub fn set_provisioned_capacity(mut self, input: std::option::Option<crate::model::ProvisionedCapacityUpdate>) -> Self {
+            self.provisioned_capacity = input; self
         }
         /// Consumes the builder and constructs a [`CapacityUpdate`](crate::model::CapacityUpdate).
         pub fn build(self) -> crate::model::CapacityUpdate {
             crate::model::CapacityUpdate {
-                auto_scaling: self.auto_scaling,
-                provisioned_capacity: self.provisioned_capacity,
+                auto_scaling: self.auto_scaling
+                ,
+                provisioned_capacity: self.provisioned_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl CapacityUpdate {
     /// Creates a new builder-style object to manufacture [`CapacityUpdate`](crate::model::CapacityUpdate).
@@ -187,7 +171,7 @@ impl CapacityUpdate {
 /// <p>An update to a connector's fixed capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedCapacityUpdate {
+pub struct ProvisionedCapacityUpdate  {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     #[doc(hidden)]
     pub mcu_count: i32,
@@ -207,7 +191,7 @@ impl ProvisionedCapacityUpdate {
 }
 /// See [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate).
 pub mod provisioned_capacity_update {
-
+    
     /// A builder for [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -222,8 +206,7 @@ pub mod provisioned_capacity_update {
         }
         /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn set_mcu_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcu_count = input;
-            self
+            self.mcu_count = input; self
         }
         /// <p>The number of workers that are allocated to the connector.</p>
         pub fn worker_count(mut self, input: i32) -> Self {
@@ -232,17 +215,22 @@ pub mod provisioned_capacity_update {
         }
         /// <p>The number of workers that are allocated to the connector.</p>
         pub fn set_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.worker_count = input;
-            self
+            self.worker_count = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate).
         pub fn build(self) -> crate::model::ProvisionedCapacityUpdate {
             crate::model::ProvisionedCapacityUpdate {
-                mcu_count: self.mcu_count.unwrap_or_default(),
-                worker_count: self.worker_count.unwrap_or_default(),
+                mcu_count: self.mcu_count
+                    .unwrap_or_default()
+                ,
+                worker_count: self.worker_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionedCapacityUpdate {
     /// Creates a new builder-style object to manufacture [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate).
@@ -254,7 +242,7 @@ impl ProvisionedCapacityUpdate {
 /// <p>The updates to the auto scaling parameters for the connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingUpdate {
+pub struct AutoScalingUpdate  {
     /// <p>The target maximum number of workers allocated to the connector.</p>
     #[doc(hidden)]
     pub max_worker_count: i32,
@@ -285,17 +273,17 @@ impl AutoScalingUpdate {
         self.min_worker_count
     }
     /// <p>The target sacle-in policy for the connector.</p>
-    pub fn scale_in_policy(&self) -> std::option::Option<&crate::model::ScaleInPolicyUpdate> {
+    pub fn scale_in_policy(&self) -> std::option::Option<& crate::model::ScaleInPolicyUpdate> {
         self.scale_in_policy.as_ref()
     }
     /// <p>The target sacle-out policy for the connector.</p>
-    pub fn scale_out_policy(&self) -> std::option::Option<&crate::model::ScaleOutPolicyUpdate> {
+    pub fn scale_out_policy(&self) -> std::option::Option<& crate::model::ScaleOutPolicyUpdate> {
         self.scale_out_policy.as_ref()
     }
 }
 /// See [`AutoScalingUpdate`](crate::model::AutoScalingUpdate).
 pub mod auto_scaling_update {
-
+    
     /// A builder for [`AutoScalingUpdate`](crate::model::AutoScalingUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -313,8 +301,7 @@ pub mod auto_scaling_update {
         }
         /// <p>The target maximum number of workers allocated to the connector.</p>
         pub fn set_max_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_worker_count = input;
-            self
+            self.max_worker_count = input; self
         }
         /// <p>The target number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn mcu_count(mut self, input: i32) -> Self {
@@ -323,8 +310,7 @@ pub mod auto_scaling_update {
         }
         /// <p>The target number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn set_mcu_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcu_count = input;
-            self
+            self.mcu_count = input; self
         }
         /// <p>The target minimum number of workers allocated to the connector.</p>
         pub fn min_worker_count(mut self, input: i32) -> Self {
@@ -333,8 +319,7 @@ pub mod auto_scaling_update {
         }
         /// <p>The target minimum number of workers allocated to the connector.</p>
         pub fn set_min_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_worker_count = input;
-            self
+            self.min_worker_count = input; self
         }
         /// <p>The target sacle-in policy for the connector.</p>
         pub fn scale_in_policy(mut self, input: crate::model::ScaleInPolicyUpdate) -> Self {
@@ -342,12 +327,8 @@ pub mod auto_scaling_update {
             self
         }
         /// <p>The target sacle-in policy for the connector.</p>
-        pub fn set_scale_in_policy(
-            mut self,
-            input: std::option::Option<crate::model::ScaleInPolicyUpdate>,
-        ) -> Self {
-            self.scale_in_policy = input;
-            self
+        pub fn set_scale_in_policy(mut self, input: std::option::Option<crate::model::ScaleInPolicyUpdate>) -> Self {
+            self.scale_in_policy = input; self
         }
         /// <p>The target sacle-out policy for the connector.</p>
         pub fn scale_out_policy(mut self, input: crate::model::ScaleOutPolicyUpdate) -> Self {
@@ -355,24 +336,30 @@ pub mod auto_scaling_update {
             self
         }
         /// <p>The target sacle-out policy for the connector.</p>
-        pub fn set_scale_out_policy(
-            mut self,
-            input: std::option::Option<crate::model::ScaleOutPolicyUpdate>,
-        ) -> Self {
-            self.scale_out_policy = input;
-            self
+        pub fn set_scale_out_policy(mut self, input: std::option::Option<crate::model::ScaleOutPolicyUpdate>) -> Self {
+            self.scale_out_policy = input; self
         }
         /// Consumes the builder and constructs a [`AutoScalingUpdate`](crate::model::AutoScalingUpdate).
         pub fn build(self) -> crate::model::AutoScalingUpdate {
             crate::model::AutoScalingUpdate {
-                max_worker_count: self.max_worker_count.unwrap_or_default(),
-                mcu_count: self.mcu_count.unwrap_or_default(),
-                min_worker_count: self.min_worker_count.unwrap_or_default(),
-                scale_in_policy: self.scale_in_policy,
-                scale_out_policy: self.scale_out_policy,
+                max_worker_count: self.max_worker_count
+                    .unwrap_or_default()
+                ,
+                mcu_count: self.mcu_count
+                    .unwrap_or_default()
+                ,
+                min_worker_count: self.min_worker_count
+                    .unwrap_or_default()
+                ,
+                scale_in_policy: self.scale_in_policy
+                ,
+                scale_out_policy: self.scale_out_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoScalingUpdate {
     /// Creates a new builder-style object to manufacture [`AutoScalingUpdate`](crate::model::AutoScalingUpdate).
@@ -384,7 +371,7 @@ impl AutoScalingUpdate {
 /// <p>An update to the connector's scale-out policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScaleOutPolicyUpdate {
+pub struct ScaleOutPolicyUpdate  {
     /// <p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
     #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
@@ -397,7 +384,7 @@ impl ScaleOutPolicyUpdate {
 }
 /// See [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate).
 pub mod scale_out_policy_update {
-
+    
     /// A builder for [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -411,16 +398,19 @@ pub mod scale_out_policy_update {
         }
         /// <p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
         pub fn set_cpu_utilization_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.cpu_utilization_percentage = input;
-            self
+            self.cpu_utilization_percentage = input; self
         }
         /// Consumes the builder and constructs a [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate).
         pub fn build(self) -> crate::model::ScaleOutPolicyUpdate {
             crate::model::ScaleOutPolicyUpdate {
-                cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
+                cpu_utilization_percentage: self.cpu_utilization_percentage
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ScaleOutPolicyUpdate {
     /// Creates a new builder-style object to manufacture [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate).
@@ -432,7 +422,7 @@ impl ScaleOutPolicyUpdate {
 /// <p>An update to the connector's scale-in policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScaleInPolicyUpdate {
+pub struct ScaleInPolicyUpdate  {
     /// <p>The target CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
@@ -445,7 +435,7 @@ impl ScaleInPolicyUpdate {
 }
 /// See [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate).
 pub mod scale_in_policy_update {
-
+    
     /// A builder for [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -459,16 +449,19 @@ pub mod scale_in_policy_update {
         }
         /// <p>The target CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
         pub fn set_cpu_utilization_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.cpu_utilization_percentage = input;
-            self
+            self.cpu_utilization_percentage = input; self
         }
         /// Consumes the builder and constructs a [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate).
         pub fn build(self) -> crate::model::ScaleInPolicyUpdate {
             crate::model::ScaleInPolicyUpdate {
-                cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
+                cpu_utilization_percentage: self.cpu_utilization_percentage
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ScaleInPolicyUpdate {
     /// Creates a new builder-style object to manufacture [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate).
@@ -480,7 +473,7 @@ impl ScaleInPolicyUpdate {
 /// <p>The summary of a worker configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkerConfigurationSummary {
+pub struct WorkerConfigurationSummary  {
     /// <p>The time that a worker configuration was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -499,38 +492,35 @@ pub struct WorkerConfigurationSummary {
 }
 impl WorkerConfigurationSummary {
     /// <p>The time that a worker configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of a worker configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The latest revision of a worker configuration.</p>
-    pub fn latest_revision(
-        &self,
-    ) -> std::option::Option<&crate::model::WorkerConfigurationRevisionSummary> {
+    pub fn latest_revision(&self) -> std::option::Option<& crate::model::WorkerConfigurationRevisionSummary> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the worker configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub fn worker_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn worker_configuration_arn(&self) -> std::option::Option<& str> {
         self.worker_configuration_arn.as_deref()
     }
 }
 /// See [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary).
 pub mod worker_configuration_summary {
-
+    
     /// A builder for [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) latest_revision:
-            std::option::Option<crate::model::WorkerConfigurationRevisionSummary>,
+        pub(crate) latest_revision: std::option::Option<crate::model::WorkerConfigurationRevisionSummary>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) worker_configuration_arn: std::option::Option<std::string::String>,
     }
@@ -541,12 +531,8 @@ pub mod worker_configuration_summary {
             self
         }
         /// <p>The time that a worker configuration was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of a worker configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -555,24 +541,16 @@ pub mod worker_configuration_summary {
         }
         /// <p>The description of a worker configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The latest revision of a worker configuration.</p>
-        pub fn latest_revision(
-            mut self,
-            input: crate::model::WorkerConfigurationRevisionSummary,
-        ) -> Self {
+        pub fn latest_revision(mut self, input: crate::model::WorkerConfigurationRevisionSummary) -> Self {
             self.latest_revision = Some(input);
             self
         }
         /// <p>The latest revision of a worker configuration.</p>
-        pub fn set_latest_revision(
-            mut self,
-            input: std::option::Option<crate::model::WorkerConfigurationRevisionSummary>,
-        ) -> Self {
-            self.latest_revision = input;
-            self
+        pub fn set_latest_revision(mut self, input: std::option::Option<crate::model::WorkerConfigurationRevisionSummary>) -> Self {
+            self.latest_revision = input; self
         }
         /// <p>The name of the worker configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -581,8 +559,7 @@ pub mod worker_configuration_summary {
         }
         /// <p>The name of the worker configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
         pub fn worker_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -590,24 +567,27 @@ pub mod worker_configuration_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-        pub fn set_worker_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.worker_configuration_arn = input;
-            self
+        pub fn set_worker_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.worker_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary).
         pub fn build(self) -> crate::model::WorkerConfigurationSummary {
             crate::model::WorkerConfigurationSummary {
-                creation_time: self.creation_time,
-                description: self.description,
-                latest_revision: self.latest_revision,
-                name: self.name,
-                worker_configuration_arn: self.worker_configuration_arn,
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                latest_revision: self.latest_revision
+                ,
+                name: self.name
+                ,
+                worker_configuration_arn: self.worker_configuration_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkerConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary).
@@ -619,7 +599,7 @@ impl WorkerConfigurationSummary {
 /// <p>The summary of a worker configuration revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkerConfigurationRevisionSummary {
+pub struct WorkerConfigurationRevisionSummary  {
     /// <p>The time that a worker configuration revision was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -632,11 +612,11 @@ pub struct WorkerConfigurationRevisionSummary {
 }
 impl WorkerConfigurationRevisionSummary {
     /// <p>The time that a worker configuration revision was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of a worker configuration revision.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The revision of a worker configuration.</p>
@@ -646,7 +626,7 @@ impl WorkerConfigurationRevisionSummary {
 }
 /// See [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary).
 pub mod worker_configuration_revision_summary {
-
+    
     /// A builder for [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -661,12 +641,8 @@ pub mod worker_configuration_revision_summary {
             self
         }
         /// <p>The time that a worker configuration revision was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of a worker configuration revision.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -675,8 +651,7 @@ pub mod worker_configuration_revision_summary {
         }
         /// <p>The description of a worker configuration revision.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The revision of a worker configuration.</p>
         pub fn revision(mut self, input: i64) -> Self {
@@ -685,18 +660,23 @@ pub mod worker_configuration_revision_summary {
         }
         /// <p>The revision of a worker configuration.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// Consumes the builder and constructs a [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary).
         pub fn build(self) -> crate::model::WorkerConfigurationRevisionSummary {
             crate::model::WorkerConfigurationRevisionSummary {
-                creation_time: self.creation_time,
-                description: self.description,
-                revision: self.revision.unwrap_or_default(),
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkerConfigurationRevisionSummary {
     /// Creates a new builder-style object to manufacture [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary).
@@ -708,7 +688,7 @@ impl WorkerConfigurationRevisionSummary {
 /// <p>A summary of the custom plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPluginSummary {
+pub struct CustomPluginSummary  {
     /// <p>The time that the custom plugin was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -730,35 +710,33 @@ pub struct CustomPluginSummary {
 }
 impl CustomPluginSummary {
     /// <p>The time that the custom plugin was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn custom_plugin_state(&self) -> std::option::Option<&crate::model::CustomPluginState> {
+    pub fn custom_plugin_state(&self) -> std::option::Option<& crate::model::CustomPluginState> {
         self.custom_plugin_state.as_ref()
     }
     /// <p>A description of the custom plugin.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The latest revision of the custom plugin.</p>
-    pub fn latest_revision(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomPluginRevisionSummary> {
+    pub fn latest_revision(&self) -> std::option::Option<& crate::model::CustomPluginRevisionSummary> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the custom plugin.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CustomPluginSummary`](crate::model::CustomPluginSummary).
 pub mod custom_plugin_summary {
-
+    
     /// A builder for [`CustomPluginSummary`](crate::model::CustomPluginSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -776,12 +754,8 @@ pub mod custom_plugin_summary {
             self
         }
         /// <p>The time that the custom plugin was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
         pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -789,12 +763,8 @@ pub mod custom_plugin_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-        pub fn set_custom_plugin_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_plugin_arn = input;
-            self
+        pub fn set_custom_plugin_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_plugin_arn = input; self
         }
         /// <p>The state of the custom plugin.</p>
         pub fn custom_plugin_state(mut self, input: crate::model::CustomPluginState) -> Self {
@@ -802,12 +772,8 @@ pub mod custom_plugin_summary {
             self
         }
         /// <p>The state of the custom plugin.</p>
-        pub fn set_custom_plugin_state(
-            mut self,
-            input: std::option::Option<crate::model::CustomPluginState>,
-        ) -> Self {
-            self.custom_plugin_state = input;
-            self
+        pub fn set_custom_plugin_state(mut self, input: std::option::Option<crate::model::CustomPluginState>) -> Self {
+            self.custom_plugin_state = input; self
         }
         /// <p>A description of the custom plugin.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -816,8 +782,7 @@ pub mod custom_plugin_summary {
         }
         /// <p>A description of the custom plugin.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The latest revision of the custom plugin.</p>
         pub fn latest_revision(mut self, input: crate::model::CustomPluginRevisionSummary) -> Self {
@@ -825,12 +790,8 @@ pub mod custom_plugin_summary {
             self
         }
         /// <p>The latest revision of the custom plugin.</p>
-        pub fn set_latest_revision(
-            mut self,
-            input: std::option::Option<crate::model::CustomPluginRevisionSummary>,
-        ) -> Self {
-            self.latest_revision = input;
-            self
+        pub fn set_latest_revision(mut self, input: std::option::Option<crate::model::CustomPluginRevisionSummary>) -> Self {
+            self.latest_revision = input; self
         }
         /// <p>The name of the custom plugin.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -839,21 +800,28 @@ pub mod custom_plugin_summary {
         }
         /// <p>The name of the custom plugin.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CustomPluginSummary`](crate::model::CustomPluginSummary).
         pub fn build(self) -> crate::model::CustomPluginSummary {
             crate::model::CustomPluginSummary {
-                creation_time: self.creation_time,
-                custom_plugin_arn: self.custom_plugin_arn,
-                custom_plugin_state: self.custom_plugin_state,
-                description: self.description,
-                latest_revision: self.latest_revision,
-                name: self.name,
+                creation_time: self.creation_time
+                ,
+                custom_plugin_arn: self.custom_plugin_arn
+                ,
+                custom_plugin_state: self.custom_plugin_state
+                ,
+                description: self.description
+                ,
+                latest_revision: self.latest_revision
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomPluginSummary {
     /// Creates a new builder-style object to manufacture [`CustomPluginSummary`](crate::model::CustomPluginSummary).
@@ -865,7 +833,7 @@ impl CustomPluginSummary {
 /// <p>Details about the revision of a custom plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPluginRevisionSummary {
+pub struct CustomPluginRevisionSummary  {
     /// <p>The format of the plugin file.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<crate::model::CustomPluginContentType>,
@@ -887,25 +855,23 @@ pub struct CustomPluginRevisionSummary {
 }
 impl CustomPluginRevisionSummary {
     /// <p>The format of the plugin file.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::model::CustomPluginContentType> {
+    pub fn content_type(&self) -> std::option::Option<& crate::model::CustomPluginContentType> {
         self.content_type.as_ref()
     }
     /// <p>The time that the custom plugin was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the custom plugin.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Details about the custom plugin file.</p>
-    pub fn file_description(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomPluginFileDescription> {
+    pub fn file_description(&self) -> std::option::Option<& crate::model::CustomPluginFileDescription> {
         self.file_description.as_ref()
     }
     /// <p>Information about the location of the custom plugin.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::CustomPluginLocationDescription> {
+    pub fn location(&self) -> std::option::Option<& crate::model::CustomPluginLocationDescription> {
         self.location.as_ref()
     }
     /// <p>The revision of the custom plugin.</p>
@@ -915,7 +881,7 @@ impl CustomPluginRevisionSummary {
 }
 /// See [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary).
 pub mod custom_plugin_revision_summary {
-
+    
     /// A builder for [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -933,12 +899,8 @@ pub mod custom_plugin_revision_summary {
             self
         }
         /// <p>The format of the plugin file.</p>
-        pub fn set_content_type(
-            mut self,
-            input: std::option::Option<crate::model::CustomPluginContentType>,
-        ) -> Self {
-            self.content_type = input;
-            self
+        pub fn set_content_type(mut self, input: std::option::Option<crate::model::CustomPluginContentType>) -> Self {
+            self.content_type = input; self
         }
         /// <p>The time that the custom plugin was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -946,12 +908,8 @@ pub mod custom_plugin_revision_summary {
             self
         }
         /// <p>The time that the custom plugin was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of the custom plugin.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -960,24 +918,16 @@ pub mod custom_plugin_revision_summary {
         }
         /// <p>The description of the custom plugin.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Details about the custom plugin file.</p>
-        pub fn file_description(
-            mut self,
-            input: crate::model::CustomPluginFileDescription,
-        ) -> Self {
+        pub fn file_description(mut self, input: crate::model::CustomPluginFileDescription) -> Self {
             self.file_description = Some(input);
             self
         }
         /// <p>Details about the custom plugin file.</p>
-        pub fn set_file_description(
-            mut self,
-            input: std::option::Option<crate::model::CustomPluginFileDescription>,
-        ) -> Self {
-            self.file_description = input;
-            self
+        pub fn set_file_description(mut self, input: std::option::Option<crate::model::CustomPluginFileDescription>) -> Self {
+            self.file_description = input; self
         }
         /// <p>Information about the location of the custom plugin.</p>
         pub fn location(mut self, input: crate::model::CustomPluginLocationDescription) -> Self {
@@ -985,12 +935,8 @@ pub mod custom_plugin_revision_summary {
             self
         }
         /// <p>Information about the location of the custom plugin.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::CustomPluginLocationDescription>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::CustomPluginLocationDescription>) -> Self {
+            self.location = input; self
         }
         /// <p>The revision of the custom plugin.</p>
         pub fn revision(mut self, input: i64) -> Self {
@@ -999,21 +945,29 @@ pub mod custom_plugin_revision_summary {
         }
         /// <p>The revision of the custom plugin.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// Consumes the builder and constructs a [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary).
         pub fn build(self) -> crate::model::CustomPluginRevisionSummary {
             crate::model::CustomPluginRevisionSummary {
-                content_type: self.content_type,
-                creation_time: self.creation_time,
-                description: self.description,
-                file_description: self.file_description,
-                location: self.location,
-                revision: self.revision.unwrap_or_default(),
+                content_type: self.content_type
+                ,
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                file_description: self.file_description
+                ,
+                location: self.location
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomPluginRevisionSummary {
     /// Creates a new builder-style object to manufacture [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary).
@@ -1025,20 +979,20 @@ impl CustomPluginRevisionSummary {
 /// <p>Information about the location of a custom plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPluginLocationDescription {
+pub struct CustomPluginLocationDescription  {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3LocationDescription>,
 }
 impl CustomPluginLocationDescription {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3LocationDescription> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::S3LocationDescription> {
         self.s3_location.as_ref()
     }
 }
 /// See [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription).
 pub mod custom_plugin_location_description {
-
+    
     /// A builder for [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1051,20 +1005,19 @@ pub mod custom_plugin_location_description {
             self
         }
         /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3LocationDescription>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::S3LocationDescription>) -> Self {
+            self.s3_location = input; self
         }
         /// Consumes the builder and constructs a [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription).
         pub fn build(self) -> crate::model::CustomPluginLocationDescription {
             crate::model::CustomPluginLocationDescription {
-                s3_location: self.s3_location,
+                s3_location: self.s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomPluginLocationDescription {
     /// Creates a new builder-style object to manufacture [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription).
@@ -1076,7 +1029,7 @@ impl CustomPluginLocationDescription {
 /// <p>The description of the location of an object in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3LocationDescription {
+pub struct S3LocationDescription  {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
@@ -1089,21 +1042,21 @@ pub struct S3LocationDescription {
 }
 impl S3LocationDescription {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The file key for an object in an S3 bucket.</p>
-    pub fn file_key(&self) -> std::option::Option<&str> {
+    pub fn file_key(&self) -> std::option::Option<& str> {
         self.file_key.as_deref()
     }
     /// <p>The version of an object in an S3 bucket.</p>
-    pub fn object_version(&self) -> std::option::Option<&str> {
+    pub fn object_version(&self) -> std::option::Option<& str> {
         self.object_version.as_deref()
     }
 }
 /// See [`S3LocationDescription`](crate::model::S3LocationDescription).
 pub mod s3_location_description {
-
+    
     /// A builder for [`S3LocationDescription`](crate::model::S3LocationDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1119,8 +1072,7 @@ pub mod s3_location_description {
         }
         /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_arn = input;
-            self
+            self.bucket_arn = input; self
         }
         /// <p>The file key for an object in an S3 bucket.</p>
         pub fn file_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1129,8 +1081,7 @@ pub mod s3_location_description {
         }
         /// <p>The file key for an object in an S3 bucket.</p>
         pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_key = input;
-            self
+            self.file_key = input; self
         }
         /// <p>The version of an object in an S3 bucket.</p>
         pub fn object_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1138,22 +1089,23 @@ pub mod s3_location_description {
             self
         }
         /// <p>The version of an object in an S3 bucket.</p>
-        pub fn set_object_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_version = input;
-            self
+        pub fn set_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_version = input; self
         }
         /// Consumes the builder and constructs a [`S3LocationDescription`](crate::model::S3LocationDescription).
         pub fn build(self) -> crate::model::S3LocationDescription {
             crate::model::S3LocationDescription {
-                bucket_arn: self.bucket_arn,
-                file_key: self.file_key,
-                object_version: self.object_version,
+                bucket_arn: self.bucket_arn
+                ,
+                file_key: self.file_key
+                ,
+                object_version: self.object_version
+                ,
             }
         }
     }
+    
+    
 }
 impl S3LocationDescription {
     /// Creates a new builder-style object to manufacture [`S3LocationDescription`](crate::model::S3LocationDescription).
@@ -1165,7 +1117,7 @@ impl S3LocationDescription {
 /// <p>Details about a custom plugin file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPluginFileDescription {
+pub struct CustomPluginFileDescription  {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
     #[doc(hidden)]
     pub file_md5: std::option::Option<std::string::String>,
@@ -1175,7 +1127,7 @@ pub struct CustomPluginFileDescription {
 }
 impl CustomPluginFileDescription {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
-    pub fn file_md5(&self) -> std::option::Option<&str> {
+    pub fn file_md5(&self) -> std::option::Option<& str> {
         self.file_md5.as_deref()
     }
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
@@ -1185,7 +1137,7 @@ impl CustomPluginFileDescription {
 }
 /// See [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription).
 pub mod custom_plugin_file_description {
-
+    
     /// A builder for [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1200,8 +1152,7 @@ pub mod custom_plugin_file_description {
         }
         /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
         pub fn set_file_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_md5 = input;
-            self
+            self.file_md5 = input; self
         }
         /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
         pub fn file_size(mut self, input: i64) -> Self {
@@ -1210,17 +1161,21 @@ pub mod custom_plugin_file_description {
         }
         /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
         pub fn set_file_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.file_size = input;
-            self
+            self.file_size = input; self
         }
         /// Consumes the builder and constructs a [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription).
         pub fn build(self) -> crate::model::CustomPluginFileDescription {
             crate::model::CustomPluginFileDescription {
-                file_md5: self.file_md5,
-                file_size: self.file_size.unwrap_or_default(),
+                file_md5: self.file_md5
+                ,
+                file_size: self.file_size
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomPluginFileDescription {
     /// Creates a new builder-style object to manufacture [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription).
@@ -1235,9 +1190,9 @@ impl CustomPluginFileDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let customplugincontenttype = unimplemented!();
 /// match customplugincontenttype {
@@ -1259,60 +1214,52 @@ impl CustomPluginFileDescription {
 /// Specifically, when `customplugincontenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CustomPluginContentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CustomPluginContentType {
     #[allow(missing_docs)] // documentation missing in model
     Jar,
     #[allow(missing_docs)] // documentation missing in model
     Zip,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomPluginContentType {
     fn from(s: &str) -> Self {
         match s {
             "JAR" => CustomPluginContentType::Jar,
             "ZIP" => CustomPluginContentType::Zip,
-            other => CustomPluginContentType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CustomPluginContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CustomPluginContentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomPluginContentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CustomPluginContentType::from(s))
+                }
+            }
 impl CustomPluginContentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomPluginContentType::Jar => "JAR",
             CustomPluginContentType::Zip => "ZIP",
-            CustomPluginContentType::Unknown(value) => value.as_str(),
+            CustomPluginContentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JAR", "ZIP"]
+        &[
+            "JAR", "ZIP"
+        ]
     }
 }
 impl AsRef<str> for CustomPluginContentType {
@@ -1327,9 +1274,9 @@ impl AsRef<str> for CustomPluginContentType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let custompluginstate = unimplemented!();
 /// match custompluginstate {
@@ -1355,22 +1302,14 @@ impl AsRef<str> for CustomPluginContentType {
 /// Specifically, when `custompluginstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CustomPluginState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CustomPluginState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1385,7 +1324,7 @@ pub enum CustomPluginState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CustomPluginState {
     fn from(s: &str) -> Self {
@@ -1396,19 +1335,17 @@ impl std::convert::From<&str> for CustomPluginState {
             "DELETING" => CustomPluginState::Deleting,
             "UPDATE_FAILED" => CustomPluginState::UpdateFailed,
             "UPDATING" => CustomPluginState::Updating,
-            other => {
-                CustomPluginState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CustomPluginState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CustomPluginState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomPluginState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CustomPluginState::from(s))
+                }
+            }
 impl CustomPluginState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1419,18 +1356,13 @@ impl CustomPluginState {
             CustomPluginState::Deleting => "DELETING",
             CustomPluginState::UpdateFailed => "UPDATE_FAILED",
             CustomPluginState::Updating => "UPDATING",
-            CustomPluginState::Unknown(value) => value.as_str(),
+            CustomPluginState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETING",
-            "UPDATE_FAILED",
-            "UPDATING",
+            "ACTIVE", "CREATE_FAILED", "CREATING", "DELETING", "UPDATE_FAILED", "UPDATING"
         ]
     }
 }
@@ -1443,7 +1375,7 @@ impl AsRef<str> for CustomPluginState {
 /// <p>Summary of a connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectorSummary {
+pub struct ConnectorSummary  {
     /// <p>The connector's compute capacity settings.</p>
     #[doc(hidden)]
     pub capacity: std::option::Option<crate::model::CapacityDescription>,
@@ -1470,12 +1402,10 @@ pub struct ConnectorSummary {
     pub kafka_cluster: std::option::Option<crate::model::KafkaClusterDescription>,
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
     #[doc(hidden)]
-    pub kafka_cluster_client_authentication:
-        std::option::Option<crate::model::KafkaClusterClientAuthenticationDescription>,
+    pub kafka_cluster_client_authentication: std::option::Option<crate::model::KafkaClusterClientAuthenticationDescription>,
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
     #[doc(hidden)]
-    pub kafka_cluster_encryption_in_transit:
-        std::option::Option<crate::model::KafkaClusterEncryptionInTransitDescription>,
+    pub kafka_cluster_encryption_in_transit: std::option::Option<crate::model::KafkaClusterEncryptionInTransitDescription>,
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
     #[doc(hidden)]
     pub kafka_connect_version: std::option::Option<std::string::String>,
@@ -1494,75 +1424,69 @@ pub struct ConnectorSummary {
 }
 impl ConnectorSummary {
     /// <p>The connector's compute capacity settings.</p>
-    pub fn capacity(&self) -> std::option::Option<&crate::model::CapacityDescription> {
+    pub fn capacity(&self) -> std::option::Option<& crate::model::CapacityDescription> {
         self.capacity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
-    pub fn connector_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_arn(&self) -> std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
     /// <p>The description of the connector.</p>
-    pub fn connector_description(&self) -> std::option::Option<&str> {
+    pub fn connector_description(&self) -> std::option::Option<& str> {
         self.connector_description.as_deref()
     }
     /// <p>The name of the connector.</p>
-    pub fn connector_name(&self) -> std::option::Option<&str> {
+    pub fn connector_name(&self) -> std::option::Option<& str> {
         self.connector_name.as_deref()
     }
     /// <p>The state of the connector.</p>
-    pub fn connector_state(&self) -> std::option::Option<&crate::model::ConnectorState> {
+    pub fn connector_state(&self) -> std::option::Option<& crate::model::ConnectorState> {
         self.connector_state.as_ref()
     }
     /// <p>The time that the connector was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current version of the connector.</p>
-    pub fn current_version(&self) -> std::option::Option<&str> {
+    pub fn current_version(&self) -> std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
-    pub fn kafka_cluster(&self) -> std::option::Option<&crate::model::KafkaClusterDescription> {
+    pub fn kafka_cluster(&self) -> std::option::Option<& crate::model::KafkaClusterDescription> {
         self.kafka_cluster.as_ref()
     }
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
-    pub fn kafka_cluster_client_authentication(
-        &self,
-    ) -> std::option::Option<&crate::model::KafkaClusterClientAuthenticationDescription> {
+    pub fn kafka_cluster_client_authentication(&self) -> std::option::Option<& crate::model::KafkaClusterClientAuthenticationDescription> {
         self.kafka_cluster_client_authentication.as_ref()
     }
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn kafka_cluster_encryption_in_transit(
-        &self,
-    ) -> std::option::Option<&crate::model::KafkaClusterEncryptionInTransitDescription> {
+    pub fn kafka_cluster_encryption_in_transit(&self) -> std::option::Option<& crate::model::KafkaClusterEncryptionInTransitDescription> {
         self.kafka_cluster_encryption_in_transit.as_ref()
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    pub fn kafka_connect_version(&self) -> std::option::Option<&str> {
+    pub fn kafka_connect_version(&self) -> std::option::Option<& str> {
         self.kafka_connect_version.as_deref()
     }
     /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
-    pub fn log_delivery(&self) -> std::option::Option<&crate::model::LogDeliveryDescription> {
+    pub fn log_delivery(&self) -> std::option::Option<& crate::model::LogDeliveryDescription> {
         self.log_delivery.as_ref()
     }
     /// <p>Specifies which plugins were used for this connector.</p>
-    pub fn plugins(&self) -> std::option::Option<&[crate::model::PluginDescription]> {
+    pub fn plugins(&self) -> std::option::Option<& [crate::model::PluginDescription]> {
         self.plugins.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
-    pub fn service_execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_execution_role_arn(&self) -> std::option::Option<& str> {
         self.service_execution_role_arn.as_deref()
     }
     /// <p>The worker configurations that are in use with the connector.</p>
-    pub fn worker_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::WorkerConfigurationDescription> {
+    pub fn worker_configuration(&self) -> std::option::Option<& crate::model::WorkerConfigurationDescription> {
         self.worker_configuration.as_ref()
     }
 }
 /// See [`ConnectorSummary`](crate::model::ConnectorSummary).
 pub mod connector_summary {
-
+    
     /// A builder for [`ConnectorSummary`](crate::model::ConnectorSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1574,16 +1498,13 @@ pub mod connector_summary {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) current_version: std::option::Option<std::string::String>,
         pub(crate) kafka_cluster: std::option::Option<crate::model::KafkaClusterDescription>,
-        pub(crate) kafka_cluster_client_authentication:
-            std::option::Option<crate::model::KafkaClusterClientAuthenticationDescription>,
-        pub(crate) kafka_cluster_encryption_in_transit:
-            std::option::Option<crate::model::KafkaClusterEncryptionInTransitDescription>,
+        pub(crate) kafka_cluster_client_authentication: std::option::Option<crate::model::KafkaClusterClientAuthenticationDescription>,
+        pub(crate) kafka_cluster_encryption_in_transit: std::option::Option<crate::model::KafkaClusterEncryptionInTransitDescription>,
         pub(crate) kafka_connect_version: std::option::Option<std::string::String>,
         pub(crate) log_delivery: std::option::Option<crate::model::LogDeliveryDescription>,
         pub(crate) plugins: std::option::Option<std::vec::Vec<crate::model::PluginDescription>>,
         pub(crate) service_execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) worker_configuration:
-            std::option::Option<crate::model::WorkerConfigurationDescription>,
+        pub(crate) worker_configuration: std::option::Option<crate::model::WorkerConfigurationDescription>,
     }
     impl Builder {
         /// <p>The connector's compute capacity settings.</p>
@@ -1592,12 +1513,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The connector's compute capacity settings.</p>
-        pub fn set_capacity(
-            mut self,
-            input: std::option::Option<crate::model::CapacityDescription>,
-        ) -> Self {
-            self.capacity = input;
-            self
+        pub fn set_capacity(mut self, input: std::option::Option<crate::model::CapacityDescription>) -> Self {
+            self.capacity = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector.</p>
         pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1605,12 +1522,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector.</p>
-        pub fn set_connector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_arn = input;
-            self
+        pub fn set_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_arn = input; self
         }
         /// <p>The description of the connector.</p>
         pub fn connector_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1618,12 +1531,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The description of the connector.</p>
-        pub fn set_connector_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_description = input;
-            self
+        pub fn set_connector_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_description = input; self
         }
         /// <p>The name of the connector.</p>
         pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1631,12 +1540,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The name of the connector.</p>
-        pub fn set_connector_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_name = input;
-            self
+        pub fn set_connector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_name = input; self
         }
         /// <p>The state of the connector.</p>
         pub fn connector_state(mut self, input: crate::model::ConnectorState) -> Self {
@@ -1644,12 +1549,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The state of the connector.</p>
-        pub fn set_connector_state(
-            mut self,
-            input: std::option::Option<crate::model::ConnectorState>,
-        ) -> Self {
-            self.connector_state = input;
-            self
+        pub fn set_connector_state(mut self, input: std::option::Option<crate::model::ConnectorState>) -> Self {
+            self.connector_state = input; self
         }
         /// <p>The time that the connector was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1657,12 +1558,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The time that the connector was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The current version of the connector.</p>
         pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1670,12 +1567,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The current version of the connector.</p>
-        pub fn set_current_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_version = input;
-            self
+        pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_version = input; self
         }
         /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
         pub fn kafka_cluster(mut self, input: crate::model::KafkaClusterDescription) -> Self {
@@ -1683,44 +1576,26 @@ pub mod connector_summary {
             self
         }
         /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
-        pub fn set_kafka_cluster(
-            mut self,
-            input: std::option::Option<crate::model::KafkaClusterDescription>,
-        ) -> Self {
-            self.kafka_cluster = input;
-            self
+        pub fn set_kafka_cluster(mut self, input: std::option::Option<crate::model::KafkaClusterDescription>) -> Self {
+            self.kafka_cluster = input; self
         }
         /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
-        pub fn kafka_cluster_client_authentication(
-            mut self,
-            input: crate::model::KafkaClusterClientAuthenticationDescription,
-        ) -> Self {
+        pub fn kafka_cluster_client_authentication(mut self, input: crate::model::KafkaClusterClientAuthenticationDescription) -> Self {
             self.kafka_cluster_client_authentication = Some(input);
             self
         }
         /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
-        pub fn set_kafka_cluster_client_authentication(
-            mut self,
-            input: std::option::Option<crate::model::KafkaClusterClientAuthenticationDescription>,
-        ) -> Self {
-            self.kafka_cluster_client_authentication = input;
-            self
+        pub fn set_kafka_cluster_client_authentication(mut self, input: std::option::Option<crate::model::KafkaClusterClientAuthenticationDescription>) -> Self {
+            self.kafka_cluster_client_authentication = input; self
         }
         /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
-        pub fn kafka_cluster_encryption_in_transit(
-            mut self,
-            input: crate::model::KafkaClusterEncryptionInTransitDescription,
-        ) -> Self {
+        pub fn kafka_cluster_encryption_in_transit(mut self, input: crate::model::KafkaClusterEncryptionInTransitDescription) -> Self {
             self.kafka_cluster_encryption_in_transit = Some(input);
             self
         }
         /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
-        pub fn set_kafka_cluster_encryption_in_transit(
-            mut self,
-            input: std::option::Option<crate::model::KafkaClusterEncryptionInTransitDescription>,
-        ) -> Self {
-            self.kafka_cluster_encryption_in_transit = input;
-            self
+        pub fn set_kafka_cluster_encryption_in_transit(mut self, input: std::option::Option<crate::model::KafkaClusterEncryptionInTransitDescription>) -> Self {
+            self.kafka_cluster_encryption_in_transit = input; self
         }
         /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
         pub fn kafka_connect_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1728,12 +1603,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-        pub fn set_kafka_connect_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kafka_connect_version = input;
-            self
+        pub fn set_kafka_connect_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kafka_connect_version = input; self
         }
         /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
         pub fn log_delivery(mut self, input: crate::model::LogDeliveryDescription) -> Self {
@@ -1741,12 +1612,8 @@ pub mod connector_summary {
             self
         }
         /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
-        pub fn set_log_delivery(
-            mut self,
-            input: std::option::Option<crate::model::LogDeliveryDescription>,
-        ) -> Self {
-            self.log_delivery = input;
-            self
+        pub fn set_log_delivery(mut self, input: std::option::Option<crate::model::LogDeliveryDescription>) -> Self {
+            self.log_delivery = input; self
         }
         /// Appends an item to `plugins`.
         ///
@@ -1755,17 +1622,13 @@ pub mod connector_summary {
         /// <p>Specifies which plugins were used for this connector.</p>
         pub fn plugins(mut self, input: crate::model::PluginDescription) -> Self {
             let mut v = self.plugins.unwrap_or_default();
-            v.push(input);
-            self.plugins = Some(v);
-            self
+                            v.push(input);
+                            self.plugins = Some(v);
+                            self
         }
         /// <p>Specifies which plugins were used for this connector.</p>
-        pub fn set_plugins(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PluginDescription>>,
-        ) -> Self {
-            self.plugins = input;
-            self
+        pub fn set_plugins(mut self, input: std::option::Option<std::vec::Vec<crate::model::PluginDescription>>) -> Self {
+            self.plugins = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
         pub fn service_execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1773,50 +1636,56 @@ pub mod connector_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
-        pub fn set_service_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_execution_role_arn = input;
-            self
+        pub fn set_service_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_execution_role_arn = input; self
         }
         /// <p>The worker configurations that are in use with the connector.</p>
-        pub fn worker_configuration(
-            mut self,
-            input: crate::model::WorkerConfigurationDescription,
-        ) -> Self {
+        pub fn worker_configuration(mut self, input: crate::model::WorkerConfigurationDescription) -> Self {
             self.worker_configuration = Some(input);
             self
         }
         /// <p>The worker configurations that are in use with the connector.</p>
-        pub fn set_worker_configuration(
-            mut self,
-            input: std::option::Option<crate::model::WorkerConfigurationDescription>,
-        ) -> Self {
-            self.worker_configuration = input;
-            self
+        pub fn set_worker_configuration(mut self, input: std::option::Option<crate::model::WorkerConfigurationDescription>) -> Self {
+            self.worker_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ConnectorSummary`](crate::model::ConnectorSummary).
         pub fn build(self) -> crate::model::ConnectorSummary {
             crate::model::ConnectorSummary {
-                capacity: self.capacity,
-                connector_arn: self.connector_arn,
-                connector_description: self.connector_description,
-                connector_name: self.connector_name,
-                connector_state: self.connector_state,
-                creation_time: self.creation_time,
-                current_version: self.current_version,
-                kafka_cluster: self.kafka_cluster,
-                kafka_cluster_client_authentication: self.kafka_cluster_client_authentication,
-                kafka_cluster_encryption_in_transit: self.kafka_cluster_encryption_in_transit,
-                kafka_connect_version: self.kafka_connect_version,
-                log_delivery: self.log_delivery,
-                plugins: self.plugins,
-                service_execution_role_arn: self.service_execution_role_arn,
-                worker_configuration: self.worker_configuration,
+                capacity: self.capacity
+                ,
+                connector_arn: self.connector_arn
+                ,
+                connector_description: self.connector_description
+                ,
+                connector_name: self.connector_name
+                ,
+                connector_state: self.connector_state
+                ,
+                creation_time: self.creation_time
+                ,
+                current_version: self.current_version
+                ,
+                kafka_cluster: self.kafka_cluster
+                ,
+                kafka_cluster_client_authentication: self.kafka_cluster_client_authentication
+                ,
+                kafka_cluster_encryption_in_transit: self.kafka_cluster_encryption_in_transit
+                ,
+                kafka_connect_version: self.kafka_connect_version
+                ,
+                log_delivery: self.log_delivery
+                ,
+                plugins: self.plugins
+                ,
+                service_execution_role_arn: self.service_execution_role_arn
+                ,
+                worker_configuration: self.worker_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectorSummary {
     /// Creates a new builder-style object to manufacture [`ConnectorSummary`](crate::model::ConnectorSummary).
@@ -1828,7 +1697,7 @@ impl ConnectorSummary {
 /// <p>The description of the worker configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkerConfigurationDescription {
+pub struct WorkerConfigurationDescription  {
     /// <p>The revision of the worker configuration.</p>
     #[doc(hidden)]
     pub revision: i64,
@@ -1842,13 +1711,13 @@ impl WorkerConfigurationDescription {
         self.revision
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub fn worker_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn worker_configuration_arn(&self) -> std::option::Option<& str> {
         self.worker_configuration_arn.as_deref()
     }
 }
 /// See [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription).
 pub mod worker_configuration_description {
-
+    
     /// A builder for [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1863,8 +1732,7 @@ pub mod worker_configuration_description {
         }
         /// <p>The revision of the worker configuration.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
         pub fn worker_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1872,21 +1740,22 @@ pub mod worker_configuration_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-        pub fn set_worker_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.worker_configuration_arn = input;
-            self
+        pub fn set_worker_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.worker_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription).
         pub fn build(self) -> crate::model::WorkerConfigurationDescription {
             crate::model::WorkerConfigurationDescription {
-                revision: self.revision.unwrap_or_default(),
-                worker_configuration_arn: self.worker_configuration_arn,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
+                worker_configuration_arn: self.worker_configuration_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkerConfigurationDescription {
     /// Creates a new builder-style object to manufacture [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription).
@@ -1898,20 +1767,20 @@ impl WorkerConfigurationDescription {
 /// <p>The description of the plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PluginDescription {
+pub struct PluginDescription  {
     /// <p>Details about a custom plugin.</p>
     #[doc(hidden)]
     pub custom_plugin: std::option::Option<crate::model::CustomPluginDescription>,
 }
 impl PluginDescription {
     /// <p>Details about a custom plugin.</p>
-    pub fn custom_plugin(&self) -> std::option::Option<&crate::model::CustomPluginDescription> {
+    pub fn custom_plugin(&self) -> std::option::Option<& crate::model::CustomPluginDescription> {
         self.custom_plugin.as_ref()
     }
 }
 /// See [`PluginDescription`](crate::model::PluginDescription).
 pub mod plugin_description {
-
+    
     /// A builder for [`PluginDescription`](crate::model::PluginDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1924,20 +1793,19 @@ pub mod plugin_description {
             self
         }
         /// <p>Details about a custom plugin.</p>
-        pub fn set_custom_plugin(
-            mut self,
-            input: std::option::Option<crate::model::CustomPluginDescription>,
-        ) -> Self {
-            self.custom_plugin = input;
-            self
+        pub fn set_custom_plugin(mut self, input: std::option::Option<crate::model::CustomPluginDescription>) -> Self {
+            self.custom_plugin = input; self
         }
         /// Consumes the builder and constructs a [`PluginDescription`](crate::model::PluginDescription).
         pub fn build(self) -> crate::model::PluginDescription {
             crate::model::PluginDescription {
-                custom_plugin: self.custom_plugin,
+                custom_plugin: self.custom_plugin
+                ,
             }
         }
     }
+    
+    
 }
 impl PluginDescription {
     /// Creates a new builder-style object to manufacture [`PluginDescription`](crate::model::PluginDescription).
@@ -1949,7 +1817,7 @@ impl PluginDescription {
 /// <p>Details about a custom plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPluginDescription {
+pub struct CustomPluginDescription  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
@@ -1959,7 +1827,7 @@ pub struct CustomPluginDescription {
 }
 impl CustomPluginDescription {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The revision of the custom plugin.</p>
@@ -1969,7 +1837,7 @@ impl CustomPluginDescription {
 }
 /// See [`CustomPluginDescription`](crate::model::CustomPluginDescription).
 pub mod custom_plugin_description {
-
+    
     /// A builder for [`CustomPluginDescription`](crate::model::CustomPluginDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1983,12 +1851,8 @@ pub mod custom_plugin_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-        pub fn set_custom_plugin_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_plugin_arn = input;
-            self
+        pub fn set_custom_plugin_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_plugin_arn = input; self
         }
         /// <p>The revision of the custom plugin.</p>
         pub fn revision(mut self, input: i64) -> Self {
@@ -1997,17 +1861,21 @@ pub mod custom_plugin_description {
         }
         /// <p>The revision of the custom plugin.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// Consumes the builder and constructs a [`CustomPluginDescription`](crate::model::CustomPluginDescription).
         pub fn build(self) -> crate::model::CustomPluginDescription {
             crate::model::CustomPluginDescription {
-                custom_plugin_arn: self.custom_plugin_arn,
-                revision: self.revision.unwrap_or_default(),
+                custom_plugin_arn: self.custom_plugin_arn
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomPluginDescription {
     /// Creates a new builder-style object to manufacture [`CustomPluginDescription`](crate::model::CustomPluginDescription).
@@ -2019,52 +1887,45 @@ impl CustomPluginDescription {
 /// <p>The description of the log delivery settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogDeliveryDescription {
+pub struct LogDeliveryDescription  {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
     #[doc(hidden)]
     pub worker_log_delivery: std::option::Option<crate::model::WorkerLogDeliveryDescription>,
 }
 impl LogDeliveryDescription {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-    pub fn worker_log_delivery(
-        &self,
-    ) -> std::option::Option<&crate::model::WorkerLogDeliveryDescription> {
+    pub fn worker_log_delivery(&self) -> std::option::Option<& crate::model::WorkerLogDeliveryDescription> {
         self.worker_log_delivery.as_ref()
     }
 }
 /// See [`LogDeliveryDescription`](crate::model::LogDeliveryDescription).
 pub mod log_delivery_description {
-
+    
     /// A builder for [`LogDeliveryDescription`](crate::model::LogDeliveryDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) worker_log_delivery:
-            std::option::Option<crate::model::WorkerLogDeliveryDescription>,
+        pub(crate) worker_log_delivery: std::option::Option<crate::model::WorkerLogDeliveryDescription>,
     }
     impl Builder {
         /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-        pub fn worker_log_delivery(
-            mut self,
-            input: crate::model::WorkerLogDeliveryDescription,
-        ) -> Self {
+        pub fn worker_log_delivery(mut self, input: crate::model::WorkerLogDeliveryDescription) -> Self {
             self.worker_log_delivery = Some(input);
             self
         }
         /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-        pub fn set_worker_log_delivery(
-            mut self,
-            input: std::option::Option<crate::model::WorkerLogDeliveryDescription>,
-        ) -> Self {
-            self.worker_log_delivery = input;
-            self
+        pub fn set_worker_log_delivery(mut self, input: std::option::Option<crate::model::WorkerLogDeliveryDescription>) -> Self {
+            self.worker_log_delivery = input; self
         }
         /// Consumes the builder and constructs a [`LogDeliveryDescription`](crate::model::LogDeliveryDescription).
         pub fn build(self) -> crate::model::LogDeliveryDescription {
             crate::model::LogDeliveryDescription {
-                worker_log_delivery: self.worker_log_delivery,
+                worker_log_delivery: self.worker_log_delivery
+                ,
             }
         }
     }
+    
+    
 }
 impl LogDeliveryDescription {
     /// Creates a new builder-style object to manufacture [`LogDeliveryDescription`](crate::model::LogDeliveryDescription).
@@ -2076,7 +1937,7 @@ impl LogDeliveryDescription {
 /// <p>Workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkerLogDeliveryDescription {
+pub struct WorkerLogDeliveryDescription  {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsLogDeliveryDescription>,
@@ -2089,47 +1950,37 @@ pub struct WorkerLogDeliveryDescription {
 }
 impl WorkerLogDeliveryDescription {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsLogDeliveryDescription> {
+    pub fn cloud_watch_logs(&self) -> std::option::Option<& crate::model::CloudWatchLogsLogDeliveryDescription> {
         self.cloud_watch_logs.as_ref()
     }
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
-    pub fn firehose(&self) -> std::option::Option<&crate::model::FirehoseLogDeliveryDescription> {
+    pub fn firehose(&self) -> std::option::Option<& crate::model::FirehoseLogDeliveryDescription> {
         self.firehose.as_ref()
     }
     /// <p>Details about delivering logs to Amazon S3.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::model::S3LogDeliveryDescription> {
+    pub fn s3(&self) -> std::option::Option<& crate::model::S3LogDeliveryDescription> {
         self.s3.as_ref()
     }
 }
 /// See [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription).
 pub mod worker_log_delivery_description {
-
+    
     /// A builder for [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_logs:
-            std::option::Option<crate::model::CloudWatchLogsLogDeliveryDescription>,
+        pub(crate) cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsLogDeliveryDescription>,
         pub(crate) firehose: std::option::Option<crate::model::FirehoseLogDeliveryDescription>,
         pub(crate) s3: std::option::Option<crate::model::S3LogDeliveryDescription>,
     }
     impl Builder {
         /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-        pub fn cloud_watch_logs(
-            mut self,
-            input: crate::model::CloudWatchLogsLogDeliveryDescription,
-        ) -> Self {
+        pub fn cloud_watch_logs(mut self, input: crate::model::CloudWatchLogsLogDeliveryDescription) -> Self {
             self.cloud_watch_logs = Some(input);
             self
         }
         /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-        pub fn set_cloud_watch_logs(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsLogDeliveryDescription>,
-        ) -> Self {
-            self.cloud_watch_logs = input;
-            self
+        pub fn set_cloud_watch_logs(mut self, input: std::option::Option<crate::model::CloudWatchLogsLogDeliveryDescription>) -> Self {
+            self.cloud_watch_logs = input; self
         }
         /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
         pub fn firehose(mut self, input: crate::model::FirehoseLogDeliveryDescription) -> Self {
@@ -2137,12 +1988,8 @@ pub mod worker_log_delivery_description {
             self
         }
         /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
-        pub fn set_firehose(
-            mut self,
-            input: std::option::Option<crate::model::FirehoseLogDeliveryDescription>,
-        ) -> Self {
-            self.firehose = input;
-            self
+        pub fn set_firehose(mut self, input: std::option::Option<crate::model::FirehoseLogDeliveryDescription>) -> Self {
+            self.firehose = input; self
         }
         /// <p>Details about delivering logs to Amazon S3.</p>
         pub fn s3(mut self, input: crate::model::S3LogDeliveryDescription) -> Self {
@@ -2150,22 +1997,23 @@ pub mod worker_log_delivery_description {
             self
         }
         /// <p>Details about delivering logs to Amazon S3.</p>
-        pub fn set_s3(
-            mut self,
-            input: std::option::Option<crate::model::S3LogDeliveryDescription>,
-        ) -> Self {
-            self.s3 = input;
-            self
+        pub fn set_s3(mut self, input: std::option::Option<crate::model::S3LogDeliveryDescription>) -> Self {
+            self.s3 = input; self
         }
         /// Consumes the builder and constructs a [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription).
         pub fn build(self) -> crate::model::WorkerLogDeliveryDescription {
             crate::model::WorkerLogDeliveryDescription {
-                cloud_watch_logs: self.cloud_watch_logs,
-                firehose: self.firehose,
-                s3: self.s3,
+                cloud_watch_logs: self.cloud_watch_logs
+                ,
+                firehose: self.firehose
+                ,
+                s3: self.s3
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkerLogDeliveryDescription {
     /// Creates a new builder-style object to manufacture [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription).
@@ -2177,7 +2025,7 @@ impl WorkerLogDeliveryDescription {
 /// <p>The description of the details about delivering logs to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3LogDeliveryDescription {
+pub struct S3LogDeliveryDescription  {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -2190,7 +2038,7 @@ pub struct S3LogDeliveryDescription {
 }
 impl S3LogDeliveryDescription {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
@@ -2198,13 +2046,13 @@ impl S3LogDeliveryDescription {
         self.enabled
     }
     /// <p>The S3 prefix that is the destination for log delivery.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription).
 pub mod s3_log_delivery_description {
-
+    
     /// A builder for [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2220,8 +2068,7 @@ pub mod s3_log_delivery_description {
         }
         /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -2230,8 +2077,7 @@ pub mod s3_log_delivery_description {
         }
         /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The S3 prefix that is the destination for log delivery.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2240,18 +2086,23 @@ pub mod s3_log_delivery_description {
         }
         /// <p>The S3 prefix that is the destination for log delivery.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription).
         pub fn build(self) -> crate::model::S3LogDeliveryDescription {
             crate::model::S3LogDeliveryDescription {
-                bucket: self.bucket,
-                enabled: self.enabled.unwrap_or_default(),
-                prefix: self.prefix,
+                bucket: self.bucket
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl S3LogDeliveryDescription {
     /// Creates a new builder-style object to manufacture [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription).
@@ -2263,7 +2114,7 @@ impl S3LogDeliveryDescription {
 /// <p>A description of the settings for delivering logs to Amazon Kinesis Data Firehose.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FirehoseLogDeliveryDescription {
+pub struct FirehoseLogDeliveryDescription  {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
     #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
@@ -2273,7 +2124,7 @@ pub struct FirehoseLogDeliveryDescription {
 }
 impl FirehoseLogDeliveryDescription {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
-    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream(&self) -> std::option::Option<& str> {
         self.delivery_stream.as_deref()
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
@@ -2283,7 +2134,7 @@ impl FirehoseLogDeliveryDescription {
 }
 /// See [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription).
 pub mod firehose_log_delivery_description {
-
+    
     /// A builder for [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2297,12 +2148,8 @@ pub mod firehose_log_delivery_description {
             self
         }
         /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
-        pub fn set_delivery_stream(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream = input;
-            self
+        pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream = input; self
         }
         /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -2311,17 +2158,21 @@ pub mod firehose_log_delivery_description {
         }
         /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription).
         pub fn build(self) -> crate::model::FirehoseLogDeliveryDescription {
             crate::model::FirehoseLogDeliveryDescription {
-                delivery_stream: self.delivery_stream,
-                enabled: self.enabled.unwrap_or_default(),
+                delivery_stream: self.delivery_stream
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl FirehoseLogDeliveryDescription {
     /// Creates a new builder-style object to manufacture [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription).
@@ -2333,7 +2184,7 @@ impl FirehoseLogDeliveryDescription {
 /// <p>A description of the log delivery settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsLogDeliveryDescription {
+pub struct CloudWatchLogsLogDeliveryDescription  {
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -2347,13 +2198,13 @@ impl CloudWatchLogsLogDeliveryDescription {
         self.enabled
     }
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
-    pub fn log_group(&self) -> std::option::Option<&str> {
+    pub fn log_group(&self) -> std::option::Option<& str> {
         self.log_group.as_deref()
     }
 }
 /// See [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription).
 pub mod cloud_watch_logs_log_delivery_description {
-
+    
     /// A builder for [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2368,8 +2219,7 @@ pub mod cloud_watch_logs_log_delivery_description {
         }
         /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
         pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2378,17 +2228,21 @@ pub mod cloud_watch_logs_log_delivery_description {
         }
         /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_group = input;
-            self
+            self.log_group = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription).
         pub fn build(self) -> crate::model::CloudWatchLogsLogDeliveryDescription {
             crate::model::CloudWatchLogsLogDeliveryDescription {
-                enabled: self.enabled.unwrap_or_default(),
-                log_group: self.log_group,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                log_group: self.log_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogsLogDeliveryDescription {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription).
@@ -2400,52 +2254,45 @@ impl CloudWatchLogsLogDeliveryDescription {
 /// <p>The description of the encryption in transit to the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaClusterEncryptionInTransitDescription {
+pub struct KafkaClusterEncryptionInTransitDescription  {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
 }
 impl KafkaClusterEncryptionInTransitDescription {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn encryption_type(
-        &self,
-    ) -> std::option::Option<&crate::model::KafkaClusterEncryptionInTransitType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::model::KafkaClusterEncryptionInTransitType> {
         self.encryption_type.as_ref()
     }
 }
 /// See [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription).
 pub mod kafka_cluster_encryption_in_transit_description {
-
+    
     /// A builder for [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) encryption_type:
-            std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
+        pub(crate) encryption_type: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
     }
     impl Builder {
         /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-        pub fn encryption_type(
-            mut self,
-            input: crate::model::KafkaClusterEncryptionInTransitType,
-        ) -> Self {
+        pub fn encryption_type(mut self, input: crate::model::KafkaClusterEncryptionInTransitType) -> Self {
             self.encryption_type = Some(input);
             self
         }
         /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>) -> Self {
+            self.encryption_type = input; self
         }
         /// Consumes the builder and constructs a [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription).
         pub fn build(self) -> crate::model::KafkaClusterEncryptionInTransitDescription {
             crate::model::KafkaClusterEncryptionInTransitDescription {
-                encryption_type: self.encryption_type,
+                encryption_type: self.encryption_type
+                ,
             }
         }
     }
+    
+    
 }
 impl KafkaClusterEncryptionInTransitDescription {
     /// Creates a new builder-style object to manufacture [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription).
@@ -2460,9 +2307,9 @@ impl KafkaClusterEncryptionInTransitDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let kafkaclusterencryptionintransittype = unimplemented!();
 /// match kafkaclusterencryptionintransittype {
@@ -2484,60 +2331,52 @@ impl KafkaClusterEncryptionInTransitDescription {
 /// Specifically, when `kafkaclusterencryptionintransittype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KafkaClusterEncryptionInTransitType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KafkaClusterEncryptionInTransitType {
     #[allow(missing_docs)] // documentation missing in model
     Plaintext,
     #[allow(missing_docs)] // documentation missing in model
     Tls,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KafkaClusterEncryptionInTransitType {
     fn from(s: &str) -> Self {
         match s {
             "PLAINTEXT" => KafkaClusterEncryptionInTransitType::Plaintext,
             "TLS" => KafkaClusterEncryptionInTransitType::Tls,
-            other => KafkaClusterEncryptionInTransitType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => KafkaClusterEncryptionInTransitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KafkaClusterEncryptionInTransitType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KafkaClusterEncryptionInTransitType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KafkaClusterEncryptionInTransitType::from(s))
+                }
+            }
 impl KafkaClusterEncryptionInTransitType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KafkaClusterEncryptionInTransitType::Plaintext => "PLAINTEXT",
             KafkaClusterEncryptionInTransitType::Tls => "TLS",
-            KafkaClusterEncryptionInTransitType::Unknown(value) => value.as_str(),
+            KafkaClusterEncryptionInTransitType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PLAINTEXT", "TLS"]
+        &[
+            "PLAINTEXT", "TLS"
+        ]
     }
 }
 impl AsRef<str> for KafkaClusterEncryptionInTransitType {
@@ -2549,53 +2388,45 @@ impl AsRef<str> for KafkaClusterEncryptionInTransitType {
 /// <p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaClusterClientAuthenticationDescription {
+pub struct KafkaClusterClientAuthenticationDescription  {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
     #[doc(hidden)]
-    pub authentication_type:
-        std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
+    pub authentication_type: std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
 }
 impl KafkaClusterClientAuthenticationDescription {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-    pub fn authentication_type(
-        &self,
-    ) -> std::option::Option<&crate::model::KafkaClusterClientAuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::KafkaClusterClientAuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
 /// See [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription).
 pub mod kafka_cluster_client_authentication_description {
-
+    
     /// A builder for [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) authentication_type:
-            std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
+        pub(crate) authentication_type: std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
     }
     impl Builder {
         /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-        pub fn authentication_type(
-            mut self,
-            input: crate::model::KafkaClusterClientAuthenticationType,
-        ) -> Self {
+        pub fn authentication_type(mut self, input: crate::model::KafkaClusterClientAuthenticationType) -> Self {
             self.authentication_type = Some(input);
             self
         }
         /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::KafkaClusterClientAuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// Consumes the builder and constructs a [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription).
         pub fn build(self) -> crate::model::KafkaClusterClientAuthenticationDescription {
             crate::model::KafkaClusterClientAuthenticationDescription {
-                authentication_type: self.authentication_type,
+                authentication_type: self.authentication_type
+                ,
             }
         }
     }
+    
+    
 }
 impl KafkaClusterClientAuthenticationDescription {
     /// Creates a new builder-style object to manufacture [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription).
@@ -2610,9 +2441,9 @@ impl KafkaClusterClientAuthenticationDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let kafkaclusterclientauthenticationtype = unimplemented!();
 /// match kafkaclusterclientauthenticationtype {
@@ -2634,60 +2465,52 @@ impl KafkaClusterClientAuthenticationDescription {
 /// Specifically, when `kafkaclusterclientauthenticationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KafkaClusterClientAuthenticationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KafkaClusterClientAuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     Iam,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KafkaClusterClientAuthenticationType {
     fn from(s: &str) -> Self {
         match s {
             "IAM" => KafkaClusterClientAuthenticationType::Iam,
             "NONE" => KafkaClusterClientAuthenticationType::None,
-            other => KafkaClusterClientAuthenticationType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => KafkaClusterClientAuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KafkaClusterClientAuthenticationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KafkaClusterClientAuthenticationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KafkaClusterClientAuthenticationType::from(s))
+                }
+            }
 impl KafkaClusterClientAuthenticationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KafkaClusterClientAuthenticationType::Iam => "IAM",
             KafkaClusterClientAuthenticationType::None => "NONE",
-            KafkaClusterClientAuthenticationType::Unknown(value) => value.as_str(),
+            KafkaClusterClientAuthenticationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IAM", "NONE"]
+        &[
+            "IAM", "NONE"
+        ]
     }
 }
 impl AsRef<str> for KafkaClusterClientAuthenticationType {
@@ -2699,52 +2522,45 @@ impl AsRef<str> for KafkaClusterClientAuthenticationType {
 /// <p>Details of how to connect to the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaClusterDescription {
+pub struct KafkaClusterDescription  {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
     #[doc(hidden)]
     pub apache_kafka_cluster: std::option::Option<crate::model::ApacheKafkaClusterDescription>,
 }
 impl KafkaClusterDescription {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn apache_kafka_cluster(
-        &self,
-    ) -> std::option::Option<&crate::model::ApacheKafkaClusterDescription> {
+    pub fn apache_kafka_cluster(&self) -> std::option::Option<& crate::model::ApacheKafkaClusterDescription> {
         self.apache_kafka_cluster.as_ref()
     }
 }
 /// See [`KafkaClusterDescription`](crate::model::KafkaClusterDescription).
 pub mod kafka_cluster_description {
-
+    
     /// A builder for [`KafkaClusterDescription`](crate::model::KafkaClusterDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apache_kafka_cluster:
-            std::option::Option<crate::model::ApacheKafkaClusterDescription>,
+        pub(crate) apache_kafka_cluster: std::option::Option<crate::model::ApacheKafkaClusterDescription>,
     }
     impl Builder {
         /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-        pub fn apache_kafka_cluster(
-            mut self,
-            input: crate::model::ApacheKafkaClusterDescription,
-        ) -> Self {
+        pub fn apache_kafka_cluster(mut self, input: crate::model::ApacheKafkaClusterDescription) -> Self {
             self.apache_kafka_cluster = Some(input);
             self
         }
         /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-        pub fn set_apache_kafka_cluster(
-            mut self,
-            input: std::option::Option<crate::model::ApacheKafkaClusterDescription>,
-        ) -> Self {
-            self.apache_kafka_cluster = input;
-            self
+        pub fn set_apache_kafka_cluster(mut self, input: std::option::Option<crate::model::ApacheKafkaClusterDescription>) -> Self {
+            self.apache_kafka_cluster = input; self
         }
         /// Consumes the builder and constructs a [`KafkaClusterDescription`](crate::model::KafkaClusterDescription).
         pub fn build(self) -> crate::model::KafkaClusterDescription {
             crate::model::KafkaClusterDescription {
-                apache_kafka_cluster: self.apache_kafka_cluster,
+                apache_kafka_cluster: self.apache_kafka_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl KafkaClusterDescription {
     /// Creates a new builder-style object to manufacture [`KafkaClusterDescription`](crate::model::KafkaClusterDescription).
@@ -2756,7 +2572,7 @@ impl KafkaClusterDescription {
 /// <p>The description of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApacheKafkaClusterDescription {
+pub struct ApacheKafkaClusterDescription  {
     /// <p>The bootstrap servers of the cluster.</p>
     #[doc(hidden)]
     pub bootstrap_servers: std::option::Option<std::string::String>,
@@ -2766,17 +2582,17 @@ pub struct ApacheKafkaClusterDescription {
 }
 impl ApacheKafkaClusterDescription {
     /// <p>The bootstrap servers of the cluster.</p>
-    pub fn bootstrap_servers(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_servers(&self) -> std::option::Option<& str> {
         self.bootstrap_servers.as_deref()
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    pub fn vpc(&self) -> std::option::Option<&crate::model::VpcDescription> {
+    pub fn vpc(&self) -> std::option::Option<& crate::model::VpcDescription> {
         self.vpc.as_ref()
     }
 }
 /// See [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription).
 pub mod apache_kafka_cluster_description {
-
+    
     /// A builder for [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2790,12 +2606,8 @@ pub mod apache_kafka_cluster_description {
             self
         }
         /// <p>The bootstrap servers of the cluster.</p>
-        pub fn set_bootstrap_servers(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_servers = input;
-            self
+        pub fn set_bootstrap_servers(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_servers = input; self
         }
         /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
         pub fn vpc(mut self, input: crate::model::VpcDescription) -> Self {
@@ -2804,17 +2616,20 @@ pub mod apache_kafka_cluster_description {
         }
         /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
         pub fn set_vpc(mut self, input: std::option::Option<crate::model::VpcDescription>) -> Self {
-            self.vpc = input;
-            self
+            self.vpc = input; self
         }
         /// Consumes the builder and constructs a [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription).
         pub fn build(self) -> crate::model::ApacheKafkaClusterDescription {
             crate::model::ApacheKafkaClusterDescription {
-                bootstrap_servers: self.bootstrap_servers,
-                vpc: self.vpc,
+                bootstrap_servers: self.bootstrap_servers
+                ,
+                vpc: self.vpc
+                ,
             }
         }
     }
+    
+    
 }
 impl ApacheKafkaClusterDescription {
     /// Creates a new builder-style object to manufacture [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription).
@@ -2826,7 +2641,7 @@ impl ApacheKafkaClusterDescription {
 /// <p>The description of the VPC in which the connector resides.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcDescription {
+pub struct VpcDescription  {
     /// <p>The security groups for the connector.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2836,17 +2651,17 @@ pub struct VpcDescription {
 }
 impl VpcDescription {
     /// <p>The security groups for the connector.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The subnets for the connector.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
 }
 /// See [`VpcDescription`](crate::model::VpcDescription).
 pub mod vpc_description {
-
+    
     /// A builder for [`VpcDescription`](crate::model::VpcDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2861,17 +2676,13 @@ pub mod vpc_description {
         /// <p>The security groups for the connector.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>The security groups for the connector.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// Appends an item to `subnets`.
         ///
@@ -2880,26 +2691,26 @@ pub mod vpc_description {
         /// <p>The subnets for the connector.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>The subnets for the connector.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Consumes the builder and constructs a [`VpcDescription`](crate::model::VpcDescription).
         pub fn build(self) -> crate::model::VpcDescription {
             crate::model::VpcDescription {
-                security_groups: self.security_groups,
-                subnets: self.subnets,
+                security_groups: self.security_groups
+                ,
+                subnets: self.subnets
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcDescription {
     /// Creates a new builder-style object to manufacture [`VpcDescription`](crate::model::VpcDescription).
@@ -2911,7 +2722,7 @@ impl VpcDescription {
 /// <p>A description of the connector's capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CapacityDescription {
+pub struct CapacityDescription  {
     /// <p>Describes the connector's auto scaling capacity.</p>
     #[doc(hidden)]
     pub auto_scaling: std::option::Option<crate::model::AutoScalingDescription>,
@@ -2921,25 +2732,22 @@ pub struct CapacityDescription {
 }
 impl CapacityDescription {
     /// <p>Describes the connector's auto scaling capacity.</p>
-    pub fn auto_scaling(&self) -> std::option::Option<&crate::model::AutoScalingDescription> {
+    pub fn auto_scaling(&self) -> std::option::Option<& crate::model::AutoScalingDescription> {
         self.auto_scaling.as_ref()
     }
     /// <p>Describes a connector's provisioned capacity.</p>
-    pub fn provisioned_capacity(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisionedCapacityDescription> {
+    pub fn provisioned_capacity(&self) -> std::option::Option<& crate::model::ProvisionedCapacityDescription> {
         self.provisioned_capacity.as_ref()
     }
 }
 /// See [`CapacityDescription`](crate::model::CapacityDescription).
 pub mod capacity_description {
-
+    
     /// A builder for [`CapacityDescription`](crate::model::CapacityDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling: std::option::Option<crate::model::AutoScalingDescription>,
-        pub(crate) provisioned_capacity:
-            std::option::Option<crate::model::ProvisionedCapacityDescription>,
+        pub(crate) provisioned_capacity: std::option::Option<crate::model::ProvisionedCapacityDescription>,
     }
     impl Builder {
         /// <p>Describes the connector's auto scaling capacity.</p>
@@ -2948,37 +2756,30 @@ pub mod capacity_description {
             self
         }
         /// <p>Describes the connector's auto scaling capacity.</p>
-        pub fn set_auto_scaling(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingDescription>,
-        ) -> Self {
-            self.auto_scaling = input;
-            self
+        pub fn set_auto_scaling(mut self, input: std::option::Option<crate::model::AutoScalingDescription>) -> Self {
+            self.auto_scaling = input; self
         }
         /// <p>Describes a connector's provisioned capacity.</p>
-        pub fn provisioned_capacity(
-            mut self,
-            input: crate::model::ProvisionedCapacityDescription,
-        ) -> Self {
+        pub fn provisioned_capacity(mut self, input: crate::model::ProvisionedCapacityDescription) -> Self {
             self.provisioned_capacity = Some(input);
             self
         }
         /// <p>Describes a connector's provisioned capacity.</p>
-        pub fn set_provisioned_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedCapacityDescription>,
-        ) -> Self {
-            self.provisioned_capacity = input;
-            self
+        pub fn set_provisioned_capacity(mut self, input: std::option::Option<crate::model::ProvisionedCapacityDescription>) -> Self {
+            self.provisioned_capacity = input; self
         }
         /// Consumes the builder and constructs a [`CapacityDescription`](crate::model::CapacityDescription).
         pub fn build(self) -> crate::model::CapacityDescription {
             crate::model::CapacityDescription {
-                auto_scaling: self.auto_scaling,
-                provisioned_capacity: self.provisioned_capacity,
+                auto_scaling: self.auto_scaling
+                ,
+                provisioned_capacity: self.provisioned_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl CapacityDescription {
     /// Creates a new builder-style object to manufacture [`CapacityDescription`](crate::model::CapacityDescription).
@@ -2990,7 +2791,7 @@ impl CapacityDescription {
 /// <p>The description of a connector's provisioned capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedCapacityDescription {
+pub struct ProvisionedCapacityDescription  {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     #[doc(hidden)]
     pub mcu_count: i32,
@@ -3010,7 +2811,7 @@ impl ProvisionedCapacityDescription {
 }
 /// See [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
 pub mod provisioned_capacity_description {
-
+    
     /// A builder for [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3025,8 +2826,7 @@ pub mod provisioned_capacity_description {
         }
         /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn set_mcu_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcu_count = input;
-            self
+            self.mcu_count = input; self
         }
         /// <p>The number of workers that are allocated to the connector.</p>
         pub fn worker_count(mut self, input: i32) -> Self {
@@ -3035,17 +2835,22 @@ pub mod provisioned_capacity_description {
         }
         /// <p>The number of workers that are allocated to the connector.</p>
         pub fn set_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.worker_count = input;
-            self
+            self.worker_count = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
         pub fn build(self) -> crate::model::ProvisionedCapacityDescription {
             crate::model::ProvisionedCapacityDescription {
-                mcu_count: self.mcu_count.unwrap_or_default(),
-                worker_count: self.worker_count.unwrap_or_default(),
+                mcu_count: self.mcu_count
+                    .unwrap_or_default()
+                ,
+                worker_count: self.worker_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionedCapacityDescription {
     /// Creates a new builder-style object to manufacture [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
@@ -3057,7 +2862,7 @@ impl ProvisionedCapacityDescription {
 /// <p>Information about the auto scaling parameters for the connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingDescription {
+pub struct AutoScalingDescription  {
     /// <p>The maximum number of workers allocated to the connector.</p>
     #[doc(hidden)]
     pub max_worker_count: i32,
@@ -3088,19 +2893,17 @@ impl AutoScalingDescription {
         self.min_worker_count
     }
     /// <p>The sacle-in policy for the connector.</p>
-    pub fn scale_in_policy(&self) -> std::option::Option<&crate::model::ScaleInPolicyDescription> {
+    pub fn scale_in_policy(&self) -> std::option::Option<& crate::model::ScaleInPolicyDescription> {
         self.scale_in_policy.as_ref()
     }
     /// <p>The sacle-out policy for the connector.&gt;</p>
-    pub fn scale_out_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::ScaleOutPolicyDescription> {
+    pub fn scale_out_policy(&self) -> std::option::Option<& crate::model::ScaleOutPolicyDescription> {
         self.scale_out_policy.as_ref()
     }
 }
 /// See [`AutoScalingDescription`](crate::model::AutoScalingDescription).
 pub mod auto_scaling_description {
-
+    
     /// A builder for [`AutoScalingDescription`](crate::model::AutoScalingDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3118,8 +2921,7 @@ pub mod auto_scaling_description {
         }
         /// <p>The maximum number of workers allocated to the connector.</p>
         pub fn set_max_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_worker_count = input;
-            self
+            self.max_worker_count = input; self
         }
         /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn mcu_count(mut self, input: i32) -> Self {
@@ -3128,8 +2930,7 @@ pub mod auto_scaling_description {
         }
         /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn set_mcu_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcu_count = input;
-            self
+            self.mcu_count = input; self
         }
         /// <p>The minimum number of workers allocated to the connector.</p>
         pub fn min_worker_count(mut self, input: i32) -> Self {
@@ -3138,8 +2939,7 @@ pub mod auto_scaling_description {
         }
         /// <p>The minimum number of workers allocated to the connector.</p>
         pub fn set_min_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_worker_count = input;
-            self
+            self.min_worker_count = input; self
         }
         /// <p>The sacle-in policy for the connector.</p>
         pub fn scale_in_policy(mut self, input: crate::model::ScaleInPolicyDescription) -> Self {
@@ -3147,12 +2947,8 @@ pub mod auto_scaling_description {
             self
         }
         /// <p>The sacle-in policy for the connector.</p>
-        pub fn set_scale_in_policy(
-            mut self,
-            input: std::option::Option<crate::model::ScaleInPolicyDescription>,
-        ) -> Self {
-            self.scale_in_policy = input;
-            self
+        pub fn set_scale_in_policy(mut self, input: std::option::Option<crate::model::ScaleInPolicyDescription>) -> Self {
+            self.scale_in_policy = input; self
         }
         /// <p>The sacle-out policy for the connector.&gt;</p>
         pub fn scale_out_policy(mut self, input: crate::model::ScaleOutPolicyDescription) -> Self {
@@ -3160,24 +2956,30 @@ pub mod auto_scaling_description {
             self
         }
         /// <p>The sacle-out policy for the connector.&gt;</p>
-        pub fn set_scale_out_policy(
-            mut self,
-            input: std::option::Option<crate::model::ScaleOutPolicyDescription>,
-        ) -> Self {
-            self.scale_out_policy = input;
-            self
+        pub fn set_scale_out_policy(mut self, input: std::option::Option<crate::model::ScaleOutPolicyDescription>) -> Self {
+            self.scale_out_policy = input; self
         }
         /// Consumes the builder and constructs a [`AutoScalingDescription`](crate::model::AutoScalingDescription).
         pub fn build(self) -> crate::model::AutoScalingDescription {
             crate::model::AutoScalingDescription {
-                max_worker_count: self.max_worker_count.unwrap_or_default(),
-                mcu_count: self.mcu_count.unwrap_or_default(),
-                min_worker_count: self.min_worker_count.unwrap_or_default(),
-                scale_in_policy: self.scale_in_policy,
-                scale_out_policy: self.scale_out_policy,
+                max_worker_count: self.max_worker_count
+                    .unwrap_or_default()
+                ,
+                mcu_count: self.mcu_count
+                    .unwrap_or_default()
+                ,
+                min_worker_count: self.min_worker_count
+                    .unwrap_or_default()
+                ,
+                scale_in_policy: self.scale_in_policy
+                ,
+                scale_out_policy: self.scale_out_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoScalingDescription {
     /// Creates a new builder-style object to manufacture [`AutoScalingDescription`](crate::model::AutoScalingDescription).
@@ -3189,7 +2991,7 @@ impl AutoScalingDescription {
 /// <p>The description of the scale-out policy for the connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScaleOutPolicyDescription {
+pub struct ScaleOutPolicyDescription  {
     /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
     #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
@@ -3202,7 +3004,7 @@ impl ScaleOutPolicyDescription {
 }
 /// See [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription).
 pub mod scale_out_policy_description {
-
+    
     /// A builder for [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3216,16 +3018,19 @@ pub mod scale_out_policy_description {
         }
         /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
         pub fn set_cpu_utilization_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.cpu_utilization_percentage = input;
-            self
+            self.cpu_utilization_percentage = input; self
         }
         /// Consumes the builder and constructs a [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription).
         pub fn build(self) -> crate::model::ScaleOutPolicyDescription {
             crate::model::ScaleOutPolicyDescription {
-                cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
+                cpu_utilization_percentage: self.cpu_utilization_percentage
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ScaleOutPolicyDescription {
     /// Creates a new builder-style object to manufacture [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription).
@@ -3237,7 +3042,7 @@ impl ScaleOutPolicyDescription {
 /// <p>The description of the scale-in policy for the connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScaleInPolicyDescription {
+pub struct ScaleInPolicyDescription  {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
@@ -3250,7 +3055,7 @@ impl ScaleInPolicyDescription {
 }
 /// See [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription).
 pub mod scale_in_policy_description {
-
+    
     /// A builder for [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3264,16 +3069,19 @@ pub mod scale_in_policy_description {
         }
         /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
         pub fn set_cpu_utilization_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.cpu_utilization_percentage = input;
-            self
+            self.cpu_utilization_percentage = input; self
         }
         /// Consumes the builder and constructs a [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription).
         pub fn build(self) -> crate::model::ScaleInPolicyDescription {
             crate::model::ScaleInPolicyDescription {
-                cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
+                cpu_utilization_percentage: self.cpu_utilization_percentage
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ScaleInPolicyDescription {
     /// Creates a new builder-style object to manufacture [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription).
@@ -3285,7 +3093,7 @@ impl ScaleInPolicyDescription {
 /// <p>The description of the worker configuration revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct WorkerConfigurationRevisionDescription {
+pub struct WorkerConfigurationRevisionDescription  {
     /// <p>The time that the worker configuration was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3301,15 +3109,15 @@ pub struct WorkerConfigurationRevisionDescription {
 }
 impl WorkerConfigurationRevisionDescription {
     /// <p>The time that the worker configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the worker configuration revision.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
-    pub fn properties_file_content(&self) -> std::option::Option<&str> {
+    pub fn properties_file_content(&self) -> std::option::Option<& str> {
         self.properties_file_content.as_deref()
     }
     /// <p>The description of a revision of the worker configuration.</p>
@@ -3317,22 +3125,19 @@ impl WorkerConfigurationRevisionDescription {
         self.revision
     }
 }
-impl std::fmt::Debug for WorkerConfigurationRevisionDescription {
+impl  std::fmt::Debug for WorkerConfigurationRevisionDescription  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkerConfigurationRevisionDescription");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("description", &self.description);
-        formatter.field(
-            "properties_file_content",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
         formatter.field("revision", &self.revision);
         formatter.finish()
     }
 }
 /// See [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription).
 pub mod worker_configuration_revision_description {
-
+    
     /// A builder for [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3348,12 +3153,8 @@ pub mod worker_configuration_revision_description {
             self
         }
         /// <p>The time that the worker configuration was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of the worker configuration revision.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3362,8 +3163,7 @@ pub mod worker_configuration_revision_description {
         }
         /// <p>The description of the worker configuration revision.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
         pub fn properties_file_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3371,12 +3171,8 @@ pub mod worker_configuration_revision_description {
             self
         }
         /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
-        pub fn set_properties_file_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.properties_file_content = input;
-            self
+        pub fn set_properties_file_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.properties_file_content = input; self
         }
         /// <p>The description of a revision of the worker configuration.</p>
         pub fn revision(mut self, input: i64) -> Self {
@@ -3385,16 +3181,20 @@ pub mod worker_configuration_revision_description {
         }
         /// <p>The description of a revision of the worker configuration.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// Consumes the builder and constructs a [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription).
         pub fn build(self) -> crate::model::WorkerConfigurationRevisionDescription {
             crate::model::WorkerConfigurationRevisionDescription {
-                creation_time: self.creation_time,
-                description: self.description,
-                properties_file_content: self.properties_file_content,
-                revision: self.revision.unwrap_or_default(),
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                properties_file_content: self.properties_file_content
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -3403,14 +3203,13 @@ pub mod worker_configuration_revision_description {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("creation_time", &self.creation_time);
             formatter.field("description", &self.description);
-            formatter.field(
-                "properties_file_content",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
             formatter.field("revision", &self.revision);
             formatter.finish()
         }
     }
+    
+    
 }
 impl WorkerConfigurationRevisionDescription {
     /// Creates a new builder-style object to manufacture [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription).
@@ -3422,7 +3221,7 @@ impl WorkerConfigurationRevisionDescription {
 /// <p>Details about the state of a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StateDescription {
+pub struct StateDescription  {
     /// <p>A code that describes the state of a resource.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -3432,17 +3231,17 @@ pub struct StateDescription {
 }
 impl StateDescription {
     /// <p>A code that describes the state of a resource.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A message that describes the state of a resource.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`StateDescription`](crate::model::StateDescription).
 pub mod state_description {
-
+    
     /// A builder for [`StateDescription`](crate::model::StateDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3457,8 +3256,7 @@ pub mod state_description {
         }
         /// <p>A code that describes the state of a resource.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>A message that describes the state of a resource.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3467,17 +3265,20 @@ pub mod state_description {
         }
         /// <p>A message that describes the state of a resource.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`StateDescription`](crate::model::StateDescription).
         pub fn build(self) -> crate::model::StateDescription {
             crate::model::StateDescription {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl StateDescription {
     /// Creates a new builder-style object to manufacture [`StateDescription`](crate::model::StateDescription).
@@ -3489,20 +3290,20 @@ impl StateDescription {
 /// <p>Information about the location of a custom plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPluginLocation {
+pub struct CustomPluginLocation  {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
 impl CustomPluginLocation {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3_location.as_ref()
     }
 }
 /// See [`CustomPluginLocation`](crate::model::CustomPluginLocation).
 pub mod custom_plugin_location {
-
+    
     /// A builder for [`CustomPluginLocation`](crate::model::CustomPluginLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3515,20 +3316,19 @@ pub mod custom_plugin_location {
             self
         }
         /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3_location = input; self
         }
         /// Consumes the builder and constructs a [`CustomPluginLocation`](crate::model::CustomPluginLocation).
         pub fn build(self) -> crate::model::CustomPluginLocation {
             crate::model::CustomPluginLocation {
-                s3_location: self.s3_location,
+                s3_location: self.s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomPluginLocation {
     /// Creates a new builder-style object to manufacture [`CustomPluginLocation`](crate::model::CustomPluginLocation).
@@ -3540,7 +3340,7 @@ impl CustomPluginLocation {
 /// <p>The location of an object in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
@@ -3553,21 +3353,21 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The file key for an object in an S3 bucket.</p>
-    pub fn file_key(&self) -> std::option::Option<&str> {
+    pub fn file_key(&self) -> std::option::Option<& str> {
         self.file_key.as_deref()
     }
     /// <p>The version of an object in an S3 bucket.</p>
-    pub fn object_version(&self) -> std::option::Option<&str> {
+    pub fn object_version(&self) -> std::option::Option<& str> {
         self.object_version.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3583,8 +3383,7 @@ pub mod s3_location {
         }
         /// <p>The Amazon Resource Name (ARN) of an S3 bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_arn = input;
-            self
+            self.bucket_arn = input; self
         }
         /// <p>The file key for an object in an S3 bucket.</p>
         pub fn file_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3593,8 +3392,7 @@ pub mod s3_location {
         }
         /// <p>The file key for an object in an S3 bucket.</p>
         pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_key = input;
-            self
+            self.file_key = input; self
         }
         /// <p>The version of an object in an S3 bucket.</p>
         pub fn object_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3602,22 +3400,23 @@ pub mod s3_location {
             self
         }
         /// <p>The version of an object in an S3 bucket.</p>
-        pub fn set_object_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_version = input;
-            self
+        pub fn set_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_version = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                bucket_arn: self.bucket_arn,
-                file_key: self.file_key,
-                object_version: self.object_version,
+                bucket_arn: self.bucket_arn
+                ,
+                file_key: self.file_key
+                ,
+                object_version: self.object_version
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -3629,7 +3428,7 @@ impl S3Location {
 /// <p>The configuration of the workers, which are the processes that run the connector logic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkerConfiguration {
+pub struct WorkerConfiguration  {
     /// <p>The revision of the worker configuration.</p>
     #[doc(hidden)]
     pub revision: i64,
@@ -3643,13 +3442,13 @@ impl WorkerConfiguration {
         self.revision
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub fn worker_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn worker_configuration_arn(&self) -> std::option::Option<& str> {
         self.worker_configuration_arn.as_deref()
     }
 }
 /// See [`WorkerConfiguration`](crate::model::WorkerConfiguration).
 pub mod worker_configuration {
-
+    
     /// A builder for [`WorkerConfiguration`](crate::model::WorkerConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3664,8 +3463,7 @@ pub mod worker_configuration {
         }
         /// <p>The revision of the worker configuration.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
         pub fn worker_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3673,21 +3471,22 @@ pub mod worker_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-        pub fn set_worker_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.worker_configuration_arn = input;
-            self
+        pub fn set_worker_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.worker_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`WorkerConfiguration`](crate::model::WorkerConfiguration).
         pub fn build(self) -> crate::model::WorkerConfiguration {
             crate::model::WorkerConfiguration {
-                revision: self.revision.unwrap_or_default(),
-                worker_configuration_arn: self.worker_configuration_arn,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
+                worker_configuration_arn: self.worker_configuration_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkerConfiguration {
     /// Creates a new builder-style object to manufacture [`WorkerConfiguration`](crate::model::WorkerConfiguration).
@@ -3699,20 +3498,20 @@ impl WorkerConfiguration {
 /// <p>A plugin is an AWS resource that contains the code that defines your connector logic. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Plugin {
+pub struct Plugin  {
     /// <p>Details about a custom plugin.</p>
     #[doc(hidden)]
     pub custom_plugin: std::option::Option<crate::model::CustomPlugin>,
 }
 impl Plugin {
     /// <p>Details about a custom plugin.</p>
-    pub fn custom_plugin(&self) -> std::option::Option<&crate::model::CustomPlugin> {
+    pub fn custom_plugin(&self) -> std::option::Option<& crate::model::CustomPlugin> {
         self.custom_plugin.as_ref()
     }
 }
 /// See [`Plugin`](crate::model::Plugin).
 pub mod plugin {
-
+    
     /// A builder for [`Plugin`](crate::model::Plugin).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3725,20 +3524,19 @@ pub mod plugin {
             self
         }
         /// <p>Details about a custom plugin.</p>
-        pub fn set_custom_plugin(
-            mut self,
-            input: std::option::Option<crate::model::CustomPlugin>,
-        ) -> Self {
-            self.custom_plugin = input;
-            self
+        pub fn set_custom_plugin(mut self, input: std::option::Option<crate::model::CustomPlugin>) -> Self {
+            self.custom_plugin = input; self
         }
         /// Consumes the builder and constructs a [`Plugin`](crate::model::Plugin).
         pub fn build(self) -> crate::model::Plugin {
             crate::model::Plugin {
-                custom_plugin: self.custom_plugin,
+                custom_plugin: self.custom_plugin
+                ,
             }
         }
     }
+    
+    
 }
 impl Plugin {
     /// Creates a new builder-style object to manufacture [`Plugin`](crate::model::Plugin).
@@ -3750,7 +3548,7 @@ impl Plugin {
 /// <p>A plugin is an AWS resource that contains the code that defines a connector's logic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPlugin {
+pub struct CustomPlugin  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     #[doc(hidden)]
     pub custom_plugin_arn: std::option::Option<std::string::String>,
@@ -3760,7 +3558,7 @@ pub struct CustomPlugin {
 }
 impl CustomPlugin {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The revision of the custom plugin.</p>
@@ -3770,7 +3568,7 @@ impl CustomPlugin {
 }
 /// See [`CustomPlugin`](crate::model::CustomPlugin).
 pub mod custom_plugin {
-
+    
     /// A builder for [`CustomPlugin`](crate::model::CustomPlugin).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3784,12 +3582,8 @@ pub mod custom_plugin {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-        pub fn set_custom_plugin_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_plugin_arn = input;
-            self
+        pub fn set_custom_plugin_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_plugin_arn = input; self
         }
         /// <p>The revision of the custom plugin.</p>
         pub fn revision(mut self, input: i64) -> Self {
@@ -3798,17 +3592,21 @@ pub mod custom_plugin {
         }
         /// <p>The revision of the custom plugin.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// Consumes the builder and constructs a [`CustomPlugin`](crate::model::CustomPlugin).
         pub fn build(self) -> crate::model::CustomPlugin {
             crate::model::CustomPlugin {
-                custom_plugin_arn: self.custom_plugin_arn,
-                revision: self.revision.unwrap_or_default(),
+                custom_plugin_arn: self.custom_plugin_arn
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomPlugin {
     /// Creates a new builder-style object to manufacture [`CustomPlugin`](crate::model::CustomPlugin).
@@ -3820,20 +3618,20 @@ impl CustomPlugin {
 /// <p>Details about log delivery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogDelivery {
+pub struct LogDelivery  {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
     #[doc(hidden)]
     pub worker_log_delivery: std::option::Option<crate::model::WorkerLogDelivery>,
 }
 impl LogDelivery {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-    pub fn worker_log_delivery(&self) -> std::option::Option<&crate::model::WorkerLogDelivery> {
+    pub fn worker_log_delivery(&self) -> std::option::Option<& crate::model::WorkerLogDelivery> {
         self.worker_log_delivery.as_ref()
     }
 }
 /// See [`LogDelivery`](crate::model::LogDelivery).
 pub mod log_delivery {
-
+    
     /// A builder for [`LogDelivery`](crate::model::LogDelivery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3846,20 +3644,19 @@ pub mod log_delivery {
             self
         }
         /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-        pub fn set_worker_log_delivery(
-            mut self,
-            input: std::option::Option<crate::model::WorkerLogDelivery>,
-        ) -> Self {
-            self.worker_log_delivery = input;
-            self
+        pub fn set_worker_log_delivery(mut self, input: std::option::Option<crate::model::WorkerLogDelivery>) -> Self {
+            self.worker_log_delivery = input; self
         }
         /// Consumes the builder and constructs a [`LogDelivery`](crate::model::LogDelivery).
         pub fn build(self) -> crate::model::LogDelivery {
             crate::model::LogDelivery {
-                worker_log_delivery: self.worker_log_delivery,
+                worker_log_delivery: self.worker_log_delivery
+                ,
             }
         }
     }
+    
+    
 }
 impl LogDelivery {
     /// Creates a new builder-style object to manufacture [`LogDelivery`](crate::model::LogDelivery).
@@ -3871,7 +3668,7 @@ impl LogDelivery {
 /// <p>Workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkerLogDelivery {
+pub struct WorkerLogDelivery  {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsLogDelivery>,
@@ -3884,23 +3681,21 @@ pub struct WorkerLogDelivery {
 }
 impl WorkerLogDelivery {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsLogDelivery> {
+    pub fn cloud_watch_logs(&self) -> std::option::Option<& crate::model::CloudWatchLogsLogDelivery> {
         self.cloud_watch_logs.as_ref()
     }
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
-    pub fn firehose(&self) -> std::option::Option<&crate::model::FirehoseLogDelivery> {
+    pub fn firehose(&self) -> std::option::Option<& crate::model::FirehoseLogDelivery> {
         self.firehose.as_ref()
     }
     /// <p>Details about delivering logs to Amazon S3.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::model::S3LogDelivery> {
+    pub fn s3(&self) -> std::option::Option<& crate::model::S3LogDelivery> {
         self.s3.as_ref()
     }
 }
 /// See [`WorkerLogDelivery`](crate::model::WorkerLogDelivery).
 pub mod worker_log_delivery {
-
+    
     /// A builder for [`WorkerLogDelivery`](crate::model::WorkerLogDelivery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3915,12 +3710,8 @@ pub mod worker_log_delivery {
             self
         }
         /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-        pub fn set_cloud_watch_logs(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsLogDelivery>,
-        ) -> Self {
-            self.cloud_watch_logs = input;
-            self
+        pub fn set_cloud_watch_logs(mut self, input: std::option::Option<crate::model::CloudWatchLogsLogDelivery>) -> Self {
+            self.cloud_watch_logs = input; self
         }
         /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
         pub fn firehose(mut self, input: crate::model::FirehoseLogDelivery) -> Self {
@@ -3928,12 +3719,8 @@ pub mod worker_log_delivery {
             self
         }
         /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
-        pub fn set_firehose(
-            mut self,
-            input: std::option::Option<crate::model::FirehoseLogDelivery>,
-        ) -> Self {
-            self.firehose = input;
-            self
+        pub fn set_firehose(mut self, input: std::option::Option<crate::model::FirehoseLogDelivery>) -> Self {
+            self.firehose = input; self
         }
         /// <p>Details about delivering logs to Amazon S3.</p>
         pub fn s3(mut self, input: crate::model::S3LogDelivery) -> Self {
@@ -3942,18 +3729,22 @@ pub mod worker_log_delivery {
         }
         /// <p>Details about delivering logs to Amazon S3.</p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3LogDelivery>) -> Self {
-            self.s3 = input;
-            self
+            self.s3 = input; self
         }
         /// Consumes the builder and constructs a [`WorkerLogDelivery`](crate::model::WorkerLogDelivery).
         pub fn build(self) -> crate::model::WorkerLogDelivery {
             crate::model::WorkerLogDelivery {
-                cloud_watch_logs: self.cloud_watch_logs,
-                firehose: self.firehose,
-                s3: self.s3,
+                cloud_watch_logs: self.cloud_watch_logs
+                ,
+                firehose: self.firehose
+                ,
+                s3: self.s3
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkerLogDelivery {
     /// Creates a new builder-style object to manufacture [`WorkerLogDelivery`](crate::model::WorkerLogDelivery).
@@ -3965,7 +3756,7 @@ impl WorkerLogDelivery {
 /// <p>Details about delivering logs to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3LogDelivery {
+pub struct S3LogDelivery  {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -3978,7 +3769,7 @@ pub struct S3LogDelivery {
 }
 impl S3LogDelivery {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
@@ -3986,13 +3777,13 @@ impl S3LogDelivery {
         self.enabled
     }
     /// <p>The S3 prefix that is the destination for log delivery.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`S3LogDelivery`](crate::model::S3LogDelivery).
 pub mod s3_log_delivery {
-
+    
     /// A builder for [`S3LogDelivery`](crate::model::S3LogDelivery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4008,8 +3799,7 @@ pub mod s3_log_delivery {
         }
         /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -4018,8 +3808,7 @@ pub mod s3_log_delivery {
         }
         /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The S3 prefix that is the destination for log delivery.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4028,18 +3817,23 @@ pub mod s3_log_delivery {
         }
         /// <p>The S3 prefix that is the destination for log delivery.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`S3LogDelivery`](crate::model::S3LogDelivery).
         pub fn build(self) -> crate::model::S3LogDelivery {
             crate::model::S3LogDelivery {
-                bucket: self.bucket,
-                enabled: self.enabled.unwrap_or_default(),
-                prefix: self.prefix,
+                bucket: self.bucket
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl S3LogDelivery {
     /// Creates a new builder-style object to manufacture [`S3LogDelivery`](crate::model::S3LogDelivery).
@@ -4051,7 +3845,7 @@ impl S3LogDelivery {
 /// <p>The settings for delivering logs to Amazon Kinesis Data Firehose.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FirehoseLogDelivery {
+pub struct FirehoseLogDelivery  {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
     #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
@@ -4061,7 +3855,7 @@ pub struct FirehoseLogDelivery {
 }
 impl FirehoseLogDelivery {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
-    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream(&self) -> std::option::Option<& str> {
         self.delivery_stream.as_deref()
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
@@ -4071,7 +3865,7 @@ impl FirehoseLogDelivery {
 }
 /// See [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery).
 pub mod firehose_log_delivery {
-
+    
     /// A builder for [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4085,12 +3879,8 @@ pub mod firehose_log_delivery {
             self
         }
         /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
-        pub fn set_delivery_stream(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream = input;
-            self
+        pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream = input; self
         }
         /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -4099,17 +3889,21 @@ pub mod firehose_log_delivery {
         }
         /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery).
         pub fn build(self) -> crate::model::FirehoseLogDelivery {
             crate::model::FirehoseLogDelivery {
-                delivery_stream: self.delivery_stream,
-                enabled: self.enabled.unwrap_or_default(),
+                delivery_stream: self.delivery_stream
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl FirehoseLogDelivery {
     /// Creates a new builder-style object to manufacture [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery).
@@ -4121,7 +3915,7 @@ impl FirehoseLogDelivery {
 /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsLogDelivery {
+pub struct CloudWatchLogsLogDelivery  {
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -4135,13 +3929,13 @@ impl CloudWatchLogsLogDelivery {
         self.enabled
     }
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
-    pub fn log_group(&self) -> std::option::Option<&str> {
+    pub fn log_group(&self) -> std::option::Option<& str> {
         self.log_group.as_deref()
     }
 }
 /// See [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery).
 pub mod cloud_watch_logs_log_delivery {
-
+    
     /// A builder for [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4156,8 +3950,7 @@ pub mod cloud_watch_logs_log_delivery {
         }
         /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
         pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4166,17 +3959,21 @@ pub mod cloud_watch_logs_log_delivery {
         }
         /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_group = input;
-            self
+            self.log_group = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery).
         pub fn build(self) -> crate::model::CloudWatchLogsLogDelivery {
             crate::model::CloudWatchLogsLogDelivery {
-                enabled: self.enabled.unwrap_or_default(),
-                log_group: self.log_group,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                log_group: self.log_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogsLogDelivery {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery).
@@ -4188,52 +3985,45 @@ impl CloudWatchLogsLogDelivery {
 /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaClusterEncryptionInTransit {
+pub struct KafkaClusterEncryptionInTransit  {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
 }
 impl KafkaClusterEncryptionInTransit {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn encryption_type(
-        &self,
-    ) -> std::option::Option<&crate::model::KafkaClusterEncryptionInTransitType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::model::KafkaClusterEncryptionInTransitType> {
         self.encryption_type.as_ref()
     }
 }
 /// See [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit).
 pub mod kafka_cluster_encryption_in_transit {
-
+    
     /// A builder for [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) encryption_type:
-            std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
+        pub(crate) encryption_type: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
     }
     impl Builder {
         /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-        pub fn encryption_type(
-            mut self,
-            input: crate::model::KafkaClusterEncryptionInTransitType,
-        ) -> Self {
+        pub fn encryption_type(mut self, input: crate::model::KafkaClusterEncryptionInTransitType) -> Self {
             self.encryption_type = Some(input);
             self
         }
         /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::KafkaClusterEncryptionInTransitType>) -> Self {
+            self.encryption_type = input; self
         }
         /// Consumes the builder and constructs a [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit).
         pub fn build(self) -> crate::model::KafkaClusterEncryptionInTransit {
             crate::model::KafkaClusterEncryptionInTransit {
-                encryption_type: self.encryption_type,
+                encryption_type: self.encryption_type
+                ,
             }
         }
     }
+    
+    
 }
 impl KafkaClusterEncryptionInTransit {
     /// Creates a new builder-style object to manufacture [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit).
@@ -4245,53 +4035,45 @@ impl KafkaClusterEncryptionInTransit {
 /// <p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaClusterClientAuthentication {
+pub struct KafkaClusterClientAuthentication  {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
     #[doc(hidden)]
-    pub authentication_type:
-        std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
+    pub authentication_type: std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
 }
 impl KafkaClusterClientAuthentication {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-    pub fn authentication_type(
-        &self,
-    ) -> std::option::Option<&crate::model::KafkaClusterClientAuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::KafkaClusterClientAuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
 /// See [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication).
 pub mod kafka_cluster_client_authentication {
-
+    
     /// A builder for [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) authentication_type:
-            std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
+        pub(crate) authentication_type: std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
     }
     impl Builder {
         /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-        pub fn authentication_type(
-            mut self,
-            input: crate::model::KafkaClusterClientAuthenticationType,
-        ) -> Self {
+        pub fn authentication_type(mut self, input: crate::model::KafkaClusterClientAuthenticationType) -> Self {
             self.authentication_type = Some(input);
             self
         }
         /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::KafkaClusterClientAuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::KafkaClusterClientAuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// Consumes the builder and constructs a [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication).
         pub fn build(self) -> crate::model::KafkaClusterClientAuthentication {
             crate::model::KafkaClusterClientAuthentication {
-                authentication_type: self.authentication_type,
+                authentication_type: self.authentication_type
+                ,
             }
         }
     }
+    
+    
 }
 impl KafkaClusterClientAuthentication {
     /// Creates a new builder-style object to manufacture [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication).
@@ -4303,20 +4085,20 @@ impl KafkaClusterClientAuthentication {
 /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaCluster {
+pub struct KafkaCluster  {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
     #[doc(hidden)]
     pub apache_kafka_cluster: std::option::Option<crate::model::ApacheKafkaCluster>,
 }
 impl KafkaCluster {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn apache_kafka_cluster(&self) -> std::option::Option<&crate::model::ApacheKafkaCluster> {
+    pub fn apache_kafka_cluster(&self) -> std::option::Option<& crate::model::ApacheKafkaCluster> {
         self.apache_kafka_cluster.as_ref()
     }
 }
 /// See [`KafkaCluster`](crate::model::KafkaCluster).
 pub mod kafka_cluster {
-
+    
     /// A builder for [`KafkaCluster`](crate::model::KafkaCluster).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4329,20 +4111,19 @@ pub mod kafka_cluster {
             self
         }
         /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-        pub fn set_apache_kafka_cluster(
-            mut self,
-            input: std::option::Option<crate::model::ApacheKafkaCluster>,
-        ) -> Self {
-            self.apache_kafka_cluster = input;
-            self
+        pub fn set_apache_kafka_cluster(mut self, input: std::option::Option<crate::model::ApacheKafkaCluster>) -> Self {
+            self.apache_kafka_cluster = input; self
         }
         /// Consumes the builder and constructs a [`KafkaCluster`](crate::model::KafkaCluster).
         pub fn build(self) -> crate::model::KafkaCluster {
             crate::model::KafkaCluster {
-                apache_kafka_cluster: self.apache_kafka_cluster,
+                apache_kafka_cluster: self.apache_kafka_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl KafkaCluster {
     /// Creates a new builder-style object to manufacture [`KafkaCluster`](crate::model::KafkaCluster).
@@ -4354,7 +4135,7 @@ impl KafkaCluster {
 /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApacheKafkaCluster {
+pub struct ApacheKafkaCluster  {
     /// <p>The bootstrap servers of the cluster.</p>
     #[doc(hidden)]
     pub bootstrap_servers: std::option::Option<std::string::String>,
@@ -4364,17 +4145,17 @@ pub struct ApacheKafkaCluster {
 }
 impl ApacheKafkaCluster {
     /// <p>The bootstrap servers of the cluster.</p>
-    pub fn bootstrap_servers(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_servers(&self) -> std::option::Option<& str> {
         self.bootstrap_servers.as_deref()
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    pub fn vpc(&self) -> std::option::Option<&crate::model::Vpc> {
+    pub fn vpc(&self) -> std::option::Option<& crate::model::Vpc> {
         self.vpc.as_ref()
     }
 }
 /// See [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster).
 pub mod apache_kafka_cluster {
-
+    
     /// A builder for [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4388,12 +4169,8 @@ pub mod apache_kafka_cluster {
             self
         }
         /// <p>The bootstrap servers of the cluster.</p>
-        pub fn set_bootstrap_servers(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_servers = input;
-            self
+        pub fn set_bootstrap_servers(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_servers = input; self
         }
         /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
         pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
@@ -4402,17 +4179,20 @@ pub mod apache_kafka_cluster {
         }
         /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
         pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
-            self.vpc = input;
-            self
+            self.vpc = input; self
         }
         /// Consumes the builder and constructs a [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster).
         pub fn build(self) -> crate::model::ApacheKafkaCluster {
             crate::model::ApacheKafkaCluster {
-                bootstrap_servers: self.bootstrap_servers,
-                vpc: self.vpc,
+                bootstrap_servers: self.bootstrap_servers
+                ,
+                vpc: self.vpc
+                ,
             }
         }
     }
+    
+    
 }
 impl ApacheKafkaCluster {
     /// Creates a new builder-style object to manufacture [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster).
@@ -4424,7 +4204,7 @@ impl ApacheKafkaCluster {
 /// <p>Information about the VPC in which the connector resides.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Vpc {
+pub struct Vpc  {
     /// <p>The security groups for the connector.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4434,17 +4214,17 @@ pub struct Vpc {
 }
 impl Vpc {
     /// <p>The security groups for the connector.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The subnets for the connector.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
 }
 /// See [`Vpc`](crate::model::Vpc).
 pub mod vpc {
-
+    
     /// A builder for [`Vpc`](crate::model::Vpc).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4459,17 +4239,13 @@ pub mod vpc {
         /// <p>The security groups for the connector.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>The security groups for the connector.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// Appends an item to `subnets`.
         ///
@@ -4478,26 +4254,26 @@ pub mod vpc {
         /// <p>The subnets for the connector.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>The subnets for the connector.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Consumes the builder and constructs a [`Vpc`](crate::model::Vpc).
         pub fn build(self) -> crate::model::Vpc {
             crate::model::Vpc {
-                security_groups: self.security_groups,
-                subnets: self.subnets,
+                security_groups: self.security_groups
+                ,
+                subnets: self.subnets
+                ,
             }
         }
     }
+    
+    
 }
 impl Vpc {
     /// Creates a new builder-style object to manufacture [`Vpc`](crate::model::Vpc).
@@ -4509,7 +4285,7 @@ impl Vpc {
 /// <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Capacity {
+pub struct Capacity  {
     /// <p>Information about the auto scaling parameters for the connector.</p>
     #[doc(hidden)]
     pub auto_scaling: std::option::Option<crate::model::AutoScaling>,
@@ -4519,17 +4295,17 @@ pub struct Capacity {
 }
 impl Capacity {
     /// <p>Information about the auto scaling parameters for the connector.</p>
-    pub fn auto_scaling(&self) -> std::option::Option<&crate::model::AutoScaling> {
+    pub fn auto_scaling(&self) -> std::option::Option<& crate::model::AutoScaling> {
         self.auto_scaling.as_ref()
     }
     /// <p>Details about a fixed capacity allocated to a connector.</p>
-    pub fn provisioned_capacity(&self) -> std::option::Option<&crate::model::ProvisionedCapacity> {
+    pub fn provisioned_capacity(&self) -> std::option::Option<& crate::model::ProvisionedCapacity> {
         self.provisioned_capacity.as_ref()
     }
 }
 /// See [`Capacity`](crate::model::Capacity).
 pub mod capacity {
-
+    
     /// A builder for [`Capacity`](crate::model::Capacity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4543,12 +4319,8 @@ pub mod capacity {
             self
         }
         /// <p>Information about the auto scaling parameters for the connector.</p>
-        pub fn set_auto_scaling(
-            mut self,
-            input: std::option::Option<crate::model::AutoScaling>,
-        ) -> Self {
-            self.auto_scaling = input;
-            self
+        pub fn set_auto_scaling(mut self, input: std::option::Option<crate::model::AutoScaling>) -> Self {
+            self.auto_scaling = input; self
         }
         /// <p>Details about a fixed capacity allocated to a connector.</p>
         pub fn provisioned_capacity(mut self, input: crate::model::ProvisionedCapacity) -> Self {
@@ -4556,21 +4328,21 @@ pub mod capacity {
             self
         }
         /// <p>Details about a fixed capacity allocated to a connector.</p>
-        pub fn set_provisioned_capacity(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedCapacity>,
-        ) -> Self {
-            self.provisioned_capacity = input;
-            self
+        pub fn set_provisioned_capacity(mut self, input: std::option::Option<crate::model::ProvisionedCapacity>) -> Self {
+            self.provisioned_capacity = input; self
         }
         /// Consumes the builder and constructs a [`Capacity`](crate::model::Capacity).
         pub fn build(self) -> crate::model::Capacity {
             crate::model::Capacity {
-                auto_scaling: self.auto_scaling,
-                provisioned_capacity: self.provisioned_capacity,
+                auto_scaling: self.auto_scaling
+                ,
+                provisioned_capacity: self.provisioned_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl Capacity {
     /// Creates a new builder-style object to manufacture [`Capacity`](crate::model::Capacity).
@@ -4582,7 +4354,7 @@ impl Capacity {
 /// <p>Details about a connector's provisioned capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedCapacity {
+pub struct ProvisionedCapacity  {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     #[doc(hidden)]
     pub mcu_count: i32,
@@ -4602,7 +4374,7 @@ impl ProvisionedCapacity {
 }
 /// See [`ProvisionedCapacity`](crate::model::ProvisionedCapacity).
 pub mod provisioned_capacity {
-
+    
     /// A builder for [`ProvisionedCapacity`](crate::model::ProvisionedCapacity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4617,8 +4389,7 @@ pub mod provisioned_capacity {
         }
         /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn set_mcu_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcu_count = input;
-            self
+            self.mcu_count = input; self
         }
         /// <p>The number of workers that are allocated to the connector.</p>
         pub fn worker_count(mut self, input: i32) -> Self {
@@ -4627,17 +4398,22 @@ pub mod provisioned_capacity {
         }
         /// <p>The number of workers that are allocated to the connector.</p>
         pub fn set_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.worker_count = input;
-            self
+            self.worker_count = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionedCapacity`](crate::model::ProvisionedCapacity).
         pub fn build(self) -> crate::model::ProvisionedCapacity {
             crate::model::ProvisionedCapacity {
-                mcu_count: self.mcu_count.unwrap_or_default(),
-                worker_count: self.worker_count.unwrap_or_default(),
+                mcu_count: self.mcu_count
+                    .unwrap_or_default()
+                ,
+                worker_count: self.worker_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionedCapacity {
     /// Creates a new builder-style object to manufacture [`ProvisionedCapacity`](crate::model::ProvisionedCapacity).
@@ -4649,7 +4425,7 @@ impl ProvisionedCapacity {
 /// <p>Specifies how the connector scales.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScaling {
+pub struct AutoScaling  {
     /// <p>The maximum number of workers allocated to the connector.</p>
     #[doc(hidden)]
     pub max_worker_count: i32,
@@ -4680,17 +4456,17 @@ impl AutoScaling {
         self.min_worker_count
     }
     /// <p>The sacle-in policy for the connector.</p>
-    pub fn scale_in_policy(&self) -> std::option::Option<&crate::model::ScaleInPolicy> {
+    pub fn scale_in_policy(&self) -> std::option::Option<& crate::model::ScaleInPolicy> {
         self.scale_in_policy.as_ref()
     }
     /// <p>The sacle-out policy for the connector.</p>
-    pub fn scale_out_policy(&self) -> std::option::Option<&crate::model::ScaleOutPolicy> {
+    pub fn scale_out_policy(&self) -> std::option::Option<& crate::model::ScaleOutPolicy> {
         self.scale_out_policy.as_ref()
     }
 }
 /// See [`AutoScaling`](crate::model::AutoScaling).
 pub mod auto_scaling {
-
+    
     /// A builder for [`AutoScaling`](crate::model::AutoScaling).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4708,8 +4484,7 @@ pub mod auto_scaling {
         }
         /// <p>The maximum number of workers allocated to the connector.</p>
         pub fn set_max_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_worker_count = input;
-            self
+            self.max_worker_count = input; self
         }
         /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn mcu_count(mut self, input: i32) -> Self {
@@ -4718,8 +4493,7 @@ pub mod auto_scaling {
         }
         /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
         pub fn set_mcu_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.mcu_count = input;
-            self
+            self.mcu_count = input; self
         }
         /// <p>The minimum number of workers allocated to the connector.</p>
         pub fn min_worker_count(mut self, input: i32) -> Self {
@@ -4728,8 +4502,7 @@ pub mod auto_scaling {
         }
         /// <p>The minimum number of workers allocated to the connector.</p>
         pub fn set_min_worker_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_worker_count = input;
-            self
+            self.min_worker_count = input; self
         }
         /// <p>The sacle-in policy for the connector.</p>
         pub fn scale_in_policy(mut self, input: crate::model::ScaleInPolicy) -> Self {
@@ -4737,12 +4510,8 @@ pub mod auto_scaling {
             self
         }
         /// <p>The sacle-in policy for the connector.</p>
-        pub fn set_scale_in_policy(
-            mut self,
-            input: std::option::Option<crate::model::ScaleInPolicy>,
-        ) -> Self {
-            self.scale_in_policy = input;
-            self
+        pub fn set_scale_in_policy(mut self, input: std::option::Option<crate::model::ScaleInPolicy>) -> Self {
+            self.scale_in_policy = input; self
         }
         /// <p>The sacle-out policy for the connector.</p>
         pub fn scale_out_policy(mut self, input: crate::model::ScaleOutPolicy) -> Self {
@@ -4750,24 +4519,30 @@ pub mod auto_scaling {
             self
         }
         /// <p>The sacle-out policy for the connector.</p>
-        pub fn set_scale_out_policy(
-            mut self,
-            input: std::option::Option<crate::model::ScaleOutPolicy>,
-        ) -> Self {
-            self.scale_out_policy = input;
-            self
+        pub fn set_scale_out_policy(mut self, input: std::option::Option<crate::model::ScaleOutPolicy>) -> Self {
+            self.scale_out_policy = input; self
         }
         /// Consumes the builder and constructs a [`AutoScaling`](crate::model::AutoScaling).
         pub fn build(self) -> crate::model::AutoScaling {
             crate::model::AutoScaling {
-                max_worker_count: self.max_worker_count.unwrap_or_default(),
-                mcu_count: self.mcu_count.unwrap_or_default(),
-                min_worker_count: self.min_worker_count.unwrap_or_default(),
-                scale_in_policy: self.scale_in_policy,
-                scale_out_policy: self.scale_out_policy,
+                max_worker_count: self.max_worker_count
+                    .unwrap_or_default()
+                ,
+                mcu_count: self.mcu_count
+                    .unwrap_or_default()
+                ,
+                min_worker_count: self.min_worker_count
+                    .unwrap_or_default()
+                ,
+                scale_in_policy: self.scale_in_policy
+                ,
+                scale_out_policy: self.scale_out_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoScaling {
     /// Creates a new builder-style object to manufacture [`AutoScaling`](crate::model::AutoScaling).
@@ -4779,7 +4554,7 @@ impl AutoScaling {
 /// <p>The scale-out policy for the connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScaleOutPolicy {
+pub struct ScaleOutPolicy  {
     /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
     #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
@@ -4792,7 +4567,7 @@ impl ScaleOutPolicy {
 }
 /// See [`ScaleOutPolicy`](crate::model::ScaleOutPolicy).
 pub mod scale_out_policy {
-
+    
     /// A builder for [`ScaleOutPolicy`](crate::model::ScaleOutPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4806,16 +4581,19 @@ pub mod scale_out_policy {
         }
         /// <p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
         pub fn set_cpu_utilization_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.cpu_utilization_percentage = input;
-            self
+            self.cpu_utilization_percentage = input; self
         }
         /// Consumes the builder and constructs a [`ScaleOutPolicy`](crate::model::ScaleOutPolicy).
         pub fn build(self) -> crate::model::ScaleOutPolicy {
             crate::model::ScaleOutPolicy {
-                cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
+                cpu_utilization_percentage: self.cpu_utilization_percentage
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ScaleOutPolicy {
     /// Creates a new builder-style object to manufacture [`ScaleOutPolicy`](crate::model::ScaleOutPolicy).
@@ -4827,7 +4605,7 @@ impl ScaleOutPolicy {
 /// <p>The scale-in policy for the connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScaleInPolicy {
+pub struct ScaleInPolicy  {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
@@ -4840,7 +4618,7 @@ impl ScaleInPolicy {
 }
 /// See [`ScaleInPolicy`](crate::model::ScaleInPolicy).
 pub mod scale_in_policy {
-
+    
     /// A builder for [`ScaleInPolicy`](crate::model::ScaleInPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4854,16 +4632,19 @@ pub mod scale_in_policy {
         }
         /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
         pub fn set_cpu_utilization_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.cpu_utilization_percentage = input;
-            self
+            self.cpu_utilization_percentage = input; self
         }
         /// Consumes the builder and constructs a [`ScaleInPolicy`](crate::model::ScaleInPolicy).
         pub fn build(self) -> crate::model::ScaleInPolicy {
             crate::model::ScaleInPolicy {
-                cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
+                cpu_utilization_percentage: self.cpu_utilization_percentage
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ScaleInPolicy {
     /// Creates a new builder-style object to manufacture [`ScaleInPolicy`](crate::model::ScaleInPolicy).
@@ -4871,3 +4652,4 @@ impl ScaleInPolicy {
         crate::model::scale_in_policy::Builder::default()
     }
 }
+

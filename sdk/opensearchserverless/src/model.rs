@@ -3,7 +3,7 @@
 /// <p>The VPC endpoint object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpointSummary {
+pub struct VpcEndpointSummary  {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct VpcEndpointSummary {
 }
 impl VpcEndpointSummary {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
 /// See [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
 pub mod vpc_endpoint_summary {
-
+    
     /// A builder for [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -46,8 +46,7 @@ pub mod vpc_endpoint_summary {
         }
         /// <p>The unique identifier of the endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the endpoint.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,8 +55,7 @@ pub mod vpc_endpoint_summary {
         }
         /// <p>The name of the endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the endpoint.</p>
         pub fn status(mut self, input: crate::model::VpcEndpointStatus) -> Self {
@@ -65,22 +63,23 @@ pub mod vpc_endpoint_summary {
             self
         }
         /// <p>The current status of the endpoint.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpointStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VpcEndpointStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
         pub fn build(self) -> crate::model::VpcEndpointSummary {
             crate::model::VpcEndpointSummary {
-                id: self.id,
-                name: self.name,
-                status: self.status,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcEndpointSummary {
     /// Creates a new builder-style object to manufacture [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
@@ -95,9 +94,9 @@ impl VpcEndpointSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vpcendpointstatus = unimplemented!();
 /// match vpcendpointstatus {
@@ -121,22 +120,14 @@ impl VpcEndpointSummary {
 /// Specifically, when `vpcendpointstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VpcEndpointStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VpcEndpointStatus {
     /// VPCEndpoint resource is ready to use
     Active,
@@ -147,7 +138,7 @@ pub enum VpcEndpointStatus {
     /// Pending VPCEndpoint resource
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VpcEndpointStatus {
     fn from(s: &str) -> Self {
@@ -156,19 +147,17 @@ impl std::convert::From<&str> for VpcEndpointStatus {
             "DELETING" => VpcEndpointStatus::Deleting,
             "FAILED" => VpcEndpointStatus::Failed,
             "PENDING" => VpcEndpointStatus::Pending,
-            other => {
-                VpcEndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => VpcEndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VpcEndpointStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VpcEndpointStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VpcEndpointStatus::from(s))
+                }
+            }
 impl VpcEndpointStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -177,12 +166,14 @@ impl VpcEndpointStatus {
             VpcEndpointStatus::Deleting => "DELETING",
             VpcEndpointStatus::Failed => "FAILED",
             VpcEndpointStatus::Pending => "PENDING",
-            VpcEndpointStatus::Unknown(value) => value.as_str(),
+            VpcEndpointStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETING", "FAILED", "PENDING"]
+        &[
+            "ACTIVE", "DELETING", "FAILED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for VpcEndpointStatus {
@@ -194,20 +185,20 @@ impl AsRef<str> for VpcEndpointStatus {
 /// <p>Filter the results of a <code>ListVpcEndpoints</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpointFilters {
+pub struct VpcEndpointFilters  {
     /// <p>The current status of the endpoint.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::VpcEndpointStatus>,
 }
 impl VpcEndpointFilters {
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
 /// See [`VpcEndpointFilters`](crate::model::VpcEndpointFilters).
 pub mod vpc_endpoint_filters {
-
+    
     /// A builder for [`VpcEndpointFilters`](crate::model::VpcEndpointFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -220,20 +211,19 @@ pub mod vpc_endpoint_filters {
             self
         }
         /// <p>The current status of the endpoint.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpointStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VpcEndpointStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VpcEndpointFilters`](crate::model::VpcEndpointFilters).
         pub fn build(self) -> crate::model::VpcEndpointFilters {
             crate::model::VpcEndpointFilters {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcEndpointFilters {
     /// Creates a new builder-style object to manufacture [`VpcEndpointFilters`](crate::model::VpcEndpointFilters).
@@ -245,7 +235,7 @@ impl VpcEndpointFilters {
 /// <p>Creation details for an OpenSearch Serverless-managed interface endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon OpenSearch Serverless using an interface endpoint</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVpcEndpointDetail {
+pub struct CreateVpcEndpointDetail  {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -258,21 +248,21 @@ pub struct CreateVpcEndpointDetail {
 }
 impl CreateVpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status in the endpoint creation process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateVpcEndpointDetail`](crate::model::CreateVpcEndpointDetail).
 pub mod create_vpc_endpoint_detail {
-
+    
     /// A builder for [`CreateVpcEndpointDetail`](crate::model::CreateVpcEndpointDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -288,8 +278,7 @@ pub mod create_vpc_endpoint_detail {
         }
         /// <p>The unique identifier of the endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the endpoint.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -298,8 +287,7 @@ pub mod create_vpc_endpoint_detail {
         }
         /// <p>The name of the endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status in the endpoint creation process.</p>
         pub fn status(mut self, input: crate::model::VpcEndpointStatus) -> Self {
@@ -307,22 +295,23 @@ pub mod create_vpc_endpoint_detail {
             self
         }
         /// <p>The current status in the endpoint creation process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpointStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VpcEndpointStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateVpcEndpointDetail`](crate::model::CreateVpcEndpointDetail).
         pub fn build(self) -> crate::model::CreateVpcEndpointDetail {
             crate::model::CreateVpcEndpointDetail {
-                id: self.id,
-                name: self.name,
-                status: self.status,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVpcEndpointDetail {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointDetail`](crate::model::CreateVpcEndpointDetail).
@@ -334,7 +323,7 @@ impl CreateVpcEndpointDetail {
 /// <p>Deletion details for an OpenSearch Serverless-managed interface endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcEndpointDetail {
+pub struct DeleteVpcEndpointDetail  {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -347,21 +336,21 @@ pub struct DeleteVpcEndpointDetail {
 }
 impl DeleteVpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the endpoint deletion process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DeleteVpcEndpointDetail`](crate::model::DeleteVpcEndpointDetail).
 pub mod delete_vpc_endpoint_detail {
-
+    
     /// A builder for [`DeleteVpcEndpointDetail`](crate::model::DeleteVpcEndpointDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -377,8 +366,7 @@ pub mod delete_vpc_endpoint_detail {
         }
         /// <p>The unique identifier of the endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the endpoint.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -387,8 +375,7 @@ pub mod delete_vpc_endpoint_detail {
         }
         /// <p>The name of the endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the endpoint deletion process.</p>
         pub fn status(mut self, input: crate::model::VpcEndpointStatus) -> Self {
@@ -396,22 +383,23 @@ pub mod delete_vpc_endpoint_detail {
             self
         }
         /// <p>The current status of the endpoint deletion process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpointStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VpcEndpointStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVpcEndpointDetail`](crate::model::DeleteVpcEndpointDetail).
         pub fn build(self) -> crate::model::DeleteVpcEndpointDetail {
             crate::model::DeleteVpcEndpointDetail {
-                id: self.id,
-                name: self.name,
-                status: self.status,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVpcEndpointDetail {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointDetail`](crate::model::DeleteVpcEndpointDetail).
@@ -423,7 +411,7 @@ impl DeleteVpcEndpointDetail {
 /// <p>A summary of a security policy for OpenSearch Serverless.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityPolicySummary {
+pub struct SecurityPolicySummary  {
     /// <p>The type of security policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -445,19 +433,19 @@ pub struct SecurityPolicySummary {
 }
 impl SecurityPolicySummary {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SecurityPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SecurityPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the policy.</p>
-    pub fn policy_version(&self) -> std::option::Option<&str> {
+    pub fn policy_version(&self) -> std::option::Option<& str> {
         self.policy_version.as_deref()
     }
     /// <p>The description of the security policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date the policy was created.</p>
@@ -471,7 +459,7 @@ impl SecurityPolicySummary {
 }
 /// See [`SecurityPolicySummary`](crate::model::SecurityPolicySummary).
 pub mod security_policy_summary {
-
+    
     /// A builder for [`SecurityPolicySummary`](crate::model::SecurityPolicySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -489,12 +477,8 @@ pub mod security_policy_summary {
             self
         }
         /// <p>The type of security policy.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::SecurityPolicyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SecurityPolicyType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the policy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -503,8 +487,7 @@ pub mod security_policy_summary {
         }
         /// <p>The name of the policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the policy.</p>
         pub fn policy_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -512,12 +495,8 @@ pub mod security_policy_summary {
             self
         }
         /// <p>The version of the policy.</p>
-        pub fn set_policy_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_version = input;
-            self
+        pub fn set_policy_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_version = input; self
         }
         /// <p>The description of the security policy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -526,8 +505,7 @@ pub mod security_policy_summary {
         }
         /// <p>The description of the security policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date the policy was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -536,8 +514,7 @@ pub mod security_policy_summary {
         }
         /// <p>The date the policy was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The timestamp of when the policy was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -546,21 +523,28 @@ pub mod security_policy_summary {
         }
         /// <p>The timestamp of when the policy was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`SecurityPolicySummary`](crate::model::SecurityPolicySummary).
         pub fn build(self) -> crate::model::SecurityPolicySummary {
             crate::model::SecurityPolicySummary {
-                r#type: self.r#type,
-                name: self.name,
-                policy_version: self.policy_version,
-                description: self.description,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                policy_version: self.policy_version
+                ,
+                description: self.description
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityPolicySummary {
     /// Creates a new builder-style object to manufacture [`SecurityPolicySummary`](crate::model::SecurityPolicySummary).
@@ -575,9 +559,9 @@ impl SecurityPolicySummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let securitypolicytype = unimplemented!();
 /// match securitypolicytype {
@@ -599,60 +583,52 @@ impl SecurityPolicySummary {
 /// Specifically, when `securitypolicytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SecurityPolicyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SecurityPolicyType {
     /// encryption policy type
     Encryption,
     /// network policy type
     Network,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SecurityPolicyType {
     fn from(s: &str) -> Self {
         match s {
             "encryption" => SecurityPolicyType::Encryption,
             "network" => SecurityPolicyType::Network,
-            other => {
-                SecurityPolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SecurityPolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SecurityPolicyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SecurityPolicyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SecurityPolicyType::from(s))
+                }
+            }
 impl SecurityPolicyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SecurityPolicyType::Encryption => "encryption",
             SecurityPolicyType::Network => "network",
-            SecurityPolicyType::Unknown(value) => value.as_str(),
+            SecurityPolicyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["encryption", "network"]
+        &[
+            "encryption", "network"
+        ]
     }
 }
 impl AsRef<str> for SecurityPolicyType {
@@ -664,7 +640,7 @@ impl AsRef<str> for SecurityPolicyType {
 /// <p>Details about an OpenSearch Serverless security policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityPolicyDetail {
+pub struct SecurityPolicyDetail  {
     /// <p>The type of security policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -689,23 +665,23 @@ pub struct SecurityPolicyDetail {
 }
 impl SecurityPolicyDetail {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SecurityPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SecurityPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the policy.</p>
-    pub fn policy_version(&self) -> std::option::Option<&str> {
+    pub fn policy_version(&self) -> std::option::Option<& str> {
         self.policy_version.as_deref()
     }
     /// <p>The description of the security policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document without any whitespaces.</p>
-    pub fn policy(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn policy(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.policy.as_ref()
     }
     /// <p>The date the policy was created.</p>
@@ -719,7 +695,7 @@ impl SecurityPolicyDetail {
 }
 /// See [`SecurityPolicyDetail`](crate::model::SecurityPolicyDetail).
 pub mod security_policy_detail {
-
+    
     /// A builder for [`SecurityPolicyDetail`](crate::model::SecurityPolicyDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -738,12 +714,8 @@ pub mod security_policy_detail {
             self
         }
         /// <p>The type of security policy.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::SecurityPolicyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SecurityPolicyType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the policy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -752,8 +724,7 @@ pub mod security_policy_detail {
         }
         /// <p>The name of the policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the policy.</p>
         pub fn policy_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -761,12 +732,8 @@ pub mod security_policy_detail {
             self
         }
         /// <p>The version of the policy.</p>
-        pub fn set_policy_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_version = input;
-            self
+        pub fn set_policy_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_version = input; self
         }
         /// <p>The description of the security policy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -775,8 +742,7 @@ pub mod security_policy_detail {
         }
         /// <p>The description of the security policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The JSON policy document without any whitespaces.</p>
         pub fn policy(mut self, input: aws_smithy_types::Document) -> Self {
@@ -784,12 +750,8 @@ pub mod security_policy_detail {
             self
         }
         /// <p>The JSON policy document without any whitespaces.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Document>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+            self.policy = input; self
         }
         /// <p>The date the policy was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -798,8 +760,7 @@ pub mod security_policy_detail {
         }
         /// <p>The date the policy was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The timestamp of when the policy was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -808,22 +769,30 @@ pub mod security_policy_detail {
         }
         /// <p>The timestamp of when the policy was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`SecurityPolicyDetail`](crate::model::SecurityPolicyDetail).
         pub fn build(self) -> crate::model::SecurityPolicyDetail {
             crate::model::SecurityPolicyDetail {
-                r#type: self.r#type,
-                name: self.name,
-                policy_version: self.policy_version,
-                description: self.description,
-                policy: self.policy,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                policy_version: self.policy_version
+                ,
+                description: self.description
+                ,
+                policy: self.policy
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityPolicyDetail {
     /// Creates a new builder-style object to manufacture [`SecurityPolicyDetail`](crate::model::SecurityPolicyDetail).
@@ -835,7 +804,7 @@ impl SecurityPolicyDetail {
 /// <p>A summary of a security configuration for OpenSearch Serverless.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityConfigSummary {
+pub struct SecurityConfigSummary  {
     /// <p>The unique identifier of the security configuration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -857,19 +826,19 @@ pub struct SecurityConfigSummary {
 }
 impl SecurityConfigSummary {
     /// <p>The unique identifier of the security configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of security configuration.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SecurityConfigType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SecurityConfigType> {
         self.r#type.as_ref()
     }
     /// <p>The version of the security configuration.</p>
-    pub fn config_version(&self) -> std::option::Option<&str> {
+    pub fn config_version(&self) -> std::option::Option<& str> {
         self.config_version.as_deref()
     }
     /// <p>The description of the security configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Epoch time when the security configuration was created.</p>
@@ -883,7 +852,7 @@ impl SecurityConfigSummary {
 }
 /// See [`SecurityConfigSummary`](crate::model::SecurityConfigSummary).
 pub mod security_config_summary {
-
+    
     /// A builder for [`SecurityConfigSummary`](crate::model::SecurityConfigSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -902,8 +871,7 @@ pub mod security_config_summary {
         }
         /// <p>The unique identifier of the security configuration.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of security configuration.</p>
         pub fn r#type(mut self, input: crate::model::SecurityConfigType) -> Self {
@@ -911,12 +879,8 @@ pub mod security_config_summary {
             self
         }
         /// <p>The type of security configuration.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::SecurityConfigType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SecurityConfigType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The version of the security configuration.</p>
         pub fn config_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -924,12 +888,8 @@ pub mod security_config_summary {
             self
         }
         /// <p>The version of the security configuration.</p>
-        pub fn set_config_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.config_version = input;
-            self
+        pub fn set_config_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.config_version = input; self
         }
         /// <p>The description of the security configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -938,8 +898,7 @@ pub mod security_config_summary {
         }
         /// <p>The description of the security configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Epoch time when the security configuration was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -948,8 +907,7 @@ pub mod security_config_summary {
         }
         /// <p>The Epoch time when the security configuration was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The timestamp of when the configuration was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -958,21 +916,28 @@ pub mod security_config_summary {
         }
         /// <p>The timestamp of when the configuration was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`SecurityConfigSummary`](crate::model::SecurityConfigSummary).
         pub fn build(self) -> crate::model::SecurityConfigSummary {
             crate::model::SecurityConfigSummary {
-                id: self.id,
-                r#type: self.r#type,
-                config_version: self.config_version,
-                description: self.description,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                config_version: self.config_version
+                ,
+                description: self.description
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityConfigSummary {
     /// Creates a new builder-style object to manufacture [`SecurityConfigSummary`](crate::model::SecurityConfigSummary).
@@ -987,9 +952,9 @@ impl SecurityConfigSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let securityconfigtype = unimplemented!();
 /// match securityconfigtype {
@@ -1010,56 +975,48 @@ impl SecurityConfigSummary {
 /// Specifically, when `securityconfigtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SecurityConfigType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SecurityConfigType {
     /// saml provider
     Saml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SecurityConfigType {
     fn from(s: &str) -> Self {
         match s {
             "saml" => SecurityConfigType::Saml,
-            other => {
-                SecurityConfigType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SecurityConfigType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SecurityConfigType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SecurityConfigType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SecurityConfigType::from(s))
+                }
+            }
 impl SecurityConfigType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SecurityConfigType::Saml => "saml",
-            SecurityConfigType::Unknown(value) => value.as_str(),
+            SecurityConfigType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["saml"]
+        &[
+            "saml"
+        ]
     }
 }
 impl AsRef<str> for SecurityConfigType {
@@ -1071,7 +1028,7 @@ impl AsRef<str> for SecurityConfigType {
 /// <p>Details about a security configuration for OpenSearch Serverless. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityConfigDetail {
+pub struct SecurityConfigDetail  {
     /// <p>The unique identifier of the security configuration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1096,23 +1053,23 @@ pub struct SecurityConfigDetail {
 }
 impl SecurityConfigDetail {
     /// <p>The unique identifier of the security configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of security configuration.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SecurityConfigType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SecurityConfigType> {
         self.r#type.as_ref()
     }
     /// <p>The version of the security configuration.</p>
-    pub fn config_version(&self) -> std::option::Option<&str> {
+    pub fn config_version(&self) -> std::option::Option<& str> {
         self.config_version.as_deref()
     }
     /// <p>The description of the security configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>SAML options for the security configuration in the form of a key-value map.</p>
-    pub fn saml_options(&self) -> std::option::Option<&crate::model::SamlConfigOptions> {
+    pub fn saml_options(&self) -> std::option::Option<& crate::model::SamlConfigOptions> {
         self.saml_options.as_ref()
     }
     /// <p>The date the configuration was created.</p>
@@ -1126,7 +1083,7 @@ impl SecurityConfigDetail {
 }
 /// See [`SecurityConfigDetail`](crate::model::SecurityConfigDetail).
 pub mod security_config_detail {
-
+    
     /// A builder for [`SecurityConfigDetail`](crate::model::SecurityConfigDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1146,8 +1103,7 @@ pub mod security_config_detail {
         }
         /// <p>The unique identifier of the security configuration.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of security configuration.</p>
         pub fn r#type(mut self, input: crate::model::SecurityConfigType) -> Self {
@@ -1155,12 +1111,8 @@ pub mod security_config_detail {
             self
         }
         /// <p>The type of security configuration.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::SecurityConfigType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SecurityConfigType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The version of the security configuration.</p>
         pub fn config_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1168,12 +1120,8 @@ pub mod security_config_detail {
             self
         }
         /// <p>The version of the security configuration.</p>
-        pub fn set_config_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.config_version = input;
-            self
+        pub fn set_config_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.config_version = input; self
         }
         /// <p>The description of the security configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1182,8 +1130,7 @@ pub mod security_config_detail {
         }
         /// <p>The description of the security configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>SAML options for the security configuration in the form of a key-value map.</p>
         pub fn saml_options(mut self, input: crate::model::SamlConfigOptions) -> Self {
@@ -1191,12 +1138,8 @@ pub mod security_config_detail {
             self
         }
         /// <p>SAML options for the security configuration in the form of a key-value map.</p>
-        pub fn set_saml_options(
-            mut self,
-            input: std::option::Option<crate::model::SamlConfigOptions>,
-        ) -> Self {
-            self.saml_options = input;
-            self
+        pub fn set_saml_options(mut self, input: std::option::Option<crate::model::SamlConfigOptions>) -> Self {
+            self.saml_options = input; self
         }
         /// <p>The date the configuration was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -1205,8 +1148,7 @@ pub mod security_config_detail {
         }
         /// <p>The date the configuration was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The timestamp of when the configuration was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -1215,22 +1157,30 @@ pub mod security_config_detail {
         }
         /// <p>The timestamp of when the configuration was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`SecurityConfigDetail`](crate::model::SecurityConfigDetail).
         pub fn build(self) -> crate::model::SecurityConfigDetail {
             crate::model::SecurityConfigDetail {
-                id: self.id,
-                r#type: self.r#type,
-                config_version: self.config_version,
-                description: self.description,
-                saml_options: self.saml_options,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                config_version: self.config_version
+                ,
+                description: self.description
+                ,
+                saml_options: self.saml_options
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityConfigDetail {
     /// Creates a new builder-style object to manufacture [`SecurityConfigDetail`](crate::model::SecurityConfigDetail).
@@ -1242,7 +1192,7 @@ impl SecurityConfigDetail {
 /// <p>Describes SAML options for an OpenSearch Serverless security configuration in the form of a key-value map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamlConfigOptions {
+pub struct SamlConfigOptions  {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<std::string::String>,
@@ -1258,15 +1208,15 @@ pub struct SamlConfigOptions {
 }
 impl SamlConfigOptions {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>A user attribute for this SAML integration.</p>
-    pub fn user_attribute(&self) -> std::option::Option<&str> {
+    pub fn user_attribute(&self) -> std::option::Option<& str> {
         self.user_attribute.as_deref()
     }
     /// <p>The group attribute for this SAML integration.</p>
-    pub fn group_attribute(&self) -> std::option::Option<&str> {
+    pub fn group_attribute(&self) -> std::option::Option<& str> {
         self.group_attribute.as_deref()
     }
     /// <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440 minutes (24 hours or 1 day). Default is 60 minutes.</p>
@@ -1276,7 +1226,7 @@ impl SamlConfigOptions {
 }
 /// See [`SamlConfigOptions`](crate::model::SamlConfigOptions).
 pub mod saml_config_options {
-
+    
     /// A builder for [`SamlConfigOptions`](crate::model::SamlConfigOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1293,8 +1243,7 @@ pub mod saml_config_options {
         }
         /// <p>The XML IdP metadata file generated from your identity provider.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata = input;
-            self
+            self.metadata = input; self
         }
         /// <p>A user attribute for this SAML integration.</p>
         pub fn user_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1302,12 +1251,8 @@ pub mod saml_config_options {
             self
         }
         /// <p>A user attribute for this SAML integration.</p>
-        pub fn set_user_attribute(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_attribute = input;
-            self
+        pub fn set_user_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_attribute = input; self
         }
         /// <p>The group attribute for this SAML integration.</p>
         pub fn group_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1315,12 +1260,8 @@ pub mod saml_config_options {
             self
         }
         /// <p>The group attribute for this SAML integration.</p>
-        pub fn set_group_attribute(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.group_attribute = input;
-            self
+        pub fn set_group_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_attribute = input; self
         }
         /// <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440 minutes (24 hours or 1 day). Default is 60 minutes.</p>
         pub fn session_timeout(mut self, input: i32) -> Self {
@@ -1329,19 +1270,24 @@ pub mod saml_config_options {
         }
         /// <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440 minutes (24 hours or 1 day). Default is 60 minutes.</p>
         pub fn set_session_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.session_timeout = input;
-            self
+            self.session_timeout = input; self
         }
         /// Consumes the builder and constructs a [`SamlConfigOptions`](crate::model::SamlConfigOptions).
         pub fn build(self) -> crate::model::SamlConfigOptions {
             crate::model::SamlConfigOptions {
-                metadata: self.metadata,
-                user_attribute: self.user_attribute,
-                group_attribute: self.group_attribute,
-                session_timeout: self.session_timeout,
+                metadata: self.metadata
+                ,
+                user_attribute: self.user_attribute
+                ,
+                group_attribute: self.group_attribute
+                ,
+                session_timeout: self.session_timeout
+                ,
             }
         }
     }
+    
+    
 }
 impl SamlConfigOptions {
     /// Creates a new builder-style object to manufacture [`SamlConfigOptions`](crate::model::SamlConfigOptions).
@@ -1353,7 +1299,7 @@ impl SamlConfigOptions {
 /// <p>Details about each OpenSearch Serverless collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectionSummary {
+pub struct CollectionSummary  {
     /// <p>The unique identifier of the collection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1369,25 +1315,25 @@ pub struct CollectionSummary {
 }
 impl CollectionSummary {
     /// <p>The unique identifier of the collection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CollectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CollectionStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CollectionSummary`](crate::model::CollectionSummary).
 pub mod collection_summary {
-
+    
     /// A builder for [`CollectionSummary`](crate::model::CollectionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1404,8 +1350,7 @@ pub mod collection_summary {
         }
         /// <p>The unique identifier of the collection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the collection.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1414,8 +1359,7 @@ pub mod collection_summary {
         }
         /// <p>The name of the collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the collection.</p>
         pub fn status(mut self, input: crate::model::CollectionStatus) -> Self {
@@ -1423,12 +1367,8 @@ pub mod collection_summary {
             self
         }
         /// <p>The current status of the collection.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CollectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CollectionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the collection.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1437,19 +1377,24 @@ pub mod collection_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the collection.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CollectionSummary`](crate::model::CollectionSummary).
         pub fn build(self) -> crate::model::CollectionSummary {
             crate::model::CollectionSummary {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                arn: self.arn,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CollectionSummary {
     /// Creates a new builder-style object to manufacture [`CollectionSummary`](crate::model::CollectionSummary).
@@ -1464,9 +1409,9 @@ impl CollectionSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let collectionstatus = unimplemented!();
 /// match collectionstatus {
@@ -1490,22 +1435,14 @@ impl CollectionSummary {
 /// Specifically, when `collectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CollectionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CollectionStatus {
     /// Collection resource is ready to use
     Active,
@@ -1516,7 +1453,7 @@ pub enum CollectionStatus {
     /// Collection resource create or delete failed
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CollectionStatus {
     fn from(s: &str) -> Self {
@@ -1525,17 +1462,17 @@ impl std::convert::From<&str> for CollectionStatus {
             "CREATING" => CollectionStatus::Creating,
             "DELETING" => CollectionStatus::Deleting,
             "FAILED" => CollectionStatus::Failed,
-            other => CollectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CollectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CollectionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CollectionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CollectionStatus::from(s))
+                }
+            }
 impl CollectionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1544,12 +1481,14 @@ impl CollectionStatus {
             CollectionStatus::Creating => "CREATING",
             CollectionStatus::Deleting => "DELETING",
             CollectionStatus::Failed => "FAILED",
-            CollectionStatus::Unknown(value) => value.as_str(),
+            CollectionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED"
+        ]
     }
 }
 impl AsRef<str> for CollectionStatus {
@@ -1561,7 +1500,7 @@ impl AsRef<str> for CollectionStatus {
 /// <p>List of filter keys that you can use for LIST, UPDATE, and DELETE requests to OpenSearch Serverless collections.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectionFilters {
+pub struct CollectionFilters  {
     /// <p>The name of the collection.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1571,17 +1510,17 @@ pub struct CollectionFilters {
 }
 impl CollectionFilters {
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CollectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CollectionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CollectionFilters`](crate::model::CollectionFilters).
 pub mod collection_filters {
-
+    
     /// A builder for [`CollectionFilters`](crate::model::CollectionFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1596,8 +1535,7 @@ pub mod collection_filters {
         }
         /// <p>The name of the collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the collection.</p>
         pub fn status(mut self, input: crate::model::CollectionStatus) -> Self {
@@ -1605,21 +1543,21 @@ pub mod collection_filters {
             self
         }
         /// <p>The current status of the collection.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CollectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CollectionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CollectionFilters`](crate::model::CollectionFilters).
         pub fn build(self) -> crate::model::CollectionFilters {
             crate::model::CollectionFilters {
-                name: self.name,
-                status: self.status,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CollectionFilters {
     /// Creates a new builder-style object to manufacture [`CollectionFilters`](crate::model::CollectionFilters).
@@ -1631,7 +1569,7 @@ impl CollectionFilters {
 /// <p>Details about the created OpenSearch Serverless collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCollectionDetail {
+pub struct CreateCollectionDetail  {
     /// <p>The unique identifier of the collection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1662,31 +1600,31 @@ pub struct CreateCollectionDetail {
 }
 impl CreateCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CollectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CollectionStatus> {
         self.status.as_ref()
     }
     /// <p>The type of collection.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::CollectionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::CollectionType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the collection.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the collection.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Epoch time when the collection was created.</p>
@@ -1700,7 +1638,7 @@ impl CreateCollectionDetail {
 }
 /// See [`CreateCollectionDetail`](crate::model::CreateCollectionDetail).
 pub mod create_collection_detail {
-
+    
     /// A builder for [`CreateCollectionDetail`](crate::model::CreateCollectionDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1722,8 +1660,7 @@ pub mod create_collection_detail {
         }
         /// <p>The unique identifier of the collection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the collection.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1732,8 +1669,7 @@ pub mod create_collection_detail {
         }
         /// <p>The name of the collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the collection.</p>
         pub fn status(mut self, input: crate::model::CollectionStatus) -> Self {
@@ -1741,12 +1677,8 @@ pub mod create_collection_detail {
             self
         }
         /// <p>The current status of the collection.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CollectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CollectionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The type of collection.</p>
         pub fn r#type(mut self, input: crate::model::CollectionType) -> Self {
@@ -1754,12 +1686,8 @@ pub mod create_collection_detail {
             self
         }
         /// <p>The type of collection.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::CollectionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CollectionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>A description of the collection.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1768,8 +1696,7 @@ pub mod create_collection_detail {
         }
         /// <p>A description of the collection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the collection.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1778,8 +1705,7 @@ pub mod create_collection_detail {
         }
         /// <p>The Amazon Resource Name (ARN) of the collection.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the collection.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1788,8 +1714,7 @@ pub mod create_collection_detail {
         }
         /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the collection.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The Epoch time when the collection was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -1798,8 +1723,7 @@ pub mod create_collection_detail {
         }
         /// <p>The Epoch time when the collection was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The date and time when the collection was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -1808,24 +1732,34 @@ pub mod create_collection_detail {
         }
         /// <p>The date and time when the collection was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`CreateCollectionDetail`](crate::model::CreateCollectionDetail).
         pub fn build(self) -> crate::model::CreateCollectionDetail {
             crate::model::CreateCollectionDetail {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                r#type: self.r#type,
-                description: self.description,
-                arn: self.arn,
-                kms_key_arn: self.kms_key_arn,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCollectionDetail {
     /// Creates a new builder-style object to manufacture [`CreateCollectionDetail`](crate::model::CreateCollectionDetail).
@@ -1840,9 +1774,9 @@ impl CreateCollectionDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let collectiontype = unimplemented!();
 /// match collectiontype {
@@ -1864,58 +1798,52 @@ impl CreateCollectionDetail {
 /// Specifically, when `collectiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CollectionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CollectionType {
     /// Search collection type
     Search,
     /// Timeseries collection type
     Timeseries,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CollectionType {
     fn from(s: &str) -> Self {
         match s {
             "SEARCH" => CollectionType::Search,
             "TIMESERIES" => CollectionType::Timeseries,
-            other => CollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CollectionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CollectionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CollectionType::from(s))
+                }
+            }
 impl CollectionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CollectionType::Search => "SEARCH",
             CollectionType::Timeseries => "TIMESERIES",
-            CollectionType::Unknown(value) => value.as_str(),
+            CollectionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SEARCH", "TIMESERIES"]
+        &[
+            "SEARCH", "TIMESERIES"
+        ]
     }
 }
 impl AsRef<str> for CollectionType {
@@ -1927,7 +1855,7 @@ impl AsRef<str> for CollectionType {
 /// <p>A map of key-value pairs associated to an OpenSearch Serverless resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key to use in the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1937,17 +1865,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key to use in the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1962,8 +1890,7 @@ pub mod tag {
         }
         /// <p>The key to use in the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1972,17 +1899,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1994,7 +1924,7 @@ impl Tag {
 /// <p>Details about a deleted OpenSearch Serverless collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCollectionDetail {
+pub struct DeleteCollectionDetail  {
     /// <p>The unique identifier of the collection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2007,21 +1937,21 @@ pub struct DeleteCollectionDetail {
 }
 impl DeleteCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CollectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CollectionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DeleteCollectionDetail`](crate::model::DeleteCollectionDetail).
 pub mod delete_collection_detail {
-
+    
     /// A builder for [`DeleteCollectionDetail`](crate::model::DeleteCollectionDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2037,8 +1967,7 @@ pub mod delete_collection_detail {
         }
         /// <p>The unique identifier of the collection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the collection.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2047,8 +1976,7 @@ pub mod delete_collection_detail {
         }
         /// <p>The name of the collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the collection.</p>
         pub fn status(mut self, input: crate::model::CollectionStatus) -> Self {
@@ -2056,22 +1984,23 @@ pub mod delete_collection_detail {
             self
         }
         /// <p>The current status of the collection.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CollectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CollectionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCollectionDetail`](crate::model::DeleteCollectionDetail).
         pub fn build(self) -> crate::model::DeleteCollectionDetail {
             crate::model::DeleteCollectionDetail {
-                id: self.id,
-                name: self.name,
-                status: self.status,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCollectionDetail {
     /// Creates a new builder-style object to manufacture [`DeleteCollectionDetail`](crate::model::DeleteCollectionDetail).
@@ -2083,7 +2012,7 @@ impl DeleteCollectionDetail {
 /// <p>Details about an updated OpenSearch Serverless collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCollectionDetail {
+pub struct UpdateCollectionDetail  {
     /// <p>The unique identifier of the collection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2111,27 +2040,27 @@ pub struct UpdateCollectionDetail {
 }
 impl UpdateCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CollectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CollectionStatus> {
         self.status.as_ref()
     }
     /// <p>The collection type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::CollectionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::CollectionType> {
         self.r#type.as_ref()
     }
     /// <p>The description of the collection.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time when the collection was created.</p>
@@ -2145,7 +2074,7 @@ impl UpdateCollectionDetail {
 }
 /// See [`UpdateCollectionDetail`](crate::model::UpdateCollectionDetail).
 pub mod update_collection_detail {
-
+    
     /// A builder for [`UpdateCollectionDetail`](crate::model::UpdateCollectionDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2166,8 +2095,7 @@ pub mod update_collection_detail {
         }
         /// <p>The unique identifier of the collection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the collection.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2176,8 +2104,7 @@ pub mod update_collection_detail {
         }
         /// <p>The name of the collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the collection.</p>
         pub fn status(mut self, input: crate::model::CollectionStatus) -> Self {
@@ -2185,12 +2112,8 @@ pub mod update_collection_detail {
             self
         }
         /// <p>The current status of the collection.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CollectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CollectionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The collection type.</p>
         pub fn r#type(mut self, input: crate::model::CollectionType) -> Self {
@@ -2198,12 +2121,8 @@ pub mod update_collection_detail {
             self
         }
         /// <p>The collection type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::CollectionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CollectionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The description of the collection.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2212,8 +2131,7 @@ pub mod update_collection_detail {
         }
         /// <p>The description of the collection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the collection.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2222,8 +2140,7 @@ pub mod update_collection_detail {
         }
         /// <p>The Amazon Resource Name (ARN) of the collection.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time when the collection was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -2232,8 +2149,7 @@ pub mod update_collection_detail {
         }
         /// <p>The date and time when the collection was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The date and time when the collection was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -2242,23 +2158,32 @@ pub mod update_collection_detail {
         }
         /// <p>The date and time when the collection was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCollectionDetail`](crate::model::UpdateCollectionDetail).
         pub fn build(self) -> crate::model::UpdateCollectionDetail {
             crate::model::UpdateCollectionDetail {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                r#type: self.r#type,
-                description: self.description,
-                arn: self.arn,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCollectionDetail {
     /// Creates a new builder-style object to manufacture [`UpdateCollectionDetail`](crate::model::UpdateCollectionDetail).
@@ -2270,7 +2195,7 @@ impl UpdateCollectionDetail {
 /// <p>A summary of the data access policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPolicySummary {
+pub struct AccessPolicySummary  {
     /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -2292,19 +2217,19 @@ pub struct AccessPolicySummary {
 }
 impl AccessPolicySummary {
     /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AccessPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AccessPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the access policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the policy.</p>
-    pub fn policy_version(&self) -> std::option::Option<&str> {
+    pub fn policy_version(&self) -> std::option::Option<& str> {
         self.policy_version.as_deref()
     }
     /// <p>The description of the access policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Epoch time when the access policy was created.</p>
@@ -2318,7 +2243,7 @@ impl AccessPolicySummary {
 }
 /// See [`AccessPolicySummary`](crate::model::AccessPolicySummary).
 pub mod access_policy_summary {
-
+    
     /// A builder for [`AccessPolicySummary`](crate::model::AccessPolicySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2336,12 +2261,8 @@ pub mod access_policy_summary {
             self
         }
         /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::AccessPolicyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::AccessPolicyType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the access policy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2350,8 +2271,7 @@ pub mod access_policy_summary {
         }
         /// <p>The name of the access policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the policy.</p>
         pub fn policy_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2359,12 +2279,8 @@ pub mod access_policy_summary {
             self
         }
         /// <p>The version of the policy.</p>
-        pub fn set_policy_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_version = input;
-            self
+        pub fn set_policy_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_version = input; self
         }
         /// <p>The description of the access policy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2373,8 +2289,7 @@ pub mod access_policy_summary {
         }
         /// <p>The description of the access policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Epoch time when the access policy was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -2383,8 +2298,7 @@ pub mod access_policy_summary {
         }
         /// <p>The Epoch time when the access policy was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The date and time when the collection was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -2393,21 +2307,28 @@ pub mod access_policy_summary {
         }
         /// <p>The date and time when the collection was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`AccessPolicySummary`](crate::model::AccessPolicySummary).
         pub fn build(self) -> crate::model::AccessPolicySummary {
             crate::model::AccessPolicySummary {
-                r#type: self.r#type,
-                name: self.name,
-                policy_version: self.policy_version,
-                description: self.description,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                policy_version: self.policy_version
+                ,
+                description: self.description
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPolicySummary {
     /// Creates a new builder-style object to manufacture [`AccessPolicySummary`](crate::model::AccessPolicySummary).
@@ -2422,9 +2343,9 @@ impl AccessPolicySummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accesspolicytype = unimplemented!();
 /// match accesspolicytype {
@@ -2445,54 +2366,48 @@ impl AccessPolicySummary {
 /// Specifically, when `accesspolicytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessPolicyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessPolicyType {
     /// data policy type
     Data,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessPolicyType {
     fn from(s: &str) -> Self {
         match s {
             "data" => AccessPolicyType::Data,
-            other => AccessPolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccessPolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessPolicyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessPolicyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessPolicyType::from(s))
+                }
+            }
 impl AccessPolicyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessPolicyType::Data => "data",
-            AccessPolicyType::Unknown(value) => value.as_str(),
+            AccessPolicyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["data"]
+        &[
+            "data"
+        ]
     }
 }
 impl AsRef<str> for AccessPolicyType {
@@ -2504,7 +2419,7 @@ impl AsRef<str> for AccessPolicyType {
 /// <p>Details about an OpenSearch Serverless access policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPolicyDetail {
+pub struct AccessPolicyDetail  {
     /// <p>The type of access policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -2529,23 +2444,23 @@ pub struct AccessPolicyDetail {
 }
 impl AccessPolicyDetail {
     /// <p>The type of access policy.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AccessPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AccessPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the policy.</p>
-    pub fn policy_version(&self) -> std::option::Option<&str> {
+    pub fn policy_version(&self) -> std::option::Option<& str> {
         self.policy_version.as_deref()
     }
     /// <p>The description of the policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document without any whitespaces.</p>
-    pub fn policy(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn policy(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.policy.as_ref()
     }
     /// <p>The date the policy was created.</p>
@@ -2559,7 +2474,7 @@ impl AccessPolicyDetail {
 }
 /// See [`AccessPolicyDetail`](crate::model::AccessPolicyDetail).
 pub mod access_policy_detail {
-
+    
     /// A builder for [`AccessPolicyDetail`](crate::model::AccessPolicyDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2578,12 +2493,8 @@ pub mod access_policy_detail {
             self
         }
         /// <p>The type of access policy.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::AccessPolicyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::AccessPolicyType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the policy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2592,8 +2503,7 @@ pub mod access_policy_detail {
         }
         /// <p>The name of the policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the policy.</p>
         pub fn policy_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2601,12 +2511,8 @@ pub mod access_policy_detail {
             self
         }
         /// <p>The version of the policy.</p>
-        pub fn set_policy_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_version = input;
-            self
+        pub fn set_policy_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_version = input; self
         }
         /// <p>The description of the policy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2615,8 +2521,7 @@ pub mod access_policy_detail {
         }
         /// <p>The description of the policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The JSON policy document without any whitespaces.</p>
         pub fn policy(mut self, input: aws_smithy_types::Document) -> Self {
@@ -2624,12 +2529,8 @@ pub mod access_policy_detail {
             self
         }
         /// <p>The JSON policy document without any whitespaces.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Document>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+            self.policy = input; self
         }
         /// <p>The date the policy was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -2638,8 +2539,7 @@ pub mod access_policy_detail {
         }
         /// <p>The date the policy was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The timestamp of when the policy was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -2648,22 +2548,30 @@ pub mod access_policy_detail {
         }
         /// <p>The timestamp of when the policy was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`AccessPolicyDetail`](crate::model::AccessPolicyDetail).
         pub fn build(self) -> crate::model::AccessPolicyDetail {
             crate::model::AccessPolicyDetail {
-                r#type: self.r#type,
-                name: self.name,
-                policy_version: self.policy_version,
-                description: self.description,
-                policy: self.policy,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                policy_version: self.policy_version
+                ,
+                description: self.description
+                ,
+                policy: self.policy
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPolicyDetail {
     /// Creates a new builder-style object to manufacture [`AccessPolicyDetail`](crate::model::AccessPolicyDetail).
@@ -2675,7 +2583,7 @@ impl AccessPolicyDetail {
 /// <p>Update details for an OpenSearch Serverless-managed interface endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVpcEndpointDetail {
+pub struct UpdateVpcEndpointDetail  {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2697,23 +2605,23 @@ pub struct UpdateVpcEndpointDetail {
 }
 impl UpdateVpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the endpoint update process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VpcEndpointStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The timestamp of when the endpoint was last modified.</p>
@@ -2723,7 +2631,7 @@ impl UpdateVpcEndpointDetail {
 }
 /// See [`UpdateVpcEndpointDetail`](crate::model::UpdateVpcEndpointDetail).
 pub mod update_vpc_endpoint_detail {
-
+    
     /// A builder for [`UpdateVpcEndpointDetail`](crate::model::UpdateVpcEndpointDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2742,8 +2650,7 @@ pub mod update_vpc_endpoint_detail {
         }
         /// <p>The unique identifier of the endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the endpoint.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2752,8 +2659,7 @@ pub mod update_vpc_endpoint_detail {
         }
         /// <p>The name of the endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the endpoint update process.</p>
         pub fn status(mut self, input: crate::model::VpcEndpointStatus) -> Self {
@@ -2761,12 +2667,8 @@ pub mod update_vpc_endpoint_detail {
             self
         }
         /// <p>The current status of the endpoint update process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpointStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VpcEndpointStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -2775,17 +2677,13 @@ pub mod update_vpc_endpoint_detail {
         /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -2794,17 +2692,13 @@ pub mod update_vpc_endpoint_detail {
         /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// <p>The timestamp of when the endpoint was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -2813,21 +2707,28 @@ pub mod update_vpc_endpoint_detail {
         }
         /// <p>The timestamp of when the endpoint was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVpcEndpointDetail`](crate::model::UpdateVpcEndpointDetail).
         pub fn build(self) -> crate::model::UpdateVpcEndpointDetail {
             crate::model::UpdateVpcEndpointDetail {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                last_modified_date: self.last_modified_date,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVpcEndpointDetail {
     /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointDetail`](crate::model::UpdateVpcEndpointDetail).
@@ -2839,20 +2740,20 @@ impl UpdateVpcEndpointDetail {
 /// <p>OpenSearch Serverless-related information for the current account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountSettingsDetail {
+pub struct AccountSettingsDetail  {
     /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.</p>
     #[doc(hidden)]
     pub capacity_limits: std::option::Option<crate::model::CapacityLimits>,
 }
 impl AccountSettingsDetail {
     /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.</p>
-    pub fn capacity_limits(&self) -> std::option::Option<&crate::model::CapacityLimits> {
+    pub fn capacity_limits(&self) -> std::option::Option<& crate::model::CapacityLimits> {
         self.capacity_limits.as_ref()
     }
 }
 /// See [`AccountSettingsDetail`](crate::model::AccountSettingsDetail).
 pub mod account_settings_detail {
-
+    
     /// A builder for [`AccountSettingsDetail`](crate::model::AccountSettingsDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2865,20 +2766,19 @@ pub mod account_settings_detail {
             self
         }
         /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.</p>
-        pub fn set_capacity_limits(
-            mut self,
-            input: std::option::Option<crate::model::CapacityLimits>,
-        ) -> Self {
-            self.capacity_limits = input;
-            self
+        pub fn set_capacity_limits(mut self, input: std::option::Option<crate::model::CapacityLimits>) -> Self {
+            self.capacity_limits = input; self
         }
         /// Consumes the builder and constructs a [`AccountSettingsDetail`](crate::model::AccountSettingsDetail).
         pub fn build(self) -> crate::model::AccountSettingsDetail {
             crate::model::AccountSettingsDetail {
-                capacity_limits: self.capacity_limits,
+                capacity_limits: self.capacity_limits
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountSettingsDetail {
     /// Creates a new builder-style object to manufacture [`AccountSettingsDetail`](crate::model::AccountSettingsDetail).
@@ -2890,7 +2790,7 @@ impl AccountSettingsDetail {
 /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CapacityLimits {
+pub struct CapacityLimits  {
     /// <p>The maximum indexing capacity for collections.</p>
     #[doc(hidden)]
     pub max_indexing_capacity_in_ocu: std::option::Option<i32>,
@@ -2910,7 +2810,7 @@ impl CapacityLimits {
 }
 /// See [`CapacityLimits`](crate::model::CapacityLimits).
 pub mod capacity_limits {
-
+    
     /// A builder for [`CapacityLimits`](crate::model::CapacityLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2925,8 +2825,7 @@ pub mod capacity_limits {
         }
         /// <p>The maximum indexing capacity for collections.</p>
         pub fn set_max_indexing_capacity_in_ocu(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_indexing_capacity_in_ocu = input;
-            self
+            self.max_indexing_capacity_in_ocu = input; self
         }
         /// <p>The maximum search capacity for collections.</p>
         pub fn max_search_capacity_in_ocu(mut self, input: i32) -> Self {
@@ -2935,17 +2834,20 @@ pub mod capacity_limits {
         }
         /// <p>The maximum search capacity for collections.</p>
         pub fn set_max_search_capacity_in_ocu(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_search_capacity_in_ocu = input;
-            self
+            self.max_search_capacity_in_ocu = input; self
         }
         /// Consumes the builder and constructs a [`CapacityLimits`](crate::model::CapacityLimits).
         pub fn build(self) -> crate::model::CapacityLimits {
             crate::model::CapacityLimits {
-                max_indexing_capacity_in_ocu: self.max_indexing_capacity_in_ocu,
-                max_search_capacity_in_ocu: self.max_search_capacity_in_ocu,
+                max_indexing_capacity_in_ocu: self.max_indexing_capacity_in_ocu
+                ,
+                max_search_capacity_in_ocu: self.max_search_capacity_in_ocu
+                ,
             }
         }
     }
+    
+    
 }
 impl CapacityLimits {
     /// Creates a new builder-style object to manufacture [`CapacityLimits`](crate::model::CapacityLimits).
@@ -2957,7 +2859,7 @@ impl CapacityLimits {
 /// <p>Statistics for an OpenSearch Serverless security configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityConfigStats {
+pub struct SecurityConfigStats  {
     /// <p>The number of security configurations in the current account.</p>
     #[doc(hidden)]
     pub saml_config_count: std::option::Option<i64>,
@@ -2970,7 +2872,7 @@ impl SecurityConfigStats {
 }
 /// See [`SecurityConfigStats`](crate::model::SecurityConfigStats).
 pub mod security_config_stats {
-
+    
     /// A builder for [`SecurityConfigStats`](crate::model::SecurityConfigStats).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2984,16 +2886,18 @@ pub mod security_config_stats {
         }
         /// <p>The number of security configurations in the current account.</p>
         pub fn set_saml_config_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.saml_config_count = input;
-            self
+            self.saml_config_count = input; self
         }
         /// Consumes the builder and constructs a [`SecurityConfigStats`](crate::model::SecurityConfigStats).
         pub fn build(self) -> crate::model::SecurityConfigStats {
             crate::model::SecurityConfigStats {
-                saml_config_count: self.saml_config_count,
+                saml_config_count: self.saml_config_count
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityConfigStats {
     /// Creates a new builder-style object to manufacture [`SecurityConfigStats`](crate::model::SecurityConfigStats).
@@ -3005,7 +2909,7 @@ impl SecurityConfigStats {
 /// <p>Statistics for an OpenSearch Serverless security policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityPolicyStats {
+pub struct SecurityPolicyStats  {
     /// <p>The number of encryption policies in the current account.</p>
     #[doc(hidden)]
     pub encryption_policy_count: std::option::Option<i64>,
@@ -3025,7 +2929,7 @@ impl SecurityPolicyStats {
 }
 /// See [`SecurityPolicyStats`](crate::model::SecurityPolicyStats).
 pub mod security_policy_stats {
-
+    
     /// A builder for [`SecurityPolicyStats`](crate::model::SecurityPolicyStats).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3040,8 +2944,7 @@ pub mod security_policy_stats {
         }
         /// <p>The number of encryption policies in the current account.</p>
         pub fn set_encryption_policy_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.encryption_policy_count = input;
-            self
+            self.encryption_policy_count = input; self
         }
         /// <p>The number of network policies in the current account.</p>
         pub fn network_policy_count(mut self, input: i64) -> Self {
@@ -3050,17 +2953,20 @@ pub mod security_policy_stats {
         }
         /// <p>The number of network policies in the current account.</p>
         pub fn set_network_policy_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.network_policy_count = input;
-            self
+            self.network_policy_count = input; self
         }
         /// Consumes the builder and constructs a [`SecurityPolicyStats`](crate::model::SecurityPolicyStats).
         pub fn build(self) -> crate::model::SecurityPolicyStats {
             crate::model::SecurityPolicyStats {
-                encryption_policy_count: self.encryption_policy_count,
-                network_policy_count: self.network_policy_count,
+                encryption_policy_count: self.encryption_policy_count
+                ,
+                network_policy_count: self.network_policy_count
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityPolicyStats {
     /// Creates a new builder-style object to manufacture [`SecurityPolicyStats`](crate::model::SecurityPolicyStats).
@@ -3072,7 +2978,7 @@ impl SecurityPolicyStats {
 /// <p>Statistics for an OpenSearch Serverless access policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPolicyStats {
+pub struct AccessPolicyStats  {
     /// <p>The number of data access policies in the current account.</p>
     #[doc(hidden)]
     pub data_policy_count: std::option::Option<i64>,
@@ -3085,7 +2991,7 @@ impl AccessPolicyStats {
 }
 /// See [`AccessPolicyStats`](crate::model::AccessPolicyStats).
 pub mod access_policy_stats {
-
+    
     /// A builder for [`AccessPolicyStats`](crate::model::AccessPolicyStats).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3099,16 +3005,18 @@ pub mod access_policy_stats {
         }
         /// <p>The number of data access policies in the current account.</p>
         pub fn set_data_policy_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_policy_count = input;
-            self
+            self.data_policy_count = input; self
         }
         /// Consumes the builder and constructs a [`AccessPolicyStats`](crate::model::AccessPolicyStats).
         pub fn build(self) -> crate::model::AccessPolicyStats {
             crate::model::AccessPolicyStats {
-                data_policy_count: self.data_policy_count,
+                data_policy_count: self.data_policy_count
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPolicyStats {
     /// Creates a new builder-style object to manufacture [`AccessPolicyStats`](crate::model::AccessPolicyStats).
@@ -3120,7 +3028,7 @@ impl AccessPolicyStats {
 /// <p>Error information for a failed <code>BatchGetVpcEndpoint</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpointErrorDetail {
+pub struct VpcEndpointErrorDetail  {
     /// <p>The unique identifier of the VPC endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3133,21 +3041,21 @@ pub struct VpcEndpointErrorDetail {
 }
 impl VpcEndpointErrorDetail {
     /// <p>The unique identifier of the VPC endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>An error message describing the reason for the failure.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code for the failed request.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
 /// See [`VpcEndpointErrorDetail`](crate::model::VpcEndpointErrorDetail).
 pub mod vpc_endpoint_error_detail {
-
+    
     /// A builder for [`VpcEndpointErrorDetail`](crate::model::VpcEndpointErrorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3163,8 +3071,7 @@ pub mod vpc_endpoint_error_detail {
         }
         /// <p>The unique identifier of the VPC endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>An error message describing the reason for the failure.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3172,12 +3079,8 @@ pub mod vpc_endpoint_error_detail {
             self
         }
         /// <p>An error message describing the reason for the failure.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The error code for the failed request.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3186,18 +3089,22 @@ pub mod vpc_endpoint_error_detail {
         }
         /// <p>The error code for the failed request.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// Consumes the builder and constructs a [`VpcEndpointErrorDetail`](crate::model::VpcEndpointErrorDetail).
         pub fn build(self) -> crate::model::VpcEndpointErrorDetail {
             crate::model::VpcEndpointErrorDetail {
-                id: self.id,
-                error_message: self.error_message,
-                error_code: self.error_code,
+                id: self.id
+                ,
+                error_message: self.error_message
+                ,
+                error_code: self.error_code
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcEndpointErrorDetail {
     /// Creates a new builder-style object to manufacture [`VpcEndpointErrorDetail`](crate::model::VpcEndpointErrorDetail).
@@ -3209,7 +3116,7 @@ impl VpcEndpointErrorDetail {
 /// <p>Details about an OpenSearch Serverless-managed interface endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpointDetail {
+pub struct VpcEndpointDetail  {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3234,27 +3141,27 @@ pub struct VpcEndpointDetail {
 }
 impl VpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the VPC from which you access OpenSearch Serverless</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VpcEndpointStatus> {
         self.status.as_ref()
     }
     /// <p>The date the endpoint was created.</p>
@@ -3264,7 +3171,7 @@ impl VpcEndpointDetail {
 }
 /// See [`VpcEndpointDetail`](crate::model::VpcEndpointDetail).
 pub mod vpc_endpoint_detail {
-
+    
     /// A builder for [`VpcEndpointDetail`](crate::model::VpcEndpointDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3284,8 +3191,7 @@ pub mod vpc_endpoint_detail {
         }
         /// <p>The unique identifier of the endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the endpoint.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3294,8 +3200,7 @@ pub mod vpc_endpoint_detail {
         }
         /// <p>The name of the endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the VPC from which you access OpenSearch Serverless</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3304,8 +3209,7 @@ pub mod vpc_endpoint_detail {
         }
         /// <p>The ID of the VPC from which you access OpenSearch Serverless</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -3314,17 +3218,13 @@ pub mod vpc_endpoint_detail {
         /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The ID of the subnets from which you access OpenSearch Serverless.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -3333,17 +3233,13 @@ pub mod vpc_endpoint_detail {
         /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// <p>The current status of the endpoint.</p>
         pub fn status(mut self, input: crate::model::VpcEndpointStatus) -> Self {
@@ -3351,12 +3247,8 @@ pub mod vpc_endpoint_detail {
             self
         }
         /// <p>The current status of the endpoint.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpointStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VpcEndpointStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date the endpoint was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -3365,22 +3257,30 @@ pub mod vpc_endpoint_detail {
         }
         /// <p>The date the endpoint was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// Consumes the builder and constructs a [`VpcEndpointDetail`](crate::model::VpcEndpointDetail).
         pub fn build(self) -> crate::model::VpcEndpointDetail {
             crate::model::VpcEndpointDetail {
-                id: self.id,
-                name: self.name,
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                status: self.status,
-                created_date: self.created_date,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                status: self.status
+                ,
+                created_date: self.created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcEndpointDetail {
     /// Creates a new builder-style object to manufacture [`VpcEndpointDetail`](crate::model::VpcEndpointDetail).
@@ -3392,7 +3292,7 @@ impl VpcEndpointDetail {
 /// <p>Error information for an OpenSearch Serverless request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectionErrorDetail {
+pub struct CollectionErrorDetail  {
     /// <p>If the request contains collection IDs, the response includes the IDs provided in the request.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3408,25 +3308,25 @@ pub struct CollectionErrorDetail {
 }
 impl CollectionErrorDetail {
     /// <p>If the request contains collection IDs, the response includes the IDs provided in the request.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
 /// See [`CollectionErrorDetail`](crate::model::CollectionErrorDetail).
 pub mod collection_error_detail {
-
+    
     /// A builder for [`CollectionErrorDetail`](crate::model::CollectionErrorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3443,8 +3343,7 @@ pub mod collection_error_detail {
         }
         /// <p>If the request contains collection IDs, the response includes the IDs provided in the request.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3453,8 +3352,7 @@ pub mod collection_error_detail {
         }
         /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3462,12 +3360,8 @@ pub mod collection_error_detail {
             self
         }
         /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3476,19 +3370,24 @@ pub mod collection_error_detail {
         }
         /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// Consumes the builder and constructs a [`CollectionErrorDetail`](crate::model::CollectionErrorDetail).
         pub fn build(self) -> crate::model::CollectionErrorDetail {
             crate::model::CollectionErrorDetail {
-                id: self.id,
-                name: self.name,
-                error_message: self.error_message,
-                error_code: self.error_code,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                error_message: self.error_message
+                ,
+                error_code: self.error_code
+                ,
             }
         }
     }
+    
+    
 }
 impl CollectionErrorDetail {
     /// Creates a new builder-style object to manufacture [`CollectionErrorDetail`](crate::model::CollectionErrorDetail).
@@ -3500,7 +3399,7 @@ impl CollectionErrorDetail {
 /// <p>Details about each OpenSearch Serverless collection, including the collection endpoint and the OpenSearch Dashboards endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectionDetail {
+pub struct CollectionDetail  {
     /// <p>A unique identifier for the collection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3537,31 +3436,31 @@ pub struct CollectionDetail {
 }
 impl CollectionDetail {
     /// <p>A unique identifier for the collection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CollectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CollectionStatus> {
         self.status.as_ref()
     }
     /// <p>The type of collection.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::CollectionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::CollectionType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the collection.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Epoch time when the collection was created.</p>
@@ -3573,17 +3472,17 @@ impl CollectionDetail {
         self.last_modified_date
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-    pub fn collection_endpoint(&self) -> std::option::Option<&str> {
+    pub fn collection_endpoint(&self) -> std::option::Option<& str> {
         self.collection_endpoint.as_deref()
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-    pub fn dashboard_endpoint(&self) -> std::option::Option<&str> {
+    pub fn dashboard_endpoint(&self) -> std::option::Option<& str> {
         self.dashboard_endpoint.as_deref()
     }
 }
 /// See [`CollectionDetail`](crate::model::CollectionDetail).
 pub mod collection_detail {
-
+    
     /// A builder for [`CollectionDetail`](crate::model::CollectionDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3607,8 +3506,7 @@ pub mod collection_detail {
         }
         /// <p>A unique identifier for the collection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the collection.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3617,8 +3515,7 @@ pub mod collection_detail {
         }
         /// <p>The name of the collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the collection.</p>
         pub fn status(mut self, input: crate::model::CollectionStatus) -> Self {
@@ -3626,12 +3523,8 @@ pub mod collection_detail {
             self
         }
         /// <p>The current status of the collection.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CollectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CollectionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The type of collection.</p>
         pub fn r#type(mut self, input: crate::model::CollectionType) -> Self {
@@ -3639,12 +3532,8 @@ pub mod collection_detail {
             self
         }
         /// <p>The type of collection.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::CollectionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CollectionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>A description of the collection.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3653,8 +3542,7 @@ pub mod collection_detail {
         }
         /// <p>A description of the collection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the collection.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3663,8 +3551,7 @@ pub mod collection_detail {
         }
         /// <p>The Amazon Resource Name (ARN) of the collection.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3673,8 +3560,7 @@ pub mod collection_detail {
         }
         /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The Epoch time when the collection was created.</p>
         pub fn created_date(mut self, input: i64) -> Self {
@@ -3683,8 +3569,7 @@ pub mod collection_detail {
         }
         /// <p>The Epoch time when the collection was created.</p>
         pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The date and time when the collection was last modified.</p>
         pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -3693,8 +3578,7 @@ pub mod collection_detail {
         }
         /// <p>The date and time when the collection was last modified.</p>
         pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_date = input;
-            self
+            self.last_modified_date = input; self
         }
         /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
         pub fn collection_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3702,12 +3586,8 @@ pub mod collection_detail {
             self
         }
         /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-        pub fn set_collection_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_endpoint = input;
-            self
+        pub fn set_collection_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_endpoint = input; self
         }
         /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
         pub fn dashboard_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3715,30 +3595,39 @@ pub mod collection_detail {
             self
         }
         /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-        pub fn set_dashboard_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_endpoint = input;
-            self
+        pub fn set_dashboard_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`CollectionDetail`](crate::model::CollectionDetail).
         pub fn build(self) -> crate::model::CollectionDetail {
             crate::model::CollectionDetail {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                r#type: self.r#type,
-                description: self.description,
-                arn: self.arn,
-                kms_key_arn: self.kms_key_arn,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
-                collection_endpoint: self.collection_endpoint,
-                dashboard_endpoint: self.dashboard_endpoint,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                collection_endpoint: self.collection_endpoint
+                ,
+                dashboard_endpoint: self.dashboard_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl CollectionDetail {
     /// Creates a new builder-style object to manufacture [`CollectionDetail`](crate::model::CollectionDetail).
@@ -3746,3 +3635,4 @@ impl CollectionDetail {
         crate::model::collection_detail::Builder::default()
     }
 }
+

@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationOutput {}
+pub struct UpdateApplicationOutput  {
+}
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
-            crate::output::UpdateApplicationOutput {}
+            crate::output::UpdateApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -26,19 +31,24 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -50,19 +60,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -74,30 +89,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags assigned to the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -105,31 +114,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags assigned to the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags assigned to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -141,7 +145,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
     #[doc(hidden)]
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -151,24 +155,21 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
-    pub fn application_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+    pub fn application_summaries(&self) -> std::option::Option<& [crate::model::ApplicationSummary]> {
         self.application_summaries.as_deref()
     }
     /// <p>A token used to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+        pub(crate) application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -179,17 +180,13 @@ pub mod list_applications_output {
         /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
         pub fn application_summaries(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summaries.unwrap_or_default();
-            v.push(input);
-            self.application_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.application_summaries = Some(v);
+                            self
         }
         /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
-        pub fn set_application_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-        ) -> Self {
-            self.application_summaries = input;
-            self
+        pub fn set_application_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>) -> Self {
+            self.application_summaries = input; self
         }
         /// <p>A token used to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,17 +195,20 @@ pub mod list_applications_output {
         }
         /// <p>A token used to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                application_summaries: self.application_summaries,
-                next_token: self.next_token,
+                application_summaries: self.application_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -220,7 +220,7 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationOutput {
+pub struct DescribeApplicationOutput  {
     /// <p>The unique Id of the web application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -256,32 +256,31 @@ pub struct DescribeApplicationOutput {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeApplicationOutput {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ARN of the web application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The name of the web application.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>An optional description of the web application.</p>
-    pub fn application_description(&self) -> std::option::Option<&str> {
+    pub fn application_description(&self) -> std::option::Option<& str> {
         self.application_description.as_deref()
     }
     /// <p>The URL of the web application.</p>
-    pub fn application_url(&self) -> std::option::Option<&str> {
+    pub fn application_url(&self) -> std::option::Option<& str> {
         self.application_url.as_deref()
     }
     /// <p>The current state of the web application.</p>
-    pub fn application_state(&self) -> std::option::Option<&crate::model::ApplicationState> {
+    pub fn application_state(&self) -> std::option::Option<& crate::model::ApplicationState> {
         self.application_state.as_ref()
     }
     /// <p>The date (in Unix epoch time) when the application was created.</p>
@@ -293,28 +292,25 @@ impl DescribeApplicationOutput {
         self.application_last_update_date
     }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
-    pub fn sso_client_id(&self) -> std::option::Option<&str> {
+    pub fn sso_client_id(&self) -> std::option::Option<& str> {
         self.sso_client_id.as_deref()
     }
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
 pub mod describe_application_output {
-
+    
     /// A builder for [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -329,9 +325,7 @@ pub mod describe_application_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) sso_client_id: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The unique Id of the web application.</p>
@@ -340,12 +334,8 @@ pub mod describe_application_output {
             self
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ARN of the web application.</p>
         pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -353,12 +343,8 @@ pub mod describe_application_output {
             self
         }
         /// <p>The ARN of the web application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The name of the web application.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -366,12 +352,8 @@ pub mod describe_application_output {
             self
         }
         /// <p>The name of the web application.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p>An optional description of the web application.</p>
         pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -379,12 +361,8 @@ pub mod describe_application_output {
             self
         }
         /// <p>An optional description of the web application.</p>
-        pub fn set_application_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_description = input;
-            self
+        pub fn set_application_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_description = input; self
         }
         /// <p>The URL of the web application.</p>
         pub fn application_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -392,12 +370,8 @@ pub mod describe_application_output {
             self
         }
         /// <p>The URL of the web application.</p>
-        pub fn set_application_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_url = input;
-            self
+        pub fn set_application_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_url = input; self
         }
         /// <p>The current state of the web application.</p>
         pub fn application_state(mut self, input: crate::model::ApplicationState) -> Self {
@@ -405,12 +379,8 @@ pub mod describe_application_output {
             self
         }
         /// <p>The current state of the web application.</p>
-        pub fn set_application_state(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationState>,
-        ) -> Self {
-            self.application_state = input;
-            self
+        pub fn set_application_state(mut self, input: std::option::Option<crate::model::ApplicationState>) -> Self {
+            self.application_state = input; self
         }
         /// <p>The date (in Unix epoch time) when the application was created.</p>
         pub fn application_creation_date(mut self, input: i64) -> Self {
@@ -419,8 +389,7 @@ pub mod describe_application_output {
         }
         /// <p>The date (in Unix epoch time) when the application was created.</p>
         pub fn set_application_creation_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_creation_date = input;
-            self
+            self.application_creation_date = input; self
         }
         /// <p>The date (in Unix epoch time) when the application was last updated.</p>
         pub fn application_last_update_date(mut self, input: i64) -> Self {
@@ -429,8 +398,7 @@ pub mod describe_application_output {
         }
         /// <p>The date (in Unix epoch time) when the application was last updated.</p>
         pub fn set_application_last_update_date(mut self, input: std::option::Option<i64>) -> Self {
-            self.application_last_update_date = input;
-            self
+            self.application_last_update_date = input; self
         }
         /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -439,8 +407,7 @@ pub mod describe_application_output {
         }
         /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
         pub fn sso_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -448,12 +415,8 @@ pub mod describe_application_output {
             self
         }
         /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
-        pub fn set_sso_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sso_client_id = input;
-            self
+        pub fn set_sso_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sso_client_id = input; self
         }
         /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -461,56 +424,58 @@ pub mod describe_application_output {
             self
         }
         /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
         pub fn build(self) -> crate::output::DescribeApplicationOutput {
             crate::output::DescribeApplicationOutput {
-                application_id: self.application_id,
-                application_arn: self.application_arn,
-                application_name: self.application_name,
-                application_description: self.application_description,
-                application_url: self.application_url,
-                application_state: self.application_state,
-                application_creation_date: self.application_creation_date.unwrap_or_default(),
-                application_last_update_date: self.application_last_update_date.unwrap_or_default(),
-                role_arn: self.role_arn,
-                sso_client_id: self.sso_client_id,
-                error_message: self.error_message,
-                tags: self.tags,
+                application_id: self.application_id
+                ,
+                application_arn: self.application_arn
+                ,
+                application_name: self.application_name
+                ,
+                application_description: self.application_description
+                ,
+                application_url: self.application_url
+                ,
+                application_state: self.application_state
+                ,
+                application_creation_date: self.application_creation_date
+                    .unwrap_or_default()
+                ,
+                application_last_update_date: self.application_last_update_date
+                    .unwrap_or_default()
+                ,
+                role_arn: self.role_arn
+                ,
+                sso_client_id: self.sso_client_id
+                ,
+                error_message: self.error_message
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
@@ -522,19 +487,24 @@ impl DescribeApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {}
+pub struct DeleteApplicationOutput  {
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
-            crate::output::DeleteApplicationOutput {}
+            crate::output::DeleteApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -546,7 +516,7 @@ impl DeleteApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>The unique Id of the web application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -556,17 +526,17 @@ pub struct CreateApplicationOutput {
 }
 impl CreateApplicationOutput {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ARN of the web application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -580,12 +550,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ARN of the web application.</p>
         pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -593,21 +559,21 @@ pub mod create_application_output {
             self
         }
         /// <p>The ARN of the web application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                application_id: self.application_id,
-                application_arn: self.application_arn,
+                application_id: self.application_id
+                ,
+                application_arn: self.application_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -615,3 +581,4 @@ impl CreateApplicationOutput {
         crate::output::create_application_output::Builder::default()
     }
 }
+

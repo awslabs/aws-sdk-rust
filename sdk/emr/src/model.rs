@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let identitytype = unimplemented!();
 /// match identitytype {
@@ -30,58 +30,52 @@
 /// Specifically, when `identitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IdentityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IdentityType {
     #[allow(missing_docs)] // documentation missing in model
     Group,
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IdentityType {
     fn from(s: &str) -> Self {
         match s {
             "GROUP" => IdentityType::Group,
             "USER" => IdentityType::User,
-            other => IdentityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IdentityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IdentityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IdentityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IdentityType::from(s))
+                }
+            }
 impl IdentityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IdentityType::Group => "GROUP",
             IdentityType::User => "USER",
-            IdentityType::Unknown(value) => value.as_str(),
+            IdentityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GROUP", "USER"]
+        &[
+            "GROUP", "USER"
+        ]
     }
 }
 impl AsRef<str> for IdentityType {
@@ -93,7 +87,7 @@ impl AsRef<str> for IdentityType {
 /// <p>A key-value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -103,17 +97,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>A user-defined value, which is optional in a tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -128,8 +122,7 @@ pub mod tag {
         }
         /// <p>A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>A user-defined value, which is optional in a tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,17 +131,20 @@ pub mod tag {
         }
         /// <p>A user-defined value, which is optional in a tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -160,7 +156,7 @@ impl Tag {
 /// <p>Specifies the execution engine (cluster) to run the notebook and perform the notebook execution, for example, an EMR cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionEngineConfig {
+pub struct ExecutionEngineConfig  {
     /// <p>The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -173,21 +169,21 @@ pub struct ExecutionEngineConfig {
 }
 impl ExecutionEngineConfig {
     /// <p>The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ExecutionEngineType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ExecutionEngineType> {
         self.r#type.as_ref()
     }
     /// <p>An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn master_instance_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn master_instance_security_group_id(&self) -> std::option::Option<& str> {
         self.master_instance_security_group_id.as_deref()
     }
 }
 /// See [`ExecutionEngineConfig`](crate::model::ExecutionEngineConfig).
 pub mod execution_engine_config {
-
+    
     /// A builder for [`ExecutionEngineConfig`](crate::model::ExecutionEngineConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -203,8 +199,7 @@ pub mod execution_engine_config {
         }
         /// <p>The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.</p>
         pub fn r#type(mut self, input: crate::model::ExecutionEngineType) -> Self {
@@ -212,38 +207,32 @@ pub mod execution_engine_config {
             self
         }
         /// <p>The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionEngineType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ExecutionEngineType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-        pub fn master_instance_security_group_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn master_instance_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_instance_security_group_id = Some(input.into());
             self
         }
         /// <p>An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-        pub fn set_master_instance_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_instance_security_group_id = input;
-            self
+        pub fn set_master_instance_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_instance_security_group_id = input; self
         }
         /// Consumes the builder and constructs a [`ExecutionEngineConfig`](crate::model::ExecutionEngineConfig).
         pub fn build(self) -> crate::model::ExecutionEngineConfig {
             crate::model::ExecutionEngineConfig {
-                id: self.id,
-                r#type: self.r#type,
-                master_instance_security_group_id: self.master_instance_security_group_id,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                master_instance_security_group_id: self.master_instance_security_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecutionEngineConfig {
     /// Creates a new builder-style object to manufacture [`ExecutionEngineConfig`](crate::model::ExecutionEngineConfig).
@@ -258,9 +247,9 @@ impl ExecutionEngineConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let executionenginetype = unimplemented!();
 /// match executionenginetype {
@@ -281,56 +270,48 @@ impl ExecutionEngineConfig {
 /// Specifically, when `executionenginetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExecutionEngineType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExecutionEngineType {
     #[allow(missing_docs)] // documentation missing in model
     Emr,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExecutionEngineType {
     fn from(s: &str) -> Self {
         match s {
             "EMR" => ExecutionEngineType::Emr,
-            other => {
-                ExecutionEngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExecutionEngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExecutionEngineType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExecutionEngineType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExecutionEngineType::from(s))
+                }
+            }
 impl ExecutionEngineType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionEngineType::Emr => "EMR",
-            ExecutionEngineType::Unknown(value) => value.as_str(),
+            ExecutionEngineType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EMR"]
+        &[
+            "EMR"
+        ]
     }
 }
 impl AsRef<str> for ExecutionEngineType {
@@ -342,7 +323,7 @@ impl AsRef<str> for ExecutionEngineType {
 /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoTerminationPolicy {
+pub struct AutoTerminationPolicy  {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     #[doc(hidden)]
     pub idle_timeout: i64,
@@ -355,7 +336,7 @@ impl AutoTerminationPolicy {
 }
 /// See [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy).
 pub mod auto_termination_policy {
-
+    
     /// A builder for [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -369,16 +350,19 @@ pub mod auto_termination_policy {
         }
         /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
         pub fn set_idle_timeout(mut self, input: std::option::Option<i64>) -> Self {
-            self.idle_timeout = input;
-            self
+            self.idle_timeout = input; self
         }
         /// Consumes the builder and constructs a [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy).
         pub fn build(self) -> crate::model::AutoTerminationPolicy {
             crate::model::AutoTerminationPolicy {
-                idle_timeout: self.idle_timeout.unwrap_or_default(),
+                idle_timeout: self.idle_timeout
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoTerminationPolicy {
     /// Creates a new builder-style object to manufacture [`AutoTerminationPolicy`](crate::model::AutoTerminationPolicy).
@@ -387,35 +371,35 @@ impl AutoTerminationPolicy {
     }
 }
 
-/// <p>Placement group configuration for an Amazon EMR cluster. The configuration specifies the placement strategy that can be applied to instance roles during cluster creation.</p>
+/// <p>Placement group configuration for an Amazon EMR cluster. The configuration specifies the placement strategy that can be applied to instance roles during cluster creation.</p> 
 /// <p>To use this configuration, consider attaching managed policy AmazonElasticMapReducePlacementGroupPolicy to the EMR role.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlacementGroupConfig {
-    /// <p>Role of the instance in the cluster.</p>
+pub struct PlacementGroupConfig  {
+    /// <p>Role of the instance in the cluster.</p> 
     /// <p>Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
     #[doc(hidden)]
     pub instance_role: std::option::Option<crate::model::InstanceRoleType>,
-    /// <p>EC2 Placement Group strategy associated with instance role.</p>
+    /// <p>EC2 Placement Group strategy associated with instance role.</p> 
     /// <p>Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
     #[doc(hidden)]
     pub placement_strategy: std::option::Option<crate::model::PlacementGroupStrategy>,
 }
 impl PlacementGroupConfig {
-    /// <p>Role of the instance in the cluster.</p>
+    /// <p>Role of the instance in the cluster.</p> 
     /// <p>Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
-    pub fn instance_role(&self) -> std::option::Option<&crate::model::InstanceRoleType> {
+    pub fn instance_role(&self) -> std::option::Option<& crate::model::InstanceRoleType> {
         self.instance_role.as_ref()
     }
-    /// <p>EC2 Placement Group strategy associated with instance role.</p>
+    /// <p>EC2 Placement Group strategy associated with instance role.</p> 
     /// <p>Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
-    pub fn placement_strategy(&self) -> std::option::Option<&crate::model::PlacementGroupStrategy> {
+    pub fn placement_strategy(&self) -> std::option::Option<& crate::model::PlacementGroupStrategy> {
         self.placement_strategy.as_ref()
     }
 }
 /// See [`PlacementGroupConfig`](crate::model::PlacementGroupConfig).
 pub mod placement_group_config {
-
+    
     /// A builder for [`PlacementGroupConfig`](crate::model::PlacementGroupConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -423,44 +407,40 @@ pub mod placement_group_config {
         pub(crate) placement_strategy: std::option::Option<crate::model::PlacementGroupStrategy>,
     }
     impl Builder {
-        /// <p>Role of the instance in the cluster.</p>
+        /// <p>Role of the instance in the cluster.</p> 
         /// <p>Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
         pub fn instance_role(mut self, input: crate::model::InstanceRoleType) -> Self {
             self.instance_role = Some(input);
             self
         }
-        /// <p>Role of the instance in the cluster.</p>
+        /// <p>Role of the instance in the cluster.</p> 
         /// <p>Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
-        pub fn set_instance_role(
-            mut self,
-            input: std::option::Option<crate::model::InstanceRoleType>,
-        ) -> Self {
-            self.instance_role = input;
-            self
+        pub fn set_instance_role(mut self, input: std::option::Option<crate::model::InstanceRoleType>) -> Self {
+            self.instance_role = input; self
         }
-        /// <p>EC2 Placement Group strategy associated with instance role.</p>
+        /// <p>EC2 Placement Group strategy associated with instance role.</p> 
         /// <p>Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
         pub fn placement_strategy(mut self, input: crate::model::PlacementGroupStrategy) -> Self {
             self.placement_strategy = Some(input);
             self
         }
-        /// <p>EC2 Placement Group strategy associated with instance role.</p>
+        /// <p>EC2 Placement Group strategy associated with instance role.</p> 
         /// <p>Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
-        pub fn set_placement_strategy(
-            mut self,
-            input: std::option::Option<crate::model::PlacementGroupStrategy>,
-        ) -> Self {
-            self.placement_strategy = input;
-            self
+        pub fn set_placement_strategy(mut self, input: std::option::Option<crate::model::PlacementGroupStrategy>) -> Self {
+            self.placement_strategy = input; self
         }
         /// Consumes the builder and constructs a [`PlacementGroupConfig`](crate::model::PlacementGroupConfig).
         pub fn build(self) -> crate::model::PlacementGroupConfig {
             crate::model::PlacementGroupConfig {
-                instance_role: self.instance_role,
-                placement_strategy: self.placement_strategy,
+                instance_role: self.instance_role
+                ,
+                placement_strategy: self.placement_strategy
+                ,
             }
         }
     }
+    
+    
 }
 impl PlacementGroupConfig {
     /// Creates a new builder-style object to manufacture [`PlacementGroupConfig`](crate::model::PlacementGroupConfig).
@@ -475,9 +455,9 @@ impl PlacementGroupConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let placementgroupstrategy = unimplemented!();
 /// match placementgroupstrategy {
@@ -501,22 +481,14 @@ impl PlacementGroupConfig {
 /// Specifically, when `placementgroupstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PlacementGroupStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PlacementGroupStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Cluster,
@@ -527,7 +499,7 @@ pub enum PlacementGroupStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Spread,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlacementGroupStrategy {
     fn from(s: &str) -> Self {
@@ -536,19 +508,17 @@ impl std::convert::From<&str> for PlacementGroupStrategy {
             "NONE" => PlacementGroupStrategy::None,
             "PARTITION" => PlacementGroupStrategy::Partition,
             "SPREAD" => PlacementGroupStrategy::Spread,
-            other => {
-                PlacementGroupStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PlacementGroupStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PlacementGroupStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlacementGroupStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PlacementGroupStrategy::from(s))
+                }
+            }
 impl PlacementGroupStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -557,12 +527,14 @@ impl PlacementGroupStrategy {
             PlacementGroupStrategy::None => "NONE",
             PlacementGroupStrategy::Partition => "PARTITION",
             PlacementGroupStrategy::Spread => "SPREAD",
-            PlacementGroupStrategy::Unknown(value) => value.as_str(),
+            PlacementGroupStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLUSTER", "NONE", "PARTITION", "SPREAD"]
+        &[
+            "CLUSTER", "NONE", "PARTITION", "SPREAD"
+        ]
     }
 }
 impl AsRef<str> for PlacementGroupStrategy {
@@ -577,9 +549,9 @@ impl AsRef<str> for PlacementGroupStrategy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instanceroletype = unimplemented!();
 /// match instanceroletype {
@@ -602,22 +574,14 @@ impl AsRef<str> for PlacementGroupStrategy {
 /// Specifically, when `instanceroletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceRoleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceRoleType {
     #[allow(missing_docs)] // documentation missing in model
     Core,
@@ -626,7 +590,7 @@ pub enum InstanceRoleType {
     #[allow(missing_docs)] // documentation missing in model
     Task,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceRoleType {
     fn from(s: &str) -> Self {
@@ -634,17 +598,17 @@ impl std::convert::From<&str> for InstanceRoleType {
             "CORE" => InstanceRoleType::Core,
             "MASTER" => InstanceRoleType::Master,
             "TASK" => InstanceRoleType::Task,
-            other => InstanceRoleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InstanceRoleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceRoleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceRoleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceRoleType::from(s))
+                }
+            }
 impl InstanceRoleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -652,12 +616,14 @@ impl InstanceRoleType {
             InstanceRoleType::Core => "CORE",
             InstanceRoleType::Master => "MASTER",
             InstanceRoleType::Task => "TASK",
-            InstanceRoleType::Unknown(value) => value.as_str(),
+            InstanceRoleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CORE", "MASTER", "TASK"]
+        &[
+            "CORE", "MASTER", "TASK"
+        ]
     }
 }
 impl AsRef<str> for InstanceRoleType {
@@ -669,20 +635,20 @@ impl AsRef<str> for InstanceRoleType {
 /// <p> Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedScalingPolicy {
+pub struct ManagedScalingPolicy  {
     /// <p>The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
     #[doc(hidden)]
     pub compute_limits: std::option::Option<crate::model::ComputeLimits>,
 }
 impl ManagedScalingPolicy {
     /// <p>The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
-    pub fn compute_limits(&self) -> std::option::Option<&crate::model::ComputeLimits> {
+    pub fn compute_limits(&self) -> std::option::Option<& crate::model::ComputeLimits> {
         self.compute_limits.as_ref()
     }
 }
 /// See [`ManagedScalingPolicy`](crate::model::ManagedScalingPolicy).
 pub mod managed_scaling_policy {
-
+    
     /// A builder for [`ManagedScalingPolicy`](crate::model::ManagedScalingPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -695,20 +661,19 @@ pub mod managed_scaling_policy {
             self
         }
         /// <p>The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
-        pub fn set_compute_limits(
-            mut self,
-            input: std::option::Option<crate::model::ComputeLimits>,
-        ) -> Self {
-            self.compute_limits = input;
-            self
+        pub fn set_compute_limits(mut self, input: std::option::Option<crate::model::ComputeLimits>) -> Self {
+            self.compute_limits = input; self
         }
         /// Consumes the builder and constructs a [`ManagedScalingPolicy`](crate::model::ManagedScalingPolicy).
         pub fn build(self) -> crate::model::ManagedScalingPolicy {
             crate::model::ManagedScalingPolicy {
-                compute_limits: self.compute_limits,
+                compute_limits: self.compute_limits
+                ,
             }
         }
     }
+    
+    
 }
 impl ManagedScalingPolicy {
     /// Creates a new builder-style object to manufacture [`ManagedScalingPolicy`](crate::model::ManagedScalingPolicy).
@@ -720,7 +685,7 @@ impl ManagedScalingPolicy {
 /// <p> The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeLimits {
+pub struct ComputeLimits  {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
     #[doc(hidden)]
     pub unit_type: std::option::Option<crate::model::ComputeLimitsUnitType>,
@@ -739,7 +704,7 @@ pub struct ComputeLimits {
 }
 impl ComputeLimits {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
-    pub fn unit_type(&self) -> std::option::Option<&crate::model::ComputeLimitsUnitType> {
+    pub fn unit_type(&self) -> std::option::Option<& crate::model::ComputeLimitsUnitType> {
         self.unit_type.as_ref()
     }
     /// <p> The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
@@ -761,7 +726,7 @@ impl ComputeLimits {
 }
 /// See [`ComputeLimits`](crate::model::ComputeLimits).
 pub mod compute_limits {
-
+    
     /// A builder for [`ComputeLimits`](crate::model::ComputeLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -778,12 +743,8 @@ pub mod compute_limits {
             self
         }
         /// <p> The unit type used for specifying a managed scaling policy. </p>
-        pub fn set_unit_type(
-            mut self,
-            input: std::option::Option<crate::model::ComputeLimitsUnitType>,
-        ) -> Self {
-            self.unit_type = input;
-            self
+        pub fn set_unit_type(mut self, input: std::option::Option<crate::model::ComputeLimitsUnitType>) -> Self {
+            self.unit_type = input; self
         }
         /// <p> The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
         pub fn minimum_capacity_units(mut self, input: i32) -> Self {
@@ -792,8 +753,7 @@ pub mod compute_limits {
         }
         /// <p> The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
         pub fn set_minimum_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
-            self.minimum_capacity_units = input;
-            self
+            self.minimum_capacity_units = input; self
         }
         /// <p> The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
         pub fn maximum_capacity_units(mut self, input: i32) -> Self {
@@ -802,8 +762,7 @@ pub mod compute_limits {
         }
         /// <p> The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
         pub fn set_maximum_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_capacity_units = input;
-            self
+            self.maximum_capacity_units = input; self
         }
         /// <p> The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
         pub fn maximum_on_demand_capacity_units(mut self, input: i32) -> Self {
@@ -811,12 +770,8 @@ pub mod compute_limits {
             self
         }
         /// <p> The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
-        pub fn set_maximum_on_demand_capacity_units(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_on_demand_capacity_units = input;
-            self
+        pub fn set_maximum_on_demand_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_on_demand_capacity_units = input; self
         }
         /// <p> The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
         pub fn maximum_core_capacity_units(mut self, input: i32) -> Self {
@@ -825,20 +780,26 @@ pub mod compute_limits {
         }
         /// <p> The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
         pub fn set_maximum_core_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_core_capacity_units = input;
-            self
+            self.maximum_core_capacity_units = input; self
         }
         /// Consumes the builder and constructs a [`ComputeLimits`](crate::model::ComputeLimits).
         pub fn build(self) -> crate::model::ComputeLimits {
             crate::model::ComputeLimits {
-                unit_type: self.unit_type,
-                minimum_capacity_units: self.minimum_capacity_units,
-                maximum_capacity_units: self.maximum_capacity_units,
-                maximum_on_demand_capacity_units: self.maximum_on_demand_capacity_units,
-                maximum_core_capacity_units: self.maximum_core_capacity_units,
+                unit_type: self.unit_type
+                ,
+                minimum_capacity_units: self.minimum_capacity_units
+                ,
+                maximum_capacity_units: self.maximum_capacity_units
+                ,
+                maximum_on_demand_capacity_units: self.maximum_on_demand_capacity_units
+                ,
+                maximum_core_capacity_units: self.maximum_core_capacity_units
+                ,
             }
         }
     }
+    
+    
 }
 impl ComputeLimits {
     /// Creates a new builder-style object to manufacture [`ComputeLimits`](crate::model::ComputeLimits).
@@ -853,9 +814,9 @@ impl ComputeLimits {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let computelimitsunittype = unimplemented!();
 /// match computelimitsunittype {
@@ -878,22 +839,14 @@ impl ComputeLimits {
 /// Specifically, when `computelimitsunittype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComputeLimitsUnitType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComputeLimitsUnitType {
     #[allow(missing_docs)] // documentation missing in model
     InstanceFleetUnits,
@@ -902,7 +855,7 @@ pub enum ComputeLimitsUnitType {
     #[allow(missing_docs)] // documentation missing in model
     Vcpu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputeLimitsUnitType {
     fn from(s: &str) -> Self {
@@ -910,19 +863,17 @@ impl std::convert::From<&str> for ComputeLimitsUnitType {
             "InstanceFleetUnits" => ComputeLimitsUnitType::InstanceFleetUnits,
             "Instances" => ComputeLimitsUnitType::Instances,
             "VCPU" => ComputeLimitsUnitType::Vcpu,
-            other => {
-                ComputeLimitsUnitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComputeLimitsUnitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComputeLimitsUnitType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComputeLimitsUnitType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComputeLimitsUnitType::from(s))
+                }
+            }
 impl ComputeLimitsUnitType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -930,12 +881,14 @@ impl ComputeLimitsUnitType {
             ComputeLimitsUnitType::InstanceFleetUnits => "InstanceFleetUnits",
             ComputeLimitsUnitType::Instances => "Instances",
             ComputeLimitsUnitType::Vcpu => "VCPU",
-            ComputeLimitsUnitType::Unknown(value) => value.as_str(),
+            ComputeLimitsUnitType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["InstanceFleetUnits", "Instances", "VCPU"]
+        &[
+            "InstanceFleetUnits", "Instances", "VCPU"
+        ]
     }
 }
 impl AsRef<str> for ComputeLimitsUnitType {
@@ -947,7 +900,7 @@ impl AsRef<str> for ComputeLimitsUnitType {
 /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KerberosAttributes {
+pub struct KerberosAttributes  {
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
     #[doc(hidden)]
     pub realm: std::option::Option<std::string::String>,
@@ -966,29 +919,29 @@ pub struct KerberosAttributes {
 }
 impl KerberosAttributes {
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
-    pub fn realm(&self) -> std::option::Option<&str> {
+    pub fn realm(&self) -> std::option::Option<& str> {
         self.realm.as_deref()
     }
     /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
-    pub fn kdc_admin_password(&self) -> std::option::Option<&str> {
+    pub fn kdc_admin_password(&self) -> std::option::Option<& str> {
         self.kdc_admin_password.as_deref()
     }
     /// <p>Required only when establishing a cross-realm trust with a KDC in a different realm. The cross-realm principal password, which must be identical across realms.</p>
-    pub fn cross_realm_trust_principal_password(&self) -> std::option::Option<&str> {
+    pub fn cross_realm_trust_principal_password(&self) -> std::option::Option<& str> {
         self.cross_realm_trust_principal_password.as_deref()
     }
     /// <p>Required only when establishing a cross-realm trust with an Active Directory domain. A user with sufficient privileges to join resources to the domain.</p>
-    pub fn ad_domain_join_user(&self) -> std::option::Option<&str> {
+    pub fn ad_domain_join_user(&self) -> std::option::Option<& str> {
         self.ad_domain_join_user.as_deref()
     }
     /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
-    pub fn ad_domain_join_password(&self) -> std::option::Option<&str> {
+    pub fn ad_domain_join_password(&self) -> std::option::Option<& str> {
         self.ad_domain_join_password.as_deref()
     }
 }
 /// See [`KerberosAttributes`](crate::model::KerberosAttributes).
 pub mod kerberos_attributes {
-
+    
     /// A builder for [`KerberosAttributes`](crate::model::KerberosAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1006,8 +959,7 @@ pub mod kerberos_attributes {
         }
         /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
         pub fn set_realm(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.realm = input;
-            self
+            self.realm = input; self
         }
         /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
         pub fn kdc_admin_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1015,28 +967,17 @@ pub mod kerberos_attributes {
             self
         }
         /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
-        pub fn set_kdc_admin_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kdc_admin_password = input;
-            self
+        pub fn set_kdc_admin_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kdc_admin_password = input; self
         }
         /// <p>Required only when establishing a cross-realm trust with a KDC in a different realm. The cross-realm principal password, which must be identical across realms.</p>
-        pub fn cross_realm_trust_principal_password(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cross_realm_trust_principal_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.cross_realm_trust_principal_password = Some(input.into());
             self
         }
         /// <p>Required only when establishing a cross-realm trust with a KDC in a different realm. The cross-realm principal password, which must be identical across realms.</p>
-        pub fn set_cross_realm_trust_principal_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cross_realm_trust_principal_password = input;
-            self
+        pub fn set_cross_realm_trust_principal_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cross_realm_trust_principal_password = input; self
         }
         /// <p>Required only when establishing a cross-realm trust with an Active Directory domain. A user with sufficient privileges to join resources to the domain.</p>
         pub fn ad_domain_join_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1044,12 +985,8 @@ pub mod kerberos_attributes {
             self
         }
         /// <p>Required only when establishing a cross-realm trust with an Active Directory domain. A user with sufficient privileges to join resources to the domain.</p>
-        pub fn set_ad_domain_join_user(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ad_domain_join_user = input;
-            self
+        pub fn set_ad_domain_join_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ad_domain_join_user = input; self
         }
         /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
         pub fn ad_domain_join_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1057,24 +994,27 @@ pub mod kerberos_attributes {
             self
         }
         /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
-        pub fn set_ad_domain_join_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ad_domain_join_password = input;
-            self
+        pub fn set_ad_domain_join_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ad_domain_join_password = input; self
         }
         /// Consumes the builder and constructs a [`KerberosAttributes`](crate::model::KerberosAttributes).
         pub fn build(self) -> crate::model::KerberosAttributes {
             crate::model::KerberosAttributes {
-                realm: self.realm,
-                kdc_admin_password: self.kdc_admin_password,
-                cross_realm_trust_principal_password: self.cross_realm_trust_principal_password,
-                ad_domain_join_user: self.ad_domain_join_user,
-                ad_domain_join_password: self.ad_domain_join_password,
+                realm: self.realm
+                ,
+                kdc_admin_password: self.kdc_admin_password
+                ,
+                cross_realm_trust_principal_password: self.cross_realm_trust_principal_password
+                ,
+                ad_domain_join_user: self.ad_domain_join_user
+                ,
+                ad_domain_join_password: self.ad_domain_join_password
+                ,
             }
         }
     }
+    
+    
 }
 impl KerberosAttributes {
     /// Creates a new builder-style object to manufacture [`KerberosAttributes`](crate::model::KerberosAttributes).
@@ -1089,9 +1029,9 @@ impl KerberosAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let repoupgradeonboot = unimplemented!();
 /// match repoupgradeonboot {
@@ -1113,60 +1053,52 @@ impl KerberosAttributes {
 /// Specifically, when `repoupgradeonboot` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RepoUpgradeOnBoot::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RepoUpgradeOnBoot {
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Security,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepoUpgradeOnBoot {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => RepoUpgradeOnBoot::None,
             "SECURITY" => RepoUpgradeOnBoot::Security,
-            other => {
-                RepoUpgradeOnBoot::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RepoUpgradeOnBoot::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RepoUpgradeOnBoot {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RepoUpgradeOnBoot::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RepoUpgradeOnBoot::from(s))
+                }
+            }
 impl RepoUpgradeOnBoot {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RepoUpgradeOnBoot::None => "NONE",
             RepoUpgradeOnBoot::Security => "SECURITY",
-            RepoUpgradeOnBoot::Unknown(value) => value.as_str(),
+            RepoUpgradeOnBoot::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE", "SECURITY"]
+        &[
+            "NONE", "SECURITY"
+        ]
     }
 }
 impl AsRef<str> for RepoUpgradeOnBoot {
@@ -1181,9 +1113,9 @@ impl AsRef<str> for RepoUpgradeOnBoot {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scaledownbehavior = unimplemented!();
 /// match scaledownbehavior {
@@ -1205,60 +1137,52 @@ impl AsRef<str> for RepoUpgradeOnBoot {
 /// Specifically, when `scaledownbehavior` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScaleDownBehavior::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScaleDownBehavior {
     #[allow(missing_docs)] // documentation missing in model
     TerminateAtInstanceHour,
     #[allow(missing_docs)] // documentation missing in model
     TerminateAtTaskCompletion,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScaleDownBehavior {
     fn from(s: &str) -> Self {
         match s {
             "TERMINATE_AT_INSTANCE_HOUR" => ScaleDownBehavior::TerminateAtInstanceHour,
             "TERMINATE_AT_TASK_COMPLETION" => ScaleDownBehavior::TerminateAtTaskCompletion,
-            other => {
-                ScaleDownBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScaleDownBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScaleDownBehavior {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScaleDownBehavior::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScaleDownBehavior::from(s))
+                }
+            }
 impl ScaleDownBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScaleDownBehavior::TerminateAtInstanceHour => "TERMINATE_AT_INSTANCE_HOUR",
             ScaleDownBehavior::TerminateAtTaskCompletion => "TERMINATE_AT_TASK_COMPLETION",
-            ScaleDownBehavior::Unknown(value) => value.as_str(),
+            ScaleDownBehavior::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TERMINATE_AT_INSTANCE_HOUR", "TERMINATE_AT_TASK_COMPLETION"]
+        &[
+            "TERMINATE_AT_INSTANCE_HOUR", "TERMINATE_AT_TASK_COMPLETION"
+        ]
     }
 }
 impl AsRef<str> for ScaleDownBehavior {
@@ -1267,13 +1191,13 @@ impl AsRef<str> for ScaleDownBehavior {
     }
 }
 
-/// <note>
-/// <p>Amazon EMR releases 4.x or later.</p>
-/// </note>
+/// <note> 
+/// <p>Amazon EMR releases 4.x or later.</p> 
+/// </note> 
 /// <p>An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Configuration {
+pub struct Configuration  {
     /// <p>The classification within a configuration.</p>
     #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
@@ -1282,37 +1206,31 @@ pub struct Configuration {
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>A set of properties specified within a configuration classification.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Configuration {
     /// <p>The classification within a configuration.</p>
-    pub fn classification(&self) -> std::option::Option<&str> {
+    pub fn classification(&self) -> std::option::Option<& str> {
         self.classification.as_deref()
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
 }
 /// See [`Configuration`](crate::model::Configuration).
 pub mod configuration {
-
+    
     /// A builder for [`Configuration`](crate::model::Configuration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) classification: std::option::Option<std::string::String>,
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        pub(crate) properties: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The classification within a configuration.</p>
@@ -1321,12 +1239,8 @@ pub mod configuration {
             self
         }
         /// <p>The classification within a configuration.</p>
-        pub fn set_classification(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.classification = input;
-            self
+        pub fn set_classification(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.classification = input; self
         }
         /// Appends an item to `configurations`.
         ///
@@ -1335,52 +1249,43 @@ pub mod configuration {
         /// <p>A list of additional configurations to apply within a configuration object.</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
         /// <p>A list of additional configurations to apply within a configuration object.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// Adds a key-value pair to `properties`.
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>A set of properties specified within a configuration classification.</p>
-        pub fn properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.properties = Some(hash_map);
+                            self
         }
         /// <p>A set of properties specified within a configuration classification.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`Configuration`](crate::model::Configuration).
         pub fn build(self) -> crate::model::Configuration {
             crate::model::Configuration {
-                classification: self.classification,
-                configurations: self.configurations,
-                properties: self.properties,
+                classification: self.classification
+                ,
+                configurations: self.configurations
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
+    
+    
 }
 impl Configuration {
     /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
@@ -1389,11 +1294,11 @@ impl Configuration {
     }
 }
 
-/// <p>With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p>
+/// <p>With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p> 
 /// <p>With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Application {
+pub struct Application  {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1405,42 +1310,36 @@ pub struct Application {
     pub args: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
     #[doc(hidden)]
-    pub additional_info:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Application {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Arguments for Amazon EMR to pass to the application.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
         self.args.as_deref()
     }
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-    pub fn additional_info(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn additional_info(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.additional_info.as_ref()
     }
 }
 /// See [`Application`](crate::model::Application).
 pub mod application {
-
+    
     /// A builder for [`Application`](crate::model::Application).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) additional_info: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) additional_info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the application.</p>
@@ -1450,8 +1349,7 @@ pub mod application {
         }
         /// <p>The name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the application.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1460,8 +1358,7 @@ pub mod application {
         }
         /// <p>The version of the application.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Appends an item to `args`.
         ///
@@ -1470,53 +1367,45 @@ pub mod application {
         /// <p>Arguments for Amazon EMR to pass to the application.</p>
         pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.args.unwrap_or_default();
-            v.push(input.into());
-            self.args = Some(v);
-            self
+                            v.push(input.into());
+                            self.args = Some(v);
+                            self
         }
         /// <p>Arguments for Amazon EMR to pass to the application.</p>
-        pub fn set_args(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.args = input;
-            self
+        pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.args = input; self
         }
         /// Adds a key-value pair to `additional_info`.
         ///
         /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
         ///
         /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-        pub fn additional_info(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_info(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.additional_info.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.additional_info = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.additional_info = Some(hash_map);
+                            self
         }
         /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-        pub fn set_additional_info(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.additional_info = input;
-            self
+        pub fn set_additional_info(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.additional_info = input; self
         }
         /// Consumes the builder and constructs a [`Application`](crate::model::Application).
         pub fn build(self) -> crate::model::Application {
             crate::model::Application {
-                name: self.name,
-                version: self.version,
-                args: self.args,
-                additional_info: self.additional_info,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                args: self.args
+                ,
+                additional_info: self.additional_info
+                ,
             }
         }
     }
+    
+    
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
@@ -1528,7 +1417,7 @@ impl Application {
 /// <p>The list of supported product configurations that allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SupportedProductConfig {
+pub struct SupportedProductConfig  {
     /// <p>The name of the product configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1538,17 +1427,17 @@ pub struct SupportedProductConfig {
 }
 impl SupportedProductConfig {
     /// <p>The name of the product configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The list of user-supplied arguments.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
         self.args.as_deref()
     }
 }
 /// See [`SupportedProductConfig`](crate::model::SupportedProductConfig).
 pub mod supported_product_config {
-
+    
     /// A builder for [`SupportedProductConfig`](crate::model::SupportedProductConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1563,8 +1452,7 @@ pub mod supported_product_config {
         }
         /// <p>The name of the product configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `args`.
         ///
@@ -1573,26 +1461,26 @@ pub mod supported_product_config {
         /// <p>The list of user-supplied arguments.</p>
         pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.args.unwrap_or_default();
-            v.push(input.into());
-            self.args = Some(v);
-            self
+                            v.push(input.into());
+                            self.args = Some(v);
+                            self
         }
         /// <p>The list of user-supplied arguments.</p>
-        pub fn set_args(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.args = input;
-            self
+        pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.args = input; self
         }
         /// Consumes the builder and constructs a [`SupportedProductConfig`](crate::model::SupportedProductConfig).
         pub fn build(self) -> crate::model::SupportedProductConfig {
             crate::model::SupportedProductConfig {
-                name: self.name,
-                args: self.args,
+                name: self.name
+                ,
+                args: self.args
+                ,
             }
         }
     }
+    
+    
 }
 impl SupportedProductConfig {
     /// Creates a new builder-style object to manufacture [`SupportedProductConfig`](crate::model::SupportedProductConfig).
@@ -1604,7 +1492,7 @@ impl SupportedProductConfig {
 /// <p>Configuration of a bootstrap action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BootstrapActionConfig {
+pub struct BootstrapActionConfig  {
     /// <p>The name of the bootstrap action.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1614,25 +1502,22 @@ pub struct BootstrapActionConfig {
 }
 impl BootstrapActionConfig {
     /// <p>The name of the bootstrap action.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The script run by the bootstrap action.</p>
-    pub fn script_bootstrap_action(
-        &self,
-    ) -> std::option::Option<&crate::model::ScriptBootstrapActionConfig> {
+    pub fn script_bootstrap_action(&self) -> std::option::Option<& crate::model::ScriptBootstrapActionConfig> {
         self.script_bootstrap_action.as_ref()
     }
 }
 /// See [`BootstrapActionConfig`](crate::model::BootstrapActionConfig).
 pub mod bootstrap_action_config {
-
+    
     /// A builder for [`BootstrapActionConfig`](crate::model::BootstrapActionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) script_bootstrap_action:
-            std::option::Option<crate::model::ScriptBootstrapActionConfig>,
+        pub(crate) script_bootstrap_action: std::option::Option<crate::model::ScriptBootstrapActionConfig>,
     }
     impl Builder {
         /// <p>The name of the bootstrap action.</p>
@@ -1642,33 +1527,29 @@ pub mod bootstrap_action_config {
         }
         /// <p>The name of the bootstrap action.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The script run by the bootstrap action.</p>
-        pub fn script_bootstrap_action(
-            mut self,
-            input: crate::model::ScriptBootstrapActionConfig,
-        ) -> Self {
+        pub fn script_bootstrap_action(mut self, input: crate::model::ScriptBootstrapActionConfig) -> Self {
             self.script_bootstrap_action = Some(input);
             self
         }
         /// <p>The script run by the bootstrap action.</p>
-        pub fn set_script_bootstrap_action(
-            mut self,
-            input: std::option::Option<crate::model::ScriptBootstrapActionConfig>,
-        ) -> Self {
-            self.script_bootstrap_action = input;
-            self
+        pub fn set_script_bootstrap_action(mut self, input: std::option::Option<crate::model::ScriptBootstrapActionConfig>) -> Self {
+            self.script_bootstrap_action = input; self
         }
         /// Consumes the builder and constructs a [`BootstrapActionConfig`](crate::model::BootstrapActionConfig).
         pub fn build(self) -> crate::model::BootstrapActionConfig {
             crate::model::BootstrapActionConfig {
-                name: self.name,
-                script_bootstrap_action: self.script_bootstrap_action,
+                name: self.name
+                ,
+                script_bootstrap_action: self.script_bootstrap_action
+                ,
             }
         }
     }
+    
+    
 }
 impl BootstrapActionConfig {
     /// Creates a new builder-style object to manufacture [`BootstrapActionConfig`](crate::model::BootstrapActionConfig).
@@ -1680,7 +1561,7 @@ impl BootstrapActionConfig {
 /// <p>Configuration of the script to run during a bootstrap action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScriptBootstrapActionConfig {
+pub struct ScriptBootstrapActionConfig  {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -1690,17 +1571,17 @@ pub struct ScriptBootstrapActionConfig {
 }
 impl ScriptBootstrapActionConfig {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
         self.args.as_deref()
     }
 }
 /// See [`ScriptBootstrapActionConfig`](crate::model::ScriptBootstrapActionConfig).
 pub mod script_bootstrap_action_config {
-
+    
     /// A builder for [`ScriptBootstrapActionConfig`](crate::model::ScriptBootstrapActionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1715,8 +1596,7 @@ pub mod script_bootstrap_action_config {
         }
         /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Appends an item to `args`.
         ///
@@ -1725,26 +1605,26 @@ pub mod script_bootstrap_action_config {
         /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
         pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.args.unwrap_or_default();
-            v.push(input.into());
-            self.args = Some(v);
-            self
+                            v.push(input.into());
+                            self.args = Some(v);
+                            self
         }
         /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-        pub fn set_args(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.args = input;
-            self
+        pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.args = input; self
         }
         /// Consumes the builder and constructs a [`ScriptBootstrapActionConfig`](crate::model::ScriptBootstrapActionConfig).
         pub fn build(self) -> crate::model::ScriptBootstrapActionConfig {
             crate::model::ScriptBootstrapActionConfig {
-                path: self.path,
-                args: self.args,
+                path: self.path
+                ,
+                args: self.args
+                ,
             }
         }
     }
+    
+    
 }
 impl ScriptBootstrapActionConfig {
     /// Creates a new builder-style object to manufacture [`ScriptBootstrapActionConfig`](crate::model::ScriptBootstrapActionConfig).
@@ -1756,18 +1636,18 @@ impl ScriptBootstrapActionConfig {
 /// <p>Specification for a cluster (job flow) step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepConfig {
+pub struct StepConfig  {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The action to take when the step fails. Use one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
-    /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li>
-    /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li>
-    /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li>
-    /// </ul>
-    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+    /// <p>The action to take when the step fails. Use one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li> 
+    /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li> 
+    /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> 
+    /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> 
+    /// </ul> 
+    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> 
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
     #[doc(hidden)]
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
@@ -1777,29 +1657,29 @@ pub struct StepConfig {
 }
 impl StepConfig {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The action to take when the step fails. Use one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
-    /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li>
-    /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li>
-    /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li>
-    /// </ul>
-    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+    /// <p>The action to take when the step fails. Use one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li> 
+    /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li> 
+    /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> 
+    /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> 
+    /// </ul> 
+    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> 
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
-    pub fn action_on_failure(&self) -> std::option::Option<&crate::model::ActionOnFailure> {
+    pub fn action_on_failure(&self) -> std::option::Option<& crate::model::ActionOnFailure> {
         self.action_on_failure.as_ref()
     }
     /// <p>The JAR file used for the step.</p>
-    pub fn hadoop_jar_step(&self) -> std::option::Option<&crate::model::HadoopJarStepConfig> {
+    pub fn hadoop_jar_step(&self) -> std::option::Option<& crate::model::HadoopJarStepConfig> {
         self.hadoop_jar_step.as_ref()
     }
 }
 /// See [`StepConfig`](crate::model::StepConfig).
 pub mod step_config {
-
+    
     /// A builder for [`StepConfig`](crate::model::StepConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1815,37 +1695,32 @@ pub mod step_config {
         }
         /// <p>The name of the step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The action to take when the step fails. Use one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
-        /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li>
-        /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li>
-        /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li>
-        /// </ul>
-        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+        /// <p>The action to take when the step fails. Use one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li> 
+        /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li> 
+        /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> 
+        /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> 
+        /// </ul> 
+        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> 
         /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
         pub fn action_on_failure(mut self, input: crate::model::ActionOnFailure) -> Self {
             self.action_on_failure = Some(input);
             self
         }
-        /// <p>The action to take when the step fails. Use one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li>
-        /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li>
-        /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li>
-        /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li>
-        /// </ul>
-        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+        /// <p>The action to take when the step fails. Use one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.</p> </li> 
+        /// <li> <p> <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster to the <code>WAITING</code> state.</p> </li> 
+        /// <li> <p> <code>CONTINUE</code> - Continues to the next step in the queue.</p> </li> 
+        /// <li> <p> <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> </li> 
+        /// </ul> 
+        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> 
         /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
-        pub fn set_action_on_failure(
-            mut self,
-            input: std::option::Option<crate::model::ActionOnFailure>,
-        ) -> Self {
-            self.action_on_failure = input;
-            self
+        pub fn set_action_on_failure(mut self, input: std::option::Option<crate::model::ActionOnFailure>) -> Self {
+            self.action_on_failure = input; self
         }
         /// <p>The JAR file used for the step.</p>
         pub fn hadoop_jar_step(mut self, input: crate::model::HadoopJarStepConfig) -> Self {
@@ -1853,22 +1728,23 @@ pub mod step_config {
             self
         }
         /// <p>The JAR file used for the step.</p>
-        pub fn set_hadoop_jar_step(
-            mut self,
-            input: std::option::Option<crate::model::HadoopJarStepConfig>,
-        ) -> Self {
-            self.hadoop_jar_step = input;
-            self
+        pub fn set_hadoop_jar_step(mut self, input: std::option::Option<crate::model::HadoopJarStepConfig>) -> Self {
+            self.hadoop_jar_step = input; self
         }
         /// Consumes the builder and constructs a [`StepConfig`](crate::model::StepConfig).
         pub fn build(self) -> crate::model::StepConfig {
             crate::model::StepConfig {
-                name: self.name,
-                action_on_failure: self.action_on_failure,
-                hadoop_jar_step: self.hadoop_jar_step,
+                name: self.name
+                ,
+                action_on_failure: self.action_on_failure
+                ,
+                hadoop_jar_step: self.hadoop_jar_step
+                ,
             }
         }
     }
+    
+    
 }
 impl StepConfig {
     /// Creates a new builder-style object to manufacture [`StepConfig`](crate::model::StepConfig).
@@ -1880,7 +1756,7 @@ impl StepConfig {
 /// <p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HadoopJarStepConfig {
+pub struct HadoopJarStepConfig  {
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
     #[doc(hidden)]
     pub properties: std::option::Option<std::vec::Vec<crate::model::KeyValue>>,
@@ -1896,25 +1772,25 @@ pub struct HadoopJarStepConfig {
 }
 impl HadoopJarStepConfig {
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::model::KeyValue]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::KeyValue]> {
         self.properties.as_deref()
     }
     /// <p>A path to a JAR file run during the step.</p>
-    pub fn jar(&self) -> std::option::Option<&str> {
+    pub fn jar(&self) -> std::option::Option<& str> {
         self.jar.as_deref()
     }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
-    pub fn main_class(&self) -> std::option::Option<&str> {
+    pub fn main_class(&self) -> std::option::Option<& str> {
         self.main_class.as_deref()
     }
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
         self.args.as_deref()
     }
 }
 /// See [`HadoopJarStepConfig`](crate::model::HadoopJarStepConfig).
 pub mod hadoop_jar_step_config {
-
+    
     /// A builder for [`HadoopJarStepConfig`](crate::model::HadoopJarStepConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1931,17 +1807,13 @@ pub mod hadoop_jar_step_config {
         /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
         pub fn properties(mut self, input: crate::model::KeyValue) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KeyValue>>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeyValue>>) -> Self {
+            self.properties = input; self
         }
         /// <p>A path to a JAR file run during the step.</p>
         pub fn jar(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1950,8 +1822,7 @@ pub mod hadoop_jar_step_config {
         }
         /// <p>A path to a JAR file run during the step.</p>
         pub fn set_jar(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.jar = input;
-            self
+            self.jar = input; self
         }
         /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
         pub fn main_class(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1960,8 +1831,7 @@ pub mod hadoop_jar_step_config {
         }
         /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
         pub fn set_main_class(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.main_class = input;
-            self
+            self.main_class = input; self
         }
         /// Appends an item to `args`.
         ///
@@ -1970,28 +1840,30 @@ pub mod hadoop_jar_step_config {
         /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
         pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.args.unwrap_or_default();
-            v.push(input.into());
-            self.args = Some(v);
-            self
+                            v.push(input.into());
+                            self.args = Some(v);
+                            self
         }
         /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
-        pub fn set_args(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.args = input;
-            self
+        pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.args = input; self
         }
         /// Consumes the builder and constructs a [`HadoopJarStepConfig`](crate::model::HadoopJarStepConfig).
         pub fn build(self) -> crate::model::HadoopJarStepConfig {
             crate::model::HadoopJarStepConfig {
-                properties: self.properties,
-                jar: self.jar,
-                main_class: self.main_class,
-                args: self.args,
+                properties: self.properties
+                ,
+                jar: self.jar
+                ,
+                main_class: self.main_class
+                ,
+                args: self.args
+                ,
             }
         }
     }
+    
+    
 }
 impl HadoopJarStepConfig {
     /// Creates a new builder-style object to manufacture [`HadoopJarStepConfig`](crate::model::HadoopJarStepConfig).
@@ -2003,7 +1875,7 @@ impl HadoopJarStepConfig {
 /// <p>A key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyValue {
+pub struct KeyValue  {
     /// <p>The unique identifier of a key-value pair.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2013,17 +1885,17 @@ pub struct KeyValue {
 }
 impl KeyValue {
     /// <p>The unique identifier of a key-value pair.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value part of the identified key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`KeyValue`](crate::model::KeyValue).
 pub mod key_value {
-
+    
     /// A builder for [`KeyValue`](crate::model::KeyValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2038,8 +1910,7 @@ pub mod key_value {
         }
         /// <p>The unique identifier of a key-value pair.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value part of the identified key.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2048,17 +1919,20 @@ pub mod key_value {
         }
         /// <p>The value part of the identified key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`KeyValue`](crate::model::KeyValue).
         pub fn build(self) -> crate::model::KeyValue {
             crate::model::KeyValue {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl KeyValue {
     /// Creates a new builder-style object to manufacture [`KeyValue`](crate::model::KeyValue).
@@ -2073,9 +1947,9 @@ impl KeyValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actiononfailure = unimplemented!();
 /// match actiononfailure {
@@ -2099,22 +1973,14 @@ impl KeyValue {
 /// Specifically, when `actiononfailure` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionOnFailure::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionOnFailure {
     #[allow(missing_docs)] // documentation missing in model
     CancelAndWait,
@@ -2125,7 +1991,7 @@ pub enum ActionOnFailure {
     #[allow(missing_docs)] // documentation missing in model
     TerminateJobFlow,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionOnFailure {
     fn from(s: &str) -> Self {
@@ -2134,17 +2000,17 @@ impl std::convert::From<&str> for ActionOnFailure {
             "CONTINUE" => ActionOnFailure::Continue,
             "TERMINATE_CLUSTER" => ActionOnFailure::TerminateCluster,
             "TERMINATE_JOB_FLOW" => ActionOnFailure::TerminateJobFlow,
-            other => ActionOnFailure::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionOnFailure::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionOnFailure {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionOnFailure::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionOnFailure::from(s))
+                }
+            }
 impl ActionOnFailure {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2153,16 +2019,13 @@ impl ActionOnFailure {
             ActionOnFailure::Continue => "CONTINUE",
             ActionOnFailure::TerminateCluster => "TERMINATE_CLUSTER",
             ActionOnFailure::TerminateJobFlow => "TERMINATE_JOB_FLOW",
-            ActionOnFailure::Unknown(value) => value.as_str(),
+            ActionOnFailure::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCEL_AND_WAIT",
-            "CONTINUE",
-            "TERMINATE_CLUSTER",
-            "TERMINATE_JOB_FLOW",
+            "CANCEL_AND_WAIT", "CONTINUE", "TERMINATE_CLUSTER", "TERMINATE_JOB_FLOW"
         ]
     }
 }
@@ -2175,7 +2038,7 @@ impl AsRef<str> for ActionOnFailure {
 /// <p>A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobFlowInstancesConfig {
+pub struct JobFlowInstancesConfig  {
     /// <p>The EC2 instance type of the master node.</p>
     #[doc(hidden)]
     pub master_instance_type: std::option::Option<std::string::String>,
@@ -2188,9 +2051,9 @@ pub struct JobFlowInstancesConfig {
     /// <p>Configuration for the instance groups in a cluster.</p>
     #[doc(hidden)]
     pub instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>,
-    /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
-    /// </note>
+    /// <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+    /// </note> 
     /// <p>Describes the EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
     #[doc(hidden)]
     pub instance_fleets: std::option::Option<std::vec::Vec<crate::model::InstanceFleetConfig>>,
@@ -2212,8 +2075,8 @@ pub struct JobFlowInstancesConfig {
     /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
     #[doc(hidden)]
     pub ec2_subnet_id: std::option::Option<std::string::String>,
-    /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
     /// </note>
     #[doc(hidden)]
     pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2235,11 +2098,11 @@ pub struct JobFlowInstancesConfig {
 }
 impl JobFlowInstancesConfig {
     /// <p>The EC2 instance type of the master node.</p>
-    pub fn master_instance_type(&self) -> std::option::Option<&str> {
+    pub fn master_instance_type(&self) -> std::option::Option<& str> {
         self.master_instance_type.as_deref()
     }
     /// <p>The EC2 instance type of the core and task nodes.</p>
-    pub fn slave_instance_type(&self) -> std::option::Option<&str> {
+    pub fn slave_instance_type(&self) -> std::option::Option<& str> {
         self.slave_instance_type.as_deref()
     }
     /// <p>The number of EC2 instances in the cluster.</p>
@@ -2247,22 +2110,22 @@ impl JobFlowInstancesConfig {
         self.instance_count
     }
     /// <p>Configuration for the instance groups in a cluster.</p>
-    pub fn instance_groups(&self) -> std::option::Option<&[crate::model::InstanceGroupConfig]> {
+    pub fn instance_groups(&self) -> std::option::Option<& [crate::model::InstanceGroupConfig]> {
         self.instance_groups.as_deref()
     }
-    /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
-    /// </note>
+    /// <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+    /// </note> 
     /// <p>Describes the EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
-    pub fn instance_fleets(&self) -> std::option::Option<&[crate::model::InstanceFleetConfig]> {
+    pub fn instance_fleets(&self) -> std::option::Option<& [crate::model::InstanceFleetConfig]> {
         self.instance_fleets.as_deref()
     }
     /// <p>The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called "hadoop."</p>
-    pub fn ec2_key_name(&self) -> std::option::Option<&str> {
+    pub fn ec2_key_name(&self) -> std::option::Option<& str> {
         self.ec2_key_name.as_deref()
     }
     /// <p>The Availability Zone in which the cluster runs.</p>
-    pub fn placement(&self) -> std::option::Option<&crate::model::PlacementType> {
+    pub fn placement(&self) -> std::option::Option<& crate::model::PlacementType> {
         self.placement.as_ref()
     }
     /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
@@ -2274,53 +2137,51 @@ impl JobFlowInstancesConfig {
         self.termination_protected
     }
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
-    pub fn hadoop_version(&self) -> std::option::Option<&str> {
+    pub fn hadoop_version(&self) -> std::option::Option<& str> {
         self.hadoop_version.as_deref()
     }
     /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
-    pub fn ec2_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_subnet_id(&self) -> std::option::Option<& str> {
         self.ec2_subnet_id.as_deref()
     }
-    /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
     /// </note>
-    pub fn ec2_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ec2_subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ec2_subnet_ids.as_deref()
     }
     /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
-    pub fn emr_managed_master_security_group(&self) -> std::option::Option<&str> {
+    pub fn emr_managed_master_security_group(&self) -> std::option::Option<& str> {
         self.emr_managed_master_security_group.as_deref()
     }
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
-    pub fn emr_managed_slave_security_group(&self) -> std::option::Option<&str> {
+    pub fn emr_managed_slave_security_group(&self) -> std::option::Option<& str> {
         self.emr_managed_slave_security_group.as_deref()
     }
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-    pub fn service_access_security_group(&self) -> std::option::Option<&str> {
+    pub fn service_access_security_group(&self) -> std::option::Option<& str> {
         self.service_access_security_group.as_deref()
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    pub fn additional_master_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_master_security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_master_security_groups.as_deref()
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    pub fn additional_slave_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_slave_security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_slave_security_groups.as_deref()
     }
 }
 /// See [`JobFlowInstancesConfig`](crate::model::JobFlowInstancesConfig).
 pub mod job_flow_instances_config {
-
+    
     /// A builder for [`JobFlowInstancesConfig`](crate::model::JobFlowInstancesConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) master_instance_type: std::option::Option<std::string::String>,
         pub(crate) slave_instance_type: std::option::Option<std::string::String>,
         pub(crate) instance_count: std::option::Option<i32>,
-        pub(crate) instance_groups:
-            std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>,
-        pub(crate) instance_fleets:
-            std::option::Option<std::vec::Vec<crate::model::InstanceFleetConfig>>,
+        pub(crate) instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>,
+        pub(crate) instance_fleets: std::option::Option<std::vec::Vec<crate::model::InstanceFleetConfig>>,
         pub(crate) ec2_key_name: std::option::Option<std::string::String>,
         pub(crate) placement: std::option::Option<crate::model::PlacementType>,
         pub(crate) keep_job_flow_alive_when_no_steps: std::option::Option<bool>,
@@ -2331,10 +2192,8 @@ pub mod job_flow_instances_config {
         pub(crate) emr_managed_master_security_group: std::option::Option<std::string::String>,
         pub(crate) emr_managed_slave_security_group: std::option::Option<std::string::String>,
         pub(crate) service_access_security_group: std::option::Option<std::string::String>,
-        pub(crate) additional_master_security_groups:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) additional_slave_security_groups:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) additional_master_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) additional_slave_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The EC2 instance type of the master node.</p>
@@ -2343,12 +2202,8 @@ pub mod job_flow_instances_config {
             self
         }
         /// <p>The EC2 instance type of the master node.</p>
-        pub fn set_master_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_instance_type = input;
-            self
+        pub fn set_master_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_instance_type = input; self
         }
         /// <p>The EC2 instance type of the core and task nodes.</p>
         pub fn slave_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2356,12 +2211,8 @@ pub mod job_flow_instances_config {
             self
         }
         /// <p>The EC2 instance type of the core and task nodes.</p>
-        pub fn set_slave_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slave_instance_type = input;
-            self
+        pub fn set_slave_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slave_instance_type = input; self
         }
         /// <p>The number of EC2 instances in the cluster.</p>
         pub fn instance_count(mut self, input: i32) -> Self {
@@ -2370,8 +2221,7 @@ pub mod job_flow_instances_config {
         }
         /// <p>The number of EC2 instances in the cluster.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
+            self.instance_count = input; self
         }
         /// Appends an item to `instance_groups`.
         ///
@@ -2380,42 +2230,34 @@ pub mod job_flow_instances_config {
         /// <p>Configuration for the instance groups in a cluster.</p>
         pub fn instance_groups(mut self, input: crate::model::InstanceGroupConfig) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input);
-            self.instance_groups = Some(v);
-            self
+                            v.push(input);
+                            self.instance_groups = Some(v);
+                            self
         }
         /// <p>Configuration for the instance groups in a cluster.</p>
-        pub fn set_instance_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>,
-        ) -> Self {
-            self.instance_groups = input;
-            self
+        pub fn set_instance_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>) -> Self {
+            self.instance_groups = input; self
         }
         /// Appends an item to `instance_fleets`.
         ///
         /// To override the contents of this collection use [`set_instance_fleets`](Self::set_instance_fleets).
         ///
-        /// <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
-        /// </note>
+        /// <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+        /// </note> 
         /// <p>Describes the EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
         pub fn instance_fleets(mut self, input: crate::model::InstanceFleetConfig) -> Self {
             let mut v = self.instance_fleets.unwrap_or_default();
-            v.push(input);
-            self.instance_fleets = Some(v);
-            self
+                            v.push(input);
+                            self.instance_fleets = Some(v);
+                            self
         }
-        /// <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
-        /// </note>
+        /// <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+        /// </note> 
         /// <p>Describes the EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
-        pub fn set_instance_fleets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceFleetConfig>>,
-        ) -> Self {
-            self.instance_fleets = input;
-            self
+        pub fn set_instance_fleets(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceFleetConfig>>) -> Self {
+            self.instance_fleets = input; self
         }
         /// <p>The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called "hadoop."</p>
         pub fn ec2_key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2424,8 +2266,7 @@ pub mod job_flow_instances_config {
         }
         /// <p>The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called "hadoop."</p>
         pub fn set_ec2_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ec2_key_name = input;
-            self
+            self.ec2_key_name = input; self
         }
         /// <p>The Availability Zone in which the cluster runs.</p>
         pub fn placement(mut self, input: crate::model::PlacementType) -> Self {
@@ -2433,12 +2274,8 @@ pub mod job_flow_instances_config {
             self
         }
         /// <p>The Availability Zone in which the cluster runs.</p>
-        pub fn set_placement(
-            mut self,
-            input: std::option::Option<crate::model::PlacementType>,
-        ) -> Self {
-            self.placement = input;
-            self
+        pub fn set_placement(mut self, input: std::option::Option<crate::model::PlacementType>) -> Self {
+            self.placement = input; self
         }
         /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
         pub fn keep_job_flow_alive_when_no_steps(mut self, input: bool) -> Self {
@@ -2446,12 +2283,8 @@ pub mod job_flow_instances_config {
             self
         }
         /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
-        pub fn set_keep_job_flow_alive_when_no_steps(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.keep_job_flow_alive_when_no_steps = input;
-            self
+        pub fn set_keep_job_flow_alive_when_no_steps(mut self, input: std::option::Option<bool>) -> Self {
+            self.keep_job_flow_alive_when_no_steps = input; self
         }
         /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
         pub fn termination_protected(mut self, input: bool) -> Self {
@@ -2460,8 +2293,7 @@ pub mod job_flow_instances_config {
         }
         /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
         pub fn set_termination_protected(mut self, input: std::option::Option<bool>) -> Self {
-            self.termination_protected = input;
-            self
+            self.termination_protected = input; self
         }
         /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
         pub fn hadoop_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2469,12 +2301,8 @@ pub mod job_flow_instances_config {
             self
         }
         /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
-        pub fn set_hadoop_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hadoop_version = input;
-            self
+        pub fn set_hadoop_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hadoop_version = input; self
         }
         /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
         pub fn ec2_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2482,153 +2310,129 @@ pub mod job_flow_instances_config {
             self
         }
         /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
-        pub fn set_ec2_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_subnet_id = input;
-            self
+        pub fn set_ec2_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_subnet_id = input; self
         }
         /// Appends an item to `ec2_subnet_ids`.
         ///
         /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
         ///
-        /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+        /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
         /// </note>
         pub fn ec2_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.ec2_subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.ec2_subnet_ids = Some(v);
+                            self
         }
-        /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+        /// <p>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
         /// </note>
-        pub fn set_ec2_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ec2_subnet_ids = input;
-            self
+        pub fn set_ec2_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ec2_subnet_ids = input; self
         }
         /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
-        pub fn emr_managed_master_security_group(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn emr_managed_master_security_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.emr_managed_master_security_group = Some(input.into());
             self
         }
         /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
-        pub fn set_emr_managed_master_security_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.emr_managed_master_security_group = input;
-            self
+        pub fn set_emr_managed_master_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.emr_managed_master_security_group = input; self
         }
         /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
-        pub fn emr_managed_slave_security_group(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn emr_managed_slave_security_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.emr_managed_slave_security_group = Some(input.into());
             self
         }
         /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
-        pub fn set_emr_managed_slave_security_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.emr_managed_slave_security_group = input;
-            self
+        pub fn set_emr_managed_slave_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.emr_managed_slave_security_group = input; self
         }
         /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-        pub fn service_access_security_group(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn service_access_security_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_access_security_group = Some(input.into());
             self
         }
         /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-        pub fn set_service_access_security_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_access_security_group = input;
-            self
+        pub fn set_service_access_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_access_security_group = input; self
         }
         /// Appends an item to `additional_master_security_groups`.
         ///
         /// To override the contents of this collection use [`set_additional_master_security_groups`](Self::set_additional_master_security_groups).
         ///
         /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-        pub fn additional_master_security_groups(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_master_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.additional_master_security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.additional_master_security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.additional_master_security_groups = Some(v);
+                            self
         }
         /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-        pub fn set_additional_master_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.additional_master_security_groups = input;
-            self
+        pub fn set_additional_master_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.additional_master_security_groups = input; self
         }
         /// Appends an item to `additional_slave_security_groups`.
         ///
         /// To override the contents of this collection use [`set_additional_slave_security_groups`](Self::set_additional_slave_security_groups).
         ///
         /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-        pub fn additional_slave_security_groups(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_slave_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.additional_slave_security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.additional_slave_security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.additional_slave_security_groups = Some(v);
+                            self
         }
         /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-        pub fn set_additional_slave_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.additional_slave_security_groups = input;
-            self
+        pub fn set_additional_slave_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.additional_slave_security_groups = input; self
         }
         /// Consumes the builder and constructs a [`JobFlowInstancesConfig`](crate::model::JobFlowInstancesConfig).
         pub fn build(self) -> crate::model::JobFlowInstancesConfig {
             crate::model::JobFlowInstancesConfig {
-                master_instance_type: self.master_instance_type,
-                slave_instance_type: self.slave_instance_type,
-                instance_count: self.instance_count,
-                instance_groups: self.instance_groups,
-                instance_fleets: self.instance_fleets,
-                ec2_key_name: self.ec2_key_name,
-                placement: self.placement,
-                keep_job_flow_alive_when_no_steps: self
-                    .keep_job_flow_alive_when_no_steps
-                    .unwrap_or_default(),
-                termination_protected: self.termination_protected.unwrap_or_default(),
-                hadoop_version: self.hadoop_version,
-                ec2_subnet_id: self.ec2_subnet_id,
-                ec2_subnet_ids: self.ec2_subnet_ids,
-                emr_managed_master_security_group: self.emr_managed_master_security_group,
-                emr_managed_slave_security_group: self.emr_managed_slave_security_group,
-                service_access_security_group: self.service_access_security_group,
-                additional_master_security_groups: self.additional_master_security_groups,
-                additional_slave_security_groups: self.additional_slave_security_groups,
+                master_instance_type: self.master_instance_type
+                ,
+                slave_instance_type: self.slave_instance_type
+                ,
+                instance_count: self.instance_count
+                ,
+                instance_groups: self.instance_groups
+                ,
+                instance_fleets: self.instance_fleets
+                ,
+                ec2_key_name: self.ec2_key_name
+                ,
+                placement: self.placement
+                ,
+                keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps
+                    .unwrap_or_default()
+                ,
+                termination_protected: self.termination_protected
+                    .unwrap_or_default()
+                ,
+                hadoop_version: self.hadoop_version
+                ,
+                ec2_subnet_id: self.ec2_subnet_id
+                ,
+                ec2_subnet_ids: self.ec2_subnet_ids
+                ,
+                emr_managed_master_security_group: self.emr_managed_master_security_group
+                ,
+                emr_managed_slave_security_group: self.emr_managed_slave_security_group
+                ,
+                service_access_security_group: self.service_access_security_group
+                ,
+                additional_master_security_groups: self.additional_master_security_groups
+                ,
+                additional_slave_security_groups: self.additional_slave_security_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl JobFlowInstancesConfig {
     /// Creates a new builder-style object to manufacture [`JobFlowInstancesConfig`](crate::model::JobFlowInstancesConfig).
@@ -2640,31 +2444,31 @@ impl JobFlowInstancesConfig {
 /// <p>The Amazon EC2 Availability Zone configuration of the cluster (job flow).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlacementType {
+pub struct PlacementType  {
     /// <p>The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
     /// </note>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PlacementType {
     /// <p>The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
-    /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
     /// </note>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
 /// See [`PlacementType`](crate::model::PlacementType).
 pub mod placement_type {
-
+    
     /// A builder for [`PlacementType`](crate::model::PlacementType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2678,44 +2482,40 @@ pub mod placement_type {
             self
         }
         /// <p>The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+        /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
         /// </note>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
-        /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+        /// <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
         /// </note>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Consumes the builder and constructs a [`PlacementType`](crate::model::PlacementType).
         pub fn build(self) -> crate::model::PlacementType {
             crate::model::PlacementType {
-                availability_zone: self.availability_zone,
-                availability_zones: self.availability_zones,
+                availability_zone: self.availability_zone
+                ,
+                availability_zones: self.availability_zones
+                ,
             }
         }
     }
+    
+    
 }
 impl PlacementType {
     /// Creates a new builder-style object to manufacture [`PlacementType`](crate::model::PlacementType).
@@ -2724,25 +2524,25 @@ impl PlacementType {
     }
 }
 
-/// <p>The configuration that defines an instance fleet.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>The configuration that defines an instance fleet.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceFleetConfig {
+pub struct InstanceFleetConfig  {
     /// <p>The friendly name of the instance fleet.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
     #[doc(hidden)]
     pub instance_fleet_type: std::option::Option<crate::model::InstanceFleetType>,
-    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
-    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note> 
+    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
     /// </note>
     #[doc(hidden)]
     pub target_on_demand_capacity: std::option::Option<i32>,
-    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
-    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note> 
+    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
     /// </note>
     #[doc(hidden)]
     pub target_spot_capacity: std::option::Option<i32>,
@@ -2751,46 +2551,41 @@ pub struct InstanceFleetConfig {
     pub instance_type_configs: std::option::Option<std::vec::Vec<crate::model::InstanceTypeConfig>>,
     /// <p>The launch specification for the instance fleet.</p>
     #[doc(hidden)]
-    pub launch_specifications:
-        std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
+    pub launch_specifications: std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
 }
 impl InstanceFleetConfig {
     /// <p>The friendly name of the instance fleet.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
-    pub fn instance_fleet_type(&self) -> std::option::Option<&crate::model::InstanceFleetType> {
+    pub fn instance_fleet_type(&self) -> std::option::Option<& crate::model::InstanceFleetType> {
         self.instance_fleet_type.as_ref()
     }
-    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
-    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note> 
+    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
     /// </note>
     pub fn target_on_demand_capacity(&self) -> std::option::Option<i32> {
         self.target_on_demand_capacity
     }
-    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
-    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note> 
+    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
     /// </note>
     pub fn target_spot_capacity(&self) -> std::option::Option<i32> {
         self.target_spot_capacity
     }
     /// <p>The instance type configurations that define the EC2 instances in the instance fleet.</p>
-    pub fn instance_type_configs(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceTypeConfig]> {
+    pub fn instance_type_configs(&self) -> std::option::Option<& [crate::model::InstanceTypeConfig]> {
         self.instance_type_configs.as_deref()
     }
     /// <p>The launch specification for the instance fleet.</p>
-    pub fn launch_specifications(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceFleetProvisioningSpecifications> {
+    pub fn launch_specifications(&self) -> std::option::Option<& crate::model::InstanceFleetProvisioningSpecifications> {
         self.launch_specifications.as_ref()
     }
 }
 /// See [`InstanceFleetConfig`](crate::model::InstanceFleetConfig).
 pub mod instance_fleet_config {
-
+    
     /// A builder for [`InstanceFleetConfig`](crate::model::InstanceFleetConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2798,10 +2593,8 @@ pub mod instance_fleet_config {
         pub(crate) instance_fleet_type: std::option::Option<crate::model::InstanceFleetType>,
         pub(crate) target_on_demand_capacity: std::option::Option<i32>,
         pub(crate) target_spot_capacity: std::option::Option<i32>,
-        pub(crate) instance_type_configs:
-            std::option::Option<std::vec::Vec<crate::model::InstanceTypeConfig>>,
-        pub(crate) launch_specifications:
-            std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
+        pub(crate) instance_type_configs: std::option::Option<std::vec::Vec<crate::model::InstanceTypeConfig>>,
+        pub(crate) launch_specifications: std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
     }
     impl Builder {
         /// <p>The friendly name of the instance fleet.</p>
@@ -2811,8 +2604,7 @@ pub mod instance_fleet_config {
         }
         /// <p>The friendly name of the instance fleet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
         pub fn instance_fleet_type(mut self, input: crate::model::InstanceFleetType) -> Self {
@@ -2820,40 +2612,34 @@ pub mod instance_fleet_config {
             self
         }
         /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
-        pub fn set_instance_fleet_type(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetType>,
-        ) -> Self {
-            self.instance_fleet_type = input;
-            self
+        pub fn set_instance_fleet_type(mut self, input: std::option::Option<crate::model::InstanceFleetType>) -> Self {
+            self.instance_fleet_type = input; self
         }
-        /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
-        /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+        /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note> 
+        /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
         /// </note>
         pub fn target_on_demand_capacity(mut self, input: i32) -> Self {
             self.target_on_demand_capacity = Some(input);
             self
         }
-        /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
-        /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+        /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note> 
+        /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
         /// </note>
         pub fn set_target_on_demand_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_on_demand_capacity = input;
-            self
+            self.target_on_demand_capacity = input; self
         }
-        /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
-        /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+        /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note> 
+        /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
         /// </note>
         pub fn target_spot_capacity(mut self, input: i32) -> Self {
             self.target_spot_capacity = Some(input);
             self
         }
-        /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note>
-        /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+        /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p> <note> 
+        /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
         /// </note>
         pub fn set_target_spot_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_spot_capacity = input;
-            self
+            self.target_spot_capacity = input; self
         }
         /// Appends an item to `instance_type_configs`.
         ///
@@ -2862,46 +2648,43 @@ pub mod instance_fleet_config {
         /// <p>The instance type configurations that define the EC2 instances in the instance fleet.</p>
         pub fn instance_type_configs(mut self, input: crate::model::InstanceTypeConfig) -> Self {
             let mut v = self.instance_type_configs.unwrap_or_default();
-            v.push(input);
-            self.instance_type_configs = Some(v);
-            self
+                            v.push(input);
+                            self.instance_type_configs = Some(v);
+                            self
         }
         /// <p>The instance type configurations that define the EC2 instances in the instance fleet.</p>
-        pub fn set_instance_type_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeConfig>>,
-        ) -> Self {
-            self.instance_type_configs = input;
-            self
+        pub fn set_instance_type_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeConfig>>) -> Self {
+            self.instance_type_configs = input; self
         }
         /// <p>The launch specification for the instance fleet.</p>
-        pub fn launch_specifications(
-            mut self,
-            input: crate::model::InstanceFleetProvisioningSpecifications,
-        ) -> Self {
+        pub fn launch_specifications(mut self, input: crate::model::InstanceFleetProvisioningSpecifications) -> Self {
             self.launch_specifications = Some(input);
             self
         }
         /// <p>The launch specification for the instance fleet.</p>
-        pub fn set_launch_specifications(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
-        ) -> Self {
-            self.launch_specifications = input;
-            self
+        pub fn set_launch_specifications(mut self, input: std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>) -> Self {
+            self.launch_specifications = input; self
         }
         /// Consumes the builder and constructs a [`InstanceFleetConfig`](crate::model::InstanceFleetConfig).
         pub fn build(self) -> crate::model::InstanceFleetConfig {
             crate::model::InstanceFleetConfig {
-                name: self.name,
-                instance_fleet_type: self.instance_fleet_type,
-                target_on_demand_capacity: self.target_on_demand_capacity,
-                target_spot_capacity: self.target_spot_capacity,
-                instance_type_configs: self.instance_type_configs,
-                launch_specifications: self.launch_specifications,
+                name: self.name
+                ,
+                instance_fleet_type: self.instance_fleet_type
+                ,
+                target_on_demand_capacity: self.target_on_demand_capacity
+                ,
+                target_spot_capacity: self.target_spot_capacity
+                ,
+                instance_type_configs: self.instance_type_configs
+                ,
+                launch_specifications: self.launch_specifications
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceFleetConfig {
     /// Creates a new builder-style object to manufacture [`InstanceFleetConfig`](crate::model::InstanceFleetConfig).
@@ -2910,94 +2693,77 @@ impl InstanceFleetConfig {
     }
 }
 
-/// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot Instance allocation strategies are available in Amazon EMR version 5.12.1 and later.</p>
+/// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot Instance allocation strategies are available in Amazon EMR version 5.12.1 and later.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceFleetProvisioningSpecifications {
+pub struct InstanceFleetProvisioningSpecifications  {
     /// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
     #[doc(hidden)]
     pub spot_specification: std::option::Option<crate::model::SpotProvisioningSpecification>,
-    /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
+    /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> 
     /// </note>
     #[doc(hidden)]
-    pub on_demand_specification:
-        std::option::Option<crate::model::OnDemandProvisioningSpecification>,
+    pub on_demand_specification: std::option::Option<crate::model::OnDemandProvisioningSpecification>,
 }
 impl InstanceFleetProvisioningSpecifications {
     /// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
-    pub fn spot_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::SpotProvisioningSpecification> {
+    pub fn spot_specification(&self) -> std::option::Option<& crate::model::SpotProvisioningSpecification> {
         self.spot_specification.as_ref()
     }
-    /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
+    /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> 
     /// </note>
-    pub fn on_demand_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDemandProvisioningSpecification> {
+    pub fn on_demand_specification(&self) -> std::option::Option<& crate::model::OnDemandProvisioningSpecification> {
         self.on_demand_specification.as_ref()
     }
 }
 /// See [`InstanceFleetProvisioningSpecifications`](crate::model::InstanceFleetProvisioningSpecifications).
 pub mod instance_fleet_provisioning_specifications {
-
+    
     /// A builder for [`InstanceFleetProvisioningSpecifications`](crate::model::InstanceFleetProvisioningSpecifications).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) spot_specification:
-            std::option::Option<crate::model::SpotProvisioningSpecification>,
-        pub(crate) on_demand_specification:
-            std::option::Option<crate::model::OnDemandProvisioningSpecification>,
+        pub(crate) spot_specification: std::option::Option<crate::model::SpotProvisioningSpecification>,
+        pub(crate) on_demand_specification: std::option::Option<crate::model::OnDemandProvisioningSpecification>,
     }
     impl Builder {
         /// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
-        pub fn spot_specification(
-            mut self,
-            input: crate::model::SpotProvisioningSpecification,
-        ) -> Self {
+        pub fn spot_specification(mut self, input: crate::model::SpotProvisioningSpecification) -> Self {
             self.spot_specification = Some(input);
             self
         }
         /// <p>The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
-        pub fn set_spot_specification(
-            mut self,
-            input: std::option::Option<crate::model::SpotProvisioningSpecification>,
-        ) -> Self {
-            self.spot_specification = input;
-            self
+        pub fn set_spot_specification(mut self, input: std::option::Option<crate::model::SpotProvisioningSpecification>) -> Self {
+            self.spot_specification = input; self
         }
-        /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
+        /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> 
         /// </note>
-        pub fn on_demand_specification(
-            mut self,
-            input: crate::model::OnDemandProvisioningSpecification,
-        ) -> Self {
+        pub fn on_demand_specification(mut self, input: crate::model::OnDemandProvisioningSpecification) -> Self {
             self.on_demand_specification = Some(input);
             self
         }
-        /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
+        /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> 
         /// </note>
-        pub fn set_on_demand_specification(
-            mut self,
-            input: std::option::Option<crate::model::OnDemandProvisioningSpecification>,
-        ) -> Self {
-            self.on_demand_specification = input;
-            self
+        pub fn set_on_demand_specification(mut self, input: std::option::Option<crate::model::OnDemandProvisioningSpecification>) -> Self {
+            self.on_demand_specification = input; self
         }
         /// Consumes the builder and constructs a [`InstanceFleetProvisioningSpecifications`](crate::model::InstanceFleetProvisioningSpecifications).
         pub fn build(self) -> crate::model::InstanceFleetProvisioningSpecifications {
             crate::model::InstanceFleetProvisioningSpecifications {
-                spot_specification: self.spot_specification,
-                on_demand_specification: self.on_demand_specification,
+                spot_specification: self.spot_specification
+                ,
+                on_demand_specification: self.on_demand_specification
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceFleetProvisioningSpecifications {
     /// Creates a new builder-style object to manufacture [`InstanceFleetProvisioningSpecifications`](crate::model::InstanceFleetProvisioningSpecifications).
@@ -3006,87 +2772,69 @@ impl InstanceFleetProvisioningSpecifications {
     }
 }
 
-/// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
+/// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OnDemandProvisioningSpecification {
+pub struct OnDemandProvisioningSpecification  {
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
     #[doc(hidden)]
-    pub allocation_strategy:
-        std::option::Option<crate::model::OnDemandProvisioningAllocationStrategy>,
+    pub allocation_strategy: std::option::Option<crate::model::OnDemandProvisioningAllocationStrategy>,
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
     #[doc(hidden)]
-    pub capacity_reservation_options:
-        std::option::Option<crate::model::OnDemandCapacityReservationOptions>,
+    pub capacity_reservation_options: std::option::Option<crate::model::OnDemandCapacityReservationOptions>,
 }
 impl OnDemandProvisioningSpecification {
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
-    pub fn allocation_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDemandProvisioningAllocationStrategy> {
+    pub fn allocation_strategy(&self) -> std::option::Option<& crate::model::OnDemandProvisioningAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
-    pub fn capacity_reservation_options(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDemandCapacityReservationOptions> {
+    pub fn capacity_reservation_options(&self) -> std::option::Option<& crate::model::OnDemandCapacityReservationOptions> {
         self.capacity_reservation_options.as_ref()
     }
 }
 /// See [`OnDemandProvisioningSpecification`](crate::model::OnDemandProvisioningSpecification).
 pub mod on_demand_provisioning_specification {
-
+    
     /// A builder for [`OnDemandProvisioningSpecification`](crate::model::OnDemandProvisioningSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) allocation_strategy:
-            std::option::Option<crate::model::OnDemandProvisioningAllocationStrategy>,
-        pub(crate) capacity_reservation_options:
-            std::option::Option<crate::model::OnDemandCapacityReservationOptions>,
+        pub(crate) allocation_strategy: std::option::Option<crate::model::OnDemandProvisioningAllocationStrategy>,
+        pub(crate) capacity_reservation_options: std::option::Option<crate::model::OnDemandCapacityReservationOptions>,
     }
     impl Builder {
         /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
-        pub fn allocation_strategy(
-            mut self,
-            input: crate::model::OnDemandProvisioningAllocationStrategy,
-        ) -> Self {
+        pub fn allocation_strategy(mut self, input: crate::model::OnDemandProvisioningAllocationStrategy) -> Self {
             self.allocation_strategy = Some(input);
             self
         }
         /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
-        pub fn set_allocation_strategy(
-            mut self,
-            input: std::option::Option<crate::model::OnDemandProvisioningAllocationStrategy>,
-        ) -> Self {
-            self.allocation_strategy = input;
-            self
+        pub fn set_allocation_strategy(mut self, input: std::option::Option<crate::model::OnDemandProvisioningAllocationStrategy>) -> Self {
+            self.allocation_strategy = input; self
         }
         /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
-        pub fn capacity_reservation_options(
-            mut self,
-            input: crate::model::OnDemandCapacityReservationOptions,
-        ) -> Self {
+        pub fn capacity_reservation_options(mut self, input: crate::model::OnDemandCapacityReservationOptions) -> Self {
             self.capacity_reservation_options = Some(input);
             self
         }
         /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
-        pub fn set_capacity_reservation_options(
-            mut self,
-            input: std::option::Option<crate::model::OnDemandCapacityReservationOptions>,
-        ) -> Self {
-            self.capacity_reservation_options = input;
-            self
+        pub fn set_capacity_reservation_options(mut self, input: std::option::Option<crate::model::OnDemandCapacityReservationOptions>) -> Self {
+            self.capacity_reservation_options = input; self
         }
         /// Consumes the builder and constructs a [`OnDemandProvisioningSpecification`](crate::model::OnDemandProvisioningSpecification).
         pub fn build(self) -> crate::model::OnDemandProvisioningSpecification {
             crate::model::OnDemandProvisioningSpecification {
-                allocation_strategy: self.allocation_strategy,
-                capacity_reservation_options: self.capacity_reservation_options,
+                allocation_strategy: self.allocation_strategy
+                ,
+                capacity_reservation_options: self.capacity_reservation_options
+                ,
             }
         }
     }
+    
+    
 }
 impl OnDemandProvisioningSpecification {
     /// Creates a new builder-style object to manufacture [`OnDemandProvisioningSpecification`](crate::model::OnDemandProvisioningSpecification).
@@ -3098,132 +2846,107 @@ impl OnDemandProvisioningSpecification {
 /// <p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OnDemandCapacityReservationOptions {
-    /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
-    /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
+pub struct OnDemandCapacityReservationOptions  {
+    /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p> 
+    /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p> 
     /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
     #[doc(hidden)]
     pub usage_strategy: std::option::Option<crate::model::OnDemandCapacityReservationUsageStrategy>,
-    /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
-    /// <ul>
-    /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
-    /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
+    /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li> 
+    /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub capacity_reservation_preference:
-        std::option::Option<crate::model::OnDemandCapacityReservationPreference>,
+    pub capacity_reservation_preference: std::option::Option<crate::model::OnDemandCapacityReservationPreference>,
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
     #[doc(hidden)]
     pub capacity_reservation_resource_group_arn: std::option::Option<std::string::String>,
 }
 impl OnDemandCapacityReservationOptions {
-    /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
-    /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
+    /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p> 
+    /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p> 
     /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
-    pub fn usage_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDemandCapacityReservationUsageStrategy> {
+    pub fn usage_strategy(&self) -> std::option::Option<& crate::model::OnDemandCapacityReservationUsageStrategy> {
         self.usage_strategy.as_ref()
     }
-    /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
-    /// <ul>
-    /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
-    /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
+    /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li> 
+    /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li> 
     /// </ul>
-    pub fn capacity_reservation_preference(
-        &self,
-    ) -> std::option::Option<&crate::model::OnDemandCapacityReservationPreference> {
+    pub fn capacity_reservation_preference(&self) -> std::option::Option<& crate::model::OnDemandCapacityReservationPreference> {
         self.capacity_reservation_preference.as_ref()
     }
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
-    pub fn capacity_reservation_resource_group_arn(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_resource_group_arn(&self) -> std::option::Option<& str> {
         self.capacity_reservation_resource_group_arn.as_deref()
     }
 }
 /// See [`OnDemandCapacityReservationOptions`](crate::model::OnDemandCapacityReservationOptions).
 pub mod on_demand_capacity_reservation_options {
-
+    
     /// A builder for [`OnDemandCapacityReservationOptions`](crate::model::OnDemandCapacityReservationOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) usage_strategy:
-            std::option::Option<crate::model::OnDemandCapacityReservationUsageStrategy>,
-        pub(crate) capacity_reservation_preference:
-            std::option::Option<crate::model::OnDemandCapacityReservationPreference>,
-        pub(crate) capacity_reservation_resource_group_arn:
-            std::option::Option<std::string::String>,
+        pub(crate) usage_strategy: std::option::Option<crate::model::OnDemandCapacityReservationUsageStrategy>,
+        pub(crate) capacity_reservation_preference: std::option::Option<crate::model::OnDemandCapacityReservationPreference>,
+        pub(crate) capacity_reservation_resource_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
-        /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
+        /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p> 
+        /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p> 
         /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
-        pub fn usage_strategy(
-            mut self,
-            input: crate::model::OnDemandCapacityReservationUsageStrategy,
-        ) -> Self {
+        pub fn usage_strategy(mut self, input: crate::model::OnDemandCapacityReservationUsageStrategy) -> Self {
             self.usage_strategy = Some(input);
             self
         }
-        /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
-        /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
+        /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p> 
+        /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p> 
         /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
-        pub fn set_usage_strategy(
-            mut self,
-            input: std::option::Option<crate::model::OnDemandCapacityReservationUsageStrategy>,
-        ) -> Self {
-            self.usage_strategy = input;
-            self
+        pub fn set_usage_strategy(mut self, input: std::option::Option<crate::model::OnDemandCapacityReservationUsageStrategy>) -> Self {
+            self.usage_strategy = input; self
         }
-        /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
-        /// <ul>
-        /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
-        /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
+        /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li> 
+        /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li> 
         /// </ul>
-        pub fn capacity_reservation_preference(
-            mut self,
-            input: crate::model::OnDemandCapacityReservationPreference,
-        ) -> Self {
+        pub fn capacity_reservation_preference(mut self, input: crate::model::OnDemandCapacityReservationPreference) -> Self {
             self.capacity_reservation_preference = Some(input);
             self
         }
-        /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
-        /// <ul>
-        /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
-        /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
+        /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li> 
+        /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li> 
         /// </ul>
-        pub fn set_capacity_reservation_preference(
-            mut self,
-            input: std::option::Option<crate::model::OnDemandCapacityReservationPreference>,
-        ) -> Self {
-            self.capacity_reservation_preference = input;
-            self
+        pub fn set_capacity_reservation_preference(mut self, input: std::option::Option<crate::model::OnDemandCapacityReservationPreference>) -> Self {
+            self.capacity_reservation_preference = input; self
         }
         /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
-        pub fn capacity_reservation_resource_group_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn capacity_reservation_resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.capacity_reservation_resource_group_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
-        pub fn set_capacity_reservation_resource_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capacity_reservation_resource_group_arn = input;
-            self
+        pub fn set_capacity_reservation_resource_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capacity_reservation_resource_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`OnDemandCapacityReservationOptions`](crate::model::OnDemandCapacityReservationOptions).
         pub fn build(self) -> crate::model::OnDemandCapacityReservationOptions {
             crate::model::OnDemandCapacityReservationOptions {
-                usage_strategy: self.usage_strategy,
-                capacity_reservation_preference: self.capacity_reservation_preference,
-                capacity_reservation_resource_group_arn: self
-                    .capacity_reservation_resource_group_arn,
+                usage_strategy: self.usage_strategy
+                ,
+                capacity_reservation_preference: self.capacity_reservation_preference
+                ,
+                capacity_reservation_resource_group_arn: self.capacity_reservation_resource_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl OnDemandCapacityReservationOptions {
     /// Creates a new builder-style object to manufacture [`OnDemandCapacityReservationOptions`](crate::model::OnDemandCapacityReservationOptions).
@@ -3238,9 +2961,9 @@ impl OnDemandCapacityReservationOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ondemandcapacityreservationpreference = unimplemented!();
 /// match ondemandcapacityreservationpreference {
@@ -3262,60 +2985,52 @@ impl OnDemandCapacityReservationOptions {
 /// Specifically, when `ondemandcapacityreservationpreference` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OnDemandCapacityReservationPreference::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OnDemandCapacityReservationPreference {
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Open,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OnDemandCapacityReservationPreference {
     fn from(s: &str) -> Self {
         match s {
             "none" => OnDemandCapacityReservationPreference::None,
             "open" => OnDemandCapacityReservationPreference::Open,
-            other => OnDemandCapacityReservationPreference::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => OnDemandCapacityReservationPreference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OnDemandCapacityReservationPreference {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OnDemandCapacityReservationPreference::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OnDemandCapacityReservationPreference::from(s))
+                }
+            }
 impl OnDemandCapacityReservationPreference {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OnDemandCapacityReservationPreference::None => "none",
             OnDemandCapacityReservationPreference::Open => "open",
-            OnDemandCapacityReservationPreference::Unknown(value) => value.as_str(),
+            OnDemandCapacityReservationPreference::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["none", "open"]
+        &[
+            "none", "open"
+        ]
     }
 }
 impl AsRef<str> for OnDemandCapacityReservationPreference {
@@ -3330,9 +3045,9 @@ impl AsRef<str> for OnDemandCapacityReservationPreference {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ondemandcapacityreservationusagestrategy = unimplemented!();
 /// match ondemandcapacityreservationusagestrategy {
@@ -3353,60 +3068,48 @@ impl AsRef<str> for OnDemandCapacityReservationPreference {
 /// Specifically, when `ondemandcapacityreservationusagestrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OnDemandCapacityReservationUsageStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OnDemandCapacityReservationUsageStrategy {
     #[allow(missing_docs)] // documentation missing in model
     UseCapacityReservationsFirst,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OnDemandCapacityReservationUsageStrategy {
     fn from(s: &str) -> Self {
         match s {
-            "use-capacity-reservations-first" => {
-                OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst
-            }
-            other => OnDemandCapacityReservationUsageStrategy::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "use-capacity-reservations-first" => OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst,
+            other => OnDemandCapacityReservationUsageStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OnDemandCapacityReservationUsageStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OnDemandCapacityReservationUsageStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OnDemandCapacityReservationUsageStrategy::from(s))
+                }
+            }
 impl OnDemandCapacityReservationUsageStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst => {
-                "use-capacity-reservations-first"
-            }
-            OnDemandCapacityReservationUsageStrategy::Unknown(value) => value.as_str(),
+            OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst => "use-capacity-reservations-first",
+            OnDemandCapacityReservationUsageStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["use-capacity-reservations-first"]
+        &[
+            "use-capacity-reservations-first"
+        ]
     }
 }
 impl AsRef<str> for OnDemandCapacityReservationUsageStrategy {
@@ -3421,9 +3124,9 @@ impl AsRef<str> for OnDemandCapacityReservationUsageStrategy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ondemandprovisioningallocationstrategy = unimplemented!();
 /// match ondemandprovisioningallocationstrategy {
@@ -3444,56 +3147,48 @@ impl AsRef<str> for OnDemandCapacityReservationUsageStrategy {
 /// Specifically, when `ondemandprovisioningallocationstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OnDemandProvisioningAllocationStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OnDemandProvisioningAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     LowestPrice,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OnDemandProvisioningAllocationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "lowest-price" => OnDemandProvisioningAllocationStrategy::LowestPrice,
-            other => OnDemandProvisioningAllocationStrategy::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => OnDemandProvisioningAllocationStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OnDemandProvisioningAllocationStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OnDemandProvisioningAllocationStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OnDemandProvisioningAllocationStrategy::from(s))
+                }
+            }
 impl OnDemandProvisioningAllocationStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OnDemandProvisioningAllocationStrategy::LowestPrice => "lowest-price",
-            OnDemandProvisioningAllocationStrategy::Unknown(value) => value.as_str(),
+            OnDemandProvisioningAllocationStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["lowest-price"]
+        &[
+            "lowest-price"
+        ]
     }
 }
 impl AsRef<str> for OnDemandProvisioningAllocationStrategy {
@@ -3502,22 +3197,22 @@ impl AsRef<str> for OnDemandProvisioningAllocationStrategy {
     }
 }
 
-/// <p>The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
-/// </note> <note>
-/// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+/// <p>The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.</p> 
+/// </note> <note> 
+/// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpotProvisioningSpecification {
+pub struct SpotProvisioningSpecification  {
     /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
     #[doc(hidden)]
     pub timeout_duration_minutes: std::option::Option<i32>,
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
     #[doc(hidden)]
     pub timeout_action: std::option::Option<crate::model::SpotProvisioningTimeoutAction>,
-    /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
-    /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+    /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note> 
+    /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> 
     /// </note>
     #[doc(hidden)]
     pub block_duration_minutes: std::option::Option<i32>,
@@ -3531,35 +3226,30 @@ impl SpotProvisioningSpecification {
         self.timeout_duration_minutes
     }
     /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
-    pub fn timeout_action(
-        &self,
-    ) -> std::option::Option<&crate::model::SpotProvisioningTimeoutAction> {
+    pub fn timeout_action(&self) -> std::option::Option<& crate::model::SpotProvisioningTimeoutAction> {
         self.timeout_action.as_ref()
     }
-    /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
-    /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+    /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note> 
+    /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> 
     /// </note>
     pub fn block_duration_minutes(&self) -> std::option::Option<i32> {
         self.block_duration_minutes
     }
     /// <p> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching. </p>
-    pub fn allocation_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::SpotProvisioningAllocationStrategy> {
+    pub fn allocation_strategy(&self) -> std::option::Option<& crate::model::SpotProvisioningAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
 }
 /// See [`SpotProvisioningSpecification`](crate::model::SpotProvisioningSpecification).
 pub mod spot_provisioning_specification {
-
+    
     /// A builder for [`SpotProvisioningSpecification`](crate::model::SpotProvisioningSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_duration_minutes: std::option::Option<i32>,
         pub(crate) timeout_action: std::option::Option<crate::model::SpotProvisioningTimeoutAction>,
         pub(crate) block_duration_minutes: std::option::Option<i32>,
-        pub(crate) allocation_strategy:
-            std::option::Option<crate::model::SpotProvisioningAllocationStrategy>,
+        pub(crate) allocation_strategy: std::option::Option<crate::model::SpotProvisioningAllocationStrategy>,
     }
     impl Builder {
         /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
@@ -3569,65 +3259,55 @@ pub mod spot_provisioning_specification {
         }
         /// <p>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</p>
         pub fn set_timeout_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_duration_minutes = input;
-            self
+            self.timeout_duration_minutes = input; self
         }
         /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
-        pub fn timeout_action(
-            mut self,
-            input: crate::model::SpotProvisioningTimeoutAction,
-        ) -> Self {
+        pub fn timeout_action(mut self, input: crate::model::SpotProvisioningTimeoutAction) -> Self {
             self.timeout_action = Some(input);
             self
         }
         /// <p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>
-        pub fn set_timeout_action(
-            mut self,
-            input: std::option::Option<crate::model::SpotProvisioningTimeoutAction>,
-        ) -> Self {
-            self.timeout_action = input;
-            self
+        pub fn set_timeout_action(mut self, input: std::option::Option<crate::model::SpotProvisioningTimeoutAction>) -> Self {
+            self.timeout_action = input; self
         }
-        /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
-        /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+        /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note> 
+        /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> 
         /// </note>
         pub fn block_duration_minutes(mut self, input: i32) -> Self {
             self.block_duration_minutes = Some(input);
             self
         }
-        /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note>
-        /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p>
+        /// <p>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which gives the instance a two-minute warning before it terminates. </p> <note> 
+        /// <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> 
         /// </note>
         pub fn set_block_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_duration_minutes = input;
-            self
+            self.block_duration_minutes = input; self
         }
         /// <p> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching. </p>
-        pub fn allocation_strategy(
-            mut self,
-            input: crate::model::SpotProvisioningAllocationStrategy,
-        ) -> Self {
+        pub fn allocation_strategy(mut self, input: crate::model::SpotProvisioningAllocationStrategy) -> Self {
             self.allocation_strategy = Some(input);
             self
         }
         /// <p> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching. </p>
-        pub fn set_allocation_strategy(
-            mut self,
-            input: std::option::Option<crate::model::SpotProvisioningAllocationStrategy>,
-        ) -> Self {
-            self.allocation_strategy = input;
-            self
+        pub fn set_allocation_strategy(mut self, input: std::option::Option<crate::model::SpotProvisioningAllocationStrategy>) -> Self {
+            self.allocation_strategy = input; self
         }
         /// Consumes the builder and constructs a [`SpotProvisioningSpecification`](crate::model::SpotProvisioningSpecification).
         pub fn build(self) -> crate::model::SpotProvisioningSpecification {
             crate::model::SpotProvisioningSpecification {
-                timeout_duration_minutes: self.timeout_duration_minutes,
-                timeout_action: self.timeout_action,
-                block_duration_minutes: self.block_duration_minutes,
-                allocation_strategy: self.allocation_strategy,
+                timeout_duration_minutes: self.timeout_duration_minutes
+                ,
+                timeout_action: self.timeout_action
+                ,
+                block_duration_minutes: self.block_duration_minutes
+                ,
+                allocation_strategy: self.allocation_strategy
+                ,
             }
         }
     }
+    
+    
 }
 impl SpotProvisioningSpecification {
     /// Creates a new builder-style object to manufacture [`SpotProvisioningSpecification`](crate::model::SpotProvisioningSpecification).
@@ -3642,9 +3322,9 @@ impl SpotProvisioningSpecification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let spotprovisioningallocationstrategy = unimplemented!();
 /// match spotprovisioningallocationstrategy {
@@ -3665,56 +3345,48 @@ impl SpotProvisioningSpecification {
 /// Specifically, when `spotprovisioningallocationstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SpotProvisioningAllocationStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SpotProvisioningAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     CapacityOptimized,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SpotProvisioningAllocationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "capacity-optimized" => SpotProvisioningAllocationStrategy::CapacityOptimized,
-            other => SpotProvisioningAllocationStrategy::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => SpotProvisioningAllocationStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SpotProvisioningAllocationStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpotProvisioningAllocationStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SpotProvisioningAllocationStrategy::from(s))
+                }
+            }
 impl SpotProvisioningAllocationStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SpotProvisioningAllocationStrategy::CapacityOptimized => "capacity-optimized",
-            SpotProvisioningAllocationStrategy::Unknown(value) => value.as_str(),
+            SpotProvisioningAllocationStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["capacity-optimized"]
+        &[
+            "capacity-optimized"
+        ]
     }
 }
 impl AsRef<str> for SpotProvisioningAllocationStrategy {
@@ -3729,9 +3401,9 @@ impl AsRef<str> for SpotProvisioningAllocationStrategy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let spotprovisioningtimeoutaction = unimplemented!();
 /// match spotprovisioningtimeoutaction {
@@ -3753,60 +3425,52 @@ impl AsRef<str> for SpotProvisioningAllocationStrategy {
 /// Specifically, when `spotprovisioningtimeoutaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SpotProvisioningTimeoutAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SpotProvisioningTimeoutAction {
     #[allow(missing_docs)] // documentation missing in model
     SwitchToOnDemand,
     #[allow(missing_docs)] // documentation missing in model
     TerminateCluster,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SpotProvisioningTimeoutAction {
     fn from(s: &str) -> Self {
         match s {
             "SWITCH_TO_ON_DEMAND" => SpotProvisioningTimeoutAction::SwitchToOnDemand,
             "TERMINATE_CLUSTER" => SpotProvisioningTimeoutAction::TerminateCluster,
-            other => SpotProvisioningTimeoutAction::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SpotProvisioningTimeoutAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SpotProvisioningTimeoutAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpotProvisioningTimeoutAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SpotProvisioningTimeoutAction::from(s))
+                }
+            }
 impl SpotProvisioningTimeoutAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SpotProvisioningTimeoutAction::SwitchToOnDemand => "SWITCH_TO_ON_DEMAND",
             SpotProvisioningTimeoutAction::TerminateCluster => "TERMINATE_CLUSTER",
-            SpotProvisioningTimeoutAction::Unknown(value) => value.as_str(),
+            SpotProvisioningTimeoutAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SWITCH_TO_ON_DEMAND", "TERMINATE_CLUSTER"]
+        &[
+            "SWITCH_TO_ON_DEMAND", "TERMINATE_CLUSTER"
+        ]
     }
 }
 impl AsRef<str> for SpotProvisioningTimeoutAction {
@@ -3815,12 +3479,12 @@ impl AsRef<str> for SpotProvisioningTimeoutAction {
     }
 }
 
-/// <p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. When you use an allocation strategy, you can include a maximum of 30 instance type configurations for a fleet. For more information about how to use an allocation strategy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure Instance Fleets</a>. Without an allocation strategy, you may specify a maximum of five instance type configurations for a fleet.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. When you use an allocation strategy, you can include a maximum of 30 instance type configurations for a fleet. For more information about how to use an allocation strategy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure Instance Fleets</a>. Without an allocation strategy, you may specify a maximum of five instance type configurations for a fleet.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceTypeConfig {
+pub struct InstanceTypeConfig  {
     /// <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
@@ -3845,7 +3509,7 @@ pub struct InstanceTypeConfig {
 }
 impl InstanceTypeConfig {
     /// <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
@@ -3853,7 +3517,7 @@ impl InstanceTypeConfig {
         self.weighted_capacity
     }
     /// <p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
-    pub fn bid_price(&self) -> std::option::Option<&str> {
+    pub fn bid_price(&self) -> std::option::Option<& str> {
         self.bid_price.as_deref()
     }
     /// <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
@@ -3861,21 +3525,21 @@ impl InstanceTypeConfig {
         self.bid_price_as_percentage_of_on_demand_price
     }
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
-    pub fn ebs_configuration(&self) -> std::option::Option<&crate::model::EbsConfiguration> {
+    pub fn ebs_configuration(&self) -> std::option::Option<& crate::model::EbsConfiguration> {
         self.ebs_configuration.as_ref()
     }
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>The custom AMI ID to use for the instance type.</p>
-    pub fn custom_ami_id(&self) -> std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> std::option::Option<& str> {
         self.custom_ami_id.as_deref()
     }
 }
 /// See [`InstanceTypeConfig`](crate::model::InstanceTypeConfig).
 pub mod instance_type_config {
-
+    
     /// A builder for [`InstanceTypeConfig`](crate::model::InstanceTypeConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3894,12 +3558,8 @@ pub mod instance_type_config {
             self
         }
         /// <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
         pub fn weighted_capacity(mut self, input: i32) -> Self {
@@ -3908,8 +3568,7 @@ pub mod instance_type_config {
         }
         /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. This value is 1 for a master instance fleet, and must be 1 or greater for core and task instance fleets. Defaults to 1 if not specified. </p>
         pub fn set_weighted_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.weighted_capacity = input;
-            self
+            self.weighted_capacity = input; self
         }
         /// <p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
         pub fn bid_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3918,8 +3577,7 @@ pub mod instance_type_config {
         }
         /// <p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
         pub fn set_bid_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bid_price = input;
-            self
+            self.bid_price = input; self
         }
         /// <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
         pub fn bid_price_as_percentage_of_on_demand_price(mut self, input: f64) -> Self {
@@ -3927,12 +3585,8 @@ pub mod instance_type_config {
             self
         }
         /// <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
-        pub fn set_bid_price_as_percentage_of_on_demand_price(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.bid_price_as_percentage_of_on_demand_price = input;
-            self
+        pub fn set_bid_price_as_percentage_of_on_demand_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.bid_price_as_percentage_of_on_demand_price = input; self
         }
         /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
         pub fn ebs_configuration(mut self, input: crate::model::EbsConfiguration) -> Self {
@@ -3940,12 +3594,8 @@ pub mod instance_type_config {
             self
         }
         /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
-        pub fn set_ebs_configuration(
-            mut self,
-            input: std::option::Option<crate::model::EbsConfiguration>,
-        ) -> Self {
-            self.ebs_configuration = input;
-            self
+        pub fn set_ebs_configuration(mut self, input: std::option::Option<crate::model::EbsConfiguration>) -> Self {
+            self.ebs_configuration = input; self
         }
         /// Appends an item to `configurations`.
         ///
@@ -3954,17 +3604,13 @@ pub mod instance_type_config {
         /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
         /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// <p>The custom AMI ID to use for the instance type.</p>
         pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3972,27 +3618,31 @@ pub mod instance_type_config {
             self
         }
         /// <p>The custom AMI ID to use for the instance type.</p>
-        pub fn set_custom_ami_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_ami_id = input;
-            self
+        pub fn set_custom_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_ami_id = input; self
         }
         /// Consumes the builder and constructs a [`InstanceTypeConfig`](crate::model::InstanceTypeConfig).
         pub fn build(self) -> crate::model::InstanceTypeConfig {
             crate::model::InstanceTypeConfig {
-                instance_type: self.instance_type,
-                weighted_capacity: self.weighted_capacity,
-                bid_price: self.bid_price,
-                bid_price_as_percentage_of_on_demand_price: self
-                    .bid_price_as_percentage_of_on_demand_price,
-                ebs_configuration: self.ebs_configuration,
-                configurations: self.configurations,
-                custom_ami_id: self.custom_ami_id,
+                instance_type: self.instance_type
+                ,
+                weighted_capacity: self.weighted_capacity
+                ,
+                bid_price: self.bid_price
+                ,
+                bid_price_as_percentage_of_on_demand_price: self.bid_price_as_percentage_of_on_demand_price
+                ,
+                ebs_configuration: self.ebs_configuration
+                ,
+                configurations: self.configurations
+                ,
+                custom_ami_id: self.custom_ami_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceTypeConfig {
     /// Creates a new builder-style object to manufacture [`InstanceTypeConfig`](crate::model::InstanceTypeConfig).
@@ -4004,20 +3654,17 @@ impl InstanceTypeConfig {
 /// <p>The Amazon EBS configuration of a cluster instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsConfiguration {
+pub struct EbsConfiguration  {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
     #[doc(hidden)]
-    pub ebs_block_device_configs:
-        std::option::Option<std::vec::Vec<crate::model::EbsBlockDeviceConfig>>,
+    pub ebs_block_device_configs: std::option::Option<std::vec::Vec<crate::model::EbsBlockDeviceConfig>>,
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
 }
 impl EbsConfiguration {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    pub fn ebs_block_device_configs(
-        &self,
-    ) -> std::option::Option<&[crate::model::EbsBlockDeviceConfig]> {
+    pub fn ebs_block_device_configs(&self) -> std::option::Option<& [crate::model::EbsBlockDeviceConfig]> {
         self.ebs_block_device_configs.as_deref()
     }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
@@ -4027,12 +3674,11 @@ impl EbsConfiguration {
 }
 /// See [`EbsConfiguration`](crate::model::EbsConfiguration).
 pub mod ebs_configuration {
-
+    
     /// A builder for [`EbsConfiguration`](crate::model::EbsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ebs_block_device_configs:
-            std::option::Option<std::vec::Vec<crate::model::EbsBlockDeviceConfig>>,
+        pub(crate) ebs_block_device_configs: std::option::Option<std::vec::Vec<crate::model::EbsBlockDeviceConfig>>,
         pub(crate) ebs_optimized: std::option::Option<bool>,
     }
     impl Builder {
@@ -4041,22 +3687,15 @@ pub mod ebs_configuration {
         /// To override the contents of this collection use [`set_ebs_block_device_configs`](Self::set_ebs_block_device_configs).
         ///
         /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-        pub fn ebs_block_device_configs(
-            mut self,
-            input: crate::model::EbsBlockDeviceConfig,
-        ) -> Self {
+        pub fn ebs_block_device_configs(mut self, input: crate::model::EbsBlockDeviceConfig) -> Self {
             let mut v = self.ebs_block_device_configs.unwrap_or_default();
-            v.push(input);
-            self.ebs_block_device_configs = Some(v);
-            self
+                            v.push(input);
+                            self.ebs_block_device_configs = Some(v);
+                            self
         }
         /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-        pub fn set_ebs_block_device_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EbsBlockDeviceConfig>>,
-        ) -> Self {
-            self.ebs_block_device_configs = input;
-            self
+        pub fn set_ebs_block_device_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::EbsBlockDeviceConfig>>) -> Self {
+            self.ebs_block_device_configs = input; self
         }
         /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
         pub fn ebs_optimized(mut self, input: bool) -> Self {
@@ -4065,17 +3704,20 @@ pub mod ebs_configuration {
         }
         /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
-            self.ebs_optimized = input;
-            self
+            self.ebs_optimized = input; self
         }
         /// Consumes the builder and constructs a [`EbsConfiguration`](crate::model::EbsConfiguration).
         pub fn build(self) -> crate::model::EbsConfiguration {
             crate::model::EbsConfiguration {
-                ebs_block_device_configs: self.ebs_block_device_configs,
-                ebs_optimized: self.ebs_optimized,
+                ebs_block_device_configs: self.ebs_block_device_configs
+                ,
+                ebs_optimized: self.ebs_optimized
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsConfiguration {
     /// Creates a new builder-style object to manufacture [`EbsConfiguration`](crate::model::EbsConfiguration).
@@ -4087,7 +3729,7 @@ impl EbsConfiguration {
 /// <p>Configuration of requested EBS block device associated with the instance group with count of volumes that are associated to every instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsBlockDeviceConfig {
+pub struct EbsBlockDeviceConfig  {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
     #[doc(hidden)]
     pub volume_specification: std::option::Option<crate::model::VolumeSpecification>,
@@ -4097,7 +3739,7 @@ pub struct EbsBlockDeviceConfig {
 }
 impl EbsBlockDeviceConfig {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
-    pub fn volume_specification(&self) -> std::option::Option<&crate::model::VolumeSpecification> {
+    pub fn volume_specification(&self) -> std::option::Option<& crate::model::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
@@ -4107,7 +3749,7 @@ impl EbsBlockDeviceConfig {
 }
 /// See [`EbsBlockDeviceConfig`](crate::model::EbsBlockDeviceConfig).
 pub mod ebs_block_device_config {
-
+    
     /// A builder for [`EbsBlockDeviceConfig`](crate::model::EbsBlockDeviceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4121,12 +3763,8 @@ pub mod ebs_block_device_config {
             self
         }
         /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
-        pub fn set_volume_specification(
-            mut self,
-            input: std::option::Option<crate::model::VolumeSpecification>,
-        ) -> Self {
-            self.volume_specification = input;
-            self
+        pub fn set_volume_specification(mut self, input: std::option::Option<crate::model::VolumeSpecification>) -> Self {
+            self.volume_specification = input; self
         }
         /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
         pub fn volumes_per_instance(mut self, input: i32) -> Self {
@@ -4135,17 +3773,20 @@ pub mod ebs_block_device_config {
         }
         /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
         pub fn set_volumes_per_instance(mut self, input: std::option::Option<i32>) -> Self {
-            self.volumes_per_instance = input;
-            self
+            self.volumes_per_instance = input; self
         }
         /// Consumes the builder and constructs a [`EbsBlockDeviceConfig`](crate::model::EbsBlockDeviceConfig).
         pub fn build(self) -> crate::model::EbsBlockDeviceConfig {
             crate::model::EbsBlockDeviceConfig {
-                volume_specification: self.volume_specification,
-                volumes_per_instance: self.volumes_per_instance,
+                volume_specification: self.volume_specification
+                ,
+                volumes_per_instance: self.volumes_per_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsBlockDeviceConfig {
     /// Creates a new builder-style object to manufacture [`EbsBlockDeviceConfig`](crate::model::EbsBlockDeviceConfig).
@@ -4157,7 +3798,7 @@ impl EbsBlockDeviceConfig {
 /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeSpecification {
+pub struct VolumeSpecification  {
     /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
     #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
@@ -4173,7 +3814,7 @@ pub struct VolumeSpecification {
 }
 impl VolumeSpecification {
     /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
@@ -4191,7 +3832,7 @@ impl VolumeSpecification {
 }
 /// See [`VolumeSpecification`](crate::model::VolumeSpecification).
 pub mod volume_specification {
-
+    
     /// A builder for [`VolumeSpecification`](crate::model::VolumeSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4208,8 +3849,7 @@ pub mod volume_specification {
         }
         /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_type = input;
-            self
+            self.volume_type = input; self
         }
         /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
         pub fn iops(mut self, input: i32) -> Self {
@@ -4218,8 +3858,7 @@ pub mod volume_specification {
         }
         /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-            self.iops = input;
-            self
+            self.iops = input; self
         }
         /// <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.</p>
         pub fn size_in_gb(mut self, input: i32) -> Self {
@@ -4228,8 +3867,7 @@ pub mod volume_specification {
         }
         /// <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.</p>
         pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-            self.size_in_gb = input;
-            self
+            self.size_in_gb = input; self
         }
         /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
         pub fn throughput(mut self, input: i32) -> Self {
@@ -4238,19 +3876,24 @@ pub mod volume_specification {
         }
         /// <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
         pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
-            self.throughput = input;
-            self
+            self.throughput = input; self
         }
         /// Consumes the builder and constructs a [`VolumeSpecification`](crate::model::VolumeSpecification).
         pub fn build(self) -> crate::model::VolumeSpecification {
             crate::model::VolumeSpecification {
-                volume_type: self.volume_type,
-                iops: self.iops,
-                size_in_gb: self.size_in_gb,
-                throughput: self.throughput,
+                volume_type: self.volume_type
+                ,
+                iops: self.iops
+                ,
+                size_in_gb: self.size_in_gb
+                ,
+                throughput: self.throughput
+                ,
             }
         }
     }
+    
+    
 }
 impl VolumeSpecification {
     /// Creates a new builder-style object to manufacture [`VolumeSpecification`](crate::model::VolumeSpecification).
@@ -4265,9 +3908,9 @@ impl VolumeSpecification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancefleettype = unimplemented!();
 /// match instancefleettype {
@@ -4290,22 +3933,14 @@ impl VolumeSpecification {
 /// Specifically, when `instancefleettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceFleetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceFleetType {
     #[allow(missing_docs)] // documentation missing in model
     Core,
@@ -4314,7 +3949,7 @@ pub enum InstanceFleetType {
     #[allow(missing_docs)] // documentation missing in model
     Task,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceFleetType {
     fn from(s: &str) -> Self {
@@ -4322,19 +3957,17 @@ impl std::convert::From<&str> for InstanceFleetType {
             "CORE" => InstanceFleetType::Core,
             "MASTER" => InstanceFleetType::Master,
             "TASK" => InstanceFleetType::Task,
-            other => {
-                InstanceFleetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceFleetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceFleetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceFleetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceFleetType::from(s))
+                }
+            }
 impl InstanceFleetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4342,12 +3975,14 @@ impl InstanceFleetType {
             InstanceFleetType::Core => "CORE",
             InstanceFleetType::Master => "MASTER",
             InstanceFleetType::Task => "TASK",
-            InstanceFleetType::Unknown(value) => value.as_str(),
+            InstanceFleetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CORE", "MASTER", "TASK"]
+        &[
+            "CORE", "MASTER", "TASK"
+        ]
     }
 }
 impl AsRef<str> for InstanceFleetType {
@@ -4359,7 +3994,7 @@ impl AsRef<str> for InstanceFleetType {
 /// <p>Configuration defining a new instance group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroupConfig {
+pub struct InstanceGroupConfig  {
     /// <p>Friendly name given to the instance group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4378,9 +4013,9 @@ pub struct InstanceGroupConfig {
     /// <p>Target number of instances for the instance group.</p>
     #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
-    /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
-    /// </note>
+    /// <note> 
+    /// <p>Amazon EMR releases 4.x or later.</p> 
+    /// </note> 
     /// <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -4396,52 +4031,52 @@ pub struct InstanceGroupConfig {
 }
 impl InstanceGroupConfig {
     /// <p>Friendly name given to the instance group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Market type of the EC2 instances used to create a cluster node.</p>
-    pub fn market(&self) -> std::option::Option<&crate::model::MarketType> {
+    pub fn market(&self) -> std::option::Option<& crate::model::MarketType> {
         self.market.as_ref()
     }
     /// <p>The role of the instance group in the cluster.</p>
-    pub fn instance_role(&self) -> std::option::Option<&crate::model::InstanceRoleType> {
+    pub fn instance_role(&self) -> std::option::Option<& crate::model::InstanceRoleType> {
         self.instance_role.as_ref()
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    pub fn bid_price(&self) -> std::option::Option<&str> {
+    pub fn bid_price(&self) -> std::option::Option<& str> {
         self.bid_price.as_deref()
     }
     /// <p>The EC2 instance type for all instances in the instance group.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>Target number of instances for the instance group.</p>
     pub fn instance_count(&self) -> std::option::Option<i32> {
         self.instance_count
     }
-    /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
-    /// </note>
+    /// <note> 
+    /// <p>Amazon EMR releases 4.x or later.</p> 
+    /// </note> 
     /// <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>EBS configurations that will be attached to each EC2 instance in the instance group.</p>
-    pub fn ebs_configuration(&self) -> std::option::Option<&crate::model::EbsConfiguration> {
+    pub fn ebs_configuration(&self) -> std::option::Option<& crate::model::EbsConfiguration> {
         self.ebs_configuration.as_ref()
     }
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
-    pub fn auto_scaling_policy(&self) -> std::option::Option<&crate::model::AutoScalingPolicy> {
+    pub fn auto_scaling_policy(&self) -> std::option::Option<& crate::model::AutoScalingPolicy> {
         self.auto_scaling_policy.as_ref()
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn custom_ami_id(&self) -> std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> std::option::Option<& str> {
         self.custom_ami_id.as_deref()
     }
 }
 /// See [`InstanceGroupConfig`](crate::model::InstanceGroupConfig).
 pub mod instance_group_config {
-
+    
     /// A builder for [`InstanceGroupConfig`](crate::model::InstanceGroupConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4464,8 +4099,7 @@ pub mod instance_group_config {
         }
         /// <p>Friendly name given to the instance group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Market type of the EC2 instances used to create a cluster node.</p>
         pub fn market(mut self, input: crate::model::MarketType) -> Self {
@@ -4474,8 +4108,7 @@ pub mod instance_group_config {
         }
         /// <p>Market type of the EC2 instances used to create a cluster node.</p>
         pub fn set_market(mut self, input: std::option::Option<crate::model::MarketType>) -> Self {
-            self.market = input;
-            self
+            self.market = input; self
         }
         /// <p>The role of the instance group in the cluster.</p>
         pub fn instance_role(mut self, input: crate::model::InstanceRoleType) -> Self {
@@ -4483,12 +4116,8 @@ pub mod instance_group_config {
             self
         }
         /// <p>The role of the instance group in the cluster.</p>
-        pub fn set_instance_role(
-            mut self,
-            input: std::option::Option<crate::model::InstanceRoleType>,
-        ) -> Self {
-            self.instance_role = input;
-            self
+        pub fn set_instance_role(mut self, input: std::option::Option<crate::model::InstanceRoleType>) -> Self {
+            self.instance_role = input; self
         }
         /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
         pub fn bid_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4497,8 +4126,7 @@ pub mod instance_group_config {
         }
         /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
         pub fn set_bid_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bid_price = input;
-            self
+            self.bid_price = input; self
         }
         /// <p>The EC2 instance type for all instances in the instance group.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4506,12 +4134,8 @@ pub mod instance_group_config {
             self
         }
         /// <p>The EC2 instance type for all instances in the instance group.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>Target number of instances for the instance group.</p>
         pub fn instance_count(mut self, input: i32) -> Self {
@@ -4520,33 +4144,28 @@ pub mod instance_group_config {
         }
         /// <p>Target number of instances for the instance group.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
+            self.instance_count = input; self
         }
         /// Appends an item to `configurations`.
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
-        /// <note>
-        /// <p>Amazon EMR releases 4.x or later.</p>
-        /// </note>
+        /// <note> 
+        /// <p>Amazon EMR releases 4.x or later.</p> 
+        /// </note> 
         /// <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
-        /// <note>
-        /// <p>Amazon EMR releases 4.x or later.</p>
-        /// </note>
+        /// <note> 
+        /// <p>Amazon EMR releases 4.x or later.</p> 
+        /// </note> 
         /// <p>The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// <p>EBS configurations that will be attached to each EC2 instance in the instance group.</p>
         pub fn ebs_configuration(mut self, input: crate::model::EbsConfiguration) -> Self {
@@ -4554,12 +4173,8 @@ pub mod instance_group_config {
             self
         }
         /// <p>EBS configurations that will be attached to each EC2 instance in the instance group.</p>
-        pub fn set_ebs_configuration(
-            mut self,
-            input: std::option::Option<crate::model::EbsConfiguration>,
-        ) -> Self {
-            self.ebs_configuration = input;
-            self
+        pub fn set_ebs_configuration(mut self, input: std::option::Option<crate::model::EbsConfiguration>) -> Self {
+            self.ebs_configuration = input; self
         }
         /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
         pub fn auto_scaling_policy(mut self, input: crate::model::AutoScalingPolicy) -> Self {
@@ -4567,12 +4182,8 @@ pub mod instance_group_config {
             self
         }
         /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
-        pub fn set_auto_scaling_policy(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingPolicy>,
-        ) -> Self {
-            self.auto_scaling_policy = input;
-            self
+        pub fn set_auto_scaling_policy(mut self, input: std::option::Option<crate::model::AutoScalingPolicy>) -> Self {
+            self.auto_scaling_policy = input; self
         }
         /// <p>The custom AMI ID to use for the provisioned instance group.</p>
         pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4580,29 +4191,37 @@ pub mod instance_group_config {
             self
         }
         /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-        pub fn set_custom_ami_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_ami_id = input;
-            self
+        pub fn set_custom_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_ami_id = input; self
         }
         /// Consumes the builder and constructs a [`InstanceGroupConfig`](crate::model::InstanceGroupConfig).
         pub fn build(self) -> crate::model::InstanceGroupConfig {
             crate::model::InstanceGroupConfig {
-                name: self.name,
-                market: self.market,
-                instance_role: self.instance_role,
-                bid_price: self.bid_price,
-                instance_type: self.instance_type,
-                instance_count: self.instance_count,
-                configurations: self.configurations,
-                ebs_configuration: self.ebs_configuration,
-                auto_scaling_policy: self.auto_scaling_policy,
-                custom_ami_id: self.custom_ami_id,
+                name: self.name
+                ,
+                market: self.market
+                ,
+                instance_role: self.instance_role
+                ,
+                bid_price: self.bid_price
+                ,
+                instance_type: self.instance_type
+                ,
+                instance_count: self.instance_count
+                ,
+                configurations: self.configurations
+                ,
+                ebs_configuration: self.ebs_configuration
+                ,
+                auto_scaling_policy: self.auto_scaling_policy
+                ,
+                custom_ami_id: self.custom_ami_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceGroupConfig {
     /// Creates a new builder-style object to manufacture [`InstanceGroupConfig`](crate::model::InstanceGroupConfig).
@@ -4614,7 +4233,7 @@ impl InstanceGroupConfig {
 /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingPolicy {
+pub struct AutoScalingPolicy  {
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
     #[doc(hidden)]
     pub constraints: std::option::Option<crate::model::ScalingConstraints>,
@@ -4624,17 +4243,17 @@ pub struct AutoScalingPolicy {
 }
 impl AutoScalingPolicy {
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
-    pub fn constraints(&self) -> std::option::Option<&crate::model::ScalingConstraints> {
+    pub fn constraints(&self) -> std::option::Option<& crate::model::ScalingConstraints> {
         self.constraints.as_ref()
     }
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::ScalingRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::ScalingRule]> {
         self.rules.as_deref()
     }
 }
 /// See [`AutoScalingPolicy`](crate::model::AutoScalingPolicy).
 pub mod auto_scaling_policy {
-
+    
     /// A builder for [`AutoScalingPolicy`](crate::model::AutoScalingPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4648,12 +4267,8 @@ pub mod auto_scaling_policy {
             self
         }
         /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
-        pub fn set_constraints(
-            mut self,
-            input: std::option::Option<crate::model::ScalingConstraints>,
-        ) -> Self {
-            self.constraints = input;
-            self
+        pub fn set_constraints(mut self, input: std::option::Option<crate::model::ScalingConstraints>) -> Self {
+            self.constraints = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -4662,26 +4277,26 @@ pub mod auto_scaling_policy {
         /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
         pub fn rules(mut self, input: crate::model::ScalingRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalingRule>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`AutoScalingPolicy`](crate::model::AutoScalingPolicy).
         pub fn build(self) -> crate::model::AutoScalingPolicy {
             crate::model::AutoScalingPolicy {
-                constraints: self.constraints,
-                rules: self.rules,
+                constraints: self.constraints
+                ,
+                rules: self.rules
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoScalingPolicy {
     /// Creates a new builder-style object to manufacture [`AutoScalingPolicy`](crate::model::AutoScalingPolicy).
@@ -4693,7 +4308,7 @@ impl AutoScalingPolicy {
 /// <p>A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScalingRule {
+pub struct ScalingRule  {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4709,25 +4324,25 @@ pub struct ScalingRule {
 }
 impl ScalingRule {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The conditions that trigger an automatic scaling activity.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ScalingAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ScalingAction> {
         self.action.as_ref()
     }
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
-    pub fn trigger(&self) -> std::option::Option<&crate::model::ScalingTrigger> {
+    pub fn trigger(&self) -> std::option::Option<& crate::model::ScalingTrigger> {
         self.trigger.as_ref()
     }
 }
 /// See [`ScalingRule`](crate::model::ScalingRule).
 pub mod scaling_rule {
-
+    
     /// A builder for [`ScalingRule`](crate::model::ScalingRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4744,8 +4359,7 @@ pub mod scaling_rule {
         }
         /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4754,8 +4368,7 @@ pub mod scaling_rule {
         }
         /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The conditions that trigger an automatic scaling activity.</p>
         pub fn action(mut self, input: crate::model::ScalingAction) -> Self {
@@ -4763,12 +4376,8 @@ pub mod scaling_rule {
             self
         }
         /// <p>The conditions that trigger an automatic scaling activity.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ScalingAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ScalingAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
         pub fn trigger(mut self, input: crate::model::ScalingTrigger) -> Self {
@@ -4776,23 +4385,25 @@ pub mod scaling_rule {
             self
         }
         /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
-        pub fn set_trigger(
-            mut self,
-            input: std::option::Option<crate::model::ScalingTrigger>,
-        ) -> Self {
-            self.trigger = input;
-            self
+        pub fn set_trigger(mut self, input: std::option::Option<crate::model::ScalingTrigger>) -> Self {
+            self.trigger = input; self
         }
         /// Consumes the builder and constructs a [`ScalingRule`](crate::model::ScalingRule).
         pub fn build(self) -> crate::model::ScalingRule {
             crate::model::ScalingRule {
-                name: self.name,
-                description: self.description,
-                action: self.action,
-                trigger: self.trigger,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                action: self.action
+                ,
+                trigger: self.trigger
+                ,
             }
         }
     }
+    
+    
 }
 impl ScalingRule {
     /// Creates a new builder-style object to manufacture [`ScalingRule`](crate::model::ScalingRule).
@@ -4804,52 +4415,45 @@ impl ScalingRule {
 /// <p>The conditions that trigger an automatic scaling activity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScalingTrigger {
+pub struct ScalingTrigger  {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
     #[doc(hidden)]
     pub cloud_watch_alarm_definition: std::option::Option<crate::model::CloudWatchAlarmDefinition>,
 }
 impl ScalingTrigger {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-    pub fn cloud_watch_alarm_definition(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchAlarmDefinition> {
+    pub fn cloud_watch_alarm_definition(&self) -> std::option::Option<& crate::model::CloudWatchAlarmDefinition> {
         self.cloud_watch_alarm_definition.as_ref()
     }
 }
 /// See [`ScalingTrigger`](crate::model::ScalingTrigger).
 pub mod scaling_trigger {
-
+    
     /// A builder for [`ScalingTrigger`](crate::model::ScalingTrigger).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_alarm_definition:
-            std::option::Option<crate::model::CloudWatchAlarmDefinition>,
+        pub(crate) cloud_watch_alarm_definition: std::option::Option<crate::model::CloudWatchAlarmDefinition>,
     }
     impl Builder {
         /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-        pub fn cloud_watch_alarm_definition(
-            mut self,
-            input: crate::model::CloudWatchAlarmDefinition,
-        ) -> Self {
+        pub fn cloud_watch_alarm_definition(mut self, input: crate::model::CloudWatchAlarmDefinition) -> Self {
             self.cloud_watch_alarm_definition = Some(input);
             self
         }
         /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-        pub fn set_cloud_watch_alarm_definition(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchAlarmDefinition>,
-        ) -> Self {
-            self.cloud_watch_alarm_definition = input;
-            self
+        pub fn set_cloud_watch_alarm_definition(mut self, input: std::option::Option<crate::model::CloudWatchAlarmDefinition>) -> Self {
+            self.cloud_watch_alarm_definition = input; self
         }
         /// Consumes the builder and constructs a [`ScalingTrigger`](crate::model::ScalingTrigger).
         pub fn build(self) -> crate::model::ScalingTrigger {
             crate::model::ScalingTrigger {
-                cloud_watch_alarm_definition: self.cloud_watch_alarm_definition,
+                cloud_watch_alarm_definition: self.cloud_watch_alarm_definition
+                ,
             }
         }
     }
+    
+    
 }
 impl ScalingTrigger {
     /// Creates a new builder-style object to manufacture [`ScalingTrigger`](crate::model::ScalingTrigger).
@@ -4861,7 +4465,7 @@ impl ScalingTrigger {
 /// <p>The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchAlarmDefinition {
+pub struct CloudWatchAlarmDefinition  {
     /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
     #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
@@ -4892,7 +4496,7 @@ pub struct CloudWatchAlarmDefinition {
 }
 impl CloudWatchAlarmDefinition {
     /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <code>1</code>.</p>
@@ -4900,11 +4504,11 @@ impl CloudWatchAlarmDefinition {
         self.evaluation_periods
     }
     /// <p>The name of the CloudWatch metric that is watched to determine an alarm condition.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.</p>
@@ -4912,7 +4516,7 @@ impl CloudWatchAlarmDefinition {
         self.period
     }
     /// <p>The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::model::Statistic> {
+    pub fn statistic(&self) -> std::option::Option<& crate::model::Statistic> {
         self.statistic.as_ref()
     }
     /// <p>The value against which the specified statistic is compared.</p>
@@ -4920,17 +4524,17 @@ impl CloudWatchAlarmDefinition {
         self.threshold
     }
     /// <p>The unit of measure associated with the CloudWatch metric being watched. The value specified for <code>Unit</code> must correspond to the units specified in the CloudWatch metric.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::Unit> {
         self.unit.as_ref()
     }
     /// <p>A CloudWatch metric dimension.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::MetricDimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::MetricDimension]> {
         self.dimensions.as_deref()
     }
 }
 /// See [`CloudWatchAlarmDefinition`](crate::model::CloudWatchAlarmDefinition).
 pub mod cloud_watch_alarm_definition {
-
+    
     /// A builder for [`CloudWatchAlarmDefinition`](crate::model::CloudWatchAlarmDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4951,12 +4555,8 @@ pub mod cloud_watch_alarm_definition {
             self
         }
         /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.comparison_operator = input; self
         }
         /// <p>The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <code>1</code>.</p>
         pub fn evaluation_periods(mut self, input: i32) -> Self {
@@ -4965,8 +4565,7 @@ pub mod cloud_watch_alarm_definition {
         }
         /// <p>The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <code>1</code>.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
-            self.evaluation_periods = input;
-            self
+            self.evaluation_periods = input; self
         }
         /// <p>The name of the CloudWatch metric that is watched to determine an alarm condition.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4975,8 +4574,7 @@ pub mod cloud_watch_alarm_definition {
         }
         /// <p>The name of the CloudWatch metric that is watched to determine an alarm condition.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4985,8 +4583,7 @@ pub mod cloud_watch_alarm_definition {
         }
         /// <p>The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.</p>
         pub fn period(mut self, input: i32) -> Self {
@@ -4995,8 +4592,7 @@ pub mod cloud_watch_alarm_definition {
         }
         /// <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
         /// <p>The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.</p>
         pub fn statistic(mut self, input: crate::model::Statistic) -> Self {
@@ -5004,12 +4600,8 @@ pub mod cloud_watch_alarm_definition {
             self
         }
         /// <p>The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.</p>
-        pub fn set_statistic(
-            mut self,
-            input: std::option::Option<crate::model::Statistic>,
-        ) -> Self {
-            self.statistic = input;
-            self
+        pub fn set_statistic(mut self, input: std::option::Option<crate::model::Statistic>) -> Self {
+            self.statistic = input; self
         }
         /// <p>The value against which the specified statistic is compared.</p>
         pub fn threshold(mut self, input: f64) -> Self {
@@ -5018,8 +4610,7 @@ pub mod cloud_watch_alarm_definition {
         }
         /// <p>The value against which the specified statistic is compared.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
-            self.threshold = input;
-            self
+            self.threshold = input; self
         }
         /// <p>The unit of measure associated with the CloudWatch metric being watched. The value specified for <code>Unit</code> must correspond to the units specified in the CloudWatch metric.</p>
         pub fn unit(mut self, input: crate::model::Unit) -> Self {
@@ -5028,8 +4619,7 @@ pub mod cloud_watch_alarm_definition {
         }
         /// <p>The unit of measure associated with the CloudWatch metric being watched. The value specified for <code>Unit</code> must correspond to the units specified in the CloudWatch metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::Unit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -5038,33 +4628,40 @@ pub mod cloud_watch_alarm_definition {
         /// <p>A CloudWatch metric dimension.</p>
         pub fn dimensions(mut self, input: crate::model::MetricDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>A CloudWatch metric dimension.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>) -> Self {
+            self.dimensions = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchAlarmDefinition`](crate::model::CloudWatchAlarmDefinition).
         pub fn build(self) -> crate::model::CloudWatchAlarmDefinition {
             crate::model::CloudWatchAlarmDefinition {
-                comparison_operator: self.comparison_operator,
-                evaluation_periods: self.evaluation_periods,
-                metric_name: self.metric_name,
-                namespace: self.namespace,
-                period: self.period,
-                statistic: self.statistic,
-                threshold: self.threshold,
-                unit: self.unit,
-                dimensions: self.dimensions,
+                comparison_operator: self.comparison_operator
+                ,
+                evaluation_periods: self.evaluation_periods
+                ,
+                metric_name: self.metric_name
+                ,
+                namespace: self.namespace
+                ,
+                period: self.period
+                ,
+                statistic: self.statistic
+                ,
+                threshold: self.threshold
+                ,
+                unit: self.unit
+                ,
+                dimensions: self.dimensions
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchAlarmDefinition {
     /// Creates a new builder-style object to manufacture [`CloudWatchAlarmDefinition`](crate::model::CloudWatchAlarmDefinition).
@@ -5076,7 +4673,7 @@ impl CloudWatchAlarmDefinition {
 /// <p>A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricDimension {
+pub struct MetricDimension  {
     /// <p>The dimension name.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -5086,17 +4683,17 @@ pub struct MetricDimension {
 }
 impl MetricDimension {
     /// <p>The dimension name.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The dimension value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
-
+    
     /// A builder for [`MetricDimension`](crate::model::MetricDimension).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5111,8 +4708,7 @@ pub mod metric_dimension {
         }
         /// <p>The dimension name.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The dimension value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5121,17 +4717,20 @@ pub mod metric_dimension {
         }
         /// <p>The dimension value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`MetricDimension`](crate::model::MetricDimension).
         pub fn build(self) -> crate::model::MetricDimension {
             crate::model::MetricDimension {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricDimension {
     /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
@@ -5146,9 +4745,9 @@ impl MetricDimension {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let unit = unimplemented!();
 /// match unit {
@@ -5195,22 +4794,14 @@ impl MetricDimension {
 /// Specifically, when `unit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Unit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Unit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -5267,7 +4858,7 @@ pub enum Unit {
     #[allow(missing_docs)] // documentation missing in model
     TeraBytesPerSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Unit {
     fn from(s: &str) -> Self {
@@ -5299,17 +4890,17 @@ impl std::convert::From<&str> for Unit {
             "TERA_BITS_PER_SECOND" => Unit::TeraBitsPerSecond,
             "TERA_BYTES" => Unit::TeraBytes,
             "TERA_BYTES_PER_SECOND" => Unit::TeraBytesPerSecond,
-            other => Unit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Unit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Unit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Unit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Unit::from(s))
+                }
+            }
 impl Unit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5341,39 +4932,13 @@ impl Unit {
             Unit::TeraBitsPerSecond => "TERA_BITS_PER_SECOND",
             Unit::TeraBytes => "TERA_BYTES",
             Unit::TeraBytesPerSecond => "TERA_BYTES_PER_SECOND",
-            Unit::Unknown(value) => value.as_str(),
+            Unit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BITS",
-            "BITS_PER_SECOND",
-            "BYTES",
-            "BYTES_PER_SECOND",
-            "COUNT",
-            "COUNT_PER_SECOND",
-            "GIGA_BITS",
-            "GIGA_BITS_PER_SECOND",
-            "GIGA_BYTES",
-            "GIGA_BYTES_PER_SECOND",
-            "KILO_BITS",
-            "KILO_BITS_PER_SECOND",
-            "KILO_BYTES",
-            "KILO_BYTES_PER_SECOND",
-            "MEGA_BITS",
-            "MEGA_BITS_PER_SECOND",
-            "MEGA_BYTES",
-            "MEGA_BYTES_PER_SECOND",
-            "MICRO_SECONDS",
-            "MILLI_SECONDS",
-            "NONE",
-            "PERCENT",
-            "SECONDS",
-            "TERA_BITS",
-            "TERA_BITS_PER_SECOND",
-            "TERA_BYTES",
-            "TERA_BYTES_PER_SECOND",
+            "BITS", "BITS_PER_SECOND", "BYTES", "BYTES_PER_SECOND", "COUNT", "COUNT_PER_SECOND", "GIGA_BITS", "GIGA_BITS_PER_SECOND", "GIGA_BYTES", "GIGA_BYTES_PER_SECOND", "KILO_BITS", "KILO_BITS_PER_SECOND", "KILO_BYTES", "KILO_BYTES_PER_SECOND", "MEGA_BITS", "MEGA_BITS_PER_SECOND", "MEGA_BYTES", "MEGA_BYTES_PER_SECOND", "MICRO_SECONDS", "MILLI_SECONDS", "NONE", "PERCENT", "SECONDS", "TERA_BITS", "TERA_BITS_PER_SECOND", "TERA_BYTES", "TERA_BYTES_PER_SECOND"
         ]
     }
 }
@@ -5389,9 +4954,9 @@ impl AsRef<str> for Unit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statistic = unimplemented!();
 /// match statistic {
@@ -5416,22 +4981,14 @@ impl AsRef<str> for Unit {
 /// Specifically, when `statistic` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Statistic::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Statistic {
     #[allow(missing_docs)] // documentation missing in model
     Average,
@@ -5444,7 +5001,7 @@ pub enum Statistic {
     #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Statistic {
     fn from(s: &str) -> Self {
@@ -5454,17 +5011,17 @@ impl std::convert::From<&str> for Statistic {
             "MINIMUM" => Statistic::Minimum,
             "SAMPLE_COUNT" => Statistic::SampleCount,
             "SUM" => Statistic::Sum,
-            other => Statistic::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Statistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Statistic {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Statistic::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Statistic::from(s))
+                }
+            }
 impl Statistic {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5474,12 +5031,14 @@ impl Statistic {
             Statistic::Minimum => "MINIMUM",
             Statistic::SampleCount => "SAMPLE_COUNT",
             Statistic::Sum => "SUM",
-            Statistic::Unknown(value) => value.as_str(),
+            Statistic::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVERAGE", "MAXIMUM", "MINIMUM", "SAMPLE_COUNT", "SUM"]
+        &[
+            "AVERAGE", "MAXIMUM", "MINIMUM", "SAMPLE_COUNT", "SUM"
+        ]
     }
 }
 impl AsRef<str> for Statistic {
@@ -5494,9 +5053,9 @@ impl AsRef<str> for Statistic {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
@@ -5520,22 +5079,14 @@ impl AsRef<str> for Statistic {
 /// Specifically, when `comparisonoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComparisonOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
@@ -5546,7 +5097,7 @@ pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
@@ -5555,19 +5106,17 @@ impl std::convert::From<&str> for ComparisonOperator {
             "GREATER_THAN_OR_EQUAL" => ComparisonOperator::GreaterThanOrEqual,
             "LESS_THAN" => ComparisonOperator::LessThan,
             "LESS_THAN_OR_EQUAL" => ComparisonOperator::LessThanOrEqual,
-            other => {
-                ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComparisonOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComparisonOperator::from(s))
+                }
+            }
 impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5576,16 +5125,13 @@ impl ComparisonOperator {
             ComparisonOperator::GreaterThanOrEqual => "GREATER_THAN_OR_EQUAL",
             ComparisonOperator::LessThan => "LESS_THAN",
             ComparisonOperator::LessThanOrEqual => "LESS_THAN_OR_EQUAL",
-            ComparisonOperator::Unknown(value) => value.as_str(),
+            ComparisonOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL",
+            "GREATER_THAN", "GREATER_THAN_OR_EQUAL", "LESS_THAN", "LESS_THAN_OR_EQUAL"
         ]
     }
 }
@@ -5598,36 +5144,32 @@ impl AsRef<str> for ComparisonOperator {
 /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScalingAction {
+pub struct ScalingAction  {
     /// <p>Not available for instance groups. Instance groups use the market type specified for the group.</p>
     #[doc(hidden)]
     pub market: std::option::Option<crate::model::MarketType>,
     /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
     #[doc(hidden)]
-    pub simple_scaling_policy_configuration:
-        std::option::Option<crate::model::SimpleScalingPolicyConfiguration>,
+    pub simple_scaling_policy_configuration: std::option::Option<crate::model::SimpleScalingPolicyConfiguration>,
 }
 impl ScalingAction {
     /// <p>Not available for instance groups. Instance groups use the market type specified for the group.</p>
-    pub fn market(&self) -> std::option::Option<&crate::model::MarketType> {
+    pub fn market(&self) -> std::option::Option<& crate::model::MarketType> {
         self.market.as_ref()
     }
     /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
-    pub fn simple_scaling_policy_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::SimpleScalingPolicyConfiguration> {
+    pub fn simple_scaling_policy_configuration(&self) -> std::option::Option<& crate::model::SimpleScalingPolicyConfiguration> {
         self.simple_scaling_policy_configuration.as_ref()
     }
 }
 /// See [`ScalingAction`](crate::model::ScalingAction).
 pub mod scaling_action {
-
+    
     /// A builder for [`ScalingAction`](crate::model::ScalingAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) market: std::option::Option<crate::model::MarketType>,
-        pub(crate) simple_scaling_policy_configuration:
-            std::option::Option<crate::model::SimpleScalingPolicyConfiguration>,
+        pub(crate) simple_scaling_policy_configuration: std::option::Option<crate::model::SimpleScalingPolicyConfiguration>,
     }
     impl Builder {
         /// <p>Not available for instance groups. Instance groups use the market type specified for the group.</p>
@@ -5637,33 +5179,29 @@ pub mod scaling_action {
         }
         /// <p>Not available for instance groups. Instance groups use the market type specified for the group.</p>
         pub fn set_market(mut self, input: std::option::Option<crate::model::MarketType>) -> Self {
-            self.market = input;
-            self
+            self.market = input; self
         }
         /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
-        pub fn simple_scaling_policy_configuration(
-            mut self,
-            input: crate::model::SimpleScalingPolicyConfiguration,
-        ) -> Self {
+        pub fn simple_scaling_policy_configuration(mut self, input: crate::model::SimpleScalingPolicyConfiguration) -> Self {
             self.simple_scaling_policy_configuration = Some(input);
             self
         }
         /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
-        pub fn set_simple_scaling_policy_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SimpleScalingPolicyConfiguration>,
-        ) -> Self {
-            self.simple_scaling_policy_configuration = input;
-            self
+        pub fn set_simple_scaling_policy_configuration(mut self, input: std::option::Option<crate::model::SimpleScalingPolicyConfiguration>) -> Self {
+            self.simple_scaling_policy_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ScalingAction`](crate::model::ScalingAction).
         pub fn build(self) -> crate::model::ScalingAction {
             crate::model::ScalingAction {
-                market: self.market,
-                simple_scaling_policy_configuration: self.simple_scaling_policy_configuration,
+                market: self.market
+                ,
+                simple_scaling_policy_configuration: self.simple_scaling_policy_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ScalingAction {
     /// Creates a new builder-style object to manufacture [`ScalingAction`](crate::model::ScalingAction).
@@ -5675,7 +5213,7 @@ impl ScalingAction {
 /// <p>An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimpleScalingPolicyConfiguration {
+pub struct SimpleScalingPolicyConfiguration  {
     /// <p>The way in which EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
     #[doc(hidden)]
     pub adjustment_type: std::option::Option<crate::model::AdjustmentType>,
@@ -5688,7 +5226,7 @@ pub struct SimpleScalingPolicyConfiguration {
 }
 impl SimpleScalingPolicyConfiguration {
     /// <p>The way in which EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
-    pub fn adjustment_type(&self) -> std::option::Option<&crate::model::AdjustmentType> {
+    pub fn adjustment_type(&self) -> std::option::Option<& crate::model::AdjustmentType> {
         self.adjustment_type.as_ref()
     }
     /// <p>The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A positive value adds to the instance group's EC2 instance count while a negative number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.</p>
@@ -5702,7 +5240,7 @@ impl SimpleScalingPolicyConfiguration {
 }
 /// See [`SimpleScalingPolicyConfiguration`](crate::model::SimpleScalingPolicyConfiguration).
 pub mod simple_scaling_policy_configuration {
-
+    
     /// A builder for [`SimpleScalingPolicyConfiguration`](crate::model::SimpleScalingPolicyConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5717,12 +5255,8 @@ pub mod simple_scaling_policy_configuration {
             self
         }
         /// <p>The way in which EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
-        pub fn set_adjustment_type(
-            mut self,
-            input: std::option::Option<crate::model::AdjustmentType>,
-        ) -> Self {
-            self.adjustment_type = input;
-            self
+        pub fn set_adjustment_type(mut self, input: std::option::Option<crate::model::AdjustmentType>) -> Self {
+            self.adjustment_type = input; self
         }
         /// <p>The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A positive value adds to the instance group's EC2 instance count while a negative number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.</p>
         pub fn scaling_adjustment(mut self, input: i32) -> Self {
@@ -5731,8 +5265,7 @@ pub mod simple_scaling_policy_configuration {
         }
         /// <p>The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A positive value adds to the instance group's EC2 instance count while a negative number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.</p>
         pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
-            self.scaling_adjustment = input;
-            self
+            self.scaling_adjustment = input; self
         }
         /// <p>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. The default value is 0.</p>
         pub fn cool_down(mut self, input: i32) -> Self {
@@ -5741,18 +5274,22 @@ pub mod simple_scaling_policy_configuration {
         }
         /// <p>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. The default value is 0.</p>
         pub fn set_cool_down(mut self, input: std::option::Option<i32>) -> Self {
-            self.cool_down = input;
-            self
+            self.cool_down = input; self
         }
         /// Consumes the builder and constructs a [`SimpleScalingPolicyConfiguration`](crate::model::SimpleScalingPolicyConfiguration).
         pub fn build(self) -> crate::model::SimpleScalingPolicyConfiguration {
             crate::model::SimpleScalingPolicyConfiguration {
-                adjustment_type: self.adjustment_type,
-                scaling_adjustment: self.scaling_adjustment,
-                cool_down: self.cool_down,
+                adjustment_type: self.adjustment_type
+                ,
+                scaling_adjustment: self.scaling_adjustment
+                ,
+                cool_down: self.cool_down
+                ,
             }
         }
     }
+    
+    
 }
 impl SimpleScalingPolicyConfiguration {
     /// Creates a new builder-style object to manufacture [`SimpleScalingPolicyConfiguration`](crate::model::SimpleScalingPolicyConfiguration).
@@ -5767,9 +5304,9 @@ impl SimpleScalingPolicyConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let adjustmenttype = unimplemented!();
 /// match adjustmenttype {
@@ -5792,22 +5329,14 @@ impl SimpleScalingPolicyConfiguration {
 /// Specifically, when `adjustmenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdjustmentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AdjustmentType {
     #[allow(missing_docs)] // documentation missing in model
     ChangeInCapacity,
@@ -5816,7 +5345,7 @@ pub enum AdjustmentType {
     #[allow(missing_docs)] // documentation missing in model
     PercentChangeInCapacity,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdjustmentType {
     fn from(s: &str) -> Self {
@@ -5824,17 +5353,17 @@ impl std::convert::From<&str> for AdjustmentType {
             "CHANGE_IN_CAPACITY" => AdjustmentType::ChangeInCapacity,
             "EXACT_CAPACITY" => AdjustmentType::ExactCapacity,
             "PERCENT_CHANGE_IN_CAPACITY" => AdjustmentType::PercentChangeInCapacity,
-            other => AdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AdjustmentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AdjustmentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdjustmentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AdjustmentType::from(s))
+                }
+            }
 impl AdjustmentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5842,15 +5371,13 @@ impl AdjustmentType {
             AdjustmentType::ChangeInCapacity => "CHANGE_IN_CAPACITY",
             AdjustmentType::ExactCapacity => "EXACT_CAPACITY",
             AdjustmentType::PercentChangeInCapacity => "PERCENT_CHANGE_IN_CAPACITY",
-            AdjustmentType::Unknown(value) => value.as_str(),
+            AdjustmentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CHANGE_IN_CAPACITY",
-            "EXACT_CAPACITY",
-            "PERCENT_CHANGE_IN_CAPACITY",
+            "CHANGE_IN_CAPACITY", "EXACT_CAPACITY", "PERCENT_CHANGE_IN_CAPACITY"
         ]
     }
 }
@@ -5866,9 +5393,9 @@ impl AsRef<str> for AdjustmentType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let markettype = unimplemented!();
 /// match markettype {
@@ -5890,58 +5417,52 @@ impl AsRef<str> for AdjustmentType {
 /// Specifically, when `markettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MarketType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MarketType {
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     #[allow(missing_docs)] // documentation missing in model
     Spot,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MarketType {
     fn from(s: &str) -> Self {
         match s {
             "ON_DEMAND" => MarketType::OnDemand,
             "SPOT" => MarketType::Spot,
-            other => MarketType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MarketType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MarketType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MarketType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MarketType::from(s))
+                }
+            }
 impl MarketType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MarketType::OnDemand => "ON_DEMAND",
             MarketType::Spot => "SPOT",
-            MarketType::Unknown(value) => value.as_str(),
+            MarketType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ON_DEMAND", "SPOT"]
+        &[
+            "ON_DEMAND", "SPOT"
+        ]
     }
 }
 impl AsRef<str> for MarketType {
@@ -5953,7 +5474,7 @@ impl AsRef<str> for MarketType {
 /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScalingConstraints {
+pub struct ScalingConstraints  {
     /// <p>The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to shrink. Scale-in activities will not terminate instances below this boundary.</p>
     #[doc(hidden)]
     pub min_capacity: std::option::Option<i32>,
@@ -5973,7 +5494,7 @@ impl ScalingConstraints {
 }
 /// See [`ScalingConstraints`](crate::model::ScalingConstraints).
 pub mod scaling_constraints {
-
+    
     /// A builder for [`ScalingConstraints`](crate::model::ScalingConstraints).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5988,8 +5509,7 @@ pub mod scaling_constraints {
         }
         /// <p>The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to shrink. Scale-in activities will not terminate instances below this boundary.</p>
         pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_capacity = input;
-            self
+            self.min_capacity = input; self
         }
         /// <p>The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow. Scale-out activities will not add instances beyond this boundary.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
@@ -5998,17 +5518,20 @@ pub mod scaling_constraints {
         }
         /// <p>The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow. Scale-out activities will not add instances beyond this boundary.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_capacity = input;
-            self
+            self.max_capacity = input; self
         }
         /// Consumes the builder and constructs a [`ScalingConstraints`](crate::model::ScalingConstraints).
         pub fn build(self) -> crate::model::ScalingConstraints {
             crate::model::ScalingConstraints {
-                min_capacity: self.min_capacity,
-                max_capacity: self.max_capacity,
+                min_capacity: self.min_capacity
+                ,
+                max_capacity: self.max_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl ScalingConstraints {
     /// Creates a new builder-style object to manufacture [`ScalingConstraints`](crate::model::ScalingConstraints).
@@ -6020,15 +5543,14 @@ impl ScalingConstraints {
 /// <p>A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlockPublicAccessConfiguration {
+pub struct BlockPublicAccessConfiguration  {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
     #[doc(hidden)]
     pub block_public_security_group_rules: bool,
-    /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
+    /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p> 
     /// <p>By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
     #[doc(hidden)]
-    pub permitted_public_security_group_rule_ranges:
-        std::option::Option<std::vec::Vec<crate::model::PortRange>>,
+    pub permitted_public_security_group_rule_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
     /// <p>The classification within a configuration.</p>
     #[doc(hidden)]
     pub classification: std::option::Option<std::string::String>,
@@ -6037,51 +5559,42 @@ pub struct BlockPublicAccessConfiguration {
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>A set of properties specified within a configuration classification.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl BlockPublicAccessConfiguration {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
     pub fn block_public_security_group_rules(&self) -> bool {
         self.block_public_security_group_rules
     }
-    /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
+    /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p> 
     /// <p>By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
-    pub fn permitted_public_security_group_rule_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::PortRange]> {
+    pub fn permitted_public_security_group_rule_ranges(&self) -> std::option::Option<& [crate::model::PortRange]> {
         self.permitted_public_security_group_rule_ranges.as_deref()
     }
     /// <p>The classification within a configuration.</p>
-    pub fn classification(&self) -> std::option::Option<&str> {
+    pub fn classification(&self) -> std::option::Option<& str> {
         self.classification.as_deref()
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
 }
 /// See [`BlockPublicAccessConfiguration`](crate::model::BlockPublicAccessConfiguration).
 pub mod block_public_access_configuration {
-
+    
     /// A builder for [`BlockPublicAccessConfiguration`](crate::model::BlockPublicAccessConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_public_security_group_rules: std::option::Option<bool>,
-        pub(crate) permitted_public_security_group_rule_ranges:
-            std::option::Option<std::vec::Vec<crate::model::PortRange>>,
+        pub(crate) permitted_public_security_group_rule_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
         pub(crate) classification: std::option::Option<std::string::String>,
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        pub(crate) properties: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
@@ -6090,38 +5603,25 @@ pub mod block_public_access_configuration {
             self
         }
         /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
-        pub fn set_block_public_security_group_rules(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.block_public_security_group_rules = input;
-            self
+        pub fn set_block_public_security_group_rules(mut self, input: std::option::Option<bool>) -> Self {
+            self.block_public_security_group_rules = input; self
         }
         /// Appends an item to `permitted_public_security_group_rule_ranges`.
         ///
         /// To override the contents of this collection use [`set_permitted_public_security_group_rule_ranges`](Self::set_permitted_public_security_group_rule_ranges).
         ///
-        /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
+        /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p> 
         /// <p>By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
-        pub fn permitted_public_security_group_rule_ranges(
-            mut self,
-            input: crate::model::PortRange,
-        ) -> Self {
-            let mut v = self
-                .permitted_public_security_group_rule_ranges
-                .unwrap_or_default();
-            v.push(input);
-            self.permitted_public_security_group_rule_ranges = Some(v);
-            self
+        pub fn permitted_public_security_group_rule_ranges(mut self, input: crate::model::PortRange) -> Self {
+            let mut v = self.permitted_public_security_group_rule_ranges.unwrap_or_default();
+                            v.push(input);
+                            self.permitted_public_security_group_rule_ranges = Some(v);
+                            self
         }
-        /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
+        /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p> 
         /// <p>By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
-        pub fn set_permitted_public_security_group_rule_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
-        ) -> Self {
-            self.permitted_public_security_group_rule_ranges = input;
-            self
+        pub fn set_permitted_public_security_group_rule_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::PortRange>>) -> Self {
+            self.permitted_public_security_group_rule_ranges = input; self
         }
         /// <p>The classification within a configuration.</p>
         pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6129,12 +5629,8 @@ pub mod block_public_access_configuration {
             self
         }
         /// <p>The classification within a configuration.</p>
-        pub fn set_classification(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.classification = input;
-            self
+        pub fn set_classification(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.classification = input; self
         }
         /// Appends an item to `configurations`.
         ///
@@ -6143,57 +5639,48 @@ pub mod block_public_access_configuration {
         /// <p>A list of additional configurations to apply within a configuration object.</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
         /// <p>A list of additional configurations to apply within a configuration object.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// Adds a key-value pair to `properties`.
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>A set of properties specified within a configuration classification.</p>
-        pub fn properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.properties = Some(hash_map);
+                            self
         }
         /// <p>A set of properties specified within a configuration classification.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`BlockPublicAccessConfiguration`](crate::model::BlockPublicAccessConfiguration).
         pub fn build(self) -> crate::model::BlockPublicAccessConfiguration {
             crate::model::BlockPublicAccessConfiguration {
-                block_public_security_group_rules: self
-                    .block_public_security_group_rules
-                    .unwrap_or_default(),
-                permitted_public_security_group_rule_ranges: self
-                    .permitted_public_security_group_rule_ranges,
-                classification: self.classification,
-                configurations: self.configurations,
-                properties: self.properties,
+                block_public_security_group_rules: self.block_public_security_group_rules
+                    .unwrap_or_default()
+                ,
+                permitted_public_security_group_rule_ranges: self.permitted_public_security_group_rule_ranges
+                ,
+                classification: self.classification
+                ,
+                configurations: self.configurations
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
+    
+    
 }
 impl BlockPublicAccessConfiguration {
     /// Creates a new builder-style object to manufacture [`BlockPublicAccessConfiguration`](crate::model::BlockPublicAccessConfiguration).
@@ -6205,7 +5692,7 @@ impl BlockPublicAccessConfiguration {
 /// <p>A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortRange {
+pub struct PortRange  {
     /// <p>The smallest port number in a specified range of port numbers.</p>
     #[doc(hidden)]
     pub min_range: std::option::Option<i32>,
@@ -6225,7 +5712,7 @@ impl PortRange {
 }
 /// See [`PortRange`](crate::model::PortRange).
 pub mod port_range {
-
+    
     /// A builder for [`PortRange`](crate::model::PortRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6240,8 +5727,7 @@ pub mod port_range {
         }
         /// <p>The smallest port number in a specified range of port numbers.</p>
         pub fn set_min_range(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_range = input;
-            self
+            self.min_range = input; self
         }
         /// <p>The smallest port number in a specified range of port numbers.</p>
         pub fn max_range(mut self, input: i32) -> Self {
@@ -6250,17 +5736,20 @@ pub mod port_range {
         }
         /// <p>The smallest port number in a specified range of port numbers.</p>
         pub fn set_max_range(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_range = input;
-            self
+            self.max_range = input; self
         }
         /// Consumes the builder and constructs a [`PortRange`](crate::model::PortRange).
         pub fn build(self) -> crate::model::PortRange {
             crate::model::PortRange {
-                min_range: self.min_range,
-                max_range: self.max_range,
+                min_range: self.min_range
+                ,
+                max_range: self.max_range
+                ,
             }
         }
     }
+    
+    
 }
 impl PortRange {
     /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange).
@@ -6272,7 +5761,7 @@ impl PortRange {
 /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingPolicyDescription {
+pub struct AutoScalingPolicyDescription  {
     /// <p>The status of an automatic scaling policy. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AutoScalingPolicyStatus>,
@@ -6285,21 +5774,21 @@ pub struct AutoScalingPolicyDescription {
 }
 impl AutoScalingPolicyDescription {
     /// <p>The status of an automatic scaling policy. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AutoScalingPolicyStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AutoScalingPolicyStatus> {
         self.status.as_ref()
     }
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
-    pub fn constraints(&self) -> std::option::Option<&crate::model::ScalingConstraints> {
+    pub fn constraints(&self) -> std::option::Option<& crate::model::ScalingConstraints> {
         self.constraints.as_ref()
     }
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::ScalingRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::ScalingRule]> {
         self.rules.as_deref()
     }
 }
 /// See [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
 pub mod auto_scaling_policy_description {
-
+    
     /// A builder for [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6314,12 +5803,8 @@ pub mod auto_scaling_policy_description {
             self
         }
         /// <p>The status of an automatic scaling policy. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingPolicyStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AutoScalingPolicyStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
         pub fn constraints(mut self, input: crate::model::ScalingConstraints) -> Self {
@@ -6327,12 +5812,8 @@ pub mod auto_scaling_policy_description {
             self
         }
         /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
-        pub fn set_constraints(
-            mut self,
-            input: std::option::Option<crate::model::ScalingConstraints>,
-        ) -> Self {
-            self.constraints = input;
-            self
+        pub fn set_constraints(mut self, input: std::option::Option<crate::model::ScalingConstraints>) -> Self {
+            self.constraints = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -6341,27 +5822,28 @@ pub mod auto_scaling_policy_description {
         /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
         pub fn rules(mut self, input: crate::model::ScalingRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalingRule>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
         pub fn build(self) -> crate::model::AutoScalingPolicyDescription {
             crate::model::AutoScalingPolicyDescription {
-                status: self.status,
-                constraints: self.constraints,
-                rules: self.rules,
+                status: self.status
+                ,
+                constraints: self.constraints
+                ,
+                rules: self.rules
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoScalingPolicyDescription {
     /// Creates a new builder-style object to manufacture [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
@@ -6373,7 +5855,7 @@ impl AutoScalingPolicyDescription {
 /// <p>The status of an automatic scaling policy. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingPolicyStatus {
+pub struct AutoScalingPolicyStatus  {
     /// <p>Indicates the status of the automatic scaling policy.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::AutoScalingPolicyState>,
@@ -6383,25 +5865,22 @@ pub struct AutoScalingPolicyStatus {
 }
 impl AutoScalingPolicyStatus {
     /// <p>Indicates the status of the automatic scaling policy.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::AutoScalingPolicyState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::AutoScalingPolicyState> {
         self.state.as_ref()
     }
     /// <p>The reason for a change in status.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> std::option::Option<&crate::model::AutoScalingPolicyStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::model::AutoScalingPolicyStateChangeReason> {
         self.state_change_reason.as_ref()
     }
 }
 /// See [`AutoScalingPolicyStatus`](crate::model::AutoScalingPolicyStatus).
 pub mod auto_scaling_policy_status {
-
+    
     /// A builder for [`AutoScalingPolicyStatus`](crate::model::AutoScalingPolicyStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::AutoScalingPolicyState>,
-        pub(crate) state_change_reason:
-            std::option::Option<crate::model::AutoScalingPolicyStateChangeReason>,
+        pub(crate) state_change_reason: std::option::Option<crate::model::AutoScalingPolicyStateChangeReason>,
     }
     impl Builder {
         /// <p>Indicates the status of the automatic scaling policy.</p>
@@ -6410,37 +5889,30 @@ pub mod auto_scaling_policy_status {
             self
         }
         /// <p>Indicates the status of the automatic scaling policy.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingPolicyState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::AutoScalingPolicyState>) -> Self {
+            self.state = input; self
         }
         /// <p>The reason for a change in status.</p>
-        pub fn state_change_reason(
-            mut self,
-            input: crate::model::AutoScalingPolicyStateChangeReason,
-        ) -> Self {
+        pub fn state_change_reason(mut self, input: crate::model::AutoScalingPolicyStateChangeReason) -> Self {
             self.state_change_reason = Some(input);
             self
         }
         /// <p>The reason for a change in status.</p>
-        pub fn set_state_change_reason(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingPolicyStateChangeReason>,
-        ) -> Self {
-            self.state_change_reason = input;
-            self
+        pub fn set_state_change_reason(mut self, input: std::option::Option<crate::model::AutoScalingPolicyStateChangeReason>) -> Self {
+            self.state_change_reason = input; self
         }
         /// Consumes the builder and constructs a [`AutoScalingPolicyStatus`](crate::model::AutoScalingPolicyStatus).
         pub fn build(self) -> crate::model::AutoScalingPolicyStatus {
             crate::model::AutoScalingPolicyStatus {
-                state: self.state,
-                state_change_reason: self.state_change_reason,
+                state: self.state
+                ,
+                state_change_reason: self.state_change_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoScalingPolicyStatus {
     /// Creates a new builder-style object to manufacture [`AutoScalingPolicyStatus`](crate::model::AutoScalingPolicyStatus).
@@ -6452,7 +5924,7 @@ impl AutoScalingPolicyStatus {
 /// <p>The reason for an <code>AutoScalingPolicyStatus</code> change.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingPolicyStateChangeReason {
+pub struct AutoScalingPolicyStateChangeReason  {
     /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::AutoScalingPolicyStateChangeReasonCode>,
@@ -6462,19 +5934,17 @@ pub struct AutoScalingPolicyStateChangeReason {
 }
 impl AutoScalingPolicyStateChangeReason {
     /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
-    pub fn code(
-        &self,
-    ) -> std::option::Option<&crate::model::AutoScalingPolicyStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::AutoScalingPolicyStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`AutoScalingPolicyStateChangeReason`](crate::model::AutoScalingPolicyStateChangeReason).
 pub mod auto_scaling_policy_state_change_reason {
-
+    
     /// A builder for [`AutoScalingPolicyStateChangeReason`](crate::model::AutoScalingPolicyStateChangeReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6488,12 +5958,8 @@ pub mod auto_scaling_policy_state_change_reason {
             self
         }
         /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingPolicyStateChangeReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::AutoScalingPolicyStateChangeReasonCode>) -> Self {
+            self.code = input; self
         }
         /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6502,17 +5968,20 @@ pub mod auto_scaling_policy_state_change_reason {
         }
         /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AutoScalingPolicyStateChangeReason`](crate::model::AutoScalingPolicyStateChangeReason).
         pub fn build(self) -> crate::model::AutoScalingPolicyStateChangeReason {
             crate::model::AutoScalingPolicyStateChangeReason {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoScalingPolicyStateChangeReason {
     /// Creates a new builder-style object to manufacture [`AutoScalingPolicyStateChangeReason`](crate::model::AutoScalingPolicyStateChangeReason).
@@ -6527,9 +5996,9 @@ impl AutoScalingPolicyStateChangeReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let autoscalingpolicystatechangereasoncode = unimplemented!();
 /// match autoscalingpolicystatechangereasoncode {
@@ -6552,22 +6021,14 @@ impl AutoScalingPolicyStateChangeReason {
 /// Specifically, when `autoscalingpolicystatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoScalingPolicyStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AutoScalingPolicyStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CleanupFailure,
@@ -6576,7 +6037,7 @@ pub enum AutoScalingPolicyStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     UserRequest,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AutoScalingPolicyStateChangeReasonCode {
     fn from(s: &str) -> Self {
@@ -6584,19 +6045,17 @@ impl std::convert::From<&str> for AutoScalingPolicyStateChangeReasonCode {
             "CLEANUP_FAILURE" => AutoScalingPolicyStateChangeReasonCode::CleanupFailure,
             "PROVISION_FAILURE" => AutoScalingPolicyStateChangeReasonCode::ProvisionFailure,
             "USER_REQUEST" => AutoScalingPolicyStateChangeReasonCode::UserRequest,
-            other => AutoScalingPolicyStateChangeReasonCode::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AutoScalingPolicyStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AutoScalingPolicyStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoScalingPolicyStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AutoScalingPolicyStateChangeReasonCode::from(s))
+                }
+            }
 impl AutoScalingPolicyStateChangeReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6604,12 +6063,14 @@ impl AutoScalingPolicyStateChangeReasonCode {
             AutoScalingPolicyStateChangeReasonCode::CleanupFailure => "CLEANUP_FAILURE",
             AutoScalingPolicyStateChangeReasonCode::ProvisionFailure => "PROVISION_FAILURE",
             AutoScalingPolicyStateChangeReasonCode::UserRequest => "USER_REQUEST",
-            AutoScalingPolicyStateChangeReasonCode::Unknown(value) => value.as_str(),
+            AutoScalingPolicyStateChangeReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLEANUP_FAILURE", "PROVISION_FAILURE", "USER_REQUEST"]
+        &[
+            "CLEANUP_FAILURE", "PROVISION_FAILURE", "USER_REQUEST"
+        ]
     }
 }
 impl AsRef<str> for AutoScalingPolicyStateChangeReasonCode {
@@ -6624,9 +6085,9 @@ impl AsRef<str> for AutoScalingPolicyStateChangeReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let autoscalingpolicystate = unimplemented!();
 /// match autoscalingpolicystate {
@@ -6652,22 +6113,14 @@ impl AsRef<str> for AutoScalingPolicyStateChangeReasonCode {
 /// Specifically, when `autoscalingpolicystate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoScalingPolicyState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AutoScalingPolicyState {
     #[allow(missing_docs)] // documentation missing in model
     Attached,
@@ -6682,7 +6135,7 @@ pub enum AutoScalingPolicyState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AutoScalingPolicyState {
     fn from(s: &str) -> Self {
@@ -6693,19 +6146,17 @@ impl std::convert::From<&str> for AutoScalingPolicyState {
             "DETACHING" => AutoScalingPolicyState::Detaching,
             "FAILED" => AutoScalingPolicyState::Failed,
             "PENDING" => AutoScalingPolicyState::Pending,
-            other => {
-                AutoScalingPolicyState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AutoScalingPolicyState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AutoScalingPolicyState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoScalingPolicyState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AutoScalingPolicyState::from(s))
+                }
+            }
 impl AutoScalingPolicyState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6716,18 +6167,13 @@ impl AutoScalingPolicyState {
             AutoScalingPolicyState::Detaching => "DETACHING",
             AutoScalingPolicyState::Failed => "FAILED",
             AutoScalingPolicyState::Pending => "PENDING",
-            AutoScalingPolicyState::Unknown(value) => value.as_str(),
+            AutoScalingPolicyState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ATTACHED",
-            "ATTACHING",
-            "DETACHED",
-            "DETACHING",
-            "FAILED",
-            "PENDING",
+            "ATTACHED", "ATTACHING", "DETACHED", "DETACHING", "FAILED", "PENDING"
         ]
     }
 }
@@ -6740,7 +6186,7 @@ impl AsRef<str> for AutoScalingPolicyState {
 /// <p>Modify the size or configurations of an instance group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroupModifyConfig {
+pub struct InstanceGroupModifyConfig  {
     /// <p>Unique ID of the instance group to modify.</p>
     #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
@@ -6762,7 +6208,7 @@ pub struct InstanceGroupModifyConfig {
 }
 impl InstanceGroupModifyConfig {
     /// <p>Unique ID of the instance group to modify.</p>
-    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+    pub fn instance_group_id(&self) -> std::option::Option<& str> {
         self.instance_group_id.as_deref()
     }
     /// <p>Target size for the instance group.</p>
@@ -6770,32 +6216,31 @@ impl InstanceGroupModifyConfig {
         self.instance_count
     }
     /// <p>The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
-    pub fn ec2_instance_ids_to_terminate(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ec2_instance_ids_to_terminate(&self) -> std::option::Option<& [std::string::String]> {
         self.ec2_instance_ids_to_terminate.as_deref()
     }
     /// <p>Policy for customizing shrink operations.</p>
-    pub fn shrink_policy(&self) -> std::option::Option<&crate::model::ShrinkPolicy> {
+    pub fn shrink_policy(&self) -> std::option::Option<& crate::model::ShrinkPolicy> {
         self.shrink_policy.as_ref()
     }
     /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
-    pub fn reconfiguration_type(&self) -> std::option::Option<&crate::model::ReconfigurationType> {
+    pub fn reconfiguration_type(&self) -> std::option::Option<& crate::model::ReconfigurationType> {
         self.reconfiguration_type.as_ref()
     }
     /// <p>A list of new or modified configurations to apply for an instance group.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
 }
 /// See [`InstanceGroupModifyConfig`](crate::model::InstanceGroupModifyConfig).
 pub mod instance_group_modify_config {
-
+    
     /// A builder for [`InstanceGroupModifyConfig`](crate::model::InstanceGroupModifyConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_group_id: std::option::Option<std::string::String>,
         pub(crate) instance_count: std::option::Option<i32>,
-        pub(crate) ec2_instance_ids_to_terminate:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) ec2_instance_ids_to_terminate: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) shrink_policy: std::option::Option<crate::model::ShrinkPolicy>,
         pub(crate) reconfiguration_type: std::option::Option<crate::model::ReconfigurationType>,
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -6807,12 +6252,8 @@ pub mod instance_group_modify_config {
             self
         }
         /// <p>Unique ID of the instance group to modify.</p>
-        pub fn set_instance_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_group_id = input;
-            self
+        pub fn set_instance_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_group_id = input; self
         }
         /// <p>Target size for the instance group.</p>
         pub fn instance_count(mut self, input: i32) -> Self {
@@ -6821,30 +6262,22 @@ pub mod instance_group_modify_config {
         }
         /// <p>Target size for the instance group.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
+            self.instance_count = input; self
         }
         /// Appends an item to `ec2_instance_ids_to_terminate`.
         ///
         /// To override the contents of this collection use [`set_ec2_instance_ids_to_terminate`](Self::set_ec2_instance_ids_to_terminate).
         ///
         /// <p>The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
-        pub fn ec2_instance_ids_to_terminate(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ec2_instance_ids_to_terminate(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_instance_ids_to_terminate.unwrap_or_default();
-            v.push(input.into());
-            self.ec2_instance_ids_to_terminate = Some(v);
-            self
+                            v.push(input.into());
+                            self.ec2_instance_ids_to_terminate = Some(v);
+                            self
         }
         /// <p>The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
-        pub fn set_ec2_instance_ids_to_terminate(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ec2_instance_ids_to_terminate = input;
-            self
+        pub fn set_ec2_instance_ids_to_terminate(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ec2_instance_ids_to_terminate = input; self
         }
         /// <p>Policy for customizing shrink operations.</p>
         pub fn shrink_policy(mut self, input: crate::model::ShrinkPolicy) -> Self {
@@ -6852,12 +6285,8 @@ pub mod instance_group_modify_config {
             self
         }
         /// <p>Policy for customizing shrink operations.</p>
-        pub fn set_shrink_policy(
-            mut self,
-            input: std::option::Option<crate::model::ShrinkPolicy>,
-        ) -> Self {
-            self.shrink_policy = input;
-            self
+        pub fn set_shrink_policy(mut self, input: std::option::Option<crate::model::ShrinkPolicy>) -> Self {
+            self.shrink_policy = input; self
         }
         /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
         pub fn reconfiguration_type(mut self, input: crate::model::ReconfigurationType) -> Self {
@@ -6865,12 +6294,8 @@ pub mod instance_group_modify_config {
             self
         }
         /// <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
-        pub fn set_reconfiguration_type(
-            mut self,
-            input: std::option::Option<crate::model::ReconfigurationType>,
-        ) -> Self {
-            self.reconfiguration_type = input;
-            self
+        pub fn set_reconfiguration_type(mut self, input: std::option::Option<crate::model::ReconfigurationType>) -> Self {
+            self.reconfiguration_type = input; self
         }
         /// Appends an item to `configurations`.
         ///
@@ -6879,30 +6304,34 @@ pub mod instance_group_modify_config {
         /// <p>A list of new or modified configurations to apply for an instance group.</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
         /// <p>A list of new or modified configurations to apply for an instance group.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// Consumes the builder and constructs a [`InstanceGroupModifyConfig`](crate::model::InstanceGroupModifyConfig).
         pub fn build(self) -> crate::model::InstanceGroupModifyConfig {
             crate::model::InstanceGroupModifyConfig {
-                instance_group_id: self.instance_group_id,
-                instance_count: self.instance_count,
-                ec2_instance_ids_to_terminate: self.ec2_instance_ids_to_terminate,
-                shrink_policy: self.shrink_policy,
-                reconfiguration_type: self.reconfiguration_type,
-                configurations: self.configurations,
+                instance_group_id: self.instance_group_id
+                ,
+                instance_count: self.instance_count
+                ,
+                ec2_instance_ids_to_terminate: self.ec2_instance_ids_to_terminate
+                ,
+                shrink_policy: self.shrink_policy
+                ,
+                reconfiguration_type: self.reconfiguration_type
+                ,
+                configurations: self.configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceGroupModifyConfig {
     /// Creates a new builder-style object to manufacture [`InstanceGroupModifyConfig`](crate::model::InstanceGroupModifyConfig).
@@ -6917,9 +6346,9 @@ impl InstanceGroupModifyConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reconfigurationtype = unimplemented!();
 /// match reconfigurationtype {
@@ -6941,60 +6370,52 @@ impl InstanceGroupModifyConfig {
 /// Specifically, when `reconfigurationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReconfigurationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReconfigurationType {
     #[allow(missing_docs)] // documentation missing in model
     Merge,
     #[allow(missing_docs)] // documentation missing in model
     Overwrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReconfigurationType {
     fn from(s: &str) -> Self {
         match s {
             "MERGE" => ReconfigurationType::Merge,
             "OVERWRITE" => ReconfigurationType::Overwrite,
-            other => {
-                ReconfigurationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReconfigurationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReconfigurationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReconfigurationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReconfigurationType::from(s))
+                }
+            }
 impl ReconfigurationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReconfigurationType::Merge => "MERGE",
             ReconfigurationType::Overwrite => "OVERWRITE",
-            ReconfigurationType::Unknown(value) => value.as_str(),
+            ReconfigurationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MERGE", "OVERWRITE"]
+        &[
+            "MERGE", "OVERWRITE"
+        ]
     }
 }
 impl AsRef<str> for ReconfigurationType {
@@ -7006,7 +6427,7 @@ impl AsRef<str> for ReconfigurationType {
 /// <p>Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShrinkPolicy {
+pub struct ShrinkPolicy  {
     /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
     #[doc(hidden)]
     pub decommission_timeout: std::option::Option<i32>,
@@ -7020,15 +6441,13 @@ impl ShrinkPolicy {
         self.decommission_timeout
     }
     /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
-    pub fn instance_resize_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceResizePolicy> {
+    pub fn instance_resize_policy(&self) -> std::option::Option<& crate::model::InstanceResizePolicy> {
         self.instance_resize_policy.as_ref()
     }
 }
 /// See [`ShrinkPolicy`](crate::model::ShrinkPolicy).
 pub mod shrink_policy {
-
+    
     /// A builder for [`ShrinkPolicy`](crate::model::ShrinkPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7043,8 +6462,7 @@ pub mod shrink_policy {
         }
         /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
         pub fn set_decommission_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.decommission_timeout = input;
-            self
+            self.decommission_timeout = input; self
         }
         /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
         pub fn instance_resize_policy(mut self, input: crate::model::InstanceResizePolicy) -> Self {
@@ -7052,21 +6470,21 @@ pub mod shrink_policy {
             self
         }
         /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
-        pub fn set_instance_resize_policy(
-            mut self,
-            input: std::option::Option<crate::model::InstanceResizePolicy>,
-        ) -> Self {
-            self.instance_resize_policy = input;
-            self
+        pub fn set_instance_resize_policy(mut self, input: std::option::Option<crate::model::InstanceResizePolicy>) -> Self {
+            self.instance_resize_policy = input; self
         }
         /// Consumes the builder and constructs a [`ShrinkPolicy`](crate::model::ShrinkPolicy).
         pub fn build(self) -> crate::model::ShrinkPolicy {
             crate::model::ShrinkPolicy {
-                decommission_timeout: self.decommission_timeout,
-                instance_resize_policy: self.instance_resize_policy,
+                decommission_timeout: self.decommission_timeout
+                ,
+                instance_resize_policy: self.instance_resize_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl ShrinkPolicy {
     /// Creates a new builder-style object to manufacture [`ShrinkPolicy`](crate::model::ShrinkPolicy).
@@ -7078,7 +6496,7 @@ impl ShrinkPolicy {
 /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceResizePolicy {
+pub struct InstanceResizePolicy  {
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
     #[doc(hidden)]
     pub instances_to_terminate: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7091,11 +6509,11 @@ pub struct InstanceResizePolicy {
 }
 impl InstanceResizePolicy {
     /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
-    pub fn instances_to_terminate(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instances_to_terminate(&self) -> std::option::Option<& [std::string::String]> {
         self.instances_to_terminate.as_deref()
     }
     /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
-    pub fn instances_to_protect(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instances_to_protect(&self) -> std::option::Option<& [std::string::String]> {
         self.instances_to_protect.as_deref()
     }
     /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
@@ -7105,7 +6523,7 @@ impl InstanceResizePolicy {
 }
 /// See [`InstanceResizePolicy`](crate::model::InstanceResizePolicy).
 pub mod instance_resize_policy {
-
+    
     /// A builder for [`InstanceResizePolicy`](crate::model::InstanceResizePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7121,17 +6539,13 @@ pub mod instance_resize_policy {
         /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
         pub fn instances_to_terminate(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instances_to_terminate.unwrap_or_default();
-            v.push(input.into());
-            self.instances_to_terminate = Some(v);
-            self
+                            v.push(input.into());
+                            self.instances_to_terminate = Some(v);
+                            self
         }
         /// <p>Specific list of instances to be terminated when shrinking an instance group.</p>
-        pub fn set_instances_to_terminate(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instances_to_terminate = input;
-            self
+        pub fn set_instances_to_terminate(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instances_to_terminate = input; self
         }
         /// Appends an item to `instances_to_protect`.
         ///
@@ -7140,17 +6554,13 @@ pub mod instance_resize_policy {
         /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
         pub fn instances_to_protect(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instances_to_protect.unwrap_or_default();
-            v.push(input.into());
-            self.instances_to_protect = Some(v);
-            self
+                            v.push(input.into());
+                            self.instances_to_protect = Some(v);
+                            self
         }
         /// <p>Specific list of instances to be protected when shrinking an instance group.</p>
-        pub fn set_instances_to_protect(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.instances_to_protect = input;
-            self
+        pub fn set_instances_to_protect(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.instances_to_protect = input; self
         }
         /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
         pub fn instance_termination_timeout(mut self, input: i32) -> Self {
@@ -7159,18 +6569,22 @@ pub mod instance_resize_policy {
         }
         /// <p>Decommissioning timeout override for the specific list of instances to be terminated.</p>
         pub fn set_instance_termination_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_termination_timeout = input;
-            self
+            self.instance_termination_timeout = input; self
         }
         /// Consumes the builder and constructs a [`InstanceResizePolicy`](crate::model::InstanceResizePolicy).
         pub fn build(self) -> crate::model::InstanceResizePolicy {
             crate::model::InstanceResizePolicy {
-                instances_to_terminate: self.instances_to_terminate,
-                instances_to_protect: self.instances_to_protect,
-                instance_termination_timeout: self.instance_termination_timeout,
+                instances_to_terminate: self.instances_to_terminate
+                ,
+                instances_to_protect: self.instances_to_protect
+                ,
+                instance_termination_timeout: self.instance_termination_timeout
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceResizePolicy {
     /// Creates a new builder-style object to manufacture [`InstanceResizePolicy`](crate::model::InstanceResizePolicy).
@@ -7179,12 +6593,12 @@ impl InstanceResizePolicy {
     }
 }
 
-/// <p>Configuration parameters for an instance fleet modification request.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>Configuration parameters for an instance fleet modification request.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceFleetModifyConfig {
+pub struct InstanceFleetModifyConfig  {
     /// <p>A unique identifier for the instance fleet.</p>
     #[doc(hidden)]
     pub instance_fleet_id: std::option::Option<std::string::String>,
@@ -7197,7 +6611,7 @@ pub struct InstanceFleetModifyConfig {
 }
 impl InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
-    pub fn instance_fleet_id(&self) -> std::option::Option<&str> {
+    pub fn instance_fleet_id(&self) -> std::option::Option<& str> {
         self.instance_fleet_id.as_deref()
     }
     /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
@@ -7211,7 +6625,7 @@ impl InstanceFleetModifyConfig {
 }
 /// See [`InstanceFleetModifyConfig`](crate::model::InstanceFleetModifyConfig).
 pub mod instance_fleet_modify_config {
-
+    
     /// A builder for [`InstanceFleetModifyConfig`](crate::model::InstanceFleetModifyConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7226,12 +6640,8 @@ pub mod instance_fleet_modify_config {
             self
         }
         /// <p>A unique identifier for the instance fleet.</p>
-        pub fn set_instance_fleet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_fleet_id = input;
-            self
+        pub fn set_instance_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_fleet_id = input; self
         }
         /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
         pub fn target_on_demand_capacity(mut self, input: i32) -> Self {
@@ -7240,8 +6650,7 @@ pub mod instance_fleet_modify_config {
         }
         /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
         pub fn set_target_on_demand_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_on_demand_capacity = input;
-            self
+            self.target_on_demand_capacity = input; self
         }
         /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
         pub fn target_spot_capacity(mut self, input: i32) -> Self {
@@ -7250,18 +6659,22 @@ pub mod instance_fleet_modify_config {
         }
         /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
         pub fn set_target_spot_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_spot_capacity = input;
-            self
+            self.target_spot_capacity = input; self
         }
         /// Consumes the builder and constructs a [`InstanceFleetModifyConfig`](crate::model::InstanceFleetModifyConfig).
         pub fn build(self) -> crate::model::InstanceFleetModifyConfig {
             crate::model::InstanceFleetModifyConfig {
-                instance_fleet_id: self.instance_fleet_id,
-                target_on_demand_capacity: self.target_on_demand_capacity,
-                target_spot_capacity: self.target_spot_capacity,
+                instance_fleet_id: self.instance_fleet_id
+                ,
+                target_on_demand_capacity: self.target_on_demand_capacity
+                ,
+                target_spot_capacity: self.target_spot_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceFleetModifyConfig {
     /// Creates a new builder-style object to manufacture [`InstanceFleetModifyConfig`](crate::model::InstanceFleetModifyConfig).
@@ -7273,7 +6686,7 @@ impl InstanceFleetModifyConfig {
 /// <p>Details for an Amazon EMR Studio session mapping. The details do not include the time the session mapping was last modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionMappingSummary {
+pub struct SessionMappingSummary  {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
@@ -7295,33 +6708,33 @@ pub struct SessionMappingSummary {
 }
 impl SessionMappingSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
-    pub fn identity_name(&self) -> std::option::Option<&str> {
+    pub fn identity_name(&self) -> std::option::Option<& str> {
         self.identity_name.as_deref()
     }
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<& crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
-    pub fn session_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn session_policy_arn(&self) -> std::option::Option<& str> {
         self.session_policy_arn.as_deref()
     }
     /// <p>The time the session mapping was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`SessionMappingSummary`](crate::model::SessionMappingSummary).
 pub mod session_mapping_summary {
-
+    
     /// A builder for [`SessionMappingSummary`](crate::model::SessionMappingSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7340,8 +6753,7 @@ pub mod session_mapping_summary {
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.studio_id = input;
-            self
+            self.studio_id = input; self
         }
         /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7350,8 +6762,7 @@ pub mod session_mapping_summary {
         }
         /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7359,12 +6770,8 @@ pub mod session_mapping_summary {
             self
         }
         /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
-        pub fn set_identity_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_name = input;
-            self
+        pub fn set_identity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_name = input; self
         }
         /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
@@ -7372,12 +6779,8 @@ pub mod session_mapping_summary {
             self
         }
         /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
-        pub fn set_identity_type(
-            mut self,
-            input: std::option::Option<crate::model::IdentityType>,
-        ) -> Self {
-            self.identity_type = input;
-            self
+        pub fn set_identity_type(mut self, input: std::option::Option<crate::model::IdentityType>) -> Self {
+            self.identity_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
         pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7385,12 +6788,8 @@ pub mod session_mapping_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
-        pub fn set_session_policy_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_policy_arn = input;
-            self
+        pub fn set_session_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_policy_arn = input; self
         }
         /// <p>The time the session mapping was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7398,25 +6797,29 @@ pub mod session_mapping_summary {
             self
         }
         /// <p>The time the session mapping was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`SessionMappingSummary`](crate::model::SessionMappingSummary).
         pub fn build(self) -> crate::model::SessionMappingSummary {
             crate::model::SessionMappingSummary {
-                studio_id: self.studio_id,
-                identity_id: self.identity_id,
-                identity_name: self.identity_name,
-                identity_type: self.identity_type,
-                session_policy_arn: self.session_policy_arn,
-                creation_time: self.creation_time,
+                studio_id: self.studio_id
+                ,
+                identity_id: self.identity_id
+                ,
+                identity_name: self.identity_name
+                ,
+                identity_type: self.identity_type
+                ,
+                session_policy_arn: self.session_policy_arn
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SessionMappingSummary {
     /// Creates a new builder-style object to manufacture [`SessionMappingSummary`](crate::model::SessionMappingSummary).
@@ -7428,7 +6831,7 @@ impl SessionMappingSummary {
 /// <p>Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. The details do not include subnets, IAM roles, security groups, or tags associated with the Studio.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StudioSummary {
+pub struct StudioSummary  {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
@@ -7453,37 +6856,37 @@ pub struct StudioSummary {
 }
 impl StudioSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The name of the Amazon EMR Studio.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
-    pub fn auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
+    pub fn auth_mode(&self) -> std::option::Option<& crate::model::AuthMode> {
         self.auth_mode.as_ref()
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`StudioSummary`](crate::model::StudioSummary).
 pub mod studio_summary {
-
+    
     /// A builder for [`StudioSummary`](crate::model::StudioSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7503,8 +6906,7 @@ pub mod studio_summary {
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.studio_id = input;
-            self
+            self.studio_id = input; self
         }
         /// <p>The name of the Amazon EMR Studio.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7513,8 +6915,7 @@ pub mod studio_summary {
         }
         /// <p>The name of the Amazon EMR Studio.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7523,8 +6924,7 @@ pub mod studio_summary {
         }
         /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The detailed description of the Amazon EMR Studio.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7533,8 +6933,7 @@ pub mod studio_summary {
         }
         /// <p>The detailed description of the Amazon EMR Studio.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique access URL of the Amazon EMR Studio.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7543,8 +6942,7 @@ pub mod studio_summary {
         }
         /// <p>The unique access URL of the Amazon EMR Studio.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
@@ -7553,8 +6951,7 @@ pub mod studio_summary {
         }
         /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn set_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
-            self.auth_mode = input;
-            self
+            self.auth_mode = input; self
         }
         /// <p>The time when the Amazon EMR Studio was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7562,26 +6959,31 @@ pub mod studio_summary {
             self
         }
         /// <p>The time when the Amazon EMR Studio was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`StudioSummary`](crate::model::StudioSummary).
         pub fn build(self) -> crate::model::StudioSummary {
             crate::model::StudioSummary {
-                studio_id: self.studio_id,
-                name: self.name,
-                vpc_id: self.vpc_id,
-                description: self.description,
-                url: self.url,
-                auth_mode: self.auth_mode,
-                creation_time: self.creation_time,
+                studio_id: self.studio_id
+                ,
+                name: self.name
+                ,
+                vpc_id: self.vpc_id
+                ,
+                description: self.description
+                ,
+                url: self.url
+                ,
+                auth_mode: self.auth_mode
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StudioSummary {
     /// Creates a new builder-style object to manufacture [`StudioSummary`](crate::model::StudioSummary).
@@ -7596,9 +6998,9 @@ impl StudioSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authmode = unimplemented!();
 /// match authmode {
@@ -7620,58 +7022,52 @@ impl StudioSummary {
 /// Specifically, when `authmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthMode {
     #[allow(missing_docs)] // documentation missing in model
     Iam,
     #[allow(missing_docs)] // documentation missing in model
     Sso,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthMode {
     fn from(s: &str) -> Self {
         match s {
             "IAM" => AuthMode::Iam,
             "SSO" => AuthMode::Sso,
-            other => AuthMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AuthMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthMode::from(s))
+                }
+            }
 impl AuthMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthMode::Iam => "IAM",
             AuthMode::Sso => "SSO",
-            AuthMode::Unknown(value) => value.as_str(),
+            AuthMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IAM", "SSO"]
+        &[
+            "IAM", "SSO"
+        ]
     }
 }
 impl AsRef<str> for AuthMode {
@@ -7683,7 +7079,7 @@ impl AsRef<str> for AuthMode {
 /// <p>The summary of the cluster step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepSummary {
+pub struct StepSummary  {
     /// <p>The identifier of the cluster step.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7702,29 +7098,29 @@ pub struct StepSummary {
 }
 impl StepSummary {
     /// <p>The identifier of the cluster step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the cluster step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Hadoop job configuration of the cluster step.</p>
-    pub fn config(&self) -> std::option::Option<&crate::model::HadoopStepConfig> {
+    pub fn config(&self) -> std::option::Option<& crate::model::HadoopStepConfig> {
         self.config.as_ref()
     }
     /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
-    pub fn action_on_failure(&self) -> std::option::Option<&crate::model::ActionOnFailure> {
+    pub fn action_on_failure(&self) -> std::option::Option<& crate::model::ActionOnFailure> {
         self.action_on_failure.as_ref()
     }
     /// <p>The current execution status details of the cluster step.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StepStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StepStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StepSummary`](crate::model::StepSummary).
 pub mod step_summary {
-
+    
     /// A builder for [`StepSummary`](crate::model::StepSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7742,8 +7138,7 @@ pub mod step_summary {
         }
         /// <p>The identifier of the cluster step.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the cluster step.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7752,8 +7147,7 @@ pub mod step_summary {
         }
         /// <p>The name of the cluster step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Hadoop job configuration of the cluster step.</p>
         pub fn config(mut self, input: crate::model::HadoopStepConfig) -> Self {
@@ -7761,12 +7155,8 @@ pub mod step_summary {
             self
         }
         /// <p>The Hadoop job configuration of the cluster step.</p>
-        pub fn set_config(
-            mut self,
-            input: std::option::Option<crate::model::HadoopStepConfig>,
-        ) -> Self {
-            self.config = input;
-            self
+        pub fn set_config(mut self, input: std::option::Option<crate::model::HadoopStepConfig>) -> Self {
+            self.config = input; self
         }
         /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
         pub fn action_on_failure(mut self, input: crate::model::ActionOnFailure) -> Self {
@@ -7774,12 +7164,8 @@ pub mod step_summary {
             self
         }
         /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
-        pub fn set_action_on_failure(
-            mut self,
-            input: std::option::Option<crate::model::ActionOnFailure>,
-        ) -> Self {
-            self.action_on_failure = input;
-            self
+        pub fn set_action_on_failure(mut self, input: std::option::Option<crate::model::ActionOnFailure>) -> Self {
+            self.action_on_failure = input; self
         }
         /// <p>The current execution status details of the cluster step.</p>
         pub fn status(mut self, input: crate::model::StepStatus) -> Self {
@@ -7788,20 +7174,26 @@ pub mod step_summary {
         }
         /// <p>The current execution status details of the cluster step.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StepStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StepSummary`](crate::model::StepSummary).
         pub fn build(self) -> crate::model::StepSummary {
             crate::model::StepSummary {
-                id: self.id,
-                name: self.name,
-                config: self.config,
-                action_on_failure: self.action_on_failure,
-                status: self.status,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                config: self.config
+                ,
+                action_on_failure: self.action_on_failure
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StepSummary {
     /// Creates a new builder-style object to manufacture [`StepSummary`](crate::model::StepSummary).
@@ -7813,7 +7205,7 @@ impl StepSummary {
 /// <p>The execution status details of the cluster step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepStatus {
+pub struct StepStatus  {
     /// <p>The execution state of the cluster step.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::StepState>,
@@ -7829,25 +7221,25 @@ pub struct StepStatus {
 }
 impl StepStatus {
     /// <p>The execution state of the cluster step.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::StepState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::StepState> {
         self.state.as_ref()
     }
     /// <p>The reason for the step execution status change.</p>
-    pub fn state_change_reason(&self) -> std::option::Option<&crate::model::StepStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::model::StepStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
-    pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<& crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>The timeline of the cluster step status over time.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::model::StepTimeline> {
+    pub fn timeline(&self) -> std::option::Option<& crate::model::StepTimeline> {
         self.timeline.as_ref()
     }
 }
 /// See [`StepStatus`](crate::model::StepStatus).
 pub mod step_status {
-
+    
     /// A builder for [`StepStatus`](crate::model::StepStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7864,8 +7256,7 @@ pub mod step_status {
         }
         /// <p>The execution state of the cluster step.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::StepState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the step execution status change.</p>
         pub fn state_change_reason(mut self, input: crate::model::StepStateChangeReason) -> Self {
@@ -7873,12 +7264,8 @@ pub mod step_status {
             self
         }
         /// <p>The reason for the step execution status change.</p>
-        pub fn set_state_change_reason(
-            mut self,
-            input: std::option::Option<crate::model::StepStateChangeReason>,
-        ) -> Self {
-            self.state_change_reason = input;
-            self
+        pub fn set_state_change_reason(mut self, input: std::option::Option<crate::model::StepStateChangeReason>) -> Self {
+            self.state_change_reason = input; self
         }
         /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
@@ -7886,12 +7273,8 @@ pub mod step_status {
             self
         }
         /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
-        pub fn set_failure_details(
-            mut self,
-            input: std::option::Option<crate::model::FailureDetails>,
-        ) -> Self {
-            self.failure_details = input;
-            self
+        pub fn set_failure_details(mut self, input: std::option::Option<crate::model::FailureDetails>) -> Self {
+            self.failure_details = input; self
         }
         /// <p>The timeline of the cluster step status over time.</p>
         pub fn timeline(mut self, input: crate::model::StepTimeline) -> Self {
@@ -7899,23 +7282,25 @@ pub mod step_status {
             self
         }
         /// <p>The timeline of the cluster step status over time.</p>
-        pub fn set_timeline(
-            mut self,
-            input: std::option::Option<crate::model::StepTimeline>,
-        ) -> Self {
-            self.timeline = input;
-            self
+        pub fn set_timeline(mut self, input: std::option::Option<crate::model::StepTimeline>) -> Self {
+            self.timeline = input; self
         }
         /// Consumes the builder and constructs a [`StepStatus`](crate::model::StepStatus).
         pub fn build(self) -> crate::model::StepStatus {
             crate::model::StepStatus {
-                state: self.state,
-                state_change_reason: self.state_change_reason,
-                failure_details: self.failure_details,
-                timeline: self.timeline,
+                state: self.state
+                ,
+                state_change_reason: self.state_change_reason
+                ,
+                failure_details: self.failure_details
+                ,
+                timeline: self.timeline
+                ,
             }
         }
     }
+    
+    
 }
 impl StepStatus {
     /// Creates a new builder-style object to manufacture [`StepStatus`](crate::model::StepStatus).
@@ -7927,7 +7312,7 @@ impl StepStatus {
 /// <p>The timeline of the cluster step lifecycle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepTimeline {
+pub struct StepTimeline  {
     /// <p>The date and time when the cluster step was created.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7940,21 +7325,21 @@ pub struct StepTimeline {
 }
 impl StepTimeline {
     /// <p>The date and time when the cluster step was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the cluster step execution started.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time when the cluster step execution completed or failed.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
 /// See [`StepTimeline`](crate::model::StepTimeline).
 pub mod step_timeline {
-
+    
     /// A builder for [`StepTimeline`](crate::model::StepTimeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7969,12 +7354,8 @@ pub mod step_timeline {
             self
         }
         /// <p>The date and time when the cluster step was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time when the cluster step execution started.</p>
         pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7982,12 +7363,8 @@ pub mod step_timeline {
             self
         }
         /// <p>The date and time when the cluster step execution started.</p>
-        pub fn set_start_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date_time = input;
-            self
+        pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date_time = input; self
         }
         /// <p>The date and time when the cluster step execution completed or failed.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7995,22 +7372,23 @@ pub mod step_timeline {
             self
         }
         /// <p>The date and time when the cluster step execution completed or failed.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// Consumes the builder and constructs a [`StepTimeline`](crate::model::StepTimeline).
         pub fn build(self) -> crate::model::StepTimeline {
             crate::model::StepTimeline {
-                creation_date_time: self.creation_date_time,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
+                creation_date_time: self.creation_date_time
+                ,
+                start_date_time: self.start_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StepTimeline {
     /// Creates a new builder-style object to manufacture [`StepTimeline`](crate::model::StepTimeline).
@@ -8022,7 +7400,7 @@ impl StepTimeline {
 /// <p>The details of the step failure. The service attempts to detect the root cause for many common failures.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureDetails {
+pub struct FailureDetails  {
     /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
     #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
@@ -8035,21 +7413,21 @@ pub struct FailureDetails {
 }
 impl FailureDetails {
     /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
-    pub fn log_file(&self) -> std::option::Option<&str> {
+    pub fn log_file(&self) -> std::option::Option<& str> {
         self.log_file.as_deref()
     }
 }
 /// See [`FailureDetails`](crate::model::FailureDetails).
 pub mod failure_details {
-
+    
     /// A builder for [`FailureDetails`](crate::model::FailureDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8065,8 +7443,7 @@ pub mod failure_details {
         }
         /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8075,8 +7452,7 @@ pub mod failure_details {
         }
         /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
         pub fn log_file(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8085,18 +7461,22 @@ pub mod failure_details {
         }
         /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
         pub fn set_log_file(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_file = input;
-            self
+            self.log_file = input; self
         }
         /// Consumes the builder and constructs a [`FailureDetails`](crate::model::FailureDetails).
         pub fn build(self) -> crate::model::FailureDetails {
             crate::model::FailureDetails {
-                reason: self.reason,
-                message: self.message,
-                log_file: self.log_file,
+                reason: self.reason
+                ,
+                message: self.message
+                ,
+                log_file: self.log_file
+                ,
             }
         }
     }
+    
+    
 }
 impl FailureDetails {
     /// Creates a new builder-style object to manufacture [`FailureDetails`](crate::model::FailureDetails).
@@ -8108,7 +7488,7 @@ impl FailureDetails {
 /// <p>The details of the step state change reason.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepStateChangeReason {
+pub struct StepStateChangeReason  {
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::StepStateChangeReasonCode>,
@@ -8118,17 +7498,17 @@ pub struct StepStateChangeReason {
 }
 impl StepStateChangeReason {
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::StepStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::StepStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The descriptive message for the state change reason.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`StepStateChangeReason`](crate::model::StepStateChangeReason).
 pub mod step_state_change_reason {
-
+    
     /// A builder for [`StepStateChangeReason`](crate::model::StepStateChangeReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8142,12 +7522,8 @@ pub mod step_state_change_reason {
             self
         }
         /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::StepStateChangeReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::StepStateChangeReasonCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The descriptive message for the state change reason.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8156,17 +7532,20 @@ pub mod step_state_change_reason {
         }
         /// <p>The descriptive message for the state change reason.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`StepStateChangeReason`](crate::model::StepStateChangeReason).
         pub fn build(self) -> crate::model::StepStateChangeReason {
             crate::model::StepStateChangeReason {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl StepStateChangeReason {
     /// Creates a new builder-style object to manufacture [`StepStateChangeReason`](crate::model::StepStateChangeReason).
@@ -8181,9 +7560,9 @@ impl StepStateChangeReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stepstatechangereasoncode = unimplemented!();
 /// match stepstatechangereasoncode {
@@ -8204,56 +7583,48 @@ impl StepStateChangeReason {
 /// Specifically, when `stepstatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StepStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StepStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StepStateChangeReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => StepStateChangeReasonCode::None,
-            other => StepStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StepStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StepStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StepStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StepStateChangeReasonCode::from(s))
+                }
+            }
 impl StepStateChangeReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StepStateChangeReasonCode::None => "NONE",
-            StepStateChangeReasonCode::Unknown(value) => value.as_str(),
+            StepStateChangeReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE"]
+        &[
+            "NONE"
+        ]
     }
 }
 impl AsRef<str> for StepStateChangeReasonCode {
@@ -8268,9 +7639,9 @@ impl AsRef<str> for StepStateChangeReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stepstate = unimplemented!();
 /// match stepstate {
@@ -8297,22 +7668,14 @@ impl AsRef<str> for StepStateChangeReasonCode {
 /// Specifically, when `stepstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StepState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StepState {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -8329,7 +7692,7 @@ pub enum StepState {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StepState {
     fn from(s: &str) -> Self {
@@ -8341,17 +7704,17 @@ impl std::convert::From<&str> for StepState {
             "INTERRUPTED" => StepState::Interrupted,
             "PENDING" => StepState::Pending,
             "RUNNING" => StepState::Running,
-            other => StepState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StepState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StepState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StepState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StepState::from(s))
+                }
+            }
 impl StepState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8363,19 +7726,13 @@ impl StepState {
             StepState::Interrupted => "INTERRUPTED",
             StepState::Pending => "PENDING",
             StepState::Running => "RUNNING",
-            StepState::Unknown(value) => value.as_str(),
+            StepState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELLED",
-            "CANCEL_PENDING",
-            "COMPLETED",
-            "FAILED",
-            "INTERRUPTED",
-            "PENDING",
-            "RUNNING",
+            "CANCELLED", "CANCEL_PENDING", "COMPLETED", "FAILED", "INTERRUPTED", "PENDING", "RUNNING"
         ]
     }
 }
@@ -8388,14 +7745,13 @@ impl AsRef<str> for StepState {
 /// <p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HadoopStepConfig {
+pub struct HadoopStepConfig  {
     /// <p>The path to the JAR file that runs during the step.</p>
     #[doc(hidden)]
     pub jar: std::option::Option<std::string::String>,
     /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
     #[doc(hidden)]
     pub main_class: std::option::Option<std::string::String>,
@@ -8405,35 +7761,30 @@ pub struct HadoopStepConfig {
 }
 impl HadoopStepConfig {
     /// <p>The path to the JAR file that runs during the step.</p>
-    pub fn jar(&self) -> std::option::Option<&str> {
+    pub fn jar(&self) -> std::option::Option<& str> {
         self.jar.as_deref()
     }
     /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
-    pub fn main_class(&self) -> std::option::Option<&str> {
+    pub fn main_class(&self) -> std::option::Option<& str> {
         self.main_class.as_deref()
     }
     /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
         self.args.as_deref()
     }
 }
 /// See [`HadoopStepConfig`](crate::model::HadoopStepConfig).
 pub mod hadoop_step_config {
-
+    
     /// A builder for [`HadoopStepConfig`](crate::model::HadoopStepConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jar: std::option::Option<std::string::String>,
-        pub(crate) properties: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) main_class: std::option::Option<std::string::String>,
         pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -8445,33 +7796,22 @@ pub mod hadoop_step_config {
         }
         /// <p>The path to the JAR file that runs during the step.</p>
         pub fn set_jar(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.jar = input;
-            self
+            self.jar = input; self
         }
         /// Adds a key-value pair to `properties`.
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-        pub fn properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.properties = Some(hash_map);
+                            self
         }
         /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.properties = input; self
         }
         /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
         pub fn main_class(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8480,8 +7820,7 @@ pub mod hadoop_step_config {
         }
         /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
         pub fn set_main_class(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.main_class = input;
-            self
+            self.main_class = input; self
         }
         /// Appends an item to `args`.
         ///
@@ -8490,28 +7829,30 @@ pub mod hadoop_step_config {
         /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
         pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.args.unwrap_or_default();
-            v.push(input.into());
-            self.args = Some(v);
-            self
+                            v.push(input.into());
+                            self.args = Some(v);
+                            self
         }
         /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
-        pub fn set_args(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.args = input;
-            self
+        pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.args = input; self
         }
         /// Consumes the builder and constructs a [`HadoopStepConfig`](crate::model::HadoopStepConfig).
         pub fn build(self) -> crate::model::HadoopStepConfig {
             crate::model::HadoopStepConfig {
-                jar: self.jar,
-                properties: self.properties,
-                main_class: self.main_class,
-                args: self.args,
+                jar: self.jar
+                ,
+                properties: self.properties
+                ,
+                main_class: self.main_class
+                ,
+                args: self.args
+                ,
             }
         }
     }
+    
+    
 }
 impl HadoopStepConfig {
     /// Creates a new builder-style object to manufacture [`HadoopStepConfig`](crate::model::HadoopStepConfig).
@@ -8523,7 +7864,7 @@ impl HadoopStepConfig {
 /// <p>The creation date and time, and name, of a security configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityConfigurationSummary {
+pub struct SecurityConfigurationSummary  {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8533,17 +7874,17 @@ pub struct SecurityConfigurationSummary {
 }
 impl SecurityConfigurationSummary {
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time the security configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`SecurityConfigurationSummary`](crate::model::SecurityConfigurationSummary).
 pub mod security_configuration_summary {
-
+    
     /// A builder for [`SecurityConfigurationSummary`](crate::model::SecurityConfigurationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8558,8 +7899,7 @@ pub mod security_configuration_summary {
         }
         /// <p>The name of the security configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date and time the security configuration was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8567,21 +7907,21 @@ pub mod security_configuration_summary {
             self
         }
         /// <p>The date and time the security configuration was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`SecurityConfigurationSummary`](crate::model::SecurityConfigurationSummary).
         pub fn build(self) -> crate::model::SecurityConfigurationSummary {
             crate::model::SecurityConfigurationSummary {
-                name: self.name,
-                creation_date_time: self.creation_date_time,
+                name: self.name
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`SecurityConfigurationSummary`](crate::model::SecurityConfigurationSummary).
@@ -8593,7 +7933,7 @@ impl SecurityConfigurationSummary {
 /// <p>The release label filters by application or version prefix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReleaseLabelFilter {
+pub struct ReleaseLabelFilter  {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -8603,17 +7943,17 @@ pub struct ReleaseLabelFilter {
 }
 impl ReleaseLabelFilter {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
 }
 /// See [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter).
 pub mod release_label_filter {
-
+    
     /// A builder for [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8628,8 +7968,7 @@ pub mod release_label_filter {
         }
         /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
         pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8638,17 +7977,20 @@ pub mod release_label_filter {
         }
         /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input;
-            self
+            self.application = input; self
         }
         /// Consumes the builder and constructs a [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter).
         pub fn build(self) -> crate::model::ReleaseLabelFilter {
             crate::model::ReleaseLabelFilter {
-                prefix: self.prefix,
-                application: self.application,
+                prefix: self.prefix
+                ,
+                application: self.application
+                ,
             }
         }
     }
+    
+    
 }
 impl ReleaseLabelFilter {
     /// Creates a new builder-style object to manufacture [`ReleaseLabelFilter`](crate::model::ReleaseLabelFilter).
@@ -8660,7 +8002,7 @@ impl ReleaseLabelFilter {
 /// <p>Details for a notebook execution. The details include information such as the unique ID and status of the notebook execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotebookExecutionSummary {
+pub struct NotebookExecutionSummary  {
     /// <p>The unique identifier of the notebook execution.</p>
     #[doc(hidden)]
     pub notebook_execution_id: std::option::Option<std::string::String>,
@@ -8670,18 +8012,18 @@ pub struct NotebookExecutionSummary {
     /// <p>The name of the notebook execution.</p>
     #[doc(hidden)]
     pub notebook_execution_name: std::option::Option<std::string::String>,
-    /// <p>The status of the notebook execution.</p>
-    /// <ul>
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <p>The status of the notebook execution.</p> 
+    /// <ul> 
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
@@ -8694,45 +8036,45 @@ pub struct NotebookExecutionSummary {
 }
 impl NotebookExecutionSummary {
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn notebook_execution_id(&self) -> std::option::Option<&str> {
+    pub fn notebook_execution_id(&self) -> std::option::Option<& str> {
         self.notebook_execution_id.as_deref()
     }
     /// <p>The unique identifier of the editor associated with the notebook execution.</p>
-    pub fn editor_id(&self) -> std::option::Option<&str> {
+    pub fn editor_id(&self) -> std::option::Option<& str> {
         self.editor_id.as_deref()
     }
     /// <p>The name of the notebook execution.</p>
-    pub fn notebook_execution_name(&self) -> std::option::Option<&str> {
+    pub fn notebook_execution_name(&self) -> std::option::Option<& str> {
         self.notebook_execution_name.as_deref()
     }
-    /// <p>The status of the notebook execution.</p>
-    /// <ul>
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <p>The status of the notebook execution.</p> 
+    /// <ul> 
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::NotebookExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NotebookExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`NotebookExecutionSummary`](crate::model::NotebookExecutionSummary).
 pub mod notebook_execution_summary {
-
+    
     /// A builder for [`NotebookExecutionSummary`](crate::model::NotebookExecutionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8750,12 +8092,8 @@ pub mod notebook_execution_summary {
             self
         }
         /// <p>The unique identifier of the notebook execution.</p>
-        pub fn set_notebook_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notebook_execution_id = input;
-            self
+        pub fn set_notebook_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_execution_id = input; self
         }
         /// <p>The unique identifier of the editor associated with the notebook execution.</p>
         pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8764,8 +8102,7 @@ pub mod notebook_execution_summary {
         }
         /// <p>The unique identifier of the editor associated with the notebook execution.</p>
         pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.editor_id = input;
-            self
+            self.editor_id = input; self
         }
         /// <p>The name of the notebook execution.</p>
         pub fn notebook_execution_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8773,49 +8110,41 @@ pub mod notebook_execution_summary {
             self
         }
         /// <p>The name of the notebook execution.</p>
-        pub fn set_notebook_execution_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notebook_execution_name = input;
-            self
+        pub fn set_notebook_execution_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_execution_name = input; self
         }
-        /// <p>The status of the notebook execution.</p>
-        /// <ul>
-        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
-        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
-        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
-        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
-        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
-        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
-        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
-        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
-        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
-        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+        /// <p>The status of the notebook execution.</p> 
+        /// <ul> 
+        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
+        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
+        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
+        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
+        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
+        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
+        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
+        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::NotebookExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the notebook execution.</p>
-        /// <ul>
-        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
-        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
-        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
-        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
-        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
-        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
-        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
-        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
-        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
-        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+        /// <p>The status of the notebook execution.</p> 
+        /// <ul> 
+        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
+        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
+        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
+        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
+        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
+        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
+        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
+        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NotebookExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NotebookExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The timestamp when notebook execution started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8823,12 +8152,8 @@ pub mod notebook_execution_summary {
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The timestamp when notebook execution started.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8836,25 +8161,29 @@ pub mod notebook_execution_summary {
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`NotebookExecutionSummary`](crate::model::NotebookExecutionSummary).
         pub fn build(self) -> crate::model::NotebookExecutionSummary {
             crate::model::NotebookExecutionSummary {
-                notebook_execution_id: self.notebook_execution_id,
-                editor_id: self.editor_id,
-                notebook_execution_name: self.notebook_execution_name,
-                status: self.status,
-                start_time: self.start_time,
-                end_time: self.end_time,
+                notebook_execution_id: self.notebook_execution_id
+                ,
+                editor_id: self.editor_id
+                ,
+                notebook_execution_name: self.notebook_execution_name
+                ,
+                status: self.status
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl NotebookExecutionSummary {
     /// Creates a new builder-style object to manufacture [`NotebookExecutionSummary`](crate::model::NotebookExecutionSummary).
@@ -8869,9 +8198,9 @@ impl NotebookExecutionSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let notebookexecutionstatus = unimplemented!();
 /// match notebookexecutionstatus {
@@ -8901,22 +8230,14 @@ impl NotebookExecutionSummary {
 /// Specifically, when `notebookexecutionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotebookExecutionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NotebookExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -8939,7 +8260,7 @@ pub enum NotebookExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     StopPending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotebookExecutionStatus {
     fn from(s: &str) -> Self {
@@ -8954,19 +8275,17 @@ impl std::convert::From<&str> for NotebookExecutionStatus {
             "STOPPED" => NotebookExecutionStatus::Stopped,
             "STOPPING" => NotebookExecutionStatus::Stopping,
             "STOP_PENDING" => NotebookExecutionStatus::StopPending,
-            other => NotebookExecutionStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NotebookExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NotebookExecutionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotebookExecutionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NotebookExecutionStatus::from(s))
+                }
+            }
 impl NotebookExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8981,22 +8300,13 @@ impl NotebookExecutionStatus {
             NotebookExecutionStatus::Stopped => "STOPPED",
             NotebookExecutionStatus::Stopping => "STOPPING",
             NotebookExecutionStatus::StopPending => "STOP_PENDING",
-            NotebookExecutionStatus::Unknown(value) => value.as_str(),
+            NotebookExecutionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FAILED",
-            "FAILING",
-            "FINISHED",
-            "FINISHING",
-            "RUNNING",
-            "STARTING",
-            "START_PENDING",
-            "STOPPED",
-            "STOPPING",
-            "STOP_PENDING",
+            "FAILED", "FAILING", "FINISHED", "FINISHING", "RUNNING", "STARTING", "START_PENDING", "STOPPED", "STOPPING", "STOP_PENDING"
         ]
     }
 }
@@ -9009,7 +8319,7 @@ impl AsRef<str> for NotebookExecutionStatus {
 /// <p>Represents an EC2 instance provisioned as part of cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The unique identifier for the instance in Amazon EMR.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -9049,57 +8359,57 @@ pub struct Instance {
 }
 impl Instance {
     /// <p>The unique identifier for the instance in Amazon EMR.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>The public DNS name of the instance.</p>
-    pub fn public_dns_name(&self) -> std::option::Option<&str> {
+    pub fn public_dns_name(&self) -> std::option::Option<& str> {
         self.public_dns_name.as_deref()
     }
     /// <p>The public IP address of the instance.</p>
-    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> std::option::Option<& str> {
         self.public_ip_address.as_deref()
     }
     /// <p>The private DNS name of the instance.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> std::option::Option<& str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private IP address of the instance.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The current status of the instance.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InstanceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InstanceStatus> {
         self.status.as_ref()
     }
     /// <p>The identifier of the instance group to which this instance belongs.</p>
-    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+    pub fn instance_group_id(&self) -> std::option::Option<& str> {
         self.instance_group_id.as_deref()
     }
     /// <p>The unique identifier of the instance fleet to which an EC2 instance belongs.</p>
-    pub fn instance_fleet_id(&self) -> std::option::Option<&str> {
+    pub fn instance_fleet_id(&self) -> std::option::Option<& str> {
         self.instance_fleet_id.as_deref()
     }
     /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
-    pub fn market(&self) -> std::option::Option<&crate::model::MarketType> {
+    pub fn market(&self) -> std::option::Option<& crate::model::MarketType> {
         self.market.as_ref()
     }
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-    pub fn ebs_volumes(&self) -> std::option::Option<&[crate::model::EbsVolume]> {
+    pub fn ebs_volumes(&self) -> std::option::Option<& [crate::model::EbsVolume]> {
         self.ebs_volumes.as_deref()
     }
 }
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
-
+    
     /// A builder for [`Instance`](crate::model::Instance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9124,8 +8434,7 @@ pub mod instance {
         }
         /// <p>The unique identifier for the instance in Amazon EMR.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The unique identifier of the instance in Amazon EC2.</p>
         pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9133,12 +8442,8 @@ pub mod instance {
             self
         }
         /// <p>The unique identifier of the instance in Amazon EC2.</p>
-        pub fn set_ec2_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_instance_id = input;
-            self
+        pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_instance_id = input; self
         }
         /// <p>The public DNS name of the instance.</p>
         pub fn public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9146,12 +8451,8 @@ pub mod instance {
             self
         }
         /// <p>The public DNS name of the instance.</p>
-        pub fn set_public_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_dns_name = input;
-            self
+        pub fn set_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_dns_name = input; self
         }
         /// <p>The public IP address of the instance.</p>
         pub fn public_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9159,12 +8460,8 @@ pub mod instance {
             self
         }
         /// <p>The public IP address of the instance.</p>
-        pub fn set_public_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_ip_address = input;
-            self
+        pub fn set_public_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_ip_address = input; self
         }
         /// <p>The private DNS name of the instance.</p>
         pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9172,12 +8469,8 @@ pub mod instance {
             self
         }
         /// <p>The private DNS name of the instance.</p>
-        pub fn set_private_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_dns_name = input;
-            self
+        pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_dns_name = input; self
         }
         /// <p>The private IP address of the instance.</p>
         pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9185,12 +8478,8 @@ pub mod instance {
             self
         }
         /// <p>The private IP address of the instance.</p>
-        pub fn set_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_ip_address = input;
-            self
+        pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_ip_address = input; self
         }
         /// <p>The current status of the instance.</p>
         pub fn status(mut self, input: crate::model::InstanceStatus) -> Self {
@@ -9198,12 +8487,8 @@ pub mod instance {
             self
         }
         /// <p>The current status of the instance.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InstanceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InstanceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The identifier of the instance group to which this instance belongs.</p>
         pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9211,12 +8496,8 @@ pub mod instance {
             self
         }
         /// <p>The identifier of the instance group to which this instance belongs.</p>
-        pub fn set_instance_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_group_id = input;
-            self
+        pub fn set_instance_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_group_id = input; self
         }
         /// <p>The unique identifier of the instance fleet to which an EC2 instance belongs.</p>
         pub fn instance_fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9224,12 +8505,8 @@ pub mod instance {
             self
         }
         /// <p>The unique identifier of the instance fleet to which an EC2 instance belongs.</p>
-        pub fn set_instance_fleet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_fleet_id = input;
-            self
+        pub fn set_instance_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_fleet_id = input; self
         }
         /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
         pub fn market(mut self, input: crate::model::MarketType) -> Self {
@@ -9238,8 +8515,7 @@ pub mod instance {
         }
         /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
         pub fn set_market(mut self, input: std::option::Option<crate::model::MarketType>) -> Self {
-            self.market = input;
-            self
+            self.market = input; self
         }
         /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9247,12 +8523,8 @@ pub mod instance {
             self
         }
         /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// Appends an item to `ebs_volumes`.
         ///
@@ -9261,36 +8533,46 @@ pub mod instance {
         /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
         pub fn ebs_volumes(mut self, input: crate::model::EbsVolume) -> Self {
             let mut v = self.ebs_volumes.unwrap_or_default();
-            v.push(input);
-            self.ebs_volumes = Some(v);
-            self
+                            v.push(input);
+                            self.ebs_volumes = Some(v);
+                            self
         }
         /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-        pub fn set_ebs_volumes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EbsVolume>>,
-        ) -> Self {
-            self.ebs_volumes = input;
-            self
+        pub fn set_ebs_volumes(mut self, input: std::option::Option<std::vec::Vec<crate::model::EbsVolume>>) -> Self {
+            self.ebs_volumes = input; self
         }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
-                id: self.id,
-                ec2_instance_id: self.ec2_instance_id,
-                public_dns_name: self.public_dns_name,
-                public_ip_address: self.public_ip_address,
-                private_dns_name: self.private_dns_name,
-                private_ip_address: self.private_ip_address,
-                status: self.status,
-                instance_group_id: self.instance_group_id,
-                instance_fleet_id: self.instance_fleet_id,
-                market: self.market,
-                instance_type: self.instance_type,
-                ebs_volumes: self.ebs_volumes,
+                id: self.id
+                ,
+                ec2_instance_id: self.ec2_instance_id
+                ,
+                public_dns_name: self.public_dns_name
+                ,
+                public_ip_address: self.public_ip_address
+                ,
+                private_dns_name: self.private_dns_name
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+                status: self.status
+                ,
+                instance_group_id: self.instance_group_id
+                ,
+                instance_fleet_id: self.instance_fleet_id
+                ,
+                market: self.market
+                ,
+                instance_type: self.instance_type
+                ,
+                ebs_volumes: self.ebs_volumes
+                ,
             }
         }
     }
+    
+    
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
@@ -9302,7 +8584,7 @@ impl Instance {
 /// <p>EBS block device that's attached to an EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsVolume {
+pub struct EbsVolume  {
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
@@ -9312,17 +8594,17 @@ pub struct EbsVolume {
 }
 impl EbsVolume {
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-    pub fn device(&self) -> std::option::Option<&str> {
+    pub fn device(&self) -> std::option::Option<& str> {
         self.device.as_deref()
     }
     /// <p>The volume identifier of the EBS volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
 }
 /// See [`EbsVolume`](crate::model::EbsVolume).
 pub mod ebs_volume {
-
+    
     /// A builder for [`EbsVolume`](crate::model::EbsVolume).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9337,8 +8619,7 @@ pub mod ebs_volume {
         }
         /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
         pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device = input;
-            self
+            self.device = input; self
         }
         /// <p>The volume identifier of the EBS volume.</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9347,17 +8628,20 @@ pub mod ebs_volume {
         }
         /// <p>The volume identifier of the EBS volume.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = input;
-            self
+            self.volume_id = input; self
         }
         /// Consumes the builder and constructs a [`EbsVolume`](crate::model::EbsVolume).
         pub fn build(self) -> crate::model::EbsVolume {
             crate::model::EbsVolume {
-                device: self.device,
-                volume_id: self.volume_id,
+                device: self.device
+                ,
+                volume_id: self.volume_id
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsVolume {
     /// Creates a new builder-style object to manufacture [`EbsVolume`](crate::model::EbsVolume).
@@ -9369,7 +8653,7 @@ impl EbsVolume {
 /// <p>The instance status details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceStatus {
+pub struct InstanceStatus  {
     /// <p>The current state of the instance.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceState>,
@@ -9382,29 +8666,26 @@ pub struct InstanceStatus {
 }
 impl InstanceStatus {
     /// <p>The current state of the instance.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::InstanceState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InstanceState> {
         self.state.as_ref()
     }
     /// <p>The details of the status change reason for the instance.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::model::InstanceStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The timeline of the instance status over time.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::model::InstanceTimeline> {
+    pub fn timeline(&self) -> std::option::Option<& crate::model::InstanceTimeline> {
         self.timeline.as_ref()
     }
 }
 /// See [`InstanceStatus`](crate::model::InstanceStatus).
 pub mod instance_status {
-
+    
     /// A builder for [`InstanceStatus`](crate::model::InstanceStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::InstanceState>,
-        pub(crate) state_change_reason:
-            std::option::Option<crate::model::InstanceStateChangeReason>,
+        pub(crate) state_change_reason: std::option::Option<crate::model::InstanceStateChangeReason>,
         pub(crate) timeline: std::option::Option<crate::model::InstanceTimeline>,
     }
     impl Builder {
@@ -9414,28 +8695,17 @@ pub mod instance_status {
             self
         }
         /// <p>The current state of the instance.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::InstanceState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::InstanceState>) -> Self {
+            self.state = input; self
         }
         /// <p>The details of the status change reason for the instance.</p>
-        pub fn state_change_reason(
-            mut self,
-            input: crate::model::InstanceStateChangeReason,
-        ) -> Self {
+        pub fn state_change_reason(mut self, input: crate::model::InstanceStateChangeReason) -> Self {
             self.state_change_reason = Some(input);
             self
         }
         /// <p>The details of the status change reason for the instance.</p>
-        pub fn set_state_change_reason(
-            mut self,
-            input: std::option::Option<crate::model::InstanceStateChangeReason>,
-        ) -> Self {
-            self.state_change_reason = input;
-            self
+        pub fn set_state_change_reason(mut self, input: std::option::Option<crate::model::InstanceStateChangeReason>) -> Self {
+            self.state_change_reason = input; self
         }
         /// <p>The timeline of the instance status over time.</p>
         pub fn timeline(mut self, input: crate::model::InstanceTimeline) -> Self {
@@ -9443,22 +8713,23 @@ pub mod instance_status {
             self
         }
         /// <p>The timeline of the instance status over time.</p>
-        pub fn set_timeline(
-            mut self,
-            input: std::option::Option<crate::model::InstanceTimeline>,
-        ) -> Self {
-            self.timeline = input;
-            self
+        pub fn set_timeline(mut self, input: std::option::Option<crate::model::InstanceTimeline>) -> Self {
+            self.timeline = input; self
         }
         /// Consumes the builder and constructs a [`InstanceStatus`](crate::model::InstanceStatus).
         pub fn build(self) -> crate::model::InstanceStatus {
             crate::model::InstanceStatus {
-                state: self.state,
-                state_change_reason: self.state_change_reason,
-                timeline: self.timeline,
+                state: self.state
+                ,
+                state_change_reason: self.state_change_reason
+                ,
+                timeline: self.timeline
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceStatus {
     /// Creates a new builder-style object to manufacture [`InstanceStatus`](crate::model::InstanceStatus).
@@ -9470,7 +8741,7 @@ impl InstanceStatus {
 /// <p>The timeline of the instance lifecycle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceTimeline {
+pub struct InstanceTimeline  {
     /// <p>The creation date and time of the instance.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9483,21 +8754,21 @@ pub struct InstanceTimeline {
 }
 impl InstanceTimeline {
     /// <p>The creation date and time of the instance.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the instance was ready to perform tasks.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date and time when the instance was terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
 /// See [`InstanceTimeline`](crate::model::InstanceTimeline).
 pub mod instance_timeline {
-
+    
     /// A builder for [`InstanceTimeline`](crate::model::InstanceTimeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9512,12 +8783,8 @@ pub mod instance_timeline {
             self
         }
         /// <p>The creation date and time of the instance.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time when the instance was ready to perform tasks.</p>
         pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9525,12 +8792,8 @@ pub mod instance_timeline {
             self
         }
         /// <p>The date and time when the instance was ready to perform tasks.</p>
-        pub fn set_ready_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ready_date_time = input;
-            self
+        pub fn set_ready_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ready_date_time = input; self
         }
         /// <p>The date and time when the instance was terminated.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9538,22 +8801,23 @@ pub mod instance_timeline {
             self
         }
         /// <p>The date and time when the instance was terminated.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// Consumes the builder and constructs a [`InstanceTimeline`](crate::model::InstanceTimeline).
         pub fn build(self) -> crate::model::InstanceTimeline {
             crate::model::InstanceTimeline {
-                creation_date_time: self.creation_date_time,
-                ready_date_time: self.ready_date_time,
-                end_date_time: self.end_date_time,
+                creation_date_time: self.creation_date_time
+                ,
+                ready_date_time: self.ready_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceTimeline {
     /// Creates a new builder-style object to manufacture [`InstanceTimeline`](crate::model::InstanceTimeline).
@@ -9565,7 +8829,7 @@ impl InstanceTimeline {
 /// <p>The details of the status change reason for the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceStateChangeReason {
+pub struct InstanceStateChangeReason  {
     /// <p>The programmable code for the state change reason.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::InstanceStateChangeReasonCode>,
@@ -9575,17 +8839,17 @@ pub struct InstanceStateChangeReason {
 }
 impl InstanceStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::InstanceStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::InstanceStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The status change reason description.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`InstanceStateChangeReason`](crate::model::InstanceStateChangeReason).
 pub mod instance_state_change_reason {
-
+    
     /// A builder for [`InstanceStateChangeReason`](crate::model::InstanceStateChangeReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9599,12 +8863,8 @@ pub mod instance_state_change_reason {
             self
         }
         /// <p>The programmable code for the state change reason.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::InstanceStateChangeReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::InstanceStateChangeReasonCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The status change reason description.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9613,17 +8873,20 @@ pub mod instance_state_change_reason {
         }
         /// <p>The status change reason description.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceStateChangeReason`](crate::model::InstanceStateChangeReason).
         pub fn build(self) -> crate::model::InstanceStateChangeReason {
             crate::model::InstanceStateChangeReason {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceStateChangeReason {
     /// Creates a new builder-style object to manufacture [`InstanceStateChangeReason`](crate::model::InstanceStateChangeReason).
@@ -9638,9 +8901,9 @@ impl InstanceStateChangeReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancestatechangereasoncode = unimplemented!();
 /// match instancestatechangereasoncode {
@@ -9665,22 +8928,14 @@ impl InstanceStateChangeReason {
 /// Specifically, when `instancestatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     BootstrapFailure,
@@ -9693,7 +8948,7 @@ pub enum InstanceStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceStateChangeReasonCode {
     fn from(s: &str) -> Self {
@@ -9703,19 +8958,17 @@ impl std::convert::From<&str> for InstanceStateChangeReasonCode {
             "INSTANCE_FAILURE" => InstanceStateChangeReasonCode::InstanceFailure,
             "INTERNAL_ERROR" => InstanceStateChangeReasonCode::InternalError,
             "VALIDATION_ERROR" => InstanceStateChangeReasonCode::ValidationError,
-            other => InstanceStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InstanceStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceStateChangeReasonCode::from(s))
+                }
+            }
 impl InstanceStateChangeReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9725,17 +8978,13 @@ impl InstanceStateChangeReasonCode {
             InstanceStateChangeReasonCode::InstanceFailure => "INSTANCE_FAILURE",
             InstanceStateChangeReasonCode::InternalError => "INTERNAL_ERROR",
             InstanceStateChangeReasonCode::ValidationError => "VALIDATION_ERROR",
-            InstanceStateChangeReasonCode::Unknown(value) => value.as_str(),
+            InstanceStateChangeReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BOOTSTRAP_FAILURE",
-            "CLUSTER_TERMINATED",
-            "INSTANCE_FAILURE",
-            "INTERNAL_ERROR",
-            "VALIDATION_ERROR",
+            "BOOTSTRAP_FAILURE", "CLUSTER_TERMINATED", "INSTANCE_FAILURE", "INTERNAL_ERROR", "VALIDATION_ERROR"
         ]
     }
 }
@@ -9751,9 +9000,9 @@ impl AsRef<str> for InstanceStateChangeReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancestate = unimplemented!();
 /// match instancestate {
@@ -9778,22 +9027,14 @@ impl AsRef<str> for InstanceStateChangeReasonCode {
 /// Specifically, when `instancestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceState {
     #[allow(missing_docs)] // documentation missing in model
     AwaitingFulfillment,
@@ -9806,7 +9047,7 @@ pub enum InstanceState {
     #[allow(missing_docs)] // documentation missing in model
     Terminated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceState {
     fn from(s: &str) -> Self {
@@ -9816,17 +9057,17 @@ impl std::convert::From<&str> for InstanceState {
             "PROVISIONING" => InstanceState::Provisioning,
             "RUNNING" => InstanceState::Running,
             "TERMINATED" => InstanceState::Terminated,
-            other => InstanceState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InstanceState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceState::from(s))
+                }
+            }
 impl InstanceState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9836,17 +9077,13 @@ impl InstanceState {
             InstanceState::Provisioning => "PROVISIONING",
             InstanceState::Running => "RUNNING",
             InstanceState::Terminated => "TERMINATED",
-            InstanceState::Unknown(value) => value.as_str(),
+            InstanceState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWAITING_FULFILLMENT",
-            "BOOTSTRAPPING",
-            "PROVISIONING",
-            "RUNNING",
-            "TERMINATED",
+            "AWAITING_FULFILLMENT", "BOOTSTRAPPING", "PROVISIONING", "RUNNING", "TERMINATED"
         ]
     }
 }
@@ -9862,9 +9099,9 @@ impl AsRef<str> for InstanceState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancegrouptype = unimplemented!();
 /// match instancegrouptype {
@@ -9887,22 +9124,14 @@ impl AsRef<str> for InstanceState {
 /// Specifically, when `instancegrouptype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceGroupType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceGroupType {
     #[allow(missing_docs)] // documentation missing in model
     Core,
@@ -9911,7 +9140,7 @@ pub enum InstanceGroupType {
     #[allow(missing_docs)] // documentation missing in model
     Task,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceGroupType {
     fn from(s: &str) -> Self {
@@ -9919,19 +9148,17 @@ impl std::convert::From<&str> for InstanceGroupType {
             "CORE" => InstanceGroupType::Core,
             "MASTER" => InstanceGroupType::Master,
             "TASK" => InstanceGroupType::Task,
-            other => {
-                InstanceGroupType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceGroupType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceGroupType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceGroupType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceGroupType::from(s))
+                }
+            }
 impl InstanceGroupType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9939,12 +9166,14 @@ impl InstanceGroupType {
             InstanceGroupType::Core => "CORE",
             InstanceGroupType::Master => "MASTER",
             InstanceGroupType::Task => "TASK",
-            InstanceGroupType::Unknown(value) => value.as_str(),
+            InstanceGroupType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CORE", "MASTER", "TASK"]
+        &[
+            "CORE", "MASTER", "TASK"
+        ]
     }
 }
 impl AsRef<str> for InstanceGroupType {
@@ -9956,7 +9185,7 @@ impl AsRef<str> for InstanceGroupType {
 /// <p>This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroup {
+pub struct InstanceGroup  {
     /// <p>The identifier of the instance group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -9984,9 +9213,9 @@ pub struct InstanceGroup {
     /// <p>The current status of the instance group.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::InstanceGroupStatus>,
-    /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
-    /// </note>
+    /// <note> 
+    /// <p>Amazon EMR releases 4.x or later.</p> 
+    /// </note> 
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -9995,8 +9224,7 @@ pub struct InstanceGroup {
     pub configurations_version: i64,
     /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
     #[doc(hidden)]
-    pub last_successfully_applied_configurations:
-        std::option::Option<std::vec::Vec<crate::model::Configuration>>,
+    pub last_successfully_applied_configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
     #[doc(hidden)]
     pub last_successfully_applied_configurations_version: i64,
@@ -10018,27 +9246,27 @@ pub struct InstanceGroup {
 }
 impl InstanceGroup {
     /// <p>The identifier of the instance group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the instance group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The marketplace to provision instances for this group. Valid values are ON_DEMAND or SPOT.</p>
-    pub fn market(&self) -> std::option::Option<&crate::model::MarketType> {
+    pub fn market(&self) -> std::option::Option<& crate::model::MarketType> {
         self.market.as_ref()
     }
     /// <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
-    pub fn instance_group_type(&self) -> std::option::Option<&crate::model::InstanceGroupType> {
+    pub fn instance_group_type(&self) -> std::option::Option<& crate::model::InstanceGroupType> {
         self.instance_group_type.as_ref()
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    pub fn bid_price(&self) -> std::option::Option<&str> {
+    pub fn bid_price(&self) -> std::option::Option<& str> {
         self.bid_price.as_deref()
     }
     /// <p>The EC2 instance type for all instances in the instance group.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The target number of instances for the instance group.</p>
@@ -10050,14 +9278,14 @@ impl InstanceGroup {
         self.running_instance_count
     }
     /// <p>The current status of the instance group.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InstanceGroupStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InstanceGroupStatus> {
         self.status.as_ref()
     }
-    /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
-    /// </note>
+    /// <note> 
+    /// <p>Amazon EMR releases 4.x or later.</p> 
+    /// </note> 
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>The version number of the requested configuration specification for this instance group.</p>
@@ -10065,9 +9293,7 @@ impl InstanceGroup {
         self.configurations_version
     }
     /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
-    pub fn last_successfully_applied_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn last_successfully_applied_configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.last_successfully_applied_configurations.as_deref()
     }
     /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
@@ -10075,7 +9301,7 @@ impl InstanceGroup {
         self.last_successfully_applied_configurations_version
     }
     /// <p>The EBS block devices that are mapped to this instance group.</p>
-    pub fn ebs_block_devices(&self) -> std::option::Option<&[crate::model::EbsBlockDevice]> {
+    pub fn ebs_block_devices(&self) -> std::option::Option<& [crate::model::EbsBlockDevice]> {
         self.ebs_block_devices.as_deref()
     }
     /// <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.</p>
@@ -10083,23 +9309,21 @@ impl InstanceGroup {
         self.ebs_optimized
     }
     /// <p>Policy for customizing shrink operations.</p>
-    pub fn shrink_policy(&self) -> std::option::Option<&crate::model::ShrinkPolicy> {
+    pub fn shrink_policy(&self) -> std::option::Option<& crate::model::ShrinkPolicy> {
         self.shrink_policy.as_ref()
     }
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
-    pub fn auto_scaling_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::AutoScalingPolicyDescription> {
+    pub fn auto_scaling_policy(&self) -> std::option::Option<& crate::model::AutoScalingPolicyDescription> {
         self.auto_scaling_policy.as_ref()
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn custom_ami_id(&self) -> std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> std::option::Option<& str> {
         self.custom_ami_id.as_deref()
     }
 }
 /// See [`InstanceGroup`](crate::model::InstanceGroup).
 pub mod instance_group {
-
+    
     /// A builder for [`InstanceGroup`](crate::model::InstanceGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10114,15 +9338,12 @@ pub mod instance_group {
         pub(crate) status: std::option::Option<crate::model::InstanceGroupStatus>,
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
         pub(crate) configurations_version: std::option::Option<i64>,
-        pub(crate) last_successfully_applied_configurations:
-            std::option::Option<std::vec::Vec<crate::model::Configuration>>,
+        pub(crate) last_successfully_applied_configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
         pub(crate) last_successfully_applied_configurations_version: std::option::Option<i64>,
-        pub(crate) ebs_block_devices:
-            std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
+        pub(crate) ebs_block_devices: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
         pub(crate) ebs_optimized: std::option::Option<bool>,
         pub(crate) shrink_policy: std::option::Option<crate::model::ShrinkPolicy>,
-        pub(crate) auto_scaling_policy:
-            std::option::Option<crate::model::AutoScalingPolicyDescription>,
+        pub(crate) auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicyDescription>,
         pub(crate) custom_ami_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10133,8 +9354,7 @@ pub mod instance_group {
         }
         /// <p>The identifier of the instance group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the instance group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10143,8 +9363,7 @@ pub mod instance_group {
         }
         /// <p>The name of the instance group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The marketplace to provision instances for this group. Valid values are ON_DEMAND or SPOT.</p>
         pub fn market(mut self, input: crate::model::MarketType) -> Self {
@@ -10153,8 +9372,7 @@ pub mod instance_group {
         }
         /// <p>The marketplace to provision instances for this group. Valid values are ON_DEMAND or SPOT.</p>
         pub fn set_market(mut self, input: std::option::Option<crate::model::MarketType>) -> Self {
-            self.market = input;
-            self
+            self.market = input; self
         }
         /// <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
         pub fn instance_group_type(mut self, input: crate::model::InstanceGroupType) -> Self {
@@ -10162,12 +9380,8 @@ pub mod instance_group {
             self
         }
         /// <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
-        pub fn set_instance_group_type(
-            mut self,
-            input: std::option::Option<crate::model::InstanceGroupType>,
-        ) -> Self {
-            self.instance_group_type = input;
-            self
+        pub fn set_instance_group_type(mut self, input: std::option::Option<crate::model::InstanceGroupType>) -> Self {
+            self.instance_group_type = input; self
         }
         /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
         pub fn bid_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10176,8 +9390,7 @@ pub mod instance_group {
         }
         /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
         pub fn set_bid_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bid_price = input;
-            self
+            self.bid_price = input; self
         }
         /// <p>The EC2 instance type for all instances in the instance group.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10185,12 +9398,8 @@ pub mod instance_group {
             self
         }
         /// <p>The EC2 instance type for all instances in the instance group.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The target number of instances for the instance group.</p>
         pub fn requested_instance_count(mut self, input: i32) -> Self {
@@ -10199,8 +9408,7 @@ pub mod instance_group {
         }
         /// <p>The target number of instances for the instance group.</p>
         pub fn set_requested_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.requested_instance_count = input;
-            self
+            self.requested_instance_count = input; self
         }
         /// <p>The number of instances currently running in this instance group.</p>
         pub fn running_instance_count(mut self, input: i32) -> Self {
@@ -10209,8 +9417,7 @@ pub mod instance_group {
         }
         /// <p>The number of instances currently running in this instance group.</p>
         pub fn set_running_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.running_instance_count = input;
-            self
+            self.running_instance_count = input; self
         }
         /// <p>The current status of the instance group.</p>
         pub fn status(mut self, input: crate::model::InstanceGroupStatus) -> Self {
@@ -10218,37 +9425,29 @@ pub mod instance_group {
             self
         }
         /// <p>The current status of the instance group.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InstanceGroupStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InstanceGroupStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `configurations`.
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
-        /// <note>
-        /// <p>Amazon EMR releases 4.x or later.</p>
-        /// </note>
+        /// <note> 
+        /// <p>Amazon EMR releases 4.x or later.</p> 
+        /// </note> 
         /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
-        /// <note>
-        /// <p>Amazon EMR releases 4.x or later.</p>
-        /// </note>
+        /// <note> 
+        /// <p>Amazon EMR releases 4.x or later.</p> 
+        /// </note> 
         /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// <p>The version number of the requested configuration specification for this instance group.</p>
         pub fn configurations_version(mut self, input: i64) -> Self {
@@ -10257,32 +9456,22 @@ pub mod instance_group {
         }
         /// <p>The version number of the requested configuration specification for this instance group.</p>
         pub fn set_configurations_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.configurations_version = input;
-            self
+            self.configurations_version = input; self
         }
         /// Appends an item to `last_successfully_applied_configurations`.
         ///
         /// To override the contents of this collection use [`set_last_successfully_applied_configurations`](Self::set_last_successfully_applied_configurations).
         ///
         /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
-        pub fn last_successfully_applied_configurations(
-            mut self,
-            input: crate::model::Configuration,
-        ) -> Self {
-            let mut v = self
-                .last_successfully_applied_configurations
-                .unwrap_or_default();
-            v.push(input);
-            self.last_successfully_applied_configurations = Some(v);
-            self
+        pub fn last_successfully_applied_configurations(mut self, input: crate::model::Configuration) -> Self {
+            let mut v = self.last_successfully_applied_configurations.unwrap_or_default();
+                            v.push(input);
+                            self.last_successfully_applied_configurations = Some(v);
+                            self
         }
         /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
-        pub fn set_last_successfully_applied_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.last_successfully_applied_configurations = input;
-            self
+        pub fn set_last_successfully_applied_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.last_successfully_applied_configurations = input; self
         }
         /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
         pub fn last_successfully_applied_configurations_version(mut self, input: i64) -> Self {
@@ -10290,12 +9479,8 @@ pub mod instance_group {
             self
         }
         /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
-        pub fn set_last_successfully_applied_configurations_version(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.last_successfully_applied_configurations_version = input;
-            self
+        pub fn set_last_successfully_applied_configurations_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.last_successfully_applied_configurations_version = input; self
         }
         /// Appends an item to `ebs_block_devices`.
         ///
@@ -10304,17 +9489,13 @@ pub mod instance_group {
         /// <p>The EBS block devices that are mapped to this instance group.</p>
         pub fn ebs_block_devices(mut self, input: crate::model::EbsBlockDevice) -> Self {
             let mut v = self.ebs_block_devices.unwrap_or_default();
-            v.push(input);
-            self.ebs_block_devices = Some(v);
-            self
+                            v.push(input);
+                            self.ebs_block_devices = Some(v);
+                            self
         }
         /// <p>The EBS block devices that are mapped to this instance group.</p>
-        pub fn set_ebs_block_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
-        ) -> Self {
-            self.ebs_block_devices = input;
-            self
+        pub fn set_ebs_block_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>) -> Self {
+            self.ebs_block_devices = input; self
         }
         /// <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.</p>
         pub fn ebs_optimized(mut self, input: bool) -> Self {
@@ -10323,8 +9504,7 @@ pub mod instance_group {
         }
         /// <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
-            self.ebs_optimized = input;
-            self
+            self.ebs_optimized = input; self
         }
         /// <p>Policy for customizing shrink operations.</p>
         pub fn shrink_policy(mut self, input: crate::model::ShrinkPolicy) -> Self {
@@ -10332,28 +9512,17 @@ pub mod instance_group {
             self
         }
         /// <p>Policy for customizing shrink operations.</p>
-        pub fn set_shrink_policy(
-            mut self,
-            input: std::option::Option<crate::model::ShrinkPolicy>,
-        ) -> Self {
-            self.shrink_policy = input;
-            self
+        pub fn set_shrink_policy(mut self, input: std::option::Option<crate::model::ShrinkPolicy>) -> Self {
+            self.shrink_policy = input; self
         }
         /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
-        pub fn auto_scaling_policy(
-            mut self,
-            input: crate::model::AutoScalingPolicyDescription,
-        ) -> Self {
+        pub fn auto_scaling_policy(mut self, input: crate::model::AutoScalingPolicyDescription) -> Self {
             self.auto_scaling_policy = Some(input);
             self
         }
         /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
-        pub fn set_auto_scaling_policy(
-            mut self,
-            input: std::option::Option<crate::model::AutoScalingPolicyDescription>,
-        ) -> Self {
-            self.auto_scaling_policy = input;
-            self
+        pub fn set_auto_scaling_policy(mut self, input: std::option::Option<crate::model::AutoScalingPolicyDescription>) -> Self {
+            self.auto_scaling_policy = input; self
         }
         /// <p>The custom AMI ID to use for the provisioned instance group.</p>
         pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10361,40 +9530,55 @@ pub mod instance_group {
             self
         }
         /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-        pub fn set_custom_ami_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_ami_id = input;
-            self
+        pub fn set_custom_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_ami_id = input; self
         }
         /// Consumes the builder and constructs a [`InstanceGroup`](crate::model::InstanceGroup).
         pub fn build(self) -> crate::model::InstanceGroup {
             crate::model::InstanceGroup {
-                id: self.id,
-                name: self.name,
-                market: self.market,
-                instance_group_type: self.instance_group_type,
-                bid_price: self.bid_price,
-                instance_type: self.instance_type,
-                requested_instance_count: self.requested_instance_count,
-                running_instance_count: self.running_instance_count,
-                status: self.status,
-                configurations: self.configurations,
-                configurations_version: self.configurations_version.unwrap_or_default(),
-                last_successfully_applied_configurations: self
-                    .last_successfully_applied_configurations,
-                last_successfully_applied_configurations_version: self
-                    .last_successfully_applied_configurations_version
-                    .unwrap_or_default(),
-                ebs_block_devices: self.ebs_block_devices,
-                ebs_optimized: self.ebs_optimized,
-                shrink_policy: self.shrink_policy,
-                auto_scaling_policy: self.auto_scaling_policy,
-                custom_ami_id: self.custom_ami_id,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                market: self.market
+                ,
+                instance_group_type: self.instance_group_type
+                ,
+                bid_price: self.bid_price
+                ,
+                instance_type: self.instance_type
+                ,
+                requested_instance_count: self.requested_instance_count
+                ,
+                running_instance_count: self.running_instance_count
+                ,
+                status: self.status
+                ,
+                configurations: self.configurations
+                ,
+                configurations_version: self.configurations_version
+                    .unwrap_or_default()
+                ,
+                last_successfully_applied_configurations: self.last_successfully_applied_configurations
+                ,
+                last_successfully_applied_configurations_version: self.last_successfully_applied_configurations_version
+                    .unwrap_or_default()
+                ,
+                ebs_block_devices: self.ebs_block_devices
+                ,
+                ebs_optimized: self.ebs_optimized
+                ,
+                shrink_policy: self.shrink_policy
+                ,
+                auto_scaling_policy: self.auto_scaling_policy
+                ,
+                custom_ami_id: self.custom_ami_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceGroup {
     /// Creates a new builder-style object to manufacture [`InstanceGroup`](crate::model::InstanceGroup).
@@ -10406,7 +9590,7 @@ impl InstanceGroup {
 /// <p>Configuration of requested EBS block device associated with the instance group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsBlockDevice {
+pub struct EbsBlockDevice  {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
     #[doc(hidden)]
     pub volume_specification: std::option::Option<crate::model::VolumeSpecification>,
@@ -10416,17 +9600,17 @@ pub struct EbsBlockDevice {
 }
 impl EbsBlockDevice {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
-    pub fn volume_specification(&self) -> std::option::Option<&crate::model::VolumeSpecification> {
+    pub fn volume_specification(&self) -> std::option::Option<& crate::model::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-    pub fn device(&self) -> std::option::Option<&str> {
+    pub fn device(&self) -> std::option::Option<& str> {
         self.device.as_deref()
     }
 }
 /// See [`EbsBlockDevice`](crate::model::EbsBlockDevice).
 pub mod ebs_block_device {
-
+    
     /// A builder for [`EbsBlockDevice`](crate::model::EbsBlockDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10440,12 +9624,8 @@ pub mod ebs_block_device {
             self
         }
         /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
-        pub fn set_volume_specification(
-            mut self,
-            input: std::option::Option<crate::model::VolumeSpecification>,
-        ) -> Self {
-            self.volume_specification = input;
-            self
+        pub fn set_volume_specification(mut self, input: std::option::Option<crate::model::VolumeSpecification>) -> Self {
+            self.volume_specification = input; self
         }
         /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
         pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10454,17 +9634,20 @@ pub mod ebs_block_device {
         }
         /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
         pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device = input;
-            self
+            self.device = input; self
         }
         /// Consumes the builder and constructs a [`EbsBlockDevice`](crate::model::EbsBlockDevice).
         pub fn build(self) -> crate::model::EbsBlockDevice {
             crate::model::EbsBlockDevice {
-                volume_specification: self.volume_specification,
-                device: self.device,
+                volume_specification: self.volume_specification
+                ,
+                device: self.device
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsBlockDevice {
     /// Creates a new builder-style object to manufacture [`EbsBlockDevice`](crate::model::EbsBlockDevice).
@@ -10476,7 +9659,7 @@ impl EbsBlockDevice {
 /// <p>The details of the instance group status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroupStatus {
+pub struct InstanceGroupStatus  {
     /// <p>The current state of the instance group.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceGroupState>,
@@ -10489,29 +9672,26 @@ pub struct InstanceGroupStatus {
 }
 impl InstanceGroupStatus {
     /// <p>The current state of the instance group.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::InstanceGroupState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InstanceGroupState> {
         self.state.as_ref()
     }
     /// <p>The status change reason details for the instance group.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceGroupStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::model::InstanceGroupStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The timeline of the instance group status over time.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::model::InstanceGroupTimeline> {
+    pub fn timeline(&self) -> std::option::Option<& crate::model::InstanceGroupTimeline> {
         self.timeline.as_ref()
     }
 }
 /// See [`InstanceGroupStatus`](crate::model::InstanceGroupStatus).
 pub mod instance_group_status {
-
+    
     /// A builder for [`InstanceGroupStatus`](crate::model::InstanceGroupStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::InstanceGroupState>,
-        pub(crate) state_change_reason:
-            std::option::Option<crate::model::InstanceGroupStateChangeReason>,
+        pub(crate) state_change_reason: std::option::Option<crate::model::InstanceGroupStateChangeReason>,
         pub(crate) timeline: std::option::Option<crate::model::InstanceGroupTimeline>,
     }
     impl Builder {
@@ -10521,28 +9701,17 @@ pub mod instance_group_status {
             self
         }
         /// <p>The current state of the instance group.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::InstanceGroupState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::InstanceGroupState>) -> Self {
+            self.state = input; self
         }
         /// <p>The status change reason details for the instance group.</p>
-        pub fn state_change_reason(
-            mut self,
-            input: crate::model::InstanceGroupStateChangeReason,
-        ) -> Self {
+        pub fn state_change_reason(mut self, input: crate::model::InstanceGroupStateChangeReason) -> Self {
             self.state_change_reason = Some(input);
             self
         }
         /// <p>The status change reason details for the instance group.</p>
-        pub fn set_state_change_reason(
-            mut self,
-            input: std::option::Option<crate::model::InstanceGroupStateChangeReason>,
-        ) -> Self {
-            self.state_change_reason = input;
-            self
+        pub fn set_state_change_reason(mut self, input: std::option::Option<crate::model::InstanceGroupStateChangeReason>) -> Self {
+            self.state_change_reason = input; self
         }
         /// <p>The timeline of the instance group status over time.</p>
         pub fn timeline(mut self, input: crate::model::InstanceGroupTimeline) -> Self {
@@ -10550,22 +9719,23 @@ pub mod instance_group_status {
             self
         }
         /// <p>The timeline of the instance group status over time.</p>
-        pub fn set_timeline(
-            mut self,
-            input: std::option::Option<crate::model::InstanceGroupTimeline>,
-        ) -> Self {
-            self.timeline = input;
-            self
+        pub fn set_timeline(mut self, input: std::option::Option<crate::model::InstanceGroupTimeline>) -> Self {
+            self.timeline = input; self
         }
         /// Consumes the builder and constructs a [`InstanceGroupStatus`](crate::model::InstanceGroupStatus).
         pub fn build(self) -> crate::model::InstanceGroupStatus {
             crate::model::InstanceGroupStatus {
-                state: self.state,
-                state_change_reason: self.state_change_reason,
-                timeline: self.timeline,
+                state: self.state
+                ,
+                state_change_reason: self.state_change_reason
+                ,
+                timeline: self.timeline
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceGroupStatus {
     /// Creates a new builder-style object to manufacture [`InstanceGroupStatus`](crate::model::InstanceGroupStatus).
@@ -10577,7 +9747,7 @@ impl InstanceGroupStatus {
 /// <p>The timeline of the instance group lifecycle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroupTimeline {
+pub struct InstanceGroupTimeline  {
     /// <p>The creation date and time of the instance group.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -10590,21 +9760,21 @@ pub struct InstanceGroupTimeline {
 }
 impl InstanceGroupTimeline {
     /// <p>The creation date and time of the instance group.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the instance group became ready to perform tasks.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date and time when the instance group terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
 /// See [`InstanceGroupTimeline`](crate::model::InstanceGroupTimeline).
 pub mod instance_group_timeline {
-
+    
     /// A builder for [`InstanceGroupTimeline`](crate::model::InstanceGroupTimeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10619,12 +9789,8 @@ pub mod instance_group_timeline {
             self
         }
         /// <p>The creation date and time of the instance group.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time when the instance group became ready to perform tasks.</p>
         pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10632,12 +9798,8 @@ pub mod instance_group_timeline {
             self
         }
         /// <p>The date and time when the instance group became ready to perform tasks.</p>
-        pub fn set_ready_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ready_date_time = input;
-            self
+        pub fn set_ready_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ready_date_time = input; self
         }
         /// <p>The date and time when the instance group terminated.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10645,22 +9807,23 @@ pub mod instance_group_timeline {
             self
         }
         /// <p>The date and time when the instance group terminated.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// Consumes the builder and constructs a [`InstanceGroupTimeline`](crate::model::InstanceGroupTimeline).
         pub fn build(self) -> crate::model::InstanceGroupTimeline {
             crate::model::InstanceGroupTimeline {
-                creation_date_time: self.creation_date_time,
-                ready_date_time: self.ready_date_time,
-                end_date_time: self.end_date_time,
+                creation_date_time: self.creation_date_time
+                ,
+                ready_date_time: self.ready_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceGroupTimeline {
     /// Creates a new builder-style object to manufacture [`InstanceGroupTimeline`](crate::model::InstanceGroupTimeline).
@@ -10672,7 +9835,7 @@ impl InstanceGroupTimeline {
 /// <p>The status change reason details for the instance group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroupStateChangeReason {
+pub struct InstanceGroupStateChangeReason  {
     /// <p>The programmable code for the state change reason.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::InstanceGroupStateChangeReasonCode>,
@@ -10682,17 +9845,17 @@ pub struct InstanceGroupStateChangeReason {
 }
 impl InstanceGroupStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::InstanceGroupStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::InstanceGroupStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The status change reason description.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`InstanceGroupStateChangeReason`](crate::model::InstanceGroupStateChangeReason).
 pub mod instance_group_state_change_reason {
-
+    
     /// A builder for [`InstanceGroupStateChangeReason`](crate::model::InstanceGroupStateChangeReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10706,12 +9869,8 @@ pub mod instance_group_state_change_reason {
             self
         }
         /// <p>The programmable code for the state change reason.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::InstanceGroupStateChangeReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::InstanceGroupStateChangeReasonCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The status change reason description.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10720,17 +9879,20 @@ pub mod instance_group_state_change_reason {
         }
         /// <p>The status change reason description.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceGroupStateChangeReason`](crate::model::InstanceGroupStateChangeReason).
         pub fn build(self) -> crate::model::InstanceGroupStateChangeReason {
             crate::model::InstanceGroupStateChangeReason {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceGroupStateChangeReason {
     /// Creates a new builder-style object to manufacture [`InstanceGroupStateChangeReason`](crate::model::InstanceGroupStateChangeReason).
@@ -10745,9 +9907,9 @@ impl InstanceGroupStateChangeReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancegroupstatechangereasoncode = unimplemented!();
 /// match instancegroupstatechangereasoncode {
@@ -10771,22 +9933,14 @@ impl InstanceGroupStateChangeReason {
 /// Specifically, when `instancegroupstatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceGroupStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceGroupStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ClusterTerminated,
@@ -10797,7 +9951,7 @@ pub enum InstanceGroupStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceGroupStateChangeReasonCode {
     fn from(s: &str) -> Self {
@@ -10806,19 +9960,17 @@ impl std::convert::From<&str> for InstanceGroupStateChangeReasonCode {
             "INSTANCE_FAILURE" => InstanceGroupStateChangeReasonCode::InstanceFailure,
             "INTERNAL_ERROR" => InstanceGroupStateChangeReasonCode::InternalError,
             "VALIDATION_ERROR" => InstanceGroupStateChangeReasonCode::ValidationError,
-            other => InstanceGroupStateChangeReasonCode::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => InstanceGroupStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceGroupStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceGroupStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceGroupStateChangeReasonCode::from(s))
+                }
+            }
 impl InstanceGroupStateChangeReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10827,16 +9979,13 @@ impl InstanceGroupStateChangeReasonCode {
             InstanceGroupStateChangeReasonCode::InstanceFailure => "INSTANCE_FAILURE",
             InstanceGroupStateChangeReasonCode::InternalError => "INTERNAL_ERROR",
             InstanceGroupStateChangeReasonCode::ValidationError => "VALIDATION_ERROR",
-            InstanceGroupStateChangeReasonCode::Unknown(value) => value.as_str(),
+            InstanceGroupStateChangeReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CLUSTER_TERMINATED",
-            "INSTANCE_FAILURE",
-            "INTERNAL_ERROR",
-            "VALIDATION_ERROR",
+            "CLUSTER_TERMINATED", "INSTANCE_FAILURE", "INTERNAL_ERROR", "VALIDATION_ERROR"
         ]
     }
 }
@@ -10852,9 +10001,9 @@ impl AsRef<str> for InstanceGroupStateChangeReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancegroupstate = unimplemented!();
 /// match instancegroupstate {
@@ -10885,22 +10034,14 @@ impl AsRef<str> for InstanceGroupStateChangeReasonCode {
 /// Specifically, when `instancegroupstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceGroupState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceGroupState {
     #[allow(missing_docs)] // documentation missing in model
     Arrested,
@@ -10925,7 +10066,7 @@ pub enum InstanceGroupState {
     #[allow(missing_docs)] // documentation missing in model
     Terminating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceGroupState {
     fn from(s: &str) -> Self {
@@ -10941,19 +10082,17 @@ impl std::convert::From<&str> for InstanceGroupState {
             "SUSPENDED" => InstanceGroupState::Suspended,
             "TERMINATED" => InstanceGroupState::Terminated,
             "TERMINATING" => InstanceGroupState::Terminating,
-            other => {
-                InstanceGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceGroupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceGroupState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceGroupState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceGroupState::from(s))
+                }
+            }
 impl InstanceGroupState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10969,23 +10108,13 @@ impl InstanceGroupState {
             InstanceGroupState::Suspended => "SUSPENDED",
             InstanceGroupState::Terminated => "TERMINATED",
             InstanceGroupState::Terminating => "TERMINATING",
-            InstanceGroupState::Unknown(value) => value.as_str(),
+            InstanceGroupState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ARRESTED",
-            "BOOTSTRAPPING",
-            "ENDED",
-            "PROVISIONING",
-            "RECONFIGURING",
-            "RESIZING",
-            "RUNNING",
-            "SHUTTING_DOWN",
-            "SUSPENDED",
-            "TERMINATED",
-            "TERMINATING",
+            "ARRESTED", "BOOTSTRAPPING", "ENDED", "PROVISIONING", "RECONFIGURING", "RESIZING", "RUNNING", "SHUTTING_DOWN", "SUSPENDED", "TERMINATED", "TERMINATING"
         ]
     }
 }
@@ -10995,12 +10124,12 @@ impl AsRef<str> for InstanceGroupState {
     }
 }
 
-/// <p>Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot Instances, which are provisioned to meet a defined target capacity. </p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot Instances, which are provisioned to meet a defined target capacity. </p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceFleet {
+pub struct InstanceFleet  {
     /// <p>The unique identifier of the instance fleet.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -11013,13 +10142,13 @@ pub struct InstanceFleet {
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK. </p>
     #[doc(hidden)]
     pub instance_fleet_type: std::option::Option<crate::model::InstanceFleetType>,
-    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
-    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> 
+    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
     /// </note>
     #[doc(hidden)]
     pub target_on_demand_capacity: std::option::Option<i32>,
-    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
-    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> 
+    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
     /// </note>
     #[doc(hidden)]
     pub target_spot_capacity: std::option::Option<i32>,
@@ -11031,38 +10160,36 @@ pub struct InstanceFleet {
     pub provisioned_spot_capacity: std::option::Option<i32>,
     /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
     #[doc(hidden)]
-    pub instance_type_specifications:
-        std::option::Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>,
+    pub instance_type_specifications: std::option::Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>,
     /// <p>Describes the launch specification for an instance fleet. </p>
     #[doc(hidden)]
-    pub launch_specifications:
-        std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
+    pub launch_specifications: std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
 }
 impl InstanceFleet {
     /// <p>The unique identifier of the instance fleet.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A friendly name for the instance fleet.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the instance fleet. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::InstanceFleetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::InstanceFleetStatus> {
         self.status.as_ref()
     }
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK. </p>
-    pub fn instance_fleet_type(&self) -> std::option::Option<&crate::model::InstanceFleetType> {
+    pub fn instance_fleet_type(&self) -> std::option::Option<& crate::model::InstanceFleetType> {
         self.instance_fleet_type.as_ref()
     }
-    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
-    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> 
+    /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
     /// </note>
     pub fn target_on_demand_capacity(&self) -> std::option::Option<i32> {
         self.target_on_demand_capacity
     }
-    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
-    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+    /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> 
+    /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
     /// </note>
     pub fn target_spot_capacity(&self) -> std::option::Option<i32> {
         self.target_spot_capacity
@@ -11076,21 +10203,17 @@ impl InstanceFleet {
         self.provisioned_spot_capacity
     }
     /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
-    pub fn instance_type_specifications(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceTypeSpecification]> {
+    pub fn instance_type_specifications(&self) -> std::option::Option<& [crate::model::InstanceTypeSpecification]> {
         self.instance_type_specifications.as_deref()
     }
     /// <p>Describes the launch specification for an instance fleet. </p>
-    pub fn launch_specifications(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceFleetProvisioningSpecifications> {
+    pub fn launch_specifications(&self) -> std::option::Option<& crate::model::InstanceFleetProvisioningSpecifications> {
         self.launch_specifications.as_ref()
     }
 }
 /// See [`InstanceFleet`](crate::model::InstanceFleet).
 pub mod instance_fleet {
-
+    
     /// A builder for [`InstanceFleet`](crate::model::InstanceFleet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11102,10 +10225,8 @@ pub mod instance_fleet {
         pub(crate) target_spot_capacity: std::option::Option<i32>,
         pub(crate) provisioned_on_demand_capacity: std::option::Option<i32>,
         pub(crate) provisioned_spot_capacity: std::option::Option<i32>,
-        pub(crate) instance_type_specifications:
-            std::option::Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>,
-        pub(crate) launch_specifications:
-            std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
+        pub(crate) instance_type_specifications: std::option::Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>,
+        pub(crate) launch_specifications: std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
     }
     impl Builder {
         /// <p>The unique identifier of the instance fleet.</p>
@@ -11115,8 +10236,7 @@ pub mod instance_fleet {
         }
         /// <p>The unique identifier of the instance fleet.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>A friendly name for the instance fleet.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11125,8 +10245,7 @@ pub mod instance_fleet {
         }
         /// <p>A friendly name for the instance fleet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the instance fleet. </p>
         pub fn status(mut self, input: crate::model::InstanceFleetStatus) -> Self {
@@ -11134,12 +10253,8 @@ pub mod instance_fleet {
             self
         }
         /// <p>The current status of the instance fleet. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::InstanceFleetStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK. </p>
         pub fn instance_fleet_type(mut self, input: crate::model::InstanceFleetType) -> Self {
@@ -11147,40 +10262,34 @@ pub mod instance_fleet {
             self
         }
         /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK. </p>
-        pub fn set_instance_fleet_type(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetType>,
-        ) -> Self {
-            self.instance_fleet_type = input;
-            self
+        pub fn set_instance_fleet_type(mut self, input: std::option::Option<crate::model::InstanceFleetType>) -> Self {
+            self.instance_fleet_type = input; self
         }
-        /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
-        /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+        /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> 
+        /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
         /// </note>
         pub fn target_on_demand_capacity(mut self, input: i32) -> Self {
             self.target_on_demand_capacity = Some(input);
             self
         }
-        /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
-        /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+        /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> 
+        /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
         /// </note>
         pub fn set_target_on_demand_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_on_demand_capacity = input;
-            self
+            self.target_on_demand_capacity = input; self
         }
-        /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
-        /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+        /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> 
+        /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
         /// </note>
         pub fn target_spot_capacity(mut self, input: i32) -> Self {
             self.target_spot_capacity = Some(input);
             self
         }
-        /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
-        /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
+        /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note> 
+        /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p> 
         /// </note>
         pub fn set_target_spot_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_spot_capacity = input;
-            self
+            self.target_spot_capacity = input; self
         }
         /// <p>The number of On-Demand units that have been provisioned for the instance fleet to fulfill <code>TargetOnDemandCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetOnDemandCapacity</code>.</p>
         pub fn provisioned_on_demand_capacity(mut self, input: i32) -> Self {
@@ -11188,12 +10297,8 @@ pub mod instance_fleet {
             self
         }
         /// <p>The number of On-Demand units that have been provisioned for the instance fleet to fulfill <code>TargetOnDemandCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetOnDemandCapacity</code>.</p>
-        pub fn set_provisioned_on_demand_capacity(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.provisioned_on_demand_capacity = input;
-            self
+        pub fn set_provisioned_on_demand_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.provisioned_on_demand_capacity = input; self
         }
         /// <p>The number of Spot units that have been provisioned for this instance fleet to fulfill <code>TargetSpotCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetSpotCapacity</code>.</p>
         pub fn provisioned_spot_capacity(mut self, input: i32) -> Self {
@@ -11202,63 +10307,60 @@ pub mod instance_fleet {
         }
         /// <p>The number of Spot units that have been provisioned for this instance fleet to fulfill <code>TargetSpotCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetSpotCapacity</code>.</p>
         pub fn set_provisioned_spot_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.provisioned_spot_capacity = input;
-            self
+            self.provisioned_spot_capacity = input; self
         }
         /// Appends an item to `instance_type_specifications`.
         ///
         /// To override the contents of this collection use [`set_instance_type_specifications`](Self::set_instance_type_specifications).
         ///
         /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
-        pub fn instance_type_specifications(
-            mut self,
-            input: crate::model::InstanceTypeSpecification,
-        ) -> Self {
+        pub fn instance_type_specifications(mut self, input: crate::model::InstanceTypeSpecification) -> Self {
             let mut v = self.instance_type_specifications.unwrap_or_default();
-            v.push(input);
-            self.instance_type_specifications = Some(v);
-            self
+                            v.push(input);
+                            self.instance_type_specifications = Some(v);
+                            self
         }
         /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
-        pub fn set_instance_type_specifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>,
-        ) -> Self {
-            self.instance_type_specifications = input;
-            self
+        pub fn set_instance_type_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>) -> Self {
+            self.instance_type_specifications = input; self
         }
         /// <p>Describes the launch specification for an instance fleet. </p>
-        pub fn launch_specifications(
-            mut self,
-            input: crate::model::InstanceFleetProvisioningSpecifications,
-        ) -> Self {
+        pub fn launch_specifications(mut self, input: crate::model::InstanceFleetProvisioningSpecifications) -> Self {
             self.launch_specifications = Some(input);
             self
         }
         /// <p>Describes the launch specification for an instance fleet. </p>
-        pub fn set_launch_specifications(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>,
-        ) -> Self {
-            self.launch_specifications = input;
-            self
+        pub fn set_launch_specifications(mut self, input: std::option::Option<crate::model::InstanceFleetProvisioningSpecifications>) -> Self {
+            self.launch_specifications = input; self
         }
         /// Consumes the builder and constructs a [`InstanceFleet`](crate::model::InstanceFleet).
         pub fn build(self) -> crate::model::InstanceFleet {
             crate::model::InstanceFleet {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                instance_fleet_type: self.instance_fleet_type,
-                target_on_demand_capacity: self.target_on_demand_capacity,
-                target_spot_capacity: self.target_spot_capacity,
-                provisioned_on_demand_capacity: self.provisioned_on_demand_capacity,
-                provisioned_spot_capacity: self.provisioned_spot_capacity,
-                instance_type_specifications: self.instance_type_specifications,
-                launch_specifications: self.launch_specifications,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                instance_fleet_type: self.instance_fleet_type
+                ,
+                target_on_demand_capacity: self.target_on_demand_capacity
+                ,
+                target_spot_capacity: self.target_spot_capacity
+                ,
+                provisioned_on_demand_capacity: self.provisioned_on_demand_capacity
+                ,
+                provisioned_spot_capacity: self.provisioned_spot_capacity
+                ,
+                instance_type_specifications: self.instance_type_specifications
+                ,
+                launch_specifications: self.launch_specifications
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceFleet {
     /// Creates a new builder-style object to manufacture [`InstanceFleet`](crate::model::InstanceFleet).
@@ -11267,12 +10369,12 @@ impl InstanceFleet {
     }
 }
 
-/// <p>The configuration specification for each instance type in an instance fleet.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>The configuration specification for each instance type in an instance fleet.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceTypeSpecification {
+pub struct InstanceTypeSpecification  {
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
@@ -11300,7 +10402,7 @@ pub struct InstanceTypeSpecification {
 }
 impl InstanceTypeSpecification {
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
@@ -11308,7 +10410,7 @@ impl InstanceTypeSpecification {
         self.weighted_capacity
     }
     /// <p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
-    pub fn bid_price(&self) -> std::option::Option<&str> {
+    pub fn bid_price(&self) -> std::option::Option<& str> {
         self.bid_price.as_deref()
     }
     /// <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
@@ -11316,11 +10418,11 @@ impl InstanceTypeSpecification {
         self.bid_price_as_percentage_of_on_demand_price
     }
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
-    pub fn ebs_block_devices(&self) -> std::option::Option<&[crate::model::EbsBlockDevice]> {
+    pub fn ebs_block_devices(&self) -> std::option::Option<& [crate::model::EbsBlockDevice]> {
         self.ebs_block_devices.as_deref()
     }
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
@@ -11328,13 +10430,13 @@ impl InstanceTypeSpecification {
         self.ebs_optimized
     }
     /// <p>The custom AMI ID to use for the instance type.</p>
-    pub fn custom_ami_id(&self) -> std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> std::option::Option<& str> {
         self.custom_ami_id.as_deref()
     }
 }
 /// See [`InstanceTypeSpecification`](crate::model::InstanceTypeSpecification).
 pub mod instance_type_specification {
-
+    
     /// A builder for [`InstanceTypeSpecification`](crate::model::InstanceTypeSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11343,8 +10445,7 @@ pub mod instance_type_specification {
         pub(crate) bid_price: std::option::Option<std::string::String>,
         pub(crate) bid_price_as_percentage_of_on_demand_price: std::option::Option<f64>,
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        pub(crate) ebs_block_devices:
-            std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
+        pub(crate) ebs_block_devices: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
         pub(crate) ebs_optimized: std::option::Option<bool>,
         pub(crate) custom_ami_id: std::option::Option<std::string::String>,
     }
@@ -11355,12 +10456,8 @@ pub mod instance_type_specification {
             self
         }
         /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
         pub fn weighted_capacity(mut self, input: i32) -> Self {
@@ -11369,8 +10466,7 @@ pub mod instance_type_specification {
         }
         /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
         pub fn set_weighted_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.weighted_capacity = input;
-            self
+            self.weighted_capacity = input; self
         }
         /// <p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
         pub fn bid_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11379,8 +10475,7 @@ pub mod instance_type_specification {
         }
         /// <p>The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
         pub fn set_bid_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bid_price = input;
-            self
+            self.bid_price = input; self
         }
         /// <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
         pub fn bid_price_as_percentage_of_on_demand_price(mut self, input: f64) -> Self {
@@ -11388,12 +10483,8 @@ pub mod instance_type_specification {
             self
         }
         /// <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
-        pub fn set_bid_price_as_percentage_of_on_demand_price(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.bid_price_as_percentage_of_on_demand_price = input;
-            self
+        pub fn set_bid_price_as_percentage_of_on_demand_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.bid_price_as_percentage_of_on_demand_price = input; self
         }
         /// Appends an item to `configurations`.
         ///
@@ -11402,17 +10493,13 @@ pub mod instance_type_specification {
         /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
         /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// Appends an item to `ebs_block_devices`.
         ///
@@ -11421,17 +10508,13 @@ pub mod instance_type_specification {
         /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
         pub fn ebs_block_devices(mut self, input: crate::model::EbsBlockDevice) -> Self {
             let mut v = self.ebs_block_devices.unwrap_or_default();
-            v.push(input);
-            self.ebs_block_devices = Some(v);
-            self
+                            v.push(input);
+                            self.ebs_block_devices = Some(v);
+                            self
         }
         /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
-        pub fn set_ebs_block_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
-        ) -> Self {
-            self.ebs_block_devices = input;
-            self
+        pub fn set_ebs_block_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>) -> Self {
+            self.ebs_block_devices = input; self
         }
         /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
         pub fn ebs_optimized(mut self, input: bool) -> Self {
@@ -11440,8 +10523,7 @@ pub mod instance_type_specification {
         }
         /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
-            self.ebs_optimized = input;
-            self
+            self.ebs_optimized = input; self
         }
         /// <p>The custom AMI ID to use for the instance type.</p>
         pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11449,28 +10531,33 @@ pub mod instance_type_specification {
             self
         }
         /// <p>The custom AMI ID to use for the instance type.</p>
-        pub fn set_custom_ami_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_ami_id = input;
-            self
+        pub fn set_custom_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_ami_id = input; self
         }
         /// Consumes the builder and constructs a [`InstanceTypeSpecification`](crate::model::InstanceTypeSpecification).
         pub fn build(self) -> crate::model::InstanceTypeSpecification {
             crate::model::InstanceTypeSpecification {
-                instance_type: self.instance_type,
-                weighted_capacity: self.weighted_capacity,
-                bid_price: self.bid_price,
-                bid_price_as_percentage_of_on_demand_price: self
-                    .bid_price_as_percentage_of_on_demand_price,
-                configurations: self.configurations,
-                ebs_block_devices: self.ebs_block_devices,
-                ebs_optimized: self.ebs_optimized,
-                custom_ami_id: self.custom_ami_id,
+                instance_type: self.instance_type
+                ,
+                weighted_capacity: self.weighted_capacity
+                ,
+                bid_price: self.bid_price
+                ,
+                bid_price_as_percentage_of_on_demand_price: self.bid_price_as_percentage_of_on_demand_price
+                ,
+                configurations: self.configurations
+                ,
+                ebs_block_devices: self.ebs_block_devices
+                ,
+                ebs_optimized: self.ebs_optimized
+                ,
+                custom_ami_id: self.custom_ami_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceTypeSpecification {
     /// Creates a new builder-style object to manufacture [`InstanceTypeSpecification`](crate::model::InstanceTypeSpecification).
@@ -11479,21 +10566,21 @@ impl InstanceTypeSpecification {
     }
 }
 
-/// <p>The status of the instance fleet.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>The status of the instance fleet.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceFleetStatus {
-    /// <p>A code representing the instance fleet status.</p>
-    /// <ul>
-    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is not yet ready to run jobs.</p> </li>
-    /// <li> <p> <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-    /// <li> <p> <code>RUNNING</code>—EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being added or removed.</p> </li>
-    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances are running, but instances can't be added or removed.</p> </li>
-    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li>
-    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li>
+pub struct InstanceFleetStatus  {
+    /// <p>A code representing the instance fleet status.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is not yet ready to run jobs.</p> </li> 
+    /// <li> <p> <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li> 
+    /// <li> <p> <code>RUNNING</code>—EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li> 
+    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being added or removed.</p> </li> 
+    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances are running, but instances can't be added or removed.</p> </li> 
+    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li> 
+    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::InstanceFleetState>,
@@ -11505,88 +10592,74 @@ pub struct InstanceFleetStatus {
     pub timeline: std::option::Option<crate::model::InstanceFleetTimeline>,
 }
 impl InstanceFleetStatus {
-    /// <p>A code representing the instance fleet status.</p>
-    /// <ul>
-    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is not yet ready to run jobs.</p> </li>
-    /// <li> <p> <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-    /// <li> <p> <code>RUNNING</code>—EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being added or removed.</p> </li>
-    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances are running, but instances can't be added or removed.</p> </li>
-    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li>
-    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li>
+    /// <p>A code representing the instance fleet status.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is not yet ready to run jobs.</p> </li> 
+    /// <li> <p> <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li> 
+    /// <li> <p> <code>RUNNING</code>—EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li> 
+    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being added or removed.</p> </li> 
+    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances are running, but instances can't be added or removed.</p> </li> 
+    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li> 
+    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::model::InstanceFleetState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InstanceFleetState> {
         self.state.as_ref()
     }
     /// <p>Provides status change reason details for the instance fleet.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceFleetStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::model::InstanceFleetStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::model::InstanceFleetTimeline> {
+    pub fn timeline(&self) -> std::option::Option<& crate::model::InstanceFleetTimeline> {
         self.timeline.as_ref()
     }
 }
 /// See [`InstanceFleetStatus`](crate::model::InstanceFleetStatus).
 pub mod instance_fleet_status {
-
+    
     /// A builder for [`InstanceFleetStatus`](crate::model::InstanceFleetStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::InstanceFleetState>,
-        pub(crate) state_change_reason:
-            std::option::Option<crate::model::InstanceFleetStateChangeReason>,
+        pub(crate) state_change_reason: std::option::Option<crate::model::InstanceFleetStateChangeReason>,
         pub(crate) timeline: std::option::Option<crate::model::InstanceFleetTimeline>,
     }
     impl Builder {
-        /// <p>A code representing the instance fleet status.</p>
-        /// <ul>
-        /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is not yet ready to run jobs.</p> </li>
-        /// <li> <p> <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-        /// <li> <p> <code>RUNNING</code>—EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-        /// <li> <p> <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being added or removed.</p> </li>
-        /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances are running, but instances can't be added or removed.</p> </li>
-        /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li>
-        /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li>
+        /// <p>A code representing the instance fleet status.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is not yet ready to run jobs.</p> </li> 
+        /// <li> <p> <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li> 
+        /// <li> <p> <code>RUNNING</code>—EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li> 
+        /// <li> <p> <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being added or removed.</p> </li> 
+        /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances are running, but instances can't be added or removed.</p> </li> 
+        /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li> 
+        /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li> 
         /// </ul>
         pub fn state(mut self, input: crate::model::InstanceFleetState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>A code representing the instance fleet status.</p>
-        /// <ul>
-        /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is not yet ready to run jobs.</p> </li>
-        /// <li> <p> <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-        /// <li> <p> <code>RUNNING</code>—EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-        /// <li> <p> <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being added or removed.</p> </li>
-        /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances are running, but instances can't be added or removed.</p> </li>
-        /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li>
-        /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li>
+        /// <p>A code representing the instance fleet status.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is not yet ready to run jobs.</p> </li> 
+        /// <li> <p> <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li> 
+        /// <li> <p> <code>RUNNING</code>—EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li> 
+        /// <li> <p> <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being added or removed.</p> </li> 
+        /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances are running, but instances can't be added or removed.</p> </li> 
+        /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.</p> </li> 
+        /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances have been terminated.</p> </li> 
         /// </ul>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::InstanceFleetState>) -> Self {
+            self.state = input; self
         }
         /// <p>Provides status change reason details for the instance fleet.</p>
-        pub fn state_change_reason(
-            mut self,
-            input: crate::model::InstanceFleetStateChangeReason,
-        ) -> Self {
+        pub fn state_change_reason(mut self, input: crate::model::InstanceFleetStateChangeReason) -> Self {
             self.state_change_reason = Some(input);
             self
         }
         /// <p>Provides status change reason details for the instance fleet.</p>
-        pub fn set_state_change_reason(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetStateChangeReason>,
-        ) -> Self {
-            self.state_change_reason = input;
-            self
+        pub fn set_state_change_reason(mut self, input: std::option::Option<crate::model::InstanceFleetStateChangeReason>) -> Self {
+            self.state_change_reason = input; self
         }
         /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
         pub fn timeline(mut self, input: crate::model::InstanceFleetTimeline) -> Self {
@@ -11594,22 +10667,23 @@ pub mod instance_fleet_status {
             self
         }
         /// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
-        pub fn set_timeline(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetTimeline>,
-        ) -> Self {
-            self.timeline = input;
-            self
+        pub fn set_timeline(mut self, input: std::option::Option<crate::model::InstanceFleetTimeline>) -> Self {
+            self.timeline = input; self
         }
         /// Consumes the builder and constructs a [`InstanceFleetStatus`](crate::model::InstanceFleetStatus).
         pub fn build(self) -> crate::model::InstanceFleetStatus {
             crate::model::InstanceFleetStatus {
-                state: self.state,
-                state_change_reason: self.state_change_reason,
-                timeline: self.timeline,
+                state: self.state
+                ,
+                state_change_reason: self.state_change_reason
+                ,
+                timeline: self.timeline
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceFleetStatus {
     /// Creates a new builder-style object to manufacture [`InstanceFleetStatus`](crate::model::InstanceFleetStatus).
@@ -11618,12 +10692,12 @@ impl InstanceFleetStatus {
     }
 }
 
-/// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceFleetTimeline {
+pub struct InstanceFleetTimeline  {
     /// <p>The time and date the instance fleet was created.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -11636,21 +10710,21 @@ pub struct InstanceFleetTimeline {
 }
 impl InstanceFleetTimeline {
     /// <p>The time and date the instance fleet was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time and date the instance fleet was ready to run jobs.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The time and date the instance fleet terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
 /// See [`InstanceFleetTimeline`](crate::model::InstanceFleetTimeline).
 pub mod instance_fleet_timeline {
-
+    
     /// A builder for [`InstanceFleetTimeline`](crate::model::InstanceFleetTimeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11665,12 +10739,8 @@ pub mod instance_fleet_timeline {
             self
         }
         /// <p>The time and date the instance fleet was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The time and date the instance fleet was ready to run jobs.</p>
         pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11678,12 +10748,8 @@ pub mod instance_fleet_timeline {
             self
         }
         /// <p>The time and date the instance fleet was ready to run jobs.</p>
-        pub fn set_ready_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ready_date_time = input;
-            self
+        pub fn set_ready_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ready_date_time = input; self
         }
         /// <p>The time and date the instance fleet terminated.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11691,22 +10757,23 @@ pub mod instance_fleet_timeline {
             self
         }
         /// <p>The time and date the instance fleet terminated.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// Consumes the builder and constructs a [`InstanceFleetTimeline`](crate::model::InstanceFleetTimeline).
         pub fn build(self) -> crate::model::InstanceFleetTimeline {
             crate::model::InstanceFleetTimeline {
-                creation_date_time: self.creation_date_time,
-                ready_date_time: self.ready_date_time,
-                end_date_time: self.end_date_time,
+                creation_date_time: self.creation_date_time
+                ,
+                ready_date_time: self.ready_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceFleetTimeline {
     /// Creates a new builder-style object to manufacture [`InstanceFleetTimeline`](crate::model::InstanceFleetTimeline).
@@ -11715,12 +10782,12 @@ impl InstanceFleetTimeline {
     }
 }
 
-/// <p>Provides status change reason details for the instance fleet.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>Provides status change reason details for the instance fleet.</p> <note> 
+/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceFleetStateChangeReason {
+pub struct InstanceFleetStateChangeReason  {
     /// <p>A code corresponding to the reason the state change occurred.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::InstanceFleetStateChangeReasonCode>,
@@ -11730,17 +10797,17 @@ pub struct InstanceFleetStateChangeReason {
 }
 impl InstanceFleetStateChangeReason {
     /// <p>A code corresponding to the reason the state change occurred.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::InstanceFleetStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::InstanceFleetStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>An explanatory message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`InstanceFleetStateChangeReason`](crate::model::InstanceFleetStateChangeReason).
 pub mod instance_fleet_state_change_reason {
-
+    
     /// A builder for [`InstanceFleetStateChangeReason`](crate::model::InstanceFleetStateChangeReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11754,12 +10821,8 @@ pub mod instance_fleet_state_change_reason {
             self
         }
         /// <p>A code corresponding to the reason the state change occurred.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::InstanceFleetStateChangeReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::InstanceFleetStateChangeReasonCode>) -> Self {
+            self.code = input; self
         }
         /// <p>An explanatory message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11768,17 +10831,20 @@ pub mod instance_fleet_state_change_reason {
         }
         /// <p>An explanatory message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceFleetStateChangeReason`](crate::model::InstanceFleetStateChangeReason).
         pub fn build(self) -> crate::model::InstanceFleetStateChangeReason {
             crate::model::InstanceFleetStateChangeReason {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceFleetStateChangeReason {
     /// Creates a new builder-style object to manufacture [`InstanceFleetStateChangeReason`](crate::model::InstanceFleetStateChangeReason).
@@ -11793,9 +10859,9 @@ impl InstanceFleetStateChangeReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancefleetstatechangereasoncode = unimplemented!();
 /// match instancefleetstatechangereasoncode {
@@ -11819,22 +10885,14 @@ impl InstanceFleetStateChangeReason {
 /// Specifically, when `instancefleetstatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceFleetStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceFleetStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ClusterTerminated,
@@ -11845,7 +10903,7 @@ pub enum InstanceFleetStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceFleetStateChangeReasonCode {
     fn from(s: &str) -> Self {
@@ -11854,19 +10912,17 @@ impl std::convert::From<&str> for InstanceFleetStateChangeReasonCode {
             "INSTANCE_FAILURE" => InstanceFleetStateChangeReasonCode::InstanceFailure,
             "INTERNAL_ERROR" => InstanceFleetStateChangeReasonCode::InternalError,
             "VALIDATION_ERROR" => InstanceFleetStateChangeReasonCode::ValidationError,
-            other => InstanceFleetStateChangeReasonCode::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => InstanceFleetStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceFleetStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceFleetStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceFleetStateChangeReasonCode::from(s))
+                }
+            }
 impl InstanceFleetStateChangeReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11875,16 +10931,13 @@ impl InstanceFleetStateChangeReasonCode {
             InstanceFleetStateChangeReasonCode::InstanceFailure => "INSTANCE_FAILURE",
             InstanceFleetStateChangeReasonCode::InternalError => "INTERNAL_ERROR",
             InstanceFleetStateChangeReasonCode::ValidationError => "VALIDATION_ERROR",
-            InstanceFleetStateChangeReasonCode::Unknown(value) => value.as_str(),
+            InstanceFleetStateChangeReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CLUSTER_TERMINATED",
-            "INSTANCE_FAILURE",
-            "INTERNAL_ERROR",
-            "VALIDATION_ERROR",
+            "CLUSTER_TERMINATED", "INSTANCE_FAILURE", "INTERNAL_ERROR", "VALIDATION_ERROR"
         ]
     }
 }
@@ -11900,9 +10953,9 @@ impl AsRef<str> for InstanceFleetStateChangeReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancefleetstate = unimplemented!();
 /// match instancefleetstate {
@@ -11929,22 +10982,14 @@ impl AsRef<str> for InstanceFleetStateChangeReasonCode {
 /// Specifically, when `instancefleetstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceFleetState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceFleetState {
     #[allow(missing_docs)] // documentation missing in model
     Bootstrapping,
@@ -11961,7 +11006,7 @@ pub enum InstanceFleetState {
     #[allow(missing_docs)] // documentation missing in model
     Terminating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceFleetState {
     fn from(s: &str) -> Self {
@@ -11973,19 +11018,17 @@ impl std::convert::From<&str> for InstanceFleetState {
             "SUSPENDED" => InstanceFleetState::Suspended,
             "TERMINATED" => InstanceFleetState::Terminated,
             "TERMINATING" => InstanceFleetState::Terminating,
-            other => {
-                InstanceFleetState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceFleetState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceFleetState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceFleetState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceFleetState::from(s))
+                }
+            }
 impl InstanceFleetState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11997,19 +11040,13 @@ impl InstanceFleetState {
             InstanceFleetState::Suspended => "SUSPENDED",
             InstanceFleetState::Terminated => "TERMINATED",
             InstanceFleetState::Terminating => "TERMINATING",
-            InstanceFleetState::Unknown(value) => value.as_str(),
+            InstanceFleetState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BOOTSTRAPPING",
-            "PROVISIONING",
-            "RESIZING",
-            "RUNNING",
-            "SUSPENDED",
-            "TERMINATED",
-            "TERMINATING",
+            "BOOTSTRAPPING", "PROVISIONING", "RESIZING", "RUNNING", "SUSPENDED", "TERMINATED", "TERMINATING"
         ]
     }
 }
@@ -12022,7 +11059,7 @@ impl AsRef<str> for InstanceFleetState {
 /// <p>The summary description of the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSummary {
+pub struct ClusterSummary  {
     /// <p>The unique identifier for the cluster.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12044,15 +11081,15 @@ pub struct ClusterSummary {
 }
 impl ClusterSummary {
     /// <p>The unique identifier for the cluster.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The details about the current status of the cluster.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ClusterStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ClusterStatus> {
         self.status.as_ref()
     }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
@@ -12060,17 +11097,17 @@ impl ClusterSummary {
         self.normalized_instance_hours
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
 }
 /// See [`ClusterSummary`](crate::model::ClusterSummary).
 pub mod cluster_summary {
-
+    
     /// A builder for [`ClusterSummary`](crate::model::ClusterSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12089,8 +11126,7 @@ pub mod cluster_summary {
         }
         /// <p>The unique identifier for the cluster.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the cluster.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12099,8 +11135,7 @@ pub mod cluster_summary {
         }
         /// <p>The name of the cluster.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The details about the current status of the cluster.</p>
         pub fn status(mut self, input: crate::model::ClusterStatus) -> Self {
@@ -12108,12 +11143,8 @@ pub mod cluster_summary {
             self
         }
         /// <p>The details about the current status of the cluster.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ClusterStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ClusterStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
         pub fn normalized_instance_hours(mut self, input: i32) -> Self {
@@ -12122,8 +11153,7 @@ pub mod cluster_summary {
         }
         /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
         pub fn set_normalized_instance_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.normalized_instance_hours = input;
-            self
+            self.normalized_instance_hours = input; self
         }
         /// <p>The Amazon Resource Name of the cluster.</p>
         pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12132,8 +11162,7 @@ pub mod cluster_summary {
         }
         /// <p>The Amazon Resource Name of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12142,21 +11171,28 @@ pub mod cluster_summary {
         }
         /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outpost_arn = input;
-            self
+            self.outpost_arn = input; self
         }
         /// Consumes the builder and constructs a [`ClusterSummary`](crate::model::ClusterSummary).
         pub fn build(self) -> crate::model::ClusterSummary {
             crate::model::ClusterSummary {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                normalized_instance_hours: self.normalized_instance_hours,
-                cluster_arn: self.cluster_arn,
-                outpost_arn: self.outpost_arn,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                normalized_instance_hours: self.normalized_instance_hours
+                ,
+                cluster_arn: self.cluster_arn
+                ,
+                outpost_arn: self.outpost_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterSummary {
     /// Creates a new builder-style object to manufacture [`ClusterSummary`](crate::model::ClusterSummary).
@@ -12168,7 +11204,7 @@ impl ClusterSummary {
 /// <p>The detailed status of the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterStatus {
+pub struct ClusterStatus  {
     /// <p>The current state of the cluster.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::ClusterState>,
@@ -12181,23 +11217,21 @@ pub struct ClusterStatus {
 }
 impl ClusterStatus {
     /// <p>The current state of the cluster.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ClusterState> {
         self.state.as_ref()
     }
     /// <p>The reason for the cluster status change.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> std::option::Option<&crate::model::ClusterStateChangeReason> {
+    pub fn state_change_reason(&self) -> std::option::Option<& crate::model::ClusterStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::model::ClusterTimeline> {
+    pub fn timeline(&self) -> std::option::Option<& crate::model::ClusterTimeline> {
         self.timeline.as_ref()
     }
 }
 /// See [`ClusterStatus`](crate::model::ClusterStatus).
 pub mod cluster_status {
-
+    
     /// A builder for [`ClusterStatus`](crate::model::ClusterStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12213,24 +11247,16 @@ pub mod cluster_status {
         }
         /// <p>The current state of the cluster.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the cluster status change.</p>
-        pub fn state_change_reason(
-            mut self,
-            input: crate::model::ClusterStateChangeReason,
-        ) -> Self {
+        pub fn state_change_reason(mut self, input: crate::model::ClusterStateChangeReason) -> Self {
             self.state_change_reason = Some(input);
             self
         }
         /// <p>The reason for the cluster status change.</p>
-        pub fn set_state_change_reason(
-            mut self,
-            input: std::option::Option<crate::model::ClusterStateChangeReason>,
-        ) -> Self {
-            self.state_change_reason = input;
-            self
+        pub fn set_state_change_reason(mut self, input: std::option::Option<crate::model::ClusterStateChangeReason>) -> Self {
+            self.state_change_reason = input; self
         }
         /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
         pub fn timeline(mut self, input: crate::model::ClusterTimeline) -> Self {
@@ -12238,22 +11264,23 @@ pub mod cluster_status {
             self
         }
         /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
-        pub fn set_timeline(
-            mut self,
-            input: std::option::Option<crate::model::ClusterTimeline>,
-        ) -> Self {
-            self.timeline = input;
-            self
+        pub fn set_timeline(mut self, input: std::option::Option<crate::model::ClusterTimeline>) -> Self {
+            self.timeline = input; self
         }
         /// Consumes the builder and constructs a [`ClusterStatus`](crate::model::ClusterStatus).
         pub fn build(self) -> crate::model::ClusterStatus {
             crate::model::ClusterStatus {
-                state: self.state,
-                state_change_reason: self.state_change_reason,
-                timeline: self.timeline,
+                state: self.state
+                ,
+                state_change_reason: self.state_change_reason
+                ,
+                timeline: self.timeline
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterStatus {
     /// Creates a new builder-style object to manufacture [`ClusterStatus`](crate::model::ClusterStatus).
@@ -12265,7 +11292,7 @@ impl ClusterStatus {
 /// <p>Represents the timeline of the cluster's lifecycle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterTimeline {
+pub struct ClusterTimeline  {
     /// <p>The creation date and time of the cluster.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -12278,21 +11305,21 @@ pub struct ClusterTimeline {
 }
 impl ClusterTimeline {
     /// <p>The creation date and time of the cluster.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the cluster was ready to run steps.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date and time when the cluster was terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
 /// See [`ClusterTimeline`](crate::model::ClusterTimeline).
 pub mod cluster_timeline {
-
+    
     /// A builder for [`ClusterTimeline`](crate::model::ClusterTimeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12307,12 +11334,8 @@ pub mod cluster_timeline {
             self
         }
         /// <p>The creation date and time of the cluster.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time when the cluster was ready to run steps.</p>
         pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12320,12 +11343,8 @@ pub mod cluster_timeline {
             self
         }
         /// <p>The date and time when the cluster was ready to run steps.</p>
-        pub fn set_ready_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ready_date_time = input;
-            self
+        pub fn set_ready_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ready_date_time = input; self
         }
         /// <p>The date and time when the cluster was terminated.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12333,22 +11352,23 @@ pub mod cluster_timeline {
             self
         }
         /// <p>The date and time when the cluster was terminated.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// Consumes the builder and constructs a [`ClusterTimeline`](crate::model::ClusterTimeline).
         pub fn build(self) -> crate::model::ClusterTimeline {
             crate::model::ClusterTimeline {
-                creation_date_time: self.creation_date_time,
-                ready_date_time: self.ready_date_time,
-                end_date_time: self.end_date_time,
+                creation_date_time: self.creation_date_time
+                ,
+                ready_date_time: self.ready_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterTimeline {
     /// Creates a new builder-style object to manufacture [`ClusterTimeline`](crate::model::ClusterTimeline).
@@ -12360,7 +11380,7 @@ impl ClusterTimeline {
 /// <p>The reason that the cluster changed to its current state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterStateChangeReason {
+pub struct ClusterStateChangeReason  {
     /// <p>The programmatic code for the state change reason.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ClusterStateChangeReasonCode>,
@@ -12370,17 +11390,17 @@ pub struct ClusterStateChangeReason {
 }
 impl ClusterStateChangeReason {
     /// <p>The programmatic code for the state change reason.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::ClusterStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ClusterStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The descriptive message for the state change reason.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ClusterStateChangeReason`](crate::model::ClusterStateChangeReason).
 pub mod cluster_state_change_reason {
-
+    
     /// A builder for [`ClusterStateChangeReason`](crate::model::ClusterStateChangeReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12394,12 +11414,8 @@ pub mod cluster_state_change_reason {
             self
         }
         /// <p>The programmatic code for the state change reason.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::ClusterStateChangeReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::ClusterStateChangeReasonCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The descriptive message for the state change reason.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12408,17 +11424,20 @@ pub mod cluster_state_change_reason {
         }
         /// <p>The descriptive message for the state change reason.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClusterStateChangeReason`](crate::model::ClusterStateChangeReason).
         pub fn build(self) -> crate::model::ClusterStateChangeReason {
             crate::model::ClusterStateChangeReason {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterStateChangeReason {
     /// Creates a new builder-style object to manufacture [`ClusterStateChangeReason`](crate::model::ClusterStateChangeReason).
@@ -12433,9 +11452,9 @@ impl ClusterStateChangeReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clusterstatechangereasoncode = unimplemented!();
 /// match clusterstatechangereasoncode {
@@ -12463,22 +11482,14 @@ impl ClusterStateChangeReason {
 /// Specifically, when `clusterstatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClusterStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClusterStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     AllStepsCompleted,
@@ -12497,7 +11508,7 @@ pub enum ClusterStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClusterStateChangeReasonCode {
     fn from(s: &str) -> Self {
@@ -12510,19 +11521,17 @@ impl std::convert::From<&str> for ClusterStateChangeReasonCode {
             "STEP_FAILURE" => ClusterStateChangeReasonCode::StepFailure,
             "USER_REQUEST" => ClusterStateChangeReasonCode::UserRequest,
             "VALIDATION_ERROR" => ClusterStateChangeReasonCode::ValidationError,
-            other => ClusterStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ClusterStateChangeReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClusterStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClusterStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClusterStateChangeReasonCode::from(s))
+                }
+            }
 impl ClusterStateChangeReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12535,20 +11544,13 @@ impl ClusterStateChangeReasonCode {
             ClusterStateChangeReasonCode::StepFailure => "STEP_FAILURE",
             ClusterStateChangeReasonCode::UserRequest => "USER_REQUEST",
             ClusterStateChangeReasonCode::ValidationError => "VALIDATION_ERROR",
-            ClusterStateChangeReasonCode::Unknown(value) => value.as_str(),
+            ClusterStateChangeReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALL_STEPS_COMPLETED",
-            "BOOTSTRAP_FAILURE",
-            "INSTANCE_FAILURE",
-            "INSTANCE_FLEET_TIMEOUT",
-            "INTERNAL_ERROR",
-            "STEP_FAILURE",
-            "USER_REQUEST",
-            "VALIDATION_ERROR",
+            "ALL_STEPS_COMPLETED", "BOOTSTRAP_FAILURE", "INSTANCE_FAILURE", "INSTANCE_FLEET_TIMEOUT", "INTERNAL_ERROR", "STEP_FAILURE", "USER_REQUEST", "VALIDATION_ERROR"
         ]
     }
 }
@@ -12564,9 +11566,9 @@ impl AsRef<str> for ClusterStateChangeReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clusterstate = unimplemented!();
 /// match clusterstate {
@@ -12593,22 +11595,14 @@ impl AsRef<str> for ClusterStateChangeReasonCode {
 /// Specifically, when `clusterstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClusterState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
     Bootstrapping,
@@ -12625,7 +11619,7 @@ pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
     Waiting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClusterState {
     fn from(s: &str) -> Self {
@@ -12637,17 +11631,17 @@ impl std::convert::From<&str> for ClusterState {
             "TERMINATED_WITH_ERRORS" => ClusterState::TerminatedWithErrors,
             "TERMINATING" => ClusterState::Terminating,
             "WAITING" => ClusterState::Waiting,
-            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClusterState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClusterState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClusterState::from(s))
+                }
+            }
 impl ClusterState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12659,19 +11653,13 @@ impl ClusterState {
             ClusterState::TerminatedWithErrors => "TERMINATED_WITH_ERRORS",
             ClusterState::Terminating => "TERMINATING",
             ClusterState::Waiting => "WAITING",
-            ClusterState::Unknown(value) => value.as_str(),
+            ClusterState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BOOTSTRAPPING",
-            "RUNNING",
-            "STARTING",
-            "TERMINATED",
-            "TERMINATED_WITH_ERRORS",
-            "TERMINATING",
-            "WAITING",
+            "BOOTSTRAPPING", "RUNNING", "STARTING", "TERMINATED", "TERMINATED_WITH_ERRORS", "TERMINATING", "WAITING"
         ]
     }
 }
@@ -12684,7 +11672,7 @@ impl AsRef<str> for ClusterState {
 /// <p>An entity describing an executable that runs on a cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Command {
+pub struct Command  {
     /// <p>The name of the command.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12697,21 +11685,21 @@ pub struct Command {
 }
 impl Command {
     /// <p>The name of the command.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon S3 location of the command script.</p>
-    pub fn script_path(&self) -> std::option::Option<&str> {
+    pub fn script_path(&self) -> std::option::Option<& str> {
         self.script_path.as_deref()
     }
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
         self.args.as_deref()
     }
 }
 /// See [`Command`](crate::model::Command).
 pub mod command {
-
+    
     /// A builder for [`Command`](crate::model::Command).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12727,8 +11715,7 @@ pub mod command {
         }
         /// <p>The name of the command.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon S3 location of the command script.</p>
         pub fn script_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12737,8 +11724,7 @@ pub mod command {
         }
         /// <p>The Amazon S3 location of the command script.</p>
         pub fn set_script_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.script_path = input;
-            self
+            self.script_path = input; self
         }
         /// Appends an item to `args`.
         ///
@@ -12747,27 +11733,28 @@ pub mod command {
         /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
         pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.args.unwrap_or_default();
-            v.push(input.into());
-            self.args = Some(v);
-            self
+                            v.push(input.into());
+                            self.args = Some(v);
+                            self
         }
         /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-        pub fn set_args(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.args = input;
-            self
+        pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.args = input; self
         }
         /// Consumes the builder and constructs a [`Command`](crate::model::Command).
         pub fn build(self) -> crate::model::Command {
             crate::model::Command {
-                name: self.name,
-                script_path: self.script_path,
-                args: self.args,
+                name: self.name
+                ,
+                script_path: self.script_path
+                ,
+                args: self.args
+                ,
             }
         }
     }
+    
+    
 }
 impl Command {
     /// Creates a new builder-style object to manufacture [`Command`](crate::model::Command).
@@ -12779,7 +11766,7 @@ impl Command {
 /// <p>Details for an Amazon EMR Studio session mapping including creation time, user or group ID, Studio ID, and so on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionMappingDetail {
+pub struct SessionMappingDetail  {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
@@ -12804,37 +11791,37 @@ pub struct SessionMappingDetail {
 }
 impl SessionMappingDetail {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The globally unique identifier (GUID) of the user or group.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
-    pub fn identity_name(&self) -> std::option::Option<&str> {
+    pub fn identity_name(&self) -> std::option::Option<& str> {
         self.identity_name.as_deref()
     }
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<& crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
-    pub fn session_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn session_policy_arn(&self) -> std::option::Option<& str> {
         self.session_policy_arn.as_deref()
     }
     /// <p>The time the session mapping was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the session mapping was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`SessionMappingDetail`](crate::model::SessionMappingDetail).
 pub mod session_mapping_detail {
-
+    
     /// A builder for [`SessionMappingDetail`](crate::model::SessionMappingDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12854,8 +11841,7 @@ pub mod session_mapping_detail {
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.studio_id = input;
-            self
+            self.studio_id = input; self
         }
         /// <p>The globally unique identifier (GUID) of the user or group.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12864,8 +11850,7 @@ pub mod session_mapping_detail {
         }
         /// <p>The globally unique identifier (GUID) of the user or group.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12873,12 +11858,8 @@ pub mod session_mapping_detail {
             self
         }
         /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
-        pub fn set_identity_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_name = input;
-            self
+        pub fn set_identity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_name = input; self
         }
         /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
@@ -12886,12 +11867,8 @@ pub mod session_mapping_detail {
             self
         }
         /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
-        pub fn set_identity_type(
-            mut self,
-            input: std::option::Option<crate::model::IdentityType>,
-        ) -> Self {
-            self.identity_type = input;
-            self
+        pub fn set_identity_type(mut self, input: std::option::Option<crate::model::IdentityType>) -> Self {
+            self.identity_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
         pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12899,12 +11876,8 @@ pub mod session_mapping_detail {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
-        pub fn set_session_policy_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_policy_arn = input;
-            self
+        pub fn set_session_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_policy_arn = input; self
         }
         /// <p>The time the session mapping was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12912,12 +11885,8 @@ pub mod session_mapping_detail {
             self
         }
         /// <p>The time the session mapping was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the session mapping was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12925,26 +11894,31 @@ pub mod session_mapping_detail {
             self
         }
         /// <p>The time the session mapping was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`SessionMappingDetail`](crate::model::SessionMappingDetail).
         pub fn build(self) -> crate::model::SessionMappingDetail {
             crate::model::SessionMappingDetail {
-                studio_id: self.studio_id,
-                identity_id: self.identity_id,
-                identity_name: self.identity_name,
-                identity_type: self.identity_type,
-                session_policy_arn: self.session_policy_arn,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                studio_id: self.studio_id
+                ,
+                identity_id: self.identity_id
+                ,
+                identity_name: self.identity_name
+                ,
+                identity_type: self.identity_type
+                ,
+                session_policy_arn: self.session_policy_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SessionMappingDetail {
     /// Creates a new builder-style object to manufacture [`SessionMappingDetail`](crate::model::SessionMappingDetail).
@@ -12973,14 +11947,8 @@ impl Credentials {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`UsernamePassword`](crate::model::Credentials::UsernamePassword), extracting the inner [`UsernamePassword`](crate::model::UsernamePassword).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_username_password(
-        &self,
-    ) -> std::result::Result<&crate::model::UsernamePassword, &Self> {
-        if let Credentials::UsernamePassword(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_username_password(&self) -> std::result::Result<&crate::model::UsernamePassword, &Self> {
+        if let Credentials::UsernamePassword(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`UsernamePassword`](crate::model::Credentials::UsernamePassword).
     pub fn is_username_password(&self) -> bool {
@@ -12994,9 +11962,7 @@ impl Credentials {
 impl std::fmt::Debug for Credentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Credentials::UsernamePassword(_) => {
-                f.debug_tuple("*** Sensitive Data Redacted ***").finish()
-            }
+            Credentials::UsernamePassword(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             Credentials::Unknown => f.debug_tuple("Unknown").finish(),
         }
     }
@@ -13005,7 +11971,7 @@ impl std::fmt::Debug for Credentials {
 /// <p>The username and password that you use to connect to cluster endpoints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UsernamePassword {
+pub struct UsernamePassword  {
     /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -13015,15 +11981,15 @@ pub struct UsernamePassword {
 }
 impl UsernamePassword {
     /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for UsernamePassword {
+impl  std::fmt::Debug for UsernamePassword  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsernamePassword");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -13033,7 +11999,7 @@ impl std::fmt::Debug for UsernamePassword {
 }
 /// See [`UsernamePassword`](crate::model::UsernamePassword).
 pub mod username_password {
-
+    
     /// A builder for [`UsernamePassword`](crate::model::UsernamePassword).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -13048,8 +12014,7 @@ pub mod username_password {
         }
         /// <p>The username associated with the temporary credentials that you use to connect to cluster endpoints.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13058,14 +12023,15 @@ pub mod username_password {
         }
         /// <p>The password associated with the temporary credentials that you use to connect to cluster endpoints.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
         /// Consumes the builder and constructs a [`UsernamePassword`](crate::model::UsernamePassword).
         pub fn build(self) -> crate::model::UsernamePassword {
             crate::model::UsernamePassword {
-                username: self.username,
-                password: self.password,
+                username: self.username
+                ,
+                password: self.password
+                ,
             }
         }
     }
@@ -13077,6 +12043,8 @@ pub mod username_password {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UsernamePassword {
     /// Creates a new builder-style object to manufacture [`UsernamePassword`](crate::model::UsernamePassword).
@@ -13088,7 +12056,7 @@ impl UsernamePassword {
 /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlockPublicAccessConfigurationMetadata {
+pub struct BlockPublicAccessConfigurationMetadata  {
     /// <p>The date and time that the configuration was created.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13098,17 +12066,17 @@ pub struct BlockPublicAccessConfigurationMetadata {
 }
 impl BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-    pub fn created_by_arn(&self) -> std::option::Option<&str> {
+    pub fn created_by_arn(&self) -> std::option::Option<& str> {
         self.created_by_arn.as_deref()
     }
 }
 /// See [`BlockPublicAccessConfigurationMetadata`](crate::model::BlockPublicAccessConfigurationMetadata).
 pub mod block_public_access_configuration_metadata {
-
+    
     /// A builder for [`BlockPublicAccessConfigurationMetadata`](crate::model::BlockPublicAccessConfigurationMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13122,12 +12090,8 @@ pub mod block_public_access_configuration_metadata {
             self
         }
         /// <p>The date and time that the configuration was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
         pub fn created_by_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13135,21 +12099,21 @@ pub mod block_public_access_configuration_metadata {
             self
         }
         /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-        pub fn set_created_by_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.created_by_arn = input;
-            self
+        pub fn set_created_by_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_by_arn = input; self
         }
         /// Consumes the builder and constructs a [`BlockPublicAccessConfigurationMetadata`](crate::model::BlockPublicAccessConfigurationMetadata).
         pub fn build(self) -> crate::model::BlockPublicAccessConfigurationMetadata {
             crate::model::BlockPublicAccessConfigurationMetadata {
-                creation_date_time: self.creation_date_time,
-                created_by_arn: self.created_by_arn,
+                creation_date_time: self.creation_date_time
+                ,
+                created_by_arn: self.created_by_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl BlockPublicAccessConfigurationMetadata {
     /// Creates a new builder-style object to manufacture [`BlockPublicAccessConfigurationMetadata`](crate::model::BlockPublicAccessConfigurationMetadata).
@@ -13161,7 +12125,7 @@ impl BlockPublicAccessConfigurationMetadata {
 /// <p>Details for an Amazon EMR Studio including ID, creation time, name, and so on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Studio {
+pub struct Studio  {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
@@ -13216,77 +12180,77 @@ pub struct Studio {
 }
 impl Studio {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
-    pub fn studio_arn(&self) -> std::option::Option<&str> {
+    pub fn studio_arn(&self) -> std::option::Option<& str> {
         self.studio_arn.as_deref()
     }
     /// <p>The name of the Amazon EMR Studio.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
-    pub fn auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
+    pub fn auth_mode(&self) -> std::option::Option<& crate::model::AuthMode> {
         self.auth_mode.as_ref()
     }
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
-    pub fn user_role(&self) -> std::option::Option<&str> {
+    pub fn user_role(&self) -> std::option::Option<& str> {
         self.user_role.as_deref()
     }
     /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
-    pub fn workspace_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_security_group_id(&self) -> std::option::Option<& str> {
         self.workspace_security_group_id.as_deref()
     }
     /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
-    pub fn engine_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn engine_security_group_id(&self) -> std::option::Option<& str> {
         self.engine_security_group_id.as_deref()
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The time the Amazon EMR Studio was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-    pub fn default_s3_location(&self) -> std::option::Option<&str> {
+    pub fn default_s3_location(&self) -> std::option::Option<& str> {
         self.default_s3_location.as_deref()
     }
     /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
-    pub fn idp_auth_url(&self) -> std::option::Option<&str> {
+    pub fn idp_auth_url(&self) -> std::option::Option<& str> {
         self.idp_auth_url.as_deref()
     }
     /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
-    pub fn idp_relay_state_parameter_name(&self) -> std::option::Option<&str> {
+    pub fn idp_relay_state_parameter_name(&self) -> std::option::Option<& str> {
         self.idp_relay_state_parameter_name.as_deref()
     }
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`Studio`](crate::model::Studio).
 pub mod studio {
-
+    
     /// A builder for [`Studio`](crate::model::Studio).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13316,8 +12280,7 @@ pub mod studio {
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.studio_id = input;
-            self
+            self.studio_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
         pub fn studio_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13326,8 +12289,7 @@ pub mod studio {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
         pub fn set_studio_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.studio_arn = input;
-            self
+            self.studio_arn = input; self
         }
         /// <p>The name of the Amazon EMR Studio.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13336,8 +12298,7 @@ pub mod studio {
         }
         /// <p>The name of the Amazon EMR Studio.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The detailed description of the Amazon EMR Studio.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13346,8 +12307,7 @@ pub mod studio {
         }
         /// <p>The detailed description of the Amazon EMR Studio.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
@@ -13356,8 +12316,7 @@ pub mod studio {
         }
         /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
         pub fn set_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
-            self.auth_mode = input;
-            self
+            self.auth_mode = input; self
         }
         /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13366,8 +12325,7 @@ pub mod studio {
         }
         /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -13376,17 +12334,13 @@ pub mod studio {
         /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13395,8 +12349,7 @@ pub mod studio {
         }
         /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_role = input;
-            self
+            self.service_role = input; self
         }
         /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
         pub fn user_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13405,24 +12358,16 @@ pub mod studio {
         }
         /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
         pub fn set_user_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_role = input;
-            self
+            self.user_role = input; self
         }
         /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
-        pub fn workspace_security_group_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn workspace_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workspace_security_group_id = Some(input.into());
             self
         }
         /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
-        pub fn set_workspace_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workspace_security_group_id = input;
-            self
+        pub fn set_workspace_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_security_group_id = input; self
         }
         /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
         pub fn engine_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13430,12 +12375,8 @@ pub mod studio {
             self
         }
         /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
-        pub fn set_engine_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_security_group_id = input;
-            self
+        pub fn set_engine_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_security_group_id = input; self
         }
         /// <p>The unique access URL of the Amazon EMR Studio.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13444,8 +12385,7 @@ pub mod studio {
         }
         /// <p>The unique access URL of the Amazon EMR Studio.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// <p>The time the Amazon EMR Studio was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13453,12 +12393,8 @@ pub mod studio {
             self
         }
         /// <p>The time the Amazon EMR Studio was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
         pub fn default_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13466,12 +12402,8 @@ pub mod studio {
             self
         }
         /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-        pub fn set_default_s3_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_s3_location = input;
-            self
+        pub fn set_default_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_s3_location = input; self
         }
         /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
         pub fn idp_auth_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13480,24 +12412,16 @@ pub mod studio {
         }
         /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
         pub fn set_idp_auth_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.idp_auth_url = input;
-            self
+            self.idp_auth_url = input; self
         }
         /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
-        pub fn idp_relay_state_parameter_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn idp_relay_state_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.idp_relay_state_parameter_name = Some(input.into());
             self
         }
         /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
-        pub fn set_idp_relay_state_parameter_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.idp_relay_state_parameter_name = input;
-            self
+        pub fn set_idp_relay_state_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.idp_relay_state_parameter_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -13506,41 +12430,56 @@ pub mod studio {
         /// <p>A list of tags associated with the Amazon EMR Studio.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags associated with the Amazon EMR Studio.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Studio`](crate::model::Studio).
         pub fn build(self) -> crate::model::Studio {
             crate::model::Studio {
-                studio_id: self.studio_id,
-                studio_arn: self.studio_arn,
-                name: self.name,
-                description: self.description,
-                auth_mode: self.auth_mode,
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                service_role: self.service_role,
-                user_role: self.user_role,
-                workspace_security_group_id: self.workspace_security_group_id,
-                engine_security_group_id: self.engine_security_group_id,
-                url: self.url,
-                creation_time: self.creation_time,
-                default_s3_location: self.default_s3_location,
-                idp_auth_url: self.idp_auth_url,
-                idp_relay_state_parameter_name: self.idp_relay_state_parameter_name,
-                tags: self.tags,
+                studio_id: self.studio_id
+                ,
+                studio_arn: self.studio_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                auth_mode: self.auth_mode
+                ,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                service_role: self.service_role
+                ,
+                user_role: self.user_role
+                ,
+                workspace_security_group_id: self.workspace_security_group_id
+                ,
+                engine_security_group_id: self.engine_security_group_id
+                ,
+                url: self.url
+                ,
+                creation_time: self.creation_time
+                ,
+                default_s3_location: self.default_s3_location
+                ,
+                idp_auth_url: self.idp_auth_url
+                ,
+                idp_relay_state_parameter_name: self.idp_relay_state_parameter_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl Studio {
     /// Creates a new builder-style object to manufacture [`Studio`](crate::model::Studio).
@@ -13552,7 +12491,7 @@ impl Studio {
 /// <p>This represents a step in a cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Step {
+pub struct Step  {
     /// <p>The identifier of the cluster step.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13562,51 +12501,51 @@ pub struct Step {
     /// <p>The Hadoop job configuration of the cluster step.</p>
     #[doc(hidden)]
     pub config: std::option::Option<crate::model::HadoopStepConfig>,
-    /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
-    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+    /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> 
+    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> 
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
     #[doc(hidden)]
     pub action_on_failure: std::option::Option<crate::model::ActionOnFailure>,
     /// <p>The current execution status details of the cluster step.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StepStatus>,
-    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p> 
     /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
 }
 impl Step {
     /// <p>The identifier of the cluster step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the cluster step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Hadoop job configuration of the cluster step.</p>
-    pub fn config(&self) -> std::option::Option<&crate::model::HadoopStepConfig> {
+    pub fn config(&self) -> std::option::Option<& crate::model::HadoopStepConfig> {
         self.config.as_ref()
     }
-    /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
-    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+    /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> 
+    /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> 
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
-    pub fn action_on_failure(&self) -> std::option::Option<&crate::model::ActionOnFailure> {
+    pub fn action_on_failure(&self) -> std::option::Option<& crate::model::ActionOnFailure> {
         self.action_on_failure.as_ref()
     }
     /// <p>The current execution status details of the cluster step.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StepStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StepStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p> 
     /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
 }
 /// See [`Step`](crate::model::Step).
 pub mod step {
-
+    
     /// A builder for [`Step`](crate::model::Step).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13625,8 +12564,7 @@ pub mod step {
         }
         /// <p>The identifier of the cluster step.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the cluster step.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13635,8 +12573,7 @@ pub mod step {
         }
         /// <p>The name of the cluster step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Hadoop job configuration of the cluster step.</p>
         pub fn config(mut self, input: crate::model::HadoopStepConfig) -> Self {
@@ -13644,29 +12581,21 @@ pub mod step {
             self
         }
         /// <p>The Hadoop job configuration of the cluster step.</p>
-        pub fn set_config(
-            mut self,
-            input: std::option::Option<crate::model::HadoopStepConfig>,
-        ) -> Self {
-            self.config = input;
-            self
+        pub fn set_config(mut self, input: std::option::Option<crate::model::HadoopStepConfig>) -> Self {
+            self.config = input; self
         }
-        /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
-        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+        /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> 
+        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> 
         /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
         pub fn action_on_failure(mut self, input: crate::model::ActionOnFailure) -> Self {
             self.action_on_failure = Some(input);
             self
         }
-        /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p>
-        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
+        /// <p>The action to take when the cluster step fails. Possible values are <code>TERMINATE_CLUSTER</code>, <code>CANCEL_AND_WAIT</code>, and <code>CONTINUE</code>. <code>TERMINATE_JOB_FLOW</code> is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code> instead.</p> 
+        /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p> 
         /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
-        pub fn set_action_on_failure(
-            mut self,
-            input: std::option::Option<crate::model::ActionOnFailure>,
-        ) -> Self {
-            self.action_on_failure = input;
-            self
+        pub fn set_action_on_failure(mut self, input: std::option::Option<crate::model::ActionOnFailure>) -> Self {
+            self.action_on_failure = input; self
         }
         /// <p>The current execution status details of the cluster step.</p>
         pub fn status(mut self, input: crate::model::StepStatus) -> Self {
@@ -13675,36 +12604,39 @@ pub mod step {
         }
         /// <p>The current execution status details of the cluster step.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StepStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p> 
         /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
+        /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p> 
         /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`Step`](crate::model::Step).
         pub fn build(self) -> crate::model::Step {
             crate::model::Step {
-                id: self.id,
-                name: self.name,
-                config: self.config,
-                action_on_failure: self.action_on_failure,
-                status: self.status,
-                execution_role_arn: self.execution_role_arn,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                config: self.config
+                ,
+                action_on_failure: self.action_on_failure
+                ,
+                status: self.status
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Step {
     /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step).
@@ -13716,20 +12648,20 @@ impl Step {
 /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OsRelease {
+pub struct OsRelease  {
     /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
 }
 impl OsRelease {
     /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
 }
 /// See [`OsRelease`](crate::model::OsRelease).
 pub mod os_release {
-
+    
     /// A builder for [`OsRelease`](crate::model::OsRelease).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13743,14 +12675,18 @@ pub mod os_release {
         }
         /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// Consumes the builder and constructs a [`OsRelease`](crate::model::OsRelease).
         pub fn build(self) -> crate::model::OsRelease {
-            crate::model::OsRelease { label: self.label }
+            crate::model::OsRelease {
+                label: self.label
+                ,
+            }
         }
     }
+    
+    
 }
 impl OsRelease {
     /// Creates a new builder-style object to manufacture [`OsRelease`](crate::model::OsRelease).
@@ -13762,7 +12698,7 @@ impl OsRelease {
 /// <p>The returned release label application names or versions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimplifiedApplication {
+pub struct SimplifiedApplication  {
     /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13772,17 +12708,17 @@ pub struct SimplifiedApplication {
 }
 impl SimplifiedApplication {
     /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`SimplifiedApplication`](crate::model::SimplifiedApplication).
 pub mod simplified_application {
-
+    
     /// A builder for [`SimplifiedApplication`](crate::model::SimplifiedApplication).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13797,8 +12733,7 @@ pub mod simplified_application {
         }
         /// <p>The returned release label application name. For example, <code>hadoop</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13807,17 +12742,20 @@ pub mod simplified_application {
         }
         /// <p>The returned release label application version. For example, <code>3.2.1</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`SimplifiedApplication`](crate::model::SimplifiedApplication).
         pub fn build(self) -> crate::model::SimplifiedApplication {
             crate::model::SimplifiedApplication {
-                name: self.name,
-                version: self.version,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl SimplifiedApplication {
     /// Creates a new builder-style object to manufacture [`SimplifiedApplication`](crate::model::SimplifiedApplication).
@@ -13829,7 +12767,7 @@ impl SimplifiedApplication {
 /// <p>A notebook execution. An execution is a specific instance that an EMR Notebook is run using the <code>StartNotebookExecution</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotebookExecution {
+pub struct NotebookExecution  {
     /// <p>The unique identifier of a notebook execution.</p>
     #[doc(hidden)]
     pub notebook_execution_id: std::option::Option<std::string::String>,
@@ -13845,18 +12783,18 @@ pub struct NotebookExecution {
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
     #[doc(hidden)]
     pub notebook_params: std::option::Option<std::string::String>,
-    /// <p>The status of the notebook execution.</p>
-    /// <ul>
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <p>The status of the notebook execution.</p> 
+    /// <ul> 
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
@@ -13884,73 +12822,73 @@ pub struct NotebookExecution {
 }
 impl NotebookExecution {
     /// <p>The unique identifier of a notebook execution.</p>
-    pub fn notebook_execution_id(&self) -> std::option::Option<&str> {
+    pub fn notebook_execution_id(&self) -> std::option::Option<& str> {
         self.notebook_execution_id.as_deref()
     }
     /// <p>The unique identifier of the EMR Notebook that is used for the notebook execution.</p>
-    pub fn editor_id(&self) -> std::option::Option<&str> {
+    pub fn editor_id(&self) -> std::option::Option<& str> {
         self.editor_id.as_deref()
     }
     /// <p>The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.</p>
-    pub fn execution_engine(&self) -> std::option::Option<&crate::model::ExecutionEngineConfig> {
+    pub fn execution_engine(&self) -> std::option::Option<& crate::model::ExecutionEngineConfig> {
         self.execution_engine.as_ref()
     }
     /// <p>A name for the notebook execution.</p>
-    pub fn notebook_execution_name(&self) -> std::option::Option<&str> {
+    pub fn notebook_execution_name(&self) -> std::option::Option<& str> {
         self.notebook_execution_name.as_deref()
     }
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
-    pub fn notebook_params(&self) -> std::option::Option<&str> {
+    pub fn notebook_params(&self) -> std::option::Option<& str> {
         self.notebook_params.as_deref()
     }
-    /// <p>The status of the notebook execution.</p>
-    /// <ul>
-    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
-    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
-    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
-    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
-    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
-    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
-    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
-    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
-    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
-    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <p>The status of the notebook execution.</p> 
+    /// <ul> 
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::NotebookExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NotebookExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp when notebook execution ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
-    pub fn output_notebook_uri(&self) -> std::option::Option<&str> {
+    pub fn output_notebook_uri(&self) -> std::option::Option<& str> {
         self.output_notebook_uri.as_deref()
     }
     /// <p>The reason for the latest status change of the notebook execution.</p>
-    pub fn last_state_change_reason(&self) -> std::option::Option<&str> {
+    pub fn last_state_change_reason(&self) -> std::option::Option<& str> {
         self.last_state_change_reason.as_deref()
     }
     /// <p>The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn notebook_instance_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn notebook_instance_security_group_id(&self) -> std::option::Option<& str> {
         self.notebook_instance_security_group_id.as_deref()
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`NotebookExecution`](crate::model::NotebookExecution).
 pub mod notebook_execution {
-
+    
     /// A builder for [`NotebookExecution`](crate::model::NotebookExecution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13975,12 +12913,8 @@ pub mod notebook_execution {
             self
         }
         /// <p>The unique identifier of a notebook execution.</p>
-        pub fn set_notebook_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notebook_execution_id = input;
-            self
+        pub fn set_notebook_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_execution_id = input; self
         }
         /// <p>The unique identifier of the EMR Notebook that is used for the notebook execution.</p>
         pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13989,8 +12923,7 @@ pub mod notebook_execution {
         }
         /// <p>The unique identifier of the EMR Notebook that is used for the notebook execution.</p>
         pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.editor_id = input;
-            self
+            self.editor_id = input; self
         }
         /// <p>The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.</p>
         pub fn execution_engine(mut self, input: crate::model::ExecutionEngineConfig) -> Self {
@@ -13998,12 +12931,8 @@ pub mod notebook_execution {
             self
         }
         /// <p>The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.</p>
-        pub fn set_execution_engine(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionEngineConfig>,
-        ) -> Self {
-            self.execution_engine = input;
-            self
+        pub fn set_execution_engine(mut self, input: std::option::Option<crate::model::ExecutionEngineConfig>) -> Self {
+            self.execution_engine = input; self
         }
         /// <p>A name for the notebook execution.</p>
         pub fn notebook_execution_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14011,12 +12940,8 @@ pub mod notebook_execution {
             self
         }
         /// <p>A name for the notebook execution.</p>
-        pub fn set_notebook_execution_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notebook_execution_name = input;
-            self
+        pub fn set_notebook_execution_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_execution_name = input; self
         }
         /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
         pub fn notebook_params(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14024,49 +12949,41 @@ pub mod notebook_execution {
             self
         }
         /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
-        pub fn set_notebook_params(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notebook_params = input;
-            self
+        pub fn set_notebook_params(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_params = input; self
         }
-        /// <p>The status of the notebook execution.</p>
-        /// <ul>
-        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
-        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
-        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
-        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
-        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
-        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
-        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
-        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
-        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
-        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+        /// <p>The status of the notebook execution.</p> 
+        /// <ul> 
+        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
+        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
+        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
+        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
+        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
+        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
+        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
+        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::NotebookExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the notebook execution.</p>
-        /// <ul>
-        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
-        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
-        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
-        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
-        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
-        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
-        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
-        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
-        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
-        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
+        /// <p>The status of the notebook execution.</p> 
+        /// <ul> 
+        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li> 
+        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li> 
+        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li> 
+        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li> 
+        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li> 
+        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li> 
+        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li> 
+        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NotebookExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NotebookExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The timestamp when notebook execution started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -14074,12 +12991,8 @@ pub mod notebook_execution {
             self
         }
         /// <p>The timestamp when notebook execution started.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The timestamp when notebook execution ended.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -14087,12 +13000,8 @@ pub mod notebook_execution {
             self
         }
         /// <p>The timestamp when notebook execution ended.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14101,8 +13010,7 @@ pub mod notebook_execution {
         }
         /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The location of the notebook execution's output file in Amazon S3.</p>
         pub fn output_notebook_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14110,12 +13018,8 @@ pub mod notebook_execution {
             self
         }
         /// <p>The location of the notebook execution's output file in Amazon S3.</p>
-        pub fn set_output_notebook_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.output_notebook_uri = input;
-            self
+        pub fn set_output_notebook_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_notebook_uri = input; self
         }
         /// <p>The reason for the latest status change of the notebook execution.</p>
         pub fn last_state_change_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14123,28 +13027,17 @@ pub mod notebook_execution {
             self
         }
         /// <p>The reason for the latest status change of the notebook execution.</p>
-        pub fn set_last_state_change_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_state_change_reason = input;
-            self
+        pub fn set_last_state_change_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_state_change_reason = input; self
         }
         /// <p>The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-        pub fn notebook_instance_security_group_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn notebook_instance_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.notebook_instance_security_group_id = Some(input.into());
             self
         }
         /// <p>The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-        pub fn set_notebook_instance_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notebook_instance_security_group_id = input;
-            self
+        pub fn set_notebook_instance_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notebook_instance_security_group_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -14153,37 +13046,48 @@ pub mod notebook_execution {
         /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`NotebookExecution`](crate::model::NotebookExecution).
         pub fn build(self) -> crate::model::NotebookExecution {
             crate::model::NotebookExecution {
-                notebook_execution_id: self.notebook_execution_id,
-                editor_id: self.editor_id,
-                execution_engine: self.execution_engine,
-                notebook_execution_name: self.notebook_execution_name,
-                notebook_params: self.notebook_params,
-                status: self.status,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                arn: self.arn,
-                output_notebook_uri: self.output_notebook_uri,
-                last_state_change_reason: self.last_state_change_reason,
-                notebook_instance_security_group_id: self.notebook_instance_security_group_id,
-                tags: self.tags,
+                notebook_execution_id: self.notebook_execution_id
+                ,
+                editor_id: self.editor_id
+                ,
+                execution_engine: self.execution_engine
+                ,
+                notebook_execution_name: self.notebook_execution_name
+                ,
+                notebook_params: self.notebook_params
+                ,
+                status: self.status
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                arn: self.arn
+                ,
+                output_notebook_uri: self.output_notebook_uri
+                ,
+                last_state_change_reason: self.last_state_change_reason
+                ,
+                notebook_instance_security_group_id: self.notebook_instance_security_group_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl NotebookExecution {
     /// Creates a new builder-style object to manufacture [`NotebookExecution`](crate::model::NotebookExecution).
@@ -14195,7 +13099,7 @@ impl NotebookExecution {
 /// <p>A description of a cluster (job flow).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobFlowDetail {
+pub struct JobFlowDetail  {
     /// <p>The job flow identifier.</p>
     #[doc(hidden)]
     pub job_flow_id: std::option::Option<std::string::String>,
@@ -14226,7 +13130,7 @@ pub struct JobFlowDetail {
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
     #[doc(hidden)]
     pub supported_products: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> 
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     #[doc(hidden)]
     pub visible_to_all_users: bool,
@@ -14245,72 +13149,70 @@ pub struct JobFlowDetail {
 }
 impl JobFlowDetail {
     /// <p>The job flow identifier.</p>
-    pub fn job_flow_id(&self) -> std::option::Option<&str> {
+    pub fn job_flow_id(&self) -> std::option::Option<& str> {
         self.job_flow_id.as_deref()
     }
     /// <p>The name of the job flow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The location in Amazon S3 where log files for the job are stored.</p>
-    pub fn log_uri(&self) -> std::option::Option<&str> {
+    pub fn log_uri(&self) -> std::option::Option<& str> {
         self.log_uri.as_deref()
     }
     /// <p>The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
-    pub fn log_encryption_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn log_encryption_kms_key_id(&self) -> std::option::Option<& str> {
         self.log_encryption_kms_key_id.as_deref()
     }
     /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
-    pub fn ami_version(&self) -> std::option::Option<&str> {
+    pub fn ami_version(&self) -> std::option::Option<& str> {
         self.ami_version.as_deref()
     }
     /// <p>Describes the execution status of the job flow.</p>
-    pub fn execution_status_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::JobFlowExecutionStatusDetail> {
+    pub fn execution_status_detail(&self) -> std::option::Option<& crate::model::JobFlowExecutionStatusDetail> {
         self.execution_status_detail.as_ref()
     }
     /// <p>Describes the Amazon EC2 instances of the job flow.</p>
-    pub fn instances(&self) -> std::option::Option<&crate::model::JobFlowInstancesDetail> {
+    pub fn instances(&self) -> std::option::Option<& crate::model::JobFlowInstancesDetail> {
         self.instances.as_ref()
     }
     /// <p>A list of steps run by the job flow.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::model::StepDetail]> {
+    pub fn steps(&self) -> std::option::Option<& [crate::model::StepDetail]> {
         self.steps.as_deref()
     }
     /// <p>A list of the bootstrap actions run by the job flow.</p>
-    pub fn bootstrap_actions(&self) -> std::option::Option<&[crate::model::BootstrapActionDetail]> {
+    pub fn bootstrap_actions(&self) -> std::option::Option<& [crate::model::BootstrapActionDetail]> {
         self.bootstrap_actions.as_deref()
     }
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
-    pub fn supported_products(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_products(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_products.as_deref()
     }
-    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> 
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     pub fn visible_to_all_users(&self) -> bool {
         self.visible_to_all_users
     }
     /// <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
-    pub fn job_flow_role(&self) -> std::option::Option<&str> {
+    pub fn job_flow_role(&self) -> std::option::Option<& str> {
         self.job_flow_role.as_deref()
     }
     /// <p>The IAM role that is assumed by the Amazon EMR service to access Amazon Web Services resources on your behalf.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the automatic scaling feature to get the required permissions it needs to launch and terminate EC2 instances in an instance group.</p>
-    pub fn auto_scaling_role(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_role(&self) -> std::option::Option<& str> {
         self.auto_scaling_role.as_deref()
     }
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
-    pub fn scale_down_behavior(&self) -> std::option::Option<&crate::model::ScaleDownBehavior> {
+    pub fn scale_down_behavior(&self) -> std::option::Option<& crate::model::ScaleDownBehavior> {
         self.scale_down_behavior.as_ref()
     }
 }
 /// See [`JobFlowDetail`](crate::model::JobFlowDetail).
 pub mod job_flow_detail {
-
+    
     /// A builder for [`JobFlowDetail`](crate::model::JobFlowDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14319,12 +13221,10 @@ pub mod job_flow_detail {
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) log_encryption_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) ami_version: std::option::Option<std::string::String>,
-        pub(crate) execution_status_detail:
-            std::option::Option<crate::model::JobFlowExecutionStatusDetail>,
+        pub(crate) execution_status_detail: std::option::Option<crate::model::JobFlowExecutionStatusDetail>,
         pub(crate) instances: std::option::Option<crate::model::JobFlowInstancesDetail>,
         pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::StepDetail>>,
-        pub(crate) bootstrap_actions:
-            std::option::Option<std::vec::Vec<crate::model::BootstrapActionDetail>>,
+        pub(crate) bootstrap_actions: std::option::Option<std::vec::Vec<crate::model::BootstrapActionDetail>>,
         pub(crate) supported_products: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) visible_to_all_users: std::option::Option<bool>,
         pub(crate) job_flow_role: std::option::Option<std::string::String>,
@@ -14340,8 +13240,7 @@ pub mod job_flow_detail {
         }
         /// <p>The job flow identifier.</p>
         pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_flow_id = input;
-            self
+            self.job_flow_id = input; self
         }
         /// <p>The name of the job flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14350,8 +13249,7 @@ pub mod job_flow_detail {
         }
         /// <p>The name of the job flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The location in Amazon S3 where log files for the job are stored.</p>
         pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14360,8 +13258,7 @@ pub mod job_flow_detail {
         }
         /// <p>The location in Amazon S3 where log files for the job are stored.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_uri = input;
-            self
+            self.log_uri = input; self
         }
         /// <p>The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
         pub fn log_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14369,12 +13266,8 @@ pub mod job_flow_detail {
             self
         }
         /// <p>The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
-        pub fn set_log_encryption_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_encryption_kms_key_id = input;
-            self
+        pub fn set_log_encryption_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_encryption_kms_key_id = input; self
         }
         /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
         pub fn ami_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14383,24 +13276,16 @@ pub mod job_flow_detail {
         }
         /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
         pub fn set_ami_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ami_version = input;
-            self
+            self.ami_version = input; self
         }
         /// <p>Describes the execution status of the job flow.</p>
-        pub fn execution_status_detail(
-            mut self,
-            input: crate::model::JobFlowExecutionStatusDetail,
-        ) -> Self {
+        pub fn execution_status_detail(mut self, input: crate::model::JobFlowExecutionStatusDetail) -> Self {
             self.execution_status_detail = Some(input);
             self
         }
         /// <p>Describes the execution status of the job flow.</p>
-        pub fn set_execution_status_detail(
-            mut self,
-            input: std::option::Option<crate::model::JobFlowExecutionStatusDetail>,
-        ) -> Self {
-            self.execution_status_detail = input;
-            self
+        pub fn set_execution_status_detail(mut self, input: std::option::Option<crate::model::JobFlowExecutionStatusDetail>) -> Self {
+            self.execution_status_detail = input; self
         }
         /// <p>Describes the Amazon EC2 instances of the job flow.</p>
         pub fn instances(mut self, input: crate::model::JobFlowInstancesDetail) -> Self {
@@ -14408,12 +13293,8 @@ pub mod job_flow_detail {
             self
         }
         /// <p>Describes the Amazon EC2 instances of the job flow.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<crate::model::JobFlowInstancesDetail>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<crate::model::JobFlowInstancesDetail>) -> Self {
+            self.instances = input; self
         }
         /// Appends an item to `steps`.
         ///
@@ -14422,17 +13303,13 @@ pub mod job_flow_detail {
         /// <p>A list of steps run by the job flow.</p>
         pub fn steps(mut self, input: crate::model::StepDetail) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input);
-            self.steps = Some(v);
-            self
+                            v.push(input);
+                            self.steps = Some(v);
+                            self
         }
         /// <p>A list of steps run by the job flow.</p>
-        pub fn set_steps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StepDetail>>,
-        ) -> Self {
-            self.steps = input;
-            self
+        pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::model::StepDetail>>) -> Self {
+            self.steps = input; self
         }
         /// Appends an item to `bootstrap_actions`.
         ///
@@ -14441,17 +13318,13 @@ pub mod job_flow_detail {
         /// <p>A list of the bootstrap actions run by the job flow.</p>
         pub fn bootstrap_actions(mut self, input: crate::model::BootstrapActionDetail) -> Self {
             let mut v = self.bootstrap_actions.unwrap_or_default();
-            v.push(input);
-            self.bootstrap_actions = Some(v);
-            self
+                            v.push(input);
+                            self.bootstrap_actions = Some(v);
+                            self
         }
         /// <p>A list of the bootstrap actions run by the job flow.</p>
-        pub fn set_bootstrap_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BootstrapActionDetail>>,
-        ) -> Self {
-            self.bootstrap_actions = input;
-            self
+        pub fn set_bootstrap_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::BootstrapActionDetail>>) -> Self {
+            self.bootstrap_actions = input; self
         }
         /// Appends an item to `supported_products`.
         ///
@@ -14460,29 +13333,24 @@ pub mod job_flow_detail {
         /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
         pub fn supported_products(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_products.unwrap_or_default();
-            v.push(input.into());
-            self.supported_products = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_products = Some(v);
+                            self
         }
         /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
-        pub fn set_supported_products(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_products = input;
-            self
+        pub fn set_supported_products(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_products = input; self
         }
-        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> 
         /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
         }
-        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> 
         /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
         pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
-            self.visible_to_all_users = input;
-            self
+            self.visible_to_all_users = input; self
         }
         /// <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
         pub fn job_flow_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14490,12 +13358,8 @@ pub mod job_flow_detail {
             self
         }
         /// <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.</p>
-        pub fn set_job_flow_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_flow_role = input;
-            self
+        pub fn set_job_flow_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_flow_role = input; self
         }
         /// <p>The IAM role that is assumed by the Amazon EMR service to access Amazon Web Services resources on your behalf.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14504,8 +13368,7 @@ pub mod job_flow_detail {
         }
         /// <p>The IAM role that is assumed by the Amazon EMR service to access Amazon Web Services resources on your behalf.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_role = input;
-            self
+            self.service_role = input; self
         }
         /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the automatic scaling feature to get the required permissions it needs to launch and terminate EC2 instances in an instance group.</p>
         pub fn auto_scaling_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14513,12 +13376,8 @@ pub mod job_flow_detail {
             self
         }
         /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the automatic scaling feature to get the required permissions it needs to launch and terminate EC2 instances in an instance group.</p>
-        pub fn set_auto_scaling_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.auto_scaling_role = input;
-            self
+        pub fn set_auto_scaling_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auto_scaling_role = input; self
         }
         /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
         pub fn scale_down_behavior(mut self, input: crate::model::ScaleDownBehavior) -> Self {
@@ -14526,34 +13385,48 @@ pub mod job_flow_detail {
             self
         }
         /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
-        pub fn set_scale_down_behavior(
-            mut self,
-            input: std::option::Option<crate::model::ScaleDownBehavior>,
-        ) -> Self {
-            self.scale_down_behavior = input;
-            self
+        pub fn set_scale_down_behavior(mut self, input: std::option::Option<crate::model::ScaleDownBehavior>) -> Self {
+            self.scale_down_behavior = input; self
         }
         /// Consumes the builder and constructs a [`JobFlowDetail`](crate::model::JobFlowDetail).
         pub fn build(self) -> crate::model::JobFlowDetail {
             crate::model::JobFlowDetail {
-                job_flow_id: self.job_flow_id,
-                name: self.name,
-                log_uri: self.log_uri,
-                log_encryption_kms_key_id: self.log_encryption_kms_key_id,
-                ami_version: self.ami_version,
-                execution_status_detail: self.execution_status_detail,
-                instances: self.instances,
-                steps: self.steps,
-                bootstrap_actions: self.bootstrap_actions,
-                supported_products: self.supported_products,
-                visible_to_all_users: self.visible_to_all_users.unwrap_or_default(),
-                job_flow_role: self.job_flow_role,
-                service_role: self.service_role,
-                auto_scaling_role: self.auto_scaling_role,
-                scale_down_behavior: self.scale_down_behavior,
+                job_flow_id: self.job_flow_id
+                ,
+                name: self.name
+                ,
+                log_uri: self.log_uri
+                ,
+                log_encryption_kms_key_id: self.log_encryption_kms_key_id
+                ,
+                ami_version: self.ami_version
+                ,
+                execution_status_detail: self.execution_status_detail
+                ,
+                instances: self.instances
+                ,
+                steps: self.steps
+                ,
+                bootstrap_actions: self.bootstrap_actions
+                ,
+                supported_products: self.supported_products
+                ,
+                visible_to_all_users: self.visible_to_all_users
+                    .unwrap_or_default()
+                ,
+                job_flow_role: self.job_flow_role
+                ,
+                service_role: self.service_role
+                ,
+                auto_scaling_role: self.auto_scaling_role
+                ,
+                scale_down_behavior: self.scale_down_behavior
+                ,
             }
         }
     }
+    
+    
 }
 impl JobFlowDetail {
     /// Creates a new builder-style object to manufacture [`JobFlowDetail`](crate::model::JobFlowDetail).
@@ -14565,52 +13438,45 @@ impl JobFlowDetail {
 /// <p>Reports the configuration of a bootstrap action in a cluster (job flow).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BootstrapActionDetail {
+pub struct BootstrapActionDetail  {
     /// <p>A description of the bootstrap action.</p>
     #[doc(hidden)]
     pub bootstrap_action_config: std::option::Option<crate::model::BootstrapActionConfig>,
 }
 impl BootstrapActionDetail {
     /// <p>A description of the bootstrap action.</p>
-    pub fn bootstrap_action_config(
-        &self,
-    ) -> std::option::Option<&crate::model::BootstrapActionConfig> {
+    pub fn bootstrap_action_config(&self) -> std::option::Option<& crate::model::BootstrapActionConfig> {
         self.bootstrap_action_config.as_ref()
     }
 }
 /// See [`BootstrapActionDetail`](crate::model::BootstrapActionDetail).
 pub mod bootstrap_action_detail {
-
+    
     /// A builder for [`BootstrapActionDetail`](crate::model::BootstrapActionDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bootstrap_action_config:
-            std::option::Option<crate::model::BootstrapActionConfig>,
+        pub(crate) bootstrap_action_config: std::option::Option<crate::model::BootstrapActionConfig>,
     }
     impl Builder {
         /// <p>A description of the bootstrap action.</p>
-        pub fn bootstrap_action_config(
-            mut self,
-            input: crate::model::BootstrapActionConfig,
-        ) -> Self {
+        pub fn bootstrap_action_config(mut self, input: crate::model::BootstrapActionConfig) -> Self {
             self.bootstrap_action_config = Some(input);
             self
         }
         /// <p>A description of the bootstrap action.</p>
-        pub fn set_bootstrap_action_config(
-            mut self,
-            input: std::option::Option<crate::model::BootstrapActionConfig>,
-        ) -> Self {
-            self.bootstrap_action_config = input;
-            self
+        pub fn set_bootstrap_action_config(mut self, input: std::option::Option<crate::model::BootstrapActionConfig>) -> Self {
+            self.bootstrap_action_config = input; self
         }
         /// Consumes the builder and constructs a [`BootstrapActionDetail`](crate::model::BootstrapActionDetail).
         pub fn build(self) -> crate::model::BootstrapActionDetail {
             crate::model::BootstrapActionDetail {
-                bootstrap_action_config: self.bootstrap_action_config,
+                bootstrap_action_config: self.bootstrap_action_config
+                ,
             }
         }
     }
+    
+    
 }
 impl BootstrapActionDetail {
     /// Creates a new builder-style object to manufacture [`BootstrapActionDetail`](crate::model::BootstrapActionDetail).
@@ -14622,7 +13488,7 @@ impl BootstrapActionDetail {
 /// <p>Combines the execution state and configuration of a step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepDetail {
+pub struct StepDetail  {
     /// <p>The step configuration.</p>
     #[doc(hidden)]
     pub step_config: std::option::Option<crate::model::StepConfig>,
@@ -14632,25 +13498,22 @@ pub struct StepDetail {
 }
 impl StepDetail {
     /// <p>The step configuration.</p>
-    pub fn step_config(&self) -> std::option::Option<&crate::model::StepConfig> {
+    pub fn step_config(&self) -> std::option::Option<& crate::model::StepConfig> {
         self.step_config.as_ref()
     }
     /// <p>The description of the step status.</p>
-    pub fn execution_status_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::StepExecutionStatusDetail> {
+    pub fn execution_status_detail(&self) -> std::option::Option<& crate::model::StepExecutionStatusDetail> {
         self.execution_status_detail.as_ref()
     }
 }
 /// See [`StepDetail`](crate::model::StepDetail).
 pub mod step_detail {
-
+    
     /// A builder for [`StepDetail`](crate::model::StepDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_config: std::option::Option<crate::model::StepConfig>,
-        pub(crate) execution_status_detail:
-            std::option::Option<crate::model::StepExecutionStatusDetail>,
+        pub(crate) execution_status_detail: std::option::Option<crate::model::StepExecutionStatusDetail>,
     }
     impl Builder {
         /// <p>The step configuration.</p>
@@ -14659,37 +13522,30 @@ pub mod step_detail {
             self
         }
         /// <p>The step configuration.</p>
-        pub fn set_step_config(
-            mut self,
-            input: std::option::Option<crate::model::StepConfig>,
-        ) -> Self {
-            self.step_config = input;
-            self
+        pub fn set_step_config(mut self, input: std::option::Option<crate::model::StepConfig>) -> Self {
+            self.step_config = input; self
         }
         /// <p>The description of the step status.</p>
-        pub fn execution_status_detail(
-            mut self,
-            input: crate::model::StepExecutionStatusDetail,
-        ) -> Self {
+        pub fn execution_status_detail(mut self, input: crate::model::StepExecutionStatusDetail) -> Self {
             self.execution_status_detail = Some(input);
             self
         }
         /// <p>The description of the step status.</p>
-        pub fn set_execution_status_detail(
-            mut self,
-            input: std::option::Option<crate::model::StepExecutionStatusDetail>,
-        ) -> Self {
-            self.execution_status_detail = input;
-            self
+        pub fn set_execution_status_detail(mut self, input: std::option::Option<crate::model::StepExecutionStatusDetail>) -> Self {
+            self.execution_status_detail = input; self
         }
         /// Consumes the builder and constructs a [`StepDetail`](crate::model::StepDetail).
         pub fn build(self) -> crate::model::StepDetail {
             crate::model::StepDetail {
-                step_config: self.step_config,
-                execution_status_detail: self.execution_status_detail,
+                step_config: self.step_config
+                ,
+                execution_status_detail: self.execution_status_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl StepDetail {
     /// Creates a new builder-style object to manufacture [`StepDetail`](crate::model::StepDetail).
@@ -14701,7 +13557,7 @@ impl StepDetail {
 /// <p>The execution state of a step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepExecutionStatusDetail {
+pub struct StepExecutionStatusDetail  {
     /// <p>The state of the step.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::StepExecutionState>,
@@ -14720,29 +13576,29 @@ pub struct StepExecutionStatusDetail {
 }
 impl StepExecutionStatusDetail {
     /// <p>The state of the step.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::StepExecutionState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::StepExecutionState> {
         self.state.as_ref()
     }
     /// <p>The creation date and time of the step.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The start date and time of the step.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The completion date and time of the step.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>A description of the step's current state.</p>
-    pub fn last_state_change_reason(&self) -> std::option::Option<&str> {
+    pub fn last_state_change_reason(&self) -> std::option::Option<& str> {
         self.last_state_change_reason.as_deref()
     }
 }
 /// See [`StepExecutionStatusDetail`](crate::model::StepExecutionStatusDetail).
 pub mod step_execution_status_detail {
-
+    
     /// A builder for [`StepExecutionStatusDetail`](crate::model::StepExecutionStatusDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14759,12 +13615,8 @@ pub mod step_execution_status_detail {
             self
         }
         /// <p>The state of the step.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::StepExecutionState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::StepExecutionState>) -> Self {
+            self.state = input; self
         }
         /// <p>The creation date and time of the step.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -14772,12 +13624,8 @@ pub mod step_execution_status_detail {
             self
         }
         /// <p>The creation date and time of the step.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The start date and time of the step.</p>
         pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -14785,12 +13633,8 @@ pub mod step_execution_status_detail {
             self
         }
         /// <p>The start date and time of the step.</p>
-        pub fn set_start_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date_time = input;
-            self
+        pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date_time = input; self
         }
         /// <p>The completion date and time of the step.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -14798,12 +13642,8 @@ pub mod step_execution_status_detail {
             self
         }
         /// <p>The completion date and time of the step.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// <p>A description of the step's current state.</p>
         pub fn last_state_change_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14811,24 +13651,27 @@ pub mod step_execution_status_detail {
             self
         }
         /// <p>A description of the step's current state.</p>
-        pub fn set_last_state_change_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_state_change_reason = input;
-            self
+        pub fn set_last_state_change_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_state_change_reason = input; self
         }
         /// Consumes the builder and constructs a [`StepExecutionStatusDetail`](crate::model::StepExecutionStatusDetail).
         pub fn build(self) -> crate::model::StepExecutionStatusDetail {
             crate::model::StepExecutionStatusDetail {
-                state: self.state,
-                creation_date_time: self.creation_date_time,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                last_state_change_reason: self.last_state_change_reason,
+                state: self.state
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                start_date_time: self.start_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
+                last_state_change_reason: self.last_state_change_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl StepExecutionStatusDetail {
     /// Creates a new builder-style object to manufacture [`StepExecutionStatusDetail`](crate::model::StepExecutionStatusDetail).
@@ -14843,9 +13686,9 @@ impl StepExecutionStatusDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stepexecutionstate = unimplemented!();
 /// match stepexecutionstate {
@@ -14872,22 +13715,14 @@ impl StepExecutionStatusDetail {
 /// Specifically, when `stepexecutionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StepExecutionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StepExecutionState {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -14904,7 +13739,7 @@ pub enum StepExecutionState {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StepExecutionState {
     fn from(s: &str) -> Self {
@@ -14916,19 +13751,17 @@ impl std::convert::From<&str> for StepExecutionState {
             "INTERRUPTED" => StepExecutionState::Interrupted,
             "PENDING" => StepExecutionState::Pending,
             "RUNNING" => StepExecutionState::Running,
-            other => {
-                StepExecutionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StepExecutionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StepExecutionState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StepExecutionState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StepExecutionState::from(s))
+                }
+            }
 impl StepExecutionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -14940,19 +13773,13 @@ impl StepExecutionState {
             StepExecutionState::Interrupted => "INTERRUPTED",
             StepExecutionState::Pending => "PENDING",
             StepExecutionState::Running => "RUNNING",
-            StepExecutionState::Unknown(value) => value.as_str(),
+            StepExecutionState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELLED",
-            "COMPLETED",
-            "CONTINUE",
-            "FAILED",
-            "INTERRUPTED",
-            "PENDING",
-            "RUNNING",
+            "CANCELLED", "COMPLETED", "CONTINUE", "FAILED", "INTERRUPTED", "PENDING", "RUNNING"
         ]
     }
 }
@@ -14965,7 +13792,7 @@ impl AsRef<str> for StepExecutionState {
 /// <p>Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobFlowInstancesDetail {
+pub struct JobFlowInstancesDetail  {
     /// <p>The Amazon EC2 master node instance type.</p>
     #[doc(hidden)]
     pub master_instance_type: std::option::Option<std::string::String>,
@@ -15008,19 +13835,19 @@ pub struct JobFlowInstancesDetail {
 }
 impl JobFlowInstancesDetail {
     /// <p>The Amazon EC2 master node instance type.</p>
-    pub fn master_instance_type(&self) -> std::option::Option<&str> {
+    pub fn master_instance_type(&self) -> std::option::Option<& str> {
         self.master_instance_type.as_deref()
     }
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-    pub fn master_public_dns_name(&self) -> std::option::Option<&str> {
+    pub fn master_public_dns_name(&self) -> std::option::Option<& str> {
         self.master_public_dns_name.as_deref()
     }
     /// <p>The Amazon EC2 instance identifier of the master node.</p>
-    pub fn master_instance_id(&self) -> std::option::Option<&str> {
+    pub fn master_instance_id(&self) -> std::option::Option<& str> {
         self.master_instance_id.as_deref()
     }
     /// <p>The Amazon EC2 core and task node instance type.</p>
-    pub fn slave_instance_type(&self) -> std::option::Option<&str> {
+    pub fn slave_instance_type(&self) -> std::option::Option<& str> {
         self.slave_instance_type.as_deref()
     }
     /// <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</p>
@@ -15028,7 +13855,7 @@ impl JobFlowInstancesDetail {
         self.instance_count
     }
     /// <p>Details about the instance groups in a cluster.</p>
-    pub fn instance_groups(&self) -> std::option::Option<&[crate::model::InstanceGroupDetail]> {
+    pub fn instance_groups(&self) -> std::option::Option<& [crate::model::InstanceGroupDetail]> {
         self.instance_groups.as_deref()
     }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being increased incrementally four times. This result is only an approximation and does not reflect the actual billing rate.</p>
@@ -15036,15 +13863,15 @@ impl JobFlowInstancesDetail {
         self.normalized_instance_hours
     }
     /// <p>The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.</p>
-    pub fn ec2_key_name(&self) -> std::option::Option<&str> {
+    pub fn ec2_key_name(&self) -> std::option::Option<& str> {
         self.ec2_key_name.as_deref()
     }
     /// <p>For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster was launched.</p>
-    pub fn ec2_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_subnet_id(&self) -> std::option::Option<& str> {
         self.ec2_subnet_id.as_deref()
     }
     /// <p>The Amazon EC2 Availability Zone for the cluster.</p>
-    pub fn placement(&self) -> std::option::Option<&crate::model::PlacementType> {
+    pub fn placement(&self) -> std::option::Option<& crate::model::PlacementType> {
         self.placement.as_ref()
     }
     /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
@@ -15056,13 +13883,13 @@ impl JobFlowInstancesDetail {
         self.termination_protected
     }
     /// <p>The Hadoop version for the cluster.</p>
-    pub fn hadoop_version(&self) -> std::option::Option<&str> {
+    pub fn hadoop_version(&self) -> std::option::Option<& str> {
         self.hadoop_version.as_deref()
     }
 }
 /// See [`JobFlowInstancesDetail`](crate::model::JobFlowInstancesDetail).
 pub mod job_flow_instances_detail {
-
+    
     /// A builder for [`JobFlowInstancesDetail`](crate::model::JobFlowInstancesDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -15071,8 +13898,7 @@ pub mod job_flow_instances_detail {
         pub(crate) master_instance_id: std::option::Option<std::string::String>,
         pub(crate) slave_instance_type: std::option::Option<std::string::String>,
         pub(crate) instance_count: std::option::Option<i32>,
-        pub(crate) instance_groups:
-            std::option::Option<std::vec::Vec<crate::model::InstanceGroupDetail>>,
+        pub(crate) instance_groups: std::option::Option<std::vec::Vec<crate::model::InstanceGroupDetail>>,
         pub(crate) normalized_instance_hours: std::option::Option<i32>,
         pub(crate) ec2_key_name: std::option::Option<std::string::String>,
         pub(crate) ec2_subnet_id: std::option::Option<std::string::String>,
@@ -15088,12 +13914,8 @@ pub mod job_flow_instances_detail {
             self
         }
         /// <p>The Amazon EC2 master node instance type.</p>
-        pub fn set_master_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_instance_type = input;
-            self
+        pub fn set_master_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_instance_type = input; self
         }
         /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
         pub fn master_public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15101,12 +13923,8 @@ pub mod job_flow_instances_detail {
             self
         }
         /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-        pub fn set_master_public_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_public_dns_name = input;
-            self
+        pub fn set_master_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_public_dns_name = input; self
         }
         /// <p>The Amazon EC2 instance identifier of the master node.</p>
         pub fn master_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15114,12 +13932,8 @@ pub mod job_flow_instances_detail {
             self
         }
         /// <p>The Amazon EC2 instance identifier of the master node.</p>
-        pub fn set_master_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_instance_id = input;
-            self
+        pub fn set_master_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_instance_id = input; self
         }
         /// <p>The Amazon EC2 core and task node instance type.</p>
         pub fn slave_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15127,12 +13941,8 @@ pub mod job_flow_instances_detail {
             self
         }
         /// <p>The Amazon EC2 core and task node instance type.</p>
-        pub fn set_slave_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.slave_instance_type = input;
-            self
+        pub fn set_slave_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.slave_instance_type = input; self
         }
         /// <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</p>
         pub fn instance_count(mut self, input: i32) -> Self {
@@ -15141,8 +13951,7 @@ pub mod job_flow_instances_detail {
         }
         /// <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_count = input;
-            self
+            self.instance_count = input; self
         }
         /// Appends an item to `instance_groups`.
         ///
@@ -15151,17 +13960,13 @@ pub mod job_flow_instances_detail {
         /// <p>Details about the instance groups in a cluster.</p>
         pub fn instance_groups(mut self, input: crate::model::InstanceGroupDetail) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input);
-            self.instance_groups = Some(v);
-            self
+                            v.push(input);
+                            self.instance_groups = Some(v);
+                            self
         }
         /// <p>Details about the instance groups in a cluster.</p>
-        pub fn set_instance_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceGroupDetail>>,
-        ) -> Self {
-            self.instance_groups = input;
-            self
+        pub fn set_instance_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceGroupDetail>>) -> Self {
+            self.instance_groups = input; self
         }
         /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being increased incrementally four times. This result is only an approximation and does not reflect the actual billing rate.</p>
         pub fn normalized_instance_hours(mut self, input: i32) -> Self {
@@ -15170,8 +13975,7 @@ pub mod job_flow_instances_detail {
         }
         /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being increased incrementally four times. This result is only an approximation and does not reflect the actual billing rate.</p>
         pub fn set_normalized_instance_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.normalized_instance_hours = input;
-            self
+            self.normalized_instance_hours = input; self
         }
         /// <p>The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.</p>
         pub fn ec2_key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15180,8 +13984,7 @@ pub mod job_flow_instances_detail {
         }
         /// <p>The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.</p>
         pub fn set_ec2_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ec2_key_name = input;
-            self
+            self.ec2_key_name = input; self
         }
         /// <p>For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster was launched.</p>
         pub fn ec2_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15189,12 +13992,8 @@ pub mod job_flow_instances_detail {
             self
         }
         /// <p>For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster was launched.</p>
-        pub fn set_ec2_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_subnet_id = input;
-            self
+        pub fn set_ec2_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_subnet_id = input; self
         }
         /// <p>The Amazon EC2 Availability Zone for the cluster.</p>
         pub fn placement(mut self, input: crate::model::PlacementType) -> Self {
@@ -15202,12 +14001,8 @@ pub mod job_flow_instances_detail {
             self
         }
         /// <p>The Amazon EC2 Availability Zone for the cluster.</p>
-        pub fn set_placement(
-            mut self,
-            input: std::option::Option<crate::model::PlacementType>,
-        ) -> Self {
-            self.placement = input;
-            self
+        pub fn set_placement(mut self, input: std::option::Option<crate::model::PlacementType>) -> Self {
+            self.placement = input; self
         }
         /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
         pub fn keep_job_flow_alive_when_no_steps(mut self, input: bool) -> Self {
@@ -15215,12 +14010,8 @@ pub mod job_flow_instances_detail {
             self
         }
         /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
-        pub fn set_keep_job_flow_alive_when_no_steps(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.keep_job_flow_alive_when_no_steps = input;
-            self
+        pub fn set_keep_job_flow_alive_when_no_steps(mut self, input: std::option::Option<bool>) -> Self {
+            self.keep_job_flow_alive_when_no_steps = input; self
         }
         /// <p>Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user intervention, or in the event of a job-flow error.</p>
         pub fn termination_protected(mut self, input: bool) -> Self {
@@ -15229,8 +14020,7 @@ pub mod job_flow_instances_detail {
         }
         /// <p>Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user intervention, or in the event of a job-flow error.</p>
         pub fn set_termination_protected(mut self, input: std::option::Option<bool>) -> Self {
-            self.termination_protected = input;
-            self
+            self.termination_protected = input; self
         }
         /// <p>The Hadoop version for the cluster.</p>
         pub fn hadoop_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15238,34 +14028,45 @@ pub mod job_flow_instances_detail {
             self
         }
         /// <p>The Hadoop version for the cluster.</p>
-        pub fn set_hadoop_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hadoop_version = input;
-            self
+        pub fn set_hadoop_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hadoop_version = input; self
         }
         /// Consumes the builder and constructs a [`JobFlowInstancesDetail`](crate::model::JobFlowInstancesDetail).
         pub fn build(self) -> crate::model::JobFlowInstancesDetail {
             crate::model::JobFlowInstancesDetail {
-                master_instance_type: self.master_instance_type,
-                master_public_dns_name: self.master_public_dns_name,
-                master_instance_id: self.master_instance_id,
-                slave_instance_type: self.slave_instance_type,
-                instance_count: self.instance_count,
-                instance_groups: self.instance_groups,
-                normalized_instance_hours: self.normalized_instance_hours,
-                ec2_key_name: self.ec2_key_name,
-                ec2_subnet_id: self.ec2_subnet_id,
-                placement: self.placement,
-                keep_job_flow_alive_when_no_steps: self
-                    .keep_job_flow_alive_when_no_steps
-                    .unwrap_or_default(),
-                termination_protected: self.termination_protected.unwrap_or_default(),
-                hadoop_version: self.hadoop_version,
+                master_instance_type: self.master_instance_type
+                ,
+                master_public_dns_name: self.master_public_dns_name
+                ,
+                master_instance_id: self.master_instance_id
+                ,
+                slave_instance_type: self.slave_instance_type
+                ,
+                instance_count: self.instance_count
+                ,
+                instance_groups: self.instance_groups
+                ,
+                normalized_instance_hours: self.normalized_instance_hours
+                ,
+                ec2_key_name: self.ec2_key_name
+                ,
+                ec2_subnet_id: self.ec2_subnet_id
+                ,
+                placement: self.placement
+                ,
+                keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps
+                    .unwrap_or_default()
+                ,
+                termination_protected: self.termination_protected
+                    .unwrap_or_default()
+                ,
+                hadoop_version: self.hadoop_version
+                ,
             }
         }
     }
+    
+    
 }
 impl JobFlowInstancesDetail {
     /// Creates a new builder-style object to manufacture [`JobFlowInstancesDetail`](crate::model::JobFlowInstancesDetail).
@@ -15277,7 +14078,7 @@ impl JobFlowInstancesDetail {
 /// <p>Detailed information about an instance group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroupDetail {
+pub struct InstanceGroupDetail  {
     /// <p>Unique identifier for the instance group.</p>
     #[doc(hidden)]
     pub instance_group_id: std::option::Option<std::string::String>,
@@ -15326,27 +14127,27 @@ pub struct InstanceGroupDetail {
 }
 impl InstanceGroupDetail {
     /// <p>Unique identifier for the instance group.</p>
-    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+    pub fn instance_group_id(&self) -> std::option::Option<& str> {
         self.instance_group_id.as_deref()
     }
     /// <p>Friendly name for the instance group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Market type of the EC2 instances used to create a cluster node.</p>
-    pub fn market(&self) -> std::option::Option<&crate::model::MarketType> {
+    pub fn market(&self) -> std::option::Option<& crate::model::MarketType> {
         self.market.as_ref()
     }
     /// <p>Instance group role in the cluster</p>
-    pub fn instance_role(&self) -> std::option::Option<&crate::model::InstanceRoleType> {
+    pub fn instance_role(&self) -> std::option::Option<& crate::model::InstanceRoleType> {
         self.instance_role.as_ref()
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    pub fn bid_price(&self) -> std::option::Option<&str> {
+    pub fn bid_price(&self) -> std::option::Option<& str> {
         self.bid_price.as_deref()
     }
     /// <p>EC2 instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>Target number of instances to run in the instance group.</p>
@@ -15358,37 +14159,37 @@ impl InstanceGroupDetail {
         self.instance_running_count
     }
     /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::InstanceGroupState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InstanceGroupState> {
         self.state.as_ref()
     }
     /// <p>Details regarding the state of the instance group.</p>
-    pub fn last_state_change_reason(&self) -> std::option::Option<&str> {
+    pub fn last_state_change_reason(&self) -> std::option::Option<& str> {
         self.last_state_change_reason.as_deref()
     }
     /// <p>The date/time the instance group was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date/time the instance group was started.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date/time the instance group was available to the cluster.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date/time the instance group was terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn custom_ami_id(&self) -> std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> std::option::Option<& str> {
         self.custom_ami_id.as_deref()
     }
 }
 /// See [`InstanceGroupDetail`](crate::model::InstanceGroupDetail).
 pub mod instance_group_detail {
-
+    
     /// A builder for [`InstanceGroupDetail`](crate::model::InstanceGroupDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -15415,12 +14216,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>Unique identifier for the instance group.</p>
-        pub fn set_instance_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_group_id = input;
-            self
+        pub fn set_instance_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_group_id = input; self
         }
         /// <p>Friendly name for the instance group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15429,8 +14226,7 @@ pub mod instance_group_detail {
         }
         /// <p>Friendly name for the instance group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Market type of the EC2 instances used to create a cluster node.</p>
         pub fn market(mut self, input: crate::model::MarketType) -> Self {
@@ -15439,8 +14235,7 @@ pub mod instance_group_detail {
         }
         /// <p>Market type of the EC2 instances used to create a cluster node.</p>
         pub fn set_market(mut self, input: std::option::Option<crate::model::MarketType>) -> Self {
-            self.market = input;
-            self
+            self.market = input; self
         }
         /// <p>Instance group role in the cluster</p>
         pub fn instance_role(mut self, input: crate::model::InstanceRoleType) -> Self {
@@ -15448,12 +14243,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>Instance group role in the cluster</p>
-        pub fn set_instance_role(
-            mut self,
-            input: std::option::Option<crate::model::InstanceRoleType>,
-        ) -> Self {
-            self.instance_role = input;
-            self
+        pub fn set_instance_role(mut self, input: std::option::Option<crate::model::InstanceRoleType>) -> Self {
+            self.instance_role = input; self
         }
         /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
         pub fn bid_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15462,8 +14253,7 @@ pub mod instance_group_detail {
         }
         /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
         pub fn set_bid_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bid_price = input;
-            self
+            self.bid_price = input; self
         }
         /// <p>EC2 instance type.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15471,12 +14261,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>EC2 instance type.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>Target number of instances to run in the instance group.</p>
         pub fn instance_request_count(mut self, input: i32) -> Self {
@@ -15485,8 +14271,7 @@ pub mod instance_group_detail {
         }
         /// <p>Target number of instances to run in the instance group.</p>
         pub fn set_instance_request_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_request_count = input;
-            self
+            self.instance_request_count = input; self
         }
         /// <p>Actual count of running instances.</p>
         pub fn instance_running_count(mut self, input: i32) -> Self {
@@ -15495,8 +14280,7 @@ pub mod instance_group_detail {
         }
         /// <p>Actual count of running instances.</p>
         pub fn set_instance_running_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_running_count = input;
-            self
+            self.instance_running_count = input; self
         }
         /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
         pub fn state(mut self, input: crate::model::InstanceGroupState) -> Self {
@@ -15504,12 +14288,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::InstanceGroupState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::InstanceGroupState>) -> Self {
+            self.state = input; self
         }
         /// <p>Details regarding the state of the instance group.</p>
         pub fn last_state_change_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15517,12 +14297,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>Details regarding the state of the instance group.</p>
-        pub fn set_last_state_change_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_state_change_reason = input;
-            self
+        pub fn set_last_state_change_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_state_change_reason = input; self
         }
         /// <p>The date/time the instance group was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15530,12 +14306,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>The date/time the instance group was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date/time the instance group was started.</p>
         pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15543,12 +14315,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>The date/time the instance group was started.</p>
-        pub fn set_start_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date_time = input;
-            self
+        pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date_time = input; self
         }
         /// <p>The date/time the instance group was available to the cluster.</p>
         pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15556,12 +14324,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>The date/time the instance group was available to the cluster.</p>
-        pub fn set_ready_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ready_date_time = input;
-            self
+        pub fn set_ready_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ready_date_time = input; self
         }
         /// <p>The date/time the instance group was terminated.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15569,12 +14333,8 @@ pub mod instance_group_detail {
             self
         }
         /// <p>The date/time the instance group was terminated.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// <p>The custom AMI ID to use for the provisioned instance group.</p>
         pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15582,34 +14342,47 @@ pub mod instance_group_detail {
             self
         }
         /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-        pub fn set_custom_ami_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_ami_id = input;
-            self
+        pub fn set_custom_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_ami_id = input; self
         }
         /// Consumes the builder and constructs a [`InstanceGroupDetail`](crate::model::InstanceGroupDetail).
         pub fn build(self) -> crate::model::InstanceGroupDetail {
             crate::model::InstanceGroupDetail {
-                instance_group_id: self.instance_group_id,
-                name: self.name,
-                market: self.market,
-                instance_role: self.instance_role,
-                bid_price: self.bid_price,
-                instance_type: self.instance_type,
-                instance_request_count: self.instance_request_count,
-                instance_running_count: self.instance_running_count,
-                state: self.state,
-                last_state_change_reason: self.last_state_change_reason,
-                creation_date_time: self.creation_date_time,
-                start_date_time: self.start_date_time,
-                ready_date_time: self.ready_date_time,
-                end_date_time: self.end_date_time,
-                custom_ami_id: self.custom_ami_id,
+                instance_group_id: self.instance_group_id
+                ,
+                name: self.name
+                ,
+                market: self.market
+                ,
+                instance_role: self.instance_role
+                ,
+                bid_price: self.bid_price
+                ,
+                instance_type: self.instance_type
+                ,
+                instance_request_count: self.instance_request_count
+                ,
+                instance_running_count: self.instance_running_count
+                ,
+                state: self.state
+                ,
+                last_state_change_reason: self.last_state_change_reason
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                start_date_time: self.start_date_time
+                ,
+                ready_date_time: self.ready_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
+                custom_ami_id: self.custom_ami_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceGroupDetail {
     /// Creates a new builder-style object to manufacture [`InstanceGroupDetail`](crate::model::InstanceGroupDetail).
@@ -15621,7 +14394,7 @@ impl InstanceGroupDetail {
 /// <p>Describes the status of the cluster (job flow).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobFlowExecutionStatusDetail {
+pub struct JobFlowExecutionStatusDetail  {
     /// <p>The state of the job flow.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::JobFlowExecutionState>,
@@ -15643,33 +14416,33 @@ pub struct JobFlowExecutionStatusDetail {
 }
 impl JobFlowExecutionStatusDetail {
     /// <p>The state of the job flow.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::JobFlowExecutionState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::JobFlowExecutionState> {
         self.state.as_ref()
     }
     /// <p>The creation date and time of the job flow.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The start date and time of the job flow.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The completion date and time of the job flow.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>Description of the job flow last changed state.</p>
-    pub fn last_state_change_reason(&self) -> std::option::Option<&str> {
+    pub fn last_state_change_reason(&self) -> std::option::Option<& str> {
         self.last_state_change_reason.as_deref()
     }
 }
 /// See [`JobFlowExecutionStatusDetail`](crate::model::JobFlowExecutionStatusDetail).
 pub mod job_flow_execution_status_detail {
-
+    
     /// A builder for [`JobFlowExecutionStatusDetail`](crate::model::JobFlowExecutionStatusDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -15687,12 +14460,8 @@ pub mod job_flow_execution_status_detail {
             self
         }
         /// <p>The state of the job flow.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::JobFlowExecutionState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::JobFlowExecutionState>) -> Self {
+            self.state = input; self
         }
         /// <p>The creation date and time of the job flow.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15700,12 +14469,8 @@ pub mod job_flow_execution_status_detail {
             self
         }
         /// <p>The creation date and time of the job flow.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The start date and time of the job flow.</p>
         pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15713,12 +14478,8 @@ pub mod job_flow_execution_status_detail {
             self
         }
         /// <p>The start date and time of the job flow.</p>
-        pub fn set_start_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date_time = input;
-            self
+        pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date_time = input; self
         }
         /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
         pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15726,12 +14487,8 @@ pub mod job_flow_execution_status_detail {
             self
         }
         /// <p>The date and time when the job flow was ready to start running bootstrap actions.</p>
-        pub fn set_ready_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ready_date_time = input;
-            self
+        pub fn set_ready_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ready_date_time = input; self
         }
         /// <p>The completion date and time of the job flow.</p>
         pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -15739,12 +14496,8 @@ pub mod job_flow_execution_status_detail {
             self
         }
         /// <p>The completion date and time of the job flow.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date_time = input; self
         }
         /// <p>Description of the job flow last changed state.</p>
         pub fn last_state_change_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15752,25 +14505,29 @@ pub mod job_flow_execution_status_detail {
             self
         }
         /// <p>Description of the job flow last changed state.</p>
-        pub fn set_last_state_change_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_state_change_reason = input;
-            self
+        pub fn set_last_state_change_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_state_change_reason = input; self
         }
         /// Consumes the builder and constructs a [`JobFlowExecutionStatusDetail`](crate::model::JobFlowExecutionStatusDetail).
         pub fn build(self) -> crate::model::JobFlowExecutionStatusDetail {
             crate::model::JobFlowExecutionStatusDetail {
-                state: self.state,
-                creation_date_time: self.creation_date_time,
-                start_date_time: self.start_date_time,
-                ready_date_time: self.ready_date_time,
-                end_date_time: self.end_date_time,
-                last_state_change_reason: self.last_state_change_reason,
+                state: self.state
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                start_date_time: self.start_date_time
+                ,
+                ready_date_time: self.ready_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
+                last_state_change_reason: self.last_state_change_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl JobFlowExecutionStatusDetail {
     /// Creates a new builder-style object to manufacture [`JobFlowExecutionStatusDetail`](crate::model::JobFlowExecutionStatusDetail).
@@ -15785,9 +14542,9 @@ impl JobFlowExecutionStatusDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobflowexecutionstate = unimplemented!();
 /// match jobflowexecutionstate {
@@ -15815,22 +14572,14 @@ impl JobFlowExecutionStatusDetail {
 /// Specifically, when `jobflowexecutionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobFlowExecutionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of instance.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobFlowExecutionState {
     #[allow(missing_docs)] // documentation missing in model
     Bootstrapping,
@@ -15849,7 +14598,7 @@ pub enum JobFlowExecutionState {
     #[allow(missing_docs)] // documentation missing in model
     Waiting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobFlowExecutionState {
     fn from(s: &str) -> Self {
@@ -15862,19 +14611,17 @@ impl std::convert::From<&str> for JobFlowExecutionState {
             "STARTING" => JobFlowExecutionState::Starting,
             "TERMINATED" => JobFlowExecutionState::Terminated,
             "WAITING" => JobFlowExecutionState::Waiting,
-            other => {
-                JobFlowExecutionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobFlowExecutionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobFlowExecutionState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobFlowExecutionState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobFlowExecutionState::from(s))
+                }
+            }
 impl JobFlowExecutionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -15887,20 +14634,13 @@ impl JobFlowExecutionState {
             JobFlowExecutionState::Starting => "STARTING",
             JobFlowExecutionState::Terminated => "TERMINATED",
             JobFlowExecutionState::Waiting => "WAITING",
-            JobFlowExecutionState::Unknown(value) => value.as_str(),
+            JobFlowExecutionState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BOOTSTRAPPING",
-            "COMPLETED",
-            "FAILED",
-            "RUNNING",
-            "SHUTTING_DOWN",
-            "STARTING",
-            "TERMINATED",
-            "WAITING",
+            "BOOTSTRAPPING", "COMPLETED", "FAILED", "RUNNING", "SHUTTING_DOWN", "STARTING", "TERMINATED", "WAITING"
         ]
     }
 }
@@ -15913,7 +14653,7 @@ impl AsRef<str> for JobFlowExecutionState {
 /// <p>The detailed description of the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cluster {
+pub struct Cluster  {
     /// <p>The unique identifier for the cluster.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -15926,9 +14666,9 @@ pub struct Cluster {
     /// <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
     #[doc(hidden)]
     pub ec2_instance_attributes: std::option::Option<crate::model::Ec2InstanceAttributes>,
-    /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
-    /// </note>
+    /// <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+    /// </note> 
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
     #[doc(hidden)]
     pub instance_collection_type: std::option::Option<crate::model::InstanceCollectionType>,
@@ -15953,7 +14693,7 @@ pub struct Cluster {
     /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
     #[doc(hidden)]
     pub termination_protected: bool,
-    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> 
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     #[doc(hidden)]
     pub visible_to_all_users: bool,
@@ -16014,50 +14754,46 @@ pub struct Cluster {
 }
 impl Cluster {
     /// <p>The unique identifier for the cluster.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status details about the cluster.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ClusterStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ClusterStatus> {
         self.status.as_ref()
     }
     /// <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
-    pub fn ec2_instance_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::Ec2InstanceAttributes> {
+    pub fn ec2_instance_attributes(&self) -> std::option::Option<& crate::model::Ec2InstanceAttributes> {
         self.ec2_instance_attributes.as_ref()
     }
-    /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
-    /// </note>
+    /// <note> 
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+    /// </note> 
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
-    pub fn instance_collection_type(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceCollectionType> {
+    pub fn instance_collection_type(&self) -> std::option::Option<& crate::model::InstanceCollectionType> {
         self.instance_collection_type.as_ref()
     }
     /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
-    pub fn log_uri(&self) -> std::option::Option<&str> {
+    pub fn log_uri(&self) -> std::option::Option<& str> {
         self.log_uri.as_deref()
     }
     /// <p> The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
-    pub fn log_encryption_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn log_encryption_kms_key_id(&self) -> std::option::Option<& str> {
         self.log_encryption_kms_key_id.as_deref()
     }
     /// <p>The AMI version requested for this cluster.</p>
-    pub fn requested_ami_version(&self) -> std::option::Option<&str> {
+    pub fn requested_ami_version(&self) -> std::option::Option<& str> {
         self.requested_ami_version.as_deref()
     }
     /// <p>The AMI version running on this cluster.</p>
-    pub fn running_ami_version(&self) -> std::option::Option<&str> {
+    pub fn running_ami_version(&self) -> std::option::Option<& str> {
         self.running_ami_version.as_deref()
     }
     /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
-    pub fn release_label(&self) -> std::option::Option<&str> {
+    pub fn release_label(&self) -> std::option::Option<& str> {
         self.release_label.as_deref()
     }
     /// <p>Specifies whether the cluster should terminate after completing all steps.</p>
@@ -16068,21 +14804,21 @@ impl Cluster {
     pub fn termination_protected(&self) -> bool {
         self.termination_protected
     }
-    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> 
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     pub fn visible_to_all_users(&self) -> bool {
         self.visible_to_all_users
     }
     /// <p>The applications installed on this cluster.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::model::Application]> {
         self.applications.as_deref()
     }
     /// <p>A list of tags associated with a cluster.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
@@ -16090,27 +14826,27 @@ impl Cluster {
         self.normalized_instance_hours
     }
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-    pub fn master_public_dns_name(&self) -> std::option::Option<&str> {
+    pub fn master_public_dns_name(&self) -> std::option::Option<& str> {
         self.master_public_dns_name.as_deref()
     }
     /// <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>The name of the security configuration applied to the cluster.</p>
-    pub fn security_configuration(&self) -> std::option::Option<&str> {
+    pub fn security_configuration(&self) -> std::option::Option<& str> {
         self.security_configuration.as_deref()
     }
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
-    pub fn auto_scaling_role(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_role(&self) -> std::option::Option<& str> {
         self.auto_scaling_role.as_deref()
     }
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
-    pub fn scale_down_behavior(&self) -> std::option::Option<&crate::model::ScaleDownBehavior> {
+    pub fn scale_down_behavior(&self) -> std::option::Option<& crate::model::ScaleDownBehavior> {
         self.scale_down_behavior.as_ref()
     }
     /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
-    pub fn custom_ami_id(&self) -> std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> std::option::Option<& str> {
         self.custom_ami_id.as_deref()
     }
     /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
@@ -16118,19 +14854,19 @@ impl Cluster {
         self.ebs_root_volume_size
     }
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the Amazon Linux AMI package repositories when an instance boots using the AMI.</p>
-    pub fn repo_upgrade_on_boot(&self) -> std::option::Option<&crate::model::RepoUpgradeOnBoot> {
+    pub fn repo_upgrade_on_boot(&self) -> std::option::Option<& crate::model::RepoUpgradeOnBoot> {
         self.repo_upgrade_on_boot.as_ref()
     }
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn kerberos_attributes(&self) -> std::option::Option<&crate::model::KerberosAttributes> {
+    pub fn kerberos_attributes(&self) -> std::option::Option<& crate::model::KerberosAttributes> {
         self.kerberos_attributes.as_ref()
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
     /// <p>Specifies the number of steps that can be executed concurrently.</p>
@@ -16138,27 +14874,25 @@ impl Cluster {
         self.step_concurrency_level
     }
     /// <p>Placement group configured for an Amazon EMR cluster.</p>
-    pub fn placement_groups(&self) -> std::option::Option<&[crate::model::PlacementGroupConfig]> {
+    pub fn placement_groups(&self) -> std::option::Option<& [crate::model::PlacementGroupConfig]> {
         self.placement_groups.as_deref()
     }
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
-    pub fn os_release_label(&self) -> std::option::Option<&str> {
+    pub fn os_release_label(&self) -> std::option::Option<& str> {
         self.os_release_label.as_deref()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
-
+    
     /// A builder for [`Cluster`](crate::model::Cluster).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ClusterStatus>,
-        pub(crate) ec2_instance_attributes:
-            std::option::Option<crate::model::Ec2InstanceAttributes>,
-        pub(crate) instance_collection_type:
-            std::option::Option<crate::model::InstanceCollectionType>,
+        pub(crate) ec2_instance_attributes: std::option::Option<crate::model::Ec2InstanceAttributes>,
+        pub(crate) instance_collection_type: std::option::Option<crate::model::InstanceCollectionType>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) log_encryption_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) requested_ami_version: std::option::Option<std::string::String>,
@@ -16183,8 +14917,7 @@ pub mod cluster {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) outpost_arn: std::option::Option<std::string::String>,
         pub(crate) step_concurrency_level: std::option::Option<i32>,
-        pub(crate) placement_groups:
-            std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
+        pub(crate) placement_groups: std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
         pub(crate) os_release_label: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -16195,8 +14928,7 @@ pub mod cluster {
         }
         /// <p>The unique identifier for the cluster.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the cluster.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16205,8 +14937,7 @@ pub mod cluster {
         }
         /// <p>The name of the cluster.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status details about the cluster.</p>
         pub fn status(mut self, input: crate::model::ClusterStatus) -> Self {
@@ -16214,50 +14945,32 @@ pub mod cluster {
             self
         }
         /// <p>The current status details about the cluster.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ClusterStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ClusterStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
-        pub fn ec2_instance_attributes(
-            mut self,
-            input: crate::model::Ec2InstanceAttributes,
-        ) -> Self {
+        pub fn ec2_instance_attributes(mut self, input: crate::model::Ec2InstanceAttributes) -> Self {
             self.ec2_instance_attributes = Some(input);
             self
         }
         /// <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
-        pub fn set_ec2_instance_attributes(
-            mut self,
-            input: std::option::Option<crate::model::Ec2InstanceAttributes>,
-        ) -> Self {
-            self.ec2_instance_attributes = input;
-            self
+        pub fn set_ec2_instance_attributes(mut self, input: std::option::Option<crate::model::Ec2InstanceAttributes>) -> Self {
+            self.ec2_instance_attributes = input; self
         }
-        /// <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
-        /// </note>
+        /// <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+        /// </note> 
         /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
-        pub fn instance_collection_type(
-            mut self,
-            input: crate::model::InstanceCollectionType,
-        ) -> Self {
+        pub fn instance_collection_type(mut self, input: crate::model::InstanceCollectionType) -> Self {
             self.instance_collection_type = Some(input);
             self
         }
-        /// <note>
-        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
-        /// </note>
+        /// <note> 
+        /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+        /// </note> 
         /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
-        pub fn set_instance_collection_type(
-            mut self,
-            input: std::option::Option<crate::model::InstanceCollectionType>,
-        ) -> Self {
-            self.instance_collection_type = input;
-            self
+        pub fn set_instance_collection_type(mut self, input: std::option::Option<crate::model::InstanceCollectionType>) -> Self {
+            self.instance_collection_type = input; self
         }
         /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
         pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16266,8 +14979,7 @@ pub mod cluster {
         }
         /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_uri = input;
-            self
+            self.log_uri = input; self
         }
         /// <p> The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
         pub fn log_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16275,12 +14987,8 @@ pub mod cluster {
             self
         }
         /// <p> The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
-        pub fn set_log_encryption_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_encryption_kms_key_id = input;
-            self
+        pub fn set_log_encryption_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_encryption_kms_key_id = input; self
         }
         /// <p>The AMI version requested for this cluster.</p>
         pub fn requested_ami_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16288,12 +14996,8 @@ pub mod cluster {
             self
         }
         /// <p>The AMI version requested for this cluster.</p>
-        pub fn set_requested_ami_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.requested_ami_version = input;
-            self
+        pub fn set_requested_ami_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.requested_ami_version = input; self
         }
         /// <p>The AMI version running on this cluster.</p>
         pub fn running_ami_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16301,12 +15005,8 @@ pub mod cluster {
             self
         }
         /// <p>The AMI version running on this cluster.</p>
-        pub fn set_running_ami_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.running_ami_version = input;
-            self
+        pub fn set_running_ami_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.running_ami_version = input; self
         }
         /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16314,12 +15014,8 @@ pub mod cluster {
             self
         }
         /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
-        pub fn set_release_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.release_label = input;
-            self
+        pub fn set_release_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.release_label = input; self
         }
         /// <p>Specifies whether the cluster should terminate after completing all steps.</p>
         pub fn auto_terminate(mut self, input: bool) -> Self {
@@ -16328,8 +15024,7 @@ pub mod cluster {
         }
         /// <p>Specifies whether the cluster should terminate after completing all steps.</p>
         pub fn set_auto_terminate(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_terminate = input;
-            self
+            self.auto_terminate = input; self
         }
         /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
         pub fn termination_protected(mut self, input: bool) -> Self {
@@ -16338,20 +15033,18 @@ pub mod cluster {
         }
         /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
         pub fn set_termination_protected(mut self, input: std::option::Option<bool>) -> Self {
-            self.termination_protected = input;
-            self
+            self.termination_protected = input; self
         }
-        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> 
         /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
         }
-        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
+        /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> 
         /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
         pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
-            self.visible_to_all_users = input;
-            self
+            self.visible_to_all_users = input; self
         }
         /// Appends an item to `applications`.
         ///
@@ -16360,17 +15053,13 @@ pub mod cluster {
         /// <p>The applications installed on this cluster.</p>
         pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input);
-            self.applications = Some(v);
-            self
+                            v.push(input);
+                            self.applications = Some(v);
+                            self
         }
         /// <p>The applications installed on this cluster.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Application>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::Application>>) -> Self {
+            self.applications = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -16379,17 +15068,13 @@ pub mod cluster {
         /// <p>A list of tags associated with a cluster.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags associated with a cluster.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16398,8 +15083,7 @@ pub mod cluster {
         }
         /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_role = input;
-            self
+            self.service_role = input; self
         }
         /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
         pub fn normalized_instance_hours(mut self, input: i32) -> Self {
@@ -16408,8 +15092,7 @@ pub mod cluster {
         }
         /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
         pub fn set_normalized_instance_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.normalized_instance_hours = input;
-            self
+            self.normalized_instance_hours = input; self
         }
         /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
         pub fn master_public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16417,12 +15100,8 @@ pub mod cluster {
             self
         }
         /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-        pub fn set_master_public_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_public_dns_name = input;
-            self
+        pub fn set_master_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_public_dns_name = input; self
         }
         /// Appends an item to `configurations`.
         ///
@@ -16431,17 +15110,13 @@ pub mod cluster {
         /// <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
         /// <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// <p>The name of the security configuration applied to the cluster.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16449,12 +15124,8 @@ pub mod cluster {
             self
         }
         /// <p>The name of the security configuration applied to the cluster.</p>
-        pub fn set_security_configuration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.security_configuration = input;
-            self
+        pub fn set_security_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.security_configuration = input; self
         }
         /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
         pub fn auto_scaling_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16462,12 +15133,8 @@ pub mod cluster {
             self
         }
         /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
-        pub fn set_auto_scaling_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.auto_scaling_role = input;
-            self
+        pub fn set_auto_scaling_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auto_scaling_role = input; self
         }
         /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
         pub fn scale_down_behavior(mut self, input: crate::model::ScaleDownBehavior) -> Self {
@@ -16475,12 +15142,8 @@ pub mod cluster {
             self
         }
         /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
-        pub fn set_scale_down_behavior(
-            mut self,
-            input: std::option::Option<crate::model::ScaleDownBehavior>,
-        ) -> Self {
-            self.scale_down_behavior = input;
-            self
+        pub fn set_scale_down_behavior(mut self, input: std::option::Option<crate::model::ScaleDownBehavior>) -> Self {
+            self.scale_down_behavior = input; self
         }
         /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
         pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16488,12 +15151,8 @@ pub mod cluster {
             self
         }
         /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
-        pub fn set_custom_ami_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_ami_id = input;
-            self
+        pub fn set_custom_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_ami_id = input; self
         }
         /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
         pub fn ebs_root_volume_size(mut self, input: i32) -> Self {
@@ -16502,8 +15161,7 @@ pub mod cluster {
         }
         /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
         pub fn set_ebs_root_volume_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.ebs_root_volume_size = input;
-            self
+            self.ebs_root_volume_size = input; self
         }
         /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the Amazon Linux AMI package repositories when an instance boots using the AMI.</p>
         pub fn repo_upgrade_on_boot(mut self, input: crate::model::RepoUpgradeOnBoot) -> Self {
@@ -16511,12 +15169,8 @@ pub mod cluster {
             self
         }
         /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the Amazon Linux AMI package repositories when an instance boots using the AMI.</p>
-        pub fn set_repo_upgrade_on_boot(
-            mut self,
-            input: std::option::Option<crate::model::RepoUpgradeOnBoot>,
-        ) -> Self {
-            self.repo_upgrade_on_boot = input;
-            self
+        pub fn set_repo_upgrade_on_boot(mut self, input: std::option::Option<crate::model::RepoUpgradeOnBoot>) -> Self {
+            self.repo_upgrade_on_boot = input; self
         }
         /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn kerberos_attributes(mut self, input: crate::model::KerberosAttributes) -> Self {
@@ -16524,12 +15178,8 @@ pub mod cluster {
             self
         }
         /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
-        pub fn set_kerberos_attributes(
-            mut self,
-            input: std::option::Option<crate::model::KerberosAttributes>,
-        ) -> Self {
-            self.kerberos_attributes = input;
-            self
+        pub fn set_kerberos_attributes(mut self, input: std::option::Option<crate::model::KerberosAttributes>) -> Self {
+            self.kerberos_attributes = input; self
         }
         /// <p>The Amazon Resource Name of the cluster.</p>
         pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16538,8 +15188,7 @@ pub mod cluster {
         }
         /// <p>The Amazon Resource Name of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16548,8 +15197,7 @@ pub mod cluster {
         }
         /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.outpost_arn = input;
-            self
+            self.outpost_arn = input; self
         }
         /// <p>Specifies the number of steps that can be executed concurrently.</p>
         pub fn step_concurrency_level(mut self, input: i32) -> Self {
@@ -16558,8 +15206,7 @@ pub mod cluster {
         }
         /// <p>Specifies the number of steps that can be executed concurrently.</p>
         pub fn set_step_concurrency_level(mut self, input: std::option::Option<i32>) -> Self {
-            self.step_concurrency_level = input;
-            self
+            self.step_concurrency_level = input; self
         }
         /// Appends an item to `placement_groups`.
         ///
@@ -16568,17 +15215,13 @@ pub mod cluster {
         /// <p>Placement group configured for an Amazon EMR cluster.</p>
         pub fn placement_groups(mut self, input: crate::model::PlacementGroupConfig) -> Self {
             let mut v = self.placement_groups.unwrap_or_default();
-            v.push(input);
-            self.placement_groups = Some(v);
-            self
+                            v.push(input);
+                            self.placement_groups = Some(v);
+                            self
         }
         /// <p>Placement group configured for an Amazon EMR cluster.</p>
-        pub fn set_placement_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
-        ) -> Self {
-            self.placement_groups = input;
-            self
+        pub fn set_placement_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>) -> Self {
+            self.placement_groups = input; self
         }
         /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
         pub fn os_release_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16586,50 +15229,82 @@ pub mod cluster {
             self
         }
         /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
-        pub fn set_os_release_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.os_release_label = input;
-            self
+        pub fn set_os_release_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.os_release_label = input; self
         }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                ec2_instance_attributes: self.ec2_instance_attributes,
-                instance_collection_type: self.instance_collection_type,
-                log_uri: self.log_uri,
-                log_encryption_kms_key_id: self.log_encryption_kms_key_id,
-                requested_ami_version: self.requested_ami_version,
-                running_ami_version: self.running_ami_version,
-                release_label: self.release_label,
-                auto_terminate: self.auto_terminate.unwrap_or_default(),
-                termination_protected: self.termination_protected.unwrap_or_default(),
-                visible_to_all_users: self.visible_to_all_users.unwrap_or_default(),
-                applications: self.applications,
-                tags: self.tags,
-                service_role: self.service_role,
-                normalized_instance_hours: self.normalized_instance_hours,
-                master_public_dns_name: self.master_public_dns_name,
-                configurations: self.configurations,
-                security_configuration: self.security_configuration,
-                auto_scaling_role: self.auto_scaling_role,
-                scale_down_behavior: self.scale_down_behavior,
-                custom_ami_id: self.custom_ami_id,
-                ebs_root_volume_size: self.ebs_root_volume_size,
-                repo_upgrade_on_boot: self.repo_upgrade_on_boot,
-                kerberos_attributes: self.kerberos_attributes,
-                cluster_arn: self.cluster_arn,
-                outpost_arn: self.outpost_arn,
-                step_concurrency_level: self.step_concurrency_level,
-                placement_groups: self.placement_groups,
-                os_release_label: self.os_release_label,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                ec2_instance_attributes: self.ec2_instance_attributes
+                ,
+                instance_collection_type: self.instance_collection_type
+                ,
+                log_uri: self.log_uri
+                ,
+                log_encryption_kms_key_id: self.log_encryption_kms_key_id
+                ,
+                requested_ami_version: self.requested_ami_version
+                ,
+                running_ami_version: self.running_ami_version
+                ,
+                release_label: self.release_label
+                ,
+                auto_terminate: self.auto_terminate
+                    .unwrap_or_default()
+                ,
+                termination_protected: self.termination_protected
+                    .unwrap_or_default()
+                ,
+                visible_to_all_users: self.visible_to_all_users
+                    .unwrap_or_default()
+                ,
+                applications: self.applications
+                ,
+                tags: self.tags
+                ,
+                service_role: self.service_role
+                ,
+                normalized_instance_hours: self.normalized_instance_hours
+                ,
+                master_public_dns_name: self.master_public_dns_name
+                ,
+                configurations: self.configurations
+                ,
+                security_configuration: self.security_configuration
+                ,
+                auto_scaling_role: self.auto_scaling_role
+                ,
+                scale_down_behavior: self.scale_down_behavior
+                ,
+                custom_ami_id: self.custom_ami_id
+                ,
+                ebs_root_volume_size: self.ebs_root_volume_size
+                ,
+                repo_upgrade_on_boot: self.repo_upgrade_on_boot
+                ,
+                kerberos_attributes: self.kerberos_attributes
+                ,
+                cluster_arn: self.cluster_arn
+                ,
+                outpost_arn: self.outpost_arn
+                ,
+                step_concurrency_level: self.step_concurrency_level
+                ,
+                placement_groups: self.placement_groups
+                ,
+                os_release_label: self.os_release_label
+                ,
             }
         }
     }
+    
+    
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
@@ -16644,9 +15319,9 @@ impl Cluster {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancecollectiontype = unimplemented!();
 /// match instancecollectiontype {
@@ -16668,60 +15343,52 @@ impl Cluster {
 /// Specifically, when `instancecollectiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceCollectionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceCollectionType {
     #[allow(missing_docs)] // documentation missing in model
     InstanceFleet,
     #[allow(missing_docs)] // documentation missing in model
     InstanceGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceCollectionType {
     fn from(s: &str) -> Self {
         match s {
             "INSTANCE_FLEET" => InstanceCollectionType::InstanceFleet,
             "INSTANCE_GROUP" => InstanceCollectionType::InstanceGroup,
-            other => {
-                InstanceCollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceCollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceCollectionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceCollectionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceCollectionType::from(s))
+                }
+            }
 impl InstanceCollectionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceCollectionType::InstanceFleet => "INSTANCE_FLEET",
             InstanceCollectionType::InstanceGroup => "INSTANCE_GROUP",
-            InstanceCollectionType::Unknown(value) => value.as_str(),
+            InstanceCollectionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSTANCE_FLEET", "INSTANCE_GROUP"]
+        &[
+            "INSTANCE_FLEET", "INSTANCE_GROUP"
+        ]
     }
 }
 impl AsRef<str> for InstanceCollectionType {
@@ -16733,7 +15400,7 @@ impl AsRef<str> for InstanceCollectionType {
 /// <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceAttributes {
+pub struct Ec2InstanceAttributes  {
     /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
     #[doc(hidden)]
     pub ec2_key_name: std::option::Option<std::string::String>,
@@ -16770,71 +15437,67 @@ pub struct Ec2InstanceAttributes {
 }
 impl Ec2InstanceAttributes {
     /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
-    pub fn ec2_key_name(&self) -> std::option::Option<&str> {
+    pub fn ec2_key_name(&self) -> std::option::Option<& str> {
         self.ec2_key_name.as_deref()
     }
     /// <p>Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
-    pub fn ec2_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_subnet_id(&self) -> std::option::Option<& str> {
         self.ec2_subnet_id.as_deref()
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn requested_ec2_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn requested_ec2_subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.requested_ec2_subnet_ids.as_deref()
     }
     /// <p>The Availability Zone in which the cluster will run. </p>
-    pub fn ec2_availability_zone(&self) -> std::option::Option<&str> {
+    pub fn ec2_availability_zone(&self) -> std::option::Option<& str> {
         self.ec2_availability_zone.as_deref()
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn requested_ec2_availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn requested_ec2_availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.requested_ec2_availability_zones.as_deref()
     }
     /// <p>The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume this role.</p>
-    pub fn iam_instance_profile(&self) -> std::option::Option<&str> {
+    pub fn iam_instance_profile(&self) -> std::option::Option<& str> {
         self.iam_instance_profile.as_deref()
     }
     /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
-    pub fn emr_managed_master_security_group(&self) -> std::option::Option<&str> {
+    pub fn emr_managed_master_security_group(&self) -> std::option::Option<& str> {
         self.emr_managed_master_security_group.as_deref()
     }
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
-    pub fn emr_managed_slave_security_group(&self) -> std::option::Option<&str> {
+    pub fn emr_managed_slave_security_group(&self) -> std::option::Option<& str> {
         self.emr_managed_slave_security_group.as_deref()
     }
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-    pub fn service_access_security_group(&self) -> std::option::Option<&str> {
+    pub fn service_access_security_group(&self) -> std::option::Option<& str> {
         self.service_access_security_group.as_deref()
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    pub fn additional_master_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_master_security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_master_security_groups.as_deref()
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    pub fn additional_slave_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_slave_security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_slave_security_groups.as_deref()
     }
 }
 /// See [`Ec2InstanceAttributes`](crate::model::Ec2InstanceAttributes).
 pub mod ec2_instance_attributes {
-
+    
     /// A builder for [`Ec2InstanceAttributes`](crate::model::Ec2InstanceAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_key_name: std::option::Option<std::string::String>,
         pub(crate) ec2_subnet_id: std::option::Option<std::string::String>,
-        pub(crate) requested_ec2_subnet_ids:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) requested_ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) ec2_availability_zone: std::option::Option<std::string::String>,
-        pub(crate) requested_ec2_availability_zones:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) requested_ec2_availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) emr_managed_master_security_group: std::option::Option<std::string::String>,
         pub(crate) emr_managed_slave_security_group: std::option::Option<std::string::String>,
         pub(crate) service_access_security_group: std::option::Option<std::string::String>,
-        pub(crate) additional_master_security_groups:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) additional_slave_security_groups:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) additional_master_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) additional_slave_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
@@ -16844,8 +15507,7 @@ pub mod ec2_instance_attributes {
         }
         /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
         pub fn set_ec2_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ec2_key_name = input;
-            self
+            self.ec2_key_name = input; self
         }
         /// <p>Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
         pub fn ec2_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16853,12 +15515,8 @@ pub mod ec2_instance_attributes {
             self
         }
         /// <p>Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
-        pub fn set_ec2_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_subnet_id = input;
-            self
+        pub fn set_ec2_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_subnet_id = input; self
         }
         /// Appends an item to `requested_ec2_subnet_ids`.
         ///
@@ -16867,17 +15525,13 @@ pub mod ec2_instance_attributes {
         /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
         pub fn requested_ec2_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.requested_ec2_subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.requested_ec2_subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.requested_ec2_subnet_ids = Some(v);
+                            self
         }
         /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-        pub fn set_requested_ec2_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.requested_ec2_subnet_ids = input;
-            self
+        pub fn set_requested_ec2_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.requested_ec2_subnet_ids = input; self
         }
         /// <p>The Availability Zone in which the cluster will run. </p>
         pub fn ec2_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16885,34 +15539,23 @@ pub mod ec2_instance_attributes {
             self
         }
         /// <p>The Availability Zone in which the cluster will run. </p>
-        pub fn set_ec2_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_availability_zone = input;
-            self
+        pub fn set_ec2_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_availability_zone = input; self
         }
         /// Appends an item to `requested_ec2_availability_zones`.
         ///
         /// To override the contents of this collection use [`set_requested_ec2_availability_zones`](Self::set_requested_ec2_availability_zones).
         ///
         /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-        pub fn requested_ec2_availability_zones(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn requested_ec2_availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.requested_ec2_availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.requested_ec2_availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.requested_ec2_availability_zones = Some(v);
+                            self
         }
         /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-        pub fn set_requested_ec2_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.requested_ec2_availability_zones = input;
-            self
+        pub fn set_requested_ec2_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.requested_ec2_availability_zones = input; self
         }
         /// <p>The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume this role.</p>
         pub fn iam_instance_profile(mut self, input: impl Into<std::string::String>) -> Self {
@@ -16920,122 +15563,96 @@ pub mod ec2_instance_attributes {
             self
         }
         /// <p>The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume this role.</p>
-        pub fn set_iam_instance_profile(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iam_instance_profile = input;
-            self
+        pub fn set_iam_instance_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_instance_profile = input; self
         }
         /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
-        pub fn emr_managed_master_security_group(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn emr_managed_master_security_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.emr_managed_master_security_group = Some(input.into());
             self
         }
         /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
-        pub fn set_emr_managed_master_security_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.emr_managed_master_security_group = input;
-            self
+        pub fn set_emr_managed_master_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.emr_managed_master_security_group = input; self
         }
         /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
-        pub fn emr_managed_slave_security_group(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn emr_managed_slave_security_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.emr_managed_slave_security_group = Some(input.into());
             self
         }
         /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
-        pub fn set_emr_managed_slave_security_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.emr_managed_slave_security_group = input;
-            self
+        pub fn set_emr_managed_slave_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.emr_managed_slave_security_group = input; self
         }
         /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-        pub fn service_access_security_group(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn service_access_security_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_access_security_group = Some(input.into());
             self
         }
         /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-        pub fn set_service_access_security_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_access_security_group = input;
-            self
+        pub fn set_service_access_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_access_security_group = input; self
         }
         /// Appends an item to `additional_master_security_groups`.
         ///
         /// To override the contents of this collection use [`set_additional_master_security_groups`](Self::set_additional_master_security_groups).
         ///
         /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-        pub fn additional_master_security_groups(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_master_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.additional_master_security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.additional_master_security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.additional_master_security_groups = Some(v);
+                            self
         }
         /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-        pub fn set_additional_master_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.additional_master_security_groups = input;
-            self
+        pub fn set_additional_master_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.additional_master_security_groups = input; self
         }
         /// Appends an item to `additional_slave_security_groups`.
         ///
         /// To override the contents of this collection use [`set_additional_slave_security_groups`](Self::set_additional_slave_security_groups).
         ///
         /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-        pub fn additional_slave_security_groups(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_slave_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.additional_slave_security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.additional_slave_security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.additional_slave_security_groups = Some(v);
+                            self
         }
         /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-        pub fn set_additional_slave_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.additional_slave_security_groups = input;
-            self
+        pub fn set_additional_slave_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.additional_slave_security_groups = input; self
         }
         /// Consumes the builder and constructs a [`Ec2InstanceAttributes`](crate::model::Ec2InstanceAttributes).
         pub fn build(self) -> crate::model::Ec2InstanceAttributes {
             crate::model::Ec2InstanceAttributes {
-                ec2_key_name: self.ec2_key_name,
-                ec2_subnet_id: self.ec2_subnet_id,
-                requested_ec2_subnet_ids: self.requested_ec2_subnet_ids,
-                ec2_availability_zone: self.ec2_availability_zone,
-                requested_ec2_availability_zones: self.requested_ec2_availability_zones,
-                iam_instance_profile: self.iam_instance_profile,
-                emr_managed_master_security_group: self.emr_managed_master_security_group,
-                emr_managed_slave_security_group: self.emr_managed_slave_security_group,
-                service_access_security_group: self.service_access_security_group,
-                additional_master_security_groups: self.additional_master_security_groups,
-                additional_slave_security_groups: self.additional_slave_security_groups,
+                ec2_key_name: self.ec2_key_name
+                ,
+                ec2_subnet_id: self.ec2_subnet_id
+                ,
+                requested_ec2_subnet_ids: self.requested_ec2_subnet_ids
+                ,
+                ec2_availability_zone: self.ec2_availability_zone
+                ,
+                requested_ec2_availability_zones: self.requested_ec2_availability_zones
+                ,
+                iam_instance_profile: self.iam_instance_profile
+                ,
+                emr_managed_master_security_group: self.emr_managed_master_security_group
+                ,
+                emr_managed_slave_security_group: self.emr_managed_slave_security_group
+                ,
+                service_access_security_group: self.service_access_security_group
+                ,
+                additional_master_security_groups: self.additional_master_security_groups
+                ,
+                additional_slave_security_groups: self.additional_slave_security_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2InstanceAttributes {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceAttributes`](crate::model::Ec2InstanceAttributes).
@@ -17047,7 +15664,7 @@ impl Ec2InstanceAttributes {
 /// <p>Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelStepsInfo {
+pub struct CancelStepsInfo  {
     /// <p>The encrypted StepId of a step.</p>
     #[doc(hidden)]
     pub step_id: std::option::Option<std::string::String>,
@@ -17060,21 +15677,21 @@ pub struct CancelStepsInfo {
 }
 impl CancelStepsInfo {
     /// <p>The encrypted StepId of a step.</p>
-    pub fn step_id(&self) -> std::option::Option<&str> {
+    pub fn step_id(&self) -> std::option::Option<& str> {
         self.step_id.as_deref()
     }
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CancelStepsRequestStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CancelStepsRequestStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`CancelStepsInfo`](crate::model::CancelStepsInfo).
 pub mod cancel_steps_info {
-
+    
     /// A builder for [`CancelStepsInfo`](crate::model::CancelStepsInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17090,8 +15707,7 @@ pub mod cancel_steps_info {
         }
         /// <p>The encrypted StepId of a step.</p>
         pub fn set_step_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.step_id = input;
-            self
+            self.step_id = input; self
         }
         /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
         pub fn status(mut self, input: crate::model::CancelStepsRequestStatus) -> Self {
@@ -17099,12 +15715,8 @@ pub mod cancel_steps_info {
             self
         }
         /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CancelStepsRequestStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CancelStepsRequestStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The reason for the failure if the CancelSteps request fails.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -17113,18 +15725,22 @@ pub mod cancel_steps_info {
         }
         /// <p>The reason for the failure if the CancelSteps request fails.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`CancelStepsInfo`](crate::model::CancelStepsInfo).
         pub fn build(self) -> crate::model::CancelStepsInfo {
             crate::model::CancelStepsInfo {
-                step_id: self.step_id,
-                status: self.status,
-                reason: self.reason,
+                step_id: self.step_id
+                ,
+                status: self.status
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelStepsInfo {
     /// Creates a new builder-style object to manufacture [`CancelStepsInfo`](crate::model::CancelStepsInfo).
@@ -17139,9 +15755,9 @@ impl CancelStepsInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cancelstepsrequeststatus = unimplemented!();
 /// match cancelstepsrequeststatus {
@@ -17163,60 +15779,52 @@ impl CancelStepsInfo {
 /// Specifically, when `cancelstepsrequeststatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CancelStepsRequestStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CancelStepsRequestStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CancelStepsRequestStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => CancelStepsRequestStatus::Failed,
             "SUBMITTED" => CancelStepsRequestStatus::Submitted,
-            other => CancelStepsRequestStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CancelStepsRequestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CancelStepsRequestStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CancelStepsRequestStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CancelStepsRequestStatus::from(s))
+                }
+            }
 impl CancelStepsRequestStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CancelStepsRequestStatus::Failed => "FAILED",
             CancelStepsRequestStatus::Submitted => "SUBMITTED",
-            CancelStepsRequestStatus::Unknown(value) => value.as_str(),
+            CancelStepsRequestStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "SUBMITTED"]
+        &[
+            "FAILED", "SUBMITTED"
+        ]
     }
 }
 impl AsRef<str> for CancelStepsRequestStatus {
@@ -17231,9 +15839,9 @@ impl AsRef<str> for CancelStepsRequestStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stepcancellationoption = unimplemented!();
 /// match stepcancellationoption {
@@ -17255,60 +15863,52 @@ impl AsRef<str> for CancelStepsRequestStatus {
 /// Specifically, when `stepcancellationoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StepCancellationOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StepCancellationOption {
     #[allow(missing_docs)] // documentation missing in model
     SendInterrupt,
     #[allow(missing_docs)] // documentation missing in model
     TerminateProcess,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StepCancellationOption {
     fn from(s: &str) -> Self {
         match s {
             "SEND_INTERRUPT" => StepCancellationOption::SendInterrupt,
             "TERMINATE_PROCESS" => StepCancellationOption::TerminateProcess,
-            other => {
-                StepCancellationOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StepCancellationOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StepCancellationOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StepCancellationOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StepCancellationOption::from(s))
+                }
+            }
 impl StepCancellationOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StepCancellationOption::SendInterrupt => "SEND_INTERRUPT",
             StepCancellationOption::TerminateProcess => "TERMINATE_PROCESS",
-            StepCancellationOption::Unknown(value) => value.as_str(),
+            StepCancellationOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SEND_INTERRUPT", "TERMINATE_PROCESS"]
+        &[
+            "SEND_INTERRUPT", "TERMINATE_PROCESS"
+        ]
     }
 }
 impl AsRef<str> for StepCancellationOption {
@@ -17316,3 +15916,4 @@ impl AsRef<str> for StepCancellationOption {
         self.as_str()
     }
 }
+

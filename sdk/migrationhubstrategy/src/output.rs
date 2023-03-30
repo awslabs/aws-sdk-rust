@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServerConfigOutput {}
+pub struct UpdateServerConfigOutput  {
+}
 /// See [`UpdateServerConfigOutput`](crate::output::UpdateServerConfigOutput).
 pub mod update_server_config_output {
-
+    
     /// A builder for [`UpdateServerConfigOutput`](crate::output::UpdateServerConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateServerConfigOutput`](crate::output::UpdateServerConfigOutput).
         pub fn build(self) -> crate::output::UpdateServerConfigOutput {
-            crate::output::UpdateServerConfigOutput {}
+            crate::output::UpdateServerConfigOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateServerConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServerConfigOutput`](crate::output::UpdateServerConfigOutput).
@@ -26,19 +31,24 @@ impl UpdateServerConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationComponentConfigOutput {}
+pub struct UpdateApplicationComponentConfigOutput  {
+}
 /// See [`UpdateApplicationComponentConfigOutput`](crate::output::UpdateApplicationComponentConfigOutput).
 pub mod update_application_component_config_output {
-
+    
     /// A builder for [`UpdateApplicationComponentConfigOutput`](crate::output::UpdateApplicationComponentConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateApplicationComponentConfigOutput`](crate::output::UpdateApplicationComponentConfigOutput).
         pub fn build(self) -> crate::output::UpdateApplicationComponentConfigOutput {
-            crate::output::UpdateApplicationComponentConfigOutput {}
+            crate::output::UpdateApplicationComponentConfigOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateApplicationComponentConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationComponentConfigOutput`](crate::output::UpdateApplicationComponentConfigOutput).
@@ -50,19 +60,24 @@ impl UpdateApplicationComponentConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopAssessmentOutput {}
+pub struct StopAssessmentOutput  {
+}
 /// See [`StopAssessmentOutput`](crate::output::StopAssessmentOutput).
 pub mod stop_assessment_output {
-
+    
     /// A builder for [`StopAssessmentOutput`](crate::output::StopAssessmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopAssessmentOutput`](crate::output::StopAssessmentOutput).
         pub fn build(self) -> crate::output::StopAssessmentOutput {
-            crate::output::StopAssessmentOutput {}
+            crate::output::StopAssessmentOutput {
+            }
         }
     }
+    
+    
 }
 impl StopAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`StopAssessmentOutput`](crate::output::StopAssessmentOutput).
@@ -74,20 +89,20 @@ impl StopAssessmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRecommendationReportGenerationOutput {
+pub struct StartRecommendationReportGenerationOutput  {
     /// <p> The ID of the recommendation report generation task. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StartRecommendationReportGenerationOutput {
     /// <p> The ID of the recommendation report generation task. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`StartRecommendationReportGenerationOutput`](crate::output::StartRecommendationReportGenerationOutput).
 pub mod start_recommendation_report_generation_output {
-
+    
     /// A builder for [`StartRecommendationReportGenerationOutput`](crate::output::StartRecommendationReportGenerationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -101,14 +116,18 @@ pub mod start_recommendation_report_generation_output {
         }
         /// <p> The ID of the recommendation report generation task. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`StartRecommendationReportGenerationOutput`](crate::output::StartRecommendationReportGenerationOutput).
         pub fn build(self) -> crate::output::StartRecommendationReportGenerationOutput {
-            crate::output::StartRecommendationReportGenerationOutput { id: self.id }
+            crate::output::StartRecommendationReportGenerationOutput {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl StartRecommendationReportGenerationOutput {
     /// Creates a new builder-style object to manufacture [`StartRecommendationReportGenerationOutput`](crate::output::StartRecommendationReportGenerationOutput).
@@ -120,20 +139,20 @@ impl StartRecommendationReportGenerationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportFileTaskOutput {
+pub struct StartImportFileTaskOutput  {
     /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StartImportFileTaskOutput {
     /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`StartImportFileTaskOutput`](crate::output::StartImportFileTaskOutput).
 pub mod start_import_file_task_output {
-
+    
     /// A builder for [`StartImportFileTaskOutput`](crate::output::StartImportFileTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -147,14 +166,18 @@ pub mod start_import_file_task_output {
         }
         /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`StartImportFileTaskOutput`](crate::output::StartImportFileTaskOutput).
         pub fn build(self) -> crate::output::StartImportFileTaskOutput {
-            crate::output::StartImportFileTaskOutput { id: self.id }
+            crate::output::StartImportFileTaskOutput {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl StartImportFileTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartImportFileTaskOutput`](crate::output::StartImportFileTaskOutput).
@@ -166,20 +189,20 @@ impl StartImportFileTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAssessmentOutput {
+pub struct StartAssessmentOutput  {
     /// <p> The ID of the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl StartAssessmentOutput {
     /// <p> The ID of the assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<&str> {
+    pub fn assessment_id(&self) -> std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
 }
 /// See [`StartAssessmentOutput`](crate::output::StartAssessmentOutput).
 pub mod start_assessment_output {
-
+    
     /// A builder for [`StartAssessmentOutput`](crate::output::StartAssessmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -192,20 +215,19 @@ pub mod start_assessment_output {
             self
         }
         /// <p> The ID of the assessment. </p>
-        pub fn set_assessment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_id = input;
-            self
+        pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_id = input; self
         }
         /// Consumes the builder and constructs a [`StartAssessmentOutput`](crate::output::StartAssessmentOutput).
         pub fn build(self) -> crate::output::StartAssessmentOutput {
             crate::output::StartAssessmentOutput {
-                assessment_id: self.assessment_id,
+                assessment_id: self.assessment_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`StartAssessmentOutput`](crate::output::StartAssessmentOutput).
@@ -217,19 +239,24 @@ impl StartAssessmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPortfolioPreferencesOutput {}
+pub struct PutPortfolioPreferencesOutput  {
+}
 /// See [`PutPortfolioPreferencesOutput`](crate::output::PutPortfolioPreferencesOutput).
 pub mod put_portfolio_preferences_output {
-
+    
     /// A builder for [`PutPortfolioPreferencesOutput`](crate::output::PutPortfolioPreferencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutPortfolioPreferencesOutput`](crate::output::PutPortfolioPreferencesOutput).
         pub fn build(self) -> crate::output::PutPortfolioPreferencesOutput {
-            crate::output::PutPortfolioPreferencesOutput {}
+            crate::output::PutPortfolioPreferencesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutPortfolioPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`PutPortfolioPreferencesOutput`](crate::output::PutPortfolioPreferencesOutput).
@@ -241,7 +268,7 @@ impl PutPortfolioPreferencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServersOutput {
+pub struct ListServersOutput  {
     /// <p> The list of servers with detailed information about each server. </p>
     #[doc(hidden)]
     pub server_infos: std::option::Option<std::vec::Vec<crate::model::ServerDetail>>,
@@ -251,17 +278,17 @@ pub struct ListServersOutput {
 }
 impl ListServersOutput {
     /// <p> The list of servers with detailed information about each server. </p>
-    pub fn server_infos(&self) -> std::option::Option<&[crate::model::ServerDetail]> {
+    pub fn server_infos(&self) -> std::option::Option<& [crate::model::ServerDetail]> {
         self.server_infos.as_deref()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListServersOutput`](crate::output::ListServersOutput).
 pub mod list_servers_output {
-
+    
     /// A builder for [`ListServersOutput`](crate::output::ListServersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -276,17 +303,13 @@ pub mod list_servers_output {
         /// <p> The list of servers with detailed information about each server. </p>
         pub fn server_infos(mut self, input: crate::model::ServerDetail) -> Self {
             let mut v = self.server_infos.unwrap_or_default();
-            v.push(input);
-            self.server_infos = Some(v);
-            self
+                            v.push(input);
+                            self.server_infos = Some(v);
+                            self
         }
         /// <p> The list of servers with detailed information about each server. </p>
-        pub fn set_server_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServerDetail>>,
-        ) -> Self {
-            self.server_infos = input;
-            self
+        pub fn set_server_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServerDetail>>) -> Self {
+            self.server_infos = input; self
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -295,17 +318,20 @@ pub mod list_servers_output {
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListServersOutput`](crate::output::ListServersOutput).
         pub fn build(self) -> crate::output::ListServersOutput {
             crate::output::ListServersOutput {
-                server_infos: self.server_infos,
-                next_token: self.next_token,
+                server_infos: self.server_infos
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServersOutput {
     /// Creates a new builder-style object to manufacture [`ListServersOutput`](crate::output::ListServersOutput).
@@ -317,7 +343,7 @@ impl ListServersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportFileTaskOutput {
+pub struct ListImportFileTaskOutput  {
     /// <p> Lists information about the files you import.</p>
     #[doc(hidden)]
     pub task_infos: std::option::Option<std::vec::Vec<crate::model::ImportFileTaskInformation>>,
@@ -327,22 +353,21 @@ pub struct ListImportFileTaskOutput {
 }
 impl ListImportFileTaskOutput {
     /// <p> Lists information about the files you import.</p>
-    pub fn task_infos(&self) -> std::option::Option<&[crate::model::ImportFileTaskInformation]> {
+    pub fn task_infos(&self) -> std::option::Option<& [crate::model::ImportFileTaskInformation]> {
         self.task_infos.as_deref()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListImportFileTaskOutput`](crate::output::ListImportFileTaskOutput).
 pub mod list_import_file_task_output {
-
+    
     /// A builder for [`ListImportFileTaskOutput`](crate::output::ListImportFileTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) task_infos:
-            std::option::Option<std::vec::Vec<crate::model::ImportFileTaskInformation>>,
+        pub(crate) task_infos: std::option::Option<std::vec::Vec<crate::model::ImportFileTaskInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -353,17 +378,13 @@ pub mod list_import_file_task_output {
         /// <p> Lists information about the files you import.</p>
         pub fn task_infos(mut self, input: crate::model::ImportFileTaskInformation) -> Self {
             let mut v = self.task_infos.unwrap_or_default();
-            v.push(input);
-            self.task_infos = Some(v);
-            self
+                            v.push(input);
+                            self.task_infos = Some(v);
+                            self
         }
         /// <p> Lists information about the files you import.</p>
-        pub fn set_task_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ImportFileTaskInformation>>,
-        ) -> Self {
-            self.task_infos = input;
-            self
+        pub fn set_task_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::ImportFileTaskInformation>>) -> Self {
+            self.task_infos = input; self
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -372,17 +393,20 @@ pub mod list_import_file_task_output {
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListImportFileTaskOutput`](crate::output::ListImportFileTaskOutput).
         pub fn build(self) -> crate::output::ListImportFileTaskOutput {
             crate::output::ListImportFileTaskOutput {
-                task_infos: self.task_infos,
-                next_token: self.next_token,
+                task_infos: self.task_infos
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListImportFileTaskOutput {
     /// Creates a new builder-style object to manufacture [`ListImportFileTaskOutput`](crate::output::ListImportFileTaskOutput).
@@ -394,7 +418,7 @@ impl ListImportFileTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCollectorsOutput {
+pub struct ListCollectorsOutput  {
     /// <p> The list of all the installed collectors. </p>
     #[doc(hidden)]
     pub collectors: std::option::Option<std::vec::Vec<crate::model::Collector>>,
@@ -404,17 +428,17 @@ pub struct ListCollectorsOutput {
 }
 impl ListCollectorsOutput {
     /// <p> The list of all the installed collectors. </p>
-    pub fn collectors(&self) -> std::option::Option<&[crate::model::Collector]> {
+    pub fn collectors(&self) -> std::option::Option<& [crate::model::Collector]> {
         self.collectors.as_deref()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCollectorsOutput`](crate::output::ListCollectorsOutput).
 pub mod list_collectors_output {
-
+    
     /// A builder for [`ListCollectorsOutput`](crate::output::ListCollectorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -429,17 +453,13 @@ pub mod list_collectors_output {
         /// <p> The list of all the installed collectors. </p>
         pub fn collectors(mut self, input: crate::model::Collector) -> Self {
             let mut v = self.collectors.unwrap_or_default();
-            v.push(input);
-            self.collectors = Some(v);
-            self
+                            v.push(input);
+                            self.collectors = Some(v);
+                            self
         }
         /// <p> The list of all the installed collectors. </p>
-        pub fn set_collectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Collector>>,
-        ) -> Self {
-            self.collectors = input;
-            self
+        pub fn set_collectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Collector>>) -> Self {
+            self.collectors = input; self
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -448,17 +468,20 @@ pub mod list_collectors_output {
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCollectorsOutput`](crate::output::ListCollectorsOutput).
         pub fn build(self) -> crate::output::ListCollectorsOutput {
             crate::output::ListCollectorsOutput {
-                collectors: self.collectors,
-                next_token: self.next_token,
+                collectors: self.collectors
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCollectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListCollectorsOutput`](crate::output::ListCollectorsOutput).
@@ -470,35 +493,31 @@ impl ListCollectorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationComponentsOutput {
+pub struct ListApplicationComponentsOutput  {
     /// <p> The list of application components with detailed information about each component. </p>
     #[doc(hidden)]
-    pub application_component_infos:
-        std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
+    pub application_component_infos: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationComponentsOutput {
     /// <p> The list of application components with detailed information about each component. </p>
-    pub fn application_component_infos(
-        &self,
-    ) -> std::option::Option<&[crate::model::ApplicationComponentDetail]> {
+    pub fn application_component_infos(&self) -> std::option::Option<& [crate::model::ApplicationComponentDetail]> {
         self.application_component_infos.as_deref()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationComponentsOutput`](crate::output::ListApplicationComponentsOutput).
 pub mod list_application_components_output {
-
+    
     /// A builder for [`ListApplicationComponentsOutput`](crate::output::ListApplicationComponentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_component_infos:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
+        pub(crate) application_component_infos: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -507,22 +526,15 @@ pub mod list_application_components_output {
         /// To override the contents of this collection use [`set_application_component_infos`](Self::set_application_component_infos).
         ///
         /// <p> The list of application components with detailed information about each component. </p>
-        pub fn application_component_infos(
-            mut self,
-            input: crate::model::ApplicationComponentDetail,
-        ) -> Self {
+        pub fn application_component_infos(mut self, input: crate::model::ApplicationComponentDetail) -> Self {
             let mut v = self.application_component_infos.unwrap_or_default();
-            v.push(input);
-            self.application_component_infos = Some(v);
-            self
+                            v.push(input);
+                            self.application_component_infos = Some(v);
+                            self
         }
         /// <p> The list of application components with detailed information about each component. </p>
-        pub fn set_application_component_infos(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
-        ) -> Self {
-            self.application_component_infos = input;
-            self
+        pub fn set_application_component_infos(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>) -> Self {
+            self.application_component_infos = input; self
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -531,17 +543,20 @@ pub mod list_application_components_output {
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationComponentsOutput`](crate::output::ListApplicationComponentsOutput).
         pub fn build(self) -> crate::output::ListApplicationComponentsOutput {
             crate::output::ListApplicationComponentsOutput {
-                application_component_infos: self.application_component_infos,
-                next_token: self.next_token,
+                application_component_infos: self.application_component_infos
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationComponentsOutput`](crate::output::ListApplicationComponentsOutput).
@@ -553,25 +568,24 @@ impl ListApplicationComponentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServerStrategiesOutput {
+pub struct GetServerStrategiesOutput  {
     /// <p> A list of strategy recommendations for the server. </p>
     #[doc(hidden)]
     pub server_strategies: std::option::Option<std::vec::Vec<crate::model::ServerStrategy>>,
 }
 impl GetServerStrategiesOutput {
     /// <p> A list of strategy recommendations for the server. </p>
-    pub fn server_strategies(&self) -> std::option::Option<&[crate::model::ServerStrategy]> {
+    pub fn server_strategies(&self) -> std::option::Option<& [crate::model::ServerStrategy]> {
         self.server_strategies.as_deref()
     }
 }
 /// See [`GetServerStrategiesOutput`](crate::output::GetServerStrategiesOutput).
 pub mod get_server_strategies_output {
-
+    
     /// A builder for [`GetServerStrategiesOutput`](crate::output::GetServerStrategiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) server_strategies:
-            std::option::Option<std::vec::Vec<crate::model::ServerStrategy>>,
+        pub(crate) server_strategies: std::option::Option<std::vec::Vec<crate::model::ServerStrategy>>,
     }
     impl Builder {
         /// Appends an item to `server_strategies`.
@@ -581,25 +595,24 @@ pub mod get_server_strategies_output {
         /// <p> A list of strategy recommendations for the server. </p>
         pub fn server_strategies(mut self, input: crate::model::ServerStrategy) -> Self {
             let mut v = self.server_strategies.unwrap_or_default();
-            v.push(input);
-            self.server_strategies = Some(v);
-            self
+                            v.push(input);
+                            self.server_strategies = Some(v);
+                            self
         }
         /// <p> A list of strategy recommendations for the server. </p>
-        pub fn set_server_strategies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServerStrategy>>,
-        ) -> Self {
-            self.server_strategies = input;
-            self
+        pub fn set_server_strategies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServerStrategy>>) -> Self {
+            self.server_strategies = input; self
         }
         /// Consumes the builder and constructs a [`GetServerStrategiesOutput`](crate::output::GetServerStrategiesOutput).
         pub fn build(self) -> crate::output::GetServerStrategiesOutput {
             crate::output::GetServerStrategiesOutput {
-                server_strategies: self.server_strategies,
+                server_strategies: self.server_strategies
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServerStrategiesOutput {
     /// Creates a new builder-style object to manufacture [`GetServerStrategiesOutput`](crate::output::GetServerStrategiesOutput).
@@ -611,7 +624,7 @@ impl GetServerStrategiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServerDetailsOutput {
+pub struct GetServerDetailsOutput  {
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -620,35 +633,31 @@ pub struct GetServerDetailsOutput {
     pub server_detail: std::option::Option<crate::model::ServerDetail>,
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
     #[doc(hidden)]
-    pub associated_applications:
-        std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
+    pub associated_applications: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
 }
 impl GetServerDetailsOutput {
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Detailed information about the server. </p>
-    pub fn server_detail(&self) -> std::option::Option<&crate::model::ServerDetail> {
+    pub fn server_detail(&self) -> std::option::Option<& crate::model::ServerDetail> {
         self.server_detail.as_ref()
     }
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-    pub fn associated_applications(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssociatedApplication]> {
+    pub fn associated_applications(&self) -> std::option::Option<& [crate::model::AssociatedApplication]> {
         self.associated_applications.as_deref()
     }
 }
 /// See [`GetServerDetailsOutput`](crate::output::GetServerDetailsOutput).
 pub mod get_server_details_output {
-
+    
     /// A builder for [`GetServerDetailsOutput`](crate::output::GetServerDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) server_detail: std::option::Option<crate::model::ServerDetail>,
-        pub(crate) associated_applications:
-            std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
+        pub(crate) associated_applications: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
     }
     impl Builder {
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
@@ -658,8 +667,7 @@ pub mod get_server_details_output {
         }
         /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> Detailed information about the server. </p>
         pub fn server_detail(mut self, input: crate::model::ServerDetail) -> Self {
@@ -667,44 +675,38 @@ pub mod get_server_details_output {
             self
         }
         /// <p> Detailed information about the server. </p>
-        pub fn set_server_detail(
-            mut self,
-            input: std::option::Option<crate::model::ServerDetail>,
-        ) -> Self {
-            self.server_detail = input;
-            self
+        pub fn set_server_detail(mut self, input: std::option::Option<crate::model::ServerDetail>) -> Self {
+            self.server_detail = input; self
         }
         /// Appends an item to `associated_applications`.
         ///
         /// To override the contents of this collection use [`set_associated_applications`](Self::set_associated_applications).
         ///
         /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-        pub fn associated_applications(
-            mut self,
-            input: crate::model::AssociatedApplication,
-        ) -> Self {
+        pub fn associated_applications(mut self, input: crate::model::AssociatedApplication) -> Self {
             let mut v = self.associated_applications.unwrap_or_default();
-            v.push(input);
-            self.associated_applications = Some(v);
-            self
+                            v.push(input);
+                            self.associated_applications = Some(v);
+                            self
         }
         /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-        pub fn set_associated_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
-        ) -> Self {
-            self.associated_applications = input;
-            self
+        pub fn set_associated_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>) -> Self {
+            self.associated_applications = input; self
         }
         /// Consumes the builder and constructs a [`GetServerDetailsOutput`](crate::output::GetServerDetailsOutput).
         pub fn build(self) -> crate::output::GetServerDetailsOutput {
             crate::output::GetServerDetailsOutput {
-                next_token: self.next_token,
-                server_detail: self.server_detail,
-                associated_applications: self.associated_applications,
+                next_token: self.next_token
+                ,
+                server_detail: self.server_detail
+                ,
+                associated_applications: self.associated_applications
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServerDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetServerDetailsOutput`](crate::output::GetServerDetailsOutput).
@@ -716,36 +718,32 @@ impl GetServerDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommendationReportDetailsOutput {
+pub struct GetRecommendationReportDetailsOutput  {
     /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p> Detailed information about the recommendation report. </p>
     #[doc(hidden)]
-    pub recommendation_report_details:
-        std::option::Option<crate::model::RecommendationReportDetails>,
+    pub recommendation_report_details: std::option::Option<crate::model::RecommendationReportDetails>,
 }
 impl GetRecommendationReportDetailsOutput {
     /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> Detailed information about the recommendation report. </p>
-    pub fn recommendation_report_details(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommendationReportDetails> {
+    pub fn recommendation_report_details(&self) -> std::option::Option<& crate::model::RecommendationReportDetails> {
         self.recommendation_report_details.as_ref()
     }
 }
 /// See [`GetRecommendationReportDetailsOutput`](crate::output::GetRecommendationReportDetailsOutput).
 pub mod get_recommendation_report_details_output {
-
+    
     /// A builder for [`GetRecommendationReportDetailsOutput`](crate::output::GetRecommendationReportDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) recommendation_report_details:
-            std::option::Option<crate::model::RecommendationReportDetails>,
+        pub(crate) recommendation_report_details: std::option::Option<crate::model::RecommendationReportDetails>,
     }
     impl Builder {
         /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
@@ -755,33 +753,29 @@ pub mod get_recommendation_report_details_output {
         }
         /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p> Detailed information about the recommendation report. </p>
-        pub fn recommendation_report_details(
-            mut self,
-            input: crate::model::RecommendationReportDetails,
-        ) -> Self {
+        pub fn recommendation_report_details(mut self, input: crate::model::RecommendationReportDetails) -> Self {
             self.recommendation_report_details = Some(input);
             self
         }
         /// <p> Detailed information about the recommendation report. </p>
-        pub fn set_recommendation_report_details(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationReportDetails>,
-        ) -> Self {
-            self.recommendation_report_details = input;
-            self
+        pub fn set_recommendation_report_details(mut self, input: std::option::Option<crate::model::RecommendationReportDetails>) -> Self {
+            self.recommendation_report_details = input; self
         }
         /// Consumes the builder and constructs a [`GetRecommendationReportDetailsOutput`](crate::output::GetRecommendationReportDetailsOutput).
         pub fn build(self) -> crate::output::GetRecommendationReportDetailsOutput {
             crate::output::GetRecommendationReportDetailsOutput {
-                id: self.id,
-                recommendation_report_details: self.recommendation_report_details,
+                id: self.id
+                ,
+                recommendation_report_details: self.recommendation_report_details
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRecommendationReportDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationReportDetailsOutput`](crate::output::GetRecommendationReportDetailsOutput).
@@ -793,20 +787,20 @@ impl GetRecommendationReportDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPortfolioSummaryOutput {
+pub struct GetPortfolioSummaryOutput  {
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
     #[doc(hidden)]
     pub assessment_summary: std::option::Option<crate::model::AssessmentSummary>,
 }
 impl GetPortfolioSummaryOutput {
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
-    pub fn assessment_summary(&self) -> std::option::Option<&crate::model::AssessmentSummary> {
+    pub fn assessment_summary(&self) -> std::option::Option<& crate::model::AssessmentSummary> {
         self.assessment_summary.as_ref()
     }
 }
 /// See [`GetPortfolioSummaryOutput`](crate::output::GetPortfolioSummaryOutput).
 pub mod get_portfolio_summary_output {
-
+    
     /// A builder for [`GetPortfolioSummaryOutput`](crate::output::GetPortfolioSummaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -819,20 +813,19 @@ pub mod get_portfolio_summary_output {
             self
         }
         /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
-        pub fn set_assessment_summary(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentSummary>,
-        ) -> Self {
-            self.assessment_summary = input;
-            self
+        pub fn set_assessment_summary(mut self, input: std::option::Option<crate::model::AssessmentSummary>) -> Self {
+            self.assessment_summary = input; self
         }
         /// Consumes the builder and constructs a [`GetPortfolioSummaryOutput`](crate::output::GetPortfolioSummaryOutput).
         pub fn build(self) -> crate::output::GetPortfolioSummaryOutput {
             crate::output::GetPortfolioSummaryOutput {
-                assessment_summary: self.assessment_summary,
+                assessment_summary: self.assessment_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPortfolioSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetPortfolioSummaryOutput`](crate::output::GetPortfolioSummaryOutput).
@@ -844,7 +837,7 @@ impl GetPortfolioSummaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPortfolioPreferencesOutput {
+pub struct GetPortfolioPreferencesOutput  {
     /// <p> The rank of business goals based on priority. </p>
     #[doc(hidden)]
     pub prioritize_business_goals: std::option::Option<crate::model::PrioritizeBusinessGoals>,
@@ -860,71 +853,51 @@ pub struct GetPortfolioPreferencesOutput {
 }
 impl GetPortfolioPreferencesOutput {
     /// <p> The rank of business goals based on priority. </p>
-    pub fn prioritize_business_goals(
-        &self,
-    ) -> std::option::Option<&crate::model::PrioritizeBusinessGoals> {
+    pub fn prioritize_business_goals(&self) -> std::option::Option<& crate::model::PrioritizeBusinessGoals> {
         self.prioritize_business_goals.as_ref()
     }
     /// <p> The transformation preferences for non-database applications. </p>
-    pub fn application_preferences(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationPreferences> {
+    pub fn application_preferences(&self) -> std::option::Option<& crate::model::ApplicationPreferences> {
         self.application_preferences.as_ref()
     }
     /// <p> The transformation preferences for database applications. </p>
-    pub fn database_preferences(&self) -> std::option::Option<&crate::model::DatabasePreferences> {
+    pub fn database_preferences(&self) -> std::option::Option<& crate::model::DatabasePreferences> {
         self.database_preferences.as_ref()
     }
     /// <p>The classification for application component types.</p>
-    pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
+    pub fn application_mode(&self) -> std::option::Option<& crate::model::ApplicationMode> {
         self.application_mode.as_ref()
     }
 }
 /// See [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput).
 pub mod get_portfolio_preferences_output {
-
+    
     /// A builder for [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) prioritize_business_goals:
-            std::option::Option<crate::model::PrioritizeBusinessGoals>,
-        pub(crate) application_preferences:
-            std::option::Option<crate::model::ApplicationPreferences>,
+        pub(crate) prioritize_business_goals: std::option::Option<crate::model::PrioritizeBusinessGoals>,
+        pub(crate) application_preferences: std::option::Option<crate::model::ApplicationPreferences>,
         pub(crate) database_preferences: std::option::Option<crate::model::DatabasePreferences>,
         pub(crate) application_mode: std::option::Option<crate::model::ApplicationMode>,
     }
     impl Builder {
         /// <p> The rank of business goals based on priority. </p>
-        pub fn prioritize_business_goals(
-            mut self,
-            input: crate::model::PrioritizeBusinessGoals,
-        ) -> Self {
+        pub fn prioritize_business_goals(mut self, input: crate::model::PrioritizeBusinessGoals) -> Self {
             self.prioritize_business_goals = Some(input);
             self
         }
         /// <p> The rank of business goals based on priority. </p>
-        pub fn set_prioritize_business_goals(
-            mut self,
-            input: std::option::Option<crate::model::PrioritizeBusinessGoals>,
-        ) -> Self {
-            self.prioritize_business_goals = input;
-            self
+        pub fn set_prioritize_business_goals(mut self, input: std::option::Option<crate::model::PrioritizeBusinessGoals>) -> Self {
+            self.prioritize_business_goals = input; self
         }
         /// <p> The transformation preferences for non-database applications. </p>
-        pub fn application_preferences(
-            mut self,
-            input: crate::model::ApplicationPreferences,
-        ) -> Self {
+        pub fn application_preferences(mut self, input: crate::model::ApplicationPreferences) -> Self {
             self.application_preferences = Some(input);
             self
         }
         /// <p> The transformation preferences for non-database applications. </p>
-        pub fn set_application_preferences(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationPreferences>,
-        ) -> Self {
-            self.application_preferences = input;
-            self
+        pub fn set_application_preferences(mut self, input: std::option::Option<crate::model::ApplicationPreferences>) -> Self {
+            self.application_preferences = input; self
         }
         /// <p> The transformation preferences for database applications. </p>
         pub fn database_preferences(mut self, input: crate::model::DatabasePreferences) -> Self {
@@ -932,12 +905,8 @@ pub mod get_portfolio_preferences_output {
             self
         }
         /// <p> The transformation preferences for database applications. </p>
-        pub fn set_database_preferences(
-            mut self,
-            input: std::option::Option<crate::model::DatabasePreferences>,
-        ) -> Self {
-            self.database_preferences = input;
-            self
+        pub fn set_database_preferences(mut self, input: std::option::Option<crate::model::DatabasePreferences>) -> Self {
+            self.database_preferences = input; self
         }
         /// <p>The classification for application component types.</p>
         pub fn application_mode(mut self, input: crate::model::ApplicationMode) -> Self {
@@ -945,23 +914,25 @@ pub mod get_portfolio_preferences_output {
             self
         }
         /// <p>The classification for application component types.</p>
-        pub fn set_application_mode(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationMode>,
-        ) -> Self {
-            self.application_mode = input;
-            self
+        pub fn set_application_mode(mut self, input: std::option::Option<crate::model::ApplicationMode>) -> Self {
+            self.application_mode = input; self
         }
         /// Consumes the builder and constructs a [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput).
         pub fn build(self) -> crate::output::GetPortfolioPreferencesOutput {
             crate::output::GetPortfolioPreferencesOutput {
-                prioritize_business_goals: self.prioritize_business_goals,
-                application_preferences: self.application_preferences,
-                database_preferences: self.database_preferences,
-                application_mode: self.application_mode,
+                prioritize_business_goals: self.prioritize_business_goals
+                ,
+                application_preferences: self.application_preferences
+                ,
+                database_preferences: self.database_preferences
+                ,
+                application_mode: self.application_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPortfolioPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetPortfolioPreferencesOutput`](crate::output::GetPortfolioPreferencesOutput).
@@ -973,20 +944,20 @@ impl GetPortfolioPreferencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLatestAssessmentIdOutput {
+pub struct GetLatestAssessmentIdOutput  {
     /// <p>The latest ID for the specific assessment task.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetLatestAssessmentIdOutput {
     /// <p>The latest ID for the specific assessment task.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
 pub mod get_latest_assessment_id_output {
-
+    
     /// A builder for [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1000,14 +971,18 @@ pub mod get_latest_assessment_id_output {
         }
         /// <p>The latest ID for the specific assessment task.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
         pub fn build(self) -> crate::output::GetLatestAssessmentIdOutput {
-            crate::output::GetLatestAssessmentIdOutput { id: self.id }
+            crate::output::GetLatestAssessmentIdOutput {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetLatestAssessmentIdOutput {
     /// Creates a new builder-style object to manufacture [`GetLatestAssessmentIdOutput`](crate::output::GetLatestAssessmentIdOutput).
@@ -1019,7 +994,7 @@ impl GetLatestAssessmentIdOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImportFileTaskOutput {
+pub struct GetImportFileTaskOutput  {
     /// <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1056,35 +1031,35 @@ pub struct GetImportFileTaskOutput {
 }
 impl GetImportFileTaskOutput {
     /// <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> Status of import file task. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ImportFileTaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ImportFileTaskStatus> {
         self.status.as_ref()
     }
     /// <p> Start time of the import task. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The S3 bucket where import file is located. </p>
-    pub fn input_s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn input_s3_bucket(&self) -> std::option::Option<& str> {
         self.input_s3_bucket.as_deref()
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn input_s3_key(&self) -> std::option::Option<&str> {
+    pub fn input_s3_key(&self) -> std::option::Option<& str> {
         self.input_s3_key.as_deref()
     }
     /// <p> The S3 bucket name for status report of import task. </p>
-    pub fn status_report_s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn status_report_s3_bucket(&self) -> std::option::Option<& str> {
         self.status_report_s3_bucket.as_deref()
     }
     /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
-    pub fn status_report_s3_key(&self) -> std::option::Option<&str> {
+    pub fn status_report_s3_key(&self) -> std::option::Option<& str> {
         self.status_report_s3_key.as_deref()
     }
     /// <p> The time that the import task completed. </p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p> The number of records successfully imported. </p>
@@ -1096,13 +1071,13 @@ impl GetImportFileTaskOutput {
         self.number_of_records_failed
     }
     /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
-    pub fn import_name(&self) -> std::option::Option<&str> {
+    pub fn import_name(&self) -> std::option::Option<& str> {
         self.import_name.as_deref()
     }
 }
 /// See [`GetImportFileTaskOutput`](crate::output::GetImportFileTaskOutput).
 pub mod get_import_file_task_output {
-
+    
     /// A builder for [`GetImportFileTaskOutput`](crate::output::GetImportFileTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1126,8 +1101,7 @@ pub mod get_import_file_task_output {
         }
         /// <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p> Status of import file task. </p>
         pub fn status(mut self, input: crate::model::ImportFileTaskStatus) -> Self {
@@ -1135,12 +1109,8 @@ pub mod get_import_file_task_output {
             self
         }
         /// <p> Status of import file task. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ImportFileTaskStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ImportFileTaskStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> Start time of the import task. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1148,12 +1118,8 @@ pub mod get_import_file_task_output {
             self
         }
         /// <p> Start time of the import task. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The S3 bucket where import file is located. </p>
         pub fn input_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1161,12 +1127,8 @@ pub mod get_import_file_task_output {
             self
         }
         /// <p> The S3 bucket where import file is located. </p>
-        pub fn set_input_s3_bucket(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.input_s3_bucket = input;
-            self
+        pub fn set_input_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_s3_bucket = input; self
         }
         /// <p> The Amazon S3 key name of the import file. </p>
         pub fn input_s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1175,8 +1137,7 @@ pub mod get_import_file_task_output {
         }
         /// <p> The Amazon S3 key name of the import file. </p>
         pub fn set_input_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input_s3_key = input;
-            self
+            self.input_s3_key = input; self
         }
         /// <p> The S3 bucket name for status report of import task. </p>
         pub fn status_report_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1184,12 +1145,8 @@ pub mod get_import_file_task_output {
             self
         }
         /// <p> The S3 bucket name for status report of import task. </p>
-        pub fn set_status_report_s3_bucket(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_report_s3_bucket = input;
-            self
+        pub fn set_status_report_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_report_s3_bucket = input; self
         }
         /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
         pub fn status_report_s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1197,12 +1154,8 @@ pub mod get_import_file_task_output {
             self
         }
         /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
-        pub fn set_status_report_s3_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_report_s3_key = input;
-            self
+        pub fn set_status_report_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_report_s3_key = input; self
         }
         /// <p> The time that the import task completed. </p>
         pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1210,12 +1163,8 @@ pub mod get_import_file_task_output {
             self
         }
         /// <p> The time that the import task completed. </p>
-        pub fn set_completion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completion_time = input;
-            self
+        pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completion_time = input; self
         }
         /// <p> The number of records successfully imported. </p>
         pub fn number_of_records_success(mut self, input: i32) -> Self {
@@ -1224,8 +1173,7 @@ pub mod get_import_file_task_output {
         }
         /// <p> The number of records successfully imported. </p>
         pub fn set_number_of_records_success(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_records_success = input;
-            self
+            self.number_of_records_success = input; self
         }
         /// <p> The number of records that failed to be imported. </p>
         pub fn number_of_records_failed(mut self, input: i32) -> Self {
@@ -1234,8 +1182,7 @@ pub mod get_import_file_task_output {
         }
         /// <p> The number of records that failed to be imported. </p>
         pub fn set_number_of_records_failed(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_records_failed = input;
-            self
+            self.number_of_records_failed = input; self
         }
         /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
         pub fn import_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1244,26 +1191,38 @@ pub mod get_import_file_task_output {
         }
         /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
         pub fn set_import_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.import_name = input;
-            self
+            self.import_name = input; self
         }
         /// Consumes the builder and constructs a [`GetImportFileTaskOutput`](crate::output::GetImportFileTaskOutput).
         pub fn build(self) -> crate::output::GetImportFileTaskOutput {
             crate::output::GetImportFileTaskOutput {
-                id: self.id,
-                status: self.status,
-                start_time: self.start_time,
-                input_s3_bucket: self.input_s3_bucket,
-                input_s3_key: self.input_s3_key,
-                status_report_s3_bucket: self.status_report_s3_bucket,
-                status_report_s3_key: self.status_report_s3_key,
-                completion_time: self.completion_time,
-                number_of_records_success: self.number_of_records_success,
-                number_of_records_failed: self.number_of_records_failed,
-                import_name: self.import_name,
+                id: self.id
+                ,
+                status: self.status
+                ,
+                start_time: self.start_time
+                ,
+                input_s3_bucket: self.input_s3_bucket
+                ,
+                input_s3_key: self.input_s3_key
+                ,
+                status_report_s3_bucket: self.status_report_s3_bucket
+                ,
+                status_report_s3_key: self.status_report_s3_key
+                ,
+                completion_time: self.completion_time
+                ,
+                number_of_records_success: self.number_of_records_success
+                ,
+                number_of_records_failed: self.number_of_records_failed
+                ,
+                import_name: self.import_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetImportFileTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetImportFileTaskOutput`](crate::output::GetImportFileTaskOutput).
@@ -1275,7 +1234,7 @@ impl GetImportFileTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssessmentOutput {
+pub struct GetAssessmentOutput  {
     /// <p> The ID for the specific assessment task. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1288,31 +1247,27 @@ pub struct GetAssessmentOutput {
 }
 impl GetAssessmentOutput {
     /// <p> The ID for the specific assessment task. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> Detailed information about the assessment. </p>
-    pub fn data_collection_details(
-        &self,
-    ) -> std::option::Option<&crate::model::DataCollectionDetails> {
+    pub fn data_collection_details(&self) -> std::option::Option<& crate::model::DataCollectionDetails> {
         self.data_collection_details.as_ref()
     }
     /// <p>List of criteria for assessment.</p>
-    pub fn assessment_targets(&self) -> std::option::Option<&[crate::model::AssessmentTarget]> {
+    pub fn assessment_targets(&self) -> std::option::Option<& [crate::model::AssessmentTarget]> {
         self.assessment_targets.as_deref()
     }
 }
 /// See [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
 pub mod get_assessment_output {
-
+    
     /// A builder for [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) data_collection_details:
-            std::option::Option<crate::model::DataCollectionDetails>,
-        pub(crate) assessment_targets:
-            std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
+        pub(crate) data_collection_details: std::option::Option<crate::model::DataCollectionDetails>,
+        pub(crate) assessment_targets: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
     }
     impl Builder {
         /// <p> The ID for the specific assessment task. </p>
@@ -1322,24 +1277,16 @@ pub mod get_assessment_output {
         }
         /// <p> The ID for the specific assessment task. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p> Detailed information about the assessment. </p>
-        pub fn data_collection_details(
-            mut self,
-            input: crate::model::DataCollectionDetails,
-        ) -> Self {
+        pub fn data_collection_details(mut self, input: crate::model::DataCollectionDetails) -> Self {
             self.data_collection_details = Some(input);
             self
         }
         /// <p> Detailed information about the assessment. </p>
-        pub fn set_data_collection_details(
-            mut self,
-            input: std::option::Option<crate::model::DataCollectionDetails>,
-        ) -> Self {
-            self.data_collection_details = input;
-            self
+        pub fn set_data_collection_details(mut self, input: std::option::Option<crate::model::DataCollectionDetails>) -> Self {
+            self.data_collection_details = input; self
         }
         /// Appends an item to `assessment_targets`.
         ///
@@ -1348,27 +1295,28 @@ pub mod get_assessment_output {
         /// <p>List of criteria for assessment.</p>
         pub fn assessment_targets(mut self, input: crate::model::AssessmentTarget) -> Self {
             let mut v = self.assessment_targets.unwrap_or_default();
-            v.push(input);
-            self.assessment_targets = Some(v);
-            self
+                            v.push(input);
+                            self.assessment_targets = Some(v);
+                            self
         }
         /// <p>List of criteria for assessment.</p>
-        pub fn set_assessment_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
-        ) -> Self {
-            self.assessment_targets = input;
-            self
+        pub fn set_assessment_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>) -> Self {
+            self.assessment_targets = input; self
         }
         /// Consumes the builder and constructs a [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
         pub fn build(self) -> crate::output::GetAssessmentOutput {
             crate::output::GetAssessmentOutput {
-                id: self.id,
-                data_collection_details: self.data_collection_details,
-                assessment_targets: self.assessment_targets,
+                id: self.id
+                ,
+                data_collection_details: self.data_collection_details
+                ,
+                assessment_targets: self.assessment_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
@@ -1380,28 +1328,24 @@ impl GetAssessmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationComponentStrategiesOutput {
+pub struct GetApplicationComponentStrategiesOutput  {
     /// <p> A list of application component strategy recommendations. </p>
     #[doc(hidden)]
-    pub application_component_strategies:
-        std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStrategy>>,
+    pub application_component_strategies: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStrategy>>,
 }
 impl GetApplicationComponentStrategiesOutput {
     /// <p> A list of application component strategy recommendations. </p>
-    pub fn application_component_strategies(
-        &self,
-    ) -> std::option::Option<&[crate::model::ApplicationComponentStrategy]> {
+    pub fn application_component_strategies(&self) -> std::option::Option<& [crate::model::ApplicationComponentStrategy]> {
         self.application_component_strategies.as_deref()
     }
 }
 /// See [`GetApplicationComponentStrategiesOutput`](crate::output::GetApplicationComponentStrategiesOutput).
 pub mod get_application_component_strategies_output {
-
+    
     /// A builder for [`GetApplicationComponentStrategiesOutput`](crate::output::GetApplicationComponentStrategiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_component_strategies:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStrategy>>,
+        pub(crate) application_component_strategies: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStrategy>>,
     }
     impl Builder {
         /// Appends an item to `application_component_strategies`.
@@ -1409,30 +1353,26 @@ pub mod get_application_component_strategies_output {
         /// To override the contents of this collection use [`set_application_component_strategies`](Self::set_application_component_strategies).
         ///
         /// <p> A list of application component strategy recommendations. </p>
-        pub fn application_component_strategies(
-            mut self,
-            input: crate::model::ApplicationComponentStrategy,
-        ) -> Self {
+        pub fn application_component_strategies(mut self, input: crate::model::ApplicationComponentStrategy) -> Self {
             let mut v = self.application_component_strategies.unwrap_or_default();
-            v.push(input);
-            self.application_component_strategies = Some(v);
-            self
+                            v.push(input);
+                            self.application_component_strategies = Some(v);
+                            self
         }
         /// <p> A list of application component strategy recommendations. </p>
-        pub fn set_application_component_strategies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStrategy>>,
-        ) -> Self {
-            self.application_component_strategies = input;
-            self
+        pub fn set_application_component_strategies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentStrategy>>) -> Self {
+            self.application_component_strategies = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationComponentStrategiesOutput`](crate::output::GetApplicationComponentStrategiesOutput).
         pub fn build(self) -> crate::output::GetApplicationComponentStrategiesOutput {
             crate::output::GetApplicationComponentStrategiesOutput {
-                application_component_strategies: self.application_component_strategies,
+                application_component_strategies: self.application_component_strategies
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationComponentStrategiesOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationComponentStrategiesOutput`](crate::output::GetApplicationComponentStrategiesOutput).
@@ -1444,14 +1384,13 @@ impl GetApplicationComponentStrategiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationComponentDetailsOutput {
+pub struct GetApplicationComponentDetailsOutput  {
     /// <p> Detailed information about an application component. </p>
     #[doc(hidden)]
     pub application_component_detail: std::option::Option<crate::model::ApplicationComponentDetail>,
     /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
     #[doc(hidden)]
-    pub associated_applications:
-        std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
+    pub associated_applications: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
     /// <p> Set to true if the application component belongs to more than one application group. </p>
     #[doc(hidden)]
     pub more_application_resource: std::option::Option<bool>,
@@ -1461,15 +1400,11 @@ pub struct GetApplicationComponentDetailsOutput {
 }
 impl GetApplicationComponentDetailsOutput {
     /// <p> Detailed information about an application component. </p>
-    pub fn application_component_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationComponentDetail> {
+    pub fn application_component_detail(&self) -> std::option::Option<& crate::model::ApplicationComponentDetail> {
         self.application_component_detail.as_ref()
     }
     /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
-    pub fn associated_applications(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssociatedApplication]> {
+    pub fn associated_applications(&self) -> std::option::Option<& [crate::model::AssociatedApplication]> {
         self.associated_applications.as_deref()
     }
     /// <p> Set to true if the application component belongs to more than one application group. </p>
@@ -1477,61 +1412,45 @@ impl GetApplicationComponentDetailsOutput {
         self.more_application_resource
     }
     /// <p> A list of the IDs of the servers on which the application component is running. </p>
-    pub fn associated_server_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn associated_server_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.associated_server_ids.as_deref()
     }
 }
 /// See [`GetApplicationComponentDetailsOutput`](crate::output::GetApplicationComponentDetailsOutput).
 pub mod get_application_component_details_output {
-
+    
     /// A builder for [`GetApplicationComponentDetailsOutput`](crate::output::GetApplicationComponentDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_component_detail:
-            std::option::Option<crate::model::ApplicationComponentDetail>,
-        pub(crate) associated_applications:
-            std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
+        pub(crate) application_component_detail: std::option::Option<crate::model::ApplicationComponentDetail>,
+        pub(crate) associated_applications: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
         pub(crate) more_application_resource: std::option::Option<bool>,
         pub(crate) associated_server_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p> Detailed information about an application component. </p>
-        pub fn application_component_detail(
-            mut self,
-            input: crate::model::ApplicationComponentDetail,
-        ) -> Self {
+        pub fn application_component_detail(mut self, input: crate::model::ApplicationComponentDetail) -> Self {
             self.application_component_detail = Some(input);
             self
         }
         /// <p> Detailed information about an application component. </p>
-        pub fn set_application_component_detail(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationComponentDetail>,
-        ) -> Self {
-            self.application_component_detail = input;
-            self
+        pub fn set_application_component_detail(mut self, input: std::option::Option<crate::model::ApplicationComponentDetail>) -> Self {
+            self.application_component_detail = input; self
         }
         /// Appends an item to `associated_applications`.
         ///
         /// To override the contents of this collection use [`set_associated_applications`](Self::set_associated_applications).
         ///
         /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
-        pub fn associated_applications(
-            mut self,
-            input: crate::model::AssociatedApplication,
-        ) -> Self {
+        pub fn associated_applications(mut self, input: crate::model::AssociatedApplication) -> Self {
             let mut v = self.associated_applications.unwrap_or_default();
-            v.push(input);
-            self.associated_applications = Some(v);
-            self
+                            v.push(input);
+                            self.associated_applications = Some(v);
+                            self
         }
         /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
-        pub fn set_associated_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
-        ) -> Self {
-            self.associated_applications = input;
-            self
+        pub fn set_associated_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>) -> Self {
+            self.associated_applications = input; self
         }
         /// <p> Set to true if the application component belongs to more than one application group. </p>
         pub fn more_application_resource(mut self, input: bool) -> Self {
@@ -1540,8 +1459,7 @@ pub mod get_application_component_details_output {
         }
         /// <p> Set to true if the application component belongs to more than one application group. </p>
         pub fn set_more_application_resource(mut self, input: std::option::Option<bool>) -> Self {
-            self.more_application_resource = input;
-            self
+            self.more_application_resource = input; self
         }
         /// Appends an item to `associated_server_ids`.
         ///
@@ -1550,28 +1468,30 @@ pub mod get_application_component_details_output {
         /// <p> A list of the IDs of the servers on which the application component is running. </p>
         pub fn associated_server_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.associated_server_ids.unwrap_or_default();
-            v.push(input.into());
-            self.associated_server_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.associated_server_ids = Some(v);
+                            self
         }
         /// <p> A list of the IDs of the servers on which the application component is running. </p>
-        pub fn set_associated_server_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.associated_server_ids = input;
-            self
+        pub fn set_associated_server_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.associated_server_ids = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationComponentDetailsOutput`](crate::output::GetApplicationComponentDetailsOutput).
         pub fn build(self) -> crate::output::GetApplicationComponentDetailsOutput {
             crate::output::GetApplicationComponentDetailsOutput {
-                application_component_detail: self.application_component_detail,
-                associated_applications: self.associated_applications,
-                more_application_resource: self.more_application_resource,
-                associated_server_ids: self.associated_server_ids,
+                application_component_detail: self.application_component_detail
+                ,
+                associated_applications: self.associated_applications
+                ,
+                more_application_resource: self.more_application_resource
+                ,
+                associated_server_ids: self.associated_server_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationComponentDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationComponentDetailsOutput`](crate::output::GetApplicationComponentDetailsOutput).
@@ -1579,3 +1499,4 @@ impl GetApplicationComponentDetailsOutput {
         crate::output::get_application_component_details_output::Builder::default()
     }
 }
+

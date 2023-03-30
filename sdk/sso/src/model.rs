@@ -3,7 +3,7 @@
 /// <p>Provides information about your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountInfo {
+pub struct AccountInfo  {
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct AccountInfo {
 }
 impl AccountInfo {
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The display name of the AWS account that is assigned to the user.</p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The email address of the AWS account that is assigned to the user.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
 /// See [`AccountInfo`](crate::model::AccountInfo).
 pub mod account_info {
-
+    
     /// A builder for [`AccountInfo`](crate::model::AccountInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -46,8 +46,7 @@ pub mod account_info {
         }
         /// <p>The identifier of the AWS account that is assigned to the user.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The display name of the AWS account that is assigned to the user.</p>
         pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,8 +55,7 @@ pub mod account_info {
         }
         /// <p>The display name of the AWS account that is assigned to the user.</p>
         pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_name = input;
-            self
+            self.account_name = input; self
         }
         /// <p>The email address of the AWS account that is assigned to the user.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,22 +63,23 @@ pub mod account_info {
             self
         }
         /// <p>The email address of the AWS account that is assigned to the user.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
         /// Consumes the builder and constructs a [`AccountInfo`](crate::model::AccountInfo).
         pub fn build(self) -> crate::model::AccountInfo {
             crate::model::AccountInfo {
-                account_id: self.account_id,
-                account_name: self.account_name,
-                email_address: self.email_address,
+                account_id: self.account_id
+                ,
+                account_name: self.account_name
+                ,
+                email_address: self.email_address
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountInfo {
     /// Creates a new builder-style object to manufacture [`AccountInfo`](crate::model::AccountInfo).
@@ -92,7 +91,7 @@ impl AccountInfo {
 /// <p>Provides information about the role that is assigned to the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoleInfo {
+pub struct RoleInfo  {
     /// <p>The friendly name of the role that is assigned to the user.</p>
     #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
@@ -102,17 +101,17 @@ pub struct RoleInfo {
 }
 impl RoleInfo {
     /// <p>The friendly name of the role that is assigned to the user.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The identifier of the AWS account assigned to the user.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 /// See [`RoleInfo`](crate::model::RoleInfo).
 pub mod role_info {
-
+    
     /// A builder for [`RoleInfo`](crate::model::RoleInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -127,8 +126,7 @@ pub mod role_info {
         }
         /// <p>The friendly name of the role that is assigned to the user.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_name = input;
-            self
+            self.role_name = input; self
         }
         /// <p>The identifier of the AWS account assigned to the user.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,17 +135,20 @@ pub mod role_info {
         }
         /// <p>The identifier of the AWS account assigned to the user.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Consumes the builder and constructs a [`RoleInfo`](crate::model::RoleInfo).
         pub fn build(self) -> crate::model::RoleInfo {
             crate::model::RoleInfo {
-                role_name: self.role_name,
-                account_id: self.account_id,
+                role_name: self.role_name
+                ,
+                account_id: self.account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RoleInfo {
     /// Creates a new builder-style object to manufacture [`RoleInfo`](crate::model::RoleInfo).
@@ -159,7 +160,7 @@ impl RoleInfo {
 /// <p>Provides information about the role credentials that are assigned to the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RoleCredentials {
+pub struct RoleCredentials  {
     /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -175,15 +176,15 @@ pub struct RoleCredentials {
 }
 impl RoleCredentials {
     /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
-    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+    pub fn secret_access_key(&self) -> std::option::Option<& str> {
         self.secret_access_key.as_deref()
     }
     /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
-    pub fn session_token(&self) -> std::option::Option<&str> {
+    pub fn session_token(&self) -> std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>The date on which temporary security credentials expire.</p>
@@ -191,7 +192,7 @@ impl RoleCredentials {
         self.expiration
     }
 }
-impl std::fmt::Debug for RoleCredentials {
+impl  std::fmt::Debug for RoleCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoleCredentials");
         formatter.field("access_key_id", &self.access_key_id);
@@ -203,7 +204,7 @@ impl std::fmt::Debug for RoleCredentials {
 }
 /// See [`RoleCredentials`](crate::model::RoleCredentials).
 pub mod role_credentials {
-
+    
     /// A builder for [`RoleCredentials`](crate::model::RoleCredentials).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -219,12 +220,8 @@ pub mod role_credentials {
             self
         }
         /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
-        pub fn set_access_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_key_id = input;
-            self
+        pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_key_id = input; self
         }
         /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
         pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -232,12 +229,8 @@ pub mod role_credentials {
             self
         }
         /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
-        pub fn set_secret_access_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_access_key = input;
-            self
+        pub fn set_secret_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_access_key = input; self
         }
         /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
         pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,12 +238,8 @@ pub mod role_credentials {
             self
         }
         /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
-        pub fn set_session_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_token = input;
-            self
+        pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_token = input; self
         }
         /// <p>The date on which temporary security credentials expire.</p>
         pub fn expiration(mut self, input: i64) -> Self {
@@ -259,16 +248,20 @@ pub mod role_credentials {
         }
         /// <p>The date on which temporary security credentials expire.</p>
         pub fn set_expiration(mut self, input: std::option::Option<i64>) -> Self {
-            self.expiration = input;
-            self
+            self.expiration = input; self
         }
         /// Consumes the builder and constructs a [`RoleCredentials`](crate::model::RoleCredentials).
         pub fn build(self) -> crate::model::RoleCredentials {
             crate::model::RoleCredentials {
-                access_key_id: self.access_key_id,
-                secret_access_key: self.secret_access_key,
-                session_token: self.session_token,
-                expiration: self.expiration.unwrap_or_default(),
+                access_key_id: self.access_key_id
+                ,
+                secret_access_key: self.secret_access_key
+                ,
+                session_token: self.session_token
+                ,
+                expiration: self.expiration
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -282,6 +275,8 @@ pub mod role_credentials {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RoleCredentials {
     /// Creates a new builder-style object to manufacture [`RoleCredentials`](crate::model::RoleCredentials).
@@ -289,3 +284,4 @@ impl RoleCredentials {
         crate::model::role_credentials::Builder::default()
     }
 }
+

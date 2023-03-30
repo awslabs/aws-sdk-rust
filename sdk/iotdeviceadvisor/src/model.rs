@@ -3,7 +3,7 @@
 /// <p>Gets the suite definition configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuiteDefinitionConfiguration {
+pub struct SuiteDefinitionConfiguration  {
     /// <p>Gets the suite definition name. This is a required parameter.</p>
     #[doc(hidden)]
     pub suite_definition_name: std::option::Option<std::string::String>,
@@ -28,11 +28,11 @@ pub struct SuiteDefinitionConfiguration {
 }
 impl SuiteDefinitionConfiguration {
     /// <p>Gets the suite definition name. This is a required parameter.</p>
-    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_name(&self) -> std::option::Option<& str> {
         self.suite_definition_name.as_deref()
     }
     /// <p>Gets the devices configured.</p>
-    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceUnderTest]> {
+    pub fn devices(&self) -> std::option::Option<& [crate::model::DeviceUnderTest]> {
         self.devices.as_deref()
     }
     /// <p>Gets the tests intended for qualification in a suite.</p>
@@ -44,21 +44,21 @@ impl SuiteDefinitionConfiguration {
         self.is_long_duration_test
     }
     /// <p>Gets the test suite root group. This is a required parameter.</p>
-    pub fn root_group(&self) -> std::option::Option<&str> {
+    pub fn root_group(&self) -> std::option::Option<& str> {
         self.root_group.as_deref()
     }
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
-    pub fn device_permission_role_arn(&self) -> std::option::Option<&str> {
+    pub fn device_permission_role_arn(&self) -> std::option::Option<& str> {
         self.device_permission_role_arn.as_deref()
     }
     /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::Protocol> {
         self.protocol.as_ref()
     }
 }
 /// See [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
 pub mod suite_definition_configuration {
-
+    
     /// A builder for [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,12 +77,8 @@ pub mod suite_definition_configuration {
             self
         }
         /// <p>Gets the suite definition name. This is a required parameter.</p>
-        pub fn set_suite_definition_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.suite_definition_name = input;
-            self
+        pub fn set_suite_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suite_definition_name = input; self
         }
         /// Appends an item to `devices`.
         ///
@@ -91,17 +87,13 @@ pub mod suite_definition_configuration {
         /// <p>Gets the devices configured.</p>
         pub fn devices(mut self, input: crate::model::DeviceUnderTest) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input);
-            self.devices = Some(v);
-            self
+                            v.push(input);
+                            self.devices = Some(v);
+                            self
         }
         /// <p>Gets the devices configured.</p>
-        pub fn set_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
-        ) -> Self {
-            self.devices = input;
-            self
+        pub fn set_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>) -> Self {
+            self.devices = input; self
         }
         /// <p>Gets the tests intended for qualification in a suite.</p>
         pub fn intended_for_qualification(mut self, input: bool) -> Self {
@@ -110,8 +102,7 @@ pub mod suite_definition_configuration {
         }
         /// <p>Gets the tests intended for qualification in a suite.</p>
         pub fn set_intended_for_qualification(mut self, input: std::option::Option<bool>) -> Self {
-            self.intended_for_qualification = input;
-            self
+            self.intended_for_qualification = input; self
         }
         /// <p>Verifies if the test suite is a long duration test.</p>
         pub fn is_long_duration_test(mut self, input: bool) -> Self {
@@ -120,8 +111,7 @@ pub mod suite_definition_configuration {
         }
         /// <p>Verifies if the test suite is a long duration test.</p>
         pub fn set_is_long_duration_test(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_long_duration_test = input;
-            self
+            self.is_long_duration_test = input; self
         }
         /// <p>Gets the test suite root group. This is a required parameter.</p>
         pub fn root_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,8 +120,7 @@ pub mod suite_definition_configuration {
         }
         /// <p>Gets the test suite root group. This is a required parameter.</p>
         pub fn set_root_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.root_group = input;
-            self
+            self.root_group = input; self
         }
         /// <p>Gets the device permission ARN. This is a required parameter.</p>
         pub fn device_permission_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,12 +128,8 @@ pub mod suite_definition_configuration {
             self
         }
         /// <p>Gets the device permission ARN. This is a required parameter.</p>
-        pub fn set_device_permission_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_permission_role_arn = input;
-            self
+        pub fn set_device_permission_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_permission_role_arn = input; self
         }
         /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
@@ -153,22 +138,32 @@ pub mod suite_definition_configuration {
         }
         /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = input;
-            self
+            self.protocol = input; self
         }
         /// Consumes the builder and constructs a [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
         pub fn build(self) -> crate::model::SuiteDefinitionConfiguration {
             crate::model::SuiteDefinitionConfiguration {
-                suite_definition_name: self.suite_definition_name,
-                devices: self.devices,
-                intended_for_qualification: self.intended_for_qualification.unwrap_or_default(),
-                is_long_duration_test: self.is_long_duration_test.unwrap_or_default(),
-                root_group: self.root_group,
-                device_permission_role_arn: self.device_permission_role_arn,
-                protocol: self.protocol,
+                suite_definition_name: self.suite_definition_name
+                ,
+                devices: self.devices
+                ,
+                intended_for_qualification: self.intended_for_qualification
+                    .unwrap_or_default()
+                ,
+                is_long_duration_test: self.is_long_duration_test
+                    .unwrap_or_default()
+                ,
+                root_group: self.root_group
+                ,
+                device_permission_role_arn: self.device_permission_role_arn
+                ,
+                protocol: self.protocol
+                ,
             }
         }
     }
+    
+    
 }
 impl SuiteDefinitionConfiguration {
     /// Creates a new builder-style object to manufacture [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
@@ -183,9 +178,9 @@ impl SuiteDefinitionConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protocol = unimplemented!();
 /// match protocol {
@@ -207,58 +202,52 @@ impl SuiteDefinitionConfiguration {
 /// Specifically, when `protocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Protocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     MqttV311,
     #[allow(missing_docs)] // documentation missing in model
     MqttV5,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Protocol {
     fn from(s: &str) -> Self {
         match s {
             "MqttV3_1_1" => Protocol::MqttV311,
             "MqttV5" => Protocol::MqttV5,
-            other => Protocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Protocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Protocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Protocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Protocol::from(s))
+                }
+            }
 impl Protocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Protocol::MqttV311 => "MqttV3_1_1",
             Protocol::MqttV5 => "MqttV5",
-            Protocol::Unknown(value) => value.as_str(),
+            Protocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MqttV3_1_1", "MqttV5"]
+        &[
+            "MqttV3_1_1", "MqttV5"
+        ]
     }
 }
 impl AsRef<str> for Protocol {
@@ -270,7 +259,7 @@ impl AsRef<str> for Protocol {
 /// <p>Information of a test device. A thing ARN or a certificate ARN is required.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceUnderTest {
+pub struct DeviceUnderTest  {
     /// <p>Lists devices thing ARN.</p>
     #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
@@ -280,17 +269,17 @@ pub struct DeviceUnderTest {
 }
 impl DeviceUnderTest {
     /// <p>Lists devices thing ARN.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
     /// <p>Lists devices certificate ARN.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
 /// See [`DeviceUnderTest`](crate::model::DeviceUnderTest).
 pub mod device_under_test {
-
+    
     /// A builder for [`DeviceUnderTest`](crate::model::DeviceUnderTest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -305,8 +294,7 @@ pub mod device_under_test {
         }
         /// <p>Lists devices thing ARN.</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_arn = input;
-            self
+            self.thing_arn = input; self
         }
         /// <p>Lists devices certificate ARN.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -314,21 +302,21 @@ pub mod device_under_test {
             self
         }
         /// <p>Lists devices certificate ARN.</p>
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeviceUnderTest`](crate::model::DeviceUnderTest).
         pub fn build(self) -> crate::model::DeviceUnderTest {
             crate::model::DeviceUnderTest {
-                thing_arn: self.thing_arn,
-                certificate_arn: self.certificate_arn,
+                thing_arn: self.thing_arn
+                ,
+                certificate_arn: self.certificate_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceUnderTest {
     /// Creates a new builder-style object to manufacture [`DeviceUnderTest`](crate::model::DeviceUnderTest).
@@ -340,7 +328,7 @@ impl DeviceUnderTest {
 /// <p>Gets suite run configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuiteRunConfiguration {
+pub struct SuiteRunConfiguration  {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
     #[doc(hidden)]
     pub primary_device: std::option::Option<crate::model::DeviceUnderTest>,
@@ -353,11 +341,11 @@ pub struct SuiteRunConfiguration {
 }
 impl SuiteRunConfiguration {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
-    pub fn primary_device(&self) -> std::option::Option<&crate::model::DeviceUnderTest> {
+    pub fn primary_device(&self) -> std::option::Option<& crate::model::DeviceUnderTest> {
         self.primary_device.as_ref()
     }
     /// <p>Sets test case list.</p>
-    pub fn selected_test_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn selected_test_list(&self) -> std::option::Option<& [std::string::String]> {
         self.selected_test_list.as_deref()
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
@@ -367,7 +355,7 @@ impl SuiteRunConfiguration {
 }
 /// See [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
 pub mod suite_run_configuration {
-
+    
     /// A builder for [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -382,12 +370,8 @@ pub mod suite_run_configuration {
             self
         }
         /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
-        pub fn set_primary_device(
-            mut self,
-            input: std::option::Option<crate::model::DeviceUnderTest>,
-        ) -> Self {
-            self.primary_device = input;
-            self
+        pub fn set_primary_device(mut self, input: std::option::Option<crate::model::DeviceUnderTest>) -> Self {
+            self.primary_device = input; self
         }
         /// Appends an item to `selected_test_list`.
         ///
@@ -396,17 +380,13 @@ pub mod suite_run_configuration {
         /// <p>Sets test case list.</p>
         pub fn selected_test_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.selected_test_list.unwrap_or_default();
-            v.push(input.into());
-            self.selected_test_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.selected_test_list = Some(v);
+                            self
         }
         /// <p>Sets test case list.</p>
-        pub fn set_selected_test_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.selected_test_list = input;
-            self
+        pub fn set_selected_test_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.selected_test_list = input; self
         }
         /// <p>TRUE if multiple test suites run in parallel.</p>
         pub fn parallel_run(mut self, input: bool) -> Self {
@@ -415,18 +395,23 @@ pub mod suite_run_configuration {
         }
         /// <p>TRUE if multiple test suites run in parallel.</p>
         pub fn set_parallel_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.parallel_run = input;
-            self
+            self.parallel_run = input; self
         }
         /// Consumes the builder and constructs a [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
         pub fn build(self) -> crate::model::SuiteRunConfiguration {
             crate::model::SuiteRunConfiguration {
-                primary_device: self.primary_device,
-                selected_test_list: self.selected_test_list,
-                parallel_run: self.parallel_run.unwrap_or_default(),
+                primary_device: self.primary_device
+                ,
+                selected_test_list: self.selected_test_list
+                ,
+                parallel_run: self.parallel_run
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SuiteRunConfiguration {
     /// Creates a new builder-style object to manufacture [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
@@ -435,11 +420,11 @@ impl SuiteRunConfiguration {
     }
 }
 
-/// <p>Information about the suite run.</p>
+/// <p>Information about the suite run.</p> 
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SuiteRunInformation</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuiteRunInformation {
+pub struct SuiteRunInformation  {
     /// <p>Suite definition ID of the suite run.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
@@ -473,35 +458,35 @@ pub struct SuiteRunInformation {
 }
 impl SuiteRunInformation {
     /// <p>Suite definition ID of the suite run.</p>
-    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite definition version of the suite run.</p>
-    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_version(&self) -> std::option::Option<& str> {
         self.suite_definition_version.as_deref()
     }
     /// <p>Suite definition name of the suite run.</p>
-    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_name(&self) -> std::option::Option<& str> {
         self.suite_definition_name.as_deref()
     }
     /// <p>Suite run ID of the suite run.</p>
-    pub fn suite_run_id(&self) -> std::option::Option<&str> {
+    pub fn suite_run_id(&self) -> std::option::Option<& str> {
         self.suite_run_id.as_deref()
     }
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-    pub fn end_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_at.as_ref()
     }
     /// <p>Status of the suite run.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SuiteRunStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SuiteRunStatus> {
         self.status.as_ref()
     }
     /// <p>Number of test cases that passed in the suite run.</p>
@@ -515,7 +500,7 @@ impl SuiteRunInformation {
 }
 /// See [`SuiteRunInformation`](crate::model::SuiteRunInformation).
 pub mod suite_run_information {
-
+    
     /// A builder for [`SuiteRunInformation`](crate::model::SuiteRunInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -537,12 +522,8 @@ pub mod suite_run_information {
             self
         }
         /// <p>Suite definition ID of the suite run.</p>
-        pub fn set_suite_definition_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.suite_definition_id = input;
-            self
+        pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suite_definition_id = input; self
         }
         /// <p>Suite definition version of the suite run.</p>
         pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -550,12 +531,8 @@ pub mod suite_run_information {
             self
         }
         /// <p>Suite definition version of the suite run.</p>
-        pub fn set_suite_definition_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.suite_definition_version = input;
-            self
+        pub fn set_suite_definition_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suite_definition_version = input; self
         }
         /// <p>Suite definition name of the suite run.</p>
         pub fn suite_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -563,12 +540,8 @@ pub mod suite_run_information {
             self
         }
         /// <p>Suite definition name of the suite run.</p>
-        pub fn set_suite_definition_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.suite_definition_name = input;
-            self
+        pub fn set_suite_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suite_definition_name = input; self
         }
         /// <p>Suite run ID of the suite run.</p>
         pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -577,8 +550,7 @@ pub mod suite_run_information {
         }
         /// <p>Suite run ID of the suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.suite_run_id = input;
-            self
+            self.suite_run_id = input; self
         }
         /// <p>Date (in Unix epoch time) when the suite run was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -586,12 +558,8 @@ pub mod suite_run_information {
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Date (in Unix epoch time) when the suite run was started.</p>
         pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -599,12 +567,8 @@ pub mod suite_run_information {
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-        pub fn set_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_at = input;
-            self
+        pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_at = input; self
         }
         /// <p>Date (in Unix epoch time) when the suite run ended.</p>
         pub fn end_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -612,12 +576,8 @@ pub mod suite_run_information {
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-        pub fn set_end_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_at = input;
-            self
+        pub fn set_end_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_at = input; self
         }
         /// <p>Status of the suite run.</p>
         pub fn status(mut self, input: crate::model::SuiteRunStatus) -> Self {
@@ -625,12 +585,8 @@ pub mod suite_run_information {
             self
         }
         /// <p>Status of the suite run.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SuiteRunStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SuiteRunStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Number of test cases that passed in the suite run.</p>
         pub fn passed(mut self, input: i32) -> Self {
@@ -639,8 +595,7 @@ pub mod suite_run_information {
         }
         /// <p>Number of test cases that passed in the suite run.</p>
         pub fn set_passed(mut self, input: std::option::Option<i32>) -> Self {
-            self.passed = input;
-            self
+            self.passed = input; self
         }
         /// <p>Number of test cases that failed in the suite run.</p>
         pub fn failed(mut self, input: i32) -> Self {
@@ -649,25 +604,38 @@ pub mod suite_run_information {
         }
         /// <p>Number of test cases that failed in the suite run.</p>
         pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
-            self.failed = input;
-            self
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`SuiteRunInformation`](crate::model::SuiteRunInformation).
         pub fn build(self) -> crate::model::SuiteRunInformation {
             crate::model::SuiteRunInformation {
-                suite_definition_id: self.suite_definition_id,
-                suite_definition_version: self.suite_definition_version,
-                suite_definition_name: self.suite_definition_name,
-                suite_run_id: self.suite_run_id,
-                created_at: self.created_at,
-                started_at: self.started_at,
-                end_at: self.end_at,
-                status: self.status,
-                passed: self.passed.unwrap_or_default(),
-                failed: self.failed.unwrap_or_default(),
+                suite_definition_id: self.suite_definition_id
+                ,
+                suite_definition_version: self.suite_definition_version
+                ,
+                suite_definition_name: self.suite_definition_name
+                ,
+                suite_run_id: self.suite_run_id
+                ,
+                created_at: self.created_at
+                ,
+                started_at: self.started_at
+                ,
+                end_at: self.end_at
+                ,
+                status: self.status
+                ,
+                passed: self.passed
+                    .unwrap_or_default()
+                ,
+                failed: self.failed
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SuiteRunInformation {
     /// Creates a new builder-style object to manufacture [`SuiteRunInformation`](crate::model::SuiteRunInformation).
@@ -682,9 +650,9 @@ impl SuiteRunInformation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let suiterunstatus = unimplemented!();
 /// match suiterunstatus {
@@ -713,22 +681,14 @@ impl SuiteRunInformation {
 /// Specifically, when `suiterunstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SuiteRunStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SuiteRunStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -749,7 +709,7 @@ pub enum SuiteRunStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SuiteRunStatus {
     fn from(s: &str) -> Self {
@@ -763,17 +723,17 @@ impl std::convert::From<&str> for SuiteRunStatus {
             "RUNNING" => SuiteRunStatus::Running,
             "STOPPED" => SuiteRunStatus::Stopped,
             "STOPPING" => SuiteRunStatus::Stopping,
-            other => SuiteRunStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SuiteRunStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SuiteRunStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SuiteRunStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SuiteRunStatus::from(s))
+                }
+            }
 impl SuiteRunStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -787,21 +747,13 @@ impl SuiteRunStatus {
             SuiteRunStatus::Running => "RUNNING",
             SuiteRunStatus::Stopped => "STOPPED",
             SuiteRunStatus::Stopping => "STOPPING",
-            SuiteRunStatus::Unknown(value) => value.as_str(),
+            SuiteRunStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELED",
-            "ERROR",
-            "FAIL",
-            "PASS",
-            "PASS_WITH_WARNINGS",
-            "PENDING",
-            "RUNNING",
-            "STOPPED",
-            "STOPPING",
+            "CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"
         ]
     }
 }
@@ -814,7 +766,7 @@ impl AsRef<str> for SuiteRunStatus {
 /// <p>Information about the suite definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuiteDefinitionInformation {
+pub struct SuiteDefinitionInformation  {
     /// <p>Suite definition ID of the test suite.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
@@ -839,15 +791,15 @@ pub struct SuiteDefinitionInformation {
 }
 impl SuiteDefinitionInformation {
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite name of the test suite.</p>
-    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_name(&self) -> std::option::Option<& str> {
         self.suite_definition_name.as_deref()
     }
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    pub fn default_devices(&self) -> std::option::Option<&[crate::model::DeviceUnderTest]> {
+    pub fn default_devices(&self) -> std::option::Option<& [crate::model::DeviceUnderTest]> {
         self.default_devices.as_deref()
     }
     /// <p>Specifies if the test suite is intended for qualification.</p>
@@ -859,24 +811,23 @@ impl SuiteDefinitionInformation {
         self.is_long_duration_test
     }
     /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::Protocol> {
         self.protocol.as_ref()
     }
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
 pub mod suite_definition_information {
-
+    
     /// A builder for [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
         pub(crate) suite_definition_name: std::option::Option<std::string::String>,
-        pub(crate) default_devices:
-            std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
+        pub(crate) default_devices: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
         pub(crate) intended_for_qualification: std::option::Option<bool>,
         pub(crate) is_long_duration_test: std::option::Option<bool>,
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
@@ -889,12 +840,8 @@ pub mod suite_definition_information {
             self
         }
         /// <p>Suite definition ID of the test suite.</p>
-        pub fn set_suite_definition_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.suite_definition_id = input;
-            self
+        pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suite_definition_id = input; self
         }
         /// <p>Suite name of the test suite.</p>
         pub fn suite_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -902,12 +849,8 @@ pub mod suite_definition_information {
             self
         }
         /// <p>Suite name of the test suite.</p>
-        pub fn set_suite_definition_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.suite_definition_name = input;
-            self
+        pub fn set_suite_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suite_definition_name = input; self
         }
         /// Appends an item to `default_devices`.
         ///
@@ -916,17 +859,13 @@ pub mod suite_definition_information {
         /// <p>Specifies the devices that are under test for the test suite.</p>
         pub fn default_devices(mut self, input: crate::model::DeviceUnderTest) -> Self {
             let mut v = self.default_devices.unwrap_or_default();
-            v.push(input);
-            self.default_devices = Some(v);
-            self
+                            v.push(input);
+                            self.default_devices = Some(v);
+                            self
         }
         /// <p>Specifies the devices that are under test for the test suite.</p>
-        pub fn set_default_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
-        ) -> Self {
-            self.default_devices = input;
-            self
+        pub fn set_default_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>) -> Self {
+            self.default_devices = input; self
         }
         /// <p>Specifies if the test suite is intended for qualification.</p>
         pub fn intended_for_qualification(mut self, input: bool) -> Self {
@@ -935,8 +874,7 @@ pub mod suite_definition_information {
         }
         /// <p>Specifies if the test suite is intended for qualification.</p>
         pub fn set_intended_for_qualification(mut self, input: std::option::Option<bool>) -> Self {
-            self.intended_for_qualification = input;
-            self
+            self.intended_for_qualification = input; self
         }
         /// <p>Verifies if the test suite is a long duration test.</p>
         pub fn is_long_duration_test(mut self, input: bool) -> Self {
@@ -945,8 +883,7 @@ pub mod suite_definition_information {
         }
         /// <p>Verifies if the test suite is a long duration test.</p>
         pub fn set_is_long_duration_test(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_long_duration_test = input;
-            self
+            self.is_long_duration_test = input; self
         }
         /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
@@ -955,8 +892,7 @@ pub mod suite_definition_information {
         }
         /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = input;
-            self
+            self.protocol = input; self
         }
         /// <p>Date (in Unix epoch time) when the test suite was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -964,26 +900,33 @@ pub mod suite_definition_information {
             self
         }
         /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
         pub fn build(self) -> crate::model::SuiteDefinitionInformation {
             crate::model::SuiteDefinitionInformation {
-                suite_definition_id: self.suite_definition_id,
-                suite_definition_name: self.suite_definition_name,
-                default_devices: self.default_devices,
-                intended_for_qualification: self.intended_for_qualification.unwrap_or_default(),
-                is_long_duration_test: self.is_long_duration_test.unwrap_or_default(),
-                protocol: self.protocol,
-                created_at: self.created_at,
+                suite_definition_id: self.suite_definition_id
+                ,
+                suite_definition_name: self.suite_definition_name
+                ,
+                default_devices: self.default_devices
+                ,
+                intended_for_qualification: self.intended_for_qualification
+                    .unwrap_or_default()
+                ,
+                is_long_duration_test: self.is_long_duration_test
+                    .unwrap_or_default()
+                ,
+                protocol: self.protocol
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl SuiteDefinitionInformation {
     /// Creates a new builder-style object to manufacture [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
@@ -995,20 +938,20 @@ impl SuiteDefinitionInformation {
 /// <p>Show each group result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestResult {
+pub struct TestResult  {
     /// <p>Show each group of test results.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupResult>>,
 }
 impl TestResult {
     /// <p>Show each group of test results.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupResult]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::GroupResult]> {
         self.groups.as_deref()
     }
 }
 /// See [`TestResult`](crate::model::TestResult).
 pub mod test_result {
-
+    
     /// A builder for [`TestResult`](crate::model::TestResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1022,25 +965,24 @@ pub mod test_result {
         /// <p>Show each group of test results.</p>
         pub fn groups(mut self, input: crate::model::GroupResult) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>Show each group of test results.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupResult>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupResult>>) -> Self {
+            self.groups = input; self
         }
         /// Consumes the builder and constructs a [`TestResult`](crate::model::TestResult).
         pub fn build(self) -> crate::model::TestResult {
             crate::model::TestResult {
-                groups: self.groups,
+                groups: self.groups
+                ,
             }
         }
     }
+    
+    
 }
 impl TestResult {
     /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult).
@@ -1052,7 +994,7 @@ impl TestResult {
 /// <p>Show Group Result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupResult {
+pub struct GroupResult  {
     /// <p>Group result ID.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -1065,21 +1007,21 @@ pub struct GroupResult {
 }
 impl GroupResult {
     /// <p>Group result ID.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>Group Result Name.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>Tests under Group Result.</p>
-    pub fn tests(&self) -> std::option::Option<&[crate::model::TestCaseRun]> {
+    pub fn tests(&self) -> std::option::Option<& [crate::model::TestCaseRun]> {
         self.tests.as_deref()
     }
 }
 /// See [`GroupResult`](crate::model::GroupResult).
 pub mod group_result {
-
+    
     /// A builder for [`GroupResult`](crate::model::GroupResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1095,8 +1037,7 @@ pub mod group_result {
         }
         /// <p>Group result ID.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// <p>Group Result Name.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1105,8 +1046,7 @@ pub mod group_result {
         }
         /// <p>Group Result Name.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// Appends an item to `tests`.
         ///
@@ -1115,27 +1055,28 @@ pub mod group_result {
         /// <p>Tests under Group Result.</p>
         pub fn tests(mut self, input: crate::model::TestCaseRun) -> Self {
             let mut v = self.tests.unwrap_or_default();
-            v.push(input);
-            self.tests = Some(v);
-            self
+                            v.push(input);
+                            self.tests = Some(v);
+                            self
         }
         /// <p>Tests under Group Result.</p>
-        pub fn set_tests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TestCaseRun>>,
-        ) -> Self {
-            self.tests = input;
-            self
+        pub fn set_tests(mut self, input: std::option::Option<std::vec::Vec<crate::model::TestCaseRun>>) -> Self {
+            self.tests = input; self
         }
         /// Consumes the builder and constructs a [`GroupResult`](crate::model::GroupResult).
         pub fn build(self) -> crate::model::GroupResult {
             crate::model::GroupResult {
-                group_id: self.group_id,
-                group_name: self.group_name,
-                tests: self.tests,
+                group_id: self.group_id
+                ,
+                group_name: self.group_name
+                ,
+                tests: self.tests
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupResult {
     /// Creates a new builder-style object to manufacture [`GroupResult`](crate::model::GroupResult).
@@ -1147,7 +1088,7 @@ impl GroupResult {
 /// <p>Provides the test case run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestCaseRun {
+pub struct TestCaseRun  {
     /// <p>Provides the test case run ID.</p>
     #[doc(hidden)]
     pub test_case_run_id: std::option::Option<std::string::String>,
@@ -1157,16 +1098,16 @@ pub struct TestCaseRun {
     /// <p>Provides the test case run definition name.</p>
     #[doc(hidden)]
     pub test_case_definition_name: std::option::Option<std::string::String>,
-    /// <p>Provides the test case run status. Status is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
-    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
-    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
-    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
-    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
-    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
-    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
-    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+    /// <p>Provides the test case run status. Status is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
@@ -1191,59 +1132,59 @@ pub struct TestCaseRun {
 }
 impl TestCaseRun {
     /// <p>Provides the test case run ID.</p>
-    pub fn test_case_run_id(&self) -> std::option::Option<&str> {
+    pub fn test_case_run_id(&self) -> std::option::Option<& str> {
         self.test_case_run_id.as_deref()
     }
     /// <p>Provides the test case run definition ID.</p>
-    pub fn test_case_definition_id(&self) -> std::option::Option<&str> {
+    pub fn test_case_definition_id(&self) -> std::option::Option<& str> {
         self.test_case_definition_id.as_deref()
     }
     /// <p>Provides the test case run definition name.</p>
-    pub fn test_case_definition_name(&self) -> std::option::Option<&str> {
+    pub fn test_case_definition_name(&self) -> std::option::Option<& str> {
         self.test_case_definition_name.as_deref()
     }
-    /// <p>Provides the test case run status. Status is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
-    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
-    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
-    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
-    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
-    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
-    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
-    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+    /// <p>Provides the test case run status. Status is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>Provides test case run start time.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Provides test case run end time.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Provides test case run log URL.</p>
-    pub fn log_url(&self) -> std::option::Option<&str> {
+    pub fn log_url(&self) -> std::option::Option<& str> {
         self.log_url.as_deref()
     }
     /// <p>Provides test case run warnings.</p>
-    pub fn warnings(&self) -> std::option::Option<&str> {
+    pub fn warnings(&self) -> std::option::Option<& str> {
         self.warnings.as_deref()
     }
     /// <p>Provides test case run failure result.</p>
-    pub fn failure(&self) -> std::option::Option<&str> {
+    pub fn failure(&self) -> std::option::Option<& str> {
         self.failure.as_deref()
     }
     /// <p> Provides the test scenarios for the test case run. </p>
-    pub fn test_scenarios(&self) -> std::option::Option<&[crate::model::TestCaseScenario]> {
+    pub fn test_scenarios(&self) -> std::option::Option<& [crate::model::TestCaseScenario]> {
         self.test_scenarios.as_deref()
     }
 }
 /// See [`TestCaseRun`](crate::model::TestCaseRun).
 pub mod test_case_run {
-
+    
     /// A builder for [`TestCaseRun`](crate::model::TestCaseRun).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1256,8 +1197,7 @@ pub mod test_case_run {
         pub(crate) log_url: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::string::String>,
         pub(crate) failure: std::option::Option<std::string::String>,
-        pub(crate) test_scenarios:
-            std::option::Option<std::vec::Vec<crate::model::TestCaseScenario>>,
+        pub(crate) test_scenarios: std::option::Option<std::vec::Vec<crate::model::TestCaseScenario>>,
     }
     impl Builder {
         /// <p>Provides the test case run ID.</p>
@@ -1266,12 +1206,8 @@ pub mod test_case_run {
             self
         }
         /// <p>Provides the test case run ID.</p>
-        pub fn set_test_case_run_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.test_case_run_id = input;
-            self
+        pub fn set_test_case_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.test_case_run_id = input; self
         }
         /// <p>Provides the test case run definition ID.</p>
         pub fn test_case_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1279,12 +1215,8 @@ pub mod test_case_run {
             self
         }
         /// <p>Provides the test case run definition ID.</p>
-        pub fn set_test_case_definition_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.test_case_definition_id = input;
-            self
+        pub fn set_test_case_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.test_case_definition_id = input; self
         }
         /// <p>Provides the test case run definition name.</p>
         pub fn test_case_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1292,42 +1224,37 @@ pub mod test_case_run {
             self
         }
         /// <p>Provides the test case run definition name.</p>
-        pub fn set_test_case_definition_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.test_case_definition_name = input;
-            self
+        pub fn set_test_case_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.test_case_definition_name = input; self
         }
-        /// <p>Provides the test case run status. Status is one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
-        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
-        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
-        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
-        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
-        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
-        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
-        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+        /// <p>Provides the test case run status. Status is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
+        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
+        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
+        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
+        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
+        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Provides the test case run status. Status is one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
-        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
-        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
-        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
-        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
-        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
-        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
-        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+        /// <p>Provides the test case run status. Status is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
+        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
+        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
+        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
+        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
+        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Provides test case run start time.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1335,12 +1262,8 @@ pub mod test_case_run {
             self
         }
         /// <p>Provides test case run start time.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>Provides test case run end time.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1348,12 +1271,8 @@ pub mod test_case_run {
             self
         }
         /// <p>Provides test case run end time.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>Provides test case run log URL.</p>
         pub fn log_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1362,8 +1281,7 @@ pub mod test_case_run {
         }
         /// <p>Provides test case run log URL.</p>
         pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_url = input;
-            self
+            self.log_url = input; self
         }
         /// <p>Provides test case run warnings.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1372,8 +1290,7 @@ pub mod test_case_run {
         }
         /// <p>Provides test case run warnings.</p>
         pub fn set_warnings(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.warnings = input;
-            self
+            self.warnings = input; self
         }
         /// <p>Provides test case run failure result.</p>
         pub fn failure(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1382,8 +1299,7 @@ pub mod test_case_run {
         }
         /// <p>Provides test case run failure result.</p>
         pub fn set_failure(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.failure = input;
-            self
+            self.failure = input; self
         }
         /// Appends an item to `test_scenarios`.
         ///
@@ -1392,34 +1308,42 @@ pub mod test_case_run {
         /// <p> Provides the test scenarios for the test case run. </p>
         pub fn test_scenarios(mut self, input: crate::model::TestCaseScenario) -> Self {
             let mut v = self.test_scenarios.unwrap_or_default();
-            v.push(input);
-            self.test_scenarios = Some(v);
-            self
+                            v.push(input);
+                            self.test_scenarios = Some(v);
+                            self
         }
         /// <p> Provides the test scenarios for the test case run. </p>
-        pub fn set_test_scenarios(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TestCaseScenario>>,
-        ) -> Self {
-            self.test_scenarios = input;
-            self
+        pub fn set_test_scenarios(mut self, input: std::option::Option<std::vec::Vec<crate::model::TestCaseScenario>>) -> Self {
+            self.test_scenarios = input; self
         }
         /// Consumes the builder and constructs a [`TestCaseRun`](crate::model::TestCaseRun).
         pub fn build(self) -> crate::model::TestCaseRun {
             crate::model::TestCaseRun {
-                test_case_run_id: self.test_case_run_id,
-                test_case_definition_id: self.test_case_definition_id,
-                test_case_definition_name: self.test_case_definition_name,
-                status: self.status,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                log_url: self.log_url,
-                warnings: self.warnings,
-                failure: self.failure,
-                test_scenarios: self.test_scenarios,
+                test_case_run_id: self.test_case_run_id
+                ,
+                test_case_definition_id: self.test_case_definition_id
+                ,
+                test_case_definition_name: self.test_case_definition_name
+                ,
+                status: self.status
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                log_url: self.log_url
+                ,
+                warnings: self.warnings
+                ,
+                failure: self.failure
+                ,
+                test_scenarios: self.test_scenarios
+                ,
             }
         }
     }
+    
+    
 }
 impl TestCaseRun {
     /// Creates a new builder-style object to manufacture [`TestCaseRun`](crate::model::TestCaseRun).
@@ -1431,27 +1355,27 @@ impl TestCaseRun {
 /// <p>Provides test case scenario.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestCaseScenario {
+pub struct TestCaseScenario  {
     /// <p>Provides test case scenario ID.</p>
     #[doc(hidden)]
     pub test_case_scenario_id: std::option::Option<std::string::String>,
-    /// <p>Provides test case scenario type. Type is one of the following:</p>
-    /// <ul>
-    /// <li> <p>Advanced</p> </li>
-    /// <li> <p>Basic</p> </li>
+    /// <p>Provides test case scenario type. Type is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Advanced</p> </li> 
+    /// <li> <p>Basic</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub test_case_scenario_type: std::option::Option<crate::model::TestCaseScenarioType>,
-    /// <p>Provides the test case scenario status. Status is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
-    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
-    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
-    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
-    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
-    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
-    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
-    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+    /// <p>Provides the test case scenario status. Status is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TestCaseScenarioStatus>,
@@ -1464,45 +1388,43 @@ pub struct TestCaseScenario {
 }
 impl TestCaseScenario {
     /// <p>Provides test case scenario ID.</p>
-    pub fn test_case_scenario_id(&self) -> std::option::Option<&str> {
+    pub fn test_case_scenario_id(&self) -> std::option::Option<& str> {
         self.test_case_scenario_id.as_deref()
     }
-    /// <p>Provides test case scenario type. Type is one of the following:</p>
-    /// <ul>
-    /// <li> <p>Advanced</p> </li>
-    /// <li> <p>Basic</p> </li>
+    /// <p>Provides test case scenario type. Type is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Advanced</p> </li> 
+    /// <li> <p>Basic</p> </li> 
     /// </ul>
-    pub fn test_case_scenario_type(
-        &self,
-    ) -> std::option::Option<&crate::model::TestCaseScenarioType> {
+    pub fn test_case_scenario_type(&self) -> std::option::Option<& crate::model::TestCaseScenarioType> {
         self.test_case_scenario_type.as_ref()
     }
-    /// <p>Provides the test case scenario status. Status is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
-    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
-    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
-    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
-    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
-    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
-    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
-    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+    /// <p>Provides the test case scenario status. Status is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::TestCaseScenarioStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TestCaseScenarioStatus> {
         self.status.as_ref()
     }
     /// <p>Provides test case scenario failure result.</p>
-    pub fn failure(&self) -> std::option::Option<&str> {
+    pub fn failure(&self) -> std::option::Option<& str> {
         self.failure.as_deref()
     }
     /// <p> </p>
-    pub fn system_message(&self) -> std::option::Option<&str> {
+    pub fn system_message(&self) -> std::option::Option<& str> {
         self.system_message.as_deref()
     }
 }
 /// See [`TestCaseScenario`](crate::model::TestCaseScenario).
 pub mod test_case_scenario {
-
+    
     /// A builder for [`TestCaseScenario`](crate::model::TestCaseScenario).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1519,69 +1441,54 @@ pub mod test_case_scenario {
             self
         }
         /// <p>Provides test case scenario ID.</p>
-        pub fn set_test_case_scenario_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.test_case_scenario_id = input;
-            self
+        pub fn set_test_case_scenario_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.test_case_scenario_id = input; self
         }
-        /// <p>Provides test case scenario type. Type is one of the following:</p>
-        /// <ul>
-        /// <li> <p>Advanced</p> </li>
-        /// <li> <p>Basic</p> </li>
+        /// <p>Provides test case scenario type. Type is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Advanced</p> </li> 
+        /// <li> <p>Basic</p> </li> 
         /// </ul>
-        pub fn test_case_scenario_type(
-            mut self,
-            input: crate::model::TestCaseScenarioType,
-        ) -> Self {
+        pub fn test_case_scenario_type(mut self, input: crate::model::TestCaseScenarioType) -> Self {
             self.test_case_scenario_type = Some(input);
             self
         }
-        /// <p>Provides test case scenario type. Type is one of the following:</p>
-        /// <ul>
-        /// <li> <p>Advanced</p> </li>
-        /// <li> <p>Basic</p> </li>
+        /// <p>Provides test case scenario type. Type is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Advanced</p> </li> 
+        /// <li> <p>Basic</p> </li> 
         /// </ul>
-        pub fn set_test_case_scenario_type(
-            mut self,
-            input: std::option::Option<crate::model::TestCaseScenarioType>,
-        ) -> Self {
-            self.test_case_scenario_type = input;
-            self
+        pub fn set_test_case_scenario_type(mut self, input: std::option::Option<crate::model::TestCaseScenarioType>) -> Self {
+            self.test_case_scenario_type = input; self
         }
-        /// <p>Provides the test case scenario status. Status is one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
-        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
-        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
-        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
-        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
-        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
-        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
-        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+        /// <p>Provides the test case scenario status. Status is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
+        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
+        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
+        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
+        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
+        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::TestCaseScenarioStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Provides the test case scenario status. Status is one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
-        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
-        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
-        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
-        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
-        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
-        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
-        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+        /// <p>Provides the test case scenario status. Status is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
+        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
+        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
+        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
+        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
+        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
+        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TestCaseScenarioStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TestCaseScenarioStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Provides test case scenario failure result.</p>
         pub fn failure(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1590,8 +1497,7 @@ pub mod test_case_scenario {
         }
         /// <p>Provides test case scenario failure result.</p>
         pub fn set_failure(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.failure = input;
-            self
+            self.failure = input; self
         }
         /// <p> </p>
         pub fn system_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1599,24 +1505,27 @@ pub mod test_case_scenario {
             self
         }
         /// <p> </p>
-        pub fn set_system_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.system_message = input;
-            self
+        pub fn set_system_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.system_message = input; self
         }
         /// Consumes the builder and constructs a [`TestCaseScenario`](crate::model::TestCaseScenario).
         pub fn build(self) -> crate::model::TestCaseScenario {
             crate::model::TestCaseScenario {
-                test_case_scenario_id: self.test_case_scenario_id,
-                test_case_scenario_type: self.test_case_scenario_type,
-                status: self.status,
-                failure: self.failure,
-                system_message: self.system_message,
+                test_case_scenario_id: self.test_case_scenario_id
+                ,
+                test_case_scenario_type: self.test_case_scenario_type
+                ,
+                status: self.status
+                ,
+                failure: self.failure
+                ,
+                system_message: self.system_message
+                ,
             }
         }
     }
+    
+    
 }
 impl TestCaseScenario {
     /// Creates a new builder-style object to manufacture [`TestCaseScenario`](crate::model::TestCaseScenario).
@@ -1631,9 +1540,9 @@ impl TestCaseScenario {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let testcasescenariostatus = unimplemented!();
 /// match testcasescenariostatus {
@@ -1662,22 +1571,14 @@ impl TestCaseScenario {
 /// Specifically, when `testcasescenariostatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TestCaseScenarioStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TestCaseScenarioStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -1698,7 +1599,7 @@ pub enum TestCaseScenarioStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestCaseScenarioStatus {
     fn from(s: &str) -> Self {
@@ -1712,19 +1613,17 @@ impl std::convert::From<&str> for TestCaseScenarioStatus {
             "RUNNING" => TestCaseScenarioStatus::Running,
             "STOPPED" => TestCaseScenarioStatus::Stopped,
             "STOPPING" => TestCaseScenarioStatus::Stopping,
-            other => {
-                TestCaseScenarioStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TestCaseScenarioStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TestCaseScenarioStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TestCaseScenarioStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TestCaseScenarioStatus::from(s))
+                }
+            }
 impl TestCaseScenarioStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1738,21 +1637,13 @@ impl TestCaseScenarioStatus {
             TestCaseScenarioStatus::Running => "RUNNING",
             TestCaseScenarioStatus::Stopped => "STOPPED",
             TestCaseScenarioStatus::Stopping => "STOPPING",
-            TestCaseScenarioStatus::Unknown(value) => value.as_str(),
+            TestCaseScenarioStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELED",
-            "ERROR",
-            "FAIL",
-            "PASS",
-            "PASS_WITH_WARNINGS",
-            "PENDING",
-            "RUNNING",
-            "STOPPED",
-            "STOPPING",
+            "CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"
         ]
     }
 }
@@ -1768,9 +1659,9 @@ impl AsRef<str> for TestCaseScenarioStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let testcasescenariotype = unimplemented!();
 /// match testcasescenariotype {
@@ -1792,60 +1683,52 @@ impl AsRef<str> for TestCaseScenarioStatus {
 /// Specifically, when `testcasescenariotype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TestCaseScenarioType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TestCaseScenarioType {
     #[allow(missing_docs)] // documentation missing in model
     Advanced,
     #[allow(missing_docs)] // documentation missing in model
     Basic,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TestCaseScenarioType {
     fn from(s: &str) -> Self {
         match s {
             "Advanced" => TestCaseScenarioType::Advanced,
             "Basic" => TestCaseScenarioType::Basic,
-            other => {
-                TestCaseScenarioType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TestCaseScenarioType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TestCaseScenarioType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TestCaseScenarioType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TestCaseScenarioType::from(s))
+                }
+            }
 impl TestCaseScenarioType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TestCaseScenarioType::Advanced => "Advanced",
             TestCaseScenarioType::Basic => "Basic",
-            TestCaseScenarioType::Unknown(value) => value.as_str(),
+            TestCaseScenarioType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Advanced", "Basic"]
+        &[
+            "Advanced", "Basic"
+        ]
     }
 }
 impl AsRef<str> for TestCaseScenarioType {
@@ -1860,9 +1743,9 @@ impl AsRef<str> for TestCaseScenarioType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -1891,22 +1774,14 @@ impl AsRef<str> for TestCaseScenarioType {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -1927,7 +1802,7 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -1941,17 +1816,17 @@ impl std::convert::From<&str> for Status {
             "RUNNING" => Status::Running,
             "STOPPED" => Status::Stopped,
             "STOPPING" => Status::Stopping,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1965,21 +1840,13 @@ impl Status {
             Status::Running => "RUNNING",
             Status::Stopped => "STOPPED",
             Status::Stopping => "STOPPING",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELED",
-            "ERROR",
-            "FAIL",
-            "PASS",
-            "PASS_WITH_WARNINGS",
-            "PENDING",
-            "RUNNING",
-            "STOPPED",
-            "STOPPING",
+            "CANCELED", "ERROR", "FAIL", "PASS", "PASS_WITH_WARNINGS", "PENDING", "RUNNING", "STOPPED", "STOPPING"
         ]
     }
 }
@@ -1988,3 +1855,4 @@ impl AsRef<str> for Status {
         self.as_str()
     }
 }
+
